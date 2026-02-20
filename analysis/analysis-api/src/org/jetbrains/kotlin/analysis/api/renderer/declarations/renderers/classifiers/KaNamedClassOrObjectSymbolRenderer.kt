@@ -44,9 +44,9 @@ public interface KaNamedClassSymbolRenderer {
         ) {
             printer {
                 val keywords = when (symbol.classKind) {
-                    KaClassKind.CLASS -> listOf(KtTokens.CLASS_KEYWORD)
-                    KaClassKind.ENUM_CLASS -> listOf(KtTokens.ENUM_KEYWORD, KtTokens.CLASS_KEYWORD)
-                    KaClassKind.ANNOTATION_CLASS -> listOf(KtTokens.ANNOTATION_KEYWORD, KtTokens.CLASS_KEYWORD)
+                    KaClassKind.CLASS -> listOf(KtTokens.DEFINE_KEYWORD)
+                    KaClassKind.ENUM_CLASS -> listOf(KtTokens.ENUM_KEYWORD, KtTokens.DEFINE_KEYWORD)
+                    KaClassKind.ANNOTATION_CLASS -> listOf(KtTokens.ANNOTATION_KEYWORD, KtTokens.DEFINE_KEYWORD)
                     KaClassKind.OBJECT -> listOf(KtTokens.OBJECT_KEYWORD)
                     KaClassKind.COMPANION_OBJECT -> listOf(KtTokens.COMPANION_KEYWORD, KtTokens.OBJECT_KEYWORD)
                     KaClassKind.INTERFACE -> listOf(KtTokens.INTERFACE_KEYWORD)

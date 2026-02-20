@@ -429,8 +429,8 @@ public abstract interface class org/jetbrains/kotlin/lexer/KtTokens {
 	public static final field CATCH_KEYWORD_Id I
 	public static final field CHARACTER_LITERAL Lorg/jetbrains/kotlin/lexer/KtToken;
 	public static final field CHARACTER_LITERAL_Id I
-	public static final field CLASS_KEYWORD Lorg/jetbrains/kotlin/lexer/KtKeywordToken;
-	public static final field CLASS_KEYWORD_Id I
+	public static final field DEFINE_KEYWORD Lorg/jetbrains/kotlin/lexer/KtKeywordToken;
+	public static final field DEFINE_KEYWORD_Id I
 	public static final field CLOSING_QUOTE Lorg/jetbrains/kotlin/lexer/KtToken;
 	public static final field CLOSING_QUOTE_Id I
 	public static final field COLON Lorg/jetbrains/kotlin/lexer/KtSingleValueToken;

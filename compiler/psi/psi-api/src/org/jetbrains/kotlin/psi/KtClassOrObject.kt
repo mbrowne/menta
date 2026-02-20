@@ -140,7 +140,7 @@ abstract class KtClassOrObject :
     fun getDeclarationKeyword(): PsiElement? = findChildByType(classInterfaceObjectTokenSet)
 
     private val classInterfaceObjectTokenSet = TokenSet.create(
-        KtTokens.CLASS_KEYWORD, KtTokens.INTERFACE_KEYWORD, KtTokens.OBJECT_KEYWORD
+        KtTokens.DEFINE_KEYWORD, KtTokens.INTERFACE_KEYWORD, KtTokens.OBJECT_KEYWORD
     )
 
     override fun delete() {

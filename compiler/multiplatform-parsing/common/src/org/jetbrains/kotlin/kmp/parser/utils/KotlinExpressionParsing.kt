@@ -14,7 +14,7 @@ import org.jetbrains.kotlin.kmp.lexer.KtTokens
 import org.jetbrains.kotlin.kmp.lexer.KtTokens.AS_KEYWORD
 import org.jetbrains.kotlin.kmp.lexer.KtTokens.AS_SAFE
 import org.jetbrains.kotlin.kmp.lexer.KtTokens.BREAK_KEYWORD
-import org.jetbrains.kotlin.kmp.lexer.KtTokens.CLASS_KEYWORD
+import org.jetbrains.kotlin.kmp.lexer.KtTokens.DEFINE_KEYWORD
 import org.jetbrains.kotlin.kmp.lexer.KtTokens.CONTINUE_KEYWORD
 import org.jetbrains.kotlin.kmp.lexer.KtTokens.DO_KEYWORD
 import org.jetbrains.kotlin.kmp.lexer.KtTokens.ELSE_KEYWORD
@@ -98,7 +98,7 @@ internal open class KotlinExpressionParsing(
             AS_KEYWORD,
             TYPE_ALIAS_KEYWORD,
             INTERFACE_KEYWORD,
-            CLASS_KEYWORD,
+            DEFINE_KEYWORD,
             THIS_KEYWORD,
             VAL_KEYWORD,
             VAR_KEYWORD,
@@ -160,7 +160,7 @@ internal open class KotlinExpressionParsing(
                     VAL_KEYWORD,
                     VAR_KEYWORD,
                     INTERFACE_KEYWORD,
-                    CLASS_KEYWORD,
+                    DEFINE_KEYWORD,
                     TYPE_ALIAS_KEYWORD
                 ) +
                 KtTokens.MODIFIERS
@@ -358,8 +358,8 @@ internal open class KotlinExpressionParsing(
 
         advance() // COLONCOLON
 
-        if (at(CLASS_KEYWORD)) {
-            advance() // CLASS_KEYWORD
+        if (at(DEFINE_KEYWORD)) {
+            advance() // DEFINE_KEYWORD
 
             expression.done(KtNodeTypes.CLASS_LITERAL_EXPRESSION)
             return true
@@ -616,7 +616,7 @@ internal open class KotlinExpressionParsing(
             KtTokens.CHARACTER_LITERAL_ID -> parseOneTokenExpression(KtNodeTypes.CHARACTER_CONSTANT)
             KtTokens.FLOAT_LITERAL_ID -> parseOneTokenExpression(KtNodeTypes.FLOAT_CONSTANT)
             KtTokens.NULL_KEYWORD_ID -> parseOneTokenExpression(KtNodeTypes.NULL)
-            KtTokens.CLASS_KEYWORD_ID,
+            KtTokens.DEFINE_KEYWORD_ID,
             KtTokens.INTERFACE_KEYWORD_ID,
             KtTokens.FUN_MODIFIER_ID,
             KtTokens.VAL_KEYWORD_ID,

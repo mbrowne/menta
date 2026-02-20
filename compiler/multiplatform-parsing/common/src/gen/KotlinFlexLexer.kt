@@ -1652,7 +1652,7 @@ companion object {
           // fall through
           204 -> break
           97 -> {
-            return KtTokens.CLASS_KEYWORD
+            return KtTokens.DEFINE_KEYWORD
             }
           // fall through
           205 -> break

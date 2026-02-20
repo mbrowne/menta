@@ -46,8 +46,8 @@ object KtTokens : SyntaxElementTypesWithIds() {
     const val PACKAGE_KEYWORD_ID: Int = DANGLING_NEWLINE_ID + 1
     const val AS_KEYWORD_ID: Int = PACKAGE_KEYWORD_ID + 1
     const val TYPE_ALIAS_KEYWORD_ID: Int = AS_KEYWORD_ID + 1
-    const val CLASS_KEYWORD_ID: Int = TYPE_ALIAS_KEYWORD_ID + 1
-    const val THIS_KEYWORD_ID: Int = CLASS_KEYWORD_ID + 1
+    const val DEFINE_KEYWORD_ID: Int = TYPE_ALIAS_KEYWORD_ID + 1
+    const val THIS_KEYWORD_ID: Int = DEFINE_KEYWORD_ID + 1
     const val SUPER_KEYWORD_ID: Int = THIS_KEYWORD_ID + 1
     const val VAL_KEYWORD_ID: Int = SUPER_KEYWORD_ID + 1
     const val VAR_KEYWORD_ID: Int = VAL_KEYWORD_ID + 1
@@ -212,7 +212,7 @@ object KtTokens : SyntaxElementTypesWithIds() {
     val PACKAGE_KEYWORD: SyntaxElementType = registerToken(PACKAGE_KEYWORD_ID, "package", soft = false, modifier = false)
     val AS_KEYWORD: SyntaxElementType = registerToken(AS_KEYWORD_ID, "as", soft = false, modifier = false)
     val TYPE_ALIAS_KEYWORD: SyntaxElementType = registerToken(TYPE_ALIAS_KEYWORD_ID, "typealias", soft = false, modifier = false)
-    val CLASS_KEYWORD: SyntaxElementType = registerToken(CLASS_KEYWORD_ID, "class", soft = false, modifier = false)
+    val DEFINE_KEYWORD: SyntaxElementType = registerToken(DEFINE_KEYWORD_ID, "define", soft = false, modifier = false)
     val THIS_KEYWORD: SyntaxElementType = registerToken(THIS_KEYWORD_ID, "this", soft = false, modifier = false)
     val SUPER_KEYWORD: SyntaxElementType = registerToken(SUPER_KEYWORD_ID, "super", soft = false, modifier = false)
     val VAL_KEYWORD: SyntaxElementType = registerToken(VAL_KEYWORD_ID, "val", soft = false, modifier = false)
