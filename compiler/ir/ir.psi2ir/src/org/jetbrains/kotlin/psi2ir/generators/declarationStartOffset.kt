@@ -14,7 +14,7 @@ import org.jetbrains.kotlin.psi2ir.getChildTokenStartOffsetOrNull
 private val FUNCTION_DECL_TOKENS = TokenSet.create(KtTokens.FUN_KEYWORD)
 private val ACCESSOR_DECL_TOKENS = TokenSet.create(KtTokens.GET_KEYWORD, KtTokens.SET_KEYWORD)
 private val PROPERTY_DECL_TOKENS = TokenSet.create(KtTokens.VAL_KEYWORD, KtTokens.VAR_KEYWORD)
-private val CLASS_DECL_TOKENS = TokenSet.create(KtTokens.CLASS_KEYWORD, KtTokens.INTERFACE_KEYWORD)
+private val CLASS_DECL_TOKENS = TokenSet.create(KtTokens.DEFINE_KEYWORD, KtTokens.INTERFACE_KEYWORD)
 private val CONSTRUCTOR_DECL_TOKENS = TokenSet.create(KtTokens.CONSTRUCTOR_KEYWORD)
 
 internal fun KtPureElement.getStartOffsetOfFunctionDeclarationKeywordOrNull(): Int? =

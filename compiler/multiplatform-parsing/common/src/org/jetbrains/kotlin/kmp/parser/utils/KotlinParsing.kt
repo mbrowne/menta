@@ -39,7 +39,7 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
         private val GT_COMMA_COLON_SET = syntaxElementTypeSetOf(KtTokens.GT, KtTokens.COMMA, KtTokens.COLON)
 
         private val TOP_LEVEL_DECLARATION_FIRST = syntaxElementTypeSetOf(
-            KtTokens.TYPE_ALIAS_KEYWORD, KtTokens.INTERFACE_KEYWORD, KtTokens.CLASS_KEYWORD, KtTokens.OBJECT_KEYWORD,
+            KtTokens.TYPE_ALIAS_KEYWORD, KtTokens.INTERFACE_KEYWORD, KtTokens.DEFINE_KEYWORD, KtTokens.OBJECT_KEYWORD,
             KtTokens.FUN_MODIFIER, KtTokens.VAL_KEYWORD, KtTokens.VAR_KEYWORD, KtTokens.PACKAGE_KEYWORD
         )
         private val TOP_LEVEL_DECLARATION_FIRST_SEMICOLON_SET =
@@ -109,7 +109,7 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
             KtTokens.VAL_KEYWORD,
             KtTokens.VAR_KEYWORD,
             KtTokens.FUN_MODIFIER,
-            KtTokens.CLASS_KEYWORD
+            KtTokens.DEFINE_KEYWORD
         )
         private val DESTRUCTURING_PROPERTY_NAME_FOLLOW_SET = PROPERTY_NAME_FOLLOW_SET - KtTokens.VAL_VAR
         private val PROPERTY_NAME_FOLLOW_MULTI_DECLARATION_RECOVERY_SET =
@@ -144,7 +144,7 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
         private val VALUE_PARAMETERS_FOLLOW_SET =
             syntaxElementTypeSetOf(KtTokens.EQ, KtTokens.LBRACE, KtTokens.RBRACE, KtTokens.SEMICOLON, KtTokens.RPAR)
         private val CONTEXT_PARAMETERS_FOLLOW_SET = syntaxElementTypeSetOf(
-            KtTokens.CLASS_KEYWORD,
+            KtTokens.DEFINE_KEYWORD,
             KtTokens.OBJECT_KEYWORD,
             KtTokens.FUN_MODIFIER,
             KtTokens.VAL_KEYWORD,
@@ -157,7 +157,7 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
             syntaxElementTypeSetOf(KtTokens.EQ, KtTokens.COLON, KtTokens.LBRACE, KtTokens.RBRACE, KtTokens.BY_KEYWORD) +
                     TOP_LEVEL_DECLARATION_FIRST
         private val EOL_OR_SEMICOLON_RBRACE_SET = syntaxElementTypeSetOf(KtTokens.EOL_OR_SEMICOLON, KtTokens.RBRACE)
-        private val CLASS_INTERFACE_SET = syntaxElementTypeSetOf(KtTokens.CLASS_KEYWORD, KtTokens.INTERFACE_KEYWORD)
+        private val CLASS_INTERFACE_SET = syntaxElementTypeSetOf(KtTokens.DEFINE_KEYWORD, KtTokens.INTERFACE_KEYWORD)
 
         fun createForTopLevel(builder: SemanticWhitespaceAwareSyntaxBuilder): KotlinParsing {
             return KotlinParsing(builder, isTopLevel = true, isLazy = true)
@@ -663,7 +663,7 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
         declarationParsingMode: DeclarationParsingMode,
     ): SyntaxElementType? {
         when (tokenId) {
-            KtTokens.CLASS_KEYWORD_ID,
+            KtTokens.DEFINE_KEYWORD_ID,
             KtTokens.INTERFACE_KEYWORD_ID,
                 -> return parseClass(
                 detector.isEnumDetected, true
@@ -1195,10 +1195,10 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
             } else {
                 require(atSet(CLASS_INTERFACE_SET))
             }
-            advance() // CLASS_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
+            advance() // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
         } else {
             require(enumClass) { "Currently classifiers without class/interface/object are only allowed for enums" }
-            error("'class' keyword is expected after 'enum'")
+            error("'define' keyword is expected after 'enum'")
         }
 
         if (nameParsingMode == NameParsingMode.REQUIRED) {

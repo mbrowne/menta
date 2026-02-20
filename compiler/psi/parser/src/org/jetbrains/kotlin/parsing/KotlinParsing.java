@@ -30,7 +30,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
     private static final Logger LOG = Logger.getInstance(KotlinParsing.class);
 
     private static final TokenSet TOP_LEVEL_DECLARATION_FIRST = TokenSet.create(
-            TYPE_ALIAS_KEYWORD, INTERFACE_KEYWORD, CLASS_KEYWORD, OBJECT_KEYWORD,
+            TYPE_ALIAS_KEYWORD, INTERFACE_KEYWORD, DEFINE_KEYWORD, OBJECT_KEYWORD,
             FUN_KEYWORD, VAL_KEYWORD, VAR_KEYWORD, PACKAGE_KEYWORD);
     private static final TokenSet TOP_LEVEL_DECLARATION_FIRST_SEMICOLON_SET =
             TokenSet.orSet(TOP_LEVEL_DECLARATION_FIRST, TokenSet.create(SEMICOLON));
@@ -73,7 +73,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
     private static final TokenSet COMMA_SEMICOLON_RBRACE_SET = TokenSet.create(COMMA, SEMICOLON, RBRACE);
     private static final TokenSet VALUE_ARGS_RECOVERY_SET = TokenSet.create(LBRACE, SEMICOLON, RPAR, EOL_OR_SEMICOLON, RBRACE);
     private static final TokenSet PROPERTY_NAME_FOLLOW_SET =
-      TokenSet.create(COLON, EQ, LBRACE, RBRACE, SEMICOLON, VAL_KEYWORD, VAR_KEYWORD, FUN_KEYWORD, CLASS_KEYWORD);
+      TokenSet.create(COLON, EQ, LBRACE, RBRACE, SEMICOLON, VAL_KEYWORD, VAR_KEYWORD, FUN_KEYWORD, DEFINE_KEYWORD);
     private static final TokenSet DESTRUCTURING_PROPERTY_NAME_FOLLOW_SET = TokenSet.andNot(PROPERTY_NAME_FOLLOW_SET, VAL_VAR);
     private static final TokenSet PROPERTY_NAME_FOLLOW_MULTI_DECLARATION_RECOVERY_SET = TokenSet.orSet(PROPERTY_NAME_FOLLOW_SET, PARAMETER_NAME_RECOVERY_SET);
     private static final TokenSet PROPERTY_NAME_FOLLOW_FUNCTION_OR_PROPERTY_RECOVERY_SET = TokenSet.orSet(PROPERTY_NAME_FOLLOW_SET, LBRACE_RBRACE_SET, TOP_LEVEL_DECLARATION_FIRST);
@@ -88,7 +88,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
     private static final TokenSet FUNCTION_NAME_FOLLOW_SET = TokenSet.create(LT, LPAR, RPAR, COLON, EQ);
     private static final TokenSet FUNCTION_NAME_RECOVERY_SET = TokenSet.orSet(TokenSet.create(LT, LPAR, RPAR, COLON, EQ), LBRACE_RBRACE_SET, TOP_LEVEL_DECLARATION_FIRST);
     private static final TokenSet VALUE_PARAMETERS_FOLLOW_SET = TokenSet.create(EQ, LBRACE, RBRACE, SEMICOLON, RPAR);
-    private static final TokenSet CONTEXT_PARAMETERS_FOLLOW_SET = TokenSet.create(CLASS_KEYWORD, OBJECT_KEYWORD, FUN_KEYWORD, VAL_KEYWORD, VAR_KEYWORD);
+    private static final TokenSet CONTEXT_PARAMETERS_FOLLOW_SET = TokenSet.create(DEFINE_KEYWORD, OBJECT_KEYWORD, FUN_KEYWORD, VAL_KEYWORD, VAR_KEYWORD);
     private static final TokenSet LPAR_VALUE_PARAMETERS_FOLLOW_SET = TokenSet.orSet(TokenSet.create(LPAR), VALUE_PARAMETERS_FOLLOW_SET);
     private static final TokenSet
             LPAR_LBRACE_COLON_CONSTRUCTOR_KEYWORD_SET = TokenSet.create(LPAR, LBRACE, COLON, CONSTRUCTOR_KEYWORD);
@@ -97,7 +97,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
             TOP_LEVEL_DECLARATION_FIRST
     );
     private final static TokenSet EOL_OR_SEMICOLON_RBRACE_SET = TokenSet.create(EOL_OR_SEMICOLON, RBRACE);
-    private final static TokenSet CLASS_INTERFACE_SET = TokenSet.create(CLASS_KEYWORD, INTERFACE_KEYWORD);
+    private final static TokenSet CLASS_INTERFACE_SET = TokenSet.create(DEFINE_KEYWORD, INTERFACE_KEYWORD);
 
     static KotlinParsing createForTopLevel(SemanticWhitespaceAwarePsiBuilder builder) {
         return new KotlinParsing(builder, true, true);
@@ -517,7 +517,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
             @NotNull DeclarationParsingMode declarationParsingMode
     ) {
         switch (getTokenId()) {
-            case CLASS_KEYWORD_Id:
+            case DEFINE_KEYWORD_Id:
             case INTERFACE_KEYWORD_Id:
                 return parseClass(detector.isEnumDetected(), true);
             case FUN_KEYWORD_Id:
@@ -1002,7 +1002,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
 
     /*
      * class
-     *   : modifiers ("class" | "interface") SimpleName
+     *   : modifiers ("define" | "interface") SimpleName
      *       typeParameters?
      *       primaryConstructor?
      *       (":" annotations delegationSpecifier{","})?
@@ -1032,11 +1032,11 @@ public class KotlinParsing extends AbstractKotlinParsing {
             else {
                 assert _atSet(CLASS_INTERFACE_SET);
             }
-            advance(); // CLASS_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
+            advance(); // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
         }
         else {
             assert enumClass : "Currently classifiers without class/interface/object are only allowed for enums";
-            error("'class' keyword is expected after 'enum'");
+            error("'define' keyword is expected after 'enum'");
         }
 
         if (nameParsingMode == NameParsingMode.REQUIRED) {

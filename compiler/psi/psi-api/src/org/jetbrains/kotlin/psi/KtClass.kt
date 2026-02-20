@@ -19,7 +19,7 @@ import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
  * ### Example:
  *
  * ```kotlin
- *    class Foo(val x: Int) {
+ *    define Foo(val x: Int) {
  *        fun bar() {}
  *    }
  * // ^________________^
@@ -27,7 +27,7 @@ import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
  * ```
  */
 open class KtClass : KtClassOrObject {
-    private val classInterfaceTokenSet = TokenSet.create(KtTokens.CLASS_KEYWORD, KtTokens.INTERFACE_KEYWORD)
+    private val classInterfaceTokenSet = TokenSet.create(KtTokens.DEFINE_KEYWORD, KtTokens.INTERFACE_KEYWORD)
 
     constructor(node: ASTNode) : super(node)
     constructor(stub: KotlinClassStub) : super(stub, KtStubBasedElementTypes.CLASS)
@@ -55,7 +55,7 @@ open class KtClass : KtClassOrObject {
 
     fun getClassOrInterfaceKeyword(): PsiElement? = findChildByType(classInterfaceTokenSet)
 
-    fun getClassKeyword(): PsiElement? = findChildByType(KtTokens.CLASS_KEYWORD)
+    fun getClassKeyword(): PsiElement? = findChildByType(KtTokens.DEFINE_KEYWORD)
 
     fun getFunKeyword(): PsiElement? = modifierList?.getModifier(KtTokens.FUN_KEYWORD)
 }

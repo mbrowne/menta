@@ -117,7 +117,7 @@ object PositioningStrategies {
         }
     }
 
-    val classKindTokens = TokenSet.create(KtTokens.CLASS_KEYWORD, KtTokens.OBJECT_KEYWORD, KtTokens.INTERFACE_KEYWORD)
+    val classKindTokens = TokenSet.create(KtTokens.DEFINE_KEYWORD, KtTokens.OBJECT_KEYWORD, KtTokens.INTERFACE_KEYWORD)
 
     @JvmField
     val DECLARATION_START_TO_NAME: PositioningStrategy<KtDeclaration> = object : PositioningStrategy<KtDeclaration>() {
@@ -168,7 +168,7 @@ object PositioningStrategies {
         element: KtNamedDeclaration,
     ): PsiElement =
         element.getModifierList()?.getModifier(ENUM_KEYWORD)
-            ?: element.node.findChildByType(TokenSet.create(KtTokens.CLASS_KEYWORD, KtTokens.OBJECT_KEYWORD))?.psi
+            ?: element.node.findChildByType(TokenSet.create(KtTokens.DEFINE_KEYWORD, KtTokens.OBJECT_KEYWORD))?.psi
             ?: element
 
     @JvmField

@@ -496,7 +496,7 @@ class LightTreeRawFirDeclarationBuilder(
             withContainerSymbol(classSymbol) {
                 classNode.forEachChildren {
                     when (it.tokenType) {
-                        CLASS_KEYWORD -> classKind = ClassKind.CLASS
+                        DEFINE_KEYWORD -> classKind = ClassKind.CLASS
                         INTERFACE_KEYWORD -> classKind = ClassKind.INTERFACE
                         OBJECT_KEYWORD -> classKind = ClassKind.OBJECT
                         TYPE_PARAMETER_LIST -> typeParameterList = it
