@@ -136,7 +136,7 @@ KtValueArgument(153,159): 'number'
 KtNameReferenceExpression(153,159): 'number'
   null
 
-KtClass(164,225): 'class MyClass {'
+KtDefine(164,225): 'class MyClass {'
   null
 
 KtClassBody(178,225): '{'

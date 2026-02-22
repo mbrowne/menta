@@ -7,13 +7,13 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,184): 'interface NonSealed {'
+KtDefine(78,184): 'interface NonSealed {'
   NO_CANDIDATES
 
 KtClassBody(98,184): '{'
   NO_CANDIDATES
 
-KtClass(104,140): 'class Left(val x: String): NonSealed'
+KtDefine(104,140): 'class Left(val x: String): NonSealed'
   NO_CANDIDATES
 
 KtPrimaryConstructor(114,129): '(val x: String)'
@@ -49,7 +49,7 @@ KtUserType(131,140): 'NonSealed'
 KtNameReferenceExpression(131,140): 'NonSealed'
   NO_CANDIDATES
 
-KtClass(145,182): 'class Right(val y: String): NonSealed'
+KtDefine(145,182): 'class Right(val y: String): NonSealed'
   NO_CANDIDATES
 
 KtPrimaryConstructor(156,171): '(val y: String)'

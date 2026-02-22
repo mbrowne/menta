@@ -375,7 +375,7 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
         }
         val NULLABLE_TYPE_OF_ANNOTATION_MEMBER by error<KtElement>()
         val VAR_ANNOTATION_PARAMETER by error<KtParameter>(PositioningStrategy.VAL_OR_VAR_NODE)
-        val SUPERTYPES_FOR_ANNOTATION_CLASS by error<KtClass>(PositioningStrategy.SUPERTYPES_LIST)
+        val SUPERTYPES_FOR_ANNOTATION_CLASS by error<KtDefine>(PositioningStrategy.SUPERTYPES_LIST)
         val ANNOTATION_USED_AS_ANNOTATION_ARGUMENT by error<KtAnnotationEntry>()
         val ANNOTATION_ON_ANNOTATION_ARGUMENT by error<KtAnnotationEntry>()
         val ILLEGAL_KOTLIN_VERSION_STRING_VALUE by error<KtExpression>()
@@ -710,7 +710,7 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
         val RESERVED_MEMBER_INSIDE_VALUE_CLASS by error<KtFunction>(PositioningStrategy.DECLARATION_NAME) {
             parameter<String>("name")
         }
-        val RESERVED_MEMBER_FROM_INTERFACE_INSIDE_VALUE_CLASS by error<KtClass>(PositioningStrategy.DECLARATION_NAME) {
+        val RESERVED_MEMBER_FROM_INTERFACE_INSIDE_VALUE_CLASS by error<KtDefine>(PositioningStrategy.DECLARATION_NAME) {
             parameter<String>("interfaceName")
             parameter<String>("methodName")
         }
@@ -1527,7 +1527,7 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
     }
 
     val FUN_INTERFACES by object : DiagnosticGroup("Fun interfaces") {
-        val FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS by error<KtClass>(PositioningStrategy.FUN_MODIFIER)
+        val FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS by error<KtDefine>(PositioningStrategy.FUN_MODIFIER)
         val FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
         val FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
         val FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
@@ -1671,7 +1671,7 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
             parameter<FirClassSymbol<*>>("expectClassSymbol")
             parameter<Collection<FirCallableSymbol<*>>>("members")
         }
-        val DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE by error<KtClass>(PositioningStrategy.SUPERTYPES_LIST) {
+        val DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE by error<KtDefine>(PositioningStrategy.SUPERTYPES_LIST) {
             parameter<FirRegularClassSymbol>("expectClassSymbol")
             parameter<Collection<FirNamedFunctionSymbol>>("members")
         }

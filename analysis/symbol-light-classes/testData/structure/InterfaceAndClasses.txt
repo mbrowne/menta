@@ -1,4 +1,4 @@
-KtClass:
+KtDefine:
   line: 23
   name: AbstractClassTransitiveBaseInterface
   qualifier: my.AbstractClassTransitiveBaseInterface
@@ -18,7 +18,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface1 (my.BaseInterface1)
     ]
 
-KtClass:
+KtDefine:
   line: 19
   name: AbstractClassWithBaseInterface
   qualifier: my.AbstractClassWithBaseInterface
@@ -38,7 +38,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface2 (my.BaseInterface2)
     ]
 
-KtClass:
+KtDefine:
   line: 21
   name: AbstractClassWithComplexInterface
   qualifier: my.AbstractClassWithComplexInterface
@@ -58,7 +58,7 @@ KtClass:
       SymbolLightClassForInterface: ComplexInterface (my.ComplexInterface)
     ]
 
-KtClass:
+KtDefine:
   line: 3
   name: BaseInterface1
   qualifier: my.BaseInterface1
@@ -74,7 +74,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 5
   name: BaseInterface2
   qualifier: my.BaseInterface2
@@ -90,7 +90,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 7
   name: ComplexInterface
   qualifier: my.ComplexInterface
@@ -112,7 +112,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface2 (my.BaseInterface2)
     ]
 
-KtClass:
+KtDefine:
   line: 11
   name: FinalClassWithBaseInterface
   qualifier: my.FinalClassWithBaseInterface
@@ -132,7 +132,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface1 (my.BaseInterface1)
     ]
 
-KtClass:
+KtDefine:
   line: 15
   name: FinalClassWithComplexInterface
   qualifier: my.FinalClassWithComplexInterface
@@ -152,7 +152,7 @@ KtClass:
       SymbolLightClassForInterface: ComplexInterface (my.ComplexInterface)
     ]
 
-KtClass:
+KtDefine:
   line: 17
   name: FinalClassWithComplexInterfaceAndBaseInterface
   qualifier: my.FinalClassWithComplexInterfaceAndBaseInterface
@@ -175,7 +175,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface1 (my.BaseInterface1)
     ]
 
-KtClass:
+KtDefine:
   line: 13
   name: FinalClassWithSeveralBaseInterfaces
   qualifier: my.FinalClassWithSeveralBaseInterfaces
@@ -198,7 +198,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface2 (my.BaseInterface2)
     ]
 
-KtClass:
+KtDefine:
   line: 27
   name: OnlyTransitiveInterface
   qualifier: my.OnlyTransitiveInterface
@@ -214,7 +214,7 @@ KtClass:
       SymbolLightClassForClassOrObject: OpenComplexClass (my.OpenComplexClass)
     ]
 
-KtClass:
+KtDefine:
   line: 9
   name: OpenBaseClass
   qualifier: my.OpenBaseClass
@@ -230,7 +230,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 25
   name: OpenComplexClass
   qualifier: my.OpenComplexClass

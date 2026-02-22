@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.psi.psiUtil.parentsWithSelf
 import org.jetbrains.kotlin.serialization.deserialization.builtins.BuiltInSerializerProtocol
 
 fun KtClassOrObject.defaultJavaAncestorQualifiedName(): String? {
-    if (this !is KtClass) return CommonClassNames.JAVA_LANG_OBJECT
+    if (this !is KtDefine) return CommonClassNames.JAVA_LANG_OBJECT
 
     return when {
         isAnnotation() -> CommonClassNames.JAVA_LANG_ANNOTATION_ANNOTATION

@@ -110,7 +110,7 @@ object LightClassUtil {
         if (psiClass is KtLightClass) {
             val origin = psiClass.kotlinOrigin
             if (origin is KtObjectDeclaration && origin.isCompanion()) {
-                val containingClass = PsiTreeUtil.getParentOfType(origin, KtClass::class.java)
+                val containingClass = PsiTreeUtil.getParentOfType(origin, KtDefine::class.java)
                 if (containingClass != null) {
                     val containingLightClass = containingClass.toLightClass()
                     if (containingLightClass != null) {

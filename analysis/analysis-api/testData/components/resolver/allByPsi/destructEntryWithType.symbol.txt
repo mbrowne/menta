@@ -16,7 +16,7 @@ KtScript(12,250): ''
 KtBlockExpression(12,250): ''
   null
 
-KtClass(14,52): 'annotation class Anno(val str: String)'
+KtDefine(14,52): 'annotation class Anno(val str: String)'
   null
 
 KtDeclarationModifierList(14,24): 'annotation'
@@ -49,7 +49,7 @@ KtDeclarationModifierList(53,58): 'const'
 KtConstantExpression(74,75): '0'
   null
 
-KtClass(76,129): 'data class MyPair(val a: List<List<Int>>, val b: Int)'
+KtDefine(76,129): 'data class MyPair(val a: List<List<Int>>, val b: Int)'
   null
 
 KtDeclarationModifierList(76,80): 'data'

@@ -75,8 +75,8 @@ internal class KtElementTestSymbolTargetResolver(project: Project) : TestSymbolT
 
             val callableName = callableId.callableName.asString()
             buildList {
-                for (ktClass in classes) {
-                    for (member in ktClass.declarations) {
+                for (KtDefine in classes) {
+                    for (member in KtDefine.declarations) {
                         if ((member is KtCallableDeclaration || member is KtEnumEntry) && member.name == callableName) {
                             add(member)
                         }

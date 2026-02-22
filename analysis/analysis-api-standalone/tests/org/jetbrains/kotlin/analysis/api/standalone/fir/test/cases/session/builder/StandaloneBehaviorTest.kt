@@ -25,7 +25,7 @@ import org.jetbrains.kotlin.name.Name
 import org.jetbrains.kotlin.platform.TargetPlatform
 import org.jetbrains.kotlin.platform.js.JsPlatforms
 import org.jetbrains.kotlin.platform.jvm.JvmPlatforms
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtTypeAlias
 import org.jetbrains.kotlin.test.services.StandardLibrariesPathProviderForKotlinProject
@@ -68,7 +68,7 @@ class StandaloneBehaviorTest : AbstractStandaloneTest() {
         val ktFile = session.modulesWithFiles.getValue(sourceModule).single() as KtFile
         assert(ktFile.stub != null)
 
-        val mainClass = ktFile.declarations.first { it is KtClass && it.name == "Main" } as KtClass
+        val mainClass = ktFile.declarations.first { it is KtDefine && it.name == "Main" } as KtDefine
         val parameter = mainClass.primaryConstructor!!.valueParameters.first()
 
         analyze(parameter) {

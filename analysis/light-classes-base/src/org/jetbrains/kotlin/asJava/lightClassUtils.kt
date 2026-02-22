@@ -69,7 +69,7 @@ fun PsiElement.toLightMethods(): List<PsiMethod> = when (this) {
     is KtProperty -> LightClassUtil.getLightClassPropertyMethods(this).toList()
     is KtParameter -> LightClassUtil.getLightClassPropertyMethods(this).toList()
     is KtPropertyAccessor -> LightClassUtil.getLightClassAccessorMethods(this)
-    is KtClass -> listOfNotNull(toLightClass()?.constructors?.firstOrNull())
+    is KtDefine -> listOfNotNull(toLightClass()?.constructors?.firstOrNull())
     is PsiMethod -> listOf(this)
     else -> listOf()
 }
@@ -138,10 +138,10 @@ val PsiElement.namedUnwrappedElement: PsiNamedElement?
 
 
 val KtClassOrObject.hasInterfaceDefaultImpls: Boolean
-    get() = this is KtClass && isInterface() && hasNonAbstractMembers(this)
+    get() = this is KtDefine && isInterface() && hasNonAbstractMembers(this)
 
 val KtClassOrObject.hasRepeatableAnnotationContainer: Boolean
-    get() = this is KtClass &&
+    get() = this is KtDefine &&
             isAnnotation() &&
             run {
                 var hasRepeatableAnnotation = false
@@ -156,7 +156,7 @@ val KtClassOrObject.hasRepeatableAnnotationContainer: Boolean
                 return hasRepeatableAnnotation
             }
 
-private fun hasNonAbstractMembers(ktInterface: KtClass): Boolean = ktInterface.declarations.any(::isNonAbstractMember)
+private fun hasNonAbstractMembers(ktInterface: KtDefine): Boolean = ktInterface.declarations.any(::isNonAbstractMember)
 
 private fun isNonAbstractMember(member: KtDeclaration?): Boolean =
     (member is KtNamedFunction && member.hasBody()) ||

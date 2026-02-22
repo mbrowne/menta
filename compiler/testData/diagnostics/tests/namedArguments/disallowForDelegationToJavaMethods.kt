@@ -17,10 +17,10 @@ public class JavaSuperClass implements JavaInterface {
 
 // FILE: 1.kt
 
-class KtClass: JavaInterface by JavaSuperClass()
+class KtDefine: JavaInterface by JavaSuperClass()
 
 fun test() {
-    val ktInstance = KtClass()
+    val ktInstance = KtDefine()
     ktInstance.foo(<!NAMED_ARGUMENTS_NOT_ALLOWED!>javaName<!> = 1)
 }
 

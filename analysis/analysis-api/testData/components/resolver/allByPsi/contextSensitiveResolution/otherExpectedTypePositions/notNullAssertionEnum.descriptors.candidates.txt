@@ -25,7 +25,7 @@ KtNameReferenceExpression(92,99): 'reflect'
 KtNameReferenceExpression(100,109): 'KProperty'
   NO_CANDIDATES
 
-KtClass(111,301): 'enum class MyEnum {'
+KtDefine(111,301): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(111,115): 'enum'

@@ -227,7 +227,7 @@ class KtPsiFactory private constructor(
         return createWhiteSpace("\n".repeat(lineBreaks))
     }
 
-    fun createClass(@NonNls text: String): KtClass {
+    fun createClass(@NonNls text: String): KtDefine {
         return createDeclaration(text)
     }
 
@@ -475,7 +475,7 @@ class KtPsiFactory private constructor(
 
 
     fun createEnumEntry(@NonNls text: String): KtEnumEntry {
-        return createDeclaration<KtClass>("enum define E {$text}").declarations[0] as KtEnumEntry
+        return createDeclaration<KtDefine>("enum define E {$text}").declarations[0] as KtEnumEntry
     }
 
     fun createEnumEntryInitializerList(): KtInitializerList {

@@ -96,7 +96,7 @@ open class LazyDeclarationResolver constructor(
                 if (isTopLevel && track) KotlinLookupLocation(declaration)
                 else NoLookupLocation.WHEN_RESOLVE_DECLARATION
 
-            override fun visitClass(klass: KtClass, data: Nothing?): DeclarationDescriptor? =
+            override fun visitDefine(klass: KtDefine, data: Nothing?): DeclarationDescriptor? =
                 getClassDescriptorIfAny(klass, lookupLocationFor(klass, klass.isTopLevel()))
 
             override fun visitObjectDeclaration(declaration: KtObjectDeclaration, data: Nothing?): DeclarationDescriptor? =

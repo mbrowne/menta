@@ -105,7 +105,7 @@ public class LazyTypeParameterDescriptor extends AbstractLazyTypeParameterDescri
         Collection<KtTypeReference> result = new ArrayList<>();
 
         KtClassOrObject classOrObject = KtStubbedPsiUtil.getPsiOrStubParent(typeParameter, KtClassOrObject.class, true);
-        if (classOrObject instanceof KtClass) {
+        if (classOrObject instanceof KtDefine) {
             for (KtTypeConstraint typeConstraint : classOrObject.getTypeConstraints()) {
                 KtSimpleNameExpression constrainedParameterName = typeConstraint.getSubjectTypeParameterName();
                 if (constrainedParameterName != null) {

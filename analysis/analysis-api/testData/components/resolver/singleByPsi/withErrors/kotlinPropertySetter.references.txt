@@ -3,4 +3,4 @@ KtNameReferenceExpression(51,54): 'foo'
     isImplicitReferenceToCompanion: false
     usesContextSensitiveResolution: false
     symbols:
-      (in KtClass) var foo: kotlin.Int
+      (in KtDefine) var foo: kotlin.Int

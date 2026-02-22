@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,51): 'class MyClass() {'
+KtDefine(0,51): 'class MyClass() {'
   NO_CANDIDATES
 
 KtPrimaryConstructor(13,15): '()'

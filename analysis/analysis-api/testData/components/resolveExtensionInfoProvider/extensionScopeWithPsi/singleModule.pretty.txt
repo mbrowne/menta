@@ -2,15 +2,15 @@ packages: 1
   generated
 classifiers: 2
   class GenClass1
-    PSI: KtClass GenClass1 [from extension1.kt]
+    PSI: KtDefine GenClass1 [from extension1.kt]
       From resolve extension: true
       Resolve extension navigation targets: 1
-        [Resolve extension navigation target for test for KtClass GenClass1]
+        [Resolve extension navigation target for test for KtDefine GenClass1]
   class GenClass2
-    PSI: KtClass GenClass2 [from extension2.kt]
+    PSI: KtDefine GenClass2 [from extension2.kt]
       From resolve extension: true
       Resolve extension navigation targets: 1
-        [Resolve extension navigation target for test for KtClass GenClass2]
+        [Resolve extension navigation target for test for KtDefine GenClass2]
 callables: 5
   fun genTopLevelFun1(foo: generated.GenClass2): kotlin.String
     PSI: KtNamedFunction genTopLevelFun1 [from extension1.kt]

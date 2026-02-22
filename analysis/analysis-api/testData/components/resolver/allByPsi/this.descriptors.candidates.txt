@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,11): 'one'
 KtImportList(11,11): ''
   NO_CANDIDATES
 
-KtClass(13,1226): 'class MyClass {'
+KtDefine(13,1226): 'class MyClass {'
   NO_CANDIDATES
 
 KtClassBody(27,1226): '{'
@@ -224,7 +224,7 @@ KtNameReferenceExpression(112,115): 'foo'
 KtValueArgumentList(115,117): '()'
   NO_CANDIDATES
 
-KtClass(129,1224): 'inner class InnerOuter {'
+KtDefine(129,1224): 'inner class InnerOuter {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(129,134): 'inner'
@@ -557,7 +557,7 @@ KtNameReferenceExpression(291,294): 'foo'
 KtValueArgumentList(294,296): '()'
   NO_CANDIDATES
 
-KtClass(316,1218): 'inner class InnerNested {'
+KtDefine(316,1218): 'inner class InnerNested {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(316,321): 'inner'

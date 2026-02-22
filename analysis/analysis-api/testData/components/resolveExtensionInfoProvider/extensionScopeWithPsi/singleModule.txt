@@ -30,10 +30,10 @@ classifiers: 2
     ]
     typeParameters: []
     visibility: PUBLIC
-    PSI: KtClass GenClass1 [from extension1.kt]
+    PSI: KtDefine GenClass1 [from extension1.kt]
       From resolve extension: true
       Resolve extension navigation targets: 1
-        [Resolve extension navigation target for test for KtClass GenClass1]
+        [Resolve extension navigation target for test for KtDefine GenClass1]
   KaNamedClassSymbol:
     annotations: []
     classId: generated/GenClass2
@@ -60,10 +60,10 @@ classifiers: 2
     ]
     typeParameters: []
     visibility: PUBLIC
-    PSI: KtClass GenClass2 [from extension2.kt]
+    PSI: KtDefine GenClass2 [from extension2.kt]
       From resolve extension: true
       Resolve extension navigation targets: 1
-        [Resolve extension navigation target for test for KtClass GenClass2]
+        [Resolve extension navigation target for test for KtDefine GenClass2]
 callables: 5
   KaNamedFunctionSymbol:
     annotations: []

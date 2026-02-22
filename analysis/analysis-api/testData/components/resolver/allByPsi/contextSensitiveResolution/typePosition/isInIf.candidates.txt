@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,473): 'sealed class SealedClass {'
+KtDefine(78,473): 'sealed class SealedClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(78,84): 'sealed'
 KtClassBody(103,473): '{'
   NO_CANDIDATES
 
-KtClass(109,176): 'open class SealedInheritor1(val prop1: String = "1"): SealedClass()'
+KtDefine(109,176): 'open class SealedInheritor1(val prop1: String = "1"): SealedClass()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(109,113): 'open'
@@ -99,7 +99,7 @@ KtNameReferenceExpression(163,174): 'SealedClass'
 KtValueArgumentList(174,176): '()'
   NO_CANDIDATES
 
-KtClass(181,238): 'class SealedInheritor2(val prop2: Int = 2): SealedClass()'
+KtDefine(181,238): 'class SealedInheritor2(val prop2: Int = 2): SealedClass()'
   NO_CANDIDATES
 
 KtPrimaryConstructor(203,223): '(val prop2: Int = 2)'
@@ -176,7 +176,7 @@ KtNameReferenceExpression(225,236): 'SealedClass'
 KtValueArgumentList(236,238): '()'
   NO_CANDIDATES
 
-KtClass(244,321): 'sealed class SealedSealedInheritor1(val prop3: Boolean = true): SealedClass()'
+KtDefine(244,321): 'sealed class SealedSealedInheritor1(val prop3: Boolean = true): SealedClass()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(244,250): 'sealed'
@@ -256,7 +256,7 @@ KtNameReferenceExpression(308,319): 'SealedClass'
 KtValueArgumentList(319,321): '()'
   NO_CANDIDATES
 
-KtClass(327,376): 'class IndirectSealedInheritor: SealedInheritor1()'
+KtDefine(327,376): 'class IndirectSealedInheritor: SealedInheritor1()'
   NO_CANDIDATES
 
 KtSuperTypeList(358,376): 'SealedInheritor1()'
@@ -328,7 +328,7 @@ KtNameReferenceExpression(358,374): 'SealedInheritor1'
 KtValueArgumentList(374,376): '()'
   NO_CANDIDATES
 
-KtClass(382,452): 'inner class Inner(val innerProp: String = "inner prop"): SealedClass()'
+KtDefine(382,452): 'inner class Inner(val innerProp: String = "inner prop"): SealedClass()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(382,387): 'inner'
@@ -411,7 +411,7 @@ KtNameReferenceExpression(439,450): 'SealedClass'
 KtValueArgumentList(450,452): '()'
   NO_CANDIDATES
 
-KtClass(458,471): 'class Nested1'
+KtDefine(458,471): 'class Nested1'
   NO_CANDIDATES
 
 KtNamedFunction(475,1090): 'fun testIsInIf(instance: SealedClass): String {'

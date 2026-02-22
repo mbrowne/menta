@@ -441,7 +441,7 @@ class ExpectedActualDeclarationChecker(
     }
 
     // This should ideally be handled by CallableMemberDescriptor.Kind, but default constructors have kind DECLARATION and non-empty source.
-    // Their source is the containing KtClass instance though, as opposed to explicit constructors, whose source is KtConstructor
+    // Their source is the containing KtDefine instance though, as opposed to explicit constructors, whose source is KtConstructor
     private fun MemberDescriptor.isExplicitActualDeclaration(): Boolean =
         when (this) {
             is ConstructorDescriptor -> DescriptorToSourceUtils.getSourceFromDescriptor(this) is KtConstructor<*>

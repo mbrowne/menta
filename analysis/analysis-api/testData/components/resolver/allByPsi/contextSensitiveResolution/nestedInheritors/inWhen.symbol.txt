@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,141): 'sealed class MyClass {'
+KtDefine(78,141): 'sealed class MyClass {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -307,7 +307,7 @@ KtWhenEntry(697,719): 'else -> OtherInheritor'
 KtNameReferenceExpression(705,719): 'OtherInheritor'
   null
 
-KtClass(739,877): 'sealed class OtherClass {'
+KtDefine(739,877): 'sealed class OtherClass {'
   null
 
 KtDeclarationModifierList(739,745): 'sealed'
@@ -316,7 +316,7 @@ KtDeclarationModifierList(739,745): 'sealed'
 KtClassBody(763,877): '{'
   null
 
-KtClass(769,803): 'abstract class Base : OtherClass()'
+KtDefine(769,803): 'abstract class Base : OtherClass()'
   null
 
 KtDeclarationModifierList(769,777): 'abstract'
@@ -346,7 +346,7 @@ KtNameReferenceExpression(791,801): 'OtherClass'
 KtValueArgumentList(801,803): '()'
   null
 
-KtClass(809,825): 'class A : Base()'
+KtDefine(809,825): 'class A : Base()'
   null
 
 KtSuperTypeList(819,825): 'Base()'
@@ -373,7 +373,7 @@ KtNameReferenceExpression(819,823): 'Base'
 KtValueArgumentList(823,825): '()'
   null
 
-KtClass(830,846): 'class B : Base()'
+KtDefine(830,846): 'class B : Base()'
   null
 
 KtSuperTypeList(840,846): 'Base()'
@@ -565,7 +565,7 @@ KtWhenEntry(1114,1123): 'else -> C'
 KtNameReferenceExpression(1122,1123): 'C'
   null
 
-KtClass(1143,1219): 'open class OpenClass {'
+KtDefine(1143,1219): 'open class OpenClass {'
   null
 
 KtDeclarationModifierList(1143,1147): 'open'

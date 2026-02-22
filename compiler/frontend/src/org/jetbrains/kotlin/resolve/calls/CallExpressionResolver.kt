@@ -529,7 +529,7 @@ class CallExpressionResolver(
         }
 
         private fun isUnderAnnotationClassDeclaration(trace: BindingTrace, parent: PsiElement) =
-            parent.getParentOfType<KtClass>(true)?.let {
+            parent.getParentOfType<KtDefine>(true)?.let {
                 DescriptorUtils.isAnnotationClass(trace.get(BindingContext.DECLARATION_TO_DESCRIPTOR, it))
             } ?: false
 

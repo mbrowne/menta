@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,109): 'enum class MyEnum1 {'
+KtDefine(78,109): 'enum class MyEnum1 {'
   null
 
 KtDeclarationModifierList(78,82): 'enum'
@@ -22,7 +22,7 @@ KtEnumEntry(103,105): 'X,'
 KtEnumEntry(106,107): 'Y'
   null
 
-KtClass(111,142): 'enum class MyEnum2 {'
+KtDefine(111,142): 'enum class MyEnum2 {'
   null
 
 KtDeclarationModifierList(111,115): 'enum'
@@ -37,7 +37,7 @@ KtEnumEntry(136,138): 'X,'
 KtEnumEntry(139,140): 'Y'
   null
 
-KtClass(144,175): 'enum class MyEnum3 {'
+KtDefine(144,175): 'enum class MyEnum3 {'
   null
 
 KtDeclarationModifierList(144,148): 'enum'

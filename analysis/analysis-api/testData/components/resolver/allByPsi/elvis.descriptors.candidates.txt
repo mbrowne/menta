@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,115): 'class MyClass {'
+KtDefine(0,115): 'class MyClass {'
   NO_CANDIDATES
 
 KtClassBody(14,115): '{'

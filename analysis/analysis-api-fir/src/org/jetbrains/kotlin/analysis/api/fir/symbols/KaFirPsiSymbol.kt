@@ -213,7 +213,7 @@ internal fun KtCallableDeclaration.psiBasedDefaultKaModality(
     val containingClassOrObject = containingClassOrObject
     when {
         containingClassOrObject == null -> KaSymbolModality.FINAL
-        containingClassOrObject is KtClass && containingClassOrObject.isInterface() -> {
+        containingClassOrObject is KtDefine && containingClassOrObject.isInterface() -> {
             when {
                 hasModifier(KtTokens.PRIVATE_KEYWORD) -> KaSymbolModality.FINAL
                 this is KtNamedFunction && !hasBody() -> KaSymbolModality.ABSTRACT
@@ -240,7 +240,7 @@ internal fun KaFirKtBasedSymbol<KtClassOrObject, FirClassSymbol<*>>.createSuperT
     }
 
     val specialSuperType = when {
-        backingPsi !is KtClass || this !is KaNamedClassSymbol -> null
+        backingPsi !is KtDefine || this !is KaNamedClassSymbol -> null
         backingPsi.isAnnotation() -> analysisSession.builtinTypes.annotationType
         backingPsi.isEnum() -> with(analysisSession) {
             val enumFirSymbol = firSession.builtinTypes.enumType.toRegularClassSymbol(firSession)

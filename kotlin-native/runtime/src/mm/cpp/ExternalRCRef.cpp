@@ -99,7 +99,7 @@ void mm::ExternalRCRefImpl::dispose() noexcept {
     if (compiler::runtimeAssertsEnabled()) {
         if (rc > 0) {
             auto* obj = objAtomic().load(std::memory_order_relaxed);
-            // In objc export if ObjCClass extends from KtClass
+            // In objc export if ObjCClass extends from KtDefine
             // doing retain+autorelease inside [ObjCClass dealloc] will cause
             // this->dispose() be called after this->retain() but before
             // subsequent this->release().
@@ -140,7 +140,7 @@ void mm::ExternalRCRefImpl::retainRef() noexcept {
     RuntimeAssert(rc >= 0, "Retaining ExternalRCRefImpl@%p with rc %d", this, rc);
     if (rc == 0) {
         if (!objAtomic().load(std::memory_order_relaxed)) {
-            // In objc export if ObjCClass extends from KtClass
+            // In objc export if ObjCClass extends from KtDefine
             // calling retain inside [ObjCClass dealloc] will cause
             // node.retainRef() be called after node.obj_ was cleared but
             // before node.dispose().

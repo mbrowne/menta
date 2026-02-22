@@ -24,7 +24,7 @@ internal object KtStubBasedElementTypes {
     // Classifiers
 
     @JvmField
-    val CLASS: KtStubElementType<out KotlinClassStub, KtClass> =
+    val CLASS: KtStubElementType<out KotlinClassStub, KtDefine> =
         provider.classType
 
     @JvmField

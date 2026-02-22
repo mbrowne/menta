@@ -994,7 +994,7 @@ public class org/jetbrains/kotlin/psi/KtCatchClause : org/jetbrains/kotlin/psi/K
 	public fun getParameterList ()Lorg/jetbrains/kotlin/psi/KtParameterList;
 }
 
-public class org/jetbrains/kotlin/psi/KtClass : org/jetbrains/kotlin/psi/KtClassOrObject {
+public class org/jetbrains/kotlin/psi/KtDefine : org/jetbrains/kotlin/psi/KtClassOrObject {
 	public fun <init> (Lcom/intellij/lang/ASTNode;)V
 	public fun <init> (Lorg/jetbrains/kotlin/psi/stubs/KotlinClassStub;)V
 	public fun <init> (Lorg/jetbrains/kotlin/psi/stubs/KotlinClassStub;Lcom/intellij/psi/stubs/IStubElementType;)V
@@ -1039,9 +1039,9 @@ public final class org/jetbrains/kotlin/psi/KtClassInitializer : org/jetbrains/k
 	public final fun getOpenBraceNode ()Lcom/intellij/psi/PsiElement;
 }
 
-public final class org/jetbrains/kotlin/psi/KtClassKt {
-	public static final fun createPrimaryConstructorIfAbsent (Lorg/jetbrains/kotlin/psi/KtClass;)Lorg/jetbrains/kotlin/psi/KtPrimaryConstructor;
-	public static final fun createPrimaryConstructorParameterListIfAbsent (Lorg/jetbrains/kotlin/psi/KtClass;)Lorg/jetbrains/kotlin/psi/KtParameterList;
+public final class org/jetbrains/kotlin/psi/KtDefineKt {
+	public static final fun createPrimaryConstructorIfAbsent (Lorg/jetbrains/kotlin/psi/KtDefine;)Lorg/jetbrains/kotlin/psi/KtPrimaryConstructor;
+	public static final fun createPrimaryConstructorParameterListIfAbsent (Lorg/jetbrains/kotlin/psi/KtDefine;)Lorg/jetbrains/kotlin/psi/KtParameterList;
 }
 
 public abstract interface class org/jetbrains/kotlin/psi/KtClassLikeDeclaration : org/jetbrains/kotlin/psi/KtNamedDeclaration {
@@ -1531,7 +1531,7 @@ public final class org/jetbrains/kotlin/psi/KtElementUtilsKt {
 	public static synthetic fun unpackFunctionLiteral$default (Lorg/jetbrains/kotlin/psi/KtExpression;ZILjava/lang/Object;)Lorg/jetbrains/kotlin/psi/KtLambdaExpression;
 }
 
-public class org/jetbrains/kotlin/psi/KtEnumEntry : org/jetbrains/kotlin/psi/KtClass, org/jetbrains/kotlin/psi/KtDeclarationWithReturnType {
+public class org/jetbrains/kotlin/psi/KtEnumEntry : org/jetbrains/kotlin/psi/KtDefine, org/jetbrains/kotlin/psi/KtDeclarationWithReturnType {
 	public fun <init> (Lcom/intellij/lang/ASTNode;)V
 	public fun <init> (Lorg/jetbrains/kotlin/psi/stubs/KotlinClassStub;)V
 	public fun accept (Lorg/jetbrains/kotlin/psi/KtVisitor;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2231,7 +2231,7 @@ public final class org/jetbrains/kotlin/psi/KtPsiFactory {
 	public final fun createBlockStringTemplateEntry (Lorg/jetbrains/kotlin/psi/KtExpression;)Lorg/jetbrains/kotlin/psi/KtStringTemplateEntryWithExpression;
 	public final fun createCallArguments (Ljava/lang/String;)Lorg/jetbrains/kotlin/psi/KtValueArgumentList;
 	public final fun createCallableReferenceExpression (Ljava/lang/String;)Lorg/jetbrains/kotlin/psi/KtCallableReferenceExpression;
-	public final fun createClass (Ljava/lang/String;)Lorg/jetbrains/kotlin/psi/KtClass;
+	public final fun createClass (Ljava/lang/String;)Lorg/jetbrains/kotlin/psi/KtDefine;
 	public final fun createClassKeyword ()Lcom/intellij/psi/PsiElement;
 	public final fun createColon ()Lcom/intellij/psi/PsiElement;
 	public final fun createComma ()Lcom/intellij/psi/PsiElement;
@@ -2958,7 +2958,7 @@ public class org/jetbrains/kotlin/psi/KtVisitor : com/intellij/psi/PsiElementVis
 	public fun visitCallExpression (Lorg/jetbrains/kotlin/psi/KtCallExpression;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun visitCallableReferenceExpression (Lorg/jetbrains/kotlin/psi/KtCallableReferenceExpression;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun visitCatchSection (Lorg/jetbrains/kotlin/psi/KtCatchClause;Ljava/lang/Object;)Ljava/lang/Object;
-	public fun visitClass (Lorg/jetbrains/kotlin/psi/KtClass;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun visitDefine (Lorg/jetbrains/kotlin/psi/KtDefine;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun visitClassBody (Lorg/jetbrains/kotlin/psi/KtClassBody;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun visitClassInitializer (Lorg/jetbrains/kotlin/psi/KtClassInitializer;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun visitClassLiteralExpression (Lorg/jetbrains/kotlin/psi/KtClassLiteralExpression;Ljava/lang/Object;)Ljava/lang/Object;
@@ -3103,9 +3103,9 @@ public class org/jetbrains/kotlin/psi/KtVisitorVoid : org/jetbrains/kotlin/psi/K
 	public fun visitCatchSection (Lorg/jetbrains/kotlin/psi/KtCatchClause;)V
 	public synthetic fun visitCatchSection (Lorg/jetbrains/kotlin/psi/KtCatchClause;Ljava/lang/Object;)Ljava/lang/Object;
 	public final fun visitCatchSection (Lorg/jetbrains/kotlin/psi/KtCatchClause;Ljava/lang/Void;)Ljava/lang/Void;
-	public fun visitClass (Lorg/jetbrains/kotlin/psi/KtClass;)V
-	public synthetic fun visitClass (Lorg/jetbrains/kotlin/psi/KtClass;Ljava/lang/Object;)Ljava/lang/Object;
-	public final fun visitClass (Lorg/jetbrains/kotlin/psi/KtClass;Ljava/lang/Void;)Ljava/lang/Void;
+	public fun visitDefine (Lorg/jetbrains/kotlin/psi/KtDefine;)V
+	public synthetic fun visitDefine (Lorg/jetbrains/kotlin/psi/KtDefine;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun visitDefine (Lorg/jetbrains/kotlin/psi/KtDefine;Ljava/lang/Void;)Ljava/lang/Void;
 	public fun visitClassBody (Lorg/jetbrains/kotlin/psi/KtClassBody;)V
 	public synthetic fun visitClassBody (Lorg/jetbrains/kotlin/psi/KtClassBody;Ljava/lang/Object;)Ljava/lang/Object;
 	public final fun visitClassBody (Lorg/jetbrains/kotlin/psi/KtClassBody;Ljava/lang/Void;)Ljava/lang/Void;
@@ -3435,15 +3435,15 @@ public class org/jetbrains/kotlin/psi/KtVisitorVoidWithParameter : org/jetbrains
 	public synthetic fun visitCatchSection (Lorg/jetbrains/kotlin/psi/KtCatchClause;Ljava/lang/Object;)Ljava/lang/Object;
 	public final fun visitCatchSection (Lorg/jetbrains/kotlin/psi/KtCatchClause;Ljava/lang/Object;)Ljava/lang/Void;
 	public fun visitCatchSectionVoid (Lorg/jetbrains/kotlin/psi/KtCatchClause;Ljava/lang/Object;)V
-	public synthetic fun visitClass (Lorg/jetbrains/kotlin/psi/KtClass;Ljava/lang/Object;)Ljava/lang/Object;
-	public final fun visitClass (Lorg/jetbrains/kotlin/psi/KtClass;Ljava/lang/Object;)Ljava/lang/Void;
+	public synthetic fun visitDefine (Lorg/jetbrains/kotlin/psi/KtDefine;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun visitDefine (Lorg/jetbrains/kotlin/psi/KtDefine;Ljava/lang/Object;)Ljava/lang/Void;
 	public synthetic fun visitClassBody (Lorg/jetbrains/kotlin/psi/KtClassBody;Ljava/lang/Object;)Ljava/lang/Object;
 	public final fun visitClassBody (Lorg/jetbrains/kotlin/psi/KtClassBody;Ljava/lang/Object;)Ljava/lang/Void;
 	public fun visitClassBodyVoid (Lorg/jetbrains/kotlin/psi/KtClassBody;Ljava/lang/Object;)V
 	public synthetic fun visitClassLiteralExpression (Lorg/jetbrains/kotlin/psi/KtClassLiteralExpression;Ljava/lang/Object;)Ljava/lang/Object;
 	public final fun visitClassLiteralExpression (Lorg/jetbrains/kotlin/psi/KtClassLiteralExpression;Ljava/lang/Object;)Ljava/lang/Void;
 	public fun visitClassLiteralExpressionVoid (Lorg/jetbrains/kotlin/psi/KtClassLiteralExpression;Ljava/lang/Object;)V
-	public fun visitClassVoid (Lorg/jetbrains/kotlin/psi/KtClass;Ljava/lang/Object;)V
+	public fun visitDefineVoid (Lorg/jetbrains/kotlin/psi/KtDefine;Ljava/lang/Object;)V
 	public synthetic fun visitCollectionLiteralExpression (Lorg/jetbrains/kotlin/psi/KtCollectionLiteralExpression;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun visitCollectionLiteralExpression (Lorg/jetbrains/kotlin/psi/KtCollectionLiteralExpression;Ljava/lang/Object;)Ljava/lang/Void;
 	public fun visitCollectionLiteralExpressionVoid (Lorg/jetbrains/kotlin/psi/KtCollectionLiteralExpression;Ljava/lang/Object;)V
@@ -3801,7 +3801,7 @@ public final class org/jetbrains/kotlin/psi/psiUtil/KtPsiUtilKt {
 	public static final fun blockExpressionsOrSingle (Lorg/jetbrains/kotlin/psi/KtElement;)Lkotlin/sequences/Sequence;
 	public static final fun canPlaceAfterSimpleNameEntry (Lcom/intellij/psi/PsiElement;)Z
 	public static final fun collectAnnotationEntriesFromStubOrPsi (Lorg/jetbrains/kotlin/psi/KtAnnotationsContainer;)Ljava/util/List;
-	public static final fun containingClass (Lorg/jetbrains/kotlin/psi/KtElement;)Lorg/jetbrains/kotlin/psi/KtClass;
+	public static final fun containingClass (Lorg/jetbrains/kotlin/psi/KtElement;)Lorg/jetbrains/kotlin/psi/KtDefine;
 	public static final fun contentRange (Lorg/jetbrains/kotlin/psi/KtBlockExpression;)Lorg/jetbrains/kotlin/psi/psiUtil/PsiChildRange;
 	public static final fun effectiveDeclarations (Lorg/jetbrains/kotlin/psi/KtClassOrObject;)Ljava/util/List;
 	public static final fun findAssignment (Lcom/intellij/psi/PsiElement;)Lorg/jetbrains/kotlin/psi/KtBinaryExpression;
@@ -3840,7 +3840,7 @@ public final class org/jetbrains/kotlin/psi/psiUtil/KtPsiUtilKt {
 	public static final fun getValueParameters (Lorg/jetbrains/kotlin/psi/KtNamedDeclaration;)Ljava/util/List;
 	public static final fun hasBody (Lorg/jetbrains/kotlin/psi/KtDeclaration;)Z
 	public static final fun inferClassIdByPsi (Lorg/jetbrains/kotlin/psi/KtConstantExpression;)Lorg/jetbrains/kotlin/name/ClassId;
-	public static final fun isAbstract (Lorg/jetbrains/kotlin/psi/KtClass;)Z
+	public static final fun isAbstract (Lorg/jetbrains/kotlin/psi/KtDefine;)Z
 	public static final fun isActualDeclaration (Lorg/jetbrains/kotlin/psi/KtDeclaration;)Z
 	public static final fun isCallee (Lorg/jetbrains/kotlin/psi/KtSimpleNameExpression;)Z
 	public static final fun isContextualDeclaration (Lorg/jetbrains/kotlin/psi/KtElement;)Z

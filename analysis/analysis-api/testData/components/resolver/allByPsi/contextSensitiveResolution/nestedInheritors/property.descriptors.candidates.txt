@@ -28,7 +28,7 @@ KtNameReferenceExpression(100,107): 'MyClass'
 KtBlockExpression(109,111): '{}'
   NO_CANDIDATES
 
-KtClass(113,293): 'sealed class MyClass {'
+KtDefine(113,293): 'sealed class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(113,119): 'sealed'

@@ -92,7 +92,7 @@ fun getParentForLocalDeclaration(classOrObject: KtClassOrObject): PsiElement? {
                 }
             }
 
-            is KtClass -> {
+            is KtDefine -> {
                 return declaration.toLightClass()
             }
         }

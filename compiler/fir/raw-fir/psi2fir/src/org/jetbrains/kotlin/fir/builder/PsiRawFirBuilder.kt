@@ -1089,7 +1089,7 @@ open class PsiRawFirBuilder(
             }
 
             when (this) {
-                is KtClass if classKind == ClassKind.ENUM_CLASS && superTypeCallEntry == null -> {
+                is KtDefine if classKind == ClassKind.ENUM_CLASS && superTypeCallEntry == null -> {
                     /*
                      * kotlin.Enum constructor has (name: String, ordinal: Int) signature,
                      *   so we should generate non-trivial constructors for enum and it's entry
@@ -1106,7 +1106,7 @@ open class PsiRawFirBuilder(
                     }
                     container.superTypeRefs += delegatedSuperTypeRef
                 }
-                is KtClass if classKind == ClassKind.ANNOTATION_CLASS -> {
+                is KtDefine if classKind == ClassKind.ANNOTATION_CLASS -> {
                     container.superTypeRefs += implicitAnnotationType
                     delegatedSuperTypeRef = implicitAnyType
                 }
@@ -1116,7 +1116,7 @@ open class PsiRawFirBuilder(
             val isKotlinAny = constructedClassId == StandardClassIds.Any
             val defaultDelegatedSuperTypeRef =
                 when {
-                    classKind == ClassKind.ENUM_ENTRY && this is KtClass -> delegatedEnumSuperTypeRef ?: implicitAnyType
+                    classKind == ClassKind.ENUM_ENTRY && this is KtDefine -> delegatedEnumSuperTypeRef ?: implicitAnyType
                     container.superTypeRefs.isEmpty() && !isKotlinAny -> implicitAnyType
                     else -> FirImplicitTypeRefImplWithoutSource
                 }
@@ -1138,7 +1138,7 @@ open class PsiRawFirBuilder(
             val shouldGenerateImplicitPrimaryConstructor =
                 !hasSecondaryConstructors() &&
                         !containingClassIsExpectClass &&
-                        (this !is KtClass || !this.isInterface())
+                        (this !is KtDefine || !this.isInterface())
 
             val hasPrimaryConstructor = primaryConstructor != null || shouldGenerateImplicitPrimaryConstructor
             if (hasPrimaryConstructor || superTypeCallEntry != null) {
@@ -1923,7 +1923,7 @@ open class PsiRawFirBuilder(
                     val isLocal = context.inLocalContext
                     val classKind = when (classOrObject) {
                         is KtObjectDeclaration -> ClassKind.OBJECT
-                        is KtClass -> when {
+                        is KtDefine -> when {
                             classOrObject.isInterface() -> ClassKind.INTERFACE
                             classOrObject.isEnum() -> ClassKind.ENUM_CLASS
                             classOrObject.isAnnotation() -> ClassKind.ANNOTATION_CLASS

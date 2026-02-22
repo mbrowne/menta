@@ -97,7 +97,6 @@ import org.jetbrains.kotlin.psi.KtBackingField
 import org.jetbrains.kotlin.psi.KtBinaryExpression
 import org.jetbrains.kotlin.psi.KtBinaryExpressionWithTypeRHS
 import org.jetbrains.kotlin.psi.KtCallableDeclaration
-import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtClassLikeDeclaration
 import org.jetbrains.kotlin.psi.KtClassLiteralExpression
 import org.jetbrains.kotlin.psi.KtClassOrObject
@@ -107,6 +106,7 @@ import org.jetbrains.kotlin.psi.KtConstructorDelegationCall
 import org.jetbrains.kotlin.psi.KtContextReceiver
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtDeclarationWithBody
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDelegatedSuperTypeEntry
 import org.jetbrains.kotlin.psi.KtDestructuringDeclaration
 import org.jetbrains.kotlin.psi.KtElement
@@ -322,7 +322,7 @@ object FirErrors : KtDiagnosticsContainer() {
     val NOT_AN_ANNOTATION_CLASS: KtDiagnosticFactory1<String> = KtDiagnosticFactory1("NOT_AN_ANNOTATION_CLASS", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
     val NULLABLE_TYPE_OF_ANNOTATION_MEMBER: KtDiagnosticFactory0 = KtDiagnosticFactory0("NULLABLE_TYPE_OF_ANNOTATION_MEMBER", ERROR, SourceElementPositioningStrategies.DEFAULT, KtElement::class, getRendererFactory())
     val VAR_ANNOTATION_PARAMETER: KtDiagnosticFactory0 = KtDiagnosticFactory0("VAR_ANNOTATION_PARAMETER", ERROR, SourceElementPositioningStrategies.VAL_OR_VAR_NODE, KtParameter::class, getRendererFactory())
-    val SUPERTYPES_FOR_ANNOTATION_CLASS: KtDiagnosticFactory0 = KtDiagnosticFactory0("SUPERTYPES_FOR_ANNOTATION_CLASS", ERROR, SourceElementPositioningStrategies.SUPERTYPES_LIST, KtClass::class, getRendererFactory())
+    val SUPERTYPES_FOR_ANNOTATION_CLASS: KtDiagnosticFactory0 = KtDiagnosticFactory0("SUPERTYPES_FOR_ANNOTATION_CLASS", ERROR, SourceElementPositioningStrategies.SUPERTYPES_LIST, KtDefine::class, getRendererFactory())
     val ANNOTATION_USED_AS_ANNOTATION_ARGUMENT: KtDiagnosticFactory0 = KtDiagnosticFactory0("ANNOTATION_USED_AS_ANNOTATION_ARGUMENT", ERROR, SourceElementPositioningStrategies.DEFAULT, KtAnnotationEntry::class, getRendererFactory())
     val ANNOTATION_ON_ANNOTATION_ARGUMENT: KtDiagnosticFactory0 = KtDiagnosticFactory0("ANNOTATION_ON_ANNOTATION_ARGUMENT", ERROR, SourceElementPositioningStrategies.DEFAULT, KtAnnotationEntry::class, getRendererFactory())
     val ILLEGAL_KOTLIN_VERSION_STRING_VALUE: KtDiagnosticFactory0 = KtDiagnosticFactory0("ILLEGAL_KOTLIN_VERSION_STRING_VALUE", ERROR, SourceElementPositioningStrategies.DEFAULT, KtExpression::class, getRendererFactory())
@@ -460,7 +460,7 @@ object FirErrors : KtDiagnosticsContainer() {
     val MULTI_FIELD_VALUE_CLASS_PRIMARY_CONSTRUCTOR_DEFAULT_PARAMETER: KtDiagnosticFactory0 = KtDiagnosticFactory0("MULTI_FIELD_VALUE_CLASS_PRIMARY_CONSTRUCTOR_DEFAULT_PARAMETER", ERROR, SourceElementPositioningStrategies.DEFAULT, KtExpression::class, getRendererFactory())
     val SECONDARY_CONSTRUCTOR_WITH_BODY_INSIDE_VALUE_CLASS: KtDiagnosticFactory0 = KtDiagnosticFactory0("SECONDARY_CONSTRUCTOR_WITH_BODY_INSIDE_VALUE_CLASS", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
     val RESERVED_MEMBER_INSIDE_VALUE_CLASS: KtDiagnosticFactory1<String> = KtDiagnosticFactory1("RESERVED_MEMBER_INSIDE_VALUE_CLASS", ERROR, SourceElementPositioningStrategies.DECLARATION_NAME, KtFunction::class, getRendererFactory())
-    val RESERVED_MEMBER_FROM_INTERFACE_INSIDE_VALUE_CLASS: KtDiagnosticFactory2<String, String> = KtDiagnosticFactory2("RESERVED_MEMBER_FROM_INTERFACE_INSIDE_VALUE_CLASS", ERROR, SourceElementPositioningStrategies.DECLARATION_NAME, KtClass::class, getRendererFactory())
+    val RESERVED_MEMBER_FROM_INTERFACE_INSIDE_VALUE_CLASS: KtDiagnosticFactory2<String, String> = KtDiagnosticFactory2("RESERVED_MEMBER_FROM_INTERFACE_INSIDE_VALUE_CLASS", ERROR, SourceElementPositioningStrategies.DECLARATION_NAME, KtDefine::class, getRendererFactory())
     val TYPE_ARGUMENT_ON_TYPED_VALUE_CLASS_EQUALS: KtDiagnosticFactory0 = KtDiagnosticFactory0("TYPE_ARGUMENT_ON_TYPED_VALUE_CLASS_EQUALS", ERROR, SourceElementPositioningStrategies.DEFAULT, KtElement::class, getRendererFactory())
     val INNER_CLASS_INSIDE_VALUE_CLASS: KtDiagnosticFactory0 = KtDiagnosticFactory0("INNER_CLASS_INSIDE_VALUE_CLASS", ERROR, SourceElementPositioningStrategies.INNER_MODIFIER, KtDeclaration::class, getRendererFactory())
     val VALUE_CLASS_CANNOT_BE_CLONEABLE: KtDiagnosticFactory0 = KtDiagnosticFactory0("VALUE_CLASS_CANNOT_BE_CLONEABLE", ERROR, SourceElementPositioningStrategies.INLINE_OR_VALUE_MODIFIER, KtDeclaration::class, getRendererFactory())
@@ -723,7 +723,7 @@ object FirErrors : KtDiagnosticsContainer() {
     val DEFAULT_VALUE_NOT_ALLOWED_IN_OVERRIDE: KtDiagnosticFactory0 = KtDiagnosticFactory0("DEFAULT_VALUE_NOT_ALLOWED_IN_OVERRIDE", ERROR, SourceElementPositioningStrategies.DEFAULT, KtElement::class, getRendererFactory())
 
     // Fun interfaces
-    val FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS: KtDiagnosticFactory0 = KtDiagnosticFactory0("FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS", ERROR, SourceElementPositioningStrategies.FUN_MODIFIER, KtClass::class, getRendererFactory())
+    val FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS: KtDiagnosticFactory0 = KtDiagnosticFactory0("FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS", ERROR, SourceElementPositioningStrategies.FUN_MODIFIER, KtDefine::class, getRendererFactory())
     val FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES: KtDiagnosticFactory0 = KtDiagnosticFactory0("FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES", ERROR, SourceElementPositioningStrategies.FUN_INTERFACE, KtDeclaration::class, getRendererFactory())
     val FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS: KtDiagnosticFactory0 = KtDiagnosticFactory0("FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS", ERROR, SourceElementPositioningStrategies.FUN_INTERFACE, KtDeclaration::class, getRendererFactory())
     val FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE: KtDiagnosticFactory0 = KtDiagnosticFactory0("FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE", ERROR, SourceElementPositioningStrategies.FUN_INTERFACE, KtDeclaration::class, getRendererFactory())
@@ -824,7 +824,7 @@ object FirErrors : KtDiagnosticsContainer() {
     val ACTUAL_TYPE_ALIAS_TO_NOTHING: KtDiagnosticFactory0 = KtDiagnosticFactory0("ACTUAL_TYPE_ALIAS_TO_NOTHING", ERROR, SourceElementPositioningStrategies.DECLARATION_SIGNATURE, KtTypeAlias::class, getRendererFactory())
     val ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS: KtDiagnosticFactory0 = KtDiagnosticFactory0("ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS", ERROR, SourceElementPositioningStrategies.PARAMETERS_WITH_DEFAULT_VALUE, KtFunction::class, getRendererFactory())
     val DEFAULT_ARGUMENTS_IN_EXPECT_WITH_ACTUAL_TYPEALIAS: KtDiagnosticFactory2<FirClassSymbol<*>, Collection<FirCallableSymbol<*>>> = KtDiagnosticFactory2("DEFAULT_ARGUMENTS_IN_EXPECT_WITH_ACTUAL_TYPEALIAS", ERROR, SourceElementPositioningStrategies.DEFAULT, KtTypeAlias::class, getRendererFactory())
-    val DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE: KtDiagnosticFactory2<FirRegularClassSymbol, Collection<FirNamedFunctionSymbol>> = KtDiagnosticFactory2("DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE", ERROR, SourceElementPositioningStrategies.SUPERTYPES_LIST, KtClass::class, getRendererFactory())
+    val DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE: KtDiagnosticFactory2<FirRegularClassSymbol, Collection<FirNamedFunctionSymbol>> = KtDiagnosticFactory2("DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE", ERROR, SourceElementPositioningStrategies.SUPERTYPES_LIST, KtDefine::class, getRendererFactory())
     val EXPECTED_FUNCTION_SOURCE_WITH_DEFAULT_ARGUMENTS_NOT_FOUND: KtDiagnosticFactory0 = KtDiagnosticFactory0("EXPECTED_FUNCTION_SOURCE_WITH_DEFAULT_ARGUMENTS_NOT_FOUND", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
     val ACTUAL_WITHOUT_EXPECT: KtDiagnosticFactory2<FirBasedSymbol<*>, Map<out ExpectActualMatchingCompatibility, Collection<FirBasedSymbol<*>>>> = KtDiagnosticFactory2("ACTUAL_WITHOUT_EXPECT", ERROR, SourceElementPositioningStrategies.DECLARATION_NAME_ONLY, KtNamedDeclaration::class, getRendererFactory())
     val EXPECT_ACTUAL_INCOMPATIBLE_CLASS_TYPE_PARAMETER_COUNT: KtDiagnosticFactory3<FirBasedSymbol<*>, FirBasedSymbol<*>, String> = KtDiagnosticFactory3("EXPECT_ACTUAL_INCOMPATIBLE_CLASS_TYPE_PARAMETER_COUNT", ERROR, SourceElementPositioningStrategies.DECLARATION_NAME_ONLY, KtNamedDeclaration::class, getRendererFactory())

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,111): '// LANGUAGE: +NameBasedDestructuring'
+KtDefine(0,111): '// LANGUAGE: +NameBasedDestructuring'
   NO_CANDIDATES
 
 KtDeclarationModifierList(59,63): 'data'
@@ -43,7 +43,7 @@ KtUserType(107,110): 'Int'
 KtNameReferenceExpression(107,110): 'Int'
   NO_CANDIDATES
 
-KtClass(112,166): 'class NonDataTuple(val first: String, val second: Int)'
+KtDefine(112,166): 'class NonDataTuple(val first: String, val second: Int)'
   NO_CANDIDATES
 
 KtPrimaryConstructor(130,166): '(val first: String, val second: Int)'

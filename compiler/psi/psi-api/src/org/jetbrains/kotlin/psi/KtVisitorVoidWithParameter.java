@@ -19,8 +19,8 @@ public class KtVisitorVoidWithParameter<P> extends KtVisitor<Void, P> {
         super.visitDeclaration(dcl, data);
     }
 
-    public void visitClassVoid(@NotNull KtClass klass, P data) {
-        super.visitClass(klass, data);
+    public void visitDefineVoid(@NotNull KtDefine define, P data) {
+        super.visitDefine(define, data);
     }
 
     public void visitSecondaryConstructorVoid(@NotNull KtSecondaryConstructor constructor, P data) {
@@ -429,8 +429,8 @@ public class KtVisitorVoidWithParameter<P> extends KtVisitor<Void, P> {
     }
 
     @Override
-    public final Void visitClass(@NotNull KtClass klass, P data) {
-        visitClassVoid(klass, data);
+    public final Void visitDefine(@NotNull KtDefine define, P data) {
+        visitDefineVoid(define, data);
     	return null;
     }
 

@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.descriptors.ClassDescriptor
 import org.jetbrains.kotlin.descriptors.FunctionDescriptor
 import org.jetbrains.kotlin.descriptors.PropertyDescriptor
 import org.jetbrains.kotlin.descriptors.ValueParameterDescriptor
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtParameter
 import org.jetbrains.kotlin.resolve.BindingContext
@@ -64,5 +64,5 @@ abstract class FunctionsFromAnyGenerator(protected val declaration: KtClassOrObj
             .map { bindingContext.get(BindingContext.PRIMARY_CONSTRUCTOR_PARAMETER, it)!! }
 
     protected val primaryConstructorParameters: List<KtParameter>
-        get() = (declaration as? KtClass)?.primaryConstructorParameters.orEmpty()
+        get() = (declaration as? KtDefine)?.primaryConstructorParameters.orEmpty()
 }

@@ -1,4 +1,4 @@
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // LANGUAGE: +HoldsInContracts, +ContextParameters
 @file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
 import kotlin.contracts.*

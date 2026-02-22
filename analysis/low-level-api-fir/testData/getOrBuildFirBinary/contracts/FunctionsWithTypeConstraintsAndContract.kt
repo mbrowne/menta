@@ -1,4 +1,4 @@
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // MAIN_FILE_NAME: Main
 // the following functions have type constraints and contracts written in different order
 // any order is correct

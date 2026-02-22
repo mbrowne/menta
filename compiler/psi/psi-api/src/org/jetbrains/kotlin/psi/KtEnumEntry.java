@@ -31,7 +31,7 @@ import java.util.Objects;
  * }
  * }</pre>
  */
-public class KtEnumEntry extends KtClass implements KtDeclarationWithReturnType {
+public class KtEnumEntry extends KtDefine implements KtDeclarationWithReturnType {
     public KtEnumEntry(@NotNull ASTNode node) {
         super(node);
     }

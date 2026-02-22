@@ -19,14 +19,14 @@ package org.jetbrains.kotlin.resolve.lazy.data;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.kotlin.descriptors.ClassKind;
-import org.jetbrains.kotlin.psi.KtClass;
+import org.jetbrains.kotlin.psi.KtDefine;
 import org.jetbrains.kotlin.psi.KtEnumEntry;
 import org.jetbrains.kotlin.psi.KtTypeParameterList;
 
-public class KtClassInfo extends KtClassOrObjectInfo<KtClass> {
+public class KtClassInfo extends KtClassOrObjectInfo<KtDefine> {
     private final ClassKind kind;
 
-    protected KtClassInfo(@NotNull KtClass classOrObject) {
+    protected KtClassInfo(@NotNull KtDefine classOrObject) {
         super(classOrObject);
         if (element instanceof KtEnumEntry) {
             this.kind = ClassKind.ENUM_ENTRY;

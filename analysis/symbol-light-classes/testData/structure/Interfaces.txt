@@ -1,4 +1,4 @@
-KtClass:
+KtDefine:
   line: 5
   name: BaseInterface1
   qualifier: abc.BaseInterface1
@@ -14,7 +14,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 6
   name: BaseInterface2
   qualifier: abc.BaseInterface2
@@ -30,7 +30,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 8
   name: InterfaceWithBase
   qualifier: abc.InterfaceWithBase
@@ -52,7 +52,7 @@ KtClass:
       SymbolLightClassForInterface: BaseInterface2 (abc.BaseInterface2)
     ]
 
-KtClass:
+KtDefine:
   line: 10
   name: InterfaceWithTransitive
   qualifier: abc.InterfaceWithTransitive
@@ -71,7 +71,7 @@ KtClass:
       SymbolLightClassForInterface: InterfaceWithBase (abc.InterfaceWithBase)
     ]
 
-KtClass:
+KtDefine:
   line: 3
   name: SingleInterface
   qualifier: abc.SingleInterface

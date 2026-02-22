@@ -1,4 +1,4 @@
-KtClass:
+KtDefine:
   line: 1
   name: A
   qualifier: A
@@ -14,7 +14,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 8
   name: InnerInA
   qualifier: A.InnerInA
@@ -30,7 +30,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 9
   name: InnerInInnerInA
   qualifier: A.InnerInA.InnerInInnerInA
@@ -46,7 +46,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 2
   name: NestedInA
   qualifier: A.NestedInA
@@ -62,7 +62,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 5
   name: InnerInNestedInA
   qualifier: A.NestedInA.InnerInNestedInA
@@ -78,7 +78,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 3
   name: NestedInNestedInA
   qualifier: A.NestedInA.NestedInNestedInA
@@ -94,7 +94,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 13
   name: B
   qualifier: B
@@ -110,7 +110,7 @@ KtClass:
       SymbolLightClassForClassOrObject: A (A)
     ]
 
-KtClass:
+KtDefine:
   line: 16
   name: InnerInB
   qualifier: B.InnerInB
@@ -126,7 +126,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 14
   name: NestedInB
   qualifier: B.NestedInB

@@ -40,7 +40,7 @@ KtNameReferenceExpression(32,36): 'Base'
 KtNameReferenceExpression(37,48): 'NestedClass'
   null
 
-KtClass(50,140): 'open class Base<B : Base.NestedClass> {'
+KtDefine(50,140): 'open class Base<B : Base.NestedClass> {'
   null
 
 KtDeclarationModifierList(50,54): 'open'
@@ -70,19 +70,19 @@ KtNameReferenceExpression(75,86): 'NestedClass'
 KtClassBody(88,140): '{'
   null
 
-KtClass(94,116): 'open class NestedClass'
+KtDefine(94,116): 'open class NestedClass'
   null
 
 KtDeclarationModifierList(94,98): 'open'
   null
 
-KtClass(121,138): 'inner class Inner'
+KtDefine(121,138): 'inner class Inner'
   null
 
 KtDeclarationModifierList(121,126): 'inner'
   null
 
-KtClass(142,279): 'class Child<C : one.two.Base.NestedClass> : Base<C>() {'
+KtDefine(142,279): 'class Child<C : one.two.Base.NestedClass> : Base<C>() {'
   null
 
 KtTypeParameterList(153,183): '<C : one.two.Base.NestedClass>'

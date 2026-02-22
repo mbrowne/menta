@@ -10,7 +10,7 @@ KtNameReferenceExpression(99,102): 'foo'
 KtImportList(102,102): ''
   null
 
-KtClass(104,134): 'enum class MyEnum {'
+KtDefine(104,134): 'enum class MyEnum {'
   null
 
 KtDeclarationModifierList(104,108): 'enum'
@@ -25,7 +25,7 @@ KtEnumEntry(128,130): 'A,'
 KtEnumEntry(131,132): 'B'
   null
 
-KtClass(136,706): 'class Test {'
+KtDefine(136,706): 'class Test {'
   null
 
 KtClassBody(147,706): '{'

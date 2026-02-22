@@ -16,7 +16,7 @@ KtDeclarationModifierList(15,20): 'const'
 KtConstantExpression(35,36): '0'
   null
 
-KtClass(38,152): '@Target(AnnotationTarget.EXPRESSION)'
+KtDefine(38,152): '@Target(AnnotationTarget.EXPRESSION)'
   null
 
 KtDeclarationModifierList(38,124): '@Target(AnnotationTarget.EXPRESSION)'

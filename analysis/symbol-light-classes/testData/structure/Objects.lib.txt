@@ -1,5 +1,5 @@
 AnotherInterface.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: AnotherInterface
     qualifier: two.AnotherInterface
@@ -16,7 +16,7 @@ AnotherInterface.class:
       ]
 
 BaseClass.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: BaseClass
     qualifier: two.BaseClass
@@ -33,7 +33,7 @@ BaseClass.class:
       ]
 
 BaseInterface.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: BaseInterface
     qualifier: two.BaseInterface
@@ -50,7 +50,7 @@ BaseInterface.class:
       ]
 
 NonBaseClass.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: NonBaseClass
     qualifier: two.NonBaseClass
@@ -67,7 +67,7 @@ NonBaseClass.class:
       ]
 
 NonBaseInterface.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: NonBaseInterface
     qualifier: two.NonBaseInterface

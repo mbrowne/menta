@@ -19,7 +19,7 @@ import org.jetbrains.kotlin.load.java.JvmAbi
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.name.isValidJavaFqName
 import org.jetbrains.kotlin.progress.ProgressIndicatorAndCompilationCanceledStatus
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtEnumEntry
 import org.jetbrains.kotlin.psi.KtFile
@@ -72,7 +72,7 @@ class JavaElementFinder(
 
     private fun findInterfaceDefaultImpls(qualifiedName: FqName, scope: GlobalSearchScope, answer: MutableList<PsiClass>) =
         findSyntheticInnerClass(qualifiedName, JvmAbi.DEFAULT_IMPLS_CLASS_NAME, scope, answer) {
-            it is KtClass && it.isInterface()
+            it is KtDefine && it.isInterface()
         }
 
     private fun findRepeatableAnnotationContainer(qualifiedName: FqName, scope: GlobalSearchScope, answer: MutableList<PsiClass>) =

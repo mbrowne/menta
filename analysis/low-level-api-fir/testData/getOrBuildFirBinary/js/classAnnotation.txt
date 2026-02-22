@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 @Y public final class Cls public constructor() {
 }

@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.asJava.elements.KtLightMethod
 import org.jetbrains.kotlin.asJava.elements.KtLightParameter
 import org.jetbrains.kotlin.asJava.elements.LightParameter
 import org.jetbrains.kotlin.lexer.KtTokens
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtConstructor
 import org.jetbrains.kotlin.psi.KtExpression
 import org.jetbrains.kotlin.psi.KtModifierListOwner
@@ -65,7 +65,7 @@ fun fastCheckIsNullabilityApplied(lightElement: KtLightElement<*, PsiModifierLis
     val annotatedElement = lightElement.kotlinOrigin ?: return true
 
     // all data-class generated members are not-null
-    if (annotatedElement is KtClass && annotatedElement.isData()) return true
+    if (annotatedElement is KtDefine && annotatedElement.isData()) return true
 
     // backing fields for lateinit props are skipped
     if (lightElement is KtLightField && annotatedElement is KtProperty && annotatedElement.hasModifier(KtTokens.LATEINIT_KEYWORD)) return false
@@ -77,7 +77,7 @@ fun fastCheckIsNullabilityApplied(lightElement: KtLightElement<*, PsiModifierLis
     if (annotatedElement is KtParameter) {
         val containingClassOrObject = annotatedElement.containingClassOrObject
         if (containingClassOrObject?.isAnnotation() == true) return false
-        if ((containingClassOrObject as? KtClass)?.isEnum() == true) {
+        if ((containingClassOrObject as? KtDefine)?.isEnum() == true) {
             if (annotatedElement.parent.parent is KtPrimaryConstructor) return false
         }
 

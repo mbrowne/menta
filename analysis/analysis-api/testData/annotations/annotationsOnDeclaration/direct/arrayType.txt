@@ -1,4 +1,4 @@
-KtDeclaration: KtClass Foo
+KtDeclaration: KtDefine Foo
 annotations: [
   Anno(value = kotlin.Array<kotlin.String>::class)
     psi: KtAnnotationEntry

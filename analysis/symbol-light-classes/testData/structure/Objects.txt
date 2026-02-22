@@ -106,7 +106,7 @@ KtObjectDeclaration:
       SymbolLightClassForInterface: BaseInterface (two.BaseInterface)
     ]
 
-KtClass:
+KtDefine:
   line: 7
   name: AnotherInterface
   qualifier: two.AnotherInterface
@@ -122,7 +122,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 9
   name: BaseClass
   qualifier: two.BaseClass
@@ -138,7 +138,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 5
   name: BaseInterface
   qualifier: two.BaseInterface
@@ -154,7 +154,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 10
   name: NonBaseClass
   qualifier: two.NonBaseClass
@@ -170,7 +170,7 @@ KtClass:
       SymbolLightClassForClassOrObject: BaseClass (two.BaseClass)
     ]
 
-KtClass:
+KtDefine:
   line: 6
   name: NonBaseInterface
   qualifier: two.NonBaseInterface

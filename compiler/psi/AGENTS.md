@@ -31,7 +31,7 @@ KtElement (root interface)
 │   ├── KtLambdaExpression
 │   └── ...
 └── KtDeclaration (classes, functions, properties)
-    ├── KtClass, KtObjectDeclaration
+    ├── KtDefine, KtObjectDeclaration
     ├── KtNamedFunction
     ├── KtProperty
     └── ...

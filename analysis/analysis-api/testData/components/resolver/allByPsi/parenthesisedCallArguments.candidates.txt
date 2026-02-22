@@ -94,7 +94,7 @@ KtNameReferenceExpression(86,89): 'Int'
 KtBlockExpression(91,93): '{}'
   NO_CANDIDATES
 
-KtClass(95,137): 'fun interface MySam {'
+KtDefine(95,137): 'fun interface MySam {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(95,98): 'fun'

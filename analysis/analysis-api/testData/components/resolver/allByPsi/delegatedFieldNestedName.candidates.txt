@@ -10,7 +10,7 @@ KtNameReferenceExpression(23,29): 'second'
 KtImportList(29,29): ''
   NO_CANDIDATES
 
-KtClass(31,95): '@Target(AnnotationTarget.TYPE)'
+KtDefine(31,95): '@Target(AnnotationTarget.TYPE)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(31,72): '@Target(AnnotationTarget.TYPE)'
@@ -178,7 +178,7 @@ KtUserType(91,94): 'Int'
 KtNameReferenceExpression(91,94): 'Int'
   NO_CANDIDATES
 
-KtClass(97,135): 'interface Base<A> {'
+KtDefine(97,135): 'interface Base<A> {'
   NO_CANDIDATES
 
 KtTypeParameterList(111,114): '<A>'
@@ -199,7 +199,7 @@ KtParameterList(128,130): '()'
 KtBlockExpression(131,133): '{}'
   NO_CANDIDATES
 
-KtClass(137,161): 'interface Second<T> {'
+KtDefine(137,161): 'interface Second<T> {'
   NO_CANDIDATES
 
 KtTypeParameterList(153,156): '<T>'
@@ -229,7 +229,7 @@ KtDeclarationModifierList(183,188): 'const'
 KtStringTemplateExpression(201,203): '""'
   NO_CANDIDATES
 
-KtClass(205,610): 'class MyClass :'
+KtDefine(205,610): 'class MyClass :'
   NO_CANDIDATES
 
 KtSuperTypeList(225,374): '@Anno(0 + outer) Base<@Anno(1 + outer) Base<@Anno(2 + outer) Int>> by Companion,'

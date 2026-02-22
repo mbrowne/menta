@@ -328,7 +328,7 @@ internal class KaFirSymbolRelationProvider(
             KtFakeSourceElementKind.ScriptParameter -> source.psi as KtScript
             KtFakeSourceElementKind.DataClassGeneratedMembers -> when (val source = source.psi) {
                 is KtClassOrObject -> {
-                    // for generated `equals`, `hashCode`, `toString` methods the source is the containing `KtClass`
+                    // for generated `equals`, `hashCode`, `toString` methods the source is the containing `KtDefine`
                     source
                 }
                 is KtParameter -> {

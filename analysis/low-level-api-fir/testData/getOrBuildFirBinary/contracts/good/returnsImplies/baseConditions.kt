@@ -1,4 +1,4 @@
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // LANGUAGE: +ConditionImpliesReturnsContracts
 @file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
 

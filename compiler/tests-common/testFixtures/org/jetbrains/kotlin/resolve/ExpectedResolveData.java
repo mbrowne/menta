@@ -306,7 +306,7 @@ public abstract class ExpectedResolveData {
                 assertNotNull(declarationPosition);
                 KtDeclaration declaration = getAncestorOfType(KtDeclaration.class, declElement);
                 assertNotNull(declaration);
-                if (declaration instanceof KtClass) {
+                if (declaration instanceof KtDefine) {
                     ClassDescriptor classDescriptor = bindingContext.get(BindingContext.CLASS, declaration);
                     expectedTypeConstructor = classDescriptor.getTypeConstructor();
                 }

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,141): 'sealed class MyClass {'
+KtDefine(78,141): 'sealed class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -686,7 +686,7 @@ KtWhenEntry(697,719): 'else -> OtherInheritor'
 KtNameReferenceExpression(705,719): 'OtherInheritor'
   NO_CANDIDATES
 
-KtClass(739,877): 'sealed class OtherClass {'
+KtDefine(739,877): 'sealed class OtherClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(739,745): 'sealed'
@@ -695,7 +695,7 @@ KtDeclarationModifierList(739,745): 'sealed'
 KtClassBody(763,877): '{'
   NO_CANDIDATES
 
-KtClass(769,803): 'abstract class Base : OtherClass()'
+KtDefine(769,803): 'abstract class Base : OtherClass()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(769,777): 'abstract'
@@ -754,7 +754,7 @@ KtNameReferenceExpression(791,801): 'OtherClass'
 KtValueArgumentList(801,803): '()'
   NO_CANDIDATES
 
-KtClass(809,825): 'class A : Base()'
+KtDefine(809,825): 'class A : Base()'
   NO_CANDIDATES
 
 KtSuperTypeList(819,825): 'Base()'
@@ -810,7 +810,7 @@ KtNameReferenceExpression(819,823): 'Base'
 KtValueArgumentList(823,825): '()'
   NO_CANDIDATES
 
-KtClass(830,846): 'class B : Base()'
+KtDefine(830,846): 'class B : Base()'
   NO_CANDIDATES
 
 KtSuperTypeList(840,846): 'Base()'
@@ -1203,7 +1203,7 @@ KtNameReferenceExpression(1122,1123): 'C'
     diagnostic = ERROR<OTHER_ERROR: Inapplicable candidate>
     isInBestCandidates = false
 
-KtClass(1143,1219): 'open class OpenClass {'
+KtDefine(1143,1219): 'open class OpenClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(1143,1147): 'open'

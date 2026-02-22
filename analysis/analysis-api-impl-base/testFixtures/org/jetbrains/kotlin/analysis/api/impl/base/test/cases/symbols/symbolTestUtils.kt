@@ -32,14 +32,14 @@ internal fun checkContainingFileSymbol(
 context(_: KaSession)
 internal fun checkContainingJvmClassName(
     ktFile: KtFile,
-    ktClass: KtClassOrObject?,
+    KtDefine: KtClassOrObject?,
     symbol: KaCallableSymbol,
     testServices: TestServices
 ) {
     fun KaCallableSymbol.computeExpectedJvmClassName(): String? = when {
         this is KaParameterSymbol -> (containingSymbol as? KaFunctionSymbol)?.computeExpectedJvmClassName()
         this.isLocal -> null
-        ktClass != null -> ktClass.getClassId()?.asFqNameString() // Member
+        KtDefine != null -> KtDefine.getClassId()?.asFqNameString() // Member
         else -> ktFile.javaFileFacadeFqName.asString() // Top-level
     }
 

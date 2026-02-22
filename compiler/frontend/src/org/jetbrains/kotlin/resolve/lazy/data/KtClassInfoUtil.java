@@ -18,7 +18,7 @@ package org.jetbrains.kotlin.resolve.lazy.data;
 
 import kotlin.DeprecationLevel;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.kotlin.psi.KtClass;
+import org.jetbrains.kotlin.psi.KtDefine;
 import org.jetbrains.kotlin.psi.KtClassOrObject;
 import org.jetbrains.kotlin.psi.KtObjectDeclaration;
 
@@ -36,8 +36,8 @@ public class KtClassInfoUtil {
 
     @NotNull
     public static KtClassOrObjectInfo<? extends KtClassOrObject> createClassOrObjectInfo(@NotNull KtClassOrObject classOrObject) {
-        if (classOrObject instanceof KtClass) {
-            return new KtClassInfo((KtClass) classOrObject);
+        if (classOrObject instanceof KtDefine) {
+            return new KtClassInfo((KtDefine) classOrObject);
         }
         if (classOrObject instanceof KtObjectDeclaration) {
             return new KtObjectInfo((KtObjectDeclaration) classOrObject);

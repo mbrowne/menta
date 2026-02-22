@@ -1,5 +1,5 @@
 BaseInterface.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: BaseInterface
     qualifier: one.two.BaseInterface
@@ -16,7 +16,7 @@ BaseInterface.class:
       ]
 
 EnumClassWithInterface.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: EnumClassWithInterface
     qualifier: one.two.EnumClassWithInterface
@@ -49,7 +49,7 @@ EnumClassWithInterface.class:
     light: null
 
 EnumEntries.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: EnumEntries
     qualifier: one.two.EnumEntries

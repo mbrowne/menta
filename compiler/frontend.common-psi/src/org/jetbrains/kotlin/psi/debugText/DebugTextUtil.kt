@@ -185,7 +185,7 @@ private object DebugTextBuildingVisitor : KtVisitor<String, Unit>() {
         return what + " for " + (containingProperty?.getDebugText() ?: "...")
     }
 
-    override fun visitClass(klass: KtClass, data: Unit?): String? {
+    override fun visitDefine(klass: KtDefine, data: Unit?): String? {
         return buildText {
             append("STUB: ")
             appendInn(klass.modifierList, suffix = " ")

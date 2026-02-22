@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(93,167): 'open class Super {'
+KtDefine(93,167): 'open class Super {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(93,97): 'open'
@@ -40,7 +40,7 @@ KtParameterList(160,162): '()'
 KtBlockExpression(163,165): '{}'
   NO_CANDIDATES
 
-KtClass(169,206): 'enum class MyEnum {'
+KtDefine(169,206): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(169,173): 'enum'
@@ -52,7 +52,7 @@ KtClassBody(187,206): '{'
 KtEnumEntry(193,204): 'EnumValue1;'
   NO_CANDIDATES
 
-KtClass(208,813): 'open class MyClass {'
+KtDefine(208,813): 'open class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(208,212): 'open'
@@ -151,7 +151,7 @@ KtNameReferenceExpression(287,293): 'String'
 KtStringTemplateExpression(296,298): '""'
   NO_CANDIDATES
 
-KtClass(310,379): 'class InheritorClass: MyClass() {'
+KtDefine(310,379): 'class InheritorClass: MyClass() {'
   NO_CANDIDATES
 
 KtSuperTypeList(332,341): 'MyClass()'

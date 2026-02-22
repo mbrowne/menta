@@ -202,9 +202,9 @@ class ClassCodegen private constructor(
     private fun shouldSkipCodeGenerationAccordingToGenerationFilter(): Boolean {
         val filter = state.generateDeclaredClassFilter
         val ktFile = PsiSourceManager.findPsiElement(irClass, irClass, KtFile::class)
-        val ktClass = PsiSourceManager.findPsiElement(irClass, irClass, KtClassOrObject::class)
+        val KtDefine = PsiSourceManager.findPsiElement(irClass, irClass, KtClassOrObject::class)
         return (ktFile != null && filter != null && !filter.shouldGeneratePackagePart(ktFile))
-                || (ktClass != null && filter != null && !filter.shouldGenerateClass(ktClass))
+                || (KtDefine != null && filter != null && !filter.shouldGenerateClass(KtDefine))
     }
 
     private fun generatePermittedSubclasses() {

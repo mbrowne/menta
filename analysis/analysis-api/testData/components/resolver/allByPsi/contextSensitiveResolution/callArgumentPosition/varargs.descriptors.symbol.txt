@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(93,167): 'open class Super {'
+KtDefine(93,167): 'open class Super {'
   null
 
 KtDeclarationModifierList(93,97): 'open'
@@ -40,7 +40,7 @@ KtParameterList(160,162): '()'
 KtBlockExpression(163,165): '{}'
   null
 
-KtClass(169,774): 'open class MyClass {'
+KtDefine(169,774): 'open class MyClass {'
   null
 
 KtDeclarationModifierList(169,173): 'open'
@@ -94,7 +94,7 @@ KtNameReferenceExpression(248,254): 'String'
 KtStringTemplateExpression(257,259): '""'
   null
 
-KtClass(271,340): 'class InheritorClass: MyClass() {'
+KtDefine(271,340): 'class InheritorClass: MyClass() {'
   null
 
 KtSuperTypeList(293,302): 'MyClass()'

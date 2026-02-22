@@ -118,7 +118,7 @@ context(symbol: KaFirSymbol<FirRegularClassSymbol>)
 internal val KtClassOrObject.kaSymbolModality: KaSymbolModality?
     get() = kaSymbolModalityByModifiers ?: when {
         this is KtObjectDeclaration || this is KtEnumEntry -> KaSymbolModality.FINAL
-        this !is KtClass -> null
+        this !is KtDefine -> null
         isAnnotation() || isEnum() -> KaSymbolModality.FINAL
         isInterface() -> KaSymbolModality.ABSTRACT
 
@@ -222,7 +222,7 @@ internal val KtProperty.hasRegularGetter: Boolean
 
 context(callable: KtCallableDeclaration)
 internal val KaSymbolModality.isOpenFromInterface: Boolean
-    get() = this == KaSymbolModality.OPEN && (callable.containingClassOrObject as? KtClass)?.isInterface() == true
+    get() = this == KaSymbolModality.OPEN && (callable.containingClassOrObject as? KtDefine)?.isInterface() == true
 
 context(analysisSession: KaFirSession)
 internal fun KtPsiDiagnostic.asKaDiagnostic(): KaDiagnosticWithPsi<*> = asKaDiagnostic(analysisSession)

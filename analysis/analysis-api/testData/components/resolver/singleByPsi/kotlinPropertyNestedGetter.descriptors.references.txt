@@ -3,7 +3,7 @@ KtNameReferenceExpression(53,61): 'instance'
     isImplicitReferenceToCompanion: false
     usesContextSensitiveResolution: false
     symbols:
-      (in KtClass) val instance: KtSubClass
+      (in KtDefine) val instance: KtSubClass
 
   SyntheticPropertyAccessorReference:
     isImplicitReferenceToCompanion: false

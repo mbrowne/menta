@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,130): 'open class A<T>(i: T) {'
+KtDefine(0,130): 'open class A<T>(i: T) {'
   null
 
 KtDeclarationModifierList(0,4): 'open'
@@ -314,7 +314,7 @@ KtNameReferenceExpression(123,124): 'i'
         callableId = null
       typeArgumentsMapping = {}
 
-KtClass(132,301): 'class B : A<(((Int)))> {'
+KtDefine(132,301): 'class B : A<(((Int)))> {'
   null
 
 KtSuperTypeList(142,154): 'A<(((Int)))>'

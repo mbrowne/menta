@@ -18,8 +18,8 @@ public class KtVisitorVoid extends KtVisitor<Void, Void> {
         super.visitDeclaration(dcl, null);
     }
 
-    public void visitClass(@NotNull KtClass klass) {
-        super.visitClass(klass, null);
+    public void visitDefine(@NotNull KtDefine define) {
+        super.visitDefine(define, null);
     }
 
     public void visitClassOrObject(@NotNull KtClassOrObject classOrObject) {
@@ -473,8 +473,8 @@ public class KtVisitorVoid extends KtVisitor<Void, Void> {
     }
 
     @Override
-    public final Void visitClass(@NotNull KtClass klass, Void data) {
-        visitClass(klass);
+    public final Void visitDefine(@NotNull KtDefine define, Void data) {
+        visitDefine(define);
         return null;
     }
 

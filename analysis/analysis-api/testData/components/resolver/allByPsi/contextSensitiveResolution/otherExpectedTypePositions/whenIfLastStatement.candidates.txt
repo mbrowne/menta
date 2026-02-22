@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,301): 'open class MyClass {'
+KtDefine(78,301): 'open class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,82): 'open'

@@ -13,7 +13,7 @@ import org.jetbrains.kotlin.analysis.api.symbols.*
 import org.jetbrains.kotlin.analysis.api.symbols.pointers.KaSymbolPointer
 import org.jetbrains.kotlin.asJava.classes.lazyPub
 import org.jetbrains.kotlin.light.classes.symbol.cachedValue
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 
 internal open class SymbolLightClassForInterface : SymbolLightClassForInterfaceOrAnnotationClass {
@@ -30,7 +30,7 @@ internal open class SymbolLightClassForInterface : SymbolLightClassForInterfaceO
     }
 
     constructor(classOrObject: KtClassOrObject, ktModule: KaModule) : super(classOrObject, ktModule) {
-        require(classOrObject is KtClass && classOrObject.isInterface())
+        require(classOrObject is KtDefine && classOrObject.isInterface())
     }
 
     protected constructor(

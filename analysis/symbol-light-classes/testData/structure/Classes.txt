@@ -1,4 +1,4 @@
-KtClass:
+KtDefine:
   line: 5
   name: AbstractClass
   qualifier: cba.AbstractClass
@@ -14,7 +14,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 9
   name: ChildOfOpen
   qualifier: cba.ChildOfOpen
@@ -30,7 +30,7 @@ KtClass:
       SymbolLightClassForClassOrObject: OpenClassFromAbstractClass (cba.OpenClassFromAbstractClass)
     ]
 
-KtClass:
+KtDefine:
   line: 3
   name: FinalClass
   qualifier: cba.FinalClass
@@ -46,7 +46,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 7
   name: OpenClassFromAbstractClass
   qualifier: cba.OpenClassFromAbstractClass

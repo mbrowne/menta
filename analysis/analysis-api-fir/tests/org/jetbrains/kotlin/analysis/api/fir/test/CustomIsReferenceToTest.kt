@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.asJava.elements.KtLightMethod
 import org.jetbrains.kotlin.asJava.toLightClass
 import org.jetbrains.kotlin.idea.references.mainReference
 import org.jetbrains.kotlin.psi.KtCallExpression
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtNamedFunction
 import org.jetbrains.kotlin.psi.KtUserType
@@ -25,7 +25,7 @@ class CustomIsReferenceToTest : AbstractAnalysisApiExecutionTest("../analysis-ap
 
     @Test
     fun defaultNoArgConstructor(mainFile: KtFile) {
-        val fooClass = mainFile.declarations.first() as KtClass
+        val fooClass = mainFile.declarations.first() as KtDefine
         val lightClass = fooClass.toLightClass() ?: error("Light class cannot be created")
         val lightConstructor = lightClass.constructors.single() as KtLightMethod
 

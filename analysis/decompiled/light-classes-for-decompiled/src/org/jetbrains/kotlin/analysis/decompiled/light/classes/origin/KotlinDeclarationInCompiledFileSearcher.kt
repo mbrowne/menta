@@ -65,7 +65,7 @@ class KotlinDeclarationInCompiledFileSearcher {
             ?: classOrObject
         }
 
-        val (regularDeclarations, companionDeclarations) = if (container is KtClass && member.hasModifierProperty(PsiModifier.STATIC)) {
+        val (regularDeclarations, companionDeclarations) = if (container is KtDefine && member.hasModifierProperty(PsiModifier.STATIC)) {
             // Compiled code cannot have more than one companion object, so we can pick the first one
             container.declarations to container.companionObjects.firstOrNull()?.declarations.orEmpty()
         } else {

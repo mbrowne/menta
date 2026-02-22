@@ -1,2 +1,2 @@
-KtClass(0,86): '/**'
+KtDefine(0,86): '/**'
   NO_CANDIDATES

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,67): 'class A {'
+KtDefine(0,67): 'class A {'
   NO_CANDIDATES
 
 KtClassBody(8,67): '{'
@@ -64,7 +64,7 @@ KtNameReferenceExpression(58,59): 'a'
       typeArgumentsMapping = {}
     isInBestCandidates = true
 
-KtClass(69,409): 'class Base {'
+KtDefine(69,409): 'class Base {'
   NO_CANDIDATES
 
 KtClassBody(80,409): '{'

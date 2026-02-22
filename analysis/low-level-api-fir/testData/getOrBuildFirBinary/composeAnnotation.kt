@@ -1,4 +1,4 @@
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // MAIN_FILE_NAME: A
 // Issue with loading Compose libraries which were compiled with <=2.0 compiler (KTIJ-33020)
 // FILE: Composable.kt

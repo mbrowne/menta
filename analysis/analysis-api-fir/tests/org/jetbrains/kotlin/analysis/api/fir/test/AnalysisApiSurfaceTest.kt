@@ -27,7 +27,7 @@ class AnalysisApiSurfaceTest : AbstractAnalysisApiExecutionTest("testData/surfac
 
     @Test
     fun supertypeIteration(mainFile: KtFile) {
-        val implClass = mainFile.declarations.first { it is KtClass && it.name == "Impl" } as KtClass
+        val implClass = mainFile.declarations.first { it is KtDefine && it.name == "Impl" } as KtDefine
         analyze(implClass) {
             val defaultClassType = implClass.classSymbol!!.defaultType
 
@@ -44,7 +44,7 @@ class AnalysisApiSurfaceTest : AbstractAnalysisApiExecutionTest("testData/surfac
     fun codeFragmentCopy(mainFile: KtFile, testServices: TestServices) {
         val assertions = testServices.assertions
 
-        val simpleClass = mainFile.declarations.single() as KtClass
+        val simpleClass = mainFile.declarations.single() as KtDefine
         val method = simpleClass.declarations.first() as KtNamedFunction
         assertions.assertEquals("method", method.name)
 
@@ -95,7 +95,7 @@ class AnalysisApiSurfaceTest : AbstractAnalysisApiExecutionTest("testData/surfac
         val fileCopy = ktPsiFactory.createFile("copy.kt", mainFile.text)
         fileCopy.originalFile = mainFile
 
-        val enumClass = fileCopy.declarations.filterIsInstance<KtClass>().first()
+        val enumClass = fileCopy.declarations.filterIsInstance<KtDefine>().first()
         analyzeCopy(enumClass, KaDanglingFileResolutionMode.IGNORE_SELF) {
             val enumSymbol = enumClass.classSymbol as KaNamedClassSymbol
             val enumEntrySymbol = enumSymbol.staticMemberScope.callables

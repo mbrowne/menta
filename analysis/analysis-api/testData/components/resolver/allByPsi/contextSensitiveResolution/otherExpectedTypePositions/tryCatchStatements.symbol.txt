@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,301): 'open class MyClass {'
+KtDefine(78,301): 'open class MyClass {'
   null
 
 KtDeclarationModifierList(78,82): 'open'
@@ -112,7 +112,7 @@ KtNameReferenceExpression(326,333): 'MyClass'
 KtNameReferenceExpression(334,349): 'NestedInheritor'
   null
 
-KtClass(351,384): 'class E1(m: String): Exception(m)'
+KtDefine(351,384): 'class E1(m: String): Exception(m)'
   null
 
 KtPrimaryConstructor(359,370): '(m: String)'
@@ -163,7 +163,7 @@ KtValueArgument(382,383): 'm'
 KtNameReferenceExpression(382,383): 'm'
   null
 
-KtClass(385,418): 'class E2(m: String): Exception(m)'
+KtDefine(385,418): 'class E2(m: String): Exception(m)'
   null
 
 KtPrimaryConstructor(393,404): '(m: String)'
@@ -214,7 +214,7 @@ KtValueArgument(416,417): 'm'
 KtNameReferenceExpression(416,417): 'm'
   null
 
-KtClass(419,452): 'class E3(m: String): Exception(m)'
+KtDefine(419,452): 'class E3(m: String): Exception(m)'
   null
 
 KtPrimaryConstructor(427,438): '(m: String)'

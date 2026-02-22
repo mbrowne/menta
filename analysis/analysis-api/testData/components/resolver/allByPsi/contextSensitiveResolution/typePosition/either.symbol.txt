@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,243): 'sealed interface Either<out E, out A> {'
+KtDefine(78,243): 'sealed interface Either<out E, out A> {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -31,7 +31,7 @@ KtDeclarationModifierList(109,112): 'out'
 KtClassBody(116,243): '{'
   null
 
-KtClass(122,179): 'data class  Left<out E>(val error: E): Either<E, Nothing>'
+KtDefine(122,179): 'data class  Left<out E>(val error: E): Either<E, Nothing>'
   null
 
 KtDeclarationModifierList(122,126): 'data'
@@ -106,7 +106,7 @@ KtUserType(171,178): 'Nothing'
 KtNameReferenceExpression(171,178): 'Nothing'
   null
 
-KtClass(184,241): 'data class Right<out A>(val value: A): Either<Nothing, A>'
+KtDefine(184,241): 'data class Right<out A>(val value: A): Either<Nothing, A>'
   null
 
 KtDeclarationModifierList(184,188): 'data'

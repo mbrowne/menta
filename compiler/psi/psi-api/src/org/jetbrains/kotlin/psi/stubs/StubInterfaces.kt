@@ -69,7 +69,7 @@ interface KotlinClassOrObjectStub<T : KtClassOrObject> : KotlinClassifierStub<T>
 }
 
 @SubclassOptInRequired(KtImplementationDetail::class)
-interface KotlinClassStub : KotlinClassOrObjectStub<KtClass> {
+interface KotlinClassStub : KotlinClassOrObjectStub<KtDefine> {
     val isInterface: Boolean
 
     /**

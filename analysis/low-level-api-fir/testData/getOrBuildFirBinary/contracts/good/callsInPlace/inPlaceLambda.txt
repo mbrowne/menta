@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Foo public constructor() {
     public final fun bar(x: () -> kotlin.Unit): kotlin.Unit { contract { /* compiled contract */ }; /* compiled code */ }

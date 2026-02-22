@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final data class MyDependency public constructor(b: one.B, d: one.D) {
     public final val b: one.B /* compiled code */

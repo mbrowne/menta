@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,51): 'class MyClass() {'
+KtDefine(0,51): 'class MyClass() {'
   null
 
 KtPrimaryConstructor(13,15): '()'

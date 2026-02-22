@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Foo public constructor(withDefaultGetter: kotlin.Int, withDefaultSetter: kotlin.String, both: kotlin.String, @MyAnnotation6 allAnnotations: kotlin.String) {
     public final val withDefaultGetter: kotlin.Int /* compiled code */

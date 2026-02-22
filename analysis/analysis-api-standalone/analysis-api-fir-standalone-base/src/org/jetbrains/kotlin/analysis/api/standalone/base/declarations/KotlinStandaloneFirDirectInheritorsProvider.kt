@@ -21,7 +21,7 @@ import org.jetbrains.kotlin.fir.symbols.SymbolInternals
 import org.jetbrains.kotlin.fir.symbols.impl.FirClassLikeSymbol
 import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.Name
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.psiUtil.contains
 import kotlin.collections.filter
@@ -37,12 +37,12 @@ internal class KotlinStandaloneFirDirectInheritorsProvider(private val project: 
     }
 
     override fun getDirectKotlinInheritors(
-        ktClass: KtClass,
+        KtDefine: KtDefine,
         scope: GlobalSearchScope,
         includeLocalInheritors: Boolean,
     ): Iterable<KtClassOrObject> {
-        val classId = ktClass.getClassId() ?: return emptyList()
-        val baseModule = KotlinProjectStructureProvider.getModule(project, ktClass, useSiteModule = null)
+        val classId = KtDefine.getClassId() ?: return emptyList()
+        val baseModule = KotlinProjectStructureProvider.getModule(project, KtDefine, useSiteModule = null)
         val baseFirClass = classId.toFirSymbol(baseModule)?.fir as? FirClass ?: return emptyList()
 
         val baseClassNames = mutableSetOf(classId.shortClassName)

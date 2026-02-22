@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,108): 'enum class MyEnum {'
+KtDefine(78,108): 'enum class MyEnum {'
   null
 
 KtDeclarationModifierList(78,82): 'enum'
@@ -22,7 +22,7 @@ KtEnumEntry(102,104): 'X,'
 KtEnumEntry(105,106): 'Y'
   null
 
-KtClass(110,143): 'enum class WrongEnum {'
+KtDefine(110,143): 'enum class WrongEnum {'
   null
 
 KtDeclarationModifierList(110,114): 'enum'
@@ -244,7 +244,7 @@ KtNameReferenceExpression(209,210): 'X'
     candidateCalls = []
     diagnostic = ERROR<UNRESOLVED_REFERENCE: Unresolved reference 'X'.>
 
-KtClass(215,248): '@DslMarker'
+KtDefine(215,248): '@DslMarker'
   null
 
 KtDeclarationModifierList(215,236): '@DslMarker'
@@ -293,7 +293,7 @@ KtUserType(216,225): 'DslMarker'
 KtNameReferenceExpression(216,225): 'DslMarker'
   null
 
-KtClass(250,264): '@MyDsl'
+KtDefine(250,264): '@MyDsl'
   null
 
 KtDeclarationModifierList(250,256): '@MyDsl'
@@ -342,7 +342,7 @@ KtUserType(251,256): 'MyDsl'
 KtNameReferenceExpression(251,256): 'MyDsl'
   null
 
-KtClass(266,280): '@MyDsl'
+KtDefine(266,280): '@MyDsl'
   null
 
 KtDeclarationModifierList(266,272): '@MyDsl'

@@ -7,10 +7,10 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,14): 'class Implicit'
+KtDefine(0,14): 'class Implicit'
   NO_CANDIDATES
 
-KtClass(15,29): 'class Explicit'
+KtDefine(15,29): 'class Explicit'
   NO_CANDIDATES
 
 KtNamedFunction(31,103): 'context(_: Implicit, explicit: Explicit)'

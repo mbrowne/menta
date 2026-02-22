@@ -1,4 +1,4 @@
-KtClass:
+KtDefine:
   line: 3
   name: BaseInterface
   qualifier: one.two.BaseInterface
@@ -14,7 +14,7 @@ KtClass:
       ClsClassImpl: Object (java.lang.Object)
     ]
 
-KtClass:
+KtDefine:
   line: 14
   name: EnumClassWithInterface
   qualifier: one.two.EnumClassWithInterface
@@ -56,7 +56,7 @@ KtEnumEntry:
       SymbolLightClassForClassOrObject: EnumClassWithInterface (one.two.EnumClassWithInterface)
     ]
 
-KtClass:
+KtDefine:
   line: 5
   name: EnumEntries
   qualifier: one.two.EnumEntries

@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class LibraryClass public constructor() {
     @kotlin.jvm.JvmInline public final value class LibraryNestedValueClass public constructor(value: pack.LibraryClass) {

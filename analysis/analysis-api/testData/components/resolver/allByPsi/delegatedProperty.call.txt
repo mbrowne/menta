@@ -144,7 +144,7 @@ KtNameReferenceExpression(77,85): 'Delegate'
 KtValueArgumentList(85,87): '()'
   null
 
-KtClass(89,296): 'class Delegate {'
+KtDefine(89,296): 'class Delegate {'
   null
 
 KtClassBody(104,296): '{'

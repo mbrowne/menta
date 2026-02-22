@@ -67,7 +67,7 @@ class InlineAnalyzerExtension(
                 element.acceptChildren(this)
             }
 
-            override fun visitClass(klass: KtClass) {
+            override fun visitDefine(klass: KtDefine) {
                 trace.report(Errors.NOT_YET_SUPPORTED_IN_INLINE.on(klass, "Local classes"))
             }
 

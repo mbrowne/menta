@@ -1,4 +1,4 @@
-KtClass:
+KtDefine:
   line: 3
   name: MyAnnotationClass
   qualifier: one.MyAnnotationClass

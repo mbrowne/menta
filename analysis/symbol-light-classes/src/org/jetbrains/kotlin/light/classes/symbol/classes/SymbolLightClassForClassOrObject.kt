@@ -34,7 +34,7 @@ import org.jetbrains.kotlin.light.classes.symbol.modifierLists.GranularModifiers
 import org.jetbrains.kotlin.light.classes.symbol.modifierLists.SymbolLightClassModifierList
 import org.jetbrains.kotlin.load.java.JvmAbi
 import org.jetbrains.kotlin.name.JvmStandardClassIds
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtEnumEntry
@@ -72,7 +72,7 @@ internal class SymbolLightClassForClassOrObject : SymbolLightClassForNamedClassL
         manager = classOrObject.manager,
         isValueClass = classOrObject.hasModifier(KtTokens.VALUE_KEYWORD) || classOrObject.hasModifier(KtTokens.INLINE_KEYWORD),
     ) {
-        require(classOrObject !is KtClass || !classOrObject.isInterface() && !classOrObject.isAnnotation())
+        require(classOrObject !is KtDefine || !classOrObject.isInterface() && !classOrObject.isAnnotation())
     }
 
     private constructor(

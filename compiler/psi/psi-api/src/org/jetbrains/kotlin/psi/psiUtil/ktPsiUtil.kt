@@ -170,7 +170,7 @@ fun KtBlockExpression.contentRange(): PsiChildRange {
 
 // ----------- Inheritance -----------------------------------------------------------------------------------------------------------------
 
-fun KtClass.isAbstract(): Boolean = isInterface() || hasModifier(KtTokens.ABSTRACT_KEYWORD)
+fun KtDefine.isAbstract(): Boolean = isInterface() || hasModifier(KtTokens.ABSTRACT_KEYWORD)
 
 /**
  * Returns the list of unqualified names that are indexed as the superclass names of this class. For the names that might be imported
@@ -325,7 +325,7 @@ fun KtElement.isFirstStatement(): Boolean {
 
 fun KtClassOrObject.effectiveDeclarations(): List<KtDeclaration> {
     return when (this) {
-        is KtClass -> getDeclarations() + getPrimaryConstructorParameters().filter { p -> p.hasValOrVar() }
+        is KtDefine -> getDeclarations() + getPrimaryConstructorParameters().filter { p -> p.hasValOrVar() }
         else -> declarations
     }
 }
@@ -353,13 +353,13 @@ fun KtDeclaration.isExpectDeclaration(): Boolean = when {
 fun KtDeclaration.isActualDeclaration(): Boolean = hasActualModifier() || isImplicitlyActualDeclaration()
 
 internal fun KtDeclaration.isImplicitlyActualDeclaration(): Boolean = when (this) {
-    is KtConstructor<*> -> (containingClassOrObject as? KtClass)?.let { klass ->
+    is KtConstructor<*> -> (containingClassOrObject as? KtDefine)?.let { klass ->
         klass.hasActualModifier() && klass.allowsImplicitlyActualConstructor()
     } == true
     else -> false
 }
 
-internal fun KtClass.allowsImplicitlyActualConstructor() = isAnnotation() || isValue() || isInline()
+internal fun KtDefine.allowsImplicitlyActualConstructor() = isAnnotation() || isValue() || isInline()
 
 fun KtElement.isContextualDeclaration(): Boolean {
     val contextReceivers = when (this) {
@@ -477,7 +477,7 @@ fun KtNamedDeclaration.getValueParameters(): List<KtParameter> {
 fun KtNamedDeclaration.getValueParameterList(): KtParameterList? {
     return when (this) {
         is KtCallableDeclaration -> valueParameterList
-        is KtClass -> getPrimaryConstructorParameterList()
+        is KtDefine -> getPrimaryConstructorParameterList()
         else -> null
     }
 }
@@ -555,11 +555,11 @@ fun canPlaceAfterSimpleNameEntry(element: PsiElement?): Boolean {
     return !BAD_NEIGHBOUR_FOR_SIMPLE_TEMPLATE_ENTRY_PATTERN.matches(entryText)
 }
 
-fun KtElement.nonStaticOuterClasses(): Sequence<KtClass> {
+fun KtElement.nonStaticOuterClasses(): Sequence<KtDefine> {
     return generateSequence(containingClass()) { if (it.isInner()) it.containingClass() else null }
 }
 
-fun KtElement.containingClass(): KtClass? = getStrictParentOfType()
+fun KtElement.containingClass(): KtDefine? = getStrictParentOfType()
 
 fun KtClassOrObject.findPropertyByName(name: String): KtNamedDeclaration? {
     return declarations.firstOrNull { it is KtProperty && it.name == name } as KtNamedDeclaration?

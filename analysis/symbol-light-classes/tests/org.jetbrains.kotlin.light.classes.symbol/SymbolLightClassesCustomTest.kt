@@ -15,7 +15,7 @@ import org.jetbrains.kotlin.asJava.elements.KtLightElementBase
 import org.jetbrains.kotlin.asJava.findFacadeClass
 import org.jetbrains.kotlin.asJava.toLightClass
 import org.jetbrains.kotlin.light.classes.symbol.classes.SymbolLightClassForEnumEntry
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtNameReferenceExpression
@@ -47,7 +47,7 @@ class SymbolLightClassesCustomTest : AbstractAnalysisApiExecutionTest(testDirPat
 
     @Test
     fun enumEntryWithTypeAliasSameNameAsPrimitiveType(file: KtFile, testServices: TestServices) {
-        val enumKtClass = file.declarations.filterIsInstance<KtClass>().first { it.isEnum() }
+        val enumKtClass = file.declarations.filterIsInstance<KtDefine>().first { it.isEnum() }
         val enumLightClass = enumKtClass.toLightClass() ?: error("Light class was not found")
 
         val enumConstant = enumLightClass.fields.filterIsInstance<PsiEnumConstant>().first()
@@ -72,7 +72,7 @@ class SymbolLightClassesCustomTest : AbstractAnalysisApiExecutionTest(testDirPat
      */
     @Test
     fun annotationArgumentPsi(file: KtFile, testServices: TestServices) {
-        val topLevelClass = file.declarations.first() as KtClass
+        val topLevelClass = file.declarations.first() as KtDefine
         val topLevelLightClass = topLevelClass.toLightClass() ?: error("Light class was not found")
         val method = topLevelLightClass.findMethodsByName("method", false).first() as PsiMethod
         val annotation = method.annotations.first()

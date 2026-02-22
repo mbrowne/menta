@@ -563,7 +563,7 @@ public class DescriptorResolver {
             checkConflictingUpperBounds(trace, parameter, typeParameters.get(parameter.getIndex()));
         }
 
-        if (!(declaration instanceof KtClass)) {
+        if (!(declaration instanceof KtDefine)) {
             checkUpperBoundTypes(trace, upperBoundCheckRequests, declaration.hasModifier(KtTokens.OVERRIDE_KEYWORD));
             checkNamesInConstraints(declaration, descriptor, scope, trace);
         }

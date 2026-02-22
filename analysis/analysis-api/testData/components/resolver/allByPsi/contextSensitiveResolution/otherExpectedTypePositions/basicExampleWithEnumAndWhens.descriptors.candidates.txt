@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,150): 'enum class Problem {'
+KtDefine(78,150): 'enum class Problem {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,82): 'enum'

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,179): 'sealed interface SealedInterface {'
+KtDefine(78,179): 'sealed interface SealedInterface {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(78,84): 'sealed'
 KtClassBody(111,179): '{'
   NO_CANDIDATES
 
-KtClass(117,177): 'open class NestedInheritor(prop: String): SealedInterface {}'
+KtDefine(117,177): 'open class NestedInheritor(prop: String): SealedInterface {}'
   NO_CANDIDATES
 
 KtDeclarationModifierList(117,121): 'open'
@@ -58,7 +58,7 @@ KtNameReferenceExpression(159,174): 'SealedInterface'
 KtClassBody(175,177): '{}'
   NO_CANDIDATES
 
-KtClass(181,218): 'enum class MyEnum {'
+KtDefine(181,218): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(181,185): 'enum'
@@ -70,7 +70,7 @@ KtClassBody(199,218): '{'
 KtEnumEntry(205,216): 'EnumValue1;'
   NO_CANDIDATES
 
-KtClass(220,280): 'open class MyClass {'
+KtDefine(220,280): 'open class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(220,224): 'open'
@@ -362,7 +362,7 @@ KtNameReferenceExpression(386,390): 'TODO'
 KtValueArgumentList(390,392): '()'
   NO_CANDIDATES
 
-KtClass(394,410): 'interface OtherI'
+KtDefine(394,410): 'interface OtherI'
   NO_CANDIDATES
 
 KtNamedFunction(412,509): 'fun <T>testTypeParamWithMultipleBound(instance: T): String where T : MyClass, T : OtherI = TODO()'

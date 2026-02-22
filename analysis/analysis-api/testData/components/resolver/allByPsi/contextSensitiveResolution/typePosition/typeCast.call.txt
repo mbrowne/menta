@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,702): 'sealed class SealedClass {'
+KtDefine(78,702): 'sealed class SealedClass {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(78,84): 'sealed'
 KtClassBody(103,702): '{'
   null
 
-KtClass(109,176): 'open class SealedInheritor1(val prop1: String = "1"): SealedClass()'
+KtDefine(109,176): 'open class SealedInheritor1(val prop1: String = "1"): SealedClass()'
   null
 
 KtDeclarationModifierList(109,113): 'open'
@@ -97,7 +97,7 @@ KtNameReferenceExpression(163,174): 'SealedClass'
 KtValueArgumentList(174,176): '()'
   null
 
-KtClass(181,238): 'class SealedInheritor2(val prop2: Int = 2): SealedClass()'
+KtDefine(181,238): 'class SealedInheritor2(val prop2: Int = 2): SealedClass()'
   null
 
 KtPrimaryConstructor(203,223): '(val prop2: Int = 2)'
@@ -172,7 +172,7 @@ KtNameReferenceExpression(225,236): 'SealedClass'
 KtValueArgumentList(236,238): '()'
   null
 
-KtClass(244,321): 'sealed class SealedSealedInheritor1(val prop3: Boolean = true): SealedClass()'
+KtDefine(244,321): 'sealed class SealedSealedInheritor1(val prop3: Boolean = true): SealedClass()'
   null
 
 KtDeclarationModifierList(244,250): 'sealed'
@@ -250,7 +250,7 @@ KtNameReferenceExpression(308,319): 'SealedClass'
 KtValueArgumentList(319,321): '()'
   null
 
-KtClass(327,376): 'class IndirectSealedInheritor: SealedInheritor1()'
+KtDefine(327,376): 'class IndirectSealedInheritor: SealedInheritor1()'
   null
 
 KtSuperTypeList(358,376): 'SealedInheritor1()'
@@ -320,13 +320,13 @@ KtNameReferenceExpression(358,374): 'SealedInheritor1'
 KtValueArgumentList(374,376): '()'
   null
 
-KtClass(382,525): 'class Nested {'
+KtDefine(382,525): 'class Nested {'
   null
 
 KtClassBody(395,525): '{'
   null
 
-KtClass(405,451): 'class DeepSealedNestedInheritor: SealedClass()'
+KtDefine(405,451): 'class DeepSealedNestedInheritor: SealedClass()'
   null
 
 KtSuperTypeList(438,451): 'SealedClass()'
@@ -380,7 +380,7 @@ KtNameReferenceExpression(438,449): 'SealedClass'
 KtValueArgumentList(449,451): '()'
   null
 
-KtClass(460,519): 'class DeepIndirectSealedNestedInheritor: SealedInheritor1()'
+KtDefine(460,519): 'class DeepIndirectSealedNestedInheritor: SealedInheritor1()'
   null
 
 KtSuperTypeList(501,519): 'SealedInheritor1()'
@@ -450,7 +450,7 @@ KtNameReferenceExpression(501,517): 'SealedInheritor1'
 KtValueArgumentList(517,519): '()'
   null
 
-KtClass(531,601): 'inner class Inner(val innerProp: String = "inner prop"): SealedClass()'
+KtDefine(531,601): 'inner class Inner(val innerProp: String = "inner prop"): SealedClass()'
   null
 
 KtDeclarationModifierList(531,536): 'inner'
@@ -531,13 +531,13 @@ KtNameReferenceExpression(588,599): 'SealedClass'
 KtValueArgumentList(599,601): '()'
   null
 
-KtClass(607,620): 'class Nested1'
+KtDefine(607,620): 'class Nested1'
   null
 
-KtClass(625,638): 'class Nested2'
+KtDefine(625,638): 'class Nested2'
   null
 
-KtClass(643,668): 'sealed class SealedNested'
+KtDefine(643,668): 'sealed class SealedNested'
   null
 
 KtDeclarationModifierList(643,649): 'sealed'

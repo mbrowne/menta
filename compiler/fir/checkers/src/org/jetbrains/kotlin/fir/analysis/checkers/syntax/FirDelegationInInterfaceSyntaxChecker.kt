@@ -16,10 +16,10 @@ import org.jetbrains.kotlin.diagnostics.reportOn
 import org.jetbrains.kotlin.fir.declarations.FirRegularClass
 import org.jetbrains.kotlin.fir.declarations.utils.isInterface
 import org.jetbrains.kotlin.psi
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDelegatedSuperTypeEntry
 
-object FirDelegationInInterfaceSyntaxChecker : FirDeclarationSyntaxChecker<FirRegularClass, KtClass>() {
+object FirDelegationInInterfaceSyntaxChecker : FirDeclarationSyntaxChecker<FirRegularClass, KtDefine>() {
 
     override fun isApplicable(element: FirRegularClass, source: KtSourceElement): Boolean = element.isInterface
 
@@ -27,7 +27,7 @@ object FirDelegationInInterfaceSyntaxChecker : FirDeclarationSyntaxChecker<FirRe
     override fun checkPsi(
         element: FirRegularClass,
         source: KtPsiSourceElement,
-        psi: KtClass,
+        psi: KtDefine,
     ) {
         for (superTypeRef in element.superTypeRefs) {
             val superSource = superTypeRef.source ?: continue

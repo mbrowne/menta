@@ -118,7 +118,7 @@ private class KotlinStandaloneAnnotationsResolver(
             val typeAliases = declarationProvider.getAllTypeAliasesByClassId(classId)
             typeAliases.singleOrNull()?.getTypeReference()?.resolveAnnotationClassIds(to)
 
-            val annotations = classes.filterIsInstanceAnd<KtClass> { it.isAnnotation() }
+            val annotations = classes.filterIsInstanceAnd<KtDefine> { it.isAnnotation() }
             annotations.singleOrNull()?.let {
                 classId
             }

@@ -44,7 +44,7 @@ import org.jetbrains.kotlin.psi.KtBackingField
 import org.jetbrains.kotlin.psi.KtBinaryExpression
 import org.jetbrains.kotlin.psi.KtBinaryExpressionWithTypeRHS
 import org.jetbrains.kotlin.psi.KtCallableDeclaration
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassLikeDeclaration
 import org.jetbrains.kotlin.psi.KtClassLiteralExpression
 import org.jetbrains.kotlin.psi.KtClassOrObject
@@ -836,7 +836,7 @@ sealed interface KaFirDiagnostic<PSI : PsiElement> : KaDiagnosticWithPsi<PSI> {
         override val diagnosticClass get() = VarAnnotationParameter::class
     }
 
-    interface SupertypesForAnnotationClass : KaFirDiagnostic<KtClass> {
+    interface SupertypesForAnnotationClass : KaFirDiagnostic<KtDefine> {
         override val diagnosticClass get() = SupertypesForAnnotationClass::class
     }
 
@@ -1615,7 +1615,7 @@ sealed interface KaFirDiagnostic<PSI : PsiElement> : KaDiagnosticWithPsi<PSI> {
         val name: String
     }
 
-    interface ReservedMemberFromInterfaceInsideValueClass : KaFirDiagnostic<KtClass> {
+    interface ReservedMemberFromInterfaceInsideValueClass : KaFirDiagnostic<KtDefine> {
         override val diagnosticClass get() = ReservedMemberFromInterfaceInsideValueClass::class
         val interfaceName: String
         val methodName: String
@@ -2938,7 +2938,7 @@ sealed interface KaFirDiagnostic<PSI : PsiElement> : KaDiagnosticWithPsi<PSI> {
         override val diagnosticClass get() = DefaultValueNotAllowedInOverride::class
     }
 
-    interface FunInterfaceWrongCountOfAbstractMembers : KaFirDiagnostic<KtClass> {
+    interface FunInterfaceWrongCountOfAbstractMembers : KaFirDiagnostic<KtDefine> {
         override val diagnosticClass get() = FunInterfaceWrongCountOfAbstractMembers::class
     }
 
@@ -3343,7 +3343,7 @@ sealed interface KaFirDiagnostic<PSI : PsiElement> : KaDiagnosticWithPsi<PSI> {
         val members: List<KaCallableSymbol>
     }
 
-    interface DefaultArgumentsInExpectActualizedByFakeOverride : KaFirDiagnostic<KtClass> {
+    interface DefaultArgumentsInExpectActualizedByFakeOverride : KaFirDiagnostic<KtDefine> {
         override val diagnosticClass get() = DefaultArgumentsInExpectActualizedByFakeOverride::class
         val expectClassSymbol: KaClassLikeSymbol
         val members: List<KaFunctionSymbol>

@@ -168,7 +168,7 @@ public class ExpressionTypingVisitorForStatements extends ExpressionTypingVisito
     }
 
     @Override
-    public KotlinTypeInfo visitClass(@NotNull KtClass klass, ExpressionTypingContext context) {
+    public KotlinTypeInfo visitDefine(@NotNull KtDefine klass, ExpressionTypingContext context) {
         components.localClassifierAnalyzer.processClassOrObject(
                 scope, context.replaceScope(scope).replaceContextDependency(INDEPENDENT),
                 scope.getOwnerDescriptor(),

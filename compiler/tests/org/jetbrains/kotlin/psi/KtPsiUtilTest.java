@@ -112,7 +112,7 @@ public class KtPsiUtilTest extends KotlinTestWithEnvironment {
 
     public void testIsLocalClass() throws IOException {
         String text = FileUtil.loadFile(new File(KtTestUtil.getTestDataPathBase() + "/psiUtil/isLocalClass.kt"), true);
-        KtClass aClass = new KtPsiFactory(getProject()).createClass(text);
+        KtDefine aClass = new KtPsiFactory(getProject()).createClass(text);
 
         @SuppressWarnings("unchecked")
         Collection<KtClassOrObject> classOrObjects = PsiTreeUtil.collectElementsOfType(aClass, KtClassOrObject.class);

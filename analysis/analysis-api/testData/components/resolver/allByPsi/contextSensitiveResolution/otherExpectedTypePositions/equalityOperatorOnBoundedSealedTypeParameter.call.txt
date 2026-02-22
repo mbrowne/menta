@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,190): 'sealed class MySealed {'
+KtDefine(78,190): 'sealed class MySealed {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -85,7 +85,7 @@ KtDeclarationModifierList(140,144): 'data'
 KtClassBody(154,156): '{}'
   null
 
-KtClass(162,188): 'class Derived : MySealed()'
+KtDefine(162,188): 'class Derived : MySealed()'
   null
 
 KtSuperTypeList(178,188): 'MySealed()'

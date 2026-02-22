@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(28,205): 'sealed class MyClass {'
+KtDefine(28,205): 'sealed class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(28,34): 'sealed'

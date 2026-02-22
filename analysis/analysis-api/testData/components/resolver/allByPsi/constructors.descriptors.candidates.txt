@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,9): 'r'
 KtImportList(9,9): ''
   NO_CANDIDATES
 
-KtClass(11,115): 'abstract class BaseClass {'
+KtDefine(11,115): 'abstract class BaseClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(11,19): 'abstract'
@@ -140,7 +140,7 @@ KtParameterList(102,104): '()'
 KtBlockExpression(105,113): '{'
   NO_CANDIDATES
 
-KtClass(117,265): 'class Child : BaseClass {'
+KtDefine(117,265): 'class Child : BaseClass {'
   NO_CANDIDATES
 
 KtSuperTypeList(131,140): 'BaseClass'
@@ -606,7 +606,7 @@ KtNameReferenceExpression(251,255): 'call'
 KtValueArgumentList(255,257): '()'
   NO_CANDIDATES
 
-KtClass(267,347): 'class ChildWithPrimary() : BaseClass(42) {'
+KtDefine(267,347): 'class ChildWithPrimary() : BaseClass(42) {'
   NO_CANDIDATES
 
 KtPrimaryConstructor(289,291): '()'
@@ -959,7 +959,7 @@ KtConstructorDelegationReferenceExpression(339,343): 'this'
 KtValueArgumentList(343,345): '()'
   NO_CANDIDATES
 
-KtClass(349,384): 'open class ClassWithType<T>(i: Int)'
+KtDefine(349,384): 'open class ClassWithType<T>(i: Int)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(349,353): 'open'
@@ -989,7 +989,7 @@ KtUserType(380,383): 'Int'
 KtNameReferenceExpression(380,383): 'Int'
   NO_CANDIDATES
 
-KtClass(386,456): 'class TypedChild : ClassWithType<Int> {'
+KtDefine(386,456): 'class TypedChild : ClassWithType<Int> {'
   NO_CANDIDATES
 
 KtSuperTypeList(405,423): 'ClassWithType<Int>'
