@@ -1317,6 +1317,10 @@ public class KotlinParsing extends AbstractKotlinParsing {
     }
 
     private IElementType parseMemberDeclarationRest(@NotNull ModifierDetector modifierDetector) {
+        if (at(ROLE_KEYWORD)) {
+            return parseRole();
+        }
+
         IElementType declType = parseCommonDeclaration(
                 modifierDetector,
                 modifierDetector.isCompanionDetected() ? NameParsingMode.ALLOWED : NameParsingMode.REQUIRED,
@@ -1345,6 +1349,28 @@ public class KotlinParsing extends AbstractKotlinParsing {
             declType = FUN;
         }
         return declType;
+    }
+
+    /*
+     * role
+     *   : "role" SimpleName "{" "}"
+     *   ;
+     */
+    IElementType parseRole() {
+        assert _at(ROLE_KEYWORD);
+
+        advance(); // ROLE_KEYWORD
+
+        expect(IDENTIFIER, "Role name expected", LBRACE_RBRACE_SET);
+
+        if (at(LBRACE)) {
+            parseBlock();
+        }
+        else {
+            mark().error("Expecting '{'");
+        }
+
+        return ROLE;
     }
 
     /*

@@ -896,6 +896,11 @@ public class ParsingTestGenerated extends AbstractParsingTest {
       runTest("compiler/testData/psi/Reserved.kt");
     }
 
+    @TestMetadata("RoleDeclaration.kt")
+    public void testRoleDeclaration() {
+      runTest("compiler/testData/psi/RoleDeclaration.kt");
+    }
+
     @TestMetadata("sealed.kt")
     public void testSealed() {
       runTest("compiler/testData/psi/sealed.kt");

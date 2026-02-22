@@ -291,6 +291,7 @@ LONELY_BACKTICK=`
 "while"      { return KtTokens.WHILE_KEYWORD ;}
 "break"      { return KtTokens.BREAK_KEYWORD ;}
 "define"     { return KtTokens.DEFINE_KEYWORD ;}
+"role"       { return KtTokens.ROLE_KEYWORD ;}
 "class"      { return KtTokens.CLASS_RESERVED_KEYWORD ;}
 "throw"      { return KtTokens.THROW_KEYWORD ;}
 "false"      { return KtTokens.FALSE_KEYWORD ;}

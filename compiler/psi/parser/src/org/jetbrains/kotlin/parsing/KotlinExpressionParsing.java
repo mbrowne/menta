@@ -59,7 +59,7 @@ public class KotlinExpressionParsing extends AbstractKotlinParsing {
 
     private static final TokenSet TYPE_ARGUMENT_LIST_STOPPERS = TokenSet.create(
             INTEGER_LITERAL, FLOAT_LITERAL, CHARACTER_LITERAL, INTERPOLATION_PREFIX, OPEN_QUOTE,
-            PACKAGE_KEYWORD, AS_KEYWORD, TYPE_ALIAS_KEYWORD, INTERFACE_KEYWORD, DEFINE_KEYWORD, THIS_KEYWORD, VAL_KEYWORD, VAR_KEYWORD,
+            PACKAGE_KEYWORD, AS_KEYWORD, TYPE_ALIAS_KEYWORD, INTERFACE_KEYWORD, DEFINE_KEYWORD, ROLE_KEYWORD, THIS_KEYWORD, VAL_KEYWORD, VAR_KEYWORD,
             FUN_KEYWORD, FOR_KEYWORD, NULL_KEYWORD,
             TRUE_KEYWORD, FALSE_KEYWORD, IS_KEYWORD, THROW_KEYWORD, RETURN_KEYWORD, BREAK_KEYWORD,
             CONTINUE_KEYWORD, OBJECT_KEYWORD, IF_KEYWORD, TRY_KEYWORD, ELSE_KEYWORD, WHILE_KEYWORD, DO_KEYWORD,
@@ -82,6 +82,7 @@ public class KotlinExpressionParsing extends AbstractKotlinParsing {
                     VAL_KEYWORD, VAR_KEYWORD,
                     INTERFACE_KEYWORD,
                     DEFINE_KEYWORD,
+                    ROLE_KEYWORD,
                     TYPE_ALIAS_KEYWORD
             ),
             MODIFIER_KEYWORDS
@@ -624,6 +625,7 @@ public class KotlinExpressionParsing extends AbstractKotlinParsing {
                 break;
             case DEFINE_KEYWORD_Id:
             case INTERFACE_KEYWORD_Id:
+            case ROLE_KEYWORD_Id:
             case FUN_KEYWORD_Id:
             case VAL_KEYWORD_Id:
             case VAR_KEYWORD_Id:
@@ -1341,6 +1343,10 @@ public class KotlinExpressionParsing extends AbstractKotlinParsing {
             if (keywordToken != FUN_KEYWORD) return null;
 
             return myKotlinParsing.parseFunction(/* failIfIdentifierExists = */ true);
+        }
+
+        if (keywordToken == ROLE_KEYWORD) {
+            return myKotlinParsing.parseRole();
         }
 
         if (keywordToken == OBJECT_KEYWORD) {
