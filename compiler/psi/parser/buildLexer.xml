@@ -41,6 +41,7 @@
     </target>
 
     <target name="get-idea-flex.skeleton.if.not.exists" depends="check-idea-flex.skeleton.exists" unless="skeleton.exists">
+        <mkdir dir="${builddir}"/>
         <get src="https://raw.githubusercontent.com/JetBrains/intellij-community/${skeleton.version}/tools/lexer/idea-flex.skeleton"
              dest="${skeleton.download.path}" usetimestamp="true"/>
     </target>

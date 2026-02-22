@@ -49,8 +49,8 @@ class PsiApiTest {
         assertFalse("while".isIdentifier())
         assertFalse("return".isIdentifier())
 
-        // "class" is no longer a keyword; "define" is the class declaration keyword
-        assertTrue("class".isIdentifier())
+        // "class" is a reserved word (not an identifier; use "define" instead)
+        assertFalse("class".isIdentifier())
 
         // Soft keywords
         assertTrue("file".isIdentifier())
