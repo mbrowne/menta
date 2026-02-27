@@ -313,7 +313,23 @@ class FirStatusResolver(
 
         status.returnValueStatus = computeMustUseReturnValue(declaration, isLocal, containingClass, containingProperty, overriddenStatuses)
 
-        return status.resolved(visibility, modality, effectiveVisibility)
+        val memberDefaultVisibility = if (!isLocal) memberDefaultVisibilityFor(containingClass) else null
+        return if (memberDefaultVisibility != null && status.defaultVisibility == Visibilities.DEFAULT_VISIBILITY) {
+            status.resolvedWithDefaultVisibility(visibility, modality, effectiveVisibility, memberDefaultVisibility)
+        } else {
+            status.resolved(visibility, modality, effectiveVisibility)
+        }
+    }
+
+    private fun memberDefaultVisibilityFor(containingClass: FirClass?): Visibility? {
+        return when {
+            containingClass is FirAnonymousObject -> Visibilities.Private
+            containingClass is FirRegularClass &&
+                    (containingClass.classKind == ClassKind.CLASS ||
+                            containingClass.classKind == ClassKind.OBJECT ||
+                            containingClass.classKind == ClassKind.INTERFACE) -> Visibilities.Private
+            else -> null
+        }
     }
 
     private fun computeMustUseReturnValue(
@@ -343,8 +359,17 @@ class FirStatusResolver(
     ): Visibility {
         if (declaration is FirConstructor && containingClass?.hasPrivateConstructor() == true) return Visibilities.Private
 
+        if (declaration is FirConstructor && declaration.isPrimary &&
+            containingClass is FirRegularClass && containingClass.classKind == ClassKind.CLASS
+        ) return Visibilities.Public
+
         val fallbackVisibility = when {
             declaration is FirPropertyAccessor && containingProperty != null -> containingProperty.visibility
+            containingClass is FirAnonymousObject ||
+                    (containingClass is FirRegularClass &&
+                            (containingClass.classKind == ClassKind.CLASS ||
+                                    containingClass.classKind == ClassKind.OBJECT ||
+                                    containingClass.classKind == ClassKind.INTERFACE)) -> Visibilities.Private
             else -> Visibilities.Public
         }
 

@@ -211,6 +211,22 @@ open class FirDeclarationStatusImpl(
         return FirResolvedDeclarationStatusImpl(visibility, modality, effectiveVisibility, flags)
     }
 
+    open fun resolvedWithDefaultVisibility(
+        visibility: Visibility,
+        modality: Modality,
+        effectiveVisibility: EffectiveVisibility,
+        defaultVisibility: Visibility,
+    ): FirResolvedDeclarationStatusImpl {
+        return FirResolvedDeclarationStatusWithAlteredDefaults(
+            visibility,
+            modality,
+            defaultVisibility,
+            defaultModality,
+            effectiveVisibility,
+            flags,
+        )
+    }
+
     override val defaultModality: Modality
         get() = Modality.FINAL
 
