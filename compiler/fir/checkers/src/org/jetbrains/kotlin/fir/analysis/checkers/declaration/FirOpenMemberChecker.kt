@@ -25,11 +25,13 @@ import org.jetbrains.kotlin.lexer.KtTokens
 object FirOpenMemberChecker : FirClassChecker(MppCheckerKind.Common) {
     context(context: CheckerContext, reporter: DiagnosticReporter)
     override fun check(declaration: FirClass) {
+        if (declaration.classKind == ClassKind.CLASS) {
+            checkDefineMembers(declaration)
+            return
+        }
         if (declaration.canHaveOpenMembers) return
         declaration.symbol.processAllDeclaredCallables(context.session) { memberDeclaration ->
-            if (// Marking a constructor `open` is an error covered by diagnostic code WRONG_MODIFIER_TARGET
-                memberDeclaration is FirConstructorSymbol
-            ) return@processAllDeclaredCallables
+            if (memberDeclaration is FirConstructorSymbol) return@processAllDeclaredCallables
             val source = memberDeclaration.source ?: return@processAllDeclaredCallables
             if (memberDeclaration.isOpen && !memberDeclaration.isOverride && declaration.classKind == ClassKind.ANNOTATION_CLASS ||
                 memberDeclaration.hasModifier(KtTokens.OPEN_KEYWORD) && source.shouldReportOpenFromSource
@@ -39,6 +41,28 @@ object FirOpenMemberChecker : FirClassChecker(MppCheckerKind.Common) {
                 } else {
                     reporter.reportOn(source, FirErrors.NON_FINAL_MEMBER_IN_FINAL_CLASS)
                 }
+            }
+        }
+    }
+
+    context(context: CheckerContext, reporter: DiagnosticReporter)
+    private fun checkDefineMembers(declaration: FirClass) {
+        declaration.symbol.processAllDeclaredCallables(context.session) { memberDeclaration ->
+            if (memberDeclaration is FirConstructorSymbol) return@processAllDeclaredCallables
+            val source = memberDeclaration.source ?: return@processAllDeclaredCallables
+            if (memberDeclaration.hasModifier(KtTokens.OPEN_KEYWORD) && source.shouldReportOpenFromSource) {
+                reporter.reportOn(
+                    source,
+                    FirErrors.UNSUPPORTED,
+                    "The 'open' modifier is not applicable to members of object template definitions."
+                )
+            }
+            if (memberDeclaration.hasModifier(KtTokens.FINAL_KEYWORD)) {
+                reporter.reportOn(
+                    source,
+                    FirErrors.UNSUPPORTED,
+                    "The 'final' modifier is not applicable to members of object template definitions."
+                )
             }
         }
     }

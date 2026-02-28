@@ -16,6 +16,7 @@ import org.jetbrains.kotlin.diagnostics.reportOn
 import org.jetbrains.kotlin.fir.FirFunctionTypeParameter
 import org.jetbrains.kotlin.fir.analysis.checkers.*
 import org.jetbrains.kotlin.fir.analysis.checkers.context.CheckerContext
+import org.jetbrains.kotlin.fir.analysis.checkers.hasModifier
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors
 import org.jetbrains.kotlin.fir.declarations.DirectDeclarationsAccess
 import org.jetbrains.kotlin.fir.declarations.FirClass
@@ -42,6 +43,24 @@ object FirSupertypesChecker : FirClassChecker(MppCheckerKind.Platform) {
     context(context: CheckerContext, reporter: DiagnosticReporter)
     override fun check(declaration: FirClass) {
         if (declaration.source?.kind is KtFakeSourceElementKind) return
+
+        if (declaration.classKind == ClassKind.CLASS) {
+            if (declaration.hasModifier(KtTokens.OPEN_KEYWORD)) {
+                reporter.reportOn(
+                    declaration.source,
+                    FirErrors.UNSUPPORTED,
+                    "The 'open' modifier is not applicable to object template definitions."
+                )
+            }
+            if (declaration.hasModifier(KtTokens.FINAL_KEYWORD)) {
+                reporter.reportOn(
+                    declaration.source,
+                    FirErrors.UNSUPPORTED,
+                    "The 'final' modifier is not applicable to object template definitions."
+                )
+            }
+        }
+
         val isInterface = declaration.classKind == ClassKind.INTERFACE
         var extensionOrContextFunctionSupertypeReported = false
         var interfaceWithSuperclassReported = !isInterface
