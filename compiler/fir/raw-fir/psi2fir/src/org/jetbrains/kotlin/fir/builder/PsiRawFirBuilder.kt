@@ -2229,6 +2229,7 @@ open class PsiRawFirBuilder(
                                 symbol = funcSymbol
                                 dispatchReceiverType = currentDispatchReceiverType()
                                 status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                                isLocal = false
                                 for (param in declaration.valueParameters) {
                                     valueParameters += param.toFirValueParameter(
                                         null,

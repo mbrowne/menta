@@ -1026,6 +1026,7 @@ class LightTreeRawFirDeclarationBuilder(
                 symbol = funcSymbol
                 dispatchReceiverType = currentDispatchReceiverType()
                 status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                isLocal = false
 
                 valueParamListNode?.forEachChildren { paramNode ->
                     if (paramNode.tokenType == VALUE_PARAMETER) {
