@@ -85,6 +85,14 @@ object FirSupertypesChecker : FirClassChecker(MppCheckerKind.Platform) {
                     reporter.reportOn(superTypeRef.source, FirErrors.SUPERTYPE_APPEARS_TWICE)
                 }
                 if (symbol.classKind != ClassKind.INTERFACE) {
+                    if (declaration.classKind == ClassKind.CLASS) {
+                        reporter.reportOn(
+                            superTypeRef.source,
+                            FirErrors.UNSUPPORTED,
+                            "Object template definitions can only inherit from interfaces."
+                        )
+                        continue
+                    }
                     if (classAppeared) {
                         if (!allowUsingClassTypeAsInterface) {
                             reporter.reportOn(superTypeRef.source, FirErrors.MANY_CLASSES_IN_SUPERTYPE_LIST)
