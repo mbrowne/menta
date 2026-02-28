@@ -804,13 +804,16 @@ class LightTreeRawFirDeclarationBuilder(
         return added
     }
 
+    private fun isEffectivelyPublic(visibility: Visibility): Boolean =
+        visibility == Visibilities.Public || visibility == Visibilities.Unknown
+
     private fun markOverridesForInterfaceFrom(classBuilder: FirRegularClassBuilder) {
         for (decl in classBuilder.declarations) {
             when (decl) {
                 is FirProperty -> {
                     if (decl.name.asString() !in ANY_MEMBER_NAMES) {
                         val status = decl.status as? FirDeclarationStatusImpl ?: continue
-                        if (status.visibility == Visibilities.Public || status.visibility == Visibilities.DEFAULT_VISIBILITY) {
+                        if (isEffectivelyPublic(status.visibility)) {
                             status.isOverride = true
                         }
                     }
@@ -818,7 +821,7 @@ class LightTreeRawFirDeclarationBuilder(
                 is FirNamedFunction -> {
                     if (decl.name.asString() !in ANY_MEMBER_NAMES) {
                         val status = decl.status as? FirDeclarationStatusImpl ?: continue
-                        if (status.visibility == Visibilities.Public || status.visibility == Visibilities.DEFAULT_VISIBILITY) {
+                        if (isEffectivelyPublic(status.visibility)) {
                             status.isOverride = true
                         }
                     }
