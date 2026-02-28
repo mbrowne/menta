@@ -1008,6 +1008,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
      *       (":" annotations delegationSpecifier{","})?
      *       typeConstraints
      *       (classBody? | enumClassBody)
+     *   | modifiers "interface" SimpleName "from" type
      *   ;
      *
      * primaryConstructor
@@ -1025,12 +1026,14 @@ public class KotlinParsing extends AbstractKotlinParsing {
             boolean enumClass,
             boolean expectKindKeyword
     ) {
+        boolean isInterface = false;
         if (expectKindKeyword) {
             if (object) {
                 assert _at(OBJECT_KEYWORD);
             }
             else {
                 assert _atSet(CLASS_INTERFACE_SET);
+                isInterface = at(INTERFACE_KEYWORD);
             }
             advance(); // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
         }
@@ -1053,6 +1056,12 @@ public class KotlinParsing extends AbstractKotlinParsing {
                     advance();
                 }
             }
+        }
+
+        if (isInterface && at(FROM_KEYWORD)) {
+            advance(); // FROM_KEYWORD
+            parseTypeRef();
+            return CLASS;
         }
 
         boolean typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET);

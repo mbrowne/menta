@@ -9,6 +9,7 @@ import com.intellij.lang.ASTNode
 import com.intellij.psi.PsiElement
 import com.intellij.psi.stubs.IStubElementType
 import com.intellij.psi.tree.TokenSet
+import com.intellij.psi.util.PsiTreeUtil
 import org.jetbrains.kotlin.KtStubBasedElementTypes
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
@@ -44,6 +45,21 @@ open class KtDefine : KtClassOrObject {
 
     fun isInterface(): Boolean =
         _stub?.isInterface ?: (findChildByType<PsiElement>(KtTokens.INTERFACE_KEYWORD) != null)
+
+    /**
+     * Returns `true` if this is an `interface Foo from Bar` declaration
+     * that derives its members from another definition.
+     */
+    fun isInterfaceFrom(): Boolean =
+        isInterface() && findChildByType<PsiElement>(KtTokens.FROM_KEYWORD) != null
+
+    /**
+     * For `interface Foo from Bar`, returns the [KtTypeReference] for `Bar`.
+     */
+    fun getFromTypeReference(): KtTypeReference? {
+        val fromKeyword = findChildByType<PsiElement>(KtTokens.FROM_KEYWORD) ?: return null
+        return PsiTreeUtil.getNextSiblingOfType(fromKeyword, KtTypeReference::class.java)
+    }
 
     fun isEnum(): Boolean = hasModifier(KtTokens.ENUM_KEYWORD)
     fun isSealed(): Boolean = hasModifier(KtTokens.SEALED_KEYWORD)

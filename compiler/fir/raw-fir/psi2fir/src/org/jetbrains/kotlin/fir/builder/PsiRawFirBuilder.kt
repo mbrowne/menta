@@ -1980,6 +1980,9 @@ open class PsiRawFirBuilder(
                             )
                             delegatedFieldsMap = extractedDelegatedFieldsMap
 
+                            val hasInterfaceFromSupertypes = classOrObject is KtDefine && !classOrObject.isInterface() &&
+                                addInterfaceFromSupertypes(classOrObject, this)
+
                             val primaryConstructor = classOrObject.primaryConstructor
                             val firPrimaryConstructor = declarations.firstOrNull { it is FirConstructor } as? FirConstructor
                             if (primaryConstructor != null && firPrimaryConstructor != null) {
@@ -2003,6 +2006,15 @@ open class PsiRawFirBuilder(
                                     )
                                 )
                             }
+
+                            if (hasInterfaceFromSupertypes) {
+                                markOverridesForInterfaceFrom(this)
+                            }
+
+                            if (classOrObject is KtDefine && classOrObject.isInterfaceFrom()) {
+                                generateInterfaceFromMembers(classOrObject, this, classSymbol)
+                            }
+
                             for (danglingModifier in classOrObject.body?.danglingModifierLists ?: emptyList()) {
                                 addDeclaration(
                                     buildErrorNonLocalDeclarationForDanglingModifierList(danglingModifier).apply {
@@ -2065,6 +2077,196 @@ open class PsiRawFirBuilder(
                 }
                 it.initContainingScriptOrReplAttr()
             }
+        }
+
+        private fun addInterfaceFromSupertypes(
+            classDefine: KtDefine,
+            classBuilder: FirRegularClassBuilder,
+        ): Boolean {
+            val className = classDefine.name ?: return false
+            var added = false
+            for (decl in classDefine.containingKtFile.declarations) {
+                if (decl is KtDefine && decl.isInterfaceFrom()) {
+                    val fromRef = decl.getFromTypeReference()
+                    if (fromRef?.text == className) {
+                        val interfaceName = decl.nameAsSafeName
+                        classBuilder.superTypeRefs += buildUserTypeRef {
+                            source = classDefine.toFirSourceElement()
+                            isMarkedNullable = false
+                            qualifier += FirQualifierPartImpl(
+                                source = classDefine.toFirSourceElement(),
+                                name = interfaceName,
+                                typeArgumentList = FirTypeArgumentListImpl(source = null),
+                            )
+                        }
+                        added = true
+                    }
+                }
+            }
+            return added
+        }
+
+        private fun markOverridesForInterfaceFrom(classBuilder: FirRegularClassBuilder) {
+            for (decl in classBuilder.declarations) {
+                when (decl) {
+                    is FirProperty -> {
+                        if (decl.name.asString() !in ANY_MEMBER_NAMES) {
+                            val status = decl.status as? FirDeclarationStatusImpl ?: continue
+                            if (status.visibility == Visibilities.Public || status.visibility == Visibilities.DEFAULT_VISIBILITY) {
+                                status.isOverride = true
+                            }
+                        }
+                    }
+                    is FirNamedFunction -> {
+                        if (decl.name.asString() !in ANY_MEMBER_NAMES) {
+                            val status = decl.status as? FirDeclarationStatusImpl ?: continue
+                            if (status.visibility == Visibilities.Public || status.visibility == Visibilities.DEFAULT_VISIBILITY) {
+                                status.isOverride = true
+                            }
+                        }
+                    }
+                    else -> {}
+                }
+            }
+        }
+
+        private val ANY_MEMBER_NAMES = setOf("equals", "hashCode", "toString")
+
+        private fun generateInterfaceFromMembers(
+            interfaceDefine: KtDefine,
+            classBuilder: FirRegularClassBuilder,
+            classSymbol: FirRegularClassSymbol,
+        ) {
+            val fromRef = interfaceDefine.getFromTypeReference() ?: return
+            val sourceName = fromRef.text ?: return
+            val sourceClass = interfaceDefine.containingKtFile.declarations
+                .filterIsInstance<KtDefine>()
+                .find { it.name == sourceName } ?: return
+
+            val interfaceSource = interfaceDefine.toFirSourceElement()
+
+            for (param in sourceClass.primaryConstructorParameters) {
+                if (!param.hasValOrVar()) continue
+                if (!param.isPublic()) continue
+
+                val propertyName = param.nameAsSafeName
+                val propertySymbol = FirRegularPropertySymbol(callableIdForName(propertyName))
+                withContainerSymbol(propertySymbol) {
+                    classBuilder.addDeclaration(buildProperty {
+                        source = interfaceSource
+                        moduleData = baseModuleData
+                        origin = FirDeclarationOrigin.Source
+                        returnTypeRef = param.typeReference.toFirOrErrorType()
+                        name = propertyName
+                        isVar = param.isMutable
+                        symbol = propertySymbol
+                        dispatchReceiverType = currentDispatchReceiverType()
+                        status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                        isLocal = false
+                        val defaultAccessorSource = interfaceSource.fakeElement(KtFakeSourceElementKind.DefaultAccessor)
+                        getter = FirDefaultPropertyGetter(
+                            source = defaultAccessorSource,
+                            moduleData = baseModuleData,
+                            origin = FirDeclarationOrigin.Source,
+                            propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                            visibility = Visibilities.Public,
+                            propertySymbol = symbol,
+                            modality = Modality.ABSTRACT,
+                        )
+                        if (isVar) {
+                            setter = FirDefaultPropertySetter(
+                                source = defaultAccessorSource,
+                                moduleData = baseModuleData,
+                                origin = FirDeclarationOrigin.Source,
+                                propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                                visibility = Visibilities.Public,
+                                propertySymbol = symbol,
+                                modality = Modality.ABSTRACT,
+                            )
+                        }
+                    })
+                }
+            }
+
+            for (declaration in sourceClass.declarations) {
+                when (declaration) {
+                    is KtNamedFunction -> {
+                        if (!declaration.isPublic()) continue
+                        val funcName = declaration.nameAsSafeName
+                        if (funcName.asString() in ANY_MEMBER_NAMES) continue
+
+                        val funcSymbol = FirNamedFunctionSymbol(callableIdForName(funcName))
+                        withContainerSymbol(funcSymbol) {
+                            classBuilder.addDeclaration(buildNamedFunction {
+                                source = interfaceSource
+                                moduleData = baseModuleData
+                                origin = FirDeclarationOrigin.Source
+                                returnTypeRef = declaration.typeReference.toFirOrUnitType()
+                                name = funcName
+                                symbol = funcSymbol
+                                dispatchReceiverType = currentDispatchReceiverType()
+                                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                                for (param in declaration.valueParameters) {
+                                    valueParameters += param.toFirValueParameter(
+                                        null,
+                                        funcSymbol,
+                                        ValueParameterDeclaration.FUNCTION,
+                                    )
+                                }
+                            })
+                        }
+                    }
+                    is KtProperty -> {
+                        if (!declaration.isPublic()) continue
+                        val propName = declaration.nameAsSafeName
+                        if (propName.asString() in ANY_MEMBER_NAMES) continue
+
+                        val propSymbol = FirRegularPropertySymbol(callableIdForName(propName))
+                        withContainerSymbol(propSymbol) {
+                            classBuilder.addDeclaration(buildProperty {
+                                source = interfaceSource
+                                moduleData = baseModuleData
+                                origin = FirDeclarationOrigin.Source
+                                returnTypeRef = declaration.typeReference.toFirOrImplicitType()
+                                name = propName
+                                isVar = declaration.isVar
+                                symbol = propSymbol
+                                dispatchReceiverType = currentDispatchReceiverType()
+                                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                                isLocal = false
+                                val defaultAccessorSource = interfaceSource.fakeElement(KtFakeSourceElementKind.DefaultAccessor)
+                                getter = FirDefaultPropertyGetter(
+                                    source = defaultAccessorSource,
+                                    moduleData = baseModuleData,
+                                    origin = FirDeclarationOrigin.Source,
+                                    propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                                    visibility = Visibilities.Public,
+                                    propertySymbol = symbol,
+                                    modality = Modality.ABSTRACT,
+                                )
+                                if (declaration.isVar) {
+                                    setter = FirDefaultPropertySetter(
+                                        source = defaultAccessorSource,
+                                        moduleData = baseModuleData,
+                                        origin = FirDeclarationOrigin.Source,
+                                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                                        visibility = Visibilities.Public,
+                                        propertySymbol = symbol,
+                                        modality = Modality.ABSTRACT,
+                                    )
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+        }
+
+        private fun KtModifierListOwner.isPublic(): Boolean {
+            val modifierList = modifierList ?: return true
+            return !modifierList.hasModifier(PRIVATE_KEYWORD) &&
+                    !modifierList.hasModifier(PROTECTED_KEYWORD) &&
+                    !modifierList.hasModifier(INTERNAL_KEYWORD)
         }
 
         override fun visitObjectLiteralExpression(expression: KtObjectLiteralExpression, data: FirElement?): FirElement {
