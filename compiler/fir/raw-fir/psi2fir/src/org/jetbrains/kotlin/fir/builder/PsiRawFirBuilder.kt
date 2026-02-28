@@ -2088,15 +2088,32 @@ open class PsiRawFirBuilder(
             for (decl in classDefine.containingKtFile.declarations) {
                 if (decl is KtDefine && decl.isInterfaceFrom()) {
                     val fromRef = decl.getFromTypeReference()
-                    if (fromRef?.text == className) {
+                    val fromName = (fromRef?.typeElement as? KtUserType)?.referencedName ?: fromRef?.text
+                    if (fromName == className) {
                         val interfaceName = decl.nameAsSafeName
+                        val typeArgList = FirTypeArgumentListImpl(source = null)
+                        for (typeParam in classDefine.typeParameters) {
+                            typeArgList.typeArguments += buildTypeProjectionWithVariance {
+                                source = classDefine.toFirSourceElement()
+                                variance = Variance.INVARIANT
+                                typeRef = buildUserTypeRef {
+                                    source = classDefine.toFirSourceElement()
+                                    isMarkedNullable = false
+                                    qualifier += FirQualifierPartImpl(
+                                        source = null,
+                                        name = typeParam.nameAsSafeName,
+                                        typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                    )
+                                }
+                            }
+                        }
                         classBuilder.superTypeRefs += buildUserTypeRef {
                             source = classDefine.toFirSourceElement()
                             isMarkedNullable = false
                             qualifier += FirQualifierPartImpl(
                                 source = classDefine.toFirSourceElement(),
                                 name = interfaceName,
-                                typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                typeArgumentList = typeArgList,
                             )
                         }
                         added = true
@@ -2138,10 +2155,16 @@ open class PsiRawFirBuilder(
             classSymbol: FirRegularClassSymbol,
         ) {
             val fromRef = interfaceDefine.getFromTypeReference() ?: return
-            val sourceName = fromRef.text ?: return
+            val sourceName = (fromRef.typeElement as? KtUserType)?.referencedName ?: fromRef.text ?: return
             val sourceClass = interfaceDefine.containingKtFile.declarations
                 .filterIsInstance<KtDefine>()
                 .find { it.name == sourceName } ?: return
+
+            if (classBuilder.typeParameters.isEmpty() && sourceClass.typeParameters.isNotEmpty()) {
+                for (typeParam in sourceClass.typeParameters) {
+                    classBuilder.typeParameters += extractTypeParameter(typeParam, classSymbol)
+                }
+            }
 
             val interfaceSource = interfaceDefine.toFirSourceElement()
 

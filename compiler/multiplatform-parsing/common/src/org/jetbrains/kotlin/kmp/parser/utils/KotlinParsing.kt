@@ -1217,13 +1217,13 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
             }
         }
 
+        val typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET)
+
         if (isInterface && atWithRemap(KtTokens.FROM_KEYWORD)) {
             advance() // FROM_KEYWORD
             parseTypeRef()
             return KtNodeTypes.CLASS
         }
-
-        val typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET)
 
         val beforeConstructorModifiers = mark()
         val primaryConstructorMarker = mark()

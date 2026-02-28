@@ -52,6 +52,7 @@ import org.jetbrains.kotlin.fir.types.impl.FirTypeArgumentListImpl
 import org.jetbrains.kotlin.lexer.KtModifierKeywordToken
 import org.jetbrains.kotlin.lexer.KtTokens.*
 import org.jetbrains.kotlin.name.*
+import org.jetbrains.kotlin.types.Variance
 import org.jetbrains.kotlin.psi.stubs.elements.KtStubElementTypes
 import org.jetbrains.kotlin.util.getChildren
 import org.jetbrains.kotlin.utils.addToStdlib.runIf
@@ -759,13 +760,41 @@ class LightTreeRawFirDeclarationBuilder(
                 }
                 if (isInterface && hasFrom && fromTypeName == className.asString()) {
                     val interfaceName = siblingName ?: return@forEachChildren
+                    val typeArgList = FirTypeArgumentListImpl(source = null)
+                    classNode.forEachChildren { classChild ->
+                        if (classChild.tokenType == TYPE_PARAMETER_LIST) {
+                            classChild.forEachChildren { typeParamNode ->
+                                if (typeParamNode.tokenType == TYPE_PARAMETER) {
+                                    var paramName: String? = null
+                                    typeParamNode.forEachChildren { tpChild ->
+                                        if (tpChild.tokenType == IDENTIFIER) paramName = tpChild.asText
+                                    }
+                                    paramName?.let { name ->
+                                        typeArgList.typeArguments += buildTypeProjectionWithVariance {
+                                            source = classNode.toFirSourceElement()
+                                            variance = Variance.INVARIANT
+                                            typeRef = buildUserTypeRef {
+                                                source = classNode.toFirSourceElement()
+                                                isMarkedNullable = false
+                                                qualifier += FirQualifierPartImpl(
+                                                    source = null,
+                                                    name = Name.identifier(name),
+                                                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     superTypeRefs += buildUserTypeRef {
                         source = classNode.toFirSourceElement()
                         isMarkedNullable = false
                         qualifier += FirQualifierPartImpl(
                             source = classNode.toFirSourceElement(),
                             name = Name.identifier(interfaceName),
-                            typeArgumentList = FirTypeArgumentListImpl(source = null),
+                            typeArgumentList = typeArgList,
                         )
                     }
                     added = true
@@ -841,6 +870,21 @@ class LightTreeRawFirDeclarationBuilder(
             }
         }
         val sourceNode = sourceClassNode ?: return
+
+        if (classBuilder.typeParameters.isEmpty()) {
+            var sourceTypeParamList: LighterASTNode? = null
+            val sourceTypeConstraints = mutableListOf<TypeConstraint>()
+            sourceNode.forEachChildren { child ->
+                when (child.tokenType) {
+                    TYPE_PARAMETER_LIST -> sourceTypeParamList = child
+                    TYPE_CONSTRAINT_LIST -> sourceTypeConstraints += convertTypeConstraints(child)
+                }
+            }
+            sourceTypeParamList?.let { typeParamList ->
+                classBuilder.typeParameters += convertTypeParameters(typeParamList, sourceTypeConstraints, classSymbol)
+            }
+        }
+
         val interfaceSource = interfaceNode.toFirSourceElement()
 
         // Extract public val/var constructor parameters

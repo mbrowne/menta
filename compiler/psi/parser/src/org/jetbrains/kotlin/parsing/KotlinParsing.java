@@ -1058,13 +1058,13 @@ public class KotlinParsing extends AbstractKotlinParsing {
             }
         }
 
+        boolean typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET);
+
         if (isInterface && at(FROM_KEYWORD)) {
             advance(); // FROM_KEYWORD
             parseTypeRef();
             return CLASS;
         }
-
-        boolean typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET);
 
         PsiBuilder.Marker beforeConstructorModifiers = mark();
         PsiBuilder.Marker primaryConstructorMarker = mark();
