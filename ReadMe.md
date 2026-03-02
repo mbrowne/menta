@@ -1,45 +1,30 @@
-[![official project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-[![TeamCity (simple build status)](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/Kotlin_KotlinPublic_Compiler.svg)](https://teamcity.jetbrains.com/buildConfiguration/Kotlin_KotlinPublic_Compiler?branch=%3Cdefault%3E&buildTypeTab=overview&mode=builds)
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin/kotlin-maven-plugin.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jetbrains.kotlin%22)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Revved up by Develocity](https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.jetbrains.com/scans?search.rootProjectNames=Kotlin)
 
-# Kotlin Programming Language
+# Menta Programming Language
 
-Welcome to [Kotlin](https://kotlinlang.org/)!   
-Kotlin is a concise multiplatform language developed by [JetBrains](https://www.jetbrains.com/) and [contributors](https://kotlinlang.org/docs/contribute.html).
+## What is Menta?
 
-Some handy links:
+Menta is a multi-platform language originally forked from [Kotlin](https://github.com/JetBrains/kotlin).
 
- * [Kotlin Site](https://kotlinlang.org/)
- * [Getting Started Guide](https://kotlinlang.org/docs/tutorials/getting-started.html)
- * [Try Kotlin](https://play.kotlinlang.org/)
- * [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
- * [Issue Tracker](https://youtrack.jetbrains.com/issues/KT)
- * [Kotlin YouTube Channel](https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw)
- * [Forum](https://discuss.kotlinlang.org/)
- * [Kotlin Blog](https://blog.jetbrains.com/kotlin/)
- * [Subscribe to Kotlin YouTube channel](https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw)
- * [Follow Kotlin on Twitter](https://twitter.com/kotlin)
- * [Public Slack channel](https://slack.kotlinlang.org/)
- * [TeamCity CI build](https://teamcity.jetbrains.com/project.html?tab=projectOverview&projectId=Kotlin)
- * [Kotlin Foundation](https://kotlinfoundation.org/)
+It supports multiple paradigms, including functional programming, DCI ([Data, Context and Interaction](https://fulloo.info/)), and object-oriented programming using composition. It deliberately does *not* support traditional classes and inheritance.
 
-## Kotlin Multiplatform capabilities
+## Why Menta?
 
-Support for multiplatform programming is one of Kotlin’s key benefits. It reduces time spent writing and maintaining the same code for [different platforms](https://kotlinlang.org/docs/reference/mpp-supported-platforms.html) while retaining the flexibility and benefits of native programming.
+Menta is short for "mental models". The concept of mental models in software traces back at least to [Doug Englebart](https://www.dougengelbart.org/), an early pioneer in the computing field who envisioned the computer as an extension of the human mind. This vision heavily influenced [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) and other researchers in the early days of developing GUIs and the precursors of modern personal computers. [1]
 
- * [Kotlin Multiplatform](https://www.jetbrains.com/kotlin-multiplatform/) and [Compose Multiplatform](https://www.jetbrains.com/compose-multiplatform/) for sharing business logic and UI between Android, iOS, desktop, and web.
- * [Get started with Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)
- * [Kotlin Multiplatform Benefits](https://kotlinlang.org/docs/reference/multiplatform.html)
- * [Share code on all platforms](https://kotlinlang.org/docs/reference/mpp-share-on-platforms.html#share-code-on-all-platforms)
- * [Share code on similar platforms](https://kotlinlang.org/docs/reference/mpp-share-on-platforms.html#share-code-on-similar-platforms)
+In many software contexts today, the original focus on mental models has been largely lost, with concepts such as object orientation or Model-View-Controller explained in merely technical terms. This misses the whole point: Kay's contributions to the technical details of Smalltalk and object orientation pale in comparison to the importance of his research on psychological and user experience principles, a legacy carried on by other researchers to this day. These principles are always relevant to software used by human beings, even if the code is not remotely object-oriented. Still, object orientation (which isn't a great name for it, by Kay's own admission) is a powerful tool for reflecting mental models, which has unfortunately been greatly misunderstood.
 
-## Editing Kotlin
+### Data, Context, and Interaction
 
- * [Kotlin IntelliJ IDEA Plugin](https://kotlinlang.org/docs/tutorials/getting-started.html) ([source code](https://github.com/JetBrains/intellij-community/tree/master/plugins/kotlin))
- * [Kotlin Eclipse Plugin](https://kotlinlang.org/docs/tutorials/getting-started-eclipse.html)
- * [Kotlin Sublime Text Package](https://github.com/vkostyukov/kotlin-sublime-package)
+One of the key reasons why Menta was created was to provide first-class support for the [Data, Context and Interaction](https://fulloo.info/) programming paradigm (DCI). DCI, invented by [Trygve Reenskaug](https://en.wikipedia.org/wiki/Trygve_Reenskaug) and refined with the help of collaborator [James Coplien](https://en.wikipedia.org/wiki/Jim_Coplien), helps remind us of the original vision of mental models and object orientation, and also addresses some key areas where it fell short. These shortcomings contributed to widespread frustrations with object orientation as it was applied in the industry, and many valid criticisms of it at a technical level.
+
+Thanks to DCI, we are no longer confined to coupling data and behavior together in a compile-time class hierarchy: we can merge the two dynamically at run-time according to the use cases. DCI also plays well with functional programming and immutable data structures.
+
+### Programming Mental Models
+
+There are many benefits of going back to the historical roots of modeling, writing code that better reflects the mental models of the people using it, the programmers writing it, and other stakeholders—even in the age of AI coding agents. The key concept for us as software engineers is code comprehension: when the code is aligned with mental models that we understand and which serve the needs of users, the result is more user-friendly and maintainable software. And a great thing about programming with this philosophy is that it can apply to any mental model. We usually want to emphasize the end user's mental model first and foremost, but DCI can be used at multiple levels, including some levels which emphasize the programmer's mental model, or a blend between the users' and programmers' models shaped by discussions and shared understanding with the users.
+
+> [1] Kay's conception of mental models was also informed by the work of Jean Piaget and other psychologists who studied child psychology, as explained in Kay's 1987 presentation [Doing With Images Makes Symbols](https://www.youtube.com/watch?v=p2LZLYcu_JY).
 
 ## Build environment requirements
 
@@ -80,9 +65,9 @@ command line parameters on the first run:
 ## Important gradle tasks
 
 - `clean` - clean build results
-- `dist` - assembles the compiler distribution into `dist/kotlinc/` folder
+- `dist` - assembles the compiler distribution into `dist/mentac/` folder
 - `install` - build and install all public artifacts into local maven repository
-- `coreLibsTest` - build and run stdlib, reflect and kotlin-test tests
+- `coreLibsTest` - build and run stdlib, reflect and menta-test tests
 - `gradlePluginTest` - build and run gradle plugin tests
 - `compilerTest` - build and run all compiler tests
 
@@ -91,8 +76,8 @@ To reproduce TeamCity build use `-Pteamcity=true` flag. Local builds don't run p
 **OPTIONAL:** Some artifacts, mainly Maven plugin ones, are built separately with Maven.
 Refer to [libraries/ReadMe.md](libraries/ReadMe.md) for details.
 
-To build Kotlin/Native, see
-[kotlin-native/README.md](kotlin-native/README.md#building-from-source).
+To build Menta/Native, see
+[menta-native/README.md](menta-native/README.md#building-from-source).
 
 ## <a name="working-in-idea"></a> Working with the project in IntelliJ IDEA
 
@@ -134,27 +119,10 @@ Keep in mind:
 - If you’re adding a dependency with OS mentioned in an artifact name (`darwin`, `mac`, `osx`, `linux`, `windows`), remember to add them to 
   `implicitDependencies` configuration or update `resolveDependencies` task if needed. `resolveDependencies` should resolve all dependencies
   including dependencies for different platforms.
-- If you have a `local.properties` file in your Kotlin project folder, make sure that it doesn't contain `kotlin.native.enabled=false`.
+- If you have a `local.properties` file in your Menta project folder, make sure that it doesn't contain `kotlin.native.enabled=false`.
   Otherwise, native-only dependencies may not be added to the verification metadata. This is because `local.properties` has higher 
   precedence than the `-Pkotlin.native.enabled=true` specified in the Gradle command.
 
-## Using -dev versions
-
-We publish `-dev` versions frequently.
-
-For `-dev` versions you can use the [list of available versions](https://redirector.kotlinlang.org/maven/bootstrap/org/jetbrains/kotlin/kotlin-compiler/maven-metadata.xml) and include this maven repository:
-
-```kotlin
-maven("https://redirector.kotlinlang.org/maven/bootstrap")
-```
-
 # License
-Kotlin is distributed under the terms of the Apache License (Version 2.0). See [license folder](license/README.md) for details.
 
-# Contributing
-
-Please be sure to review Kotlin's [contributing guidelines](docs/contributing.md) to learn how to help the project.
-
-# Kotlin Foundation
-
-The Kotlin Foundation is a non-profit organization whose mission is to promote and advance the Kotlin ecosystem. You can learn more about the structure and goals of the Kotlin Foundation on its [official website](https://kotlinfoundation.org/).
+Menta is distributed under the terms of the Apache License (Version 2.0). See [license folder](license/README.md) for details.
