@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class KotlinClass<T> public constructor(block: () -> T) {
     private final val block: () -> T /* compiled code */

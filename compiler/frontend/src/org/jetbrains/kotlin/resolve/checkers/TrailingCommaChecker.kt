@@ -32,7 +32,7 @@ object TrailingCommaChecker {
 object TrailingCommaDeclarationChecker : DeclarationChecker {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
         when (declaration) {
-            is KtClass -> {
+            is KtDefine -> {
                 TrailingCommaChecker.check(declaration.typeParameterList?.trailingComma, context.trace, context.languageVersionSettings)
             }
             is KtCallableDeclaration -> { // also it's executed for anonymous function declarations

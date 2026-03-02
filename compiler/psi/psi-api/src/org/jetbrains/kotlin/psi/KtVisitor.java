@@ -24,8 +24,8 @@ public class KtVisitor<R, D> extends PsiElementVisitor {
         return visitExpression(dcl, data);
     }
 
-    public R visitClass(@NotNull KtClass klass, D data) {
-        return visitClassOrObject(klass, data);
+    public R visitDefine(@NotNull KtDefine define, D data) {
+        return visitClassOrObject(define, data);
     }
 
     public R visitObjectDeclaration(@NotNull KtObjectDeclaration declaration, D data) {
@@ -136,7 +136,7 @@ public class KtVisitor<R, D> extends PsiElementVisitor {
     }
 
     public R visitEnumEntry(@NotNull KtEnumEntry enumEntry, D data) {
-        return visitClass(enumEntry, data);
+        return visitDefine(enumEntry, data);
     }
 
     public R visitParameterList(@NotNull KtParameterList list, D data) {

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(60,98): 'class Tuple(val a: String, val b: Int)'
+KtDefine(60,98): 'class Tuple(val a: String, val b: Int)'
   NO_CANDIDATES
 
 KtPrimaryConstructor(71,98): '(val a: String, val b: Int)'

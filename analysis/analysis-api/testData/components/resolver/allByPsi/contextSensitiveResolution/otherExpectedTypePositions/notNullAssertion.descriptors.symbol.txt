@@ -25,7 +25,7 @@ KtNameReferenceExpression(107,114): 'reflect'
 KtNameReferenceExpression(115,124): 'KProperty'
   null
 
-KtClass(126,349): 'open class MyClass {'
+KtDefine(126,349): 'open class MyClass {'
   null
 
 KtDeclarationModifierList(126,130): 'open'

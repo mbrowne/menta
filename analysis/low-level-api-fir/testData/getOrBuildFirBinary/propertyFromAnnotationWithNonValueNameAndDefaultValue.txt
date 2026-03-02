@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final annotation class Anno public constructor(number: kotlin.Int = COMPILED_CODE) : kotlin.Annotation {
     public final val number: kotlin.Int = COMPILED_CODE /* compiled code */

@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class A public constructor() {
     public final fun foo(action: @androidx.compose.runtime.Composable () -> kotlin.Unit): kotlin.Unit { /* compiled code */ }

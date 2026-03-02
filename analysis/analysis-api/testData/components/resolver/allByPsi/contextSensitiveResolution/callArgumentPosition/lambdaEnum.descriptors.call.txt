@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,223): 'enum class MyEnum {'
+KtDefine(78,223): 'enum class MyEnum {'
   null
 
 KtDeclarationModifierList(78,82): 'enum'

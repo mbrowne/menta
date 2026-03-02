@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,42): 'annotation class MyAnno(val value: String)'
+KtDefine(0,42): 'annotation class MyAnno(val value: String)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(0,10): 'annotation'
@@ -31,7 +31,7 @@ KtUserType(35,41): 'String'
 KtNameReferenceExpression(35,41): 'String'
   NO_CANDIDATES
 
-KtClass(43,98): 'annotation class MyAnnoVararg(vararg val value: String)'
+KtDefine(43,98): 'annotation class MyAnnoVararg(vararg val value: String)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(43,53): 'annotation'
@@ -58,7 +58,7 @@ KtUserType(91,97): 'String'
 KtNameReferenceExpression(91,97): 'String'
   NO_CANDIDATES
 
-KtClass(99,165): 'annotation class MyAnnoKClass(val value: kotlin.reflect.KClass<*>)'
+KtDefine(99,165): 'annotation class MyAnnoKClass(val value: kotlin.reflect.KClass<*>)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(99,109): 'annotation'

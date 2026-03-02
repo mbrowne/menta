@@ -1,4 +1,4 @@
-KtClass 'null' in 'main.kt' (17,1):
+KtDefine 'null' in 'main.kt' (17,1):
   public final class <no name provided> : R|kotlin/Any| {
       public constructor(): R|test/<no name provided>| {
           super<R|kotlin/Any|>()
@@ -10,7 +10,7 @@ KtClass 'null' in 'main.kt' (17,1):
   }
 
 
-KtClass 'null' in 'main.kt' (5,1):
+KtDefine 'null' in 'main.kt' (5,1):
   public final class <no name provided> : R|kotlin/Any| {
       public constructor(): R|test/<no name provided>| {
           super<R|kotlin/Any|>()
@@ -22,7 +22,7 @@ KtClass 'null' in 'main.kt' (5,1):
   }
 
 
-KtClass 'null' in 'main.kt' (9,1):
+KtDefine 'null' in 'main.kt' (9,1):
   public final class <no name provided> : R|kotlin/Any| {
       public constructor(): R|test/<no name provided>| {
           super<R|kotlin/Any|>()

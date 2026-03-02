@@ -152,7 +152,7 @@ open class ParcelizeDeclarationChecker(
             return
         }
 
-        if (declaration is KtClass && (declaration.isAnnotation() || declaration.isInterface() && !declaration.isSealed())) {
+        if (declaration is KtDefine && (declaration.isAnnotation() || declaration.isInterface() && !declaration.isSealed())) {
             val reportElement = declaration.nameIdentifier ?: declaration
             diagnosticHolder.report(ErrorsParcelize.PARCELABLE_SHOULD_BE_CLASS.on(reportElement))
             return
@@ -170,7 +170,7 @@ open class ParcelizeDeclarationChecker(
             diagnosticHolder.report(ErrorsParcelize.PARCELABLE_SHOULD_BE_INSTANTIABLE.on(abstractModifier))
         }
 
-        if (declaration is KtClass && declaration.isInner()) {
+        if (declaration is KtDefine && declaration.isInner()) {
             val reportElement = declaration.modifierList?.getModifier(KtTokens.INNER_KEYWORD) ?: declaration.nameIdentifier ?: declaration
             diagnosticHolder.report(ErrorsParcelize.PARCELABLE_CANT_BE_INNER_CLASS.on(reportElement))
         }

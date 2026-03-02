@@ -227,7 +227,7 @@ class KtPsiFactory private constructor(
         return createWhiteSpace("\n".repeat(lineBreaks))
     }
 
-    fun createClass(@NonNls text: String): KtClass {
+    fun createClass(@NonNls text: String): KtDefine {
         return createDeclaration(text)
     }
 
@@ -240,7 +240,7 @@ class KtPsiFactory private constructor(
     }
 
     fun createCompanionObject(@NonNls text: String): KtObjectDeclaration {
-        return createClass("class A {\n $text\n}").companionObjects.first()
+        return createClass("define A {\n $text\n}").companionObjects.first()
     }
 
     fun createFileAnnotation(@NonNls annotationText: String): KtAnnotationEntry {
@@ -414,7 +414,7 @@ class KtPsiFactory private constructor(
     fun createCallableReferenceExpression(@NonNls text: String) = createExpression(text) as? KtCallableReferenceExpression
 
     fun createSecondaryConstructor(@NonNls decl: String): KtSecondaryConstructor {
-        return createClass("class Foo {\n $decl \n}").secondaryConstructors.first()
+        return createClass("define Foo {\n $decl \n}").secondaryConstructors.first()
     }
 
     fun createModifierList(modifier: KtModifierKeywordToken): KtModifierList {
@@ -441,15 +441,15 @@ class KtPsiFactory private constructor(
     }
 
     fun createAnonymousInitializer(): KtAnonymousInitializer {
-        return createClass("class A { init {} }").getAnonymousInitializers().first()
+        return createClass("define A { init {} }").getAnonymousInitializers().first()
     }
 
     fun createEmptyClassBody(): KtClassBody {
-        return createClass("class A(){}").getBody()!!
+        return createClass("define A(){}").getBody()!!
     }
 
     fun createParameter(@NonNls text: String): KtParameter {
-        return createClass("class A($text)").primaryConstructorParameters.first()
+        return createClass("define A($text)").primaryConstructorParameters.first()
     }
 
     fun createLoopParameter(@NonNls text: String): KtParameter {
@@ -460,7 +460,7 @@ class KtPsiFactory private constructor(
         return createFunction("fun foo$text{}").valueParameterList!!
     }
 
-    fun createTypeParameterList(@NonNls text: String) = createClass("class Foo$text").typeParameterList!!
+    fun createTypeParameterList(@NonNls text: String) = createClass("define Foo$text").typeParameterList!!
 
     fun createTypeParameter(@NonNls text: String) = createTypeParameterList("<$text>").parameters.first()!!
 
@@ -475,7 +475,7 @@ class KtPsiFactory private constructor(
 
 
     fun createEnumEntry(@NonNls text: String): KtEnumEntry {
-        return createDeclaration<KtClass>("enum class E {$text}").declarations[0] as KtEnumEntry
+        return createDeclaration<KtDefine>("enum define E {$text}").declarations[0] as KtEnumEntry
     }
 
     fun createEnumEntryInitializerList(): KtInitializerList {
@@ -607,10 +607,10 @@ class KtPsiFactory private constructor(
         return file.importDirectives
     }
 
-    fun createClassKeyword(): PsiElement = createClass("class A").getClassKeyword()!!
+    fun createClassKeyword(): PsiElement = createClass("define A").getClassKeyword()!!
 
     fun createPrimaryConstructor(@NonNls text: String = ""): KtPrimaryConstructor {
-        return createClass(if (text.isNotEmpty()) "class A $text" else "class A()").primaryConstructor!!
+        return createClass(if (text.isNotEmpty()) "define A $text" else "define A()").primaryConstructor!!
     }
 
     fun createPrimaryConstructorWithModifiers(@NonNls modifiers: String?): KtPrimaryConstructor {
@@ -618,7 +618,7 @@ class KtPsiFactory private constructor(
     }
 
     fun createConstructorKeyword(): PsiElement =
-        createClass("class A constructor()").primaryConstructor!!.getConstructorKeyword()!!
+        createClass("define A constructor()").primaryConstructor!!.getConstructorKeyword()!!
 
     fun createLabeledExpression(@NonNls labelName: String): KtLabeledExpression = createExpression("$labelName@ 1") as KtLabeledExpression
 
@@ -675,16 +675,16 @@ class KtPsiFactory private constructor(
     fun createArgument(@NonNls text: String) = createCallArguments("($text)").arguments.first()!!
 
     fun createSuperTypeCallEntry(@NonNls text: String): KtSuperTypeCallEntry {
-        return createClass("class A: $text").superTypeListEntries.first() as KtSuperTypeCallEntry
+        return createClass("define A: $text").superTypeListEntries.first() as KtSuperTypeCallEntry
     }
 
     fun createSuperTypeEntry(@NonNls text: String): KtSuperTypeEntry {
-        return createClass("class A: $text").superTypeListEntries.first() as KtSuperTypeEntry
+        return createClass("define A: $text").superTypeListEntries.first() as KtSuperTypeEntry
     }
 
     fun creareDelegatedSuperTypeEntry(@NonNls text: String): KtConstructorDelegationCall {
         val colonOrEmpty = if (text.isEmpty()) "" else ": "
-        return createClass("class A { constructor()$colonOrEmpty$text {}").secondaryConstructors.first().getDelegationCall()
+        return createClass("define A { constructor()$colonOrEmpty$text {}").secondaryConstructors.first().getDelegationCall()
     }
 
     class ClassHeaderBuilder {
@@ -715,7 +715,7 @@ class KtPsiFactory private constructor(
             if (sb.isNotEmpty()) {
                 sb.append(" ")
             }
-            sb.append("class ")
+            sb.append("define ")
 
             state = State.NAME
         }

@@ -9,6 +9,7 @@ import com.intellij.lang.ASTNode
 import com.intellij.psi.PsiElement
 import com.intellij.psi.stubs.IStubElementType
 import com.intellij.psi.tree.TokenSet
+import com.intellij.psi.util.PsiTreeUtil
 import org.jetbrains.kotlin.KtStubBasedElementTypes
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
@@ -19,22 +20,22 @@ import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
  * ### Example:
  *
  * ```kotlin
- *    class Foo(val x: Int) {
+ *    define Foo(val x: Int) {
  *        fun bar() {}
  *    }
  * // ^________________^
  * // The entire class
  * ```
  */
-open class KtClass : KtClassOrObject {
-    private val classInterfaceTokenSet = TokenSet.create(KtTokens.CLASS_KEYWORD, KtTokens.INTERFACE_KEYWORD)
+open class KtDefine : KtClassOrObject {
+    private val classInterfaceTokenSet = TokenSet.create(KtTokens.DEFINE_KEYWORD, KtTokens.INTERFACE_KEYWORD)
 
     constructor(node: ASTNode) : super(node)
     constructor(stub: KotlinClassStub) : super(stub, KtStubBasedElementTypes.CLASS)
     constructor(stub: KotlinClassStub, nodeType: IStubElementType<*, *>) : super(stub, nodeType)
 
     override fun <R, D> accept(visitor: KtVisitor<R, D>, data: D): R {
-        return visitor.visitClass(this, data)
+        return visitor.visitDefine(this, data)
     }
 
     private val _stub: KotlinClassStub?
@@ -44,6 +45,21 @@ open class KtClass : KtClassOrObject {
 
     fun isInterface(): Boolean =
         _stub?.isInterface ?: (findChildByType<PsiElement>(KtTokens.INTERFACE_KEYWORD) != null)
+
+    /**
+     * Returns `true` if this is an `interface Foo from Bar` declaration
+     * that derives its members from another definition.
+     */
+    fun isInterfaceFrom(): Boolean =
+        isInterface() && findChildByType<PsiElement>(KtTokens.FROM_KEYWORD) != null
+
+    /**
+     * For `interface Foo from Bar`, returns the [KtTypeReference] for `Bar`.
+     */
+    fun getFromTypeReference(): KtTypeReference? {
+        val fromKeyword = findChildByType<PsiElement>(KtTokens.FROM_KEYWORD) ?: return null
+        return PsiTreeUtil.getNextSiblingOfType(fromKeyword, KtTypeReference::class.java)
+    }
 
     fun isEnum(): Boolean = hasModifier(KtTokens.ENUM_KEYWORD)
     fun isSealed(): Boolean = hasModifier(KtTokens.SEALED_KEYWORD)
@@ -55,12 +71,12 @@ open class KtClass : KtClassOrObject {
 
     fun getClassOrInterfaceKeyword(): PsiElement? = findChildByType(classInterfaceTokenSet)
 
-    fun getClassKeyword(): PsiElement? = findChildByType(KtTokens.CLASS_KEYWORD)
+    fun getClassKeyword(): PsiElement? = findChildByType(KtTokens.DEFINE_KEYWORD)
 
     fun getFunKeyword(): PsiElement? = modifierList?.getModifier(KtTokens.FUN_KEYWORD)
 }
 
-fun KtClass.createPrimaryConstructorIfAbsent(): KtPrimaryConstructor {
+fun KtDefine.createPrimaryConstructorIfAbsent(): KtPrimaryConstructor {
     val constructor = primaryConstructor
     if (constructor != null) return constructor
     var anchor: PsiElement? = typeParameterList
@@ -69,7 +85,7 @@ fun KtClass.createPrimaryConstructorIfAbsent(): KtPrimaryConstructor {
     return addAfter(KtPsiFactory(project).createPrimaryConstructor(), anchor) as KtPrimaryConstructor
 }
 
-fun KtClass.createPrimaryConstructorParameterListIfAbsent(): KtParameterList {
+fun KtDefine.createPrimaryConstructorParameterListIfAbsent(): KtParameterList {
     val constructor = createPrimaryConstructorIfAbsent()
     val parameterList = constructor.valueParameterList
     if (parameterList != null) return parameterList

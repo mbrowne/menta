@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(18,209): '// FILE: test.kt'
+KtDefine(18,209): '// FILE: test.kt'
   NO_CANDIDATES
 
 KtDeclarationModifierList(35,41): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(35,41): 'sealed'
 KtClassBody(68,209): '{'
   NO_CANDIDATES
 
-KtClass(74,207): 'class NestedInheritor(prop: String): SealedInterface {'
+KtDefine(74,207): 'class NestedInheritor(prop: String): SealedInterface {'
   NO_CANDIDATES
 
 KtPrimaryConstructor(95,109): '(prop: String)'
@@ -55,7 +55,7 @@ KtNameReferenceExpression(111,126): 'SealedInterface'
 KtClassBody(127,207): '{'
   NO_CANDIDATES
 
-KtClass(137,201): 'class NestedNestedInheritor(propNested: String): SealedInterface'
+KtDefine(137,201): 'class NestedNestedInheritor(propNested: String): SealedInterface'
   NO_CANDIDATES
 
 KtPrimaryConstructor(164,184): '(propNested: String)'
@@ -91,7 +91,7 @@ KtUserType(186,201): 'SealedInterface'
 KtNameReferenceExpression(186,201): 'SealedInterface'
   NO_CANDIDATES
 
-KtClass(211,368): 'sealed class SealedClass {'
+KtDefine(211,368): 'sealed class SealedClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(211,217): 'sealed'
@@ -100,7 +100,7 @@ KtDeclarationModifierList(211,217): 'sealed'
 KtClassBody(236,368): '{'
   NO_CANDIDATES
 
-KtClass(242,304): 'class SealedInheritor1(val prop1: String = "1"): SealedClass()'
+KtDefine(242,304): 'class SealedInheritor1(val prop1: String = "1"): SealedClass()'
   NO_CANDIDATES
 
 KtPrimaryConstructor(264,289): '(val prop1: String = "1")'
@@ -196,7 +196,7 @@ KtNameReferenceExpression(291,302): 'SealedClass'
 KtValueArgumentList(302,304): '()'
   NO_CANDIDATES
 
-KtClass(309,366): 'class SealedInheritor2(val prop2: Int = 2): SealedClass()'
+KtDefine(309,366): 'class SealedInheritor2(val prop2: Int = 2): SealedClass()'
   NO_CANDIDATES
 
 KtPrimaryConstructor(331,351): '(val prop2: Int = 2)'
@@ -289,7 +289,7 @@ KtNameReferenceExpression(353,364): 'SealedClass'
 KtValueArgumentList(364,366): '()'
   NO_CANDIDATES
 
-KtClass(370,521): 'sealed class SealedGeneric<T> {'
+KtDefine(370,521): 'sealed class SealedGeneric<T> {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(370,376): 'sealed'
@@ -304,7 +304,7 @@ KtTypeParameter(397,398): 'T'
 KtClassBody(400,521): '{'
   NO_CANDIDATES
 
-KtClass(406,460): 'class SGOption1<T>(val prop1: Int): SealedGeneric<T>()'
+KtDefine(406,460): 'class SGOption1<T>(val prop1: Int): SealedGeneric<T>()'
   NO_CANDIDATES
 
 KtTypeParameterList(421,424): '<T>'
@@ -415,7 +415,7 @@ KtNameReferenceExpression(456,457): 'T'
 KtValueArgumentList(458,460): '()'
   NO_CANDIDATES
 
-KtClass(465,519): 'class SGOption2<T>(val prop2: Int): SealedGeneric<T>()'
+KtDefine(465,519): 'class SGOption2<T>(val prop2: Int): SealedGeneric<T>()'
   NO_CANDIDATES
 
 KtTypeParameterList(480,483): '<T>'
@@ -883,7 +883,7 @@ KtStringTemplateExpression(738,743): '"100"'
 KtLiteralStringTemplateEntry(739,742): '100'
   NO_CANDIDATES
 
-KtClass(747,763): 'interface OtherI'
+KtDefine(747,763): 'interface OtherI'
   NO_CANDIDATES
 
 KtNamedFunction(765,1009): 'fun <T>testTypeParams(instance: T): String where T : SealedClass, T : OtherI = when (instance) {'
@@ -1597,7 +1597,7 @@ KtStringTemplateExpression(1186,1191): '"100"'
 KtLiteralStringTemplateEntry(1187,1190): '100'
   NO_CANDIDATES
 
-KtClass(1195,1262): 'interface ITestContravariant<in T> {'
+KtDefine(1195,1262): 'interface ITestContravariant<in T> {'
   NO_CANDIDATES
 
 KtTypeParameterList(1223,1229): '<in T>'
@@ -1639,7 +1639,7 @@ KtUserType(1254,1260): 'String'
 KtNameReferenceExpression(1254,1260): 'String'
   NO_CANDIDATES
 
-KtClass(1264,1467): 'class TestContravariant: ITestContravariant<SealedClass> {'
+KtDefine(1264,1467): 'class TestContravariant: ITestContravariant<SealedClass> {'
   NO_CANDIDATES
 
 KtSuperTypeList(1289,1320): 'ITestContravariant<SealedClass>'
@@ -3072,7 +3072,7 @@ KtWhenEntry(2691,2702): 'else -> 101'
 KtConstantExpression(2699,2702): '101'
   NO_CANDIDATES
 
-KtClass(2712,2773): 'class ITestContravariant2<in T>(val a: @UnsafeVariance T) {'
+KtDefine(2712,2773): 'class ITestContravariant2<in T>(val a: @UnsafeVariance T) {'
   NO_CANDIDATES
 
 KtTypeParameterList(2737,2743): '<in T>'

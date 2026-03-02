@@ -520,7 +520,7 @@ public interface Errors {
 
     DiagnosticFactory0<PsiElement> CLASS_IN_SUPERTYPE_FOR_ENUM = DiagnosticFactory0.create(ERROR);
     DiagnosticFactory0<KtTypeParameterList> TYPE_PARAMETERS_IN_ENUM = DiagnosticFactory0.create(ERROR);
-    DiagnosticFactory0<KtClass> ENUM_ENTRY_SHOULD_BE_INITIALIZED = DiagnosticFactory0.create(ERROR);
+    DiagnosticFactory0<KtDefine> ENUM_ENTRY_SHOULD_BE_INITIALIZED = DiagnosticFactory0.create(ERROR);
     DiagnosticFactory0<KtCallExpression> ENUM_CLASS_CONSTRUCTOR_CALL = DiagnosticFactory0.create(ERROR);
 
     // Sealed-specific
@@ -541,7 +541,7 @@ public interface Errors {
 
     DiagnosticFactory1<KtObjectDeclaration, ClassDescriptor> LOCAL_OBJECT_NOT_ALLOWED = DiagnosticFactory1.create(ERROR,
                                                                                                                   DECLARATION_NAME_WITH_VALIDITY_CHECK);
-    DiagnosticFactory1<KtClass, ClassDescriptor> LOCAL_INTERFACE_NOT_ALLOWED = DiagnosticFactory1.create(ERROR,
+    DiagnosticFactory1<KtDefine, ClassDescriptor> LOCAL_INTERFACE_NOT_ALLOWED = DiagnosticFactory1.create(ERROR,
                                                                                                          DECLARATION_NAME_WITH_VALIDITY_CHECK);
     DiagnosticFactory0<KtTypeParameterList> TYPE_PARAMETERS_IN_OBJECT = DiagnosticFactory0.create(ERROR);
     DiagnosticFactory0<KtTypeParameterList> TYPE_PARAMETERS_IN_ANONYMOUS_OBJECT = DiagnosticFactory0.create(WARNING);

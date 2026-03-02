@@ -7,10 +7,10 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(1,10): 'class Foo'
+KtDefine(1,10): 'class Foo'
   NO_CANDIDATES
 
-KtClass(12,46): 'class C {'
+KtDefine(12,46): 'class C {'
   NO_CANDIDATES
 
 KtClassBody(20,46): '{'

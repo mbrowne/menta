@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,12): 'test'
 KtImportList(12,12): ''
   null
 
-KtClass(14,118): 'class MyClass {'
+KtDefine(14,118): 'class MyClass {'
   null
 
 KtClassBody(28,118): '{'

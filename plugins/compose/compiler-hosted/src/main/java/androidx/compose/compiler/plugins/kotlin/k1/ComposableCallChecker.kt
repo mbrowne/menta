@@ -276,7 +276,7 @@ open class ComposableCallChecker :
                     illegalCall(context, reportOn)
                     return
                 }
-                is KtClass -> {
+                is KtDefine -> {
                     // composable calls are never allowed in the initializers of a class
                     illegalCall(context, reportOn)
                     return

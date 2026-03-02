@@ -60,9 +60,9 @@ class AnnotationChecker(
         if (
             annotated is KtTypeParameterListOwner &&
             (annotated is KtCallableDeclaration || languageVersionSettings.supportsFeature(ProperCheckAnnotationsTargetInTypeUsePositions) ||
-                    (annotated is KtClass && languageVersionSettings.supportsFeature(ClassTypeParameterAnnotations)))
+                    (annotated is KtDefine && languageVersionSettings.supportsFeature(ClassTypeParameterAnnotations)))
         ) {
-            if (annotated is KtClass && languageVersionSettings.supportsFeature(ClassTypeParameterAnnotations)) {
+            if (annotated is KtDefine && languageVersionSettings.supportsFeature(ClassTypeParameterAnnotations)) {
                 (descriptor as? ClassDescriptor)?.declaredTypeParameters?.forEach {
                     //force annotation resolve to obtain targets
                     ForceResolveUtil.forceResolveAllContents(it.annotations)

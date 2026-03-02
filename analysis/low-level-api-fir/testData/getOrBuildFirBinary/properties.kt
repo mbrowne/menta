@@ -1,5 +1,5 @@
 // ISSUE: KT-74777
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // MAIN_FILE_NAME: Foo
 package one
 

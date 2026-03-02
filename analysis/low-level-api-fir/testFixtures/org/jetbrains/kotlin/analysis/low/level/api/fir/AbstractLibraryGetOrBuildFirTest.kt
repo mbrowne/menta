@@ -89,7 +89,7 @@ abstract class AbstractLibraryGetOrBuildFirTest : AbstractAnalysisApiBasedTest()
             if (decl is KtTypeParameterListOwner) {
                 findFirstDeclaration(decl.typeParameters, expectedClass)?.let { return it }
             }
-            if (decl is KtClass && KtConstructor::class.java.isAssignableFrom(expectedClass)) {
+            if (decl is KtDefine && KtConstructor::class.java.isAssignableFrom(expectedClass)) {
                 decl.primaryConstructor?.let { return it }
             }
         }

@@ -43,16 +43,16 @@ KtNameReferenceExpression(46,56): 'InnerClass'
 KtImportAlias(57,70): 'as InnerAlias'
   NO_CANDIDATES
 
-KtClass(72,144): 'class TopLevelClass {'
+KtDefine(72,144): 'class TopLevelClass {'
   NO_CANDIDATES
 
 KtClassBody(92,144): '{'
   NO_CANDIDATES
 
-KtClass(98,115): 'class NestedClass'
+KtDefine(98,115): 'class NestedClass'
   NO_CANDIDATES
 
-KtClass(120,142): 'inner class InnerClass'
+KtDefine(120,142): 'inner class InnerClass'
   NO_CANDIDATES
 
 KtDeclarationModifierList(120,125): 'inner'

@@ -20,17 +20,17 @@ fun classOrObjectRecursiveVisitor(block: (KtClassOrObject) -> Unit) =
         }
     }
 
-fun classVisitor(block: (KtClass) -> Unit) =
+fun classVisitor(block: (KtDefine) -> Unit) =
     object : KtVisitorVoid() {
-        override fun visitClass(klass: KtClass) {
+        override fun visitDefine(klass: KtDefine) {
             block(klass)
         }
     }
 
-fun classRecursiveVisitor(block: (KtClass) -> Unit) =
+fun classRecursiveVisitor(block: (KtDefine) -> Unit) =
     object : KtTreeVisitorVoid() {
-        override fun visitClass(klass: KtClass) {
-            super.visitClass(klass)
+        override fun visitDefine(klass: KtDefine) {
+            super.visitDefine(klass)
             block(klass)
         }
     }

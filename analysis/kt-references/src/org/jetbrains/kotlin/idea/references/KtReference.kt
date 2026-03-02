@@ -155,7 +155,7 @@ abstract class AbstractKtReference<T : KtElement>(element: T) : PsiPolyVariantRe
         for (target in targets) {
             if (manager.areElementsEquivalent(unwrappedCandidate, target)) {
                 // Kotlin implicit constructors can be referenced only in the non-type position
-                if (candidateTarget !is KtLightMethod || unwrappedCandidate !is KtClass || !candidateTarget.isConstructor || element.parent !is KtTypeElement) {
+                if (candidateTarget !is KtLightMethod || unwrappedCandidate !is KtDefine || !candidateTarget.isConstructor || element.parent !is KtTypeElement) {
                     return true
                 } else {
                     continue
@@ -163,7 +163,7 @@ abstract class AbstractKtReference<T : KtElement>(element: T) : PsiPolyVariantRe
             }
 
             if (target.isConstructorOf(unwrappedCandidate) ||
-                target is KtObjectDeclaration && target.isCompanion() && target.getNonStrictParentOfType<KtClass>() == unwrappedCandidate
+                target is KtObjectDeclaration && target.isCompanion() && target.getNonStrictParentOfType<KtDefine>() == unwrappedCandidate
             ) {
                 return true
             }

@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Main public constructor() {
     public final fun testBuilder(id: kotlin.String = COMPILED_CODE, lambda: Test.() -> kotlin.Unit): Test { /* compiled code */ }

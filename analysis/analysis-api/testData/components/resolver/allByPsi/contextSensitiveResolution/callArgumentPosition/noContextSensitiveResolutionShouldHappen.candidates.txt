@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,108): 'enum class MyEnum {'
+KtDefine(78,108): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,82): 'enum'
@@ -22,7 +22,7 @@ KtEnumEntry(102,104): 'X,'
 KtEnumEntry(105,106): 'Y'
   NO_CANDIDATES
 
-KtClass(110,143): 'enum class WrongEnum {'
+KtDefine(110,143): 'enum class WrongEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(110,114): 'enum'
@@ -261,7 +261,7 @@ KtNameReferenceExpression(199,208): 'WrongEnum'
 KtNameReferenceExpression(209,210): 'X'
   NO_CANDIDATES
 
-KtClass(215,248): '@DslMarker'
+KtDefine(215,248): '@DslMarker'
   NO_CANDIDATES
 
 KtDeclarationModifierList(215,236): '@DslMarker'
@@ -312,7 +312,7 @@ KtUserType(216,225): 'DslMarker'
 KtNameReferenceExpression(216,225): 'DslMarker'
   NO_CANDIDATES
 
-KtClass(250,264): '@MyDsl'
+KtDefine(250,264): '@MyDsl'
   NO_CANDIDATES
 
 KtDeclarationModifierList(250,256): '@MyDsl'
@@ -363,7 +363,7 @@ KtUserType(251,256): 'MyDsl'
 KtNameReferenceExpression(251,256): 'MyDsl'
   NO_CANDIDATES
 
-KtClass(266,280): '@MyDsl'
+KtDefine(266,280): '@MyDsl'
   NO_CANDIDATES
 
 KtDeclarationModifierList(266,272): '@MyDsl'

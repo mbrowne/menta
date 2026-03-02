@@ -1402,7 +1402,7 @@ class ControlFlowProcessor(
             }
         }
 
-        override fun visitClass(klass: KtClass) {
+        override fun visitDefine(klass: KtDefine) {
             if (klass.hasPrimaryConstructor()) {
                 processParameters(klass.primaryConstructorParameters)
 

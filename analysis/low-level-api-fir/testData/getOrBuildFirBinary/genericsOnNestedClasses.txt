@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public open class Outer<T> public constructor() {
     public final fun createInner(): Outer<T>.Inner { /* compiled code */ }

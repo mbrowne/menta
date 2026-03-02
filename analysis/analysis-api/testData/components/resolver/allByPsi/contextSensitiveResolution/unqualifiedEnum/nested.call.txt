@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,97): '// LANGUAGE: +ContextSensitiveResolutionUsingExpectedType'
+KtDefine(0,97): '// LANGUAGE: +ContextSensitiveResolutionUsingExpectedType'
   null
 
 KtDeclarationModifierList(58,62): 'enum'
@@ -22,7 +22,7 @@ KtEnumEntry(81,87): 'FIRST,'
 KtEnumEntry(88,95): 'SECOND;'
   null
 
-KtClass(99,138): 'enum class Inner {'
+KtDefine(99,138): 'enum class Inner {'
   null
 
 KtDeclarationModifierList(99,103): 'enum'

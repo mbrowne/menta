@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,166): '// ISSUE: KT-75315'
+KtDefine(0,166): '// ISSUE: KT-75315'
   NO_CANDIDATES
 
 KtDeclarationModifierList(92,96): 'open'
@@ -40,7 +40,7 @@ KtParameterList(159,161): '()'
 KtBlockExpression(162,164): '{}'
   NO_CANDIDATES
 
-KtClass(168,773): 'open class MyClass {'
+KtDefine(168,773): 'open class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(168,172): 'open'
@@ -139,7 +139,7 @@ KtNameReferenceExpression(247,253): 'String'
 KtStringTemplateExpression(256,258): '""'
   NO_CANDIDATES
 
-KtClass(270,339): 'class InheritorClass: MyClass() {'
+KtDefine(270,339): 'class InheritorClass: MyClass() {'
   NO_CANDIDATES
 
 KtSuperTypeList(292,301): 'MyClass()'

@@ -451,7 +451,7 @@ KtNameReferenceExpression(111,114): 'not'
 KtValueArgumentList(114,116): '()'
   NO_CANDIDATES
 
-KtClass(122,269): 'class MyClass {'
+KtDefine(122,269): 'class MyClass {'
   NO_CANDIDATES
 
 KtClassBody(136,269): '{'

@@ -9,7 +9,7 @@ import com.intellij.psi.stubs.StubElement
 import com.intellij.util.io.StringRef
 import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.FqName
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtImplementationDetail
 import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
 import org.jetbrains.kotlin.psi.stubs.elements.KotlinValueClassRepresentation
@@ -27,7 +27,7 @@ class KotlinClassStubImpl(
     override val isLocal: Boolean,
     override val isTopLevel: Boolean,
     val valueClassRepresentation: KotlinValueClassRepresentation?,
-) : KotlinStubBaseImpl<KtClass>(
+) : KotlinStubBaseImpl<KtDefine>(
     parent = parent,
     elementType = KtStubElementTypes.CLASS,
 ), KotlinClassStub {

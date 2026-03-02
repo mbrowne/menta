@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,103): 'abstract class ItemCallback<T> {'
+KtDefine(0,103): 'abstract class ItemCallback<T> {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(0,8): 'abstract'
@@ -64,7 +64,7 @@ KtUserType(94,101): 'Boolean'
 KtNameReferenceExpression(94,101): 'Boolean'
   NO_CANDIDATES
 
-KtClass(105,191): 'sealed class MessagePreview {'
+KtDefine(105,191): 'sealed class MessagePreview {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(105,111): 'sealed'
@@ -106,7 +106,7 @@ KtUserType(182,189): 'Boolean'
 KtNameReferenceExpression(182,189): 'Boolean'
   NO_CANDIDATES
 
-KtClass(193,272): 'interface InterfaceWithEquals {'
+KtDefine(193,272): 'interface InterfaceWithEquals {'
   NO_CANDIDATES
 
 KtClassBody(223,272): '{'

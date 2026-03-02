@@ -614,7 +614,7 @@ class KaptStubConverter(val kaptContext: KaptContextForStubGeneration, val gener
 
         for (entry in otherEntries) {
             if (classEntries.isEmpty()) {
-                if (declaration is KtClass && !declaration.isInterface() && declaration.hasOnlySecondaryConstructors()) {
+                if (declaration is KtDefine && !declaration.isInterface() && declaration.hasOnlySecondaryConstructors()) {
                     classEntries += entry
                     continue
                 }
@@ -645,7 +645,7 @@ class KaptStubConverter(val kaptContext: KaptContextForStubGeneration, val gener
         return null
     }
 
-    private fun KtClass.hasOnlySecondaryConstructors(): Boolean {
+    private fun KtDefine.hasOnlySecondaryConstructors(): Boolean {
         return primaryConstructor == null && secondaryConstructors.isNotEmpty()
     }
 

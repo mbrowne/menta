@@ -21,7 +21,7 @@ import org.jetbrains.kotlin.descriptors.SourceElement
 import org.jetbrains.kotlin.descriptors.TypeParameterDescriptor
 import org.jetbrains.kotlin.diagnostics.DiagnosticSink
 import org.jetbrains.kotlin.diagnostics.Errors
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.resolve.descriptorUtil.fqNameUnsafe
 import org.jetbrains.kotlin.types.*
 import org.jetbrains.kotlin.types.typeUtil.boundClosure
@@ -31,7 +31,7 @@ import org.jetbrains.kotlin.utils.DFS
 object NonExpansiveInheritanceRestrictionChecker {
     @JvmStatic
     fun check(
-        declaration: KtClass,
+        declaration: KtDefine,
         classDescriptor: ClassDescriptor,
         diagnosticHolder: DiagnosticSink
     ) {

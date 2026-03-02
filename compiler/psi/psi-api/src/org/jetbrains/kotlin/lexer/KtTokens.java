@@ -35,7 +35,7 @@ public interface KtTokens {
     int PACKAGE_KEYWORD_Id = 17;
     int AS_KEYWORD_Id = 18;
     int TYPE_ALIAS_KEYWORD_Id = 19;
-    int CLASS_KEYWORD_Id = 20;
+    int DEFINE_KEYWORD_Id = 20;
     int THIS_KEYWORD_Id = 21;
     int SUPER_KEYWORD_Id = 22;
     int VAL_KEYWORD_Id = 23;
@@ -164,6 +164,8 @@ public interface KtTokens {
     int ACTUAL_KEYWORD_Id = 146;
     int INTERPOLATION_PREFIX_Id = 147;
     int ALL_KEYWORD_Id = 148;
+    int CLASS_RESERVED_KEYWORD_Id = 149;
+    int FROM_KEYWORD_Id = 150;
 
     KtToken EOF   = new KtToken("EOF", EOF_Id);
 
@@ -194,7 +196,9 @@ public interface KtTokens {
     KtKeywordToken PACKAGE_KEYWORD          = KtKeywordToken.keyword("package", PACKAGE_KEYWORD_Id);
     KtKeywordToken AS_KEYWORD               = KtKeywordToken.keyword("as", AS_KEYWORD_Id);
     KtKeywordToken TYPE_ALIAS_KEYWORD       = KtKeywordToken.keyword("typealias", TYPE_ALIAS_KEYWORD_Id);
-    KtKeywordToken CLASS_KEYWORD            = KtKeywordToken.keyword("class", CLASS_KEYWORD_Id);
+    KtKeywordToken DEFINE_KEYWORD           = KtKeywordToken.keyword("define", DEFINE_KEYWORD_Id);
+    /** Reserved word: "class" is not used as a keyword (use "define" instead) but cannot be used as an identifier. */
+    KtKeywordToken CLASS_RESERVED_KEYWORD = KtKeywordToken.keyword("class", CLASS_RESERVED_KEYWORD_Id);
     KtKeywordToken THIS_KEYWORD             = KtKeywordToken.keyword("this", THIS_KEYWORD_Id);
     KtKeywordToken SUPER_KEYWORD            = KtKeywordToken.keyword("super", SUPER_KEYWORD_Id);
     KtKeywordToken VAL_KEYWORD              = KtKeywordToken.keyword("val", VAL_KEYWORD_Id);
@@ -295,6 +299,7 @@ public interface KtTokens {
     KtKeywordToken CONSTRUCTOR_KEYWORD = KtKeywordToken.softKeyword("constructor", CONSTRUCTOR_KEYWORD_Id);
     KtKeywordToken INIT_KEYWORD        = KtKeywordToken.softKeyword("init", INIT_KEYWORD_Id);
     KtKeywordToken CONTEXT_KEYWORD     = KtKeywordToken.softKeyword("context", CONTEXT_KEYWORD_Id);
+    KtKeywordToken FROM_KEYWORD        = KtKeywordToken.softKeyword("from", FROM_KEYWORD_Id);
 
     KtModifierKeywordToken ABSTRACT_KEYWORD  = KtModifierKeywordToken.softKeywordModifier("abstract", ABSTRACT_KEYWORD_Id);
     KtModifierKeywordToken ENUM_KEYWORD      = KtModifierKeywordToken.softKeywordModifier("enum", ENUM_KEYWORD_Id);
@@ -340,7 +345,7 @@ public interface KtTokens {
     KtModifierKeywordToken ACTUAL_KEYWORD = KtModifierKeywordToken.softKeywordModifier("actual", ACTUAL_KEYWORD_Id);
 
 
-    TokenSet KEYWORDS = TokenSet.create(PACKAGE_KEYWORD, AS_KEYWORD, TYPE_ALIAS_KEYWORD, CLASS_KEYWORD, INTERFACE_KEYWORD,
+    TokenSet KEYWORDS = TokenSet.create(PACKAGE_KEYWORD, AS_KEYWORD, TYPE_ALIAS_KEYWORD, DEFINE_KEYWORD, CLASS_RESERVED_KEYWORD, INTERFACE_KEYWORD,
                                         THIS_KEYWORD, SUPER_KEYWORD, VAL_KEYWORD, VAR_KEYWORD, FUN_KEYWORD, FOR_KEYWORD,
                                         NULL_KEYWORD,
                                         TRUE_KEYWORD, FALSE_KEYWORD, IS_KEYWORD,
@@ -361,7 +366,8 @@ public interface KtTokens {
                                              DATA_KEYWORD, INLINE_KEYWORD, NOINLINE_KEYWORD, TAILREC_KEYWORD, EXTERNAL_KEYWORD,
                                              ANNOTATION_KEYWORD, CROSSINLINE_KEYWORD, CONST_KEYWORD, OPERATOR_KEYWORD, INFIX_KEYWORD,
                                              SUSPEND_KEYWORD, EXPECT_KEYWORD, ACTUAL_KEYWORD,
-                                             VALUE_KEYWORD, CONTEXT_KEYWORD
+                                             VALUE_KEYWORD, CONTEXT_KEYWORD,
+                                             FROM_KEYWORD
     );
 
     /**

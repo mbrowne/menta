@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class MyClass public constructor() {
     context(@MyAnnotation _: @MyAnnotation ParameterizedInterface<@MyAnnotation kotlin.String>) public final val bar: kotlin.String /* compiled code */

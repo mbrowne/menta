@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,229): 'sealed class SealedGeneric<T> {'
+KtDefine(78,229): 'sealed class SealedGeneric<T> {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -22,7 +22,7 @@ KtTypeParameter(105,106): 'T'
 KtClassBody(108,229): '{'
   null
 
-KtClass(114,168): 'class SGOption1<T>(val prop1: Int): SealedGeneric<T>()'
+KtDefine(114,168): 'class SGOption1<T>(val prop1: Int): SealedGeneric<T>()'
   null
 
 KtTypeParameterList(129,132): '<T>'
@@ -119,7 +119,7 @@ KtNameReferenceExpression(164,165): 'T'
 KtValueArgumentList(166,168): '()'
   null
 
-KtClass(173,227): 'class SGOption2<T>(val prop2: Int): SealedGeneric<T>()'
+KtDefine(173,227): 'class SGOption2<T>(val prop2: Int): SealedGeneric<T>()'
   null
 
 KtTypeParameterList(188,191): '<T>'

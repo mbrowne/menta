@@ -10,7 +10,7 @@ KtNameReferenceExpression(23,29): 'myPack'
 KtImportList(29,29): ''
   null
 
-KtClass(31,325): '@Target('
+KtDefine(31,325): '@Target('
   null
 
 KtDeclarationModifierList(31,292): '@Target('

@@ -15,7 +15,7 @@ import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.name.Name
 import org.jetbrains.kotlin.psi.KtAnnotationEntry
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtModifierListOwner
 import org.jetbrains.kotlin.resolve.constants.ArrayValue
 import org.jetbrains.kotlin.resolve.constants.ConstantValue
@@ -121,7 +121,7 @@ internal fun PsiAnnotation.tryConvertAsMustBeDocumented(): KtLightAbstractAnnota
 internal fun PsiAnnotation.tryConvertAsRepeatable(owner: KtLightElement<KtModifierListOwner, PsiModifierListOwner>): KtLightAbstractAnnotation? {
     if (FqNames.repeatable.asString() != qualifiedName) return null
     val value = owner.kotlinOrigin
-        ?.safeAs<KtClass>()
+        ?.safeAs<KtDefine>()
         ?.getClassId()
         ?.createNestedClassId(Name.identifier(JvmAbi.REPEATABLE_ANNOTATION_CONTAINER_NAME))
         ?.let { "value" to KClassValue(it, 0) }

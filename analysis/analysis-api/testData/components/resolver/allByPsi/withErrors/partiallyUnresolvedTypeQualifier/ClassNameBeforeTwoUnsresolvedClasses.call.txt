@@ -7,10 +7,10 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(1,10): 'class Foo'
+KtDefine(1,10): 'class Foo'
   null
 
-KtClass(12,49): 'class C {'
+KtDefine(12,49): 'class C {'
   null
 
 KtClassBody(20,49): '{'

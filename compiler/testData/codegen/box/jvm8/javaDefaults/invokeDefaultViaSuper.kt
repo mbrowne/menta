@@ -20,7 +20,7 @@ class KClass : Test {
     }
 }
 
-class KTClass : KInterface {
+class KtDefine : KInterface {
     fun ktest(): String {
         return super.test() + test()
     }
@@ -38,7 +38,7 @@ fun box(): String {
 
     if (KClass().ktest() != "OKOK") return "fail 2: ${KClass().ktest()}"
 
-    if (KTClass().ktest() != "OKOK") return "fail 3: ${KTClass().ktest()}"
+    if (KtDefine().ktest() != "OKOK") return "fail 3: ${KtDefine().ktest()}"
 
     return "OK"
 }

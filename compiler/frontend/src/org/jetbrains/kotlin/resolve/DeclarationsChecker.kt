@@ -327,7 +327,7 @@ class DeclarationsChecker(
         checkTypesInClassHeader(classOrObject)
 
         when (classOrObject) {
-            is KtClass -> {
+            is KtDefine -> {
                 checkClassButNotObject(classOrObject, classDescriptor)
                 descriptorResolver.checkNamesInConstraints(
                     classOrObject, classDescriptor, classDescriptor.scopeForClassHeaderResolution, trace
@@ -358,7 +358,7 @@ class DeclarationsChecker(
             typeReference.type()?.let { upperBoundChecker.checkBoundsInSupertype(typeReference, it, trace, languageVersionSettings) }
         }
 
-        if (classOrObject !is KtClass) return
+        if (classOrObject !is KtDefine) return
 
         val upperBoundCheckRequests = ArrayList<DescriptorResolver.UpperBoundCheckRequest>()
 
@@ -463,7 +463,7 @@ class DeclarationsChecker(
         }
     }
 
-    private fun checkClassButNotObject(aClass: KtClass, classDescriptor: ClassDescriptorWithResolutionScopes) {
+    private fun checkClassButNotObject(aClass: KtDefine, classDescriptor: ClassDescriptorWithResolutionScopes) {
         checkOpenMembers(classDescriptor)
         checkTypeParameters(aClass)
         checkTypeParameterConstraints(aClass)
@@ -505,7 +505,7 @@ class DeclarationsChecker(
             declaration.getConstructorKeyword()?.let { trace.report(MISSING_CONSTRUCTOR_BRACKETS.on(it)) }
         }
 
-        if (classOrObject !is KtClass) {
+        if (classOrObject !is KtDefine) {
             trace.report(CONSTRUCTOR_IN_OBJECT.on(declaration))
         }
 
@@ -542,7 +542,7 @@ class DeclarationsChecker(
         }
     }
 
-    private fun checkConstructorInInterface(klass: KtClass) {
+    private fun checkConstructorInInterface(klass: KtDefine) {
         klass.primaryConstructor?.let { trace.report(CONSTRUCTOR_IN_INTERFACE.on(it)) }
     }
 
@@ -571,7 +571,7 @@ class DeclarationsChecker(
         }
     }
 
-    private fun checkValOnAnnotationParameter(aClass: KtClass) {
+    private fun checkValOnAnnotationParameter(aClass: KtDefine) {
         for (parameter in aClass.primaryConstructorParameters) {
             if (!parameter.hasValOrVar()) {
                 trace.report(MISSING_VAL_ON_ANNOTATION_PARAMETER.on(parameter))

@@ -1,4 +1,4 @@
-KtDeclaration: KtClass Foo
+KtDeclaration: KtDefine Foo
 annotations: [
   B(a = [/A, /A(value = [], )])
     psi: KtAnnotationEntry

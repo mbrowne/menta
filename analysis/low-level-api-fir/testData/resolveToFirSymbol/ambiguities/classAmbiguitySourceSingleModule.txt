@@ -1,4 +1,4 @@
-KtClass 'A' in 'main.kt' (17,1):
+KtDefine 'A' in 'main.kt' (17,1):
   public final class A : R|kotlin/Any| {
       public constructor(): R|test/A| {
           super<R|kotlin/Any|>()
@@ -10,7 +10,7 @@ KtClass 'A' in 'main.kt' (17,1):
   }
 
 
-KtClass 'A' in 'main.kt' (5,1):
+KtDefine 'A' in 'main.kt' (5,1):
   public final class A : R|kotlin/Any| {
       public constructor(): R|test/A| {
           super<R|kotlin/Any|>()
@@ -22,7 +22,7 @@ KtClass 'A' in 'main.kt' (5,1):
   }
 
 
-KtClass 'A' in 'main.kt' (9,1):
+KtDefine 'A' in 'main.kt' (9,1):
   public final class A : R|kotlin/Any| {
       public constructor(): R|test/A| {
           super<R|kotlin/Any|>()

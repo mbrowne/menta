@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NonNls
 import org.jetbrains.kotlin.asJava.elements.KtLightIdentifier
 import org.jetbrains.kotlin.config.JvmDefaultMode
 import org.jetbrains.kotlin.load.java.structure.LightClassOriginKind
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.debugText.getDebugText
 import org.jetbrains.kotlin.psi.stubs.KotlinClassOrObjectStub
@@ -90,15 +90,15 @@ abstract class KtLightClassForSourceDeclaration(
     abstract override fun isDeprecated(): Boolean
 
     override fun isInterface(): Boolean {
-        if (classOrObject !is KtClass) return false
+        if (classOrObject !is KtDefine) return false
         return classOrObject.isInterface() || classOrObject.isAnnotation()
     }
 
-    override fun isAnnotationType(): Boolean = classOrObject is KtClass && classOrObject.isAnnotation()
+    override fun isAnnotationType(): Boolean = classOrObject is KtDefine && classOrObject.isAnnotation()
 
-    override fun isEnum(): Boolean = classOrObject is KtClass && classOrObject.isEnum()
+    override fun isEnum(): Boolean = classOrObject is KtDefine && classOrObject.isEnum()
 
-    override fun hasTypeParameters(): Boolean = classOrObject is KtClass && classOrObject.typeParameters.isNotEmpty()
+    override fun hasTypeParameters(): Boolean = classOrObject is KtDefine && classOrObject.typeParameters.isNotEmpty()
 
     override fun isValid(): Boolean = classOrObject.isValid
 

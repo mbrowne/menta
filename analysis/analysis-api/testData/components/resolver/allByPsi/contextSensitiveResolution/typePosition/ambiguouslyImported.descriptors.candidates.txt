@@ -19,7 +19,7 @@ KtImportDirective(39,49): 'import b.*'
 KtNameReferenceExpression(46,47): 'b'
   NO_CANDIDATES
 
-KtClass(51,161): 'sealed interface MySealed {'
+KtDefine(51,161): 'sealed interface MySealed {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(51,57): 'sealed'
@@ -28,7 +28,7 @@ KtDeclarationModifierList(51,57): 'sealed'
 KtClassBody(77,161): '{'
   NO_CANDIDATES
 
-KtClass(83,118): 'class Left(val x: String): MySealed'
+KtDefine(83,118): 'class Left(val x: String): MySealed'
   NO_CANDIDATES
 
 KtPrimaryConstructor(93,108): '(val x: String)'
@@ -64,7 +64,7 @@ KtUserType(110,118): 'MySealed'
 KtNameReferenceExpression(110,118): 'MySealed'
   NO_CANDIDATES
 
-KtClass(123,159): 'class Right(val y: String): MySealed'
+KtDefine(123,159): 'class Right(val y: String): MySealed'
   NO_CANDIDATES
 
 KtPrimaryConstructor(134,149): '(val y: String)'

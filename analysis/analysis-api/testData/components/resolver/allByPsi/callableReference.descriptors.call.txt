@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,12): 'pack'
 KtImportList(12,12): ''
   null
 
-KtClass(14,102): 'open class MyClass {'
+KtDefine(14,102): 'open class MyClass {'
   null
 
 KtDeclarationModifierList(14,18): 'open'
@@ -52,7 +52,7 @@ KtNameReferenceExpression(93,96): 'Int'
 KtConstantExpression(99,100): '2'
   null
 
-KtClass(104,127): 'class Child : MyClass()'
+KtDefine(104,127): 'class Child : MyClass()'
   null
 
 KtSuperTypeList(118,127): 'MyClass()'
@@ -121,7 +121,7 @@ KtNameReferenceExpression(118,125): 'MyClass'
 KtValueArgumentList(125,127): '()'
   null
 
-KtClass(129,234): 'open class ClassWithType<T> {'
+KtDefine(129,234): 'open class ClassWithType<T> {'
   null
 
 KtDeclarationModifierList(129,133): 'open'
@@ -175,7 +175,7 @@ KtNameReferenceExpression(223,224): 'T'
 KtConstantExpression(228,232): 'null'
   null
 
-KtClass(236,282): 'class ChildWithType : ClassWithType<MyClass>()'
+KtDefine(236,282): 'class ChildWithType : ClassWithType<MyClass>()'
   null
 
 KtSuperTypeList(258,282): 'ClassWithType<MyClass>()'

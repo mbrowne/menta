@@ -52,6 +52,7 @@ import org.jetbrains.kotlin.fir.types.impl.FirTypeArgumentListImpl
 import org.jetbrains.kotlin.lexer.KtModifierKeywordToken
 import org.jetbrains.kotlin.lexer.KtTokens.*
 import org.jetbrains.kotlin.name.*
+import org.jetbrains.kotlin.types.Variance
 import org.jetbrains.kotlin.psi.stubs.elements.KtStubElementTypes
 import org.jetbrains.kotlin.util.getChildren
 import org.jetbrains.kotlin.utils.addToStdlib.runIf
@@ -494,11 +495,16 @@ class LightTreeRawFirDeclarationBuilder(
         return withChildClassName(className, isExpect = classIsExpect, isLocalWithinParent) {
             val classSymbol = FirRegularClassSymbol(context.currentClassId)
             withContainerSymbol(classSymbol) {
+                var hasFromKeyword = false
+                var isDefineKeyword = false
+                var fromTypeRefNode: LighterASTNode? = null
                 classNode.forEachChildren {
                     when (it.tokenType) {
-                        CLASS_KEYWORD -> classKind = ClassKind.CLASS
+                        DEFINE_KEYWORD -> { classKind = ClassKind.CLASS; isDefineKeyword = true }
                         INTERFACE_KEYWORD -> classKind = ClassKind.INTERFACE
                         OBJECT_KEYWORD -> classKind = ClassKind.OBJECT
+                        FROM_KEYWORD -> hasFromKeyword = true
+                        TYPE_REFERENCE -> if (hasFromKeyword && fromTypeRefNode == null) fromTypeRefNode = it
                         TYPE_PARAMETER_LIST -> typeParameterList = it
                         PRIMARY_CONSTRUCTOR -> primaryConstructor = it
                         SUPER_TYPE_LIST -> superTypeList = it
@@ -594,6 +600,9 @@ class LightTreeRawFirDeclarationBuilder(
                             delegatedSuperTypeRef = implicitAnyType
                         }
 
+                        val hasInterfaceFromSupertypes = isDefineKeyword && classKind != ClassKind.INTERFACE &&
+                            addInterfaceFromSupertypes(classNode, className, superTypeRefs)
+
                         this.superTypeRefs += superTypeRefs
 
                         val secondaryConstructors = classBody.getChildNodesByType(SECONDARY_CONSTRUCTOR)
@@ -640,6 +649,14 @@ class LightTreeRawFirDeclarationBuilder(
                         //parse declarations
                         classBody?.let {
                             addDeclarations(convertClassBody(it, classWrapper))
+                        }
+
+                        if (hasInterfaceFromSupertypes) {
+                            markOverridesForInterfaceFrom(this)
+                        }
+
+                        if (hasFromKeyword && fromTypeRefNode != null && classKind == ClassKind.INTERFACE) {
+                            generateInterfaceFromMembers(classNode, fromTypeRefNode, this, classSymbol)
                         }
 
                         //parse data class
@@ -703,6 +720,407 @@ class LightTreeRawFirDeclarationBuilder(
                 it.initContainingClassForLocalAttr()
             }
             it.initContainingScriptOrReplAttr()
+        }
+    }
+
+    private fun addInterfaceFromSupertypes(
+        classNode: LighterASTNode,
+        className: Name,
+        superTypeRefs: MutableList<FirTypeRef>,
+    ): Boolean {
+        var added = false
+        val fileNode = classNode.getParent() ?: return false
+        fileNode.forEachChildren { sibling ->
+            if (sibling.tokenType == CLASS) {
+                var isInterface = false
+                var hasFrom = false
+                var siblingName: String? = null
+                var fromTypeName: String? = null
+                sibling.forEachChildren { child ->
+                    when (child.tokenType) {
+                        INTERFACE_KEYWORD -> isInterface = true
+                        FROM_KEYWORD -> hasFrom = true
+                        IDENTIFIER -> if (siblingName == null) siblingName = child.asText
+                        TYPE_REFERENCE -> if (hasFrom && fromTypeName == null) {
+                            child.forEachChildren { typeChild ->
+                                if (typeChild.tokenType == USER_TYPE) {
+                                    typeChild.forEachChildren { userTypeChild ->
+                                        if (userTypeChild.tokenType == REFERENCE_EXPRESSION) {
+                                            userTypeChild.forEachChildren { refChild ->
+                                                if (refChild.tokenType == IDENTIFIER) {
+                                                    fromTypeName = refChild.asText
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (isInterface && hasFrom && fromTypeName == className.asString()) {
+                    val interfaceName = siblingName ?: return@forEachChildren
+                    val typeArgList = FirTypeArgumentListImpl(source = null)
+                    classNode.forEachChildren { classChild ->
+                        if (classChild.tokenType == TYPE_PARAMETER_LIST) {
+                            classChild.forEachChildren { typeParamNode ->
+                                if (typeParamNode.tokenType == TYPE_PARAMETER) {
+                                    var paramName: String? = null
+                                    typeParamNode.forEachChildren { tpChild ->
+                                        if (tpChild.tokenType == IDENTIFIER) paramName = tpChild.asText
+                                    }
+                                    paramName?.let { name ->
+                                        typeArgList.typeArguments += buildTypeProjectionWithVariance {
+                                            source = classNode.toFirSourceElement()
+                                            variance = Variance.INVARIANT
+                                            typeRef = buildUserTypeRef {
+                                                source = classNode.toFirSourceElement()
+                                                isMarkedNullable = false
+                                                qualifier += FirQualifierPartImpl(
+                                                    source = null,
+                                                    name = Name.identifier(name),
+                                                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    superTypeRefs += buildUserTypeRef {
+                        source = classNode.toFirSourceElement()
+                        isMarkedNullable = false
+                        qualifier += FirQualifierPartImpl(
+                            source = classNode.toFirSourceElement(),
+                            name = Name.identifier(interfaceName),
+                            typeArgumentList = typeArgList,
+                        )
+                    }
+                    added = true
+                }
+            }
+        }
+        return added
+    }
+
+    private fun isEffectivelyPublic(visibility: Visibility): Boolean =
+        visibility == Visibilities.Public || visibility == Visibilities.Unknown
+
+    private fun markOverridesForInterfaceFrom(classBuilder: FirRegularClassBuilder) {
+        for (decl in classBuilder.declarations) {
+            when (decl) {
+                is FirProperty -> {
+                    if (decl.name.asString() !in ANY_MEMBER_NAMES) {
+                        val status = decl.status as? FirDeclarationStatusImpl ?: continue
+                        if (isEffectivelyPublic(status.visibility)) {
+                            status.isOverride = true
+                        }
+                    }
+                }
+                is FirNamedFunction -> {
+                    if (decl.name.asString() !in ANY_MEMBER_NAMES) {
+                        val status = decl.status as? FirDeclarationStatusImpl ?: continue
+                        if (isEffectivelyPublic(status.visibility)) {
+                            status.isOverride = true
+                        }
+                    }
+                }
+                else -> {}
+            }
+        }
+    }
+
+    private val ANY_MEMBER_NAMES = setOf("equals", "hashCode", "toString")
+
+    private fun generateInterfaceFromMembers(
+        interfaceNode: LighterASTNode,
+        fromTypeRefNode: LighterASTNode,
+        classBuilder: FirRegularClassBuilder,
+        classSymbol: FirRegularClassSymbol,
+    ) {
+        var sourceName: String? = null
+        fromTypeRefNode.forEachChildren { child ->
+            if (child.tokenType == USER_TYPE) {
+                child.forEachChildren { userTypeChild ->
+                    if (userTypeChild.tokenType == REFERENCE_EXPRESSION) {
+                        userTypeChild.forEachChildren { refChild ->
+                            if (refChild.tokenType == IDENTIFIER) {
+                                sourceName = refChild.asText
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        val resolvedSourceName = sourceName ?: return
+
+        val fileNode = interfaceNode.getParent() ?: return
+        var sourceClassNode: LighterASTNode? = null
+        fileNode.forEachChildren { sibling ->
+            if (sibling.tokenType == CLASS && sourceClassNode == null) {
+                var siblingName: String? = null
+                var isDefine = false
+                sibling.forEachChildren { child ->
+                    when (child.tokenType) {
+                        DEFINE_KEYWORD -> isDefine = true
+                        IDENTIFIER -> if (siblingName == null) siblingName = child.asText
+                    }
+                }
+                if (isDefine && siblingName == resolvedSourceName) {
+                    sourceClassNode = sibling
+                }
+            }
+        }
+        val sourceNode = sourceClassNode ?: return
+
+        if (classBuilder.typeParameters.isEmpty()) {
+            var sourceTypeParamList: LighterASTNode? = null
+            val sourceTypeConstraints = mutableListOf<TypeConstraint>()
+            sourceNode.forEachChildren { child ->
+                when (child.tokenType) {
+                    TYPE_PARAMETER_LIST -> sourceTypeParamList = child
+                    TYPE_CONSTRAINT_LIST -> sourceTypeConstraints += convertTypeConstraints(child)
+                }
+            }
+            sourceTypeParamList?.let { typeParamList ->
+                classBuilder.typeParameters += convertTypeParameters(typeParamList, sourceTypeConstraints, classSymbol)
+            }
+        }
+
+        val interfaceSource = interfaceNode.toFirSourceElement()
+
+        // Extract public val/var constructor parameters
+        sourceNode.forEachChildren { child ->
+            if (child.tokenType == PRIMARY_CONSTRUCTOR) {
+                child.forEachChildren { ctorChild ->
+                    if (ctorChild.tokenType == VALUE_PARAMETER_LIST) {
+                        ctorChild.forEachChildren { paramNode ->
+                            if (paramNode.tokenType == VALUE_PARAMETER) {
+                                generatePropertyFromParameter(paramNode, interfaceSource, classBuilder, classSymbol)
+                            }
+                        }
+                    }
+                }
+            }
+            if (child.tokenType == CLASS_BODY) {
+                child.forEachChildren { bodyChild ->
+                    when (bodyChild.tokenType) {
+                        FUN -> generateAbstractFunction(bodyChild, interfaceSource, classBuilder, classSymbol)
+                        KtNodeTypes.PROPERTY -> generateAbstractProperty(bodyChild, interfaceSource, classBuilder, classSymbol)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun isNodePublic(node: LighterASTNode): Boolean {
+        var hasPrivate = false
+        var hasProtected = false
+        var hasInternal = false
+        node.forEachChildren { child ->
+            if (child.tokenType == MODIFIER_LIST) {
+                child.forEachChildren { mod ->
+                    when (mod.tokenType) {
+                        PRIVATE_KEYWORD -> hasPrivate = true
+                        PROTECTED_KEYWORD -> hasProtected = true
+                        INTERNAL_KEYWORD -> hasInternal = true
+                    }
+                }
+            }
+        }
+        return !hasPrivate && !hasProtected && !hasInternal
+    }
+
+    private fun generatePropertyFromParameter(
+        paramNode: LighterASTNode,
+        interfaceSource: KtLightSourceElement,
+        classBuilder: FirRegularClassBuilder,
+        classSymbol: FirRegularClassSymbol,
+    ) {
+        var hasValOrVar = false
+        var isVar = false
+        var paramName: String? = null
+        var typeRefNode: LighterASTNode? = null
+
+        paramNode.forEachChildren { child ->
+            when (child.tokenType) {
+                VAL_KEYWORD -> hasValOrVar = true
+                VAR_KEYWORD -> { hasValOrVar = true; isVar = true }
+                IDENTIFIER -> if (paramName == null) paramName = child.asText
+                TYPE_REFERENCE -> typeRefNode = child
+            }
+        }
+
+        if (!hasValOrVar || !isNodePublic(paramNode)) return
+        val name = paramName?.let { Name.identifier(it) } ?: return
+        val typeRef = typeRefNode?.let { convertType(it) } ?: return
+
+        val propertySymbol = FirRegularPropertySymbol(callableIdForName(name))
+        withContainerSymbol(propertySymbol) {
+            classBuilder.addDeclaration(buildProperty {
+                source = interfaceSource
+                moduleData = baseModuleData
+                origin = FirDeclarationOrigin.Source
+                returnTypeRef = typeRef
+                this.name = name
+                this.isVar = isVar
+                symbol = propertySymbol
+                dispatchReceiverType = currentDispatchReceiverType()
+                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                isLocal = false
+                val defaultAccessorSource = interfaceSource.fakeElement(KtFakeSourceElementKind.DefaultAccessor)
+                getter = FirDefaultPropertyGetter(
+                    source = defaultAccessorSource,
+                    moduleData = baseModuleData,
+                    origin = FirDeclarationOrigin.Source,
+                    propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                    visibility = Visibilities.Public,
+                    propertySymbol = symbol,
+                    modality = Modality.ABSTRACT,
+                )
+                if (isVar) {
+                    setter = FirDefaultPropertySetter(
+                        source = defaultAccessorSource,
+                        moduleData = baseModuleData,
+                        origin = FirDeclarationOrigin.Source,
+                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                        visibility = Visibilities.Public,
+                        propertySymbol = symbol,
+                        modality = Modality.ABSTRACT,
+                    )
+                }
+            })
+        }
+    }
+
+    private fun generateAbstractFunction(
+        funcNode: LighterASTNode,
+        interfaceSource: KtLightSourceElement,
+        classBuilder: FirRegularClassBuilder,
+        classSymbol: FirRegularClassSymbol,
+    ) {
+        if (!isNodePublic(funcNode)) return
+
+        var funcName: String? = null
+        var returnTypeNode: LighterASTNode? = null
+        var valueParamListNode: LighterASTNode? = null
+
+        funcNode.forEachChildren { child ->
+            when (child.tokenType) {
+                IDENTIFIER -> if (funcName == null) funcName = child.asText
+                TYPE_REFERENCE -> returnTypeNode = child
+                VALUE_PARAMETER_LIST -> valueParamListNode = child
+            }
+        }
+
+        val name = funcName?.let { Name.identifier(it) } ?: return
+        if (name.asString() in ANY_MEMBER_NAMES) return
+        val returnTypeRef = returnTypeNode?.let { convertType(it) } ?: implicitUnitType
+
+        val funcSymbol = FirNamedFunctionSymbol(callableIdForName(name))
+        withContainerSymbol(funcSymbol) {
+            classBuilder.addDeclaration(buildNamedFunction {
+                source = interfaceSource
+                moduleData = baseModuleData
+                origin = FirDeclarationOrigin.Source
+                this.returnTypeRef = returnTypeRef
+                this.name = name
+                symbol = funcSymbol
+                dispatchReceiverType = currentDispatchReceiverType()
+                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                isLocal = false
+
+                valueParamListNode?.forEachChildren { paramNode ->
+                    if (paramNode.tokenType == VALUE_PARAMETER) {
+                        var paramName: String? = null
+                        var paramTypeNode: LighterASTNode? = null
+                        paramNode.forEachChildren { child ->
+                            when (child.tokenType) {
+                                IDENTIFIER -> if (paramName == null) paramName = child.asText
+                                TYPE_REFERENCE -> paramTypeNode = child
+                            }
+                        }
+                        val pName = paramName?.let { Name.identifier(it) } ?: return@forEachChildren
+                        val pTypeRef = paramTypeNode?.let { convertType(it) } ?: return@forEachChildren
+                        valueParameters += buildValueParameter {
+                            source = interfaceSource
+                            moduleData = baseModuleData
+                            origin = FirDeclarationOrigin.Source
+                            this.returnTypeRef = pTypeRef
+                            this.name = pName
+                            symbol = FirValueParameterSymbol()
+                            containingDeclarationSymbol = funcSymbol
+                            isCrossinline = false
+                            isNoinline = false
+                            isVararg = false
+                            valueParameterKind = FirValueParameterKind.Regular
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+    private fun generateAbstractProperty(
+        propNode: LighterASTNode,
+        interfaceSource: KtLightSourceElement,
+        classBuilder: FirRegularClassBuilder,
+        classSymbol: FirRegularClassSymbol,
+    ) {
+        if (!isNodePublic(propNode)) return
+
+        var propName: String? = null
+        var isVar = false
+        var typeRefNode: LighterASTNode? = null
+
+        propNode.forEachChildren { child ->
+            when (child.tokenType) {
+                IDENTIFIER -> if (propName == null) propName = child.asText
+                VAR_KEYWORD -> isVar = true
+                TYPE_REFERENCE -> typeRefNode = child
+            }
+        }
+
+        val name = propName?.let { Name.identifier(it) } ?: return
+        if (name.asString() in ANY_MEMBER_NAMES) return
+        val typeRef = typeRefNode?.let { convertType(it) } ?: FirImplicitTypeRefImplWithoutSource
+
+        val propSymbol = FirRegularPropertySymbol(callableIdForName(name))
+        withContainerSymbol(propSymbol) {
+            classBuilder.addDeclaration(buildProperty {
+                source = interfaceSource
+                moduleData = baseModuleData
+                origin = FirDeclarationOrigin.Source
+                returnTypeRef = typeRef
+                this.name = name
+                this.isVar = isVar
+                symbol = propSymbol
+                dispatchReceiverType = currentDispatchReceiverType()
+                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                isLocal = false
+                val defaultAccessorSource = interfaceSource.fakeElement(KtFakeSourceElementKind.DefaultAccessor)
+                getter = FirDefaultPropertyGetter(
+                    source = defaultAccessorSource,
+                    moduleData = baseModuleData,
+                    origin = FirDeclarationOrigin.Source,
+                    propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                    visibility = Visibilities.Public,
+                    propertySymbol = symbol,
+                    modality = Modality.ABSTRACT,
+                )
+                if (isVar) {
+                    setter = FirDefaultPropertySetter(
+                        source = defaultAccessorSource,
+                        moduleData = baseModuleData,
+                        origin = FirDeclarationOrigin.Source,
+                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                        visibility = Visibilities.Public,
+                        propertySymbol = symbol,
+                        modality = Modality.ABSTRACT,
+                    )
+                }
+            })
         }
     }
 

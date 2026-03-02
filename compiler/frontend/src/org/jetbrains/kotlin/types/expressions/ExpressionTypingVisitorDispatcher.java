@@ -422,8 +422,8 @@ public abstract class ExpressionTypingVisitorDispatcher extends KtVisitor<Kotlin
     }
 
     @Override
-    public KotlinTypeInfo visitClass(@NotNull KtClass klass, ExpressionTypingContext data) {
-        return basic.visitClass(klass, data);
+    public KotlinTypeInfo visitDefine(@NotNull KtDefine klass, ExpressionTypingContext data) {
+        return basic.visitDefine(klass, data);
     }
 
     @Override

@@ -1,5 +1,5 @@
 // MAIN_FILE_NAME: I
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 class I(private val p: A) : A by p
 
 interface A {

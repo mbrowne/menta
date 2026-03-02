@@ -347,14 +347,14 @@ open class KtUltraLightClass(classOrObject: KtClassOrObject, internal val suppor
 
     private fun addMethodsFromDataClass(result: MutableList<PsiMethod>) {
         if (!classOrObject.hasModifier(DATA_KEYWORD)) return
-        val ktClass = classOrObject as? KtClass ?: return
+        val KtDefine = classOrObject as? KtDefine ?: return
         val descriptor = classOrObject.resolve() as? ClassDescriptor ?: return
         val bindingContext = classOrObject.analyze()
 
         // Force resolving data class members set
         descriptor.unsubstitutedMemberScope.getContributedDescriptors()
 
-        val areCtorParametersAreAnalyzed = ktClass.primaryConstructorParameters
+        val areCtorParametersAreAnalyzed = KtDefine.primaryConstructorParameters
             .filter { it.hasValOrVar() }
             .all { bindingContext.get(BindingContext.PRIMARY_CONSTRUCTOR_PARAMETER, it) != null }
 

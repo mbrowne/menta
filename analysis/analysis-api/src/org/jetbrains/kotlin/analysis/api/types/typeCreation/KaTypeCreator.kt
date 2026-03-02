@@ -61,7 +61,7 @@ public interface KaTypeCreator : KaLifetimeOwner {
      * #### Example
      *
      * ```kotlin
-     * classType(ktClass.classSymbol as KaClassSymbol) {
+     * classType(KtDefine.classSymbol as KaClassSymbol) {
      *     invariantTypeArgument(builtinTypes.string)
      * }
      * ```

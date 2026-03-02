@@ -10,7 +10,7 @@ KtNameReferenceExpression(66,70): 'test'
 KtImportList(70,70): ''
   NO_CANDIDATES
 
-KtClass(72,119): 'enum class Sample {'
+KtDefine(72,119): 'enum class Sample {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(72,76): 'enum'
@@ -580,7 +580,7 @@ KtWhenEntry(375,384): 'else -> 0'
 KtConstantExpression(383,384): '0'
   NO_CANDIDATES
 
-KtClass(394,669): 'class Container {'
+KtDefine(394,669): 'class Container {'
   NO_CANDIDATES
 
 KtClassBody(410,669): '{'

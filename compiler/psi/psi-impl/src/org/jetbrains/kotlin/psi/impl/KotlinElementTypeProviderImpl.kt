@@ -32,7 +32,7 @@ object KotlinElementTypeProviderImpl : KotlinElementTypeProvider {
 
     // Classifiers
 
-    override val classType: KtStubElementType<out KotlinClassStub, KtClass> =
+    override val classType: KtStubElementType<out KotlinClassStub, KtDefine> =
         KtStubElementTypes.CLASS
 
     override val objectType: KtStubElementType<out KotlinObjectStub, KtObjectDeclaration> =

@@ -3,9 +3,9 @@ KtNameReferenceExpression(53,61): 'instance'
     call = KaSimpleVariableAccessCall:
       contextArguments = []
       dispatchReceiver = KaExplicitReceiverValue:
-        expression = ktClass
+        expression = KtDefine
         isSafeNavigation = false
-        type = KtClass
+        type = KtDefine
       extensionReceiver = null
       isContextSensitive = false
       kind = Read
@@ -15,5 +15,5 @@ KtNameReferenceExpression(53,61): 'instance'
         returnType = KtSubClass
         symbol = val instance: KtSubClass
         contextParameters = []
-        callableId = /KtClass.instance
+        callableId = /KtDefine.instance
       typeArgumentsMapping = {}

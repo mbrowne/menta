@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,137): '// LANGUAGE: +NameBasedDestructuring, +EnableNameBasedDestructuringShortForm'
+KtDefine(0,137): '// LANGUAGE: +NameBasedDestructuring, +EnableNameBasedDestructuringShortForm'
   null
 
 KtPrimaryConstructor(110,137): '(val a: String, val b: Int)'

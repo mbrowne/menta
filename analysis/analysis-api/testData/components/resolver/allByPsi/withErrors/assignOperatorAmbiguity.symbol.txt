@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,10): 'class Test'
+KtDefine(0,10): 'class Test'
   null
 
 KtNamedFunction(12,55): 'operator fun Test.plus(i: Int): Test = this'

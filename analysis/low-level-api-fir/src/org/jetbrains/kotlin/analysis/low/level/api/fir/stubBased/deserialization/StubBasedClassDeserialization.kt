@@ -62,7 +62,7 @@ internal val KtModifierListOwner.visibility: Visibility
 internal val KtDeclaration.modality: Modality
     get() = when {
         hasModifier(KtTokens.SEALED_KEYWORD) -> Modality.SEALED
-        hasModifier(KtTokens.ABSTRACT_KEYWORD) || this is KtClass && isInterface() -> Modality.ABSTRACT
+        hasModifier(KtTokens.ABSTRACT_KEYWORD) || this is KtDefine && isInterface() -> Modality.ABSTRACT
         hasModifier(KtTokens.OPEN_KEYWORD) -> Modality.OPEN
         else -> Modality.FINAL
     }
@@ -110,7 +110,7 @@ internal fun deserializeClassToSymbol(
 ) {
     val kind = when (classOrObject) {
         is KtObjectDeclaration -> ClassKind.OBJECT
-        is KtClass -> when {
+        is KtDefine -> when {
             classOrObject.isInterface() -> ClassKind.INTERFACE
             classOrObject.isEnum() -> ClassKind.ENUM_CLASS
             classOrObject.isAnnotation() -> ClassKind.ANNOTATION_CLASS
@@ -258,7 +258,7 @@ internal fun deserializeClassToSymbol(
 
         contextParameters.addAll(memberDeserializer.createContextReceiversForClass(classOrObject, symbol))
     }.apply {
-        if (classOrObject is KtClass) {
+        if (classOrObject is KtDefine) {
             val classStub: KotlinClassStubImpl = classOrObject.compiledStub
             if (isInlineOrValue) {
                 valueClassRepresentation = classStub.deserializeValueClassRepresentation(this)

@@ -41,13 +41,16 @@ class PsiApiTest {
         assertFalse("abc!".isIdentifier())
 
         // Hard keywords
-        assertFalse("class".isIdentifier())
+        assertFalse("define".isIdentifier())
         assertFalse("fun".isIdentifier())
         assertFalse("val".isIdentifier())
         assertFalse("var".isIdentifier())
         assertFalse("if".isIdentifier())
         assertFalse("while".isIdentifier())
         assertFalse("return".isIdentifier())
+
+        // "class" is a reserved word (not an identifier; use "define" instead)
+        assertFalse("class".isIdentifier())
 
         // Soft keywords
         assertTrue("file".isIdentifier())

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,130): 'open class A<T>(i: T) {'
+KtDefine(0,130): 'open class A<T>(i: T) {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(0,4): 'open'
@@ -672,7 +672,7 @@ KtNameReferenceExpression(123,124): 'i'
       typeArgumentsMapping = {}
     isInBestCandidates = true
 
-KtClass(132,301): 'class B : A<(((Int)))> {'
+KtDefine(132,301): 'class B : A<(((Int)))> {'
   NO_CANDIDATES
 
 KtSuperTypeList(142,154): 'A<(((Int)))>'

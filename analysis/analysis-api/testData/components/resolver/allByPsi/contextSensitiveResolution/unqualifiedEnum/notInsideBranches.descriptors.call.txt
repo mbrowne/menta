@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,100): '// LANGUAGE: +ContextSensitiveResolutionUsingExpectedType'
+KtDefine(0,100): '// LANGUAGE: +ContextSensitiveResolutionUsingExpectedType'
   null
 
 KtDeclarationModifierList(58,62): 'enum'

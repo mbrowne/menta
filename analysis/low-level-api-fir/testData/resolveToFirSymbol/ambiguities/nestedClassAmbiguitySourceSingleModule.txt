@@ -1,4 +1,4 @@
-KtClass 'Nested' in 'main.kt' (16,5):
+KtDefine 'Nested' in 'main.kt' (16,5):
   public final class Nested : R|kotlin/Any| {
       public constructor(): R|test/A.Nested| {
           super<R|kotlin/Any|>()
@@ -10,7 +10,7 @@ KtClass 'Nested' in 'main.kt' (16,5):
   }
 
 
-KtClass 'Nested' in 'main.kt' (26,5):
+KtDefine 'Nested' in 'main.kt' (26,5):
   public final class Nested : R|kotlin/Any| {
       public constructor(): R|test/A.Nested| {
           super<R|kotlin/Any|>()
@@ -22,7 +22,7 @@ KtClass 'Nested' in 'main.kt' (26,5):
   }
 
 
-KtClass 'Nested' in 'main.kt' (6,5):
+KtDefine 'Nested' in 'main.kt' (6,5):
   public final class Nested : R|kotlin/Any| {
       public constructor(): R|test/A.Nested| {
           super<R|kotlin/Any|>()

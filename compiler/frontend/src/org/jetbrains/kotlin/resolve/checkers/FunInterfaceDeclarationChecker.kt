@@ -13,7 +13,7 @@ import org.jetbrains.kotlin.descriptors.FunctionDescriptor
 import org.jetbrains.kotlin.descriptors.PropertyDescriptor
 import org.jetbrains.kotlin.diagnostics.Errors
 import org.jetbrains.kotlin.lexer.KtTokens
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtNamedFunction
 import org.jetbrains.kotlin.psi.KtProperty
@@ -23,7 +23,7 @@ import org.jetbrains.kotlin.resolve.source.getPsi
 
 class FunInterfaceDeclarationChecker : DeclarationChecker {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
-        if (declaration !is KtClass) return
+        if (declaration !is KtDefine) return
         if (descriptor !is ClassDescriptor || !descriptor.isFun) return
 
         val funKeyword = declaration.getFunKeyword() ?: return

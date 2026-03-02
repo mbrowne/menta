@@ -673,7 +673,7 @@ KtNameReferenceExpression(153,159): 'number'
         callableId = null
       typeArgumentsMapping = {}
 
-KtClass(164,225): 'class MyClass {'
+KtDefine(164,225): 'class MyClass {'
   null
 
 KtClassBody(178,225): '{'

@@ -115,7 +115,8 @@ internal fun FirCallableSymbol<*>.isEffectivelyExternal(
     containingClass: FirClassSymbol<*>?,
 ): Boolean = fir.isEffectivelyExternal(containingClass)
 
-internal val FirClass.canHaveOpenMembers: Boolean get() = modality() != Modality.FINAL || classKind == ClassKind.ENUM_CLASS
+internal val FirClass.canHaveOpenMembers: Boolean get() =
+    classKind != ClassKind.CLASS && (modality() != Modality.FINAL || classKind == ClassKind.ENUM_CLASS)
 
 /**
  * Similar to [FirMemberDeclaration.isLocal], but returns false for callable members of local classes.

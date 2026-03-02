@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,67): 'class A {'
+KtDefine(0,67): 'class A {'
   null
 
 KtClassBody(8,67): '{'
@@ -63,7 +63,7 @@ KtNameReferenceExpression(58,59): 'a'
         callableId = null
       typeArgumentsMapping = {}
 
-KtClass(69,409): 'class Base {'
+KtDefine(69,409): 'class Base {'
   null
 
 KtClassBody(80,409): '{'

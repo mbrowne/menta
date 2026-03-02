@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.descriptors.ClassKind
 import org.jetbrains.kotlin.descriptors.DeclarationDescriptor
 import org.jetbrains.kotlin.descriptors.ValueParameterDescriptor
 import org.jetbrains.kotlin.diagnostics.Errors.CYCLE_IN_ANNOTATION_PARAMETER
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.resolve.calls.components.isVararg
 import org.jetbrains.kotlin.types.UnwrappedType
@@ -20,7 +20,7 @@ import org.jetbrains.kotlin.types.checker.SimpleClassicTypeSystemContext.isArray
 object CyclicAnnotationsChecker : DeclarationChecker {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
         if (
-            declaration !is KtClass || !declaration.isAnnotation() ||
+            declaration !is KtDefine || !declaration.isAnnotation() ||
             descriptor !is ClassDescriptor || descriptor.kind != ClassKind.ANNOTATION_CLASS
         ) return
 

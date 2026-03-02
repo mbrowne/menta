@@ -133,7 +133,7 @@ class ComposableTargetChecker : CallChecker, StorageComponentContainerContributo
             when (current) {
                 is KtLambdaExpression, is KtFunction, is KtProperty, is KtPropertyAccessor ->
                     return current
-                is KtClass, is KtFile -> break
+                is KtDefine, is KtFile -> break
             }
             current = current.parent as? KtElement
         }

@@ -72,7 +72,7 @@ internal sealed interface KaFirReference : KtReference, KaSymbolBasedReference {
                 targets.any { target ->
                     manager.areElementsEquivalent(target, importTarget) ||
                             target.isConstructorOf(importTarget) ||
-                            importTarget is KtObjectDeclaration && importTarget.isCompanion() && importTarget.getNonStrictParentOfType<KtClass>() == target
+                            importTarget is KtObjectDeclaration && importTarget.isCompanion() && importTarget.getNonStrictParentOfType<KtDefine>() == target
                 }
             }) {
             return importDirective.alias

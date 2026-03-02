@@ -6,7 +6,7 @@
 package org.jetbrains.kotlin.ide.plugin.dependencies.validator
 
 import org.jetbrains.kotlin.psi.KtAnnotationEntry
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.psiUtil.collectDescendantsOfType
 import java.nio.file.Files
 import java.nio.file.Path
@@ -47,12 +47,12 @@ object ExperimentalAnnotationListChecker {
 
     fun collectExperimentalAnnotationsByStdlib(stdlibPath: Path): Set<String> = buildSet {
         forEachKtFileInDirectory(stdlibPath) { ktFile, _ ->
-            ktFile.collectDescendantsOfType<KtClass>()
+            ktFile.collectDescendantsOfType<KtDefine>()
                 .filter { it.isAnnotation() }
                 .filter { annotationEntry ->
                     annotationEntry.annotationEntries.any { it.isRequiresOptInWithErrorLevel() }
-                }.forEach { ktClass ->
-                    ktClass.fqName?.asString()?.let { add(it) }
+                }.forEach { KtDefine ->
+                    KtDefine.fqName?.asString()?.let { add(it) }
                 }
         }
     }

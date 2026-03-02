@@ -27,7 +27,7 @@ import org.jetbrains.kotlin.descriptors.impl.PropertyDescriptorImpl
 import org.jetbrains.kotlin.diagnostics.DiagnosticSink
 import org.jetbrains.kotlin.diagnostics.Errors
 import org.jetbrains.kotlin.psi.KtCallableDeclaration
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtTypeParameterListOwner
 import org.jetbrains.kotlin.psi.KtTypeReference
 import org.jetbrains.kotlin.resolve.source.getPsi
@@ -69,13 +69,13 @@ class VarianceCheckerCore(
 
     private fun checkClasses(c: TopDownAnalysisContext) {
         for (classOrObject in c.declaredClasses!!.keys) {
-            if (classOrObject is KtClass) {
+            if (classOrObject is KtDefine) {
                 checkClassHeader(classOrObject)
             }
         }
     }
 
-    fun checkClassHeader(klass: KtClass): Boolean {
+    fun checkClassHeader(klass: KtDefine): Boolean {
         var noError = true
         for (specifier in klass.superTypeListEntries) {
             noError = noError and specifier.typeReference?.checkTypePosition(context, OUT_VARIANCE)

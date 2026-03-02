@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 @kotlin.MustUseReturnValues public final class Marked public constructor() {
     public final var prop: kotlin.String /* compiled code */

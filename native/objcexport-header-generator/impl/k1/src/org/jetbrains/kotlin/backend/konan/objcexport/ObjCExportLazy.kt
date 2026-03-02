@@ -487,8 +487,8 @@ private val KtModifierListOwner.isPublic: Boolean
     get() = this.visibilityModifierTypeOrDefault() == KtTokens.PUBLIC_KEYWORD
 
 internal val KtPureClassOrObject.isInterface: Boolean
-    get() = this is KtClass && this.isInterface()
+    get() = this is KtDefine && this.isInterface()
 
 internal val KtClassOrObject.typeParametersWithOuter
-    get() = generateSequence(this, { if (it is KtClass && it.isInner()) it.containingClassOrObject else null })
+    get() = generateSequence(this, { if (it is KtDefine && it.isInner()) it.containingClassOrObject else null })
         .flatMap { it.typeParameters.asSequence() }

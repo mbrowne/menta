@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,10): 'class Test'
+KtDefine(0,10): 'class Test'
   NO_CANDIDATES
 
 KtNamedFunction(12,55): 'operator fun Test.plus(i: Int): Test = this'

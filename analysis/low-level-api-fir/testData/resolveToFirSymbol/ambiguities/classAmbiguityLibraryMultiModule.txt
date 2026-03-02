@@ -1,4 +1,4 @@
-KtClass 'A' in 'library1.jar!/library/A.class':
+KtDefine 'A' in 'library1.jar!/library/A.class':
   public final class A : R|kotlin/Any| {
       public final val one: R|kotlin/Int|
           public get(): R|kotlin/Int|
@@ -8,7 +8,7 @@ KtClass 'A' in 'library1.jar!/library/A.class':
   }
 
 
-KtClass 'A' in 'library2.jar!/library/A.class':
+KtDefine 'A' in 'library2.jar!/library/A.class':
   public final class A : R|kotlin/Any| {
       public final val two: R|kotlin/Int|
           public get(): R|kotlin/Int|

@@ -1,4 +1,4 @@
-KtDeclaration: KtClass Foo
+KtDeclaration: KtDefine Foo
 annotations: [
   A(a = 1, c = kotlin.Int::class)
     psi: KtAnnotationEntry

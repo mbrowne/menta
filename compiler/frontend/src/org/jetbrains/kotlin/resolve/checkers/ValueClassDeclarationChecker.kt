@@ -24,7 +24,7 @@ private val javaLangCloneable = FqNameUnsafe("java.lang.Cloneable")
 
 object ValueClassDeclarationChecker : DeclarationChecker {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
-        if (declaration !is KtClass) return
+        if (declaration !is KtDefine) return
         if (descriptor !is ClassDescriptor || !descriptor.isInline && !descriptor.isValue) return
         if (descriptor.kind != ClassKind.CLASS) return
 
@@ -169,7 +169,7 @@ object ValueClassDeclarationChecker : DeclarationChecker {
 
         fun isUntypedEquals(declaration: KtNamedFunction): Boolean = getFunctionDescriptor(declaration)?.overridesEqualsFromAny() ?: false
         fun isTypedEquals(declaration: KtNamedFunction): Boolean = getFunctionDescriptor(declaration)?.isTypedEqualsInValueClass() ?: false
-        fun KtClass.namedFunctions() = declarations.filterIsInstance<KtNamedFunction>()
+        fun KtDefine.namedFunctions() = declarations.filterIsInstance<KtNamedFunction>()
 
         if (context.languageVersionSettings.supportsFeature(LanguageFeature.CustomEqualsInValueClasses)) {
             val typedEquals = declaration.namedFunctions().firstOrNull { isTypedEquals(it) }
@@ -215,7 +215,7 @@ class PropertiesWithBackingFieldsInsideValueClass : DeclarationChecker {
 
 class InnerClassInsideValueClass : DeclarationChecker {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
-        if (declaration !is KtClass) return
+        if (declaration !is KtDefine) return
         if (descriptor !is ClassDescriptor) return
         if (!descriptor.isInner) return
 

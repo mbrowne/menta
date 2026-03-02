@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,108): 'enum class MyEnum {'
+KtDefine(78,108): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,82): 'enum'
@@ -22,7 +22,7 @@ KtEnumEntry(102,104): 'X,'
 KtEnumEntry(105,106): 'Y'
   NO_CANDIDATES
 
-KtClass(110,155): 'annotation class A1('
+KtDefine(110,155): 'annotation class A1('
   NO_CANDIDATES
 
 KtDeclarationModifierList(110,120): 'annotation'
@@ -162,7 +162,7 @@ KtParameterList(172,174): '()'
 KtBlockExpression(175,177): '{}'
   NO_CANDIDATES
 
-KtClass(179,231): 'annotation class A2('
+KtDefine(179,231): 'annotation class A2('
   NO_CANDIDATES
 
 KtDeclarationModifierList(179,189): 'annotation'
@@ -523,7 +523,7 @@ KtParameterList(281,283): '()'
 KtBlockExpression(284,286): '{}'
   NO_CANDIDATES
 
-KtClass(288,340): 'annotation class A3('
+KtDefine(288,340): 'annotation class A3('
   NO_CANDIDATES
 
 KtDeclarationModifierList(288,298): 'annotation'
@@ -908,7 +908,7 @@ KtParameterList(392,394): '()'
 KtBlockExpression(395,397): '{}'
   NO_CANDIDATES
 
-KtClass(399,441): 'annotation class A4('
+KtDefine(399,441): 'annotation class A4('
   NO_CANDIDATES
 
 KtDeclarationModifierList(399,409): 'annotation'
@@ -1048,7 +1048,7 @@ KtParameterList(466,468): '()'
 KtBlockExpression(469,471): '{}'
   NO_CANDIDATES
 
-KtClass(473,547): '@Retention(RUNTIME)'
+KtDefine(473,547): '@Retention(RUNTIME)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(473,528): '@Retention(RUNTIME)'
@@ -1363,7 +1363,7 @@ KtNameReferenceExpression(570,573): 'Int'
 KtConstantExpression(576,577): '1'
   NO_CANDIDATES
 
-KtClass(579,606): '@MyAnnotation'
+KtDefine(579,606): '@MyAnnotation'
   NO_CANDIDATES
 
 KtDeclarationModifierList(579,592): '@MyAnnotation'

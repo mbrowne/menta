@@ -16,7 +16,7 @@ KtImportDirective(35,45): 'import a.*'
 KtNameReferenceExpression(42,43): 'a'
   NO_CANDIDATES
 
-KtClass(47,80): 'enum class MyEnum {'
+KtDefine(47,80): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(47,51): 'enum'

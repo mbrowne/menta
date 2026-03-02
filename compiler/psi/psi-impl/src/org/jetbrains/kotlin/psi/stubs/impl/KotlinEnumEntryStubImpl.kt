@@ -10,7 +10,7 @@ import com.intellij.util.io.StringRef
 import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.name.SpecialNames
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtImplementationDetail
 import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
 import org.jetbrains.kotlin.psi.stubs.elements.KtStubElementTypes
@@ -21,7 +21,7 @@ class KotlinEnumEntryStubImpl(
     private val qualifiedName: StringRef?,
     private val name: StringRef?,
     override val isLocal: Boolean,
-) : KotlinStubBaseImpl<KtClass>(
+) : KotlinStubBaseImpl<KtDefine>(
     parent = parent,
     elementType = KtStubElementTypes.ENUM_ENTRY,
 ), KotlinClassStub {

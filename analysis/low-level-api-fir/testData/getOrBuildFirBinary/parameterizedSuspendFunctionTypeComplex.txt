@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Foo public constructor() {
     public final val explicitInt: suspend (kotlin.Int, suspend (kotlin.String) -> kotlin.Int) -> kotlin.Int /* from: test.MySuspendAlias<kotlin.Int> */ /* compiled code */

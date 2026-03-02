@@ -185,10 +185,10 @@ internal class LLKotlinSourceSymbolProvider private constructor(
 
     private fun computeClassLikeSymbolByClassId(classId: ClassId, context: KtClassLikeDeclaration?): FirClassLikeSymbol<*>? {
         require(context == null || context.isPhysical)
-        val ktClass = context ?: declarationProvider.getClassLikeDeclarationByClassId(classId) ?: return null
+        val KtDefine = context ?: declarationProvider.getClassLikeDeclarationByClassId(classId) ?: return null
 
-        if (ktClass.getClassId() == null) return null
-        return findClassLikeSymbol(classId, ktClass) { FirElementFinder.findClassifierWithClassId(it, classId) }
+        if (KtDefine.getClassId() == null) return null
+        return findClassLikeSymbol(classId, KtDefine) { FirElementFinder.findClassifierWithClassId(it, classId) }
     }
 
     private fun computeClassLikeSymbolByPsi(declaration: KtClassLikeDeclaration): FirClassLikeSymbol<*>? {

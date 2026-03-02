@@ -10,13 +10,13 @@ KtNameReferenceExpression(8,9): 'r'
 KtImportList(9,9): ''
   NO_CANDIDATES
 
-KtClass(11,86): 'class A {'
+KtDefine(11,86): 'class A {'
   NO_CANDIDATES
 
 KtClassBody(19,86): '{'
   NO_CANDIDATES
 
-KtClass(25,84): 'class B(val x: Int) {'
+KtDefine(25,84): 'class B(val x: Int) {'
   NO_CANDIDATES
 
 KtPrimaryConstructor(32,44): '(val x: Int)'

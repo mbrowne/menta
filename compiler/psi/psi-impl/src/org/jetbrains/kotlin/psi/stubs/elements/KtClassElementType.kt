@@ -10,7 +10,7 @@ import com.intellij.psi.stubs.StubElement
 import com.intellij.psi.stubs.StubInputStream
 import com.intellij.psi.stubs.StubOutputStream
 import com.intellij.util.io.StringRef
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.psiUtil.getSuperNames
 import org.jetbrains.kotlin.psi.psiUtil.safeFqNameForLazyResolve
 import org.jetbrains.kotlin.psi.stubs.KotlinClassStub
@@ -20,9 +20,9 @@ import org.jetbrains.kotlin.psi.stubs.StubUtils.serializeClassId
 import org.jetbrains.kotlin.psi.stubs.impl.KotlinClassStubImpl
 import org.jetbrains.kotlin.psi.stubs.impl.Utils
 
-internal object KtClassElementType : KtStubElementType<KotlinClassStubImpl, KtClass>(
+internal object KtClassElementType : KtStubElementType<KotlinClassStubImpl, KtDefine>(
     /* debugName = */ "CLASS",
-    /* psiClass = */ KtClass::class.java,
+    /* psiClass = */ KtDefine::class.java,
     /* stubClass = */ KotlinClassStub::class.java,
 ) {
     /**
@@ -30,7 +30,7 @@ internal object KtClassElementType : KtStubElementType<KotlinClassStubImpl, KtCl
      */
     override fun shouldCreateStub(node: ASTNode?): Boolean = true
 
-    override fun createStub(psi: KtClass, parentStub: StubElement<*>): KotlinClassStubImpl {
+    override fun createStub(psi: KtDefine, parentStub: StubElement<*>): KotlinClassStubImpl {
         val fqName = psi.safeFqNameForLazyResolve()?.asString()
         val classId = createNestedClassId(parentStub, psi)
         val name = psi.getName()

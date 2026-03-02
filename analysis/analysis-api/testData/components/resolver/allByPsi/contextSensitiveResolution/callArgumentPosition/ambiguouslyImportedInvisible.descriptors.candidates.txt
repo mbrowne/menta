@@ -22,7 +22,7 @@ KtImportDirective(52,63): 'import a2.*'
 KtNameReferenceExpression(59,61): 'a2'
   NO_CANDIDATES
 
-KtClass(65,98): 'enum class MyEnum {'
+KtDefine(65,98): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(65,69): 'enum'

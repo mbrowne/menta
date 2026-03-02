@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public interface MyInterface {
     @test.RegularAnno public abstract val property: @test.TypeAnno kotlin.String

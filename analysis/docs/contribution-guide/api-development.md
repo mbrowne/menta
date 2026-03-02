@@ -553,7 +553,7 @@ Reduce cognitive load by providing a single entry point with specialized overloa
 val KtDeclaration.symbol: KaDeclarationSymbol
 
 // Specialized versions with more specific return types
-val KtClass.symbol: KaClassSymbol
+val KtDefine.symbol: KaClassSymbol
 val KtNamedFunction.symbol: KaFunctionSymbol
 val KtProperty.symbol: KaPropertySymbol
 

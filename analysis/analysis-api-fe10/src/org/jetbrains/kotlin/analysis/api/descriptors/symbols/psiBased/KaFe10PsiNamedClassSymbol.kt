@@ -29,7 +29,7 @@ import org.jetbrains.kotlin.descriptors.Visibility
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.Name
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtEnumEntry
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
@@ -87,7 +87,7 @@ internal class KaFe10PsiNamedClassSymbol(
                     psi.isObjectLiteral() -> KaClassKind.ANONYMOUS_OBJECT
                     else -> KaClassKind.OBJECT
                 }
-                is KtClass -> when {
+                is KtDefine -> when {
                     psi.isInterface() -> KaClassKind.INTERFACE
                     psi.isEnum() -> KaClassKind.ENUM_CLASS
                     psi.isAnnotation() -> KaClassKind.ANNOTATION_CLASS
