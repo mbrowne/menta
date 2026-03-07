@@ -527,6 +527,19 @@ class CallAndReferenceGenerator(
             )
         }
 
+        val isMentaDynamicAccess = firSymbol?.origin == FirDeclarationOrigin.MentaDynamicScope
+        if (isMentaDynamicAccess) {
+            return convertToIrCallForDynamic(
+                qualifiedAccess,
+                explicitReceiverExpression,
+                irType,
+                calleeReference,
+                firSymbol,
+                dynamicOperator,
+                noArguments,
+            )
+        }
+
         // We might have had a dynamic receiver, but resolved
         // into a non-fake member. For example, we can
         // resolve into members of `Any`.
@@ -790,8 +803,9 @@ class CallAndReferenceGenerator(
 
         val firSymbol = calleeReference.extractDeclarationSiteSymbol()
         val isDynamicAccess = firSymbol?.origin == FirDeclarationOrigin.DynamicScope
+        val isMentaDynamicAccess = firSymbol?.origin == FirDeclarationOrigin.MentaDynamicScope
 
-        if (isDynamicAccess) {
+        if (isDynamicAccess || isMentaDynamicAccess) {
             return convertToIrSetCallForDynamic(
                 variableAssignment,
                 explicitReceiverExpression,

@@ -1036,6 +1036,10 @@ public class KotlinParsing extends AbstractKotlinParsing {
                 isInterface = at(INTERFACE_KEYWORD);
             }
             advance(); // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
+
+            if (!object && !isInterface && at(DYNAMIC_KEYWORD)) {
+                advance(); // DYNAMIC_KEYWORD
+            }
         }
         else {
             assert enumClass : "Currently classifiers without class/interface/object are only allowed for enums";

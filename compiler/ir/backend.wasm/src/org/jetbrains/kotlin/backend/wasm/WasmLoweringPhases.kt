@@ -10,6 +10,8 @@ import org.jetbrains.kotlin.backend.common.LoweringContext
 import org.jetbrains.kotlin.backend.common.ModuleLoweringPass
 import org.jetbrains.kotlin.backend.common.ir.PreSerializationSymbols
 import org.jetbrains.kotlin.backend.common.lower.*
+import org.jetbrains.kotlin.backend.common.lower.MentaDynamicCallLowering
+import org.jetbrains.kotlin.backend.common.lower.MentaDynamicSymbols
 import org.jetbrains.kotlin.backend.common.lower.coroutines.AddContinuationToNonLocalSuspendFunctionsLowering
 import org.jetbrains.kotlin.backend.common.lower.inline.InlineCallCycleCheckerLowering
 import org.jetbrains.kotlin.backend.common.lower.inline.LocalClassesInInlineLambdasLowering
@@ -95,6 +97,11 @@ private fun createAutoboxingTransformerPhase(context: JsCommonBackendContext): A
     return AutoboxingTransformer(context)
 }
 
+private fun createMentaDynamicCallLowering(context: WasmBackendContext): MentaDynamicCallLowering {
+    val symbols = MentaDynamicSymbols(context.irFactory, context.irBuiltIns, context.module)
+    return MentaDynamicCallLowering(context.irBuiltIns, symbols)
+}
+
 //@PhasePrerequisites(FunctionInlining::class) // This prerequisite is hard to represent for common lowering
 private fun createConstEvaluationPhase(context: CommonBackendContext): ConstEvaluationLowering {
     val configuration = IrInterpreterConfiguration(
@@ -136,6 +143,7 @@ val wasmLowerings: List<NamedCompilerPhase<WasmBackendContext, IrModuleFragment,
     ::createValidateIrAfterInliningAllFunctionsPhase,
     // END: Common Native/JS/Wasm prefix.
 
+    ::createMentaDynamicCallLowering,
     ::createConstEvaluationPhase,
     ::createSpecializeSharedVariableBoxesPhase,
     ::RemoveInlineDeclarationsWithReifiedTypeParametersLowering,

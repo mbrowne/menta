@@ -108,6 +108,7 @@ class JvmSymbols(
                 "java.lang.invoke" -> javaLangInvokePackage
                 "java.util" -> javaUtilPackage
                 "kotlin.internal" -> kotlinInternalPackage
+
                 else -> error("Other packages are not supported yet: $fqName")
             }
             createThisReceiverParameter()

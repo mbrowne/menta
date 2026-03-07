@@ -1983,6 +1983,10 @@ open class PsiRawFirBuilder(
                             val hasInterfaceFromSupertypes = classOrObject is KtDefine && !classOrObject.isInterface() &&
                                 addInterfaceFromSupertypes(classOrObject, this)
 
+                            if (classOrObject is KtDefine && classOrObject.isDynamic()) {
+                                addDynamicObjectSupertype(classOrObject, this)
+                            }
+
                             val primaryConstructor = classOrObject.primaryConstructor
                             val firPrimaryConstructor = declarations.firstOrNull { it is FirConstructor } as? FirConstructor
                             if (primaryConstructor != null && firPrimaryConstructor != null) {
@@ -2076,6 +2080,31 @@ open class PsiRawFirBuilder(
                     it.initContainingClassForLocalAttr()
                 }
                 it.initContainingScriptOrReplAttr()
+            }
+        }
+
+        private fun addDynamicObjectSupertype(
+            classDefine: KtDefine,
+            classBuilder: FirRegularClassBuilder,
+        ) {
+            classBuilder.superTypeRefs += buildUserTypeRef {
+                source = classDefine.toFirSourceElement()
+                isMarkedNullable = false
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("menta"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("dynamic"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("DynamicObject"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
             }
         }
 

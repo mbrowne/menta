@@ -10,6 +10,8 @@ import org.jetbrains.kotlin.backend.common.CompilationException
 import org.jetbrains.kotlin.backend.common.FileLoweringPass
 import org.jetbrains.kotlin.backend.common.ir.PreSerializationSymbols
 import org.jetbrains.kotlin.backend.common.lower.*
+import org.jetbrains.kotlin.backend.common.lower.MentaDynamicCallLowering
+import org.jetbrains.kotlin.backend.common.lower.MentaDynamicSymbols
 import org.jetbrains.kotlin.backend.common.lower.coroutines.AddContinuationToNonLocalSuspendFunctionsLowering
 import org.jetbrains.kotlin.backend.common.lower.inline.InlineCallCycleCheckerLowering
 import org.jetbrains.kotlin.backend.common.lower.inline.LocalClassesInInlineLambdasLowering
@@ -122,6 +124,14 @@ internal val validateIrAfterLowering = createSimpleNamedCompilerPhase<NativeGene
 internal val functionsWithoutBoundCheck = createSimpleNamedCompilerPhase<Context, Unit>(
         name = "FunctionsWithoutBoundCheckGenerator",
         op = { context, _ -> FunctionsWithoutBoundCheckGenerator(context).generate() }
+)
+
+private val mentaDynamicCallPhase = createFileLoweringPhase(
+        lowering = { context: Context ->
+            val symbols = MentaDynamicSymbols(context.irFactory, context.irBuiltIns, context.sourcesModules.first())
+            MentaDynamicCallLowering(context.irBuiltIns, symbols)
+        },
+        name = "MentaDynamicCallLowering",
 )
 
 private val removeExpectDeclarationsPhase = createFileLoweringPhase(
@@ -615,6 +625,7 @@ internal fun getLoweringsUpToAndIncludingSyntheticAccessors(): LoweringList = li
 )
 
 internal fun NativeSecondStageCompilationConfig.getLoweringsAfterInlining(): LoweringList = listOfNotNull(
+        mentaDynamicCallPhase,
         typeOfProcessingLowering,
         specializeSharedVariableBoxes,
         interopPhase,

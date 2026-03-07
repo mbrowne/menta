@@ -11,6 +11,8 @@ import org.jetbrains.kotlin.backend.common.ModuleLoweringPass
 import org.jetbrains.kotlin.backend.common.ir.PreSerializationSymbols
 import org.jetbrains.kotlin.backend.common.lower.*
 import org.jetbrains.kotlin.backend.common.lower.LocalDeclarationPopupLowering
+import org.jetbrains.kotlin.backend.common.lower.MentaDynamicCallLowering
+import org.jetbrains.kotlin.backend.common.lower.MentaDynamicSymbols
 import org.jetbrains.kotlin.backend.common.lower.PropertiesLowering
 import org.jetbrains.kotlin.backend.common.lower.StripTypeAliasDeclarationsLowering
 import org.jetbrains.kotlin.backend.common.lower.coroutines.AddContinuationToLocalSuspendFunctionsLowering
@@ -109,6 +111,11 @@ private fun createAutoboxingTransformerPhase(context: JsCommonBackendContext): A
     return AutoboxingTransformer(context, replaceTypesInsideInlinedFunctionBlock = true)
 }
 
+private fun createMentaDynamicCallLowering(context: JsIrBackendContext): MentaDynamicCallLowering {
+    val symbols = MentaDynamicSymbols(context.irFactory, context.irBuiltIns, context.module)
+    return MentaDynamicCallLowering(context.irBuiltIns, symbols)
+}
+
 private fun createConstEvaluationPhase(context: JsIrBackendContext): ConstEvaluationLowering {
     val configuration = IrInterpreterConfiguration(
         printOnlyExceptionMessage = true,
@@ -153,6 +160,7 @@ val jsLowerings: List<NamedCompilerPhase<JsIrBackendContext, IrModuleFragment, I
     ::createValidateIrAfterInliningAllFunctions,
     // END: Common Native/JS/Wasm prefix.
 
+    ::createMentaDynamicCallLowering,
     ::createConstEvaluationPhase,
     ::CopyInlineFunctionBodyLowering,
     ::RemoveInlineDeclarationsWithReifiedTypeParametersLowering,

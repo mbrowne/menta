@@ -497,10 +497,12 @@ class LightTreeRawFirDeclarationBuilder(
             withContainerSymbol(classSymbol) {
                 var hasFromKeyword = false
                 var isDefineKeyword = false
+                var isDynamicDefine = false
                 var fromTypeRefNode: LighterASTNode? = null
                 classNode.forEachChildren {
                     when (it.tokenType) {
                         DEFINE_KEYWORD -> { classKind = ClassKind.CLASS; isDefineKeyword = true }
+                        DYNAMIC_KEYWORD -> isDynamicDefine = true
                         INTERFACE_KEYWORD -> classKind = ClassKind.INTERFACE
                         OBJECT_KEYWORD -> classKind = ClassKind.OBJECT
                         FROM_KEYWORD -> hasFromKeyword = true
@@ -602,6 +604,28 @@ class LightTreeRawFirDeclarationBuilder(
 
                         val hasInterfaceFromSupertypes = isDefineKeyword && classKind != ClassKind.INTERFACE &&
                             addInterfaceFromSupertypes(classNode, className, superTypeRefs)
+
+                        if (isDynamicDefine) {
+                            superTypeRefs += buildUserTypeRef {
+                                source = classNode.toFirSourceElement()
+                                isMarkedNullable = false
+                                qualifier += FirQualifierPartImpl(
+                                    source = null,
+                                    name = Name.identifier("menta"),
+                                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                )
+                                qualifier += FirQualifierPartImpl(
+                                    source = null,
+                                    name = Name.identifier("dynamic"),
+                                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                )
+                                qualifier += FirQualifierPartImpl(
+                                    source = null,
+                                    name = Name.identifier("DynamicObject"),
+                                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                )
+                            }
+                        }
 
                         this.superTypeRefs += superTypeRefs
 
