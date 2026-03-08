@@ -53,6 +53,18 @@ class FirMentaDynamicScope(
     private val session: FirSession,
     private val scopeSession: ScopeSession,
 ) : FirTypeScope() {
+    /**
+     * Check if a member with the given name exists in the delegate scope (real members only).
+     * This is useful to avoid routing to dynamic dispatch for members that are actually defined.
+     */
+    fun hasMemberInDelegate(name: Name): Boolean {
+        var found = false
+        delegate.processFunctionsByName(name) { found = true }
+        if (!found) {
+            delegate.processPropertiesByName(name) { found = true }
+        }
+        return found
+    }
     override fun processDirectOverriddenFunctionsWithBaseScope(
         functionSymbol: FirNamedFunctionSymbol,
         processor: (FirNamedFunctionSymbol, FirTypeScope) -> ProcessorAction,
@@ -86,9 +98,21 @@ class FirMentaDynamicScope(
             foundInDelegate = true
             processor(it)
         }
+        // Only create synthetic member if NOT found in the delegate (i.e., not actually defined)
         if (!foundInDelegate) {
-            val syntheticFn = session.mentaDynamicMembersStorage.functionsCacheByName.getValue(name, null)
-            processor(syntheticFn.symbol)
+            // But skip synthetic members for well-known stdlib/system functions
+            // that should never be routed through dynamic dispatch
+            val skipNames = setOf(
+                "println", "print", "printlnStack", "TODO",
+                "repeat", "apply", "also", "use", "with", "let", "run",
+                "toString", "equals", "hashCode", "compareTo",
+                "plus", "minus", "times", "div", "mod", // operators
+                "iterator", "next", "hasNext", "get", "set", "invoke"
+            )
+            if (name.identifier !in skipNames) {
+                val syntheticFn = session.mentaDynamicMembersStorage.functionsCacheByName.getValue(name, null)
+                processor(syntheticFn.symbol)
+            }
         }
     }
 

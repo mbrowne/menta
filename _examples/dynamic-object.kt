@@ -6,8 +6,7 @@ define dynamic ProductRepository() {
     }
 
     fun findBy(fieldName: String) {
-        // println("called findBy with $fieldName")
-        // ...
+        println("called findBy with $fieldName")
     }
 }
 

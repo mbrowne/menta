@@ -412,6 +412,15 @@ class CallAndReferenceGenerator(
                 is FirFunctionSymbol<*> -> {
                     val name = calleeReference.resolved?.name
                         ?: error("Callee reference must have a name: ${qualifiedAccess.render()}")
+
+                    // Menta dynamic: rewrite `obj.findBySku()` →
+                    //   obj.tryInvokeMember(MentaInvokeMemberBinder("findBySku"), emptyArray())
+                    if (symbol.origin == FirDeclarationOrigin.MentaDynamicScope) {
+                        return@convertWithOffsets generateMentaTryInvokeMemberCall(
+                            qualifiedAccess, selectedReceiver, name, startOffset, endOffset, type
+                        )
+                    }
+
                     val operator = dynamicOperator
                         ?: runIf(qualifiedAccess.isOperatorCall) { name.dynamicOperator ?: qualifiedAccess.dynamicOperator }
                         ?: IrDynamicOperator.INVOKE
@@ -451,6 +460,88 @@ class CallAndReferenceGenerator(
                         applyReceiversAndArguments(qualifiedAccess, declarationSiteSymbol = null, explicitReceiverExpression = null)
                     }
             }
+        }
+    }
+
+    /**
+     * Rewrites a Menta dynamic member call like:
+     *   receiver.findBySku()
+     * into:
+     *   receiver.tryInvokeMember(MentaInvokeMemberBinder("findBySku"), emptyArray())
+     *
+     * The `tryInvokeMember` function is the single dispatch point declared by the
+     * user in their `define dynamic` class.  The compiler resolves it via normal FIR
+     * symbol lookup on the dispatch receiver type.
+     */
+    private fun generateMentaTryInvokeMemberCall(
+        qualifiedAccess: FirQualifiedAccessExpression,
+        receiver: IrExpression,
+        memberName: Name,
+        startOffset: Int,
+        endOffset: Int,
+        type: IrType,
+    ): IrExpression {
+        // 1. Resolve tryInvokeMember on the receiver's declared class.
+        //    We use processFunctionsByName (the correct FirTypeScope API) rather than getFunctions.
+        val receiverClassSymbol = qualifiedAccess.dispatchReceiver
+            ?.resolvedType
+            ?.fullyExpandedType()
+            ?.toRegularClassSymbol()
+            ?: error("Menta dynamic call has no dispatch receiver class: ${qualifiedAccess.render()}")
+
+        var tryInvokeMemberFirSymbol: FirNamedFunctionSymbol? = null
+        receiverClassSymbol.unsubstitutedScope()
+            .processFunctionsByName(Name.identifier("tryInvokeMember")) {
+                if (tryInvokeMemberFirSymbol == null) tryInvokeMemberFirSymbol = it
+            }
+        val resolvedTryInvoke = tryInvokeMemberFirSymbol
+            ?: error("No tryInvokeMember found on ${receiverClassSymbol.classId}")
+
+        val tryInvokeMemberIrSymbol =
+            declarationStorage.getIrFunctionSymbol(resolvedTryInvoke) as? IrSimpleFunctionSymbol
+                ?: error("tryInvokeMember could not be mapped to IR: $resolvedTryInvoke")
+
+        // 2. The binder is a simple string passed directly — no binder class needed.
+        //    We pass the member name as a String argument, matching:
+        //      fun tryInvokeMember(binder: InvokeMemberBinder): Any?
+        //    where InvokeMemberBinder is resolved from the real class scope (not synthetic).
+        //    Build the name string constant that will become binder.name inside tryInvokeMember.
+        val memberNameConst = IrConstImpl.string(
+            startOffset, endOffset, builtins.stringType, memberName.identifier
+        )
+
+        // 3. Resolve the InvokeMemberBinder constructor.
+        //    It lives on the real class scope, not the dynamic scope, so look it up by
+        //    the parameter type of tryInvokeMember's first value parameter.
+        val binderFirType = resolvedTryInvoke.fir.valueParameters.firstOrNull()?.returnTypeRef?.coneType?.fullyExpandedType()
+            ?: error("tryInvokeMember has no binder parameter on ${receiverClassSymbol.classId}")
+        val binderClassSymbol = binderFirType.toRegularClassSymbol()
+            ?: error("Cannot resolve binder class from type $binderFirType")
+        var binderConstructorSymbol: FirConstructorSymbol? = null
+        binderClassSymbol.unsubstitutedScope()
+            .processDeclaredConstructors {
+                if (it.fir.isPrimary && binderConstructorSymbol == null) binderConstructorSymbol = it
+            }
+        val resolvedBinderCtor = binderConstructorSymbol
+            ?: error("No primary constructor on binder class ${binderClassSymbol.classId}")
+        val binderIrConstructorSymbol = declarationStorage.getIrConstructorSymbol(resolvedBinderCtor)
+        val binderIrType = classifierStorage.getIrClassSymbol(binderClassSymbol).defaultType
+
+        // 4. Build:  <BinderClass>(memberName)
+        val binderCall = IrConstructorCallImpl(
+            startOffset, endOffset, binderIrType, binderIrConstructorSymbol,
+            typeArgumentsCount = 0,
+            constructorTypeArgumentsCount = 0,
+        ).also { it.arguments[0] = memberNameConst }
+
+        // 5. Build:  receiver.tryInvokeMember(<BinderClass>(memberName))
+        return IrCallImpl(
+            startOffset, endOffset, type,
+            tryInvokeMemberIrSymbol,
+            typeArgumentsCount = 0,
+        ).also { call ->
+            call.arguments[0] = receiver      // dispatch receiver
+            call.arguments[1] = binderCall    // binder argument
         }
     }
 
@@ -514,21 +605,9 @@ class CallAndReferenceGenerator(
 
         val firSymbol = calleeReference.extractDeclarationSiteSymbol()
         val isDynamicAccess = firSymbol?.origin == FirDeclarationOrigin.DynamicScope
+        val isMentaDynamicAccess = firSymbol?.origin == FirDeclarationOrigin.MentaDynamicScope  // ADD THIS
 
-        if (isDynamicAccess) {
-            return convertToIrCallForDynamic(
-                qualifiedAccess,
-                explicitReceiverExpression,
-                irType,
-                calleeReference,
-                firSymbol,
-                dynamicOperator,
-                noArguments,
-            )
-        }
-
-        val isMentaDynamicAccess = firSymbol?.origin == FirDeclarationOrigin.MentaDynamicScope
-        if (isMentaDynamicAccess) {
+        if (isDynamicAccess || isMentaDynamicAccess) {
             return convertToIrCallForDynamic(
                 qualifiedAccess,
                 explicitReceiverExpression,
