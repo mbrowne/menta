@@ -2,7 +2,7 @@ import menta.dynamic.*
 
 define dynamic ProductRepository() {
     public override fun tryInvokeMember(binder: InvokeMemberBinder) {
-        return findBy(binder.name.replaceFirstChar { it.lowercase() })
+        return findBy(binder.name.removePrefix("findBy").replaceFirstChar { it.lowercase() })
     }
 
     fun findBy(fieldName: String) {
