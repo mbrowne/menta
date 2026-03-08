@@ -8,8 +8,22 @@ define dynamic Echo() {
     }
 }
 
+define dynamic ProductRepository() {
+    override fun tryInvokeMember(binder: InvokeMemberBinder): Any? {
+        return findBy(binder.name.removePrefix("findBy").replaceFirstChar { it.lowercase() })
+    }
+
+    fun findBy(fieldName: String): String {
+        return "findBy:$fieldName"
+    }
+}
+
 fun box(): String {
     val echo = Echo()
-    val result = echo.hello()
-    return if (result == "invoked:hello") "OK" else "Fail: $result"
+    val result1 = echo.hello()
+
+    val repo = ProductRepository()
+    val result2 = repo.findBySku()
+
+    return if (result1 == "invoked:hello" && result2 == "findBy:sku") "OK" else "Fail: $result1, $result2"
 }
