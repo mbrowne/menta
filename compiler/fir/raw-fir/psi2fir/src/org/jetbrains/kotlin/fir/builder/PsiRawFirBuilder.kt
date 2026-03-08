@@ -1125,9 +1125,17 @@ open class PsiRawFirBuilder(
                 val classIsKotlinNothing = constructedClassId == StandardClassIds.Nothing
                 // kotlin.Nothing doesn't have `Any` supertype, but does have delegating constructor call to Any
                 if (!classIsKotlinNothing) {
-                    container.superTypeRefs += implicitAnyType
+                    if (this is KtDefine && this.isDynamic()) {
+                        addDynamicObjectSupertype(this, container)
+                        delegatedSuperTypeRef = container.superTypeRefs.first()
+                        container.superTypeRefs += implicitAnyType
+                    } else {
+                        container.superTypeRefs += implicitAnyType
+                        delegatedSuperTypeRef = implicitAnyType
+                    }
+                } else {
+                    delegatedSuperTypeRef = implicitAnyType
                 }
-                delegatedSuperTypeRef = implicitAnyType
             }
 
             // TODO: in case we have no primary constructor,
@@ -1983,10 +1991,6 @@ open class PsiRawFirBuilder(
                             val hasInterfaceFromSupertypes = classOrObject is KtDefine && !classOrObject.isInterface() &&
                                 addInterfaceFromSupertypes(classOrObject, this)
 
-                            if (classOrObject is KtDefine && classOrObject.isDynamic()) {
-                                addDynamicObjectSupertype(classOrObject, this)
-                            }
-
                             val primaryConstructor = classOrObject.primaryConstructor
                             val firPrimaryConstructor = declarations.firstOrNull { it is FirConstructor } as? FirConstructor
                             if (primaryConstructor != null && firPrimaryConstructor != null) {
@@ -2085,7 +2089,7 @@ open class PsiRawFirBuilder(
 
         private fun addDynamicObjectSupertype(
             classDefine: KtDefine,
-            classBuilder: FirRegularClassBuilder,
+            classBuilder: FirClassBuilder,
         ) {
             classBuilder.superTypeRefs += buildUserTypeRef {
                 source = classDefine.toFirSourceElement()

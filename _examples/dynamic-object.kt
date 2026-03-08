@@ -1,15 +1,20 @@
+import menta.dynamic.*
+
 define dynamic ProductRepository() {
-    public override fun tryInvokeMember(binder) {
+    public override fun tryInvokeMember(binder: InvokeMemberBinder) {
         return findBy(binder.name.replaceFirstChar { it.lowercase() })
     }
 
     fun findBy(fieldName: String) {
+        // println("called findBy with $fieldName")
         // ...
     }
 }
 
-productRepository = ProductRepository()
-val sku = productRepository.findBySku()
+fun main() {
+    val productRepository = ProductRepository()
+    val sku = productRepository.findBySku()
+}
 
 /*
 Compiler architecture that supports this feature:

@@ -149,7 +149,6 @@ private fun ConeClassLikeType.classScope(
     }
 
     val scope = fir.scopeForClass(substitutor, useSiteSession, scopeSession, memberOwnerLookupTag, requiredMembersPhase)
-        ?: return null
 
     if (fir.hasDynamicObjectSupertype()) {
         return FirMentaDynamicScope(scope, useSiteSession, scopeSession)

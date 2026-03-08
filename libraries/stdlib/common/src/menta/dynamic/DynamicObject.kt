@@ -26,7 +26,7 @@ public class InvokeMemberBinder(
     public val name: String,
     public val args: Array<out Any?> = emptyArray()
 ) {
-    override fun toString(): String = "InvokeMemberBinder(name=$name, args=${args.contentToString()})"
+    override fun toString(): String = "InvokeMemberBinder(name=$name, args=[${args.size} items])"
 }
 
 /**
