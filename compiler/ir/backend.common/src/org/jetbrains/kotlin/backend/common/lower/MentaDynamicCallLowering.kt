@@ -16,9 +16,14 @@ import org.jetbrains.kotlin.ir.builders.declarations.buildClass
 import org.jetbrains.kotlin.ir.declarations.IrClass
 import org.jetbrains.kotlin.ir.declarations.IrFactory
 import org.jetbrains.kotlin.ir.declarations.IrFile
+import org.jetbrains.kotlin.ir.declarations.IrProperty
+import org.jetbrains.kotlin.ir.declarations.IrValueParameter
+import org.jetbrains.kotlin.ir.expressions.IrStatementOrigin
+import org.jetbrains.kotlin.ir.declarations.IrFunction
 import org.jetbrains.kotlin.ir.declarations.IrSimpleFunction
 import org.jetbrains.kotlin.ir.declarations.createEmptyExternalPackageFragment
 import org.jetbrains.kotlin.ir.expressions.*
+import org.jetbrains.kotlin.ir.expressions.IrGetValue
 import org.jetbrains.kotlin.ir.expressions.IrBlockBody
 import org.jetbrains.kotlin.ir.IrStatement
 import org.jetbrains.kotlin.ir.expressions.impl.IrCallImpl
@@ -133,22 +138,30 @@ class MentaDynamicCallLowering(
     private val irBuiltIns: IrBuiltIns,
     private val symbols: MentaDynamicSymbols,
 ) : FileLoweringPass, IrElementTransformerVoid() {
+    
+    private var currentClass: IrClass? = null
 
     override fun lower(irFile: IrFile) {
         irFile.transformChildrenVoid(this)
     }
 
     override fun visitClass(declaration: IrClass): IrStatement {
-        declaration.transformChildrenVoid(this)
-        // Ensure define-dynamic classes (those declaring try* methods) have DynamicObject as first supertype
-        // so JVM codegen uses it as superclass and runtime casts succeed.
-        if (isDefineDynamicClass(declaration)) {
-            val dynamicObjType = symbols.dynamicObjectClass.defaultType
-            val rest = declaration.superTypes.filter { it.classOrNull != symbols.dynamicObjectClass }
-            declaration.superTypes = listOf(dynamicObjType) + rest
-            patchSuperConstructorCalls(declaration)
+        val oldClass = currentClass
+        currentClass = declaration
+        try {
+            declaration.transformChildrenVoid(this)
+            // Ensure define-dynamic classes (those declaring try* methods) have DynamicObject as first supertype
+            // so JVM codegen uses it as superclass and runtime casts succeed.
+            if (isDefineDynamicClass(declaration)) {
+                val dynamicObjType = symbols.dynamicObjectClass.defaultType
+                val rest = declaration.superTypes.filter { it.classOrNull != symbols.dynamicObjectClass }
+                declaration.superTypes = listOf(dynamicObjType) + rest
+                patchSuperConstructorCalls(declaration)
+            }
+            return declaration
+        } finally {
+            currentClass = oldClass
         }
-        return declaration
     }
 
     /**
@@ -202,12 +215,43 @@ class MentaDynamicCallLowering(
 
     private fun isDefineDynamicClass(irClass: IrClass): Boolean =
         irClass.declarations.any { decl ->
-            decl is IrSimpleFunction && decl.name.asString() in TRY_MEMBER_NAMES
+            decl is IrFunction && decl.name.asString() in TRY_MEMBER_NAMES
         }
+
+    private fun hasFunction(irClass: IrClass, name: String): Boolean =
+        irClass.declarations.any { it is IrFunction && it.name.asString() == name }
 
     override fun visitDynamicOperatorExpression(expression: IrDynamicOperatorExpression): IrExpression {
         val memberReceiver = expression.receiver as? IrDynamicMemberExpression
 
+        if (memberReceiver != null && expression.operator == IrDynamicOperator.INVOKE) {
+            val receiverClass = memberReceiver.receiver.type.classOrNull?.owner
+            if (receiverClass != null) {
+                // Check if this invoke calls a defined method in the receiver class
+                val method = receiverClass.declarations.find { decl ->
+                    decl is IrSimpleFunction && decl.name.asString() == memberReceiver.memberName
+                } as? IrSimpleFunction
+                
+                if (method != null) {
+                    // Found a real method - call it directly instead of going through dynamic dispatch
+                    val transformedInnerReceiver = memberReceiver.receiver.transform(this, null)
+                    val transformedArgs = expression.arguments.map { it.transform(this, null) }
+                    return IrCallImpl(
+                        expression.startOffset, expression.endOffset,
+                        method.returnType,
+                        method.symbol,
+                        typeArgumentsCount = 0,
+                    ).apply {
+                        dispatchReceiver = transformedInnerReceiver
+                        for ((i, arg) in transformedArgs.withIndex()) {
+                            arguments[i] = arg
+                        }
+                    }
+                }
+            }
+        }
+
+        // For truly undefined members or non-INVOKE operations, apply dynamic transformation
         if (memberReceiver != null && isMentaDynamic(memberReceiver)) {
             when (expression.operator) {
                 IrDynamicOperator.INVOKE -> {
@@ -230,6 +274,26 @@ class MentaDynamicCallLowering(
 
     override fun visitDynamicMemberExpression(expression: IrDynamicMemberExpression): IrExpression {
         expression.transformChildrenVoid(this)
+
+        val receiverClass = expression.receiver.type.classOrNull?.owner
+        if (receiverClass != null) {
+            // Check if the member is actually defined in the receiver class
+            val property = receiverClass.declarations.find { decl ->
+                decl is IrProperty && decl.name.asString() == expression.memberName
+            } as? IrProperty
+            
+            if (property != null && property.getter != null) {
+                // Return a call to the getter instead of dynamic access
+                return IrCallImpl(
+                    expression.startOffset, expression.endOffset,
+                    property.getter!!.returnType,
+                    property.getter!!.symbol,
+                    typeArgumentsCount = 0,
+                ).apply {
+                    dispatchReceiver = expression.receiver
+                }
+            }
+        }
 
         if (isMentaDynamic(expression)) {
             return transformDynamicGet(expression)
@@ -309,36 +373,52 @@ class MentaDynamicCallLowering(
         receiver: IrExpression,
         args: List<IrExpression>,
     ): IrExpression {
-        val argsArray = IrVarargImpl(
-            expression.startOffset, expression.endOffset,
-            irBuiltIns.arrayClass.typeWith(irBuiltIns.anyNType),
-            irBuiltIns.anyNType,
-            args,
-        )
-
-        val binderCall = IrConstructorCallImpl(
-            expression.startOffset, expression.endOffset,
-            symbols.invokeMemberBinderClass.defaultType,
-            symbols.invokeMemberBinderConstructor,
-            typeArgumentsCount = 0,
-            constructorTypeArgumentsCount = 0,
-        ).apply {
-            arguments[0] = IrConstImpl.string(
+        val receiverClass = receiver.type.classOrNull?.owner
+        if (receiverClass != null && hasFunction(receiverClass, memberName)) {
+            val function = receiverClass.declarations.filter { it is IrFunction }.map { it as IrSimpleFunction }.single { it.name.asString() == memberName }
+            return IrCallImpl(
                 expression.startOffset, expression.endOffset,
-                irBuiltIns.stringType,
-                memberName,
+                function.returnType,
+                function.symbol,
+                typeArgumentsCount = 0,
+            ).apply {
+                dispatchReceiver = receiver
+                for ((i, arg) in args.withIndex()) {
+                    arguments[i] = arg
+                }
+            }
+        } else {
+            val argsArray = IrVarargImpl(
+                expression.startOffset, expression.endOffset,
+                irBuiltIns.arrayClass.typeWith(irBuiltIns.anyNType),
+                irBuiltIns.anyNType,
+                args,
             )
-            arguments[1] = argsArray
-        }
 
-        return IrCallImpl(
-            expression.startOffset, expression.endOffset,
-            irBuiltIns.anyNType,
-            symbols.tryInvokeMember,
-            typeArgumentsCount = 0,
-        ).apply {
-            dispatchReceiver = receiver
-            arguments[1] = binderCall
+            val binderCall = IrConstructorCallImpl(
+                expression.startOffset, expression.endOffset,
+                symbols.invokeMemberBinderClass.defaultType,
+                symbols.invokeMemberBinderConstructor,
+                typeArgumentsCount = 0,
+                constructorTypeArgumentsCount = 0,
+            ).apply {
+                arguments[0] = IrConstImpl.string(
+                    expression.startOffset, expression.endOffset,
+                    irBuiltIns.stringType,
+                    memberName,
+                )
+                arguments[1] = argsArray
+            }
+
+            return IrCallImpl(
+                expression.startOffset, expression.endOffset,
+                irBuiltIns.anyNType,
+                symbols.tryInvokeMember,
+                typeArgumentsCount = 0,
+            ).apply {
+                dispatchReceiver = receiver
+                arguments[1] = binderCall
+            }
         }
     }
 }
