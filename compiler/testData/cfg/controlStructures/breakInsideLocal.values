@@ -1,7 +1,7 @@
 == test ==
 fun test() {
     while (true) {
-        class LocalClass(val x: Int) {
+        define LocalClass(val x: Int) {
             init {
                 break
             }
@@ -20,8 +20,8 @@ fun test() {
 true                                                                                                                          <v0>: Boolean   NEW: r(true) -> <v0>
 break                                                                                                                         !<v3>: *
 { break }                                                                                                                     !<v3>: *        COPY
-while (true) { class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } }       !<v4>: *
-{ while (true) { class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } } }   !<v4>: *        COPY
+while (true) { define LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } }       !<v4>: *
+{ while (true) { define LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } } }   !<v4>: *        COPY
 =====================
 == foo ==
 fun foo() {
