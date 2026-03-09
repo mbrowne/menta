@@ -1,6 +1,6 @@
 package test
 
-class PlatformStaticClass {
+define PlatformStaticClass {
     companion object {
         @JvmStatic
         fun <T> inClassObject() {}

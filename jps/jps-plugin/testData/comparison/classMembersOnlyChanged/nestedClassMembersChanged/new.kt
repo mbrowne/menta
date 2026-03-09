@@ -1,8 +1,8 @@
 package test
 
-class Base {
-    class Nested1 {
-        class Nested2 {
+define Base {
+    define Nested1 {
+        define Nested2 {
             fun added() {}
         }
     }

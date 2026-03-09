@@ -1,6 +1,6 @@
 // FILE: test.kt
-class Foo {
-    inner class Bar {
+define Foo {
+    inner define Bar {
     }
 }
 

@@ -1,14 +1,14 @@
 annotation class AllOpen
 
 @AllOpen
-class Test {
+define Test {
     fun testMethod() {}
 
-    class Nested {
+    define Nested {
         fun nestedMethod() {}
     }
 
-    inner class Inner {
+    inner define Inner {
         fun innerMethod() {}
     }
 }

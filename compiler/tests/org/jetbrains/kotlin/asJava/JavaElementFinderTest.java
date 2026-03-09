@@ -54,9 +54,9 @@ public class JavaElementFinderTest extends KotlinAsJavaTestBase {
     }
 
     public void testRepeatableAnnotation() {
-        assertClass("RepeatableAnnotation.Container");
+        assertClass("RepeatableAnnotation2Container");
         assertNoClass("RepeatableAnnotation2.Container");
-        assertNoClass("RepeatableAnnotation2.Container");
+        assertNoClass("RepeatableAnnotation.Container");
     }
 
     private void assertPackage(String qualifiedName) {

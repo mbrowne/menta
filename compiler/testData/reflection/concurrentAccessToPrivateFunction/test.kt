@@ -7,7 +7,7 @@ import kotlin.reflect.jvm.*
 
 const val N_THREADS = 50
 
-class C {
+define C {
     private fun function() {}
 }
 

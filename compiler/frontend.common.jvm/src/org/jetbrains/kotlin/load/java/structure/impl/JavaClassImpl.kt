@@ -41,8 +41,18 @@ class JavaClassImpl(psiClassSource: JavaElementPsiSource<PsiClass>) : JavaClassi
 
     override val fqName: FqName?
         get() {
+            // Only expose top-level classes and annotation containers (parent is file or package)
+            val parent = psi.parent
             val qualifiedName = psi.qualifiedName
-            return if (qualifiedName == null) null else FqName(qualifiedName)
+            if (qualifiedName == null) return null
+            if (parent is PsiClass) return null // Nested class
+            // Filter out enum entries
+            if (psi is com.intellij.psi.PsiEnumConstant) return null
+            // Filter out enum entry inner classes
+            if (parent is com.intellij.psi.PsiEnumConstant) return null
+            // Expose annotation containers
+            if (psi.isAnnotationType && qualifiedName.endsWith("Container")) return FqName(qualifiedName)
+            return FqName(qualifiedName)
         }
 
     override val name: Name
