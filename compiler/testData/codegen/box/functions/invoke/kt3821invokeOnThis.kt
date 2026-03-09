@@ -1,6 +1,6 @@
 //KT-3821 Invoke convention doesn't work for `this`
 
-class A() {
+define A() {
     operator fun invoke() = 42
     fun foo() = this() // Expecting a function type, but found A
 }

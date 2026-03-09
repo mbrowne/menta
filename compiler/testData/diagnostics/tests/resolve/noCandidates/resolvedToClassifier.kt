@@ -4,7 +4,7 @@
 interface A
 
 object B
-class C
+define C
 
 fun test() {
     val interface_as_fun = <!RESOLUTION_TO_CLASSIFIER!>A<!>()
@@ -23,7 +23,7 @@ fun <T> bar() {
 
     1 + <!TYPE_PARAMETER_IS_NOT_AN_EXPRESSION!>T<!>
 
-    B::class.equals(<!TYPE_PARAMETER_IS_NOT_AN_EXPRESSION!>T<!>)
+    B::define.equals(<!TYPE_PARAMETER_IS_NOT_AN_EXPRESSION!>T<!>)
 
     <!TYPE_PARAMETER_IS_NOT_AN_EXPRESSION!>T<!> = ""
 }

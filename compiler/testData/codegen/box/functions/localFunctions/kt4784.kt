@@ -1,4 +1,4 @@
-open class T(var value: Int) {}
+open define T(var value: Int) {}
 
 fun plusAssign(): T {
 

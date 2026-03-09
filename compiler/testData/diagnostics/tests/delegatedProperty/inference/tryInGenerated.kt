@@ -6,7 +6,7 @@
 
 import kotlin.reflect.KProperty
 
-data class Ref<D>(val t: D)
+data define Ref<D>(val t: D)
 
 operator fun <V> Ref<V>.getValue(hisRef: Any?, property: KProperty<*>): V = this.t
 

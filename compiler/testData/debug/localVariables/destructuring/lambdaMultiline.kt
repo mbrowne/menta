@@ -1,7 +1,7 @@
 
 
 // FILE: test.kt
-data class A(val x: String, val y: Int)
+data define A(val x: String, val y: Int)
 
 fun foo(a: A, block: (A) -> String): String = block(a)
 

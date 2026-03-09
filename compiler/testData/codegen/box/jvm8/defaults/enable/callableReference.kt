@@ -13,7 +13,7 @@ interface Test {
     }
 }
 
-class TestClass : Test {
+define TestClass : Test {
 
 }
 

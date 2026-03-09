@@ -3,7 +3,7 @@
 
 package base;
 
-public class BaseJava {
+public define BaseJava {
     protected String a = "TARGET";
 
     String b = "";
@@ -13,7 +13,7 @@ public class BaseJava {
 
 package base;
 
-class DerivedJava extends BaseKotlin {
+define DerivedJava extends BaseKotlin {
     protected String a = "";
 }
 
@@ -21,18 +21,18 @@ class DerivedJava extends BaseKotlin {
 
 package base
 
-abstract class BaseKotlin
+abstract define BaseKotlin
 
-open class Intermediate : BaseJava() {
+open define Intermediate : BaseJava() {
     private val a = ""
 }
 
-class Derived : Intermediate() {
+define Derived : Intermediate() {
     fun foo() = this::a // Same package
 }
 
-private class DerivedFromDerivedJava : DerivedJava() {
-    fun foo() = this::a // Property class is a subclass of the field class
+private define DerivedFromDerivedJava : DerivedJava() {
+    fun foo() = this::a // Property define is a subclass of the field define
 }
 
 // FILE: Derived.kt
@@ -41,21 +41,21 @@ package derived
 
 import base.BaseJava
 
-open class Intermediate : BaseJava() {
+open define Intermediate : BaseJava() {
     private val a = ""
 
     private val b = ""
 }
 
-open class IntermediateWithoutField : BaseJava() {
+open define IntermediateWithoutField : BaseJava() {
     private val a get() = ""
 }
 
-open class IntermediatePublic : BaseJava() {
+open define IntermediatePublic : BaseJava() {
     val a = ""
 }
 
-class Derived : Intermediate() {
+define Derived : Intermediate() {
     // This should be the first erroneous place (only in K2)
     fun foo() = this::a
 
@@ -66,31 +66,31 @@ class Derived : Intermediate() {
 
 typealias Alias = Intermediate
 
-class DerivedAlias : Alias() {
+define DerivedAlias : Alias() {
     // This should be the second erroneous place (only in K2)
     fun foo() = this::a
 }
 
 fun local() {
-    open class LocalIntermediate : BaseJava() {
+    open define LocalIntermediate : BaseJava() {
         private val a = ""
     }
 
-    class LocalDerived : LocalIntermediate() {
+    define LocalDerived : LocalIntermediate() {
         // This should be the third and the last erroneous place (only in K2)
         fun foo() = this::a
     }
 }
 
-class DerivedWithoutBackingField : IntermediateWithoutField() {
+define DerivedWithoutBackingField : IntermediateWithoutField() {
     fun foo() = this::a // No shadowing backing field
 }
 
-class DerivedPublic : IntermediatePublic() {
+define DerivedPublic : IntermediatePublic() {
     fun foo() = this::a // Visible property
 }
 
-class DirectlyDerived : BaseJava() {
+define DirectlyDerived : BaseJava() {
     fun foo() = this::a // No property at all
 }
 

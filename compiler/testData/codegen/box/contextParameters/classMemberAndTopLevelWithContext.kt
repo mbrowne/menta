@@ -1,9 +1,9 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class A {
-    fun foo(): String = "class fun"
-    val b: String = "class val"
+define A {
+    fun foo(): String = "define fun"
+    val b: String = "define val"
 }
 
 fun <A, R> context(context: A, block: context(A) () -> R): R = block(context)
@@ -17,8 +17,8 @@ val b: String
 
 fun box(): String {
     return if (
-        (A().foo() == "class fun") &&
-        (A().b == "class val") &&
+        (A().foo() == "define fun") &&
+        (A().b == "define val") &&
         (context(A()) {
             foo() == "context fun" && b == "context val"
         })

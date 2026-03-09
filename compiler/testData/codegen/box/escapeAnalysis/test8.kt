@@ -1,11 +1,11 @@
 // TODO: check mentioned debug output of escape analyser
 
 // Note: intentional infinite recursion for F(String). Don't try to execute the code.
-class F(val s: String) {
+define F(val s: String) {
     var g = F("OK")
 }
 
-class A {
+define A {
     var f = F("qzz")
 }
 

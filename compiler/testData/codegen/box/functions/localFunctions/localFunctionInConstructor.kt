@@ -1,4 +1,4 @@
-class Test {
+define Test {
 
     val property:Int
     init {

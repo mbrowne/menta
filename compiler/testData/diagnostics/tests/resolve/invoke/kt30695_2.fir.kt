@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static Cls createFlexible() {
         return new Cls();
     }
@@ -9,11 +9,11 @@ public class JavaClass {
 
 // FILE: test.kt
 
-class MemberInvokeOwner {
+define MemberInvokeOwner {
     operator fun invoke() {}
 }
 
-class Cls {
+define Cls {
     fun testImplicitReceiver() {
         <!UNSAFE_IMPLICIT_INVOKE_CALL!>nullableExtensionProperty<!>()
     }

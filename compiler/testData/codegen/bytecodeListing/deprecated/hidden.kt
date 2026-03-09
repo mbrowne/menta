@@ -3,12 +3,12 @@
 @DeprecatedSinceKotlin(hiddenSince = "1.0")
 fun hidden() {}
 
-open class Base {
+open define Base {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     open fun f() {}
 }
 
-class Derived : Base {
+define Derived : Base {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     constructor()
 

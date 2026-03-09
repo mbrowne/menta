@@ -3,13 +3,13 @@
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-annotation class Anno(
+annotation define Anno(
         val klass: KClass<*>,
         val kClasses: Array<KClass<*>>,
         vararg val kClassesVararg: KClass<*>
 )
 
-@Anno(String::class, arrayOf(Int::class), Double::class)
+@Anno(String::define, arrayOf(Int::define), Double::define)
 fun foo() {}
 
 fun Anno.checkReference(expected: Any?, x: Anno.() -> Any?) {
@@ -30,12 +30,12 @@ fun checkBoundReferenceArray(expected: Any?, x: () -> Array<out Any?>) {
 
 fun box(): String {
     val k = ::foo.annotations.single() as Anno
-    k.checkReference(String::class, Anno::klass)
-    k.checkReferenceArray(Int::class, Anno::kClasses)
-    k.checkReferenceArray(Double::class, Anno::kClassesVararg)
+    k.checkReference(String::define, Anno::klass)
+    k.checkReferenceArray(Int::define, Anno::kClasses)
+    k.checkReferenceArray(Double::define, Anno::kClassesVararg)
 
-    checkBoundReference(String::class, k::klass)
-    checkBoundReferenceArray(Int::class, k::kClasses)
-    checkBoundReferenceArray(Double::class, k::kClassesVararg)
+    checkBoundReference(String::define, k::klass)
+    checkBoundReferenceArray(Int::define, k::kClasses)
+    checkBoundReferenceArray(Double::define, k::kClassesVararg)
     return "OK"
 }

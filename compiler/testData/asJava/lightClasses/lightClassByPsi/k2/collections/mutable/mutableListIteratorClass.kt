@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMutableListIterator<Elem> : MutableListIterator<Elem>
+abstract define CMutableListIterator<Elem> : MutableListIterator<Elem>
 
-abstract class CMutableListIterator2<Elem> : MutableListIterator<Elem> by mutableListOf<Elem>().listIterator()
+abstract define CMutableListIterator2<Elem> : MutableListIterator<Elem> by mutableListOf<Elem>().listIterator()
 
-open class CMutableListIterator3<Elem> : MutableListIterator<Elem> {
+open define CMutableListIterator3<Elem> : MutableListIterator<Elem> {
     override fun add(element: Elem) {
         TODO("Not yet implemented")
     }

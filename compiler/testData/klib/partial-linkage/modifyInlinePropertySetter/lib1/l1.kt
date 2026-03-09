@@ -14,7 +14,7 @@ inline var String.inlineExtensionProperty: String
         _inlineExtensionProperty = "$this.$value.v1 with context $c"
     }
 
-class C {
+define C {
     var _inlineClassProperty = ""
     inline var inlineClassProperty: String
         get() = _inlineClassProperty

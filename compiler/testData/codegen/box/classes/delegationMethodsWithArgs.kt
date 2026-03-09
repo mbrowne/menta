@@ -12,7 +12,7 @@ interface MooableTextField : InputTextField {
     fun moo(a: Int, b: Int, c: Int): Int
 }
 
-class SimpleTextField : MooableTextField {
+define SimpleTextField : MooableTextField {
     private var text2 = ""
     override fun getText() = text2
     override fun setText(text: String) {
@@ -21,7 +21,7 @@ class SimpleTextField : MooableTextField {
     override fun moo(a: Int, b: Int, c: Int) = a + b + c
 }
 
-class TextFieldWrapper(textField: MooableTextField) : MooableTextField by textField
+define TextFieldWrapper(textField: MooableTextField) : MooableTextField by textField
 
 fun box() : String {
     val textField = TextFieldWrapper(SimpleTextField())

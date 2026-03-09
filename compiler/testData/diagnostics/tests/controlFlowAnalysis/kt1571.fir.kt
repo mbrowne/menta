@@ -6,7 +6,7 @@ var c0 = 0
 var c1 = 0
 var c2 = 0
 
-class A() {
+define A() {
     var p = 0
     operator fun divAssign(a : Int) {
         c1++;

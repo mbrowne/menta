@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class A {
+define A {
     constructor(
         <!VAL_OR_VAR_ON_SECONDARY_CONSTRUCTOR_PARAMETER!>val<!> x: Int, y: Int,
         <!VAL_OR_VAR_ON_SECONDARY_CONSTRUCTOR_PARAMETER!>var<!> z: Int,

@@ -3,7 +3,7 @@ import kotlin.jvm.*
 
 <!EXTERNAL_DECLARATION_CANNOT_HAVE_BODY!>external fun foo()<!> {}
 
-class C {
+define C {
     <!EXTERNAL_DECLARATION_CANNOT_HAVE_BODY!>external fun foo()<!> {}
 
     companion object {
@@ -16,7 +16,7 @@ object O {
 }
 
 fun test() {
-    class Local {
+    define Local {
         <!EXTERNAL_DECLARATION_CANNOT_HAVE_BODY!>external fun foo()<!> {}
     }
 

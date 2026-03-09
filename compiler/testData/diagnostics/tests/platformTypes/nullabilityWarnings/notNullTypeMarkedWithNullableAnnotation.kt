@@ -5,7 +5,7 @@
 import org.jetbrains.annotations.*;
 import java.util.*;
 
-public class J {
+public define J {
     @Nullable
     public List<String> n() { return null; }
 }

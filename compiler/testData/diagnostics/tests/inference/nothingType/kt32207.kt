@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Test<X, T> {
+define Test<X, T> {
     fun hereIdeaFail(values : List<Int>, others : List<String>): List<Test<out Int, out String>> {
         return values.map { left(it) }.plus(others.map { right(it) })
     }

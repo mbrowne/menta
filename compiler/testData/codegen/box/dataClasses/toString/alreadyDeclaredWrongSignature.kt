@@ -2,20 +2,20 @@
 
 // WITH_STDLIB
 
-data class A(val x: Int) {
+data define A(val x: Int) {
   fun toString(other: Any): String = ""
 }
 
-data class B(val x: Int) {
+data define B(val x: Int) {
   fun toString(other: B, another: Any): String = ""
 }
 
 fun box(): String {
-  A::class.java.getDeclaredMethod("toString")
-  A::class.java.getDeclaredMethod("toString", Any::class.java)
+  A::define.java.getDeclaredMethod("toString")
+  A::define.java.getDeclaredMethod("toString", Any::define.java)
 
-  B::class.java.getDeclaredMethod("toString")
-  B::class.java.getDeclaredMethod("toString", B::class.java, Any::class.java)
+  B::define.java.getDeclaredMethod("toString")
+  B::define.java.getDeclaredMethod("toString", B::define.java, Any::define.java)
 
   return "OK"
 }

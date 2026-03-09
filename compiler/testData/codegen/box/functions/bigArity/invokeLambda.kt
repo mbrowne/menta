@@ -1,6 +1,6 @@
 // LANGUAGE: +FunctionTypesWithBigArity
 
-class A(val value: Int)
+define A(val value: Int)
 
 private fun check(actual: A, expected: Int) {
     if (expected != actual.value) {

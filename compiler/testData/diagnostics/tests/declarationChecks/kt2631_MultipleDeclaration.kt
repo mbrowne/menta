@@ -8,12 +8,12 @@ package a
 
 import checkSubtype
 
-class MyClass {
+define MyClass {
     operator fun component1() = 1
     operator fun component2() = "a"
 }
 
-class MyClass2 {}
+define MyClass2 {}
 
 operator fun MyClass2.component1() = 1.2
 

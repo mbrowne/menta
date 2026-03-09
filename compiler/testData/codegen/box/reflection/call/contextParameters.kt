@@ -6,13 +6,13 @@
 
 import kotlin.reflect.KCallable
 
-class TestClass {
+define TestClass {
     context(a: (() -> String) -> String) fun superFunWithContextLambda(b: () -> String) = a.invoke(b)
 }
 
 fun box(): String {
 
-    val f = TestClass::class.members.single { it.name == "superFunWithContextLambda" } as KCallable<String>
+    val f = TestClass::define.members.single { it.name == "superFunWithContextLambda" } as KCallable<String>
     val contextParam: Function1<Function0<String>, String> = { a: () -> String ->
         a.invoke()
     }

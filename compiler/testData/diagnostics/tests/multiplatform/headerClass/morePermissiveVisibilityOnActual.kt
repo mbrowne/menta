@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Container {
+expect open define Container {
     fun publicFun()
 
     internal fun internalFun1()
@@ -23,7 +23,7 @@ expect open class Container {
 
 // FILE: jvm.kt
 
-actual open class Container {
+actual open define Container {
     actual fun publicFun() {}               // OK: public -> public
 
     actual fun internalFun1() {}            // OK: internal -> public

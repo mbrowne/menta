@@ -8,7 +8,7 @@ fun test() {
 
 fun <T> generateException(a: T, next: (T) -> T) {}
 
-class Data<out K>(val x: K)
+define Data<out K>(val x: K)
 
 /* GENERATED_FIR_TAGS: additiveExpression, classDeclaration, functionDeclaration, functionalType, integerLiteral,
 lambdaLiteral, nullableType, out, primaryConstructor, propertyDeclaration, typeParameter */

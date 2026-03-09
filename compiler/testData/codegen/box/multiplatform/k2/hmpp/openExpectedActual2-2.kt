@@ -2,19 +2,19 @@
 
 // MODULE: lib-common
 // FILE: libCommon.kt
-expect open class AbsBase {
+expect open define AbsBase {
     open fun foo(): String
     fun bar(): String
 }
 
 // MODULE: lib-platform()()(lib-common)
 // FILE: libPlatform.kt
-actual open class AbsBase {
+actual open define AbsBase {
     actual open fun foo(): String = "open AbsBase"
     actual fun bar(): String = "AbsBase"
 }
 
-class LibPlatformAbsBase : AbsBase() {
+define LibPlatformAbsBase : AbsBase() {
     override fun foo(): String = "LibPlatformAbsBase"
 }
 

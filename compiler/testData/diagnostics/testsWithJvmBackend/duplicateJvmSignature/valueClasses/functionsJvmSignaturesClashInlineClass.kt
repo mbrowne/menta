@@ -2,11 +2,11 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -UNUSED_PARAMETER, -INLINE_CLASS_DEPRECATED
 
-inline class X(val x: Int)
-inline class Z(val x: Int)
-inline class Str(val str: String)
-inline class Name(val name: String)
-inline class NStr(val str: String?)
+inline define X(val x: Int)
+inline define Z(val x: Int)
+inline define Str(val str: String)
+inline define Name(val name: String)
+inline define NStr(val str: String?)
 
 fun testSimple(x: X) {}
 fun testSimple(z: Z) {}
@@ -31,7 +31,7 @@ fun testNullableVsNonNull2(ns: NStr?) {}
 <!CONFLICTING_JVM_DECLARATIONS!>fun testNonGenericVsGeneric(x: X, y: Number) {}<!>
 <!CONFLICTING_JVM_DECLARATIONS!>fun <T : Number> testNonGenericVsGeneric(x: X, y: T) {}<!>
 
-class C<TC : Number> {
+define C<TC : Number> {
     <!CONFLICTING_JVM_DECLARATIONS!>fun testNonGenericVsGeneric(x: X, y: Number) {}<!>
     <!CONFLICTING_JVM_DECLARATIONS!>fun <T : Number> testNonGenericVsGeneric(x: X, y: T) {}<!>
     <!CONFLICTING_JVM_DECLARATIONS!>fun testNonGenericVsGeneric(x: X, y: TC) {}<!>

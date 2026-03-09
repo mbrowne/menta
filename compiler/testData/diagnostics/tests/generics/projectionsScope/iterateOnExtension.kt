@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A<T>
+define A<T>
 fun <T> A<T>.foo(): Collection<T> = null!!
 
 fun main(a: A<*>, a1: A<out CharSequence>) {

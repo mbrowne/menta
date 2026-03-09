@@ -22,46 +22,44 @@ KtFile: LocalDeclarations.kt
       INTEGER_CONSTANT
         PsiElement(INTEGER_LITERAL)('1')
       PsiWhiteSpace('\n    ')
-      ANNOTATED_EXPRESSION
-        ANNOTATION_ENTRY
-          PsiElement(AT)('@')
-          CONSTRUCTOR_CALLEE
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('a')
+      CLASS
+        MODIFIER_LIST
+          ANNOTATION_ENTRY
+            PsiElement(AT)('@')
+            CONSTRUCTOR_CALLEE
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('a')
+          PsiWhiteSpace(' ')
+          PsiElement(abstract)('abstract')
         PsiWhiteSpace(' ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('abstract')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foof')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        PsiWhiteSpace(' ')
+        CLASS_BODY
           PsiElement(LBRACE)('{')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('abstract')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(AT)('@')
-        PsiElement(IDENTIFIER)('a')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(abstract)('abstract')
+          PsiWhiteSpace(' ')
+          ANNOTATION_ENTRY
+            PsiElement(AT)('@')
+            CONSTRUCTOR_CALLEE
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('a')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foof')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        PsiWhiteSpace(' ')
+        CLASS_BODY
           PsiElement(LBRACE)('{')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       PROPERTY

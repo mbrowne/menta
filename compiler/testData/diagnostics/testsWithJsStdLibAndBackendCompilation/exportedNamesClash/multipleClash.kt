@@ -38,17 +38,17 @@ package foo
 @file:Suppress("OPT_IN_USAGE", "JS_NAME_CLASH")
 package foo.bar.baz
 
-<!EXPORTING_JS_NAME_CLASH, EXPORTING_JS_NAME_CLASH_ES!>@JsExport @JsName("test") class Class1<!>
+<!EXPORTING_JS_NAME_CLASH, EXPORTING_JS_NAME_CLASH_ES!>@JsExport @JsName("test") define Class1<!>
 
 // FILE: Class2.kt
 @file:Suppress("OPT_IN_USAGE", "JS_NAME_CLASH")
 package foo
 
-<!EXPORTING_JS_NAME_CLASH, EXPORTING_JS_NAME_CLASH_ES!>@JsExport @JsName("bar") class Class2<!>
+<!EXPORTING_JS_NAME_CLASH, EXPORTING_JS_NAME_CLASH_ES!>@JsExport @JsName("bar") define Class2<!>
 
 // FILE: Class3.kt
 @file:Suppress("OPT_IN_USAGE", "JS_NAME_CLASH")
-<!EXPORTING_JS_NAME_CLASH, EXPORTING_JS_NAME_CLASH_ES!>@JsExport @JsName("foo") class Class3<!>
+<!EXPORTING_JS_NAME_CLASH, EXPORTING_JS_NAME_CLASH_ES!>@JsExport @JsName("foo") define Class3<!>
 
 // FILE: Package1.kt
 @file:Suppress("OPT_IN_USAGE", "JS_NAME_CLASH")

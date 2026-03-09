@@ -4,10 +4,10 @@
 @Suppress("INVISIBLE_MEMBER", <!ERROR_SUPPRESSION!>"INVISIBLE_REFERENCE"<!>)
 fun <@kotlin.internal.OnlyInputTypes T> assertEquals1(t1: T, t2: T) {}
 
-open class A
-class B: A()
-class C: A()
-class D
+open define A
+define B: A()
+define C: A()
+define D
 
 fun test1(a: A, b: B, c: C) {
     assertEquals1(a, b)

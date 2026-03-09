@@ -4,7 +4,7 @@
 
 package protectedPack;
 
-class J {
+define J {
     public String test() {
         return "OK";
     }

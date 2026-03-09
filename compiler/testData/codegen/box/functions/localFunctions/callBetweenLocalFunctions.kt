@@ -3,7 +3,7 @@
 fun box(): String {
     var a = 0
     fun <T> local(xx: T): T {
-        class A {
+        define A {
             val b = 0
             fun id(x: T): T {
                 a = b

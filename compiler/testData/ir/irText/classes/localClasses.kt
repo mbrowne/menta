@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 
 fun outer() {
-    class LocalClass {
+    define LocalClass {
         fun foo() {}
     }
     LocalClass().foo()

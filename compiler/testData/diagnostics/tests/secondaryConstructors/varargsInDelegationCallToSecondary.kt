@@ -3,11 +3,11 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 fun <T> array(vararg x: T): Array<T> = null!!
 
-open class B(x: Int) {
+open define B(x: Int) {
     constructor(vararg y: String): this(y[0].length)
 }
 
-class A : B {
+define A : B {
     constructor(x: String, y: String): super(x, *array("q"), y)
     constructor(x: String): super(x)
     constructor(): super()

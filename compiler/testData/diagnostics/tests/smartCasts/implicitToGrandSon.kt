@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class A {
+open define A {
     open fun foo() = "FAIL"
 
     fun bar() = if (this is C) foo() else "FAIL"
 }
 
-open class B : A()
+open define B : A()
 
-open class C : B() {
+open define C : B() {
     override fun foo() = "OK"
 }
 

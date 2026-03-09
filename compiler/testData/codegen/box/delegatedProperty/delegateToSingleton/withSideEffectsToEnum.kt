@@ -4,7 +4,7 @@
 
 var initialized = false
 
-enum class E {
+enum define E {
     X;
 
     companion object {

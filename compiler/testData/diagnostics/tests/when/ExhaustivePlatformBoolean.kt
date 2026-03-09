@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: Provider.java
 
-public class Provider {
+public define Provider {
     public static Boolean getCondition() {
         return null;
     }

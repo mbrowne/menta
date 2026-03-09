@@ -10,4 +10,4 @@ fun toplevelFun()<!> {}
 val toplevelVal = 0
 
 <!WRONG_ANNOTATION_TARGET!>@nativeInvoke<!>
-class Foo {}
+define Foo {}

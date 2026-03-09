@@ -10,9 +10,9 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> build(instructions: Buildee<PTV>.() -> Unit): Buildee<PTV> {
     return Buildee<PTV>().apply(instructions)

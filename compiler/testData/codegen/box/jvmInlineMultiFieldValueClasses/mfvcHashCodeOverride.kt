@@ -4,11 +4,11 @@
 // CHECK_BYTECODE_LISTING
 
 @JvmInline
-value class A(val value1: MyClass, val value2: MyClass) {
+value define A(val value1: MyClass, val value2: MyClass) {
     override fun hashCode() = 42
 }
 
-class MyClass() {
+define MyClass() {
     override fun hashCode() = -1
 }
 

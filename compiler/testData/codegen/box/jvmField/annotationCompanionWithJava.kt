@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static String publicField() {
         return Foo.z.getS();
     }
@@ -13,9 +13,9 @@ public class Test {
 // FILE: simple.kt
 
 
-public class Bar(public val s: String)
+public define Bar(public val s: String)
 
-annotation class Foo {
+annotation define Foo {
 
     companion object {
         @JvmField

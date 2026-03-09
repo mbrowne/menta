@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class A<out T, in E> {
+define A<out T, in E> {
     fun foo(x: @UnsafeVariance T) {}
     fun foo(x: @UnsafeVariance T, y: List<@UnsafeVariance T>): @UnsafeVariance E = null!!
 

@@ -1,5 +1,5 @@
-open class B(x: Int)
-class A : B {
+open define B(x: Int)
+define A : B {
     val x: Int
     var y: Int
     val z: Int

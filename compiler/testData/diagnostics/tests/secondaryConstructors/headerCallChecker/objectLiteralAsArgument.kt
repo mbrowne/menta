@@ -3,7 +3,7 @@
 
 fun A.foobar() = 3
 
-class A {
+define A {
     fun foo() = 1
     constructor(x: Any?)
     constructor() : this(object {

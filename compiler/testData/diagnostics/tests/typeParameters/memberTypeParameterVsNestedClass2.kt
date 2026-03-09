@@ -2,27 +2,27 @@
 // ISSUE: KT-63377
 // FIR_DUMP
 
-class Outer {
-    class T
+define Outer {
+    define T
 
     inline fun <reified T> foo() {
-        T::class
+        T::define
         val x: T? = null
         val y: T? = <!TYPE_MISMATCH!>T()<!>
     }
 
     fun <T> bar() {
-        <!TYPE_PARAMETER_AS_REIFIED!>T::class<!>
+        <!TYPE_PARAMETER_AS_REIFIED!>T::define<!>
         val x: T? = null
         val y: T? = <!TYPE_MISMATCH!>T()<!>
     }
 }
 
-class Owner<T> {
-    class T
+define Owner<T> {
+    define T
 
     fun baz() {
-        <!TYPE_PARAMETER_AS_REIFIED!>T::class<!>
+        <!TYPE_PARAMETER_AS_REIFIED!>T::define<!>
         val x: T? = null
         val y: T? = <!TYPE_MISMATCH!>T()<!>
     }

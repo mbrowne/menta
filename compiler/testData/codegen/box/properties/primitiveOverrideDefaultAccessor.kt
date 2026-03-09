@@ -2,7 +2,7 @@ interface R<T: Comparable<T>> {
     var value: T
 }
 
-class A(override var value: Int): R<Int>
+define A(override var value: Int): R<Int>
 
 fun box(): String {
     val a = A(239)

@@ -9,32 +9,11 @@ fun foo() {
     x.length
 }
 ---------------------
-A                                                        !<v1>: *
-{ init { x = "" } }                                      <v0>: *                   NEW: r({ init { x = "" } }) -> <v0>
-A { init { x = "" } }                                    <v2>: *                   NEW: magic[UNRESOLVED_CALL](A { init { x = "" } }|<v0>, !<v1>) -> <v2>
-x                                                        <v3>: {<: CharSequence}   NEW: r(x) -> <v3>
-length                                                   <v4>: *                   NEW: r(length|<v3>) -> <v4>
-x.length                                                 <v4>: *                   COPY
-{ var x: String class A { init { x = "" } } x.length }   <v4>: *                   COPY
-=====================
-== anonymous_0 ==
-{
-        init {
-            x = ""
-        }
-    }
----------------------
-init              !<v1>: *
-{ x = "" }        <v0>: *    NEW: r({ x = "" }) -> <v0>
-init { x = "" }   <v2>: *    NEW: magic[UNRESOLVED_CALL](init { x = "" }|<v0>, !<v1>) -> <v2>
-init { x = "" }   <v2>: *    COPY
-=====================
-== anonymous_1 ==
-{
-            x = ""
-        }
----------------------
-""       <v0>: String   NEW: r("") -> <v0>
-x = ""   !<v1>: *
-x = ""   !<v1>: *       COPY
+""                                                       <v0>: String              NEW: r("") -> <v0>
+x = ""                                                   !<v1>: *
+{ x = "" }                                               !<v1>: *                  COPY
+x                                                        <v2>: {<: CharSequence}   NEW: r(x) -> <v2>
+length                                                   <v3>: *                   NEW: r(length|<v2>) -> <v3>
+x.length                                                 <v3>: *                   COPY
+{ var x: String class A { init { x = "" } } x.length }   <v3>: *                   COPY
 =====================

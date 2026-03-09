@@ -4,7 +4,7 @@
 
 fun test() {
     val outerBuildee = build outerBuild@ {
-        class LocalClass {
+        define LocalClass {
             fun localClassMember() {
                 val innerBuildee = build innerBuild@ {
                     this@outerBuild.setTypeVariable(TargetType())
@@ -24,9 +24,9 @@ fun test() {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = null!!
 }

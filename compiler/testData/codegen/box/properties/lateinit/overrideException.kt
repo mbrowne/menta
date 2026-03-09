@@ -3,7 +3,7 @@ interface Intf {
     val str: String
 }
 
-class A : Intf {
+define A : Intf {
     override lateinit var str: String
 
     fun getMyStr(): String {

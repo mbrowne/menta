@@ -2,13 +2,13 @@
 // MODULE: lib
 // FILE: Sub.java
 
-class Super {
+define Super {
     void safeInvoke(Runnable r) {
         if (r != null) r.run();
     }
 }
 
-class Sub extends Super {
+define Sub extends Super {
 }
 
 // MODULE: main(lib)

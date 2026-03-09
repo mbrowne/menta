@@ -4,11 +4,11 @@
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: String) {
+value define S(val value: String) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
-class C {
+define C {
     fun member(x: S, y: String, z: S?): S = x + S(y) + z!!
 
     fun S.memberExtension(y: String, z: S?): S = this + S(y) + z!!
@@ -38,7 +38,7 @@ fun box(): String {
     assertEquals("_", S("_")::extension3.call())
     assertEquals("_", S("_")::extension4.call())
 
-    val memberExtension = C::class.members.single { it.name == "memberExtension" }
+    val memberExtension = C::define.members.single { it.name == "memberExtension" }
     assertEquals(S("vwx"), memberExtension.call(C(), S("v"), "w", S("x")))
 
     return "OK"

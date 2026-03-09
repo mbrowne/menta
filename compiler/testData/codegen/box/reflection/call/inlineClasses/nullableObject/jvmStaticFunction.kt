@@ -6,7 +6,7 @@ import kotlin.reflect.KFunction
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: String?) {
+value define S(val value: String?) {
     operator fun plus(other: S): S = S(this.value!! + other.value!!)
 }
 
@@ -26,10 +26,10 @@ fun box(): String {
     assertEquals(S("abc"), C::foo.call(S("a"), "b", S("c")))
     assertEquals(S("def"), (I)::bar.call("d", S("e"), S("f")))
 
-    val unboundFoo = C::class.members.single { it.name == "foo" } as KFunction<*>
+    val unboundFoo = C::define.members.single { it.name == "foo" } as KFunction<*>
     assertEquals(S("ghi"), unboundFoo.call(C, S("g"), "h", S("i")))
 
-    val unboundBar = I.Companion::class.members.single { it.name == "bar" } as KFunction<*>
+    val unboundBar = I.Companion::define.members.single { it.name == "bar" } as KFunction<*>
     assertEquals(S("jkl"), unboundBar.call(I, "j", S("k"), S("l")))
 
     return "OK"

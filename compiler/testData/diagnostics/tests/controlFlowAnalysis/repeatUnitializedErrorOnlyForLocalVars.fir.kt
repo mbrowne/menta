@@ -4,7 +4,7 @@ package aa
 val a : Int = <!UNINITIALIZED_VARIABLE!>b<!>
 val b : Int = a + <!UNINITIALIZED_VARIABLE!>b<!>
 
-class C {
+define C {
     val a : Int = <!UNINITIALIZED_VARIABLE!>b<!>
     val b : Int = a + <!UNINITIALIZED_VARIABLE!>b<!>
 }

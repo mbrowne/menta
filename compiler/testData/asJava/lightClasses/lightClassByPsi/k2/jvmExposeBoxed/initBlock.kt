@@ -1,10 +1,10 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmInline
 @JvmExposeBoxed
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     init {
         result = s
     }
@@ -12,4 +12,4 @@ value class StringWrapper(val s: String) {
 
 var result = "FAIL"
 
-// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

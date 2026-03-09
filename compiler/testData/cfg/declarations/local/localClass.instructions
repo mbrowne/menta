@@ -14,43 +14,17 @@ fun f() {
 L0:
   1 <START>
   2 mark({ class LocalClass() { fun f() { val x = "" fun loc() { val x3 = "" } } } })
-    mark({ fun f() { val x = "" fun loc() { val x3 = "" } } })
-    jmp?(L2)                                                                                                         NEXT:[r({ fun f() { val x = "" fun loc() { val x3 = "" } } }) -> <v0>, d({ fun f() { val x = "" fun loc() { val x3 = "" } } })]
-    d({ fun f() { val x = "" fun loc() { val x3 = "" } } })                                                          NEXT:[<SINK>]
-L2 [after local declaration]:
-    r({ fun f() { val x = "" fun loc() { val x3 = "" } } }) -> <v0>                                                  PREV:[jmp?(L2)]
-    mark(LocalClass() { fun f() { val x = "" fun loc() { val x3 = "" } } })
-    magic[UNRESOLVED_CALL](LocalClass() { fun f() { val x = "" fun loc() { val x3 = "" } } }|<v0>, !<v1>) -> <v2>
+    jmp?(L2)                                                                             NEXT:[<END>, jmp?(L3)]
+    jmp?(L3)                                                                             NEXT:[<END>, d(fun f() { val x = "" fun loc() { val x3 = "" } })]
+    d(fun f() { val x = "" fun loc() { val x3 = "" } })                                  NEXT:[<SINK>]
 L1:
-  1 <END>                                                                                                            NEXT:[<SINK>]
+L2 [after local class]:
+L3 [after local declaration]:
+  1 <END>                                                                                NEXT:[<SINK>]                                                                               PREV:[jmp?(L2), jmp?(L3)]
 error:
-    <ERROR>                                                                                                          PREV:[]
+    <ERROR>                                                                              PREV:[]
 sink:
-    <SINK>                                                                                                           PREV:[<ERROR>, <END>, d({ fun f() { val x = "" fun loc() { val x3 = "" } } })]
-=====================
-== anonymous_0 ==
-{
-        fun f() {
-            val x = ""
-
-            fun loc() {
-                val x3 = ""
-            }
-        }
-    }
----------------------
-L3:
-  3 <START>
-  4 mark(fun f() { val x = "" fun loc() { val x3 = "" } })
-    jmp?(L5)                                                  NEXT:[<END>, d(fun f() { val x = "" fun loc() { val x3 = "" } })]
-    d(fun f() { val x = "" fun loc() { val x3 = "" } })       NEXT:[<SINK>]
-L4:
-L5 [after local declaration]:
-  3 <END>                                                     NEXT:[<SINK>]                                                        PREV:[jmp?(L5)]
-error:
-    <ERROR>                                                   PREV:[]
-sink:
-    <SINK>                                                    PREV:[<ERROR>, <END>, d(fun f() { val x = "" fun loc() { val x3 = "" } })]
+    <SINK>                                                                               PREV:[<ERROR>, <END>, d(fun f() { val x = "" fun loc() { val x3 = "" } })]
 =====================
 == f ==
 fun f() {
@@ -61,18 +35,18 @@ fun f() {
             }
         }
 ---------------------
-L6:
-  5 <START>
-  6 mark({ val x = "" fun loc() { val x3 = "" } })
+L4:
+  3 <START>
+  4 mark({ val x = "" fun loc() { val x3 = "" } })
     v(val x = "")
     mark("")
     r("") -> <v0>
     w(x|<v0>)
-    jmp?(L8)                                          NEXT:[<END>, d(fun loc() { val x3 = "" })]
+    jmp?(L6)                                          NEXT:[<END>, d(fun loc() { val x3 = "" })]
     d(fun loc() { val x3 = "" })                      NEXT:[<SINK>]
-L7:
-L8 [after local declaration]:
-  5 <END>                                             NEXT:[<SINK>]                                            PREV:[jmp?(L8)]
+L5:
+L6 [after local declaration]:
+  3 <END>                                             NEXT:[<SINK>]                                            PREV:[jmp?(L6)]
 error:
     <ERROR>                                           PREV:[]
 sink:
@@ -83,15 +57,15 @@ fun loc() {
                 val x3 = ""
             }
 ---------------------
-L9:
-  7 <START>
-  8 mark({ val x3 = "" })
+L7:
+  5 <START>
+  6 mark({ val x3 = "" })
     v(val x3 = "")
     mark("")
     r("") -> <v0>
     w(x3|<v0>)
-L10:
-  7 <END>                    NEXT:[<SINK>]
+L8:
+  5 <END>                    NEXT:[<SINK>]
 error:
     <ERROR>                  PREV:[]
 sink:

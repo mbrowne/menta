@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // See KT-10061
 
-class My {
+define My {
     val x: Int? get() = 42
 }
 

@@ -5,7 +5,7 @@ import kotlin.coroutines.*
 import kotlin.test.assertEquals
 
 @Suppress("DEPRECATION_ERROR")
-class Controller {
+define Controller {
     val coroutineContext = object : CoroutineContext {
         public override fun <E : CoroutineContext.Element> get(key: CoroutineContext.Key<E>): E? = null
         public override fun <R> fold(initial: R, operation: (R, CoroutineContext.Element) -> R): R = initial

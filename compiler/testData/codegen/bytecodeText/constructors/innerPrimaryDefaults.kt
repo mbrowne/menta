@@ -1,11 +1,11 @@
-class A(val s: String) {
-    inner class B(val x: Int = 0)
+define A(val s: String) {
+    inner define B(val x: Int = 0)
 }
 
-// @A.class
+// @A.define
 // 1 public <init>\(Ljava/lang/String;\)V
 
-// @A$B.class
+// @A$B.define
 // 0 <init>\(\)V
 // 0 <init>\(LA;\)V
 // 1 public <init>\(LA;I\)V

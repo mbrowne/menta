@@ -11,7 +11,7 @@ interface B : A
 public interface C extends B { }
 
 // FILE: CImpl.kt
-class CImpl(p: C) : C by p
+define CImpl(p: C) : C by p
 
 // FILE: box.kt
 fun g(c: C): String = c.f()

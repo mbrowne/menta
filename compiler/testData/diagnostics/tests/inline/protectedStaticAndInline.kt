@@ -5,7 +5,7 @@
 
 // FILE: First.java
 
-public abstract class First {
+public abstract define First {
     protected static String TEST = "O";
 
     protected static String test() {
@@ -19,7 +19,7 @@ package anotherPackage
 
 import First
 
-class Test : First() {
+define Test : First() {
 
     inline fun doTest(): String {
         return <!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>TEST<!> + <!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>test<!>()

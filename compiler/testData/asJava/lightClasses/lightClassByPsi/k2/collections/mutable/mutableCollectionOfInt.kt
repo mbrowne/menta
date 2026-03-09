@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SMutableCollection : MutableCollection<Int>
+abstract define SMutableCollection : MutableCollection<Int>
 
-abstract class SMutableCollection2 : MutableCollection<Int> by mutableListOf<Int>()
+abstract define SMutableCollection2 : MutableCollection<Int> by mutableListOf<Int>()
 
-open class SMutableCollection3 : MutableCollection<Int> {
+open define SMutableCollection3 : MutableCollection<Int> {
     override fun add(element: Int): Boolean {
         TODO("Not yet implemented")
     }
@@ -50,4 +50,4 @@ open class SMutableCollection3 : MutableCollection<Int> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SMutableCollection.class[contains;contains;getSize;remove;remove;size;toArray;toArray], SMutableCollection2.class[size;toArray;toArray], SMutableCollection3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: SMutableCollection.define[contains;contains;getSize;remove;remove;size;toArray;toArray], SMutableCollection2.define[size;toArray;toArray], SMutableCollection3.define[size;toArray;toArray]

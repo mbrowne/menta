@@ -1,6 +1,6 @@
 private fun foo() = "OK"
 
-private class Bar {
+private define Bar {
     /* public */ inline fun bar(): String { // but effectively, it's private
         return foo() // <-- unnecessary synthetic accessor will be generated
     }

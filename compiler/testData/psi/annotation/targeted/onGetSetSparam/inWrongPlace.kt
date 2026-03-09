@@ -12,7 +12,7 @@ package boo
 @get:Deprecated
 @set:Deprecated
 @setparam:Deprecated
-class A
+define A
 
 @get:Deprecated
 @set:Deprecated

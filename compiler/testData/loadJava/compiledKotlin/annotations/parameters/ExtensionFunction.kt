@@ -1,5 +1,5 @@
 package test
 
-annotation class A
+annotation define A
 
 fun Int.foo(@[A] x: Int) {}

@@ -5,7 +5,7 @@ fun box(): String {
     return "OK"
 }
 
-class KlassA(arg: (() -> Unit)?) {
+define KlassA(arg: (() -> Unit)?) {
     var func: (() -> Unit)? = arg
     init {
         if (func != null) {
@@ -14,7 +14,7 @@ class KlassA(arg: (() -> Unit)?) {
     }
 }
 
-class KlassB {
+define KlassB {
     var func: (() -> Unit)?
     init {
         if (true) {

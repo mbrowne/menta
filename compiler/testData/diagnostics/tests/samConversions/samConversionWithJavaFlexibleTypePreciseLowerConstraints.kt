@@ -3,7 +3,7 @@
 // FULL_JDK
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) {
         a = b;
     }

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
     operator fun plusAssign(s: String) {}
 }
 
@@ -9,7 +9,7 @@ fun test() {
     a <!UNSAFE_OPERATOR_CALL!>+=<!> ""
 }
 
-class B {
+define B {
     operator fun plus(other: B) = this
 }
 

@@ -5,41 +5,38 @@ KtFile: valueClass.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  MODIFIER_LIST
-    PsiElement(value)('value')
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
+    PsiElement(IDENTIFIER)('value')
   PsiWhiteSpace(' ')
   PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(value)('value')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(value)('value')
+      PsiWhiteSpace(' ')
+      PsiElement(private)('private')
     PsiWhiteSpace(' ')
-    PsiElement(private)('private')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(value)('value')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(value)('value')
+      PsiWhiteSpace(' ')
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Bar')
     PsiWhiteSpace(' ')
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Bar')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
   CLASS
@@ -50,15 +47,14 @@ KtFile: valueClass.kt
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(value)('value')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(value)('value')
+      PsiWhiteSpace(' ')
+      PsiElement(abstract)('abstract')
     PsiWhiteSpace(' ')
-    PsiElement(abstract)('abstract')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
   OBJECT_DECLARATION
@@ -83,28 +79,23 @@ KtFile: valueClass.kt
       PsiElement(LBRACE)('{')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(value)('value')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(value)('value')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(value)('value')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(value)('value')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -127,83 +118,74 @@ KtFile: valueClass.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(private)('private')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(private)('private')
+      PsiWhiteSpace(' ')
+      PsiElement(value)('value')
     PsiWhiteSpace(' ')
-    PsiElement(value)('value')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(expect)('expect')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(expect)('expect')
+      PsiWhiteSpace(' ')
+      PsiElement(value)('value')
     PsiWhiteSpace(' ')
-    PsiElement(value)('value')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(actual)('actual')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(actual)('actual')
+      PsiWhiteSpace(' ')
+      PsiElement(value)('value')
     PsiWhiteSpace(' ')
-    PsiElement(value)('value')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Bar')
+  CLASS
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Bar')
+      PsiWhiteSpace(' ')
+      PsiElement(value)('value')
     PsiWhiteSpace(' ')
-    PsiElement(value)('value')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('TopLevel')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('value')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(value)('value')
+        PsiWhiteSpace(' ')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Foo')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(value)('value')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(value)('value')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')

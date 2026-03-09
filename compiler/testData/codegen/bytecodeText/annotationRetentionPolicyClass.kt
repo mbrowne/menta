@@ -1,7 +1,7 @@
-@Ann class MyClass
+@Ann define MyClass
 
 @Retention(AnnotationRetention.BINARY)
-annotation class Ann
+annotation define Ann
 
 // 1 @LAnn;()
 // 1 invisible

@@ -3,16 +3,16 @@
 // CHECK_BYTECODE_LISTING
 
 // FILE: IC.kt
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmInline
 @JvmExposeBoxed
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     @JvmExposeBoxed
     fun ok(): String = s
 }
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return new StringWrapper("OK").ok();
     }

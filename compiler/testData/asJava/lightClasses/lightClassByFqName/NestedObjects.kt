@@ -1,7 +1,7 @@
 // A
 
-class A {
-    class B {
+define A {
+    define B {
         object I
 
         object II

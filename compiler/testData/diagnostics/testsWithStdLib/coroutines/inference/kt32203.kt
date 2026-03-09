@@ -5,10 +5,10 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class Buildee<T>
-class Builder<T>
+define Buildee<T>
+define Builder<T>
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 inline fun <T> builder(block: Builder<T>.() -> Unit): Buildee<T> = TODO()
 
 private fun <T> Builder<T>.consumer(builder: Builder<T>): Unit = TODO()

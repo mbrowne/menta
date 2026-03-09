@@ -7,8 +7,8 @@ interface A {
     val C.check: Int get() = 42
 }
 
-open class B
-open class C : B()
+open define B
+open define C : B()
 
 context(A)
 fun B.foo(c: C) {

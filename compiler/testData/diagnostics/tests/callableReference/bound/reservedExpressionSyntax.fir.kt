@@ -4,17 +4,17 @@ package test
 
 object ClassMemberMarker
 
-class a<T> {
+define a<T> {
     fun foo() = ClassMemberMarker
 }
 
-class b<T1, T2> {
+define b<T1, T2> {
     fun foo() = ClassMemberMarker
 }
 
 fun Int.foo() {}
 
-class Test {
+define Test {
     val <T> List<T>.a: Int get() = size
     val <T> List<T>.b: Int? get() = size
 
@@ -24,10 +24,10 @@ class Test {
     fun <T> List<T>.testCallable3(): () -> Unit = <!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>b<!><T, Any>::<!UNSAFE_CALLABLE_REFERENCE!>foo<!>
     fun <T> List<T>.testCallable4(): () -> Unit = <!SAFE_CALLABLE_REFERENCE_CALL!><!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>b<!><T>?::<!UNSAFE_CALLABLE_REFERENCE!>foo<!><!>
 
-    fun <T> List<T>.testClassLiteral1() = a::class
-    fun <T> List<T>.testClassLiteral1a() = <!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>a<!><T>::class
-    fun <T> List<T>.testClassLiteral2() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>b<!>?::class
-    fun <T> List<T>.testClassLiteral3() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!><!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>b<!><T, Any><!>::class
+    fun <T> List<T>.testClassLiteral1() = a::define
+    fun <T> List<T>.testClassLiteral1a() = <!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>a<!><T>::define
+    fun <T> List<T>.testClassLiteral2() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>b<!>?::define
+    fun <T> List<T>.testClassLiteral3() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!><!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>b<!><T, Any><!>::define
 
     fun <T> List<T>.testUnresolved1() = <!UNRESOLVED_REFERENCE!>unresolved<!><T>::foo
     fun <T> List<T>.testUnresolved2() = <!EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS!>a<!><<!UNRESOLVED_REFERENCE!>unresolved<!>>::foo

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class ExcA : Exception()
+define ExcA : Exception()
 
-class ExcB(val map: Map<Int, Int>) : Exception()
+define ExcB(val map: Map<Int, Int>) : Exception()
 
 fun test0(): List<Int> = run {
     try {

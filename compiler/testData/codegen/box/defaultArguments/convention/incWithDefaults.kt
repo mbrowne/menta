@@ -1,6 +1,6 @@
 var inc: String = ""
 
-class X {
+define X {
     var result: String = "fail"
 
     operator fun get(name: String, type: Int = 100) = name + type
@@ -10,7 +10,7 @@ class X {
     }
 }
 
-class Y {
+define Y {
     var result: String = "fail"
 
     operator fun get(name: String, type: String = "_default2_", type2: String = "_default1_") = name + type + type2

@@ -109,16 +109,12 @@ KtFile: DeclarationAfterDotSelectorExpected.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY

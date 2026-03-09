@@ -3,7 +3,7 @@
 // KT-9145
 
 @Target(AnnotationTarget.CLASS)
-annotation class Ann
+annotation define Ann
 
 var x: Int
     get() = 1

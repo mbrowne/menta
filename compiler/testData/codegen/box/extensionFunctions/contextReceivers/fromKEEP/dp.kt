@@ -4,7 +4,7 @@
 // IGNORE_HEADER_MODE: JVM_IR
 // WITH_STDLIB
 
-class View {
+define View {
     val coefficient = 42
 }
 

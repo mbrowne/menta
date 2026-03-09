@@ -5,8 +5,8 @@
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-annotation class E1
+annotation define E1
 
-class My(@E1 val x: Int)
+define My(@E1 val x: Int)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, primaryConstructor, propertyDeclaration */

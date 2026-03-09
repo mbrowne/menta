@@ -1,11 +1,11 @@
-class C<T : C<T>> {
+define C<T : C<T>> {
     fun foo(c: C<*>) {}
 }
 
-open class Super<T>
+open define Super<T>
 
-class Sub: Super<C<*>>()
+define Sub: Super<C<*>>()
 
-// class: Sub
+// define: Sub
 // jvm signature:     Sub
 // generic signature: LSuper<LC<*>;>;

@@ -2,7 +2,7 @@ fun box(): String {
     return Z().test()
 }
 
-class Z {
+define Z {
     fun Double.test(a: Int, b: Long, c: () -> String): String {
         return "${this.toInt()}_${a}_${b}_${c()}"
     }

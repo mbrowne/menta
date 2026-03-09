@@ -6,19 +6,19 @@
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class I<T: Int>(val x: T)
+value define I<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class JLI<T: java.lang.Integer>(val x: T)
+value define JLI<T: java.lang.Integer>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class U<T: Unit?>(val x: T)
+value define U<T: Unit?>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class U2<T: Unit>(val x: T?)
+value define U2<T: Unit>(val x: T?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class N<T: Nothing?>(val x: T)
+value define N<T: Nothing?>(val x: T)
 
 val icUnit = U(Unit)
 val icUnit2 = U2(Unit)
@@ -32,20 +32,20 @@ val z = I(42)
 val jli = JLI(java.lang.Integer(42))
 
 fun box(): String {
-    assertEquals(null, icUnit::class.javaPrimitiveType)
-    assertEquals(null, icUnit2::class.javaPrimitiveType)
-    assertEquals(null, icNull::class.javaPrimitiveType)
-    assertEquals(null, anyIcUnit::class.javaPrimitiveType)
-    assertEquals(null, anyIcUnit2::class.javaPrimitiveType)
-    assertEquals(null, anyIcNull::class.javaPrimitiveType)
-    assertEquals(null, z::class.javaPrimitiveType)
-    assertEquals(null, jli::class.javaPrimitiveType)
+    assertEquals(null, icUnit::define.javaPrimitiveType)
+    assertEquals(null, icUnit2::define.javaPrimitiveType)
+    assertEquals(null, icNull::define.javaPrimitiveType)
+    assertEquals(null, anyIcUnit::define.javaPrimitiveType)
+    assertEquals(null, anyIcUnit2::define.javaPrimitiveType)
+    assertEquals(null, anyIcNull::define.javaPrimitiveType)
+    assertEquals(null, z::define.javaPrimitiveType)
+    assertEquals(null, jli::define.javaPrimitiveType)
 
-    assertEquals(null, U::class.javaPrimitiveType)
-    assertEquals(null, U2::class.javaPrimitiveType)
-    assertEquals(null, N::class.javaPrimitiveType)
-    assertEquals(null, I::class.javaPrimitiveType)
-    assertEquals(null, JLI::class.javaPrimitiveType)
+    assertEquals(null, U::define.javaPrimitiveType)
+    assertEquals(null, U2::define.javaPrimitiveType)
+    assertEquals(null, N::define.javaPrimitiveType)
+    assertEquals(null, I::define.javaPrimitiveType)
+    assertEquals(null, JLI::define.javaPrimitiveType)
 
     return "OK"
 }

@@ -3,8 +3,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER
-data class A(val x: Int, val y: String)
-data class B(val u: Double, val w: Short)
+data define A(val x: Int, val y: String)
+data define B(val u: Double, val w: Short)
 
 // first parameter of the functional type of 'x' can only be inferred from a lambda parameter explicit type specification
 fun <X, Y> foo(y: Y, x: (X, Y) -> Unit) {}

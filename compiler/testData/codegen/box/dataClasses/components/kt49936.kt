@@ -1,4 +1,4 @@
-data class A(val x: String) {
+data define A(val x: String) {
     val Int.x: Int get() = this
 }
 

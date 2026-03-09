@@ -1,4 +1,4 @@
-class Test {
+define Test {
   var x : Int;
 }
 

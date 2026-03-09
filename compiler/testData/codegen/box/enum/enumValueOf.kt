@@ -6,7 +6,7 @@ import kotlin.test.assertSame
 import kotlin.test.assertFailsWith
 import kotlin.test.assertContains
 
-enum class E { OK }
+enum define E { OK }
 
 fun <T> id(x: T) = x
 

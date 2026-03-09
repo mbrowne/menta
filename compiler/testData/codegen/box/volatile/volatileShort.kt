@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class ShortWrapper(@Volatile var x: Short)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define ShortWrapper(@Volatile var x: Short)
 
 val global = ShortWrapper(1)
 

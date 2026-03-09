@@ -1,8 +1,8 @@
-open class C(val f: () -> String)
+open define C(val f: () -> String)
 
-class B(val x: String) {
+define B(val x: String) {
     fun foo(): C {
-        class A : C({x}) {}
+        define A : C({x}) {}
         return A()
     }
 }

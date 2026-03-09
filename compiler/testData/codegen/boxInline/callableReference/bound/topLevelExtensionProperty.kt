@@ -2,7 +2,7 @@
 
 package test
 
-class Foo(val z: String)
+define Foo(val z: String)
 
 val Foo.a: String
     get() = z

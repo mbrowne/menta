@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class A {
+abstract define A {
     abstract fun foo(): Int
 }
 
-class B() : A() {
+define B() : A() {
     override fun foo() = 1
 }
 

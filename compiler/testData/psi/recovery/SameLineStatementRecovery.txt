@@ -134,18 +134,17 @@ KtFile: SameLineStatementRecovery.kt
             PsiElement(LBRACE)('{')
             PsiWhiteSpace('\n    ')
             PsiElement(RBRACE)('}')
-      PsiWhiteSpace(' ')
       PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+        <empty list>
+      PsiWhiteSpace(' ')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        PsiWhiteSpace(' ')
+        CLASS_BODY
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
@@ -163,7 +162,7 @@ KtFile: SameLineStatementRecovery.kt
       PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(IDENTIFIER)('annotation')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Annotation')
       PsiWhiteSpace('\n')
@@ -345,16 +344,14 @@ KtFile: SameLineStatementRecovery.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('GA')
   PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('GB')
   PsiWhiteSpace('\n')
   FUN
@@ -368,33 +365,30 @@ KtFile: SameLineStatementRecovery.kt
     BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('LA')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              BLOCK
-                <empty list>
-              PsiElement(RBRACE)('}')
-      PsiWhiteSpace(' ')
+      CLASS
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('LA')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
       PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+        <empty list>
+      PsiWhiteSpace(' ')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('LB')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      REFERENCE_EXPRESSION
+      CLASS
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('LC')
-      PsiWhiteSpace(' ')
       PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+        <empty list>
+      PsiWhiteSpace(' ')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('LD')
       PsiWhiteSpace('\n')

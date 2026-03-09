@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class Foo(val x: Int)
+inline define Foo(val x: Int)
 
 object Test {
     fun asParam(a: Foo) {}

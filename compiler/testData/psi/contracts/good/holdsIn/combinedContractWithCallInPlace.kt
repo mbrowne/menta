@@ -1,5 +1,5 @@
 // LANGUAGE: +HoldsInContracts
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.*
 

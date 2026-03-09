@@ -19,15 +19,15 @@ fun box(): String {
 
 
 
-open class TargetTypeBase
-class TargetType: TargetTypeBase()
+open define TargetTypeBase
+define TargetType: TargetTypeBase()
 
 fun consumeTargetTypeBase(value: TargetTypeBase) {}
 
 fun consumeTargetType(value: TargetType) {}
 fun consumeTargetTypeBuildee(value: Buildee<TargetType>) {}
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> parallelBuild(
     instructionsA: Buildee<PTV>.(PTV) -> Unit,

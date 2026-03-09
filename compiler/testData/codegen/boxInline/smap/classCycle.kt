@@ -1,12 +1,12 @@
 // FILE: 1.kt
 package test
 
-class A {
+define A {
     inline fun a() = B().b()
     inline fun c() = B().d()
 }
 
-class B {
+define B {
     inline fun b() = A().c()
     inline fun d() = "OK"
 }

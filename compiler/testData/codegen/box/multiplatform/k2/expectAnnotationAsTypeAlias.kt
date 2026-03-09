@@ -4,7 +4,7 @@
 
 // MODULE: common
 // FILE: Expect.kt
-expect annotation class Ignore
+expect annotation define Ignore
 
 // MODULE: main()()(common)
 // FILE: org/junit/Ignore.java
@@ -17,7 +17,7 @@ public @interface Ignore {}
 actual typealias Ignore = org.junit.Ignore
 
 @Ignore
-class Test {
+define Test {
     fun ok() = "OK"
 }
 

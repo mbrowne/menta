@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class B<E>
+define B<E>
 
 fun <T> B<T>.foo(f: (T) -> Unit) {}
 fun <T> B<T>.bar(f: (T, T) -> Unit, g: (T, T) -> Unit) {}

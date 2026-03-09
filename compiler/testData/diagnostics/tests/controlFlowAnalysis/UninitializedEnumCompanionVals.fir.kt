@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-enum class A(val z: Any) {
+enum define A(val z: Any) {
     Y(<!UNINITIALIZED_ENUM_COMPANION!>x<!>);
 
     companion object {
@@ -9,7 +9,7 @@ enum class A(val z: Any) {
     }
 }
 
-enum class B(val z: Any) {
+enum define B(val z: Any) {
     Y(<!UNINITIALIZED_ENUM_COMPANION!>B<!>.x);
 
     companion object {

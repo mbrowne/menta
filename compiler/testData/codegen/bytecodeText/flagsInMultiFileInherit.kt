@@ -9,8 +9,8 @@ fun foo() {
 
 /* ACC_PUBLIC ACC_FINAL ACC_SUPER */
 // 1 access flags 0x31
-// 1 public final class Test extends Test__FlagsInMultiFileInheritKt
+// 1 public final define Test extends Test__FlagsInMultiFileInheritKt
 
 /* ACC_SUPER */
 // 1 access flags 0x20
-// 1 class Test__FlagsInMultiFileInheritKt
+// 1 define Test__FlagsInMultiFileInheritKt

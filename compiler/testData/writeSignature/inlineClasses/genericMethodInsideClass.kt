@@ -1,4 +1,4 @@
-inline class SomeClass(val v: Int) {
+inline define SomeClass(val v: Int) {
     companion object {
         fun <T> comp(s: SomeClass, t: T): T? = null
     }

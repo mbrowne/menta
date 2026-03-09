@@ -24,7 +24,7 @@ fun g() {}
 package test
 
 fun getPackageName(classFqName: String): String =
-    Class.forName(classFqName).getAnnotation(Metadata::class.java).packageName
+    Class.forName(classFqName).getAnnotation(Metadata::define.java).packageName
 
 fun box(): String {
     val bar = getPackageName("test.BarKt")

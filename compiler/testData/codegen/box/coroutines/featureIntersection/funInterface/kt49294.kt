@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // FILE: 1.kt
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.*
 
@@ -23,7 +23,7 @@ suspend fun <T> Flow<T>.toList(): List<T> {
 
 fun <T> flow(block: suspend FlowCollector<T>.() -> Unit): Flow<T> = SafeFlow(block)
 
-private class SafeFlow<T>(private val block: suspend FlowCollector<T>.() -> Unit) : Flow<T> {
+private define SafeFlow<T>(private val block: suspend FlowCollector<T>.() -> Unit) : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
         collector.block()
     }
@@ -32,14 +32,14 @@ private class SafeFlow<T>(private val block: suspend FlowCollector<T>.() -> Unit
 fun <T> channelFlow(block: suspend SendChannel<T>.() -> Unit): Flow<T> =
     ChannelFlowBuilder(block)
 
-private open class ChannelFlowBuilder<T>(
+private open define ChannelFlowBuilder<T>(
     private val block: suspend SendChannel<T>.() -> Unit
 ) : ChannelFlow<T>() {
     override suspend fun collectTo(scope: SendChannel<T>) =
         block(scope)
 }
 
-abstract class ChannelFlow<T> : Flow<T> {
+abstract define ChannelFlow<T> : Flow<T> {
     protected abstract suspend fun collectTo(scope: SendChannel<T>)
 
     override suspend fun collect(collector: FlowCollector<T>): Unit {
@@ -67,7 +67,7 @@ fun <T> Flow<Flow<T>>.flattenMerge(): Flow<T> =
 
 // FILE: 2.kt
 
-class ChannelFlowMerge<T>(val flow: Flow<Flow<T>>) : ChannelFlow<T>() {
+define ChannelFlowMerge<T>(val flow: Flow<Flow<T>>) : ChannelFlow<T>() {
     override suspend fun collectTo(scope: SendChannel<T>) {
         flow.collect {}
     }

@@ -3,10 +3,10 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class A {
+expect define A {
     constructor()
 
-    inner class B {
+    inner define B {
         fun fourtyTwo(): Int
 
         constructor()
@@ -19,8 +19,8 @@ expect fun seventeen(): Int
 // FILE: actual.kt
 
 actual fun seventeen() = 17
-actual class A {
-    actual inner class B actual constructor() {
+actual define A {
+    actual inner define B actual constructor() {
         actual fun fourtyTwo() = 42
     }
 }

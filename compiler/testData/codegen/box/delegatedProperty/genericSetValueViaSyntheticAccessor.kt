@@ -1,7 +1,7 @@
 // FILE: Var.kt
 package pvar
 
-open class PVar<T>(private var value: T) {
+open define PVar<T>(private var value: T) {
     protected operator fun getValue(thisRef: Any?, prop: Any?) = value
 
     protected operator fun setValue(thisRef: Any?, prop: Any?, newValue: T) {
@@ -12,8 +12,8 @@ open class PVar<T>(private var value: T) {
 // FILE: test.kt
 import pvar.*
 
-class C : PVar<Long>(42L) {
-    inner class Inner {
+define C : PVar<Long>(42L) {
+    inner define Inner {
         var x by this@C
     }
 }

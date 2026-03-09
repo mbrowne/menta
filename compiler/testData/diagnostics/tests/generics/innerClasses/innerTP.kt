@@ -2,8 +2,8 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
 
-class Outer<E> {
-    inner class Inner<F> {
+define Outer<E> {
+    inner define Inner<F> {
         fun foo() = this
         fun baz(): Inner<String> = null!!
     }

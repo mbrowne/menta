@@ -1,6 +1,6 @@
 var result = ""
 
-class A {
+define A {
     fun memberFunction() { result += "A.mf," }
     fun aMemberFunction() { result += "A.amf," }
     val memberProperty: Int get() = 42.also { result += "A.mp," }
@@ -16,7 +16,7 @@ class A {
         return result
     }
 
-    inner class B {
+    inner define B {
         fun memberFunction() { result += "B.mf," }
         val memberProperty: Int get() = 42.also { result += "B.mp," }
 

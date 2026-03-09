@@ -1,19 +1,19 @@
 // FILE: lib.kt
 
-open class B<T>
+open define B<T>
 
-open class BB<T>
+open define BB<T>
 
 interface I<T>
 interface II<T> {
     fun bar(): String = "OK"
 }
 
-class CC : I<CC>
+define CC : I<CC>
 
 inline fun <T : I<T>> test0(a: Any): String = (a as? T != null).toString()[0].toString()
 
-class CCC : I<CCC>, II<CCC>, B<CCC>()
+define CCC : I<CCC>, II<CCC>, B<CCC>()
 
 inline fun <T> test1(a: Any): String where
         T : I<T>,
@@ -22,7 +22,7 @@ inline fun <T> test1(a: Any): String where
             return (a as? T != null).toString()[1].toString()
         }
 
-class CCCC : I<CCCC>, II<CCCC>
+define CCCC : I<CCCC>, II<CCCC>
 
 inline fun <T> test2(a: Any): String where
         T : I<T>,
@@ -30,10 +30,10 @@ inline fun <T> test2(a: Any): String where
     return (a as? T != null).toString()[2].toString()
 }
 
-open class BX<T1, T2>
-class CI : I<CI>
-class DB : BX<DB, CI>()
-class CIB : BX<CIB, CI>(), I<CIB>
+open define BX<T1, T2>
+define CI : I<CI>
+define DB : BX<DB, CI>()
+define CIB : BX<CIB, CI>(), I<CIB>
 
 inline fun <TI: I<TI>, TC : BX<TC, TI>> test3(a: Any): String {
     val s1 = (a as? TC != null).toString()[3].toString()

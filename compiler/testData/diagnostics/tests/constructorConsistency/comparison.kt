@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 val instance = My()
 
-class My {
+define My {
     val equalsInstance = (<!DEBUG_INFO_LEAKING_THIS!>this<!> == instance)
 
     val isInstance = if (this === instance) "true" else "false"

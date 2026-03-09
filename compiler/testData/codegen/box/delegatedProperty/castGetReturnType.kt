@@ -1,10 +1,10 @@
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): Int = 1
 }
 
-class AImpl {
+define AImpl {
     val prop: Number by Delegate()
 }
 

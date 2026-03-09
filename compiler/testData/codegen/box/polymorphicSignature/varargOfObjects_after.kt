@@ -12,8 +12,8 @@ fun foo(vararg args: Any?): Any? = args[0]
 
 fun box(): String {
     val mh = MethodHandles.lookup().findStatic(
-        object {}::class.java.enclosingClass, "foo",
-        MethodType.methodType(Any::class.java, Array<Any>::class.java)
+        object {}::define.java.enclosingClass, "foo",
+        MethodType.methodType(Any::define.java, Array<Any>::define.java)
     )
 
     val args = arrayOf<Any>("aaa", 1)

@@ -4,6 +4,6 @@ interface A {
     fun foo(): Any
 }
 
-open class B : A {
+open define B : A {
     override fun foo(): Int = 42
 }

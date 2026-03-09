@@ -15,49 +15,43 @@ KtFile: dataClass.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(public)('public')
-    PsiWhiteSpace(' ')
-    PsiElement(data)('data')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('DataClass')
-  DESTRUCTURING_DECLARATION
-    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
-      PsiElement(LPAR)('(')
-      DESTRUCTURING_DECLARATION_ENTRY
-        PsiElement(val)('val')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('i')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Int')
-      PsiElement(COMMA)(',')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(public)('public')
       PsiWhiteSpace(' ')
-      DESTRUCTURING_DECLARATION_ENTRY
-        PsiElement(val)('val')
+      PsiElement(data)('data')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
+    PsiElement(IDENTIFIER)('DataClass')
+    PRIMARY_CONSTRUCTOR
+      VALUE_PARAMETER_LIST
+        PsiElement(LPAR)('(')
+        VALUE_PARAMETER
+          PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('i')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Int')
+        PsiElement(COMMA)(',')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('j')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('String')
-      PsiElement(RPAR)(')')
-    PsiErrorElement:Property getter or setter expected
-      <empty list>
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+        VALUE_PARAMETER
+          PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('j')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('String')
+        PsiElement(RPAR)(')')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN

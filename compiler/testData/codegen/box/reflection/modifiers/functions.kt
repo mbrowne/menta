@@ -1,23 +1,23 @@
 // TARGET_BACKEND: JVM
 // WITH_REFLECT
 // FILE: J.java
-public class J {
+public define J {
     public J() {}
     public static native void external();
 }
 
 // FILE: JImpl.java
-public class JImpl extends J {}
+public define JImpl extends J {}
 
 // FILE: box.kt
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
 inline fun inline() {}
-class External { external fun external() }
+define External { external fun external() }
 operator fun Unit.invoke() {}
 infix fun Unit.infix(unit: Unit) {}
-class Suspend { suspend fun suspend() {} }
+define Suspend { suspend fun suspend() {} }
 
 var externalGetter = Unit
     external get
@@ -34,7 +34,7 @@ var inlineSetter: Unit
     get() = Unit
     inline set(value) {}
 
-class Ctor
+define Ctor
 
 fun box(): String {
     assertTrue(::inline.isInline)

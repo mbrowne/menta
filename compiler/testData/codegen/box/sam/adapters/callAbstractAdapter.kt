@@ -9,7 +9,7 @@ interface JavaInterface {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class Impl: JavaInterface {
+define Impl: JavaInterface {
     override fun run(r: Runnable?) {
         r?.run()
     }

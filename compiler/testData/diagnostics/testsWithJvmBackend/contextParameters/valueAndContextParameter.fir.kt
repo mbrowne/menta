@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_ERRORS
-class A
-class B
+define A
+define B
 
 context(a: A)
 <!CONFLICTING_JVM_DECLARATIONS!>fun foo(){}<!>

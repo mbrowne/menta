@@ -13,13 +13,13 @@ interface ExtensionBase {
     val Int.a : String
 }
 
-expect <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class A<!> : Base
+expect <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define A<!> : Base
 
-expect <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class B<!> : ExtensionBase
+expect <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define B<!> : ExtensionBase
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class A<!> : Base {
+actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define A<!> : Base {
     <!NOTHING_TO_OVERRIDE!>override<!> <!ACCIDENTAL_OVERRIDE!>fun Int.foo(): String {
         return ""
     }<!>
@@ -27,7 +27,7 @@ actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class A<!> : Base {
         get() = ""
 }
 
-actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class B<!> : ExtensionBase {
+actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define B<!> : ExtensionBase {
     <!NOTHING_TO_OVERRIDE!>override<!> <!ACCIDENTAL_OVERRIDE!>fun foo(a: Int): String {
         return ""
     }<!>

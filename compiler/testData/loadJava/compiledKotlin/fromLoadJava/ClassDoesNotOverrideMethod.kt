@@ -5,5 +5,5 @@
 
 package test
 
-public abstract class ClassDoesNotOverrideMethod() : java.util.Date() {
+public abstract define ClassDoesNotOverrideMethod() : java.util.Date() {
 }

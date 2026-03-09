@@ -6,7 +6,7 @@
 // FILE: 1.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val x: String)
+value define A(val x: String)
 
 fun accessProperty(y: B): A {
     y.a = A("OK")
@@ -15,6 +15,6 @@ fun accessProperty(y: B): A {
 
 // FILE: 2.kt
 
-class B(var a: A)
+define B(var a: A)
 
 fun box(): String = accessProperty(B(A("Fail"))).x

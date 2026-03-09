@@ -5,11 +5,11 @@
 // LANGUAGE: +IntrinsicConstEvaluation
 // MODULE: m1-common
 // FILE: common.kt
-enum class MyEnum {
+enum define MyEnum {
     FOO
 }
 
-annotation class Ann(val p: String)
+annotation define Ann(val p: String)
 
 @Ann("FOO")
 expect fun matching()

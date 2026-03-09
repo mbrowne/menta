@@ -3,29 +3,24 @@ KtFile: flexibleDnnType.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  PsiComment(EOL_COMMENT)('// LIBRARY_PLATFORMS: JVM')
-  PsiWhiteSpace('\n')
-  PsiComment(EOL_COMMENT)('// FILE: FlexibleDnnType.kt')
-  PsiWhiteSpace('\n')
-  MODIFIER_LIST
-    PsiElement(abstract)('abstract')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('// LIBRARY_PLATFORMS: JVM')
+    PsiWhiteSpace('\n')
+    PsiComment(EOL_COMMENT)('// FILE: FlexibleDnnType.kt')
+    PsiWhiteSpace('\n')
+    MODIFIER_LIST
+      PsiElement(abstract)('abstract')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('FlexibleDnnType')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('T')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        PsiElement(IDENTIFIER)('T')
+      PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -118,89 +113,112 @@ KtFile: flexibleDnnType.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiComment(EOL_COMMENT)('// FILE: JavaClass.java')
-  PsiWhiteSpace('\n')
-  MODIFIER_LIST
-    PsiElement(public)('public')
+  CLASS
+    PsiComment(EOL_COMMENT)('// FILE: JavaClass.java')
+    PsiWhiteSpace('\n')
+    MODIFIER_LIST
+      PsiElement(public)('public')
+      PsiWhiteSpace(' ')
+      PsiElement(final)('final')
     PsiWhiteSpace(' ')
-    PsiElement(final)('final')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('JavaClass')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('public')
-          PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('static')
-          PsiWhiteSpace(' ')
-          PsiErrorElement:Expecting an element
-            PsiElement(LT)('<')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('T')
-        PsiErrorElement:Expecting an element
-          <empty list>
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('R')
-        PsiElement(GT)('>')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('java')
-        PsiElement(DOT)('.')
-        PsiElement(IDENTIFIER)('util')
-        PsiElement(DOT)('.')
-        PsiElement(IDENTIFIER)('function')
-        PsiElement(DOT)('.')
-        PsiElement(IDENTIFIER)('Function')
+      MODIFIER_LIST
+        PsiElement(public)('public')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('static')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
         PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('R')
+      PsiErrorElement:Expecting member declaration
         PsiElement(GT)('>')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('java')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(DOT)('.')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('util')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(DOT)('.')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('function')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(DOT)('.')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('Function')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(COMMA)(',')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('R')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('wrap')
+      PsiErrorElement:Expecting member declaration
         PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('java')
+      PsiErrorElement:Expecting member declaration
         PsiElement(DOT)('.')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('util')
+      PsiErrorElement:Expecting member declaration
         PsiElement(DOT)('.')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('function')
+      PsiErrorElement:Expecting member declaration
         PsiElement(DOT)('.')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('Function')
+      PsiErrorElement:Expecting member declaration
         PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
         PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('R')
+      PsiErrorElement:Expecting member declaration
         PsiElement(GT)('>')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('function')
+      PsiErrorElement:Expecting member declaration
         PsiElement(RPAR)(')')
       PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+      FUN
+        PsiErrorElement:Expecting member declaration
+          <empty list>
+        BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          BLOCK
-            RETURN
-              PsiElement(return)('return')
-              PsiWhiteSpace(' ')
-              NULL
-                PsiElement(null)('null')
-            PsiElement(SEMICOLON)(';')
+          RETURN
+            PsiElement(return)('return')
+            PsiWhiteSpace(' ')
+            NULL
+              PsiElement(null)('null')
+          PsiElement(SEMICOLON)(';')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')

@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class C(var x: String)
+define C(var x: String)
 
 var x = "fail"
 var y by ::x

@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyIterator<T>(val v: T): Iterator<T> {
+define MyIterator<T>(val v: T): Iterator<T> {
     override fun next(): T = v
     override fun hasNext(): Boolean = true
 }

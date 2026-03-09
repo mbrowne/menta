@@ -8,7 +8,7 @@
 @file:[JvmName("MultifileClass") JvmMultifileClass]
 package a
 
-annotation class A
+annotation define A
 
 @A
 const val OK: String = "OK"

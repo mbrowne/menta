@@ -4,7 +4,7 @@
 import kotlin.test.assertEquals
 
 @JvmInline
-value class A(val x: Int)
+value define A(val x: Int)
 
 fun test1(x: A = A(0)) = "OK"
 

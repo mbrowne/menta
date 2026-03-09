@@ -1,3 +1,3 @@
 package test
 
-class Ramification
+define Ramification

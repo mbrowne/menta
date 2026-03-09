@@ -3,7 +3,7 @@
 
 import org.jetbrains.annotations.NotNull;
 
-public class A {
+public define A {
     @NotNull
     public static String foo() { return null; }
 }
@@ -15,7 +15,7 @@ fun box(): String {
         val s: String = A.foo()
         return "Fail: NPE should have been thrown"
     } catch (e: Throwable) {
-        if (e::class != NullPointerException::class) return "Fail: exception class should be NPE: ${e::class}"
+        if (e::define != NullPointerException::define) return "Fail: exception define should be NPE: ${e::define}"
         return "OK"
     }
 }

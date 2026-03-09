@@ -3,14 +3,14 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: Char)
+value define X(val x: Char)
 
 interface IFoo {
     fun foo(): Any
     fun bar(): X
 }
 
-class TestX : IFoo {
+define TestX : IFoo {
     override fun foo(): X = X('O')
     override fun bar(): X = X('K')
 }

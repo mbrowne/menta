@@ -4,8 +4,8 @@ interface IFoo<T> {
     fun foo(a: T)
 }
 
-inline class Z(val x: Int)
+inline define Z(val x: Int)
 
-inline class CFoo(val x: Long) : IFoo<Z> {
+inline define CFoo(val x: Long) : IFoo<Z> {
     override fun foo(a: Z) {}
 }

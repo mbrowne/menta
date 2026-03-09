@@ -13,95 +13,90 @@ KtFile: escapedNames.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Target')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          DOT_QUALIFIED_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('AnnotationTarget')
-            PsiElement(DOT)('.')
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ANNOTATION_CLASS')
-        PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
-        VALUE_ARGUMENT
-          DOT_QUALIFIED_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('AnnotationTarget')
-            PsiElement(DOT)('.')
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('TYPEALIAS')
-        PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
-        VALUE_ARGUMENT
-          DOT_QUALIFIED_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('AnnotationTarget')
-            PsiElement(DOT)('.')
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('CLASS')
-        PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
-        VALUE_ARGUMENT
-          DOT_QUALIFIED_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('AnnotationTarget')
-            PsiElement(DOT)('.')
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('PROPERTY')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
-    PsiElement(annotation)('annotation')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Target')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            DOT_QUALIFIED_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('AnnotationTarget')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ANNOTATION_CLASS')
+          PsiElement(COMMA)(',')
+          PsiWhiteSpace(' ')
+          VALUE_ARGUMENT
+            DOT_QUALIFIED_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('AnnotationTarget')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('TYPEALIAS')
+          PsiElement(COMMA)(',')
+          PsiWhiteSpace(' ')
+          VALUE_ARGUMENT
+            DOT_QUALIFIED_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('AnnotationTarget')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('CLASS')
+          PsiElement(COMMA)(',')
+          PsiWhiteSpace(' ')
+          VALUE_ARGUMENT
+            DOT_QUALIFIED_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('AnnotationTarget')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('PROPERTY')
+          PsiElement(RPAR)(')')
+      PsiWhiteSpace('\n')
+      PsiElement(annotation)('annotation')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('`Annotation Class`')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
+  CLASS
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('`Annotation Class`')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
+    PsiElement(IDENTIFIER)('`Top Level Class`')
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        PsiElement(IDENTIFIER)('`Type Parameter`')
+        PsiWhiteSpace(' ')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
         TYPE_REFERENCE
           USER_TYPE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('`Top Level Object`')
+            PsiElement(DOT)('.')
             REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('`Annotation Class`')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('`Top Level Class`')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('`Type Parameter`')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(COLON)(':')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('`Top Level Object`')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(DOT)('.')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('`Member Level Interface`')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+              PsiElement(IDENTIFIER)('`Member Level Interface`')
+      PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -196,33 +191,29 @@ KtFile: escapedNames.kt
                         PsiElement(IDENTIFIER)('`Type Parameter`')
                 PsiElement(GT)('>')
             PsiElement(QUEST)('?')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(IDENTIFIER)('get')
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        PsiElement(null)('null')
-      PsiWhiteSpace('\n        ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            REFERENCE_EXPRESSION
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          PsiElement(EQ)('=')
+          PsiWhiteSpace(' ')
+          NULL
+            PsiElement(null)('null')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
               PsiElement(IDENTIFIER)('value')
-          PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              BLOCK
-                <empty list>
-              PsiElement(RBRACE)('}')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          BLOCK
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       TYPEALIAS
         MODIFIER_LIST
@@ -258,19 +249,22 @@ KtFile: escapedNames.kt
                       PsiElement(IDENTIFIER)('T')
               PsiElement(GT)('>')
       PsiWhiteSpace('\n\n    ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('constructor')
-        VALUE_ARGUMENT_LIST
+      SECONDARY_CONSTRUCTOR
+        PsiElement(constructor)('constructor')
+        VALUE_PARAMETER_LIST
           PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('`parameter name`')
-          PsiErrorElement:Unexpected type specification
+          VALUE_PARAMETER
+            PsiElement(IDENTIFIER)('`parameter name`')
             PsiElement(COLON)(':')
             PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('`Top Level Object`')
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('`Top Level Object`')
           PsiElement(RPAR)(')')
+        CONSTRUCTOR_DELEGATION_CALL
+          CONSTRUCTOR_DELEGATION_REFERENCE
+            <empty list>
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
@@ -333,40 +327,36 @@ KtFile: escapedNames.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('`Annotation Class`')
-    PsiWhiteSpace('\n')
-    PsiElement(enum)('enum')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('`Annotation Class`')
+      PsiWhiteSpace('\n')
+      PsiElement(enum)('enum')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('`Enum Class`')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      ANNOTATED_EXPRESSION
-        ANNOTATION_ENTRY
-          PsiElement(AT)('@')
-          CONSTRUCTOR_CALLEE
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('`Annotation Class`')
+      ENUM_ENTRY
+        MODIFIER_LIST
+          ANNOTATION_ENTRY
+            PsiElement(AT)('@')
+            CONSTRUCTOR_CALLEE
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('`Annotation Class`')
         PsiWhiteSpace('\n    ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('`Enum Entry`')
-      PsiElement(SEMICOLON)(';')
+        PsiElement(IDENTIFIER)('`Enum Entry`')
+        PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

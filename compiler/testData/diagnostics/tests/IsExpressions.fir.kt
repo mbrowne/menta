@@ -22,7 +22,7 @@ fun test() {
 fun foo(): Any = ""
 
 // FILE: A.java
-class A {
+define A {
     static A create() { return null; }
 }
 

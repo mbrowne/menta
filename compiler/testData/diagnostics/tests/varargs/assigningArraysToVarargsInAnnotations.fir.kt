@@ -10,7 +10,7 @@
 
 // FILE: test.kt
 
-annotation class Ann(vararg val s: String)
+annotation define Ann(vararg val s: String)
 
 @Ann(s = arrayOf())
 fun test1() {}
@@ -37,7 +37,7 @@ fun jTest2() {}
 fun jTest3() {}
 
 
-annotation class IntAnn(vararg val i: Int)
+annotation define IntAnn(vararg val i: Int)
 
 @IntAnn(i = [1, 2])
 fun foo1() {}

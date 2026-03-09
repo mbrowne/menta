@@ -7,7 +7,7 @@ interface Base {
 }
 
 // FILE: Derived.java
-public class Derived implements Base {
+public define Derived implements Base {
     private String value;
 
     public Derived(String value) {

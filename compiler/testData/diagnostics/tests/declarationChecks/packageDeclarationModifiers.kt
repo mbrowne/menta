@@ -10,7 +10,7 @@ package d
 
 <!WRONG_MODIFIER_TARGET!>abstract<!> fun baz() = 2
 
-class T {}
+define T {}
 <!WRONG_MODIFIER_TARGET!>override<!> fun T.bar() = 2
 
 /* GENERATED_FIR_TAGS: classDeclaration, funWithExtensionReceiver, functionDeclaration, integerLiteral, override,

@@ -5,44 +5,12 @@ KtFile: DefaultKeyword.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
-      PsiElement(LBRACE)('{')
-      PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('companion')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        <empty list>
-      PsiWhiteSpace(' ')
-      OBJECT_LITERAL
-        OBJECT_DECLARATION
-          PsiElement(object)('object')
-          PsiWhiteSpace(' ')
-          CLASS_BODY
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n\n    ')
-            PsiElement(RBRACE)('}')
-      PsiWhiteSpace('\n')
-      PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       OBJECT_DECLARATION
@@ -50,8 +18,27 @@ KtFile: DefaultKeyword.kt
           PsiElement(companion)('companion')
         PsiWhiteSpace(' ')
         PsiElement(object)('object')
-        PsiErrorElement:Name expected
-          <empty list>
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n\n    ')
+          PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n\n')
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
+    PsiElement(IDENTIFIER)('A')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
+      PsiElement(LBRACE)('{')
+      PsiWhiteSpace('\n    ')
+      OBJECT_DECLARATION
+        MODIFIER_LIST
+          PsiElement(companion)('companion')
+        PsiWhiteSpace(' ')
+        PsiElement(object)('object')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -71,16 +58,12 @@ KtFile: DefaultKeyword.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       OBJECT_DECLARATION
@@ -100,16 +83,12 @@ KtFile: DefaultKeyword.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       OBJECT_DECLARATION
@@ -191,16 +170,12 @@ KtFile: DefaultKeyword.kt
         PsiWhiteSpace(' ')
         PsiElement(object)('object')
       PsiWhiteSpace('\n\n    ')
-      PsiErrorElement:Expecting member declaration
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Expecting member declaration
+      CLASS
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('C')
-      PsiWhiteSpace(' ')
-      FUN
-        PsiErrorElement:Expecting member declaration
-          <empty list>
-        BLOCK
+        PsiWhiteSpace(' ')
+        CLASS_BODY
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
           OBJECT_DECLARATION
@@ -226,28 +201,23 @@ KtFile: DefaultKeyword.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(enum)('enum')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(enum)('enum')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('A')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('B')
-      PsiErrorElement:Expecting an element
         PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
       OBJECT_DECLARATION
@@ -255,48 +225,37 @@ KtFile: DefaultKeyword.kt
           PsiElement(companion)('companion')
         PsiWhiteSpace(' ')
         PsiElement(object)('object')
-        PsiErrorElement:Name expected
-          <empty list>
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n\n')
-  PsiComment(EOL_COMMENT)('//should be error')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('//should be error')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
+      CLASS
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('companion')
       PsiWhiteSpace(' ')
       OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
         PsiElement(object)('object')
         PsiErrorElement:Name expected
           <empty list>
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       OBJECT_DECLARATION
@@ -308,23 +267,20 @@ KtFile: DefaultKeyword.kt
           PsiElement(final)('final')
         PsiWhiteSpace(' ')
         PsiElement(object)('object')
-        PsiErrorElement:Name expected
-          <empty list>
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiComment(EOL_COMMENT)('//should be error')
-  PsiWhiteSpace('\n')
-  MODIFIER_LIST
-    PsiElement(companion)('companion')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('//should be error')
+    PsiWhiteSpace('\n')
+    MODIFIER_LIST
+      PsiElement(companion)('companion')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiErrorElement:Name expected
       <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
@@ -352,75 +308,60 @@ KtFile: DefaultKeyword.kt
       PsiWhiteSpace('\n\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(enum)('enum')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(enum)('enum')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('I')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('A')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('B')
-      PsiElement(SEMICOLON)(';')
+        PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
       OBJECT_DECLARATION
         MODIFIER_LIST
           PsiElement(companion)('companion')
         PsiWhiteSpace(' ')
         PsiElement(object)('object')
-        PsiErrorElement:Name expected
-          <empty list>
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(enum)('enum')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(enum)('enum')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('I')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('A')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('B')
-      PsiElement(SEMICOLON)(';')
+        PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('companion')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        <empty list>
-      PsiWhiteSpace(' ')
-      OBJECT_LITERAL
-        OBJECT_DECLARATION
-          PsiElement(object)('object')
-          PsiWhiteSpace(' ')
-          CLASS_BODY
-            PsiElement(LBRACE)('{')
-            PsiElement(RBRACE)('}')
+      OBJECT_DECLARATION
+        MODIFIER_LIST
+          PsiElement(companion)('companion')
+        PsiWhiteSpace(' ')
+        PsiElement(object)('object')
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

@@ -6,7 +6,7 @@ interface Base {
     fun foo()
 }
 
-class Derived : Base {
+define Derived : Base {
     override external fun foo()
 }
 

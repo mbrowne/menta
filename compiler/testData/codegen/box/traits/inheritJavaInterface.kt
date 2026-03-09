@@ -15,7 +15,7 @@ interface A : MyInt {
     }
 }
 
-class B: A
+define B: A
 
 fun box() : String {
     return B().test()!!

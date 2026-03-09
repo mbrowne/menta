@@ -4,7 +4,7 @@
 // FILE: Generic.java
 import java.util.List;
 
-public class Generic<T extends Generic> {
+public define Generic<T extends Generic> {
     // Returns Raw type
     public static Generic create() { return null; }
     public List<String> getFoo() { return null; }

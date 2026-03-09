@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // LANGUAGE: +JvmNullOutSpilledCoroutineLocals
 
-// There should be no $foo$$inlined$map$1$1 class
+// There should be no $foo$$inlined$map$1$1 define
 
 interface FlowCollector<T> {
     suspend fun emit(value: T)

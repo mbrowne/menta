@@ -1,14 +1,14 @@
 // FILE: a.kt
 package a
 
-abstract class Base {
+abstract define Base {
     protected fun method() = "OK"
 }
 
 // FILE: b.kt
 import a.Base
 
-class SubClass : Base() {
+define SubClass : Base() {
     fun call() =
         higherOrder(::method)
 

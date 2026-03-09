@@ -16,7 +16,7 @@ package test;
 import org.jspecify.annotations.NullMarked;
 
 @NullMarked
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 

@@ -5,7 +5,7 @@
 
 // FILE: JMember.java
 
-public class JMember{
+public define JMember{
     private Boolean flag;
     public JMember(Boolean flag) { this.flag = flag; }
     public Boolean getFlag() { return flag; }
@@ -15,7 +15,7 @@ public class JMember{
 
 import kotlin.contracts.*
 
-class JHost {
+define JHost {
     val JMember?.isNullJM: Boolean
         get() {
             contract { returns(true) implies (this@isNullJM == null) }

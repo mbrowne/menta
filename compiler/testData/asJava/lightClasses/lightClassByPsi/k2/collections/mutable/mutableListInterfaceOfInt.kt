@@ -4,11 +4,11 @@ package test
 
 interface IMutableList : MutableList<Int>
 
-abstract class CMutableList : IMutableList
+abstract define CMutableList : IMutableList
 
-abstract class CMutableList2(d: IMutableList) : IMutableList by d
+abstract define CMutableList2(d: IMutableList) : IMutableList by d
 
-open class CMutableList3 : IMutableList {
+open define CMutableList3 : IMutableList {
     override fun add(element: Int): Boolean {
         TODO("Not yet implemented")
     }
@@ -92,4 +92,4 @@ open class CMutableList3 : IMutableList {
         TODO("Not yet implemented")
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableList.class[contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;remove;remove;remove;removeAt;size;toArray;toArray], CMutableList2.class[size;toArray;toArray], CMutableList3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableList.define[contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;remove;remove;remove;removeAt;size;toArray;toArray], CMutableList2.define[size;toArray;toArray], CMutableList3.define[size;toArray;toArray]

@@ -1,4 +1,4 @@
-class A() {
+define A() {
     companion object {
         val value = 10
     }

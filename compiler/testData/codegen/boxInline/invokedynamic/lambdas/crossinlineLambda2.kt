@@ -2,7 +2,7 @@
 // JVM_TARGET: 1.8
 // LAMBDAS: INDY
 // FILE: 1.kt
-class C {
+define C {
     fun test() =
         cross {
             foo { "OK" }

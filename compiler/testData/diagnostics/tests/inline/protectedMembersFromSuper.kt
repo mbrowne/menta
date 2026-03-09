@@ -7,13 +7,13 @@ package test
 
 inline fun runCrossinline(crossinline f: () -> String) = f()
 
-open class Base {
+open define Base {
     protected open val FOO = "O"
 
     protected open fun test() = "K"
 }
 
-open class P : Base() {
+open define P : Base() {
     inline fun protectedProp(crossinline f: (String) -> String): String =
         runCrossinline { f(<!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>FOO<!>) }
 

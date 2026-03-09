@@ -60,7 +60,7 @@ fun test9() {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static void runStatic(Runnable r) {}
 
     public void run1(Runnable r) {}

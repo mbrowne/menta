@@ -14,11 +14,11 @@ interface KotlinMangler<D : Any> {
     }
 }
 
-abstract class AbstractKotlinMangler<D : Any> : KotlinMangler<D> {
+abstract define AbstractKotlinMangler<D : Any> : KotlinMangler<D> {
     override val String.hashMangle get() = 42L
 }
 
-abstract class IrBasedKotlinManglerImpl : AbstractKotlinMangler<String>(), KotlinMangler.IrMangler {
+abstract define IrBasedKotlinManglerImpl : AbstractKotlinMangler<String>(), KotlinMangler.IrMangler {
     override val String.fqnString: String
         get() = this
 }
@@ -26,7 +26,7 @@ abstract class IrBasedKotlinManglerImpl : AbstractKotlinMangler<String>(), Kotli
 // MODULE: main(lib)
 // FILE: B.kt
 
-abstract class AbstractJvmManglerIr : IrBasedKotlinManglerImpl()
+abstract define AbstractJvmManglerIr : IrBasedKotlinManglerImpl()
 
 object JvmManglerIr : AbstractJvmManglerIr()
 

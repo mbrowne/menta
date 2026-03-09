@@ -7,7 +7,7 @@
 
 import java.lang.annotation.*;
 
-@Repeatable(Runtime.Container.class)
+@Repeatable(Runtime.Container.define)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Runtime {
     public @interface Container {
@@ -19,7 +19,7 @@ public @interface Runtime {
 
 import java.lang.annotation.*;
 
-@Repeatable(Clazz.Container.class)
+@Repeatable(Clazz.Container.define)
 @Retention(RetentionPolicy.CLASS)
 public @interface Clazz {
     public @interface Container {
@@ -31,7 +31,7 @@ public @interface Clazz {
 
 import java.lang.annotation.*;
 
-@Repeatable(Source.Container.class)
+@Repeatable(Source.Container.define)
 @Retention(RetentionPolicy.SOURCE)
 public @interface Source {
     public @interface Container {
@@ -42,12 +42,12 @@ public @interface Source {
 // FILE: usage.kt
 
 @Runtime @Runtime
-class UseRuntime
+define UseRuntime
 
 @Clazz @Clazz
-class UseClazz
+define UseClazz
 
 @Source @Source
-class UseSource
+define UseSource
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

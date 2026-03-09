@@ -18,13 +18,13 @@ const val OXplus1 = O.X + 1
 const val Yplus1 = <!NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>Y + 1<!>
 
 // K2: should be error - default value of annotation parameter must be computed at compile time
-annotation class Ann(val x: Int = OCopy.X)
+annotation define Ann(val x: Int = OCopy.X)
 
 // K2: should be error - the value of annotation parameter must be computed at compile time
 @Ann(OCopy.X)
 fun foo() {}
 
-class C {
+define C {
     val Z = 0
     @Ann(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>Z<!>)
     fun implicitThis() {}

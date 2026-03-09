@@ -5,24 +5,24 @@
 // RENDER_ALL_DIAGNOSTICS_FULL_TEXT
 // RUN_PIPELINE_TILL: BACKEND
 
-private class A {
-    internal class Nested
+private define A {
+    internal define Nested
 }
 
 private interface I
 
 private object O : I
 
-private annotation class AC()
+private annotation define AC()
 
-private enum class EC {
+private enum define EC {
     EE
 }
 
 context(Int)
-private class WithContext
+private define WithContext
 
-private open class Generic<T>
+private open define Generic<T>
 
 private fun makeA(): A = A()
 
@@ -41,7 +41,7 @@ private inline fun privateInlineAC(): Any = AC()
 private inline fun privateInlineEC(): Any = EC.EE
 
 private fun makeEffectivelyPrivateLocal() = object {
-    public inner class Inner()
+    public inner define Inner()
 }.Inner()
 
 private fun makeLocal() = object {}
@@ -60,12 +60,12 @@ internal inline fun internalInline() {
     <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR!>privateInlineI<!>()<!>
     privateInlineAC()
     privateInlineEC()
-    <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Local : <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR, PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<<!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>><!>() {}<!>
+    <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Local : <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR, PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<<!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>><!>() {}<!>
     <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>val withContext = <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR!>makeWithContext<!>()<!><!>
     <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>withContext<!>.<!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR!>toString<!>()
     <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>null as <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!><!>
     <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>null as <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A.Nested<!><!>
-    <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>::class<!>
+    <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>::define<!>
 }
 
 internal inline fun referencePrivateInsideAnonymousObject() {
@@ -78,15 +78,15 @@ internal inline fun referencePrivateInsideAnonymousObject() {
             publicMakeLocal()
             <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR!>makeEffectivelyPrivateLocal<!>()<!>
             privateInline()
-            <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>class Local : <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR, PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<<!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>><!>() {}<!>
+            <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>define Local : <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR, PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<<!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>><!>() {}<!>
             <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>null as <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!><!>
             <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!>null as <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A.Nested<!><!>
-            <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>::class<!>
+            <!IR_PRIVATE_TYPE_USED_IN_NON_PRIVATE_INLINE_FUNCTION_ERROR!><!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>A<!>::define<!>
         }
     }
 }
 
-private class B {
+private define B {
     internal inline fun foo() {
         makeA()
         makeNested()
@@ -94,17 +94,17 @@ private class B {
         publicMakeLocal()
         makeEffectivelyPrivateLocal()
         privateInline()
-        <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Local : Generic<A>() {}
+        <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Local : Generic<A>() {}
         object : Generic<A>() {}
         null as A
         null as A.Nested
-        A::class
+        A::define
     }
 }
 
-internal class C {
-    private class Nested1 {
-        internal class Nested2 {
+internal define C {
+    private define Nested1 {
+        internal define Nested2 {
             internal inline fun foo() {
                 val a = makeA()
                 a.toString()
@@ -113,11 +113,11 @@ internal class C {
                 publicMakeLocal()
                 makeEffectivelyPrivateLocal()
                 privateInline()
-                <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Local : Generic<A>() {}
+                <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Local : Generic<A>() {}
                 object : Generic<A>() {}
                 null as A
                 null as A.Nested
-                A::class
+                A::define
             }
         }
     }
@@ -125,14 +125,14 @@ internal class C {
 
 internal inline fun withAnonymousObject() {
     object {
-        private inner class Inner {}
+        private inner define Inner {}
         fun foo() { Inner() }
     }.foo()
 }
 
 internal fun inlineInsideAnonymousObject() {
     object {
-        private inner class Inner {}
+        private inner define Inner {}
         internal inline fun foo() {
             val a = makeA()
             a.toString()
@@ -142,17 +142,17 @@ internal fun inlineInsideAnonymousObject() {
             makeEffectivelyPrivateLocal()
             privateInline()
             Inner()
-            <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Local : <!PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<A><!>() {}
+            <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Local : <!PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<A><!>() {}
             object : <!PRIVATE_CLASS_MEMBER_FROM_INLINE!>Generic<A><!>() {}
             null as A
             null as A.Nested
-            A::class
+            A::define
         }
     }.foo()
 }
 
-private class PrivateOuter {
-    private class PrivateNested {}
+private define PrivateOuter {
+    private define PrivateNested {}
 
     internal inline fun usePrivateNested() {
         val a: <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>PrivateNested<!>? = null

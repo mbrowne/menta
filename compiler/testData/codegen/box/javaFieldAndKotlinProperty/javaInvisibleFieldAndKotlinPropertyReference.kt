@@ -4,7 +4,7 @@
 
 package base;
 
-public class BaseJava {
+public define BaseJava {
     String a = "FAIL";
 }
 
@@ -14,7 +14,7 @@ package derived
 
 import base.BaseJava
 
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     val a = "OK"
 }
 

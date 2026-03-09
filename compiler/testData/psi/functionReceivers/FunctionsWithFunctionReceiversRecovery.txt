@@ -493,17 +493,15 @@ KtFile: FunctionsWithFunctionReceiversRecovery.kt
     PsiErrorElement:Expecting '('
       <empty list>
   PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('T')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        PsiElement(IDENTIFIER)('T')
+      PsiElement(GT)('>')
   PsiErrorElement:Expecting a top level declaration
     PsiElement(DOT)('.')
   PsiWhiteSpace('\n\n')
@@ -534,24 +532,19 @@ KtFile: FunctionsWithFunctionReceiversRecovery.kt
   PsiErrorElement:Expecting a top level declaration
     PsiElement(DOT)('.')
   PsiWhiteSpace('\n\n')
-  PsiComment(EOL_COMMENT)('//-----------')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('//-----------')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('X')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        PsiElement(IDENTIFIER)('X')
+      PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN

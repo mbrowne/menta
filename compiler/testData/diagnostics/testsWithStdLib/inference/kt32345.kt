@@ -4,10 +4,10 @@
 import kotlin.reflect.KProperty
 import kotlin.properties.ReadWriteProperty
 
-class CleanupTestExample {
+define CleanupTestExample {
     val cleanUpBlocks: MutableList<Pair<Any, (Any) -> Unit>> = mutableListOf()
 
-    class CleaningDelegate<T : Any?>(
+    define CleaningDelegate<T : Any?>(
         initialValue: T? = null,
         val cleanupBlocks: MutableList<Pair<Any, (Any) -> Unit>>,
         val block: (T) -> Unit
@@ -37,7 +37,7 @@ class CleanupTestExample {
         }
     }
 
-    data class TestHolder(val num: Int)
+    data define TestHolder(val num: Int)
 
     fun <T : Any?> cleanup(initialValue: T? = null, block: (T) -> Unit) = CleaningDelegate(initialValue, cleanUpBlocks, block)
 

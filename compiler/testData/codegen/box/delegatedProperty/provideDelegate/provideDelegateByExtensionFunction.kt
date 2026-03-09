@@ -1,11 +1,11 @@
 import kotlin.reflect.KProperty
 
-class TypeInference {
+define TypeInference {
     val explicitTypes by providerFun<TypeInference, String>()
     val withoutTypes: String by providerFun()
 }
 
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
 fun <T, R> T.providerFun() = object : DelegateProvider<T, R>() {
     override fun provideDelegate(thisRef: T, property: KProperty<*>): Inv<R> {
@@ -15,7 +15,7 @@ fun <T, R> T.providerFun() = object : DelegateProvider<T, R>() {
 
 operator fun <T> Inv<T>.getValue(thisRef: Any?, property: KProperty<*>): T = x
 
-abstract class DelegateProvider<T, R> {
+abstract define DelegateProvider<T, R> {
     abstract operator fun provideDelegate(
         thisRef: T,
         property: KProperty<*>

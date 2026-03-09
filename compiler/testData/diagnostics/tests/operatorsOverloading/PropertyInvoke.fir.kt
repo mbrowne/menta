@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class I { }
+define I { }
 
 operator fun I.invoke(): E = E()
 operator fun I.invoke(x: Int): E = E()
@@ -7,7 +7,7 @@ operator fun I.invoke(x: Int, y: Int): E = E()
 
 // operators over variables
 
-class A { }
+define A { }
 var a = A()
 
 val A.inc: I get() = I()
@@ -33,7 +33,7 @@ fun useRemAssign() { a <!NOT_FUNCTION_AS_OPERATOR!>%=<!> 1 }
 
 // operators over values
 
-class E: Iterator<Int> {
+define E: Iterator<Int> {
     override fun hasNext(): Boolean = false
     override fun next(): Int = 0
 }
@@ -91,7 +91,7 @@ fun useIterator() {
     for (x in <!NOT_FUNCTION_AS_OPERATOR!>e<!>) { }
 }
 
-class P { }
+define P { }
 
 val A.getValue: P get() = P()
 val A.setValue: P get() = P()

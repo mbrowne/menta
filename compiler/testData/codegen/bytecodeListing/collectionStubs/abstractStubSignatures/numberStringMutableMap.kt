@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class NumberStringMutableMap : MutableMap<Number, String>
+abstract define NumberStringMutableMap : MutableMap<Number, String>

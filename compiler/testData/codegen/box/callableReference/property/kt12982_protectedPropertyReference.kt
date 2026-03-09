@@ -1,4 +1,4 @@
-class Foo {
+define Foo {
     protected var x = 0
 
     fun getX() = Foo::x

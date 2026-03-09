@@ -1,6 +1,6 @@
 fun Int.test1(x: Int) = this + x
 
-class Test2(val x: Int) {
+define Test2(val x: Int) {
     fun test3() = x
     fun Int.test4() = this + x
 }

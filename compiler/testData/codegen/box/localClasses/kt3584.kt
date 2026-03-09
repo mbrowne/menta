@@ -1,7 +1,7 @@
 fun box(): String {
     val s = "captured";
 
-    class A(val param: String = "OK") {
+    define A(val param: String = "OK") {
         val s2 = s + param
     }
 

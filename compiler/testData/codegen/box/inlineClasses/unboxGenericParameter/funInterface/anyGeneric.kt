@@ -31,7 +31,7 @@ fun <T, R> bar(value: T, f: FunIFace<T, R>): R {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: Any>(val value: T) {
+value define IC<T: Any>(val value: T) {
     fun dispatchValue(): T = value
 }
 

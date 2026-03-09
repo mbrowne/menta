@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -DUPLICATE_CLASS_NAMES
 package Jet86
 
-class A {
+define A {
   companion <!REDECLARATION!>object<!> {
     val x = 1
   }
@@ -12,7 +12,7 @@ class A {
   }
 }
 
-class AA {
+define AA {
   companion object {
     val x = 1
   }
@@ -24,7 +24,7 @@ class AA {
   }
 }
 
-class B() {
+define B() {
   val x = 12
 }
 

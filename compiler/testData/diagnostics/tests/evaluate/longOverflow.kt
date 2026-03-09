@@ -44,7 +44,7 @@ fun foo() {
     val l19: Long = <!INTEGER_OVERFLOW!>longMinValue / -1<!>
 }
 
-class A {
+define A {
     fun foo() {
         val l1: Long = <!INTEGER_OVERFLOW!>longMaxValue + 1<!>
         val l2: Long = <!INTEGER_OVERFLOW!>longMaxValue - 1 + 2<!>

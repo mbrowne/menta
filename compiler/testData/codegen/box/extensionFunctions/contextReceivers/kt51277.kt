@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM_IR
 // IGNORE_HEADER_MODE: JVM_IR
 
-class C<T> {
+define C<T> {
     fun foo() = 1
 }
 

@@ -2,7 +2,7 @@ package test
 
 interface Bbb
 
-class ClassObjectextendsTrait {
+define ClassObjectextendsTrait {
     companion object : Bbb {
     }
 }

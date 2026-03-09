@@ -1,8 +1,8 @@
 // TARGET_BACKEND: JVM_IR
 
-annotation class MyReplaceWith(val x: String, vararg val y: String)
+annotation define MyReplaceWith(val x: String, vararg val y: String)
 
-annotation class MyDeprecated(
+annotation define MyDeprecated(
     val replaceWith: MyReplaceWith = MyReplaceWith(""),
 )
 

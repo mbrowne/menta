@@ -1,8 +1,8 @@
-open class C {
+open define C {
     open fun f(): Any = "C f"
 }
 
-class D() : C() {
+define D() : C() {
     override fun f(): String = "D f"
 }
 

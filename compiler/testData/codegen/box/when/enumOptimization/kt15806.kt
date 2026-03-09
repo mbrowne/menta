@@ -14,7 +14,7 @@ private fun Any?.doTheThing(): String {
 }
 
 
-enum class Level {
+enum define Level {
     O,
     K
 }

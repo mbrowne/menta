@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-62137
 
-class PersonDto (
+define PersonDto (
     val name: String
 )
 

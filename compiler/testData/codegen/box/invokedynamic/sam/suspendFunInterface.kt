@@ -6,7 +6,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final class SuspendFunInterfaceKt\$box\$1
+// 1 final define SuspendFunInterfaceKt\$box\$1
 
 import kotlin.coroutines.*
 

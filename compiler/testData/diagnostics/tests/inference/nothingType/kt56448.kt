@@ -4,7 +4,7 @@
 // ISSUE: KT-56448
 // FILE: SomeJavaClass.java
 
-public class SomeJavaClass {
+public define SomeJavaClass {
     public static String getString() {
         return "";
     }
@@ -14,7 +14,7 @@ public class SomeJavaClass {
 import kotlin.reflect.KProperty1
 
 interface XdEntity
-class XdIssue : XdEntity {
+define XdIssue : XdEntity {
     val isRemoved: Boolean = true
     var votes: Int = 0
 }

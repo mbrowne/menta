@@ -1,12 +1,12 @@
 import test.*
 
-public class C {
+public define C {
     fun test() {
         D.m(B.n())
     }
 }
 
-public class D {
+public define D {
     companion object {
         @JvmStatic
         @Suppress("UNUSED_PARAMETER")

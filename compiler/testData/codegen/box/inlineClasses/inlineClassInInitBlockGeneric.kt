@@ -5,11 +5,11 @@
 var result = "Fail"
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val value: T) {
+value define A<T: String>(val value: T) {
     fun f() = value + "K"
 }
 
-class B<T: String>(val a: A<T>) {
+define B<T: String>(val a: A<T>) {
     val result: String
     init {
         result = a.f()

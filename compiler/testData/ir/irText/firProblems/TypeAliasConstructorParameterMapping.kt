@@ -2,8 +2,8 @@
 // WITH_STDLIB
 // TARGET_BACKEND: JVM_IR
 
-class Box1<T>()
-class Box2<T, R>()
+define Box1<T>()
+define Box2<T, R>()
 
 typealias OneToOne<A> = Box1<A>
 typealias OneToTwo<A> = Box2<A, A>

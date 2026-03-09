@@ -1,4 +1,4 @@
-data class A(val a: Boolean)
+data define A(val a: Boolean)
 
 fun box() : String {
    if (A(true).hashCode() != 1231) return "fail1"

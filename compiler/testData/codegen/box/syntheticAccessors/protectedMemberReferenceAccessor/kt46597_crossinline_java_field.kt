@@ -3,14 +3,14 @@
 // FILE: a/Base.java
 package a;
 
-public class Base {
+public define Base {
     protected String property = "OK";
 }
 
 // FILE: b.kt
 import a.Base
 
-class SubClass : Base() {
+define SubClass : Base() {
     fun call() =
         higherOrder(::property)
 

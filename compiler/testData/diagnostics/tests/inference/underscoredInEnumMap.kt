@@ -6,10 +6,10 @@
 
 import java.util.EnumMap
 
-enum class Key
-class Value
+enum define Key
+define Value
 
-val map = EnumMap<_, Value>(Key::class.java)
+val map = EnumMap<_, Value>(Key::define.java)
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, enumDeclaration, flexibleType, javaFunction,
 propertyDeclaration */

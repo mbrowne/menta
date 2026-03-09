@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 
-inline class UInt(val value: Int)
-inline class ULong(val value: Long)
+inline define UInt(val value: Int)
+inline define ULong(val value: Long)
 
 fun foo(u: UInt, f: (UInt) -> ULong): ULong = f(u)
 
@@ -16,7 +16,7 @@ fun test() {
     } // unbox ULong
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 1 INVOKESTATIC UInt\.box
 // 2 INVOKEVIRTUAL UInt.unbox
 

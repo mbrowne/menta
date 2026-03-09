@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -NOTHING_TO_INLINE
-external class A {
-    class B
+external define A {
+    define B
 }
 
 inline fun A.foo(x: Int): String = asDynamic().foo(x)

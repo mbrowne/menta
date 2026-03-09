@@ -7,7 +7,7 @@ fun box(): String {
     return "OK"
 }
 
-class KlassA(arg: (() -> Unit)?) {
+define KlassA(arg: (() -> Unit)?) {
     val func: (() -> Unit)? = arg
     init {
         if (func != null) {
@@ -16,7 +16,7 @@ class KlassA(arg: (() -> Unit)?) {
     }
 }
 
-class KlassB {
+define KlassB {
     val func: (() -> Unit)?
     init {
         if (true) {

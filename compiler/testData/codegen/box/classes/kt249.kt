@@ -1,8 +1,8 @@
 package x
 
-class Outer() {
+define Outer() {
     companion object {
-        class Inner() {
+        define Inner() {
         }
     }
 }

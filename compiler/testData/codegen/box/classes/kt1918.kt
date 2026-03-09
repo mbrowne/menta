@@ -1,4 +1,4 @@
-class Bar {
+define Bar {
 }
 
 interface Foo {

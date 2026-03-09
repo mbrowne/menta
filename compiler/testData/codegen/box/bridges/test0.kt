@@ -3,11 +3,11 @@
 import kotlin.test.*
 
 // vtable call
-open class A {
+open define A {
     open fun foo(): Any = "A"
 }
 
-open class C : A() {
+open define C : A() {
     override fun foo(): Int = 42
 }
 

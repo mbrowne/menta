@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-abstract class Foo {
+abstract define Foo {
     companion object {
         @JvmStatic
         fun bar(): Nothing = TODO()

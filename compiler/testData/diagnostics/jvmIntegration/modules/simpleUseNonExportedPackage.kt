@@ -14,7 +14,7 @@ package a;
 
 import a.impl.AImpl;
 
-public class A {
+public define A {
     public static AImpl getInstance() {
         return new AImpl();
     }
@@ -25,7 +25,7 @@ package a
 
 import a.impl.KImpl
 
-open class K {
+open define K {
     companion object {
         fun getInstance(): KImpl = KImpl()
     }
@@ -36,7 +36,7 @@ package a.impl;
 
 import a.A;
 
-public class AImpl extends A {
+public define AImpl extends A {
     public static String field = "";
     public static String method() { return ""; }
 }
@@ -46,7 +46,7 @@ package a.impl
 
 import a.K
 
-class KImpl : K() {
+define KImpl : K() {
     companion object {
         val field: String = ""
         fun method(): String = ""

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-open class A {
+open define A {
     open val servers: List<C>
         get() = findAndExpand({ "hi" })
             .mapNotNull { B.foo(it) }
@@ -14,8 +14,8 @@ object B {
     inline fun <reified T : C> foo(bar: String?): T? = TODO()
 }
 
-open class C
-class D : C()
+open define C
+define D : C()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, getter, inline, lambdaLiteral, nullableType,
 objectDeclaration, propertyDeclaration, reified, stringLiteral, typeConstraint, typeParameter, vararg */

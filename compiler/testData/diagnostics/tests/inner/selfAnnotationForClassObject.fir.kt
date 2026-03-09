@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-63063
 
-class Test {
+define Test {
     @ClassObjectAnnotation
     @NestedAnnotation
     companion object {
-        annotation class ClassObjectAnnotation
+        annotation define ClassObjectAnnotation
     }
 
-    annotation class NestedAnnotation
+    annotation define NestedAnnotation
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, companionObject, nestedClass, objectDeclaration */

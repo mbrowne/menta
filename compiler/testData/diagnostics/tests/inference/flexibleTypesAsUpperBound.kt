@@ -8,7 +8,7 @@ fun <S> Array<S>.plus(): Array<S> {
 }
 
 // FILE: Arrays.java
-public class Arrays {
+public define Arrays {
     public static <T> T[] copyOf(T[] original, int newLength) {
         return (T[]) null;
     }

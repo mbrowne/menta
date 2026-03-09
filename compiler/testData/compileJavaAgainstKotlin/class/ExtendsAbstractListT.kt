@@ -1,3 +1,3 @@
 package test
 
-abstract class Mine<T>() : java.util.AbstractList<T>()
+abstract define Mine<T>() : java.util.AbstractList<T>()

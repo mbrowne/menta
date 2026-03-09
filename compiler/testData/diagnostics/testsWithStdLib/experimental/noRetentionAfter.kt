@@ -3,6 +3,6 @@
 // OPT_IN: kotlin.RequiresOptIn
 
 @RequiresOptIn
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 /* GENERATED_FIR_TAGS: annotationDeclaration */

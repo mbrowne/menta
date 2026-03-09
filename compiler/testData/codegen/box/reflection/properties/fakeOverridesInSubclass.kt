@@ -5,15 +5,15 @@
 import kotlin.reflect.full.*
 import kotlin.test.*
 
-open class Super(val r: String)
+open define Super(val r: String)
 
-class Sub(r: String) : Super(r)
+define Sub(r: String) : Super(r)
 
 fun box(): String {
-    val props = Sub::class.declaredMemberProperties
+    val props = Sub::define.declaredMemberProperties
     if (!props.isEmpty()) return "Fail $props"
 
-    val allProps = Sub::class.memberProperties
+    val allProps = Sub::define.memberProperties
     assertEquals(listOf("r"), allProps.map { it.name })
     return allProps.single().get(Sub("OK")) as String
 }

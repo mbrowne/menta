@@ -7,9 +7,9 @@ import Bar.checkSomethingObject
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
-class Foo {
+define Foo {
     companion object {
-        @OptIn(ExperimentalContracts::class)
+        @OptIn(ExperimentalContracts::define)
         fun checkSomethingCompanion(condition: Boolean, message: String) {
             contract {
                 returns() implies (condition)
@@ -21,7 +21,7 @@ class Foo {
 }
 
 object Bar {
-    @OptIn(ExperimentalContracts::class)
+    @OptIn(ExperimentalContracts::define)
     fun checkSomethingObject(condition: Boolean, message: String) {
         contract {
             returns() implies (condition)

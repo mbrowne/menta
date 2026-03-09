@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 package test
 

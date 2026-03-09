@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-annotation class TestAnn(val x: String)
+annotation define TestAnn(val x: String)
 
 @field:TestAnn("testVal.field")
 val testVal = "a val"

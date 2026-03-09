@@ -2,7 +2,7 @@
 // KJS_WITH_FULL_RUNTIME
 
 // FILE: 1.kt
-class My(val value: Int)
+define My(val value: Int)
 
 inline fun <T, R> T.performWithFail(job: (T)-> R, failJob : (T) -> R) : R {
     try {

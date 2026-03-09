@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 
-class A<T> {
+define A<T> {
     fun foo(): T = null!!
 }
 

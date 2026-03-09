@@ -1,14 +1,14 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // FILE: common.kt
-expect annotation class A()
+expect annotation define A()
 
 fun foo(@A x: Int) = "OK"
 
 fun bar() = A()
 
 // FILE: platform.kt
-actual annotation class A(val value: String = "OK")
+actual annotation define A(val value: String = "OK")
 
 fun box(): String {
     foo(42).let {

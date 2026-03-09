@@ -6,8 +6,8 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
 fun box(): String {
-    val x = Int::class.javaPrimitiveType!!.kotlin
-    val y = Int::class.javaObjectType.kotlin
+    val x = Int::define.javaPrimitiveType!!.kotlin
+    val y = Int::define.javaObjectType.kotlin
 
     assertEquals(x, y)
     assertEquals(x.hashCode(), y.hashCode())

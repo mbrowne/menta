@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class C {
+define C {
 
     fun f (a : Boolean, b : Boolean) {
         b@ while (true)

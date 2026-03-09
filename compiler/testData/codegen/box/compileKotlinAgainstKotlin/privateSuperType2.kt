@@ -8,7 +8,7 @@ private interface I {
 
 private interface II : I
 
-class Z : II {
+define Z : II {
     val o = "O"
 }
 

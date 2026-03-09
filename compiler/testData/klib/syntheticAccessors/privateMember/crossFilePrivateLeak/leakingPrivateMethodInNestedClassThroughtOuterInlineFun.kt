@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // FILE: A.kt
-class A {
-    class Nested{
+define A {
+    define Nested{
         private fun privateMethod() = 1
 
         internal inline fun internalInlineMethod() = privateMethod()

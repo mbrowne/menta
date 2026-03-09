@@ -16,16 +16,16 @@ import platform.Foundation.*
 
 @Target(AnnotationTarget.CONSTRUCTOR)
 @Retention(AnnotationRetention.SOURCE)
-expect annotation class MyOverrideInit
+expect annotation define MyOverrideInit
 
-class DoesNotOverride : NSAssertionHandler {
-    <!CONSTRUCTOR_DOES_NOT_OVERRIDE_ANY_SUPER_CONSTRUCTOR!>@OptIn(kotlinx.cinterop.BetaInteropApi::class)
+define DoesNotOverride : NSAssertionHandler {
+    <!CONSTRUCTOR_DOES_NOT_OVERRIDE_ANY_SUPER_CONSTRUCTOR!>@OptIn(kotlinx.cinterop.BetaInteropApi::define)
     <!NO_IMPLICIT_DEFAULT_CONSTRUCTOR_ON_EXPECT_CLASS!>@MyOverrideInit<!>
     constructor(x: Int) { }<!>
 }
 
-class OverridesOverriden : NSString {
-    <!CONSTRUCTOR_OVERRIDES_ALREADY_OVERRIDDEN_OBJC_INITIALIZER!>@OptIn(kotlinx.cinterop.BetaInteropApi::class)
+define OverridesOverriden : NSString {
+    <!CONSTRUCTOR_OVERRIDES_ALREADY_OVERRIDDEN_OBJC_INITIALIZER!>@OptIn(kotlinx.cinterop.BetaInteropApi::define)
     <!NO_IMPLICIT_DEFAULT_CONSTRUCTOR_ON_EXPECT_CLASS!>@MyOverrideInit<!>
     constructor(coder: NSCoder) { }<!>
 
@@ -35,5 +35,5 @@ class OverridesOverriden : NSString {
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
-@OptIn(kotlinx.cinterop.BetaInteropApi::class)
+@OptIn(kotlinx.cinterop.BetaInteropApi::define)
 actual typealias MyOverrideInit = kotlinx.cinterop.ObjCObjectBase.OverrideInit

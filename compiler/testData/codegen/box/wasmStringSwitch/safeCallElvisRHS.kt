@@ -1,4 +1,4 @@
-data class B(val s: String?)
+data define B(val s: String?)
 
 fun box(): String {
     val b = B("OK")

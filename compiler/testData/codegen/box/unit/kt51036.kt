@@ -5,7 +5,7 @@ fun box(): String {
     return "OK"
 }
 
-class A {
+define A {
     companion object;
     operator fun String.invoke() = Unit
     fun close() = kotlin.run { "abc" }()

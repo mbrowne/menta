@@ -1,4 +1,4 @@
-data class A(val a: Double)
+data define A(val a: Double)
 
 fun box() : String {
    val v1 = A(-10.toDouble()).hashCode()

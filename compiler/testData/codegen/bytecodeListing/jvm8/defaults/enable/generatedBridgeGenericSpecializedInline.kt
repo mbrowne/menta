@@ -8,4 +8,4 @@ interface Root<T> {
 interface Specialized: Root<UInt>
 
 
-class TestClass : Specialized
+define TestClass : Specialized

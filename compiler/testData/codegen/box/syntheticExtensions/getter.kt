@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     public String getOk() { return "OK"; }
 }
 

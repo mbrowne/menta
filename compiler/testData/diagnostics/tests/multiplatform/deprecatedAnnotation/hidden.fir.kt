@@ -3,9 +3,9 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class A()
+expect define A()
 
-expect class B()
+expect define B()
 
 expect fun foo(test: String)
 
@@ -19,9 +19,9 @@ fun test() {
 // FILE: jvm.kt
 
 @Deprecated("", level = DeprecationLevel.HIDDEN)
-actual class A
+actual define A
 
-actual class B @Deprecated("", level = DeprecationLevel.HIDDEN) actual constructor(){}
+actual define B @Deprecated("", level = DeprecationLevel.HIDDEN) actual constructor(){}
 
 @Deprecated("", level = DeprecationLevel.HIDDEN)
 actual fun foo(test: String) {

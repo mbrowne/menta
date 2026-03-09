@@ -5,7 +5,7 @@
 
 package test
 
-open class Base {
+open define Base {
     context(c: String)
     fun foo(): String {
         return c
@@ -16,14 +16,14 @@ open class Base {
         get() = c
 }
 
-expect class A : Base
+expect define A : Base
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
 package test
 
-actual class A : Base()
+actual define A : Base()
 
 fun box(): String {
     with(A()) { return with("O") { foo() } + with("K") { a } }

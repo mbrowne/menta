@@ -6,7 +6,7 @@
 // IGNORE_DEXING
 // IGNORE_BACKEND: ANDROID
 
-class `A!u00A0`() {
+define `A!u00A0`() {
     val ok = "OK"
 }
 

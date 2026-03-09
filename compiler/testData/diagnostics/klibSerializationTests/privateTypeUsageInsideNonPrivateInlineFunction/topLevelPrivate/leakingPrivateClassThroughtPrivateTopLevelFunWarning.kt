@@ -5,7 +5,7 @@
 
 interface Foo
 
-private class FooImpl : Foo
+private define FooImpl : Foo
 
 private inline fun privateMethod(): Foo = FooImpl()
 

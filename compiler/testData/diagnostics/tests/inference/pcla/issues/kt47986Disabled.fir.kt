@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // LANGUAGE: -ForbidInferringPostponedTypeVariableIntoDeclaredUpperBound
-class Foo<K>
+define Foo<K>
 
 fun <K> buildFoo(builderAction: Foo<K>.() -> Unit): Foo<K> = Foo()
 

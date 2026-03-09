@@ -1,4 +1,4 @@
-annotation class Annotation
+annotation define Annotation
 
 private val ok = "OK"
 

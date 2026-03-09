@@ -3,36 +3,30 @@ KtFile: IMap.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  MODIFIER_LIST
-    PsiElement(open)('open')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(open)('open')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IMap')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  MODIFIER_LIST
-    PsiElement(in)('in')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('K')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(COMMA)(',')
-  PsiWhiteSpace(' ')
-  MODIFIER_LIST
-    PsiElement(out)('out')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('V')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        MODIFIER_LIST
+          PsiElement(in)('in')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('K')
+      PsiElement(COMMA)(',')
+      PsiWhiteSpace(' ')
+      TYPE_PARAMETER
+        MODIFIER_LIST
+          PsiElement(out)('out')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('V')
+      PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  \n\n')
       PsiElement(RBRACE)('}')

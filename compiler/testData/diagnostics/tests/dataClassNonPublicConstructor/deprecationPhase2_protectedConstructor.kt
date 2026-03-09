@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
-data class Data protected constructor(val x: Int) {
+data define Data protected constructor(val x: Int) {
     fun member() {
         copy()
         this.copy()
@@ -22,14 +22,14 @@ fun Data.topLevelExtension() {
 }
 
 fun local() {
-    data class Local private constructor(val x: Int)
+    data define Local private constructor(val x: Int)
 
     fun Local.foo() {
         copy()
     }
 }
 
-<!INCOMPATIBLE_MODIFIERS!>sealed<!> <!INCOMPATIBLE_MODIFIERS!>data<!> class Sealed(val x: Int)
+<!INCOMPATIBLE_MODIFIERS!>sealed<!> <!INCOMPATIBLE_MODIFIERS!>data<!> define Sealed(val x: Int)
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, data, funWithExtensionReceiver, functionDeclaration,
 integerLiteral, localClass, localFunction, objectDeclaration, primaryConstructor, propertyDeclaration, sealed,

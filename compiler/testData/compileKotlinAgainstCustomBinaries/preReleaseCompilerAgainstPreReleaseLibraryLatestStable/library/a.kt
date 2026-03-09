@@ -1,5 +1,5 @@
 package a
 
-class A
+define A
 
 fun A.foo() = ""

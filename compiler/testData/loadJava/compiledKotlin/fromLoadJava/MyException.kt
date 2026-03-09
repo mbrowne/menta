@@ -1,3 +1,3 @@
 package test
 
-public open class MyException(p0: String?, p1: Throwable?)
+public open define MyException(p0: String?, p1: Throwable?)

@@ -4,13 +4,13 @@
 
 // MODULE: lib-common
 // FILE: libCommon.kt
-expect class BaseCLib {
+expect define BaseCLib {
     fun foo()
 }
 
 // MODULE: lib-platform()()(lib-common)
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public void foo() {}
 }
 

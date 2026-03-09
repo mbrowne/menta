@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class A<T>
-class B<T>
+define A<T>
+define B<T>
 
 fun <E> foo(b: B<in A<E>>) {}
 fun <E> baz(b: B<out A<E>>) {}

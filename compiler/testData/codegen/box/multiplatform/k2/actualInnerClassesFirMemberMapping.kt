@@ -2,16 +2,16 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A {
-    class B {
+expect define A {
+    define B {
         fun foo()
     }
 }
 
 // MODULE: main()()(common)
 // FILE: test.kt
-actual class A {
-    actual class B {
+actual define A {
+    actual define B {
         actual fun foo() {}
     }
 }

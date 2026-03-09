@@ -3,114 +3,109 @@ KtFile: annotatedDefaultPropertyAccessor.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  PsiComment(EOL_COMMENT)('// FILE: Foo.kt')
-  PsiWhiteSpace('\n')
-  PsiComment(EOL_COMMENT)('// K1 metadata : default accessors, K2 metadata : non-default accessors')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('// FILE: Foo.kt')
+    PsiWhiteSpace('\n')
+    PsiComment(EOL_COMMENT)('// K1 metadata : default accessors, K2 metadata : non-default accessors')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LPAR)('(')
-  PsiWhiteSpace('\n    ')
-  PROPERTY
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        ANNOTATION_TARGET
-          PsiElement(get)('get')
-        PsiElement(COLON)(':')
-        CONSTRUCTOR_CALLEE
+    PRIMARY_CONSTRUCTOR
+      VALUE_PARAMETER_LIST
+        PsiElement(LPAR)('(')
+        PsiWhiteSpace('\n    ')
+        VALUE_PARAMETER
+          MODIFIER_LIST
+            ANNOTATION_ENTRY
+              PsiElement(AT)('@')
+              ANNOTATION_TARGET
+                PsiElement(get)('get')
+              PsiElement(COLON)(':')
+              CONSTRUCTOR_CALLEE
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('Anno')
+          PsiWhiteSpace(' ')
+          PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('withDefaultGetter')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
           TYPE_REFERENCE
             USER_TYPE
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Anno')
-    PsiWhiteSpace(' ')
-    PsiElement(val)('val')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('withDefaultGetter')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    TYPE_REFERENCE
-      USER_TYPE
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('Int')
-    PsiErrorElement:Property getter or setter expected
-      PsiElement(COMMA)(',')
-  PsiWhiteSpace('\n    ')
-  PROPERTY
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        ANNOTATION_TARGET
-          PsiElement(set)('set')
-        PsiElement(COLON)(':')
-        CONSTRUCTOR_CALLEE
+                PsiElement(IDENTIFIER)('Int')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace('\n    ')
+        VALUE_PARAMETER
+          MODIFIER_LIST
+            ANNOTATION_ENTRY
+              PsiElement(AT)('@')
+              ANNOTATION_TARGET
+                PsiElement(set)('set')
+              PsiElement(COLON)(':')
+              CONSTRUCTOR_CALLEE
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('Anno')
+          PsiWhiteSpace(' ')
+          PsiElement(var)('var')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('withDefaultSetter')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
           TYPE_REFERENCE
             USER_TYPE
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Anno')
-    PsiWhiteSpace(' ')
-    PsiElement(var)('var')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('withDefaultSetter')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    TYPE_REFERENCE
-      USER_TYPE
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('String')
-    PsiErrorElement:Property getter or setter expected
-      PsiElement(COMMA)(',')
-  PsiWhiteSpace('\n    ')
-  PROPERTY
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        ANNOTATION_TARGET
-          PsiElement(get)('get')
-        PsiElement(COLON)(':')
-        CONSTRUCTOR_CALLEE
+                PsiElement(IDENTIFIER)('String')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace('\n    ')
+        VALUE_PARAMETER
+          MODIFIER_LIST
+            ANNOTATION_ENTRY
+              PsiElement(AT)('@')
+              ANNOTATION_TARGET
+                PsiElement(get)('get')
+              PsiElement(COLON)(':')
+              CONSTRUCTOR_CALLEE
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('Anno')
+            PsiWhiteSpace(' ')
+            ANNOTATION_ENTRY
+              PsiElement(AT)('@')
+              ANNOTATION_TARGET
+                PsiElement(set)('set')
+              PsiElement(COLON)(':')
+              CONSTRUCTOR_CALLEE
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('Anno')
+          PsiWhiteSpace(' ')
+          PsiElement(var)('var')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('both')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
           TYPE_REFERENCE
             USER_TYPE
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Anno')
-      PsiWhiteSpace(' ')
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        ANNOTATION_TARGET
-          PsiElement(set)('set')
-        PsiElement(COLON)(':')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Anno')
-    PsiWhiteSpace(' ')
-    PsiElement(var)('var')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('both')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    TYPE_REFERENCE
-      USER_TYPE
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('String')
-    PsiErrorElement:Property getter or setter expected
-      PsiElement(COMMA)(',')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
+                PsiElement(IDENTIFIER)('String')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace('\n')
+        PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
-  PsiComment(EOL_COMMENT)('// FILE: Anno.kt')
-  PsiWhiteSpace('\n')
-  MODIFIER_LIST
-    PsiElement(annotation)('annotation')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('// FILE: Anno.kt')
+    PsiWhiteSpace('\n')
+    MODIFIER_LIST
+      PsiElement(annotation)('annotation')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Anno')

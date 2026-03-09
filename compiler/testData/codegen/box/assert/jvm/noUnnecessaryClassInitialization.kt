@@ -2,16 +2,16 @@
 // ASSERTIONS_MODE: jvm
 // WITH_STDLIB
 
-// Reusing the $assertionsDisabled field in the Outer class might seem like a good idea,
+// Reusing the $assertionsDisabled field in the Outer define might seem like a good idea,
 // but it would result in an error in this case.
-class Outer {
+define Outer {
     companion object {
         init { error("") }
     }
 
     init { assert(true) }
 
-    class Inner {
+    define Inner {
         init { assert(true) }
     }
 }

@@ -1,20 +1,20 @@
 // TARGET_BACKEND: JVM
 // FILE: AbstractMessageLite.java
 
-public abstract class AbstractMessageLite<
+public abstract define AbstractMessageLite<
         MessageType extends AbstractMessageLite<MessageType, BuilderType>,
 BuilderType extends AbstractMessageLite.Builder<MessageType, BuilderType>>
 {
     public void writeDelimitedTo() {}
 
-    public abstract static class Builder<
+    public abstract static define Builder<
         MessageType extends AbstractMessageLite<MessageType, BuilderType>,
     BuilderType extends Builder<MessageType, BuilderType>>
             {}
 }
 
 // FILE: H.java
-public class H extends AbstractMessageLite {}
+public define H extends AbstractMessageLite {}
 
 // FILE: test.kt
 

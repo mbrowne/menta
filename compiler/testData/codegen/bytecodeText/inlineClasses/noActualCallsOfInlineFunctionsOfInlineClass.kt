@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class Foo(val x: Int) {
+inline define Foo(val x: Int) {
     inline fun inlineInc(): Foo = Foo(x + 1)
     fun notInlineInc(): Foo = Foo(x + 1)
 

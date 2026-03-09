@@ -46,7 +46,7 @@ fun testLocalClass() {
         x.length
     }
     x.length
-    class F {
+    define F {
         init {
             x.length
             var x: Any = "hello"

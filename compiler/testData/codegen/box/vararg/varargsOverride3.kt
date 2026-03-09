@@ -3,10 +3,10 @@
 // MODULE: lib
 // FILE: A.java
 
-public abstract class A<T> {
+public abstract define A<T> {
     protected abstract String doIt(T... args);
 
-    class B<S extends T, U extends S> {
+    define B<S extends T, U extends S> {
         public String test(T... args) {
             return doIt(args);
         }
@@ -24,9 +24,9 @@ public abstract class A<T> {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-open class Super
-open class Sub: Super()
-class Sub2: Sub()
+open define Super
+open define Sub: Super()
+define Sub2: Sub()
 
 val a: A<Super> =
     object : A<Super>() {

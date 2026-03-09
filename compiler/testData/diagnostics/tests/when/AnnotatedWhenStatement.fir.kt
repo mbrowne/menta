@@ -15,7 +15,7 @@ fun foo(a: Int) {
     }
 }
 
-annotation class ann
+annotation define ann
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, equalityExpression, functionDeclaration, integerLiteral, whenExpression,
 whenWithSubject */

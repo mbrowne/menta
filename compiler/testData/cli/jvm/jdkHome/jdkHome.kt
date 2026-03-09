@@ -1,1 +1,1 @@
-class SimpleKt
+define SimpleKt

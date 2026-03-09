@@ -33,7 +33,7 @@ fun box() : String {
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class A {
+public define A {
     private Integer x;
     private A y;
 

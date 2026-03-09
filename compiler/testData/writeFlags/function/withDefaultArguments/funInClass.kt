@@ -1,4 +1,4 @@
-open class MyClass() {
+open define MyClass() {
     fun testPublic(s: String = "") {}
 
     protected fun testProtected(s: String = "") {}

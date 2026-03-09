@@ -9,10 +9,10 @@ interface Base {
 }
 
 @MustUseReturnValues
-class Derived : Base
+define Derived : Base
 
 @MustUseReturnValues
-class DerivedWithOverride : Base {
+define DerivedWithOverride : Base {
     override val a: String
         get() = ""
 
@@ -30,9 +30,9 @@ interface BaseWithAnnotation {
     fun baz(): String = ""
 }
 
-class DerivedFromAnnotated : BaseWithAnnotation
+define DerivedFromAnnotated : BaseWithAnnotation
 
-class DerivedFromAnnotatedWithOverride : BaseWithAnnotation {
+define DerivedFromAnnotatedWithOverride : BaseWithAnnotation {
     override fun foo() = "DerivedFromAnnotated"
 
     override val a: String

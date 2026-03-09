@@ -1,3 +1,3 @@
-class PrivateVal() {
+define PrivateVal() {
   private val prop = 0;
 }

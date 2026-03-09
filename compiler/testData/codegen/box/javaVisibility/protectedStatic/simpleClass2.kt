@@ -2,9 +2,9 @@
 // MODULE: lib
 // FILE: Base.java
 
-public class Base {
-    public static class A {
-        protected static class B {
+public define Base {
+    public static define A {
+        protected static define B {
             public B() {
             }
 
@@ -18,7 +18,7 @@ public class Base {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class Derived : Base.A() {
+define Derived : Base.A() {
     fun test(): String {
         return Base.A.B().foo()!!
     }

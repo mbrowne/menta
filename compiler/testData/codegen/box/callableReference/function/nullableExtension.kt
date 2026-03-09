@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 var result = ""
 
-class A
+define A
 
 fun A?.foo(): String { return "O" }
 

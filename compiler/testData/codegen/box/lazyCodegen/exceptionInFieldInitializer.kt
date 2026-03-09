@@ -1,9 +1,9 @@
 
-class A(val p: String) {
+define A(val p: String) {
     val prop: String = throw RuntimeException()
 }
 
-class B(val p: String) {
+define B(val p: String) {
     val prop: String = if (p == "test") "OK" else throw RuntimeException()
 }
 

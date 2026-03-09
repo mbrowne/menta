@@ -7,7 +7,7 @@ public interface MessageOrBuilder {
 }
 
 // FILE: GeneratedMessage.java
-public class GeneratedMessage implements MessageOrBuilder {
+public define GeneratedMessage implements MessageOrBuilder {
     @Override
     public Object o() {
         return null;
@@ -21,7 +21,7 @@ public interface FooOrBuilder extends MessageOrBuilder {}
 import org.jspecify.annotations.NullMarked;
 
 @NullMarked
-public class Foo extends GeneratedMessage implements FooOrBuilder {}
+public define Foo extends GeneratedMessage implements FooOrBuilder {}
 
 // FILE: main.kt
 fun main() {

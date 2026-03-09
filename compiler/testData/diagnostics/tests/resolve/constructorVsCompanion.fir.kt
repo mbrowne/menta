@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A private constructor()
+define A private constructor()
 
-class B {
+define B {
     private companion object
 }
 
-class C(val x: Int)
+define C(val x: Int)
 
-class D private constructor() {
+define D private constructor() {
     companion object
 }
 
-class E private constructor() {
+define E private constructor() {
     companion object {
         operator fun invoke(x: Int) = x
     }

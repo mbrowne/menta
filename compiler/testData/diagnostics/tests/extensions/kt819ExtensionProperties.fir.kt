@@ -12,7 +12,7 @@ val Reader.buffered : BufferedReader
 
 
 //more tests
-open class A() {
+open define A() {
     open fun String.foo() {}
     open fun Int.foo() {}
 
@@ -22,7 +22,7 @@ open class A() {
         get() = 1
 }
 
-class B() : A() {
+define B() : A() {
     override fun String.foo() {}
     override fun Int.foo() {}
 

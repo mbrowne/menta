@@ -7,7 +7,7 @@ public interface J<T> {
 }
 
 // FILE: box.kt
-class Impl(val x: String) : J<String> {
+define Impl(val x: String) : J<String> {
     override fun getValue() = x
 }
 
@@ -19,7 +19,7 @@ val x by j1::value
 
 @Target(AnnotationTarget.LOCAL_VARIABLE, AnnotationTarget.EXPRESSION, AnnotationTarget.FILE)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Anno
+annotation define Anno
 
 fun box(): String {
     val j2: J<String> = Impl("K")

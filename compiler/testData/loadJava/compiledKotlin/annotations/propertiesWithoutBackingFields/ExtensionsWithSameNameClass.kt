@@ -1,10 +1,10 @@
 package test
 
-annotation class IntAnno
-annotation class StringAnno
-annotation class DoubleAnno
+annotation define IntAnno
+annotation define StringAnno
+annotation define DoubleAnno
 
-class Class {
+define Class {
     @[IntAnno] val Int.extension: Int
         get() = this
 

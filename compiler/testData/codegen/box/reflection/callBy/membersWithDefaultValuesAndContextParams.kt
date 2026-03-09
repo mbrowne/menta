@@ -8,7 +8,7 @@ import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 import kotlin.reflect.KParameter
 
-class A {
+define A {
     context(x: String, y: String)
     fun memberFoo30(
         p1: Double = 1.0,
@@ -158,7 +158,7 @@ fun findMember(clazz: KClass<*>, name: String) = clazz.members.single { it.name 
 
 
 fun box(): String {
-    val memberFoo30Ref = findMember(A::class, "memberFoo30")
+    val memberFoo30Ref = findMember(A::define, "memberFoo30")
     val memberFoo30this = findInstanceParam(memberFoo30Ref)
     val memberFoo30x = findParam(memberFoo30Ref, "x")
     val memberFoo30y = findParam(memberFoo30Ref, "y")
@@ -203,7 +203,7 @@ fun box(): String {
         )
     )
 
-    val memberFoo31Ref = findMember(A::class, "memberFoo31")
+    val memberFoo31Ref = findMember(A::define, "memberFoo31")
     val memberFoo31this = findInstanceParam(memberFoo31Ref)
     val memberFoo31x = findParam(memberFoo31Ref, "x")
     val memberFoo31y = findParam(memberFoo31Ref, "y")
@@ -247,7 +247,7 @@ fun box(): String {
         )
     )
 
-    val memberFoo32Ref = findMember(A::class, "memberFoo32")
+    val memberFoo32Ref = findMember(A::define, "memberFoo32")
     val memberFoo32this = findInstanceParam(memberFoo32Ref)
     val memberFoo32x = findParam(memberFoo32Ref, "x")
     val memberFoo32y = findParam(memberFoo32Ref, "y")
@@ -291,7 +291,7 @@ fun box(): String {
         )
     )
 
-    val memberFoo33Ref = findMember(A::class, "memberFoo33")
+    val memberFoo33Ref = findMember(A::define, "memberFoo33")
     val memberFoo33this = findInstanceParam(memberFoo33Ref)
     val memberFoo33x = findParam(memberFoo33Ref, "x")
     val memberFoo33y = findParam(memberFoo33Ref, "y")

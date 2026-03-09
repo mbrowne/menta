@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextReceivers
-class Foo
+define Foo
 
 <!CONTEXT_RECEIVERS_DEPRECATED!>context<!>(Foo, label@Int)
 fun foo() {

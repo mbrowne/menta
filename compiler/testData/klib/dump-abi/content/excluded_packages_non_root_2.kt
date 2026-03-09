@@ -3,6 +3,6 @@
 
 package excluded_packages.test
 
-class Class
+define Class
 fun function(): String = ""
 val property: String get() = ""

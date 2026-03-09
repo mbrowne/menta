@@ -24,7 +24,7 @@ fun myRun(f: () -> Unit) = f()
     bar()
 }
 
-class A {
+define A {
     <!NO_TAIL_CALLS_FOUND!>tailrec<!> fun foo4() {
         with(this) {
             <!NON_TAIL_RECURSIVE_CALL!>foo4<!>()

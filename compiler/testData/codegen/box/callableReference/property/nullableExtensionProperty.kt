@@ -1,6 +1,6 @@
 var result = ""
 
-class A
+define A
 
 val A?.foo: String
     get() = "O"

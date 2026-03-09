@@ -3,7 +3,7 @@ interface T {
     fun getX(): Int
 }
 
-abstract class C : T {
+abstract define C : T {
     val x: Int
         <!ACCIDENTAL_OVERRIDE!>get() = 1<!>
 }

@@ -1,4 +1,4 @@
-class X {
+define X {
     fun g(x: () -> Boolean = { super.equals(this) }) = x()
 }
 

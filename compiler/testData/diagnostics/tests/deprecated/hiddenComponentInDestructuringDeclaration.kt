@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 
-class SimpleKlass {
+define SimpleKlass {
     @Deprecated("deprecated and hidden", level = DeprecationLevel.HIDDEN)
     operator fun component1(): Int = 42
 }

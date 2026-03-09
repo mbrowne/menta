@@ -4,7 +4,7 @@
 // FILE: a.kt
 package p
 
-class FilteringSequence
+define FilteringSequence
 
 // FILE: b.kt
 package kotlin.sequences

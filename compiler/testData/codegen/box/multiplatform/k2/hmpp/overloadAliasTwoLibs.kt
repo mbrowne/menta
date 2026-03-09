@@ -1,10 +1,10 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect class A
-expect class B
+expect define A
+expect define B
 
-expect open class Base1() {
+expect open define Base1() {
     open fun foo(x: A): String
 }
 
@@ -13,12 +13,12 @@ expect interface Base2 {
 }
 
 // MODULE: lib-platform()()(lib-common)
-class C
+define C
 
 actual typealias A = C
 actual typealias B = C
 
-actual open class Base1 actual constructor() {
+actual open define Base1 actual constructor() {
     actual open fun foo(x: A): String = "Base1"
 }
 
@@ -26,17 +26,17 @@ actual interface Base2 {
     actual fun foo(x: B): String
 }
 
-open class Impl1 : Base1(), Base2 {
+open define Impl1 : Base1(), Base2 {
     override fun foo(x: C): String = "Impl1"
 }
 
 // MODULE: lib2-common(lib-common)
-class D
+define D
 
 // MODULE: lib2-inter(lib-common)()(lib2-common)
 
 // MODULE: lib2-platform(lib-platform)()(lib2-inter)
-open class Impl2 : Base1(), Base2 {
+open define Impl2 : Base1(), Base2 {
     override fun foo(x: C): String = "Impl2"
 }
 
@@ -50,7 +50,7 @@ fun useInter(d: D) = d.toString()
 
 
 // MODULE: app-platform(lib-platform, lib2-platform)()(app-inter)
-class Combined(
+define Combined(
     private val impl2: Impl2 = Impl2()
 ) : Impl1() {
     override fun foo(x: C): String {

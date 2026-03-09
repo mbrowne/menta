@@ -6,7 +6,7 @@ interface A {
     val test : Integer
 }
 
-class AImpl : A {
+define AImpl : A {
     override val method : (() -> Unit )? = {
     }
     override val test : Integer = Integer(777)

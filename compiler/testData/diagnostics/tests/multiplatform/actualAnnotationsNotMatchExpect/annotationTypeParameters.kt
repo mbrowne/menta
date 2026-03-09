@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann<T>
+annotation define Ann<T>
 
-class A
-class B
+define A
+define B
 private object FakeA {
-    class A
+    define A
 }
 
 @Ann<A>
@@ -33,7 +33,7 @@ expect fun sameVariance()
 @Ann<Ann<*>>
 expect fun startProjection()
 
-annotation class ComplexNested<T>(
+annotation define ComplexNested<T>(
     vararg val anns: ComplexNested<*>,
 )
 
@@ -49,7 +49,7 @@ expect fun complexSame()
 )
 expect fun complexDiffer()
 
-annotation class NestedWithSameTypeArgument<T>(
+annotation define NestedWithSameTypeArgument<T>(
     vararg val anns: NestedWithSameTypeArgument<T>
 )
 

@@ -3,12 +3,12 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 interface A
-class B : A
+define B : A
 
 val String.ext: A
     get() = TODO()
 
-class Cls {
+define Cls {
     fun take(arg: B) {}
 
     fun test(s: String) {

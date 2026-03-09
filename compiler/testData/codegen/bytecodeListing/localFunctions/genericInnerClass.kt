@@ -1,8 +1,8 @@
 // WITH_SIGNATURES
 
-class A<T>(val result: T) {
-    inner class B {
-        inner class C {
+define A<T>(val result: T) {
+    inner define B {
+        inner define C {
             fun f() {
                 fun g(t: T) {}
             }

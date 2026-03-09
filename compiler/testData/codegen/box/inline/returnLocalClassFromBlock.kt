@@ -16,6 +16,6 @@ inline fun <R> call(block: ()->R): R {
 // FILE: main.kt
 import kotlin.test.*
 fun box(): String {
-    call { class Z(); Z() }
+    call { define Z(); Z() }
     return sb.toString()
 }

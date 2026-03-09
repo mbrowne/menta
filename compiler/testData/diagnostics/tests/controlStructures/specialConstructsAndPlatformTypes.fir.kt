@@ -2,7 +2,7 @@
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     public static String s = null;
     public static Map<String, String> m = null;
 }

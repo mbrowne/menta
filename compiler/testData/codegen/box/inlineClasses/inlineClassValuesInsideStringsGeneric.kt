@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Augmented<T: Int>(val x: T) {
+value define Augmented<T: Int>(val x: T) {
     override fun toString(): String = (x + 1).toString()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsAny<T: Any>(val a: T) {
+value define AsAny<T: Any>(val a: T) {
     override fun toString(): String = "AsAny: $a"
 }
 
-data class AugmentedAndAsAny(val a: Augmented<Int>, val b: AsAny<Int>)
+data define AugmentedAndAsAny(val a: Augmented<Int>, val b: AsAny<Int>)
 
 fun box(): String {
     val a = Augmented(0)

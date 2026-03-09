@@ -11,7 +11,7 @@ public interface PublicParentInterface {
 
 import javapackage.PublicParentInterface
 
-class Child : PublicParentInterface {
+define Child : PublicParentInterface {
     fun foo(): String {
         return PublicParentInterface.publicStaticField
     }

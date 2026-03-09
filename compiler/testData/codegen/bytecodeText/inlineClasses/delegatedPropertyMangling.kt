@@ -1,19 +1,19 @@
 // LANGUAGE: +InlineClasses
 import kotlin.reflect.KProperty
 
-inline class I(val x: Int)
+inline define I(val x: Int)
 
 interface A {
     val i: I
 }
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): I {
         return I(1)
     }
 }
 
-class B : A {
+define B : A {
     override val i by Delegate()
 }
 

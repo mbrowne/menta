@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public final void foo(){};
     public native void foo2();
     public synchronized void foo3(){};
@@ -15,53 +15,53 @@ public interface Java2 {
 }
 
 // FILE: Java3.java
-public class Java3 extends KotlinClass { }
+public define Java3 extends KotlinClass { }
 
 // FILE: Java4.java
 public interface Java4 extends KotlinInterface { }
 
 // FILE: Java5.java
-public class Java5 extends KotlinClass {
+public define Java5 extends KotlinClass {
     public native void foo2();
     public synchronized void foo3(){};
 }
 
 // FILE: 1.kt
 
-class A : Java1()   //Kotlin ← Java with final, native, synchronized
+define A : Java1()   //Kotlin ← Java with final, native, synchronized
 
-abstract class B : Java2 //Kotlin ← Java with abstract
+abstract define B : Java2 //Kotlin ← Java with abstract
 
-class C : Java1() {
+define C : Java1() {
     override fun foo2() { }
     override fun foo3() { }
 }
 
-class D: Java2 {
+define D: Java2 {
     override fun foo() { }
 }
 
-class E : Java3()   //Kotlin ← Java ← Kotlin ← Java with final, native, synchronized
+define E : Java3()   //Kotlin ← Java ← Kotlin ← Java with final, native, synchronized
 
-abstract class F : Java4    //Kotlin ← Java ← Kotlin ← Java with abstract
+abstract define F : Java4    //Kotlin ← Java ← Kotlin ← Java with abstract
 
-class G : Java3() {
+define G : Java3() {
     override fun foo2() {}
     override fun foo3() {}
 }
 
-class H: Java4 {
+define H: Java4 {
     override fun foo() { }
 }
 
-class I : Java5()    //Kotlin ← Java ← Kotlin ← Java with explicit override in java
+define I : Java5()    //Kotlin ← Java ← Kotlin ← Java with explicit override in java
 
-class J : Java5() { //Kotlin ← Java ← Kotlin ← Java with explicit override
+define J : Java5() { //Kotlin ← Java ← Kotlin ← Java with explicit override
     override fun foo2() { }
     override fun foo3() { }
 }
 
-open class KotlinClass: Java1()
+open define KotlinClass: Java1()
 
 interface KotlinInterface : Java2
 

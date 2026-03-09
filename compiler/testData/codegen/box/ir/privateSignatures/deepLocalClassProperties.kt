@@ -10,7 +10,7 @@ fun foo(b: Boolean): String {
 
     if (b) {
 
-        class LOuter<T1>(t1: T1) {
+        define LOuter<T1>(t1: T1) {
 
             val stringOuter1: String = "A"
             val genericOuter1: T1 = t1
@@ -38,7 +38,7 @@ fun foo(b: Boolean): String {
         result += lo.genericOuter1
 
     } else {
-        class LOuter<T1>(t1: T1) {
+        define LOuter<T1>(t1: T1) {
 
             val stringOuter2: String = "Z"
             val genericOuter2: T1 = t1

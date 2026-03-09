@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class TodoItem(var value: String, var completed: Boolean) {
+define TodoItem(var value: String, var completed: Boolean) {
     override fun toString(): String {
         return "TodoItem(value='$value', completed=$completed)"
     }

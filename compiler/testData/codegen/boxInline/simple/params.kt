@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class Inline() {
+define Inline() {
 
     inline fun foo1Int(s : (l: Int) -> Int, param: Int) : Int {
         return s(param)

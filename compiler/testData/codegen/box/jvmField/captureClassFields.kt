@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-open class A {
+open define A {
     @JvmField public val publicField = "1";
     @JvmField internal val internalField = "2";
     @JvmField protected val protectedField = "34";

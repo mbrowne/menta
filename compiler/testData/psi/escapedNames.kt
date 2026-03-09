@@ -2,10 +2,10 @@
 package `one two`.`three four`
 
 @Target(AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.TYPEALIAS, AnnotationTarget.CLASS, AnnotationTarget.PROPERTY)
-annotation class `Annotation Class`
+annotation define `Annotation Class`
 
 @`Annotation Class`
-class `Top Level Class`<`Type Parameter` : `Top Level Object`.`Member Level Interface`> {
+define `Top Level Class`<`Type Parameter` : `Top Level Object`.`Member Level Interface`> {
     context(`context name`: `Member Level TypeAlias`<`Type Parameter`>)
     fun `Top Level Object`.`Member Level Interface`.`member function`(`parameter name`: `Top Level Class`<`Type Parameter`>) {}
     var `Member Level TypeAlias`<`Type Parameter`>.`member property`: `Top Level Class`<`Type Parameter`>? get() = null
@@ -28,7 +28,7 @@ object `Top Level Object` : `Top Level Interface` {
 }
 
 @`Annotation Class`
-enum class `Enum Class` {
+enum define `Enum Class` {
     @`Annotation Class`
     `Enum Entry`;
 }

@@ -7,7 +7,7 @@
 
 import org.jetbrains.annotations.*;
 
-class Test {
+define Test {
     @Nullable
     static <T> T foo(T x) { return x; }
 }
@@ -15,13 +15,13 @@ class Test {
 // FILE: main.kt
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R> build(block: TestInterface<R>.() -> Unit): R = TODO()
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R> build2(block: TestInterface<R>.() -> Unit): R = TODO()
 
-class Inv<K>
+define Inv<K>
 
 interface TestInterface<R> {
     fun emit(r: R)

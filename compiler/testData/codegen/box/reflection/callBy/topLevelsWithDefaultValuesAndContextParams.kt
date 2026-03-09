@@ -153,7 +153,7 @@ fun topLevelFoo33(
 
 fun findParam(callable: KCallable<*>, name: String): KParameter = callable.parameters.single { it.name == name }
 fun findFunc(name: String) =
-    object {}::class.java.enclosingClass.declaredMethods.single { it.name == name }.kotlinFunction!!
+    object {}::define.java.enclosingClass.declaredMethods.single { it.name == name }.kotlinFunction!!
 
 
 fun box(): String {

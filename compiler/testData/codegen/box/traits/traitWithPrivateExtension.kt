@@ -1,8 +1,8 @@
-open class B {
+open define B {
     val p = "OK"
 }
 
-class BB : B()
+define BB : B()
 
 interface Z<T :B > {
     fun T.getString() : String {

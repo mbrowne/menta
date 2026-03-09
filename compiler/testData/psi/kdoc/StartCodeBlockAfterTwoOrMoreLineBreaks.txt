@@ -104,32 +104,31 @@ KtFile: StartCodeBlockAfterTwoOrMoreLineBreaks.kt
   PsiWhiteSpace('\n\n')
   PsiComment(EOL_COMMENT)('// ISSUE: KT-79783')
   PsiWhiteSpace('\n\n')
-  KDoc
-    PsiElement(KDOC_START)('/**')
-    PsiWhiteSpace('\n ')
-    KDOC_SECTION
-      PsiElement(KDOC_LEADING_ASTERISK)('*')
-      PsiElement(KDOC_TEXT)(' - Test ')
-      KDOC_MARKDOWN_LINK
-        PsiElement(LBRACKET)('[')
-        KDOC_NAME
-          PsiElement(IDENTIFIER)('Number')
-        PsiElement(RBRACKET)(']')
+  CLASS
+    KDoc
+      PsiElement(KDOC_START)('/**')
       PsiWhiteSpace('\n ')
-      PsiElement(KDOC_LEADING_ASTERISK)('*')
-      PsiElement(KDOC_TEXT)('     - Test ')
-      KDOC_MARKDOWN_LINK
-        PsiElement(LBRACKET)('[')
-        KDOC_NAME
-          PsiElement(IDENTIFIER)('String')
-        PsiElement(RBRACKET)(']')
-    PsiWhiteSpace('\n ')
-    PsiElement(KDOC_END)('*/')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+      KDOC_SECTION
+        PsiElement(KDOC_LEADING_ASTERISK)('*')
+        PsiElement(KDOC_TEXT)(' - Test ')
+        KDOC_MARKDOWN_LINK
+          PsiElement(LBRACKET)('[')
+          KDOC_NAME
+            PsiElement(IDENTIFIER)('Number')
+          PsiElement(RBRACKET)(']')
+        PsiWhiteSpace('\n ')
+        PsiElement(KDOC_LEADING_ASTERISK)('*')
+        PsiElement(KDOC_TEXT)('     - Test ')
+        KDOC_MARKDOWN_LINK
+          PsiElement(LBRACKET)('[')
+          KDOC_NAME
+            PsiElement(IDENTIFIER)('String')
+          PsiElement(RBRACKET)(']')
+      PsiWhiteSpace('\n ')
+      PsiElement(KDOC_END)('*/')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('X')
   PsiWhiteSpace('\n\n')
   KDoc

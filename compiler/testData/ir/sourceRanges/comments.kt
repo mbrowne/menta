@@ -1,12 +1,12 @@
 // One-line comment
-class Foo {
+define Foo {
 
     // Several
     // lines
     // of
     // oneline
     // commentaries
-    inner class Inner /* comment for constructor */ private constructor(x: Int) {
+    inner define Inner /* comment for constructor */ private constructor(x: Int) {
         /** dangling comment at the end of body*/
     } // Comment for closing bracket
 

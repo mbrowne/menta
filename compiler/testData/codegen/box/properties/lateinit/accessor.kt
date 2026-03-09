@@ -1,4 +1,4 @@
-public class A {
+public define A {
 
     fun setMyStr() {
         str = "OK"

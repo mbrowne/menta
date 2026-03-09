@@ -1,5 +1,5 @@
 // A
-class A {
+define A {
     fun f(i: Int, s: Double) {}
     fun f(i: Int, s: Double) {}
 

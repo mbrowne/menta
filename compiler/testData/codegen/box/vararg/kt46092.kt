@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: kt46092.kt
 
-class CharSequenceBackedByChars : CharArrayCharSequence {
+define CharSequenceBackedByChars : CharArrayCharSequence {
     constructor(chars: CharArray) : super(*chars)
 
     fun test(): String = string
@@ -12,7 +12,7 @@ fun box() = CharSequenceBackedByChars(charArrayOf('O', 'K')).test()
 
 // FILE: CharArrayCharSequence.java
 
-public class CharArrayCharSequence {
+public define CharArrayCharSequence {
     protected final String string;
 
     public CharArrayCharSequence(char... chars) {

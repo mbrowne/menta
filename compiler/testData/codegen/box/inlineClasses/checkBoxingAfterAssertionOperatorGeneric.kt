@@ -3,19 +3,19 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithPrimitive<T: Int>(val a: T)
+value define WithPrimitive<T: Int>(val a: T)
 fun <T: Int> takeWithPrimitive(a: WithPrimitive<T>) {}
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithReference<T: Any>(val a: T)
+value define WithReference<T: Any>(val a: T)
 fun <T: Any> takeWithReference(a: WithReference<T>) {}
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithNullableReference<T>(val a: T)
+value define WithNullableReference<T>(val a: T)
 fun <T> takeWithNullableReference(a: WithNullableReference<T>) {}
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithNullableReference2<T: Any>(val a: T?)
+value define WithNullableReference2<T: Any>(val a: T?)
 fun <T: Any> takeWithNullableReference2(a: WithNullableReference2<T>) {}
 
 fun <T: Int> foo(a: WithPrimitive<T>?, b: WithPrimitive<T>) {

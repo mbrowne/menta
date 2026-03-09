@@ -1,8 +1,8 @@
 // FILE: 1.kt
-class O(val a: String) {
-    inner class I1(val b: String) {
-        inner class I2(val c: String) {
-            inner class I3(val d: String) {
+define O(val a: String) {
+    inner define I1(val b: String) {
+        inner define I2(val c: String) {
+            inner define I3(val d: String) {
                 inline fun foo(e: String) = "$a $b $c $d$e"
             }
         }

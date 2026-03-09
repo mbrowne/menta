@@ -1,5 +1,5 @@
-class M<out V>
-class X
+define M<out V>
+define X
 
 var p: M<X> = throw Exception()
 

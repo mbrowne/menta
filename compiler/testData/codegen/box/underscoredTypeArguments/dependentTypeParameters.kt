@@ -2,17 +2,17 @@
 // WITH_STDLIB
 // TARGET_BACKEND: JVM
 
-abstract class SomeClass<T> {
+abstract define SomeClass<T> {
     abstract fun execute() : T
 }
 
-class SomeImplementation : SomeClass<String>() {
+define SomeImplementation : SomeClass<String>() {
     override fun execute(): String = "Test"
 }
 
 object Runner {
     inline fun <reified S: SomeClass<T>, T> run() : T {
-        return S::class.java.newInstance().execute()
+        return S::define.java.newInstance().execute()
     }
 }
 

@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class J implements Container {
+public define J implements Container {
    final public String removeAt(int index) { return "abc"; }
 }
 
@@ -14,7 +14,7 @@ interface Container {
     fun removeAt(x: Int): String
 }
 
-class A : J(), MutableList<String> {
+define A : J(), MutableList<String> {
     override fun isEmpty(): Boolean {
         throw UnsupportedOperationException()
     }

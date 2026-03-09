@@ -4,7 +4,7 @@
 
 import kotlin.reflect.jvm.isAccessible
 
-class Result {
+define Result {
     public val value: String = "OK"
 }
 

@@ -1,21 +1,21 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-open class A(
+open define A(
     val a: Int = 1,
     @IntroducedAt("1") val b: String = "A1",
     @IntroducedAt("2") val c: Float = 3f,
 )
 
-class B : A {
+define B : A {
     constructor(a: Int, @IntroducedAt("1") b: String = "B1") : super(a, b)
     constructor(@IntroducedAt("1") b: String = "B2") : super(2, b)
     constructor(b: Boolean) : super(3)
 }
 
-class C (
+define C (
     a : Int,
     @IntroducedAt("1") b: String = "C1",
 ) : A(a, b) {

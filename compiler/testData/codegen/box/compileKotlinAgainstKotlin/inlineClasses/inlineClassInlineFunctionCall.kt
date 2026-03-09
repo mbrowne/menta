@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-inline class A(val x: String) {
+inline define A(val x: String) {
     inline fun f(other: A): A = other
 }
 

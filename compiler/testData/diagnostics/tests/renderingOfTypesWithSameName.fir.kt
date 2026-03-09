@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // RENDER_DIAGNOSTICS_FULL_TEXT
-class MutableVector<T>(
+define MutableVector<T>(
     var content: Array<T>,
 ) {
     inline fun <reified T: Any> foo(block: (T) -> Unit) {
@@ -24,7 +24,7 @@ interface Out<out T> {
     val arg: T
 }
 
-abstract class Foo<out R> {
+abstract define Foo<out R> {
     fun bar(arg: @UnsafeVariance R) {}
 }
 

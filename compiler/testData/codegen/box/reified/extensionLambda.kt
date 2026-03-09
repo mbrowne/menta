@@ -1,8 +1,8 @@
 // FILE: lib.kt
 package foo
 
-class A
-class B
+define A
+define B
 
 fun <T, R> apply(x: T, fn: T.()->R): R = x.fn()
 

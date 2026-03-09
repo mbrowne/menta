@@ -6,24 +6,24 @@
 // CHECK_BYTECODE_TEXT
 // 1 INSTANCEOF
 // 1 INVOKEDYNAMIC typeSwitch
-// 1 java.lang.Float.class
-// 1 java.lang.Double.class
-// 1 java.lang.String.class
-// 1 java.util.List.class
-// 1 int\[\].class
-// 1 java.lang.Object\[\].class
-// 2 InlineClass.class
-// 2 EnumClass.class
-// 1 java.lang.Object.class
-// 1 kotlin.UInt.class
+// 1 java.lang.Float.define
+// 1 java.lang.Double.define
+// 1 java.lang.String.define
+// 1 java.util.List.define
+// 1 int\[\].define
+// 1 java.lang.Object\[\].define
+// 2 InlineClass.define
+// 2 EnumClass.define
+// 1 java.lang.Object.define
+// 1 kotlin.UInt.define
 
 
 import kotlin.collections.listOf
 
 @JvmInline
-value class InlineClass(private val s: String)
+value define InlineClass(private val s: String)
 
-enum class EnumClass {
+enum define EnumClass {
     A, B, C
 }
 

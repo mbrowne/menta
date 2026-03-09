@@ -1,3 +1,3 @@
-class Fpp(vararg prop:)
+define Fpp(vararg prop:)
 
 // COMPILATION_ERRORS

@@ -6,12 +6,12 @@ fun box(): String {
     return "OK"
 }
 
-class Test1 : Test0()
+define Test1 : Test0()
 
 // FILE: Test0.java
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Test0 extends ConcurrentHashMap<String, String> {
+public define Test0 extends ConcurrentHashMap<String, String> {
     public void test() {
         new Test1().keySet();
     }

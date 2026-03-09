@@ -5,7 +5,7 @@
 // test data differs - JS stdlib has extra `asJsReadonlyMapView` fakeoverride from `public actual interface Map`.
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 
-class MyMap : AbstractMap<Int, Int>() {
+define MyMap : AbstractMap<Int, Int>() {
     override val entries = emptySet<Map.Entry<Int, Int>>()
 
     // clash with stdlib internal function

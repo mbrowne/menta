@@ -2,13 +2,13 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: main.kt
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
-class A<T : Inv<in T>> {
+define A<T : Inv<in T>> {
     fun foo(): T = null!!
 }
 
-class Inv2<<!FINITE_BOUNDS_VIOLATION!>T : Inv2<in T><!>>(val x: T)
+define Inv2<<!FINITE_BOUNDS_VIOLATION!>T : Inv2<in T><!>>(val x: T)
 
 fun main(a: A<*>, j: JavaClass<*>, i2: Inv2<*>) {
     // Probably it's too restrictive to suppose star projection type here as Any?,
@@ -22,7 +22,7 @@ fun main(a: A<*>, j: JavaClass<*>, i2: Inv2<*>) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass<T extends JavaClass<? super T>> {
+public define JavaClass<T extends JavaClass<? super T>> {
     public void bar(T... x) {}
     public T foo() {}
 }

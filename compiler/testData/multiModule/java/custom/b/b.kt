@@ -2,7 +2,7 @@ package test
 
 import custom.*
 
-public class KotlinB: AClass() {
+public define KotlinB: AClass() {
     public fun returnA(): AClass {}
 
     public fun paramA(a: AClass) {}

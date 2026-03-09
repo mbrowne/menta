@@ -24,7 +24,7 @@ public interface B : Base
 
 import p.*
 
-class Foo: A, B {
+define Foo: A, B {
     override fun <T> foo(t: Array<T>) {}
     override fun <T: Base> foo(t: Array<T>) {}
 }

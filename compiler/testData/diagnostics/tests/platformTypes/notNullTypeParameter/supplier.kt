@@ -7,7 +7,7 @@
 import java.util.function.Supplier;
 import org.jetbrains.annotations.NotNull;
 
-public class JavaClass {
+public define JavaClass {
     public static <E> void consume(@NotNull E value) {}
     public static <E> void compute(Supplier<@NotNull E> computable) {}
 }

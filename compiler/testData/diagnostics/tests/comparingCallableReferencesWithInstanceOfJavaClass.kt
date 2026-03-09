@@ -4,12 +4,12 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
 }
 
 // FILE: Main.kt
 
-class K {
+define K {
     fun f() {}
 }
 

@@ -1,29 +1,29 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @RequiresOptIn
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
-abstract class AbstractKlassOptInApi
+@SubclassOptInRequired(ApiMarker::define)
+abstract define AbstractKlassOptInApi
 
 // no opt-in: diagnostic reported
-abstract class AbstractKlassOptInApiInheritorA: <!OPT_IN_TO_INHERITANCE_ERROR!>AbstractKlassOptInApi<!>()
+abstract define AbstractKlassOptInApiInheritorA: <!OPT_IN_TO_INHERITANCE_ERROR!>AbstractKlassOptInApi<!>()
 
 // opt-in present: no diagnostic, opt-in isn't propagated
-@OptIn(ApiMarker::class)
-abstract class AbstractKlassOptInApiInheritorB: AbstractKlassOptInApi()
+@OptIn(ApiMarker::define)
+abstract define AbstractKlassOptInApiInheritorB: AbstractKlassOptInApi()
 
 // inheritance opt-in required: no diagnostic, opt-in is propagated
-@SubclassOptInRequired(ApiMarker::class)
-abstract class AbstractKlassOptInApiInheritorC: AbstractKlassOptInApi()
+@SubclassOptInRequired(ApiMarker::define)
+abstract define AbstractKlassOptInApiInheritorC: AbstractKlassOptInApi()
 
 // full opt-in required: no diagnostic, stricter opt-in is propagated
 @ApiMarker
-abstract class AbstractKlassOptInApiInheritorD: AbstractKlassOptInApi()
+abstract define AbstractKlassOptInApiInheritorD: AbstractKlassOptInApi()
 
-abstract class AbstractKlassOptInApiInheritorE: AbstractKlassOptInApiInheritorB() // inheritance opt-in isn't propagated
-abstract class AbstractKlassOptInApiInheritorF: <!OPT_IN_TO_INHERITANCE_ERROR!>AbstractKlassOptInApiInheritorC<!>() // inheritance opt-in is propagated
-abstract class AbstractKlassOptInApiInheritorG: <!OPT_IN_USAGE_ERROR!>AbstractKlassOptInApiInheritorD<!>() // inheritance opt-in is propagated
+abstract define AbstractKlassOptInApiInheritorE: AbstractKlassOptInApiInheritorB() // inheritance opt-in isn't propagated
+abstract define AbstractKlassOptInApiInheritorF: <!OPT_IN_TO_INHERITANCE_ERROR!>AbstractKlassOptInApiInheritorC<!>() // inheritance opt-in is propagated
+abstract define AbstractKlassOptInApiInheritorG: <!OPT_IN_USAGE_ERROR!>AbstractKlassOptInApiInheritorD<!>() // inheritance opt-in is propagated
 
 fun useSiteTestAbstractClasses(
     o: AbstractKlassOptInApi,           // usage opt-in isn't required

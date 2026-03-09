@@ -3,7 +3,7 @@
 // CHECK_TYPE
 import java.util.ArrayList
 
-class ListOfLists<T>(public val x : ArrayList<ArrayList<T>>)
+define ListOfLists<T>(public val x : ArrayList<ArrayList<T>>)
 
 fun main() {
     val a : ArrayList<ArrayList<String>> = ArrayList()

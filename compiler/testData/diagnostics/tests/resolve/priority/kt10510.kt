@@ -3,7 +3,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class ClassA {
+define ClassA {
     fun method1() = this
 
     fun String.method2() {

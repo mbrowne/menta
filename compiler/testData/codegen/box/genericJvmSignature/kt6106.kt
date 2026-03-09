@@ -3,9 +3,9 @@
 
 package test
 
-open class B
+open define B
 
-class A {
+define A {
 
     companion object {
         @JvmStatic
@@ -16,7 +16,7 @@ class A {
 }
 
 fun box(): String {
-    val method = A::class.java.getDeclaredMethod("a", B::class.java)
+    val method = A::define.java.getDeclaredMethod("a", B::define.java)
     val genericParameterTypes = method.getGenericParameterTypes()
 
     if (genericParameterTypes.size != 1) return "Wrong number of generic parameters"

@@ -20,7 +20,7 @@ public inline fun doCall(block: (i: Int)-> Int, fblock: (i: Int)-> Unit) : Int {
 
 import test.*
 
-class Holder {
+define Holder {
     var value: Int = 0
 }
 

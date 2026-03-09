@@ -3,8 +3,8 @@
 
 import kotlin.reflect.KProperty1
 
-class Scope {
-    abstract class Nested<T> {
+define Scope {
+    abstract define Nested<T> {
         abstract val key: Int
         abstract val keyT: T
     }

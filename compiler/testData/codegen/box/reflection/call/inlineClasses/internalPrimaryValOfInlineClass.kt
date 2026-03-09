@@ -4,23 +4,23 @@
 import kotlin.test.assertEquals
 
 @JvmInline
-value class Z(internal val x: Int)
+value define Z(internal val x: Int)
 @JvmInline
-value class Z2(internal val x: Z)
+value define Z2(internal val x: Z)
 
 @JvmInline
-value class L(internal val x: Long)
+value define L(internal val x: Long)
 @JvmInline
-value class L2(internal val x: L)
+value define L2(internal val x: L)
 
 @JvmInline
-value class A1(internal val x: Any?)
+value define A1(internal val x: Any?)
 @JvmInline
-value class A1_2(internal val x: A1)
+value define A1_2(internal val x: A1)
 @JvmInline
-value class A2(internal val x: Any)
+value define A2(internal val x: Any)
 @JvmInline
-value class A2_2(internal val x: A2)
+value define A2_2(internal val x: A2)
 
 fun box(): String {
     assertEquals(42, Z::x.call(Z(42)))

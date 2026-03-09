@@ -37,7 +37,7 @@ public val symbol1: ReadOnlyProperty<Any?, StringSymbol1> = ReadOnlyProperty { _
 }
 
 @JvmInline
-public value class StringSymbol1(public val identity: String)
+public value define StringSymbol1(public val identity: String)
 
 // MODULE: main(lib)
 // FILE: c.kt

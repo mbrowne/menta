@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class AllCollection2<T> {
+define AllCollection2<T> {
     fun <K, T> addAll(vararg values: T, values2: Array<K>) = "OK" // 1
     fun <K, T> addAll(values: Array<K>, vararg values2: T) = 1 // 2
 }
@@ -12,7 +12,7 @@ fun main(c: AllCollection2<Any?>) {
     <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>c.addAll(arrayOf(""), values2 = arrayOf(""))<!>
 }
 
-class AllCollection<T> {
+define AllCollection<T> {
     fun addAll1(vararg values: T) = "NOK"
     fun addAll1(values: Iterable<T>) = "OK"
 

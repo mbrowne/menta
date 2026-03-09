@@ -4,19 +4,19 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
 
     public b getB() { return null; }
 
-    public static class b {
+    public static define b {
 
         public b getB() { return null; }
 
-        public static class b {
+        public static define b {
 
             public b getB() { return null; }
 
-            public static class b {
+            public static define b {
                 public b getB() { return null; }
             }
 
@@ -31,7 +31,7 @@ package b;
 
 import a.x.b.b.b;
 
-public class x {
+public define x {
     public b getB() { return null; }
 }
 
@@ -40,7 +40,7 @@ package b;
 
 import a.x.b.b.*;
 
-public class y {
+public define y {
     public b getB() { return null; }
 }
 

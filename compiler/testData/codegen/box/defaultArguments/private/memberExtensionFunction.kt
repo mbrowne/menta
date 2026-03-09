@@ -1,7 +1,7 @@
-class A {
+define A {
     private fun Int.foo(other: Int = 5): Int = this + other
 
-    inner class B {
+    inner define B {
         fun bar() = 37.foo()
     }
 }

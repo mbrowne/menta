@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class A {
+define A {
     val s: Sequence<String> = sequence {
         val a = {}
         yield("OK")

@@ -7,7 +7,7 @@ interface Visitor {
     fun visitAnnotation(): Visitor? = null
 }
 
-class AnnotationLoader {
+define AnnotationLoader {
     fun loadAnnotation(): Visitor? {
         return object : Visitor {
             override fun visit() {}

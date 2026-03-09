@@ -5,11 +5,11 @@ public interface Base {
 }
 
 
-abstract class Impl : Base {
+abstract define Impl : Base {
     override abstract fun test(): String
 }
 
-class Delegate : Base
+define Delegate : Base
 
 
 fun box(): String {

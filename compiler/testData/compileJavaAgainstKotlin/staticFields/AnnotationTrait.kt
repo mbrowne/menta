@@ -1,12 +1,12 @@
 package test
 
-annotation class AString(val value: String)
-annotation class AChar(val value: Char)
-annotation class AInt(val value: Int)
-annotation class AByte(val value: Byte)
-annotation class ALong(val value: Long)
-annotation class ADouble(val value: Double)
-annotation class AFloat(val value: Float)
+annotation define AString(val value: String)
+annotation define AChar(val value: Char)
+annotation define AInt(val value: Int)
+annotation define AByte(val value: Byte)
+annotation define ALong(val value: Long)
+annotation define ADouble(val value: Double)
+annotation define AFloat(val value: Float)
 
 interface Test {
 

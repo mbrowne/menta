@@ -1,11 +1,11 @@
 // FILE: lib.kt
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): String = "OK"
 }
 
-class Delegate2 {
+define Delegate2 {
     var value: String = "NOT OK"
 
     operator fun getValue(t: Any?, p: KProperty<*>): String = value
@@ -15,7 +15,7 @@ class Delegate2 {
     }
 }
 
-class A {
+define A {
     companion object {
         val s: String by Delegate()
         var s2: String by Delegate2()

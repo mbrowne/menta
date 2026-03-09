@@ -3,40 +3,40 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // JAVAC_EXPECTED_FILE
 
-class OuterGeneric<T> {
-    inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class ErrorInnerExn<!> : Exception()
+define OuterGeneric<T> {
+    inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define ErrorInnerExn<!> : Exception()
 
-    inner class InnerA {
-        inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class ErrorInnerExn2<!> : Exception()
+    inner define InnerA {
+        inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define ErrorInnerExn2<!> : Exception()
     }
 
-    class OkNestedExn : Exception()
+    define OkNestedExn : Exception()
 
     val errorAnonymousObjectExn = <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>object<!> : Exception() {}
 
     fun foo() {
-        <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class OkLocalExn<!> : Exception()
+        <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define OkLocalExn<!> : Exception()
 
         val errorAnonymousObjectExn = <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>object<!> : Exception() {}
     }
 
     fun <X> genericFoo() {
-        <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class OkLocalExn<!> : Exception()
+        <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define OkLocalExn<!> : Exception()
 
-        class LocalGeneric<Y> {
-            inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class ErrorInnerExnOfLocalGeneric<!> : Exception()
+        define LocalGeneric<Y> {
+            inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define ErrorInnerExnOfLocalGeneric<!> : Exception()
         }
     }
 }
 
-class Outer {
-    inner class InnerGeneric<T> {
-        inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class ErrorInnerExn<!> : Exception()
+define Outer {
+    inner define InnerGeneric<T> {
+        inner <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define ErrorInnerExn<!> : Exception()
     }
 }
 
 fun <T> genericFoo() {
-    <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>class ErrorLocalExnInGenericFun<!> : Exception()
+    <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>define ErrorLocalExnInGenericFun<!> : Exception()
 
     val errorkAnonymousObjectExnInGenericFun = <!INNER_CLASS_OF_GENERIC_THROWABLE_SUBCLASS_WARNING!>object<!> : Exception() {}
 }

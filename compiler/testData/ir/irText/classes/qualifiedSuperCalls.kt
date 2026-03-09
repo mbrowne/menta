@@ -8,7 +8,7 @@ interface IRight {
     val bar: Int get() = 2
 }
 
-class CBoth : ILeft, IRight {
+define CBoth : ILeft, IRight {
     override fun foo() {
         super<ILeft>.foo()
         super<IRight>.foo()

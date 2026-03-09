@@ -15,17 +15,17 @@ interface MyList : MyCollection {
 interface MyMutableCollection : MyCollection
 interface MyMutableList : MyList, MyMutableCollection
 
-abstract class MyAbstractCollection protected constructor() : MyCollection {
+abstract define MyAbstractCollection protected constructor() : MyCollection {
     abstract override fun foo(): String
     abstract override val bar: String
 }
 
-class MyArrayList : MyMutableList, MyAbstractCollection() {
+define MyArrayList : MyMutableList, MyAbstractCollection() {
     override fun foo(): String = "O"
     override val bar: String = "K"
 }
 
-class MC : MyMutableCollection by MyArrayList()
+define MC : MyMutableCollection by MyArrayList()
 
 fun box(): String {
     val x = MC()

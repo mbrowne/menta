@@ -1,8 +1,8 @@
 //ALLOW_AST_ACCESS
 package test
 
-class MembersReferenceOuterTP<P> {
-    inner class Inner {
+define MembersReferenceOuterTP<P> {
+    inner define Inner {
         fun <Q : P> f() {}
         fun g(p: P): P = null!!
 

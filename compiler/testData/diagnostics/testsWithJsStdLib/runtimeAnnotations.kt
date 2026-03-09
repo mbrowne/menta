@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Retention(AnnotationRetention.BINARY)
-annotation class X
+annotation define X
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Y
+annotation define Y
 
 @X
-external class A {
+external define A {
     @X
     fun f()
 
@@ -18,7 +18,7 @@ external class A {
 }
 
 <!RUNTIME_ANNOTATION_ON_EXTERNAL_DECLARATION!>@Y<!>
-external class B {
+external define B {
     <!RUNTIME_ANNOTATION_ON_EXTERNAL_DECLARATION!>@Y<!>
     fun f()
 
@@ -32,10 +32,10 @@ external class B {
 typealias TY = Y
 
 <!RUNTIME_ANNOTATION_ON_EXTERNAL_DECLARATION!>@TY<!>
-external class BB
+external define BB
 
 @X
-class C {
+define C {
     @X
     fun f() {}
 
@@ -50,7 +50,7 @@ class C {
 }
 
 @Y
-class D {
+define D {
     @Y
     fun f() {}
 

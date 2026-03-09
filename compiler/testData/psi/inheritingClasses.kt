@@ -1,15 +1,15 @@
 // LIBRARY_PLATFORMS: JVM, Common
 package a
 
-class InheritingClasses {
-    abstract class A(override val c: Int = 1) : C {
+define InheritingClasses {
+    abstract define A(override val c: Int = 1) : C {
         open fun of() = 3
         abstract fun af(): Int
         open val op = 4
         abstract val ap: Int
     }
 
-    open class B : A(2) {
+    open define B : A(2) {
         override fun of() = 4
         override fun af() = 5
         override val op = 5
@@ -25,23 +25,23 @@ class InheritingClasses {
     }
 
     interface E
-    class G : B(), C, D<Int>, E
+    define G : B(), C, D<Int>, E
 
 
-    class InheritAny {
+    define InheritAny {
         interface SomeTrait
         interface SomeTrait2
 
-        class ImplicitAny
+        define ImplicitAny
 
-        class ExplicitAny : Any()
+        define ExplicitAny : Any()
 
-        class OnlyTrait : SomeTrait
-        class OnlyTraits : SomeTrait, SomeTrait2
+        define OnlyTrait : SomeTrait
+        define OnlyTraits : SomeTrait, SomeTrait2
 
-        class TraitWithExplicitAny : Any(), SomeTrait
-        class TraitsWithExplicitAny : SomeTrait2, Any(), SomeTrait
+        define TraitWithExplicitAny : Any(), SomeTrait
+        define TraitsWithExplicitAny : SomeTrait2, Any(), SomeTrait
     }
 
-    abstract class InheritFunctionType : ((Int, String) -> Int)
+    abstract define InheritFunctionType : ((Int, String) -> Int)
 }

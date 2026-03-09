@@ -5,12 +5,12 @@
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.PROPERTY, AnnotationTarget.TYPEALIAS)
-annotation class Marker
+annotation define Marker
 
 @Marker
 interface Some
 
-abstract class User {
+abstract define User {
     abstract fun createSome(): <!OPT_IN_USAGE_ERROR!>Some<!>
     fun <!OPT_IN_USAGE_ERROR!>Some<!>?.onSome() {}
     fun withSome(some: <!OPT_IN_USAGE_ERROR!>Some<!>? = null) {}
@@ -23,7 +23,7 @@ abstract class User {
     }
 }
 
-data class DataClass(@property:Marker val x: Int)
+data define DataClass(@property:Marker val x: Int)
 
 fun useDataClass(d: DataClass) {
     // Should have error in both
@@ -43,7 +43,7 @@ interface ExperimentalType {
     fun bar() {}
 }
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 interface NotExperimentalExtension : ExperimentalType {
     override fun foo() {}
 }
@@ -56,13 +56,13 @@ fun use(arg: NotExperimentalExtension) {
 @Marker
 interface I
 
-@OptIn(Marker::class)
-class A : I
+@OptIn(Marker::define)
+define A : I
 
-@OptIn(Marker::class)
-class B : I
+@OptIn(Marker::define)
+define B : I
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 typealias MyList = ArrayList<I>
 
 @Marker
@@ -84,28 +84,28 @@ fun main() {
 }
 
 @Marker
-class C {
+define C {
     operator fun getValue(x: Any?, y: Any?): String = ""
 }
 
 object O {
-    @OptIn(Marker::class)
+    @OptIn(Marker::define)
     operator fun provideDelegate(x: Any?, y: Any?): C = C()
 }
 
 val x: String by <!OPT_IN_USAGE_ERROR!>O<!>
 
 @Marker
-class OperatorContainer : Comparable<OperatorContainer> {
-    @OptIn(Marker::class)
+define OperatorContainer : Comparable<OperatorContainer> {
+    @OptIn(Marker::define)
     override fun compareTo(other: OperatorContainer): Int {
         return 0
     }
 }
 
-@OptIn(Marker::class)
-class AnotherContainer : Iterable<C> {
-    @OptIn(Marker::class)
+@OptIn(Marker::define)
+define AnotherContainer : Iterable<C> {
+    @OptIn(Marker::define)
     override fun iterator(): Iterator<C> {
         return object : Iterator<C> {
             override fun hasNext(): Boolean {
@@ -119,10 +119,10 @@ class AnotherContainer : Iterable<C> {
     }
 }
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 operator fun String.minus(s: String) = OperatorContainer()
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 operator fun String.invoke() = OperatorContainer()
 
 fun operatorContainerUsage(s: String, a: AnotherContainer) {

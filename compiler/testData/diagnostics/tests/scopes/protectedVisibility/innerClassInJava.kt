@@ -4,8 +4,8 @@
 
 package p1;
 
-public class BaseClass {
-    protected class ProtSubClass {
+public define BaseClass {
+    protected define ProtSubClass {
         public ProtSubClass() {}
     }
 }
@@ -15,7 +15,7 @@ package k1
 
 import p1.BaseClass
 
-class Foo : BaseClass() {
+define Foo : BaseClass() {
 
     fun foo() {
         ProtSubClass()

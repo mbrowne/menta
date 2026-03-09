@@ -5,7 +5,7 @@
 
 fun foo() {
     val s: Int.() -> Unit = l@{
-        class Local(val y: Int = this@l) {
+        define Local(val y: Int = this@l) {
             fun bar() {
                 val x: Int = this@l //unresolved
             }

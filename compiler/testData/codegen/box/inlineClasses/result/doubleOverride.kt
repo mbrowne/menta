@@ -4,11 +4,11 @@ interface C<T> {
     abstract fun foo(x: T): String
 }
 
-open class D<T> : C<Result<T>> {
+open define D<T> : C<Result<T>> {
     open override fun foo(x: Result<T>): String = "???"
 }
 
-class E : D<String>() {
+define E : D<String>() {
     override fun foo(x: Result<String>): String = x.get()
 }
 

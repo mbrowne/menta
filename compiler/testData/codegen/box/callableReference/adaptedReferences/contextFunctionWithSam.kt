@@ -1,6 +1,6 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
-class A
+define A
 
 fun interface SamInterface {
     context(i: A)

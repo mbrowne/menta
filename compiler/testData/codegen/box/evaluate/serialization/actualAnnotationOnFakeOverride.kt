@@ -3,17 +3,17 @@
 
 // MODULE: common
 // FILE: A.kt
-annotation class A(val x: String)
+annotation define A(val x: String)
 
-annotation class Something
+annotation define Something
 
 // FILE: B.kt
 expect interface B
 
 // FILE: D.kt
-class D {               @Something fun bar() {} }
+define D {               @Something fun bar() {} }
 
-class E : B
+define E : B
 
 // MODULE: platform()()(common)
 // FILE: B.kt

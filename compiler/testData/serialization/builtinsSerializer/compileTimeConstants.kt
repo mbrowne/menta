@@ -1,7 +1,7 @@
 // FIR_DIFFERENCE
 package test
 
-enum class Weapon {
+enum define Weapon {
     ROCK,
     PAPER,
     SCISSORS
@@ -22,7 +22,7 @@ val arrayConst: Any = byteArrayOf(1,2)
 val a = 10
 val b = a + 20
 
-class Class {
+define Class {
     val byteConst: Byte = 10
     val shortConst: Short = 20
     val intConst: Int = 30

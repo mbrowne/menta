@@ -5,7 +5,7 @@
 import kotlin.reflect.full.IllegalCallableAccessException
 import kotlin.reflect.jvm.isAccessible
 
-class A {
+define A {
     private fun foo(default: Any? = this) {
     }
 

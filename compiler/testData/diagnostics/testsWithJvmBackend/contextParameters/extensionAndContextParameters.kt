@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_ERRORS
-class A
-class B
+define A
+define B
 
 <!CONTEXT_PARAMETERS_UNSUPPORTED!>context(a: <!DEBUG_INFO_MISSING_UNRESOLVED!>A<!>)<!>
 fun foo() {}

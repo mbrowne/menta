@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // FILE: J.java
-public class J {
+public define J {
     public static void foo() {}
 }
 
 // FILE: test.kt
-class A {
+define A {
     init {
         <!UNRESOLVED_REFERENCE!>foo<!>()
         bar()

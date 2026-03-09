@@ -32,7 +32,7 @@ fun check(element: KAnnotatedElement) {
 
 @Repeatable
 @Target(CLASS, FUNCTION, PROPERTY, TYPE)
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 fun g(): @A("O") @A("K") @A("") Unit {}
 

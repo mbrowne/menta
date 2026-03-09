@@ -24,7 +24,7 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -35,7 +35,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     val fieldBackedProperty: Value = Value
     companion object {
         fun Nullable(): ScopeOwner? = null

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +NestedClassesInEnumEntryShouldBeInner
 
-enum class E {
+enum define E {
     ABC {
-        <!WRONG_MODIFIER_TARGET!>enum<!> class F {
+        <!WRONG_MODIFIER_TARGET!>enum<!> define F {
             DEF
         }
     }

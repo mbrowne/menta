@@ -2,7 +2,7 @@
 // LANGUAGE: +DontMakeExplicitJavaTypeArgumentsFlexible +PreciseSimplificationToFlexibleLowerConstraint
 
 // FILE: JavaWithGenericFun.java
-public class JavaWithGenericFun {
+public define JavaWithGenericFun {
     public static <T> JavaBox<?> foo(JavaBox<?> a) { return null; }
 
     public static <T> JavaBox<? super T> foo2(JavaBox<? super T> a) { return null; }
@@ -19,7 +19,7 @@ public class JavaWithGenericFun {
 }
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) { a = b; }
     public T a;
 }

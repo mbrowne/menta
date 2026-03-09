@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class My(val field: Int) {
+define My(val field: Int) {
     // Backing field, initializer
     val second: Int = 0
         get() = field

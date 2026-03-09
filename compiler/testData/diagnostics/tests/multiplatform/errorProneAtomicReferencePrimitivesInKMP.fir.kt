@@ -6,7 +6,7 @@
 // MODULE: common
 // FILE: C.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicReference
 
@@ -19,7 +19,7 @@ fun commonTestKotlin() {
     kk = k
 }
 
-expect class KotlinAtomicReference<T>(value: T) {
+expect define KotlinAtomicReference<T>(value: T) {
     fun compareAndSet(expectedValue: T, newValue: T): Boolean
 }
 
@@ -35,7 +35,7 @@ fun commonTypealiasedKotlin() {
 // MODULE: jvm()()(common)
 // FILE: K.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicReference
 

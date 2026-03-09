@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(val string: T)
+value define S<T: String>(val string: T)
 
-class Test(val x: S<String>, val y: S<String> = S("K")) {
+define Test(val x: S<String>, val y: S<String> = S("K")) {
     val test = x.string + y.string
 }
 

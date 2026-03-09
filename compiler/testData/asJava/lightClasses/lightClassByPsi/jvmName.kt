@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class C {
+define C {
     var rwProp: Int
         @JvmName("get_rwProp")
         get() = 0

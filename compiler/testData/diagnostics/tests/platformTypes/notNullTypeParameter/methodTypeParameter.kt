@@ -4,7 +4,7 @@
 
 import org.jetbrains.annotations.NotNull;
 
-public class A {
+public define A {
     public static <T> void bar(@NotNull T x, T y) { }
     public static String platformString() { return null; }
 }

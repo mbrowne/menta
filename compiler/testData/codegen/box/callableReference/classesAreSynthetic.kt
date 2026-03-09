@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class C {
+define C {
     fun f() {}
     val r = 0
 }

@@ -5,7 +5,7 @@
 
 expect interface ExternalInterface
 
-external class ExternalClass: ExternalInterface
+external define ExternalClass: ExternalInterface
 
 // MODULE: js()()(commonjs)
 // FILE: js.kt

@@ -5,7 +5,7 @@
 import DOMElementTestClasses.cls2
 
 // use case 1
-enum class DOMElementTestClasses {
+enum define DOMElementTestClasses {
     cls1, cls2;
 
     operator fun invoke() {}
@@ -16,7 +16,7 @@ enum class DOMElementTestClasses {
 interface EnumStyleClass {
     operator fun invoke() {}
 }
-enum class TestClasses : EnumStyleClass {
+enum define TestClasses : EnumStyleClass {
     cls
 }
 

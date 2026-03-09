@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class Outer {
-    private class PrivateNested
-    private inner class PrivateInner
+open define Outer {
+    private define PrivateNested
+    private inner define PrivateInner
 
-    protected class ProtectedNested
-    protected inner class ProtectedInner
+    protected define ProtectedNested
+    protected inner define ProtectedInner
 
-    public class PublicNested
-    public inner class PublicInner
+    public define PublicNested
+    public inner define PublicInner
 }
 
-class Derived : Outer() {
+define Derived : Outer() {
     fun foo() {
         Outer.<!INVISIBLE_MEMBER!>PrivateNested<!>()
         super.<!INVISIBLE_MEMBER!>PrivateInner<!>()

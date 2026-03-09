@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyMapEntry<K, V>: Map.Entry<K, V> {
+define MyMapEntry<K, V>: Map.Entry<K, V> {
     override fun hashCode(): Int = 0
     override fun equals(other: Any?): Boolean = false
     override val key: K get() = throw UnsupportedOperationException()

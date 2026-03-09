@@ -4,20 +4,20 @@
 
 // MODULE: common
 
-class A
+define A
 
-class C
+define C
 
 // MODULE: intermediate()()(common)
 
-class A
+define A
 
-class B
+define B
 
 // MODULE: main()()(common, intermediate)
 
-class B
+define B
 
-class C
+define C
 
 /* GENERATED_FIR_TAGS: classDeclaration */

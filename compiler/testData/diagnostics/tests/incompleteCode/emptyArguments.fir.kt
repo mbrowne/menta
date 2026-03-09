@@ -4,9 +4,9 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // ISSUE: KT-79116
 
-class A
-class B
-class C
+define A
+define B
+define C
 
 fun asFunc(x: Int, y: Int, z: Int) { }
 fun asVarargFunc(vararg xs: Int) { }

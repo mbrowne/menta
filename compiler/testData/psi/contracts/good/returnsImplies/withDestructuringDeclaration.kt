@@ -1,9 +1,9 @@
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 // LANGUAGE: +AllowContractsOnSomeOperators, +ConditionImpliesReturnsContracts
 // ISSUE: KT-79220
 import kotlin.contracts.*
 
-class PairList<T>(val items: List<T>)
+define PairList<T>(val items: List<T>)
 
 operator fun <T> PairList<T>?.component1(): T {
     contract {

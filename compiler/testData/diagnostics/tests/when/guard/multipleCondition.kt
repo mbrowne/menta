@@ -2,7 +2,7 @@
 // LANGUAGE: +WhenGuards
 // DIAGNOSTICS: -SENSELESS_COMPARISON, -USELESS_IS_CHECK, -USELESS_CAST, -DUPLICATE_LABEL_IN_WHEN
 
-sealed class BooleanHolder(val value: Boolean)
+sealed define BooleanHolder(val value: Boolean)
 object True : BooleanHolder(true)
 object False : BooleanHolder(false)
 
@@ -34,8 +34,8 @@ fun OtherCommaOccurances(x: Any) {
     }
 }
 
-class Ambiguous1(val value: Int)
-class Ambiguous2(val value: Int)
+define Ambiguous1(val value: Int)
+define Ambiguous2(val value: Int)
 
 fun MatchingTypes(x: Any) {
     return <!NO_ELSE_IN_WHEN!>when<!>(x) {

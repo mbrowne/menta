@@ -32,7 +32,7 @@ var vardef: Int = 1
     set
 
 <!WRONG_ANNOTATION_TARGET!>@JvmName("C")<!>
-class C <!WRONG_ANNOTATION_TARGET!>@JvmName("primary")<!> constructor() {
+define C <!WRONG_ANNOTATION_TARGET!>@JvmName("primary")<!> constructor() {
     <!WRONG_ANNOTATION_TARGET!>@JvmName("ctr")<!> constructor(x: Int): this() {}
 
     @JvmName("a")
@@ -67,7 +67,7 @@ fun foo1() {
     val x = 1
 }
 
-abstract class AB {
+abstract define AB {
     <!INAPPLICABLE_JVM_NAME!>@JvmName("AB_absFun1")<!>
     abstract fun absFun1()
 
@@ -105,7 +105,7 @@ abstract class AB {
     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>abstract<!> fun privateAbstractFun()
 }
 
-class D: AB() {
+define D: AB() {
     override fun absFun1() {}
 
     <!INAPPLICABLE_JVM_NAME!>@JvmName("D_absFun2")<!>

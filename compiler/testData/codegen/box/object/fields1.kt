@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class B(val a:Int, b:Int) {
+define B(val a:Int, b:Int) {
     constructor(pos:Int):this(1, pos) {}
     val pos = b + 1
 }

@@ -1,10 +1,10 @@
-class It {
+define It {
 }
 
-class C {
+define C {
 }
 
-class X {
+define X {
     var hasNext = true
     operator fun It.hasNext() = if (hasNext) {hasNext = false; true} else false
     operator fun It.next() = 5

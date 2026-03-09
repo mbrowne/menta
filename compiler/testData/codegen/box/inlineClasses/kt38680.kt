@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val s: String)
+value define IC(val s: String)
 
 interface IFoo<T> {
     fun foo(x: T, s: String = "K"): String
 }
 
-class FooImpl : IFoo<IC> {
+define FooImpl : IFoo<IC> {
     override fun foo(x: IC, s: String): String = x.s + s
 }
 

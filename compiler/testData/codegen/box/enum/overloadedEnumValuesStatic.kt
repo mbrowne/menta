@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-enum class E {
+enum define E {
     A;
 
     companion object {

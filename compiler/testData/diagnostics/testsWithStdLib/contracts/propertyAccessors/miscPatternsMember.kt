@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-class Host {
+define Host {
     val String?.pcTruthM: Boolean
         get() {
             contract { returns(true) implies (this@pcTruthM == null) }

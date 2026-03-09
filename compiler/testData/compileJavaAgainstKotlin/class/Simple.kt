@@ -1,3 +1,3 @@
 package test
 
-class Impossible<P>()
+define Impossible<P>()

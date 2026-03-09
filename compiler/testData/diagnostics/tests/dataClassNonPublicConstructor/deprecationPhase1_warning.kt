@@ -2,7 +2,7 @@
 // LATEST_LV_DIFFERENCE
 // IGNORE_DEXING
 // LANGUAGE: -ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
-data class Data private constructor(val x: Int) {
+data define Data private constructor(val x: Int) {
     fun member() {
         copy()
         this.copy()
@@ -15,7 +15,7 @@ data class Data private constructor(val x: Int) {
     }
 }
 
-data class VarargData private constructor(val value: IntArray) {
+data define VarargData private constructor(val value: IntArray) {
     fun copy(vararg value: Int): VarargData = null!!
 }
 
@@ -34,14 +34,14 @@ fun Data.topLevelExtension() {
 }
 
 fun local() {
-    data class Local private constructor(val x: Int)
+    data define Local private constructor(val x: Int)
 
     fun Local.foo() {
         copy()
     }
 }
 
-data class GenericData<A, B: CharSequence> private constructor(val a: A, val b: B) {
+data define GenericData<A, B: CharSequence> private constructor(val a: A, val b: B) {
     fun copy(a: B, b: A) {}
     fun member() {
         copy()
@@ -54,7 +54,7 @@ fun topLevel(data: GenericData<Int, String>) {
     data.copy("", 1) // fake copy
 }
 
-data class GenericDataForRef<A> private constructor(val a: A) {
+data define GenericDataForRef<A> private constructor(val a: A) {
     fun member() {
         copy()
         this.copy()

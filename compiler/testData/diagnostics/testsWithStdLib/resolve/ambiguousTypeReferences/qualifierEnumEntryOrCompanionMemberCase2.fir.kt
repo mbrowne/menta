@@ -5,7 +5,7 @@
 // FILE: some/Some.kt
 package some
 
-enum class Some {
+enum define Some {
     foo; // (1)
 
     companion object {}
@@ -14,7 +14,7 @@ enum class Some {
 // FILE: some2/Some.kt
 package some2
 
-enum class Some {
+enum define Some {
     foo; // (2)
 
     companion object {

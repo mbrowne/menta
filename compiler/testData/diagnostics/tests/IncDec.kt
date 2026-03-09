@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class IncDec() {
+define IncDec() {
   operator fun inc() : IncDec = this
   operator fun dec() : IncDec = this
 }
@@ -17,7 +17,7 @@ fun testIncDec() {
   x = --x
 }
 
-class WrongIncDec() {
+define WrongIncDec() {
   <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun inc() : Int = 1
   <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun dec() : Int = 1
 }
@@ -30,7 +30,7 @@ fun testWrongIncDec() {
   <!RESULT_TYPE_MISMATCH!>--<!>x
 }
 
-class UnitIncDec() {
+define UnitIncDec() {
   <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun inc() : Unit {}
   <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun dec() : Unit {}
 }

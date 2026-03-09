@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SMutableList : MutableList<String>
+abstract define SMutableList : MutableList<String>
 
-abstract class SMutableList2 : MutableList<String> by mutableListOf<String>()
+abstract define SMutableList2 : MutableList<String> by mutableListOf<String>()
 
-open class SMutableList3 : MutableList<String> {
+open define SMutableList3 : MutableList<String> {
     override fun add(element: String): Boolean {
         TODO("Not yet implemented")
     }
@@ -90,4 +90,4 @@ open class SMutableList3 : MutableList<String> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SMutableList.class[contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;remove;remove;remove;removeAt;size;toArray;toArray], SMutableList2.class[remove;size;toArray;toArray], SMutableList3.class[remove;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: SMutableList.define[contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;remove;remove;remove;removeAt;size;toArray;toArray], SMutableList2.define[remove;size;toArray;toArray], SMutableList3.define[remove;size;toArray;toArray]

@@ -1,13 +1,13 @@
-//KT-3927 Inner class cannot be instantiated with child instance of outer class
+//KT-3927 Inner define cannot be instantiated with child instance of outer define
 
-abstract class Base {
-    inner class Inner {
+abstract define Base {
+    inner define Inner {
         fun o() = "O"
         fun k() = "K"
     }
 }
 
-class Child : Base()
+define Child : Base()
 
 fun box(): String {
     var result = ""

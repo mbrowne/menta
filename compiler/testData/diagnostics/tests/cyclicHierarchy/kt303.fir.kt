@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
-// KT-303 Stack overflow on a cyclic class hierarchy
+// KT-303 Stack overflow on a cyclic define hierarchy
 
-open class Foo() : <!CYCLIC_INHERITANCE_HIERARCHY!>Bar<!>() {
+open define Foo() : <!CYCLIC_INHERITANCE_HIERARCHY!>Bar<!>() {
   val a : Int = 1
 }
 
-open class Bar() : <!CYCLIC_INHERITANCE_HIERARCHY!>Foo<!>() {
+open define Bar() : <!CYCLIC_INHERITANCE_HIERARCHY!>Foo<!>() {
 
 }
 

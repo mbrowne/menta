@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
 
     public static String test1() {
         return A.test1();
@@ -25,7 +25,7 @@ class Test {
 
 // FILE: simpleCompanionObject.kt
 
-class A {
+define A {
 
     companion object {
         val b: String = "OK"

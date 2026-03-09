@@ -1,11 +1,11 @@
 // LANGUAGE: +NameBasedDestructuring
 // WITH_STDLIB
 
-class GenericNonNullBox<T : Any>(val nbValue: T)
+define GenericNonNullBox<T : Any>(val nbValue: T)
 
-class GenericNumberBox<T : Number>(val nbNum: T)
+define GenericNumberBox<T : Number>(val nbNum: T)
 
-class GenericNullableBox<T>(val nbOpt: T?)
+define GenericNullableBox<T>(val nbOpt: T?)
 
 fun pickString(x: String) = "OK"
 fun pickString(x: Any) = "FAIL-Any"

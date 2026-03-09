@@ -2,10 +2,10 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Out<out T>(val o: T)
+define Out<out T>(val o: T)
 
 interface Base
-class Inv<K> : Base
+define Inv<K> : Base
 
 fun <S> select(x: S, y: S): S = x
 

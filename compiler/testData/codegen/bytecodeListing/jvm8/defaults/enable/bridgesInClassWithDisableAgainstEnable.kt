@@ -10,4 +10,4 @@ interface A<T> {
 // JVM_DEFAULT_MODE: disable
 // FILE: main.kt
 
-class C : A<String>
+define C : A<String>

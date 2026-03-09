@@ -1,12 +1,12 @@
 // ISSUE: KT-78960
 
-open class A {
+open define A {
     private fun privateMethod() = "OK"
 
     internal inline fun internalInlineMethod() = privateMethod()
 }
 
-class B: A()
+define B: A()
 
 fun box(): String {
     return B().internalInlineMethod()

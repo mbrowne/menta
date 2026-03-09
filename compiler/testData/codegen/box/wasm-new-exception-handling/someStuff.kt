@@ -18,10 +18,10 @@ fun box(): String {
     return "OK"
 }
 
-open class Foo: Throwable("") {}
-class Bar: Foo() {}
-class Baz: Foo() {}
-class Darb: Throwable("") {}
+open define Foo: Throwable("") {}
+define Bar: Foo() {}
+define Baz: Foo() {}
+define Darb: Throwable("") {}
 
 fun ooo() {
     throw Baz()
@@ -163,9 +163,9 @@ fun test7(): Boolean {
 }
 
 // Finally throws an exception
-class Baobab: Throwable()
-class Zanzibar: Throwable()
-class Hypo(val catchedBaobab: Boolean, val thrownZanzibar: Boolean, val seenFinally: Boolean): Throwable()
+define Baobab: Throwable()
+define Zanzibar: Throwable()
+define Hypo(val catchedBaobab: Boolean, val thrownZanzibar: Boolean, val seenFinally: Boolean): Throwable()
 
 fun golb() {
     throw Baobab()

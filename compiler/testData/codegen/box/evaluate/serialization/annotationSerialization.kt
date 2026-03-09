@@ -20,18 +20,18 @@
 /*15*/  AnnotationTarget.TYPEALIAS
 )
 @Retention(AnnotationRetention.BINARY)
-annotation class BinaryAnnotation(val str: String)
+annotation define BinaryAnnotation(val str: String)
 
 // 1. CLASS
 // 8. CONSTRUCTOR
 @BinaryAnnotation("Str" + "ing")
-class A @BinaryAnnotation("Str" + "ing") constructor(val i: Int) {
+define A @BinaryAnnotation("Str" + "ing") constructor(val i: Int) {
     @BinaryAnnotation("Str" + "ing") constructor() : this(0)
 }
 
 // 2. ANNOTATION_CLASS
 @BinaryAnnotation("Str" + "ing")
-annotation class Anno
+annotation define Anno
 
 // 3. TYPE_PARAMETER
 fun <@BinaryAnnotation("Str" + "ing") T, U> fooWithTypeParam(a: T, b: U) {}
@@ -41,7 +41,7 @@ fun <@BinaryAnnotation("Str" + "ing") T, U> fooWithTypeParam(a: T, b: U) {}
 val prop: Int = 0
 
 // 5. FIELD
-enum class SomeEnum {
+enum define SomeEnum {
     @BinaryAnnotation("Str" + "ing") A,
     B;
 }
@@ -65,7 +65,7 @@ fun foo(@BinaryAnnotation("Str" + "ing") a: Int) {  }
 val @receiver:BinaryAnnotation("Str" + "ing") String.a: Int
     get() = 0
 
-class WithConstructorArgumentAnnotation(
+define WithConstructorArgumentAnnotation(
     @BinaryAnnotation("Str" + "ing")
     val a: Int
 )

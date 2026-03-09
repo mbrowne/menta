@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     @Deprecated
     public int deprecatedField = 4;
     public int regularField = 5;

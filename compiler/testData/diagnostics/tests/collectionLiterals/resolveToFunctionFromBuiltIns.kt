@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE, -UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR, -UNSUPPORTED
 
-annotation class Anno(val a: Array<String> = [""], val b: IntArray = [])
+annotation define Anno(val a: Array<String> = [""], val b: IntArray = [])
 
 @Anno([], [])
 fun test() {}

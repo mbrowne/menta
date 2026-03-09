@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class X {
+define X {
     val foo = object {
-        <!NESTED_CLASS_NOT_ALLOWED!>class Foo<!>
+        <!NESTED_CLASS_NOT_ALLOWED!>define Foo<!>
     }
 
     fun test() {
         object {
-            <!NESTED_CLASS_NOT_ALLOWED!>class Foo<!>
+            <!NESTED_CLASS_NOT_ALLOWED!>define Foo<!>
         }
     }
 }

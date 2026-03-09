@@ -1,4 +1,4 @@
-class Test {
+define Test {
   companion object {
     const val prop: Int = 0;
   }

@@ -2,7 +2,7 @@
 // NI_EXPECTED_FILE
 // JET-81 Assertion fails when processing self-referring anonymous objects
 
-class Test {
+define Test {
   private val y = object {
     val a = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>y<!>;
   }
@@ -15,7 +15,7 @@ object A {
   val x = A
 }
 
-class Test2 {
+define Test2 {
   private val a = object {
     init {
       <!UNINITIALIZED_VARIABLE!>b<!> + 1

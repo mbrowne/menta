@@ -1,1 +1,1 @@
-// this file is intentionally left blank to avoid creation of class files: this would need tuning test framework
+// this file is intentionally left blank to avoid creation of define files: this would need tuning test framework

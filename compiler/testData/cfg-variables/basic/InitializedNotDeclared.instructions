@@ -1,5 +1,5 @@
-== anonymous_0 ==
-{
+== A ==
+class A {
     init {
         x = 1
     }
@@ -7,39 +7,16 @@
 }
 ---------------------
 L0:
-  1 <START>                                                       INIT: in: {} out: {}
-  2 mark({ init { x = 1 } val x: Int })
-    mark({ x = 1 })
-    jmp?(L2)
-    d({ x = 1 })
-L2 [after local declaration]:
-    r({ x = 1 }) -> <v0>
-    mark(init { x = 1 })
-    magic[UNRESOLVED_CALL](init { x = 1 }|<v0>, !<v1>) -> <v2>
-    v(val x: Int)                                                 INIT: in: {} out: {x=D}
+  1 <START>                                INIT: in: {} out: {}
+  2 mark({ x = 1 })
+    magic[IMPLICIT_RECEIVER](x) -> <v0>
+    r(1) -> <v1>                                                           USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+    w(x|<v0>, <v1>)                        INIT: in: {} out: {x=I}         USE: in: {} out: {x=ONLY_WRITTEN_NEVER_READ}
+  1 v(val x: Int)                          INIT: in: {x=I} out: {x=ID}
 L1:
-  1 <END>                                                         INIT: in: {} out: {}
+    <END>                                  INIT: in: {x=ID} out: {x=ID}
 error:
-    <ERROR>
+    <ERROR>                                INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                   USE: in: {} out: {}
-=====================
-== anonymous_1 ==
-{
-        x = 1
-    }
----------------------
-L3:
-  3 <START>                                  INIT: in: {} out: {}
-  4 mark(x = 1)
-    magic[UNRESOLVED_CALL](x) -> <v0>
-    magic[VALUE_CONSUMER](x|<v0>) -> <v1>
-    r(1) -> <v2>
-    w(x|<v2>)
-L4:
-  3 <END>
-error:
-    <ERROR>
-sink:
-    <SINK>                                                           USE: in: {} out: {}
+    <SINK>                                 INIT: in: {x=I?} out: {x=I?}    USE: in: {} out: {}
 =====================

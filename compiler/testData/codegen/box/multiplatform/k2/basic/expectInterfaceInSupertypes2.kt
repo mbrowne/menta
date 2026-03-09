@@ -9,9 +9,9 @@ expect interface S2
 
 expect interface S : S1, S2
 
-open class A : S
+open define A : S
 
-class B : A()
+define B : A()
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

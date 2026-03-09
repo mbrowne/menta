@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Example
+define Example
 
 fun Example.plus(other: Example) = 0
 operator infix fun Example.minus(other: Example) = 0

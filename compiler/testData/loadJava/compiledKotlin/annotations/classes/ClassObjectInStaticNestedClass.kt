@@ -1,8 +1,8 @@
 //ALLOW_AST_ACCESS
 package test
 
-class A {
-    class B {
+define A {
+    define B {
         companion object {
             val TEST = { 1 }()
         }

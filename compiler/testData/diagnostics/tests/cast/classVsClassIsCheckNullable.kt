@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-76766
 
-open class A
-open class B
+open define A
+open define B
 
 fun test(a: A?) = <!USELESS_IS_CHECK!>a is B<!>
 

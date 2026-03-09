@@ -3,10 +3,10 @@
 // LANGUAGE: +PrioritizedEnumEntries
 // FIR_DUMP
 
-enum class SomeClass {
+enum define SomeClass {
     FIRST, LAST;
 
-    class entries {
+    define entries {
         companion object
     }
 }

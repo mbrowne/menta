@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Anno(val equal: Boolean)
+annotation define Anno(val equal: Boolean)
 
-class A
-class B
+define A
+define B
 
-@Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>A::class == B::class<!>)
-class C
+@Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>A::define == B::define<!>)
+define C
 
-const val equal = <!CONST_VAL_WITH_NON_CONST_INITIALIZER!>A::class == B::class<!>
+const val equal = <!CONST_VAL_WITH_NON_CONST_INITIALIZER!>A::define == B::define<!>
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, const, equalityExpression,
 primaryConstructor, propertyDeclaration */

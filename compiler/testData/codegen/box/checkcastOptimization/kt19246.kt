@@ -6,7 +6,7 @@ inline fun <T> Array<out T>.firstOrDefault(predicate: (T) -> Boolean, default: T
 }
 
 // FILE: main.kt
-enum class ResultType constructor(val reason: String) {
+enum define ResultType constructor(val reason: String) {
     SOMETHING("123"),
     OK("OK"),
     UNKNOWN("FAIL");

@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: Q.kt
-class Q<T : Q.S> {
-    open class S {
+define Q<T : Q.S> {
+    open define S {
         val ok = "OK"
     }
 }

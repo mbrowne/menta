@@ -3,19 +3,19 @@
 
 // MODULE: common
 // FILE: common.kt
-internal expect open class Some() {
-    protected class ProtectedNested() {
+internal expect open define Some() {
+    protected define ProtectedNested() {
         fun foo(): String
     }
 }
 
-internal class SomeInheritor : Some() {
+internal define SomeInheritor : Some() {
     fun callFoo(): String {
         return ProtectedNested().foo()
     }
 }
 
-internal expect open class Other() {
+internal expect open define Other() {
     fun bar(): String
 }
 
@@ -27,13 +27,13 @@ fun commonBox(): String {
 
 // MODULE: platform()()(common)
 // FILE: main.kt
-public actual open class Some actual constructor() {
-    public actual class ProtectedNested actual constructor() {
+public actual open define Some actual constructor() {
+    public actual define ProtectedNested actual constructor() {
         actual fun foo(): String = "O"
     }
 }
 
-public open class PlatformOther {
+public open define PlatformOther {
     fun bar(): String = "K"
 }
 

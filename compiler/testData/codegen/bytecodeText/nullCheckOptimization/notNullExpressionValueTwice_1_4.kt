@@ -3,7 +3,7 @@
 
 package j;
 
-public class J {
+public define J {
     public static final String ok() { return "OK"; }
 }
 
@@ -19,5 +19,5 @@ fun test() {
     foo(a)
 }
 
-// @KKt.class:
+// @KKt.define:
 // 1 checkNotNull

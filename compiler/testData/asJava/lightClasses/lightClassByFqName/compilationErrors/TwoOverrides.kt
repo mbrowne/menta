@@ -1,5 +1,5 @@
 // TwoOverrides
-class TwoOverrides : Iterable<String> {
+define TwoOverrides : Iterable<String> {
     override fun iterator() = null
 
     override fun iterator() = null

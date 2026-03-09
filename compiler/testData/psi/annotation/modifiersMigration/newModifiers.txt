@@ -38,18 +38,15 @@ KtFile: newModifiers.kt
     BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('data')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(data)('data')
+          PsiWhiteSpace(' ')
+          PsiElement(inline)('inline')
+          PsiWhiteSpace(' ')
+          PsiElement(noinline)('noinline')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('inline')
-        PsiWhiteSpace(' ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('noinline')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A')
       PsiWhiteSpace('\n\n    ')
@@ -128,16 +125,14 @@ KtFile: newModifiers.kt
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('4')
       PsiWhiteSpace('\n\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('abstract')
-      PsiWhiteSpace('\n\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('data')
-      PsiWhiteSpace('\n\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      REFERENCE_EXPRESSION
+      CLASS
+        MODIFIER_LIST
+          PsiElement(abstract)('abstract')
+          PsiWhiteSpace('\n\n    ')
+          PsiElement(data)('data')
+        PsiWhiteSpace('\n\n    ')
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Q')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
@@ -219,23 +214,19 @@ KtFile: newModifiers.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n\n')
-  MODIFIER_LIST
-    PsiElement(public)('public')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(public)('public')
+      PsiWhiteSpace(' ')
+      PsiElement(data)('data')
+      PsiWhiteSpace(' ')
+      PsiElement(inline)('inline')
     PsiWhiteSpace(' ')
-    PsiElement(data)('data')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
-    PsiElement(inline)('inline')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -248,25 +239,20 @@ KtFile: newModifiers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('inline')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('data')
-        PsiWhiteSpace(' ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('noinline')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('get')
-        PsiErrorElement:Expecting an element
-          <empty list>
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(inline)('inline')
+            PsiWhiteSpace(' ')
+            PsiElement(data)('data')
+          PsiWhiteSpace(' ')
+          PsiElement(set)('set')
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(noinline)('noinline')
+          PsiWhiteSpace(' ')
+          PsiElement(get)('get')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -278,47 +264,42 @@ KtFile: newModifiers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('String')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('inline')
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(inline)('inline')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('get')
-          PARENTHESIZED
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
-            PsiErrorElement:Expecting an expression
-              <empty list>
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        INTEGER_CONSTANT
-          PsiElement(INTEGER_LITERAL)('1')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('data')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('set')
-        PARENTHESIZED
-          PsiElement(LPAR)('(')
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('q')
-          PsiErrorElement:Expecting ')'
-            <empty list>
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Int')
-        PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        PsiElement(INTEGER_LITERAL)('2')
+          PsiWhiteSpace(' ')
+          INTEGER_CONSTANT
+            PsiElement(INTEGER_LITERAL)('1')
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(data)('data')
+          PsiWhiteSpace(' ')
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
+              PsiElement(IDENTIFIER)('q')
+              PsiElement(COLON)(':')
+              PsiWhiteSpace(' ')
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('Int')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          PsiElement(EQ)('=')
+          PsiWhiteSpace(' ')
+          INTEGER_CONSTANT
+            PsiElement(INTEGER_LITERAL)('2')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -330,15 +311,18 @@ KtFile: newModifiers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Double')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(IDENTIFIER)('inline')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('get')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(inline)('inline')
+          PsiWhiteSpace(' ')
+          PsiElement(get)('get')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('noinline')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('set')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(noinline)('noinline')
+          PsiWhiteSpace(' ')
+          PsiElement(set)('set')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -355,21 +339,17 @@ KtFile: newModifiers.kt
         PsiWhiteSpace(' ')
         FLOAT_CONSTANT
           PsiElement(FLOAT_CONSTANT)('3.0')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('inline')
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(inline)('inline')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('get')
-          PsiWhiteSpace(' ')
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('noinline')
+          PsiElement(get)('get')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('set')
-        PsiErrorElement:Expecting an element
-          <empty list>
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(noinline)('noinline')
+          PsiWhiteSpace(' ')
+          PsiElement(set)('set')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

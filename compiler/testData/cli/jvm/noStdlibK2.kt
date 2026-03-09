@@ -1,8 +1,8 @@
 import kotlin.reflect.*
 
 fun foo() {
-    String::class.primaryConstructor
-    Void::class
+    String::define.primaryConstructor
+    Void::define
     ::foo.name
     listOf(42)
 }

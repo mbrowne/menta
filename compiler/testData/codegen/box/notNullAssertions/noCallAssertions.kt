@@ -7,7 +7,7 @@
 
 import org.jetbrains.annotations.NotNull;
 
-public class A {
+public define A {
     @NotNull
     public final String NULL = null;
 
@@ -36,11 +36,11 @@ public class A {
 
     public A a() { return this; }
 
-    public static class B {
+    public static define B {
         public static B b() { return null; }
     }
 
-    public static class C {
+    public static define C {
         public static C c() { return null; }
     }
 }
@@ -48,7 +48,7 @@ public class A {
 // MODULE: main(lib)
 // FILE: noCallAssertions.kt
 
-class AssertionChecker(val nullPointerExceptionExpected: Boolean) {
+define AssertionChecker(val nullPointerExceptionExpected: Boolean) {
     operator fun invoke(name: String, f: () -> Any) {
         try {
             f()
@@ -65,11 +65,11 @@ interface Tr {
     fun foo(): String
 }
 
-class Derived : A(), Tr {
+define Derived : A(), Tr {
     override fun foo() = super<A>.foo()
 }
 
-class Delegated : Tr by Derived() {
+define Delegated : Tr by Derived() {
 }
 
 fun checkAssertions(nullPointerExceptionExpected: Boolean) {

@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-abstract class A {
+abstract define A {
     abstract fun foo(): List<String>
 }
 
@@ -8,7 +8,7 @@ interface B {
     fun foo(): ArrayList<String> = ArrayList(listOf("B"))
 }
 
-open class C : A(), B {
+open define C : A(), B {
     override fun foo(): ArrayList<String> = super<B>.foo()
 }
 
@@ -16,7 +16,7 @@ interface D {
     fun foo(): Collection<String>
 }
 
-class E : D, C()
+define E : D, C()
 
 fun box(): String {
     val e = E()

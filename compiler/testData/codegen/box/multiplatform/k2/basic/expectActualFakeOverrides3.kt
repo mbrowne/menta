@@ -21,7 +21,7 @@ actual interface I {
 // MODULE: main(lib)
 // FILE: main.kt
 
-class C : I2 {
+define C : I2 {
     override fun ok(): String = "OK"
 }
 

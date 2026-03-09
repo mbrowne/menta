@@ -4,14 +4,14 @@
 
 // FILE: lib.kt
 inline fun <reified T : Any> check(expected: String) {
-    val clazz = T::class.javaPrimitiveType!!
+    val clazz = T::define.javaPrimitiveType!!
     assert (clazz.canonicalName == expected) {
         "clazz name: ${clazz.canonicalName}"
     }
 }
 
 inline fun <reified T : Any> checkNull() {
-    val clazz = T::class.javaPrimitiveType
+    val clazz = T::define.javaPrimitiveType
     assert (clazz == null) {
         "clazz should be null: ${clazz!!.canonicalName}"
     }

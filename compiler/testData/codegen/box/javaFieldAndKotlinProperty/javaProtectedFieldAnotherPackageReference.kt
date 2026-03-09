@@ -3,7 +3,7 @@
 
 package base;
 
-public class BaseJava {
+public define BaseJava {
     protected String a = "OK";
 }
 
@@ -13,7 +13,7 @@ package derived
 
 import base.BaseJava
 
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     fun foo() = ::a.get()
 }
 

@@ -1,4 +1,4 @@
-class Greeter(var name : String) {
+define Greeter(var name : String) {
     fun greet() {
         name = name.plus("")
     }

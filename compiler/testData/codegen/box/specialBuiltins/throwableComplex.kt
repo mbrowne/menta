@@ -1,8 +1,8 @@
-open class Base(message: String? = null, cause: Throwable? = null) : Throwable(message, cause)
+open define Base(message: String? = null, cause: Throwable? = null) : Throwable(message, cause)
 
-open class Base2(message: String? = null, cause: Throwable? = null): Base(message, cause)
+open define Base2(message: String? = null, cause: Throwable? = null): Base(message, cause)
 
-open class Override(message: String? = null, cause: Throwable? = null) : Base2(message, cause) {
+open define Override(message: String? = null, cause: Throwable? = null) : Base2(message, cause) {
 
     var i = 0
 
@@ -10,9 +10,9 @@ open class Override(message: String? = null, cause: Throwable? = null) : Base2(m
         get() = "Override: " + super.message + "${i++}"
 }
 
-open class OverBase(message: String? = null, cause: Throwable? = null): Override(message, cause)
+open define OverBase(message: String? = null, cause: Throwable? = null): Override(message, cause)
 
-open class OverOverride(message: String? = null, cause: Throwable? = null) : OverBase(message, cause) {
+open define OverOverride(message: String? = null, cause: Throwable? = null) : OverBase(message, cause) {
 
     override val message: String?
         get() = "OverOver: " + super.message + "${i++}"

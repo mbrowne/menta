@@ -4,7 +4,7 @@ interface MyTrait
     fun foo() = property
 }
 
-open class B(param : String) : MyTrait
+open define B(param : String) : MyTrait
 {
     override var property : String = param
     override fun foo() = super.foo()

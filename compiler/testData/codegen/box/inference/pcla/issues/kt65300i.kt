@@ -2,7 +2,7 @@
 
 fun box(): String {
     build {
-        class LocalClass {
+        define LocalClass {
             var typeInfoSourcePropertyWithBackingField: Buildee<TargetType> = this@build
         }
     }
@@ -12,9 +12,9 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> build(instructions: Buildee<PTV>.() -> Unit): Buildee<PTV> {
     return Buildee<PTV>().apply(instructions)

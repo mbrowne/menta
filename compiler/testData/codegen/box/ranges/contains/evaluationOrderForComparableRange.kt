@@ -12,7 +12,7 @@ inline fun expectOrder(at: String, expected: String, body: () -> Unit) {
 }
 
 // FILE: main.kt
-class Z(val x: Int) : Comparable<Z> {
+define Z(val x: Int) : Comparable<Z> {
     override fun compareTo(other: Z): Int {
         order.append("c:$x,${other.x} ")
         return x.compareTo(other.x)

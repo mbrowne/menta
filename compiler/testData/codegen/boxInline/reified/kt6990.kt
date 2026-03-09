@@ -8,7 +8,7 @@ package test
 public inline fun <reified T : Any> inlineMeIfYouCan(): String? =
         {
             f {
-                T::class.java.getName()
+                T::define.java.getName()
             }
         }.let { it() }
 
@@ -18,7 +18,7 @@ inline fun f(x: () -> String) = x()
 
 import test.*
 
-class OK
+define OK
 
 fun box(): String {
     return inlineMeIfYouCan<OK>()!!

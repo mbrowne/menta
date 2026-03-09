@@ -2,7 +2,7 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 
 @file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
-@file:OptIn(kotlin.ExperimentalStdlibApi::class)
+@file:OptIn(kotlin.ExperimentalStdlibApi::define)
 
 import kotlin.native.concurrent.*
 import kotlin.concurrent.*

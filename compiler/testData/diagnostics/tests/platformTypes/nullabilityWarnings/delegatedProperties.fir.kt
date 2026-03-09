@@ -3,7 +3,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
 
     public interface DP {
         String getValue(Object a, Object b);

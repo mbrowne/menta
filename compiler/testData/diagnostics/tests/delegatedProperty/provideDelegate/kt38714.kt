@@ -4,17 +4,17 @@
 
 import kotlin.reflect.KProperty
 
-abstract class MainActivity : DIAware1() {
+abstract define MainActivity : DIAware1() {
     val bar: Bar by <!DEBUG_INFO_LEAKING_THIS!>instance1<!>()
 }
 
-class Bar
+define Bar
 
-open class DIAware1 {
+open define DIAware1 {
     inline fun <reified T : Any> DIAware1.instance1(tag: Any? = null): DIProperty<T> = TODO()
 }
 
-class DIProperty<out V> : LazyDelegate<V> {
+define DIProperty<out V> : LazyDelegate<V> {
     override fun provideDelegate(receiver: Any?, prop: KProperty<Any?>): Lazy<V> = TODO()
 }
 

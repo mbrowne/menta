@@ -13,7 +13,7 @@ fun Int.regularFun(): String = ""
 fun Long.regularFun(): String = ""
 fun Number.regularFun(): String = ""
 
-class FunctionContainer {
+define FunctionContainer {
     fun regularFun(): String = ""
     fun regularFun(p1: Number): String = ""
     fun regularFun(p1: Int): String = ""
@@ -78,7 +78,7 @@ inline val inlineVal: String get() = ""
 inline var inlineVar: String get() = ""
     set(_) = Unit
 
-class PropertyContainer {
+define PropertyContainer {
     val regularVal: String get() = ""
     val Int.regularVal: String get() = ""
     val Long.regularVal: String get() = ""

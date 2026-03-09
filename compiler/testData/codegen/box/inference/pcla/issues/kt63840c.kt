@@ -16,10 +16,10 @@ fun box(): String {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun replaceTypeVariable(value: TV): TV { val temp = storage; storage = value; return temp }
     private var storage: TV = TargetType() as TV
 }

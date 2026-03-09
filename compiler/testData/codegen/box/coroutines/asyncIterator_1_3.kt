@@ -19,7 +19,7 @@ interface AsyncIterator<out T> {
     operator suspend fun next(): T
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> asyncGenerate(block: suspend AsyncGenerator<T>.() -> Unit): AsyncSequence<T> = object : AsyncSequence<T> {
     override fun iterator(): AsyncIterator<T> {
         val iterator = AsyncGeneratorIterator<T>()
@@ -28,7 +28,7 @@ fun <T> asyncGenerate(block: suspend AsyncGenerator<T>.() -> Unit): AsyncSequenc
     }
 }
 
-class AsyncGeneratorIterator<T>: AsyncIterator<T>, AsyncGenerator<T>, Continuation<Unit> {
+define AsyncGeneratorIterator<T>: AsyncIterator<T>, AsyncGenerator<T>, Continuation<Unit> {
     var computedNext = false
     var nextValue: T? = null
     var nextStep: Continuation<Unit>? = null

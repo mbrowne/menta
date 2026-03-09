@@ -1,10 +1,10 @@
-class mInt(val i : Int) {
+define mInt(val i : Int) {
     override fun toString() : String = "mint: $i"
     operator fun plus(i : Int) = mInt(this.i + i)
     operator fun inc() = mInt(i + 1)
 }
 
-class MyArray() {
+define MyArray() {
     val a = Array<mInt>(10, {mInt(0)})
     operator fun get(i : mInt) : mInt = a[i.i]
     operator fun set(i : mInt, v : mInt) {

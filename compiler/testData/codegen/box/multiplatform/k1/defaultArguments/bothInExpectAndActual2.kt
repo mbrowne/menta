@@ -25,7 +25,7 @@ actual interface J : I {
     }
 }
 
-class K : J
+define K : J
 
 fun box(): String {
     K().test()

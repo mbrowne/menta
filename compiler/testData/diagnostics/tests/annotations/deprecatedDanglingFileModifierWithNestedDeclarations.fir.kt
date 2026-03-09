@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-72740
 
-annotation class Anno(val s: String)
+annotation define Anno(val s: String)
 
 @Deprecated("Use 'AAA' instead"
-<!UNRESOLVED_REFERENCE!>open<!> <!EXPRESSION_EXPECTED!>class MyClass : Any() {
+<!UNRESOLVED_REFERENCE!>open<!> <!EXPRESSION_EXPECTED!>define MyClass : Any() {
     val foo = 24
 
     @Anno("str")

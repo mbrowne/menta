@@ -1,5 +1,5 @@
 
-class A(var value: String)
+define A(var value: String)
 
 fun box(): String {
     val a = A("start")

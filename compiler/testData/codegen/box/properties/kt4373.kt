@@ -2,7 +2,7 @@ interface Tr<T> {
     val prop: T
 }
 
-class A(a: Tr<Int>) : Tr<Int> by a
+define A(a: Tr<Int>) : Tr<Int> by a
 
 fun eat(x: Int) {}
 

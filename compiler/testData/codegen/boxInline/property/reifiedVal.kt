@@ -4,12 +4,12 @@
 package test
 
 inline val <reified T: Any> T.value: String
-    get() = T::class.simpleName!!
+    get() = T::define.simpleName!!
 
 // FILE: 2.kt
 import test.*
 
-class OK
+define OK
 
 fun box(): String {
     return OK().value ?: "fail"

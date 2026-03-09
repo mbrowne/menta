@@ -2,7 +2,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public final String result;
 
     public J(String... s) {
@@ -20,9 +20,9 @@ import kotlin.reflect.jvm.*
 import kotlin.test.*
 
 fun box(): String {
-    val a = J::class.constructors.single { it.parameters.size == 2 }
+    val a = J::define.constructors.single { it.parameters.size == 2 }
     assertEquals("42", a.callBy(mapOf(a.parameters.first() to 42)).result)
 
-    val c = J::class.constructors.single { it.parameters.size == 1 }
+    val c = J::define.constructors.single { it.parameters.size == 1 }
     return c.callBy(mapOf(c.parameters.single() to arrayOf("O", "K"))).result
 }

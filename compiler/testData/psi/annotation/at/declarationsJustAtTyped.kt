@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
-private @ @[Ann1(1)] @Ann3("2") class A(
+private @ @[Ann1(1)] @Ann3("2") define A(
         @ private val x: Int,
         @ private var y: Int,
         @ open z: Int
 ) {
     @ fun foo() {
-        @ class LocalClass
+        @ define LocalClass
 
         print(1)
 

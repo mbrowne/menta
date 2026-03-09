@@ -1,8 +1,8 @@
 // ISSUE: KT-67517
 // LANGUAGE: +AvoidWrongOptimizationOfTypeOperatorsOnValueClasses
 
-inline class X(val x: String)
-inline class Y(val x: Int)
+inline define X(val x: String)
+inline define Y(val x: Int)
 
 fun box(): String = when {
     (X("") as Any) is Comparable<*> -> "1"

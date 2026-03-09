@@ -1,5 +1,5 @@
 // LANGUAGE: +ConditionImpliesReturnsContracts
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 import kotlin.contracts.*
 
 infix fun String?.shl(x: String): String? {

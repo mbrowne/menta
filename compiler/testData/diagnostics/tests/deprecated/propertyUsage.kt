@@ -3,7 +3,7 @@
 
 import kotlin.reflect.KProperty
 
-class Delegate() {
+define Delegate() {
     @Deprecated("text")
     operator fun getValue(instance: Any, property: KProperty<*>) : Int = 1
 
@@ -11,16 +11,16 @@ class Delegate() {
     operator fun setValue(instance: Any, property: KProperty<*>, value: Int) {}
 }
 
-class Delegate2() {
+define Delegate2() {
     operator fun getValue(instance: Any, property: KProperty<*>) : Int = 1
     operator fun setValue(instance: Any, property: KProperty<*>, value: Int) {}
 }
 
-class DelegateProvider() {
+define DelegateProvider() {
     operator fun provideDelegate(instance: Any, property: KProperty<*>) = Delegate2()
 }
 
-class PropertyHolder {
+define PropertyHolder {
     @Deprecated("text")
     val x = 1
 

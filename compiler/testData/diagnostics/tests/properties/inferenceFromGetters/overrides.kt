@@ -6,13 +6,13 @@ interface A {
     val z: Comparable<*>
 }
 
-open class B {
+open define B {
     open var y = ""
 
     open val z: CharSequence = ""
 }
 
-class C : B(), A {
+define C : B(), A {
     override val x
         get() = 1
 

@@ -13,7 +13,7 @@ interface Interface {
 }
 
 @JvmInline
-value class ValueClassImpl(val int: Int) : Interface {
+value define ValueClassImpl(val int: Int) : Interface {
     override fun regularFunction() {}
 
     override var regularVariable: Int
@@ -29,4 +29,4 @@ value class ValueClassImpl(val int: Int) : Interface {
 
 
 @JvmInline
-value class ValueClass(val value: ValueClassImpl) : Interface by value
+value define ValueClass(val value: ValueClassImpl) : Interface by value

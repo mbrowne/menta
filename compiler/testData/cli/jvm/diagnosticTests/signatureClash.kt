@@ -1,8 +1,8 @@
-open class B {
+open define B {
     val x = 1
 }
 
-class A : B() {
+define A : B() {
     fun getX() = 1
 
     fun getA(): Int = 1
@@ -16,16 +16,16 @@ interface Tr {
     fun getTr() = 1
 }
 
-class SubTr : Tr {
+define SubTr : Tr {
     val tr = 1
 }
 
 // Clashing synthetic accessors are only reported in compiler, IDE doesn't see them
-class C {
+define C {
     private fun f() {}
     fun `access$f`(c: C) {}
 
-    class Nested {
+    define Nested {
 
         fun test() {
             C().f()

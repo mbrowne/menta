@@ -14,7 +14,7 @@ fun b(s: String) {
 }
 
 //from library
-data class Pair<A, B>(val a: A, val b: B)
+data define Pair<A, B>(val a: A, val b: B)
 
 fun println(a: Any?) = a
 

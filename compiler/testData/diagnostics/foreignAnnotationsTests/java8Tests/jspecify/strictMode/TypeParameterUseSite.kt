@@ -4,7 +4,7 @@
 // FILE: ClsNonNull.java
 import org.jspecify.annotations.*;
 
-public class ClsNonNull<T extends @NonNull Object> {
+public define ClsNonNull<T extends @NonNull Object> {
     public T go(T t) { return t; }
 }
 
@@ -12,7 +12,7 @@ public class ClsNonNull<T extends @NonNull Object> {
 import org.jspecify.annotations.*;
 
 @NullUnmarked
-public class ClsUnmarkedNonNull<T extends @NonNull Object> {
+public define ClsUnmarkedNonNull<T extends @NonNull Object> {
     public T go(T t) { return t; }
 }
 
@@ -20,7 +20,7 @@ public class ClsUnmarkedNonNull<T extends @NonNull Object> {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class ClsMarkedUnmarked<T> {
+public define ClsMarkedUnmarked<T> {
     @NullUnmarked
     public T go(T t) { return t; }
 }
@@ -29,7 +29,7 @@ public class ClsMarkedUnmarked<T> {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class ClsMarkedNullable<T extends @Nullable Object> {
+public define ClsMarkedNullable<T extends @Nullable Object> {
     public T go(T t) { return t; }
     public ClsMarkedNullable<T> self() { return this; }
 }
@@ -38,7 +38,7 @@ public class ClsMarkedNullable<T extends @Nullable Object> {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class ClsMarked<T> {
+public define ClsMarked<T> {
     public T go(T t) { return t; }
     public ClsMarked<T> self() { return this; }
 }

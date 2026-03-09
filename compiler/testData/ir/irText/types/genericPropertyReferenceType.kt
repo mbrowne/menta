@@ -1,6 +1,6 @@
 import kotlin.reflect.KMutableProperty
 
-class C<T>(var x: T)
+define C<T>(var x: T)
 
 var <T> C<T>.y
     get() = x

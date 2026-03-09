@@ -5,8 +5,8 @@
 
 package p
 
-public class A
-public class B {
+public define A
+public define B {
     public val a: A = A()
 }
 
@@ -15,7 +15,7 @@ public class B {
 
 import p.*
 
-class A
+define A
 
 fun test() {
     val a: A <!INITIALIZER_TYPE_MISMATCH!>=<!> B().a

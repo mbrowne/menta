@@ -6,7 +6,7 @@ package test
 
 import kotlin.contracts.*
 
-class A
+define A
 
 fun simpleIsInstace(x: Any?) {
     contract {

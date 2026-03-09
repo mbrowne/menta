@@ -1,10 +1,10 @@
-abstract class Base(val fn: () -> String)
+abstract define Base(val fn: () -> String)
 
-class Outer {
+define Outer {
     val ok = "OK"
 
     fun foo(): String {
-        class Local : Base({ ok })
+        define Local : Base({ ok })
 
         return Local().fn()
     }

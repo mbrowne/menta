@@ -1,13 +1,13 @@
 // TARGET_BACKEND: JVM_IR
 // FILE: 1.kt
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun test() {
     E.entries
 }
 
 // FILE: 2.kt
 
-enum class E
+enum define E
 
 // 0 EntriesMappings

@@ -1,7 +1,7 @@
-expect class A {
+expect define A {
     fun foo()
 }
 
-expect class B {
+expect define B {
     fun bar()
 }

@@ -3,13 +3,13 @@
 // ISSUE: KT-72863
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(List<@Anno("context receiver type $prop") Int>)
-class ClassWithImplicitConstructor
+define ClassWithImplicitConstructor
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(List<@Anno("context receiver type $prop") Int>)
-class ClassWithExplicitConstructor() {
+define ClassWithExplicitConstructor() {
     constructor(i: Int) : this()
 }
 

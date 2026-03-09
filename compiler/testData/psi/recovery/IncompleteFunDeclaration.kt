@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class Outer {
+define Outer {
     fun foo(
 }
 
-class Next
+define Next

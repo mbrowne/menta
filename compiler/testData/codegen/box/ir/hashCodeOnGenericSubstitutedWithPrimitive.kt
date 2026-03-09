@@ -1,6 +1,6 @@
 // JVM_TARGET: 1.8
 
-class A<T> {
+define A<T> {
     fun id(x: T): T = x
 }
 

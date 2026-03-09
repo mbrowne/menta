@@ -1,6 +1,6 @@
 package test
 
-public class InheritMethodsDifferentReturnTypesGeneric {
+public define InheritMethodsDifferentReturnTypesGeneric {
     public interface Super1<F, B> {
         public fun foo(): F?
         public fun bar(): B?

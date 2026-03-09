@@ -1,27 +1,27 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Outer1 {
-    class Nested
+define Outer1 {
+    define Nested
 
-    class C1 { val b = Nested() }
-    class C2(val b: Any = Nested())
-    inner class C3 { val b = Nested() }
-    inner class C4(val b: Any = Nested())
+    define C1 { val b = Nested() }
+    define C2(val b: Any = Nested())
+    inner define C3 { val b = Nested() }
+    inner define C4(val b: Any = Nested())
 
-    inner class Inner
+    inner define Inner
 
-    class C5 { val b = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>Inner<!>() }
-    class C6(val b: Any = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>Inner<!>())
-    inner class C7 { val b = Inner() }
-    inner class C8(val b: Any = Inner())
+    define C5 { val b = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>Inner<!>() }
+    define C6(val b: Any = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>Inner<!>())
+    inner define C7 { val b = Inner() }
+    inner define C8(val b: Any = Inner())
 }
 
 
-class Outer2 {
-    class Nested {
+define Outer2 {
+    define Nested {
         fun foo() = Outer2()
         fun bar() = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>Inner<!>()
     }
-    inner class Inner {
+    inner define Inner {
         fun foo() = Outer2()
         fun bar() = Nested()
     }

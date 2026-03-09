@@ -3,9 +3,9 @@
 // ISSUE: KT-44861
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-sealed class Foo() {
-    class A : Foo()
-    class B : Foo()
+sealed define Foo() {
+    define A : Foo()
+    define B : Foo()
 }
 
 fun Foo(kind: String = "A"): Foo = when (kind) {

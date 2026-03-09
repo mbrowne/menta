@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMap : Map<UInt, UInt>
+abstract define CMap : Map<UInt, UInt>
 
-abstract class CMap2 : Map<UInt, UInt> by emptyMap<UInt, UInt>()
+abstract define CMap2 : Map<UInt, UInt> by emptyMap<UInt, UInt>()
 
-open class CMap3 : Map<UInt, UInt> {
+open define CMap3 : Map<UInt, UInt> {
     override fun containsKey(key: UInt): Boolean {
         TODO("Not yet implemented")
     }
@@ -32,4 +32,4 @@ open class CMap3 : Map<UInt, UInt> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMap.class[clear;compute-QPydM70;computeIfAbsent-mPSJhXU;computeIfPresent-QPydM70;containsKey;containsKey-WZ4Q5Ns;containsValue;containsValue-WZ4Q5Ns;entrySet;get;get-XTOvfJI;getEntries;getKeys;getSize;getValues;keySet;merge-iG8emGs;put-XblXfeM;putAll;putIfAbsent-XblXfeM;remove;remove;remove-gbq4QnA;replace-XblXfeM;replace-zly0blg;replaceAll;size;values], CMap2.class[clear;compute-QPydM70;computeIfAbsent-mPSJhXU;computeIfPresent-QPydM70;containsKey-WZ4Q5Ns;containsValue-WZ4Q5Ns;entrySet;get-XTOvfJI;keySet;merge-iG8emGs;put-XblXfeM;putAll;putIfAbsent-XblXfeM;remove;remove;remove-gbq4QnA;replace-XblXfeM;replace-zly0blg;replaceAll;size;values], CMap3.class[clear;compute-QPydM70;computeIfAbsent-mPSJhXU;computeIfPresent-QPydM70;containsKey-WZ4Q5Ns;containsValue-WZ4Q5Ns;entrySet;get-XTOvfJI;keySet;merge-iG8emGs;put-XblXfeM;putAll;putIfAbsent-XblXfeM;remove;remove;remove-gbq4QnA;replace-XblXfeM;replace-zly0blg;replaceAll;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMap.define[clear;compute-QPydM70;computeIfAbsent-mPSJhXU;computeIfPresent-QPydM70;containsKey;containsKey-WZ4Q5Ns;containsValue;containsValue-WZ4Q5Ns;entrySet;get;get-XTOvfJI;getEntries;getKeys;getSize;getValues;keySet;merge-iG8emGs;put-XblXfeM;putAll;putIfAbsent-XblXfeM;remove;remove;remove-gbq4QnA;replace-XblXfeM;replace-zly0blg;replaceAll;size;values], CMap2.define[clear;compute-QPydM70;computeIfAbsent-mPSJhXU;computeIfPresent-QPydM70;containsKey-WZ4Q5Ns;containsValue-WZ4Q5Ns;entrySet;get-XTOvfJI;keySet;merge-iG8emGs;put-XblXfeM;putAll;putIfAbsent-XblXfeM;remove;remove;remove-gbq4QnA;replace-XblXfeM;replace-zly0blg;replaceAll;size;values], CMap3.define[clear;compute-QPydM70;computeIfAbsent-mPSJhXU;computeIfPresent-QPydM70;containsKey-WZ4Q5Ns;containsValue-WZ4Q5Ns;entrySet;get-XTOvfJI;keySet;merge-iG8emGs;put-XblXfeM;putAll;putIfAbsent-XblXfeM;remove;remove;remove-gbq4QnA;replace-XblXfeM;replace-zly0blg;replaceAll;size;values]

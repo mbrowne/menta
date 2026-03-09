@@ -14,9 +14,9 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun getTypeVariable(): TV = storage
     private var storage: TV = TargetType() as TV

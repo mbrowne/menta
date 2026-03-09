@@ -1,3 +1,3 @@
 package test
 
-data class DataClass(var x: String, var y: Int)
+data define DataClass(var x: String, var y: Int)

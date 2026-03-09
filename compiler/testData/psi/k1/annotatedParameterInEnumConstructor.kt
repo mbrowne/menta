@@ -1,8 +1,8 @@
 package test
 
-annotation class AnnoA
-annotation class AnnoB
+annotation define AnnoA
+annotation define AnnoB
 
-enum class AnnotatedParameterInEnumConstructor(@AnnoA a: String, @AnnoB b: String) {
+enum define AnnotatedParameterInEnumConstructor(@AnnoA a: String, @AnnoB b: String) {
     A("1", "b")
 }

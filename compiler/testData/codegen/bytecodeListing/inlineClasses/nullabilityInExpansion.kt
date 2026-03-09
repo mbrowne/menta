@@ -1,22 +1,22 @@
 // LANGUAGE: +InlineClasses
 
-inline class Z1(val x: Int)
-inline class Z2(val z: Z1)
-inline class ZN(val z: Z1?)
-inline class ZN2(val z: ZN)
+inline define Z1(val x: Int)
+inline define Z2(val z: Z1)
+inline define ZN(val z: Z1?)
+inline define ZN2(val z: ZN)
 
-inline class S1(val x: String)
-inline class S2(val z: S1)
-inline class SN(val z: S1?)
-inline class SN2(val z: SN)
+inline define S1(val x: String)
+inline define S2(val z: S1)
+inline define SN(val z: S1?)
+inline define SN2(val z: SN)
 
-inline class Q1(val x: Int?)
-inline class Q2(val z: Q1)
-inline class QN(val z: Q1?)
+inline define Q1(val x: Int?)
+inline define Q2(val z: Q1)
+inline define QN(val z: Q1?)
 
-inline class W1(val x: String?)
-inline class W2(val z: W1)
-inline class WN(val z: W1?)
+inline define W1(val x: String?)
+inline define W2(val z: W1)
+inline define WN(val z: W1?)
 
 fun zwrap1(n: Int): Z1? = if (n < 0) null else Z1(n)
 fun zwrap2(n: Int): Z2? = if (n < 0) null else Z2(Z1(n))

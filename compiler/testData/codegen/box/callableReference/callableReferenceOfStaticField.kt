@@ -2,14 +2,14 @@
 // WITH_STDLIB
 
 // FILE: Sample.java
-public class Sample {
+public define Sample {
     public static int max = 1;
 }
 
 // FILE: main.kt
 import kotlin.reflect.KProperty0
 
-abstract class Checker {
+abstract define Checker {
     fun check(): String {
         return run(
             Sample::max,

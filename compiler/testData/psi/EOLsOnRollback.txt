@@ -16,10 +16,9 @@ KtFile: EOLsOnRollback.kt
     BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      REFERENCE_EXPRESSION
+      CLASS
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foo')
       PsiWhiteSpace('\n    ')
       FUN
@@ -30,10 +29,9 @@ KtFile: EOLsOnRollback.kt
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      REFERENCE_EXPRESSION
+      CLASS
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foo')
       PsiWhiteSpace('\n\n    ')
       TYPEALIAS

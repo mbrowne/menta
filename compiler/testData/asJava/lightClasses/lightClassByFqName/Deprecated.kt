@@ -2,8 +2,8 @@
 // WITH_STDLIB
 package foo
 
-@Deprecated("deprecated class", ReplaceWith("new class"), level = DeprecationLevel.ERROR)
-class DeprecatedClass {
+@Deprecated("deprecated define", ReplaceWith("new define"), level = DeprecationLevel.ERROR)
+define DeprecatedClass {
     @Deprecated("error function", ReplaceWith("function"), level = DeprecationLevel.ERROR)
     fun deprecatedErrorFunction() {
 

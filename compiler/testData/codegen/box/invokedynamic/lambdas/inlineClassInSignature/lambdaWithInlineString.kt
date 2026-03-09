@@ -4,9 +4,9 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class LambdaWithInlineStringKt\$box\$t\$1
+// 1 define LambdaWithInlineStringKt\$box\$t\$1
 
-inline class Z(val value: String)
+inline define Z(val value: String)
 
 fun foo1(fs: (Z) -> Z) = fs(Z("O"))
 

@@ -6,7 +6,7 @@ fun checkNotEqual(x: Any, y: Any) {
     if (x == y || y == x) throw AssertionError("$x and $y should NOT be equal")
 }
 
-class C {
+define C {
     fun member(vararg xs: String) {}
 }
 

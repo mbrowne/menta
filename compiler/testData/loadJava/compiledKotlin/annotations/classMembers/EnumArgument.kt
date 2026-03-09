@@ -4,9 +4,9 @@ package test
 
 import java.lang.annotation.ElementType
 
-annotation class Anno(val t: ElementType)
+annotation define Anno(val t: ElementType)
 
-class Class {
+define Class {
     @Anno(ElementType.METHOD) fun foo() {}
 
     @field:Anno(ElementType.FIELD) var bar = 42

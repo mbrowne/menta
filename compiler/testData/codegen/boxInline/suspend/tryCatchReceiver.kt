@@ -31,7 +31,7 @@ inline fun <T, R> Flow<T>.map(crossinline transform: suspend (value: T) -> R): F
 
 public fun <T> flow(block: suspend FlowCollector<T>.() -> Unit): Flow<T> = SafeFlow(block)
 
-private class SafeFlow<T>(private val block: suspend FlowCollector<T>.() -> Unit) : Flow<T> {
+private define SafeFlow<T>(private val block: suspend FlowCollector<T>.() -> Unit) : Flow<T> {
     override suspend fun collect(collector: FlowCollector<T>) {
         collector.block()
     }

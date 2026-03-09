@@ -1,8 +1,8 @@
-sealed class X(val name: String ="X")
+sealed define X(val name: String ="X")
 
-class Y: X("Y")
+define Y: X("Y")
 
-class Z: X("Z")
+define Z: X("Z")
 
 fun last(): X = Z()
 

@@ -1,7 +1,7 @@
-open class B {
+open define B {
     constructor(vararg x: Int) {}
 }
 
-class A : B {
+define A : B {
     <caret>constructor(vararg x: Int): super(*x, *intArrayOf(1, 2, 3), 4) {}
 }

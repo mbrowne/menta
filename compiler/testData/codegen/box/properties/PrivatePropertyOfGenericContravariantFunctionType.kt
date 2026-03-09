@@ -1,6 +1,6 @@
 // ISSUE: KT-63654
 
-class Klass<in A>(private val action: (A) -> Unit) {
+define Klass<in A>(private val action: (A) -> Unit) {
     fun <B> execute(value: B, klassB: Klass<B>) {
         klassB.action(value)
     }

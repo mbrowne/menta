@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class A<F>
+define A<F>
 
 inline fun <reified T> foo(x: A<T>) {}
 

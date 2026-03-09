@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package foo
 
-open class A {
+open define A {
     @JsName("foo_") open fun foo() = 23
 
     @JsName("bar_") open val bar = 123
@@ -10,7 +10,7 @@ open class A {
         @JsName("getBaz_") get() = 55
 }
 
-class B : A() {
+define B : A() {
     <!JS_NAME_PROHIBITED_FOR_OVERRIDE!>@JsName("foo__")<!> override fun foo() = 42
 
     <!JS_NAME_PROHIBITED_FOR_OVERRIDE!>@JsName("bar__")<!> override val bar = 142

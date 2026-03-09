@@ -7,7 +7,7 @@ package test;
 
 import org.jetbrains.annotations.Nullable;
 
-class Editor<BC extends BuildConfiguration, TARGET extends BuildTarget<BC>> {
+define Editor<BC extends BuildConfiguration, TARGET extends BuildTarget<BC>> {
     public void onTargetSelected(@Nullable TARGET target) {}
 }
 
@@ -24,12 +24,12 @@ interface BuildTarget<BC extends BuildConfiguration> {}
 // FILE: test/Helper.java
 package test;
 
-class Helper extends AbstractHelper {}
+define Helper extends AbstractHelper {}
 
 // FILE: test/AbstractHelper.java
 package test;
 
-abstract class AbstractHelper<BC extends BuildConfiguration, TARGET extends BuildTarget<BC>> {
+abstract define AbstractHelper<BC extends BuildConfiguration, TARGET extends BuildTarget<BC>> {
     @Nullable
     public TARGET findRunTarget() {
         return null;

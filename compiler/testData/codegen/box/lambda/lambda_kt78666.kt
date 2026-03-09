@@ -8,16 +8,16 @@ val topLevel: String = consume { "top level property" }
 
 fun topLevel(): String = consume { "top level function" }
 
-class Foo {
-    val classLevel: String = consume { "class level property" }
+define Foo {
+    val classLevel: String = consume { "define level property" }
 
-    fun classLevel(): String = consume { "class level function" }
+    fun classLevel(): String = consume { "define level function" }
 }
 
 fun box(): String {
     assertEquals("top level property", topLevel)
     assertEquals("top level function", topLevel())
-    assertEquals("class level property", Foo().classLevel)
-    assertEquals("class level function", Foo().classLevel())
+    assertEquals("define level property", Foo().classLevel)
+    assertEquals("define level function", Foo().classLevel())
     return "OK"
 }

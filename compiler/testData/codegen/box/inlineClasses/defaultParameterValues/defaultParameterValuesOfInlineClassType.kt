@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val z: Int)
+value define Z(val z: Int)
 
 fun test(z: Z = Z(42)) = z.z
 

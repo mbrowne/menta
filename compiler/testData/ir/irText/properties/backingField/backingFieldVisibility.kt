@@ -3,7 +3,7 @@
 
 // IGNORE_BACKEND_KLIB: JS_IR
 
-class A {
+define A {
     val a: Number
         field = 1
 

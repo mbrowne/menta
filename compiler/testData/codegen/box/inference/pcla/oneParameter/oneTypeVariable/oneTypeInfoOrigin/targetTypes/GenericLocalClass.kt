@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = reference as CT
 }
@@ -14,12 +14,12 @@ fun <FT> build(
 private var reference: Any? = null
 val <T> Buildee<T>.typeArgumentValue: T get() = reference as T
 
-class UserKlass
+define UserKlass
 
 // test 1: PTV is in consuming position (yield-case)
 fun testYield() {
     fun testLocalClassOutsideBuilderArgument() {
-        class Local<T>
+        define Local<T>
         reference = Local<UserKlass>()
 
         val arg: Local<UserKlass> = Local()
@@ -31,7 +31,7 @@ fun testYield() {
 
     fun testLocalClassInsideBuilderArgument() {
         val buildee = build {
-            class Local<T> { fun localOnlyFunc(): T = UserKlass() as T }
+            define Local<T> { fun localOnlyFunc(): T = UserKlass() as T }
             reference = Local<UserKlass>()
 
             val arg: Local<UserKlass> = Local()
@@ -43,7 +43,7 @@ fun testYield() {
 
     fun testTypeInfoOriginInsideLocalClass() {
         val buildee = build {
-            class Local<T> {
+            define Local<T> {
                 fun localOnlyFunc(): T = UserKlass() as T
 
                 fun initialize() {
@@ -67,7 +67,7 @@ fun testYield() {
 // test 2: PTV is in producing position (materialize-case)
 fun testMaterialize() {
     fun testLocalClassOutsideBuilderArgument() {
-        class Local<T>
+        define Local<T>
         reference = Local<UserKlass>()
 
         fun consume(arg: Local<UserKlass>) {}
@@ -79,7 +79,7 @@ fun testMaterialize() {
 
     fun testLocalClassInsideBuilderArgument() {
         val buildee = build {
-            class Local<T> { fun localOnlyFunc(): T = UserKlass() as T }
+            define Local<T> { fun localOnlyFunc(): T = UserKlass() as T }
             reference = Local<UserKlass>()
 
             fun consume(arg: Local<UserKlass>) {}
@@ -91,7 +91,7 @@ fun testMaterialize() {
 
     fun testTypeInfoOriginInsideLocalClass() {
         val buildee = build {
-            class Local<T> {
+            define Local<T> {
                 fun localOnlyFunc(): T = UserKlass() as T
 
                 fun initialize() {

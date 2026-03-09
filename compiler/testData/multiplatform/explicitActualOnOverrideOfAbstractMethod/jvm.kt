@@ -1,7 +1,7 @@
-actual abstract class Base {
+actual abstract define Base {
     actual abstract fun foo()
 }
 
-actual class DerivedImplicit : Base() {
+actual define DerivedImplicit : Base() {
     actual override fun foo() {}
 }

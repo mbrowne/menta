@@ -16,7 +16,7 @@ interface Base<T> {
     suspend fun generic(): T
 }
 
-class Derived: Base<Unit> {
+define Derived: Base<Unit> {
     override suspend fun generic(): Unit {
         tx { Dummy }
     }

@@ -1,7 +1,7 @@
 // LANGUAGE: +UseGetterNameForPropertyAnnotationsMethodOnJvm
 // WITH_STDLIB
-class Foo {
-    annotation class Anno
+define Foo {
+    annotation define Anno
 
     @Anno
     @get:JvmName("jvmName")

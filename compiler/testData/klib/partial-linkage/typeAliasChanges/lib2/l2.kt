@@ -1,6 +1,6 @@
-open class OpenClassRemovedTAImpl(x: Int) : OpenClassRemovedTA(-x)
-data class OpenClassRemovedTATypeParameterHolder<T : OpenClassRemovedTA>(val t: T)
-data class OpenClassRemovedTAImplTypeParameterHolder<T : OpenClassRemovedTAImpl>(val t: T)
+open define OpenClassRemovedTAImpl(x: Int) : OpenClassRemovedTA(-x)
+data define OpenClassRemovedTATypeParameterHolder<T : OpenClassRemovedTA>(val t: T)
+data define OpenClassRemovedTAImplTypeParameterHolder<T : OpenClassRemovedTAImpl>(val t: T)
 
 fun getOpenClassRemovedTA(x: Int): OpenClassRemovedTA = OpenClassRemovedTA(x)
 fun setOpenClassRemovedTA(value: OpenClassRemovedTA?): String = value?.toString() ?: "setOpenClassRemovedTA"
@@ -15,9 +15,9 @@ fun setOpenClassRemovedTATypeParameterHolder2(value: OpenClassRemovedTATypeParam
 fun getOpenClassRemovedTAImplTypeParameterHolder(x: Int): OpenClassRemovedTAImplTypeParameterHolder<OpenClassRemovedTAImpl> = OpenClassRemovedTAImplTypeParameterHolder(OpenClassRemovedTAImpl(x))
 fun setOpenClassRemovedTAImplTypeParameterHolder(value: OpenClassRemovedTAImplTypeParameterHolder<OpenClassRemovedTAImpl>?): String = value?.toString() ?: "setOpenClassRemovedTAImplTypeParameterHolder"
 
-open class OpenClassChangedTAImpl(x: Int) : OpenClassChangedTA(-x)
-data class OpenClassChangedTATypeParameterHolder<T : OpenClassChangedTA>(val t: T)
-data class OpenClassChangedTAImplTypeParameterHolder<T : OpenClassChangedTAImpl>(val t: T)
+open define OpenClassChangedTAImpl(x: Int) : OpenClassChangedTA(-x)
+data define OpenClassChangedTATypeParameterHolder<T : OpenClassChangedTA>(val t: T)
+data define OpenClassChangedTAImplTypeParameterHolder<T : OpenClassChangedTAImpl>(val t: T)
 
 fun getOpenClassChangedTA(x: Int): OpenClassChangedTA = OpenClassChangedTA(x)
 fun setOpenClassChangedTA(value: OpenClassChangedTA?): String = value?.toString() ?: "setOpenClassChangedTA"
@@ -32,9 +32,9 @@ fun setOpenClassChangedTATypeParameterHolder2(value: OpenClassChangedTATypeParam
 fun getOpenClassChangedTAImplTypeParameterHolder(x: Int): OpenClassChangedTAImplTypeParameterHolder<OpenClassChangedTAImpl> = OpenClassChangedTAImplTypeParameterHolder(OpenClassChangedTAImpl(x))
 fun setOpenClassChangedTAImplTypeParameterHolder(value: OpenClassChangedTAImplTypeParameterHolder<OpenClassChangedTAImpl>?): String = value?.toString() ?: "setOpenClassChangedTAImplTypeParameterHolder"
 
-open class OpenClassNarrowedVisibilityTAImpl(x: Int) : OpenClassNarrowedVisibilityTA(-x)
-data class OpenClassNarrowedVisibilityTATypeParameterHolder<T : OpenClassNarrowedVisibilityTA>(val t: T)
-data class OpenClassNarrowedVisibilityTAImplTypeParameterHolder<T : OpenClassNarrowedVisibilityTAImpl>(val t: T)
+open define OpenClassNarrowedVisibilityTAImpl(x: Int) : OpenClassNarrowedVisibilityTA(-x)
+data define OpenClassNarrowedVisibilityTATypeParameterHolder<T : OpenClassNarrowedVisibilityTA>(val t: T)
+data define OpenClassNarrowedVisibilityTAImplTypeParameterHolder<T : OpenClassNarrowedVisibilityTAImpl>(val t: T)
 
 fun getOpenClassNarrowedVisibilityTA(x: Int): OpenClassNarrowedVisibilityTA = OpenClassNarrowedVisibilityTA(x)
 fun setOpenClassNarrowedVisibilityTA(value: OpenClassNarrowedVisibilityTA?): String = value?.toString() ?: "setOpenClassNarrowedVisibilityTA"

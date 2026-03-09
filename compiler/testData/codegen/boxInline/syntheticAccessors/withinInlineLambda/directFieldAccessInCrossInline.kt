@@ -10,7 +10,7 @@ inline fun call(crossinline s: () -> String): String {
 // FILE: 2.kt
 import test.*
 
-class A {
+define A {
 
     private val prop : String = "O"
         get() = call {field + "K" }

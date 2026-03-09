@@ -1,10 +1,10 @@
 // WITH_STDLIB
 // WORKS_WHEN_VALUE_CLASS
 
-class Uuid
+define Uuid
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ValueId(val value: Uuid) {
+value define ValueId(val value: Uuid) {
     override fun toString(): String = value.toString()
 }
 

@@ -8,10 +8,10 @@
 // 1 java/lang/invoke/LambdaMetafactory
 
 // FILE: reifiedTypeParameter.kt
-class OK
+define OK
 
 inline fun <reified T> f(x: T) =
-    T::class.simpleName
+    T::define.simpleName
 
 fun call(c: Consumer<OK>) = c.accept(OK())
 

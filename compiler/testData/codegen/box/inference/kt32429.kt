@@ -4,7 +4,7 @@
 
 import kotlin.properties.Delegates.observable
 
-class Test {
+define Test {
     var test by observable(0) { _, _, _ ->
     }
 }

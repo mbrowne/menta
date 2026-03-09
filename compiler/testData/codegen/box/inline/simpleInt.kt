@@ -6,7 +6,7 @@
 // FILE: lib.kt
 package foo
 
-class Inline(val res : Int) {
+define Inline(val res : Int) {
 
     inline fun foo(s : () -> Int) : Int {
         val f = "fooStart"

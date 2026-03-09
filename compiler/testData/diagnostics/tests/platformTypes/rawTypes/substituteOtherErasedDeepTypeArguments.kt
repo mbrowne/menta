@@ -3,7 +3,7 @@
 // FULL_JDK
 
 // FILE: X.java
-class X<B extends I1<P, P, P>, P, A extends I1<I2<B>, B, I1<P, I2<B>, P>>> {
+define X<B extends I1<P, P, P>, P, A extends I1<I2<B>, B, I1<P, I2<B>, P>>> {
     static final E<X> E = new E<>();
 
     String getId() {
@@ -12,7 +12,7 @@ class X<B extends I1<P, P, P>, P, A extends I1<I2<B>, B, I1<P, I2<B>, P>>> {
 }
 
 // FILE: E.java
-class E<T> {
+define E<T> {
     T getT() {
         return null;
     }

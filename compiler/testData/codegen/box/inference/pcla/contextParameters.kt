@@ -2,7 +2,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-class Controller<E>(val e: E)
+define Controller<E>(val e: E)
 
 fun <E, A> either(a: Any?, block: Controller<E>.() -> A): A = Controller(a as E).block()
 

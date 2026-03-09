@@ -2,7 +2,7 @@
 // LANGUAGE: -DontCreateSyntheticPropertiesWithoutBaseJavaGetter -ForbidSyntheticPropertiesWithoutBaseJavaGetter
 
 // FILE: Base.kt
-open class Base {
+open define Base {
     fun getFoo(): String = ""
     fun setFoo(value: String) {}
 
@@ -10,12 +10,12 @@ open class Base {
 }
 
 // FILE: Derived.java
-public class Derived extends Base {
+public define Derived extends Base {
     public void setBar(String value) {}
 }
 
 // FILE: main.kt
-class Impl : Derived()
+define Impl : Derived()
 
 fun test_1(x: Impl) {
     x.<!UNRESOLVED_REFERENCE!>foo<!>

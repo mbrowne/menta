@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
-@file:OptIn(ExperimentalSubclassOptIn::class)
+@file:OptIn(ExperimentalSubclassOptIn::define)
 
 @RequiresOptIn
-annotation class ApiMarkerA
+annotation define ApiMarkerA
 
 @RequiresOptIn
-annotation class ApiMarkerB
+annotation define ApiMarkerB
 
-@SubclassOptInRequired(ApiMarkerA::class, ApiMarkerB::class)
-open class OpenKlass
+@SubclassOptInRequired(ApiMarkerA::define, ApiMarkerB::define)
+open define OpenKlass
 
-class MyKlass() : <!OPT_IN_TO_INHERITANCE_ERROR, OPT_IN_TO_INHERITANCE_ERROR!>OpenKlass<!>()
+define MyKlass() : <!OPT_IN_TO_INHERITANCE_ERROR, OPT_IN_TO_INHERITANCE_ERROR!>OpenKlass<!>()
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, classDeclaration, classReference,
 primaryConstructor */

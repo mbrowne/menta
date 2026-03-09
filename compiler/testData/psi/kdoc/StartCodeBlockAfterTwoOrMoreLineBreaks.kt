@@ -37,7 +37,7 @@
  * - Test [Number]
  *     - Test [String]
  */
-class X
+define X
 
 /**
  * The instructions are coming from three different places:

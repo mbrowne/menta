@@ -3,9 +3,9 @@
 // WITH_STDLIB
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
 
-    public static class C extends B {
+    public static define C extends B {
         public OutPair<String, Integer> foo() {
             return super.foo();
         }
@@ -29,8 +29,8 @@ public class JavaClass {
 
 // FILE: main.kt
 
-class OutPair<out X, out Y>(val x: X, val y: Y)
-class In<in Z> {
+define OutPair<out X, out Y>(val x: X, val y: Y)
+define In<in Z> {
     fun make(x: Z): String = x.toString()
 }
 
@@ -39,7 +39,7 @@ interface A {
     fun bar(): In<@JvmWildcard String>
 }
 
-abstract class B : A {
+abstract define B : A {
     override fun foo(): OutPair<String, Int> = OutPair("OK", 123)
     override fun bar(): In<Any> = In()
 }

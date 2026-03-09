@@ -5,7 +5,7 @@
 import java.util.*
 
 interface Foo
-class Bar<B : Foo>(val list: MutableList<B>) {}
+define Bar<B : Foo>(val list: MutableList<B>) {}
 
 fun <F : Foo> test(map: MutableMap<String, Bar<F>>) {
 

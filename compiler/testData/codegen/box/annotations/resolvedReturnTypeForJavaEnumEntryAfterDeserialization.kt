@@ -9,7 +9,7 @@ public enum Enum {
 
 // FILE: C.java
 
-public class C {
+public define C {
 }
 
 // FILE: ArgumentsSource.java
@@ -19,7 +19,7 @@ public @interface ArgumentsSource {
 }
 
 // FILE: MethodSource.java
-@ArgumentsSource(C.class)
+@ArgumentsSource(C.define)
 public @interface MethodSource {
     String[] value() default "";
 }
@@ -27,7 +27,7 @@ public @interface MethodSource {
 // FILE: test.kt
 import Enum
 
-annotation class Ann(val e: Enum)
+annotation define Ann(val e: Enum)
 
 @Ann(Enum.Value) // Checking Java enchancement after deserialization
 @MethodSource("getTestFiles")

@@ -34,7 +34,7 @@ fun testVals() {
     val rf3: () -> Unit = { <!RETURN_VALUE_NOT_USED_COERCION!>stringF<!>() }
 }
 
-class A {
+define A {
     @IgnorableReturnValue fun ign() = ""
 }
 

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package myPack
 
-annotation class Anno(val number: Int)
+annotation define Anno(val number: Int)
 
 fun topLevelFun() {
-    class LocalClass {
+    define LocalClass {
         val @receiver:Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>42.prop<!>) Int.prop get() = 22
     }
 }

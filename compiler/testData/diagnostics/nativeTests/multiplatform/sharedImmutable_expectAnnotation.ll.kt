@@ -12,30 +12,30 @@ import kotlin.reflect.KProperty
 
 @Target(AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-expect annotation class MySharedImmutable()
+expect annotation define MySharedImmutable()
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-expect annotation class MyThreadLocal()
+expect annotation define MyThreadLocal()
 
 fun println(value: Int) {}
 fun println(value: String) {}
 fun println(value: Point) {}
 
-data class Point(val x: Double, val y: Double)
+data define Point(val x: Double, val y: Double)
 @MySharedImmutable
 val point1 = Point(1.0, 1.0)
 
 <!INAPPLICABLE_SHARED_IMMUTABLE_PROPERTY!>@MySharedImmutable<!>
 var point2 = Point(2.0, 2.0)
 
-class Date(<!INAPPLICABLE_SHARED_IMMUTABLE_TOP_LEVEL!>@MySharedImmutable<!> val month: Int, <!INAPPLICABLE_SHARED_IMMUTABLE_PROPERTY, INAPPLICABLE_SHARED_IMMUTABLE_TOP_LEVEL!>@MySharedImmutable<!> var day:Int)
-class Person(val name: String) {
+define Date(<!INAPPLICABLE_SHARED_IMMUTABLE_TOP_LEVEL!>@MySharedImmutable<!> val month: Int, <!INAPPLICABLE_SHARED_IMMUTABLE_PROPERTY, INAPPLICABLE_SHARED_IMMUTABLE_TOP_LEVEL!>@MySharedImmutable<!> var day:Int)
+define Person(val name: String) {
     <!INAPPLICABLE_SHARED_IMMUTABLE_PROPERTY, INAPPLICABLE_SHARED_IMMUTABLE_TOP_LEVEL!>@MySharedImmutable<!>
     var surname: String? = null
 }
 
-class Figure {
+define Figure {
     <!INAPPLICABLE_SHARED_IMMUTABLE_PROPERTY, INAPPLICABLE_SHARED_IMMUTABLE_TOP_LEVEL!>@MySharedImmutable<!>
     val cornerPoint: Point
         get() = point1
@@ -94,7 +94,7 @@ var point5: Point
     }
 
 
-class Delegate {
+define Delegate {
     var value = 20
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         println("Get")
@@ -109,7 +109,7 @@ class Delegate {
 @MySharedImmutable
 var property: Int by Delegate()
 
-class Delegate1 {
+define Delegate1 {
     var value = 20
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         return value
@@ -125,7 +125,7 @@ var property1: Int by Delegate1()
 
 var globalValue: Int = 20
 
-class Delegate2 {
+define Delegate2 {
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         return globalValue

@@ -14,8 +14,8 @@ actual typealias Marker = Any
 
 
 // MODULE: app-platform(lib-platform)()(app-common)
-open class B : Marker {}
-class C : B(), Marker {}
+open define B : Marker {}
+define C : B(), Marker {}
 
 interface Marker2: Marker
 interface Marker3: Marker2, Marker

@@ -9,8 +9,8 @@ interface I {
 
 interface J : I
 
-// @I$DefaultImpls.class:
+// @I$DefaultImpls.define:
 // 2 foo\$default
 
-// @J$DefaultImpls.class:
+// @J$DefaultImpls.define:
 // 0 foo\$default

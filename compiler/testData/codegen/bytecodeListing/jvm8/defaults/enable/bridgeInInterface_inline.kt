@@ -10,4 +10,4 @@ interface Test2 : Test<UInt> {
 }
 
 
-class TestClass : Test2
+define TestClass : Test2

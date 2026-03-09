@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class Wise {
+open define Wise {
 
     val x = 1
 
     open fun doIt(): Int = 42
 }
 
-class My {
+define My {
 
     fun foo(): Int {
         val wise = object: Wise() {

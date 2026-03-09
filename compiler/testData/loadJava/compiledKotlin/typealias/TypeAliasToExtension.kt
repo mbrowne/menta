@@ -1,6 +1,6 @@
 package test
 
-class Foo<T>
+define Foo<T>
 
 fun <P> foo(x: Foo<P>.() -> Unit) {}
 

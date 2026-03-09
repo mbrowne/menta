@@ -2,7 +2,7 @@ interface A<T> {
     fun foo(t: T): T = t
 }
 
-class B : A<String> {
+define B : A<String> {
     private fun foo() {}
 }
 

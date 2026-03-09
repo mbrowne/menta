@@ -1,7 +1,7 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: FRONTEND
-class Data<T>(val x: T, val y: T)
+define Data<T>(val x: T, val y: T)
 
 operator fun <T> Data<T>.component1() = x
 
@@ -14,7 +14,7 @@ fun foo(): Int {
     return x + y
 }
 
-data class NormalData<T>(val x: T, val y: T)
+data define NormalData<T>(val x: T, val y: T)
 
 fun bar(): Int {
     val d: NormalData<Int>? = null

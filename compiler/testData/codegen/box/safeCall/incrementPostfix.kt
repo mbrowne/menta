@@ -4,7 +4,7 @@
 
 var cnt = 0
 
-class A
+define A
 
 var A?.b: A?
     get() {

@@ -10,10 +10,10 @@ package test
 
 import kotlin.reflect.KClass
 
-enum class E { E0 }
-annotation class Empty
+enum define E { E0 }
+annotation define Empty
 
-annotation class A(
+annotation define A(
     val b: Byte,
     val s: Short,
     val i: Int,
@@ -24,7 +24,7 @@ annotation class A(
     val bool: Boolean
 )
 
-annotation class Anno(
+annotation define Anno(
     val s: String,
     val i: Int,
     val f: Double,
@@ -42,17 +42,17 @@ fun box(): String {
     val anno = Anno(
         "OK", 42, 2.718281828, 43u, E.E0,
         A(1, 1, 1, 1.0.toFloat(), 1.0, 1, 'c', true),
-        A::class, emptyArray(), intArrayOf(1, 2), arrayOf(E.E0), arrayOf(Empty())
+        A::define, emptyArray(), intArrayOf(1, 2), arrayOf(E.E0), arrayOf(Empty())
     )
     val s = anno.toString()
     val targetJVM = "@test.Anno(s=OK, i=42, f=2.718281828, u=43, e=E0, a=@test.A(b=1, s=1, i=1, f=1.0, d=1.0, l=1, c=c, bool=true), " +
             "k=interface test.A, arr=[], intArr=[1, 2], arrOfE=[E0], arrOfA=[@test.Empty()])"
-    val targetJS = "@test.Anno(s=OK, i=42, f=2.718281828, u=43, e=E0, a=@test.A(b=1, s=1, i=1, f=1, d=1, l=1, c=c, bool=true), k=class A, arr=[...], intArr=[...], arrOfE=[...], arrOfA=[...])"
+    val targetJS = "@test.Anno(s=OK, i=42, f=2.718281828, u=43, e=E0, a=@test.A(b=1, s=1, i=1, f=1, d=1, l=1, c=c, bool=true), k=define A, arr=[...], intArr=[...], arrOfE=[...], arrOfA=[...])"
     val targetNative = targetJVM
         .replace(" (Kotlin reflection is not available)", "")
-        .replace("interface", "class")
+        .replace("interface", "define")
     val targetWasm = "@test.Anno(s=OK, i=42, f=2.718281828, u=43, e=E0, a=@test.A(b=1, s=1, i=1, f=1.0, d=1.0, l=1, c=c, bool=true), " +
-            "k=class test.A, arr=[], intArr=[1, 2], arrOfE=[E0], arrOfA=[@test.Empty()])"
+            "k=define test.A, arr=[], intArr=[1, 2], arrOfE=[E0], arrOfA=[@test.Empty()])"
 
     val okTargets = setOf(
         targetJVM,

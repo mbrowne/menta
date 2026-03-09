@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class Clazz {
+define Clazz {
     val
 }
 
@@ -8,6 +8,6 @@ fun f() {
     a.b()
 }
 
-class Clazz {
+define Clazz {
     val
 }

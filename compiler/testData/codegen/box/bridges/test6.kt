@@ -11,15 +11,15 @@ interface Y {
     fun foo(): Int
 }
 
-open class A {
+open define A {
     open fun foo(): Any = "A"
 }
 
-open class C : A() {
+open define C : A() {
     override fun foo(): Int = 42
 }
 
-open class D: C(), Y, Z
+open define D: C(), Y, Z
 
 fun box(): String {
     val d = D()

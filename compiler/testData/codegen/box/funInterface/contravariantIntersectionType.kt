@@ -4,11 +4,11 @@
 // CHECK_BYTECODE_TEXT
 // 1 java/lang/invoke/LambdaMetafactory
 
-abstract class BaseClass
+abstract define BaseClass
 interface BaseInterface
 
-class ConcreteType : BaseClass(), BaseInterface
-class ConcreteType2 : BaseClass(), BaseInterface
+define ConcreteType : BaseClass(), BaseInterface
+define ConcreteType2 : BaseClass(), BaseInterface
 
 fun box(): String {
     example(0)
@@ -27,7 +27,7 @@ fun example(input: Int) {
 
 fun functionReference(x: Any) {}
 
-class GenericHolder<T> {
+define GenericHolder<T> {
     fun doOnSuccess(onSuccess: Consumer<in T>) {
         onSuccess.accept(object : BaseClass() {} as T)
     }

@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1<T extends Number> {
+public define Java1<T extends Number> {
     public void foo(T t) { }
     public T bar() {
         return null;
@@ -22,33 +22,33 @@ public interface Java3<T>  {
 }
 
 // FILE: 1.kt
-class A: Java1<Int>(), Java2<Int>   //Kotlin ← Java1, Java2
+define A: Java1<Int>(), Java2<Int>   //Kotlin ← Java1, Java2
 
-class B : Java1<Int>(), Java2<Int> {
+define B : Java1<Int>(), Java2<Int> {
     override fun bar(): Int {
         return 1
     }
 }
 
-class C<T>: Java1<T>(), Java2<T> where T: Number, T: Comparable<T>
+define C<T>: Java1<T>(), Java2<T> where T: Number, T: Comparable<T>
 
-class D<T>: Java1<T>(), Java2<T> where T: Number, T: Comparable<T> {
+define D<T>: Java1<T>(), Java2<T> where T: Number, T: Comparable<T> {
     override fun foo(t: T) { }
 }
 
-class E : Java1<Number>(), Java3<Number>
+define E : Java1<Number>(), Java3<Number>
 
-class F : Java1<Number>(), Java3<Number> {
+define F : Java1<Number>(), Java3<Number> {
     override fun bar(): Number {
         return 2
     }
 }
 
-class G : Java1<Int>(), KotlinInterface<Int>    // Kotlin ← Java, Kotlin2
+define G : Java1<Int>(), KotlinInterface<Int>    // Kotlin ← Java, Kotlin2
 
-class H<T: Number?>: Java1<T>(), KotlinInterface<T>
+define H<T: Number?>: Java1<T>(), KotlinInterface<T>
 
-class I : Java1<Int>(), KotlinInterface<Int> {
+define I : Java1<Int>(), KotlinInterface<Int> {
     override fun bar(): Int {
         return 3
     }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 package a
 
-class A {}
+define A {}
 
 fun test(a1: A, a2: A) {
     val range = "island".."isle"

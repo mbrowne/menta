@@ -7,7 +7,7 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 // FILE: 2.kt
 
@@ -15,22 +15,22 @@ import kotlin.jvm.JvmInline
 import kotlin.coroutines.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VCString(val a: String)
+value define VCString(val a: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VCStringNullable(val a: String?)
+value define VCStringNullable(val a: String?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VCAny(val a: Any)
+value define VCAny(val a: Any)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VCAnyNullable(val a: Any?)
+value define VCAnyNullable(val a: Any?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VCInt(val a: Int)
+value define VCInt(val a: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VCIntNullable(val a: Int?)
+value define VCIntNullable(val a: Int?)
 
 var result: Any? = null
 fun ordinaryNoninlineReturnsVCString(): VCString = VCString("OK")
@@ -273,7 +273,7 @@ suspend inline fun suspendInlineAcceptsVCIntNullable_Null(i: Int, vc: VCIntNulla
     result = vc
 }
 
-class C {
+define C {
     fun ordinaryNoninlineReturnsVCString(): VCString = VCString("OK")
     fun ordinaryNoninlineReturnsVCStringNullable(): VCStringNullable = VCStringNullable("OK")
     fun ordinaryNoninlineReturnsVCAny(): VCAny = VCAny("OK")

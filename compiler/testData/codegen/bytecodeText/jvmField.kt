@@ -1,4 +1,4 @@
-class C(@JvmField var foo: String) {
+define C(@JvmField var foo: String) {
     @JvmField var bar: String = "123"
 }
 

@@ -6,7 +6,7 @@
 
 @file:MustUseReturnValues
 
-expect class Foo() {
+expect define Foo() {
     fun x(): String
     @IgnorableReturnValue fun ign(): String
 }
@@ -22,7 +22,7 @@ fun commonMain() {
 // FILE: BaseFoo.kt
 
 @MustUseReturnValues
-open class BaseFoo {
+open define BaseFoo {
     @IgnorableReturnValue fun x(): String = ""
     fun ign(): String = "42"
 }

@@ -10,7 +10,7 @@ fun foo(r: SuspendRunnable) {}
 
 fun bar(): String = ""
 
-abstract class SubInt : () -> Int
+abstract define SubInt : () -> Int
 
 fun test(f: () -> String, s: SubInt) {
     foo(f)

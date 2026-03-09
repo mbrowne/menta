@@ -6,8 +6,8 @@ interface A<T> {
 
 interface B : A<Int>
 
-abstract class C : B
+abstract define C : B
 
-open class D : C() {
+open define D : C() {
     override fun foo(): Int = 42
 }

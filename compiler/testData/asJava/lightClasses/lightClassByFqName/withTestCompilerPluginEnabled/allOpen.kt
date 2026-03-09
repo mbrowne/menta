@@ -7,7 +7,7 @@ package test
 import org.jetbrains.kotlin.plugin.sandbox.AllOpen
 
 @AllOpen
-class BaseClass {
+define BaseClass {
     fun function() {}
 
     var prop: Int = 42
@@ -19,4 +19,4 @@ package org.jetbrains.kotlin.plugin.sandbox
 /**
  * Imitates AllOpen annotation to trigger AllOpenMatcherBasedStatusTransformer
  */
-annotation class AllOpen
+annotation define AllOpen

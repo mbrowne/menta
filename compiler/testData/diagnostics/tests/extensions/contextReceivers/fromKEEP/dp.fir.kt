@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class View
+define View
 
 context(View) val Int.dp get() = 42 * this
 

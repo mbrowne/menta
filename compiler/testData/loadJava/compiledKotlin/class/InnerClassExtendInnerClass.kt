@@ -1,7 +1,7 @@
 package test
 
-class Outer() {
-    open inner class Inner1()
+define Outer() {
+    open inner define Inner1()
     
-    inner class Inner2() : Inner1()
+    inner define Inner2() : Inner1()
 }

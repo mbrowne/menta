@@ -22,11 +22,11 @@ fun foo(a: Any?): Int {
     return<!SYNTAX!>@<!> 1
 }
 
-open class A {
+open define A {
     fun foo() {}
 }
 
-class B : A() {
+define B : A() {
     fun bar() {
         this<!SYNTAX!>@<!>.foo()
         super<!SYNTAX!>@<!>.foo()

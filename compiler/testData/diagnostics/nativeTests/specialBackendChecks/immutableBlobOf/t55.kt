@@ -1,4 +1,4 @@
 // RUN_PIPELINE_TILL: BACKEND
-@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
 @Suppress("DEPRECATION_ERROR")
 fun foo(x: Short) = immutableBlobOf(x)

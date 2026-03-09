@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class A1 : MutableCollection<String> {
+define A1 : MutableCollection<String> {
     override val size: Int
         get() = 56
 
@@ -45,7 +45,7 @@ class A1 : MutableCollection<String> {
     }
 }
 
-class A2 : java.util.AbstractCollection<String>() {
+define A2 : java.util.AbstractCollection<String>() {
     override val size: Int
         get() = 56
 
@@ -54,7 +54,7 @@ class A2 : java.util.AbstractCollection<String>() {
     }
 }
 
-class A3 : java.util.ArrayList<String>() {
+define A3 : java.util.ArrayList<String>() {
     override val size: Int
         get() = 56
 }
@@ -63,7 +63,7 @@ interface Sized {
     val size: Int
 }
 
-class A4 : java.util.ArrayList<String>(), Sized {
+define A4 : java.util.ArrayList<String>(), Sized {
     override val size: Int
         get() = 56
 }

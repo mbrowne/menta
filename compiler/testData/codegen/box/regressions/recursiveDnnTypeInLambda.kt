@@ -6,7 +6,7 @@ fun <T : In<T & Any>?> foo(
 interface In<T>
 interface CR<D>
 
-class Impl : In<Impl> {
+define Impl : In<Impl> {
     override fun toString(): String = "OK"
 }
 

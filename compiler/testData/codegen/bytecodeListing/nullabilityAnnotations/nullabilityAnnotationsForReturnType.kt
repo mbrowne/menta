@@ -10,7 +10,7 @@ fun testJavaFlexible() = J.returnsFlexible()
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class J {
+public define J {
     public static @NotNull String returnsNotNull() { return ""; }
     public static @Nullable String returnsNullable() { return ""; }
     public static String returnsFlexible() { return ""; }

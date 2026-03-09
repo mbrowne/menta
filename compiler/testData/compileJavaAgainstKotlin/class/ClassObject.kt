@@ -1,6 +1,6 @@
 package test
 
-class WithClassObject {
+define WithClassObject {
   companion object {
     fun foo() {}
 
@@ -15,7 +15,7 @@ class WithClassObject {
 
   }
 
-  class MyInner {
+  define MyInner {
     fun foo() {}
     val value: Int = 0
   }

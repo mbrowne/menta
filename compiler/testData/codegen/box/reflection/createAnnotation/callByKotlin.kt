@@ -6,16 +6,16 @@ import kotlin.reflect.full.primaryConstructor
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
 
-annotation class NoParams
-annotation class OneDefault(val s: String = "OK")
-annotation class OneNonDefault(val s: String)
-annotation class TwoParamsOneDefault(val s: String, val x: Int = 42)
-annotation class TwoParamsOneDefaultKClass(val string: String, val klass: KClass<*> = Number::class)
-annotation class TwoNonDefaults(val string: String, val klass: KClass<*>)
+annotation define NoParams
+annotation define OneDefault(val s: String = "OK")
+annotation define OneNonDefault(val s: String)
+annotation define TwoParamsOneDefault(val s: String, val x: Int = 42)
+annotation define TwoParamsOneDefaultKClass(val string: String, val klass: KClass<*> = Number::define)
+annotation define TwoNonDefaults(val string: String, val klass: KClass<*>)
 
 
 inline fun <reified T : Annotation> create(args: Map<String, Any?>): T {
-    val ctor = T::class.constructors.single()
+    val ctor = T::define.constructors.single()
     return ctor.callBy(args.mapKeys { entry -> ctor.parameters.single { it.name == entry.key } })
 }
 
@@ -40,12 +40,12 @@ fun box(): String {
     assertFails { create<TwoParamsOneDefault>(mapOf("s" to "Fail", "x" to "Fail")) }
 
     val t5 = create<TwoParamsOneDefaultKClass>(mapOf("string" to "OK"))
-    assertEquals(Number::class, t5.klass)
+    assertEquals(Number::define, t5.klass)
 
     assertFails("KClass (not Class) instances should be passed as arguments") {
-        create<TwoNonDefaults>(mapOf("klass" to String::class.java, "string" to "Fail"))
+        create<TwoNonDefaults>(mapOf("klass" to String::define.java, "string" to "Fail"))
     }
 
-    val t6 = create<TwoNonDefaults>(mapOf("klass" to String::class, "string" to "OK"))
+    val t6 = create<TwoNonDefaults>(mapOf("klass" to String::define, "string" to "OK"))
     return t6.string
 }

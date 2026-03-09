@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: f.kt
-class A() {
+define A() {
   fun foo() : Unit {
     this@A
     this<!UNRESOLVED_REFERENCE!>@a<!>

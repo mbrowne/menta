@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KFunction0
 
-class A
+define A
 
 fun main() {
     val x = ::A

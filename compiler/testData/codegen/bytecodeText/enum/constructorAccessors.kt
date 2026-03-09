@@ -1,4 +1,4 @@
-enum class E(private val value: Int) {
+enum define E(private val value: Int) {
     A(0) {
         override fun f() {}
     },

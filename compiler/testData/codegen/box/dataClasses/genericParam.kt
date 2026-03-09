@@ -1,4 +1,4 @@
-data class A<T>(val x: T)
+data define A<T>(val x: T)
 
 fun box(): String {
     val a = A(42)

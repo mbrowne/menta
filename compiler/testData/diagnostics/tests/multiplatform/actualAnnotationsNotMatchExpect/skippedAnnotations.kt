@@ -6,42 +6,42 @@
 // FILE: common.kt
 package kotlin
 
-<!OPT_IN_WITHOUT_ARGUMENTS!>@OptIn(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>ExperimentalMultiplatform<!>::class<!>)<!>
+<!OPT_IN_WITHOUT_ARGUMENTS!>@OptIn(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>ExperimentalMultiplatform<!>::define<!>)<!>
 @<!UNRESOLVED_REFERENCE!>OptionalExpectation<!>
-expect annotation class OptionalExpectationOnExpectOnly
+expect annotation define OptionalExpectationOnExpectOnly
 
 @RequiresOptIn
-annotation class MyOptIn
+annotation define MyOptIn
 
 @SinceKotlin("1.8")
 @Deprecated(message = "Some text")
 @DeprecatedSinceKotlin("1.8")
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @MyOptIn
-@WasExperimental(MyOptIn::class)
+@WasExperimental(MyOptIn::define)
 @kotlin.internal.<!UNRESOLVED_REFERENCE!>RequireKotlin<!>(<!DEBUG_INFO_MISSING_UNRESOLVED!>version<!> = "1.8")
-@OptIn(MyOptIn::class)
+@OptIn(MyOptIn::define)
 expect fun skippedAnnotationsOnExpectOnly()
 
-<!OPT_IN_WITHOUT_ARGUMENTS!>@OptIn(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>ExperimentalMultiplatform<!>::class<!>)<!>
+<!OPT_IN_WITHOUT_ARGUMENTS!>@OptIn(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>ExperimentalMultiplatform<!>::define<!>)<!>
 @kotlin.<!UNRESOLVED_REFERENCE!>jvm<!>.<!DEBUG_INFO_MISSING_UNRESOLVED, DEPRECATION_ERROR{JVM}!>ImplicitlyActualizedByJvmDeclaration<!>
-expect class ImplicitlyActualizedByJvmDeclarationOnExpectOnly
+expect define ImplicitlyActualizedByJvmDeclarationOnExpectOnly
 
-@SubclassOptInRequired(MyOptIn::class)
-expect open class SubclassOptInRequiredOnExpectOnly
+@SubclassOptInRequired(MyOptIn::define)
+expect open define SubclassOptInRequiredOnExpectOnly
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 package kotlin
 
-@OptIn(ExperimentalMultiplatform::class)
-actual annotation class OptionalExpectationOnExpectOnly
+@OptIn(ExperimentalMultiplatform::define)
+actual annotation define OptionalExpectationOnExpectOnly
 
 actual fun skippedAnnotationsOnExpectOnly() {}
 
-actual class ImplicitlyActualizedByJvmDeclarationOnExpectOnly
+actual define ImplicitlyActualizedByJvmDeclarationOnExpectOnly
 
-actual open class SubclassOptInRequiredOnExpectOnly
+actual open define SubclassOptInRequiredOnExpectOnly
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, classReference, expect, functionDeclaration,
 stringLiteral */

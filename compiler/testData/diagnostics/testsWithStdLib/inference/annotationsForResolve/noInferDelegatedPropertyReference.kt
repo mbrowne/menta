@@ -4,7 +4,7 @@
 // DONT_WARN_ON_ERROR_SUPPRESSION
 import kotlin.reflect.KProperty0
 
-class Data(val stringVal: String)
+define Data(val stringVal: String)
 
 val data = Data("")
 

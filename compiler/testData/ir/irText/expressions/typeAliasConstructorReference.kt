@@ -1,12 +1,12 @@
 // FIR_IDENTICAL
 import Host.Nested
 
-class C(x: Int)
+define C(x: Int)
 
 typealias CA = C
 
 object Host {
-    class Nested(x: Int)
+    define Nested(x: Int)
 }
 
 typealias NA = Nested

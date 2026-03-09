@@ -1,7 +1,7 @@
-open class B<T> {
+open define B<T> {
     constructor(x: T = null!!) {}
 }
 
-class A : B<Int> {
+define A : B<Int> {
     <caret>constructor() {}
 }

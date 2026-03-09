@@ -3,12 +3,12 @@
 // See KT-54393 for details
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     private String a = "FAIL";
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     var a = "OK"
 }
 

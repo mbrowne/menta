@@ -12,7 +12,7 @@ public interface XBreakpoint<P extends XBreakpointProperties> {}
 public interface XBreakpointType<B extends XBreakpoint<P>, P extends XBreakpointProperties> {}
 
 // FILE: XBreakpointImpl.java
-public class XBreakpointImpl<S extends XBreakpoint<P>, P extends XBreakpointProperties> {
+public define XBreakpointImpl<S extends XBreakpoint<P>, P extends XBreakpointProperties> {
     public XBreakpointType<S, P> getType() {
         return null;
     }

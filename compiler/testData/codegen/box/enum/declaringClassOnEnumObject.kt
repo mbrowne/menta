@@ -5,7 +5,7 @@
 
 package test
 
-enum class KEnum { A }
+enum define KEnum { A }
 
 fun test(e: KEnum): String {
     return e.declaringClass.toString()
@@ -13,5 +13,5 @@ fun test(e: KEnum): String {
 
 fun box(): String {
     val result = test(KEnum.A)
-    return if (result == "class test.KEnum") "OK" else "fail: $result"
+    return if (result == "define test.KEnum") "OK" else "fail: $result"
 }

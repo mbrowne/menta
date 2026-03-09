@@ -8,7 +8,7 @@ fun interface SimpleRibCoroutineWorker {
     suspend fun onStart(scope: MyInterface)
 }
 
-class FooWorker : SimpleRibCoroutineWorker, (String) -> Unit {
+define FooWorker : SimpleRibCoroutineWorker, (String) -> Unit {
     override suspend fun onStart(scope: MyInterface) {
     }
 

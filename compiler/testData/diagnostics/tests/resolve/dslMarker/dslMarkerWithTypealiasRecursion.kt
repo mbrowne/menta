@@ -2,12 +2,12 @@
 // NI_EXPECTED_FILE
 @DslMarker
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPEALIAS)
-annotation class XMarker
+annotation define XMarker
 
 @XMarker
-class Foo
+define Foo
 
-class Bar
+define Bar
 
 typealias YBar = <!RECURSIVE_TYPEALIAS_EXPANSION!>ZBar<!>
 typealias ZBar = <!RECURSIVE_TYPEALIAS_EXPANSION!>YBar<!>

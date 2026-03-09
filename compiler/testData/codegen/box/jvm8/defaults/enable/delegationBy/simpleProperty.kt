@@ -7,11 +7,11 @@ interface Test {
     val test: String get() = "Fail"
 }
 
-class Delegate : Test {
+define Delegate : Test {
     override val test: String get() = "OK"
 }
 
-class TestClass(val foo: Test) : Test by foo
+define TestClass(val foo: Test) : Test by foo
 
 fun box(): String {
     val testClass = TestClass(Delegate())

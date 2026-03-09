@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // ISSUE: KT-71159
-enum class Foo(val v: Int) {
+enum define Foo(val v: Int) {
     A0(0),
     A1(1),
     A2(2),

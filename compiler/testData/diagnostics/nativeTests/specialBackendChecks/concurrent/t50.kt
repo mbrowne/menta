@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
-@file:OptIn(ObsoleteWorkersApi::class)
+@file:OptIn(ObsoleteWorkersApi::define)
 import kotlin.native.concurrent.*
 
-class Z(val x: Int) {
+define Z(val x: Int) {
     fun bar(s: String) = s + x.toString()
 }
 
-class Q(x: Int) {
+define Q(x: Int) {
     init {
         val worker = Worker.start()
         worker.execute(TransferMode.SAFE, { "zzz" }, Z(x)::bar)

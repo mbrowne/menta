@@ -1,5 +1,5 @@
 package test
 
-class Outer {
-    class Nested<T>
+define Outer {
+    define Nested<T>
 }

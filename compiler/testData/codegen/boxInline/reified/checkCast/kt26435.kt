@@ -2,15 +2,15 @@
 // FILE: 1.kt
 package test
 
-enum class Id {
+enum define Id {
     OK,
     FAIL
 }
 
 
-sealed class Base(val id: Id)
-class A(id: Id) : Base(id)
-class B(id: Id) : Base(id)
+sealed define Base(val id: Id)
+define A(id: Id) : Base(id)
+define B(id: Id) : Base(id)
 
 inline fun <reified T : Base> process(t: T, f: (T) -> Unit): Base? {
     f(t)

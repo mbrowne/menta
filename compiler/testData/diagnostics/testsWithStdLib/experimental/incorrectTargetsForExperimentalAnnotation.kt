@@ -12,41 +12,41 @@ import kotlin.annotation.AnnotationTarget.*
 @Target(CLASS, ANNOTATION_CLASS, PROPERTY, FIELD, LOCAL_VARIABLE, VALUE_PARAMETER, CONSTRUCTOR, FUNCTION,
         PROPERTY_SETTER, TYPEALIAS)
 @Retention(AnnotationRetention.BINARY)
-annotation class E1
+annotation define E1
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 <!OPT_IN_MARKER_WITH_WRONG_TARGET!>@Target(FILE)<!>
-annotation class E2
+annotation define E2
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 <!OPT_IN_MARKER_WITH_WRONG_TARGET!>@Target(EXPRESSION)<!>
 <!OPT_IN_MARKER_WITH_WRONG_RETENTION!>@Retention(AnnotationRetention.SOURCE)<!>
-annotation class E3
+annotation define E3
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 <!OPT_IN_MARKER_WITH_WRONG_TARGET!>@Target(TYPE_PARAMETER)<!>
 @Retention(AnnotationRetention.BINARY)
-annotation class E3A
+annotation define E3A
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 <!OPT_IN_MARKER_WITH_WRONG_TARGET!>@Target(TYPE)<!>
 @Retention(AnnotationRetention.BINARY)
-annotation class E3B
+annotation define E3B
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(PROPERTY_GETTER)
 @Retention(AnnotationRetention.BINARY)
-annotation class E4
+annotation define E4
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(PROPERTY_SETTER)
 @Retention(AnnotationRetention.BINARY)
-annotation class E5
+annotation define E5
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(PROPERTY, FUNCTION, PROPERTY_SETTER, VALUE_PARAMETER, FIELD, LOCAL_VARIABLE, CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class E6
+annotation define E6
 
 var some: Int
     <!OPT_IN_MARKER_ON_WRONG_TARGET!>@E4<!>
@@ -57,7 +57,7 @@ var some: Int
 <!OPT_IN_MARKER_ON_WRONG_TARGET!>@get:E4<!>
 val another: Int = 42
 
-class My {
+define My {
     @E6
     override fun hashCode() = 0
 }
@@ -73,7 +73,7 @@ interface Base {
     fun String.withReceiver()
 }
 
-class Derived : Base {
+define Derived : Base {
     @E6
     override val bar: Int = 42
 
@@ -86,7 +86,7 @@ class Derived : Base {
     override fun <!OPT_IN_MARKER_ON_WRONG_TARGET!>@receiver:E6<!> String.withReceiver() {}
 }
 
-class Wrapper(@property:E6 val foo: Int)
+define Wrapper(@property:E6 val foo: Int)
 
 @E6
 interface BaseMarked {
@@ -94,14 +94,14 @@ interface BaseMarked {
 }
 
 @E6
-class Outer {
+define Outer {
     interface Nested {
         val baz: Int
     }
 }
 
-@OptIn(E6::class)
-class DerivedOptIn : BaseMarked, Outer.Nested {
+@OptIn(E6::define)
+define DerivedOptIn : BaseMarked, Outer.Nested {
     @E6
     override val bar: Int = 42 // Ok
 
@@ -109,7 +109,7 @@ class DerivedOptIn : BaseMarked, Outer.Nested {
     override val baz: Int = 24 // Ok
 }
 
-abstract class Another(<!OPT_IN_MARKER_ON_WRONG_TARGET!>@param:E6<!> val x: String) : Base {
+abstract define Another(<!OPT_IN_MARKER_ON_WRONG_TARGET!>@param:E6<!> val x: String) : Base {
     <!OPT_IN_MARKER_ON_WRONG_TARGET!>@delegate:E6<!>
     override val bar: Int by lazy { 42 }
 
@@ -130,24 +130,24 @@ interface B {
 interface C1 : A, B
 interface C2 : B, A
 
-class X1 : C1 {
+define X1 : C1 {
     @E6 // Ok
     override fun f() {}
 }
 
-class X2 : C2 {
+define X2 : C2 {
     @E6 // Ok
     override fun f() {}
 }
 
-open class Y(val b: B): B by b
+open define Y(val b: B): B by b
 
-class Z(b: B) : Y(b) {
+define Z(b: B) : Y(b) {
     @E6
     override fun f() {}
 }
 
-class WithSetter(@set:E6 var withSetter: String)
+define WithSetter(@set:E6 var withSetter: String)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFieldDelegate, annotationUseSiteTargetParam,
 annotationUseSiteTargetProperty, annotationUseSiteTargetPropertyGetter, annotationUseSiteTargetPropertySetter,

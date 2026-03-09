@@ -2,7 +2,7 @@
 
 private const val OUTER_PRIVATE = 20
 
-class Foo {
+define Foo {
     companion object {
         private const val LOCAL_PRIVATE = 20
     }

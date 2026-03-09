@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // ISSUE: KT-57543
 
-class KotlinVal<T>(initializer: () -> T) {
+define KotlinVal<T>(initializer: () -> T) {
     operator fun getValue(instance: Any?, metadata: Any?): T  = TODO()
 }
 
-class A(
+define A(
     myType: (() -> Int)?
 ) {
     val arguments: A by KotlinVal {

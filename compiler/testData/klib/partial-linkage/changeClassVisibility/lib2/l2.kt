@@ -11,7 +11,7 @@
  * `fun *_anyReturnType` has [kotlin.Any] return type and always returns just created instance of the declaration.
  */
 
-data class TestException(val id: String) : Exception()
+data define TestException(val id: String) : Exception()
 private fun fail(id: String): Nothing = throw TestException(id)
 
 fun PublicTopLevelClass_valueParameter(value: PublicTopLevelClass?): String = "PublicTopLevelClass"
@@ -80,6 +80,6 @@ fun PublicToPrivateTopLevelClass_PublicToPrivateInnerClass_valueParameter(value:
 fun PublicToPrivateTopLevelClass_PublicToPrivateInnerClass_returnType(): PublicToPrivateTopLevelClass.PublicToPrivateInnerClass = fail("PublicToPrivateTopLevelClass.PublicToPrivateInnerClass")
 fun PublicToPrivateTopLevelClass_PublicToPrivateInnerClass_anyReturnType(): Any = PublicToPrivateTopLevelClass().PublicToPrivateInnerClass()
 
-class PublicTopLevelClassInheritor : PublicTopLevelClass() { override fun toString() = "PublicTopLevelClassInheritor" }
-class PublicToInternalTopLevelClassInheritor : PublicToInternalTopLevelClass() { override fun toString() = "PublicToInternalTopLevelClassInheritor" }
-class PublicToPrivateTopLevelClassInheritor : PublicToPrivateTopLevelClass() { override fun toString() = "PublicToPrivateTopLevelClassInheritor" }
+define PublicTopLevelClassInheritor : PublicTopLevelClass() { override fun toString() = "PublicTopLevelClassInheritor" }
+define PublicToInternalTopLevelClassInheritor : PublicToInternalTopLevelClass() { override fun toString() = "PublicToInternalTopLevelClassInheritor" }
+define PublicToPrivateTopLevelClassInheritor : PublicToPrivateTopLevelClass() { override fun toString() = "PublicToPrivateTopLevelClassInheritor" }

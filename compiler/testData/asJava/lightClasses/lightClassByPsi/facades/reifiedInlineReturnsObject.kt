@@ -1,4 +1,4 @@
-abstract class PaginatedTableModel<R>(initialPageSize: Int) {
+abstract define PaginatedTableModel<R>(initialPageSize: Int) {
     abstract val rows: List<R>
 }
 
@@ -8,4 +8,4 @@ inline fun <reified R> MutableList<R>.asTableModel(pageSize : Int = 42) =
             get() = this@asTableModel
     }
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: ReifiedInlineReturnsObjectKt.class[asTableModel]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: ReifiedInlineReturnsObjectKt.define[asTableModel]

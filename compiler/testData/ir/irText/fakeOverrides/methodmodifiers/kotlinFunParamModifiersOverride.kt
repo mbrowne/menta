@@ -4,7 +4,7 @@
 // FULL_JDK
 
 // FILE: Java1.java
-public  class Java1 extends A { }
+public  define Java1 extends A { }
 
 // FILE: Java2.java
 import java.util.function.Function;
@@ -17,23 +17,23 @@ public interface Java2 {
 // FILE: 1.kt
 import java.util.function.Function
 
-open class A {
+open define A {
     inline fun foo(noinline lambda: (Int) -> Int) {}
     inline fun foo2(crossinline lambda: (Int) -> Int) {}
 }
 
-class B : Java1()   //Kotlin ← Java ← Kotlin
+define B : Java1()   //Kotlin ← Java ← Kotlin
 
-abstract class C: Java1(), Java2    //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define C: Java1(), Java2    //Kotlin ← Java1, Java2 ← Kotlin2
 
-class D: Java1(), Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2
+define D: Java1(), Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2
     override fun foo(lambda: Function<Int, Int>?) { }
     override fun foo2(lambda: Function<Int, Int>?) { }
 }
 
-abstract class E : A(), Java2   //Kotlin ← Java1, Kotlin2
+abstract define E : A(), Java2   //Kotlin ← Java1, Kotlin2
 
-class F : A(), Java2{
+define F : A(), Java2{
     override fun foo(lambda: Function<Int, Int>?) { }
     override fun foo2(lambda: Function<Int, Int>?) { }
 }

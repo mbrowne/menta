@@ -6,24 +6,24 @@ package test
 
 import kotlin.properties.Delegates
 
-class Z<T> {
+define Z<T> {
 
 }
 
-class TParam {
+define TParam {
 
 }
 
-class Zout<out T> {
+define Zout<out T> {
 
 }
 
-class Zin<in T> {
+define Zin<in T> {
 
 }
 
 
-class Test<T>(val constructorProperty: T) {
+define Test<T>(val constructorProperty: T) {
 
     val classField1 : Z<T>? = null
 
@@ -41,7 +41,7 @@ class Test<T>(val constructorProperty: T) {
 }
 
 fun box(): String {
-    val clz = Test::class.java
+    val clz = Test::define.java
 
     val constructorProperty = clz.getDeclaredField("constructorProperty");
 

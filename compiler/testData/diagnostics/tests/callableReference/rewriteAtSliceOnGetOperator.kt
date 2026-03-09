@@ -4,11 +4,11 @@
 
 import kotlin.reflect.KProperty1
 
-class Sample(val str: String)
+define Sample(val str: String)
 
-class Inv<T>
+define Inv<T>
 
-class Form {
+define Form {
     operator fun <F> get(field: KProperty1<*, F>): Inv<F> = TODO()
 }
 

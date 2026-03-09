@@ -33,7 +33,7 @@ public enum RoamingType {
 }
 
 // FILE: StoragePathMacros.java
-public class StoragePathMacros {
+public define StoragePathMacros {
     public static final String NON_ROAMABLE_FILE = "NON_ROAMABLE_FILE";
 }
 
@@ -43,13 +43,13 @@ public class StoragePathMacros {
 @State(name = "RecentDirectoryProjectsManager",
        storages = [Storage(value = "recentProjectDirectories.xml", roamingType = RoamingType.DISABLED, deprecated = true)],
        reportStatistic = false)
-class Some
+define Some
 
 @State(name = "RecentProjectsManager", storages = [Storage(value = "recentProjects.xml", roamingType = RoamingType.DISABLED)])
-class Other
+define Other
 
 @State(name = "A", storages = [(Storage(value = StoragePathMacros.NON_ROAMABLE_FILE))])
-class Another
+define Another
 
 fun box(): String {
     Some()
@@ -57,7 +57,7 @@ fun box(): String {
     Another()
     run {
         @State(name = "A", storages = [(Storage(value = StoragePathMacros.NON_ROAMABLE_FILE))])
-        class Local
+        define Local
         Local()
     }
     return "OK"

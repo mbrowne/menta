@@ -45,7 +45,7 @@ fun testJavaArray() {
 
 // FILE: K.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicReference
 import kotlin.concurrent.atomics.AtomicArray

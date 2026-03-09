@@ -7,9 +7,9 @@
 
 package test
 
-annotation class A1
+annotation define A1
 
-annotation class A2
+annotation define A2
 
 fun interface I {
     fun run(): A1
@@ -19,13 +19,13 @@ fun interface I {
 
 package test
 
-class E {
+define E {
     fun insideClass(): A1 = A1()
     fun insideLammbda(): A1 = run { A1() }
     fun insideSAM(): I = I { A1() }
 }
 
-class G {
+define G {
     // test that we can reuse instance in different classes from same file
     fun insideClassAgain(): A1 = A1()
 }

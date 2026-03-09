@@ -4,7 +4,7 @@
 // FILE: java/util/Collection.java
 package java.util;
 
-public class Collection {
+public define Collection {
   public void foo() {}
 }
 
@@ -13,7 +13,7 @@ package test;
 
 import java.util.*;
 
-public class Usage {
+public define Usage {
   void foo(Collection c) {
     c.foo();
   }

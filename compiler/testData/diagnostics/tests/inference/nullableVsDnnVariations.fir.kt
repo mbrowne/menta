@@ -6,7 +6,7 @@
 fun <B> goBar(t: B) = Bar<B & Any>(t)
 fun <BB> goBarNoTypeArguments(t: BB) = Bar(t)
 
-class Bar<BT : Any>(t: BT?)
+define Bar<BT : Any>(t: BT?)
 
 fun <F> goFoo(t: F) = foo<F & Any>(t)
 

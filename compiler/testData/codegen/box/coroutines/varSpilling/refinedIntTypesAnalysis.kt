@@ -2,7 +2,7 @@
 // NO_CHECK_LAMBDA_INLINING
 
 // FILE: lib.kt
-class Test {
+define Test {
     suspend fun discardSuspend(discarded0: Long, max: Long) {
         while (isClosedForRead) {
             // this assignment is required

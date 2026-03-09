@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // SKIP_TXT
-class A {
+define A {
     suspend operator fun component1(): String = "K"
 }
 

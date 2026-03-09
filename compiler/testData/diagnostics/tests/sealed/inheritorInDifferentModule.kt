@@ -7,15 +7,15 @@
 // FILE: a.kt
 package a
 
-sealed class Base
+sealed define Base
 
-class A : Base()
+define A : Base()
 
 // MODULE: m2(m1)
 // FILE: b.kt
 
 package a
 
-class B : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Base<!>()
+define B : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Base<!>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, sealed */

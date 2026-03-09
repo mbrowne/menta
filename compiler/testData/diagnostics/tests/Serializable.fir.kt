@@ -18,8 +18,8 @@ fun testPrimitives(b: Byte, ss: Short, i: Int, l: Long, d: Double, s: String, f:
     use(bool)
 }
 
-class N
-class S: java.io.Serializable
+define N
+define S: java.io.Serializable
 
 fun testArrays(ia: IntArray, ai: Array<Int>, an: Array<N>, a: Array<S>) {
     use(ia)
@@ -41,7 +41,7 @@ fun testNotSerializable(l: List<Int>) {
     use(<!ARGUMENT_TYPE_MISMATCH!>N()<!>)
 }
 
-enum class C {
+enum define C {
     E, E2
 }
 

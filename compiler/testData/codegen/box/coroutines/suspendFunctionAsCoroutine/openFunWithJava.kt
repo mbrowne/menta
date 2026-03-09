@@ -6,7 +6,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-open class A(val v: String) {
+open define A(val v: String) {
     suspend fun suspendThere(v: String): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume(v)
         COROUTINE_SUSPENDED
@@ -15,7 +15,7 @@ open class A(val v: String) {
     open suspend fun suspendHere(): String = suspendThere("O") + suspendThere(v)
 }
 
-class B(v: String) : A(v) {
+define B(v: String) : A(v) {
     override suspend fun suspendHere(): String = super.suspendHere() + suspendThere("56")
 }
 
@@ -33,7 +33,7 @@ fun box(): String {
 
 // FILE: JavaClass.java
 import kotlin.coroutines.*;
-public class JavaClass {
+public define JavaClass {
     public static String foo() {
         final String[] res = new String[1];
 

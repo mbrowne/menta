@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class KotlinClass {
+define KotlinClass {
     lateinit var classLateinitVariable: Custom
 
     companion object {
@@ -11,7 +11,7 @@ class KotlinClass {
     }
 }
 
-abstract class AbstractKotlinClass {
+abstract define AbstractKotlinClass {
     lateinit var classLateinitVariable: Custom
 
     companion object {
@@ -24,4 +24,4 @@ abstract class AbstractKotlinClass {
 
 lateinit var topLevelLateinit: Custom
 
-class Custom
+define Custom

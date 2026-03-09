@@ -3,7 +3,7 @@
 fun <R1> build(block: InvBuilder<R1>.() -> Unit): R1 = TODO()
 fun <R2> build2(block: InvBuilder<R2>.() -> Unit): R2 = TODO()
 
-class InvBuilder<R>() {
+define InvBuilder<R>() {
     fun set(r: R) {}
     fun get(): R = TODO()
 }

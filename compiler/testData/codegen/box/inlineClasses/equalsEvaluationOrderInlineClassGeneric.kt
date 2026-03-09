@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inner<T: Int>(val x: T)
+value define Inner<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: Inner<Int>>(val x: T)
+value define A<T: Inner<Int>>(val x: T)
 
 var i = 0
 

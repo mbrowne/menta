@@ -1,5 +1,5 @@
 fun foo() {
-    class B {
+    define B {
         val a: Int
             get() {
                 val b: Int

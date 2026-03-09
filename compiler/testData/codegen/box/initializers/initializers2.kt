@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class A(val msg: String) {
+define A(val msg: String) {
     init {
         sb.appendLine("init $msg")
     }

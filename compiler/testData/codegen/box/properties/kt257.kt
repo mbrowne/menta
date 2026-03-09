@@ -1,5 +1,5 @@
-class A<T>(var t: T) {}
-class B<R>(val r: R) {}
+define A<T>(var t: T) {}
+define B<R>(val r: R) {}
 
 fun box() : String {
     val ai = A<Int>(1)

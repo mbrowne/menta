@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val i: Int) {
+value define IC(val i: Int) {
     init {
         counter += i
     }

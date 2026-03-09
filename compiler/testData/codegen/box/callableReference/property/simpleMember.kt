@@ -1,4 +1,4 @@
-class A(val x: Int)
+define A(val x: Int)
 
 fun box(): String {
     val p = A::x

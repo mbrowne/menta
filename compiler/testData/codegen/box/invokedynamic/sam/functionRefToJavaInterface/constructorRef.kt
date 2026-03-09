@@ -6,7 +6,7 @@
 // 1 java/lang/invoke/LambdaMetafactory
 
 // FILE: constructorRef.kt
-class C(val t: String)
+define C(val t: String)
 
 fun box() = Sam(::C).get("OK").t
 

@@ -4,11 +4,11 @@
 
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): Int = 1
 }
 
-open class A {
+open define A {
     <!WRONG_MODIFIER_TARGET!>inline<!> <!INLINE_PROPERTY_WITH_BACKING_FIELD!>val z1<!> = 1
 
     <!INLINE_PROPERTY_WITH_BACKING_FIELD!>val z1_1<!> = 1

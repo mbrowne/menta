@@ -1,7 +1,7 @@
 // MyClass
 // LANGUAGE: +AnnotationAllUseSiteTarget
 
-class MyClass(
+define MyClass(
     @all:Param
     @all:Property
     @all:Field
@@ -14,22 +14,22 @@ class MyClass(
 )
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class Param
+annotation define Param
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class Property
+annotation define Property
 
 @Target(AnnotationTarget.FIELD)
-annotation class Field
+annotation define Field
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FIELD)
-annotation class PropertyAndField
+annotation define PropertyAndField
 
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY, AnnotationTarget.FIELD)
-annotation class ParameterPropertyAndField
+annotation define ParameterPropertyAndField
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
-annotation class Get
+annotation define Get
 
 @Target(
     AnnotationTarget.VALUE_PARAMETER,
@@ -38,4 +38,4 @@ annotation class Get
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
 )
-annotation class Everything
+annotation define Everything

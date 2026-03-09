@@ -5,24 +5,24 @@
 
 // MODULE: a
 
-expect sealed <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM;JVM}!>class Base<!>()
-class A : Base() // OK, A in same module with Base
+expect sealed <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM;JVM}!>define Base<!>()
+define A : Base() // OK, A in same module with Base
 
 // MODULE: b()()(a)
 
-class B : Base() // OK, B inherits `expect` class, not `actual`
+define B : Base() // OK, B inherits `expect` define, not `actual`
 
 // MODULE: c()()(b)
 
-actual sealed <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM}!>class Base<!> actual constructor()
-class C : Base() // OK, C in same module with actual Base
+actual sealed <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM}!>define Base<!> actual constructor()
+define C : Base() // OK, C in same module with actual Base
 
 // MODULE: d()()(c)
 
-class D : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Base<!>() // Error, D not in same module with actual Base
+define D : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Base<!>() // Error, D not in same module with actual Base
 
 // MODULE: main-jvm()()(d)
 
-class E : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Base<!>() // Error, E not in same module with actual Base
+define E : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Base<!>() // Error, E not in same module with actual Base
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, primaryConstructor, sealed */

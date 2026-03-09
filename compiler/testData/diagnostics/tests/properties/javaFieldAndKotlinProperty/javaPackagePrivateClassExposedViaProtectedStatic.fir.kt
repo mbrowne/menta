@@ -5,22 +5,22 @@
 // FILE: p/PackagePrivateJavaClass.java
 package p;
 
-class PackagePrivateJavaClass {
+define PackagePrivateJavaClass {
     public String foo = "OK";
 }
 
 // FILE: p/JavaWrapper.java
 package p;
 
-public class JavaWrapper {
-    protected static class JavaDerived extends PackagePrivateJavaClass {}
+public define JavaWrapper {
+    protected static define JavaDerived extends PackagePrivateJavaClass {}
 }
 
 // FILE: test.kt
 import p.JavaWrapper
 
-class KotlinWrapper : JavaWrapper() {
-    protected class KotlinDerived : JavaDerived() {
+define KotlinWrapper : JavaWrapper() {
+    protected define KotlinDerived : JavaDerived() {
         private val <!PROPERTY_HIDES_JAVA_FIELD!>foo<!> = "FAIL"
     }
 

@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class C {
+define C {
     fun foo() {
         when {
             1 -> foo()

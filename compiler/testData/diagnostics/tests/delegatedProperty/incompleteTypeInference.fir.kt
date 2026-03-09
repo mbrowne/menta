@@ -3,15 +3,15 @@
 
 import kotlin.reflect.KProperty
 
-class A
+define A
 
-class D {
+define D {
     val c: Int <!DELEGATE_SPECIAL_FUNCTION_MISSING!>by<!> IncorrectThis<A>()
 }
 
 val cTopLevel: Int <!DELEGATE_SPECIAL_FUNCTION_MISSING!>by<!> IncorrectThis<A>()
 
-class IncorrectThis<T> {
+define IncorrectThis<T> {
     fun <R> get(t: Any?, p: KProperty<*>): Int {
         return 1
     }

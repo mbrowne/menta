@@ -6,15 +6,15 @@
 
 package test
 
-@java.lang.annotation.Repeatable(As::class)
-annotation class A(val value: String)
+@java.lang.annotation.Repeatable(As::define)
+annotation define A(val value: String)
 
-annotation class As(val value: Array<A>)
+annotation define As(val value: Array<A>)
 
 @A("1")
 @As([A("2"), A("3")])
-class Z
+define Z
 
 @As([A("1"), A("2")])
 @A("3")
-class ZZ
+define ZZ

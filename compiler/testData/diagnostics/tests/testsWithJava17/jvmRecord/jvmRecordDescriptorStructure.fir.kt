@@ -5,15 +5,15 @@
 // ENABLE_JVM_PREVIEW
 
 <!NON_DATA_CLASS_JVM_RECORD!>@JvmRecord<!>
-class BasicRecord(val x: String)
+define BasicRecord(val x: String)
 
 @JvmRecord
-data class BasicDataRecord(val x: String)
+data define BasicDataRecord(val x: String)
 
 @JvmRecord
-data class VarInConstructor(<!JVM_RECORD_NOT_VAL_PARAMETER!>var x: String<!>)
+data define VarInConstructor(<!JVM_RECORD_NOT_VAL_PARAMETER!>var x: String<!>)
 
 @JvmRecord
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class BasicRecordWithSuperClass<!>(val x: String) : <!ILLEGAL_JAVA_LANG_RECORD_SUPERTYPE!>Record<!>()
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define BasicRecordWithSuperClass<!>(val x: String) : <!ILLEGAL_JAVA_LANG_RECORD_SUPERTYPE!>Record<!>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, primaryConstructor, propertyDeclaration */

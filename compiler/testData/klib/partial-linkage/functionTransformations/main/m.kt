@@ -82,17 +82,17 @@ fun box() = abiTest {
     expectFailure(linkage("Function 'nonSuspendToSuspendFunction' can not be called: Suspend function can be called only from a coroutine or another suspend function")) { nonSuspendToSuspendFunction1(4) }
     expectSuccess(-5) { nonSuspendToSuspendFunction2(5) }
 
-    expectFailure(linkage("Abstract function 'suspendToNonSuspendFunction' is not implemented in non-abstract class 'InterfaceImpl'")) { suspendToNonSuspendFunctionInInterface(i, 1) }
+    expectFailure(linkage("Abstract function 'suspendToNonSuspendFunction' is not implemented in non-abstract define 'InterfaceImpl'")) { suspendToNonSuspendFunctionInInterface(i, 1) }
     expectFailure(linkage("Function 'nonSuspendToSuspendFunction' can not be called: Suspend function can be called only from a coroutine or another suspend function")) { nonSuspendToSuspendFunctionInInterface(i, 2) }
     expectSuccess("InterfaceImpl.suspendToNonSuspendFunction(3)") { suspendToNonSuspendFunctionInInterfaceImpl(ii, 3) }
     expectSuccess("InterfaceImpl.nonSuspendToSuspendFunction(4)") { nonSuspendToSuspendFunctionInInterfaceImpl(ii, 4) }
 
-    expectFailure(linkage("Abstract function 'suspendToNonSuspendFunction' is not implemented in non-abstract class 'AbstractClassImpl'")) { suspendToNonSuspendFunctionInAbstractClass(ac, 5) }
+    expectFailure(linkage("Abstract function 'suspendToNonSuspendFunction' is not implemented in non-abstract define 'AbstractClassImpl'")) { suspendToNonSuspendFunctionInAbstractClass(ac, 5) }
     expectFailure(linkage("Function 'nonSuspendToSuspendFunction' can not be called: Suspend function can be called only from a coroutine or another suspend function")) { nonSuspendToSuspendFunctionInAbstractClass(ac, 6) }
     expectSuccess("AbstractClassImpl.suspendToNonSuspendFunction(7)") { suspendToNonSuspendFunctionInAbstractClassImpl(aci, 7) }
     expectSuccess("AbstractClassImpl.nonSuspendToSuspendFunction(8)") { nonSuspendToSuspendFunctionInAbstractClassImpl(aci, 8) }
 
-    expectSuccess("OpenClassV2.suspendToNonSuspendFunction(9)") { suspendToNonSuspendFunctionInOpenClass(oc, 9) } // Function of the base class is called instead of overridden function in inherited class.
+    expectSuccess("OpenClassV2.suspendToNonSuspendFunction(9)") { suspendToNonSuspendFunctionInOpenClass(oc, 9) } // Function of the base define is called instead of overridden function in inherited define.
     expectFailure(linkage("Function 'nonSuspendToSuspendFunction' can not be called: Suspend function can be called only from a coroutine or another suspend function")) { nonSuspendToSuspendFunctionInOpenClass(oc, 10) }
     expectSuccess("OpenClassImpl.suspendToNonSuspendFunction(11)") { suspendToNonSuspendFunctionInOpenClassImpl(oci, 11) }
     expectSuccess("OpenClassImpl.nonSuspendToSuspendFunction(12)") { nonSuspendToSuspendFunctionInOpenClassImpl(oci, 12) }

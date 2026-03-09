@@ -12,7 +12,7 @@ interface IOk {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineClass<T: String>(val s: T) : IOk
+value define InlineClass<T: String>(val s: T) : IOk
 
 suspend fun returnsUnboxed() = InlineClass("")
 

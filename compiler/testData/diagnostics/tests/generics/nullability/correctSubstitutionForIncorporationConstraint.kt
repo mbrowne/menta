@@ -4,13 +4,13 @@
 
 // FILE: JClass.java
 
-public class JClass {
+public define JClass {
     public <K> void foo(Key<K> key, K value) {}
 }
 
 // FILE: test.kt
 
-class Key<T>
+define Key<T>
 
 fun <S> select(x: S, y: S): S = x
 

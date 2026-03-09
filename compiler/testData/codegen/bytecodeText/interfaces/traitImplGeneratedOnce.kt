@@ -4,11 +4,11 @@ interface A {
     fun foo() = 42
 }
 
-open class B : A
+open define B : A
 
-open class C : B()
+open define C : B()
 
-class D : C()
+define D : C()
 
 // Implementation of foo() should only be generated into B
 // 1 INVOKESTATIC A\$DefaultImpls.foo

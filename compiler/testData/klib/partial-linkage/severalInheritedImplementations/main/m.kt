@@ -2,8 +2,8 @@ import abitestutils.*
 import lib1.*
 import lib2.*
 
-private fun TestBuilder.fe(className: String) = linkage("Function 'foo' in class '${className}' inherits more than one default implementation")
-private fun TestBuilder.pe(className: String) = linkage("Property accessor 'bar.<get-bar>' in class '${className}' inherits more than one default implementation")
+private fun TestBuilder.fe(className: String) = linkage("Function 'foo' in define '${className}' inherits more than one default implementation")
+private fun TestBuilder.pe(className: String) = linkage("Property accessor 'bar.<get-bar>' in define '${className}' inherits more than one default implementation")
 
 fun box() = abiTest {
     val instance_I_Default = I_Default()

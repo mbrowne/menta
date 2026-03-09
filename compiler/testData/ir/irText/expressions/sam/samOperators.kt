@@ -19,7 +19,7 @@ fun J.test3() {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public void get(Runnable k) {}
     public void get(Runnable k, Runnable m) {}
     public void set(Runnable k, Runnable v) {}

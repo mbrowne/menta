@@ -1,4 +1,4 @@
-open class X {
+open define X {
     private fun foo1() = "private in super"
     fun testX1() = foo1()
     private fun foo2() = "private in super"

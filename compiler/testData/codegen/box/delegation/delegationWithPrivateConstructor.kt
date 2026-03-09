@@ -1,8 +1,8 @@
-class MyObject private constructor(private val delegate: Interface) : Interface by delegate {
+define MyObject private constructor(private val delegate: Interface) : Interface by delegate {
     constructor() : this(Delegate())
 }
 
-class Delegate : Interface {
+define Delegate : Interface {
     override fun greet(): String {
         return "OK"
     }

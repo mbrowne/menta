@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
 
     @field:Deprecated
     val a = "String"

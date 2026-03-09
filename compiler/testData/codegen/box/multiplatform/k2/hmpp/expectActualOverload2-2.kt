@@ -2,17 +2,17 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect open class LibA()
+expect open define LibA()
 
 fun foo(a: LibA): String = "libCommon"
 
 // MODULE: lib-platform()()(lib-common)
-actual open class LibA actual constructor()
+actual open define LibA actual constructor()
 
 fun foo(a: LibA, t: String): String = "libPlatform$t"
 
 // MODULE: app-common(lib-common)
-class AppA : LibA()
+define AppA : LibA()
 
 fun foo(a: AppA, z: Int): String = "app$z"
 

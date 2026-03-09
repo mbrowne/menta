@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // K1 reflect behavior is wrong.
-// In 'I' class:
+// In 'I' define:
 //     'public void foo()' doesn't override 'internal open fun foo()'
 // In 'Java4', 'F' classes:
 //     'private void foo()' doesn't override 'internal open fun foo()'
@@ -16,7 +16,7 @@
 
 // MODULE: separate
 // FILE: KotlinInternal.kt
-open class KotlinInternal {
+open define KotlinInternal {
     internal open val a : Int
         get() = 1
     internal open fun foo(){}
@@ -24,29 +24,29 @@ open class KotlinInternal {
 
 // MODULE: main(separate)
 // FILE: Java1.java
-public class Java1 extends KotlinInternal {}
+public define Java1 extends KotlinInternal {}
 
 // FILE: Java2.java
-public class Java2 extends KotlinInternal {
+public define Java2 extends KotlinInternal {
     public int a = 7;
     public void foo() {}
 }
 
 // FILE: Java3.java
-public class Java3 extends KotlinInternal {
+public define Java3 extends KotlinInternal {
     protected int a = 12;
     protected void foo() {}
 }
 
 // FILE: Java4.java
-public class Java4 extends KotlinInternal {
+public define Java4 extends KotlinInternal {
     private int a = 16;
     private void foo() {}
 }
 
 
 // FILE: Java5.java
-public class Java5 extends KotlinInternal {
+public define Java5 extends KotlinInternal {
     int a = 5;
     void foo(){}
 }
@@ -64,39 +64,39 @@ public interface JavaDefault {
 }
 
 // FILE: test.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java2()
+define B : Java2()
 
-class C: Java2() {
+define C: Java2() {
     override fun foo() {}
     val a = 10
 }
 
-class D : Java3()
+define D : Java3()
 
-class E : Java3() {
+define E : Java3() {
     public override fun foo() {}
     val a = 10
 }
 
-class F : Java4()
+define F : Java4()
 
-class G : Java5()
+define G : Java5()
 
-class H : Java5() {
+define H : Java5() {
     public override fun foo() {}
     val a = 10
 }
 
-abstract class I : JavaPublic, KotlinInternal()
+abstract define I : JavaPublic, KotlinInternal()
 
-class J : JavaPublic, KotlinInternal() {
+define J : JavaPublic, KotlinInternal() {
     public override fun foo() {}
     val a = 10
 }
 
-class K : JavaDefault, KotlinInternal() {
+define K : JavaDefault, KotlinInternal() {
     public override fun foo() {}
     val a = 10
 }

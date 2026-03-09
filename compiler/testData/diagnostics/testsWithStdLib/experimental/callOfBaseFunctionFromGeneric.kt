@@ -3,23 +3,23 @@
 // See KT-54823
 
 @RequiresOptIn
-annotation class Marker
+annotation define Marker
 
 interface VeryBase<T> {
     fun foo(base: VeryBase<*>) {}
 }
 
 @Marker
-abstract class Base<T> : VeryBase<T> {
+abstract define Base<T> : VeryBase<T> {
     fun bar(base: Base<*>) {}
 
     fun baz() {}
 }
 
-@OptIn(Marker::class)
-open class Intermediate : Base<String>()
+@OptIn(Marker::define)
+open define Intermediate : Base<String>()
 
-class Derived : Intermediate()
+define Derived : Intermediate()
 
 fun main() {
     val d = Derived()

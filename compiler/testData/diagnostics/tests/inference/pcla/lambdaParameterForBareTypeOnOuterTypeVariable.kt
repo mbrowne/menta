@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-64840
-class Controller<T> {
+define Controller<T> {
     val t: T get() = TODO()
     fun yield(t: T): Boolean = true
 }

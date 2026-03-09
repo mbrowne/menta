@@ -11,17 +11,17 @@ public interface Java1 {
 public interface Java2 extends KotlinInterface { }
 
 // FILE: 1.kt
-open class A {
+open define A {
     open fun foo(a: Int = 0, b: Any? = "string", c: Nothing? = null) { }
 }
 
-abstract class B : A(), Java1   //Kotlin ← Java, Kotlin2
+abstract define B : A(), Java1   //Kotlin ← Java, Kotlin2
 
-class C: A(), Java1 {   //Kotlin ← Java, Kotlin2 with explicit override
+define C: A(), Java1 {   //Kotlin ← Java, Kotlin2 with explicit override
     override fun foo(a: Int?, b: Any?, c: Any?) { }
 }
 
-class D : A(), Java2 {  //Kotlin ← Java, Kotlin2 ← Kotlin3
+define D : A(), Java2 {  //Kotlin ← Java, Kotlin2 ← Kotlin3
     override fun foo(a: Int, b: Any?, c: Nothing?) { }
 }
 

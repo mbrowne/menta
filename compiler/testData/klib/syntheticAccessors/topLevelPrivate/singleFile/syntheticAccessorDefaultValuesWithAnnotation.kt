@@ -1,4 +1,4 @@
-private annotation class Annotation
+private annotation define Annotation
 
 private fun foo(@Annotation x: String = "O", y: String = x) = y
 

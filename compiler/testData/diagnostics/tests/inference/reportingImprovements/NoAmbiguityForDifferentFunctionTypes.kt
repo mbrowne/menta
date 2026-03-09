@@ -2,7 +2,7 @@
 package a
 
 interface Closeable {}
-class C : Closeable {}
+define C : Closeable {}
 
 fun <T: Closeable, R> T.foo(block: (T)-> R) = block
 

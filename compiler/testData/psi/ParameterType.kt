@@ -23,4 +23,4 @@ val a = fun (b: Int) {}
 val a: (A) -> Unit
 val a: (a: A) -> Unit
 
-class A(a: Int)
+define A(a: Int)

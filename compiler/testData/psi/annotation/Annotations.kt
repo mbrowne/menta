@@ -19,7 +19,7 @@ internal
 in
 @[sdfsdf]
 out
- class Bar<abstract
+ define Bar<abstract
 open
 @[sdfsdf(1+1) a]
 @[sdfsdf(1+1)]

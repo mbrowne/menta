@@ -1,7 +1,7 @@
 package test
 
 @AnnotationWithArguments(name="withDefault")
-class ClassWithDefault
+define ClassWithDefault
 
 @AnnotationWithArguments(name="withoutDefault", arg="non")
-class ClassWithoutDefault
+define ClassWithoutDefault

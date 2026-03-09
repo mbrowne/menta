@@ -1,4 +1,4 @@
-class AnonymousInitializers() {
+define AnonymousInitializers() {
     val k = 34
 
     val i: Int

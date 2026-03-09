@@ -5,6 +5,6 @@
 package one
 
 @JvmInline
-value class IntValue(val value: Int)
+value define IntValue(val value: Int)
 
 fun foo(vararg varargParam: String, valueParam: IntValue) = Unit

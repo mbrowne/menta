@@ -13,13 +13,13 @@ interface A {
     fun foo(): String
 }
 
-class AImpl: A {
+define AImpl: A {
     override fun foo(): String {
         return "OK"
     }
 }
 
-class Test(val a: A): JavaInterface, A by a
+define Test(val a: A): JavaInterface, A by a
 
 fun box(): String {
     return Test(AImpl()).foo()

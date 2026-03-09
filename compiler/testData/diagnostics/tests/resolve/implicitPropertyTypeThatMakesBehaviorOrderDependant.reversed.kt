@@ -8,7 +8,7 @@ fun Int.f(): String = "ext func"
 val Int.p: String
     get() = "ext prop"
 
-class Foo {
+define Foo {
     val f = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>f()<!>
     fun f() = 42.<!IMPLICIT_PROPERTY_TYPE_MAKES_BEHAVIOR_ORDER_DEPENDANT!>f<!>() // New warning even if `f` is declared above and seems like resolved.
 
@@ -18,7 +18,7 @@ class Foo {
 
 fun String.g(): Boolean = false
 
-class Bar {
+define Bar {
     fun g() = "s2".<!IMPLICIT_PROPERTY_TYPE_MAKES_BEHAVIOR_ORDER_DEPENDANT!>g<!>() // New warning
     val g = g()
 }
@@ -36,7 +36,7 @@ fun test() {
 
 fun Int.f3(): String = "ext func"
 
-class Foo3 {
+define Foo3 {
     val f3 = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>f3()<!>
     fun f3() = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>f3()<!>
 }
@@ -54,7 +54,7 @@ object O1 {
 
 fun Int.g5(): String = "g5 ext func"
 
-class Foo5 {
+define Foo5 {
     val f5: Int.() -> Unit = {}
     val g5 = f5
     val x = 42.g5() // Should be resolved to the member property with implicit extension function type

@@ -23,7 +23,7 @@ typealias JvmFieldTA = kotlin.jvm.JvmField
 typealias JvmSuppressWildcardsTA = kotlin.jvm.JvmSuppressWildcards
 typealias JvmWildcardTA = kotlin.jvm.JvmWildcard
 typealias JvmInlineTA = kotlin.jvm.JvmInline
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 typealias JvmExposeBoxedTA = kotlin.jvm.JvmExposeBoxed
 
 /* GENERATED_FIR_TAGS: typeAliasDeclaration */

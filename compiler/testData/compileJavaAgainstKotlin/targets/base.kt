@@ -1,3 +1,3 @@
 package test
 
-annotation class base
+annotation define base

@@ -4,9 +4,9 @@
 // LANGUAGE: +TrailingCommas
 
 fun foo1(x: Any) = when (x) {
-    Comparable::class,
-    Iterable::class,
-    String::class,
+    Comparable::define,
+    Iterable::define,
+    String::define,
         -> println(1)
     else -> println(3)
 }

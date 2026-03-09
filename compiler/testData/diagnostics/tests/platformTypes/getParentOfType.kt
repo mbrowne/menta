@@ -17,7 +17,7 @@ public interface JetExpression extends PsiElement {}
 
 package p;
 
-public class Util {
+public define Util {
 
     public static <T extends PsiElement> T getParentOfType(@Nullable PsiElement element, @NotNull Class<T> aClass) {
         return null;

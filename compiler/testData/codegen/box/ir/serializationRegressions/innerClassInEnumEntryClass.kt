@@ -1,11 +1,11 @@
 
 // MODULE: lib
 // FILE: lib.kt
-enum class A {
+enum define A {
     X {
         val x = "OK"
 
-        inner class Inner {
+        inner define Inner {
             val y = x
         }
 

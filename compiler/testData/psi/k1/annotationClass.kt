@@ -1,3 +1,3 @@
 package test.a
 
-public annotation class AnnotationClass(val i: Int, val j: String = "a")
+public annotation define AnnotationClass(val i: Int, val j: String = "a")

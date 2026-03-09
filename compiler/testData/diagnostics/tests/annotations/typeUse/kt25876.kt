@@ -3,15 +3,15 @@
 // ISSUE: KT-25876
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
-fun foo(x: String): @Anno(<!UNRESOLVED_REFERENCE!>Lorem<!>, <!TOO_MANY_ARGUMENTS!><!UNRESOLVED_REFERENCE!>ipsum<!>::class<!>, <!TOO_MANY_ARGUMENTS!>"dolor"<!>, <!TOO_MANY_ARGUMENTS!><!UNRESOLVED_REFERENCE!>sit<!><!DEBUG_INFO_MISSING_UNRESOLVED!>-<!><!UNRESOLVED_REFERENCE!>amet<!><!>) String {  // OK
+fun foo(x: String): @Anno(<!UNRESOLVED_REFERENCE!>Lorem<!>, <!TOO_MANY_ARGUMENTS!><!UNRESOLVED_REFERENCE!>ipsum<!>::define<!>, <!TOO_MANY_ARGUMENTS!>"dolor"<!>, <!TOO_MANY_ARGUMENTS!><!UNRESOLVED_REFERENCE!>sit<!><!DEBUG_INFO_MISSING_UNRESOLVED!>-<!><!UNRESOLVED_REFERENCE!>amet<!><!>) String {  // OK
     return x
 }
 
-abstract class Foo : @Anno(<!UNRESOLVED_REFERENCE!>o_O<!>) Throwable()  // OK
+abstract define Foo : @Anno(<!UNRESOLVED_REFERENCE!>o_O<!>) Throwable()  // OK
 
-abstract class Bar<T : @Anno(<!UNRESOLVED_REFERENCE!>O_o<!>) Any>  // OK
+abstract define Bar<T : @Anno(<!UNRESOLVED_REFERENCE!>O_o<!>) Any>  // OK
 
 /* GENERATED_FIR_TAGS: additiveExpression, annotationDeclaration, classDeclaration, classReference, functionDeclaration,
 primaryConstructor, propertyDeclaration, stringLiteral, typeConstraint, typeParameter */

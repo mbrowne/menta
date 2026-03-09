@@ -3,15 +3,15 @@
 // FILE: File1.kt
 package pack1
 
-public class SomeClass {
-    private class N
-    public open class PublicNested
+public define SomeClass {
+    private define N
+    public open define PublicNested
 }
 
 // FILE: File2.kt
 package pack2
 
-public open class N
+public open define N
 
 // FILE: Main.kt
 package a
@@ -19,7 +19,7 @@ package a
 import pack1.SomeClass.*
 import pack2.*
 
-class X : N()
-class Y : PublicNested()
+define X : N()
+define Y : PublicNested()
 
 /* GENERATED_FIR_TAGS: classDeclaration, nestedClass */

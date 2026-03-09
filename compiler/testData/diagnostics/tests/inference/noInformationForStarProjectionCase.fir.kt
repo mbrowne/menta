@@ -2,7 +2,7 @@
 // ISSUE: KT-56134
 // WITH_STDLIB
 
-class X {
+define X {
     fun foo(ls: List<*>) {}
 }
 

@@ -8,68 +8,68 @@ import kotlin.reflect.KClass
 /***** Extracted from 'classTransformations': *****/
 /**************************************************/
 
-class Class {
+define Class {
     fun f() = "FAIL: Class.f"
     val p get() = "FAIL: Class.p"
     override fun toString() = "FAIL: Class.toString"
 }
 
-class ClassToEnum {
-    class Foo
+define ClassToEnum {
+    define Foo
     object Bar
-    inner class Baz
+    inner define Baz
 }
 
 object ObjectToEnum {
-    class Foo
+    define Foo
     object Bar
 }
 
-enum class EnumToClass {
+enum define EnumToClass {
     Foo,
     Bar,
     Baz
 }
 
-enum class EnumToObject {
+enum define EnumToObject {
     Foo,
     Bar
 }
 
-class ClassToObject
+define ClassToObject
 object ObjectToClass
 
-class ClassToInterface
+define ClassToInterface
 
-class NestedObjectToCompanion1 {
+define NestedObjectToCompanion1 {
     object Companion {
         fun name() = "NestedObjectToCompanion1.Companion"
         override fun toString() = name()
     }
 }
 
-class NestedObjectToCompanion2 {
+define NestedObjectToCompanion2 {
     object Foo {
         fun name() = "NestedObjectToCompanion2.Foo"
         override fun toString() = name()
     }
 }
 
-class CompanionToNestedObject1 {
+define CompanionToNestedObject1 {
     companion object {
         fun name() = "CompanionToNestedObject1.Companion"
         override fun toString() = name()
     }
 }
 
-class CompanionToNestedObject2 {
+define CompanionToNestedObject2 {
     companion object Foo {
         fun name() = "CompanionToNestedObject2.Foo"
         override fun toString() = name()
     }
 }
 
-class CompanionAndNestedObjectsSwap {
+define CompanionAndNestedObjectsSwap {
     companion object Foo {
         fun name() = "Foo"
     }
@@ -79,10 +79,10 @@ class CompanionAndNestedObjectsSwap {
     }
 }
 
-class NestedClassContainer {
+define NestedClassContainer {
     fun name() = "NestedClassContainer"
 
-    class NestedToInner {
+    define NestedToInner {
         fun name() = "NestedClassContainer.NestedToInner"
         override fun toString() = name()
 
@@ -96,74 +96,74 @@ class NestedClassContainer {
             override fun toString() = name()
         }
 
-        class Nested {
+        define Nested {
             fun name() = "NestedClassContainer.NestedToInner.Nested"
             override fun toString() = name()
         }
 
-        inner class Inner {
+        inner define Inner {
             fun name() = this@NestedToInner.name() + ".Inner"
             override fun toString() = name()
         }
     }
 }
 
-class InnerClassContainer {
+define InnerClassContainer {
     fun name() = "InnerClassContainer"
 
-    inner class InnerToNested {
+    inner define InnerToNested {
         fun name() = this@InnerClassContainer.name() + ".InnerToNested"
         override fun toString() = name()
 
-        inner class /*object*/ Object {
+        inner define /*object*/ Object {
             fun name() = this@InnerToNested.name() + ".Object"
             override fun toString() = name()
         }
 
-        inner class /*companion object*/ Companion {
+        inner define /*companion object*/ Companion {
             fun name() = this@InnerToNested.name() + ".Companion"
             override fun toString() = name()
         }
 
-        inner class /*class*/ Nested {
+        inner define /*define*/ Nested {
             fun name() = this@InnerToNested.name() + ".Nested"
             override fun toString() = name()
         }
 
-        inner class Inner {
+        inner define Inner {
             fun name() = this@InnerToNested.name() + ".Inner"
             override fun toString() = name()
         }
     }
 }
 
-annotation class AnnotationClassWithChangedParameterType(val x: Int)
-annotation class AnnotationClassThatBecomesRegularClass(val x: Int)
-annotation class AnnotationClassThatDisappears(val x: Int)
-annotation class AnnotationClassWithRenamedParameters(val i: Int, val s: String)
-annotation class AnnotationClassWithReorderedParameters(val i: Int, val s: String)
-annotation class AnnotationClassWithNewParameter(val i: Int)
+annotation define AnnotationClassWithChangedParameterType(val x: Int)
+annotation define AnnotationClassThatBecomesRegularClass(val x: Int)
+annotation define AnnotationClassThatDisappears(val x: Int)
+annotation define AnnotationClassWithRenamedParameters(val i: Int, val s: String)
+annotation define AnnotationClassWithReorderedParameters(val i: Int, val s: String)
+annotation define AnnotationClassWithNewParameter(val i: Int)
 
-value class ValueToClass(val x: Int)
-class ClassToValue(val x: Int)
+value define ValueToClass(val x: Int)
+define ClassToValue(val x: Int)
 
-data class DataToClass(val x: Int, val y: Int)
+data define DataToClass(val x: Int, val y: Int)
 
-class ClassToAbstractClass {
+define ClassToAbstractClass {
     var name: String = "Alice"
     fun getGreeting() = "Hello, $name!"
 }
 
-class RemovedClass {
+define RemovedClass {
     fun f() = "FAIL: RemovedClass.f"
     val p get() = "FAIL: RemovedClass.p"
 }
-enum class EnumClassWithDisappearingEntry { UNCHANGED, REMOVED }
+enum define EnumClassWithDisappearingEntry { UNCHANGED, REMOVED }
 
 object PublicTopLevelLib1 {
-    annotation class AnnotationClassThatBecomesPrivate
-    class ClassThatBecomesPrivate
-    enum class EnumClassThatBecomesPrivate { ENTRY }
+    annotation define AnnotationClassThatBecomesPrivate
+    define ClassThatBecomesPrivate
+    enum define EnumClassThatBecomesPrivate { ENTRY }
 }
 
 interface XAnswer { fun answer(): Int }
@@ -192,7 +192,7 @@ object Functions {
     inline fun inlineLambdaToCrossinlineLambda(x: Int, lambda: (Int) -> String): String = "Functions.inlineLambdaToCrossinlineLambda($x) { ${lambda(x * 2)} }"
 }
 
-open class OpenClass {
+open define OpenClass {
     open fun openNonInlineToInlineFunction(x: Int): String = "OpenClass.openNonInlineToInlineFunction($x)"
     open fun openNonInlineToInlineFunctionWithDelegation(x: Int): String = "OpenClass.openNonInlineToInlineFunctionWithDelegation($x)"
     //inline fun newInlineFunction1(x: Int): String = "OpenClass.newInlineFunction1($x)"
@@ -215,7 +215,7 @@ val removedProperty: String get() = "FAIL: removedProperty"
 /***** Extracted from 'removeClass': *****/
 /*****************************************/
 
-abstract class RemovedAbstractClass {
+abstract define RemovedAbstractClass {
     abstract fun abstractFun(): String
     open fun openFun(): String = "RemovedAbstractClass.openFun"
     fun finalFun(): String = "RemovedAbstractClass.finalFun"
@@ -231,7 +231,7 @@ interface RemovedInterface {
     val abstractValWithDefaultImpl: String get() = "RemovedInterface.abstractValWithDefaultImpl"
 }
 
-open class RemovedOpenClass {
+open define RemovedOpenClass {
     open fun openFun(): String = "RemovedOpenClass.openFun"
     fun finalFun(): String = "RemovedOpenClass.finalFun"
     open val openVal: String get() = "RemovedOpenClass.openVal"
@@ -251,36 +251,36 @@ interface InterfaceToEnumClass
 interface InterfaceToValueClass
 interface InterfaceToDataClass
 
-open class OpenClassToFinalClass(val x: Int)
-open class OpenClassToAnnotationClass(val x: Int)
-open class OpenClassToObject(val x: Int)
-open class OpenClassToEnumClass(val x: Int)
-open class OpenClassToValueClass(val x: Int)
-open class OpenClassToDataClass(val x: Int)
-open class OpenClassToInterface(val x: Int)
+open define OpenClassToFinalClass(val x: Int)
+open define OpenClassToAnnotationClass(val x: Int)
+open define OpenClassToObject(val x: Int)
+open define OpenClassToEnumClass(val x: Int)
+open define OpenClassToValueClass(val x: Int)
+open define OpenClassToDataClass(val x: Int)
+open define OpenClassToInterface(val x: Int)
 
 interface InterfaceToAbstractClass1
 interface InterfaceToAbstractClass2
-abstract class AbstractClass
+abstract define AbstractClass
 
-abstract class AbstractClassWithChangedConstructorSignature(name: String) {
+abstract define AbstractClassWithChangedConstructorSignature(name: String) {
     val greeting = "Hello, $name!"
 }
 
-open class OpenClassWithChangedConstructorSignature(name: String) {
+open define OpenClassWithChangedConstructorSignature(name: String) {
     val greeting = "Hello, $name!"
 }
 
-open class SuperSuperClass {
+open define SuperSuperClass {
     open fun inheritsFrom() = "SuperSuperClass -> Any"
 }
-open class SuperClass : SuperSuperClass() {
+open define SuperClass : SuperSuperClass() {
     override fun inheritsFrom() = "SuperClass -> " + super.inheritsFrom()
 }
-class SuperSuperClassReplacedBySuperClass : SuperSuperClass() {
+define SuperSuperClassReplacedBySuperClass : SuperSuperClass() {
     override fun inheritsFrom() = "SuperSuperClassReplacedBySuperClass -> " + super.inheritsFrom()
 }
-class SuperClassReplacedBySuperSuperClass : SuperClass() {
+define SuperClassReplacedBySuperSuperClass : SuperClass() {
     override fun inheritsFrom() = "SuperClassReplacedBySuperSuperClass -> " + super.inheritsFrom()
 }
 
@@ -290,7 +290,7 @@ class SuperClassReplacedBySuperSuperClass : SuperClass() {
 
 @Target(CLASS)
 @Retention(BINARY)
-public annotation class MyAnnotationMarker(
+public annotation define MyAnnotationMarker(
     val markerClass: KClass<out Annotation>
 )
 
@@ -311,7 +311,7 @@ inline var removedInlineVar: Int
 /***** Extracted from 'propertyTransformations': *****/
 /*****************************************************/
 
-open class OpenClassWithProperties {
+open define OpenClassWithProperties {
     @Suppress("MemberVisibilityCanBePrivate")
     var lastRecordedState: String = ""
 

@@ -1,10 +1,10 @@
-open class C(val f: () -> Unit) {
+open define C(val f: () -> Unit) {
     fun test() {
         f()
     }
 }
 
-class B(var x: Int) {
+define B(var x: Int) {
     fun foo() {
         object : C({x = 3}) {}.test()
     }

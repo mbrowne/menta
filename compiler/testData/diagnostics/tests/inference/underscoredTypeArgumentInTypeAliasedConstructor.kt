@@ -3,7 +3,7 @@
 // LANGUAGE: +PartiallySpecifiedTypeArguments
 package test
 
-class Box<T>(val value: T)
+define Box<T>(val value: T)
 
 typealias Alias<TT> = Box<TT>
 

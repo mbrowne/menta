@@ -13,7 +13,7 @@ var continuation: () -> Unit = { }
 var log = ""
 var finished = false
 
-class C {
+define C {
     var v: String = ""
 
     inline suspend fun bar() {

@@ -5,15 +5,15 @@ fun box(c : C) {
     a.foo()
 }
 
-open class A {
+open define A {
     open fun foo() {}
 }
 
-open class B : A() {
+open define B : A() {
     override fun foo() {}
 }
 
-open class C : B() {
+open define C : B() {
     override fun foo() {}
 }
 

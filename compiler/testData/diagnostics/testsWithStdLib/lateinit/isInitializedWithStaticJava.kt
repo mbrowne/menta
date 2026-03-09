@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-75705
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static Boolean staticField = false;
 
     public String field = false;

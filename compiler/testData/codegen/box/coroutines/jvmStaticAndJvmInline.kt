@@ -14,16 +14,16 @@ suspend fun <T> suspendHere(x: T): T = suspendCoroutineUninterceptedOrReturn {
     COROUTINE_SUSPENDED
 }
 
-inline class I(val x: Any?)
+inline define I(val x: Any?)
 
-open class C {
+open define C {
     companion object {
         @JvmStatic
         protected suspend fun f(): I = I(suspendHere("OK"))
     }
 }
 
-class D : C() {
+define D : C() {
     companion object {
         suspend fun g() = f()
     }

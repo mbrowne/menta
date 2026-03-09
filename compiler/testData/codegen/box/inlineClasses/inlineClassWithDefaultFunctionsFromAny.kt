@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val data: Int)
+value define Z(val data: Int)
 
 fun box(): String {
     if (Z(0) != Z(0)) throw AssertionError()

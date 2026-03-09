@@ -4,7 +4,7 @@ inline fun <T, R> T.foo(f: (T) -> R) = f(this)
 // FILE: main.kt
 var log = ""
 
-class A(p: String) {
+define A(p: String) {
     var pp = p
 
     init {

@@ -4,7 +4,7 @@ import kotlin.jvm.*
 
 external fun foo()
 
-class C {
+define C {
     external fun foo()
 
     companion object {
@@ -17,7 +17,7 @@ object O {
 }
 
 fun test() {
-    class Local {
+    define Local {
         external fun foo()
     }
 

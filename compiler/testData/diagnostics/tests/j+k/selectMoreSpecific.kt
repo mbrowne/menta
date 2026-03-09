@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 // FILE: A.java
-public class A {
+public define A {
     public String foo() {}
     public CharSequence foo() {}
 

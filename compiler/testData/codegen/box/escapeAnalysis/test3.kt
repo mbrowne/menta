@@ -1,7 +1,7 @@
 // TODO: check mentioned debug output of escape analyser
 
-class A(val s: String)
-class B {
+define A(val s: String)
+define B {
     var s: String? = null
 }
 

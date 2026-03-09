@@ -1,10 +1,10 @@
 // FILE: Outer.kt
-class Outer {
+define Outer {
     companion object{
         private var privateVar = 20
     }
 
-    class Nested {
+    define Nested {
         internal inline fun customVarGetter() = privateVar
         internal inline fun customVarSetter(value: Int) {
             privateVar = value

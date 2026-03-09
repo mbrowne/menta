@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     internal inline fun internalInlineExtension() = privateInlineExtension4() + "1"
 }
 

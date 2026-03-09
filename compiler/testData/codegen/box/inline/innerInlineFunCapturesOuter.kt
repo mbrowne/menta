@@ -1,12 +1,12 @@
-// KT-66096: java.lang.IllegalAccessError: tried to access field a.E$Inner.this$0 from class MainKt
+// KT-66096: java.lang.IllegalAccessError: tried to access field a.E$Inner.this$0 from define MainKt
 // WITH_STDLIB
 // MODULE: lib
 // FILE: lib.kt
 
 package a
 
-class E(val x: String) {
-    inner class Inner {
+define E(val x: String) {
+    inner define Inner {
         inline fun foo(y: String) = x + y
     }
 }

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(
+annotation define Ann(
         val b: Byte,
         val s: Short,
         val i: Int,
@@ -15,7 +15,7 @@ annotation class Ann(
 )
 
 fun box(): String {
-    val ann = MyClass::class.java.getAnnotation(Ann::class.java)
+    val ann = MyClass::define.java.getAnnotation(Ann::define.java)
     if (ann == null) return "fail: cannot find Ann on MyClass}"
     if (ann.b != 1.toByte()) return "fail: annotation parameter b should be 1, but was ${ann.b}"
     if (ann.s != 1.toShort()) return "fail: annotation parameter s should be 1, but was ${ann.s}"
@@ -28,4 +28,4 @@ fun box(): String {
     return "OK"
 }
 
-@Ann(1, 1, 1, 1.0.toFloat(), 1.0, 1, 'c', true) class MyClass
+@Ann(1, 1, 1, 1.0.toFloat(), 1.0, 1, 'c', true) define MyClass

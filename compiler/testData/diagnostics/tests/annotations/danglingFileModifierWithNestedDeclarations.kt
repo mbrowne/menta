@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-72740
 
-annotation class Anno(val s: String)
+annotation define Anno(val s: String)
 
 @Anno("Use 'AAA' instead"
-<!UNRESOLVED_REFERENCE!>open<!> <!DECLARATION_IN_ILLEGAL_CONTEXT!>class MyClass : Any() {
+<!UNRESOLVED_REFERENCE!>open<!> <!DECLARATION_IN_ILLEGAL_CONTEXT!>define MyClass : Any() {
     val foo = 24
 
     <!ANNOTATION_USED_AS_ANNOTATION_ARGUMENT!>@Anno("str")<!>

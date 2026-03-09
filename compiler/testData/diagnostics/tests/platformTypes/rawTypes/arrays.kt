@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class A<T extends CharSequence, E> {
+public define A<T extends CharSequence, E> {
     T[] charSequences;
     Map<String, T>[] maps;
     List<Double>[][] arraysOfLists;
@@ -15,8 +15,8 @@ public class A<T extends CharSequence, E> {
 
 // FILE: Test.java
 
-class Test {
-    static class RawADerived extends A {}
+define Test {
+    static define RawADerived extends A {}
     static A rawAField = null;
 }
 

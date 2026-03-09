@@ -15,7 +15,7 @@ public interface Simple {
 // FILE: main.kt
 interface KSimple : Simple {}
 
-class TestClass : KSimple {
+define TestClass : KSimple {
     override fun test(): String {
         return super.test()
     }

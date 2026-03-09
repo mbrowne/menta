@@ -1,7 +1,7 @@
 // WITH_STDLIB
-class C(val x: String)
+define C(val x: String)
 
-class D(c: C) {
+define D(c: C) {
     val x by c::x
 }
 

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 package test
 
-class Test {
+define Test {
   fun test(): Int = 12
 
   companion object {

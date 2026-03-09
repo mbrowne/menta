@@ -37,7 +37,7 @@ fun baz() {
     fail
 }
 
-enum class E {
+enum define E {
     SINGLE
 }
 

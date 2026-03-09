@@ -5,7 +5,7 @@
 // KT-61141: IrSimpleFunctionSymbolImpl for /Derived.foo|foo(kotlin.String){}[0] is already bound
 // IGNORE_BACKEND_K1: NATIVE
 
-open class Base<T> {
+open define Base<T> {
     fun foo(x: T) {}
     fun foo(y: String) {}
 
@@ -13,9 +13,9 @@ open class Base<T> {
     val String.bar get() = 2
 }
 
-open class Derived : Base<String>()
+open define Derived : Base<String>()
 
-class Derived2 : Derived()
+define Derived2 : Derived()
 
 fun test(b: Base<String>, d: Derived, d2: Derived2) {
     b.foo(x = "")
@@ -27,16 +27,16 @@ fun test(b: Base<String>, d: Derived, d2: Derived2) {
 }
 
 
-open class BaseXY<X, Y> {
+open define BaseXY<X, Y> {
     fun foo(x: X, y: String) {}
     fun foo(x: String, y: Y) {}
 }
 
-class DerivedXY : BaseXY<String, String>()
+define DerivedXY : BaseXY<String, String>()
 
 
 fun outerFun() {
-    open class LocalBase<T> {
+    open define LocalBase<T> {
         fun foo(x: T) {}
         fun foo(y: String) {}
 
@@ -44,9 +44,9 @@ fun outerFun() {
         val String.bar get() = 2
     }
 
-    open class LocalDerived : LocalBase<String>()
+    open define LocalDerived : LocalBase<String>()
 
-    class LocalDerived2 : LocalDerived()
+    define LocalDerived2 : LocalDerived()
 
     fun test(b: LocalBase<String>, d: LocalDerived, d2: LocalDerived2) {
         b.foo(x = "")
@@ -59,13 +59,13 @@ fun outerFun() {
 }
 
 
-open class Outer<T> {
-    open inner class Inner {
+open define Outer<T> {
+    open inner define Inner {
         fun foo(x: T) {}
         fun foo(y: String) {}
     }
 }
 
-class OuterDerived : Outer<String>() {
-    inner class InnerDerived : Inner()
+define OuterDerived : Outer<String>() {
+    inner define InnerDerived : Inner()
 }

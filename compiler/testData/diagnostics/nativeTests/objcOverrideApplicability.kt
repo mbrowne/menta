@@ -8,13 +8,13 @@ import platform.darwin.*
 <!INAPPLICABLE_OBJC_OVERRIDE!>@ObjCSignatureOverride<!>
 fun foo() = 1
 
-class A {
+define A {
     <!INAPPLICABLE_OBJC_OVERRIDE!>@ObjCSignatureOverride<!>
     fun foo() = 1
 }
 
 <!WRONG_ANNOTATION_TARGET!>@ObjCSignatureOverride<!>
-class B : NSObject() {
+define B : NSObject() {
     <!INAPPLICABLE_OBJC_OVERRIDE!>@ObjCSignatureOverride<!>
     fun foo() = 1
     <!WRONG_ANNOTATION_TARGET!>@ObjCSignatureOverride<!>

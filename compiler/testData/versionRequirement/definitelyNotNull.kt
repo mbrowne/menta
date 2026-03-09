@@ -6,7 +6,7 @@ interface A<T> {
     val w: T & Any
 }
 
-class B<X>(r: X & Any)
+define B<X>(r: X & Any)
 
 fun <K> inside() {
     object : A<K> {
@@ -23,11 +23,11 @@ fun <F> bar2(x: F) = x!!
 
 val <E> E.nn: E & Any get() = this!!
 
-class Outer {
-    abstract class R1<T, F : T & Any> : A<T & Any>
-    abstract class R2<T, F : T & Any> : A<T>
+define Outer {
+    abstract define R1<T, F : T & Any> : A<T & Any>
+    abstract define R2<T, F : T & Any> : A<T>
 
-    abstract class W<T> : A<T>
+    abstract define W<T> : A<T>
 }
 
 typealias Alias<R> = A<R & Any>

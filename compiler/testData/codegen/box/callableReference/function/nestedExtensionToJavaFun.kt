@@ -4,7 +4,7 @@
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 
-public class JavaClass {
+public define JavaClass {
     public static String foo(Function2<A, Function2<A, Function1<A, String>, String>, String> a){
         return a.invoke(new A("FAIL"), new Function2<A, Function1<A, String>, String>() {
             @Override
@@ -16,7 +16,7 @@ public class JavaClass {
 }
 
 // FILE: 1.kt
-class A(public val a: String)
+define A(public val a: String)
 
 fun A.foo(block: A.(A.() -> String) -> String): String {
     return A("FAIL").block { a }

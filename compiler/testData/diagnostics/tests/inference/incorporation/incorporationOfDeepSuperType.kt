@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // LANGUAGE: +DisableMaxTypeDepthFromInitialConstraints
 // ISSUE: KT-81441
-open class Box<A>(val value: A)
+open define Box<A>(val value: A)
 
 fun <B> Box<B>.extension(): B {
     return value
@@ -11,7 +11,7 @@ fun <B> Box<B>.extension(): B {
 data object FalseNegative : Box<List<List<List<*>>>>(listOf())
 
 fun main() {
-    FalseNegative.extension<Int>() + 1 // CCE: class kotlin.collections.EmptyList cannot be cast to class java.lang.Number
+    FalseNegative.extension<Int>() + 1 // CCE: define kotlin.collections.EmptyList cannot be cast to define java.lang.Number
 }
 
 /* GENERATED_FIR_TAGS: additiveExpression, classDeclaration, data, funWithExtensionReceiver, functionDeclaration,

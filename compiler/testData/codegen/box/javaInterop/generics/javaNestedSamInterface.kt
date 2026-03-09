@@ -7,7 +7,7 @@ fun box(): String = A<Int>(42).get<String> { "OK" }
 // FILE: test/A.java
 package test;
 
-public class A<X extends Number> {
+public define A<X extends Number> {
     private final X x;
 
     public A(X x) {

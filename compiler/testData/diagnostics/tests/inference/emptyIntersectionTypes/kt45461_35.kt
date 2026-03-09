@@ -3,13 +3,13 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Foo<T>
+define Foo<T>
 
-class Bar<T>
+define Bar<T>
 
 fun <T> Bar<T>.takeFoo(foo: Foo<out Any?>): Int  = 1
 
-class Inv<O>
+define Inv<O>
 
 fun <K : <!FINAL_UPPER_BOUND!>Inv<out Inv<out Int>><!>> main() {
     fun <T, S : T> Bar<T>.takeFoo(foo: Foo<in S>): String = ""

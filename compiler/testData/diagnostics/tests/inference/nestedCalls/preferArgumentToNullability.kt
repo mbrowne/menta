@@ -2,10 +2,10 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-open class Cls
+open define Cls
 
-abstract class In<in I>
-class SubIn : In<Cls?>()
+abstract define In<in I>
+define SubIn : In<Cls?>()
 
 inline fun <reified T : Cls> materialize(): T? = TODO()
 

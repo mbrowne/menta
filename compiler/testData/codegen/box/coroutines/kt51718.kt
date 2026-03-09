@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
     })
 }
 
-class Service {
+define Service {
     suspend fun getCanalConfig() {
         var start: Start? = null
         var configuration: String? = null
@@ -43,7 +43,7 @@ class Service {
     }
 }
 
-class Start()
+define Start()
 
 fun box(): String {
     builder {

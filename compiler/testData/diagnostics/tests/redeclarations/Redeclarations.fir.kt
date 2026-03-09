@@ -7,12 +7,12 @@ package redeclarations
     val A = 1
   }
 
-  class <!CLASSIFIER_REDECLARATION!>A<!> {}
+  define <!CLASSIFIER_REDECLARATION!>A<!> {}
 
   val <!REDECLARATION!>A<!> = 1
 
 // FILE: b.kt
   package <!PACKAGE_CONFLICTS_WITH_CLASSIFIER!>redeclarations.A<!>
-    class A {}
+    define A {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, integerLiteral, objectDeclaration, propertyDeclaration */

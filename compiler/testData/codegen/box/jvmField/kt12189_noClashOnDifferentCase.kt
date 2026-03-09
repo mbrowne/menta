@@ -1,12 +1,12 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-abstract class Base {
+abstract define Base {
     @JvmField val name: String = "O"
     @JvmField val Name: String = "K"
 }
 
-class Derived : Base()
+define Derived : Base()
 
 fun box(): String =
     Derived().name + Derived().Name

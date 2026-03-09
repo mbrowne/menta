@@ -4,7 +4,7 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class VC(val a: Any)
+value define VC(val a: Any)

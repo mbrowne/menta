@@ -12,7 +12,7 @@ object O {
         get() = 42
 }
 
-class Bar(val result: Int)
+define Bar(val result: Int)
 
 fun box(): String = try {
     O.test()

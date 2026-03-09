@@ -3,19 +3,19 @@
 // FILE: a/X.java
 package a;
 
-public class X {}
+public define X {}
 
 // FILE: b/X.java
 package b;
 
-public class X {}
+public define X {}
 
 // FILE: b/A.java
 package b;
 
 import a.*;
 
-public class A {
+public define A {
 
     public X getX() { return null; }
 

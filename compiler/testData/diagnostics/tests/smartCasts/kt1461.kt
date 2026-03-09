@@ -3,9 +3,9 @@
 //KT-1461 Front-end complains on overload resolution when superclass property is accessed from string template and implicit type cast is performed
 package f
 
-open class Super(val property : String) {}
+open define Super(val property : String) {}
 
-class Sub(str : String) : Super(str) {}
+define Sub(str : String) : Super(str) {}
 
 fun foo(sup : Super, sub : Sub) {
     if (sup is Sub) {

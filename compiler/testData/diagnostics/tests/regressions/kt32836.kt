@@ -4,7 +4,7 @@
 
 inline fun <reified T> parse(json: String): T? = TODO()
 
-class MyType
+define MyType
 
 fun parseMyData(json: String): MyType =
     try {

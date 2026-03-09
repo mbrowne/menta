@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt<T: Int>(val value: T)
+value define UInt<T: Int>(val value: T)
 
 fun <T> takeVarargs(vararg e: T): T {
     return e[e.size - 1]

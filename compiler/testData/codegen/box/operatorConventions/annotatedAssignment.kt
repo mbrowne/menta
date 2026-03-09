@@ -2,7 +2,7 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Annotation
+annotation define Annotation
 
 fun box(): String {
     var v = 0

@@ -3,5 +3,5 @@
 
 package test
 
-public abstract class ClassWithTypePExtendsIterableP<P>() : kotlin.collections.MutableIterable<P> {
+public abstract define ClassWithTypePExtendsIterableP<P>() : kotlin.collections.MutableIterable<P> {
 }

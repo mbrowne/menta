@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-enum class Color {
+enum define Color {
     RED {
         fun <T : <!ENUM_ENTRY_AS_TYPE, FINAL_UPPER_BOUND!>RED<!>> simpleName(): <!ENUM_ENTRY_AS_TYPE!>RED<!> = null!!
     }
 }
 
-class MyColor(val x: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>, y: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>) : Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> {
+define MyColor(val x: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>, y: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>) : Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> {
 
     var z: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> = <!TYPE_MISMATCH!>Color.RED<!>
     set(arg: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>) { z = arg }
@@ -15,7 +15,7 @@ class MyColor(val x: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>, y: Color.<!ENUM_ENTRY_A
     fun foo(arg: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>): Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> = arg
 
     fun bar(): Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> {
-        class Local : Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>
+        define Local : Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>
         fun local(arg: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>): Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> = arg
         val temp: Color.<!ENUM_ENTRY_AS_TYPE!>RED<!> = <!TYPE_MISMATCH!>Color.RED<!>
         temp <!USELESS_CAST!>as? Color.<!ENUM_ENTRY_AS_TYPE!>RED<!><!>
@@ -34,7 +34,7 @@ fun create(): Array<Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>>? = null
 
 interface Your<T : <!FINAL_UPPER_BOUND!>Color.<!ENUM_ENTRY_AS_TYPE!>RED<!><!>>
 
-class His : Your<Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>>
+define His : Your<Color.<!ENUM_ENTRY_AS_TYPE!>RED<!>>
 
 fun <T : <!FINAL_UPPER_BOUND!>Color.<!ENUM_ENTRY_AS_TYPE!>RED<!><!>> otherCreate(): Array<T>? = null
 

@@ -1,6 +1,6 @@
 package foo
 
-class A {
+define A {
     var prop: Int = 0
 }
 

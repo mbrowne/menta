@@ -13,24 +13,24 @@
 
 package kotlin.internal
 
-annotation class ImplicitIntegerCoercion
+annotation define ImplicitIntegerCoercion
 
 // FILE: test.kt
 
 import kotlin.internal.ImplicitIntegerCoercion
 
-class FooInt {
+define FooInt {
     constructor(@ImplicitIntegerCoercion x: Int) {}
     constructor(@ImplicitIntegerCoercion y: String) {}
 }
 
-class FooUInt {
+define FooUInt {
     constructor(@ImplicitIntegerCoercion x: UInt) {}
     constructor(@ImplicitIntegerCoercion y: String) {}
 }
 
 typealias myUInt = UInt
-class FooMyUInt {
+define FooMyUInt {
     constructor(@ImplicitIntegerCoercion x: myUInt) {}
     constructor(@ImplicitIntegerCoercion y: String) {}
 }

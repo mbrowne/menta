@@ -4,7 +4,7 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {
+public define J {
     public final int i;
     public String s;
 
@@ -26,8 +26,8 @@ fun box(): String {
     val s = J::s
 
     // Check that correct reflection objects are created
-    assert(i !is KMutableProperty<*>) { "Fail i class: ${i.javaClass}" }
-    assert(s is KMutableProperty<*>) { "Fail s class: ${s.javaClass}" }
+    assert(i !is KMutableProperty<*>) { "Fail i define: ${i.javaClass}" }
+    assert(s is KMutableProperty<*>) { "Fail s define: ${s.javaClass}" }
 
     // Check that no Method objects are created for such properties
     assert(i.javaGetter == null) { "Fail i getter" }

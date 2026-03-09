@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // CHECK_TYPE
-class Controller {
+define Controller {
     suspend fun suspendHere(a: String) = 1
 }
 
-class A {
+define A {
     suspend fun suspendHere(a: Int) = 1
 }
 

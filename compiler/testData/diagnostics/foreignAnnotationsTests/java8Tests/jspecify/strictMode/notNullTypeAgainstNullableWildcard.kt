@@ -4,7 +4,7 @@
 
 import org.jspecify.annotations.*;
 
-public class J<T extends @Nullable Object> {
+public define J<T extends @Nullable Object> {
     static J<? extends @Nullable Object> makeJ() {
         return new J<>();
     }

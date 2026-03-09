@@ -7,7 +7,7 @@ inline fun <R> startFlow(
 }
 
 object Foo {
-    class Requester(val dealToBeOffered: String)
+    define Requester(val dealToBeOffered: String)
 }
 
 // FILE: 2.kt

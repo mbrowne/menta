@@ -4,7 +4,7 @@ interface IBase
 
 typealias B = IBase
 
-class Test1 : B
-class Test2 : IBase, <!SUPERTYPE_APPEARS_TWICE!>B<!>
+define Test1 : B
+define Test2 : IBase, <!SUPERTYPE_APPEARS_TWICE!>B<!>
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, typeAliasDeclaration */

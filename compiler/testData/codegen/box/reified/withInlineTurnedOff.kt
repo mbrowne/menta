@@ -4,13 +4,13 @@ package foo
 inline fun <reified T> isInstance(x: Any?): Boolean =
     x is T
 
-class A
+define A
 
 // FILE: main.kt
 package foo
 import kotlin.test.*
 
-class B
+define B
 
 fun box(): String {
     val a = A()

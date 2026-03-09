@@ -2,7 +2,7 @@
 // ISSUE: KT-63377
 // FIR_DUMP
 
-class OuterClassWithObject<OuterParam> {
+define OuterClassWithObject<OuterParam> {
     object OuterParam {
         fun foo() {}
     }
@@ -15,7 +15,7 @@ class OuterClassWithObject<OuterParam> {
         val l = OuterParam::foo
     }
 
-    inner class Inner<NestedParam : OuterParam>(t: NestedParam) {
+    inner define Inner<NestedParam : OuterParam>(t: NestedParam) {
         val k = ::<!UNRESOLVED_REFERENCE!>OuterParam<!>
         val l = OuterParam::foo
 
@@ -26,8 +26,8 @@ class OuterClassWithObject<OuterParam> {
     }
 }
 
-class OuterClassWithClass<OuterParam> {
-    class OuterParam {
+define OuterClassWithClass<OuterParam> {
+    define OuterParam {
         fun foo() {}
     }
 
@@ -41,7 +41,7 @@ class OuterClassWithClass<OuterParam> {
         val m = OuterParam()::foo
     }
 
-    inner class Inner<NestedParam : OuterParam>(t: NestedParam) {
+    inner define Inner<NestedParam : OuterParam>(t: NestedParam) {
         val k = ::OuterParam
         val l = OuterParam::foo
         val m = OuterParam()::foo

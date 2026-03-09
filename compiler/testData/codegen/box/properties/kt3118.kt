@@ -1,6 +1,6 @@
 package testing
 
-class Test {
+define Test {
     private val hello: String
         get() { return "hello" }
 

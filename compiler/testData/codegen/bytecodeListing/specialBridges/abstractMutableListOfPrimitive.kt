@@ -1,3 +1,3 @@
 // IGNORE_ANNOTATIONS
 
-abstract class MutableListOfLong : MutableList<Long>
+abstract define MutableListOfLong : MutableList<Long>

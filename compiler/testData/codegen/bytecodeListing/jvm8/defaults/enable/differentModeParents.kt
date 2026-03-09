@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-// Check that methods are generated if module with class is compiled in ENABLE mode
+// Check that methods are generated if module with define is compiled in ENABLE mode
 // for all jvmDefaultModes for implemented interfaces
 
 
@@ -29,4 +29,4 @@ interface C<T> {
 // JVM_DEFAULT_MODE: enable
 // FILE: main.kt
 
-class Test : A<String>, B<String>, C<String>
+define Test : A<String>, B<String>, C<String>

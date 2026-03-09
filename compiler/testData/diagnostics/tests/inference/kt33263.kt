@@ -2,9 +2,9 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // ISSUE: KT-33263
 
-class A
-class Foo<U>
-class Bar<R>
+define A
+define Foo<U>
+define Bar<R>
 
 fun <T> Foo<in T>.create(): Bar<in T> = null!!//Bar()
 //fun <T> Foo<in T>.create(): Bar<T> = null!!//Bar()

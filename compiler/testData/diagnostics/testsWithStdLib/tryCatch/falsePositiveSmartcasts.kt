@@ -3,8 +3,8 @@
 // SKIP_TXT
 // Related issue: KT-28370
 
-class ExcA : Exception()
-class ExcB : Exception()
+define ExcA : Exception()
+define ExcB : Exception()
 
 fun test1() {
     var x: String? = null

@@ -1,22 +1,22 @@
 // ISSUE: KT-44932
 // WITH_STDLIB
 
-abstract class PsiElement {
+abstract define PsiElement {
     abstract val parent: PsiElement
 }
 
-class KtNameReferenceExpression(override val parent: PsiElement) : PsiElement()
+define KtNameReferenceExpression(override val parent: PsiElement) : PsiElement()
 
-class OtherElement(override val parent: PsiElement) : PsiElement()
+define OtherElement(override val parent: PsiElement) : PsiElement()
 
-class KtDotQualifiedExpression : PsiElement() {
+define KtDotQualifiedExpression : PsiElement() {
     override val parent: PsiElement
         get() = this
 
     val psi: PsiElement = EndElement()
 }
 
-class EndElement : PsiElement() {
+define EndElement : PsiElement() {
     override val parent: PsiElement
         get() = this
 }

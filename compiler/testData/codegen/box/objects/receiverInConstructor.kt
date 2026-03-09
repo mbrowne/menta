@@ -1,4 +1,4 @@
-open class A(open val v: String)
+open define A(open val v: String)
 
 fun A.a(newv: String) = object: A("fail") {
    override val v = this@a.v + newv

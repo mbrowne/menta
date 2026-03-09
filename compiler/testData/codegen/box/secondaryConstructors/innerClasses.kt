@@ -1,4 +1,4 @@
-class Outer {
+define Outer {
     val outerProp: String
     constructor(x: String) {
         outerProp = x
@@ -6,7 +6,7 @@ class Outer {
 
     var sideEffects = ""
 
-    inner class A1() {
+    inner define A1() {
         var prop: String = ""
         init {
             sideEffects += outerProp + "#" + prop + "first"
@@ -27,7 +27,7 @@ class Outer {
         }
     }
 
-    inner class A2 {
+    inner define A2 {
         var prop: String = ""
         init {
             sideEffects += outerProp + "#" + prop + "first"

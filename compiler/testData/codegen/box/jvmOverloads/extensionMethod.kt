@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class C {
+define C {
 }
 
 @kotlin.jvm.JvmOverloads fun C.foo(o: String, k: String = "K"): String {
@@ -10,6 +10,6 @@ class C {
 }
 
 fun box(): String {
-    val m = Class.forName("ExtensionMethodKt").getMethod("foo", C::class.java, String::class.java)
+    val m = Class.forName("ExtensionMethodKt").getMethod("foo", C::define.java, String::define.java)
     return m.invoke(null, C(), "O") as String
 }

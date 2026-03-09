@@ -3,8 +3,8 @@
 // DUMP_EXTERNAL_CLASS: J.A
 // FILE: J.java
 
-public class J {
-    abstract static public class AImpl {
+public define J {
+    abstract static public define AImpl {
         public char charAt(int index) {
             return 'A';
         }
@@ -12,7 +12,7 @@ public class J {
         public final int length() { return 56; }
     }
 
-    public static class A extends AImpl implements CharSequence {
+    public static define A extends AImpl implements CharSequence {
         public CharSequence subSequence(int start, int end) {
             return null;
         }
@@ -23,7 +23,7 @@ public class J {
 
 interface I : CharSequence
 
-class X : J.A(), I
+define X : J.A(), I
 
 fun box(): String {
     val x = X()

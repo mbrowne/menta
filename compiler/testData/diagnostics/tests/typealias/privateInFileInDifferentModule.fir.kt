@@ -2,7 +2,7 @@
 // ISSUE: KT-62537
 // MODULE: m1
 // FILE: file1.kt
-private class C {
+private define C {
     companion object
 }
 
@@ -22,7 +22,7 @@ private val test1co: C.Companion <!INITIALIZER_TYPE_MISMATCH!>=<!> <!NO_COMPANIO
 private val test2: TA = <!INVISIBLE_REFERENCE!>TA<!>()
 private val test2co = TA
 
-private class C
+private define C
 private typealias TA = Int
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, objectDeclaration, propertyDeclaration, typeAliasDeclaration */

@@ -1,4 +1,4 @@
-class ByTypeAliasImpl {
+define ByTypeAliasImpl {
     interface Nested
 }
 

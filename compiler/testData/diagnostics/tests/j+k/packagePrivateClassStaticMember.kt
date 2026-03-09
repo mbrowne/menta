@@ -6,7 +6,7 @@
 
 package foo;
 
-class Bar {
+define Bar {
     static void baz() {}
 }
 

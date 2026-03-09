@@ -5,10 +5,10 @@
 // WITH_SIGNATURES
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithArray<T : Any>(val x: Array<T>)
+value define WithArray<T : Any>(val x: Array<T>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithNestedArray<T : Any>(val x: Array<Array<T>>)
+value define WithNestedArray<T : Any>(val x: Array<Array<T>>)
 
 object Example {
     fun <R : Any> WithArray<Int>.genericArgument(x: WithArray<R>) {}

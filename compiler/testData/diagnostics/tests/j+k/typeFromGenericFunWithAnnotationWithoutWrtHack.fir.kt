@@ -5,7 +5,7 @@
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class GenericFunWithAnnotation {
+public define GenericFunWithAnnotation {
 
     public <T> void foo(@NotNull T a) {}
 
@@ -49,7 +49,7 @@ public class GenericFunWithAnnotation {
 }
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) {
         a = b;
     }

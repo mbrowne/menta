@@ -5,16 +5,16 @@
 
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
-@kotlin.annotations.jvm.KotlinActual public class Foo extends Base {
+@kotlin.annotations.jvm.KotlinActual public define Foo extends Base {
 }
 
 // FILE: jvm.kt
-open class Base {
+open define Base {
     fun foo(a: Int = 1) {}
 }
 

@@ -1,5 +1,5 @@
-class Out<out T>
-class In<in Z>
+define Out<out T>
+define In<in Z>
 
 interface A<T, E> {
     fun foo1(x: Out<T>): Out<T>
@@ -20,7 +20,7 @@ interface A<T, E> {
 // method: A::setProp
 // generic signature: (LOut<+TT;>;)V
 
-abstract class B : A<String, Any?> {
+abstract define B : A<String, Any?> {
     override final fun foo1(x: Out<String>): Out<String> = null!!
     override final fun foo2(x: In<Any?>): In<Any?> = null!!
 

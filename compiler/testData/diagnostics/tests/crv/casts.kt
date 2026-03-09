@@ -29,12 +29,12 @@ fun nonLocals() {
 }
 
 fun classRefs(instance: Any) {
-    instance::class
-    String::class
-    nonLocal::class
-    val s = String::class
-    val ss = instance::class
-    val sss = nonLocal::class
+    instance::define
+    String::define
+    nonLocal::define
+    val s = String::define
+    val ss = instance::define
+    val sss = nonLocal::define
 }
 
 fun whenInstance() {

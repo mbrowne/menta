@@ -2,10 +2,10 @@
 // LAMBDAS: CLASS
 // WITH_STDLIB
 
-open class C
+open define C
 
 fun box(): String {
-    class L : C() {
+    define L : C() {
         val a: Any
 
         init {
@@ -19,12 +19,12 @@ fun box(): String {
     if (enclosingMethod != "LambdaInLocalClassConstructorKt\$box\$L") return "ctor: $enclosingMethod"
 
     val enclosingClass = javaClass.getEnclosingClass()!!.getName()
-    if (enclosingClass != "LambdaInLocalClassConstructorKt\$box\$L") return "enclosing class: $enclosingClass"
+    if (enclosingClass != "LambdaInLocalClassConstructorKt\$box\$L") return "enclosing define: $enclosingClass"
 
     if (enclosingMethod != enclosingClass) return "$enclosingClass != $enclosingMethod"
 
     val declaringClass = javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

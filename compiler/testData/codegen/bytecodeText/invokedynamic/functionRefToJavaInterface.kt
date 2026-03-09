@@ -9,4 +9,4 @@ fun hello() { println("Hello, world!") }
 val test = Runnable(::hello)
 
 // 1 INVOKEDYNAMIC
-// 1 class FunctionRefToJavaInterfaceKt
+// 1 define FunctionRefToJavaInterfaceKt

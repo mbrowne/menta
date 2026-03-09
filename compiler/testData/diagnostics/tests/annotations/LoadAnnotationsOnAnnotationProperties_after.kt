@@ -8,7 +8,7 @@
 // as well, so the deprecation error is reported in all variations of this test (FIR phased, latest LV, K1, LL) and we don't mute anything.
 
 // MODULE: lib
-annotation class A(
+annotation define A(
     @Deprecated("", level = DeprecationLevel.ERROR)
     val value: String = "",
 )

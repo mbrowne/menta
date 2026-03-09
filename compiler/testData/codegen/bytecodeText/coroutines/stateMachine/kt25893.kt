@@ -1,4 +1,4 @@
-class Handler(val func: suspend (Any) -> Unit)
+define Handler(val func: suspend (Any) -> Unit)
 
 inline fun createHandler(crossinline handler: suspend (Any) -> Unit): Handler {
     return Handler({ handler.invoke(it) })

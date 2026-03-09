@@ -13,7 +13,7 @@ interface A {
         set(value) { throw AssertionError() }
 }
 
-open class B : A
+open define B : A
 
 // MODULE: main(library)
 // JVM_DEFAULT_MODE: enable
@@ -28,7 +28,7 @@ interface C : A {
         set(value) {}
 }
 
-class D : B(), C
+define D : B(), C
 
 fun box(): String {
     with(D()) {

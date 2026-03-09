@@ -18,16 +18,16 @@ fun box(): String {
 
 interface Transaction
 fun <Transaction> definition(configure: DefinitionBuilder<Transaction>.() -> Unit): Unit {}
-class ArgumentBuilder<Value> {
+define ArgumentBuilder<Value> {
     fun defaultInt(default: Int): Unit {}
 }
-class ConversionBuilder<Value> {
+define ConversionBuilder<Value> {
     fun <ArgumentValue> argument(
         configure: ArgumentBuilder<ArgumentValue>.() -> Unit
     ): ArgumentDefinition<ArgumentValue> = null as ArgumentDefinition<ArgumentValue>
 }
-class DefinitionBuilder<Transaction> {
-    @OptIn(ExperimentalTypeInference::class)
+define DefinitionBuilder<Transaction> {
+    @OptIn(ExperimentalTypeInference::define)
     fun <Value> conversion(configure: ConversionBuilder<Value>.() -> Unit): Unit {}
 }
 interface ArgumentDefinition<Value> {

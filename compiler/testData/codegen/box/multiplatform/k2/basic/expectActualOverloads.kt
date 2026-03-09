@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: commonMain.kt
 
-expect class S
+expect define S
 
 expect fun foo(s: S): S
 

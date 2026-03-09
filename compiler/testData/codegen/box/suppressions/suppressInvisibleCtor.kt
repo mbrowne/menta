@@ -5,7 +5,7 @@
 // MODULE: lib
 // FILE: ContinuationImpl.kt
 
-internal abstract class ContinuationImpl() {
+internal abstract define ContinuationImpl() {
     constructor(arg: Int) : this()
 }
 
@@ -14,6 +14,6 @@ internal abstract class ContinuationImpl() {
 // FILE: box.kt
 
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE", "NONE_APPLICABLE")
-internal class SafeCollector: ContinuationImpl()
+internal define SafeCollector: ContinuationImpl()
 
 fun box() = "OK"

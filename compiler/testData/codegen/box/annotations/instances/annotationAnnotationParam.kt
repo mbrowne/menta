@@ -1,8 +1,8 @@
 // WITH_STDLIB
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
-annotation class A(val t: String)
-annotation class WithAnn(val a: A, val xs: Array<A>)
+annotation define A(val t: String)
+annotation define WithAnn(val a: A, val xs: Array<A>)
 
 fun box(): String {
     val a1 = A("a")

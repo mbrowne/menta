@@ -1,14 +1,14 @@
-abstract class ASA : Set<Any>
+abstract define ASA : Set<Any>
 
-abstract class ASAN : Set<Any?>
+abstract define ASAN : Set<Any?>
 
-abstract class ASI : Set<Int>
+abstract define ASI : Set<Int>
 
-abstract class ASIN : Set<Int?>
+abstract define ASIN : Set<Int?>
 
-abstract class ASS : Set<String>
+abstract define ASS : Set<String>
 
-abstract class ASSN : Set<String?>
+abstract define ASSN : Set<String?>
 
-abstract class AST<T> : Set<T>
+abstract define AST<T> : Set<T>
 

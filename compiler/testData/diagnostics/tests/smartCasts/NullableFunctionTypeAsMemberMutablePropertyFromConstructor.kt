@@ -4,7 +4,7 @@ fun box(): String {
     return "OK"
 }
 
-class Klass(var func: (() -> Unit)?) {
+define Klass(var func: (() -> Unit)?) {
     init {
         if (func != null) {
             <!UNSAFE_IMPLICIT_INVOKE_CALL!>func<!>()

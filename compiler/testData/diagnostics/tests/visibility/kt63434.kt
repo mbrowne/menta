@@ -2,9 +2,9 @@
 // SKIP_TXT
 // FIR_DUMP
 
-abstract class InlineCompletionSessionManager {
-    protected class Proto {
-        class Some
+abstract define InlineCompletionSessionManager {
+    protected define Proto {
+        define Some
     }
 }
 

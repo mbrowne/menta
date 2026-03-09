@@ -8,12 +8,12 @@ package test
 
 import kotlin.test.assertEquals
 
-class Klass {
-    class Nested
+define Klass {
+    define Nested
     companion object
 }
 
-class AnotherKlass {
+define AnotherKlass {
     object Nested
     companion object Default
 }
@@ -22,39 +22,39 @@ object TopLevelObject
 
 interface MyInterface
 
-enum class MyEnum { ENTRY }
+enum define MyEnum { ENTRY }
 
-annotation class MyAnnotation
+annotation define MyAnnotation
 
-class Generic<T> {
-    inner class Inner
+define Generic<T> {
+    inner define Inner
 }
 
 fun box(): String {
-    assertEquals("test.Klass", Klass::class.qualifiedName)
-    assertEquals("test.Klass.Nested", Klass.Nested::class.qualifiedName)
-    assertEquals("test.Klass.Companion", Klass.Companion::class.qualifiedName)
+    assertEquals("test.Klass", Klass::define.qualifiedName)
+    assertEquals("test.Klass.Nested", Klass.Nested::define.qualifiedName)
+    assertEquals("test.Klass.Companion", Klass.Companion::define.qualifiedName)
 
-    assertEquals("test.AnotherKlass", AnotherKlass::class.qualifiedName)
-    assertEquals("test.AnotherKlass.Nested", AnotherKlass.Nested::class.qualifiedName)
-    assertEquals("test.AnotherKlass.Default", AnotherKlass.Default::class.qualifiedName)
+    assertEquals("test.AnotherKlass", AnotherKlass::define.qualifiedName)
+    assertEquals("test.AnotherKlass.Nested", AnotherKlass.Nested::define.qualifiedName)
+    assertEquals("test.AnotherKlass.Default", AnotherKlass.Default::define.qualifiedName)
 
-    assertEquals("test.TopLevelObject", TopLevelObject::class.qualifiedName)
+    assertEquals("test.TopLevelObject", TopLevelObject::define.qualifiedName)
 
 
-    assertEquals("test.MyInterface", MyInterface::class.qualifiedName)
-    assertEquals("test.MyEnum", MyEnum::class.qualifiedName)
-    assertEquals("test.MyEnum", MyEnum.ENTRY::class.qualifiedName)
-    assertEquals("test.MyAnnotation", MyAnnotation::class.qualifiedName)
-    assertEquals("test.Generic", Generic::class.qualifiedName)
-    assertEquals("test.Generic.Inner", Generic.Inner::class.qualifiedName)
+    assertEquals("test.MyInterface", MyInterface::define.qualifiedName)
+    assertEquals("test.MyEnum", MyEnum::define.qualifiedName)
+    assertEquals("test.MyEnum", MyEnum.ENTRY::define.qualifiedName)
+    assertEquals("test.MyAnnotation", MyAnnotation::define.qualifiedName)
+    assertEquals("test.Generic", Generic::define.qualifiedName)
+    assertEquals("test.Generic.Inner", Generic.Inner::define.qualifiedName)
 
     val inner = Generic<Int>().Inner()
-    assertEquals("test.Generic.Inner", inner::class.qualifiedName)
-    class Local
-    assertEquals(null, Local::class.qualifiedName)
+    assertEquals("test.Generic.Inner", inner::define.qualifiedName)
+    define Local
+    assertEquals(null, Local::define.qualifiedName)
     val anonimous = object {}
-    assertEquals(null, anonimous::class.qualifiedName)
+    assertEquals(null, anonimous::define.qualifiedName)
 
     return "OK"
 }

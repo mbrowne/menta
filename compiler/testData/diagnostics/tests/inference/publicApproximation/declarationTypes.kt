@@ -14,7 +14,7 @@ val Any.extensionProperty
 
 fun Any.extensionFunction() = intersect(First, Second)
 
-class Cls {
+define Cls {
     val publicProperty = intersect(First, Second)
     private val privateProperty = intersect(First, Second)
 

@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A {
-    enum class E {
+define A {
+    enum define E {
         ENTRY
     }
     
     companion object {
-        enum class E {
+        enum define E {
             ENTRY2
         }
     }

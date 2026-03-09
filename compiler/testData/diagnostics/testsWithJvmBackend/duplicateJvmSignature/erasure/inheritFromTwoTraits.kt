@@ -9,5 +9,5 @@ interface Bar<T> {
     fun foo(l: List<T>) {}
 }
 
-<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>class Baz(): Foo<String>, Bar<Int> {
+<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>define Baz(): Foo<String>, Bar<Int> {
 }<!>

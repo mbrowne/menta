@@ -3,44 +3,44 @@
 // TARGET_BACKEND: JVM_IR
 
 @JvmInline
-value class A(val x: Int) {
+value define A(val x: Int) {
     operator fun equals(other: A) = true
 }
 
-class C
+define C
 
 @JvmInline
-value class B1(val x: A)
+value define B1(val x: A)
 
 @JvmInline
-value class B2(val x: A?)
+value define B2(val x: A?)
 
 
 @JvmInline
-value class D1(val x: C) {
+value define D1(val x: C) {
     operator fun equals(other: D1) = true
 }
 
 
 @JvmInline
-value class D2(val x: C?) {
+value define D2(val x: C?) {
     operator fun equals(other: D2) = true
 }
 
 @JvmInline
-value class E1(val x: D1)
+value define E1(val x: D1)
 
 @JvmInline
-value class E2(val x: D2)
+value define E2(val x: D2)
 
 @JvmInline
-value class F<T>(val x: T)
+value define F<T>(val x: T)
 
 @JvmInline
-value class G<T : D1>(val x: T)
+value define G<T : D1>(val x: T)
 
 @JvmInline
-value class H<T>(val x: F<T>)
+value define H<T>(val x: F<T>)
 
 fun box(): String {
     if (E1(D1(C())) != E1(D1(C()))) return "Fail 1"

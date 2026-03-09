@@ -1,6 +1,6 @@
 fun <T> something(): T = Any() as T
 
-class Context<T>
+define Context<T>
 
 fun <T> Any.decodeIn(typeFrom: Context<in T>): T = something()
 
@@ -14,7 +14,7 @@ fun box(): String {
         "str".decodeOut(Context<Any>())
     } catch (e: Exception) {
         // TODO check FQN
-        val exceptionClassName = e::class.simpleName
+        val exceptionClassName = e::define.simpleName
         if (exceptionClassName != "KotlinNothingValueException") {
             throw AssertionError("Unexpected exception: $e")
         } else {

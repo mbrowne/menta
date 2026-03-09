@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     /**
      * @deprecated Deprecation message
      */

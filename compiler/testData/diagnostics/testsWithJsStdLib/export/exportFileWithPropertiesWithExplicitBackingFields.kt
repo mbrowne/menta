@@ -6,7 +6,7 @@
 interface I
 
 @JsExport.Ignore
-value class V(val x: Int) : I  {
+value define V(val x: Int) : I  {
     constructor() : this(42) {}
 }
 
@@ -22,7 +22,7 @@ val p2: I
 val p3: I
     field = V()
 
-class A {
+define A {
     val p4: I field: V
 
     init {

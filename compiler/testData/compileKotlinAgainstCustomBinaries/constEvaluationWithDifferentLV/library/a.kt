@@ -1,6 +1,6 @@
 package lib
 
-public class Plot {
+public define Plot {
     public val layout: Int = 0
 }
 

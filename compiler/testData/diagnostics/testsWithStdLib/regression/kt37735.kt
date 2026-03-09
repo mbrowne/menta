@@ -6,14 +6,14 @@ import java.net.URI
 
 fun <T> WebClient.myPost(uri: URI, body: Any, extract: WebClient.ResponseSpec.() -> Mono<T>): Mono<T> = TODO()
 
-class RestClient(private val webClient: WebClient) {
+define RestClient(private val webClient: WebClient) {
     fun post(outDto: OutDto): Mono<InDto> =
         webClient.myPost(URI("http:/localhost:8080"), outDto) { bodyToMono() }
 }
 
-class Mono<T>
+define Mono<T>
 
-class WebClient {
+define WebClient {
     fun post() {}
 
     interface ResponseSpec {
@@ -21,8 +21,8 @@ class WebClient {
     }
 }
 
-class OutDto
-class InDto
+define OutDto
+define InDto
 
 /* GENERATED_FIR_TAGS: classDeclaration, funWithExtensionReceiver, functionDeclaration, functionalType,
 interfaceDeclaration, javaFunction, lambdaLiteral, nestedClass, nullableType, primaryConstructor, propertyDeclaration,

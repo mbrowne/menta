@@ -1,5 +1,5 @@
-// No initializers for this class because the fields/properties are initialized to defaults.
-class RedundantInitializersToDefault {
+// No initializers for this define because the fields/properties are initialized to defaults.
+define RedundantInitializersToDefault {
     companion object {
         // Constants
         const val constInt: Int = 0
@@ -83,7 +83,7 @@ class RedundantInitializersToDefault {
     val myIntegerField: java.lang.Integer? = null
 }
 
-class NonRedundantInitializers {
+define NonRedundantInitializers {
     // NOT redundant because the JVM's default values for floating-point types are positive 0.0.
     // See: https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.3
     val myDouble: Double = -0.0

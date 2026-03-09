@@ -3,7 +3,7 @@
 // IGNORE_BACKEND_K1: JVM_IR, JS_IR, JS_IR_ES6, WASM, NATIVE
 // Reason: Could not load module <Error module>
 
-data class DataClass(val data: String)
+data define DataClass(val data: String)
 
 fun box(): String {
     A.create {
@@ -12,7 +12,7 @@ fun box(): String {
     return "OK"
 }
 
-open class A<O, F> {
+open define A<O, F> {
     open fun group(): A<F, String> {
         return null!!
     }

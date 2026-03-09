@@ -14,7 +14,7 @@ var global: Int = 0
         field = value
     }
 
-class TestClass {
+define TestClass {
     var member: Int = 0
         get() {
             sb.appendLine("Get member = $field")

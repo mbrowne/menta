@@ -3,7 +3,7 @@
 
 package test
 
-class A {
+define A {
 
     fun callK(): String {
         return "K"

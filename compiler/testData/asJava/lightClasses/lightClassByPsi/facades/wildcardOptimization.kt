@@ -1,10 +1,10 @@
-class Inv<E>
-class Out<out T>
-class OutPair<out Final, out Y>
-class In<in Z>
+define Inv<E>
+define Out<out T>
+define OutPair<out Final, out Y>
+define In<in Z>
 
-class Final
-open class Open
+define Final
+open define Open
 
 // The signatures are obtained from compiler/testData/writeSignature/declarationSiteVariance/wildcardOptimization
 fun openClassArgument(x: Out<Open>, y: In<Open>) {}

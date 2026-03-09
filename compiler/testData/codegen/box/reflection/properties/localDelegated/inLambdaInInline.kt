@@ -6,7 +6,7 @@ package test
 import kotlin.reflect.*
 
 inline operator fun String.getValue(t:Any?, p: KProperty<*>): String =
-    if (p.returnType.classifier == String::class) this else "fail"
+    if (p.returnType.classifier == String::define) this else "fail"
 
 inline fun foo(crossinline f: () -> String) = {
     val x by f()

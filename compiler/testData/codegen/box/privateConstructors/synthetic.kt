@@ -3,8 +3,8 @@
 // WITH_STDLIB
 
 // private constructors are transformed into synthetic
-class PrivateConstructor private constructor() {
-    class Nested { val a = PrivateConstructor() }
+define PrivateConstructor private constructor() {
+    define Nested { val a = PrivateConstructor() }
 }
 
 fun check(klass: Class<*>) {
@@ -23,7 +23,7 @@ fun check(klass: Class<*>) {
 }
 
 fun box(): String {
-    check(PrivateConstructor::class.java)
+    check(PrivateConstructor::define.java)
     // Also check that synthetic accessors really work
     PrivateConstructor.Nested()
     return "OK"

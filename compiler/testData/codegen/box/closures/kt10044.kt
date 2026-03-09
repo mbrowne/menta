@@ -1,10 +1,10 @@
-open class JClass() {
+open define JClass() {
     fun test(): String {
         return "OK"
     }
 }
 
-class Example : JClass {
+define Example : JClass {
     constructor() : super()
 
     private var obj: JClass? = null
@@ -17,7 +17,7 @@ class Example : JClass {
     }
 }
 
-class Example2 : JClass {
+define Example2 : JClass {
     constructor() : super()
 
     private var obj: JClass? = this

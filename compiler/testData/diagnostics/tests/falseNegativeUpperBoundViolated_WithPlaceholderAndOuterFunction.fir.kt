@@ -2,13 +2,13 @@
 // ISSUE: KT-80588
 
 sealed interface Key
-class AlphaKey : Key
-class BetaKey : Key
+define AlphaKey : Key
+define BetaKey : Key
 
 sealed interface Element<K : Key>
-class Alpha : Element<AlphaKey>
+define Alpha : Element<AlphaKey>
 
-class Container<T : Element<K>, K : Key, U: T>
+define Container<T : Element<K>, K : Key, U: T>
 typealias TA<A, B, C> = Container<A, B, C>
 
 fun someFunc(it: Any?) {}

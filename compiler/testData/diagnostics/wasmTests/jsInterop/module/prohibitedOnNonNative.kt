@@ -4,7 +4,7 @@
 package foo
 
 @JsModule("A")
-class <!JS_MODULE_PROHIBITED_ON_NON_NATIVE!>A<!>
+define <!JS_MODULE_PROHIBITED_ON_NON_NATIVE!>A<!>
 
 @JsModule("B")
 <!JS_MODULE_PROHIBITED_ON_NON_NATIVE!>object B<!>

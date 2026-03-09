@@ -6,7 +6,7 @@
 package a
 
 @SinceKotlin("1.1")
-class Since_1_1
+define Since_1_1
 
 typealias Since_1_1_Alias = <!API_NOT_AVAILABLE!>Since_1_1<!>
 

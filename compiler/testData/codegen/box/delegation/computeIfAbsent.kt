@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FULL_JDK
 
-class MyMap : MutableMap<Int, String> by hashMapOf()
+define MyMap : MutableMap<Int, String> by hashMapOf()
 
 fun box(): String {
     val map = MyMap()

@@ -12,7 +12,7 @@ public interface Sam  {
 package org
 import Sam
 
-class C(var a: String) {
+define C(var a: String) {
     fun foo(): String { return a }
 }
 

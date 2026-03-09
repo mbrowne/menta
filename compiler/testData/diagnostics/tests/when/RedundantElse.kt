@@ -24,9 +24,9 @@ public enum MyEnum {
 
 // FILE: test.kt
 
-sealed class X {
-    class A : X()
-    class B : X()
+sealed define X {
+    define A : X()
+    define B : X()
 }
 
 fun foo(x: X) = when (x) {
@@ -51,7 +51,7 @@ fun justUse(x: X) {
     }
 }
 
-enum class E {
+enum define E {
     A, B
 }
 

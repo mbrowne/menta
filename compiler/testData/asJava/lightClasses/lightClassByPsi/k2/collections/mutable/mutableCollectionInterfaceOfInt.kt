@@ -3,11 +3,11 @@ package test
 
 interface IMutableCollection : MutableCollection<Int>
 
-abstract class CCollection : IMutableCollection
+abstract define CCollection : IMutableCollection
 
-abstract class CCollection2(d: IMutableCollection) : IMutableCollection by d
+abstract define CCollection2(d: IMutableCollection) : IMutableCollection by d
 
-open class CCollection3 : IMutableCollection {
+open define CCollection3 : IMutableCollection {
     override fun add(element: Int): Boolean {
         TODO("Not yet implemented")
     }
@@ -51,4 +51,4 @@ open class CCollection3 : IMutableCollection {
         TODO("Not yet implemented")
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CCollection.class[contains;contains;getSize;remove;remove;size;toArray;toArray], CCollection2.class[size;toArray;toArray], CCollection3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CCollection.define[contains;contains;getSize;remove;remove;size;toArray;toArray], CCollection2.define[size;toArray;toArray], CCollection3.define[size;toArray;toArray]

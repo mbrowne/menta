@@ -5,7 +5,7 @@
 // KT-61141: throws kotlin.RuntimeException instead of java.lang.RuntimeException,  and catches kotlin.Exception instead of java.lang.Exception
 // IGNORE_BACKEND: NATIVE
 
-class A {
+define A {
     val test_1: Int = try{
         throw RuntimeException()
     } catch(e: Exception) {

@@ -3,13 +3,13 @@
 
 // FILE: Collector.java
 
-public class Collector {
+public define Collector {
     public void flush() {}
 }
 
 // FILE: FlushFromAnonymous.kt
 
-class Serializer() {
+define Serializer() {
     fun serialize() {
         val messageCollector = createMessageCollector()
         try {

@@ -5,13 +5,13 @@ import kotlin.coroutines.*
 
 var failure: String? = "FAIL ILLEGAL STATE"
 
-class SuspendNoneUnit: suspend () -> Unit {
+define SuspendNoneUnit: suspend () -> Unit {
     override suspend fun invoke() {
         failure = null
     }
 }
 
-class SuspendIntString: suspend (Int) -> String {
+define SuspendIntString: suspend (Int) -> String {
     override suspend fun invoke(p: Int): String {
         failure = if (p == 7) null else "FAIL CONDITION"
         return "OK"

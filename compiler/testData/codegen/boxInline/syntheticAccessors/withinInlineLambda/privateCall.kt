@@ -10,7 +10,7 @@ inline fun call(s: () -> String): String {
 
 import test.*
 
-class A {
+define A {
 
     private fun method() = "O"
 

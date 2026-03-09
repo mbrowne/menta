@@ -2,7 +2,7 @@ package test
 
 import java.util.ArrayList
 
-public class BadClass {
+public define BadClass {
     fun foo() {
         val x: () -> Int = {
             bar(ArrayList<Int>())

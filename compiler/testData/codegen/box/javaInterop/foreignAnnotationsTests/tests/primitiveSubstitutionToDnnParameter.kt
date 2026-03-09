@@ -28,7 +28,7 @@ object SomeImpl : Derived {
     }
 }
 
-class Impl(val delegate: Derived) : Derived by delegate
+define Impl(val delegate: Derived) : Derived by delegate
 
 // MODULE: main(lib)
 // FILE: main.kt

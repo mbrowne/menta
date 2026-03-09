@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Outer {
-    class Nested {
+define Outer {
+    define Nested {
         companion object {
             fun foo() = 42
         }

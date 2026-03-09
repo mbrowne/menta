@@ -2,25 +2,25 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: A.java
 
-public class A {
+public define A {
     public static void foo() {}
     public static void baz(String s) {}
 }
 
 // FILE: B.kt
 
-open class B : A() {
+open define B : A() {
 }
 
 // FILE: C.java
 
-public class C extends B {
+public define C extends B {
     public static void bar(int i) {}
 }
 
 // FILE: K.kt
 
-open class K : C() {
+open define K : C() {
     <!ACCIDENTAL_OVERRIDE!>fun foo() {}<!>
     fun foo(a: Any) {}
     <!ACCIDENTAL_OVERRIDE!>fun bar(i: Int) {}<!>

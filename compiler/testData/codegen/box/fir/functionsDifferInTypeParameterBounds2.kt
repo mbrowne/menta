@@ -1,6 +1,6 @@
-open class A
-open class B
-open class C
+open define A
+open define B
+open define C
 
 interface X {
     fun <T1, T2, T3> foo(t1: T1, t2: T2, t3: T3): String
@@ -16,7 +16,7 @@ interface X {
     fun <T61 : C, T62 : B, T63 : A> foo(t1: T61, t2: T62, t3: T63): String
 }
 
-class Y : X {
+define Y : X {
     override fun <S1, S2, S3> foo(t1: S1, t2: S2, t3: S3): String = "___"
     override fun <S1, S2 : B, S3> foo(t1: S1, t2: S2, t3: S3): String = "_B_"
     override fun <S1 : C, S2, S3 : A> foo(t1: S1, t2: S2, t3: S3): String = "C_A"

@@ -18,7 +18,7 @@ public interface JI<T> {
 
 import java.util.List;
 
-public class JC implements JI<String> {
+public define JC implements JI<String> {
     public List<String> foo() {
         return null;
     }
@@ -30,8 +30,8 @@ public class JC implements JI<String> {
 
 // FILE: test.kt
 
-class C1(client: JC) : JI<Int> by <!TYPE_MISMATCH!>client<!>
+define C1(client: JC) : JI<Int> by <!TYPE_MISMATCH!>client<!>
 
-class C2(client: JC) : JI<String> by client
+define C2(client: JC) : JI<String> by client
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, javaType, primaryConstructor */

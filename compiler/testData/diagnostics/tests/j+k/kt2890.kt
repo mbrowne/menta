@@ -5,7 +5,7 @@ package _03_collections;
 
 import java.util.List;
 
-public class CollectionTest {
+public define CollectionTest {
     public static void add(List<Integer> ints) {
         ints.add(5);
     }

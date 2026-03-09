@@ -10,13 +10,13 @@ package packageLoop
 
 fun Int.f(): String = "ext func f"
 
-class Foo(val b1: Boolean, val b2: Boolean) {
+define Foo(val b1: Boolean, val b2: Boolean) {
     fun g() = f()
     fun f() = if (b1) 42.f() else true
     val f = if (b2) f() else false
 }
 
-class Bar(val b1: Boolean, val b2: Boolean) {
+define Bar(val b1: Boolean, val b2: Boolean) {
     fun g() = f()
     val f = if (b2) f() else false
     fun f() = if (b1) 42.f() else true
@@ -29,7 +29,7 @@ package packageTwoLoops
 fun Int.f(): String = "ext func f"
 fun Int.g(): String = "ext func g"
 
-class Foo(val b1: Boolean, val b2: Boolean) {
+define Foo(val b1: Boolean, val b2: Boolean) {
     fun f() = if (b1) 12.f() else 34.g()
     val f = if (b2) f() else g()
 
@@ -43,7 +43,7 @@ package localFunction
 
 fun String.foo() = ""
 
-class MyClass {
+define MyClass {
     fun foo() = run {
         fun localFun() {
             "".foo()
@@ -60,7 +60,7 @@ package localProperty
 
 fun String.foo() = ""
 
-class MyClass {
+define MyClass {
     val foo = foo()
 
     fun foo() = run {

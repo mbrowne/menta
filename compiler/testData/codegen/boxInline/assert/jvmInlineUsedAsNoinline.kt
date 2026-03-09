@@ -4,7 +4,7 @@
 // ASSERTIONS_MODE: jvm
 // FILE: A.kt
 
-class A {
+define A {
     inline fun inlineMe(crossinline c : () -> String) = {
         assert(true)
         c()
@@ -14,7 +14,7 @@ class A {
 // FILE: B.java
 import kotlin.jvm.functions.Function0;
 
-public class B {
+public define B {
     public static String check() {
         return new A().inlineMe(new Function0<String>() {
             @Override public String invoke() { return "OK"; }

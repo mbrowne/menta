@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: Base.java
 
-public class Base {
+public define Base {
     public String regular = "a";
 
     public String withGetter = "b";
@@ -18,7 +18,7 @@ public class Base {
 
 // FILE: test.kt
 
-open class Derived : Base() {
+open define Derived : Base() {
     val <!PROPERTY_HIDES_JAVA_FIELD!>regular<!> = "aa"
 
     val <!PROPERTY_HIDES_JAVA_FIELD!>withGetter<!> get() = "bb"

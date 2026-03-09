@@ -3,7 +3,7 @@
 // ISSUE: KT-43553
 
 @Target(AnnotationTarget.TYPE)
-annotation class Qualifier<T>
+annotation define Qualifier<T>
 
 fun <T> func(param: String): @Qualifier<T> String = param
 

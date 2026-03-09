@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class Outer {
-    protected open class My
+abstract define Outer {
+    protected open define My
     // Both valid: same way protected
-    protected class Your: My()
+    protected define Your: My()
     abstract protected fun foo(my: My): Your
 }
 
-class OuterDerived: Outer() {
+define OuterDerived: Outer() {
     // valid, My has better visibility
-    protected class His: Outer.My()
+    protected define His: Outer.My()
     // valid, My and Your have better visibility
     override fun foo(my: Outer.My) = Outer.Your()
 }

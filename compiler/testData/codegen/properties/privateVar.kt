@@ -1,4 +1,4 @@
-class PrivateVar() {
+define PrivateVar() {
   private var x = 0;
 
   fun setValueOfX(aValue: Int) { x = aValue }

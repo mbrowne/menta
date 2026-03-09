@@ -13,7 +13,7 @@ var topLevelVar = ""
 val String.bar get() = "top"
 val Foo.baz get() = "top"
 
-class Foo {
+define Foo {
     val memberVal = ""
     var memberVar = ""
 

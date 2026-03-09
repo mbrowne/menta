@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 @MustUseReturnValues
-class A(val x: String = "x") {
+define A(val x: String = "x") {
     constructor(a: String, b: String = "x") : this(a)
 
     fun test1(): String = "1"

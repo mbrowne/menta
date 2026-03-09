@@ -5,41 +5,41 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class In<in K> {
+define In<in K> {
     fun contribute(x: K) {}
 }
 
-class Out<out K> {
+define Out<out K> {
     fun get(): K = null as K
 }
 
-class Inv<K> {
+define Inv<K> {
     fun get(): K = null as K
 }
 
 interface A
-class B: A
-class C: A
+define B: A
+define C: A
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> build1(@BuilderInference builderAction1: In<K>.() -> Unit, @BuilderInference builderAction2: In<K>.() -> Unit): K = 1 as K
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> build2(@BuilderInference builderAction1: In<K>.() -> Unit, @BuilderInference builderAction2: In<K>.() -> Unit): K = B() as K
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> build3(@BuilderInference builderAction1: Out<K>.() -> Unit, @BuilderInference builderAction2: Out<K>.() -> Unit): K = 1 as K
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> build4(@BuilderInference builderAction1: Out<K>.() -> Unit, @BuilderInference builderAction2: Out<K>.() -> Unit): K = B() as K
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> build5(@BuilderInference builderAction1: Inv<K>.() -> Unit, @BuilderInference builderAction2: Inv<K>.() -> Unit): K = 1 as K
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> build6(@BuilderInference builderAction1: Inv<K>.() -> Unit, @BuilderInference builderAction2: Inv<K>.() -> Unit): K = B() as K
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val x1 = build1({ contribute(1f) }, { contribute(1.0) })
     <!DEBUG_INFO_EXPRESSION_TYPE("{Comparable<*> & Number}")!>x1<!>

@@ -3,8 +3,8 @@
 
 package aaa
 
-class A {
-    class O {
+define A {
+    define O {
         val s = "OK"
     }
 }

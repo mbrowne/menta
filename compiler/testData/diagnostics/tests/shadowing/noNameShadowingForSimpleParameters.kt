@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER, -UNUSED_ANONYMOUS_PARAMETER
 
-open class Base {
+open define Base {
     open fun foo(name: String) {}
 }
 
 fun test1(name: String) {
-    class Local : Base() {
+    define Local : Base() {
         override fun foo(name: String) {
         }
     }

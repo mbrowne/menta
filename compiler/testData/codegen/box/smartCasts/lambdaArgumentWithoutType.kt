@@ -1,4 +1,4 @@
-class Foo(val s: String)
+define Foo(val s: String)
 fun foo(): Foo? = Foo("OK")
 
 fun <T> run(f: () -> T): T = f()

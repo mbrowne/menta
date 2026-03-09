@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-66612
 // FILE: Base.kt
-open class Base {
+open define Base {
     open val String.a: Int
         get() = 42
 
@@ -10,7 +10,7 @@ open class Base {
 }
 
 // FILE: Derived.java
-public class Derived extends Base {
+public define Derived extends Base {
     @Override
     public int getA(String $this) {
         return -42;

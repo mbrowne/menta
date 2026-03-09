@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T)
+value define Z<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L<T: Long>(val x: T)
+value define L<T: Long>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(val x: T)
+value define S<T: String>(val x: T)
 
 fun box(): String {
     if ((Z<Int>::x).get(Z(42)) != 42) throw AssertionError()

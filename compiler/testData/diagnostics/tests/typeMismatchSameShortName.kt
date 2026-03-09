@@ -3,14 +3,14 @@
 // FILE: a.kt
 package a
 
-class Foo
+define Foo
 
 fun acceptFoo(f: Foo) {}
 
 // FILE: b.kt
 package b
 
-class Foo
+define Foo
 
 fun test() {
     a.acceptFoo(<!TYPE_MISMATCH!>Foo()<!>)

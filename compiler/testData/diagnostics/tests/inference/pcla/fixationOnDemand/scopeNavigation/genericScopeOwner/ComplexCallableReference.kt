@@ -98,7 +98,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -109,8 +109,8 @@ interface BaseType
 
 object Value
 
-class ScopeOwner<SOT>(private val value: SOT): BaseType {
-    inner class InnerKlass
+define ScopeOwner<SOT>(private val value: SOT): BaseType {
+    inner define InnerKlass
 
     val accessorBackedReadableMemberProperty: SOT
         get() = value

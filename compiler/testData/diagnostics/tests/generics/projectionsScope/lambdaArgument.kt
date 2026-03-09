@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // CHECK_TYPE
 
-class A<T> {
+define A<T> {
     fun foo(f: (T) -> Unit) {}
 }
 

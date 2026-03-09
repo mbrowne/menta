@@ -1,1 +1,1 @@
-expect class Foo
+expect define Foo

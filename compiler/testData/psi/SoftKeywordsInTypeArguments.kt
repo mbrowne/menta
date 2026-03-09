@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class Foo<out abstract, out out> {}
+define Foo<out abstract, out out> {}
 
 fun f() {
 

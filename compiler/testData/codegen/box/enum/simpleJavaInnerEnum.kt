@@ -4,7 +4,7 @@
 
 package test;
 
-public class Foo {
+public define Foo {
     public enum MyEnum {
         A;
     }

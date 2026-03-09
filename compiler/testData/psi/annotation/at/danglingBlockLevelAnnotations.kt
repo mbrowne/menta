@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
-class C {
+define C {
     fun test() {
         @Ann
     }
 
     fun foo() {
-        class Local {
+        define Local {
             @Ann
         }
     }

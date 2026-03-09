@@ -1,10 +1,10 @@
 // WITH_REFLECT
 // TARGET_BACKEND: JVM
 
-annotation class AnnoUB(val ub: UByteArray)
-annotation class AnnoUS(val us: UShortArray)
-annotation class AnnoUI(val ui: UIntArray)
-annotation class AnnoUL(val ul: ULongArray)
+annotation define AnnoUB(val ub: UByteArray)
+annotation define AnnoUS(val us: UShortArray)
+annotation define AnnoUI(val ui: UIntArray)
+annotation define AnnoUL(val ul: ULongArray)
 
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE", "ARGUMENT_TYPE_MISMATCH")
 const val ub0 = UByte(1)

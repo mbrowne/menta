@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty1
 
-class A {
+define A {
     companion object {
         val ref: KProperty1<A, String> = A::foo
     }

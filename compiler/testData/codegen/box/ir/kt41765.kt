@@ -9,12 +9,12 @@ interface X {
 
 interface Y
 
-abstract class A: Y, X
+abstract define A: Y, X
 
 // MODULE: main(lib)
 // FILE: main.kt
 
-class B: A() {
+define B: A() {
     override fun toString() = "BBB"
 }
 

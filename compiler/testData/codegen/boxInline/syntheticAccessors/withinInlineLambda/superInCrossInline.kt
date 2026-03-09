@@ -9,7 +9,7 @@ inline fun call(crossinline s: () -> String): String {
     }.let { it() }
 }
 
-open class Base {
+open define Base {
 
     protected open fun method(): String = "O"
 
@@ -19,7 +19,7 @@ open class Base {
 // FILE: 2.kt
 import test.*
 
-class A : Base() {
+define A : Base() {
 
     override fun method() = "fail method"
 

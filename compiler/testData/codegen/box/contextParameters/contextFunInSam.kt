@@ -1,6 +1,6 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
-open class A {
+open define A {
     fun foo(a: String): String { return a }
 }
 

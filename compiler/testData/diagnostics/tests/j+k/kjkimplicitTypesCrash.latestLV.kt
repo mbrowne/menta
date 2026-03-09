@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-66392
 // FILE: Java1.java
-public class Java1 extends KotlinClass  {
+public define Java1 extends KotlinClass  {
     @Override
     public String getE() {
         return "2";
@@ -11,11 +11,11 @@ public class Java1 extends KotlinClass  {
 
 // FILE: test.kt
 // The order of Kotlin classes is important
-class B : Java1() {
+define B : Java1() {
     override var e = super.e
 }
 
-open class KotlinClass {
+open define KotlinClass {
     open var e = "1"
 }
 

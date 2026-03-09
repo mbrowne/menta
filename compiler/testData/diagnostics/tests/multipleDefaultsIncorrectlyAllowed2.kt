@@ -8,7 +8,7 @@ interface A2 : A
 interface B {
     fun foo(a: String = "OK"): String
 }
-class Impl : A2, B {
+define Impl : A2, B {
     override fun foo(a: String) = a
 }
 

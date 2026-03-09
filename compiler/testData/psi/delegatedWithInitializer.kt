@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class MyClass {
+define MyClass {
     companion object {
         const val token = "token"
     }

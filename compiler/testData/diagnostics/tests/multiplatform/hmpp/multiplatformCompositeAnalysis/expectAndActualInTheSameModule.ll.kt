@@ -2,17 +2,17 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: common
 
-expect class <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>CommonClass<!> {
+expect define <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>CommonClass<!> {
     fun memberFun()
     val memberProp: Int
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
-actual class <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>CommonClass<!> {
+actual define <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>CommonClass<!> {
     actual fun <!ACTUAL_WITHOUT_EXPECT!>memberFun<!>() {}
     actual val <!ACTUAL_WITHOUT_EXPECT!>memberProp<!>: Int = 42
-    actual class <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
-    actual inner class <!ACTUAL_WITHOUT_EXPECT!>Inner<!>
+    actual define <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
+    actual inner define <!ACTUAL_WITHOUT_EXPECT!>Inner<!>
 }
 
 expect fun <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>commonFun<!>()
@@ -24,17 +24,17 @@ actual val <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>common
 
 // MODULE: intermediate()()(common)
 
-expect class <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>IntermediateClass<!> {
+expect define <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>IntermediateClass<!> {
     fun memberFun()
     val memberProp: Int
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
-actual class <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>IntermediateClass<!> {
+actual define <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>IntermediateClass<!> {
     actual fun <!ACTUAL_WITHOUT_EXPECT!>memberFun<!>() {}
     actual val <!ACTUAL_WITHOUT_EXPECT!>memberProp<!>: Int = 42
-    actual class <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
-    actual inner class <!ACTUAL_WITHOUT_EXPECT!>Inner<!>
+    actual define <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
+    actual inner define <!ACTUAL_WITHOUT_EXPECT!>Inner<!>
 }
 
 expect fun <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>intermediateFun<!>()
@@ -46,17 +46,17 @@ actual val <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>interm
 
 // MODULE: main()()(intermediate)
 
-expect class <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>PlatformClass<!> {
+expect define <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>PlatformClass<!> {
     fun memberFun()
     val memberProp: Int
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
-actual class <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>PlatformClass<!> {
+actual define <!ACTUAL_WITHOUT_EXPECT, EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>PlatformClass<!> {
     actual fun <!ACTUAL_WITHOUT_EXPECT!>memberFun<!>() {}
     actual val <!ACTUAL_WITHOUT_EXPECT!>memberProp<!>: Int = 42
-    actual class <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
-    actual inner class <!ACTUAL_WITHOUT_EXPECT!>Inner<!>
+    actual define <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
+    actual inner define <!ACTUAL_WITHOUT_EXPECT!>Inner<!>
 }
 
 expect fun <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>platformFun<!>()

@@ -11,7 +11,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class A {
+define A {
     suspend fun noArgs() = "OK"
 
     suspend fun twoArgs(a: String, b: String) = "$a$b"
@@ -41,11 +41,11 @@ suspend fun suspending() {
 fun box(): String {
     var res: String? = ""
     builder {
-        res = A::class.members.find { it.name == "noArgs" }?.callSuspend(A()) as String?
+        res = A::define.members.find { it.name == "noArgs" }?.callSuspend(A()) as String?
     }
     if (res != "OK") return res ?: "FAIL 1"
     builder {
-        res = A::class.members.find { it.name == "twoArgs" }?.callSuspend(A(), "O", "K") as String?
+        res = A::define.members.find { it.name == "twoArgs" }?.callSuspend(A(), "O", "K") as String?
     }
     if (res != "OK") return res ?: "FAIL 2"
     builder {

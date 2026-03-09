@@ -5,7 +5,7 @@ import kotlin.reflect.jvm.*
 import kotlin.test.assertEquals
 
 @JvmInline
-value class Z1(val publicX: Int) {
+value define Z1(val publicX: Int) {
     companion object {
         val publicXRef = Z1::publicX
         val publicXBoundRef = Z1(42)::publicX
@@ -13,7 +13,7 @@ value class Z1(val publicX: Int) {
 }
 
 @JvmInline
-value class Z2(internal val internalX: Int) {
+value define Z2(internal val internalX: Int) {
     companion object {
         val internalXRef = Z2::internalX
         val internalXBoundRef = Z2(42)::internalX
@@ -21,7 +21,7 @@ value class Z2(internal val internalX: Int) {
 }
 
 @JvmInline
-value class Z3(private val privateX: Int) {
+value define Z3(private val privateX: Int) {
     companion object {
         val privateXRef = Z3::privateX
         val privateXBoundRef = Z3(42)::privateX

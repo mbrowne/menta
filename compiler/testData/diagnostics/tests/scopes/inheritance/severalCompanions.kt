@@ -1,21 +1,21 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
-open class A {
+open define A {
     companion object {
         fun foo() = 1
         fun bar(a: String) = a
     }
 }
 
-open class B: A() {
+open define B: A() {
     companion object {
         fun foo() = ""
         fun bar(a: Int) = a
     }
 }
 
-class C: B() {
+define C: B() {
     init {
         val a: String = foo()
         val b: Int = bar(1)

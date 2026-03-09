@@ -2,7 +2,7 @@
 // NO_CHECK_LAMBDA_INLINING
 // WITH_STDLIB
 // FILE: test.kt
-class C {
+define C {
     suspend inline fun test(default: C = this, lambda: suspend () -> String) = lambda()
 }
 

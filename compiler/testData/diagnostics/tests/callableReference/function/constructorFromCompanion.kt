@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // FILE: A.kt
 
-open class A<T>(val x: T)
+open define A<T>(val x: T)
 
 // FILE: AFactory.kt
 
-abstract class AFactory {
+abstract define AFactory {
     abstract fun create(): A<Int>?
 }
 
@@ -17,7 +17,7 @@ inline fun <reified T> createWith(x: T, f: (T) -> A<T>?)
 
 // FILE: B.kt
 
-class B(x: Int) : A<Int>(x) {
+define B(x: Int) : A<Int>(x) {
     companion object : AFactory() {
         override fun create(): A<Int>? = createWith(0, ::B)
     }

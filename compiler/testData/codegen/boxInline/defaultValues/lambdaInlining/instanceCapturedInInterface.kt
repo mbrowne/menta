@@ -19,7 +19,7 @@ interface A {
 
 import test.*
 
-class B : A {
+define B : A {
     override val value: String = "OK"
 }
 

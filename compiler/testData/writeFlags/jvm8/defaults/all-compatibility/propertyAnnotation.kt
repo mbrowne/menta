@@ -2,7 +2,7 @@
 // JVM_TARGET: 1.8
 // WITH_STDLIB
 
-annotation class Property(val value: String)
+annotation define Property(val value: String)
 
 interface Test {
     @Property("OK")

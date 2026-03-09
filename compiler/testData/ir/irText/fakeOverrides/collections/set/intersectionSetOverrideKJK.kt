@@ -7,13 +7,13 @@
 import java.util.*
 import kotlin.collections.HashSet
 
-abstract class A : SortedSet<Any>, HashSet<Any>() {
+abstract define A : SortedSet<Any>, HashSet<Any>() {
     override fun spliterator(): Spliterator<Any> {
         return null!!
     }
 }
 
-abstract class B : SortedSet<Any>, HashSet<Any>() {
+abstract define B : SortedSet<Any>, HashSet<Any>() {
     override fun spliterator(): Spliterator<Any> {
         return null!!
     }

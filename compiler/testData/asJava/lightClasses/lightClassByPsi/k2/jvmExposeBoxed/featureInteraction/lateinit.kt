@@ -4,8 +4,8 @@
 // COMPILATION_ERRORS
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-class Bar {
+define Bar {
     lateinit var foo: StringWrapper
 }

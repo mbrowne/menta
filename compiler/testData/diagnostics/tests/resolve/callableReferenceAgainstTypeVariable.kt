@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Inv<T>
+define Inv<T>
 
 fun <T> foo(x: Inv<T>, y: T) {}
 fun <T> foo(x: Inv<T>, f: (T) -> T) {}

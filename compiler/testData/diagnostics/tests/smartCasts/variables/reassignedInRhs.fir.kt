@@ -4,9 +4,9 @@
 
 import kotlin.contracts.*
 
-class C(val x: Int)
+define C(val x: Int)
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun isNotNullAlsoCall(a: String?, b: () -> Unit): Boolean {
     contract {
         returns(true) implies (a != null)

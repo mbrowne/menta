@@ -71,10 +71,9 @@ KtFile: ShortAnnotations.kt
   PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('zoo')
   PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
   PsiWhiteSpace('\n')
   PsiErrorElement:Expecting a top level declaration
@@ -248,343 +247,296 @@ KtFile: ShortAnnotations.kt
     INTEGER_CONSTANT
       PsiElement(INTEGER_LITERAL)('0')
   PsiWhiteSpace('\n\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          BINARY_EXPRESSION
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('foo')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(IDENTIFIER)('bar')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('buzz')
-            PsiErrorElement:Expecting an element
-              PsiElement(LT)('<')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('T')
-          CALL_EXPRESSION
-            PsiErrorElement:Expecting an element
-              PsiElement(GT)('>')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('zoo')
-        PsiWhiteSpace(' ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('companion')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        <empty list>
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
       PsiWhiteSpace(' ')
-      OBJECT_LITERAL
-        OBJECT_DECLARATION
-          PsiElement(object)('object')
-          PsiWhiteSpace(' ')
-          CLASS_BODY
-            PsiElement(LBRACE)('{')
-            PsiElement(RBRACE)('}')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      OBJECT_DECLARATION
+        MODIFIER_LIST
+          PsiElement(companion)('companion')
+        PsiWhiteSpace(' ')
+        PsiElement(object)('object')
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n  ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          BINARY_EXPRESSION
-            BINARY_EXPRESSION
-              BINARY_EXPRESSION
-                BINARY_EXPRESSION
-                  BINARY_EXPRESSION
-                    BINARY_EXPRESSION
-                      BINARY_EXPRESSION
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('foo')
-                        PsiWhiteSpace(' ')
-                        OPERATION_REFERENCE
-                          PsiElement(IDENTIFIER)('bar')
-                        PARENTHESIZED
-                          PsiElement(LPAR)('(')
-                          INTEGER_CONSTANT
-                            PsiElement(INTEGER_LITERAL)('1')
-                          PsiElement(RPAR)(')')
-                      PsiWhiteSpace(' ')
-                      OPERATION_REFERENCE
-                        PsiElement(IDENTIFIER)('buzz')
-                      PsiErrorElement:Expecting an element
-                        PsiElement(LT)('<')
-                    OPERATION_REFERENCE
-                      PsiElement(IDENTIFIER)('T')
-                    CALL_EXPRESSION
-                      PsiErrorElement:Expecting an element
-                        PsiElement(GT)('>')
-                      VALUE_ARGUMENT_LIST
-                        PsiElement(LPAR)('(')
-                        VALUE_ARGUMENT
-                          INTEGER_CONSTANT
-                            PsiElement(INTEGER_LITERAL)('1')
-                        PsiElement(RPAR)(')')
-                  PsiWhiteSpace(' ')
-                  OPERATION_REFERENCE
-                    PsiElement(IDENTIFIER)('zoo')
-                  PsiWhiteSpace(' ')
-                  PsiErrorElement:Expecting an element
-                    PsiElement(class)('class')
-                PsiWhiteSpace(' ')
-                OPERATION_REFERENCE
-                  PsiElement(IDENTIFIER)('A')
-                PsiWhiteSpace('\n  ')
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('foo')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(IDENTIFIER)('bar')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('buzz')
-            PsiErrorElement:Expecting an element
-              PsiElement(LT)('<')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('T')
-          CALL_EXPRESSION
-            PsiErrorElement:Expecting an element
-              PsiElement(GT)('>')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('zoo')
-        PsiWhiteSpace(' ')
-        OBJECT_LITERAL
-          OBJECT_DECLARATION
-            PsiElement(object)('object')
-            PsiWhiteSpace(' ')
-            PsiErrorElement:An object expression cannot bind a name
-              PsiElement(IDENTIFIER)('B')
-            PsiWhiteSpace('\n  ')
-            CLASS_BODY
-              PsiErrorElement:Expecting a class body
-                <empty list>
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          BINARY_EXPRESSION
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('foo')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(IDENTIFIER)('bar')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('buzz')
-            PsiErrorElement:Expecting an element
-              PsiElement(LT)('<')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('T')
-          CALL_EXPRESSION
-            PsiErrorElement:Expecting an element
-              PsiElement(GT)('>')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('zoo')
-        PsiWhiteSpace(' ')
-        FUN
-          PsiElement(fun)('fun')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('a')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          BLOCK
-            PsiElement(LBRACE)('{')
-            PsiElement(RBRACE)('}')
+        PsiElement(IDENTIFIER)('A')
       PsiWhiteSpace('\n  ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          BINARY_EXPRESSION
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('foo')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(IDENTIFIER)('bar')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('buzz')
-            PsiErrorElement:Expecting an element
-              PsiElement(LT)('<')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('T')
-          CALL_EXPRESSION
-            PsiErrorElement:Expecting an element
-              PsiElement(GT)('>')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      OBJECT_DECLARATION
+        PsiElement(object)('object')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('zoo')
-        PsiWhiteSpace(' ')
-        PROPERTY
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('c')
-          PsiWhiteSpace(' ')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Int')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('0')
+        PsiElement(IDENTIFIER)('B')
       PsiWhiteSpace('\n  ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          BINARY_EXPRESSION
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('foo')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(IDENTIFIER)('bar')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('buzz')
-            PsiErrorElement:Expecting an element
-              PsiElement(LT)('<')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('T')
-          CALL_EXPRESSION
-            PsiErrorElement:Expecting an element
-              PsiElement(GT)('>')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      FUN
+        PsiElement(fun)('fun')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('zoo')
+        PsiElement(IDENTIFIER)('a')
+        VALUE_PARAMETER_LIST
+          PsiElement(LPAR)('(')
+          PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PROPERTY
-          PsiElement(var)('var')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('v')
-          PsiWhiteSpace(' ')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Int')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('0')
+        BLOCK
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n  ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      PROPERTY
+        PsiElement(val)('val')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('c')
+        PsiWhiteSpace(' ')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Int')
+        PsiWhiteSpace(' ')
+        PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        INTEGER_CONSTANT
+          PsiElement(INTEGER_LITERAL)('0')
+      PsiWhiteSpace('\n  ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      PROPERTY
+        PsiElement(var)('var')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('v')
+        PsiWhiteSpace(' ')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Int')
+        PsiWhiteSpace(' ')
+        PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        INTEGER_CONSTANT
+          PsiElement(INTEGER_LITERAL)('0')
       PsiWhiteSpace('\n\n  ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          BINARY_EXPRESSION
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('foo')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(IDENTIFIER)('bar')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('buzz')
-            PsiErrorElement:Expecting an element
-              PsiElement(LT)('<')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('T')
-          CALL_EXPRESSION
-            PsiErrorElement:Expecting an element
-              PsiElement(GT)('>')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('bar')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('buzz')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LT)('<')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('T')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(GT)('>')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('zoo')
+      PsiWhiteSpace(' ')
+      CLASS_INITIALIZER
+        PsiElement(init)('init')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('zoo')
-        PsiWhiteSpace(' ')
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('init')
-          PsiWhiteSpace(' ')
-          LAMBDA_ARGUMENT
-            LAMBDA_EXPRESSION
-              FUNCTION_LITERAL
-                PsiElement(LBRACE)('{')
-                BLOCK
-                  <empty list>
-                PsiElement(RBRACE)('}')
+        BLOCK
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')

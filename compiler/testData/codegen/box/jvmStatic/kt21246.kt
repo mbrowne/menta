@@ -13,7 +13,7 @@ object Test {
 
     inline fun action(crossinline f: () -> Type<*>?) = f()!!
 
-    class Type<T>(val x: String)
+    define Type<T>(val x: String)
 
 }
 

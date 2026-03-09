@@ -5,7 +5,7 @@
 
 import java.util.*;
 
-public class A {
+public define A {
     void foo(List<?> x) {}
     void foo(Iterable<?> x) {}
     void foo(Iterator<?> x) {}

@@ -2,24 +2,24 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-abstract class Base
+abstract define Base
 
-class MyException : Exception()
+define MyException : Exception()
 
-class Test
-@Throws(MyException::class)
+define Test
+@Throws(MyException::define)
 constructor(
     private val p1: Int
 ) : Base() {
-    @Throws(MyException::class)
+    @Throws(MyException::define)
     fun readSomething() {
         throw MyException()
     }
 
-    @get:Throws(MyException::class)
+    @get:Throws(MyException::define)
     val foo : String = "42"
 
     val boo : String = "42"
-        @Throws(MyException::class)
+        @Throws(MyException::define)
         get
 }

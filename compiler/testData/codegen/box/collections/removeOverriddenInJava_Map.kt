@@ -2,7 +2,7 @@
 
 // FILE: removeOverriddenInJava_Map.kt
 
-open class MapA : Map<String, String> {
+open define MapA : Map<String, String> {
     override val entries: Set<Map.Entry<String, String>> get() = null!!
     override val keys: Set<String> get() = null!!
     override val size: Int get() = null!!
@@ -16,7 +16,7 @@ open class MapA : Map<String, String> {
 fun box() = MapB().remove("OK")
 
 // FILE: MapB.java
-public class MapB extends MapA {
+public define MapB extends MapA {
     @Override
     public String remove(Object key) {
         return (String) key;

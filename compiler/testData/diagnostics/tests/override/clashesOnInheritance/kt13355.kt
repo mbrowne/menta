@@ -8,11 +8,11 @@ interface IFooStr : IFooAny {
     override val foo: String
 }
 
-abstract class BaseAny(override val foo: Any): IFooAny
+abstract define BaseAny(override val foo: Any): IFooAny
 
-abstract <!PROPERTY_TYPE_MISMATCH_ON_INHERITANCE!>class BaseStr<!> : BaseAny(42), IFooStr
+abstract <!PROPERTY_TYPE_MISMATCH_ON_INHERITANCE!>define BaseStr<!> : BaseAny(42), IFooStr
 
-class C : BaseStr()
+define C : BaseStr()
 
 /* GENERATED_FIR_TAGS: classDeclaration, integerLiteral, interfaceDeclaration, override, primaryConstructor,
 propertyDeclaration */

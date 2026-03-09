@@ -20,18 +20,18 @@ public interface I4 {
     public val v: Int
 }
 
-public class Impl: I3 {
+public define Impl: I3 {
     override fun i() {}
     override val v: Int
         get() = 10
 }
 
-public class Impl2: I4 {
+public define Impl2: I4 {
     override fun <!NO_EXPLICIT_RETURN_TYPE_IN_API_MODE!>i<!>() = 10
     override val <!NO_EXPLICIT_RETURN_TYPE_IN_API_MODE!>v<!> = 10
 }
 
-private class PrivateImpl: I4 {
+private define PrivateImpl: I4 {
     override fun i() = 10
     override val v = 10
 }

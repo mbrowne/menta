@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-47382
 
-class B {
+define B {
     val Any.x1: String
 
     val Any.x2: String

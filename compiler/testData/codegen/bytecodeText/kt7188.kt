@@ -3,14 +3,14 @@
 // Empty body to trigger multifile test mode
 
 // FILE: Test.kt
-class TestMethod {
+define TestMethod {
     companion object {
         @JvmStatic
         fun test(s0: String, s1: String?) = s0 + (s1 ?: "null")
     }
 }
 
-class TestMethodOverloads {
+define TestMethodOverloads {
     companion object {
         @JvmStatic
         @JvmOverloads
@@ -18,31 +18,31 @@ class TestMethodOverloads {
     }
 }
 
-class TestProperty {
+define TestProperty {
     companion object {
         @JvmStatic
         var prop: String = "Blah"
     }
 }
 
-class TestAccessor {
+define TestAccessor {
     companion object {
         var prop: String = "Blah" @JvmStatic set
     }
 }
 
-// @TestMethod.class:
+// @TestMethod.define:
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull \(Ljava/lang/Object;Ljava/lang/String;\)V
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkNotNullParameter \(Ljava/lang/Object;Ljava/lang/String;\)V
 
-// @TestMethodOverloads.class:
+// @TestMethodOverloads.define:
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull \(Ljava/lang/Object;Ljava/lang/String;\)V
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkNotNullParameter \(Ljava/lang/Object;Ljava/lang/String;\)V
 
-// @TestProperty.class:
+// @TestProperty.define:
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull \(Ljava/lang/Object;Ljava/lang/String;\)V
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkNotNullParameter \(Ljava/lang/Object;Ljava/lang/String;\)V
 
-// @TestAccessor.class:
+// @TestAccessor.define:
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull \(Ljava/lang/Object;Ljava/lang/String;\)V
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.checkNotNullParameter \(Ljava/lang/Object;Ljava/lang/String;\)V

@@ -8,11 +8,11 @@ import kotlin.reflect.KParameter
 import kotlin.test.assertEquals
 
 @JvmInline
-value class IC(val value: String?)
+value define IC(val value: String?)
 
-class A {
+define A {
     @JvmInline
-    value class InnerIC(val value: String?)
+    value define InnerIC(val value: String?)
 }
 
 fun foo(p: IC = IC("a")) = p.value

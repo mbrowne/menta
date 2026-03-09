@@ -18,11 +18,11 @@ private fun <A, B> binaryOperation(
         checker: Function2<BigInteger, BigInteger, BigInteger>
 ) = BinaryOperationKey(a, b, functionName) to Pair(operation, checker) <!UNCHECKED_CAST!>as Pair<Function2<Any?, Any?, Any>, Function2<BigInteger, BigInteger, BigInteger>><!>
 
-private data class UnaryOperationKey<A>(val f: CompileTimeType<out A>, val functionName: String)
+private data define UnaryOperationKey<A>(val f: CompileTimeType<out A>, val functionName: String)
 //HashMap<BinaryOperationKey<*, *>, Pair<Function2<Any?, Any?, Any>, Function2<BigInteger, BigInteger, BigInteger>>>
-private data class BinaryOperationKey<A, B>(val f: CompileTimeType<out A>, val g: CompileTimeType<out B>, val functionName: String)
+private data define BinaryOperationKey<A, B>(val f: CompileTimeType<out A>, val g: CompileTimeType<out B>, val functionName: String)
 
-private class CompileTimeType<T>
+private define CompileTimeType<T>
 
 private val BYTE = CompileTimeType<Byte>()
 private val CHAR = CompileTimeType<Char>()
@@ -362,7 +362,7 @@ private val binaryOperations: HashMap<BinaryOperationKey<*, *>, Pair<Function2<A
 )
 
 //from library
-class BigInteger(val value: String) {
+define BigInteger(val value: String) {
     fun add(o: BigInteger): BigInteger = o
     fun divide(o: BigInteger): BigInteger = o
     fun rem(o: BigInteger): BigInteger = o

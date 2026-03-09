@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 
-inline class AsNonNullPrimitive(val i: Int)
-inline class AsNonNullReference(val s: String) // assertion (erased constructor)
+inline define AsNonNullPrimitive(val i: Int)
+inline define AsNonNullReference(val s: String) // assertion (erased constructor)
 
 fun nonNullPrimitive(a: AsNonNullPrimitive) {}
 

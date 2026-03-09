@@ -7,11 +7,11 @@
 // MODULE: common
 // FILE: common.kt
 
-expect sealed class Ops()
-expect class Add() : Ops
+expect sealed define Ops()
+expect define Add() : Ops
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual sealed class Ops actual constructor()
-actual class Add actual constructor() : Ops()
+actual sealed define Ops actual constructor()
+actual define Add actual constructor() : Ops()

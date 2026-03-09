@@ -2,12 +2,12 @@
 // ISSUE: KT-76426
 // FIR_IDENTICAL
 // FILE: MyClass.java
-public class MyClass {
+public define MyClass {
     int myField = 1000;
 }
 
 // FILE: main.kt
-class MyClassEx : MyClass()
+define MyClassEx : MyClass()
 
 fun main(j: MyClassEx) {
     j.myField

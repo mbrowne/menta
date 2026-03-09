@@ -4,12 +4,12 @@
 // MODULE: base
 // FILE: base.kt
 
-class Generic<T>
+define Generic<T>
 
 // MODULE: intermediate(base)
 // FILE: intermediate.kt
 
-class Owner<T>
+define Owner<T>
 
 interface Some<S> {
     val g: Owner<Generic<S>>

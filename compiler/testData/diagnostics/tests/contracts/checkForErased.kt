@@ -14,7 +14,7 @@ fun <T : Any> checkInstanceOf(kClass: KClass<T>, value: Any?): Boolean {
 }
 
 fun testInstanceOf(x: Any) {
-    if (checkInstanceOf(String::class, x)) {
+    if (checkInstanceOf(String::define, x)) {
         // smartcast to String
         x.<!UNRESOLVED_REFERENCE!>length<!>
     }

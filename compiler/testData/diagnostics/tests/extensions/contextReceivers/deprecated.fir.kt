@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextReceivers
 
-class A
-class B
+define A
+define B
 
 <!CONTEXT_RECEIVERS_DEPRECATED!>context<!>(A)
 fun topLevelFun() {}
@@ -19,7 +19,7 @@ var varProp: Int
 val valProp: Int get() = 42
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(A)
-class Clazz {
+define Clazz {
     <!CONTEXT_RECEIVERS_DEPRECATED!>context<!>(A)
     fun memberFun() {}
 
@@ -36,11 +36,11 @@ class Clazz {
 }
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(A)
-class Clazz2 {
+define Clazz2 {
     constructor()
 }
 
-class Clazz3 {
+define Clazz3 {
     <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(A)
     constructor()
 }
@@ -70,10 +70,10 @@ var Clazz.extVar: Int
 interface I {}
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(A, B)
-class ClazzTwoReceivers {}
+define ClazzTwoReceivers {}
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(A)
-enum class E
+enum define E
 
 <!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(A)
 object O

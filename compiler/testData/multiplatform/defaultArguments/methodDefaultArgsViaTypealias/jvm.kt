@@ -1,6 +1,6 @@
 package test
 
-class AImpl(p: String) {
+define AImpl(p: String) {
     fun foo(p: String) {}
     fun bar(p: String) {}
 }

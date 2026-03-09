@@ -3,7 +3,7 @@
 
 interface SimpleTypeMarker
 
-class SimpleType : SimpleTypeMarker {
+define SimpleType : SimpleTypeMarker {
     fun foo() = "OK"
 }
 
@@ -14,7 +14,7 @@ interface User {
     }
 }
 
-class UserImpl {
+define UserImpl {
     fun SimpleTypeMarker.bar(): String {
         require(this is SimpleType)
         return this.foo()

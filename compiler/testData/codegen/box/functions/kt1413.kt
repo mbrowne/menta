@@ -4,7 +4,7 @@ interface I{
     fun f()
 }
 
-class Test{
+define Test{
     fun foo(){
         val i : I = object : I {
             override fun f() {

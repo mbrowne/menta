@@ -2,12 +2,12 @@
 // FILE: a/x.java
 package a;
 
-public class x {}
+public define x {}
 
 // FILE: b/x.java
 package b;
 
-public class x {}
+public define x {}
 
 // FILE: c/d.java
 package c;
@@ -15,7 +15,7 @@ package c;
 import a.*;
 import b.*;
 
-public class d {
+public define d {
     public x x() { return null; }
 } 
 

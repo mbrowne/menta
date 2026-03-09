@@ -4,11 +4,11 @@
 // FIR_DUMP
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
-sealed class BooleanHolder(val value: Boolean)
+sealed define BooleanHolder(val value: Boolean)
 object True : BooleanHolder(true)
 object False : BooleanHolder(false)
 
-class StringHolder(val value: String?)
+define StringHolder(val value: String?)
 
 fun SmartCastInGuard(x: Any) {
     return when (x) {

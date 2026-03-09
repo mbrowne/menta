@@ -6,4 +6,15 @@ val y = <caret>A(1)
 
 
 
-null
+Resolved call:
+
+Candidate descriptor: constructor A<T>(x: T) defined in A
+Resulting descriptor: constructor A<T>(x: Int) defined in A
+
+Explicit receiver kind = NO_EXPLICIT_RECEIVER
+Dispatch receiver = NO_RECEIVER
+Extension receiver = NO_RECEIVER
+
+Value arguments mapping:
+
+SUCCESS  x : Int = 1

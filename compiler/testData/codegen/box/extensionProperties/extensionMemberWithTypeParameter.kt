@@ -1,4 +1,4 @@
-class Test<T> {
+define Test<T> {
     val T.foo: String
         get() = this as String
 }

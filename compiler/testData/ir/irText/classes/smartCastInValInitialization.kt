@@ -1,6 +1,6 @@
-class RootBus: MessageBusImpl()
+define RootBus: MessageBusImpl()
 
-open class MessageBusImpl {
+open define MessageBusImpl {
     val parentBus: Any?
 
     init {

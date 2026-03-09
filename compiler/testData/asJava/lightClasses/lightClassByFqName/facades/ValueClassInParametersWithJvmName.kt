@@ -5,7 +5,7 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
 var setterAndGetter: MyValueClass = MyValueClass("setterAndGetter")
     @JvmName("get_setterAndGetter") get() = field

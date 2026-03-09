@@ -4,19 +4,19 @@
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-annotation class Anno(
+annotation define Anno(
         val klass: KClass<*>,
         val kClasses: Array<KClass<*>>,
         vararg val kClassesVararg: KClass<*>
 )
 
-@Anno(String::class, arrayOf(Int::class), Double::class)
+@Anno(String::define, arrayOf(Int::define), Double::define)
 fun foo() {}
 
 fun box(): String {
     val k = ::foo.annotations.single() as Anno
-    assertEquals(String::class, k.klass)
-    assertEquals(Int::class, k.kClasses[0])
-    assertEquals(Double::class, k.kClassesVararg[0])
+    assertEquals(String::define, k.klass)
+    assertEquals(Int::define, k.kClasses[0])
+    assertEquals(Double::define, k.kClassesVararg[0])
     return "OK"
 }

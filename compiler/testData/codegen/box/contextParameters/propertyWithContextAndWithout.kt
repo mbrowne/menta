@@ -2,7 +2,7 @@
 // LANGUAGE: +ContextParameters
 // ISSUE: KT-74045: CONFLICTING_KLIB_SIGNATURES_ERROR
 
-class A
+define A
 
 context(a: A)
 val b: String

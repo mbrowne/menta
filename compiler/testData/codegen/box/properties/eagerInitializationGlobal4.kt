@@ -11,7 +11,7 @@ var z2 = false
 // MODULE: lib2(lib1)
 // FILE: lib2.kt
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 @EagerInitialization
 val x = foo()
 

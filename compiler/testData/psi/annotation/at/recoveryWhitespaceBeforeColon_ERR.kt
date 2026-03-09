@@ -1,26 +1,26 @@
 // COMPILATION_ERRORS
 
 @ :ann1
-class A1
+define A1
 
 @ /* */ //
 :ann2
-class A2
+define A2
 
 @: ann3
-class A3
+define A3
 
 @ : ann4
-class A4
+define A4
 
 @set :ann5
-class A5
+define A5
 
 @ set : ann8
-class A8
+define A8
 
 @sset : ann9
-class A9
+define A9
 
 @ :
-class A10
+define A10

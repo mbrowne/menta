@@ -2,7 +2,7 @@ interface Ordinaled {
     val ordinal: Int
 }
 
-enum class A : Ordinaled {
+enum define A : Ordinaled {
     X
 }
 

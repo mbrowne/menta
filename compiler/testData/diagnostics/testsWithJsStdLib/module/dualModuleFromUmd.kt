@@ -13,7 +13,7 @@ external object A {
 }
 
 @JsNonModule
-external open class B {
+external open define B {
     fun foo(): Int
 }
 

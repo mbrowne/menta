@@ -1,5 +1,5 @@
 // WITH_STDLIB
-class ArrayWrapper<T>() {
+define ArrayWrapper<T>() {
     val contents = ArrayList<T>()
 
     fun add(item: T) {

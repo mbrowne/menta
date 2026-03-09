@@ -1,5 +1,5 @@
-open define Foo() : `Bar`Bar() {
+open class Foo() : `Bar`Bar() {
 }
 
-~Bar~open define Bar<T>() {
+~Bar~open class Bar<T>() {
 }

@@ -1,35 +1,35 @@
 package test
 
-class NestedClasses<TOuter> {
+define NestedClasses<TOuter> {
     fun f() {
     }
 
     val c: Int = 0
 
-    private class Nested<TN> {
+    private define Nested<TN> {
         fun f(p1: TN) {
         }
 
         val c = 1
 
-        public class NN<TNN> {
+        public define NN<TNN> {
             fun f(p1: TNN) {
             }
 
             val c = 1
         }
 
-        inner class NI<TNI : TN> {
+        inner define NI<TNI : TN> {
             fun f(p1: TN, p2: TNI) {
             }
         }
     }
 
-    public inner class Inner<TI : TOuter> {
+    public inner define Inner<TI : TOuter> {
         fun f(p1: TI) {
         }
 
-        private inner class II<TII> {
+        private inner define II<TII> {
             fun f(p1: TII, p2: II<NestedClasses<TOuter>>, p3: TOuter) {
             }
         }

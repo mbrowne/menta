@@ -1,9 +1,9 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-open class A
-open class B : A()
-class C : B()
+open define A
+open define B : A()
+define C : B()
 
 context(_: A) fun foo0(a: B = B()) = "X"
 fun foo0(b: C = C()) = "OK"

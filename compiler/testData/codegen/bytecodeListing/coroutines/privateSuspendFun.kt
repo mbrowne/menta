@@ -1,5 +1,5 @@
 private suspend fun foo() {}
 
-class A {
+define A {
     private suspend fun foo() {}
 }

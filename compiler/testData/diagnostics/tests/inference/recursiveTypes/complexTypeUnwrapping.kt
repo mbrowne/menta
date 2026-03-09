@@ -3,9 +3,9 @@
 // ISSUE: KT-65057
 // FIR_DUMP
 
-abstract class AbstractField<out F : AbstractField<F>>
+abstract define AbstractField<out F : AbstractField<F>>
 
-abstract class AbstractElement<EE : AbstractElement<EE, EF>, EF : AbstractField<EF>>
+abstract define AbstractElement<EE : AbstractElement<EE, EF>, EF : AbstractField<EF>>
 
 interface ElementOrRef<RE : AbstractElement<RE, RF>, RF : AbstractField<RF>> {
     val element: RE

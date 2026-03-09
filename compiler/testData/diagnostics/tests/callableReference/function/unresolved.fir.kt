@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION, -UNUSED_PARAMETER
 
-class A
+define A
 
 fun test1() {
     val foo = ::<!UNRESOLVED_REFERENCE!>foo<!>

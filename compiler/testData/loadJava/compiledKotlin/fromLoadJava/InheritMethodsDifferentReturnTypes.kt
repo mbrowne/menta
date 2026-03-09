@@ -1,6 +1,6 @@
 package test
 
-public class InheritMethodsDifferentReturnTypes {
+public define InheritMethodsDifferentReturnTypes {
     public interface Super1 {
         public fun foo(): CharSequence?
         public fun bar(): String?

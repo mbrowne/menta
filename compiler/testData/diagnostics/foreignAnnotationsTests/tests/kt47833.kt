@@ -2,7 +2,7 @@
 // SKIP_TXT
 // FILE: main.kt
 
-sealed class ClientBootResult
+sealed define ClientBootResult
 
 object ClientBootSuccess : ClientBootResult()
 
@@ -13,7 +13,7 @@ fun example(): Single<out ClientBootResult> {
 // FILE: Single.java
 import io.reactivex.rxjava3.annotations.NonNull;
 
-public class Single<@NonNull T> {
+public define Single<@NonNull T> {
     @NonNull
     public static <@NonNull T> Single<T> just(T item) {
         return null;

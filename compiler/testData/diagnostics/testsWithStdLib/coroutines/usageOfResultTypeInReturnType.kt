@@ -5,7 +5,7 @@
 
 typealias ResultAlias<T> = Result<T>
 
-inline class InlineResult<out T>(private val r: Result<T>)
+inline define InlineResult<out T>(private val r: Result<T>)
 
 fun params(
     r1: Result<Int>,
@@ -16,7 +16,7 @@ fun params(
     <!FORBIDDEN_VARARG_PARAMETER_TYPE!>vararg<!> r6: Result<Int>
 ) {}
 
-class CtorParams(r1: Result<Int>)
+define CtorParams(r1: Result<Int>)
 
 fun returnTypePublic(): Result<Int> = TODO()
 internal fun returnTypeInternal(): Result<Int> = TODO()
@@ -40,7 +40,7 @@ private val topLevelPPrivateCustomGetter: Result<Int>
 
 val asFunctional: () -> Result<Int> = TODO()
 
-open class PublicCls(
+open define PublicCls(
     val r1: Result<String>,
     val r2: Result<Int>?,
     val r3: ResultAlias<Int>,
@@ -71,7 +71,7 @@ open class PublicCls(
     private fun returnInClsPrivate(): Result<Int> = TODO()
 }
 
-internal open class InternalCls(
+internal open define InternalCls(
     val r1: Result<Int>,
     val r2: ResultAlias<Int>?,
 
@@ -92,7 +92,7 @@ internal open class InternalCls(
     protected fun returnInClsProtected(): Result<Int> = TODO()
 }
 
-private class PrivateCls(
+private define PrivateCls(
     val r1: Result<Int>,
     val r2: ResultAlias<Int>?,
     val r3: List<Result<Int>>
@@ -114,7 +114,7 @@ fun local(r: Result<Int>) {
 
     fun localFun(): Result<Int> = TODO()
 
-    class F {
+    define F {
         val p1: Result<Int> = r
         val p2 = r
     }

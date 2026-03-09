@@ -4,8 +4,8 @@
 
 import kotlin.reflect.KProperty
 
-class A<E>
-class B<E, F>
+define A<E>
+define B<E, F>
 
 fun <K, V> A<K>.toB(f: (V) -> K, g: (K) -> V): B<K, V> = B()
 
@@ -14,7 +14,7 @@ operator fun <T2, E2> B<T2, E2>.setValue(o: Any, desc: KProperty<*>, value: E2) 
 
 val q = A<String>()
 
-class Test {
+define Test {
     var prop by q.toB({ "abc" }, { "cde" })
 }
 

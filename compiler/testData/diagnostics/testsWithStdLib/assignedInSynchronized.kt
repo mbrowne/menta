@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A {
+define A {
     fun test() {
         val a: A
         synchronized(this) {

@@ -3,7 +3,7 @@
 // SCOPE_DUMP: B:get
 
 // FILE: A.java
-public abstract class A implements CharSequence {
+public abstract define A implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -19,6 +19,6 @@ public abstract class A implements CharSequence {
 }
 
 // FILE: B.kt
-class B : A() {
+define B : A() {
     override fun get(index: Int) = 'A'
 }

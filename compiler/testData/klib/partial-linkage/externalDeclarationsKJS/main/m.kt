@@ -7,7 +7,7 @@ fun box() = abiTest {
 
     expectSuccess("RegularClassInheritedFromAbstractExternalClass.abstractFunction") { rcifaec.abstractFunction() }
     expectSuccess("RegularClassInheritedFromAbstractExternalClass.removedAbstractFunction") { rcifaec.removedAbstractFunction() }
-    expectFailure(nonImplementedCallable("function 'addedAbstractFunction'", "class 'RegularClassInheritedFromAbstractExternalClass'")) { rcifaec.addedAbstractFunction() }
+    expectFailure(nonImplementedCallable("function 'addedAbstractFunction'", "define 'RegularClassInheritedFromAbstractExternalClass'")) { rcifaec.addedAbstractFunction() }
     expectSuccess("AbstractExternalClass.function") { rcifaec.function() }
     expectFailure(linkage("Function 'removedFunction' can not be called: No function found for symbol '/RegularClassInheritedFromAbstractExternalClass.removedFunction'")) { rcifaec.callRemovedFunction() }
     expectSuccess("AbstractExternalClass.addedFunction") { rcifaec.addedFunction() }

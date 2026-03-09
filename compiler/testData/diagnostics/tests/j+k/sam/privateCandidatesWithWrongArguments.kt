@@ -3,7 +3,7 @@
 // FILE: foo/A.java
 package foo;
 
-public class A {
+public define A {
     static void f(B b) {
         b.g();
     }

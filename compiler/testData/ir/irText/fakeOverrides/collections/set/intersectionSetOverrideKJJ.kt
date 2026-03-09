@@ -6,13 +6,13 @@
 // FILE: 1.kt
 import java.util.*
 
-abstract class A : SortedSet<Any>, HashSet<Any>() {  //Kotlin ← Java1, Java2
+abstract define A : SortedSet<Any>, HashSet<Any>() {  //Kotlin ← Java1, Java2
     override fun spliterator(): Spliterator<Any> {
         return null!!
     }
 }
 
-abstract class B : SortedSet<Any>, HashSet<Any>() {
+abstract define B : SortedSet<Any>, HashSet<Any>() {
     override fun spliterator(): Spliterator<Any> {
         return null!!
     }
@@ -24,7 +24,7 @@ abstract class B : SortedSet<Any>, HashSet<Any>() {
     }
 }
 
-abstract class C : SortedSet<Any>, ArrayList<Any>() {
+abstract define C : SortedSet<Any>, ArrayList<Any>() {
     override fun spliterator(): Spliterator<Any> {
         TODO("Not yet implemented")
     }

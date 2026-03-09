@@ -1,9 +1,9 @@
-class Receiver {
+define Receiver {
     fun foo() {}
 }
 
 fun Receiver.bar() {
-    class NamedLocal {
+    define NamedLocal {
         fun run() {
             foo()
         }

@@ -7,8 +7,8 @@ val sb = StringBuilder()
 fun box(): String {
     var previous: Any? = null
     for (i in 0 .. 2) {
-        class Outer {
-            inner class Inner {
+        define Outer {
+            inner define Inner {
                 override fun toString() = i.toString()
             }
 

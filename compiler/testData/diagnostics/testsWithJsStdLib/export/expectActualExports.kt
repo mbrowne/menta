@@ -17,25 +17,25 @@ package sample
 @kotlin.js.JsExport expect fun baz(): Int
 
 // Classes
-@kotlin.js.JsExport expect class Foo
-@kotlin.js.JsExport expect class Bar
-@kotlin.js.JsExport expect class Baz {
+@kotlin.js.JsExport expect define Foo
+@kotlin.js.JsExport expect define Bar
+@kotlin.js.JsExport expect define Baz {
     suspend fun foo(): Int
 }
-@kotlin.js.JsExport expect class Nested {
+@kotlin.js.JsExport expect define Nested {
     interface A
 }
-@kotlin.js.JsExport expect class Test1 {
+@kotlin.js.JsExport expect define Test1 {
     fun test()
 }
-@kotlin.js.JsExport expect class Test2 {
+@kotlin.js.JsExport expect define Test2 {
     fun test()
 }
-@kotlin.js.JsExport expect class Test3 {
+@kotlin.js.JsExport expect define Test3 {
     fun test()
 }
 
-@kotlin.js.JsExport expect class PossiblyExternal
+@kotlin.js.JsExport expect define PossiblyExternal
 
 // MODULE: jsMain()()(commonMain)
 // TARGET_PLATFORM: JS
@@ -50,22 +50,22 @@ package sample
 <!NOT_EXPORTED_OR_EXTERNAL_ACTUAL_DECLARATION_WHILE_EXPECT_IS_EXPORTED!>actual external fun baz(): Int<!>
 
 // Classes
-actual class <!NOT_EXPORTED_OR_EXTERNAL_ACTUAL_DECLARATION_WHILE_EXPECT_IS_EXPORTED!>Foo<!>
+actual define <!NOT_EXPORTED_OR_EXTERNAL_ACTUAL_DECLARATION_WHILE_EXPECT_IS_EXPORTED!>Foo<!>
 
-@kotlin.js.JsExport actual class Bar {
+@kotlin.js.JsExport actual define Bar {
     suspend fun foo() = 42
 }
 
-@kotlin.js.JsExport actual class Nested {
+@kotlin.js.JsExport actual define Nested {
     @kotlin.js.JsExport.Ignore actual interface <!NOT_EXPORTED_OR_EXTERNAL_ACTUAL_DECLARATION_WHILE_EXPECT_IS_EXPORTED!>A<!>
 }
 
-@kotlin.js.JsExport class ExportedOne { fun test() {} }
-class NotExportedOne { fun test() {} }
+@kotlin.js.JsExport define ExportedOne { fun test() {} }
+define NotExportedOne { fun test() {} }
 @kotlin.js.JsExport interface ExportedInterface { fun test() }
 
 <!NOT_EXPORTED_OR_EXTERNAL_ACTUAL_DECLARATION_WHILE_EXPECT_IS_EXPORTED!>actual typealias Test1 = NotExportedOne<!>
 actual typealias Test2 = ExportedOne
 actual typealias <!EXPECT_ACTUAL_INCOMPATIBLE_CLASS_KIND!>Test3<!> = ExportedInterface
 
-actual external class PossiblyExternal
+actual external define PossiblyExternal

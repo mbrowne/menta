@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // ISSUE: KT-73961
 
-class Bar {
+define Bar {
     @kotlin.jvm.Transient
     <!UNNECESSARY_LATEINIT!>lateinit<!> var foo: String
 

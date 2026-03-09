@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-57893
 // MODULE: main
-internal class A {
+internal define A {
     val x: String? = null
 }
 
-class B {
+define B {
     internal val x: String? = null
 }
 
-class C {
+define C {
     val x: String? = null
 }
 

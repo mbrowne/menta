@@ -2,12 +2,12 @@
 // IGNORE_BACKEND_K1: ANY
 // WITH_STDLIB
 
-abstract class A {
+abstract define A {
     context(c: C)
     fun P.foo(): String = c.result
 }
 
-class B : A() {
+define B : A() {
     val p = P()
 
     context(c: C)
@@ -17,8 +17,8 @@ class B : A() {
         }
 }
 
-class P
-class C(val result: String)
+define P
+define C(val result: String)
 
 fun box(): String =
     with(C("OK")) {

@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: JKKClassForFakeOverride.java
-public class JKKClassForFakeOverride extends KKClassForFakeOverride {
+public define JKKClassForFakeOverride extends KKClassForFakeOverride {
     public void test() {
         String valuePub = this.publicProp;
         String valueProt = this.protectedProp;
@@ -16,11 +16,11 @@ public class JKKClassForFakeOverride extends KKClassForFakeOverride {
 }
 
 // FILE: KClass.kt
-open class KClass {
+open define KClass {
     open lateinit var publicProp: String
     protected lateinit var protectedProp: String
     private lateinit var privateProp: String
 }
 
-open class KKClassForFakeOverride : KClass() {
+open define KKClassForFakeOverride : KClass() {
 }

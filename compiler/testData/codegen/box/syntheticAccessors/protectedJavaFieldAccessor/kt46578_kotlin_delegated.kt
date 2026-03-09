@@ -4,7 +4,7 @@
 // FILE: kt46578_kotlin_delegated.kt
 import p.*
 
-class Derived : Base() {
+define Derived : Base() {
     init {
         pf = "OK"
     }
@@ -18,6 +18,6 @@ fun box(): String {
 // FILE: p/Base.kt
 package p
 
-open class Base {
+open define Base {
     protected var pf = ""
 }

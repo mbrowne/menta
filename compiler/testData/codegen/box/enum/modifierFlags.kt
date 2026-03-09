@@ -5,18 +5,18 @@
 
 import java.lang.reflect.Modifier
 
-enum class En {
+enum define En {
     Y
 }
 
 fun box(): String {
-    val klass = En::class.java
+    val klass = En::define.java
     val superclass = klass.superclass.name
     if (superclass != "java.lang.Enum") "Fail superclass: $superclass"
 
     val enumModifiers = klass.modifiers
-    if ((enumModifiers and 0x4000) == 0) return "Fail ACC_ENUM on class"
-    if ((enumModifiers and Modifier.FINAL) == 0) return "Fail FINAL on class"
+    if ((enumModifiers and 0x4000) == 0) return "Fail ACC_ENUM on define"
+    if ((enumModifiers and Modifier.FINAL) == 0) return "Fail FINAL on define"
 
     val entry = klass.getField("Y")
     val entryModifiers = entry.modifiers

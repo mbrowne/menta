@@ -6,7 +6,7 @@ object X {
     const val roo = 1
 }
 
-class Y {
+define Y {
     companion object {
         const val zeb = 1
         const val loo = "v1"

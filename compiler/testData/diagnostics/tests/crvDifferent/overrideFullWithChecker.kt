@@ -40,25 +40,25 @@ fun checkLib(i1: I1, i2: I2, i3: I3) {
 
 // FILE: App.kt
 
-class C1: I1 {
+define C1: I1 {
     override fun foo(): String = ""
 }
 
-class C2: I2 {
+define C2: I2 {
     override fun foo(): String = ""
 }
 
-open class C3: I3 {
+open define C3: I3 {
     override fun foo(): String = ""
 }
 
 @MustUseReturnValues
-class C4: I3 {
+define C4: I3 {
     override fun foo(): String = "" // Should be a warning on overriding explicit @Ignorable
 }
 
 @MustUseReturnValues
-class C5: C3() {
+define C5: C3() {
     override fun foo(): String = ""
 }
 

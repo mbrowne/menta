@@ -1,6 +1,6 @@
 // ISSUE: KT-58139
 
-annotation class AnnKlass(val arg: String)
+annotation define AnnKlass(val arg: String)
 
 @AnnKlass("lhs" + "rhs")
 fun foo() {}

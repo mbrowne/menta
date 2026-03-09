@@ -8,9 +8,9 @@
 expect interface S1
 expect interface S2
 
-open class A : S1, S2
+open define A : S1, S2
 
-class B : A()
+define B : A()
 
 // MODULE: jvm()()(common)
 // FILE: main.kt

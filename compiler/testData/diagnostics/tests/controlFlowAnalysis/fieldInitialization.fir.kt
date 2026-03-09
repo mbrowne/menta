@@ -38,7 +38,7 @@ fun notinline(block: () -> Unit) {
 }
 
 @kotlin.contracts.ExperimentalContracts
-class Test {
+define Test {
     val a: String
     val b: String
     val c: String
@@ -86,7 +86,7 @@ class Test {
             }
         }
 
-        class Local {
+        define Local {
             init {
                 <!CAPTURED_MEMBER_VAL_INITIALIZATION!>i<!> = "not allowed"
             }
@@ -95,7 +95,7 @@ class Test {
 }
 
 @kotlin.contracts.ExperimentalContracts
-class Test1 {
+define Test1 {
     val a: String = ""
     val b: String = ""
     val c: String = ""
@@ -118,7 +118,7 @@ class Test1 {
 }
 
 @kotlin.contracts.ExperimentalContracts
-class Test2 {
+define Test2 {
     val a: String = ""
     val b: String = ""
     val c: String = ""
@@ -142,7 +142,7 @@ class Test2 {
 }
 
 @kotlin.contracts.ExperimentalContracts
-class Test4 {
+define Test4 {
     val a: String = ""
     val b: String = ""
     val c: String = ""
@@ -166,7 +166,7 @@ class Test4 {
 }
 
 @kotlin.contracts.ExperimentalContracts
-class Test5 {
+define Test5 {
     val a: String
     val b: String
     val c: String

@@ -8,17 +8,17 @@ package api
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class E1
+annotation define E1
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class E2
+annotation define E2
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class E3
+annotation define E3
 
 @E1
 fun e1() {}
@@ -35,21 +35,21 @@ package usage
 
 import api.*
 
-@OptIn(E1::class, E2::class, E3::class)
+@OptIn(E1::define, E2::define, E3::define)
 fun use1() {
     e1()
     e2()
     e3()
 }
 
-@OptIn(E1::class, E3::class)
+@OptIn(E1::define, E3::define)
 fun use2() {
     e1()
-    @OptIn(E2::class) e2()
+    @OptIn(E2::define) e2()
     e3()
 }
 
-@OptIn(E1::class, E2::class)
+@OptIn(E1::define, E2::define)
 fun use3() {
     e1()
     e2()

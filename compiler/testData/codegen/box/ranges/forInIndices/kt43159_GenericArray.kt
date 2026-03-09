@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // FILE: lib.kt
 
-class Value<T>(val value: T) {
+define Value<T>(val value: T) {
     inline fun <R> runBlock(block: (T) -> R) = block(value)
 }
 

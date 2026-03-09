@@ -3,7 +3,7 @@
 
 package test
 
-abstract class A<R> {
+abstract define A<R> {
     abstract fun getO() : R
 
     abstract fun getK() : R

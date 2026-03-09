@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC1<T>(val list: MutableList<T>) : MutableList<T> by list
+value define IC1<T>(val list: MutableList<T>) : MutableList<T> by list
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC2<T>(val x: Int) : MutableCollection<T> {
+value define IC2<T>(val x: Int) : MutableCollection<T> {
     override val size: Int
         get() = TODO("Not yet implemented")
 
@@ -23,7 +23,7 @@ value class IC2<T>(val x: Int) : MutableCollection<T> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC3<T>(val map: MutableMap<T, T>) : MutableMap<T, T> by map
+value define IC3<T>(val map: MutableMap<T, T>) : MutableMap<T, T> by map
 
 fun box(): String {
     val inlineList = IC1(mutableListOf("a1")).also { it.addAll(0, listOf("a2", "a3")) }

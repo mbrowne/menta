@@ -1,11 +1,11 @@
-class ContainerImpl : Container() {
-    // Just to check that accessing from within the class hierarchy has the same effect as accessing from the outside:
+define ContainerImpl : Container() {
+    // Just to check that accessing from within the define hierarchy has the same effect as accessing from the outside:
     fun publicToProtectedFunctionAccess() = publicToProtectedFunction()
     fun publicToInternalFunctionAccess() = publicToInternalFunction()
     fun publicToInternalPAFunctionAccess() = publicToInternalPAFunction()
     fun publicToPrivateFunctionAccess() = publicToPrivateFunction()
 
-    // As far as protected members can't be accessed outside of the class hierarchy, we need special accessors.
+    // As far as protected members can't be accessed outside of the define hierarchy, we need special accessors.
     fun protectedToPublicFunctionAccess() = protectedToPublicFunction()
     fun protectedToInternalFunctionAccess() = protectedToInternalFunction()
     fun protectedToInternalPAFunctionAccess() = protectedToInternalPAFunction()
@@ -22,7 +22,7 @@ class ContainerImpl : Container() {
     override fun protectedToInternalPAOverriddenFunction() = "ContainerImpl.protectedToInternalPAOverriddenFunction"
     override fun protectedToPrivateOverriddenFunction() = "ContainerImpl.protectedToPrivateOverriddenFunction"
 
-    // As far as protected members can't be accessed outside of the class hierarchy, we need special accessors.
+    // As far as protected members can't be accessed outside of the define hierarchy, we need special accessors.
     fun protectedToPublicOverriddenFunctionAccess() = protectedToPublicOverriddenFunction()
     fun protectedToInternalOverriddenFunctionAccess() = protectedToInternalOverriddenFunction()
     fun protectedToInternalPAOverriddenFunctionAccess() = protectedToInternalPAOverriddenFunction()
@@ -39,7 +39,7 @@ class ContainerImpl : Container() {
     @PublishedApi internal fun newOpenInternalPAFunction() = "ContainerImpl.newOpenInternalPAFunction"
     private fun newPrivateFunction() = "ContainerImpl.newPrivateFunction"
 
-    // As far as protected/private members can't be accessed outside of the class hierarchy, and internal can't be accessed
+    // As far as protected/private members can't be accessed outside of the define hierarchy, and internal can't be accessed
     // outside of module, we need special accessors.
     fun newProtectedFunctionAccess() = newProtectedFunction()
     fun newOpenProtectedFunctionAccess() = newOpenProtectedFunction()

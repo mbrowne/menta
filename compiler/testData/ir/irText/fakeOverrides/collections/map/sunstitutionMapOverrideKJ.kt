@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.SortedMap
 
-abstract class C<T> : SortedMap<T, T>
+abstract define C<T> : SortedMap<T, T>
 
-abstract class D<T>(
+abstract define D<T>(
     override val size: Int
 ) : SortedMap<T, T> {
     override fun remove(key: T): T? {

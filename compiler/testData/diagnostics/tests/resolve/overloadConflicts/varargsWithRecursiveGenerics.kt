@@ -4,7 +4,7 @@
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     public static <E1 extends Enum<E1>> String foo(E1 e) { return ""; }
     public static <E2 extends Enum<E2>> String foo(E2 e1, E2 e2) { return ""; }
     public static <E3 extends Enum<E3>> String foo(E3 s1, E3 s2, E3 s3) { return ""; }
@@ -12,7 +12,7 @@ public class J {
 }
 
 // FILE: test.kt
-enum class X { A }
+enum define X { A }
 val a = X.A
 
 val test0: Int = J.foo<X>()

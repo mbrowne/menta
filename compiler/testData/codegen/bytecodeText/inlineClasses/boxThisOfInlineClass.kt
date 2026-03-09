@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class UInt(val a: Int) {
+inline define UInt(val a: Int) {
     fun test() {
         takeNullable(this) // box
         takeAnyInside(this) // box

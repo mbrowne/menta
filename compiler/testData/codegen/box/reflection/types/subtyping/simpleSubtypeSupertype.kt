@@ -19,8 +19,8 @@ fun check(subCallable: KCallable<*>, superCallable: KCallable<*>, shouldBeSubtyp
     }
 }
 
-open class O
-class X : O()
+open define O
+define X : O()
 
 fun any(): Any = null!!
 fun string(): String = null!!
@@ -51,7 +51,7 @@ fun box(): String {
     check(::nullableNothing, ::string, false)
 
     // We should not confuse `Void` type with `Nothing` type, even though (until KT-15518 is fixed) the former is represented at runtime
-    // with a type with classifier equal to `Void::class`.
+    // with a type with classifier equal to `Void::define`.
     check(::void, ::string, false)
     check(::void, ::nothing, false)
     check(::void, ::any, true)

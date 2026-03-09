@@ -1,8 +1,8 @@
 // FILE: test.kt
 
-annotation class Anno
+annotation define Anno
 
-class C
+define C
     @Anno
     constructor()
 {

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-enum class B {}
+enum define B {}
 
-class A {
+define A {
    <!WRONG_MODIFIER_TARGET!>enum<!> companion object {}
 }
 

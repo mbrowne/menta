@@ -5,7 +5,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: +DisableWarningsForIdentitySensitiveOperationsOnValueClassesAndPrimitives
 @JvmInline
-value class VcString(val s: String)
+value define VcString(val s: String)
 
 fun test(p1: Int, p2: VcString) {
     System.identityHashCode(p1)

@@ -5,7 +5,7 @@
 fun <T> genericSam(f: () -> T): T = J.g(f)
 
 // FILE: J.java
-public class J {
+public define J {
     static <T> T g(Sam<T> s) {
         return s.get();
     }

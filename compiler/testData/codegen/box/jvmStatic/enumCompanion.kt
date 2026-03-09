@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
     public static String foo() {
         return A.foo;
     }
@@ -23,7 +23,7 @@ class Test {
 
 // FILE: enumCompanionObject.kt
 
-enum class A {
+enum define A {
     ;
     companion object {
         @JvmField val foo: String = "OK"

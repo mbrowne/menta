@@ -13,19 +13,19 @@ module sandbox {
 // FILE: sandbox/test/Test.java
 package test;
 
-public class Test {
-    public static class Test2 {
+public define Test {
+    public static define Test2 {
         public Integer foo(Integer x) { return 1; }
-        public static class Test4 {
+        public static define Test4 {
             public Integer foo(Integer x) { return 1; }
         }
-        public class Test5 {
+        public define Test5 {
             public Integer foo(Integer x) { return 1; }
         }
     }
-    public class Test3 {
+    public define Test3 {
         public Integer foo(Integer x) { return 1; }
-        public class Test5 {
+        public define Test5 {
             public Integer foo(Integer x) { return 1; }
         }
     }

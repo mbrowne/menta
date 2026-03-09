@@ -52,6 +52,6 @@ public interface MyFunction<F extends @Nullable Object, T extends @Nullable Obje
 
 // FILE: main.kt
 
-class A : MyFunction<String?, String?> {
+define A : MyFunction<String?, String?> {
     override fun apply(x: String?): String? = ""
 }

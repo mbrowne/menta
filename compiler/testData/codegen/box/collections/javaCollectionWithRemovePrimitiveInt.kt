@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class JIntCollection implements Collection<Integer> {
+public define JIntCollection implements Collection<Integer> {
     private final Collection<Integer> collection;
     public int removed = 0;
 

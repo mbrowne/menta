@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: J.java
-public class J extends Foo {
+public define J extends Foo {
     @Override
     public <T> T bar(String $this$bar) {
         super.bar($this$bar);
@@ -9,7 +9,7 @@ public class J extends Foo {
 }
 
 // FILE: test.kt
-open class Foo {
+open define Foo {
     fun <T> String.bar(): T {
         @Suppress("UNCHECKED_CAST")
         return null as T

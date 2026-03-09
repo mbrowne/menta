@@ -1,9 +1,9 @@
 // LANGUAGE: +ContextReceivers
 // COMPILATION_ERRORS
 
-annotation class MyAnnotation
+annotation define MyAnnotation
 
-private open class ContextReceiversCallableMembers {
+private open define ContextReceiversCallableMembers {
     context(A, B)
     @MyAnnotation
     private fun Int.function(): Int = valueA + valueB
@@ -19,11 +19,11 @@ private open class ContextReceiversCallableMembers {
         set(v) { println(valueA + valueB) }
 }
 
-class A {
+define A {
     val valueA: Int = 10
 }
 
-class B {
+define B {
     val valueB: Int = 11
 }
 

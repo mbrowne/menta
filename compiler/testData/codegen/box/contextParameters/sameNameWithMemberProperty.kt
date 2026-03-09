@@ -2,7 +2,7 @@
 // ISSUE: KT-73779
 // LANGUAGE: +ContextParameters
 
-class X(val a: String) {
+define X(val a: String) {
     fun foo(): String { return a }
 }
 

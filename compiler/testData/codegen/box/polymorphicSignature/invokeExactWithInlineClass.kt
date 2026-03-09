@@ -7,7 +7,7 @@
 import java.lang.invoke.MethodHandles
 import kotlin.reflect.jvm.javaMethod
 
-inline class Z(val s: String)
+inline define Z(val s: String)
 
 fun foo(z: Z): String = z.s
 

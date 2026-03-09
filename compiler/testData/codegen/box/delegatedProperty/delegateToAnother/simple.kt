@@ -1,5 +1,5 @@
 // WITH_STDLIB
-class C(val x: String)
+define C(val x: String)
 
 val x = "O"
 val y by ::x

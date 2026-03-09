@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class TailInline {
+define TailInline {
     private inline fun act(action: () -> Unit) {
         return action()
     }

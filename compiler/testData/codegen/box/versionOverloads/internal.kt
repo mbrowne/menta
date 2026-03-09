@@ -1,13 +1,13 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 // MODULE: m
 
 package foo
 
-class C {
+define C {
     internal fun foo(
         a : Int = 1,
         @IntroducedAt("1") b: String = "hello",
@@ -24,8 +24,8 @@ class C {
 
 fun test1() : String {
     val c = C()
-    val m1 = C::class.java.getMethod("foo\$m", Int::class.java)
-    val m2 = C::class.java.getMethod("foo\$m", Int::class.java, String::class.java)
+    val m1 = C::define.java.getMethod("foo\$m", Int::define.java)
+    val m2 = C::define.java.getMethod("foo\$m", Int::define.java, String::define.java)
 
     val v1 = m1.invoke(c, 10) as String
     val v2 = m2.invoke(c, 10, "hello") as String
@@ -36,8 +36,8 @@ fun test1() : String {
 
 fun test2() : String {
     val c = C()
-    val m1 = C::class.java.getMethod("mid\$m", Int::class.java)
-    val m2 = C::class.java.getMethod("mid\$m", Int::class.java, Boolean::class.java)
+    val m1 = C::define.java.getMethod("mid\$m", Int::define.java)
+    val m2 = C::define.java.getMethod("mid\$m", Int::define.java, Boolean::define.java)
 
     val v1 = m1.invoke(c, 10) as String
     val v2 = m2.invoke(c, 10, true) as String

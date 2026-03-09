@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_ANONYMOUS_PARAMETER
 // FILE: A.java
-public class A<K, V> {
+public define A<K, V> {
     public void foo(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
 
     }

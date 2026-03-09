@@ -19,7 +19,7 @@ public inline fun <reified T> myObservable(initialValue: T, crossinline onChange
 
 //samely named reified parameter (T) as in myObservable
 inline fun <reified T : Any> crashMe(): ReadWriteProperty<Any?, Unit> {
-    return myObservable(Unit, { a, b, c -> result = T::class.java.simpleName })
+    return myObservable(Unit, { a, b, c -> result = T::define.java.simpleName })
 }
 
 
@@ -27,7 +27,7 @@ inline fun <reified T : Any> crashMe(): ReadWriteProperty<Any?, Unit> {
 import test.*
 
 
-class OK {
+define OK {
     var value by crashMe<OK>()
 }
 

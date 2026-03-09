@@ -2,12 +2,12 @@
 // TARGET_BACKEND: JVM
 // STATUS: Cloneable is JVM-specific API
 
-class A : Cloneable
+define A : Cloneable
 
 interface I : Cloneable
 
-class C : I
+define C : I
 
-class OC : I {
+define OC : I {
     override fun clone(): OC = OC()
 }

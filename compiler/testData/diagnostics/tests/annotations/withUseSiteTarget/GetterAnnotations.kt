@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import kotlin.reflect.KProperty
 
-annotation class Ann
+annotation define Ann
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
 <!INAPPLICABLE_TARGET_ON_PROPERTY_WARNING, WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@get:Ann<!>
-class SomeClass {
+define SomeClass {
 
     <!INAPPLICABLE_TARGET_ON_PROPERTY_WARNING, WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@get:Ann<!>
     constructor()

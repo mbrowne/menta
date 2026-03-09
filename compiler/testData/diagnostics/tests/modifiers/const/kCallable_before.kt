@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: -IntrinsicConstEvaluation
 
-class SomeClassWithName(val property: Int) {
+define SomeClassWithName(val property: Int) {
     val anotherProperty: String = ""
 
     fun foo() {}

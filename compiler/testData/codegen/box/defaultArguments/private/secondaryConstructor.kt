@@ -1,6 +1,6 @@
 var state: String = "Fail"
 
-class A {
+define A {
     private constructor(x: String = "OK") {
         state = x
     }

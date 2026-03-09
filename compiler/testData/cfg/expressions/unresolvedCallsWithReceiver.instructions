@@ -1,37 +1,30 @@
-== anonymous_0 ==
-{
+== Foo ==
+open class Foo {
     fun foo(a: IntArray) {}
     fun foo(a: Int, b: Int) {}
 }
 ---------------------
 L0:
   1 <START>
-  2 mark({ fun foo(a: IntArray) {} fun foo(a: Int, b: Int) {} })
-    jmp?(L2)                                                        NEXT:[jmp?(L5), d(fun foo(a: IntArray) {})]
-    d(fun foo(a: IntArray) {})                                      NEXT:[<SINK>]
-L2 [after local declaration]:
-    jmp?(L5)                                                        NEXT:[<END>, d(fun foo(a: Int, b: Int) {})]                            PREV:[jmp?(L2)]
-    d(fun foo(a: Int, b: Int) {})                                   NEXT:[<SINK>]
 L1:
-L5 [after local declaration]:
-  1 <END>                                                           NEXT:[<SINK>]                                                          PREV:[jmp?(L5)]
+    <END>      NEXT:[<SINK>]
 error:
-    <ERROR>                                                         PREV:[]
+    <ERROR>    PREV:[]
 sink:
-    <SINK>                                                          PREV:[<ERROR>, <END>, d(fun foo(a: IntArray) {}), d(fun foo(a: Int, b: Int) {})]
+    <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == foo ==
 fun foo(a: IntArray) {}
 ---------------------
-L3:
-  3 <START>
+L0:
+  1 <START>
     v(a: IntArray)
     magic[FAKE_INITIALIZER](a: IntArray) -> <v0>
     w(a|<v0>)
-  4 mark({})
+  2 mark({})
     read (Unit)
-L4:
-  3 <END>                                           NEXT:[<SINK>]
+L1:
+  1 <END>                                           NEXT:[<SINK>]
 error:
     <ERROR>                                         PREV:[]
 sink:
@@ -40,18 +33,18 @@ sink:
 == foo ==
 fun foo(a: Int, b: Int) {}
 ---------------------
-L6:
-  3 <START>
+L0:
+  1 <START>
     v(a: Int)
     magic[FAKE_INITIALIZER](a: Int) -> <v0>
     w(a|<v0>)
     v(b: Int)
     magic[FAKE_INITIALIZER](b: Int) -> <v1>
     w(b|<v1>)
-  4 mark({})
+  2 mark({})
     read (Unit)
-L7:
-  3 <END>                                      NEXT:[<SINK>]
+L1:
+  1 <END>                                      NEXT:[<SINK>]
 error:
     <ERROR>                                    PREV:[]
 sink:
@@ -97,16 +90,16 @@ L0:
   1 <START>
   2 mark({ Foo().foo(bar()) })
     mark(Foo().foo(bar()))
-    mark(bar())
-    magic[UNRESOLVED_CALL](bar()|!<v0>) -> <v1>
     mark(Foo())
-    magic[UNRESOLVED_CALL](Foo()|!<v2>) -> <v3>
+    call(Foo(), <init>) -> <v0>
+    mark(bar())
+    magic[UNRESOLVED_CALL](bar()|!<v1>) -> <v2>
     mark(foo(bar()))
-    magic[UNRESOLVED_CALL](foo(bar())|<v1>, !<v4>, <v3>) -> <v5>
+    call(foo(bar()), foo|<v0>, <v2>) -> <v3>
 L1:
-  1 <END>                                                           NEXT:[<SINK>]
+  1 <END>                                          NEXT:[<SINK>]
 error:
-    <ERROR>                                                         PREV:[]
+    <ERROR>                                        PREV:[]
 sink:
-    <SINK>                                                          PREV:[<ERROR>, <END>]
+    <SINK>                                         PREV:[<ERROR>, <END>]
 =====================

@@ -5,7 +5,7 @@
 // FILE: JavaBase.java
 import java.util.List;
 
-public class JavaBase {
+public define JavaBase {
     public void test1(String a) {}
 
     public List<Integer> test2(List<Integer> a) { return null; }
@@ -26,7 +26,7 @@ public class JavaBase {
 // FILE: test.kt
 import JavaBase
 
-class JavaBaseImpl: JavaBase() {
+define JavaBaseImpl: JavaBase() {
     <!NOTHING_TO_OVERRIDE!>override<!> fun test1(a: Int) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun test2(a: List<Double>): List<Double> { return null!! }
     <!NOTHING_TO_OVERRIDE!>override<!> fun test3(a: Array<CharSequence>): Array<CharSequence> { return null!! }

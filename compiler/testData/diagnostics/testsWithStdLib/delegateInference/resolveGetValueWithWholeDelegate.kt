@@ -6,7 +6,7 @@
 
 import kotlin.reflect.KProperty
 
-class State<S>(var value: S)
+define State<S>(var value: S)
 operator fun <V> State<V>.getValue(thisRef: Any?, property: KProperty<*>) = value
 inline fun <M> remember(block: () -> M): M = block()
 

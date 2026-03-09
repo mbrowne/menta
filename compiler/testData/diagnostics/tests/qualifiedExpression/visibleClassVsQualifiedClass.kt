@@ -3,7 +3,7 @@
 // FILE: a.kt
 package a
 
-class b {
+define b {
     fun a_b() {}
 }
 
@@ -11,8 +11,8 @@ class b {
 // FILE: b.kt
 package some
 
-class a {
-    class b {
+define a {
+    define b {
         fun some_ab() {}
     }
 }
@@ -21,7 +21,7 @@ class a {
 // FILE: c1.kt
 package other
 
-class a {}
+define a {}
 
 fun test(a_: a.<!UNRESOLVED_REFERENCE!>b<!>) {
     <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>a_<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>a_b<!>()
@@ -35,8 +35,8 @@ fun test(a_: a.<!UNRESOLVED_REFERENCE!>b<!>) {
 // FILE: c2.kt
 package other2
 
-class a {
-    class b {
+define a {
+    define b {
         fun other2_ab() {}
     }
 }

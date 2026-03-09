@@ -2,8 +2,8 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class A {
-    class Nested {
+define A {
+    define Nested {
         inline fun <T : CharSequence> foo(a: T) = a.length
 
         fun <T : CharSequence> bar(a: T) = a.length

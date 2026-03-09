@@ -1,6 +1,6 @@
 package test
 
-class Test {
+define Test {
 
   companion object {
     public const val valProp: Int = 10

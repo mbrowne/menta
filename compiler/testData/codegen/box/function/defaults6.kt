@@ -2,8 +2,8 @@
 
 import kotlin.test.*
 
-open class Foo(val x: Int = 42)
-class Bar : Foo()
+open define Foo(val x: Int = 42)
+define Bar : Foo()
 
 fun box(): String {
     assertEquals(42, Bar().x)

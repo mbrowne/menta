@@ -6,7 +6,7 @@
 
 package a
 
-open class C {
+open define C {
     open val x: String? = null
 }
 
@@ -17,7 +17,7 @@ package b
 
 import a.C
 
-class D : C()
+define D : C()
 
 fun D.test(): Int {
     x!!

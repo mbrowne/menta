@@ -50,7 +50,7 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     var mutableReference: T = null!!
     val immutableReference: T = null!!
@@ -60,7 +60,7 @@ interface BaseType
 
 object Index
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     operator fun inc(): ScopeOwner = this
     operator fun get(index: Index): ScopeOwner = this
     operator fun set(index: Index, value: ScopeOwner) {}

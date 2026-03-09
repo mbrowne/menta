@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE:-TakeIntoAccountEffectivelyFinalInMustBeInitializedCheck
-open class Base {
+open define Base {
     open var x: String = ""
 }
 
-class Foo : Base() {
+define Foo : Base() {
     <!MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT!>override var x: String<!>
 
     init {

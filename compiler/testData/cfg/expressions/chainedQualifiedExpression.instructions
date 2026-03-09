@@ -1,5 +1,17 @@
-== anonymous_0 ==
-{
+== JetToken ==
+class JetToken
+---------------------
+L0:
+  1 <START>
+L1:
+    <END>      NEXT:[<SINK>]
+error:
+    <ERROR>    PREV:[]
+sink:
+    <SINK>     PREV:[<ERROR>, <END>]
+=====================
+== JetKeywordCompletionContributor ==
+public open class JetKeywordCompletionContributor() {
     init {
         val inTopLevel = 1.0
 
@@ -13,7 +25,7 @@
                 .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
                 .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
 
-                .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
+                .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
                 .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
                 .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
                 .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
@@ -48,303 +60,169 @@
 ---------------------
 L0:
   1 <START>
-  2 mark({ init { val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() } private inner class BunchKeywordRegister() { fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } } })
-    mark({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() })
-    jmp?(L2)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               NEXT:[r({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() }) -> <v0>, d({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() })]
-    d({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() })                                                                                                                                                                               NEXT:[<SINK>]
-L2 [after local declaration]:
-    r({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() }) -> <v0>                                                                                                                                                                       PREV:[jmp?(L2)]
-    mark(init { val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() })
-    magic[UNRESOLVED_CALL](init { val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() }|<v0>, !<v1>) -> <v2>
-    magic[UNRESOLVED_CALL](private) -> <v3>
-    mark(private inner class)
-    magic[UNRESOLVED_CALL](private inner class|<v3>) -> <v4>
-    mark({ fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } })
-    jmp?(L5)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               NEXT:[r({ fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } }) -> <v5>, d({ fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } })]
-    d({ fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } })                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 NEXT:[<SINK>]
-L5 [after local declaration]:
-    r({ fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } }) -> <v5>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         PREV:[jmp?(L5)]
-    mark(())
-    mark(() { fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } })
-    magic[UNRESOLVED_CALL](() { fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } }|<v5>, !<v6>) -> <v7>
-    mark(private inner class BunchKeywordRegister() { fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } })
-    magic[UNRESOLVED_CALL](private inner class BunchKeywordRegister() { fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } }|<v4>, <v7>) -> <v8>
-L1:
-  1 <END>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  NEXT:[<SINK>]
-error:
-    <ERROR>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                PREV:[]
-sink:
-    <SINK>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 PREV:[<ERROR>, <END>, d({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() }), d({ fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { } })]
-=====================
-== anonymous_1 ==
-{
-        val inTopLevel = 1.0
-
-        BunchKeywordRegister()
-                .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-
-                .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
-                .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
-                .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
-                .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
-
-                .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-                .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
-
-                .add(IMPORT_KEYWORD, inTopLevel)
-                .add(PACKAGE_KEYWORD, inTopLevel)
-
-                .add(OVERRIDE_KEYWORD, inTopLevel)
-
-                .add(IN_KEYWORD, inTopLevel, inTopLevel)
-
-                .add(OUT_KEYWORD, inTopLevel)
-
-                .add(OBJECT_KEYWORD, unresolvedCode)
-
-                .registerAll()
-    }
----------------------
-L3:
-  3 <START>
-  4 mark(val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll())
+  2 mark({ val inTopLevel = 1.0 BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll() })
     v(val inTopLevel = 1.0)
     r(1.0) -> <v0>
     w(inTopLevel|<v0>)
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll())
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode))
-    r(OBJECT_KEYWORD) -> <v1>
-    magic[UNRESOLVED_CALL](unresolvedCode) -> <v2>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel))
-    r(OUT_KEYWORD) -> <v3>
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode) .registerAll())
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel) .add(OBJECT_KEYWORD, unresolvedCode))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel) .add(OUT_KEYWORD, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    magic[IMPLICIT_RECEIVER](BunchKeywordRegister()) -> <v1>
+    mark(BunchKeywordRegister())
+    call(BunchKeywordRegister(), <init>|<v1>) -> <v2>
+    r(ABSTRACT_KEYWORD) -> <v3>
     r(inTopLevel) -> <v4>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel) .add(IN_KEYWORD, inTopLevel, inTopLevel))
-    r(IN_KEYWORD) -> <v5>
+    r(inTopLevel) -> <v5>
     r(inTopLevel) -> <v6>
-    r(inTopLevel) -> <v7>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel) .add(OVERRIDE_KEYWORD, inTopLevel))
-    r(OVERRIDE_KEYWORD) -> <v8>
+    mark(add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v2>, <v3>, <v4>, <v5>, <v6>) -> <v7>
+    r(FINAL_KEYWORD) -> <v8>
     r(inTopLevel) -> <v9>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel) .add(PACKAGE_KEYWORD, inTopLevel))
-    r(PACKAGE_KEYWORD) -> <v10>
+    r(inTopLevel) -> <v10>
     r(inTopLevel) -> <v11>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(IMPORT_KEYWORD, inTopLevel))
-    r(IMPORT_KEYWORD) -> <v12>
-    r(inTopLevel) -> <v13>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(TYPE_KEYWORD) -> <v14>
+    mark(add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v7>, <v8>, <v9>, <v10>, <v11>) -> <v12>
+    r(OPEN_KEYWORD) -> <v13>
+    r(inTopLevel) -> <v14>
     r(inTopLevel) -> <v15>
     r(inTopLevel) -> <v16>
-    r(inTopLevel) -> <v17>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(VAR_KEYWORD) -> <v18>
+    mark(add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v12>, <v13>, <v14>, <v15>, <v16>) -> <v17>
+    r(INTERNAL_KEYWORD) -> <v18>
     r(inTopLevel) -> <v19>
     r(inTopLevel) -> <v20>
     r(inTopLevel) -> <v21>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(VAL_KEYWORD) -> <v22>
-    r(inTopLevel) -> <v23>
-    r(inTopLevel) -> <v24>
+    r(inTopLevel) -> <v22>
+    mark(add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    call(add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel), add|<v17>, <v18>, <v19>, <v20>, <v21>, <v22>) -> <v23>
+    r(PRIVATE_KEYWORD) -> <v24>
     r(inTopLevel) -> <v25>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(INTERFACE_KEYWORD) -> <v26>
+    r(inTopLevel) -> <v26>
     r(inTopLevel) -> <v27>
     r(inTopLevel) -> <v28>
-    r(inTopLevel) -> <v29>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(SET_KEYWORD) -> <v30>
+    mark(add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    call(add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel), add|<v23>, <v24>, <v25>, <v26>, <v27>, <v28>) -> <v29>
+    r(PROTECTED_KEYWORD) -> <v30>
     r(inTopLevel) -> <v31>
     r(inTopLevel) -> <v32>
     r(inTopLevel) -> <v33>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(GET_KEYWORD) -> <v34>
-    r(inTopLevel) -> <v35>
-    r(inTopLevel) -> <v36>
+    r(inTopLevel) -> <v34>
+    mark(add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    call(add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel), add|<v29>, <v30>, <v31>, <v32>, <v33>, <v34>) -> <v35>
+    r(PUBLIC_KEYWORD) -> <v36>
     r(inTopLevel) -> <v37>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(FUN_KEYWORD) -> <v38>
+    r(inTopLevel) -> <v38>
     r(inTopLevel) -> <v39>
     r(inTopLevel) -> <v40>
-    r(inTopLevel) -> <v41>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(ENUM_KEYWORD) -> <v42>
+    mark(add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
+    call(add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel), add|<v35>, <v36>, <v37>, <v38>, <v39>, <v40>) -> <v41>
+    r(CLASS_KEYWORD) -> <v42>
     r(inTopLevel) -> <v43>
     r(inTopLevel) -> <v44>
     r(inTopLevel) -> <v45>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(DEFINE_KEYWORD) -> <v46>
-    r(inTopLevel) -> <v47>
+    mark(add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v41>, <v42>, <v43>, <v44>, <v45>) -> <v46>
+    r(ENUM_KEYWORD) -> <v47>
     r(inTopLevel) -> <v48>
     r(inTopLevel) -> <v49>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    r(PUBLIC_KEYWORD) -> <v50>
-    r(inTopLevel) -> <v51>
-    r(inTopLevel) -> <v52>
+    r(inTopLevel) -> <v50>
+    mark(add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v46>, <v47>, <v48>, <v49>, <v50>) -> <v51>
+    r(FUN_KEYWORD) -> <v52>
     r(inTopLevel) -> <v53>
     r(inTopLevel) -> <v54>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    r(PROTECTED_KEYWORD) -> <v55>
-    r(inTopLevel) -> <v56>
-    r(inTopLevel) -> <v57>
+    r(inTopLevel) -> <v55>
+    mark(add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v51>, <v52>, <v53>, <v54>, <v55>) -> <v56>
+    r(GET_KEYWORD) -> <v57>
     r(inTopLevel) -> <v58>
     r(inTopLevel) -> <v59>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel) .add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    r(PRIVATE_KEYWORD) -> <v60>
-    r(inTopLevel) -> <v61>
-    r(inTopLevel) -> <v62>
+    r(inTopLevel) -> <v60>
+    mark(add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v56>, <v57>, <v58>, <v59>, <v60>) -> <v61>
+    r(SET_KEYWORD) -> <v62>
     r(inTopLevel) -> <v63>
     r(inTopLevel) -> <v64>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    r(INTERNAL_KEYWORD) -> <v65>
-    r(inTopLevel) -> <v66>
-    r(inTopLevel) -> <v67>
+    r(inTopLevel) -> <v65>
+    mark(add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v61>, <v62>, <v63>, <v64>, <v65>) -> <v66>
+    r(INTERFACE_KEYWORD) -> <v67>
     r(inTopLevel) -> <v68>
     r(inTopLevel) -> <v69>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(OPEN_KEYWORD) -> <v70>
-    r(inTopLevel) -> <v71>
-    r(inTopLevel) -> <v72>
+    r(inTopLevel) -> <v70>
+    mark(add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v66>, <v67>, <v68>, <v69>, <v70>) -> <v71>
+    r(VAL_KEYWORD) -> <v72>
     r(inTopLevel) -> <v73>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel) .add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(FINAL_KEYWORD) -> <v74>
+    r(inTopLevel) -> <v74>
     r(inTopLevel) -> <v75>
-    r(inTopLevel) -> <v76>
-    r(inTopLevel) -> <v77>
-    mark(BunchKeywordRegister() .add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    r(ABSTRACT_KEYWORD) -> <v78>
+    mark(add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
+    call(add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v71>, <v72>, <v73>, <v74>, <v75>) -> <v76>
+    r(VAR_KEYWORD) -> <v77>
+    r(inTopLevel) -> <v78>
     r(inTopLevel) -> <v79>
     r(inTopLevel) -> <v80>
-    r(inTopLevel) -> <v81>
-    mark(BunchKeywordRegister())
-    magic[UNRESOLVED_CALL](BunchKeywordRegister()|!<v82>) -> <v83>
-    mark(add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(ABSTRACT_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v78>, <v79>, <v80>, <v81>, !<v84>, <v83>) -> <v85>
-    mark(add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(FINAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v74>, <v75>, <v76>, <v77>, !<v86>, <v85>) -> <v87>
-    mark(add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(OPEN_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v70>, <v71>, <v72>, <v73>, !<v88>, <v87>) -> <v89>
-    mark(add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(INTERNAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)|<v65>, <v66>, <v67>, <v68>, <v69>, !<v90>, <v89>) -> <v91>
-    mark(add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(PRIVATE_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)|<v60>, <v61>, <v62>, <v63>, <v64>, !<v92>, <v91>) -> <v93>
-    mark(add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)|<v55>, <v56>, <v57>, <v58>, <v59>, !<v94>, <v93>) -> <v95>
-    mark(add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)|<v50>, <v51>, <v52>, <v53>, <v54>, !<v96>, <v95>) -> <v97>
-    mark(add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v46>, <v47>, <v48>, <v49>, !<v98>, <v97>) -> <v99>
-    mark(add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v42>, <v43>, <v44>, <v45>, !<v100>, <v99>) -> <v101>
-    mark(add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v38>, <v39>, <v40>, <v41>, !<v102>, <v101>) -> <v103>
-    mark(add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v34>, <v35>, <v36>, <v37>, !<v104>, <v103>) -> <v105>
-    mark(add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(SET_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v30>, <v31>, <v32>, <v33>, !<v106>, <v105>) -> <v107>
-    mark(add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(INTERFACE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v26>, <v27>, <v28>, <v29>, !<v108>, <v107>) -> <v109>
-    mark(add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(VAL_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v22>, <v23>, <v24>, <v25>, !<v110>, <v109>) -> <v111>
     mark(add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v18>, <v19>, <v20>, <v21>, !<v112>, <v111>) -> <v113>
+    call(add(VAR_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v76>, <v77>, <v78>, <v79>, <v80>) -> <v81>
+    r(TYPE_KEYWORD) -> <v82>
+    r(inTopLevel) -> <v83>
+    r(inTopLevel) -> <v84>
+    r(inTopLevel) -> <v85>
     mark(add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)|<v14>, <v15>, <v16>, <v17>, !<v114>, <v113>) -> <v115>
+    call(add(TYPE_KEYWORD, inTopLevel, inTopLevel, inTopLevel), add|<v81>, <v82>, <v83>, <v84>, <v85>) -> <v86>
+    r(IMPORT_KEYWORD) -> <v87>
+    r(inTopLevel) -> <v88>
     mark(add(IMPORT_KEYWORD, inTopLevel))
-    magic[UNRESOLVED_CALL](add(IMPORT_KEYWORD, inTopLevel)|<v12>, <v13>, !<v116>, <v115>) -> <v117>
+    call(add(IMPORT_KEYWORD, inTopLevel), add|<v86>, <v87>, <v88>) -> <v89>
+    r(PACKAGE_KEYWORD) -> <v90>
+    r(inTopLevel) -> <v91>
     mark(add(PACKAGE_KEYWORD, inTopLevel))
-    magic[UNRESOLVED_CALL](add(PACKAGE_KEYWORD, inTopLevel)|<v10>, <v11>, !<v118>, <v117>) -> <v119>
+    call(add(PACKAGE_KEYWORD, inTopLevel), add|<v89>, <v90>, <v91>) -> <v92>
+    r(OVERRIDE_KEYWORD) -> <v93>
+    r(inTopLevel) -> <v94>
     mark(add(OVERRIDE_KEYWORD, inTopLevel))
-    magic[UNRESOLVED_CALL](add(OVERRIDE_KEYWORD, inTopLevel)|<v8>, <v9>, !<v120>, <v119>) -> <v121>
+    call(add(OVERRIDE_KEYWORD, inTopLevel), add|<v92>, <v93>, <v94>) -> <v95>
+    r(IN_KEYWORD) -> <v96>
+    r(inTopLevel) -> <v97>
+    r(inTopLevel) -> <v98>
     mark(add(IN_KEYWORD, inTopLevel, inTopLevel))
-    magic[UNRESOLVED_CALL](add(IN_KEYWORD, inTopLevel, inTopLevel)|<v5>, <v6>, <v7>, !<v122>, <v121>) -> <v123>
+    call(add(IN_KEYWORD, inTopLevel, inTopLevel), add|<v95>, <v96>, <v97>, <v98>) -> <v99>
+    r(OUT_KEYWORD) -> <v100>
+    r(inTopLevel) -> <v101>
     mark(add(OUT_KEYWORD, inTopLevel))
-    magic[UNRESOLVED_CALL](add(OUT_KEYWORD, inTopLevel)|<v3>, <v4>, !<v124>, <v123>) -> <v125>
+    call(add(OUT_KEYWORD, inTopLevel), add|<v99>, <v100>, <v101>) -> <v102>
+    r(OBJECT_KEYWORD) -> <v103>
+    magic[UNRESOLVED_CALL](unresolvedCode) -> <v104>
     mark(add(OBJECT_KEYWORD, unresolvedCode))
-    magic[UNRESOLVED_CALL](add(OBJECT_KEYWORD, unresolvedCode)|<v1>, <v2>, !<v126>, <v125>) -> <v127>
+    call(add(OBJECT_KEYWORD, unresolvedCode), add|<v102>, <v103>, <v104>) -> <v105>
     mark(registerAll())
-    magic[UNRESOLVED_CALL](registerAll()|!<v128>, <v127>) -> <v129>
-  3 ret(*|<v129>) L4
-L4:
-    <END>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      NEXT:[<SINK>]
+    call(registerAll(), registerAll|<v105>) -> <v106>
+L1:
+  1 <END>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    PREV:[]
+    <ERROR>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       PREV:[]
 sink:
-    <SINK>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     PREV:[<ERROR>, <END>]
-=====================
-== anonymous_2 ==
-{
-        fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister {
-        }
-
-        fun registerAll() {
-        }
-    }
----------------------
-L6:
-  3 <START>
-  4 mark(fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { } fun registerAll() { })
-    jmp?(L8)                                                                                                                 NEXT:[jmp?(L12), d(fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { })]
-    d(fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { })                             NEXT:[<SINK>]
-L8 [after local declaration]:
-    jmp?(L12)                                                                                                                NEXT:[<END>, d(fun registerAll() { })]                                                                                          PREV:[jmp?(L8)]
-    d(fun registerAll() { })                                                                                                 NEXT:[<SINK>]
-L7:
-L12 [after local declaration]:
-  3 <END>                                                                                                                    NEXT:[<SINK>]                                                                                                                   PREV:[jmp?(L12)]
-error:
-    <ERROR>                                                                                                                  PREV:[]
-sink:
-    <SINK>                                                                                                                   PREV:[<ERROR>, <END>, d(fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister { }), d(fun registerAll() { })]
-=====================
-== add ==
-fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister {
-        }
----------------------
-L9:
-  5 <START>
-    v(keyword: JetToken = JetToken())
-    jmp?(L11)                                                          NEXT:[magic[FAKE_INITIALIZER](keyword: JetToken = JetToken()) -> <v2>, mark(JetToken())]
-    mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-L11 [after default value for parameter keyword]:
-    magic[FAKE_INITIALIZER](keyword: JetToken = JetToken()) -> <v2>    PREV:[jmp?(L11), magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>]
-    merge(keyword: JetToken = JetToken()|<v1>, <v2>) -> <v3>
-    w(keyword|<v3>)
-    v(vararg filters: Double)
-    magic[FAKE_INITIALIZER](vararg filters: Double) -> <v4>
-    w(filters|<v4>)
-  6 mark({ })
-    read (Unit)
-L10:
-  5 <END>                                                              NEXT:[<SINK>]
-error:
-    <ERROR>                                                            PREV:[]
-sink:
-    <SINK>                                                             PREV:[<ERROR>, <END>]
-=====================
-== registerAll ==
-fun registerAll() {
-        }
----------------------
-L13:
-  5 <START>
-  6 mark({ })
-    read (Unit)
-L14:
-  5 <END>          NEXT:[<SINK>]
-error:
-    <ERROR>        PREV:[]
-sink:
-    <SINK>         PREV:[<ERROR>, <END>]
+    <SINK>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        PREV:[<ERROR>, <END>]
 =====================
 == ABSTRACT_KEYWORD ==
 val ABSTRACT_KEYWORD = JetToken()
@@ -353,14 +231,14 @@ L0:
   1 <START>
     v(val ABSTRACT_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(ABSTRACT_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(ABSTRACT_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                   NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                 PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                  PREV:[<ERROR>, <END>]
 =====================
 == FINAL_KEYWORD ==
 val FINAL_KEYWORD OPEN_KEYWORD = JetToken()
@@ -382,14 +260,14 @@ L0:
   1 <START>
     v(val OPEN_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(OPEN_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(OPEN_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == INTERNAL_KEYWORD ==
 val INTERNAL_KEYWORD = JetToken()
@@ -398,14 +276,14 @@ L0:
   1 <START>
     v(val INTERNAL_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(INTERNAL_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(INTERNAL_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                   NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                 PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                  PREV:[<ERROR>, <END>]
 =====================
 == PRIVATE_KEYWORD ==
 val PRIVATE_KEYWORD = JetToken()
@@ -414,14 +292,14 @@ L0:
   1 <START>
     v(val PRIVATE_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(PRIVATE_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(PRIVATE_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                  NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                 PREV:[<ERROR>, <END>]
 =====================
 == PROTECTED_KEYWORD ==
 val PROTECTED_KEYWORD = JetToken()
@@ -430,14 +308,14 @@ L0:
   1 <START>
     v(val PROTECTED_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(PROTECTED_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(PROTECTED_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                    NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                  PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                   PREV:[<ERROR>, <END>]
 =====================
 == PUBLIC_KEYWORD ==
 val PUBLIC_KEYWORD = JetToken()
@@ -446,30 +324,30 @@ L0:
   1 <START>
     v(val PUBLIC_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(PUBLIC_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(PUBLIC_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                 NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                               PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                PREV:[<ERROR>, <END>]
 =====================
-== DEFINE_KEYWORD ==
-val DEFINE_KEYWORD = JetToken()
+== CLASS_KEYWORD ==
+val CLASS_KEYWORD = JetToken()
 ---------------------
 L0:
   1 <START>
-    v(val DEFINE_KEYWORD = JetToken())
+    v(val CLASS_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(DEFINE_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(CLASS_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                              PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                               PREV:[<ERROR>, <END>]
 =====================
 == ENUM_KEYWORD ==
 val ENUM_KEYWORD = JetToken()
@@ -478,14 +356,14 @@ L0:
   1 <START>
     v(val ENUM_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(ENUM_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(ENUM_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == FUN_KEYWORD ==
 val FUN_KEYWORD = JetToken()
@@ -494,14 +372,14 @@ L0:
   1 <START>
     v(val FUN_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(FUN_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(FUN_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == GET_KEYWORD ==
 val GET_KEYWORD = JetToken()
@@ -510,14 +388,14 @@ L0:
   1 <START>
     v(val GET_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(GET_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(GET_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == SET_KEYWORD ==
 val SET_KEYWORD = JetToken()
@@ -526,14 +404,14 @@ L0:
   1 <START>
     v(val SET_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(SET_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(SET_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == INTERFACE_KEYWORD ==
 val INTERFACE_KEYWORD = JetToken()
@@ -542,14 +420,14 @@ L0:
   1 <START>
     v(val INTERFACE_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(INTERFACE_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(INTERFACE_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                    NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                  PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                   PREV:[<ERROR>, <END>]
 =====================
 == VAL_KEYWORD ==
 val VAL_KEYWORD = JetToken()
@@ -558,14 +436,14 @@ L0:
   1 <START>
     v(val VAL_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(VAL_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(VAL_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == VAR_KEYWORD ==
 val VAR_KEYWORD = JetToken()
@@ -574,14 +452,14 @@ L0:
   1 <START>
     v(val VAR_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(VAR_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(VAR_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == TYPE_KEYWORD ==
 val TYPE_KEYWORD = JetToken()
@@ -590,14 +468,14 @@ L0:
   1 <START>
     v(val TYPE_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(TYPE_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(TYPE_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == IMPORT_KEYWORD ==
 val IMPORT_KEYWORD = JetToken()
@@ -606,14 +484,14 @@ L0:
   1 <START>
     v(val IMPORT_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(IMPORT_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(IMPORT_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                 NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                               PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                PREV:[<ERROR>, <END>]
 =====================
 == PACKAGE_KEYWORD ==
 val PACKAGE_KEYWORD = JetToken()
@@ -622,14 +500,14 @@ L0:
   1 <START>
     v(val PACKAGE_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(PACKAGE_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(PACKAGE_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                  NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                 PREV:[<ERROR>, <END>]
 =====================
 == OVERRIDE_KEYWORD ==
 val OVERRIDE_KEYWORD = JetToken()
@@ -638,14 +516,14 @@ L0:
   1 <START>
     v(val OVERRIDE_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(OVERRIDE_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(OVERRIDE_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                   NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                                 PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                  PREV:[<ERROR>, <END>]
 =====================
 == IN_KEYWORD ==
 val IN_KEYWORD = JetToken()
@@ -654,14 +532,14 @@ L0:
   1 <START>
     v(val IN_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(IN_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(IN_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == OUT_KEYWORD ==
 val OUT_KEYWORD = JetToken()
@@ -670,14 +548,14 @@ L0:
   1 <START>
     v(val OUT_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(OUT_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(OUT_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == OBJECT_KEYWORD ==
 val OBJECT_KEYWORD = JetToken()
@@ -686,12 +564,12 @@ L0:
   1 <START>
     v(val OBJECT_KEYWORD = JetToken())
     mark(JetToken())
-    magic[UNRESOLVED_CALL](JetToken()|!<v0>) -> <v1>
-    w(OBJECT_KEYWORD|<v1>)
+    call(JetToken(), <init>) -> <v0>
+    w(OBJECT_KEYWORD|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                                 NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                               PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                                PREV:[<ERROR>, <END>]
 =====================

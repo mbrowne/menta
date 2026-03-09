@@ -133,55 +133,46 @@ KtFile: syntaxError.kt
         PsiElement(OPEN_QUOTE)('"')
         PsiElement(CLOSING_QUOTE)('"')
   PsiWhiteSpace('\n\n')
-  FUN
+  CLASS
     MODIFIER_LIST
       CONTEXT_PARAMETER_LIST
         PsiElement(context)('context')
         PsiElement(LPAR)('(')
-        PsiWhiteSpace('\n')
-        CONTEXT_RECEIVER
-          TYPE_REFERENCE
-            PsiErrorElement:Type expected
-              PsiElement(class)('class')
-        PsiErrorElement:Expecting comma or ')'
+        PsiErrorElement:Expecting ')'
           <empty list>
-        PsiWhiteSpace(' ')
-        CONTEXT_RECEIVER
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('C')
-        PsiErrorElement:Expecting comma or ')'
-          <empty list>
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
-    BLOCK
+    PsiElement(IDENTIFIER)('C')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('context')
-        VALUE_ARGUMENT_LIST
+      MODIFIER_LIST
+        CONTEXT_PARAMETER_LIST
+          PsiElement(context)('context')
           PsiElement(LPAR)('(')
           PsiWhiteSpace('\n    ')
-          VALUE_ARGUMENT
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('constructor')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                PsiElement(RPAR)(')')
-              PsiWhiteSpace(' ')
-              LAMBDA_ARGUMENT
-                LAMBDA_EXPRESSION
-                  FUNCTION_LITERAL
-                    PsiElement(LBRACE)('{')
-                    BLOCK
-                      <empty list>
-                    PsiElement(RBRACE)('}')
-          PsiErrorElement:Expecting ')'
+          CONTEXT_RECEIVER
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('constructor')
+          PsiErrorElement:Expecting comma or ')'
             <empty list>
+          PsiErrorElement:Expecting ')'
+            PsiElement(LPAR)('(')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(RPAR)(')')
       PsiWhiteSpace(' ')
-      PsiComment(EOL_COMMENT)('// no proper recovery because constructor is a soft keyword :(')
+      FUN
+        PsiErrorElement:Expecting member declaration
+          <empty list>
+        BLOCK
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
+        PsiWhiteSpace(' ')
+        PsiComment(EOL_COMMENT)('// no proper recovery because constructor is a soft keyword :(')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')

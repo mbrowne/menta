@@ -15,13 +15,13 @@ interface IFooBar {
 interface IFooBar2 : IFooBar
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Test1(val k: String): IFooBar {
+value define Test1(val k: String): IFooBar {
     override val bar: String
         get() = k
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Test2(val k: String): IFooBar2 {
+value define Test2(val k: String): IFooBar2 {
     override val bar: String
         get() = k
 }

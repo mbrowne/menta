@@ -3,10 +3,10 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     @JvmSynthetic
     fun ok(): String = s
 }
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: StringWrapper.class[ok]
-// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: StringWrapper.define[ok]
+// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

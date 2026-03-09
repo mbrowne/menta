@@ -1,15 +1,15 @@
 // COMPILATION_ERRORS
 
-open class A
+open define A
 
-open class AB private {
+open define AB private {
     fun foo() {}
 }
 
-class A1 {
+define A1 {
 
 }
 
-open class B<T : A> private () {
+open define B<T : A> private () {
 
 }

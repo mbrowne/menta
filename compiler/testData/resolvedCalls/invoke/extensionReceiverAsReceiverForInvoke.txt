@@ -7,4 +7,10 @@ fun bar(f: Foo) {
 
 
 
-null
+Resolved call:
+
+Resulting descriptor: fun Foo.invoke(): Unit defined in root package
+
+Explicit receiver kind = EXTENSION_RECEIVER
+Dispatch receiver = NO_RECEIVER
+Extension receiver = f {Foo}

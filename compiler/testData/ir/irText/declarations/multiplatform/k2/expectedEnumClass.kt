@@ -6,14 +6,14 @@
 
 // MODULE: lib
 // FILE: lib.kt
-expect enum class MyEnum {
+expect enum define MyEnum {
     FOO,
     BAR
 }
 
 // MODULE: main()()(lib)
 // FILE: main.kt
-actual enum class MyEnum {
+actual enum define MyEnum {
     FOO,
     BAR,
     BAZ

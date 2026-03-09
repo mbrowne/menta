@@ -6,9 +6,9 @@ import kotlin.reflect.full.memberFunctions
 import kotlin.reflect.jvm.javaMethod
 import kotlin.test.assertEquals
 
-annotation class A
+annotation define A
 interface I
-class C
+define C
 
 interface MyCustomMembers {
     fun equals(): Boolean
@@ -21,16 +21,16 @@ interface MyCloneable : Cloneable
 fun KClass<*>.functions() = memberFunctions.map { it.javaMethod!!.name }.sorted()
 
 fun box(): String {
-    assertEquals(listOf("equals", "hashCode", "toString"), A::class.functions())
-    assertEquals(listOf("equals", "hashCode", "toString"), I::class.functions())
-    assertEquals(listOf("equals", "hashCode", "toString"), C::class.functions())
+    assertEquals(listOf("equals", "hashCode", "toString"), A::define.functions())
+    assertEquals(listOf("equals", "hashCode", "toString"), I::define.functions())
+    assertEquals(listOf("equals", "hashCode", "toString"), C::define.functions())
 
     assertEquals(
         listOf("equals", "equals", "hashCode", "hashCode", "toString", "toString"),
-        MyCustomMembers::class.functions()
+        MyCustomMembers::define.functions()
     )
 
-    assertEquals(listOf("clone", "equals", "hashCode", "toString"), MyCloneable::class.functions())
+    assertEquals(listOf("clone", "equals", "hashCode", "toString"), MyCloneable::define.functions())
 
     return "OK"
 }

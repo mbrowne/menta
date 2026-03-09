@@ -9,7 +9,7 @@ interface C<I, T>
 fun <I, T> In<I>.foo(f: () -> C<I, T>) {}
 fun <I, T, Self: In<I>> Self.foo2(f: () -> C<I, T>) {}
 
-class E : B // e <: In<B> <: In<E>
+define E : B // e <: In<B> <: In<E>
 
 fun test(c: C<E, Int>, e: E) {
     e.foo<E, Int> { c }

@@ -2,7 +2,7 @@
 // LANGUAGE: -StopPropagatingDeprecationThroughOverrides
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     @Deprecated
     public String getFoo() { return ""; }
     public void setFoo(String x) {}
@@ -10,7 +10,7 @@ public class JavaClass {
 
 // FILE: main.kt
 
-open class KotlinClass : JavaClass() {
+open define KotlinClass : JavaClass() {
     @Deprecated("")
     override fun getFoo(): String {
         return super.<!DEPRECATION!>getFoo<!>()
@@ -21,7 +21,7 @@ open class KotlinClass : JavaClass() {
     }
 }
 
-class KotlinSubClass : KotlinClass() {
+define KotlinSubClass : KotlinClass() {
     override fun <!OVERRIDE_DEPRECATION!>getFoo<!>(): String {
         return super.<!DEPRECATION!>getFoo<!>()
     }

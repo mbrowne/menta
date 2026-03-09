@@ -1,4 +1,4 @@
-class A {
+define A {
     fun result() = (A::foo).let { it(this, "OK") }
 }
 

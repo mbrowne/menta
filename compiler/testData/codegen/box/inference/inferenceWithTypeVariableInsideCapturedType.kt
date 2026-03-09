@@ -1,4 +1,4 @@
-class Inv<T>
+define Inv<T>
 
 fun <T : V, U : V, V> foo(x: T, y: Inv<in U>) {}
 

@@ -4,9 +4,9 @@
 
 package test
 
-@Target(AnnotationTarget.FILE) annotation class special
+@Target(AnnotationTarget.FILE) annotation define special
 
-annotation class common
+annotation define common
 
 // FILE: other.kt
 
@@ -14,7 +14,7 @@ annotation class common
 
 package test
 
-<!WRONG_ANNOTATION_TARGET!>@special<!> class Incorrect
+<!WRONG_ANNOTATION_TARGET!>@special<!> define Incorrect
 
 // FILE: another.kt
 
@@ -22,6 +22,6 @@ package test
 
 package test
 
-@common class Correct
+@common define Correct
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, classDeclaration */

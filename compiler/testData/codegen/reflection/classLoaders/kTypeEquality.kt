@@ -4,12 +4,12 @@ import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.test.*
 
-class K {
+define K {
     fun getType() = typeOf<List<K>>()
 }
 
-class Test {
-    fun kClass(): Any = K::class
+define Test {
+    fun kClass(): Any = K::define
 
     fun KClass<*>.invokeGetType() =
         java.declaredMethods.single { it.name == "getType" }.invoke(java.getDeclaredConstructor().newInstance()) as KType

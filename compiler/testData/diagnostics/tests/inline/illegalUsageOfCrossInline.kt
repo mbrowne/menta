@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-79545
-abstract class A(val x: () -> Unit)
+abstract define A(val x: () -> Unit)
 
 inline fun f(crossinline x: () -> Unit) {
     object : A(<!USAGE_IS_NOT_INLINABLE, USAGE_IS_NOT_INLINABLE!>x<!>) {}

@@ -6,13 +6,13 @@
 
 // MODULE: common
 // FILE: common.kt
-expect final value class A(val s: String)
+expect final value define A(val s: String)
 
 // MODULE: jvm()()(common)
 // FILE: jvm.kt
 @JvmInline
-actual <!VALUE_CLASS_NOT_FINAL!>open<!> value class A(val s: String)
+actual <!VALUE_CLASS_NOT_FINAL!>open<!> value define A(val s: String)
 
-class B : A("")
+define B : A("")
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, primaryConstructor, propertyDeclaration, stringLiteral, value */

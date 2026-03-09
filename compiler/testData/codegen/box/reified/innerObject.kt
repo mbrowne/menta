@@ -19,11 +19,11 @@ import kotlin.test.*
 
 // CHECK_NOT_CALLED: typePredicate
 
-open class A
+open define A
 
-class B
+define B
 
-class C : A()
+define C : A()
 
 fun box(): String {
     val isA = typePredicate<A>()

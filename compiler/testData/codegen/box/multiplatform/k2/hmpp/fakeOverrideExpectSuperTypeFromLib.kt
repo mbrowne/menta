@@ -1,19 +1,19 @@
 // LANGUAGE: +MultiPlatformProjects
 // ISSUE: KT-80131
 // MODULE: lib-common
-expect open class Foo() {
+expect open define Foo() {
     val size: Int
 }
 
 // MODULE: lib-inter()()(lib-common)
-actual open class Foo {
+actual open define Foo {
     actual val size: Int = 1
 }
 
 // MODULE: lib-platform()()(lib-inter)
 
 // MODULE: app-common(lib-common)
-class Bar : Foo()
+define Bar : Foo()
 
 fun x(b: Bar) {
     b.size

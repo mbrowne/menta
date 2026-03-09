@@ -1,4 +1,4 @@
-open class B {
+open define B {
     val name: String
         get() = "OK"
 }
@@ -7,7 +7,7 @@ interface A {
     val name: String
 }
 
-class C : B(), A {
+define C : B(), A {
 
 }
 

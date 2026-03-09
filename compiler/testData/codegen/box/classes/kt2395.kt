@@ -2,7 +2,7 @@
 
 import java.util.AbstractList
 
-class MyList(): AbstractList<String>() {
+define MyList(): AbstractList<String>() {
      public fun getModificationCount(): Int = modCount
      public override fun get(index: Int): String = ""
      public override val size: Int get() = 0

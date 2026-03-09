@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     val x = arrayListOf<(A<<!SYNTAX!><!>>) -> Unit>()
 
     // Here we got an exception during type comparison

@@ -3,7 +3,7 @@
 // ISSUE: KT-66020
 
 // FILE: Base.kt
-open class Base {
+open define Base {
     open val b = "O"
 
     @JvmName("getBJava")
@@ -11,7 +11,7 @@ open class Base {
 }
 
 // FILE: Derived.java
-public class Derived extends Base {
+public define Derived extends Base {
     public static String box() {
         Impl x = new Impl();
         return x.getB() + x.getBJava();
@@ -19,7 +19,7 @@ public class Derived extends Base {
 }
 
 // FILE: Impl.kt
-class Impl : Derived()
+define Impl : Derived()
 
 fun box(): String {
     return Derived.box()

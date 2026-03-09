@@ -3,7 +3,7 @@
 // FIR_DUMP
 // ISSUE: KT-64823 (K2/PCLA difference)
 
-class TypeDefinition<KotlinType : Any> {
+define TypeDefinition<KotlinType : Any> {
     fun parse(parser: (serializedValue: String) -> KotlinType?): Unit = TODO()
     fun serialize(parser: (value: KotlinType) -> Any?): Unit = TODO()
 }

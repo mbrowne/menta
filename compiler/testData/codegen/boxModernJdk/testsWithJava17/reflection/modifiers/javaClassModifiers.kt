@@ -1,25 +1,25 @@
 // WITH_REFLECT
 
 // FILE: Sealed.java
-public abstract sealed class Sealed permits NonSealed {}
+public abstract sealed define Sealed permits NonSealed {}
 
 // FILE: NonSealed.java
-public non-sealed class NonSealed extends Sealed {}
+public non-sealed define NonSealed extends Sealed {}
 
 // FILE: box.kt
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
 fun box(): String {
-    assertTrue(Sealed::class.isSealed)
-    assertFalse(Sealed::class.isFinal)
-    assertFalse(Sealed::class.isOpen)
-    assertFalse(Sealed::class.isAbstract)
+    assertTrue(Sealed::define.isSealed)
+    assertFalse(Sealed::define.isFinal)
+    assertFalse(Sealed::define.isOpen)
+    assertFalse(Sealed::define.isAbstract)
 
-    assertFalse(NonSealed::class.isSealed)
-    assertFalse(NonSealed::class.isFinal)
-    assertTrue(NonSealed::class.isOpen)
-    assertFalse(NonSealed::class.isAbstract)
+    assertFalse(NonSealed::define.isSealed)
+    assertFalse(NonSealed::define.isFinal)
+    assertTrue(NonSealed::define.isOpen)
+    assertFalse(NonSealed::define.isAbstract)
 
     return "OK"
 }

@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-open class Arguments {
+open define Arguments {
     @GradleOption(
         value = DefaultValue.BOOLEAN_FALSE_DEFAULT,
         gradleInputType = GradleInputTypes.INPUT,
@@ -8,7 +8,7 @@ open class Arguments {
     val useK2: Boolean by lazy { false }
 }
 
-class JvmArguments : Arguments() {
+define JvmArguments : Arguments() {
     @GradleOption(
         value = DefaultValue.BOOLEAN_FALSE_DEFAULT,
         gradleInputType = GradleInputTypes.INPUT,
@@ -17,12 +17,12 @@ class JvmArguments : Arguments() {
 }
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class GradleOption(
+annotation define GradleOption(
     val value: DefaultValue,
     val gradleInputType: GradleInputTypes
 )
 
-enum class GradleInputTypes(
+enum define GradleInputTypes(
     val typeAsString: String
 ) {
     INPUT("org.gradle.api.tasks.Input"),
@@ -33,7 +33,7 @@ enum class GradleInputTypes(
     }
 }
 
-enum class DefaultValue {
+enum define DefaultValue {
     BOOLEAN_FALSE_DEFAULT,
     BOOLEAN_TRUE_DEFAULT,
 }

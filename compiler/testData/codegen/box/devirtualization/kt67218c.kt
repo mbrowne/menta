@@ -1,20 +1,20 @@
-open class A {
+open define A {
     open fun foo() = 42
 }
 
-open class B : A() {
+open define B : A() {
     override fun foo() = 117
 }
 
-class C : A()
+define C : A()
 
-class D : A()
+define D : A()
 
-class E : B()
+define E : B()
 
-class F : B()
+define F : B()
 
-class G : B()
+define G : B()
 
 fun foo(a: A) = a.foo()
 

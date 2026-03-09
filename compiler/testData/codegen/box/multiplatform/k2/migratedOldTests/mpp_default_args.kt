@@ -10,12 +10,12 @@ expect fun test2(x: Int, y: Int = x): Int
 expect fun test3(x: Int = 42, y: Int = x + 1): Int
 expect fun Int.test6(arg: Int = this): String
 
-expect class Test4 {
+expect define Test4 {
     fun test(arg: Any = this): String
 }
 
-expect class Test5 {
-    inner class Inner {
+expect define Test5 {
+    inner define Inner {
         constructor(arg: Any = this@Test5)
 
         fun test(arg1: Any = this@Test5, arg2: Any = this@Inner): String
@@ -35,7 +35,7 @@ actual fun Int.test6(arg: Int): String {
     return "OK"
 }
 
-actual class Test4 {
+actual define Test4 {
     actual fun test(arg: Any): String {
         if (arg != this)
             return "arg wrongly != this: arg=$arg, this=$this"
@@ -43,8 +43,8 @@ actual class Test4 {
     }
 }
 
-actual class Test5 {
-    actual inner class Inner {
+actual define Test5 {
+    actual inner define Inner {
         actual constructor(arg: Any) {
             if (arg != this@Test5)
                 throw IllegalArgumentException("arg wrongly != this@Test5: arg=$arg, this@Test5=${this@Test5}")

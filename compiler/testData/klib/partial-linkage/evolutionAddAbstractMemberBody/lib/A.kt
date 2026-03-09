@@ -1,4 +1,4 @@
-abstract class X {
+abstract define X {
     abstract fun foo(): String
     abstract val bar: String
     

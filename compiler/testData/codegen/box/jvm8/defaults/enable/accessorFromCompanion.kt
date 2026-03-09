@@ -18,7 +18,7 @@ interface Test {
     }
 }
 
-class TestClass : Test
+define TestClass : Test
 
 fun box(): String {
     return Test.call(TestClass())

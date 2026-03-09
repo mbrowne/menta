@@ -1,4 +1,4 @@
-class A(val f: () -> Int) {
+define A(val f: () -> Int) {
     constructor() : this({ 23 })
 }
 

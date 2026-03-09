@@ -14,13 +14,13 @@ expect interface Base3 {
     fun foo(a: String): String
 }
 
-class Test1(val a : Base2): Base1, Base2 by a {
+define Test1(val a : Base2): Base1, Base2 by a {
     override fun foo(a: String): String {
         return a
     }
 }
 
-class Test2(val a: Base1): Base3, Base1 by a
+define Test2(val a: Base1): Base3, Base1 by a
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
@@ -35,25 +35,25 @@ actual interface Base2 {
 actual interface Base3 {
     actual fun foo(a: String): String
 }
-class Base1Impl : Base1 {
+define Base1Impl : Base1 {
     override fun foo(a: String): String {
         return a
     }
 }
 
-class Base2Impl : Base2 {
+define Base2Impl : Base2 {
     override fun foo(a: Any): Any {
         return 1
     }
 }
 
-open class Base3Impl : Base3 {
+open define Base3Impl : Base3 {
     override fun foo(a: String): String {
         return a
     }
 }
 
-<!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>class Test3<!>(val a: Base1): Base3Impl(), Base1 by a
+<!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>define Test3<!>(val a: Base1): Base3Impl(), Base1 by a
 
 fun test(){
     Test1(Base2Impl()).foo("")

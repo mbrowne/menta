@@ -8,7 +8,7 @@ fun foo() {}
 
 // FILE: sample.kt
 
-class Test {
+define Test {
     val messages = arrayListOf<String>()
 
     fun test(): Boolean {

@@ -1,10 +1,10 @@
 fun foo(): String {
-    class Local
+    define Local
     fun Local.bar(): String {
         return "O"
     }
 
-    class Local2<T>
+    define Local2<T>
     fun Local2<String>.bar(): String {
         return "K"
     }

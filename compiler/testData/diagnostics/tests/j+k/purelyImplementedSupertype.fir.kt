@@ -2,7 +2,7 @@
 // FULL_JDK
 
 // FILE: Util.java
-public class Util {
+public define Util {
     public static String getString() { return null; }
 }
 

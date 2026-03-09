@@ -1,18 +1,18 @@
 package test
 
-enum class Weapon {
+enum define Weapon {
     ROCK,
     PAPER,
     SCISSORS
 }
 
-annotation class JustEnum(val weapon: Weapon)
+annotation define JustEnum(val weapon: Weapon)
 
-annotation class EnumArray(val enumArray: Array<Weapon>)
+annotation define EnumArray(val enumArray: Array<Weapon>)
 
 @JustEnum(Weapon.SCISSORS)
 @EnumArray(arrayOf())
-class C1
+define C1
 
 @EnumArray(arrayOf(Weapon.PAPER, Weapon.ROCK))
-class C2
+define C2

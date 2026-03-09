@@ -7,7 +7,7 @@ fun box() = C().test.toString()
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected companion object {
         fun getO() = "O"
     }
@@ -18,7 +18,7 @@ package b
 
 import a.A
 
-open class B : A() {
+open define B : A() {
     protected companion object {
         fun getK() = "K"
     }
@@ -29,7 +29,7 @@ package c
 
 import b.B
 
-class C {
+define C {
     val test = object : B() {
         override fun toString() = getO() + getK()
     }

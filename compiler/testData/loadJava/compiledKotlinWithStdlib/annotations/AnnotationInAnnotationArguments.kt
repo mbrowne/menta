@@ -1,12 +1,12 @@
 // ALLOW_AST_ACCESS
 package test
 
-enum class E { ENTRY }
+enum define E { ENTRY }
 
-annotation class StringOptions(vararg val option: String)
-annotation class EnumOption(val option: E)
+annotation define StringOptions(vararg val option: String)
+annotation define EnumOption(val option: E)
 
-annotation class OptionGroups(val o1: StringOptions, val o2: EnumOption)
+annotation define OptionGroups(val o1: StringOptions, val o2: EnumOption)
 
 @OptionGroups(StringOptions("abc", "d", "ef"), EnumOption(E.ENTRY))
-public class AnnotationInAnnotationArguments
+public define AnnotationInAnnotationArguments

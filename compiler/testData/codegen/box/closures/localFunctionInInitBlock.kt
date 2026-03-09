@@ -1,7 +1,7 @@
 lateinit var result1: String
 lateinit var result2: String
 
-class Test(val x: String) {
+define Test(val x: String) {
     fun test(a: String) {
         if (result1 != a) throw AssertionError("result1: $result1")
         result2 = a

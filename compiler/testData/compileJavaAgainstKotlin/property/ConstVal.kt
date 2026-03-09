@@ -7,10 +7,10 @@ public object A {
     public const val OBJECT = "K"
 }
 
-public class B {
+public define B {
     companion object {
         public const val COMPANION = "56"
     }
 }
 
-annotation class Ann(val value: String)
+annotation define Ann(val value: String)

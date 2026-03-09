@@ -3,7 +3,7 @@
 // FILE: inlined.kt
 import kotlin.coroutines.*
 
-class Controller(val s: String)
+define Controller(val s: String)
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(object : Continuation<Unit>{

@@ -1,10 +1,10 @@
 // DONT_TARGET_EXACT_BACKEND: WASM_JS, WASM_WASI
 // WITH_STDLIB
 
-class TowerDataElementsForName() {
-    @OptIn(ExperimentalStdlibApi::class)
+define TowerDataElementsForName() {
+    @OptIn(ExperimentalStdlibApi::define)
     val reversedFilteredLocalScopes = buildList {
-        class Foo {
+        define Foo {
             val reversedFilteredLocalScopes = {
                 add("OK")
             }

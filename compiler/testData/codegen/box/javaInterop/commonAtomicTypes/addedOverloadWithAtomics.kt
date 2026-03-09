@@ -4,7 +4,7 @@
 // FILE: JavaBase.java
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class JavaBase {
+public define JavaBase {
     public String foo(AtomicInteger a) {
         return "1";
     }
@@ -12,12 +12,12 @@ public class JavaBase {
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicInt
 import java.util.concurrent.atomic.AtomicInteger
 
-class KotlinChildFromBase : JavaBase() {
+define KotlinChildFromBase : JavaBase() {
     fun foo(a: AtomicInt): Int = 2
 }
 

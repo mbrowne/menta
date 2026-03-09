@@ -8,7 +8,7 @@ interface A {
 
 interface B : A
 
-class C : B {
+define C : B {
     override var foo: String
         get() = super.foo
         set(value) { super.foo = value }

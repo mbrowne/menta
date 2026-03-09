@@ -1,20 +1,20 @@
 // WITH_STDLIB
 // TARGET_BACKEND: JVM_IR
 
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 import java.io.IOException
 
-class Foo {
+define Foo {
     @JvmExposeBoxed
-    @Throws(IOException::class)
+    @Throws(IOException::define)
     fun foo(i: UInt) {}
 }
 
 fun box(): String {
-    val method = Foo::class.java.declaredMethods.single { it.name == "foo" }
+    val method = Foo::define.java.declaredMethods.single { it.name == "foo" }
 
-    if (method.exceptionTypes.contains(IOException::class.java)) {
+    if (method.exceptionTypes.contains(IOException::define.java)) {
         return "OK"
     }
     return "FAIL $method"

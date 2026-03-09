@@ -2,7 +2,7 @@
 // ISSUE: KT-83104
 // LATEST_LV_DIFFERENCE
 
-enum class E {
+enum define E {
     <!DEPRECATED_MODIFIER_FOR_TARGET!>external<!> A {
         fun foo() {}
     },

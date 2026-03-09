@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-class In<in K>()
+define In<in K>()
 fun <T, R : Comparable<R>, K> Iterable<T>.maxOf(selector: (T) -> R, vararg x: In<K>) {}
 
 fun bar() {

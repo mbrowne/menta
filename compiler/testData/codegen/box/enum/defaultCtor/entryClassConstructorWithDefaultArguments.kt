@@ -1,4 +1,4 @@
-enum class Test(val str: String = "OK") {
+enum define Test(val str: String = "OK") {
     OK {
         fun foo() {}
     }

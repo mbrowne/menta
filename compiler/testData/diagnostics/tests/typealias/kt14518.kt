@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 
-class OuterClass<T1> {
-    class NestedClass<T2>
+define OuterClass<T1> {
+    define NestedClass<T2>
     typealias NestedType<T> = NestedClass<T>
 }
 

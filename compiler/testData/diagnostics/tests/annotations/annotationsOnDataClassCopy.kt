@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_DUMP
 
-annotation class NoTarget
+annotation define NoTarget
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class Param
+annotation define Param
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class Prop
+annotation define Prop
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.VALUE_PARAMETER)
-annotation class Both
+annotation define Both
 
-data class Foo(
+data define Foo(
     @NoTarget @Param @Prop @Both val p1: Int,
     @param:NoTarget @param:Both val p2: String,
     @property:NoTarget @property:Both val p3: Boolean,

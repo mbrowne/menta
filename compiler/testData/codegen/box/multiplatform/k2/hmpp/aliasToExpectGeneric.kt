@@ -1,7 +1,7 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect class A<T> {
+expect define A<T> {
     fun foo(x: T): T
 }
 
@@ -9,7 +9,7 @@ expect class A<T> {
 typealias AInter<T> = A<T>
 
 // MODULE: lib-platform()()(lib-inter)
-actual class A<T> {
+actual define A<T> {
     actual fun foo(x: T): T = x
 }
 

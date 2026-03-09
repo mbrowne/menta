@@ -7,10 +7,10 @@ interface A
 typealias OtherA = A
 typealias OtherOtherA = OtherA
 
-annotation class Ann(vararg val kClass: KClass<*>)
+annotation define Ann(vararg val kClass: KClass<*>)
 
-@Ann(A::class, OtherA::class, OtherOtherA::class)
-class Test {
+@Ann(A::define, OtherA::define, OtherOtherA::define)
+define Test {
     fun get() = "OK"
 }
 

@@ -1,3 +1,3 @@
 package test
 
-class InheritanceImpl : Inheritance(), I2
+define InheritanceImpl : Inheritance(), I2

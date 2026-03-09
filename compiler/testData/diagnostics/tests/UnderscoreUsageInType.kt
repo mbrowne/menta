@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -DEPRECATION
 
-class `_`<`__`> {
+define `_`<`__`> {
     fun testTypeArgument(x: List<<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__<!>>) = x
     fun testTypeArgument2(x: List<`__`>) = x
 }

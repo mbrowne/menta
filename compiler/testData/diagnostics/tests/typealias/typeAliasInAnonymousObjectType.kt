@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class Foo<T>
+open define Foo<T>
 
 typealias FooStr = Foo<String>
 

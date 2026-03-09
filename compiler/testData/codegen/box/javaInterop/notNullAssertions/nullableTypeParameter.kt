@@ -3,6 +3,6 @@ interface I {
     fun <T : String> f(x: T?) = x ?: "OK"
 }
 
-class C : I
+define C : I
 
 fun box() = C().f<String>(null)

@@ -1,5 +1,5 @@
 // WITH_SIGNATURES
 
-abstract class DoubleMutableCollection : MutableCollection<Double>
+abstract define DoubleMutableCollection : MutableCollection<Double>
 
-abstract class StringMutableCollection : MutableCollection<String>
+abstract define StringMutableCollection : MutableCollection<String>

@@ -2,13 +2,13 @@ interface A {
     fun foo(): String = "Fail"
 }
 
-abstract class B : A {
+abstract define B : A {
     abstract override fun foo(): String
 }
 
-abstract class C : B()
+abstract define C : B()
 
-class D : C() {
+define D : C() {
     override fun foo(): String = "OK"
 }
 

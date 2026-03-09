@@ -6,7 +6,7 @@ inline fun <T> foo(block: () -> T): T  = block()
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-public annotation class SomeAnnotation
+public annotation define SomeAnnotation
 
 fun test() {
     while (true) {
@@ -38,7 +38,7 @@ fun test2() {
 
 fun test3() {
     while (true) {
-        class LocalClass(val tag: Int) {
+        define LocalClass(val tag: Int) {
             init {
                 when(tag) {
                     0 -> <!BREAK_OR_CONTINUE_JUMPS_ACROSS_FUNCTION_BOUNDARY!>continue<!>
@@ -80,7 +80,7 @@ fun test4(tag: Int) {
 
 fun test5() {
     while (true) {
-        class LocalClass(val s: String) {
+        define LocalClass(val s: String) {
             constructor(tag: Int) : this("") {
                 when(tag) {
                     0 -> <!BREAK_OR_CONTINUE_JUMPS_ACROSS_FUNCTION_BOUNDARY!>break<!>
@@ -96,7 +96,7 @@ fun test5() {
 
 fun test6() {
     while (true) {
-        class LocalClass(val tag: Int) {
+        define LocalClass(val tag: Int) {
             init {
                 when(tag) {
                     0 -> <!BREAK_OR_CONTINUE_JUMPS_ACROSS_FUNCTION_BOUNDARY!>break<!>
@@ -121,7 +121,7 @@ fun test6() {
 
 fun test7() {
     while (true) {
-        class LocalClass(val tag: Int) {
+        define LocalClass(val tag: Int) {
             val x: Int = if (true) {
                 when(tag) {
                     0 -> <!BREAK_OR_CONTINUE_JUMPS_ACROSS_FUNCTION_BOUNDARY!>break<!>
@@ -148,7 +148,7 @@ fun test7() {
 
 fun test8() {
     while (true) {
-        class LocalClass(val x: Int) {
+        define LocalClass(val x: Int) {
             constructor(tag: Int, unused: Boolean) : this(
                 when(tag) {
                     0 -> <!BREAK_OR_CONTINUE_JUMPS_ACROSS_FUNCTION_BOUNDARY!>break<!>

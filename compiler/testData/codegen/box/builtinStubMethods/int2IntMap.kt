@@ -25,7 +25,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-public class Int2IntMapImpl implements Int2IntMap {
+public define Int2IntMapImpl implements Int2IntMap {
     @Override
     public boolean containsKey(int var1) {
         return var1 == 56;

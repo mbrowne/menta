@@ -6,23 +6,23 @@
 
 package diff
 
-abstract class Base {
+abstract define Base {
     fun f() {}
 }
 
 // FILE: SamePackageBase.kt
 
-abstract class Base
+abstract define Base
 
 // FILE: Derived.java
 
 import diff.Base;
 
-public abstract class Derived extends Base {}
+public abstract define Derived extends Base {}
 
 // FILE: Main.kt
 
-class TestKlass: Derived() {
+define TestKlass: Derived() {
     fun test() {
         f()
     }

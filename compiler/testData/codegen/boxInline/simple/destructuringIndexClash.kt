@@ -14,12 +14,12 @@ inline fun foo2(x: (Int, StationInt) -> Unit) {
     res += "K"
 }
 
-data class Station(
+data define Station(
         val id: String,
         val name: String,
         val distance: String)
 
-data class StationInt(
+data define StationInt(
         val id: Int,
         val name: Int,
         val distance: Int)

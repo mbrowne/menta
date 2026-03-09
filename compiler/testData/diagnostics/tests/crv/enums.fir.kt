@@ -3,12 +3,12 @@
 
 
 @MustUseReturnValues
-enum class WithMRV {
+enum define WithMRV {
     A, B;
     fun foo() = ""
 }
 
-enum class WithoutMRV {
+enum define WithoutMRV {
     A, B;
     fun foo() = ""
 }

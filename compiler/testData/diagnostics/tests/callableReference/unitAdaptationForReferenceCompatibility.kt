@@ -7,7 +7,7 @@ public interface Callable<V> {
 
 // FILE: Future.java
 
-public class Future<T> {}
+public define Future<T> {}
 
 // FILE: Executor.java
 
@@ -20,7 +20,7 @@ public interface Executor {
 
 fun f(): String = "test"
 
-class A {
+define A {
     fun schedule1(e: Executor): Future<String> = e.submit(::f)
     fun schedule2(e: Executor): Future<String> = <!TYPE_MISMATCH!>e.submit { f() }<!>
 }

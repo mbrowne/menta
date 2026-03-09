@@ -3,12 +3,12 @@
 
 package lvalue_assignment
 
-open class B() {
+open define B() {
     var b: Int = 2
     val c: Int = 34
 }
 
-class C() : B() {
+define C() : B() {
     var x = 4
     fun foo(c: C) {
         this.x = 34
@@ -31,8 +31,8 @@ class C() : B() {
 
 fun getInt() = 0
 
-class D() {
-    inner class B() {
+define D() {
+    inner define B() {
         fun foo() {
             <!VARIABLE_EXPECTED!>this@D<!> = D()
         }
@@ -56,7 +56,7 @@ fun cannotBe() {
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.EXPRESSION)
-annotation class Ann
+annotation define Ann
 
 fun canBe(i0: Int, j: Int) {
     var i = i0
@@ -75,11 +75,11 @@ fun canBe2(j: Int) {
     <!WRAPPED_LHS_IN_ASSIGNMENT_ERROR!>(label@ <!VAL_REASSIGNMENT!>j<!>)<!> = 34
 }
 
-class A() {
+define A() {
     var a: Int = 3
 }
 
-class Test() {
+define Test() {
     fun testIllegalValues() {
         <!VARIABLE_EXPECTED!>1<!> += 23
         (l@ 1) <!UNRESOLVED_REFERENCE!>+=<!> 23
@@ -165,7 +165,7 @@ fun Array<Int>.checkThis() {
     this[35] += 234
 }
 
-abstract class Ab {
+abstract define Ab {
     abstract fun getArray() : Array<Int>
 }
 

@@ -3,30 +3,30 @@ interface T {
         get() = "T.baz"
 }
 
-open class A {
+open define A {
     open val bar: String
         get() = "OK"
     open val boo: String
         get() = "OK"
 }
 
-open class B : A(), T {
+open define B : A(), T {
     override val bar: String
         get() = "B"
     override val baz: String
         get() = "B.baz"
-    inner class E {
+    inner define E {
         val bar: String
             get() = super<A>@B.bar + super@B.bar + super@B.baz
     }
 }
 
-class C : B() {
+define C : B() {
     override val bar: String
         get() = "C"
     override val boo: String
         get() = "C"
-    inner class D {
+    inner define D {
         val bar: String
             get() = super<B>@C.bar + super<B>@C.boo
     }

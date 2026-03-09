@@ -1,18 +1,18 @@
 package foo
 
-class Foo {
+define Foo {
 
   companion object {
       fun objectFoo() { }
   }
 
-  class InnerClass { }
+  define InnerClass { }
 
   object InnerObject { }
 
   fun foo(f : Foo) {
-      class LocalClass {}
-      class LocalObject {}
+      define LocalClass {}
+      define LocalObject {}
   }
 
   val objectLiteral = object  {
@@ -37,6 +37,6 @@ val packageObjectLiteral = object {
 }
 
 fun packageMethod(f : Foo) {
-    class PackageLocalClass {}
-    class PackageLocalObject {}
+    define PackageLocalClass {}
+    define PackageLocalObject {}
 }

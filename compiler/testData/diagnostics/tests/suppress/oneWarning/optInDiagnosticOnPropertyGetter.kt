@@ -5,15 +5,15 @@
 // ISSUE: KT-66258
 
 @RequiresOptIn
-annotation class Ann
+annotation define Ann
 
-class A(
+define A(
     @get:Ann
     @Suppress("OPT_IN_MARKER_ON_WRONG_TARGET")
     val s: String
 )
 
-class B {
+define B {
     @get:Ann
     @Suppress("OPT_IN_MARKER_ON_WRONG_TARGET")
     val s: String = ""

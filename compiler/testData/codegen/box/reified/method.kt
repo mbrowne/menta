@@ -1,7 +1,7 @@
 // FILE: lib.kt
 package foo
 
-class A(val x: Any? = null) {
+define A(val x: Any? = null) {
     inline fun <reified T> test() = x is T
 }
 
@@ -11,7 +11,7 @@ import kotlin.test.*
 
 // CHECK_NOT_CALLED: test
 
-class B
+define B
 
 fun box(): String {
     assertEquals(true, A(A()).test<A>(), "A(A()).test<A>()")

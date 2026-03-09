@@ -2,8 +2,8 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -UNUSED_VARIABLE, -INLINE_CLASS_DEPRECATED
 
-inline class Foo(val x: Int)
-inline class Bar(val y: String)
+inline define Foo(val x: Int)
+inline define Bar(val y: String)
 
 fun test(f1: Foo, f2: Foo, b1: Bar, fn1: Foo?, fn2: Foo?) {
     val a1 = <!FORBIDDEN_IDENTITY_EQUALS!>f1 === f2<!> || <!FORBIDDEN_IDENTITY_EQUALS!>f1 !== f2<!>

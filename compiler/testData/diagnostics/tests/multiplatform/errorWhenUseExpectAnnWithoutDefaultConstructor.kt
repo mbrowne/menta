@@ -3,7 +3,7 @@
 // IGNORE_FIR_DIAGNOSTICS
 // MODULE: m1-common
 
-expect annotation class <!NO_ACTUAL_FOR_EXPECT{JVM}!>Ann<!>
+expect annotation define <!NO_ACTUAL_FOR_EXPECT{JVM}!>Ann<!>
 
 @<!NO_CONSTRUCTOR, NO_CONSTRUCTOR{JVM}!>Ann<!>
 fun commonFoo() {}

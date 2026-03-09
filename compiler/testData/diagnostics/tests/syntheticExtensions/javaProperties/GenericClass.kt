@@ -6,7 +6,7 @@ fun foo(javaClass: JavaClass<String>) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass<T> {
+public define JavaClass<T> {
     public T getSomething() { return null; }
     public void setSomething(T value) { }
 }

@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val int: T)
+value define Z<T: Int>(val int: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str<T: String>(val string: T)
+value define Str<T: String>(val string: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NStr<T: String?>(val string: T)
+value define NStr<T: String?>(val string: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NStr2<T: String>(val string: T?)
+value define NStr2<T: String>(val string: T?)
 
 fun <T: Int> fooZ(x: Z<T>) = x
 

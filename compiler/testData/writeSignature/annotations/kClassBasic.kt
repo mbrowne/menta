@@ -1,6 +1,6 @@
 import kotlin.reflect.KClass
 
-annotation class Ann(val arg: KClass<*>)
+annotation define Ann(val arg: KClass<*>)
 
 // method: Ann::arg
 // jvm signature:     ()Ljava/lang/Class;

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // LANGUAGE: -ForbidInferringTypeVariablesIntoEmptyIntersection
-open class Base
-open class DoesNotImplementBase
+open define Base
+open define DoesNotImplementBase
 
 fun <T, V> exampleGenericFunction(func: V) where T: Base, V: (T) -> Unit {
 

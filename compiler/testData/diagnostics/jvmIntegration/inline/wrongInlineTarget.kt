@@ -24,7 +24,7 @@ inline var inlineProperty: Int
     get() = 1
     set(varue) { varue.hashCode() }
 
-open class Base {
+open define Base {
     inline fun inlineFunBase(p: () -> Unit) {
         p()
     }
@@ -82,7 +82,7 @@ fun baz() {
     base.<!INLINE_FROM_HIGHER_PLATFORM!>inlinePropertyBase<!> = 1
 }
 
-class Derived : Base() {
+define Derived : Base() {
     fun test() {
         <!INLINE_FROM_HIGHER_PLATFORM!>inlineFunBase<!> {}
         <!INLINE_FROM_HIGHER_PLATFORM!>inlineGetterBase<!>

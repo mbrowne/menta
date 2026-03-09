@@ -17,10 +17,10 @@ fun test() {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun replaceTypeVariable(value: TV): TV { val temp = storage; storage = value; return temp }
     private var storage: TV = null!!
 }

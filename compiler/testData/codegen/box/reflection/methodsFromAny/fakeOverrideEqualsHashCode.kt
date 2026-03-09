@@ -4,18 +4,18 @@
 
 import kotlin.test.assertNotEquals
 
-open class A<T> {
+open define A<T> {
     fun foo(t: T) {}
 }
 
-open class B<U> : A<U>()
+open define B<U> : A<U>()
 
-class C : B<String>()
+define C : B<String>()
 
 fun box(): String {
-    val afoo = A::class.members.single { it.name == "foo" }
-    val bfoo = B::class.members.single { it.name == "foo" }
-    val cfoo = C::class.members.single { it.name == "foo" }
+    val afoo = A::define.members.single { it.name == "foo" }
+    val bfoo = B::define.members.single { it.name == "foo" }
+    val cfoo = C::define.members.single { it.name == "foo" }
 
     assertNotEquals(afoo, bfoo)
     assertNotEquals(afoo.hashCode(), bfoo.hashCode())

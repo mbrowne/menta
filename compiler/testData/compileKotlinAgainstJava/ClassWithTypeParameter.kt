@@ -5,11 +5,11 @@ package test
 
 interface KotlinInterface
 
-class Impl1 : KotlinInterface
+define Impl1 : KotlinInterface
 
-class Impl2 : KotlinInterface
+define Impl2 : KotlinInterface
 
-class Impl3 : KotlinInterface
+define Impl3 : KotlinInterface
 
 fun getProducer1() = Impl1().let(::ClassWithTypeParameter)
 

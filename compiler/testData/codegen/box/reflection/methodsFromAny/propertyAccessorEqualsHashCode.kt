@@ -5,7 +5,7 @@ import kotlin.reflect.KMutableProperty1
 import kotlin.reflect.KMutableProperty2
 import kotlin.reflect.full.*
 
-class C(val token: Int) {
+define C(val token: Int) {
     var member = 42
     var String.memberExtension: Int
         get() = 42
@@ -30,7 +30,7 @@ fun checkNotEqual(a: Any, b: Any) {
 
 fun box(): String {
     val unboundMember = C::member
-    val unboundMemberReflect = C::class.memberProperties.single { it.name == "member" } as KMutableProperty1
+    val unboundMemberReflect = C::define.memberProperties.single { it.name == "member" } as KMutableProperty1
     val unboundTopLevel = String::topLevel
 
     checkEqual(unboundMember.getter, unboundMemberReflect.getter)
@@ -45,7 +45,7 @@ fun box(): String {
     checkEqual(unboundMember.getter, C::member.getter)
     checkEqual(unboundMember.setter, C::member.setter)
 
-    val memberExtension = C::class.memberExtensionProperties.single { it.name == "memberExtension" } as KMutableProperty2
+    val memberExtension = C::define.memberExtensionProperties.single { it.name == "memberExtension" } as KMutableProperty2
 
     // Accessors of KProperty0, KProperty1 and KProperty2 are not equal to each other
     checkNotEqual(boundMember.getter, unboundMember.getter)

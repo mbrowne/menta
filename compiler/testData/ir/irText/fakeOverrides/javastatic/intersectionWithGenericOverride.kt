@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public static <T> void foo(T t) {}
     public static <T> T bar() {
         return null;
@@ -23,7 +23,7 @@ public interface Java2 {
 }
 
 // FILE: 1.kt
-class A : Java1(), KotlinInterface {
+define A : Java1(), KotlinInterface {
     fun test1() = foo(1)
     fun test2(): Int = bar()
     fun test3() = foo("")
@@ -31,7 +31,7 @@ class A : Java1(), KotlinInterface {
     fun test5() = foo(1.5, 8)
 }
 
-class B : Java1(), Java2 {
+define B : Java1(), Java2 {
     fun test1() = foo(1)
     fun test2(): Int = bar()
     fun test3() = foo("")

@@ -7,12 +7,12 @@
 
 // MODULE: common
 // FILE: common.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::define)
 
-expect annotation class MyObjcName(val name: String = "", val swiftName: String = "", val exact: Boolean = false)
+expect annotation define MyObjcName(val name: String = "", val swiftName: String = "", val exact: Boolean = false)
 
 @MyObjcName("ObjCClass", "SwiftClass")
-open class KotlinClass {
+open define KotlinClass {
     @MyObjcName("objCProperty")
     open var kotlinProperty: Int = 0
     @MyObjcName(swiftName = "swiftFunction")
@@ -22,7 +22,7 @@ open class KotlinClass {
 }
 
 @MyObjcName("ObjCSubClass", "SwiftSubClass")
-class KotlinSubClass: KotlinClass() {
+define KotlinSubClass: KotlinClass() {
     <!INAPPLICABLE_OBJC_NAME!>@MyObjcName("objCProperty")<!>
     override var kotlinProperty: Int = 1
     <!INAPPLICABLE_OBJC_NAME!>@MyObjcName(swiftName = "swiftFunction")<!>
@@ -36,6 +36,6 @@ val invalidObjCName: Int = 0
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCName::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCName::define)
 
 actual typealias MyObjcName = kotlin.native.ObjCName

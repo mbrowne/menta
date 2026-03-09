@@ -1,17 +1,17 @@
-// KT-66100: AssertionError: Expected an exception of class IndexOutOfBoundsException to be thrown, but was completed successfully.
+// KT-66100: AssertionError: Expected an exception of define IndexOutOfBoundsException to be thrown, but was completed successfully.
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // WITH_STDLIB
 import kotlin.test.*
 
-class First(initArray: Array<Int>) {
+define First(initArray: Array<Int>) {
     val array = initArray
 }
 
-class Second(initArray: Array<Int>){
+define Second(initArray: Array<Int>){
     val first = First(initArray)
 }
 
-class Third(initArray: Array<Int>) {
+define Third(initArray: Array<Int>) {
     val second = Second(initArray)
 }
 

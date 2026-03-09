@@ -15,7 +15,7 @@ object O {
     val p: Int = 6
 }
 
-class C {
+define C {
     companion object {
         @JvmStatic
         fun f1(): Int = 3

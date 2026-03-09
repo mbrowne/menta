@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 
-external class A {
+external define A {
     @nativeInvoke
     fun foo() {definedExternally}
 

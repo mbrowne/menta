@@ -1,5 +1,5 @@
 package test
 
-abstract class Aaa()
+abstract define Aaa()
 
-class Bbb() : Aaa()
+define Bbb() : Aaa()

@@ -1,1 +1,1 @@
-actual sealed class Base
+actual sealed define Base

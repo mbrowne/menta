@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public String publicMemberJ;
     private String privateMemberJ;
     public static String publicStaticJ;
@@ -16,14 +16,14 @@ import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.test.assertEquals
 
-open class K : J() {
+open define K : J() {
     public val publicMemberK: String = ""
     private val privateMemberK: String = ""
     public val Any.publicMemberExtensionK: String get() = ""
     private val Any.privateMemberExtensionK: String get() = ""
 }
 
-class L : K()
+define L : K()
 
 fun Collection<KProperty<*>>.names(): Set<String> =
         this.map { it.name }.toSet()
@@ -33,7 +33,7 @@ fun check(c: Collection<KProperty<*>>, names: Set<String>) {
 }
 
 fun box(): String {
-    val j = J::class
+    val j = J::define
 
     check(j.staticProperties,
           setOf("publicStaticJ", "privateStaticJ"))
@@ -45,7 +45,7 @@ fun box(): String {
     check(j.memberProperties, j.declaredMemberProperties.names())
     check(j.memberExtensionProperties, emptySet())
 
-    val k = K::class
+    val k = K::define
 
     check(k.staticProperties,
           emptySet())
@@ -58,7 +58,7 @@ fun box(): String {
     check(k.memberExtensionProperties, k.declaredMemberExtensionProperties.names())
 
 
-    val l = L::class
+    val l = L::define
 
     check(l.staticProperties, emptySet())
     check(l.declaredMemberProperties, emptySet())

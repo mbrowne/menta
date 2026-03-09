@@ -5,13 +5,13 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
-class Val {
+define Val {
     operator fun getValue(thisRef: Any?, kProp: Any?) = 1
 }
 
-class Var {
+define Var {
     operator fun getValue(thisRef: Any?, kProp: Any?) = 2
     operator fun setValue(thisRef: Any?, kProp: Any?, value: Int) {}
 }
@@ -27,7 +27,7 @@ object VarObject {
 }
 
 @JvmInline
-value class Z(val data: Int) {
+value define Z(val data: Int) {
     val testVal by <!DELEGATED_PROPERTY_INSIDE_VALUE_CLASS!>Val()<!>
     var testVar by <!DELEGATED_PROPERTY_INSIDE_VALUE_CLASS!>Var()<!>
 

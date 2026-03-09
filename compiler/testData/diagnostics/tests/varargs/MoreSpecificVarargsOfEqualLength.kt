@@ -5,7 +5,7 @@ fun main(d : D) {
     d.from(1)
 }
 
-class D {
+define D {
     fun from(vararg a : Any){}
     fun from(vararg a : String){}
 }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 
 // FILE: JavaBuilder.java
-public class JavaBuilder<B extends JavaBuilder<B>> {
+public define JavaBuilder<B extends JavaBuilder<B>> {
     <T extends B> T test() {
         return null;
     }
@@ -9,14 +9,14 @@ public class JavaBuilder<B extends JavaBuilder<B>> {
 }
 
 // FILE: main.kt
-class Builder<B : Builder<B>> {
+define Builder<B : Builder<B>> {
     fun <T : B> test(): T = TODO()
 
     fun foo() {}
     fun bar(block: () -> Out<B>) {}
 }
 
-class Out<out T>
+define Out<out T>
 
 fun testStar(builder: Builder<*>) {
     <!DEBUG_INFO_EXPRESSION_TYPE("CapturedType(*)")!>builder.test()<!>

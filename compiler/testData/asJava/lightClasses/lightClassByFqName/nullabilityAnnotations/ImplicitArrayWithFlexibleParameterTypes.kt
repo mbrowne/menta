@@ -10,7 +10,7 @@ fun getArrayOfFlexibleInts() /* : Array<Int!> */ = arrayOf(JavaClass.getJavaInt(
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static Integer getJavaInt() {
         return 10;
     }

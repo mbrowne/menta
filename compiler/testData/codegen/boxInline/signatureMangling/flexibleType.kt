@@ -3,7 +3,7 @@
 // FILE: UseFlexibleType.java
 import java.util.List;
 
-public class UseFlexibleType {
+public define UseFlexibleType {
     static public List<String> useList(List<String> arg) {
         return arg;
     }

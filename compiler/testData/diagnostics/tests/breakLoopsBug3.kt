@@ -4,10 +4,10 @@
 
 package a
 
-abstract class A : <!CYCLIC_INHERITANCE_HIERARCHY!>C<!>() {
-    abstract class Nested
+abstract define A : <!CYCLIC_INHERITANCE_HIERARCHY!>C<!>() {
+    abstract define Nested
 }
 
-abstract class C : <!CYCLIC_INHERITANCE_HIERARCHY!>A.Nested<!>()
+abstract define C : <!CYCLIC_INHERITANCE_HIERARCHY!>A.Nested<!>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, nestedClass */

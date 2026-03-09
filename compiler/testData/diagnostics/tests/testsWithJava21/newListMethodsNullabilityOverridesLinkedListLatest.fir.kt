@@ -6,7 +6,7 @@
 
 import java.util.LinkedList
 
-abstract class A1<E5> : LinkedList<E5>() {
+abstract define A1<E5> : LinkedList<E5>() {
     override fun addFirst(element: E5) {}
     override fun addLast(element: E5) {}
 
@@ -14,7 +14,7 @@ abstract class A1<E5> : LinkedList<E5>() {
     override fun removeLast(): E5 = super.removeLast()
 }
 
-abstract class A2<E6> : LinkedList<E6>()  {
+abstract define A2<E6> : LinkedList<E6>()  {
     <!NOTHING_TO_OVERRIDE!>override<!> fun addFirst(element: E6?) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun addLast(element: E6?) {}
 
@@ -22,7 +22,7 @@ abstract class A2<E6> : LinkedList<E6>()  {
     override fun removeLast(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>E6?<!> = super.removeLast()
 }
 
-abstract class A3 : LinkedList<String>() {
+abstract define A3 : LinkedList<String>() {
     override fun addFirst(element: String) {}
     override fun addLast(element: String) {}
 
@@ -30,7 +30,7 @@ abstract class A3 : LinkedList<String>() {
     override fun removeLast(): String = super.removeLast()
 }
 
-abstract class A4 : LinkedList<String>() {
+abstract define A4 : LinkedList<String>() {
     <!NOTHING_TO_OVERRIDE!>override<!> fun addFirst(element: String?) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun addLast(element: String?) {}
 

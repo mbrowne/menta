@@ -3,55 +3,49 @@ KtFile: DocCommentsBinding.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  KDoc
-    PsiElement(KDOC_START)('/**')
-    PsiWhiteSpace('\n ')
-    KDOC_SECTION
-      PsiElement(KDOC_LEADING_ASTERISK)('*')
-      PsiElement(KDOC_TEXT)(' Doc comment for A')
-    PsiWhiteSpace('\n ')
-    PsiElement(KDOC_END)('*/')
-  PsiWhiteSpace('\n')
-  PsiComment(EOL_COMMENT)('// some comment')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    KDoc
+      PsiElement(KDOC_START)('/**')
+      PsiWhiteSpace('\n ')
+      KDOC_SECTION
+        PsiElement(KDOC_LEADING_ASTERISK)('*')
+        PsiElement(KDOC_TEXT)(' Doc comment for A')
+      PsiWhiteSpace('\n ')
+      PsiElement(KDOC_END)('*/')
+    PsiWhiteSpace('\n')
+    PsiComment(EOL_COMMENT)('// some comment')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  DESTRUCTURING_DECLARATION
-    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
-      PsiElement(LPAR)('(')
-      PsiWhiteSpace('\n        ')
-      KDoc
-        PsiElement(KDOC_START)('/**')
-        PsiWhiteSpace('\n         ')
-        KDOC_SECTION
-          PsiElement(KDOC_LEADING_ASTERISK)('*')
-          PsiElement(KDOC_TEXT)(' Doc comment for val-parameter')
-        PsiWhiteSpace('\n         ')
-        PsiElement(KDOC_END)('*/')
-      PsiWhiteSpace('\n        ')
-      PsiComment(BLOCK_COMMENT)('/*var*/')
-      DESTRUCTURING_DECLARATION_ENTRY
-        PsiElement(val)('val')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('p')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n')
-      PsiElement(RPAR)(')')
-    PsiErrorElement:Property getter or setter expected
-      <empty list>
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PRIMARY_CONSTRUCTOR
+      VALUE_PARAMETER_LIST
+        PsiElement(LPAR)('(')
+        PsiWhiteSpace('\n        ')
+        VALUE_PARAMETER
+          KDoc
+            PsiElement(KDOC_START)('/**')
+            PsiWhiteSpace('\n         ')
+            KDOC_SECTION
+              PsiElement(KDOC_LEADING_ASTERISK)('*')
+              PsiElement(KDOC_TEXT)(' Doc comment for val-parameter')
+            PsiWhiteSpace('\n         ')
+            PsiElement(KDOC_END)('*/')
+          PsiWhiteSpace('\n        ')
+          PsiComment(BLOCK_COMMENT)('/*var*/')
+          PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('p')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Int')
+        PsiWhiteSpace('\n')
+        PsiElement(RPAR)(')')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -96,19 +90,18 @@ KtFile: DocCommentsBinding.kt
               PsiWhiteSpace(' ')
               PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n        ')
-          KDoc
-            PsiElement(KDOC_START)('/**')
-            PsiWhiteSpace('\n         ')
-            KDOC_SECTION
-              PsiElement(KDOC_LEADING_ASTERISK)('*')
-              PsiElement(KDOC_TEXT)(' Doc comment for local class')
-            PsiWhiteSpace('\n         ')
-            PsiElement(KDOC_END)('*/')
-          PsiWhiteSpace('\n        ')
-          PsiErrorElement:Expecting an element
-            PsiElement(class)('class')
-          PsiWhiteSpace(' ')
-          REFERENCE_EXPRESSION
+          CLASS
+            KDoc
+              PsiElement(KDOC_START)('/**')
+              PsiWhiteSpace('\n         ')
+              KDOC_SECTION
+                PsiElement(KDOC_LEADING_ASTERISK)('*')
+                PsiElement(KDOC_TEXT)(' Doc comment for local class')
+              PsiWhiteSpace('\n         ')
+              PsiElement(KDOC_END)('*/')
+            PsiWhiteSpace('\n        ')
+            PsiElement(define)('define')
+            PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('LocalClass')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
@@ -132,72 +125,59 @@ KtFile: DocCommentsBinding.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n      ')
-      KDoc
-        PsiElement(KDOC_START)('/**')
-        KDOC_SECTION
-          PsiElement(KDOC_TEXT)(' Doc comment for getter ')
-        PsiElement(KDOC_END)('*/')
-      PsiWhiteSpace('\n      ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n      ')
+        PROPERTY_ACCESSOR
+          KDoc
+            PsiElement(KDOC_START)('/**')
+            KDOC_SECTION
+              PsiElement(KDOC_TEXT)(' Doc comment for getter ')
+            PsiElement(KDOC_END)('*/')
+          PsiWhiteSpace('\n      ')
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        INTEGER_CONSTANT
-          PsiElement(INTEGER_LITERAL)('1')
-      PsiWhiteSpace('\n      ')
-      KDoc
-        PsiElement(KDOC_START)('/**')
-        KDOC_SECTION
-          PsiElement(KDOC_TEXT)(' Doc comment for setter ')
-        PsiElement(KDOC_END)('*/')
-      PsiWhiteSpace('\n      ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            REFERENCE_EXPRESSION
+          PsiWhiteSpace(' ')
+          INTEGER_CONSTANT
+            PsiElement(INTEGER_LITERAL)('1')
+        PsiWhiteSpace('\n      ')
+        PROPERTY_ACCESSOR
+          KDoc
+            PsiElement(KDOC_START)('/**')
+            KDOC_SECTION
+              PsiElement(KDOC_TEXT)(' Doc comment for setter ')
+            PsiElement(KDOC_END)('*/')
+          PsiWhiteSpace('\n      ')
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
               PsiElement(IDENTIFIER)('value')
-          PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              BLOCK
-                <empty list>
-              PsiElement(RBRACE)('}')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          BLOCK
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  KDoc
-    PsiElement(KDOC_START)('/**')
-    PsiWhiteSpace('\n ')
-    KDOC_SECTION
-      PsiElement(KDOC_LEADING_ASTERISK)('*')
-      PsiElement(KDOC_TEXT)(' Doc comment for B')
-    PsiWhiteSpace('\n ')
-    PsiElement(KDOC_END)('*/')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    KDoc
+      PsiElement(KDOC_START)('/**')
+      PsiWhiteSpace('\n ')
+      KDOC_SECTION
+        PsiElement(KDOC_LEADING_ASTERISK)('*')
+        PsiElement(KDOC_TEXT)(' Doc comment for B')
+      PsiWhiteSpace('\n ')
+      PsiElement(KDOC_END)('*/')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n\n')
       PsiElement(RBRACE)('}')

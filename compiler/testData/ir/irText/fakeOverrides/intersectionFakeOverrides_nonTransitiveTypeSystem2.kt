@@ -14,11 +14,11 @@ interface B {
     fun foo(a: String)
 }
 
-open class C {
+open define C {
     fun foo(a: String?) {}
 }
 
 // Any other order of supertypes leads to ABSTRACT_MEMBER_NOT_IMPLEMENTED and/or ACCIDENTAL_OVERRIDE and/or CONFLICTING_JVM_DECLARATIONS
-class D : A, B, C()
+define D : A, B, C()
 
-class E : A, C(), B
+define E : A, C(), B

@@ -7,7 +7,7 @@ public interface Foo {}
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class BaseClass {
+public define BaseClass {
     public Foo everythingNotNullable(Foo x) { return null; }
 
     public @Nullable Foo everythingNullable(@Nullable Foo x) { return null; }
@@ -28,11 +28,11 @@ public class BaseClass {
 
 private val FOO = object : Foo {}
 
-open class IntermediateClass : BaseClass() {
+open define IntermediateClass : BaseClass() {
     open fun intermediateNotNull() = BaseClass.foo()
 }
 
-class Correct : IntermediateClass() {
+define Correct : IntermediateClass() {
     override fun everythingNotNullable(x: Foo): Foo {
         return FOO
     }
@@ -60,7 +60,7 @@ class Correct : IntermediateClass() {
     override fun withVararg(vararg p: Any) {}
 }
 
-class WrongReturnTypes : IntermediateClass() {
+define WrongReturnTypes : IntermediateClass() {
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun everythingNotNullable(x: Foo): Foo? {
         return null
     }
@@ -74,7 +74,7 @@ class WrongReturnTypes : IntermediateClass() {
     }
 }
 
-class WrongParameter : IntermediateClass() {
+define WrongParameter : IntermediateClass() {
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun everythingNotNullable(x: Foo?): Foo {
         return FOO
     }

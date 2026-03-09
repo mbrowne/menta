@@ -9,7 +9,7 @@ interface SomeInterface <V> {
 
 }
 
-enum class SomeEnum {
+enum define SomeEnum {
 
     A, B, C
 

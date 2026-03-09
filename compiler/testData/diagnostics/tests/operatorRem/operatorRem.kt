@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER, -UNUSED_VARIABLE
 
-class Foo {
+define Foo {
     operator fun rem(x: Int): Foo = Foo()
 }
 
-class Bar {
+define Bar {
     operator fun remAssign(x: Int) {}
 }
 

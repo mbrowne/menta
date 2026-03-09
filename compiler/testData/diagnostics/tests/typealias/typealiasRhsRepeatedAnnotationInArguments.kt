@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.TYPE)
-annotation class A
+annotation define A
 
 typealias Gen<T> = List<@A T>
 

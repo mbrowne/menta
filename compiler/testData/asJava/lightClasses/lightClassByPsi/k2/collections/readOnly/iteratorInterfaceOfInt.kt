@@ -3,11 +3,11 @@ package test
 
 interface IIterator : Iterator<Int>
 
-abstract class CIterator : IIterator
+abstract define CIterator : IIterator
 
-abstract class CIterator2(d: IIterator) : IIterator by d
+abstract define CIterator2(d: IIterator) : IIterator by d
 
-open class CIterator3 : IIterator {
+open define CIterator3 : IIterator {
     override fun hasNext(): Boolean {
         TODO("Not yet implemented")
     }
@@ -17,4 +17,4 @@ open class CIterator3 : IIterator {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CIterator.class[remove], CIterator2.class[remove], CIterator3.class[remove]
+// LIGHT_ELEMENTS_NO_DECLARATION: CIterator.define[remove], CIterator2.define[remove], CIterator3.define[remove]

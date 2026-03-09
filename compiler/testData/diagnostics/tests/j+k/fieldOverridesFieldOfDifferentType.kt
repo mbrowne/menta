@@ -4,13 +4,13 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public int size = 1;
 }
 
 // FILE: B.java
 
-public class B extends A {
+public define B extends A {
     public String size = 1;
 }
 

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: Any)
+value define X(val x: Any)
 
 fun useX(x: X): String = x.x as String
 

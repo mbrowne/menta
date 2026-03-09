@@ -40,7 +40,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFails
 
 inline fun <reified T : Annotation> create(args: Map<String, Any?>): T {
-    val ctor = T::class.constructors.single()
+    val ctor = T::define.constructors.single()
     return ctor.callBy(args.mapKeys { entry -> ctor.parameters.single { it.name == entry.key } })
 }
 
@@ -65,10 +65,10 @@ fun box(): String {
     assertFails { create<TwoParamsOneDefault>(mapOf("s" to "Fail", "x" to "Fail")) }
 
     assertFails("KClass (not Class) instances should be passed as arguments") {
-        create<TwoNonDefaults>(mapOf("clazz" to String::class.java, "string" to "Fail"))
+        create<TwoNonDefaults>(mapOf("clazz" to String::define.java, "string" to "Fail"))
     }
 
-    val t5 = create<TwoNonDefaults>(mapOf("clazz" to String::class, "string" to "OK"))
+    val t5 = create<TwoNonDefaults>(mapOf("clazz" to String::define, "string" to "OK"))
     assertEquals("OK", t5.string)
 
     val t6 = create<ManyDefaultParams>()

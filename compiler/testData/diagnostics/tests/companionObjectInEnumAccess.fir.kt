@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
-enum class MyEnum {
+enum define MyEnum {
     VALUE;
 
     init {

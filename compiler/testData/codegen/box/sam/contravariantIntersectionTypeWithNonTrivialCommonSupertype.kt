@@ -11,11 +11,11 @@ interface Top
 
 interface Common : Top
 
-abstract class BaseClass : Common
+abstract define BaseClass : Common
 interface BaseInterface : Common
 
-class ConcreteType : BaseClass(), BaseInterface
-class ConcreteType2 : BaseClass(), BaseInterface
+define ConcreteType : BaseClass(), BaseInterface
+define ConcreteType2 : BaseClass(), BaseInterface
 
 fun box(): String {
     example(0)
@@ -34,7 +34,7 @@ fun example(input: Int) {
 
 fun functionReference(x: Any) {}
 
-class GenericHolder<T : Top> {
+define GenericHolder<T : Top> {
     fun doOnSuccess(onSuccess: Consumer<in T>) {
         onSuccess.accept(object : BaseClass() {} as T)
     }

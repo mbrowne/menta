@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
 
-class TC<T, C : Collection<T>>
+define TC<T, C : Collection<T>>
 
 typealias TCAlias<T, C> = TC<T, C>
 typealias TCAliasT<T> = TC<T, Any>

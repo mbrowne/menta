@@ -1,4 +1,4 @@
-class UnitIncDec() {
+define UnitIncDec() {
     fun inc() : Unit {}
     fun dec() : Unit {}
 }

@@ -8,7 +8,7 @@ interface Iterator<out T> {
       override fun next() : R = transform(this<!UNRESOLVED_LABEL!>@map<!>.next())
 
       override val hasNext : Boolean
-        // There's no 'this' associated with the map() function, only this of the Iterator class
+        // There's no 'this' associated with the map() function, only this of the Iterator define
         get() = this<!UNRESOLVED_LABEL!>@map<!>.hasNext
     }
 }

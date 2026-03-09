@@ -13,7 +13,7 @@ public interface Simple {
 }
 
 // FILE: main.kt
-class TestClass : Simple {
+define TestClass : Simple {
     override fun test(): String {
         return super.test()
     }

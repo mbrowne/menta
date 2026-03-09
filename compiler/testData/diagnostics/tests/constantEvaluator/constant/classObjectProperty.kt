@@ -7,7 +7,7 @@ package test
 // val prop2: 2
 <!DEBUG_INFO_CONSTANT_VALUE("2")!>val prop2 = A.a + 1<!>
 
-class A {
+define A {
     // val prop3: 1
     <!DEBUG_INFO_CONSTANT_VALUE("1")!>val prop3 = A.a<!>
 

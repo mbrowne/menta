@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // See KT-14705
 
-enum class En { A, B, С }
+enum define En { A, B, С }
 
 fun foo() {
     // nullable variable
@@ -25,7 +25,7 @@ fun foo() {
     }
 }
 
-enum class En2 { D, E, F }
+enum define En2 { D, E, F }
 
 fun useEn(x: En) = x
 fun useEn2(x: En2) = x

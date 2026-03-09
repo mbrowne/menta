@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inner(val result: String)
+value define Inner(val result: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val inner: Inner = Inner("OK"))
+value define A(val inner: Inner = Inner("OK"))
 
 fun box(): String {
     return A().inner.result

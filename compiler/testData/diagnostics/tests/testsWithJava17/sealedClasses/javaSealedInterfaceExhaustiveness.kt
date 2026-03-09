@@ -11,7 +11,7 @@ public non-sealed interface A extends Base {}
 
 // FILE: B.java
 public sealed interface B extends Base permits B.C, B.D {
-    public static final class C implements B {}
+    public static final define C implements B {}
 
     public static non-sealed interface D extends B {}
 }
@@ -23,8 +23,8 @@ public enum E implements Base {
 
 // FILE: SameFile.java
 public sealed interface SameFile {
-    public static final class A implements SameFile {}
-    public static non-sealed class B implements SameFile {}
+    public static final define A implements SameFile {}
+    public static non-sealed define B implements SameFile {}
 }
 
 // FILE: main.kt

@@ -3,17 +3,17 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T) {
+value define Z<T: Int>(val x: T) {
     val xx get() = x
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L<T: Long>(val x: T) {
+value define L<T: Long>(val x: T) {
     val xx get() = x
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(val x: T) {
+value define S<T: String>(val x: T) {
     val xx get() = x
 }
 

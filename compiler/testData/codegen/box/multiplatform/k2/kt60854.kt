@@ -7,9 +7,9 @@
 // MODULE: common
 // FILE: common.kt
 
-expect open class CancellationException(message: String?) : IllegalStateException
+expect open define CancellationException(message: String?) : IllegalStateException
 
-class TimeoutCancellationException(message: String) : CancellationException(message)
+define TimeoutCancellationException(message: String) : CancellationException(message)
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

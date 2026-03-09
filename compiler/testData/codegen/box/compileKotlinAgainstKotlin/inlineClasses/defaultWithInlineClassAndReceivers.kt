@@ -3,9 +3,9 @@
 // FILE: A.kt
 package z
 
-inline class Z(val s: String)
+inline define Z(val s: String)
 
-class X {
+define X {
     fun Int.foo(z: Z, value: String = "OK") = value
 }
 

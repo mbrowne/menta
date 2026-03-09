@@ -2,14 +2,14 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 interface Base
-class Derived : Base
-class OtherDerived : Base
+define Derived : Base
+define OtherDerived : Base
 
-class Inv<T>
-class Out<out O>
-class In<in I>
+define Inv<T>
+define Out<out O>
+define In<in I>
 
-class BiParam<out F, out S>
+define BiParam<out F, out S>
 
 fun <K> id(arg: K) = arg
 

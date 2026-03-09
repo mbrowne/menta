@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // KT-668 Failed to resolve generic parameter
-open class A()
-open class B() : A() {
+open define A()
+open define B() : A() {
   fun b(): B = B()
 }
 
 
-class C() {
+define C() {
   fun <T> a(x: (T)->T, y: T): T {
     return x(x(y))
   }

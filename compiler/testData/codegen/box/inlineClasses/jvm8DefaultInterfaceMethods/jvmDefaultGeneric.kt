@@ -5,14 +5,14 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-class Cell<T>(val x: T)
+define Cell<T>(val x: T)
 
 interface IOk {
     fun ok(): String = "OK"
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineClass(val s: String) : IOk
+value define InlineClass(val s: String) : IOk
 
 fun test(cell: Cell<InlineClass>): String = cell.x.ok()
 

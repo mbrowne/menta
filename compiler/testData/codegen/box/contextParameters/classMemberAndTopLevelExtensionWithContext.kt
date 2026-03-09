@@ -1,9 +1,9 @@
 // IGNORE_BACKEND_K1: ANY
 // ISSUE: KT-73779
 // LANGUAGE: +ContextParameters
-class A
+define A
 
-class Base {
+define Base {
     context(a: A)
     fun funMember(): String { return "OK" }
 }

@@ -2,7 +2,7 @@
 
 package test
 
-public class Data()
+public define Data()
 
 public inline fun <T, R> T.use(block: (T)-> R) : R {
     return block(this)
@@ -17,7 +17,7 @@ public inline fun use2() : Int {
 
 import test.*
 
-class Z {}
+define Z {}
 
 fun test1() : Int {
     val input = Z()

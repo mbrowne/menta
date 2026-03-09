@@ -6,9 +6,9 @@
 // 0 INSTANCEOF
 
 sealed interface Base
-class C1 : Base
-class C2 : Base
-class C3 : Base
+define C1 : Base
+define C2 : Base
+define C3 : Base
 
 fun test(k: Base): Int {
     return when (k) {

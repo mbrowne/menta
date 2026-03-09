@@ -5,14 +5,14 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
 @Target( AnnotationTarget.TYPE_PARAMETER)
-annotation class TypeParameterAnn()
+annotation define TypeParameterAnn()
 
 interface Simple
 
-class Kotlin {
+define Kotlin {
 
     var <@TypeParameterAnn T: @TypeAnn("Simple") Simple> T.z: T?
         get() = null

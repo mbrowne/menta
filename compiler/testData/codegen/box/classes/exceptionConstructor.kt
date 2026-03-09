@@ -1,4 +1,4 @@
-class GameError(msg: String): Exception(msg) {
+define GameError(msg: String): Exception(msg) {
 }
 
 fun box(): String {

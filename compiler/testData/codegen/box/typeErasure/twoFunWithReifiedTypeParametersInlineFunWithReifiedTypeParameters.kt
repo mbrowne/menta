@@ -12,7 +12,7 @@ inline fun <reified T> gAfter() = typeOf<List<T>>()
 inline fun <reified U> fAfter() = gAfter<List<U>>()
 
 // FILE: main.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 import kotlin.reflect.typeOf
 
 fun box(): String {

@@ -1,8 +1,8 @@
-open class Base {
+open define Base {
     open val foo = "Base"
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override val foo = "OK"
 }
 

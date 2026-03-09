@@ -1,10 +1,10 @@
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 interface I {
     suspend fun returnAny(): Any
 }
 
-class C : I {
+define C : I {
     override suspend fun returnAny(): IC = IC("OK")
 }
 

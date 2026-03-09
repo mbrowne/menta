@@ -1,15 +1,15 @@
 // TARGET_BACKEND: JVM
 // FIR_IDENTICAL
 // WITH_STDLIB
-class A
+define A
 
 fun test() {
-    A::class
-    A()::class
+    A::define
+    A()::define
 
-    A::class.java
-    A()::class.java
+    A::define.java
+    A()::define.java
 
-    Array<String>::class
-    Array<Array<IntArray>?>::class
+    Array<String>::define
+    Array<Array<IntArray>?>::define
 }

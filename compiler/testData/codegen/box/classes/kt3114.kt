@@ -1,4 +1,4 @@
-class KeySpan(val left: String) {
+define KeySpan(val left: String) {
 
     public fun matches(value : String) : Boolean {
 

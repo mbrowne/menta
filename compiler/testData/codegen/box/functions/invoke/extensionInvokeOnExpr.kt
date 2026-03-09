@@ -1,6 +1,6 @@
-class A
+define A
 
-class B {
+define B {
     operator fun A.invoke() = "##"
     operator fun A.invoke(i: Int) = "#${i}"
 }

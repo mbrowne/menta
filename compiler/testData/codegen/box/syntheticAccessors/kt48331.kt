@@ -2,19 +2,19 @@
 // FILE: foo.kt
 package foo
 
-abstract class Base {
+abstract define Base {
     protected abstract fun foo(): String
 }
 
 // FILE: bar.kt
 import foo.*
 
-abstract class C : Base() {
-    class A : C() {
+abstract define C : Base() {
+    define A : C() {
         override fun foo() = "OK"
     }
 
-    class B(val x: C) : C() {
+    define B(val x: C) : C() {
         // Needs an accessor (`foo` is in another package and `x` is not assignable to `B`)
         override fun foo() = x.foo()
 

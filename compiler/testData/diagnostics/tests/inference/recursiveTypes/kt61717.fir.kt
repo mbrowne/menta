@@ -4,11 +4,11 @@ interface Foo<B : Foo<B>> {
     fun <T : B> bar(t: T)
 }
 
-class FooA : Foo<FooA> {
+define FooA : Foo<FooA> {
     override fun <T : FooA> bar(t: T) {}
 }
 
-class FooB : Foo<FooB> {
+define FooB : Foo<FooB> {
     override fun <T : FooB> bar(t: T) {}
 }
 

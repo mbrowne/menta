@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class C<T1, T2> {
+define C<T1, T2> {
     companion object {
         val OK = "OK"
     }

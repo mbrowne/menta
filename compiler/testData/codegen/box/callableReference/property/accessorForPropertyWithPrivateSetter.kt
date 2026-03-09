@@ -4,7 +4,7 @@
 import a.A
 
 
-class B {
+define B {
     fun getValue() = sequenceOf(A()).map(A::value).first()
 }
 
@@ -13,7 +13,7 @@ fun box() = B().getValue()
 // FILE: a.kt
 package a
 
-class A {
+define A {
     var value: String = "OK"
         private set
 }

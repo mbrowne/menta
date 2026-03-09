@@ -5,7 +5,7 @@
 
 interface A : Set<String>
 
-class B : A, HashSet<String>()
+define B : A, HashSet<String>()
 
 fun box(): String {
     val b = B()

@@ -3,7 +3,7 @@
 
 import kotlin.test.assertEquals
 
-class WithCompanion {
+define WithCompanion {
     companion object {
         var a = 0
         init {

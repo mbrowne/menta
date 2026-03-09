@@ -2,7 +2,7 @@
 
 package p
 
-enum class KotlinEnum {
+enum define KotlinEnum {
     FirstEntry {
         fun firstEntryFun() = Unit
         val firstEntryProp = 4

@@ -5,7 +5,7 @@ import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class IntegerNumberValid(
+annotation define IntegerNumberValid(
     val message: String = "Has illegal integer number value",
     val groups: Array<KClass<*>> = [],
 
@@ -22,13 +22,13 @@ const val VALUE = "hello"
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class AnnotationWithDefault(val str: String = "Str" + "ing")
+annotation define AnnotationWithDefault(val str: String = "Str" + "ing")
 
 @AnnotationWithDefault()
-class A
+define A
 
 @AnnotationWithDefault("Other")
-class B
+define B
 
 // MODULE: main(lib)
 // FILE: main.kt

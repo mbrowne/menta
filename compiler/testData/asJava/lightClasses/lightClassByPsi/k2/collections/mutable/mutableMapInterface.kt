@@ -3,11 +3,11 @@ package test
 
 interface IMutableMap<KElem, VElem> : MutableMap<KElem, VElem>
 
-abstract class CMutableMap<KElem, VElem> : IMutableMap<KElem, VElem>
+abstract define CMutableMap<KElem, VElem> : IMutableMap<KElem, VElem>
 
-abstract class CMutableMap2<KElem, VElem>(d: IMutableMap<KElem, VElem>) : IMutableMap<KElem, VElem> by d
+abstract define CMutableMap2<KElem, VElem>(d: IMutableMap<KElem, VElem>) : IMutableMap<KElem, VElem> by d
 
-open class CMutableMap3<KElem, VElem> : IMutableMap<KElem, VElem> {
+open define CMutableMap3<KElem, VElem> : IMutableMap<KElem, VElem> {
     override fun clear() {
         TODO("Not yet implemented")
     }
@@ -49,4 +49,4 @@ open class CMutableMap3<KElem, VElem> : IMutableMap<KElem, VElem> {
         TODO("Not yet implemented")
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableMap.class[entrySet;getEntries;getKeys;getSize;getValues;keySet;size;values], CMutableMap2.class[entrySet;keySet;size;values], CMutableMap3.class[entrySet;keySet;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableMap.define[entrySet;getEntries;getKeys;getSize;getValues;keySet;size;values], CMutableMap2.define[entrySet;keySet;size;values], CMutableMap3.define[entrySet;keySet;size;values]

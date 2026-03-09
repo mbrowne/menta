@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @DslMarker
-annotation class AnnMarker
+annotation define AnnMarker
 
 @AnnMarker
-class Inv<T> {
+define Inv<T> {
     fun bar() {}
 }
 

@@ -4,7 +4,7 @@ import kotlin.reflect.KProperty
 
 fun <T> run(f: () -> T) = f()
 
-class Delegate {
+define Delegate {
     var inner = 1
     operator fun getValue(t: Any?, p: KProperty<*>): Int = inner
     operator fun setValue(t: Any?, p: KProperty<*>, i: Int) {

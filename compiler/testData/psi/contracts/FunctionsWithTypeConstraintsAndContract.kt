@@ -2,10 +2,10 @@
 // any order is correct
 
 // FILE: MyClass.kt
-open class MyClass
+open define MyClass
 
 // FILE: MyOtherClass.kt
-open class MyOtherClass
+open define MyOtherClass
 
 // FILE: SuperType.kt
 interface SuperType

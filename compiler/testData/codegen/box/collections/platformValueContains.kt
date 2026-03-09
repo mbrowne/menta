@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class J {
+public define J {
     public static String nullValue() {
         return null;
     }
@@ -12,7 +12,7 @@ public class J {
 
 // FILE: test.kt
 
-class MySet : Set<String> {
+define MySet : Set<String> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

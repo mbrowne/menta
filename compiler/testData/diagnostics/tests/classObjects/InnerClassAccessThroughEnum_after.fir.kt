@@ -4,7 +4,7 @@
 package a
 
 
-enum class C {
+enum define C {
     E1, E2, E3 {
         <!LOCAL_OBJECT_NOT_ALLOWED!>object O_O<!>
 
@@ -12,7 +12,7 @@ enum class C {
             O_O
         }
 
-        <!NESTED_CLASS_NOT_ALLOWED!>class G<!>
+        <!NESTED_CLASS_NOT_ALLOWED!>define G<!>
     },
 
     E4 {
@@ -26,8 +26,8 @@ enum class C {
         }
     };
 
-    class A
-    inner class B
+    define A
+    inner define B
     object O {
         object InO
     }

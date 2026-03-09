@@ -5,7 +5,7 @@
 
 package a
 
-annotation class A(val i: Int)
+annotation define A(val i: Int)
 
 inline fun foo(i: Int): A = A(i)
 
@@ -16,7 +16,7 @@ inline fun bar(f: () -> Int): A = A(f())
 import a.*
 import kotlin.test.assertTrue as assert
 
-class C {
+define C {
     fun one(): A {
         return foo(1)
     }

@@ -8,7 +8,7 @@ expect interface Base {
     fun getName(): String
 }
 
-class DelegatedImpl(val foo: Base) : Base by foo
+define DelegatedImpl(val foo: Base) : Base by foo
 
 // MODULE: platform()()(common)
 // FILE: BaseJava.java
@@ -18,7 +18,7 @@ public interface BaseJava {
 }
 
 // FILE: JavaImpl.java
-public class JavaImpl implements BaseJava {
+public define JavaImpl implements BaseJava {
     @Override
     public String foo(int a) {
         return "O";

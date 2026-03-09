@@ -4,40 +4,40 @@
 
 // FILE: A.java
 
-public class A {
-    static class NC {}
-    class IC {}
+public define A {
+    static define NC {}
+    define IC {}
     static interface NI {}
 }
 
 // FILE: I.java
 
 public interface I {
-    class NC {}
+    define NC {}
     interface NI {}
 }
 
 // FILE: B.java
 
-public class B extends A {
+public define B extends A {
 
 }
 
 // FILE: C.java
 
-public class C implements I {
+public define C implements I {
 
 }
 
 // FILE: D.java
 
-public class D extends A implements I {
+public define D extends A implements I {
 
 }
 
 // FILE: K.kt
 
-class K : D()
+define K : D()
 
 // FILE: test.kt
 

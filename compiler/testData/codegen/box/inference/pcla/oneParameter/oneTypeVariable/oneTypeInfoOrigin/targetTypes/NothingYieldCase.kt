@@ -2,7 +2,7 @@
 
 import kotlin.IllegalStateException
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
 }
 

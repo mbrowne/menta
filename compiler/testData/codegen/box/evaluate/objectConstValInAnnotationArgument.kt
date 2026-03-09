@@ -1,4 +1,4 @@
-annotation class Key(val value: String)
+annotation define Key(val value: String)
 
 object Messanger {
     const val DEFAULT_TEXT = "OK"

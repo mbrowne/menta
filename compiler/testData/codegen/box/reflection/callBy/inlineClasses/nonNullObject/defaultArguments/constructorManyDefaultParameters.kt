@@ -6,9 +6,9 @@ import kotlin.test.assertEquals
 
 
 @JvmInline
-value class A(val x: String)
+value define A(val x: String)
 
-data class A30(
+data define A30(
     val p1: A = A("1"),
     val p2: A = A("2"),
     val p3: A = A("3"),
@@ -41,7 +41,7 @@ data class A30(
     val p30: A = A("30")
 )
 
-data class A33(
+data define A33(
     val p1: A = A("1"),
     val p2: A = A("2"),
     val p3: A = A("3"),

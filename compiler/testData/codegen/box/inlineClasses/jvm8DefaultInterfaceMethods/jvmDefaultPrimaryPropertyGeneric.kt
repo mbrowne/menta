@@ -15,10 +15,10 @@ interface IFooBar {
 interface IFooBar2 : IFooBar
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Test1<T: String>(override val bar: T): IFooBar
+value define Test1<T: String>(override val bar: T): IFooBar
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Test2<T: String>(override val bar: T): IFooBar2
+value define Test2<T: String>(override val bar: T): IFooBar2
 
 fun box(): String {
     val k = Test1("K")

@@ -2,425 +2,425 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE, -NO_TAIL_CALLS_FOUND, -MISPLACED_TYPE_PARAMETER_CONSTRAINTS
 
 
-class TestBasic {
+define TestBasic {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun TestBasic() {}
 
-class TestBasicReverse {
+define TestBasicReverse {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestBasicReverse() {}
 
 
-class TestIdenticalReturnTypes {
+define TestIdenticalReturnTypes {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun TestIdenticalReturnTypes(): TestIdenticalReturnTypes = TestIdenticalReturnTypes()
 
-class TestIdenticalReturnTypesReverse {
+define TestIdenticalReturnTypesReverse {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestIdenticalReturnTypesReverse(): TestIdenticalReturnTypesReverse = TestIdenticalReturnTypesReverse()
 
 
-class TestFunctionWithReifiedTypeParameterVsConstructorA<T> {
+define TestFunctionWithReifiedTypeParameterVsConstructorA<T> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 inline fun <reified T> TestFunctionWithReifiedTypeParameterVsConstructorA() {}
 
-class TestFunctionWithReifiedTypeParameterVsConstructorAReverse<T> {
+define TestFunctionWithReifiedTypeParameterVsConstructorAReverse<T> {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) inline fun <reified T> TestFunctionWithReifiedTypeParameterVsConstructorAReverse() {}
 
-class TestFunctionWithReifiedTypeParameterVsConstructorB<T> {
+define TestFunctionWithReifiedTypeParameterVsConstructorB<T> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: T)
 }
 inline fun <reified T> TestFunctionWithReifiedTypeParameterVsConstructorB(arg: T) {}
 
-class TestFunctionWithReifiedTypeParameterVsConstructorBReverse<T> {
+define TestFunctionWithReifiedTypeParameterVsConstructorBReverse<T> {
     constructor(arg: T)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) inline fun <reified T> TestFunctionWithReifiedTypeParameterVsConstructorBReverse(arg: T) {}
 
-class TestFunctionWithReifiedTypeParameterVsConstructorC<T> {
+define TestFunctionWithReifiedTypeParameterVsConstructorC<T> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: Invariant<T>)
 }
 inline fun <reified T> TestFunctionWithReifiedTypeParameterVsConstructorC(arg: Invariant<T>) {}
 
-class TestFunctionWithReifiedTypeParameterVsConstructorCReverse<T> {
+define TestFunctionWithReifiedTypeParameterVsConstructorCReverse<T> {
     constructor(arg: Invariant<T>)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) inline fun <reified T> TestFunctionWithReifiedTypeParameterVsConstructorCReverse(arg: Invariant<T>) {}
 
 
-class TestInlineFunctionVsConstructor {
+define TestInlineFunctionVsConstructor {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 inline fun TestInlineFunctionVsConstructor() {}
 
-class TestInlineFunctionVsConstructorReverse {
+define TestInlineFunctionVsConstructorReverse {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) inline fun TestInlineFunctionVsConstructorReverse() {}
 
 
-class TestTailrecFunctionVsConstructor {
+define TestTailrecFunctionVsConstructor {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 tailrec fun TestTailrecFunctionVsConstructor() {}
 
-class TestTailrecFunctionVsConstructorReverse {
+define TestTailrecFunctionVsConstructorReverse {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) tailrec fun TestTailrecFunctionVsConstructorReverse() {}
 
 
-class TestFunctionVsPrimaryConstructor @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
+define TestFunctionVsPrimaryConstructor @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 fun TestFunctionVsPrimaryConstructor() {}
 
-class TestFunctionVsPrimaryConstructorReverse constructor() {}
+define TestFunctionVsPrimaryConstructorReverse constructor() {}
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestFunctionVsPrimaryConstructorReverse() {}
 
 
-class TestFunctionVsDelegatedPrimaryConstructorCall constructor(placeholder: UserKlass) {
+define TestFunctionVsDelegatedPrimaryConstructorCall constructor(placeholder: UserKlass) {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor() : this(UserKlass())
 }
 fun TestFunctionVsDelegatedPrimaryConstructorCall() {}
 
-class TestFunctionVsDelegatedPrimaryConstructorCallReverse constructor(placeholder: UserKlass) {
+define TestFunctionVsDelegatedPrimaryConstructorCallReverse constructor(placeholder: UserKlass) {
     constructor() : this(UserKlass())
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestFunctionVsDelegatedPrimaryConstructorCallReverse() {}
 
 
-open class SuperConstructorSource constructor(placeholder: UserKlass)
+open define SuperConstructorSource constructor(placeholder: UserKlass)
 
-class TestFunctionVsDelegatedSuperConstructorCall: SuperConstructorSource {
+define TestFunctionVsDelegatedSuperConstructorCall: SuperConstructorSource {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor() : super(UserKlass())
 }
 fun TestFunctionVsDelegatedSuperConstructorCall() {}
 
-class TestFunctionVsDelegatedSuperConstructorCallReverse: SuperConstructorSource {
+define TestFunctionVsDelegatedSuperConstructorCallReverse: SuperConstructorSource {
     constructor() : super(UserKlass())
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestFunctionVsDelegatedSuperConstructorCallReverse() {}
 
 
-class TestIdenticalValueParameters {
+define TestIdenticalValueParameters {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: UserKlass)
 }
 fun TestIdenticalValueParameters(arg: UserKlass) {}
 
-class TestIdenticalValueParametersReverse {
+define TestIdenticalValueParametersReverse {
     constructor(arg: UserKlass)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestIdenticalValueParametersReverse(arg: UserKlass) {}
 
-class TestDifferentlyNamedValueParameters {
+define TestDifferentlyNamedValueParameters {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(argA: UserKlass)
 }
 fun TestDifferentlyNamedValueParameters(argB: UserKlass) {}
 
-class TestDifferentlyNamedValueParametersReverse {
+define TestDifferentlyNamedValueParametersReverse {
     constructor(argA: UserKlass)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestDifferentlyNamedValueParametersReverse(argB: UserKlass) {}
 
-class TestTypeAliasedValueParameterTypesA {
+define TestTypeAliasedValueParameterTypesA {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: UserKlass)
 }
 fun TestTypeAliasedValueParameterTypesA(arg: SameUserKlass) {}
 
-class TestTypeAliasedValueParameterTypesAReverse {
+define TestTypeAliasedValueParameterTypesAReverse {
     constructor(arg: UserKlass)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestTypeAliasedValueParameterTypesAReverse(arg: SameUserKlass) {}
 
-class TestTypeAliasedValueParameterTypesB {
+define TestTypeAliasedValueParameterTypesB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: SameUserKlass)
 }
 fun TestTypeAliasedValueParameterTypesB(arg: UserKlass) {}
 
-class TestTypeAliasedValueParameterTypesBReverse {
+define TestTypeAliasedValueParameterTypesBReverse {
     constructor(arg: SameUserKlass)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestTypeAliasedValueParameterTypesBReverse(arg: UserKlass) {}
 
 
-class TestMultipleIdenticalValueParameters {
+define TestMultipleIdenticalValueParameters {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg1: UserKlassA, arg2: UserKlassB)
 }
 fun TestMultipleIdenticalValueParameters(arg1: UserKlassA, arg2: UserKlassB) {}
 
-class TestMultipleIdenticalValueParametersReverse {
+define TestMultipleIdenticalValueParametersReverse {
     constructor(arg1: UserKlassA, arg2: UserKlassB)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestMultipleIdenticalValueParametersReverse(arg1: UserKlassA, arg2: UserKlassB) {}
 
-class TestMultipleDifferentlyNamedValueParametersA {
+define TestMultipleDifferentlyNamedValueParametersA {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg1: UserKlassA, arg2A: UserKlassB)
 }
 fun TestMultipleDifferentlyNamedValueParametersA(arg1: UserKlassA, arg2B: UserKlassB) {}
 
-class TestMultipleDifferentlyNamedValueParametersAReverse {
+define TestMultipleDifferentlyNamedValueParametersAReverse {
     constructor(arg1: UserKlassA, arg2A: UserKlassB)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestMultipleDifferentlyNamedValueParametersAReverse(arg1: UserKlassA, arg2B: UserKlassB) {}
 
-class TestMultipleDifferentlyNamedValueParametersB {
+define TestMultipleDifferentlyNamedValueParametersB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg1A: UserKlassA, arg2A: UserKlassB)
 }
 fun TestMultipleDifferentlyNamedValueParametersB(arg1B: UserKlassA, arg2B: UserKlassB) {}
 
-class TestMultipleDifferentlyNamedValueParametersBReverse {
+define TestMultipleDifferentlyNamedValueParametersBReverse {
     constructor(arg1A: UserKlassA, arg2A: UserKlassB)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestMultipleDifferentlyNamedValueParametersBReverse(arg1B: UserKlassA, arg2B: UserKlassB) {}
 
-class TestMultipleTypeAliasedValueParameterTypesA {
+define TestMultipleTypeAliasedValueParameterTypesA {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg1: UserKlassA, arg2: SameUserKlassB)
 }
 fun TestMultipleTypeAliasedValueParameterTypesA(arg1: UserKlassA, arg2: SameUserKlassB) {}
 
-class TestMultipleTypeAliasedValueParameterTypesAReverse {
+define TestMultipleTypeAliasedValueParameterTypesAReverse {
     constructor(arg1: UserKlassA, arg2: SameUserKlassB)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestMultipleTypeAliasedValueParameterTypesAReverse(arg1: UserKlassA, arg2: SameUserKlassB) {}
 
-class TestMultipleTypeAliasedValueParameterTypesB {
+define TestMultipleTypeAliasedValueParameterTypesB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg1: SameUserKlassA, arg2: SameUserKlassB)
 }
 fun TestMultipleTypeAliasedValueParameterTypesB(arg1: SameUserKlassA, arg2: SameUserKlassB) {}
 
-class TestMultipleTypeAliasedValueParameterTypesBReverse {
+define TestMultipleTypeAliasedValueParameterTypesBReverse {
     constructor(arg1: SameUserKlassA, arg2: SameUserKlassB)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun TestMultipleTypeAliasedValueParameterTypesBReverse(arg1: SameUserKlassA, arg2: SameUserKlassB) {}
 
 
-class TestIdenticalTypeParametersA<T> {
+define TestIdenticalTypeParametersA<T> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun <T> TestIdenticalTypeParametersA() {}
 
-class TestIdenticalTypeParametersAReverse<T> {
+define TestIdenticalTypeParametersAReverse<T> {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T> TestIdenticalTypeParametersAReverse() {}
 
-class TestIdenticalTypeParametersB<T> {
+define TestIdenticalTypeParametersB<T> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: T)
 }
 fun <T> TestIdenticalTypeParametersB(arg: T) {}
 
-class TestIdenticalTypeParametersBReverse<T> {
+define TestIdenticalTypeParametersBReverse<T> {
     constructor(arg: T)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T> TestIdenticalTypeParametersBReverse(arg: T) {}
 
-class TestIdenticalTypeParametersC<T> {
+define TestIdenticalTypeParametersC<T> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: Invariant<T>)
 }
 fun <T> TestIdenticalTypeParametersC(arg: Invariant<T>) {}
 
-class TestIdenticalTypeParametersCReverse<T> {
+define TestIdenticalTypeParametersCReverse<T> {
     constructor(arg: Invariant<T>)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T> TestIdenticalTypeParametersCReverse(arg: Invariant<T>) {}
 
 
-class TestMultipleIdenticalTypeParameters<T1, T2> {
+define TestMultipleIdenticalTypeParameters<T1, T2> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun <T1, T2> TestMultipleIdenticalTypeParameters() {}
 
-class TestMultipleIdenticalTypeParametersReverse<T1, T2> {
+define TestMultipleIdenticalTypeParametersReverse<T1, T2> {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T1, T2> TestMultipleIdenticalTypeParametersReverse() {}
 
 
-class TestTypeParameterWithIdenticalUpperBoundsA<T: UserInterface> {
+define TestTypeParameterWithIdenticalUpperBoundsA<T: UserInterface> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun <T: UserInterface> TestTypeParameterWithIdenticalUpperBoundsA() {}
 
-class TestTypeParameterWithIdenticalUpperBoundsAReverse<T: UserInterface> {
+define TestTypeParameterWithIdenticalUpperBoundsAReverse<T: UserInterface> {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T: UserInterface> TestTypeParameterWithIdenticalUpperBoundsAReverse() {}
 
-class TestTypeParameterWithIdenticalUpperBoundsB<T: UserInterface> {
+define TestTypeParameterWithIdenticalUpperBoundsB<T: UserInterface> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: T)
 }
 fun <T: UserInterface> TestTypeParameterWithIdenticalUpperBoundsB(arg: T) {}
 
-class TestTypeParameterWithIdenticalUpperBoundsBReverse<T: UserInterface> {
+define TestTypeParameterWithIdenticalUpperBoundsBReverse<T: UserInterface> {
     constructor(arg: T)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T: UserInterface> TestTypeParameterWithIdenticalUpperBoundsBReverse(arg: T) {}
 
-class TestTypeParameterWithIdenticalUpperBoundsC<T: UserInterface> {
+define TestTypeParameterWithIdenticalUpperBoundsC<T: UserInterface> {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: Invariant<T>)
 }
 fun <T: UserInterface> TestTypeParameterWithIdenticalUpperBoundsC(arg: Invariant<T>) {}
 
-class TestTypeParameterWithIdenticalUpperBoundsCReverse<T: UserInterface> {
+define TestTypeParameterWithIdenticalUpperBoundsCReverse<T: UserInterface> {
     constructor(arg: Invariant<T>)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T: UserInterface> TestTypeParameterWithIdenticalUpperBoundsCReverse(arg: Invariant<T>) {}
 
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsAA<T> where T: UserInterfaceA, T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsAA<T> where T: UserInterfaceA, T: UserInterfaceB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun <T> TestTypeParameterWithMultipleIdenticalUpperBoundsAA() where T: UserInterfaceA, T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsAAReverse<T> where T: UserInterfaceA, T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsAAReverse<T> where T: UserInterfaceA, T: UserInterfaceB {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T> TestTypeParameterWithMultipleIdenticalUpperBoundsAAReverse() where T: UserInterfaceA, T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsAB<T> where T: UserInterfaceA, T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsAB<T> where T: UserInterfaceA, T: UserInterfaceB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: T)
 }
 fun <T> TestTypeParameterWithMultipleIdenticalUpperBoundsAB(arg: T) where T: UserInterfaceA, T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsABReverse<T> where T: UserInterfaceA, T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsABReverse<T> where T: UserInterfaceA, T: UserInterfaceB {
     constructor(arg: T)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T> TestTypeParameterWithMultipleIdenticalUpperBoundsABReverse(arg: T) where T: UserInterfaceA, T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsAC<T> where T: UserInterfaceA, T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsAC<T> where T: UserInterfaceA, T: UserInterfaceB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: Invariant<T>)
 }
 fun <T> TestTypeParameterWithMultipleIdenticalUpperBoundsAC(arg: Invariant<T>) where T: UserInterfaceA, T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsACReverse<T> where T: UserInterfaceA, T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsACReverse<T> where T: UserInterfaceA, T: UserInterfaceB {
     constructor(arg: Invariant<T>)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T> TestTypeParameterWithMultipleIdenticalUpperBoundsACReverse(arg: Invariant<T>) where T: UserInterfaceA, T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsBA<T: UserInterfaceA> where T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsBA<T: UserInterfaceA> where T: UserInterfaceB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor()
 }
 fun <T: UserInterfaceA> TestTypeParameterWithMultipleIdenticalUpperBoundsBA() where T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsBAReverse<T: UserInterfaceA> where T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsBAReverse<T: UserInterfaceA> where T: UserInterfaceB {
     constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T: UserInterfaceA> TestTypeParameterWithMultipleIdenticalUpperBoundsBAReverse() where T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsBB<T: UserInterfaceA> where T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsBB<T: UserInterfaceA> where T: UserInterfaceB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: T)
 }
 fun <T: UserInterfaceA> TestTypeParameterWithMultipleIdenticalUpperBoundsBB(arg: T) where T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsBBReverse<T: UserInterfaceA> where T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsBBReverse<T: UserInterfaceA> where T: UserInterfaceB {
     constructor(arg: T)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T: UserInterfaceA> TestTypeParameterWithMultipleIdenticalUpperBoundsBBReverse(arg: T) where T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsBC<T: UserInterfaceA> where T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsBC<T: UserInterfaceA> where T: UserInterfaceB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) constructor(arg: Invariant<T>)
 }
 fun <T: UserInterfaceA> TestTypeParameterWithMultipleIdenticalUpperBoundsBC(arg: Invariant<T>) where T: UserInterfaceB {}
 
-class TestTypeParameterWithMultipleIdenticalUpperBoundsBCReverse<T: UserInterfaceA> where T: UserInterfaceB {
+define TestTypeParameterWithMultipleIdenticalUpperBoundsBCReverse<T: UserInterfaceA> where T: UserInterfaceB {
     constructor(arg: Invariant<T>)
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) fun <T: UserInterfaceA> TestTypeParameterWithMultipleIdenticalUpperBoundsBCReverse(arg: Invariant<T>) where T: UserInterfaceB {}
 
 
-class TestIdenticalPrivateVisibility {
+define TestIdenticalPrivateVisibility {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) private constructor()
 }
 private fun TestIdenticalPrivateVisibility() {}
 
-class TestIdenticalPrivateVisibilityReverse {
+define TestIdenticalPrivateVisibilityReverse {
     private constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) private fun TestIdenticalPrivateVisibilityReverse() {}
 
-class TestIdenticalInternalVisibility {
+define TestIdenticalInternalVisibility {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal constructor()
 }
 internal fun TestIdenticalInternalVisibility() {}
 
-class TestIdenticalInternalVisibilityReverse {
+define TestIdenticalInternalVisibilityReverse {
     internal constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal fun TestIdenticalInternalVisibilityReverse() {}
 
-class TestDifferencesInPrivateAndPublicVisibilitiesA {
+define TestDifferencesInPrivateAndPublicVisibilitiesA {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) private constructor()
 }
 public fun TestDifferencesInPrivateAndPublicVisibilitiesA() {}
 
-class TestDifferencesInPrivateAndPublicVisibilitiesAReverse {
+define TestDifferencesInPrivateAndPublicVisibilitiesAReverse {
     private constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) public fun TestDifferencesInPrivateAndPublicVisibilitiesAReverse() {}
 
-class TestDifferencesInPrivateAndPublicVisibilitiesB {
+define TestDifferencesInPrivateAndPublicVisibilitiesB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) public constructor()
 }
 private fun TestDifferencesInPrivateAndPublicVisibilitiesB() {}
 
-class TestDifferencesInPrivateAndPublicVisibilitiesBReverse {
+define TestDifferencesInPrivateAndPublicVisibilitiesBReverse {
     public constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) private fun TestDifferencesInPrivateAndPublicVisibilitiesBReverse() {}
 
-class TestDifferencesInInternalAndPublicVisibilitiesA {
+define TestDifferencesInInternalAndPublicVisibilitiesA {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal constructor()
 }
 public fun TestDifferencesInInternalAndPublicVisibilitiesA() {}
 
-class TestDifferencesInInternalAndPublicVisibilitiesAReverse {
+define TestDifferencesInInternalAndPublicVisibilitiesAReverse {
     internal constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) public fun TestDifferencesInInternalAndPublicVisibilitiesAReverse() {}
 
-class TestDifferencesInInternalAndPublicVisibilitiesB {
+define TestDifferencesInInternalAndPublicVisibilitiesB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) public constructor()
 }
 internal fun TestDifferencesInInternalAndPublicVisibilitiesB() {}
 
-class TestDifferencesInInternalAndPublicVisibilitiesBReverse {
+define TestDifferencesInInternalAndPublicVisibilitiesBReverse {
     public constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal fun TestDifferencesInInternalAndPublicVisibilitiesBReverse() {}
 
-class TestDifferencesInPrivateAndInternalVisibilitiesA {
+define TestDifferencesInPrivateAndInternalVisibilitiesA {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) private constructor()
 }
 internal fun TestDifferencesInPrivateAndInternalVisibilitiesA() {}
 
-class TestDifferencesInPrivateAndInternalVisibilitiesAReverse {
+define TestDifferencesInPrivateAndInternalVisibilitiesAReverse {
     private constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal fun TestDifferencesInPrivateAndInternalVisibilitiesAReverse() {}
 
-class TestDifferencesInPrivateAndInternalVisibilitiesB {
+define TestDifferencesInPrivateAndInternalVisibilitiesB {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal constructor()
 }
 private fun TestDifferencesInPrivateAndInternalVisibilitiesB() {}
 
-class TestDifferencesInPrivateAndInternalVisibilitiesBReverse {
+define TestDifferencesInPrivateAndInternalVisibilitiesBReverse {
     internal constructor()
 }
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) private fun TestDifferencesInPrivateAndInternalVisibilitiesBReverse() {}
 
 
-open class Invariant<T>
+open define Invariant<T>
 
 
-class UserKlass
-class UserKlassA
-class UserKlassB
+define UserKlass
+define UserKlassA
+define UserKlassB
 typealias SameUserKlass = UserKlass
 typealias SameUserKlassA = UserKlassA
 typealias SameUserKlassB = UserKlassB

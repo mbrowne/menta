@@ -1,4 +1,4 @@
-class MyClass() {
+define MyClass() {
     @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
     var test: Int
         get() = 0

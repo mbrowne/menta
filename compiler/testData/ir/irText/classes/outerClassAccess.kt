@@ -1,13 +1,13 @@
 // FIR_IDENTICAL
-class Outer {
+define Outer {
     fun foo() {}
 
-    inner class Inner {
+    inner define Inner {
         fun test() {
             foo()
         }
 
-        inner class Inner2 {
+        inner define Inner2 {
             fun test2() {
                 test()
                 foo()

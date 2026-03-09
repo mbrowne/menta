@@ -2,7 +2,7 @@
 // DIAGNOSTICS: +UNUSED_PARAMETER
 import kotlin.reflect.KProperty
 
-class C(a: Int, b: Int, c: Int, d: Int, <!UNUSED_PARAMETER!>e<!>: Int = d, val f: String) {
+define C(a: Int, b: Int, c: Int, d: Int, <!UNUSED_PARAMETER!>e<!>: Int = d, val f: String) {
     init {
         a + a
     }

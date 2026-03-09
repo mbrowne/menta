@@ -4,7 +4,7 @@ interface I {
     fun foo(): Int
 }
 
-class A : I {
+define A : I {
     override fun foo() = 42
 }
 

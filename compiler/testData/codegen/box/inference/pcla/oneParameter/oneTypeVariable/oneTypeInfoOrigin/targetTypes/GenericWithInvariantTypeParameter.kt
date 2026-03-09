@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = Inv<UserKlass>() as CT
 }
@@ -11,8 +11,8 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class Inv<T>
-class UserKlass
+define Inv<T>
+define UserKlass
 
 // test 1: PTV is in consuming position (yield-case)
 fun testYield() {

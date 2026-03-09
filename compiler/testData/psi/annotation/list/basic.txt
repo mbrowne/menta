@@ -5,42 +5,38 @@ KtFile: basic.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION
-      PsiElement(AT)('@')
-      PsiElement(LBRACKET)('[')
-      ANNOTATION_ENTRY
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('abc')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            STRING_TEMPLATE
-              PsiElement(OPEN_QUOTE)('"')
-              PsiElement(CLOSING_QUOTE)('"')
-          PsiElement(RPAR)(')')
-      PsiWhiteSpace(' ')
-      ANNOTATION_ENTRY
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('cde')
-      PsiElement(RBRACKET)(']')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      ANNOTATION
+        PsiElement(AT)('@')
+        PsiElement(LBRACKET)('[')
+        ANNOTATION_ENTRY
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('abc')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            VALUE_ARGUMENT
+              STRING_TEMPLATE
+                PsiElement(OPEN_QUOTE)('"')
+                PsiElement(CLOSING_QUOTE)('"')
+            PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        ANNOTATION_ENTRY
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('cde')
+        PsiElement(RBRACKET)(']')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -85,8 +81,8 @@ KtFile: basic.kt
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          BINARY_EXPRESSION
-            ANNOTATED_EXPRESSION
+          CLASS
+            MODIFIER_LIST
               ANNOTATION
                 PsiElement(AT)('@')
                 PsiElement(LBRACKET)('[')
@@ -104,19 +100,14 @@ KtFile: basic.kt
                         REFERENCE_EXPRESSION
                           PsiElement(IDENTIFIER)('inline')
                 PsiElement(RBRACKET)(']')
-              PsiWhiteSpace(' ')
-              PsiErrorElement:Expecting an element
-                PsiElement(class)('class')
             PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('Local')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
-            LAMBDA_EXPRESSION
-              FUNCTION_LITERAL
-                PsiElement(LBRACE)('{')
-                BLOCK
-                  <empty list>
-                PsiElement(RBRACE)('}')
+            PsiElement(IDENTIFIER)('Local')
+            PsiWhiteSpace(' ')
+            CLASS_BODY
+              PsiElement(LBRACE)('{')
+              PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n\n        ')
           ANNOTATED_EXPRESSION
             ANNOTATION

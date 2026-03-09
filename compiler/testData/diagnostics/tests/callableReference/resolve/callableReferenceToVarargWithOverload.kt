@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KFunction2
 
-class Foo
+define Foo
 
 fun test(fn: KFunction2<Foo, Array<out String>, String>) = null
 

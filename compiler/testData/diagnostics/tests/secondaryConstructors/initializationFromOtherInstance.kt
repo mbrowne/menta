@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A {
+define A {
     val x: Int
     val y: Int
     constructor(x: Int, y: Int) {
@@ -12,7 +12,7 @@ class A {
         y = other.y
     }
 }
-class A1(val x: Int, val y: Int) {
+define A1(val x: Int, val y: Int) {
     constructor(other: A1): this(other.x, other.y)
 }
 

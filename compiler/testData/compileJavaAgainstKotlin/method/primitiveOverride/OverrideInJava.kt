@@ -4,6 +4,6 @@ interface A<T> {
     fun foo(): T
 }
 
-abstract class B : A<Int> {
+abstract define B : A<Int> {
     override abstract fun foo(): Int
 }

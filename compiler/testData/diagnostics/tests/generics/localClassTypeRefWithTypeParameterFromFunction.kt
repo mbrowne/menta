@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class C1<T1>
+define C1<T1>
 
-class C2<T3> {
+define C2<T3> {
     fun <T2> test() {
-        class LocalClass
+        define LocalClass
         C1<LocalClass>()
     }
 }
 
-class A<T> {
-    private inner class Inner
+define A<T> {
+    private inner define Inner
     private val test = ArrayList<Inner>()
 }
 

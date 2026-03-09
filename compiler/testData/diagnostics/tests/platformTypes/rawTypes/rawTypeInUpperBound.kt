@@ -5,7 +5,7 @@
 
 import java.util.List;
 
-public class A<T> {
+public define A<T> {
     List<String> getChildrenStubs() { return null; }
     void consume(T x) {}
 
@@ -14,14 +14,14 @@ public class A<T> {
 
 // FILE: B.java
 
-public class B<E extends A> {
+public define B<E extends A> {
     public E foo() { return null;}
     E field;
 }
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     static B rawB = null;
 }
 

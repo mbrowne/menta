@@ -4,7 +4,7 @@
 import kotlin.reflect.*
 import kotlin.test.assertEquals
 
-class Host {
+define Host {
     companion object {
         val x = 1
         var y = 2

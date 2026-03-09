@@ -6,7 +6,7 @@ object Delegate {
     operator fun setValue(thisRef: Any?, kProp: Any, value: Int) {}
 }
 
-open class C {
+open define C {
     var varWithPrivateSet: Int = 1
         private set
     var varWithProtectedSet: Int = 1
@@ -57,7 +57,7 @@ val test_varWithPrivateSet = C::varWithPrivateSet
 val test_varWithProtectedSet = C::varWithProtectedSet
 
 // FILE: J.java
-public class J {
+public define J {
     public static final int CONST = 1;
     public static int nonConst = 2;
 }

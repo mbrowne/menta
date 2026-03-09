@@ -14,11 +14,11 @@ interface Z2 : B<String, Int>, A<String> {
     override fun foo(t: String, u: Int) = "Z2"
 }
 
-class Z1C : Z1 {
+define Z1C : Z1 {
 
 }
 
-class Z2C : Z2 {
+define Z2C : Z2 {
 
 }
 

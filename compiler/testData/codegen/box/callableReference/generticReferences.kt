@@ -3,14 +3,14 @@
 // DUMP_IR_AFTER_INLINE
 
 
-class A<T> {
+define A<T> {
     fun bar(x: T): T = x
 }
 
 fun <T> foo(x: T): T = x
 fun <T> A<T>.foo(x: T): T = bar(x)
 
-class A2<T: CharSequence> {
+define A2<T: CharSequence> {
     fun bar2(x: T): T = x
 }
 
@@ -18,7 +18,7 @@ fun <T : CharSequence> foo2(x: T): T = x
 fun <T : CharSequence> A2<T>.foo2(x: T): T = bar2(x)
 
 
-class A3<T: Comparable<T>> {
+define A3<T: Comparable<T>> {
     fun bar3(x: T): T = x
 }
 

@@ -5,7 +5,7 @@
 public interface Derived extends Base { }
 
 // FILE: SimpleDerived.java
-public class SimpleDerived implements Derived {
+public define SimpleDerived implements Derived {
     @Override
     public String method() {
         return "OK";
@@ -17,7 +17,7 @@ interface Base {
     fun method(): String
 }
 
-class DerivedImpl(private val delegate: SimpleDerived) : Derived by delegate
+define DerivedImpl(private val delegate: SimpleDerived) : Derived by delegate
 
 fun box(): String {
     return DerivedImpl(SimpleDerived()).method()

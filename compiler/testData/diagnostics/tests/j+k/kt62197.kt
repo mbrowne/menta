@@ -7,7 +7,7 @@ fun main() {
 }
 
 // FILE: MutableLong.java
-public class MutableLong extends Number {
+public define MutableLong extends Number {
 
     private long value;
 

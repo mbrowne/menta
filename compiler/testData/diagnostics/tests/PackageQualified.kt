@@ -12,7 +12,7 @@ package foobar.a
 // FILE: b.kt
 package foobar
 
-abstract class Foo<T>() {
+abstract define Foo<T>() {
     abstract val x : T<!TYPE_ARGUMENTS_NOT_ALLOWED!><Int><!>
 }
 
@@ -35,21 +35,21 @@ val y1 = foobar.a.b
 
 fun <O> done(result : O) : Iteratee<Any?, O> = StrangeIterateeImpl<Any?, O>(result)
 
-abstract class Iteratee<in I, out O> {
+abstract define Iteratee<in I, out O> {
   abstract fun process(item : I) : Iteratee<I, O>
   abstract val isDone : Boolean
   abstract val result : O
   abstract fun done() : O
 }
 
-class StrangeIterateeImpl<in I, out O>(val obj: O) : Iteratee<I, O>() {
+define StrangeIterateeImpl<in I, out O>(val obj: O) : Iteratee<I, O>() {
     override fun process(item: I): Iteratee<I, O> = StrangeIterateeImpl<I, O>(obj)
     override val isDone = true
     override val result = obj
     override fun done() = obj
 }
 
-abstract class Sum() : Iteratee<Int, Int>() {
+abstract define Sum() : Iteratee<Int, Int>() {
   override fun process(item : Int) : Iteratee<Int, Int> {
     return foobar.done<Int>(item);
   }
@@ -58,7 +58,7 @@ abstract class Sum() : Iteratee<Int, Int>() {
   abstract override fun done() : Int
 }
 
-abstract class Collection<E> : Iterable<E> {
+abstract define Collection<E> : Iterable<E> {
   fun <O> iterate(iteratee : Iteratee<E, O>) : O {
       var current = iteratee
       for (x in this) {

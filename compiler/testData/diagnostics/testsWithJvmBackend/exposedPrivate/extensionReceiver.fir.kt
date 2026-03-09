@@ -1,6 +1,6 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE -UNUSED_EXPRESSION
 
-private class C
+private define C
 
 private fun C.extension() { this }
 

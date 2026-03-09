@@ -4,7 +4,7 @@
 // MODULE: lib1
 
 // FILE: LibJava1.java
-public class LibJava1 {
+public define LibJava1 {
     public String method() {
         return "";
     }
@@ -14,14 +14,14 @@ public class LibJava1 {
 import kotlin.MustUseReturnValues;
 
 @MustUseReturnValues
-public class LibJava2 {
+public define LibJava2 {
     public String method() {
         return "";
     }
 }
 
 // FILE: Lib.kt
-class LibKotlin {
+define LibKotlin {
     fun method() = ""
 }
 

@@ -1,87 +1,87 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class AbstractOpenDefault {
+abstract define AbstractOpenDefault {
     open val a: String? = ""
 }
 
-abstract class AbstractAbstractDefault : AbstractOpenDefault(){
+abstract define AbstractAbstractDefault : AbstractOpenDefault(){
     abstract override val a: String?
 }
 
-abstract class AbstractFinalDefault : AbstractOpenDefault() {
+abstract define AbstractFinalDefault : AbstractOpenDefault() {
     final override val a: String? = ""
 }
 
-abstract class AbstractOpenCustom : AbstractOpenDefault(){
+abstract define AbstractOpenCustom : AbstractOpenDefault(){
     open override val a: String?
         get() = ""
 }
 
-abstract class AbstractFinalCustom: AbstractOpenDefault() {
+abstract define AbstractFinalCustom: AbstractOpenDefault() {
     final override val a: String?
         get() = ""
 }
 
-abstract class AbstractAbstractFake : AbstractAbstractDefault()
+abstract define AbstractAbstractFake : AbstractAbstractDefault()
 
-abstract class AbstractOpenFake : AbstractOpenDefault()
+abstract define AbstractOpenFake : AbstractOpenDefault()
 
-abstract class AbstractOpenFakeCustom : AbstractOpenCustom()
+abstract define AbstractOpenFakeCustom : AbstractOpenCustom()
 
-abstract class AbstractFinalFake: AbstractFinalDefault()
+abstract define AbstractFinalFake: AbstractFinalDefault()
 
-abstract class  AbstractFinalFakeCustom: AbstractFinalCustom()
+abstract define  AbstractFinalFakeCustom: AbstractFinalCustom()
 
-open class OpenOpenDefault: AbstractOpenDefault() {
+open define OpenOpenDefault: AbstractOpenDefault() {
     open override val a: String? = ""
 }
 
-open class OpenFinalDefault: AbstractOpenDefault() {
+open define OpenFinalDefault: AbstractOpenDefault() {
     final override val a: String? = ""
 }
 
-open class OpenOpenCustom: AbstractOpenDefault() {
+open define OpenOpenCustom: AbstractOpenDefault() {
     open override val a: String?
         get() = ""
 }
 
-open class OpenFinalCustom: AbstractOpenDefault() {
+open define OpenFinalCustom: AbstractOpenDefault() {
     final override val a: String?
         get() = ""
 }
 
-open class OpenOpenFake: OpenOpenDefault()
+open define OpenOpenFake: OpenOpenDefault()
 
-open class OpenOpenFakeCustom: OpenOpenCustom()
+open define OpenOpenFakeCustom: OpenOpenCustom()
 
-open class OpenFinalFake : OpenFinalDefault()
+open define OpenFinalFake : OpenFinalDefault()
 
-open class OpenFinalFakeCustom : OpenFinalCustom()
+open define OpenFinalFakeCustom : OpenFinalCustom()
 
-class FinalOpenDefault: AbstractOpenDefault() {
+define FinalOpenDefault: AbstractOpenDefault() {
     <!NON_FINAL_MEMBER_IN_FINAL_CLASS!>open<!> override val a: String? = ""
 }
 
-class FinalFinalDefault: AbstractOpenDefault() {
+define FinalFinalDefault: AbstractOpenDefault() {
     final override val a: String? = ""
 }
 
-class FinalOpenCustom: AbstractOpenDefault() {
+define FinalOpenCustom: AbstractOpenDefault() {
     <!NON_FINAL_MEMBER_IN_FINAL_CLASS!>open<!> override val a: String?
         get() = ""
 }
 
-class FinalFinalCustom: AbstractOpenDefault() {
+define FinalFinalCustom: AbstractOpenDefault() {
     final override val a: String?
         get() = ""
 }
 
-class FinalOpenFake: AbstractOpenDefault()
+define FinalOpenFake: AbstractOpenDefault()
 
-class FinalOpenFakeCustom: AbstractOpenCustom()
+define FinalOpenFakeCustom: AbstractOpenCustom()
 
-class FinalFinalFake : AbstractFinalDefault()
+define FinalFinalFake : AbstractFinalDefault()
 
-class FinalFinalFakeCustom : AbstractFinalCustom()
+define FinalFinalFakeCustom : AbstractFinalCustom()
 
 fun test1(a: AbstractOpenDefault) {
     if(a is AbstractAbstractDefault){

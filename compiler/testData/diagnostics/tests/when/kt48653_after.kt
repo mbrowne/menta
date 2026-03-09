@@ -3,7 +3,7 @@
 // LANGUAGE: +ProhibitNonExhaustiveWhenOnAlgebraicTypes
 // ISSUE: KT-48653
 
-sealed class Sealed {
+sealed define Sealed {
     object A : Sealed()
     object B : Sealed()
 }

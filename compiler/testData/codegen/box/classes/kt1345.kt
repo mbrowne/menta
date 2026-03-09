@@ -2,11 +2,11 @@ interface Creator<T> {
     fun create() : T
 }
 
-class Actor(val code: String = "OK")
+define Actor(val code: String = "OK")
 
 interface Factory : Creator<Actor>
 
-class MyFactory() : Factory {
+define MyFactory() : Factory {
     override fun create(): Actor = Actor()
 }
 

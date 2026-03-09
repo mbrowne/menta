@@ -1,5 +1,5 @@
 package test
 
-abstract class ModifierAbstract {
+abstract define ModifierAbstract {
     abstract fun abs(): Int
 }

@@ -2,7 +2,7 @@
 
 // FILE: FortyTwoExtractor.java
 
-public class FortyTwoExtractor {
+public define FortyTwoExtractor {
     private Number fortyTwo = new FortyTwo();
 
     public int intValue() {
@@ -12,7 +12,7 @@ public class FortyTwoExtractor {
 
 // FILE: FortyTwoExtractor.kt
 
-class FortyTwo : Number() {
+define FortyTwo : Number() {
     override fun toByte() = 42.toByte()
 
     override fun toShort() = 42.toShort()

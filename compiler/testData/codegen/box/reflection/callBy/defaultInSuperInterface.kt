@@ -21,7 +21,7 @@ interface E : A2, B2, C2 {
     }
 }
 
-class Z : D, E
+define Z : D, E
 
 fun box(): String {
     val f = Z::test

@@ -6,12 +6,12 @@
 private fun f() {}
 private val p = 1
 
-private class PC {
+private define PC {
     fun f() {}
     val p = 1
 }
 
-class A private constructor() {
+define A private constructor() {
     public inline fun publicInlineFunction() = ::<!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>A<!>
 }
 
@@ -41,14 +41,14 @@ inline fun test() {
     String::<!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>privateVal<!>
 }
 
-class C {
+define C {
     private fun f() {}
     private val p = 1
 
     protected fun protectedF() {}
     protected val protectedP = 1
 
-    protected class PC {
+    protected define PC {
         fun f() {}
         val p = 1
     }

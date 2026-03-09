@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-public class JavaClass {
+public define JavaClass {
     public static <T> Collection<T> filter(List<? extends T> arg) { return arg; }
 }
 

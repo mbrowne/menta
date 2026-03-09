@@ -3,4 +3,4 @@ package test
 
 public fun foo() {}
 
-class Foo {}
+define Foo {}

@@ -8,6 +8,6 @@ interface I {
     fun foo() = 23
 }
 
-class Sub : I {
+define Sub : I {
     var foo = 42
 }

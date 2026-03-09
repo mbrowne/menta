@@ -3,23 +3,23 @@
 
 // MODULE: common
 // FILE: common.kt
-open expect class A() {
+open expect define A() {
     fun foo(): String
 }
 
-expect class B() : A
+expect define B() : A
 
 fun test() = B().foo()
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
-open class Base {
+open define Base {
     fun foo() = "OK"
 }
 
-actual open class A : Base()
+actual open define A : Base()
 
-actual class B : A()
+actual define B : A()
 
 fun box() : String {
     return test()

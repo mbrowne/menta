@@ -10,11 +10,11 @@ interface B {
         get() = "FAIL"
 }
 
-open class C {
+open define C {
     private val c: String = "FAIL"
 }
 
-open class D: C(), A, B {
+open define D: C(), A, B {
     val b = c
 }
 

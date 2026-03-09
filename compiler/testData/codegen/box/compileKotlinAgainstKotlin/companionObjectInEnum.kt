@@ -3,7 +3,7 @@
 
 package library
 
-public enum class EnumClass {
+public enum define EnumClass {
     ENTRY;
 
     public companion object {

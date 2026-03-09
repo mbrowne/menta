@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // TARGET_BACKEND: JVM_IR
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun getAllPossibleNames(subScopes: List<List<String>>): Set<String> = withValidityAssertion {
     buildSet {
         subScopes.flatMapTo(this) { it }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // Check that unresolved super type doesn't interfere with unqualified super resolution.
 
-open class Base() {
+open define Base() {
     open fun foo() {}
 
     open fun ambiguous() {}
@@ -22,7 +22,7 @@ interface Interface {
         get() = 222
 }
 
-class ClassDerivedFromUnresolved : Base(), Interface, <!UNRESOLVED_REFERENCE!>Unresolved<!> {
+define ClassDerivedFromUnresolved : Base(), Interface, <!UNRESOLVED_REFERENCE!>Unresolved<!> {
     override fun foo() {}
     override fun bar() {}
 

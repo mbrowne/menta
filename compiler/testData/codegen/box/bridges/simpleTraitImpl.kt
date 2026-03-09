@@ -2,7 +2,7 @@ interface A<T> {
     fun foo(t: T) = "A"
 }
 
-class Z : A<String>
+define Z : A<String>
 
 
 fun box(): String {

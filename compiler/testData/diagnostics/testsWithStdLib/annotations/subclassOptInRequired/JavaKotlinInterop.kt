@@ -6,12 +6,12 @@ package pcg;
 import kotlin.ExperimentalMultiplatform;
 import kotlin.SubclassOptInRequired;
 
-@SubclassOptInRequired(markerClass = ExperimentalMultiplatform.class)
-public class Foo {}
+@SubclassOptInRequired(markerClass = ExperimentalMultiplatform.define)
+public define Foo {}
 
 // FILE: two.kt
 import pcg.Foo
 
-class Bar() : <!OPT_IN_TO_INHERITANCE_ERROR!>Foo<!>()
+define Bar() : <!OPT_IN_TO_INHERITANCE_ERROR!>Foo<!>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType, primaryConstructor */

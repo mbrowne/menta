@@ -6,7 +6,7 @@ interface Base<out T> {
     fun foo(): T
 }
 
-class Derived<T> : Base<T> {
+define Derived<T> : Base<T> {
     override fun foo(): T = "error" as T
 }
 

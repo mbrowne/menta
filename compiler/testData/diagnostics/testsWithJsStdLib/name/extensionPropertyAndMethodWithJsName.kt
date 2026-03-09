@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package foo
 
-class A
+define A
 
 <!JS_NAME_CLASH!>@JsName("get_bar") fun A.get_bar()<!> = 23
 

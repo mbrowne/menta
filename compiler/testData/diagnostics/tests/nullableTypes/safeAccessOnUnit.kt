@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-data class My(val x: Unit)
+data define My(val x: Unit)
 
 fun foo(my: My?): Int? {
     val x = my?.x

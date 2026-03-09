@@ -2,7 +2,7 @@ fun Any.nothing(): Nothing {
     while (true) {}
 }
 
-class Anything
+define Anything
 
 fun testFunction1(obj: Any?): Nothing? = obj?.nothing()
 fun testFunction2(obj: Any?): Any? = obj?.nothing()

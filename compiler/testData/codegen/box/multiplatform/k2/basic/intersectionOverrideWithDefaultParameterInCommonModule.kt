@@ -5,7 +5,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Expect {
+expect define Expect {
     fun foo(): String
 }
 
@@ -13,24 +13,24 @@ interface Base {
     fun cancel(s: Expect? = null): String
 }
 
-open class Derived : Base {
+open define Derived : Base {
     override fun cancel(s: Expect?): String {
         return s?.foo() ?: "OK"
     }
 }
 
-open class AbstractImpl : Derived(), Base
+open define AbstractImpl : Derived(), Base
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-class ActualTarget {
+define ActualTarget {
     fun foo(): String = "Fail"
 }
 
 actual typealias Expect = ActualTarget
 
-class Impl : AbstractImpl() {
+define Impl : AbstractImpl() {
     fun test(): String {
         return cancel()
     }

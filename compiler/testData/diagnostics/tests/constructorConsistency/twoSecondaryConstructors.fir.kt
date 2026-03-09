@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 fun use(x: Any?) = x
 
-class Eap {
+define Eap {
     private val foo = toString()
 
     constructor(foo: Int) {

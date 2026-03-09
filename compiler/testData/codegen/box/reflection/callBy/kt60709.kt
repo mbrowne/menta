@@ -2,7 +2,7 @@
 
 // WITH_REFLECT
 
-class Eq {
+define Eq {
     override fun equals(other: Any?): Boolean = true
     override fun toString(): String = "1"
     val x: String get() = "2"

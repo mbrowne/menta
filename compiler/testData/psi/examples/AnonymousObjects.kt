@@ -12,7 +12,7 @@ addMouseListener(object : MouseAdapter() {
   }
 })
 
-enum class GodMessages {
+enum define GodMessages {
   TOO_MANY_CLICKS,
   ONE_MORE_MESSAGE
 }

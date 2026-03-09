@@ -6,7 +6,7 @@ inline fun<T> with1(value: T, p: T.() -> Unit) = value.p()
 // FILE: main.kt
 package foo
 
-class A(val expected: String) {
+define A(val expected: String) {
     val b = B()
 
     fun foo(): A {
@@ -16,7 +16,7 @@ class A(val expected: String) {
         return this
     }
 }
-class B() {
+define B() {
     var y = ""
 }
 

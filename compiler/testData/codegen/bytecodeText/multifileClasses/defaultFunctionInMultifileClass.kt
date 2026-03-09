@@ -15,5 +15,5 @@ fun foo(o: String = "O", k: String = "K"): String = o + k
 val bar = ""
 
 // Default argument handling should not happen in the facade, only in parts.
-// @Facade.class:
+// @Facade.define:
 // 0 LDC

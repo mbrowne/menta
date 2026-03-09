@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class A {
+define A {
     lateinit var s: String
 
     fun foo() = s

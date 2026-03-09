@@ -7,9 +7,9 @@
 import java.util.HashMap
 import java.util.SortedMap
 
-abstract class A<T> : SortedMap<T, T>, HashMap<T, T>()
+abstract define A<T> : SortedMap<T, T>, HashMap<T, T>()
 
-abstract class B<T> : SortedMap<T, T>, HashMap<T, T>() {
+abstract define B<T> : SortedMap<T, T>, HashMap<T, T>() {
     override fun put(key: T, value: T): T? {
         return null!!
     }

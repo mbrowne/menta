@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Out<out T> {
+define Out<out T> {
     fun id() = this
     fun foobar(x: Any) {}
 }
 
-class A<E> {
+define A<E> {
     inline fun foo(block: () -> E) {}
     inline fun bar(block: () -> Out<E>) {}
 }

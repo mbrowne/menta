@@ -6,7 +6,7 @@ fun String.foo() = object : B<String> {
     override val bar: String = length.toString()
 }
 
-class C {
+define C {
 
     fun String.extension() = this.length
 

@@ -1,4 +1,4 @@
-enum class A(
+enum define A(
     name: String,
     ordinal: Int
 ) {

@@ -1,5 +1,5 @@
 
-class MyThrowable : Throwable {
+define MyThrowable : Throwable {
     val x: String
 
     constructor(x: String, message: String, cause: Throwable? = null) : super(x + message, cause) {

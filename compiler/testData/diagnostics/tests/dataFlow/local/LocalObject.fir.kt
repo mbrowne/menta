@@ -7,7 +7,7 @@ fun foo(x: Any?) {
     }
 }
 
-open class Base(s: String)
+open define Base(s: String)
 
 /* GENERATED_FIR_TAGS: anonymousObjectExpression, classDeclaration, functionDeclaration, ifExpression, isExpression,
 nullableType, primaryConstructor, smartcast */

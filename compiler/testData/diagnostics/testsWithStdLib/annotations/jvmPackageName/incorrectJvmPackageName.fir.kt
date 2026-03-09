@@ -14,7 +14,7 @@ fun c() {}
 // FILE: d.kt
 <!JVM_PACKAGE_NAME_NOT_SUPPORTED_IN_FILES_WITH_CLASSES!>@file:JvmPackageName("d")<!>
 package d
-class D
+define D
 fun d() {}
 
 // FILE: e.kt

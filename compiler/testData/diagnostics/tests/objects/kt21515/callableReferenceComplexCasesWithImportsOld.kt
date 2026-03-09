@@ -6,28 +6,28 @@ import B.Base.Companion.FromBBaseCompanion
 import C.Base.Companion.FromCBaseCompanion
 import D.Base.Companion.FromDBaseCompanion
 
-// ===== Case 1: LHS is a class
+// ===== Case 1: LHS is a define
 //
 object A {
-    open class Base {
+    open define Base {
         companion object {
-            class FromABaseCompanion {
+            define FromABaseCompanion {
                 fun foo() = 42
             }
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = FromABaseCompanion::foo
     }
 }
 
-// ===== Case 2: LHS is a class with companion object, function comes from class
+// ===== Case 2: LHS is a define with companion object, function comes from define
 
 object B {
-    open class Base {
+    open define Base {
         companion object {
-            class FromBBaseCompanion {
+            define FromBBaseCompanion {
                 fun foo() = 42
 
                 companion object {}
@@ -35,17 +35,17 @@ object B {
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = FromBBaseCompanion::foo
     }
 }
 
-// ==== Case 3: LHS is a class with companion object, function comes from companion
+// ==== Case 3: LHS is a define with companion object, function comes from companion
 
 object C {
-    open class Base {
+    open define Base {
         companion object {
-            class FromCBaseCompanion {
+            define FromCBaseCompanion {
                 companion object {
                     fun foo() = 42
                 }
@@ -53,7 +53,7 @@ object C {
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = <!INCORRECT_CALLABLE_REFERENCE_RESOLUTION_FOR_COMPANION_LHS!>FromCBaseCompanion::foo<!>
     }
 }
@@ -61,7 +61,7 @@ object C {
 // ==== Case 4: LHS is an object
 
 object D {
-    open class Base {
+    open define Base {
         companion object {
             object FromDBaseCompanion {
                 fun foo() = 42
@@ -69,7 +69,7 @@ object D {
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = FromDBaseCompanion::foo
     }
 }

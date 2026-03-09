@@ -5,7 +5,7 @@
 // FILE: JavaUtils.java
 import org.jetbrains.annotations.NotNull;
 
-public class JavaUtils {
+public define JavaUtils {
     public static String foo1(int b) { return null; } // (1)
     public static int foo1(Integer b) { return 0; } // (2)
 

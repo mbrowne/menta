@@ -1,8 +1,8 @@
 // MODULE: lib
 // FILE: lib.kt
 
-open class A {
-    open inner class Inner {
+open define A {
+    open inner define Inner {
         val x = "OK"
     }
 }
@@ -10,8 +10,8 @@ open class A {
 // MODULE: main(lib)
 // FILE: main.kt
 
-open class B : A() {
-    open inner class Inner : A.Inner()
+open define B : A() {
+    open inner define Inner : A.Inner()
 }
 
 fun box() = B().Inner().x

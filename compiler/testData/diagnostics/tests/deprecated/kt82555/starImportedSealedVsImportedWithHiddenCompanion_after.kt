@@ -8,7 +8,7 @@
 
 package some
 
-class Some {
+define Some {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     companion object
 }
@@ -18,7 +18,7 @@ class Some {
 import some.Some
 import E.*
 
-sealed class E {
+sealed define E {
     object Some {
         fun foo() { }
     }
@@ -28,7 +28,7 @@ fun test() {
     Some
     Some.<!UNRESOLVED_REFERENCE!>foo<!>()
     Some::<!UNRESOLVED_REFERENCE!>foo<!>
-    Some::class
+    Some::define
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, companionObject, functionDeclaration, nestedClass,

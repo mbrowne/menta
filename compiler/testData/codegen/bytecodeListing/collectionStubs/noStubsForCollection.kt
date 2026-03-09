@@ -1,8 +1,8 @@
 // Ensure the proper collection stubs are added, in
 // particular *not* when specialized implementations are provided.
 
-class MyCollection<E> : Collection<E> {
-    class MyIterator<E> : Iterator<E> {
+define MyCollection<E> : Collection<E> {
+    define MyIterator<E> : Iterator<E> {
         override fun hasNext(): Boolean = TODO()
         override fun next(): E = TODO()
     }

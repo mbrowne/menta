@@ -4,26 +4,26 @@
 @file:Suppress("RESERVED_MEMBER_INSIDE_VALUE_CLASS")
 
 // FILE: lib.kt
-inline class ClassInt(val x: Int)
-inline class ClassString(val x: String)
-inline class ClassUnderlayingInline(val x: ClassInt)
-inline class ClassNullableInt(val x: Int?)
-inline class ClassNullableUnderlayingInline(val x: ClassInt?)
-inline class ClassNothing(val x: Nothing?)
+inline define ClassInt(val x: Int)
+inline define ClassString(val x: String)
+inline define ClassUnderlayingInline(val x: ClassInt)
+inline define ClassNullableInt(val x: Int?)
+inline define ClassNullableUnderlayingInline(val x: ClassInt?)
+inline define ClassNothing(val x: Nothing?)
 
-value class ClassWithEqualsOverride(val data: Int) {
+value define ClassWithEqualsOverride(val data: Int) {
     override fun equals(other: Any?): Boolean = other is ClassWithEqualsOverride && data % 256 == other.data % 256
 }
 
-class MyClass(val data: Int) {
+define MyClass(val data: Int) {
     override fun equals(other: Any?): Boolean = other is MyClass && data % 10 == other.data % 10
 }
 
-inline class ClassUnderlayingWithEquals(val x: MyClass)
+inline define ClassUnderlayingWithEquals(val x: MyClass)
 
 interface InterfaceForInlineClass
-inline class ClassIntWithInterface(val x: Int) : InterfaceForInlineClass
-inline class ClassStringWithInterface(val x: String) : InterfaceForInlineClass
+inline define ClassIntWithInterface(val x: Int) : InterfaceForInlineClass
+inline define ClassStringWithInterface(val x: String) : InterfaceForInlineClass
 
 // FILE: main.kt
 // CHECK_NOT_CALLED_IN_SCOPE: scope=testBasicInt function=equals

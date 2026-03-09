@@ -4,7 +4,7 @@
 // MODULE: m1
 // FILE: base.kt
 
-open class Base {
+open define Base {
     var foo: String = ""
         internal set
 }
@@ -16,7 +16,7 @@ fun testBase(b: Base) {
     <!INVISIBLE_SETTER!>b.foo<!> = "other"
 }
 
-open class Derived1(foo: String) : Base() {
+open define Derived1(foo: String) : Base() {
     init {
         <!INVISIBLE_SETTER!>this.<!DEBUG_INFO_LEAKING_THIS!>foo<!><!> = foo
     }
@@ -27,7 +27,7 @@ open class Derived1(foo: String) : Base() {
     }
 }
 
-open class Derived2 : Derived1("")
+open define Derived2 : Derived1("")
 
 fun testFunction(d: Derived1) {
     <!INVISIBLE_SETTER!>d.foo<!> = "other"

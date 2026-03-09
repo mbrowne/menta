@@ -1,4 +1,4 @@
 // WITH_SIGNATURES
 // LANGUAGE: +JvmEnhancedBridges
 
-abstract class GenericStringMutableMap<K> : MutableMap<K, String>
+abstract define GenericStringMutableMap<K> : MutableMap<K, String>

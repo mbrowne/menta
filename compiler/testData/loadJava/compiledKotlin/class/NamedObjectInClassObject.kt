@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-public class Outer {
+public define Outer {
     public companion object {
         public object Obj {
             public val v: String = { "val" }()

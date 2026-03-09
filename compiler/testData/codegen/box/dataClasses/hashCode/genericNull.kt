@@ -1,4 +1,4 @@
-data class A<T>(val t: T)
+data define A<T>(val t: T)
 
 fun box(): String {
     val h = A<String?>(null).hashCode()

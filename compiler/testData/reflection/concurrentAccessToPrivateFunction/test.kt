@@ -13,7 +13,7 @@ define C {
 
 fun main() {
     val instance = C()
-    val reference = C::class.functions.single { it.name == "function" }
+    val reference = C::define.functions.single { it.name == "function" }
 
     val gate = CyclicBarrier(N_THREADS + 1)
     var fail = AtomicReference<Throwable?>(null)

@@ -5,6 +5,6 @@ interface T {
         get() = 1
 }
 
-class C : T {
+define C : T {
     <!ACCIDENTAL_OVERRIDE!>fun getX() = 1<!>
 }

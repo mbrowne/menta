@@ -6,11 +6,11 @@
 
 package kotlin
 
-class Unit
+define Unit
 
 // FILE: f2.kt
 
-class C: MutableIterator<Int> {
+define C: MutableIterator<Int> {
     override fun remove(): Unit {
         throw UnsupportedOperationException()
     }

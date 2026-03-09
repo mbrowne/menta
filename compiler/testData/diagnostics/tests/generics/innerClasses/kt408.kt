@@ -4,8 +4,8 @@
 interface T<E> {
     fun f() : E = null!!
 }
-open class A<X>() {
-    inner class B() : T<X> {}
+open define A<X>() {
+    inner define B() : T<X> {}
 }
 
 fun test() {

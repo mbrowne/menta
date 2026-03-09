@@ -4,8 +4,8 @@
 
 val w: Int = 2
 
-class Outer {
-    private inner class Inner private constructor(x: Int) {
+define Outer {
+    private inner define Inner private constructor(x: Int) {
         constructor() : this(w)
     }
 }

@@ -8,7 +8,7 @@
 // FILE: lib.kt
 import kotlin.reflect.*
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 inline fun <reified R> kType() = typeOf<R>()
 
 inline fun <reified R> kType(obj: R) = kType<R>()
@@ -17,14 +17,14 @@ inline fun <reified R> kType(obj: R) = kType<R>()
 import kotlin.test.*
 import kotlin.reflect.*
 
-class C<T>
-class D
+define C<T>
+define D
 
 fun <T> kTypeForCWithTypeParameter() = kType<C<T>>()
 
-class Outer<T> {
+define Outer<T> {
     companion object Friend
-    inner class Inner<S>
+    inner define Inner<S>
 }
 
 object Object

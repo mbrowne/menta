@@ -1,10 +1,10 @@
-private class A {
+private define A {
     private val f = "OK"
     inline fun ii() = f
 }
 
 
-private class B {
+private define B {
     private val a = A()
     fun foo() = a.ii()
 }

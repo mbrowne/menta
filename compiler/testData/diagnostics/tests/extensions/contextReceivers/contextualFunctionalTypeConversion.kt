@@ -2,8 +2,8 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class A
-class B
+define A
+define B
 
 fun expectAB(f: context(A, B) () -> Unit) {
     f(A(), B())

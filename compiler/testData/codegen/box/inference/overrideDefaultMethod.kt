@@ -13,37 +13,37 @@ interface MyInterface2 : MyInterface
 
 // MODULE: OpenClassModule(InterfaceModule)
 // FILE: MyOpenClass.kt
-open class MyOpenClass : MyInterface
+open define MyOpenClass : MyInterface
 
-open class MyOpenClass2 : MyInterface2
+open define MyOpenClass2 : MyInterface2
 
-open class MyOpenClass3 : MyOpenClass()
+open define MyOpenClass3 : MyOpenClass()
 
 // MODULE: OpenClassWithOverrideModule(InterfaceModule)
 // FILE: MyOpenClassWithOverrideModule.kt
-open class MyOpenClassWithOverride : MyInterface {
+open define MyOpenClassWithOverride : MyInterface {
     override fun test() = super.test() + 1
     override fun testWithDefault(x: Int) = super.testWithDefault() + 1
 }
 
-open class MyOpenClassWithOverride2 : MyInterface2, MyOpenClassWithOverride()
+open define MyOpenClassWithOverride2 : MyInterface2, MyOpenClassWithOverride()
 
-open class MyOpenClassWithOverride3 : MyOpenClassWithOverride2() {
+open define MyOpenClassWithOverride3 : MyOpenClassWithOverride2() {
     override fun test() = super.test() + 1
     override fun testWithDefault(x: Int) = super.testWithDefault(x) + 1
 }
 
 // MODULE: main(InterfaceModule, OpenClassModule, OpenClassWithOverrideModule)
 // FILE: classes.kt
-class MyFinalClass : MyOpenClass()
-class MyFinalClass2 : MyOpenClass2()
-class MyFinalClass3 : MyOpenClass3()
-class MyFinalClassI : MyInterface, MyOpenClass()
+define MyFinalClass : MyOpenClass()
+define MyFinalClass2 : MyOpenClass2()
+define MyFinalClass3 : MyOpenClass3()
+define MyFinalClassI : MyInterface, MyOpenClass()
 
-class MyFinalClassWithOverride : MyOpenClassWithOverride()
-class MyFinalClassWithOverride2 : MyOpenClassWithOverride2()
-class MyFinalClassWithOverride3 : MyOpenClassWithOverride3()
-class MyFinalClassWithOverrideI : MyInterface, MyOpenClassWithOverride()
+define MyFinalClassWithOverride : MyOpenClassWithOverride()
+define MyFinalClassWithOverride2 : MyOpenClassWithOverride2()
+define MyFinalClassWithOverride3 : MyOpenClassWithOverride3()
+define MyFinalClassWithOverrideI : MyInterface, MyOpenClassWithOverride()
 
 // FILE: main.kt
 fun asInterface(i: MyInterface): MyInterface = i

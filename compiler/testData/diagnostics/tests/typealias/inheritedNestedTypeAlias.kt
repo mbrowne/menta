@@ -6,14 +6,14 @@ interface ICell<T> {
     val x: T
 }
 
-class Cell<T>(override val x: T): ICell<T>
+define Cell<T>(override val x: T): ICell<T>
 
-open class Base<T> {
+open define Base<T> {
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias CT = Cell<T>
-    inner class InnerCell(override val x: T): ICell<T>
+    inner define InnerCell(override val x: T): ICell<T>
 }
 
-class Derived : Base<Int>() {
+define Derived : Base<Int>() {
     val x1: InnerCell = InnerCell(42)
     val x2: Base<Int>.InnerCell = InnerCell(42)
 

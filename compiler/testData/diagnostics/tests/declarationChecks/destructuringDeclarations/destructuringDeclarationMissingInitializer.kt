@@ -9,7 +9,7 @@ fun checkersShouldRun() {
     <!INITIALIZER_REQUIRED_FOR_DESTRUCTURING_DECLARATION!>val (@A a, _)<!>
 }
 
-annotation class A
+annotation define A
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, destructuringDeclaration, functionDeclaration, localProperty,
 propertyDeclaration, unnamedLocalVariable */

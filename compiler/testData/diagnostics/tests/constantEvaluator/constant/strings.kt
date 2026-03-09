@@ -2,7 +2,7 @@
 // WITH_STDLIB
 package test
 
-enum class MyEnum {
+enum define MyEnum {
     A
 }
 
@@ -25,7 +25,7 @@ enum class MyEnum {
 <!DEBUG_INFO_CONSTANT_VALUE("\"1.0\"")!>val prop6 = "${1.0}"<!>
 
 // val prop7: null
-<!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop7 = "${Int::class.java}"<!>
+<!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop7 = "${Int::define.java}"<!>
 
 // val prop8: \"a1.0\"
 <!DEBUG_INFO_CONSTANT_VALUE("\"a1.0\"")!>val prop8 = "a${1.toDouble()}"<!>

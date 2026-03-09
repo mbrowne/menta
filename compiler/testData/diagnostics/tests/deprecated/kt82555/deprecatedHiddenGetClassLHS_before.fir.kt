@@ -2,16 +2,16 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-82555
 
-class Outer {
+define Outer {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
-    class C {
+    define C {
         fun foo() { }
     }
 
-    val ref = C::class
+    val ref = C::define
 }
 
-class C
+define C
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, nestedClass, propertyDeclaration,
 stringLiteral */

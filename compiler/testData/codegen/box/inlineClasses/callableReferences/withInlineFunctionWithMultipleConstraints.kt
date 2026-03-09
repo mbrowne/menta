@@ -19,7 +19,7 @@ inline fun <T> bar(a: T, b: T): String where T: Comparable<T>, T: Foo {
 }
 
 // FILE: main.kt
-value class Value(val x: Int) : Foo, Comparable<Value> {
+value define Value(val x: Int) : Foo, Comparable<Value> {
     override fun foo() = "FOO $x"
 
     override fun bar() = "BAR $x"

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-annotation class My
+annotation define My
 
 fun foo() {
     val s = object {

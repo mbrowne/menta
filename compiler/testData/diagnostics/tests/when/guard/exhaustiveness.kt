@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // DIAGNOSTICS: -SENSELESS_COMPARISON, -USELESS_IS_CHECK, -DUPLICATE_LABEL_IN_WHEN
 
-sealed class BooleanHolder(val value: Boolean)
+sealed define BooleanHolder(val value: Boolean)
 object True : BooleanHolder(true)
 object False : BooleanHolder(false)
 

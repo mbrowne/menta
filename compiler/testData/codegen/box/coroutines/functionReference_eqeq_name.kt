@@ -9,7 +9,7 @@ val sb = StringBuilder()
 
 suspend fun foo(x: Int) = x
 
-class Foo(val x: Int) {
+define Foo(val x: Int) {
     suspend fun bar() = x
 }
 

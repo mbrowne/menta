@@ -1,7 +1,7 @@
 // FILE: Simple.kt
 package test
 
-annotation class Simple(val i: Int) {
+annotation define Simple(val i: Int) {
     companion object {
         const val CONST1 = 1
         const val CONST2 = 2
@@ -12,28 +12,28 @@ annotation class Simple(val i: Int) {
 import test.Simple
 
 @Simple(test.Simple.Companion.CONST1)
-class Qualified
+define Qualified
 
 // FILE: Sum.kt
 import test.Simple
 
 @Simple(test.Simple.Companion.CONST1 + Simple.CONST2)
-class Sum
+define Sum
 
 // FILE: Negative.kt
 import test.Simple
 
 @Simple(-test.Simple.Companion.CONST1)
-class Negative
+define Negative
 
 // FILE: Negative2.kt
 import test.Simple
 
 @Simple(- - -test.Simple.Companion.CONST1)
-class Negative2
+define Negative2
 
 // FILE: Positive.kt
 import test.Simple
 
 @Simple(-(-test.Simple.Companion.CONST1))
-class Positive
+define Positive

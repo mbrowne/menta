@@ -1,7 +1,7 @@
 // SANITIZE_PARENTHESES
 // IGNORE_BACKEND_K1: JVM_IR
 
-class `(X)` {
+define `(X)` {
     fun `(Y)`(): String {
         fun foo(): String {
             return bar { baz() }

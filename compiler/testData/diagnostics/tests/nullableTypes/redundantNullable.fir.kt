@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Generic<T>
+define Generic<T>
 
 fun redundantNullable(
         i: Int?<!REDUNDANT_NULLABLE!>?<!>,

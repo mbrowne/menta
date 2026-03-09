@@ -8,7 +8,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
 
     @Nullable
     public String method() { return ""; }

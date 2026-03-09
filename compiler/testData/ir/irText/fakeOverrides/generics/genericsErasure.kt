@@ -13,7 +13,7 @@
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // FILE: main.kt
-class Foo : I1, I2 {
+define Foo : I1, I2 {
     @JvmName("a1") fun <A> foo1(a: A) where A : Number = Unit
     @JvmName("b1") fun foo1(a: Number) = Unit
 

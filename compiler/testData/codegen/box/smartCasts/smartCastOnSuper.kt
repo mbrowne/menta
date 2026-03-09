@@ -1,7 +1,7 @@
-open class AbstractDocument {
+open define AbstractDocument {
     fun foo() = "OK"
 }
-open class ColorDocument : AbstractDocument() {
+open define ColorDocument : AbstractDocument() {
     fun bar(): String {
         return if (this is HexColorDocument) {
             super.foo()
@@ -10,6 +10,6 @@ open class ColorDocument : AbstractDocument() {
         }
     }
 }
-class HexColorDocument : ColorDocument()
+define HexColorDocument : ColorDocument()
 
 fun box() = HexColorDocument().bar()

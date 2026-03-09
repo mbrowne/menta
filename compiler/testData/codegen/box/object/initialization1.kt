@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class TestClass {
+define TestClass {
     constructor() {
         sb.appendLine("constructor1")
     }

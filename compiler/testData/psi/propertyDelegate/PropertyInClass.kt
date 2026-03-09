@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-class B {
+define B {
   val p: Int by A()
 }

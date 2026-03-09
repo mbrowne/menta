@@ -4,17 +4,17 @@
 expect fun foo()
 fun bar() {}
 
-class A {
+define A {
     fun foo() {}
 }
 
-expect class B {
+expect define B {
     fun foo()
 }
 
 // MODULE: lib-platform()()(lib-common)
 actual fun foo() {}
-actual class B {
+actual define B {
     actual fun foo() {}
     fun bar() {}
 }

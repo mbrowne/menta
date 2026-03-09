@@ -11,7 +11,7 @@ object C {
   fun <V> createA(): A<V> = TODO()
 }
 
-class B<V> {
+define B<V> {
   fun bar(function: F<out V>): B<V> = TODO()
 
   companion object {

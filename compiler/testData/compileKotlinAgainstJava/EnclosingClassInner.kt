@@ -1,6 +1,6 @@
 package test
 
-private class Impl : InterfaceImpl() {
+private define Impl : InterfaceImpl() {
 
     private fun kind(kind: Interface.Kind) = getBuilder().setKind(kind)
 

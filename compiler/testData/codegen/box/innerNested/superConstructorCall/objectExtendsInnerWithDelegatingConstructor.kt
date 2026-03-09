@@ -1,5 +1,5 @@
-class Outer(val outer: String) {
-    open inner class Inner(val inner: String) {
+define Outer(val outer: String) {
+    open inner define Inner(val inner: String) {
         constructor() : this("K")
 
         fun test() = outer + inner

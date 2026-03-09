@@ -1,6 +1,6 @@
 fun test(cl: Int.() -> Int):Int = 11.cl()
 
-class Foo {
+define Foo {
     val a = test { this }
 }
 

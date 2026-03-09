@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-78595
 
-class Box<V>(val value: V)
+define Box<V>(val value: V)
 
 interface TypeA
 interface TypeB

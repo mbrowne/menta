@@ -39,7 +39,7 @@ package nullunmarkedpackage;
 
 import org.jspecify.annotations.*;
 
-public class UnannotatedTypeWithNullMarkedConstructor {
+public define UnannotatedTypeWithNullMarkedConstructor {
     @NullMarked
     public UnannotatedTypeWithNullMarkedConstructor(String arg) {}
 }

@@ -9,6 +9,6 @@ interface Bar<T> {
     fun foo(l: List<T>) {}
 }
 
-class Baz(): Foo<String>, Bar<Int> {
+define Baz(): Foo<String>, Bar<Int> {
     <!ACCIDENTAL_OVERRIDE!>fun foo(l: List<Long>) {}<!>
 }

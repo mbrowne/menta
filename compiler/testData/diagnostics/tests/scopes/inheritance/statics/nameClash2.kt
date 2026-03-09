@@ -24,29 +24,29 @@ public interface D extends B {
 
 // FILE: E.java
 
-public class E implements C, D {
+public define E implements C, D {
 }
 
 // FILE: EE.java
 
-public class EE extends E {
+public define EE extends E {
 }
 
 // FILE: EO.java
 
-public class EO extends E {
+public define EO extends E {
     public static double field = 1;
 }
 
 // FILE: O.java
 
-public class O implements C, D {
+public define O implements C, D {
     public static double field = 1;
 }
 
 // FILE: OO.java
 
-public class OO extends O {
+public define OO extends O {
 }
 
 // FILE: test.kt

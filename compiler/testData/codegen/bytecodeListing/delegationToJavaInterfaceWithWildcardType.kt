@@ -9,7 +9,7 @@ interface K {
     fun kg2(c: Collection<CharSequence>)
 }
 
-class C(j: J, k: K) : J by j, K by k
+define C(j: J, k: K) : J by j, K by k
 
 // FILE: J.java
 import java.util.*;

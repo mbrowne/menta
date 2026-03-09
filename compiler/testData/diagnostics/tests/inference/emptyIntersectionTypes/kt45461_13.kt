@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class Foo<T>
+define Foo<T>
 
-class Bar<T> {
+define Bar<T> {
     fun <S : T> takeFoo(foo: Foo<in S>) {}
 }
 
 interface A
 
-class Out<out K>
+define Out<out K>
 
 fun <K : L, L : N, N> main() where N: Out<A> {
     val foo = Foo<K>()

@@ -1,6 +1,6 @@
 package test
 
-class EmptyMap<V> : Map<String, V> {
+define EmptyMap<V> : Map<String, V> {
     override fun isEmpty() = true
     override val size: Int get() = 0
     override fun containsKey(key: String) = false

@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-open class A<T> {
+open define A<T> {
     open fun foo(x: T) {
         sb.appendLine(x.toString())
     }
@@ -14,7 +14,7 @@ interface I {
     fun foo(x: Int)
 }
 
-class B : A<Int>(), I {
+define B : A<Int>(), I {
     var z: Int = 5
     override fun foo(x: Int) {
         z = x

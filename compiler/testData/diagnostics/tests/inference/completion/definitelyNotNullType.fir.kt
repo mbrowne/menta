@@ -25,11 +25,11 @@ fun <T : Derived?> test(derived: T) {
 }
 
 interface Base
-open class Derived : Base
+open define Derived : Base
 
-class Inv<T>
-class Out<out O>
-class In<in I>
+define Inv<T>
+define Out<out O>
+define In<in I>
 
 fun <K> id(arg: K) = arg
 fun <T : Any> makeDnn(arg: T?): T = TODO()

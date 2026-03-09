@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: KotlinFile.kt
-abstract class KotlinClass : JavaClass(), KotlinInterface, JavaInterface {
+abstract define KotlinClass : JavaClass(), KotlinInterface, JavaInterface {
     override fun getSomething1(): Int = 1
     override fun getSomething3(): String = ""
     override fun setSomething4(value: String) {}
@@ -37,7 +37,7 @@ fun useInt(i: Int) {}
 fun useString(i: String) {}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getSomething1() { return 1; }
     public int getSomething2() { return 1; }
     public Object getSomething3() { return null; }

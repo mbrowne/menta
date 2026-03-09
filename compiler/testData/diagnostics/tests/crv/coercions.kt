@@ -34,7 +34,7 @@ fun testVals() {
     val rf3: () -> Unit = { stringF() }
 }
 
-class A {
+define A {
     @IgnorableReturnValue fun ign() = ""
 }
 

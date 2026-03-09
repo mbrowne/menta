@@ -1,9 +1,9 @@
 // FIR_IDENTICAL
-open class B {
+open define B {
     private fun getX() = 1
 }
 
-class C : B() {
+define C : B() {
     val x: Int
         get() = 1
 }

@@ -12,7 +12,7 @@ fun interface Computable<C> {
 
 // FILE: WriteAction.java
 
-public class WriteAction {
+public define WriteAction {
     public static <R> R compute(Computable<R> action) {
         return action.compute();
     }

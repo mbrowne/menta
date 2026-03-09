@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM_IR
 // ISSUE: KT-76805
 // FILE: To.java
-class To {
+define To {
     boolean mTo;
     boolean getTo() { return mTo; }
     void setTo(Boolean to) { mTo = to != null && to; }

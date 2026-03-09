@@ -15,11 +15,63 @@ error:
 sink:
     <SINK>                                                                USE: in: {} out: {}
 =====================
-== anonymous_0 ==
-{
+== Demo0 ==
+class Demo0 {
     private val some = object {
         fun foo() {
             println(state) // Ok
+        }
+    }
+
+    private var state: Boolean = true
+}
+---------------------
+L0:
+  1 <START>                                                                INIT: in: {} out: {}
+    v(private val some = object { fun foo() { println(state) // Ok } })    INIT: in: {} out: {}
+    mark(object { fun foo() { println(state) // Ok } })                    INIT: in: {} out: {}
+    jmp?(L2)
+    d(fun foo() { println(state) // Ok })                                                                          USE: in: {state=READ} out: {state=READ}
+L2 [after local declaration]:
+    r(object { fun foo() { println(state) // Ok } }) -> <v0>
+    w(some|<v0>)                                                           INIT: in: {} out: {}
+    v(private var state: Boolean = true)                                   INIT: in: {} out: {state=D}
+    r(true) -> <v1>                                                        INIT: in: {state=D} out: {state=D}
+    w(state|<v1>)                                                          INIT: in: {state=D} out: {state=ID}
+L1:
+    <END>                                                                  INIT: in: {state=ID} out: {state=ID}
+error:
+    <ERROR>                                                                INIT: in: {} out: {}
+sink:
+    <SINK>                                                                 INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
+=====================
+== foo ==
+fun foo() {
+            println(state) // Ok
+        }
+---------------------
+L3:
+  2 <START>                                       INIT: in: {} out: {}
+  3 mark({ println(state) // Ok })
+    magic[IMPLICIT_RECEIVER](state) -> <v0>                               USE: in: {state=READ} out: {state=READ}
+    r(state|<v0>) -> <v1>                                                 USE: in: {} out: {state=READ}
+    mark(println(state))
+    call(println(state), println|<v1>) -> <v2>
+L4:
+  2 <END>
+error:
+    <ERROR>
+sink:
+    <SINK>                                                                USE: in: {} out: {}
+=====================
+== Demo1 ==
+class Demo1 {
+    private val some = object {
+        fun foo() {
+            if (state)
+                state = true
+
+            println(state) // must be initialized
         }
     }
 
@@ -28,75 +80,22 @@ sink:
 ---------------------
 L0:
   1 <START>                                                                                                         INIT: in: {} out: {}
-  2 mark({ private val some = object { fun foo() { println(state) // Ok } } private var state: Boolean = true })
-    v(private val some = object { fun foo() { println(state) // Ok } })                                             INIT: in: {} out: {}
-    mark(object { fun foo() { println(state) // Ok } })                                                             INIT: in: {} out: {}
+    v(private val some = object { fun foo() { if (state) state = true println(state) // must be initialized } })    INIT: in: {} out: {}
+    mark(object { fun foo() { if (state) state = true println(state) // must be initialized } })                    INIT: in: {} out: {}
     jmp?(L2)
-    d(fun foo() { println(state) // Ok })
+    d(fun foo() { if (state) state = true println(state) // must be initialized })                                  INIT: in: {state=I} out: {state=I}      USE: in: {state=READ} out: {state=READ}
 L2 [after local declaration]:
-    r(object { fun foo() { println(state) // Ok } }) -> <v0>
+    r(object { fun foo() { if (state) state = true println(state) // must be initialized } }) -> <v0>               INIT: in: {} out: {}
     w(some|<v0>)                                                                                                    INIT: in: {} out: {}
     v(private var state: Boolean = true)                                                                            INIT: in: {} out: {state=D}
     r(true) -> <v1>                                                                                                 INIT: in: {state=D} out: {state=D}
     w(state|<v1>)                                                                                                   INIT: in: {state=D} out: {state=ID}
 L1:
-  1 <END>                                                                                                           INIT: in: {} out: {}
+    <END>                                                                                                           INIT: in: {state=ID} out: {state=ID}
 error:
-    <ERROR>
+    <ERROR>                                                                                                         INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                                 USE: in: {} out: {}
-=====================
-== foo ==
-fun foo() {
-            println(state) // Ok
-        }
----------------------
-L3:
-  3 <START>                                       INIT: in: {} out: {}
-  4 mark({ println(state) // Ok })
-    magic[UNRESOLVED_CALL](state) -> <v0>
-    mark(println(state))
-    call(println(state), println|<v0>) -> <v1>
-L4:
-  3 <END>
-error:
-    <ERROR>
-sink:
-    <SINK>                                                                USE: in: {} out: {}
-=====================
-== anonymous_1 ==
-{
-    private val some = object {
-        fun foo() {
-            if (state)
-                state = true
-
-            println(state) // must be initialized
-        }
-    }
-
-    private var state: Boolean = true
-}
----------------------
-L0:
-  1 <START>                                                                                                                                                  INIT: in: {} out: {}
-  2 mark({ private val some = object { fun foo() { if (state) state = true println(state) // must be initialized } } private var state: Boolean = true })
-    v(private val some = object { fun foo() { if (state) state = true println(state) // must be initialized } })                                             INIT: in: {} out: {}
-    mark(object { fun foo() { if (state) state = true println(state) // must be initialized } })                                                             INIT: in: {} out: {}
-    jmp?(L2)
-    d(fun foo() { if (state) state = true println(state) // must be initialized })
-L2 [after local declaration]:
-    r(object { fun foo() { if (state) state = true println(state) // must be initialized } }) -> <v0>
-    w(some|<v0>)                                                                                                                                             INIT: in: {} out: {}
-    v(private var state: Boolean = true)                                                                                                                     INIT: in: {} out: {state=D}
-    r(true) -> <v1>                                                                                                                                          INIT: in: {state=D} out: {state=D}
-    w(state|<v1>)                                                                                                                                            INIT: in: {state=D} out: {state=ID}
-L1:
-  1 <END>                                                                                                                                                    INIT: in: {} out: {}
-error:
-    <ERROR>
-sink:
-    <SINK>                                                                                                                                                                                          USE: in: {} out: {}
+    <SINK>                                                                                                          INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
 =====================
 == foo ==
 fun foo() {
@@ -107,32 +106,33 @@ fun foo() {
         }
 ---------------------
 L3:
-  3 <START>                                                                    INIT: in: {} out: {}
-  4 mark({ if (state) state = true println(state) // must be initialized })
+  2 <START>                                                                    INIT: in: {} out: {}
+  3 mark({ if (state) state = true println(state) // must be initialized })
     mark(if (state) state = true)
-    magic[UNRESOLVED_CALL](state) -> <v0>
-    jf(L5|<v0>)
-    magic[UNRESOLVED_CALL](state) -> <v1>
-    magic[VALUE_CONSUMER](state|<v1>) -> <v2>
-    r(true) -> <v3>
-    w(state|<v3>)
-    jmp(L6)
+    magic[IMPLICIT_RECEIVER](state) -> <v0>
+    r(state|<v0>) -> <v1>
+    jf(L5|<v1>)                                                                                                      USE: in: {state=READ} out: {state=READ}
+    magic[IMPLICIT_RECEIVER](state) -> <v2>
+    r(true) -> <v3>                                                                                                  USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
+    w(state|<v2>, <v3>)                                                        INIT: in: {} out: {state=I}           USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
+    jmp(L6)                                                                    INIT: in: {state=I} out: {state=I}
 L5 [else branch]:
-    read (Unit)
+    read (Unit)                                                                INIT: in: {} out: {}
 L6 ['if' expression result]:
-    merge(if (state) state = true|!<v4>) -> <v5>
-    magic[UNRESOLVED_CALL](state) -> <v6>
+    merge(if (state) state = true|!<v4>) -> <v5>                               INIT: in: {state=I} out: {state=I}
+    magic[IMPLICIT_RECEIVER](state) -> <v6>                                                                          USE: in: {state=READ} out: {state=READ}
+    r(state|<v6>) -> <v7>                                                                                            USE: in: {} out: {state=READ}
     mark(println(state))
-    call(println(state), println|<v6>) -> <v7>
+    call(println(state), println|<v7>) -> <v8>
 L4:
-  3 <END>
+  2 <END>
 error:
-    <ERROR>
+    <ERROR>                                                                    INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                             USE: in: {} out: {}
+    <SINK>                                                                     INIT: in: {state=I} out: {state=I}    USE: in: {} out: {}
 =====================
-== anonymous_2 ==
-{
+== Demo1A ==
+class Demo1A {
     fun foo() {
         if (state)
             state = true
@@ -144,20 +144,16 @@ sink:
 }
 ---------------------
 L0:
-  1 <START>                                                                                                   INIT: in: {} out: {}
-  2 mark({ fun foo() { if (state) state = true println(state) // Ok } private var state: Boolean = true })
-    jmp?(L2)
-    d(fun foo() { if (state) state = true println(state) // Ok })
-L2 [after local declaration]:
-    v(private var state: Boolean = true)                                                                      INIT: in: {} out: {state=D}
-    r(true) -> <v0>                                                                                           INIT: in: {state=D} out: {state=D}
-    w(state|<v0>)                                                                                             INIT: in: {state=D} out: {state=ID}
+  1 <START>                                 INIT: in: {} out: {}
+    v(private var state: Boolean = true)    INIT: in: {} out: {state=D}
+    r(true) -> <v0>                         INIT: in: {state=D} out: {state=D}
+    w(state|<v0>)                           INIT: in: {state=D} out: {state=ID}
 L1:
-  1 <END>                                                                                                     INIT: in: {} out: {}
+    <END>                                   INIT: in: {state=ID} out: {state=ID}
 error:
-    <ERROR>
+    <ERROR>                                 INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                           USE: in: {} out: {}
+    <SINK>                                  INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
 =====================
 == foo ==
 fun foo() {
@@ -167,33 +163,34 @@ fun foo() {
         println(state) // Ok
     }
 ---------------------
-L3:
-  3 <START>                                                   INIT: in: {} out: {}
-  4 mark({ if (state) state = true println(state) // Ok })
+L0:
+  1 <START>                                                   INIT: in: {} out: {}
+  2 mark({ if (state) state = true println(state) // Ok })
     mark(if (state) state = true)
-    magic[UNRESOLVED_CALL](state) -> <v0>
-    jf(L5|<v0>)
-    magic[UNRESOLVED_CALL](state) -> <v1>
-    magic[VALUE_CONSUMER](state|<v1>) -> <v2>
+    magic[IMPLICIT_RECEIVER](state) -> <v0>
+    r(state|<v0>) -> <v1>
+    jf(L2|<v1>)
+    magic[IMPLICIT_RECEIVER](state) -> <v2>
     r(true) -> <v3>
-    w(state|<v3>)
-    jmp(L6)
-L5 [else branch]:
+    w(state|<v2>, <v3>)
+    jmp(L3)
+L2 [else branch]:
     read (Unit)
-L6 ['if' expression result]:
+L3 ['if' expression result]:
     merge(if (state) state = true|!<v4>) -> <v5>
-    magic[UNRESOLVED_CALL](state) -> <v6>
+    magic[IMPLICIT_RECEIVER](state) -> <v6>
+    r(state|<v6>) -> <v7>
     mark(println(state))
-    call(println(state), println|<v6>) -> <v7>
-L4:
-  3 <END>
+    call(println(state), println|<v7>) -> <v8>
+L1:
+  1 <END>
 error:
     <ERROR>
 sink:
     <SINK>                                                                            USE: in: {} out: {}
 =====================
-== anonymous_3 ==
-{
+== Demo2 ==
+class Demo2 {
     private val some = object {
         fun foo() {
             if (state)
@@ -209,24 +206,23 @@ sink:
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                                                    INIT: in: {} out: {}
-  2 mark({ private val some = object { fun foo() { if (state) state = true else state = false println(state) // OK } } private var state: Boolean = true })
-    v(private val some = object { fun foo() { if (state) state = true else state = false println(state) // OK } })                                             INIT: in: {} out: {}
-    mark(object { fun foo() { if (state) state = true else state = false println(state) // OK } })                                                             INIT: in: {} out: {}
+  1 <START>                                                                                                           INIT: in: {} out: {}
+    v(private val some = object { fun foo() { if (state) state = true else state = false println(state) // OK } })    INIT: in: {} out: {}
+    mark(object { fun foo() { if (state) state = true else state = false println(state) // OK } })                    INIT: in: {} out: {}
     jmp?(L2)
-    d(fun foo() { if (state) state = true else state = false println(state) // OK })
+    d(fun foo() { if (state) state = true else state = false println(state) // OK })                                  INIT: in: {state=I} out: {state=I}      USE: in: {state=READ} out: {state=READ}
 L2 [after local declaration]:
-    r(object { fun foo() { if (state) state = true else state = false println(state) // OK } }) -> <v0>
-    w(some|<v0>)                                                                                                                                               INIT: in: {} out: {}
-    v(private var state: Boolean = true)                                                                                                                       INIT: in: {} out: {state=D}
-    r(true) -> <v1>                                                                                                                                            INIT: in: {state=D} out: {state=D}
-    w(state|<v1>)                                                                                                                                              INIT: in: {state=D} out: {state=ID}
+    r(object { fun foo() { if (state) state = true else state = false println(state) // OK } }) -> <v0>               INIT: in: {} out: {}
+    w(some|<v0>)                                                                                                      INIT: in: {} out: {}
+    v(private var state: Boolean = true)                                                                              INIT: in: {} out: {state=D}
+    r(true) -> <v1>                                                                                                   INIT: in: {state=D} out: {state=D}
+    w(state|<v1>)                                                                                                     INIT: in: {state=D} out: {state=ID}
 L1:
-  1 <END>                                                                                                                                                      INIT: in: {} out: {}
+    <END>                                                                                                             INIT: in: {state=ID} out: {state=ID}
 error:
-    <ERROR>
+    <ERROR>                                                                                                           INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                                                                            USE: in: {} out: {}
+    <SINK>                                                                                                            INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
 =====================
 == foo ==
 fun foo() {
@@ -239,35 +235,35 @@ fun foo() {
         }
 ---------------------
 L3:
-  3 <START>                                                                      INIT: in: {} out: {}
-  4 mark({ if (state) state = true else state = false println(state) // OK })
+  2 <START>                                                                      INIT: in: {} out: {}
+  3 mark({ if (state) state = true else state = false println(state) // OK })
     mark(if (state) state = true else state = false)
-    magic[UNRESOLVED_CALL](state) -> <v0>
-    jf(L5|<v0>)
-    magic[UNRESOLVED_CALL](state) -> <v1>
-    magic[VALUE_CONSUMER](state|<v1>) -> <v2>
-    r(true) -> <v3>
-    w(state|<v3>)
-    jmp(L6)
+    magic[IMPLICIT_RECEIVER](state) -> <v0>                                                                            USE: in: {state=READ} out: {state=READ}
+    r(state|<v0>) -> <v1>                                                                                              USE: in: {state=WRITTEN_AFTER_READ} out: {state=READ}
+    jf(L5|<v1>)
+    magic[IMPLICIT_RECEIVER](state) -> <v2>
+    r(true) -> <v3>                                                                                                    USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
+    w(state|<v2>, <v3>)                                                          INIT: in: {} out: {state=I}           USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
+    jmp(L6)                                                                      INIT: in: {state=I} out: {state=I}    USE: in: {state=READ} out: {state=READ}
 L5 [else branch]:
-    magic[UNRESOLVED_CALL](state) -> <v4>
-    magic[VALUE_CONSUMER](state|<v4>) -> <v5>
-    r(false) -> <v6>
-    w(state|<v6>)
+    magic[IMPLICIT_RECEIVER](state) -> <v4>                                      INIT: in: {} out: {}
+    r(false) -> <v5>                                                                                                   USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
+    w(state|<v4>, <v5>)                                                          INIT: in: {} out: {state=I}           USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
 L6 ['if' expression result]:
-    merge(if (state) state = true else state = false|!<v7>, !<v8>) -> <v9>
-    magic[UNRESOLVED_CALL](state) -> <v10>
+    merge(if (state) state = true else state = false|!<v6>, !<v7>) -> <v8>       INIT: in: {state=I} out: {state=I}
+    magic[IMPLICIT_RECEIVER](state) -> <v9>                                                                            USE: in: {state=READ} out: {state=READ}
+    r(state|<v9>) -> <v10>                                                                                             USE: in: {} out: {state=READ}
     mark(println(state))
     call(println(state), println|<v10>) -> <v11>
 L4:
-  3 <END>
+  2 <END>
 error:
-    <ERROR>
+    <ERROR>                                                                      INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                               USE: in: {} out: {}
+    <SINK>                                                                       INIT: in: {state=I} out: {state=I}    USE: in: {} out: {}
 =====================
-== anonymous_4 ==
-{
+== Demo3 ==
+class Demo3 {
     private val some = run {
         if (state)
             state = true
@@ -279,28 +275,28 @@ sink:
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                INIT: in: {} out: {}
-  2 mark({ private val some = run { if (state) state = true println(state) // OK } private var state: Boolean = true })
-    v(private val some = run { if (state) state = true println(state) // OK })                                             INIT: in: {} out: {}
-    mark({ if (state) state = true println(state) // OK })                                                                 INIT: in: {} out: {}
-    r({ if (state) state = true println(state) // OK }) -> <v0>
+  1 <START>                                                                                   INIT: in: {} out: {}
+    v(private val some = run { if (state) state = true println(state) // OK })                INIT: in: {} out: {}
+    magic[IMPLICIT_RECEIVER](run { if (state) state = true println(state) // OK }) -> <v0>    INIT: in: {} out: {}
+    mark({ if (state) state = true println(state) // OK })
+    jmp?(L2)
+    d({ if (state) state = true println(state) // OK })                                                                               USE: in: {state=READ} out: {state=READ}
+L2 [after local declaration]:
+    r({ if (state) state = true println(state) // OK }) -> <v1>
     mark(run { if (state) state = true println(state) // OK })
-    call(run { if (state) state = true println(state) // OK }, run|<v0>) -> <v1>
-L2 [before inlined declaration]:
-    inlined({ if (state) state = true println(state) // OK })
-L3 [after inlined declaration]:
-    w(some|<v1>)                                                                                                           INIT: in: {} out: {}
-    v(private var state: Boolean = true)                                                                                   INIT: in: {} out: {state=D}
-    r(true) -> <v2>                                                                                                        INIT: in: {state=D} out: {state=D}
-    w(state|<v2>)                                                                                                          INIT: in: {state=D} out: {state=ID}
+    call(run { if (state) state = true println(state) // OK }, run|<v0>, <v1>) -> <v2>
+    w(some|<v2>)                                                                              INIT: in: {} out: {}
+    v(private var state: Boolean = true)                                                      INIT: in: {} out: {state=D}
+    r(true) -> <v3>                                                                           INIT: in: {state=D} out: {state=D}
+    w(state|<v3>)                                                                             INIT: in: {state=D} out: {state=ID}
 L1:
-  1 <END>                                                                                                                  INIT: in: {} out: {}
+    <END>                                                                                     INIT: in: {state=ID} out: {state=ID}
 error:
-    <ERROR>
+    <ERROR>                                                                                   INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                                        USE: in: {} out: {}
+    <SINK>                                                                                    INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
 =====================
-== inlined anonymous_5 ==
+== anonymous_0 ==
 {
         if (state)
             state = true
@@ -308,30 +304,31 @@ sink:
         println(state) // OK
     }
 ---------------------
-L4:
-  3 <START>                                               INIT: in: {} out: {}
-  4 mark(if (state) state = true println(state) // OK)
+L3:
+  2 <START>                                               INIT: in: {} out: {}
+  3 mark(if (state) state = true println(state) // OK)
     mark(if (state) state = true)
-    magic[UNRESOLVED_CALL](state) -> <v0>
-    jf(L6|<v0>)
-    magic[UNRESOLVED_CALL](state) -> <v1>
-    magic[VALUE_CONSUMER](state|<v1>) -> <v2>
-    r(true) -> <v3>
-    w(state|<v3>)
-    jmp(L7)
-L6 [else branch]:
+    magic[IMPLICIT_RECEIVER](state) -> <v0>
+    r(state|<v0>) -> <v1>
+    jf(L5|<v1>)                                                                   USE: in: {state=READ} out: {state=READ}
+    magic[IMPLICIT_RECEIVER](state) -> <v2>
+    r(true) -> <v3>                                                               USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
+    w(state|<v2>, <v3>)                                                           USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
+    jmp(L6)
+L5 [else branch]:
     read (Unit)
-L7 ['if' expression result]:
+L6 ['if' expression result]:
     merge(if (state) state = true|!<v4>) -> <v5>
-    magic[UNRESOLVED_CALL](state) -> <v6>
+    magic[IMPLICIT_RECEIVER](state) -> <v6>                                       USE: in: {state=READ} out: {state=READ}
+    r(state|<v6>) -> <v7>                                                         USE: in: {} out: {state=READ}
     mark(println(state))
-    call(println(state), println|<v6>) -> <v7>
-L5:
-  3 <END>                                                                         USE: in: {} out: {}
+    call(println(state), println|<v7>) -> <v8>
+L4:
+  2 <END>
 error:
--   <ERROR>
+    <ERROR>
 sink:
-    <SINK>                                                INIT: in: {} out: {}    USE: in: {} out: {}
+    <SINK>                                                                        USE: in: {} out: {}
 =====================
 == run ==
 fun <T, R> T.run(f: T.() -> R) = f()
@@ -372,8 +369,8 @@ error:
 sink:
     <SINK>                                                                 USE: in: {} out: {}
 =====================
-== anonymous_6 ==
-{
+== Demo4 ==
+class Demo4 {
     private val some = exec {
         if (state)
             state = true
@@ -385,28 +382,27 @@ sink:
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                                  INIT: in: {} out: {}
-  2 mark({ private val some = exec { if (state) state = true println(state) // must be initialized } private var state: Boolean = true })
-    v(private val some = exec { if (state) state = true println(state) // must be initialized })                                             INIT: in: {} out: {}
-    mark({ if (state) state = true println(state) // must be initialized })                                                                  INIT: in: {} out: {}
+  1 <START>                                                                                            INIT: in: {} out: {}
+    v(private val some = exec { if (state) state = true println(state) // must be initialized })       INIT: in: {} out: {}
+    mark({ if (state) state = true println(state) // must be initialized })                            INIT: in: {} out: {}
     jmp?(L2)
-    d({ if (state) state = true println(state) // must be initialized })
+    d({ if (state) state = true println(state) // must be initialized })                               INIT: in: {state=I} out: {state=I}      USE: in: {state=READ} out: {state=READ}
 L2 [after local declaration]:
-    r({ if (state) state = true println(state) // must be initialized }) -> <v0>
+    r({ if (state) state = true println(state) // must be initialized }) -> <v0>                       INIT: in: {} out: {}
     mark(exec { if (state) state = true println(state) // must be initialized })
     call(exec { if (state) state = true println(state) // must be initialized }, exec|<v0>) -> <v1>
-    w(some|<v1>)                                                                                                                             INIT: in: {} out: {}
-    v(private var state: Boolean = true)                                                                                                     INIT: in: {} out: {state=D}
-    r(true) -> <v2>                                                                                                                          INIT: in: {state=D} out: {state=D}
-    w(state|<v2>)                                                                                                                            INIT: in: {state=D} out: {state=ID}
+    w(some|<v1>)                                                                                       INIT: in: {} out: {}
+    v(private var state: Boolean = true)                                                               INIT: in: {} out: {state=D}
+    r(true) -> <v2>                                                                                    INIT: in: {state=D} out: {state=D}
+    w(state|<v2>)                                                                                      INIT: in: {state=D} out: {state=ID}
 L1:
-  1 <END>                                                                                                                                    INIT: in: {} out: {}
+    <END>                                                                                              INIT: in: {state=ID} out: {state=ID}
 error:
-    <ERROR>
+    <ERROR>                                                                                            INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                                                          USE: in: {} out: {}
+    <SINK>                                                                                             INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
 =====================
-== anonymous_7 ==
+== anonymous_1 ==
 {
         if (state)
             state = true
@@ -415,32 +411,33 @@ sink:
     }
 ---------------------
 L3:
-  3 <START>                                                                INIT: in: {} out: {}
-  4 mark(if (state) state = true println(state) // must be initialized)
+  2 <START>                                                                INIT: in: {} out: {}
+  3 mark(if (state) state = true println(state) // must be initialized)
     mark(if (state) state = true)
-    magic[UNRESOLVED_CALL](state) -> <v0>
-    jf(L5|<v0>)
-    magic[UNRESOLVED_CALL](state) -> <v1>
-    magic[VALUE_CONSUMER](state|<v1>) -> <v2>
-    r(true) -> <v3>
-    w(state|<v3>)
-    jmp(L6)
+    magic[IMPLICIT_RECEIVER](state) -> <v0>
+    r(state|<v0>) -> <v1>
+    jf(L5|<v1>)                                                                                                  USE: in: {state=READ} out: {state=READ}
+    magic[IMPLICIT_RECEIVER](state) -> <v2>
+    r(true) -> <v3>                                                                                              USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
+    w(state|<v2>, <v3>)                                                    INIT: in: {} out: {state=I}           USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
+    jmp(L6)                                                                INIT: in: {state=I} out: {state=I}
 L5 [else branch]:
-    read (Unit)
+    read (Unit)                                                            INIT: in: {} out: {}
 L6 ['if' expression result]:
-    merge(if (state) state = true|!<v4>) -> <v5>
-    magic[UNRESOLVED_CALL](state) -> <v6>
+    merge(if (state) state = true|!<v4>) -> <v5>                           INIT: in: {state=I} out: {state=I}
+    magic[IMPLICIT_RECEIVER](state) -> <v6>                                                                      USE: in: {state=READ} out: {state=READ}
+    r(state|<v6>) -> <v7>                                                                                        USE: in: {} out: {state=READ}
     mark(println(state))
-    call(println(state), println|<v6>) -> <v7>
+    call(println(state), println|<v7>) -> <v8>
 L4:
-  3 <END>
+  2 <END>
 error:
-    <ERROR>
+    <ERROR>                                                                INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                         USE: in: {} out: {}
+    <SINK>                                                                 INIT: in: {state=I} out: {state=I}    USE: in: {} out: {}
 =====================
-== anonymous_8 ==
-{
+== Demo5 ==
+class Demo5 {
     private var state: Boolean = true
 
     private val some = object {
@@ -454,24 +451,23 @@ sink:
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                                 INIT: in: {} out: {}                    USE: in: {} out: {}
-  2 mark({ private var state: Boolean = true private val some = object { fun foo() { if (state) state = true println(state) // OK } } })
-    v(private var state: Boolean = true)                                                                                                    INIT: in: {} out: {state=D}
-    r(true) -> <v0>                                                                                                                         INIT: in: {state=D} out: {state=D}
-    w(state|<v0>)                                                                                                                           INIT: in: {state=D} out: {state=ID}
-    v(private val some = object { fun foo() { if (state) state = true println(state) // OK } })                                             INIT: in: {state=ID} out: {state=ID}
-    mark(object { fun foo() { if (state) state = true println(state) // OK } })                                                             INIT: in: {state=ID} out: {state=ID}
+  1 <START>                                                                                        INIT: in: {} out: {}
+    v(private var state: Boolean = true)                                                           INIT: in: {} out: {state=D}
+    r(true) -> <v0>                                                                                INIT: in: {state=D} out: {state=D}
+    w(state|<v0>)                                                                                  INIT: in: {state=D} out: {state=ID}
+    v(private val some = object { fun foo() { if (state) state = true println(state) // OK } })    INIT: in: {state=ID} out: {state=ID}
+    mark(object { fun foo() { if (state) state = true println(state) // OK } })                    INIT: in: {state=ID} out: {state=ID}
     jmp?(L2)
-    d(fun foo() { if (state) state = true println(state) // OK })                                                                           INIT: in: {state=I} out: {state=I}      USE: in: {state=READ} out: {state=READ}
+    d(fun foo() { if (state) state = true println(state) // OK })                                  INIT: in: {state=I} out: {state=I}      USE: in: {state=READ} out: {state=READ}
 L2 [after local declaration]:
-    r(object { fun foo() { if (state) state = true println(state) // OK } }) -> <v1>                                                        INIT: in: {state=ID} out: {state=ID}
-    w(some|<v1>)                                                                                                                            INIT: in: {state=ID} out: {state=ID}
+    r(object { fun foo() { if (state) state = true println(state) // OK } }) -> <v1>               INIT: in: {state=ID} out: {state=ID}
+    w(some|<v1>)                                                                                   INIT: in: {state=ID} out: {state=ID}
 L1:
-  1 <END>                                                                                                                                   INIT: in: {} out: {}
+    <END>                                                                                          INIT: in: {state=ID} out: {state=ID}
 error:
-    <ERROR>
+    <ERROR>                                                                                        INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                                                          USE: in: {} out: {}
+    <SINK>                                                                                         INIT: in: {state=I?} out: {state=I?}    USE: in: {} out: {}
 =====================
 == foo ==
 fun foo() {
@@ -482,23 +478,26 @@ fun foo() {
         }
 ---------------------
 L3:
-  3 <START>                                                   INIT: in: {state=ID} out: {state=ID}
-  4 mark({ if (state) state = true println(state) // OK })
+  2 <START>                                                   INIT: in: {state=ID} out: {state=ID}
+  3 mark({ if (state) state = true println(state) // OK })
     mark(if (state) state = true)
-    r(state) -> <v0>
-    jf(L5|<v0>)                                                                                       USE: in: {state=READ} out: {state=READ}
-    r(true) -> <v1>                                                                                   USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
-    w(state|<v1>)                                                                                     USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
+    magic[IMPLICIT_RECEIVER](state) -> <v0>
+    r(state|<v0>) -> <v1>
+    jf(L5|<v1>)                                                                                       USE: in: {state=READ} out: {state=READ}
+    magic[IMPLICIT_RECEIVER](state) -> <v2>
+    r(true) -> <v3>                                                                                   USE: in: {state=WRITTEN_AFTER_READ} out: {state=WRITTEN_AFTER_READ}
+    w(state|<v2>, <v3>)                                                                               USE: in: {state=READ} out: {state=WRITTEN_AFTER_READ}
     jmp(L6)
 L5 [else branch]:
     read (Unit)
 L6 ['if' expression result]:
-    merge(if (state) state = true|!<v2>) -> <v3>                                                      USE: in: {state=READ} out: {state=READ}
-    r(state) -> <v4>                                                                                  USE: in: {} out: {state=READ}
+    merge(if (state) state = true|!<v4>) -> <v5>
+    magic[IMPLICIT_RECEIVER](state) -> <v6>                                                           USE: in: {state=READ} out: {state=READ}
+    r(state|<v6>) -> <v7>                                                                             USE: in: {} out: {state=READ}
     mark(println(state))
-    call(println(state), println|<v4>) -> <v5>
+    call(println(state), println|<v7>) -> <v8>
 L4:
-  3 <END>
+  2 <END>
 error:
     <ERROR>                                                   INIT: in: {} out: {}
 sink:

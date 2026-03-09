@@ -4,7 +4,7 @@
 
 package javapackage;
 
-/*package-private*/ abstract class PackagePrivateGrandparentAbstractClass {
+/*package-private*/ abstract define PackagePrivateGrandparentAbstractClass {
     public static void publicStaticMethod() {}
 }
 
@@ -12,7 +12,7 @@ package javapackage;
 
 package javapackage;
 
-public class PublicParentClass extends PackagePrivateGrandparentAbstractClass {}
+public define PublicParentClass extends PackagePrivateGrandparentAbstractClass {}
 
 // FILE: foo.kt
 
@@ -24,7 +24,7 @@ fun foo() {
     TypeAliasedParent.publicStaticMethod()
 }
 
-class Child : TypeAliasedParent() {
+define Child : TypeAliasedParent() {
     fun foo() {
         TypeAliasedParent.publicStaticMethod()
         publicStaticMethod()

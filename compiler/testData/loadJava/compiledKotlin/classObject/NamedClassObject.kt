@@ -1,6 +1,6 @@
 package test
 
-class NamedClassObject {
+define NamedClassObject {
     companion object Named {
         fun f(): Int = 1
     }

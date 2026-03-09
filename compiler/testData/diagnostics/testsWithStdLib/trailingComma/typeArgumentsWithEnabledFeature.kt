@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE, -UNUSED_TYPEALIAS_PARAMETER, -CAST_NEVER_SUCCEEDS
 // LANGUAGE: +TrailingCommas
 
-class Foo1<T1> {}
+define Foo1<T1> {}
 
 interface Foo2<T1,>
 
@@ -11,7 +11,7 @@ fun <T1, T2, T3>foo3() {}
 
 typealias Foo4<T1,T2,T3,T4> = Int
 
-class Foo5<T, K: T,>: Foo2<K,>
+define Foo5<T, K: T,>: Foo2<K,>
 
 fun <T>foo () {
     val x1 = Foo1<Int,>()

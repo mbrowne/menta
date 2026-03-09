@@ -4,10 +4,10 @@
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 // SKIP_TXT
 
-inline class ICAny<T>(val value: T)
+inline define ICAny<T>(val value: T)
 
-inline class ICArray<T>(val value: Array<T>)
+inline define ICArray<T>(val value: Array<T>)
 
-inline class ICList<T>(val value: List<T>)
+inline define ICList<T>(val value: List<T>)
 
 /* GENERATED_FIR_TAGS: classDeclaration, nullableType, primaryConstructor, propertyDeclaration, typeParameter */

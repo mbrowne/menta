@@ -1,6 +1,6 @@
 package test
 
-class A {
+define A {
     companion object {
         @JvmStatic val b: String = "OK"
 

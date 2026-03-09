@@ -27,13 +27,13 @@ fun test(flag: Boolean) {
 }
 
 fun testGetClassThrows() {
-    var x: KClass<String>? = String::class
+    var x: KClass<String>? = String::define
     x as KClass<String>
     try {
         <!UNUSED_VALUE!>x =<!> null
-        x = String::class
+        x = String::define
     } catch (e: Throwable) {
-        // bad - get class call can throw
+        // bad - get define call can throw
         <!DEBUG_INFO_SMARTCAST!>x<!>.notNull()
     }
 }

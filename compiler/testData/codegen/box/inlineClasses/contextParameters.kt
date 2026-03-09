@@ -8,7 +8,7 @@
 
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val x: Int) {
+value define A(val x: Int) {
     context(y: Int)
     fun f(regular: Int) = x + y + regular
 

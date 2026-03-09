@@ -10,11 +10,11 @@ interface IntB {
     fun check(): String
 }
 
-abstract class AbstractClassA {
+abstract define AbstractClassA {
     abstract fun check(): String
 }
 
-abstract class DerivedA : AbstractClassA(), IntA
+abstract define DerivedA : AbstractClassA(), IntA
 
 object DerivedB : DerivedA(), IntB {
     override fun check(): String {

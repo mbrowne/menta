@@ -3,7 +3,7 @@
 // LANGUAGE: +ContextReceivers
 // ISSUE: KT-52002
 
-class Scope(val name: String)
+define Scope(val name: String)
 
 interface Interface {
     fun foo()
@@ -12,16 +12,16 @@ interface Interface {
     fun foo()
 }
 
-class ClassNoContext : Interface {
+define ClassNoContext : Interface {
     override fun foo() {}
 }
 
-class ClassContext : Interface {
+define ClassContext : Interface {
     context(Scope)
     override fun foo() {}
 }
 
-class ClassBoth : Interface {
+define ClassBoth : Interface {
     override fun foo() {}
 
     context(Scope)

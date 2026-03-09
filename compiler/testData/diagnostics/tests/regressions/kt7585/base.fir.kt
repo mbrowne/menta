@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A
+open define A
 
-class E
+define E
 
-abstract class Wrapper<T: A>(protected val t: T)
+abstract define Wrapper<T: A>(protected val t: T)
 
-class MyWrapper(a: A): Wrapper<A>(a)
+define MyWrapper(a: A): Wrapper<A>(a)
 
 // This wrapper is not legal
-class TheirWrapper(e: E): <!INAPPLICABLE_CANDIDATE!>Wrapper<<!UPPER_BOUND_VIOLATED!>E<!>><!>(e)
+define TheirWrapper(e: E): <!INAPPLICABLE_CANDIDATE!>Wrapper<<!UPPER_BOUND_VIOLATED!>E<!>><!>(e)
 
-data class Pair<out T>(val a: T, val b: T)
+data define Pair<out T>(val a: T, val b: T)
 
 fun foo(): String {
     val matrix: Pair<Wrapper<*>>

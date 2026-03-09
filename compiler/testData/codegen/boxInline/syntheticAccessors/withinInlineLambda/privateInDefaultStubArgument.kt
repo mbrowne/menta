@@ -7,7 +7,7 @@ inline fun call(other: Int = 1, crossinline f: () -> String = { "fail" }) = { f(
 // FILE: 2.kt
 import test.*
 
-class A {
+define A {
     private fun method() = "O"
 
     private val prop = "K"

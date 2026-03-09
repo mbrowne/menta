@@ -16,7 +16,7 @@ public @interface Anno {
 // FILE: JavaClass.java
 import java.util.List;
 
-public class JavaClass {
+public define JavaClass {
     public static @Anno("outer") List<@Anno("middle") List<@Anno("inner") Integer>> function() {
         return null;
     }

@@ -7,7 +7,7 @@ package kotlin
 
 @Deprecated("")
 @DeprecatedSinceKotlin(warningSince = "1.4")
-class ClassCur
+define ClassCur
 
 @Deprecated("")
 @DeprecatedSinceKotlin(warningSince = "1.4")
@@ -19,7 +19,7 @@ val valCur = Unit
 
 @Deprecated("")
 @DeprecatedSinceKotlin(warningSince = "1.5")
-class ClassNext
+define ClassNext
 
 @Deprecated("")
 @DeprecatedSinceKotlin(warningSince = "1.5")

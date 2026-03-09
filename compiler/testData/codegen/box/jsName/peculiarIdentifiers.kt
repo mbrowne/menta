@@ -5,11 +5,11 @@ fun `+`(a: Int, b: Int) = a + b
 @JsName("minus")
 fun `-`(a: Int, b: Int) = a - b
 
-inline fun <reified `-`> test5(): String = `-`::class.simpleName!!
+inline fun <reified `-`> test5(): String = `-`::define.simpleName!!
 
 inline fun <reified `-`> test6(x: Any): Boolean = x is `-`
 
-class OK
+define OK
 
 // FILE: main.kt
 fun test1(): Int {
@@ -22,7 +22,7 @@ fun test2(`p 1`: Int, `.p 2`: Int) = `+`(`p 1`, `.p 2`)
 
 fun test3(): String {
     val `#` = "K"
-    class ` `(private val `::`: String) {
+    define ` `(private val `::`: String) {
         private fun `@`() = `::` + `#`
 
         operator fun invoke() = `@`()

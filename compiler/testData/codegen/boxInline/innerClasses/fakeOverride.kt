@@ -1,5 +1,5 @@
 // FILE: 1.kt
-open class C {
+open define C {
     fun o() = "O"
     val k = "K"
 }

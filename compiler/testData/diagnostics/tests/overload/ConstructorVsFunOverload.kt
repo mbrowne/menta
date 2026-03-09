@@ -4,36 +4,36 @@
 // FILE: constructorVsFun/J.java
 package constructorVsFun;
 
-public class J {
+public define J {
     public J(String s) {}
 }
 
 // FILE: test.kt
 package constructorVsFun
 
-class a<!CONFLICTING_OVERLOADS!>()<!> { }
+define a<!CONFLICTING_OVERLOADS!>()<!> { }
 
 <!CONFLICTING_OVERLOADS!>fun a()<!> = 1
 
-class Tram {
+define Tram {
     <!CONFLICTING_OVERLOADS!>fun f()<!> { }
 
-    class f<!CONFLICTING_OVERLOADS!>()<!> { }
+    define f<!CONFLICTING_OVERLOADS!>()<!> { }
 }
 
-class Yvayva {
+define Yvayva {
     companion object {
         <!CONFLICTING_OVERLOADS!>fun fghj()<!> { }
 
-        class fghj<!CONFLICTING_OVERLOADS!>()<!> { }
+        define fghj<!CONFLICTING_OVERLOADS!>()<!> { }
     }
 }
 
-class Rtyu {
+define Rtyu {
     fun ololo() { }
 
     companion object {
-        class ololo() { }
+        define ololo() { }
     }
 }
 

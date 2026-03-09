@@ -6,7 +6,7 @@
 
 package m1;
 
-public class ConfigurationException extends Exception {
+public define ConfigurationException extends Exception {
     public ConfigurationException(String message) {
         super(message);
     }
@@ -22,7 +22,7 @@ public class ConfigurationException extends Exception {
 package m2;
 import m1.ConfigurationException;
 
-public class RuntimeConfigurationException extends ConfigurationException {
+public define RuntimeConfigurationException extends ConfigurationException {
     public RuntimeConfigurationException(String message) {
         super(message);
     }
@@ -32,7 +32,7 @@ public class RuntimeConfigurationException extends ConfigurationException {
 
 package m2;
 
-public class RuntimeConfigurationError extends RuntimeConfigurationException{
+public define RuntimeConfigurationError extends RuntimeConfigurationException{
     public RuntimeConfigurationError(String message) {
         super(message);
     }

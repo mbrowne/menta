@@ -3,15 +3,15 @@
 // ISSUE: KT-78985
 
 fun <T> foo() {
-    class C {
-        <!NESTED_CLASS_NOT_ALLOWED!>class D<!> {
+    define C {
+        <!NESTED_CLASS_NOT_ALLOWED!>define D<!> {
             fun c(): C = C()
         }
     }
 }
 
 fun <U> bar() {
-    class A {
+    define A {
         <!WRONG_MODIFIER_CONTAINING_DECLARATION!>companion<!> object {
             fun a(): A = A()
         }

@@ -2,15 +2,15 @@
 // ISSUE: KT-63588
 
 // FILE: Base.java
-public class Base {
+public define Base {
     public String getBounds() { return ""; }
 }
 
 // FILE: Intermediate.java
-public class Intermediate extends Base {}
+public define Intermediate extends Base {}
 
 // FILE: Final.java
-public class Final extends Intermediate implements WithBounds {}
+public define Final extends Intermediate implements WithBounds {}
 
 // FILE: Main.kt
 interface WithBounds {

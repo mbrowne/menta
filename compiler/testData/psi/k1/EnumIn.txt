@@ -3,22 +3,18 @@ KtFile: EnumIn.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  MODIFIER_LIST
-    PsiElement(enum)('enum')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(enum)('enum')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('`in`')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

@@ -1,7 +1,7 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-open class CharSequenceWithExtensionIterator(val s: String) : CharSequence {
+open define CharSequenceWithExtensionIterator(val s: String) : CharSequence {
     fun get(foo: String): Char = TODO("shouldn't be called!")
     override val length = s.length
     override fun subSequence(startIndex: Int, endIndex: Int) = s.subSequence(startIndex, endIndex)
@@ -14,7 +14,7 @@ operator fun CharSequenceWithExtensionIterator.iterator() = object : CharIterato
     public override fun hasNext() = false
 }
 
-class CharSequenceWithMemberIterator(s: String) : CharSequenceWithExtensionIterator(s) {
+define CharSequenceWithMemberIterator(s: String) : CharSequenceWithExtensionIterator(s) {
     // Returns characters in reverse
     operator fun iterator() = object : CharIterator() {
         private var index = 0

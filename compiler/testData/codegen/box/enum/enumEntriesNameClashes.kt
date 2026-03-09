@@ -4,13 +4,13 @@
 
 import kotlin.enums.*
 
-enum class EnumWithClash {
+enum define EnumWithClash {
     values,
     entries,
     valueOf;
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val ref = EnumWithClash::entries
     if (ref().toString() != "[values, entries, valueOf]") return "FAIL 1"

@@ -1,9 +1,9 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Wrapper(var baseUrl: String)
+define Wrapper(var baseUrl: String)
 
-enum class ConfigurationParameter {
+enum define ConfigurationParameter {
     BASE_URL(
         { value, nc ->
             println("Base url updated from config parameters " + nc.baseUrl + " -> " + value)

@@ -5,56 +5,38 @@ KtFile: SimpleClassMembers_ERR.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('foo')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('foo')
-          PsiWhiteSpace(' ')
-          LAMBDA_ARGUMENT
-            LAMBDA_EXPRESSION
-              FUNCTION_LITERAL
-                PsiElement(LBRACE)('{')
-                BLOCK
-                  <empty list>
-                PsiElement(RBRACE)('}')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(MINUS)('-')
-        PsiErrorElement:Expecting an element
-          <empty list>
+        PsiElement(IDENTIFIER)('foo')
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiElement(RBRACE)('}')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(MINUS)('-')
       PsiWhiteSpace('\n\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('Bar')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n    ')
-              BLOCK
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('sdfsd')
-              PsiWhiteSpace('\n    ')
-              PsiElement(RBRACE)('}')
+        PsiElement(IDENTIFIER)('Bar')
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n    ')
+          PsiErrorElement:Expecting member declaration
+            PsiElement(IDENTIFIER)('sdfsd')
+          PsiWhiteSpace('\n    ')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       FUN
         PsiElement(fun)('fun')

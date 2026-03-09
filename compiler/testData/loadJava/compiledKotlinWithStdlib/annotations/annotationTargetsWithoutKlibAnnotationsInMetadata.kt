@@ -22,11 +22,11 @@ import kotlin.annotation.AnnotationTarget.*
 )
 
 @Repeatable
-annotation class A(val s: String)
+annotation define A(val s: String)
 
-@A("class-1")
-@A("class-2")
-class C<@A("class-type-param") T> @A("primary-ctor") constructor(
+@A("define-1")
+@A("define-2")
+define C<@A("define-type-param") T> @A("primary-ctor") constructor(
     @property:A("ctor-property") @param:A("ctor-param") val p: Int
 ) {
     @A("secondary-ctor") constructor() : this(0)
@@ -41,11 +41,11 @@ class C<@A("class-type-param") T> @A("primary-ctor") constructor(
 
     @A("fun")
     fun <@A("fun-type-param") T> f(@A("fun-param-1") @A("fun-param-2") r: Any): @A("return-type") Unit {
-        @A("local-delegated-property-in-class")
+        @A("local-delegated-property-in-define")
         val ldp: Int by lazy { 1 }
     }
 
-    @A("nested-class") class Nested
+    @A("nested-define") define Nested
 }
 
 @A("typealias")
@@ -61,6 +61,6 @@ fun @receiver:A("fun-receiver") Any.ff() {}
 @delegate:A("delegate")
 val @receiver:A("property-receiver") Any.pp: Int by lazy { 3 }
 
-enum class E {
+enum define E {
     @A("enum-entry") ENTRY,
 }

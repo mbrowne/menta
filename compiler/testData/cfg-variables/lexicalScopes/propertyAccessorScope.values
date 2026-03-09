@@ -11,48 +11,23 @@ fun foo() {
     }
 }
 ---------------------
-A                                                                              !<v1>: *
-{ var a : Int get() { return field } set(v: Int) { field = v } }               <v0>: *    NEW: r({ var a : Int get() { return field } set(v: Int) { field = v } }) -> <v0>
-A { var a : Int get() { return field } set(v: Int) { field = v } }             <v2>: *    NEW: magic[UNRESOLVED_CALL](A { var a : Int get() { return field } set(v: Int) { field = v } }|<v0>, !<v1>) -> <v2>
-{ class A { var a : Int get() { return field } set(v: Int) { field = v } } }   <v2>: *    COPY
 =====================
-== anonymous_0 ==
-{
-        var a : Int
-          get() {
-              return field
-          }
-          set(v: Int) {
-              field = v
-          }
-    }
----------------------
-get                                                            !<v1>: *
-{ return field }                                               <v0>: *    NEW: r({ return field }) -> <v0>
-get() { return field }                                         <v2>: *    NEW: magic[UNRESOLVED_CALL](get() { return field }|<v0>, !<v1>) -> <v2>
-set                                                            !<v5>: *
-v                                                              <v3>: *    NEW: magic[UNRESOLVED_CALL](v) -> <v3>
-{ field = v }                                                  <v4>: *    NEW: r({ field = v }) -> <v4>
-set(v: Int) { field = v }                                      <v6>: *    NEW: magic[UNRESOLVED_CALL](set(v: Int) { field = v }|<v3>, <v4>, !<v5>) -> <v6>
-var a : Int get() { return field } set(v: Int) { field = v }   <v6>: *    COPY
-=====================
-== anonymous_1 ==
-{
+== get_a ==
+get() {
               return field
           }
 ---------------------
-field          <v0>: Unit   NEW: magic[UNRESOLVED_CALL](field) -> <v0>
-return field   !<v1>: *
-return field   !<v1>: *     COPY
+field              <v0>: Int   NEW: r(field) -> <v0>
+return field       !<v1>: *
+{ return field }   !<v1>: *    COPY
 =====================
-== anonymous_2 ==
-{
+== set_a ==
+set(v: Int) {
               field = v
           }
 ---------------------
-            <v1>: *    NEW: magic[VALUE_CONSUMER](field|<v0>) -> <v1>
-field       <v0>: *    NEW: magic[UNRESOLVED_CALL](field) -> <v0>
-v           <v2>: *    NEW: magic[UNRESOLVED_CALL](v) -> <v2>
-field = v   !<v3>: *
-field = v   !<v3>: *   COPY
+                <v0>: Int   NEW: magic[FAKE_INITIALIZER](v: Int) -> <v0>
+v               <v1>: Int   NEW: r(v) -> <v1>
+field = v       !<v2>: *
+{ field = v }   !<v2>: *    COPY
 =====================

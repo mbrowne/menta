@@ -4,9 +4,9 @@ interface Runnable {
     fun run()
 }
 
-class C {
+define C {
     fun f() {
-        <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class MyRunnable<!>(): Runnable {
+        <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define MyRunnable<!>(): Runnable {
         }
     }
 }

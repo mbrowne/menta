@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-class CoroutineScope
+define CoroutineScope
 
 suspend fun <T> runWithTimeout(
     block: suspend CoroutineScope.() -> T

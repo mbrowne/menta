@@ -2,9 +2,9 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class A
-class B
-class C
+define A
+define B
+define C
 
 context(A)
 fun B.f() {}

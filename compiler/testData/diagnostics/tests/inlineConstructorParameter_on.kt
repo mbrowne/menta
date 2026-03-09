@@ -3,14 +3,14 @@
 // LANGUAGE: +ProhibitInlineModifierOnPrimaryConstructorParameters
 // WITH_STDLIB
 
-enum class Foo(open inline /* no effect */ val bar: String) {
+enum define Foo(open inline /* no effect */ val bar: String) {
     A("super") {
         override val bar: String
             get() = super.bar + " overridden"
     };
 }
 
-enum class Bar() {
+enum define Bar() {
     A {
         override val bar: String
             get() = super.bar + " overridden"

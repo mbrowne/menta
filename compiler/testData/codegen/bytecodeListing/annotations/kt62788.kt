@@ -1,7 +1,7 @@
 // JVM_DEFAULT_MODE: enable
 
 @Retention(AnnotationRetention.BINARY)
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 interface MyInterface {
     @MyAnnotation
@@ -15,4 +15,4 @@ interface I2 : MyInterface {
     override fun foo() {}
 }
 
-class MyClass : I1, I2
+define MyClass : I1, I2

@@ -12,64 +12,35 @@ fun foo() {
 L0:
   1 <START>
   2 mark({ class B { val a: Int get() { val b: Int return b } } })
-    mark({ val a: Int get() { val b: Int return b } })
-    jmp?(L2)                                                                                      NEXT:[r({ val a: Int get() { val b: Int return b } }) -> <v0>, d({ val a: Int get() { val b: Int return b } })]
-    d({ val a: Int get() { val b: Int return b } })                                               NEXT:[<SINK>]
-L2 [after local declaration]:
-    r({ val a: Int get() { val b: Int return b } }) -> <v0>                                       PREV:[jmp?(L2)]
-    mark(B { val a: Int get() { val b: Int return b } })
-    magic[UNRESOLVED_CALL](B { val a: Int get() { val b: Int return b } }|<v0>, !<v1>) -> <v2>
+    jmp?(L2)                                                          NEXT:[<END>, v(val a: Int get() { val b: Int return b })]
+    v(val a: Int get() { val b: Int return b })
+    jmp?(L3)                                                          NEXT:[<END>, d(get() { val b: Int return b })]
+    d(get() { val b: Int return b })                                  NEXT:[<SINK>]
 L1:
-  1 <END>                                                                                         NEXT:[<SINK>]                                                                                                      PREV:[ret(*|<v0>) L1, magic[UNRESOLVED_CALL](B { val a: Int get() { val b: Int return b } }|<v0>, !<v1>) -> <v2>]
+L2 [after local class]:
+L3 [after local declaration]:
+  1 <END>                                                             NEXT:[<SINK>]                                                            PREV:[jmp?(L2), jmp?(L3)]
 error:
-    <ERROR>                                                                                       PREV:[]
+    <ERROR>                                                           PREV:[]
 sink:
-    <SINK>                                                                                        PREV:[<ERROR>, <END>, d({ val a: Int get() { val b: Int return b } })]
+    <SINK>                                                            PREV:[<ERROR>, <END>, d(get() { val b: Int return b })]
 =====================
-== anonymous_0 ==
-{
-        val a: Int
-            get() {
+== get_a ==
+get() {
                 val b: Int
                 return b
             }
-    }
 ---------------------
-L3:
-  3 <START>
-  4 mark(val a: Int get() { val b: Int return b })
-    v(val a: Int)
-    mark({ val b: Int return b })
-    jmp?(L5)                                                                     NEXT:[r({ val b: Int return b }) -> <v0>, d({ val b: Int return b })]
-    d({ val b: Int return b })                                                   NEXT:[<SINK>]
-L5 [after local declaration]:
-    r({ val b: Int return b }) -> <v0>                                           PREV:[jmp?(L5)]
-    mark(get() { val b: Int return b })
-    magic[UNRESOLVED_CALL](get() { val b: Int return b }|<v0>, !<v1>) -> <v2>
 L4:
-  3 <END>                                                                        NEXT:[<SINK>]
-error:
-    <ERROR>                                                                      PREV:[]
-sink:
-    <SINK>                                                                       PREV:[<ERROR>, <END>, d({ val b: Int return b })]
-=====================
-== anonymous_1 ==
-{
-                val b: Int
-                return b
-            }
----------------------
-L6:
-  5 <START>
-  6 mark(val b: Int return b)
+  3 <START>
+  4 mark({ val b: Int return b })
     v(val b: Int)
     r(b) -> <v0>
-    ret(*|<v0>) L1               NEXT:[<END>]
-- 5 ret(*|!<v1>) L7              PREV:[]
-L7:
-    <END>                        NEXT:[<SINK>]                       PREV:[]
+    ret(*|<v0>) L5
+L5:
+  3 <END>                            NEXT:[<SINK>]
 error:
-    <ERROR>                      PREV:[]
+    <ERROR>                          PREV:[]
 sink:
-    <SINK>                       PREV:[<ERROR>, <END>]
+    <SINK>                           PREV:[<ERROR>, <END>]
 =====================

@@ -1,4 +1,4 @@
-class A(val value: String)
+define A(val value: String)
 
 fun A.test(): String {
     val o = object  {

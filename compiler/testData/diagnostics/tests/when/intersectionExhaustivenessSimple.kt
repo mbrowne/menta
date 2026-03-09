@@ -3,13 +3,13 @@
 // SKIP_TXT
 // CHECK_TYPE
 
-sealed class KtClassifierSymbol
+sealed define KtClassifierSymbol
 
 interface KtNamedSymbol
 
-abstract class KtTypeParameterSymbol : KtClassifierSymbol() {}
+abstract define KtTypeParameterSymbol : KtClassifierSymbol() {}
 
-sealed class KtClassLikeSymbol : KtClassifierSymbol() {}
+sealed define KtClassLikeSymbol : KtClassifierSymbol() {}
 
 fun foo(symbol: KtClassifierSymbol) {
     if (symbol !is KtNamedSymbol) return

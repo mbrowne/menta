@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: KotlinFile.kt
-open class KotlinClass1 : JavaClass1() {
+open define KotlinClass1 : JavaClass1() {
     public fun getSomethingKotlin1(): Int = 1
 }
 
-class KotlinClass2 : JavaClass2() {
+define KotlinClass2 : JavaClass2() {
     public fun getSomethingKotlin2(): Int = 1
 }
 
@@ -22,12 +22,12 @@ fun foo(k: KotlinClass2) {
 fun useInt(i: Int) {}
 
 // FILE: JavaClass1.java
-public class JavaClass1 {
+public define JavaClass1 {
     public int getSomething1() { return 1; }
 }
 
 // FILE: JavaClass2.java
-public class JavaClass2 extends KotlinClass1 {
+public define JavaClass2 extends KotlinClass1 {
     public int getSomething2() { return 1; }
 }
 

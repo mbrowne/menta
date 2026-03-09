@@ -5,8 +5,8 @@
 
 package a
 
-class b {
-    class c
+define b {
+    define c
 }
 
 // MODULE: m2
@@ -14,7 +14,7 @@ class b {
 
 package a.b
 
-class c {
+define c {
     fun foo() {}
 }
 

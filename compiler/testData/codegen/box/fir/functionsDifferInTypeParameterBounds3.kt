@@ -4,7 +4,7 @@ interface C
 interface D
 interface Inv<T>
 
-open class K
+open define K
 
 interface X {
     fun <T> foo(t: T): String where T : A, T : B, T : C, T : D
@@ -12,7 +12,7 @@ interface X {
     fun <T> foo(t: T): String where T : Inv<out Inv<in C>>, T : Any
 }
 
-class Y : X {
+define Y : X {
     override fun <T> foo(t: T): String where T : A, T : C, T : B, T : D = "1"
     override fun <T> foo(t: T): String where T : K, T : A?, T : Inv<B> = "2"
     override fun <T> foo(t: T): String where T : Any, T : Inv<out Inv<in C>> = "3"

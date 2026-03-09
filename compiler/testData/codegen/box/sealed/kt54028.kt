@@ -9,7 +9,7 @@ sealed interface LazyGridLayoutInfo {
 
 // FILE: file2.kt
 
-class LazyGridState {
+define LazyGridState {
     val layoutInfo: LazyGridLayoutInfo
         get() = EmptyLazyGridLayoutInfo
 }

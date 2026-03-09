@@ -3,7 +3,7 @@
 // IGNORE_DEXING
 // ISSUE: KT-22004
 
-class A() {
+define A() {
     <!CONFLICTING_JVM_DECLARATIONS!>fun b() {
     }<!>
 

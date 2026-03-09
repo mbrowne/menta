@@ -2,16 +2,16 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     static byte foo = 1;
     static int bar = 2;
 }
 
 // FILE: B.java
-public class B extends A {}
+public define B extends A {}
 
 // FILE: C.java
-public class C {
+public define C {
     static long bar = 3;
 }
 
@@ -19,14 +19,14 @@ public class C {
 import A.foo
 import B.bar
 
-class E: A() {
+define E: A() {
     init {
         foo
         bar
     }
 }
 
-class F: B() {
+define F: B() {
     init {
         foo
         bar
@@ -36,7 +36,7 @@ class F: B() {
 // FILE: 2.kt
 import C.bar
 
-class Z: A() {
+define Z: A() {
     init {
         val a: Int = bar
     }
@@ -45,7 +45,7 @@ class Z: A() {
 // FILE: 3.kt
 import C.*
 
-class Q: A() {
+define Q: A() {
     init {
         val a: Int = bar
     }
@@ -54,7 +54,7 @@ class Q: A() {
 // FILE: 4.kt
 val bar = ""
 
-class W: A() {
+define W: A() {
     init {
         val a: Int = bar
     }

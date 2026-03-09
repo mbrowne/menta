@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-57889
 
-class SafeResult<S>
+define SafeResult<S>
 
 inline fun <T> checkNotEdt(body: (SafeResult<T>) -> Nothing) {}
 

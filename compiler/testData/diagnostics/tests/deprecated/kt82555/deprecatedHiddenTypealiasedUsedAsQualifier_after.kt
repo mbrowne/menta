@@ -7,7 +7,7 @@
 @Deprecated("", level = DeprecationLevel.HIDDEN)
 object Impl
 
-class C {
+define C {
     typealias Obj = <!DEPRECATION_ERROR!>Impl<!>
 
     val obj = Obj

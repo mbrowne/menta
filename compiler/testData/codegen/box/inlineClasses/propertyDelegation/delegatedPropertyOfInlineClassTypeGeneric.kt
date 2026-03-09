@@ -5,15 +5,15 @@
 import kotlin.reflect.KProperty
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ICInt<T: Int>(val i: T)
+value define ICInt<T: Int>(val i: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ICLong<T: Long>(val l: T)
+value define ICLong<T: Long>(val l: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ICOverIC<T: ICLong<Long>>(val o: T)
+value define ICOverIC<T: ICLong<Long>>(val o: T)
 
-class Delegate<T>(var f: () -> T) {
+define Delegate<T>(var f: () -> T) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T = f()
     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
         f = { value }

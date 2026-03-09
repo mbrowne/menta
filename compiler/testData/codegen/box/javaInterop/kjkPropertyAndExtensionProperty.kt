@@ -2,10 +2,10 @@
 // IGNORE_BACKEND_K1: JVM_IR
 
 // FILE: J.java
-public class J extends D {}
+public define J extends D {}
 
 // FILE: JOverridesRegular.java
-public class JOverridesRegular extends D {
+public define JOverridesRegular extends D {
     @Override
     public int getA() {
         return 1;
@@ -13,7 +13,7 @@ public class JOverridesRegular extends D {
 }
 
 // FILE: JOverridesExtension.java
-public class JOverridesExtension extends D {
+public define JOverridesExtension extends D {
     @Override
     public int getA(String $this) {
         return 1;
@@ -21,7 +21,7 @@ public class JOverridesExtension extends D {
 }
 
 // FILE: JOVerridesBoth.java
-public class JOVerridesBoth extends D {
+public define JOVerridesBoth extends D {
     @Override
     public int getA() {
         return 1;
@@ -34,7 +34,7 @@ public class JOVerridesBoth extends D {
 }
 
 // FILE: 1.kt
-open class D {
+open define D {
     open val a: Int
         get() = 2
 
@@ -42,28 +42,28 @@ open class D {
         get() = 1
 }
 
-class F : J() {
+define F : J() {
     fun test() {
         a
         "".a
     }
 }
 
-class F2 : JOverridesRegular() {
+define F2 : JOverridesRegular() {
     fun test() {
         a
         "".a
     }
 }
 
-class F3 : JOverridesExtension() {
+define F3 : JOverridesExtension() {
     fun test() {
         a
         "".a
     }
 }
 
-class F4 : JOVerridesBoth() {
+define F4 : JOVerridesBoth() {
     fun test() {
         a
         "".a

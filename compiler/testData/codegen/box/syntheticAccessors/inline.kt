@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class A {
+define A {
     fun foo() = o_plus_f_plus_k {""}
 
     companion object {

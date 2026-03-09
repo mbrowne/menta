@@ -3,7 +3,7 @@
 // IGNORE_FIR_DIAGNOSTICS
 // MODULE: m1-common
 
-expect annotation class Ann
+expect annotation define Ann
 
 <!NO_IMPLICIT_DEFAULT_CONSTRUCTOR_ON_EXPECT_CLASS!>@Ann<!>
 fun commonFoo() {}

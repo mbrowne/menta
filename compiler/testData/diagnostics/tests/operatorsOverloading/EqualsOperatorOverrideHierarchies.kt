@@ -1,26 +1,26 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class Parent {
+open define Parent {
     override fun equals(other: Any?): Boolean =
         super.equals(other)
 }
-open class OperatorParent {
+open define OperatorParent {
     override operator fun equals(other: Any?): Boolean =
         super.equals(other)
 }
 
-class A : Parent() {
+define A : Parent() {
     override fun equals(other: Any?): Boolean =
         super.equals(other)
 }
-class B : OperatorParent() {
+define B : OperatorParent() {
     override fun equals(other: Any?): Boolean =
         super.equals(other)
 }
-class C : Parent() {
+define C : Parent() {
     override <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun equals(other: Any?): Boolean = // false positive in K1, OK in K2
         super.equals(other) //
 }
-class D : OperatorParent() {
+define D : OperatorParent() {
     override <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun equals(other: Any?): Boolean = // false positive in K1, OK in K2
         super.equals(other)
 }

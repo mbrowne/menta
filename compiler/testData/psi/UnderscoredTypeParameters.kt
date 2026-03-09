@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A<_> {}
+define A<_> {}
 
 typealias Foo<K, _> = Foo<K>
 

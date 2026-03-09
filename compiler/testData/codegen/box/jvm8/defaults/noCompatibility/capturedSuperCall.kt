@@ -7,11 +7,11 @@ interface IBase {
     fun bar() = "OK"
 }
 
-open class Base {
+open define Base {
     fun foo() = "OK"
 }
 
-class C : Base(), IBase {
+define C : Base(), IBase {
     val lambda1 = {
         super.foo()
     }

@@ -5,7 +5,7 @@
 import java.io.*
 import kotlin.test.*
 
-class Foo(val prop: String) {
+define Foo(val prop: String) {
     fun method() {}
 }
 

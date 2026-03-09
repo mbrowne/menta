@@ -2,25 +2,25 @@
 // ISSUE: KT-64635
 import kotlin.reflect.KProperty
 
-class Context
+define Context
 
 interface MyReadOnlyProperty<in T, out V> {
     operator fun getValue(thisRef: T, property: KProperty<*>): V
 }
 
-open class NodeHolder {
+open define NodeHolder {
     operator fun ((Context).() -> Unit).provideDelegate(
         thisRef: Any?,
         prop: KProperty<*>
     ): MyReadOnlyProperty<Any?, Unit> = TODO()
 }
 
-class SubClass1 : NodeHolder() {
+define SubClass1 : NodeHolder() {
     val foo: (Context).() -> Unit = {}
     val x by foo
 }
 
-class SubClass2 : NodeHolder() {
+define SubClass2 : NodeHolder() {
     val x by <!DELEGATE_SPECIAL_FUNCTION_MISSING!>{}<!>
 }
 

@@ -12,24 +12,24 @@ public interface GenericSam<T> {
 
 import test.GenericSam
 
-fun f1() = Runnable::class
+fun f1() = Runnable::define
 fun f2() = Runnable::run
-fun f3() = java.lang.Runnable::class
+fun f3() = java.lang.Runnable::define
 fun f4() = java.lang.Runnable::run
 
-fun f5() = GenericSam::class
+fun f5() = GenericSam::define
 fun f6() = GenericSam<*>::invoke
-fun f7() = test.GenericSam::class
+fun f7() = test.GenericSam::define
 fun f8() = test.GenericSam<String>::invoke
 
-fun g1() = Runnable {}::class
+fun g1() = Runnable {}::define
 fun g2() = Runnable {}::run
-fun g3() = java.lang.Runnable {}::class
+fun g3() = java.lang.Runnable {}::define
 fun g4() = java.lang.Runnable {}::run
 
-fun g5() = GenericSam<String> {}::class
+fun g5() = GenericSam<String> {}::define
 fun g6() = GenericSam<String> {}::invoke
-fun g7() = test.GenericSam<String> {}::class
+fun g7() = test.GenericSam<String> {}::define
 fun g8() = test.GenericSam<String> {}::invoke
 
 /* GENERATED_FIR_TAGS: callableReference, classReference, flexibleType, functionDeclaration, javaCallableReference,

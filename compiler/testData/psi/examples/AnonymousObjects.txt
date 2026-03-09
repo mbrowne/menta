@@ -127,30 +127,24 @@ KtFile: AnonymousObjects.kt
                   PsiElement(RBRACE)('}')
           PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('enum')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(enum)('enum')
+        PsiWhiteSpace(' ')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('GodMessages')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        PsiWhiteSpace(' ')
+        CLASS_BODY
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n  ')
-          VALUE_PARAMETER_LIST
-            VALUE_PARAMETER
-              PsiElement(IDENTIFIER)('TOO_MANY_CLICKS')
+          ENUM_ENTRY
+            PsiElement(IDENTIFIER)('TOO_MANY_CLICKS')
             PsiElement(COMMA)(',')
-            PsiWhiteSpace('\n  ')
-            VALUE_PARAMETER
-              PsiElement(IDENTIFIER)('ONE_MORE_MESSAGE')
-            PsiErrorElement:Expecting '->' or ','
-              <empty list>
+          PsiWhiteSpace('\n  ')
+          ENUM_ENTRY
+            PsiElement(IDENTIFIER)('ONE_MORE_MESSAGE')
           PsiWhiteSpace('\n')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n')
       PsiComment(EOL_COMMENT)('// Type of this variable is GOD_AnonymousClass')

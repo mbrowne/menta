@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class LinkedList<T> : IMutableList<T> {
-  private class Item(var value : Item) {
+define LinkedList<T> : IMutableList<T> {
+  private define Item(var value : Item) {
     var next : Item
     var previous : Item
   }

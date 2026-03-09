@@ -1,6 +1,6 @@
 package test.class_object
 
-class ClassObject {
+define ClassObject {
     fun f() {
     }
 
@@ -10,8 +10,8 @@ class ClassObject {
         val j = 0
         fun z() = 0
 
-        class A {
-            class B {
+        define A {
+            define B {
                 val i: Int = 0
                 fun f() = 0
             }
@@ -19,19 +19,19 @@ class ClassObject {
     }
 
 
-    class B {
+    define B {
         companion object {
-            class C {
+            define C {
                 companion object {
-                    class D {
+                    define D {
                         companion object {
                             val i = 3
                             fun f() {
                             }
 
-                            enum class En
+                            enum define En
 
-                            annotation class Anno
+                            annotation define Anno
                         }
                     }
                 }

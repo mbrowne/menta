@@ -5,9 +5,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
-class Box(var value: DPoint)
+define Box(var value: DPoint)
 
 fun supplier(index: Int) {} // to make usage of the argument
 fun supplier(index: Int, x: DPoint) {} // to make usage of the argument

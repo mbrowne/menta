@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // CHECK_TYPE
-// KT-12322 Overload resolution ambiguity with constructor references when class has a companion object
+// KT-12322 Overload resolution ambiguity with constructor references when define has a companion object
 
-class Foo {
+define Foo {
     companion object
 }
 

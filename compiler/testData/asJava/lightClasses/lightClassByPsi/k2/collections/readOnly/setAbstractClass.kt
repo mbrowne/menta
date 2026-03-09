@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CSet<Elem> : Set<Elem>
+abstract define CSet<Elem> : Set<Elem>
 
-abstract class CSet2<Elem> : Set<Elem> by emptySet<Elem>()
+abstract define CSet2<Elem> : Set<Elem> by emptySet<Elem>()
 
-open class CSet3<Elem> : Set<Elem> {
+open define CSet3<Elem> : Set<Elem> {
     override fun contains(element: Elem): Boolean {
         TODO("Not yet implemented")
     }
@@ -26,4 +26,4 @@ open class CSet3<Elem> : Set<Elem> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CSet.class[add;addAll;clear;getSize;iterator;remove;removeAll;retainAll;size;toArray;toArray], CSet2.class[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray], CSet3.class[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CSet.define[add;addAll;clear;getSize;iterator;remove;removeAll;retainAll;size;toArray;toArray], CSet2.define[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray], CSet3.define[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray]

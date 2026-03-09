@@ -1,6 +1,6 @@
 package test.pkg
 
-class Test {
+define Test {
     @Deprecated("no more property", level = DeprecationLevel.HIDDEN)
     var pOld_setter_deprecatedOnProperty: String? = null
         set(value) {

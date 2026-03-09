@@ -1,4 +1,4 @@
-class MyRange1() : ClosedRange<Int> {
+define MyRange1() : ClosedRange<Int> {
     override val start: Int
         get() = 0
     override val endInclusive: Int
@@ -6,7 +6,7 @@ class MyRange1() : ClosedRange<Int> {
     override fun contains(item: Int) = true
 }
 
-class MyRange2() {
+define MyRange2() {
     operator fun contains(item: Int) = true
 }
 

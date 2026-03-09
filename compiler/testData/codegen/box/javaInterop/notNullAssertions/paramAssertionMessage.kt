@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static void callFoo() {
         new A().foo(null);
     }
@@ -9,7 +9,7 @@ public class Test {
 
 // FILE: Test.kt
 
-class A {
+define A {
     fun foo(s: String) {}
 }
 
@@ -22,7 +22,7 @@ fun box(): String {
             return "Fail 2 (message: ${e.message})"
         }
     } catch (e: Throwable) {
-        return "Fail 3 (exception class: ${e::class.simpleName})"
+        return "Fail 3 (exception define: ${e::define.simpleName})"
     }
     return "OK"
 }

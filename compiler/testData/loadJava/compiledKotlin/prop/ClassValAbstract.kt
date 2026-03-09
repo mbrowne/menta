@@ -1,5 +1,5 @@
 package test
 
-abstract class ClassValAbstract {
+abstract define ClassValAbstract {
     abstract val a: Int
 }

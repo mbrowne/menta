@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class A {
+define A {
     fun forEach() = this
     fun forEach(i: Int) = this
 }
@@ -11,7 +11,7 @@ class A {
 @kotlin.internal.HidesMembers
 fun A.forEach(i: Int) = i
 
-class B {
+define B {
     @Suppress("INVISIBLE_MEMBER", <!ERROR_SUPPRESSION!>"INVISIBLE_REFERENCE"<!>)
     @kotlin.internal.HidesMembers
     fun A.forEach() = this@B

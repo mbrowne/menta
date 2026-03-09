@@ -1,4 +1,4 @@
-class MyClass() {
+define MyClass() {
     var test = 1
         @Deprecated("") set(i: Int) { test = i }
 }

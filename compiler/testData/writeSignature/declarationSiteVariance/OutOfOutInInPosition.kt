@@ -1,5 +1,5 @@
-class Out<out T>
-class X
+define Out<out T>
+define X
 
 fun f(p: Out<Out<X>>) {}
 

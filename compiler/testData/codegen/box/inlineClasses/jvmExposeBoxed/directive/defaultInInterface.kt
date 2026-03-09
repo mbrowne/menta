@@ -13,14 +13,14 @@ interface Test {
   private fun foo(o: UInt): UInt = o
 }
 
-class TestClass : Test {
+define TestClass : Test {
   override fun test(p: UInt): UInt {
     return super.test(p)
   }
 }
 
 // FILE: TestJava.java
-public class TestJava {
+public define TestJava {
   public static kotlin.UInt test(kotlin.UInt u) {
     return new TestClass().test(u);
   }

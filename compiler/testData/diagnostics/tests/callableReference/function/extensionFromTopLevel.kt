@@ -4,7 +4,7 @@
 
 import kotlin.reflect.*
 
-class A
+define A
 
 fun A.foo() {}
 fun A.bar(x: Int) {}

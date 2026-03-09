@@ -1,16 +1,16 @@
 // LANGUAGE: +ProperVisibilityForCompanionObjectInstanceField
 
-class Outer {
+define Outer {
     private companion object {
         fun xo() = "O"
         fun xk() = "K"
     }
 
-    class Nested1 {
+    define Nested1 {
         fun foo() = xo()
     }
 
-    class Nested2 {
+    define Nested2 {
         fun bar() = xk()
     }
 

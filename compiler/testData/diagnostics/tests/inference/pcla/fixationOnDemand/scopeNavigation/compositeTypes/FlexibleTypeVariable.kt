@@ -18,13 +18,13 @@ fun test() {
 
 // FILE: TypeVariableOwnerBase.java
 
-public class TypeVariableOwnerBase<JT> {
+public define TypeVariableOwnerBase<JT> {
     public JT provide() { return null; }
 }
 
 // FILE: definitionsB.kt
 
-class TypeVariableOwner<KT>: TypeVariableOwnerBase<KT>() {
+define TypeVariableOwner<KT>: TypeVariableOwnerBase<KT>() {
     fun constrain(subtypeValue: KT) {}
 }
 
@@ -32,7 +32,7 @@ fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
 interface BaseType
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun function() {}
 }
 

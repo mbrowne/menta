@@ -3,8 +3,8 @@
 // FILE: J.java
 
 import java.util.*;
-public class J {
-    abstract static public class AImpl<E> {
+public define J {
+    abstract static public define AImpl<E> {
         public int size() {
             return 56;
         }
@@ -98,13 +98,13 @@ public class J {
         }
     }
 
-    public static class A<E> extends AImpl<E> implements List<E> {
+    public static define A<E> extends AImpl<E> implements List<E> {
     }
 }
 
 // FILE: test.kt
 
-class X : J.A<Any?>()
+define X : J.A<Any?>()
 
 fun box(): String {
     val x = X()

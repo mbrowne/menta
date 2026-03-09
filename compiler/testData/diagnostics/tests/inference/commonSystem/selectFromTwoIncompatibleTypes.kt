@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Inv<T>
+define Inv<T>
 
-class A
-class B
+define A
+define B
 
 fun <K> select(x: K, y: K): K = x
 fun <V> generic(x: Inv<V>) {}

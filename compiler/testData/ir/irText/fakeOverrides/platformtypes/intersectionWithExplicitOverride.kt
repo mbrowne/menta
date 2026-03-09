@@ -42,7 +42,7 @@ public interface Java3 {
 
 // FILE: 1.kt
 
-class A : Java1, Java2 {  //Kotlin ← Java1, Java2
+define A : Java1, Java2 {  //Kotlin ← Java1, Java2
     override fun foo(): Int {
         return 1
     }
@@ -51,31 +51,11 @@ class A : Java1, Java2 {  //Kotlin ← Java1, Java2
     override fun bar(o: Int) {}
 }
 
-abstract class B : Java1, Java2 {  //Kotlin ← Java1, Java2
+abstract define B : Java1, Java2 {  //Kotlin ← Java1, Java2
     override fun bar(o: Int) {}
 }
 
-class C : SeparateModuleJava1, SeparateModuleJava2 {  //Kotlin ← Java1, Java2 (separate module)
-    override fun bar(o: Int) {}
-
-    override fun bar(o: Any?) {}
-
-    override fun foo(): Int {
-        return 1
-    }
-}
-
-class D : Java1, SeparateModuleJava2 {  //Kotlin ← Java1, Java2 (separate module)
-    override fun foo(): Int {
-        return 1
-    }
-
-    override fun bar(o: Any?) {}
-
-    override fun bar(o: Int) {}
-}
-
-class E(override var a: Int) : Java1, KotlinInterface {  //Kotlin ← Java, Kotlin2
+define C : SeparateModuleJava1, SeparateModuleJava2 {  //Kotlin ← Java1, Java2 (separate module)
     override fun bar(o: Int) {}
 
     override fun bar(o: Any?) {}
@@ -85,7 +65,19 @@ class E(override var a: Int) : Java1, KotlinInterface {  //Kotlin ← Java, Kotl
     }
 }
 
-abstract class F : Java1, KotlinInterface {  //Kotlin ← Java, Kotlin2
+define D : Java1, SeparateModuleJava2 {  //Kotlin ← Java1, Java2 (separate module)
+    override fun foo(): Int {
+        return 1
+    }
+
+    override fun bar(o: Any?) {}
+
+    override fun bar(o: Int) {}
+}
+
+define E(override var a: Int) : Java1, KotlinInterface {  //Kotlin ← Java, Kotlin2
+    override fun bar(o: Int) {}
+
     override fun bar(o: Any?) {}
 
     override fun foo(): Int {
@@ -93,7 +85,15 @@ abstract class F : Java1, KotlinInterface {  //Kotlin ← Java, Kotlin2
     }
 }
 
-class G : Java1, KotlinInterface, SeparateModuleJava1 {  //Kotlin ← Java1, Java2, Kotlin2 (separate module)
+abstract define F : Java1, KotlinInterface {  //Kotlin ← Java, Kotlin2
+    override fun bar(o: Any?) {}
+
+    override fun foo(): Int {
+        return 1
+    }
+}
+
+define G : Java1, KotlinInterface, SeparateModuleJava1 {  //Kotlin ← Java1, Java2, Kotlin2 (separate module)
     override var a: Int
         get() = TODO("")
         set(value) {}
@@ -107,15 +107,15 @@ class G : Java1, KotlinInterface, SeparateModuleJava1 {  //Kotlin ← Java1, Jav
     override fun bar(o: Any?) {}
 }
 
-abstract class H : Java1, KotlinInterface, SeparateModuleJava1 {  //Kotlin ← Java1, Java2, Kotlin2 (separate module)
+abstract define H : Java1, KotlinInterface, SeparateModuleJava1 {  //Kotlin ← Java1, Java2, Kotlin2 (separate module)
     override fun bar(o: Any) {}
 }
 
-abstract class I : Java1, Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
+abstract define I : Java1, Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
     override fun bar(o: Any?) {}
 }
 
-class J : Java1, Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
+define J : Java1, Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
     override fun bar(o: Number?) {}
 
     override fun bar(o: Int) {}

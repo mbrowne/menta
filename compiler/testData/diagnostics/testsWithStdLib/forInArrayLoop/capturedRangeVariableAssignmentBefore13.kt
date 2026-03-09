@@ -56,7 +56,7 @@ fun testArrayCapturedInLocalObject() {
 fun testArrayCapturedInLocalClass() {
     var xs = arrayOf("a", "b", "c")
 
-    class LocalClass {
+    define LocalClass {
         fun updateXs() {
             xs = arrayOf("d", "e", "f")
         }

@@ -7,13 +7,13 @@ fun box() = B.vok
 // FILE: a.kt
 package a
 
-open class A1 {
+open define A1 {
     protected companion object {
         fun getO() = "O"
     }
 }
 
-open class A2 {
+open define A2 {
     protected companion object {
         fun getK() = "K"
     }
@@ -24,13 +24,13 @@ package b
 
 import a.*
 
-class B {
-    class B1 {
+define B {
+    define B1 {
         companion object : A1() {
             val vo = getO()
         }
 
-        class B2 {
+        define B2 {
             companion object : A2() {
                 val vk = getK()
             }

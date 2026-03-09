@@ -3,17 +3,17 @@
 
 // FILE: common.kt
 
-open class A() {
+open define A() {
     fun member(a: String, b: Int = 0, c: Double? = null): String = a + "," + b + "," + c
 }
 
-expect class B() : A
+expect define B() : A
 
 // FILE: jvm.kt
 
 import kotlin.test.assertEquals
 
-actual class B actual constructor() : A()
+actual define B actual constructor() : A()
 
 fun box(): String {
     val b = B()

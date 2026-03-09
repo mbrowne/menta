@@ -11,17 +11,17 @@ public inline fun <R> doCall(block: ()-> R) : R {
 import test.*
 import Kind.*
 
-enum class Kind {
+enum define Kind {
     LOCAL,
     EXTERNAL,
     GLOBAL
 }
 
-class Internal(val value: String)
+define Internal(val value: String)
 
-class External(val value: String)
+define External(val value: String)
 
-class Global(val value: String)
+define Global(val value: String)
 
 fun test1(intKind: Kind, extKind: Kind): Global {
 

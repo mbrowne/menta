@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPEALIAS, AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 interface OriginalInterface<T> {
     <!TOPLEVEL_TYPEALIASES_ONLY!>@Anno("alias $prop")

@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-abstract class AbstractClass {
+abstract define AbstractClass {
     abstract fun abstractFun()
     abstract val abstractVal: Int
     abstract var abstractVar: Int

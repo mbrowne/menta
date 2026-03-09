@@ -17,7 +17,7 @@ fun box(): String = J.bar(emptySet<String>()::contains)
 
 import java.util.function.Predicate;
 
-public class J {
+public define J {
     public static String bar(Predicate<String> predicate) {
         return "OK";
     }

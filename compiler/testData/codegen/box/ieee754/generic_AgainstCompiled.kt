@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-public class JavaClass<T> {
+public define JavaClass<T> {
 
     private T minus0;
 

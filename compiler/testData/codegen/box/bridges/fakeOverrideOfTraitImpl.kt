@@ -16,7 +16,7 @@ interface D3 : F2 {
     }
 }
 
-class D4 : D3
+define D4 : D3
 
 fun box(): String {
     val x = D4()

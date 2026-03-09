@@ -13,7 +13,7 @@ inline val String.inlineExtensionPropertyDisabled: String
     get() = "$this.inlineExtensionPropertyDisabled.v1 with context $c"
 
 
-class D {
+define D {
     inline fun inlineClassFunctionDisabled() = "inlineClassFunctionDisabled.v1"
 
     inline fun inlineClassFunctionWithParamDisabled(param: String = "defaultDisabled.v1") = "inlineClassFunctionWithParamDisabled.v1: $param"

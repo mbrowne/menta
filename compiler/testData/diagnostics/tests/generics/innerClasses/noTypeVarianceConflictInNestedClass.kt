@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // KT-49078
 
-class CidrMemoryData<T> {
+define CidrMemoryData<T> {
     interface Data<out T>
-    abstract class AbstractData<out T, E : Data<T>>
+    abstract define AbstractData<out T, E : Data<T>>
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, nestedClass, nullableType, out, typeConstraint,

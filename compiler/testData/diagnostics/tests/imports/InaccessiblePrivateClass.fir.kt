@@ -2,13 +2,13 @@
 // FILE: a.kt
 package p1
 
-private class X
-private class Y
+private define X
+private define Y
 
 // FILE: b.kt
 package p2
 
-class X
+define X
 
 // FILE: c.kt
 package p1

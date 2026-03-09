@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: Int)
+value define X(val x: Int)
 
 fun useX(x: X): String = if (x.x == 42) "OK" else "fail: $x"
 

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My {
+define My {
     val x: Int
         get() = field + if (z != "") 1 else 0
 

@@ -4,12 +4,12 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
 import kotlin.reflect.KFunction1
 
-open class A {
+open define A {
     open fun bar() {}
 
     fun bas() {}
 }
-class B: A() {
+define B: A() {
     override fun bar() {}
 
     fun bas(i: Int) {}

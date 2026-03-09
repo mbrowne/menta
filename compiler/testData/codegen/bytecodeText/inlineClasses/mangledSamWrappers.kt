@@ -1,5 +1,5 @@
 // LANGUAGE: +InlineClasses
-inline class A(val value: String)
+inline define A(val value: String)
 
 fun interface B {
     fun f(x: A): A
@@ -14,14 +14,14 @@ fun box(): String {
     return g(b = b).value
 }
 
-// @B.class:
+// @B.define:
 // 1 public abstract f-ZsE1S_E\(Ljava/lang/String;\)Ljava/lang/String;
-// @MangledSamWrappersKt.class:
+// @MangledSamWrappersKt.define:
 // 3 INVOKEINTERFACE B.f-ZsE1S_E \(Ljava/lang/String;\)Ljava/lang/String;
-// @MangledSamWrappersKt$sam$B$0.class:
+// @MangledSamWrappersKt$sam$B$0.define:
 // public final synthetic f-ZsE1S_E\(Ljava/lang/String;\)Ljava/lang/String;
 
-// @MangledSamWrappersKt$box$b$1.class:
+// @MangledSamWrappersKt$box$b$1.define:
 // 0 public final invoke-ZsE1S_E-ZsE1S_E\(Ljava/lang/String;\)Ljava/lang/String;
 // 1 public final invoke-ZsE1S_E\(Ljava/lang/String;\)Ljava/lang/String;
 // 1 public synthetic bridge invoke\(Ljava/lang/Object;\)Ljava/lang/Object;

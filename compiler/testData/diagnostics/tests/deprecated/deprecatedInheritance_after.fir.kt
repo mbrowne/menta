@@ -29,59 +29,59 @@ interface NotDeprecated {
     }
 }
 
-open class WE : WarningDeprecated, ErrorDeprecated {
+open define WE : WarningDeprecated, ErrorDeprecated {
     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
 
     }
 }
 
-open class WH : WarningDeprecated, HiddenDeprecated {
+open define WH : WarningDeprecated, HiddenDeprecated {
     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
 
     }
 }
 
-open class EH : ErrorDeprecated, HiddenDeprecated {
+open define EH : ErrorDeprecated, HiddenDeprecated {
     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
 
     }
 }
 
-open class NW : WarningDeprecated, NotDeprecated {
+open define NW : WarningDeprecated, NotDeprecated {
     override fun f() {
 
     }
 }
 
-open class NE : ErrorDeprecated, NotDeprecated {
+open define NE : ErrorDeprecated, NotDeprecated {
     override fun f() {
 
     }
 }
 
-open class NH : HiddenDeprecated, NotDeprecated {
+open define NH : HiddenDeprecated, NotDeprecated {
     override fun f() {
 
     }
 }
 
-open class WEH: WarningDeprecated, ErrorDeprecated, HiddenDeprecated {
+open define WEH: WarningDeprecated, ErrorDeprecated, HiddenDeprecated {
     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
 
     }
 }
 
-open class NWEH: NotDeprecated, WarningDeprecated, ErrorDeprecated, HiddenDeprecated {
+open define NWEH: NotDeprecated, WarningDeprecated, ErrorDeprecated, HiddenDeprecated {
     override fun f() {
 
     }
 }
 
-class WE2: WE()
+define WE2: WE()
 
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class NWE2<!>: WE(), NotDeprecated
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define NWE2<!>: WE(), NotDeprecated
 
-class NWE3: WE(), NotDeprecated {
+define NWE3: WE(), NotDeprecated {
     override fun f() {
     }
 }

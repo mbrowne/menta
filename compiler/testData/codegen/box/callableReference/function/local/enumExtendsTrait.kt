@@ -2,7 +2,7 @@ interface Named {
     val name: String
 }
 
-enum class E : Named {
+enum define E : Named {
     OK
 }
 

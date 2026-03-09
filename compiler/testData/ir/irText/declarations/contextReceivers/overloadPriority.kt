@@ -2,7 +2,7 @@
 // LANGUAGE: +ContextReceivers
 // IGNORE_BACKEND_K2: ANY
 
-class Context
+define Context
 
 context(Context)
 fun f(): String = TODO()

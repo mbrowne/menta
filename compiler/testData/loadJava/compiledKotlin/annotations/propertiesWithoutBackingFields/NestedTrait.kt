@@ -1,8 +1,8 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
-class Class {
+define Class {
     interface Trait {
         @[Anno] val property: Int
     }

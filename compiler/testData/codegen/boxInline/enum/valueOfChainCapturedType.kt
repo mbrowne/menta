@@ -11,7 +11,7 @@ inline fun <reified Y : Enum<Y>> myValueOf2(): String {
 }
 
 
-enum class Z {
+enum define Z {
     OK
 }
 

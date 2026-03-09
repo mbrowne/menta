@@ -7,13 +7,13 @@ package api
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
-class C {
-    class D {
-        class E {
-            class F
+define C {
+    define D {
+        define E {
+            define F
         }
     }
 }
@@ -38,12 +38,12 @@ package usage2
 
 import api.*
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 fun use1() {
     C.D.E.F()
 }
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 fun use2(f: C.D.E.F) = f.hashCode()
 
 // FILE: usage-none.kt

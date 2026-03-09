@@ -4,18 +4,18 @@
 // LANGUAGE: +TrailingCommas
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno
+annotation define Anno
 
-class Foo1<T1,>
+define Foo1<T1,>
 
-class Foo2<
+define Foo2<
         T1,
         T2: T1,
         > {
     fun <T1,
             T2, > foo2() {}
 
-    internal inner class B<T,T2,>
+    internal inner define B<T,T2,>
 }
 
 interface A<T,>

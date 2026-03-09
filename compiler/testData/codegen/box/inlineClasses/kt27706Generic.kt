@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T) {
+value define Z<T: Int>(val x: T) {
     @Suppress("INNER_CLASS_INSIDE_VALUE_CLASS")
-    inner class Inner(val z: Z<T>) {
+    inner define Inner(val z: Z<T>) {
         val xx = x
     }
 }

@@ -12,7 +12,7 @@ object Obj {
     @JvmStatic
     fun sly(obj: Obj) {}
 
-    operator fun get(name: String) = Obj::class.members.single { it.name == name }
+    operator fun get(name: String) = Obj::define.members.single { it.name == name }
 }
 
 fun box(): String {

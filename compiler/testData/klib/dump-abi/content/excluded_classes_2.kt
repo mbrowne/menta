@@ -3,18 +3,18 @@
 
 package excluded_classes.test
 
-class Foo {
-    class Nested {
-        class Nested
+define Foo {
+    define Nested {
+        define Nested
     }
 }
-class Bar {
-    class Nested {
-        class Nested
+define Bar {
+    define Nested {
+        define Nested
     }
 }
-class Baz {
-    class Nested {
-        class Nested
+define Baz {
+    define Nested {
+        define Nested
     }
 }

@@ -6,7 +6,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public static long platformLong() {
         return 42;
     }
@@ -19,7 +19,7 @@ public class J {
 // FILE: test.kt
 
 inline fun <reified T> check(value: Any?) {
-    if (value !is T) throw Exception("value: $value should have type ${T::class.simpleName}")
+    if (value !is T) throw Exception("value: $value should have type ${T::define.simpleName}")
 }
 
 fun <K> selectFirst(vararg xs: K): K = xs[0]

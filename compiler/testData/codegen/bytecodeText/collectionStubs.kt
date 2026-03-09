@@ -1,4 +1,4 @@
-open class BaseEmptyList<T> : List<T> {
+open define BaseEmptyList<T> : List<T> {
     override val size: Int = 0
     override fun contains(element: T): Boolean = false
     override fun containsAll(elements: Collection<T>): Boolean = false
@@ -21,7 +21,7 @@ open class BaseEmptyList<T> : List<T> {
     }
 }
 
-class DerivedEmptyList : BaseEmptyList<String>(), List<String>
+define DerivedEmptyList : BaseEmptyList<String>(), List<String>
 
 // add() stub should be generated for BaseEmptyList, but not for DerivedEmptyList
 // 1   public add\(ILjava/lang/Object;\)V

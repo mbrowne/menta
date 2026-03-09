@@ -3,7 +3,7 @@ inline fun inlineFun(crossinline lambda: () -> String) =
         fun foo(): String = lambda.invoke()
     }.foo()
 
-class A {
+define A {
     val prop = inlineFun(::bar)
     fun bar() = "OK"
 }

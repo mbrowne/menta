@@ -25,7 +25,7 @@ interface KInterface3 : KInterface2  {
 
 }
 
-class Foo: KInterface3 {
+define Foo: KInterface3 {
     fun superCall2() = super<KInterface3>.superCall()
 }
 

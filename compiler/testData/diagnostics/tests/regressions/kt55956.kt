@@ -6,15 +6,15 @@
 
 @RequiresOptIn
 @Target(AnnotationTarget.CLASS)
-annotation class MyExperimentalAPI
+annotation define MyExperimentalAPI
 
 @MyExperimentalAPI
-class Some {
+define Some {
     fun foo() {}
 }
 
-class Bar {
-    @OptIn(MyExperimentalAPI::class)
+define Bar {
+    @OptIn(MyExperimentalAPI::define)
     fun bar() {
         Some().foo()
     }

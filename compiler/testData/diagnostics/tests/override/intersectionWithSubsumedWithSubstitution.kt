@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class KtFirPsiJavaClassSymbol : KtFirNamedClassOrObjectSymbolBase(), KtFirPsiSymbol<String, String>
-open class KtFirNamedClassOrObjectSymbolBase : KtNamedClassOrObjectSymbol(), KtFirSymbol<String>
-abstract class KtNamedClassOrObjectSymbol : KtLifetimeOwner
+define KtFirPsiJavaClassSymbol : KtFirNamedClassOrObjectSymbolBase(), KtFirPsiSymbol<String, String>
+open define KtFirNamedClassOrObjectSymbolBase : KtNamedClassOrObjectSymbol(), KtFirSymbol<String>
+abstract define KtNamedClassOrObjectSymbol : KtLifetimeOwner
 
 interface KtFirPsiSymbol<P, S> : KtFirSymbol<S>
 

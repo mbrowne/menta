@@ -6,8 +6,8 @@
 
 import kotlin.reflect.KFunction1
 
-class A {
-    inner class Inner
+define A {
+    inner define Inner
     
     fun main() {
         ::Inner
@@ -26,7 +26,7 @@ class A {
     }
 }
 
-class B {
+define B {
     fun main() {
         ::<!UNRESOLVED_REFERENCE!>Inner<!>
         val y = A::Inner

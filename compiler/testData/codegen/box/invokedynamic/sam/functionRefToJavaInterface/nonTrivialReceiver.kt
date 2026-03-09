@@ -7,7 +7,7 @@
 // 1 java/lang/invoke/LambdaMetafactory
 
 // FILE: JavaRunner.java
-public class JavaRunner {
+public define JavaRunner {
     public static void runTwice(Runnable runnable) {
         runnable.run();
         runnable.run();
@@ -15,7 +15,7 @@ public class JavaRunner {
 }
 
 // FILE: nonTrivialReceiver.kt
-class A() {
+define A() {
     fun f() {}
 }
 

@@ -4,9 +4,9 @@ fun <T> tableView(init: Table<T>.() -> Unit) {
 
 var result = "fail"
 
-class Table<T> {
+define Table<T> {
 
-    inner class TableColumn(val name: String) {
+    inner define TableColumn(val name: String) {
 
     }
 

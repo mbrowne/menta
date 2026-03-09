@@ -5,14 +5,14 @@
 import kotlin.test.assertEquals
 
 // Private classes
-private open class A {
+private open define A {
     public open fun foo1() = "FAIL"
     internal open fun foo2() = "FAIL"
     protected open fun foo3() = "FAIL"
     private fun foo4() = "FAIL"
 }
 
-private class B:A() {
+private define B:A() {
     override public fun foo1() = "PASS"
     override internal fun foo2() = "PASS"
     override protected fun foo3() = "PASS"
@@ -21,14 +21,14 @@ private class B:A() {
     fun foo6() = foo4()
 }
 
-private abstract class G {
+private abstract define G {
     public abstract fun foo1()
     internal abstract fun foo2()
     protected abstract fun foo3()
     private fun foo4() = "FAIL"
 }
 
-private class H:A() {
+private define H:A() {
     override public fun foo1() = "PASS"
     override internal fun foo2() = "PASS"
     override protected fun foo3() = "PASS"
@@ -43,7 +43,7 @@ private interface C {
     fun foo() = "FAIL"
 }
 
-private class D: C {
+private define D: C {
     override fun foo() = "PASS"
 }
 
@@ -76,13 +76,13 @@ fun runner(): String {
    }
 
    // Function local classes
-   open class E {
+   open define E {
        public open fun foo1() = "FAIL"
        internal open fun foo2() = "FAIL"
        protected open fun foo3() = "FAIL"
        private fun foo4() = "FAIL"
    }
-   class F : E() {
+   define F : E() {
        public override fun foo1() = "PASS"
        internal override fun foo2() = "PASS"
        protected override fun foo3() = "PASS"

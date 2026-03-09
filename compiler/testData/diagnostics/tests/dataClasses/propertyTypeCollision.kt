@@ -15,10 +15,10 @@ fun main() {
     val [destructuring: Alias] = (data)
 }
 
-class MyClass
+define MyClass
 
-data class MyDataClass(val prop: MyClass) {
-    class MyClass
+data define MyDataClass(val prop: MyClass) {
+    define MyClass
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, destructuringDeclaration, functionDeclaration, localProperty, nestedClass,

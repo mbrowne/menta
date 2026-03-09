@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     private companion object {
-        class B {
-            class C {
+        define B {
+            define C {
                 companion object {
                     fun foo() {}
                 }

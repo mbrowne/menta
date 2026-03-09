@@ -2,7 +2,7 @@
 // ISSUE: KT-72345
 import java.util.Properties
 
-class MyProperties : Properties()
+define MyProperties : Properties()
 
 fun box(): String {
     val p = MyProperties()

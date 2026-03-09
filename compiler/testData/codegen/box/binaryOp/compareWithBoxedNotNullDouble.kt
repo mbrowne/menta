@@ -2,7 +2,7 @@
 //FILE: Holder.java
 import org.jetbrains.annotations.*;
 
-class Holder {
+define Holder {
     public @NotNull Double value;
     public Holder(Double value) { this.value = value; }
 }

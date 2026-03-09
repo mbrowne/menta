@@ -4,12 +4,12 @@
 // TODO: muted automatically, investigate should it be ran for JS or not
 // WITH_STDLIB
 
-enum class E {
+enum define E {
     VALUE,
     VALUE2
 }
 
-class C(val nums: Map<E, Int>) {
+define C(val nums: Map<E, Int>) {
     val normalizedNums = loadNormalizedNums()
 
     private fun loadNormalizedNums(): Map<E, Float> {

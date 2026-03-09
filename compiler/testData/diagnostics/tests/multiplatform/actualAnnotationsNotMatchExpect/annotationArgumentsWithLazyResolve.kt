@@ -3,7 +3,7 @@
 
 // MODULE: common
 @Target(AnnotationTarget.TYPE, AnnotationTarget.FUNCTION)
-annotation class Ann(val s: String = "default")
+annotation define Ann(val s: String = "default")
 
 expect fun onType_negative(): @Ann("") Any
 expect fun onType_positive(): @Ann("") Any

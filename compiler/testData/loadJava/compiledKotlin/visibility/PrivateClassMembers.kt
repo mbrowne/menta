@@ -2,7 +2,7 @@
 
 package test
 
-public class PrivateClassMembers {
+public define PrivateClassMembers {
     private val v = { 0 }()
 
     private var r = { 0 }()

@@ -3,22 +3,18 @@ KtFile: mustUseReturnValueFullEnabled.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  PsiComment(EOL_COMMENT)('// WITH_STDLIB')
-  PsiWhiteSpace('\n')
-  PsiComment(EOL_COMMENT)('// COMPILER_ARGUMENTS: -Xreturn-value-checker=full')
-  PsiWhiteSpace('\n')
-  PsiComment(EOL_COMMENT)('// FILE: Unmarked.kt')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('// WITH_STDLIB')
+    PsiWhiteSpace('\n')
+    PsiComment(EOL_COMMENT)('// COMPILER_ARGUMENTS: -Xreturn-value-checker=full')
+    PsiWhiteSpace('\n')
+    PsiComment(EOL_COMMENT)('// FILE: Unmarked.kt')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Unmarked')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -57,56 +53,48 @@ KtFile: mustUseReturnValueFullEnabled.kt
         STRING_TEMPLATE
           PsiElement(OPEN_QUOTE)('"')
           PsiElement(CLOSING_QUOTE)('"')
-      PsiWhiteSpace('\n        ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('field')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(PLUS)('+')
-          PsiWhiteSpace(' ')
-          STRING_TEMPLATE
-            PsiElement(OPEN_QUOTE)('"')
-            PsiElement(CLOSING_QUOTE)('"')
-      PsiWhiteSpace('\n        ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
+          BINARY_EXPRESSION
             REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('field')
+            PsiWhiteSpace(' ')
+            OPERATION_REFERENCE
+              PsiElement(PLUS)('+')
+            PsiWhiteSpace(' ')
+            STRING_TEMPLATE
+              PsiElement(OPEN_QUOTE)('"')
+              PsiElement(CLOSING_QUOTE)('"')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
               PsiElement(IDENTIFIER)('value')
-          PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n            ')
-              BLOCK
-                BINARY_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('field')
-                  PsiWhiteSpace(' ')
-                  OPERATION_REFERENCE
-                    PsiElement(EQ)('=')
-                  PsiWhiteSpace(' ')
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('value')
-              PsiWhiteSpace('\n        ')
-              PsiElement(RBRACE)('}')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          BLOCK
+            PsiElement(LBRACE)('{')
+            PsiWhiteSpace('\n            ')
+            BINARY_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('field')
+              PsiWhiteSpace(' ')
+              OPERATION_REFERENCE
+                PsiElement(EQ)('=')
+              PsiWhiteSpace(' ')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('value')
+            PsiWhiteSpace('\n        ')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       FUN
         MODIFIER_LIST
@@ -256,27 +244,23 @@ KtFile: mustUseReturnValueFullEnabled.kt
       PsiElement(OPEN_QUOTE)('"')
       PsiElement(CLOSING_QUOTE)('"')
   PsiWhiteSpace('\n\n')
-  PsiComment(EOL_COMMENT)('// FILE: Marked.kt')
-  PsiWhiteSpace('\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('MustUseReturnValues')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('// FILE: Marked.kt')
+    PsiWhiteSpace('\n')
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('MustUseReturnValues')
+    PsiWhiteSpace('\n')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Marked')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -315,56 +299,48 @@ KtFile: mustUseReturnValueFullEnabled.kt
         STRING_TEMPLATE
           PsiElement(OPEN_QUOTE)('"')
           PsiElement(CLOSING_QUOTE)('"')
-      PsiWhiteSpace('\n        ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('field')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(PLUS)('+')
-          PsiWhiteSpace(' ')
-          STRING_TEMPLATE
-            PsiElement(OPEN_QUOTE)('"')
-            PsiElement(CLOSING_QUOTE)('"')
-      PsiWhiteSpace('\n        ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
+          BINARY_EXPRESSION
             REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('field')
+            PsiWhiteSpace(' ')
+            OPERATION_REFERENCE
+              PsiElement(PLUS)('+')
+            PsiWhiteSpace(' ')
+            STRING_TEMPLATE
+              PsiElement(OPEN_QUOTE)('"')
+              PsiElement(CLOSING_QUOTE)('"')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
               PsiElement(IDENTIFIER)('value')
-          PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n            ')
-              BLOCK
-                BINARY_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('field')
-                  PsiWhiteSpace(' ')
-                  OPERATION_REFERENCE
-                    PsiElement(EQ)('=')
-                  PsiWhiteSpace(' ')
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('value')
-              PsiWhiteSpace('\n        ')
-              PsiElement(RBRACE)('}')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          BLOCK
+            PsiElement(LBRACE)('{')
+            PsiWhiteSpace('\n            ')
+            BINARY_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('field')
+              PsiWhiteSpace(' ')
+              OPERATION_REFERENCE
+                PsiElement(EQ)('=')
+              PsiWhiteSpace(' ')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('value')
+            PsiWhiteSpace('\n        ')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       FUN
         MODIFIER_LIST
@@ -397,30 +373,25 @@ KtFile: mustUseReturnValueFullEnabled.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  PsiComment(EOL_COMMENT)('// FILE: MyEnum.kt')
-  PsiWhiteSpace('\n')
-  MODIFIER_LIST
-    PsiElement(enum)('enum')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiComment(EOL_COMMENT)('// FILE: MyEnum.kt')
+    PsiWhiteSpace('\n')
+    MODIFIER_LIST
+      PsiElement(enum)('enum')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyEnum')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      REFERENCE_EXPRESSION
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('A')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      ENUM_ENTRY
         PsiElement(IDENTIFIER)('B')
-      PsiErrorElement:Expecting an element
         PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n    ')
       FUN

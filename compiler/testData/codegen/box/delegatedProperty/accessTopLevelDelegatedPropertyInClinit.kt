@@ -2,7 +2,7 @@ import kotlin.reflect.KProperty
 
 // KT-5612
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String {
         return "OK"
     }

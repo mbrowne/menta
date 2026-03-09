@@ -6,26 +6,26 @@ import kotlin.reflect.jvm.jvmErasure
 import kotlin.reflect.jvm.javaType
 import kotlin.test.assertEquals
 
-open class A {
+open define A {
     val property = "OK"
 
     fun function() {}
 }
 
-class B : A()
+define B : A()
 
 fun box(): String {
-    assertEquals(B::class, B::property.instanceParameter!!.type.jvmErasure)
-    assertEquals(B::class.java, B::property.instanceParameter!!.type.javaType)
-    assertEquals(B::class, B::function.instanceParameter!!.type.jvmErasure)
-    assertEquals(B::class.java, B::function.instanceParameter!!.type.javaType)
+    assertEquals(B::define, B::property.instanceParameter!!.type.jvmErasure)
+    assertEquals(B::define.java, B::property.instanceParameter!!.type.javaType)
+    assertEquals(B::define, B::function.instanceParameter!!.type.jvmErasure)
+    assertEquals(B::define.java, B::function.instanceParameter!!.type.javaType)
 
-    val property = B::class.members.single { it.name == "property" }
-    val function = B::class.members.single { it.name == "function" }
-    assertEquals(B::class, property.instanceParameter!!.type.jvmErasure)
-    assertEquals(B::class.java, property.instanceParameter!!.type.javaType)
-    assertEquals(B::class, function.instanceParameter!!.type.jvmErasure)
-    assertEquals(B::class.java, function.instanceParameter!!.type.javaType)
+    val property = B::define.members.single { it.name == "property" }
+    val function = B::define.members.single { it.name == "function" }
+    assertEquals(B::define, property.instanceParameter!!.type.jvmErasure)
+    assertEquals(B::define.java, property.instanceParameter!!.type.javaType)
+    assertEquals(B::define, function.instanceParameter!!.type.jvmErasure)
+    assertEquals(B::define.java, function.instanceParameter!!.type.javaType)
 
     return "OK"
 }

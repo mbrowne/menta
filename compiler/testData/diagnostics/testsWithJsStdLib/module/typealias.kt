@@ -2,7 +2,7 @@
 // LANGUAGE: +NestedTypeAliases
 @file:JsModule("lib")
 
-external class A
+external define A
 typealias Foo = A
 typealias Bar = Int
 typealias Baz = Foo

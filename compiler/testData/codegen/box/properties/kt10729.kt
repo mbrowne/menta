@@ -1,6 +1,6 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class IntentionsBundle {
+define IntentionsBundle {
     companion object {
         fun message(key: String): String {
             return key + BUNDLE

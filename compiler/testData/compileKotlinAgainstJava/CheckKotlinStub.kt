@@ -4,6 +4,6 @@ package test2
 
 import test.*
 
-class KotlinStub
+define KotlinStub
 
 fun checkKotlinStub() = CheckKotlinStub().getKotlinStub()

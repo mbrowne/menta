@@ -3,7 +3,7 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-class A : ArrayList<String>() {
+define A : ArrayList<String>() {
     override val size: Int get() = super.size + 56
 }
 

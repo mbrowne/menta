@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
-@RequiresOptIn annotation class A
-@RequiresOptIn annotation class B
+@RequiresOptIn annotation define A
+@RequiresOptIn annotation define B
 
-@OptIn(markerClass = [A::class, B::class])
+@OptIn(markerClass = [A::define, B::define])
 fun foo() {}
 
-@OptIn(*[A::class, B::class])
+@OptIn(*[A::define, B::define])
 fun foo2() {}
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classReference, collectionLiteral, functionDeclaration */

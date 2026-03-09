@@ -6,7 +6,7 @@ fun Nothing.bar(): Boolean {
     return true
 }
 
-class A
+define A
 fun A?.baz(): Boolean {
     return true
 }

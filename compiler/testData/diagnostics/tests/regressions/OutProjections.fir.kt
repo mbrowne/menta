@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Point() {
+define Point() {
 }
 
-class G<T>() {}
+define G<T>() {}
 
 fun <T> f(expression : T) : G<out T> = G<T>()
 
@@ -12,7 +12,7 @@ fun foo() : G<Point> {
   return <!RETURN_TYPE_MISMATCH!>f<Point>(p)<!>
 }
 
-class Out<out T>() {}
+define Out<out T>() {}
 
 fun <T> fout(expression : T) : Out<<!REDUNDANT_PROJECTION!>out<!> T> = Out<T>()
 

@@ -2,13 +2,13 @@
 // WITH_STDLIB
 // DUMP_IR
 
-abstract class AbstractInsnNode(val next: AbstractInsnNode? = null)
+abstract define AbstractInsnNode(val next: AbstractInsnNode? = null)
 
-class LineNumberNode(next: AbstractInsnNode? = null) : AbstractInsnNode(next) {
+define LineNumberNode(next: AbstractInsnNode? = null) : AbstractInsnNode(next) {
     val line: Int = 1
 }
 
-class LabelNode() : AbstractInsnNode(null)
+define LabelNode() : AbstractInsnNode(null)
 
 fun isDeadLineNumber(insn: LineNumberNode, index: Int, frames: Array<out Any?>): Boolean {
     // Line number node is "dead" if the corresponding line number interval

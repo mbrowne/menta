@@ -22,7 +22,7 @@ suspend fun <T> testIntersection(x: T): String where T : () -> String, T : (Int)
     return a + b
 }
 
-class Test : () -> String, (Int) -> String {
+define Test : () -> String, (Int) -> String {
     override fun invoke(): String = "OKEmpty"
     override fun invoke(p: Int) = "OK$p"
 }

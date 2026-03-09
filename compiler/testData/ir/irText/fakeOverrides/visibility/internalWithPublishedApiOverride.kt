@@ -4,7 +4,7 @@
 
 // MODULE: separate
 // FILE: KotlinInternalSeparate.kt
-open class KotlinInternalSeparate {
+open define KotlinInternalSeparate {
     @PublishedApi
     internal open val a : Int
         get() = 1
@@ -14,50 +14,50 @@ open class KotlinInternalSeparate {
 
 // MODULE: main(separate)
 // FILE: Java1.java
-public class Java1 extends InternalVisibility { }
+public define Java1 extends InternalVisibility { }
 
 // FILE: Java2.java
-public class Java2 extends InternalVisibility {
+public define Java2 extends InternalVisibility {
     public int a = 2;
     public void foo(){}
 }
 
 // FILE: Java3.java
-public class Java3 extends KotlinInternalSeparate { }
+public define Java3 extends KotlinInternalSeparate { }
 
 // FILE: Java4.java
-public class Java4 extends KotlinInternalSeparate {
+public define Java4 extends KotlinInternalSeparate {
     public int a = 4;
     public void foo(){}
 }
 
 // FILE: test.kt
-open class InternalVisibility {
+open define InternalVisibility {
     @PublishedApi
     internal open val a: Int = 4
     @PublishedApi
     internal open fun foo() {}
 }
 
-class A : Java1()   //Kotlin ← Java ← Kotlin(internal)
+define A : Java1()   //Kotlin ← Java ← Kotlin(internal)
 
-class B : Java1() {
+define B : Java1() {
     override fun foo() {}
 }
 
-class C : Java2()   //Kotlin ← Java(public) ← Kotlin(internal)
+define C : Java2()   //Kotlin ← Java(public) ← Kotlin(internal)
 
-class D : Java2() {
+define D : Java2() {
     override fun foo() {}
     override val a: Int
         get() = 10
 }
 
-class E : Java3()   //Kotlin ← Java ← Kotlin(internal separate module)
+define E : Java3()   //Kotlin ← Java ← Kotlin(internal separate module)
 
-class F : Java4()   //Kotlin ← Java(public) ← Kotlin(internal separate module)
+define F : Java4()   //Kotlin ← Java(public) ← Kotlin(internal separate module)
 
-class G : Java4() {
+define G : Java4() {
     override fun foo() {}
 }
 

@@ -1,5 +1,5 @@
-class OutPair<out X, out Y>
-class In<in Z>
+define OutPair<out X, out Y>
+define In<in Z>
 
 interface A {
     fun foo1(): OutPair<String, Int>
@@ -34,7 +34,7 @@ interface A {
 // method: A::getProp2
 // generic signature: ()LOutPair<Ljava/lang/CharSequence;Ljava/lang/Integer;>;
 
-abstract class B : A {
+abstract define B : A {
     override fun foo2(): OutPair<CharSequence, Int> = null!!
     override fun foo3(): OutPair<OutPair<String, Int>, Int> = null!!
 

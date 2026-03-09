@@ -15,17 +15,17 @@ import c.d
 /**
  * Doc comment for A
  */
-class A {}
-// after class A
+define A {}
+// after define A
 
 // comment for B 1
 // comment for B 2
-class B {} // end of class B
+define B {} // end of define B
 
 /* Simple comment */
-class C // no body
+define C // no body
 
-class D {
+define D {
     // This is v1
     val v1 = 1 // use 1
     /** v2 doc comment */
@@ -37,8 +37,8 @@ class D {
         val local = 1 // local var
         // before local fun
         fun localFun() = 1 // local fun
-        // before local class
-        class Local{} // local class
+        // before local define
+        define Local{} // local define
         // before statement
         foo() // statement
     } // end of foo
@@ -58,7 +58,7 @@ public fun foo() {
     val local2 = 2
 } // end
 
-enum class E {
+enum define E {
     A, // this is A
     /** This is B */ B,
     /* And this is C */ C,

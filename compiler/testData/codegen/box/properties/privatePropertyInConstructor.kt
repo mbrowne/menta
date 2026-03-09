@@ -1,4 +1,4 @@
-open class A(
+open define A(
     private val x: String,
     private var y: Double
 ) {
@@ -13,7 +13,7 @@ open class A(
     }
 }
 
-class B(
+define B(
     val x: String,
     y: Double
 ) : A("abc", y)

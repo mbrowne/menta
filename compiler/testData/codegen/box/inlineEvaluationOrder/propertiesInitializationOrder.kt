@@ -30,7 +30,7 @@ fun <T> fizz(x: T): T {
     return x
 }
 
-class A(val x: Int = fizz(1) + 1) {
+define A(val x: Int = fizz(1) + 1) {
     val y = buzz(x) + 1
     val z: Int
 

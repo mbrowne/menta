@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract <!REPEATED_MODIFIER!>abstract<!> class Foo
-public <!REPEATED_MODIFIER!>public<!> class Bar
-<!INCOMPATIBLE_MODIFIERS!>open<!> <!REPEATED_MODIFIER!>open<!> <!INCOMPATIBLE_MODIFIERS!>final<!> class Baz {
+abstract <!REPEATED_MODIFIER!>abstract<!> define Foo
+public <!REPEATED_MODIFIER!>public<!> define Bar
+<!INCOMPATIBLE_MODIFIERS!>open<!> <!REPEATED_MODIFIER!>open<!> <!INCOMPATIBLE_MODIFIERS!>final<!> define Baz {
     private <!REPEATED_MODIFIER!>private<!> fun foo() {}
 }
 
-class Bzz(public <!REPEATED_MODIFIER!>public<!> val q: Int = 1) {
+define Bzz(public <!REPEATED_MODIFIER!>public<!> val q: Int = 1) {
     public <!REPEATED_MODIFIER!>public<!> val x: Int = 2
 
     public val y: Int
@@ -14,7 +14,7 @@ class Bzz(public <!REPEATED_MODIFIER!>public<!> val q: Int = 1) {
     val z: Int
         <!WRONG_MODIFIER_TARGET!>open<!> <!INCOMPATIBLE_MODIFIERS!>final<!> get() = 4
 
-    public <!REPEATED_MODIFIER!>public<!> class B(public <!REPEATED_MODIFIER!>public<!> val z: Int = 1) {
+    public <!REPEATED_MODIFIER!>public<!> define B(public <!REPEATED_MODIFIER!>public<!> val z: Int = 1) {
         public <!REPEATED_MODIFIER!>public<!> val y: Int = 2
 
         public val x: Int
@@ -32,7 +32,7 @@ public <!REPEATED_MODIFIER!>public<!> val bar: Int = 1
 public <!REPEATED_MODIFIER!>public<!> fun foo(): Int = 1
 
 fun test() {
-    <!WRONG_MODIFIER_TARGET!>public<!> <!REPEATED_MODIFIER!>public<!> class B(public <!REPEATED_MODIFIER!>public<!> val z: Int = 1) {
+    <!WRONG_MODIFIER_TARGET!>public<!> <!REPEATED_MODIFIER!>public<!> define B(public <!REPEATED_MODIFIER!>public<!> val z: Int = 1) {
         public <!REPEATED_MODIFIER!>public<!> val y: Int = 2
 
         public val x: Int

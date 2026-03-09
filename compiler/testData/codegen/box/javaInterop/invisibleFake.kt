@@ -9,19 +9,19 @@ interface A {
 }
 
 // FILE: B.java
-abstract class B implements A {
+abstract define B implements A {
     public String foo(String value) {
         return "FAIL B";
     }
 }
 
 // FILE: C.kt
-private open class C : B() {
+private open define C : B() {
     override fun foo(d: Any?): String = "FAIL C"
 }
 
 // FILE: D.java
-class D extends C {
+define D extends C {
     @Override
     public String foo(Object value) {
         return "OK";

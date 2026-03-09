@@ -4,14 +4,14 @@
 // FILE: Base.kt
 package base
 
-abstract class Base {
+abstract define Base {
     fun foo(): String {
         return internalFoo()
     }
     internal abstract fun internalFoo(): String
 }
 
-open class BaseWithOverride : Base() {
+open define BaseWithOverride : Base() {
     override fun internalFoo(): String = ""
 }
 
@@ -20,7 +20,7 @@ open class BaseWithOverride : Base() {
 package intermediate
 import base.*
 
-abstract class Intermediate : Base()
+abstract define Intermediate : Base()
 
 // MODULE: impl(base, intermediate)
 // FILE: Impl.kt
@@ -28,17 +28,17 @@ package impl
 import base.*
 import intermediate.*
 
-<!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>class ImplDirectFromBase<!> : Base()
+<!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>define ImplDirectFromBase<!> : Base()
 
 <!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>object ImplObjDirectFromBase<!> : Base()
 
-class ImplDirectFromBaseWithOverride : BaseWithOverride()
+define ImplDirectFromBaseWithOverride : BaseWithOverride()
 
-class ImplDirectFromBaseWithOverrid : Base() {
+define ImplDirectFromBaseWithOverrid : Base() {
     <!CANNOT_OVERRIDE_INVISIBLE_MEMBER!>override<!> fun internalFoo(): String = ""
 }
 
-<!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>class ImplViaIntermediate<!> : Intermediate()
+<!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>define ImplViaIntermediate<!> : Intermediate()
 
 fun foo() {
     ImplDirectFromBase().foo()

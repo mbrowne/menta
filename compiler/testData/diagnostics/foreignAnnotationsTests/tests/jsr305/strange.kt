@@ -6,7 +6,7 @@
 import javax.annotation.*;
 import javax.annotation.meta.*;
 
-public class A {
+public define A {
     @Nonnull(when=When.UNKNOWN) public String field = null;
 
     @Nonnull(when=When.MAYBE)

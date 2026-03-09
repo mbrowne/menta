@@ -1,3 +1,3 @@
 interface IFoo {
-    private class Nested
+    private define Nested
 }

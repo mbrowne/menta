@@ -9,7 +9,7 @@ object Delegate {
     }
 }
 
-class C {
+define C {
     val a by Delegate
 
     fun test(): String {

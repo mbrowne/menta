@@ -1,4 +1,4 @@
-abstract external class AbstractExternalClass {
+abstract external define AbstractExternalClass {
     abstract fun abstractFunction(): String
     abstract fun removedAbstractFunction(): String
 //    abstract fun addedAbstractFunction(): String

@@ -1,7 +1,7 @@
-class A {
+define A {
     val a: String = "O"
 
-    class B {
+    define B {
         val b: String = "K"
 
         fun A.foo(): String {

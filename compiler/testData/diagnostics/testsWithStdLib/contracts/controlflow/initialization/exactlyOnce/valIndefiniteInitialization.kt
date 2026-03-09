@@ -60,7 +60,7 @@ fun nestedIndefiniteAssignment() {
     <!UNINITIALIZED_VARIABLE!>x<!>.inc()
 }
 
-class InitializationForbiddenInNonInitSection {
+define InitializationForbiddenInNonInitSection {
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val x: Int<!>
 
     fun setup() {

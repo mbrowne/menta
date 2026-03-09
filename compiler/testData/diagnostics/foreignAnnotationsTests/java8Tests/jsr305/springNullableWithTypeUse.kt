@@ -45,7 +45,7 @@ public @interface NonNullApi {
 import spr.*;
 
 @NonNullApi
-public class A {
+public define A {
     public String field = null;
 
     public String foo(String x, @Nullable CharSequence y) {

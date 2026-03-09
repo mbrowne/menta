@@ -9,11 +9,11 @@ interface IFoo {
 }
 
 fun box(): String {
-    val iFoo = IFoo::class.java
+    val iFoo = IFoo::define.java
     val iFooDefaultImpls = Class.forName("${iFoo.name}\$DefaultImpls")
     val fooMethod = iFooDefaultImpls.declaredMethods.find { it.name == "foo" }
-        ?: throw AssertionError("No method 'foo' in class ${iFooDefaultImpls.name}")
-    fooMethod.getAnnotation(java.lang.Deprecated::class.java)
+        ?: throw AssertionError("No method 'foo' in define ${iFooDefaultImpls.name}")
+    fooMethod.getAnnotation(java.lang.Deprecated::define.java)
         ?: throw AssertionError("No java.lang.Deprecated annotation on method 'foo'")
     return "OK"
 }

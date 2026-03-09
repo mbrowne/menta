@@ -1,5 +1,5 @@
-class A {
-    inner class B(val a: Int = 1,
+define A {
+    inner define B(val a: Int = 1,
             val b: Int = 2,
             val c: Int = 3,
             val d: Int = 4,

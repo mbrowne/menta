@@ -1,13 +1,13 @@
 fun box(): String {
     val z = "K"
-    open class A(val x: String) {
+    open define A(val x: String) {
         constructor() : this("O")
 
         val y: String
             get() = z
     }
 
-    class B : A()
+    define B : A()
 
     val b = B()
 

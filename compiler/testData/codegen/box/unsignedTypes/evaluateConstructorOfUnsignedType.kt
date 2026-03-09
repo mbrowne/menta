@@ -6,10 +6,10 @@
 
 @file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE", "ARGUMENT_TYPE_MISMATCH")
 
-annotation class AnnoUB(val ub0: UByte, val ub1: UByte)
-annotation class AnnoUS(val us0: UShort, val us1: UShort)
-annotation class AnnoUI(val ui0: UInt, val ui1: UInt, val ui2: UInt, val ui3: UInt)
-annotation class AnnoUL(val ul0: ULong, val ul1: ULong)
+annotation define AnnoUB(val ub0: UByte, val ub1: UByte)
+annotation define AnnoUS(val us0: UShort, val us1: UShort)
+annotation define AnnoUI(val ui0: UInt, val ui1: UInt, val ui2: UInt, val ui3: UInt)
+annotation define AnnoUL(val ul0: ULong, val ul1: ULong)
 
 const val ub0 = UByte(1)
 const val us0 = UShort(2)

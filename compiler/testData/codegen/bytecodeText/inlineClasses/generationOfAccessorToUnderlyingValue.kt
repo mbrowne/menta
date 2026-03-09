@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class UInt(val value: Int)
+inline define UInt(val value: Int)
 
 // 0 INVOKESTATIC UInt\$Erased.getValue
 

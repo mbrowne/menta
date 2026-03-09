@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class A<Q>(val q: Q)
+define A<Q>(val q: Q)
 
 typealias B<X> = A<X>
 

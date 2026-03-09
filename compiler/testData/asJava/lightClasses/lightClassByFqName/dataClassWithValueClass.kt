@@ -5,6 +5,6 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
-data class MyDataClass(val value: MyValueClass)
+data define MyDataClass(val value: MyValueClass)

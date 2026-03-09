@@ -7,7 +7,7 @@
 package test
 
 inline fun <reified T : Any> foo(crossinline function: () -> T) {
-    T::class.java.name
+    T::define.java.name
 
     object {
         fun bar() {

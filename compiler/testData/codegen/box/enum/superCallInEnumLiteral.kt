@@ -2,7 +2,7 @@ package test
 
 fun box() = E.E1.f() + E.E2.f()
 
-enum class E {
+enum define E {
     E1 {
         override fun f(): String {
             return super<E>.f() + "O"

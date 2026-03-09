@@ -10,14 +10,14 @@ interface Consumer<T> {
     void consume(T t);
 }
 
-public abstract class Promise<T> {
+public abstract define Promise<T> {
     @NotNull
     public abstract Promise<T> done(@NotNull Consumer<? super T> done);
 }
 
 // MODULE: main(lib)
 // FILE: 1.kt
-class User {
+define User {
     fun use(promise: Promise<*>): Promise<*> {
         promise.done { }
         return promise

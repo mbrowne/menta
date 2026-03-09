@@ -1,13 +1,11 @@
-== anonymous_0 ==
-{
+== Test_1 ==
+class Test_1 {
     @Target(AnnotationTarget.VALUE_PARAMETER)
     annotation class Range(val min: Long = 0)
 
     fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION
 }
 ---------------------
-annotation                                             <v0>: *   NEW: magic[UNRESOLVED_CALL](annotation) -> <v0>
-@Target(AnnotationTarget.VALUE_PARAMETER) annotation   <v0>: *   COPY
 =====================
 == foo ==
 fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION
@@ -15,8 +13,8 @@ fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as 
        <v0>: Int    NEW: magic[FAKE_INITIALIZER](@Range(min = -90L) x: Int) -> <v0>
 Unit   <v1>: Unit   NEW: r(Unit) -> <v1>
 =====================
-== anonymous_1 ==
-{
+== Test_2 ==
+class Test_2 {
     @Target(AnnotationTarget.FUNCTION)
     annotation class Range(val min: Long = 0)
 
@@ -24,8 +22,6 @@ Unit   <v1>: Unit   NEW: r(Unit) -> <v1>
     fun foo(x: Int) = Unit
 }
 ---------------------
-annotation                                      <v0>: *   NEW: magic[UNRESOLVED_CALL](annotation) -> <v0>
-@Target(AnnotationTarget.FUNCTION) annotation   <v0>: *   COPY
 =====================
 == foo ==
 @Range(min = -90L) // KtPrefixExpression is marked as BindingContext.USED_AS_EXPRESSION
@@ -34,16 +30,14 @@ annotation                                      <v0>: *   NEW: magic[UNRESOLVED_
        <v0>: Int    NEW: magic[FAKE_INITIALIZER](x: Int) -> <v0>
 Unit   <v1>: Unit   NEW: r(Unit) -> <v1>
 =====================
-== anonymous_2 ==
-{
+== Test_3 ==
+class Test_3 {
     @Target(AnnotationTarget.EXPRESSION)
     annotation class Range(val min: Long = 0)
 
     fun foo(x: Int) = @Range(min = -90L) Unit
 }
 ---------------------
-annotation                                        <v0>: *   NEW: magic[UNRESOLVED_CALL](annotation) -> <v0>
-@Target(AnnotationTarget.EXPRESSION) annotation   <v0>: *   COPY
 =====================
 == foo ==
 fun foo(x: Int) = @Range(min = -90L) Unit

@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-enum class A {
+enum define A {
    abc1(1,2,3),
    abc2(1,2,3) {},
    abc3;

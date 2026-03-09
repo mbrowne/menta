@@ -4,11 +4,11 @@ fun box(): String {
 
         fun foo() = Some("O").bar()
 
-        inner class Some(s: String) : Base(s) {
+        inner define Some(s: String) : Base(s) {
             fun bar() = s + end
         }
 
-        open inner class Base(val s: String)
+        open inner define Base(val s: String)
     }
     return obj.foo()
 }

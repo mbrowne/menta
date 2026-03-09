@@ -2,8 +2,8 @@ fun <T, R> with2(receiver: T, block: T.() -> R): R {
     return receiver.block()
 }
 
-class X(val x: String) {
-    open inner class Y {
+define X(val x: String) {
+    open inner define Y {
         fun foo() = x
     }
 

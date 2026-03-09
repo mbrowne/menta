@@ -1,6 +1,6 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class A {
+define A {
     public var prop = "OK"
         private set
 

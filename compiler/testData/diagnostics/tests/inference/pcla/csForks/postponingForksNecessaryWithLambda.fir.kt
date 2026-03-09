@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-67314
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
 }
 

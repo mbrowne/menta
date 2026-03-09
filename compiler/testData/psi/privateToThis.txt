@@ -7,25 +7,20 @@ KtFile: privateToThis.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PrivateToThis')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  MODIFIER_LIST
-    PsiElement(in)('in')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('I')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        MODIFIER_LIST
+          PsiElement(in)('in')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('I')
+      PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -85,23 +80,20 @@ KtFile: privateToThis.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('I')
-      PsiWhiteSpace('\n        ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        POSTFIX_EXPRESSION
-          NULL
-            PsiElement(null)('null')
-          OPERATION_REFERENCE
-            PsiElement(EXCLEXCL)('!!')
+          PsiWhiteSpace(' ')
+          POSTFIX_EXPRESSION
+            NULL
+              PsiElement(null)('null')
+            OPERATION_REFERENCE
+              PsiElement(EXCLEXCL)('!!')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         MODIFIER_LIST
@@ -116,45 +108,38 @@ KtFile: privateToThis.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('I')
-      PsiWhiteSpace('\n        ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        POSTFIX_EXPRESSION
-          NULL
-            PsiElement(null)('null')
-          OPERATION_REFERENCE
-            PsiElement(EXCLEXCL)('!!')
-      PsiWhiteSpace('\n        ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            REFERENCE_EXPRESSION
+          PsiWhiteSpace(' ')
+          POSTFIX_EXPRESSION
+            NULL
+              PsiElement(null)('null')
+            OPERATION_REFERENCE
+              PsiElement(EXCLEXCL)('!!')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
               PsiElement(IDENTIFIER)('value')
-          PsiErrorElement:Unexpected type specification
-            PsiElement(COLON)(':')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('I')
-          PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              BLOCK
-                <empty list>
-              PsiElement(RBRACE)('}')
+              PsiElement(COLON)(':')
+              PsiWhiteSpace(' ')
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('I')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          BLOCK
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       FUN
         MODIFIER_LIST

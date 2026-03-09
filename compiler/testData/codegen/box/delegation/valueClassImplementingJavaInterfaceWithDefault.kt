@@ -13,7 +13,7 @@ public interface A {
 }
 
 // FILE: B.java
-public class B implements A {
+public define B implements A {
     public String foo(String value , String otherString) {
         return value + otherString;
     }
@@ -21,7 +21,7 @@ public class B implements A {
 
 // FILE: main.kt
 @JvmInline
-value class C(val m: A) : A by m
+value define C(val m: A) : A by m
 
 fun box(): String {
     val myJava = C(B())

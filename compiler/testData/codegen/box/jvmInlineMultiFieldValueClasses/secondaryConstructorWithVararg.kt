@@ -4,7 +4,7 @@
 // WORKS_WHEN_VALUE_CLASS
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int, val y: Int) {
+value define Z(val x: Int, val y: Int) {
     constructor(vararg ys: Long) : this(ys.size, -ys.size)
 }
 

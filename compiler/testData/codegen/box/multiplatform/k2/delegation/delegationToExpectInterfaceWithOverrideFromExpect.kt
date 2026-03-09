@@ -8,7 +8,7 @@ expect interface Base
 expect interface BaseImpl : Base
 expect interface Foo : BaseImpl
 
-class DelegatedImpl(val delegate: Foo) : Base by delegate
+define DelegatedImpl(val delegate: Foo) : Base by delegate
 
 // MODULE: platform()()(common)
 // FILE: BaseJava.java
@@ -24,7 +24,7 @@ actual typealias Base = BaseJava
 actual interface BaseImpl : Base
 actual typealias Foo = BaseJavaImpl
 
-class BaseClass : BaseJavaImpl {
+define BaseClass : BaseJavaImpl {
     override fun method(): String {
         return "OK"
     }

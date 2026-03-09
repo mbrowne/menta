@@ -13,8 +13,8 @@ fun <T> runBlocking(c: suspend () -> T): T {
     return res!!
 }
 
-class Owner<C>(val c: C) {
-    class Builder<B>(
+define Owner<C>(val c: C) {
+    define Builder<B>(
         private val action: suspend () -> B,
     ) {
         fun foo() = runBlocking {

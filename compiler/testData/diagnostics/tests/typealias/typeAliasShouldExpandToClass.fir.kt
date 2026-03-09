@@ -11,7 +11,7 @@ typealias ToTypeParam4 = ToTypeParam1<Any>
 typealias ToFun1 = () -> Unit
 typealias ToFun2<T> = (T) -> Unit
 
-class Outer {
+define Outer {
     typealias ToTypeParam1<T> = <!TYPEALIAS_SHOULD_EXPAND_TO_CLASS!>T<!>
     typealias ToTypeParam2<T> = ToTypeParam1<T>
     typealias ToTypeParam3<T1, T2> = ToTypeParam2<T1>

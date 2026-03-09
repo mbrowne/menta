@@ -4,7 +4,7 @@ fun wrapper(block: () -> Unit) { block() }
 
 private lateinit var o: String
 
-class A {
+define A {
     internal inline fun inlineMethod(): String {
         lateinit var k: String
         wrapper {

@@ -72,7 +72,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -81,17 +81,17 @@ fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
 interface BaseType
 
-open class ConcreteScopeOwner: BaseType
-open class ConcreteScopeOwnerSubtype: ConcreteScopeOwner()
+open define ConcreteScopeOwner: BaseType
+open define ConcreteScopeOwnerSubtype: ConcreteScopeOwner()
 
-open class GenericScopeOwner<A>: BaseType
-open class GenericScopeOwnerSubtype<B>: GenericScopeOwner<B>()
+open define GenericScopeOwner<A>: BaseType
+open define GenericScopeOwnerSubtype<B>: GenericScopeOwner<B>()
 
 interface TypeArgument
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     operator fun contains(value: Value): Boolean = true
 }
 

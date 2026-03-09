@@ -1,4 +1,4 @@
-class A {
+define A {
     val prop: Int
     constructor(arg: Boolean) {
         if (arg) {

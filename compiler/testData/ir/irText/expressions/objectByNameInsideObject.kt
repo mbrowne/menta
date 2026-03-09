@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-open class Base(val f1: () -> Any)
+open define Base(val f1: () -> Any)
 
 object Thing : Base({ Thing }) {
     fun test1() = Thing

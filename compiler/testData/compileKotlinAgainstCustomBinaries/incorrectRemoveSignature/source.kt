@@ -1,3 +1,3 @@
 package test
 
-abstract class C : B()
+abstract define C : B()

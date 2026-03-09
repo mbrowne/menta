@@ -31,9 +31,9 @@ interface D1 : B1, B2
 interface D2 : B1, B2
 
 fun <S> select(a: S, b: S): S = TODO()
-class Inv<T>
-class Out<out O>
-class In<in I>
+define Inv<T>
+define Out<out O>
+define In<in I>
 
 fun <K> id(arg: K) = arg
 fun <T> makeInv(arg: T): Inv<T> = TODO()

@@ -2,13 +2,13 @@
 
 import kotlin.test.*
 
-abstract class Father {
-    abstract inner class InClass {
+abstract define Father {
+    abstract inner define InClass {
         abstract fun work(): String
     }
 }
 
-class Child : Father() {
+define Child : Father() {
     val ChildInClass = object : Father.InClass() {
         override fun work(): String {
             return "OK"

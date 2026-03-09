@@ -35,7 +35,7 @@ fun test4(x: String?) {
     }
 }
 
-class Inv<T>(val data: T)
+define Inv<T>(val data: T)
 
 fun test5(x: Inv<out Any?>) {
     when (val y = x.data) {

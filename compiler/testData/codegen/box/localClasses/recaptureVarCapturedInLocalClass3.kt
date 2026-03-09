@@ -1,11 +1,11 @@
 fun box(): String {
     var x = ""
 
-    class CapturesX {
+    define CapturesX {
         override fun toString() = x
     }
 
-    class LocalClass {
+    define LocalClass {
         fun foo() = CapturesX()
     }
 

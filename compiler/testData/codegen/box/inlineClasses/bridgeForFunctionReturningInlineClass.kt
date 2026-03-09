@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val x: String)
+value define IC(val x: String)
 
 interface I<T> {
     fun foo(): T
@@ -11,11 +11,11 @@ interface I<T> {
 
 interface II: I<IC>
 
-class A : I<IC> {
+define A : I<IC> {
     override fun foo() = IC("O")
 }
 
-class B : II {
+define B : II {
     override fun foo() = IC("K")
 }
 

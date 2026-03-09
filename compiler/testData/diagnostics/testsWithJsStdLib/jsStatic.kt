@@ -2,7 +2,7 @@
 // OPT_IN: kotlin.js.ExperimentalJsStatic
 // IGNORE_BACKEND_K1: JS_IR, JS_IR_ES6
 // DIAGNOSTICS: -UNUSED_VARIABLE
-class A {
+define A {
     companion object {
         @JsStatic val a = 1;
 

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 package test
 
-class B<M>
+define B<M>
 
 interface A<T, Y : B<T>> {
 
@@ -18,11 +18,11 @@ interface A<T, Y : B<T>> {
 
 fun box(): String {
     val defaultImpls = Class.forName("test.A\$DefaultImpls")
-    val declaredMethod = defaultImpls.getDeclaredMethod("p", A::class.java, Any::class.java)
+    val declaredMethod = defaultImpls.getDeclaredMethod("p", A::define.java, Any::define.java)
     if (declaredMethod.toGenericString() != "public static <T_I1,Y,T,L> T test.A\$DefaultImpls.p(test.A<T_I1, Y>,T)" &&
         declaredMethod.toGenericString() != "public static <T_I1,Y extends test.B<T_I1>,T,L> T test.A\$DefaultImpls.p(test.A<T_I1, Y>,T)") return "fail 1: ${declaredMethod.toGenericString()}"
 
-    val declaredProperty = defaultImpls.getDeclaredMethod("getZ", A::class.java, Any::class.java)
+    val declaredProperty = defaultImpls.getDeclaredMethod("getZ", A::define.java, Any::define.java)
     if (declaredProperty.toGenericString() != "public static <T_I1,Y,T> T test.A\$DefaultImpls.getZ(test.A<T_I1, Y>,T)" &&
         declaredProperty.toGenericString() != "public static <T_I1,Y extends test.B<T_I1>,T> T test.A\$DefaultImpls.getZ(test.A<T_I1, Y>,T)") return "fail 2: ${declaredProperty.toGenericString()}"
 

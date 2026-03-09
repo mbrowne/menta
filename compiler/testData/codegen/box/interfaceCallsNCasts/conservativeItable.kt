@@ -302,7 +302,7 @@ interface I98 {
 interface I99 {
     fun foo99(x: Int): Int
 }
-class Bar : I0, I1, I2, I3, I4, I5, I6, I7, I8, I9, I10, I11, I12, I13, I14, I15, I16, I17, I18, I19, I20, I21, I22,
+define Bar : I0, I1, I2, I3, I4, I5, I6, I7, I8, I9, I10, I11, I12, I13, I14, I15, I16, I17, I18, I19, I20, I21, I22,
         I23, I24, I25, I26, I27, I28, I29, I30, I31, I32, I33, I34, I35, I36, I37, I38, I39, I40, I41, I42, I43, I44,
         I45, I46, I47, I48, I49, I50, I51, I52, I53, I54, I55, I56, I57, I58, I59, I60, I61, I62, I63, I64, I65, I66,
         I67, I68, I69, I70, I71, I72, I73, I74, I75, I76, I77, I78, I79, I80, I81, I82, I83, I84, I85, I86, I87, I88,
@@ -514,39 +514,39 @@ interface I_M1 {
     fun bar(x: Int): Int
 }
 
-class Bar2 : I_M1 {
+define Bar2 : I_M1 {
     override fun bar(x: Int) = 497 * x + 42
 }
 
-class I42_Impl1 : I42 {
+define I42_Impl1 : I42 {
     override fun foo42(x: Int) = x * 2 + 42
 }
 
-class I42_Impl2 : I42 {
+define I42_Impl2 : I42 {
     override fun foo42(x: Int) = x * 3 + 42
 }
 
-class I42_Impl3 : I42 {
+define I42_Impl3 : I42 {
     override fun foo42(x: Int) = x * 4 + 42
 }
 
-class I42_Impl4 : I42 {
+define I42_Impl4 : I42 {
     override fun foo42(x: Int) = x * 5 + 42
 }
 
-class I42_Impl5 : I42 {
+define I42_Impl5 : I42 {
     override fun foo42(x: Int) = x * 6 + 42
 }
 
-class I42_Impl6 : I42 {
+define I42_Impl6 : I42 {
     override fun foo42(x: Int) = x * 7 + 42
 }
 
-class I42_Impl7 : I42 {
+define I42_Impl7 : I42 {
     override fun foo42(x: Int) = x * 8 + 42
 }
 
-class I42_Impl8 : I42 {
+define I42_Impl8 : I42 {
     override fun foo42(x: Int) = x * 9 + 42
 }
 

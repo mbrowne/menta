@@ -4,9 +4,9 @@
 
 package test
 
-open class Base(val name: String)
-class A(name: String) : Base(name)
-class B(name: String) : Base(name)
+open define Base(val name: String)
+define A(name: String) : Base(name)
+define B(name: String) : Base(name)
 
 var result = "fail"
 

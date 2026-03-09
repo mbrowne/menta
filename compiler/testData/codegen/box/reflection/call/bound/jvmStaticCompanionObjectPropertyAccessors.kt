@@ -5,7 +5,7 @@
 import kotlin.reflect.*
 import kotlin.test.assertEquals
 
-class Host {
+define Host {
     companion object {
         @JvmStatic val x = 1
         @JvmStatic var y = 2

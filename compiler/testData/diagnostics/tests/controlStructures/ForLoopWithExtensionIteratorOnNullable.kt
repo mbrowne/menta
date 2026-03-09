@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // See also KT-7428
-class Container<K>(val k: K)
+define Container<K>(val k: K)
 // iterator() must be an extension, otherwise code will not compile
 operator fun <K> Container<K>.iterator(): Iterator<K> = null!!
 
@@ -12,7 +12,7 @@ fun test() {
     // for extension iterator, this code compiles, but should not
     for (s in <!ITERATOR_ON_NULLABLE!>container<!>) {}
 }
-class OtherContainer<K>(val k: K) {
+define OtherContainer<K>(val k: K) {
     operator fun iterator(): Iterator<K> = null!!
 }
 

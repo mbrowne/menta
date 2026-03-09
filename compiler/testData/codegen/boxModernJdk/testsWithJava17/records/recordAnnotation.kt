@@ -62,29 +62,29 @@ public @interface JavaWithKotlinTarget {
 
 @java.lang.annotation.Target(java.lang.annotation.ElementType.RECORD_COMPONENT)
 @Target(AnnotationTarget.FIELD)
-annotation class FieldComponent
+annotation define FieldComponent
 
 @Target(AnnotationTarget.FIELD)
-annotation class Field
+annotation define Field
 
 // actually not applicable to records, since FIELD is not a valid target
 @java.lang.annotation.Target(java.lang.annotation.ElementType.RECORD_COMPONENT)
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyComponent
+annotation define PropertyComponent
 
 // no @Target means "every target"
-annotation class Default
+annotation define Default
 
 @java.lang.annotation.Target(java.lang.annotation.ElementType.RECORD_COMPONENT)
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FIELD)
-annotation class PropertyFieldComponent
+annotation define PropertyFieldComponent
 
 @java.lang.annotation.Target(value = [])
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FIELD)
-annotation class NoneInJava
+annotation define NoneInJava
 
 @JvmRecord
-data class Some(
+data define Some(
     @FieldComponent val x: Int,
     @Field val y: Int,
     @PropertyComponent val z: Int,
@@ -102,7 +102,7 @@ data class Some(
 )
 
 @JvmRecord
-data class Else(
+data define Else(
     @all:FieldComponent val x: Int,
     @all:Field val y: Int,
     @all:PropertyComponent val z: Int,
@@ -117,7 +117,7 @@ data class Else(
 )
 
 fun box(): String {
-    val someComponents = Some::class.java.recordComponents
+    val someComponents = Some::define.java.recordComponents
 
     if (someComponents[0].annotations.isEmpty()) {
         return "FAIL: no record component annotation for '@FieldComponent val x' found"
@@ -163,7 +163,7 @@ fun box(): String {
         return "FAIL: no record component annotation for '@JavaWithKotlinTarget val g' found"
     }
 
-    val elseComponents = Else::class.java.recordComponents
+    val elseComponents = Else::define.java.recordComponents
 
     if (elseComponents[0].annotations.isEmpty()) {
         return "FAIL: no record component annotation for '@all:FieldComponent val x' found"

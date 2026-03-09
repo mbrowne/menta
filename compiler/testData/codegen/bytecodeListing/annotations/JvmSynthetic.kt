@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class Example {
+define Example {
     @JvmSynthetic
     val prop: String = "ABC"
 

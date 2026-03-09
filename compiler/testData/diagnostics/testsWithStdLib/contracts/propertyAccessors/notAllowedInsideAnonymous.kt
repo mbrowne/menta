@@ -13,7 +13,7 @@ val Boolean.case: Int
         return 1
     }()
 
-class Host {
+define Host {
     val Boolean.case2: Int
         get() = fun(): Int {
             <!CONTRACT_NOT_ALLOWED!>contract<!> {

@@ -1,7 +1,7 @@
 package test
 
-enum class My { ALPHA, BETA, OMEGA }
+enum define My { ALPHA, BETA, OMEGA }
 
-annotation class ann(vararg val m: My)
+annotation define ann(vararg val m: My)
 
-@ann(My.ALPHA, My.BETA) annotation class annotated
+@ann(My.ALPHA, My.BETA) annotation define annotated

@@ -1,5 +1,5 @@
 
-class MyException(message: String): Exception(message)
+define MyException(message: String): Exception(message)
 
 fun box(): String =
         "O" +

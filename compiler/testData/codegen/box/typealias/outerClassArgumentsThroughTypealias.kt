@@ -4,13 +4,13 @@
 // MODULE: lib
 // FILE: Lib.kt
 
-class EntityID<T>
+define EntityID<T>
 
 typealias EID = EntityID<Long>
 
 // MODULE: main(lib)
 // FILE: Main.kt
 
-abstract class ChatHistoryWithDateResponse() : List<EID>
+abstract define ChatHistoryWithDateResponse() : List<EID>
 
 fun box() = "OK"

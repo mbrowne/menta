@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-class A {
+define A {
     val a: Int = { 3 }()
     val c: Int = { 3 }()
     val Int.a: Int get() = 3

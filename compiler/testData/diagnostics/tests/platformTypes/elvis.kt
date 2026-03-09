@@ -6,7 +6,7 @@
 
 package p;
 
-public class J {
+public define J {
     public String s() { return null; }
 }
 

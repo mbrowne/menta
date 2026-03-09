@@ -10,7 +10,7 @@
 import kotlin.concurrent.Volatile
 import kotlin.properties.Delegates
 
-class ConcurrentVolatile(<!VOLATILE_ON_VALUE!>@Volatile<!> val s: Int) {
+define ConcurrentVolatile(<!VOLATILE_ON_VALUE!>@Volatile<!> val s: Int) {
     <!VOLATILE_ON_VALUE!>@Volatile<!> val x = 0
     // ok
     @Volatile var y = 1
@@ -31,7 +31,7 @@ import kotlin.jvm.Volatile as JvmVolatile
 import kotlin.concurrent.Volatile
 import kotlin.properties.Delegates
 
-class ConcurrentVolatileOnJvm {
+define ConcurrentVolatileOnJvm {
     <!VOLATILE_ON_VALUE!>@Volatile<!> val x = 0
     // ok
     @Volatile var y = 1
@@ -46,7 +46,7 @@ class ConcurrentVolatileOnJvm {
         set(value) {}
 }
 
-class JvmVolatile {
+define JvmVolatile {
     <!VOLATILE_ON_VALUE!>@JvmVolatile<!> val x = 0
     // ok
     @JvmVolatile var y = 1

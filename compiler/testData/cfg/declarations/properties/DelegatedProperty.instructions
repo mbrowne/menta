@@ -1,26 +1,22 @@
-== anonymous_0 ==
-{
+== Delegate ==
+class Delegate {
     fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0
 }
 ---------------------
 L0:
   1 <START>
-  2 mark({ fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0 })
-    jmp?(L2)                                                             NEXT:[<END>, d(fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0)]
-    d(fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0)           NEXT:[<SINK>]
 L1:
-L2 [after local declaration]:
-  1 <END>                                                                NEXT:[<SINK>]                                                               PREV:[jmp?(L2)]
+    <END>      NEXT:[<SINK>]
 error:
-    <ERROR>                                                              PREV:[]
+    <ERROR>    PREV:[]
 sink:
-    <SINK>                                                               PREV:[<ERROR>, <END>, d(fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0)]
+    <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == getValue ==
 fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0
 ---------------------
-L3:
-  3 <START>
+L0:
+  1 <START>
     v(_this: Nothing?)
     magic[FAKE_INITIALIZER](_this: Nothing?) -> <v0>
     w(_this|<v0>)
@@ -28,8 +24,8 @@ L3:
     magic[FAKE_INITIALIZER](p: KProperty<*>) -> <v1>
     w(p|<v1>)
     r(0) -> <v2>
-    ret(*|<v2>) L4
-L4:
+    ret(*|<v2>) L1
+L1:
     <END>                                               NEXT:[<SINK>]
 error:
     <ERROR>                                             PREV:[]
@@ -43,14 +39,14 @@ L0:
   1 <START>
     v(val a = Delegate())
     mark(Delegate())
-    magic[UNRESOLVED_CALL](Delegate()|!<v0>) -> <v1>
-    w(a|<v1>)
+    call(Delegate(), <init>) -> <v0>
+    w(a|<v0>)
 L1:
-    <END>                                               NEXT:[<SINK>]
+    <END>                               NEXT:[<SINK>]
 error:
-    <ERROR>                                             PREV:[]
+    <ERROR>                             PREV:[]
 sink:
-    <SINK>                                              PREV:[<ERROR>, <END>]
+    <SINK>                              PREV:[<ERROR>, <END>]
 =====================
 == b ==
 val b by a

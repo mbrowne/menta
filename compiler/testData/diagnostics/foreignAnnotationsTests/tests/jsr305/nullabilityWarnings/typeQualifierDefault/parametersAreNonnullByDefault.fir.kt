@@ -5,7 +5,7 @@
 import javax.annotation.*;
 
 @ParametersAreNonnullByDefault
-public class A {
+public define A {
     @Nullable public String field = null;
 
     public String foo(String q, @Nonnull String x, @CheckForNull CharSequence y) {

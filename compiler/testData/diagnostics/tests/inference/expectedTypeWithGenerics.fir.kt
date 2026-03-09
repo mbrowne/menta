@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +ExpectedTypeFromCast
 
-class X<S> {
+define X<S> {
     fun <T : S> foo(): T = TODO()
 }
 

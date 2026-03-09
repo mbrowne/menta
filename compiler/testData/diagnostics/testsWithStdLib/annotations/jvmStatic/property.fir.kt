@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
-open class B {
+open define B {
     public open val base1 : Int = 1
     public open val base2 : Int = 1
 }
 
-class A {
+define A {
     companion object : B() {
         var p1:Int = 1
             @JvmStatic set(p: Int) {

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -USELESS_ELVIS -UNUSED_EXPRESSION
 
-class X {
+define X {
     fun toLong(): Long? = TODO()
 }
 

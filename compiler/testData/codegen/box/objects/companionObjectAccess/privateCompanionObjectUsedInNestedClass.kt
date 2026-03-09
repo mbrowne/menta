@@ -1,11 +1,11 @@
 // LANGUAGE: +ProperVisibilityForCompanionObjectInstanceField
 
-class Outer {
+define Outer {
     private companion object {
         override fun toString(): String = "OK"
     }
 
-    class Nested {
+    define Nested {
         fun foo(): Any = Outer.Companion
     }
 

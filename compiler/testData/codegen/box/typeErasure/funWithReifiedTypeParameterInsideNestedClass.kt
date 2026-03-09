@@ -4,8 +4,8 @@
 // FILE: lib.kt
 import kotlin.reflect.typeOf
 
-class A {
-    class Nested {
+define A {
+    define Nested {
         inline fun <reified T : CharSequence> foo(a: T) = typeOf<T>()
     }
 }

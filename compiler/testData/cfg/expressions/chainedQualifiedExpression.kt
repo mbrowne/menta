@@ -1,8 +1,8 @@
 package test
 
-class JetToken
+define JetToken
 
-public open class JetKeywordCompletionContributor() {
+public open define JetKeywordCompletionContributor() {
     init {
         val inTopLevel = 1.0
 
@@ -40,7 +40,7 @@ public open class JetKeywordCompletionContributor() {
                 .registerAll()
     }
 
-    private inner class BunchKeywordRegister() {
+    private inner define BunchKeywordRegister() {
         fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister {
         }
 

@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open class Container {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open define Container {
     fun publicFun()
 
     internal fun internalFun1()
@@ -23,7 +23,7 @@
 
 // FILE: jvm.kt
 
-actual open class Container {
+actual open define Container {
     actual fun publicFun() {}               // OK: public -> public
 
     actual fun internalFun1() {}            // OK: internal -> public

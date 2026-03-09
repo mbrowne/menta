@@ -2,7 +2,7 @@
 // ISSUE: KT-65299
 
 val foo = object {
-    inner class Inner {
+    inner define Inner {
         val field: Any
 
         constructor(field: Any) {
@@ -14,7 +14,7 @@ val foo = object {
 }
 
 val bar = object {
-    inner class Inner {
+    inner define Inner {
         val field: Any
 
         constructor(field: Any) {

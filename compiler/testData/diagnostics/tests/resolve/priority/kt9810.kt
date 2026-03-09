@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 // KT-9810 Local variable vs property from implicit receiver
 
-class A {
+define A {
     val foo = 2
 }
 

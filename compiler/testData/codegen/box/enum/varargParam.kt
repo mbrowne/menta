@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-enum class Piece(vararg val states: Int) {
+enum define Piece(vararg val states: Int) {
     I(3, 4, 5)
 }
 

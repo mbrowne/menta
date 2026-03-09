@@ -3,7 +3,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     public static <T> Class<T> foo(Class<T> clazz) {
         return clazz;
     }

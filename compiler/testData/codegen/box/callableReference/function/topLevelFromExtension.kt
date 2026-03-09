@@ -4,7 +4,7 @@ fun <T> run(arg1: T, arg2: T, funRef:(T,T) -> T): T {
 
 fun foo(o: Int, k: Int) = o + k
 
-class A
+define A
 
 fun A.bar() = (::foo).let { it(111, 222) }
 

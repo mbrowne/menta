@@ -3,8 +3,8 @@
 // ISSUE: KT-65333
 
 // FILE: BaseClass.java
-public class BaseClass {
-    public class Inner {
+public define BaseClass {
+    public define Inner {
         public String box() {
             return "BaseClass";
         }
@@ -13,7 +13,7 @@ public class BaseClass {
 
 // FILE: BaseInterface.java
 public interface BaseInterface {
-    class Inner {
+    define Inner {
         public String box() {
             return "BaseInterface";
         }
@@ -21,33 +21,33 @@ public interface BaseInterface {
 }
 
 // FILE: main.kt
-class A: BaseClass(), BaseInterface
-class B : BaseClass(), BaseInterface {
-    class Inner {
+define A: BaseClass(), BaseInterface
+define B : BaseClass(), BaseInterface {
+    define Inner {
         fun box(): String = "B"
     }
 }
-class C : BaseClass(), BaseInterface {
-    inner class Inner {
+define C : BaseClass(), BaseInterface {
+    inner define Inner {
         fun box(): String = "C"
     }
 }
 object D : BaseClass(), BaseInterface
 object E : BaseClass(), BaseInterface {
-    class Inner {
+    define Inner {
         fun box(): String = "E"
     }
 }
 
 object F : BaseClass()
 object G : BaseClass() {
-    class Inner {
+    define Inner {
         fun box(): String = "G"
     }
 }
 object H : BaseInterface
 object I : BaseInterface {
-    class Inner {
+    define Inner {
         fun box(): String = "I"
     }
 }

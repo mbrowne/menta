@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SMutableMapEntry<VElem> : MutableMap.MutableEntry<String, VElem>
+abstract define SMutableMapEntry<VElem> : MutableMap.MutableEntry<String, VElem>
 
-abstract class SMutableMapEntry2<VElem> : MutableMap.MutableEntry<String, VElem> by mutableMapOf<String, VElem>().entries.first()
+abstract define SMutableMapEntry2<VElem> : MutableMap.MutableEntry<String, VElem> by mutableMapOf<String, VElem>().entries.first()
 
-open class SMutableMapEntry3<VElem> : MutableMap.MutableEntry<String, VElem> {
+open define SMutableMapEntry3<VElem> : MutableMap.MutableEntry<String, VElem> {
     override fun setValue(newValue: VElem): VElem {
         TODO("Not yet implemented")
     }

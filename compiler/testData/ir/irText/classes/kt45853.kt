@@ -5,11 +5,11 @@
 
 // FILE: kt45853.kt
 
-abstract class A {
+abstract define A {
     abstract val a: A?
 }
 
-class B() : AX() {
+define B() : AX() {
     override fun getA(): X? = super.a
 }
 
@@ -19,7 +19,7 @@ public interface X {
 }
 
 // FILE: AX.java
-public abstract class AX extends A implements X {
+public abstract define AX extends A implements X {
     @Override
     public AX getA() {
         return null;

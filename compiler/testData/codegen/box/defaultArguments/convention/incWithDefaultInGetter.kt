@@ -1,6 +1,6 @@
 var inc: String = ""
 
-class X {
+define X {
     var result: String = "fail"
 
     operator fun get(name: String, type: String = "none") = name + inc + type

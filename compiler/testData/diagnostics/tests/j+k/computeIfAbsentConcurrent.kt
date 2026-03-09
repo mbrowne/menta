@@ -12,7 +12,7 @@ public interface ConcMap<K, V> {
 }
 
 // FILE: ConcHashMap.java
-public class ConcHashMap<K, V> implements ConcMap<K, V> {
+public define ConcHashMap<K, V> implements ConcMap<K, V> {
     @Override
     V computeIfAbsent(K key, MyFunc<? super K,? extends V> mappingFunction) { }
 }

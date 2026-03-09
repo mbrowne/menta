@@ -2,8 +2,8 @@
 fun test(x: Any) {
   if (x !is String) return
 
-  class LocalOuter {
-    inner class Local {
+  define LocalOuter {
+    inner define Local {
       init {
         x.length
       }

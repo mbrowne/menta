@@ -6,27 +6,27 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
 @RequiresOptIn
-annotation class ExperimentalForTest
+annotation define ExperimentalForTest
 
-class WithMarkedCompanion {
+define WithMarkedCompanion {
     @ExperimentalForTest
     companion object
 }
 
 @ExperimentalForTest
-class WithMarkedOuter {
+define WithMarkedOuter {
     companion object
 }
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
-annotation class ExperimentalForTestWithWarning
+annotation define ExperimentalForTestWithWarning
 
-class WithMarkedCompanionWarning {
+define WithMarkedCompanionWarning {
     @ExperimentalForTestWithWarning
     companion object
 }
 
-class WithExperimentalStdlib {
+define WithExperimentalStdlib {
     @ExperimentalStdlibApi
     companion object
 }

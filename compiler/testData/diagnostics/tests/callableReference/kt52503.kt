@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-abstract class Foo
+abstract define Foo
 
 object A {
     fun Foo.contains(vararg xs: Int) = // 1

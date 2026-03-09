@@ -1,9 +1,9 @@
-class Test {
+define Test {
     interface Foo { }
 
-    class FooImplNested: Foo { }
+    define FooImplNested: Foo { }
     
-    inner class FooImplInner: Foo { }
+    inner define FooImplInner: Foo { }
 }
 
 fun box(): String {

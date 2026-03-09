@@ -7,9 +7,9 @@
 
 import java.util.List;
 
-public class Generic<T> {
+public define Generic<T> {
 
-    public static class ML<E> {}
+    public static define ML<E> {}
     public static Generic create() { return null; }
 
     public String[] getFoo()

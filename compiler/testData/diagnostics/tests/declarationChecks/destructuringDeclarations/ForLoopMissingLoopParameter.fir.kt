@@ -12,7 +12,7 @@ fun checkersShouldRun() {
     }<!>
 }
 
-annotation class A
+annotation define A
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, forLoop, functionDeclaration, localProperty, propertyDeclaration,
 unnamedLocalVariable */

@@ -6,42 +6,42 @@
 // FILE: common.kt
 package kotlin
 
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @OptionalExpectation
-expect annotation class OptionalExpectationOnExpectOnly
+expect annotation define OptionalExpectationOnExpectOnly
 
 @RequiresOptIn
-annotation class MyOptIn
+annotation define MyOptIn
 
 @SinceKotlin("1.8")
 @Deprecated(message = "Some text")
 @DeprecatedSinceKotlin("1.8")
 @Suppress(<!ERROR_SUPPRESSION!>"INVISIBLE_REFERENCE"<!>, "INVISIBLE_MEMBER")
 @MyOptIn
-@WasExperimental(MyOptIn::class)
+@WasExperimental(MyOptIn::define)
 @kotlin.internal.RequireKotlin(version = "1.8")
-@OptIn(MyOptIn::class)
+@OptIn(MyOptIn::define)
 expect fun skippedAnnotationsOnExpectOnly()
 
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @kotlin.jvm.<!DEPRECATION_ERROR!>ImplicitlyActualizedByJvmDeclaration<!>
-expect class ImplicitlyActualizedByJvmDeclarationOnExpectOnly
+expect define ImplicitlyActualizedByJvmDeclarationOnExpectOnly
 
-@SubclassOptInRequired(MyOptIn::class)
-expect open class SubclassOptInRequiredOnExpectOnly
+@SubclassOptInRequired(MyOptIn::define)
+expect open define SubclassOptInRequiredOnExpectOnly
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 package kotlin
 
-@OptIn(ExperimentalMultiplatform::class)
-actual annotation class OptionalExpectationOnExpectOnly
+@OptIn(ExperimentalMultiplatform::define)
+actual annotation define OptionalExpectationOnExpectOnly
 
 actual fun skippedAnnotationsOnExpectOnly() {}
 
-actual class ImplicitlyActualizedByJvmDeclarationOnExpectOnly
+actual define ImplicitlyActualizedByJvmDeclarationOnExpectOnly
 
-actual open class SubclassOptInRequiredOnExpectOnly
+actual open define SubclassOptInRequiredOnExpectOnly
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, classReference, expect, functionDeclaration,
 stringLiteral */

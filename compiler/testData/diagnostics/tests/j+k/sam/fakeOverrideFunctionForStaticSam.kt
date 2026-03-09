@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: BehaviorSubject.java
-public class BehaviorSubject<T> extends Observable<T> {
+public define BehaviorSubject<T> extends Observable<T> {
 }
 
 // FILE: Observable.java
 
-public class Observable<T> {
+public define Observable<T> {
     public static <T> Observable<T> create(Observable.OnSubscribe<T> f) {
         return null;
     }

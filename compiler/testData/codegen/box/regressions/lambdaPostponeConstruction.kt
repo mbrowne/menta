@@ -1,4 +1,4 @@
-class MyList<T>
+define MyList<T>
 
 operator fun <T> MyList<T>.plusAssign(element: T) {}
 

@@ -5,10 +5,10 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> foo(x: T, builder: T.() -> Unit): Unit = TODO()
 
-class Bar<T>
+define Bar<T>
 
 fun test() {
     foo(1) {

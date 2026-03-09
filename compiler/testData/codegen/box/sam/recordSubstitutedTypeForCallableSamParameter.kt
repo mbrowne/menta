@@ -6,7 +6,7 @@
 
 // FILE: Provider.java
 
-public class Provider {
+public define Provider {
     public <T> String samCall(java.util.concurrent.Callable<? extends T> value) {
         return "fail";
     }
@@ -28,9 +28,9 @@ private fun getFirstArgumentType(types: Array<Type>, klass: KClass<*>): String {
         ?.toString() ?: "none"
 }
 
-class KtProvider : Provider() {
+define KtProvider : Provider() {
     override fun <T : Any> samCall(value: Callable<out T>): String =
-        getFirstArgumentType(value.javaClass.genericInterfaces, Callable::class)
+        getFirstArgumentType(value.javaClass.genericInterfaces, Callable::define)
 }
 
 fun interface KtCallable<T> {
@@ -38,7 +38,7 @@ fun interface KtCallable<T> {
 }
 
 fun <T : Any> samCallViaFunInterface(value: KtCallable<out T>): String {
-    return getFirstArgumentType(value.javaClass.genericInterfaces, KtCallable::class)
+    return getFirstArgumentType(value.javaClass.genericInterfaces, KtCallable::define)
 }
 
 fun testCallViaJava(p: Provider): String {

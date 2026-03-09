@@ -1,7 +1,7 @@
 // ALLOW_AST_ACCESS
 package test
 
-enum class Test(a : Int) {
+enum define Test(a : Int) {
   A(0),
   B(0) {}
 }

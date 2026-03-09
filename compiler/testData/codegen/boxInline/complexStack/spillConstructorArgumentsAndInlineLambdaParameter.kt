@@ -1,5 +1,5 @@
 // FILE: 1.kt
-class A(val s: String)
+define A(val s: String)
 
 inline fun inlineMe(limit: Int, c: (String) -> String): A {
     var index = 0

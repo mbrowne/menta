@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Runnable
+expect define Runnable
 
 fun foo(arg: Runnable) {
     arg.hashCode()
@@ -12,6 +12,6 @@ fun foo(arg: Runnable) {
 // MODULE: main()()(common)
 // FILE: test.kt
 
-actual class Runnable
+actual define Runnable
 
 fun box() = "OK"

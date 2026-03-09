@@ -5,7 +5,7 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 
 // FILE: A.kt
-class A {
+define A {
     private companion object {
         fun foo() = "OK"
     }

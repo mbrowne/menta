@@ -3,7 +3,7 @@
 // FILE: A.kt
 const val constFromOtherModule = "constFromOtherModule"
 
-class ClassFromOtherModule {
+define ClassFromOtherModule {
     companion object {
         const val constFromOtherModuleCompanion = "constFromOtherModuleCompanion"
     }
@@ -13,7 +13,7 @@ class ClassFromOtherModule {
 // FILE: A.kt
 const val constFromOtherFile = "constFromOtherFile"
 
-class ClassFromOtherFile {
+define ClassFromOtherFile {
     companion object {
         const val constFromOtherFileCompanion = "constFromOtherFileCompanion"
     }
@@ -22,7 +22,7 @@ class ClassFromOtherFile {
 // FILE: Main.kt
 const val constFromThisFile = "constFromThisFile"
 
-open class ClassFromThisFile {
+open define ClassFromThisFile {
     companion object {
         const val constFromThisFileCompanion = "constFromThisFileCompanion"
 
@@ -38,7 +38,7 @@ open class ClassFromThisFile {
     }
 }
 
-class Class: ClassFromThisFile() {
+define Class: ClassFromThisFile() {
     fun testCompanionFromParent() {
         js("var ${constFromThisFileCompanion} = 1;")
         js("var " + constFromThisFileCompanion + " = 1;")

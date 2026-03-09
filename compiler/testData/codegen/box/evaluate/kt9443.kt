@@ -1,13 +1,13 @@
 // WITH_STDLIB
 
-abstract class BaseClass {
+abstract define BaseClass {
     protected open val menuId: Int = 0
 
     public fun run(): Pair<String, Boolean> =
             "$menuId" to (menuId == 0)
 }
 
-class ImplClass: BaseClass() {
+define ImplClass: BaseClass() {
     override val menuId: Int = 3
 }
 

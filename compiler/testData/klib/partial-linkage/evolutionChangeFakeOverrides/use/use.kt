@@ -1,6 +1,6 @@
 package serialization.fake_overrides
 
-class Z: X() {
+define Z: X() {
 }
 
 fun test0() = Y().bar()

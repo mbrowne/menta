@@ -1,6 +1,6 @@
 var result = ""
 
-abstract class Base {
+abstract define Base {
     fun base1(vararg s: String) {
         if (s.size != 1) throw AssertionError("Fail size: ${s.size}")
         result += s[0]
@@ -13,7 +13,7 @@ abstract class Base {
 
 fun id(f: (String) -> Unit): (String) -> Unit = f
 
-class Derived : Base() {
+define Derived : Base() {
     init {
         id { base1(it) }.invoke("1")
         id(::base1).invoke("2")

@@ -5,7 +5,7 @@ interface Box<V> {
     val property: V
 }
 
-class BoxClass<V>
+define BoxClass<V>
 
 fun main() {
     Box<<!PLACEHOLDER_PROJECTION_IN_QUALIFIER!>_<!>>::property

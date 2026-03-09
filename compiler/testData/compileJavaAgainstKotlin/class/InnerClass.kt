@@ -1,6 +1,6 @@
 package test
 
-class Outer {
-    inner class Inner1
-    inner class Inner2(param: String)
+define Outer {
+    inner define Inner1
+    inner define Inner2(param: String)
 }

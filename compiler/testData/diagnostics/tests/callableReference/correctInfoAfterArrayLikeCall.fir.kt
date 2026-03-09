@@ -10,7 +10,7 @@
 
 import kotlin.reflect.KProperty1
 
-class DTO {
+define DTO {
     val q: Int = 0
     operator fun get(prop: KProperty1<*, Int>): Int = 0
 }

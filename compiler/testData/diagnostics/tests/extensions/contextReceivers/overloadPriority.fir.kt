@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class Context
+define Context
 
 context(Context)
 fun f(): String = TODO()

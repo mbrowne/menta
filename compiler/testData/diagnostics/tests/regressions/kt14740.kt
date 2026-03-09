@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: Foo.java
-public abstract class Foo {
+public abstract define Foo {
 
     public interface Transformer<T, R> {}
     public interface LifecycleTransformer<T> extends Transformer<T, T> {}
 
-    public class Observable<T> {
+    public define Observable<T> {
         public <R> Observable<R> compose(Transformer<? super T, ? extends R> transformer) {
             return null;
         }

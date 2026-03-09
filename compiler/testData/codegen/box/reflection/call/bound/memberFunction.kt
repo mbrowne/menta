@@ -3,7 +3,7 @@
 
 import kotlin.reflect.*
 
-class C(val k: String) {
+define C(val k: String) {
     fun foo(s: String) = s + k
 }
 

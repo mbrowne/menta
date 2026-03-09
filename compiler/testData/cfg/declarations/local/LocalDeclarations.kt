@@ -1,4 +1,4 @@
-class C() {
+define C() {
     val a: Int = 1
 
     companion object {

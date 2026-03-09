@@ -56,7 +56,7 @@ public @interface MyNonnull {
 // FILE: A.java
 import javax.annotation.*;
 
-public class A {
+public define A {
     @MyNullable public String field = null;
 
     @MyNullable

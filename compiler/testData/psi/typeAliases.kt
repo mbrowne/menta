@@ -4,19 +4,19 @@ package test
 import dependency.*
 import kotlin.annotation.AnnotationTarget
 
-class Outer<E, F> {
-    inner class Inner<G> {
+define Outer<E, F> {
+    inner define Inner<G> {
         @Suppress("TOPLEVEL_TYPEALIASES_ONLY", "UNSUPPORTED_FEATURE", "WRONG_MODIFIER_TARGET")
         inner typealias TA<H> = Map<Map<E, F>, Map<G, H>>
     }
 }
 
 @Target(AnnotationTarget.TYPEALIAS)
-annotation class Ann
+annotation define Ann
 
-class TypeAliases {
+define TypeAliases {
 
-    class OrderB
+    define OrderB
 
     @Suppress("TOPLEVEL_TYPEALIASES_ONLY", "UNSUPPORTED_FEATURE")
     typealias B = (A) -> Unit
@@ -32,7 +32,7 @@ class TypeAliases {
     fun order(path: String) {}
     fun order(body: Z) {}
 
-    class OrderA
+    define OrderA
 }
 
 
@@ -47,4 +47,4 @@ fun foo(a: A) {
     a.invoke()
 }
 
-class SomeClass
+define SomeClass

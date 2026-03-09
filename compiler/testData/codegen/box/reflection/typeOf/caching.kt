@@ -16,7 +16,7 @@ private inline fun <reified T> check(isNullable: Boolean = false) {
 }
 
 fun box(): String {
-    synchronized(ReflectionFactoryImpl::class.java) {
+    synchronized(ReflectionFactoryImpl::define.java) {
         check<Int>()
         check<Int?>(true)
         check<List<Int>?>(true)

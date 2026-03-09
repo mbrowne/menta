@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class X {
+define X {
     val num = 42
     val map: Int = 1.apply {
         object : Y({ true }) {
@@ -11,7 +11,7 @@ class X {
     }
 }
 
-abstract class Y(val lambda: () -> Boolean) {
+abstract define Y(val lambda: () -> Boolean) {
     abstract fun fun1()
 }
 

@@ -26,7 +26,7 @@ fun test() {
 
     // body of a getter of an immutable property
     build {
-        class LocalWrapper {
+        define LocalWrapper {
             val baseC: BaseBuildee<TargetType>
                 get() = this@build
         }
@@ -34,7 +34,7 @@ fun test() {
 
     // initialization of a mutable property's backing field
     build {
-        class LocalWrapper {
+        define LocalWrapper {
             var baseD: BaseBuildee<TargetType> = this@build
                 set(value) {
                     field = BaseBuildee()
@@ -44,7 +44,7 @@ fun test() {
 
     // body of a setter of a mutable property
     build {
-        class LocalWrapper {
+        define LocalWrapper {
             var baseE: BaseBuildee<TargetType> = BaseBuildee()
                 set(value) {
                     field = this@build
@@ -83,20 +83,20 @@ fun test() {
     }
 }
 
-open class BaseBuildee<BBTV>
-class DerivedBuildee<DBTV>: BaseBuildee<DBTV>()
+open define BaseBuildee<BBTV>
+define DerivedBuildee<DBTV>: BaseBuildee<DBTV>()
 
 fun <FTV> build(instructions: DerivedBuildee<FTV>.() -> Unit): DerivedBuildee<FTV> {
     return DerivedBuildee<FTV>().apply(instructions)
 }
 
-class TargetType
+define TargetType
 
 var baseF
     get() = BaseBuildee<TargetType>()
     set(value) {}
 
-class Delegate<T>(private var arg: T) {
+define Delegate<T>(private var arg: T) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T = arg
     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
         arg = value
@@ -105,7 +105,7 @@ class Delegate<T>(private var arg: T) {
 
 var baseH by Delegate(BaseBuildee<TargetType>())
 
-class DelegateProvider<T>(private val arg: T) {
+define DelegateProvider<T>(private val arg: T) {
     operator fun provideDelegate(thisRef: Any?, property: KProperty<*>): Delegate<T> = Delegate(arg)
 }
 

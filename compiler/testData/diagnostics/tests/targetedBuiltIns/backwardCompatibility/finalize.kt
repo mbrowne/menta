@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-enum class TestEnum {
+enum define TestEnum {
     ENTRY;
 
     fun <!VIRTUAL_MEMBER_HIDDEN!>getDeclaringClass<!>() {}
     fun <!VIRTUAL_MEMBER_HIDDEN!>finalize<!>() {}
 }
 
-class TestFinalize {
+define TestFinalize {
     fun finalize() {}
 }
 

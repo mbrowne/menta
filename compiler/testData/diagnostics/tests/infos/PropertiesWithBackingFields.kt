@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-abstract class Test() {
+abstract define Test() {
     abstract val x : Int
     abstract val x1 : Int get
     abstract val x2 : Int <!ABSTRACT_PROPERTY_WITH_GETTER!>get() = 1<!>
@@ -46,9 +46,9 @@ abstract class Test() {
 
 }
 
-open class Super(i : Int)
+open define Super(i : Int)
 
-class TestPCParameters(w : Int, x : Int, val y : Int, var z : Int) : Super(w) {
+define TestPCParameters(w : Int, x : Int, val y : Int, var z : Int) : Super(w) {
 
   val xx = w
 

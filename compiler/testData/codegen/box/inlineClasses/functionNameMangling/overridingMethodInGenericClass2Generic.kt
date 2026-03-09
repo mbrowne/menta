@@ -2,7 +2,7 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
-abstract class GenericBase<T> {
+abstract define GenericBase<T> {
     abstract fun foo(x: T): T
 }
 
@@ -11,9 +11,9 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str<T: String>(val str: T)
+value define Str<T: String>(val str: T)
 
-class Derived : GenericBase<Str<String>>(), IFoo {
+define Derived : GenericBase<Str<String>>(), IFoo {
     override fun foo(x: Str<String>): Str<String> = x
     override fun foo(x: String): String = x
 }

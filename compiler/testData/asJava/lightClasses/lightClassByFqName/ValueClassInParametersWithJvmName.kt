@@ -5,9 +5,9 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
-class UTypeDeclarationClass {
+define UTypeDeclarationClass {
     var setterAndGetter: MyValueClass = MyValueClass("setterAndGetter")
         @JvmName("get_setterAndGetter") get() = field
         @JvmName("set_setterAndGetter") set(value) { field = value }

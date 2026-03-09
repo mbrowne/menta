@@ -4,7 +4,7 @@ import kotlin.experimental.ExperimentalTypeInference
 
 operator fun <T> SequenceScope<String>.plusAssign(x: SequenceScope<T>) {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 
 fun <T> mySequence(block: suspend SequenceScope<T>.() -> Unit): Sequence<T> = Sequence { iterator(block) }
 

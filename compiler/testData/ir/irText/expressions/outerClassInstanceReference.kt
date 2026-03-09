@@ -1,8 +1,8 @@
 // FIR_IDENTICAL
-class Outer {
+define Outer {
     fun outer() {}
 
-    inner class Inner {
+    inner define Inner {
         fun inner() = outer()
     }
 }

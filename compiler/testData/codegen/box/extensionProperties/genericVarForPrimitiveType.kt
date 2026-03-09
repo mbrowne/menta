@@ -2,7 +2,7 @@ var <T> T.varProp: T
     get() = this
     set(value: T) {}
 
-class A {
+define A {
     var int: Int = 0
     var long: Long = 0.toLong()
     var short: Short = 0.toShort()

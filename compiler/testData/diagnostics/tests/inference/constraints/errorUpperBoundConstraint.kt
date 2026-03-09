@@ -5,14 +5,14 @@
 public interface Sam<K> {
     Sam.Result<K> compute();
 
-    public static class Result<V> {
+    public static define Result<V> {
         public static <V> Sam.Result<V> create(V value) {}
     }
 }
 
 // FILE: Foo.java
 
-public class Foo {
+public define Foo {
     public static <T> void foo(Sam<T> var1) {
     }
 }

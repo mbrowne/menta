@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class C(x: Int, val y: Int, var z: Int = 1) {
+define C(x: Int, val y: Int, var z: Int = 1) {
     constructor() : this(0, 0, 0) {}
 
     val property: Int = 0
@@ -22,7 +22,7 @@ class C(x: Int, val y: Int, var z: Int = 1) {
         println("2")
     }
 
-    class NestedClass {
+    define NestedClass {
         fun function() {
             println("3")
         }

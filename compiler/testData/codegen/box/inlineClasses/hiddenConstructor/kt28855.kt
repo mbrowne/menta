@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class C<T>(val x: T, vararg ys: UInt) {
+define C<T>(val x: T, vararg ys: UInt) {
     val y0 = ys[0]
 }
 

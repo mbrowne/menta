@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // See KT-10276
 
-class Bar() {
+define Bar() {
     var test: String? = null
     fun foo() {
         if (test != null) {

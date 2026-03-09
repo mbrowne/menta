@@ -5,13 +5,13 @@ package test
 
 import testOther.*
 
-class B: A()
+define B: A()
 val inferTypeFromImportedFun = testFun()
 
 // FILE: importFunctionWithAllUnderImportOther.kt
 package testOther
 
-open class A
+open define A
 fun testFun() = 1
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, integerLiteral, propertyDeclaration */

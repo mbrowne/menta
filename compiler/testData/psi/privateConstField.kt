@@ -1,9 +1,9 @@
 package test
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class A
+annotation define A
 
-class PrivateConstField {
+define PrivateConstField {
     private companion object {
         const val CONST: Int = 10
         @A

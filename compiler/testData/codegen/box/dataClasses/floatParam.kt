@@ -6,7 +6,7 @@
 
 val NAN = Float.NaN
 
-data class A(val x: Float)
+data define A(val x: Float)
 
 fun box(): String {
     if (A(+0f) == A(-0f)) return "Fail: +0 == -0"

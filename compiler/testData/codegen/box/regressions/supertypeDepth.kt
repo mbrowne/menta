@@ -1,5 +1,5 @@
-class A : FirstOwner<Holder<A>>
-class B : SecondOwner<Holder<B>>
+define A : FirstOwner<Holder<A>>
+define B : SecondOwner<Holder<B>>
 
 interface FirstOwner<T : StubElement<*>> : SecondOwner<T>
 interface SecondOwner<T : StubElement<*>>

@@ -1,7 +1,7 @@
 // FILE: 1.kt
 package test
 
-class Test(var result: Int)
+define Test(var result: Int)
 
 var result = Test(1)
 

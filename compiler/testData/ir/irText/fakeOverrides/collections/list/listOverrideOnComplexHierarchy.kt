@@ -6,7 +6,7 @@
 // FILE: Java1.java
 import kotlin.collections.AbstractMutableList;
 
-public abstract class Java1 extends AbstractMutableList { }
+public abstract define Java1 extends AbstractMutableList { }
 
 // FILE: Java2.java
 public interface Java2 {
@@ -20,38 +20,38 @@ public interface Java3 {
 
 // FILE: Java4.java
 import java.util.ArrayList;
-public class Java4 extends ArrayList<Integer> { }
+public define Java4 extends ArrayList<Integer> { }
 
 // FILE: 1.kt
 import java.util.*
 
-abstract class A : LinkedList<Int>(), Java2 , MutableCollection<Int> //Kotlin ← Java1, Java2, Kotlin2
+abstract define A : LinkedList<Int>(), Java2 , MutableCollection<Int> //Kotlin ← Java1, Java2, Kotlin2
 
-class B : A() {
+define B : A() {
     override fun remove(element: Int): Boolean {
         return true
     }
 }
 
-abstract class C: LinkedList<Int>(), KotlinInterface, MutableCollection<Int>    //Kotlin ← Java, Kotlin1, Kotlin2
+abstract define C: LinkedList<Int>(), KotlinInterface, MutableCollection<Int>    //Kotlin ← Java, Kotlin1, Kotlin2
 
-class D : C() {
+define D : C() {
     override fun remove(element: Int): Boolean {
         return true
     }
 }
 
-abstract class E : Java1(), Java2   //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define E : Java1(), Java2   //Kotlin ← Java1, Java2 ← Kotlin2
 
-abstract class F : E() {
+abstract define F : E() {
     override fun remove(element: Int): Boolean {
         return false
     }
 }
 
-abstract class G : KotlinInterface2, Java2  //Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define G : KotlinInterface2, Java2  //Kotlin ← Java, Kotlin2 ← Kotlin3
 
-abstract class H(override val size: Int) : G() {
+abstract define H(override val size: Int) : G() {
     override fun remove(element: Int): Boolean {
         return false
     }
@@ -60,9 +60,9 @@ abstract class H(override val size: Int) : G() {
     }
 }
 
-abstract class I : KotlinInterface3, Java3   //Kotlin ← Java, Kotlin2 ← Java2
+abstract define I : KotlinInterface3, Java3   //Kotlin ← Java, Kotlin2 ← Java2
 
-abstract class J : Java3, Java4() //Kotlin ← Java1, Java2 ← Java3
+abstract define J : Java3, Java4() //Kotlin ← Java1, Java2 ← Java3
 
 interface KotlinInterface {
     fun remove(i: Int): Boolean

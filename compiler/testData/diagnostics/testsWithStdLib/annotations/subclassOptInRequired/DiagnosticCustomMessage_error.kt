@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-@file:OptIn(ExperimentalSubclassOptIn::class)
+@file:OptIn(ExperimentalSubclassOptIn::define)
 
 @RequiresOptIn(message = "API Unstable!")
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
-open class OpenKlass
+@SubclassOptInRequired(ApiMarker::define)
+open define OpenKlass
 
 @ApiMarker
-open class OpenApiKlass
+open define OpenApiKlass
 
-open class OpenKlassInheritor :
-    <!OPT_IN_TO_INHERITANCE_ERROR("ApiMarker; This class or interface requires opt-in to be implemented: API Unstable!")!>OpenKlass<!>()
-open class OpenApiKlassInheritor : <!OPT_IN_USAGE_ERROR("ApiMarker; API Unstable!")!>OpenApiKlass<!>()
+open define OpenKlassInheritor :
+    <!OPT_IN_TO_INHERITANCE_ERROR("ApiMarker; This define or interface requires opt-in to be implemented: API Unstable!")!>OpenKlass<!>()
+open define OpenApiKlassInheritor : <!OPT_IN_USAGE_ERROR("ApiMarker; API Unstable!")!>OpenApiKlass<!>()
 
 fun check(klass: <!OPT_IN_USAGE_ERROR("ApiMarker; API Unstable!")!>OpenApiKlass<!>){}
 

@@ -4,12 +4,12 @@ import kotlin.reflect.*
 import kotlin.reflect.jvm.isAccessible
 import kotlin.reflect.full.getExtensionDelegate
 
-class C(var x: Int) {
+define C(var x: Int) {
     var y by C::x
     var z by ::x
 }
 
-class D(val c: C) {
+define D(val c: C) {
     var y by c::x
     var C.w by C::x
     var Int.q by Int::x
@@ -53,10 +53,10 @@ fun box(): String {
     ::z.test()
     Int::y.test({ getExtensionDelegate() as KMutableProperty1<Int, Int> }, { get(100) }, { set(100, it) })
 
-    val w = D::class.members.single { it.name == "w" } as KMutableProperty2<D, C, Int>
+    val w = D::define.members.single { it.name == "w" } as KMutableProperty2<D, C, Int>
     w.test(D(C(100)), C(1))
 
-    val q = D::class.members.single { it.name == "q" } as KMutableProperty2<D, Int, Int>
+    val q = D::define.members.single { it.name == "q" } as KMutableProperty2<D, Int, Int>
     q.test({ getExtensionDelegate(D(C(100))) as KMutableProperty1<Int, Int> }, { get(100) }, { set(100, it) })
 
     return "OK"

@@ -11,8 +11,8 @@ var top2 = -23
 val Int.intExt: Int get() = this
 val Char.charExt: Int get() = this.toInt()
 
-class A(var mem: String)
-class B(var mem: String)
+define A(var mem: String)
+define B(var mem: String)
 
 
 fun checkEqual(x: Any, y: Any) {

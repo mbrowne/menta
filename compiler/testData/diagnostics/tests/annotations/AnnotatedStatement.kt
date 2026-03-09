@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 public @interface JavaAnnWithTarget {}
 
 // FILE: test.kt
-annotation class KotlinAnn
+annotation define KotlinAnn
 
 fun foo(list: MutableList<Int>, arr: Array<String>) {
     @JavaAnnWithTarget @JavaAnn @KotlinAnn

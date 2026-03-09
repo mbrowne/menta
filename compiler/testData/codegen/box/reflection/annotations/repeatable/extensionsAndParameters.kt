@@ -27,7 +27,7 @@ fun check(element: KAnnotatedElement, expected: String) {
 
 @Repeatable
 @Target(FUNCTION, PROPERTY, PROPERTY_GETTER, PROPERTY_SETTER, VALUE_PARAMETER)
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 @A("ext") @A("Fun")
 fun @receiver:[A("extFun") A("Receiver")] String.extensionFunction(@A("par") @A("am") x: Any) {}

@@ -1,7 +1,7 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect class E
+expect define E
 expect fun foo(e: E): String
 
 // MODULE: lib-inter1()()(lib-common)
@@ -11,7 +11,7 @@ fun inter1Foo(e: E): String = foo(e)
 fun inter2Foo(e: E): String = foo(e)
 
 // MODULE: lib-platform()()(lib-inter1, lib-inter2)
-actual class E
+actual define E
 
 @Deprecated("", level = DeprecationLevel.WARNING)
 actual fun foo(e: E): String = "OK"

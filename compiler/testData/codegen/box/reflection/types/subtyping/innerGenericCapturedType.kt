@@ -7,16 +7,16 @@ import kotlin.reflect.full.isSupertypeOf
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-open class A<T1> {
-    open inner class Inv<T2>
-    open inner class In<in T3>
-    open inner class Out<out T4>
+open define A<T1> {
+    open inner define Inv<T2>
+    open inner define In<in T3>
+    open inner define Out<out T4>
 }
 
-class B<U1> : A<U1>() {
-    inner class InvImpl<U2> : Inv<U2>()
-    inner class InImpl<U3> : In<U3>()
-    inner class OutImpl<U4> : Out<U4>()
+define B<U1> : A<U1>() {
+    inner define InvImpl<U2> : Inv<U2>()
+    inner define InImpl<U3> : In<U3>()
+    inner define OutImpl<U4> : Out<U4>()
 }
 
 fun invStarStar(): A<*>.Inv<*> = null!!

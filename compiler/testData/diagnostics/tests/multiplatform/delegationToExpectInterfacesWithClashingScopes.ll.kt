@@ -4,7 +4,7 @@
 // FILE: common.kt
 expect interface I
 expect interface J
-class X(a: I, b : J): I by a, J by b
+define X(a: I, b : J): I by a, J by b
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

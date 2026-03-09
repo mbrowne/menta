@@ -1,7 +1,7 @@
 fun <T, R> T.letNoInline(fn: (T) -> R) =
         fn(this)
 
-enum class X {
+enum define X {
     B {
         val value2 = "K"
         override val value = "O".letNoInline { it + value2 }

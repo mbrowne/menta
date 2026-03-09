@@ -1,18 +1,18 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect open class LibClass1() {
+expect open define LibClass1() {
     open fun foo(): String
     fun bar()
 }
 
-expect open class LibClass2() {
+expect open define LibClass2() {
     open fun foo(): String
     fun bar()
 }
 
 // MODULE: lib-platform()()(lib-common)
-actual open class LibClass1 {
+actual open define LibClass1 {
     actual open fun foo(): String = "OK"
     actual fun bar() {}
     fun baz(): String = "BAZ"
@@ -21,10 +21,10 @@ actual open class LibClass1 {
 actual typealias LibClass2 = LibClass1
 
 // MODULE: app-common(lib-common)
-class AppLibClass1 : LibClass1() {
+define AppLibClass1 : LibClass1() {
     override fun foo(): String = "AppCommon1"
 }
-class AppLibClass2 : LibClass2() {
+define AppLibClass2 : LibClass2() {
     override fun foo(): String = "AppCommon2"
 }
 
@@ -45,11 +45,11 @@ fun test_common(
 }
 
 // MODULE: app-inter(lib-common)()(app-common)
-class AppInterCommon1 : LibClass1() {
+define AppInterCommon1 : LibClass1() {
     override fun foo(): String = "AppInterCommon1"
 }
 
-class AppInterCommon2 : LibClass2() {
+define AppInterCommon2 : LibClass2() {
     override fun foo(): String = "AppInterCommon2"
 }
 
@@ -76,11 +76,11 @@ fun test_platform(
 }
 
 // MODULE: app-platform(lib-platform)()(app-inter)
-class AppPlatformClass1 : LibClass1() {
+define AppPlatformClass1 : LibClass1() {
     override fun foo(): String = "AppPlatform1"
     fun extra1(): String = baz()
 }
-class AppPlatformClass2 : LibClass2() {
+define AppPlatformClass2 : LibClass2() {
     override fun foo(): String = "AppPlatform2"
     fun extra2(): String = baz()
 }

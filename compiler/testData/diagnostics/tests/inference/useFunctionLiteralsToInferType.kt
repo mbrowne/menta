@@ -12,7 +12,7 @@ fun <K, V> testGetOrPut(result : MutableMap<K, Set<V>>, key: K) {
 fun <K,V> MutableMap<K,V>.getOrPut(key: K, defaultValue: ()-> V) : V = throw Exception("$key $defaultValue")
 
 // ----------------------------------
-class Property<T: Comparable<T>>(val name: String, val default: () -> T) {}
+define Property<T: Comparable<T>>(val name: String, val default: () -> T) {}
 
 fun testProperty() = Property("", { -1.toLong() })
 fun testProperty1() = Property("", { "" })

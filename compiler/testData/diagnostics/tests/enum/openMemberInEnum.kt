@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-enum class EnumWithOpenMembers {
+enum define EnumWithOpenMembers {
     E1 {
         override fun foo() = 1
         override val bar: String = "a"

@@ -8,10 +8,10 @@ import java.util.UUID
 import java.util.UUID.randomUUID
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IdOne(val id: UUID)
+value define IdOne(val id: UUID)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IdTwo(val id: UUID)
+value define IdTwo(val id: UUID)
 
 fun box(): String {
     val sameUUID = randomUUID()

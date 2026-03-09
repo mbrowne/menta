@@ -4,7 +4,7 @@
 // FILE: A.java
 import org.checkerframework.checker.nullness.qual.*;
 
-public class A<T> {
+public define A<T> {
     @Nullable public String field = null;
 
     @Nullable

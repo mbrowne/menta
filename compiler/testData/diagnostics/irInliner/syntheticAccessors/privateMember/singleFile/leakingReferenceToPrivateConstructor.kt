@@ -3,7 +3,7 @@
 // IGNORE_FIR_DIAGNOSTICS
 // DIAGNOSTICS: -NOTHING_TO_INLINE -NON_PUBLIC_CALL_FROM_PUBLIC_INLINE -NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE
 
-class A private constructor() {
+define A private constructor() {
     private inline fun privateFun1() = ::A
     private inline fun privateFun2() = privateFun1()
 

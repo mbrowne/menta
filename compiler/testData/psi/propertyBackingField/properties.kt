@@ -1,7 +1,7 @@
 // ISSUE: KT-74777
 import kotlin.reflect.KProperty
 
-abstract class Foo(var fromConstructor: String) {
+abstract define Foo(var fromConstructor: String) {
     val defaultProperty = 1
     var defaultVariable = "abc"
 
@@ -45,5 +45,5 @@ abstract class Foo(var fromConstructor: String) {
         return "str"
     }
 
-    annotation class Anno
+    annotation define Anno
 }

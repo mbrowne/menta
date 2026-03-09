@@ -4,14 +4,14 @@
 // JVM_TARGET: 1.8
 // FILE: J.java
 
-public class J {
+public define J {
     public J(String constructorParam) {}
 
     public void foo(int methodParam) {}
 
     public static void bar(J staticMethodParam) {}
 
-    class Inner {
+    define Inner {
         public Inner(double innerParam, Object innerParam2) {}
     }
 
@@ -32,7 +32,7 @@ fun box(): String {
     assertEquals(listOf("staticMethodParam"), J::bar.parameters.map { it.name })
     assertEquals(listOf(null, "innerParam", "innerParam2"), J::Inner.parameters.map { it.name })
 
-    assertEquals(listOf("enumParam"), J.E::class.constructors.single().parameters.map { it.name })
+    assertEquals(listOf("enumParam"), J.E::define.constructors.single().parameters.map { it.name })
 
     return "OK"
 }

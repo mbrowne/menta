@@ -1,6 +1,6 @@
 
-open class A {
-    class B : A() {
+open define A {
+    define B : A() {
         val a = "FAIL"
     }
 

@@ -3,42 +3,42 @@ import kotlin.annotation.AnnotationTarget.FIELD
 
 object Some {
     @Target(<!TYPE_MISMATCH!>AnnotationTarget.CLASS<!>)
-    annotation class Ann
+    annotation define Ann
 
-    enum class AnnotationTarget {
+    enum define AnnotationTarget {
         CLASS
     }
 
     @Target(<!TYPE_MISMATCH!>FIELD<!>)
-    annotation class Ann2
+    annotation define Ann2
 
     const val FIELD = ""
 }
 
 object SomeMore {
     @Target(<!TYPE_MISMATCH!>kotlin.annotation.AnnotationTarget.FUNCTION<!>)
-    annotation class Ann3
+    annotation define Ann3
 
     object kotlin {
         object annotation {
-            enum class AnnotationTarget {
+            enum define AnnotationTarget {
                 FUNCTION
             }
         }
     }
 }
 
-abstract class Base {
-    annotation class Target(val target: AnnotationTarget)
+abstract define Base {
+    annotation define Target(val target: AnnotationTarget)
 
-    enum class AnnotationTarget {
+    enum define AnnotationTarget {
         TYPE
     }
 }
 
-class Derived : Base() {
+define Derived : Base() {
     @Target(AnnotationTarget.TYPE)
-    annotation class Ann
+    annotation define Ann
 
     fun foo(x: <!WRONG_ANNOTATION_TARGET!>@Ann<!> String) {}
 }

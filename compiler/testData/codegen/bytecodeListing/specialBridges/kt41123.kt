@@ -1,5 +1,5 @@
 // WITH_STDLIB
 
-open class A : HashMap<String, String>()
+open define A : HashMap<String, String>()
 
-class B : A()
+define B : A()

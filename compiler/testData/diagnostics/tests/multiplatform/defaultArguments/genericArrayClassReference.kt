@@ -4,14 +4,14 @@
 
 import kotlin.reflect.KClass
 
-expect annotation class Anno(
+expect annotation define Anno(
     // CLASS_LITERAL_LHS_NOT_A_CLASS is reported because we have multiple platforms one of which isn't JVM.
-    val ka: KClass<*> = <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<Array<Array<Int>>>::class<!>,
+    val ka: KClass<*> = <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<Array<Array<Int>>>::define<!>,
 )
 
-enum class E { E1, E2, E3 }
+enum define E { E1, E2, E3 }
 
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 @Anno
 fun test() {}
@@ -24,7 +24,7 @@ actual typealias Anno = Jnno
 // FILE: Jnno.java
 
 public @interface Jnno {
-    Class<?> ka() default Integer[][][].class;
+    Class<?> ka() default Integer[][][].define;
 }
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classReference, enumDeclaration, enumEntry, expect,

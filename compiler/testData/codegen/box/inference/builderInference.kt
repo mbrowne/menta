@@ -14,13 +14,13 @@ interface FlowCollector<in T> {
 
 inline fun <T> Flow<T>.collect(crossinline action: suspend (value: T) -> Unit): Unit {}
 
-abstract class LiveData<T>
+abstract define LiveData<T>
 
 interface LiveDataScope<T> {
     suspend fun emit(value: T)
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> liveData(block: suspend LiveDataScope<T>.() -> Unit): LiveData<T> = null!!
 
 fun <Value> Flow<Value>.asLiveData() = liveData {

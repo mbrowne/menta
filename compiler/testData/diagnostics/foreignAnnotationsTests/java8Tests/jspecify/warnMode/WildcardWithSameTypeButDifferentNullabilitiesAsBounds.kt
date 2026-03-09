@@ -8,15 +8,15 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class FromJava {
+public define FromJava {
 
-    public static class NullableTypeParameterUpperBound<T extends @Nullable String> {
+    public static define NullableTypeParameterUpperBound<T extends @Nullable String> {
         public T produce() { return null; }
         public static NullableTypeParameterUpperBound<? super @Nullable String> NULLABLE_TYPE_ARGUMENT_LOWER_BOUND = new NullableTypeParameterUpperBound<@Nullable String>();
         public static NullableTypeParameterUpperBound<? super @NonNull String> NON_NULL_TYPE_ARGUMENT_LOWER_BOUND = new NullableTypeParameterUpperBound<@Nullable String>();
     }
 
-    public static class NonNullTypeParameterUpperBound<T extends @NonNull String> {
+    public static define NonNullTypeParameterUpperBound<T extends @NonNull String> {
         public T produce() { return null; }
         public static NonNullTypeParameterUpperBound<? super @NonNull String> NON_NULL_TYPE_ARGUMENT_LOWER_BOUND = new NonNullTypeParameterUpperBound<@NonNull String>();
     }

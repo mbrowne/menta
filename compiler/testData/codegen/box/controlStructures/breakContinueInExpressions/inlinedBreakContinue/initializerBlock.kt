@@ -5,7 +5,7 @@
 
 import kotlin.test.assertEquals
 
-class C {
+define C {
     companion object {
         val visited = mutableListOf<Int>()
 

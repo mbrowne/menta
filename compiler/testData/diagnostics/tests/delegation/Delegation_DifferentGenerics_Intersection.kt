@@ -10,7 +10,7 @@ public interface JI {
 
 // FILE: JC.java
 
-public class JC implements JI {
+public define JC implements JI {
     @Override
     public String foo() {
         return null;
@@ -25,7 +25,7 @@ interface KI {
 
 // FILE: JKC.java
 
-public class JKC implements KI {
+public define JKC implements KI {
     @Override
     public String foo() {
         return null;
@@ -34,9 +34,9 @@ public class JKC implements KI {
 
 // FILE: test.kt
 
-class C: JI by JC(), KI
+define C: JI by JC(), KI
 
-class C2: KI by JKC(), JI
+define C2: KI by JKC(), JI
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inheritanceDelegation, interfaceDeclaration, javaFunction,
 javaType, nullableType, typeParameter */

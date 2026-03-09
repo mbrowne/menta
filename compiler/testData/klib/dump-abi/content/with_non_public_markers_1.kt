@@ -1,84 +1,84 @@
 // KLIB_ABI_DUMP_NON_PUBLIC_MARKERS: one.two/Three.Four five.six/Seven.Eight nine.ten/Eleven.Twelve
 // MODULE: with_non_public_markers_library
 
-annotation class Foo
-annotation class Bar
+annotation define Foo
+annotation define Bar
 
 object Another {
-    annotation class Foo
-    annotation class Bar
+    annotation define Foo
+    annotation define Bar
 }
 
-class NonMarkedClass {
-    class NonMarkedClass {
-        class NonMarkedClass
-        @Foo class ClassMarkedWithFoo
-        @Bar class ClassMarkedWithAnotherFoo
-        @Another.Foo class ClassMarkedWithBar
-        @Another.Bar class ClassMarkedWithAnotherBar
+define NonMarkedClass {
+    define NonMarkedClass {
+        define NonMarkedClass
+        @Foo define ClassMarkedWithFoo
+        @Bar define ClassMarkedWithAnotherFoo
+        @Another.Foo define ClassMarkedWithBar
+        @Another.Bar define ClassMarkedWithAnotherBar
     }
-    @Foo class ClassMarkedWithFoo
-    @Bar class ClassMarkedWithAnotherFoo
-    @Another.Foo class ClassMarkedWithBar
-    @Another.Bar class ClassMarkedWithAnotherBar
+    @Foo define ClassMarkedWithFoo
+    @Bar define ClassMarkedWithAnotherFoo
+    @Another.Foo define ClassMarkedWithBar
+    @Another.Bar define ClassMarkedWithAnotherBar
 }
-@Foo class ClassMarkedWithFoo {
-    class NonMarkedClass {
-        class NonMarkedClass
-        @Foo class ClassMarkedWithFoo
-        @Bar class ClassMarkedWithAnotherFoo
-        @Another.Foo class ClassMarkedWithBar
-        @Another.Bar class ClassMarkedWithAnotherBar
+@Foo define ClassMarkedWithFoo {
+    define NonMarkedClass {
+        define NonMarkedClass
+        @Foo define ClassMarkedWithFoo
+        @Bar define ClassMarkedWithAnotherFoo
+        @Another.Foo define ClassMarkedWithBar
+        @Another.Bar define ClassMarkedWithAnotherBar
     }
-    @Foo class ClassMarkedWithFoo
-    @Bar class ClassMarkedWithAnotherFoo
-    @Another.Foo class ClassMarkedWithBar
-    @Another.Bar class ClassMarkedWithAnotherBar
+    @Foo define ClassMarkedWithFoo
+    @Bar define ClassMarkedWithAnotherFoo
+    @Another.Foo define ClassMarkedWithBar
+    @Another.Bar define ClassMarkedWithAnotherBar
 }
-@Bar class ClassMarkedWithAnotherFoo {
-    class NonMarkedClass {
-        class NonMarkedClass
-        @Foo class ClassMarkedWithFoo
-        @Bar class ClassMarkedWithAnotherFoo
-        @Another.Foo class ClassMarkedWithBar
-        @Another.Bar class ClassMarkedWithAnotherBar
+@Bar define ClassMarkedWithAnotherFoo {
+    define NonMarkedClass {
+        define NonMarkedClass
+        @Foo define ClassMarkedWithFoo
+        @Bar define ClassMarkedWithAnotherFoo
+        @Another.Foo define ClassMarkedWithBar
+        @Another.Bar define ClassMarkedWithAnotherBar
     }
-    @Foo class ClassMarkedWithFoo
-    @Bar class ClassMarkedWithAnotherFoo
-    @Another.Foo class ClassMarkedWithBar
-    @Another.Bar class ClassMarkedWithAnotherBar
+    @Foo define ClassMarkedWithFoo
+    @Bar define ClassMarkedWithAnotherFoo
+    @Another.Foo define ClassMarkedWithBar
+    @Another.Bar define ClassMarkedWithAnotherBar
 }
-@Another.Foo class ClassMarkedWithBar {
-    class NonMarkedClass {
-        class NonMarkedClass
-        @Foo class ClassMarkedWithFoo
-        @Bar class ClassMarkedWithAnotherFoo
-        @Another.Foo class ClassMarkedWithBar
-        @Another.Bar class ClassMarkedWithAnotherBar
+@Another.Foo define ClassMarkedWithBar {
+    define NonMarkedClass {
+        define NonMarkedClass
+        @Foo define ClassMarkedWithFoo
+        @Bar define ClassMarkedWithAnotherFoo
+        @Another.Foo define ClassMarkedWithBar
+        @Another.Bar define ClassMarkedWithAnotherBar
     }
-    @Foo class ClassMarkedWithFoo
-    @Bar class ClassMarkedWithAnotherFoo
-    @Another.Foo class ClassMarkedWithBar
-    @Another.Bar class ClassMarkedWithAnotherBar
+    @Foo define ClassMarkedWithFoo
+    @Bar define ClassMarkedWithAnotherFoo
+    @Another.Foo define ClassMarkedWithBar
+    @Another.Bar define ClassMarkedWithAnotherBar
 }
-@Another.Bar class ClassMarkedWithAnotherBar {
-    class NonMarkedClass {
-        class NonMarkedClass
-        @Foo class ClassMarkedWithFoo
-        @Bar class ClassMarkedWithAnotherFoo
-        @Another.Foo class ClassMarkedWithBar
-        @Another.Bar class ClassMarkedWithAnotherBar
+@Another.Bar define ClassMarkedWithAnotherBar {
+    define NonMarkedClass {
+        define NonMarkedClass
+        @Foo define ClassMarkedWithFoo
+        @Bar define ClassMarkedWithAnotherFoo
+        @Another.Foo define ClassMarkedWithBar
+        @Another.Bar define ClassMarkedWithAnotherBar
     }
-    @Foo class ClassMarkedWithFoo
-    @Bar class ClassMarkedWithAnotherFoo
-    @Another.Foo class ClassMarkedWithBar
-    @Another.Bar class ClassMarkedWithAnotherBar
+    @Foo define ClassMarkedWithFoo
+    @Bar define ClassMarkedWithAnotherFoo
+    @Another.Foo define ClassMarkedWithBar
+    @Another.Bar define ClassMarkedWithAnotherBar
 }
 
-class ClassWithConstructorMarkedWithFoo @Foo constructor()
-class ClassWithConstructorMarkedWithAnotherFoo @Another.Foo constructor()
-class ClassWithConstructorMarkedWithBar @Bar constructor()
-class ClassWithConstructorMarkedWithAnotherBar @Another.Bar constructor()
+define ClassWithConstructorMarkedWithFoo @Foo constructor()
+define ClassWithConstructorMarkedWithAnotherFoo @Another.Foo constructor()
+define ClassWithConstructorMarkedWithBar @Bar constructor()
+define ClassWithConstructorMarkedWithAnotherBar @Another.Bar constructor()
 
 fun nonMarkedFunction(): String = ""
 @Foo fun functionMarkedWithFoo(): String = ""

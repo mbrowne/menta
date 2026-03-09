@@ -1,10 +1,10 @@
-== anonymous_0 ==
-{
+== Bar ==
+class Bar {
 }
 ---------------------
 =====================
-== anonymous_1 ==
-{
+== Foo ==
+class Foo() {
     fun Bar.invoke() {}
 }
 ---------------------
@@ -18,8 +18,9 @@ fun Foo.foobar(bar: Bar) {
     bar()
 }
 ---------------------
-            <v0>: {<: [Error type: Unresolved type for Bar]}   NEW: magic[FAKE_INITIALIZER](bar: Bar) -> <v0>
-bar         !<v1>: *
-bar()       <v2>: *                                            NEW: magic[UNRESOLVED_CALL](bar()|!<v1>) -> <v2>
-{ bar() }   <v2>: *                                            COPY
+            <v0>: Bar   NEW: magic[FAKE_INITIALIZER](bar: Bar) -> <v0>
+            <v2>: Foo   NEW: magic[IMPLICIT_RECEIVER](bar()) -> <v2>
+bar         <v1>: Bar   NEW: r(bar) -> <v1>
+bar()       <v3>: *     NEW: call(bar(), invoke|<v1>, <v2>) -> <v3>
+{ bar() }   <v3>: *     COPY
 =====================

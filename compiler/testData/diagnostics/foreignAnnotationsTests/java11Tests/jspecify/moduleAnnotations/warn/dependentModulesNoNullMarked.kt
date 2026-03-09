@@ -21,7 +21,7 @@ module module2 {
 // FILE: module2/test2/Test.java
 package test2;
 
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 

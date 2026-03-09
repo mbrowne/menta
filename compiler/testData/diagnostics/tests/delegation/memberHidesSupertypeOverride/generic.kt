@@ -6,7 +6,7 @@ public interface Base<T> {
 
 public interface Derived<Y> : Base<Y>
 
-class Delegate<Z> : Derived<Z>
+define Delegate<Z> : Derived<Z>
 
 fun box(): String {
     object :  Derived<String> by Delegate() {

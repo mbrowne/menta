@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 import java.io.Serializable
 
-class A<T> where T : Cloneable, T : Serializable
+define A<T> where T : Cloneable, T : Serializable
 
 interface CS1 : Cloneable, Serializable
 interface CS2 : CS1

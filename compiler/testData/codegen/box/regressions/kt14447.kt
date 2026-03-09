@@ -1,4 +1,4 @@
-class ImpulsMigration
+define ImpulsMigration
 {
     fun migrate(oldVersion: Long)
     {

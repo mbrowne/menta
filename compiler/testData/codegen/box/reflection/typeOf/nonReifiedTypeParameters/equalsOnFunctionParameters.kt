@@ -7,7 +7,7 @@ import kotlin.reflect.KTypeParameter
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class Container<T>
+define Container<T>
 
 fun <X> createX(): KTypeParameter =
     typeOf<Container<X>>().arguments.single().type!!.classifier as KTypeParameter

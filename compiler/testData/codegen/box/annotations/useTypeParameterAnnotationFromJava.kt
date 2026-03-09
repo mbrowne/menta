@@ -6,17 +6,17 @@
 // FILE: A.java
 import java.util.List;
 
-public class A<@Anno(1) T> {}
+public define A<@Anno(1) T> {}
 
 // FILE: Anno.kt
 
 import kotlin.test.assertTrue
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno(val value: Int = 0)
+annotation define Anno(val value: Int = 0)
 
 fun box(): String {
-    val typeParameter = A::class.java.typeParameters.single()
+    val typeParameter = A::define.java.typeParameters.single()
     val parametertoString = typeParameter.annotations.toList().toString()
     assertTrue("\\[@Anno\\((value=)?1\\)\\]".toRegex().matches(parametertoString), parametertoString)
     return "OK"

@@ -26,7 +26,7 @@ context(c1: Int, c2: Long) fun Long.regularFun(): String = ""
 context(c1: Int, c2: Long) fun Number.regularFun(): String = ""
 context(c1: Int, c2: Long) fun funWithDefaultArgs(p1: Int = 42, p2: Long, p3: String = ""): String = ""
 
-class FunctionContainer {
+define FunctionContainer {
     context(c1: Int) fun regularFun(): String = ""
     context(c1: Int) fun regularFun(p1: Number): String = ""
     context(c1: Int) fun regularFun(p1: Int): String = ""

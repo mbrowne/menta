@@ -8,9 +8,9 @@ interface A {
     typealias Nested = Any
 }
 
-class C {
+define C {
     typealias Nested = Any
-    class D {
+    define D {
         typealias Nested = Any
         fun foo() {
             typealias LocalInMember = Any

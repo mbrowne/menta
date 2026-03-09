@@ -19,11 +19,11 @@ interface I {
 
 interface I2 : I
 
-open class A {
+open define A {
     fun h(x: String = "K") = x
 }
 
-class B : A(), I2
+define B : A(), I2
 
 fun box(): String {
     return "${(B() as I).h()}${B().h()}"

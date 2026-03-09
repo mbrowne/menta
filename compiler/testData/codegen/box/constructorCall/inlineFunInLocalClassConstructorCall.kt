@@ -4,7 +4,7 @@
 
 // FILE: test.kt
 fun box(): String {
-    class Local(val i: Int, val j: Int) : Foo() {
+    define Local(val i: Int, val j: Int) : Foo() {
         init {
             log.append("Local.<init>;")
         }
@@ -30,7 +30,7 @@ fun <T> logged(msg: String, value: T): T {
 }
 
 // FILE: Foo.kt
-open class Foo {
+open define Foo {
     init {
         log.append("Foo.<init>;")
     }

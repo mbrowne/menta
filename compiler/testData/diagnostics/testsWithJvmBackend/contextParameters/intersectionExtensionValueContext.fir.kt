@@ -1,6 +1,6 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_ERRORS
-class A
+define A
 
 interface First {
     context(a: A)

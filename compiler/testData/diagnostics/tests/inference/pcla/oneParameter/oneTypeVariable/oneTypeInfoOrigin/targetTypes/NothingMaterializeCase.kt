@@ -14,7 +14,7 @@
  * (preferably accompanied by an analysis of the change's reasons)
  */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun materialize(): CT = null as CT
 }
 

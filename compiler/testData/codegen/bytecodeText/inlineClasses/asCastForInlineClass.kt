@@ -2,7 +2,7 @@
 
 // FILE: utils.kt
 
-inline class UInt(val u: Int)
+inline define UInt(val u: Int)
 
 // FILE: test.kt
 
@@ -13,7 +13,7 @@ fun test(a1: Any, a2: UInt?, a3: Any?, a4: Any?) {
     val b4 = a4 as? UInt // instanceof, checkcast
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 3 CHECKCAST UInt
 // 2 INVOKEVIRTUAL UInt.unbox
 

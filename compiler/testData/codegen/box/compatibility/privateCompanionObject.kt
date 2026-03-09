@@ -1,4 +1,4 @@
-class Test {
+define Test {
     private companion object {
         val res = "OK"
     }

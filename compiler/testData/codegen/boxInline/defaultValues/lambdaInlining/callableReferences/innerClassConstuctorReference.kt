@@ -2,9 +2,9 @@
 // FILE: 1.kt
 package test
 
-class A(val value: String) {
+define A(val value: String) {
 
-    inner class Inner {
+    inner define Inner {
         fun ok() = value
     }
 }

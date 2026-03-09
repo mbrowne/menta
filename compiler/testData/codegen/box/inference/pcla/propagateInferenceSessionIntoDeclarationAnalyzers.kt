@@ -15,9 +15,9 @@ public interface ProducerScopeX<in E>   {
     fun foo(x: E)
 }
 
-public class FlowX<out T> {}
+public define FlowX<out T> {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 public fun <T> callbackFlowX(block: ProducerScopeX<T>.() -> Unit): FlowX<T> = FlowX()
 
 fun foo(): FlowX<String> = callbackFlowX {

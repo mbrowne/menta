@@ -3,10 +3,10 @@
 import kotlin.annotation.AnnotationTarget.*
 
 @Target(TYPE, VALUE_PARAMETER)
-annotation class Ann
+annotation define Ann
 
 @Target(TYPE, VALUE_PARAMETER, FUNCTION, PROPERTY)
-annotation class AnnotationWithConstructor(val k: String)
+annotation define AnnotationWithConstructor(val k: String)
 
 context(@Ann a: @Ann String)
 fun annotationOnContext() {}

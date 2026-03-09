@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class C<T>
+define C<T>
 
 typealias CA<T> = C<T>
 

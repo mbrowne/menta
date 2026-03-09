@@ -5,7 +5,7 @@
 
 package test
 
-expect class A {
+expect define A {
     fun foo(a: Int.() -> String): Int.() -> String
 }
 
@@ -14,7 +14,7 @@ expect class A {
 
 package test
 
-actual class A {
+actual define A {
     actual fun foo(a: Int.() -> String): Int.() -> String = a
 }
 

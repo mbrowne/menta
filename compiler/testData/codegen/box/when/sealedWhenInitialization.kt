@@ -1,7 +1,7 @@
-sealed class A {
+sealed define A {
     object B : A()
 
-    class C : A()
+    define C : A()
 }
 
 fun box(): String {

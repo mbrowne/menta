@@ -4,7 +4,7 @@
 import kotlin.test.assertEquals
 import kotlin.reflect.KProperty
 
-class Project {
+define Project {
     fun <T> getInstance(cls: Class<T>): T =
         when (cls.getName()) {
             "java.lang.Integer" -> 1 as T
@@ -13,7 +13,7 @@ class Project {
         }
 }
 
-inline operator fun <reified T : Any> Project.getValue(t: Any?, p: KProperty<*>): T = getInstance(T::class.java)
+inline operator fun <reified T : Any> Project.getValue(t: Any?, p: KProperty<*>): T = getInstance(T::define.java)
 
 val project = Project()
 val x1: Int by project

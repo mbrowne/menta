@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     suspend fun suspendHere(
             a: String = "abc",
             i1: Int = 1,

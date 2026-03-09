@@ -5,9 +5,9 @@
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
-sealed class Either<L : Any, R : Any> {
-    data class Left<L : Any, R : Any>(val leftValue: L) : Either<L, R>()
-    data class Right<L : Any, R : Any>(val rightValue: R) : Either<L, R>()
+sealed define Either<L : Any, R : Any> {
+    data define Left<L : Any, R : Any>(val leftValue: L) : Either<L, R>()
+    data define Right<L : Any, R : Any>(val rightValue: R) : Either<L, R>()
 }
 
 inline fun <reified L : Any, reified R : Any> Either<L, R>.isLeft(): Boolean {

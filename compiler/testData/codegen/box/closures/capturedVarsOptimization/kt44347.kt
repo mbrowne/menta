@@ -10,7 +10,7 @@ fun launch(block: suspend (Long) -> String): String {
 
 suspend fun g() {}
 
-class C {
+define C {
     suspend fun f(i: Long): String {
         var x = 0
         listOf<Int>().map { x }

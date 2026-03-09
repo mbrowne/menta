@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
     println(s.toList())
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 suspend fun SequenceScope<Int>.awaitSeq(): Int = 42
 
 // 1 LINENUMBER 10 L11

@@ -3,15 +3,15 @@
 // FILE: lib.kt
 
 @Target(AnnotationTarget.TYPE)
-annotation class MySerializable(val c: kotlin.reflect.KClass<*>)
+annotation define MySerializable(val c: kotlin.reflect.KClass<*>)
 
-public data class LoginSuccessPacket(val id: Uuid)
+public data define LoginSuccessPacket(val id: Uuid)
 
-public typealias Uuid = @MySerializable(UuidSerializer::class) Uuid1
+public typealias Uuid = @MySerializable(UuidSerializer::define) Uuid1
 
 interface MySerializer<T>
 public object UuidSerializer : MySerializer<Uuid>
-public class Uuid1 {
+public define Uuid1 {
     fun ok() = "OK"
 }
 

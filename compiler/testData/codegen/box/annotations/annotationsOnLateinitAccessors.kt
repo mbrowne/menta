@@ -5,13 +5,13 @@
 
 import kotlin.reflect.KAnnotatedElement
 
-annotation class Ann
+annotation define Ann
 
 fun check(element: KAnnotatedElement, annotationExists: Boolean) {
     require(element.annotations.isNotEmpty() == annotationExists) { "Fail: $element" }
 }
 
-class LateinitProperties {
+define LateinitProperties {
     @get:Ann
     lateinit var x0: String
 

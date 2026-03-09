@@ -6,7 +6,7 @@ import kotlin.reflect.KProperty
 
 val sb = StringBuilder()
 
-class Delegate {
+define Delegate {
     operator fun getValue(receiver: Any?, p: KProperty<*>): Int {
         sb.appendLine(p.name)
         return 42

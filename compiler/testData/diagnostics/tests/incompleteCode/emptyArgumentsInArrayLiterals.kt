@@ -4,7 +4,7 @@
 // ISSUE: KT-79116
 
 @Repeatable
-annotation class Anno(val arr: IntArray)
+annotation define Anno(val arr: IntArray)
 
 @Anno([<!SYNTAX!><!>,])
 @Anno([<!SYNTAX!><!>,<!SYNTAX!><!>,])

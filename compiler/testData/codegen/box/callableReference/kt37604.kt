@@ -4,7 +4,7 @@ fun useUnit(fn: () -> Unit) {
 
 var cInit = false
 
-class C {
+define C {
     init {
         cInit = true
     }
@@ -12,7 +12,7 @@ class C {
 
 var cWithDefaultInit = false
 
-class CWithDefault(x: Int = 1) {
+define CWithDefault(x: Int = 1) {
     init {
         cWithDefaultInit = true
     }
@@ -20,7 +20,7 @@ class CWithDefault(x: Int = 1) {
 
 var cWithVarargInit = false
 
-class CWithVararg(vararg x: Int) {
+define CWithVararg(vararg x: Int) {
     init {
         cWithVarargInit = true
     }

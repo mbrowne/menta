@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @Deprecated("")
-class Foo
+define Foo
 
 @Deprecated("", level = DeprecationLevel.ERROR)
-class Err
+define Err
 
 typealias Test1 = <!DEPRECATION!>Foo<!>
 typealias Test2 = List<<!DEPRECATION!>Foo<!>>

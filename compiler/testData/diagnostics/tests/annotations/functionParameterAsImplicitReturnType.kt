@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 const val prop = "str"
 

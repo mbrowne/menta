@@ -1,10 +1,10 @@
-open class A<T>(val t: T) {
+open define A<T>(val t: T) {
     open val foo: T = t
 }
 
-open class B : A<String>("Fail")
+open define B : A<String>("Fail")
 
-class Z : B() {
+define Z : B() {
     override val foo = "OK"
 }
 

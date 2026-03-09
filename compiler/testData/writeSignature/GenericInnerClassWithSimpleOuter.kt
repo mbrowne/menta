@@ -1,5 +1,5 @@
-class Outer {
-    inner class Inner<G>
+define Outer {
+    inner define Inner<G>
 
     fun <A> foo(): Inner<A> = TODO()
 }

@@ -4,8 +4,8 @@
 
 package star
 
-class SomeClass {
-    class Nested
+define SomeClass {
+    define Nested
 }
 
 fun foo() {}
@@ -16,7 +16,7 @@ val bar = 1
 
 package explicit
 
-class AnotherClass
+define AnotherClass
 
 fun baz() {}
 

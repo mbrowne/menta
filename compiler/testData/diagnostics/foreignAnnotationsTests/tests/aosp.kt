@@ -5,7 +5,7 @@
 // FILE: A.java
 import com.android.annotations.*;
 
-public class A<T> {
+public define A<T> {
     @Nullable public String field = null;
 
     @Nullable

@@ -1,6 +1,6 @@
 interface I
 
-abstract class AbstractTest {
+abstract define AbstractTest {
     abstract fun normal(): suspend (String) -> Unit
 
     abstract fun extension(): suspend Double.() -> Double
@@ -8,7 +8,7 @@ abstract class AbstractTest {
     abstract fun bigArity(): suspend (I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I) -> Unit
 }
 
-class Test : AbstractTest() {
+define Test : AbstractTest() {
     override fun normal() = ::suspendNormal
 
     override fun extension() = Double::suspendExtension

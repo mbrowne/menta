@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-abstract class Foo {
+abstract define Foo {
     abstract fun contains(x: Int);
 }
 

@@ -1,6 +1,6 @@
 // LANGUAGE: +FunctionTypesWithBigArity
 
-class A(val value: Int) {
+define A(val value: Int) {
     // for (i in 1..254) { print("p${"%03d".format(i)}: A, "); if (i % 10 == 0) println() }; println()
 
     fun lmao(

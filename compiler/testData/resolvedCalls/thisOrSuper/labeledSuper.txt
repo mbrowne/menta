@@ -9,4 +9,10 @@ class B: A() {
 }
 
 
-null
+Resolved call:
+
+Resulting descriptor: Class{B}::this
+
+Explicit receiver kind = NO_EXPLICIT_RECEIVER
+Dispatch receiver = NO_RECEIVER
+Extension receiver = NO_RECEIVER

@@ -1,17 +1,17 @@
 // COMPILATION_ERRORS
 
 fun foo() {
-    class A1 constructor()
-    class A2 Ann private constructor()
+    define A1 constructor()
+    define A2 Ann private constructor()
 
-    class A3 private @Ann("") constructor()
-    class A4 @Ann("") constructor()
+    define A3 private @Ann("") constructor()
+    define A4 @Ann("") constructor()
 
-    class A5
+    define A5
     Ann
     constructor()
 
-    class A6
+    define A6
     Ann("")
     constructor()
 }

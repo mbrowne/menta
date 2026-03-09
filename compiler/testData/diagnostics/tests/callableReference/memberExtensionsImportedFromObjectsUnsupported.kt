@@ -9,7 +9,7 @@ object Obj {
     val String.ext: String get() = this
 }
 
-class A {
+define A {
     companion object {
         val String.ext2: String get() = this
     }

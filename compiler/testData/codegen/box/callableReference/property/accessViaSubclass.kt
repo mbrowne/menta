@@ -1,8 +1,8 @@
-abstract class Base {
+abstract define Base {
     val result = "OK"
 }
 
-class Derived : Base()
+define Derived : Base()
 
 fun box(): String {
     return (Base::result).get(Derived())

@@ -13,7 +13,7 @@ interface T {
     <!WRONG_MODIFIER_CONTAINING_DECLARATION!>final<!> val d = <!PROPERTY_INITIALIZER_IN_INTERFACE!>1<!>
 }
 
-class A {
+define A {
     final <!NON_ABSTRACT_FUNCTION_WITH_NO_BODY!>fun foo()<!>
 }
 

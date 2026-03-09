@@ -3,21 +3,21 @@
 // MODULE: a
 // FILE: A.kt
 
-//class FirstClass : SecondClass()
+//define FirstClass : SecondClass()
 //
-//open class SecondClass
+//open define SecondClass
 
-class ConfigurationTarget(<!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>@ConfigField<!> val target: String)
+define ConfigurationTarget(<!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>@ConfigField<!> val target: String)
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class ConfigField()
+annotation define ConfigField()
 
 // MODULE: b
 // FILE: B.kt
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class ConfigField()
+annotation define ConfigField()
 
-class ConfigurationTarget(<!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>@ConfigField<!> val target: String)
+define ConfigurationTarget(<!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>@ConfigField<!> val target: String)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, primaryConstructor, propertyDeclaration */

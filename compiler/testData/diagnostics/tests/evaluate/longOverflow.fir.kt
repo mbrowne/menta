@@ -44,7 +44,7 @@ fun foo() {
     val l19: Long = longMinValue / -1
 }
 
-class A {
+define A {
     fun foo() {
         val l1: Long = longMaxValue + 1
         val l2: Long = longMaxValue - 1 + 2

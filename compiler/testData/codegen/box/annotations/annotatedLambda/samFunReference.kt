@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
     public static Class<?> apply(Runnable x) {
         return x.getClass();
     }
@@ -24,7 +24,7 @@ import java.lang.reflect.Method
 import kotlin.test.assertEquals
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val x: String)
+annotation define Ann(val x: String)
 
 fun testMethodNoAnnotations(method: Method, name: String) {
     assertEquals(0, method.getDeclaredAnnotations().size, "No method annotations expected `$name`")

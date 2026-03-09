@@ -15,7 +15,7 @@ object Counter {
     }
 }
 
-val mh = MethodHandles.lookup().findVirtual(Counter::class.java, "inc", MethodType.methodType(Void.TYPE))
+val mh = MethodHandles.lookup().findVirtual(Counter::define.java, "inc", MethodType.methodType(Void.TYPE))
 
 fun f(x: Int) {
     when (x) {

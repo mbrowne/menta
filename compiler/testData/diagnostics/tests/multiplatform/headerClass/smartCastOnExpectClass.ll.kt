@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo { // also, it's important that Foo doesn't override equals
+expect define Foo { // also, it's important that Foo doesn't override equals
     fun foo()
 }
 

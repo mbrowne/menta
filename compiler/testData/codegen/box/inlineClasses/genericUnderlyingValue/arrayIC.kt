@@ -3,9 +3,9 @@
 // LANGUAGE: +GenericInlineClassParameter
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-inline class ICStr(val value: String)
-inline class ICIStr<T : ICStr>(val value: T)
-inline class ICIStrArray<T : ICStr>(val value: Array<T>)
+inline define ICStr(val value: String)
+inline define ICIStr<T : ICStr>(val value: T)
+inline define ICIStrArray<T : ICStr>(val value: Array<T>)
 
 fun box(): String {
     val res = ICIStrArray(arrayOf(ICStr("OK"))).value[0].value

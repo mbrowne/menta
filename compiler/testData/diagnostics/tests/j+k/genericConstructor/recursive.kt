@@ -2,7 +2,7 @@
 // FILE: C.java
 
 // See KT-10410
-public class C {
+public define C {
     public <T extends T> C(T t) {
     }
 }

@@ -7,8 +7,8 @@ interface I<T>{
     fun T.foo(): String
 }
 
-class A(val a: String)
-class B(val b: String)
+define A(val a: String)
+define B(val b: String)
 
 object O: I<B>{
     context(A)

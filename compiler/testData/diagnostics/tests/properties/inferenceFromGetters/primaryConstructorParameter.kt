@@ -7,7 +7,7 @@ object Delegate {
 
 fun <T> delegateFactory(p: Any) = Delegate
 
-class C(p: Any, val v: Any) {
+define C(p: Any, val v: Any) {
 
     val test1 get() = <!UNRESOLVED_REFERENCE!>p<!>
 

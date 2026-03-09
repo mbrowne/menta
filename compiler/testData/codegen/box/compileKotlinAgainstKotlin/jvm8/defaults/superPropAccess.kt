@@ -10,7 +10,7 @@ interface Test {
 
 // MODULE: main(lib)
 // FILE: 2.kt
-class TestClass : Test {
+define TestClass : Test {
     override val prop: String
         get() = super.prop
 }

@@ -4,8 +4,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-82555
 
-class Outer {
-    class C {
+define Outer {
+    define C {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
 

@@ -12,7 +12,7 @@ interface B {
 
 interface C : A2, B
 
-class Impl : C {
+define Impl : C {
     override fun foo(a: String) = a
 }
 

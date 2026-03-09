@@ -6,7 +6,7 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class I(val x: Any?)
+inline define I(val x: Any?)
 
 suspend fun <T> suspendHere(): T = suspendCoroutineUninterceptedOrReturn {
     c = it as Continuation<Any?>
@@ -15,7 +15,7 @@ suspend fun <T> suspendHere(): T = suspendCoroutineUninterceptedOrReturn {
 
 var c: Continuation<Any?>? = null
 
-class C {
+define C {
     private suspend fun f(): I = I(suspendHere<String>())
 
     fun g() = suspend { f() }

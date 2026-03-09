@@ -1,23 +1,23 @@
-class Test1
+define Test1
 
 
 internal
-class Test2
+define Test2
 
 
 /**
  * comment
  */
-class Test3
+define Test3
 
 
 @Suppress("UNUSED_VAR")
-class Test4
+define Test4
 
 
 enum
-class Test5
+define Test5
 
 
 annotation
-class Test6
+define Test6

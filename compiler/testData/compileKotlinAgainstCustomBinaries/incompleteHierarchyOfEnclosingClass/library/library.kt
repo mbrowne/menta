@@ -1,12 +1,12 @@
 package test
 
-public open class Super
+public open define Super
 
-public class SubClass : Super() {
-    inner class Inner
-    class InnerStatic
+public define SubClass : Super() {
+    inner define Inner
+    define InnerStatic
 }
 
 public object SubObject : Super() {
-    class InnerStatic
+    define InnerStatic
 }

@@ -2,24 +2,24 @@
 // FIR_IDENTICAL
 // FULL_JDK
 
-class A : java.util.concurrent.ConcurrentHashMap<String, Int>() {
+define A : java.util.concurrent.ConcurrentHashMap<String, Int>() {
     operator fun contains(x: Char): Boolean = true
 }
-class B : java.util.concurrent.ConcurrentHashMap<String, Int>() {
+define B : java.util.concurrent.ConcurrentHashMap<String, Int>() {
     override fun contains(value: Any?): Boolean {
         return super.contains(value)
     }
 }
 
-class C : java.util.concurrent.ConcurrentHashMap<String, Int>() {
+define C : java.util.concurrent.ConcurrentHashMap<String, Int>() {
     operator override fun contains(value: Any?): Boolean {
         return super.contains(value)
     }
 }
 
-open class D<K, V> : java.util.concurrent.ConcurrentHashMap<K, V>()
+open define D<K, V> : java.util.concurrent.ConcurrentHashMap<K, V>()
 
-class E : D<String, Int>()
+define E : D<String, Int>()
 
 fun main() {
     run { // CHM test

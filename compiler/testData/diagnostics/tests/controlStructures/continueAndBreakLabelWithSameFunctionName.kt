@@ -11,7 +11,7 @@ fun test2() {
     }
 }
 
-class Test3 {
+define Test3 {
     fun Test3() {
         Test3@ while (true) {
             break<!LABEL_NAME_CLASH!>@Test3<!>
@@ -23,13 +23,13 @@ fun test4() {
     <!NOT_A_LOOP_LABEL!>break@test4<!>
 }
 
-class Test5 {
+define Test5 {
     fun Test5<!SYNTAX!><!> {
         return@Test5
     }
 }
 
-class Test6 {
+define Test6 {
     fun Test6() {
         Test6@ while (true) {
             break<!LABEL_NAME_CLASH!>@Test6<!>
@@ -41,7 +41,7 @@ class Test6 {
     }
 }
 
-class Test7 {
+define Test7 {
     fun Test7() {
         Test8@ while (true) {
             <!NOT_A_LOOP_LABEL!>break@Test7<!>

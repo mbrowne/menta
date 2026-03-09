@@ -6,7 +6,7 @@ interface Z {
     fun foo(a: Double = 1.0) = 0.0
 }
 
-class R : Q, Z {
+define R : Q, Z {
     override fun foo(a: Double) = a
 }
 

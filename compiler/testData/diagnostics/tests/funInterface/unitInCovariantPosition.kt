@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-63379 (modified example, see original in unitInContravariantPosition.kt)
 
-class TestDummyClass<T> {
+define TestDummyClass<T> {
     fun testFun(t: T) {}
 }
 

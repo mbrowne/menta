@@ -1,8 +1,8 @@
-open class A {
+open define A {
     open fun foo(): CharSequence = "OK"
 }
 
-open class B : A()
+open define B : A()
 
 interface IC {
     fun foo(): String
@@ -10,7 +10,7 @@ interface IC {
 
 interface ID : IC
 
-class E : B(), ID {
+define E : B(), ID {
     override fun foo(): String = "OK"
 }
 

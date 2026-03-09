@@ -1,6 +1,6 @@
 // IGNORE_ANNOTATIONS
 
-inline class InlineMap<K, V>(private val map: Map<K, V>) : Map<K, V> {
+inline define InlineMap<K, V>(private val map: Map<K, V>) : Map<K, V> {
     override val entries: Set<Map.Entry<K, V>> get() = map.entries
     override val keys: Set<K> get() = map.keys
     override val size: Int get() = map.size

@@ -6,7 +6,7 @@ fun run(block: () -> Unit) {}
 fun <T> consume(block: () -> T) {}
 fun consumeLong(l: Long) {}
 
-class TestClass() {
+define TestClass() {
     val testLambda1 = run {
         "" // actually unused
     }

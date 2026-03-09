@@ -12,18 +12,18 @@ interface SimpleRouter<ROUTE> {
 
 interface RouterWithUrl<ROUTE : Any> : SimpleRouter<ROUTE>
 
-open class SimpleRouterImpl<ROUTE : Any>(
+open define SimpleRouterImpl<ROUTE : Any>(
     initialRoute: ROUTE,
 ) : SimpleRouter<ROUTE> {
     override var currentRoute: ROUTE = initialRoute
     override fun navigate(route: ROUTE) { currentRoute = route }
 }
 
-class RouterWithUrlImpl<ROUTE : Any>(
+define RouterWithUrlImpl<ROUTE : Any>(
     initialRoute: ROUTE,
 ) : SimpleRouterImpl<ROUTE>(initialRoute = initialRoute), RouterWithUrl<ROUTE>
 
-class RouterWithUrlFactory<ROUTE : Any>(private val initialRoute: ROUTE) {
+define RouterWithUrlFactory<ROUTE : Any>(private val initialRoute: ROUTE) {
     fun create(): RouterWithUrl<ROUTE> = RouterWithUrlImpl(initialRoute)
 }
 

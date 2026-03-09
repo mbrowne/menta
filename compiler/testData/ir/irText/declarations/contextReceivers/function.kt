@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: +ContextReceivers
 
-class C {
+define C {
     val c = 42
 }
 

@@ -10,7 +10,7 @@ package original
 interface I0
 interface I1<T0>: I0
 interface I2: I1<I0>
-class A1: <!INCONSISTENT_TYPE_PARAMETER_VALUES!>I2, I0, I1<A1><!>
+define A1: <!INCONSISTENT_TYPE_PARAMETER_VALUES!>I2, I0, I1<A1><!>
 
 // FILE: simple.kt
 
@@ -30,6 +30,6 @@ interface I1<T0>: I0 {
     fun consume(t: T0) {}
 }
 interface I2: I1<I0>
-class A3: <!INCONSISTENT_TYPE_PARAMETER_VALUES!>I2, I0, I1<A3><!> // If it's allowed, it causes a platform declaration clash
+define A3: <!INCONSISTENT_TYPE_PARAMETER_VALUES!>I2, I0, I1<A3><!> // If it's allowed, it causes a platform declaration clash
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, nullableType, typeParameter */

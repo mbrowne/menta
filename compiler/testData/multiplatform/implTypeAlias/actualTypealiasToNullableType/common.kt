@@ -1,2 +1,2 @@
-expect class E01
-expect class E02
+expect define E01
+expect define E02

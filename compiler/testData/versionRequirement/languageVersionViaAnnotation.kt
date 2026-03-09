@@ -4,9 +4,9 @@ package test
 import kotlin.internal.RequireKotlin
 
 @RequireKotlin("1.1", "message", DeprecationLevel.WARNING, errorCode = 42)
-class Klass
+define Klass
 
-class Konstructor @RequireKotlin("1.1", "message", DeprecationLevel.WARNING, errorCode = 42) constructor()
+define Konstructor @RequireKotlin("1.1", "message", DeprecationLevel.WARNING, errorCode = 42) constructor()
 
 @RequireKotlin("1.1", "message", DeprecationLevel.WARNING, errorCode = 42)
 typealias Typealias = String

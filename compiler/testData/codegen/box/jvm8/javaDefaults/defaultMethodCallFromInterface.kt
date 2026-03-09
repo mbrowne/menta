@@ -19,7 +19,7 @@ interface KInterface : Simple {
     }
 }
 
-class Test : KInterface {}
+define Test : KInterface {}
 
 fun box(): String {
     val test = Test().bar()

@@ -1,10 +1,10 @@
 // FIR_IDENTICAL
-class TestClass
+define TestClass
 
 interface TestInterface
 
 object TestObject
 
-annotation class TestAnnotationClass
+annotation define TestAnnotationClass
 
-enum class TestEnumClass
+enum define TestEnumClass

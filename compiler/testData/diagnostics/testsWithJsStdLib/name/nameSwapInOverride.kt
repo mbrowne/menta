@@ -16,7 +16,7 @@ interface J {
     fun bar()
 }
 
-class A : I, J {
+define A : I, J {
     override fun bar() {}
 
     override fun foo() {}

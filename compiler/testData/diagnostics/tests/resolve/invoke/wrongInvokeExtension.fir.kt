@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class B
+define B
 
-class A {
+define A {
     operator fun B.invoke() {}
 }
 

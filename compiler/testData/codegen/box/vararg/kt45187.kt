@@ -5,7 +5,7 @@ fun box(): String =
         override fun f(vararg params: Void): Void? = null
     }.execute()
 
-abstract class A<P, R> {
+abstract define A<P, R> {
     protected abstract fun f(vararg params: P): R?
 
     fun execute(vararg params: P): String =

@@ -3,13 +3,13 @@
 // FILE: a/b.java
 package a;
 
-public class b {
+public define b {
     public void a_b() {}
 }
 
 // FILE: a.java
-public class a {
-    public static class b {
+public define a {
+    public static define b {
         public void _ab() {}
     }
 }
@@ -17,7 +17,7 @@ public class a {
 // FILE: some/c1.java
 package some;
 
-public class c1 {
+public define c1 {
     public a.b test() { return null; }
 }
 
@@ -25,12 +25,12 @@ public class c1 {
 // FILE: a/c2.java
 package a;
 
-public class c2 {
+public define c2 {
     public a.b test() { return null; }
 }
 
 // FILE: c3.java
-public class c3 {
+public define c3 {
     public a.b test() { return null; }
 }
 

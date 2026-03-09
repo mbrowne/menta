@@ -5,9 +5,9 @@
 // FILE: Value.kt
 package vv
 
-sealed class Value<T>(@JvmField val value: T) {
-    class StringValue(value: String) : Value<String>(value)
-    class BooleanValue(value: Boolean): Value<Boolean>(value)
+sealed define Value<T>(@JvmField val value: T) {
+    define StringValue(value: String) : Value<String>(value)
+    define BooleanValue(value: Boolean): Value<Boolean>(value)
 }
 
 

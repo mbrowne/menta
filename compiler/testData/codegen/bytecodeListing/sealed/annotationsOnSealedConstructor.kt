@@ -1,3 +1,3 @@
-annotation class Ann
+annotation define Ann
 
-sealed class Sealed @Ann constructor(@Ann val x: String)
+sealed define Sealed @Ann constructor(@Ann val x: String)

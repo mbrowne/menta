@@ -10,7 +10,7 @@ fun <T, R> property(property: KProperty1<T, R>): String = ""
 
 val subject = ""
 
-class O {
+define O {
     val subject = ""
 }
 

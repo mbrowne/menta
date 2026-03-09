@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: JKKClass.java
-public class JKKClass extends KKClass {
+public define JKKClass extends KKClass {
     public void test() {
         String valueInitPub = this.initializedPublicProp;
         String valueInitProt = this.initializedProtectedProp;
@@ -23,7 +23,7 @@ public class JKKClass extends KKClass {
 }
 
 // FILE: KClass.kt
-open class KClass {
+open define KClass {
     open lateinit var publicProp: String
     protected lateinit var protectedProp: String
     private lateinit var privateProp: String
@@ -33,7 +33,7 @@ open class KClass {
 
 }
 
-open class KKClass :  KClass() {
+open define KKClass :  KClass() {
     override lateinit var initializedPublicProp: String
     override lateinit var initializedProtectedProp: String
 }

@@ -7,16 +7,12 @@ KtFile: namedCompanionObject.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('NamedCompanionObject')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -78,207 +74,180 @@ KtFile: namedCompanionObject.kt
             INTEGER_CONSTANT
               PsiElement(INTEGER_LITERAL)('0')
           PsiWhiteSpace('\n\n        ')
-          PsiErrorElement:Expecting member declaration
-            PsiElement(class)('class')
-          PsiWhiteSpace(' ')
-          PsiErrorElement:Expecting member declaration
+          CLASS
+            PsiElement(define)('define')
+            PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('A')
-          PsiWhiteSpace(' ')
-          FUN
-            PsiErrorElement:Expecting member declaration
-              <empty list>
-            BLOCK
+            PsiWhiteSpace(' ')
+            CLASS_BODY
               PsiElement(LBRACE)('{')
               PsiWhiteSpace('\n            ')
-              PsiErrorElement:Expecting an element
-                PsiElement(class)('class')
-              PsiWhiteSpace(' ')
-              CALL_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('B')
+              CLASS
+                PsiElement(define)('define')
                 PsiWhiteSpace(' ')
-                LAMBDA_ARGUMENT
-                  LAMBDA_EXPRESSION
-                    FUNCTION_LITERAL
-                      PsiElement(LBRACE)('{')
-                      PsiWhiteSpace('\n                ')
-                      BLOCK
-                        PROPERTY
-                          PsiElement(val)('val')
-                          PsiWhiteSpace(' ')
-                          PsiElement(IDENTIFIER)('i')
-                          PsiElement(COLON)(':')
-                          PsiWhiteSpace(' ')
-                          TYPE_REFERENCE
-                            USER_TYPE
-                              REFERENCE_EXPRESSION
-                                PsiElement(IDENTIFIER)('Int')
-                          PsiWhiteSpace(' ')
-                          PsiElement(EQ)('=')
-                          PsiWhiteSpace(' ')
-                          INTEGER_CONSTANT
-                            PsiElement(INTEGER_LITERAL)('0')
-                        PsiWhiteSpace('\n                ')
-                        FUN
-                          PsiElement(fun)('fun')
-                          PsiWhiteSpace(' ')
-                          PsiElement(IDENTIFIER)('f')
-                          VALUE_PARAMETER_LIST
-                            PsiElement(LPAR)('(')
-                            PsiElement(RPAR)(')')
-                          PsiWhiteSpace(' ')
-                          PsiElement(EQ)('=')
-                          PsiWhiteSpace(' ')
-                          INTEGER_CONSTANT
-                            PsiElement(INTEGER_LITERAL)('0')
-                      PsiWhiteSpace('\n            ')
-                      PsiElement(RBRACE)('}')
+                PsiElement(IDENTIFIER)('B')
+                PsiWhiteSpace(' ')
+                CLASS_BODY
+                  PsiElement(LBRACE)('{')
+                  PsiWhiteSpace('\n                ')
+                  PROPERTY
+                    PsiElement(val)('val')
+                    PsiWhiteSpace(' ')
+                    PsiElement(IDENTIFIER)('i')
+                    PsiElement(COLON)(':')
+                    PsiWhiteSpace(' ')
+                    TYPE_REFERENCE
+                      USER_TYPE
+                        REFERENCE_EXPRESSION
+                          PsiElement(IDENTIFIER)('Int')
+                    PsiWhiteSpace(' ')
+                    PsiElement(EQ)('=')
+                    PsiWhiteSpace(' ')
+                    INTEGER_CONSTANT
+                      PsiElement(INTEGER_LITERAL)('0')
+                  PsiWhiteSpace('\n                ')
+                  FUN
+                    PsiElement(fun)('fun')
+                    PsiWhiteSpace(' ')
+                    PsiElement(IDENTIFIER)('f')
+                    VALUE_PARAMETER_LIST
+                      PsiElement(LPAR)('(')
+                      PsiElement(RPAR)(')')
+                    PsiWhiteSpace(' ')
+                    PsiElement(EQ)('=')
+                    PsiWhiteSpace(' ')
+                    INTEGER_CONSTANT
+                      PsiElement(INTEGER_LITERAL)('0')
+                  PsiWhiteSpace('\n            ')
+                  PsiElement(RBRACE)('}')
               PsiWhiteSpace('\n        ')
               PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('B')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
+        PsiElement(IDENTIFIER)('B')
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n        ')
+          OBJECT_DECLARATION
+            MODIFIER_LIST
+              PsiElement(companion)('companion')
+            PsiWhiteSpace(' ')
+            PsiElement(object)('object')
+            PsiWhiteSpace(' ')
+            PsiElement(IDENTIFIER)('NamedInB')
+            PsiWhiteSpace(' ')
+            CLASS_BODY
               PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n            ')
+              CLASS
+                PsiElement(define)('define')
+                PsiWhiteSpace(' ')
+                PsiElement(IDENTIFIER)('C')
+                PsiWhiteSpace(' ')
+                CLASS_BODY
+                  PsiElement(LBRACE)('{')
+                  PsiWhiteSpace('\n                ')
+                  OBJECT_DECLARATION
+                    MODIFIER_LIST
+                      PsiElement(companion)('companion')
+                    PsiWhiteSpace(' ')
+                    PsiElement(object)('object')
+                    PsiWhiteSpace(' ')
+                    PsiElement(IDENTIFIER)('NamedInC')
+                    PsiWhiteSpace(' ')
+                    CLASS_BODY
+                      PsiElement(LBRACE)('{')
+                      PsiWhiteSpace('\n                    ')
+                      CLASS
+                        PsiElement(define)('define')
+                        PsiWhiteSpace(' ')
+                        PsiElement(IDENTIFIER)('D')
+                        PsiWhiteSpace(' ')
+                        CLASS_BODY
+                          PsiElement(LBRACE)('{')
+                          PsiWhiteSpace('\n                        ')
+                          OBJECT_DECLARATION
+                            MODIFIER_LIST
+                              PsiElement(companion)('companion')
+                            PsiWhiteSpace(' ')
+                            PsiElement(object)('object')
+                            PsiWhiteSpace(' ')
+                            PsiElement(IDENTIFIER)('Companion')
+                            PsiWhiteSpace(' ')
+                            CLASS_BODY
+                              PsiElement(LBRACE)('{')
+                              PsiWhiteSpace('\n                            ')
+                              PROPERTY
+                                PsiElement(val)('val')
+                                PsiWhiteSpace(' ')
+                                PsiElement(IDENTIFIER)('i')
+                                PsiWhiteSpace(' ')
+                                PsiElement(EQ)('=')
+                                PsiWhiteSpace(' ')
+                                INTEGER_CONSTANT
+                                  PsiElement(INTEGER_LITERAL)('3')
+                              PsiWhiteSpace('\n                            ')
+                              FUN
+                                PsiElement(fun)('fun')
+                                PsiWhiteSpace(' ')
+                                PsiElement(IDENTIFIER)('f')
+                                VALUE_PARAMETER_LIST
+                                  PsiElement(LPAR)('(')
+                                  PsiElement(RPAR)(')')
+                                PsiWhiteSpace(' ')
+                                BLOCK
+                                  PsiElement(LBRACE)('{')
+                                  PsiWhiteSpace('\n                            ')
+                                  PsiElement(RBRACE)('}')
+                              PsiWhiteSpace('\n\n                            ')
+                              CLASS
+                                MODIFIER_LIST
+                                  PsiElement(enum)('enum')
+                                PsiWhiteSpace(' ')
+                                PsiElement(define)('define')
+                                PsiWhiteSpace(' ')
+                                PsiElement(IDENTIFIER)('En')
+                                PsiWhiteSpace(' ')
+                                CLASS_BODY
+                                  PsiElement(LBRACE)('{')
+                                  PsiWhiteSpace('\n                                ')
+                                  ENUM_ENTRY
+                                    PsiElement(IDENTIFIER)('A')
+                                    PsiElement(SEMICOLON)(';')
+                                  PsiWhiteSpace('\n\n                                ')
+                                  OBJECT_DECLARATION
+                                    MODIFIER_LIST
+                                      PsiElement(companion)('companion')
+                                    PsiWhiteSpace(' ')
+                                    PsiElement(object)('object')
+                                    PsiWhiteSpace(' ')
+                                    PsiElement(IDENTIFIER)('NamedInEn')
+                                  PsiWhiteSpace('\n                            ')
+                                  PsiElement(RBRACE)('}')
+                              PsiWhiteSpace('\n\n                            ')
+                              CLASS
+                                MODIFIER_LIST
+                                  PsiElement(annotation)('annotation')
+                                PsiWhiteSpace(' ')
+                                PsiElement(define)('define')
+                                PsiWhiteSpace(' ')
+                                PsiElement(IDENTIFIER)('Anno')
+                              PsiWhiteSpace('\n                        ')
+                              PsiElement(RBRACE)('}')
+                          PsiWhiteSpace('\n                    ')
+                          PsiElement(RBRACE)('}')
+                      PsiWhiteSpace('\n                ')
+                      PsiElement(RBRACE)('}')
+                  PsiWhiteSpace('\n            ')
+                  PsiElement(RBRACE)('}')
               PsiWhiteSpace('\n        ')
-              BLOCK
-                OBJECT_DECLARATION
-                  MODIFIER_LIST
-                    PsiElement(companion)('companion')
-                  PsiWhiteSpace(' ')
-                  PsiElement(object)('object')
-                  PsiWhiteSpace(' ')
-                  PsiElement(IDENTIFIER)('NamedInB')
-                  PsiWhiteSpace(' ')
-                  CLASS_BODY
-                    PsiElement(LBRACE)('{')
-                    PsiWhiteSpace('\n            ')
-                    PsiErrorElement:Expecting member declaration
-                      PsiElement(class)('class')
-                    PsiWhiteSpace(' ')
-                    PsiErrorElement:Expecting member declaration
-                      PsiElement(IDENTIFIER)('C')
-                    PsiWhiteSpace(' ')
-                    FUN
-                      PsiErrorElement:Expecting member declaration
-                        <empty list>
-                      BLOCK
-                        PsiElement(LBRACE)('{')
-                        PsiWhiteSpace('\n                ')
-                        OBJECT_DECLARATION
-                          MODIFIER_LIST
-                            PsiElement(companion)('companion')
-                          PsiWhiteSpace(' ')
-                          PsiElement(object)('object')
-                          PsiWhiteSpace(' ')
-                          PsiElement(IDENTIFIER)('NamedInC')
-                          PsiWhiteSpace(' ')
-                          CLASS_BODY
-                            PsiElement(LBRACE)('{')
-                            PsiWhiteSpace('\n                    ')
-                            PsiErrorElement:Expecting member declaration
-                              PsiElement(class)('class')
-                            PsiWhiteSpace(' ')
-                            PsiErrorElement:Expecting member declaration
-                              PsiElement(IDENTIFIER)('D')
-                            PsiWhiteSpace(' ')
-                            FUN
-                              PsiErrorElement:Expecting member declaration
-                                <empty list>
-                              BLOCK
-                                PsiElement(LBRACE)('{')
-                                PsiWhiteSpace('\n                        ')
-                                OBJECT_DECLARATION
-                                  MODIFIER_LIST
-                                    PsiElement(companion)('companion')
-                                  PsiWhiteSpace(' ')
-                                  PsiElement(object)('object')
-                                  PsiWhiteSpace(' ')
-                                  PsiElement(IDENTIFIER)('Companion')
-                                  PsiWhiteSpace(' ')
-                                  CLASS_BODY
-                                    PsiElement(LBRACE)('{')
-                                    PsiWhiteSpace('\n                            ')
-                                    PROPERTY
-                                      PsiElement(val)('val')
-                                      PsiWhiteSpace(' ')
-                                      PsiElement(IDENTIFIER)('i')
-                                      PsiWhiteSpace(' ')
-                                      PsiElement(EQ)('=')
-                                      PsiWhiteSpace(' ')
-                                      INTEGER_CONSTANT
-                                        PsiElement(INTEGER_LITERAL)('3')
-                                    PsiWhiteSpace('\n                            ')
-                                    FUN
-                                      PsiElement(fun)('fun')
-                                      PsiWhiteSpace(' ')
-                                      PsiElement(IDENTIFIER)('f')
-                                      VALUE_PARAMETER_LIST
-                                        PsiElement(LPAR)('(')
-                                        PsiElement(RPAR)(')')
-                                      PsiWhiteSpace(' ')
-                                      BLOCK
-                                        PsiElement(LBRACE)('{')
-                                        PsiWhiteSpace('\n                            ')
-                                        PsiElement(RBRACE)('}')
-                                    PsiWhiteSpace('\n\n                            ')
-                                    MODIFIER_LIST
-                                      PsiElement(enum)('enum')
-                                    PsiWhiteSpace(' ')
-                                    PsiErrorElement:Expecting member declaration
-                                      PsiElement(class)('class')
-                                    PsiWhiteSpace(' ')
-                                    PsiErrorElement:Expecting member declaration
-                                      PsiElement(IDENTIFIER)('En')
-                                    PsiWhiteSpace(' ')
-                                    FUN
-                                      PsiErrorElement:Expecting member declaration
-                                        <empty list>
-                                      BLOCK
-                                        PsiElement(LBRACE)('{')
-                                        PsiWhiteSpace('\n                                ')
-                                        REFERENCE_EXPRESSION
-                                          PsiElement(IDENTIFIER)('A')
-                                        PsiElement(SEMICOLON)(';')
-                                        PsiWhiteSpace('\n\n                                ')
-                                        OBJECT_DECLARATION
-                                          MODIFIER_LIST
-                                            PsiElement(companion)('companion')
-                                          PsiWhiteSpace(' ')
-                                          PsiElement(object)('object')
-                                          PsiWhiteSpace(' ')
-                                          PsiElement(IDENTIFIER)('NamedInEn')
-                                        PsiWhiteSpace('\n                            ')
-                                        PsiElement(RBRACE)('}')
-                                    PsiWhiteSpace('\n\n                            ')
-                                    MODIFIER_LIST
-                                      PsiElement(annotation)('annotation')
-                                    PsiWhiteSpace(' ')
-                                    PsiErrorElement:Expecting member declaration
-                                      PsiElement(class)('class')
-                                    PsiWhiteSpace(' ')
-                                    PsiErrorElement:Expecting member declaration
-                                      PsiElement(IDENTIFIER)('Anno')
-                                    PsiWhiteSpace('\n                        ')
-                                    PsiElement(RBRACE)('}')
-                                PsiWhiteSpace('\n                    ')
-                                PsiElement(RBRACE)('}')
-                            PsiWhiteSpace('\n                ')
-                            PsiElement(RBRACE)('}')
-                        PsiWhiteSpace('\n            ')
-                        PsiElement(RBRACE)('}')
-                    PsiWhiteSpace('\n        ')
-                    PsiElement(RBRACE)('}')
-              PsiWhiteSpace('\n    ')
               PsiElement(RBRACE)('}')
+          PsiWhiteSpace('\n    ')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

@@ -1,8 +1,8 @@
 // p1.Container
 package p1
 
-class Container {
-    class MyString : CharSequence {
+define Container {
+    define MyString : CharSequence {
         override val length: Int
             get() = 0
 
@@ -15,7 +15,7 @@ class Container {
         override fun subSequence(startIndex: Int, endIndex: Int): CharSequence = MyString()
     }
 
-    class MyNumber : Number {
+    define MyNumber : Number {
         override fun toByte(): Byte {
             TODO("not implemented")
         }

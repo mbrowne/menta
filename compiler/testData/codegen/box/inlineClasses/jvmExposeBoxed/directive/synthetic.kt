@@ -5,7 +5,7 @@
 
 // FILE: IC.kt
 @JvmInline
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     @JvmSynthetic
     fun ok(): String = s
 }

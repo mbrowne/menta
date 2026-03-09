@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Inv<T>
+define Inv<T>
 
 fun <K> foo(t: K?) = Inv<K>()
 

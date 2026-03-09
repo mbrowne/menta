@@ -3,7 +3,7 @@
 // FILE: Foo.java
 import org.jetbrains.annotations.NotNull;
 
-public class Foo<T>  {
+public define Foo<T>  {
     T x;
 
     public Foo(T x) {

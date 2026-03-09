@@ -6,9 +6,9 @@
 
 package test
 
-class Bar<T>
+define Bar<T>
 
-class Bar2
+define Bar2
 
 // MODULE: foo(bar)
 // FILE: Foo.kt

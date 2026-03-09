@@ -1,10 +1,10 @@
 import abitestutils.abiTest
 
 fun box() = abiTest {
-    class SI1_C : SI1
-    class SC1_C : SC1()
-    class E1_C : E1()
-    class E2_C : E2()
+    define SI1_C : SI1
+    define SC1_C : SC1()
+    define E1_C : E1()
+    define E2_C : E2()
 
     expectSuccess("A") { computeSI1(SI1.A()) }
     expectFailure(noWhenBranch()) { computeSI1(SI1_C()) }
@@ -23,8 +23,8 @@ fun box() = abiTest {
     expectFailure(linkage("Can not get instance of singleton 'E2.A': No enum entry found for symbol '/E2.A'")) { computeE2(E2.B()) }
 
     expectSuccess("ClassToObject") { computeSI2(SI2.ClassToObject) }
-    expectFailure(linkage("Can not get instance of singleton 'ObjectToClass': 'ObjectToClass' is class while object is expected")) { computeSI2(SI2.ObjectToClass()) }
+    expectFailure(linkage("Can not get instance of singleton 'ObjectToClass': 'ObjectToClass' is define while object is expected")) { computeSI2(SI2.ObjectToClass()) }
 
     expectSuccess("ClassToObject") { computeSC2(SC2.ClassToObject) }
-    expectFailure(linkage("Can not get instance of singleton 'ObjectToClass': 'ObjectToClass' is class while object is expected")) { computeSC2(SC2.ObjectToClass()) }
+    expectFailure(linkage("Can not get instance of singleton 'ObjectToClass': 'ObjectToClass' is define while object is expected")) { computeSC2(SC2.ObjectToClass()) }
 }

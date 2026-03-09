@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 //FILE: Holder.java
 
-class Holder {
+define Holder {
     public Double value;
     public Holder(Double value) { this.value = value; }
 }

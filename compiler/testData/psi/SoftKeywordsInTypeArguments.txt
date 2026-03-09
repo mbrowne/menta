@@ -5,31 +5,27 @@ KtFile: SoftKeywordsInTypeArguments.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  MODIFIER_LIST
-    PsiElement(out)('out')
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        MODIFIER_LIST
+          PsiElement(out)('out')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('abstract')
+      PsiElement(COMMA)(',')
+      PsiWhiteSpace(' ')
+      TYPE_PARAMETER
+        MODIFIER_LIST
+          PsiElement(out)('out')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('out')
+      PsiElement(GT)('>')
     PsiWhiteSpace(' ')
-    PsiElement(abstract)('abstract')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(COMMA)(',')
-  PsiWhiteSpace(' ')
-  MODIFIER_LIST
-    PsiElement(out)('out')
-    PsiWhiteSpace(' ')
-    PsiElement(out)('out')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')

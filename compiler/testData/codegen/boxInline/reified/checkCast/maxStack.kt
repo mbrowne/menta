@@ -2,7 +2,7 @@
 
 package test
 
-class A
+define A
 
 fun call(a: String, b: String, c: String, d: String, e: String, f: Any) {
 

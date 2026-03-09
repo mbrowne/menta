@@ -1,12 +1,12 @@
-open class A {
+open define A {
     open fun foo(): Any = "FAIL"
 }
 
-abstract class B : A() {
+abstract define B : A() {
     override abstract fun foo(): String
 }
 
-class C : B() {
+define C : B() {
     override fun foo(): String = "OK"
 }
 

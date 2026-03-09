@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.java
 
-public abstract class A<T> {
+public abstract define A<T> {
     protected abstract String doIt(T... args);
 
     public <S extends T> String test(S... args) {
@@ -13,8 +13,8 @@ public abstract class A<T> {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-open class Super
-class Sub: Super()
+open define Super
+define Sub: Super()
 
 val a: A<Super> =
     object : A<Super>() {

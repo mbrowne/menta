@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: WithPrimary.java
 
-class WithPrimary {
+define WithPrimary {
     public static A test1() {
         return new A("123", "abc");
     }
@@ -18,7 +18,7 @@ class WithPrimary {
 
 // FILE: WithPrimary.kt
 
-class A(val x: String = "def_x", val y: String = "1") {
+define A(val x: String = "def_x", val y: String = "1") {
     constructor(x: String, y: Int): this(x, y.toString()) {}
     constructor(x: Double): this(x.toString(), "def_y") {}
     override fun toString() = "$x#$y"

@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-inline class C(val value: Any?)
+inline define C(val value: Any?)
 
 fun foo(x: Any?): C = x as C
 

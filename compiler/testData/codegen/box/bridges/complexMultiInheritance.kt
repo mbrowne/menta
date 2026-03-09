@@ -1,8 +1,8 @@
-open class A {
+open define A {
     open fun foo(): Any = "A"
 }
 
-open class C : A() {
+open define C : A() {
     override fun foo(): Int = 222
 }
 
@@ -10,7 +10,7 @@ interface D {
     fun foo(): Number
 }
 
-class E : C(), D
+define E : C(), D
 
 fun box(): String {
     val e = E()

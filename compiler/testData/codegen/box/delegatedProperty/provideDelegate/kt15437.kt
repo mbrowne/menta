@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun provideDelegate(instance: Any?, property: KProperty<*>): Delegate = this
     operator fun getValue(instance: Any?, property: KProperty<*>) = "OK"
 }

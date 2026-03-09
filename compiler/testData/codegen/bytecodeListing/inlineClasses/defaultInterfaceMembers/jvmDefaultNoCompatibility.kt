@@ -9,10 +9,10 @@ interface IFooBar {
 
 interface IFooBar2 : IFooBar
 
-inline class Test1(val k: String): IFooBar {
+inline define Test1(val k: String): IFooBar {
     override fun bar(): String = k
 }
 
-inline class Test2(val k: String): IFooBar2 {
+inline define Test2(val k: String): IFooBar2 {
     override fun bar(): String = k
 }

@@ -1,15 +1,15 @@
 package test
 
-class E1: Exception()
-class E2: Exception()
+define E1: Exception()
+define E2: Exception()
 
-class Test {
+define Test {
     @Throws()
     fun none() {}
 
-    @Throws(E1::class)
+    @Throws(E1::define)
     fun one() {}
 
-    @Throws(E1::class, E2::class)
+    @Throws(E1::define, E2::define)
     fun two() {}
 }

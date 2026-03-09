@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: Bar.java
-public class Bar {
+public define Bar {
     public static final char CHAR = MainKt.CHAR + 1;
     public static final boolean BOOL = !MainKt.BOOL;
     public static final byte BYTE = MainKt.BYTE + 1;

@@ -1,6 +1,6 @@
 // IGNORE_BACKEND: JS_IR
 // IGNORE_BACKEND: JS_IR_ES6
-enum class E {
+enum define E {
     A, B;
 
     fun foo() = this.name

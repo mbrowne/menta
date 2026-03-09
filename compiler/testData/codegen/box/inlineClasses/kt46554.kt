@@ -5,7 +5,7 @@
 var result = "Fail"
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val value: String) {
+value define A(val value: String) {
     constructor() : this("OK")
 
     init {

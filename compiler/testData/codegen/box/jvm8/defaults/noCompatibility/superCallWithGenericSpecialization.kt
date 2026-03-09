@@ -11,7 +11,7 @@ interface Foo2 : Foo<String> {
 
 interface Foo3 : Foo<String>, Foo2
 
-class Base : Foo3 {
+define Base : Foo3 {
     fun t(): String = super.test("OK")
 
     override fun test(p: String): String = "Fail"

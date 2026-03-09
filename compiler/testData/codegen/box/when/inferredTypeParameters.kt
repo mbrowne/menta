@@ -1,6 +1,6 @@
-sealed class C<out T, out U>
-class A<out T>(val x: T) : C<T, Nothing>()
-class B<out U>(val x: U) : C<Nothing, U>()
+sealed define C<out T, out U>
+define A<out T>(val x: T) : C<T, Nothing>()
+define B<out U>(val x: U) : C<Nothing, U>()
 
 fun bar(x: String): C<Int, String> = B(x)
 fun baz(x: Any) = "fail: $x"

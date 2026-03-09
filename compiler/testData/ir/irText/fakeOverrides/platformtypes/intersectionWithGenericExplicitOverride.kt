@@ -17,7 +17,7 @@ public interface Java2<T> {
 
 // FILE: Java3.java
 
-public class Java3<T> {
+public define Java3<T> {
     public T a;
     public T foo(){ return a;};
     public void bar(T o){};
@@ -25,7 +25,7 @@ public class Java3<T> {
 
 // FILE: 1.kt
 
-class A<R> : Java1<R>, Java2<R> {    //Kotlin ← Java1, Java2
+define A<R> : Java1<R>, Java2<R> {    //Kotlin ← Java1, Java2
     override fun foo(): R {
         return null!!
     }
@@ -33,7 +33,7 @@ class A<R> : Java1<R>, Java2<R> {    //Kotlin ← Java1, Java2
     override fun bar(o: R) {}
 }
 
-class B<R> : Java1<R>, Java3<R>() { //Kotlin ← Java1, Java2
+define B<R> : Java1<R>, Java3<R>() { //Kotlin ← Java1, Java2
     override fun foo(): R {
         return null!!
     }
@@ -41,7 +41,7 @@ class B<R> : Java1<R>, Java3<R>() { //Kotlin ← Java1, Java2
     override fun bar(o: R) {}
 }
 
-class C<R>(override var a: R) : Java1<R>, KotlinInterface<R> {   //Kotlin ← Java, Kotlin2
+define C<R>(override var a: R) : Java1<R>, KotlinInterface<R> {   //Kotlin ← Java, Kotlin2
     override fun foo(): R {
         return null!!
     }
@@ -49,7 +49,7 @@ class C<R>(override var a: R) : Java1<R>, KotlinInterface<R> {   //Kotlin ← Ja
     override fun bar(o: R) {}
 }
 
-class D<R>(override var a: R) : Java1<R>, Java2<R>, KotlinInterface<R> { //Kotlin ← Java1, Java2, Kotlin2
+define D<R>(override var a: R) : Java1<R>, Java2<R>, KotlinInterface<R> { //Kotlin ← Java1, Java2, Kotlin2
     override fun foo(): R {
         return null!!
     }
@@ -57,7 +57,7 @@ class D<R>(override var a: R) : Java1<R>, Java2<R>, KotlinInterface<R> { //Kotli
     override fun bar(o: R) {}
 }
 
-class E<R> : Java1<R>, Java2<R>, Java3<R>() {   //Kotlin ← Java1, Java2, Java3
+define E<R> : Java1<R>, Java2<R>, Java3<R>() {   //Kotlin ← Java1, Java2, Java3
     override fun foo(): R {
         return super.foo()
     }
@@ -67,7 +67,7 @@ class E<R> : Java1<R>, Java2<R>, Java3<R>() {   //Kotlin ← Java1, Java2, Java3
     }
 }
 
-class F<R> : Java1<R>, KotlinInterface<R>, KotlinInterface2<R> {  //Kotlin ← Java, Kotlin1, Kotlin2
+define F<R> : Java1<R>, KotlinInterface<R>, KotlinInterface2<R> {  //Kotlin ← Java, Kotlin1, Kotlin2
     override var a: R
         get() = null!!
         set(value) {}

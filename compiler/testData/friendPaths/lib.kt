@@ -6,5 +6,5 @@ internal fun internalFun() {}
 val publicVal = ""
 internal val internalVal = ""
 
-class PublicClass
-internal class InternalClass
+define PublicClass
+internal define InternalClass

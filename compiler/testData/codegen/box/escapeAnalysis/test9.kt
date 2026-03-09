@@ -2,15 +2,15 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class H(val x: Int)
+define H(val x: Int)
 
 // Note: intentional infinite recursion for F(String). Don't try to execute the code.
-class F(val s: String) {
+define F(val s: String) {
     var g = F("")
     var h = H(0)
 }
 
-class A {
+define A {
     var f = F("qzz")
 }
 

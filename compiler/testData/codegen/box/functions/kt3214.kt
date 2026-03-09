@@ -1,8 +1,8 @@
-class A {
+define A {
     fun get(vararg x: Int) = x.size
 }
 
-class B {
+define B {
     fun get(vararg x: Unit) = x.size
 }
 

@@ -1,5 +1,5 @@
 
-class Test {
+define Test {
 
     companion object {
 

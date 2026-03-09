@@ -22,7 +22,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -33,7 +33,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     operator fun contains(value: Value): Boolean = true
 }
 

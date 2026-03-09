@@ -2,7 +2,7 @@ package test
 
 import java.util.*
 
-public open class ReturnTypeMissing {
+public open define ReturnTypeMissing {
     public open fun foo(p0 : String?) : Int {
         throw UnsupportedOperationException()
     }

@@ -14,7 +14,7 @@ public interface Convertor<Src, Dst> {
 
 fun takeConvertor(c: Convertor<String, String>) {}
 
-class Out<out T> {}
+define Out<out T> {}
 
 fun main(o: Out<Nothing?>) {
     takeConvertor(Convertor { o })

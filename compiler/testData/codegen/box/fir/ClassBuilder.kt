@@ -12,7 +12,7 @@ public interface ClassBuilder {
 
 typealias JvmMethodExceptionTypes = Array<out String?>?
 
-class TestClassBuilder : ClassBuilder {
+define TestClassBuilder : ClassBuilder {
     override fun newMethod(exceptions: JvmMethodExceptionTypes) {
 
     }

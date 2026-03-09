@@ -4,7 +4,7 @@
 
 suspend fun foo() {}
 
-class A {
+define A {
     suspend fun member() {}
 }
 

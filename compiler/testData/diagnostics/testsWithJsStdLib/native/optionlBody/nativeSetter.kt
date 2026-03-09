@@ -6,7 +6,7 @@ fun String.foo(n: Int, v: Any)
 fun String.bar(n: Int, v: Any) {}
 
 
-external class C {
+external define C {
     @nativeSetter
     fun foo(d: Double, v: Any): Any
     @nativeSetter

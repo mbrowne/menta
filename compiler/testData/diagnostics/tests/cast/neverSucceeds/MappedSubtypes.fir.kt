@@ -2,8 +2,8 @@
 // DIAGNOSTICS: -PLATFORM_CLASS_MAPPED_TO_KOTLIN -UNUSED_PARAMETER -ABSTRACT_MEMBER_NOT_IMPLEMENTED -USELESS_CAST
 import java.lang.CharSequence as JCS
 
-class JSub: JCS
-class Sub: CharSequence
+define JSub: JCS
+define Sub: CharSequence
 
 fun test1(js: JSub) = js as CharSequence
 fun test2(js: JSub) = js as JCS

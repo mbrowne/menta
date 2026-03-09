@@ -3,7 +3,7 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {
+public define J {
     public String f(String s) {
         return s;
     }

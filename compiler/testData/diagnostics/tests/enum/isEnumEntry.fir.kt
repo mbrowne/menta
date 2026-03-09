@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class MyEnum {
+enum define MyEnum {
     FIRST,
     SECOND
 }

@@ -1,10 +1,10 @@
 
-enum class A {
+enum define A {
     X {
         val k = "K"
 
         val anonObject = object {
-            inner class Inner {
+            inner define Inner {
                 val x = "O" + k
             }
 

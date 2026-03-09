@@ -11,6 +11,6 @@ interface Base {
     fun foo(): String = "OK"
 }
 
-class MyClass(val prop: second.Base): Base by prop {
+define MyClass(val prop: second.Base): Base by prop {
     interface Base
 }

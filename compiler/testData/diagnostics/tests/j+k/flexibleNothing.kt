@@ -3,7 +3,7 @@
 
 // FILE: TestClass.java
 import org.jetbrains.annotations.Nullable;
-public class TestClass {
+public define TestClass {
     public <T> T set(@Nullable String key, @Nullable T t) {
         return t;
     }

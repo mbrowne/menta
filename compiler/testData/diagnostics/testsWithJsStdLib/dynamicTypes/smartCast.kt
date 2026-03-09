@@ -8,6 +8,6 @@ fun foo(d: dynamic) {
     }
 }
 
-class Foo {
+define Foo {
     fun bar() {}
 }

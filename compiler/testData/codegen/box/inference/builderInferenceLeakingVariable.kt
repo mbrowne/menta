@@ -7,11 +7,11 @@ interface In<in E> {
     suspend fun send(element: E)
 }
 
-class InImpl<E>(val block: suspend In<E>.() -> Unit) : In<E> {
+define InImpl<E>(val block: suspend In<E>.() -> Unit) : In<E> {
     override suspend fun send(element: E) {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 public fun <T> builder(block: suspend In<T>.() -> Unit) {
     InImpl(block)
 }

@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public void foo(Java1 this){ }
 }
 
@@ -14,13 +14,13 @@ public interface Java2 {
 
 // FILE: 1.kt
 
-class A : Java1(), Java2
+define A : Java1(), Java2
 
-class B : Java1(), Java2 {
+define B : Java1(), Java2 {
     override fun foo() { }
 }
 
-class C : KotlinInterface, Java1() {
+define C : KotlinInterface, Java1() {
     override fun foo() { }
 
 }

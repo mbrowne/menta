@@ -1,14 +1,14 @@
 // SAM_CONVERSIONS: CLASS
 // FILE: JFoo.java
 
-public class JFoo {
+public define JFoo {
     public static void foo(Runnable f) {
         f.run();
     }
 }
 
 // FILE: Test.kt
-class A {
+define A {
     fun f() {}
 }
 

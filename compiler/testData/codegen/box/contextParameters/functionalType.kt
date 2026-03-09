@@ -1,11 +1,11 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class Param
-class O {
+define Param
+define O {
     val o = "O"
 }
-class K {
+define K {
     val k = "K"
 }
 

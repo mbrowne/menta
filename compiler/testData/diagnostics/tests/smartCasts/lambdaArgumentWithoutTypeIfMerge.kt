@@ -3,7 +3,7 @@
 
 fun <R> synchronized(lock: Any, block: () -> R): R = block()
 
-class My {
+define My {
     val test: String
         get() = synchronized(this) {
             var x: String? = ""

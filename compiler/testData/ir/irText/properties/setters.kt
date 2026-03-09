@@ -12,10 +12,10 @@ var qux: Int
     get() = 42
     set(_) = Unit // VP without name
 
-open class Foo {
+open define Foo {
     open var foo: Int = 42
 }
-class Bar : Foo() {
+define Bar : Foo() {
     override var foo: Int
         get() = super.foo
         set(_) {}

@@ -9,10 +9,10 @@
 
 package a
 
-annotation class Outer(
+annotation define Outer(
     val array: Array<Inner> = [Inner([1]), Inner([2]), Inner([])]
 ) {
-    annotation class Inner(val v: IntArray = [])
+    annotation define Inner(val v: IntArray = [])
 }
 
 // MODULE: app(lib)
@@ -22,7 +22,7 @@ package test
 
 import a.*
 
-class C {
+define C {
     fun six(): Outer = Outer()
 }
 

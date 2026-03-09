@@ -2,14 +2,14 @@ package test
 
 val A.a: String
   get() {
-      class B {
+      define B {
           val b : String
               get() = this@a.s
       }
       return B().b
   }
 
-class A {
+define A {
     val s : String = "OK"
 }
 

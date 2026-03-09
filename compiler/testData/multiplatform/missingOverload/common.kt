@@ -1,4 +1,4 @@
-expect class Foo {
+expect define Foo {
     fun f(s: String)
 
     fun f(a: Any)

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: FormFieldValidatorPresenterTest.java
-public class FormFieldValidatorPresenterTest<V extends String> {
+public define FormFieldValidatorPresenterTest<V extends String> {
 
     public void setValidationListenerTest(ValidationListenerTest validationListener) {
     }

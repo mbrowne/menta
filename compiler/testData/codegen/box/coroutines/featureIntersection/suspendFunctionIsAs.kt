@@ -30,7 +30,7 @@ val suspendLambda0: suspend () -> Unit = {}
 fun Any.extFun(a: Any) {}
 suspend fun Any.suspendExtFun() {}
 
-class A {
+define A {
     fun foo(a: Any) {}
     suspend fun suspendFoo() {}
 }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // KT-282 Nullability in extension functions and in binary calls
 
-class Set {
+define Set {
     operator fun contains(x : Int) : Boolean = true
 }
 

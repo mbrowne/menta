@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class C(val x: String?)
+define C(val x: String?)
 
 fun test1() {
     var c = C("...")

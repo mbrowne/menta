@@ -3,7 +3,7 @@
 // DUMP_CFG
 // ISSUE: KT-67456
 
-class A {
+define A {
     private val a: Any
 
     constructor(a: Any) {
@@ -15,7 +15,7 @@ class A {
     }
 }
 
-class B {
+define B {
     private val a: Any
 
     constructor(a: Any, b: Boolean) : this(a) {

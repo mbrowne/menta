@@ -6,7 +6,7 @@ interface Run {
     fun run(): String
 }
 
-internal class A {
+internal define A {
     inline fun doSomething(): Run  {
         return object : Run {
             override fun run(): String =  "OK"

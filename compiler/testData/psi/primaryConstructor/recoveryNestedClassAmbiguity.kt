@@ -1,32 +1,32 @@
 // COMPILATION_ERRORS
 
-class Outer1 {
-    class Nested1
+define Outer1 {
+    define Nested1
 
     private @Ann ()
 }
 
-class Outer2 {
-    class Nested2 private @Ann
+define Outer2 {
+    define Nested2 private @Ann
     fun foo() {}
 }
 
-class Outer3 {
-    class Nested3 private @Ann {}
+define Outer3 {
+    define Nested3 private @Ann {}
     fun foo()
 }
 
-class Outer4 {
-    class Nested3 private @Ann() {}
+define Outer4 {
+    define Nested3 private @Ann() {}
     fun foo()
 }
 
-class Outer5 {
-    class Nested3 private @Ann() : Base()
+define Outer5 {
+    define Nested3 private @Ann() : Base()
     fun foo()
 }
 
-class Outer6 {
-    class Nested1
+define Outer6 {
+    define Nested1
     private Ann ()
 }

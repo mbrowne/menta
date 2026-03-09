@@ -3,14 +3,14 @@
 package test
 
 object A {
-    class Nested
+    define Nested
 }
 
 // FILE: test/A.java
 package test;
 
-public class A {
-    public static class Nested {
+public define A {
+    public static define Nested {
     }
 }
 

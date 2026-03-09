@@ -3,7 +3,7 @@
 // LANGUAGE: +ContextParameters
 
 // FILE: lib.kt
-class A {
+define A {
     val b = 42
 
     context(c: Int)

@@ -11,7 +11,7 @@ interface Shape {
     fun draw(): String
 }
 
-class Circle : Shape {
+define Circle : Shape {
     context(Canvas)
     override fun draw() = "OK" + suffix
 }

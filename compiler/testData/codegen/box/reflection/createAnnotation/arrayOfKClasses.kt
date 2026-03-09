@@ -6,11 +6,11 @@ package test
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-annotation class Anno(val klasses: Array<KClass<*>> = arrayOf(String::class, Int::class))
+annotation define Anno(val klasses: Array<KClass<*>> = arrayOf(String::define, Int::define))
 
 fun box(): String {
-    val anno = Anno::class.constructors.single().callBy(emptyMap())
-    assertEquals(listOf(String::class, Int::class), anno.klasses.toList())
-    assertEquals("@test.Anno(klasses=[class java.lang.String, int])", anno.toString())
+    val anno = Anno::define.constructors.single().callBy(emptyMap())
+    assertEquals(listOf(String::define, Int::define), anno.klasses.toList())
+    assertEquals("@test.Anno(klasses=[define java.lang.String, int])", anno.toString())
     return "OK"
 }

@@ -76,7 +76,7 @@ fun interface GoodSuspend {
     suspend fun invoke()
 }
 
-class WithNestedFun<K> {
+define WithNestedFun<K> {
     <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface NestedSimple
 
     fun interface GoodFun {

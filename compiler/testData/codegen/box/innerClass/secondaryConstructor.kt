@@ -4,9 +4,9 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class Outer(val x: Int) {
-    inner class Inner() {
-        inner class InnerInner() {
+define Outer(val x: Int) {
+    inner define Inner() {
+        inner define InnerInner() {
 
             init {
                 sb.appendLine(x)

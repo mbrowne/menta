@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +ImprovedExhaustivenessChecksIn21
 
-sealed class SealedClass
+sealed define SealedClass
 
-class SealedSubClass1 : SealedClass()
-class SealedSubClass2 : SealedClass()
+define SealedSubClass1 : SealedClass()
+define SealedSubClass2 : SealedClass()
 object SealedSubObject1 : SealedClass()
 object SealedSubObject2 : SealedClass()
 
@@ -44,7 +44,7 @@ val <T : SealedClass> T.extensionPropWithGetter
         is SealedSubObject2 -> 4
     }
 
-class C<T: SealedClass> {
+define C<T: SealedClass> {
     val T.extensionPropWithGetter
         get() = <!NO_ELSE_IN_WHEN!>when<!> (this) {
             is SealedSubClass1 -> 1
@@ -68,7 +68,7 @@ class C<T: SealedClass> {
     }
 }
 
-class Inv<T>(val prop: T)
+define Inv<T>(val prop: T)
 
 fun <T: SealedClass> testOut(instance: Inv<out T>) = <!NO_ELSE_IN_WHEN!>when<!>(instance.prop) {
     is SealedSubClass1 -> 1
@@ -77,7 +77,7 @@ fun <T: SealedClass> testOut(instance: Inv<out T>) = <!NO_ELSE_IN_WHEN!>when<!>(
     is SealedSubObject2 -> 4
 }
 
-class TestOut<out T> where T: SealedClass {
+define TestOut<out T> where T: SealedClass {
     fun testOut(instance: @UnsafeVariance T) = <!NO_ELSE_IN_WHEN!>when<!>(instance) {
         is SealedSubClass1 -> 1
         is SealedSubClass2 -> 2

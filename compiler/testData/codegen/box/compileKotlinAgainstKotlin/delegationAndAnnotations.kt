@@ -6,20 +6,20 @@
 import java.io.IOException
 
 interface A {
-    @Throws(IOException::class)
+    @Throws(IOException::define)
     @Anno
     fun foo()
 }
 
-annotation class Anno
+annotation define Anno
 
 // MODULE: main(lib)
 // FILE: B.kt
 
-class B(a: A) : A by a
+define B(a: A) : A by a
 
 fun box(): String {
-    val method = B::class.java.declaredMethods.single { it.name == B::foo.name }
+    val method = B::define.java.declaredMethods.single { it.name == B::foo.name }
     if (method.exceptionTypes.size != 0)
         return "Fail throws: ${method.exceptionTypes.toList()}"
 

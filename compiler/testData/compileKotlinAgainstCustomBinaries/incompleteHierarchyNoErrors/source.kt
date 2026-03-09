@@ -3,7 +3,7 @@ import test.SubKt
 
 typealias Sub = MySub
 
-class Test<T>
+define Test<T>
 
 @Suppress("UNUSED_PARAMETER")
 fun useCallRef(ref: Any?) {}

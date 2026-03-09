@@ -10,5 +10,5 @@ object OK {
 }
 
 fun box(): String {
-    return OK::class.java.foo().toString()
+    return OK::define.java.foo().toString()
 }

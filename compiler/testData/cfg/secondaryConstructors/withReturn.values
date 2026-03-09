@@ -1,5 +1,5 @@
-== anonymous_0 ==
-{
+== A ==
+class A {
     val x: Int
     constructor() {
         if (1 == 1) {
@@ -10,13 +10,9 @@
     }
 }
 ---------------------
-constructor                                                                 !<v1>: *
-{ if (1 == 1) { return } else null!! x = 1 }                                <v0>: *    NEW: r({ if (1 == 1) { return } else null!! x = 1 }) -> <v0>
-constructor() { if (1 == 1) { return } else null!! x = 1 }                  <v2>: *    NEW: magic[UNRESOLVED_CALL](constructor() { if (1 == 1) { return } else null!! x = 1 }|<v0>, !<v1>) -> <v2>
-{ val x: Int constructor() { if (1 == 1) { return } else null!! x = 1 } }   <v2>: *    COPY
 =====================
-== anonymous_1 ==
-{
+== A ==
+constructor() {
         if (1 == 1) {
             return
         }
@@ -24,15 +20,16 @@ constructor() { if (1 == 1) { return } else null!! x = 1 }                  <v2>
         x = 1
     }
 ---------------------
-1                                          <v0>: *         NEW: r(1) -> <v0>
-1                                          <v1>: *         NEW: r(1) -> <v1>
-1 == 1                                     <v2>: Boolean   NEW: call(1 == 1, equals|<v0>, <v1>) -> <v2>
-return                                     !<v3>: *
-{ return }                                 !<v3>: *        COPY
-null                                       <v4>: *         NEW: r(null) -> <v4>
-null!!                                     <v5>: *         NEW: magic[NOT_NULL_ASSERTION](null!!|<v4>) -> <v5>
-if (1 == 1) { return } else null!!         <v6>: *         NEW: merge(if (1 == 1) { return } else null!!|!<v3>, <v5>) -> <v6>
-1                                          <v7>: Int       NEW: r(1) -> <v7>
-x = 1                                      !<v8>: *
-if (1 == 1) { return } else null!! x = 1   !<v8>: *        COPY
+                                               <v0>: *         NEW: call(, <init>) -> <v0>
+1                                              <v1>: *         NEW: r(1) -> <v1>
+1                                              <v2>: *         NEW: r(1) -> <v2>
+1 == 1                                         <v3>: Boolean   NEW: call(1 == 1, equals|<v1>, <v2>) -> <v3>
+return                                         !<v4>: *
+{ return }                                     !<v4>: *        COPY
+null                                           <v5>: *         NEW: r(null) -> <v5>
+null!!                                         <v6>: *         NEW: magic[NOT_NULL_ASSERTION](null!!|<v5>) -> <v6>
+if (1 == 1) { return } else null!!             <v7>: *         NEW: merge(if (1 == 1) { return } else null!!|!<v4>, <v6>) -> <v7>
+1                                              <v9>: Int       NEW: r(1) -> <v9>
+x = 1                                          !<v10>: *
+{ if (1 == 1) { return } else null!! x = 1 }   !<v10>: *       COPY
 =====================

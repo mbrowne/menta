@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM
 
-open class Base<T> {
+open define Base<T> {
     fun foo(x: T) = "x:$x"
     fun foo(y: String) = "y:$y"
 }
 
-open class Derived : Base<String>()
+open define Derived : Base<String>()
 
 fun box(): String {
     val b = Base<String>()

@@ -18,12 +18,12 @@ fun test() {
 // FILE: other.kt
 package test
 
-public class Public() {
+public define Public() {
     public val public : Int? = 1;
     protected val protected : Int? = 1;
     val internal : Int? = 1
 }
-internal class Internal() {
+internal define Internal() {
     public val public : Int? = 1;
     protected val protected : Int? = 1;
     val internal : Int? = 1

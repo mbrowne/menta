@@ -5,7 +5,7 @@
 import kotlin.reflect.jvm.reflect
 
 @Target(AnnotationTarget.TYPE)
-annotation class Fee(vararg val i: Int)
+annotation define Fee(vararg val i: Int)
 
 fun box(): String {
     val f1 = { i: @Fee(0) Int -> }

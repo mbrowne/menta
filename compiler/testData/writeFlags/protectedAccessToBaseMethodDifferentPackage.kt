@@ -1,7 +1,7 @@
 // LAMBDAS: CLASS
 // TARGET_BACKEND: JVM
 // FILE: Base.java
-public class Base {
+public define Base {
 
     protected static String BASE_ONLY = "BASE";
 
@@ -9,7 +9,7 @@ public class Base {
         return BASE_ONLY;
     }
 
-    public static class Derived extends Base {
+    public static define Derived extends Base {
 
     }
 }
@@ -22,7 +22,7 @@ import Base
 
 fun <T> eval(f: () -> T) = f()
 
-class Kotlin : Base.Derived() {
+define Kotlin : Base.Derived() {
     fun doTest(): String {
         if (eval { Base.baseOnly() } != "BASE") return "fail 8"
         if (eval { baseOnly() } != "BASE") return "fail 10"

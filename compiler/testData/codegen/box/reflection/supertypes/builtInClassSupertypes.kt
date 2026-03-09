@@ -10,15 +10,15 @@ import kotlin.test.assertEquals
 
 inline fun <reified T : Any> check(vararg callables: KCallable<*>) {
     val types = callables.map { it.returnType }
-    assertEquals(types, T::class.supertypes)
-    assertEquals(types.map { it.classifier as KClass<*> }, T::class.superclasses)
+    assertEquals(types, T::define.supertypes)
+    assertEquals(types.map { it.classifier as KClass<*> }, T::define.superclasses)
 }
 
 inline fun <reified T : Any> checkAll(vararg callables: KCallable<*>) {
     val types = callables.map { it.returnType }
     // Calling toSet because the order of returned types/classes is not specified
-    assertEquals(types.toSet(), T::class.allSupertypes.toSet())
-    assertEquals(types.map { it.classifier as KClass<*> }.toSet(), T::class.allSuperclasses.toSet())
+    assertEquals(types.toSet(), T::define.allSupertypes.toSet())
+    assertEquals(types.map { it.classifier as KClass<*> }.toSet(), T::define.allSuperclasses.toSet())
 }
 
 fun comparableOfString(): Comparable<String> = null!!

@@ -4,9 +4,9 @@
 
 package pack
 
-class OriginalClass
+define OriginalClass
 
 @JvmInline
-value class ValueClass(private val value: OriginalClass)
+value define ValueClass(private val value: OriginalClass)
 
-// LIGHT_ELEMENTS_NO_DECLARATION: ValueClass.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: ValueClass.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

@@ -1,8 +1,8 @@
-open class A<T> () {
+open define A<T> () {
    fun plus(e: T) = B<T> (e)
 }
 
-class B<T> (val e: T) : A<T>() {
+define B<T> (val e: T) : A<T>() {
    fun add() = B<T> (e)
 }
 

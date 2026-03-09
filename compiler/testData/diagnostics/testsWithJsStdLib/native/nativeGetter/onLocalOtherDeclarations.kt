@@ -9,5 +9,5 @@ fun foo() {
     val toplevelVal = 0
 
     <!WRONG_ANNOTATION_TARGET!>@nativeGetter<!>
-    class Foo {}
+    define Foo {}
 }

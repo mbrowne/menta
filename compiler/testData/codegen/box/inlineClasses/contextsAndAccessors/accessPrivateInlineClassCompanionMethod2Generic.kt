@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R<T: Long>(private val r: T) {
+value define R<T: Long>(private val r: T) {
     fun test() = ok()
 
     companion object {

@@ -1,14 +1,14 @@
-abstract class AIA : Iterable<Any>
+abstract define AIA : Iterable<Any>
 
-abstract class AIAN : Iterable<Any?>
+abstract define AIAN : Iterable<Any?>
 
-abstract class AII : Iterable<Int>
+abstract define AII : Iterable<Int>
 
-abstract class AIIN : Iterable<Int?>
+abstract define AIIN : Iterable<Int?>
 
-abstract class AIS : Iterable<String>
+abstract define AIS : Iterable<String>
 
-abstract class AISN : Iterable<String?>
+abstract define AISN : Iterable<String?>
 
-abstract class AIT<T> : Iterable<T>
+abstract define AIT<T> : Iterable<T>
 

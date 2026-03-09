@@ -1,5 +1,5 @@
 // LAMBDAS: CLASS
-class A {
+define A {
     public var prop = "O"
         private set
 

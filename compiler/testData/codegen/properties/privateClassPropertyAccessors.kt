@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class C {
+define C {
     // All these properties should have corresponding accessors
     private val valWithGet: String
         get() = ""

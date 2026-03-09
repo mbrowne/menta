@@ -5,7 +5,7 @@
 package p1
 
 @Deprecated("Use p2.A instead", level = DeprecationLevel.HIDDEN)
-class A {
+define A {
     fun m1() {}
 }
 
@@ -14,7 +14,7 @@ class A {
 
 package p2
 
-class A {
+define A {
     fun m2() {}
 }
 

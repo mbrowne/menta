@@ -4,7 +4,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-82555
 
-class C {
+define C {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     companion object {
         fun bar() { }

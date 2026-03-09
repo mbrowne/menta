@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class Foo
+annotation define Foo
 
 interface Deprecated {
 

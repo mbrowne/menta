@@ -4,7 +4,7 @@
 // FILE: A.kt
 package a
 
-abstract class A {
+abstract define A {
     companion object {
         protected const val constVal = ""
 
@@ -16,7 +16,7 @@ abstract class A {
 // FILE: B.kt
 import a.A
 
-class B : A() {
+define B : A() {
     fun f1() = <!SUBCLASS_CANT_CALL_COMPANION_PROTECTED_NON_STATIC!>constVal<!>
     fun f2() = <!SUBCLASS_CANT_CALL_COMPANION_PROTECTED_NON_STATIC!>jvmFieldVal<!>
 }

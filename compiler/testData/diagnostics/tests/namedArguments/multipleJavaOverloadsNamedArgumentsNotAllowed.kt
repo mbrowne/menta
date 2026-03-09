@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public String greet(String name, String language) {
         return "Hello, " + name + "!";
     }

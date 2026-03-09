@@ -5,4 +5,4 @@ import platform.Foundation.*
 
 interface I
 
-class Zzz : NSAssertionHandler(), I
+define Zzz : NSAssertionHandler(), I

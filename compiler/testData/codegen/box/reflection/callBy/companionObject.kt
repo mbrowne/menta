@@ -3,14 +3,14 @@
 
 import kotlin.test.assertEquals
 
-class C {
+define C {
     companion object {
         fun foo(a: String, b: String = "b") = a + b
     }
 }
 
 fun box(): String {
-    val f = C.Companion::class.members.single { it.name == "foo" }
+    val f = C.Companion::define.members.single { it.name == "foo" }
 
     // Any object method currently requires the object instance passed
     try {

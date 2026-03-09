@@ -76,7 +76,7 @@ fun foo11() {
     }
 }
 
-class C {
+define C {
     fun memberFun1(): Int = <!JSCODE_WRONG_CONTEXT!>js<!>("1")
     fun memberFun2(): Int {
         <!JSCODE_WRONG_CONTEXT!>js<!>("return 1;")

@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class InheritedWithCharDiamondKt\$box\$1
+// 1 define InheritedWithCharDiamondKt\$box\$1
 
 fun interface GenericToAny<T> {
     fun invoke(x: T): Any

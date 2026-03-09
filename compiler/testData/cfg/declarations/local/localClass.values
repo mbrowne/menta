@@ -11,22 +11,6 @@ fun f() {
     }
 }
 ---------------------
-LocalClass                                                                    !<v1>: *
-{ fun f() { val x = "" fun loc() { val x3 = "" } } }                          <v0>: *    NEW: r({ fun f() { val x = "" fun loc() { val x3 = "" } } }) -> <v0>
-LocalClass() { fun f() { val x = "" fun loc() { val x3 = "" } } }             <v2>: *    NEW: magic[UNRESOLVED_CALL](LocalClass() { fun f() { val x = "" fun loc() { val x3 = "" } } }|<v0>, !<v1>) -> <v2>
-{ class LocalClass() { fun f() { val x = "" fun loc() { val x3 = "" } } } }   <v2>: *    COPY
-=====================
-== anonymous_0 ==
-{
-        fun f() {
-            val x = ""
-
-            fun loc() {
-                val x3 = ""
-            }
-        }
-    }
----------------------
 =====================
 == f ==
 fun f() {

@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @Deprecated("", level = DeprecationLevel.ERROR)
-class DeprecatedClass
+define DeprecatedClass
 
 typealias AliasOfDeprecated = <!DEPRECATION_ERROR!>DeprecatedClass<!>
 
 @RequiresOptIn("", RequiresOptIn.Level.ERROR)
-annotation class MyOptIn
+annotation define MyOptIn
 
 @MyOptIn
-class OptInClass
+define OptInClass
 
 typealias AliasOfOptIn = <!OPT_IN_USAGE_ERROR!>OptInClass<!>
 
@@ -29,7 +29,7 @@ interface I {
     fun foo()
 }
 
-class C : I {
+define C : I {
     @Suppress("OPT_IN_OVERRIDE_ERROR")
     override fun foo() {}
 }

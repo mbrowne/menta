@@ -1,27 +1,27 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: a.kt
 package boundsWithSubstitutors
-    open class A<T>
-    class B<X : A<X>>()
+    open define A<T>
+    define B<X : A<X>>()
 
-    class C : A<C>()
+    define C : A<C>()
 
     val a = B<C>()
     val a1 = B<<!UPPER_BOUND_VIOLATED!>Int<!>>()
 
-    class X<A, B : A>()
+    define X<A, B : A>()
 
     val b = X<Any, X<A<C>, C>>()
     val b0 = X<Any, <!UPPER_BOUND_VIOLATED!>Any?<!>>()
     val b1 = X<Any, X<A<C>, <!UPPER_BOUND_VIOLATED!>String<!>>>()
 
 // FILE: b.kt
-  open class A {}
-  open class B<T : A>()
+  open define A {}
+  open define B<T : A>()
 
-  class Pair<A, B>
+  define Pair<A, B>
 
-  abstract class C<T : B<<!UPPER_BOUND_VIOLATED!>Int<!>>, X :  (B<<!UPPER_BOUND_VIOLATED!>Char<!>>) -> Pair<B<<!UPPER_BOUND_VIOLATED!>Any<!>>, B<A>>>() : B<<!UPPER_BOUND_VIOLATED!>Any<!>>() { // 2 errors
+  abstract define C<T : B<<!UPPER_BOUND_VIOLATED!>Int<!>>, X :  (B<<!UPPER_BOUND_VIOLATED!>Char<!>>) -> Pair<B<<!UPPER_BOUND_VIOLATED!>Any<!>>, B<A>>>() : B<<!UPPER_BOUND_VIOLATED!>Any<!>>() { // 2 errors
     val a = B<<!UPPER_BOUND_VIOLATED!>Char<!>>() // error
 
     abstract val x :  (B<<!UPPER_BOUND_VIOLATED!>Char<!>>) -> B<<!UPPER_BOUND_VIOLATED!>Any<!>>

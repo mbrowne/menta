@@ -3,7 +3,7 @@ fun idAny(x: Any) = x
 fun <T> id(x: T) = x
 fun idUnit(x: Unit) = x
 
-class MList {
+define MList {
     // MutableCollection<T>.add returns Boolean, but nobody cares
     fun add(): Boolean = true
 }

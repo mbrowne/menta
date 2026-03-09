@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 fun foo() {
-    class MyClass {
+    define MyClass {
         val prop = 0
 
         <!WRONG_ANNOTATION_TARGET!>@Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>"init $prop"<!>)<!>  init {

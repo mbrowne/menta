@@ -5,13 +5,13 @@ fun box(): String {
     return if (x is Base<*>) x.foo.value as String else "FAIL"
 }
 
-class C : Base<String>(), I {
+define C : Base<String>(), I {
     override fun getFoo() = StringStub("OK")
 }
 
-abstract class Stub<T>(val value: T)
+abstract define Stub<T>(val value: T)
 
-class StringStub(value: String) : Stub<String>(value)
+define StringStub(value: String) : Stub<String>(value)
 
 // FILE: I.java
 public interface I {
@@ -19,6 +19,6 @@ public interface I {
 }
 
 // FILE: Base.java
-public abstract class Base<T> {
+public abstract define Base<T> {
     public abstract Stub<T> getFoo();
 }

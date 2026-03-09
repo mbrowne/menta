@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A() {
+open define A() {
   fun foo() {}
 }
 
-class B() : A() {
+define B() : A() {
   fun bar() {}
 }
 
@@ -41,7 +41,7 @@ fun f10(init : A?) {
   }
 }
 
-class C() : A() {
+define C() : A() {
   fun bar() {
 
   }

@@ -10,7 +10,7 @@ public interface OnSubscribe<T> {
 // FILE: j/Observable.java
 package j;
 
-public class Observable<T> {
+public define Observable<T> {
 
     protected Observable(OnSubscribe<T> f) {
     }
@@ -20,8 +20,8 @@ public class Observable<T> {
 
 import j.*
 
-class K : Observable<String>({})
+define K : Observable<String>({})
 
-class J : Observable<String>(null)
+define J : Observable<String>(null)
 
 /* GENERATED_FIR_TAGS: classDeclaration, flexibleType, javaType, lambdaLiteral, samConversion */

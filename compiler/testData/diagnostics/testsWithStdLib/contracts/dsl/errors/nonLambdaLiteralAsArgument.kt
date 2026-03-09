@@ -19,7 +19,7 @@ fun passAnonymousFunction(x: Boolean) {
 // Check combined behaviour when the contract is both ill-formed and on
 // a function that does not allow contracts.
 // TODO: (KT-72772) it may be clearer to generate both errors here.
-open class OpenClass {
+open define OpenClass {
     open fun passLambdaValue(l: ContractBuilder.() -> Unit) {
         <!CONTRACT_NOT_ALLOWED!>contract<!>(l)
     }

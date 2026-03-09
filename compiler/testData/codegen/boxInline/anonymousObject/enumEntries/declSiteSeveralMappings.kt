@@ -8,12 +8,12 @@
 
 package test
 
-enum class X {
+enum define X {
     O,
     K
 }
 
-enum class Y {
+enum define Y {
     O,
     K
 }
@@ -24,10 +24,10 @@ enum class Y {
 // FILE: 2.kt
 import test.*
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun funForAdditionalMappingArrayInMappingFile(): String = Y.entries[1].toString()
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 inline fun test(idx: Int): String = X.entries[idx].toString()
 
 // FILE: 3.kt

@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-annotation class TestAnn(val x: String)
+annotation define TestAnn(val x: String)
 
 val test1: String
     @TestAnn("test1.get") get() = ""

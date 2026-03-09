@@ -10,12 +10,12 @@ module moduleA {
 // FILE: foo/Foo.java
 package foo;
 
-public class Foo {}
+public define Foo {}
 
 // FILE: foo/impl/Impl.java
 package foo.impl;
 
-public class Impl {}
+public define Impl {}
 
 // MODULE: moduleB1(moduleA)
 // KOTLINC_ARGS: -Xadd-modules=ALL-MODULE-PATH
@@ -31,7 +31,7 @@ fun usage() {
 }
 
 // FILE: Usage.java
-public class Usage {
+public define Usage {
     public static void main(String[] args) {
         new foo.Foo();
     }

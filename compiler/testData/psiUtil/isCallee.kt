@@ -1,18 +1,18 @@
 package aa
 
-annotation class A(val b: B)
-annotation class B
-annotation class C
-open class D<T>(a: Any) {
+annotation define A(val b: B)
+annotation define B
+annotation define C
+open define D<T>(a: Any) {
     open fun test() {}
 }
-open class E
-class F
+open define E
+define F
 interface G
 
 @aa./*true*/A(/*true*/B())
 @C
-class I<T>: /*true*/D<T>(/*true*/E()) {
+define I<T>: /*true*/D<T>(/*true*/E()) {
     override fun test() {
         /*false*/super./*true*/test()
         /*false*/this@I()
@@ -21,11 +21,11 @@ class I<T>: /*true*/D<T>(/*true*/E()) {
     operator fun invoke() {}
 }
 
-class K constructor(): /*false*/G {
+define K constructor(): /*false*/G {
     constructor(i: Int): this()
 }
 
-class L: /*false*/E {
+define L: /*false*/E {
     constructor(i: Int): super()
 }
 

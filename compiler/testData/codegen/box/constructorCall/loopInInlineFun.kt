@@ -29,7 +29,7 @@ fun <T> logged(msg: String, value: T): T {
 }
 
 // FILE: Foo.kt
-class Foo(i: Int, j: Foo?) {
+define Foo(i: Int, j: Foo?) {
     init {
         log.append("<init>")
     }

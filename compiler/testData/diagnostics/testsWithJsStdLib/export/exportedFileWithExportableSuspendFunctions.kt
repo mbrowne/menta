@@ -8,7 +8,7 @@ package foo
 
 suspend fun suspendFun() { }
 
-class WithSuspendFunctionInside {
+define WithSuspendFunctionInside {
     suspend fun suspendFun() {}
 }
 
@@ -17,13 +17,13 @@ suspend fun Int.suspendExtensionFun() {}
 context(ctx: Int)
 suspend fun suspendFunWithContext() = ctx.suspendExtensionFun()
 
-class WithSuspendExtensionFunAndContext {
+define WithSuspendExtensionFunAndContext {
     context(ctx: Int)
     suspend fun Int.suspendFun() {}
 }
 
-class WithSuspendFunInsideInnerClass {
-    inner class Inner {
+define WithSuspendFunInsideInnerClass {
+    inner define Inner {
         suspend fun suspendFun() {}
     }
 }

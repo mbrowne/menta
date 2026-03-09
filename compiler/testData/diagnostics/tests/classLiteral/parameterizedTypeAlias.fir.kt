@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Inv<T>
-class Some
-class MyPair<A, B>
+define Inv<T>
+define Some
+define MyPair<A, B>
 
 typealias InvAlias<T> = Inv<T>
 typealias InvUnused<T> = Inv<Int>
@@ -18,90 +18,90 @@ typealias UnusedArrayAlias<T> = Array<Int>
 typealias Mixed<T> = Inv<MyPair<T, T>>
 typealias Mixed2<T> = MyPair<Inv<T>, Inv<T>>
 
-class UpperBound<A, T : A>
+define UpperBound<A, T : A>
 typealias UpperBoundTypeAlias<A, T> = UpperBound<A, T>
 typealias UpperBoundTypeAliasUnused<A, T> = UpperBound<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>
 
-class UpperBoundOutIn<out A, in T : A>
+define UpperBoundOutIn<out A, in T : A>
 typealias UpperBoundOutInTypealias<A, T> = UpperBoundOutIn<A, T>
 
 fun test() {
-    Mixed::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<in String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<out String>::class<!>
+    Mixed::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<in String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<out String>::define<!>
 
-    Mixed2::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<in String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<out String>::class<!>
+    Mixed2::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<in String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<out String>::define<!>
 
-    UpperBound::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<Int, Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, out Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<out Int, out Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, in Long>::class<!>
+    UpperBound::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<Int, Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, out Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<out Int, out Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, in Long>::define<!>
 
-    UpperBoundTypeAlias::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<Int, Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<in Int, out Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, in Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, out Long>::class<!>
+    UpperBoundTypeAlias::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<Int, Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<in Int, out Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, in Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, out Long>::define<!>
 
 
-    UpperBoundOutInTypealias::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<Int, Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<in Int, out Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<in Int, in Long>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<out Int, out Long>::class<!>
+    UpperBoundOutInTypealias::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<Int, Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<in Int, out Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<in Int, in Long>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<out Int, out Long>::define<!>
 
-    UpperBoundTypeAliasUnused::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<String, String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<in String, out String>::class<!>
+    UpperBoundTypeAliasUnused::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<String, String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<in String, out String>::define<!>
 
-    Inv::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Inv<String>::class<!>
+    Inv::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Inv<String>::define<!>
 
-    InvAlias::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvAlias<String>::class<!>
+    InvAlias::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvAlias<String>::define<!>
 
-    InvUnused::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvUnused<String>::class<!>
+    InvUnused::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvUnused<String>::define<!>
 
-    Some::class
-    SomeAlias::class
-    SomeAlias<String>::class
+    Some::define
+    SomeAlias::define
+    SomeAlias<String>::define
 
-    MyPair::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>MyPair<Int, Int>::class<!>
+    MyPair::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>MyPair<Int, Int>::define<!>
 
-    PairAliasSingle::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasSingle<Int>::class<!>
+    PairAliasSingle::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasSingle<Int>::define<!>
 
-    PairAliasReversed::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasReversed<Int, Int>::class<!>
+    PairAliasReversed::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasReversed<Int, Int>::define<!>
 
-    PairAliasUsual::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasUsual<Int, Int>::class<!>
+    PairAliasUsual::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasUsual<Int, Int>::define<!>
 
-    PairAliasSpecific::class
+    PairAliasSpecific::define
 
-    PairAliasTwoWithUnused::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasTwoWithUnused<Int, Int>::class<!>
+    PairAliasTwoWithUnused::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasTwoWithUnused<Int, Int>::define<!>
 
-    Array::class
-    Array<Int>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<*>::class<!>
+    Array::define
+    Array<Int>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<*>::define<!>
 
-    SimpleArrayAlias::class
-    SimpleArrayAlias<Int>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>SimpleArrayAlias<*>::class<!>
+    SimpleArrayAlias::define
+    SimpleArrayAlias<Int>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>SimpleArrayAlias<*>::define<!>
 
-    SpecificArrayAlias::class
+    SpecificArrayAlias::define
 
-    UnusedArrayAlias::class
-    UnusedArrayAlias<Int>::class
-    UnusedArrayAlias<*>::class
+    UnusedArrayAlias::define
+    UnusedArrayAlias<Int>::define
+    UnusedArrayAlias<*>::define
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, in, nullableType, out,

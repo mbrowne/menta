@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Scope
+define Scope
 
 fun <T> simpleAsync0(block: Scope.() -> T) {}
 fun <T> simpleAsync1(block: suspend Scope.() -> T) {}

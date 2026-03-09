@@ -47,7 +47,7 @@ KtFile: untilOperatorGenericsClash.kt
         PsiElement(IDENTIFIER)('Int')
         PsiElement(GT)('>')
         PsiElement(COLONCOLON)('::')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
       PsiWhiteSpace('\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -56,7 +56,7 @@ KtFile: untilOperatorGenericsClash.kt
         PsiWhiteSpace(' ')
         PsiElement(EQ)('=')
         PsiWhiteSpace(' ')
-        CALLABLE_REFERENCE_EXPRESSION
+        CLASS_LITERAL_EXPRESSION
           CALL_EXPRESSION
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('`..`')
@@ -69,10 +69,6 @@ KtFile: untilOperatorGenericsClash.kt
                       PsiElement(IDENTIFIER)('Int')
               PsiElement(GT)('>')
           PsiElement(COLONCOLON)('::')
-          REFERENCE_EXPRESSION
-            PsiErrorElement:Expecting an identifier
-              <empty list>
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+          PsiElement(define)('define')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

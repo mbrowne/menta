@@ -5,34 +5,34 @@ KtFile: BinaryHeap.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('BinaryHeap')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('T')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    TYPE_PARAMETER_LIST
+      PsiElement(LT)('<')
+      TYPE_PARAMETER
+        PsiElement(IDENTIFIER)('T')
+      PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
     PsiElement(COLON)(':')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('IPriorityQueue')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LT)('<')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('T')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(GT)('>')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PsiWhiteSpace(' ')
+    SUPER_TYPE_LIST
+      SUPER_TYPE_ENTRY
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('IPriorityQueue')
+            TYPE_ARGUMENT_LIST
+              PsiElement(LT)('<')
+              TYPE_PROJECTION
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('T')
+              PsiElement(GT)('>')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
       PROPERTY
@@ -666,38 +666,35 @@ KtFile: BinaryHeap.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
-          PARENTHESIZED
-            PsiElement(LPAR)('(')
-            BINARY_EXPRESSION
-              THIS_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(this)('this')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(MINUS)('-')
-              PsiWhiteSpace(' ')
-              INTEGER_CONSTANT
-                PsiElement(INTEGER_LITERAL)('1')
-            PsiElement(RPAR)(')')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(DIV)('/')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('2')
+          BINARY_EXPRESSION
+            PARENTHESIZED
+              PsiElement(LPAR)('(')
+              BINARY_EXPRESSION
+                THIS_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(this)('this')
+                PsiWhiteSpace(' ')
+                OPERATION_REFERENCE
+                  PsiElement(MINUS)('-')
+                PsiWhiteSpace(' ')
+                INTEGER_CONSTANT
+                  PsiElement(INTEGER_LITERAL)('1')
+              PsiElement(RPAR)(')')
+            PsiWhiteSpace(' ')
+            OPERATION_REFERENCE
+              PsiElement(DIV)('/')
+            PsiWhiteSpace(' ')
+            INTEGER_CONSTANT
+              PsiElement(INTEGER_LITERAL)('2')
       PsiWhiteSpace('\n\n\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -715,35 +712,32 @@ KtFile: BinaryHeap.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
+          PsiWhiteSpace(' ')
           BINARY_EXPRESSION
-            THIS_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(this)('this')
+            BINARY_EXPRESSION
+              THIS_EXPRESSION
+                REFERENCE_EXPRESSION
+                  PsiElement(this)('this')
+              PsiWhiteSpace(' ')
+              OPERATION_REFERENCE
+                PsiElement(MUL)('*')
+              PsiWhiteSpace(' ')
+              INTEGER_CONSTANT
+                PsiElement(INTEGER_LITERAL)('2')
             PsiWhiteSpace(' ')
             OPERATION_REFERENCE
-              PsiElement(MUL)('*')
+              PsiElement(PLUS)('+')
             PsiWhiteSpace(' ')
             INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('2')
-          PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(PLUS)('+')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
+              PsiElement(INTEGER_LITERAL)('1')
       PsiWhiteSpace('\n\n\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -761,35 +755,32 @@ KtFile: BinaryHeap.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
+          PsiWhiteSpace(' ')
           BINARY_EXPRESSION
-            THIS_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(this)('this')
+            BINARY_EXPRESSION
+              THIS_EXPRESSION
+                REFERENCE_EXPRESSION
+                  PsiElement(this)('this')
+              PsiWhiteSpace(' ')
+              OPERATION_REFERENCE
+                PsiElement(MUL)('*')
+              PsiWhiteSpace(' ')
+              INTEGER_CONSTANT
+                PsiElement(INTEGER_LITERAL)('2')
             PsiWhiteSpace(' ')
             OPERATION_REFERENCE
-              PsiElement(MUL)('*')
+              PsiElement(PLUS)('+')
             PsiWhiteSpace(' ')
             INTEGER_CONSTANT
               PsiElement(INTEGER_LITERAL)('2')
-          PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(PLUS)('+')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('2')
       PsiWhiteSpace('\n\n\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -820,55 +811,47 @@ KtFile: BinaryHeap.kt
             VALUE_ARGUMENT_LIST
               PsiElement(LPAR)('(')
               PsiElement(RPAR)(')')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        ARRAY_ACCESS_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('data')
-          INDICES
-            PsiElement(LBRACKET)('[')
-            THIS_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(this)('this')
-            PsiElement(RBRACKET)(']')
-      PsiWhiteSpace('\n    ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('set')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
+          PsiWhiteSpace(' ')
+          ARRAY_ACCESS_EXPRESSION
             REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('data')
+            INDICES
+              PsiElement(LBRACKET)('[')
+              THIS_EXPRESSION
+                REFERENCE_EXPRESSION
+                  PsiElement(this)('this')
+              PsiElement(RBRACKET)(']')
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          PsiElement(set)('set')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            VALUE_PARAMETER
               PsiElement(IDENTIFIER)('it')
-          PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n      ')
-              BLOCK
-                BINARY_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('field')
-                  PsiWhiteSpace(' ')
-                  OPERATION_REFERENCE
-                    PsiElement(EQ)('=')
-                  PsiWhiteSpace(' ')
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('it')
-              PsiWhiteSpace('\n    ')
-              PsiElement(RBRACE)('}')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          BLOCK
+            PsiElement(LBRACE)('{')
+            PsiWhiteSpace('\n      ')
+            BINARY_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('field')
+              PsiWhiteSpace(' ')
+              OPERATION_REFERENCE
+                PsiElement(EQ)('=')
+              PsiWhiteSpace(' ')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('it')
+            PsiWhiteSpace('\n    ')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -886,53 +869,50 @@ KtFile: BinaryHeap.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Boolean')
-      PsiWhiteSpace('\n    ')
-      BINARY_EXPRESSION
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('get')
-          VALUE_ARGUMENT_LIST
+        PsiWhiteSpace('\n    ')
+        PROPERTY_ACCESSOR
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
+          PsiWhiteSpace(' ')
           PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
-          PARENTHESIZED
-            PsiElement(LPAR)('(')
-            BINARY_EXPRESSION
-              THIS_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(this)('this')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(LT)('<')
-              PsiWhiteSpace(' ')
-              DOT_QUALIFIED_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('data')
-                PsiElement(DOT)('.')
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('size')
-            PsiElement(RPAR)(')')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(ANDAND)('&&')
-          PsiWhiteSpace(' ')
-          PARENTHESIZED
-            PsiElement(LPAR)('(')
-            BINARY_EXPRESSION
-              THIS_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(this)('this')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(GTEQ)('>=')
-              PsiWhiteSpace(' ')
-              INTEGER_CONSTANT
-                PsiElement(INTEGER_LITERAL)('0')
-            PsiElement(RPAR)(')')
+          BINARY_EXPRESSION
+            PARENTHESIZED
+              PsiElement(LPAR)('(')
+              BINARY_EXPRESSION
+                THIS_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(this)('this')
+                PsiWhiteSpace(' ')
+                OPERATION_REFERENCE
+                  PsiElement(LT)('<')
+                PsiWhiteSpace(' ')
+                DOT_QUALIFIED_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('data')
+                  PsiElement(DOT)('.')
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('size')
+              PsiElement(RPAR)(')')
+            PsiWhiteSpace(' ')
+            OPERATION_REFERENCE
+              PsiElement(ANDAND)('&&')
+            PsiWhiteSpace(' ')
+            PARENTHESIZED
+              PsiElement(LPAR)('(')
+              BINARY_EXPRESSION
+                THIS_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(this)('this')
+                PsiWhiteSpace(' ')
+                OPERATION_REFERENCE
+                  PsiElement(GTEQ)('>=')
+                PsiWhiteSpace(' ')
+                INTEGER_CONSTANT
+                  PsiElement(INTEGER_LITERAL)('0')
+              PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n  ')
       FUN
         PsiElement(fun)('fun')

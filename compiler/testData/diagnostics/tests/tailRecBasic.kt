@@ -70,7 +70,7 @@ tailrec fun foo7_return() {
 
 <!NO_TAIL_CALLS_FOUND!>tailrec<!> fun foo10() {
     <!NON_TAIL_RECURSIVE_CALL!>foo10<!>()
-    class Bar {
+    define Bar {
         val i = 1
     }
 }

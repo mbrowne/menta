@@ -1,13 +1,13 @@
 // WITH_STDLIB
 package test
 
-class A
+define A
 
-abstract class TAMap<T> : Map<T, A>
+abstract define TAMap<T> : Map<T, A>
 
-abstract class TAMap2<T> : Map<T, A> by emptyMap<T, A>()
+abstract define TAMap2<T> : Map<T, A> by emptyMap<T, A>()
 
-open class TAMap3<T> : Map<T, A> {
+open define TAMap3<T> : Map<T, A> {
     override fun containsKey(key: T): Boolean {
         TODO("Not yet implemented")
     }
@@ -34,4 +34,4 @@ open class TAMap3<T> : Map<T, A> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: TAMap.class[clear;compute;computeIfAbsent;computeIfPresent;containsValue;containsValue;entrySet;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], TAMap2.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], TAMap3.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: TAMap.define[clear;compute;computeIfAbsent;computeIfPresent;containsValue;containsValue;entrySet;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], TAMap2.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], TAMap3.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]

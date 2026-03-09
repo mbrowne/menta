@@ -4,8 +4,8 @@
 
 // MODULE: lib-common
 
-expect class A
-expect class B
+expect define A
+expect define B
 
 expect interface Base1 {
     open fun foo(x: A): String
@@ -18,7 +18,7 @@ expect interface Base2 {
 interface I1 : Base1
 interface I2 : Base2
 
-abstract class Derived : I1, I2 {
+abstract define Derived : I1, I2 {
     abstract override fun foo(x: A): String
 }
 
@@ -32,7 +32,7 @@ fun useCommon(d: Derived, a: A, b: B, d1: I1, d2: I2): String {
 // MODULE: lib-platform()()(lib-common)
 
 // FILE: C.java
-public class C {
+public define C {
     @Override
     public String toString() {
         return "C";
@@ -67,7 +67,7 @@ actual interface Base2 : JBase2 {
         super<JBase2>.foo(x)
 }
 
-class Impl : Derived(), I1, I2 {
+define Impl : Derived(), I1, I2 {
     override fun foo(x: C): String {
         return "Impl" + super<I1>.foo(x)
     }

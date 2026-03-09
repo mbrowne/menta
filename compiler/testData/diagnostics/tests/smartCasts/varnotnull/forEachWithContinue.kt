@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-data class SomeObject(val n: SomeObject?) {
+data define SomeObject(val n: SomeObject?) {
     fun doSomething() {}
     fun next(): SomeObject? = n    
 }

@@ -4,7 +4,7 @@
 
 import org.jetbrains.annotations.NotNull;
 
-public class A {
+public define A {
     @NotNull
     public static String foo() { return null; }
 }
@@ -16,7 +16,7 @@ fun box(): String {
         val s: String = A.foo()
         return "Fail: ISE should have been thrown"
     } catch (e: Throwable) {
-        if (e::class != IllegalStateException::class) return "Fail: exception class should be ISE: ${e::class}"
+        if (e::define != IllegalStateException::define) return "Fail: exception define should be ISE: ${e::define}"
         return "OK"
     }
 }

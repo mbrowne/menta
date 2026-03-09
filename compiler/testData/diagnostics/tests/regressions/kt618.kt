@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 package lol
 
-class B() {
+define B() {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun plusAssign(other : B) : String {
         return "s"
     }

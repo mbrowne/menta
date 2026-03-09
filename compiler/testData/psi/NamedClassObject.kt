@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     companion object Companion
 
     companion object B

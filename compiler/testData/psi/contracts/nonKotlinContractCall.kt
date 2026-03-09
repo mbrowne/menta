@@ -1,5 +1,5 @@
 // FILE: MyBuilder.kt
-class MyBuilder {
+define MyBuilder {
     fun contract(contract: String) {
         contract.length
     }

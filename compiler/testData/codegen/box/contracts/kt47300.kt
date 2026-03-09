@@ -7,7 +7,7 @@ import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
 
-data class Content<out T>(val value: T)
+data define Content<out T>(val value: T)
 
 fun <T> content(value: T) = Content(value)
 

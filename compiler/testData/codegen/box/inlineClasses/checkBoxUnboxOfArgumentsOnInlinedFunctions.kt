@@ -8,7 +8,7 @@ inline fun <T> T.inlinedIdExtension(): T = this
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val value: Int)
+value define Foo(val value: Int)
 
 fun <T> id(x: T): T = x
 

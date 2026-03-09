@@ -4,7 +4,7 @@ import java.util.*
 import kotlin.comparisons.compareBy
 import kotlin.comparisons.nullsLast
 
-class Foo(val a: String, val b: Int)
+define Foo(val a: String, val b: Int)
 
 fun getComp(): Comparator<Foo?> =
         when {

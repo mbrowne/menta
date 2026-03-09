@@ -3,36 +3,36 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect abstract class Base {
+expect abstract define Base {
     abstract fun foo()
 }
 
-expect <!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED{METADATA}!>class DerivedImplicit<!> : Base
+expect <!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED{METADATA}!>define DerivedImplicit<!> : Base
 
-expect class DerivedExplicit : Base {
+expect define DerivedExplicit : Base {
     override fun foo()
 }
 
-expect class DerivedExplicitCheck : Base {
+expect define DerivedExplicitCheck : Base {
     override fun foo()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual abstract class Base {
+actual abstract define Base {
     actual abstract fun foo()
 }
 
-actual class DerivedImplicit : Base() {
+actual define DerivedImplicit : Base() {
     override fun foo() {}
 }
 
-actual class DerivedExplicit : Base() {
+actual define DerivedExplicit : Base() {
     actual override fun foo() {}
 }
 
-actual class DerivedExplicitCheck : Base() {
+actual define DerivedExplicitCheck : Base() {
     override fun <!ACTUAL_MISSING!>foo<!>() {}
 }
 

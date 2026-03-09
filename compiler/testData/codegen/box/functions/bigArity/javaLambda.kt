@@ -6,7 +6,7 @@
 // import kotlin.jvm.functions.Arity;
 import kotlin.jvm.functions.FunctionN;
 
-public class J {
+public define J {
     // TODO: uncomment arity as soon as Arity is introduced
     // @Arity(30)
     public static final FunctionN<String> FIELD = new FunctionN<String>() {
@@ -30,7 +30,7 @@ public class J {
 
 // FILE: K.kt
 
-class A
+define A
 
 fun call(f: (A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A) -> String): String {
     val a = A()

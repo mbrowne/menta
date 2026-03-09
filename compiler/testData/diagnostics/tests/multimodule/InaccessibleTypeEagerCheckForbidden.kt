@@ -4,11 +4,11 @@
 
 // MODULE: missing
 // FILE: Base.kt
-open class Base {}
+open define Base {}
 
 // MODULE: intermediate(missing)
 // FILE: Derived.kt
-class Derived : Base() {}
+define Derived : Base() {}
 
 // MODULE: use(intermediate)
 // FILE: use.kt

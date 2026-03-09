@@ -4,8 +4,8 @@
 // ISSUE: KT-82555
 // LANGUAGE: +NestedTypeAliases, +SkipHiddenObjectsInResolution
 
-class Outer {
-    class C {
+define Outer {
+    define C {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
     }

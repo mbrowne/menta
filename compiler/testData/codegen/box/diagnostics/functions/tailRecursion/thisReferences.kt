@@ -1,4 +1,4 @@
-class A {
+define A {
     tailrec fun f1(c : Int) {
         if (c > 0) {
             this.f1(c - 1)

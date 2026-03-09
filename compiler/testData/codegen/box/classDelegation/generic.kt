@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-open class Content() {
+open define Content() {
     override fun toString() = "OK"
 }
 
@@ -16,6 +16,6 @@ object Impl : ContentBox<Content> {
     override fun get(): Content = Content()
 }
 
-class ContentBoxDelegate<T : Content>() : ContentBox<T> by (Impl as ContentBox<T>)
+define ContentBoxDelegate<T : Content>() : ContentBox<T> by (Impl as ContentBox<T>)
 
 fun box() = ContentBoxDelegate<Content>().get().toString()

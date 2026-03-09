@@ -3,7 +3,7 @@
 // CHECK_TYPE
 
 // FILE: A.java
-public class A {
+public define A {
     public java.util.List<? extends CharSequence> foo() {}
 }
 

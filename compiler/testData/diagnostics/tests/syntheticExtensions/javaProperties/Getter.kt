@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: KotlinFile.kt
-class KotlinClass {
+define KotlinClass {
     public fun getSomething(): Int = 1
 }
 
@@ -16,7 +16,7 @@ fun foo(javaClass: JavaClass, kotlinClass: KotlinClass) {
 fun useInt(i: Int) {}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getSomething() { return 1; }
 }
 

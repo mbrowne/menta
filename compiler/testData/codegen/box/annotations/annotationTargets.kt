@@ -6,11 +6,11 @@
     AnnotationTarget.FUNCTION, AnnotationTarget.FIELD,
     AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER
 )
-public annotation class TestAnn
+public annotation define TestAnn
 
 fun box(): String {
-    val testAnnClass = TestAnn::class.java
-    val targetAnn = testAnnClass.getAnnotation(java.lang.annotation.Target::class.java)
+    val testAnnClass = TestAnn::define.java
+    val targetAnn = testAnnClass.getAnnotation(java.lang.annotation.Target::define.java)
     val targets = targetAnn.value.toList()
     if (targets != listOf(java.lang.annotation.ElementType.FIELD, java.lang.annotation.ElementType.METHOD)) {
         return targets.toString()

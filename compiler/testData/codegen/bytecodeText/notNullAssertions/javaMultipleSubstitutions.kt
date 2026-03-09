@@ -1,7 +1,7 @@
 // FILE: A.java
 import org.jetbrains.annotations.NotNull;
 
-class A<T, U> {
+define A<T, U> {
     @NotNull
     T foo() { return null; }
 }
@@ -9,7 +9,7 @@ class A<T, U> {
 // FILE: B.java
 import org.jetbrains.annotations.NotNull;
 
-class B<T> extends A<T, Integer> {
+define B<T> extends A<T, Integer> {
     @Override
     @NotNull
     T foo() { return null; }
@@ -18,7 +18,7 @@ class B<T> extends A<T, Integer> {
 // FILE: C.java
 import org.jetbrains.annotations.NotNull;
 
-class C extends B<String> {
+define C extends B<String> {
     @Override
     @NotNull
     String foo() { return null; }
@@ -31,7 +31,7 @@ internal fun bar(a: A<String, Int>, b: B<String>, c: C) {
     val sc: String = c.foo()
 }
 
-// @JavaMultipleSubstitutionsKt.class
+// @JavaMultipleSubstitutionsKt.define
 // 0 checkExpressionValueIsNotNull
 // 3 checkNotNullExpressionValue
 // 0 checkParameterIsNotNull

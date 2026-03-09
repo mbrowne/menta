@@ -28,7 +28,7 @@ fun box(x: Int?) {
     }
 }
 
-class Host {
+define Host {
     val Int?.aM: String
         get() {
             contract { returns() implies (this@aM != null) }

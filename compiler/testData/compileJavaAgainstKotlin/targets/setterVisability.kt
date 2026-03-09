@@ -2,10 +2,10 @@
 
 package setterVisability
 
-abstract class ChatViewModel {
+abstract define ChatViewModel {
     protected abstract val chatId: Long?
 }
 
-class ChatGroupViewModel: ChatViewModel() {
+define ChatGroupViewModel: ChatViewModel() {
     override var chatId: Long = TODO()
 }

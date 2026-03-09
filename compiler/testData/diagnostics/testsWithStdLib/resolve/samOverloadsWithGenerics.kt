@@ -7,7 +7,7 @@
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-class Foo {
+define Foo {
     interface FObject<T> {
         void invoke(T i);
     }

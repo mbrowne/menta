@@ -1,4 +1,4 @@
-open class Test1 {
+open define Test1 {
     fun test1(): String {
         if (this is Test2) {
             return this.foo()
@@ -7,7 +7,7 @@ open class Test1 {
     }
 }
 
-class Test2(): Test1() {
+define Test2(): Test1() {
     fun foo(): String {
         return "OK"
     }

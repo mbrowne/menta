@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: abc/A.java
 package abc;
-public class A {
+public define A {
     public int getAbc() {}
     protected int getFoo() { return 1; }
 
@@ -12,9 +12,9 @@ public class A {
 // FILE: main.kt
 import abc.A
 
-class Data(var x: A)
+define Data(var x: A)
 
-class B : A() {
+define B : A() {
     fun baz(a: A, b: B, d: Data) {
         foo
         bar = bar + ""

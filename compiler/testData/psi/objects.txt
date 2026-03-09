@@ -144,15 +144,14 @@ KtFile: objects.kt
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      MODIFIER_LIST
-        PsiElement(public)('public')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(public)('public')
+          PsiWhiteSpace(' ')
+          PsiElement(open)('open')
         PsiWhiteSpace(' ')
-        PsiElement(open)('open')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Expecting member declaration
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Expecting member declaration
+        PsiElement(define)('define')
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('NestedClass')
       PsiWhiteSpace('\n\n\n')
       PsiElement(RBRACE)('}')

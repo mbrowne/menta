@@ -1,4 +1,4 @@
-class A {
+define A {
     val x: Int = 42
     
     fun foo(): String = ""

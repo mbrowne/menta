@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class TestResult
+expect define TestResult
 
 expect fun createTestResult(): TestResult
 

@@ -40,7 +40,7 @@ interface K : I, J {
         set(value) { super<I>.p = value }
 }
 
-class C : K
+define C : K
 
 fun box(): String {
     val c = C()

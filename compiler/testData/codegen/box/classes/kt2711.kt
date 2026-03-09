@@ -1,8 +1,8 @@
-class IntRange {
+define IntRange {
     operator fun contains(a: Int) = (1..2).contains(a)
 }
 
-class C() {
+define C() {
     operator fun rangeTo(i: Int) = IntRange()
 }
 

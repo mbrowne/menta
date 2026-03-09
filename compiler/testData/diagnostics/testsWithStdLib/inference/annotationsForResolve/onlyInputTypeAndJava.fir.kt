@@ -3,11 +3,11 @@
 
 // FILE: TestBase.java
 
-public class TestBase<T> { }
+public define TestBase<T> { }
 
 // FILE: Test.java
 
-public class Test<K> extends TestBase<K> { }
+public define Test<K> extends TestBase<K> { }
 
 // FILE: main.kt
 

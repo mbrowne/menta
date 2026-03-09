@@ -1,4 +1,4 @@
-class MyClass() {
+define MyClass() {
     inline fun <reified T> test(s: String = "") {}
 }
 

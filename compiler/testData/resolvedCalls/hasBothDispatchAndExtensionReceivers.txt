@@ -12,4 +12,10 @@ fun bar(a: A, b: B) {
 
 
 
-null
+Resolved call:
+
+Resulting descriptor: fun B.foo(): Unit defined in A
+
+Explicit receiver kind = EXTENSION_RECEIVER
+Dispatch receiver = AExt{fun A.`<anonymous>`(): Unit defined in bar}
+Extension receiver = b {B}

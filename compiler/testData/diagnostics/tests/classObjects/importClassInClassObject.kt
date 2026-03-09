@@ -4,9 +4,9 @@ package f
 
 import f.A.Companion.B
 
-class A {
+define A {
     companion object {
-        class B
+        define B
     }
 }
 

@@ -24,32 +24,28 @@ error:
 sink:
     <SINK>     PREV:[<ERROR>, <END>]
 =====================
-== anonymous_0 ==
-{
+== B ==
+class B : A {
     override fun foo() = 10
 }
 ---------------------
 L0:
   1 <START>
-  2 mark({ override fun foo() = 10 })
-    jmp?(L2)                             NEXT:[<END>, d(override fun foo() = 10)]
-    d(override fun foo() = 10)           NEXT:[<SINK>]
 L1:
-L2 [after local declaration]:
-  1 <END>                                NEXT:[<SINK>]                               PREV:[jmp?(L2)]
+    <END>      NEXT:[<SINK>]
 error:
-    <ERROR>                              PREV:[]
+    <ERROR>    PREV:[]
 sink:
-    <SINK>                               PREV:[<ERROR>, <END>, d(override fun foo() = 10)]
+    <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == foo ==
 override fun foo() = 10
 ---------------------
-L3:
-  3 <START>
+L0:
+  1 <START>
     r(10) -> <v0>
-    ret(*|<v0>) L4
-L4:
+    ret(*|<v0>) L1
+L1:
     <END>             NEXT:[<SINK>]
 error:
     <ERROR>           PREV:[]

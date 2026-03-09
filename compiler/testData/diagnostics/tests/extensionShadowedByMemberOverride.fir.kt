@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-79430
-class Foo {
+define Foo {
     fun bar() {}
 }
 
@@ -8,7 +8,7 @@ interface Extension<T> {
     fun T.bar()
 }
 
-class FooExtension : Extension<Foo> {
+define FooExtension : Extension<Foo> {
     override fun Foo.bar() {}
 }
 

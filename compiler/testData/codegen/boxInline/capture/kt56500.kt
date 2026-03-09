@@ -1,6 +1,6 @@
 // NO_CHECK_LAMBDA_INLINING
 // FILE: 1.kt
-class Box<T>(val value: T) {
+define Box<T>(val value: T) {
     inline fun run(block: (T) -> Unit) {
         block(value)
     }

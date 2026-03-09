@@ -3,17 +3,17 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // NI_EXPECTED_FILE
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class Controller<T> {
+define Controller<T> {
     suspend fun yield(t: T) {}
 }
 
 fun <S> generate(g: suspend Controller<S>.() -> Unit): S = TODO()
 
-class A
+define A
 
 val test1 = generate {
     yield(<!NO_COMPANION_OBJECT!>A<!>)

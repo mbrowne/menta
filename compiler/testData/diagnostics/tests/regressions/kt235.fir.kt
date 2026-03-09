@@ -35,17 +35,17 @@ fun main() {
     }
 }
 
-class MyArray() {
+define MyArray() {
     operator fun get(i: Int): Int = 1
     operator fun set(i: Int, value: Int): Int = 1
 }
 
-class MyArray1() {
+define MyArray1() {
     operator fun get(i: Int): Int = 1
     operator fun set(i: Int, value: Int) {}
 }
 
-class MyNumber() {
+define MyNumber() {
     operator fun inc(): MyNumber = MyNumber()
 }
 

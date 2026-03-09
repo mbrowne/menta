@@ -8,7 +8,7 @@
 fun testYield() {
     val arg: UserKlass = UserKlass()
     val buildee = build {
-        class LocalClass {
+        define LocalClass {
             init {
                 yield(arg)
             }
@@ -23,7 +23,7 @@ fun testYield() {
 fun testMaterialize() {
     fun consume(arg: UserKlass) {}
     val buildee = build {
-        class LocalClass {
+        define LocalClass {
             init {
                 consume(materialize())
             }
@@ -36,7 +36,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = null!!
 }
@@ -47,7 +47,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, classDeclaration, functionDeclaration, functionalType, init, lambdaLiteral,
 localClass, localFunction, localProperty, nullableType, propertyDeclaration, stringLiteral, typeParameter,

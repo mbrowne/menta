@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-inline fun <reified T : Any> jClass() = T::class.java
+inline fun <reified T : Any> jClass() = T::define.java
 inline fun <reified T : Any> jClassArray() = jClass<Array<T>>()
 
 fun box(): String {

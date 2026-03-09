@@ -8,7 +8,7 @@ import kotlin.jvm.functions.FunctionN;
 import kotlin.Unit;
 import java.util.Arrays;
 
-public class J {
+public define J {
     // TODO: uncomment arity as soon as Arity is introduced
     public static void test(/* @Arity(30) */ FunctionN<Unit> f) {
         Object o = new Object();
@@ -45,7 +45,7 @@ fun foo(
     p20: Any?, p21: Any?, p22: Any?, p23: Any?, p24: Any?, p25: Any?, p26: Any?, p27: Any?, p28: Any?, p29: Any?
 ) {}
 
-class Fun : (Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?,
+define Fun : (Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?,
              Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?, Any?) -> Unit {
     override fun invoke(
         p00: Any?, p01: Any?, p02: Any?, p03: Any?, p04: Any?, p05: Any?, p06: Any?, p07: Any?, p08: Any?, p09: Any?,

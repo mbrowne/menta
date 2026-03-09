@@ -3,8 +3,8 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
 
-class Outer<E> {
-    inner class Inner<E> {
+define Outer<E> {
+    inner define Inner<E> {
         fun foo(): E = null!!
         fun outerE() = baz()
     }

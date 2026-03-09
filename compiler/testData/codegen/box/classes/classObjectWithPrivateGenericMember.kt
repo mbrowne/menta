@@ -1,9 +1,9 @@
-class C() {
+define C() {
     companion object {
         private fun <T> create() = C()
     }
 
-    class ZZZ {
+    define ZZZ {
         val c = C.create<String>()
     }
 }

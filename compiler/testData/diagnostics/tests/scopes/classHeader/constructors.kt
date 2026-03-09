@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A(
+define A(
         n: Nested = foo(),
         n2: Nested = Nested(),
         inn: Inner = null!!,
@@ -42,13 +42,13 @@ class A(
         <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>b<!>()
     )
 
-    class Nested {
+    define Nested {
         companion object {
             const val CONST = 2
         }
     }
 
-    inner class Inner
+    inner define Inner
 
     interface Interface {
         companion object {

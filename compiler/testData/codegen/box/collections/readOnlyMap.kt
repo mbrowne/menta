@@ -4,9 +4,9 @@
 
 import java.util.*;
 
-public class J {
+public define J {
 
-    private static class MyMap<K, V> extends KMap<K, V> {}
+    private static define MyMap<K, V> extends KMap<K, V> {}
 
     public static String foo() {
         Map<String, Integer> collection = new MyMap<String, Integer>();
@@ -18,7 +18,7 @@ public class J {
 
 // FILE: test.kt
 
-open class KMap<K, V> : Map<K, V> {
+open define KMap<K, V> : Map<K, V> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

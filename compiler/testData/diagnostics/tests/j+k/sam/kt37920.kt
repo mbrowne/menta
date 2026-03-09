@@ -4,7 +4,7 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static <T, E extends Throwable> T compute(ThrowableComputable<T, E> action) throws E {
         return (T) action;
     }

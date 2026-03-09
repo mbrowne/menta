@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class TestClass {
+define TestClass {
     suspend fun toInt(): Int = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume(14)
         COROUTINE_SUSPENDED

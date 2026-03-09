@@ -4,7 +4,7 @@ package a
 
 interface Super
 interface Trait : Super
-class Sub : Trait
+define Sub : Trait
 
 fun foo(f: (Trait) -> Trait) = f
 

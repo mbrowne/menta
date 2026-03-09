@@ -1,4 +1,4 @@
-class A(val a: String)
+define A(val a: String)
 
 fun A.bar(a: A.() -> String): String {
     return a(this)

@@ -9,7 +9,7 @@ interface A {
     }
 }
 
-class B : A
+define B : A
 
 fun box() {
     (object : A {}).bar()
@@ -18,7 +18,7 @@ fun box() {
 
 // The dispatch methods added to classes directly implementing
 // interfaces with default methods (forwarding to the actual implementation
-// on A$DefaultImpls) have the line number of the class declaration.
+// on A$DefaultImpls) have the line number of the define declaration.
 
 // EXPECTATIONS JVM_IR
 // test.kt:15 box

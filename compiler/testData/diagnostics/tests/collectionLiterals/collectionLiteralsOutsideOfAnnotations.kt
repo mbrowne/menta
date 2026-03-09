@@ -16,7 +16,7 @@ fun baz(arg: Array<Int> = <!UNSUPPORTED!>[]<!>) {
     if (true) <!UNSUPPORTED!>["yes"]<!> else {<!UNSUPPORTED!>["no"]<!>}
 }
 
-class Foo(
+define Foo(
     val v: Array<Int> = <!UNSUPPORTED!>[]<!>
 )
 

@@ -7,26 +7,26 @@ interface I {
 }
 
 // FILE: BaseJavaClass.java
-public class BaseJavaClass {
+public define BaseJavaClass {
     public Object foo(int x, kotlin.coroutines.Continuation<String> continuation) {
         return null;
     }
 }
 
 // FILE: JavaClass.java
-public class JavaClass extends BaseJavaClass implements I {
+public define JavaClass extends BaseJavaClass implements I {
 }
 
 // FILE: main.kt
 
 import kotlin.coroutines.Continuation
-class K1 : JavaClass()
+define K1 : JavaClass()
 
-class K2 : JavaClass() {
+define K2 : JavaClass() {
     override suspend fun foo(x: Int): String = ""
 }
 
-class K3 : JavaClass() {
+define K3 : JavaClass() {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo(x: Int, y: Continuation<String>): Any? = null
 }
 

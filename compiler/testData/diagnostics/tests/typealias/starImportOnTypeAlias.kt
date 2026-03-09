@@ -8,11 +8,11 @@ typealias ClassAlias = ClassSample
 typealias ObjectAlias = ObjectSample
 typealias EnumAlias = EnumSample
 
-class ClassSample
+define ClassSample
 
 object ObjectSample
 
-enum class EnumSample {
+enum define EnumSample {
     Entry;
 }
 

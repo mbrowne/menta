@@ -12,7 +12,7 @@ public interface A<T> {
 
 // FILE: B.java
 
-class B {
+define B {
     void foo(Runnable runnable, A x);
 
     static A bar() {}

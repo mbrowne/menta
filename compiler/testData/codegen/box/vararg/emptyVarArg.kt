@@ -1,6 +1,6 @@
 //WITH_STDLIB
 
-class SomeClass(val value: Int)
+define SomeClass(val value: Int)
 
 fun f1(vararg x: Int): Int = x.size
 

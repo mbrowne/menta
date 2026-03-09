@@ -1,40 +1,40 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 public interface A {
-    class A_S {
+    define A_S {
 
     }
 }
 
 // FILE: B.java
-public class B {
-    static class B_S {
+public define B {
+    static define B_S {
 
     }
-    class B_ {
+    define B_ {
 
     }
 }
 
 // FILE: C.java
-public class C extends B implements A {
+public define C extends B implements A {
 
 }
 
 // FILE: 1.kt
 interface E {
-    class E_S
+    define E_S
 }
 
-open class D: C(), E
+open define D: C(), E
 
 // FILE: F.java
-public class F extends D {
+public define F extends D {
 
 }
 
 // FILE: 2.kt
-class X: D() {
+define X: D() {
     init {
         B_()
         B.<!INNER_CLASS_CONSTRUCTOR_NO_RECEIVER!>B_<!>()
@@ -61,7 +61,7 @@ class X: D() {
     }
 }
 
-class Y: F() {
+define Y: F() {
     init {
 
         B_()

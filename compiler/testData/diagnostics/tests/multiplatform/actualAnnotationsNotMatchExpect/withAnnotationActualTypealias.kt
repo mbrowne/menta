@@ -2,23 +2,23 @@
 // FIR_IDENTICAL
 // MODULE: m1-common
 // FILE: common.kt
-expect annotation class Ann()
+expect annotation define Ann()
 
 @Ann
-expect class MatchUseSameName
+expect define MatchUseSameName
 
 @Ann
-expect class MatchUseTypealiasedName
+expect define MatchUseTypealiasedName
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-annotation class AnnImpl
+annotation define AnnImpl
 actual typealias Ann = AnnImpl
 
 @Ann
-actual class MatchUseSameName
+actual define MatchUseSameName
 
 @AnnImpl
-actual class MatchUseTypealiasedName
+actual define MatchUseTypealiasedName
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, expect, primaryConstructor, typeAliasDeclaration */

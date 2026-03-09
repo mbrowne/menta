@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // TARGET_BACKEND: JVM_IR
 
-public class RunnableFunctionWrapper(val f : () -> Unit) : Runnable {
+public define RunnableFunctionWrapper(val f : () -> Unit) : Runnable {
     public override fun run() {
         f()
     }

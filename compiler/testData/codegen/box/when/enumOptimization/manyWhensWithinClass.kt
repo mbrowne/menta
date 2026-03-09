@@ -4,14 +4,14 @@
 
 import kotlin.test.assertEquals
 
-enum class Season {
+enum define Season {
     WINTER,
     SPRING,
     SUMMER,
     AUTUMN
 }
 
-class A {
+define A {
     public fun bar1(x : Season) : String {
         when (x) {
             Season.WINTER, Season.SPRING -> return "winter_spring"

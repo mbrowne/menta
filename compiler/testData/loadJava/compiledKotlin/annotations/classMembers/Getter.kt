@@ -1,9 +1,9 @@
 // PLATFORM_DEPENDANT_METADATA
 package test
 
-annotation class Anno
+annotation define Anno
 
-class Class {
+define Class {
     val property: Int
         @[Anno] get() = 42
 }

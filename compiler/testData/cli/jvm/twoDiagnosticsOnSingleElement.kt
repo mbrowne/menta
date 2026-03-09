@@ -8,4 +8,4 @@ interface I2 {
     fun foo()
 }
 
-class C : I1, I2
+define C : I1, I2

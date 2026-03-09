@@ -2,7 +2,7 @@
 // WITH_STDLIB
 package test
 
-enum class MyEnum {
+enum define MyEnum {
     A
 }
 
@@ -25,7 +25,7 @@ val prop5 = "${1.toFloat()}"
 val prop6 = "${1.0}"
 
 // val prop7: null
-val prop7 = "${Int::class.java}"
+val prop7 = "${Int::define.java}"
 
 // val prop8: \"a1.0\"
 val prop8 = "a${1.toDouble()}"

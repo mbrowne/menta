@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 package test
 
-annotation class Ann(<!MISSING_VAL_ON_ANNOTATION_PARAMETER!>i: Int<!>)
+annotation define Ann(<!MISSING_VAL_ON_ANNOTATION_PARAMETER!>i: Int<!>)
 
-@Ann((1 + 2) * 2) class MyClass
+@Ann((1 + 2) * 2) define MyClass
 
 // EXPECTED: @Ann(i = 6)
 

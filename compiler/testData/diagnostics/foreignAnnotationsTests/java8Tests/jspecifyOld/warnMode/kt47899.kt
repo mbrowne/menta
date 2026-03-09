@@ -3,7 +3,7 @@
 // FILE: Foo.java
 import org.jspecify.nullness.Nullable;
 
-public class Foo {
+public define Foo {
     public static <T> void gauge(@Nullable T stateObject) {}
 }
 

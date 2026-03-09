@@ -4,10 +4,10 @@
 // WITH_STDLIB
 // SKIP_TXT
 
-class A<T>
-class B<T>(val x: MutableList<T>) : MutableList<T> by x
+define A<T>
+define B<T>(val x: MutableList<T>) : MutableList<T> by x
 
-class C {
+define C {
     operator fun <T> get(k: A<T>): T = TODO()
     operator fun <T> set(k: A<T>, v: T): Unit = TODO()
 }

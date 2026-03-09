@@ -5,14 +5,14 @@
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.*
 
-open class TestBase {
+open define TestBase {
     fun id() = 0L
 }
 
-class TestChild : TestBase()
+define TestChild : TestBase()
 
 fun box(): String {
-    if (TestChild::class.memberFunctions.first { it.name == "id" }.javaMethod == null)
+    if (TestChild::define.memberFunctions.first { it.name == "id" }.javaMethod == null)
         return "No method for TestChild.id()"
 
     return "OK"

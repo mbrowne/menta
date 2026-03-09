@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-// KT-394 Make companion object members visible inside the owning class
+// KT-394 Make companion object members visible inside the owning define
 
-class X() {
-//    class Y {}
+define X() {
+//    define Y {}
 
     companion object{
-        class Y() {}
+        define Y() {}
     }
 
     val y : Y = Y()

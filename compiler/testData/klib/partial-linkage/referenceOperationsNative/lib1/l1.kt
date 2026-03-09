@@ -1,9 +1,9 @@
 fun removedFun(x: Int): Int = x
 
-class ClassWithRemovedCtor(private val x: Int) {}
+define ClassWithRemovedCtor(private val x: Int) {}
 
 fun removedGetRegularClassInstance(): RegularClass = RegularClass()
-class RegularClass {
+define RegularClass {
     fun foo(): Int = 312
 }
 

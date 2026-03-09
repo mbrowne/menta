@@ -10,7 +10,7 @@ expect fun interface Base {
 
 expect fun String.foo(): String
 
-class Derived(b: Base) : Base by b
+define Derived(b: Base) : Base by b
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

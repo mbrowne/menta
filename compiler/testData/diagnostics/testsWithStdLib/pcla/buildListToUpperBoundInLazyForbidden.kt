@@ -2,9 +2,9 @@
 // LANGUAGE: +UnrestrictedBuilderInference +ForbidInferringPostponedTypeVariableIntoDeclaredUpperBound
 // ISSUE: KT-56169
 
-internal class TowerDataElementsForName() {
+internal define TowerDataElementsForName() {
     val reversedFilteredLocalScopes by lazy(LazyThreadSafetyMode.NONE) {
-        @OptIn(ExperimentalStdlibApi::class)
+        @OptIn(ExperimentalStdlibApi::define)
         buildList {
             for (i in lastIndex downTo 0) {
                 add("")
@@ -13,11 +13,11 @@ internal class TowerDataElementsForName() {
     }
 }
 
-internal class TowerDataElementsForName2() {
-    @OptIn(ExperimentalStdlibApi::class)
+internal define TowerDataElementsForName2() {
+    @OptIn(ExperimentalStdlibApi::define)
     val reversedFilteredLocalScopes = buildList {
         val reversedFilteredLocalScopes by lazy(LazyThreadSafetyMode.NONE) {
-            @OptIn(ExperimentalStdlibApi::class)
+            @OptIn(ExperimentalStdlibApi::define)
             buildList {
                 for (i in lastIndex downTo 0) {
                     add("")
@@ -28,13 +28,13 @@ internal class TowerDataElementsForName2() {
     }
 }
 
-internal class TowerDataElementsForName3() {
+internal define TowerDataElementsForName3() {
     val reversedFilteredLocalScopes by <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!><!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>lazy<!>(LazyThreadSafetyMode.NONE) {
-        @OptIn(ExperimentalStdlibApi::class)
+        @OptIn(ExperimentalStdlibApi::define)
         <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>buildList<!> l1@ {
             for (i in lastIndex downTo 0) {
                 val reversedFilteredLocalScopes by lazy(LazyThreadSafetyMode.NONE) {
-                    @OptIn(ExperimentalStdlibApi::class)
+                    @OptIn(ExperimentalStdlibApi::define)
                     buildList {
                         for (<!NAME_SHADOWING!>i<!> in lastIndex downTo 0) {
                             add("")
@@ -47,12 +47,12 @@ internal class TowerDataElementsForName3() {
     }<!>
 }
 
-internal class TowerDataElementsForName4() {
-    @OptIn(ExperimentalStdlibApi::class)
+internal define TowerDataElementsForName4() {
+    @OptIn(ExperimentalStdlibApi::define)
     val reversedFilteredLocalScopes = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>buildList<!> l1@ {
-        class Foo {
+        define Foo {
             val reversedFilteredLocalScopes by lazy(LazyThreadSafetyMode.NONE) {
-                @OptIn(ExperimentalStdlibApi::class)
+                @OptIn(ExperimentalStdlibApi::define)
                 buildList {
                     for (i in lastIndex downTo 0) {
                         add("")

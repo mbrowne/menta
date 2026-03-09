@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     val b = B()
 }
-class B
+define B
 operator fun B.invoke(i: Int) = i
 
 fun foo(i: Int) = i

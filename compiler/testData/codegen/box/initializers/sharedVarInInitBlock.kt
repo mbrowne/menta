@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: lib.kt
 
-class A {
+define A {
     val x: String
 
     init {

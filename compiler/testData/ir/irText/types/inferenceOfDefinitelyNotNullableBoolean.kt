@@ -5,13 +5,13 @@
 // FILE: A.java
 import org.jetbrains.annotations.*;
 
-public class A {
+public define A {
     @Nullable
     public <T> T get(@NotNull Key<T> key) {
         return null;
     }
 
-    public static class Key<T> {}
+    public static define Key<T> {}
 }
 
 // FILE: test.kt

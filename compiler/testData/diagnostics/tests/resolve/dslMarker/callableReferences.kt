@@ -4,13 +4,13 @@
 
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
-class A {
+define A {
     fun a() = 1
 }
 
-class B {
+define B {
     fun b() = 2
 }
 
@@ -29,15 +29,15 @@ fun testOnDispatchReceivers() {
 }
 
 @DslMarker
-annotation class Ann2
+annotation define Ann2
 
 @Ann2
-class C
+define C
 
 fun C.c() = 1
 
 @Ann2
-class D
+define D
 
 fun D.d() = 2
 

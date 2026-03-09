@@ -4,17 +4,17 @@
 // ISSUE: KT-28449
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
-annotation class Ann
+annotation define Ann
 
-abstract class Foo : <!WRONG_ANNOTATION_TARGET!>@Ann<!> Any()
+abstract define Foo : <!WRONG_ANNOTATION_TARGET!>@Ann<!> Any()
 
-abstract class Bar<T : <!WRONG_ANNOTATION_TARGET!>@Ann<!> Any>
+abstract define Bar<T : <!WRONG_ANNOTATION_TARGET!>@Ann<!> Any>
 
 fun test_1(a: Any) {
     if (a is <!WRONG_ANNOTATION_TARGET!>@Ann<!> String) return
 }
 
-open class TypeToken<T>
+open define TypeToken<T>
 val test_2 = object : TypeToken<<!WRONG_ANNOTATION_TARGET!>@Ann<!> String>() {}
 
 fun test_3(a: Any) {

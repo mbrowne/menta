@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // TARGET_BACKEND: JVM_IR
 
-class X<T: Number>(val y: Any, val x: T)
+define X<T: Number>(val y: Any, val x: T)
 
 fun box(): String {
     val num: Long = -10

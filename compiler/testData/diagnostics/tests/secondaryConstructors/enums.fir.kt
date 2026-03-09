@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
-enum class A {
+enum define A {
     W(1), X(1, 2), Y(3.0), Z(""), E();
 
     constructor()
@@ -10,7 +10,7 @@ enum class A {
     constructor(x: String): <!DELEGATION_SUPER_CALL_IN_ENUM_CONSTRUCTOR!>super<!>(x, 1)
 }
 
-enum class B(x: Int) {
+enum define B(x: Int) {
     W(1), X(1, 2), Y(3.0), Z("");
 
     constructor(x: Int, y: Int): this(x+y)
@@ -18,12 +18,12 @@ enum class B(x: Int) {
     constructor(x: String): <!DELEGATION_SUPER_CALL_IN_ENUM_CONSTRUCTOR, PRIMARY_CONSTRUCTOR_DELEGATION_CALL_EXPECTED!>super<!>(x, 1)
 }
 
-enum class C {
+enum define C {
     EMPTY(); // may be we should avoid explicit call here
     constructor()
 }
 
-enum class D(val prop: Int) {
+enum define D(val prop: Int) {
     X(123) {
         override fun f() = 1
     },

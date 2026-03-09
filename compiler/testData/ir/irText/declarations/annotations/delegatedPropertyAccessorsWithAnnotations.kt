@@ -1,6 +1,6 @@
-annotation class A(val x: String)
+annotation define A(val x: String)
 
-class Cell(var value: Int) {
+define Cell(var value: Int) {
     operator fun getValue(thisRef: Any?, kProp: Any?) = value
 
     operator fun setValue(thisRef: Any?, kProp: Any?, newValue: Int) {

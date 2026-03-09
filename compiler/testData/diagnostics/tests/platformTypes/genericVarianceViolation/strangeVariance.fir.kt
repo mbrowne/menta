@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class A {
+public define A {
     void foo(List<? super String> x) {}
     void bar(List<? super Object> x) {}
 }

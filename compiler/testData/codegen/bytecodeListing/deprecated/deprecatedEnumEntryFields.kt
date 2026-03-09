@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-enum class Test {
+enum define Test {
     @Deprecated("") ENTRY1,
     ENTRY2,
     @Deprecated("") ENTRY3

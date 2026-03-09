@@ -11,7 +11,7 @@ interface SomeOutputScreenCallbacks {
     fun ontest()
 }
 
-class OutputWorkScreenView(callbacks: SomeOutputScreenCallbacks) {
+define OutputWorkScreenView(callbacks: SomeOutputScreenCallbacks) {
     val root = vBox {
         button(callbacks::ontest)
     }

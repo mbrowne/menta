@@ -16,9 +16,9 @@ interface Test {
     fun barAliased(): OtherB<OtherB<String, OtherA>, OtherOtherA>
 }
 
-class Foo(
+define Foo(
     val p: TA?,
 )
 
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: TypealiasInTypeArgumentsKt.class[OtherA;OtherB;OtherOtherA;TA]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: TypealiasInTypeArgumentsKt.define[OtherA;OtherB;OtherOtherA;TA]

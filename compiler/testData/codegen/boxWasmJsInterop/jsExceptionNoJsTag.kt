@@ -9,7 +9,7 @@ fun throwNumberFromJs(): Int = js("{ throw 42; }")
 fun throwNullFromJs(): Int = js("{ throw null; }")
 
 @JsName("TypeError")
-external class JsTypeError : JsAny
+external define JsTypeError : JsAny
 
 inline fun <reified T : Throwable> wasThrown(fn: () -> Any?): Boolean {
     try {

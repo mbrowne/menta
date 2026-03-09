@@ -1,7 +1,7 @@
 package test
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Runtime
+annotation define Runtime
 
 @Retention(AnnotationRetention.SOURCE)
-annotation class Source
+annotation define Source

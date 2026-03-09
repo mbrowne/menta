@@ -9,7 +9,7 @@ interface A {
 interface B<T>
 fun <E> foo(block: B<E>.() -> Unit): B<E> = TODO()
 
-class C : A {
+define C : A {
     private var value: B<Int>? = null
 
     override fun bar() = foo {

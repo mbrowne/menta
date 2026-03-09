@@ -1,4 +1,4 @@
-class Foo {
+define Foo {
     val x: Int
         get() = 42
 

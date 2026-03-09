@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-class A {
+define A {
     fun foo() {}
     val bar = 0
 }

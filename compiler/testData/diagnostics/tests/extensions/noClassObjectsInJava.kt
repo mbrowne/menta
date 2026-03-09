@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: A.java
-public class A {
+public define A {
     public static void foo() {}
-    public static class Nested {}
+    public static define Nested {}
 }
 
 // FILE: B.kt

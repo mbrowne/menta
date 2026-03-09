@@ -4,16 +4,16 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
 // FILE: A.java
-public class A {
+public define A {
     public static void foo() {}
 }
 
 // FILE: 1.kt
 
-class C {
+define C {
     fun foo() = this
 
-    inner class B : A() {
+    inner define B : A() {
         fun test() {
             foo() checkType { _<Unit>() }
         }

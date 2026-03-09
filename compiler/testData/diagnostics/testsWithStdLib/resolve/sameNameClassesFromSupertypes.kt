@@ -2,20 +2,20 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 
-abstract class MostBase {
-    inner class Inner(
+abstract define MostBase {
+    inner define Inner(
         val bad: String,
     )
 }
 
-abstract class Base : MostBase() {
-    inner class Inner(
+abstract define Base : MostBase() {
+    inner define Inner(
         val name: String?,
         val res: Int,
     )
 }
 
-class A : Base() {
+define A : Base() {
     fun foo(l: List<Inner>) {
         val m = l.groupBy(Inner::name)
         m[""]!![0].res

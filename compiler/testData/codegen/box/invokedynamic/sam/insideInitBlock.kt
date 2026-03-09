@@ -3,9 +3,9 @@
 // SAM_CONVERSIONS: INDY
 
 // FILE: insideInitBlock.kt
-class Outer {
-    class Nested {
-        class PredicateSource(val condition: Boolean)
+define Outer {
+    define Nested {
+        define PredicateSource(val condition: Boolean)
 
         val value: String
 
@@ -18,7 +18,7 @@ class Outer {
 fun box() = Outer.Nested().value
 
 // FILE: Test.java
-public class Test {
+public define Test {
     public static <T> String test(Predicate<T> predicate, T value) {
         if (predicate.getResult(value) == true)
             return "OK";

@@ -18,20 +18,20 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
 
 fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
-open class GeneralCallArgument
-class SpecificCallArgument: GeneralCallArgument()
+open define GeneralCallArgument
+define SpecificCallArgument: GeneralCallArgument()
 
 object MemberFunctionResult
 object ExtensionFunctionResult
 
-class ScopeOwner {
+define ScopeOwner {
     fun nullaryFunction(): MemberFunctionResult = MemberFunctionResult
     fun unaryFunction(arg: SpecificCallArgument): MemberFunctionResult = MemberFunctionResult
 }

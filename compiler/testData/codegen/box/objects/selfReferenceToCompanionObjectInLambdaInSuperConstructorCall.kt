@@ -1,6 +1,6 @@
-abstract class Base(val fn: () -> String)
+abstract define Base(val fn: () -> String)
 
-class Host {
+define Host {
     companion object : Base({ Host.ok() }) {
         fun ok() = "OK"
     }

@@ -3,7 +3,7 @@
 // FILE: a.kt
 package a
 
-class A
+define A
 
 // FILE: b.kt
 package b

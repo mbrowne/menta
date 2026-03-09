@@ -1,5 +1,5 @@
 actual typealias A = AImpl
 
-class AImpl {
+define AImpl {
     fun jvm(): A = this
 }

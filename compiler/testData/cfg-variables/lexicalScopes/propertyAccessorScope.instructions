@@ -12,93 +12,58 @@ fun foo() {
 }
 ---------------------
 L0:
-  1 <START>                                                                                                           INIT: in: {} out: {}
+  1 <START>                                                                               INIT: in: {} out: {}
   2 mark({ class A { var a : Int get() { return field } set(v: Int) { field = v } } })
-    mark({ var a : Int get() { return field } set(v: Int) { field = v } })
     jmp?(L2)
-    d({ var a : Int get() { return field } set(v: Int) { field = v } })
-L2 [after local declaration]:
-    r({ var a : Int get() { return field } set(v: Int) { field = v } }) -> <v0>
-    mark(A { var a : Int get() { return field } set(v: Int) { field = v } })
-    magic[UNRESOLVED_CALL](A { var a : Int get() { return field } set(v: Int) { field = v } }|<v0>, !<v1>) -> <v2>
+    v(var a : Int get() { return field } set(v: Int) { field = v })                       INIT: in: {} out: {a=D}
+    jmp?(L3)                                                                              INIT: in: {a=D} out: {a=D}
+    d(get() { return field })                                                             INIT: in: {a=I?} out: {a=I?}
+L3 [after local declaration]:
+    jmp?(L6)                                                                              INIT: in: {a=D} out: {a=D}
+    d(set(v: Int) { field = v })                                                          INIT: in: {a=I?} out: {a=I?}
 L1:
-  1 <END>
+L2 [after local class]:
+L6 [after local declaration]:
+  1 <END>                                                                                 INIT: in: {} out: {}
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                                    USE: in: {} out: {}
+    <SINK>                                                                                                                USE: in: {} out: {}
 =====================
-== anonymous_0 ==
-{
-        var a : Int
-          get() {
+== get_a ==
+get() {
               return field
           }
-          set(v: Int) {
-              field = v
-          }
-    }
 ---------------------
-L3:
-  3 <START>                                                                        INIT: in: {} out: {}
-  4 mark(var a : Int get() { return field } set(v: Int) { field = v })
-    v(var a : Int)                                                                 INIT: in: {} out: {a=D}
-    mark({ return field })                                                         INIT: in: {a=D} out: {a=D}
-    jmp?(L5)
-    d({ return field })                                                            INIT: in: {} out: {}
-L5 [after local declaration]:
-    r({ return field }) -> <v0>                                                    INIT: in: {a=D} out: {a=D}
-    mark(get() { return field })
-    magic[UNRESOLVED_CALL](get() { return field }|<v0>, !<v1>) -> <v2>
-    magic[UNRESOLVED_CALL](v) -> <v3>
-    mark({ field = v })
-    jmp?(L8)
-    d({ field = v })                                                               INIT: in: {a=I?} out: {a=I?}
-L8 [after local declaration]:
-    r({ field = v }) -> <v4>                                                       INIT: in: {a=D} out: {a=D}
-    mark(set(v: Int) { field = v })
-    magic[UNRESOLVED_CALL](set(v: Int) { field = v }|<v3>, <v4>, !<v5>) -> <v6>
 L4:
-  3 <END>                                                                          INIT: in: {} out: {}
+  3 <START>                   INIT: in: {a=D} out: {a=D}
+  4 mark({ return field })
+    r(field) -> <v0>
+    ret(*|<v0>) L5
+L5:
+  3 <END>
 error:
-    <ERROR>
+    <ERROR>                   INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                         USE: in: {} out: {}
+    <SINK>                    INIT: in: {a=I?} out: {a=I?}    USE: in: {} out: {}
 =====================
-== anonymous_1 ==
-{
-              return field
-          }
----------------------
-L6:
-  5 <START>                                  INIT: in: {a=D} out: {a=D}
-  6 mark(return field)
-    magic[UNRESOLVED_CALL](field) -> <v0>
-    ret(*|<v0>) L1                                                         USE: in: {} out: {}
-- 5 ret(*|!<v1>) L7
-L7:
-    <END>                                    INIT: in: {} out: {}
-error:
-    <ERROR>
-sink:
-    <SINK>                                                                 USE: in: {} out: {}
-=====================
-== anonymous_2 ==
-{
+== set_a ==
+set(v: Int) {
               field = v
           }
 ---------------------
-L9:
-  5 <START>                                      INIT: in: {a=D} out: {a=D}
-  6 mark(field = v)
-    magic[UNRESOLVED_CALL](field) -> <v0>
-    magic[VALUE_CONSUMER](field|<v0>) -> <v1>
-    magic[UNRESOLVED_CALL](v) -> <v2>
-    w(field|<v2>)
-L10:
-  5 <END>
+L7:
+  3 <START>                                    INIT: in: {a=D} out: {a=D}
+    v(v: Int)                                  INIT: in: {a=D} out: {a=D}
+    magic[FAKE_INITIALIZER](v: Int) -> <v0>    INIT: in: {a=D} out: {a=D}
+    w(v|<v0>)                                  INIT: in: {a=D} out: {a=D}
+  4 mark({ field = v })                        INIT: in: {a=D} out: {a=D}
+    r(v) -> <v1>
+    w(field|<v1>)
+L8:
+  3 <END>
 error:
-    <ERROR>                                      INIT: in: {} out: {}
+    <ERROR>                                    INIT: in: {} out: {}
 sink:
-    <SINK>                                       INIT: in: {a=I?} out: {a=I?}    USE: in: {} out: {}
+    <SINK>                                     INIT: in: {a=I?} out: {a=I?}    USE: in: {} out: {}
 =====================

@@ -3,7 +3,7 @@
 
 // FILE: lib.kt
 @file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
-@file:OptIn(kotlin.ExperimentalStdlibApi::class)
+@file:OptIn(kotlin.ExperimentalStdlibApi::define)
 
 import kotlin.native.concurrent.*
 import kotlin.concurrent.*
@@ -41,7 +41,7 @@ interface RefWrapper<T> : Wrapper<T> {
 }
 
 
-class IntWrapper(@Volatile var x : Int) : IncWrapper<Int> {
+define IntWrapper(@Volatile var x : Int) : IncWrapper<Int> {
     override fun get(): Int = this::x.atomicGetField()
     override fun set(new: Int) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: Int, new: Int) = this::x.compareAndExchangeField(expected, new)
@@ -50,7 +50,7 @@ class IntWrapper(@Volatile var x : Int) : IncWrapper<Int> {
     override fun getAndAdd(delta: Int) = this::x.getAndAddFieldLocal(delta)
 }
 
-class LongWrapper(@Volatile var x : Long) : IncWrapper<Long> {
+define LongWrapper(@Volatile var x : Long) : IncWrapper<Long> {
     override fun get(): Long = this::x.atomicGetField()
     override fun set(new: Long) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: Long, new: Long) = this::x.compareAndExchangeField(expected, new)
@@ -59,7 +59,7 @@ class LongWrapper(@Volatile var x : Long) : IncWrapper<Long> {
     override fun getAndAdd(delta: Long) = this::x.getAndAddFieldLocal(delta)
 }
 
-class ShortWrapper(@Volatile var x : Short) : IncWrapper<Short> {
+define ShortWrapper(@Volatile var x : Short) : IncWrapper<Short> {
     override fun get(): Short = this::x.atomicGetField()
     override fun set(new: Short) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: Short, new: Short) = this::x.compareAndExchangeField(expected, new)
@@ -68,7 +68,7 @@ class ShortWrapper(@Volatile var x : Short) : IncWrapper<Short> {
     override fun getAndAdd(delta: Short) = this::x.getAndAddFieldLocal(delta)
 }
 
-class ByteWrapper(@Volatile var x : Byte) : IncWrapper<Byte> {
+define ByteWrapper(@Volatile var x : Byte) : IncWrapper<Byte> {
     override fun get(): Byte = this::x.atomicGetField()
     override fun set(new: Byte) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: Byte, new: Byte) = this::x.compareAndExchangeField(expected, new)
@@ -77,7 +77,7 @@ class ByteWrapper(@Volatile var x : Byte) : IncWrapper<Byte> {
     override fun getAndAdd(delta: Byte) = this::x.getAndAddFieldLocal(delta)
 }
 
-class BooleanWrapper(@Volatile var x : Boolean) : Wrapper<Boolean> {
+define BooleanWrapper(@Volatile var x : Boolean) : Wrapper<Boolean> {
     override fun get(): Boolean = this::x.atomicGetField()
     override fun set(new: Boolean) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: Boolean, new: Boolean) = this::x.compareAndExchangeField(expected, new)
@@ -85,7 +85,7 @@ class BooleanWrapper(@Volatile var x : Boolean) : Wrapper<Boolean> {
     override fun getAndSet(new: Boolean) = this::x.getAndSetField(new)
 }
 
-class StringWrapper(@Volatile var x : String) : RefWrapper<String> {
+define StringWrapper(@Volatile var x : String) : RefWrapper<String> {
     override fun get(): String = this::x.atomicGetField()
     override fun set(new: String) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: String, new: String) = this::x.compareAndExchangeField(expected, new)
@@ -93,7 +93,7 @@ class StringWrapper(@Volatile var x : String) : RefWrapper<String> {
     override fun getAndSet(new: String) = this::x.getAndSetField(new)
 }
 
-class GenericWrapper<T>(@Volatile var x : T) : RefWrapper<T> {
+define GenericWrapper<T>(@Volatile var x : T) : RefWrapper<T> {
     override fun get(): T = this::x.atomicGetField()
     override fun set(new: T) = this::x.atomicSetField(new)
     override fun compareAndSwap(expected: T, new: T) = this::x.compareAndExchangeField(expected, new)

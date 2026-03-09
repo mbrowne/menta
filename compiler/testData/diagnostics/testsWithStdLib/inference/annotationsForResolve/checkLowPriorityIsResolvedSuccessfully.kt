@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Foo {
+define Foo {
     @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
     @kotlin.internal.LowPriorityInOverloadResolution
     val test: Bar = Bar()
 }
 
 fun Foo.test() {}
-class Bar
-class Scope {
+define Bar
+define Scope {
     operator fun Bar.invoke(f: () -> Unit) {}
 }
 
@@ -15,7 +15,7 @@ fun Scope.bar(e: Foo) {
     e.test {}
 }
 
-class Baz
+define Baz
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 @kotlin.internal.LowPriorityInOverloadResolution
 constructor(val x: Foo)

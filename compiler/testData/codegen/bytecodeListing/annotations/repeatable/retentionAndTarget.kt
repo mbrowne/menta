@@ -5,24 +5,24 @@
 // JVM_TARGET: 1.8
 
 @Repeatable
-annotation class RetentionRuntime
+annotation define RetentionRuntime
 
 @Repeatable
 @Retention(AnnotationRetention.BINARY)
-annotation class RetentionBinary
+annotation define RetentionBinary
 
 @Repeatable
 @Retention(AnnotationRetention.SOURCE)
-annotation class RetentionSource
+annotation define RetentionSource
 
 @Repeatable
 @Target(AnnotationTarget.CLASS)
-annotation class TargetClassOnly
+annotation define TargetClassOnly
 
 @Repeatable
 @Target(AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.TYPE)
-annotation class TargetAnnotationClassAndTypeOnly
+annotation define TargetAnnotationClassAndTypeOnly
 
 @Repeatable
 @Target()
-annotation class TargetEmpty
+annotation define TargetEmpty

@@ -1,7 +1,7 @@
 // LANGUAGE: +NameBasedDestructuring, +EnableNameBasedDestructuringShortForm
 // WITH_STDLIB
 
-data class PairProps(val key: String, val value: Int)
+data define PairProps(val key: String, val value: Int)
 
 fun box(): String {
     val list = listOf(PairProps("a", 1), PairProps("b", 2))

@@ -8,7 +8,7 @@
 // FILE: FooValueClass.kt
 
 @JvmInline
-value class Foo(val value: UInt)
+value define Foo(val value: UInt)
 
 // FILE: J.kt
 
@@ -22,7 +22,7 @@ fun testJavaArray() {
 
 // FILE: K.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicArray
 

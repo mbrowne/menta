@@ -8,12 +8,12 @@ package api
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI1
+annotation define ExperimentalAPI1
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI2
+annotation define ExperimentalAPI2
 
 @ExperimentalAPI1
 fun compilation() {}
@@ -23,7 +23,7 @@ fun runtime() {}
 
 // FILE: usage.kt
 
-@file:OptIn(ExperimentalAPI1::class)
+@file:OptIn(ExperimentalAPI1::define)
 package usage
 
 import api.*
@@ -33,7 +33,7 @@ fun use() {
     <!OPT_IN_USAGE!>runtime<!>()
 }
 
-class Use {
+define Use {
     fun use() {
         compilation()
         <!OPT_IN_USAGE!>runtime<!>()

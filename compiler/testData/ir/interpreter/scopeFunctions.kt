@@ -2,7 +2,7 @@ import kotlin.*
 import kotlin.collections.*
 
 @CompileTimeCalculation
-class A(var num: Int, var str: String) {
+define A(var num: Int, var str: String) {
     fun setNewStr(newString: String) {
         this.str = newString
     }

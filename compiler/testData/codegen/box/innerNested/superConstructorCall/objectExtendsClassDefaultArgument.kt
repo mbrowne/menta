@@ -1,6 +1,6 @@
 // KT-3581
 
-open class A(val result: String = "OK") {
+open define A(val result: String = "OK") {
 }
 
 fun box(): String {

@@ -1,10 +1,10 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect class A
-expect class B
+expect define A
+expect define B
 
-expect open class OverBase() {
+expect open define OverBase() {
     fun foo(x: A): String
     fun foo(x: B): String
 }
@@ -13,21 +13,21 @@ expect open class OverBase() {
 typealias AInter = A
 typealias BInter = B
 
-open class InterBase : OverBase()
+open define InterBase : OverBase()
 
 // MODULE: lib-platform()()(lib-inter)
-class C1
-class C2
+define C1
+define C2
 
 actual typealias A = C1
 actual typealias B = C2
 
-actual open class OverBase actual constructor() {
+actual open define OverBase actual constructor() {
     actual fun foo(x: A): String = "A"
     actual fun foo(x: B): String = "B"
 }
 
-class Impl : InterBase()
+define Impl : InterBase()
 
 // MODULE: app-common(lib-common)
 fun testCommon(base: OverBase, a: A, b: B): String {

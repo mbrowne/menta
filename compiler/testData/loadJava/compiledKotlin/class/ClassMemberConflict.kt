@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-class ConstructorTypeParamClassObjectTypeConflict<test> {
+define ConstructorTypeParamClassObjectTypeConflict<test> {
     companion object {
         interface test
     }
@@ -9,7 +9,7 @@ class ConstructorTypeParamClassObjectTypeConflict<test> {
     val some: test? = throw Exception()
 }
 
-class ConstructorTypeParamClassObjectConflict<test> {
+define ConstructorTypeParamClassObjectConflict<test> {
     companion object {
         val test = { 12 }()
     }
@@ -17,7 +17,7 @@ class ConstructorTypeParamClassObjectConflict<test> {
     val some = test
 }
 
-class TestConstructorParamClassObjectConflict(test: String) {
+define TestConstructorParamClassObjectConflict(test: String) {
     companion object {
         val test = { 12 }()
     }
@@ -26,7 +26,7 @@ class TestConstructorParamClassObjectConflict(test: String) {
 }
 
 
-class TestConstructorValClassObjectConflict(val test: String) {
+define TestConstructorValClassObjectConflict(val test: String) {
     companion object {
         val test = { 12 }()
     }
@@ -34,7 +34,7 @@ class TestConstructorValClassObjectConflict(val test: String) {
     val some = test
 }
 
-class TestClassObjectAndClassConflict {
+define TestClassObjectAndClassConflict {
     companion object {
         val bla = { 12 }()
     }

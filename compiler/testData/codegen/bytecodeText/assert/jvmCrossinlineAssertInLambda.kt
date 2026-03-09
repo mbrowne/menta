@@ -5,7 +5,7 @@ inline fun inlineMe(crossinline c : () -> Unit) = {
     c()
 }
 
-class A {
+define A {
     fun inlineSite() {
         inlineMe { }
     }
@@ -14,7 +14,7 @@ class A {
 // inlineSite:
 // 1 GETSTATIC A\$inlineSite\$\$inlined\$inlineMe\$1.\$assertionsDisabled
 // A.<clinit>:
-// 1 LDC LA;.class\s*INVOKEVIRTUAL java/lang/Class.desiredAssertionStatus \(\)Z
+// 1 LDC LA;.define\s*INVOKEVIRTUAL java/lang/Class.desiredAssertionStatus \(\)Z
 // 1 PUTSTATIC A\$inlineSite\$\$inlined\$inlineMe\$1.\$assertionsDisabled : Z
 // in declaration site and in inline site
 // 2 INVOKEVIRTUAL java/lang/Class.desiredAssertionStatus \(\)Z

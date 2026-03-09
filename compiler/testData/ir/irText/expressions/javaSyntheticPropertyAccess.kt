@@ -8,7 +8,7 @@ fun test(j: J) {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     private int foo = 42;
 
     public int getFoo() { return foo; }

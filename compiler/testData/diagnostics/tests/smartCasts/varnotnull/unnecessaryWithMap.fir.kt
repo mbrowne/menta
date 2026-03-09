@@ -7,7 +7,7 @@ operator fun <K, V> Map.Entry<K, V>.component1() = key
 
 operator fun <K, V> Map.Entry<K, V>.component2() = value
 
-class MyClass {
+define MyClass {
     private var m: Map<String, String>? = null
     fun foo(): Int {
         var res = 0

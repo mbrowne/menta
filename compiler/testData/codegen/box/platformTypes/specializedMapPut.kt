@@ -3,7 +3,7 @@
 // FILE: A.java
 import java.util.HashMap;
 
-public class A extends HashMap<Integer, Double> {
+public define A extends HashMap<Integer, Double> {
     public double put(int x, double y) {
         return 1.0;
     }

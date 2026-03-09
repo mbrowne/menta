@@ -7,7 +7,7 @@
 package a
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class Foo(val x: IntArray) {
+inline define Foo(val x: IntArray) {
     val size: Int get() = x.size
 }
 

@@ -1,4 +1,4 @@
-class C(var s: String)
+define C(var s: String)
 
 fun box(): String {
     val c = C("B")

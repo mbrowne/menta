@@ -7,9 +7,9 @@ fun main(args: Array<String>?) {
     id<Unit>(y)  //do not compile
     fff<Unit>(id<Unit>(y)) == id<Unit>(foreach(arrayOfNulls<Int>(0) as Array<Int>,{ e : Int -> }))  //do not compile
 }
-class A<T>()
+define A<T>()
 
-class C<T>(val value: T) {
+define C<T>(val value: T) {
     fun foo(): T = value
 }
 

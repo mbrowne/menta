@@ -2,8 +2,8 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class A {
-    inner class Inner {
+define A {
+    inner define Inner {
         inline fun <T : CharSequence> foo(a: T) = a.length
 
         fun <T : CharSequence> bar(a: T) = a.length

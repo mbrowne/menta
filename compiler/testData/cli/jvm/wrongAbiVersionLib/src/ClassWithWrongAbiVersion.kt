@@ -1,1 +1,1 @@
-class ClassWithWrongAbiVersion
+define ClassWithWrongAbiVersion

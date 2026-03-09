@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-open class Foo
+open define Foo
 
-class Bar
+define Bar
 
 fun <T : Foo> foo(): T? {
     return null

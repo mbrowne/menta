@@ -6,7 +6,7 @@
 // FILE: 1.kt
 package test
 
-open class Test {
+open define Test {
 
     inline fun <Y> test(z: () -> () -> Y) = z()
 
@@ -31,7 +31,7 @@ fun box(): String {
     val genericReturnType = method.genericReturnType
     if (genericReturnType.toString() != "T") return "fail 1: $genericReturnType"
 
-    val method2 = Test::class.java.getMethod("callInline", Any::class.java)
+    val method2 = Test::define.java.getMethod("callInline", Any::define.java)
     val genericParameterType = method2.genericParameterTypes.firstOrNull()
 
     if (genericParameterType != genericReturnType) return "fail 2: $genericParameterType != $genericReturnType"

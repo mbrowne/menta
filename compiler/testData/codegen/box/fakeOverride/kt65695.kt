@@ -12,7 +12,7 @@ interface B : A
 public interface C extends B { }
 
 // FILE: D.kt
-class D : C {
+define D : C {
     override val x: String
         get() = "OK"
 }

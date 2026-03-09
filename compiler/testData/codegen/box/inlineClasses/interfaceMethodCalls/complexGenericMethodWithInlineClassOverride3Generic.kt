@@ -3,17 +3,17 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val s: T)
+value define A<T: String>(val s: T)
 
 interface B<T> {
     fun f(x: T): T
 }
 
-open class C {
+open define C {
     open fun f(x: A<String>): A<String> = A("OK")
 }
 
-class D : C(), B<A<String>>
+define D : C(), B<A<String>>
 
 fun box(): String {
     return (D() as B<A<String>>).f(A("Fail")).s

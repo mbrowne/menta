@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int) {
+value define Z(val x: Int) {
     constructor(vararg ys: Long) : this(ys.size)
 }
 

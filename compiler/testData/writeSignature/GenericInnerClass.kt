@@ -1,16 +1,16 @@
-class Outer<E, F : Number> {
-    inner class Inner<G, H>
+define Outer<E, F : Number> {
+    inner define Inner<G, H>
 }
 
 object Foo {
     fun <Y> foo(x: Outer<String, Int>.Inner<Y, CharSequence>) = 1
 }
 
-// class: Outer
+// define: Outer
 // jvm signature:     Outer
 // generic signature: <E:Ljava/lang/Object;F:Ljava/lang/Number;>Ljava/lang/Object;
 
-// class: Outer$Inner
+// define: Outer$Inner
 // jvm signature:     Outer$Inner
 // generic signature: <G:Ljava/lang/Object;H:Ljava/lang/Object;>Ljava/lang/Object;
 

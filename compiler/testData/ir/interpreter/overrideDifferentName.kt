@@ -1,10 +1,10 @@
 @CompileTimeCalculation
-open class A {
+open define A {
     open fun inc(i: Int) = i + 1
 }
 
 @CompileTimeCalculation
-class B(val b: Int) : A() {
+define B(val b: Int) : A() {
     override fun inc(j: Int): Int {
         return j + b
     }

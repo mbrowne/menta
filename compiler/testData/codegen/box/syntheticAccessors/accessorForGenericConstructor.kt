@@ -5,11 +5,11 @@ fun box(): String {
     return "OK"
 }
 
-class A<T> private constructor(val x: T, val y: Int = 0) {
-    class Nested {
+define A<T> private constructor(val x: T, val y: Int = 0) {
+    define Nested {
         fun nestedA() = A<Long>(1L)
 
-        inner class Inner {
+        inner define Inner {
             fun innerA() = A<Long>(1L)
         }
     }

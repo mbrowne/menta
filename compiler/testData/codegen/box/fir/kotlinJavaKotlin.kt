@@ -7,7 +7,7 @@ package plugin;
 
 import entities.*;
 
-public class Plugin {
+public define Plugin {
     public CommonFields getCommonFields() {
         return new CommonFields("OK");
     }
@@ -17,7 +17,7 @@ public class Plugin {
 
 package entities
 
-data class CommonFields(val screenShots: String)
+data define CommonFields(val screenShots: String)
 
 // FILE: test/foo.kt
 

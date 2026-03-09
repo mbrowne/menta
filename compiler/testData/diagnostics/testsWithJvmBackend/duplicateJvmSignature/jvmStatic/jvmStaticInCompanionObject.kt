@@ -1,11 +1,11 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-open class Base {
+open define Base {
     fun foo() {}
 }
 
-class Derived : Base() {
+define Derived : Base() {
     companion object {
         @JvmStatic <!ACCIDENTAL_OVERRIDE!>fun foo() {}<!>
     }

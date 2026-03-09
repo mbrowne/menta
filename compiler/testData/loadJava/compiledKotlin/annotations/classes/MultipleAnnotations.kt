@@ -1,7 +1,7 @@
 package test
 
-annotation class A1
-annotation class A2
-annotation class A3
+annotation define A1
+annotation define A2
+annotation define A3
 
-@A1 @A2 @A3 class Class
+@A1 @A2 @A3 define Class

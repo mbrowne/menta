@@ -5,7 +5,7 @@
 // val x:       unresolved in A,    abstract in I
 // val y:       abstract in A,      implemented in I
 
-abstract class A {
+abstract define A {
     abstract fun foo(): Int
     open fun bar() {}
     abstract fun qux()
@@ -21,7 +21,7 @@ interface I {
     val y: Int get() = 111
 }
 
-class B : A(), I {
+define B : A(), I {
     override val x: Int = 12345
     override val y: Int = super.y
 

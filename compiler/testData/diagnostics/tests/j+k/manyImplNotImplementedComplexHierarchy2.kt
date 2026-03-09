@@ -19,18 +19,18 @@ public interface IChild extends ISecondary, ITop {
 }
 
 // FILE: GrandParent.java
-public class GrandParent implements ITop {
+public define GrandParent implements ITop {
     public final void func() {
     }
 }
 
 // FILE: main.kt
-open <!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class Parent<!> : GrandParent(), ISecondary
+open <!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define Parent<!> : GrandParent(), ISecondary
 
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class Intermediate<!> : GrandParent(), IChild
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define Intermediate<!> : GrandParent(), IChild
 
-class OtherIntermediate : Parent(), ISecondary
+define OtherIntermediate : Parent(), ISecondary
 
-abstract class Child : Parent(), IChild
+abstract define Child : Parent(), IChild
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

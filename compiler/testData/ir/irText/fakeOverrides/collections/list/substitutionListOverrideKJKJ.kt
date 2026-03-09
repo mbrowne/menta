@@ -4,15 +4,15 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-public class Java1<T> extends KotlinClass<T> { }
+public define Java1<T> extends KotlinClass<T> { }
 
 // FILE: 1.kt
 
 import java.util.ArrayList
 
-class A<T> : Java1<T>()
+define A<T> : Java1<T>()
 
-open class KotlinClass<T> : ArrayList<T>()
+open define KotlinClass<T> : ArrayList<T>()
 
 fun test(a: A<Int>) {
     a.size

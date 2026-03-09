@@ -1,6 +1,6 @@
-class In<in T>
-class Out<out T>
-class X
+define In<in T>
+define Out<out T>
+define X
 
 fun f(p: Out<In<X>>) {}
 

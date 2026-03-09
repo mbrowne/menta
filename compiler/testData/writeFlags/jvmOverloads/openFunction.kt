@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-open class Foo {
+open define Foo {
     @JvmOverloads
     open fun bar(x: Int = 42, y: Int = -1): Int = x + y
 }

@@ -10,9 +10,9 @@ interface Z<T> {
 }
 
 @JvmDefaultWithoutCompatibility
-open class ZImpl : Z<String>
+open define ZImpl : Z<String>
 
-class ZImpl2 : ZImpl() {
+define ZImpl2 : ZImpl() {
 
     override fun test(p: String): String {
         return super.test(p)

@@ -11,7 +11,7 @@ interface Test {
     private inline fun inlineFun(s: () -> String) = s()
 }
 
-class TestClass : Test {
+define TestClass : Test {
 
 }
 

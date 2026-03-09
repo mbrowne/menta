@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.java
 
-public abstract class A<T> {
+public abstract define A<T> {
     protected abstract String doIt(T... args);
 
     public String test(T... args) {

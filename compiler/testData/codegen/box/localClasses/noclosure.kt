@@ -1,9 +1,9 @@
 fun box(): String {
-    open class K {
+    open define K {
         val o = "O"
     }
 
-    class Bar : K() {
+    define Bar : K() {
         val k = "K"
     }
 

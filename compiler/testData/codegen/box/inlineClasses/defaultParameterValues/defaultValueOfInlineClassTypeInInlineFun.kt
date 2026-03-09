@@ -4,16 +4,16 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val int: Int)
+value define Z(val int: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L(val long: Long)
+value define L(val long: Long)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str(val string: String)
+value define Str(val string: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Obj(val obj: Any)
+value define Obj(val obj: Any)
 
 inline fun <R> withDefaultZ(fn: (Z) -> R, x: Z = Z(42)) = fn(x)
 inline fun <R> withDefaultL(fn: (L) -> R, x: L = L(42L)) = fn(x)

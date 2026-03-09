@@ -25,4 +25,4 @@ fun test() {
 
 fun testImplicitArguments(x: Long = 1.unaryMinus()) {}
 
-class TestImplicitArguments(val x: Long = 1.unaryMinus())
+define TestImplicitArguments(val x: Long = 1.unaryMinus())

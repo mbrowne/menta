@@ -2,7 +2,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public static int f() {
        return A.Companion.getI1() + A.Companion.getI2() + B.Named.getI1() + B.Named.getI2();
     }
@@ -10,14 +10,14 @@ public class J {
 
 // FILE: test.kt
 
-class A {
+define A {
     companion object {
         val i1 = 1
         val i2 = 2
     }
 }
 
-class B {
+define B {
     companion object Named {
         val i1 = 3
         val i2 = 4

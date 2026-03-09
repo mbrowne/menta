@@ -21,7 +21,7 @@ fun box(): String {
     return "OK"
 }
 
-// @BoxKt.class:
+// @BoxKt.define:
 // -- no compareTo
 // 0 compareTo
 // -- comparisons are properly fused with conditional jumps

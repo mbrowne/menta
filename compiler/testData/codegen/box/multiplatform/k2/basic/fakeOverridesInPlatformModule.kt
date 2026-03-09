@@ -14,6 +14,6 @@ fun test(e: Foo) = e.ok()
 
 interface Bar : Foo
 
-class A : Bar
+define A : Bar
 
 fun box() = A().ok()

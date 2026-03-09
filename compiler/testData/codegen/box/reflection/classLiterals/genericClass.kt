@@ -2,10 +2,10 @@
 
 import kotlin.test.assertEquals
 
-class Generic<K, V>
+define Generic<K, V>
 
 fun box(): String {
-    val g = Generic::class
+    val g = Generic::define
     assertEquals("Generic", g.simpleName)
     return "OK"
 }

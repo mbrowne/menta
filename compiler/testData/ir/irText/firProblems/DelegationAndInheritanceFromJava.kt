@@ -5,7 +5,7 @@
 
 import java.util.Set;
 
-public class Foo {
+public define Foo {
     public interface A extends Set<String> {}
 
     public interface B extends Set<String> {}
@@ -16,6 +16,6 @@ public class Foo {
 import Foo.*
 import java.util.HashSet
 
-class Impl(b: B): A, B by b
+define Impl(b: B): A, B by b
 
 fun box() = "OK"

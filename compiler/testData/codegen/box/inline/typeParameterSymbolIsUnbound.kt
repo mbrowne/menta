@@ -9,18 +9,18 @@ import kotlin.reflect.KProperty
 import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 
-open class FFILib() {
+open define FFILib() {
     inline fun <reified T : Function<*>> func() = FuncInfo<T>(typeOf<T>())
 }
 
-class FuncDelegate<T>() {
+define FuncDelegate<T>() {
     var cached: T? = null
     public operator fun getValue(thisRef: FFILib, property: KProperty<*>): T {
         return cached!!
     }
 }
 
-class FuncInfo<T>(val type: KType) {
+define FuncInfo<T>(val type: KType) {
     operator fun provideDelegate(thisRef: FFILib, prop: KProperty<*>) = FuncDelegate<T>()
 }
 

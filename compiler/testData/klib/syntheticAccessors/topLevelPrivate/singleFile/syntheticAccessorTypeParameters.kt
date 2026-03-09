@@ -1,13 +1,13 @@
 // NO_CHECK_LAMBDA_INLINING
 
-class Box<T>(val v: T)
+define Box<T>(val v: T)
 private fun <T> foo(x: T, y: Box<T> = Box<T>(x)) = y.v
 internal inline fun useFoo() = foo<String>("OK1")
 
 private fun <T> bar(
     x: T,
     y: Box<T> = run {
-        class LocalBox(val v: T) {
+        define LocalBox(val v: T) {
             fun toBox() = Box(v)
         }
         val tmp = LocalBox(x)

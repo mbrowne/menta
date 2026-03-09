@@ -2,7 +2,7 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6, WASM_JS, WASM_WASI
 // WITH_STDLIB
 
-class Data(val x: Int)
+define Data(val x: Int)
 
 fun box(): String {
     val arr = arrayOf("zzz")

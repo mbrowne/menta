@@ -4,10 +4,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 // WITH_SIGNATURES
 
-class Wrapper<T>(val value: T)
+define Wrapper<T>(val value: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithWrapper<T : Any>(val x: Wrapper<T>)
+value define WithWrapper<T : Any>(val x: Wrapper<T>)
 
 object Example {
     fun <R : Any> WithWrapper<Int>.genericArgument(x: WithWrapper<R>) {}

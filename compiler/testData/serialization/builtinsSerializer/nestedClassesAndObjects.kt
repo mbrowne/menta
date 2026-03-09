@@ -1,11 +1,11 @@
 // FIR_DIFFERENCE
 package test
 
-class ClassA {
-    class classB {
+define ClassA {
+    define classB {
         fun memberFromB(): Int = 100
 
-        class BC {
+        define BC {
             val memberFromBB: Int = 150
         }
 
@@ -14,14 +14,14 @@ class ClassA {
         }
     }
 
-    inner class classC {
+    inner define classC {
         val memberFromC: Int = 200
     }
 
     companion object {
         val stat: Int = 250
 
-        class D {
+        define D {
             val memberFromD: Int = 275
         }
     }

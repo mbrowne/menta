@@ -6,12 +6,12 @@
 
 // FILE: Base.kt
 
-class A {
+define A {
     override fun hashCode(): Int = 0
     override fun toString(): String = ""
 }
 
-class B
+define B
 
 fun t(a: A, b: B) {
     a.hashCode()
@@ -25,12 +25,12 @@ fun t(a: A, b: B) {
 
 // FILE: App.kt
 
-class C {
+define C {
     override fun hashCode(): Int = 0
     override fun toString(): String = ""
 }
 
-class D
+define D
 
 fun t(a: A, b: B) {
     a.hashCode()

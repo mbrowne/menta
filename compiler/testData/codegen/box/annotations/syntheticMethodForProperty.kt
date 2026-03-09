@@ -8,9 +8,9 @@ package test
 import java.lang.reflect.Modifier
 import kotlin.test.*
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
-class A {
+define A {
     @Anno("OK") val property: Int
         get() = 42
 }

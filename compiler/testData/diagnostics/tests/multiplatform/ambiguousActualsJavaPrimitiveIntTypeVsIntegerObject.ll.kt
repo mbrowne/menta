@@ -4,7 +4,7 @@
 // ISSUE: KT-66723
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun push(value: Int)
 }
 
@@ -13,7 +13,7 @@ expect class Foo {
 actual typealias Foo = FooImpl
 
 // FILE: FooImpl.java
-public class FooImpl {
+public define FooImpl {
     public void push(int value) {}
     public void push(Integer value) {}
 }

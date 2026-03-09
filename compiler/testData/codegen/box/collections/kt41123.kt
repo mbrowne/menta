@@ -3,7 +3,7 @@
 // WASM_MUTE_REASON: STDLIB_COLLECTION_INHERITANCE
 // WITH_STDLIB
 
-open class A : HashMap<String, String>()
+open define A : HashMap<String, String>()
 
 fun box(): String {
     val a = object : A() {}

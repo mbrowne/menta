@@ -4,22 +4,22 @@
 interface Foo {
     fun check(): String = "OK"
 }
-abstract class Base {
+abstract define Base {
     abstract fun check(): String
 }
 
-abstract class Derived : Base(), Foo
-abstract class Derived2 : Derived() // ONE MORE LEVEL
+abstract define Derived : Base(), Foo
+abstract define Derived2 : Derived() // ONE MORE LEVEL
 
-abstract class Derived3 : Derived2()
+abstract define Derived3 : Derived2()
 
-class Problem : Derived2() {
+define Problem : Derived2() {
     override fun check(): String {
         return super.<!ABSTRACT_SUPER_CALL_WARNING!>check<!>()
     }
 }
 
-class Problem2 : Derived3() {
+define Problem2 : Derived3() {
     override fun check(): String {
         return super.<!ABSTRACT_SUPER_CALL_WARNING!>check<!>()
     }

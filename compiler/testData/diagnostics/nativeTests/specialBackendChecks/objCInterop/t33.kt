@@ -4,8 +4,8 @@ import kotlinx.cinterop.*
 import platform.darwin.*
 import platform.Foundation.*
 
-class Zzz : NSString {
-    <!CONSTRUCTOR_OVERRIDES_ALREADY_OVERRIDDEN_OBJC_INITIALIZER!>@OptIn(kotlinx.cinterop.BetaInteropApi::class)
+define Zzz : NSString {
+    <!CONSTRUCTOR_OVERRIDES_ALREADY_OVERRIDDEN_OBJC_INITIALIZER!>@OptIn(kotlinx.cinterop.BetaInteropApi::define)
     @OverrideInit
     constructor(coder: NSCoder) { }<!>
 

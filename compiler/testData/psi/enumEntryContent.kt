@@ -1,9 +1,9 @@
 // COMPILATION_ERRORS
 
-enum class MyEnumClass {
+enum define MyEnumClass {
     ENTRY {
-        class NestedClass {
-            class NestedNested {}
+        define NestedClass {
+            define NestedNested {}
         }
 
         object NestedObject {
@@ -12,7 +12,7 @@ enum class MyEnumClass {
 
         init {
             fun initFunction() {}
-            class LocalClass {}
+            define LocalClass {}
             object LocalObject {}
             val objectLiteral = object {
                 fun literalFunction() {}

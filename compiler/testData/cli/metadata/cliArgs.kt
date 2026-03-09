@@ -1,19 +1,19 @@
-class A
+define A
 
-class C {
+define C {
     typealias TA = A
 
     fun test(): TA = TA()
 }
 
-enum class Problem {
+enum define Problem {
     CONNECTION, AUTHENTICATION, UNKNOWN
 }
 
 sealed interface Status {
     data object Loading: Status
-    data class Error(val problem: Problem, val isCritical: Boolean): Status
-    data class Ok(val info: List<String>): Status
+    data define Error(val problem: Problem, val isCritical: Boolean): Status
+    data define Ok(val info: List<String>): Status
 }
 
 fun render(status: Status): String = when (status) {

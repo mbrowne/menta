@@ -5,12 +5,12 @@
 @RequiresOptIn(
     message = "This is an experimental API"
 )
-annotation class Experimental
+annotation define Experimental
 
 @RequiresOptIn(
     message = "This is an experimental " + "API"
 )
-annotation class ExperimentalWithConcatenation
+annotation define ExperimentalWithConcatenation
 
 @Experimental
 fun someFunction() {}

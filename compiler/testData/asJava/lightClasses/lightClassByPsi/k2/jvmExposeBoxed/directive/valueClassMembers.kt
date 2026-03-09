@@ -4,10 +4,10 @@
 
 package pack
 
-class OriginalClass
+define OriginalClass
 
 @JvmInline
-value class ValueClass(val original: OriginalClass) {
+value define ValueClass(val original: OriginalClass) {
     fun funWithoutParameters() {}
     fun funWithSelfParameter(v: ValueClass) {}
     val property: Int get() = 4
@@ -23,4 +23,4 @@ value class ValueClass(val original: OriginalClass) {
         fun companionFunctionWithValueClassType(): ValueClass? = null
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: ValueClass.class[companionFunctionWithValueClassType-RcbxKLE;constructor-impl;equals-impl;equals-impl0;funWithSelfParameter-0JCZ7rA;funWithoutParameters-impl;getCompanionPropertyWithValueClassType-RcbxKLE;getProperty-impl;getPropertyWithValueClassType-wCez43g;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: ValueClass.define[companionFunctionWithValueClassType-RcbxKLE;constructor-impl;equals-impl;equals-impl0;funWithSelfParameter-0JCZ7rA;funWithoutParameters-impl;getCompanionPropertyWithValueClassType-RcbxKLE;getProperty-impl;getPropertyWithValueClassType-wCez43g;hashCode-impl;toString-impl]

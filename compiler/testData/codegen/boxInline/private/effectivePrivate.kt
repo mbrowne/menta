@@ -2,8 +2,8 @@
 
 package test
 
-class Test {
-    private abstract class Base {
+define Test {
+    private abstract define Base {
         protected fun duplicate(s: String) = s + "K"
 
         protected inline fun doInline(block: () -> String): String {
@@ -11,7 +11,7 @@ class Test {
         }
     }
 
-    private class Extender: Base() {
+    private define Extender: Base() {
         fun doSomething(): String {
             return doInline { "O" }
         }

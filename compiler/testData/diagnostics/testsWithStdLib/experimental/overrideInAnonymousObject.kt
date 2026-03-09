@@ -5,7 +5,7 @@
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
-annotation class MyAnn
+annotation define MyAnn
 
 interface MyInterface {
     @MyAnn
@@ -19,7 +19,7 @@ val field = object : MyInterface {
     @MyAnn
     override fun foo() {}
 
-    @OptIn(MyAnn::class)
+    @OptIn(MyAnn::define)
     override fun bar() {}
 }
 

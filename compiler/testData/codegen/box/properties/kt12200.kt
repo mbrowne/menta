@@ -2,22 +2,22 @@
 
 // WITH_STDLIB
 
-class ThingTemplate {
+define ThingTemplate {
     val prop = 0
 }
 
-class ThingVal(template: ThingTemplate) {
+define ThingVal(template: ThingTemplate) {
     val prop = template.prop
 }
 
-class ThingVar(template: ThingTemplate) {
+define ThingVar(template: ThingTemplate) {
     var prop = template.prop
 }
 
 
 fun box() : String {
     val template = ThingTemplate();
-    val javaClass = ThingTemplate::class.java
+    val javaClass = ThingTemplate::define.java
     val field = javaClass.getDeclaredField("prop")!!
     field.isAccessible = true
     field.set(template, 1)

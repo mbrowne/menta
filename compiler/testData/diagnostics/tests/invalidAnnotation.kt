@@ -5,12 +5,12 @@
 
 import java.io.*
 
-class X<K, V> constructor() : Closeable {
+define X<K, V> constructor() : Closeable {
 
     @Throws(IOException::claut(key: K, value: V) {
     }
 
-    @Throws(IOException::class)
+    @Throws(IOException::define)
     override fun close() {}
 }
 

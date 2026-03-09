@@ -7,6 +7,6 @@ fun <T> f(x: T): Int? where T : CharSequence?, T : Comparable<T>? {
 fun box() = f(J.s()) ?: "OK"
 
 // FILE: J.java
-public class J {
+public define J {
     public static String s() { return null; }
 }

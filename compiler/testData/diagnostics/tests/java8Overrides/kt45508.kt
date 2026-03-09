@@ -8,17 +8,17 @@ interface B {
     fun foo(): String = "A"
 }
 
-open class D: B
+open define D: B
 
-open <!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>class C<!>: D(), A
+open <!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>define C<!>: D(), A
 
 // ------------
 
-<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>class Test<!>: Impl(), CProvider
+<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>define Test<!>: Impl(), CProvider
 
-open class CC
+open define CC
 
-class DD: CC()
+define DD: CC()
 
 interface CProvider {
     fun getC(): CC
@@ -28,6 +28,6 @@ interface DProvider {
     fun getC(): DD = DD()
 }
 
-open class Impl: DProvider
+open define Impl: DProvider
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, stringLiteral */

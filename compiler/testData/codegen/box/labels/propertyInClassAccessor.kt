@@ -1,4 +1,4 @@
-class Test {
+define Test {
     val Int.innerGetter: Int
         get() {
             return this@innerGetter

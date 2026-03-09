@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -NON_TOPLEVEL_CLASS_DECLARATION, -DEPRECATION
 
-class A {
-    class B {
-        class A {
+define A {
+    define B {
+        define A {
             <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeSetter
             fun set(a: String, v: Any?): Any?<!> = null
 
@@ -31,7 +31,7 @@ class A {
             }
         }
 
-        class B {
+        define B {
             <!WRONG_ANNOTATION_TARGET!>@nativeSetter<!>
             val foo = 0
 
@@ -47,7 +47,7 @@ class A {
             }
         }
 
-        class C {
+        define C {
             <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeSetter
             fun Int.set(a: String, v: Int)<!> {}
 

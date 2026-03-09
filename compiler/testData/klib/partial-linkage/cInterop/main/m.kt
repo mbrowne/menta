@@ -1,7 +1,7 @@
 import abitestutils.abiTest
 import lib.foo
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
 fun box() = abiTest {
     expectSuccess("foo") { ::foo.name }
     expectFailure(

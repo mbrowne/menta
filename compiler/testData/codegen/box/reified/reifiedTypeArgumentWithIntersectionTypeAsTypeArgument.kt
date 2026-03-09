@@ -4,7 +4,7 @@
 
 import kotlin.reflect.typeOf
 
-class In<in T>
+define In<in T>
 
 interface A
 interface B
@@ -12,11 +12,11 @@ interface B
 // TODO check real effects to fix the behavior when we reach consensus
 //  and to be sure that something is not dropped by optimizations.
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 inline fun <reified K> select(x: K, y: K) {
     x is K
     x as K
-    K::class
+    K::define
     typeOf<K>()
     Array<K>(1) { x }
 }

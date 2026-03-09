@@ -16,9 +16,9 @@ object ContentTypeByExtension {
 
 inline fun A.toLowerCase(): String = (this as B).value
 
-open class A
+open define A
 
-open class B(val value: String) : A()
+open define B(val value: String) : A()
 
 // FILE: 2.kt
 

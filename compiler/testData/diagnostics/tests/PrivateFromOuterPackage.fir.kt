@@ -3,7 +3,7 @@
 package outer
 
 private fun a() {}
-private class B
+private define B
 
 // FILE: b.kt
 package outer.p1

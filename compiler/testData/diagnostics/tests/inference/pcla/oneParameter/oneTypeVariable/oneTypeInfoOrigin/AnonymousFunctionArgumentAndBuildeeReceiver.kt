@@ -6,7 +6,7 @@
 // ISSUE: KT-59551
 // (also see an analogous codegen test)
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = UserKlass() as CT
 }
@@ -17,7 +17,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
 // test 1: PTV is in consuming position (yield-case)
 fun testYield() {

@@ -1,9 +1,9 @@
 // FILE: 1.kt
 package test
 
-class Test(var result: Int)
+define Test(var result: Int)
 
-class A {
+define A {
     var result = Test(1)
 
     inline var z: Test

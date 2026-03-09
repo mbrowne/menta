@@ -6,7 +6,7 @@
 @file:JvmName("testX")
 package test
 
-class A2 {
+define A2 {
     fun doWork(job: () -> Unit) {
         Runnable(job)
     }
@@ -23,7 +23,7 @@ fun box(): String {
     return A().foo().call()
 }
 
-class A {
+define A {
     val f = {"OK"}
     fun foo() = java.util.concurrent.Callable(f)
 }

@@ -2,19 +2,19 @@
 // ISSUE: KT-76839
 
 // MODULE: baseLib
-open class A
+open define A
 
 // MODULE: lib(baseLib)
 interface B
 
-class C : A(), B
+define C : A(), B
 
 fun foo(f: (C) -> Unit) {
     f(C())
 }
 
 // MODULE: main(lib)
-data class Some(val x: C) // crashes backend
+data define Some(val x: C) // crashes backend
 
 fun test() {
     foo {

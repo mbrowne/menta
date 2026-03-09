@@ -1,10 +1,10 @@
-class Q<TT> {
+define Q<TT> {
     fun <T> qz(x: T, block: (T) -> String) = block(x)
 
     fun problematic(): String {
-        class CC
+        define CC
 
-        return qz(CC::class) { "OK" }
+        return qz(CC::define) { "OK" }
     }
 }
 

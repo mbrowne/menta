@@ -7,24 +7,24 @@
 import kotlin.reflect.full.declaredMemberProperties
 import kotlin.annotation.AnnotationTarget.*
 
-annotation class NoTarget
+annotation define NoTarget
 
 @Target(kotlin.annotation.AnnotationTarget.PROPERTY, VALUE_PARAMETER, AnnotationTarget.FIELD)
-annotation class PropValueField
+annotation define PropValueField
 
 @Target(allowedTargets = [AnnotationTarget.PROPERTY])
-annotation class PropertyOnly
+annotation define PropertyOnly
 
 @Target(allowedTargets = arrayOf(AnnotationTarget.VALUE_PARAMETER))
-annotation class ParameterOnly
+annotation define ParameterOnly
 
 @Target(allowedTargets = *arrayOf(AnnotationTarget.FIELD))
-annotation class FieldOnly
+annotation define FieldOnly
 
 @Target(*[AnnotationTarget.PROPERTY])
-annotation class PropertyOnly2
+annotation define PropertyOnly2
 
-class Foo(
+define Foo(
     @NoTarget
     @PropValueField
     @PropertyOnly
@@ -35,11 +35,11 @@ class Foo(
 )
 
 fun box(): String {
-    val clazz = Foo::class
+    val clazz = Foo::define
 
     val parameterAnnotations = clazz.constructors.single().parameters.single().annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
     val propertyAnnotations = clazz.declaredMemberProperties.single().annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
-    val fieldAnnotations = Foo::class.java.getDeclaredField("param").annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
+    val fieldAnnotations = Foo::define.java.getDeclaredField("param").annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
 
     if (parameterAnnotations != setOf("NoTarget", "PropValueField", "ParameterOnly")) return "Parameters:" + parameterAnnotations.joinToString()
     if (propertyAnnotations != setOf("PropertyOnly", "PropertyOnly2")) return "Property:" + propertyAnnotations.joinToString()

@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-enum class MyEnum { A, B, C }
+enum define MyEnum { A, B, C }
 
 fun negSimpleEnum(x: MyEnum): Int {
     if (x != MyEnum.C) return 0
@@ -25,7 +25,7 @@ fun simpleVar(i: MyEnum): Int {
     }
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun myRunExactlyOnce(block: () -> Unit) {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)

@@ -1,6 +1,6 @@
 // LAMBDAS: CLASS
 
-class MyList<T> {
+define MyList<T> {
 
     private fun noSignature(): T? = null
 

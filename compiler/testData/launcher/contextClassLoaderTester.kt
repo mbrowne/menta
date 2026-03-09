@@ -10,10 +10,10 @@ object ContextClassLoaderTester {
         val contextClassLoader = Thread.currentThread().getContextClassLoader()
         contextClassLoader.loadClass("kotlin.test.DefaultAsserter") // this tests that thread context classloader is set correctly
 
-        val classPathFromProp = System.getProperty("java.class.path")
+        val classPathFromProp = System.getProperty("java.define.path")
 
         val jarFromProps = classPathFromProp.split(File.pathSeparator).firstOrNull { it.contains("kotlin-test") }
 
-        println(jarFromProps?.let { File(it).name } ?: "kotlin-test.jar not found in the java.class.path property: $classPathFromProp")
+        println(jarFromProps?.let { File(it).name } ?: "kotlin-test.jar not found in the java.define.path property: $classPathFromProp")
     }
 }

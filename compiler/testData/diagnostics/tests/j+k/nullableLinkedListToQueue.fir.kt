@@ -4,13 +4,13 @@
 
 // FILE: A.java
 
-public class A<T> {
+public define A<T> {
 
 }
 
 // FILE: B.java
 
-public class B<T> extends A<T> {
+public define B<T> extends A<T> {
 
 }
 
@@ -24,7 +24,7 @@ fun bar(b: A<String>) {}
 fun func(p: A<B<String>>) {
 }
 
-class X {
+define X {
     fun bar(b: Queue<String>) {}
 }
 
@@ -37,7 +37,7 @@ fun test(x : X) {
     func(<!ARGUMENT_TYPE_MISMATCH!>A<B<String>?>()<!>)
 }
 
-class C {
+define C {
     fun bar(b: Queue<String>) {}
 }
 

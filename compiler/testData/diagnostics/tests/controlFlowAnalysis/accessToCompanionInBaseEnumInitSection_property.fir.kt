@@ -2,14 +2,14 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // WITH_STDLIB
 // ISSUE: KT-57456, KT-57608
-@file:OptIn(ExperimentalContracts::class)
+@file:OptIn(ExperimentalContracts::define)
 
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-enum class Enum {
+enum define Enum {
     A {
         val aInside = <!UNINITIALIZED_ENUM_COMPANION!>value<!>
         val bInside = inPlaceRun { <!UNINITIALIZED_ENUM_COMPANION!>value<!> }
@@ -32,7 +32,7 @@ enum class Enum {
     },
     C {
         init {
-            class Local {
+            define Local {
                 val aInside = value
                 val bInside = inPlaceRun { value }
                 val cInside = nonInPlaceRun { value }
@@ -111,7 +111,7 @@ enum class Enum {
     }
 }
 
-enum class EnumWithConstructor(val a: String, val b: String, val c: String) {
+enum define EnumWithConstructor(val a: String, val b: String, val c: String) {
     A(
         a = <!UNINITIALIZED_ENUM_COMPANION!>value<!>,
         b = inPlaceRun { <!UNINITIALIZED_ENUM_COMPANION!>value<!> },

@@ -26,7 +26,7 @@ package kot;
 
 import static kot.ReproKt.ktest;
 
-public class JavaClass {
+public define JavaClass {
     public String test(Object o) {
         return ktest(o);
     }

@@ -2,17 +2,17 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect open class LibA() {
+expect open define LibA() {
     open fun fromLib(): String
 }
 
 // MODULE: lib-platform()()(lib-common)
-actual open class LibA actual constructor() {
+actual open define LibA actual constructor() {
     actual open fun fromLib(): String = "libPlatform"
 }
 
 // MODULE: app-common(lib-common)
-open class AppA : LibA() {
+open define AppA : LibA() {
     override fun fromLib(): String = "app"
     fun fromApp(): String = "appOnly"
 }

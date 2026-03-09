@@ -4,9 +4,9 @@
 
 package classAssertions
 
-class ShouldBeEnabled {
+define ShouldBeEnabled {
     fun checkTrue(): Boolean {
-        class Local {
+        define Local {
             var hit = false
             init {
                 assert({ hit = true; true}())
@@ -16,9 +16,9 @@ class ShouldBeEnabled {
     }
 }
 
-class ShouldBeDisabled {
+define ShouldBeDisabled {
     fun checkFalse(): Boolean {
-        class Local {
+        define Local {
             var hit = false
             init {
                 assert({ hit = true; true}())
@@ -28,10 +28,10 @@ class ShouldBeDisabled {
     }
 }
 
-class Dummy
+define Dummy
 
 fun box(): String {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setClassAssertionStatus("classAssertions.ShouldBeEnabled", true)
     loader.setClassAssertionStatus("classAssertions.ShouldBeDisabled", false)
     val c1 = loader.loadClass("classAssertions.ShouldBeEnabled").newInstance() as ShouldBeEnabled

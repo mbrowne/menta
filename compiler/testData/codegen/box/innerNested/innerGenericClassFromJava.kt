@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: JavaClass.java
 
-public abstract class JavaClass {
+public abstract define JavaClass {
     public static String test() {
         return Test.INSTANCE.foo(new Outer<String>("OK").new Inner<Integer>(1));
     }
@@ -9,8 +9,8 @@ public abstract class JavaClass {
 
 // FILE: Kotlin.kt
 
-class Outer<E>(val x: E) {
-    inner class Inner<F>(val y: F) {
+define Outer<E>(val x: E) {
+    inner define Inner<F>(val y: F) {
         fun foo() = x.toString() + y.toString()
     }
 }

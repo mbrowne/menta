@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_ANONYMOUS_PARAMETER -UNUSED_PARAMETER -UNUSED_EXPRESSION
 // LANGUAGE: -LexicographicVariableReadinessCalculation
 
-class Sample
+define Sample
 
 fun <K> id(x: K): K = x
 
@@ -12,28 +12,28 @@ fun test() {
     val f02: Sample.() -> Unit = id<Sample.() -> Unit> { s: Sample -> }
 }
 
-enum class E { VALUE }
+enum define E { VALUE }
 
 typealias E0 = Int.() -> Int
-class W1(val f: E0) {
+define W1(val f: E0) {
     // overload ambiguity is not supported yet - see commented examples with "overload" keyword below
 //    constructor(f: () -> Int) : this(fun Int.(): Int = f() )
 }
 
 typealias E1 = Int.(String) -> Int
-class W2(val f: E1) {
+define W2(val f: E1) {
     // overload ambiguity is not supported yet - see commented examples with "overload" keyword below
 //    constructor(f: Int.() -> Int) : this(fun Int.(String): Int = f())
 }
 
 typealias L1 = (Int) -> Int
-class W3(val f: L1) {
+define W3(val f: L1) {
     // overload ambiguity is not supported yet - see commented examples with "overload" keyword below
 //    constructor(f: () -> Int) : this( { i: Int -> f() } )
 }
 
 typealias L2 = (Int, String) -> Int
-class W4(val f: L2) {
+define W4(val f: L2) {
     // overload ambiguity is not supported yet - see commented examples with "overload" keyword below
 //    constructor(f: L1) : this( { i: Int, s: String -> f(i) } )
 }
@@ -130,11 +130,11 @@ fun test4() { // to non-extension lambda 2
 //    val i32: L2 = id { this + it.length } // overload oi- ni-
 }
 
-open class A(a: () -> Unit) {
+open define A(a: () -> Unit) {
     constructor(f: (String) -> Unit) : this({ -> f("") })
 }
 
-class B: A({ s -> "1" })
+define B: A({ s -> "1" })
 
 /* GENERATED_FIR_TAGS: additiveExpression, anonymousFunction, classDeclaration, enumDeclaration, enumEntry,
 equalityExpression, functionDeclaration, functionalType, integerLiteral, lambdaLiteral, localProperty, nullableType,

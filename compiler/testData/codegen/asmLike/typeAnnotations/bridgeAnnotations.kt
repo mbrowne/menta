@@ -5,40 +5,40 @@
 // LANGUAGE: +JvmEnhancedBridges
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyAnno
+annotation define PropertyAnno
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
-annotation class PropertyGetterAnno
+annotation define PropertyGetterAnno
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class Anno
+annotation define Anno
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class OldAnno
+annotation define OldAnno
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnno
+annotation define TypeAnno
 
 @Target(AnnotationTarget.TYPE)
-annotation class OldTypeAnno
+annotation define OldTypeAnno
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class ParamAnno
+annotation define ParamAnno
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class OldParamAnno
+annotation define OldParamAnno
 
 interface I<T: Any> {
     @OldAnno
     fun foo(@OldParamAnno p1: @OldTypeAnno T, p2: T): @OldTypeAnno Any? = null
 }
 
-class C : I<Int> {
+define C : I<Int> {
     @Anno
     override fun foo(a: @TypeAnno Int, @ParamAnno b: Int): @TypeAnno String = ""
 }
 
-abstract class MyCharSequence : CharSequence {
+abstract define MyCharSequence : CharSequence {
     @PropertyAnno // not applied to getter methods
     override val length: @TypeAnno Int
         @PropertyGetterAnno get() = 0

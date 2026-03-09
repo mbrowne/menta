@@ -1,8 +1,8 @@
-open class X {
+open define X {
     open val bar: String 
-        get() = "base class open"
+        get() = "base define open"
     val zon: String 
-        get() = "base class"
+        get() = "base define"
 }
 
 interface Y {

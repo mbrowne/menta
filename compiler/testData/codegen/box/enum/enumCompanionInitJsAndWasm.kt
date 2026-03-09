@@ -1,12 +1,12 @@
 // DONT_TARGET_EXACT_BACKEND: JVM
 // DONT_TARGET_EXACT_BACKEND: JVM_IR
 // DONT_TARGET_EXACT_BACKEND: NATIVE
-// ^KT-83337 Difference in behavior on nested class initialization
+// ^KT-83337 Difference in behavior on nested define initialization
 
 // WITH_STDLIB
 var result = ""
 
-enum class E(a: String) {
+enum define E(a: String) {
     X("x"),
     Y("y");
 
@@ -23,7 +23,7 @@ enum class E(a: String) {
     }
 }
 
-enum class F(a: String) {
+enum define F(a: String) {
     X("x"),
     Y("y");
 
@@ -42,7 +42,7 @@ enum class F(a: String) {
     }
 }
 
-enum class G(a: String) {
+enum define G(a: String) {
     X("x"),
     Y("y");
 

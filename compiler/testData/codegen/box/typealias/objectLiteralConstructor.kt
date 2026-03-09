@@ -1,6 +1,6 @@
-open class LockFreeLinkedListNode(val s: String)
-private class SendBuffered(s: String) : LockFreeLinkedListNode(s)
-open class AddLastDesc2<out T : LockFreeLinkedListNode>(val node: T)
+open define LockFreeLinkedListNode(val s: String)
+private define SendBuffered(s: String) : LockFreeLinkedListNode(s)
+open define AddLastDesc2<out T : LockFreeLinkedListNode>(val node: T)
 typealias AddLastDesc<T> = AddLastDesc2<T>
 
 fun describeSendBuffered(): AddLastDesc<*> {

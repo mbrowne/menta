@@ -14,30 +14,25 @@ KtFile: conditionLogic.kt
       PsiElement(DOT)('.')
       PsiElement(MUL)('*')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test1')
@@ -116,30 +111,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test2')
@@ -214,30 +204,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test3')
@@ -312,30 +297,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test4')
@@ -458,30 +438,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test5')
@@ -580,30 +555,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test6')
@@ -706,30 +676,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test7')
@@ -848,30 +813,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test8')
@@ -990,30 +950,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test9')
@@ -1144,30 +1099,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test10')
@@ -1275,30 +1225,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test11')
@@ -1406,30 +1351,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test12')
@@ -1572,30 +1512,25 @@ KtFile: conditionLogic.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('OptIn')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          CALLABLE_REFERENCE_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('ExperimentalContracts')
-            PsiElement(COLONCOLON)('::')
-            REFERENCE_EXPRESSION
-              PsiErrorElement:Expecting an identifier
-                <empty list>
-        PsiErrorElement:Expecting ')'
-          PsiElement(class)('class')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace('\n')
   FUN
+    MODIFIER_LIST
+      ANNOTATION_ENTRY
+        PsiElement(AT)('@')
+        CONSTRUCTOR_CALLEE
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('OptIn')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            CLASS_LITERAL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('ExperimentalContracts')
+              PsiElement(COLONCOLON)('::')
+              PsiElement(define)('define')
+          PsiElement(RPAR)(')')
+    PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('test13')

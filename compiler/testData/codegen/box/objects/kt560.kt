@@ -4,7 +4,7 @@ package while_bug_1
 
 import java.io.*
 
-open class AllEvenNum() {
+open define AllEvenNum() {
 
     companion object {
         open public fun main(args : Array<String?>?) : Unit {

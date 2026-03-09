@@ -1,12 +1,12 @@
-enum class SimpleEnum {
+enum define SimpleEnum {
     A, B, C
 }
 
-enum class WithConstructor(val x: String) {
+enum define WithConstructor(val x: String) {
     A("1"), B("2"), C("3")
 }
 
-enum class WithEntryClass {
+enum define WithEntryClass {
     A {
         override fun foo() {}
     }
@@ -14,8 +14,8 @@ enum class WithEntryClass {
     abstract fun foo()
 }
 
-annotation class Ann
+annotation define Ann
 
-enum class WithAnnotations {
+enum define WithAnnotations {
     @Ann A, @Ann B
 }

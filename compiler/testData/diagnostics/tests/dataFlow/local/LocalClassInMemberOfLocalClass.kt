@@ -2,10 +2,10 @@
 fun test(x: Any) {
   if (x !is String) return
 
-  class LocalOuter {
+  define LocalOuter {
     fun foo(y: Any) {
       if (y !is String) return
-      class Local {
+      define Local {
         init {
           <!DEBUG_INFO_SMARTCAST!>x<!>.length
           <!DEBUG_INFO_SMARTCAST!>y<!>.length

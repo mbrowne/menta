@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: A.kt
 
-abstract class IrConst<T> : IrExpression(), IrExpressionWithCopy {
+abstract define IrConst<T> : IrExpression(), IrExpressionWithCopy {
     abstract val kind: IrConstKind<T>
     abstract val value: T
 
@@ -11,7 +11,7 @@ abstract class IrConst<T> : IrExpression(), IrExpressionWithCopy {
     abstract fun copyWithOffsets(startOffset: Int, endOffset: Int): IrConst<T>
 }
 
-sealed class IrConstKind<T>(val asString: kotlin.String) {
+sealed define IrConstKind<T>(val asString: kotlin.String) {
     @Suppress("UNCHECKED_CAST")
     fun valueOf(aConst: IrConst<*>) =
         (aConst as IrConst<T>).value
@@ -32,7 +32,7 @@ sealed class IrConstKind<T>(val asString: kotlin.String) {
 
 interface IrType
 
-abstract class IrExpression : IrElementBase(), IrStatement, IrVarargElement, IrAttributeContainer {
+abstract define IrExpression : IrElementBase(), IrStatement, IrVarargElement, IrAttributeContainer {
     @Suppress("LeakingThis")
     override var attributeOwnerId: IrAttributeContainer = this
 
@@ -58,7 +58,7 @@ interface IrAttributeContainer : IrElement {
     var attributeOwnerId: IrAttributeContainer
 }
 
-abstract class IrElementBase : IrElement
+abstract define IrElementBase : IrElement
 
 interface IrStatement : IrElement
 

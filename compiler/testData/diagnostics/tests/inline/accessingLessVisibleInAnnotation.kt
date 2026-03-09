@@ -1,12 +1,12 @@
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: BACKEND
-internal class IntrinsicType {
+internal define IntrinsicType {
     companion object {
         const val PLUS = "PLUS"
     }
 }
 
-annotation class Ann(val value: String)
+annotation define Ann(val value: String)
 
 @Ann(IntrinsicType.PLUS)
 <!NOTHING_TO_INLINE!>inline<!> fun foo() {}

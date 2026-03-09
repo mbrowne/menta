@@ -21,7 +21,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     @Deprecated
     public int getSomething1() { return 1; }
 

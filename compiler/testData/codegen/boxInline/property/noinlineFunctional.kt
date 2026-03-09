@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class C {
+define C {
     var x: () -> Unit
         inline get() = {}
         inline set(noinline value) {

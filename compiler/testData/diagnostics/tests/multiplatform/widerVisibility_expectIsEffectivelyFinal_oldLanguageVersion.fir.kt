@@ -4,17 +4,17 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-open class Base {
+open define Base {
     internal open fun foo() {}
 }
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Foo : Base {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Foo : Base {
     override fun <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>foo<!>()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo : Base() {
+actual define Foo : Base() {
     public actual override fun <!EXPECT_ACTUAL_INCOMPATIBLE_VISIBILITY!>foo<!>() {
     }
 }

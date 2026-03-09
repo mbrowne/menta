@@ -4,7 +4,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class S
+expect define S
 
 expect fun <T> foo(y: T): String
 

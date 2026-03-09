@@ -1,4 +1,4 @@
-class Foo(val a: String)
+define Foo(val a: String)
 
 fun test(s: () -> String): String {
     return s()

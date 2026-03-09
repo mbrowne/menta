@@ -3,7 +3,7 @@
 
 fun <T> magic(): T = null!!
 
-class Q {
+define Q {
     private fun <E> foo() =
         object {
             val prop: E = magic()

@@ -1,6 +1,6 @@
 package test
 
-annotation class Anno(
+annotation define Anno(
         val bytes: ByteArray,
         val shorts: ShortArray,
         val ints: IntArray,
@@ -21,4 +21,4 @@ annotation class Anno(
         doubleArrayOf(42.0, -3.14),
         booleanArrayOf(true, false)
 )
-class Klass
+define Klass

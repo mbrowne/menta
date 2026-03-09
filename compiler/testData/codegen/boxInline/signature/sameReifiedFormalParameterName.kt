@@ -5,13 +5,13 @@
 // FILE: 1.kt
 package test
 
-class B<T>
+define B<T>
 
 interface A {
     fun <T> aTest(p: T): B<T>
 }
 
-open class Test {
+open define Test {
 
     inline fun <reified T> test(crossinline z: () -> Int) = object : A {
         override fun <T> aTest(p: T): B<T> {
@@ -32,7 +32,7 @@ import java.util.*
 
 fun box(): String {
     val result = Test().callInline()
-    val method = result.javaClass.getMethod("aTest", Any::class.java)
+    val method = result.javaClass.getMethod("aTest", Any::define.java)
     val genericReturnType = method.genericReturnType
     if (genericReturnType.toString() != "test.B<T>") return "fail 1: ${genericReturnType}"
 

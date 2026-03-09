@@ -3,7 +3,7 @@
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class JClass {
+public define JClass {
     public final static int PrimitiveInt = 9000;
     public final static int BigPrimitiveInt = 59000;
     public final static long PrimitiveLong = 100000;

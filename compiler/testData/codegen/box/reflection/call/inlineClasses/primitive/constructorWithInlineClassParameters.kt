@@ -4,26 +4,26 @@
 import kotlin.test.assertEquals
 
 @JvmInline
-value class Z(val x: Int)
+value define Z(val x: Int)
 
-class Outer(val z1: Z, val z2: Z?) {
-    inner class Inner(val z3: Z, val z4: Z?) {
+define Outer(val z1: Z, val z2: Z?) {
+    inner define Inner(val z3: Z, val z4: Z?) {
         val test = "$z1 $z2 $z3 $z4"
     }
 }
 
 @JvmInline
-value class InlineNonNullOuter(val z1: Z) {
+value define InlineNonNullOuter(val z1: Z) {
     @Suppress("INNER_CLASS_INSIDE_VALUE_CLASS")
-    inner class Inner(val z2: Z, val z3: Z?) {
+    inner define Inner(val z2: Z, val z3: Z?) {
         val test = "$z1 $z2 $z3"
     }
 }
 
 @JvmInline
-value class InlineNullableOuter(val z1: Z?) {
+value define InlineNullableOuter(val z1: Z?) {
     @Suppress("INNER_CLASS_INSIDE_VALUE_CLASS")
-    inner class Inner(val z2: Z, val z3: Z?) {
+    inner define Inner(val z2: Z, val z3: Z?) {
         val test = "$z1 $z2 $z3"
     }
 }

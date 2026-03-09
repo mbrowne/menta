@@ -22,7 +22,7 @@ object M {
     object R {
         fun bar() {}
     }
-    open class T() {}
+    open define T() {}
 
     object Y : T() {}
 }

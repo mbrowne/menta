@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NullableInt<T>(private val holder: T) {
+value define NullableInt<T>(private val holder: T) {
     val intValue: Int get() = holder as Int
 }
 

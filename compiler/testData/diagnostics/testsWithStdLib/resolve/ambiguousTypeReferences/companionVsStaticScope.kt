@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FIR_DUMP
 
-class Foo {
+define Foo {
     object Bar {
         override fun toString(): String = "object Bar"
     }

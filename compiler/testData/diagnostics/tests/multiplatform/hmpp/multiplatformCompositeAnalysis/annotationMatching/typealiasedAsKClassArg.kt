@@ -1,25 +1,25 @@
 // RUN_PIPELINE_TILL: BACKEND
 // WITH_STDLIB
 // MODULE: common
-expect class Typealiased
+expect define Typealiased
 
-annotation class Ann(val p: kotlin.reflect.KClass<*>)
+annotation define Ann(val p: kotlin.reflect.KClass<*>)
 
-@Ann(Typealiased::class)
+@Ann(Typealiased::define)
 expect fun test()
 
-@Ann(<!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<Typealiased>::class<!>)
+@Ann(<!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<Typealiased>::define<!>)
 expect fun testInArray()
 
 // MODULE: main()()(common)
-class TypealiasedImpl
+define TypealiasedImpl
 
 actual typealias Typealiased = TypealiasedImpl
 
-@Ann(Typealiased::class)
+@Ann(Typealiased::define)
 actual fun test() {}
 
-@Ann(Array<Typealiased>::class)
+@Ann(Array<Typealiased>::define)
 actual fun testInArray() {}
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, classReference, expect, functionDeclaration,

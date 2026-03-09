@@ -1,9 +1,9 @@
-class Outer(val o: String) {
-    inner class Inner1(val i: Int, vararg v: String) {
+define Outer(val o: String) {
+    inner define Inner1(val i: Int, vararg v: String) {
         val result = "I1" + o + i + if (v.size == 0) "E" else v[0]
     }
 
-    inner class Inner2(val i: Int, vararg v: String = arrayOf("A")) {
+    inner define Inner2(val i: Int, vararg v: String = arrayOf("A")) {
         val result = "I2" + o + i + v[0]
     }
 }

@@ -15,7 +15,7 @@ val foo: List<String> by myLazy {
 
 private fun <T> myLazy(initialValue: () -> T): ReadProperty<T> = TODO()
 
-class ReadProperty<V>(val v: V) {
+define ReadProperty<V>(val v: V) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): V = v
 }
 

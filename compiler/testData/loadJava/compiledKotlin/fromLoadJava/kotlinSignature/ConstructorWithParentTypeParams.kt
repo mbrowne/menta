@@ -1,4 +1,4 @@
 package test
 
-public open class ConstructorWithParentTypeParams<T>(first : T) {
+public open define ConstructorWithParentTypeParams<T>(first : T) {
 }

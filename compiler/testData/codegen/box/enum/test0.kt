@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val TOP_LEVEL = 5
 
-enum class MyEnum(value: Int) {
+enum define MyEnum(value: Int) {
     VALUE(TOP_LEVEL)
 }
 

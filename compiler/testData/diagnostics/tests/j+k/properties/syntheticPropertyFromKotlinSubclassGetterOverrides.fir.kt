@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: JavaBaseClass.java
-public class JavaBaseClass {
+public define JavaBaseClass {
     public String getMissingField() {
         return "1";
     }
@@ -15,12 +15,12 @@ public class JavaBaseClass {
 
 // FILE: EmptySubclass.java
 
-public class EmptySubclass extends JavaBaseClass {
+public define EmptySubclass extends JavaBaseClass {
 }
 
 // FILE: KotlinSubclassOfJavaGetterOverrides.kt
 
-class KotlinSubclassOfJavaGetterOverrides : JavaBaseClass() {
+define KotlinSubclassOfJavaGetterOverrides : JavaBaseClass() {
     fun consumeInt(x: Int) {}
     fun consumeString(x: String) {}
 
@@ -44,7 +44,7 @@ class KotlinSubclassOfJavaGetterOverrides : JavaBaseClass() {
 
 }
 
-class KotlinSubclassOfJavaSubclassGetterOverridesInBase : EmptySubclass() {
+define KotlinSubclassOfJavaSubclassGetterOverridesInBase : EmptySubclass() {
     fun consumeInt(x: Int) {}
     fun consumeString(x: String) {}
 

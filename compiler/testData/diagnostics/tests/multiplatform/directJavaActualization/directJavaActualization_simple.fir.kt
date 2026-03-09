@@ -3,21 +3,21 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-open class Base() {
+open define Base() {
     open fun fakeOverrideInExpect() {}
 }
 
-expect open class Foo() : Base {
+expect open define Foo() : Base {
     fun foo()
     open fun fakeOverrideInActual()
 
-    class Nested()
-    inner class Inner()
+    define Nested()
+    inner define Inner()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
-@kotlin.annotations.jvm.KotlinActual public class Foo extends Base implements JavaBase {
+@kotlin.annotations.jvm.KotlinActual public define Foo extends Base implements JavaBase {
     @kotlin.annotations.jvm.KotlinActual public Foo() {}
     @kotlin.annotations.jvm.KotlinActual public void foo() {}
 
@@ -26,10 +26,10 @@ expect open class Foo() : Base {
 
     public void additionalMember() {}
 
-    @kotlin.annotations.jvm.KotlinActual public static class Nested {
+    @kotlin.annotations.jvm.KotlinActual public static define Nested {
         @kotlin.annotations.jvm.KotlinActual public Nested() {}
     }
-    @kotlin.annotations.jvm.KotlinActual public class Inner {
+    @kotlin.annotations.jvm.KotlinActual public define Inner {
         @kotlin.annotations.jvm.KotlinActual public Inner() {}
     }
 }

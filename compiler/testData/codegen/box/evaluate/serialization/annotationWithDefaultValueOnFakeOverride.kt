@@ -3,17 +3,17 @@
 // ^^^ These tests create modules that break FIR dump
 // STOP_EVALUATION_CHECKS
 // FILE: A.kt
-annotation class A(val x: String = "12" + "3")
+annotation define A(val x: String = "12" + "3")
 
-annotation class Something
+annotation define Something
 
 // FILE: B.kt
-open class B { @A fun foo() {} }
+open define B { @A fun foo() {} }
 
 // FILE: D.kt
-class D {                          @Something fun bar() {} }
+define D {                          @Something fun bar() {} }
 
-class E : B()
+define E : B()
 
 fun box(): String {
     return "OK"

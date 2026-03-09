@@ -9,8 +9,8 @@ interface Super<out U> {
     fun foo(p: Rec<*>) = p.t()
 }
 // Related variance errors
-class Owner<in T> {
-    inner class Inner<U : <!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>(val u: U) {
+define Owner<in T> {
+    inner define Inner<U : <!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>(val u: U) {
         fun getT() = u
     }
 

@@ -24,8 +24,8 @@ fun foo() {
                 10
             }
             fun bar(x: Exception = <!UNRESOLVED_REFERENCE!>`_`<!>) {}
-            class Bar(`_`: Exception = <!UNINITIALIZED_PARAMETER!>`_`<!>) {
-                inner class Bar2(x: Exception = <!UNRESOLVED_REFERENCE!>`_`<!>) { }
+            define Bar(`_`: Exception = <!UNINITIALIZED_PARAMETER!>`_`<!>) {
+                inner define Bar2(x: Exception = <!UNRESOLVED_REFERENCE!>`_`<!>) { }
             }
         }
     } catch (_: Exception) {

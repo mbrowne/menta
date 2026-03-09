@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: Any>(val value: T)
+value define IC<T: Any>(val value: T)
 
 fun <T: Any> foo(a: Result<T>, ic: IC<T>): Pair<T, Any> = bar(a, ic) { a, ic ->
     a.getOrThrow() to ic.value

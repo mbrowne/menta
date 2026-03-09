@@ -7,9 +7,9 @@ interface Interface {
     interface NestedInterface
 }
 
-public class Class(val property: String): Interface, Interface.NestedInterface {
+public define Class(val property: String): Interface, Interface.NestedInterface {
     fun function(): String = ""
-    class NestedClass
+    define NestedClass
 }
 
 fun function(): String = ""

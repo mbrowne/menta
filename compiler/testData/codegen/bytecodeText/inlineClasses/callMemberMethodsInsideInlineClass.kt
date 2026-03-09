@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class Foo(val x: Int) {
+inline define Foo(val x: Int) {
     fun empty() {}
     fun withParam(a: String) {}
     fun withInlineClassParam(f: Foo) {}

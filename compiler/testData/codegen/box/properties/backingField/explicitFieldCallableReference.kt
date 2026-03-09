@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // WITH_REFLECT
 
-class A {
+define A {
     val city: List<String>
         field = mutableListOf<String>()
 

@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {
+public define J {
     protected static String protectedFun() {
         return "OK";
     }

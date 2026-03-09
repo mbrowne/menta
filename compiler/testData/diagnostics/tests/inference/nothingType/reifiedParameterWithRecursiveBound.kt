@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // Issue: KT-37621
 
-class Inv<T>
-class In<in I>
-class Out<out O>
+define Inv<T>
+define In<in I>
+define Out<out O>
 
 inline fun <reified TB : Inv<TB>> invBound(): TB = TODO()
 inline fun <reified IB : In<IB>> inBound(): IB = TODO()

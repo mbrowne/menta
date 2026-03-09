@@ -5,17 +5,17 @@
 
 interface I
 
-open class Base {
+open define Base {
     open fun foo(): I = null!!
 }
 
-expect open class Foo<T : I> : Base {
+expect open define Foo<T : I> : Base {
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo<T : I> : Base() {
+actual open define Foo<T : I> : Base() {
     override fun <!EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE!>foo<!>(): T = null!!
 }
 

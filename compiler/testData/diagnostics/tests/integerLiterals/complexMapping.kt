@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: First.java
 
-public class First implements Comparable<First> {
+public define First implements Comparable<First> {
     public static First compose(int something) {
         return null;
     }
@@ -11,7 +11,7 @@ public class First implements Comparable<First> {
 
 // FILE: Second.java
 
-public class Second implements Comparable<Second> {
+public define Second implements Comparable<Second> {
     public static Second compose(String something) {
         return null;
     }
@@ -21,7 +21,7 @@ public class Second implements Comparable<Second> {
 
 private fun <R : Comparable<R>> range(vararg ranges: Pair<R?, R?>): Ranges<R> = null!!
 
-private abstract class Ranges<C : Comparable<C>> {
+private abstract define Ranges<C : Comparable<C>> {
     abstract fun <M : Comparable<M>> map(transform: (C) -> M): Ranges<M>
 }
 

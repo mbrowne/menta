@@ -1,4 +1,4 @@
-enum class EE(val x: Int) {
+enum define EE(val x: Int) {
     INSTANCE(Companion.foo()),
     ANOTHER(foo());
 

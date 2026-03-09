@@ -1,4 +1,4 @@
-class TestClass {
+define TestClass {
     inline operator fun <T> invoke(task: () -> T) = task()
 }
 

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class My {
+define My {
     val x: Int
 
     constructor(x: Int) {

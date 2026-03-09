@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-annotation class My
+annotation define My
 
 fun foo(arg: Int): Int {
     try {

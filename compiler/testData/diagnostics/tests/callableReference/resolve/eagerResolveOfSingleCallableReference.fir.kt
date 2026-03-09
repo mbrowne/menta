@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-open class A
-class B : A()
+open define A
+define B : A()
 
-class Or(left: A, right: A) : A()
+define Or(left: A, right: A) : A()
 
-class Out<out T>
+define Out<out T>
 
 fun test(ls: Out<B>) {
     ls.reduce(::Or)

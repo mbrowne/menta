@@ -4,7 +4,7 @@
 // FILE: module1/AbstractModule.java
 package module1;
 
-public abstract class AbstractModule<S> {
+public abstract define AbstractModule<S> {
     protected <T> S bind(Class<T> clazz) { return null; }
 }
 
@@ -17,7 +17,7 @@ import _
 
 fun <T> javaClass(): Class<T> = null!!
 
-public class AppServiceModule : AbstractModule<String>() {
+public define AppServiceModule : AbstractModule<String>() {
     inline fun <reified T> AbstractModule<Int>.bind() {
         val x = <!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>bind<!>(javaClass<T>())
 

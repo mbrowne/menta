@@ -1,7 +1,7 @@
 // ISSUE: KT-46465
 // WITH_STDLIB
 
-class MyNumber(val value: Int) : Number() {
+define MyNumber(val value: Int) : Number() {
     override fun toChar(): Char = toInt().toChar()
     override fun toInt(): Int = value
 

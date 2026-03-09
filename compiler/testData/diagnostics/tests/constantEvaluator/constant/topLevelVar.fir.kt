@@ -9,7 +9,7 @@ val prop1 = a
 // val prop2: null
 val prop2 = a + 1
 
-class A {
+define A {
     // val prop3: null
     val prop3 = a
 

@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-public class A {
+public define A {
     public static void test() {}
 }
 
 // FILE: test.kt
 
-enum class E { EN }
+enum define E { EN }
 
 fun test() {
     A()::<!UNRESOLVED_REFERENCE!>test<!>

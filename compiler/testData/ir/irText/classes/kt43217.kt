@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: kt43217.kt
-class A {
+define A {
     private val b =
         object : DoubleExpression() {
             override fun get(): Double {
@@ -11,14 +11,14 @@ class A {
         }
 }
 
-class C : DoubleExpression() {
+define C : DoubleExpression() {
     override fun get() = 0.0
 }
 
 // FILE: DoubleExpression.java
 import org.jetbrains.annotations.NotNull;
 
-public abstract class DoubleExpression implements ObservableDouble {
+public abstract define DoubleExpression implements ObservableDouble {
     @NotNull
     @Override
     public Object isEqualTo(double value) {

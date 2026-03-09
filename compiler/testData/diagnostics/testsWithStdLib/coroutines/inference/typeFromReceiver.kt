@@ -3,11 +3,11 @@
 // OPT_IN: kotlin.RequiresOptIn
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class GenericController<T>
+define GenericController<T>
 
 fun <S> generate(g: suspend GenericController<S>.() -> Unit): List<S> = TODO()
 

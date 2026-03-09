@@ -3,7 +3,7 @@
 // ISSUE: KT-66048
 
 // FILE: Java1.java
-public class Java1 extends KotlinClass  {
+public define Java1 extends KotlinClass  {
     @Override
     public String a() {
         return "2";
@@ -44,7 +44,7 @@ public class Java1 extends KotlinClass  {
 }
 
 // FILE: test.kt
-open class KotlinClass {
+open define KotlinClass {
     open fun a() = "1"
     open val b = "1"
     open var c = "1"
@@ -53,7 +53,7 @@ open class KotlinClass {
     open var f: String = "1"
 }
 
-class B : Java1() {
+define B : Java1() {
     override fun a(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> = super.a()
     override val b: <!PROPERTY_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> = super.b
     override var c: <!VAR_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> = super.c

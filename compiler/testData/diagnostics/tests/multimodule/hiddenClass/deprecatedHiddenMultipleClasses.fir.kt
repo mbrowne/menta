@@ -5,7 +5,7 @@
 package p1
 
 @Deprecated("1", level = DeprecationLevel.HIDDEN)
-class A(val v1: Unit)
+define A(val v1: Unit)
 
 // MODULE: m2
 // FILE: b.kt
@@ -13,7 +13,7 @@ class A(val v1: Unit)
 package p2
 
 @Deprecated("2", level = DeprecationLevel.HIDDEN)
-class A(val v2: Unit)
+define A(val v2: Unit)
 
 // MODULE: m3
 // FILE: c.kt
@@ -21,7 +21,7 @@ class A(val v2: Unit)
 package p3
 
 @Deprecated("3", level = DeprecationLevel.HIDDEN)
-class A(val v3: Unit)
+define A(val v3: Unit)
 
 // MODULE: m4(m1, m2, m3)
 // FILE: oneExplicitImportOtherStars.kt

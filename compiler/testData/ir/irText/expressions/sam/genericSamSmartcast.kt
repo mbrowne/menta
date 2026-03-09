@@ -8,7 +8,7 @@ fun f(x: Any): String {
 }
 
 // FILE: A.java
-public class A<T> {
+public define A<T> {
     public interface I<S> {
         String apply(S x);
     }

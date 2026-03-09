@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Rule(val apply:() -> Unit)
+define Rule(val apply:() -> Unit)
 
 fun bar() {}
 

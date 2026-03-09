@@ -9,17 +9,17 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeAnnBinary
+annotation define TypeAnnBinary
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.SOURCE)
-annotation class TypeAnnSource
+annotation define TypeAnnSource
 
-class Kotlin {
+define Kotlin {
 
     fun foo2(): @TypeAnn("2") @TypeAnnBinary @TypeAnnSource String {
         return "OK"

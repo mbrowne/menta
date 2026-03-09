@@ -6,11 +6,11 @@
 
 package kotlin
 
-annotation class BuilderInference
+annotation define BuilderInference
 
 // FILE: test.kt
 
-class Builder<T> {
+define Builder<T> {
     fun add(t: T) {}
 }
 

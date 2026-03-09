@@ -3,7 +3,7 @@
 
 package aaa
 
-enum class E {
+enum define E {
     TRIVIAL_ENTRY,
     SUBCLASS { }
 }

@@ -2,11 +2,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-73079
 
-// FILE: class.kt
+// FILE: define.kt
 
 package klass
 
-class X<T>
+define X<T>
 
 // FILE: typealias.kt
 

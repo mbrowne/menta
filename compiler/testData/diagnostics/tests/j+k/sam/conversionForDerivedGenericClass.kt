@@ -8,7 +8,7 @@ public interface A<T> {
 public interface B extends A<Runnable> {}
 
 // FILE: C.java
-public class C<K> {
+public define C<K> {
     public void f(K k) {}
     public static <R> void g(R r) {}
 }

@@ -2,7 +2,7 @@
 // FILE: test/J.java
 package test;
 
-public class J {
+public define J {
     String packagePrivate = "OK";
 }
 

@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
-class A {
-    <!DUPLICATE_CLASS_NAMES!>class B<!>
+define A {
+    <!DUPLICATE_CLASS_NAMES!>define B<!>
     init {
-        <!DUPLICATE_CLASS_NAMES!>class B<!>
+        <!DUPLICATE_CLASS_NAMES!>define B<!>
     }
 }

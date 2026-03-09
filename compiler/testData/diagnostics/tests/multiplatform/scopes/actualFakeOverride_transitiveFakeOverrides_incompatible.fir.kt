@@ -2,13 +2,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     fun foo(param: Int)
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class <!EXPECT_ACTUAL_INCOMPATIBLE_CLASS_SCOPE!>Foo<!> : A
+actual define <!EXPECT_ACTUAL_INCOMPATIBLE_CLASS_SCOPE!>Foo<!> : A
 
 interface A : B {
     override fun foo(param: Int) {}

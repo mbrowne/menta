@@ -3,9 +3,9 @@
 
 // FILE: A.java
 
-public class A<T> {
+public define A<T> {
     public void add(T x) {}
-    public static class B extends A<Runnable> {}
+    public static define B extends A<Runnable> {}
 }
 
 // FILE: test.kt

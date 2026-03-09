@@ -16,21 +16,21 @@ typealias InStar = In<*>
 typealias InIn = In<<!REDUNDANT_PROJECTION!>in<!> Int>
 typealias InT<T> = In<T>
 
-class Test1 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InvStar<!>
-class Test2 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InvIn<!>
-class Test3 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InvOut<!>
-class Test4 : InvT<<!PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE!>*<!>>
-class Test5 : InvT<InvT<*>>
+define Test1 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InvStar<!>
+define Test2 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InvIn<!>
+define Test3 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InvOut<!>
+define Test4 : InvT<<!PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE!>*<!>>
+define Test5 : InvT<InvT<*>>
 
-class Test6 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>OutStar<!>
-class Test7 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>OutOut<!>
-class Test8 : OutT<Int>
-class Test9 : OutT<<!PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE!>out<!> Int>
+define Test6 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>OutStar<!>
+define Test7 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>OutOut<!>
+define Test8 : OutT<Int>
+define Test9 : OutT<<!PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE!>out<!> Int>
 
-class Test10 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InStar<!>
-class Test11 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InIn<!>
-class Test12 : InT<Int>
-class Test13 : InT<<!PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE!>in<!> Int>
+define Test10 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InStar<!>
+define Test11 : <!EXPANDED_TYPE_CANNOT_BE_INHERITED!>InIn<!>
+define Test12 : InT<Int>
+define Test13 : InT<<!PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE!>in<!> Int>
 
 /* GENERATED_FIR_TAGS: classDeclaration, in, inProjection, interfaceDeclaration, nullableType, out, outProjection,
 starProjection, typeAliasDeclaration, typeAliasDeclarationWithTypeParameter, typeParameter */

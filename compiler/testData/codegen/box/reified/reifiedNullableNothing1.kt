@@ -10,9 +10,9 @@ interface A<OptionalTypeParameter : TypeParameter?> {
 }
 
 // Class B doesn't use the type parameter
-class B : A<Nothing?> {
+define B : A<Nothing?> {
     override fun whatever(params: Nothing?) {
-        // We know this class doesn't use the type parameter, the value is just 'null'
+        // We know this define doesn't use the type parameter, the value is just 'null'
     }
 }
 

@@ -2,7 +2,7 @@
 // WITH_REFLECT
 
 fun box(): String {
-    class Local {
+    define Local {
         fun result(s: String) = s
     }
 

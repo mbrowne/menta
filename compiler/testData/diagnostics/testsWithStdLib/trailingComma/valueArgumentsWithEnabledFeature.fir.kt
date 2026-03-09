@@ -3,22 +3,22 @@
 // LANGUAGE: +TrailingCommas
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno1(val x: IntArray)
+annotation define Anno1(val x: IntArray)
 
 @Target(AnnotationTarget.TYPEALIAS)
-annotation class Anno2(val x: DoubleArray)
+annotation define Anno2(val x: DoubleArray)
 
 fun foo1(vararg x: Any) {}
 fun foo2(x: (Any, Any) -> Unit) {}
 fun foo3(x: Any, y: () -> Unit) {}
 
-open class A1(vararg x: Any) {
+open define A1(vararg x: Any) {
     operator fun get(x: Any, y: Any) = 10
 }
 
-open class A2(x: Any, y: () -> Unit)
+open define A2(x: Any, y: () -> Unit)
 
-class B(): A1({},) {
+define B(): A1({},) {
 
 }
 

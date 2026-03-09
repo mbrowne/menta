@@ -6,7 +6,7 @@ import kotlin.contracts.*
 
 fun capture(block: () -> Unit): String = ""
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 inline fun inPlace(block: () -> Unit): String {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
@@ -17,7 +17,7 @@ inline fun inPlace(block: () -> Unit): String {
 
 fun consume(x: Any?) {}
 
-class A {
+define A {
     val a = capture { consume(x) }
 
     val b = inPlace {

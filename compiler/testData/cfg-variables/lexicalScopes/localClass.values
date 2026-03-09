@@ -12,40 +12,18 @@ fun foo() {
     "after"
 }
 ---------------------
-"before"                                                                                  <v0>: *    NEW: r("before") -> <v0>
-A                                                                                         !<v1>: *
-A(val                                                                                     <v2>: *    NEW: magic[UNRESOLVED_CALL](A(val|!<v1>) -> <v2>
-A(val x:                                                                                  <v3>: *    NEW: magic[UNRESOLVED_CALL](A(val x:|<v2>) -> <v3>
-A(val x: Int                                                                              <v4>: *    NEW: magic[UNRESOLVED_CALL](A(val x: Int|<v3>) -> <v4>
-{ init { val a = x } fun foo() { val b = x } }                                            <v5>: *    NEW: r({ init { val a = x } fun foo() { val b = x } }) -> <v5>
-"after"                                                                                   <v6>: *    NEW: r("after") -> <v6>
-{ "before" class A(val x: Int) { init { val a = x } fun foo() { val b = x } } "after" }   <v6>: *    COPY
-=====================
-== anonymous_0 ==
-{
-        init {
-            val a = x
-        }
-        fun foo() {
-            val b = x
-        }
-    }
----------------------
-init                 !<v1>: *
-{ val a = x }        <v0>: *    NEW: r({ val a = x }) -> <v0>
-init { val a = x }   <v2>: *    NEW: magic[UNRESOLVED_CALL](init { val a = x }|<v0>, !<v1>) -> <v2>
-=====================
-== anonymous_1 ==
-{
-            val a = x
-        }
----------------------
-x   <v0>: {<: [Error type: Not found recorded type for x]}   NEW: magic[UNRESOLVED_CALL](x) -> <v0>
+                                                                                          <v1>: Int   NEW: magic[FAKE_INITIALIZER](val x: Int) -> <v1>
+                                                                                          <v2>: A     NEW: magic[IMPLICIT_RECEIVER](x) -> <v2>
+"before"                                                                                  <v0>: *     NEW: r("before") -> <v0>
+x                                                                                         <v3>: Int   NEW: r(x|<v2>) -> <v3>
+"after"                                                                                   <v4>: *     NEW: r("after") -> <v4>
+{ "before" class A(val x: Int) { init { val a = x } fun foo() { val b = x } } "after" }   <v4>: *     COPY
 =====================
 == foo ==
 fun foo() {
             val b = x
         }
 ---------------------
-x   <v0>: {<: [Error type: Not found recorded type for x]}   NEW: magic[UNRESOLVED_CALL](x) -> <v0>
+    <v0>: A     NEW: magic[IMPLICIT_RECEIVER](x) -> <v0>
+x   <v1>: Int   NEW: r(x|<v0>) -> <v1>                  
 =====================

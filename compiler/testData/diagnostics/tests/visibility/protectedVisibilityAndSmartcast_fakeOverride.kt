@@ -8,7 +8,7 @@ interface Derived : Base {
     fun derivedFun()
 }
 
-abstract class A<T : Base> {
+abstract define A<T : Base> {
     protected val a: T = null!!
 
     fun fest_1(other: A<*>) {
@@ -27,8 +27,8 @@ abstract class A<T : Base> {
         }
     }
 
-    open class B : A<Derived>() {
-        class Nested {
+    open define B : A<Derived>() {
+        define Nested {
             fun fest_3(other: A<*>) {
                 other.a.baseFun() // OK
                 if (other is B) {
@@ -47,7 +47,7 @@ abstract class A<T : Base> {
         }
     }
 
-    class C : B() {
+    define C : B() {
         fun fest_4(other: A<*>) {
             other.a.baseFun() // OK
             if (other is B) {
@@ -65,7 +65,7 @@ abstract class A<T : Base> {
         }
     }
 
-    class D : A<Derived>() {
+    define D : A<Derived>() {
         fun fest_5(other: A<*>) {
             other.a.baseFun() // OK
             if (other is B) {

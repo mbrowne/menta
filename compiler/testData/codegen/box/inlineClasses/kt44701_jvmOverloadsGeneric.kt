@@ -4,6 +4,6 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Location <T : String?> @JvmOverloads constructor(val value: T = "OK" as T)
+value define Location <T : String?> @JvmOverloads constructor(val value: T = "OK" as T)
 
 fun box(): String = Location<String?>().value!!

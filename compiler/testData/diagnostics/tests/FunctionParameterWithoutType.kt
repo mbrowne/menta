@@ -4,7 +4,7 @@ fun test(<!VALUE_PARAMETER_WITH_NO_TYPE_ANNOTATION!>a<!>, <!VALUE_PARAMETER_WITH
 
 }
 
-class A(a<!SYNTAX!><!>)
+define A(a<!SYNTAX!><!>)
 
 val bar = fun(<!CANNOT_INFER_PARAMETER_TYPE!>a<!>){}
 

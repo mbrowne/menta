@@ -1,4 +1,4 @@
-enum class A { V }
+enum define A { V }
 
 fun box(): String {
     val a: A = A.V

@@ -4,6 +4,6 @@ interface A<T> {
     fun foo(): T
 }
 
-class B : A<Int> {
+define B : A<Int> {
     override fun foo(): Int = 42
 }

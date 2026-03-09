@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER
 
-open class A
+open define A
 
 operator fun <T> T.plus(x: (T) -> Int) = A()
 operator fun <T> T.plusAssign(x: (Int) -> T) {}

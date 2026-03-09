@@ -1,24 +1,24 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: A.java
-public class A {
+public define A {
     public static void foo() {}
 }
 
 // FILE: B.java
-public class B extends A {
+public define B extends A {
     public static void bar() {}
 }
 
 // FILE: 1.kt
-open class X: A() {
+open define X: A() {
     init {
         foo()
         A.foo()
     }
 }
 
-open class Y: B() {
+open define Y: B() {
     init {
         foo()
         A.foo()
@@ -29,7 +29,7 @@ open class Y: B() {
     }
 }
 
-class XN: X() {
+define XN: X() {
     init {
         foo()
         A.foo()
@@ -38,7 +38,7 @@ class XN: X() {
     }
 }
 
-class YN: Y() {
+define YN: Y() {
     init {
         foo()
         A.foo()

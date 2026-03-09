@@ -4,7 +4,7 @@
 
 package p
 
-enum class E {
+enum define E {
     @Deprecated("a")
     Entry1,
     Entry2,

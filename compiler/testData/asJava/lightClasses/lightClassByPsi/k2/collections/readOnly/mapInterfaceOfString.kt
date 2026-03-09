@@ -3,11 +3,11 @@ package test
 
 interface IMap : Map<String, String>
 
-abstract class CMap : IMap
+abstract define CMap : IMap
 
-abstract class CMap2(d: IMap) : IMap by d
+abstract define CMap2(d: IMap) : IMap by d
 
-open class CMap3 : IMap {
+open define CMap3 : IMap {
     override val entries: Set<Map.Entry<String, String>>
         get() = TODO("Not yet implemented")
     override val keys: Set<String>
@@ -34,4 +34,4 @@ open class CMap3 : IMap {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMap.class[clear;compute;computeIfAbsent;computeIfPresent;containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap2.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap3.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMap.define[clear;compute;computeIfAbsent;computeIfPresent;containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap2.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap3.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]

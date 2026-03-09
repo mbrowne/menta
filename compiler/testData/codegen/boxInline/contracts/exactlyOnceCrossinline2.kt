@@ -5,7 +5,7 @@ package test
 
 import kotlin.contracts.*
 
-class A {
+define A {
     var res = "FAIL"
 
     fun foo() {

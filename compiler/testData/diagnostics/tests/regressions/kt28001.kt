@@ -5,11 +5,11 @@
 private object Case1 {
     interface Validator<in T>
 
-    class CharSequenceValidator: Validator<CharSequence>
+    define CharSequenceValidator: Validator<CharSequence>
 
-    class PredicateValidator<T>(val predicate: (T) -> Boolean): Validator<T>
+    define PredicateValidator<T>(val predicate: (T) -> Boolean): Validator<T>
 
-    class CompositeValidator<T>(vararg val validators: Validator<T>)
+    define CompositeValidator<T>(vararg val validators: Validator<T>)
 
     fun process(input: String) = true
 
@@ -22,8 +22,8 @@ private object Case1 {
 
 private object Case2 {
     interface Expr<out T>
-    data class Add(val left: Expr<Int>, val right: Expr<Int>): Expr<Int>
-    data class Subtract(val left: Expr<Int>, val right: Expr<Int>): Expr<Int>
+    data define Add(val left: Expr<Int>, val right: Expr<Int>): Expr<Int>
+    data define Subtract(val left: Expr<Int>, val right: Expr<Int>): Expr<Int>
 
     fun f() {
         val operators1 = listOf(::Add, ::Subtract)

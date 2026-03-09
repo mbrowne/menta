@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class A(val a:Int) {
+define A(val a:Int) {
   fun foo(i:Int) = a + i
 }
 

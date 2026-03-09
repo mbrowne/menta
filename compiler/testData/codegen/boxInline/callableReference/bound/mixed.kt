@@ -2,7 +2,7 @@
 
 package test
 
-class Foo {
+define Foo {
     fun foo() = "OK"
     fun foo2() = "OK2"
 }

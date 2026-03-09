@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Foo
-class Bar {
+define Foo
+define Bar {
     fun barFunction() = println("I am Bar")
 }
 

@@ -7,18 +7,18 @@
 // MODULE: common
 // FILE: common.kt
 
-expect open class C1() {
+expect open define C1() {
     fun f(): String
 
     val p: Int
 }
 
-class C2 : C1()
+define C2 : C1()
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual open class C1 {
+actual open define C1 {
     actual fun f() = "O"
 
     actual val p = 42

@@ -15,9 +15,9 @@ actual interface Foo {
     actual fun test(a: Int)
 }
 
-open class FooFoo(val a: Foo): Foo by a
+open define FooFoo(val a: Foo): Foo by a
 
-class Final(f:Foo): FooFoo(f) {
+define Final(f:Foo): FooFoo(f) {
     override fun test(a: Int) {
         super.<!SUPER_CALL_WITH_DEFAULT_PARAMETERS!>test<!>()
     }

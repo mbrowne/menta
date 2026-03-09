@@ -2,8 +2,8 @@
 // LANGUAGE: +ProhibitAssigningSingleElementsToVarargsInNamedForm +AllowAssigningArrayElementsToVarargsInNamedFormForFunctions
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-annotation class Anno1(vararg val s: String)
-annotation class Anno2(vararg val i: Int)
+annotation define Anno1(vararg val s: String)
+annotation define Anno2(vararg val i: Int)
 
 @Anno1(s = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_ANNOTATION_ERROR, TYPE_MISMATCH!>"foo"<!>)
 @Anno2(i = *<!REDUNDANT_SPREAD_OPERATOR_IN_NAMED_FORM_IN_ANNOTATION!>intArrayOf(1)<!>)

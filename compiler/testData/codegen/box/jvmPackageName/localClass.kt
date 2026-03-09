@@ -13,7 +13,7 @@ fun box(): String =
 package x
 
 fun String.z(): Any {
-    class Local {
+    define Local {
         override fun toString(): String =
             this@z
     }

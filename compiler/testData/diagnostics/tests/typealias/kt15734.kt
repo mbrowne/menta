@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 typealias TString = String
 

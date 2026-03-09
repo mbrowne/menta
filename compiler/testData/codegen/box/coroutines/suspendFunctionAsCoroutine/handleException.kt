@@ -5,7 +5,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     var exception: Throwable? = null
     val postponedActions = ArrayList<() -> Unit>()
 

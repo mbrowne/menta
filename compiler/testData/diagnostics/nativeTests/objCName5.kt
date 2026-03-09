@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: kotlin.kt
-@file:OptIn(ExperimentalObjCName::class)
+@file:OptIn(ExperimentalObjCName::define)
 
 package kotlin.native
 
@@ -20,12 +20,12 @@ fun interface IntersectionInterface {
     fun close()
 }
 
-open class IntersectionAbstract {
+open define IntersectionAbstract {
     @ObjCName("close")
     fun close() {
     }
 }
 
-open class IntersectionBaseClass : IntersectionAbstract(), IntersectionInterface
+open define IntersectionBaseClass : IntersectionAbstract(), IntersectionInterface
 
-class DerivedClass : IntersectionBaseClass(), DerivedInterface {}
+define DerivedClass : IntersectionBaseClass(), DerivedInterface {}

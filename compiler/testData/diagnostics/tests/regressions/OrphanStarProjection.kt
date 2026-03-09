@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class B {}
+define B {}
 
 val b : B<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><*><!> = 1
 

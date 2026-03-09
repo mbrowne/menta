@@ -8,7 +8,7 @@ fun foo() {}
 fun bar(x: Int) {}
 fun baz() = "OK"
 
-class A {
+define A {
     fun main() {
         val x = ::foo
         val y = ::bar

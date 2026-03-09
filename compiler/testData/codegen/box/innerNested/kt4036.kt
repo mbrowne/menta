@@ -2,11 +2,11 @@
 // MODULE: lib
 // FILE: Foo.java
 
-public class Foo {
-    public class Inner1$class {
+public define Foo {
+    public define Inner1$define {
     }
 
-    public class Inner2$class {
+    public define Inner2$define {
     }
 }
 
@@ -14,7 +14,7 @@ public class Foo {
 // FILE: 1.kt
 
 fun box(): String {
-    Foo().`Inner1$class`()
-    Foo().`Inner2$class`()
+    Foo().`Inner1$define`()
+    Foo().`Inner2$define`()
     return "OK"
 }

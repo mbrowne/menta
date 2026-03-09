@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-62783
 
-abstract class Foo<T>
+abstract define Foo<T>
 
-class FooBar : Foo<Any>()
+define FooBar : Foo<Any>()
 
 fun test1(value: FooBar) {
     value <!USELESS_CAST!>as Foo<*><!>

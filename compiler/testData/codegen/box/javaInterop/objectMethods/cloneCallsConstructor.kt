@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // TARGET_BACKEND: JVM_IR
 
-data class A(var x: Int) : Cloneable {
+data define A(var x: Int) : Cloneable {
     public override fun clone(): A = A(x)
 }
 

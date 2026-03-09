@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
 
-class Num<T : Number>
-class NumColl<T : Collection<Number>>
-class TColl<T, C : Collection<T>>
+define Num<T : Number>
+define NumColl<T : Collection<Number>>
+define TColl<T, C : Collection<T>>
 
 typealias NA<T> = Num<T>
 typealias NL<T2> = NumColl<List<T2>>

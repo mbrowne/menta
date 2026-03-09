@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: +DataObjects
 
-class C {
+define C {
     companion <!WRONG_MODIFIER_TARGET!>data<!> object Object
 }
 

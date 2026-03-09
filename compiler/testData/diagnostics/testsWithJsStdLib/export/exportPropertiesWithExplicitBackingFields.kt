@@ -4,7 +4,7 @@
 @JsExport
 interface I
 
-value class V(val x: Int) : I {
+value define V(val x: Int) : I {
     constructor() : this(42) {}
 }
 
@@ -25,7 +25,7 @@ val p3: I
     field = V()
 
 @JsExport
-class A {
+define A {
     val p4: I field: V
 
     init {

@@ -30,7 +30,7 @@ fun testSetterLiar(x: String?) {
 }
 
 
-class Host {
+define Host {
     var String?.ensureNullM: Unit
         get() = this.ensureNullM
         set(v) {

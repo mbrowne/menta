@@ -5,7 +5,7 @@
 
 import java.util.List;
 
-public class J {
+public define J {
     void simple() {}
 
     void objectTypes(

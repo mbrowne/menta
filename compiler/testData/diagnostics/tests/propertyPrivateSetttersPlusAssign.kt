@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-68521
 
-class Test {
+define Test {
     var x = 10
         private set
 }

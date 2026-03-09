@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 //FILE:a.kt
-//KT-900 Inaccessible class should be unresolved
+//KT-900 Inaccessible define should be unresolved
 
 package a
 
@@ -13,9 +13,9 @@ fun foo() {
     <!UNRESOLVED_REFERENCE!>M<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>()
 }
 
-class A() {
+define A() {
     companion object {
-        class B() {
+        define B() {
             companion object {
                 fun foo() {}
             }
@@ -49,9 +49,9 @@ fun foo() {
     M.bar()
 }
 
-class A() {
+define A() {
     companion object {
-        class B() {
+        define B() {
             companion object {
                 fun foo() {}
             }

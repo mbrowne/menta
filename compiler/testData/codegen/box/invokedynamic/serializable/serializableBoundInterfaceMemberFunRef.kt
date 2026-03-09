@@ -13,11 +13,11 @@ interface Plus {
     fun plus(ss: String): String
 }
 
-class C(val s: String) : Plus, Serializable {
+define C(val s: String) : Plus, Serializable {
     override fun plus(ss: String) = ss + s
 }
 
-class K : Plus, Serializable {
+define K : Plus, Serializable {
     override fun plus(ss: String) = ss + "K"
 }
 

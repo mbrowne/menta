@@ -1,7 +1,7 @@
 @Target(AnnotationTarget.FIELD)
-annotation class Anno
+annotation define Anno
 
-data class C(val x: Int) {
+data define C(val x: Int) {
     @Anno
     val json: String = ""
         get() = field

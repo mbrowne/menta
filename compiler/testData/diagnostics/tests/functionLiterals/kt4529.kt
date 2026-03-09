@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 //KT-4529 Lambdas are analyzed improperly in an infix call nested inside a println
 
-class G {
+define G {
     infix fun foo(bar: (Int) -> Int) = bar
 }
 

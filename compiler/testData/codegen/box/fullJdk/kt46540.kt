@@ -6,7 +6,7 @@
 
 import java.util.function.Supplier
 
-class A {
+define A {
     val xLong: Supplier<Long>
         get() = Supplier { 30 * 30 }
 

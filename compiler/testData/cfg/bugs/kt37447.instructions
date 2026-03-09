@@ -1,5 +1,5 @@
-== anonymous_0 ==
-{
+== Test_1 ==
+class Test_1 {
     @Target(AnnotationTarget.VALUE_PARAMETER)
     annotation class Range(val min: Long = 0)
 
@@ -8,37 +8,32 @@
 ---------------------
 L0:
   1 <START>
-  2 mark({ @Target(AnnotationTarget.VALUE_PARAMETER) annotation class Range(val min: Long = 0) fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION })
-    magic[UNRESOLVED_CALL](annotation) -> <v0>
-    jmp?(L2)                                                                                                                                                                                                           NEXT:[<END>, d(fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION)]
-    d(fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION)                                                                                               NEXT:[<SINK>]
 L1:
-L2 [after local declaration]:
-  1 <END>                                                                                                                                                                                                              NEXT:[<SINK>]                                                                                                                                                                                                             PREV:[jmp?(L2)]
+    <END>      NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                                                                                                                                            PREV:[]
+    <ERROR>    PREV:[]
 sink:
-    <SINK>                                                                                                                                                                                                             PREV:[<ERROR>, <END>, d(fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION)]
+    <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == foo ==
 fun foo(@Range(min = -90L) x: Int) = Unit // KtPrefixExpression isn't marked as BindingContext.USED_AS_EXPRESSION
 ---------------------
-L3:
-  3 <START>
+L0:
+  1 <START>
     v(@Range(min = -90L) x: Int)
     magic[FAKE_INITIALIZER](@Range(min = -90L) x: Int) -> <v0>
     w(x|<v0>)
     r(Unit) -> <v1>
-    ret(*|<v1>) L4
-L4:
+    ret(*|<v1>) L1
+L1:
     <END>                                                         NEXT:[<SINK>]
 error:
     <ERROR>                                                       PREV:[]
 sink:
     <SINK>                                                        PREV:[<ERROR>, <END>]
 =====================
-== anonymous_1 ==
-{
+== Test_2 ==
+class Test_2 {
     @Target(AnnotationTarget.FUNCTION)
     annotation class Range(val min: Long = 0)
 
@@ -48,38 +43,33 @@ sink:
 ---------------------
 L0:
   1 <START>
-  2 mark({ @Target(AnnotationTarget.FUNCTION) annotation class Range(val min: Long = 0) @Range(min = -90L) // KtPrefixExpression is marked as BindingContext.USED_AS_EXPRESSION fun foo(x: Int) = Unit })
-    magic[UNRESOLVED_CALL](annotation) -> <v0>
-    jmp?(L2)                                                                                                                                                                                                 NEXT:[<END>, d(@Range(min = -90L) // KtPrefixExpression is marked as BindingContext.USED_AS_EXPRESSION fun foo(x: Int) = Unit)]
-    d(@Range(min = -90L) // KtPrefixExpression is marked as BindingContext.USED_AS_EXPRESSION fun foo(x: Int) = Unit)                                                                                        NEXT:[<SINK>]
 L1:
-L2 [after local declaration]:
-  1 <END>                                                                                                                                                                                                    NEXT:[<SINK>]                                                                                                                                                                                                   PREV:[jmp?(L2)]
+    <END>      NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                                                                                                                                  PREV:[]
+    <ERROR>    PREV:[]
 sink:
-    <SINK>                                                                                                                                                                                                   PREV:[<ERROR>, <END>, d(@Range(min = -90L) // KtPrefixExpression is marked as BindingContext.USED_AS_EXPRESSION fun foo(x: Int) = Unit)]
+    <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == foo ==
 @Range(min = -90L) // KtPrefixExpression is marked as BindingContext.USED_AS_EXPRESSION
     fun foo(x: Int) = Unit
 ---------------------
-L3:
-  3 <START>
+L0:
+  1 <START>
     v(x: Int)
     magic[FAKE_INITIALIZER](x: Int) -> <v0>
     w(x|<v0>)
     r(Unit) -> <v1>
-    ret(*|<v1>) L4
-L4:
+    ret(*|<v1>) L1
+L1:
     <END>                                      NEXT:[<SINK>]
 error:
     <ERROR>                                    PREV:[]
 sink:
     <SINK>                                     PREV:[<ERROR>, <END>]
 =====================
-== anonymous_2 ==
-{
+== Test_3 ==
+class Test_3 {
     @Target(AnnotationTarget.EXPRESSION)
     annotation class Range(val min: Long = 0)
 
@@ -88,29 +78,24 @@ sink:
 ---------------------
 L0:
   1 <START>
-  2 mark({ @Target(AnnotationTarget.EXPRESSION) annotation class Range(val min: Long = 0) fun foo(x: Int) = @Range(min = -90L) Unit })
-    magic[UNRESOLVED_CALL](annotation) -> <v0>
-    jmp?(L2)                                                                                                                              NEXT:[<END>, d(fun foo(x: Int) = @Range(min = -90L) Unit)]
-    d(fun foo(x: Int) = @Range(min = -90L) Unit)                                                                                          NEXT:[<SINK>]
 L1:
-L2 [after local declaration]:
-  1 <END>                                                                                                                                 NEXT:[<SINK>]                                                                                                                                PREV:[jmp?(L2)]
+    <END>      NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                                                               PREV:[]
+    <ERROR>    PREV:[]
 sink:
-    <SINK>                                                                                                                                PREV:[<ERROR>, <END>, d(fun foo(x: Int) = @Range(min = -90L) Unit)]
+    <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == foo ==
 fun foo(x: Int) = @Range(min = -90L) Unit
 ---------------------
-L3:
-  3 <START>
+L0:
+  1 <START>
     v(x: Int)
     magic[FAKE_INITIALIZER](x: Int) -> <v0>
     w(x|<v0>)
     r(Unit) -> <v1>
-    ret(*|<v1>) L4
-L4:
+    ret(*|<v1>) L1
+L1:
     <END>                                      NEXT:[<SINK>]
 error:
     <ERROR>                                    PREV:[]

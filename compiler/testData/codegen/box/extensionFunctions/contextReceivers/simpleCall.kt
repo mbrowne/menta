@@ -2,10 +2,10 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class A {
+define A {
     val o = "O"
 }
-class B {
+define B {
     val k = "K"
 }
 

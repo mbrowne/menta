@@ -12,7 +12,7 @@ public interface Function2<A extends B, B extends C, C extends A> {
 }
 
 // FILE: A.java
-public class A {
+public define A {
     public static void foo(Function1<?, ?> f) {}
     public static void bar(Function2<?, ?, ?> f) {}
 }

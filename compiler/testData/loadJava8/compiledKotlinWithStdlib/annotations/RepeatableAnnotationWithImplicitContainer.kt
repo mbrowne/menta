@@ -2,11 +2,11 @@ package test
 
 @Repeatable
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.TYPEALIAS)
-annotation class Anno(val code: Int)
+annotation define Anno(val code: Int)
 
 @Anno(1)
 @Anno(2)
-class Z
+define Z
 
 @Anno(3)
 @Anno(4)

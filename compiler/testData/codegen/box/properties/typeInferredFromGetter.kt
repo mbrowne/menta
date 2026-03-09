@@ -1,6 +1,6 @@
 val x get() = "O"
 
-class A {
+define A {
     val y get() = "K"
 }
 

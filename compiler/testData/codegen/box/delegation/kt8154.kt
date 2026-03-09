@@ -4,7 +4,7 @@ interface A<T> {
 
 interface B<T> : A<T>
 
-class BImpl<T>(a: A<T>) : B<T>, A<T> by a
+define BImpl<T>(a: A<T>) : B<T>, A<T> by a
 
 fun box(): String {
     val b: B<String> = BImpl(object : A<String> {

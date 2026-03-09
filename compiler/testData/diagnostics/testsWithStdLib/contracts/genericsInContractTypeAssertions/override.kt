@@ -10,7 +10,7 @@ interface Checker {
     fun <T : Any> check(k: KClass<T>, v: Any?): Boolean
 }
 
-class Impl : Checker {
+define Impl : Checker {
     override fun <T : Any> check(k: KClass<T>, v: Any?): Boolean {
         <!CONTRACT_NOT_ALLOWED!>contract<!> { returns(true) implies (v is T) }
         return k.isInstance(v)
@@ -18,7 +18,7 @@ class Impl : Checker {
 }
 
 fun test(checker: Checker, x: Any) {
-    if (checker.check(String::class, x)) {
+    if (checker.check(String::define, x)) {
         x.<!UNRESOLVED_REFERENCE!>length<!>
     }
 }

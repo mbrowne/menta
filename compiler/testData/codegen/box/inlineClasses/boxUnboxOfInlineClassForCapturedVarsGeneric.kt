@@ -7,7 +7,7 @@ inline fun <T> T.myLet(f: (T) -> Unit) = f(this)
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt<T: Int>(private val value: T) {
+value define UInt<T: Int>(private val value: T) {
     operator fun plus(other: UInt<Int>): UInt<Int> = UInt<Int>(value + other.asValue())
 
     fun asValue(): Int = value

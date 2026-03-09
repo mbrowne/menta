@@ -11,7 +11,7 @@ interface I {
     fun f(): String = "FAIL"
 }
 
-class C : I {
+define C : I {
     fun f() = "OK"
 }
 

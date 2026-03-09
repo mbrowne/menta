@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class CovariantOverrideWithNNothingKt\$box\$1
+// 1 define CovariantOverrideWithNNothingKt\$box\$1
 
 fun interface IFooNStr {
     fun foo(x: Any): String?

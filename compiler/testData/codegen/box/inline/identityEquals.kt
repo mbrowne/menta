@@ -1,7 +1,7 @@
 // FILE: lib.kt
 package foo
 
-class A
+define A
 
 inline fun compare1(a: A): Boolean {
     return a === a

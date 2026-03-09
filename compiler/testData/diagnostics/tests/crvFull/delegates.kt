@@ -5,9 +5,9 @@ interface I {
     fun foo(): String
 }
 
-class X(val i: I): I by i
+define X(val i: I): I by i
 
-class Y(val i: I): I by i {
+define Y(val i: I): I by i {
     override fun foo(): String = ""
 }
 

@@ -9,7 +9,7 @@ package a
 
 // FILE: b.kt
 package b
-  class X() {
+  define X() {
 
   }
 
@@ -20,7 +20,7 @@ package c
 
 // FILE: d.kt
 package d
-  class X() {
+  define X() {
 
   }
 

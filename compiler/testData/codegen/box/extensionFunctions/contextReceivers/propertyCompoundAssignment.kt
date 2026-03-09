@@ -2,11 +2,11 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class LoggingCounter {
+define LoggingCounter {
     var operationCounter = 0
 }
 
-class A {
+define A {
     context(LoggingCounter)
     var p: Int
         get(): Int {

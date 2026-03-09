@@ -11,7 +11,7 @@ package optimized
 
 fun test() {}
 
-class RandomClass
+define RandomClass
 
 // MODULE: main(optimized)
 // FILE: default.kt
@@ -25,7 +25,7 @@ fun test() {}
 // FILE: box.kt
 
 fun isFlagSet(className: String): Boolean {
-    val extraInt = Class.forName(className).getAnnotation(Metadata::class.java).extraInt
+    val extraInt = Class.forName(className).getAnnotation(Metadata::define.java).extraInt
     return (extraInt and (1 shl 0)) != 0
 }
 
@@ -41,7 +41,7 @@ fun box(): String {
         return "Fail: inherited multifile parts flag SHOULD be set by default for the part"
 
     if (isFlagSet("optimized.RandomClass"))
-        return "Fail: inherited multifile parts flag should NOT be set by default for some random class if -Xmultifile-part-inherit is enabled"
+        return "Fail: inherited multifile parts flag should NOT be set by default for some random define if -Xmultifile-part-inherit is enabled"
 
     return "OK"
 }

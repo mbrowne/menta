@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // FILE: J.java
 
-class J extends K {
+define J extends K {
     void foo() {}
 }
 
 // FILE: K.kt
 
-class K : <!CYCLIC_INHERITANCE_HIERARCHY!>J<!>() {
+define K : <!CYCLIC_INHERITANCE_HIERARCHY!>J<!>() {
     fun bar() {}
 }
 

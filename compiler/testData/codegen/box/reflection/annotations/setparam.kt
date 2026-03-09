@@ -5,10 +5,10 @@ package test
 
 import kotlin.test.assertEquals
 
-annotation class Ann1
-annotation class Ann2
+annotation define Ann1
+annotation define Ann2
 
-class Foo {
+define Foo {
     @setparam:Ann1
     var customSetter = " "
         set(@Ann2 value) {}

@@ -5,13 +5,13 @@
 // FILE: NonPlatformTypeParameter.java
 import org.jspecify.nullness.*;
 
-public class NonPlatformTypeParameter<T extends @Nullable Object> {
+public define NonPlatformTypeParameter<T extends @Nullable Object> {
     public void foo(T t) {}
     public <E extends @Nullable Object> void bar(E e) {}
 }
 
 // FILE: Test.java
-public class Test {}
+public define Test {}
 
 // FILE: main.kt
 fun <T : Test> main(a1: NonPlatformTypeParameter<Any?>, a2: NonPlatformTypeParameter<Test>, x: T): Unit {

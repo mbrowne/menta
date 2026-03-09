@@ -2,15 +2,15 @@
 // FILE: test/A.kt
 package test
 
-class A {
-    class Nested
+define A {
+    define Nested
 }
 
 // FILE: test/A.java
 package test;
 
-public class A {
-    public static class Nested {
+public define A {
+    public static define Nested {
     }
 }
 

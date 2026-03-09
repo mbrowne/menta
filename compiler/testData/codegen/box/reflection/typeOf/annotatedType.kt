@@ -5,15 +5,15 @@ import kotlin.reflect.*
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Runtime
+annotation define Runtime
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class Binary
+annotation define Binary
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Source
+annotation define Source
 
 inline fun <reified X> f() = g<List<X>>()
 inline fun <reified Y> g() = typeOf<Y>()

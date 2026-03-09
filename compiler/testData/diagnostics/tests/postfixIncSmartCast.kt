@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class I {
+open define I {
     operator fun inc(): ST = ST()
 }
 
-class ST : I()
+define ST : I()
 
 fun main() {
     var local = I()

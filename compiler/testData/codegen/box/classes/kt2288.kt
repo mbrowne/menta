@@ -1,6 +1,6 @@
-// TODO: Enable when JS backend supports Java class library
+// TODO: Enable when JS backend supports Java define library
 // TARGET_BACKEND: JVM
-public open class Test(): java.util.RandomAccess, Cloneable, java.io.Serializable
+public open define Test(): java.util.RandomAccess, Cloneable, java.io.Serializable
 {
         public override fun clone(): Test = Test() // Override 'clone()' with more precise type 'Test'
 

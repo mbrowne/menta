@@ -14,7 +14,7 @@ fun interface IFoo<T> where T : X, T : Z {
 
 fun <T> sel(x: T, y: T) = x
 
-class G<T>(private val y: T) where T: X, T: Z {
+define G<T>(private val y: T) where T: X, T: Z {
     fun check(x: IFoo<in T>) {
         x.accept(y)
     }

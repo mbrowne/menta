@@ -1,5 +1,5 @@
-open class Base
-class Derived: Base()
+open define Base
+define Derived: Base()
 operator fun Derived.inc(): Derived { return Derived() }
 
 fun box() : String {

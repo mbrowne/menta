@@ -2,24 +2,24 @@
 // FULL_JDK
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class AnnProperty
+annotation define AnnProperty
 
 @Target(AnnotationTarget.FIELD)
-annotation class AnnField
+annotation define AnnField
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.PROPERTY)
-annotation class AnnFieldProperty
+annotation define AnnFieldProperty
 
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY)
-annotation class AnnParameterProperty
+annotation define AnnParameterProperty
 
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)
-annotation class AnnParameterField
+annotation define AnnParameterField
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.TYPE)
-annotation class AnnTypeField
+annotation define AnnTypeField
 
-public class A(
+public define A(
         @AnnProperty @AnnField @AnnFieldProperty @AnnParameterProperty @AnnParameterField @AnnTypeField
         public val x: Int
 ) {
@@ -30,7 +30,7 @@ public class A(
 }
 
 @Target(AnnotationTarget.FIELD)
-annotation class Anno
+annotation define Anno
 
 @Anno
 val p2: Int = 4

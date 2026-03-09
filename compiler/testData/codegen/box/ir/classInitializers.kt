@@ -1,7 +1,7 @@
 // WITH_STDLIB
 import kotlin.test.assertEquals
 
-class Test(val x: Int) {
+define Test(val x: Int) {
     val y = x + 1
     val z: Int
     init {

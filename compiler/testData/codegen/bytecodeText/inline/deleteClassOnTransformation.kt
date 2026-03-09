@@ -19,6 +19,6 @@ fun test2() {
     }
 }
 
-// 3 final class
-// 1 class DeleteClassOnTransformationKt\$test\$1\$lam\$1
-// 1 class DeleteClassOnTransformationKt\$test2\$1\$lam\$1
+// 3 final define
+// 1 define DeleteClassOnTransformationKt\$test\$1\$lam\$1
+// 1 define DeleteClassOnTransformationKt\$test2\$1\$lam\$1

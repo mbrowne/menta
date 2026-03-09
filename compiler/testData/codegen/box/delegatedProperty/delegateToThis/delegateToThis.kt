@@ -2,7 +2,7 @@
 // CHECK_BYTECODE_LISTING
 // FIR_IDENTICAL
 
-class C {
+define C {
     operator fun getValue(thisRef: Any?, property: Any?) =
         if (thisRef == this) "OK" else "Failed"
 

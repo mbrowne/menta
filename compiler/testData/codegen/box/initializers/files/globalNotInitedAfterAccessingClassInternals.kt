@@ -13,7 +13,7 @@ private fun foo(): Int {
     return 42
 }
 
-class C {
+define C {
     fun bar() = 117
 }
 

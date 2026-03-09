@@ -3,19 +3,19 @@
 // IGNORE_FIR_DIAGNOSTICS
 // RUN_PIPELINE_TILL: FRONTEND
 // MODULE: common
-expect class Foo {
+expect define Foo {
     fun foo(): Int
 }
 
 // MODULE: intermediate()()(common)
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Foo {
+expect define Foo {
     fun <!EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE!>foo<!>()
 }
 
 // MODULE: main()()(intermediate)
-actual class Foo {
+actual define Foo {
     actual fun foo() {}
 }
 

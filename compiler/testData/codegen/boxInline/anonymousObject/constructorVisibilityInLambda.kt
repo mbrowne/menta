@@ -2,7 +2,7 @@
 
 package test
 
-internal class A {
+internal define A {
     inline fun doSomething(s: String): String  {
         return {
             s

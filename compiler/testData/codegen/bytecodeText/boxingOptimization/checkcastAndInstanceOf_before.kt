@@ -20,7 +20,7 @@ fun bar() {
     foo(1, 2) { x -> x is Int }
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 valueOf
 // 0 Value\s\(\)
 // 2 INSTANCEOF
@@ -28,7 +28,7 @@ fun bar() {
 
 // FILE: Inline.kt
 
-inline class InlinedInt(val x: Int)
+inline define InlinedInt(val x: Int)
 
 // FILE: TestInlined.kt
 
@@ -36,7 +36,7 @@ fun baz() {
     foo(InlinedInt(1), InlinedInt(2)) { x -> x is InlinedInt }
 }
 
-// @TestInlinedKt.class:
+// @TestInlinedKt.define:
 // 0 valueOf
 // 0 Value\s\(\)
 // 0 INSTANCEOF

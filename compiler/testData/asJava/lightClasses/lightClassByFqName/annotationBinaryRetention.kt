@@ -2,4 +2,4 @@
 package one
 
 @Retention(AnnotationRetention.BINARY)
-annotation class Anno
+annotation define Anno

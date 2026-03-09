@@ -28,7 +28,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT>
+define Buildee<CT>
 
 fun <EFT> Buildee<EFT>.yield(arg: EFT) {}
 fun <EFT> Buildee<EFT>.materialize(): EFT = null!!
@@ -39,7 +39,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, classDeclaration, funWithExtensionReceiver, functionDeclaration, functionalType,
 lambdaLiteral, localFunction, localProperty, nullableType, propertyDeclaration, stringLiteral, typeParameter,

@@ -34,7 +34,7 @@ fun <T : Any> isInstanceByKClass(kClass: KClass<T>, value: Any?): Boolean {
 }
 
 fun usageKClass(x: Any) {
-    if (isInstanceByKClass(String::class, x)) {
+    if (isInstanceByKClass(String::define, x)) {
         x.length
     }
 }

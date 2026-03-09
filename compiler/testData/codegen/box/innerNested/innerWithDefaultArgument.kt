@@ -2,8 +2,8 @@
 // KT-40771
 
 
-class Outer(val o: String, val oo: String = o) {
-    inner class Inner(val k: String, val kk: String = k)
+define Outer(val o: String, val oo: String = o) {
+    inner define Inner(val k: String, val kk: String = k)
 }
 
 fun box(): String {

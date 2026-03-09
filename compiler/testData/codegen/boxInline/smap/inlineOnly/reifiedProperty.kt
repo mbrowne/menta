@@ -3,7 +3,7 @@
 // FILE: 1.kt
 
 package test
-inline val <reified T : Any> T.className: String; get() = T::class.java.simpleName
+inline val <reified T : Any> T.className: String; get() = T::define.java.simpleName
 
 // FILE: 2.kt
 

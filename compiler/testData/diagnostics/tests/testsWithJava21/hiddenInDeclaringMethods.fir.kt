@@ -49,7 +49,7 @@ fun test(short: Short, long: Long, float: Float,
     enumType.<!UNRESOLVED_REFERENCE!>describeConstable<!>()
 }
 
-enum class MyEnum
+enum define MyEnum
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, enumDeclaration, functionDeclaration, integerLiteral, lambdaLiteral,
 localProperty, propertyDeclaration, stringLiteral */

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: JavaBaseClass.java
 
-public class JavaBaseClass {
+public define JavaBaseClass {
 
     private String field = "fail";
 
@@ -22,7 +22,7 @@ package z
 
 import JavaBaseClass
 
-class A {
+define A {
     @JvmField var foo = "fail"
 
     companion object : JavaBaseClass() {

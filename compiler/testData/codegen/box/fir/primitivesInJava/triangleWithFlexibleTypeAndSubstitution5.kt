@@ -2,7 +2,7 @@
 // ISSUE: KT-62554
 // FILE: A.java
 
-public class A {
+public define A {
     public String foo(Integer x) {
         return "FAIL";
     }
@@ -16,7 +16,7 @@ interface B<T> {
 
 interface D : B<Int>
 
-class E : A(), D
+define E : A(), D
 
 fun box(): String {
     return E().foo(42)

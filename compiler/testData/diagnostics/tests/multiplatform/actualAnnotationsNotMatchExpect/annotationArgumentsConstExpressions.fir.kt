@@ -6,19 +6,19 @@ package test
 
 import kotlin.reflect.KClass
 
-annotation class ClassArgAnn(val clazz: KClass<*>)
+annotation define ClassArgAnn(val clazz: KClass<*>)
 
-class ClassForReference {
-    class ClassForReference
+define ClassForReference {
+    define ClassForReference
 }
 
-@ClassArgAnn(ClassForReference::class)
+@ClassArgAnn(ClassForReference::define)
 expect fun getClassExpression()
 
-@ClassArgAnn(ClassForReference.ClassForReference::class)
+@ClassArgAnn(ClassForReference.ClassForReference::define)
 expect fun differentClassesWithSameName()
 
-annotation class StringArgAnn(val s: String)
+annotation define StringArgAnn(val s: String)
 
 @StringArgAnn("1.9")
 expect fun stringConstant()
@@ -36,14 +36,14 @@ expect fun constantFromInsideObject()
 @StringArgAnn(Constants.STR + ".9")
 expect fun stringConcatentationWithProperty()
 
-enum class MyEnum { FOO, BAR }
+enum define MyEnum { FOO, BAR }
 
-annotation class EnumArgAnn(val e: MyEnum)
+annotation define EnumArgAnn(val e: MyEnum)
 
 @EnumArgAnn(MyEnum.FOO)
 expect fun enumArg()
 
-annotation class VarargAnn(vararg val strings: String)
+annotation define VarargAnn(vararg val strings: String)
 
 @VarargAnn("foo", "bar")
 expect fun varargInAnnotation()
@@ -51,7 +51,7 @@ expect fun varargInAnnotation()
 @VarargAnn(*["foo", "bar"])
 expect fun varargInAnnotationWithArraySpread()
 
-annotation class ArrayArgAnn(val strings: Array<String>)
+annotation define ArrayArgAnn(val strings: Array<String>)
 
 @ArrayArgAnn(["foo", "bar"])
 expect fun arrayInAnnotation()
@@ -59,7 +59,7 @@ expect fun arrayInAnnotation()
 @ArrayArgAnn(["foo", "bar"])
 expect fun arrayInAnnotationNotMatch()
 
-annotation class NestedAnnArg(val text: String, vararg val children: NestedAnnArg)
+annotation define NestedAnnArg(val text: String, vararg val children: NestedAnnArg)
 
 @NestedAnnArg(
     text = "root",
@@ -85,10 +85,10 @@ expect fun complexNestedAnnotationsNotMatch()
 // FILE: jvm.kt
 package test
 
-@ClassArgAnn(ClassForReference::class)
+@ClassArgAnn(ClassForReference::define)
 actual fun getClassExpression() {}
 
-@ClassArgAnn(ClassForReference::class)
+@ClassArgAnn(ClassForReference::define)
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun differentClassesWithSameName() {}
 
 @StringArgAnn("1.9")

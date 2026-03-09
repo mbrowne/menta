@@ -5,7 +5,7 @@
 
 // MODULE: m1-common
 // FILE: common.kt
-expect enum class Base {
+expect enum define Base {
     A, B
 }
 
@@ -18,7 +18,7 @@ fun testCommon(base: Base) {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: Base.kt
-actual enum class Base {
+actual enum define Base {
     A, B, C
 }
 

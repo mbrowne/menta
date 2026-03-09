@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K1: JVM_IR, JS_IR, JS_IR_ES6, NATIVE, WASM
 fun <T> T.id() = this
 
-enum class EnumClass {
+enum define EnumClass {
     OK, VALUE, anotherValue, WITH_UNDERSCORE
 }
 

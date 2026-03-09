@@ -1,31 +1,31 @@
 package test
 
-public class Pub {
+public define Pub {
     companion object {}
 }
 
-private class Pri {
+private define Pri {
     companion object {}
 }
 
-class Int {
+define Int {
     companion object {}
 }
 
-public class Outer {
-    public class Pub {
+public define Outer {
+    public define Pub {
         companion object {}
     }
 
-    private class Pri {
+    private define Pri {
         companion object {}
     }
 
-    class Int {
+    define Int {
         companion object {}
     }
 
-    protected class Pro {
+    protected define Pro {
         companion object {}
     }
 }

@@ -127,16 +127,13 @@ KtFile: WhenWithSubjectVariable_ERR.kt
         PsiElement(LPAR)('(')
         PsiErrorElement:Expecting an expression
           <empty list>
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('C')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        PsiWhiteSpace(' ')
+        CLASS_BODY
           PsiElement(LBRACE)('{')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(RPAR)(')')

@@ -14,9 +14,9 @@ fun foo2(): Float = 1f
 fun <K> bar4(): K = null as K
 fun <K> foo4(): K = null as K
 
-class Foo6
+define Foo6
 
-class Foo7<T>
+define Foo7<T>
 fun foo7() = null as Foo7<Int>
 
 fun poll0(flag: Boolean) {

@@ -22,280 +22,277 @@ KtFile: secondaryConstructors.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Serializable')
   PsiWhiteSpace('\n\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('SecondaryConstructors')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LPAR)('(')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('x')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(COLON)(':')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('Boolean')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PRIMARY_CONSTRUCTOR
+      VALUE_PARAMETER_LIST
+        PsiElement(LPAR)('(')
+        VALUE_PARAMETER
+          PsiElement(IDENTIFIER)('x')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Boolean')
+        PsiElement(RPAR)(')')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('init')
+      CLASS_INITIALIZER
+        PsiElement(init)('init')
         PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n    ')
-              BLOCK
-                <empty list>
-              PsiElement(RBRACE)('}')
+        BLOCK
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n    ')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      ANNOTATED_EXPRESSION
-        ANNOTATION_ENTRY
-          PsiElement(AT)('@')
-          CONSTRUCTOR_CALLEE
+      SECONDARY_CONSTRUCTOR
+        MODIFIER_LIST
+          ANNOTATION_ENTRY
+            PsiElement(AT)('@')
+            CONSTRUCTOR_CALLEE
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('anno')
+        PsiWhiteSpace(' ')
+        PsiElement(constructor)('constructor')
+        VALUE_PARAMETER_LIST
+          PsiElement(LPAR)('(')
+          VALUE_PARAMETER
+            PsiElement(IDENTIFIER)('x')
+            PsiElement(COLON)(':')
+            PsiWhiteSpace(' ')
             TYPE_REFERENCE
               USER_TYPE
                 REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('anno')
+                  PsiElement(IDENTIFIER)('String')
+          PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        CALL_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('constructor')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        CONSTRUCTOR_DELEGATION_CALL
+          CONSTRUCTOR_DELEGATION_REFERENCE
+            PsiElement(this)('this')
           VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             VALUE_ARGUMENT
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('x')
-            PsiErrorElement:Unexpected type specification
-              PsiElement(COLON)(':')
-              PsiWhiteSpace(' ')
-              PsiElement(IDENTIFIER)('String')
+              BINARY_EXPRESSION
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('x')
+                PsiWhiteSpace(' ')
+                OPERATION_REFERENCE
+                  PsiElement(EQEQ)('==')
+                PsiWhiteSpace(' ')
+                STRING_TEMPLATE
+                  PsiElement(OPEN_QUOTE)('"')
+                  LITERAL_STRING_TEMPLATE_ENTRY
+                    PsiElement(REGULAR_STRING_PART)('abc')
+                  PsiElement(CLOSING_QUOTE)('"')
             PsiElement(RPAR)(')')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        PsiElement(this)('this')
-        PsiElement(LPAR)('(')
-        PsiElement(IDENTIFIER)('x')
-        PsiWhiteSpace(' ')
-        PsiElement(EQEQ)('==')
-        PsiWhiteSpace(' ')
-        PsiElement(OPEN_QUOTE)('"')
-        PsiElement(REGULAR_STRING_PART)('abc')
-        PsiElement(CLOSING_QUOTE)('"')
-        PsiElement(RPAR)(')')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('init')
+      CLASS_INITIALIZER
+        PsiElement(init)('init')
         PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n    ')
-              BLOCK
-                <empty list>
-              PsiElement(RBRACE)('}')
+        BLOCK
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n    ')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      BINARY_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('private')
+      SECONDARY_CONSTRUCTOR
+        MODIFIER_LIST
+          PsiElement(private)('private')
         PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('constructor')
-        PARENTHESIZED
+        PsiElement(constructor)('constructor')
+        VALUE_PARAMETER_LIST
           PsiElement(LPAR)('(')
-          REFERENCE_EXPRESSION
+          VALUE_PARAMETER
             PsiElement(IDENTIFIER)('x')
-          PsiErrorElement:Expecting ')'
-            <empty list>
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+            PsiElement(COLON)(':')
+            PsiWhiteSpace(' ')
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Int')
+          PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Int')
-        PsiElement(RPAR)(')')
+        CONSTRUCTOR_DELEGATION_CALL
+          CONSTRUCTOR_DELEGATION_REFERENCE
+            PsiElement(this)('this')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            VALUE_ARGUMENT
+              BINARY_EXPRESSION
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('x')
+                PsiWhiteSpace(' ')
+                OPERATION_REFERENCE
+                  PsiElement(LT)('<')
+                PsiWhiteSpace(' ')
+                INTEGER_CONSTANT
+                  PsiElement(INTEGER_LITERAL)('0')
+            PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        PsiElement(this)('this')
-        PsiElement(LPAR)('(')
-        PsiElement(IDENTIFIER)('x')
-        PsiWhiteSpace(' ')
-        PsiElement(LT)('<')
-        PsiWhiteSpace(' ')
-        PsiElement(INTEGER_LITERAL)('0')
-        PsiElement(RPAR)(')')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
-          BLOCK
-            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('inner')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(inner)('inner')
+        PsiWhiteSpace(' ')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
-        PsiElement(LT)('<')
-        PsiElement(IDENTIFIER)('T')
+        TYPE_PARAMETER_LIST
+          PsiElement(LT)('<')
+          TYPE_PARAMETER
+            PsiElement(IDENTIFIER)('T')
+            PsiWhiteSpace(' ')
+            PsiElement(COLON)(':')
+            PsiWhiteSpace(' ')
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('String')
+          PsiElement(COMMA)(',')
+          PsiWhiteSpace(' ')
+          TYPE_PARAMETER
+            PsiElement(IDENTIFIER)('G')
+            PsiWhiteSpace(' ')
+            PsiElement(COLON)(':')
+            PsiWhiteSpace(' ')
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Int')
+          PsiElement(GT)('>')
         PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
+        PsiElement(where)('where')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('String')
-        PsiElement(COMMA)(',')
+        TYPE_CONSTRAINT_LIST
+          TYPE_CONSTRAINT
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('G')
+            PsiWhiteSpace(' ')
+            PsiElement(COLON)(':')
+            PsiWhiteSpace(' ')
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Serializable')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('G')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Int')
-        PsiElement(GT)('>')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('where')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('G')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Serializable')
-      PsiWhiteSpace(' ')
-      LAMBDA_EXPRESSION
-        FUNCTION_LITERAL
+        CLASS_BODY
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          BLOCK
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('constructor')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                VALUE_ARGUMENT
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('x')
-                PsiErrorElement:Unexpected type specification
-                  PsiElement(COLON)(':')
-                  PsiWhiteSpace(' ')
-                  PsiElement(IDENTIFIER)('T')
-                PsiElement(COMMA)(',')
+          SECONDARY_CONSTRUCTOR
+            PsiElement(constructor)('constructor')
+            VALUE_PARAMETER_LIST
+              PsiElement(LPAR)('(')
+              VALUE_PARAMETER
+                PsiElement(IDENTIFIER)('x')
+                PsiElement(COLON)(':')
                 PsiWhiteSpace(' ')
-                VALUE_ARGUMENT
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('g')
-                PsiErrorElement:Unexpected type specification
-                  PsiElement(COLON)(':')
-                  PsiWhiteSpace(' ')
-                  PsiElement(IDENTIFIER)('G')
-                PsiElement(RPAR)(')')
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('T')
+              PsiElement(COMMA)(',')
               PsiWhiteSpace(' ')
-              LAMBDA_ARGUMENT
-                LAMBDA_EXPRESSION
-                  FUNCTION_LITERAL
-                    PsiElement(LBRACE)('{')
-                    PsiWhiteSpace('\n        ')
-                    BLOCK
-                      <empty list>
-                    PsiElement(RBRACE)('}')
+              VALUE_PARAMETER
+                PsiElement(IDENTIFIER)('g')
+                PsiElement(COLON)(':')
+                PsiWhiteSpace(' ')
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('G')
+              PsiElement(RPAR)(')')
+            CONSTRUCTOR_DELEGATION_CALL
+              CONSTRUCTOR_DELEGATION_REFERENCE
+                <empty list>
+            PsiWhiteSpace(' ')
+            BLOCK
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n        ')
+              PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      PsiErrorElement:Expecting an element
-        PsiElement(class)('class')
-      PsiWhiteSpace(' ')
-      CALL_EXPRESSION
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('Nested')
+      CLASS
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
-        LAMBDA_ARGUMENT
-          LAMBDA_EXPRESSION
-            FUNCTION_LITERAL
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n        ')
-              BLOCK
-                ANNOTATED_EXPRESSION
-                  ANNOTATION_ENTRY
-                    PsiElement(AT)('@')
-                    CONSTRUCTOR_CALLEE
-                      TYPE_REFERENCE
-                        USER_TYPE
-                          REFERENCE_EXPRESSION
-                            PsiElement(IDENTIFIER)('anno')
-                  PsiWhiteSpace(' ')
-                  CALL_EXPRESSION
+        PsiElement(IDENTIFIER)('Nested')
+        PsiWhiteSpace(' ')
+        CLASS_BODY
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n        ')
+          SECONDARY_CONSTRUCTOR
+            MODIFIER_LIST
+              ANNOTATION_ENTRY
+                PsiElement(AT)('@')
+                CONSTRUCTOR_CALLEE
+                  TYPE_REFERENCE
+                    USER_TYPE
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('anno')
+            PsiWhiteSpace(' ')
+            PsiElement(constructor)('constructor')
+            VALUE_PARAMETER_LIST
+              PsiElement(LPAR)('(')
+              VALUE_PARAMETER
+                PsiElement(IDENTIFIER)('z')
+                PsiElement(COLON)(':')
+                PsiWhiteSpace(' ')
+                TYPE_REFERENCE
+                  USER_TYPE
                     REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('constructor')
-                    VALUE_ARGUMENT_LIST
-                      PsiElement(LPAR)('(')
-                      VALUE_ARGUMENT
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('z')
-                      PsiErrorElement:Unexpected type specification
-                        PsiElement(COLON)(':')
-                        PsiWhiteSpace(' ')
-                        PsiElement(IDENTIFIER)('Int')
-                      PsiElement(RPAR)(')')
-                    PsiWhiteSpace(' ')
-                    LAMBDA_ARGUMENT
-                      LAMBDA_EXPRESSION
-                        FUNCTION_LITERAL
-                          PsiElement(LBRACE)('{')
-                          BLOCK
-                            <empty list>
-                          PsiElement(RBRACE)('}')
-                PsiWhiteSpace('\n        ')
-                BINARY_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('internal')
-                  PsiWhiteSpace(' ')
-                  OPERATION_REFERENCE
-                    PsiElement(IDENTIFIER)('constructor')
-                  CALL_EXPRESSION
-                    PARENTHESIZED
-                      PsiElement(LPAR)('(')
-                      PsiErrorElement:Expecting an expression
-                        <empty list>
-                      PsiElement(RPAR)(')')
-                    PsiWhiteSpace(' ')
-                    LAMBDA_ARGUMENT
-                      LAMBDA_EXPRESSION
-                        FUNCTION_LITERAL
-                          PsiElement(LBRACE)('{')
-                          BLOCK
-                            <empty list>
-                          PsiElement(RBRACE)('}')
-              PsiWhiteSpace('\n    ')
+                      PsiElement(IDENTIFIER)('Int')
+              PsiElement(RPAR)(')')
+            CONSTRUCTOR_DELEGATION_CALL
+              CONSTRUCTOR_DELEGATION_REFERENCE
+                <empty list>
+            PsiWhiteSpace(' ')
+            BLOCK
+              PsiElement(LBRACE)('{')
               PsiElement(RBRACE)('}')
+          PsiWhiteSpace('\n        ')
+          SECONDARY_CONSTRUCTOR
+            MODIFIER_LIST
+              PsiElement(internal)('internal')
+            PsiWhiteSpace(' ')
+            PsiElement(constructor)('constructor')
+            VALUE_PARAMETER_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
+            CONSTRUCTOR_DELEGATION_CALL
+              CONSTRUCTOR_DELEGATION_REFERENCE
+                <empty list>
+            PsiWhiteSpace(' ')
+            BLOCK
+              PsiElement(LBRACE)('{')
+              PsiElement(RBRACE)('}')
+          PsiWhiteSpace('\n    ')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(annotation)('annotation')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(annotation)('annotation')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('anno')

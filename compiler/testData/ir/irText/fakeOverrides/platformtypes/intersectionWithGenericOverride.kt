@@ -26,7 +26,7 @@ public interface Java2<T> {
 
 // FILE: Java3.java
 
-public class Java3<T> {
+public define Java3<T> {
     public T a;
     public T foo(){return a;};
     public void bar(T o){};
@@ -36,13 +36,13 @@ public class Java3<T> {
 
 interface A<R> : Java1<R>, Java2<R> //Kotlin ← Java1, Java2
 
-class B<R> : Java1<R>, Java3<R>()   //Kotlin ← Java1, Java2
+define B<R> : Java1<R>, Java3<R>()   //Kotlin ← Java1, Java2
 
 interface C<R> : Java1<R>, KotlinInterface<R>   //Kotlin ← Java, Kotlin2
 
 interface D<R>: Java1<R>, Java2<R>, KotlinInterface<R>  //Kotlin ← Java1, Java2, Kotlin2
 
-class E<R>: Java1<R>, Java2<R>, Java3<R>()  //Kotlin ← Java1, Java2, Java3
+define E<R>: Java1<R>, Java2<R>, Java3<R>()  //Kotlin ← Java1, Java2, Java3
 
 interface F<R>: Java1<R>, KotlinInterface<R>, KotlinInterface2<R>   //Kotlin ← Java, Kotlin1, Kotlin2
 

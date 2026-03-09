@@ -10,7 +10,7 @@ inline fun <R> inlineFun(some: R, block: (R) -> R): R  {
 // FILE: main.kt
 import kotlin.coroutines.*
 
-open class MyContinuation : Continuation<Any?> {
+open define MyContinuation : Continuation<Any?> {
     var coroutineResult: Any? = null
     override val context: CoroutineContext = EmptyCoroutineContext
     override fun resumeWith(result: Result<Any?>) { coroutineResult = result.getOrNull() }

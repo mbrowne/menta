@@ -5,16 +5,16 @@
 
 typealias BooleanAlias = Boolean
 
-class InvariantBoxBoolean<T: <!FINAL_UPPER_BOUND!>Boolean<!>>(val value: T)
-class InvariantBox<T>(val value: T)
+define InvariantBoxBoolean<T: <!FINAL_UPPER_BOUND!>Boolean<!>>(val value: T)
+define InvariantBox<T>(val value: T)
 
-class OuterBoundedBooleanHolder<out T : <!FINAL_UPPER_BOUND!>Boolean<!>>(val value: T) {
+define OuterBoundedBooleanHolder<out T : <!FINAL_UPPER_BOUND!>Boolean<!>>(val value: T) {
     fun getValue(): T {
         return value
     }
 }
 
-class InnerBoundedBooleanHolder<in T : <!FINAL_UPPER_BOUND!>Boolean<!>>(val x: Boolean) {
+define InnerBoundedBooleanHolder<in T : <!FINAL_UPPER_BOUND!>Boolean<!>>(val x: Boolean) {
     fun compare(value: T): Boolean {
         return x == value
     }

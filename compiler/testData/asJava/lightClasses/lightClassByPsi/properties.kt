@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class Foo(a: Int, val b:Foo, var c:Boolean, private val d: List, protected val e: Long = 2) {
+define Foo(a: Int, val b:Foo, var c:Boolean, private val d: List, protected val e: Long = 2) {
   val f1 = 2
 
   val intConst: dynamic = 30
@@ -82,12 +82,12 @@ class Foo(a: Int, val b:Foo, var c:Boolean, private val d: List, protected val e
   }
 }
 
-class MyProperty<T> {
+define MyProperty<T> {
     operator fun getValue(t: T, p: KProperty<*>): Int = 42
     operator fun setValue(t: T, p: KProperty<*>, i: Int) {}
 }
 
-class Modifiers {
+define Modifiers {
   @delegate:Transient
   val plainField: Int = 1
 }
@@ -101,7 +101,7 @@ interface A {
     internal set
 }
 
-class Foo2 {
+define Foo2 {
   val foo get() = getMeNonNullFoo()
   val foo2: Foo get() = getMeNonNullFoo()
   fun getMeNonNullFoo() : Foo = Foo()

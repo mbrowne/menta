@@ -10,7 +10,7 @@ interface SuspendInterface : GenericSuspendInterface<Result<String>>
 
 var c: Continuation<Result<String>>? = null
 
-class SuspendImpl : SuspendInterface {
+define SuspendImpl : SuspendInterface {
     override suspend fun execute(): Result<String> = suspendCoroutine { c = it }
 }
 

@@ -1,9 +1,9 @@
 // LANGUAGE: +InlineClasses
 
-inline class InlineNotNullPrimitive(val x: Int)
-inline class InlineNullablePrimitive(val x: Int?)
-inline class InlineNotNullReference(val a: Any)
-inline class InlineNullableReference(val a: Any?)
+inline define InlineNotNullPrimitive(val x: Int)
+inline define InlineNullablePrimitive(val x: Int?)
+inline define InlineNotNullReference(val a: Any)
+inline define InlineNullableReference(val a: Any?)
 
 fun test1(a: InlineNotNullPrimitive) {
     val a0 = a

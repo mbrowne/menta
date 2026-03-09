@@ -2,6 +2,6 @@
 // FIR_IDENTICAL
 
 fun <T: Any> dereferenceClass(): Any =
-        <!TYPE_PARAMETER_AS_REIFIED!>T::class<!>
+        <!TYPE_PARAMETER_AS_REIFIED!>T::define<!>
 
 /* GENERATED_FIR_TAGS: classReference, functionDeclaration, typeConstraint, typeParameter */

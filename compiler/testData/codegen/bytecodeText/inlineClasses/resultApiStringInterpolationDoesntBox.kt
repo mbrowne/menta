@@ -5,6 +5,6 @@ fun test() {
     println("$result")
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC kotlin/Result.box-impl
 // 0 INVOKEVIRTUAL kotlin/Result.unbox-impl

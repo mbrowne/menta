@@ -1,12 +1,12 @@
 @Suppress("ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED")
-external class ExternalClassInheritedFromAbstractExternalClass : AbstractExternalClass {
+external define ExternalClassInheritedFromAbstractExternalClass : AbstractExternalClass {
 //    override fun abstractFunction(): String
     override fun removedAbstractFunction(): String
 }
 
 fun ExternalClassInheritedFromAbstractExternalClass.callRemovedFunction() = removedFunction()
 
-open external class OpenExternalClass {
+open external define OpenExternalClass {
     fun function(): String
 }
 
@@ -15,6 +15,6 @@ external interface ExternalInterfaceInheritedFromOpenExternalClass : OpenExterna
     fun abstractFunction(): String
 }
 
-external class ExternalClassInheritedFromExternalInterfaceInheritedFromOpenExternalClass : ExternalInterfaceInheritedFromOpenExternalClass {
+external define ExternalClassInheritedFromExternalInterfaceInheritedFromOpenExternalClass : ExternalInterfaceInheritedFromOpenExternalClass {
     override fun abstractFunction(): String
 }

@@ -8,9 +8,9 @@ import test.O2dScriptAction
 
 fun <T> eval(fn: () -> T) = fn()
 
-class CompositeActor : Actor()
+define CompositeActor : Actor()
 
-public open class O2dDialog : O2dScriptAction<CompositeActor>() {
+public open define O2dDialog : O2dScriptAction<CompositeActor>() {
 
     fun test() = eval { owner }
 
@@ -28,9 +28,9 @@ fun box(): String {
 
 package test
 
-open class Actor
+open define Actor
 
-abstract public class O2dScriptAction<T : Actor> {
+abstract public define O2dScriptAction<T : Actor> {
     protected var owner: T? = null
         private set
 

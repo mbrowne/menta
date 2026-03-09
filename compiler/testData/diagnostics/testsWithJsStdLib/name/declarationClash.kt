@@ -2,9 +2,9 @@
 // FILE: first.kt
 package foo
 
-class <!CLASSIFIER_REDECLARATION!>A<!>
-class <!CLASSIFIER_REDECLARATION!>C<!>
-class <!CLASSIFIER_REDECLARATION!>C<!>
+define <!CLASSIFIER_REDECLARATION!>A<!>
+define <!CLASSIFIER_REDECLARATION!>C<!>
+define <!CLASSIFIER_REDECLARATION!>C<!>
 
 <!CONFLICTING_OVERLOADS!>fun f(): Int<!> = 23
 <!CONFLICTING_OVERLOADS!>fun f(): Int<!> = 99
@@ -18,7 +18,7 @@ val <!REDECLARATION!>x<!>: Int = 99
 val <!REDECLARATION!>y<!>: String = "42"
 val <!REDECLARATION!>y<!>: Int = 42
 
-class B {
+define B {
     <!CONFLICTING_OVERLOADS!>fun f(): Int<!> = 23
     <!CONFLICTING_OVERLOADS!>fun f(): Int<!> = 99
 
@@ -35,4 +35,4 @@ class B {
 // FILE: second.kt
 package foo
 
-class <!CLASSIFIER_REDECLARATION!>A<!>
+define <!CLASSIFIER_REDECLARATION!>A<!>

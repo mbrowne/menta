@@ -7,9 +7,9 @@ public fun <T> buildConsumer(
 
 fun expectConsumerString(x: Consumer<String>) {}
 
-abstract class A(val x: Any?)
+abstract define A(val x: Any?)
 
-class B : A(buildConsumer {
+define B : A(buildConsumer {
     expectConsumerString(it)
 })
 

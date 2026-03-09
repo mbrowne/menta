@@ -1,5 +1,5 @@
 
-enum class Empty
+enum define Empty
 
 fun box(): String {
     if (Empty.values().size != 0) return "Fail: ${Empty.values()}"

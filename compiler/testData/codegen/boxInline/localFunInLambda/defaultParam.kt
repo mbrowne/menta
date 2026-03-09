@@ -51,7 +51,7 @@ fun fooLongCallableReference(): String {
     return a
 }
 
-class A {
+define A {
     fun fooLongSyntheticAccessor(capt: Int): String {
         val o: RunnableString = run {
             object: RunnableString {

@@ -1,4 +1,4 @@
-class Foo {
+define Foo {
   var rnd = 10
 
   public override fun equals(that : Any?) : Boolean = that is Foo && (that.rnd == rnd)

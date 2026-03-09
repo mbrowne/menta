@@ -2,28 +2,28 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
-class C {
+define C {
 
     OPTIONAL_JVM_INLINE_ANNOTATION
-    value class IC1<T: String>(val s: T)
+    value define IC1<T: String>(val s: T)
 
     companion object {
 
         OPTIONAL_JVM_INLINE_ANNOTATION
-        value class IC2<T: String>(val s: T)
+        value define IC2<T: String>(val s: T)
     }
 }
 
 object O {
 
     OPTIONAL_JVM_INLINE_ANNOTATION
-    value class IC3<T: String>(val s: T)
+    value define IC3<T: String>(val s: T)
 }
 
 interface I {
 
     OPTIONAL_JVM_INLINE_ANNOTATION
-    value class IC4<T: String>(val s: T)
+    value define IC4<T: String>(val s: T)
 }
 
 fun box(): String {

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A() {
+define A() {
     override fun equals(other : Any?) : Boolean = false
 }
 

@@ -23,7 +23,7 @@ typealias NullableFunctionAlias = ((String) -> Int)?
 typealias NestedNullableFunctionAlias = NullableFunctionAlias
 typealias NullableNestedFunctionAlias = FunctionAlias?
 
-class TypeAliasExpansion {
+define TypeAliasExpansion {
     fun entryToString(entry: EntryAlias): StringAlias = entry.key
 
     val functionAlias: FunctionAlias = { name -> name.length }

@@ -1,4 +1,4 @@
-class SS {
+define SS {
     private lateinit var s: String
 
     fun setS(s: String) {

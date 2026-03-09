@@ -1,4 +1,4 @@
-class X(var value: Long)
+define X(var value: Long)
 
 operator fun X.inc(): X {
     this.value++
@@ -10,7 +10,7 @@ operator fun X.dec(): X {
     return this
 }
 
-class Z {
+define Z {
 
     public var counter: Int = 0;
 

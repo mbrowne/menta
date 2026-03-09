@@ -1,6 +1,6 @@
 var sideEffects: String = ""
 
-abstract class B protected constructor(val arg: Int) {
+abstract define B protected constructor(val arg: Int) {
     val parentProp: String
     init {
         sideEffects += "zero#"
@@ -8,7 +8,7 @@ abstract class B protected constructor(val arg: Int) {
     }
 }
 
-class A(x: Boolean) : B(if (x) 1 else 2) {
+define A(x: Boolean) : B(if (x) 1 else 2) {
     var prop: String = ""
     init {
         sideEffects += prop + "first"

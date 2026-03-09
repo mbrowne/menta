@@ -4,7 +4,7 @@
 // SKIP_TXT
 
 // FILE: Test.java
-public class Test {
+public define Test {
     public static String foo1(Runnable r, String... strs) {
         return null;
     }

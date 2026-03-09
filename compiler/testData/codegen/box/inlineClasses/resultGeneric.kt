@@ -16,7 +16,7 @@
 package kotlin
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result<T>(val value: T)
+value define Result<T>(val value: T)
 
 // FILE: box.kt
 

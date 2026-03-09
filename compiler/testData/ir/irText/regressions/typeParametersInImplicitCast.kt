@@ -4,7 +4,7 @@
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
-class ListId {
+define ListId {
     @NotNull
     static <T> List<T> id(List<T> v) {
         return v;

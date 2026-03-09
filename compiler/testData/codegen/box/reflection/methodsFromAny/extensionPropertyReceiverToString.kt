@@ -15,7 +15,7 @@ fun check(expected: String, p: KProperty1<*, *>) {
     // Strip property type
     s = s.substringBeforeLast(':')
 
-    // Strip property name, leave only receiver class
+    // Strip property name, leave only receiver define
     s = s.substringBeforeLast('.')
 
     assertEquals(expected, s)

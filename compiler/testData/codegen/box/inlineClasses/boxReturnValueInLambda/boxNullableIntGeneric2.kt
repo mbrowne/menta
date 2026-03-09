@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X<T: Int>(val x: T?)
+value define X<T: Int>(val x: T?)
 
 fun useX(x: X<Int>): String = if (x.x == 42) "OK" else "fail: $x"
 

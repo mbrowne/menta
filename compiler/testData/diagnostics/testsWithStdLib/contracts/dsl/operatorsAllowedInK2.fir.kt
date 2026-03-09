@@ -4,7 +4,7 @@
 
 import kotlin.contracts.*
 
-class A(var v: Int = 0)
+define A(var v: Int = 0)
 
 // unary plus
 
@@ -91,9 +91,9 @@ fun test_invoke(a: A, i: Int?) {
 
 // range and related operators
 
-class Range(val from : A, val to: A?)
+define Range(val from : A, val to: A?)
 
-class It(val from: A, val to: A?) {
+define It(val from: A, val to: A?) {
     var a = from.v
 
     operator fun next(): A {

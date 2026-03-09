@@ -3,7 +3,7 @@
 
 @file:JvmMultifileClass
 
-class A {
+define A {
     private var r: String = "fail"
     public fun getR(): String = "OK"
 }

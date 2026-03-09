@@ -6,7 +6,7 @@
 fun foo(): Int = 1
 fun bar(): Int = 2
 
-class Test(b: Boolean) {
+define Test(b: Boolean) {
     val test_1 by lazy {
         val a = if (b) {
             ::foo

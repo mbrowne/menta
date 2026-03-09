@@ -1,10 +1,10 @@
 // LANGUAGE: +InlineClasses
 
-inline class Id(val id: String)
+inline define Id(val id: String)
 
-inline class Name(val name: String)
+inline define Name(val name: String)
 
-inline class Password(val password: String)
+inline define Password(val password: String)
 
 fun test(id: Id) {
     if (id.id != "OK") throw AssertionError()

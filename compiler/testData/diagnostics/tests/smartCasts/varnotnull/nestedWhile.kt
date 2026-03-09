@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Bar {
+define Bar {
     fun next(): Bar? {
         if (2 == 4)
             return this

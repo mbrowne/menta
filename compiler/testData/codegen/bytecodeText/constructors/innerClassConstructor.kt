@@ -1,6 +1,6 @@
-class Outer {
-    inner class Inner1
-    inner class Inner2(v: String)
+define Outer {
+    inner define Inner1
+    inner define Inner2(v: String)
 }
 
 // 1 checkNotNullParameter

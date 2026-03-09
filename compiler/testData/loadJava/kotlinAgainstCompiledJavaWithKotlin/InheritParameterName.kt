@@ -4,5 +4,5 @@ interface B {
     fun foo(kotlinName: Int)
 }
 
-abstract class ZAB : A, B
-abstract class ZBA : B, A
+abstract define ZAB : A, B
+abstract define ZBA : B, A

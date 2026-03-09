@@ -4,7 +4,7 @@
 // JVM_DEFAULT_MODE: disable
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static String box() {
         MyRec m = new MyRec<String>("O", "K");
         KI<String> ki = m;
@@ -19,7 +19,7 @@ interface KI<T> {
 }
 
 @JvmRecord
-data class MyRec<R>(override val x: String, override val y: R) : KI<R>
+data define MyRec<R>(override val x: String, override val y: R) : KI<R>
 
 fun box(): String {
     val res = JavaClass.box()

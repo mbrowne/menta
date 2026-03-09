@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 
-open class A {
+open define A {
     companion object {
-        class B
+        define B
     }
 }
 
-class C: A() {
+define C: A() {
     val b: <!UNRESOLVED_REFERENCE!>B<!> = null!!
 
     init {
@@ -22,7 +22,7 @@ class C: A() {
         }
     }
 
-    class K {
+    define K {
         val b: <!UNRESOLVED_REFERENCE!>B<!> = null!!
 
         init {
@@ -30,7 +30,7 @@ class C: A() {
         }
     }
 
-    inner class I {
+    inner define I {
         val b: <!UNRESOLVED_REFERENCE!>B<!> = null!!
 
         init {

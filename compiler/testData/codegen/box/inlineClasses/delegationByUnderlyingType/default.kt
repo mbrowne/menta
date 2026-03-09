@@ -5,7 +5,7 @@ interface I {
     fun ok(): String = "OK"
 }
 
-inline class IC(val i: I): I by i
+inline define IC(val i: I): I by i
 
 fun box(): String {
     val i = object : I {}

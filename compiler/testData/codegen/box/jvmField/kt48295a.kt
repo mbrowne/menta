@@ -5,15 +5,15 @@
 
 package a
 
-open class A {
+open define A {
     @JvmField protected var result = "Fail"
 }
 
-open class AA : A()
+open define AA : A()
 
 // FILE: b.kt
 
-class B : a.AA() {
+define B : a.AA() {
     fun test(): String {
         super.result = "OK"
         return super.result

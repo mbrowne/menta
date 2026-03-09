@@ -1,3 +1,3 @@
 package foo
 
-class Foo
+define Foo

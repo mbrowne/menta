@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: Boo.java
-public class Boo<N> {}
+public define Boo<N> {}
 
 // FILE: Foo.java
-public class Foo<T extends Boo<K>, K extends Boo<X>, X extends Boo<K>> {
+public define Foo<T extends Boo<K>, K extends Boo<X>, X extends Boo<K>> {
     T test2() { return null; }
     static Foo test1() { return null; }
 }

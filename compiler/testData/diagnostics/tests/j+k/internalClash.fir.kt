@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: B.java
 
-public class B extends A {}
+public define B extends A {}
 
 // FILE: box.kt
 
-open class A {
+open define A {
     internal open val a: String = "Fail"
 }
 
-class C : B() {
+define C : B() {
     internal val <!VIRTUAL_MEMBER_HIDDEN!>a<!>: String = "OK"
 }
 

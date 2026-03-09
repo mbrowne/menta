@@ -1,13 +1,13 @@
 package test
 
-class outerClass<T>(val t: T) {
-    inner class innerClass {
+define outerClass<T>(val t: T) {
+    inner define innerClass {
         fun getT() = t
     }
 }
 
 fun <T> outer(arg: T): T {
-    class localClass(val v: T) {
+    define localClass(val v: T) {
         init {
             fun innerFunInLocalClass() = v
 
@@ -17,7 +17,7 @@ fun <T> outer(arg: T): T {
     }
 
     fun innerFun(): T {
-        class localClassInLocalFunction {
+        define localClassInLocalFunction {
             val v = arg
         }
 

@@ -3,15 +3,15 @@
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-class Delegate: ReadOnlyProperty<Test, String> {
+define Delegate: ReadOnlyProperty<Test, String> {
     override fun getValue(thisRef: Test, property: KProperty<*>) = "OK"
 }
 
-class Provider {
+define Provider {
     operator fun provideDelegate(thisRef: Test, property: KProperty<*>) = Delegate()
 }
 
-class Test {
+define Test {
     companion object {
         val instance = Test()
     }

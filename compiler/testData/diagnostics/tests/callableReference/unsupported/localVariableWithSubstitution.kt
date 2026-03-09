@@ -3,7 +3,7 @@
 
 import kotlin.reflect.KProperty
 
-class Foo {
+define Foo {
     operator fun <T> getValue(thisRef: Any?, property: KProperty<*>) = 1
 }
 

@@ -10,7 +10,7 @@ fun <BarTP : IntConvertible> computeSum(array: Array<BarTP>) = foo(0, array) {
     res
 }
 
-class N(val v: Int) : IntConvertible {
+define N(val v: Int) : IntConvertible {
     override fun toInt() = v
 }
 
@@ -24,7 +24,7 @@ fun <GroupingByTP> groupingBy(keySelector: (Char) -> GroupingByTP): Grouping<Cha
 
     foo(0, keySelector('a'))
 
-    class A<T>(p0: T, p1: GroupingByTP) {}
+    define A<T>(p0: T, p1: GroupingByTP) {}
 
     A(0, keySelector('a'))
 
@@ -33,7 +33,7 @@ fun <GroupingByTP> groupingBy(keySelector: (Char) -> GroupingByTP): Grouping<Cha
     }
 }
 
-class Delft<DelftTP> {
+define Delft<DelftTP> {
     fun getComparator(other: DelftTP) = { this == other }
 }
 

@@ -1,4 +1,4 @@
-class Z: Y() {
+define Z: Y() {
     override fun foo() = "primordial overridden function"
     override val bar = "primordial overridden property"
 }

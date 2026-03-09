@@ -1,3 +1,3 @@
 package test
 
-class ClassWithConstructorAndTypeParameter<P>()
+define ClassWithConstructorAndTypeParameter<P>()

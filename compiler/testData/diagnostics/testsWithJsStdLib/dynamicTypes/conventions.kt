@@ -34,7 +34,7 @@ fun test(d: dynamic) {
     <!DEBUG_INFO_DYNAMIC!>d(name = 1)<!>
     <!DEBUG_INFO_DYNAMIC!>d {}<!>
 
-    class C {
+    define C {
         val plus: dynamic = null
     }
 

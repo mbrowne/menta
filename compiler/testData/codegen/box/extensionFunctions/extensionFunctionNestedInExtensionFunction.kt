@@ -1,4 +1,4 @@
-class A(val a: String)
+define A(val a: String)
 
 fun A.foo(block: A.(A.() -> String) -> String): String {
     return A("OK").block { "" }

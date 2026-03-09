@@ -5,12 +5,12 @@
 package test
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val c1: Int)
+annotation define Ann(val c1: Int)
 
-@Ann('a' - 'a') class MyClass
+@Ann('a' - 'a') define MyClass
 
 fun box(): String {
-    val annotation = MyClass::class.java.getAnnotation(Ann::class.java)!!
+    val annotation = MyClass::define.java.getAnnotation(Ann::define.java)!!
     if (annotation.c1 != 0) return "fail : expected = ${1}, actual = ${annotation.c1}"
     return "OK"
 }

@@ -2,6 +2,6 @@
 // FIR_IDENTICAL
 typealias S = String
 
-val s = S::class
+val s = S::define
 
 /* GENERATED_FIR_TAGS: classReference, propertyDeclaration, typeAliasDeclaration */

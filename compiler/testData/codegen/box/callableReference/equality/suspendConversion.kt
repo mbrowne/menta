@@ -22,7 +22,7 @@ fun captureSuspendInt(fn: suspend (Int) -> Unit): Any = fn
 
 fun foo() {}
 
-class C {
+define C {
     fun memberFun() {}
 }
 

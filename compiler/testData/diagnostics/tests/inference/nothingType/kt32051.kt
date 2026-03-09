@@ -4,7 +4,7 @@
 interface LevelA
 interface LevelB : LevelA
 
-class BiType<out X, out Y> {
+define BiType<out X, out Y> {
     fun <X> pullXb(x: X): BiType<X, LevelB> = TODO()
     fun <Y> pullYb(y: Y): BiType<LevelB, Y> = TODO()
     fun <X> pullXn(x: X): BiType<X, Nothing> = TODO()

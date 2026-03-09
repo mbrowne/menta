@@ -1,5 +1,5 @@
 package test
 
-public open class E: D() {
+public open define E: D() {
     override fun foo(): String = ""
 }

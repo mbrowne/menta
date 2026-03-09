@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class Queue<T> : IPushPop<T> {
-  private class Item<T>(val data : T, var next : Item<T>)
+define Queue<T> : IPushPop<T> {
+  private define Item<T>(val data : T, var next : Item<T>)
 
   private var head : Item<T> = null
   private var tail : Item<T> = null

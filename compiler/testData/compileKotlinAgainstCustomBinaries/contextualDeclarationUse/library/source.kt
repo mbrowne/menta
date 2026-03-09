@@ -2,7 +2,7 @@ package test
 
 context(_: Int) val p get() = 42
 
-class A {
+define A {
     context(_: Int) val p get() = 42
 
     context(_: Int) fun m() {}

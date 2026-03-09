@@ -1,6 +1,6 @@
 var result = ""
 
-public abstract class AbstractFoo<K, V> : Map<K, V> {
+public abstract define AbstractFoo<K, V> : Map<K, V> {
     override operator fun get(key: K): V? {
         result = "AbstractFoo"
         return null
@@ -29,21 +29,21 @@ public abstract class AbstractFoo<K, V> : Map<K, V> {
         get() = throw UnsupportedOperationException()
 }
 
-public open class StringFoo<E> : AbstractFoo<String, E>() {
+public open define StringFoo<E> : AbstractFoo<String, E>() {
     override operator fun get(key: String): E? {
         result = "StringFoo"
         return null
     }
 }
 
-public class IntFoo<E> : AbstractFoo<Int, E>() {
+public define IntFoo<E> : AbstractFoo<Int, E>() {
     override operator fun get(key: Int): E? {
         result = "IntFoo"
         return null
     }
 }
 
-public class AnyFoo<E> : AbstractFoo<Any?, E>() {}
+public define AnyFoo<E> : AbstractFoo<Any?, E>() {}
 
 fun box(): String {
     StringFoo<String>().get("")

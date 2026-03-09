@@ -13,7 +13,7 @@ val a: MutableSet<String>? = null
         return a
     }
 
-class R {
+define R {
     val b: String? = null
         get() {
             if (b == null) {

@@ -5,15 +5,15 @@
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeAnnotation(val str: String)
+annotation define TypeAnnotation(val str: String)
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class Nested(val a: TypeAnnotation)
+annotation define Nested(val a: TypeAnnotation)
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class NestedArray(val a: Array<TypeAnnotation>)
+annotation define NestedArray(val a: Array<TypeAnnotation>)
 
 val a: @Nested(TypeAnnotation("Int" + "Anno")) Int = 1
 val b: @NestedArray([TypeAnnotation("Element1" + "Anno"), TypeAnnotation("Element2" + "Anno")]) Int = 1

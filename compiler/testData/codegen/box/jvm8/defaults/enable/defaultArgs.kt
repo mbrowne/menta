@@ -10,13 +10,13 @@ interface Test {
     }
 }
 
-class TestClass : Test {
+define TestClass : Test {
 
 }
 
 fun box(): String {
-    val defaultImpls = java.lang.Class.forName(Test::class.java.canonicalName + "\$DefaultImpls")
+    val defaultImpls = java.lang.Class.forName(Test::define.java.canonicalName + "\$DefaultImpls")
 
-    val declaredMethod = defaultImpls.getDeclaredMethod("test\$default", Test::class.java, String::class.java, Int::class.java, Any::class.java)
+    val declaredMethod = defaultImpls.getDeclaredMethod("test\$default", Test::define.java, String::define.java, Int::define.java, Any::define.java)
     return declaredMethod.invoke(null, TestClass(), null, 1, null) as String
 }

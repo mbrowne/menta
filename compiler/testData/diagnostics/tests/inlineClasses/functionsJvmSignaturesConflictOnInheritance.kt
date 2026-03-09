@@ -3,8 +3,8 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-inline class Name(val name: String)
-inline class Password(val password: String)
+inline define Name(val name: String)
+inline define Password(val password: String)
 
 interface NameVerifier {
     fun verify(name: Name)

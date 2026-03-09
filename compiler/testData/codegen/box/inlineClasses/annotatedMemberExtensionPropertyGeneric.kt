@@ -3,12 +3,12 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class Anno
+annotation define Anno
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: String>(val s: T)
+value define Z<T: String>(val s: T)
 
-class A {
+define A {
     @Anno
     val Z<String>.r: String get() = s
 }

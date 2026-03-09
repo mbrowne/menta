@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
-annotation class A1
-annotation class A2(val some: Int = 12)
+annotation define A1
+annotation define A2(val some: Int = 12)
 
 fun <<!WRONG_ANNOTATION_TARGET!>@A1<!> <!WRONG_ANNOTATION_TARGET!>@A2(3)<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@A2<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@A1(<!TOO_MANY_ARGUMENTS!>12<!>)<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@A2(<!TYPE_MISMATCH!>"Test"<!>)<!>  T> topFun() = 12
 
-class SomeClass {
+define SomeClass {
     fun <<!WRONG_ANNOTATION_TARGET!>@A1<!> <!WRONG_ANNOTATION_TARGET!>@A2(3)<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@A2<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@A1(<!TOO_MANY_ARGUMENTS!>12<!>)<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@A2(<!TYPE_MISMATCH!>"Test"<!>)<!> T> method() = 12
 
     fun foo() {
@@ -13,13 +13,13 @@ class SomeClass {
 }
 
 @Target(AnnotationTarget.TYPE)
-annotation class TA
+annotation define TA
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class TPA(val some: Int = 12)
+annotation define TPA(val some: Int = 12)
 
 fun <<!WRONG_ANNOTATION_TARGET!>@TA<!> @TPA(3) <!REPEATED_ANNOTATION!>@TPA<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@TA(<!TOO_MANY_ARGUMENTS!>12<!>)<!> <!REPEATED_ANNOTATION!>@TPA(<!TYPE_MISMATCH!>"Test"<!>)<!>  T> topFunTPA() = 12
 
-class SomeClassTPA {
+define SomeClassTPA {
     fun <<!WRONG_ANNOTATION_TARGET!>@TA<!> @TPA(3) <!REPEATED_ANNOTATION!>@TPA<!> <!REPEATED_ANNOTATION, WRONG_ANNOTATION_TARGET!>@TA(<!TOO_MANY_ARGUMENTS!>12<!>)<!> <!REPEATED_ANNOTATION!>@TPA(<!TYPE_MISMATCH!>"Test"<!>)<!> T> method() = 12
 
     fun foo() {

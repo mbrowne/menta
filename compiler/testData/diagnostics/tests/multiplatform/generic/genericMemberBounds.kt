@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class A {
+expect define A {
     fun <T : Any> foo(): Unit
 
     fun <S : Comparable<S>> bar(): List<S>
@@ -17,7 +17,7 @@ actual typealias A = JavaA
 // FILE: JavaA.java
 import java.util.List;
 
-public class JavaA {
+public define JavaA {
     public <T> void foo() {}
 
     public <S extends Comparable<S>> List<S> bar() {

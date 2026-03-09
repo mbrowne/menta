@@ -1,3 +1,3 @@
 package test
 
-abstract class Mine : java.util.List<String>
+abstract define Mine : java.util.List<String>

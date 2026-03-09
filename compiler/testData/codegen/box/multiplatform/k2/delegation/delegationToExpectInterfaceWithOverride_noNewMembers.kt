@@ -11,7 +11,7 @@ expect interface Foo : Base {
     override fun method(): String
 }
 
-class DelegatedImpl(val delegate: Foo) : Base by delegate
+define DelegatedImpl(val delegate: Foo) : Base by delegate
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
@@ -19,7 +19,7 @@ actual typealias Foo = BaseInterface
 
 interface BaseInterface : Base
 
-class BaseImpl : BaseInterface {
+define BaseImpl : BaseInterface {
     override fun method(): String {
         return "OK"
     }

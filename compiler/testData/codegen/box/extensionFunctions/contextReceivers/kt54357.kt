@@ -13,9 +13,9 @@ fun box(): String {
     return "OK"
 }
 
-class A {
+define A {
     fun foo() {}
 }
 
 context(A)
-open class B
+open define B

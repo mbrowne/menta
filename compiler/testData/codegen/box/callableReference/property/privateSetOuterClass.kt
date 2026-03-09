@@ -1,18 +1,18 @@
-class A {
+define A {
     var value: String = "fail1"
         private set
 
-    inner class B {
+    inner define B {
         fun foo(): kotlin.reflect.KMutableProperty0<String> = this@A::value
     }
 }
 
-class C {
+define C {
     var value: String = "fail2"
         private set
 
     fun bar(): kotlin.reflect.KMutableProperty0<String> {
-        class D {
+        define D {
             fun foo(): kotlin.reflect.KMutableProperty0<String> = this@C::value
         }
 

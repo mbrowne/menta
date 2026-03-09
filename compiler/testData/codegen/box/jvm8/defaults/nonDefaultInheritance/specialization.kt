@@ -18,13 +18,13 @@ interface Foo2<T> {
 // MODULE: main(lib)
 // JVM_DEFAULT_MODE: disable
 // FILE: main.kt
-class DerivedClass : Foo<String>
+define DerivedClass : Foo<String>
 
 interface DerivedInterface<T> : Foo2<T> {
     override fun foo(p: T) = p
 }
 
-class DerivedClassWithSpecialization : DerivedInterface<String>
+define DerivedClassWithSpecialization : DerivedInterface<String>
 
 fun box(): String {
     return DerivedClass().foo("O") + DerivedClassWithSpecialization().foo("K")

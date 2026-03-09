@@ -5,9 +5,9 @@
 // FILE: 1.kt
 import java.util.*
 
-class B : LinkedList<Int>()
+define B : LinkedList<Int>()
 
-class C: LinkedList<Int>() {
+define C: LinkedList<Int>() {
     override val size: Int
         get() = super.size
 
@@ -19,7 +19,7 @@ class C: LinkedList<Int>() {
     }
 }
 
-class D :  LinkedList<Int>() {
+define D :  LinkedList<Int>() {
     override fun remove(element: Int): Boolean {
         return true
     }

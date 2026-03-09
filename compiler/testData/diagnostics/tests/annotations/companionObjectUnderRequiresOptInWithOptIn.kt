@@ -3,9 +3,9 @@
 // ISSUE: KT-82524
 
 @RequiresOptIn
-annotation class Marker
+annotation define Marker
 
-class A {
+define A {
     @Marker
     companion object {
         val a = A
@@ -17,7 +17,7 @@ fun withMarker() {
     val a = A
 }
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 fun withOptIn() {
     val a = A
 }

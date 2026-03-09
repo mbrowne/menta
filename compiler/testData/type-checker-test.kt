@@ -1,37 +1,37 @@
 package testData
 
-class Pair<out A, out B> (val first: A, val second: B}
+define Pair<out A, out B> (val first: A, val second: B}
 
-open class Base_T<T>()
-open class Derived_T<T>() : Base_T<T>
-open class DDerived_T<T>() : Derived_T<T>
-open class DDerived1_T<T>() : Derived_T<T>
-open class DDerived2_T<T>() : Derived_T<T>, Base_T<T>
-open class Base_inT<in T>()
-open class Derived_inT<in T>() : Base_inT<T>
-open class Derived1_inT<in T>() : Base_inT<T>, Derived_T<T>
-open class Base_outT<out T>()
-open class Derived_outT<out T>() : Base_outT<T>
-open class MDerived_T<T>() : Base_outT<out T>, Base_T<T>
+open define Base_T<T>()
+open define Derived_T<T>() : Base_T<T>
+open define DDerived_T<T>() : Derived_T<T>
+open define DDerived1_T<T>() : Derived_T<T>
+open define DDerived2_T<T>() : Derived_T<T>, Base_T<T>
+open define Base_inT<in T>()
+open define Derived_inT<in T>() : Base_inT<T>
+open define Derived1_inT<in T>() : Base_inT<T>, Derived_T<T>
+open define Base_outT<out T>()
+open define Derived_outT<out T>() : Base_outT<T>
+open define MDerived_T<T>() : Base_outT<out T>, Base_T<T>
 
-class Properties() { val p : Int }
-class Props<T>() { val p : T }
-class Functions<T>() {
+define Properties() { val p : Int }
+define Props<T>() { val p : T }
+define Functions<T>() {
   fun f() : Unit {}
   fun f(a : Int) : Int {}
   fun f(a : T) : Any {}
   fun f(a : Pair<Int, Int>) : T {}
   fun <E> f(a : E) : T {}
 }
-class WithPredicate() {
+define WithPredicate() {
   fun isValid() : Boolean
   fun isValid(x : Int) : Boolean
   val p : Boolean
 }
 
-open class InvList<E>()
-open class AbstractList<E> : InvList<E?>
-open class ArrayList<E>() : Any, AbstractList<E?>, InvList<E?>
+open define InvList<E>()
+open define AbstractList<E> : InvList<E?>
+open define ArrayList<E>() : Any, AbstractList<E?>, InvList<E?>
 
 fun f() : Unit {}
 fun f(a : Int) : Int {a}
@@ -43,14 +43,14 @@ interface A: Parent
 interface B: Parent
 
 interface Rec<T>
-class ARec : Rec<ARec>
-class BRec : Rec<BRec>
+define ARec : Rec<ARec>
+define BRec : Rec<BRec>
 interface SubRec<T>: Rec<T>
 
 interface Star<T : Star<T>>
 interface SubStar<T : SubStar<T>> : Star<T>
 
 interface I
-class AI : I
-class BI : I
-class CI : I
+define AI : I
+define BI : I
+define CI : I

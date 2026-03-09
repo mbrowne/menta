@@ -16,7 +16,7 @@ var x : Int = 1 + <!UNINITIALIZED_VARIABLE!>x<!>
 val illegalDefaultSetter = ""
     <!VAL_WITH_SETTER!>set<!>
 
-class Test() {
+define Test() {
     var a : Int = 111
     var b : Int = 222
         get() = field

@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-enum class Zzz {
+enum define Zzz {
     Z1 {
         override fun f() = "z1"
     },

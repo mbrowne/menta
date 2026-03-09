@@ -1,6 +1,6 @@
 // FILE: A.kt
-class A {
-    inner class Inner<T> private constructor(val s: T) {
+define A {
+    inner define Inner<T> private constructor(val s: T) {
         constructor(): this("" as T)
 
         internal inline fun internalInlineMethod(s: T) = Inner(s)

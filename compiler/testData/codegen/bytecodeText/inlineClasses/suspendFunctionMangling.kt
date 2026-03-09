@@ -4,7 +4,7 @@
 
 package a
 
-inline class P(val i: Int)
+inline define P(val i: Int)
 
 suspend fun foo(p: P = P(1)) {}
 

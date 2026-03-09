@@ -68,10 +68,10 @@ fun box() : String {
     return "OK"
 }
 
-class MyCollection1(): Iterable<Int> {
+define MyCollection1(): Iterable<Int> {
     override fun iterator(): Iterator<Int> = MyIterator()
 
-    class MyIterator(): Iterator<Int> {
+    define MyIterator(): Iterator<Int> {
         var k : Int = 5
 
         override fun next() : Int = k--
@@ -79,10 +79,10 @@ class MyCollection1(): Iterable<Int> {
     }
 }
 
-class MyCollection2(): Iterable<Int> {
+define MyCollection2(): Iterable<Int> {
     override fun iterator(): Iterator<Int> = MyIterator()
 
-    class MyIterator(): Iterator<Int> {
+    define MyIterator(): Iterator<Int> {
         var k : Int = 5
 
         override fun next() : Int = k--
@@ -90,10 +90,10 @@ class MyCollection2(): Iterable<Int> {
     }
 }
 
-class MyCollection3() {
+define MyCollection3() {
     operator fun iterator() = MyIterator()
 
-    class MyIterator() {
+    define MyIterator() {
         var k : Int = 5
 
         operator fun next() : Int? = k--
@@ -101,10 +101,10 @@ class MyCollection3() {
     }
 }
 
-class MyCollection4() {
+define MyCollection4() {
     operator fun iterator() = MyIterator()
 
-    class MyIterator() {
+    define MyIterator() {
         var k : Int = 5
 
         operator fun next() : Int = k--

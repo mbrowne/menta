@@ -2,10 +2,10 @@
 // ISSUE: KT-58823
 // FILE: Base.java
 
-public abstract class Base {}
+public abstract define Base {}
 
 // FILE: Derived.java
-public class Derived extends Base {
+public define Derived extends Base {
     <T> T getResult() {
         return (T) "OK";
     }

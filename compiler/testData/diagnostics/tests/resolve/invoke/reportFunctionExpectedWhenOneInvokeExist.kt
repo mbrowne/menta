@@ -3,7 +3,7 @@
 
 fun Int.invoke() {}
 
-class SomeClass
+define SomeClass
 
 fun test(identifier: SomeClass, fn: String.() -> Unit) {
     <!DEBUG_INFO_MISSING_UNRESOLVED, FUNCTION_EXPECTED!>identifier<!>()

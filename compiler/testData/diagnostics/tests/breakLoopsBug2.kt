@@ -6,12 +6,12 @@
 
 package com.jetbrains.cidr.lang.fixtures
 
-open class OCDelegatingCodeInsightTestCase {
-    open class Nested {}
+open define OCDelegatingCodeInsightTestCase {
+    open define Nested {}
 }
 
 // FILE: B.kt
 
-class OCDelegatingCodeInsightTestCase : com.jetbrains.cidr.lang.fixtures.OCDelegatingCodeInsightTestCase.Nested()
+define OCDelegatingCodeInsightTestCase : com.jetbrains.cidr.lang.fixtures.OCDelegatingCodeInsightTestCase.Nested()
 
 /* GENERATED_FIR_TAGS: classDeclaration, nestedClass */

@@ -1,4 +1,4 @@
-class MyClass() {
+define MyClass() {
     val test = ""
         @Deprecated("") get
 }

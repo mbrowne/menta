@@ -15,7 +15,7 @@ inline fun <reified T> T.foo(): T = this as T
 inline fun <reified T> T.fooN(): T? = this as T?
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static String nullString() {
         return null;
     }

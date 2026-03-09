@@ -1,6 +1,6 @@
 fun box(): String {
     val x = "OK"
-    class Aaa {
+    define Aaa {
         val y = x
     }
 

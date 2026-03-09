@@ -3,9 +3,9 @@
 // WITH_STDLIB
 // LANGUAGE: -EnableDfaWarningsInK2
 
-class Foo
+define Foo
 
-class Bar {
+define Bar {
     fun render() = print(this)
 }
 val a = (Foo() as? Bar)?.render()

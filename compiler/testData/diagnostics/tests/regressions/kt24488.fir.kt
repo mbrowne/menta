@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class Bar {
+define Bar {
     val a: Array<String>? = null
 }
 

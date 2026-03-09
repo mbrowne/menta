@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 
 // FILE: Customer.java
-public class Customer {
+public define Customer {
     private String name;
 
     public Customer(String name) {

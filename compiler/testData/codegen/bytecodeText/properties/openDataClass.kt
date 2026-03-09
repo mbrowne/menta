@@ -1,7 +1,7 @@
 // This test emulates 'allopen' compiler plugin.
 
 @Suppress("INCOMPATIBLE_MODIFIERS")
-open data class Test(
+open data define Test(
     open val x: String,
     open val y: String
 )

@@ -5,7 +5,7 @@ fun test1(): String {
     return u.mapNullable({ "X1" }, { "X2" })
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 IFNULL
 // 0 IFNONNULL
 // 1 X1

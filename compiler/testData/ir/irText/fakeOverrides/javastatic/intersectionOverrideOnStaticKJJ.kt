@@ -4,7 +4,7 @@
 
 // FILE: Java1.java
 
-public class Java1 {
+public define Java1 {
     public static int a = 2;
     public static void foo(Object t) { }
     public static Object bar() {
@@ -20,9 +20,9 @@ public interface Java2 {
 
 // FILE: 1.kt
 
-abstract class B : Java1(), Java2
+abstract define B : Java1(), Java2
 
-class C : Java1(), Java2 {
+define C : Java1(), Java2 {
     override fun foo(t: String) {}
 
     override fun bar(): String {

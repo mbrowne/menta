@@ -1,7 +1,7 @@
-data class C(
+data define C(
     val a: Int = 1,
 )
 
-data class D(
+data define D(
     val a: Int = 1,
 )

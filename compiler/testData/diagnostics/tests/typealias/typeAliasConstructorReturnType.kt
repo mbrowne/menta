@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Cell<T>(val x : T)
-class Pair<T1, T2>(val x1: T1, val x2: T2)
+define Cell<T>(val x : T)
+define Pair<T1, T2>(val x1: T1, val x2: T2)
 
 typealias CIntA = Cell<Int>
 typealias CA<TA> = Cell<TA>

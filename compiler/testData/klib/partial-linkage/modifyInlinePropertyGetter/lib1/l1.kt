@@ -5,7 +5,7 @@ context(c: String)
 inline val String.inlineExtensionProperty: String
     get() = "$this.inlineExtensionProperty.v1 with context $c"
 
-class C {
+define C {
     inline val inlineClassProperty: String
         get() = "inlineClassProperty.v1"
 

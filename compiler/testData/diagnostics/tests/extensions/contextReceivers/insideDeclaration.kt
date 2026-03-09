@@ -2,11 +2,11 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class A {
+define A {
     fun h1() {}
 }
 
-class B {
+define B {
     fun h2() {}
 }
 

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // SKIP_TXT
 // FILE: Generic.java
-public class Generic<T> {
-    public static class ML<E> {}
+public define Generic<T> {
+    public static define ML<E> {}
     public static Generic create() { return null; }
     public <E> void foo(ML<E> w) { }
 }

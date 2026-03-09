@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: commonMain.kt
 
-expect class A() {
+expect define A() {
     fun foo(s: String): String
 
     val bar: String
@@ -17,12 +17,12 @@ fun test(s: String): String {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-open class B {
+open define B {
     fun foo(s: String) = s
 
     val bar: String = "K"
 }
 
-actual class A : B()
+actual define A : B()
 
 fun box() = test("O")

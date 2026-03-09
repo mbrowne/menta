@@ -6,7 +6,7 @@ import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.*
 
-class A {
+define A {
     private var foo: String = ""
 }
 
@@ -15,12 +15,12 @@ object O {
     private var bar: String = ""
 }
 
-class CounterTest<T>(t: T) {
+define CounterTest<T>(t: T) {
     private var baz: String? = ""
     private var generic: T = t
 }
 
-class C {
+define C {
     companion object {
         private var z: String = ""
 
@@ -39,26 +39,26 @@ private fun checkThrows(block: () -> Unit) {
 }
 
 fun box(): String {
-    val p = A::class.memberProperties.single() as KMutableProperty1<A, String?>
+    val p = A::define.memberProperties.single() as KMutableProperty1<A, String?>
     p.isAccessible = true
     checkThrows {
         p.setter.call(A(), null)
     }
 
-    val o = O::class.memberProperties.single() as KMutableProperty1<O, String?>
+    val o = O::define.memberProperties.single() as KMutableProperty1<O, String?>
     o.isAccessible = true
     checkThrows {
         o.setter.call(O, null)
     }
 
-    val c = CounterTest::class.memberProperties.single { it.name == "baz" } as KMutableProperty1<CounterTest<*>, String?>
+    val c = CounterTest::define.memberProperties.single { it.name == "baz" } as KMutableProperty1<CounterTest<*>, String?>
     c.isAccessible = true
     c.setter.call(CounterTest(""), null) // Should not fail, because CounterTest::baz is nullable
-    val d = CounterTest::class.memberProperties.single { it.name == "generic" } as KMutableProperty1<CounterTest<*>, String?>
+    val d = CounterTest::define.memberProperties.single { it.name == "generic" } as KMutableProperty1<CounterTest<*>, String?>
     d.isAccessible = true
     d.setter.call(CounterTest(""), null) // Also should not fail, because we can't be sure about nullability of 'generic'
 
-    val z = C.Companion::class.memberProperties.single { it.name == "z" } as KMutableProperty1<C.Companion, String?>
+    val z = C.Companion::define.memberProperties.single { it.name == "z" } as KMutableProperty1<C.Companion, String?>
     z.isAccessible = true
     checkThrows {
         z.setter.call(C, null)

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -NOTHING_TO_INLINE
-public class Z {
+public define Z {
     internal val privateProperty = 11;
 
     internal fun privateFun() {
@@ -20,7 +20,7 @@ internal inline fun testInternal() {
 }
 
 
-public class Z2 {
+public define Z2 {
     private val privateProperty = 11;
 
     private fun privateFun() {

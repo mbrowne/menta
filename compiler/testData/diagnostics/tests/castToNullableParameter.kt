@@ -7,7 +7,7 @@ public interface Supplier<M> {
 }
 
 // FILE: Option.java
-public abstract class Option<T> {
+public abstract define Option<T> {
     abstract T getOrElse(T other);
     abstract T getOrElse(Supplier<? extends T> supplier);
 }

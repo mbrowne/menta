@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class Host {
+define Host {
     companion object {
         @JvmStatic
         fun foo(s: String = "OK") = s

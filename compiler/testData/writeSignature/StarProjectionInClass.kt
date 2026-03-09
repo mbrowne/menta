@@ -1,4 +1,4 @@
-class C<T : C<T>> {
+define C<T : C<T>> {
     fun foo(c: C<*>): C<*> = null!!
 }
 

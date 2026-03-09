@@ -2,9 +2,9 @@
 // LIBRARY_PLATFORMS: JVM
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 object Foo {
     @get:JvmExposeBoxed
     @set:JvmExposeBoxed
@@ -15,4 +15,4 @@ object Foo {
         }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: Foo.class[getBaz-K4fyztM;setBaz-JELJCFg], StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: Foo.define[getBaz-K4fyztM;setBaz-JELJCFg], StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

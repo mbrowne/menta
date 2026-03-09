@@ -5,113 +5,108 @@ KtFile: declarationsJustAtTyped.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(private)('private')
-    PsiWhiteSpace(' ')
-    PsiErrorElement:Expected annotation identifier after '@'
-      PsiElement(AT)('@')
-    PsiWhiteSpace(' ')
-    ANNOTATION
-      PsiElement(AT)('@')
-      PsiElement(LBRACKET)('[')
+  CLASS
+    MODIFIER_LIST
+      PsiElement(private)('private')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expected annotation identifier after '@'
+        PsiElement(AT)('@')
+      PsiWhiteSpace(' ')
+      ANNOTATION
+        PsiElement(AT)('@')
+        PsiElement(LBRACKET)('[')
+        ANNOTATION_ENTRY
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Ann1')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            VALUE_ARGUMENT
+              INTEGER_CONSTANT
+                PsiElement(INTEGER_LITERAL)('1')
+            PsiElement(RPAR)(')')
+        PsiElement(RBRACKET)(']')
+      PsiWhiteSpace(' ')
       ANNOTATION_ENTRY
+        PsiElement(AT)('@')
         CONSTRUCTOR_CALLEE
           TYPE_REFERENCE
             USER_TYPE
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Ann1')
+                PsiElement(IDENTIFIER)('Ann3')
         VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           VALUE_ARGUMENT
-            INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('1')
+            STRING_TEMPLATE
+              PsiElement(OPEN_QUOTE)('"')
+              LITERAL_STRING_TEMPLATE_ENTRY
+                PsiElement(REGULAR_STRING_PART)('2')
+              PsiElement(CLOSING_QUOTE)('"')
           PsiElement(RPAR)(')')
-      PsiElement(RBRACKET)(']')
     PsiWhiteSpace(' ')
-    ANNOTATION_ENTRY
-      PsiElement(AT)('@')
-      CONSTRUCTOR_CALLEE
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Ann3')
-      VALUE_ARGUMENT_LIST
-        PsiElement(LPAR)('(')
-        VALUE_ARGUMENT
-          STRING_TEMPLATE
-            PsiElement(OPEN_QUOTE)('"')
-            LITERAL_STRING_TEMPLATE_ENTRY
-              PsiElement(REGULAR_STRING_PART)('2')
-            PsiElement(CLOSING_QUOTE)('"')
-        PsiElement(RPAR)(')')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(LPAR)('(')
-  PsiWhiteSpace('\n        ')
-  PROPERTY
-    MODIFIER_LIST
-      PsiErrorElement:Expected annotation identifier after '@'
-        PsiElement(AT)('@')
-      PsiWhiteSpace(' ')
-      PsiElement(private)('private')
+    PRIMARY_CONSTRUCTOR
+      VALUE_PARAMETER_LIST
+        PsiElement(LPAR)('(')
+        PsiWhiteSpace('\n        ')
+        VALUE_PARAMETER
+          MODIFIER_LIST
+            PsiErrorElement:Expected annotation identifier after '@'
+              PsiElement(AT)('@')
+            PsiWhiteSpace(' ')
+            PsiElement(private)('private')
+          PsiWhiteSpace(' ')
+          PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('x')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Int')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace('\n        ')
+        VALUE_PARAMETER
+          MODIFIER_LIST
+            PsiErrorElement:Expected annotation identifier after '@'
+              PsiElement(AT)('@')
+            PsiWhiteSpace(' ')
+            PsiElement(private)('private')
+          PsiWhiteSpace(' ')
+          PsiElement(var)('var')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('y')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Int')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace('\n        ')
+        VALUE_PARAMETER
+          MODIFIER_LIST
+            PsiErrorElement:Expected annotation identifier after '@'
+              PsiElement(AT)('@')
+            PsiWhiteSpace(' ')
+            PsiElement(open)('open')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('z')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Int')
+        PsiWhiteSpace('\n')
+        PsiElement(RPAR)(')')
     PsiWhiteSpace(' ')
-    PsiElement(val)('val')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('x')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    TYPE_REFERENCE
-      USER_TYPE
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('Int')
-    PsiErrorElement:Property getter or setter expected
-      PsiElement(COMMA)(',')
-  PsiWhiteSpace('\n        ')
-  PROPERTY
-    MODIFIER_LIST
-      PsiErrorElement:Expected annotation identifier after '@'
-        PsiElement(AT)('@')
-      PsiWhiteSpace(' ')
-      PsiElement(private)('private')
-    PsiWhiteSpace(' ')
-    PsiElement(var)('var')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('y')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    TYPE_REFERENCE
-      USER_TYPE
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('Int')
-    PsiErrorElement:Property getter or setter expected
-      PsiElement(COMMA)(',')
-  PsiWhiteSpace('\n        ')
-  MODIFIER_LIST
-    PsiErrorElement:Expected annotation identifier after '@'
-      PsiElement(AT)('@')
-    PsiWhiteSpace(' ')
-    PsiElement(open)('open')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('z')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(COLON)(':')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(IDENTIFIER)('Int')
-  PsiWhiteSpace('\n')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(RPAR)(')')
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -129,26 +124,24 @@ KtFile: declarationsJustAtTyped.kt
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          BINARY_EXPRESSION
-            ANNOTATED_EXPRESSION
+          CLASS
+            MODIFIER_LIST
               PsiErrorElement:Expected annotation identifier after '@'
                 PsiElement(AT)('@')
-              PsiWhiteSpace(' ')
-              PsiErrorElement:Expecting an element
-                PsiElement(class)('class')
             PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(IDENTIFIER)('LocalClass')
-            PsiWhiteSpace('\n\n        ')
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('print')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                VALUE_ARGUMENT
-                  INTEGER_CONSTANT
-                    PsiElement(INTEGER_LITERAL)('1')
-                PsiElement(RPAR)(')')
+            PsiElement(define)('define')
+            PsiWhiteSpace(' ')
+            PsiElement(IDENTIFIER)('LocalClass')
+          PsiWhiteSpace('\n\n        ')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('print')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              VALUE_ARGUMENT
+                INTEGER_CONSTANT
+                  PsiElement(INTEGER_LITERAL)('1')
+              PsiElement(RPAR)(')')
           PsiWhiteSpace('\n\n        ')
           FUN
             MODIFIER_LIST
@@ -297,25 +290,27 @@ KtFile: declarationsJustAtTyped.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-      PsiWhiteSpace('\n        ')
-      ANNOTATED_EXPRESSION
-        PsiErrorElement:Expected annotation identifier after '@'
-          PsiElement(AT)('@')
-        PsiWhiteSpace(' ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('private')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(AT)('@')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('open')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('get')
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        PsiElement(EQ)('=')
-        PsiWhiteSpace(' ')
-        PsiElement(INTEGER_LITERAL)('1')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiErrorElement:Expected annotation identifier after '@'
+              PsiElement(AT)('@')
+            PsiWhiteSpace(' ')
+            PsiElement(private)('private')
+            PsiWhiteSpace(' ')
+            PsiErrorElement:Expected annotation identifier after '@'
+              PsiElement(AT)('@')
+            PsiWhiteSpace(' ')
+            PsiElement(open)('open')
+          PsiWhiteSpace(' ')
+          PsiElement(get)('get')
+          VALUE_PARAMETER_LIST
+            PsiElement(LPAR)('(')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          PsiElement(EQ)('=')
+          PsiWhiteSpace(' ')
+          INTEGER_CONSTANT
+            PsiElement(INTEGER_LITERAL)('1')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

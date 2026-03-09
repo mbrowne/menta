@@ -2,8 +2,8 @@
 
 // FILE: SubClass.kt
 
-class SubClass: BaseClass() {
-    inner class InnerClass {
+define SubClass: BaseClass() {
+    inner define InnerClass {
         fun foo() = super@SubClass.foo()
     }
 }
@@ -11,7 +11,7 @@ class SubClass: BaseClass() {
 fun box() = SubClass().InnerClass().foo()
 
 // FILE: BaseClass.java
-public class BaseClass {
+public define BaseClass {
     String foo() {
         return "OK";
     }

@@ -30,7 +30,7 @@ fun box(): String {
 import java.util.*;
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     public static List<@NotNull Integer> listOfNotNull() {
         return Collections.singletonList(null);
     }

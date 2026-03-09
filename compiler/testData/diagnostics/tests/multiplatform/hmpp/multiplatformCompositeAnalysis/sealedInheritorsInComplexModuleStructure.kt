@@ -6,18 +6,18 @@
 
 package foo
 
-expect sealed class SealedWithSharedActual()
-expect sealed class SealedWithPlatformActuals() : SealedWithSharedActual
+expect sealed define SealedWithSharedActual()
+expect sealed define SealedWithPlatformActuals() : SealedWithSharedActual
 
 // MODULE: intermediate()()(common)
 package foo
 
-actual sealed class SealedWithSharedActual
-class SimpleShared : SealedWithPlatformActuals()
+actual sealed define SealedWithSharedActual
+define SimpleShared : SealedWithPlatformActuals()
 
 // MODULE: main()()(intermediate)
 package foo
 
-actual sealed class SealedWithPlatformActuals actual constructor(): <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>SealedWithSharedActual<!>()
+actual sealed define SealedWithPlatformActuals actual constructor(): <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>SealedWithSharedActual<!>()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, primaryConstructor, sealed */

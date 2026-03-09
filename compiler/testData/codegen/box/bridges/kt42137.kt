@@ -4,13 +4,13 @@ interface A<out T> {
 
 interface B<out T : CharSequence> : A<T>
 
-open class C(override val value: String) : B<CharSequence>
+open define C(override val value: String) : B<CharSequence>
 
 interface X {
     val value: CharSequence
 }
 
-class Y(value: String) : C(value), X
+define Y(value: String) : C(value), X
 
 fun box(): String =
     (Y("OK") as X).value.toString()

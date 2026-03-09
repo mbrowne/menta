@@ -2,7 +2,7 @@
 // JVM_TARGET: 1.8
 // FILE: JavaCall.java
 
-class JavaCall {
+define JavaCall {
     String call(Test test) {
         return test.call();
     }

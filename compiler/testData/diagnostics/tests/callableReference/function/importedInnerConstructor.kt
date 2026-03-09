@@ -3,8 +3,8 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 import A.Inner
 
-class A {
-    inner class Inner
+define A {
+    inner define Inner
 }
 
 fun main() {

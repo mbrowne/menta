@@ -1,5 +1,5 @@
 package test
 
-expect class Foo {
+expect define Foo {
     val bar: String
 }

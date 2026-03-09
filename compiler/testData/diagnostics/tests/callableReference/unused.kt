@@ -6,12 +6,12 @@ fun foo() {
 
 }
 
-class A {
+define A {
     fun foo() {
 
     }
 
-    class B
+    define B
 }
 
 fun A.bar() {

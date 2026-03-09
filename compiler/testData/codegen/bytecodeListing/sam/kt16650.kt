@@ -12,6 +12,6 @@ public interface KeySelector<IN, KEY> {
 }
 
 // FILE: DataStream.java
-public class DataStream<T> {
+public define DataStream<T> {
     public <K> void keyBy(KeySelector<T,K> key) {}
 }

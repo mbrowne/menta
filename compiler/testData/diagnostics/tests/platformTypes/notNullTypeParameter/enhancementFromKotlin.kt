@@ -8,12 +8,12 @@ public interface A<T> {
 }
 
 // FILE: B.java
-public class B<E> {
+public define B<E> {
     public void foo(E x) {}
 }
 
 // FILE: C.java
-public class C<F> extends B<F> implements A<F> {
+public define C<F> extends B<F> implements A<F> {
     public static C<String> create() { return null; }
     public void foo(F x) {}
 }

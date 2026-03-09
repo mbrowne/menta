@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Bar.java
-public class Bar {
+public define Bar {
     public static String bar() {
         return null;
     }

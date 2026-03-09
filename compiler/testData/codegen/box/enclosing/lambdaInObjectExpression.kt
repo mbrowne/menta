@@ -20,12 +20,12 @@ fun box(): String {
     if (enclosingMethod != "LambdaInObjectExpressionKt\$box\$l\$1") return "ctor: $enclosingMethod"
 
     val enclosingClass = javaClass.getEnclosingClass()!!.getName()
-    if (enclosingClass != "LambdaInObjectExpressionKt\$box\$l\$1") return "enclosing class: $enclosingClass"
+    if (enclosingClass != "LambdaInObjectExpressionKt\$box\$l\$1") return "enclosing define: $enclosingClass"
 
     if (enclosingMethod != enclosingClass) return "$enclosingClass != $enclosingMethod"
 
     val declaringClass = javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

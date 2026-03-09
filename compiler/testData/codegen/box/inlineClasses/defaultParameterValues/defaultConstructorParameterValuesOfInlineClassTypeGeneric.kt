@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val z: T)
+value define Z<T: Int>(val z: T)
 
-class Test(val z: Z<Int> = Z(42)) {
+define Test(val z: Z<Int> = Z(42)) {
     fun test() = z.z
 }
 

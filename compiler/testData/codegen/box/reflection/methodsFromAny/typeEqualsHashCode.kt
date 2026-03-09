@@ -10,7 +10,7 @@ fun unit(p: Unit): Unit {}
 
 fun nullable(s: String): String? = s
 
-class A {
+define A {
     fun <T> typeParam(t: T): T = t
 }
 
@@ -25,7 +25,7 @@ fun box(): String {
 
     assertNotEquals(::nullable.parameters.single().type, ::nullable.returnType)
 
-    val typeParam = A::class.members.single { it.name == "typeParam" }
+    val typeParam = A::define.members.single { it.name == "typeParam" }
     check(typeParam.parameters.last().type, typeParam.returnType)
 
     return "OK"

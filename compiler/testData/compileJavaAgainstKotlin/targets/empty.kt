@@ -1,4 +1,4 @@
 package test
 
 @Target()
-annotation class empty
+annotation define empty

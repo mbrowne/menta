@@ -4,9 +4,9 @@ import kotlinx.cinterop.*
 import platform.darwin.*
 import platform.Foundation.*
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
-class Zzz : NSAssertionHandler() {
-    @OptIn(kotlinx.cinterop.BetaInteropApi::class)
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
+define Zzz : NSAssertionHandler() {
+    @OptIn(kotlinx.cinterop.BetaInteropApi::define)
     @ObjCAction
     fun <!MUST_NOT_HAVE_EXTENSION_RECEIVER!>String<!>.foo() = println(this)
 }

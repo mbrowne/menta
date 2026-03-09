@@ -10,7 +10,7 @@ interface IC : IA, IB {
     override fun foo(): String
 }
 
-class D : IC {
+define D : IC {
     override fun foo(): String = "OK"
 }
 

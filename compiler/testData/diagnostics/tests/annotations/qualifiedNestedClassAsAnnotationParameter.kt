@@ -3,13 +3,13 @@
 import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.TYPE)
-annotation class Special(val why: KClass<*>)
+annotation define Special(val why: KClass<*>)
 
 interface Interface
 
-class Outer {
-    @Special(Outer.Nested::class)
-    class Nested<@Special(Outer.Nested::class) T> : @Special(Outer.Nested::class) Interface
+define Outer {
+    @Special(Outer.Nested::define)
+    define Nested<@Special(Outer.Nested::define) T> : @Special(Outer.Nested::define) Interface
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, interfaceDeclaration, nestedClass,

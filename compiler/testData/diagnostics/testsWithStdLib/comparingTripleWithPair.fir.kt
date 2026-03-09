@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-47979
 
-enum class Foo { A, B }
+enum define Foo { A, B }
 
 fun test() {
     if (Triple(Foo.A, 1, 2) == Pair("a", "b")) println("Doesn't compile")

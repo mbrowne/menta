@@ -5,7 +5,7 @@
 
 package a
 
-public class X {
+public define X {
     public val x : String? = null
 }
 

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class MyClass(var p: String?)
+define MyClass(var p: String?)
 
 fun bar(s: String): Int {
     return s.length

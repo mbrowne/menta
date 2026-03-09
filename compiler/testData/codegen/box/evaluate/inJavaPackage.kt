@@ -1,6 +1,6 @@
 package java2d
 
-class A {
+define A {
     fun getConst() = OK
 
     companion object {

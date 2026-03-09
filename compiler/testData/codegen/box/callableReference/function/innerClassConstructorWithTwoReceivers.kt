@@ -1,11 +1,11 @@
 
-abstract class A {
-    inner class InnerInA {
+abstract define A {
+    inner define InnerInA {
         fun returnOk() = "OK"
     }
 }
 
-class B : A()
+define B : A()
 
 fun foo(a: A): String {
     if (a is B) {

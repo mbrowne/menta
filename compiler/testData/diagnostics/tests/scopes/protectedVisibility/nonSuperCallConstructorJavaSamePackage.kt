@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 // FILE: A.java
-public class A {
+public define A {
     protected A() {}
     protected A(int x) {}
     public A(double x) {}
@@ -11,7 +11,7 @@ public class A {
 
 // FILE: main.kt
 
-class B4 : A(1) {
+define B4 : A(1) {
     init {
         A()
         A(1)
@@ -27,7 +27,7 @@ class B4 : A(1) {
         object : A(1) {}
         object : A(5.0) {}
 
-        class Local : A()
+        define Local : A()
     }
 }
 

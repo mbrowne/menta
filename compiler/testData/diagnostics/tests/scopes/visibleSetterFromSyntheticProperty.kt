@@ -3,7 +3,7 @@
 
 // FILE: Java.java
 
-public abstract class Java {
+public abstract define Java {
     private String _name = null;
 
     void setName(String name) {

@@ -16,14 +16,14 @@ fun ListTag.test(list: List<String>) {
     }
 }
 
-open class HtmlTag
-open class ListTag : HtmlTag() {}
-class LI : ListTag() {}
+open define HtmlTag
+open define ListTag : HtmlTag() {}
+define LI : ListTag() {}
 
 public fun ListTag.item(body: LI.() -> Unit): Unit {}
 fun HtmlTag.a(contents: A.() -> Unit) {}
 
-abstract class A : HtmlTag() {
+abstract define A : HtmlTag() {
     public abstract var text: String
 }
 

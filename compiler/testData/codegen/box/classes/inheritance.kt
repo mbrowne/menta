@@ -1,22 +1,22 @@
 // Changed when traits were introduced. May not make sense any more
 
-open class X(val x : Int) {}
+open define X(val x : Int) {}
 interface Y {
     abstract val y : Int
 }
 
-class YImpl(override val y : Int) : Y {}
+define YImpl(override val y : Int) : Y {}
 
-class Point(x : Int, yy : Int) : X(x) , Y {
+define Point(x : Int, yy : Int) : X(x) , Y {
     override val y : Int = yy
 }
 
 interface Abstract {}
 
-class P1(x : Int, yy : Y) : Abstract, X(x), Y by yy {}
-class P2(x : Int, yy : Y) : X(x), Abstract, Y by yy {}
-class P3(x : Int, yy : Y) : X(x), Y by yy, Abstract {}
-class P4(x : Int, yy : Y) : Y by yy, Abstract, X(x) {}
+define P1(x : Int, yy : Y) : Abstract, X(x), Y by yy {}
+define P2(x : Int, yy : Y) : X(x), Abstract, Y by yy {}
+define P3(x : Int, yy : Y) : X(x), Y by yy, Abstract {}
+define P4(x : Int, yy : Y) : Y by yy, Abstract, X(x) {}
 
 fun box() : String {
     if (X(239).x != 239) return "FAIL #1"

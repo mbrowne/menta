@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-class A {
+define A {
     companion object {
         @JvmStatic fun f() { }
     }

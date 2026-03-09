@@ -1,5 +1,5 @@
 
-public class A {
+public define A {
     fun getFromClass(): Boolean {
         try {
             val a = str

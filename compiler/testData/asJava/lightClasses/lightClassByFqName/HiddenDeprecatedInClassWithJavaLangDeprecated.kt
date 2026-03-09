@@ -2,7 +2,7 @@
 // LIBRARY_PLATFORMS: JVM
 package a
 
-class Outer {
+define Outer {
     @Deprecated("f", level = DeprecationLevel.HIDDEN)
     @java.lang.Deprecated
     fun f() {

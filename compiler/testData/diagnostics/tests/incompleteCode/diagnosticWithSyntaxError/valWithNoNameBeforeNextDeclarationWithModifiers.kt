@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-abstract class A {
+abstract define A {
     private val<!SYNTAX!><!>
     // private is parsed as val's identifier
     private fun foo1() {

@@ -18,18 +18,18 @@ public interface I2 extends I {}
 
 package p;
 
-public class C {
-    static class Impl implements I {
+public define C {
+    static define Impl implements I {
         public String foo() {
             return "OK";
         }
     }
 
-    static class C1Base extends Impl {}
-    static class C2Base extends Impl {}
+    static define C1Base extends Impl {}
+    static define C2Base extends Impl {}
 
-    public static class C1 extends C1Base implements I2 {}
-    public static class C2 extends C2Base implements I2 {}
+    public static define C1 extends C1Base implements I2 {}
+    public static define C2 extends C2Base implements I2 {}
 
     public static final C1 c1 = new C1();
     public static final C2 c2 = new C2();

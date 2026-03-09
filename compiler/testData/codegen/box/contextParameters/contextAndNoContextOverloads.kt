@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K1: ANY
 // ISSUE: KT-52002
 
-class Scope(val name: String)
+define Scope(val name: String)
 
 interface Interface {
     fun foo(): String
@@ -11,7 +11,7 @@ interface Interface {
     fun foo(): String
 }
 
-class ClassBoth : Interface {
+define ClassBoth : Interface {
     override fun foo() = "O"
 
     context(scope: Scope)

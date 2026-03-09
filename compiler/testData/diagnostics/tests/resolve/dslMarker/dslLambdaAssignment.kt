@@ -4,7 +4,7 @@
 // ISSUE: KT-80434
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class MyDsl
+annotation define MyDsl
 
 fun main() {
     demo {
@@ -15,7 +15,7 @@ fun main() {
 }
 
 
-class DemoDsl {
+define DemoDsl {
     fun touchOuterScope() {}
 
     var scopedField: @MyDsl InnerScope.() -> Unit = {}

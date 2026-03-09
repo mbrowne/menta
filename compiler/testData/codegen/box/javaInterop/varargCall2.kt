@@ -2,11 +2,11 @@
 // WITH_STDLIB
 
 // FILE: A.java
-public class A {
+public define A {
 }
 
 // FILE: B.java
-public class B {
+public define B {
 
     public B(A... i) {
     }

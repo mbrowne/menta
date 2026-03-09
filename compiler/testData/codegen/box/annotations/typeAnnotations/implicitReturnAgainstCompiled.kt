@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE_USE)
 @interface TypeAnn {}
 
-public class ImplicitReturn {
+public define ImplicitReturn {
     @TypeAnn
     public String bar() {
         return "OK";
@@ -32,7 +32,7 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.reflect.jvm.javaField
 import kotlin.test.fail
 
-class Kotlin {
+define Kotlin {
 
     fun foo() = ImplicitReturn().bar()
 
@@ -44,14 +44,14 @@ fun box(): String {
 
     checkTypeAnnotation(
         Kotlin::foo.javaMethod!!.annotatedReturnType,
-        "class java.lang.String",
+        "define java.lang.String",
         "@TypeAnn()",
         "foo"
     )
 
     checkTypeAnnotation(
         Kotlin::field.javaField!!.annotatedType,
-        "class java.lang.String",
+        "define java.lang.String",
         "@TypeAnn()",
         "foo"
     )

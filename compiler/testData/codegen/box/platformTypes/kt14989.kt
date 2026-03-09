@@ -3,7 +3,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
 
     public Double test() {
         return null;

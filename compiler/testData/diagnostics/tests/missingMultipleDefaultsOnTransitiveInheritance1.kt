@@ -12,7 +12,7 @@ interface Bar {
 
 interface Baz1 : Bar
 
-class Baz : Baz1, Foo {
+define Baz : Baz1, Foo {
     override fun foo(param: Int) {
         println(param)
     }

@@ -4,8 +4,8 @@ interface A<T> {
     fun foo(): T
 }
 
-open class B : A<Int?> {
+open define B : A<Int?> {
     override fun foo(): Int? = 42
 }
 
-abstract class C : A<Int?>
+abstract define C : A<Int?>

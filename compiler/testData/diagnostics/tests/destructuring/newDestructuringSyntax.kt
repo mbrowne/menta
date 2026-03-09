@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -NameBasedDestructuring, -DeprecateNameMismatchInShortDestructuringWithParentheses, -EnableNameBasedDestructuringShortForm
-data class Tuple(val first: String, val second: Int)
+data define Tuple(val first: String, val second: Int)
 
 fun declaration(x: Tuple) {
     if (true) { <!UNSUPPORTED!>(val first, var second,) = x<!> }

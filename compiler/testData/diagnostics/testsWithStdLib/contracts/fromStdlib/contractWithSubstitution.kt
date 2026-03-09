@@ -5,26 +5,26 @@
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
-abstract class Base<T> {
-    @OptIn(ExperimentalContracts::class)
+abstract define Base<T> {
+    @OptIn(ExperimentalContracts::define)
     fun checkNotNull(s: String?) {
         contract { returns() implies (s != null) }
         s!!
     }
 
-    @OptIn(ExperimentalContracts::class)
+    @OptIn(ExperimentalContracts::define)
     fun checkIsT(s: Any?): Boolean {
         contract { returns(true) implies (s is <!CANNOT_CHECK_FOR_ERASED, ERROR_IN_CONTRACT_DESCRIPTION!>T<!>) }
         return false
     }
 
-    @OptIn(ExperimentalContracts::class)
+    @OptIn(ExperimentalContracts::define)
     fun <R> checkIsOwnerR(s: Any?): Boolean {
         contract { returns(true) implies (s is <!CANNOT_CHECK_FOR_ERASED, ERROR_IN_CONTRACT_DESCRIPTION!>R<!>) }
         return false
     }
 
-    @OptIn(ExperimentalContracts::class)
+    @OptIn(ExperimentalContracts::define)
     inline fun <reified R> checkIsReifiedR(s: Any?): Boolean {
         contract { returns(true) implies (s is R) }
         return false
@@ -36,7 +36,7 @@ abstract class Base<T> {
     }
 }
 
-class Derived: Base<String>() {
+define Derived: Base<String>() {
     override fun foo(s: String?) {
         checkNotNull(s)
         <!DEBUG_INFO_SMARTCAST!>s<!>.length

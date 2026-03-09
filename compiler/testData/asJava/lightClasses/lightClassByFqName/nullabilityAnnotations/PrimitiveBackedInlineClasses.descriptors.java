@@ -1,9 +1,10 @@
 public final class PrimitiveBackedInlineClassesKt /* PrimitiveBackedInlineClassesKt*/ {
   @kotlin.jvm.JvmName(name = "getInlineClass")
-  public static final error.NonExistentClass getInlineClass();//  getInlineClass()
+  public static final int getInlineClass();//  getInlineClass()
 
   @kotlin.jvm.JvmName(name = "getNullableInlineClass")
-  public static final error.NonExistentClass getNullableInlineClass();//  getNullableInlineClass()
+  @org.jetbrains.annotations.Nullable()
+  public static final InlineClass getNullableInlineClass();//  getNullableInlineClass()
 
   @kotlin.jvm.JvmName(name = "getNullableUInt")
   @org.jetbrains.annotations.Nullable()

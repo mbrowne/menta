@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class X {
+define X {
     @get:JvmSynthetic
     var v = 1
 

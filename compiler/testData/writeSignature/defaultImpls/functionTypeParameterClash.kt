@@ -1,4 +1,4 @@
-class B<M>
+define B<M>
 
 interface A<T, Y : B<T>> {
 

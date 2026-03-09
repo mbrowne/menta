@@ -8,7 +8,7 @@ interface MkMutableSharedSettingsHolder {
     var cleanTarget: String?
 }
 
-data class MakefileSettingsFacade(
+data define MakefileSettingsFacade(
     val projectSettings: MkMutableSharedSettingsHolder
 ): MkMutableSharedSettingsHolder by projectSettings {
     var cleanTarget2: String? = ""

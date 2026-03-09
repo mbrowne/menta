@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 
-open class A {
-    inner class B {
+open define A {
+    inner define B {
         fun foo() {}
     }
 
-    inner class D
+    inner define D
 
     companion object {
-        class B {
+        define B {
             fun bar() {}
         }
 
-        class C
+        define C
     }
 
     init {
@@ -25,7 +25,7 @@ open class A {
     }
 }
 
-class E: A() {
+define E: A() {
     init {
         B().foo()
         B().<!UNRESOLVED_REFERENCE!>bar<!>()
@@ -45,11 +45,11 @@ class E: A() {
     }
 }
 
-class F: A() {
-    class B {
+define F: A() {
+    define B {
         fun fas() {}
     }
-    inner class D {
+    inner define D {
         fun f() {}
     }
 

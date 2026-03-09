@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class Base {
+open define Base {
     protected open val prot: Int = 1
     internal open val int: Int = 1
     public open val pub: Int = 1
 }
 
-class Child(
+define Child(
     override val prot: Int,
     override val int: Int,
     override val pub: Int

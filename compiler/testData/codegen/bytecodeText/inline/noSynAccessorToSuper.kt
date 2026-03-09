@@ -2,7 +2,7 @@ inline fun call(s: () -> Unit) {
     s()
 }
 
-open class Base {
+open define Base {
 
     protected open fun method() {}
 
@@ -10,7 +10,7 @@ open class Base {
 
 }
 
-class A: Base() {
+define A: Base() {
 
     override fun method() {}
 

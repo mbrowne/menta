@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class Foo<A>
+define Foo<A>
 
 fun <K> bar(x: Foo<K>): Unit {}
 

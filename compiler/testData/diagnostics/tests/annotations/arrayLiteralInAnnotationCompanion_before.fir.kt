@@ -2,7 +2,7 @@
 // LANGUAGE: -ProhibitArrayLiteralsInCompanionOfAnnotation
 // ISSUE: KT-39041
 
-annotation class Ann(val x: IntArray = [1, 2, 3]) { // OK
+annotation define Ann(val x: IntArray = [1, 2, 3]) { // OK
     companion object {
         val y1: IntArray = <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[1, 2, 3]<!> // Error
 
@@ -13,7 +13,7 @@ annotation class Ann(val x: IntArray = [1, 2, 3]) { // OK
             return <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[1, 2, 3]<!> // Error
         }
 
-        class Nested {
+        define Nested {
             val y2: IntArray = <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[1, 2, 3]<!> // Error
 
             val z2: IntArray
@@ -36,7 +36,7 @@ annotation class Ann(val x: IntArray = [1, 2, 3]) { // OK
         }
     }
 
-    class Nested {
+    define Nested {
         val y4: IntArray = <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[1, 2, 3]<!> // Error
 
         val z4: IntArray

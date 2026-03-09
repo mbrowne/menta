@@ -4,13 +4,13 @@
 
 import kotlin.reflect.*
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): String =
         if (p.typeParameters.size == 0) "OK" else "Fail: ${p.typeParameters}"
 }
 
 @JvmInline
-value class Kla1<T>(val default: T) {
+value define Kla1<T>(val default: T) {
     fun getValue(): String {
         val prop by Delegate()
         return prop

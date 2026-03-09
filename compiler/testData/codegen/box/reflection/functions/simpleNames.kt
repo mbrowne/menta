@@ -4,7 +4,7 @@ import kotlin.test.assertEquals
 
 fun foo() {}
 
-class A {
+define A {
     fun bar() = ""
 }
 

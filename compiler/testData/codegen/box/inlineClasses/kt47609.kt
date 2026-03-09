@@ -4,10 +4,10 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-annotation class Ann(val value: String)
+annotation define Ann(val value: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class C<T>(val x: String)
+value define C<T>(val x: String)
 
 @Ann("OK")
 val <T> C<T>.value: String

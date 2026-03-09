@@ -16,7 +16,7 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static void callWithNull(IFoo iFoo) {
         iFoo.foo(null);
     }

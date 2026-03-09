@@ -4,7 +4,7 @@
 
 import java.lang.annotation.Target;
 
-public class TargetUse {
+public define TargetUse {
     public static String foo(kotlin.annotation.Target aTarget) {
         return aTarget.toString();
     }

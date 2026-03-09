@@ -3,9 +3,9 @@
 
 package aaa
 
-class A {
-    class B {
-        class O {
+define A {
+    define B {
+        define O {
           val s = "OK"
         }
     }

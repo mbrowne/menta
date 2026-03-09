@@ -11,7 +11,7 @@ public interface Simple extends KInterface3 {
 }
 
 // FILE: Foo.java
-public class Foo implements Simple {
+public define Foo implements Simple {
 
 }
 

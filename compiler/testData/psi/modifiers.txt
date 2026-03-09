@@ -20,35 +20,29 @@ KtFile: modifiers.kt
       PsiElement(DOT)('.')
       PsiElement(MUL)('*')
   PsiWhiteSpace('\n\n')
-  MODIFIER_LIST
-    PsiElement(data)('data')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
-    PsiElement(class)('class')
-  PsiWhiteSpace(' ')
-  PsiErrorElement:Expecting a top level declaration
+  CLASS
+    MODIFIER_LIST
+      PsiElement(data)('data')
+    PsiWhiteSpace(' ')
+    PsiElement(define)('define')
+    PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Modifiers')
-  DESTRUCTURING_DECLARATION
-    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
-      PsiElement(LPAR)('(')
-      DESTRUCTURING_DECLARATION_ENTRY
-        PsiElement(val)('val')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('x')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Int')
-      PsiElement(RPAR)(')')
-    PsiErrorElement:Property getter or setter expected
-      <empty list>
-  PsiWhiteSpace(' ')
-  FUN
-    PsiErrorElement:Expecting a top level declaration
-      <empty list>
-    BLOCK
+    PRIMARY_CONSTRUCTOR
+      VALUE_PARAMETER_LIST
+        PsiElement(LPAR)('(')
+        VALUE_PARAMETER
+          PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          PsiElement(IDENTIFIER)('x')
+          PsiElement(COLON)(':')
+          PsiWhiteSpace(' ')
+          TYPE_REFERENCE
+            USER_TYPE
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Int')
+        PsiElement(RPAR)(')')
+    PsiWhiteSpace(' ')
+    CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -77,27 +71,23 @@ KtFile: modifiers.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('1')
-      PsiWhiteSpace('\n        ')
-      BINARY_EXPRESSION
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('external')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(external)('external')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(IDENTIFIER)('get')
-          PsiWhiteSpace('\n        ')
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('external')
-        PsiWhiteSpace(' ')
-        OPERATION_REFERENCE
-          PsiElement(IDENTIFIER)('set')
-        PsiWhiteSpace('\n\n    ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('tailrec')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        <empty list>
-      PsiWhiteSpace(' ')
+          PsiElement(get)('get')
+        PsiWhiteSpace('\n        ')
+        PROPERTY_ACCESSOR
+          MODIFIER_LIST
+            PsiElement(external)('external')
+          PsiWhiteSpace(' ')
+          PsiElement(set)('set')
+      PsiWhiteSpace('\n\n    ')
       FUN
+        MODIFIER_LIST
+          PsiElement(tailrec)('tailrec')
+        PsiWhiteSpace(' ')
         PsiElement(fun)('fun')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('sum')
@@ -282,11 +272,11 @@ KtFile: modifiers.kt
         BOOLEAN_CONSTANT
           PsiElement(false)('false')
       PsiWhiteSpace('\n\n    ')
-      REFERENCE_EXPRESSION
-        PsiElement(IDENTIFIER)('annotation')
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
-        PsiElement(class)('class')
+      CLASS
+        MODIFIER_LIST
+          PsiElement(annotation)('annotation')
+        PsiWhiteSpace(' ')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Ann')
       PsiWhiteSpace('\n\n    ')

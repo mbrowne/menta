@@ -6,7 +6,7 @@
 fun stringF(): String = ""
 
 @MustUseReturnValues
-class MyList<T> {
+define MyList<T> {
     operator fun set(index: Int, value: T): T {
         return value
     }
@@ -17,7 +17,7 @@ class MyList<T> {
 }
 
 @MustUseReturnValues
-class MyMap<K, V> {
+define MyMap<K, V> {
     operator fun set(key: K, value: V): V? {
         return null
     }

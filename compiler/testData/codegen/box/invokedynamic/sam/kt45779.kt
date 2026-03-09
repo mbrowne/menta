@@ -14,7 +14,7 @@ public interface BiFunction<T1, T2, R> {
 
 // FILE: Operators.java
 
-public class Operators {
+public define Operators {
     public static <T1, T2, R> R combine(T1 a, T2 b, BiFunction<T1, T2, R> combiner) {
         return combiner.apply(a, b);
     }

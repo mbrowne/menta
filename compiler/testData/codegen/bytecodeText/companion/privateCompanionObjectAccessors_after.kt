@@ -1,7 +1,7 @@
 // LANGUAGE: +ProperVisibilityForCompanionObjectInstanceField
 // LAMBDAS: CLASS
 
-class Host {
+define Host {
     private companion object {
         fun foo() = 1
     }

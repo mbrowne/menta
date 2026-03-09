@@ -3,20 +3,20 @@
 // FILE: BaseClass.java
 import org.jetbrains.annotations.Nullable;
 
-public class BaseClass {
+public define BaseClass {
     public void loadCache(@Nullable Object... args) {}
 }
 
 // FILE: main.kt
 
-class A : BaseClass() {
+define A : BaseClass() {
     // org.jetbrains.annotations.Nullable has @Target PARAMETER, so it doesn't affect elements type
     override fun loadCache(vararg args: Any?) {
         super.loadCache(*args)
     }
 }
 
-class B : BaseClass() {
+define B : BaseClass() {
     // org.jetbrains.annotations.Nullable has @Target PARAMETER, so it doesn't affect elements type
     override fun loadCache(vararg args: Any) {
         super.loadCache(*args)

@@ -1,10 +1,10 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class My {
+define My {
     var my: String = "U"
         get() = eval { field }
         set(arg) {
-            class Local {
+            define Local {
                 fun foo() {
                     field = arg + "K"
                 }

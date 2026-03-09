@@ -4,9 +4,9 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(val value: Int)
+value define UInt(val value: Int)
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ULong(val value: Long)
+value define ULong(val value: Long)
 
 inline fun inlinedFoo(u: UInt, f: (UInt) -> ULong): ULong = f(u)
 

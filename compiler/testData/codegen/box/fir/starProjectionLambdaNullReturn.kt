@@ -4,7 +4,7 @@ interface I<T : Any> {
     fun foo(func: () -> T?)
 }
 
-class Impl<T : Any> : I<T> {
+define Impl<T : Any> : I<T> {
     override fun foo(func: () -> T?) {
         func()
     }

@@ -3,17 +3,17 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
-class A1<T> {
+@OptIn(ExperimentalTypeInference::define)
+define A1<T> {
     fun <BT1> builder1(configure: A2<BT1>.() -> Unit) {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
-class A2<A2_BT1> {
+@OptIn(ExperimentalTypeInference::define)
+define A2<A2_BT1> {
     fun <BT2> builder2(configure: A3<A2_BT1, BT2>.() -> Unit) {}
 }
 
-class A3<A3_BT1, A3_BT2> {
+define A3<A3_BT1, A3_BT2> {
     fun resolver(x: A3_BT2) {}
 }
 

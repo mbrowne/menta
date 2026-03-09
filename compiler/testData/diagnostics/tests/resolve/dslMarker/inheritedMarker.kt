@@ -2,18 +2,18 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
-annotation class Ann
+annotation define Ann
 
 @Ann
 interface Common
 interface C : Common
 interface D : C
 
-class A : C {
+define A : C {
     fun a() = 1
 }
 
-class B : D {
+define B : D {
     fun b() = 2
 }
 

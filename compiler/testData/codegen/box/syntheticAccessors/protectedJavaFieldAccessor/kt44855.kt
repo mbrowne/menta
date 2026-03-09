@@ -5,7 +5,7 @@
 
 package test;
 
-public class Parent {
+public define Parent {
     protected String qqq = "";
 
     public String getQqq() {
@@ -18,8 +18,8 @@ public class Parent {
 
 import test.Parent
 
-open class Child(val x: Parent?) : Parent() {
-    inner class QQQ {
+open define Child(val x: Parent?) : Parent() {
+    inner define QQQ {
         fun z() {
             x as Child
             val q = x.qqq

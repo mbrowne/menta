@@ -5,12 +5,12 @@
 
 import kotlin.reflect.KClass
 
-annotation class A(val a: KClass<*>)
+annotation define A(val a: KClass<*>)
 
 fun foo(): String {
-    class B
+    define B
 
-    @A(B::class)
+    @A(B::define)
     fun bar(): String {
         return "OK"
     }

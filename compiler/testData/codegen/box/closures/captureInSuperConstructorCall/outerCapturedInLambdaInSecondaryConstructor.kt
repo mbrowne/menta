@@ -1,9 +1,9 @@
-open class Base(val callback: () -> String)
+open define Base(val callback: () -> String)
 
-class Outer {
+define Outer {
     val ok = "OK"
 
-    inner class Inner : Base {
+    inner define Inner : Base {
         constructor() : super({ ok })
     }
 }

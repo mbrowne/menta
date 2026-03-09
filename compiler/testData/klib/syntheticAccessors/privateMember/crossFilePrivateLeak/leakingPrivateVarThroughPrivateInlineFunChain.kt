@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A {
+define A {
     private var privateVar = 12
 
     private inline fun privateSetVar1(value: Int) {
