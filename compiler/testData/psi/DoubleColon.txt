@@ -447,13 +447,17 @@ KtFile: DoubleColon.kt
     BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('A')
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         CALL_EXPRESSION
           REFERENCE_EXPRESSION
             PsiElement(IDENTIFIER)('a')
@@ -472,10 +476,18 @@ KtFile: DoubleColon.kt
                     PsiElement(IDENTIFIER)('c')
             PsiElement(GT)('>')
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n    ')
       BINARY_EXPRESSION
@@ -485,25 +497,37 @@ KtFile: DoubleColon.kt
         OPERATION_REFERENCE
           PsiElement(IDENTIFIER)('b')
         PsiWhiteSpace(' ')
-        CLASS_LITERAL_EXPRESSION
+        CALLABLE_REFERENCE_EXPRESSION
           PsiElement(COLONCOLON)('::')
-          PsiElement(class)('class')
+          REFERENCE_EXPRESSION
+            PsiErrorElement:Expecting an identifier
+              <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(class)('class')
       PsiWhiteSpace('\n\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         THIS_EXPRESSION
           REFERENCE_EXPRESSION
             PsiElement(this)('this')
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         SUPER_EXPRESSION
           REFERENCE_EXPRESSION
             PsiElement(super)('super')
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         CALL_EXPRESSION
           REFERENCE_EXPRESSION
             PsiElement(IDENTIFIER)('X')
@@ -511,9 +535,13 @@ KtFile: DoubleColon.kt
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n    ')
-      CLASS_LITERAL_EXPRESSION
+      CALLABLE_REFERENCE_EXPRESSION
         OBJECT_LITERAL
           OBJECT_DECLARATION
             PsiElement(object)('object')
@@ -522,6 +550,10 @@ KtFile: DoubleColon.kt
               PsiElement(LBRACE)('{')
               PsiElement(RBRACE)('}')
         PsiElement(COLONCOLON)('::')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

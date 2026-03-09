@@ -1,5 +1,5 @@
-== C ==
-class C() {
+== anonymous_0 ==
+{
     val a: Int = 1
 
     companion object {
@@ -19,15 +19,49 @@ class C() {
 ---------------------
 L0:
   1 <START>
+  2 mark({ val a: Int = 1 companion object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } } })
     v(val a: Int = 1)
     r(1) -> <v0>
     w(a|<v0>)
+    magic[UNRESOLVED_CALL](companion) -> <v1>
+    mark(object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } })
+    v(val x : Int)
+  3 mark({ x = 1 })
+    magic[IMPLICIT_RECEIVER](x) -> <v2>
+    r(1) -> <v3>
+    w(x|<v2>, <v3>)
+  2 jmp?(L2)                                                                                                            NEXT:[r(object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } }) -> <v5>, d(fun foo() { val b : Int = 1 doSmth(b) })]
+    d(fun foo() { val b : Int = 1 doSmth(b) })                                                                          NEXT:[<SINK>]
+L2 [after local declaration]:
+    r(object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } }) -> <v5>                            PREV:[jmp?(L2)]
 L1:
-    <END>                NEXT:[<SINK>]
+  1 <END>                                                                                                               NEXT:[<SINK>]
 error:
-    <ERROR>              PREV:[]
+    <ERROR>                                                                                                             PREV:[]
 sink:
-    <SINK>               PREV:[<ERROR>, <END>]
+    <SINK>                                                                                                              PREV:[<ERROR>, <END>, d(fun foo() { val b : Int = 1 doSmth(b) })]
+=====================
+== foo ==
+fun foo() {
+            val b : Int = 1
+            doSmth(b)
+        }
+---------------------
+L3:
+  3 <START>
+  4 mark({ val b : Int = 1 doSmth(b) })
+    v(val b : Int = 1)
+    r(1) -> <v0>
+    w(b|<v0>)
+    r(b) -> <v1>
+    mark(doSmth(b))
+    call(doSmth(b), doSmth|<v1>) -> <v2>
+L4:
+  3 <END>                                   NEXT:[<SINK>]
+error:
+    <ERROR>                                 PREV:[]
+sink:
+    <SINK>                                  PREV:[<ERROR>, <END>]
 =====================
 == doSmth ==
 fun doSmth(i: Int) {}

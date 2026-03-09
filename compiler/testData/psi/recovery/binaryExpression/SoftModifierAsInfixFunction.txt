@@ -15,8 +15,8 @@ KtFile: SoftModifierAsInfixFunction.kt
     PsiElement(EQ)('=')
     PsiWhiteSpace(' ')
     BINARY_EXPRESSION
-      CLASS
-        MODIFIER_LIST
+      BINARY_EXPRESSION
+        ANNOTATED_EXPRESSION
           ANNOTATION_ENTRY
             PsiElement(AT)('@')
             CONSTRUCTOR_CALLEE
@@ -27,15 +27,19 @@ KtFile: SoftModifierAsInfixFunction.kt
             VALUE_ARGUMENT_LIST
               PsiElement(LPAR)('(')
               PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          PsiErrorElement:Expecting an element
+            PsiElement(class)('class')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('C')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('C')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('annotation')
       PsiWhiteSpace(' ')
       OPERATION_REFERENCE
-        PsiElement(IDENTIFIER)('annotation')
-      PsiWhiteSpace(' ')
-      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('y')
+      PsiErrorElement:Expecting an element
+        <empty list>
     PsiWhiteSpace(' ')
     PsiComment(EOL_COMMENT)('// `annotation` should be parsed as infix function')

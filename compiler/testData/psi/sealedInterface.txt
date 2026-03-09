@@ -20,19 +20,17 @@ KtFile: sealedInterface.kt
     CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting member declaration
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('Nested')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
         PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_ENTRY
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('SealedInterface')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Expecting member declaration
+        PsiElement(IDENTIFIER)('SealedInterface')
       PsiWhiteSpace('\n    ')
       OBJECT_DECLARATION
         PsiElement(object)('object')

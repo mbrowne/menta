@@ -1,27 +1,34 @@
-== UnitIncDec ==
-class UnitIncDec() {
+== anonymous_0 ==
+{
     fun inc() : Unit {}
     fun dec() : Unit {}
 }
 ---------------------
 L0:
   1 <START>
+  2 mark({ fun inc() : Unit {} fun dec() : Unit {} })
+    jmp?(L2)                                             NEXT:[jmp?(L5), d(fun inc() : Unit {})]
+    d(fun inc() : Unit {})                               NEXT:[<SINK>]
+L2 [after local declaration]:
+    jmp?(L5)                                             NEXT:[<END>, d(fun dec() : Unit {})]                        PREV:[jmp?(L2)]
+    d(fun dec() : Unit {})                               NEXT:[<SINK>]
 L1:
-    <END>      NEXT:[<SINK>]
+L5 [after local declaration]:
+  1 <END>                                                NEXT:[<SINK>]                                               PREV:[jmp?(L5)]
 error:
-    <ERROR>    PREV:[]
+    <ERROR>                                              PREV:[]
 sink:
-    <SINK>     PREV:[<ERROR>, <END>]
+    <SINK>                                               PREV:[<ERROR>, <END>, d(fun inc() : Unit {}), d(fun dec() : Unit {})]
 =====================
 == inc ==
 fun inc() : Unit {}
 ---------------------
-L0:
-  1 <START>
-  2 mark({})
+L3:
+  3 <START>
+  4 mark({})
     read (Unit)
-L1:
-  1 <END>          NEXT:[<SINK>]
+L4:
+  3 <END>          NEXT:[<SINK>]
 error:
     <ERROR>        PREV:[]
 sink:
@@ -30,12 +37,12 @@ sink:
 == dec ==
 fun dec() : Unit {}
 ---------------------
-L0:
-  1 <START>
-  2 mark({})
+L6:
+  3 <START>
+  4 mark({})
     read (Unit)
-L1:
-  1 <END>          NEXT:[<SINK>]
+L7:
+  3 <END>          NEXT:[<SINK>]
 error:
     <ERROR>        PREV:[]
 sink:
@@ -52,23 +59,23 @@ L0:
   2 mark({ var x = UnitIncDec() x = <warning>x<error>++</error></warning> })
     v(var x = UnitIncDec())
     mark(UnitIncDec())
-    call(UnitIncDec(), <init>) -> <v0>
-    w(x|<v0>)
+    magic[UNRESOLVED_CALL](UnitIncDec()|!<v0>) -> <v1>
+    w(x|<v1>)
     mark(<warning>)
-    magic[UNRESOLVED_CALL](<warning>) -> <v1>
+    magic[UNRESOLVED_CALL](<warning>) -> <v2>
     mark(<warning>x<)
-    magic[UNRESOLVED_CALL](<warning>x<|<v1>) -> <v2>
+    magic[UNRESOLVED_CALL](<warning>x<|<v2>) -> <v3>
     mark(<warning>x<error>++)
-    magic[UNRESOLVED_CALL](<warning>x<error>++|<v2>, !<v3>) -> <v4>
+    magic[UNRESOLVED_CALL](<warning>x<error>++|<v3>, !<v4>) -> <v5>
     mark(/error>)
-    magic[UNRESOLVED_CALL](/error>) -> <v5>
+    magic[UNRESOLVED_CALL](/error>) -> <v6>
     mark(<warning>x<error>++</error>)
-    magic[UNRESOLVED_CALL](<warning>x<error>++</error>|<v4>, <v5>) -> <v6>
+    magic[UNRESOLVED_CALL](<warning>x<error>++</error>|<v5>, <v6>) -> <v7>
     mark(/warning>)
-    magic[UNRESOLVED_CALL](/warning>) -> <v7>
+    magic[UNRESOLVED_CALL](/warning>) -> <v8>
     mark(<warning>x<error>++</error></warning>)
-    magic[UNRESOLVED_CALL](<warning>x<error>++</error></warning>|<v6>, <v7>) -> <v8>
-    w(x|<v8>)
+    magic[UNRESOLVED_CALL](<warning>x<error>++</error></warning>|<v7>, <v8>) -> <v9>
+    w(x|<v9>)
 L1:
   1 <END>                                                                               NEXT:[<SINK>]
 error:

@@ -5,30 +5,33 @@ KtFile: recoveryWithoutParameterList.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        PsiErrorElement:Expecting '('
-          <empty list>
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('constructor')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            PsiElement(this)('this')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        BLOCK
+        PsiElement(this)('this')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -44,54 +47,57 @@ KtFile: recoveryWithoutParameterList.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('C')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        PsiErrorElement:Expecting '('
-          <empty list>
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('constructor')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            PsiElement(this)('this')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
+        PsiElement(this)('this')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('B')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        PsiErrorElement:Expecting '('
-          <empty list>
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('constructor')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            PsiElement(this)('this')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        BLOCK
+        PsiElement(this)('this')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

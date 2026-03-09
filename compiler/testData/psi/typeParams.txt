@@ -22,142 +22,141 @@ KtFile: typeParams.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Serializable')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('TypeParams')
-    TYPE_PARAMETER_LIST
-      PsiElement(LT)('<')
-      TYPE_PARAMETER
-        MODIFIER_LIST
-          PsiElement(in)('in')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('T1')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Any')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_PARAMETER
-        MODIFIER_LIST
-          PsiElement(out)('out')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('T2')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_PARAMETER
-        PsiElement(IDENTIFIER)('T3')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          FUNCTION_TYPE
-            VALUE_PARAMETER_LIST
-              PsiElement(LPAR)('(')
-              VALUE_PARAMETER
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Int')
-              PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            PsiElement(ARROW)('->')
-            PsiWhiteSpace(' ')
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('Int')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_PARAMETER
-        PsiElement(IDENTIFIER)('T4')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_PARAMETER
-        PsiElement(IDENTIFIER)('T5')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          NULLABLE_TYPE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Any')
-            PsiElement(QUEST)('?')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_PARAMETER
-        PsiElement(IDENTIFIER)('T6')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('T5')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_PARAMETER
-        PsiElement(IDENTIFIER)('T7')
-      PsiElement(GT)('>')
-    PsiWhiteSpace(' ')
-    PsiElement(where)('where')
-    PsiWhiteSpace(' ')
-    TYPE_CONSTRAINT_LIST
-      TYPE_CONSTRAINT
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('T1')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          NULLABLE_TYPE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Cloneable')
-            PsiElement(QUEST)('?')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_CONSTRAINT
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('T1')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('Serializable')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_CONSTRAINT
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('T2')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('String')
-      PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      TYPE_CONSTRAINT
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('T7')
-        PsiWhiteSpace(' ')
-        PsiElement(COLON)(':')
-        PsiWhiteSpace(' ')
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('T6')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LT)('<')
+  MODIFIER_LIST
+    PsiElement(in)('in')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T1')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Any')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(out)('out')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T2')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T3')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Int')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(ARROW)('->')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Int')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T4')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T5')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Any')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(QUEST)('?')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T6')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T5')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T7')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(GT)('>')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('where')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T1')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Cloneable')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(QUEST)('?')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T1')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Serializable')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T2')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('String')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T7')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T6')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n\n    ')
       FUN
@@ -755,24 +754,27 @@ KtFile: typeParams.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('G1')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
           PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        THROW
+          PsiElement(throw)('throw')
           PsiWhiteSpace(' ')
-          THROW
-            PsiElement(throw)('throw')
-            PsiWhiteSpace(' ')
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('IllegalStateException')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                PsiElement(RPAR)(')')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('IllegalStateException')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -803,24 +805,27 @@ KtFile: typeParams.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('G1')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
           PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        THROW
+          PsiElement(throw)('throw')
           PsiWhiteSpace(' ')
-          THROW
-            PsiElement(throw)('throw')
-            PsiWhiteSpace(' ')
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('IllegalStateException')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                PsiElement(RPAR)(')')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('IllegalStateException')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -849,24 +854,27 @@ KtFile: typeParams.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('G1')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
           PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        THROW
+          PsiElement(throw)('throw')
           PsiWhiteSpace(' ')
-          THROW
-            PsiElement(throw)('throw')
-            PsiWhiteSpace(' ')
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('IllegalStateException')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                PsiElement(RPAR)(')')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('IllegalStateException')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -878,24 +886,27 @@ KtFile: typeParams.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('T2')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
           PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        THROW
+          PsiElement(throw)('throw')
           PsiWhiteSpace(' ')
-          THROW
-            PsiElement(throw)('throw')
-            PsiWhiteSpace(' ')
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('IllegalStateException')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                PsiElement(RPAR)(')')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('IllegalStateException')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n\n    ')
       FUN
         MODIFIER_LIST

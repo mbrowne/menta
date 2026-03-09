@@ -167,27 +167,31 @@ KtFile: Comparison.kt
                     PsiElement(GT)('>')
           PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(enum)('enum')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(enum)('enum')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('ComparisonResult')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      ENUM_ENTRY
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('LS')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      ENUM_ENTRY
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('EQ')
         PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      ENUM_ENTRY
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('GR')
+      PsiErrorElement:Expecting an element
         PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

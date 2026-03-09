@@ -1,3 +1,1 @@
-public class AKotlin /* test.AKotlin*/ {
-  public  AKotlin();//  .ctor()
-}
+// NOT_GENERATED

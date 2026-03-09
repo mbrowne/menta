@@ -17,21 +17,19 @@ L0:
   2 mark({ "before" class A(val x: Int) { init { val a = x } fun foo() { val b = x } } "after" })
     mark("before")
     r("before") -> <v0>
+    mark(A(val)
+    magic[UNRESOLVED_CALL](A(val|!<v1>) -> <v2>
+    mark(A(val x:)
+    magic[UNRESOLVED_CALL](A(val x:|<v2>) -> <v3>
+    mark(A(val x: Int)
+    magic[UNRESOLVED_CALL](A(val x: Int|<v3>) -> <v4>
+    mark({ init { val a = x } fun foo() { val b = x } })
     jmp?(L2)
-    v(val x: Int)                                                                                    INIT: in: {} out: {}
-    magic[FAKE_INITIALIZER](val x: Int) -> <v1>                                                      INIT: in: {} out: {}
-    w(x|<v1>)                                                                                        INIT: in: {} out: {}
-  3 mark({ val a = x })                                                                              INIT: in: {} out: {}
-    v(val a = x)                                                                                     INIT: in: {} out: {}
-    magic[IMPLICIT_RECEIVER](x) -> <v2>                                                              INIT: in: {} out: {}
-    r(x|<v2>) -> <v3>
-    w(a|<v3>)                                                                                        INIT: in: {} out: {}
-  2 jmp?(L3)                                                                                         INIT: in: {} out: {}
-    d(fun foo() { val b = x })                                                                       INIT: in: {} out: {}
-L2 [after local class]:
-L3 [after local declaration]:
+    d({ init { val a = x } fun foo() { val b = x } })                                                INIT: in: {} out: {}
+L2 [after local declaration]:
+    r({ init { val a = x } fun foo() { val b = x } }) -> <v5>
     mark("after")
-    r("after") -> <v4>
+    r("after") -> <v6>
 L1:
   1 <END>
 error:
@@ -39,22 +37,69 @@ error:
 sink:
     <SINK>                                                                                                                   USE: in: {} out: {}
 =====================
+== anonymous_0 ==
+{
+        init {
+            val a = x
+        }
+        fun foo() {
+            val b = x
+        }
+    }
+---------------------
+L3:
+  3 <START>                                                           INIT: in: {} out: {}
+  4 mark(init { val a = x } fun foo() { val b = x })
+    mark({ val a = x })
+    jmp?(L5)
+    d({ val a = x })                                                  INIT: in: {} out: {}
+L5 [after local declaration]:
+    r({ val a = x }) -> <v0>
+    mark(init { val a = x })
+    magic[UNRESOLVED_CALL](init { val a = x }|<v0>, !<v1>) -> <v2>
+    jmp?(L8)
+    d(fun foo() { val b = x })                                        INIT: in: {} out: {}
+L4:
+L8 [after local declaration]:
+  3 <END>
+error:
+    <ERROR>
+sink:
+    <SINK>                                                                                    USE: in: {} out: {}
+=====================
+== anonymous_1 ==
+{
+            val a = x
+        }
+---------------------
+L6:
+  5 <START>                              INIT: in: {} out: {}
+  6 mark(val a = x)
+    v(val a = x)                         INIT: in: {} out: {}
+    magic[UNRESOLVED_CALL](x) -> <v0>    INIT: in: {} out: {}
+    w(a|<v0>)                            INIT: in: {} out: {}
+L7:
+  5 <END>                                INIT: in: {} out: {}
+error:
+    <ERROR>
+sink:
+    <SINK>                                                       USE: in: {} out: {}
+=====================
 == foo ==
 fun foo() {
             val b = x
         }
 ---------------------
-L4:
-  3 <START>                                INIT: in: {} out: {}
-  4 mark({ val b = x })
-    v(val b = x)                           INIT: in: {} out: {}
-    magic[IMPLICIT_RECEIVER](x) -> <v0>    INIT: in: {} out: {}
-    r(x|<v0>) -> <v1>
-    w(b|<v1>)                              INIT: in: {} out: {}
-L5:
-  3 <END>                                  INIT: in: {} out: {}
+L9:
+  5 <START>                              INIT: in: {} out: {}
+  6 mark({ val b = x })
+    v(val b = x)                         INIT: in: {} out: {}
+    magic[UNRESOLVED_CALL](x) -> <v0>    INIT: in: {} out: {}
+    w(b|<v0>)                            INIT: in: {} out: {}
+L10:
+  5 <END>                                INIT: in: {} out: {}
 error:
     <ERROR>
 sink:
-    <SINK>                                                         USE: in: {} out: {}
+    <SINK>                                                       USE: in: {} out: {}
 =====================

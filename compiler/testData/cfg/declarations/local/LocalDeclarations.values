@@ -1,5 +1,5 @@
-== C ==
-class C() {
+== anonymous_0 ==
+{
     val a: Int = 1
 
     companion object {
@@ -17,7 +17,25 @@ class C() {
     }
 }
 ---------------------
-1   <v0>: Int   NEW: r(1) -> <v0>
+                                                                                                             <v2>: `<no name provided>`   NEW: magic[IMPLICIT_RECEIVER](x) -> <v2>
+1                                                                                                            <v0>: Int                    NEW: r(1) -> <v0>
+companion                                                                                                    <v1>: *                      NEW: magic[UNRESOLVED_CALL](companion) -> <v1>
+1                                                                                                            <v3>: Int                    NEW: r(1) -> <v3>
+x = 1                                                                                                        !<v4>: *
+{ x = 1 }                                                                                                    !<v4>: *                     COPY
+object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } }                                <v5>: *                      NEW: r(object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } }) -> <v5>
+{ val a: Int = 1 companion object { val x : Int init { x = 1 } fun foo() { val b : Int = 1 doSmth(b) } } }   <v5>: *                      COPY
+=====================
+== foo ==
+fun foo() {
+            val b : Int = 1
+            doSmth(b)
+        }
+---------------------
+1                               <v0>: Int   NEW: r(1) -> <v0>
+b                               <v1>: Int   NEW: r(b) -> <v1>
+doSmth(b)                       <v2>: *     NEW: call(doSmth(b), doSmth|<v1>) -> <v2>
+{ val b : Int = 1 doSmth(b) }   <v2>: *     COPY
 =====================
 == doSmth ==
 fun doSmth(i: Int) {}

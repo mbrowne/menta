@@ -5,40 +5,44 @@ KtFile: ValueParameterNoTypeRecovery.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Test')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('a')
-          PsiErrorElement:Parameters must have type annotation
-            <empty list>
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('12')
-        PsiElement(COMMA)(',')
+  DESTRUCTURING_DECLARATION
+    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
+      PsiElement(LPAR)('(')
+      DESTRUCTURING_DECLARATION_ENTRY
+        PsiElement(val)('val')
         PsiWhiteSpace(' ')
-        VALUE_PARAMETER
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('b')
-          PsiWhiteSpace(' ')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Int')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('13')
-        PsiElement(RPAR)(')')
+        PsiElement(IDENTIFIER)('a')
+        PsiWhiteSpace(' ')
+        PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        REFERENCE_EXPRESSION
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Expecting ')'
+        PsiElement(INTEGER_LITERAL)('12')
+    PsiErrorElement:Property getter or setter expected
+      PsiElement(COMMA)(',')
+  PsiWhiteSpace(' ')
+  PROPERTY
+    PsiElement(val)('val')
+    PsiWhiteSpace(' ')
+    PsiElement(IDENTIFIER)('b')
+    PsiWhiteSpace(' ')
+    PsiElement(COLON)(':')
+    PsiWhiteSpace(' ')
+    TYPE_REFERENCE
+      USER_TYPE
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('Int')
+    PsiWhiteSpace(' ')
+    PsiElement(EQ)('=')
+    PsiWhiteSpace(' ')
+    INTEGER_CONSTANT
+      PsiElement(INTEGER_LITERAL)('13')
+    PsiErrorElement:Property getter or setter expected
+      PsiElement(RPAR)(')')

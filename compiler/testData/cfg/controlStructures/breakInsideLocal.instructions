@@ -25,36 +25,110 @@ L6 [condition entry point]:
     magic[VALUE_CONSUMER](true|<v0>) -> <v1>
 L4 [body entry point]:
   3 mark({ class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } })
-    jmp?(L7)                                                                                                                             NEXT:[jmp(L2), v(val x: Int)]
-    v(val x: Int)
-    magic[FAKE_INITIALIZER](val x: Int) -> <v2>
-    w(x|<v2>)
-  4 mark({ break })
-  3 jmp?(L8)                                                                                                                             NEXT:[jmp(L2), d(fun foo() { break })]
-    d(fun foo() { break })                                                                                                               NEXT:[<SINK>]
-L7 [after local class]:
-L8 [after local declaration]:
-  2 jmp(L2)                                                                                                                              NEXT:[r(true) -> <v0>]                                                                                                                      PREV:[jmp?(L7), jmp?(L8)]
+    mark(LocalClass(val)
+    magic[UNRESOLVED_CALL](LocalClass(val|!<v2>) -> <v3>
+    mark(LocalClass(val x:)
+    magic[UNRESOLVED_CALL](LocalClass(val x:|<v3>) -> <v4>
+    mark(LocalClass(val x: Int)
+    magic[UNRESOLVED_CALL](LocalClass(val x: Int|<v4>) -> <v5>
+    mark({ init { break } constructor() : this(42) { break } fun foo() { break } })
+    jmp?(L7)                                                                                                                             NEXT:[r({ init { break } constructor() : this(42) { break } fun foo() { break } }) -> <v6>, d({ init { break } constructor() : this(42) { break } fun foo() { break } })]
+    d({ init { break } constructor() : this(42) { break } fun foo() { break } })                                                         NEXT:[<SINK>]
+L7 [after local declaration]:
+    r({ init { break } constructor() : this(42) { break } fun foo() { break } }) -> <v6>                                                 PREV:[jmp?(L7)]
+  2 jmp(L2)                                                                                                                              NEXT:[r(true) -> <v0>]
 L3 [loop exit point]:
 L5 [body exit point]:
 -   read (Unit)                                                                                                                          PREV:[]
 L1:
-  1 <END>                                                                                                                                NEXT:[<SINK>]                                                                                                                               PREV:[]
+  1 <END>                                                                                                                                NEXT:[<SINK>]                                                                                                                                                                PREV:[]
 error:
     <ERROR>                                                                                                                              PREV:[]
 sink:
-    <SINK>                                                                                                                               PREV:[<ERROR>, <END>, d(fun foo() { break })]
+    <SINK>                                                                                                                               PREV:[<ERROR>, <END>, d({ init { break } constructor() : this(42) { break } fun foo() { break } })]
+=====================
+== anonymous_0 ==
+{
+            init {
+                break
+            }
+            constructor() : this(42) {
+                break
+            }
+            fun foo() {
+                break
+            }
+        }
+---------------------
+L8:
+  4 <START>
+  5 mark(init { break } constructor() : this(42) { break } fun foo() { break })
+    mark({ break })
+    jmp?(L10)                                                                      NEXT:[r({ break }) -> <v0>, d({ break })]
+    d({ break })                                                                   NEXT:[<SINK>]
+L10 [after local declaration]:
+    r({ break }) -> <v0>                                                           PREV:[jmp?(L10)]
+    mark(init { break })
+    magic[UNRESOLVED_CALL](init { break }|<v0>, !<v1>) -> <v2>
+    mark(constructor())
+    magic[UNRESOLVED_CALL](constructor()|!<v3>) -> <v4>
+    mark({ break })
+    jmp?(L13)                                                                      NEXT:[r({ break }) -> <v5>, d({ break })]
+    d({ break })                                                                   NEXT:[<SINK>]
+L13 [after local declaration]:
+    r({ break }) -> <v5>                                                           PREV:[jmp?(L13)]
+    jmp?(L16)                                                                      NEXT:[<END>, d(fun foo() { break })]
+    d(fun foo() { break })                                                         NEXT:[<SINK>]
+L9:
+L16 [after local declaration]:
+  4 <END>                                                                          NEXT:[<SINK>]                                                                         PREV:[jmp?(L16)]
+error:
+    <ERROR>                                                                        PREV:[]
+sink:
+    <SINK>                                                                         PREV:[<ERROR>, <END>, d({ break }), d({ break }), d(fun foo() { break })]
+=====================
+== anonymous_1 ==
+{
+                break
+            }
+---------------------
+L11:
+  6 <START>
+  7 mark(break)
+  6 ret(*|!<v0>) L12
+L12:
+    <END>               NEXT:[<SINK>]
+error:
+    <ERROR>             PREV:[]
+sink:
+    <SINK>              PREV:[<ERROR>, <END>]
+=====================
+== anonymous_2 ==
+{
+                break
+            }
+---------------------
+L14:
+  6 <START>
+  7 mark(break)
+  6 ret(*|!<v0>) L15
+L15:
+    <END>               NEXT:[<SINK>]
+error:
+    <ERROR>             PREV:[]
+sink:
+    <SINK>              PREV:[<ERROR>, <END>]
 =====================
 == foo ==
 fun foo() {
                 break
             }
 ---------------------
-L9:
-  4 <START>
-  5 mark({ break })
-L10:
-  4 <END>              NEXT:[<SINK>]
+L17:
+  6 <START>
+  7 mark({ break })
+L18:
+  6 <END>              NEXT:[<SINK>]
 error:
     <ERROR>            PREV:[]
 sink:

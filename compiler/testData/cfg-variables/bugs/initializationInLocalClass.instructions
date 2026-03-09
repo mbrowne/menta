@@ -10,22 +10,65 @@ fun foo() {
 }
 ---------------------
 L0:
-  1 <START>                                                         INIT: in: {} out: {}              USE: in: {} out: {}
+  1 <START>                                                              INIT: in: {} out: {}            USE: in: {} out: {}
   2 mark({ var x: String class A { init { x = "" } } x.length })
-    v(var x: String)                                                INIT: in: {} out: {x=D}
-    jmp?(L2)                                                        INIT: in: {x=D} out: {x=D}        USE: in: {x=READ} out: {x=READ}
-  3 mark({ x = "" })
-    mark("")
-    r("") -> <v0>                                                                                     USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
-    w(x|<v0>)                                                       INIT: in: {x=D} out: {x=ID}       USE: in: {x=READ} out: {x=WRITTEN_AFTER_READ}
-L2 [after local class]:
-  2 mark(x.length)                                                  INIT: in: {x=I?D} out: {x=I?D}    USE: in: {x=READ} out: {x=READ}
-    r(x) -> <v2>                                                                                      USE: in: {} out: {x=READ}
-    r(length|<v2>) -> <v3>
+    v(var x: String)                                                     INIT: in: {} out: {x=D}
+    mark({ init { x = "" } })                                            INIT: in: {x=D} out: {x=D}
+    jmp?(L2)                                                                                             USE: in: {x=READ} out: {x=READ}
+    d({ init { x = "" } })                                               INIT: in: {x=I?} out: {x=I?}    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+L2 [after local declaration]:
+    r({ init { x = "" } }) -> <v0>                                       INIT: in: {x=D} out: {x=D}
+    mark(A { init { x = "" } })
+    magic[UNRESOLVED_CALL](A { init { x = "" } }|<v0>, !<v1>) -> <v2>
+    mark(x.length)                                                                                       USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v3>                                                                                         USE: in: {} out: {x=READ}
+    r(length|<v3>) -> <v4>
 L1:
-  1 <END>                                                           INIT: in: {} out: {}
+  1 <END>                                                                INIT: in: {} out: {}
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                            USE: in: {} out: {}
+    <SINK>                                                                                               USE: in: {} out: {}
+=====================
+== anonymous_0 ==
+{
+        init {
+            x = ""
+        }
+    }
+---------------------
+L3:
+  3 <START>                                                        INIT: in: {x=D} out: {x=D}
+  4 mark(init { x = "" })
+    mark({ x = "" })
+    jmp?(L5)
+    d({ x = "" })                                                  INIT: in: {x=I} out: {x=I}      USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+L5 [after local declaration]:
+    r({ x = "" }) -> <v0>                                          INIT: in: {x=D} out: {x=D}
+    mark(init { x = "" })
+    magic[UNRESOLVED_CALL](init { x = "" }|<v0>, !<v1>) -> <v2>
+L4:
+  3 <END>
+error:
+    <ERROR>                                                        INIT: in: {} out: {}
+sink:
+    <SINK>                                                         INIT: in: {x=I?} out: {x=I?}    USE: in: {} out: {}
+=====================
+== anonymous_1 ==
+{
+            x = ""
+        }
+---------------------
+L6:
+  5 <START>          INIT: in: {x=D} out: {x=D}
+  6 mark(x = "")
+    mark("")
+    r("") -> <v0>                                    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+    w(x|<v0>)        INIT: in: {x=D} out: {x=ID}     USE: in: {} out: {x=ONLY_WRITTEN_NEVER_READ}
+L7:
+  5 <END>            INIT: in: {x=ID} out: {x=ID}
+error:
+    <ERROR>          INIT: in: {} out: {}
+sink:
+    <SINK>           INIT: in: {x=I} out: {x=I}      USE: in: {} out: {}
 =====================

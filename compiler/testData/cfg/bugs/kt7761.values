@@ -1,5 +1,5 @@
-== UnitIncDec ==
-class UnitIncDec() {
+== anonymous_0 ==
+{
     fun inc() : Unit {}
     fun dec() : Unit {}
 }
@@ -19,15 +19,16 @@ fun testUnitIncDec() {
     x = <warning>x<error>++</error></warning>
 }
 ---------------------
-UnitIncDec()                                                         <v0>: UnitIncDec   NEW: call(UnitIncDec(), <init>) -> <v0>
-<warning>                                                            <v1>: *            NEW: magic[UNRESOLVED_CALL](<warning>) -> <v1>
-<warning>x<                                                          <v2>: *            NEW: magic[UNRESOLVED_CALL](<warning>x<|<v1>) -> <v2>
->++                                                                  !<v3>: *
-<warning>x<error>++                                                  <v4>: *            NEW: magic[UNRESOLVED_CALL](<warning>x<error>++|<v2>, !<v3>) -> <v4>
-/error>                                                              <v5>: *            NEW: magic[UNRESOLVED_CALL](/error>) -> <v5>
-<warning>x<error>++</error>                                          <v6>: *            NEW: magic[UNRESOLVED_CALL](<warning>x<error>++</error>|<v4>, <v5>) -> <v6>
-/warning>                                                            <v7>: *            NEW: magic[UNRESOLVED_CALL](/warning>) -> <v7>
-<warning>x<error>++</error></warning>                                <v8>: UnitIncDec   NEW: magic[UNRESOLVED_CALL](<warning>x<error>++</error></warning>|<v6>, <v7>) -> <v8>
-x = <warning>x<error>++</error></warning>                            !<v9>: *
-{ var x = UnitIncDec() x = <warning>x<error>++</error></warning> }   !<v9>: *           COPY
+UnitIncDec                                                           !<v0>: *
+UnitIncDec()                                                         <v1>: {<: [Error type: Not found recorded type for UnitIncDec()]}   NEW: magic[UNRESOLVED_CALL](UnitIncDec()|!<v0>) -> <v1>
+<warning>                                                            <v2>: *                                                             NEW: magic[UNRESOLVED_CALL](<warning>) -> <v2>
+<warning>x<                                                          <v3>: *                                                             NEW: magic[UNRESOLVED_CALL](<warning>x<|<v2>) -> <v3>
+>++                                                                  !<v4>: *
+<warning>x<error>++                                                  <v5>: *                                                             NEW: magic[UNRESOLVED_CALL](<warning>x<error>++|<v3>, !<v4>) -> <v5>
+/error>                                                              <v6>: *                                                             NEW: magic[UNRESOLVED_CALL](/error>) -> <v6>
+<warning>x<error>++</error>                                          <v7>: *                                                             NEW: magic[UNRESOLVED_CALL](<warning>x<error>++</error>|<v5>, <v6>) -> <v7>
+/warning>                                                            <v8>: *                                                             NEW: magic[UNRESOLVED_CALL](/warning>) -> <v8>
+<warning>x<error>++</error></warning>                                <v9>: {<: [Error type: Not found recorded type for UnitIncDec()]}   NEW: magic[UNRESOLVED_CALL](<warning>x<error>++</error></warning>|<v7>, <v8>) -> <v9>
+x = <warning>x<error>++</error></warning>                            !<v10>: *
+{ var x = UnitIncDec() x = <warning>x<error>++</error></warning> }   !<v10>: *                                                           COPY
 =====================

@@ -3,57 +3,63 @@ KtFile: enumArray.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  CLASS
-    PsiComment(EOL_COMMENT)('// FILE: Arrays.kt')
-    PsiWhiteSpace('\n')
-    MODIFIER_LIST
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+  PsiComment(EOL_COMMENT)('// FILE: Arrays.kt')
+  PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Arrays')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('value')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Array')
-              TYPE_ARGUMENT_LIST
-                PsiElement(LT)('<')
-                TYPE_PROJECTION
-                  TYPE_REFERENCE
-                    USER_TYPE
-                      REFERENCE_EXPRESSION
-                        PsiElement(IDENTIFIER)('MyEnum')
-                PsiElement(GT)('>')
-        PsiElement(RPAR)(')')
+  DESTRUCTURING_DECLARATION
+    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
+      PsiElement(LPAR)('(')
+      DESTRUCTURING_DECLARATION_ENTRY
+        PsiElement(val)('val')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('value')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Array')
+            TYPE_ARGUMENT_LIST
+              PsiElement(LT)('<')
+              TYPE_PROJECTION
+                TYPE_REFERENCE
+                  USER_TYPE
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('MyEnum')
+              PsiElement(GT)('>')
+      PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
-  CLASS
-    PsiComment(EOL_COMMENT)('// FILE: MyEnum.kt')
-    PsiWhiteSpace('\n')
-    MODIFIER_LIST
-      PsiElement(enum)('enum')
-    PsiWhiteSpace(' ')
+  PsiComment(EOL_COMMENT)('// FILE: MyEnum.kt')
+  PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    PsiElement(enum)('enum')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('MyEnum')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      ENUM_ENTRY
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('ENTRY1')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
-      PsiWhiteSpace(' ')
-      ENUM_ENTRY
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('ENTRY2')
+      PsiErrorElement:Expecting an element
         PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
@@ -73,33 +79,34 @@ KtFile: enumArray.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('ENTRY2')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Arrays')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          COLLECTION_LITERAL_EXPRESSION
+            PsiElement(LBRACKET)('[')
+            DOT_QUALIFIED_EXPRESSION
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Arrays')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            COLLECTION_LITERAL_EXPRESSION
-              PsiElement(LBRACKET)('[')
-              DOT_QUALIFIED_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('MyEnum')
-                PsiElement(DOT)('.')
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('ENTRY1')
-              PsiElement(COMMA)(',')
-              PsiWhiteSpace(' ')
+                PsiElement(IDENTIFIER)('MyEnum')
+              PsiElement(DOT)('.')
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('ENTRY2')
-              PsiElement(RBRACKET)(']')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
+                PsiElement(IDENTIFIER)('ENTRY1')
+            PsiElement(COMMA)(',')
+            PsiWhiteSpace(' ')
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('ENTRY2')
+            PsiElement(RBRACKET)(']')
+        PsiElement(RPAR)(')')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('WithArrays')

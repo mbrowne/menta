@@ -1,26 +1,4 @@
 <set-?>:ValueParameterDescriptor
-Class.<get-classProp>:PropertyGetterDescriptor
-Class.<init>():ClassConstructorDescriptor
-Class.classFunc:SimpleFunctionDescriptor
-Class.classProp:PropertyDescriptor
-Class.this:ReceiverParameterDescriptor
-Class:ClassDescriptorWithResolutionScopes
-ClassObjTypeAlias:TypeAliasDescriptor
-ClassTypeAlias:TypeAliasDescriptor
-Companion.<get-classObjProp>:PropertyGetterDescriptor
-Companion.<init>():ClassConstructorDescriptor
-Companion.<init>():ClassConstructorDescriptor
-Companion.classObjFunc:SimpleFunctionDescriptor
-Companion.classObjProp:PropertyDescriptor
-Companion.nestedClassObjFunc:SimpleFunctionDescriptor
-Companion.this:ReceiverParameterDescriptor
-Companion.this:ReceiverParameterDescriptor
-Companion:ClassDescriptorWithResolutionScopes
-Companion:ClassDescriptorWithResolutionScopes
-NestedClass.<init>():ClassConstructorDescriptor
-NestedClass.this:ReceiverParameterDescriptor
-NestedClass:ClassDescriptorWithResolutionScopes
-NestedClassObjTypeAlias:TypeAliasDescriptor
 NestedObject.<init>():ClassConstructorDescriptor
 NestedObject.nestedFunc:SimpleFunctionDescriptor
 NestedObject.this:ReceiverParameterDescriptor
@@ -37,13 +15,12 @@ Object.objFunc:SimpleFunctionDescriptor
 Object.objProp:PropertyDescriptor
 Object.this:ReceiverParameterDescriptor
 Object:ClassDescriptorWithResolutionScopes
+Outer.<no name provided>:SimpleFunctionDescriptor
 Outer.this:ReceiverParameterDescriptor
 Outer:ClassDescriptorWithResolutionScopes
 T1:TypeParameterDescriptor
 T2:TypeParameterDescriptor
 T3:TypeParameterDescriptor
-T4:TypeParameterDescriptor
-T4:TypeParameterDescriptor
 Trait.<get-traitProp>:PropertyGetterDescriptor
 Trait.this:ReceiverParameterDescriptor
 Trait.traitFunc:SimpleFunctionDescriptor
@@ -52,21 +29,6 @@ Trait:ClassDescriptorWithResolutionScopes
 TraitTypeAlias:TypeAliasDescriptor
 TypeAlias:TypeAliasDescriptor
 a:ValueParameterDescriptor
-fake Class.<get-traitProp>:PropertyGetterDescriptor
-fake Class.equals:DeserializedCallableMemberDescriptor
-fake Class.hashCode:DeserializedCallableMemberDescriptor
-fake Class.toString:DeserializedCallableMemberDescriptor
-fake Class.traitFunc:SimpleFunctionDescriptor
-fake Class.traitProp:PropertyDescriptor
-fake Companion.equals:DeserializedCallableMemberDescriptor
-fake Companion.equals:DeserializedCallableMemberDescriptor
-fake Companion.hashCode:DeserializedCallableMemberDescriptor
-fake Companion.hashCode:DeserializedCallableMemberDescriptor
-fake Companion.toString:DeserializedCallableMemberDescriptor
-fake Companion.toString:DeserializedCallableMemberDescriptor
-fake NestedClass.equals:DeserializedCallableMemberDescriptor
-fake NestedClass.hashCode:DeserializedCallableMemberDescriptor
-fake NestedClass.toString:DeserializedCallableMemberDescriptor
 fake NestedObject.equals:DeserializedCallableMemberDescriptor
 fake NestedObject.hashCode:DeserializedCallableMemberDescriptor
 fake NestedObject.toString:DeserializedCallableMemberDescriptor
@@ -85,15 +47,12 @@ fake Trait.toString:DeserializedCallableMemberDescriptor
 func.this:ReceiverParameterDescriptor
 innerTest.<get-prop>:PropertyGetterDescriptor
 innerTest.<get-propVar>:PropertyGetterDescriptor
+innerTest.<no name provided>:SimpleFunctionDescriptor
 innerTest.<set-propVar>:PropertySetterDescriptor
 innerTest.func:SimpleFunctionDescriptor
 innerTest.prop:PropertyDescriptor
 innerTest.propVar:PropertyDescriptor
 innerTest:PackageViewDescriptor
-other:ValueParameterDescriptor
-other:ValueParameterDescriptor
-other:ValueParameterDescriptor
-other:ValueParameterDescriptor
 other:ValueParameterDescriptor
 other:ValueParameterDescriptor
 other:ValueParameterDescriptor

@@ -1,5 +1,5 @@
-== A ==
-class A {
+== anonymous_0 ==
+{
     val x: Int
     constructor() {
         if (1 == 1) {
@@ -12,15 +12,24 @@ class A {
 ---------------------
 L0:
   1 <START>
+  2 mark({ val x: Int constructor() { if (1 == 1) { return } else null!! x = 1 } })
+    v(val x: Int)
+    mark({ if (1 == 1) { return } else null!! x = 1 })
+    jmp?(L2)                                                                                                  NEXT:[r({ if (1 == 1) { return } else null!! x = 1 }) -> <v0>, d({ if (1 == 1) { return } else null!! x = 1 })]
+    d({ if (1 == 1) { return } else null!! x = 1 })                                                           NEXT:[<SINK>]
+L2 [after local declaration]:
+    r({ if (1 == 1) { return } else null!! x = 1 }) -> <v0>                                                   PREV:[jmp?(L2)]
+    mark(constructor() { if (1 == 1) { return } else null!! x = 1 })
+    magic[UNRESOLVED_CALL](constructor() { if (1 == 1) { return } else null!! x = 1 }|<v0>, !<v1>) -> <v2>
 L1:
-    <END>      NEXT:[<SINK>]
+  1 <END>                                                                                                     NEXT:[<SINK>]                                                                                                      PREV:[ret L1, magic[UNRESOLVED_CALL](constructor() { if (1 == 1) { return } else null!! x = 1 }|<v0>, !<v1>) -> <v2>]
 error:
-    <ERROR>    PREV:[]
+    <ERROR>                                                                                                   PREV:[]
 sink:
-    <SINK>     PREV:[<ERROR>, <END>]
+    <SINK>                                                                                                    PREV:[<ERROR>, <END>, d({ if (1 == 1) { return } else null!! x = 1 })]
 =====================
-== A ==
-constructor() {
+== anonymous_1 ==
+{
         if (1 == 1) {
             return
         }
@@ -28,32 +37,28 @@ constructor() {
         x = 1
     }
 ---------------------
-L0:
-  1 <START>
-    mark()
-    call(, <init>) -> <v0>
-    v(val x: Int)
-  2 mark({ if (1 == 1) { return } else null!! x = 1 })
+L3:
+  3 <START>
+  4 mark(if (1 == 1) { return } else null!! x = 1)
     mark(if (1 == 1) { return } else null!!)
+    r(1) -> <v0>
     r(1) -> <v1>
-    r(1) -> <v2>
     mark(1 == 1)
-    call(1 == 1, equals|<v1>, <v2>) -> <v3>
-    jf(L2|<v3>)                                                      NEXT:[r(null) -> <v5>, mark({ return })]
-  3 mark({ return })
+    call(1 == 1, equals|<v0>, <v1>) -> <v2>
+    jf(L5|<v2>)                                                      NEXT:[r(null) -> <v4>, mark({ return })]
+  5 mark({ return })
     ret L1                                                           NEXT:[<END>]
-- 2 jmp(L3)                                                          NEXT:[merge(if (1 == 1) { return } else null!!|!<v4>, <v6>) -> <v7>]    PREV:[]
-L2 [else branch]:
-    r(null) -> <v5>                                                  PREV:[jf(L2|<v3>)]
-    magic[NOT_NULL_ASSERTION](null!!|<v5>) -> <v6>
+- 4 jmp(L6)                                                          NEXT:[merge(if (1 == 1) { return } else null!!|!<v3>, <v5>) -> <v6>]    PREV:[]
+L5 [else branch]:
+    r(null) -> <v4>                                                  PREV:[jf(L5|<v2>)]
+    magic[NOT_NULL_ASSERTION](null!!|<v4>) -> <v5>
     jmp(error)                                                       NEXT:[<ERROR>]
-L3 ['if' expression result]:
--   merge(if (1 == 1) { return } else null!!|!<v4>, <v6>) -> <v7>    PREV:[]
--   magic[IMPLICIT_RECEIVER](x) -> <v8>                              PREV:[]
--   r(1) -> <v9>                                                     PREV:[]
--   w(x|<v8>, <v9>)                                                  PREV:[]
-L1:
-  1 <END>                                                            NEXT:[<SINK>]                                                           PREV:[ret L1]
+L6 ['if' expression result]:
+-   merge(if (1 == 1) { return } else null!!|!<v3>, <v5>) -> <v6>    PREV:[]
+-   r(1) -> <v7>                                                     PREV:[]
+-   w(x|<v7>)                                                        PREV:[]
+L4:
+  3 <END>                                                            NEXT:[<SINK>]                                                           PREV:[]
 error:
     <ERROR>                                                          PREV:[jmp(error)]
 sink:

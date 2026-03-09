@@ -5,29 +5,29 @@ KtFile: recoveryWithoutBodyWrongDelegationName.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
-        CONSTRUCTOR_DELEGATION_CALL
-          PsiErrorElement:Expecting a 'this' or 'super' constructor call
-            <empty list>
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Expecting member declaration
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('thi')
-      PsiErrorElement:Expecting member declaration
         PsiElement(LPAR)('(')
-      PsiErrorElement:Expecting member declaration
         PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -41,15 +41,14 @@ KtFile: recoveryWithoutBodyWrongDelegationName.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
       PsiWhiteSpace('\n\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
-        CONSTRUCTOR_DELEGATION_CALL
-          PsiErrorElement:Expecting a 'this' or 'super' constructor call
-            <empty list>
       PsiWhiteSpace('\n\n    ')
       FUN
         MODIFIER_LIST
@@ -68,39 +67,34 @@ KtFile: recoveryWithoutBodyWrongDelegationName.kt
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
-        CONSTRUCTOR_DELEGATION_CALL
-          PsiErrorElement:Expecting a 'this' or 'super' constructor call
-            <empty list>
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Expecting member declaration
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('sup')
       PsiWhiteSpace('\n\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
-        CONSTRUCTOR_DELEGATION_CALL
-          PsiErrorElement:Expecting a 'this' or 'super' constructor call
-            <empty list>
-      PsiWhiteSpace(' ')
-      PsiErrorElement:Expecting member declaration
+        PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('thi')
-      PsiErrorElement:Expecting member declaration
         PsiElement(LPAR)('(')
-      PsiErrorElement:Expecting member declaration
         PsiElement(RPAR)(')')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('B')

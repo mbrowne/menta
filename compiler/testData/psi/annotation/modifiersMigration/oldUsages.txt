@@ -5,29 +5,33 @@ KtFile: oldUsages.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('inline')
-      PsiWhiteSpace(' ')
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('tailrec')
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('inline')
     PsiWhiteSpace(' ')
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('tailrec')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -58,14 +62,16 @@ KtFile: oldUsages.kt
           PsiWhiteSpace('\n\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      PsiErrorElement:Expecting member declaration
-        PsiElement(IDENTIFIER)('kotlin')
-      PsiErrorElement:Expecting member declaration
+      DOT_QUALIFIED_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('kotlin')
         PsiElement(DOT)('.')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('inline')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
       FUN
-        MODIFIER_LIST
-          PsiElement(inline)('inline')
-        PsiWhiteSpace(' ')
         PsiElement(fun)('fun')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('bar')
@@ -76,8 +82,8 @@ KtFile: oldUsages.kt
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          CLASS
-            MODIFIER_LIST
+          BINARY_EXPRESSION
+            ANNOTATED_EXPRESSION
               ANNOTATION_ENTRY
                 PsiElement(AT)('@')
                 CONSTRUCTOR_CALLEE
@@ -92,10 +98,14 @@ KtFile: oldUsages.kt
                 VALUE_ARGUMENT_LIST
                   PsiElement(LPAR)('(')
                   PsiElement(RPAR)(')')
+              PsiWhiteSpace(' ')
+              PsiErrorElement:Expecting an element
+                PsiElement(class)('class')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('Local')
+            OPERATION_REFERENCE
+              PsiElement(IDENTIFIER)('Local')
+            PsiErrorElement:Expecting an element
+              <empty list>
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')

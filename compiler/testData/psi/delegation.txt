@@ -32,25 +32,26 @@ KtFile: delegation.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('T')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -84,55 +85,53 @@ KtFile: delegation.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Delegation')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('c')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Int')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('3')
-        PsiElement(COMMA)(',')
+  DESTRUCTURING_DECLARATION
+    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
+      PsiElement(LPAR)('(')
+      DESTRUCTURING_DECLARATION_ENTRY
+        PsiElement(val)('val')
         PsiWhiteSpace(' ')
-        VALUE_PARAMETER
-          PsiElement(IDENTIFIER)('a')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('A')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
+        PsiElement(IDENTIFIER)('c')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
         TYPE_REFERENCE
           USER_TYPE
             REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('T')
+              PsiElement(IDENTIFIER)('Int')
         PsiWhiteSpace(' ')
-        PsiElement(by)('by')
+        PsiElement(EQ)('=')
         PsiWhiteSpace(' ')
         REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('a')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+          PsiErrorElement:Expecting an identifier
+            <empty list>
+      PsiErrorElement:Expecting ')'
+        PsiElement(INTEGER_LITERAL)('3')
+    PsiErrorElement:Property getter or setter expected
+      PsiElement(COMMA)(',')
+      PsiWhiteSpace(' ')
+      PsiElement(IDENTIFIER)('a')
+      PsiElement(COLON)(':')
+      PsiWhiteSpace(' ')
+      PsiElement(IDENTIFIER)('A')
+      PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      PsiElement(COLON)(':')
+      PsiWhiteSpace(' ')
+      PsiElement(IDENTIFIER)('T')
+      PsiWhiteSpace(' ')
+      PsiElement(IDENTIFIER)('by')
+      PsiWhiteSpace(' ')
+      PsiElement(IDENTIFIER)('a')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN

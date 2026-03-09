@@ -5,40 +5,40 @@ KtFile: IMutableIterator.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(open)('open')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(open)('open')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('IMutableIterator')
-    TYPE_PARAMETER_LIST
-      PsiElement(LT)('<')
-      TYPE_PARAMETER
-        MODIFIER_LIST
-          PsiElement(out)('out')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('T')
-      PsiElement(GT)('>')
-    PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LT)('<')
+  MODIFIER_LIST
+    PsiElement(out)('out')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(GT)('>')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('IIterator')
-            TYPE_ARGUMENT_LIST
-              PsiElement(LT)('<')
-              TYPE_PROJECTION
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('T')
-              PsiElement(GT)('>')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('IIterator')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LT)('<')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(GT)('>')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
       FUN

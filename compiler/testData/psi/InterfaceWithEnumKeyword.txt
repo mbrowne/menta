@@ -10,18 +10,20 @@ KtFile: InterfaceWithEnumKeyword.kt
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
     PsiElement(interface)('interface')
+    PsiWhiteSpace(' ')
     PsiErrorElement:Name expected
-      <empty list>
+      PsiElement(class)('class')
   PsiWhiteSpace(' ')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('E1')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting member declaration
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('D')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
@@ -31,15 +33,19 @@ KtFile: InterfaceWithEnumKeyword.kt
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('enum')
   PsiWhiteSpace(' ')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('E2')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      PsiErrorElement:Expecting member declaration
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('D')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

@@ -9,12 +9,16 @@ KtFile: localClass.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('LocalClass')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -40,9 +44,10 @@ KtFile: localClass.kt
                 PsiElement(LBRACE)('{')
                 PsiWhiteSpace('\n        ')
                 BLOCK
-                  CLASS
+                  PsiErrorElement:Expecting an element
                     PsiElement(class)('class')
-                    PsiWhiteSpace(' ')
+                  PsiWhiteSpace(' ')
+                  REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('Local')
                   PsiWhiteSpace('\n\n        ')
                   CALL_EXPRESSION

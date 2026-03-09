@@ -1,5 +1,5 @@
-== AnonymousInitializers ==
-class AnonymousInitializers() {
+== anonymous_0 ==
+{
     val k = 34
 
     val i: Int
@@ -15,13 +15,34 @@ class AnonymousInitializers() {
     }
 }
 ---------------------
-             <v1>: AnonymousInitializers   NEW: magic[IMPLICIT_RECEIVER](i) -> <v1>
-             <v4>: AnonymousInitializers   NEW: magic[IMPLICIT_RECEIVER](i) -> <v4>
-34           <v0>: Int                     NEW: r(34) -> <v0>
-12           <v2>: Int                     NEW: r(12) -> <v2>
-i = 12       !<v3>: *
-{ i = 12 }   !<v3>: *                      COPY
-13           <v5>: Int                     NEW: r(13) -> <v5>
-i = 13       !<v6>: *
-{ i = 13 }   !<v6>: *                      COPY
+                                                                                  <v6>: *     NEW: magic[VALUE_CONSUMER](get()|<v5>) -> <v6>
+34                                                                                <v0>: Int   NEW: r(34) -> <v0>
+init                                                                              !<v2>: *
+{ i = 12 }                                                                        <v1>: *     NEW: r({ i = 12 }) -> <v1>
+init { i = 12 }                                                                   <v3>: *     NEW: magic[UNRESOLVED_CALL](init { i = 12 }|<v1>, !<v2>) -> <v3>
+get                                                                               !<v4>: *
+get()                                                                             <v5>: *     NEW: magic[UNRESOLVED_CALL](get()|!<v4>) -> <v5>
+20                                                                                <v7>: *     NEW: r(20) -> <v7>
+init                                                                              !<v9>: *
+{ i = 13 }                                                                        <v8>: *     NEW: r({ i = 13 }) -> <v8>
+init { i = 13 }                                                                   <v10>: *    NEW: magic[UNRESOLVED_CALL](init { i = 13 }|<v8>, !<v9>) -> <v10>
+{ val k = 34 val i: Int init { i = 12 } val j: Int get() = 20 init { i = 13 } }   <v10>: *    COPY
+=====================
+== anonymous_1 ==
+{
+        i = 12
+    }
+---------------------
+12       <v0>: Int   NEW: r(12) -> <v0>
+i = 12   !<v1>: *
+i = 12   !<v1>: *    COPY
+=====================
+== anonymous_2 ==
+{
+        i = 13
+    }
+---------------------
+13       <v0>: Int   NEW: r(13) -> <v0>
+i = 13   !<v1>: *
+i = 13   !<v1>: *    COPY
 =====================

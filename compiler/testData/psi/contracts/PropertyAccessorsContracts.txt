@@ -3,12 +3,16 @@ KtFile: PropertyAccessorsContracts.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('MyClass')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -26,83 +30,98 @@ KtFile: PropertyAccessorsContracts.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('0')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        BINARY_EXPRESSION
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('get')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
           PsiWhiteSpace(' ')
-          PsiElement(contract)('contract')
+          OPERATION_REFERENCE
+            PsiElement(IDENTIFIER)('contract')
           PsiWhiteSpace(' ')
-          CONTRACT_EFFECT_LIST
+          COLLECTION_LITERAL_EXPRESSION
             PsiElement(LBRACKET)('[')
-            CONTRACT_EFFECT
-              CALL_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('returnsNotNull')
-                VALUE_ARGUMENT_LIST
-                  PsiElement(LPAR)('(')
-                  PsiElement(RPAR)(')')
-            PsiElement(RBRACKET)(']')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              PsiElement(IDENTIFIER)('value')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          BLOCK
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n            ')
-            BINARY_EXPRESSION
+            CALL_EXPRESSION
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('field')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(EQ)('=')
-              PsiWhiteSpace(' ')
-              BINARY_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('value')
-                PsiWhiteSpace(' ')
-                OPERATION_REFERENCE
-                  PsiElement(MUL)('*')
-                PsiWhiteSpace(' ')
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('10')
-            PsiWhiteSpace('\n        ')
-            PsiElement(RBRACE)('}')
+                PsiElement(IDENTIFIER)('returnsNotNull')
+              VALUE_ARGUMENT_LIST
+                PsiElement(LPAR)('(')
+                PsiElement(RPAR)(')')
+            PsiElement(RBRACKET)(']')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        INTEGER_CONSTANT
+          PsiElement(INTEGER_LITERAL)('1')
+      PsiWhiteSpace('\n        ')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('set')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('value')
+          PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n            ')
+              BLOCK
+                BINARY_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('field')
+                  PsiWhiteSpace(' ')
+                  OPERATION_REFERENCE
+                    PsiElement(EQ)('=')
+                  PsiWhiteSpace(' ')
+                  BINARY_EXPRESSION
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('value')
+                    PsiWhiteSpace(' ')
+                    OPERATION_REFERENCE
+                      PsiElement(MUL)('*')
+                    PsiWhiteSpace(' ')
+                    INTEGER_CONSTANT
+                      PsiElement(INTEGER_LITERAL)('10')
+              PsiWhiteSpace('\n        ')
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('AnotherClass')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('multiplier')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Int')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  DESTRUCTURING_DECLARATION
+    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
+      PsiElement(LPAR)('(')
+      DESTRUCTURING_DECLARATION_ENTRY
+        PsiElement(val)('val')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('multiplier')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Int')
+      PsiElement(RPAR)(')')
+    PsiErrorElement:Property getter or setter expected
+      <empty list>
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -120,96 +139,110 @@ KtFile: PropertyAccessorsContracts.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('0')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        BINARY_EXPRESSION
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('get')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
           PsiWhiteSpace(' ')
-          PsiElement(contract)('contract')
+          OPERATION_REFERENCE
+            PsiElement(IDENTIFIER)('contract')
           PsiWhiteSpace(' ')
-          CONTRACT_EFFECT_LIST
+          COLLECTION_LITERAL_EXPRESSION
             PsiElement(LBRACKET)('[')
-            CONTRACT_EFFECT
-              CALL_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('returnsNotNull')
-                VALUE_ARGUMENT_LIST
-                  PsiElement(LPAR)('(')
-                  PsiElement(RPAR)(')')
-            PsiElement(RBRACKET)(']')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              PsiElement(IDENTIFIER)('value')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(contract)('contract')
-          PsiWhiteSpace(' ')
-          CONTRACT_EFFECT_LIST
-            PsiElement(LBRACKET)('[')
-            CONTRACT_EFFECT
-              CALL_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('returns')
-                VALUE_ARGUMENT_LIST
-                  PsiElement(LPAR)('(')
-                  PsiElement(RPAR)(')')
-            PsiElement(RBRACKET)(']')
-          PsiWhiteSpace(' ')
-          BLOCK
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n            ')
-            BINARY_EXPRESSION
+            CALL_EXPRESSION
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('field')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(EQ)('=')
-              PsiWhiteSpace(' ')
-              BINARY_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('value')
-                PsiWhiteSpace(' ')
-                OPERATION_REFERENCE
-                  PsiElement(MUL)('*')
-                PsiWhiteSpace(' ')
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('multiplier')
-            PsiWhiteSpace('\n        ')
-            PsiElement(RBRACE)('}')
+                PsiElement(IDENTIFIER)('returnsNotNull')
+              VALUE_ARGUMENT_LIST
+                PsiElement(LPAR)('(')
+                PsiElement(RPAR)(')')
+            PsiElement(RBRACKET)(']')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        INTEGER_CONSTANT
+          PsiElement(INTEGER_LITERAL)('1')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('set')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            VALUE_ARGUMENT
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('value')
+            PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('contract')
+        PsiWhiteSpace(' ')
+        CALL_EXPRESSION
+          COLLECTION_LITERAL_EXPRESSION
+            PsiElement(LBRACKET)('[')
+            CALL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('returns')
+              VALUE_ARGUMENT_LIST
+                PsiElement(LPAR)('(')
+                PsiElement(RPAR)(')')
+            PsiElement(RBRACKET)(']')
+          PsiWhiteSpace(' ')
+          LAMBDA_ARGUMENT
+            LAMBDA_EXPRESSION
+              FUNCTION_LITERAL
+                PsiElement(LBRACE)('{')
+                PsiWhiteSpace('\n            ')
+                BLOCK
+                  BINARY_EXPRESSION
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('field')
+                    PsiWhiteSpace(' ')
+                    OPERATION_REFERENCE
+                      PsiElement(EQ)('=')
+                    PsiWhiteSpace(' ')
+                    BINARY_EXPRESSION
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('value')
+                      PsiWhiteSpace(' ')
+                      OPERATION_REFERENCE
+                        PsiElement(MUL)('*')
+                      PsiWhiteSpace(' ')
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('multiplier')
+                PsiWhiteSpace('\n        ')
+                PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('SomeClass')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(IDENTIFIER)('multiplier')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            NULLABLE_TYPE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('Int')
-              PsiElement(QUEST)('?')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('multiplier')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Int')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(QUEST)('?')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -227,99 +260,110 @@ KtFile: PropertyAccessorsContracts.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('0')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        BINARY_EXPRESSION
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('get')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
           PsiWhiteSpace(' ')
-          PsiElement(contract)('contract')
+          OPERATION_REFERENCE
+            PsiElement(IDENTIFIER)('contract')
           PsiWhiteSpace(' ')
-          CONTRACT_EFFECT_LIST
+          COLLECTION_LITERAL_EXPRESSION
             PsiElement(LBRACKET)('[')
-            CONTRACT_EFFECT
+            CALL_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('returnsNotNull')
+              VALUE_ARGUMENT_LIST
+                PsiElement(LPAR)('(')
+                PsiElement(RPAR)(')')
+            PsiElement(RBRACKET)(']')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        INTEGER_CONSTANT
+          PsiElement(INTEGER_LITERAL)('1')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('set')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            VALUE_ARGUMENT
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('value')
+            PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('contract')
+        PsiWhiteSpace(' ')
+        CALL_EXPRESSION
+          COLLECTION_LITERAL_EXPRESSION
+            PsiElement(LBRACKET)('[')
+            BINARY_EXPRESSION
               CALL_EXPRESSION
                 REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('returnsNotNull')
+                  PsiElement(IDENTIFIER)('returns')
                 VALUE_ARGUMENT_LIST
                   PsiElement(LPAR)('(')
                   PsiElement(RPAR)(')')
+              PsiWhiteSpace(' ')
+              OPERATION_REFERENCE
+                PsiElement(IDENTIFIER)('implies')
+              PsiWhiteSpace(' ')
+              PARENTHESIZED
+                PsiElement(LPAR)('(')
+                BINARY_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('value')
+                  PsiWhiteSpace(' ')
+                  OPERATION_REFERENCE
+                    PsiElement(EXCLEQ)('!=')
+                  PsiWhiteSpace(' ')
+                  NULL
+                    PsiElement(null)('null')
+                PsiElement(RPAR)(')')
             PsiElement(RBRACKET)(']')
           PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              PsiElement(IDENTIFIER)('value')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(contract)('contract')
-          PsiWhiteSpace(' ')
-          CONTRACT_EFFECT_LIST
-            PsiElement(LBRACKET)('[')
-            CONTRACT_EFFECT
-              BINARY_EXPRESSION
-                CALL_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('returns')
-                  VALUE_ARGUMENT_LIST
-                    PsiElement(LPAR)('(')
-                    PsiElement(RPAR)(')')
-                PsiWhiteSpace(' ')
-                OPERATION_REFERENCE
-                  PsiElement(IDENTIFIER)('implies')
-                PsiWhiteSpace(' ')
-                PARENTHESIZED
-                  PsiElement(LPAR)('(')
+          LAMBDA_ARGUMENT
+            LAMBDA_EXPRESSION
+              FUNCTION_LITERAL
+                PsiElement(LBRACE)('{')
+                PsiWhiteSpace('\n            ')
+                BLOCK
                   BINARY_EXPRESSION
                     REFERENCE_EXPRESSION
                       PsiElement(IDENTIFIER)('value')
                     PsiWhiteSpace(' ')
                     OPERATION_REFERENCE
-                      PsiElement(EXCLEQ)('!=')
+                      PsiElement(ELVIS)('?:')
                     PsiWhiteSpace(' ')
-                    NULL
-                      PsiElement(null)('null')
-                  PsiElement(RPAR)(')')
-            PsiElement(RBRACKET)(']')
-          PsiWhiteSpace(' ')
-          BLOCK
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n            ')
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('value')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(ELVIS)('?:')
-              PsiWhiteSpace(' ')
-              THROW
-                PsiElement(throw)('throw')
-                PsiWhiteSpace(' ')
-                CALL_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('IllegalArgumentException')
-                  VALUE_ARGUMENT_LIST
-                    PsiElement(LPAR)('(')
-                    PsiElement(RPAR)(')')
-            PsiWhiteSpace('\n            ')
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('field')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(EQ)('=')
-              PsiWhiteSpace(' ')
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('value')
-            PsiWhiteSpace('\n        ')
-            PsiElement(RBRACE)('}')
+                    THROW
+                      PsiElement(throw)('throw')
+                      PsiWhiteSpace(' ')
+                      CALL_EXPRESSION
+                        REFERENCE_EXPRESSION
+                          PsiElement(IDENTIFIER)('IllegalArgumentException')
+                        VALUE_ARGUMENT_LIST
+                          PsiElement(LPAR)('(')
+                          PsiElement(RPAR)(')')
+                  PsiWhiteSpace('\n            ')
+                  BINARY_EXPRESSION
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('field')
+                    PsiWhiteSpace(' ')
+                    OPERATION_REFERENCE
+                      PsiElement(EQ)('=')
+                    PsiWhiteSpace(' ')
+                    REFERENCE_EXPRESSION
+                      PsiElement(IDENTIFIER)('value')
+                PsiWhiteSpace('\n        ')
+                PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

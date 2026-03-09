@@ -5,23 +5,28 @@ KtFile: IComparable.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(open)('open')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(open)('open')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('IComparable')
-    TYPE_PARAMETER_LIST
-      PsiElement(LT)('<')
-      TYPE_PARAMETER
-        MODIFIER_LIST
-          PsiElement(in)('in')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('T')
-      PsiElement(GT)('>')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LT)('<')
+  MODIFIER_LIST
+    PsiElement(in)('in')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('T')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(GT)('>')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
       FUN

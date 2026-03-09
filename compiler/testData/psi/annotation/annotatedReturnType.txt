@@ -3,42 +3,44 @@ KtFile: annotatedReturnType.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  CLASS
-    PsiComment(EOL_COMMENT)('// FILE: TypeAnno.kt')
+  PsiComment(EOL_COMMENT)('// FILE: TypeAnno.kt')
+  PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Target')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          DOT_QUALIFIED_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('AnnotationTarget')
+            PsiElement(DOT)('.')
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('TYPE')
+        PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Target')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            DOT_QUALIFIED_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('AnnotationTarget')
-              PsiElement(DOT)('.')
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('TYPE')
-          PsiElement(RPAR)(')')
-      PsiWhiteSpace('\n')
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('TypeAnno')
   PsiWhiteSpace('\n\n')
-  CLASS
-    PsiComment(EOL_COMMENT)('// FILE: RegularAnno.kt')
-    PsiWhiteSpace('\n')
-    MODIFIER_LIST
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+  PsiComment(EOL_COMMENT)('// FILE: RegularAnno.kt')
+  PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('RegularAnno')
   PsiWhiteSpace('\n\n')
   CLASS

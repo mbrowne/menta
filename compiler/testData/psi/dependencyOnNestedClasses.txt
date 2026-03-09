@@ -16,32 +16,33 @@ KtFile: dependencyOnNestedClasses.kt
       PsiElement(DOT)('.')
       PsiElement(MUL)('*')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(public)('public')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(public)('public')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('DependencyOnNestedClasses')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      SUPER_TYPE_CALL_ENTRY
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('D')
-              PsiElement(DOT)('.')
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Nested')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('D')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(DOT)('.')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('Nested')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -157,67 +158,80 @@ KtFile: dependencyOnNestedClasses.kt
   PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('dependency')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('D')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
-        MODIFIER_LIST
-          PsiElement(inner)('inner')
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('inner')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          CLASS
-            MODIFIER_LIST
-              PsiElement(inner)('inner')
+          BLOCK
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('inner')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('Inner')
+            PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+              PsiElement(class)('class')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('Inner')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n    ')
-      CLASS
-        MODIFIER_LIST
-          PsiElement(open)('open')
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('open')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Nested')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          CLASS
-            PsiElement(class)('class')
+          BLOCK
+            PsiErrorElement:Expecting an element
+              PsiElement(class)('class')
             PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('Nested')
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Nested')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiWhiteSpace('\n        ')
-          CLASS
-            PsiElement(class)('class')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiWhiteSpace('\n        ')
+            PsiErrorElement:Expecting member declaration
+              PsiElement(class)('class')
             PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('NestedInClassObject')
-          PsiWhiteSpace('\n    ')
-          PsiElement(RBRACE)('}')
+            PsiErrorElement:Expecting member declaration
+              PsiElement(IDENTIFIER)('NestedInClassObject')
+            PsiWhiteSpace('\n    ')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

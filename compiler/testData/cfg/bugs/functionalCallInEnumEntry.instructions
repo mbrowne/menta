@@ -1,26 +1,21 @@
-== Test ==
-enum class Test(f: () -> Unit) {
+== anonymous_0 ==
+{
     A(getFunc())
 }
 ---------------------
 L0:
   1 <START>
-    v(f: () -> Unit)
-    magic[FAKE_INITIALIZER](f: () -> Unit) -> <v0>
-    w(f|<v0>)
-    v(A(getFunc()))
-    magic[FAKE_INITIALIZER](A(getFunc())) -> <v1>
-    w(A|<v1>)
+  2 mark({ A(getFunc()) })
     mark(getFunc())
-    call(getFunc(), getFunc) -> <v2>
-    mark((getFunc()))
-    call((getFunc()), <init>|<v2>) -> <v3>
+    call(getFunc(), getFunc) -> <v0>
+    mark(A(getFunc()))
+    magic[UNRESOLVED_CALL](A(getFunc())|<v0>, !<v1>) -> <v2>
 L1:
-    <END>                                             NEXT:[<SINK>]
+  1 <END>                                                       NEXT:[<SINK>]
 error:
-    <ERROR>                                           PREV:[]
+    <ERROR>                                                     PREV:[]
 sink:
-    <SINK>                                            PREV:[<ERROR>, <END>]
+    <SINK>                                                      PREV:[<ERROR>, <END>]
 =====================
 == getFunc ==
 fun getFunc(): () -> Unit = {}
@@ -40,7 +35,7 @@ error:
 sink:
     <SINK>            PREV:[<ERROR>, <END>, d({})]
 =====================
-== anonymous_0 ==
+== anonymous_1 ==
 {}
 ---------------------
 L3:

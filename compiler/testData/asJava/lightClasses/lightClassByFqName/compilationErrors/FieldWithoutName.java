@@ -1,3 +1,1 @@
-public final class SimpleClass /* SimpleClass*/ {
-  public  SimpleClass();//  .ctor()
-}
+// NOT_GENERATED

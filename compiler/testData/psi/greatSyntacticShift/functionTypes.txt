@@ -5,12 +5,16 @@ KtFile: functionTypes.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
@@ -27,26 +31,31 @@ KtFile: functionTypes.kt
     BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('B')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(abstract)('abstract')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(abstract)('abstract')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('XXX')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -702,19 +711,23 @@ KtFile: functionTypes.kt
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(abstract)('abstract')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(abstract)('abstract')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('YYY')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -804,11 +817,11 @@ KtFile: functionTypes.kt
                 REFERENCE_EXPRESSION
                   PsiElement(IDENTIFIER)('B')
       PsiWhiteSpace('\n')
+      PsiComment(EOL_COMMENT)('//val a9 : (A, B)')
+      PsiWhiteSpace('\n')
+      PsiComment(EOL_COMMENT)('//val a10 : (B)? -> B')
+      PsiWhiteSpace('\n    ')
       PROPERTY
-        PsiComment(EOL_COMMENT)('//val a9 : (A, B)')
-        PsiWhiteSpace('\n')
-        PsiComment(EOL_COMMENT)('//val a10 : (B)? -> B')
-        PsiWhiteSpace('\n    ')
         PsiElement(val)('val')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('a11')

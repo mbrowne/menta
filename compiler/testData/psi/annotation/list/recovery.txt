@@ -5,20 +5,24 @@ KtFile: recovery.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION
-        PsiElement(AT)('@')
-        PsiElement(LBRACKET)('[')
-        PsiErrorElement:Expecting a list of annotations
-          <empty list>
-        PsiElement(RBRACKET)(']')
-    PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    ANNOTATION
+      PsiElement(AT)('@')
+      PsiElement(LBRACKET)('[')
+      PsiErrorElement:Expecting a list of annotations
+        <empty list>
+      PsiElement(RBRACKET)(']')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -64,18 +68,22 @@ KtFile: recovery.kt
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          CLASS
-            MODIFIER_LIST
+          BINARY_EXPRESSION
+            ANNOTATED_EXPRESSION
               ANNOTATION
                 PsiElement(AT)('@')
                 PsiElement(LBRACKET)('[')
                 PsiErrorElement:Expecting a list of annotations
                   <empty list>
                 PsiElement(RBRACKET)(']')
+              PsiWhiteSpace(' ')
+              PsiErrorElement:Expecting an element
+                PsiElement(class)('class')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('A')
+            OPERATION_REFERENCE
+              PsiElement(IDENTIFIER)('A')
+            PsiErrorElement:Expecting an element
+              <empty list>
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')

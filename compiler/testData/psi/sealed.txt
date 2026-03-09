@@ -7,33 +7,32 @@ KtFile: sealed.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(sealed)('sealed')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(sealed)('sealed')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Sealed')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('Nested')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_CALL_ENTRY
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Sealed')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
+        PsiElement(IDENTIFIER)('Sealed')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       OBJECT_DECLARATION
         PsiElement(object)('object')

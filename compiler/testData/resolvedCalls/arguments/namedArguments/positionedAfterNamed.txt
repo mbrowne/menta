@@ -10,7 +10,7 @@ fun bar() {
 
 Resolved call:
 
-Resulting descriptor: fun foo(a: A, b: B): Unit defined in root package
+Resulting descriptor: fun foo(a: [Error type: Unresolved type for A], b: [Error type: Unresolved type for B]): Unit defined in root package
 
 Explicit receiver kind = NO_EXPLICIT_RECEIVER
 Dispatch receiver = NO_RECEIVER
@@ -18,5 +18,5 @@ Extension receiver = NO_RECEIVER
 
 Value arguments mapping:
 
-SUCCESS  b : B = B()
+SUCCESS  b : [Error type: Unresolved type for B] = B()
 ARGUMENT UNMAPPED:  A()

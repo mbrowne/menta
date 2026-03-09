@@ -161,12 +161,13 @@ KtFile: annotatedProperty.kt
         PsiElement(REGULAR_STRING_PART)('OK')
       PsiElement(CLOSING_QUOTE)('"')
   PsiWhiteSpace('\n\n')
-  CLASS
-    PsiComment(EOL_COMMENT)('// FILE: Anno.kt')
-    PsiWhiteSpace('\n')
-    MODIFIER_LIST
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+  PsiComment(EOL_COMMENT)('// FILE: Anno.kt')
+  PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Anno')

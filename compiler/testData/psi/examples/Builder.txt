@@ -237,147 +237,152 @@ KtFile: Builder.kt
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('AntBuilder')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      CLASS
-        MODIFIER_LIST
-          PsiElement(abstract)('abstract')
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('abstract')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('ClassPathEntry')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n  ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('Module')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_ENTRY
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('ClassPathEntry')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
+        PsiElement(IDENTIFIER)('ClassPathEntry')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
-          FUN
-            PsiElement(fun)('fun')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('classpath')
-            VALUE_PARAMETER_LIST
-              PsiElement(LPAR)('(')
-              VALUE_PARAMETER
-                PsiElement(IDENTIFIER)('entries')
+          BLOCK
+            FUN
+              PsiElement(fun)('fun')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('classpath')
+              VALUE_PARAMETER_LIST
+                PsiElement(LPAR)('(')
+                VALUE_PARAMETER
+                  PsiElement(IDENTIFIER)('entries')
+                  PsiWhiteSpace(' ')
+                  PsiElement(COLON)(':')
+                  PsiWhiteSpace(' ')
+                  TYPE_REFERENCE
+                    USER_TYPE
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('ClassPathEntry')
+                  PsiComment(BLOCK_COMMENT)('/*...*/')
+                PsiElement(RPAR)(')')
+              PsiWhiteSpace(' ')
+              BLOCK
+                PsiElement(LBRACE)('{')
                 PsiWhiteSpace(' ')
-                PsiElement(COLON)(':')
-                PsiWhiteSpace(' ')
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('ClassPathEntry')
                 PsiComment(BLOCK_COMMENT)('/*...*/')
-              PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            BLOCK
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace(' ')
-              PsiComment(BLOCK_COMMENT)('/*...*/')
-              PsiWhiteSpace(' ')
-              PsiElement(RBRACE)('}')
-          PsiWhiteSpace('\n    ')
-          PROPERTY
-            PsiElement(var)('var')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('targetLevel')
-            PsiWhiteSpace(' ')
-            PsiElement(COLON)(':')
-            PsiWhiteSpace(' ')
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('String')
-          PsiWhiteSpace('\n    ')
-          FUN
-            PsiElement(fun)('fun')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('src')
-            VALUE_PARAMETER_LIST
-              PsiElement(LPAR)('(')
-              VALUE_PARAMETER
-                PsiElement(IDENTIFIER)('src')
                 PsiWhiteSpace(' ')
-                PsiElement(COLON)(':')
+                PsiElement(RBRACE)('}')
+            PsiWhiteSpace('\n    ')
+            PROPERTY
+              PsiElement(var)('var')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('targetLevel')
+              PsiWhiteSpace(' ')
+              PsiElement(COLON)(':')
+              PsiWhiteSpace(' ')
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('String')
+            PsiWhiteSpace('\n    ')
+            FUN
+              PsiElement(fun)('fun')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('src')
+              VALUE_PARAMETER_LIST
+                PsiElement(LPAR)('(')
+                VALUE_PARAMETER
+                  PsiElement(IDENTIFIER)('src')
+                  PsiWhiteSpace(' ')
+                  PsiElement(COLON)(':')
+                  PsiWhiteSpace(' ')
+                  TYPE_REFERENCE
+                    USER_TYPE
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('String')
+                PsiElement(RPAR)(')')
+              PsiWhiteSpace(' ')
+              BLOCK
+                PsiElement(LBRACE)('{')
                 PsiWhiteSpace(' ')
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('String')
-              PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            BLOCK
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace(' ')
-              PsiComment(BLOCK_COMMENT)('/*...*/')
-              PsiWhiteSpace(' ')
-              PsiElement(RBRACE)('}')
+                PsiComment(BLOCK_COMMENT)('/*...*/')
+                PsiWhiteSpace(' ')
+                PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n  ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n  ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('Library')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_ENTRY
-            TYPE_REFERENCE
-              USER_TYPE
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('ClassPathEntry')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
+        PsiElement(IDENTIFIER)('ClassPathEntry')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
-          FUN
-            PsiElement(fun)('fun')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('classpath')
-            VALUE_PARAMETER_LIST
-              PsiElement(LPAR)('(')
-              VALUE_PARAMETER
-                PsiElement(IDENTIFIER)('entries')
+          BLOCK
+            FUN
+              PsiElement(fun)('fun')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('classpath')
+              VALUE_PARAMETER_LIST
+                PsiElement(LPAR)('(')
+                VALUE_PARAMETER
+                  PsiElement(IDENTIFIER)('entries')
+                  PsiWhiteSpace(' ')
+                  PsiElement(COLON)(':')
+                  PsiWhiteSpace(' ')
+                  TYPE_REFERENCE
+                    USER_TYPE
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('ClassPathEntry')
+                  PsiComment(BLOCK_COMMENT)('/*...*/')
+                PsiElement(RPAR)(')')
+              PsiWhiteSpace(' ')
+              BLOCK
+                PsiElement(LBRACE)('{')
                 PsiWhiteSpace(' ')
-                PsiElement(COLON)(':')
-                PsiWhiteSpace(' ')
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('ClassPathEntry')
                 PsiComment(BLOCK_COMMENT)('/*...*/')
-              PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            BLOCK
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace(' ')
-              PsiComment(BLOCK_COMMENT)('/*...*/')
-              PsiWhiteSpace(' ')
-              PsiElement(RBRACE)('}')
+                PsiWhiteSpace(' ')
+                PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n  ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n  ')

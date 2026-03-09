@@ -3,43 +3,44 @@ KtFile: annotatedContextParameterType.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  CLASS
-    PsiComment(EOL_COMMENT)('// LANGUAGE: +ContextParameters')
+  PsiComment(EOL_COMMENT)('// LANGUAGE: +ContextParameters')
+  PsiWhiteSpace('\n')
+  PsiComment(EOL_COMMENT)('// FILE: MyAnnotation.kt')
+  PsiWhiteSpace('\n')
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Target')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          DOT_QUALIFIED_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('AnnotationTarget')
+            PsiElement(DOT)('.')
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('TYPE')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace(' ')
+        VALUE_ARGUMENT
+          DOT_QUALIFIED_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('AnnotationTarget')
+            PsiElement(DOT)('.')
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('VALUE_PARAMETER')
+        PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiComment(EOL_COMMENT)('// FILE: MyAnnotation.kt')
-    PsiWhiteSpace('\n')
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Target')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            DOT_QUALIFIED_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('AnnotationTarget')
-              PsiElement(DOT)('.')
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('TYPE')
-          PsiElement(COMMA)(',')
-          PsiWhiteSpace(' ')
-          VALUE_ARGUMENT
-            DOT_QUALIFIED_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('AnnotationTarget')
-              PsiElement(DOT)('.')
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('VALUE_PARAMETER')
-          PsiElement(RPAR)(')')
-      PsiWhiteSpace('\n')
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('MyAnnotation')
   PsiWhiteSpace('\n\n')
   CLASS

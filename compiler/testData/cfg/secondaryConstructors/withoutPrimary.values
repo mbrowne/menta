@@ -1,5 +1,5 @@
-== A ==
-class A {
+== anonymous_0 ==
+{
     val x: Int
     var y: Int
     val z: Int
@@ -32,74 +32,89 @@ class A {
     }
 }
 ---------------------
+1                                                                                                                                                                                                                                                                                                         <v0>: Int   NEW: r(1) -> <v0>
+-1                                                                                                                                                                                                                                                                                                        <v1>: Int   NEW: call(-1, unaryMinus|<v0>) -> <v1>
+constructor                                                                                                                                                                                                                                                                                               !<v3>: *
+{ x = 1 y = 2 }                                                                                                                                                                                                                                                                                           <v2>: *     NEW: r({ x = 1 y = 2 }) -> <v2>
+constructor() { x = 1 y = 2 }                                                                                                                                                                                                                                                                             <v4>: *     NEW: magic[UNRESOLVED_CALL](constructor() { x = 1 y = 2 }|<v2>, !<v3>) -> <v4>
+constructor                                                                                                                                                                                                                                                                                               !<v7>: *
+a                                                                                                                                                                                                                                                                                                         <v5>: *     NEW: magic[UNRESOLVED_CALL](a) -> <v5>
+b                                                                                                                                                                                                                                                                                                         <v6>: *     NEW: magic[UNRESOLVED_CALL](b) -> <v6>
+constructor(a: Int, b: Int =                                                                                                                                                                                                                                                                              <v8>: *     NEW: magic[UNRESOLVED_CALL](constructor(a: Int, b: Int =|<v5>, <v6>, !<v7>) -> <v8>
+{ x = a y = x }                                                                                                                                                                                                                                                                                           <v9>: *     NEW: r({ x = a y = x }) -> <v9>
+init                                                                                                                                                                                                                                                                                                      !<v11>: *
+{ z = 8 }                                                                                                                                                                                                                                                                                                 <v10>: *    NEW: r({ z = 8 }) -> <v10>
+init { z = 8 }                                                                                                                                                                                                                                                                                            <v12>: *    NEW: magic[UNRESOLVED_CALL](init { z = 8 }|<v10>, !<v11>) -> <v12>
+constructor                                                                                                                                                                                                                                                                                               !<v15>: *
+a                                                                                                                                                                                                                                                                                                         <v13>: *    NEW: magic[UNRESOLVED_CALL](a) -> <v13>
+b                                                                                                                                                                                                                                                                                                         <v14>: *    NEW: magic[UNRESOLVED_CALL](b) -> <v14>
+constructor(a: String, b: Int =                                                                                                                                                                                                                                                                           <v16>: *    NEW: magic[UNRESOLVED_CALL](constructor(a: String, b: Int =|<v13>, <v14>, !<v15>) -> <v16>
+{ y = 5 }                                                                                                                                                                                                                                                                                                 <v17>: *    NEW: r({ y = 5 }) -> <v17>
+constructor                                                                                                                                                                                                                                                                                               !<v20>: *
+a                                                                                                                                                                                                                                                                                                         <v18>: *    NEW: magic[UNRESOLVED_CALL](a) -> <v18>
+b                                                                                                                                                                                                                                                                                                         <v19>: *    NEW: magic[UNRESOLVED_CALL](b) -> <v19>
+constructor(a: Double, b: Int =                                                                                                                                                                                                                                                                           <v21>: *    NEW: magic[UNRESOLVED_CALL](constructor(a: Double, b: Int =|<v18>, <v19>, !<v20>) -> <v21>
+{ y = 7 }                                                                                                                                                                                                                                                                                                 <v22>: *    NEW: r({ y = 7 }) -> <v22>
+init                                                                                                                                                                                                                                                                                                      !<v24>: *
+{ y = 9 }                                                                                                                                                                                                                                                                                                 <v23>: *    NEW: r({ y = 9 }) -> <v23>
+init { y = 9 }                                                                                                                                                                                                                                                                                            <v25>: *    NEW: magic[UNRESOLVED_CALL](init { y = 9 }|<v23>, !<v24>) -> <v25>
+{ val x: Int var y: Int val z: Int val v = -1 constructor() { x = 1 y = 2 } constructor(a: Int, b: Int = 3) { x = a y = x } //anonymous init { z = 8 } constructor(a: String, b: Int = 4): this() { y = 5 } constructor(a: Double, b: Int = 6): this(a.toInt()) { y = 7 } // anonymous init { y = 9 } }   <v25>: *    COPY
 =====================
-== A ==
-constructor() {
+== anonymous_1 ==
+{
         x = 1
         y = 2
     }
 ---------------------
-                  <v11>: A     NEW: magic[IMPLICIT_RECEIVER](y) -> <v11>
-                  <v3>: A      NEW: magic[IMPLICIT_RECEIVER](z) -> <v3>
-                  <v6>: A      NEW: magic[IMPLICIT_RECEIVER](y) -> <v6>
-                  <v9>: A      NEW: magic[IMPLICIT_RECEIVER](x) -> <v9>
-                  <v0>: *      NEW: call(, <init>) -> <v0>
-1                 <v10>: Int   NEW: r(1) -> <v10>
-2                 <v12>: Int   NEW: r(2) -> <v12>
-y = 2             !<v13>: *
-{ x = 1 y = 2 }   !<v13>: *    COPY
+1             <v0>: Int   NEW: r(1) -> <v0>
+2             <v1>: Int   NEW: r(2) -> <v1>
+y = 2         !<v2>: *
+x = 1 y = 2   !<v2>: *    COPY
 =====================
-== A ==
-constructor(a: Int, b: Int = 3) {
+== anonymous_2 ==
+{
         x = a
         y = x
     }
 ---------------------
-                  <v0>: Int    NEW: magic[FAKE_INITIALIZER](a: Int) -> <v0>
-                  <v10>: A     NEW: magic[IMPLICIT_RECEIVER](y) -> <v10>
-                  <v13>: A     NEW: magic[IMPLICIT_RECEIVER](x) -> <v13>
-                  <v15>: A     NEW: magic[IMPLICIT_RECEIVER](y) -> <v15>
-                  <v16>: A     NEW: magic[IMPLICIT_RECEIVER](x) -> <v16>
-                  <v2>: Int    NEW: magic[FAKE_INITIALIZER](b: Int = 3) -> <v2>
-                  <v7>: A      NEW: magic[IMPLICIT_RECEIVER](z) -> <v7>
-3                 <v1>: Int    NEW: r(3) -> <v1>
-b: Int = 3        <v3>: Int    NEW: merge(b: Int = 3|<v1>, <v2>) -> <v3>
-                  <v4>: *      NEW: call(, <init>) -> <v4>
-a                 <v14>: Int   NEW: r(a) -> <v14>
-x                 <v17>: Int   NEW: r(x|<v16>) -> <v17>
-y = x             !<v18>: *
-{ x = a y = x }   !<v18>: *    COPY
+a             <v0>: Int   NEW: magic[UNRESOLVED_CALL](a) -> <v0>
+x             <v1>: Int   NEW: r(x) -> <v1>
+y = x         !<v2>: *
+x = a y = x   !<v2>: *    COPY
 =====================
-== A ==
-constructor(a: String, b: Int = 4): this() {
+== anonymous_3 ==
+{
+        z = 8
+    }
+---------------------
+8       <v0>: Int   NEW: r(8) -> <v0>
+z = 8   !<v1>: *
+z = 8   !<v1>: *    COPY
+=====================
+== anonymous_4 ==
+{
         y = 5
     }
 ---------------------
-             <v0>: String   NEW: magic[FAKE_INITIALIZER](a: String) -> <v0>
-             <v2>: Int      NEW: magic[FAKE_INITIALIZER](b: Int = 4) -> <v2>
-             <v5>: A        NEW: magic[IMPLICIT_RECEIVER](y) -> <v5>
-4            <v1>: Int      NEW: r(4) -> <v1>
-b: Int = 4   <v3>: Int      NEW: merge(b: Int = 4|<v1>, <v2>) -> <v3>
-this()       <v4>: *        NEW: call(this(), <init>) -> <v4>
-5            <v6>: Int      NEW: r(5) -> <v6>
-y = 5        !<v7>: *
-{ y = 5 }    !<v7>: *       COPY
+5       <v0>: Int   NEW: r(5) -> <v0>
+y = 5   !<v1>: *
+y = 5   !<v1>: *    COPY
 =====================
-== A ==
-constructor(a: Double, b: Int = 6): this(a.toInt()) {
+== anonymous_5 ==
+{
         y = 7
     }
 ---------------------
-                  <v0>: Double        NEW: magic[FAKE_INITIALIZER](a: Double) -> <v0>
-                  <v2>: Int           NEW: magic[FAKE_INITIALIZER](b: Int = 6) -> <v2>
-                  <v7>: A             NEW: magic[IMPLICIT_RECEIVER](y) -> <v7>
-6                 <v1>: Int           NEW: r(6) -> <v1>
-b: Int = 6        <v3>: Int           NEW: merge(b: Int = 6|<v1>, <v2>) -> <v3>
-a                 <v4>: {<: Number}   NEW: r(a) -> <v4>
-toInt()           <v5>: Int           NEW: call(toInt(), toInt|<v4>) -> <v5>
-a.toInt()         <v5>: Int           COPY
-this(a.toInt())   <v6>: *             NEW: call(this(a.toInt()), <init>|<v5>) -> <v6>
-7                 <v8>: Int           NEW: r(7) -> <v8>
-y = 7             !<v9>: *
-{ y = 7 }         !<v9>: *            COPY
+7       <v0>: Int   NEW: r(7) -> <v0>
+y = 7   !<v1>: *
+y = 7   !<v1>: *    COPY
+=====================
+== anonymous_6 ==
+{
+        y = 9
+    }
+---------------------
+9       <v0>: Int   NEW: r(9) -> <v0>
+y = 9   !<v1>: *
+y = 9   !<v1>: *    COPY
 =====================

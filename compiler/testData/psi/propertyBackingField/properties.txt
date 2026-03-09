@@ -18,29 +18,35 @@ KtFile: properties.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('KProperty')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(abstract)('abstract')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(abstract)('abstract')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Foo')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(var)('var')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('fromConstructor')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('String')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  DESTRUCTURING_DECLARATION
+    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
+      PsiElement(LPAR)('(')
+      DESTRUCTURING_DECLARATION_ENTRY
+        PsiElement(var)('var')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('fromConstructor')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('String')
+      PsiElement(RPAR)(')')
+    PsiErrorElement:Property getter or setter expected
+      <empty list>
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -78,59 +84,70 @@ KtFile: properties.kt
           LITERAL_STRING_TEMPLATE_ENTRY
             PsiElement(REGULAR_STRING_PART)('custom')
           PsiElement(CLOSING_QUOTE)('"')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
           REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('field')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
-          VALUE_PARAMETER_LIST
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              PsiElement(IDENTIFIER)('value')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          BLOCK
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n            ')
-            BINARY_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('field')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(EQ)('=')
-              PsiWhiteSpace(' ')
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('value')
-            PsiWhiteSpace('\n        ')
-            PsiElement(RBRACE)('}')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('field')
+      PsiWhiteSpace('\n        ')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('set')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('value')
+          PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n            ')
+              BLOCK
+                BINARY_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('field')
+                  PsiWhiteSpace(' ')
+                  OPERATION_REFERENCE
+                    PsiElement(EQ)('=')
+                  PsiWhiteSpace(' ')
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('value')
+              PsiWhiteSpace('\n        ')
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('customGetter')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
           PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          STRING_TEMPLATE
-            PsiElement(OPEN_QUOTE)('"')
-            LITERAL_STRING_TEMPLATE_ENTRY
-              PsiElement(REGULAR_STRING_PART)('Foo')
-            PsiElement(CLOSING_QUOTE)('"')
+        PsiWhiteSpace(' ')
+        STRING_TEMPLATE
+          PsiElement(OPEN_QUOTE)('"')
+          LITERAL_STRING_TEMPLATE_ENTRY
+            PsiElement(REGULAR_STRING_PART)('Foo')
+          PsiElement(CLOSING_QUOTE)('"')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(var)('var')
@@ -147,19 +164,25 @@ KtFile: properties.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('0')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
+      PsiWhiteSpace('\n        ')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('set')
+        VALUE_ARGUMENT_LIST
+          PsiElement(LPAR)('(')
+          VALUE_ARGUMENT
+            REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('value')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          BLOCK
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n        ')
-            PsiElement(RBRACE)('}')
+          PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n        ')
+              BLOCK
+                <empty list>
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -213,18 +236,18 @@ KtFile: properties.kt
           LITERAL_STRING_TEMPLATE_ENTRY
             PsiElement(REGULAR_STRING_PART)('Foo')
           PsiElement(CLOSING_QUOTE)('"')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          MODIFIER_LIST
-            ANNOTATION_ENTRY
-              PsiElement(AT)('@')
-              CONSTRUCTOR_CALLEE
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Anno')
-          PsiWhiteSpace(' ')
-          PsiElement(get)('get')
+      PsiWhiteSpace('\n        ')
+      ANNOTATED_EXPRESSION
+        ANNOTATION_ENTRY
+          PsiElement(AT)('@')
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Anno')
+        PsiWhiteSpace(' ')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('get')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(var)('var')
@@ -244,12 +267,15 @@ KtFile: properties.kt
           LITERAL_STRING_TEMPLATE_ENTRY
             PsiElement(REGULAR_STRING_PART)('Bar')
           PsiElement(CLOSING_QUOTE)('"')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          MODIFIER_LIST
-            PsiElement(private)('private')
-          PsiWhiteSpace(' ')
-          PsiElement(set)('set')
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('private')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('set')
+        PsiErrorElement:Expecting an element
+          <empty list>
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -266,17 +292,15 @@ KtFile: properties.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('0')
+        PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        PsiElement(INTEGER_LITERAL)('0')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -288,35 +312,42 @@ KtFile: properties.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-        PsiWhiteSpace('\n        ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
+      PsiWhiteSpace('\n        ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('get')
+          VALUE_ARGUMENT_LIST
             PsiElement(LPAR)('(')
             PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('field')
-      PsiWhiteSpace('\n\n    ')
-      CLASS_INITIALIZER
-        PsiElement(init)('init')
         PsiWhiteSpace(' ')
-        BLOCK
-          PsiElement(LBRACE)('{')
-          PsiWhiteSpace('\n        ')
-          BINARY_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('postponed')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(EQ)('=')
-            PsiWhiteSpace(' ')
-            INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('1')
-          PsiWhiteSpace('\n    ')
-          PsiElement(RBRACE)('}')
+        OPERATION_REFERENCE
+          PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('field')
+      PsiWhiteSpace('\n\n    ')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('init')
+        PsiWhiteSpace(' ')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n        ')
+              BLOCK
+                BINARY_EXPRESSION
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('postponed')
+                  PsiWhiteSpace(' ')
+                  OPERATION_REFERENCE
+                    PsiElement(EQ)('=')
+                  PsiWhiteSpace(' ')
+                  INTEGER_CONSTANT
+                    PsiElement(INTEGER_LITERAL)('1')
+              PsiWhiteSpace('\n    ')
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       PROPERTY
         MODIFIER_LIST
@@ -413,10 +444,10 @@ KtFile: properties.kt
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      CLASS
-        MODIFIER_LIST
-          PsiElement(annotation)('annotation')
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('annotation')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Anno')

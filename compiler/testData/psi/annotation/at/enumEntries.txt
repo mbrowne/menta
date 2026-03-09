@@ -5,150 +5,135 @@ KtFile: enumEntries.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(enum)('enum')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(enum)('enum')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      ENUM_ENTRY
-        MODIFIER_LIST
-          ANNOTATION
-            PsiElement(AT)('@')
-            PsiElement(LBRACKET)('[')
-            ANNOTATION_ENTRY
-              CONSTRUCTOR_CALLEE
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Ann')
-            PsiElement(RBRACKET)(']')
-          PsiWhiteSpace(' ')
+      ANNOTATED_EXPRESSION
+        ANNOTATION
+          PsiElement(AT)('@')
+          PsiElement(LBRACKET)('[')
           ANNOTATION_ENTRY
-            PsiElement(AT)('@')
             CONSTRUCTOR_CALLEE
               TYPE_REFERENCE
                 USER_TYPE
                   REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('Ann')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              VALUE_ARGUMENT
-                INTEGER_CONSTANT
-                  PsiElement(INTEGER_LITERAL)('1')
-              PsiElement(RPAR)(')')
+          PsiElement(RBRACKET)(']')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('X')
-        INITIALIZER_LIST
-          SUPER_TYPE_CALL_ENTRY
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  ENUM_ENTRY_SUPERCLASS_REFERENCE_EXPRESSION
-                    <empty list>
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
+        ANNOTATION_ENTRY
+          PsiElement(AT)('@')
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Ann')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            VALUE_ARGUMENT
+              INTEGER_CONSTANT
+                PsiElement(INTEGER_LITERAL)('1')
+            PsiElement(RPAR)(')')
+        PsiWhiteSpace(' ')
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('X')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
       PsiWhiteSpace('\n\n    ')
-      ENUM_ENTRY
-        MODIFIER_LIST
-          ANNOTATION_ENTRY
-            PsiElement(AT)('@')
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Ann')
+      ANNOTATED_EXPRESSION
+        ANNOTATION_ENTRY
+          PsiElement(AT)('@')
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Ann')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Y')
-        INITIALIZER_LIST
-          SUPER_TYPE_CALL_ENTRY
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  ENUM_ENTRY_SUPERCLASS_REFERENCE_EXPRESSION
-                    <empty list>
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('Y')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          LAMBDA_ARGUMENT
+            LAMBDA_EXPRESSION
+              FUNCTION_LITERAL
+                PsiElement(LBRACE)('{')
+                BLOCK
+                  <empty list>
+                PsiElement(RBRACE)('}')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
       PsiWhiteSpace('\n\n    ')
-      ENUM_ENTRY
-        MODIFIER_LIST
-          PsiElement(private)('private')
-          PsiWhiteSpace(' ')
-          ANNOTATION_ENTRY
-            PsiElement(AT)('@')
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Ann')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('private')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('Ann')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Z')
-        INITIALIZER_LIST
-          SUPER_TYPE_CALL_ENTRY
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  ENUM_ENTRY_SUPERCLASS_REFERENCE_EXPRESSION
-                    <empty list>
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
         PsiElement(COMMA)(',')
       PsiWhiteSpace('\n\n    ')
-      ENUM_ENTRY
-        MODIFIER_LIST
-          ANNOTATION_ENTRY
-            PsiElement(AT)('@')
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Ann')
-          PsiWhiteSpace(' ')
-          ANNOTATION_ENTRY
-            PsiElement(AT)('@')
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('private')
+      ANNOTATED_EXPRESSION
+        ANNOTATION_ENTRY
+          PsiElement(AT)('@')
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Ann')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Q')
+        ANNOTATION_ENTRY
+          PsiElement(AT)('@')
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('private')
+        PsiWhiteSpace(' ')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('Q')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COMMA)(',')
       PsiWhiteSpace('\n\n    ')
-      ENUM_ENTRY
-        PsiComment(EOL_COMMENT)('// TODO: try to make Ann() working here (?)')
-        PsiWhiteSpace('\n    ')
-        MODIFIER_LIST
-          ANNOTATION_ENTRY
-            PsiElement(AT)('@')
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Ann')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
+      PsiComment(EOL_COMMENT)('// TODO: try to make Ann() working here (?)')
+      PsiWhiteSpace('\n    ')
+      ANNOTATED_EXPRESSION
+        ANNOTATION_ENTRY
+          PsiElement(AT)('@')
+          CONSTRUCTOR_CALLEE
+            TYPE_REFERENCE
+              USER_TYPE
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('Ann')
+          VALUE_ARGUMENT_LIST
+            PsiElement(LPAR)('(')
+            PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('W')
-        PsiElement(SEMICOLON)(';')
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('W')
+      PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
       FUN
         MODIFIER_LIST

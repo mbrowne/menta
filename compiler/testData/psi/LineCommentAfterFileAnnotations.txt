@@ -20,12 +20,16 @@ KtFile: LineCommentAfterFileAnnotations.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n')
-  CLASS
-    PsiComment(EOL_COMMENT)('// class C')
-    PsiWhiteSpace('\n')
+  PsiComment(EOL_COMMENT)('// class C')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('C')
-    CLASS_BODY
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiElement(RBRACE)('}')

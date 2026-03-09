@@ -5,16 +5,20 @@ KtFile: PropertiesFollowedByInitializers.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Foo')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
       PROPERTY
@@ -28,21 +32,13 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          PsiErrorElement:Accessor body expected
-            <empty list>
-          PsiWhiteSpace(' ')
-          VALUE_PARAMETER_LIST
-            PsiErrorElement:Expecting '('
-              <empty list>
-            PsiErrorElement:Expecting ')'
-              <empty list>
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
+        PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        PsiElement(INTEGER_LITERAL)('1')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(var)('var')
@@ -55,21 +51,20 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
-          PsiElement(SEMICOLON)(';')
+        PsiElement(EQ)('=')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting an element
+        PsiElement(SEMICOLON)(';')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('set')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(var)('var')
@@ -82,36 +77,30 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          INTEGER_CONSTANT
-            PsiElement(INTEGER_LITERAL)('1')
-          PsiElement(SEMICOLON)(';')
+        PsiElement(EQ)('=')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
-          PsiErrorElement:Accessor body expected
-            <empty list>
-          PsiWhiteSpace(' ')
-          VALUE_PARAMETER_LIST
-            PsiErrorElement:Expecting '('
-              <empty list>
-            VALUE_PARAMETER
-              <empty list>
-            PsiErrorElement:Expecting ')'
-              <empty list>
-          BLOCK
-            PsiElement(LBRACE)('{')
-            INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('1')
-            PsiElement(RBRACE)('}')
+        PsiElement(INTEGER_LITERAL)('1')
+      PsiErrorElement:Expecting an element
+        PsiElement(SEMICOLON)(';')
+      PsiWhiteSpace(' ')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('set')
+        PsiWhiteSpace(' ')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              BLOCK
+                INTEGER_CONSTANT
+                  PsiElement(INTEGER_LITERAL)('1')
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -124,17 +113,22 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
       PsiWhiteSpace('\n  ')
-      CLASS_INITIALIZER
-        PsiElement(init)('init')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('init')
         PsiWhiteSpace(' ')
-        BLOCK
-          PsiElement(LBRACE)('{')
-          PsiWhiteSpace('\n\n  ')
-          PsiElement(RBRACE)('}')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n\n  ')
+              BLOCK
+                <empty list>
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -147,27 +141,22 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-          PsiErrorElement:Accessor body expected
-            <empty list>
-          PsiWhiteSpace(' ')
-          VALUE_PARAMETER_LIST
-            PsiErrorElement:Expecting '('
-              <empty list>
-            PsiErrorElement:Expecting ')'
-              <empty list>
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
+          PsiElement(LBRACE)('{')
+          PsiWhiteSpace('\n    ')
           BLOCK
-            PsiElement(LBRACE)('{')
-            PsiWhiteSpace('\n    ')
             RETURN
               PsiElement(return)('return')
               PsiWhiteSpace(' ')
               INTEGER_CONSTANT
                 PsiElement(INTEGER_LITERAL)('1')
-            PsiWhiteSpace('\n  ')
-            PsiElement(RBRACE)('}')
+          PsiWhiteSpace('\n  ')
+          PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(val)('val')
@@ -180,18 +169,24 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+      PsiErrorElement:Expecting an element
         PsiElement(SEMICOLON)(';')
       PsiWhiteSpace(' ')
-      CLASS_INITIALIZER
-        PsiElement(init)('init')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('init')
         PsiWhiteSpace(' ')
-        BLOCK
-          PsiElement(LBRACE)('{')
-          PsiWhiteSpace('\n  ')
-          PsiElement(RBRACE)('}')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n  ')
+              BLOCK
+                <empty list>
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n  ')
       PROPERTY
         PsiElement(var)('var')
@@ -204,15 +199,13 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
+        PsiElement(IDENTIFIER)('abstract')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          MODIFIER_LIST
-            PsiElement(abstract)('abstract')
-          PsiWhiteSpace(' ')
-          PsiElement(set)('set')
+        PsiElement(IDENTIFIER)('set')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(var)('var')
@@ -225,26 +218,18 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
+        PsiElement(AT)('@')
+        PsiElement(LBRACKET)('[')
+        PsiElement(IDENTIFIER)('a')
+        PsiElement(RBRACKET)(']')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          MODIFIER_LIST
-            ANNOTATION
-              PsiElement(AT)('@')
-              PsiElement(LBRACKET)('[')
-              ANNOTATION_ENTRY
-                CONSTRUCTOR_CALLEE
-                  TYPE_REFERENCE
-                    USER_TYPE
-                      REFERENCE_EXPRESSION
-                        PsiElement(IDENTIFIER)('a')
-              PsiElement(RBRACKET)(']')
-            PsiWhiteSpace(' ')
-            PsiElement(abstract)('abstract')
-          PsiWhiteSpace(' ')
-          PsiElement(set)('set')
+        PsiElement(IDENTIFIER)('abstract')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('set')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(var)('var')
@@ -257,23 +242,22 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-        PsiWhiteSpace(' ')
-        PsiErrorElement:Property getter or setter expected
-          PsiElement(AT)('@')
-          PsiElement(LBRACKET)('[')
-          PsiElement(IDENTIFIER)('a')
-          PsiElement(RBRACKET)(']')
-          PsiWhiteSpace(' ')
-          PsiElement(abstract)('abstract')
       PsiWhiteSpace(' ')
-      FUN
-        PsiErrorElement:Expecting member declaration
-          <empty list>
-        BLOCK
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+        PsiWhiteSpace(' ')
+        PsiElement(AT)('@')
+        PsiElement(LBRACKET)('[')
+        PsiElement(IDENTIFIER)('a')
+        PsiElement(RBRACKET)(']')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('abstract')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n  ')
       PROPERTY
@@ -287,23 +271,16 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('a')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          MODIFIER_LIST
-            ANNOTATION_ENTRY
-              PsiElement(AT)('@')
-              CONSTRUCTOR_CALLEE
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('a')
-            PsiWhiteSpace(' ')
-            PsiElement(abstract)('abstract')
-          PsiWhiteSpace(' ')
-          PsiElement(set)('set')
+        PsiElement(IDENTIFIER)('abstract')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('set')
       PsiWhiteSpace('\n  ')
       PROPERTY
         PsiElement(var)('var')
@@ -316,35 +293,38 @@ KtFile: PropertiesFollowedByInitializers.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Int')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-        PsiWhiteSpace(' ')
-        PsiErrorElement:Property getter or setter expected
-          PsiElement(AT)('@')
-          PsiElement(IDENTIFIER)('a')
-          PsiWhiteSpace(' ')
-          PsiElement(abstract)('abstract')
       PsiWhiteSpace(' ')
-      FUN
-        PsiErrorElement:Expecting member declaration
-          <empty list>
-        BLOCK
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
+        PsiWhiteSpace(' ')
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('a')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('abstract')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('PublicVar')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace(' ')
       PROPERTY
@@ -359,20 +339,24 @@ KtFile: PropertiesFollowedByInitializers.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('0')
-        PsiElement(SEMICOLON)(';')
+      PsiElement(SEMICOLON)(';')
       PsiWhiteSpace(' ')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('PublicVar')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace(' ')
       PROPERTY
@@ -387,7 +371,7 @@ KtFile: PropertiesFollowedByInitializers.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('0')
-        PsiElement(SEMICOLON)(';')
+      PsiElement(SEMICOLON)(';')
       PsiWhiteSpace(' ')
       PROPERTY
         PsiElement(var)('var')
@@ -403,16 +387,20 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiWhiteSpace(' ')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('PublicVar')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace(' ')
       PROPERTY
@@ -430,16 +418,20 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiWhiteSpace(' ')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('PublicVar')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace(' ')
       PROPERTY
@@ -449,25 +441,28 @@ KtFile: PropertiesFollowedByInitializers.kt
         PsiElement(var)('var')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
+        PsiElement(IDENTIFIER)('set')
       PsiWhiteSpace(' ')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('PublicVar')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace(' ')
       PROPERTY
@@ -477,12 +472,11 @@ KtFile: PropertiesFollowedByInitializers.kt
         PsiElement(var)('var')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foo')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(IDENTIFIER)('get')
         PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(get)('get')
-        PsiWhiteSpace(' ')
-        PROPERTY_ACCESSOR
-          PsiElement(set)('set')
+        PsiElement(IDENTIFIER)('set')
       PsiWhiteSpace(' ')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')

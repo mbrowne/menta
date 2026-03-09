@@ -36,16 +36,20 @@ KtFile: semicolonBetweenDeclarations.kt
       PsiElement(DOUBLE_SEMICOLON)(';;')
       PsiElement(DOUBLE_SEMICOLON)(';;')
   PsiWhiteSpace('\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -57,7 +61,7 @@ KtFile: semicolonBetweenDeclarations.kt
         PsiWhiteSpace(' ')
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('1')
-        PsiElement(SEMICOLON)(';')
+      PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
       FUN
         PsiElement(fun)('fun')
@@ -70,9 +74,10 @@ KtFile: semicolonBetweenDeclarations.kt
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          CLASS
+          PsiErrorElement:Expecting an element
             PsiElement(class)('class')
-            PsiWhiteSpace(' ')
+          PsiWhiteSpace(' ')
+          REFERENCE_EXPRESSION
             PsiElement(IDENTIFIER)('A1')
           PsiElement(SEMICOLON)(';')
           PsiWhiteSpace('\n        ')
@@ -98,39 +103,47 @@ KtFile: semicolonBetweenDeclarations.kt
           PsiElement(RPAR)(')')
         PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
-      CLASS_INITIALIZER
-        PsiElement(init)('init')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('init')
         PsiWhiteSpace(' ')
-        BLOCK
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              BLOCK
+                <empty list>
+              PsiElement(RBRACE)('}')
       PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            PsiElement(super)('super')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-      PsiElement(SEMICOLON)(';')
+        PsiElement(super)('super')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
+      PsiErrorElement:Expecting an element
+        PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n\n    ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
       PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
@@ -150,33 +163,30 @@ KtFile: semicolonBetweenDeclarations.kt
       <empty list>
     PsiElement(SEMICOLON)(';')
   PsiWhiteSpace('\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('B')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
         PsiElement(val)('val')
         PsiErrorElement:Expecting property name or receiver type
           <empty list>
-        PsiElement(SEMICOLON)(';')
-      PsiWhiteSpace('\n    ')
-      CLASS_INITIALIZER
-        PsiElement(init)('init')
-        PsiErrorElement:Expecting '{' after 'init'
-          <empty list>
       PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        PsiErrorElement:Expecting '('
-          <empty list>
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            <empty list>
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('init')
+      PsiElement(SEMICOLON)(';')
+      PsiWhiteSpace('\n    ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('constructor')
       PsiElement(SEMICOLON)(';')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

@@ -1,5 +1,5 @@
-== Delegate ==
-class Delegate {
+== anonymous_0 ==
+{
     operator fun getValue(t: Any?, p: KProperty<*>): Int = 1
 }
 ---------------------
@@ -18,10 +18,11 @@ fun foo(): Int {
 }
 ---------------------
                                               <v0>: Int   NEW: magic[UNRECOGNIZED_WRITE_RHS](val prop: Int by Delegate()) -> <v0>
-                                              <v2>: Int   NEW: magic[FAKE_INITIALIZER](val prop: Int by Delegate()) -> <v2>
-                                              <v3>: *     NEW: magic[VALUE_CONSUMER](val prop: Int by Delegate()|<v1>) -> <v3>
-Delegate()                                    <v1>: *     NEW: call(Delegate(), <init>) -> <v1>
-prop                                          <v4>: Int   NEW: r(prop) -> <v4>
-return prop                                   !<v5>: *
-{ val prop: Int by Delegate() return prop }   !<v5>: *    COPY
+                                              <v3>: Int   NEW: magic[FAKE_INITIALIZER](val prop: Int by Delegate()) -> <v3>
+                                              <v4>: *     NEW: magic[VALUE_CONSUMER](val prop: Int by Delegate()|<v2>) -> <v4>
+Delegate                                      !<v1>: *
+Delegate()                                    <v2>: *     NEW: magic[UNRESOLVED_CALL](Delegate()|!<v1>) -> <v2>
+prop                                          <v5>: Int   NEW: r(prop) -> <v5>
+return prop                                   !<v6>: *
+{ val prop: Int by Delegate() return prop }   !<v6>: *    COPY
 =====================

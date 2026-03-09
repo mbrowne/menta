@@ -8,10 +8,4 @@ fun bar(a: A) {
 
 
 
-Resolved call:
-
-Resulting descriptor: fun A.foo(): Unit defined in root package
-
-Explicit receiver kind = EXTENSION_RECEIVER
-Dispatch receiver = NO_RECEIVER
-Extension receiver = a {A}
+null

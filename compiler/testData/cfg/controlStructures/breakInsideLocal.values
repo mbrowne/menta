@@ -16,12 +16,51 @@ fun test() {
 }
 ---------------------
                                                                                                                               <v1>: *         NEW: magic[VALUE_CONSUMER](true|<v0>) -> <v1>
-                                                                                                                              <v2>: Int       NEW: magic[FAKE_INITIALIZER](val x: Int) -> <v2>
 true                                                                                                                          <v0>: Boolean   NEW: r(true) -> <v0>
-break                                                                                                                         !<v3>: *
-{ break }                                                                                                                     !<v3>: *        COPY
-while (true) { class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } }       !<v4>: *
-{ while (true) { class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } } }   !<v4>: *        COPY
+LocalClass                                                                                                                    !<v2>: *
+LocalClass(val                                                                                                                <v3>: *         NEW: magic[UNRESOLVED_CALL](LocalClass(val|!<v2>) -> <v3>
+LocalClass(val x:                                                                                                             <v4>: *         NEW: magic[UNRESOLVED_CALL](LocalClass(val x:|<v3>) -> <v4>
+LocalClass(val x: Int                                                                                                         <v5>: *         NEW: magic[UNRESOLVED_CALL](LocalClass(val x: Int|<v4>) -> <v5>
+{ init { break } constructor() : this(42) { break } fun foo() { break } }                                                     <v6>: *         NEW: r({ init { break } constructor() : this(42) { break } fun foo() { break } }) -> <v6>
+{ class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } }                    <v6>: *         COPY
+while (true) { class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } }       !<v7>: *
+{ while (true) { class LocalClass(val x: Int) { init { break } constructor() : this(42) { break } fun foo() { break } } } }   !<v7>: *        COPY
+=====================
+== anonymous_0 ==
+{
+            init {
+                break
+            }
+            constructor() : this(42) {
+                break
+            }
+            fun foo() {
+                break
+            }
+        }
+---------------------
+init             !<v1>: *
+{ break }        <v0>: *    NEW: r({ break }) -> <v0>
+init { break }   <v2>: *    NEW: magic[UNRESOLVED_CALL](init { break }|<v0>, !<v1>) -> <v2>
+constructor      !<v3>: *
+constructor()    <v4>: *    NEW: magic[UNRESOLVED_CALL](constructor()|!<v3>) -> <v4>
+{ break }        <v5>: *    NEW: r({ break }) -> <v5>
+=====================
+== anonymous_1 ==
+{
+                break
+            }
+---------------------
+break   !<v0>: *
+break   !<v0>: *   COPY
+=====================
+== anonymous_2 ==
+{
+                break
+            }
+---------------------
+break   !<v0>: *
+break   !<v0>: *   COPY
 =====================
 == foo ==
 fun foo() {

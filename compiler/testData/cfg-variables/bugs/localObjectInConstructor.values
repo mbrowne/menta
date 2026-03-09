@@ -3,8 +3,8 @@ fun println(obj: Any?) {}
 ---------------------
     <v0>: *   NEW: magic[FAKE_INITIALIZER](obj: Any?) -> <v0>
 =====================
-== Demo0 ==
-class Demo0 {
+== anonymous_0 ==
+{
     private val some = object {
         fun foo() {
             println(state) // Ok
@@ -22,13 +22,12 @@ fun foo() {
             println(state) // Ok
         }
 ---------------------
-                           <v0>: Demo0   NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-state                      <v1>: *       NEW: r(state|<v0>) -> <v1>
-println(state)             <v2>: *       NEW: call(println(state), println|<v1>) -> <v2>
-{ println(state) // Ok }   <v2>: *       COPY
+state                      <v0>: *   NEW: magic[UNRESOLVED_CALL](state) -> <v0>
+println(state)             <v1>: *   NEW: call(println(state), println|<v0>) -> <v1>
+{ println(state) // Ok }   <v1>: *   COPY
 =====================
-== Demo1 ==
-class Demo1 {
+== anonymous_1 ==
+{
     private val some = object {
         fun foo() {
             if (state)
@@ -52,19 +51,18 @@ fun foo() {
             println(state) // must be initialized
         }
 ---------------------
-                                                                    <v0>: Demo1     NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-                                                                    <v2>: Demo1     NEW: magic[IMPLICIT_RECEIVER](state) -> <v2>
-                                                                    <v6>: Demo1     NEW: magic[IMPLICIT_RECEIVER](state) -> <v6>
-state                                                               <v1>: Boolean   NEW: r(state|<v0>) -> <v1>
-true                                                                <v3>: Boolean   NEW: r(true) -> <v3>
+                                                                    <v2>: *         NEW: magic[VALUE_CONSUMER](state|<v1>) -> <v2>
+state                                                               <v0>: Boolean   NEW: magic[UNRESOLVED_CALL](state) -> <v0>
+state                                                               <v1>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v1>
+true                                                                <v3>: *         NEW: r(true) -> <v3>
 state = true                                                        !<v4>: *
 if (state) state = true                                             <v5>: *         NEW: merge(if (state) state = true|!<v4>) -> <v5>
-state                                                               <v7>: *         NEW: r(state|<v6>) -> <v7>
-println(state)                                                      <v8>: *         NEW: call(println(state), println|<v7>) -> <v8>
-{ if (state) state = true println(state) // must be initialized }   <v8>: *         COPY
+state                                                               <v6>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v6>
+println(state)                                                      <v7>: *         NEW: call(println(state), println|<v6>) -> <v7>
+{ if (state) state = true println(state) // must be initialized }   <v7>: *         COPY
 =====================
-== Demo1A ==
-class Demo1A {
+== anonymous_2 ==
+{
     fun foo() {
         if (state)
             state = true
@@ -85,19 +83,18 @@ fun foo() {
         println(state) // Ok
     }
 ---------------------
-                                                   <v0>: Demo1A    NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-                                                   <v2>: Demo1A    NEW: magic[IMPLICIT_RECEIVER](state) -> <v2>
-                                                   <v6>: Demo1A    NEW: magic[IMPLICIT_RECEIVER](state) -> <v6>
-state                                              <v1>: Boolean   NEW: r(state|<v0>) -> <v1>
-true                                               <v3>: Boolean   NEW: r(true) -> <v3>
+                                                   <v2>: *         NEW: magic[VALUE_CONSUMER](state|<v1>) -> <v2>
+state                                              <v0>: Boolean   NEW: magic[UNRESOLVED_CALL](state) -> <v0>
+state                                              <v1>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v1>
+true                                               <v3>: *         NEW: r(true) -> <v3>
 state = true                                       !<v4>: *
 if (state) state = true                            <v5>: *         NEW: merge(if (state) state = true|!<v4>) -> <v5>
-state                                              <v7>: *         NEW: r(state|<v6>) -> <v7>
-println(state)                                     <v8>: *         NEW: call(println(state), println|<v7>) -> <v8>
-{ if (state) state = true println(state) // Ok }   <v8>: *         COPY
+state                                              <v6>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v6>
+println(state)                                     <v7>: *         NEW: call(println(state), println|<v6>) -> <v7>
+{ if (state) state = true println(state) // Ok }   <v7>: *         COPY
 =====================
-== Demo2 ==
-class Demo2 {
+== anonymous_3 ==
+{
     private val some = object {
         fun foo() {
             if (state)
@@ -125,22 +122,22 @@ fun foo() {
             println(state) // OK
         }
 ---------------------
-                                                                      <v0>: Demo2     NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-                                                                      <v2>: Demo2     NEW: magic[IMPLICIT_RECEIVER](state) -> <v2>
-                                                                      <v4>: Demo2     NEW: magic[IMPLICIT_RECEIVER](state) -> <v4>
-                                                                      <v9>: Demo2     NEW: magic[IMPLICIT_RECEIVER](state) -> <v9>
-state                                                                 <v1>: Boolean   NEW: r(state|<v0>) -> <v1>
-true                                                                  <v3>: Boolean   NEW: r(true) -> <v3>
-state = true                                                          !<v6>: *
-false                                                                 <v5>: Boolean   NEW: r(false) -> <v5>
-state = false                                                         !<v7>: *
-if (state) state = true else state = false                            <v8>: *         NEW: merge(if (state) state = true else state = false|!<v6>, !<v7>) -> <v8>
-state                                                                 <v10>: *        NEW: r(state|<v9>) -> <v10>
+                                                                      <v2>: *         NEW: magic[VALUE_CONSUMER](state|<v1>) -> <v2>
+                                                                      <v5>: *         NEW: magic[VALUE_CONSUMER](state|<v4>) -> <v5>
+state                                                                 <v0>: Boolean   NEW: magic[UNRESOLVED_CALL](state) -> <v0>
+state                                                                 <v1>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v1>
+true                                                                  <v3>: *         NEW: r(true) -> <v3>
+state = true                                                          !<v7>: *
+state                                                                 <v4>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v4>
+false                                                                 <v6>: *         NEW: r(false) -> <v6>
+state = false                                                         !<v8>: *
+if (state) state = true else state = false                            <v9>: *         NEW: merge(if (state) state = true else state = false|!<v7>, !<v8>) -> <v9>
+state                                                                 <v10>: *        NEW: magic[UNRESOLVED_CALL](state) -> <v10>
 println(state)                                                        <v11>: *        NEW: call(println(state), println|<v10>) -> <v11>
 { if (state) state = true else state = false println(state) // OK }   <v11>: *        COPY
 =====================
-== Demo3 ==
-class Demo3 {
+== anonymous_4 ==
+{
     private val some = run {
         if (state)
             state = true
@@ -151,12 +148,11 @@ class Demo3 {
     private var state: Boolean = true
 }
 ---------------------
-                                                       <v0>: Demo3                   NEW: magic[IMPLICIT_RECEIVER](run { if (state) state = true println(state) // OK }) -> <v0>
-{ if (state) state = true println(state) // OK }       <v1>: {<: Demo3.() -> Unit}   NEW: r({ if (state) state = true println(state) // OK }) -> <v1>
-run { if (state) state = true println(state) // OK }   <v2>: Unit                    NEW: call(run { if (state) state = true println(state) // OK }, run|<v0>, <v1>) -> <v2>
-true                                                   <v3>: Boolean                 NEW: r(true) -> <v3>
+{ if (state) state = true println(state) // OK }       <v0>: {<: () -> Unit}   NEW: r({ if (state) state = true println(state) // OK }) -> <v0>
+run { if (state) state = true println(state) // OK }   <v1>: Unit              NEW: call(run { if (state) state = true println(state) // OK }, run|<v0>) -> <v1>
+true                                                   <v2>: Boolean           NEW: r(true) -> <v2>
 =====================
-== anonymous_0 ==
+== inlined anonymous_5 ==
 {
         if (state)
             state = true
@@ -164,16 +160,15 @@ true                                                   <v3>: Boolean            
         println(state) // OK
     }
 ---------------------
-                                               <v0>: Demo3     NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-                                               <v2>: Demo3     NEW: magic[IMPLICIT_RECEIVER](state) -> <v2>
-                                               <v6>: Demo3     NEW: magic[IMPLICIT_RECEIVER](state) -> <v6>
-state                                          <v1>: Boolean   NEW: r(state|<v0>) -> <v1>
-true                                           <v3>: Boolean   NEW: r(true) -> <v3>
+                                               <v2>: *         NEW: magic[VALUE_CONSUMER](state|<v1>) -> <v2>
+state                                          <v0>: Boolean   NEW: magic[UNRESOLVED_CALL](state) -> <v0>
+state                                          <v1>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v1>
+true                                           <v3>: *         NEW: r(true) -> <v3>
 state = true                                   !<v4>: *
 if (state) state = true                        <v5>: *         NEW: merge(if (state) state = true|!<v4>) -> <v5>
-state                                          <v7>: *         NEW: r(state|<v6>) -> <v7>
-println(state)                                 <v8>: *         NEW: call(println(state), println|<v7>) -> <v8>
-if (state) state = true println(state) // OK   <v8>: *         COPY
+state                                          <v6>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v6>
+println(state)                                 <v7>: *         NEW: call(println(state), println|<v6>) -> <v7>
+if (state) state = true println(state) // OK   <v7>: *         COPY
 =====================
 == run ==
 fun <T, R> T.run(f: T.() -> R) = f()
@@ -190,8 +185,8 @@ fun <T> exec(f: () -> T): T = f()
 f     <v1>: {<: () -> T}   NEW: r(f) -> <v1>
 f()   <v2>: {<: T}         NEW: call(f(), invoke|<v1>) -> <v2>
 =====================
-== Demo4 ==
-class Demo4 {
+== anonymous_6 ==
+{
     private val some = exec {
         if (state)
             state = true
@@ -206,7 +201,7 @@ class Demo4 {
 exec { if (state) state = true println(state) // must be initialized }   <v1>: Unit              NEW: call(exec { if (state) state = true println(state) // must be initialized }, exec|<v0>) -> <v1>
 true                                                                     <v2>: Boolean           NEW: r(true) -> <v2>
 =====================
-== anonymous_1 ==
+== anonymous_7 ==
 {
         if (state)
             state = true
@@ -214,19 +209,18 @@ true                                                                     <v2>: B
         println(state) // must be initialized
     }
 ---------------------
-                                                                <v0>: Demo4     NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-                                                                <v2>: Demo4     NEW: magic[IMPLICIT_RECEIVER](state) -> <v2>
-                                                                <v6>: Demo4     NEW: magic[IMPLICIT_RECEIVER](state) -> <v6>
-state                                                           <v1>: Boolean   NEW: r(state|<v0>) -> <v1>
-true                                                            <v3>: Boolean   NEW: r(true) -> <v3>
+                                                                <v2>: *         NEW: magic[VALUE_CONSUMER](state|<v1>) -> <v2>
+state                                                           <v0>: Boolean   NEW: magic[UNRESOLVED_CALL](state) -> <v0>
+state                                                           <v1>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v1>
+true                                                            <v3>: *         NEW: r(true) -> <v3>
 state = true                                                    !<v4>: *
 if (state) state = true                                         <v5>: *         NEW: merge(if (state) state = true|!<v4>) -> <v5>
-state                                                           <v7>: *         NEW: r(state|<v6>) -> <v7>
-println(state)                                                  <v8>: *         NEW: call(println(state), println|<v7>) -> <v8>
-if (state) state = true println(state) // must be initialized   <v8>: *         COPY
+state                                                           <v6>: *         NEW: magic[UNRESOLVED_CALL](state) -> <v6>
+println(state)                                                  <v7>: *         NEW: call(println(state), println|<v6>) -> <v7>
+if (state) state = true println(state) // must be initialized   <v7>: *         COPY
 =====================
-== Demo5 ==
-class Demo5 {
+== anonymous_8 ==
+{
     private var state: Boolean = true
 
     private val some = object {
@@ -250,14 +244,11 @@ fun foo() {
             println(state) // OK
         }
 ---------------------
-                                                   <v0>: Demo5     NEW: magic[IMPLICIT_RECEIVER](state) -> <v0>
-                                                   <v2>: Demo5     NEW: magic[IMPLICIT_RECEIVER](state) -> <v2>
-                                                   <v6>: Demo5     NEW: magic[IMPLICIT_RECEIVER](state) -> <v6>
-state                                              <v1>: Boolean   NEW: r(state|<v0>) -> <v1>
-true                                               <v3>: Boolean   NEW: r(true) -> <v3>
-state = true                                       !<v4>: *
-if (state) state = true                            <v5>: *         NEW: merge(if (state) state = true|!<v4>) -> <v5>
-state                                              <v7>: *         NEW: r(state|<v6>) -> <v7>
-println(state)                                     <v8>: *         NEW: call(println(state), println|<v7>) -> <v8>
-{ if (state) state = true println(state) // OK }   <v8>: *         COPY
+state                                              <v0>: Boolean   NEW: r(state) -> <v0>
+true                                               <v1>: Boolean   NEW: r(true) -> <v1>
+state = true                                       !<v2>: *
+if (state) state = true                            <v3>: *         NEW: merge(if (state) state = true|!<v2>) -> <v3>
+state                                              <v4>: *         NEW: r(state) -> <v4>
+println(state)                                     <v5>: *         NEW: call(println(state), println|<v4>) -> <v5>
+{ if (state) state = true println(state) // OK }   <v5>: *         COPY
 =====================

@@ -5,12 +5,16 @@ KtFile: danglingBlockLevelAnnotations.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('C')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       FUN
@@ -48,30 +52,35 @@ KtFile: danglingBlockLevelAnnotations.kt
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
-          CLASS
+          PsiErrorElement:Expecting an element
             PsiElement(class)('class')
+          PsiWhiteSpace(' ')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Local')
             PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('Local')
-            PsiWhiteSpace(' ')
-            CLASS_BODY
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n            ')
-              MODIFIER_LIST
-                ANNOTATION_ENTRY
-                  PsiElement(AT)('@')
-                  CONSTRUCTOR_CALLEE
-                    TYPE_REFERENCE
-                      USER_TYPE
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('Ann')
-              PsiErrorElement:Expecting member declaration
-                <empty list>
-              PsiWhiteSpace('\n        ')
-              PsiElement(RBRACE)('}')
+            LAMBDA_ARGUMENT
+              LAMBDA_EXPRESSION
+                FUNCTION_LITERAL
+                  PsiElement(LBRACE)('{')
+                  PsiWhiteSpace('\n            ')
+                  BLOCK
+                    ANNOTATED_EXPRESSION
+                      ANNOTATION_ENTRY
+                        PsiElement(AT)('@')
+                        CONSTRUCTOR_CALLEE
+                          TYPE_REFERENCE
+                            USER_TYPE
+                              REFERENCE_EXPRESSION
+                                PsiElement(IDENTIFIER)('Ann')
+                      PsiErrorElement:Expecting an expression
+                        <empty list>
+                  PsiWhiteSpace('\n        ')
+                  PsiElement(RBRACE)('}')
           PsiWhiteSpace('\n    ')
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n    ')
-      MODIFIER_LIST
+      ANNOTATED_EXPRESSION
         ANNOTATION_ENTRY
           PsiElement(AT)('@')
           CONSTRUCTOR_CALLEE
@@ -79,8 +88,8 @@ KtFile: danglingBlockLevelAnnotations.kt
               USER_TYPE
                 REFERENCE_EXPRESSION
                   PsiElement(IDENTIFIER)('Ann')
-      PsiErrorElement:Expecting member declaration
-        <empty list>
+        PsiErrorElement:Expecting an expression
+          <empty list>
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')

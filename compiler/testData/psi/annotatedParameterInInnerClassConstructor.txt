@@ -7,139 +7,107 @@ KtFile: annotatedParameterInInnerClassConstructor.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('AnnoA')
   PsiWhiteSpace('\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('AnnoB')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('AnnotatedParameterInInnerClassConstructor')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n\n    ')
-      CLASS
-        MODIFIER_LIST
-          PsiElement(inner)('inner')
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('inner')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
-        PRIMARY_CONSTRUCTOR
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              MODIFIER_LIST
-                ANNOTATION_ENTRY
-                  PsiElement(AT)('@')
-                  CONSTRUCTOR_CALLEE
-                    TYPE_REFERENCE
-                      USER_TYPE
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('AnnoA')
-              PsiWhiteSpace(' ')
-              PsiElement(IDENTIFIER)('a')
-              PsiElement(COLON)(':')
-              PsiWhiteSpace(' ')
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('String')
-            PsiElement(COMMA)(',')
-            PsiWhiteSpace(' ')
-            VALUE_PARAMETER
-              MODIFIER_LIST
-                ANNOTATION_ENTRY
-                  PsiElement(AT)('@')
-                  CONSTRUCTOR_CALLEE
-                    TYPE_REFERENCE
-                      USER_TYPE
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('AnnoB')
-              PsiWhiteSpace(' ')
-              PsiElement(IDENTIFIER)('b')
-              PsiElement(COLON)(':')
-              PsiWhiteSpace(' ')
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('String')
-            PsiElement(RPAR)(')')
+        PsiElement(LPAR)('(')
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('AnnoA')
         PsiWhiteSpace(' ')
-        CLASS_BODY
+        PsiElement(IDENTIFIER)('a')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('String')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace(' ')
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('AnnoB')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('b')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('String')
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n\n    ')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
-      CLASS
-        MODIFIER_LIST
-          PsiElement(inner)('inner')
-        PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('inner')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(class)('class')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('InnerGeneric')
-        TYPE_PARAMETER_LIST
-          PsiElement(LT)('<')
-          TYPE_PARAMETER
-            PsiElement(IDENTIFIER)('T')
-          PsiElement(GT)('>')
-        PRIMARY_CONSTRUCTOR
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              MODIFIER_LIST
-                ANNOTATION_ENTRY
-                  PsiElement(AT)('@')
-                  CONSTRUCTOR_CALLEE
-                    TYPE_REFERENCE
-                      USER_TYPE
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('AnnoA')
-              PsiWhiteSpace(' ')
-              PsiElement(IDENTIFIER)('a')
-              PsiElement(COLON)(':')
-              PsiWhiteSpace(' ')
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('T')
-            PsiElement(COMMA)(',')
-            PsiWhiteSpace(' ')
-            VALUE_PARAMETER
-              MODIFIER_LIST
-                ANNOTATION_ENTRY
-                  PsiElement(AT)('@')
-                  CONSTRUCTOR_CALLEE
-                    TYPE_REFERENCE
-                      USER_TYPE
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('AnnoB')
-              PsiWhiteSpace('\n    ')
-              PsiElement(IDENTIFIER)('b')
-              PsiElement(COLON)(':')
-              PsiWhiteSpace(' ')
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('String')
-            PsiElement(RPAR)(')')
+        PsiElement(LT)('<')
+        PsiElement(IDENTIFIER)('T')
+        PsiElement(GT)('>')
+        PsiElement(LPAR)('(')
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('AnnoA')
         PsiWhiteSpace(' ')
-        CLASS_BODY
+        PsiElement(IDENTIFIER)('a')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('T')
+        PsiElement(COMMA)(',')
+        PsiWhiteSpace(' ')
+        PsiElement(AT)('@')
+        PsiElement(IDENTIFIER)('AnnoB')
+      PsiWhiteSpace('\n    ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('b')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('String')
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n\n    ')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

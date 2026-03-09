@@ -5,22 +5,24 @@ KtFile: emptyBody.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            <empty list>
       PsiWhiteSpace('\n    ')
       FUN
         PsiElement(fun)('fun')
@@ -35,17 +37,17 @@ KtFile: emptyBody.kt
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('1')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        MODIFIER_LIST
-          PsiElement(public)('public')
+      BINARY_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('public')
         PsiWhiteSpace(' ')
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('constructor')
+        PARENTHESIZED
           PsiElement(LPAR)('(')
-          PsiElement(RPAR)(')')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
+          PsiErrorElement:Expecting an expression
             <empty list>
+          PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -57,36 +59,32 @@ KtFile: emptyBody.kt
         INTEGER_CONSTANT
           PsiElement(INTEGER_LITERAL)('2')
       PsiWhiteSpace('\n\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            PsiElement(this)('this')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
+        PsiElement(this)('this')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
-      SECONDARY_CONSTRUCTOR
-        PsiElement(constructor)('constructor')
-        VALUE_PARAMETER_LIST
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('constructor')
+        VALUE_ARGUMENT_LIST
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        CONSTRUCTOR_DELEGATION_CALL
-          CONSTRUCTOR_DELEGATION_REFERENCE
-            PsiElement(super)('super')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            VALUE_ARGUMENT
-              INTEGER_CONSTANT
-                PsiElement(INTEGER_LITERAL)('3')
-            PsiElement(RPAR)(')')
+        PsiElement(super)('super')
+        PsiElement(LPAR)('(')
+        PsiElement(INTEGER_LITERAL)('3')
+        PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       PROPERTY
         PsiElement(val)('val')

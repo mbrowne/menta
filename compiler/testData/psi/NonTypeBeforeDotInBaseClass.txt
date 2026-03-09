@@ -5,44 +5,42 @@ KtFile: NonTypeBeforeDotInBaseClass.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('ClassB')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('ClassC')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_ENTRY
-            TYPE_REFERENCE
-              PsiErrorElement:Type expected
-                PsiElement(super)('super')
-      PsiErrorElement:Expecting member declaration
+        PsiElement(super)('super')
         PsiElement(DOT)('.')
-      PsiErrorElement:Expecting member declaration
         PsiElement(IDENTIFIER)('ClassA')
-      PsiErrorElement:Expecting member declaration
         PsiElement(LPAR)('(')
-      PsiErrorElement:Expecting member declaration
         PsiElement(RPAR)(')')
       PsiWhiteSpace(' ')
-      FUN
-        PsiErrorElement:Expecting member declaration
-          <empty list>
-        BLOCK
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

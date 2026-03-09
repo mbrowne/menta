@@ -1,3 +1,1 @@
-public final class Outer /* a.Outer*/ {
-  public  Outer();//  .ctor()
-}
+// NOT_GENERATED

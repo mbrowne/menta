@@ -4,11 +4,11 @@ val a: Int = return 1
 1          <v0>: *     NEW: r(1) -> <v0>
 return 1   <v1>: Int   NEW: magic[UNSUPPORTED_ELEMENT](return 1|<v0>) -> <v1>
 =====================
-== A ==
-class A {
+== anonymous_0 ==
+{
     val a: Int = return 1
 }
 ---------------------
-1          <v0>: *     NEW: r(1) -> <v0>
-return 1   <v1>: Int   NEW: magic[UNSUPPORTED_ELEMENT](return 1|<v0>) -> <v1>
+1          <v0>: Unit   NEW: r(1) -> <v0>
+return 1   !<v1>: *
 =====================

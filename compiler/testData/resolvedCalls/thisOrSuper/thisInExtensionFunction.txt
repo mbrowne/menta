@@ -7,7 +7,7 @@ fun A.bar() = <caret>this.foo()
 
 Resolved call:
 
-Resulting descriptor: AExt{fun A.bar(): Unit defined in root package}::this
+Resulting descriptor: [Error type: Unresolved type for A]Ext{fun [Error type: Unresolved type for A].bar(): [Error type: Return type for function cannot be resolved] defined in root package}::this
 
 Explicit receiver kind = NO_EXPLICIT_RECEIVER
 Dispatch receiver = NO_RECEIVER

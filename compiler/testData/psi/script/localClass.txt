@@ -5,10 +5,12 @@ KtFile: localClass.kts
     <empty list>
   SCRIPT
     BLOCK
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('TopLevelClass')
+      PsiWhiteSpace(' ')
+      SCRIPT_INITIALIZER
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('TopLevelClass')
       PsiWhiteSpace('\n\n')
       FUN
         PsiElement(fun)('fun')
@@ -37,9 +39,10 @@ KtFile: localClass.kts
         BLOCK
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
-          CLASS
+          PsiErrorElement:Expecting an element
             PsiElement(class)('class')
-            PsiWhiteSpace(' ')
+          PsiWhiteSpace(' ')
+          REFERENCE_EXPRESSION
             PsiElement(IDENTIFIER)('LocalClass1')
           PsiWhiteSpace('\n\n    ')
           FUN
@@ -88,9 +91,10 @@ KtFile: localClass.kts
             BLOCK
               PsiElement(LBRACE)('{')
               PsiWhiteSpace('\n    ')
-              CLASS
+              PsiErrorElement:Expecting an element
                 PsiElement(class)('class')
-                PsiWhiteSpace(' ')
+              PsiWhiteSpace(' ')
+              REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('LocalClass2')
               PsiWhiteSpace('\n    ')
               CALL_EXPRESSION
@@ -137,9 +141,10 @@ KtFile: localClass.kts
                 PsiElement(LBRACE)('{')
                 PsiWhiteSpace('\n    ')
                 BLOCK
-                  CLASS
+                  PsiErrorElement:Expecting an element
                     PsiElement(class)('class')
-                    PsiWhiteSpace(' ')
+                  PsiWhiteSpace(' ')
+                  REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('LocalClass3')
                   PsiWhiteSpace('\n\n    ')
                   FUN

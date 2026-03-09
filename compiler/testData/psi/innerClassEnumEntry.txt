@@ -3,31 +3,39 @@ KtFile: innerClassEnumEntry.kt
     <empty list>
   IMPORT_LIST
     <empty list>
-  CLASS
-    MODIFIER_LIST
-      PsiElement(enum)('enum')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(enum)('enum')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('InnerClassEnumEntry')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      ENUM_ENTRY
-        PsiElement(IDENTIFIER)('ENTRY')
+      CALL_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('ENTRY')
         PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiWhiteSpace('\n        ')
-          CLASS
-            MODIFIER_LIST
-              PsiElement(inner)('inner')
-            PsiWhiteSpace(' ')
-            PsiElement(class)('class')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('InnerClass')
-          PsiWhiteSpace('\n    ')
-          PsiElement(RBRACE)('}')
+        LAMBDA_ARGUMENT
+          LAMBDA_EXPRESSION
+            FUNCTION_LITERAL
+              PsiElement(LBRACE)('{')
+              PsiWhiteSpace('\n        ')
+              BLOCK
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('inner')
+                PsiWhiteSpace(' ')
+                PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+                  PsiElement(class)('class')
+                  PsiWhiteSpace(' ')
+                  PsiElement(IDENTIFIER)('InnerClass')
+              PsiWhiteSpace('\n    ')
+              PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

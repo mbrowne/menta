@@ -1,16 +1,19 @@
-== A ==
-class A {
+== anonymous_0 ==
+{
     companion object
 }
 ---------------------
 L0:
   1 <START>
+  2 mark({ companion object })
+    jmp?(L2)
 L1:
-    <END>      NEXT:[<SINK>]
+L2 [after local class]:
+  1 <END>                         NEXT:[<SINK>]
 error:
-    <ERROR>    PREV:[]
+    <ERROR>                       PREV:[]
 sink:
-    <SINK>     PREV:[<ERROR>, <END>]
+    <SINK>                        PREV:[<ERROR>, <END>]
 =====================
 == B ==
 object B {
@@ -119,7 +122,7 @@ error:
 sink:
     <SINK>                                                            PREV:[<ERROR>, <END>, d({ with(B) { A.foo() } })]
 =====================
-== anonymous_0 ==
+== anonymous_1 ==
 {
     with(B) {
         A.foo()
@@ -145,7 +148,7 @@ error:
 sink:
     <SINK>                                                PREV:[<ERROR>, <END>, d({ A.foo() })]
 =====================
-== anonymous_1 ==
+== anonymous_2 ==
 {
         A.foo()
     }
@@ -154,18 +157,14 @@ L6:
   4 <START>
   5 mark(A.foo())
     mark(A.foo())
-    magic[IMPLICIT_RECEIVER](foo) -> <v0>
-    mark(A)
-    r(A, Companion) -> <v1>
-    r(foo|<v0>, <v1>) -> <v2>
-    magic[IMPLICIT_RECEIVER](foo()) -> <v3>
+    magic[UNRESOLVED_CALL](A) -> <v0>
     mark(foo())
-    call(foo(), invoke|<v2>, <v3>) -> <v4>
-  4 ret(*|<v4>) L7
+    magic[UNRESOLVED_CALL](foo()|!<v1>, <v0>) -> <v2>
+  4 ret(*|<v2>) L7
 L7:
-    <END>                                      NEXT:[<SINK>]
+    <END>                                                NEXT:[<SINK>]
 error:
-    <ERROR>                                    PREV:[]
+    <ERROR>                                              PREV:[]
 sink:
-    <SINK>                                     PREV:[<ERROR>, <END>]
+    <SINK>                                               PREV:[<ERROR>, <END>]
 =====================

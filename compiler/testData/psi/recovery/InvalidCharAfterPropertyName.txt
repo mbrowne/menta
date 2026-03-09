@@ -5,12 +5,16 @@ KtFile: InvalidCharAfterPropertyName.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('C')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       PROPERTY
@@ -23,22 +27,22 @@ KtFile: InvalidCharAfterPropertyName.kt
           USER_TYPE
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('XX')
-        PsiErrorElement:Property getter or setter expected
-          PsiElement(BAD_CHARACTER)('$')
-          PsiElement(LT)('<')
-          PsiElement(IDENTIFIER)('caret')
-          PsiElement(GT)('>')
-          PsiWhiteSpace(' ')
-          PsiElement(EQ)('=')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('run')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(BAD_CHARACTER)('$')
+        PsiElement(LT)('<')
+        PsiElement(IDENTIFIER)('caret')
+        PsiElement(GT)('>')
+        PsiWhiteSpace(' ')
+        PsiElement(EQ)('=')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('run')
       PsiWhiteSpace(' ')
-      FUN
-        PsiErrorElement:Expecting member declaration
-          <empty list>
-        BLOCK
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n\n    ')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       CLASS

@@ -1,15 +1,10 @@
 package test
 
-public open class Impl : test.Trait {
-    public constructor Impl()
-    public open override /*1*/ /*fake_override*/ fun bar(): kotlin.String
-    public open override /*1*/ /*fake_override*/ fun foo(): kotlin.String
-}
+public fun `<no name provided>`(): kotlin.Unit
 
-public open class Subclass : test.Impl {
+public open class Subclass : Impl {
     public constructor Subclass()
-    @java.lang.Override public open override /*1*/ fun bar(): kotlin.String
-    public open override /*1*/ /*fake_override*/ fun foo(): kotlin.String
+    @java.lang.Override public open fun bar(): kotlin.String!
 }
 
 public interface Trait {

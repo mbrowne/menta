@@ -19,19 +19,16 @@ public abstract interface C /* p.C*/<T>  extends p.B {
     @org.jetbrains.annotations.NotNull()
     public static java.lang.String c(@org.jetbrains.annotations.NotNull() p.C);//  c(p.C)
 
-    @p.Anno()
-    public static void setProp1(@org.jetbrains.annotations.NotNull() p.C, int);//  setProp1(p.C, int)
-
-    @p.Anno()
-    public static void setProp2(@org.jetbrains.annotations.NotNull() p.C, int);//  setProp2(p.C, int)
-
-    @p.Anno()
-    public static void setProp3(@org.jetbrains.annotations.NotNull() p.C, int);//  setProp3(p.C, int)
-
     public static int getProp1(@org.jetbrains.annotations.NotNull() p.C);//  getProp1(p.C)
 
     public static int getProp2(@org.jetbrains.annotations.NotNull() p.C);//  getProp2(p.C)
 
     public static int getProp3(@org.jetbrains.annotations.NotNull() p.C);//  getProp3(p.C)
+
+    public static void setProp1(@org.jetbrains.annotations.NotNull() p.C, int);//  setProp1(p.C, int)
+
+    public static void setProp2(@org.jetbrains.annotations.NotNull() p.C, int);//  setProp2(p.C, int)
+
+    public static void setProp3(@org.jetbrains.annotations.NotNull() p.C, int);//  setProp3(p.C, int)
   }
 }

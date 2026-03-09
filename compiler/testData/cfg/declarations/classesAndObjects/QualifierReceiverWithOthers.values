@@ -1,5 +1,5 @@
-== A ==
-class A {
+== anonymous_0 ==
+{
     companion object
 }
 ---------------------
@@ -48,7 +48,7 @@ C                                 <v0>: C                                       
 { with(B) { A.foo() } }           <v1>: {<: C.() -> ???}                                                 NEW: r({ with(B) { A.foo() } }) -> <v1>
 with(C) { with(B) { A.foo() } }   <v2>: {<: [Error type: Return type for function cannot be resolved]}   NEW: call(with(C) { with(B) { A.foo() } }, with|<v0>, <v1>) -> <v2>
 =====================
-== anonymous_0 ==
+== anonymous_1 ==
 {
     with(B) {
         A.foo()
@@ -60,16 +60,14 @@ B                     <v0>: B                  NEW: r(B) -> <v0>
 with(B) { A.foo() }   <v2>: {<: ???}           NEW: call(with(B) { A.foo() }, with|<v0>, <v1>) -> <v2>
 with(B) { A.foo() }   <v2>: {<: ???}           COPY
 =====================
-== anonymous_1 ==
+== anonymous_2 ==
 {
         A.foo()
     }
 ---------------------
-          <v0>: B             NEW: magic[IMPLICIT_RECEIVER](foo) -> <v0>
-          <v3>: C             NEW: magic[IMPLICIT_RECEIVER](foo()) -> <v3>
-A         <v1>: A.Companion   NEW: r(A, Companion) -> <v1>
-foo       <v2>: X             NEW: r(foo|<v0>, <v1>) -> <v2>
-foo()     <v4>: {<: ???}      NEW: call(foo(), invoke|<v2>, <v3>) -> <v4>
-A.foo()   <v4>: {<: ???}      COPY
-A.foo()   <v4>: {<: ???}      COPY
+A         <v0>: *          NEW: magic[UNRESOLVED_CALL](A) -> <v0>
+foo       !<v1>: *
+foo()     <v2>: {<: ???}   NEW: magic[UNRESOLVED_CALL](foo()|!<v1>, <v0>) -> <v2>
+A.foo()   <v2>: {<: ???}   COPY
+A.foo()   <v2>: {<: ???}   COPY
 =====================

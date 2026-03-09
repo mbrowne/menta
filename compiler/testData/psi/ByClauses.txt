@@ -5,332 +5,361 @@ KtFile: ByClauses.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
-        PsiWhiteSpace(' ')
-        REFERENCE_EXPRESSION
-          PsiElement(IDENTIFIER)('a')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
-      PsiWhiteSpace('\n')
-      PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
-        PsiWhiteSpace(' ')
-        BINARY_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('a')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
           PsiWhiteSpace(' ')
-          OPERATION_REFERENCE
-            PsiElement(PLUS)('+')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(class)('class')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('A')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(PLUS)('+')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(MUL)('*')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(INTEGER_LITERAL)('5')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiWhiteSpace('\n  ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
           PsiWhiteSpace(' ')
-          BINARY_EXPRESSION
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('b')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                PsiElement(RPAR)(')')
-            PsiWhiteSpace(' ')
-            OPERATION_REFERENCE
-              PsiElement(MUL)('*')
-            PsiWhiteSpace(' ')
-            INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('5')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(class)('class')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('A')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiWhiteSpace('\n  ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(class)('class')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('A')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiElement(RBRACE)('}')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiWhiteSpace('\n  ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(class)('class')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('A')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LBRACKET)('[')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiElement(RBRACE)('}')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RBRACKET)(']')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiWhiteSpace('\n  ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(class)('class')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('A')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(LPAR)('(')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('a')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiElement(RBRACE)('}')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
+      PsiElement(LBRACE)('{')
+      PsiWhiteSpace('\n  ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
+      PsiWhiteSpace('\n')
+      PsiElement(RBRACE)('}')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(class)('class')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('A')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(COLON)(':')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('b')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(IDENTIFIER)('by')
+  PsiWhiteSpace(' ')
+  OBJECT_DECLARATION
+    PsiElement(object)('object')
+    PsiErrorElement:Name expected
+      <empty list>
     PsiWhiteSpace(' ')
     CLASS_BODY
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
+      FUN
+        PsiElement(fun)('fun')
         PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
-      PsiWhiteSpace('\n')
-      PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
-        PsiWhiteSpace(' ')
-        PARENTHESIZED
+        PsiElement(IDENTIFIER)('f')
+        VALUE_PARAMETER_LIST
           PsiElement(LPAR)('(')
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('a')
           PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
-      PsiElement(LBRACE)('{')
-      PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
         PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
-      PsiWhiteSpace('\n')
-      PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
-        PsiWhiteSpace(' ')
-        PARENTHESIZED
-          PsiElement(LPAR)('(')
-          CALL_EXPRESSION
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('a')
-            PsiWhiteSpace(' ')
-            LAMBDA_ARGUMENT
-              LAMBDA_EXPRESSION
-                FUNCTION_LITERAL
-                  PsiElement(LBRACE)('{')
-                  BLOCK
-                    <empty list>
-                  PsiElement(RBRACE)('}')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
-      PsiElement(LBRACE)('{')
-      PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
-      PsiWhiteSpace('\n')
-      PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
-        PsiWhiteSpace(' ')
-        ARRAY_ACCESS_EXPRESSION
-          REFERENCE_EXPRESSION
-            PsiElement(IDENTIFIER)('a')
-          INDICES
-            PsiElement(LBRACKET)('[')
-            CALL_EXPRESSION
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('a')
-              PsiWhiteSpace(' ')
-              LAMBDA_ARGUMENT
-                LAMBDA_EXPRESSION
-                  FUNCTION_LITERAL
-                    PsiElement(LBRACE)('{')
-                    BLOCK
-                      <empty list>
-                    PsiElement(RBRACE)('}')
-            PsiElement(RBRACKET)(']')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
-      PsiElement(LBRACE)('{')
-      PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
-      PsiWhiteSpace('\n')
-      PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
+        PsiElement(EQ)('=')
         PsiWhiteSpace(' ')
         CALL_EXPRESSION
           REFERENCE_EXPRESSION
             PsiElement(IDENTIFIER)('a')
-          VALUE_ARGUMENT_LIST
-            PsiElement(LPAR)('(')
-            VALUE_ARGUMENT
-              CALL_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('a')
-                PsiWhiteSpace(' ')
-                LAMBDA_ARGUMENT
-                  LAMBDA_EXPRESSION
-                    FUNCTION_LITERAL
-                      PsiElement(LBRACE)('{')
-                      BLOCK
-                        <empty list>
-                      PsiElement(RBRACE)('}')
-            PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
-      PsiElement(LBRACE)('{')
-      PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
+          PsiWhiteSpace(' ')
+          LAMBDA_ARGUMENT
+            LAMBDA_EXPRESSION
+              FUNCTION_LITERAL
+                PsiElement(LBRACE)('{')
+                BLOCK
+                  <empty list>
+                PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
-  PsiWhiteSpace('\n')
-  CLASS
-    PsiElement(class)('class')
-    PsiWhiteSpace(' ')
-    PsiElement(IDENTIFIER)('A')
-    PsiWhiteSpace(' ')
-    PsiElement(COLON)(':')
-    PsiWhiteSpace(' ')
-    SUPER_TYPE_LIST
-      DELEGATED_SUPER_TYPE_ENTRY
-        TYPE_REFERENCE
-          USER_TYPE
-            REFERENCE_EXPRESSION
-              PsiElement(IDENTIFIER)('b')
-        PsiWhiteSpace(' ')
-        PsiElement(by)('by')
-        PsiWhiteSpace(' ')
-        OBJECT_LITERAL
-          OBJECT_DECLARATION
-            PsiElement(object)('object')
-            PsiWhiteSpace(' ')
-            CLASS_BODY
-              PsiElement(LBRACE)('{')
-              PsiWhiteSpace('\n  ')
-              FUN
-                PsiElement(fun)('fun')
-                PsiWhiteSpace(' ')
-                PsiElement(IDENTIFIER)('f')
-                VALUE_PARAMETER_LIST
-                  PsiElement(LPAR)('(')
-                  PsiElement(RPAR)(')')
-                PsiWhiteSpace(' ')
-                PsiElement(EQ)('=')
-                PsiWhiteSpace(' ')
-                CALL_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('a')
-                  PsiWhiteSpace(' ')
-                  LAMBDA_ARGUMENT
-                    LAMBDA_EXPRESSION
-                      FUNCTION_LITERAL
-                        PsiElement(LBRACE)('{')
-                        BLOCK
-                          <empty list>
-                        PsiElement(RBRACE)('}')
-              PsiWhiteSpace('\n')
-              PsiElement(RBRACE)('}')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n  ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiElement(RBRACE)('}')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

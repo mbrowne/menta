@@ -16,90 +16,98 @@ KtFile: local.kt
     BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
+      PsiWhiteSpace(' ')
+      BINARY_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('A1')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('A1')
-        PsiWhiteSpace(' ')
-        PRIMARY_CONSTRUCTOR
-          PsiElement(constructor)('constructor')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('constructor')
+        PARENTHESIZED
+          PsiElement(LPAR)('(')
+          PsiErrorElement:Expecting an expression
+            <empty list>
+          PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
+      PsiWhiteSpace(' ')
+      BINARY_EXPRESSION
+        BINARY_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('A2')
+          PsiWhiteSpace(' ')
+          OPERATION_REFERENCE
+            PsiElement(IDENTIFIER)('Ann')
+          PsiWhiteSpace(' ')
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('private')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('A2')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('constructor')
+        PARENTHESIZED
+          PsiElement(LPAR)('(')
+          PsiErrorElement:Expecting an expression
+            <empty list>
+          PsiElement(RPAR)(')')
+      PsiWhiteSpace('\n\n    ')
+      PsiErrorElement:Expecting an element
+        PsiElement(class)('class')
+      PsiWhiteSpace(' ')
+      BINARY_EXPRESSION
+        REFERENCE_EXPRESSION
+          PsiElement(IDENTIFIER)('A3')
+        PsiWhiteSpace(' ')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('private')
+        PsiWhiteSpace(' ')
+        ANNOTATED_EXPRESSION
+          ANNOTATION_ENTRY
+            PsiElement(AT)('@')
+            CONSTRUCTOR_CALLEE
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('Ann')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              VALUE_ARGUMENT
+                STRING_TEMPLATE
+                  PsiElement(OPEN_QUOTE)('"')
+                  PsiElement(CLOSING_QUOTE)('"')
+              PsiElement(RPAR)(')')
+          PsiWhiteSpace(' ')
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('constructor')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              PsiElement(RPAR)(')')
+      PsiWhiteSpace('\n    ')
+      PsiErrorElement:Expecting an element
+        PsiElement(class)('class')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('A4')
       PsiWhiteSpace(' ')
       PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(AT)('@')
         PsiElement(IDENTIFIER)('Ann')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('private')
+        PsiElement(LPAR)('(')
+        PsiElement(OPEN_QUOTE)('"')
+        PsiElement(CLOSING_QUOTE)('"')
+        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('constructor')
         PsiElement(LPAR)('(')
         PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('A3')
-        PsiWhiteSpace(' ')
-        PRIMARY_CONSTRUCTOR
-          MODIFIER_LIST
-            PsiElement(private)('private')
-            PsiWhiteSpace(' ')
-            ANNOTATION_ENTRY
-              PsiElement(AT)('@')
-              CONSTRUCTOR_CALLEE
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Ann')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                VALUE_ARGUMENT
-                  STRING_TEMPLATE
-                    PsiElement(OPEN_QUOTE)('"')
-                    PsiElement(CLOSING_QUOTE)('"')
-                PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(constructor)('constructor')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-      PsiWhiteSpace('\n    ')
-      CLASS
-        PsiElement(class)('class')
-        PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('A4')
-        PsiWhiteSpace(' ')
-        PRIMARY_CONSTRUCTOR
-          MODIFIER_LIST
-            ANNOTATION_ENTRY
-              PsiElement(AT)('@')
-              CONSTRUCTOR_CALLEE
-                TYPE_REFERENCE
-                  USER_TYPE
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Ann')
-              VALUE_ARGUMENT_LIST
-                PsiElement(LPAR)('(')
-                VALUE_ARGUMENT
-                  STRING_TEMPLATE
-                    PsiElement(OPEN_QUOTE)('"')
-                    PsiElement(CLOSING_QUOTE)('"')
-                PsiElement(RPAR)(')')
-          PsiWhiteSpace(' ')
-          PsiElement(constructor)('constructor')
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            PsiElement(RPAR)(')')
-      PsiWhiteSpace('\n\n    ')
-      CLASS
-        PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('A5')
       PsiWhiteSpace('\n    ')
       REFERENCE_EXPRESSION
@@ -112,9 +120,10 @@ KtFile: local.kt
           PsiElement(LPAR)('(')
           PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('A6')
       PsiWhiteSpace('\n    ')
       CALL_EXPRESSION

@@ -5,35 +5,43 @@ KtFile: IncompleteWhere.kt
     <empty list>
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Outer')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
+      PsiWhiteSpace(' ')
+      BINARY_EXPRESSION
+        CALL_EXPRESSION
+          REFERENCE_EXPRESSION
+            PsiElement(IDENTIFIER)('Inner')
+          TYPE_ARGUMENT_LIST
+            PsiElement(LT)('<')
+            TYPE_PROJECTION
+              TYPE_REFERENCE
+                USER_TYPE
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('T')
+            PsiElement(GT)('>')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Inner')
-        TYPE_PARAMETER_LIST
-          PsiElement(LT)('<')
-          TYPE_PARAMETER
-            PsiElement(IDENTIFIER)('T')
-          PsiElement(GT)('>')
-        PsiWhiteSpace(' ')
-        PsiElement(where)('where')
-        PsiWhiteSpace('\n')
-        TYPE_CONSTRAINT_LIST
-          TYPE_CONSTRAINT
-            PsiErrorElement:Expecting type parameter name
-              <empty list>
-            TYPE_REFERENCE
-              <empty list>
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('where')
+        PsiErrorElement:Expecting an element
+          <empty list>
+      PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Next')

@@ -9,67 +9,76 @@ KtFile: qualifiedLiterals.kt
   IMPORT_LIST
     <empty list>
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(annotation)('annotation')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(annotation)('annotation')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Simple')
-    PRIMARY_CONSTRUCTOR
-      VALUE_PARAMETER_LIST
-        PsiElement(LPAR)('(')
-        VALUE_PARAMETER
-          PsiElement(val)('val')
-          PsiWhiteSpace(' ')
-          PsiElement(IDENTIFIER)('i')
-          PsiElement(COLON)(':')
-          PsiWhiteSpace(' ')
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Int')
-        PsiElement(RPAR)(')')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  DESTRUCTURING_DECLARATION
+    PsiErrorElement:Destructuring declarations are only allowed for local variables/values
+      PsiElement(LPAR)('(')
+      DESTRUCTURING_DECLARATION_ENTRY
+        PsiElement(val)('val')
+        PsiWhiteSpace(' ')
+        PsiElement(IDENTIFIER)('i')
+        PsiElement(COLON)(':')
+        PsiWhiteSpace(' ')
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Int')
+      PsiElement(RPAR)(')')
+    PsiErrorElement:Property getter or setter expected
+      <empty list>
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      OBJECT_DECLARATION
-        MODIFIER_LIST
-          PsiElement(companion)('companion')
-        PsiWhiteSpace(' ')
-        PsiElement(object)('object')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
-          PsiElement(LBRACE)('{')
-          PsiWhiteSpace('\n        ')
-          PROPERTY
-            MODIFIER_LIST
-              PsiElement(const)('const')
-            PsiWhiteSpace(' ')
-            PsiElement(val)('val')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('CONST1')
-            PsiWhiteSpace(' ')
-            PsiElement(EQ)('=')
-            PsiWhiteSpace(' ')
-            INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('1')
-          PsiWhiteSpace('\n        ')
-          PROPERTY
-            MODIFIER_LIST
-              PsiElement(const)('const')
-            PsiWhiteSpace(' ')
-            PsiElement(val)('val')
-            PsiWhiteSpace(' ')
-            PsiElement(IDENTIFIER)('CONST2')
-            PsiWhiteSpace(' ')
-            PsiElement(EQ)('=')
-            PsiWhiteSpace(' ')
-            INTEGER_CONSTANT
-              PsiElement(INTEGER_LITERAL)('2')
-          PsiWhiteSpace('\n    ')
-          PsiElement(RBRACE)('}')
+      REFERENCE_EXPRESSION
+        PsiElement(IDENTIFIER)('companion')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        <empty list>
+      PsiWhiteSpace(' ')
+      OBJECT_LITERAL
+        OBJECT_DECLARATION
+          PsiElement(object)('object')
+          PsiWhiteSpace(' ')
+          CLASS_BODY
+            PsiElement(LBRACE)('{')
+            PsiWhiteSpace('\n        ')
+            PROPERTY
+              MODIFIER_LIST
+                PsiElement(const)('const')
+              PsiWhiteSpace(' ')
+              PsiElement(val)('val')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('CONST1')
+              PsiWhiteSpace(' ')
+              PsiElement(EQ)('=')
+              PsiWhiteSpace(' ')
+              INTEGER_CONSTANT
+                PsiElement(INTEGER_LITERAL)('1')
+            PsiWhiteSpace('\n        ')
+            PROPERTY
+              MODIFIER_LIST
+                PsiElement(const)('const')
+              PsiWhiteSpace(' ')
+              PsiElement(val)('val')
+              PsiWhiteSpace(' ')
+              PsiElement(IDENTIFIER)('CONST2')
+              PsiWhiteSpace(' ')
+              PsiElement(EQ)('=')
+              PsiWhiteSpace(' ')
+              INTEGER_CONSTANT
+                PsiElement(INTEGER_LITERAL)('2')
+            PsiWhiteSpace('\n    ')
+            PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiErrorElement:imports are only allowed in the beginning of file
@@ -88,36 +97,37 @@ KtFile: qualifiedLiterals.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Simple')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Simple')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Simple')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          DOT_QUALIFIED_EXPRESSION
             DOT_QUALIFIED_EXPRESSION
               DOT_QUALIFIED_EXPRESSION
-                DOT_QUALIFIED_EXPRESSION
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('test')
-                  PsiElement(DOT)('.')
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Simple')
+                REFERENCE_EXPRESSION
+                  PsiElement(IDENTIFIER)('test')
                 PsiElement(DOT)('.')
                 REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('Companion')
+                  PsiElement(IDENTIFIER)('Simple')
               PsiElement(DOT)('.')
               REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('CONST1')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
+                PsiElement(IDENTIFIER)('Companion')
+            PsiElement(DOT)('.')
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('CONST1')
+        PsiElement(RPAR)(')')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Qualified')
   PsiErrorElement:imports are only allowed in the beginning of file
     <empty list>
@@ -135,47 +145,48 @@ KtFile: qualifiedLiterals.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Simple')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Simple')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            BINARY_EXPRESSION
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Simple')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          BINARY_EXPRESSION
+            DOT_QUALIFIED_EXPRESSION
               DOT_QUALIFIED_EXPRESSION
                 DOT_QUALIFIED_EXPRESSION
-                  DOT_QUALIFIED_EXPRESSION
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('test')
-                    PsiElement(DOT)('.')
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Simple')
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('test')
                   PsiElement(DOT)('.')
                   REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Companion')
+                    PsiElement(IDENTIFIER)('Simple')
                 PsiElement(DOT)('.')
                 REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('CONST1')
-              PsiWhiteSpace(' ')
-              OPERATION_REFERENCE
-                PsiElement(PLUS)('+')
-              PsiWhiteSpace(' ')
-              DOT_QUALIFIED_EXPRESSION
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('Simple')
-                PsiElement(DOT)('.')
-                REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('CONST2')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
+                  PsiElement(IDENTIFIER)('Companion')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('CONST1')
+            PsiWhiteSpace(' ')
+            OPERATION_REFERENCE
+              PsiElement(PLUS)('+')
+            PsiWhiteSpace(' ')
+            DOT_QUALIFIED_EXPRESSION
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('Simple')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('CONST2')
+        PsiElement(RPAR)(')')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Sum')
   PsiErrorElement:imports are only allowed in the beginning of file
     <empty list>
@@ -193,39 +204,40 @@ KtFile: qualifiedLiterals.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Simple')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Simple')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            PREFIX_EXPRESSION
-              OPERATION_REFERENCE
-                PsiElement(MINUS)('-')
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Simple')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          PREFIX_EXPRESSION
+            OPERATION_REFERENCE
+              PsiElement(MINUS)('-')
+            DOT_QUALIFIED_EXPRESSION
               DOT_QUALIFIED_EXPRESSION
                 DOT_QUALIFIED_EXPRESSION
-                  DOT_QUALIFIED_EXPRESSION
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('test')
-                    PsiElement(DOT)('.')
-                    REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('Simple')
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('test')
                   PsiElement(DOT)('.')
                   REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Companion')
+                    PsiElement(IDENTIFIER)('Simple')
                 PsiElement(DOT)('.')
                 REFERENCE_EXPRESSION
-                  PsiElement(IDENTIFIER)('CONST1')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
+                  PsiElement(IDENTIFIER)('Companion')
+              PsiElement(DOT)('.')
+              REFERENCE_EXPRESSION
+                PsiElement(IDENTIFIER)('CONST1')
+        PsiElement(RPAR)(')')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Negative')
   PsiErrorElement:imports are only allowed in the beginning of file
     <empty list>
@@ -243,18 +255,21 @@ KtFile: qualifiedLiterals.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Simple')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Simple')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Simple')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          PREFIX_EXPRESSION
+            OPERATION_REFERENCE
+              PsiElement(MINUS)('-')
+            PsiWhiteSpace(' ')
             PREFIX_EXPRESSION
               OPERATION_REFERENCE
                 PsiElement(MINUS)('-')
@@ -262,28 +277,26 @@ KtFile: qualifiedLiterals.kt
               PREFIX_EXPRESSION
                 OPERATION_REFERENCE
                   PsiElement(MINUS)('-')
-                PsiWhiteSpace(' ')
-                PREFIX_EXPRESSION
-                  OPERATION_REFERENCE
-                    PsiElement(MINUS)('-')
+                DOT_QUALIFIED_EXPRESSION
                   DOT_QUALIFIED_EXPRESSION
                     DOT_QUALIFIED_EXPRESSION
-                      DOT_QUALIFIED_EXPRESSION
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('test')
-                        PsiElement(DOT)('.')
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('Simple')
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('test')
                       PsiElement(DOT)('.')
                       REFERENCE_EXPRESSION
-                        PsiElement(IDENTIFIER)('Companion')
+                        PsiElement(IDENTIFIER)('Simple')
                     PsiElement(DOT)('.')
                     REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('CONST1')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
+                      PsiElement(IDENTIFIER)('Companion')
+                  PsiElement(DOT)('.')
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('CONST1')
+        PsiElement(RPAR)(')')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Negative2')
   PsiErrorElement:imports are only allowed in the beginning of file
     <empty list>
@@ -301,43 +314,44 @@ KtFile: qualifiedLiterals.kt
         REFERENCE_EXPRESSION
           PsiElement(IDENTIFIER)('Simple')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      ANNOTATION_ENTRY
-        PsiElement(AT)('@')
-        CONSTRUCTOR_CALLEE
-          TYPE_REFERENCE
-            USER_TYPE
-              REFERENCE_EXPRESSION
-                PsiElement(IDENTIFIER)('Simple')
-        VALUE_ARGUMENT_LIST
-          PsiElement(LPAR)('(')
-          VALUE_ARGUMENT
-            PREFIX_EXPRESSION
-              OPERATION_REFERENCE
-                PsiElement(MINUS)('-')
-              PARENTHESIZED
-                PsiElement(LPAR)('(')
-                PREFIX_EXPRESSION
-                  OPERATION_REFERENCE
-                    PsiElement(MINUS)('-')
+  MODIFIER_LIST
+    ANNOTATION_ENTRY
+      PsiElement(AT)('@')
+      CONSTRUCTOR_CALLEE
+        TYPE_REFERENCE
+          USER_TYPE
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Simple')
+      VALUE_ARGUMENT_LIST
+        PsiElement(LPAR)('(')
+        VALUE_ARGUMENT
+          PREFIX_EXPRESSION
+            OPERATION_REFERENCE
+              PsiElement(MINUS)('-')
+            PARENTHESIZED
+              PsiElement(LPAR)('(')
+              PREFIX_EXPRESSION
+                OPERATION_REFERENCE
+                  PsiElement(MINUS)('-')
+                DOT_QUALIFIED_EXPRESSION
                   DOT_QUALIFIED_EXPRESSION
                     DOT_QUALIFIED_EXPRESSION
-                      DOT_QUALIFIED_EXPRESSION
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('test')
-                        PsiElement(DOT)('.')
-                        REFERENCE_EXPRESSION
-                          PsiElement(IDENTIFIER)('Simple')
+                      REFERENCE_EXPRESSION
+                        PsiElement(IDENTIFIER)('test')
                       PsiElement(DOT)('.')
                       REFERENCE_EXPRESSION
-                        PsiElement(IDENTIFIER)('Companion')
+                        PsiElement(IDENTIFIER)('Simple')
                     PsiElement(DOT)('.')
                     REFERENCE_EXPRESSION
-                      PsiElement(IDENTIFIER)('CONST1')
-                PsiElement(RPAR)(')')
-          PsiElement(RPAR)(')')
-    PsiWhiteSpace('\n')
+                      PsiElement(IDENTIFIER)('Companion')
+                  PsiElement(DOT)('.')
+                  REFERENCE_EXPRESSION
+                    PsiElement(IDENTIFIER)('CONST1')
+              PsiElement(RPAR)(')')
+        PsiElement(RPAR)(')')
+  PsiWhiteSpace('\n')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Positive')

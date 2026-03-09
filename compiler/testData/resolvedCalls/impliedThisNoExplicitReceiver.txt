@@ -8,8 +8,8 @@ class A {
 
 Resolved call:
 
-Resulting descriptor: fun foo(): Unit defined in A
+Resulting descriptor: fun foo(): Unit defined in `<no name provided>`
 
 Explicit receiver kind = NO_EXPLICIT_RECEIVER
-Dispatch receiver = Class{A}
+Dispatch receiver = NO_RECEIVER
 Extension receiver = NO_RECEIVER

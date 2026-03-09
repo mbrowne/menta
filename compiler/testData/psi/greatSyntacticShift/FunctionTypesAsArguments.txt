@@ -52,11 +52,15 @@ KtFile: FunctionTypesAsArguments.kt
     PsiWhiteSpace('   ')
     PsiComment(EOL_COMMENT)('// multiple errors')
   PsiWhiteSpace('\n\n')
-  CLASS
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Lifetime')
-    CLASS_BODY
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n ')
       PROPERTY

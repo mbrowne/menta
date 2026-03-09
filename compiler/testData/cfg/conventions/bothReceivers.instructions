@@ -1,39 +1,45 @@
-== Bar ==
-class Bar {
+== anonymous_0 ==
+{
 }
 ---------------------
 L0:
   1 <START>
+  2 mark({ })
+    read (Unit)
 L1:
-    <END>      NEXT:[<SINK>]
+  1 <END>          NEXT:[<SINK>]
 error:
-    <ERROR>    PREV:[]
+    <ERROR>        PREV:[]
 sink:
-    <SINK>     PREV:[<ERROR>, <END>]
+    <SINK>         PREV:[<ERROR>, <END>]
 =====================
-== Foo ==
-class Foo() {
+== anonymous_1 ==
+{
     fun Bar.invoke() {}
 }
 ---------------------
 L0:
   1 <START>
+  2 mark({ fun Bar.invoke() {} })
+    jmp?(L2)                         NEXT:[<END>, d(fun Bar.invoke() {})]
+    d(fun Bar.invoke() {})           NEXT:[<SINK>]
 L1:
-    <END>      NEXT:[<SINK>]
+L2 [after local declaration]:
+  1 <END>                            NEXT:[<SINK>]                           PREV:[jmp?(L2)]
 error:
-    <ERROR>    PREV:[]
+    <ERROR>                          PREV:[]
 sink:
-    <SINK>     PREV:[<ERROR>, <END>]
+    <SINK>                           PREV:[<ERROR>, <END>, d(fun Bar.invoke() {})]
 =====================
 == invoke ==
 fun Bar.invoke() {}
 ---------------------
-L0:
-  1 <START>
-  2 mark({})
+L3:
+  3 <START>
+  4 mark({})
     read (Unit)
-L1:
-  1 <END>          NEXT:[<SINK>]
+L4:
+  3 <END>          NEXT:[<SINK>]
 error:
     <ERROR>        PREV:[]
 sink:
@@ -50,14 +56,12 @@ L0:
     magic[FAKE_INITIALIZER](bar: Bar) -> <v0>
     w(bar|<v0>)
   2 mark({ bar() })
-    r(bar) -> <v1>
-    magic[IMPLICIT_RECEIVER](bar()) -> <v2>
     mark(bar())
-    call(bar(), invoke|<v1>, <v2>) -> <v3>
+    magic[UNRESOLVED_CALL](bar()|!<v1>) -> <v2>
 L1:
-  1 <END>                                        NEXT:[<SINK>]
+  1 <END>                                          NEXT:[<SINK>]
 error:
-    <ERROR>                                      PREV:[]
+    <ERROR>                                        PREV:[]
 sink:
-    <SINK>                                       PREV:[<ERROR>, <END>]
+    <SINK>                                         PREV:[<ERROR>, <END>]
 =====================

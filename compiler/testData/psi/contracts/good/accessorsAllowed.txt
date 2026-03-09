@@ -15,13 +15,22 @@ KtFile: accessorsAllowed.kt
       VALUE_ARGUMENT_LIST
         PsiElement(LPAR)('(')
         VALUE_ARGUMENT
-          CLASS_LITERAL_EXPRESSION
+          CALLABLE_REFERENCE_EXPRESSION
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('ExperimentalContracts')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
-        PsiElement(RPAR)(')')
+            REFERENCE_EXPRESSION
+              PsiErrorElement:Expecting an identifier
+                <empty list>
+        PsiErrorElement:Expecting ')'
+          PsiElement(class)('class')
   PACKAGE_DIRECTIVE
+    <empty list>
+  IMPORT_LIST
+    <empty list>
+  PsiErrorElement:Expecting a top level declaration
+    PsiElement(RPAR)(')')
+  PsiErrorElement:imports are only allowed in the beginning of file
     <empty list>
   PsiWhiteSpace('\n\n')
   IMPORT_LIST
@@ -202,70 +211,74 @@ KtFile: accessorsAllowed.kt
         PsiWhiteSpace('\n    ')
         PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
-  CLASS
-    MODIFIER_LIST
-      PsiElement(sealed)('sealed')
-    PsiWhiteSpace(' ')
+  MODIFIER_LIST
+    PsiElement(sealed)('sealed')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(class)('class')
-    PsiWhiteSpace(' ')
+  PsiWhiteSpace(' ')
+  PsiErrorElement:Expecting a top level declaration
     PsiElement(IDENTIFIER)('Status')
-    PsiWhiteSpace(' ')
-    CLASS_BODY
+  PsiWhiteSpace(' ')
+  FUN
+    PsiErrorElement:Expecting a top level declaration
+      <empty list>
+    BLOCK
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      REFERENCE_EXPRESSION
         PsiElement(IDENTIFIER)('Ok')
-        PsiWhiteSpace(' ')
+      PsiWhiteSpace(' ')
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_CALL_ENTRY
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Status')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
-        PsiWhiteSpace(' ')
-        CLASS_BODY
+        PsiElement(IDENTIFIER)('Status')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
+      PsiWhiteSpace(' ')
+      LAMBDA_EXPRESSION
+        FUNCTION_LITERAL
           PsiElement(LBRACE)('{')
+          BLOCK
+            <empty list>
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n    ')
-      CLASS
+      PsiErrorElement:Expecting an element
         PsiElement(class)('class')
+      PsiWhiteSpace(' ')
+      BINARY_EXPRESSION
+        BINARY_EXPRESSION
+          CALL_EXPRESSION
+            REFERENCE_EXPRESSION
+              PsiElement(IDENTIFIER)('Error')
+            VALUE_ARGUMENT_LIST
+              PsiElement(LPAR)('(')
+              VALUE_ARGUMENT
+                PsiErrorElement:Expecting an argument
+                  <empty list>
+              PsiErrorElement:Expecting ')'
+                PsiElement(val)('val')
+          PsiWhiteSpace(' ')
+          OPERATION_REFERENCE
+            PsiElement(IDENTIFIER)('message')
+          PsiErrorElement:Expecting an element
+            PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        PsiElement(IDENTIFIER)('Error')
-        PRIMARY_CONSTRUCTOR
-          VALUE_PARAMETER_LIST
-            PsiElement(LPAR)('(')
-            VALUE_PARAMETER
-              PsiElement(val)('val')
-              PsiWhiteSpace(' ')
-              PsiElement(IDENTIFIER)('message')
-              PsiElement(COLON)(':')
-              PsiWhiteSpace(' ')
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('String')
-            PsiElement(RPAR)(')')
+        OPERATION_REFERENCE
+          PsiElement(IDENTIFIER)('String')
+        PsiErrorElement:Expecting an element
+          <empty list>
+      PsiErrorElement:Unexpected tokens (use ';' to separate expressions on the same line)
+        PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
         PsiElement(COLON)(':')
         PsiWhiteSpace(' ')
-        SUPER_TYPE_LIST
-          SUPER_TYPE_CALL_ENTRY
-            CONSTRUCTOR_CALLEE
-              TYPE_REFERENCE
-                USER_TYPE
-                  REFERENCE_EXPRESSION
-                    PsiElement(IDENTIFIER)('Status')
-            VALUE_ARGUMENT_LIST
-              PsiElement(LPAR)('(')
-              PsiElement(RPAR)(')')
+        PsiElement(IDENTIFIER)('Status')
+        PsiElement(LPAR)('(')
+        PsiElement(RPAR)(')')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
