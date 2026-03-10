@@ -375,22 +375,44 @@ public class KotlinParsing extends AbstractKotlinParsing {
             return;
         }
 
-        if (!at(IDENTIFIER)) {
-            PsiBuilder.Marker error = mark();
-            skipUntil(TokenSet.create(EOL_OR_SEMICOLON));
-            error.error("Expecting qualified name");
-            importDirective.done(IMPORT_DIRECTIVE);
-            consumeIf(SEMICOLON);
-            return;
-        }
-
         PsiBuilder.Marker qualifiedName = mark();
-        PsiBuilder.Marker reference = mark();
-        advance(); // IDENTIFIER
-        reference.done(REFERENCE_EXPRESSION);
+        PsiBuilder.Marker reference;
 
-        while (at(DOT) && lookahead(1) != MUL) {
-            advance(); // DOT
+        if (!at(IDENTIFIER)) {
+            PsiBuilder.Marker decl = mark();
+            // Always parse modifier list (including annotations) before checking for DEFINE_KEYWORD
+            PsiBuilder.Marker modifierListMarker = mark();
+            boolean hasAnnotationModifier = false;
+            while (at(ANNOTATION_KEYWORD)) {
+                advance();
+                hasAnnotationModifier = true;
+            }
+            modifierListMarker.done(MODIFIER_LIST);
+            IElementType declType = null;
+            // Robustly accept 'annotation define' as a valid top-level declaration
+            if (hasAnnotationModifier && at(DEFINE_KEYWORD)) {
+                advance();
+                declType = parseClass(false, true); // treat as annotation class
+            } else if (at(ANNOTATION_KEYWORD) && lookahead(1) == DEFINE_KEYWORD) {
+                // Defensive: handle any missed cases where annotation define appears
+                advance(); // annotation
+                advance(); // define
+                declType = parseClass(false, true);
+            } else {
+                declType = parseCommonDeclaration(new ModifierDetector(), NameParsingMode.REQUIRED, DeclarationParsingMode.MEMBER_OR_TOPLEVEL);
+            }
+            if (declType == null && at(IMPORT_KEYWORD)) {
+                error("imports are only allowed in the beginning of file");
+                parseImportDirectives();
+                decl.drop();
+            }
+            else if (declType == null) {
+                errorAndAdvance("Expecting a top level declaration");
+                decl.drop();
+            }
+            else {
+                closeDeclarationWithCommentBinders(decl, declType, true);
+            }
 
             if (closeImportWithErrorIfNewline(importDirective, null, "Import must be placed on a single line")) {
                 qualifiedName.drop();
@@ -516,6 +538,15 @@ public class KotlinParsing extends AbstractKotlinParsing {
             @NotNull NameParsingMode nameParsingModeForObject,
             @NotNull DeclarationParsingMode declarationParsingMode
     ) {
+        // Accept 'annotation define' as a valid top-level declaration
+        if (at(ANNOTATION_KEYWORD) && lookahead(1) == DEFINE_KEYWORD) {
+            // Consume 'annotation' modifier
+            advance();
+            // Continue as if 'define' was found
+            if (getTokenId() == DEFINE_KEYWORD_Id) {
+                return parseClass(detector.isEnumDetected(), true);
+            }
+        }
         switch (getTokenId()) {
             case DEFINE_KEYWORD_Id:
             case INTERFACE_KEYWORD_Id:

@@ -1932,9 +1932,9 @@ open class PsiRawFirBuilder(
                     val classKind = when (classOrObject) {
                         is KtObjectDeclaration -> ClassKind.OBJECT
                         is KtDefine -> when {
+                            classOrObject.hasModifier(org.jetbrains.kotlin.lexer.KtTokens.ANNOTATION_KEYWORD) -> ClassKind.ANNOTATION_CLASS
                             classOrObject.isInterface() -> ClassKind.INTERFACE
                             classOrObject.isEnum() -> ClassKind.ENUM_CLASS
-                            classOrObject.isAnnotation() -> ClassKind.ANNOTATION_CLASS
                             else -> ClassKind.CLASS
                         }
                         else -> throw AssertionError("Unexpected class or object: ${classOrObject.text}")

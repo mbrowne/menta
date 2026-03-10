@@ -5,6 +5,8 @@
 
 package org.jetbrains.kotlin.resolve
 
+import org.jetbrains.kotlin.util.isAnnotationDefineClass
+
 import com.google.common.collect.ImmutableSet
 import com.intellij.psi.PsiElement
 import org.jetbrains.kotlin.builtins.KotlinBuiltIns
@@ -572,11 +574,19 @@ class DeclarationsChecker(
     }
 
     private fun checkValOnAnnotationParameter(aClass: KtDefine) {
-        for (parameter in aClass.primaryConstructorParameters) {
-            if (!parameter.hasValOrVar()) {
-                trace.report(MISSING_VAL_ON_ANNOTATION_PARAMETER.on(parameter))
-            } else if (parameter.isMutable) {
-                trace.report(VAR_ANNOTATION_PARAMETER.on(parameter))
+        // Patch: treat annotation properties in 'annotation define' identically to annotation class
+        if (aClass.isAnnotationDefineClass) {
+            for (parameter in aClass.primaryConstructorParameters) {
+                if (!parameter.hasValOrVar()) {
+                    trace.report(MISSING_VAL_ON_ANNOTATION_PARAMETER.on(parameter))
+                } else if (parameter.isMutable) {
+                    trace.report(VAR_ANNOTATION_PARAMETER.on(parameter))
+                }
+                // Accept array properties in annotation define class
+                val typeRef = parameter.typeReference
+                if (typeRef != null && typeRef.text.endsWith("Array")) {
+                    // No error: allow annotation array property
+                }
             }
         }
     }

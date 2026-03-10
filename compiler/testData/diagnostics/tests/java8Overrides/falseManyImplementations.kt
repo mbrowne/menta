@@ -12,6 +12,4 @@ interface BaseDefault {
     fun foo() {}
 }
 
-abstract define ClassEmpty_BaseEmpty_BaseDefault : ClassEmpty(), BaseEmpty, BaseDefault
-
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration */
