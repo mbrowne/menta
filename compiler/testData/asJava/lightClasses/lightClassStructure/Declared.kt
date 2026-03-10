@@ -16,7 +16,7 @@ define Outer {
 }
 
 // Modality
-abstract define Abstract
+
 open define Open
 final define Final
 

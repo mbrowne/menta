@@ -13,7 +13,7 @@ define Container {
         }
     }
 
-    abstract define Base {
+    
         val a: String by delegate()
         var mutable: String? by delegate()
         open val b: String by delegate()

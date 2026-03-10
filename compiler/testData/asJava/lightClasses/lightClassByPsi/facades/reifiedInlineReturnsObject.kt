@@ -1,4 +1,4 @@
-abstract define PaginatedTableModel<R>(initialPageSize: Int) {
+
     abstract val rows: List<R>
 }
 

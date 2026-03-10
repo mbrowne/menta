@@ -11,7 +11,7 @@ define KotlinClass {
     }
 }
 
-abstract define AbstractKotlinClass {
+
     lateinit var classLateinitVariable: Custom
 
     companion object {

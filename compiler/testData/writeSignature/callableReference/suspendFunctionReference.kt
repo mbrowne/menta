@@ -1,6 +1,6 @@
 interface I
 
-abstract define AbstractTest {
+
     abstract fun normal(): suspend (String) -> Unit
 
     abstract fun extension(): suspend Double.() -> Double

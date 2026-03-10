@@ -1,5 +1,5 @@
 
-abstract define C<T>(var constructorParam: List<CharSequence>) {
+
   fun foo<V, U : V>(p1: V, p2: C<V>, p4: Sequence<V>): T {}
 
   inline fun <reified T : Enum<T>> printAllValues() {

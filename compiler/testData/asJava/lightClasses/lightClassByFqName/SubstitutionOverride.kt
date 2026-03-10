@@ -4,7 +4,7 @@ package test
 
 define Foo
 
-abstract define Base<T> {
+
     fun noGeneric() = 42
     fun noGenericWithExplicitType(): Int = 24
     fun withOuterGeneric(t: T) = "str"

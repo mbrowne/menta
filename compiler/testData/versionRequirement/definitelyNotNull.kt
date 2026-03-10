@@ -24,10 +24,9 @@ fun <F> bar2(x: F) = x!!
 val <E> E.nn: E & Any get() = this!!
 
 define Outer {
-    abstract define R1<T, F : T & Any> : A<T & Any>
-    abstract define R2<T, F : T & Any> : A<T>
-
-    abstract define W<T> : A<T>
+    
+    
+    
 }
 
 typealias Alias<R> = A<R & Any>

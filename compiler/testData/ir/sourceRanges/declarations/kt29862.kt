@@ -1,4 +1,4 @@
-abstract define Test1(
+
     val x: Int
 ) {
 }

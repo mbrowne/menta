@@ -1,4 +1,4 @@
-abstract define A<T> {
+
     fun foo(x: T) {} // (1)
 }
 

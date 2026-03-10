@@ -13,5 +13,5 @@ val simpleProp: IC = IC("")
 
 fun result(r: List<Result<Any>?>) {}
 
-abstract define Foo : List<IC>
+
 interface Bar<T : IC>

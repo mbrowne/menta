@@ -1,5 +1,5 @@
 
-abstract define Ab {
+
     abstract fun getArray() : Array<Int>
 }
 

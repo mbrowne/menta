@@ -11,7 +11,7 @@ interface Trait<T3> {
     typealias TraitTypeAlias = Any
 }
 
-abstract define Class<T4> : Trait<Any> {
+abstract define Class<T4> {
     fun classFunc(): Unit {}
     val classProp: Any? = null
     typealias ClassTypeAlias = Any

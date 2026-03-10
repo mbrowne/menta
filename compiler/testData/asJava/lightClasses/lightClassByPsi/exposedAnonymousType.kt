@@ -1,4 +1,4 @@
-abstract define A
+
 interface B
 
 define C {
