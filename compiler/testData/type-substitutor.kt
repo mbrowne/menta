@@ -10,5 +10,3 @@ define C<X>
 define In<in T>
 define Out<out T>
 define P<X1, X2>
-
-define Rec<T: Rec<T>>
