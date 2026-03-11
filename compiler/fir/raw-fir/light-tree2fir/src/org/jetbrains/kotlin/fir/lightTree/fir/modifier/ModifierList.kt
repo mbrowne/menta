@@ -83,7 +83,6 @@ open class ModifierList(var modifiers: Long = ModifierFlag.NONE.value) {
         return when {
             modality == Modality.FINAL && hasFlag(ModifierFlag.INHERITANCE_FINAL) -> true
             modality == Modality.SEALED && hasFlag(ModifierFlag.INHERITANCE_SEALED) -> true
-            modality == Modality.ABSTRACT && hasFlag(ModifierFlag.INHERITANCE_ABSTRACT) -> true
             modality == Modality.OPEN && hasFlag(ModifierFlag.INHERITANCE_OPEN) -> true
             else -> false
         }
@@ -93,7 +92,6 @@ open class ModifierList(var modifiers: Long = ModifierFlag.NONE.value) {
         return when {
             hasFlag(ModifierFlag.INHERITANCE_FINAL) -> Modality.FINAL
             hasFlag(ModifierFlag.INHERITANCE_SEALED) -> if (isClassOrObject) Modality.SEALED else null
-            hasFlag(ModifierFlag.INHERITANCE_ABSTRACT) -> Modality.ABSTRACT
             hasFlag(ModifierFlag.INHERITANCE_OPEN) -> Modality.OPEN
             else -> null
         }

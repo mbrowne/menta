@@ -81,11 +81,6 @@ object SourceElementPositioningStrategies {
         PositioningStrategies.MODALITY_MODIFIER
     )
 
-    val ABSTRACT_MODIFIER = SourceElementPositioningStrategy(
-        LightTreePositioningStrategies.ABSTRACT_MODIFIER,
-        PositioningStrategies.ABSTRACT_MODIFIER
-    )
-
     val OPEN_MODIFIER = SourceElementPositioningStrategy(
         LightTreePositioningStrategies.OPEN_MODIFIER,
         PositioningStrategies.OPEN_MODIFIER

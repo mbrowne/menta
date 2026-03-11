@@ -48,14 +48,7 @@ class ExternalFunChecker : DeclarationChecker {
         if (DescriptorUtils.isInterface(descriptor.containingDeclaration)) {
             trace.report(ErrorsJvm.EXTERNAL_DECLARATION_IN_INTERFACE.on(declaration))
         }
-        else if (descriptor.modality == Modality.ABSTRACT) {
-            if (declaration is KtPropertyAccessor) {
-                trace.report(ErrorsJvm.EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT.on(declaration.property))
-            }
-            else {
-                trace.report(ErrorsJvm.EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT.on(declaration))
-            }
-        }
+        // Abstract external declaration diagnostic removed: abstract modifier no longer supported
 
         if (descriptor !is ConstructorDescriptor && declaration is KtDeclarationWithBody && declaration.hasBody()) {
             trace.report(ErrorsJvm.EXTERNAL_DECLARATION_CANNOT_HAVE_BODY.on(declaration))

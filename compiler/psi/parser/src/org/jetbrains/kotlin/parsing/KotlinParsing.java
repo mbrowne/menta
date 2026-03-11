@@ -595,7 +595,32 @@ public class KotlinParsing extends AbstractKotlinParsing {
      * @param localDeclaration is <tt>true</tt> if we are trying to parse a local declaration
      */
     boolean parseModifierList(@Nullable Consumer<IElementType> tokenConsumer, @NotNull TokenSet noModifiersBefore, boolean localDeclaration) {
-        return doParseModifierList(tokenConsumer, MODIFIER_KEYWORDS, AnnotationParsingMode.DEFAULT, noModifiersBefore, localDeclaration);
+        // Remove 'abstract' from modifier keywords
+        TokenSet modifierKeywordsNoAbstract = TokenSet.create(
+            KtTokens.PUBLIC_KEYWORD, KtTokens.PROTECTED_KEYWORD, KtTokens.PRIVATE_KEYWORD, KtTokens.INTERNAL_KEYWORD,
+            KtTokens.EXPECT_KEYWORD, KtTokens.ACTUAL_KEYWORD,
+            KtTokens.FINAL_KEYWORD, KtTokens.OPEN_KEYWORD, KtTokens.SEALED_KEYWORD,
+            KtTokens.CONST_KEYWORD,
+            KtTokens.EXTERNAL_KEYWORD,
+            KtTokens.OVERRIDE_KEYWORD,
+            KtTokens.LATEINIT_KEYWORD,
+            KtTokens.TAILREC_KEYWORD,
+            KtTokens.VARARG_KEYWORD,
+            KtTokens.SUSPEND_KEYWORD,
+            KtTokens.INNER_KEYWORD,
+            KtTokens.ENUM_KEYWORD, KtTokens.ANNOTATION_KEYWORD, KtTokens.FUN_KEYWORD,
+            KtTokens.COMPANION_KEYWORD,
+            KtTokens.INLINE_KEYWORD,
+            KtTokens.VALUE_KEYWORD,
+            KtTokens.INFIX_KEYWORD,
+            KtTokens.OPERATOR_KEYWORD,
+            KtTokens.DATA_KEYWORD,
+            KtTokens.OUT_KEYWORD, KtTokens.IN_KEYWORD,
+            KtTokens.REIFIED_KEYWORD,
+            KtTokens.NOINLINE_KEYWORD,
+            KtTokens.CROSSINLINE_KEYWORD
+        );
+        return doParseModifierList(tokenConsumer, modifierKeywordsNoAbstract, AnnotationParsingMode.DEFAULT, noModifiersBefore, localDeclaration);
     }
 
     private void parseFunctionTypeValueParameterModifierList() {

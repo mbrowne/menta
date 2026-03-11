@@ -178,7 +178,6 @@ open class PsiRawFirBuilder(
                 this == null -> null
                 hasModifier(FINAL_KEYWORD) -> Modality.FINAL
                 hasModifier(SEALED_KEYWORD) -> if (this@modality is KtClassOrObject) Modality.SEALED else null
-                hasModifier(ABSTRACT_KEYWORD) -> Modality.ABSTRACT
                 else -> if (hasModifier(OPEN_KEYWORD)) Modality.OPEN else null
             }
         }

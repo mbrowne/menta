@@ -368,10 +368,6 @@ object PositioningStrategies {
     }
 
     @JvmField
-    val ABSTRACT_MODIFIER: PositioningStrategy<KtModifierListOwner> =
-        ModifierSetBasedPositioningStrategy(KtTokens.ABSTRACT_KEYWORD)
-
-    @JvmField
     val OPEN_MODIFIER: PositioningStrategy<KtModifierListOwner> =
         ModifierSetBasedPositioningStrategy(KtTokens.OPEN_KEYWORD)
 
@@ -1157,8 +1153,7 @@ object PositioningStrategies {
         override fun isValid(element: PsiElement): Boolean = true
     }
 
-    val NON_FINAL_MODIFIER_OR_NAME: PositioningStrategy<KtModifierListOwner> =
-        ModifierSetBasedPositioningStrategy(KtTokens.ABSTRACT_KEYWORD, KtTokens.OPEN_KEYWORD, KtTokens.SEALED_KEYWORD)
+    val NON_FINAL_MODIFIER_OR_NAME: PositioningStrategy<KtModifierListOwner> = ModifierSetBasedPositioningStrategy(OPEN_KEYWORD, SEALED_KEYWORD)
 
     val DELEGATED_SUPERTYPE_BY_KEYWORD: PositioningStrategy<KtTypeReference> = object : PositioningStrategy<KtTypeReference>() {
         override fun mark(element: KtTypeReference): List<TextRange> {

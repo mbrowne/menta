@@ -497,8 +497,6 @@ object LightTreePositioningStrategies {
 
     val MODALITY_MODIFIER: LightTreePositioningStrategy = ModifierSetBasedLightTreePositioningStrategy(MODALITY_MODIFIERS)
 
-    val ABSTRACT_MODIFIER: LightTreePositioningStrategy =
-        ModifierSetBasedLightTreePositioningStrategy(ABSTRACT_KEYWORD)
 
     val OPEN_MODIFIER: LightTreePositioningStrategy =
         ModifierSetBasedLightTreePositioningStrategy(OPEN_KEYWORD)
@@ -1320,7 +1318,6 @@ object LightTreePositioningStrategies {
 
     val NON_FINAL_MODIFIER_OR_NAME: LightTreePositioningStrategy = ModifierSetBasedLightTreePositioningStrategy(
         TokenSet.create(
-            ABSTRACT_KEYWORD,
             OPEN_KEYWORD,
             SEALED_KEYWORD
         )

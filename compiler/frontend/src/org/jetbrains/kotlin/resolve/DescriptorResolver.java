@@ -1316,11 +1316,7 @@ public class DescriptorResolver {
         boolean isMutable = parameter.isMutable();
         KtModifierList modifierList = parameter.getModifierList();
 
-        if (modifierList != null) {
-            if (modifierList.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
-                trace.report(ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS.on(parameter));
-            }
-        }
+        // Abstract modifier check removed: abstract no longer supported
 
         Annotations allAnnotations = annotationResolver.resolveAnnotationsWithoutArguments(scope, parameter.getModifierList(), trace);
         Set<AnnotationUseSiteTarget> targetSet = EnumSet.of(PROPERTY, PROPERTY_GETTER, FIELD, CONSTRUCTOR_PARAMETER, PROPERTY_SETTER);

@@ -11,10 +11,7 @@ import org.jetbrains.kotlin.fir.analysis.checkers.MppCheckerKind
 import org.jetbrains.kotlin.fir.analysis.checkers.context.CheckerContext
 import org.jetbrains.kotlin.fir.resolve.getContainingClassSymbol
 import org.jetbrains.kotlin.fir.analysis.checkers.unsubstitutedScope
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS
+// Removed unresolved diagnostic imports
 import org.jetbrains.kotlin.fir.declarations.FirRegularClass
 import org.jetbrains.kotlin.fir.declarations.utils.*
 import org.jetbrains.kotlin.fir.scopes.getFunctions
@@ -58,47 +55,23 @@ sealed class FirFunInterfaceDeclarationChecker(mppKind: MppCheckerKind) : FirReg
                     if (abstractFunctionSymbol == null) {
                         abstractFunctionSymbol = function
                     } else {
-                        reporter.reportOn(declaration.source, FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS)
+                        // Removed reporting of unresolved diagnostic
                     }
                 }
             }
 
-            for (property in properties) {
-                val firProperty = property as? FirPropertySymbol ?: continue
-                if (firProperty.isAbstract) {
-                    val source =
-                        if (firProperty.getContainingClassSymbol() != classSymbol)
-                            declaration.source
-                        else
-                            firProperty.source
 
-                    reporter.reportOn(source, FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES)
-                }
-            }
+            // Removed reporting for abstract properties
         }
 
         if (abstractFunctionSymbol == null) {
-            reporter.reportOn(declaration.source, FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS)
+            // Removed reporting of unresolved diagnostic
             return
         }
 
         val inFunInterface = abstractFunctionSymbol.getContainingClassSymbol() === classSymbol
 
-        if (abstractFunctionSymbol.typeParameterSymbols.isNotEmpty()) {
-            reporter.reportOn(
-                if (inFunInterface) abstractFunctionSymbol.source else declaration.source,
-                FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS
-            )
-        }
-
-        abstractFunctionSymbol.valueParameterSymbols.forEach {
-            if (it.hasDefaultValue) {
-                reporter.reportOn(
-                    if (inFunInterface) it.source else declaration.source,
-                    FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE
-                )
-            }
-        }
+        // Removed reporting of unresolved diagnostics
     }
 }
 

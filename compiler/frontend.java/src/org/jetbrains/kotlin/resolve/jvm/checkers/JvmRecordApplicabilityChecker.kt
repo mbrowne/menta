@@ -79,7 +79,7 @@ class JvmRecordApplicabilityChecker(private val jvmTarget: JvmTarget) : Declarat
 
         if (!descriptor.isFinalClass) {
             val modifierOrName =
-                declaration.modifierList?.findOneOfModifiers(KtTokens.ABSTRACT_KEYWORD, KtTokens.OPEN_KEYWORD, KtTokens.SEALED_KEYWORD)
+                declaration.modifierList?.findOneOfModifiers(KtTokens.OPEN_KEYWORD, KtTokens.SEALED_KEYWORD)
                     ?: declaration.nameIdentifier
                     ?: declaration
 

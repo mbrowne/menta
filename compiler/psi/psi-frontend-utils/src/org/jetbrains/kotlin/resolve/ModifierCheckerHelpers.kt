@@ -54,44 +54,31 @@ private fun buildCompatibilityMap(): Map<Pair<KtKeywordToken, KtKeywordToken>, C
     result += incompatibilityRegister(IN_KEYWORD, OUT_KEYWORD)
     // Visibilities: incompatible
     result += incompatibilityRegister(PRIVATE_KEYWORD, PROTECTED_KEYWORD, PUBLIC_KEYWORD, INTERNAL_KEYWORD)
-    // Abstract + open + final + sealed: incompatible
-    result += incompatibilityRegister(ABSTRACT_KEYWORD, OPEN_KEYWORD, FINAL_KEYWORD, SEALED_KEYWORD)
-    // data + open, data + inner, data + abstract, data + sealed, data + inline, data + value
+    // data + open, data + inner, data + sealed, data + inline, data + value
     result += incompatibilityRegister(DATA_KEYWORD, OPEN_KEYWORD)
     result += incompatibilityRegister(DATA_KEYWORD, INNER_KEYWORD)
-    result += incompatibilityRegister(DATA_KEYWORD, ABSTRACT_KEYWORD)
     result += incompatibilityRegister(DATA_KEYWORD, SEALED_KEYWORD)
     result += incompatibilityRegister(DATA_KEYWORD, INLINE_KEYWORD)
     result += incompatibilityRegister(DATA_KEYWORD, VALUE_KEYWORD)
     result += incompatibilityRegister(INLINE_KEYWORD, VALUE_KEYWORD)
     result += incompatibilityRegister(DATA_KEYWORD, OBJECT_KEYWORD, EXPECT_KEYWORD)
-    // open is redundant to abstract & override
-    result += redundantRegister(ABSTRACT_KEYWORD, OPEN_KEYWORD)
-    // abstract is redundant to sealed
-    result += redundantRegister(SEALED_KEYWORD, ABSTRACT_KEYWORD)
-
-    // const is incompatible with abstract, open, override
-    result += incompatibilityRegister(CONST_KEYWORD, ABSTRACT_KEYWORD)
+    // open is redundant to override
+    // abstract is redundant to sealed (removed)
+    // const is incompatible with open, override
     result += incompatibilityRegister(CONST_KEYWORD, OPEN_KEYWORD)
     result += incompatibilityRegister(CONST_KEYWORD, OVERRIDE_KEYWORD)
-
     // private is incompatible with override
     result += incompatibilityRegister(PRIVATE_KEYWORD, OVERRIDE_KEYWORD)
-    // private is compatible with open / abstract only for classes
+    // private is compatible with open only for classes
     result += compatibilityForClassesRegister(PRIVATE_KEYWORD, OPEN_KEYWORD)
-    result += compatibilityForClassesRegister(PRIVATE_KEYWORD, ABSTRACT_KEYWORD)
-
     result += incompatibilityRegister(CROSSINLINE_KEYWORD, NOINLINE_KEYWORD)
-
     // 1. subclasses contained inside a sealed class can not be instantiated, because their constructors needs
     // an instance of an outer sealed (effectively abstract) class
     // 2. subclasses of a non-top-level sealed class must be declared inside the class
     // (see the KEEP https://github.com/Kotlin/KEEP/blob/master/proposals/sealed-class-inheritance.md)
     result += incompatibilityRegister(SEALED_KEYWORD, INNER_KEYWORD)
-
     // expect / actual are all incompatible
     result += incompatibilityRegister(EXPECT_KEYWORD, ACTUAL_KEYWORD)
-
     return result
 }
 
@@ -145,13 +132,6 @@ val defaultVisibilityTargetPredicate = always(
 
 val possibleTargetPredicateMap = mapOf(
     ENUM_KEYWORD to always(KotlinTarget.ENUM_CLASS),
-    ABSTRACT_KEYWORD to always(
-        KotlinTarget.CLASS_ONLY,
-        KotlinTarget.LOCAL_CLASS,
-        KotlinTarget.INTERFACE,
-        KotlinTarget.MEMBER_PROPERTY,
-        KotlinTarget.MEMBER_FUNCTION
-    ),
     OPEN_KEYWORD to always(
         KotlinTarget.CLASS_ONLY,
         KotlinTarget.LOCAL_CLASS,

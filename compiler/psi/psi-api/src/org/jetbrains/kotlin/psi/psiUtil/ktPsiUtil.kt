@@ -170,7 +170,7 @@ fun KtBlockExpression.contentRange(): PsiChildRange {
 
 // ----------- Inheritance -----------------------------------------------------------------------------------------------------------------
 
-fun KtDefine.isAbstract(): Boolean = isInterface() || hasModifier(KtTokens.ABSTRACT_KEYWORD)
+fun KtDefine.isAbstract(): Boolean = isInterface()
 
 /**
  * Returns the list of unqualified names that are indexed as the superclass names of this class. For the names that might be imported
