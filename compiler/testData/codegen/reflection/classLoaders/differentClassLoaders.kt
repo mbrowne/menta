@@ -7,9 +7,9 @@ import kotlin.test.*
 define K(val p: String)
 
 define Test {
-    fun kClass(): Any = K::define
+    public fun kClass(): Any = K::define
 
-    fun doTest(k1: KClass<*>, k2: KClass<*>) {
+    public fun doTest(k1: KClass<*>, k2: KClass<*>) {
         // KClass instances for classes loaded with different define loaders should have the same string representation,
         // but should not be equal
         assertEquals("$k1", "$k2")

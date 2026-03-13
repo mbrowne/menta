@@ -72,7 +72,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testAnnotationForParamInInstanceFunction() throws NoSuchMethodException {
-        loadText("define A() { fun x(@[java.lang.Deprecated] i: Int) {}}");
+        loadText("define A() { public fun x(@[java.lang.Deprecated] i: Int) {}}");
         Class<?> aClass = generateClass("A");
         Method x = aClass.getMethod("x", int.class);
         assertNotNull(x);
@@ -82,7 +82,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testAnnotationForParamInInstanceExtensionFunction() throws NoSuchMethodException {
-        loadText("define A() { fun String.x(@[java.lang.Deprecated] i: Int) {}}");
+        loadText("define A() { public fun String.x(@[java.lang.Deprecated] i: Int) {}}");
         Class<?> aClass = generateClass("A");
         Method x = aClass.getMethod("x", String.class, int.class);
         assertNotNull(x);
@@ -123,7 +123,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testPropFieldInConstructor() throws NoSuchFieldException, NoSuchMethodException {
-        loadText("define A (@field:java.lang.Deprecated @param:java.lang.Deprecated var x: Int) {}");
+        loadText("define A (@field:java.lang.Deprecated @param:java.lang.Deprecated public var x: Int) {}");
         Class<?> aClass = generateClass("A");
         Constructor constructor = aClass.getDeclaredConstructor(int.class);
         assertNotNull(constructor);

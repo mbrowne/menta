@@ -117,7 +117,7 @@ public class PropertyGenTest extends CodegenTestCase {
     }
 
     public void testAccessorsWithoutBody() throws Exception {
-        loadText("define AccessorsWithoutBody() { protected var foo: Int = 349\n get\n  private set\n fun setter() { foo = 610; } } ");
+        loadText("define AccessorsWithoutBody() { protected var foo: Int = 349\n get\n  private set\n public fun setter() { foo = 610; } } ");
         Class<?> aClass = generateClass("AccessorsWithoutBody");
         Object instance = aClass.newInstance();
         Method getFoo = findDeclaredMethodByName(aClass, "getFoo");

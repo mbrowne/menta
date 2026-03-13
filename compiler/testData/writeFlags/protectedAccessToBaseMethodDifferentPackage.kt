@@ -1,7 +1,7 @@
 // LAMBDAS: CLASS
 // TARGET_BACKEND: JVM
 // FILE: Base.java
-public define Base {
+public class Base {
 
     protected static String BASE_ONLY = "BASE";
 
@@ -9,7 +9,7 @@ public define Base {
         return BASE_ONLY;
     }
 
-    public static define Derived extends Base {
+    public static class Derived extends Base {
 
     }
 }

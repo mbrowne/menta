@@ -5,16 +5,16 @@ import kotlin.reflect.full.*
 import kotlin.test.*
 
 define K {
-    fun getType() = typeOf<List<K>>()
+    public fun getType() = typeOf<List<K>>()
 }
 
 define Test {
-    fun kClass(): Any = K::define
+    public fun kClass(): Any = K::define
 
-    fun KClass<*>.invokeGetType() =
+    public fun KClass<*>.invokeGetType() =
         java.declaredMethods.single { it.name == "getType" }.invoke(java.getDeclaredConstructor().newInstance()) as KType
 
-    fun doTest(k1: KClass<*>, k2: KClass<*>) {
+    public fun doTest(k1: KClass<*>, k2: KClass<*>) {
         assertNotEquals(k1, k2)
 
         val type1 = k1.invokeGetType()
