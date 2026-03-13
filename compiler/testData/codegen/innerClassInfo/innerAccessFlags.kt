@@ -6,14 +6,12 @@ define A {
         fun boo() {}
     }
 
-    // Modality
+    // Modality (Menta: no abstract)
     open define OpenStaticClass
     define FinalStaticClass
-    abstract define AbstractStaticClass
 
     open inner define OpenInnerClass
     inner define FinalInnerClass
-    abstract inner define AbstractInnerClass
 
     // Visibility
     private open inner define PrivateClass

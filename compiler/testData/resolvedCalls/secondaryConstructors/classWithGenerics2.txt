@@ -1,4 +1,4 @@
-class A<T, R> {
+define A<T, R> {
     constructor(x: T) {}
 }
 

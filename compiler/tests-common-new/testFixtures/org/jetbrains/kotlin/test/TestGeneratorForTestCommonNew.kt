@@ -23,6 +23,8 @@ fun main(args: Array<String>) {
     val k1BoxTestDir = listOf("multiplatform/k1")
     val k2BoxTestDir = listOf("multiplatform/k2")
     val excludedScriptDirs = listOf("script")
+    // Menta: no define-inheritance or abstract class inheritance
+    val mentaExcludedInheritance = listOf("mentaExcludedInheritance")
 
     // We exclude the 'inlineScopes/newFormatToOld' directory from tests that have inline scopes enabled
     // by default, since we only want to test the scenario where code with inline scopes is inlined by the
@@ -32,7 +34,7 @@ fun main(args: Array<String>) {
     generateTestGroupSuiteWithJUnit5(args, mainClassName) {
         testGroup(testsRoot, testDataRoot = "compiler/testData") {
             testClass<AbstractDiagnosticTest> {
-                model("diagnostics/tests", pattern = "^(.*)\\.kts?$", excludedPattern = excludedCustomTestdataPattern)
+                model("diagnostics/tests", pattern = "^(.*)\\.kts?$", excludedPattern = excludedCustomTestdataPattern, excludeDirs = listOf("java8Overrides"))
                 model("diagnostics/testsWithStdLib", excludedPattern = excludedCustomTestdataPattern)
             }
 
@@ -86,11 +88,11 @@ fun main(args: Array<String>) {
             }
 
             testClass<AbstractIrBlackBoxCodegenTest> {
-                model("codegen/box", excludeDirs = k2BoxTestDir)
+                model("codegen/box", excludeDirs = k2BoxTestDir + mentaExcludedInheritance)
             }
 
             testClass<AbstractDirectivesValidatorTest> {
-                model("codegen/box")
+                model("codegen/box", excludeDirs = mentaExcludedInheritance)
             }
 
             testClass<AbstractIrSteppingTest> {
@@ -152,7 +154,7 @@ fun main(args: Array<String>) {
             // ------------- Inline scopes tests duplication -------------
 
             testClass<AbstractFirBlackBoxCodegenTestWithInlineScopes> {
-                model("codegen/box", excludeDirs = k1BoxTestDir + excludedScriptDirs)
+                model("codegen/box", excludeDirs = k1BoxTestDir + excludedScriptDirs + mentaExcludedInheritance)
             }
 
             testClass<AbstractFirBytecodeTextTestWithInlineScopes> {

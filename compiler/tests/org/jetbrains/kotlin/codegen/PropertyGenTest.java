@@ -55,7 +55,7 @@ public class PropertyGenTest extends CodegenTestCase {
     }
 
     public void testPublicVar() throws Exception {
-        loadText("class PublicVar() { public var foo : Int = 0; }");
+        loadText("define PublicVar() { public var foo : Int = 0; }");
         Class<?> aClass = generateClass("PublicVar");
         Object instance = aClass.newInstance();
         Method setter = findDeclaredMethodByName(aClass, "setFoo");
@@ -65,7 +65,7 @@ public class PropertyGenTest extends CodegenTestCase {
     }
 
     public void testAccessorsInInterface() {
-        loadText("class AccessorsInInterface() { public var foo : Int = 0; }");
+        loadText("define AccessorsInInterface() { public var foo : Int = 0; }");
         Class<?> aClass = generateClass("AccessorsInInterface");
         assertNotNull(findDeclaredMethodByName(aClass, "getFoo"));
         assertNotNull(findDeclaredMethodByName(aClass, "setFoo"));
@@ -117,7 +117,7 @@ public class PropertyGenTest extends CodegenTestCase {
     }
 
     public void testAccessorsWithoutBody() throws Exception {
-        loadText("class AccessorsWithoutBody() { protected var foo: Int = 349\n get\n  private set\n fun setter() { foo = 610; } } ");
+        loadText("define AccessorsWithoutBody() { protected var foo: Int = 349\n get\n  private set\n fun setter() { foo = 610; } } ");
         Class<?> aClass = generateClass("AccessorsWithoutBody");
         Object instance = aClass.newInstance();
         Method getFoo = findDeclaredMethodByName(aClass, "getFoo");
@@ -139,12 +139,6 @@ public class PropertyGenTest extends CodegenTestCase {
         Method method = aClass.getMethod("evaluateArg");
         Integer result = (Integer) method.invoke(instance);
         assertEquals(5, result.intValue());
-    }
-
-    public void testAbstractVal() throws Exception {
-        loadText("abstract class Foo { public abstract val x: String }");
-        Class<?> aClass = generateClass("Foo");
-        assertNotNull(aClass.getMethod("getX"));
     }
 
     public void testKt160() throws Exception {

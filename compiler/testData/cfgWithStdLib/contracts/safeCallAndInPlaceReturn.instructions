@@ -13,22 +13,22 @@ L0:
     w(block|<v0>)
   2 mark({ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } return block() })
     mark({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
-    jmp?(L2)                                                                                      NEXT:[r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
-    d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })                                       NEXT:[<SINK>]
+    jmp?(L2)                                                                                                     NEXT:[r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
+    d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })                                                      NEXT:[<SINK>]
 L2 [after local declaration]:
-    r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>                               PREV:[jmp?(L2)]
+    r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>                                              PREV:[jmp?(L2)]
     mark(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
-    call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }, contract|<v1>) -> <v2>
-    r(block) -> <v3>
+    magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }|<v1>, !<v2>) -> <v3>
+    r(block) -> <v4>
     mark(block())
-    call(block(), invoke|<v3>) -> <v4>
-    ret(*|<v4>) L1
+    call(block(), invoke|<v4>) -> <v5>
+    ret(*|<v5>) L1
 L1:
-  1 <END>                                                                                         NEXT:[<SINK>]
+  1 <END>                                                                                                        NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                       PREV:[]
+    <ERROR>                                                                                                      PREV:[]
 sink:
-    <SINK>                                                                                        PREV:[<ERROR>, <END>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
+    <SINK>                                                                                                       PREV:[<ERROR>, <END>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
 =====================
 == anonymous_0 ==
 {
@@ -38,18 +38,18 @@ sink:
 L3:
   3 <START>
   4 mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
-    r(block) -> <v1>
+    r(block) -> <v0>
     mark(InvocationKind.EXACTLY_ONCE)
-    r(EXACTLY_ONCE) -> <v2>
+    magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
+    magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
     mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
+    magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
 L4:
-  3 <END>                                                                                            NEXT:[<SINK>]
+  3 <END>                                                                                                 NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                          PREV:[]
+    <ERROR>                                                                                               PREV:[]
 sink:
-    <SINK>                                                                                           PREV:[<ERROR>, <END>]
+    <SINK>                                                                                                PREV:[<ERROR>, <END>]
 =====================
 == test ==
 fun test(): String {
@@ -70,35 +70,35 @@ L0:
     jf(L2)                                                    NEXT:[<END>, r(x) -> <v1>]
     r(x) -> <v1>
     mark({ return "" })
-    r({ return "" }) -> <v2>
+    jmp?(L3)                                                  NEXT:[r({ return "" }) -> <v2>, d({ return "" })]
+    d({ return "" })                                          NEXT:[<SINK>]
+L3 [after local declaration]:
+    r({ return "" }) -> <v2>                                  PREV:[jmp?(L3)]
     mark(myRun { return "" })
     call(myRun { return "" }, myRun|<v1>, <v2>) -> <v3>
-L3 [before inlined declaration]:
-    inlined({ return "" })                                    NEXT:[<SINK>]
 L1:
 L2 [result of call]:
-L4 [after inlined declaration]:
-  1 <END>                                                     NEXT:[<SINK>]                                                    PREV:[jf(L2), ret(*|<v0>) L1]
+  1 <END>                                                     NEXT:[<SINK>]                                                    PREV:[jf(L2), ret(*|<v0>) L1, call(myRun { return "" }, myRun|<v1>, <v2>) -> <v3>]
 error:
     <ERROR>                                                   PREV:[]
 sink:
-    <SINK>                                                    PREV:[<ERROR>, <END>, inlined({ return "" })]
+    <SINK>                                                    PREV:[<ERROR>, <END>, d({ return "" })]
 =====================
-== inlined anonymous_1 ==
+== anonymous_1 ==
 {
         return ""
     }
 ---------------------
-L5:
+L4:
   3 <START>
   4 mark(return "")
     mark("")
     r("") -> <v0>
     ret(*|<v0>) L1     NEXT:[<END>]
-L6:
-- 3 <END>              NEXT:[<SINK>]             PREV:[]
+L5:
+  3 <END>              NEXT:[<SINK>]             PREV:[]
 error:
--   <ERROR>            PREV:[]
+    <ERROR>            PREV:[]
 sink:
--   <SINK>             PREV:[]
+    <SINK>             PREV:[<ERROR>, <END>]
 =====================

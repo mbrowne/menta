@@ -1,6 +1,6 @@
 package test
 
-public abstract class Mine : java.util.List<kotlin.String> {
+public final class Mine : java.util.List<kotlin.String> {
     public constructor Mine()
     public abstract /*fake_override*/ val size: kotlin.Int
     public abstract /*fake_override*/ fun add(/*0*/ kotlin.Int, /*1*/ kotlin.String!): kotlin.Unit

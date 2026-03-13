@@ -31,7 +31,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testVolatileProperty() throws Exception {
-        loadText("abstract class Foo { @Volatile public var x: String = \"\"; }");
+        loadText("define Foo { @Volatile public var x: String = \"\"; }");
         Class<?> aClass = generateClass("Foo");
         Field x = aClass.getDeclaredField("x");
         assertTrue((x.getModifiers() & Modifier.VOLATILE) != 0);
@@ -72,7 +72,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testAnnotationForParamInInstanceFunction() throws NoSuchMethodException {
-        loadText("class A() { fun x(@[java.lang.Deprecated] i: Int) {}}");
+        loadText("define A() { fun x(@[java.lang.Deprecated] i: Int) {}}");
         Class<?> aClass = generateClass("A");
         Method x = aClass.getMethod("x", int.class);
         assertNotNull(x);
@@ -82,7 +82,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testAnnotationForParamInInstanceExtensionFunction() throws NoSuchMethodException {
-        loadText("class A() { fun String.x(@[java.lang.Deprecated] i: Int) {}}");
+        loadText("define A() { fun String.x(@[java.lang.Deprecated] i: Int) {}}");
         Class<?> aClass = generateClass("A");
         Method x = aClass.getMethod("x", String.class, int.class);
         assertNotNull(x);
@@ -92,7 +92,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testParamInConstructor() throws NoSuchMethodException {
-        loadText("class A (@[java.lang.Deprecated] x: Int) {}");
+        loadText("define A (@[java.lang.Deprecated] x: Int) {}");
         Class<?> aClass = generateClass("A");
         Constructor constructor = aClass.getDeclaredConstructor(int.class);
         assertNotNull(constructor);
@@ -102,7 +102,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testParamInEnumConstructor() throws NoSuchMethodException {
-        loadText("enum class E(@[java.lang.Deprecated] p: String)");
+        loadText("enum define E(@[java.lang.Deprecated] p: String)");
         Class<?> klass = generateClass("E");
         Constructor constructor = klass.getDeclaredConstructor(String.class, int.class, String.class);
         assertNotNull(constructor);
@@ -112,7 +112,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testParamInInnerConstructor() throws NoSuchMethodException {
-        loadText("class Outer { inner class Inner(@[java.lang.Deprecated] x: Int) }");
+        loadText("define Outer { inner define Inner(@[java.lang.Deprecated] x: Int) }");
         Class<?> outer = generateClass("Outer");
         Class<?> inner = outer.getDeclaredClasses()[0];
         Constructor constructor = inner.getDeclaredConstructor(outer, int.class);
@@ -123,7 +123,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testPropFieldInConstructor() throws NoSuchFieldException, NoSuchMethodException {
-        loadText("class A (@field:java.lang.Deprecated @param:java.lang.Deprecated var x: Int) {}");
+        loadText("define A (@field:java.lang.Deprecated @param:java.lang.Deprecated var x: Int) {}");
         Class<?> aClass = generateClass("A");
         Constructor constructor = aClass.getDeclaredConstructor(int.class);
         assertNotNull(constructor);
@@ -165,7 +165,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testConstructor() throws NoSuchFieldException, NoSuchMethodException {
-        loadText("class A @[java.lang.Deprecated] constructor() {}");
+        loadText("define A @[java.lang.Deprecated] constructor() {}");
         Class<?> aClass = generateClass("A");
         Constructor<?> x = aClass.getDeclaredConstructor();
         Deprecated annotation = x.getAnnotation(Deprecated.class);
@@ -180,7 +180,7 @@ public class AnnotationGenTest extends CodegenTestCase {
     }
 
     public void testClass() throws NoSuchFieldException, NoSuchMethodException {
-        loadText("@[java.lang.Deprecated] class A () {}");
+        loadText("@[java.lang.Deprecated] define A () {}");
         Class<?> aClass = generateClass("A");
         Deprecated annotation = aClass.getAnnotation(Deprecated.class);
         assertNotNull(annotation);
@@ -201,7 +201,7 @@ public class AnnotationGenTest extends CodegenTestCase {
                  "" +
                  "@java.lang.annotation.Retention(RetentionPolicy.RUNTIME) annotation define A(val a: String)\n" +
                  "" +
-                 "@A(\"239\") class B()");
+                 "@A(\"239\") define B()");
         @SuppressWarnings("unchecked")
         Class<? extends Annotation> aClass = (Class) generateClass("A");
 
@@ -230,7 +230,7 @@ public class AnnotationGenTest extends CodegenTestCase {
                  "annotation define C(val c: String)\n" +
                  "@java.lang.annotation.Retention(RetentionPolicy.RUNTIME) annotation define A(val a: C)\n" +
                  "" +
-                 "@A(C(\"239\")) class B()");
+                 "@A(C(\"239\")) define B()");
         @SuppressWarnings("unchecked")
         Class<? extends Annotation> aClass = (Class) generateClass("A");
 
@@ -262,7 +262,7 @@ public class AnnotationGenTest extends CodegenTestCase {
                  "" +
                  "@java.lang.annotation.Retention(RetentionPolicy.RUNTIME) annotation define A(val a: Array<String>)\n" +
                  "" +
-                 "@A(arrayOf(\"239\",\"932\")) class B()");
+                 "@A(arrayOf(\"239\",\"932\")) define B()");
         @SuppressWarnings("unchecked")
         Class<? extends Annotation> aClass = (Class) generateClass("A");
 
@@ -291,7 +291,7 @@ public class AnnotationGenTest extends CodegenTestCase {
                  "" +
                  "@java.lang.annotation.Retention(RetentionPolicy.RUNTIME) annotation define A(val a: IntArray)\n" +
                  "" +
-                 "@A(intArrayOf(239,932)) class B()");
+                 "@A(intArrayOf(239,932)) define B()");
         @SuppressWarnings("unchecked")
         Class<? extends Annotation> aClass = (Class) generateClass("A");
 
@@ -336,7 +336,7 @@ public class AnnotationGenTest extends CodegenTestCase {
                  "" +
                  "@Retention(RetentionPolicy.RUNTIME) annotation define A(val a: Array<Retention>)\n" +
                  "" +
-                 "@A(arrayOf(Retention(RetentionPolicy.RUNTIME),Retention(RetentionPolicy.SOURCE))) class B()");
+                 "@A(arrayOf(Retention(RetentionPolicy.RUNTIME),Retention(RetentionPolicy.SOURCE))) define B()");
         @SuppressWarnings("unchecked")
         Class<? extends Annotation> aClass = (Class) generateClass("A");
 

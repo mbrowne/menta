@@ -10,16 +10,17 @@ fun callsAndInverts(b: Boolean, block: () -> Unit): Boolean {
     return !b
 }
 ---------------------
-                                                                                                                                          <v0>: Boolean                           NEW: magic[FAKE_INITIALIZER](b: Boolean) -> <v0>
-                                                                                                                                          <v1>: {<: () -> Unit}                   NEW: magic[FAKE_INITIALIZER](block: () -> Unit) -> <v1>
-{ callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }                                  <v2>: {<: ContractBuilder.() -> Unit}   NEW: r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }) -> <v2>
-contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }                         <v3>: *                                 NEW: call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }, contract|<v2>) -> <v3>
-block                                                                                                                                     <v4>: {<: () -> Unit}                   NEW: r(block) -> <v4>
-block()                                                                                                                                   <v5>: *                                 NEW: call(block(), invoke|<v4>) -> <v5>
-b                                                                                                                                         <v6>: Boolean                           NEW: r(b) -> <v6>
-!b                                                                                                                                        <v7>: Boolean                           NEW: call(!b, not|<v6>) -> <v7>
-return !b                                                                                                                                 !<v8>: *
-{ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b } block() return !b }   !<v8>: *                                COPY
+                                                                                                                                          <v0>: Boolean           NEW: magic[FAKE_INITIALIZER](b: Boolean) -> <v0>
+                                                                                                                                          <v1>: {<: () -> Unit}   NEW: magic[FAKE_INITIALIZER](block: () -> Unit) -> <v1>
+contract                                                                                                                                  !<v3>: *
+{ callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }                                  <v2>: *                 NEW: r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }) -> <v2>
+contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }                         <v4>: *                 NEW: magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b }|<v2>, !<v3>) -> <v4>
+block                                                                                                                                     <v5>: {<: () -> Unit}   NEW: r(block) -> <v5>
+block()                                                                                                                                   <v6>: *                 NEW: call(block(), invoke|<v5>) -> <v6>
+b                                                                                                                                         <v7>: Boolean           NEW: r(b) -> <v7>
+!b                                                                                                                                        <v8>: Boolean           NEW: call(!b, not|<v7>) -> <v8>
+return !b                                                                                                                                 !<v9>: *
+{ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b } block() return !b }   !<v9>: *                COPY
 =====================
 == anonymous_0 ==
 {
@@ -28,24 +29,25 @@ return !b                                                                       
         returns(false) implies b
     }
 ---------------------
-                                                                                                       <v0>: {<: ContractBuilder}    NEW: magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
-                                                                                                       <v10>: {<: ContractBuilder}   NEW: magic[IMPLICIT_RECEIVER](returns(false)) -> <v10>
-                                                                                                       <v4>: {<: ContractBuilder}    NEW: magic[IMPLICIT_RECEIVER](returns(true)) -> <v4>
-block                                                                                                  <v1>: {<: Function<Unit>}     NEW: r(block) -> <v1>
-EXACTLY_ONCE                                                                                           <v2>: {<: InvocationKind}     NEW: r(EXACTLY_ONCE) -> <v2>
-InvocationKind.EXACTLY_ONCE                                                                            <v2>: {<: InvocationKind}     COPY
-callsInPlace(block, InvocationKind.EXACTLY_ONCE)                                                       <v3>: *                       NEW: call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
-true                                                                                                   <v5>: *                       NEW: r(true) -> <v5>
-returns(true)                                                                                          <v6>: {<: SimpleEffect}       NEW: call(returns(true), returns|<v4>, <v5>) -> <v6>
-b                                                                                                      <v7>: Boolean                 NEW: r(b) -> <v7>
-!b                                                                                                     <v8>: Boolean                 NEW: call(!b, not|<v7>) -> <v8>
-(!b)                                                                                                   <v8>: Boolean                 COPY
-returns(true) implies (!b)                                                                             <v9>: *                       NEW: call(returns(true) implies (!b), implies|<v6>, <v8>) -> <v9>
-false                                                                                                  <v11>: *                      NEW: r(false) -> <v11>
-returns(false)                                                                                         <v12>: {<: SimpleEffect}      NEW: call(returns(false), returns|<v10>, <v11>) -> <v12>
-b                                                                                                      <v13>: Boolean                NEW: r(b) -> <v13>
-returns(false) implies b                                                                               <v14>: *                      NEW: call(returns(false) implies b, implies|<v12>, <v13>) -> <v14>
-callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b   <v14>: *                      COPY
+callsInPlace                                                                                           !<v3>: *
+block                                                                                                  <v0>: *           NEW: r(block) -> <v0>
+InvocationKind                                                                                         <v1>: *           NEW: magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
+EXACTLY_ONCE                                                                                           <v2>: *           NEW: magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
+InvocationKind.EXACTLY_ONCE                                                                            <v2>: *           COPY
+callsInPlace(block, InvocationKind.EXACTLY_ONCE)                                                       <v4>: *           NEW: magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
+returns                                                                                                !<v6>: *
+true                                                                                                   <v5>: *           NEW: r(true) -> <v5>
+returns(true)                                                                                          <v7>: *           NEW: magic[UNRESOLVED_CALL](returns(true)|<v5>, !<v6>) -> <v7>
+b                                                                                                      <v8>: Boolean     NEW: r(b) -> <v8>
+!b                                                                                                     <v9>: *           NEW: call(!b, not|<v8>) -> <v9>
+(!b)                                                                                                   <v9>: *           COPY
+returns(true) implies (!b)                                                                             <v10>: *          NEW: magic[UNRESOLVED_CALL](returns(true) implies (!b)|<v7>, <v9>) -> <v10>
+returns                                                                                                !<v12>: *
+false                                                                                                  <v11>: *          NEW: r(false) -> <v11>
+returns(false)                                                                                         <v13>: *          NEW: magic[UNRESOLVED_CALL](returns(false)|<v11>, !<v12>) -> <v13>
+b                                                                                                      <v14>: *          NEW: r(b) -> <v14>
+returns(false) implies b                                                                               <v15>: {<: ???}   NEW: magic[UNRESOLVED_CALL](returns(false) implies b|<v13>, <v14>) -> <v15>
+callsInPlace(block, InvocationKind.EXACTLY_ONCE) returns(true) implies (!b) returns(false) implies b   <v15>: {<: ???}   COPY
 =====================
 == smartcastAndInitialization ==
 fun smartcastAndInitialization(x: Any?) {
@@ -82,7 +84,7 @@ y                                                                               
 println(y)                                                                                                                                                                           <v15>: *                NEW: call(println(y), println|<v14>) -> <v15>
 { val y: Int if (callsAndInverts(x !is String) { y = 42 }) { println(y) <!DEBUG_INFO_SMARTCAST!>x<!>.length } else { println(y) x.<!UNRESOLVED_REFERENCE!>length<!> } println(y) }   <v15>: *                COPY
 =====================
-== inlined anonymous_1 ==
+== anonymous_1 ==
 { y = 42 }
 ---------------------
 42       <v0>: Int   NEW: r(42) -> <v0>
@@ -127,7 +129,7 @@ y                                                                               
 println(y)                                                                                                                                                                                             <v18>: *                NEW: call(println(y), println|<v17>) -> <v18>
 { val y: Int if (unknownBoolean && callsAndInverts(x !is String) { y = 42 }) { println(y) <!DEBUG_INFO_SMARTCAST!>x<!>.length } else { println(y) x.<!UNRESOLVED_REFERENCE!>length<!> } println(y) }   <v18>: *                COPY
 =====================
-== inlined anonymous_2 ==
+== anonymous_2 ==
 { y = 42 }
 ---------------------
 42       <v0>: Int   NEW: r(42) -> <v0>

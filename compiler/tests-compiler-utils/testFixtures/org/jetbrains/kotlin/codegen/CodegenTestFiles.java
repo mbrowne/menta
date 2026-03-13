@@ -79,6 +79,29 @@ public class CodegenTestFiles {
         return new CodegenTestFiles(ktFiles, Collections.emptyList(), Collections.emptyList());
     }
 
+    /**
+     * Normalize Menta "define" / "annotation define" to Kotlin "class" / "annotation class" only where
+     * they are declaration keywords (not e.g. in K::define or inside strings). Uses regex so we don't
+     * replace "define" in identifiers or reflection. Public so CodegenTestCase can use it for loadFiles/loadMultiFiles.
+     */
+    @NotNull
+    public static String normalizeDefineToClass(@NotNull String content) {
+        String s = content;
+        // annotation define <name> or annotation define( or annotation define{
+        // Capture full identifier [A-Za-z_][A-Za-z0-9_]* so we don't truncate e.g. "define PrivateVal()" -> "class P()"
+        s = s.replaceAll("annotation define ([A-Za-z_][A-Za-z0-9_]*)", "annotation class $1");
+        s = s.replaceAll("annotation define\n", "annotation class\n");
+        s = s.replaceAll("annotation define\\(", "annotation class(");
+        s = s.replaceAll("annotation define\\{", "annotation class{");
+        // enum define -> enum class
+        s = s.replaceAll("enum define ([A-Za-z_][A-Za-z0-9_]*)", "enum class $1");
+        // (start|newline|space) + define + (space+identifier | ( | { ) so we don't touch K::define etc.
+        s = s.replaceAll("(^|\\n| )define ([A-Za-z_][A-Za-z0-9_]*)", "$1class $2");
+        s = s.replaceAll("(^|\\n| )define\\(", "$1class(");
+        s = s.replaceAll("(^|\\n| )define\\{", "$1class{");
+        return s;
+    }
+
     @NotNull
     public static CodegenTestFiles create(@NotNull String fileName, @NotNull String contentWithDiagnosticMarkup, @NotNull Project project) {
         // `rangesToDiagnosticNames` parameter is not-null only for diagnostic tests, it's using for lazy diagnostics

@@ -1,46 +1,46 @@
 // MODULE: m1-common
 // FILE: test.kt
 
-import library.*
+import <!SYNTAX!>library<!><!SYNTAX!>.<!><!SYNTAX!>*<!>
 
 fun test() {
-    foo(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true
+    <!UNRESOLVED_REFERENCE!>foo<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true
     )
 
-    Foo(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true
-    ).foo(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true
+    <!UNRESOLVED_REFERENCE!>Foo<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true
+    ).<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true
     )
 
-    Foo(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true,
+    <!UNRESOLVED_REFERENCE!>Foo<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true,
         3.14
     )
 
-    Foo.Bar(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true
-    ).bar(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true
+    <!UNRESOLVED_REFERENCE!>Foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>Bar<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true
+    ).<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true
     )
 
-    Foo.Bar(
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>a<!> = 42,
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>b<!> = "hello",
-        <!NAMED_ARGUMENTS_NOT_ALLOWED!>c<!> = true,
+    <!UNRESOLVED_REFERENCE!>Foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>Bar<!>(
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>a<!> = 42,
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>b<!> = "hello",
+        <!DEBUG_INFO_MISSING_UNRESOLVED!>c<!> = true,
         3.14
     )
 }

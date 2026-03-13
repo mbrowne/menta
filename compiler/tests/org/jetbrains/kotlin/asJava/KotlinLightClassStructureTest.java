@@ -66,7 +66,7 @@ public abstract class KotlinLightClassStructureTest extends KotlinAsJavaTestBase
         }
 
         public void testModalities() {
-            checkModifiers("test.Abstract", PUBLIC, ABSTRACT);
+            // Menta: no abstract modifier; test.Abstract removed
             checkModifiers("test.Open", PUBLIC);
             checkModifiers("test.Final", PUBLIC, FINAL);
         }

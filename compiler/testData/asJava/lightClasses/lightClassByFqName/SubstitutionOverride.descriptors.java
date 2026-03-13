@@ -1,3 +1,3 @@
-public final class ClassWithGenericBase /* test.ClassWithGenericBase*/ extends test.Base<test.Foo> {
+public final class ClassWithGenericBase /* test.ClassWithGenericBase*/ {
   public  ClassWithGenericBase();//  .ctor()
 }

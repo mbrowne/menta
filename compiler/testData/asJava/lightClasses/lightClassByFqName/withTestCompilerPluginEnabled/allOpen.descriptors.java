@@ -1,4 +1,3 @@
-@org.jetbrains.kotlin.plugin.sandbox.AllOpen()
 public final class BaseClass /* test.BaseClass*/ {
   private int prop;
 

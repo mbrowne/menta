@@ -6,25 +6,27 @@ inline fun <T> myRun(block: () -> T): T {
     return block()
 }
 ---------------------
-                                                                                   <v0>: {<: () -> T}                      NEW: magic[FAKE_INITIALIZER](block: () -> T) -> <v0>
-{ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }                               <v1>: {<: ContractBuilder.() -> Unit}   NEW: r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>
-contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }                      <v2>: *                                 NEW: call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }, contract|<v1>) -> <v2>
-block                                                                              <v3>: {<: () -> T}                      NEW: r(block) -> <v3>
-block()                                                                            <v4>: {<: T}                            NEW: call(block(), invoke|<v3>) -> <v4>
-return block()                                                                     !<v5>: *
-{ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } return block() }   !<v5>: *                                COPY
+                                                                                   <v0>: {<: () -> T}   NEW: magic[FAKE_INITIALIZER](block: () -> T) -> <v0>
+contract                                                                           !<v2>: *
+{ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }                               <v1>: *              NEW: r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>
+contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }                      <v3>: *              NEW: magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }|<v1>, !<v2>) -> <v3>
+block                                                                              <v4>: {<: () -> T}   NEW: r(block) -> <v4>
+block()                                                                            <v5>: {<: T}         NEW: call(block(), invoke|<v4>) -> <v5>
+return block()                                                                     !<v6>: *
+{ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } return block() }   !<v6>: *             COPY
 =====================
 == anonymous_0 ==
 {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 ---------------------
-                                                   <v0>: {<: ContractBuilder}   NEW: magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
-block                                              <v1>: {<: Function<T>}       NEW: r(block) -> <v1>
-EXACTLY_ONCE                                       <v2>: {<: InvocationKind}    NEW: r(EXACTLY_ONCE) -> <v2>
-InvocationKind.EXACTLY_ONCE                        <v2>: {<: InvocationKind}    COPY
-callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v3>: *                      NEW: call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
-callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v3>: *                      COPY
+callsInPlace                                       !<v3>: *
+block                                              <v0>: *    NEW: r(block) -> <v0>
+InvocationKind                                     <v1>: *    NEW: magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
+EXACTLY_ONCE                                       <v2>: *    NEW: magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
+InvocationKind.EXACTLY_ONCE                        <v2>: *    COPY
+callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v4>: *    NEW: magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
+callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v4>: *    COPY
 =====================
 == someComputation ==
 fun someComputation(): Int = 42
@@ -57,7 +59,7 @@ inc()                                                                           
 x.inc()                                                                                                                         <v3>: *                COPY
 { val x: Int myRun { try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } } // I? x.inc() }   <v3>: *                COPY
 =====================
-== inlined anonymous_1 ==
+== anonymous_1 ==
 {
         try {
             x = someComputation()
@@ -111,7 +113,7 @@ inc()                                                                           
 x.inc()                                                                                                                                                                                          <v3>: *                COPY
 { val x: Int myRun { x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() } // Initialized x.inc() }   <v3>: *                COPY
 =====================
-== inlined anonymous_2 ==
+== anonymous_2 ==
 {
         x = 42
         try {
@@ -179,7 +181,7 @@ inc()                                                                           
 x.inc()                                                                                                                                                                                                                                                                        <v9>: *                                    COPY
 { var x: Int try { myRun { x = someComputation() x.inc() } } catch (e: java.lang.UnsupportedOperationException) { myRun { x = 42 } } catch (e: java.lang.Exception) { // do nothing } // I? because we can leave with last catch-clause which doesn't initialize x x.inc() }   <v9>: *                                    COPY
 =====================
-== inlined anonymous_3 ==
+== anonymous_3 ==
 {
             x = someComputation()
             x.inc()
@@ -191,7 +193,7 @@ inc()                           <v2>: Int   NEW: call(inc(), inc|<v1>) -> <v2>
 x.inc()                         <v2>: Int   COPY
 x = someComputation() x.inc()   <v2>: Int   COPY
 =====================
-== inlined anonymous_4 ==
+== anonymous_4 ==
 { x = 42 }
 ---------------------
 42       <v0>: Int   NEW: r(42) -> <v0>

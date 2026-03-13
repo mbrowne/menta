@@ -1,6 +1,6 @@
 == foo ==
 fun foo() {
-    class A {
+    define A {
         var a : Int
           get() {
               return field
@@ -12,23 +12,23 @@ fun foo() {
 }
 ---------------------
 L0:
-  1 <START>                                                                               INIT: in: {} out: {}
-  2 mark({ class A { var a : Int get() { return field } set(v: Int) { field = v } } })
+  1 <START>                                                                                INIT: in: {} out: {}
+  2 mark({ define A { var a : Int get() { return field } set(v: Int) { field = v } } })
     jmp?(L2)
-    v(var a : Int get() { return field } set(v: Int) { field = v })                       INIT: in: {} out: {a=D}
-    jmp?(L3)                                                                              INIT: in: {a=D} out: {a=D}
-    d(get() { return field })                                                             INIT: in: {a=I?} out: {a=I?}
+    v(var a : Int get() { return field } set(v: Int) { field = v })                        INIT: in: {} out: {a=D}
+    jmp?(L3)                                                                               INIT: in: {a=D} out: {a=D}
+    d(get() { return field })                                                              INIT: in: {a=I?} out: {a=I?}
 L3 [after local declaration]:
-    jmp?(L6)                                                                              INIT: in: {a=D} out: {a=D}
-    d(set(v: Int) { field = v })                                                          INIT: in: {a=I?} out: {a=I?}
+    jmp?(L6)                                                                               INIT: in: {a=D} out: {a=D}
+    d(set(v: Int) { field = v })                                                           INIT: in: {a=I?} out: {a=I?}
 L1:
 L2 [after local class]:
 L6 [after local declaration]:
-  1 <END>                                                                                 INIT: in: {} out: {}
+  1 <END>                                                                                  INIT: in: {} out: {}
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                USE: in: {} out: {}
+    <SINK>                                                                                                                 USE: in: {} out: {}
 =====================
 == get_a ==
 get() {

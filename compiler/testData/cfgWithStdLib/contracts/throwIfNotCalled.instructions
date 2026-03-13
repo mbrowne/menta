@@ -13,21 +13,21 @@ L0:
     w(block|<v0>)
   2 mark({ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } block() })
     mark({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
-    jmp?(L2)                                                                                      NEXT:[r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
-    d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })                                       NEXT:[<SINK>]
+    jmp?(L2)                                                                                                     NEXT:[r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
+    d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })                                                      NEXT:[<SINK>]
 L2 [after local declaration]:
-    r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>                               PREV:[jmp?(L2)]
+    r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>                                              PREV:[jmp?(L2)]
     mark(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
-    call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }, contract|<v1>) -> <v2>
-    r(block) -> <v3>
+    magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }|<v1>, !<v2>) -> <v3>
+    r(block) -> <v4>
     mark(block())
-    call(block(), invoke|<v3>) -> <v4>
+    call(block(), invoke|<v4>) -> <v5>
 L1:
-  1 <END>                                                                                         NEXT:[<SINK>]
+  1 <END>                                                                                                        NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                       PREV:[]
+    <ERROR>                                                                                                      PREV:[]
 sink:
-    <SINK>                                                                                        PREV:[<ERROR>, <END>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
+    <SINK>                                                                                                       PREV:[<ERROR>, <END>, d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })]
 =====================
 == anonymous_0 ==
 {
@@ -37,18 +37,18 @@ sink:
 L3:
   3 <START>
   4 mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
-    r(block) -> <v1>
+    r(block) -> <v0>
     mark(InvocationKind.EXACTLY_ONCE)
-    r(EXACTLY_ONCE) -> <v2>
+    magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
+    magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
     mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
+    magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
 L4:
-  3 <END>                                                                                            NEXT:[<SINK>]
+  3 <END>                                                                                                 NEXT:[<SINK>]
 error:
-    <ERROR>                                                                                          PREV:[]
+    <ERROR>                                                                                               PREV:[]
 sink:
-    <SINK>                                                                                           PREV:[<ERROR>, <END>]
+    <SINK>                                                                                                PREV:[<ERROR>, <END>]
 =====================
 == unknownRun ==
 inline fun <T> unknownRun(block: () -> T): T = block()
@@ -90,12 +90,12 @@ L0:
     v(val x: Int)
     mark(outer@ { unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })
     mark({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })
-    r({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }) -> <v0>
+    jmp?(L2)                                                                                                                                                                 NEXT:[r({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }) -> <v0>, d({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })]
+    d({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })                                                                           NEXT:[<SINK>]
+L2 [after local declaration]:
+    r({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }) -> <v0>                                                                   PREV:[jmp?(L2)]
     mark(myRun outer@ { unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })
     call(myRun outer@ { unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }, myRun|<v0>) -> <v1>
-L2 [before inlined declaration]:
-    inlined({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })
-L3 [after inlined declaration]:
     mark(println(<)
     magic[UNRESOLVED_CALL](println(<|!<v2>) -> <v3>
 L1:
@@ -103,9 +103,9 @@ L1:
 error:
     <ERROR>                                                                                                                                                                  PREV:[]
 sink:
-    <SINK>                                                                                                                                                                   PREV:[<ERROR>, <END>]
+    <SINK>                                                                                                                                                                   PREV:[<ERROR>, <END>, d({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })]
 =====================
-== inlined anonymous_1 ==
+== anonymous_1 ==
 {
         unknownRun {
             myRun {
@@ -116,14 +116,14 @@ sink:
         throw java.lang.IllegalArgumentException()
     }
 ---------------------
-L4:
+L3:
   3 <START>
   4 mark(unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException())
     mark({ myRun { x = 42 return@outer } })
-    jmp?(L6)                                                                                         NEXT:[r({ myRun { x = 42 return@outer } }) -> <v0>, d({ myRun { x = 42 return@outer } })]
+    jmp?(L5)                                                                                         NEXT:[r({ myRun { x = 42 return@outer } }) -> <v0>, d({ myRun { x = 42 return@outer } })]
     d({ myRun { x = 42 return@outer } })                                                             NEXT:[<SINK>]
-L6 [after local declaration]:
-    r({ myRun { x = 42 return@outer } }) -> <v0>                                                     PREV:[jmp?(L6)]
+L5 [after local declaration]:
+    r({ myRun { x = 42 return@outer } }) -> <v0>                                                     PREV:[jmp?(L5)]
     mark(unknownRun { myRun { x = 42 return@outer } })
     call(unknownRun { myRun { x = 42 return@outer } }, unknownRun|<v0>) -> <v1>
     mark(throw java.lang.IllegalArgumentException())
@@ -131,8 +131,8 @@ L6 [after local declaration]:
     mark(IllegalArgumentException())
     call(IllegalArgumentException(), <init>) -> <v2>
     throw (throw java.lang.IllegalArgumentException()|<v2>)                                          NEXT:[<ERROR>]
-L5:
-  3 <END>                                                                                            NEXT:[<SINK>]                                                                                           PREV:[ret L5]
+L4:
+  3 <END>                                                                                            NEXT:[<SINK>]                                                                                           PREV:[ret L4]
 error:
     <ERROR>                                                                                          PREV:[throw (throw java.lang.IllegalArgumentException()|<v2>)]
 sink:
@@ -146,39 +146,39 @@ sink:
             }
         }
 ---------------------
-L7:
+L6:
   5 <START>
   6 mark(myRun { x = 42 return@outer })
     mark({ x = 42 return@outer })
-    r({ x = 42 return@outer }) -> <v0>
+    jmp?(L8)                                                   NEXT:[r({ x = 42 return@outer }) -> <v0>, d({ x = 42 return@outer })]
+    d({ x = 42 return@outer })                                 NEXT:[<SINK>]
+L8 [after local declaration]:
+    r({ x = 42 return@outer }) -> <v0>                         PREV:[jmp?(L8)]
     mark(myRun { x = 42 return@outer })
     call(myRun { x = 42 return@outer }, myRun|<v0>) -> <v1>
-L9 [before inlined declaration]:
-    inlined({ x = 42 return@outer })                           NEXT:[<SINK>]
-L8:
-L10 [after inlined declaration]:
-  5 <END>                                                      NEXT:[<SINK>]                                                     PREV:[]
+L7:
+  5 <END>                                                      NEXT:[<SINK>]
 error:
     <ERROR>                                                    PREV:[]
 sink:
-    <SINK>                                                     PREV:[<ERROR>, <END>, inlined({ x = 42 return@outer })]
+    <SINK>                                                     PREV:[<ERROR>, <END>, d({ x = 42 return@outer })]
 =====================
-== inlined anonymous_3 ==
+== anonymous_3 ==
 {
                 x = 42
                 return@outer
             }
 ---------------------
-L11:
+L9:
   7 <START>
   8 mark(x = 42 return@outer)
     r(42) -> <v0>
     w(x|<v0>)
-    ret L5                       NEXT:[<END>]
-L12:
-- 7 <END>                        NEXT:[<SINK>]                       PREV:[]
+    ret L4                       NEXT:[<END>]
+L10:
+  7 <END>                        NEXT:[<SINK>]                       PREV:[]
 error:
--   <ERROR>                      PREV:[]
+    <ERROR>                      PREV:[]
 sink:
--   <SINK>                       PREV:[]
+    <SINK>                       PREV:[<ERROR>, <END>]
 =====================

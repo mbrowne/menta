@@ -1,5 +1,5 @@
 == TestFunctionLiteral ==
-class TestFunctionLiteral {
+define TestFunctionLiteral {
     val sum: (Int)->Int = { x: Int ->
         sum(x - 1) + x
     }
@@ -24,12 +24,12 @@ sum(x - 1) + x   <v8>: Int                   NEW: call(sum(x - 1) + x, plus|<v6>
 sum(x - 1) + x   <v8>: Int                   COPY
 =====================
 == A ==
-open class A(val a: A)
+open define A(val a: A)
 ---------------------
     <v0>: {<: A}   NEW: magic[FAKE_INITIALIZER](val a: A) -> <v0>
 =====================
 == TestObjectLiteral ==
-class TestObjectLiteral {
+define TestObjectLiteral {
     val obj: A = object: A(obj) {
         init {
             val x = obj
@@ -53,15 +53,15 @@ fun foo() {
         }
 ---------------------
       <v0>: TestObjectLiteral   NEW: magic[IMPLICIT_RECEIVER](obj) -> <v0>
-obj   <v1>: {<: A}              NEW: r(obj|<v0>) -> <v1>                  
+obj   <v1>: {<: A}              NEW: r(obj|<v0>) -> <v1>
 =====================
 == TestOther ==
-class TestOther {
+define TestOther {
     val x: Int = x + 1
 }
 ---------------------
-        <v0>: TestOther   NEW: magic[IMPLICIT_RECEIVER](x) -> <v0> 
-x       <v1>: Int         NEW: r(x|<v0>) -> <v1>                   
-1       <v2>: Int         NEW: r(1) -> <v2>                        
+        <v0>: TestOther   NEW: magic[IMPLICIT_RECEIVER](x) -> <v0>
+x       <v1>: Int         NEW: r(x|<v0>) -> <v1>
+1       <v2>: Int         NEW: r(1) -> <v2>
 x + 1   <v3>: Int         NEW: call(x + 1, plus|<v1>, <v2>) -> <v3>
 =====================

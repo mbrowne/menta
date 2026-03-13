@@ -18,49 +18,37 @@ public final class FileFacadeKt /* FileFacadeKt*/ {
   private static java.lang.String nullableVar;
 
   @org.jetbrains.annotations.NotNull()
-  @org.jetbrains.annotations.Nullable()
-  public static final java.lang.String getNotNullValWithGet();//  getNotNullValWithGet()
-
-  @org.jetbrains.annotations.NotNull()
-  @org.jetbrains.annotations.Nullable()
-  public static final java.lang.String getNotNullVarWithGetSet();//  getNotNullVarWithGetSet()
-
-  @org.jetbrains.annotations.NotNull()
-  @org.jetbrains.annotations.Nullable()
-  public static final java.lang.String getNullableValWithGet();//  getNullableValWithGet()
-
-  @org.jetbrains.annotations.NotNull()
-  @org.jetbrains.annotations.Nullable()
-  public static final java.lang.String getNullableVarWithGetSet();//  getNullableVarWithGetSet()
-
-  @org.jetbrains.annotations.NotNull()
-  @org.jetbrains.annotations.Nullable()
-  public static final java.lang.String notNullWithN();//  notNullWithN()
-
-  @org.jetbrains.annotations.NotNull()
-  @org.jetbrains.annotations.Nullable()
-  public static final java.lang.String nullableWithNN();//  nullableWithNN()
-
-  @org.jetbrains.annotations.NotNull()
   public static final java.lang.String getNotNullVal();//  getNotNullVal()
+
+  @org.jetbrains.annotations.NotNull()
+  public static final java.lang.String getNotNullValWithGet();//  getNotNullValWithGet()
 
   @org.jetbrains.annotations.NotNull()
   public static final java.lang.String getNotNullVar();//  getNotNullVar()
 
   @org.jetbrains.annotations.NotNull()
+  public static final java.lang.String getNotNullVarWithGetSet();//  getNotNullVarWithGetSet()
+
+  @org.jetbrains.annotations.NotNull()
   public static final java.lang.String notNull(@org.jetbrains.annotations.NotNull() java.lang.String);//  notNull(java.lang.String)
 
   @org.jetbrains.annotations.NotNull()
-  public static final java.lang.String notNullWithNN();//  notNullWithNN()
+  public static final java.lang.String notNullWithN();//  notNullWithN()
 
   @org.jetbrains.annotations.NotNull()
-  public static final void setNullableVarWithGetSet(@org.jetbrains.annotations.Nullable() java.lang.String);//  setNullableVarWithGetSet(java.lang.String)
+  public static final java.lang.String notNullWithNN();//  notNullWithNN()
 
   @org.jetbrains.annotations.Nullable()
   public static final java.lang.String getNullableVal();//  getNullableVal()
 
   @org.jetbrains.annotations.Nullable()
+  public static final java.lang.String getNullableValWithGet();//  getNullableValWithGet()
+
+  @org.jetbrains.annotations.Nullable()
   public static final java.lang.String getNullableVar();//  getNullableVar()
+
+  @org.jetbrains.annotations.Nullable()
+  public static final java.lang.String getNullableVarWithGetSet();//  getNullableVarWithGetSet()
 
   @org.jetbrains.annotations.Nullable()
   public static final java.lang.String nullable(@org.jetbrains.annotations.Nullable() java.lang.String);//  nullable(java.lang.String)
@@ -69,11 +57,15 @@ public final class FileFacadeKt /* FileFacadeKt*/ {
   public static final java.lang.String nullableWithN();//  nullableWithN()
 
   @org.jetbrains.annotations.Nullable()
-  public static final void setNotNullVarWithGetSet(@org.jetbrains.annotations.NotNull() java.lang.String);//  setNotNullVarWithGetSet(java.lang.String)
+  public static final java.lang.String nullableWithNN();//  nullableWithNN()
 
   private static final java.lang.String privateFun(java.lang.String, java.lang.String);//  privateFun(java.lang.String, java.lang.String)
 
   public static final void setNotNullVar(@org.jetbrains.annotations.NotNull() java.lang.String);//  setNotNullVar(java.lang.String)
 
+  public static final void setNotNullVarWithGetSet(@org.jetbrains.annotations.NotNull() java.lang.String);//  setNotNullVarWithGetSet(java.lang.String)
+
   public static final void setNullableVar(@org.jetbrains.annotations.Nullable() java.lang.String);//  setNullableVar(java.lang.String)
+
+  public static final void setNullableVarWithGetSet(@org.jetbrains.annotations.Nullable() java.lang.String);//  setNullableVarWithGetSet(java.lang.String)
 }

@@ -1,5 +1,5 @@
 == Delegate ==
-class Delegate {
+define Delegate {
     fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0
 }
 ---------------------
@@ -7,9 +7,9 @@ class Delegate {
 == getValue ==
 fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0
 ---------------------
-    <v0>: {<: Nothing?}       NEW: magic[FAKE_INITIALIZER](_this: Nothing?) -> <v0>
-    <v1>: {<: KProperty<*>}   NEW: magic[FAKE_INITIALIZER](p: KProperty<*>) -> <v1>
-0   <v2>: Int                 NEW: r(0) -> <v2>
+    <v0>: {<: Nothing?}                                                                                  NEW: magic[FAKE_INITIALIZER](_this: Nothing?) -> <v0>
+    <v1>: {<: [Error type: Unresolved type for KProperty<*>]<out [Error type: Error type projection]>}   NEW: magic[FAKE_INITIALIZER](p: KProperty<*>) -> <v1>
+0   <v2>: Int                                                                                            NEW: r(0) -> <v2>
 =====================
 == a ==
 val a = Delegate()

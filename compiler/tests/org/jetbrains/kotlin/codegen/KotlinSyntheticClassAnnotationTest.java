@@ -88,14 +88,14 @@ public class KotlinSyntheticClassAnnotationTest extends CodegenTestCase {
 
     public void testLocalClass() {
         doTestKotlinClass(
-                "fun foo() { class Local }",
+                "fun foo() { define Local }",
                 "Local"
         );
     }
 
     public void testInnerClassOfLocalClass() {
         doTestKotlinClass(
-                "fun foo() { class Local { inner class Inner } }",
+                "fun foo() { define Local { inner define Inner } }",
                 "Inner"
         );
     }
@@ -109,7 +109,7 @@ public class KotlinSyntheticClassAnnotationTest extends CodegenTestCase {
 
     public void testWhenMappings() {
         doTestKotlinSyntheticClass(
-                "enum class E { A }\n" +
+                "enum define E { A }\n" +
                 "val x = when (E.A) { E.A -> 1; else -> 0; }",
                 "WhenMappings"
         );

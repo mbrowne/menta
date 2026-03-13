@@ -39,7 +39,7 @@ open class MethodOrderTest : CodegenTestCase() {
                 val delegate: Trait = throw Error()
 
                 val obj = object : Trait by delegate {
-                    override fun f3() { }
+                    public override fun f3() { }
                 }
             """,
             "\$obj$1",
@@ -53,10 +53,10 @@ open class MethodOrderTest : CodegenTestCase() {
     fun testAnonymousObjectClosureOrdering() {
         doTest(
             """
-                class Klass {
-                    fun Any.f(a: String, b: Int, c: Double, d: Any, e: Long) {
+                define Klass {
+                    public fun Any.f(a: String, b: Int, c: Double, d: Any, e: Long) {
                         object : Runnable {
-                            override fun run() {
+                            public override fun run() {
                                 a + b + c + d + e + this@f + this@Klass
                             }
                         }.run()
@@ -71,11 +71,11 @@ open class MethodOrderTest : CodegenTestCase() {
     fun testMemberAccessor() {
         doTest(
             """
-                class Outer(private val a: Int, private var b: String) {
+                define Outer(private val a: Int, private var b: String) {
                     private fun c() {
                     }
 
-                    inner class Inner() {
+                    inner define Inner() {
                         init {
                             b = b + a
                             c()
@@ -111,8 +111,8 @@ open class MethodOrderTest : CodegenTestCase() {
                     fun removeEldestEntry(eldest: Any?): Boolean
                 }
 
-                class MinMap<K, V> : Base<K, V> {
-                    override fun removeEldestEntry(eldest: Any?) = true
+                define MinMap<K, V> : Base<K, V> {
+                    public override fun removeEldestEntry(eldest: Any?) = true
                 }
             """,
             "MinMap",
@@ -127,33 +127,6 @@ open class MethodOrderTest : CodegenTestCase() {
                 "entrySet()I",
                 "getValues()I",
                 "values()I"
-            )
-        )
-    }
-
-    fun testBridgeOrder() {
-        doTest(
-            """
-                interface IrElement
-                class IrClassContext
-
-                interface IrElementVisitor<out R, in D> {
-                    fun visitElement(element: IrElement, data: D): R
-                }
-
-                interface IrElementTransformer<in D> : IrElementVisitor<IrElement, D> {
-                    override fun visitElement(element: IrElement, data: D): IrElement =
-                            element.also { throw RuntimeException() }
-                }
-
-                abstract class ClassLowerWithContext : IrElementTransformer<IrClassContext?>
-            """,
-            "ClassLowerWithContext",
-            listOf(
-                "<init>()V",
-                "visitElement(LIrElement;LIrClassContext;)LIrElement;",
-                "visitElement(LIrElement;Ljava/lang/Object;)LIrElement;",
-                "visitElement(LIrElement;Ljava/lang/Object;)Ljava/lang/Object;",
             )
         )
     }

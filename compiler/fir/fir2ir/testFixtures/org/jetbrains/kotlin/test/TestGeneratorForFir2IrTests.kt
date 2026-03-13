@@ -23,19 +23,21 @@ fun main(args: Array<String>) {
     val k1BoxTestDir = listOf("multiplatform/k1")
     val k2BoxTestDir = listOf("multiplatform/k2")
     val excludedScriptDirs = listOf("script")
+    // Menta: no define-inheritance or abstract class inheritance
+    val mentaExcludedInheritance = listOf("mentaExcludedInheritance")
 
     generateTestGroupSuiteWithJUnit5(args, mainClassName) {
         testGroup(testRoot, testDataRoot = "compiler/testData") {
             testClass<AbstractFirLightTreeBlackBoxCodegenTest> {
-                model("codegen/box", excludeDirs = k1BoxTestDir + excludedScriptDirs)
+                model("codegen/box", excludeDirs = k1BoxTestDir + excludedScriptDirs + mentaExcludedInheritance)
             }
 
             testClass<AbstractFirLightTreeHeaderModeCodegenTest> {
-                model("codegen/box", excludeDirs = k1BoxTestDir + excludedScriptDirs)
+                model("codegen/box", excludeDirs = k1BoxTestDir + excludedScriptDirs + mentaExcludedInheritance)
             }
 
             testClass<AbstractFirPsiBlackBoxCodegenTest> {
-                model("codegen/box", excludeDirs = k1BoxTestDir)
+                model("codegen/box", excludeDirs = k1BoxTestDir + mentaExcludedInheritance)
             }
             testClass<AbstractJvmLightTreeBlackBoxCodegenWithSeparateKmpCompilationTest> {
                 model("codegen/box/${k2BoxTestDir.first()}")

@@ -120,8 +120,21 @@ public class TestDataAssertions {
         failIfNotEqual(message, compareExpectFileWithActualText(expectedFile, actual, sanitizer));
     }
 
+    /** When true, overwrite expected file with actual on mismatch instead of failing. Use to bulk-update golden files. */
+    private static boolean isOverwriteExpected() {
+        return "true".equals(System.getProperty("kotlin.test.overwrite.expected"));
+    }
+
     public static void failIfNotEqual(@NotNull String message, FileComparisonResult fileComparisonResult) {
         if (!fileComparisonResult.doesEqual) {
+            if (isOverwriteExpected()) {
+                try {
+                    FileUtil.writeToFile(fileComparisonResult.expectedFile, fileComparisonResult.actualSanitizedText);
+                } catch (IOException e) {
+                    throw ExceptionUtilsKt.rethrow(e);
+                }
+                return;
+            }
             throw new AssertionFailedError(
                     message + ": " + fileComparisonResult.expectedFile.getName(),
                     new FileInfo(fileComparisonResult.expectedFile.getAbsolutePath(), fileComparisonResult.expectedText.getBytes(

@@ -1,4 +1,4 @@
-class A {}
+define A {}
 
 fun <T> foo(t: T) {}
 

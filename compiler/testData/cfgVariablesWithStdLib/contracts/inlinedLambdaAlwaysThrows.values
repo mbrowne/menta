@@ -6,24 +6,26 @@ inline fun myRun(block: () -> Unit): Unit {
     block()
 }
 ---------------------
-                                                                            <v0>: {<: () -> Unit}                   NEW: magic[FAKE_INITIALIZER](block: () -> Unit) -> <v0>
-{ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }                        <v1>: {<: ContractBuilder.() -> Unit}   NEW: r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>
-contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }               <v2>: *                                 NEW: call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }, contract|<v1>) -> <v2>
-block                                                                       <v3>: {<: () -> Unit}                   NEW: r(block) -> <v3>
-block()                                                                     <v4>: *                                 NEW: call(block(), invoke|<v3>) -> <v4>
-{ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } block() }   <v4>: *                                 COPY
+                                                                            <v0>: {<: () -> Unit}   NEW: magic[FAKE_INITIALIZER](block: () -> Unit) -> <v0>
+contract                                                                    !<v2>: *
+{ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }                        <v1>: *                 NEW: r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>
+contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }               <v3>: *                 NEW: magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }|<v1>, !<v2>) -> <v3>
+block                                                                       <v4>: {<: () -> Unit}   NEW: r(block) -> <v4>
+block()                                                                     <v5>: *                 NEW: call(block(), invoke|<v4>) -> <v5>
+{ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } block() }   <v5>: *                 COPY
 =====================
 == anonymous_0 ==
 {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 ---------------------
-                                                   <v0>: {<: ContractBuilder}   NEW: magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
-block                                              <v1>: {<: Function<Unit>}    NEW: r(block) -> <v1>
-EXACTLY_ONCE                                       <v2>: {<: InvocationKind}    NEW: r(EXACTLY_ONCE) -> <v2>
-InvocationKind.EXACTLY_ONCE                        <v2>: {<: InvocationKind}    COPY
-callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v3>: *                      NEW: call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
-callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v3>: *                      COPY
+callsInPlace                                       !<v3>: *
+block                                              <v0>: *    NEW: r(block) -> <v0>
+InvocationKind                                     <v1>: *    NEW: magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
+EXACTLY_ONCE                                       <v2>: *    NEW: magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
+InvocationKind.EXACTLY_ONCE                        <v2>: *    COPY
+callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v4>: *    NEW: magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
+callsInPlace(block, InvocationKind.EXACTLY_ONCE)   <v4>: *    COPY
 =====================
 == test ==
 fun test() {
@@ -35,7 +37,7 @@ fun test() {
 myRun { throw java.lang.IllegalArgumentException() }   <v1>: *                 NEW: call(myRun { throw java.lang.IllegalArgumentException() }, myRun|<v0>) -> <v1>
 42                                                     <v2>: Int               NEW: r(42) -> <v2>
 =====================
-== inlined anonymous_1 ==
+== anonymous_1 ==
 { throw java.lang.IllegalArgumentException() }
 ---------------------
 IllegalArgumentException()                   <v0>: {<: Throwable}   NEW: call(IllegalArgumentException(), <init>) -> <v0>

@@ -2438,6 +2438,38 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             DECLARATION_NAME
         )
 
+        // Abstract-related diagnostics (renderers required for DefaultDiagnosticsTest; Menta has no user-visible abstract)
+        map.put(ABSTRACT_MEMBER_NOT_IMPLEMENTED, "{0} is not abstract and does not implement abstract member {1}.", RENDER_CLASS_OR_OBJECT_QUOTED, SYMBOLS_ON_NEWLINE_WITH_INDENT)
+        map.put(ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED, "{0} is not abstract and does not implement abstract base class member {1}.", RENDER_CLASS_OR_OBJECT_QUOTED, SYMBOLS_ON_NEWLINE_WITH_INDENT)
+        map.put(
+            ABSTRACT_MEMBER_INCORRECTLY_DELEGATED.warningFactory,
+            "Abstract member incorrectly delegated (object delegation to itself). This will be an error. See https://youtrack.jetbrains.com/issue/KT-17417.",
+            RENDER_CLASS_OR_OBJECT_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(
+            ABSTRACT_MEMBER_INCORRECTLY_DELEGATED.errorFactory,
+            "Abstract member incorrectly delegated: {0} delegates to itself.",
+            RENDER_CLASS_OR_OBJECT_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(
+            ABSTRACT_MEMBER_NOT_IMPLEMENTED_BY_ENUM_ENTRY,
+            "Enum entry must implement abstract member {1}.",
+            RENDER_ENUM_ENTRY_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(
+            INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR,
+            "{0} inherits invisible abstract members: {1}.",
+            RENDER_CLASS_OR_OBJECT_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(ABSTRACT_SUPER_CALL, "Abstract member cannot be accessed directly.")
+        map.put(ABSTRACT_SUPER_CALL_WARNING, "Abstract fake override member access is deprecated. See https://youtrack.jetbrains.com/issue/KT-49017.")
+        map.put(CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS, "Cannot create an instance of an abstract class.")
+        map.put(PROPERTY_WITH_BACKING_FIELD_INSIDE_VALUE_CLASS, "Value class cannot have properties with backing fields.")
+
         map.put(
             VAR_OVERRIDDEN_BY_VAL,
             "''var'' property {0} cannot be overridden by ''val'' property ''{1}''.",

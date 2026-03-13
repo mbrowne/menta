@@ -7,28 +7,28 @@ inline fun <T> myRun(block: () -> T): T {
 }
 ---------------------
 L0:
-  1 <START>                                                                                       INIT: in: {} out: {}
-    v(block: () -> T)                                                                             INIT: in: {} out: {}
-    magic[FAKE_INITIALIZER](block: () -> T) -> <v0>                                               INIT: in: {} out: {}
-    w(block|<v0>)                                                                                 INIT: in: {} out: {}
-  2 mark({ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } return block() })        INIT: in: {} out: {}
+  1 <START>                                                                                                      INIT: in: {} out: {}
+    v(block: () -> T)                                                                                            INIT: in: {} out: {}
+    magic[FAKE_INITIALIZER](block: () -> T) -> <v0>                                                              INIT: in: {} out: {}
+    w(block|<v0>)                                                                                                INIT: in: {} out: {}
+  2 mark({ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } return block() })                       INIT: in: {} out: {}
     mark({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
     jmp?(L2)
     d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
 L2 [after local declaration]:
     r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>
     mark(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
-    call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }, contract|<v1>) -> <v2>
-    r(block) -> <v3>
+    magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }|<v1>, !<v2>) -> <v3>
+    r(block) -> <v4>
     mark(block())
-    call(block(), invoke|<v3>) -> <v4>
-    ret(*|<v4>) L1
+    call(block(), invoke|<v4>) -> <v5>
+    ret(*|<v5>) L1
 L1:
   1 <END>
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                USE: in: {} out: {}
+    <SINK>                                                                                                                               USE: in: {} out: {}
 =====================
 == anonymous_0 ==
 {
@@ -36,20 +36,20 @@ sink:
     }
 ---------------------
 L3:
-  3 <START>                                                                                          INIT: in: {} out: {}
+  3 <START>                                                                                               INIT: in: {} out: {}
   4 mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
-    r(block) -> <v1>
+    r(block) -> <v0>
     mark(InvocationKind.EXACTLY_ONCE)
-    r(EXACTLY_ONCE) -> <v2>
+    magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
+    magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
     mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
+    magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
 L4:
   3 <END>
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                   USE: in: {} out: {}
+    <SINK>                                                                                                                        USE: in: {} out: {}
 =====================
 == someComputation ==
 fun someComputation(): Int = 42
@@ -85,18 +85,18 @@ fun tryCatchInlined() {
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                                INIT: in: {} out: {}              USE: in: {} out: {}
+  1 <START>                                                                                                                                INIT: in: {} out: {}            USE: in: {} out: {}
   2 mark({ val x: Int myRun { try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } } // I? x.inc() })
     v(val x: Int)                                                                                                                          INIT: in: {} out: {x=D}
     mark({ try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } })                                       INIT: in: {x=D} out: {x=D}
-    r({ try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } }) -> <v0>
+    jmp?(L2)
+    d({ try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } })                                          INIT: in: {x=I?} out: {x=I?}
+L2 [after local declaration]:
+    r({ try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } }) -> <v0>                                  INIT: in: {x=D} out: {x=D}
     mark(myRun { try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } })
     call(myRun { try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } }, myRun|<v0>) -> <v1>
-L2 [before inlined declaration]:
-    inlined({ try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() } })                                    INIT: in: {x=I?D} out: {x=I?D}
-L3 [after inlined declaration]:
-    mark(x.inc())                                                                                                                                                            USE: in: {x=READ} out: {x=READ}
-    r(x) -> <v2>                                                                                                                                                             USE: in: {} out: {x=READ}
+    mark(x.inc())                                                                                                                                                          USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v2>                                                                                                                                                           USE: in: {} out: {x=READ}
     mark(inc())
     call(inc(), inc|<v2>) -> <v3>
 L1:
@@ -104,9 +104,9 @@ L1:
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                                                                   USE: in: {} out: {}
+    <SINK>                                                                                                                                                                 USE: in: {} out: {}
 =====================
-== inlined anonymous_1 ==
+== anonymous_1 ==
 {
         try {
             x = someComputation()
@@ -118,11 +118,11 @@ sink:
         }
     }
 ---------------------
-L4:
+L3:
   3 <START>                                                                                                             INIT: in: {x=D} out: {x=D}
   4 mark(try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() })
     mark(try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() })
-    jmp?(L6)                                                                                                                                              USE: in: {x=READ} out: {x=READ}
+    jmp?(L5)                                                                                                                                              USE: in: {x=READ} out: {x=READ}
   5 mark({ x = someComputation() x.inc() })
     mark(someComputation())
     call(someComputation(), someComputation) -> <v0>                                                                                                      USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
@@ -131,27 +131,27 @@ L4:
     r(x) -> <v1>
     mark(inc())
     call(inc(), inc|<v1>) -> <v2>
-  4 jmp?(L6)
-    jmp(L7)
-L6 [onException]:
+  4 jmp?(L5)                                                                                                                                              USE: in: {x=READ} out: {x=READ}
+    jmp(L6)                                                                                                                                               USE: in: {} out: {}
+L5 [onException]:
   5 v(e: java.lang.Exception)                                                                                           INIT: in: {x=I?D} out: {x=I?D}
     magic[FAKE_INITIALIZER](e: java.lang.Exception) -> <v3>                                                             INIT: in: {x=I?D} out: {x=I?D}
     w(e|<v3>)                                                                                                           INIT: in: {x=I?D} out: {x=I?D}
   6 mark({ // I? x.inc() })                                                                                             INIT: in: {x=I?D} out: {x=I?D}
-    mark(x.inc())
-    r(x) -> <v4>
+    mark(x.inc())                                                                                                                                         USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v4>                                                                                                                                          USE: in: {} out: {x=READ}
     mark(inc())
     call(inc(), inc|<v4>) -> <v5>
-  5 jmp(L7)
-L7 [afterCatches]:
+  5 jmp(L6)
+L6 [afterCatches]:
   4 merge(try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // I? x.inc() }|<v2>, <v5>) -> <v6>
-  3 ret(*|<v6>) L5
-L5:
-    <END>                                                                                                                                                 USE: in: {x=READ} out: {x=READ}
+  3 ret(*|<v6>) L4
+L4:
+    <END>
 error:
--   <ERROR>
+    <ERROR>                                                                                                             INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                              INIT: in: {x=I?D} out: {x=I?D}    USE: in: {x=READ} out: {x=READ}
+    <SINK>                                                                                                              INIT: in: {x=I?} out: {x=I?}      USE: in: {} out: {}
 =====================
 == possibleReassignmentInTryCatch ==
 fun possibleReassignmentInTryCatch() {
@@ -176,18 +176,18 @@ fun possibleReassignmentInTryCatch() {
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                                                                                                 INIT: in: {} out: {}            USE: in: {} out: {}
+  1 <START>                                                                                                                                                                                                 INIT: in: {} out: {}          USE: in: {} out: {}
   2 mark({ val x: Int myRun { x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() } // Initialized x.inc() })
     v(val x: Int)                                                                                                                                                                                           INIT: in: {} out: {x=D}
     mark({ x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() })                                                INIT: in: {x=D} out: {x=D}
-    r({ x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() }) -> <v0>
+    jmp?(L2)                                                                                                                                                                                                                              USE: in: {x=READ} out: {x=READ}
+    d({ x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() })                                                   INIT: in: {x=I} out: {x=I}    USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
+L2 [after local declaration]:
+    r({ x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() }) -> <v0>                                           INIT: in: {x=D} out: {x=D}
     mark(myRun { x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() })
     call(myRun { x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() }, myRun|<v0>) -> <v1>
-L2 [before inlined declaration]:
-    inlined({ x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc() })                                             INIT: in: {x=ID} out: {x=ID}    USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
-L3 [after inlined declaration]:
-    mark(x.inc())                                                                                                                                                                                                                           USE: in: {x=READ} out: {x=READ}
-    r(x) -> <v2>                                                                                                                                                                                                                            USE: in: {} out: {x=READ}
+    mark(x.inc())                                                                                                                                                                                                                         USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v2>                                                                                                                                                                                                                          USE: in: {} out: {x=READ}
     mark(inc())
     call(inc(), inc|<v2>) -> <v3>
 L1:
@@ -195,9 +195,9 @@ L1:
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                                                                                                                                  USE: in: {} out: {}
+    <SINK>                                                                                                                                                                                                                                USE: in: {} out: {}
 =====================
-== inlined anonymous_2 ==
+== anonymous_2 ==
 {
         x = 42
         try {
@@ -213,13 +213,13 @@ sink:
         x.inc()
     }
 ---------------------
-L4:
+L3:
   3 <START>                                                                                                                                                 INIT: in: {x=D} out: {x=D}
   4 mark(x = 42 try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() } // Initialized x.inc())
     r(42) -> <v0>
     w(x|<v0>)                                                                                                                                               INIT: in: {x=D} out: {x=ID}
     mark(try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() })                                  INIT: in: {x=ID} out: {x=ID}
-    jmp?(L6)
+    jmp?(L5)
   5 mark({ x = someComputation() x.inc() })
     mark(someComputation())
     call(someComputation(), someComputation) -> <v1>                                                                                                                                        USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
@@ -228,9 +228,9 @@ L4:
     r(x) -> <v2>
     mark(inc())
     call(inc(), inc|<v2>) -> <v3>
-  4 jmp?(L6)
-    jmp(L7)                                                                                                                                                                                 USE: in: {x=READ} out: {x=READ}
-L6 [onException]:
+  4 jmp?(L5)
+    jmp(L6)                                                                                                                                                                                 USE: in: {x=READ} out: {x=READ}
+L5 [onException]:
   5 v(e: java.lang.Exception)                                                                                                                               INIT: in: {x=ID} out: {x=ID}
     magic[FAKE_INITIALIZER](e: java.lang.Exception) -> <v4>                                                                                                 INIT: in: {x=ID} out: {x=ID}
     w(e|<v4>)                                                                                                                                               INIT: in: {x=ID} out: {x=ID}
@@ -241,20 +241,20 @@ L6 [onException]:
     r(x) -> <v6>
     mark(inc())
     call(inc(), inc|<v6>) -> <v7>
-  5 jmp(L7)
-L7 [afterCatches]:
+  5 jmp(L6)
+L6 [afterCatches]:
   4 merge(try { x = someComputation() x.inc() } catch (e: java.lang.Exception) { // Possible reassignment x = 42 x.inc() }|<v3>, <v7>) -> <v8>
-    mark(x.inc())
-    r(x) -> <v9>
+    mark(x.inc())                                                                                                                                                                           USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v9>                                                                                                                                                                            USE: in: {} out: {x=READ}
     mark(inc())
     call(inc(), inc|<v9>) -> <v10>
-  3 ret(*|<v10>) L5
-L5:
-    <END>                                                                                                                                                                                   USE: in: {x=READ} out: {x=READ}
+  3 ret(*|<v10>) L4
+L4:
+    <END>
 error:
--   <ERROR>
+    <ERROR>                                                                                                                                                 INIT: in: {} out: {}
 sink:
-    <SINK>                                                                                                                                                  INIT: in: {x=ID} out: {x=ID}    USE: in: {x=READ} out: {x=READ}
+    <SINK>                                                                                                                                                  INIT: in: {x=I} out: {x=I}      USE: in: {} out: {}
 =====================
 == tryCatchOuter ==
 fun tryCatchOuter() {
@@ -276,46 +276,46 @@ fun tryCatchOuter() {
 }
 ---------------------
 L0:
-  1 <START>                                                                                                                                                                                                                                                                               INIT: in: {} out: {}              USE: in: {} out: {}
+  1 <START>                                                                                                                                                                                                                                                                               INIT: in: {} out: {}          USE: in: {} out: {}
   2 mark({ var x: Int try { myRun { x = someComputation() x.inc() } } catch (e: java.lang.UnsupportedOperationException) { myRun { x = 42 } } catch (e: java.lang.Exception) { // do nothing } // I? because we can leave with last catch-clause which doesn't initialize x x.inc() })
     v(var x: Int)                                                                                                                                                                                                                                                                         INIT: in: {} out: {x=D}
     mark(try { myRun { x = someComputation() x.inc() } } catch (e: java.lang.UnsupportedOperationException) { myRun { x = 42 } } catch (e: java.lang.Exception) { // do nothing })                                                                                                        INIT: in: {x=D} out: {x=D}
-    jmp?(L2)                                                                                                                                                                                                                                                                                                                USE: in: {x=READ} out: {x=READ}
+    jmp?(L2)
   3 mark({ myRun { x = someComputation() x.inc() } })
     mark({ x = someComputation() x.inc() })
-    r({ x = someComputation() x.inc() }) -> <v0>
+    jmp?(L3)                                                                                                                                                                                                                                                                                                            USE: in: {x=READ} out: {x=READ}
+    d({ x = someComputation() x.inc() })                                                                                                                                                                                                                                                  INIT: in: {x=I} out: {x=I}    USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
+L3 [after local declaration]:
+    r({ x = someComputation() x.inc() }) -> <v0>                                                                                                                                                                                                                                          INIT: in: {x=D} out: {x=D}
     mark(myRun { x = someComputation() x.inc() })
     call(myRun { x = someComputation() x.inc() }, myRun|<v0>) -> <v1>
-L3 [before inlined declaration]:
-    inlined({ x = someComputation() x.inc() })                                                                                                                                                                                                                                            INIT: in: {x=ID} out: {x=ID}      USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
-L4 [after inlined declaration]:
   2 jmp?(L2)
-    jmp(L7)
+    jmp(L6)
 L2 [onException]:
-    jmp?(L8)                                                                                                                                                                                                                                                                              INIT: in: {x=I?D} out: {x=I?D}    USE: in: {x=READ} out: {x=READ}
-  3 v(e: java.lang.UnsupportedOperationException)                                                                                                                                                                                                                                         INIT: in: {x=I?D} out: {x=I?D}
-    magic[FAKE_INITIALIZER](e: java.lang.UnsupportedOperationException) -> <v2>                                                                                                                                                                                                           INIT: in: {x=I?D} out: {x=I?D}
-    w(e|<v2>)                                                                                                                                                                                                                                                                             INIT: in: {x=I?D} out: {x=I?D}
-  4 mark({ myRun { x = 42 } })                                                                                                                                                                                                                                                            INIT: in: {x=I?D} out: {x=I?D}
+    jmp?(L7)
+  3 v(e: java.lang.UnsupportedOperationException)                                                                                                                                                                                                                                         INIT: in: {x=D} out: {x=D}
+    magic[FAKE_INITIALIZER](e: java.lang.UnsupportedOperationException) -> <v2>                                                                                                                                                                                                           INIT: in: {x=D} out: {x=D}
+    w(e|<v2>)                                                                                                                                                                                                                                                                             INIT: in: {x=D} out: {x=D}
+  4 mark({ myRun { x = 42 } })                                                                                                                                                                                                                                                            INIT: in: {x=D} out: {x=D}
     mark({ x = 42 })
-    r({ x = 42 }) -> <v3>
+    jmp?(L8)                                                                                                                                                                                                                                                                                                            USE: in: {x=READ} out: {x=READ}
+    d({ x = 42 })                                                                                                                                                                                                                                                                         INIT: in: {x=I} out: {x=I}    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+L8 [after local declaration]:
+    r({ x = 42 }) -> <v3>                                                                                                                                                                                                                                                                 INIT: in: {x=D} out: {x=D}
     mark(myRun { x = 42 })
     call(myRun { x = 42 }, myRun|<v3>) -> <v4>
-L9 [before inlined declaration]:
-    inlined({ x = 42 })                                                                                                                                                                                                                                                                   INIT: in: {x=ID} out: {x=ID}      USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
-L10 [after inlined declaration]:
-  3 jmp(L7)
-L8 [catch 0]:
-    v(e: java.lang.Exception)                                                                                                                                                                                                                                                             INIT: in: {x=I?D} out: {x=I?D}
-    magic[FAKE_INITIALIZER](e: java.lang.Exception) -> <v5>                                                                                                                                                                                                                               INIT: in: {x=I?D} out: {x=I?D}
-    w(e|<v5>)                                                                                                                                                                                                                                                                             INIT: in: {x=I?D} out: {x=I?D}
-  4 mark({ // do nothing })                                                                                                                                                                                                                                                               INIT: in: {x=I?D} out: {x=I?D}
+  3 jmp(L6)
+L7 [catch 0]:
+    v(e: java.lang.Exception)                                                                                                                                                                                                                                                             INIT: in: {x=D} out: {x=D}
+    magic[FAKE_INITIALIZER](e: java.lang.Exception) -> <v5>                                                                                                                                                                                                                               INIT: in: {x=D} out: {x=D}
+    w(e|<v5>)                                                                                                                                                                                                                                                                             INIT: in: {x=D} out: {x=D}
+  4 mark({ // do nothing })                                                                                                                                                                                                                                                               INIT: in: {x=D} out: {x=D}
     read (Unit)
-  3 jmp(L7)
-L7 [afterCatches]:
+  3 jmp(L6)
+L6 [afterCatches]:
   2 merge(try { myRun { x = someComputation() x.inc() } } catch (e: java.lang.UnsupportedOperationException) { myRun { x = 42 } } catch (e: java.lang.Exception) { // do nothing }|<v1>, <v4>, !<v6>) -> <v7>
-    mark(x.inc())                                                                                                                                                                                                                                                                                                           USE: in: {x=READ} out: {x=READ}
-    r(x) -> <v8>                                                                                                                                                                                                                                                                                                            USE: in: {} out: {x=READ}
+    mark(x.inc())                                                                                                                                                                                                                                                                                                       USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v8>                                                                                                                                                                                                                                                                                                        USE: in: {} out: {x=READ}
     mark(inc())
     call(inc(), inc|<v8>) -> <v9>
 L1:
@@ -323,44 +323,44 @@ L1:
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                                                                                                                                                                                                                  USE: in: {} out: {}
+    <SINK>                                                                                                                                                                                                                                                                                                              USE: in: {} out: {}
 =====================
-== inlined anonymous_3 ==
+== anonymous_3 ==
 {
             x = someComputation()
             x.inc()
         }
 ---------------------
-L5:
+L4:
   4 <START>                                             INIT: in: {x=D} out: {x=D}
   5 mark(x = someComputation() x.inc())
     mark(someComputation())
     call(someComputation(), someComputation) -> <v0>                                    USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
     w(x|<v0>)                                           INIT: in: {x=D} out: {x=ID}     USE: in: {x=READ} out: {x=WRITTEN_AFTER_READ}
-    mark(x.inc())                                       INIT: in: {x=ID} out: {x=ID}
-    r(x) -> <v1>
+    mark(x.inc())                                       INIT: in: {x=ID} out: {x=ID}    USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v1>                                                                        USE: in: {} out: {x=READ}
     mark(inc())
     call(inc(), inc|<v1>) -> <v2>
-  4 ret(*|<v2>) L6
-L6:
-    <END>                                                                               USE: in: {x=READ} out: {x=READ}
+  4 ret(*|<v2>) L5
+L5:
+    <END>
 error:
--   <ERROR>
+    <ERROR>                                             INIT: in: {} out: {}
 sink:
-    <SINK>                                              INIT: in: {x=ID} out: {x=ID}    USE: in: {x=READ} out: {x=READ}
+    <SINK>                                              INIT: in: {x=I} out: {x=I}      USE: in: {} out: {}
 =====================
-== inlined anonymous_4 ==
+== anonymous_4 ==
 { x = 42 }
 ---------------------
-L11:
-  5 <START>          INIT: in: {x=I?D} out: {x=I?D}
+L9:
+  5 <START>          INIT: in: {x=D} out: {x=D}
   6 mark(x = 42)
-    r(42) -> <v0>                                      USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
-    w(x|<v0>)        INIT: in: {x=I?D} out: {x=ID}     USE: in: {x=READ} out: {x=WRITTEN_AFTER_READ}
-L12:
-  5 <END>            INIT: in: {x=ID} out: {x=ID}      USE: in: {x=READ} out: {x=READ}
+    r(42) -> <v0>                                    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+    w(x|<v0>)        INIT: in: {x=D} out: {x=ID}     USE: in: {} out: {x=ONLY_WRITTEN_NEVER_READ}
+L10:
+  5 <END>            INIT: in: {x=ID} out: {x=ID}
 error:
--   <ERROR>
+    <ERROR>          INIT: in: {} out: {}
 sink:
-    <SINK>           INIT: in: {x=ID} out: {x=ID}      USE: in: {x=READ} out: {x=READ}
+    <SINK>           INIT: in: {x=I} out: {x=I}      USE: in: {} out: {}
 =====================
