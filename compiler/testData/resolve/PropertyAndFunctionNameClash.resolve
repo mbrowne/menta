@@ -1,4 +1,4 @@
-open class HtmlTag
+open define HtmlTag
 
 interface NavigationBuilder {
     public var text: ((String) -> String)?

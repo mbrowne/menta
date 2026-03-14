@@ -1,15 +1,15 @@
-class In<in T>() {
+define In<in T>() {
   ~In.f:T->Unit~fun f(t : T) : Unit {}
   ~In.f:Int->Int~fun f(t : Int) : Int {}
   ~In.f1~fun f1(t : T) : Unit {}
 }
 
-class Out<out T>() {
+define Out<out T>() {
   ~Out.f~fun f() : T {}
   ~Out.f(a)~fun f(a : Int) : Int {a}
 }
 
-class Inv<T>() {
+define Inv<T>() {
   ~Inv.f~fun f(t : T) : T {t}
   ~Inv.inf~fun inf(t : T) : Unit {}
   ~Inv.outf~fun outf() : T {}

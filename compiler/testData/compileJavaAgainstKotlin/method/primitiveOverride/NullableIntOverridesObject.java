@@ -8,7 +8,7 @@ class ExtendsB extends B {
     }
 }
 
-class ExtendsC extends C {
+class ExtendsC implements C {
     void test() {
         int x = foo();
         Integer y = foo();

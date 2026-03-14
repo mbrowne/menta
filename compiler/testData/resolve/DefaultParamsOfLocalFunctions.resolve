@@ -1,6 +1,6 @@
 package m
 
-~zzz~annotation class zzz
+~zzz~annotation define zzz
 
 ~y~val y = 23
 

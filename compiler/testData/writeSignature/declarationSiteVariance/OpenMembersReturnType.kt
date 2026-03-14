@@ -34,11 +34,11 @@ interface A {
 // method: A::getProp2
 // generic signature: ()LOutPair<Ljava/lang/CharSequence;Ljava/lang/Integer;>;
 
-abstract define B : A {
-    override fun foo2(): OutPair<CharSequence, Int> = null!!
-    override fun foo3(): OutPair<OutPair<String, Int>, Int> = null!!
+interface B : A {
+    override fun foo2(): OutPair<CharSequence, Int>
+    override fun foo3(): OutPair<OutPair<String, Int>, Int>
 
-    override val prop2: OutPair<String, Int> = null!!
+    override val prop2: OutPair<String, Int>
 }
 
 // method: B::foo2

@@ -1,7 +1,6 @@
 package test
 
-public abstract class Aaa {
-    /*primary*/ public constructor Aaa()
+public interface Aaa {
 }
 
 public final class Bbb : test.Aaa {

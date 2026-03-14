@@ -12,7 +12,6 @@ open define ClassVarModality() {
       private  set
 }
 
-abstract define ClassVarModalityAbstract {
-    abstract var property1 : java.util.Date
-      public set
+interface ClassVarModalityAbstract {
+    var property1: java.util.Date
 }

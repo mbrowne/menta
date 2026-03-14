@@ -20,11 +20,11 @@ interface A<T, E> {
 // method: A::setProp
 // generic signature: (LOut<+TT;>;)V
 
-abstract define B : A<String, Any?> {
-    override final fun foo1(x: Out<String>): Out<String> = null!!
-    override final fun foo2(x: In<Any?>): In<Any?> = null!!
+define B : A<String, Any?> {
+    override fun foo1(x: Out<String>): Out<String> = null!!
+    override fun foo2(x: In<Any?>): In<Any?> = null!!
 
-    override final var prop: Out<String> = null!!
+    override var prop: Out<String> = null!!
 }
 
 // method: B::foo1

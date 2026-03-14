@@ -1,5 +1,5 @@
 package test
 
-abstract define ModifierAbstract {
-    abstract fun abs(): Int
+interface ModifierAbstract {
+    fun abs(): Int
 }

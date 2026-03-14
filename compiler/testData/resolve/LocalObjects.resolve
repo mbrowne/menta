@@ -3,7 +3,7 @@ package localObjects {
     ~x~val x : Int
   }
 
-  open class Foo {
+  open define Foo {
     ~foo()~fun foo() : Int
   }
 

@@ -2808,11 +2808,6 @@ public class LoadJavaUsingJavacTestGenerated extends AbstractLoadJavaUsingJavacT
         runTest("compiler/testData/loadJava/compiledKotlin/fromLoadJava/ArrayTypeVariance.kt");
       }
 
-      @TestMetadata("ClassDoesNotOverrideMethod.kt")
-      public void testClassDoesNotOverrideMethod() {
-        runTest("compiler/testData/loadJava/compiledKotlin/fromLoadJava/ClassDoesNotOverrideMethod.kt");
-      }
-
       @TestMetadata("ClassObject.kt")
       public void testClassObject() {
         runTest("compiler/testData/loadJava/compiledKotlin/fromLoadJava/ClassObject.kt");

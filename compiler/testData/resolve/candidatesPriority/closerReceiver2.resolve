@@ -1,6 +1,6 @@
-class A
+define A
 
-class B {
+define B {
     fun A.bar() = `A.foo`foo()
 }
 

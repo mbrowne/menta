@@ -8,4 +8,4 @@ open define B : A<Int?> {
     override fun foo(): Int? = 42
 }
 
-abstract define C : A<Int?>
+interface C : A<Int?>

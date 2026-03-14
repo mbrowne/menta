@@ -1,4 +1,4 @@
-class A {
+define A {
     fun ~member~foo() = 1
 }
 

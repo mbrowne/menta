@@ -1,4 +1,4 @@
-
+define Outer {
     inner define FirstInner {
         inner define SecondInner<A> {
             inner define ThirdInnner {

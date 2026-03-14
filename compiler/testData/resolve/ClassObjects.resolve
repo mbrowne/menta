@@ -1,12 +1,12 @@
 package Jet86
 
-class A {
+define A {
   companion ~A~object {
     ~A.x~val x = 1
   }
 }
 
-~B~class B() {
+~B~define B() {
   ~B.x~val x = 12
 }
 

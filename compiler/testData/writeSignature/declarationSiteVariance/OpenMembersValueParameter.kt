@@ -29,14 +29,14 @@ interface A {
 // method: A::setProp1
 // generic signature: (LOutPair<Ljava/lang/String;Ljava/lang/Integer;>;)V
 
-abstract define B : A {
-    override final fun foo1(x: OutPair<String, Int>) {}
-    override final fun foo2(x: OutPair<CharSequence, Int>) {}
+define B : A {
+    override fun foo1(x: OutPair<String, Int>) {}
+    override fun foo2(x: OutPair<CharSequence, Int>) {}
 
-    override final fun foo3(x: In<String>) {}
-    override final fun foo4(x: In<Any>) {}
+    override fun foo3(x: In<String>) {}
+    override fun foo4(x: In<Any>) {}
 
-    override final var prop1: OutPair<String, Int> = null!!
+    override var prop1: OutPair<String, Int> = null!!
 }
 
 // method: B::foo1

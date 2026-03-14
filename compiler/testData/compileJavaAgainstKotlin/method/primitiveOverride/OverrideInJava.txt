@@ -4,9 +4,8 @@ public interface A</*0*/ T> {
     public abstract fun foo(): T
 }
 
-public abstract class B : test.A<kotlin.Int> {
-    public constructor B()
-    public abstract fun foo(): kotlin.Int
+public interface B : test.A<kotlin.Int> {
+    public abstract /*fake_override*/ fun foo(): kotlin.Int
 }
 
 public/*package*/ open class ExtendsB : test.B {

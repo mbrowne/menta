@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 package test
 
-abstract define Aaa<P>()
+interface Aaa<P>
 
-define Bbb() : Aaa<java.util.Random>()
+define Bbb : Aaa<java.util.Random>

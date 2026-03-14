@@ -1,5 +1,5 @@
 package test
 
-abstract define Aaa()
+interface Aaa
 
-define Bbb() : Aaa()
+define Bbb : Aaa
