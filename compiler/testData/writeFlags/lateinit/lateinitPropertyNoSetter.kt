@@ -1,5 +1,5 @@
 define My {
-    lateinit var s: String
+    public lateinit var s: String
 }
 
 // TESTED_OBJECT_KIND: property

@@ -2,15 +2,15 @@ define OutPair<out X, out Y>
 define In<in Z>
 
 interface A {
-    fun foo1(): OutPair<String, Int>
-    fun foo2(): OutPair<CharSequence, Int>
-    fun foo3(): OutPair<OutPair<CharSequence, Number>, Number>
+    public fun foo1(): OutPair<String, Int>
+    public fun foo2(): OutPair<CharSequence, Int>
+    public fun foo3(): OutPair<OutPair<CharSequence, Number>, Number>
 
-    fun foo4(): In<String>
-    fun foo5(): In<Any>
+    public fun foo4(): In<String>
+    public fun foo5(): In<Any>
 
-    val prop1: OutPair<String, Int>
-    val prop2: OutPair<CharSequence, Int>
+    public val prop1: OutPair<String, Int>
+    public val prop2: OutPair<CharSequence, Int>
 }
 
 // method: A::foo1
@@ -35,10 +35,10 @@ interface A {
 // generic signature: ()LOutPair<Ljava/lang/CharSequence;Ljava/lang/Integer;>;
 
 interface B : A {
-    override fun foo2(): OutPair<CharSequence, Int>
-    override fun foo3(): OutPair<OutPair<String, Int>, Int>
+    public override fun foo2(): OutPair<CharSequence, Int>
+    public override fun foo3(): OutPair<OutPair<String, Int>, Int>
 
-    override val prop2: OutPair<String, Int>
+    public override val prop2: OutPair<String, Int>
 }
 
 // method: B::foo2

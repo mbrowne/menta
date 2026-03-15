@@ -2,7 +2,7 @@ define B<M>
 
 interface A<T, Y : B<T>> {
 
-    fun <T, L> p(p: T): T {
+    public fun <T, L> p(p: T): T {
         return p
     }
 

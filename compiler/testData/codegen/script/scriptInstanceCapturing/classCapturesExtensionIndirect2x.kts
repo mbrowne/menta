@@ -2,16 +2,16 @@
 
 // expected: rv: kotlin.Unit
 
-class C {
+define C {
     fun foo() {
         B()
     }
 }
 
-class A
+define A
 fun A.ext() = Unit
 
-class B {
+define B {
     fun bar() {
         A().ext()
     }

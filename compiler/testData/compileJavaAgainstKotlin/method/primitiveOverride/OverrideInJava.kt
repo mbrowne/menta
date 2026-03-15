@@ -1,7 +1,7 @@
 package test
 
 interface A<T> {
-    fun foo(): T
+    public fun foo(): T
 }
 
 interface B : A<Int>

@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: Base.java
-public define Base {
+public class Base {
 
     protected static String BASE_ONLY = "BASE";
 
@@ -8,7 +8,7 @@ public define Base {
         return BASE_ONLY;
     }
 
-    public static define Derived extends Base {
+    public static class Derived extends Base {
 
     }
 }
@@ -16,7 +16,7 @@ public define Base {
 // FILE: Kotlin.kt
 
 define Kotlin : Base.Derived() {
-    fun doTest(): String {
+    public fun doTest(): String {
         if ({ Base.baseOnly() }() != "BASE") return "fail 8"
         if ({ baseOnly() }() != "BASE") return "fail 10"
         return "FAIL"

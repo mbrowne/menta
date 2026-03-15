@@ -1,6 +1,6 @@
 define MyClass() {
     companion object {
-        @Deprecated("") fun test() {}
+        @Deprecated("") public fun test() {}
     }
 }
 

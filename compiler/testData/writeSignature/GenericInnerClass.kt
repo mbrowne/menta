@@ -6,11 +6,11 @@ object Foo {
     fun <Y> foo(x: Outer<String, Int>.Inner<Y, CharSequence>) = 1
 }
 
-// define: Outer
+// class: Outer
 // jvm signature:     Outer
 // generic signature: <E:Ljava/lang/Object;F:Ljava/lang/Number;>Ljava/lang/Object;
 
-// define: Outer$Inner
+// class: Outer$Inner
 // jvm signature:     Outer$Inner
 // generic signature: <G:Ljava/lang/Object;H:Ljava/lang/Object;>Ljava/lang/Object;
 

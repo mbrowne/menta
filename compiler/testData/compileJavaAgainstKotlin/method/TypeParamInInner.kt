@@ -1,8 +1,8 @@
 package test
 
-define outerClass<T>(val t: T) {
+define outerClass<T>(private val t: T) {
     inner define innerClass {
-        fun getT() = t
+        private fun getT() = t
     }
 }
 

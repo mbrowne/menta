@@ -6,7 +6,7 @@ annotation define Property(val value: String)
 
 interface Test {
     @Property("OK")
-    val test: String
+    public val test: String
         get() = "OK"
 }
 

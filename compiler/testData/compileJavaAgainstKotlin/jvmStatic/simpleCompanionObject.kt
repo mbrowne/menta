@@ -3,24 +3,24 @@ package test
 define A {
 
     companion object {
-        val b: String = "OK"
+        public val b: String = "OK"
 
-        @JvmStatic fun test1() {
+        @JvmStatic public fun test1() {
             b
             test2()
             test3()
             "".test4()
         }
 
-        @JvmStatic fun test2() {
+        @JvmStatic public fun test2() {
             b
         }
 
-        fun test3() {
+        public fun test3() {
 
         }
 
-        @JvmStatic fun String.test4() {
+        @JvmStatic public fun String.test4() {
             b
         }
     }

@@ -2,9 +2,9 @@ package test
 
 define A {
     companion object {
-        @JvmStatic val b: String = "OK"
+        @JvmStatic public val b: String = "OK"
 
-        var A.c: String
+        public var A.c: String
             @JvmStatic get() = "OK"
             @JvmStatic set(t: String) {}
     }

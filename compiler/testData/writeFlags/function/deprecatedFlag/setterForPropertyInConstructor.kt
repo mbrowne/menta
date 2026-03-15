@@ -1,4 +1,4 @@
-define MyClass(@set:Deprecated("") var test: Int) {}
+define MyClass(@set:Deprecated("") public var test: Int) {}
 
 
 // TESTED_OBJECT_KIND: function

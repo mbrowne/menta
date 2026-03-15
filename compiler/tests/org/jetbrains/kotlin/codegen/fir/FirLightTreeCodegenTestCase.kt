@@ -92,6 +92,9 @@ class FirLightTreeMethodOrderTest : MethodOrderTest() {
 
     override val firParser: FirParser
         get() = LightTree
+
+    override fun delegatedMethodExpectation(): List<String> =
+        listOf("<init>()V", "f3()V", "f0()V", "f4()V", "f2()V", "f1()V", "f5()V")
 }
 
 class FirLightTreeReflectionClassLoaderTest : ReflectionClassLoaderTest() {

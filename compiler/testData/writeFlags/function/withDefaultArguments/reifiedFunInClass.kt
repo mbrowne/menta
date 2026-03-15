@@ -1,5 +1,5 @@
 define MyClass() {
-    inline fun <reified T> test(s: String = "") {}
+    public inline fun <reified T> test(s: String = "") {}
 }
 
 // TESTED_OBJECT_KIND: function

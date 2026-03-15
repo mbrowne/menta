@@ -1,5 +1,5 @@
 define MyClass() {
-    @Deprecated("") var test = ""
+    @Deprecated("") public var test = ""
 }
 
 

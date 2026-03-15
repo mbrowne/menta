@@ -1,8 +1,8 @@
 package test
 
 open define K<out T: K<T>> {
-    fun foo(k: K<*>) {}
-    fun foo(): K<*> = null!!
+    public fun foo(k: K<*>) {}
+    public fun foo(): K<*> = null!!
 }
 
 define Sub: K<K<*>>()

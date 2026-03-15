@@ -1,6 +1,6 @@
 define MyClass() {
     @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
-    var test: Int
+    public var test: Int
         get() = 0
         set(value) {}
 }

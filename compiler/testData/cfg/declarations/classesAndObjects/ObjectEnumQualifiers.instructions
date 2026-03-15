@@ -60,25 +60,26 @@ fun foo() = E1.x + O.y + C.z
 L0:
   1 <START>
     mark(E1.x)
-    magic[UNRESOLVED_CALL](E1) -> <v0>
-    magic[UNRESOLVED_CALL](x|<v0>) -> <v1>
+    mark(E1)
+    r(E1) -> <v0>
+    r(x|<v0>) -> <v1>
     mark(O.y)
     mark(O)
     r(O) -> <v2>
     r(y|<v2>) -> <v3>
     mark(E1.x + O.y)
-    magic[UNRESOLVED_CALL](E1.x + O.y|<v1>, <v3>) -> <v4>
+    call(E1.x + O.y, plus|<v1>, <v3>) -> <v4>
     mark(C.z)
     mark(C)
     r(C, Companion) -> <v5>
     r(z|<v5>) -> <v6>
     mark(E1.x + O.y + C.z)
-    magic[UNRESOLVED_CALL](E1.x + O.y + C.z|<v4>, <v6>) -> <v7>
+    call(E1.x + O.y + C.z, plus|<v4>, <v6>) -> <v7>
     ret(*|<v7>) L1
 L1:
-    <END>                                                          NEXT:[<SINK>]
+    <END>                                              NEXT:[<SINK>]
 error:
-    <ERROR>                                                        PREV:[]
+    <ERROR>                                            PREV:[]
 sink:
-    <SINK>                                                         PREV:[<ERROR>, <END>]
+    <SINK>                                             PREV:[<ERROR>, <END>]
 =====================

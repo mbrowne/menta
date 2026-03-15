@@ -1,5 +1,5 @@
 define MyClass() {
-    val test = ""
+    public val test = ""
         @Deprecated("") get
 }
 

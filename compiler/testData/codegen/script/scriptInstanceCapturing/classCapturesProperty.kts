@@ -4,7 +4,7 @@
 
 // KT-19423
 val used = "abc"
-class User {
+define User {
     val property = used
 }
 

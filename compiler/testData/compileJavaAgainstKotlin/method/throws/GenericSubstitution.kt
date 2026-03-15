@@ -4,7 +4,7 @@ define E1: Exception()
 
 interface Base<T> {
     @Throws(E1::define)
-    fun one(t: T) {}
+    public fun one(t: T) {}
 }
 
 define Derived: Base<String>

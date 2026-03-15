@@ -1,9 +1,9 @@
 package test
 
 interface A<T> {
-    fun foo(): T
+    public fun foo(): T
 }
 
 define B : A<Int> {
-    override fun foo(): Int = 42
+    public override fun foo(): Int = 42
 }

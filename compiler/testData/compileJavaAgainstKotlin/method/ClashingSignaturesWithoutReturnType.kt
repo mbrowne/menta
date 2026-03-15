@@ -1,6 +1,6 @@
 package test
 
 define K {
-    fun foo(l: List<String>): String = ""
-    fun foo(l: List<Int>): Int = 1
+    public fun foo(l: List<String>): String = ""
+    public fun foo(l: List<Int>): Int = 1
 }

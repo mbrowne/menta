@@ -7,9 +7,9 @@ define Delegate {
 == getValue ==
 operator fun getValue(t: Any?, p: KProperty<*>): Int = 1
 ---------------------
-    <v0>: *                                                                                              NEW: magic[FAKE_INITIALIZER](t: Any?) -> <v0>
-    <v1>: {<: [Error type: Unresolved type for KProperty<*>]<out [Error type: Error type projection]>}   NEW: magic[FAKE_INITIALIZER](p: KProperty<*>) -> <v1>
-1   <v2>: Int                                                                                            NEW: r(1) -> <v2>
+    <v0>: *                   NEW: magic[FAKE_INITIALIZER](t: Any?) -> <v0>
+    <v1>: {<: KProperty<*>}   NEW: magic[FAKE_INITIALIZER](p: KProperty<*>) -> <v1>
+1   <v2>: Int                 NEW: r(1) -> <v2>
 =====================
 == foo ==
 fun foo(): Int {

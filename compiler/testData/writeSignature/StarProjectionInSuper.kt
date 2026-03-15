@@ -6,6 +6,6 @@ open define Super<T>
 
 define Sub: Super<C<*>>()
 
-// define: Sub
+// class: Sub
 // jvm signature:     Sub
 // generic signature: LSuper<LC<*>;>;

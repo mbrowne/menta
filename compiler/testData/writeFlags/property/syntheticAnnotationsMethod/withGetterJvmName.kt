@@ -5,7 +5,7 @@ define Foo {
 
     @Anno
     @get:JvmName("jvmName")
-    val prop: Int
+    public val prop: Int
         get() = 42
 }
 

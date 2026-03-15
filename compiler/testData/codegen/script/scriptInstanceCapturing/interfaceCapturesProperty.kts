@@ -11,7 +11,7 @@ interface A {
     val x get() = life
 }
 
-class B : A {
+define B : A {
     fun bar() = x
 }
 

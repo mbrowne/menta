@@ -2,13 +2,13 @@ define OutPair<out X, out Y>
 define In<in Z>
 
 interface A {
-    fun foo1(x: OutPair<String, Int>)
-    fun foo2(x: OutPair<CharSequence, Int>)
+    public fun foo1(x: OutPair<String, Int>)
+    public fun foo2(x: OutPair<CharSequence, Int>)
 
-    fun foo3(x: In<String>)
-    fun foo4(x: In<Any>)
+    public fun foo3(x: In<String>)
+    public fun foo4(x: In<Any>)
 
-    var prop1: OutPair<String, Int>
+    public var prop1: OutPair<String, Int>
 }
 
 // method: A::foo1
@@ -30,13 +30,13 @@ interface A {
 // generic signature: (LOutPair<Ljava/lang/String;Ljava/lang/Integer;>;)V
 
 define B : A {
-    override fun foo1(x: OutPair<String, Int>) {}
-    override fun foo2(x: OutPair<CharSequence, Int>) {}
+    public override fun foo1(x: OutPair<String, Int>) {}
+    public override fun foo2(x: OutPair<CharSequence, Int>) {}
 
-    override fun foo3(x: In<String>) {}
-    override fun foo4(x: In<Any>) {}
+    public override fun foo3(x: In<String>) {}
+    public override fun foo4(x: In<Any>) {}
 
-    override var prop1: OutPair<String, Int> = null!!
+    public override var prop1: OutPair<String, Int> = null!!
 }
 
 // method: B::foo1

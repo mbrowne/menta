@@ -26,15 +26,15 @@ define C {
 == foo ==
 fun foo() = E1.x + O.y + C.z
 ---------------------
-E1                 <v0>: *                                                                NEW: magic[UNRESOLVED_CALL](E1) -> <v0>
-x                  <v1>: *                                                                NEW: magic[UNRESOLVED_CALL](x|<v0>) -> <v1>
-E1.x               <v1>: *                                                                COPY
-O                  <v2>: O                                                                NEW: r(O) -> <v2>
-y                  <v3>: *                                                                NEW: r(y|<v2>) -> <v3>
-O.y                <v3>: *                                                                COPY
-E1.x + O.y         <v4>: *                                                                NEW: magic[UNRESOLVED_CALL](E1.x + O.y|<v1>, <v3>) -> <v4>
-C                  <v5>: C.Companion                                                      NEW: r(C, Companion) -> <v5>
-z                  <v6>: *                                                                NEW: r(z|<v5>) -> <v6>
-C.z                <v6>: *                                                                COPY
-E1.x + O.y + C.z   <v7>: {<: [Error type: Return type for function cannot be resolved]}   NEW: magic[UNRESOLVED_CALL](E1.x + O.y + C.z|<v4>, <v6>) -> <v7>
+E1                 <v0>: {<: E}        NEW: r(E1) -> <v0>
+x                  <v1>: Int           NEW: r(x|<v0>) -> <v1>
+E1.x               <v1>: Int           COPY
+O                  <v2>: O             NEW: r(O) -> <v2>
+y                  <v3>: Int           NEW: r(y|<v2>) -> <v3>
+O.y                <v3>: Int           COPY
+E1.x + O.y         <v4>: Int           NEW: call(E1.x + O.y, plus|<v1>, <v3>) -> <v4>
+C                  <v5>: C.Companion   NEW: r(C, Companion) -> <v5>
+z                  <v6>: Int           NEW: r(z|<v5>) -> <v6>
+C.z                <v6>: Int           COPY
+E1.x + O.y + C.z   <v7>: Int           NEW: call(E1.x + O.y + C.z, plus|<v4>, <v6>) -> <v7>
 =====================

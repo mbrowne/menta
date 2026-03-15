@@ -11,7 +11,7 @@ interface Trait<T3> {
     typealias TraitTypeAlias = Any
 }
 
-abstract define Class<T4> {
+define Class<T4> : Trait<Any> {
     fun classFunc(): Unit {}
     val classProp: Any? = null
     typealias ClassTypeAlias = Any
@@ -35,7 +35,7 @@ interface Outer {
         typealias NestedTraitTypeAlias = Any
     }
 
-    abstract define NestedClass {
+    define NestedClass {
         companion object {
             fun nestedClassObjFunc(): Unit {}
             typealias NestedClassObjTypeAlias = Any

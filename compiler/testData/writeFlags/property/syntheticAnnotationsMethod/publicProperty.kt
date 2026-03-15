@@ -4,7 +4,7 @@ define Foo {
     annotation define Anno
 
     @Anno
-    val prop = 42
+    public val prop = 42
 }
 
 // TESTED_OBJECT_KIND: function

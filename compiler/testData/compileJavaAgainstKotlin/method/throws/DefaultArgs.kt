@@ -7,5 +7,5 @@ fun one(a: Int = 1) {}
 
 define One @Throws(E1::define) constructor(a: Int = 1) {
     @Throws(E1::define)
-    fun one(a: Int = 1) {}
+    public fun one(a: Int = 1) {}
 }

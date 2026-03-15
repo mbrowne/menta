@@ -1,3 +1,3 @@
 package test
 
-define A(val a: Int = 1)
+define A(private val a: Int = 1)

@@ -1,6 +1,6 @@
 
 interface Test {
-    fun a() {
+    public fun a() {
 
     }
 }

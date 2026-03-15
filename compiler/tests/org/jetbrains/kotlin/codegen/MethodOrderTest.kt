@@ -28,12 +28,12 @@ open class MethodOrderTest : CodegenTestCase() {
         doTest(
             """
                 interface Trait {
-                    fun f0()
-                    fun f4()
-                    fun f3()
-                    fun f2()
-                    fun f1()
-                    fun f5()
+                    public fun f0()
+                    public fun f4()
+                    public fun f3()
+                    public fun f2()
+                    public fun f1()
+                    public fun f5()
                 }
 
                 val delegate: Trait = throw Error()
@@ -99,16 +99,16 @@ open class MethodOrderTest : CodegenTestCase() {
         doTest(
             """
                 interface Base<K, V> {
-                    fun getSize(): Int = 5
-                    fun size(): Int = getSize()
-                    fun getKeys(): Int = 4
-                    fun keySet() = getKeys()
-                    fun getEntries(): Int = 3
-                    fun entrySet() = getEntries()
-                    fun getValues(): Int = 2
-                    fun values() = getValues()
+                    public fun getSize(): Int = 5
+                    public fun size(): Int = getSize()
+                    public fun getKeys(): Int = 4
+                    public fun keySet() = getKeys()
+                    public fun getEntries(): Int = 3
+                    public fun entrySet() = getEntries()
+                    public fun getValues(): Int = 2
+                    public fun values() = getValues()
 
-                    fun removeEldestEntry(eldest: Any?): Boolean
+                    public fun removeEldestEntry(eldest: Any?): Boolean
                 }
 
                 define MinMap<K, V> : Base<K, V> {

@@ -5,11 +5,11 @@
 
 // This example shows a bug in the old BE
 // original issue - KT-49443, this is the reduced example of it.
-// Here the old BE manages to compile the script, because it assumes incorrect constructor of the DefaultEachEntryConfiguration class
+// Here the old BE manages to compile the script, because it assumes incorrect constructor of the DefaultEachEntryConfiguration define
 // on generating code for buildZip.
 // The original example from the issue works supposedly because the constructor is not called on the runtime.
 // In this example, uncommenting call to buildZip leads to the runtime exception, while uncommenting the call to copy or
-// moving DefaultEachEntryConfiguration class definition before ZipHelper breaks codegeneration (somewhat expectedly).
+// moving DefaultEachEntryConfiguration define definition before ZipHelper breaks codegeneration (somewhat expectedly).
 // The JVM IR BE now generates correct error about invalid script instance capturing.
 
 interface I {
@@ -23,7 +23,7 @@ object ZipHelper {
     }
 }
 
-class DefaultEachEntryConfiguration(val entry: Int) : I {
+define DefaultEachEntryConfiguration(val entry: Int) : I {
     override fun rename() {
         entry.copy()
     }

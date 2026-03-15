@@ -3,7 +3,7 @@ package test
 import java.util.ArrayList
 
 public define BadClass {
-    fun foo() {
+    private fun foo() {
         val x: () -> Int = {
             bar(ArrayList<Int>())
             baz<Double, ArrayList<Double>>(ArrayList())

@@ -1,5 +1,5 @@
 define Foo() {
-    fun test(): String = "OK"
+    public fun test(): String = "OK"
 }
 
 fun test(s: () -> String): String {

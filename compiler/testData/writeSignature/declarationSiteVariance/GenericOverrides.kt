@@ -2,10 +2,10 @@ define Out<out T>
 define In<in Z>
 
 interface A<T, E> {
-    fun foo1(x: Out<T>): Out<T>
-    fun foo2(x: In<E>): In<E>
+    public fun foo1(x: Out<T>): Out<T>
+    public fun foo2(x: In<E>): In<E>
 
-    var prop: Out<T>
+    public var prop: Out<T>
 }
 
 // method: A::foo1
@@ -21,10 +21,10 @@ interface A<T, E> {
 // generic signature: (LOut<+TT;>;)V
 
 define B : A<String, Any?> {
-    override fun foo1(x: Out<String>): Out<String> = null!!
-    override fun foo2(x: In<Any?>): In<Any?> = null!!
+    public override fun foo1(x: Out<String>): Out<String> = null!!
+    public override fun foo2(x: In<Any?>): In<Any?> = null!!
 
-    override var prop: Out<String> = null!!
+    public override var prop: Out<String> = null!!
 }
 
 // method: B::foo1

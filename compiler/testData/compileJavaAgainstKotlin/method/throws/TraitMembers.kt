@@ -5,13 +5,13 @@ define E2: Exception()
 
 interface Trait {
     @Throws()
-    fun none() {}
+    public fun none() {}
 
     @Throws(E1::define)
-    fun one() {}
+    public fun one() {}
 
     @Throws(E1::define, E2::define)
-    fun two() {}
+    public fun two() {}
 }
 
 define Test: Trait

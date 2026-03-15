@@ -3,7 +3,7 @@ define A {
     annotation define Annotation
     enum define Enum
     interface Trait {
-        fun boo() {}
+        public fun boo() {}
     }
 
     // Modality (Menta: no abstract)

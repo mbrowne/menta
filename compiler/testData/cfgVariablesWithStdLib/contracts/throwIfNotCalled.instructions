@@ -7,27 +7,27 @@ inline fun myRun(block: () -> Unit) {
 }
 ---------------------
 L0:
-  1 <START>                                                                                                      INIT: in: {} out: {}
-    v(block: () -> Unit)                                                                                         INIT: in: {} out: {}
-    magic[FAKE_INITIALIZER](block: () -> Unit) -> <v0>                                                           INIT: in: {} out: {}
-    w(block|<v0>)                                                                                                INIT: in: {} out: {}
-  2 mark({ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } block() })                              INIT: in: {} out: {}
+  1 <START>                                                                                       INIT: in: {} out: {}
+    v(block: () -> Unit)                                                                          INIT: in: {} out: {}
+    magic[FAKE_INITIALIZER](block: () -> Unit) -> <v0>                                            INIT: in: {} out: {}
+    w(block|<v0>)                                                                                 INIT: in: {} out: {}
+  2 mark({ contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) } block() })               INIT: in: {} out: {}
     mark({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
     jmp?(L2)
     d({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
 L2 [after local declaration]:
     r({ callsInPlace(block, InvocationKind.EXACTLY_ONCE) }) -> <v1>
     mark(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) })
-    magic[UNRESOLVED_CALL](contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }|<v1>, !<v2>) -> <v3>
-    r(block) -> <v4>
+    call(contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }, contract|<v1>) -> <v2>
+    r(block) -> <v3>
     mark(block())
-    call(block(), invoke|<v4>) -> <v5>
+    call(block(), invoke|<v3>) -> <v4>
 L1:
   1 <END>
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                               USE: in: {} out: {}
+    <SINK>                                                                                                                USE: in: {} out: {}
 =====================
 == anonymous_0 ==
 {
@@ -35,20 +35,20 @@ sink:
     }
 ---------------------
 L3:
-  3 <START>                                                                                               INIT: in: {} out: {}
+  3 <START>                                                                                          INIT: in: {} out: {}
   4 mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    r(block) -> <v0>
+    magic[IMPLICIT_RECEIVER](callsInPlace(block, InvocationKind.EXACTLY_ONCE)) -> <v0>
+    r(block) -> <v1>
     mark(InvocationKind.EXACTLY_ONCE)
-    magic[UNRESOLVED_CALL](InvocationKind) -> <v1>
-    magic[UNRESOLVED_CALL](EXACTLY_ONCE|<v1>) -> <v2>
+    r(EXACTLY_ONCE) -> <v2>
     mark(callsInPlace(block, InvocationKind.EXACTLY_ONCE))
-    magic[UNRESOLVED_CALL](callsInPlace(block, InvocationKind.EXACTLY_ONCE)|<v0>, <v2>, !<v3>) -> <v4>
+    call(callsInPlace(block, InvocationKind.EXACTLY_ONCE), callsInPlace|<v0>, <v1>, <v2>) -> <v3>
 L4:
   3 <END>
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                        USE: in: {} out: {}
+    <SINK>                                                                                                                   USE: in: {} out: {}
 =====================
 == unknownRun ==
 inline fun <T> unknownRun(block: () -> T): T = block()
@@ -90,12 +90,12 @@ L0:
     v(val x: Int)                                                                                                                                                            INIT: in: {} out: {x=D}
     mark(outer@ { unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })                                                                 INIT: in: {x=D} out: {x=D}
     mark({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })
-    jmp?(L2)
-    d({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })                                                                           INIT: in: {x=I?} out: {x=I?}    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
-L2 [after local declaration]:
-    r({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }) -> <v0>                                                                   INIT: in: {x=D} out: {x=D}
+    r({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }) -> <v0>
     mark(myRun outer@ { unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })
     call(myRun outer@ { unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() }, myRun|<v0>) -> <v1>
+L2 [before inlined declaration]:
+    inlined({ unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException() })                                                                     INIT: in: {x=ID} out: {x=ID}    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+L3 [after inlined declaration]:
     mark(println(<)
     magic[UNRESOLVED_CALL](println(<|!<v2>) -> <v3>
 L1:
@@ -105,7 +105,7 @@ error:
 sink:
     <SINK>                                                                                                                                                                                                   USE: in: {} out: {}
 =====================
-== anonymous_1 ==
+== inlined anonymous_1 ==
 {
         unknownRun {
             myRun {
@@ -116,13 +116,13 @@ sink:
         throw java.lang.IllegalArgumentException()
     }
 ---------------------
-L3:
+L4:
   3 <START>                                                                                          INIT: in: {x=D} out: {x=D}
   4 mark(unknownRun { myRun { x = 42 return@outer } } throw java.lang.IllegalArgumentException())
     mark({ myRun { x = 42 return@outer } })
-    jmp?(L5)
-    d({ myRun { x = 42 return@outer } })                                                             INIT: in: {x=I?} out: {x=I?}    USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
-L5 [after local declaration]:
+    jmp?(L6)
+    d({ myRun { x = 42 return@outer } })                                                             INIT: in: {} out: {}            USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+L6 [after local declaration]:
     r({ myRun { x = 42 return@outer } }) -> <v0>                                                     INIT: in: {x=D} out: {x=D}
     mark(unknownRun { myRun { x = 42 return@outer } })
     call(unknownRun { myRun { x = 42 return@outer } }, unknownRun|<v0>) -> <v1>
@@ -131,7 +131,7 @@ L5 [after local declaration]:
     mark(IllegalArgumentException())
     call(IllegalArgumentException(), <init>) -> <v2>
     throw (throw java.lang.IllegalArgumentException()|<v2>)
-L4:
+L5:
   3 <END>                                                                                            INIT: in: {x=ID} out: {x=ID}
 error:
     <ERROR>                                                                                          INIT: in: {x=D} out: {x=D}
@@ -146,39 +146,39 @@ sink:
             }
         }
 ---------------------
-L6:
+L7:
   5 <START>                                                    INIT: in: {x=D} out: {x=D}
   6 mark(myRun { x = 42 return@outer })
     mark({ x = 42 return@outer })
-    jmp?(L8)
-    d({ x = 42 return@outer })                                 INIT: in: {} out: {}            USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
-L8 [after local declaration]:
-    r({ x = 42 return@outer }) -> <v0>                         INIT: in: {x=D} out: {x=D}
+    r({ x = 42 return@outer }) -> <v0>
     mark(myRun { x = 42 return@outer })
     call(myRun { x = 42 return@outer }, myRun|<v0>) -> <v1>
-L7:
-  5 <END>
+L9 [before inlined declaration]:
+    inlined({ x = 42 return@outer })                                                         USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
+L8:
+L10 [after inlined declaration]:
+  5 <END>                                                      INIT: in: {} out: {}
 error:
-    <ERROR>                                                    INIT: in: {} out: {}
+    <ERROR>
 sink:
-    <SINK>                                                     INIT: in: {x=I?} out: {x=I?}    USE: in: {} out: {}
+    <SINK>                                                                                   USE: in: {} out: {}
 =====================
-== anonymous_3 ==
+== inlined anonymous_3 ==
 {
                 x = 42
                 return@outer
             }
 ---------------------
-L9:
+L11:
   7 <START>                      INIT: in: {x=D} out: {x=D}
   8 mark(x = 42 return@outer)
     r(42) -> <v0>                                                USE: in: {x=ONLY_WRITTEN_NEVER_READ} out: {x=ONLY_WRITTEN_NEVER_READ}
     w(x|<v0>)                    INIT: in: {x=D} out: {x=ID}     USE: in: {} out: {x=ONLY_WRITTEN_NEVER_READ}
-    ret L4                       INIT: in: {x=ID} out: {x=ID}
-L10:
-  7 <END>                        INIT: in: {} out: {}
+    ret L5                       INIT: in: {x=ID} out: {x=ID}    USE: in: {} out: {}
+L12:
+- 7 <END>
 error:
-    <ERROR>
+-   <ERROR>
 sink:
-    <SINK>                                                       USE: in: {} out: {}
+-   <SINK>
 =====================
