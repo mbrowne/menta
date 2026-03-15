@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A
-class B
+define A
+define B
 
 fun A.foo(a: A) {}
 fun A.foo(b: B) {}

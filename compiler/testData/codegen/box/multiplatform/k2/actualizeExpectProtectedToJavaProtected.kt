@@ -7,11 +7,11 @@
 // FILE: common.kt
 package pkg
 
-expect open class Foo constructor() {
+expect open define Foo constructor() {
     protected fun foo(): String
 }
 
-class Bar : Foo() {
+define Bar : Foo() {
     fun bar() = foo()
 }
 
@@ -19,7 +19,7 @@ class Bar : Foo() {
 // FILE: pkg/FooImpl.java
 package pkg;
 
-public class FooImpl {
+public define FooImpl {
     protected String foo() {
         return "Hello from Java";
     }

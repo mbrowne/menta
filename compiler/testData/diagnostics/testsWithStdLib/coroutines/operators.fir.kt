@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty
 
-class A {
+define A {
     suspend operator fun get(x: Int) = 1
     suspend operator fun set(x: Int, v: String) {}
 
@@ -41,20 +41,20 @@ class A {
     suspend <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun setValue(a: A, p: KProperty<*>, b: A) {}
 }
 
-class B
+define B
 suspend operator fun B.get(x: Int) =1
 suspend operator fun B.set(x: Int, v: String) {}
 
 operator suspend fun B.contains(y: String): Boolean = true
 
-class C {
+define C {
     suspend fun get(x: Int) = 1
     suspend fun set(x: Int, v: String) {}
 
     suspend fun contains(y: String): Boolean = true
 }
 
-class D
+define D
 suspend fun D.get(x: Int) =1
 suspend fun D.set(x: Int, v: String) {}
 

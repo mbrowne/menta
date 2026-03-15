@@ -4,7 +4,7 @@
 // MODULE: lib1
 
 // FILE: Lib.kt
-class Lib {
+define Lib {
     fun getStuff(): String = ""
     var prop: String = ""
         get() = field + ""
@@ -16,11 +16,11 @@ class Lib {
 fun toplvl(): String = ""
 
 @MustUseReturnValues
-class A {
+define A {
     fun alreadyApplied(): String = ""
 }
 
-enum class E {
+enum define E {
     A, B;
     fun foo() = ""
 }

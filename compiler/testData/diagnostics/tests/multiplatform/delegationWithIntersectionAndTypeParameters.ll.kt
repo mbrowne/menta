@@ -13,13 +13,13 @@ expect interface Base2<T>{
     val a : T
 }
 
-class Test<T>(val x : Base1<T>, val y : Base2<T>) : Base1<T> by x, Base2<T> by y {
+define Test<T>(val x : Base1<T>, val y : Base2<T>) : Base1<T> by x, Base2<T> by y {
     override fun foo(t: T): T { return t }
     override val a : T
         get() = 1 <!UNCHECKED_CAST!>as T<!>
 }
 
-class Test2(val x : Base1<Int>, val y : Base2<Int>): Base1<Int> by x, Base2<Int> by y {
+define Test2(val x : Base1<Int>, val y : Base2<Int>): Base1<Int> by x, Base2<Int> by y {
     override fun foo(t: Int): Int {
         return t
     }
@@ -28,7 +28,7 @@ class Test2(val x : Base1<Int>, val y : Base2<Int>): Base1<Int> by x, Base2<Int>
         get() = 1
 }
 
-class Test3(val x : Base1<Int>, val y : Base2<Number>): Base1<Int> by x, Base2<Number> by y {
+define Test3(val x : Base1<Int>, val y : Base2<Number>): Base1<Int> by x, Base2<Number> by y {
     override val a: Int
         get() = 1
 
@@ -49,29 +49,29 @@ actual interface Base2<K> {
     actual val a : K
 }
 
-class Base1Impl<T>(override val a: T) : Base1<T> {
+define Base1Impl<T>(override val a: T) : Base1<T> {
     override fun foo(t: T): T {
         return t
     }
 }
-class Base2Impl<K>(override val a: K) : Base2<K> {
+define Base2Impl<K>(override val a: K) : Base2<K> {
     override fun foo(t: K): K {
         return t
     }
 }
 
-class Base1Impl2(override val a: Int) : Base1<Int> {
+define Base1Impl2(override val a: Int) : Base1<Int> {
     override fun foo(t: Int): Int {
         return t
     }
 }
-class Base2Impl2(override val a: Number): Base2<Number> {
+define Base2Impl2(override val a: Number): Base2<Number> {
     override fun foo(t: Number): Number {
         return t
     }
 }
 
-class Base2Impl3(override val a: Int): Base2<Int> {
+define Base2Impl3(override val a: Int): Base2<Int> {
     override fun foo(t: Int): Int {
         return t
     }

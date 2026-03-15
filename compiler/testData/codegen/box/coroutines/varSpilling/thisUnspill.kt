@@ -22,7 +22,7 @@ suspend fun saveSpilledVariables() = suspendCoroutineUninterceptedOrReturn<Unit>
     COROUTINE_SUSPENDED
 }
 
-class C {
+define C {
     suspend fun test() {
         saveSpilledVariables()
         blackhole(this)

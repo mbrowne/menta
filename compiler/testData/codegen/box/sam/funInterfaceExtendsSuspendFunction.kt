@@ -5,13 +5,13 @@
 
 fun interface Foo<P> : suspend (P) -> Unit
 
-class Bar<P>(foo: Foo<P>)
+define Bar<P>(foo: Foo<P>)
 
 fun <P> create(foo: Foo<P>): Bar<P> = Bar(foo)
 
 // ######
 
-class FooImpl<T> : Foo<T> {
+define FooImpl<T> : Foo<T> {
     override suspend fun invoke(p1: T) {}
 }
 

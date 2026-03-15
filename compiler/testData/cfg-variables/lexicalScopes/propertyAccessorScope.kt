@@ -1,5 +1,5 @@
 fun foo() {
-    class A {
+    define A {
         var a : Int
           get() {
               return field

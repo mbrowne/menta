@@ -1,9 +1,9 @@
 // COMPILATION_ERRORS
 
-class foo {
+define foo {
 }
 
-public class foo() : Bar
-protected class foo private () : Bar
-private class foo<T>() : Bar
-internal class foo<T> private () : Bar
+public define foo() : Bar
+protected define foo private () : Bar
+private define foo<T>() : Bar
+internal define foo<T> private () : Bar

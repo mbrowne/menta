@@ -3,6 +3,6 @@
 // WITH_STDLIB
 package kotlin
 
-class collections
+define collections
 
 /* GENERATED_FIR_TAGS: classDeclaration */

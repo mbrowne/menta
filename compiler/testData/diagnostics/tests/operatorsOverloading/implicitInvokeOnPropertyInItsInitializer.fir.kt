@@ -15,7 +15,7 @@ object Explicit {
     val foo: String = foo()
 }
 
-class Inv<T>(val value: T)
+define Inv<T>(val value: T)
 
 object ImplicitWrapped {
     operator fun Inv<*>.invoke(): Inv<String> = Inv("Fail")

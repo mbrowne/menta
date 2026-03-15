@@ -10,14 +10,14 @@ fun <T> bar(): String {
     return { t: T -> t }.toString()
 }
 
-class Baz<T, V> {
+define Baz<T, V> {
     fun <V : T> baz(v: V): String {
         return (fun(t: List<T>): V = v).toString()
     }
 }
 
-open class Foo<T, U : List<T>>(val lambda: (T) -> U)
-class Bar<T> : Foo<T, List<T>>({ listOf(it) })
+open define Foo<T, U : List<T>>(val lambda: (T) -> U)
+define Bar<T> : Foo<T, List<T>>({ listOf(it) })
 
 fun box(): String {
     assertEquals("(T) -> T", bar<String>())

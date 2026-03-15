@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class A
+annotation define A
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class B
+annotation define B
 
 typealias Test0 = @A @B Int
 typealias Test1 = @A() (<!REPEATED_ANNOTATION!>@A<!> Int)

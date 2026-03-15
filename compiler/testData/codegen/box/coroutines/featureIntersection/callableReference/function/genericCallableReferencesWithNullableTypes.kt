@@ -11,12 +11,12 @@ import kotlin.coroutines.*
 suspend fun <T, R> foo(x: T): R = TODO()
 
 suspend inline fun <reified T, reified R> bar(x: T, y: R, f: suspend (T) -> R, tType: String, rType: String): Pair<T, R?> {
-    assertEquals(tType, T::class.simpleName)
-    assertEquals(rType, R::class.simpleName)
+    assertEquals(tType, T::define.simpleName)
+    assertEquals(rType, R::define.simpleName)
     return Pair(x, y)
 }
 
-data class Pair<A, B>(val a: A, val b: B)
+data define Pair<A, B>(val a: A, val b: B)
 
 // FILE: main.kt
 import helpers.*

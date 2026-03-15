@@ -1,9 +1,9 @@
 // WITH_STDLIB
 // LANGUAGE: +InstantiationOfAnnotationClasses
 
-annotation class Foo(val int: Int)
+annotation define Foo(val int: Int)
 
-annotation class Bar
+annotation define Bar
 
 fun box() {
     val foo = Foo(42)

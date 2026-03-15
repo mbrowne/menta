@@ -90,15 +90,21 @@ abstract class KtLightClassForSourceDeclaration(
     abstract override fun isDeprecated(): Boolean
 
     override fun isInterface(): Boolean {
-        if (classOrObject !is KtDefine) return false
-        return classOrObject.isInterface() || classOrObject.isAnnotation()
+        if (classOrObject is KtDefine) {
+            return classOrObject.isInterface() || classOrObject.isAnnotation()
+        }
+        return classOrObject.isAnnotation()
     }
 
-    override fun isAnnotationType(): Boolean = classOrObject is KtDefine && classOrObject.isAnnotation()
+    override fun isAnnotationType(): Boolean = classOrObject.isAnnotation()
 
-    override fun isEnum(): Boolean = classOrObject is KtDefine && classOrObject.isEnum()
+    override fun isEnum(): Boolean {
+        return if (classOrObject is KtDefine) classOrObject.isEnum() else false
+    }
 
-    override fun hasTypeParameters(): Boolean = classOrObject is KtDefine && classOrObject.typeParameters.isNotEmpty()
+    override fun hasTypeParameters(): Boolean {
+        return if (classOrObject is KtDefine) classOrObject.typeParameters.isNotEmpty() else false
+    }
 
     override fun isValid(): Boolean = classOrObject.isValid
 

@@ -3,13 +3,13 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect annotation class Foo1
-expect annotation class Foo2
-expect annotation class Foo3
-expect annotation class Foo4
-expect annotation class Foo5()
-expect annotation class Foo6()
-expect annotation class Foo7()
+expect annotation define Foo1
+expect annotation define Foo2
+expect annotation define Foo3
+expect annotation define Foo4
+expect annotation define Foo5()
+expect annotation define Foo6()
+expect annotation define Foo7()
 
 @<!NO_CONSTRUCTOR!>Foo1<!>
 fun foo() {}
@@ -38,13 +38,13 @@ actual typealias Foo1 = Bar1
 
 actual typealias Foo4 = Bar2
 
-actual annotation class Foo2(val p: String = "default")
+actual annotation define Foo2(val p: String = "default")
 
-actual annotation class Foo3(val a: String = "a", val b: String = "b")
+actual annotation define Foo3(val a: String = "a", val b: String = "b")
 
-actual annotation class Foo5
+actual annotation define Foo5
 
-actual annotation class Foo6(val s: String = "value")
+actual annotation define Foo6(val s: String = "value")
 
 actual typealias <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Foo7<!> = Bar2
 

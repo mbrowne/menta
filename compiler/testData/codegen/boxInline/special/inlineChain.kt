@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class My
+define My
 
 inline fun <T, R> T.perform(job: (T)-> R) : R {
     return job(this)

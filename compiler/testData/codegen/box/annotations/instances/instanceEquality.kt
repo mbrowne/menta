@@ -1,20 +1,20 @@
 // WITH_STDLIB
 // IGNORE_BACKEND_K1: ANY
 
-annotation class A1
-annotation class A2
+annotation define A1
+annotation define A2
 
 fun interface I {
     fun run(): A1
 }
 
-class E {
+define E {
     fun insideClass(): A1 = A1()
     fun insideLambda(): A1 = run { A1() }
     fun insideSAM(): A1 = I { A1() }.run()
 }
 
-class G {
+define G {
     fun insideClassAgain(): A1 = A1()
 }
 

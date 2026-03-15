@@ -17,7 +17,7 @@ context(
 var foo: String get() = ""
 
 context(
-class C {
+define C {
     context(
     constructor() {} // no proper recovery because constructor is a soft keyword :(
 }

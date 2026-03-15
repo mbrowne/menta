@@ -8,7 +8,7 @@ interface B : A {
     override fun foo(): MutableCollection<String>
 }
 
-class C : B {
+define C : B {
     override fun foo(): MutableList<String> = ArrayList(listOf("C"))
 }
 

@@ -12,7 +12,7 @@ interface A<H> {
     fun <T> g1() : T
 }
 
-abstract class B<H>() : A<H> {
+abstract define B<H>() : A<H> {
     override fun <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>foo<!>() {
     }
     override fun foo2() : <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>Unit<!> {

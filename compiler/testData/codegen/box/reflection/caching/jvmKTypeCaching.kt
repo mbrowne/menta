@@ -3,13 +3,13 @@
 // WITH_REFLECT
 import kotlin.reflect.jvm.internal.*
 
-class A
+define A
 
 fun box(): String {
-    return synchronized(ReflectionFactoryImpl::class.java) {
-        val clz = A::class
+    return synchronized(ReflectionFactoryImpl::define.java) {
+        val clz = A::define
         System.gc()
-        val clz2 = A::class
+        val clz2 = A::define
         if (clz === clz2) return@synchronized "OK"
         return@synchronized "Fail"
     }

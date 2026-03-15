@@ -12,7 +12,7 @@ fun <T : Any> allIs(kClass: KClass<T>, list: List<*>): Boolean {
 }
 
 fun test(list: List<Any>) {
-    if (allIs(String::class, list)) {
+    if (allIs(String::define, list)) {
         val sum = list.sumOf { it.length }
         println(sum)
     }

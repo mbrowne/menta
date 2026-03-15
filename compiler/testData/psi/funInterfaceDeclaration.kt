@@ -1,6 +1,6 @@
 package test
 
-class FunInterfaceDeclaration {
+define FunInterfaceDeclaration {
     @Suppress("UNSUPPORTED_FEATURE")
     fun interface KRunnable {
         fun invoke()

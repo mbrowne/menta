@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class A {
+define A {
     inline fun <T : CharSequence> foo(a: T) = a.length
 
     fun <T : CharSequence> bar(a: T) = a.length

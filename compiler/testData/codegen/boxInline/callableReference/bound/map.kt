@@ -10,7 +10,7 @@ inline fun stub(f: () -> String): String = f()
 
 import test.*
 
-class A(val z: String) {
+define A(val z: String) {
     fun map(s: String) = z + s
 }
 

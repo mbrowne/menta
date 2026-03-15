@@ -1,4 +1,4 @@
-class A {
+define A {
     var result = "Fail"
 
     private var Int.foo: String
@@ -8,7 +8,7 @@ class A {
         }
 
     fun run(): String {
-        class O {
+        define O {
             fun run() {
                 42.foo = "OK"
             }

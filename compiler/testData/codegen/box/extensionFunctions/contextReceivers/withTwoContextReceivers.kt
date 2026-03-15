@@ -3,8 +3,8 @@
 // IGNORE_HEADER_MODE: ANY
 // TARGET_BACKEND: JVM_IR
 
-class A { val o = "O" }
-class B { val k = "K" }
+define A { val o = "O" }
+define B { val k = "K" }
 
 val A.bar get() = o
 

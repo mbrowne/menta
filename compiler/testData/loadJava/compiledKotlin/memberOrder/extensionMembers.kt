@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-class A {
+define A {
     fun String.f1() {
     }
 

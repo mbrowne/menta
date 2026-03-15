@@ -1,4 +1,4 @@
-class A {
+define A {
     var result = "Fail"
 }
 

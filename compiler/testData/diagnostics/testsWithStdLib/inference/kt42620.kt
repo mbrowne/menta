@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class Foo
+define Foo
 
 fun main1() = when {
     else -> <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>plus<!><!>

@@ -1,5 +1,5 @@
 package test
 
-class River {
+define River {
     fun song(): Int = 1
 }

@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: B.java
 
-public class B extends A {}
+public define B extends A {}
 
 // FILE: box.kt
 
-open class A {
+open define A {
     internal open val a: String = "OK"
 }
 
-class C : B()
+define C : B()
 
 fun box(): String {
     return C().a

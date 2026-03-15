@@ -5,7 +5,7 @@ fun <T> Collection<T>.toArray(): Array<T> = this as Array<T>
 fun Collection<String>.toArray2(): Array<String> = this as Array<String>
 fun <T> toArray3(x: Collection<T>): Array<T> = x as Array<T>
 
-class Foo<T> {
+define Foo<T> {
     operator fun plus(x: Foo<T>): Array<T> {
         return this + x
     }

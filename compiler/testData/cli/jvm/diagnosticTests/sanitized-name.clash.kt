@@ -1,5 +1,5 @@
-class SanitizedNameClash
-class Sanitized_Name_Clash
-class Sanitized_name_clashKt
+define SanitizedNameClash
+define Sanitized_Name_Clash
+define Sanitized_name_clashKt
 
 fun foo() {}

@@ -10,13 +10,13 @@ fun <T, R> foo(x: T): R = TODO()
 fun <T> fooReturnInt(x: T): Int = 1
 
 inline fun <reified T, reified R> check(x: T, y: R, f: (T) -> R, tType: String, rType: String) {
-    assertEquals(tType, T::class.simpleName)
-    assertEquals(rType, R::class.simpleName)
+    assertEquals(tType, T::define.simpleName)
+    assertEquals(rType, R::define.simpleName)
 }
 
 inline fun <reified T, reified R> check(f: (T) -> R, g: (T) -> R, tType: String, rType: String) {
-    assertEquals(tType, T::class.simpleName)
-    assertEquals(rType, R::class.simpleName)
+    assertEquals(tType, T::define.simpleName)
+    assertEquals(rType, R::define.simpleName)
 }
 
 fun box(): String {

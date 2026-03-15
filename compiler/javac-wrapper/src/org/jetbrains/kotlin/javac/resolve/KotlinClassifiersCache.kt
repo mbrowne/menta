@@ -32,6 +32,7 @@ import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.name.Name
 import org.jetbrains.kotlin.psi.KtClassOrObject
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.psiUtil.containingClassOrObject
 import org.jetbrains.kotlin.psi.psiUtil.visibilityModifierType
@@ -41,14 +42,14 @@ class KotlinClassifiersCache(sourceFiles: Collection<KtFile>,
 
     private val kotlinPackages = hashSetOf<FqName>()
     private val kotlinFacadeClasses = hashMapOf<ClassId, KtFile>()
-    private val kotlinClasses: Map<ClassId?, KtClassOrObject?> =
+        private val kotlinClasses: Map<ClassId?, KtClassOrObject?> =
             sourceFiles.flatMap { ktFile ->
-                kotlinPackages.add(ktFile.packageFqName)
-                val facadeFqName = ktFile.javaFileFacadeFqName
-                kotlinFacadeClasses[ClassId(facadeFqName.parent(), facadeFqName.shortName())] = ktFile
-                ktFile.declarations
-                        .filterIsInstance<KtClassOrObject>()
-                        .map { it.computeClassId() to it }
+            kotlinPackages.add(ktFile.packageFqName)
+            val facadeFqName = ktFile.javaFileFacadeFqName
+            kotlinFacadeClasses[ClassId(facadeFqName.parent(), facadeFqName.shortName())] = ktFile
+            ktFile.declarations
+                .filterIsInstance<KtClassOrObject>()
+                .map { it.computeClassId() to it }
             }.toMap()
 
     private val classifiers = hashMapOf<ClassId, JavaClass>()

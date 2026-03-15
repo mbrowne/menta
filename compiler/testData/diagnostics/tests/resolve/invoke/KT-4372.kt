@@ -4,7 +4,7 @@
 
 //KT-4372 Invalid error position and failing to resolve invoke with receiver from other module
 
-class Foo<TInner, TOuter> {
+define Foo<TInner, TOuter> {
     fun invoke(content: TInner.() -> Unit) {
     }
 }
@@ -12,7 +12,7 @@ class Foo<TInner, TOuter> {
 // comment this function to fix the error below
 fun <TInner, TOuter> Foo<TInner, TOuter>.invoke(name: String, content: TInner.() -> Unit) {}
 
-enum class EnumClass(val x: String) {}
+enum define EnumClass(val x: String) {}
 object Y {
     val x = javaClass<EnumClass>() // javaClass unresolved in any file in this module
 }

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 // Generate:
 // (1..70).map { "    p${"%02d".format(it)}: Int," }.joinToString("\n")
 
-class A(
+define A(
         p01: Int,
         p02: Int,
         p03: Int,
@@ -88,7 +88,7 @@ class A(
 }
 
 fun box(): String {
-    val f = A::class.constructors.single()
+    val f = A::define.constructors.single()
     val parameters = f.parameters
 
     f.callBy(mapOf(

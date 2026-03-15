@@ -15,7 +15,7 @@ fun test() {
     <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
     fun test4(): String<!> = ""
 
-    class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+    define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
         <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
     }
     <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -39,7 +39,7 @@ fun test() {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -49,7 +49,7 @@ fun test() {
     }
 }
 
-class Test {
+define Test {
     init {
         <!CONFLICTING_OVERLOADS!>fun test1()<!> {}
         <!CONFLICTING_OVERLOADS!>@Deprecated("test1", level = DeprecationLevel.HIDDEN)
@@ -66,7 +66,7 @@ class Test {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -91,7 +91,7 @@ class Test {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -116,7 +116,7 @@ class Test {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -144,7 +144,7 @@ val property: Any get() {
     <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
     fun test4(): String<!> = ""
 
-    class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+    define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
         <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
     }
     <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -172,7 +172,7 @@ object Object {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -197,7 +197,7 @@ object Object {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -226,7 +226,7 @@ val obj = object {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)
@@ -251,7 +251,7 @@ val obj = object {
         <!CONFLICTING_OVERLOADS!>@Deprecated("test4", level = DeprecationLevel.HIDDEN)
         fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>@Deprecated("Test5", level = DeprecationLevel.HIDDEN)

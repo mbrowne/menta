@@ -8,7 +8,7 @@ KtFile: annotatedDefaultPropertyAccessor.kt
     PsiWhiteSpace('\n')
     PsiComment(EOL_COMMENT)('// K1 metadata : default accessors, K2 metadata : non-default accessors')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
     PRIMARY_CONSTRUCTOR
@@ -106,6 +106,6 @@ KtFile: annotatedDefaultPropertyAccessor.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Anno')

@@ -7,7 +7,7 @@ interface ModuleInfo
 interface ResolverForModule
 interface ResolverForProject<M1, R1>
 
-class ResolverForProjectImpl<M : ModuleInfo, R : ResolverForModule>(
+define ResolverForProjectImpl<M : ModuleInfo, R : ResolverForModule>(
         descriptorByModule: Map<M, ModuleDescriptorImpl>,
         delegateResolver: ResolverForProject<M, R>
 ) : ResolverForProject<M, R>

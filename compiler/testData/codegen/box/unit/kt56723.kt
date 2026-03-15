@@ -8,7 +8,7 @@ fun foo(f: () -> Unit, returnIfOk: String): String {
     }
 }
 
-class Wrapper(var s: String)
+define Wrapper(var s: String)
 
 fun box(): String {
     val w: Wrapper? = Wrapper("Test")

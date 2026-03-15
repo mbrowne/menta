@@ -11,7 +11,7 @@ KtFile: typeBoundsAndDelegationSpecifiers.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
   PsiWhiteSpace('\n')
@@ -21,7 +21,7 @@ KtFile: typeBoundsAndDelegationSpecifiers.kt
     PsiElement(IDENTIFIER)('T')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('TypeBoundsAndDelegationSpecifiers')
     TYPE_PARAMETER_LIST

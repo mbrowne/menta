@@ -30,7 +30,7 @@ fun testWrong3(x: Map<Any, Any>) = x is <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Writea
 fun testWrong4(x: List<Any>) = x is <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>ReadableList<!>
 
 fun <T> testLocal(x: Any) {
-    class C
+    define C
     typealias CA = C
     if (x is <!CANNOT_CHECK_FOR_ERASED!>C<!>) {}
     if (x is <!CANNOT_CHECK_FOR_ERASED!>CA<!>) {}

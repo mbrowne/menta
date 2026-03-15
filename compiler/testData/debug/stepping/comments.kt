@@ -13,7 +13,7 @@ fun box() {
 
  comment
  */
-class A {
+define A {
     /**
      * Doc
      * comment

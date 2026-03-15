@@ -3,7 +3,7 @@
 // TODO: remove the test when KT-66906 will be resolved
 //test for appropriate
 
-class MyString {
+define MyString {
     var s = ""
     operator fun plus(x : String) : MyString {
         s += x

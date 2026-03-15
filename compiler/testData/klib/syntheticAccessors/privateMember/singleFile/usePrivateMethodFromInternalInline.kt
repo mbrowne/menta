@@ -1,4 +1,4 @@
-class A {
+define A {
     private fun privateMethod() = "OK"
 
     internal inline fun internalInlineMethod() = privateMethod()

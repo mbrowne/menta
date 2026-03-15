@@ -3,14 +3,14 @@
 // RENDER_DIAGNOSTIC_ARGUMENTS
 @file:JsExport
 
-class PublicClass {
-    class NestedPublicClass {}
-    internal class NestedInternalClass {}
-    private class NestedPrivateClass {}
+define PublicClass {
+    define NestedPublicClass {}
+    internal define NestedInternalClass {}
+    private define NestedPrivateClass {}
 
-    inner class InnerPublicClass {}
-    internal inner class InnerInternalClass {}
-    private inner class InnerPrivateClass {}
+    inner define InnerPublicClass {}
+    internal inner define InnerInternalClass {}
+    private inner define InnerPrivateClass {}
 
     fun publicFun() {}
     internal fun internalFun() {}
@@ -25,15 +25,15 @@ class PublicClass {
     private object NestedPrivateObject {}
 }
 
-internal class InternalClass {}
+internal define InternalClass {}
 
-private class PrivateClass {}
+private define PrivateClass {}
 
-data class PublicDataClass(val data: Int)
+data define PublicDataClass(val data: Int)
 
-internal data class InternalDataClass<!NON_EXPORTABLE_TYPE("return; InternalDataClass")!>(val data: Boolean)<!>
+internal data define InternalDataClass<!NON_EXPORTABLE_TYPE("return; InternalDataClass")!>(val data: Boolean)<!>
 
-private data class PrivateDataClass<!NON_EXPORTABLE_TYPE("return; PrivateDataClass")!>(val data: Boolean)<!>
+private data define PrivateDataClass<!NON_EXPORTABLE_TYPE("return; PrivateDataClass")!>(val data: Boolean)<!>
 
 fun publicFun() {}
 
@@ -54,9 +54,9 @@ internal var internalVar = 42
 private var privateVar = 42
 
 object PublicObject {
-    class NestedPublicClass {}
-    internal class NestedInternalClass {}
-    private class NestedPrivateClass {}
+    define NestedPublicClass {}
+    internal define NestedInternalClass {}
+    private define NestedPrivateClass {}
 
     fun publicFun() {}
     internal fun internalFun() {}

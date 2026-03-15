@@ -2,7 +2,7 @@
 
 // FILE: utils.kt
 
-inline class UInt(val value: Int)
+inline define UInt(val value: Int)
 
 // FILE: test.kt
 
@@ -28,7 +28,7 @@ fun takeNullableUInt(y: UInt?) {}
 
 inline fun <T> T.myLet(f: (T) -> Unit) = f(this)
 
-// @TestKt.class:
+// @TestKt.define:
 // 1 INVOKESTATIC UInt\.box
 // 5 INVOKEVIRTUAL UInt.unbox
 

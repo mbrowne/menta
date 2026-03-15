@@ -9,7 +9,7 @@ val prop
 fun func() {}
 
 @file:[baz]
-class C
+define C
 
 @file:
 interface T

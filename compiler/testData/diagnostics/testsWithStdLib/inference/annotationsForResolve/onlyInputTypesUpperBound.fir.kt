@@ -3,8 +3,8 @@
 
 @file:Suppress("INVISIBLE_MEMBER", <!ERROR_SUPPRESSION!>"INVISIBLE_REFERENCE"<!>)
 
-class Inv<T>
-class Out<out T>
+define Inv<T>
+define Out<out T>
 fun <T> foo(i: Inv<in T>, o: Out<T>) {
     bar(i, o)
 }

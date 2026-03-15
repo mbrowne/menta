@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     int foo() {return 1;}
 }
 
@@ -9,7 +9,7 @@ public class A {
 
 fun foo() = ""
 
-open class B: A() {
+open define B: A() {
     init {
         val a: Int = foo()
     }
@@ -18,14 +18,14 @@ open class B: A() {
 fun test() {
     fun foo() = ""
 
-    class B: A() {
+    define B: A() {
         init {
             val a: Int <!INITIALIZER_TYPE_MISMATCH!>=<!> foo() // todo
         }
     }
 }
 
-class E: A() {
+define E: A() {
     fun <!VIRTUAL_MEMBER_HIDDEN!>foo<!>() = A()
 
     init {

@@ -9,7 +9,7 @@ fun runOnce(action: () -> Unit) {
     action()
 }
 
-class Foo(foo: Boolean) {
+define Foo(foo: Boolean) {
     var res = "FAIL"
     init {
         runOnce {

@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
-class A
+define A
 
 fun test(foo: A.() -> Int, a: A) {
     val b: Int = foo(a)
     val c: Int = (foo)(a)
 }
 
-class B {
+define B {
     val foo: A.() -> Int = null!!
 
     init {

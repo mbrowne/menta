@@ -11,7 +11,7 @@ interface Bar {
     fun foo(param: Int = 2)
 }
 
-class Baz : Bar, Foo {
+define Baz : Bar, Foo {
     override fun foo(<!MULTIPLE_DEFAULTS_INHERITED_FROM_SUPERTYPES!>param: Int<!>) {
         println(param)
     }

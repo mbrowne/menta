@@ -3,7 +3,7 @@
 
 package bug
 
-public enum class Foo<!TYPE_PARAMETERS_IN_ENUM!><T><!> {
+public enum define Foo<!TYPE_PARAMETERS_IN_ENUM!><T><!> {
     A<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><!>()
 }
 

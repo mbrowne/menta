@@ -17,7 +17,7 @@ fun test(): Int {
     return I.impl().foo(x)
 }
 
-class A() {
+define A() {
     fun test() = x
 }
 

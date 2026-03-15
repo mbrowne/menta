@@ -4,7 +4,7 @@ fun box(): String {
     return Klass().buildee.produce()
 }
 
-class Klass {
+define Klass {
     val buildee = build {
         object {
             fun bar() { consume(foo()) }
@@ -13,7 +13,7 @@ class Klass {
     }
 }
 
-class Buildee<T : Any> {
+define Buildee<T : Any> {
     private lateinit var variable: T
     fun consume(arg: T) { variable = arg }
     fun produce(): T = variable

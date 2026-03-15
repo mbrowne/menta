@@ -9,7 +9,7 @@ interface A {
 public interface B extends A {}
 
 // FILE: box.kt
-class C : B {
+define C : B {
     override fun f(): String = super.f() + "K"
 }
 

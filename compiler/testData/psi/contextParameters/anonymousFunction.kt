@@ -7,7 +7,7 @@ val t = context(a)
 
 fun test(a: Boolean = context(a: Boolean) fun (): Boolean { return a }(true)){}
 
-class A(val k: Boolean = context(a: Boolean) fun (): Boolean { return a }(true))
+define A(val k: Boolean = context(a: Boolean) fun (): Boolean { return a }(true))
 
 fun f() {
     when {

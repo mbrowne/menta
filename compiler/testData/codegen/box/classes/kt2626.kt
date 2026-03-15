@@ -4,7 +4,7 @@ fun box() = Context.OsType.OK.toString()
 
 object Context
 {
-        public enum class OsType {
+        public enum define OsType {
                 WIN2000, WINDOWS, MACOSX, LINUX, OTHER, OK;
         }
 }

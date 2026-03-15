@@ -35,7 +35,7 @@ fun case_7(x: Boolean?) {
 
 fun <T> something(): T = Any() as T
 
-class Context<T>
+define Context<T>
 
 fun <T> Any.decodeIn(typeFrom: Context<in T>): T = something()
 
@@ -55,12 +55,12 @@ fun <T> Any.decodeOut4(typeFrom: Context<out T>): T {
     <!UNREACHABLE_CODE!>val x: Any =<!> this.<!IMPLICIT_NOTHING_TYPE_ARGUMENT_IN_RETURN_POSITION!>decodeIn<!>(typeFrom)
 }
 
-class TrieNode<out E> {
+define TrieNode<out E> {
     companion object {
         internal val EMPTY = TrieNode<Nothing>()
     }
 }
-class PersistentHashSet<out E>(root: TrieNode<E>) {
+define PersistentHashSet<out E>(root: TrieNode<E>) {
     companion object {
         internal val EMPTY = PersistentHashSet(TrieNode.EMPTY)
     }

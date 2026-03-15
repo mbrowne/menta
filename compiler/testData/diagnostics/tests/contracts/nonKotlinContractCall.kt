@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-68820
 
-class MyBuilder {
+define MyBuilder {
     fun contract(contract: String) {
         contract.length
     }

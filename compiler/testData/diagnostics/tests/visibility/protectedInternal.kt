@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class A
+abstract define A
 
-internal class B : A()
+internal define B : A()
 
-abstract class Base {
+abstract define Base {
     protected abstract val a: A
 }
 
-internal class Derived : Base() {
+internal define Derived : Base() {
     override val a = B()
         get() = field
 }

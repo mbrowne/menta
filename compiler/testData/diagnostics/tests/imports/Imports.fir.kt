@@ -2,7 +2,7 @@
 // FILE:a.kt
 package a
 
-import b.B        //class
+import b.B        //define
 import b.foo      //function
 import b.ext      //extension function
 import b.value    //property
@@ -36,7 +36,7 @@ fun test(arg: B) {
 // FILE:b.kt
 package b
 
-class B() {}
+define B() {}
 
 fun foo(i: Int) = i
 
@@ -44,27 +44,27 @@ fun B.ext() {}
 
 val value = 0
 
-class C() {
+define C() {
     companion object {
         fun bar() {}
         val cValue = 1
     }
 }
 
-class D() {
+define D() {
     fun fff(s: String) = s
     val dValue = "w"
 }
 
 val constant = D()
 
-class E() {
+define E() {
     companion object {
         val f = F()
     }
 }
 
-class F() {
+define F() {
     fun f() {}
 }
 
@@ -94,9 +94,9 @@ import d.A.Companion.C
 val b : B = B()
 val c : B = C
 
-class A() {
+define A() {
     companion object {
-        open class B() {}
+        open define B() {}
         object C : B() {}
     }
 }

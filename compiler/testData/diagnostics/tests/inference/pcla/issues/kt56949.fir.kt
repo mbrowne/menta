@@ -15,12 +15,12 @@ fun test() {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
 fun <T: <!FINAL_UPPER_BOUND!>DifferentType<!>> consumeDifferentTypeSubtype(value: T) {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun getTypeVariable(): TV = storage
     private var storage: TV = null!!

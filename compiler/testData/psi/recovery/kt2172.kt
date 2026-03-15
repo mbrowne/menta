@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class Foo {
+define Foo {
 
     companion object {
         val

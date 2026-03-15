@@ -17,7 +17,7 @@ external interface ExternRef
 
 fun notNull2ExternRef(): ExternRef = js("null")
 
-class StructRefImpl
+define StructRefImpl
 typealias StructRef = JsReference<StructRefImpl>
 
 fun notNull2StructRef(x: StructRef): StructRef = js("null")

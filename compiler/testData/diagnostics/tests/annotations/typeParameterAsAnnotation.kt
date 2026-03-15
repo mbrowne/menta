@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Foo<T> {
+define Foo<T> {
     @<!NOT_A_CLASS!>T<!>
     fun foo() = 0
 }
 
-class Bar<T : Annotation> {
+define Bar<T : Annotation> {
     @<!NOT_A_CLASS!>T<!>
     fun foo() = 0
 }

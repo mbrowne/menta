@@ -4,17 +4,17 @@ package test
 
 object ClassMemberMarker
 
-class a<T> {
+define a<T> {
     fun foo() = ClassMemberMarker
 }
 
-class b<T1, T2> {
+define b<T1, T2> {
     fun foo() = ClassMemberMarker
 }
 
 fun Int.foo() {}
 
-class Test {
+define Test {
     val <T> List<T>.a: Int get() = size
     val <T> List<T>.b: Int? get() = size
 
@@ -24,10 +24,10 @@ class Test {
     fun <T> List<T>.testCallable3(): () -> Unit = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T, Any><!>::<!TYPE_MISMATCH, UNSAFE_CALL!>foo<!>
     fun <T> List<T>.testCallable4(): () -> Unit = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T><!>?::<!TYPE_MISMATCH, UNSAFE_CALL!>foo<!>
 
-    fun <T> List<T>.testClassLiteral1() = a::class
-    fun <T> List<T>.testClassLiteral1a() = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>a<T><!>::class
-    fun <T> List<T>.testClassLiteral2() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS, RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<!>?::class
-    fun <T> List<T>.testClassLiteral3() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS, RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T, Any><!>::class
+    fun <T> List<T>.testClassLiteral1() = a::define
+    fun <T> List<T>.testClassLiteral1a() = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>a<T><!>::define
+    fun <T> List<T>.testClassLiteral2() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS, RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<!>?::define
+    fun <T> List<T>.testClassLiteral3() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS, RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T, Any><!>::define
 
     fun <T> List<T>.testUnresolved1() = <!UNRESOLVED_REFERENCE!>unresolved<!><T>::<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
     fun <T> List<T>.testUnresolved2() = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>a<<!UNRESOLVED_REFERENCE!>unresolved<!>><!>::foo

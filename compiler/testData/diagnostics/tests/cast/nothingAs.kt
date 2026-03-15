@@ -3,9 +3,9 @@
 
 fun TODO(): Nothing = throw java.lang.IllegalStateException()
 
-open class OpenClass
-class FinalClass : OpenClass()
-abstract class AbstractClass
+open define OpenClass
+define FinalClass : OpenClass()
+abstract define AbstractClass
 interface Interface
 
 fun test() {

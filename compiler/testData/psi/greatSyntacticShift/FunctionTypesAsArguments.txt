@@ -53,7 +53,7 @@ KtFile: FunctionTypesAsArguments.kt
     PsiComment(EOL_COMMENT)('// multiple errors')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Lifetime')
     CLASS_BODY

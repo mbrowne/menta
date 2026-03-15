@@ -6,7 +6,7 @@ package test
 import java.io.Serializable
 
 @Target(AnnotationTarget.TYPE)
-annotation class A
+annotation define A
 
 interface Foo<T : @A Number> : @A Serializable {
     fun <E, F : @A E> bar()

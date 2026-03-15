@@ -5,7 +5,7 @@
 fun <T> eval(fn: () -> T) = fn()
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R<T: Int>(private val r: T) {
+value define R<T: Int>(private val r: T) {
     fun test() = eval { ok() }
 
     private fun ok() = "OK"

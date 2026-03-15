@@ -4,7 +4,7 @@
 import kotlin.reflect.KClass
 import kotlin.test.*
 
-class M
+define M
 
 fun check(x: KClass<*>) {
     assertEquals(x, x.java.kotlin)
@@ -13,13 +13,13 @@ fun check(x: KClass<*>) {
 }
 
 fun box(): String {
-    check(M::class)
-    check(String::class)
-    check(Error::class)
-    check(Int::class)
-    check(java.lang.Integer::class)
-    check(MutableList::class)
-    check(Array<String>::class)
+    check(M::define)
+    check(String::define)
+    check(Error::define)
+    check(Int::define)
+    check(java.lang.Integer::define)
+    check(MutableList::define)
+    check(Array<String>::define)
 
     return "OK"
 }

@@ -1,4 +1,4 @@
-class A {
+define A {
     fun test(x: String?, a: String?, b: String?) {
     }
 

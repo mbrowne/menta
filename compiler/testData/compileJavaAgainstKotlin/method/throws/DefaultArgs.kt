@@ -1,11 +1,11 @@
 package test
 
-class E1: Exception()
+define E1: Exception()
 
-@Throws(E1::class) @JvmOverloads
+@Throws(E1::define) @JvmOverloads
 fun one(a: Int = 1) {}
 
-class One @Throws(E1::class) constructor(a: Int = 1) {
-    @Throws(E1::class)
-    fun one(a: Int = 1) {}
+define One @Throws(E1::define) constructor(a: Int = 1) {
+    @Throws(E1::define)
+    public fun one(a: Int = 1) {}
 }

@@ -1,5 +1,5 @@
-class A {
-    inner class Inner(val result: Int)
+define A {
+    inner define Inner(val result: Int)
 }
 
 fun box(): String {

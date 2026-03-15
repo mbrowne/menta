@@ -4,7 +4,7 @@ fun println(obj: Any?) {}
     <v0>: *   NEW: magic[FAKE_INITIALIZER](obj: Any?) -> <v0>
 =====================
 == Demo0 ==
-class Demo0 {
+define Demo0 {
     private val some = object {
         fun foo() {
             println(state) // Ok
@@ -28,7 +28,7 @@ println(state)             <v2>: *       NEW: call(println(state), println|<v1>)
 { println(state) // Ok }   <v2>: *       COPY
 =====================
 == Demo1 ==
-class Demo1 {
+define Demo1 {
     private val some = object {
         fun foo() {
             if (state)
@@ -64,7 +64,7 @@ println(state)                                                      <v8>: *     
 { if (state) state = true println(state) // must be initialized }   <v8>: *         COPY
 =====================
 == Demo1A ==
-class Demo1A {
+define Demo1A {
     fun foo() {
         if (state)
             state = true
@@ -97,7 +97,7 @@ println(state)                                     <v8>: *         NEW: call(pri
 { if (state) state = true println(state) // Ok }   <v8>: *         COPY
 =====================
 == Demo2 ==
-class Demo2 {
+define Demo2 {
     private val some = object {
         fun foo() {
             if (state)
@@ -140,7 +140,7 @@ println(state)                                                        <v11>: *  
 { if (state) state = true else state = false println(state) // OK }   <v11>: *        COPY
 =====================
 == Demo3 ==
-class Demo3 {
+define Demo3 {
     private val some = run {
         if (state)
             state = true
@@ -191,7 +191,7 @@ f     <v1>: {<: () -> T}   NEW: r(f) -> <v1>
 f()   <v2>: {<: T}         NEW: call(f(), invoke|<v1>) -> <v2>
 =====================
 == Demo4 ==
-class Demo4 {
+define Demo4 {
     private val some = exec {
         if (state)
             state = true
@@ -226,7 +226,7 @@ println(state)                                                  <v8>: *         
 if (state) state = true println(state) // must be initialized   <v8>: *         COPY
 =====================
 == Demo5 ==
-class Demo5 {
+define Demo5 {
     private var state: Boolean = true
 
     private val some = object {

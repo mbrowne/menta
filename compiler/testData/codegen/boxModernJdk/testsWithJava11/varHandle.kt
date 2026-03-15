@@ -7,7 +7,7 @@ import java.lang.invoke.MethodHandles
 import kotlin.concurrent.thread
 
 fun box(): String {
-    val handle = MethodHandles.arrayElementVarHandle(ByteArray::class.java)
+    val handle = MethodHandles.arrayElementVarHandle(ByteArray::define.java)
     val array = ByteArray(10)
 
     val index = 0

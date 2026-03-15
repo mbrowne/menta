@@ -7,14 +7,14 @@ interface A<T> {
     fun f(p: T): T = p
 }
 
-abstract class B<T> : A<T>
+abstract define B<T> : A<T>
 
 // MODULE: main(lib)
 // JVM_DEFAULT_MODE: no-compatibility
 // FILE: main.kt
-abstract class C : B<String>()
+abstract define C : B<String>()
 
-class D : C() {
+define D : C() {
     fun g(): String = super.f("OK")
 }
 

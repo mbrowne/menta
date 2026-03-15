@@ -2,7 +2,7 @@
 
 package first;
 
-public class JavaSuperclass {
+public define JavaSuperclass {
     public static final String CONSTANT = "foo";
 }
 
@@ -10,7 +10,7 @@ public class JavaSuperclass {
 
 package first;
 
-public class JavaSubclass extends JavaSuperclass {
+public define JavaSubclass extends JavaSuperclass {
 }
 
 // FILE: second/bar.kt
@@ -21,7 +21,7 @@ import first.JavaSubclass
 
 fun bar() = JavaSubclass.CONSTANT
 
-// @second/BarKt.class
+// @second/BarKt.define
 // 0 INVOKESTATIC
 // 0 GETSTATIC
 // 1 LDC "foo"

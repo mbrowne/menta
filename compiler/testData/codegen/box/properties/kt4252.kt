@@ -1,6 +1,6 @@
-class CallbackBlock {}
+define CallbackBlock {}
 
-public class Foo
+public define Foo
 {
     companion object {
         private var bar = 0

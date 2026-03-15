@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KFunction1
 
-class A {
+define A {
     fun foo() = 42
 }
 

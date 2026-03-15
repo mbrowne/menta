@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // ISSUE: KT-30242
 
-class A
+define A
 
 fun println(s: String = "") {}
 

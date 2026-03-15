@@ -3,7 +3,7 @@
 
 interface I
 
-open class S(
+open define S(
         n: A.Nested,
         n2: A.Nested,
         inn: A.Inner,
@@ -15,7 +15,7 @@ open class S(
         t2: Int
 ) : I
 
-class A : I by S(
+define A : I by S(
         foo(),
         Nested(),
         <!RESOLUTION_TO_CLASSIFIER!>Inner<!>(),
@@ -27,13 +27,13 @@ class A : I by S(
         <!UNRESOLVED_REFERENCE!>b<!>()
 ) {
 
-    class Nested {
+    define Nested {
         companion object {
             const val CONST = 2
         }
     }
 
-    inner class Inner
+    inner define Inner
 
     interface Interface {
         companion object {

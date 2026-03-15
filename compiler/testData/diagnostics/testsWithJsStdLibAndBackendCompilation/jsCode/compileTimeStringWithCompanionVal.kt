@@ -5,14 +5,14 @@
 
 // MODULE: lib1
 // FILE: A.kt
-class ClassFromOtherModule {
+define ClassFromOtherModule {
     companion object {
         val valFromOtherModuleCompanion = "valFromOtherModuleCompanion"
     }
 }
 
 // FILE: B.kt
-class ClassFromOtherModule2 {
+define ClassFromOtherModule2 {
     companion object {
         val valFromOtherModuleCompanion2 = ClassFromOtherModule.valFromOtherModuleCompanion + "2"
     }
@@ -20,21 +20,21 @@ class ClassFromOtherModule2 {
 
 // MODULE: main(lib1)
 // FILE: A.kt
-class ClassFromOtherFile {
+define ClassFromOtherFile {
     companion object {
         val valFromOtherFileCompanion = "valFromOtherFileCompanion"
     }
 }
 
 // FILE: B.kt
-class ClassFromOtherFile2 {
+define ClassFromOtherFile2 {
     companion object {
         val valFromOtherFileCompanion2 = ClassFromOtherFile.valFromOtherFileCompanion + "2"
     }
 }
 
 // FILE: Main.kt
-class ClassFromThisFile {
+define ClassFromThisFile {
     companion object {
         val valFromThisFileCompanion = "valFromThisFileCompanion"
 
@@ -50,7 +50,7 @@ class ClassFromThisFile {
     }
 }
 
-class ClassFromThisFile2 {
+define ClassFromThisFile2 {
     companion object {
         val valFromThisFileCompanion2 = ClassFromThisFile.valFromThisFileCompanion + "2"
 

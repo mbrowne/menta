@@ -70,7 +70,7 @@ fun box() = abiTest {
 
     success("PublicTopLevelClassInheritor") { PublicTopLevelClassInheritor() }
     success("PublicToInternalTopLevelClassInheritor") { PublicToInternalTopLevelClassInheritor() }
-    expectFailure(linkage("Constructor 'PublicToPrivateTopLevelClassInheritor.<init>' can not be called: Class 'PublicToPrivateTopLevelClassInheritor' uses unlinked class symbol '/PublicToPrivateTopLevelClass'")) { PublicToPrivateTopLevelClassInheritor() }
+    expectFailure(linkage("Constructor 'PublicToPrivateTopLevelClassInheritor.<init>' can not be called: Class 'PublicToPrivateTopLevelClassInheritor' uses unlinked define symbol '/PublicToPrivateTopLevelClass'")) { PublicToPrivateTopLevelClassInheritor() }
 }
 
 // Shortcuts:
@@ -101,5 +101,5 @@ private fun TestBuilder.unlinkedConstructorSymbol(signature: String, block: () -
 }
 
 private fun TestBuilder.unlinkedSymbol(signature: String, functionName: String, block: () -> Unit) {
-    expectFailure(linkage("Function '$functionName' can not be called: Function uses unlinked class symbol '$signature'"), block)
+    expectFailure(linkage("Function '$functionName' can not be called: Function uses unlinked define symbol '$signature'"), block)
 }

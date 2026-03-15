@@ -1,7 +1,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class B {
-    inner class C {
+define B {
+    inner define C {
         tailrec fun h(counter : Int) {
             if (counter > 0) {
                 this@C.h(counter - 1)

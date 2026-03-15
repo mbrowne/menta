@@ -1,9 +1,9 @@
 // COMPILATION_ERRORS
 // FILE: Arrays.kt
-annotation class Arrays(val value: IntArray)
+annotation define Arrays(val value: IntArray)
 
 // FILE: MyEnum.kt
-enum class MyEnum {
+enum define MyEnum {
     ENTRY;
 }
 
@@ -11,4 +11,4 @@ enum class MyEnum {
 @Arrays(
     [1, MyEnum.ENTRY, fun a() {}, bar.baz?.foo()]
 )
-class WithArrays
+define WithArrays

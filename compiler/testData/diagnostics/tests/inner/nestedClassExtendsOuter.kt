@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class Outer {
-    class Nested : Outer() {
+open define Outer {
+    define Nested : Outer() {
         fun bar() = foo()
         fun baz() = super.foo()
     }

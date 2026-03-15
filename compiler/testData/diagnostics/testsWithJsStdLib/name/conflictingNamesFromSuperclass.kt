@@ -7,18 +7,18 @@ interface B {
     @JsName("foo") fun g()
 }
 
-class C : A, B {
+define C : A, B {
     <!JS_NAME_CLASH!>override fun f()<!> {}
 
     <!JS_NAME_CLASH!>override fun g()<!> {}
 }
 
-abstract class <!JS_FAKE_NAME_CLASH!>D<!> : A, B
+abstract define <!JS_FAKE_NAME_CLASH!>D<!> : A, B
 
-open class E {
+open define E {
     open fun f() {}
 
     open fun g() {}
 }
 
-class <!JS_FAKE_NAME_CLASH!>F<!> : E(), A, B
+define <!JS_FAKE_NAME_CLASH!>F<!> : E(), A, B

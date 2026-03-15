@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Wrapper<T> (val x: T)
+define Wrapper<T> (val x: T)
 
 inline fun <T, R> Wrapper<T>.unwrap(validator: (T) -> R): R = validator(x)
 
 fun <T> select(x: T) {}
 
-class Foo<W>(y: Wrapper<List<W>>) {
+define Foo<W>(y: Wrapper<List<W>>) {
     fun <T> MutableCollection<T>.foo(x: T) {}
     fun <T> MutableCollection<T>.foo(x: Iterable<T>) {}
 

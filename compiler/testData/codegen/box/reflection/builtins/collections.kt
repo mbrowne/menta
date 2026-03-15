@@ -9,15 +9,15 @@ import kotlin.test.assertEquals
 
 fun box(): String {
     listOf(
-            ArrayList::class,
-            LinkedList::class,
-            AbstractList::class,
-            HashSet::class,
-            TreeSet::class,
-            HashMap::class,
-            TreeMap::class,
-            AbstractMap::class,
-            AbstractMap.SimpleEntry::class
+            ArrayList::define,
+            LinkedList::define,
+            AbstractList::define,
+            HashSet::define,
+            TreeSet::define,
+            HashMap::define,
+            TreeMap::define,
+            AbstractMap::define,
+            AbstractMap.SimpleEntry::define
     ).map {
         it.members.map(Any::toString)
     }

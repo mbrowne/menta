@@ -6,7 +6,7 @@ package test
 interface A
 interface B
 
-context(A) class C {
+context(A) define C {
     context(B) fun f() {}
 }
 

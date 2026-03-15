@@ -3,13 +3,13 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> abstract class BaseA() {
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> abstract define BaseA() {
     abstract fun foo()
 }
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> open <!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED{METADATA}!>class BaseAImpl<!>() : BaseA
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> open <!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED{METADATA}!>define BaseAImpl<!>() : BaseA
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED, ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED{METADATA}!>class DerivedA1<!> : BaseAImpl()
-class DerivedA2 : BaseAImpl() {
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED, ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED{METADATA}!>define DerivedA1<!> : BaseAImpl()
+define DerivedA2 : BaseAImpl() {
     override fun foo() = super.<!ABSTRACT_SUPER_CALL!>foo<!>()
 }
 
@@ -18,10 +18,10 @@ class DerivedA2 : BaseAImpl() {
 <!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> interface BaseB {
     fun foo()
 }
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class BaseBImpl<!>() : BaseB
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define BaseBImpl<!>() : BaseB
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED, ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class DerivedB1<!> : BaseBImpl()
-class DerivedB2 : BaseBImpl() {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED, ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define DerivedB1<!> : BaseBImpl()
+define DerivedB2 : BaseBImpl() {
     override fun foo() = super.<!ABSTRACT_SUPER_CALL!>foo<!>()
 }
 
@@ -30,10 +30,10 @@ class DerivedB2 : BaseBImpl() {
 <!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> interface BaseC {
     fun foo()
 }
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> abstract class BaseCImpl() : BaseC
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> abstract define BaseCImpl() : BaseC
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED, ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class DerivedC1<!> : BaseCImpl()
-class DerivedC2 : BaseCImpl() {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED, ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define DerivedC1<!> : BaseCImpl()
+define DerivedC2 : BaseCImpl() {
     override fun foo() = super.<!ABSTRACT_SUPER_CALL!>foo<!>()
 }
 
@@ -42,7 +42,7 @@ class DerivedC2 : BaseCImpl() {
 <!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> interface BaseD {
     fun foo()
 }
-abstract class BaseDImpl() : BaseD {
+abstract define BaseDImpl() : BaseD {
     fun bar() = super.<!ABSTRACT_SUPER_CALL!>foo<!>()
 }
 
@@ -51,7 +51,7 @@ abstract class BaseDImpl() : BaseD {
 <!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> interface BaseE {
     fun foo()
 }
-sealed class BaseEImpl() : BaseE {
+sealed define BaseEImpl() : BaseE {
     fun bar() = super.<!ABSTRACT_SUPER_CALL!>foo<!>()
 }
 
@@ -60,17 +60,17 @@ sealed class BaseEImpl() : BaseE {
 <!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> interface BaseF {
     fun foo()
 }
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class BaseFImpl<!>() : BaseF
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define BaseFImpl<!>() : BaseF
 
 
 
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> abstract class BaseG() {
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> abstract define BaseG() {
     abstract fun foo()
 }
-<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> open class BaseGImpl() : BaseG {
+<!NO_ACTUAL_FOR_EXPECT{JVM}!>expect<!> open define BaseGImpl() : BaseG {
     override fun foo()
 }
-class DerivedG1 : BaseGImpl()
+define DerivedG1 : BaseGImpl()
 
 // MODULE: m1-jvm()()(m1-common)
 

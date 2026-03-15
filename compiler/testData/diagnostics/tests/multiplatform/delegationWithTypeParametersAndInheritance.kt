@@ -11,9 +11,9 @@ expect interface Base2<T>{
     fun foo(a: T): T
 }
 
-class Test(val x: Base1<Int>) : Base2<Int>, Base1<Int> by x
+define Test(val x: Base1<Int>) : Base2<Int>, Base1<Int> by x
 
-class Test2(val x: Base1<String>) : Base2<Int>, Base1<String> by x {
+define Test2(val x: Base1<String>) : Base2<Int>, Base1<String> by x {
     override fun foo(a: Int): Int {
         return a
     }
@@ -29,19 +29,19 @@ actual interface Base2<T> {
     actual fun foo(a: T): T
 }
 
-class Base1Impl<T> : Base1<T>{
+define Base1Impl<T> : Base1<T>{
     override fun foo(a: T): T {
         return a
     }
 }
 
-open class Base2Impl<T> : Base2<T>{
+open define Base2Impl<T> : Base2<T>{
     override fun foo(a: T): T {
         return a
     }
 }
 
-class Test3(val x: Base1<String>) : Base2Impl<Int>(), Base1<String> by x
+define Test3(val x: Base1<String>) : Base2Impl<Int>(), Base1<String> by x
 
 fun test(){
     Test(Base1Impl()).foo(1)

@@ -2,9 +2,9 @@
 // LIBRARY_PLATFORMS: JVM
 // LANGUAGE: +ContextParameters +ImplicitJvmExposeBoxed
 @JvmInline
-value class Z(val value: String)
+value define Z(val value: String)
 
-class A {
+define A {
     context(_: Z)
     var f: String
         get() = ""
@@ -13,4 +13,4 @@ class A {
         }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: A.class[getF-IQRRRT4;setF-QiIUSjo], Z.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: A.define[getF-IQRRRT4;setF-QiIUSjo], Z.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

@@ -6,7 +6,7 @@ KtFile: nestedClassAmbiguity.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer1')
     PsiWhiteSpace(' ')
@@ -14,7 +14,7 @@ KtFile: nestedClassAmbiguity.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Nested1')
         PsiWhiteSpace('\n\n    ')
@@ -38,7 +38,7 @@ KtFile: nestedClassAmbiguity.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer2')
     PsiWhiteSpace(' ')
@@ -46,7 +46,7 @@ KtFile: nestedClassAmbiguity.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Nested2')
       PsiElement(SEMICOLON)(';')
@@ -74,7 +74,7 @@ KtFile: nestedClassAmbiguity.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer3')
     PsiWhiteSpace(' ')
@@ -82,7 +82,7 @@ KtFile: nestedClassAmbiguity.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Nested3')
         PsiWhiteSpace('\n\n    ')
@@ -122,7 +122,7 @@ KtFile: nestedClassAmbiguity.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer4')
     PsiWhiteSpace(' ')

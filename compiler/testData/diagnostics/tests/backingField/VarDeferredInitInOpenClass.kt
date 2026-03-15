@@ -31,7 +31,7 @@
 // b = open + not initialized in place + deferred init
 // f = open + not initialized in place
 // d = open + initialized in place
-open class Foo  {
+open define Foo  {
     //                                               no setter;                                                                 setter with field;                                                                       setter with empty body;                                                        setter no field;
     // no getter
                                                      var a00: Int;                                <!MUST_BE_INITIALIZED!>var a01: Int<!>; set(v) { field = v };                                                               var a02: Int; set;                              <!MUST_BE_INITIALIZED!>var a03: Int<!>; set(v) {};

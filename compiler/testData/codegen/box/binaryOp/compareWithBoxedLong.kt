@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 //FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     public static Long get() { return 2364137526064485012L; }
 }
 

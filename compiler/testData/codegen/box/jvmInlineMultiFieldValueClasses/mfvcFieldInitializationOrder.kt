@@ -5,13 +5,13 @@
 // FIR_IDENTICAL
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
-class A(var x: DPoint) {
+define A(var x: DPoint) {
     init { x = DPoint(2.0, 3.0) }
 }
 
-class B() {
+define B() {
     var a = DPoint(4.0, 5.0)
     val b = a
     init { a = DPoint(6.0, 7.0) }

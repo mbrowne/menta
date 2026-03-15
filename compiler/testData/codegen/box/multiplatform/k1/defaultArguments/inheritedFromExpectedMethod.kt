@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: common.kt
 
-expect open class C() {
+expect open define C() {
     open fun f(p: Int = 2) : String
 }
 
@@ -11,11 +11,11 @@ expect open class C() {
 
 import kotlin.test.assertEquals
 
-actual open class C {
+actual open define C {
     actual open fun f(p: Int) = "C" + p
 }
 
-open class D : C() {
+open define D : C() {
     override open fun f(p: Int) = "D" + p
 }
 

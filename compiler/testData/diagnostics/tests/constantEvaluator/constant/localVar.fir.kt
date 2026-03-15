@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 package test
 
-class A() {
+define A() {
     fun foo() {
         var a = 1
 

@@ -4,8 +4,8 @@
 
 package interop_class_inheritor.test
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
-class Derived : interop_class_inheritor.Base() {
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
+define Derived : interop_class_inheritor.Base() {
     override fun overriddenFunction() = Unit
     //override fun nonOverriddenFunction() = Unit
 

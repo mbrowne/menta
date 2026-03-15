@@ -5,7 +5,7 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A: Int.() -> String {
+expect define A: Int.() -> String {
     override fun invoke(p1: Int): String
 }
 
@@ -13,7 +13,7 @@ expect class A: Int.() -> String {
 // FILE: Java.java
 import kotlin.jvm.functions.Function1;
 
-public class Java implements Function1<Integer, String> {
+public define Java implements Function1<Integer, String> {
     @Override
     public String invoke(Integer integer) {
         return "OK";

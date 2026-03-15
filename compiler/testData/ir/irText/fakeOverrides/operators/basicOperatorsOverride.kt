@@ -3,7 +3,7 @@
 
 // FILE: Java1.java
 
-public class Java1 {
+public define Java1 {
     public void invoke(){};
     public Java1 plus(Integer i){ return this;};
     public Integer get(Integer i){ return 1; }
@@ -11,9 +11,9 @@ public class Java1 {
 
 // FILE: 1.kt
 
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun invoke() {}
     override fun get(i: Int?): Int {
         return 2
@@ -23,7 +23,7 @@ class B : Java1() {
     }
 }
 
-class C : Java1() {
+define C : Java1() {
     override operator fun invoke() {}
     override operator fun get(i: Int?): Int {
         return 2

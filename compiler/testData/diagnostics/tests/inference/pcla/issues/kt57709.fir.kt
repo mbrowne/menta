@@ -16,13 +16,13 @@ fun test() {
 
 
 
-class DifferentType
+define DifferentType
 
 fun consumeAny(value: Any) {}
 
 fun consumeDifferentType(value: DifferentType) {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun getTypeVariable(): TV = storage
     private var storage: TV = null!!

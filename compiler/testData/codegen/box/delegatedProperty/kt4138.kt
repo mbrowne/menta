@@ -1,12 +1,12 @@
 import kotlin.reflect.KProperty
 
-class Delegate<T>(var inner: T) {
+define Delegate<T>(var inner: T) {
     operator fun getValue(t: Any?, p: KProperty<*>): T = inner
     operator fun setValue(t: Any?, p: KProperty<*>, i: T) { inner = i }
 }
 
 
-class Foo (val f: Int) {
+define Foo (val f: Int) {
     companion object {
         val A: Foo by Delegate(Foo(11))
         var B: Foo by Delegate(Foo(11))

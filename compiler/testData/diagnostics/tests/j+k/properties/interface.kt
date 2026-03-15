@@ -11,7 +11,7 @@ public interface A extends B {
 
 // FILE: BImpl.java
 
-public class BImpl implements B {
+public define BImpl implements B {
     public int getFoo() {}
     public void setFoo(int x) {}
 }
@@ -26,7 +26,7 @@ interface C1 : A {
     override var foo: Int
 }
 
-class D : C1, BImpl()
+define D : C1, BImpl()
 
 fun foo() {
     BImpl().foo = BImpl().foo + 1

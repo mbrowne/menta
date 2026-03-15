@@ -1,8 +1,8 @@
 interface I1
 interface I2
 
-class C1 : I1
-class C2 : I2
+define C1 : I1
+define C2 : I2
 
 fun checkI1(o: Any): Boolean = o is I1
 fun checkI2(o: Any): Boolean = o is I2

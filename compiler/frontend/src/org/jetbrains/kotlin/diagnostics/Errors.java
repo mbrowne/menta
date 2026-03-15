@@ -683,13 +683,7 @@ public interface Errors {
     DiagnosticFactory2<KtTypeReference, KotlinType, KotlinType> WRONG_GETTER_RETURN_TYPE = DiagnosticFactory2.create(ERROR);
     DiagnosticFactory0<KtTypeReference> WRONG_SETTER_RETURN_TYPE = DiagnosticFactory0.create(ERROR);
 
-    DiagnosticFactory0<KtModifierListOwner>
-            ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS = DiagnosticFactory0.create(ERROR, ABSTRACT_MODIFIER);
-    DiagnosticFactory0<KtExpression> ABSTRACT_PROPERTY_WITH_INITIALIZER = DiagnosticFactory0.create(ERROR);
-    DiagnosticFactory0<KtPropertyAccessor> ABSTRACT_PROPERTY_WITH_GETTER = DiagnosticFactory0.create(ERROR);
-    DiagnosticFactory0<KtPropertyAccessor> ABSTRACT_PROPERTY_WITH_SETTER = DiagnosticFactory0.create(ERROR);
-
-    DiagnosticFactory0<KtPropertyDelegate> ABSTRACT_DELEGATED_PROPERTY = DiagnosticFactory0.create(ERROR);
+    // Abstract property diagnostics removed: abstract modifier no longer supported
     DiagnosticFactory0<KtPropertyAccessor> ACCESSOR_FOR_DELEGATED_PROPERTY = DiagnosticFactory0.create(ERROR);
     DiagnosticFactory0<KtPropertyDelegate> DELEGATED_PROPERTY_IN_INTERFACE = DiagnosticFactory0.create(ERROR);
 
@@ -737,8 +731,7 @@ public interface Errors {
     DiagnosticFactory1<PsiElement, PropertyDescriptor> LATEINIT_INTRINSIC_CALL_ON_NON_ACCESSIBLE_PROPERTY_WARNING =
             DiagnosticFactory1.create(WARNING);
 
-    DiagnosticFactory2<KtModifierListOwner, String, ClassDescriptor> ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS =
-            DiagnosticFactory2.create(ERROR, ABSTRACT_MODIFIER);
+        // Abstract property in non-abstract class diagnostic removed
 
     DiagnosticFactory0<KtPropertyAccessor> VAL_WITH_SETTER = DiagnosticFactory0.create(ERROR);
 
@@ -749,11 +742,7 @@ public interface Errors {
 
     // Function-specific
 
-    DiagnosticFactory2<KtFunction, String, ClassDescriptor> ABSTRACT_FUNCTION_IN_NON_ABSTRACT_CLASS =
-            DiagnosticFactory2.create(ERROR, ABSTRACT_MODIFIER);
-
-    DiagnosticFactory1<KtFunction, SimpleFunctionDescriptor> ABSTRACT_FUNCTION_WITH_BODY =
-            DiagnosticFactory1.create(ERROR, ABSTRACT_MODIFIER);
+    // Abstract function diagnostics removed
     DiagnosticFactory1<KtFunction, SimpleFunctionDescriptor> NON_ABSTRACT_FUNCTION_WITH_NO_BODY =
             DiagnosticFactory1.create(ERROR, DECLARATION_SIGNATURE_WITH_VALIDITY_CHECK);
     DiagnosticFactory1<KtFunction, SimpleFunctionDescriptor> PRIVATE_FUNCTION_WITH_NO_BODY =

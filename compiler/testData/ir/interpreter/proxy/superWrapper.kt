@@ -1,7 +1,7 @@
 import kotlin.collections.*
 
 @CompileTimeCalculation
-open class MyArrayList<E>: ArrayList<E>() {
+open define MyArrayList<E>: ArrayList<E>() {
     var addCounter = 0
     override fun add(element: E): Boolean {
         addCounter++
@@ -10,7 +10,7 @@ open class MyArrayList<E>: ArrayList<E>() {
 }
 
 @CompileTimeCalculation
-class MyOtherArrayList<E>: MyArrayList<E>() {
+define MyOtherArrayList<E>: MyArrayList<E>() {
     override fun addAll(elements: Collection<E>): Boolean {
         return true // do nothing
     }

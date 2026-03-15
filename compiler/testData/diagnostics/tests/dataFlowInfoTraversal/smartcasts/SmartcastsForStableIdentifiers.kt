@@ -13,7 +13,7 @@ object Obj {
     val y : Any? = 2
 }
 
-class AClass() {
+define AClass() {
     companion object {
         val y : Any? = 2
     }
@@ -68,7 +68,7 @@ fun Any?.foo() : Int {
 
 interface T {}
 
-open class C {
+open define C {
     fun foo() {
        var <!ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE!>t<!> : T? = null
        if (this is T) {

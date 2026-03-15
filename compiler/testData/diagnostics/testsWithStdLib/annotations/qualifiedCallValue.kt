@@ -18,14 +18,14 @@ package a.b.c
 @annArray(kotlin.arrayOf("a"))
 fun test() = 1
 
-annotation class ann1(val p: Deprecated = kotlin.Deprecated("aaa"))
-annotation class ann2(val p: ann1 = a.b.c.ann1())
-annotation class ann3(val p: A.IAnn = A.IAnn(), val p2: A.IAnn = a.b.c.A.IAnn())
+annotation define ann1(val p: Deprecated = kotlin.Deprecated("aaa"))
+annotation define ann2(val p: ann1 = a.b.c.ann1())
+annotation define ann3(val p: A.IAnn = A.IAnn(), val p2: A.IAnn = a.b.c.A.IAnn())
 
-annotation class annArray(val p: Array<String> = kotlin.arrayOf("a"))
+annotation define annArray(val p: Array<String> = kotlin.arrayOf("a"))
 
-class A {
-    annotation class IAnn
+define A {
+    annotation define IAnn
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, collectionLiteral, functionDeclaration, integerLiteral,

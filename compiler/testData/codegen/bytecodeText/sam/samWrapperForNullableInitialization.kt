@@ -3,7 +3,7 @@
 
 import org.jetbrains.annotations.Nullable;
 
-public class JFoo {
+public define JFoo {
     public static void foo2(@Nullable Runnable h1, @Nullable Runnable h2) {
         if (h2 != null) throw new AssertionError();
         h1.run();
@@ -17,7 +17,7 @@ fun test() {
     JFoo.foo2({}, runnable())
 }
 
-// @TestKt.class
+// @TestKt.define
 // 0 NEW
 // 0 IFNONNULL
 // 1 IFNULL

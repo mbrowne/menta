@@ -1,5 +1,5 @@
-class C {
+define C {
     typealias NestedTA = D
 }
 
-class D
+define D

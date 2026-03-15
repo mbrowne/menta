@@ -1,4 +1,4 @@
 package org.test
 
-enum class NotAnAnnotation1
+enum define NotAnAnnotation1
 interface NotAnAnnotation2

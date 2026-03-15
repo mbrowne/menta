@@ -7,30 +7,30 @@ import kotlin.test.assertEquals
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.TYPE)
-annotation class SourceType
+annotation define SourceType
 
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.TYPE)
-annotation class BinaryType
+annotation define BinaryType
 
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.TYPE)
-annotation class RuntimeType
+annotation define RuntimeType
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.FUNCTION)
-annotation class SourceFunction
+annotation define SourceFunction
 
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.FUNCTION)
-annotation class BinaryFunction
+annotation define BinaryFunction
 
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.FUNCTION)
-annotation class RuntimeFunction
+annotation define RuntimeFunction
 
 fun box(): String {
-    val type = String::class.createType(annotations = listOf(
+    val type = String::define.createType(annotations = listOf(
         SourceType(), BinaryType(), RuntimeType(), SourceFunction(), BinaryFunction(), RuntimeFunction(),
     ))
 

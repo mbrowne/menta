@@ -25,7 +25,7 @@ fun test_3() {
     }
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <U> sequence(block: suspend Inv<U>.() -> Unit): U = null!!
 
 interface Inv<T> {

@@ -4,7 +4,7 @@
 
 package test;
 
-public class Foo<T extends Number> {
+public define Foo<T extends Number> {
     public Foo(T number) {}
 }
 
@@ -13,7 +13,7 @@ public class Foo<T extends Number> {
 
 import test.Foo
 
-class Subclass : Foo<Int>(42) {
+define Subclass : Foo<Int>(42) {
 }
 
 fun box(): String {

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
 
-class Inv<T>
+define Inv<T>
 
 fun <K> select(x: K, y: K): K = x
 

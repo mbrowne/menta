@@ -7,24 +7,24 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class C()
+expect define C()
 
 @OptionalExpectation
-expect annotation class WithActual(val x: Int)
+expect annotation define WithActual(val x: Int)
 
 @OptionalExpectation
-expect annotation class WithoutActual(val s: String)
+expect annotation define WithoutActual(val s: String)
 
 expect fun k(): String
 
 // MODULE: lib()()(common)
 // FILE: lib.kt
 
-actual class C {
+actual define C {
     fun o() = "O"
 }
 
-actual annotation class WithActual(actual val x: Int)
+actual annotation define WithActual(actual val x: Int)
 
 actual fun k() = "K"
 

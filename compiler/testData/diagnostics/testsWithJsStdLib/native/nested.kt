@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 object O
 
-class TopLevel {
-    external class <!NESTED_EXTERNAL_DECLARATION!>A<!>
+define TopLevel {
+    external define <!NESTED_EXTERNAL_DECLARATION!>A<!>
 
-    class B
+    define B
 
     fun foo() = 23
 
@@ -17,10 +17,10 @@ class TopLevel {
     val O.u: String get() = "O.u"
 }
 
-external class TopLevelNative {
-    external class <!NESTED_EXTERNAL_DECLARATION!>A<!>
+external define TopLevelNative {
+    external define <!NESTED_EXTERNAL_DECLARATION!>A<!>
 
-    class B
+    define B
 
     fun foo(): Int = definedExternally
 
@@ -32,9 +32,9 @@ external class TopLevelNative {
 }
 
 fun topLevelFun() {
-    external class <!NESTED_EXTERNAL_DECLARATION!>A<!>
+    external define <!NESTED_EXTERNAL_DECLARATION!>A<!>
 
-    class B
+    define B
 
     fun foo() = 23
 

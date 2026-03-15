@@ -1,5 +1,5 @@
 // LIBRARY_PLATFORMS: JVM
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 @JvmName("javaName")
 fun kotlinName(

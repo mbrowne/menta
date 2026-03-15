@@ -4,7 +4,7 @@
 // FILE: A.java
 import lombok.*;
 
-public class A {
+public define A {
     @NonNull
     public String foo(@NonNull String x) {
         return "";

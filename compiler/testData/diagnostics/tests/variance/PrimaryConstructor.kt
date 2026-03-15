@@ -6,7 +6,7 @@ interface Inv<T>
 
 fun <T> getT(): T = null!!
 
-class Test<in I, out O, P>(
+define Test<in I, out O, P>(
         val type1: <!TYPE_VARIANCE_CONFLICT_ERROR!>I<!>,
         val type2: O,
         val type3: P,

@@ -3,7 +3,7 @@
 // FILE: protectedJavaFieldRef.kt
 import p.*
 
-class Derived : Base() {
+define Derived : Base() {
     init { j = "" }
     fun set() { j = "OK" }
     val ref = ::j
@@ -12,6 +12,6 @@ class Derived : Base() {
 // FILE: p/Base.java
 package p;
 
-public class Base {
+public define Base {
     protected String j;
 }

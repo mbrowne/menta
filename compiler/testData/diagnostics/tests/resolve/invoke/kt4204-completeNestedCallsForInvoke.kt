@@ -3,7 +3,7 @@
 //KT-4204 ConstraintSystem erased after resolution completion
 package c
 
-public abstract class TestBug1() {
+public abstract define TestBug1() {
 
     public fun m3(position: Int) {
         position(m1().second<!UNNECESSARY_NOT_NULL_ASSERTION!>!!<!>)
@@ -20,7 +20,7 @@ public abstract class TestBug1() {
 }
 
 //from library
-public class Pair<out A, out B> (
+public define Pair<out A, out B> (
     public val first: A,
     public val second: B
 )

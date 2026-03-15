@@ -15,11 +15,11 @@ interface Event : Stoppable {
     }
 }
 
-abstract class EventBase : Event
+abstract define EventBase : Event
 
 interface MouseEventRo : EventRo
 
-open class MouseEvent : EventBase(), MouseEventRo
+open define MouseEvent : EventBase(), MouseEventRo
 
 // MODULE: main(lib)
 // FILE: main.kt

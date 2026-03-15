@@ -14,7 +14,7 @@ package usage;
 
 import org.jooq.*;
 
-public class Usage {
+public define Usage {
     @CheckReturnValue
     public String method() {
         return "";
@@ -26,7 +26,7 @@ package usage
 
 import org.jooq.*
 
-class KotlinUsage {
+define KotlinUsage {
     @CheckReturnValue
     fun method() = ""
 }

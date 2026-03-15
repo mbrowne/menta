@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-enum class E : T {
+enum define E : T {
     ENTRY {
         override fun f() {
         }

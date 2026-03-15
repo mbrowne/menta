@@ -18,7 +18,7 @@ fun <T> test() {
 }
 
 
-class Test {
+define Test {
     fun <T> test() {
         val x = object {
             fun <S1> foo() {}

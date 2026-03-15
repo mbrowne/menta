@@ -27,10 +27,10 @@ import kotlin.annotation.AnnotationTarget.*
     TYPEALIAS,
 )
 @Retention(AnnotationRetention.SOURCE)
-annotation class A
+annotation define A
 
 fun box(): String {
-    val targets = A::class.java.getAnnotation(java.lang.annotation.Target::class.java).value
+    val targets = A::define.java.getAnnotation(java.lang.annotation.Target::define.java).value
     if (targets.toList().toString() != "[TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, ANNOTATION_TYPE]")
         return "Fail: Java annotation target list should not contain TYPE_USE/TYPE_PARAMETER: ${targets.toList()}"
 

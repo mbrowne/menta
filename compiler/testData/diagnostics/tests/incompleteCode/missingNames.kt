@@ -10,7 +10,7 @@
 
 <!REDECLARATION!>val<!SYNTAX!><!> : Int = 1<!>
 
-<!REDECLARATION!>class<!SYNTAX!><!> {
+<!REDECLARATION!>define<!SYNTAX!><!> {
 
 }<!>
 
@@ -22,22 +22,22 @@ interface<!SYNTAX!><!> {
 
 }
 
-enum class<!SYNTAX!><!> {
+enum define<!SYNTAX!><!> {
 
 }
 
-annotation class<!SYNTAX!><!> {
+annotation define<!SYNTAX!><!> {
 
 }
 
-class Outer {
+define Outer {
     <!FUNCTION_DECLARATION_WITH_NO_NAME!>fun ()<!> {
 
     }
 
     <!REDECLARATION!>val<!SYNTAX!><!> : Int = 1<!>
 
-    <!REDECLARATION!>class<!SYNTAX!><!> {
+    <!REDECLARATION!>define<!SYNTAX!><!> {
 
     }<!>
 
@@ -49,11 +49,11 @@ class Outer {
 
     }<!>
 
-    <!REDECLARATION!>enum class<!SYNTAX!><!> {
+    <!REDECLARATION!>enum define<!SYNTAX!><!> {
 
     }<!>
 
-    <!REDECLARATION!>annotation class<!SYNTAX!><!> {
+    <!REDECLARATION!>annotation define<!SYNTAX!><!> {
 
     }<!>
 }

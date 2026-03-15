@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 // FILE: A.java
-class A {
+define A {
     private static void foo() {}
     public String foo(int x) {}
 }

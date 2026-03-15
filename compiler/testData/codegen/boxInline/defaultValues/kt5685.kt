@@ -2,7 +2,7 @@
 
 package test
 
-class Measurements
+define Measurements
 {
     inline fun measure(key: String, logEvery: Long = -1, divisor: Int = 1, body: () -> Unit): String {
         body()

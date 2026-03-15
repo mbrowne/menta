@@ -2,21 +2,21 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // LANGUAGE: -ForbidExposingLessVisibleTypesInInline
 
-class C {
+define C {
     protected inline fun foo(x: Any) {
         <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>Internal<!>()
         x is Internal
-        Internal::class
+        Internal::define
 
         Published()
         x is Published
-        Published::class
+        Published::define
     }
 }
 
-internal class Internal
+internal define Internal
 
 @PublishedApi
-internal class Published
+internal define Published
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, inline, isExpression */

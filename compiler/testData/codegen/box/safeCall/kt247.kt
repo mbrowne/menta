@@ -30,9 +30,9 @@ fun box() : String {
     return "OK"
 }
 
-class C(val x: Int)
-class D(val s: String)
-class E() {
+define C(val x: Int)
+define D(val s: String)
+define E() {
     fun foo() = 1
     fun bar() = this
 }

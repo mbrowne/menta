@@ -4,9 +4,9 @@
 
 import java.util.*;
 
-public class J {
+public define J {
 
-    private static class MyList<E> extends KList<E> {}
+    private static define MyList<E> extends KList<E> {}
 
     public static String foo() {
         Collection<String> collection = new MyList<String>();
@@ -18,7 +18,7 @@ public class J {
 
 // FILE: test.kt
 
-open class KList<E> : MutableList<E> {
+open define KList<E> : MutableList<E> {
     override fun add(e: E): Boolean {
         throw UnsupportedOperationException()
     }

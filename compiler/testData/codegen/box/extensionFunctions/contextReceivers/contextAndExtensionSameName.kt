@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class A {
+define A {
     val ok = "OK"
 
     context(A)

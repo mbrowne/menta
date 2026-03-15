@@ -2,7 +2,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public static void staticMethod(@Anno("static") String s, int x) {}
 
     public void instanceMethod(int x, @Anno("instance") String s) {}
@@ -16,7 +16,7 @@ public class J {
 import kotlin.test.assertEquals
 import kotlin.reflect.*
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 private fun getParameterAnnotations(callable: KCallable<*>): String =
     callable.parameters.joinToString { p ->

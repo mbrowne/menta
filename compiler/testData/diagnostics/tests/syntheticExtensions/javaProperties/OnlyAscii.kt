@@ -10,7 +10,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getКакоеТоСвойство() {
         return 0;
     }

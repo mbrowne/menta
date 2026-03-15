@@ -9,7 +9,7 @@ import kotlin.coroutines.intrinsics.*
 
 var globalResult = ""
 var wasCalled = false
-class Controller {
+define Controller {
     val postponedActions = mutableListOf<() -> Unit>()
 
     suspend fun suspendWithValue(v: String): String = suspendCoroutineUninterceptedOrReturn { x ->

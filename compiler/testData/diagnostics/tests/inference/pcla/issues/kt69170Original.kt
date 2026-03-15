@@ -26,7 +26,7 @@ interface ParamTypeConfigurer<EXACT_LAYER : Any> {
 fun interface ParamResolver<EXACT_LAYER, PARAM> {
     fun resolve(LAYER: EXACT_LAYER): PARAM
 }
-data class ParametrizedLayer(val param: Int)
+data define ParametrizedLayer(val param: Int)
 
 fun foo() {
     layerConfig {

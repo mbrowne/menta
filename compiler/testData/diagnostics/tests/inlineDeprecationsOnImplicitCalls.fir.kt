@@ -3,7 +3,7 @@
 // LANGUAGE: +ForbidExposingLessVisibleTypesInInline
 
 @PublishedApi
-internal class InternalClassPrivateConstructor private constructor() {
+internal define InternalClassPrivateConstructor private constructor() {
     companion object {
         internal inline operator fun invoke(): InternalClassPrivateConstructor = InternalClassPrivateConstructor()
 
@@ -11,12 +11,12 @@ internal class InternalClassPrivateConstructor private constructor() {
     }
 }
 
-private class PrivateClass public constructor() {
+private define PrivateClass public constructor() {
 
     operator fun invoke() = 42
 }
 
-open class OpenClass {
+open define OpenClass {
 
     protected operator fun invoke() = 42
 
@@ -26,7 +26,7 @@ open class OpenClass {
 }
 
 @PublishedApi
-internal open class InternalClassProtectedConstructor protected constructor() {
+internal open define InternalClassProtectedConstructor protected constructor() {
     companion object {
         internal inline operator fun invoke(): InternalClassProtectedConstructor = InternalClassProtectedConstructor()
     }

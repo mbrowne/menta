@@ -4,15 +4,15 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
 
     public b getB() { return null; }
 
-    public class b {
+    public define b {
 
         public b getB() { return null; }
 
-        public class b {
+        public define b {
 
             public b getB() { return null; }
 

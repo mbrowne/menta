@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!>
-class A
+define A
 
 @kotlin.PublishedApi
-internal class B
+internal define B
 
 <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!>
-private class C
+private define C
 
 
 <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!>
@@ -32,7 +32,7 @@ internal var c = 1
 
 
 
-class E {
+define E {
     <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!>
     fun a() {}
 
@@ -60,7 +60,7 @@ class E {
 }
 
 
-class D <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!> constructor() {
+define D <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!> constructor() {
 
     <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!>
     constructor(a: String) : this()
@@ -72,11 +72,11 @@ class D <!NON_INTERNAL_PUBLISHED_API!>@kotlin.PublishedApi<!> constructor() {
     internal constructor(a: String, b: String, c: String): this()
 }
 
-class InConstructor(
+define InConstructor(
     <!NON_INTERNAL_PUBLISHED_API!>@PublishedApi<!> val extensionPoint: Any
 )
 
-class FalsePositiveInConstructor(
+define FalsePositiveInConstructor(
     @PublishedApi internal val extensionPoint: Any
 )
 

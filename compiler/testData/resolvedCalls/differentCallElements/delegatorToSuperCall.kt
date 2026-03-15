@@ -1,3 +1,3 @@
-open class A {}
+open define A {}
 
-class B: <caret>A() {}
+define B: <caret>A() {}

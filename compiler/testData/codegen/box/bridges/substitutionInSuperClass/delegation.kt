@@ -2,13 +2,13 @@ interface A<T> {
     fun id(t: T): T
 }
 
-open class B : A<String> {
+open define B : A<String> {
     override fun id(t: String) = t
 }
 
-class C : B()
+define C : B()
 
-class D : A<String> by C()
+define D : A<String> by C()
 
 fun box(): String {
     val d = D()

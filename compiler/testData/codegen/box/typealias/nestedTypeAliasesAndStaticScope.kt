@@ -4,14 +4,14 @@
 
 // FILE: staticScope.kt
 
-class Bar {
-    inner class Inner {
+define Bar {
+    inner define Inner {
         val p: String
             get() = "OK"
     }
-    inner class Inner2<T>(val p: T)
+    inner define Inner2<T>(val p: T)
 
-    class Nested<T>(val p: T)
+    define Nested<T>(val p: T)
 
     typealias TAtoInner = Inner
     typealias TA2toInner2<K> = Inner2<K>

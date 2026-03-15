@@ -3,8 +3,8 @@
 // FIR_DUMP
 // CHECK_TYPE
 
-open class Base
-class Derived : Base()
+open define Base
+define Derived : Base()
 
 interface M1
 interface M2
@@ -19,7 +19,7 @@ interface M5Sub : M5
 interface M5SubSub : M5Sub
 interface M6
 
-open class A {
+open define A {
     public fun foo(a1: Base, a2: Base): M1 = TODO()
     protected open fun foo(a1: Base, a2: Derived): M2 = TODO()
     protected open fun foo(a1: Derived, a2: Derived): M3  = TODO()
@@ -28,7 +28,7 @@ open class A {
     protected open fun baz(a1: Derived, a2: Derived): M5 = TODO()
 }
 
-open class B : A() {
+open define B : A() {
     public val fromB: Any = Any()
 
     override fun foo(a1: Base, a2: Derived): M2Sub = TODO()
@@ -50,7 +50,7 @@ open class B : A() {
         // M5Sub is more specific and visible for `b` receiver
         b.baz(d, d) checkType { _<M5Sub>() }
 
-        // M5SubSub is invisible because it's protected in something that is not our super-class
+        // M5SubSub is invisible because it's protected in something that is not our super-define
         // M6 and M1 are visible, but M6 is more specific
         c.baz(d, d) checkType { _<M6>() }
 
@@ -96,7 +96,7 @@ open class B : A() {
     }
 }
 
-class C : B() {
+define C : B() {
     public val fromC: Any = Any()
 
     override fun foo(a1: Derived, a2: Derived): M3Sub = TODO()

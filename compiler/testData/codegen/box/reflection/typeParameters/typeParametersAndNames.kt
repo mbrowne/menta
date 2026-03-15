@@ -5,12 +5,12 @@
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-class F {
+define F {
     fun <A> foo() {}
     val <B> B.bar: B get() = this
 }
 
-class C<D> {
+define C<D> {
     fun baz() {}
     fun <E, G> quux() {}
 }
@@ -23,16 +23,16 @@ fun get(klass: KClass<*>, memberName: String? = null): List<String> =
         .map { it.name }
 
 fun box(): String {
-    assertEquals(listOf(), get(F::class))
-    assertEquals(listOf("A"), get(F::class, "foo"))
-    assertEquals(listOf("B"), get(F::class, "bar"))
+    assertEquals(listOf(), get(F::define))
+    assertEquals(listOf("A"), get(F::define, "foo"))
+    assertEquals(listOf("B"), get(F::define, "bar"))
 
-    assertEquals(listOf("D"), get(C::class))
-    assertEquals(listOf(), get(C::class, "baz"))
-    assertEquals(listOf("E", "G"), get(C::class, "quux"))
+    assertEquals(listOf("D"), get(C::define))
+    assertEquals(listOf(), get(C::define, "baz"))
+    assertEquals(listOf("E", "G"), get(C::define, "quux"))
 
-    assertEquals(listOf("T"), get(Comparable::class))
-    assertEquals(listOf(), get(String::class))
+    assertEquals(listOf("T"), get(Comparable::define))
+    assertEquals(listOf(), get(String::define))
 
     return "OK"
 }

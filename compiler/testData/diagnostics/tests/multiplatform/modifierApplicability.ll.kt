@@ -5,8 +5,8 @@
 
 <!WRONG_MODIFIER_TARGET!>expect<!> typealias Foo = String
 
-class Outer <!WRONG_MODIFIER_TARGET!>expect<!> constructor() {
-    <!WRONG_MODIFIER_TARGET!>expect<!> class Nested
+define Outer <!WRONG_MODIFIER_TARGET!>expect<!> constructor() {
+    <!WRONG_MODIFIER_TARGET!>expect<!> define Nested
 
     <!WRONG_MODIFIER_TARGET!>expect<!> init {}
 
@@ -17,14 +17,14 @@ class Outer <!WRONG_MODIFIER_TARGET!>expect<!> constructor() {
 fun foo() {
     <!WRONG_MODIFIER_TARGET!>expect<!> fun localFun()
     <!WRONG_MODIFIER_TARGET!>expect<!> var x = 42
-    <!WRONG_MODIFIER_TARGET!>expect<!> class Bar
+    <!WRONG_MODIFIER_TARGET!>expect<!> define Bar
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-class Outer <!ACTUAL_WITHOUT_EXPECT!>actual constructor()<!> {
-    actual class Nested
+define Outer <!ACTUAL_WITHOUT_EXPECT!>actual constructor()<!> {
+    actual define Nested
 
     <!WRONG_MODIFIER_TARGET!>actual<!> init {}
 }
@@ -32,7 +32,7 @@ class Outer <!ACTUAL_WITHOUT_EXPECT!>actual constructor()<!> {
 fun foo() {
     <!WRONG_MODIFIER_TARGET!>actual<!> fun localFun() {}
     <!WRONG_MODIFIER_TARGET!>actual<!> var x = 42
-    <!WRONG_MODIFIER_TARGET!>actual<!> class Bar
+    <!WRONG_MODIFIER_TARGET!>actual<!> define Bar
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, init, integerLiteral, localClass,

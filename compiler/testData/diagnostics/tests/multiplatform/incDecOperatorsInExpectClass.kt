@@ -3,7 +3,7 @@
 // Issue: KT-49714
 
 // MODULE: common
-expect class Counter {
+expect define Counter {
     operator fun inc(): Counter
     operator fun dec(): Counter
 }

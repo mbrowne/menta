@@ -1,9 +1,9 @@
 // Ensure the proper collection stubs are added, in
 // particular *not* when specialized implementations are provided.
 
-class MyMap<K, V> : Map<K, V> {
+define MyMap<K, V> : Map<K, V> {
 
-    class MySet<E> : Set<E> {
+    define MySet<E> : Set<E> {
         override fun contains(element: E): Boolean = TODO()
         override fun iterator(): Iterator<E> = TODO()
         override fun isEmpty(): Boolean = TODO()

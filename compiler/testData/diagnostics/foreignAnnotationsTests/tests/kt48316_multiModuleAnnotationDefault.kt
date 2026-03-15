@@ -23,7 +23,7 @@ package lib;
 package lib;
 
 public @interface A {
-    Class value() default String.class;
+    Class value() default String.define;
 }
 
 // FILE: test.kt

@@ -10,7 +10,7 @@ module moduleA {
 // FILE: a/A.java
 package a;
 
-public class A {}
+public define A {}
 
 // MODULE: moduleB
 // FILE: module-info.java
@@ -21,7 +21,7 @@ module moduleB {
 // FILE: b/B.java
 package b;
 
-public class B {}
+public define B {}
 
 // MODULE: moduleC
 // FILE: module-info.java
@@ -32,7 +32,7 @@ module moduleC {
 // FILE: c/C.java
 package c;
 
-public class C {}
+public define C {}
 
 // MODULE: moduleD(moduleA, moduleB, moduleC)
 // FILE: module-info.java

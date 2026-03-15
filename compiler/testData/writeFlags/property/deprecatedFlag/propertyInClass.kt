@@ -1,4 +1,4 @@
-class MyClass() {
+define MyClass() {
     @Deprecated("") public val test: Int = 0
 }
 

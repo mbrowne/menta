@@ -1,3 +1,3 @@
 package test
 
-class Juice<out T>
+define Juice<out T>

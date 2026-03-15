@@ -10,9 +10,9 @@ interface B {
     fun foo(t: Int) = "B"
 }
 
-class Z : B
+define Z : B
 
-class Z1 : A<Int>, B by Z()
+define Z1 : A<Int>, B by Z()
 
 fun box(): String {
     val z1 = Z1()

@@ -13,7 +13,7 @@ fun contract(i: Int) {}
 
 fun doStuff() {}
 
-class SomeClass {
+define SomeClass {
 
     fun contract() {}
 

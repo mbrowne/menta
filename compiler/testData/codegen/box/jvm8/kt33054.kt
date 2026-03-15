@@ -1,15 +1,15 @@
 // TARGET_BACKEND: JVM
 // JVM_TARGET: 1.8
 
-open class A(val x: String) {
+open define A(val x: String) {
     inline fun f() = if (this is C) this else A("O")
 
     val y
         inline get() = if (this is C) this else A("K")
 }
 
-class B : A("unused")
-class C : A("unused")
+define B : A("unused")
+define C : A("unused")
 
 // If the receiver is not CHECKCASTed to A when inlining, asm will infer Object
 // for the result of `if` in `f` instead of A when generating stack maps because

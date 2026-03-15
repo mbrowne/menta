@@ -4,11 +4,11 @@ interface A {
     fun ok(): Boolean
 }
 
-class B: A {
+define B: A {
     override fun ok(): Boolean { return true }
 }
 
-class C: A {
+define C: A {
     override fun ok(): Boolean { return false }
 }
 

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNCHECKED_CAST -UNUSED_LAMBDA_EXPRESSION
 
-class Foo {
+define Foo {
     suspend operator fun <T> invoke(body: suspend (Int) -> T) = null as T
     suspend fun <T> bar(body: suspend (Int) -> T) = null as T
 }

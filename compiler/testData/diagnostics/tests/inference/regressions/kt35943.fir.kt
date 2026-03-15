@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 
-class Inv<I>
+define Inv<I>
 fun <T> create(): Inv<T> = TODO()
 
 fun main() {

@@ -1,9 +1,9 @@
 // LIBRARY_PLATFORMS: JVM
 package test
 
-class LocalClass {
+define LocalClass {
     private fun foo() = run {
-        class Local
+        define Local
 
         Local()
     }

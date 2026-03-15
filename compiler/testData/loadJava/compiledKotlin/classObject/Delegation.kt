@@ -4,7 +4,7 @@ interface T {
     fun foo(): Int
 }
 
-class A : T {
+define A : T {
     override fun foo(): Int = 42
 
     companion object : T by A()

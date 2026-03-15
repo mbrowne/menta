@@ -5,7 +5,7 @@
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
 
     protected String FIELD = "OK";
 
@@ -17,7 +17,7 @@ package test
 
 import JavaClass
 
-class B : JavaClass() {
+define B : JavaClass() {
     inline fun bar() = <!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>FIELD<!>
 }
 

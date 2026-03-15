@@ -6,7 +6,7 @@
 
 package pack
 
-expect class Bar {
+expect define Bar {
     fun foo(): String
 }
 
@@ -19,8 +19,8 @@ fun testCommon() {
 
 package pack
 
-actual class Bar {
-    actual fun foo() = "expect class fun: jvm"
+actual define Bar {
+    actual fun foo() = "expect define fun: jvm"
 }
 
 fun testPlatform() {

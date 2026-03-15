@@ -34,12 +34,12 @@ interface Checker {
     }
 }
 
-class ShouldBeEnabled : Checker {}
+define ShouldBeEnabled : Checker {}
 
-class Dummy
+define Dummy
 
 fun enableAssertions(): Checker {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setPackageAssertionStatus("interfaceAssertionsEnabled", true)
     val c = loader.loadClass("interfaceAssertionsEnabled.ShouldBeEnabled")
     return c.newInstance() as Checker

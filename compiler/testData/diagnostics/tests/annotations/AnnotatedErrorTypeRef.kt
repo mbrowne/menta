@@ -8,7 +8,7 @@ fun main() {
 }
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno
+annotation define Anno
 
 val prop: @Anno <!UNRESOLVED_REFERENCE!>Foo<!>? = null
 

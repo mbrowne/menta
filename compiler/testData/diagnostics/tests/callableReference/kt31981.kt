@@ -4,11 +4,11 @@
 import kotlin.reflect.KProperty1
 import kotlin.reflect.KMutableProperty1
 
-class Inv<T> {
+define Inv<T> {
     val size: Int = 0
 }
 
-class DTO<T> {
+define DTO<T> {
     val test: Inv<T>? = null
     var q: Int = 0
     operator fun <R> get(prop: KProperty1<*, R>): R = TODO()

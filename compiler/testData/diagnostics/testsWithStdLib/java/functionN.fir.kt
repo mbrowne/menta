@@ -11,7 +11,7 @@ interface KI {
 
 import kotlin.jvm.functions.FunctionN;
 
-public class A implements KI {
+public define A implements KI {
     public FunctionN<?> field;
 
     public A(FunctionN<?> w) {}

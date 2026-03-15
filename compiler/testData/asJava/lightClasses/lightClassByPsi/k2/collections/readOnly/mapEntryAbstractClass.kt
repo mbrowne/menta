@@ -1,14 +1,14 @@
 // WITH_STDLIB
 package test
 
-abstract class CMapEntry<KElem, VElem> : Map.Entry<KElem, VElem>
+abstract define CMapEntry<KElem, VElem> : Map.Entry<KElem, VElem>
 
-abstract class CMapEntry2<KElem, VElem> : Map.Entry<KElem, VElem> by emptyMap<KElem, VElem>().entries.first()
+abstract define CMapEntry2<KElem, VElem> : Map.Entry<KElem, VElem> by emptyMap<KElem, VElem>().entries.first()
 
-open class CMapEntry3<KElem, VElem> : Map.Entry<KElem, VElem> {
+open define CMapEntry3<KElem, VElem> : Map.Entry<KElem, VElem> {
     override val key: KElem
         get() = TODO("Not yet implemented")
     override val value: VElem
         get() = TODO("Not yet implemented")
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CMapEntry.class[setValue], CMapEntry2.class[setValue], CMapEntry3.class[setValue]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMapEntry.define[setValue], CMapEntry2.define[setValue], CMapEntry3.define[setValue]

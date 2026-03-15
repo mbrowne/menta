@@ -11,8 +11,8 @@ private interface PrivateInterface {
     fun foo() {}
 }
 
-class A : PrivateInterface
-class B : PrivateInterface
+define A : PrivateInterface
+define B : PrivateInterface
 
 fun testSmartcast(x: Any) {
     if (x is A || x is B) {

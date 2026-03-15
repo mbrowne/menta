@@ -17,7 +17,7 @@ KtFile: EOLsOnRollback.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foo')
       PsiWhiteSpace('\n    ')
@@ -30,7 +30,7 @@ KtFile: EOLsOnRollback.kt
           PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foo')
       PsiWhiteSpace('\n\n    ')

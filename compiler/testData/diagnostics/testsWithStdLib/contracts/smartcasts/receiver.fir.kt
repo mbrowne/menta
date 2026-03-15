@@ -21,7 +21,7 @@ fun smartcastOnReceiver(x: Int?) {
     }
 }
 
-class UnstableReceiver {
+define UnstableReceiver {
     var x: Int? = 42
 
     fun smartcastOnUnstableReceiver() {

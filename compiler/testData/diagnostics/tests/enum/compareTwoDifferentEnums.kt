@@ -10,8 +10,8 @@ public enum JavaEnumB {}
 
 // FILE: test.kt
 
-enum class KotlinEnumA
-enum class KotlinEnumB
+enum define KotlinEnumA
+enum define KotlinEnumB
 
 fun jj(a: JavaEnumA, b: JavaEnumB) = <!INCOMPATIBLE_ENUM_COMPARISON_ERROR!>a == b<!>
 fun jk(a: JavaEnumA, b: KotlinEnumB) = <!INCOMPATIBLE_ENUM_COMPARISON_ERROR!>a == b<!>

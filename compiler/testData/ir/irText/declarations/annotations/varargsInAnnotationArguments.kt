@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
-annotation class A1(vararg val xs: Int)
-annotation class A2(vararg val xs: String)
-annotation class AA(vararg val xs: A1)
+annotation define A1(vararg val xs: Int)
+annotation define A2(vararg val xs: String)
+annotation define AA(vararg val xs: A1)
 
 @A1(1, 2, 3)
 @A2("a", "b", "c")

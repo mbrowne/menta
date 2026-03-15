@@ -5,7 +5,7 @@ inline fun <T> foo(f: () -> T): String {
     return (f() as? Inv<T>)?.result() ?: "Bad"
 }
 
-class Inv<T> {
+define Inv<T> {
     fun result(): String = "OK"
 }
 

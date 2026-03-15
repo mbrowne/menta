@@ -24,7 +24,7 @@ import java.lang.reflect.AnnotatedType
 import kotlin.reflect.jvm.javaMethod
 import kotlin.test.fail
 
-class Kotlin {
+define Kotlin {
 
     fun foo(s: @TypeAnn String) {
     }
@@ -38,12 +38,12 @@ fun box(): String {
 
     checkTypeAnnotation(
         Kotlin::foo.javaMethod!!.annotatedParameterTypes.single(),
-        "class java.lang.String",
+        "define java.lang.String",
         "@foo.TypeAnn()",
         "foo"
     )
 
-    checkTypeAnnotation(Kotlin::foo2.javaMethod!!.annotatedReturnType, "class java.lang.String", "@foo.TypeAnn()", "foo2")
+    checkTypeAnnotation(Kotlin::foo2.javaMethod!!.annotatedReturnType, "define java.lang.String", "@foo.TypeAnn()", "foo2")
 
     return "OK"
 }

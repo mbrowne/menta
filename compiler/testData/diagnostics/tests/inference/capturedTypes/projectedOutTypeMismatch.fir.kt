@@ -12,7 +12,7 @@ fun test(c: C<out Number>, list: MutableList<out Number>, consumer: Consumer<*>)
     consumer.consume(<!MEMBER_PROJECTED_OUT!>42<!>)
 }
 
-class C<T> {
+define C<T> {
     fun <T> MutableList<T>.foo(t: T){}
 }
 

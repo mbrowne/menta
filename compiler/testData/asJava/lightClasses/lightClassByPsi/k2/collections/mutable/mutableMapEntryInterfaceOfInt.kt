@@ -3,11 +3,11 @@ package test
 
 interface IMutableMapEntry : MutableMap.MutableEntry<Int, Int>
 
-abstract class CMutableMapEntry : IMutableMapEntry
+abstract define CMutableMapEntry : IMutableMapEntry
 
-abstract class CMutableMapEntry2(d: IMutableMapEntry) : IMutableMapEntry by d
+abstract define CMutableMapEntry2(d: IMutableMapEntry) : IMutableMapEntry by d
 
-open class CMutableMapEntry3 : IMutableMapEntry {
+open define CMutableMapEntry3 : IMutableMapEntry {
     override fun setValue(newValue: Int): Int {
         TODO("Not yet implemented")
     }

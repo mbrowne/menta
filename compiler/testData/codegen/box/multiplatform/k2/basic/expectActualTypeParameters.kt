@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class A<B, C> {
+expect define A<B, C> {
     fun o(b: B): C
 }
 
@@ -16,7 +16,7 @@ fun k(): String {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual class A<C, B> {
+actual define A<C, B> {
     actual fun o(b: C): B = "O" as B
 }
 

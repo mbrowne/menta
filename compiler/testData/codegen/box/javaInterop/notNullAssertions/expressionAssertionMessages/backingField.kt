@@ -24,6 +24,6 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public final String s() { return null; }
 }

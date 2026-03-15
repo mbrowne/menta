@@ -6,7 +6,7 @@ public interface Supplier<T> {
 }
 
 // FILE: Base.java
-public class Base {
+public define Base {
     private final Supplier<String> supplier;
 
     public Base(Supplier<String> supplier) {
@@ -20,7 +20,7 @@ public class Base {
 
 // MODULE: main(lib)
 // FILE: test.kt
-class Test : Base {
+define Test : Base {
     constructor(f: () -> String) : super(f)
 }
 

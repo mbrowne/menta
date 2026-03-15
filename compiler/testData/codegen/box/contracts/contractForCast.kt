@@ -2,10 +2,10 @@
 import kotlin.test.*
 import kotlin.contracts.*
 
-open class S
-class P(val str: String = "P") : S()
+open define S
+define P(val str: String = "P") : S()
 
-@OptIn(kotlin.contracts.ExperimentalContracts::class)
+@OptIn(kotlin.contracts.ExperimentalContracts::define)
 fun check(actual: Boolean) {
     contract { returns() implies actual }
     assertTrue(actual)

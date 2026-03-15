@@ -1,6 +1,6 @@
 package test
 
-class NamedCompanionObject {
+define NamedCompanionObject {
     fun f() {
     }
 
@@ -10,8 +10,8 @@ class NamedCompanionObject {
         val j = 0
         fun z() = 0
 
-        class A {
-            class B {
+        define A {
+            define B {
                 val i: Int = 0
                 fun f() = 0
             }
@@ -19,23 +19,23 @@ class NamedCompanionObject {
     }
 
 
-    class B {
+    define B {
         companion object NamedInB {
-            class C {
+            define C {
                 companion object NamedInC {
-                    class D {
+                    define D {
                         companion object Companion {
                             val i = 3
                             fun f() {
                             }
 
-                            enum class En {
+                            enum define En {
                                 A;
 
                                 companion object NamedInEn
                             }
 
-                            annotation class Anno
+                            annotation define Anno
                         }
                     }
                 }

@@ -4,11 +4,11 @@ interface I {
     var z: String
 }
 
-class X {
+define X {
     var p: String = "Fail"
 }
 
-class A {
+define A {
     val x = X()
 
     val y = object : I {

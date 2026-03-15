@@ -4,7 +4,7 @@
 
 // FILE: test.kt
 package test
-enum class E {
+enum define E {
     Entry;
     companion object {
         val Entry = ""

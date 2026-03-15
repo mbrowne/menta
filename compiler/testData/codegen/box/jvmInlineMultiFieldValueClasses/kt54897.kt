@@ -5,13 +5,13 @@
 package pack
 
 @JvmInline
-value class MyValueClass(val foo: Foo<Int>)
+value define MyValueClass(val foo: Foo<Int>)
 
 @JvmInline
-value class Foo<T>(val a: T, val b: T)
+value define Foo<T>(val a: T, val b: T)
 
 @JvmInline
-value class MyValueClass1(val foo: FooAlias)
+value define MyValueClass1(val foo: FooAlias)
 
 typealias FooAlias = Foo<Int>
 

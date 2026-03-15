@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-annotation class Ann(val x: Int = 1, val s: String = "k")
+annotation define Ann(val x: Int = 1, val s: String = "k")
 
 fun box(): String {
     val a1 = Ann(7, "ok")

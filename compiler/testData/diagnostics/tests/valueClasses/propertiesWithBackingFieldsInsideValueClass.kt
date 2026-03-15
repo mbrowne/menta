@@ -6,7 +6,7 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 interface A {
     val goodSize: Int
@@ -17,7 +17,7 @@ interface B {
 }
 
 @JvmInline
-value class Foo(val x: Int) : A, B {
+value define Foo(val x: Int) : A, B {
     val a0
         get() = 0
 

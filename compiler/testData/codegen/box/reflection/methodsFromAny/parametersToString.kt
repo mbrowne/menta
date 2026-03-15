@@ -6,7 +6,7 @@ import kotlin.test.*
 
 fun Int.foo(s: String) {}
 
-class A {
+define A {
     fun bar() {}
 }
 

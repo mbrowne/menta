@@ -4,7 +4,7 @@ package mypack
 typealias UnitTypeAlias = Unit
 typealias NullableUnitTypeAlias = Unit?
 
-class Usage {
+define Usage {
     fun unitTypeAlias(): UnitTypeAlias {
 
     }

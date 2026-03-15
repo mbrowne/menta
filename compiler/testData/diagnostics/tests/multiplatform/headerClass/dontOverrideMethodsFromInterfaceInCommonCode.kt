@@ -7,25 +7,25 @@ interface Foo {
     fun foo()
 }
 
-expect class ImplicitFoo : Foo
+expect define ImplicitFoo : Foo
 
-expect class ExplicitFoo : Foo {
+expect define ExplicitFoo : Foo {
     override fun foo()
 }
 
-expect class ImplicitFooCheck : Foo
+expect define ImplicitFooCheck : Foo
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class ImplicitFoo : Foo {
+actual define ImplicitFoo : Foo {
     override fun foo() {}
 }
 
-actual class ExplicitFoo : Foo {
+actual define ExplicitFoo : Foo {
     actual override fun foo() {}
 }
 
-actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class ImplicitFooCheck<!> : Foo
+actual <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define ImplicitFooCheck<!> : Foo
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, interfaceDeclaration, override */

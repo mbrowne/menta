@@ -10,9 +10,9 @@ package test
 
 import kotlin.reflect.*
 
-class Container<T>
+define Container<T>
 
-class C<INV, in IN, out OUT> {
+define C<INV, in IN, out OUT> {
     fun getInv() = typeOf<Container<INV>>().arguments.single().type!!.classifier as KTypeParameter
     fun getIn() = typeOf<Container<IN>>().arguments.single().type!!.classifier as KTypeParameter
     fun getOut() = typeOf<Container<OUT>>().arguments.single().type!!.classifier as KTypeParameter

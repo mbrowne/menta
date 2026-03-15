@@ -1,1 +1,1 @@
-actual class Foo
+actual define Foo

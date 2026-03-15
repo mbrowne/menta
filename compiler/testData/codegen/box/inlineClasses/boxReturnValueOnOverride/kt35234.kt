@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NumberInlineClass(val value: Double)
+value define NumberInlineClass(val value: Double)
 
 interface TypeAdapter<FROM, TO> {
     fun decode(string: FROM): TO
 }
 
-class StringToDoubleTypeAdapter : TypeAdapter<String, NumberInlineClass> {
+define StringToDoubleTypeAdapter : TypeAdapter<String, NumberInlineClass> {
     override fun decode(string: String) = NumberInlineClass(string.toDouble())
 }
 

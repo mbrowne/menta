@@ -4,7 +4,7 @@
 // IGNORE_IR_DESERIALIZATION_TEST: ANY
 // ISSUE: KT-52002
 
-class Scope(val name: String)
+define Scope(val name: String)
 
 interface Interface {
     fun foo(): String
@@ -13,7 +13,7 @@ interface Interface {
     fun foo(): String
 }
 
-class ClassBoth : Interface {
+define ClassBoth : Interface {
     override fun foo() = "O"
 
     context(Scope)

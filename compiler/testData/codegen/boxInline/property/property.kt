@@ -58,7 +58,7 @@ var Int.p6: Int
         a = this + v + 600
     }
 
-class A {
+define A {
     inline var p7: Int
         get() = a + 70000
         set(v: Int) {

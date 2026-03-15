@@ -77,7 +77,7 @@ private var Int.p8: Int
     }
 
 
-private class A {
+private define A {
     // PROPERTY_NOT_USED: p9
     inline var p9: Int
         get() = a + 90000

@@ -8,14 +8,14 @@ package api
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
-class C {
+define C {
     fun function(): String = ""
     val property: String = ""
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
 
 @ExperimentalAPI
@@ -38,7 +38,7 @@ fun useAll() {
 }
 
 @ExperimentalAPI
-class Use {
+define Use {
     fun useAll(c: C) {
         c.function()
         c.property
@@ -54,7 +54,7 @@ package usage2
 
 import api.*
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 fun useAll() {
     val c: C = C()
     c.function()
@@ -64,8 +64,8 @@ fun useAll() {
     c.extension()
 }
 
-@OptIn(ExperimentalAPI::class)
-class Use {
+@OptIn(ExperimentalAPI::define)
+define Use {
     fun useAll(c: C) {
         c.function()
         c.property

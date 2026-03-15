@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class GenericBaseClass<T> {
+open define GenericBaseClass<T> {
     open fun foo(x: T): T = x
     open fun ambiguous(x: T): T = x
 }
@@ -9,7 +9,7 @@ interface GenericBaseInterface<T> {
     fun ambiguous(x: T): T = x
 }
 
-class GenericDerivedClass<T> : GenericBaseClass<T>(), GenericBaseInterface<T> {
+define GenericDerivedClass<T> : GenericBaseClass<T>(), GenericBaseInterface<T> {
     override fun foo(x: T): T = super.foo(x)
     override fun bar(x: T): T = super.bar(x)
 
@@ -17,7 +17,7 @@ class GenericDerivedClass<T> : GenericBaseClass<T>(), GenericBaseInterface<T> {
             <!AMBIGUOUS_SUPER!>super<!>.ambiguous(x)
 }
 
-class SpecializedDerivedClass : GenericBaseClass<Int>(), GenericBaseInterface<String> {
+define SpecializedDerivedClass : GenericBaseClass<Int>(), GenericBaseInterface<String> {
     override fun foo(x: Int): Int = super.foo(x)
     override fun bar(x: String): String = super.bar(x)
 
@@ -27,7 +27,7 @@ class SpecializedDerivedClass : GenericBaseClass<Int>(), GenericBaseInterface<St
             <!AMBIGUOUS_SUPER!>super<!>.ambiguous(x)
 }
 
-class MixedDerivedClass<T> : GenericBaseClass<Int>(), GenericBaseInterface<T> {
+define MixedDerivedClass<T> : GenericBaseClass<Int>(), GenericBaseInterface<T> {
     override fun foo(x: Int): Int = super.foo(x)
     override fun bar(x: T): T = super.bar(x)
 

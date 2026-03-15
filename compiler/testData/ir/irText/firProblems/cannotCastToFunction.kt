@@ -1,4 +1,4 @@
-open class IrElement
+open define IrElement
 
 fun IrElement.dumpKotlinLike(options: String = ""): String = "O"
 

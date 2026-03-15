@@ -1,8 +1,8 @@
-open class A {
+open define A {
     open fun foo(): Any = "FAIL"
 }
 
-class B : A() {
+define B : A() {
     override fun foo(): String = "OK"
 }
 

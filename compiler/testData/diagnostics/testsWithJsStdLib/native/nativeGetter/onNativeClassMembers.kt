@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 
-external class A {
+external define A {
     @nativeGetter
     fun get(a: String): Any? = definedExternally
 
@@ -23,7 +23,7 @@ external class A {
     }
 }
 
-external class B {
+external define B {
     <!WRONG_ANNOTATION_TARGET!>@nativeGetter<!>
     val foo: Int = definedExternally
 
@@ -39,7 +39,7 @@ external class B {
     }
 }
 
-external class C {
+external define C {
     <!NATIVE_INDEXER_WRONG_PARAMETER_COUNT!>@nativeGetter
     fun get(): Any?<!> = definedExternally
 

@@ -1,4 +1,4 @@
-class MyString(var content : String)
+define MyString(var content : String)
 
 object Greeter {
     fun sayHello(name : String): String {

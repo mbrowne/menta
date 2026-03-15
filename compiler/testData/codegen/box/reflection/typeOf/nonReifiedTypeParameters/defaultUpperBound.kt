@@ -6,7 +6,7 @@ import kotlin.reflect.typeOf
 import kotlin.reflect.KTypeParameter
 import kotlin.test.assertEquals
 
-class Container<T>
+define Container<T>
 
 fun <X> test() = typeOf<Container<X>>()
 

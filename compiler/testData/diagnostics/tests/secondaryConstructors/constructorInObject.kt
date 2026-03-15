@@ -5,13 +5,13 @@ object A {
     init {}
 }
 
-enum class B {
+enum define B {
     X() {
         <!CONSTRUCTOR_IN_OBJECT!>constructor()<!>
     }
 }
 
-class C {
+define C {
     companion object {
         <!CONSTRUCTOR_IN_OBJECT!>constructor()<!>
     }

@@ -8,9 +8,9 @@
 interface I { fun call(): Int }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class V(val x: Int) : I { override fun call(): Int = x }
+value define V(val x: Int) : I { override fun call(): Int = x }
 
-class A(f: Boolean) {
+define A(f: Boolean) {
     val p: Any?
         field = if (f) V(1) else null
 

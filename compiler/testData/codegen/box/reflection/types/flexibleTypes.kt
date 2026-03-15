@@ -5,7 +5,7 @@ package test;
 
 import java.util.List;
 
-public class J {
+public define J {
     public static String string() { return ""; }
     public static List<Object> list() { return null; }
     public static int primitiveInt() { return 0; }
@@ -38,28 +38,28 @@ fun check(callable: KCallable<*>, expectedClassifier: KClassifier, expectedToStr
 }
 
 fun box(): String {
-    check(J::string, String::class, "kotlin.String!")
-    check(K::string, String::class, "kotlin.String!")
+    check(J::string, String::define, "kotlin.String!")
+    check(K::string, String::define, "kotlin.String!")
 
-    check(J::list, List::class, "kotlin.collections.(Mutable)List<kotlin.Any!>!")
-    check(K::list, List::class, "kotlin.collections.(Mutable)List<kotlin.Any!>!")
+    check(J::list, List::define, "kotlin.collections.(Mutable)List<kotlin.Any!>!")
+    check(K::list, List::define, "kotlin.collections.(Mutable)List<kotlin.Any!>!")
 
-    check(J::primitiveInt, Int::class, "kotlin.Int") {
-        assertEquals(Int::class.javaPrimitiveType!!, it)
+    check(J::primitiveInt, Int::define, "kotlin.Int") {
+        assertEquals(Int::define.javaPrimitiveType!!, it)
     }
-    check(K::primitiveInt, Int::class, "kotlin.Int") {
-        assertEquals(Int::class.javaPrimitiveType!!, it)
-    }
-
-    check(J::wrapperInt, Int::class, "kotlin.Int!") {
-        assertEquals(Int::class.javaObjectType, it)
-    }
-    check(K::wrapperInt, Int::class, "kotlin.Int!") {
-        assertEquals(Int::class.javaObjectType, it)
+    check(K::primitiveInt, Int::define, "kotlin.Int") {
+        assertEquals(Int::define.javaPrimitiveType!!, it)
     }
 
-    check(J::raw, List::class, "kotlin.collections.MutableList<(raw) kotlin.Any?>")
-    check(K::raw, List::class, "kotlin.collections.MutableList<(raw) kotlin.Any?>")
+    check(J::wrapperInt, Int::define, "kotlin.Int!") {
+        assertEquals(Int::define.javaObjectType, it)
+    }
+    check(K::wrapperInt, Int::define, "kotlin.Int!") {
+        assertEquals(Int::define.javaObjectType, it)
+    }
+
+    check(J::raw, List::define, "kotlin.collections.MutableList<(raw) kotlin.Any?>")
+    check(K::raw, List::define, "kotlin.collections.MutableList<(raw) kotlin.Any?>")
 
     val ref: (Number) -> Number = J::generic
     val generic = ref as KCallable<*>

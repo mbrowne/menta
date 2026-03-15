@@ -1,7 +1,7 @@
 // JVM_TARGET: 1.8
 
 interface Test {
-    var z: String
+    public var z: String
         get() = "OK"
         set(value) {}
 }

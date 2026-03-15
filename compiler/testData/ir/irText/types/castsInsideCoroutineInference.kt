@@ -2,7 +2,7 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R> scopedFlow(block: suspend CoroutineScope.(FlowCollector<R>) -> Unit): Flow<R> =
     flow {
         val collector = this
@@ -21,7 +21,7 @@ suspend fun <T> FlowCollector<T>.invokeSafely(
 ) {
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 inline fun <T> unsafeFlow(crossinline block: suspend FlowCollector<T>.() -> Unit): Flow<T> = TODO()
 
 @Deprecated(level = DeprecationLevel.HIDDEN, message = "binary compatibility with a version w/o FlowCollector receiver")
@@ -41,21 +41,21 @@ private fun CoroutineScope.asChannel(flow: Flow<*>): ReceiveChannel<Any> = produ
     }
 }
 
-class SafeCollector<T> constructor(
+define SafeCollector<T> constructor(
     internal val collector: FlowCollector<T>
 ) : FlowCollector<T> {
     override suspend fun emit(value: T) {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> flow(block: suspend FlowCollector<T>.() -> Unit): Flow<T> = TODO()
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 suspend fun <R> flowScope(block: suspend CoroutineScope.() -> R): R = TODO()
 
 suspend inline fun <T> Flow<T>.collect(crossinline action: suspend (value: T) -> Unit) {}
 
-open class ChannelCoroutine<E> {
+open define ChannelCoroutine<E> {
     suspend fun sendFair(element: E) {}
 }
 
@@ -70,7 +70,7 @@ interface FlowCollector<in T> {
 
 interface ReceiveChannel<out E>
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <E> CoroutineScope.produce(
     block: suspend ProducerScope<E>.() -> Unit
 ): ReceiveChannel<E> = TODO()

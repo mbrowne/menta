@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class Host {
+define Host {
     val ok = "OK"
 
     fun foo() = run { bar(ok) }

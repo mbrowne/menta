@@ -20,7 +20,7 @@ fun box() : String {
 
 }
 
-class Luhny() {
+define Luhny() {
     val buffer = LinkedList<Char>()
     val digits = LinkedList<Int>()
 
@@ -110,7 +110,7 @@ fun <T> List<T>.backwards() : Iterable<T> = object : Iterable<T> {
 
 // fun Char.isDigit() = Character.isDigit(this)
 
-//class Queue<T>(initialBufSize : Int) {
+//define Queue<T>(initialBufSize : Int) {
 //
 //    private var bufSize = initialBufSize
 //    private val buf = Array<T>(initialBufSize)

@@ -3,14 +3,14 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class A
+define A
 
 operator fun A.component1() = 1
 operator fun A.component2() = ""
 
-class B
+define B
 
-class D {
+define D {
     operator fun A.component1() = 1.0
     operator fun A.component2() = ' '
 

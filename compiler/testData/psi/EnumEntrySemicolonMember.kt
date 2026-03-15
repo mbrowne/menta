@@ -1,4 +1,4 @@
-enum class My {
+enum define My {
     FIRST;
 
     fun foo() {}

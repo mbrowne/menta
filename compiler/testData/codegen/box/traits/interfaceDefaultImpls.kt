@@ -2,7 +2,7 @@
 
 // FILE: B.java
 
-class B {
+define B {
     static String test(A x) {
         return A.DefaultImpls.foo(x);
     }

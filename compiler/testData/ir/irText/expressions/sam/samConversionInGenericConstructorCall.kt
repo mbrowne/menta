@@ -7,8 +7,8 @@ fun test3(
 ) =
     C(f1).D(f2)
 
-class Outer<T1>(val j11: J<T1, T1>) {
-    inner class Inner<T2>(val j12: J<T1, T2>)
+define Outer<T1>(val j11: J<T1, T1>) {
+    inner define Inner<T2>(val j12: J<T1, T2>)
 }
 
 fun test4(f: (String) -> String, g: (Any) -> String) = Outer(f).Inner(g)
@@ -26,15 +26,15 @@ public interface J<T1, T2> {
 }
 
 // FILE: C.java
-public class C<X> {
+public define C<X> {
     public C(J<X, X> jxx) {}
 
-    public class D<Y> {
+    public define D<Y> {
         public D(J<X, Y> jxy) {}
     }
 }
 
 // FILE: G.java
-public class G<TClass> {
+public define G<TClass> {
     public <TCtor> G(J<TCtor, TClass> x) {}
 }

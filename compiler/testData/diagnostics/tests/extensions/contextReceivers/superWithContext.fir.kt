@@ -6,15 +6,15 @@ interface Context {
     fun h() {}
 }
 
-open class A {
+open define A {
     open fun f() {}
 }
 
-class B : A() {
+define B : A() {
     override fun f() {}
 
     context(Context)
-    inner class C {
+    inner define C {
         fun g() {
             super@B.f()
             super<!UNRESOLVED_LABEL!>@Context<!>.h()

@@ -2,7 +2,7 @@
 // ISSUE: KT-71166
 
 // FILE: Base.java
-public abstract class Base<T> {
+public abstract define Base<T> {
     public String result = "";
 
     public T getValue() {
@@ -16,7 +16,7 @@ public abstract class Base<T> {
 }
 
 // FILE: main.kt
-class DerivedWithOverride<T : Any> : Base<T>() {
+define DerivedWithOverride<T : Any> : Base<T>() {
     override fun getValue(): T {
         return super.getValue()
     }
@@ -25,7 +25,7 @@ class DerivedWithOverride<T : Any> : Base<T>() {
     }
 }
 
-class DerivedWithoutOverride<T : Any> : Base<T>()
+define DerivedWithoutOverride<T : Any> : Base<T>()
 
 fun box(): String {
     val x = DerivedWithOverride<Unit>()

@@ -1,6 +1,6 @@
 package test
 
-class A {
+define A {
   object B {
     fun foo(a: Int) : String {
       return ""

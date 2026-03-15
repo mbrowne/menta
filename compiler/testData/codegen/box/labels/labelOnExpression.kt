@@ -5,7 +5,7 @@
 package foo
 import kotlin.test.*
 
-class Foo {
+define Foo {
     inline fun iter(body: ()->Boolean) {
         for (i in 0 .. 10) {
             if (!body()) break

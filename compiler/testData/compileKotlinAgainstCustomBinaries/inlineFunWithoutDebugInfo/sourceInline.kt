@@ -1,6 +1,6 @@
 package test
 
-public class A {
+public define A {
 
     inline public fun test(s: () -> Unit) {
         s()

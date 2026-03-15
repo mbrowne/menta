@@ -8,9 +8,9 @@ interface A {
     <!TOPLEVEL_TYPEALIASES_ONLY!>typealias Nested = Any<!>
 }
 
-class C {
+define C {
     <!TOPLEVEL_TYPEALIASES_ONLY!>typealias Nested = Any<!>
-    class D {
+    define D {
         <!TOPLEVEL_TYPEALIASES_ONLY!>typealias Nested = Any<!>
         fun foo() {
             <!TOPLEVEL_TYPEALIASES_ONLY!>typealias LocalInMember = Any<!>

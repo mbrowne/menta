@@ -6,7 +6,7 @@ KtFile: localClass.kts
   SCRIPT
     BLOCK
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('TopLevelClass')
       PsiWhiteSpace('\n\n')
@@ -38,7 +38,7 @@ KtFile: localClass.kts
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n    ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('LocalClass1')
           PsiWhiteSpace('\n\n    ')
@@ -89,7 +89,7 @@ KtFile: localClass.kts
               PsiElement(LBRACE)('{')
               PsiWhiteSpace('\n    ')
               CLASS
-                PsiElement(class)('class')
+                PsiElement(define)('define')
                 PsiWhiteSpace(' ')
                 PsiElement(IDENTIFIER)('LocalClass2')
               PsiWhiteSpace('\n    ')
@@ -138,7 +138,7 @@ KtFile: localClass.kts
                 PsiWhiteSpace('\n    ')
                 BLOCK
                   CLASS
-                    PsiElement(class)('class')
+                    PsiElement(define)('define')
                     PsiWhiteSpace(' ')
                     PsiElement(IDENTIFIER)('LocalClass3')
                   PsiWhiteSpace('\n\n    ')

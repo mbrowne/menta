@@ -15,10 +15,10 @@ interface Z2 : B<String, Int>, A<String> {
 }
 
 
-class Z1Class : Z1 {
+define Z1Class : Z1 {
 }
 
-class Z2Class : Z2 {
+define Z2Class : Z2 {
 }
 
 fun box(): String {

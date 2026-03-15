@@ -5,7 +5,7 @@
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
 
-class Player
+define Player
 {
     fun play() {
         ReentrantLock().withLock {

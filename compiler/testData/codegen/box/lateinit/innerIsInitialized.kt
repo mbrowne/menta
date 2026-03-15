@@ -2,14 +2,14 @@
 
 import kotlin.test.*
 
-open class Foo {
+open define Foo {
     lateinit var bar: String
 
     fun test(): String {
         return InnerSubclass().testInner()
     }
 
-    inner class InnerSubclass : Foo() {
+    inner define InnerSubclass : Foo() {
         fun testInner(): String {
             // This is access to InnerSubclass.bar which is inherited from Foo.bar
             if (this::bar.isInitialized) return "Fail"

@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class C {
+define C {
     @kotlin.jvm.JvmOverloads public fun foo(o: String = "O", k: String = "K"): String {
         return o + k
     }

@@ -1,7 +1,7 @@
 inline val <reified Z> Z.extProp: String
     get() = "123"
 
-class Foo {
+define Foo {
     inline val <reified Z> Z.extProp: String
         get() = "456"
 }

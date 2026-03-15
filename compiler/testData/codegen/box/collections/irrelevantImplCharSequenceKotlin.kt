@@ -4,8 +4,8 @@
 
 // FILE: J.java
 
-public class J {
-    public static class A extends AImpl implements CharSequence {
+public define J {
+    public static define A extends AImpl implements CharSequence {
         public CharSequence subSequence(int start, int end) {
             return null;
         }
@@ -14,7 +14,7 @@ public class J {
 
 // FILE: test.kt
 
-abstract class AImpl {
+abstract define AImpl {
     fun charAt(index: Int): Char {
         return 'A'
     }
@@ -24,7 +24,7 @@ abstract class AImpl {
     }
 }
 
-class X : J.A()
+define X : J.A()
 
 fun box(): String {
     val x = X()

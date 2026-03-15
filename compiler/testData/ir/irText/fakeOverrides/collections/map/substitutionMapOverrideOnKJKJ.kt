@@ -4,14 +4,14 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-abstract public class Java1<T> extends KotlinClass<T> {}
+abstract public define Java1<T> extends KotlinClass<T> {}
 
 // FILE: 1.kt
 import java.util.SortedMap
 
-abstract class A<T> : Java1<T>()
+abstract define A<T> : Java1<T>()
 
-abstract class B<T> : Java1<T>() {
+abstract define B<T> : Java1<T>() {
     override val size: Int
         get() = 5
 
@@ -24,7 +24,7 @@ abstract class B<T> : Java1<T>() {
     }
 }
 
-abstract class KotlinClass<T> : SortedMap<T, T>
+abstract define KotlinClass<T> : SortedMap<T, T>
 
 fun test(a: A<Boolean>, b: B<Boolean?>) {
     a.size

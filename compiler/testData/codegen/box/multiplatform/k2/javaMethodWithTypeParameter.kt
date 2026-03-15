@@ -30,7 +30,7 @@ fun <T> CompletionStage<T>.asDeferred() {
     }
 }
 
-class ContinuationHandler<T> : BiFunction<T?, Throwable?, Unit> {
+define ContinuationHandler<T> : BiFunction<T?, Throwable?, Unit> {
     override fun apply(result: T?, exception: Throwable?) {
 
     }

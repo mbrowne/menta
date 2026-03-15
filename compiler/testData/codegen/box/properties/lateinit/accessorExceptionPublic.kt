@@ -1,7 +1,7 @@
 
 fun <T> eval(fn: () -> T) = fn()
 
-public class A {
+public define A {
     fun getFromClass(): Boolean {
         try {
             val a = str

@@ -8,8 +8,8 @@ actual fun <T: Comparable<T>> Array<out T>.sort(): Unit {
     java.util.Arrays.sort(this)
 }
 
-actual class C1<A>
-actual class C2<B : C2<B>>
-actual class C3<D, E : MutableList<in D>>
+actual define C1<A>
+actual define C2<B : C2<B>>
+actual define C3<D, E : MutableList<in D>>
 
-actual abstract class AbstractList<F> : MutableList<F>, java.io.Serializable
+actual abstract define AbstractList<F> : MutableList<F>, java.io.Serializable

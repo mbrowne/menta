@@ -14,7 +14,7 @@ interface B : A {
 
 fun<T : A> doer(init: () -> T): T = init()
 
-class Z {
+define Z {
     operator fun<T : A> invoke(init: Z.() -> T): T = init()
     infix fun<T : A> doer(init: Z.() -> T): T = init()
 
@@ -26,7 +26,7 @@ interface  ARoot<T> {
     operator fun<U : A> invoke(init: T.() -> U): U = self.init()
 }
 
-class Y : ARoot<Y> {
+define Y : ARoot<Y> {
     override val self: Y
         get() = this
 }

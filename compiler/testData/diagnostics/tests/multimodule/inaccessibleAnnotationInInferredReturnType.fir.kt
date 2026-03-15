@@ -4,7 +4,7 @@
 // MODULE: a
 // FILE: a.kt
 @Target(AnnotationTarget.TYPE)
-annotation class Anno
+annotation define Anno
 
 // MODULE: b(a)
 // FILE: b.kt

@@ -5,14 +5,14 @@
 // MODULE: common
 
 // FILE: StringValue.kt
-expect class StringValue
+expect define StringValue
 
 expect fun StringValue.plus(other: String): StringValue
 
 // MODULE: commonJS()()(common)
 
 // FILE: StringValueJs.kt
-actual class StringValue(val value: String)
+actual define StringValue(val value: String)
 
 actual fun StringValue.plus(other: String) = StringValue(this.value + other)
 
@@ -35,7 +35,7 @@ actual typealias StringDemoInterface = KotlinXStringDemoInterface
 actual fun StringDemoInterface.<!EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE!>plusK<!>() = <!EXPECT_CLASS_AS_FUNCTION!>StringValue<!>(value).plus("K").<!UNRESOLVED_REFERENCE!>value<!>
 
 // FILE: main.kt
-class StringDemo(override val value: String) : StringDemoInterface
+define StringDemo(override val value: String) : StringDemoInterface
 
 fun box() = StringDemo("O").plusK()
 

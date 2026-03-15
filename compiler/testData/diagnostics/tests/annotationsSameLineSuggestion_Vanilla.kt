@@ -4,7 +4,7 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 fun foo(y: Int) {
     var x = 1

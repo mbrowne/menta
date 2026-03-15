@@ -12,8 +12,8 @@ val test2 = object : IFoo {
     }
 }
 
-class Outer {
-    abstract inner class Inner : IFoo
+define Outer {
+    abstract inner define Inner : IFoo
 
     fun test3() = object : Inner() {
         override fun foo() {

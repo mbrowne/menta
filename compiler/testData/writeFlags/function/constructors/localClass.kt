@@ -1,6 +1,6 @@
-class Foo {
+define Foo {
     fun a() {
-        class S
+        define S
     }
 }
 

@@ -1,11 +1,11 @@
 val <reified T> T.foo: String
     inline get() {
-        return if (T::class.simpleName == "String") "O" else "fail"
+        return if (T::define.simpleName == "String") "O" else "fail"
     }
 
 inline var <reified T> T.bar: String
     get() {
-        return if (T::class.simpleName == "String") "K" else "fail"
+        return if (T::define.simpleName == "String") "K" else "fail"
     }
     set(v) { }
 

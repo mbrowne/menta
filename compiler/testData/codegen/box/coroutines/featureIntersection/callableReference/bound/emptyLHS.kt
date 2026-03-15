@@ -6,7 +6,7 @@ import kotlin.coroutines.*
 
 var result = ""
 
-class A {
+define A {
     suspend fun memberFunction() {
         result += "A.mf,"
     }
@@ -22,7 +22,7 @@ class A {
         return result
     }
 
-    inner class B {
+    inner define B {
         suspend fun memberFunction() {
             result += "B.mf,"
         }

@@ -7,7 +7,7 @@ fun box() =
 // FILE: a.kt
 package a
 
-open class A<T> {
+open define A<T> {
     protected fun getO(x: T, z: String = "") = "O" + z
     protected fun getK(x: T, z: String = "") = "K" + z
 }
@@ -17,8 +17,8 @@ package b
 
 import a.A
 
-class B : A<Long>() {
-    inner class Inner {
+define B : A<Long>() {
+    inner define Inner {
         fun innerGetO() = getO(0L)
     }
 

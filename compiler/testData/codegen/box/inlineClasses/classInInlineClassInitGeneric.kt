@@ -5,9 +5,9 @@
 var result = "Fail"
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val value: T) {
+value define A<T: String>(val value: T) {
     init {
-        class B {
+        define B {
             init {
                 result = value
             }

@@ -4,8 +4,8 @@
 
 package test
 
-expect class A {
-    class B
+expect define A {
+    define B
 }
 
 expect fun A.B.test(): String
@@ -17,8 +17,8 @@ expect val A.B.bar: String
 
 package test
 
-actual class A {
-    actual class B
+actual define A {
+    actual define B
 }
 
 actual fun A.B.test(): String {

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 
-public class A {
+public define A {
     public static void foo(A... values) {}
 }
 

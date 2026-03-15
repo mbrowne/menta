@@ -3,8 +3,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-class A {
-    private inner class Inner {
+define A {
+    private inner define Inner {
         fun foo() = "OK"
     }
 

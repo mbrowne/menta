@@ -7,8 +7,8 @@ import kotlin.contracts.*
 
 interface A
 
-class Foo {
-    inner class Bar {
+define Foo {
+    inner define Bar {
         fun good() {
             contract {
                 returns() implies (this@Bar != null)

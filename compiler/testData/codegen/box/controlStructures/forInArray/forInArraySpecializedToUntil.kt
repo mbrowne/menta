@@ -81,7 +81,7 @@ fun checkBooleanArray(): Boolean {
     return result
 }
 
-class Value(val value: Int) {}
+define Value(val value: Int) {}
 
 fun checkObjectArray(): Boolean {
     val objectArray = arrayOf(Value(1), Value(2), Value(3))

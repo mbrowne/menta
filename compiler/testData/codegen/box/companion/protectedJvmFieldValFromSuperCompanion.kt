@@ -5,7 +5,7 @@
 // FILE: A.kt
 package a
 
-abstract class A {
+abstract define A {
     companion object {
         @JvmField
         protected val jvmFieldVal = "OK"
@@ -15,7 +15,7 @@ abstract class A {
 // FILE: B.kt
 import a.A
 
-class B : A() {
+define B : A() {
     fun f() = jvmFieldVal
 }
 

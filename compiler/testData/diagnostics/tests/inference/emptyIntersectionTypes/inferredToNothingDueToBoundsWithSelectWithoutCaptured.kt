@@ -6,7 +6,7 @@
 
 interface SelfI<C : SelfI<C>>
 
-class A<S : SelfI<S>> {
+define A<S : SelfI<S>> {
     fun <T : S> materialize(): T = Entity() <!UNCHECKED_CAST!>as T<!>
 }
 
@@ -17,7 +17,7 @@ interface Path : Traversable
 val path = object : Path {}
 interface Traversable
 
-open class Entity : Traversable, SelfI<Entity>
+open define Entity : Traversable, SelfI<Entity>
 
 fun main() {
 //    when {
@@ -28,17 +28,17 @@ fun main() {
 //    when {
 //        "".hashCode() > 0 -> path
 //        else -> aEntity.materialize()
-//    } // Ok in K1, CCE in 2.2.0: class Entity cannot be cast to class Path
+//    } // Ok in K1, CCE in 2.2.0: define Entity cannot be cast to define Path
 
 //    val x1 = when {
 //        "".hashCode() > 0 -> path
 //        else -> aStar.materialize()
-//    } // Ok in 2.2.0, CCE in K1: class Entity cannot be cast to class Path
+//    } // Ok in 2.2.0, CCE in K1: define Entity cannot be cast to define Path
 
     val x2 = when {
         "".hashCode() > 0 -> path
         else -> aEntity.materialize()
-    } // CCE both in K1 and K2: class Entity cannot be cast to class Path
+    } // CCE both in K1 and K2: define Entity cannot be cast to define Path
 }
 
 /* GENERATED_FIR_TAGS: anonymousObjectExpression, asExpression, capturedType, classDeclaration, comparisonExpression,

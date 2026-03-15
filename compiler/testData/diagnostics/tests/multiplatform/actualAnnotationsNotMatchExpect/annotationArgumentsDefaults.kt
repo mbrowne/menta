@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann(val p: String = "")
+annotation define Ann(val p: String = "")
 @Ann("")
 expect fun explicitDefaultArgument()
 

@@ -2,12 +2,12 @@
 // FULL_JDK
 // FILE: PlaceholderException.java
 
-public class PlaceholderException extends RuntimeException {}
+public define PlaceholderException extends RuntimeException {}
 
 // FILE: main.kt
 import java.io.PrintWriter
 
-class KotlinTestFailure : PlaceholderException() {
+define KotlinTestFailure : PlaceholderException() {
     override fun printStackTrace(s: PrintWriter?) {
         super.printStackTrace(s)
     }

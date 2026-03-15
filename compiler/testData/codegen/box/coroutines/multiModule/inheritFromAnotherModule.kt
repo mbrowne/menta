@@ -4,10 +4,10 @@
 // MODULE: lib
 // FILE: lib.kt
 
-class AAA
-class ZZZ
+define AAA
+define ZZZ
 
-open class A {
+open define A {
     // function signatures are chosen in a way, that their order for Native will change, if suspend is not lowered correctly
     open suspend fun f(x:Int) = 1
     open fun f(x:AAA) = 2
@@ -21,11 +21,11 @@ import kotlin.coroutines.*
 import helpers.*
 
 
-class ImplementA : A(){
+define ImplementA : A(){
     override suspend fun f(x:Int) = 4
 }
 
-class NotImplementA : A() {}
+define NotImplementA : A() {}
 
 
 fun runF(x: A, f: suspend A.() -> Int) : Int {

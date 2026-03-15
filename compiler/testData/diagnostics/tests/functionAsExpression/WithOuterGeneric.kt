@@ -20,7 +20,7 @@ fun <O> outer() {
     devNull(fun (): O = null!!)
 }
 
-class Outer<O> {
+define Outer<O> {
     fun <T> parameter() = fun (t: T) = t
     fun <T> receiver() = fun T.() = this
     fun <T> returnType() = fun (): T = null!!

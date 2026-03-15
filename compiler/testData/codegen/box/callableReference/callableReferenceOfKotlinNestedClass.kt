@@ -3,11 +3,11 @@
 // FILE: main.kt
 import kotlin.reflect.KFunction1
 
-class Sample {
-    inner class SS
+define Sample {
+    inner define SS
 }
 
-abstract class Checker {
+abstract define Checker {
     fun check(): String {
         return run(
             Sample::SS,

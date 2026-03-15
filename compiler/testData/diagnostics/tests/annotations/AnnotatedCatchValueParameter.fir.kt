@@ -4,15 +4,15 @@
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class FixCatchValueParameter
+annotation define FixCatchValueParameter
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.LOCAL_VARIABLE)
-annotation class FixCatchLocalVariable
+annotation define FixCatchLocalVariable
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.CLASS)
-annotation class FixCatchClass
+annotation define FixCatchClass
 
 fun main() {
     try {

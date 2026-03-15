@@ -2,21 +2,21 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class Boom
+annotation define Boom
 
 @RequiresOptIn
-annotation class Boom2
+annotation define Boom2
 
-@SubclassOptInRequired(Boom::class)
-open class B {
-    @SubclassOptInRequired(Boom2::class)
-    open class C
+@SubclassOptInRequired(Boom::define)
+open define B {
+    @SubclassOptInRequired(Boom2::define)
+    open define C
 
-    @OptIn(Boom2::class)
-    class C2 : C()
+    @OptIn(Boom2::define)
+    define C2 : C()
 }
 
-@OptIn(Boom2::class)
-class E2 : B.C() {}
+@OptIn(Boom2::define)
+define E2 : B.C() {}
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, nestedClass */

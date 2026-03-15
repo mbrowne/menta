@@ -6,7 +6,7 @@
 // 1 java/lang/invoke/LambdaMetafactory
 
 // FILE: memberRef.kt
-class C(val t: String) {
+define C(val t: String) {
     fun test() = t
 }
 

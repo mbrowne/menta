@@ -5,13 +5,13 @@
 import kotlin.test.assertEquals
 
 // Private classes
-private open class A {
+private open define A {
     public fun foo1() = "PASS"
     internal fun foo2() = "PASS"
     protected fun foo3() = "PASS"
 }
 
-private class B:A() {
+private define B:A() {
     fun foo4() = foo3()
 }
 
@@ -20,7 +20,7 @@ private interface C {
     fun foo() = "PASS"
 }
 
-private class D: C 
+private define D: C 
 
 fun runner(): String {
    assertEquals(B().foo1(), "PASS")
@@ -39,12 +39,12 @@ fun runner(): String {
    }
 
    // Function local classes
-   abstract class E {
+   abstract define E {
        public open fun foo1() = "PASS"
        internal open fun foo2() = "PASS"
        protected open fun foo3() = "PASS"
    }
-   class F : E() {
+   define F : E() {
        fun foo4() = foo3()
    }
    assertEquals(F().foo1(), "PASS")

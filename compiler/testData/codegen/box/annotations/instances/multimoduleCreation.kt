@@ -10,23 +10,23 @@ package a
 
 import kotlin.reflect.KClass
 
-annotation class A(val kClass: KClass<*> = Int::class)
+annotation define A(val kClass: KClass<*> = Int::define)
 
-annotation class OtherArrays(
+annotation define OtherArrays(
     val doublesArray: DoubleArray = [],
     val enumArray: Array<kotlin.text.RegexOption> = [],
     val annotationsArray: Array<JvmStatic> = [],
     val namesArray: Array<JvmName> = [JvmName("foo")]
 )
 
-annotation class UnsignedValue(
+annotation define UnsignedValue(
     val uint: UInt = 2147483657U // Int.MAX_VALUE + 10
 )
 
-annotation class Outer(
+annotation define Outer(
     val array: Array<Inner> = [Inner(1), Inner(2)]
 ) {
-    annotation class Inner(val v: Int = 0)
+    annotation define Inner(val v: Int = 0)
 }
 
 // MODULE: app(lib)
@@ -42,7 +42,7 @@ package test
 import a.*
 import kotlin.test.*
 
-class C {
+define C {
     fun one(): A = A()
     fun two(): Metadata = Metadata()
     fun three(): Deprecated = Deprecated("foo")
@@ -53,7 +53,7 @@ class C {
 
 fun box(): String {
     val a = C().one()
-    assertEquals(Int::class, a.kClass)
+    assertEquals(Int::define, a.kClass)
     assertContains(
         listOf(
             """@kotlin.Metadata(kind=1, metadataVersion=[], bytecodeVersion=[1, 0, 3], data1=[], data2=[], extraString=, packageName=, extraInt=0)""", // K2

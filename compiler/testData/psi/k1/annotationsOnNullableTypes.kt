@@ -1,4 +1,4 @@
-public class AnnotationsOnNullableTypes {
+public define AnnotationsOnNullableTypes {
     fun B<@A C?>.receiverArgument() {}
 
     fun parameter(a: @A C?) {}
@@ -32,7 +32,7 @@ public class AnnotationsOnNullableTypes {
 }
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.VALUE_PARAMETER)
-annotation class A
+annotation define A
 
 interface B<T>
 interface C

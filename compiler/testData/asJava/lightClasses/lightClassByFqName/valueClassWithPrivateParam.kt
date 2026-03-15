@@ -4,7 +4,7 @@
 
 package pack
 
-class OriginalClass
+define OriginalClass
 
 @JvmInline
-value class ValueClass(private val value: OriginalClass)
+value define ValueClass(private val value: OriginalClass)

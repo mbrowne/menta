@@ -6,7 +6,7 @@ object O {
 1   <v0>: Int   NEW: r(1) -> <v0>
 =====================
 == E ==
-enum class E(val x: Int) {
+enum define E(val x: Int) {
     E1(0)
 }
 ---------------------
@@ -16,7 +16,7 @@ enum class E(val x: Int) {
 (0)   <v3>: *        NEW: call((0), <init>|<v2>) -> <v3>
 =====================
 == C ==
-class C {
+define C {
     companion object {
         val z = 2
     }

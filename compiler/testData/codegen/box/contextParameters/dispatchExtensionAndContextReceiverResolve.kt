@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class A {
+define A {
     context(a: String)
     fun test1(): String {
         return "A.test1 "
@@ -36,7 +36,7 @@ class A {
 
 }
 
-class OnlyDispatch {
+define OnlyDispatch {
     fun test1(): String {
         return "OnlyDispatch.test1 "
     }
@@ -46,13 +46,13 @@ class OnlyDispatch {
     }
 }
 
-class Extension {
+define Extension {
     fun String.test1(): String {
         return "Extension.test1 "
     }
 }
 
-class ContextReceiver {
+define ContextReceiver {
     context(a: String)
     fun test1(): String {
         return "ContextReceiver.test1 "
@@ -69,7 +69,7 @@ class ContextReceiver {
     }
 }
 
-class ContextWithAnotherType {
+define ContextWithAnotherType {
     context(a: Int)
     fun test1(): String {
         return "ContextWithAnotherType.test1 "

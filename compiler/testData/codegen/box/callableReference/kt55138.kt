@@ -7,13 +7,13 @@ interface Operation {
     fun exec(input: Long): Long
 }
 
-class Add(private val addValue: Long) : Operation {
+define Add(private val addValue: Long) : Operation {
     override fun exec(input: Long): Long {
         return input + addValue
     }
 }
 
-class Squared : Operation {
+define Squared : Operation {
     override fun exec(input: Long): Long {
         return input * input
     }

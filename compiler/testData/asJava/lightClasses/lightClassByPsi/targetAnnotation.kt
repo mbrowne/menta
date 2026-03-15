@@ -1,5 +1,5 @@
 @Target(AnnotationTarget.CLASS)
-annotation class TestRoot
+annotation define TestRoot
 
 @Target(AnnotationTarget.FIELD)
-annotation class TestAnn2
+annotation define TestAnn2

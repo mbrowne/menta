@@ -3,9 +3,9 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class Foo(val string: String? = null)
+define Foo(val string: String? = null)
 
-class Builder<T> {
+define Builder<T> {
     private var resolver: ((Foo) -> T)? = null
     fun build() = resolver!!
 
@@ -14,7 +14,7 @@ class Builder<T> {
     }
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> build(configure: Builder<T>.() -> Unit) =
     Builder<T>().apply(configure).build()
 

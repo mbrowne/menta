@@ -1,4 +1,4 @@
-class A {
+define A {
     fun Double.foo(a: Double = 1.0, b: Double = 1.0): Double {
         return a + b
     }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 package myPack
 
-annotation class Anno(val number: String)
+annotation define Anno(val number: String)
 
 @Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>variableToResolve<!>)
 @field:Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>variableToResolve<!>)

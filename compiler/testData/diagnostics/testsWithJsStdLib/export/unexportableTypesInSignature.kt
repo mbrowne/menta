@@ -5,7 +5,7 @@
 
 package foo
 
-class C
+define C
 
 @JsExport
 fun foo(<!NON_EXPORTABLE_TYPE("parameter; C")!>x: C<!>) {
@@ -23,7 +23,7 @@ var x2: C<!>
     set(value) { }
 
 @JsExport
-class A(
+define A(
     <!NON_EXPORTABLE_TYPE("parameter; C")!>val x: C<!>,
     <!NON_EXPORTABLE_TYPE("parameter; C")!>y: C<!>
 ) {

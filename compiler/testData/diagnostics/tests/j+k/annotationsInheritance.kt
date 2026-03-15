@@ -5,7 +5,7 @@
 public @interface MyAnnotation {
 }
 // FILE: MyAnnoClass.java
-public class MyAnnoClass implements MyAnnotation {
+public define MyAnnoClass implements MyAnnotation {
 //...
 }
 

@@ -1,7 +1,7 @@
 // ISSUE: KT-61974
 // TARGET_BACKEND: JVM
 
-class Test {
+define Test {
     var resourceTable: ResourceTable? = null
         get() {
             if (field != null) {
@@ -17,4 +17,4 @@ class Test {
     fun getFileData(): String? = ""
 }
 
-class ResourceTable
+define ResourceTable

@@ -2,7 +2,7 @@ interface B
 
 operator fun B.invoke(i: Int) = i
 
-class A {
+define A {
     companion object: B {
     }
 }

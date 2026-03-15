@@ -10,14 +10,14 @@ interface Y<T> {}
 // FILE: Outer.java
 import org.checkerframework.checker.nullness.qual.*;
 
-class Outer {
-    class A {
+define Outer {
+    define A {
         <K, V> V foo(K x) { return null; }
 
         <T> X<T> bar(Y<T> x) { return null; }
     }
 
-    class B extends A {
+    define B extends A {
         // OK, non-platform types
         @Override
         @NonNull
@@ -33,7 +33,7 @@ class Outer {
         <R> X<@Nullable R> bar(@NonNull Y<@NonNull R> x) { return null; }
     }
 
-    class C extends B {
+    define C extends B {
         // OK, non-platform types
         @Override
         <I, J> J foo(I x) { return null; }
@@ -44,7 +44,7 @@ class Outer {
         <E> X<E> bar(Y<E> x) { return null; }
     }
 
-    class D extends C {
+    define D extends C {
         // Return type is not-nullable, covariantly overridden, OK
         // Parameter type is flexible, because of conflict with supertype, OK
         @Override

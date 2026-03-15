@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A
+define A
 interface I0<T : A<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!>>
 interface I1<T> where T : A<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!>
 interface I2<<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T : A<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!><!>> where T : A<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!>
@@ -18,7 +18,7 @@ val <<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>E : A<!WRONG_NUMBER_OF_TYPE_ARGUMEN
 
 // See KT-8200
 interface X
-public class EnumAttribute<<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T : X<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><T><!><!>>(val klass: Class<T>) where T : Enum<T>
+public define EnumAttribute<<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T : X<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><T><!><!>>(val klass: Class<T>) where T : Enum<T>
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, getter, integerLiteral, interfaceDeclaration,
 primaryConstructor, propertyDeclaration, propertyWithExtensionReceiver, typeConstraint, typeParameter */

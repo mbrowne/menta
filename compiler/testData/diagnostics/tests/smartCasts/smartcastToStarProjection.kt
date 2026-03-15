@@ -3,9 +3,9 @@
 // ISSUE: KT-55966
 // INFERENCE_HELPERS
 
-class Inv<T>
+define Inv<T>
 
-abstract class A<T>
+abstract define A<T>
 
 fun <T> get(e: A<T>): T = null!!
 

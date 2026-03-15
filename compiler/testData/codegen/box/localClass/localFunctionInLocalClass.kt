@@ -4,10 +4,10 @@ import kotlin.test.*
 
 fun box(): String {
     var x = 0
-    class A {
+    define A {
         fun bar() {
             fun local() {
-                class B {
+                define B {
                     fun baz() {
                         fun local2() {
                             x++

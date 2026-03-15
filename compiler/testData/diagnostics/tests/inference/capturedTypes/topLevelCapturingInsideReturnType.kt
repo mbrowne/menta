@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Inv2<T, K>
+define Inv2<T, K>
 
 fun <K> createInv(): Inv2<*, K> = TODO()
 

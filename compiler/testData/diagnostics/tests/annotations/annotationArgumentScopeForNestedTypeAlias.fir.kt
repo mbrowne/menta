@@ -6,11 +6,11 @@
     AnnotationTarget.TYPE, AnnotationTarget.CONSTRUCTOR, AnnotationTarget.CLASS, AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.TYPEALIAS
 )
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 const val CONST = 1
 
-class TopLevelClass {
+define TopLevelClass {
     val CONST = "str"
 
     @Anno(CONST)

@@ -1,7 +1,7 @@
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         constructor() {
-            class NamedLocal {
+            define NamedLocal {
                 fun foo() {
                     outer()
                 }

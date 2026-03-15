@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     public void run(Runnable r) {
         r.run();
     }
@@ -11,7 +11,7 @@ class JavaClass {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-internal class KotlinSubclass: JavaClass() {
+internal define KotlinSubclass: JavaClass() {
 }
 
 fun box(): String {

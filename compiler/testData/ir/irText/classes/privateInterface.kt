@@ -9,7 +9,7 @@ private interface I {
     fun bazUnit() {}
 }
 
-open class C1 : I {
+open define C1 : I {
     override fun fooString() = "foo@C1"
     override fun barString() = "bar@C1"
 
@@ -17,4 +17,4 @@ open class C1 : I {
     override fun barUnit() {}
 }
 
-class C2 : C1()
+define C2 : C1()

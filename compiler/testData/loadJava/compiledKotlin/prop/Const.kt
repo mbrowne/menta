@@ -7,7 +7,7 @@ object A {
     const internal val inObject = 2
 }
 
-class B {
+define B {
     companion object {
         const val inCompanion = 3
     }

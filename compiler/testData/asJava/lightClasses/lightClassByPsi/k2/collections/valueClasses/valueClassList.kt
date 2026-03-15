@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CList : List<UInt>
+abstract define CList : List<UInt>
 
-abstract class CList2 : List<UInt> by emptyList<UInt>()
+abstract define CList2 : List<UInt> by emptyList<UInt>()
 
-open class CList3 : List<UInt> {
+open define CList3 : List<UInt> {
     override fun contains(element: UInt): Boolean {
         TODO("Not yet implemented")
     }
@@ -50,5 +50,5 @@ open class CList3 : List<UInt> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CList.class[add-Qn1smSk;add-WZ4Q5Ns;addAll;addAll;clear;contains;contains-WZ4Q5Ns;getSize;indexOf;indexOf-WZ4Q5Ns;lastIndexOf;lastIndexOf-WZ4Q5Ns;listIterator;listIterator;remove;remove-OGnWXxg;removeAll;replaceAll;retainAll;set-8fN1j4Y;size;sort;subList;toArray;toArray], CList2.class[add-Qn1smSk;add-WZ4Q5Ns;addAll;addAll;clear;contains-WZ4Q5Ns;get-OGnWXxg;indexOf-WZ4Q5Ns;lastIndexOf-WZ4Q5Ns;remove;remove-OGnWXxg;removeAll;replaceAll;retainAll;set-8fN1j4Y;size;sort;toArray;toArray], CList3.class[add-Qn1smSk;add-WZ4Q5Ns;addAll;addAll;clear;contains-WZ4Q5Ns;get-OGnWXxg;indexOf-WZ4Q5Ns;lastIndexOf-WZ4Q5Ns;remove;remove-OGnWXxg;removeAll;replaceAll;retainAll;set-8fN1j4Y;size;sort;toArray;toArray]
-// DECLARATIONS_NO_LIGHT_ELEMENTS: CList2.class[get], CList3.class[get]
+// LIGHT_ELEMENTS_NO_DECLARATION: CList.define[add-Qn1smSk;add-WZ4Q5Ns;addAll;addAll;clear;contains;contains-WZ4Q5Ns;getSize;indexOf;indexOf-WZ4Q5Ns;lastIndexOf;lastIndexOf-WZ4Q5Ns;listIterator;listIterator;remove;remove-OGnWXxg;removeAll;replaceAll;retainAll;set-8fN1j4Y;size;sort;subList;toArray;toArray], CList2.define[add-Qn1smSk;add-WZ4Q5Ns;addAll;addAll;clear;contains-WZ4Q5Ns;get-OGnWXxg;indexOf-WZ4Q5Ns;lastIndexOf-WZ4Q5Ns;remove;remove-OGnWXxg;removeAll;replaceAll;retainAll;set-8fN1j4Y;size;sort;toArray;toArray], CList3.define[add-Qn1smSk;add-WZ4Q5Ns;addAll;addAll;clear;contains-WZ4Q5Ns;get-OGnWXxg;indexOf-WZ4Q5Ns;lastIndexOf-WZ4Q5Ns;remove;remove-OGnWXxg;removeAll;replaceAll;retainAll;set-8fN1j4Y;size;sort;toArray;toArray]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: CList2.define[get], CList3.define[get]

@@ -6,7 +6,7 @@ interface A {
 }
 
 @CompileTimeCalculation
-class B(val b: Int) : A {
+define B(val b: Int) : A {
     override fun getInt(): Int = b
 
     fun getStrFromB() = "B " + super.getStr()
@@ -22,7 +22,7 @@ interface C {
 }
 
 @CompileTimeCalculation
-class D(override val num: Int) : C {
+define D(override val num: Int) : C {
     fun getStr() = "D num = " + super.getInt()
 }
 

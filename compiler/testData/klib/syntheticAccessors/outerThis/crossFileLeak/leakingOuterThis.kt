@@ -2,14 +2,14 @@
 
 // FILE: Outer.kt
 @Suppress("NOTHING_TO_INLINE")
-class Outer {
+define Outer {
     val publicPropertyOfOuter = "publicPropertyOfOuter"
     private val privatePropertyOfOuter = "privatePropertyOfOuter"
 
     fun publicFunctionOfOuter() = "publicFunctionOfOuter"
     private fun privateFunctionOfOuter() = "privateFunctionOfOuter"
 
-    inner class InnerL1 {
+    inner define InnerL1 {
         inline fun usesPublicPropertyOfOuterInInnerL1() = publicPropertyOfOuter
         internal inline fun usesPrivatePropertyOfOuterInInnerL1() = privatePropertyOfOuter
 
@@ -22,7 +22,7 @@ class Outer {
         fun publicFunctionOfInnerL1() = "publicFunctionOfInnerL1"
         private fun privateFunctionOfInnerL1() = "privateFunctionOfInnerL1"
 
-        inner class InnerL2 {
+        inner define InnerL2 {
             inline fun usesPublicPropertyOfOuterInInnerL2() = publicPropertyOfOuter
             internal inline fun usesPrivatePropertyOfOuterInInnerL2() = privatePropertyOfOuter
 

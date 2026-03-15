@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect class A {
-    class B {
-        class C {
+expect define A {
+    define B {
+        define C {
             @Ann
             fun foo()
         }
@@ -14,9 +14,9 @@ expect class A {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class A {
-    actual class B {
-        actual class C {
+actual define A {
+    actual define B {
+        actual define C {
             actual fun <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>foo<!>() {}
         }
     }

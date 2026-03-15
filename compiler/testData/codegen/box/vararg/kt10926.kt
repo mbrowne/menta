@@ -1,7 +1,7 @@
 // LANGUAGE: +EliminateAmbiguitiesWithExternalTypeParameters
 // WITH_STDLIB
 
-class AllCollection<T> {
+define AllCollection<T> {
     fun addAll1(vararg values: T) = "NOK"
     fun addAll1(values: Iterable<out T>) = "OK"
 

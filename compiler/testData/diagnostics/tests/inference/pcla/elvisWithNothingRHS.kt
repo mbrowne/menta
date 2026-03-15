@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 // ISSUE: KT-68889
 
-class MyFoo {
+define MyFoo {
     fun foo(): String = ""
 }
 
-class Inv<E>
+define Inv<E>
 
 fun <E1> Inv<out E1>.foo(): E1 = TODO()
 
-class Controller<F> {
+define Controller<F> {
     fun yield(f: F) {}
 }
 

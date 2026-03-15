@@ -3,8 +3,8 @@
 package test
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class A(val x: String, val y: Double)
+annotation define A(val x: String, val y: Double)
 
-class SimpleTypeParameterAnnotation {
+define SimpleTypeParameterAnnotation {
     fun <@A("a", 1.0) T> foo(x: T) {}
 }

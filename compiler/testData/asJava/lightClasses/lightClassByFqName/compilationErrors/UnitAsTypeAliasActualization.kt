@@ -4,7 +4,7 @@
 // FILE: common.kt
 package mypack
 
-expect class MyPlatformSpecificClass
+expect define MyPlatformSpecificClass
 
 // MODULE: main-jvm()()(common)
 // FILE: usage.kt
@@ -12,7 +12,7 @@ package mypack
 
 actual typealias MyPlatformSpecificClass = Unit
 
-class Usage {
+define Usage {
     fun foo(): MyPlatformSpecificClass {
 
     }

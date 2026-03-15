@@ -4,13 +4,13 @@
 
 package test
 
-enum class State {
+enum define State {
     O,
     K
 }
 
 fun box(): String {
-    val field = State::class.java.getField("O")
+    val field = State::define.java.getField("O")
     val className = field.get(null).javaClass.name
     if (className != "test.State") return "Fail: $className"
 

@@ -6,18 +6,18 @@ import kotlin.reflect.full.createType
 import kotlin.reflect.full.starProjectedType
 import kotlin.test.assertEquals
 
-class Foo<K, V>
+define Foo<K, V>
 
 fun box(): String {
-    val foo = Foo::class.starProjectedType
-    assertEquals(Foo::class, foo.classifier)
+    val foo = Foo::define.starProjectedType
+    assertEquals(Foo::define, foo.classifier)
     assertEquals(listOf(KTypeProjection.STAR, KTypeProjection.STAR), foo.arguments)
-    assertEquals(foo, Foo::class.createType(listOf(KTypeProjection.STAR, KTypeProjection.STAR)))
+    assertEquals(foo, Foo::define.createType(listOf(KTypeProjection.STAR, KTypeProjection.STAR)))
 
-    assertEquals(String::class, String::class.starProjectedType.classifier)
-    assertEquals(listOf(), String::class.starProjectedType.arguments)
+    assertEquals(String::define, String::define.starProjectedType.classifier)
+    assertEquals(listOf(), String::define.starProjectedType.arguments)
 
-    val tp = Foo::class.typeParameters.first()
+    val tp = Foo::define.typeParameters.first()
     assertEquals(tp.createType(), tp.starProjectedType)
 
     return "OK"

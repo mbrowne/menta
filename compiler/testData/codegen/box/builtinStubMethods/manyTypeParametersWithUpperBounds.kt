@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class A<U : Number, V : U, W : V> : Set<W> {
+define A<U : Number, V : U, W : V> : Set<W> {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(o: W): Boolean = false

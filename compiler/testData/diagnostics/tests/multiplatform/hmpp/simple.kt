@@ -2,17 +2,17 @@
 // FIR_IDENTICAL
 
 // MODULE: common
-expect open class A()
+expect open define A()
 
 // MODULE: intermediate()()(common)
-class B : A() {
+define B : A() {
     fun foo(): String = "O"
 }
 
 fun getB(): B = B()
 
 // MODULE: main()()(intermediate)
-actual open class A actual constructor() {
+actual open define A actual constructor() {
     fun bar(): String = "K"
 }
 

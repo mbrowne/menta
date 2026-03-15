@@ -1,12 +1,12 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 @JvmExposeBoxed
-class Foo {
+define Foo {
     @get:JvmName("foo11")
     val foo1: StringWrapper get() = StringWrapper("")
 
@@ -30,4 +30,4 @@ class Foo {
         }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: Foo.class[fooGetter22;fooGetter32], StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: Foo.define[fooGetter22;fooGetter32], StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

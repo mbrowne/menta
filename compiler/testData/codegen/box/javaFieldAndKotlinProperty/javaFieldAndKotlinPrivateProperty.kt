@@ -4,12 +4,12 @@
 // More or less duplicates the case in KT-34943/KT-54393
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public String a = "FAIL";
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     private val a = "OK"
 
     fun x() = a

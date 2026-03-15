@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: K.kt
 
-open class K {
+open define K {
     companion object {
         fun foo() {}
     }
@@ -10,14 +10,14 @@ open class K {
 
 // FILE: D.java
 
-class D extends K {
+define D extends K {
     static int b = 1;
     static void bar() {}
 }
 
 // FILE: K2.kt
 
-class K2 {
+define K2 {
     companion object {
         fun baz() {}
     }

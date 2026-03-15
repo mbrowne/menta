@@ -178,7 +178,6 @@ open class PsiRawFirBuilder(
                 this == null -> null
                 hasModifier(FINAL_KEYWORD) -> Modality.FINAL
                 hasModifier(SEALED_KEYWORD) -> if (this@modality is KtClassOrObject) Modality.SEALED else null
-                hasModifier(ABSTRACT_KEYWORD) -> Modality.ABSTRACT
                 else -> if (hasModifier(OPEN_KEYWORD)) Modality.OPEN else null
             }
         }
@@ -1125,9 +1124,17 @@ open class PsiRawFirBuilder(
                 val classIsKotlinNothing = constructedClassId == StandardClassIds.Nothing
                 // kotlin.Nothing doesn't have `Any` supertype, but does have delegating constructor call to Any
                 if (!classIsKotlinNothing) {
-                    container.superTypeRefs += implicitAnyType
+                    if (this is KtDefine && this.isDynamic()) {
+                        addDynamicObjectSupertype(this, container)
+                        delegatedSuperTypeRef = container.superTypeRefs.first()
+                        container.superTypeRefs += implicitAnyType
+                    } else {
+                        container.superTypeRefs += implicitAnyType
+                        delegatedSuperTypeRef = implicitAnyType
+                    }
+                } else {
+                    delegatedSuperTypeRef = implicitAnyType
                 }
-                delegatedSuperTypeRef = implicitAnyType
             }
 
             // TODO: in case we have no primary constructor,
@@ -1924,9 +1931,9 @@ open class PsiRawFirBuilder(
                     val classKind = when (classOrObject) {
                         is KtObjectDeclaration -> ClassKind.OBJECT
                         is KtDefine -> when {
+                            classOrObject.hasModifier(org.jetbrains.kotlin.lexer.KtTokens.ANNOTATION_KEYWORD) -> ClassKind.ANNOTATION_CLASS
                             classOrObject.isInterface() -> ClassKind.INTERFACE
                             classOrObject.isEnum() -> ClassKind.ENUM_CLASS
-                            classOrObject.isAnnotation() -> ClassKind.ANNOTATION_CLASS
                             else -> ClassKind.CLASS
                         }
                         else -> throw AssertionError("Unexpected class or object: ${classOrObject.text}")
@@ -2076,6 +2083,31 @@ open class PsiRawFirBuilder(
                     it.initContainingClassForLocalAttr()
                 }
                 it.initContainingScriptOrReplAttr()
+            }
+        }
+
+        private fun addDynamicObjectSupertype(
+            classDefine: KtDefine,
+            classBuilder: FirClassBuilder,
+        ) {
+            classBuilder.superTypeRefs += buildUserTypeRef {
+                source = classDefine.toFirSourceElement()
+                isMarkedNullable = false
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("menta"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("dynamic"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("DynamicObject"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
             }
         }
 

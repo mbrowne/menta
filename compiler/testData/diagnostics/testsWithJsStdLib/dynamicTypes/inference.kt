@@ -5,7 +5,7 @@
 fun <T> foo(t1: T, t2: T): T = t1
 
 interface Tr
-class C: Tr
+define C: Tr
 fun <T: Tr> foo1(t1: T, t2: T): T = t1
 
 fun test(d: dynamic, b: Boolean, n: String?) {
@@ -19,7 +19,7 @@ fun test(d: dynamic, b: Boolean, n: String?) {
     fromElvis.<!DEBUG_INFO_DYNAMIC!>doo<!>()
 }
 
-class In<in T>(t: T)
+define In<in T>(t: T)
 fun <T> contra(a: In<T>, b: In<T>): T = null!!
 
 fun testContra(d: dynamic) {

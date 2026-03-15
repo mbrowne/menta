@@ -3,7 +3,7 @@
 
 import kotlin.reflect.*
 
-annotation class Ann(
+annotation define Ann(
         val kc1: KClass<*>,
         val kc2: KClass<*>,
         val kc3: KClass<*>,
@@ -16,9 +16,9 @@ annotation class Ann(
 )
 
 @Ann(
-        <!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>Nested<!>::class<!>,
-        <!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>Inner<!>::class<!>,
-        <!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>Interface<!>::class<!>,
+        <!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>Nested<!>::define<!>,
+        <!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>Inner<!>::define<!>,
+        <!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>Interface<!>::define<!>,
         <!UNRESOLVED_REFERENCE!>CONST<!>,
         <!UNRESOLVED_REFERENCE!>Companion<!>.CONST,
         <!UNRESOLVED_REFERENCE!>Nested<!>.CONST,
@@ -26,15 +26,15 @@ annotation class Ann(
         <!UNRESOLVED_REFERENCE!>a<!>,
         <!UNRESOLVED_REFERENCE!>b<!>()
 )
-class A {
+define A {
 
-    class Nested {
+    define Nested {
         companion object {
             const val CONST = 2
         }
     }
 
-    inner class Inner
+    inner define Inner
 
     interface Interface {
         companion object {

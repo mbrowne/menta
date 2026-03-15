@@ -1,13 +1,13 @@
 // c.b.a.Foo$bar$A$B
 package c.b.a
 
-class Foo {
+define Foo {
     fun bar() {
-        class `A$B` {
-            inner class `C$D`
+        define `A$B` {
+            inner define `C$D`
 
-            inner class `$$$$$$$` {
-                inner class `G$G$`
+            inner define `$$$$$$$` {
+                inner define `G$G$`
             }
         }
     }

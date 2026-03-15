@@ -8,7 +8,7 @@ package x
 val b : Foo = Foo()
 val a1 = b.compareTo(2)
 
-class Foo() {
+define Foo() {
   fun compareTo(other : Byte)   : Int = 0
   fun compareTo(other : Char)   : Int = 0
 }

@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE)
-annotation class Composable
+annotation define Composable
 
 fun bar(p: @Composable ()->Unit) {}
 

@@ -2,16 +2,16 @@
 // FIR_IDENTICAL
 
 // FILE: BaseOperation.java
-class BaseOperation<T extends Bar, L extends Foo<T>> {}
+define BaseOperation<T extends Bar, L extends Foo<T>> {}
 
 // FILE: Foo.java
-class Foo<E extends Bar> { }
+define Foo<E extends Bar> { }
 
 // FILE: Bar.java
-class Bar {}
+define Bar {}
 
 // FILE: Test.java
-public class Test extends BaseOperation {}
+public define Test extends BaseOperation {}
 
 // FILE: main.kt
 fun main() {

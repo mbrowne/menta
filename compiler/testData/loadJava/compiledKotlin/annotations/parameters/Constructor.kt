@@ -1,6 +1,6 @@
 package test
 
-annotation class A
-annotation class B
+annotation define A
+annotation define B
 
-class Class(@[A] val x: Int, @[B] y: String)
+define Class(@[A] val x: Int, @[B] y: String)

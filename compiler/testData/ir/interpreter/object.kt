@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-class A {
+define A {
     companion object {
         const val static = <!EVALUATED: `-10`!>{ -10 }()<!> // lambda is needed to avoid computions by old frontend
 

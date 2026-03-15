@@ -16,36 +16,36 @@ fun test(classifier: KClassifier, arguments: List<KTypeProjection>) {
     }
 }
 
-class Outer<O> {
-    inner class Inner<I>
-    class Nested<N>
+define Outer<O> {
+    inner define Inner<I>
+    define Nested<N>
 }
 
 fun box(): String {
     val p = KTypeProjection.STAR
 
-    test(String::class, listOf(p))
-    test(String::class, listOf(p, p))
-    test(List::class, listOf())
-    test(List::class, listOf(p, p))
-    test(Map::class, listOf())
-    test(Map::class, listOf(p))
-    test(Map::class, listOf(p, p, p))
-    test(Array<Any>::class, listOf())
+    test(String::define, listOf(p))
+    test(String::define, listOf(p, p))
+    test(List::define, listOf())
+    test(List::define, listOf(p, p))
+    test(Map::define, listOf())
+    test(Map::define, listOf(p))
+    test(Map::define, listOf(p, p, p))
+    test(Array<Any>::define, listOf())
 
-    test(Outer::class, listOf())
-    test(Outer::class, listOf(p, p))
+    test(Outer::define, listOf())
+    test(Outer::define, listOf(p, p))
 
     // Outer.Inner takes two arguments: first for O, second for I
-    test(Outer.Inner::class, listOf())
-    test(Outer.Inner::class, listOf(p))
-    test(Outer.Inner::class, listOf(p, p, p))
+    test(Outer.Inner::define, listOf())
+    test(Outer.Inner::define, listOf(p))
+    test(Outer.Inner::define, listOf(p, p, p))
 
     // Outer.Nested takes one argument for N
-    test(Outer.Nested::class, listOf())
-    test(Outer.Nested::class, listOf(p, p))
+    test(Outer.Nested::define, listOf())
+    test(Outer.Nested::define, listOf(p, p))
 
-    test(Outer::class.typeParameters.single(), listOf(p))
+    test(Outer::define.typeParameters.single(), listOf(p))
 
     return "OK"
 }

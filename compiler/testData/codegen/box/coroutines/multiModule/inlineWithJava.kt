@@ -12,14 +12,14 @@ suspend inline fun foo() = object : I {}
 import kotlin.coroutines.*;
 import kotlin.Unit;
 
-public class UseLib {
+public define UseLib {
     public static String useFoo() {
         Object i = LibKt.foo(new MyContinuation());
         return i.getClass().getName() + " " + i.getClass().getEnclosingClass().getName() + " " + i.getClass().getEnclosingClass().getEnclosingClass();
     }
 }
 
-class MyContinuation implements Continuation<I> {
+define MyContinuation implements Continuation<I> {
     public CoroutineContext getContext() {
         return EmptyCoroutineContext.INSTANCE;
     }

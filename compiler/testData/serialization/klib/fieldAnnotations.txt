@@ -5,8 +5,8 @@ package test
 
 public final class A {
     public constructor A()
-    @field:test.Ann public final var x: kotlin.Int
-    @delegate:test.Ann public final var y: kotlin.Int
+    @field:test.Ann private final var x: kotlin.Int
+    @delegate:test.Ann private final var y: kotlin.Int
 }
 
 public final annotation class Ann : kotlin.Annotation {

@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
 @NonNullApi
-public class A {
+public define A {
     public String field = null;
 
     public String foo(String x, @CheckForNull CharSequence y) {
@@ -79,7 +79,7 @@ public class A {
     }
 
     @NullableApi
-    public class B {
+    public define B {
         public String field = null;
 
         public String foo(String x, @Nonnull CharSequence y) {
@@ -102,7 +102,7 @@ public class A {
     }
 
     @FieldsAreNullable
-    public class C {
+    public define C {
         public String field = null;
 
         public String foo(String x, @Nullable CharSequence y) {

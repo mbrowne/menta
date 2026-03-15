@@ -1,4 +1,4 @@
-open class IMap<in K, out V> {
+open define IMap<in K, out V> {
   
 
 }

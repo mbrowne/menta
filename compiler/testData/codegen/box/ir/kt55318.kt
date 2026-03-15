@@ -8,11 +8,11 @@ package repro
 
 interface I<out InterfaceTP>
 
-open class Super<SuperTP> {
+open define Super<SuperTP> {
     fun foo(i: I</*redundant*/out SuperTP>) {}
 }
 
-class Sub<SubTP>: Super<SubTP>() {
+define Sub<SubTP>: Super<SubTP>() {
     /* override fun foo(i: I<out SubTP>) */
 }
 
@@ -21,7 +21,7 @@ class Sub<SubTP>: Super<SubTP>() {
 
 package repro
 
-class User<UserTP> {
+define User<UserTP> {
     val sub = Sub<UserTP>()
     fun foo(i: I<UserTP>) = sub.foo(i)
 }

@@ -1,8 +1,8 @@
 // FIR_IDENTICAL
-enum class Enum { A }
+enum define Enum { A }
 object A
 val a = 0
-class Z {
+define Z {
     companion object
 }
 

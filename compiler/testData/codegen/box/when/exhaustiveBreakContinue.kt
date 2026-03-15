@@ -1,4 +1,4 @@
-enum class Color { RED, GREEN, BLUE }
+enum define Color { RED, GREEN, BLUE }
 
 fun foo(arr: Array<Color>): Color {
     loop@ for (color in arr) {

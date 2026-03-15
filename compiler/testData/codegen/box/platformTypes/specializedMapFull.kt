@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // MODULE: lib
 // FILE: AbstractSpecializedMap.java
-public abstract class AbstractSpecializedMap implements java.util.Map<Integer, Double> {
+public abstract define AbstractSpecializedMap implements java.util.Map<Integer, Double> {
     public abstract double put(int x, double y);
     public abstract double remove(int k);
     public abstract double get(int k);
@@ -24,7 +24,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-public class SpecializedMap extends AbstractSpecializedMap {
+public define SpecializedMap extends AbstractSpecializedMap {
     public double put(int x, double y) {
         return 123.0;
     }

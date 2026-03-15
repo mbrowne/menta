@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty
 
-class A {
+define A {
     val a by MyProperty()
 
     fun test() {
@@ -12,7 +12,7 @@ class A {
     }
 }
 
-class MyProperty<R> {
+define MyProperty<R> {
     operator fun getValue(thisRef: R, desc: KProperty<*>): Int = throw Exception("$thisRef $desc")
 }
 

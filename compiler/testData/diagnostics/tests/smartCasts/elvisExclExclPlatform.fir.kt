@@ -5,7 +5,7 @@ package p;
 
 import org.jetbrains.annotations.*;
 
-class My {
+define My {
     @Nullable static String create() {
         return "";
     }

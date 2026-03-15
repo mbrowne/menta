@@ -5,10 +5,10 @@
 // ISSUE: KT-67875
 
 // FILE: MyClass.java
-public class MyClass<T> {}
+public define MyClass<T> {}
 
 // FILE: MyClassBuilder.java
-public class MyClassBuilder<T> {
+public define MyClassBuilder<T> {
     public MyClassBuilder<T> makeClass(T... values) {}
 
     public MyClassBuilder<T> makeClass(Iterable<? extends T> it) {}

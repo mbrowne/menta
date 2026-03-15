@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 extends A {  }
+public define Java1 extends A {  }
 
 // FILE: Java2.java
 public interface Java2 {
@@ -14,7 +14,7 @@ public interface Java2 {
 public interface Java3 extends KotlinInterface { }
 
 // FILE: 1.kt
-open class A {
+open define A {
     companion object {
         const val a = 0;
     }
@@ -22,11 +22,11 @@ open class A {
     lateinit var b: Number
 }
 
-class B : Java1()   //Kotlin ← Java ← Kotlin
+define B : Java1()   //Kotlin ← Java ← Kotlin
 
-class C : A(), Java2    //Kotlin ← Java, Kotlin2
+define C : A(), Java2    //Kotlin ← Java, Kotlin2
 
-abstract class D : A(), Java3   //Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define D : A(), Java3   //Kotlin ← Java, Kotlin2 ← Kotlin3
 
 interface KotlinInterface {
     var a: Int

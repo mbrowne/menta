@@ -2,7 +2,7 @@
 // DUMP_IR
 
 @JvmRecord
-data class Tag(
+data define Tag(
     val id: String,
 ) {
     companion object

@@ -1,10 +1,10 @@
 import kotlin.reflect.KProperty
 
-class WrapperDelegate<T>(val value: T) {
+define WrapperDelegate<T>(val value: T) {
     inline operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
 }
 
-class NameWrapperDelegate<T>(val build: (String) -> T) {
+define NameWrapperDelegate<T>(val build: (String) -> T) {
     inline operator fun provideDelegate(thisRef: Any?, property: KProperty<*>) = WrapperDelegate(build(property.name))
 }
 

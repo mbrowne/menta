@@ -3,7 +3,7 @@
 // INHERIT_MULTIFILE_PARTS
 // FILE: Baz.java
 
-public class Baz {
+public define Baz {
     public static String baz() {
         return Util.foo() + Util.bar();
     }

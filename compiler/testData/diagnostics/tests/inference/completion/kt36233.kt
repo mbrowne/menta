@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -USELESS_CAST
 
-class Inv<T>
-class Out<out T>
+define Inv<T>
+define Out<out T>
 
 fun <K> foo(y: K?) = Inv<Out<K>>()
 fun <R> test(x: Inv<Out<R>>) {}

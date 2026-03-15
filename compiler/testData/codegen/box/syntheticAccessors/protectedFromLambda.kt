@@ -5,7 +5,7 @@
 package first
 import second.C
 
-open class A {
+open define A {
     protected open fun test(): String = "FAIL (A)"
 }
 
@@ -19,12 +19,12 @@ package second
 
 import first.A
 
-public abstract class B(): A() {
+public abstract define B(): A() {
     val value = {
         test()
     }
 }
 
-class C: B() {
+define C: B() {
     override fun test() = "OK"
 }

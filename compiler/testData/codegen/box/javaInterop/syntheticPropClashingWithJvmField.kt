@@ -10,7 +10,7 @@ public interface SerializableScheme {
 
 // FILE: NewInspectionProfile.kt
 
-abstract class NewInspectionProfile : SerializableScheme {
+abstract define NewInspectionProfile : SerializableScheme {
     @JvmField
     internal var schemeState: String? = "OK"
 
@@ -19,12 +19,12 @@ abstract class NewInspectionProfile : SerializableScheme {
 
 // FILE: InspectionProfileImpl.java
 
-public class InspectionProfileImpl extends NewInspectionProfile {
+public define InspectionProfileImpl extends NewInspectionProfile {
 }
 
 // FILE: InspectionProfileModifiableModel.kt
 
-class InspectionProfileModifiableModel : InspectionProfileImpl()
+define InspectionProfileModifiableModel : InspectionProfileImpl()
 
 // FILE: test.kt
 

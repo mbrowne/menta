@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class special
+annotation define special
 
 @Target(AnnotationTarget.TYPE)
-annotation class base
+annotation define base
 
 fun transform(i: Int, tr: (<!WRONG_ANNOTATION_TARGET!>@special<!> Int) -> Int): Int = @special tr(@special i)
 

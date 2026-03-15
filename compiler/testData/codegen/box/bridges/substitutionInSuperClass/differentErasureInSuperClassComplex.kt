@@ -1,4 +1,4 @@
-public open class A<T> {
+public open define A<T> {
     fun foo(x: T) = "O"
     fun foo(x: A<T>) = "K"
 }
@@ -13,7 +13,7 @@ interface D {
 }
 
 // Shoudt not be reported CONFLICTING_INHERITED_JVM_DECLARATIONS
-class B : A<A<String>>(), C<A<String>>, D
+define B : A<A<String>>(), C<A<String>>, D
 
 fun box(): String {
     val x: A<String> = A()

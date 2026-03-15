@@ -4,7 +4,7 @@
 fun Int.invoke(a: Int) {}
 fun Int.invoke(a: Int, b: Int) {}
 
-class SomeClass
+define SomeClass
 
 fun test(identifier: SomeClass, fn: String.() -> Unit) {
     <!NONE_APPLICABLE!>identifier<!>()

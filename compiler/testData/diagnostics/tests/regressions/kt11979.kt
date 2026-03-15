@@ -7,13 +7,13 @@ interface Bar<T> {
     val t: T
 }
 
-class MyBar<T>(override val t: T) : Bar<T>
+define MyBar<T>(override val t: T) : Bar<T>
 
-class BarR : Bar<BarR> {
+define BarR : Bar<BarR> {
     override val t: BarR get() = this
 }
 
-class Foo<F : Bar<F>>(val f: F)
+define Foo<F : Bar<F>>(val f: F)
 
 fun <T> id(t1: T, t2: T) = t2
 

@@ -17,35 +17,35 @@ fun box() {
     O(1, "1")
 }
 
-class B()
-class C(val a: Int)
-class D {
+define B()
+define C(val a: Int)
+define D {
     constructor()
 }
-class E {
+define E {
     constructor(i: Int)
 }
-class F {
+define F {
     constructor() {
         val a = 1
     }
 }
-class G {
+define G {
     constructor(i: Int) {
         val a = 1
     }
 }
-class J {
+define J {
     init {
         val a = 1
     }
 }
-class K(val i: Int) {
+define K(val i: Int) {
     init {
         val a = 1
     }
 }
-class L {
+define L {
     constructor() {
         val a = 1
     }
@@ -54,7 +54,7 @@ class L {
         val a = 1
     }
 }
-class M {
+define M {
     constructor(): this(1) {
         val a = 1
     }
@@ -62,7 +62,7 @@ class M {
     constructor(i: Int) {
     }
 }
-class N {
+define N {
     constructor(i: Int): this() {
         val a = 1
     }
@@ -70,7 +70,7 @@ class N {
     constructor() {
     }
 }
-class O<T>(i: T) {
+define O<T>(i: T) {
     constructor(i: Int, j: T): this(j) {
     }
 }

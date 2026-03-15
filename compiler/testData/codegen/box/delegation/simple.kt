@@ -12,7 +12,7 @@ public interface Base {
 
 // FILE: main.kt
 
-class Fail : Base {
+define Fail : Base {
     override fun getValue() = "Fail"
 }
 

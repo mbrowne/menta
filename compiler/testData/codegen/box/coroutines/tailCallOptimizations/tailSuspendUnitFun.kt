@@ -47,7 +47,7 @@ suspend fun useGenericReturningUnit() {
     generic<Unit>()
 }
 
-class Generic<T> {
+define Generic<T> {
     suspend fun foo() = generic<T>()
 }
 suspend fun useGenericClass(g: Generic<Unit>) {

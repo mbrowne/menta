@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: lib.kt
-class A {
+define A {
 
     @PublishedApi
     internal fun published() = "OK"

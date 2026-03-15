@@ -26,7 +26,7 @@ fun yield(yield: Int) {
     yield(4)
     yield {}
 
-    class yield<T: yield<T>>
+    define yield<T: yield<T>>
 
     return@yield
     return@yield Unit
@@ -61,7 +61,7 @@ fun yield(yield: Int) {
     `yield`(4)
     `yield` {}
 
-    class `yield`<T: `yield`<T>>
+    define `yield`<T: `yield`<T>>
 
     return@`yield`
     return@`yield` Unit

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -ABSTRACT_SUPER_CALL
 
-abstract class A {
+abstract define A {
     open fun foo(a: String = "default") {
     }
 
@@ -12,7 +12,7 @@ abstract class A {
     abstract fun foo3(a: String = "default")
 }
 
-open class B : A() {
+open define B : A() {
     fun test() {
         super.foo("123")
         super.<!SUPER_CALL_WITH_DEFAULT_PARAMETERS!>foo<!>()

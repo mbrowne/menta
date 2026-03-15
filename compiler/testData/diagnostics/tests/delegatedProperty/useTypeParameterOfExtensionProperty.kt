@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 
-class Delegate<T : Any> {
+define Delegate<T : Any> {
     private var v: T? = null
     operator fun getValue(thisRef: Any?, kp: Any?): T = v!!
     operator fun setValue(thisRef: Any?, kp: Any?, newValue: T) { v = newValue }
@@ -9,7 +9,7 @@ class Delegate<T : Any> {
 
 var <T : Any> List<T>.foo <!DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR!>by Delegate<T>()<!>
 
-class Wrapper<T>(val v: T? = null)
+define Wrapper<T>(val v: T? = null)
 
 operator fun <T> Wrapper<T>.getValue(thisRef: Any?, kp: Any?): T = v!!
 

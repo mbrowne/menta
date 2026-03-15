@@ -2,11 +2,11 @@
 
 // WITH_REFLECT
 
-class A
+define A
 
 fun box(): String {
-    val a1 = A::class.java.kotlin
-    val a2 = A::class
+    val a1 = A::define.java.kotlin
+    val a2 = A::define
 
     if (a1 != a2) return "Fail equals"
     if (a1.hashCode() != a2.hashCode()) return "Fail hashCode"

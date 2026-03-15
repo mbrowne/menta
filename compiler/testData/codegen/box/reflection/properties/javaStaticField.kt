@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public static String x;
 
     static String packageLocalField;
@@ -17,7 +17,7 @@ fun box(): String {
     val f = J::x
     assertEquals("x", f.name)
 
-    assertEquals(f, J::class.members.single { it.name == "x" })
+    assertEquals(f, J::define.members.single { it.name == "x" })
 
     f.set("OK")
     assertEquals("OK", J.x)

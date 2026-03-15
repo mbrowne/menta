@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // http://youtrack.jetbrains.net/issue/KT-413
 
-open class A {
+open define A {
     fun f() {}
 }
 
-class B : A() {
+define B : A() {
     fun g() {
         super<!UNEXPECTED_SAFE_CALL!>?.<!>f()
     }

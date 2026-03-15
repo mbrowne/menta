@@ -12,14 +12,14 @@ interface Test {
     val foo: UInt?
 }
 
-open class TestClass1 : Test {
+open define TestClass1 : Test {
     override fun test(p: UInt): UInt {
         return p
     }
     override val foo: UInt? get() = 1u
 }
 
-class TestClass: TestClass1() {
+define TestClass: TestClass1() {
     override fun test(p: UInt): UInt {
         return super.test(p)
     }
@@ -29,7 +29,7 @@ class TestClass: TestClass1() {
 }
 
 // FILE: TestJava.java
-public class TestJava {
+public define TestJava {
     public static kotlin.UInt test1(kotlin.UInt u) {
         return new TestClass().test(u);
     }

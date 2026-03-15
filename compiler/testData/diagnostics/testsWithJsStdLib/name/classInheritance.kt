@@ -4,7 +4,7 @@
 
 // FILE: FinalClass.kt
 package FinalClass
-class Class {
+define Class {
     fun test() {}
     fun test(x: Int) = x
     fun test(x: String) = x
@@ -28,7 +28,7 @@ class Class {
 
 // FILE: OpenClassWithFinalMethods.kt
 package OpenClassWithFinalMethods
-open class Class {
+open define Class {
     fun test() {}
     fun test(x: Int) = x
     fun test(x: String) = x
@@ -41,7 +41,7 @@ open class Class {
     fun String.test(x: String)  = x
 }
 
-class MyClass1 : Class() {
+define MyClass1 : Class() {
     fun test(x: Char) = x
 
     fun Char.test() {}
@@ -50,7 +50,7 @@ class MyClass1 : Class() {
 
 // FILE: OpenClassWithOpenMethods.kt
 package OpenClassWithOpenMethods
-open class Class {
+open define Class {
     open fun test() {}
     open fun test(x: Int) = x
     open fun test(x: String) = x
@@ -63,7 +63,7 @@ open class Class {
     open fun String.test(x: String)  = x
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     fun test(x: List<Int>) = x
     fun test(vararg x: Int) = x
 
@@ -73,72 +73,72 @@ class MyClass : Class() {
 
 // FILE: OpenInheritedMethodClashedWithChildOverload.kt
 package OpenInheritedMethodClashedWithChildOverload
-open class ExternalClass {
+open define ExternalClass {
     @JsName("test") open fun noTest(x: String): String = x
 }
 
-class MyClass : ExternalClass() {
+define MyClass : ExternalClass() {
     fun test() {}
 }
 
 // FILE: OpenInheritedMethodClashedWithChildProperty.kt
 package OpenInheritedMethodClashedWithChildProperty
-open class Class {
+open define Class {
     @JsName("test") open fun test(x: String): String = x
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     val test = 1
 }
 
 // FILE: OpenInheritedPropertyClashedWithChildMethod.kt
 package OpenInheritedPropertyClashedWithChildMethod
-open class Class {
+open define Class {
     open val test: String = ""
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     fun test() {}
 }
 
 // FILE: OpenInheritedMethodClashedWithChildMethodJsName.kt
 package OpenInheritedMethodClashedWithChildMethodJsName
-open class Class {
+open define Class {
     open fun test() {}
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     @JsName("test") fun notTest(x: String) = x
 }
 
 // FILE: OpenInheritedMethodClashedWithChildPropertyJsName.kt
 package OpenInheritedMethodClashedWithChildPropertyJsName
-open class Class {
+open define Class {
     open fun test() {}
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     @JsName("test") val notTest = 1
 }
 
 // FILE: OpenInheritedMethodClashedWithChildPropertyGetterJsName.kt
 package OpenInheritedMethodClashedWithChildPropertyGetterJsName
-open class Class {
+open define Class {
     open fun test() {}
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     val notTest: Int
         @JsName("test") get() = 1
 }
 
 // FILE: OpenInheritedMethodClashedWithChildPropertySetterJsName.kt
 package OpenInheritedMethodClashedWithChildPropertySetterJsName
-open class Class {
+open define Class {
     open fun test() {}
 }
 
-class MyClass : Class() {
+define MyClass : Class() {
     fun <T> ignore(x: T) = x
 
     var notTest: Int
@@ -148,7 +148,7 @@ class MyClass : Class() {
 
 // FILE: OpenInheritedMethodClashedWithOtherInheritedMethod.kt
 package OpenInheritedMethodClashedWithOtherInheritedMethod
-open class Class {
+open define Class {
     open fun test() {}
 }
 
@@ -156,11 +156,11 @@ interface MyInterface {
     @JsName("test") fun noTest(x: Int) = 1
 }
 
-class MyClass : Class(), MyInterface
+define MyClass : Class(), MyInterface
 
 // FILE: OpenInheritedMethodNotClashedWithAbstractMethod.kt
 package OpenInheritedMethodNotClashedWithAbstractMethod
-open class Class {
+open define Class {
     open fun test(): String = ""
 }
 
@@ -168,11 +168,11 @@ interface MyInterface {
     fun test(): String
 }
 
-class MyClass : Class(), MyInterface
+define MyClass : Class(), MyInterface
 
 // FILE: OpenInheritedMethodNotClashedWithDefaultInterfaceMethod.kt
 package OpenInheritedMethodNotClashedWithDefaultInterfaceMethod
-open class Class {
+open define Class {
     open fun test(): String = "0"
 }
 
@@ -180,7 +180,7 @@ interface MyInterface {
     fun test(): String = "1"
 }
 
-class MyClass : Class(), MyInterface {
+define MyClass : Class(), MyInterface {
     override fun test(): String = "2"
 }
 
@@ -190,7 +190,7 @@ interface MyInterface1 {
     @JsName("test") fun test1(): Int
 }
 
-class MyClass : MyInterface1 {
+define MyClass : MyInterface1 {
     <!JS_NAME_CLASH!>override fun test1()<!> = 1
     <!JS_NAME_CLASH!>@JsName("test") fun test2(): Int<!> = 2
 }
@@ -205,7 +205,7 @@ interface MyInterface2 {
     @JsName("test") fun test2(): Int
 }
 
-class MyClass : MyInterface1, MyInterface2 {
+define MyClass : MyInterface1, MyInterface2 {
     <!JS_NAME_CLASH!>override fun test1()<!> = 1
     <!JS_NAME_CLASH!>override fun test2()<!> = 2
 }

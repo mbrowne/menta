@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class WithCompanion {
+define WithCompanion {
     companion object {
         @JvmStatic
         fun foo(x: Int = 1) {}

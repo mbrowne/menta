@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE -DEBUG_INFO_MISSING_UNRESOLVED
 
-open class Base {
+open define Base {
     open fun foo() {}
 }
 
-open class GenericBase<T> {
+open define GenericBase<T> {
     open fun foo() {}
 }
 
-class Unrelated {
+define Unrelated {
     fun foo() {}
 }
 
@@ -17,7 +17,7 @@ typealias B = Base
 typealias U = Unrelated
 typealias GB<T> = GenericBase<T>
 
-class TestSuperForBase : B() {
+define TestSuperForBase : B() {
     typealias MyBase = B
 
     override fun foo() {
@@ -30,7 +30,7 @@ class TestSuperForBase : B() {
 
 typealias TopLevelMyBaseInt = GB<Int>
 
-class TestSuperForGenericBase<T> : GB<T>() {
+define TestSuperForGenericBase<T> : GB<T>() {
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias MyBase = GB<T>
     typealias MyBaseInt = GB<Int>
 

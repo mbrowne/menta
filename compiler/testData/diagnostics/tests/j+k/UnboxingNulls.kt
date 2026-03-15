@@ -3,7 +3,7 @@
 // FILE: a/Test.java
 package a;
 
-public class Test<T> {
+public define Test<T> {
   T t() {return null;}
 }
 // FILE: b.kt

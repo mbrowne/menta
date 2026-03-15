@@ -6,9 +6,9 @@ package testing
 
 object TopLevelObject
 
-class Outer {
-    inner class Inner
-    class Nested
+define Outer {
+    inner define Inner
+    define Nested
 }
 
 // MODULE: library2
@@ -17,9 +17,9 @@ package testing
 
 object TopLevelObject
 
-class Outer {
-    inner class Inner
-    class Nested
+define Outer {
+    inner define Inner
+    define Nested
 }
 
 // MODULE: main(library1, library2)

@@ -1,4 +1,4 @@
-class Identifier<T>(t : T?, myHasDollar : Boolean) {
+define Identifier<T>(t : T?, myHasDollar : Boolean) {
     private val myT : T?
 
     public fun getName() : T? { return myT }

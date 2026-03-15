@@ -6,7 +6,7 @@
 import kotlin.coroutines.*
 import helpers.*
 
-class Controller {
+define Controller {
     var res = "FAIL 1"
 }
 

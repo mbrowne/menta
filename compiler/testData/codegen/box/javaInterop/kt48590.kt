@@ -8,10 +8,10 @@ public interface Foo<R> {
 }
 
 // FILE: Bar.java
-public class Bar<K> {}
+public define Bar<K> {}
 
 // FILE: main.kt
-inline fun <reified E: Any> Foo<*>.into(): String = into(E::class.java)
+inline fun <reified E: Any> Foo<*>.into(): String = into(E::define.java)
 
 fun box(): String {
     return (object : Foo<Any> {

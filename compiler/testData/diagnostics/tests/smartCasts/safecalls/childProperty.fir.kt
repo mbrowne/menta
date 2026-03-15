@@ -2,12 +2,12 @@
 // ISSUE: KT-54443
 // WITH_STDLIB
 
-class A {
+define A {
     val b: Int? = 1
     val e: C? = C()
 }
 
-class C {
+define C {
     val d: Int? = 2
 }
 

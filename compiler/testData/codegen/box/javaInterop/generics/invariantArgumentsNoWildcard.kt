@@ -2,7 +2,7 @@
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static String test() {
         return MainKt.bar(MainKt.foo());
     }
@@ -10,9 +10,9 @@ public class JavaClass {
 
 // FILE: main.kt
 
-class Pair<out X, out Y>(val x: X, val y: Y)
+define Pair<out X, out Y>(val x: X, val y: Y)
 
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
 fun foo(): Inv<Pair<CharSequence, CharSequence>> = Inv(Pair("O", "K"))
 

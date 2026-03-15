@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-class B {
+define B {
     var x: Int = 0
         set(@IntroducedAt("1") value) {
         field = value

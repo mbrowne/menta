@@ -3,7 +3,7 @@
 // Issue: KT-25114
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class WithPrivateCompanion {
+define WithPrivateCompanion {
     private companion object {
         @JvmStatic
         val staticVal1: Int = 42

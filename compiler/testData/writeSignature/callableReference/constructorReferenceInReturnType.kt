@@ -1,8 +1,8 @@
 // KT-15473 Invalid KFunction byte code signature for callable references
 
-class Request(val id: Long)
+define Request(val id: Long)
 
-open class Foo {
+open define Foo {
     open fun request() = ::Request
 }
 

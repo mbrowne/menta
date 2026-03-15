@@ -1,6 +1,6 @@
 package toplevelObjectDeclarations
 
-open class Foo(y : Int) {
+open define Foo(y : Int) {
   ~foo()~open fun foo() : Int = 1
 }
 

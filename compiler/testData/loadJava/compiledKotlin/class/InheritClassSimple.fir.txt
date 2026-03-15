@@ -1,6 +1,4 @@
-public abstract class Aaa : R|kotlin/Any| {
-    public constructor(): R|test/Aaa|
-
+public abstract interface Aaa : R|kotlin/Any| {
 }
 
 public final class Bbb : R|test/Aaa| {

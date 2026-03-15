@@ -5,7 +5,7 @@
 // FILE: F.java
 import java.util.function.Function;
 
-public class F {
+public define F {
     public static <T, U> U passNull(Function<? super T, ? extends U> f) {
         return f.apply(null);
     }

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(val s: Int)
+value define UInt(val s: Int)
 
 fun test(a1: Any, a2: UInt?, a3: Any?, a4: Any?): Int {
     val b1 = a1 as UInt

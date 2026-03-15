@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-47381
 
-class A
+define A
 
 var globalA: A = TODO()
 

@@ -6,7 +6,7 @@ var setterInvoked = 0
 var backing = 42
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Delegate<T: Int>(val ignored: T) {
+value define Delegate<T: Int>(val ignored: T) {
 
     operator fun getValue(thisRef: Any?, prop: Any?) =
         backing

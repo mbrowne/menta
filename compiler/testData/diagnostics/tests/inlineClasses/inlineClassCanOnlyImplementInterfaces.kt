@@ -3,16 +3,16 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-abstract class AbstractBaseClass
+abstract define AbstractBaseClass
 
-open class OpenBaseClass
+open define OpenBaseClass
 
 interface BaseInterface
 
-inline class TestExtendsAbstractClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>AbstractBaseClass<!>()
+inline define TestExtendsAbstractClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>AbstractBaseClass<!>()
 
-inline class TestExtendsOpenClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>OpenBaseClass<!>()
+inline define TestExtendsOpenClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>OpenBaseClass<!>()
 
-inline class TestImplementsInterface(val x: Int) : BaseInterface
+inline define TestImplementsInterface(val x: Int) : BaseInterface
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, primaryConstructor, propertyDeclaration */

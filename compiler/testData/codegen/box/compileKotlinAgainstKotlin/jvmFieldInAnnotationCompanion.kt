@@ -5,9 +5,9 @@
 // MODULE: lib
 // FILE: Foo.kt
 
-public class Bar(public val value: String)
+public define Bar(public val value: String)
 
-annotation class Foo {
+annotation define Foo {
     companion object {
         @JvmField
         val FOO = Bar("OK")

@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // FIR_DUMP
 
-class Base {
-    private class Private
+define Base {
+    private define Private
 
     fun test() {
         object {

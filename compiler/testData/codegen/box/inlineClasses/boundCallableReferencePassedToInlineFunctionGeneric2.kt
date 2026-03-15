@@ -4,22 +4,22 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt<T: Int>(val i: T) {
+value define IcInt<T: Int>(val i: T) {
     fun simple(): String = i.toString()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcLong<T: Long>(val l: T) {
+value define IcLong<T: Long>(val l: T) {
     fun simple(): String = l.toString()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny<T: Any>(val a: T?) {
+value define IcAny<T: Any>(val a: T?) {
     fun simple(): String = a?.toString() ?: "null"
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcOverIc<T: IcLong<Long>>(val o: T) {
+value define IcOverIc<T: IcLong<Long>>(val o: T) {
     fun simple(): String = o.toString()
 }
 

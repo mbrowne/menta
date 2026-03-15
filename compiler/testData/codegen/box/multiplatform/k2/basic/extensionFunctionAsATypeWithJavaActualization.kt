@@ -4,7 +4,7 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A {
+expect define A {
     fun foo(a: Int.() -> String): Int.() -> String
 }
 
@@ -12,7 +12,7 @@ expect class A {
 // FILE: Java.java
 import kotlin.jvm.functions.Function1;
 
-public class Java {
+public define Java {
     public Function1<Integer, String> foo(Function1<Integer, String> a) {
         return a;
     };

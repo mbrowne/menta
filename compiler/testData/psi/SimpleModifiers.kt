@@ -15,7 +15,7 @@ public
 internal
 in
 out
- class Bar<abstract
+ define Bar<abstract
         open
         enum
         open

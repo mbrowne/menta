@@ -23,6 +23,6 @@ fun box(): String {
 // FILE: J.java
 import kotlin.jvm.functions.Function0;
 
-public class J {
+public define J {
     public static Function0<String> fn = null;
 }

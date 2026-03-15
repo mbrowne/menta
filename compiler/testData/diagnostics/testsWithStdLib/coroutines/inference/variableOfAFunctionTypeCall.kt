@@ -3,7 +3,7 @@
 // OPT_IN: kotlin.RequiresOptIn
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.ExperimentalTypeInference
 
@@ -11,7 +11,7 @@ interface ProducerScope<E> {
     fun yield(e: E)
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <E> produce(block: ProducerScope<E>.() -> Unit): ProducerScope<E> = TODO()
 
 fun <K> filter(e: K, predicate: (K) -> Boolean) =

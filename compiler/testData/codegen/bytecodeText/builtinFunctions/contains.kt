@@ -1,4 +1,4 @@
-abstract class A1<Q> : MutableCollection<Q> {
+abstract define A1<Q> : MutableCollection<Q> {
     override fun contains(o: Q): Boolean {
         throw UnsupportedOperationException()
     }
@@ -8,7 +8,7 @@ abstract class A1<Q> : MutableCollection<Q> {
     }
 }
 
-abstract class A2 : MutableCollection<String> {
+abstract define A2 : MutableCollection<String> {
     override fun contains(o: String): Boolean {
         throw UnsupportedOperationException()
     }
@@ -18,8 +18,8 @@ abstract class A2 : MutableCollection<String> {
     }
 }
 
-abstract class A3<W> : java.util.AbstractList<W>()
-abstract class A4<W> : java.util.AbstractList<W>() {
+abstract define A3<W> : java.util.AbstractList<W>()
+abstract define A4<W> : java.util.AbstractList<W>() {
     override fun contains(o: W): Boolean {
         throw UnsupportedOperationException()
     }
@@ -29,8 +29,8 @@ abstract class A4<W> : java.util.AbstractList<W>() {
     }
 }
 
-abstract class A5 : java.util.AbstractList<String>()
-abstract class A6 : java.util.AbstractList<String>() {
+abstract define A5 : java.util.AbstractList<String>()
+abstract define A6 : java.util.AbstractList<String>() {
     override fun contains(o: String): Boolean {
         throw UnsupportedOperationException()
     }
@@ -60,13 +60,13 @@ interface I2 : MutableSet<String> {
     }
 }
 
-abstract class A7 : MutableCollection<Int> {
+abstract define A7 : MutableCollection<Int> {
     override fun contains(o: Int): Boolean {
         throw UnsupportedOperationException()
     }
 }
 
-abstract class A8 : MutableCollection<Any?> {
+abstract define A8 : MutableCollection<Any?> {
     override fun contains(o: Any?): Boolean {
         throw UnsupportedOperationException()
     }

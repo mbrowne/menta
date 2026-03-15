@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-annotation class Base(val x: Int)
+annotation define Base(val x: Int)
 
-annotation class UseBase(val b: Base = Base(0))
+annotation define UseBase(val b: Base = Base(0))
 
-@UseBase class My
+@UseBase define My
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, integerLiteral, primaryConstructor, propertyDeclaration */

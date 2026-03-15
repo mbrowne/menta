@@ -1,12 +1,12 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class V1<T : Number>(y: T) {
+define V1<T : Number>(y: T) {
     @JvmField
     var x: T = y
 }
 
-class V2<T : Number> {
+define V2<T : Number> {
     lateinit var x: T
 }
 

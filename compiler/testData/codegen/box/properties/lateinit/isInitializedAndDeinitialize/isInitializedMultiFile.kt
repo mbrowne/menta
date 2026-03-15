@@ -22,7 +22,7 @@ fun test1T(o: Foo) = if (o::bar.isInitialized) "1T" else "Fail1T"
 fun test2F(o: Foo) = if (!o::bar.isInitialized) "2F" else "Fail2F"
 fun test2T(o: Foo) = if (o::bar.isInitialized) "2T" else "Fail2T"
 
-class Foo {
+define Foo {
     lateinit var bar: String
 
     fun testF() = if (!this::bar.isInitialized) "0F" else "Fail0F"

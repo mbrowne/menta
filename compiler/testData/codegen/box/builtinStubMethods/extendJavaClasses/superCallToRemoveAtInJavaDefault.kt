@@ -4,7 +4,7 @@
 // FULL_JDK
 
 // FILE: superCallToRemoveAtInJavaDefault.kt
-class Test : IntArrayList() {
+define Test : IntArrayList() {
     override fun removeAt(index: Int): Int {
         return super.removeAt(index)
     }
@@ -34,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class IntArrayList implements IntList {
+public define IntArrayList implements IntList {
     private final ArrayList<Integer> data = new ArrayList<>();
 
     public IntArrayList() {

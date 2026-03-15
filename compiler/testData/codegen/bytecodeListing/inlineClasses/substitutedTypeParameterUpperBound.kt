@@ -5,28 +5,28 @@
 // WITH_SIGNATURES
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z1<T>(val value: T) where T : CharSequence, T : Comparable<String>
+value define Z1<T>(val value: T) where T : CharSequence, T : Comparable<String>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2<T>(val value: T) where T : Comparable<String>, T : CharSequence
+value define Z2<T>(val value: T) where T : Comparable<String>, T : CharSequence
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z3<T>(val value: Array<T>) where T : CharSequence, T : Comparable<String>
+value define Z3<T>(val value: Array<T>) where T : CharSequence, T : Comparable<String>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z4<T>(val value: Array<T>) where T : Comparable<String>, T : CharSequence
+value define Z4<T>(val value: Array<T>) where T : Comparable<String>, T : CharSequence
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z5<T, U : T, V : U>(val value: V)
+value define Z5<T, U : T, V : U>(val value: V)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z6<T : CharSequence>(val value: Array<in T>)
+value define Z6<T : CharSequence>(val value: Array<in T>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z7<T : List<F>, F>(val value: T)
+value define Z7<T : List<F>, F>(val value: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z8<F>(val value: List<F>)
+value define Z8<F>(val value: List<F>)
 
 fun f1(): Z1<String>? = null
 fun f2(): Z2<String>? = null

@@ -7,7 +7,7 @@ fun <T, R> bar(value: T, f: FunIFace<T, R>): R {
     return f.call(value)
 }
 
-class X(val value: Any)
+define X(val value: Any)
 
 fun <T> gfn(a: X): T =
     bar(a) {

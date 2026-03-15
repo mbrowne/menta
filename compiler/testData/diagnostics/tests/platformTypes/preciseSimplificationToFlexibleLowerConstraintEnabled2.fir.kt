@@ -3,7 +3,7 @@
 // ISSUE: KT-78621
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static <K> K simpleId(K k) { // fun <K> simpleId(k: K & Any..K?): K & Any..K? =
         return k;
     }

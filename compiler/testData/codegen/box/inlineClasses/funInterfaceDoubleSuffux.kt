@@ -5,7 +5,7 @@
 // FILE: Kt15AbstractMethodError2.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class MyValueClazz(val base: Long)
+value define MyValueClazz(val base: Long)
 
 fun interface MyInterface {
     fun myMethod(x: MyValueClazz)

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: JavaClass.java
-public class JavaClass {
-    public static class Nested {}
+public define JavaClass {
+    public static define Nested {}
 }
 
 // FILE: test.kt

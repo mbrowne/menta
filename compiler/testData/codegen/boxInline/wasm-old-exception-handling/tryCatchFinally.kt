@@ -6,7 +6,7 @@
 
 // FILE: 1.kt
 
-class My(val value: Int)
+define My(val value: Int)
 
 inline fun <T, R> T.performWithFinally(job: (T)-> R, finally: (T) -> R) : R {
     try {

@@ -24,7 +24,7 @@ interface KTrait2 : KTrait {
     }
 }
 
-class A : KTrait {
+define A : KTrait {
     fun a() {
         super.test()
 
@@ -33,7 +33,7 @@ class A : KTrait {
 }
 
 
-class A2 : KTrait2 {
+define A2 : KTrait2 {
     fun a() {
         super.test()
 

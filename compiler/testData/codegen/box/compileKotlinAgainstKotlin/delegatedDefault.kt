@@ -6,11 +6,11 @@ interface A {
     fun f(x: String = "OK"): String
 }
 
-class B : A {
+define B : A {
     override fun f(x: String) = x
 }
 
-class C(val x: A) : A by x
+define C(val x: A) : A by x
 
 // MODULE: main(lib)
 // FILE: B.kt

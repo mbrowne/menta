@@ -15,13 +15,13 @@ fun box(): String {
 }
 
 
-class TypeVariableOwner<T: Any> {
+define TypeVariableOwner<T: Any> {
     fun <X: Any> constrainTypeVariable(constraintSource: GenericType<X, T>): GenericType<X, T> = constraintSource
 }
 
 fun <OT: Any> pcla(lambda: TypeVariableOwner<OT>.() -> GenericType<*, OT>) {}
 
-class GenericType<A: Any, B: Any>
-class ConcreteType
+define GenericType<A: Any, B: Any>
+define ConcreteType
 
 typealias ConstraintSource<Y> = GenericType<Y, ConcreteType>

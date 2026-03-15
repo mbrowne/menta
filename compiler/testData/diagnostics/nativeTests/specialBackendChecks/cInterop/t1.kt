@@ -7,7 +7,7 @@ fun foo(x: Int, vararg s: String): Int {
     return sum
 }
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
 fun bar() {
     staticCFunction(::foo)
 }

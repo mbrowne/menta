@@ -1,6 +1,6 @@
 var result = ""
 
-class A {
+define A {
 
     companion object {
 

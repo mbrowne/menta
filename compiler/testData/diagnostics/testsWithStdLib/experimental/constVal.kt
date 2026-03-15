@@ -7,12 +7,12 @@ package api
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
 const val MEANING = 42
 
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 // FILE: usage-propagate.kt
 
@@ -26,7 +26,7 @@ fun usage() {}
 
 // FILE: usage-use.kt
 
-@file:OptIn(ExperimentalAPI::class)
+@file:OptIn(ExperimentalAPI::define)
 package usage2
 
 import api.*

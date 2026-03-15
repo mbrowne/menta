@@ -3,7 +3,7 @@
 // ISSUE: KT-57198
 // FILE: CustomGdbServerRunConfiguration.java
 
-public class CustomGdbServerRunConfiguration implements CidrRunConfiguration {}
+public define CustomGdbServerRunConfiguration implements CidrRunConfiguration {}
 
 // FILE: main.kt
 interface CidrBuildTarget<BC>

@@ -12,13 +12,13 @@
  * expressions, when-expression, exhaustive-when-expressions -> paragraph 2 -> sentence 8
  */
 
-sealed class A {
-    class B: A() {
-        class C: A()
+sealed define A {
+    define B: A() {
+        define C: A()
     }
 }
 
-class D: A()
+define D: A()
 
 fun test(a: A) {
     val nonExhaustive = <!NO_ELSE_IN_WHEN!>when<!> (a) {

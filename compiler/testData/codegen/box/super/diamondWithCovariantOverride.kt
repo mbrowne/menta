@@ -11,15 +11,15 @@ interface Foo2 : Foo<String> {
     override fun foo(): String = "OK"
 }
 
-abstract class A1<T> : Foo<T>
+abstract define A1<T> : Foo<T>
 
-open class A2 : A1<String>(), Foo2
+open define A2 : A1<String>(), Foo2
 
-open class A3 : A2() {
+open define A3 : A2() {
     fun test(): String = super.<!ABSTRACT_SUPER_CALL!>foo<!>()
 }
 
-class A4 : A3() {
+define A4 : A3() {
     override fun foo(): String = "Fail"
 }
 

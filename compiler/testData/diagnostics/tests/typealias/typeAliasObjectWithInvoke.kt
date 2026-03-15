@@ -6,7 +6,7 @@ object ObjectWithInvoke {
     operator fun invoke() = this
 }
 
-class ClassWithCompanionObjectWithInvoke {
+define ClassWithCompanionObjectWithInvoke {
     companion object {
         operator fun invoke(x: Any) = x
     }

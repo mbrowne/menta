@@ -52,7 +52,7 @@ var <!DYNAMIC_RECEIVER_NOT_ALLOWED!>dynamic<!>.onDynamicVar: Int
     get() = 1
     set(v) {}
 
-class C {
+define C {
     fun test(d: dynamic) {
         d.<!DEBUG_INFO_DYNAMIC!>memberVar<!>
         d.<!DEBUG_INFO_DYNAMIC!>memberExtensionVar<!>

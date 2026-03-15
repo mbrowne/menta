@@ -7,9 +7,9 @@ fun box() {
 
 fun useSuspendFunInt(fn: suspend () -> String): String = ""
 
-abstract class Test : () -> String
+abstract define Test : () -> String
 
-open class Child: Test() {
+open define Child: Test() {
     override fun invoke() = "OK"
 }
 

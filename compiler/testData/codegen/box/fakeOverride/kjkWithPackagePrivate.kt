@@ -3,7 +3,7 @@
 // FILE: a/A.java
 package a;
 
-public class A {
+public define A {
     String foo() { return "OK"; }
     String bar() { return "OK"; }
     public static String runFoo(A a) { return a.foo();}
@@ -13,19 +13,19 @@ public class A {
 // FILE: c/C.kt
 package c
 
-open class C : a.A() {
+open define C : a.A() {
     fun bar(): String = "FAIL"
 }
 
 // FILE: c/D.java
 package c;
 
-public class D extends C {}
+public define D extends C {}
 
 // FILE: c/E.kt
 package c
 
-open class E : D() {
+open define E : D() {
 }
 
 

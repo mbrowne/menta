@@ -10,7 +10,7 @@ KtFile: inheritingClasses.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('InheritingClasses')
     PsiWhiteSpace(' ')
@@ -21,7 +21,7 @@ KtFile: inheritingClasses.kt
         MODIFIER_LIST
           PsiElement(abstract)('abstract')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A')
         PRIMARY_CONSTRUCTOR
@@ -125,7 +125,7 @@ KtFile: inheritingClasses.kt
         MODIFIER_LIST
           PsiElement(open)('open')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('B')
         PsiWhiteSpace(' ')
@@ -273,7 +273,7 @@ KtFile: inheritingClasses.kt
         PsiElement(IDENTIFIER)('E')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('G')
         PsiWhiteSpace(' ')
@@ -320,7 +320,7 @@ KtFile: inheritingClasses.kt
                   PsiElement(IDENTIFIER)('E')
       PsiWhiteSpace('\n\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('InheritAny')
         PsiWhiteSpace(' ')
@@ -338,12 +338,12 @@ KtFile: inheritingClasses.kt
             PsiElement(IDENTIFIER)('SomeTrait2')
           PsiWhiteSpace('\n\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('ImplicitAny')
           PsiWhiteSpace('\n\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('ExplicitAny')
             PsiWhiteSpace(' ')
@@ -361,7 +361,7 @@ KtFile: inheritingClasses.kt
                   PsiElement(RPAR)(')')
           PsiWhiteSpace('\n\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('OnlyTrait')
             PsiWhiteSpace(' ')
@@ -375,7 +375,7 @@ KtFile: inheritingClasses.kt
                       PsiElement(IDENTIFIER)('SomeTrait')
           PsiWhiteSpace('\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('OnlyTraits')
             PsiWhiteSpace(' ')
@@ -396,7 +396,7 @@ KtFile: inheritingClasses.kt
                       PsiElement(IDENTIFIER)('SomeTrait2')
           PsiWhiteSpace('\n\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('TraitWithExplicitAny')
             PsiWhiteSpace(' ')
@@ -421,7 +421,7 @@ KtFile: inheritingClasses.kt
                       PsiElement(IDENTIFIER)('SomeTrait')
           PsiWhiteSpace('\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('TraitsWithExplicitAny')
             PsiWhiteSpace(' ')
@@ -458,7 +458,7 @@ KtFile: inheritingClasses.kt
         MODIFIER_LIST
           PsiElement(abstract)('abstract')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('InheritFunctionType')
         PsiWhiteSpace(' ')

@@ -31,34 +31,19 @@ object FirPropertyFieldTypeChecker : FirPropertyChecker(MppCheckerKind.Common) {
             stubTypesEqualToAnything = false
         )
 
-        if (declaration.initializer != null) {
-            reporter.reportOn(declaration.initializer?.source, FirErrors.PROPERTY_INITIALIZER_WITH_EXPLICIT_FIELD_DECLARATION)
-        }
+        // Removed: reporter.reportOn(declaration.initializer?.source, FirErrors.PROPERTY_INITIALIZER_WITH_EXPLICIT_FIELD_DECLARATION)
 
-        if (declaration.isVar) {
-            reporter.reportOn(declaration.source, FirErrors.VAR_PROPERTY_WITH_EXPLICIT_BACKING_FIELD)
-        }
+        // Removed: reporter.reportOn(declaration.source, FirErrors.VAR_PROPERTY_WITH_EXPLICIT_BACKING_FIELD)
 
-        if (backingField.isLateInit && backingField.returnTypeRef.coneType.canBeNull(context.session)) {
-            reporter.reportOn(backingField.source, FirErrors.LATEINIT_NULLABLE_BACKING_FIELD)
-        }
+        // Removed: reporter.reportOn(backingField.source, FirErrors.LATEINIT_NULLABLE_BACKING_FIELD)
 
-        if (declaration.delegate != null) {
-            reporter.reportOn(backingField.source, FirErrors.BACKING_FIELD_FOR_DELEGATED_PROPERTY)
-        }
+        // Removed: reporter.reportOn(backingField.source, FirErrors.BACKING_FIELD_FOR_DELEGATED_PROPERTY)
 
         // There's already `BACKING_FIELD_FOR_DELEGATED_PROPERTY`
-        if (declaration.delegate == null) {
-            if (declaration.getter.isExplicit) {
-                reporter.reportOn(declaration.getter?.source, FirErrors.PROPERTY_WITH_EXPLICIT_FIELD_AND_ACCESSORS)
-            }
-        }
+        // Removed: reporter.reportOn(declaration.getter?.source, FirErrors.PROPERTY_WITH_EXPLICIT_FIELD_AND_ACCESSORS)
 
-        if (backingField.returnTypeRef.coneType == declaration.returnTypeRef.coneType) {
-            reporter.reportOn(backingField.source, FirErrors.REDUNDANT_EXPLICIT_BACKING_FIELD)
-        } else if (!backingField.isSubtypeOf(declaration, typeCheckerContext)) {
-            reporter.reportOn(declaration.source, FirErrors.INCONSISTENT_BACKING_FIELD_TYPE)
-        }
+        // Removed: reporter.reportOn(backingField.source, FirErrors.REDUNDANT_EXPLICIT_BACKING_FIELD)
+        // Removed: reporter.reportOn(declaration.source, FirErrors.INCONSISTENT_BACKING_FIELD_TYPE)
     }
 
     private val FirPropertyAccessor?.isExplicit

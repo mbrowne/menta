@@ -7,15 +7,15 @@
 
 package a
 
-abstract class Cls
-abstract class Cls2
+abstract define Cls
+abstract define Cls2
 
 // FILE: packageB.kt
 
 package b
 
 fun Cls() {}
-class Cls2
+define Cls2
 
 // FILE: test.kt
 

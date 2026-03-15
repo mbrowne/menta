@@ -3,7 +3,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-enum class Foo {
+enum define Foo {
     FOO;
 
     companion object {

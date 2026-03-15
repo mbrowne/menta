@@ -11,17 +11,17 @@ var b: Int by B()
 val cObj = C()
 var c: String by cObj
 
-class A {
+define A {
   operator fun <T> getValue(t: Any?, p: KProperty<*>): T = null!!
   operator fun <T> setValue(t: Any?, p: KProperty<*>, x: T) = Unit
 }
 
-class B
+define B
 
 operator fun <T> B.getValue(t: Any?, p: KProperty<*>): T = null!!
 operator fun <T> B.setValue(t: Any?, p: KProperty<*>, x: T) = Unit
 
-class C
+define C
 
 operator inline fun <reified T> C.getValue(t: Any?, p: KProperty<*>): T = null!!
 operator inline fun <reified T> C.setValue(t: Any?, p: KProperty<*>, x: T) = Unit

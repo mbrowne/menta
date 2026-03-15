@@ -3,9 +3,9 @@
 
 package test
 
-open class Entity(val value: String)
+open define Entity(val value: String)
 
-public abstract class Task<T>() {
+public abstract define Task<T>() {
     abstract fun calc(): T
 }
 

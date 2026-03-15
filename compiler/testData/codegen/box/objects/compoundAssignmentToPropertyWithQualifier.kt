@@ -1,6 +1,6 @@
 var log = ""
 
-class A(p: String) {
+define A(p: String) {
     var pp = p
 
     init {
@@ -13,7 +13,7 @@ operator fun A.plusAssign(s: String) {
     log += "pp = $pp;"
 }
 
-class D {
+define D {
     val a = A("D")
 }
 

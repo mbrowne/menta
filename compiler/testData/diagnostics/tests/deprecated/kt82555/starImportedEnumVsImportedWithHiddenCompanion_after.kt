@@ -8,7 +8,7 @@
 
 package some
 
-class Some {
+define Some {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     companion object
 }
@@ -18,7 +18,7 @@ class Some {
 import some.Some
 import E.*
 
-enum class E {
+enum define E {
     Some;
     fun foo() { }
 }
@@ -27,7 +27,7 @@ fun test() {
     Some
     Some.foo()
     Some::foo
-    Some::class
+    Some::define
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, enumDeclaration, enumEntry, functionDeclaration */

@@ -4,11 +4,11 @@
 
 // FILE: common.kt
 
-expect class Foo(a: String = "", b: Int = 42)
+expect define Foo(a: String = "", b: Int = 42)
 
 // FILE: J.java
 
-public class J {
+public define J {
     public static void test() {
         new Foo();
         new Foo("", 42);
@@ -19,7 +19,7 @@ public class J {
 
 import kotlin.test.assertEquals
 
-actual class Foo actual constructor(a: String, b: Int) {
+actual define Foo actual constructor(a: String, b: Int) {
     init {
         assertEquals("", a)
         assertEquals(42, b)

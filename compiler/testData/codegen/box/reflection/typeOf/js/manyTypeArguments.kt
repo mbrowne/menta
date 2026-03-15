@@ -15,7 +15,7 @@ interface I5
 interface I6
 interface I7
 
-class C<T1, T2, T3, T4, T5, T6, T7>
+define C<T1, T2, T3, T4, T5, T6, T7>
 
 fun box(): String {
     assertEquals(

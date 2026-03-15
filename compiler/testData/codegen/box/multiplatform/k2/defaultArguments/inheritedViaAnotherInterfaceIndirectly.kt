@@ -29,9 +29,9 @@ interface K : J {
     override fun foo(x: String): String = "K.foo($x)"
 }
 
-class A : I
+define A : I
 
-class B : K
+define B : K
 
 fun box(): String {
     val a = A()

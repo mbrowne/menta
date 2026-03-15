@@ -4,7 +4,7 @@
 interface Context<C: Context<C>>
 interface InterfaceA<C: Context<C>>
 
-class ABuilder<C: Context<C>, A: InterfaceA<C>, B: InterfaceA<C>>
+define ABuilder<C: Context<C>, A: InterfaceA<C>, B: InterfaceA<C>>
 
 operator fun <C, A, B> ABuilder<C, A, B>.invoke(block: B.() -> Unit): Unit
         where C: Context<C>,
@@ -15,7 +15,7 @@ operator fun <C, A, B> ABuilder<C, A, B>.invoke(block: B.() -> Unit): Unit
 object ContextImpl : Context<ContextImpl>
 object RootA : InterfaceA<ContextImpl>
 
-class AImpl<P: Context<P>> : InterfaceA<P> {
+define AImpl<P: Context<P>> : InterfaceA<P> {
     fun foo(): Int = null!!
 }
 

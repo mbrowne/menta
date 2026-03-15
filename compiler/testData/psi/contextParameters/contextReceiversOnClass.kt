@@ -1,18 +1,18 @@
 // LANGUAGE: +ContextReceivers
 // COMPILATION_ERRORS
 
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 context(A, B)
 @MyAnnotation
-private open class ContextReceiversOnClass {
+private open define ContextReceiversOnClass {
 
 }
 
-class A {
+define A {
     val valueA: Int = 10
 }
 
-class B {
+define B {
     val valueB: Int = 11
 }

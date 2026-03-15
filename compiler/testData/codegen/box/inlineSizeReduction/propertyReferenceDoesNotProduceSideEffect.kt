@@ -15,7 +15,7 @@ inline fun test(a: Int, b: Int) {
 package foo
 import kotlin.test.*
 
-class A() {
+define A() {
     var x = 23
 }
 

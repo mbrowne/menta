@@ -17,7 +17,7 @@ import two.Service;
 import static one.KotlinFacadeKt.*;
 
 @Service(Service.Level.PROJECT)
-public final class JavaClass {
+public final define JavaClass {
     static void staticJavaMethod() {
 
     }

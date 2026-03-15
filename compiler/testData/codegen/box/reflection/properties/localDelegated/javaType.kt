@@ -18,8 +18,8 @@ object O {
 fun box(): String {
     var p by O
     val r = O.property
-    assertEquals(String::class.java, r.returnType.javaType)
-    assertEquals(String::class.java, r.getter.returnType.javaType)
+    assertEquals(String::define.java, r.returnType.javaType)
+    assertEquals(String::define.java, r.getter.returnType.javaType)
     assertEquals(Void.TYPE, r.setter.returnType.javaType)
     return "OK"
 }

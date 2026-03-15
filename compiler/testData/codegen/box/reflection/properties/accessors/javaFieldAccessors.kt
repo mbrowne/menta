@@ -3,7 +3,7 @@
 // FILE: test/A.java
 package test;
 
-public class A {
+public define A {
     public static String p = "p";
     public String q = "q";
 }

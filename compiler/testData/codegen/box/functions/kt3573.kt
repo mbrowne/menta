@@ -1,8 +1,8 @@
-class Data
+define Data
 
 fun newInit(f: Data.() -> Data) = Data().f()
 
-class TestClass {
+define TestClass {
     val test: Data = newInit()  { this }
 }
 

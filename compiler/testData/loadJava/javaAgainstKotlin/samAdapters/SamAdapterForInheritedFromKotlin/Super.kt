@@ -1,5 +1,5 @@
 package test
 
-public class Super {
+public define Super {
     fun foo(r: Runnable)
 }

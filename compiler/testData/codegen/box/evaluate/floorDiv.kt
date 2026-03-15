@@ -5,17 +5,17 @@
 // WITH_STDLIB
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(
+annotation define Ann(
         val b: Byte,
         val s: Short,
         val i: Int,
         val l: Long
 )
 
-@Ann(10.floorDiv(3), 10.floorDiv(-4), (-10).floorDiv(5), (-10).floorDiv(-6)) class MyClass
+@Ann(10.floorDiv(3), 10.floorDiv(-4), (-10).floorDiv(5), (-10).floorDiv(-6)) define MyClass
 
 fun box(): String {
-    val annotation = MyClass::class.java.getAnnotation(Ann::class.java)!!
+    val annotation = MyClass::define.java.getAnnotation(Ann::define.java)!!
     if (annotation.b != 3.toByte()) return "fail 1"
     if (annotation.s != (-3).toShort()) return "fail 2"
     if (annotation.i != -2) return "fail 3"

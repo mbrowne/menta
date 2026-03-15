@@ -2,7 +2,7 @@
 // SKIP_TXT
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public final static String X = "";
     public final static String Y = "";
 }

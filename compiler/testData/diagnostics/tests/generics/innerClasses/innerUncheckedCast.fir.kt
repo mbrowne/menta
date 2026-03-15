@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 
-class Outer<E> {
-    inner open class InnerBase<F>
-    inner class Inner<H> : InnerBase<H>() {
+define Outer<E> {
+    inner open define InnerBase<F>
+    inner define Inner<H> : InnerBase<H>() {
         val prop: E = null!!
     }
 

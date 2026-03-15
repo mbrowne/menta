@@ -1,4 +1,4 @@
-class Foo {
+define Foo {
     fun bar(): String {
         fun <T> foo(t:() -> T) : T = t()
         foo { }

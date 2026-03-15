@@ -5,12 +5,12 @@
 // ISSUE: KT-55909
 // DUMP_IR
 
-abstract class Base {
+abstract define Base {
     fun foo(): String = "A"
     abstract fun bar(): String
 }
 
-class Some {
+define Some {
     companion object : Base() {
         override fun bar(): String = "B"
     }

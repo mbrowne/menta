@@ -4,13 +4,13 @@
 
 // FILE: KotlinParent.kt
 
-open class KotlinParent {
+open define KotlinParent {
     fun foo(x: UInt) = x.toInt()
 }
 
 // FILE: JavaChild.java
 
-public class JavaChild extends KotlinParent {
+public define JavaChild extends KotlinParent {
     public int foo(int x) {
         return 42;
     }

@@ -66,6 +66,7 @@ open class KtDefine : KtClassOrObject {
     fun isInner(): Boolean = hasModifier(KtTokens.INNER_KEYWORD)
     fun isInline(): Boolean = hasModifier(KtTokens.INLINE_KEYWORD)
     fun isValue(): Boolean = hasModifier(KtTokens.VALUE_KEYWORD)
+    fun isDynamic(): Boolean = findChildByType<PsiElement>(KtTokens.DYNAMIC_KEYWORD) != null
 
     override fun getCompanionObjects(): List<KtObjectDeclaration> = body?.allCompanionObjects.orEmpty()
 

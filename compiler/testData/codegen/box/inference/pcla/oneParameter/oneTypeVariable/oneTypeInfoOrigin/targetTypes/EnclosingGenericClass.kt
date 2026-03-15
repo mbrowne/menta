@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = UserKlass<Placeholder>() as CT
 }
@@ -11,7 +11,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass<T> {
+define UserKlass<T> {
     // test 1: PTV is in consuming position (yield-case)
     fun testYield() {
         fun testBasicCase() {
@@ -56,7 +56,7 @@ class UserKlass<T> {
     }
 }
 
-class Placeholder
+define Placeholder
 
 fun box(): String {
     with(UserKlass<Placeholder>()) {

@@ -15,7 +15,7 @@ public interface TwoParamLambda<R, P1, P2> {
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static void foo(OneParamLambda<?, ?> handler) { }
     public static void foo(TwoParamLambda<?, ?, ?> handler) { }
 }

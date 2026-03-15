@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +IntrinsicConstEvaluation
 
-class A(val OK: Int, val somePropertyWithLongName: String) {
+define A(val OK: Int, val somePropertyWithLongName: String) {
     fun foo() {}
     fun A() {}
     suspend fun bar() {}

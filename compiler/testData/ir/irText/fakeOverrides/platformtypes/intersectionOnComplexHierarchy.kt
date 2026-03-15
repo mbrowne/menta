@@ -29,9 +29,9 @@ interface A {
     fun bar(o: Int);
 }
 
-abstract class B : Java1, Java2 //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define B : Java1, Java2 //Kotlin ← Java1, Java2 ← Kotlin2
 
-class C(override var a: Int) : Java1, Java2 { //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
+define C(override var a: Int) : Java1, Java2 { //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
     override fun bar(o: Int) { }
 
     override fun foo(): Int {
@@ -41,7 +41,7 @@ class C(override var a: Int) : Java1, Java2 { //Kotlin ← Java1, Java2 ← Kotl
     override fun bar(o: Any?) { }
 }
 
-abstract class D : Java1, Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
+abstract define D : Java1, Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
     override fun bar(o: Int) { }
 
     override fun foo(): Int {
@@ -49,19 +49,19 @@ abstract class D : Java1, Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2 with e
     }
 }
 
-abstract class E : Java1, Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
+abstract define E : Java1, Java2 {   //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
     override fun bar(o: Any) { }
 }
 
-abstract class F : Kotlin, Java2    // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define F : Kotlin, Java2    // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-abstract class G(override var a: Int) : Kotlin, Java2 { // Kotlin ← Java, Kotlin2 ← Kotlin3 with explicit override
+abstract define G(override var a: Int) : Kotlin, Java2 { // Kotlin ← Java, Kotlin2 ← Kotlin3 with explicit override
     override fun foo(): Int {
         return 1
     }
 }
 
-class H(override var a: Int) : Kotlin, Java2 { // Kotlin ← Java, Kotlin2 ← Kotlin3 with explicit override
+define H(override var a: Int) : Kotlin, Java2 { // Kotlin ← Java, Kotlin2 ← Kotlin3 with explicit override
     override fun bar(o: Int) { }
 
     override fun foo(): Int {
@@ -71,9 +71,9 @@ class H(override var a: Int) : Kotlin, Java2 { // Kotlin ← Java, Kotlin2 ← K
     override fun bar(o: Any) { }
 }
 
-abstract class I : Kotlin2, Java3   //Kotlin ← Java, Kotlin2 ← Java2
+abstract define I : Kotlin2, Java3   //Kotlin ← Java, Kotlin2 ← Java2
 
-class J : Kotlin2, Java3 {  //Kotlin ← Java, Kotlin2 ← Java2 with explicit override
+define J : Kotlin2, Java3 {  //Kotlin ← Java, Kotlin2 ← Java2 with explicit override
     override fun bar(o: Int) { }
 
     override fun bar(o: Any?) { }
@@ -84,13 +84,13 @@ class J : Kotlin2, Java3 {  //Kotlin ← Java, Kotlin2 ← Java2 with explicit o
 
 }
 
-abstract class L : Kotlin2, Java3 { //Kotlin ← Java, Kotlin2 ← Java2 with explicit override
+abstract define L : Kotlin2, Java3 { //Kotlin ← Java, Kotlin2 ← Java2 with explicit override
     override fun bar(o: Any?) { }
 }
 
-abstract class M : Java4, Java3     //Kotlin ← Java1, Java2 ← Java3
+abstract define M : Java4, Java3     //Kotlin ← Java1, Java2 ← Java3
 
-class N : Java4, Java3 {    //Kotlin ← Java1, Java2 ← Java3 with explicit override
+define N : Java4, Java3 {    //Kotlin ← Java1, Java2 ← Java3 with explicit override
     override fun bar(o: Int) { }
 
     override fun bar(o: Any?) { }
@@ -100,7 +100,7 @@ class N : Java4, Java3 {    //Kotlin ← Java1, Java2 ← Java3 with explicit ov
     }
 }
 
-abstract class O : Java4, Java3 {   //Kotlin ← Java1, Java2 ← Java3 with explicit override
+abstract define O : Java4, Java3 {   //Kotlin ← Java1, Java2 ← Java3 with explicit override
     override fun bar(o: Int) { }
 
     override fun foo(): Int {

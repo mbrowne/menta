@@ -6,7 +6,7 @@
 import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
-public class PropertyDescriptorImpl implements PropertyDescriptor {
+public define PropertyDescriptorImpl implements PropertyDescriptor {
     private Collection<? extends PropertyDescriptor> overriddenProperties = null;
 
     @Override

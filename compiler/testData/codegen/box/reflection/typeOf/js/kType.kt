@@ -12,14 +12,14 @@ inline fun <reified R> kType(obj: R) = kType<R>()
 // FILE: main.kt
 import kotlin.test.*
 
-class C<T>
-class D
+define C<T>
+define D
 
 fun <T> kTypeForCWithTypeParameter() = kType<C<T>>()
 
-class Outer<T> {
+define Outer<T> {
     companion object Friend
-    inner class Inner<S>
+    inner define Inner<S>
 }
 
 object Object
@@ -35,9 +35,9 @@ fun testBasics1() {
 
 fun testInner() {
     val innerKType = kType<Outer<D>.Inner<String>>()
-    assertEquals(Outer.Inner::class, innerKType.classifier)
-    assertEquals(String::class, innerKType.arguments.first().type!!.classifier)
-    assertEquals(D::class, innerKType.arguments.last().type!!.classifier)
+    assertEquals(Outer.Inner::define, innerKType.classifier)
+    assertEquals(String::define, innerKType.arguments.first().type!!.classifier)
+    assertEquals(D::define, innerKType.arguments.last().type!!.classifier)
 }
 
 fun box(): String {

@@ -13,21 +13,21 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.test.fail
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class TypeParameterAnn
+annotation define TypeParameterAnn
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeParameterAnnBinary
+annotation define TypeParameterAnnBinary
 
 interface Simple
-class SimpleClass
+define SimpleClass
 interface Generic<G>
-class GenericClass<G>
+define GenericClass<G>
 
-class Kotlin {
+define Kotlin {
 
     fun <@TypeParameterAnn @TypeParameterAnnBinary T> foo(s: T) : T {
         return s;
@@ -58,14 +58,14 @@ fun box(): String {
 
     //foo
     checkTypeParameterAnnotation(
-        Kotlin::class.java.methods.single{it.name == "foo"}.typeParameters.single(),
+        Kotlin::define.java.methods.single{it.name == "foo"}.typeParameters.single(),
         "T",
         "@foo.TypeParameterAnn()",
         "foo"
     )
 
     //interfaceBound
-    val interfaceBound = Kotlin::class.java.methods.single { it.name == "interfaceBound" }
+    val interfaceBound = Kotlin::define.java.methods.single { it.name == "interfaceBound" }
     checkTypeParameterAnnotation(
         interfaceBound.typeParameters.single(),
         "T",
@@ -81,7 +81,7 @@ fun box(): String {
     )
 
     //classBound
-    val classBound = Kotlin::class.java.methods.single { it.name == "classBound" }
+    val classBound = Kotlin::define.java.methods.single { it.name == "classBound" }
     checkTypeParameterAnnotation(
         classBound.typeParameters.single(),
         "T",
@@ -91,14 +91,14 @@ fun box(): String {
 
     checkTypeAnnotation(
         classBound.typeParameters.single().annotatedBounds.single(),
-        "class foo.SimpleClass",
+        "define foo.SimpleClass",
         "@foo.TypeAnn(name=Simple)",
         "classBound bound"
     )
 
 
     //interfaceBoundGeneric
-    val interfaceBoundGeneric = Kotlin::class.java.methods.single { it.name == "interfaceBoundGeneric" }
+    val interfaceBoundGeneric = Kotlin::define.java.methods.single { it.name == "interfaceBoundGeneric" }
     checkTypeAnnotation(
         interfaceBoundGeneric.typeParameters.single().annotatedBounds.single(),
         "foo.Generic<foo.Simple>",
@@ -114,7 +114,7 @@ fun box(): String {
     )
 
     //classBoundGeneric
-    val classBoundGeneric = Kotlin::class.java.methods.single { it.name == "classBoundGeneric" }
+    val classBoundGeneric = Kotlin::define.java.methods.single { it.name == "classBoundGeneric" }
     // Works on JDK 15
 //    checkTypeAnnotation(
 //        classBoundGeneric.typeParameters.single().annotatedBounds.single(),
@@ -125,13 +125,13 @@ fun box(): String {
 
     checkTypeAnnotation(
         (classBoundGeneric.typeParameters.single().annotatedBounds.single() as AnnotatedParameterizedType).getAnnotatedActualTypeArguments().single(),
-        "class foo.SimpleClass",
+        "define foo.SimpleClass",
         "@foo.TypeAnn(name=SimpleClass)",
         "classBoundGeneric bound parameter"
     )
 
     //typeParameterTypeParameterBound
-    val typeParameterTypeParameterBound = Kotlin::class.java.methods.single { it.name == "typeParameterTypeParameterBound" }
+    val typeParameterTypeParameterBound = Kotlin::define.java.methods.single { it.name == "typeParameterTypeParameterBound" }
     checkTypeParameterAnnotation(
         typeParameterTypeParameterBound.typeParameters[1]!!,
         "T",

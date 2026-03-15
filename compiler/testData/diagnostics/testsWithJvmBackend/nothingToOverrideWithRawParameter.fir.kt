@@ -4,7 +4,7 @@
 
 // FILE: Breakpoint.java
 
-public class Breakpoint<P> { }
+public define Breakpoint<P> { }
 
 // FILE: JavaBreakpointType.java
 
@@ -14,7 +14,7 @@ public interface JavaBreakpointType<P> {
 
 // FILE: JavaMethodBreakpointType.java
 
-public class JavaMethodBreakpointType implements JavaBreakpointType<String>{
+public define JavaMethodBreakpointType implements JavaBreakpointType<String>{
     @Override
     public Breakpoint<String> createJavaBreakpoint(Breakpoint /* Raw type */ breakpoint) {
         return new Breakpoint<>(); }
@@ -22,6 +22,6 @@ public class JavaMethodBreakpointType implements JavaBreakpointType<String>{
 
 // FILE: test.kt
 
-class KotlinFunctionBreakpointType : JavaMethodBreakpointType() {
+define KotlinFunctionBreakpointType : JavaMethodBreakpointType() {
     <!NOTHING_TO_OVERRIDE!>override<!> <!ACCIDENTAL_OVERRIDE!>fun createJavaBreakpoint(breakpoint: Breakpoint<String>) = Breakpoint<String>()<!>
 }

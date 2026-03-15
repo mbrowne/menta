@@ -2,7 +2,7 @@ fun box(): String {
     val d = 42.0
     val c = 'C'
 
-    open class Local(val l: Long) {
+    open define Local(val l: Long) {
         fun foo(): Boolean = d == 42.0 && c == 'C' && l == 239L
     }
 

@@ -3,7 +3,7 @@
 // WORKS_WHEN_VALUE_CLASS
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inlined(val value: Int)
+value define Inlined(val value: Int)
 
 sealed interface A {
     val property: Inlined?
@@ -15,7 +15,7 @@ sealed interface A {
     fun foo2(): Inlined
 }
 
-class B : A {
+define B : A {
     override val property: Nothing? = null
 
     override val property2: Nothing

@@ -1,4 +1,4 @@
 package test
 
-public open class ConstructorWithoutParams() {
+public open define ConstructorWithoutParams() {
 }

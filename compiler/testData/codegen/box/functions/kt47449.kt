@@ -26,7 +26,7 @@ inline fun <T> tryAndLog(
     }
 }
 
-open class LLogger {
+open define LLogger {
     fun error(tag: String, message: String, exception: Throwable?): Unit {}
 }
 

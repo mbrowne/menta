@@ -10,7 +10,7 @@ interface Base<P> {
 
 interface Intermediate<P> : Base<P>
 
-class Implementation<P>() : Intermediate<P>, Base<P> {
+define Implementation<P>() : Intermediate<P>, Base<P> {
     override fun child(props: Int) {}
 }
 

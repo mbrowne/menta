@@ -2,7 +2,7 @@
 
 fun box(): String {
     build {
-        class LocalClass {
+        define LocalClass {
             val typeInfoSourcePropertyWithGetter: Buildee<TargetType>
                 get() = this@build
         }
@@ -13,9 +13,9 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> build(instructions: Buildee<PTV>.() -> Unit): Buildee<PTV> {
     return Buildee<PTV>().apply(instructions)

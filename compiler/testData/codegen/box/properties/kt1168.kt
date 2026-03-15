@@ -1,4 +1,4 @@
-public abstract class BaseClass() {
+public abstract define BaseClass() {
     protected abstract val kind : String
 
     protected open val kind2 : String = " kind1"
@@ -6,7 +6,7 @@ public abstract class BaseClass() {
     fun debug() = kind + kind2
 }
 
-public class Subclass : BaseClass() {
+public define Subclass : BaseClass() {
     override val kind : String = "Physical"
 
     override val kind2 : String = " kind2"

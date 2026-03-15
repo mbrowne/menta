@@ -3,13 +3,13 @@
 
 import java.util.function.*
 
-annotation class Some
+annotation define Some
 
-enum class Direction {
+enum define Direction {
     @Some NORTH, SOUTH, WEST, EAST
 }
 
-enum class Color(val rgb: Int = 5) {
+enum define Color(val rgb: Int = 5) {
         RED(0xFF0000),
         GREEN(0x00FF00),
         BLUE("0x0000FF");
@@ -17,7 +17,7 @@ enum class Color(val rgb: Int = 5) {
         constructor(y: String) : this(y.toInt())
 }
 
-enum class ProtocolState {
+enum define ProtocolState {
     WAITING {
         override fun signal() = TALKING
     },
@@ -29,7 +29,7 @@ enum class ProtocolState {
     abstract fun signal(): ProtocolState
 }
 
-enum class IntArithmetics : BinaryOperator<Int>, IntBinaryOperator {
+enum define IntArithmetics : BinaryOperator<Int>, IntBinaryOperator {
     PLUS {
         override fun apply(t: Int, u: Int): Int = t + u
     },
@@ -40,7 +40,7 @@ enum class IntArithmetics : BinaryOperator<Int>, IntBinaryOperator {
     override fun applyAsInt(t: Int, u: Int) = apply(t, u)
 }
 
-class C {
+define C {
     val enumConst: Direction? = Direction.EAST
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: Color.class[getEntries;valueOf;values], Direction.class[getEntries;valueOf;values], IntArithmetics.class[getEntries;valueOf;values], ProtocolState.class[getEntries;valueOf;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: Color.define[getEntries;valueOf;values], Direction.define[getEntries;valueOf;values], IntArithmetics.define[getEntries;valueOf;values], ProtocolState.define[getEntries;valueOf;values]

@@ -1,8 +1,8 @@
 @CompileTimeCalculation
-enum class Empty
+enum define Empty
 
 @CompileTimeCalculation
-enum class Color(val rgb: Int) {
+enum define Color(val rgb: Int) {
     BLACK() { override fun getColorAsString() = "0x000000" },
     RED(0xFF0000) { override fun getColorAsString() = "0xFF0000" },
     GREEN(0x00FF00) { override fun getColorAsString() = "0x00FF00" },
@@ -26,7 +26,7 @@ const val c1 = <!EVALUATED: `0`!>Color.BLACK.getColorAsInt()<!>
 const val c2 = <!EVALUATED: `16711680`!>Color.RED.getColorAsInt()<!>
 
 @CompileTimeCalculation
-enum class EnumWithoutPrimary {
+enum define EnumWithoutPrimary {
     X(), Y(10);
 
     val someProp: Int

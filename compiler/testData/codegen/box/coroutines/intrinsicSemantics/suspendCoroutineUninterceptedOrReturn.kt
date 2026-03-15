@@ -48,11 +48,11 @@ fun builder(shouldSuspend: Boolean, c: suspend () -> String): String {
     return result as String
 }
 
-class ContinuationDispatcher(val dispatcher: () -> Unit) : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
+define ContinuationDispatcher(val dispatcher: () -> Unit) : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
     override fun <T> interceptContinuation(continuation: Continuation<T>): Continuation<T> = DispatchedContinuation(dispatcher, continuation)
 }
 
-private class DispatchedContinuation<T>(
+private define DispatchedContinuation<T>(
         val dispatcher: () -> Unit,
         val continuation: Continuation<T>
 ): Continuation<T> {

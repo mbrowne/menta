@@ -15,6 +15,6 @@ KtFile: modifierAtFileStart.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')

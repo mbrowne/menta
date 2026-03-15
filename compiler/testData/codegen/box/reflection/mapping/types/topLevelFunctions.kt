@@ -11,9 +11,9 @@ fun Any.extension() {}
 
 fun box(): String {
     assertEquals(java.lang.Integer.TYPE, ::free.returnType.javaType)
-    assertEquals(String::class.java, ::free.parameters.single().type.javaType)
+    assertEquals(String::define.java, ::free.parameters.single().type.javaType)
 
-    assertEquals(Any::class.java, Any::extension.parameters.single().type.javaType)
+    assertEquals(Any::define.java, Any::extension.parameters.single().type.javaType)
 
     return "OK"
 }

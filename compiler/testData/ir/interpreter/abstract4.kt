@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-abstract class BaseIterator(var baseStart: Int) {
+abstract define BaseIterator(var baseStart: Int) {
     fun baseNext(): Int {
         baseStart += 1
         return base()
@@ -9,7 +9,7 @@ abstract class BaseIterator(var baseStart: Int) {
 }
 
 @CompileTimeCalculation
-abstract class ComplexIterator(var complexStart: Int) : BaseIterator(complexStart) {
+abstract define ComplexIterator(var complexStart: Int) : BaseIterator(complexStart) {
     fun complexNext() = abstractCall()
 
     private fun abstractCall(): Int {
@@ -21,7 +21,7 @@ abstract class ComplexIterator(var complexStart: Int) : BaseIterator(complexStar
 }
 
 @CompileTimeCalculation
-class ImplementIterator constructor(val i: Int) : ComplexIterator(i) {
+define ImplementIterator constructor(val i: Int) : ComplexIterator(i) {
     override fun complex(): Int {
         return complexStart
     }

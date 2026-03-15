@@ -1,6 +1,6 @@
-inline class A(val x: Int)
+inline define A(val x: Int)
 
-class B(val y: A)
+define B(val y: A)
 
 // TESTED_OBJECT_KIND: function
 // TESTED_OBJECTS: A, <init>

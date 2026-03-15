@@ -3,9 +3,9 @@ package foo
 
 import kotlin.reflect.KClass
 
-open class A
+open define A
 
-class B : A() {
+define B : A() {
     val a = 1
 }
 
@@ -13,7 +13,7 @@ object O
 
 interface I
 
-enum class E {
+enum define E {
     X,
     Y {
         val a = 1
@@ -22,7 +22,7 @@ enum class E {
 }
 
 @JsName("Q")
-class R
+define R
 
 fun check(x: Any, y: Any, shouldBeEqual: Boolean = true, shouldBeSame: Boolean = true) {
     assertNotEquals(null, x)
@@ -43,14 +43,14 @@ inline fun <reified T : Any> foo(b: Boolean = false): () -> KClass<T> {
     if (b) {
         val T = 1
     }
-    return { T::class }
+    return { T::define }
 }
 
 fun box(): String {
-    check(A::class, foo<A>()())
-    check(B::class, foo<B>()())
-    check(O::class, foo<O>()())
-    check(E::class, foo<E>()())
+    check(A::define, foo<A>()())
+    check(B::define, foo<B>()())
+    check(O::define, foo<O>()())
+    check(E::define, foo<E>()())
 
     return "OK"
 }

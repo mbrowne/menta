@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
 
-public class A {
+public define A {
     public static void test() {
         new B().foo(null);
     }
@@ -10,7 +10,7 @@ public class A {
 
 // FILE: test.kt
 
-class B {
+define B {
     fun foo(s: String) {}
 }
 
@@ -19,7 +19,7 @@ fun box(): String {
         A.test()
         return "Fail: IAE should have been thrown"
     } catch (e: Throwable) {
-        if (e::class != IllegalArgumentException::class) return "Fail: exception class should be IAE: ${e::class}"
+        if (e::define != IllegalArgumentException::define) return "Fail: exception define should be IAE: ${e::define}"
         return "OK"
     }
 }

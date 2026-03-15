@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
 
-open class A
-class B: A()
+open define A
+define B: A()
 
 fun A.foo() {}
 fun B.foo() {} // more specific

@@ -14,15 +14,14 @@ import org.jetbrains.kotlin.fir.resolve.substitution.ConeRawScopeSubstitutor
 import org.jetbrains.kotlin.fir.resolve.substitution.ConeSubstitutor
 import org.jetbrains.kotlin.fir.resolve.substitution.substitutorByMap
 import org.jetbrains.kotlin.fir.scopes.*
-import org.jetbrains.kotlin.fir.scopes.impl.FirScopeWithCallableCopyReturnTypeUpdater
-import org.jetbrains.kotlin.fir.scopes.impl.FirTypeIntersectionScope
-import org.jetbrains.kotlin.fir.scopes.impl.dynamicMembersStorage
-import org.jetbrains.kotlin.fir.scopes.impl.getOrBuildScopeForIntegerConstantOperatorType
+import org.jetbrains.kotlin.fir.scopes.impl.*
 import org.jetbrains.kotlin.fir.symbols.impl.FirClassLikeSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirTypeParameterSymbol
 import org.jetbrains.kotlin.fir.types.*
 import org.jetbrains.kotlin.fir.types.impl.ConeClassLikeTypeImpl
 import org.jetbrains.kotlin.fir.types.impl.ConeTypeParameterTypeImpl
+import org.jetbrains.kotlin.fir.declarations.FirClass
+import org.jetbrains.kotlin.fir.declarations.FirRegularClass
 import org.jetbrains.kotlin.name.ClassId
 
 context(c: SessionAndScopeSessionHolder)
@@ -149,7 +148,13 @@ private fun ConeClassLikeType.classScope(
         )
     }
 
-    return fir.scopeForClass(substitutor, useSiteSession, scopeSession, memberOwnerLookupTag, requiredMembersPhase)
+    val scope = fir.scopeForClass(substitutor, useSiteSession, scopeSession, memberOwnerLookupTag, requiredMembersPhase)
+
+    if (fir.hasDynamicObjectSupertype()) {
+        return FirMentaDynamicScope(scope, useSiteSession, scopeSession)
+    }
+
+    return scope
 }
 
 fun FirClassLikeSymbol<*>.defaultType(): ConeClassLikeType = fir.defaultType()
@@ -179,3 +184,10 @@ fun ClassId.defaultType(parameters: List<FirTypeParameterSymbol>): ConeClassLike
     )
 
 val TYPE_PARAMETER_SCOPE_KEY: ScopeSessionKey<FirTypeParameterSymbol, FirTypeScope> = scopeSessionKey()
+
+private fun FirClass.hasDynamicObjectSupertype(): Boolean {
+    return superTypeRefs.any { typeRef ->
+        val coneType = typeRef.coneTypeSafe<ConeClassLikeType>() ?: return@any false
+        coneType.lookupTag.classId == DYNAMIC_OBJECT_CLASS_ID
+    }
+}

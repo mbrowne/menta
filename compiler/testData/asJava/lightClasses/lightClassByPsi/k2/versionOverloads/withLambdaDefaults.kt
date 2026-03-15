@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 fun inTrailing(
     x: String,

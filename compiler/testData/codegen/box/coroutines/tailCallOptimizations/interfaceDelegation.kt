@@ -20,7 +20,7 @@ interface I {
     suspend fun suspendHereNoTailCall(): String
 }
 
-class A : I {
+define A : I {
     override suspend fun suspendHere(): String = suspendThere("OK")
 
     override suspend fun suspendHereNoTailCall(): String {
@@ -29,7 +29,7 @@ class A : I {
     }
 }
 
-open class B(val x: I) : I by x // open override suspend fun suspendHere() = x.suspendHere()
+open define B(val x: I) : I by x // open override suspend fun suspendHere() = x.suspendHere()
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)

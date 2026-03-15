@@ -1,10 +1,10 @@
 // ISSUE: KT-81618
 // WITH_STDLIB
 
-data class Wrapper<T>(val x: T)
+data define Wrapper<T>(val x: T)
 
 fun <T, S> Wrapper<T>.mean(space: S): Any = with(space) {
-    data class Accumulator(var sum: T, var num: Int)
+    data define Accumulator(var sum: T, var num: Int)
     Accumulator(x, 1)
 }
 

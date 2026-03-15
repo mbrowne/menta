@@ -85,7 +85,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -96,9 +96,9 @@ interface BaseType
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun <A> memberFunction(arg: A) {}
-    inner class InnerKlass<C>(arg: C)
+    inner define InnerKlass<C>(arg: C)
     companion object {
         fun Nullable(): ScopeOwner? = null
     }

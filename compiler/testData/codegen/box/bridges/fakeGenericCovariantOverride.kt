@@ -5,11 +5,11 @@ interface Trait<T> {
     fun f(): T
 }
 
-open class Class {
+open define Class {
     fun f(): String = throw UnsupportedOperationException()
 }
 
-class Foo: Class(), Trait<String> {
+define Foo: Class(), Trait<String> {
 }
 
 fun box(): String {

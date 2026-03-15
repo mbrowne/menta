@@ -6,17 +6,17 @@
 interface SomeIrrelevantInterface
 
 // note that C.Base() supertype will be resolved in normal scope
-abstract class DerivedAbstract : C.Base()
+abstract define DerivedAbstract : C.Base()
 
-class Data
+define Data
 
-public class C {
+public define C {
 
     val data: Data = Data()
 
     // Note that any supertype of Base will be resolved in error-scope, even if it absolutely irrelevant
     // to the types in cycle.
-    open class Base() : SomeIrrelevantInterface
+    open define Base() : SomeIrrelevantInterface
 
     companion object : DerivedAbstract()
 }

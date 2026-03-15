@@ -2,7 +2,7 @@
 // IGNORE_ERRORS
 // FIR_IDENTICAL
 
-class C {
+define C {
     companion <!REDECLARATION!>object<!> {}
 
     val <!REDECLARATION!>Companion<!> = C

@@ -6,12 +6,12 @@ interface Second : First {
   public open fun bar() : Int
 }
 
-class Impl : Second {
+define Impl : Second {
   public override fun foo() = 1
   public override fun bar() = 2
 }
 
-class Test(s : Second) : Second by s {}
+define Test(s : Second) : Second by s {}
 
 fun box() : String {
     var t = Test(Impl())

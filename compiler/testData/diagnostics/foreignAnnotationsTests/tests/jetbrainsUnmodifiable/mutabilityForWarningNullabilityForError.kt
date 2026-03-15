@@ -20,7 +20,7 @@ public @interface NotNull {}
 import java.util.List;
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     @UnmodifiableView
     @Nullable
     public static List<String> nullable() {

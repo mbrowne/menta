@@ -1,8 +1,8 @@
-open class A1 {
+open define A1 {
     open val size: Int = 56
 }
 
-class A2 : A1(), Collection<String> {
+define A2 : A1(), Collection<String> {
     // No 'getSize()' method should be generated in A2
 
     override fun contains(element: String): Boolean {

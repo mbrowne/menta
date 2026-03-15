@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Char>(val c: T) {
+value define Foo<T: Char>(val c: T) {
     companion object {
         val prop = "O"
         const val constVal = 1

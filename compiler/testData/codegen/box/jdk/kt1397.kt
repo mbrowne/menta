@@ -3,7 +3,7 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-class IntArrayList(): ArrayList<Int>() {
+define IntArrayList(): ArrayList<Int>() {
     override fun get(index: Int): Int = super.get(index)
 }
 

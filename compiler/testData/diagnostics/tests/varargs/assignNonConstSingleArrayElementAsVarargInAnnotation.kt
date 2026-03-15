@@ -6,7 +6,7 @@ fun nonConstFun(): LongArray = TODO()
 
 fun nonConstLong(): Long = TODO()
 
-annotation class Anno(vararg val value: Long)
+annotation define Anno(vararg val value: Long)
 
 @Anno(value = <!ANNOTATION_ARGUMENT_IS_NON_CONST!>nonConstArray<!>)
 fun foo1() {}

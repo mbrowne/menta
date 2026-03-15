@@ -2,7 +2,7 @@ fun test1(f: (Int) -> Int) = f(1)
 
 fun test2(f: Int.() -> Int) = 2.f()
 
-class A(val foo: Int.() -> Int)
+define A(val foo: Int.() -> Int)
 
 fun box(): String {
     val a: (Int) -> Int = { it }

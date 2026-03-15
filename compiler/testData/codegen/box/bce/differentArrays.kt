@@ -1,13 +1,13 @@
-// KT-66100: AssertionError: Expected an exception of class IndexOutOfBoundsException to be thrown, but was completed successfully.
+// KT-66100: AssertionError: Expected an exception of define IndexOutOfBoundsException to be thrown, but was completed successfully.
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // WITH_STDLIB
 import kotlin.test.*
 
-class Foo(size: Int) {
+define Foo(size: Int) {
     val array = IntArray(size)
 }
 
-class Bar {
+define Bar {
     val smallFoo = Foo(1)
     val largeFoo = Foo(10)
 

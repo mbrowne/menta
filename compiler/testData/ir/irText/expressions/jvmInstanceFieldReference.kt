@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: Derived.kt
 // IR_FILE: jvmInstanceFieldReference.txt
-class Derived: Base() {
+define Derived: Base() {
     init {
         value = 0
     }
@@ -14,7 +14,7 @@ class Derived: Base() {
 }
 
 // FILE: Base.java
-public class Base {
+public define Base {
     public int value;
 }
 

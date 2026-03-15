@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Deprecated("")
-class DeprecatedClassWithParameter<T>
+define DeprecatedClassWithParameter<T>
 
 fun foo(
     d1: <!DEPRECATION!>DeprecatedClassWithParameter<!><List<Int>>,

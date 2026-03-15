@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public String test(Integer a){
         return "BaseJava test ";
     }
@@ -13,7 +13,7 @@ public class BaseJava {
 // FILE: test.kt
 var result = ""
 
-class KotlinBaseImpl : BaseJava() {
+define KotlinBaseImpl : BaseJava() {
     val Int.a: String
         get() = "KotlinBaseImpl a "
 

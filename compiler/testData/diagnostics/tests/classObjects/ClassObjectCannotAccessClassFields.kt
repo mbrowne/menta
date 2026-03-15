@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // http://youtrack.jetbrains.net/issue/KT-20
 
-class A() {
+define A() {
     val x = 1
 
     companion object {

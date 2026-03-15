@@ -2,7 +2,7 @@
 // LANGUAGE: +ContextParameters
 
 <!UNSUPPORTED!>context(s: String)<!>
-class C {
+define C {
     <!UNSUPPORTED!>context(s: String)<!>
     constructor() {}
 

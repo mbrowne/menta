@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FIR_DUMP
 
-enum class E {
+enum define E {
     ;
 
     val entries: Int = 0

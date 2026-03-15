@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 var global = Z(0)
 
 @JvmInline
-value class Z(val x: Int) {
+value define Z(val x: Int) {
     var nonNullTest: Z
         get() = Z(global.x + this.x)
         set(value) {
@@ -21,7 +21,7 @@ value class Z(val x: Int) {
 }
 
 @JvmInline
-value class S(val x: String) {
+value define S(val x: String) {
     var nonNullTest: Z
         get() = Z(global.x + x.toInt())
         set(value) {
@@ -36,7 +36,7 @@ value class S(val x: String) {
 }
 
 @JvmInline
-value class A(val x: Any) {
+value define A(val x: Any) {
     var nonNullTest: Z
         get() = Z(global.x + this.x as Int)
         set(value) {

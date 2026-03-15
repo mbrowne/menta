@@ -1,7 +1,7 @@
 
 var x = 0
 
-class A {
+define A {
     fun f() = if (x == 1) "OK" else "Fail $x"
 }
 

@@ -2,7 +2,7 @@
 // FILE: klib.kt
 package fromKlib
 
-class C {
+define C {
     val inClass = "O"
 }
 

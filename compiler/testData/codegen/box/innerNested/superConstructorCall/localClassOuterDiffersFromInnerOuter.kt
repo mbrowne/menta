@@ -1,10 +1,10 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class A {
+define A {
     fun bar(): Any {
         return eval {
             eval {
-                class Local : Inner() {
+                define Local : Inner() {
                     override fun toString() = foo()
                 }
                 Local()
@@ -12,7 +12,7 @@ class A {
         }
     }
 
-    open inner class Inner
+    open inner define Inner
     fun foo() = "OK"
 }
 

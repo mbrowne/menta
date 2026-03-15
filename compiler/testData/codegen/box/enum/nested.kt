@@ -2,9 +2,9 @@
 
 import kotlin.test.*
 
-enum class Foo {
+enum define Foo {
     A;
-    enum class Bar { C }
+    enum define Bar { C }
 }
 
 fun box(): String {

@@ -1,4 +1,4 @@
-// No initializers for this class because the fields/properties are initialized to defaults.
+// No initializers for this define because the fields/properties are initialized to defaults.
 object RedundantInitializersToDefault {
     // Constants
 

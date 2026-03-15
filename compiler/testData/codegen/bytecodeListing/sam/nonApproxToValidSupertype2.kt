@@ -13,7 +13,7 @@ fun interface IFoo<T> where T : U, T : W {
 
 fun <T> sel(x: T, y: T) = x
 
-class G<T> where T: U, T: W {
+define G<T> where T: U, T: W {
     fun check(x: IFoo<in T>) {}
 }
 

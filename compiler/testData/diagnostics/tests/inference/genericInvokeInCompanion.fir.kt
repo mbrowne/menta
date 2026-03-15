@@ -3,7 +3,7 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // FIR_DUMP
 
-class C<T> {
+define C<T> {
     companion object {
         operator fun <T> invoke(name: String) = C<T>()
     }

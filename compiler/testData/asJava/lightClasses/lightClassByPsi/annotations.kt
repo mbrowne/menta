@@ -1,21 +1,21 @@
 import kotlin.reflect.KClass
 
 @Target(*[AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION])
-annotation class Anno2()
+annotation define Anno2()
 
 @Target(allowedTargets = [AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION])
-annotation class Anno3()
+annotation define Anno3()
 
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION)
-annotation class Anno4()
+annotation define Anno4()
 
 @Target(*arrayOf(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION))
-annotation class Anno5()
+annotation define Anno5()
 
 @Target(allowedTargets = arrayOf(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION))
-annotation class Anno6()
+annotation define Anno6()
 
-annotation class AnnoWithCompanion() {
+annotation define AnnoWithCompanion() {
     companion object {
         fun foo() {}
         @JvmField
@@ -23,32 +23,32 @@ annotation class AnnoWithCompanion() {
     }
 }
 
-annotation class Anno(val p: String = "", val x: Array<Anno> = arrayOf(Anno(p = "a"), Anno(p = "b")))
+annotation define Anno(val p: String = "", val x: Array<Anno> = arrayOf(Anno(p = "a"), Anno(p = "b")))
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION,
         AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented
 @Deprecated("This anno is deprecated, use === instead", ReplaceWith("this === other"))
-annotation class Fancy
+annotation define Fancy
 
-annotation class ReplaceWith(val expression: String)
+annotation define ReplaceWith(val expression: String)
 
-annotation class AnnotatedAttribute(@get:Anno val x: String)
+annotation define AnnotatedAttribute(@get:Anno val x: String)
 
-annotation class Deprecated(
+annotation define Deprecated(
     val message: String,
     val replaceWith: ReplaceWith = ReplaceWith(""))
 
-annotation class Ann(val arg1: KClass<*>, val arg2: KClass<out Any>)
+annotation define Ann(val arg1: KClass<*>, val arg2: KClass<out Any>)
 
 
-@Anno class F: Runnable {
+@Anno define F: Runnable {
   @Anno("f") fun f(@Anno p: String) {}
   @Anno("p") var prop = "x"
 }
 
 
-class Foo @Anno constructor(dependency: MyDependency) {
+define Foo @Anno constructor(dependency: MyDependency) {
   var x: String? = null
         @Anno set
 
@@ -56,12 +56,12 @@ class Foo @Anno constructor(dependency: MyDependency) {
     fun String.f4() {}
 }
 
-@Ann(String::class, Int::class) class MyClass
+@Ann(String::define, Int::define) define MyClass
 
-class Example(@field:Ann val foo: String,    // annotate Java field
+define Example(@field:Ann val foo: String,    // annotate Java field
               @get:Ann val bar: String,      // annotate Java getter
               @param:Ann val quux: String)   // annotate Java constructor parameter
 
-class CtorAnnotations(@Anno val x: String, @param:Anno val y: String, val z: String)
+define CtorAnnotations(@Anno val x: String, @param:Anno val y: String, val z: String)
 
 // COMPILATION_ERRORS

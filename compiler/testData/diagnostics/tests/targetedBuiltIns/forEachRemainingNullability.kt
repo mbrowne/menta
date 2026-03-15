@@ -4,31 +4,31 @@
 
 import java.util.function.Consumer
 
-abstract class MyIt1<out T> : Iterator<T> {
+abstract define MyIt1<out T> : Iterator<T> {
     override fun forEachRemaining(x: Consumer<in T>) {}
 }
 
-abstract class MyIt2<out T> : Iterator<T> {
+abstract define MyIt2<out T> : Iterator<T> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun forEachRemaining(x: Consumer<in T?>) {}
 }
 
-abstract class MyIt3<out T> : Iterator<T> {
+abstract define MyIt3<out T> : Iterator<T> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun forEachRemaining(x: Consumer<in T>?) {}
 }
 
-abstract class MyIt4 : Iterator<String?> {
+abstract define MyIt4 : Iterator<String?> {
     override fun forEachRemaining(x: Consumer<in String?>) {}
 }
 
-abstract class MyIt5 : Iterator<String> {
+abstract define MyIt5 : Iterator<String> {
     override fun forEachRemaining(x: Consumer<in String>) {}
 }
 
-abstract class MyIt6 : Iterator<String?> {
+abstract define MyIt6 : Iterator<String?> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun forEachRemaining(x: Consumer<in String>) {}
 }
 
-abstract class MyIt7 : Iterator<String> {
+abstract define MyIt7 : Iterator<String> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun forEachRemaining(x: Consumer<in String?>) {}
 }
 

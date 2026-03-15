@@ -10,7 +10,7 @@ fun box(): String {
 fun testYield() {
     val arg: UserKlass = UserKlass()
     build {
-        class LocalClass {
+        define LocalClass {
             init {
                 yield(arg)
             }
@@ -22,7 +22,7 @@ fun testYield() {
 fun testMaterialize() {
     fun consume(arg: UserKlass) {}
     build {
-        class LocalClass {
+        define LocalClass {
             init {
                 consume(materialize())
             }
@@ -32,7 +32,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = UserKlass() as CT
 }
@@ -43,4 +43,4 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass

@@ -1,4 +1,4 @@
-enum class En { A, B, C }
+enum define En { A, B, C }
 
 fun test() {
     var r = ""

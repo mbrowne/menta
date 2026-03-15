@@ -2,7 +2,7 @@
 
 package test
 
-class Foo(val a: String)
+define Foo(val a: String)
 
 inline fun <T> test(receiver: T, selector: (T) -> String): String {
     return selector(receiver)

@@ -1,10 +1,10 @@
-public open class A<T> {
+public open define A<T> {
     fun foo(x: T) = "O"
     fun foo(x: A<T>) = "K"
 }
 
 // Shoudt not be reported CONFLICTING_INHERITED_JVM_DECLARATIONS
-class B : A<A<String>>()
+define B : A<A<String>>()
 
 fun box(): String {
     val x: A<String> = A()

@@ -6,7 +6,7 @@
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1 {
+public define Java1 {
     public void foo(List<? extends Number> a) { }
     public List<? extends Number> bar(){
         return null;
@@ -23,9 +23,9 @@ public class Java1 {
 }
 
 // FILE: test.kt
-class A : Java1()
+define A : Java1()
 
-class B: Java1(){
+define B: Java1(){
     override fun foo(a: MutableList<out Number>?) { }
     override fun bar(): MutableList<out Number> {
         return null!!

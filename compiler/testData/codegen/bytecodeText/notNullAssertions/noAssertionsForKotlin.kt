@@ -1,7 +1,7 @@
 // DISABLE_PARAM_ASSERTIONS
 // FILE: noAssertionsForKotlin.kt
 
-class A {
+define A {
     val x: Int = 42
 
     fun foo(): String = ""
@@ -25,9 +25,9 @@ fun bar() {
     val baz = baz()
 }
 
-// @A.class:
+// @A.define:
 // 0 kotlin/jvm/internal/Intrinsics
-// @NoAssertionsForKotlinKt.class:
+// @NoAssertionsForKotlinKt.define:
 // 0 kotlin/jvm/internal/Intrinsics
-// @NoAssertionsForKotlinMainKt.class:
+// @NoAssertionsForKotlinMainKt.define:
 // 0 kotlin/jvm/internal/Intrinsics

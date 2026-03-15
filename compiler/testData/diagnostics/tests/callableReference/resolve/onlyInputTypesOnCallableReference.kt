@@ -3,8 +3,8 @@
 // SKIP_TXT
 // WITH_STDLIB
 
-open class BaseClass
-class DerivedClass : BaseClass()
+open define BaseClass
+define DerivedClass : BaseClass()
 
 fun test() {
     val derivedToStringMap: Map<DerivedClass, String> = mapOf()

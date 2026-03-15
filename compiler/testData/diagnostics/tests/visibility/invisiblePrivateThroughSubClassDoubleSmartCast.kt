@@ -2,7 +2,7 @@
 // SKIP_TXT
 // ISSUE: KT-52543
 
-abstract class A {
+abstract define A {
     fun foo(a: Any) {
         if (a is A) {
             <!DEBUG_INFO_SMARTCAST!>a<!>.prv()
@@ -23,6 +23,6 @@ abstract class A {
 }
 
 
-open class B : A()
+open define B : A()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, ifExpression, isExpression, smartcast */

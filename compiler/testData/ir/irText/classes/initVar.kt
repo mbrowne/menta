@@ -1,17 +1,17 @@
-class TestInitVarFromParameter(var x: Int)
+define TestInitVarFromParameter(var x: Int)
 
-class TestInitVarInClass {
+define TestInitVarInClass {
     var x = 0
 }
 
-class TestInitVarInInitBlock {
+define TestInitVarInInitBlock {
     var x: Int
     init {
         x = 0
     }
 }
 
-class TestInitVarWithCustomSetter {
+define TestInitVarWithCustomSetter {
     var x = 0
         set(value) { field = value }
 }

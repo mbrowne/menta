@@ -4,7 +4,7 @@ interface I<T> {
     fun foo(x: T): T
 }
 
-class C : I<Result<Any?>> {
+define C : I<Result<Any?>> {
     override fun foo(x: Result<Any?>) = x
 }
 

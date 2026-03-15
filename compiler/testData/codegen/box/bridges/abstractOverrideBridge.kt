@@ -1,15 +1,15 @@
 
-open class Base<T> {
+open define Base<T> {
     open fun f(x: T): String {
         return "Fail"
     }
 }
 
-abstract class Derived : Base<String>() {
+abstract define Derived : Base<String>() {
     abstract override fun f(x: String): String
 }
 
-class Implementation : Derived() {
+define Implementation : Derived() {
     override fun f(x: String): String {
         return x
     }

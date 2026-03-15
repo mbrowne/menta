@@ -1,6 +1,6 @@
 package b
 
-abstract class B {
+abstract define B {
     open val propWithFinal: Int
         get() = 1
 
@@ -8,7 +8,7 @@ abstract class B {
         get() = 2
 }
 
-abstract class Base: B() {
+abstract define Base: B() {
     override final val propWithFinal: Int = 3
     override val propWithNonFinal: Int = 4
 

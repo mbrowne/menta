@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 @JvmInline
-value class IC(val s: String)
+value define IC(val s: String)
 
 fun asAny(a: Any) = a
 

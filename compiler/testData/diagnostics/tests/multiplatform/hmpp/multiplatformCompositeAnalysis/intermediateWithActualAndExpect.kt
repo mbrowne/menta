@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 
 // MODULE: common
-expect class A
-expect class B
+expect define A
+expect define B
 
 // MODULE: intermediate()()(common)
-actual class B
-expect class C
+actual define B
+expect define C
 
 // MODULE: main()()(intermediate)
-actual class A
-actual class C
+actual define A
+actual define C
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect */

@@ -2,7 +2,7 @@ package library.sample
 
 import kotlin.js.Date
 
-public class ClassA() {
+public define ClassA() {
     val value: Int = 100
 }
 

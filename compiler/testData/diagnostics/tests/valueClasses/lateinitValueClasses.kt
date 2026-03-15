@@ -7,10 +7,10 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class Foo(val x: Int)
+value define Foo(val x: Int)
 
 <!INAPPLICABLE_LATEINIT_MODIFIER!>lateinit<!> var a: Foo
 

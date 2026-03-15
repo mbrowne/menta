@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +CollectionLiterals
 
-enum class MyList {
+enum define MyList {
     OK, MEMBER_FUN, EXTENSION_FUN;
 
     companion object {

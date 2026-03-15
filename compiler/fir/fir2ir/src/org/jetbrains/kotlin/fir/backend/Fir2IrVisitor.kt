@@ -1093,6 +1093,7 @@ class Fir2IrVisitor(
 
         val referencedDeclaration = calleeReference.toResolvedCallableSymbol()?.unwrapCallRepresentative()?.fir
         if (referencedDeclaration?.origin == FirDeclarationOrigin.DynamicScope) return ConeDynamicType.create(session)
+        if (referencedDeclaration?.origin == FirDeclarationOrigin.MentaDynamicScope) return receiver.resolvedType
 
         // When calling an inner class constructor through a typealias, the extension receiver is actually the dispatch receiver
         // because, of course, it is.

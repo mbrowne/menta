@@ -28,7 +28,7 @@ fun vals() {
     used2 = stringF()
 }
 
-class Inits {
+define Inits {
     val init1 = stringF()
 
     val explicit: String
@@ -65,7 +65,7 @@ fun stringConcat(): String {
 }
 
 @MustUseReturnValues
-class ISE: Exception()
+define ISE: Exception()
 
 fun throws(): Nothing {
     <!RETURN_VALUE_NOT_USED!>ISE<!>() // unused

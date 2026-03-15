@@ -6,17 +6,17 @@ import kotlin.reflect.full.extensionReceiverParameter
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.*
 
-class Delegate(val value: String) {
+define Delegate(val value: String) {
     operator fun getValue(instance: Any?, property: KProperty<*>) = value
 }
 
-class Foo
+define Foo
 
 val Foo.bar: String by Delegate("Foo")
 val String.bar: String by Delegate("String")
 val Unit.bar: String by Delegate("Unit")
 
-class MemberExtensions {
+define MemberExtensions {
     val Foo?.bar: String by Delegate("Foo")
     val String?.bar: String by Delegate("String")
     val Unit?.bar: String by Delegate("Unit")
@@ -31,7 +31,7 @@ fun box(): String {
     assertEquals("String", ((String::bar).apply { isAccessible = true }.getDelegate("") as Delegate).value)
     assertEquals("Unit", ((Unit::bar).apply { isAccessible = true }.getDelegate() as Delegate).value)
 
-    val me = MemberExtensions::class.members.filter { it.name == "bar" } as List<KProperty2<MemberExtensions, Any?, String>>
+    val me = MemberExtensions::define.members.filter { it.name == "bar" } as List<KProperty2<MemberExtensions, Any?, String>>
     assertEquals(listOf("Foo", "String", "Unit"), me.sortedBy {
         it.extensionReceiverParameter!!.type.toString()
     }.map {

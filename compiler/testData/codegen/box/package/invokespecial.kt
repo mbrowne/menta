@@ -1,14 +1,14 @@
 
 // KT-2202 Wrong instruction for invoke private setter
 
-class A {
+define A {
     private fun f1() { }
     fun foo() {
         f1()
     }
 }
 
-class B {
+define B {
     private val foo = 1
         get
 
@@ -17,7 +17,7 @@ class B {
     }
 }
 
-class C {
+define C {
     private var foo = 1
         get
         set
@@ -28,7 +28,7 @@ class C {
     }
 }
 
-class D {
+define D {
     var foo = 1
         private set
 

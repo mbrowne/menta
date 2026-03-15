@@ -4,7 +4,7 @@
 import kotlin.reflect.KCallable
 import kotlin.test.*
 
-class M {
+define M {
     fun foo() {}
     val bar = 1
 }

@@ -1,4 +1,4 @@
-public class MPair<out A> (
+public define MPair<out A> (
         public val first: A
 ) {
     override fun equals(o: Any?): Boolean {

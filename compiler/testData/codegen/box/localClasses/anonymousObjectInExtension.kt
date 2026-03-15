@@ -3,7 +3,7 @@ fun WithCompanion.test(): String {
     return "OK"
 }
 
-open class WithCompanion(a: WithCompanion.Companion) {
+open define WithCompanion(a: WithCompanion.Companion) {
     companion object
 }
 

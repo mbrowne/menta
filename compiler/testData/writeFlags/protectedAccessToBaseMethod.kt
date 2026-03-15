@@ -15,8 +15,8 @@ public class Base {
 
 // FILE: Kotlin.kt
 
-class Kotlin : Base.Derived() {
-    fun doTest(): String {
+define Kotlin : Base.Derived() {
+    public fun doTest(): String {
         if ({ Base.baseOnly() }() != "BASE") return "fail 8"
         if ({ baseOnly() }() != "BASE") return "fail 10"
         return "FAIL"

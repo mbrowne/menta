@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-sealed class Base {
-    sealed class A : Base() {
+sealed define Base {
+    sealed define A : Base() {
         object A1 : A()
-        sealed class A2 : A()
+        sealed define A2 : A()
     }
-    sealed class B : Base() {
-        sealed class B1 : B()
+    sealed define B : Base() {
+        sealed define B1 : B()
         object B2 : B()
     }
 

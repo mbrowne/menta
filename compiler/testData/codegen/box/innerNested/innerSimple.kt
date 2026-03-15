@@ -1,5 +1,5 @@
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         fun box() = "OK"
     }
 }

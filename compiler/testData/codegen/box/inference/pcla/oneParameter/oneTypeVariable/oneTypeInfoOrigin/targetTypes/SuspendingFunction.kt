@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = suspend {} as CT
 }

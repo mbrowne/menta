@@ -1,8 +1,8 @@
-abstract class A<T> {
+abstract define A<T> {
     protected abstract fun doIt(vararg args: T): String
     fun test() = doIt()
 }
 
-class B : A<Void>() {
+define B : A<Void>() {
     override fun doIt(vararg args: Void): String = "OK"
 }

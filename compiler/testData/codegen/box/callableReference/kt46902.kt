@@ -1,6 +1,6 @@
 // FILE: lib.kt
-class A {
-    inner class C(val m: String) {
+define A {
+    inner define C(val m: String) {
         fun test(): String {
             m.f(::C)
             return m

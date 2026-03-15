@@ -22,15 +22,15 @@ fun box(): String {
 
 
 
-class ConcreteType
-open class TargetTypeBase {
+define ConcreteType
+open define TargetTypeBase {
     val concreteTypeMemberProperty: ConcreteType = ConcreteType()
 }
-class TargetType: TargetTypeBase()
+define TargetType: TargetTypeBase()
 
 fun consumeTargetTypeBase(value: TargetTypeBase) {}
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> stepByStepBuild(
     instructionsA: Buildee<PTV>.(PTV) -> PTV,

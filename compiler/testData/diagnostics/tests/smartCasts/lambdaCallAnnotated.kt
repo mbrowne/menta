@@ -3,7 +3,7 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class My
+annotation define My
 
 fun bar(): Int = @My {
     var i: Int?

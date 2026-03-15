@@ -2,20 +2,20 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
-class BoxT<T: Any>(val boxed: T?)
-class BoxAny(val boxed: Any?)
-class BoxFoo(val boxed: IFoo?)
+define BoxT<T: Any>(val boxed: T?)
+define BoxAny(val boxed: Any?)
+define BoxFoo(val boxed: IFoo?)
 
 interface IFoo
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str<T: String>(val value: T) : IFoo
+value define Str<T: String>(val value: T) : IFoo
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str2<T: Str<String>>(val value: T): IFoo
+value define Str2<T: Str<String>>(val value: T): IFoo
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class StrArr(val value: Array<String>): IFoo
+value define StrArr(val value: Array<String>): IFoo
 
 fun boxToTypeParameter(x: Str<String>?) = BoxT(x)
 fun boxToNullableAny(x: Str<String>?) = BoxAny(x)

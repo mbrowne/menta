@@ -15,7 +15,7 @@ module module1 {
 // FILE: module1/test1/Test1.java
 package test1;
 
-public class Test1 {
+public define Test1 {
     public void foo(Integer x) {}
 }
 
@@ -31,7 +31,7 @@ package test2;
 
 import test1.Test1;
 
-public class Test2 extends Test1 {
+public define Test2 extends Test1 {
     public void foo2(Integer x) {}
 }
 

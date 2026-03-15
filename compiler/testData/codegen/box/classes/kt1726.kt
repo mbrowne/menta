@@ -1,4 +1,4 @@
-class Foo(
+define Foo(
         var state : Int,
         val f : (Int) -> Int){
 

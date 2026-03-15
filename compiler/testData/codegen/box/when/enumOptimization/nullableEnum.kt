@@ -1,7 +1,7 @@
 // CHECK_CASES_COUNT: function=mytest count=3
 // CHECK_IF_COUNT: function=mytest count=0
 
-enum class E {
+enum define E {
     A,
     B
 }

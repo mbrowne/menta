@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     private val
     // private is parsed as val's identifier
     private fun foo1() {

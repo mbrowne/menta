@@ -1,4 +1,4 @@
-class Box<T>(val value: T)
+define Box<T>(val value: T)
 
 fun box() : String {
     val b = Box<Long>(x@ (1L + 2))

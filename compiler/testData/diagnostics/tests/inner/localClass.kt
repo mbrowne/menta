@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Outer {
+define Outer {
     fun foo(): Int {
         if (outerState > 0) return outerState
         
-        class Local {
+        define Local {
             val localState = outerState
             
-            inner class LocalInner {
+            inner define LocalInner {
                 val o = outerState
                 val l = localState
             }

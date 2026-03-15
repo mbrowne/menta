@@ -5,8 +5,8 @@
 
 package pack
 
-class AliasedA
-class AliasedB
+define AliasedA
+define AliasedB
 fun interface AliasedC {
     fun single()
 }

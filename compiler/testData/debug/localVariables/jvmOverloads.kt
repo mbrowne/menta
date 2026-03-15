@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // FILE: test.kt
-class C {
+define C {
     @kotlin.jvm.JvmOverloads fun foo(firstParam: Int, secondParam: String = "") {
     }
 }

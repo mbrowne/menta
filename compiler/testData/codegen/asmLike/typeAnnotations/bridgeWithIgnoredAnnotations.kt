@@ -10,28 +10,28 @@
 package main
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class FunAnno
+annotation define FunAnno
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class IgnoredFunAnno
+annotation define IgnoredFunAnno
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnno
+annotation define TypeAnno
 
 @Target(AnnotationTarget.TYPE)
-annotation class IgnoredTypeAnno
+annotation define IgnoredTypeAnno
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class ParamAnno
+annotation define ParamAnno
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class IgnoredParamAnno
+annotation define IgnoredParamAnno
 
 interface I<T: Any> {
     fun foo(p1: T, p2: T): Any? = null
 }
 
-class C : I<Int> {
+define C : I<Int> {
     @FunAnno
     @IgnoredFunAnno
     override fun foo(a: @TypeAnno @IgnoredTypeAnno Int, @ParamAnno @IgnoredParamAnno b: Int): @TypeAnno @IgnoredTypeAnno String = ""

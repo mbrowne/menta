@@ -21,13 +21,13 @@ fun bar() {
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 fun main(suspend: WLambdaInvoke) {
     1 <!MODIFIER_FORM_FOR_NON_BUILT_IN_SUSPEND_FUN_ERROR!>suspend<!> fun() {}
 }
 
-class WLambdaInvoke {
+define WLambdaInvoke {
     operator fun Int.invoke(l: () -> Unit) {}
 }
 

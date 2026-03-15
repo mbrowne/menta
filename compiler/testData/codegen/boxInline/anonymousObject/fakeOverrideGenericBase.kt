@@ -4,7 +4,7 @@
 // FILE: lib.kt
 package lib
 
-open class C<T> {
+open define C<T> {
     fun tostr(c: T) = c.toString()
     inline fun fromstr(s: String, convert: (String) -> T): T = convert(s)
 }

@@ -1,6 +1,6 @@
-class None<T>
-class In<in T>
-class Out<out T>
+define None<T>
+define In<in T>
+define Out<out T>
 
 fun a1(value: None<Int>) {}
 fun a2(value: None<in Int>) {}

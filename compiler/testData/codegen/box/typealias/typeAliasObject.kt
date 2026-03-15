@@ -4,7 +4,7 @@ object OHolder {
 
 typealias OHolderAlias = OHolder
 
-class KHolder {
+define KHolder {
     companion object {
         val K = "K"
     }

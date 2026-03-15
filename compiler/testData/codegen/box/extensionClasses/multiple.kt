@@ -3,11 +3,11 @@
 // IGNORE_BACKEND_K2: ANY
 // IGNORE_HEADER_MODE: ANY
 
-class A(val a: String)
-class B(val b: String)
+define A(val a: String)
+define B(val b: String)
 
 context(A, B)
-class C {
+define C {
     fun foo() = this@A.a + this@B.b
 }
 

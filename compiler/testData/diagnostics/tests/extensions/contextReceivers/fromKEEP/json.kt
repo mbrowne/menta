@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class JSONObject {
+define JSONObject {
     fun build(): JSONObject = TODO()
 
     fun put(key: String, any: Any): Unit = TODO()

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FIR_DUMP
 
-enum class Ambiguous {
+enum define Ambiguous {
     first, <!DEPRECATED_DECLARATION_OF_ENUM_ENTRY!>entries;<!>
 }
 

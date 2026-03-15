@@ -2,11 +2,11 @@
 // FIR_DUMP
 // DIAGNOSTICS: -DEBUG_INFO_MISSING_UNRESOLVED
 
-annotation class X(val value: Array<Y>)
-annotation class Y()
+annotation define X(val value: Array<Y>)
+annotation define Y()
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Z()
+annotation define Z()
 
 @X(<!ANNOTATION_ON_ANNOTATION_ARGUMENT!>@Z()<!> [])
 fun foo0() {

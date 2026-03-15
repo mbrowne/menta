@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test1(x: String?): Boolean {
     contract {
         returns(false) implies (x != null)
@@ -9,7 +9,7 @@ fun test1(x: String?): Boolean {
     return x == null
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test2(x: String?): Boolean {
     contract {
         returns(true) implies (x != null)
@@ -18,7 +18,7 @@ fun test2(x: String?): Boolean {
     return x != null
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test3(x: String?): Any? {
     contract {
         returns(true) implies (x != null)
@@ -31,7 +31,7 @@ fun test3(x: String?): Any? {
     return false
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test4(x: String?): Any? {
     contract {
         returns(true) implies (x != null)
@@ -46,7 +46,7 @@ fun test4(x: String?): Any? {
     return false
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test5(x: String?): Any? {
     contract {
         returns(true) implies (x != null)

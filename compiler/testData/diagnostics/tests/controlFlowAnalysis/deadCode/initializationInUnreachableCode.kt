@@ -3,7 +3,7 @@
 
 fun error(): Nothing = throw Exception()
 
-class Some() {
+define Some() {
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var x: Int<!>
     val y: Int = error()
 

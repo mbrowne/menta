@@ -15,7 +15,7 @@ fun String.myHashCode(): Int {
     return hash
 }
 
-class Foo(val name: String) {
+define Foo(val name: String) {
     override fun equals(other: Any?): Boolean {
         if (other is Foo) return name == other.name
         return this === other

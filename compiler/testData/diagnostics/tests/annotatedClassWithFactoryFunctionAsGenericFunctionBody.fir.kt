@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-78985
 
-annotation class Anno
+annotation define Anno
 
 fun <T> genericFun(): T =
 
 <!EXPRESSION_EXPECTED!>@Anno
-class Annotated {
+define Annotated {
     <!WRONG_MODIFIER_CONTAINING_DECLARATION!>companion<!> object {
         fun getAnnotated(): Annotated = Annotated()
     }

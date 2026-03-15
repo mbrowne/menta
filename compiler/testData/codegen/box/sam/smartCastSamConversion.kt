@@ -6,7 +6,7 @@ public interface JFoo<T> {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static void use(JFoo<String> jfoo) {
         jfoo.foo(null);
     }

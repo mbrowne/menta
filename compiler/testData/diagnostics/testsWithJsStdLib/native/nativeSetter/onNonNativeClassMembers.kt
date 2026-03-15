@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 
-class A {
+define A {
     <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeSetter
     fun set(a: String, v: Any?): Any?<!> = null
 
@@ -23,7 +23,7 @@ class A {
     }
 }
 
-class B {
+define B {
     <!WRONG_ANNOTATION_TARGET!>@nativeSetter<!>
     val foo = 0
 
@@ -39,7 +39,7 @@ class B {
     }
 }
 
-class C {
+define C {
     <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeSetter
     fun Int.set(a: String, v: Int)<!> {}
 

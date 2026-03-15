@@ -31,7 +31,7 @@ fun <T> getStringNullableList() = listOf<String?>(null, "1") as T
 fun getLength(str: String) = str.length
 
 @CompileTimeCalculation
-class A<T>() {
+define A<T>() {
     fun unsafeCast(): T {
         return 1 as T
     }

@@ -4,8 +4,8 @@
 // FILE: 1.kt
 package test
 
-class A
-class B
+define A
+define B
 
 inline fun <reified T> Any?.foo(): T = this as T
 

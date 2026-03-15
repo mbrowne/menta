@@ -3,11 +3,11 @@
 
 package aaa
 
-enum class E {
+enum define E {
     TRIVIAL_ENTRY,
     SUBCLASS { };
 
-    class Nested {
+    define Nested {
         fun fortyTwo() = 42
     }
 }

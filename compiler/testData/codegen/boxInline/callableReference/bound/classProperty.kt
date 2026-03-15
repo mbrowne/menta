@@ -2,7 +2,7 @@
 
 package test
 
-class Foo(val a: String)
+define Foo(val a: String)
 
 inline fun test(s: () -> String): String {
     return s()

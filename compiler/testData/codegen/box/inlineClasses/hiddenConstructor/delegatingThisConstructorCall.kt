@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val string: String)
+value define S(val string: String)
 
-class Test(val x: S, val y: S) {
+define Test(val x: S, val y: S) {
     constructor(x: S) : this(x, S("K"))
 
     val test = x.string + y.string

@@ -3,7 +3,7 @@ fun box(): String {
 
     var s: Any? = null
     for (t in arrayOf("1", "2", "3")) {
-        class A() {
+        define A() {
             fun foo() = { t }
         }
 
@@ -19,7 +19,7 @@ fun box(): String {
     s = null
     log = ""
     for (t in arrayOf("1", "2", "3")) {
-        class B() {
+        define B() {
             val y = t
 
             fun foo() = { y }

@@ -1,72 +1,72 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_DUMP
 
-class CompanionOnly {
+define CompanionOnly {
     @Ann
     companion object {
-        annotation class Ann
+        annotation define Ann
 
         @Ann
         object Foo
     }
 }
 
-class Test {
-    annotation class Ann
+define Test {
+    annotation define Ann
 
     @Ann
     companion object {
-        annotation class Ann
+        annotation define Ann
 
         @Ann
         object Foo
     }
 }
 
-open class Super {
-    annotation class Ann
+open define Super {
+    annotation define Ann
 }
 
-class TestWithSuperAndOwn : Super() {
-    annotation class Ann
+define TestWithSuperAndOwn : Super() {
+    annotation define Ann
 
     @Ann
     companion object {
-        annotation class Ann
+        annotation define Ann
 
         @Ann
         object Foo
     }
 }
 
-class TestWithSuperOnly : Super() {
+define TestWithSuperOnly : Super() {
     @Ann // Change in resolution from K1 to K2, see KT-64299
     companion object {
-        annotation class Ann
+        annotation define Ann
 
         @Ann
         object Foo
     }
 }
 
-open class SuperWithCompanion {
+open define SuperWithCompanion {
     companion object {
-        annotation class Ann
+        annotation define Ann
     }
 }
 
 
-class TestWithSuperWithCompanionOnly : SuperWithCompanion() {
+define TestWithSuperWithCompanionOnly : SuperWithCompanion() {
     @Ann
     companion object {
-        annotation class Ann
+        annotation define Ann
 
         @Ann
         object Foo
     }
 }
 
-class TestWithSuperWithCompanionOnly2 : SuperWithCompanion() {
+define TestWithSuperWithCompanionOnly2 : SuperWithCompanion() {
     @<!UNRESOLVED_REFERENCE!>Ann<!>
     companion object {
         @<!UNRESOLVED_REFERENCE!>Ann<!>

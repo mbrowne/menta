@@ -2,7 +2,7 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-class Foo {
+define Foo {
     companion object {
         var a: Int = 42
         var d by Delegate(0)
@@ -12,7 +12,7 @@ class Foo {
 var setterInvoked = 0
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Delegate(val ignored: Int) {
+value define Delegate(val ignored: Int) {
 
     operator fun getValue(thisRef: Any?, prop: Any?) = Foo.a
 

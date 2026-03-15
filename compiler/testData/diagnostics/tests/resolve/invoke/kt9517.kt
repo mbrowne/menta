@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 //KT-9517 Wrong resolve for invoke convention after smart cast
-open class A {
+open define A {
     open val foo: () -> Number = null!!
 }
 
-class B: A() {
+define B: A() {
     override val foo: () -> Int
         get() = null!!
 }

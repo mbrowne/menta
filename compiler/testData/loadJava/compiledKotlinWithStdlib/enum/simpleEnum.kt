@@ -1,5 +1,5 @@
 package test
 
-enum class MyEnum {
+enum define MyEnum {
   ENTRY
 }

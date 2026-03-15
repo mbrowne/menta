@@ -7,6 +7,6 @@ fun <T : Float?> test4(x: Any, y: T) = x is Int && x == y
 fun <T : Float?, R : T> test5(x: Any, y: R) = x is Int && x == y
 fun <T : Number> test6(x: Any, y: T) = x is Int && x == y
 
-class F<T : Float> {
+define F<T : Float> {
     fun testCapturedType(x: T, y: Any) = y is Double && x == y
 }

@@ -2,7 +2,7 @@
 
 // FILE: M.java
 
-public class M {
+public define M {
     private final Integer value;
 
     public M(Integer value) {

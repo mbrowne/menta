@@ -2,9 +2,9 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class F(val x: Int)
+define F(val x: Int)
 
-class A(val s: String) {
+define A(val s: String) {
     var f = F(0)
 }
 

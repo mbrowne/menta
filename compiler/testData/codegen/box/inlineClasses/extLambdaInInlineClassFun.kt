@@ -5,7 +5,7 @@
 fun <T> T.runExt(fn: T.() -> String) = fn()
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R(private val r: Int) {
+value define R(private val r: Int) {
     fun test() = runExt { "OK" }
 }
 

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-58751
-class Result<out T>
+define Result<out T>
 
 interface Convert<T> {
     fun convert(str: String): Result<T & Any>

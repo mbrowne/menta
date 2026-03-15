@@ -5,7 +5,7 @@
 import kotlin.jvm.JvmInline
 
 @JvmInline
-value class R(val value: String) {
+value define R(val value: String) {
     companion object {
         inline fun ok() = R("OK")
     }

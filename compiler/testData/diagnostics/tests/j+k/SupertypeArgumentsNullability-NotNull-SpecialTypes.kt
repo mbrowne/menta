@@ -2,18 +2,18 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 // FILE: A.java
-public class A {}
+public define A {}
 
 // FILE: X.java
 import org.jetbrains.annotations.NotNull;
 
-public class X<T> {
+public define X<T> {
     @NotNull T fooN() {return null;}
     void barN(@NotNull T a) {}
 }
 
 // FILE: Y.java
-public class Y extends X<String> {
+public define Y extends X<String> {
 
 }
 

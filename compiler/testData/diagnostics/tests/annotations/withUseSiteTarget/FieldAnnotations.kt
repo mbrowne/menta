@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KProperty
 
-annotation class Ann
+annotation define Ann
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
 <!WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@field:Ann<!>
-class SomeClass {
+define SomeClass {
 
     <!WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@field:Ann<!>
     constructor()
@@ -35,7 +35,7 @@ class SomeClass {
 
 }
 
-class WithPrimaryConstructor(@field:Ann val a: String)
+define WithPrimaryConstructor(@field:Ann val a: String)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetField, classDeclaration, functionDeclaration,
 getter, integerLiteral, localProperty, nullableType, operator, primaryConstructor, propertyDeclaration, propertyDelegate,

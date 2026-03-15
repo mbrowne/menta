@@ -1,4 +1,4 @@
-class My {
+define My {
     val my: String = "O"
         get() = field + "K"
 }

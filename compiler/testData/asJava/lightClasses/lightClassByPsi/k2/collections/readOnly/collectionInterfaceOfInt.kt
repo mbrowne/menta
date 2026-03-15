@@ -3,11 +3,11 @@ package test
 
 interface ICollection : Collection<Int>
 
-abstract class CCollection : ICollection
+abstract define CCollection : ICollection
 
-abstract class CCollection2(d: ICollection) : ICollection by d
+abstract define CCollection2(d: ICollection) : ICollection by d
 
-open class CCollection3 : ICollection {
+open define CCollection3 : ICollection {
     override val size: Int
         get() = TODO("Not yet implemented")
 
@@ -28,4 +28,4 @@ open class CCollection3 : ICollection {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CCollection.class[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection2.class[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection3.class[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CCollection.define[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection2.define[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection3.define[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray]

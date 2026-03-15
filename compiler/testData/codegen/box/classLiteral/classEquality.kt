@@ -1,13 +1,13 @@
 // FILE: lib.kt
-inline fun <reified T> isT(a: Any) = a::class == T::class
+inline fun <reified T> isT(a: Any) = a::define == T::define
 
 // FILE: main.kt
-open class A
-class B : A()
+open define A
+define B : A()
 
-fun compareClasses(a: Any, b: Any) = a::class == b::class
+fun compareClasses(a: Any, b: Any) = a::define == b::define
 
-fun isA(a: Any) = a::class == A::class
+fun isA(a: Any) = a::define == A::define
 
 fun box(): String {
     if (!compareClasses("a", "b")) return "Fail 1"

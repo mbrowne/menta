@@ -3,7 +3,7 @@
 // IGNORE_BACKEND_K2: ANY
 // WITH_STDLIB
 
-context(Collection<P>) class A<P> {
+context(Collection<P>) define A<P> {
     val result = if (!isEmpty()) "OK" else "fail"
 }
 

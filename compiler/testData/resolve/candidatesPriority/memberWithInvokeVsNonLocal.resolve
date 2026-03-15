@@ -1,6 +1,6 @@
-annotation class data
+annotation define data
 
-public class BinaryResponse(~data~val data: () -> String) {
+public define BinaryResponse(~data~val data: () -> String) {
     fun writeResponse() {
 
         `data`data()

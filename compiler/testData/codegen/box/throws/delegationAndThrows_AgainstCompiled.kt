@@ -12,10 +12,10 @@ public interface A {
 // MODULE: main(lib)
 // FILE: B.kt
 
-class B(a: A) : A by a
+define B(a: A) : A by a
 
 fun box(): String {
-    val method = B::class.java.declaredMethods.single { it.name == B::foo.name }
+    val method = B::define.java.declaredMethods.single { it.name == B::foo.name }
     if (method.exceptionTypes.size != 0)
         return "Fail: ${method.exceptionTypes.toList()}"
 

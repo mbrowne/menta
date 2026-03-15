@@ -16,5 +16,5 @@ interface B<T> {
     val foo: T
 }
 
-class C : A, B<Int> {
+define C : A, B<Int> {
 }

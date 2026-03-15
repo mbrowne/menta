@@ -7,7 +7,7 @@ import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 import kotlin.test.assertEquals
 
-class C<T> {
+define C<T> {
     fun f(): KType = typeOf<List<T & Any>>()
 }
 

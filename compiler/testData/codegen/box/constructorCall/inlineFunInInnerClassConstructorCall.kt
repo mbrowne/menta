@@ -24,7 +24,7 @@ fun <T> logged(msg: String, value: T): T {
 }
 
 // FILE: Foo.kt
-open class Foo {
+open define Foo {
     init {
         log.append("Foo.<init>;")
     }
@@ -36,8 +36,8 @@ open class Foo {
     }
 }
 
-class Outer {
-    inner class Inner(val x: Int, val y: Int) : Foo() {
+define Outer {
+    inner define Inner(val x: Int, val y: Int) : Foo() {
         init {
             log.append("Inner.<init>;")
         }

@@ -5,15 +5,15 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class Inv<K>(val value: K)
+define Inv<K>(val value: K)
 
 interface ProducerScope<E> {
     val prop: Inv<E>
 }
-class CoroutineScope
-class ReceiveChannel<E>
+define CoroutineScope
+define ReceiveChannel<E>
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 public fun <E> produce(block: suspend ProducerScope<E>.() -> Unit): ProducerScope<E> = TODO()
 
 fun test(ls: List<Int>) =

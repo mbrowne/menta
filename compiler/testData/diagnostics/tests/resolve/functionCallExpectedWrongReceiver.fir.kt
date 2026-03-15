@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-77104
 
-class Foo
+define Foo
 
-class Bar
+define Bar
 fun Bar.qux() {}
 
-class Baz
+define Baz
 fun Baz.qux() {}
 
 fun test(f: Foo) {

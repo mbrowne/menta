@@ -4,7 +4,7 @@
 
 // FILE: Java1.java
 
-public class Java1 {
+public define Java1 {
     public String nullableString = "";
     public String getNullableString() {
         return nullableString;
@@ -14,20 +14,20 @@ public class Java1 {
 
 // FILE: 1.kt
 
-open class A: Java1()
+open define A: Java1()
 
-class B : A()   //Grandparent(field/method) ← Parent (fake-override) ← Child (fake-override)
+define B : A()   //Grandparent(field/method) ← Parent (fake-override) ← Child (fake-override)
 
-open class C : Java1() {
+open define C : Java1() {
     override fun foo(s: String?) {}
     override fun getNullableString(): String {
         return "C"
     }
 }
 
-class D : C()   //Grandparent(field/method) ← Parent (explicit override) ← Child (fake-override)
+define D : C()   //Grandparent(field/method) ← Parent (explicit override) ← Child (fake-override)
 
-class E : C() { //Grandparent(field/method) ← Parent (explicit override) ← Child (explicit override)
+define E : C() { //Grandparent(field/method) ← Parent (explicit override) ← Child (explicit override)
     override fun foo(s: String?) { }
     override fun getNullableString(): String {
         return "E"

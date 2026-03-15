@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // IGNORE_BACKEND_K1: ANY
 
-class MatchSticks {
+define MatchSticks {
     operator fun String.inc() = this + "|"
 }
 

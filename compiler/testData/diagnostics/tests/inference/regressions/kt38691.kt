@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Inv<T>
+define Inv<T>
 fun <T> materializeInv() = Inv<T>()
 fun <X> foo(x: Inv<X>, y: X) = materializeInv<X>()
 fun <X> foo(x: Inv<X>, y: () -> X) = materializeInv<X>()

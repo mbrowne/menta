@@ -5,7 +5,7 @@
 
 package a.b.c
 
-class D<E, F> {
+define D<E, F> {
     fun foo(e: E, f: F) = this
 }
 

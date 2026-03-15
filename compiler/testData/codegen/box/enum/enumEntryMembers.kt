@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // MODULE: lib
 // FILE: lib.kt
-enum class Foo {
+enum define Foo {
     FOO() {
         // Test for KT-42351
         private fun privateBar() = "bar"

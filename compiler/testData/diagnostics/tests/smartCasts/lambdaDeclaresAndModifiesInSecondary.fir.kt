@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class My {
+define My {
     constructor(arg: Int?) {
         run {
             var x = arg

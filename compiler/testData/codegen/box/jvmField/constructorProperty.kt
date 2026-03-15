@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static String invokeMethodWithPublicField() {
         C c = new C("OK");
         return c.foo;
@@ -12,7 +12,7 @@ public class Test {
 
 // FILE: simple.kt
 
-class C(@JvmField val foo: String) {
+define C(@JvmField val foo: String) {
 
 }
 

@@ -1,4 +1,4 @@
-class C() {
+define C() {
     constructor(x: Int): this() {
         fun test() {
             fun test() {}

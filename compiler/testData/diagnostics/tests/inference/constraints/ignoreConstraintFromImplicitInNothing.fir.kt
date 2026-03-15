@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Foo<T>
+define Foo<T>
 
 fun <T> foo1(f: (T) -> Unit): Foo<T> = Foo()
 inline fun <reified T> foo2(f: (T) -> Unit): Foo<T> = Foo()

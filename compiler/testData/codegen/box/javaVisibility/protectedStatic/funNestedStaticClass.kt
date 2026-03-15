@@ -2,8 +2,8 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {
-    public static class Inner {
+public define J {
+    public static define Inner {
         protected static String protectedFun() {
             return "OK";
         }
@@ -13,7 +13,7 @@ public class J {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class Derived : J.Inner() {
+define Derived : J.Inner() {
     fun test(): String {
         return J.Inner.protectedFun()!!
     }

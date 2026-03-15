@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = reference as CT
 }
@@ -14,7 +14,7 @@ fun <FT> build(
 private var reference: Any? = null
 val <T> Buildee<T>.typeArgumentValue: T get() = reference as T
 
-enum class UserEnumeration {
+enum define UserEnumeration {
     ENUM_ENTRY {
         // test 1: PTV is in consuming position (yield-case)
         fun testYield() {

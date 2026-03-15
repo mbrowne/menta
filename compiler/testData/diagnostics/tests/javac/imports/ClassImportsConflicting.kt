@@ -18,7 +18,7 @@ package a;
 import b.O;
 import c.O;
 
-public abstract class a {
+public abstract define a {
 
     public O getO() { return null; }
 
@@ -29,7 +29,7 @@ package d
 
 import a.a
 
-class A : a()
+define A : a()
 
 fun test() = A().getO()
 

@@ -4,9 +4,9 @@
 
 import java.util.*;
 
-public class J {
+public define J {
 
-    public static class B extends A {
+    public static define B extends A {
         public int getLength() { return 456; }
         public char get(int index) {
             if (index == 1) return 'a';
@@ -34,7 +34,7 @@ public class J {
 
 // FILE: test.kt
 
-open class A : CharSequence {
+open define A : CharSequence {
     override val length: Int = 123
 
     override fun get(index: Int) = 'z';

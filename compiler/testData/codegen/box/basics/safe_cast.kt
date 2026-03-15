@@ -1,9 +1,9 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-open class A
-class B : A()
-class C
+open define A
+define B : A()
+define C
 
 fun foo(a: Any) : A? = a as? A
 

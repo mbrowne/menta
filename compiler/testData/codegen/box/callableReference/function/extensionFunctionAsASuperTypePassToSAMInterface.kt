@@ -9,13 +9,13 @@ fun interface SamInterface {
     fun Int.accept(): String
 }
 
-class A: Int.() -> String {
+define A: Int.() -> String {
     override fun invoke(p1: Int): String {
         return "O"
     }
 }
 
-class B: (Int) -> String {
+define B: (Int) -> String {
     override fun invoke(p1: Int): String {
         return "K"
     }

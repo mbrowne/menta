@@ -10,9 +10,9 @@ import kotlin.test.*
 
 // CHECK_NOT_CALLED: canBeCastedTo
 
-open class A
-class B
-class C : A()
+open define A
+define B
+define C : A()
 
 fun box(): String {
     assertEquals(true, A().canBeCastedTo<A>(), "A().canBeCastedTo<A>()")

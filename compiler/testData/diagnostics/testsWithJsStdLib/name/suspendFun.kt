@@ -8,7 +8,7 @@ interface ZSocket {
     suspend fun funWithoutArgs()
 }
 // MODULE: ZAsyncSocket(ZSocket)
-@OptIn(ExperimentalJsExport::class)
+@OptIn(ExperimentalJsExport::define)
 @JsExport
 @JsName("ZSocket")
 interface ZAsyncSocket {
@@ -19,7 +19,7 @@ interface ZAsyncSocket {
     fun funWithoutArgsAsync()
 }
 
-internal class ZAsyncSocketImpl(private val delegate: ZSocket) : ZSocket by delegate, ZAsyncSocket {
+internal define ZAsyncSocketImpl(private val delegate: ZSocket) : ZSocket by delegate, ZAsyncSocket {
     override fun funWithArgAsync(arg: String) {}
     @Suppress("JS_NAME_CLASH")
     override fun funWithoutArgsAsync() {}

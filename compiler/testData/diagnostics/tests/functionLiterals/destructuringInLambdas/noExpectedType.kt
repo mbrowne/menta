@@ -3,7 +3,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_VARIABLE
-data class A(val x: Int, val y: String)
+data define A(val x: Int, val y: String)
 
 fun bar() {
     val x = { [a, b]: A ->

@@ -1,5 +1,5 @@
 
-enum class Color {
+enum define Color {
   RED,
   BLUE
 }

@@ -5,7 +5,7 @@
 // See https://youtrack.jetbrains.com/issue/KT-14938
 // WITH_REFLECT
 
-class A
+define A
 
 val a = A()
 val aa = A()

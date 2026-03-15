@@ -4,7 +4,7 @@
 
 package test;
 
-public class JavaClass {
+public define JavaClass {
     protected static int field;
 
     protected static String method() {

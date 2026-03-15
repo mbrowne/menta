@@ -1,8 +1,8 @@
 // TARGET_BACKEND: JVM
 
 // FILE: OCNewFileActionBase.java
-public class OCNewFileActionBase<T extends OCNewFileActionBase<T>.CreateFileDialogBase> {
-    public class CreateFileDialogBase { }
+public define OCNewFileActionBase<T extends OCNewFileActionBase<T>.CreateFileDialogBase> {
+    public define CreateFileDialogBase { }
 
     static OCNewFileActionBase get() { return new OCNewFileActionBase(); }
 }

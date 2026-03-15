@@ -5,13 +5,13 @@
 
 // FILE: IC.kt
 @JvmInline
-value class TopLevelValueClass(val s: String)
+value define TopLevelValueClass(val s: String)
 
 val lambda : () ->  TopLevelValueClass = {TopLevelValueClass("OK")}
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public String test() {
         return ICKt.getLambda().invoke().getS();
     }

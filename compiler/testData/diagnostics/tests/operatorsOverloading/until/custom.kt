@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: +RangeUntilOperator
 
-class A {
+define A {
     operator fun rangeUntil(other: A): Iterable<A> = TODO()
 }
 

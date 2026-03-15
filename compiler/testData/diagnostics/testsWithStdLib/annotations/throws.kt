@@ -5,13 +5,13 @@
 // FILE: main1.kt
 package abc1
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -23,13 +23,13 @@ package abc2
 
 import kotlin.jvm.Throws
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -41,13 +41,13 @@ package abc3
 
 import kotlin.Throws
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -60,13 +60,13 @@ package abc4
 import kotlin.<!CONFLICTING_IMPORT!>Throws<!>
 import kotlin.jvm.<!CONFLICTING_IMPORT!>Throws<!>
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -78,13 +78,13 @@ package abc5
 
 import kotlin.jvm.*
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -96,13 +96,13 @@ package abc6
 
 import kotlin.*
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -115,13 +115,13 @@ package abc7
 import kotlin.*
 import kotlin.jvm.*
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -134,13 +134,13 @@ package abc8
 import kotlin.*
 import kotlin.jvm.Throws
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -153,13 +153,13 @@ package abc9
 import kotlin.jvm.*
 import kotlin.Throws
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun foo1() {}
 
-@kotlin.Throws(Exception::class)
+@kotlin.Throws(Exception::define)
 fun foo2() {}
 
-@kotlin.jvm.Throws(Exception::class)
+@kotlin.jvm.Throws(Exception::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -171,7 +171,7 @@ fun foo7(x: kotlin.jvm.Throws) {}
 val x: Throws? = null
 val y = Throws()
 val z = Throws::exceptionClasses
-val w = Throws::class
+val w = Throws::define
 
 /* GENERATED_FIR_TAGS: callableReference, classReference, functionDeclaration, nullableType, outProjection,
 propertyDeclaration */

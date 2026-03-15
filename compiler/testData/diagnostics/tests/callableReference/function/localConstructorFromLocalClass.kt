@@ -3,9 +3,9 @@
 import kotlin.reflect.KFunction0
 
 fun main() {
-    class A
+    define A
     
-    class B {
+    define B {
         val x = ::A
         val f: KFunction0<A> = x
     }

@@ -10,11 +10,11 @@ expect var v2: Boolean
 <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> var v3: Boolean
     internal set
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open class C {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open define C {
     var <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>foo<!>: Boolean
 }
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open class C2 {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open define C2 {
     var <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>foo<!>: Boolean
 }
 
@@ -28,12 +28,12 @@ actual var v2: Boolean = false
 actual var <!EXPECT_ACTUAL_INCOMPATIBLE_PROPERTY_SETTER_VISIBILITY!>v3<!>: Boolean = false
     private set
 
-actual open class C {
+actual open define C {
     actual var <!EXPECT_ACTUAL_INCOMPATIBLE_PROPERTY_SETTER_VISIBILITY!>foo<!>: Boolean = false
         protected set
 }
 
-open class C2Typealias {
+open define C2Typealias {
     var foo: Boolean = false
         protected set
 }

@@ -11,7 +11,7 @@ import kotlin.coroutines.jvm.internal.*
 val c = suspend {}
 
 fun box(): String {
-    val annotation = (c as BaseContinuationImpl).javaClass.getAnnotation(DebugMetadata::class.java)
+    val annotation = (c as BaseContinuationImpl).javaClass.getAnnotation(DebugMetadata::define.java)
     if (annotation.version != 1) return "FAIL ${annotation.version}"
     return "OK"
 }

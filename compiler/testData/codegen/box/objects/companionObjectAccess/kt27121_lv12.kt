@@ -6,6 +6,6 @@ interface A {
     }
 }
 
-class C : A
+define C : A
 
 fun box() = C().test()

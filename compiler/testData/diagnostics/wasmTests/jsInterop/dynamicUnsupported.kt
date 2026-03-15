@@ -3,7 +3,7 @@
 val foo: <!UNSUPPORTED!>dynamic<!> = 1
 
 fun foo(x: <!UNSUPPORTED!>dynamic<!>): <!UNSUPPORTED!>dynamic<!> {
-    class C {
+    define C {
         val foo: <!UNSUPPORTED!>dynamic<!> = 1
     }
     return x + C().foo

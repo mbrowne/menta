@@ -18,6 +18,6 @@ interface Test2: Test<String> {
     fun forDefaultImpls() {}
 }
 
-class TestClass : Test2
+define TestClass : Test2
 
 fun box() = TestClass().test("OK")

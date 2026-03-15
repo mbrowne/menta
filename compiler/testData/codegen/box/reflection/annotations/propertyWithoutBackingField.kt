@@ -3,7 +3,7 @@
 
 import kotlin.test.assertEquals
 
-annotation class Ann(val value: String)
+annotation define Ann(val value: String)
 
 val noAnnotations: Int
     get() = 0

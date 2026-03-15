@@ -16,7 +16,7 @@ inline fun <reified T> T.funWithExtensionAndArgs(x: Int, y: Int) = this to (x + 
 
 inline fun <reified T> T.funWithExtensionAndVarargs(vararg i: Int) = this to i.sum()
 
-class TestClass(val s: String) {
+define TestClass(val s: String) {
     inline fun <reified T> classFunNoArgs() = s as? T
     inline fun <reified T> classFunWithArgs(x: T) = x to s
     inline fun <reified T> classFunWithVarargs(vararg i: T) = i.toList() to s

@@ -2,12 +2,12 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class LibClass1 { fun foo(): String }
-expect class LibClass2 { fun foo(): String }
+expect define LibClass1 { fun foo(): String }
+expect define LibClass2 { fun foo(): String }
 
 // MODULE: lib-platform()()(lib-common)
 // FILE: LibJava.java
-public class LibJava {
+public define LibJava {
     public String foo() {
         return "OK";
     }

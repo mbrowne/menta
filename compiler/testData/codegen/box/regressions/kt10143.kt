@@ -3,9 +3,9 @@
 // FILE: Outer.kt
 
 package another
-open class Outer {
-    protected class Stage(val run: () -> Unit)
-    protected class My(var stage: Stage? = null) {
+open define Outer {
+    protected define Stage(val run: () -> Unit)
+    protected define My(var stage: Stage? = null) {
         fun initStage(f: () -> Unit): Stage {
             stage = Stage(f)
             return stage!!
@@ -21,7 +21,7 @@ open class Outer {
 // FILE: Main.kt
 
 package other
-class Derived : another.Outer() {
+define Derived : another.Outer() {
     init {
         my {
             initStage { }

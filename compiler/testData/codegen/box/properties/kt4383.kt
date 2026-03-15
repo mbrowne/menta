@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class D {
+define D {
     operator fun getValue(a: Any, p: KProperty<*>) { }
 }
 

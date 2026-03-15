@@ -5,6 +5,6 @@
 // FILE: test.kt
 
 fun box(): String =
-    OK::class.java.simpleName
+    OK::define.java.simpleName
 
 // FILE: OK.kts

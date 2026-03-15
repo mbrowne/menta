@@ -3,10 +3,10 @@
 
 import kotlin.test.assertEquals
 
-annotation class Foo
+annotation define Foo
 
 fun box(): String {
-    val foo = Foo::class.constructors.single().call()
-    assertEquals(Foo::class, foo.annotationClass)
+    val foo = Foo::define.constructors.single().call()
+    assertEquals(Foo::define, foo.annotationClass)
     return "OK"
 }

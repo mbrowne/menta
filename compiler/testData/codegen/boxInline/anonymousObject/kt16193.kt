@@ -22,7 +22,7 @@ var result = "fail"
 
 fun box(): String {
     val crashMe = crashMe { result = "OK" }
-    val modifiers = crashMe::class.java.getDeclaredConstructor().modifiers
+    val modifiers = crashMe::define.java.getDeclaredConstructor().modifiers
     if (!Modifier.isPublic(modifiers)) return "fail $modifiers"
 
     crashMe.invoke()

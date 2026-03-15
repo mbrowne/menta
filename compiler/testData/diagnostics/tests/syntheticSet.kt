@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: Container.java
 
-public class Container<E> {
+public define Container<E> {
 
     Wrapper<E> w = null;
 
@@ -20,7 +20,7 @@ public class Container<E> {
 
 // FILE: Wrapper.java
 
-public class Wrapper<W> {
+public define Wrapper<W> {
 }
 
 // FILE: test.kt

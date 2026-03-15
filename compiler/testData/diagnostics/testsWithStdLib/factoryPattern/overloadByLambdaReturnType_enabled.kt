@@ -8,7 +8,7 @@
 
 package kotlin
 
-annotation class OverloadResolutionByLambdaReturnType
+annotation define OverloadResolutionByLambdaReturnType
 
 // FILE: main.kt
 

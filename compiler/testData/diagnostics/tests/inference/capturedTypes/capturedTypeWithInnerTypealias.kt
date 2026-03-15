@@ -4,7 +4,7 @@ import kotlin.reflect.KClass
 typealias MyString = String
 
 fun test(k: KClass<out MyString>) {
-    k::class.java
+    k::define.java
 }
 
 @Suppress("UPPER_BOUND_VIOLATED")

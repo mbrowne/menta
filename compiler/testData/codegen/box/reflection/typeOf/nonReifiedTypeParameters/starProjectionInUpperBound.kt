@@ -3,7 +3,7 @@
 import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 
-class C<T : Comparable<*>> {
+define C<T : Comparable<*>> {
     fun setOfT(): KType = typeOf<Set<T>>()
 }
 

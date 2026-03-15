@@ -1,6 +1,6 @@
-class C<T>
-class I<in A, B>
-class Z<A, B>
+define C<T>
+define I<in A, B>
+define Z<A, B>
 
 fun f(
         p: Nothing?, p1: C<Nothing?>, p2: C<C<Nothing?>>, p3: C<C<Nothing?>>?,

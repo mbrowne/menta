@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class A
-abstract class B : A()
+abstract define A
+abstract define B : A()
 
-abstract class AS
-abstract class BS : AS()
+abstract define AS
+abstract define BS : AS()
 
 interface AI
 interface BI : AI

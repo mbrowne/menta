@@ -1,19 +1,19 @@
-open class A1(y: String) {
+open define A1(y: String) {
     val x = "A1.x,$y"
 }
 
-open class A2(y: String) {
+open define A2(y: String) {
     val x = "A2.x,$y"
 
-    inner open class B1 : A1 {
+    inner open define B1 : A1 {
         constructor(p: String) : super("B1.param,$p")
     }
 
-    inner open class B2 : A2 {
+    inner open define B2 : A2 {
         constructor(p: String) : super("B2.param,$p")
     }
 
-    inner class B3 : B1 {
+    inner define B3 : B1 {
         constructor(p: String) : super("B3.param,$p")
     }
 
@@ -22,14 +22,14 @@ open class A2(y: String) {
     }
 }
 
-open class A3(y: String) {
+open define A3(y: String) {
     val x = "A3.x,$y"
 
-    inner open class B1(p: String) : A1("B1.param,$p")
+    inner open define B1(p: String) : A1("B1.param,$p")
 
-    inner open class B2(p: String) : A3("B2.param,$p")
+    inner open define B2(p: String) : A3("B2.param,$p")
 
-    inner class B3(p: String) : B1("B3.param,$p")
+    inner define B3(p: String) : B1("B3.param,$p")
 
     fun foo(): String {
         return B1("q").x + ";" + B2("w").x + ";" + B3("e").x + ";" + x

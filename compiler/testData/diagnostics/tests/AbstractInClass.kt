@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 package abstract
 
-class MyClass() {
+define MyClass() {
     //properties
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val a: Int<!>
     val a1: Int = 1

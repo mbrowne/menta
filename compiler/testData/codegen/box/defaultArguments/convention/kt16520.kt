@@ -1,6 +1,6 @@
 var result = "fail"
 
-class A {
+define A {
     operator fun set(
         i1: Int,
         i2: Int = 1,

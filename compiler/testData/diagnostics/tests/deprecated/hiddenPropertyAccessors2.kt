@@ -2,7 +2,7 @@
 // FIR_DUMP
 // ISSUE: KT-48799
 
-class C {
+define C {
     val v1: String
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         get() = ""

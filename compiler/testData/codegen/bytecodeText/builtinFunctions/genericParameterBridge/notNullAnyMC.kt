@@ -1,4 +1,4 @@
-abstract class A8 : MutableCollection<Any> {
+abstract define A8 : MutableCollection<Any> {
     override fun contains(o: Any): Boolean {
         throw UnsupportedOperationException()
     }

@@ -1,7 +1,7 @@
 // DUMP_IR
 // FIR_IDENTICAL
 
-abstract class A {
+abstract define A {
     abstract val x: String
 }
 
@@ -9,9 +9,9 @@ interface B {
     var x: String
 }
 
-abstract class C : A(), B
+abstract define C : A(), B
 
-class D(override var x: String) : C()
+define D(override var x: String) : C()
 
 fun test(c: C) {
     c.x = "OK"

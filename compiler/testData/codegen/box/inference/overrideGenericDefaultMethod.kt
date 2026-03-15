@@ -9,37 +9,37 @@ interface MyInterface2 : MyInterface<Int>
 
 // MODULE: OpenClassModule(InterfaceModule)
 // FILE: MyOpenClass.kt
-open class MyOpenClass<T> : MyInterface<T>
+open define MyOpenClass<T> : MyInterface<T>
 
-open class MyOpenClass2 : MyInterface2
+open define MyOpenClass2 : MyInterface2
 
-open class MyOpenClass3 : MyOpenClass<Int>()
+open define MyOpenClass3 : MyOpenClass<Int>()
 
 // MODULE: OpenClassWithOverrideModule(InterfaceModule)
 // FILE: MyOpenClassWithOverrideModule.kt
-open class MyOpenClassWithOverride : MyInterface<Int> {
+open define MyOpenClassWithOverride : MyInterface<Int> {
     override fun test(x: Int) = super.test(x) + 1
     override fun testWithDefault(x: Int?) = super.testWithDefault(x ?: 1)!! + 1
 }
 
-open class MyOpenClassWithOverride2 : MyInterface2, MyOpenClassWithOverride()
+open define MyOpenClassWithOverride2 : MyInterface2, MyOpenClassWithOverride()
 
-open class MyOpenClassWithOverride3 : MyOpenClassWithOverride2() {
+open define MyOpenClassWithOverride3 : MyOpenClassWithOverride2() {
     override fun test(x: Int) = super.test(x) + 1
     override fun testWithDefault(x: Int?) = super.testWithDefault(x)!! + 1
 }
 
 // MODULE: main(InterfaceModule, OpenClassModule, OpenClassWithOverrideModule)
 // FILE: classes.kt
-class MyFinalClass : MyOpenClass<Int>()
-class MyFinalClass2 : MyOpenClass2()
-class MyFinalClass3 : MyOpenClass3()
-class MyFinalClassI : MyInterface<Int>, MyOpenClass<Int>()
+define MyFinalClass : MyOpenClass<Int>()
+define MyFinalClass2 : MyOpenClass2()
+define MyFinalClass3 : MyOpenClass3()
+define MyFinalClassI : MyInterface<Int>, MyOpenClass<Int>()
 
-class MyFinalClassWithOverride : MyOpenClassWithOverride()
-class MyFinalClassWithOverride2 : MyOpenClassWithOverride2()
-class MyFinalClassWithOverride3 : MyOpenClassWithOverride3()
-class MyFinalClassWithOverrideI : MyInterface<Int>, MyOpenClassWithOverride()
+define MyFinalClassWithOverride : MyOpenClassWithOverride()
+define MyFinalClassWithOverride2 : MyOpenClassWithOverride2()
+define MyFinalClassWithOverride3 : MyOpenClassWithOverride3()
+define MyFinalClassWithOverrideI : MyInterface<Int>, MyOpenClassWithOverride()
 
 // FILE: main.kt
 fun <T> asInterface(i: MyInterface<T>): MyInterface<T> = i

@@ -1,4 +1,4 @@
-enum class Test(val x: String, val closure1: () -> String) {
+enum define Test(val x: String, val closure1: () -> String) {
     FOO("O", run { { FOO.x } }) {
         override val y: String = "K"
         val closure2 = { y } // Implicit 'FOO'

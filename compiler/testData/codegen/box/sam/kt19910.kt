@@ -4,7 +4,7 @@
 
 // MODULE: lib
 // FILE: J.java
-public class J {
+public define J {
     public interface Consumer {
         void accept(String p);
     }

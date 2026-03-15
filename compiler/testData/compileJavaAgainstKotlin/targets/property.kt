@@ -1,4 +1,4 @@
 package test
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class property
+annotation define property

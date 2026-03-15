@@ -11,7 +11,7 @@ KtFile: arraysWithNonConstantValue.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Arrays')
     PRIMARY_CONSTRUCTOR
@@ -35,7 +35,7 @@ KtFile: arraysWithNonConstantValue.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyEnum')
     PsiWhiteSpace(' ')
@@ -108,6 +108,6 @@ KtFile: arraysWithNonConstantValue.kt
           PsiWhiteSpace('\n')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithArrays')

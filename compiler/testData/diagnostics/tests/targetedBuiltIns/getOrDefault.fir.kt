@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FULL_JDK
 
-abstract class A : Map<Int, String>
+abstract define A : Map<Int, String>
 
 fun foo(x: Map<Int, String>, a: A, b: java.util.HashMap<Int, String>) {
     x.getOrDefault(1, "")

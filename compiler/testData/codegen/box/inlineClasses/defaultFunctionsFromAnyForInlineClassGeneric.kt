@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Int>(val x: T)
+value define Foo<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FooRef<T: String>(val y: T)
+value define FooRef<T: String>(val y: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FooLong<T: Long>(val x: T)
+value define FooLong<T: Long>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FooDouble<T: Double>(val y: T)
+value define FooDouble<T: Double>(val y: T)
 
 fun box(): String {
     val f = Foo(42)

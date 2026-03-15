@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package kt1805
-//KT-1805 Better diagnostic for access to private field of parent class
+//KT-1805 Better diagnostic for access to private field of parent define
 
-open class Some {
+open define Some {
     private val privateField = 12
 }
 
-class SomeSubclass : Some() {
+define SomeSubclass : Some() {
     fun test() {
         this.<!INVISIBLE_MEMBER!>privateField<!> // 1. Unresolved reference
     }

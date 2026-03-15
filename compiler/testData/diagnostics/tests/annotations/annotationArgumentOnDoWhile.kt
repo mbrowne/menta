@@ -13,7 +13,7 @@ fun main() {
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.EXPRESSION)
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, const, doWhileLoop, functionDeclaration, integerLiteral, localProperty,
 primaryConstructor, propertyDeclaration */

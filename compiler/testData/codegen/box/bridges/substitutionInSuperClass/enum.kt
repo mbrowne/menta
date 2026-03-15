@@ -4,7 +4,7 @@ interface A<T> {
 
 interface B : A<String>
 
-enum class Z(val aname: String) : B {
+enum define Z(val aname: String) : B {
     Z1("Z1"),
     Z2("Z2");
     override fun foo(t: String) = aname

@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;
 
-public class J {
+public define J {
     public static String nullabilityFlexible() {
         return null;
     }

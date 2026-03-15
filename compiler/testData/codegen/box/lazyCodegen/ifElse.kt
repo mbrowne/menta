@@ -1,4 +1,4 @@
-class A (val p: String, p1: String, p2: String) {
+define A (val p: String, p1: String, p2: String) {
 
     var cond1 :String = ""
 

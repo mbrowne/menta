@@ -3,19 +3,19 @@
 // FILE: lib.kt
 import kotlin.test.*
 
-abstract class A {
+abstract define A {
     inline fun <reified T : Any> baz(): String {
-        return T::class.simpleName!!
+        return T::define.simpleName!!
     }
 }
 
-class B : A() {
+define B : A() {
     fun bar(): String {
         return baz<OK>()
     }
 }
 
-class OK
+define OK
 
 // FILE: main.kt
 fun box(): String {

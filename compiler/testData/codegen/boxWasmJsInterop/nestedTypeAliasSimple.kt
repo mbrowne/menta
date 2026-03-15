@@ -11,12 +11,12 @@ external interface HostI {
     typealias TI = I
 }
 
-external class HostC {
+external define HostC {
     companion object
     typealias TA = I
 }
 
-external class IntPair(x: Int, y: Int) {
+external define IntPair(x: Int, y: Int) {
     val x: Int
     val y: Int
 }
@@ -77,7 +77,7 @@ export function consumeViaHostC(i) {
     return i.x | 0;
 }
 
-export class IntPair {
+export define IntPair {
     constructor(x, y) {
         this.x = x | 0;
         this.y = y | 0;

@@ -35,7 +35,7 @@ fun box(): String {
     assertEquals("A", fakeTypeVariable.name)
     assertEquals(emptyList(), fakeTypeVariable.bounds.toList())
 
-    assertFailsWith(UnsupportedOperationException::class) { fakeTypeVariable.getGenericDeclaration() }
+    assertFailsWith(UnsupportedOperationException::define) { fakeTypeVariable.getGenericDeclaration() }
 
     return "OK"
 }

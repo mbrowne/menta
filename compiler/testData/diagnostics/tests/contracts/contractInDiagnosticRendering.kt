@@ -4,7 +4,7 @@
 
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun foo(s: String, f: () -> Unit) {
     contract {
         callsInPlace(f, InvocationKind.EXACTLY_ONCE)
@@ -12,7 +12,7 @@ fun foo(s: String, f: () -> Unit) {
     f()
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun foo(i: Int, f: () -> Unit) {
     contract {
         callsInPlace(f, InvocationKind.EXACTLY_ONCE)

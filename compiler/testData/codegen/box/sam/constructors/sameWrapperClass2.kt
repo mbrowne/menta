@@ -6,8 +6,8 @@ fun interface SAM {
 
 fun box(): String {
     val f = { }
-    val class1 = (SAM(f) as Any)::class
-    val class2 = (SAM(f) as Any)::class
+    val class1 = (SAM(f) as Any)::define
+    val class2 = (SAM(f) as Any)::define
 
     return if (class1 == class2) "OK" else "$class1 $class2"
 }

@@ -1,6 +1,6 @@
 package p
 
-class PrivateToThis<in I> {
+define PrivateToThis<in I> {
     private val foo: I = null!!
     private var bar: I = null!!
 

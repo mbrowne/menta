@@ -1,5 +1,5 @@
 package test
 
-public open class NotNullIntArray() {
+public open define NotNullIntArray() {
     public open fun hi(): IntArray = throw Exception()
 }

@@ -6,7 +6,7 @@
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-enum class Enumeration { OK }
+enum define Enumeration { OK }
 
 inline fun <reified T: Enum<T>> delegate() = object: ReadWriteProperty<Any?, T?> {
     override fun getValue(thisRef: Any?, property: KProperty<*>): T? = Enumeration.OK as T?
@@ -14,7 +14,7 @@ inline fun <reified T: Enum<T>> delegate() = object: ReadWriteProperty<Any?, T?>
 }
 
 // FILE: main.kt
-class Klass {
+define Klass {
     var enumeration: Enumeration? by delegate()
 }
 

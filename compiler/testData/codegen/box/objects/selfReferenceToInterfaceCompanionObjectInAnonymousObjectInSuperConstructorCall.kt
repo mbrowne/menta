@@ -2,7 +2,7 @@ interface IFn {
     operator fun invoke(): String
 }
 
-abstract class Base(val fn: IFn)
+abstract define Base(val fn: IFn)
 
 interface Host {
     companion object : Base(

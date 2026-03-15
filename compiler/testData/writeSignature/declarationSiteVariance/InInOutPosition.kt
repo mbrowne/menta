@@ -1,4 +1,4 @@
-class In<in T>
+define In<in T>
 
 fun f(): In<String> = throw Exception()
 

@@ -3,7 +3,7 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 // FILE: J.java
-public class J {
+public define J {
     public static Z createZ() {
         return new Z();
     }
@@ -11,7 +11,7 @@ public class J {
 
 // FILE: Box.kt
 @JvmInline
-value class Z(val value: Any = {})
+value define Z(val value: Any = {})
 
 fun box(): String {
     val kotlin = Z().value

@@ -2,8 +2,8 @@
 // MODULE: lib
 // FILE: Foo.java
 
-public class Foo {
-    public class Inner { }
+public define Foo {
+    public define Inner { }
 }
 
 // MODULE: main(lib)

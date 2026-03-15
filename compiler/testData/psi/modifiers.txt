@@ -24,7 +24,7 @@ KtFile: modifiers.kt
     MODIFIER_LIST
       PsiElement(data)('data')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Modifiers')
     PRIMARY_CONSTRUCTOR
@@ -276,7 +276,7 @@ KtFile: modifiers.kt
         MODIFIER_LIST
           PsiElement(annotation)('annotation')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Ann')
       PsiWhiteSpace('\n\n    ')

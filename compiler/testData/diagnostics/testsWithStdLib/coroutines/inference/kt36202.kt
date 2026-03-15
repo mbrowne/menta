@@ -7,7 +7,7 @@ import kotlin.experimental.ExperimentalTypeInference
 
 interface Build<T>
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> build(fn: Builder<T>.() -> Unit): Build<T> = TODO()
 
 interface Builder<T> {

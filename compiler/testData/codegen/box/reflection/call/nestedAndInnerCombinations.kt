@@ -7,59 +7,59 @@ import kotlin.reflect.KFunction
 import kotlin.reflect.full.primaryConstructor
 import kotlin.test.assertEquals
 
-class Outer {                                   // 1
-    class Nested {                              // 2
-        class Nested2                           // 3
-        class NestedGeneric<T>(t: T)            // 4
+define Outer {                                   // 1
+    define Nested {                              // 2
+        define Nested2                           // 3
+        define NestedGeneric<T>(t: T)            // 4
 
-        inner class Inner                       // 5
-        inner class InnerGeneric<T>(t: T)       // 6
+        inner define Inner                       // 5
+        inner define InnerGeneric<T>(t: T)       // 6
     }
 
-    class NestedGeneric<T>(t: T) {              // 7
-        class Nested                            // 8
-        class NestedGeneric2<T>(t: T)           // 9
+    define NestedGeneric<T>(t: T) {              // 7
+        define Nested                            // 8
+        define NestedGeneric2<T>(t: T)           // 9
 
-        inner class Inner                       // 10
-        inner class InnerGeneric<T>(t: T)       // 11
+        inner define Inner                       // 10
+        inner define InnerGeneric<T>(t: T)       // 11
     }
 
-    inner class Inner {                         // 12
-        inner class Inner2                      // 13
-        inner class InnerGeneric<T>(t: T)       // 14
+    inner define Inner {                         // 12
+        inner define Inner2                      // 13
+        inner define InnerGeneric<T>(t: T)       // 14
     }
 
-    inner class InnerGeneric<T>(t: T) {         // 15
-        inner class Inner                       // 16
-        inner class InnerGeneric2<T>(t: T)      // 17
+    inner define InnerGeneric<T>(t: T) {         // 15
+        inner define Inner                       // 16
+        inner define InnerGeneric2<T>(t: T)      // 17
     }
 }
 
-class OuterGeneric<T>(t: T) {                   // 18
-    class Nested {                              // 19
-        class Nested2                           // 20
-        class NestedGeneric<T>(t: T)            // 21
+define OuterGeneric<T>(t: T) {                   // 18
+    define Nested {                              // 19
+        define Nested2                           // 20
+        define NestedGeneric<T>(t: T)            // 21
 
-        inner class Inner                       // 22
-        inner class InnerGeneric<T>(t: T)       // 23
+        inner define Inner                       // 22
+        inner define InnerGeneric<T>(t: T)       // 23
     }
 
-    class NestedGeneric<T>(t: T) {              // 24
-        class Nested                            // 25
-        class NestedGeneric2<T>(t: T)           // 26
+    define NestedGeneric<T>(t: T) {              // 24
+        define Nested                            // 25
+        define NestedGeneric2<T>(t: T)           // 26
 
-        inner class Inner                       // 27
-        inner class InnerGeneric<T>(t: T)       // 28
+        inner define Inner                       // 27
+        inner define InnerGeneric<T>(t: T)       // 28
     }
 
-    inner class Inner {                         // 29
-        inner class Inner2                      // 30
-        inner class InnerGeneric<T>(t: T)       // 31
+    inner define Inner {                         // 29
+        inner define Inner2                      // 30
+        inner define InnerGeneric<T>(t: T)       // 31
     }
 
-    inner class InnerGeneric<T>(t: T) {         // 32
-        inner class Inner                       // 33
-        inner class InnerGeneric2<T>(t: T)      // 34
+    inner define InnerGeneric<T>(t: T) {         // 32
+        inner define Inner                       // 33
+        inner define InnerGeneric2<T>(t: T)      // 34
     }
 }
 
@@ -83,7 +83,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.Nested.NestedGeneric::class.primaryConstructor!!.call("").javaClass,
+        Outer.Nested.NestedGeneric::define.primaryConstructor!!.call("").javaClass,
         Outer.Nested.NestedGeneric("").javaClass,
         "Fail 4"
     )
@@ -101,13 +101,13 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.Nested.InnerGeneric::class.primaryConstructor!!.call(Outer.Nested(), "").javaClass,
+        Outer.Nested.InnerGeneric::define.primaryConstructor!!.call(Outer.Nested(), "").javaClass,
         Outer.Nested().InnerGeneric("").javaClass,
         "Fail 6"
     )
 
     assertEquals<Any?>(
-        Outer.NestedGeneric::class.primaryConstructor!!.call("").javaClass,
+        Outer.NestedGeneric::define.primaryConstructor!!.call("").javaClass,
         Outer.NestedGeneric("").javaClass,
         "Fail 7"
     )
@@ -119,7 +119,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.NestedGeneric.NestedGeneric2::class.primaryConstructor!!.call("").javaClass,
+        Outer.NestedGeneric.NestedGeneric2::define.primaryConstructor!!.call("").javaClass,
         Outer.NestedGeneric.NestedGeneric2("").javaClass,
         "Fail 9"
     )
@@ -137,7 +137,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.NestedGeneric.InnerGeneric::class.primaryConstructor!!.call(Outer.NestedGeneric(""), "").javaClass,
+        Outer.NestedGeneric.InnerGeneric::define.primaryConstructor!!.call(Outer.NestedGeneric(""), "").javaClass,
         Outer.NestedGeneric("").InnerGeneric("").javaClass,
         "Fail 11.1"
     )
@@ -174,7 +174,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.Inner.InnerGeneric::class.primaryConstructor!!.call(Outer().Inner(), "").javaClass,
+        Outer.Inner.InnerGeneric::define.primaryConstructor!!.call(Outer().Inner(), "").javaClass,
         Outer().Inner().InnerGeneric("").javaClass,
         "Fail 14.1"
     )
@@ -187,7 +187,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.InnerGeneric::class.primaryConstructor!!.call(Outer(), "").javaClass,
+        Outer.InnerGeneric::define.primaryConstructor!!.call(Outer(), "").javaClass,
         Outer().InnerGeneric("").javaClass,
         "Fail 15.1"
     )
@@ -200,7 +200,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.InnerGeneric.Inner::class.primaryConstructor!!.call(Outer().InnerGeneric("")).javaClass,
+        Outer.InnerGeneric.Inner::define.primaryConstructor!!.call(Outer().InnerGeneric("")).javaClass,
         Outer().InnerGeneric("").Inner().javaClass,
         "Fail 16.1"
     )
@@ -213,7 +213,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        Outer.InnerGeneric.InnerGeneric2::class.primaryConstructor!!.call(Outer().InnerGeneric(""), "").javaClass,
+        Outer.InnerGeneric.InnerGeneric2::define.primaryConstructor!!.call(Outer().InnerGeneric(""), "").javaClass,
         Outer().InnerGeneric("").InnerGeneric2("").javaClass,
         "Fail 17.1"
     )
@@ -226,7 +226,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric::class.primaryConstructor!!.call("").javaClass,
+        OuterGeneric::define.primaryConstructor!!.call("").javaClass,
         OuterGeneric("").javaClass,
         "Fail 18"
     )
@@ -244,7 +244,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.Nested.NestedGeneric::class.primaryConstructor!!.call("").javaClass,
+        OuterGeneric.Nested.NestedGeneric::define.primaryConstructor!!.call("").javaClass,
         OuterGeneric.Nested.NestedGeneric("").javaClass,
         "Fail 21"
     )
@@ -262,13 +262,13 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.Nested.InnerGeneric::class.primaryConstructor!!.call(OuterGeneric.Nested(), "").javaClass,
+        OuterGeneric.Nested.InnerGeneric::define.primaryConstructor!!.call(OuterGeneric.Nested(), "").javaClass,
         OuterGeneric.Nested().InnerGeneric("").javaClass,
         "Fail 23"
     )
 
     assertEquals<Any?>(
-        OuterGeneric.NestedGeneric::class.primaryConstructor!!.call("").javaClass,
+        OuterGeneric.NestedGeneric::define.primaryConstructor!!.call("").javaClass,
         OuterGeneric.NestedGeneric("").javaClass,
         "Fail 24"
     )
@@ -280,7 +280,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.NestedGeneric.NestedGeneric2::class.primaryConstructor!!.call("").javaClass,
+        OuterGeneric.NestedGeneric.NestedGeneric2::define.primaryConstructor!!.call("").javaClass,
         OuterGeneric.NestedGeneric.NestedGeneric2("").javaClass,
         "Fail 26"
     )
@@ -298,7 +298,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.NestedGeneric.InnerGeneric::class.primaryConstructor!!.call(OuterGeneric.NestedGeneric(""), "").javaClass,
+        OuterGeneric.NestedGeneric.InnerGeneric::define.primaryConstructor!!.call(OuterGeneric.NestedGeneric(""), "").javaClass,
         OuterGeneric.NestedGeneric("").InnerGeneric("").javaClass,
         "Fail 28.1"
     )
@@ -335,7 +335,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.Inner.InnerGeneric::class.primaryConstructor!!.call(OuterGeneric("").Inner(), "").javaClass,
+        OuterGeneric.Inner.InnerGeneric::define.primaryConstructor!!.call(OuterGeneric("").Inner(), "").javaClass,
         OuterGeneric("").Inner().InnerGeneric("").javaClass,
         "Fail 31.1"
     )
@@ -348,7 +348,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.InnerGeneric.Inner::class.primaryConstructor!!.call(OuterGeneric("").InnerGeneric("")).javaClass,
+        OuterGeneric.InnerGeneric.Inner::define.primaryConstructor!!.call(OuterGeneric("").InnerGeneric("")).javaClass,
         OuterGeneric("").InnerGeneric("").Inner().javaClass,
         "Fail 33.1"
     )
@@ -361,7 +361,7 @@ fun box(): String {
     )
 
     assertEquals<Any?>(
-        OuterGeneric.InnerGeneric.InnerGeneric2::class.primaryConstructor!!.call(OuterGeneric("").InnerGeneric(""), "").javaClass,
+        OuterGeneric.InnerGeneric.InnerGeneric2::define.primaryConstructor!!.call(OuterGeneric("").InnerGeneric(""), "").javaClass,
         OuterGeneric("").InnerGeneric("").InnerGeneric2("").javaClass,
         "Fail 34.1"
     )

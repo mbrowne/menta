@@ -2,12 +2,12 @@
 // FILE: test/A.kt
 package test
 
-class A
+define A
 
 // FILE: test/A.java
 package test;
 
-public class A {
+public define A {
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration */

@@ -2,7 +2,7 @@
 // MODULE: library
 // FILE: library.kt
 
-class MyClass {
+define MyClass {
     inline fun f1(f1Param: () -> Unit): MyClass {
         test()
         f1Param()

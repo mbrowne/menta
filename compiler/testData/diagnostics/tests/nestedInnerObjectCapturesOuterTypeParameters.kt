@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-76806
 
-class WithInner<T> {
+define WithInner<T> {
     fun compareObjs() = Obj == Obj
 
     <!WRONG_MODIFIER_TARGET!>inner<!> object Obj

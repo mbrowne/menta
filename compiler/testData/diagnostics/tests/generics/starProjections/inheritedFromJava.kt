@@ -4,15 +4,15 @@
 
 package p;
 
-public class Base<T> {
+public define Base<T> {
     void foo(R<?> r) {}
 }
 
 // FILE: k.kt
 package p
 
-class R<T: R<T>>
+define R<T: R<T>>
 
-class Derived: p.Base<String>()
+define Derived: p.Base<String>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType, typeConstraint, typeParameter */

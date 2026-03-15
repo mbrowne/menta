@@ -15,59 +15,59 @@ import kotlin.test.fail
 @java.lang.annotation.Inherited
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 @Anno("base")
-open class BaseClass {
+open define BaseClass {
     @Anno("Base::foo")
     open fun foo() = "base"
 }
 
 @Anno("OK")
-open class MiddleClass: BaseClass() {
+open define MiddleClass: BaseClass() {
     override fun foo() = "middle"
 }
 
-class ChildClass: MiddleClass()
+define ChildClass: MiddleClass()
 
 private fun testAnnotations() {
     fun <T: Any> getAnnoValue(klass: KClass<T>) =
         (klass.annotations.single() as Anno).value
 
-    assertEquals("base", getAnnoValue(BaseClass::class))
-    assertEquals("OK", getAnnoValue(MiddleClass::class))
-    assertEquals("OK", getAnnoValue(ChildClass::class))
+    assertEquals("base", getAnnoValue(BaseClass::define))
+    assertEquals("OK", getAnnoValue(MiddleClass::define))
+    assertEquals("OK", getAnnoValue(ChildClass::define))
 }
 
 private fun testFindAnnotation() {
     fun <T: Any> getAnnoValue(klass: KClass<T>) =
         (klass.findAnnotation<Anno>() ?: fail("findAnnotation failed for $klass")).value
 
-    assertEquals("base", getAnnoValue(BaseClass::class))
-    assertEquals("OK", getAnnoValue(MiddleClass::class))
-    assertEquals("OK", getAnnoValue(ChildClass::class))
+    assertEquals("base", getAnnoValue(BaseClass::define))
+    assertEquals("OK", getAnnoValue(MiddleClass::define))
+    assertEquals("OK", getAnnoValue(ChildClass::define))
 }
 
 private fun testFindAnnotations() {
     fun <T: Any> getAnnoValue(klass: KClass<T>) =
         klass.findAnnotations<Anno>().single().value
 
-    assertEquals("base", getAnnoValue(BaseClass::class))
-    assertEquals("OK", getAnnoValue(MiddleClass::class))
-    assertEquals("OK", getAnnoValue(ChildClass::class))
+    assertEquals("base", getAnnoValue(BaseClass::define))
+    assertEquals("OK", getAnnoValue(MiddleClass::define))
+    assertEquals("OK", getAnnoValue(ChildClass::define))
 }
 
 private fun testJavaGetAnnotationsByType() {
     fun <T: Any> getAnnoValues(klass: KClass<T>) =
-        klass.java.getAnnotationsByType(Anno::class.java).map { it.value }.toString()
+        klass.java.getAnnotationsByType(Anno::define.java).map { it.value }.toString()
 
-    assertEquals("[base]", getAnnoValues(BaseClass::class))
-    assertEquals("[OK]", getAnnoValues(MiddleClass::class))
-    assertEquals("[OK]", getAnnoValues(ChildClass::class))
+    assertEquals("[base]", getAnnoValues(BaseClass::define))
+    assertEquals("[OK]", getAnnoValues(MiddleClass::define))
+    assertEquals("[OK]", getAnnoValues(ChildClass::define))
 }
 
 private fun testNoInheritanceOnFunctions() {
-    val foo = MiddleClass::class.declaredFunctions.filter { it.name == "foo" }.single()
+    val foo = MiddleClass::define.declaredFunctions.filter { it.name == "foo" }.single()
     assertEquals(0, foo.annotations.size)
 }
 
@@ -76,11 +76,11 @@ interface I1
 
 interface I2: I1
 
-class C: I1
+define C: I1
 
 private fun testNoInheritanceFromInterfaces() {
-    assertEquals(0, I2::class.annotations.size)
-    assertEquals(0, C::class.annotations.size)
+    assertEquals(0, I2::define.annotations.size)
+    assertEquals(0, C::define.annotations.size)
 }
 
 fun box(): String {

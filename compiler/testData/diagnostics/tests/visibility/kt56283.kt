@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // SKIP_TXT
 // FIR_DUMP
-open class Base
-class Derived : Base()
+open define Base
+define Derived : Base()
 
-open class A(protected open val foo: Base) {
+open define A(protected open val foo: Base) {
 
     protected open fun bar(): Base = Base()
 
@@ -22,7 +22,7 @@ open class A(protected open val foo: Base) {
     }
 }
 
-class B(override val foo: Derived): A(foo) {
+define B(override val foo: Derived): A(foo) {
     override fun bar(): Derived = Derived()
 }
 

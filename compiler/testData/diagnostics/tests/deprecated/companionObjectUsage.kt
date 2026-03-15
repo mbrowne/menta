@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Another {
+define Another {
     @Deprecated("Object")
     companion object {
         fun use() {}
@@ -22,7 +22,7 @@ fun useCompanion() {
 }
 
 @Deprecated("Some")
-class Some {
+define Some {
     companion object {
         fun use() {}
     }

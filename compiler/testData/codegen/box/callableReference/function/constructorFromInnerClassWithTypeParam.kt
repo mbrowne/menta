@@ -1,7 +1,7 @@
 var result = "failed"
 
-class Foo<T> {
-    inner class Bar<T> {
+define Foo<T> {
+    inner define Bar<T> {
         constructor() {
             result = "OK"
         }

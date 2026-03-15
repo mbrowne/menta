@@ -7,7 +7,7 @@ import kotlin.experimental.ExperimentalTypeInference
 
 interface Build<T>
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> build(fn: Builder<T>.() -> Unit): Build<T> = TODO()
 
 // Works completely
@@ -41,7 +41,7 @@ interface Builder<T> {
     fun valueFn(fn: () -> T)
 }
 
-data class Wrapped<T>(val value: T)
+data define Wrapped<T>(val value: T)
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, data, functionDeclaration, functionalType, integerLiteral,
 interfaceDeclaration, lambdaLiteral, nullableType, primaryConstructor, propertyDeclaration, typeParameter,

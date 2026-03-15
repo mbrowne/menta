@@ -29,6 +29,6 @@ fun box(): String {
 }
 
 @JvmInline
-value class Z(val value: String) {
+value define Z(val value: String) {
     override fun toString(): String = value
 }

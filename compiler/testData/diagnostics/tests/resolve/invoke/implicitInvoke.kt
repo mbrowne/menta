@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class B
+define B
 
-class A {
+define A {
     operator fun B.invoke() = 4
 }
 
-class X {
+define X {
     operator fun invoke() = 3
 }
 

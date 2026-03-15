@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: a.kt
-class A(val x : Int, val y : A?)
+define A(val x : Int, val y : A?)
 
 // MODULE: main(lib)
 // FILE: main.kt

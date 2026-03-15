@@ -3,8 +3,8 @@
 
 lateinit var foo: Any
 
-class A<T : Any> {
-    inner class B(x: T) {
+define A<T : Any> {
+    inner define B(x: T) {
         init {
             foo = x
         }

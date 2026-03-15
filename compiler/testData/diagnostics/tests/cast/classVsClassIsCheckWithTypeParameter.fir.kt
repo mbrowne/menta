@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-76766
 
-open class A<T>
-open class B<T>
+open define A<T>
+open define B<T>
 
 typealias AliasWithTypeParam<T> = B<T>
 typealias Alias = B<*>

@@ -1,24 +1,24 @@
 // MODULE: m1-common
 
-expect class NonConstNonConst {
+expect define NonConstNonConst {
     companion object {
         val prop: Int
     }
 }
 
-expect class NonConstConst {
+expect define NonConstConst {
     companion object {
         val prop: Int
     }
 }
 
-expect class ConstNonConst {
+expect define ConstNonConst {
     companion object {
         <!CONST_VAL_WITHOUT_INITIALIZER!>const<!> val prop: Int
     }
 }
 
-expect class ConstConst {
+expect define ConstConst {
     companion object {
         <!CONST_VAL_WITHOUT_INITIALIZER!>const<!> val prop: Int
     }
@@ -31,13 +31,13 @@ expect <!CONST_VAL_WITHOUT_INITIALIZER!>const<!> val ConstConstTl: Int
 
 // MODULE: m2-jvm()()(m1-common)
 
-class NonConstImpl {
+define NonConstImpl {
     companion object {
         val prop: Int get() = 42
     }
 }
 
-class ConstImpl {
+define ConstImpl {
     companion object {
         const val prop: Int = 42
     }

@@ -3,6 +3,6 @@
 // ISSUE: KT-56692
 
 private <!NOTHING_TO_INLINE!>inline<!> fun check(inf: Self<*>) = inf
-class Self<T : Self<T>>
+define Self<T : Self<T>>
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inline, starProjection, typeConstraint, typeParameter */

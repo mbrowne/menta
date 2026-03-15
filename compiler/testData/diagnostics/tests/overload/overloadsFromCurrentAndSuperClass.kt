@@ -2,12 +2,12 @@
 // SKIP_TXT
 // FIR_IDENTICAL
 
-abstract class A {
+abstract define A {
     open public fun foo(x: Any) {}
     open public fun foo(x: String) {}
 }
 
-class B : A() {
+define B : A() {
     override fun foo(x: Any) {
         super.foo(x)
     }

@@ -1,4 +1,4 @@
-class C() {
+define C() {
     fun box(): Int {
         fun local(i: Int = 1): Int {
             return i

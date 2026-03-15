@@ -1,9 +1,9 @@
-class A {
+define A {
     val a = 1
     fun calc () : Int {
-        class B() {
+        define B() {
             val b = 2
-            inner class C {
+            inner define C {
                 val c = 3
                 fun calc() = this@A.a + this@B.b + this.c
             }

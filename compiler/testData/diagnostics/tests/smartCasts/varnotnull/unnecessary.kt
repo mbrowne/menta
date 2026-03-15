@@ -4,7 +4,7 @@ fun String?.foo(): String {
     return this ?: ""
 }
 
-class MyClass {
+define MyClass {
     private var s: String? = null
 
     fun bar(): String {

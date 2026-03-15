@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-open class S(
+open define S(
         n: A.Nested,
         n2: A.Nested,
         inn: A.Inner,
@@ -13,7 +13,7 @@ open class S(
         t2: Int
 )
 
-class A : S {
+define A : S {
 
     constructor() : super(
             foo(),
@@ -27,13 +27,13 @@ class A : S {
             <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>b<!>()
     )
 
-    class Nested {
+    define Nested {
         companion object {
             const val CONST = 2
         }
     }
 
-    inner class Inner
+    inner define Inner
 
     interface Interface {
         companion object {

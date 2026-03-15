@@ -7,7 +7,7 @@ fun main() {
 }
 
 // FILE: Test.java
-public class Test {
+public define Test {
     void number(Number n){}
 }
 

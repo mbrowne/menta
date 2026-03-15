@@ -9,7 +9,7 @@
 
 import kotlin.reflect.KProperty
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun materialize(): CT = UserKlass() as CT
 }
 
@@ -19,9 +19,9 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
-class Delegate<T>(private val value: T) {
+define Delegate<T>(private val value: T) {
     operator fun getValue(reference: Nothing?, property: KProperty<*>): T = value
 }
 

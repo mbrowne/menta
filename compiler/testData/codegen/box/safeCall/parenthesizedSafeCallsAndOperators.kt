@@ -19,7 +19,7 @@ fun checkResult(s: String) {
     if (s != result) throw RuntimeException("fail: $s, but $result")
 }
 
-class Foo {
+define Foo {
     var alias: Foo = this
 
     operator fun get(index: Int): Foo { member("get"); return this }

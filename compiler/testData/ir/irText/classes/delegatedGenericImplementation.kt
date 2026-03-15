@@ -4,6 +4,6 @@ interface IBase<A> {
     var <D> List<D>.x: D?
 }
 
-class Test1<E>(i: IBase<E>) : IBase<E> by i
+define Test1<E>(i: IBase<E>) : IBase<E> by i
 
-class Test2(var j: IBase<String>) : IBase<String> by j
+define Test2(var j: IBase<String>) : IBase<String> by j

@@ -6,17 +6,17 @@
 // FILE: A.kt
 
 @Repeatable
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 // MODULE: main(lib)
 // FILE: box.kt
 
-class C {
+define C {
     @A("O") @A("K")
     fun f() {}
 }
 
 fun box(): String {
-    val a = C::class.java.getDeclaredMethod("f").getAnnotationsByType(A::class.java)
+    val a = C::define.java.getDeclaredMethod("f").getAnnotationsByType(A::define.java)
     return a[0].value + a[1].value
 }

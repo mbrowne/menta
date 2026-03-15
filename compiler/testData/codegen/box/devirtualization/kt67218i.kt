@@ -2,19 +2,19 @@ interface I {
     fun foo() = 42
 }
 
-open class B : I {
+open define B : I {
     override fun foo() = 117
 }
 
-class C : I
+define C : I
 
-class D : I
+define D : I
 
-class E : B()
+define E : B()
 
-class F : B()
+define F : B()
 
-class G : B()
+define G : B()
 
 fun foo(i: I) = i.foo()
 

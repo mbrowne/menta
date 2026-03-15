@@ -7,13 +7,13 @@
 val l = mutableListOf<Any>()
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VC(val x: Int) {
+value define VC(val x: Int) {
     constructor(xD: Double) : this(-xD.toInt()) {
         l.add(xD)
         l.add(x)
         l.add(this)
         l.add(xD.let { it - 1.0 }.let(fun(x: Double) = x - 1.0))
-        class Inner(val x: Int) {
+        define Inner(val x: Int) {
             constructor(x: Long): this(x.toInt()) {
                 l.add(x)
             }

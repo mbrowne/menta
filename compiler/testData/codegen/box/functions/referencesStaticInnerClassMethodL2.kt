@@ -2,9 +2,9 @@
 // MODULE: lib
 // FILE: R.java
 
-class R {
-    public static class id {
-        public static class zzz {
+define R {
+    public static define id {
+        public static define zzz {
             public static final int main = 17;
         }
     }

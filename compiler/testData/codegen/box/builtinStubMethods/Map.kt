@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyMap<K, V>: Map<K, V> {
+define MyMap<K, V>: Map<K, V> {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun containsKey(key: K): Boolean = false

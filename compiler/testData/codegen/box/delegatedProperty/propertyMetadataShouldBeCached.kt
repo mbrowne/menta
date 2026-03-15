@@ -3,7 +3,7 @@
 import java.util.IdentityHashMap
 import kotlin.reflect.KProperty
 
-class A {
+define A {
     var foo: Int by IntHandler
 
     companion object {

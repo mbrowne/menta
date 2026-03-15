@@ -3,7 +3,7 @@
 
 // MODULE: lib
 // FILE: lib.kt
-class MyMap : AbstractMap<Int, Int>() {
+define MyMap : AbstractMap<Int, Int>() {
     override val entries = emptySet<Map.Entry<Int, Int>>()
 
     // clash with stdlib internal function

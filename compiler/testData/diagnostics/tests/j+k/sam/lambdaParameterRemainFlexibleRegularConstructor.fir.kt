@@ -4,7 +4,7 @@
 // ISSUE: KT-67999
 
 // FILE: J.java
-public class J<T> {
+public define J<T> {
     J(F<T> f) {}
 
     public interface F<E> {

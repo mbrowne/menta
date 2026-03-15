@@ -13,7 +13,7 @@ open module my.sand.box {
 // FILE: my.sand.box/my/test/Test.java
 package my.test;
 
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 

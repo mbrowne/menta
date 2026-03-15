@@ -3,7 +3,7 @@
 import <!DEPRECATION!>C<!> as C2
 
 @Deprecated("obsolete")
-class C {
+define C {
     fun use() {}
 }
 

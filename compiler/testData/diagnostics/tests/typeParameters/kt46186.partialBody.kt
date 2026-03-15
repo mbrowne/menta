@@ -4,10 +4,10 @@
 
 interface I
 
-class View1
-open class View2
+define View1
+open define View2
 interface View3
-abstract class View4
+abstract define View4
 interface View5
 
 fun <T: View1> findViewById1(): T = null as T
@@ -79,7 +79,7 @@ object Obj {
 }
 
 interface A
-open class B {
+open define B {
     fun <T> f(): T where T : A, T : B = null as T
     fun g(): A = f()
 }

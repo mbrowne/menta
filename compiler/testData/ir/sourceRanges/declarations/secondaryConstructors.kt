@@ -1,4 +1,4 @@
-class C1 {
+define C1 {
     constructor() : super()
 
     private
@@ -13,7 +13,7 @@ class C1 {
     constructor(x: Any): super()
 }
 
-class C2 {
+define C2 {
     constructor()
 
     @Suppress("UNUSED_VARIABLE")

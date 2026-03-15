@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class StringGenericMutableMap<V> : MutableMap<String, V>
+abstract define StringGenericMutableMap<V> : MutableMap<String, V>

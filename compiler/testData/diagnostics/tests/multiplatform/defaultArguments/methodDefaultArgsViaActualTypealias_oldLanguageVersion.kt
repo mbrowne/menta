@@ -4,14 +4,14 @@
 // LANGUAGE: -MultiplatformRestrictions
 // MODULE: m1-common
 // FILE: common.kt
-expect class A {
+expect define A {
     fun foo(p: String = "common")
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-class AImpl {
+define AImpl {
     fun foo(p: String) {}
 }
 

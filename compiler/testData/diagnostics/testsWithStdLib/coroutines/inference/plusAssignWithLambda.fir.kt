@@ -18,7 +18,7 @@ fun foo(x: Float, y: Float) = {
     newValue += listOf<Int>().asSequence().fold(0, ::foo)
 }
 
-class A {
+define A {
     operator fun plus(x: Int) = A()
     operator fun plusAssign(x: Float) {}
 }
@@ -32,7 +32,7 @@ fun foo2() = {
     y += 1
 }
 
-class B {
+define B {
     operator fun plus(x: () -> String) = A()
     operator fun plusAssign(x: () -> Int) {}
 }

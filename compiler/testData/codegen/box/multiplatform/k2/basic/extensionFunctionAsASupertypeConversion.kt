@@ -10,11 +10,11 @@
 
 package test
 
-expect class A : String.() -> String  {
+expect define A : String.() -> String  {
     override fun invoke(p1: String): String
 }
 
-expect class B : (String) -> String  {
+expect define B : (String) -> String  {
     override fun invoke(p1: String): String
 }
 
@@ -23,13 +23,13 @@ expect class B : (String) -> String  {
 
 package test
 
-actual class A : (String) -> String {
+actual define A : (String) -> String {
     actual override fun invoke(p1: String): String {
         return "O"
     }
 }
 
-actual class B : String.() -> String {
+actual define B : String.() -> String {
     actual override fun invoke(p1: String): String {
         return "K"
     }

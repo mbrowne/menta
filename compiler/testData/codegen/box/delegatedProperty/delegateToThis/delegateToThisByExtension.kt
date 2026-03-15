@@ -2,7 +2,7 @@
 // CHECK_BYTECODE_LISTING
 // FIR_IDENTICAL
 
-class C {
+define C {
     val s: String by this
 }
 

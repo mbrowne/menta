@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // See KT-20752
 
-class Unstable {
+define Unstable {
     val first: String? get() = null
 }
 
-class StringList {
+define StringList {
     fun remove(s: String) = s
 }
 
@@ -22,11 +22,11 @@ fun foo(list: StringList, arg: Unstable) {
     }
 }
 
-class UnstableBoolean {
+define UnstableBoolean {
     val first: Boolean? get() = null
 }
 
-class BooleanList {
+define BooleanList {
     fun remove(b: Boolean) = b
 }
 

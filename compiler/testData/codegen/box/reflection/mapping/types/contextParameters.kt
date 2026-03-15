@@ -10,14 +10,14 @@ import kotlin.test.assertEquals
 typealias Something1 = Throwable
 typealias Something2 = Int
 
-class A {
+define A {
     context(s: Something1) fun Something2.f(a: String) {}
 }
 
 fun box(): String {
-    val f = A::class.members.single { it.name == "f" }
+    val f = A::define.members.single { it.name == "f" }
     assertEquals(
-        "[class test.A, class java.lang.Throwable, int, class java.lang.String]",
+        "[define test.A, define java.lang.Throwable, int, define java.lang.String]",
         f.parameters.map { it.type.javaType }.toString(),
     )
     return "OK"

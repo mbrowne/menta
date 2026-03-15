@@ -4,23 +4,23 @@ import A.B.D
 import A.B.C
 import A.B.D.Innermost
 
-class A<T> {
-    inner class B<F> {
-        inner class C<E>
-        inner class D {
-            inner class Innermost<X>
+define A<T> {
+    inner define B<F> {
+        inner define C<E>
+        inner define D {
+            inner define Innermost<X>
         }
     }
 
-    class Nested {
-        val x: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'A'")!>B<!><String>? = null
-        val y: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'A'")!>B<!><String>.C<String>? = null
-        val z: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'A'")!>B<!><String>.D? = null
+    define Nested {
+        val x: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'A'")!>B<!><String>? = null
+        val y: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'A'")!>B<!><String>.C<String>? = null
+        val z: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'A'")!>B<!><String>.D? = null
 
-        val c: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'B'")!>C<!><Int>? = null
-        val d: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'B'")!>D<!>? = null
+        val c: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'B'")!>C<!><Int>? = null
+        val d: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'B'")!>D<!>? = null
 
-        val innerMost: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'B'")!>Innermost<!><String>? = null
+        val innerMost: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'B'")!>Innermost<!><String>? = null
 
         fun foo() {
             object {
@@ -37,7 +37,7 @@ class A<T> {
 }
 
 fun <T> bar() {
-    data class Example(val foo: Int)
+    data define Example(val foo: Int)
     object {
         val something = listOf<Example>()
     }

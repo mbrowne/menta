@@ -1,4 +1,4 @@
-enum class Test {
+enum define Test {
     A, B, OTHER
 }
 

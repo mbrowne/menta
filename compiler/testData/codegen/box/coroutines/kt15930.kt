@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.intrinsics.*
 import kotlin.coroutines.*
 
-class A {
+define A {
     var isMinusAssignCalled = false
     operator suspend fun minusAssign(y: String): Unit = suspendCoroutineUninterceptedOrReturn { x ->
         if (y != "56") return@suspendCoroutineUninterceptedOrReturn Unit

@@ -1,3 +1,3 @@
-class A {
+define A {
     <caret>constructor(): super() { }
 }

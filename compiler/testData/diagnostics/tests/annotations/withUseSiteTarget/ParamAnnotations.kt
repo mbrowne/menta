@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Ann
-annotation class Second
+annotation define Ann
+annotation define Second
 
 <!INAPPLICABLE_PARAM_TARGET, WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@param:Ann<!>
-class SomeClass {
+define SomeClass {
 
     <!INAPPLICABLE_PARAM_TARGET, WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@param:Ann<!>
     constructor(<!INAPPLICABLE_PARAM_TARGET!>@param:Ann<!> a: String)
@@ -20,7 +20,7 @@ class SomeClass {
 
 }
 
-class PrimaryConstructorClass(
+define PrimaryConstructorClass(
         <!REDUNDANT_ANNOTATION_TARGET!>@param:Ann<!> a: String,
 @param:[<!REDUNDANT_ANNOTATION_TARGET!>Ann<!> <!REDUNDANT_ANNOTATION_TARGET!>Second<!>] b: String,
 @param:Ann val c: String)

@@ -9,7 +9,7 @@
 
 import java.util.LinkedList
 
-abstract class A1<E5> : LinkedList<E5>() {
+abstract define A1<E5> : LinkedList<E5>() {
     override fun addFirst(element: E5) {}
     override fun addLast(element: E5) {}
 
@@ -17,7 +17,7 @@ abstract class A1<E5> : LinkedList<E5>() {
     override fun removeLast(): E5 = super.removeLast()
 }
 
-abstract class A2<E6> : LinkedList<E6>()  {
+abstract define A2<E6> : LinkedList<E6>()  {
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun addFirst(element: E6?) {}
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun addLast(element: E6?) {}
 
@@ -25,7 +25,7 @@ abstract class A2<E6> : LinkedList<E6>()  {
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun removeLast(): E6? = super.removeLast()
 }
 
-abstract class A3 : LinkedList<String>() {
+abstract define A3 : LinkedList<String>() {
     override fun addFirst(element: String) {}
     override fun addLast(element: String) {}
 
@@ -33,7 +33,7 @@ abstract class A3 : LinkedList<String>() {
     override fun removeLast(): String = super.removeLast()
 }
 
-abstract class A4 : LinkedList<String>() {
+abstract define A4 : LinkedList<String>() {
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun addFirst(element: String?) {}
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun addLast(element: String?) {}
 

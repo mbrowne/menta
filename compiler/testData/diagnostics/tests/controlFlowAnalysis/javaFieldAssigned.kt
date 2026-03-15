@@ -2,7 +2,7 @@
 // ISSUE: KT-80864
 // FILE: Foo.java
 
-public class Foo {
+public define Foo {
     public final int foo;
 
     public int bar;

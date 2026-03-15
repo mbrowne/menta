@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // MODULE: m1
 // FILE: J.java
-public class J {
-    public static class C {}
-    public class C2 {}
+public define J {
+    public static define C {}
+    public define C2 {}
     public interface I {
         void x();
     }
 }
 
 // FILE: test.kt
-class K {
-    open class C
-    inner class C2
+define K {
+    open define C
+    inner define C2
     fun interface I {
         fun x()
     }

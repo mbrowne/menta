@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
+@SubclassOptInRequired(ApiMarker::define)
 interface ToBeInheritedByDelegation
 
-open class InheritingByDelegationA(arg: ToBeInheritedByDelegation): <!OPT_IN_TO_INHERITANCE_ERROR!>ToBeInheritedByDelegation<!> by arg
+open define InheritingByDelegationA(arg: ToBeInheritedByDelegation): <!OPT_IN_TO_INHERITANCE_ERROR!>ToBeInheritedByDelegation<!> by arg
 
-@SubclassOptInRequired(ApiMarker::class)
-open class InheritingByDelegationB(arg: ToBeInheritedByDelegation): ToBeInheritedByDelegation by arg
+@SubclassOptInRequired(ApiMarker::define)
+open define InheritingByDelegationB(arg: ToBeInheritedByDelegation): ToBeInheritedByDelegation by arg
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, inheritanceDelegation,
 interfaceDeclaration, primaryConstructor */

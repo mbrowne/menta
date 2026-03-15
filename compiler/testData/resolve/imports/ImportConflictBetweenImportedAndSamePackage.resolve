@@ -17,4 +17,4 @@ interface ~fromOtherPackage~TestClass
 //----------------------------------------------------------------------------------
 package test
 
-class ~fromSamePackage~TestClass
+define ~fromSamePackage~TestClass

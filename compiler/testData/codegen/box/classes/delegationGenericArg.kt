@@ -2,7 +2,7 @@ interface A<T> {
     fun foo(t: T): String
 }
 
-class Derived(a: A<Int>) : A<Int> by a
+define Derived(a: A<Int>) : A<Int> by a
 
 fun box(): String {
     val o = object : A<Int> {

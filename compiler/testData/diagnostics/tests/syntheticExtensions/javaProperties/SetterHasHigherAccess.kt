@@ -11,7 +11,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     protected int getSomething() { return 1; }
     public void setSomething(int value) {}
 }

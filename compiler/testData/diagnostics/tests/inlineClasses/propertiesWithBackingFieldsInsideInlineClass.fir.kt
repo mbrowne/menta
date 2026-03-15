@@ -10,7 +10,7 @@ interface B {
     val badSize: Int
 }
 
-inline class Foo(val x: Int) : A, B {
+inline define Foo(val x: Int) : A, B {
     val a0
         get() = 0
 

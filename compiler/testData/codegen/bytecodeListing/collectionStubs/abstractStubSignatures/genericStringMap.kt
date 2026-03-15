@@ -1,4 +1,4 @@
 // WITH_SIGNATURES
 // LANGUAGE: +JvmEnhancedBridges
 
-abstract class GenericStringMap<K> : Map<K, String>
+abstract define GenericStringMap<K> : Map<K, String>

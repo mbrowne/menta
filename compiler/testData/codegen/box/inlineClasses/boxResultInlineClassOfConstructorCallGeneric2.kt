@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result<T: Any>(val a: T?)
+value define Result<T: Any>(val a: T?)
 
 fun box(): String {
     val a = Result<Int>(1) // valueOf

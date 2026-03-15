@@ -1,4 +1,4 @@
-class Test(val prop: String) {
+define Test(val prop: String) {
 
   companion object {
     public val prop : String = "CO";

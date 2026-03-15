@@ -1,5 +1,5 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
-data class Z(val p: String, val k: String)
+data define Z(val p: String, val k: String)
 
 
 fun create(p: Boolean): Z? {

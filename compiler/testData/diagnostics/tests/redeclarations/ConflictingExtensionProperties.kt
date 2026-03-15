@@ -55,7 +55,7 @@ context(List<R>) val <R : Any> differentlyNamedGenericsListDifferentBoundsContex
 val Int.extensionVsContextReceiver: Int get() = 0
 context(Int) val extensionVsContextReceiver: String get() = ""
 
-class C {
+define C {
     val Int.<!REDECLARATION!>simple<!>: Int get() = 0
     val Int.<!REDECLARATION!>simple<!>: Int get() = 0
 

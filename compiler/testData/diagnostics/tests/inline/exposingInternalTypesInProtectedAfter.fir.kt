@@ -2,21 +2,21 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // LANGUAGE: +ForbidExposingLessVisibleTypesInInline
 
-class C {
+define C {
     protected inline fun foo(x: Any) {
         <!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR, NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>Internal<!>()
         x is <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>Internal<!>
-        <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>Internal<!>::class
+        <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>Internal<!>::define
 
         Published()
         x is Published
-        Published::class
+        Published::define
     }
 }
 
-internal class Internal
+internal define Internal
 
 @PublishedApi
-internal class Published
+internal define Published
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, inline, isExpression */

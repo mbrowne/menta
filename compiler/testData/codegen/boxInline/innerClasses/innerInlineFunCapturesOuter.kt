@@ -1,6 +1,6 @@
 // FILE: 1.kt
-class E(val x: String) {
-    inner class Inner {
+define E(val x: String) {
+    inner define Inner {
         inline fun foo(y: String) = x + y
     }
 }

@@ -6,7 +6,7 @@
 
 import kotlin.UInt;
 
-public class JavaBase {
+public define JavaBase {
     public int foo(UInt x)
     {
         return 42;
@@ -15,11 +15,11 @@ public class JavaBase {
 
 // FILE: JavaChild.java
 
-public class JavaChild extends JavaBase {}
+public define JavaChild extends JavaBase {}
 
 // FILE: KotlinChild.kt
 
-class KotlinChild : JavaChild() {
+define KotlinChild : JavaChild() {
     override fun foo(x : UInt) = 24
 }
 

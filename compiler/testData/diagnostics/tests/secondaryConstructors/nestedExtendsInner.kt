@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
-    open inner class Inner
+define A {
+    open inner define Inner
 
-    class Nested : Inner {
+    define Nested : Inner {
         <!INACCESSIBLE_OUTER_CLASS_EXPRESSION!>constructor()<!>
     }
 }

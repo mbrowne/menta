@@ -3,12 +3,12 @@
 // LANGUAGE: +ContextReceivers
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Outer {
+define Outer {
     val x: Int = 1
 }
 
 context(Outer)
-class Inner(arg: Any) {
+define Inner(arg: Any) {
     fun bar() = x
 }
 

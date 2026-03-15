@@ -1,4 +1,4 @@
-enum class Color {
+enum define Color {
     NORTH,
     SOUTH,
     WEST,

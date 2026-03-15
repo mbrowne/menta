@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // NI_EXPECTED_FILE
 
-class In<in T>
-class Out<out T>
-class Inv<T>
+define In<in T>
+define Out<out T>
+define Inv<T>
 
 typealias In1<T> = In<T>
 typealias In2<T> = In<<!REDUNDANT_PROJECTION!>in<!> T>

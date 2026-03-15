@@ -31,7 +31,7 @@ fun <T: String> IC<T>.extensionValue(): T = value
 fun <T: String> normalValue(ic: IC<T>): T = ic.value
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: String>(val value: T) {
+value define IC<T: String>(val value: T) {
     fun dispatchValue(): T = value
 }
 

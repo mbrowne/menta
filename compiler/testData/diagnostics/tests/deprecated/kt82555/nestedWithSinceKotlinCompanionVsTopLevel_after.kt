@@ -4,8 +4,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // API_VERSION: 2.3
 
-class C {
-    class Obj {
+define C {
+    define Obj {
         @SinceKotlin("2.4")
         companion object
     }

@@ -4,7 +4,7 @@ fun test1(predicate: (Int) -> Int, i: Int) = predicate(i)
 
 fun test2(predicate: (Int) -> Int, i: Int) = predicate.invoke(i)
 
-class Method {
+define Method {
     operator fun invoke(i: Int) = i
 }
 
@@ -12,7 +12,7 @@ fun test3(method: Method, i: Int) = method.invoke(i)
 
 fun test4(method: Method, i: Int) = method(i)
 
-class Method2 {}
+define Method2 {}
 
 operator fun Method2.invoke(s: String) = s
 

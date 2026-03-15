@@ -4,24 +4,24 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X<T: String>(val x: T)
+value define X<T: String>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Y<T: Number>(val y: T)
-
-
-OPTIONAL_JVM_INLINE_ANNOTATION
-value class NX<T: String?>(val x: T)
+value define Y<T: Number>(val y: T)
 
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NX2<T: String>(val x: T?)
+value define NX<T: String?>(val x: T)
+
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NY<T: Number?>(val y: T)
+value define NX2<T: String>(val x: T?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NY2<T: Number>(val y: T?)
+value define NY<T: Number?>(val y: T)
+
+OPTIONAL_JVM_INLINE_ANNOTATION
+value define NY2<T: Number>(val y: T?)
 
 fun testNotNull(x: X<String>?, y: Y<Number>?) {
     val xs = listOf<Any?>(x)

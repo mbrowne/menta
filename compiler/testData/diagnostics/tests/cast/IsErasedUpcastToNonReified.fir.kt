@@ -16,7 +16,7 @@ fun <T, S : T> test(x: T?, y: S, z: T) {
     null <!UNCHECKED_CAST!>as S<!>
 }
 
-class Box<T>
+define Box<T>
 
 inline fun <reified T> test(x: T?, a: Any) {
     x is T

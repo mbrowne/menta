@@ -4,11 +4,11 @@
 // MODULE: common
 // FILE: common.kt
 
-expect open class A() {
+expect open define A() {
     open fun f(p: Int = 1) : String
 }
 
-expect open class B : A {
+expect open define B : A {
     override open fun f(p: Int) : String
 }
 
@@ -17,11 +17,11 @@ expect open class B : A {
 
 import kotlin.test.assertEquals
 
-actual open class A {
+actual open define A {
     actual open fun f(p: Int) = "A" + p
 }
 
-actual open class B : A() {
+actual open define B : A() {
     actual override open fun f(p: Int) = "B" + p
 }
 

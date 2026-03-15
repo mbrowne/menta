@@ -2,7 +2,7 @@
 
 // FILE: utils.kt
 
-inline class UInt(val u: Int)
+inline define UInt(val u: Int)
 
 // FILE: test.kt
 
@@ -13,7 +13,7 @@ fun test(u1: UInt, u2: UInt, us: Array<UInt>) {
     takeVarargs(u1, u2, *us)
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 2 INVOKESTATIC UInt\.box
 // 0 INVOKEVIRTUAL UInt.unbox
 

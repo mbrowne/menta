@@ -3,7 +3,7 @@
 // LANGUAGE: +RestrictionOfWrongAnnotationsWithUseSiteTargetsOnTypes
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class Fancy
+annotation define Fancy
 
 fun @receiver:Fancy String.myExtension() { }
 val @receiver:Fancy Int.asVal get() = 0

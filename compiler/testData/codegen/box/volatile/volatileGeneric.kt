@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class GenericWrapper<T>(@Volatile var x: T)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define GenericWrapper<T>(@Volatile var x: T)
 
 val global = GenericWrapper("FA")
 val globalLong = GenericWrapper(1L)

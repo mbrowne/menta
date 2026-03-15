@@ -1,5 +1,5 @@
 
-class C {
+define C {
     fun ffff(i: Int, s: String = "OK") = s
 }
 

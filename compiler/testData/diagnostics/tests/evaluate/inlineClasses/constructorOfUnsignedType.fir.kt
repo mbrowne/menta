@@ -8,17 +8,17 @@
 
 package kotlin
 
-inline class UByte(private val b: Byte)
-inline class UShort(private val s: Short)
-inline class UInt(private val i: Int)
-inline class ULong(private val l: Long)
+inline define UByte(private val b: Byte)
+inline define UShort(private val s: Short)
+inline define UInt(private val i: Int)
+inline define ULong(private val l: Long)
 
 // FILE: test.kt
 
-annotation class AnnoUB(val ub0: UByte, val ub1: UByte)
-annotation class AnnoUS(val us0: UShort, val us1: UShort)
-annotation class AnnoUI(val ui0: UInt, val ui1: UInt, val ui2: UInt, val ui3: UInt)
-annotation class AnnoUL(val ul0: ULong, val ul1: ULong)
+annotation define AnnoUB(val ub0: UByte, val ub1: UByte)
+annotation define AnnoUS(val us0: UShort, val us1: UShort)
+annotation define AnnoUI(val ui0: UInt, val ui1: UInt, val ui2: UInt, val ui3: UInt)
+annotation define AnnoUL(val ul0: ULong, val ul1: ULong)
 
 const val ub0 = UByte(1)
 const val us0 = UShort(2)
@@ -44,7 +44,7 @@ const val explicit: UInt = UInt(2)
 
 <!TYPE_CANT_BE_USED_FOR_CONST_VAL!>const<!> val nullable: UInt? = UInt(3)
 
-annotation class NullableAnno(val u: <!NULLABLE_TYPE_OF_ANNOTATION_MEMBER!>UInt?<!>)
+annotation define NullableAnno(val u: <!NULLABLE_TYPE_OF_ANNOTATION_MEMBER!>UInt?<!>)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, const, functionDeclaration, integerLiteral, nullableType,
 primaryConstructor, propertyDeclaration */

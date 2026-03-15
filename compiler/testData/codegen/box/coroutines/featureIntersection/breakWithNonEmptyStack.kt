@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class A {
+define A {
     var result = mutableListOf("O", "K", null)
     suspend fun foo(): String? = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume(result.removeAt(0))

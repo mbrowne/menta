@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: JavaImpl.java
-public class JavaImpl implements Interface {
+public define JavaImpl implements Interface {
     @Override
     public String accept(int a, String i){
         return "K";
@@ -16,7 +16,7 @@ interface Interface {
     }
 }
 
-class KotlinImpl : Interface
+define KotlinImpl : Interface
 
 fun box(): String {
     with(KotlinImpl()){

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class WithLateInit {
+define WithLateInit {
     lateinit var x: String
 
     fun init(xx: String) {

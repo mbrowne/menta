@@ -1,6 +1,6 @@
 // KT-44496
 
-class C {
+define C {
     val todo: String = TODO()
 
     var String.noSetterExtensionProperty: Int

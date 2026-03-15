@@ -1,4 +1,4 @@
-inline class A(val value: Int)
+inline define A(val value: Int)
 
 fun interface I {
     fun compute(value: Int): A

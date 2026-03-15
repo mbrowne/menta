@@ -7,7 +7,7 @@
 
 import java.util.Comparator
 
-abstract class DataView {
+abstract define DataView {
     abstract val presentationName: String
 }
 
@@ -16,7 +16,7 @@ fun <A> comboBox(
     graphProperty: GraphProperty<A>,
 ) {}
 
-class GraphProperty<B>
+define GraphProperty<B>
 
 fun test() {
     val presentationName: (DataView) -> String = { it.presentationName }
@@ -28,7 +28,7 @@ fun test() {
 
 import java.util.Comparator;
 
-public class SortedComboBoxModel<C> {
+public define SortedComboBoxModel<C> {
     public SortedComboBoxModel(Comparator<? super C> comparator) {
     }
 }

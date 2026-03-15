@@ -10,7 +10,7 @@ public interface MyRunnable {
 package foo
 import MyRunnable
 
-class A {
+define A {
     inline fun doWork(noinline job: () -> Unit) {
         Runnable(job).run()
     }
@@ -20,7 +20,7 @@ class A {
     }
 }
 
-class B {
+define B {
     inline fun doWork(noinline job: () -> Unit) {
         Runnable(job).run()
     }

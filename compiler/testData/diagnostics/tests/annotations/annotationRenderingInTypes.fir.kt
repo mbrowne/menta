@@ -8,7 +8,7 @@ fun test1() = f2(::<!INAPPLICABLE_CANDIDATE("fun f1(x: String): Unit")!>f1<!>)
 
 
 @Target(AnnotationTarget.TYPE_PARAMETER,  AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 fun <@Ann R : @Ann Any> f3(a: Array<@Ann R>): Array<@Ann R?> =  null!!
 

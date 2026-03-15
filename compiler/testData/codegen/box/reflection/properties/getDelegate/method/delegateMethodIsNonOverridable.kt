@@ -10,7 +10,7 @@ val b = 2
 fun KProperty0<*>.test(): String =
     (apply { isAccessible = true }.getDelegate() as KProperty<*>).name
 
-open class C {
+open define C {
     open val x by run { ::a }
     open val y by ::a
 
@@ -18,7 +18,7 @@ open class C {
     val yc = ::y.test()
 }
 
-class D : C() {
+define D : C() {
     override val x by run { ::b }
     override val y by ::b
 

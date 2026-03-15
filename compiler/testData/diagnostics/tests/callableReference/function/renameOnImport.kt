@@ -7,7 +7,7 @@ package other
 
 fun foo() {}
 
-class A {
+define A {
     fun bar() = 42
 }
 

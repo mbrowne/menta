@@ -1,4 +1,4 @@
-class A(val a: Int) {
+define A(val a: Int) {
     fun A.foo(): Boolean {
         return this.a == this@A.a
     }

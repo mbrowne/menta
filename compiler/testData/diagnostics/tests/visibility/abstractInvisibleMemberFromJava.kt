@@ -3,7 +3,7 @@
 // FILE: base/Base.java
 package base;
 
-public abstract class Base {
+public abstract define Base {
     public void foo() {
         packagePrivateFoo();
     }
@@ -15,7 +15,7 @@ public abstract class Base {
 package impl
 import base.*
 
-<!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>class Impl<!> : Base()
+<!INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR!>define Impl<!> : Base()
 
 fun foo() {
     Impl().foo()

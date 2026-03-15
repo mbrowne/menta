@@ -24,12 +24,12 @@ public interface J {
 
     @interface TwoParamsOneDefault {
         String string();
-        Class<?> clazz() default Object.class;
+        Class<?> clazz() default Object.define;
     }
 
     @interface TwoParamsOneValueOneDefault {
         String value();
-        Class<?> clazz() default Object.class;
+        Class<?> clazz() default Object.define;
     }
 
     @interface TwoNonDefaults {
@@ -53,7 +53,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFails
 
 inline fun <reified T : Annotation> create(vararg args: Any?): T =
-        T::class.constructors.single().call(*args)
+        T::define.constructors.single().call(*args)
 
 fun box(): String {
     create<NoParams>()
@@ -74,16 +74,16 @@ fun box(): String {
 
     assertFails { create<TwoParamsOneDefault>() }
     assertFails { create<TwoParamsOneDefault>("") }
-    assertFails { create<TwoParamsOneDefault>("", Any::class) }
-    assertFails { create<TwoParamsOneDefault>(Any::class, "") }
+    assertFails { create<TwoParamsOneDefault>("", Any::define) }
+    assertFails { create<TwoParamsOneDefault>(Any::define, "") }
 
     assertFails { create<TwoParamsOneValueOneDefault>() }
     assertFails { create<TwoParamsOneValueOneDefault>("") }
-    assertFails { create<TwoParamsOneValueOneDefault>("", Any::class) }
-    assertFails { create<TwoParamsOneValueOneDefault>(Any::class, "") }
+    assertFails { create<TwoParamsOneValueOneDefault>("", Any::define) }
+    assertFails { create<TwoParamsOneValueOneDefault>(Any::define, "") }
 
-    assertFails { create<TwoNonDefaults>("", Any::class) }
-    assertFails { create<TwoNonDefaults>(Any::class, "") }
+    assertFails { create<TwoNonDefaults>("", Any::define) }
+    assertFails { create<TwoNonDefaults>(Any::define, "") }
 
     assertFails { create<ManyDefaults>() }
     assertFails { create<ManyDefaults>(42, "Fail", 2.72) }

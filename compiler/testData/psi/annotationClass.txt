@@ -17,7 +17,7 @@ KtFile: annotationClass.kt
       PsiWhiteSpace(' ')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnotationClass')
     PRIMARY_CONSTRUCTOR

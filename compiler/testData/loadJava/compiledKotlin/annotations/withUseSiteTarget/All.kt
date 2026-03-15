@@ -6,15 +6,15 @@
 
 package test
 
-annotation class Default
+annotation define Default
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.PROPERTY)
-annotation class Prop
+annotation define Prop
 
 @Target(AnnotationTarget.PROPERTY_SETTER, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.FUNCTION)
-annotation class Function
+annotation define Function
 
-data class MyRecord(@all:Default @all:Prop @all:Function val x: String)
+data define MyRecord(@all:Default @all:Prop @all:Function val x: String)
 
 object O {
     @all:Default @all:Prop @all:Function val x = 0

@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Foo<T>(var x: T)
+define Foo<T>(var x: T)
 
 fun <K> foo(x: MutableList<K>): Foo<K> = TODO()
 

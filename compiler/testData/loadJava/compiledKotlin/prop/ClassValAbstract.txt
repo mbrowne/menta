@@ -1,7 +1,6 @@
 package test
 
-public abstract class ClassValAbstract {
-    /*primary*/ public constructor ClassValAbstract()
+public interface ClassValAbstract {
     public abstract val a: kotlin.Int
         public abstract fun `<get-a>`(): kotlin.Int
 }

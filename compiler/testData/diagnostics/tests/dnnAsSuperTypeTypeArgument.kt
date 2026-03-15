@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class A<TA>
+open define A<TA>
 
-class B<TB> : A<TB & Any>()
+define B<TB> : A<TB & Any>()
 
 fun accept(a: A<String>) {}
 

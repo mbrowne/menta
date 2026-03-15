@@ -2,7 +2,7 @@ interface T {
     fun result(): String
 }
 
-class A(val x: String) {
+define A(val x: String) {
     fun getx() = x
 
     fun foo() = object : T {

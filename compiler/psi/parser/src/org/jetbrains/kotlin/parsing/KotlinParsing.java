@@ -516,6 +516,21 @@ public class KotlinParsing extends AbstractKotlinParsing {
             @NotNull NameParsingMode nameParsingModeForObject,
             @NotNull DeclarationParsingMode declarationParsingMode
     ) {
+        // Accept 'annotation' [whitespace] 'define' as a valid top-level declaration (modifier list may leave us at 'annotation' with whitespace before 'define').
+        // Handle both ANNOTATION_KEYWORD (soft keyword remapped) and raw IDENTIFIER "annotation".
+        String tokenText = myBuilder.getTokenText();
+        boolean atAnnotation = at(ANNOTATION_KEYWORD) || (tt() == IDENTIFIER && tokenText != null && tokenText.equals("annotation"));
+        if (atAnnotation) {
+            IElementType next = lookahead(1);
+            for (int k = 1; next != null && (WHITESPACES.contains(next) || next == EOL_OR_SEMICOLON); next = lookahead(++k)) { }
+            if (next == DEFINE_KEYWORD) {
+                advance(); // consume 'annotation'
+                while (!eof() && (WHITESPACES.contains(tt()) || tt() == EOL_OR_SEMICOLON)) advance();
+                if (getTokenId() == DEFINE_KEYWORD_Id) {
+                    return parseClass(detector.isEnumDetected(), true);
+                }
+            }
+        }
         switch (getTokenId()) {
             case DEFINE_KEYWORD_Id:
             case INTERFACE_KEYWORD_Id:
@@ -564,7 +579,32 @@ public class KotlinParsing extends AbstractKotlinParsing {
      * @param localDeclaration is <tt>true</tt> if we are trying to parse a local declaration
      */
     boolean parseModifierList(@Nullable Consumer<IElementType> tokenConsumer, @NotNull TokenSet noModifiersBefore, boolean localDeclaration) {
-        return doParseModifierList(tokenConsumer, MODIFIER_KEYWORDS, AnnotationParsingMode.DEFAULT, noModifiersBefore, localDeclaration);
+        // Remove 'abstract' from modifier keywords
+        TokenSet modifierKeywordsNoAbstract = TokenSet.create(
+            KtTokens.PUBLIC_KEYWORD, KtTokens.PROTECTED_KEYWORD, KtTokens.PRIVATE_KEYWORD, KtTokens.INTERNAL_KEYWORD,
+            KtTokens.EXPECT_KEYWORD, KtTokens.ACTUAL_KEYWORD,
+            KtTokens.FINAL_KEYWORD, KtTokens.OPEN_KEYWORD, KtTokens.SEALED_KEYWORD,
+            KtTokens.CONST_KEYWORD,
+            KtTokens.EXTERNAL_KEYWORD,
+            KtTokens.OVERRIDE_KEYWORD,
+            KtTokens.LATEINIT_KEYWORD,
+            KtTokens.TAILREC_KEYWORD,
+            KtTokens.VARARG_KEYWORD,
+            KtTokens.SUSPEND_KEYWORD,
+            KtTokens.INNER_KEYWORD,
+            KtTokens.ENUM_KEYWORD, KtTokens.ANNOTATION_KEYWORD, KtTokens.FUN_KEYWORD,
+            KtTokens.COMPANION_KEYWORD,
+            KtTokens.INLINE_KEYWORD,
+            KtTokens.VALUE_KEYWORD,
+            KtTokens.INFIX_KEYWORD,
+            KtTokens.OPERATOR_KEYWORD,
+            KtTokens.DATA_KEYWORD,
+            KtTokens.OUT_KEYWORD, KtTokens.IN_KEYWORD,
+            KtTokens.REIFIED_KEYWORD,
+            KtTokens.NOINLINE_KEYWORD,
+            KtTokens.CROSSINLINE_KEYWORD
+        );
+        return doParseModifierList(tokenConsumer, modifierKeywordsNoAbstract, AnnotationParsingMode.DEFAULT, noModifiersBefore, localDeclaration);
     }
 
     private void parseFunctionTypeValueParameterModifierList() {
@@ -1036,6 +1076,10 @@ public class KotlinParsing extends AbstractKotlinParsing {
                 isInterface = at(INTERFACE_KEYWORD);
             }
             advance(); // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
+
+            if (!object && !isInterface && at(DYNAMIC_KEYWORD)) {
+                advance(); // DYNAMIC_KEYWORD
+            }
         }
         else {
             assert enumClass : "Currently classifiers without class/interface/object are only allowed for enums";

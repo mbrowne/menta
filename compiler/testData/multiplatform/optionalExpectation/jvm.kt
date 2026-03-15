@@ -1,1 +1,1 @@
-actual annotation class A
+actual annotation define A

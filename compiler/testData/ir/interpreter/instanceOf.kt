@@ -2,10 +2,10 @@
 interface Base
 
 @CompileTimeCalculation
-open class A : Base
+open define A : Base
 
 @CompileTimeCalculation
-class B : A()
+define B : A()
 
 const val a1 = <!EVALUATED: `true`!>{ 1 is Int }()<!> // avoid evaluation by native interpreter
 const val a2 = <!EVALUATED: `false`!>{ 2 !is Int }()<!>

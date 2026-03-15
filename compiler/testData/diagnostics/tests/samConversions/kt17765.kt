@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: Test.java
-public class Test {
+public define Test {
     interface MyRunnable extends Runnable {}
 
     public static void foo(MyRunnable r) {}

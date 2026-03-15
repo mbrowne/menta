@@ -1,28 +1,28 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect class WithAnn {
+expect define WithAnn {
     @Ann
     fun foo(p: String)
 }
 
-expect class WithoutAnn {
+expect define WithoutAnn {
     fun foo(p: String)
 }
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-abstract class Parent<T> {
+abstract define Parent<T> {
     open fun foo(p: T) {}
 }
 
-abstract class Intermediate : Parent<String>()
+abstract define Intermediate : Parent<String>()
 
-actual class <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>WithAnn<!> : Intermediate()
+actual define <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>WithAnn<!> : Intermediate()
 
-actual class WithoutAnn : Intermediate()
+actual define WithoutAnn : Intermediate()
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, expect, functionDeclaration, nullableType,
 typeParameter */

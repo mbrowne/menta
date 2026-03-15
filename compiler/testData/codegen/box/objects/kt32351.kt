@@ -4,7 +4,7 @@ interface Runnable {
     fun run()
 }
 
-class AnonymousClassInLambda {
+define AnonymousClassInLambda {
     fun run(): Int {
         var x = 0
         val threads = (1..10).map {

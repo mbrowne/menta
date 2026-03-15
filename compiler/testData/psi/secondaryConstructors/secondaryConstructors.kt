@@ -3,7 +3,7 @@ package test
 
 import java.io.Serializable
 
-class SecondaryConstructors(x: Boolean) {
+define SecondaryConstructors(x: Boolean) {
     init {
     }
 
@@ -16,15 +16,15 @@ class SecondaryConstructors(x: Boolean) {
     private constructor(x: Int) : this(x < 0) {
     }
 
-    inner class Inner<T : String, G : Int> where G : Serializable {
+    inner define Inner<T : String, G : Int> where G : Serializable {
         constructor(x: T, g: G) {
         }
     }
 
-    class Nested {
+    define Nested {
         @anno constructor(z: Int) {}
         internal constructor() {}
     }
 }
 
-annotation class anno
+annotation define anno

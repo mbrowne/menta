@@ -1,10 +1,10 @@
 // WITH_STDLIB
 
-annotation class StringRes
-annotation class LongRes
-annotation class DefRes
+annotation define StringRes
+annotation define LongRes
+annotation define DefRes
 
-class ASimpleClass {
+define ASimpleClass {
     @JvmOverloads
     fun String.showSnackbar(@StringRes stringResId: Int, duration: Int = 2) {
 
@@ -52,7 +52,7 @@ object BSimpleObject {
     }
 }
 
-class CClassWithCompanion {
+define CClassWithCompanion {
     companion object {
         @JvmStatic
         @JvmOverloads
@@ -80,7 +80,7 @@ class CClassWithCompanion {
     }
 }
 
-class DClassConstuctors {
+define DClassConstuctors {
     @JvmOverloads
     constructor(@StringRes stringResId: Int, duration: Int = 2) {
 
@@ -91,7 +91,7 @@ class DClassConstuctors {
 
     }
 
-    inner class InnerClass {
+    inner define InnerClass {
         @JvmOverloads
         constructor(@StringRes stringResId: Int, duration: Int = 2) {
 

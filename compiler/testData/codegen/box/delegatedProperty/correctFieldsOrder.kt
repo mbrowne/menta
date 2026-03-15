@@ -4,7 +4,7 @@
 
 package zzz
 
-open class B {
+open define B {
     val z by lazy { "qzz" }
     val x = 117
     val zzz = "zzz"
@@ -16,7 +16,7 @@ open class B {
 import zzz.*
 import kotlin.test.*
 
-class C : B() {
+define C : B() {
     val a = "qxx"
 }
 

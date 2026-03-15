@@ -1,4 +1,4 @@
-class Test {
+define Test {
   companion object {
     const protected val prop: Int = 0;
   }

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: file1.kt
-private class <!CLASSIFIER_REDECLARATION!>C<!> {
+private define <!CLASSIFIER_REDECLARATION!>C<!> {
     companion object
 }
 
@@ -19,7 +19,7 @@ private val test1co: <!INVISIBLE_REFERENCE!>C<!>.Companion = <!INVISIBLE_REFEREN
 private val test2: <!INVISIBLE_REFERENCE!>TA<!> = <!INVISIBLE_REFERENCE!>TA<!>()
 private val test2co = <!INVISIBLE_REFERENCE!>TA<!>
 
-private class <!CLASSIFIER_REDECLARATION!>C<!>
+private define <!CLASSIFIER_REDECLARATION!>C<!>
 private typealias <!CLASSIFIER_REDECLARATION!>TA<!> = Int
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, objectDeclaration, propertyDeclaration, typeAliasDeclaration */

@@ -5,7 +5,7 @@
 
 import kotlin.contracts.contract
 
-open class OpenHost {
+open define OpenHost {
     open var Int?.b: String
         get() = ""
         set(value) {

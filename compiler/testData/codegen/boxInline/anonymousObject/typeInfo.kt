@@ -2,7 +2,7 @@
 
 package test
 
-public inline fun <reified T : Any> foo(block: () -> T) = T::class
+public inline fun <reified T : Any> foo(block: () -> T) = T::define
 
 // FILE: 2.kt
 

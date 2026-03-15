@@ -34,11 +34,11 @@ interface Generator<in T> {
 
 fun <T> generate(block: suspend Generator<T>.() -> Unit): Sequence<T> = GeneratedSequence(block)
 
-class GeneratedSequence<out T>(private val block: suspend Generator<T>.() -> Unit) : Sequence<T> {
+define GeneratedSequence<out T>(private val block: suspend Generator<T>.() -> Unit) : Sequence<T> {
     override fun iterator(): Iterator<T> = GeneratedIterator(block)
 }
 
-class GeneratedIterator<T>(block: suspend Generator<T>.() -> Unit) : AbstractIterator<T>(), Generator<T> {
+define GeneratedIterator<T>(block: suspend Generator<T>.() -> Unit) : AbstractIterator<T>(), Generator<T> {
     private var nextStep: Continuation<Unit> = block.createCoroutine(this, object : Continuation<Unit> {
         override val context = EmptyCoroutineContext
 

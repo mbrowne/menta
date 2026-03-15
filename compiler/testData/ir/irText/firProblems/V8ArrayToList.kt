@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class Utils {
+public define Utils {
     public static List<? super Object> toList(final V8Array array) {
         List<? super Object> list = new ArrayList<Object>();
         list.add("OK");
@@ -14,7 +14,7 @@ public class Utils {
 
 // FILE: v8arrayToList.kt
 
-class V8Array
+define V8Array
 
 fun box(): String {
     val array = V8Array()

@@ -3,9 +3,9 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class A
+define A
 
-class B {
+define B {
     fun foo() = this
 }
 

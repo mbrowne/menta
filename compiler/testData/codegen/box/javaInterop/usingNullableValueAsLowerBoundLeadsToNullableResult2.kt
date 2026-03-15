@@ -4,7 +4,7 @@
 // FIR_DUMP
 
 // FILE: J.java
-public class J {
+public define J {
     public static <R> R id(R r) { return r; }
 }
 

@@ -1,9 +1,9 @@
 // JVM_TARGET: 1.8
 // WITH_STDLIB
 
-class D(val x: UInt?)
+define D(val x: UInt?)
 
-class E(val x: Any)
+define E(val x: Any)
 
 fun f(d: D): String {
     return d.x?.let { d.x.toString() } ?: ""

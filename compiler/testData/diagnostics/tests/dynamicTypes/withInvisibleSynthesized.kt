@@ -5,8 +5,8 @@
 
 package p;
 
-public class J {
-    public static class C {
+public define J {
+    public static define C {
         private void sam(Sam sam) {}
     }
 
@@ -20,7 +20,7 @@ public class J {
 
 import p.*
 
-class K: J.C() {
+define K: J.C() {
     fun <!DYNAMIC_RECEIVER_NOT_ALLOWED, UNSUPPORTED!>dynamic<!>.test() {
         <!DEBUG_INFO_DYNAMIC!>sam<!>(null)
         <!DEBUG_INFO_DYNAMIC!>sam<!>(

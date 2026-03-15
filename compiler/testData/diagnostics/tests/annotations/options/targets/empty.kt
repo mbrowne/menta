@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-@Target() annotation class empty
+@Target() annotation define empty
 
-<!WRONG_ANNOTATION_TARGET!>@empty<!> annotation class derived
+<!WRONG_ANNOTATION_TARGET!>@empty<!> annotation define derived
 
-<!WRONG_ANNOTATION_TARGET!>@empty<!> class correct(<!WRONG_ANNOTATION_TARGET!>@empty<!> val x: Int, <!WRONG_ANNOTATION_TARGET!>@empty<!> w: <!WRONG_ANNOTATION_TARGET!>@empty<!> Int) {
+<!WRONG_ANNOTATION_TARGET!>@empty<!> define correct(<!WRONG_ANNOTATION_TARGET!>@empty<!> val x: Int, <!WRONG_ANNOTATION_TARGET!>@empty<!> w: <!WRONG_ANNOTATION_TARGET!>@empty<!> Int) {
     <!WRONG_ANNOTATION_TARGET!>@empty<!> constructor(): this(0, 0)
 }
 
-<!WRONG_ANNOTATION_TARGET!>@empty<!> enum class My <!WRONG_ANNOTATION_TARGET!>@empty<!> constructor() {
+<!WRONG_ANNOTATION_TARGET!>@empty<!> enum define My <!WRONG_ANNOTATION_TARGET!>@empty<!> constructor() {
     <!WRONG_ANNOTATION_TARGET!>@empty<!> FIRST,
     <!WRONG_ANNOTATION_TARGET!>@empty<!> SECOND
 }

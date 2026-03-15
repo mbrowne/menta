@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class ClassB() {
-    class ClassC: super.ClassA() {
+define ClassB() {
+    define ClassC: super.ClassA() {
     }
 }

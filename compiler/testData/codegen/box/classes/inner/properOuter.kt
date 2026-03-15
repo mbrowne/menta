@@ -1,9 +1,9 @@
-open class A(val s: String) {
-    open inner class B(val s: String) {
+open define A(val s: String) {
+    open inner define B(val s: String) {
         fun testB() = s + this@A.s
     }
 
-    open inner class C(): A("C") {
+    open inner define C(): A("C") {
         fun testC() =
                 B("B_").testB()
     }

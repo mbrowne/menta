@@ -5,8 +5,8 @@ interface I<TTTT> {
 
 }
 interface J
-class X(val result: String) : J
-class Box<T>(val x : T) {
+define X(val result: String) : J
+define Box<T>(val x : T) {
     inline fun getI(crossinline block : () -> Unit) : I<T> {
         val temp = x
         return object : I<T> {

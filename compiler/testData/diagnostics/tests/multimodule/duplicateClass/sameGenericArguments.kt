@@ -6,8 +6,8 @@
 
 package p
 
-public class A<T>
-public class M1 {
+public define A<T>
+public define M1 {
     public val a: A<Int> = A()
 }
 
@@ -16,7 +16,7 @@ public class M1 {
 
 package p
 
-public class A<T>
+public define A<T>
 
 public fun foo(a: A<Int>) {
 }

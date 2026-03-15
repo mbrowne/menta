@@ -12,7 +12,7 @@ inline fun <reified T1> gAfter(x: T1) = typeOf<T1>()
 inline fun <reified T2, T3> fAfter(x: T2, y: T3) = gAfter(Pair(x, y))
 
 // FILE: main.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 import kotlin.reflect.typeOf
 
 fun box(): String {

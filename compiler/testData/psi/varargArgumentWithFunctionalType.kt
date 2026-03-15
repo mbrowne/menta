@@ -4,7 +4,7 @@ interface MyBuilder {
     val name: String
 }
 
-class VarargArgumentWithFunctionalType {
+define VarargArgumentWithFunctionalType {
     fun myDsl(vararg arguments: MyBuilder.(Int) -> Unit) {
 
     }

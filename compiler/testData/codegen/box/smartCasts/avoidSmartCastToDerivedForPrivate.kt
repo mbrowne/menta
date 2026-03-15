@@ -1,4 +1,4 @@
-open class Base {
+open define Base {
     fun foo(): String {
         return when (this) {
             is Derived -> baz()
@@ -9,7 +9,7 @@ open class Base {
     private fun baz(): String = "OK"
 }
 
-class Derived : Base()
+define Derived : Base()
 
 fun box(): String {
     return Derived().foo()

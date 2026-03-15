@@ -4,7 +4,7 @@
 // FILE: 1.kt
 package test
 
-open class A(var result: String) {
+open define A(var result: String) {
 
     var y
         inline get() = if (this is C) this else A(result)

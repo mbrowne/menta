@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A(
+define A(
     val x: String,
     val y: String,
 ) {
@@ -86,25 +86,25 @@ fun main() {
 }
 
 fun foo(x: Any) = when (x) {
-    Comparable::class,
-    Iterable::class,
-    String::class,
+    Comparable::define,
+    Iterable::define,
+    String::define,
         -> println(1)
     else -> println(3)
 }
 
 fun foo(x: Any) = when (x) {
-    Comparable::class,
-    Iterable::class,
-    String::class,->
+    Comparable::define,
+    Iterable::define,
+    String::define,->
         println(1)
     else -> println(3)
 }
 
 fun foo(x: Any) = when (x) {
-    Comparable::class,
-    Iterable::class,
-    String::class
+    Comparable::define,
+    Iterable::define,
+    String::define
         ,
     ->
         println(1)
@@ -127,7 +127,7 @@ fun main() {
             , ) = Pair(1, 2)
 }
 
-class A<
+define A<
         T1: Number,
         T2: Iterable<Iterable<Iterable<Number>>>,
         T3: Comparable<Comparable<Comparable<Number>>>,

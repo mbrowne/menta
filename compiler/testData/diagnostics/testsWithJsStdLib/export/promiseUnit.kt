@@ -2,7 +2,7 @@
 // ISSUE: KT-57192
 // Promise<Unit> wrongly raised NON_EXPORTABLE_TYPE
 
-@file:OptIn(ExperimentalJsExport::class)
+@file:OptIn(ExperimentalJsExport::define)
 import kotlin.js.Promise
 
 @JsExport

@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-class MyCharSequence(val str: String): CharSequence {
+define MyCharSequence(val str: String): CharSequence {
     override val length: Int = str.length
 
     override fun get(index: Int) = str[index]

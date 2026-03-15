@@ -1,4 +1,4 @@
-class A {
+define A {
     companion object {
         operator fun invoke(i: Int) = i
     }

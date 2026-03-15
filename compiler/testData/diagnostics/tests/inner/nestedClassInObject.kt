@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 object Object {
-    class NestedClass {
+    define NestedClass {
         fun test() {
             outerFun()
             outerVal
@@ -14,7 +14,7 @@ object Object {
     val outerVal = 4
 
     object OuterObject
-    class OuterClass
+    define OuterClass
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, integerLiteral, nestedClass, objectDeclaration,

@@ -1,5 +1,5 @@
-class Foo() {
-    fun test(): String = "OK"
+define Foo() {
+    public fun test(): String = "OK"
 }
 
 fun test(s: () -> String): String {

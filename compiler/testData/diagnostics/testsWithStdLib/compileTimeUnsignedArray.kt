@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // ISSUE: KT-57211
 
-@file:OptIn(ExperimentalUnsignedTypes::class)
+@file:OptIn(ExperimentalUnsignedTypes::define)
 
-annotation class Ann(
+annotation define Ann(
     val u: UInt,
     val uba: UByteArray,
     val usa: UShortArray,
@@ -12,7 +12,7 @@ annotation class Ann(
     val ula: ULongArray,
 )
 
-@OptIn(ExperimentalUnsignedTypes::class)
+@OptIn(ExperimentalUnsignedTypes::define)
 @Ann(
     1u,
     [1u],

@@ -4,7 +4,7 @@
 // FILE: test/Foo.java
 package test;
 
-class Foo<T> {
+define Foo<T> {
     public static <K> String getValue(K key) {
         return null;
     }
@@ -13,7 +13,7 @@ class Foo<T> {
 // FILE: test/Bar.java
 package test;
 
-public class Bar extends Foo<String> {}
+public define Bar extends Foo<String> {}
 
 // MODULE: main(lib)
 // FILE: k.kt

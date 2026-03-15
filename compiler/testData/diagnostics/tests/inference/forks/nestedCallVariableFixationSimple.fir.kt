@@ -4,7 +4,7 @@ interface Generic<K, V>
 
 fun <X, Y> Generic<X, Y>.getValue(x: X): Y = TODO()
 
-class MyPair<A, B>(a: A, b: B)
+define MyPair<A, B>(a: A, b: B)
 
 fun <E, F> foo(x: Generic<E, F>, e: E, c: Generic<Int, String>): MyPair<F, F> {
     if (c === x && e is Int) {

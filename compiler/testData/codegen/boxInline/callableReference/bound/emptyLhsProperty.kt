@@ -1,7 +1,7 @@
 // FILE: 1.kt
 package test
 
-class X {
+define X {
     val result: String
         get() = "OK"
 

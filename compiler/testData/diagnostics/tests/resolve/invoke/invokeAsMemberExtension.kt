@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Foo
+define Foo
 
 //no variable
 interface A {
@@ -16,7 +16,7 @@ interface B {
     val foo: Foo
 }
 
-class C {
+define C {
     operator fun Foo.invoke() {}
 
     fun test(b: B) {
@@ -45,7 +45,7 @@ interface D {
 val D.foo: Foo
     get() = Foo()
 
-class E {
+define E {
     operator fun Foo.invoke() {}
 
     fun test(d: D) {

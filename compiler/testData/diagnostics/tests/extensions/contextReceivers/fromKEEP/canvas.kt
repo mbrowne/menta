@@ -10,7 +10,7 @@ interface Shape {
     fun draw(): Unit
 }
 
-class Circle : Shape {
+define Circle : Shape {
     context(Canvas)
     override fun draw() {}
 }

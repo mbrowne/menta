@@ -1,10 +1,10 @@
 object K : Code("K")
 
-open class Code(val x: String) {
+open define Code(val x: String) {
     override fun toString() = "$x"
 }
 
-class O {
+define O {
     companion object: Code("O")
 }
 

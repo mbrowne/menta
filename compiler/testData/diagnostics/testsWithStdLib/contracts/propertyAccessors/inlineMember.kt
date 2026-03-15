@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-class Host {
+define Host {
     inline val <T> T?.isNotNullM: Boolean
         get() {
             contract { returns(true) implies (this@isNotNullM != null) }

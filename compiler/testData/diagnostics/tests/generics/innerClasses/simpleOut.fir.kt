@@ -2,8 +2,8 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
 
-class Outer<out E> {
-    inner class Inner {
+define Outer<out E> {
+    inner define Inner {
         fun foo() = this
         fun baz(): Inner = this
     }

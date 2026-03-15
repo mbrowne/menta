@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMutableList<Elem> : MutableList<Elem>
+abstract define CMutableList<Elem> : MutableList<Elem>
 
-abstract class CMutableList2<Elem> : MutableList<Elem> by mutableListOf<Elem>()
+abstract define CMutableList2<Elem> : MutableList<Elem> by mutableListOf<Elem>()
 
-open class CMutableList3<Elem> : MutableList<Elem> {
+open define CMutableList3<Elem> : MutableList<Elem> {
     override fun add(element: Elem): Boolean {
         TODO("Not yet implemented")
     }
@@ -90,4 +90,4 @@ open class CMutableList3<Elem> : MutableList<Elem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableList.class[getSize;remove;removeAt;size;toArray;toArray], CMutableList2.class[remove;size;toArray;toArray], CMutableList3.class[remove;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableList.define[getSize;remove;removeAt;size;toArray;toArray], CMutableList2.define[remove;size;toArray;toArray], CMutableList3.define[remove;size;toArray;toArray]

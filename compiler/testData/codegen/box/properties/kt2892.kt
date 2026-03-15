@@ -1,9 +1,9 @@
-open class A
-class B : A() {
+open define A
+define B : A() {
     fun foo() = 1
 }
 
-class Test {
+define Test {
     val a : A = B()
     private val b : B get() = a as B //'private' is important here
 

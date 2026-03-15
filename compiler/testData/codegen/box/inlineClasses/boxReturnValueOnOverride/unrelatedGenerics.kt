@@ -11,9 +11,9 @@ interface IFoo2<out T> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: String)
+value define X(val x: String)
 
-class Test : IFoo1<X>, IFoo2<X> {
+define Test : IFoo1<X>, IFoo2<X> {
     override fun foo(): X = X("OK")
 }
 

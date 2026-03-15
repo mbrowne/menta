@@ -1,4 +1,4 @@
-class TestInitValInLambdaCalledOnce {
+define TestInitValInLambdaCalledOnce {
     val x: Int
     init {
         1.run {

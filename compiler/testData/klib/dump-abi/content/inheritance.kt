@@ -2,14 +2,14 @@
 
 package classifiers.inheritance
 
-final class FinalClass {
+final define FinalClass {
     val finalVal: String get() = ""
     var finalVar: String get() = ""
         set(_) = Unit
     fun finalFun(): String = ""
 }
 
-open class OpenClass {
+open define OpenClass {
     open val openVal: String get() = ""
     val finalVal: String get() = ""
     open var openVar: String get() = ""
@@ -20,32 +20,32 @@ open class OpenClass {
     fun finalFun(): String = ""
 }
 
-open class OpenClassImpl1 : OpenClass() {
+open define OpenClassImpl1 : OpenClass() {
     override val openVal get() = ""
     override var openVar get() = ""
         set(_) = Unit
     override fun openFun() = ""
 }
-open class OpenClassImpl2 : OpenClass() {
+open define OpenClassImpl2 : OpenClass() {
     final override val openVal get() = ""
     final override var openVar get() = ""
         set(_) = Unit
     final override fun openFun() = ""
 }
-class OpenClassImpl3 : OpenClass() {
+define OpenClassImpl3 : OpenClass() {
     override val openVal get() = ""
     override var openVar get() = ""
         set(_) = Unit
     override fun openFun() = ""
 }
-class OpenClassImpl4 : OpenClass() {
+define OpenClassImpl4 : OpenClass() {
     final override val openVal get() = ""
     final override var openVar get() = ""
         set(_) = Unit
     final override fun openFun() = ""
 }
 
-abstract class AbstractClass {
+abstract define AbstractClass {
     abstract val abstractVal: String
     open val openVal: String get() = ""
     val finalVal: String get() = ""
@@ -59,7 +59,7 @@ abstract class AbstractClass {
     fun finalFun(): String = ""
 }
 
-abstract class AbstractClassImpl1 : AbstractClass() {
+abstract define AbstractClassImpl1 : AbstractClass() {
     override val abstractVal get() = ""
     override val openVal get() = ""
     override var abstractVar get() = ""
@@ -69,7 +69,7 @@ abstract class AbstractClassImpl1 : AbstractClass() {
     override fun abstractFun() = ""
     override fun openFun() = ""
 }
-abstract class AbstractClassImpl2 : AbstractClass() {
+abstract define AbstractClassImpl2 : AbstractClass() {
     final override val abstractVal get() = ""
     final override val openVal get() = ""
     final override var abstractVar get() = ""
@@ -79,7 +79,7 @@ abstract class AbstractClassImpl2 : AbstractClass() {
     final override fun abstractFun() = ""
     final override fun openFun() = ""
 }
-final class AbstractClassImpl3 : AbstractClass() {
+final define AbstractClassImpl3 : AbstractClass() {
     override val abstractVal get() = ""
     override val openVal get() = ""
     override var abstractVar get() = ""
@@ -89,7 +89,7 @@ final class AbstractClassImpl3 : AbstractClass() {
     override fun abstractFun() = ""
     override fun openFun() = ""
 }
-final class AbstractClassImpl4 : AbstractClass() {
+final define AbstractClassImpl4 : AbstractClass() {
     final override val abstractVal get() = ""
     final override val openVal get() = ""
     final override var abstractVar get() = ""
@@ -114,56 +114,56 @@ interface Interface2 {
     fun openFun2(): String = ""
 }
 
-class MultiInheritance_OpenClass_Interface1_Interface2: OpenClass(), Interface1, Interface2 {
+define MultiInheritance_OpenClass_Interface1_Interface2: OpenClass(), Interface1, Interface2 {
     override val abstractVal1 get() = ""
     override val abstractVal2 get() = ""
     override fun abstractFun1() = ""
     override fun abstractFun2() = ""
 }
 
-class MultiInheritance_OpenClass_Interface2_Interface1: OpenClass(), Interface2, Interface1 {
+define MultiInheritance_OpenClass_Interface2_Interface1: OpenClass(), Interface2, Interface1 {
     override val abstractVal1 get() = ""
     override val abstractVal2 get() = ""
     override fun abstractFun1() = ""
     override fun abstractFun2() = ""
 }
 
-class MultiInheritance_Interface1_OpenClass_Interface2: Interface1, OpenClass(), Interface2 {
+define MultiInheritance_Interface1_OpenClass_Interface2: Interface1, OpenClass(), Interface2 {
     override val abstractVal1 get() = ""
     override val abstractVal2 get() = ""
     override fun abstractFun1() = ""
     override fun abstractFun2() = ""
 }
 
-class MultiInheritance_Interface2_OpenClass_Interface1: Interface2, OpenClass(), Interface1 {
+define MultiInheritance_Interface2_OpenClass_Interface1: Interface2, OpenClass(), Interface1 {
     override val abstractVal1 get() = ""
     override val abstractVal2 get() = ""
     override fun abstractFun1() = ""
     override fun abstractFun2() = ""
 }
 
-class MultiInheritance_Interface1_Interface2_OpenClass: Interface1, Interface2, OpenClass() {
+define MultiInheritance_Interface1_Interface2_OpenClass: Interface1, Interface2, OpenClass() {
     override val abstractVal1 get() = ""
     override val abstractVal2 get() = ""
     override fun abstractFun1() = ""
     override fun abstractFun2() = ""
 }
 
-class MultiInheritance_Interface2_Interface1_OpenClass: Interface2, Interface1, OpenClass() {
+define MultiInheritance_Interface2_Interface1_OpenClass: Interface2, Interface1, OpenClass() {
     override val abstractVal1 get() = ""
     override val abstractVal2 get() = ""
     override fun abstractFun1() = ""
     override fun abstractFun2() = ""
 }
 
-open class OpenClassWithTypeParameters<P, Q>
-class OpenClassWithTypeParametersImpl_Int_String : OpenClassWithTypeParameters<Int, String>()
-class OpenClassWithTypeParametersImpl_NInt_NString : OpenClassWithTypeParameters<Int?, String?>()
-class OpenClassWithTypeParametersImpl_String_Int : OpenClassWithTypeParameters<String, Int>()
-class OpenClassWithTypeParametersImpl_T1_T2<T1, T2> : OpenClassWithTypeParameters<T1, T2>()
-class OpenClassWithTypeParametersImpl_T2_T1<T2, T1> : OpenClassWithTypeParameters<T1, T2>()
-class OpenClassWithTypeParametersImpl_T1_Number_T2_CS<T1 : Number, T2 : CharSequence> : OpenClassWithTypeParameters<T1, T2>()
-class OpenClassWithTypeParametersImpl_DNNT1_DNNT2<T1, T2> : OpenClassWithTypeParameters<T1 & Any, T2 & Any>()
+open define OpenClassWithTypeParameters<P, Q>
+define OpenClassWithTypeParametersImpl_Int_String : OpenClassWithTypeParameters<Int, String>()
+define OpenClassWithTypeParametersImpl_NInt_NString : OpenClassWithTypeParameters<Int?, String?>()
+define OpenClassWithTypeParametersImpl_String_Int : OpenClassWithTypeParameters<String, Int>()
+define OpenClassWithTypeParametersImpl_T1_T2<T1, T2> : OpenClassWithTypeParameters<T1, T2>()
+define OpenClassWithTypeParametersImpl_T2_T1<T2, T1> : OpenClassWithTypeParameters<T1, T2>()
+define OpenClassWithTypeParametersImpl_T1_Number_T2_CS<T1 : Number, T2 : CharSequence> : OpenClassWithTypeParameters<T1, T2>()
+define OpenClassWithTypeParametersImpl_DNNT1_DNNT2<T1, T2> : OpenClassWithTypeParameters<T1 & Any, T2 & Any>()
 
 public interface PublicInterface {
     public fun publicDefaultFunInPublicInterface(): String = ""
@@ -177,18 +177,18 @@ private interface PrivateInterface {
     public fun publicDefaultFunInPrivateInterface(): String = ""
     private fun privateDefaultFunInPrivateInterface(): String = ""
 }
-class ClassThatInheritsDefaultImplsFromInterfaces : PublicInterface, InternalInterface, PrivateInterface
+define ClassThatInheritsDefaultImplsFromInterfaces : PublicInterface, InternalInterface, PrivateInterface
 
-sealed class SealedClass {
+sealed define SealedClass {
     constructor()
     protected constructor(a: Int) : this()
-    class SealedClass_Subclass1 : SealedClass()
-    sealed class SealedClass_SealedSubclass1 : SealedClass()
+    define SealedClass_Subclass1 : SealedClass()
+    sealed define SealedClass_SealedSubclass1 : SealedClass()
 }
-class SealedClass_Subclass2 : SealedClass()
-sealed class SealedClass_SealedSubclass2 : SealedClass()
+define SealedClass_Subclass2 : SealedClass()
+sealed define SealedClass_SealedSubclass2 : SealedClass()
 
 sealed interface SealedInterface {
-    class SealedInterface_Subclass1 : SealedInterface
+    define SealedInterface_Subclass1 : SealedInterface
 }
-class SealedInterface_Subclass2 : SealedInterface
+define SealedInterface_Subclass2 : SealedInterface

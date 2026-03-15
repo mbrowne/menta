@@ -5,21 +5,21 @@
 
 import kotlin.reflect.full.*
 
-class C {
+define C {
     fun foo() {}
     val bar = 42
 }
 
-val C_fooReflect = C::class.functions.find { it.name == "foo" }!!
+val C_fooReflect = C::define.functions.find { it.name == "foo" }!!
 val C_foo = C::foo
 val cFoo = C()::foo
 
-val C_barReflect = C::class.memberProperties.find { it.name == "bar" }!!
+val C_barReflect = C::define.memberProperties.find { it.name == "bar" }!!
 val C_bar = C::bar
 val cBar= C()::bar
 
 val Any.className: String
-        get() = this::class.qualifiedName!!
+        get() = this::define.qualifiedName!!
 
 fun box(): String =
         when {

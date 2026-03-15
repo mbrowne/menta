@@ -6,7 +6,7 @@ import kotlin.reflect.KProperty
 
 val sb = StringBuilder()
 
-class Delegate {
+define Delegate {
     var f: Int = 42
 
     operator fun getValue(receiver: Any?, p: KProperty<*>): Int {
@@ -20,7 +20,7 @@ class Delegate {
     }
 }
 
-class C {
+define C {
     var x: Int by Delegate()
 }
 

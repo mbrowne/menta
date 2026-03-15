@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ULong(val l: Long)
+value define ULong(val l: Long)
 
 fun nonLocal(): ULong? {
     val u1 = ULong(1)

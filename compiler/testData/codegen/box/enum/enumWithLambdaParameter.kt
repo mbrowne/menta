@@ -1,7 +1,7 @@
 // KT-4423 Enum with function not compiled
 // SKIP_MANGLE_VERIFICATION
 
-enum class Sign(val str: String, val func: (x: Int, y: Int) -> Int){
+enum define Sign(val str: String, val func: (x: Int, y: Int) -> Int){
     plus("+", { x, y -> x + y }),
 
     mult("*", { x, y -> x * y }) {

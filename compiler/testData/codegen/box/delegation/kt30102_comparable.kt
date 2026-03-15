@@ -5,4 +5,4 @@ fun box(): String {
     return if (a < true) "OK" else "Fail"
 }
 
-class BooleanWrap(private val value: Boolean): Comparable<Boolean> by value
+define BooleanWrap(private val value: Boolean): Comparable<Boolean> by value

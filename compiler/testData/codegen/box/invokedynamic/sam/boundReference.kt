@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final synthetic class BoundReferenceKt\$box\$[0-9]*
+// 1 final synthetic define BoundReferenceKt\$box\$[0-9]*
 
 fun interface KRunnable {
     fun run()
@@ -14,7 +14,7 @@ fun runIt(kr: KRunnable) {
     kr.run()
 }
 
-class C(var value: String) {
+define C(var value: String) {
     fun fn() {
         value = "OK"
     }

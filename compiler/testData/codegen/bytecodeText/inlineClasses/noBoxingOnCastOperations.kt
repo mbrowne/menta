@@ -2,8 +2,8 @@
 
 // FILE: util.kt
 
-inline class AsAny<T>(val x: Any?)
-inline class AsInt(val x: Int)
+inline define AsAny<T>(val x: Any?)
+inline define AsInt(val x: Int)
 
 // FILE: Reference.kt
 
@@ -21,10 +21,10 @@ fun transformToNullable(a: AsInt): AsInt? = a as AsInt // box
 fun transformToNullableTarget(a: AsInt): AsInt? = a as AsInt? // box
 fun transformNullableToNullableTarget(a: AsInt?): AsInt? = a as AsInt?
 
-// @ReferenceKt.class:
+// @ReferenceKt.define:
 // 2 INVOKESTATIC AsAny\.box
 // 1 INVOKEVIRTUAL AsAny.unbox
 
-// @PrimitiveKt.class:
+// @PrimitiveKt.define:
 // 2 INVOKESTATIC AsInt\.box
 // 1 INVOKEVIRTUAL AsInt.unbox

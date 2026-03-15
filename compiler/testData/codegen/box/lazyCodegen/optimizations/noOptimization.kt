@@ -1,5 +1,5 @@
-class A
-class B
+define A
+define B
 
 var holder = 0
 

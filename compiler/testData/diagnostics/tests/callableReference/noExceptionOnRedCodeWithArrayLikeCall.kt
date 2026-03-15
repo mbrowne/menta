@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
-class DTO {
+define DTO {
     val q: Int = 0
     operator fun get(prop: <!UNRESOLVED_REFERENCE!>KProperty1<!><*, Int>): Int = 0
 }

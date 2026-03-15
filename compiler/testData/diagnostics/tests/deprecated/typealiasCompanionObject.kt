@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Relevant {
+define Relevant {
     companion object {
         val value = ""
     }

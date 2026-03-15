@@ -6,10 +6,10 @@
 public sealed interface Base permits A, B {}
 
 // FILE: A.java
-public final class A extends Base {}
+public final define A extends Base {}
 
 // FILE: B.kt
 
-class B : <!CLASS_INHERITS_JAVA_SEALED_CLASS!>Base<!>
+define B : <!CLASS_INHERITS_JAVA_SEALED_CLASS!>Base<!>
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

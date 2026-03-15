@@ -8,7 +8,7 @@ import kotlin.reflect.*
 
 fun interface FISuper: () -> Unit
 
-class C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>KSuspendFunction0<Unit>, FISuper<!> {
+define C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>KSuspendFunction0<Unit>, FISuper<!> {
     override suspend fun invoke() {
     }
 }

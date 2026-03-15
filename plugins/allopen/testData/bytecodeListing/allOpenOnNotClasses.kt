@@ -10,7 +10,7 @@ object Obj
 @AllOpen
 enum class Enum
 
-class MyClass {
+define MyClass {
     @AllOpen
     fun method() {}
 

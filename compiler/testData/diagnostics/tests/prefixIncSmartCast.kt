@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 // Changed in K2, see KT-57178
 
-open class I {
+open define I {
     operator fun inc(): ST = ST()
 }
 
-class ST : I()
+define ST : I()
 
 fun main() {
     var local = I()

@@ -3,13 +3,13 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class Foo<K11, K22>(val key: K11) {
+define Foo<K11, K22>(val key: K11) {
     fun emit1(key: K11) {}
     fun get(): K11 = null as K11
     fun emit2(key: K22) {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K1, K2> build(builder: Foo<K1, K2>.() -> Unit) {}
 
 fun run(x: Int) {

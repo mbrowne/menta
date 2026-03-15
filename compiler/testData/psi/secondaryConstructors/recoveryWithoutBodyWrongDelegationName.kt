@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     constructor(): thi()
     val x: Int
 
@@ -13,4 +13,4 @@ class A {
     constructor(): thi()
 }
 
-class B
+define B

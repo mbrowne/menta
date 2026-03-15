@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 interface Your
 
-class My {
+define My {
     internal val x = object : Your {}
 
     internal fun foo() = {
-        class Local
+        define Local
         Local()
     }()
 }

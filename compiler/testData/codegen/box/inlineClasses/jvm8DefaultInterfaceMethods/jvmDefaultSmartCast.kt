@@ -10,7 +10,7 @@ interface IOk {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineClass(val s: String) : IOk
+value define InlineClass(val s: String) : IOk
 
 fun test(x: Any): String {
     return if (x is InlineClass) x.ok() else "FAIL"

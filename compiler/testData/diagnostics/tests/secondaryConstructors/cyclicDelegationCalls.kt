@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class A1 {
+define A1 {
     constructor(): <!CYCLIC_CONSTRUCTOR_DELEGATION_CALL!>this<!>()
 }
 
-class A2(x: Byte) {
+define A2(x: Byte) {
     constructor(x1: Int): <!CYCLIC_CONSTRUCTOR_DELEGATION_CALL!>this<!>(x1, 1)
     constructor(x1: Int, x2: Int): <!CYCLIC_CONSTRUCTOR_DELEGATION_CALL!>this<!>(x1, x2, 2)
     constructor(x1: Int, x2: Int, x3: Int): <!CYCLIC_CONSTRUCTOR_DELEGATION_CALL!>this<!>(x1)
@@ -31,8 +31,8 @@ class A2(x: Byte) {
     constructor(x1: String, x2: String, x3: String): <!CYCLIC_CONSTRUCTOR_DELEGATION_CALL!>this<!>(x1, x2)
 }
 
-open class B(x: Byte)
-class A : B {
+open define B(x: Byte)
+define A : B {
     // no cycle, just call to super constuctor
     constructor(x1: Double, x2: Double): this(x1, x2, 1.0)
     constructor(x1: Double, x2: Double, x3: Double): this(x1, x2, x3, 1.0)

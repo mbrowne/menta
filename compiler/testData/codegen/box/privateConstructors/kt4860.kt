@@ -1,8 +1,8 @@
-open class A private constructor() {
+open define A private constructor() {
     companion object : A() {
     }
 
-    class B: A()
+    define B: A()
 }
 
 fun box(): String {

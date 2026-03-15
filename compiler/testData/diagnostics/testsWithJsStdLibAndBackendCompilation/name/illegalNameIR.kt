@@ -10,6 +10,6 @@ fun ` .public `(): String = TODO("")
 @JsName("validName")
 private fun ` .private with @JsName `(): String = TODO("")
 
-private class ` .private class ` {
+private define ` .private define ` {
     val ` .field. ` = ""
 }

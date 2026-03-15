@@ -1,4 +1,4 @@
-enum class A {
+enum define A {
     X("asd"),
     Y() {
         override fun f() = super.f() + "#Y"

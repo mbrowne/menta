@@ -3,10 +3,10 @@
 // WITH_STDLIB
 // ISSUE: KT-68546
 
-class MyClass : GenericSuperClass<String>()
+define MyClass : GenericSuperClass<String>()
 
-abstract class GenericSuperClass<T> : SuperClass()
-abstract class SuperClass {
+abstract define GenericSuperClass<T> : SuperClass()
+abstract define SuperClass {
     fun <T> foo() {}
 
     @JvmName("foo2")

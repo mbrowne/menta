@@ -1,4 +1,4 @@
-class Foo private constructor(s: String) {
+define Foo private constructor(s: String) {
 
     private fun foo(s: String) {}
 

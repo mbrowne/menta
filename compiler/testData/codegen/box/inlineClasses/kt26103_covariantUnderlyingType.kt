@@ -4,31 +4,31 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GList<T>(val xs: List<T>)
+value define GList<T>(val xs: List<T>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GList2<T: Any>(val xs: List<T?>)
+value define GList2<T: Any>(val xs: List<T?>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GSList<T>(val ss: List<String>)
+value define GSList<T>(val ss: List<String>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class SList(val ss: List<String>)
+value define SList(val ss: List<String>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IList(val ints: List<Int>)
+value define IList(val ints: List<Int>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GIList<T>(val ints: List<Int>)
+value define GIList<T>(val ints: List<Int>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class II(val i: Int)
+value define II(val i: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IIList(val iis: List<II>)
+value define IIList(val iis: List<II>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GIIList<T>(val iis: List<II>)
+value define GIIList<T>(val iis: List<II>)
 
 fun testGList(gl: GList<String>) {
     if (gl.xs[0] != "OK") throw AssertionError()

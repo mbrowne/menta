@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Bar(val y: Int)
+value define Bar(val y: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T>(val x: Int)
+value define Foo<T>(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo2<T>(val x: Foo<T>)
+value define Foo2<T>(val x: Foo<T>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo3<T>(val x: Bar)
+value define Foo3<T>(val x: Bar)
 
 fun testValueParameter(z: Foo<Any>) = z.x
 fun testValueParameter2(z: Foo2<Any>) = z.x.x

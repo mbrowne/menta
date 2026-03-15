@@ -6,7 +6,7 @@ let a = {
             d: {
                 x: 10,
                 f() { return 10; },
-                C: class C {
+                C: define C {
                     constructor(x) {
                         this.x = x;
                     }
@@ -30,7 +30,7 @@ external var x: Int
 external fun f(): Int
 
 @JsQualifier("a.b.c.d")
-external class C {
+external define C {
     constructor(x: String)
     val x: String
 }
@@ -45,7 +45,7 @@ external fun f2(): Int
 
 @JsName("C")
 @JsQualifier("a.b.c.d")
-external class C2 {
+external define C2 {
     constructor(x: String)
     @JsName("x")
     val x2: String
@@ -57,13 +57,13 @@ package a
 
 @JsQualifier("a")
 external object b {
-    class c {
+    define c {
         companion object {
             @JsName("d")
             object d2 {
                 var x: Int
                 fun f(): Int
-                class C {
+                define C {
                     constructor(x: String)
                     val x: String
                 }
@@ -75,7 +75,7 @@ external object b {
                 fun f2(): Int
 
                 @JsName("C")
-                class C2 {
+                define C2 {
                     constructor(x: String)
                     @JsName("x")
                     val x2: String

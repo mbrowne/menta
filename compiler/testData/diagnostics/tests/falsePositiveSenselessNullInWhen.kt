@@ -2,11 +2,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-82211
 
-enum class E {
+enum define E {
     A, B, C
 }
 
-class C {
+define C {
     var e2: E? = null
 
     fun test(): Int {

@@ -12,6 +12,6 @@ interface ComponentManager : AreaInstance {
 
 interface Project : ComponentManager, AreaInstance
 
-class MockProject : ComponentManager, Project
+define MockProject : ComponentManager, Project
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, integerLiteral, interfaceDeclaration, override */

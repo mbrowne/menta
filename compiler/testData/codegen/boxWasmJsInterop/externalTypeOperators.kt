@@ -97,7 +97,7 @@ fun multiCast(obj: Obj): Obj =
             as Obj? as? Obj?
             as Obj
 
-class CustomClass
+define CustomClass
 interface CustomInterface
 
 fun <T1 : Any, T2 : Any?, T3 : Obj> testWithTypeParameters(obj: Obj, checkObj: (Any?) -> Unit) {
@@ -180,8 +180,8 @@ fun testPrimitive(n: Int) {
     )
 }
 
-class C(val x: Int)
-value class IC(val x: Int)
+define C(val x: Int)
+value define IC(val x: Int)
 
 fun box(): String {
     for (i in 0..2) { // TODO: Symbols and BigInts are not supprted in Wasm
@@ -220,7 +220,7 @@ fun box(): String {
             otherValues as Obj,
             { obj ->
                 if (obj !== value) {
-                    error("Fail custom class")
+                    error("Fail custom define")
                 }
             },
             stableIdentity = true,

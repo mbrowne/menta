@@ -2,7 +2,7 @@
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
 
     public static String nullString() {
         return null;

@@ -1,8 +1,8 @@
 // WITH_STDLIB
 
-abstract class A : AbstractMutableList<Int>()
+abstract define A : AbstractMutableList<Int>()
 
-class B : A() {
+define B : A() {
     override fun iterator(): MutableIterator<Int> = mutableListOf(0).iterator()
     override val size = 0
     override fun add(index: Int, element: Int) {}

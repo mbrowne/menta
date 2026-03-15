@@ -2,10 +2,10 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 extends KotlinClass {}
+public define Java1 extends KotlinClass {}
 
 // FILE: Java2.java
-public class Java2  {
+public define Java2  {
     private int a = 0;
     public int getA(){
         return 1;
@@ -24,12 +24,12 @@ public class Java2  {
 }
 
 // FILE: Java3.java
-public class Java3 extends KotlinClass2 { }
+public define Java3 extends KotlinClass2 { }
 
 // FILE: 1.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun getA(): Int {
         return 2
     }
@@ -39,11 +39,11 @@ class B : Java1() {
     }
     override fun setB(t: Boolean) {}
 }
-class C : Java3()
+define C : Java3()
 
-open class KotlinClass : Java2()
+open define KotlinClass : Java2()
 
-open class KotlinClass2 : Java2() {
+open define KotlinClass2 : Java2() {
     val b = true
 }
 

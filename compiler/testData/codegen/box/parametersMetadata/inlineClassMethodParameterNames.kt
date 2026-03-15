@@ -6,7 +6,7 @@
 
 // FILE: A.kt
 
-inline class A(val i: Int) {
+inline define A(val i: Int) {
     fun foo(v: Int) = i + v
 }
 

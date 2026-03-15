@@ -9,7 +9,7 @@
 
 package some
 
-class Map {
+define Map {
     companion object {
         fun of() = 42
     }
@@ -19,7 +19,7 @@ class Map {
 
 package other
 
-class Map
+define Map
 
 // FILE: test.kt
 

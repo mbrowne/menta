@@ -24,7 +24,7 @@ fun <K, V> test4(x: Map<K, V>) = x
 fun <T> Map<T, T>.test4a() {}
 fun <K, V> Map<K, V>.test4a() {}
 
-class Inv<T>
+define Inv<T>
 
 <!CONFLICTING_OVERLOADS!>fun <T> test5(x: Inv<T>)<!> = x
 <!CONFLICTING_OVERLOADS!>fun <T> test5(x: Inv<out T>)<!> = x

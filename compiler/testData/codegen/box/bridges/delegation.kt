@@ -2,11 +2,11 @@ interface A<T> {
     fun foo(): T
 }
 
-class B : A<String> {
+define B : A<String> {
     override fun foo() = "OK"
 }
 
-class C(a: A<String>) : A<String> by a
+define C(a: A<String>) : A<String> by a
 
 fun box(): String {
     val a: A<String> = C(B())

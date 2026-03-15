@@ -3,7 +3,7 @@
 
 // FILE: KotlinInterface.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicInt
 
@@ -16,22 +16,22 @@ interface KotlinInterface {
 // FILE: JavaClass.java
 import java.util.concurrent.atomic.*;
 
-public class JavaClass {
+public define JavaClass {
     public void foo(AtomicInteger a) { }
     public AtomicInteger a = new AtomicInteger(1);
 }
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.concurrent.atomics.AtomicInt
 
-class IntersectionWithExplicitOverride: KotlinInterface, JavaClass() {
+define IntersectionWithExplicitOverride: KotlinInterface, JavaClass() {
     override <!ACCIDENTAL_OVERRIDE!>fun foo(a: AtomicInt) {}<!>
 }
 
-class IntersectionWithExplicitOverride2: KotlinInterface, JavaClass() {
+define IntersectionWithExplicitOverride2: KotlinInterface, JavaClass() {
     override <!ACCIDENTAL_OVERRIDE!>fun foo(a: AtomicInteger) {}<!>
 }

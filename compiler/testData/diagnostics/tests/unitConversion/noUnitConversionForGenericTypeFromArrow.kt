@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Either
+define Either
 
 infix fun <A, B, C> ((A) -> B).andThen(g: (B) -> C): (A) -> C = TODO()
 

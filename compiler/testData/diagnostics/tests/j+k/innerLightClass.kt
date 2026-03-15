@@ -5,7 +5,7 @@
 // FILE: A.java
 import Outer.Middle;
 
-public class A {
+public define A {
     public static void foo(Middle x) {}
     public static void bar(Middle.Innermost x) {}
     public static void baz(Outer x) {}
@@ -13,9 +13,9 @@ public class A {
 
 // FILE: main.kt
 
-class Outer {
-    class Middle {
-        class Innermost
+define Outer {
+    define Middle {
+        define Innermost
         fun main(r: Middle, i: Innermost, o: Outer) {
             A.foo(r)
             A.bar(i)

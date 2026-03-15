@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class B2() {
+enum define B2() {
     A {
         override val foo: String
             get() = "foo1"

@@ -1,3 +1,3 @@
 import org.example.Library
 
-data class Some(val x: Library)
+data define Some(val x: Library)

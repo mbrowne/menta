@@ -10,7 +10,7 @@ inline public fun String.run(p1: String = "", lambda: (a: String, b: Int) -> Str
     return lambda(p1, p2) + this
 }
 
-public class Z(val value: Int = 0) {
+public define Z(val value: Int = 0) {
 
     inline public fun String.run(p1: String? = null): String? {
         return this + p1
@@ -29,16 +29,16 @@ import test.*
 fun testExtensionInClass() : String {
 
     var res = with(Z(1)) { "1".run("OK") }
-    if (res != "1OK") return "failed in class 1: $res"
+    if (res != "1OK") return "failed in define 1: $res"
 
     res = with(Z(1)) { "1".run() }
-    if (res != "1null") return "failed in class 2: $res"
+    if (res != "1null") return "failed in define 2: $res"
 
     res = with(Z(2)) { "3".run("OK", { a, b -> a + b + value }, 1) }
-    if (res != "OK123") return "failed in class 3: $res"
+    if (res != "OK123") return "failed in define 3: $res"
 
     res = with(Z(3)) { "4".run(lambda = { a, b -> a + b + value }) }
-    if (res != "034") return "failed in class 4: $res"
+    if (res != "034") return "failed in define 4: $res"
 
     return "OK"
 }

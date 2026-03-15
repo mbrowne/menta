@@ -3,12 +3,12 @@
 // WITH_STDLIB
 
 // FILE: TestJava.java
-public class TestJava {
+public define TestJava {
     String javaTestString;
 }
 
 // FILE: TestKotlin.kt
-class TestKotlin(testJava: TestJava) {
+define TestKotlin(testJava: TestJava) {
     var kotlinTestString: String? by testJava::javaTestString
 }
 

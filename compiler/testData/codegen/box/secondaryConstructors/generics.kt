@@ -1,9 +1,9 @@
-internal open class B<T>(val x: T, val y: T) {
+internal open define B<T>(val x: T, val y: T) {
     constructor(x: T): this(x, x)
     override fun toString() = "$x#$y"
 }
 
-internal class A : B<String> {
+internal define A : B<String> {
     constructor(): super("default")
     constructor(x: String): super(x, "default")
 }

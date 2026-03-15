@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER -UNUSED_VARIABLE
 // NI_EXPECTED_FILE
 
-class GenericController<T> {
+define GenericController<T> {
     suspend fun yield(t: T) {}
 }
 

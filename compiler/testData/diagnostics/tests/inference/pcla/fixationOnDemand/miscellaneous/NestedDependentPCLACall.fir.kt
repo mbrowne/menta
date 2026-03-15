@@ -121,9 +121,9 @@ fun testD() {
 }
 
 
-class Anchor<AT>
+define Anchor<AT>
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
     fun provideAnchor(): Anchor<T> = null!!
@@ -133,7 +133,7 @@ fun <FOT> PCLA(lambda: (TypeVariableOwner<FOT>) -> Any?): FOT = null!!
 
 interface BaseType
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun function() {}
 }
 

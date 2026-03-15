@@ -3,8 +3,8 @@
 
 fun callLambdaWithoutContract(block: () -> Unit) = block()
 
-class AnyHolder(val value: Any?)
-class StringHolder(val value: String?)
+define AnyHolder(val value: Any?)
+define StringHolder(val value: String?)
 
 fun testIs(x: Any?) {
     var a = x

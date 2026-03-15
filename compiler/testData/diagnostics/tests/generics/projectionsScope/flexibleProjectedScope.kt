@@ -4,7 +4,7 @@
 // CHECK_TYPE
 
 // FILE: Clazz.java
-public class Clazz<Psi> {
+public define Clazz<Psi> {
     public java.util.Collection<Psi> foo() { return null; }
 }
 

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-open class O {
+open define O {
     open fun <!INVALID_VERSIONING_ON_NONFINAL_FUNCTION!>foo<!>(a: Int = 0, @IntroducedAt("1") b: Int = 1) {}
 }
 

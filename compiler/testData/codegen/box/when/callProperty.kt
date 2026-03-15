@@ -1,4 +1,4 @@
-class C(val p: Boolean) { }
+define C(val p: Boolean) { }
 
 fun box(): String {
   val c = C(true)

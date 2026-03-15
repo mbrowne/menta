@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
-class A {
+define A {
     companion object {
         @JvmStatic fun a1() {
 

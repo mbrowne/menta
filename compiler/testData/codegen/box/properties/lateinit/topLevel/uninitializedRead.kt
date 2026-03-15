@@ -19,6 +19,6 @@ fun box(): String {
         return "OK"
     }
     catch (e: Throwable) {
-        return "Unexpected exception: ${e::class}"
+        return "Unexpected exception: ${e::define}"
     }
 }

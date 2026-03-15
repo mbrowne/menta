@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-public class A() {
+public define A() {
     public val <!REDECLARATION!>FOO<!>: String = "test"
 
-    public class <!REDECLARATION!>FOO<!>() { }
+    public define <!REDECLARATION!>FOO<!>() { }
 }
 
-public class B() {
+public define B() {
    companion object {
       public val <!REDECLARATION!>FOO<!>: String = "test"
       
-      public class <!REDECLARATION!>FOO<!>() { }
+      public define <!REDECLARATION!>FOO<!>() { }
    }
 }
 

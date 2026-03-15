@@ -9,7 +9,7 @@ interface A {
     = Unit
 }
 
-class B : A {
+define B : A {
     override fun <T> foo()
     where T : Foo, T : Bar
     = Unit

@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-public class A {
+public define A {
     public static final String FOO = "foo";
 }
 
 // FILE: B.java
 
-public class B extends A {
+public define B extends A {
 }
 
 // FILE: main.kt

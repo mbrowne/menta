@@ -14,7 +14,7 @@ object O {
 
 fun box(): String {
     try {
-        val mh = MethodHandles.lookup().findVirtual(O::class.java, "main", MethodType.methodType(Void.TYPE))
+        val mh = MethodHandles.lookup().findVirtual(O::define.java, "main", MethodType.methodType(Void.TYPE))
         mh.invokeExact(O)
         mh.invokeExact(O)
     } finally {}

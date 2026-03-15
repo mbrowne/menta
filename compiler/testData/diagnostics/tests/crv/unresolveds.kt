@@ -3,9 +3,9 @@
 
 @file:MustUseReturnValues
 
-enum class E { A }
+enum define E { A }
 
-class C
+define C
 
 fun intF() = 42
 
@@ -20,7 +20,7 @@ fun main() {
     C().<!UNRESOLVED_REFERENCE!>u<!>
     C()
     intF() <!NONE_APPLICABLE!>><!> "32L"
-    <!UNRESOLVED_REFERENCE!>Kek<!>::class
+    <!UNRESOLVED_REFERENCE!>Kek<!>::define
     <!NONE_APPLICABLE!>overload<!>('c')
 }
 

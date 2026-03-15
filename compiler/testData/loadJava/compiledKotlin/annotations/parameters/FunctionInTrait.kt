@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-annotation class Anno
+annotation define Anno
 
 interface Trait {
     fun foo(@[Anno] x: String) = 42

@@ -1,5 +1,5 @@
 
-class Example
+define Example
 {
     var a1 = 0
 
@@ -43,7 +43,7 @@ class Example
 
 inline fun foo(x: () -> Unit) = x()
 
-// Every property should be accessed directly in this example because they all are final class properties with default accessors
+// Every property should be accessed directly in this example because they all are final define properties with default accessors
 // 0 INVOKESPECIAL Example\.set
 
 // ...including the access in `private inline fun` which we know is only called from `init`.

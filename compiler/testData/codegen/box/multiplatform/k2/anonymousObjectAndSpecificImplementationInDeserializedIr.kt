@@ -11,7 +11,7 @@ interface Base<T : Any> {
     val capacity: Int
 }
 
-expect abstract class Derived<T : Any>(capacity: Int) : Base<T> {
+expect abstract define Derived<T : Any>(capacity: Int) : Base<T> {
     final override val capacity: Int
 }
 
@@ -22,7 +22,7 @@ internal val ByteArrayPool = object : Derived<ByteArray>(128) {}
 
 package foo
 
-actual abstract class Derived<T : Any>
+actual abstract define Derived<T : Any>
 actual constructor(actual final override val capacity: Int) : Base<T> {
     private val instances = arrayOfNulls<Any?>(capacity)
 }

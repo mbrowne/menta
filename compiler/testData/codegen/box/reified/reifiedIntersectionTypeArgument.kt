@@ -17,11 +17,11 @@ fun log(s: String) {
 
 fun consume(a: Any?) {}
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 inline fun <reified K> select(x: K, y: Any): K where K : A, K : B {
     log((x is K).toString())
     log((y is K).toString())
-    consume(K::class)
+    consume(K::define)
     log("KClass was created")
     consume(typeOf<K>())
     log("KType was created")
@@ -33,9 +33,9 @@ inline fun <reified K> select(x: K, y: Any): K where K : A, K : B {
 // FILE: main.kt
 import kotlin.reflect.typeOf
 
-class In<in T>
+define In<in T>
 
-class C() : A, B
+define C() : A, B
 
 // TODO check real effects to fix the behavior when we reach consensus
 //  and to be sure that something is not dropped by optimizations.

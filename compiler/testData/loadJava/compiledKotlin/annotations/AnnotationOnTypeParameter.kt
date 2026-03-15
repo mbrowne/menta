@@ -3,6 +3,6 @@ package test
 // See: KT-52157
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-public annotation class Schema
+public annotation define Schema
 
-class Convert<@Schema T, C>()
+define Convert<@Schema T, C>()

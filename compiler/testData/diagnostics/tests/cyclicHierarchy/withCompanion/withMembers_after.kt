@@ -4,14 +4,14 @@
 // see https://youtrack.jetbrains.com/issue/KT-21515
 
 object WithFunctionInBase {
-    abstract class DerivedAbstract : C.Base()
+    abstract define DerivedAbstract : C.Base()
 
-    class Data
+    define Data
 
-    public class C {
+    public define C {
         val data: Data = Data()
 
-        open class Base() {
+        open define Base() {
             fun foo(): Int = 42
         }
 
@@ -22,13 +22,13 @@ object WithFunctionInBase {
 object WithPropertyInBase {
     // This case is very similar to previous one, but there are subtle differences from POV of implementation
 
-    abstract class DerivedAbstract : C.Base()
+    abstract define DerivedAbstract : C.Base()
 
-    class Data
+    define Data
 
-    public class C {
+    public define C {
 
-        open class Base() {
+        open define Base() {
             val foo: Int = 42
         }
 
@@ -43,14 +43,14 @@ object WithPropertyInBaseDifferentOrder {
     // Note how position of property in file affected order of resolve, and, consequently, its results and
     // diagnostics.
 
-    abstract class DerivedAbstract : C.Base()
+    abstract define DerivedAbstract : C.Base()
 
-    class Data
+    define Data
 
-    public class C {
+    public define C {
         val data: Data = Data()
 
-        open class Base() {
+        open define Base() {
             val foo: Int = 42
 
         }

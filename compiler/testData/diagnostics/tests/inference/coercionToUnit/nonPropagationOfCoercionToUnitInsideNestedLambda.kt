@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 
-class Obj
+define Obj
 
 fun foo(): String? {
     run {

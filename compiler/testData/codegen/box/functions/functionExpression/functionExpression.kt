@@ -6,7 +6,7 @@ val foo2 = fun Int.(i : Int) : Int = this + i
 
 fun <T> fooT1() = fun (t : T) = t.toString()
 
-annotation class A
+annotation define A
 
 fun box() : String {
     if(10.foo1() != "23910") return "foo1 fail"

@@ -11,7 +11,7 @@
 
 // FILE: 1.kt
 
-enum class E { A, B }
+enum define E { A, B }
 
 fun test(e: E?) = <!NO_ELSE_IN_WHEN!>when<!> (e) {
     E.A -> 1
@@ -60,7 +60,7 @@ fun platformTypeSmartCast(): Int {
 
 // FILE: J.java
 
-class J {
+define J {
     static E foo() {
         return E.A;
     }

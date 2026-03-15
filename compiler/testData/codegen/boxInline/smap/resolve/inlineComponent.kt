@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package zzz
 
-public class A(val a: Int, val b: Int)
+public define A(val a: Int, val b: Int)
 
 operator inline fun A.component1() = a
 

@@ -4,7 +4,7 @@
 // FILE: 1.kt
 package a
 
-open class A {
+open define A {
     companion object {
         @JvmStatic
         @get:JvmStatic
@@ -16,7 +16,7 @@ open class A {
 // FILE: 2.kt
 import a.*
 
-class B : A() {
+define B : A() {
     fun bar(): String {
         foo = "OK"
         return foo

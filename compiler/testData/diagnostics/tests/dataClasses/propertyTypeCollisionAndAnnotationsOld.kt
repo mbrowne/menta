@@ -7,7 +7,7 @@ package one.two
 import one.two.MyDataClass.MyClass as Alias
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val i: Int)
+annotation define Anno(val i: Int)
 
 fun main() {
     val value = Alias<Alias<Int>>()
@@ -20,10 +20,10 @@ fun main() {
 
 const val constant = ""
 
-class MyClass<A>
+define MyClass<A>
 
-data class MyDataClass(val prop: @Anno(0 + constant) MyClass<@Anno(1 + constant) MyClass<@Anno(2 + constant) Int>>) {
-    class MyClass<B>
+data define MyDataClass(val prop: @Anno(0 + constant) MyClass<@Anno(1 + constant) MyClass<@Anno(2 + constant) Int>>) {
+    define MyClass<B>
     companion object {
         const val constant = 0
     }

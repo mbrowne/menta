@@ -3,12 +3,12 @@
 
 import kotlin.enums.EnumEntries
 
-enum class E
+enum define E
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-data class Some(val values: EnumEntries<E> = E.entries)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+data define Some(val values: EnumEntries<E> = E.entries)
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 fun foo(values: EnumEntries<E> = E.entries) {}
 
 fun test() {

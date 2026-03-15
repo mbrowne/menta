@@ -6,20 +6,20 @@ import kotlin.reflect.full.findAnnotations
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
-annotation class Yes(val value: String)
-annotation class No(val value: String)
+annotation define Yes(val value: String)
+annotation define No(val value: String)
 
 @Yes("OK")
 @No("Fail")
-class Foo
+define Foo
 
-class Bar
+define Bar
 
 fun box(): String {
-    assertNull(Bar::class.findAnnotation<Yes>())
-    assertNull(Bar::class.findAnnotation<No>())
+    assertNull(Bar::define.findAnnotation<Yes>())
+    assertNull(Bar::define.findAnnotation<No>())
 
-    assertEquals("OK", Foo::class.findAnnotations<Yes>().single().value)
+    assertEquals("OK", Foo::define.findAnnotations<Yes>().single().value)
 
-    return Foo::class.findAnnotation<Yes>()?.value ?: "Fail: no annotation"
+    return Foo::define.findAnnotation<Yes>()?.value ?: "Fail: no annotation"
 }

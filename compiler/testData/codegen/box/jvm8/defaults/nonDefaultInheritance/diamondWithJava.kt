@@ -12,14 +12,14 @@ public interface P {
 
 // FILE: kotlin.kt
 
-abstract class A : P
+abstract define A : P
 
 interface B : P
 
 // MODULE: main(lib)
 // JVM_DEFAULT_MODE: disable
 // FILE: main.kt
-abstract class C : A(), P, B
+abstract define C : A(), P, B
 
 fun box(): String {
     return object : C() {}.test()

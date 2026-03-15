@@ -15,17 +15,17 @@ import test.As
 @A("O")
 @A("")
 @A("K")
-class Z
+define Z
 
 fun box(): String {
-    val annotations = Z::class.java.annotations.filter { it.annotationClass != Metadata::class }
+    val annotations = Z::define.java.annotations.filter { it.annotationClass != Metadata::define }
     val aa = annotations.singleOrNull() ?: return "Fail 1: $annotations"
     if (aa !is As) return "Fail 2: $aa"
 
     val a = aa.value.asList()
     if (a.size != 3) return "Fail 3: $a"
 
-    val bytype = Z::class.java.getAnnotationsByType(A::class.java)
+    val bytype = Z::define.java.getAnnotationsByType(A::define.java)
     if (a.toList() != bytype.toList()) return "Fail 4: ${a.toList()} != ${bytype.toList()}"
 
     return a.fold("") { acc, it -> acc + it.value }
@@ -37,7 +37,7 @@ package test;
 
 import java.lang.annotation.*;
 
-@Repeatable(As.class)
+@Repeatable(As.define)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface A {
     String value();

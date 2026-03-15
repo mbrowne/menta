@@ -18,7 +18,7 @@ var IntArray.firstElement by 0L
 
 val Long.plus3 by 3L
 
-class C {
+define C {
     inline operator fun Long.getValue(thisRef: IntArray, kProp: Any?) = thisRef[this.toInt()] * 10
 
     inline operator fun Long.setValue(thisRef: IntArray, kProp: Any?, newValue: Int) {

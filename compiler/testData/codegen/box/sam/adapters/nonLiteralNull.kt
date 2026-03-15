@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     public static String run(Runnable r) {
         return r == null ? "OK" : "FAIL";
     }

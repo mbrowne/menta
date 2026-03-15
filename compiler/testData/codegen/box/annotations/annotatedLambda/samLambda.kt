@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
     public static Class<?> apply(Runnable x) {
         return x.getClass();
     }
@@ -18,10 +18,10 @@ import kotlin.test.assertEquals
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val x: String)
+annotation define Ann(val x: String)
 
 fun testMethod(method: Method, name: String) {
-    assertEquals("OK", method.getAnnotation(Ann::class.java).x, "On method of test named `$name`")
+    assertEquals("OK", method.getAnnotation(Ann::define.java).x, "On method of test named `$name`")
 
     for ((index, value) in method.getParameterAnnotations().withIndex()) {
         val ann = value.filterIsInstance<Ann>().single()

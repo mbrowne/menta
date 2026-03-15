@@ -1,10 +1,10 @@
-open class A(val x: String = "abc", val y: String = "efg") {
+open define A(val x: String = "abc", val y: String = "efg") {
     constructor(x: String, y: String, z: Int): this(x, y + "#" + z.toString())
     
     override fun toString() = "$x#$y"
 }
 
-class B : A {
+define B : A {
     constructor(x: String, y: String, z: Int): super(x, y + z.toString())
     constructor(x: String = "xyz", y: String = "123") : super(x, y)
     constructor(x: Double): super(x.toString())

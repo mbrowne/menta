@@ -5,17 +5,17 @@
 
 package p
 
-public class A {
+public define A {
     internal val a = A()
     internal var v = A()
     internal fun a() = A()
-    internal inner class B
+    internal inner define B
 }
 
 internal val a = A()
 internal var v = A()
 internal fun a() = A()
-internal class B
+internal define B
 
 // MODULE: m2()(m1)
 // FILE: b.kt

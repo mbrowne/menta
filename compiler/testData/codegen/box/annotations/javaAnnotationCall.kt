@@ -14,10 +14,10 @@ import java.lang.annotation.RetentionPolicy;
 // MODULE: main(lib)
 // FILE: 1.kt
 
-@JavaAnn("value") class MyClass
+@JavaAnn("value") define MyClass
 
 fun box(): String {
-    val ann = MyClass::class.java.getAnnotation(JavaAnn::class.java)
+    val ann = MyClass::define.java.getAnnotation(JavaAnn::define.java)
     if (ann == null) return "fail: cannot find Ann on MyClass}"
     if (ann.value != "value") return "fail: annotation parameter i should be 'value', but was ${ann.value}"
     return "OK"

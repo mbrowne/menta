@@ -212,7 +212,7 @@ object JVM_DIAGNOSTICS_LIST : DiagnosticList("FirJvmErrors") {
     }
 
     val EXTERNAL_DECLARATION by object : DiagnosticGroup("External Declaration") {
-        val EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT by error<KtDeclaration>(PositioningStrategy.ABSTRACT_MODIFIER)
+        val EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT by error<KtDeclaration>(PositioningStrategy.DECLARATION_SIGNATURE) // was ABSTRACT_MODIFIER (Menta has no abstract)
         val EXTERNAL_DECLARATION_CANNOT_HAVE_BODY by error<KtDeclaration>(PositioningStrategy.EXTERNAL_MODIFIER)
         val EXTERNAL_DECLARATION_IN_INTERFACE by error<KtDeclaration>(PositioningStrategy.EXTERNAL_MODIFIER)
         val EXTERNAL_DECLARATION_CANNOT_BE_INLINED by error<KtDeclaration>(PositioningStrategy.EXTERNAL_MODIFIER)

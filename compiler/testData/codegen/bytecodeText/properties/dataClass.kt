@@ -1,4 +1,4 @@
-data class Test(
+data define Test(
     val x: String,
     val y: String
 )

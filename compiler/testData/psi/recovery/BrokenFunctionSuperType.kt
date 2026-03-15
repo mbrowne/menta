@@ -1,4 +1,4 @@
 // COMPILATION_ERRORS
 
-class A : (categoryName: ) {
+define A : (categoryName: ) {
 }

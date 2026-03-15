@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-abstract class Runnable(val arg: Int) {
+abstract define Runnable(val arg: Int) {
     abstract fun run(): Int
 }
 

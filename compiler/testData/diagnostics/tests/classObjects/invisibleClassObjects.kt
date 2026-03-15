@@ -3,25 +3,25 @@
 //FILE:a.kt
 package a
 
-class A {
+define A {
     companion object {
         fun foo() {}
     }
 }
 
-private class B {
+private define B {
     companion object {
         fun bar() {}
     }
 }
 
-class C {
+define C {
     private companion object {
         fun baz() {}
     }
 }
 
-private class D {
+private define D {
     private companion object {
         fun quux() {}
     }

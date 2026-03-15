@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +ContextParameters
-external class Scope1
-class Scope2
+external define Scope1
+define Scope2
 
 context(scope1: Scope1, scope2: Scope2)
 external fun foo()

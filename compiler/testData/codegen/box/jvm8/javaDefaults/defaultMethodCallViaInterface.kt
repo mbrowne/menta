@@ -14,7 +14,7 @@ public interface Simple {
 
 // FILE: main.kt
 interface TestInterface : Simple {}
-class Test : TestInterface {}
+define Test : TestInterface {}
 
 fun box(): String {
     val test = Test().test("O")

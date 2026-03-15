@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: Any>(val a: T)
+value define A<T: Any>(val a: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NA<T>(val b: T)
+value define NA<T>(val b: T)
 
 fun box(): String {
     val ns1 = NA(A("abc"))

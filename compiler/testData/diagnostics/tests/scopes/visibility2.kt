@@ -7,7 +7,7 @@
 //FILE:a.kt
 package a
 
-private open class A {
+private open define A {
     fun bar() {}
 }
 
@@ -37,10 +37,10 @@ fun test() {
     val po = <!INVISIBLE_MEMBER("PO; private; file")!>PO<!>
 }
 
-class B : <!EXPOSED_SUPER_CLASS!><!INVISIBLE_MEMBER("A; private; file"), INVISIBLE_REFERENCE("A; private; file")!>A<!>()<!> {}
+define B : <!EXPOSED_SUPER_CLASS!><!INVISIBLE_MEMBER("A; private; file"), INVISIBLE_REFERENCE("A; private; file")!>A<!>()<!> {}
 
-class Q {
-    class W {
+define Q {
+    define W {
         fun foo() {
             val y = makeA() //assure that 'makeA' is visible
         }
@@ -48,7 +48,7 @@ class Q {
 }
 
 //check that 'toString' can be invoked without specifying return type
-class NewClass : java.util.ArrayList<<!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>Integer<!>>() {
+define NewClass : java.util.ArrayList<<!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>Integer<!>>() {
     public override fun toString() = "a"
 }
 

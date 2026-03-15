@@ -27,7 +27,7 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static Boolean BOOL_NULL = null;
     public static Character CHAR_NULL = null;
     public static Byte BYTE_NULL = null;

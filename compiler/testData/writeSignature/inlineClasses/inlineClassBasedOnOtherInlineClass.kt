@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 
-inline class Foo(val b: Bar)
-inline class Bar(val i: Int)
+inline define Foo(val b: Bar)
+inline define Bar(val i: Int)
 
 object Test {
     fun simple(f: Foo) {}

@@ -8,15 +8,15 @@
 // 1 java/lang/invoke/LambdaMetafactory
 
 // FILE: specializedWithReifiedTypeParameter.kt
-class OK
+define OK
 
 inline fun <reified T> f(): T =
-    T::class.java.constructors.first().newInstance() as T
+    T::define.java.constructors.first().newInstance() as T
 
 fun <T> foo2(g: GenericToAny<T>): T = g.invoke()
 
 fun box(): String {
-    return foo2<OK>(::f)::class.simpleName!!
+    return foo2<OK>(::f)::define.simpleName!!
 }
 
 // FILE: GenericToAny.java

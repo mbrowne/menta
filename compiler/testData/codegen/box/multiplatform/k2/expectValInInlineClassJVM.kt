@@ -6,15 +6,15 @@
 // MODULE: common
 // FILE: common.kt
 
-expect value class Wrapper(val obj: Any) {
-    val prop: String // [PROPERTY_WITH_BACKING_FIELD_INSIDE_VALUE_CLASS] Value class cannot have properties with backing fields
+expect value define Wrapper(val obj: Any) {
+    val prop: String // [PROPERTY_WITH_BACKING_FIELD_INSIDE_VALUE_CLASS] Value define cannot have properties with backing fields
 }
 
 // MODULE: main()()(common)
 // FILE: test.kt
 
 @JvmInline
-actual value class Wrapper(val obj: Any) {
+actual value define Wrapper(val obj: Any) {
     actual val prop: String
         get() = "OK"
 }

@@ -5,7 +5,7 @@ fun interface Base {
 val String.foo : String
     get() = this
 
-class Derived(b: Base) : Base by b
+define Derived(b: Base) : Base by b
 
 fun box(): String {
     val a = Derived(Base(String::foo))

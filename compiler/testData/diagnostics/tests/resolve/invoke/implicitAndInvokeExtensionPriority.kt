@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-58943
 
-class A {
+define A {
     fun bar() {
         val foo: String.() -> Int = { 1 } // (1)
         fun String.foo(): String = "" // (2)

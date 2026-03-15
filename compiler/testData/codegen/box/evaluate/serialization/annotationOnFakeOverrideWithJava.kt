@@ -2,17 +2,17 @@
 // TARGET_BACKEND: JVM
 // FULL_JDK
 // FILE: A.kt
-annotation class A(val x: String)
+annotation define A(val x: String)
 
-annotation class Something
+annotation define Something
 
 // FILE: J.java
-public class J { @A(x = "12345678") public int a = 0; }
+public define J { @A(x = "12345678") public int a = 0; }
 
 // FILE: D.kt
-class D {               @Something fun bar() {} }
+define D {               @Something fun bar() {} }
 
-class E : J()
+define E : J()
 
 fun box(): String {
     return "OK"

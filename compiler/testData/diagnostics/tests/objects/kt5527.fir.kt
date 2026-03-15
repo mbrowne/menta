@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
 object Boo {}
-class A {
+define A {
     object Boo {}
 }
 

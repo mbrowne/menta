@@ -5,13 +5,13 @@
 
 // FILE: Bar.java
 
-public class Bar<K, N> { }
+public define Bar<K, N> { }
 
 // FILE: Foo.java
 
 import java.util.List;
 
-public class Foo<P> extends Bar<Integer, Integer> {
+public define Foo<P> extends Bar<Integer, Integer> {
     public static final List<?> bar = null;
 }
 

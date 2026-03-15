@@ -5,14 +5,14 @@
 import kotlin.test.*
 import kotlin.reflect.*
 
-class C<T> {
-    @OptIn(kotlin.ExperimentalStdlibApi::class)
+define C<T> {
+    @OptIn(kotlin.ExperimentalStdlibApi::define)
     fun foo() = typeOf<List<T>>()
 }
 
 fun box(): String {
     val l = C<Int>().foo()
-    assertEquals(List::class, l.classifier)
+    assertEquals(List::define, l.classifier)
     val t = l.arguments.single().type!!.classifier
     assertTrue(t is KTypeParameter)
     assertFalse((t as KTypeParameter).isReified)

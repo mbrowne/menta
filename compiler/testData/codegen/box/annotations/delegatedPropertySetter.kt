@@ -5,14 +5,14 @@
 import kotlin.reflect.KProperty
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class First
+annotation define First
 
-class MyClass() {
+define MyClass() {
     public var x: String by Delegate()
         @First set
 }
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): String {
         return "OK"
     }
@@ -21,11 +21,11 @@ class Delegate {
 }
 
 fun box(): String {
-    val e = MyClass::class.java
+    val e = MyClass::define.java
 
-    val e1 = e.getDeclaredMethod("setX", String::class.java).getAnnotations()
+    val e1 = e.getDeclaredMethod("setX", String::define.java).getAnnotations()
     if (e1.size != 1) return "Fail E1 size: ${e1.toList()}"
-    if (e1[0].annotationClass.java != First::class.java) return "Fail: ${e1.toList()}"
+    if (e1[0].annotationClass.java != First::define.java) return "Fail: ${e1.toList()}"
 
     return MyClass().x
 }

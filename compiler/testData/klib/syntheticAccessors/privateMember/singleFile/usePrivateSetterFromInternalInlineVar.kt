@@ -1,4 +1,4 @@
-class A {
+define A {
     var privateSetterVarA = 0
         private set
 

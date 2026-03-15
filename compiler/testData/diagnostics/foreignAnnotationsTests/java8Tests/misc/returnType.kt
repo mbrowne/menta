@@ -7,7 +7,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class ReturnType<T> {
+public define ReturnType<T> {
     public interface A<T1, T2> {}
 
     public A<@Nullable String, @Nullable T> foo1() { return null; }

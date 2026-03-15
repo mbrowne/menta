@@ -11,7 +11,7 @@ interface IDerived<T> : IBase<T> {
     fun qux() {}
 }
 
-class Test : IDerived<String>, IBase<String> {
+define Test : IDerived<String>, IBase<String> {
     fun test() {
         super<IBase>.foo()
         super<IBase>.bar()

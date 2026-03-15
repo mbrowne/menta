@@ -1,8 +1,8 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class A(
+define A(
         val a: String = eval {
-            open class B() {
+            open define B() {
                 open fun s() : String = "O"
             }
 

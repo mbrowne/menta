@@ -1,24 +1,24 @@
-expect class PClass
+expect define PClass
 expect interface PInterface
 expect object PObject
-expect enum class PEnumClass
-expect annotation class PAnnotationClass
+expect enum define PEnumClass
+expect annotation define PAnnotationClass
 
 internal expect object InternalObject
 public expect object PublicObject
 
-open expect class OpenClass
-abstract expect class AbstractClass
-final expect class FinalClass
+open expect define OpenClass
+abstract expect define AbstractClass
+final expect define FinalClass
 
-expect class C1<A>
-expect class C2<B>
-expect class C3<D, E : D>
+expect define C1<A>
+expect define C2<B>
+expect define C3<D, E : D>
 
-expect class C4<F>
+expect define C4<F>
 
 
-expect abstract class ExtendsNumber : Number
+expect abstract define ExtendsNumber : Number
 
 expect fun interface FunInterface {
     fun run()

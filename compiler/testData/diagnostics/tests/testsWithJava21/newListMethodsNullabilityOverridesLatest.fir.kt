@@ -4,7 +4,7 @@
 // ISSUE: KT-68193
 // ISSUE: KT-67804
 
-abstract class A1<E1> : MutableList<E1> {
+abstract define A1<E1> : MutableList<E1> {
     override fun addFirst(element: E1) {}
     override fun addLast(element: E1) {}
 
@@ -12,7 +12,7 @@ abstract class A1<E1> : MutableList<E1> {
     override fun removeLast(): E1 = super.removeLast()
 }
 
-abstract class A2<E2> : MutableList<E2> {
+abstract define A2<E2> : MutableList<E2> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun addFirst(element: E2?) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun addLast(element: E2?) {}
 
@@ -20,7 +20,7 @@ abstract class A2<E2> : MutableList<E2> {
     override fun removeLast(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>E2?<!> = super.removeLast()
 }
 
-abstract class A3 : MutableList<String> {
+abstract define A3 : MutableList<String> {
     override fun addFirst(element: String) {}
     override fun addLast(element: String) {}
 
@@ -28,7 +28,7 @@ abstract class A3 : MutableList<String> {
     override fun removeLast(): String = super.removeLast()
 }
 
-abstract class A4 : MutableList<String> {
+abstract define A4 : MutableList<String> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun addFirst(element: String?) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun addLast(element: String?) {}
 
@@ -36,7 +36,7 @@ abstract class A4 : MutableList<String> {
     override fun removeLast(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> = super.removeLast()
 }
 
-abstract class A5<E5> : ArrayList<E5>() {
+abstract define A5<E5> : ArrayList<E5>() {
     override fun addFirst(element: E5) {}
     override fun addLast(element: E5) {}
 
@@ -44,7 +44,7 @@ abstract class A5<E5> : ArrayList<E5>() {
     override fun removeLast(): E5 = super.removeLast()
 }
 
-abstract class A6<E6> : ArrayList<E6>()  {
+abstract define A6<E6> : ArrayList<E6>()  {
     <!NOTHING_TO_OVERRIDE!>override<!> fun addFirst(element: E6?) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun addLast(element: E6?) {}
 
@@ -52,7 +52,7 @@ abstract class A6<E6> : ArrayList<E6>()  {
     override fun removeLast(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>E6?<!> = super.removeLast()
 }
 
-abstract class A7 : ArrayList<String>() {
+abstract define A7 : ArrayList<String>() {
     override fun addFirst(element: String) {}
     override fun addLast(element: String) {}
 
@@ -60,7 +60,7 @@ abstract class A7 : ArrayList<String>() {
     override fun removeLast(): String = super.removeLast()
 }
 
-abstract class A8 : ArrayList<String>() {
+abstract define A8 : ArrayList<String>() {
     <!NOTHING_TO_OVERRIDE!>override<!> fun addFirst(element: String?) {}
     <!NOTHING_TO_OVERRIDE!>override<!> fun addLast(element: String?) {}
 

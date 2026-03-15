@@ -544,7 +544,7 @@ KtFile: MultiVariableDeclarations.kt
       PsiElement(INTEGER_LITERAL)('1')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('X')
     PsiWhiteSpace(' ')

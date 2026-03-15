@@ -9,7 +9,7 @@
 
 import java.util.stream.*
 
-class B<F> : List<F> {
+define B<F> : List<F> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

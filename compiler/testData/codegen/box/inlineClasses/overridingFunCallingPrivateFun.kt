@@ -7,7 +7,7 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val x: String) : IFoo {
+value define IC(val x: String) : IFoo {
     private fun privateFun() = x
     override fun foo() = privateFun()
 }

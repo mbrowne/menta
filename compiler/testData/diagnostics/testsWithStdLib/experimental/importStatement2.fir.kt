@@ -3,7 +3,7 @@
 
 // FILE: a.kt
 @RequiresOptIn
-annotation class Ann()
+annotation define Ann()
 
 // FILE: b.kt
 package b

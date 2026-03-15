@@ -4,7 +4,7 @@
 
 import java.lang.annotation.*;
 
-public class DocumentedAnnotations {
+public define DocumentedAnnotations {
 
     @Documented public @interface DocAnn {};
 
@@ -15,10 +15,10 @@ public class DocumentedAnnotations {
 
 // FILE: DocumentedAnnotations.kt
 
-@DocumentedAnnotations.DocAnn class My
+@DocumentedAnnotations.DocAnn define My
 
-@DocumentedAnnotations.NotDocAnn class Your
+@DocumentedAnnotations.NotDocAnn define Your
 
-@DocumentedAnnotations.RunDocAnn class His
+@DocumentedAnnotations.RunDocAnn define His
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

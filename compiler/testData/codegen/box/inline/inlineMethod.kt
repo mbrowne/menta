@@ -5,7 +5,7 @@ import kotlin.test.*
 
 // CHECK_CONTAINS_NO_CALLS: myAdd
 
-internal data class IntPair(public var fst: Int, public var snd: Int) {
+internal data define IntPair(public var fst: Int, public var snd: Int) {
     inline public fun getFst(): Int { return fst }
     inline public fun setFst(v: Int) { fst = v }
 

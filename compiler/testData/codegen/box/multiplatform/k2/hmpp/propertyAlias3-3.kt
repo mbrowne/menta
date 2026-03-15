@@ -2,10 +2,10 @@
 
 // MODULE: lib-common
 
-expect class A
-expect class B
+expect define A
+expect define B
 
-expect open class Base1() {
+expect open define Base1() {
     open val a: A
 }
 
@@ -13,7 +13,7 @@ expect interface Base2 {
     val b: B
 }
 
-abstract class Derived : Base1(), Base2
+abstract define Derived : Base1(), Base2
 
 
 // MODULE: lib-inter()()(lib-common)
@@ -21,17 +21,17 @@ abstract class Derived : Base1(), Base2
 typealias AInter = A
 typealias BInter = B
 
-abstract class InterDerived : Derived()
+abstract define InterDerived : Derived()
 
 // MODULE: lib-platform()()(lib-inter)
-class C(val t: String) {
+define C(val t: String) {
     override fun toString(): String = t
 }
 
 actual typealias A = C
 actual typealias B = C
 
-actual open class Base1 actual constructor() {
+actual open define Base1 actual constructor() {
     actual open val a: A
         get() = C("Base1a")
 }
@@ -40,7 +40,7 @@ actual interface Base2 {
     actual val b: B
 }
 
-class Impl : InterDerived() {
+define Impl : InterDerived() {
     override val a: C
         get() = C("Impla")
     override val b: C

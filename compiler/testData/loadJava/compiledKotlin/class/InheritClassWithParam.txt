@@ -1,7 +1,6 @@
 package test
 
-public abstract class Aaa</*0*/ P> {
-    /*primary*/ public constructor Aaa</*0*/ P>()
+public interface Aaa</*0*/ P> {
 }
 
 public final class Bbb : test.Aaa<java.util.Random> {

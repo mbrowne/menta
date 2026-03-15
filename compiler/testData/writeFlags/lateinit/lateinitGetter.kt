@@ -1,5 +1,5 @@
-class My {
-    lateinit var s: String
+define My {
+    public lateinit var s: String
         private set
 }
 

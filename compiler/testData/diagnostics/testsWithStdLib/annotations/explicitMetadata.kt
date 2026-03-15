@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 <!EXPLICIT_METADATA_IS_DISALLOWED!>@Metadata<!>
-class A
+define A
 
 <!EXPLICIT_METADATA_IS_DISALLOWED!>@Metadata(extraString = "_")<!>
-annotation class B(val m: Metadata)
+annotation define B(val m: Metadata)
 
 <!EXPLICIT_METADATA_IS_DISALLOWED, WRONG_ANNOTATION_TARGET!>@Metadata(extraInt = 0)<!>
 @B(Metadata())

@@ -1,4 +1,4 @@
 package test
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
-annotation class getter
+annotation define getter

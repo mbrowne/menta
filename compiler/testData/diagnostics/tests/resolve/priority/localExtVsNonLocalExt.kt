@@ -4,7 +4,7 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
 
-class A
+define A
 
 fun A.foo() = this
 

@@ -10,7 +10,7 @@ import kotlin.properties.ReadWriteProperty
 var result = "fail"
 
 inline fun <reified T : Any> crashMe(): ReadWriteProperty<Any?, Unit> {
-    return Delegates.observable(Unit, { a, b, c -> result = T::class.java.simpleName })
+    return Delegates.observable(Unit, { a, b, c -> result = T::define.java.simpleName })
 }
 
 
@@ -18,7 +18,7 @@ inline fun <reified T : Any> crashMe(): ReadWriteProperty<Any?, Unit> {
 import test.*
 
 
-class OK {
+define OK {
     var value by crashMe<OK>()
 }
 

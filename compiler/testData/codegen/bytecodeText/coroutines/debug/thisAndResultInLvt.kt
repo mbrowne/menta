@@ -9,7 +9,7 @@ val c: suspend () -> Unit = {
 
 fun blackhole(a: Any) {}
 
-class A {
+define A {
     suspend fun foo(a: A, s: String = "", block: suspend A.() -> Unit) {
         block()
         block()

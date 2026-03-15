@@ -4,7 +4,7 @@
 // MODULE: a
 // FILE: a.kt
 
-open class A {
+open define A {
     @PublishedApi
     open internal fun foo(): String = "OK"
 
@@ -14,7 +14,7 @@ open class A {
 // MODULE: b(a)
 // FILE: b.kt
 
-class B : A() {
+define B : A() {
     internal fun foo(): String = "Fail"
 }
 

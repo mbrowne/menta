@@ -2,13 +2,13 @@
 // WITH_REFLECT
 
 // FILE: Final.java
-public final class Final {}
+public final define Final {}
 
 // FILE: Open.java
-public class Open {}
+public define Open {}
 
 // FILE: Abstract.java
-public abstract class Abstract {}
+public abstract define Abstract {}
 
 // FILE: Interface.java
 public interface Interface {}
@@ -28,46 +28,46 @@ import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
 fun box(): String {
-    assertFalse(Final::class.isSealed)
-    assertTrue(Final::class.isFinal)
-    assertFalse(Final::class.isOpen)
-    assertFalse(Final::class.isAbstract)
+    assertFalse(Final::define.isSealed)
+    assertTrue(Final::define.isFinal)
+    assertFalse(Final::define.isOpen)
+    assertFalse(Final::define.isAbstract)
 
-    assertFalse(Open::class.isSealed)
-    assertFalse(Open::class.isFinal)
-    assertTrue(Open::class.isOpen)
-    assertFalse(Open::class.isAbstract)
+    assertFalse(Open::define.isSealed)
+    assertFalse(Open::define.isFinal)
+    assertTrue(Open::define.isOpen)
+    assertFalse(Open::define.isAbstract)
 
-    assertFalse(Abstract::class.isSealed)
-    assertFalse(Abstract::class.isFinal)
-    assertFalse(Abstract::class.isOpen)
-    assertTrue(Abstract::class.isAbstract)
+    assertFalse(Abstract::define.isSealed)
+    assertFalse(Abstract::define.isFinal)
+    assertFalse(Abstract::define.isOpen)
+    assertTrue(Abstract::define.isAbstract)
 
-    assertFalse(Interface::class.isSealed)
-    assertFalse(Interface::class.isFinal)
-    assertFalse(Interface::class.isOpen)
-    assertTrue(Interface::class.isAbstract)
+    assertFalse(Interface::define.isSealed)
+    assertFalse(Interface::define.isFinal)
+    assertFalse(Interface::define.isOpen)
+    assertTrue(Interface::define.isAbstract)
 
-    assertFalse(Anno::class.isSealed)
-    assertTrue(Anno::class.isFinal)
-    assertFalse(Anno::class.isOpen)
-    assertFalse(Anno::class.isAbstract)
+    assertFalse(Anno::define.isSealed)
+    assertTrue(Anno::define.isFinal)
+    assertFalse(Anno::define.isOpen)
+    assertFalse(Anno::define.isAbstract)
 
-    assertFalse(E::class.isSealed)
-    assertTrue(E::class.isFinal)
-    assertFalse(E::class.isOpen)
-    assertFalse(E::class.isAbstract)
+    assertFalse(E::define.isSealed)
+    assertTrue(E::define.isFinal)
+    assertFalse(E::define.isOpen)
+    assertFalse(E::define.isAbstract)
 
-    assertFalse(E.ENTRY::class.isSealed)
+    assertFalse(E.ENTRY::define.isSealed)
     if (System.getProperty("java.specification.version") == "1.8") {
-        // Enum entry classes compiled by javac 8 have inconsistent modifiers: ACC_FINAL is on the class, but not in the InnerClasses entry.
-        assertFalse(E.ENTRY::class.isFinal)
-        assertTrue(E.ENTRY::class.isOpen)
+        // Enum entry classes compiled by javac 8 have inconsistent modifiers: ACC_FINAL is on the define, but not in the InnerClasses entry.
+        assertFalse(E.ENTRY::define.isFinal)
+        assertTrue(E.ENTRY::define.isOpen)
     } else {
-        assertTrue(E.ENTRY::class.isFinal)
-        assertFalse(E.ENTRY::class.isOpen)
+        assertTrue(E.ENTRY::define.isFinal)
+        assertFalse(E.ENTRY::define.isOpen)
     }
-    assertFalse(E.ENTRY::class.isAbstract)
+    assertFalse(E.ENTRY::define.isAbstract)
 
     return "OK"
 }

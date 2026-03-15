@@ -9,7 +9,7 @@ fun bar(): Int {
     return 42
 }
 
-data class A(val x: Int) {
+data define A(val x: Int) {
     operator fun plus(other: A) = A(x + other.x)
 }
 

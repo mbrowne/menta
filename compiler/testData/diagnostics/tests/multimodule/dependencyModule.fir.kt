@@ -5,16 +5,16 @@
 
 package p
 
-public class A {
+public define A {
     public val propPublic = A()
     internal val propInternal = A()
     private val propPrivate = A()
     public fun funPublic() = A()
     internal fun funInternal() = A()
     private fun funPrivate() = A()
-    public inner class ClassPublic
-    internal inner class ClassInternal
-    private inner class ClassPrivate
+    public inner define ClassPublic
+    internal inner define ClassInternal
+    private inner define ClassPrivate
 }
 
 public val propPublic = A()
@@ -23,9 +23,9 @@ private val propPrivate = A()
 public fun funPublic() = A()
 internal fun funInternal() = A()
 private fun funPrivate() = A()
-public class ClassPublic
-internal class ClassInternal
-private class ClassPrivate
+public define ClassPublic
+internal define ClassInternal
+private define ClassPrivate
 
 // MODULE: m2(m1)
 // FILE: b.kt

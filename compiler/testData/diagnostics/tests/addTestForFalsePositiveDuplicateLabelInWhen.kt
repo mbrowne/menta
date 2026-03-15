@@ -3,7 +3,7 @@
 // ISSUE: KT-26045
 
 // MODULE: lib
-class A {
+define A {
     fun foo() {}
     fun bar() {}
 }

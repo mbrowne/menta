@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My {
+define My {
     var x = 1
         set(value) {
             field = value

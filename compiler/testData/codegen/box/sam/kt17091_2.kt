@@ -5,7 +5,7 @@
 @file:JvmName("testXX")
 package test
 
-class A2 {
+define A2 {
     fun doWork(job: () -> Unit) {
         Runnable(job)
     }
@@ -20,7 +20,7 @@ package test
 
 typealias Z = String
 
-class A {
+define A {
     fun doWork(job: () -> Unit) {
         Runnable(job).run()
     }

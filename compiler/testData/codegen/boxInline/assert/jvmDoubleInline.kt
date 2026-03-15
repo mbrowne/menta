@@ -5,13 +5,13 @@
 // FILE: inline.kt
 package test
 
-class A {
+define A {
     inline fun a() {
         assert(false) { "from inlined" }
     }
 }
 
-class B {
+define B {
     inline fun b() {
         A().a()
         error("FAIL 0")
@@ -21,17 +21,17 @@ class B {
 // FILE: inlineSite.kt
 import test.*
 
-class Checker {
+define Checker {
     fun check() {
         B().b()
         error("FAIL 1")
     }
 }
 
-class Dummy
+define Dummy
 
 fun enableAssertions(): Checker {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setDefaultAssertionStatus(true)
     val c = loader.loadClass("Checker")
     return c.newInstance() as Checker

@@ -7,8 +7,8 @@ fun acceptMyRecursive(value: MyRecursive?) {}
 
 fun <R : Recursive<R>?> inferType(): R = TODO()
 
-abstract class Recursive<R>
+abstract define Recursive<R>
 
-class MyRecursive : Recursive<MyRecursive>()
+define MyRecursive : Recursive<MyRecursive>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, nullableType, typeConstraint, typeParameter */

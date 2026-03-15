@@ -5,14 +5,14 @@
 // FILE: 1.kt
 package test
 
-inline fun <reified T> inlineFun(lambda: () -> String = { { T::class.java.simpleName }.let { it() } }): String {
+inline fun <reified T> inlineFun(lambda: () -> String = { { T::define.java.simpleName }.let { it() } }): String {
     return lambda()
 }
 
 // FILE: 2.kt
 import test.*
 
-class OK
+define OK
 
 fun box(): String {
     return inlineFun<OK>()

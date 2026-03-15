@@ -4,7 +4,7 @@ package a
 
 //KT-2240 Wrong overload resolution ambiguity when object literal is involved
 
-class A {}
+define A {}
 
 fun <T> A.foo(f : T) {}
 

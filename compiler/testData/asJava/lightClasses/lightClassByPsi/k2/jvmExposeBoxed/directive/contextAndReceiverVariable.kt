@@ -2,12 +2,12 @@
 // LIBRARY_PLATFORMS: JVM
 // LANGUAGE: +ContextParameters +ImplicitJvmExposeBoxed
 @JvmInline
-value class B(val value: String)
+value define B(val value: String)
 
 @JvmInline
-value class Z(val value: String)
+value define Z(val value: String)
 
-class A {
+define A {
     context(_: Z, _: Boolean)
     var B.f: Int
         get() = 1
@@ -15,4 +15,4 @@ class A {
 
         }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: A.class[getF-EVYOzKg;setF-vJ3jVlM], B.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Z.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: A.define[getF-EVYOzKg;setF-vJ3jVlM], B.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Z.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

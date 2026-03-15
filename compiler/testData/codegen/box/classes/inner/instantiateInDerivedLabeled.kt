@@ -1,12 +1,12 @@
-open class A(val value: String) {
-    inner class B(val s: String) {
+open define A(val value: String) {
+    inner define B(val s: String) {
         val result = value + "_" + s
     }
 }
 
-class C : A("fromC") {
+define C : A("fromC") {
 
-    inner class X: A("fromX") {
+    inner define X: A("fromX") {
         fun classReceiver() = B("OK")
         fun superReceiver() = super.B("OK")
         fun superXReceiver() = super@X.B("OK")

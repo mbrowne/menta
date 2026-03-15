@@ -3,17 +3,17 @@
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class AnnotationWithVararg(vararg val array: String)
+annotation define AnnotationWithVararg(vararg val array: String)
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class AnnotationWithArray(val array: Array<String>)
+annotation define AnnotationWithArray(val array: Array<String>)
 
 @AnnotationWithVararg("Str" + "ing", "String2", "String${3}")
-class A
+define A
 
 @AnnotationWithArray(["Str" + "ing", "String2", "String${3}"])
-class B
+define B
 
 // MODULE: main(lib)
 // FILE: main.kt

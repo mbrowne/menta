@@ -9,7 +9,7 @@
  * expressions, when-expression, exhaustive-when-expressions -> paragraph 2 -> sentence 9
  */
 
-enum class MyEnum {
+enum define MyEnum {
     A, B, C
 }
 

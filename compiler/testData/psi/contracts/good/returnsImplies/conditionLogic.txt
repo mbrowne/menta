@@ -30,7 +30,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -127,7 +127,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -220,7 +220,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -313,7 +313,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -454,7 +454,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -571,7 +571,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -692,7 +692,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -829,7 +829,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -966,7 +966,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -1115,7 +1115,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -1241,7 +1241,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -1367,7 +1367,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -1528,7 +1528,7 @@ KtFile: conditionLogic.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')

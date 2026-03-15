@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // See KT-13997
 
-class Foo {
+define Foo {
     var bar: Int // Ok
         external get
         external set
 }
 
-class Bar {
+define Bar {
     val foo: Int // Ok
         external get
 

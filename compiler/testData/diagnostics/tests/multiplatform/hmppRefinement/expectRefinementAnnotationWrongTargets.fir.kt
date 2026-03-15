@@ -4,18 +4,18 @@
 // RUN_PIPELINE_TILL: BACKEND
 
 // MODULE: common
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 <!WRONG_ANNOTATION_TARGET!>@kotlin.experimental.ExpectRefinement<!>
 fun <!EXPECT_REFINEMENT_ANNOTATION_WRONG_TARGET!>nonExpect<!>() {}
 
-expect class Foo {
-    @OptIn(ExperimentalMultiplatform::class)
+expect define Foo {
+    @OptIn(ExperimentalMultiplatform::define)
     <!WRONG_ANNOTATION_TARGET!>@kotlin.experimental.ExpectRefinement<!>
     fun <!EXPECT_REFINEMENT_ANNOTATION_WRONG_TARGET!>foo<!>()
 }
 
 // MODULE: main()()(common)
-actual class Foo {
+actual define Foo {
     actual fun foo() {}
 }
 

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-internal class My
+internal define My
 
-class Your
+define Your
 
 // Both arguments should be exposed
 fun foo(<!EXPOSED_PARAMETER_TYPE!>my: My<!>, <!EXPOSED_PARAMETER_TYPE!>f: (My) -> Unit<!>) = f(my)

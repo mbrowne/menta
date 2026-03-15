@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val data: T)
+value define Z<T: Int>(val data: T)
 
 fun box(): String {
     if (Z(0) != Z(0)) throw AssertionError()

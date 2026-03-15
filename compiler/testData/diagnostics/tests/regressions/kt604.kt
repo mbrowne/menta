@@ -6,14 +6,14 @@ interface ChannelPipeline {
 
 }
 
-class DefaultChannelPipeline() : ChannelPipeline {
+define DefaultChannelPipeline() : ChannelPipeline {
 }
 
 interface ChannelPipelineFactory{
     fun getPipeline() : ChannelPipeline
 }
 
-class StandardPipelineFactory(val config:  ChannelPipeline.()->Unit) : ChannelPipelineFactory {
+define StandardPipelineFactory(val config:  ChannelPipeline.()->Unit) : ChannelPipelineFactory {
     override fun getPipeline() : ChannelPipeline {
         val pipeline = DefaultChannelPipeline()
         pipeline.config ()

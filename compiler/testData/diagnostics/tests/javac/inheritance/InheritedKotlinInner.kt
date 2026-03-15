@@ -3,16 +3,16 @@
 // FILE: a/x.kt
 package a
 
-open class x {
+open define x {
 
-    inner class y
+    inner define y
 
 }
 
 // FILE: a/b.java
 package a;
 
-public class b extends x {
+public define b extends x {
 
     public y getY() { return null; }
 

@@ -1,5 +1,5 @@
 
-abstract class Ab {
+
     abstract fun getArray() : Array<Int>
 }
 

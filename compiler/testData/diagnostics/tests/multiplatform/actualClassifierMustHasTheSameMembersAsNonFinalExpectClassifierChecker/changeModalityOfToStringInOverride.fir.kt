@@ -3,12 +3,12 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo
+expect open define Foo
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo {
+actual open define Foo {
     final override fun <!EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>toString<!>() = "Foo"
 }
 

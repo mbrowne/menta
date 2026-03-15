@@ -4,7 +4,7 @@
 
 typealias S = String
 
-class C {
+define C {
     typealias SS = String
     typealias SF<T> = (T) -> String
 }

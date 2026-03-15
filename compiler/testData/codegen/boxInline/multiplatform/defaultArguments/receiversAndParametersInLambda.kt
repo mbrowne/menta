@@ -12,21 +12,21 @@
 
 // FILE: 1.kt
 
-class C(val s1: String, val s2: String)
+define C(val s1: String, val s2: String)
 
 expect fun C.test(r1: () -> String = { s1 }, r2: () -> String = this::s2): String
 
 actual inline fun C.test(r1: () -> String, r2: () -> String): String = r1() + r2()
 
 
-expect class D {
+expect define D {
     val s1: String
     val s2: String
 
     fun test(r1: () -> String = { s1 }, r2: () -> String = this::s2): String
 }
 
-actual class D(actual val s1: String, actual val s2: String) {
+actual define D(actual val s1: String, actual val s2: String) {
     actual inline fun test(r1: () -> String, r2: () -> String): String = r1() + r2()
 }
 

@@ -5,7 +5,7 @@
 
 interface I
 
-abstract class T1<K, V> : MutableMap<K, V> {
+abstract define T1<K, V> : MutableMap<K, V> {
     // This declaration should have a generic signature (Ljava/lang/Object;TV;)TV; to match the declaration
     // in java.util.Map
     override fun getOrDefault(key: K, value: V): V = value
@@ -22,7 +22,7 @@ abstract class T1<K, V> : MutableMap<K, V> {
     fun remove(key: K, value: Int): Boolean = true
 }
 
-abstract class T2<V> : MutableMap<String, V> {
+abstract define T2<V> : MutableMap<String, V> {
     // This declaration does not override the corresponding method in java.util.Map and should
     // have a normal generic signature of
     //
@@ -56,7 +56,7 @@ abstract class T2<V> : MutableMap<String, V> {
     fun remove(key: Int?, value: V): Boolean = true
 }
 
-abstract class T3<K, V : I> : MutableMap<K, V> {
+abstract define T3<K, V : I> : MutableMap<K, V> {
     // This declaration overrides the corresponding declaration in java.util.Map and should have
     // the following modified generic signature.
     //
@@ -87,7 +87,7 @@ abstract class T3<K, V : I> : MutableMap<K, V> {
     fun remove(key: K, value: Int): Boolean = true
 }
 
-abstract class T4<K, V> : Map<K, V> {
+abstract define T4<K, V> : Map<K, V> {
     // This declaration implicitly overrides a non-generic method in java.util.Map and
     // should not have a generic signature.
     fun remove(key: K, value: V): Boolean = false

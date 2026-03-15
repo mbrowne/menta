@@ -18,7 +18,7 @@ interface Test2 : Test {
 }
 
 
-class TestClass : Test2 {
+define TestClass : Test2 {
 
 }
 

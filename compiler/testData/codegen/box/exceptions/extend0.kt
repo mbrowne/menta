@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class C : Exception("OK")
+define C : Exception("OK")
 
 fun box(): String {
     try {

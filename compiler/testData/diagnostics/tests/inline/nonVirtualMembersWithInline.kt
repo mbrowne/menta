@@ -8,7 +8,7 @@ inline fun b() {}
 
 inline public fun c() {}
 
-abstract class A {
+abstract define A {
     inline private fun good1() {}
     inline public final fun good2() {}
     inline protected final fun good3() {}

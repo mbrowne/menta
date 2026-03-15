@@ -1,11 +1,11 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
     operator fun component1() = 1
 }
 
-class C {
+define C {
     operator fun iterator(): Iterator<A> = null!!
 }
 

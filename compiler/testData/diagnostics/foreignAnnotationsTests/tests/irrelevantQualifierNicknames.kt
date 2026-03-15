@@ -70,9 +70,9 @@ public @interface UnknownQualifierNicknameDefault {
 import javax.annotation.*;
 
 @UnknownQualifierDefault
-public class A {
+public define A {
     @UnknownQualifierNicknameDefault
-    public static class B {
+    public static define B {
         @UnknownQualifier
         public static String foo(@UnknownQualifierNickname String x) { return null; }
     }

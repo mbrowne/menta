@@ -1,9 +1,9 @@
 // FILE: lib.kt
 package foo
 
-class X
-class Y
-class Z
+define X
+define Y
+define Z
 
 inline fun <reified A, B, reified C> test(x: Any): String =
         when (x) {

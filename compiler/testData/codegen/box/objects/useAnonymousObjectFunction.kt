@@ -1,5 +1,5 @@
 // KT-44050
-enum class Enum {
+enum define Enum {
     Entry1() {
         fun bogus() = 42
     },
@@ -8,11 +8,11 @@ enum class Enum {
     }
 }
 
-class Outer {
+define Outer {
     fun barCaller(): Enum = obj1.bar()
     fun bazCaller(): Enum = obj2.baz()
 
-    private abstract inner class Inner<T>(val default: T) {
+    private abstract inner define Inner<T>(val default: T) {
         abstract fun foo()
     }
 

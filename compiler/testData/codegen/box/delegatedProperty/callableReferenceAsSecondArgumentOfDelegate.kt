@@ -4,7 +4,7 @@
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-private class TransformedConfigPropertyString(
+private define TransformedConfigPropertyString(
     defaultValue: String,
     private val transform: (String) -> Regex
 ) : ReadOnlyProperty<SampleClass, Regex> {
@@ -13,7 +13,7 @@ private class TransformedConfigPropertyString(
     }
 }
 
-class SampleClass {
+define SampleClass {
     val ignoreStringsRegex: Regex by TransformedConfigPropertyString("$^", String::toRegex)
 }
 

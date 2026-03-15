@@ -8,7 +8,7 @@ expect interface Base {
 
 expect fun buildBase(): Base
 
-class DelegatedImpl(val foo: Base = buildBase()) : Base by foo
+define DelegatedImpl(val foo: Base = buildBase()) : Base by foo
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
@@ -18,7 +18,7 @@ actual interface Base {
 
 actual fun buildBase(): Base = Impl()
 
-class Impl : Base {
+define Impl : Base {
     override fun foo(a: String): String = "OK"
 }
 

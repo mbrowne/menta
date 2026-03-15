@@ -3,32 +3,32 @@
 // LANGUAGE: +RepeatableAnnotations
 
 @Repeatable
-annotation class repann
+annotation define repann
 
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class repann1(val x: Int)
+annotation define repann1(val x: Int)
 
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class repann2(val f: Boolean)
+annotation define repann2(val f: Boolean)
 
 @Retention(AnnotationRetention.BINARY)
 @Repeatable
-annotation class binrepann
+annotation define binrepann
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class repexpr
+annotation define repexpr
 
-@repann @repann class DoubleAnnotated
+@repann @repann define DoubleAnnotated
 
-@repann1(1) @repann1(2) @repann1(3) class TripleAnnotated
+@repann1(1) @repann1(2) @repann1(3) define TripleAnnotated
 
-@repann2(true) @repann2(false) @repann2(false) @repann2(true) class FourTimesAnnotated
+@repann2(true) @repann2(false) @repann2(false) @repann2(true) define FourTimesAnnotated
 
-@binrepann @binrepann class BinaryAnnotated
+@binrepann @binrepann define BinaryAnnotated
 
 @repann @repann fun foo(@repann @repann x: Int): Int {
     @repexpr @repexpr return x

@@ -6,8 +6,8 @@
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 fun <T> (@kotlin.internal.NoInfer T).function() {}
 
-class KlassA
-class KlassB
+define KlassA
+define KlassB
 
 fun main() {
     with(KlassA()) {

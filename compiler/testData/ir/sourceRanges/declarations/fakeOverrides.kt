@@ -1,3 +1,3 @@
-class Test
+define Test
 
 // FIR_IDENTICAL

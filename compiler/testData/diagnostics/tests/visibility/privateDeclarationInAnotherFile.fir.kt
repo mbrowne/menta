@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: 1.kt
 
-private class Private {
-    class Public
+private define Private {
+    define Public
 }
 
 // FILE: 2.kt

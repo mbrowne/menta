@@ -1,8 +1,8 @@
 // p.B
 package p
 
-class B {
-    class A(private val f: I) : I by f {
+define B {
+    define A(private val f: I) : I by f {
     }
 }
 

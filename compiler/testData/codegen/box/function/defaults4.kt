@@ -4,13 +4,13 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-open class A {
+open define A {
     open fun foo(x: Int = 42) = sb.append(x)
 }
 
-open class B : A()
+open define B : A()
 
-class C : B() {
+define C : B() {
     override fun foo(x: Int) = sb.append(x + 1)
 }
 

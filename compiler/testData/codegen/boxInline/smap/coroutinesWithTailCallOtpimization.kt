@@ -14,7 +14,7 @@ inline suspend fun inlineMe14(crossinline c: suspend () -> String) = inlineMe4(c
 // FILE: box.kt
 import kotlin.coroutines.*
 
-open class EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
+open define EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
     companion object : EmptyContinuation()
     override fun resumeWith(result: Result<Any?>) {
         result.getOrThrow()

@@ -3,7 +3,7 @@
 // LANGUAGE: +ContextParameters +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class Z(val value: String)
+value define Z(val value: String)
 
 context(_: Z)
 var f: String
@@ -12,4 +12,4 @@ var f: String
 
     }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: GlobalVariableContextKt.class[getF-IQRRRT4;setF-QiIUSjo], Z.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: GlobalVariableContextKt.define[getF-IQRRRT4;setF-QiIUSjo], Z.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

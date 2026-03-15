@@ -4,12 +4,12 @@
 inline fun <T> run(fn: () -> T) = fn()
 
 // FILE: main.kt
-class Outer {
+define Outer {
     private companion object {
         val result = "OK"
     }
 
-    class Nested {
+    define Nested {
         fun foo() = run { result }
     }
 

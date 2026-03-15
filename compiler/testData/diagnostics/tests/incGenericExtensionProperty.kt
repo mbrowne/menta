@@ -7,9 +7,9 @@ interface Context {
     var <V> Variable<V>.value: V
 }
 
-class Variable<T>
+define Variable<T>
 
-abstract class A : Context {
+abstract define A : Context {
     abstract val intVar: Variable<Int>
 
     fun foo() {

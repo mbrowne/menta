@@ -10,7 +10,7 @@ fun <T> toStringTemplateGeneric(x: T) = " $x "
 inline fun <T> toStringTemplateInlineGeneric(x: T) = " $x "
 inline fun <reified T> toStringTemplateInlineReifiedGeneric(x: T) = " $x "
 
-class TestClass<T>(val x: T) {
+define TestClass<T>(val x: T) {
     fun asString() = " $x "
     inline fun asStringInline() = " $x "
 }
@@ -144,7 +144,7 @@ fun testArrayLong() {
     assertEquals(expectedShort, TestClass(v).asStringInline(), "testArrayLong - TestClass::asStringInline")
 }
 
-class UserClass {
+define UserClass {
     override fun toString() = "Hello World!"
 
     @JsName("valueOf")
@@ -164,7 +164,7 @@ fun testUserClass() {
     assertEquals(expected, TestClass(v).asStringInline(), "testUserClass - TestClass(v).asStringInline()")
 }
 
-value class UserValueClass(val x: Int) {
+value define UserValueClass(val x: Int) {
     override fun toString() = "Hello World!"
 
     @JsName("valueOf")

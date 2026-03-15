@@ -24,7 +24,7 @@ external val c: Int = definedExternally
 
 external val d: Int = <!WRONG_INITIALIZER_OF_EXTERNAL_DECLARATION!>23<!>
 
-external class C {
+external define C {
     fun foo(): Int = definedExternally
 
     fun bar(): Int = <!WRONG_BODY_OF_EXTERNAL_DECLARATION!>23<!>

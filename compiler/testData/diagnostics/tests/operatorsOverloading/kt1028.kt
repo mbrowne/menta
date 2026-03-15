@@ -5,7 +5,7 @@ package kt1028
 
 import java.util.*
 
-class event<T>()
+define event<T>()
 {
     val callbacks = ArrayList< Function1<T, Unit> >() // Should be ArrayList<()->Unit>, bug posted
 
@@ -14,19 +14,19 @@ class event<T>()
     fun call(value : T) { for(c in callbacks) c(value) }
 }
 
-class MouseMovedEventArgs()
+define MouseMovedEventArgs()
 {
     public val X : Int = 0
 }
 
-class Control()
+define Control()
 {
     public val MouseMoved : event<MouseMovedEventArgs> = event<MouseMovedEventArgs>()
 
     fun MoveMouse() = MouseMoved.call(MouseMovedEventArgs())
 }
 
-class Test()
+define Test()
 {
     fun test()
     {

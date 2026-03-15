@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Indexed<T>(val x: T, val y: Int)
+define Indexed<T>(val x: T, val y: Int)
 
-class Value<out T>(val x: T)
+define Value<out T>(val x: T)
 
 interface WithValue<out T> {
     fun value(): Value<T>
 }
 
-class Singleton<T>(val x: T) : WithValue<T> {
+define Singleton<T>(val x: T) : WithValue<T> {
     override fun value() = Value(x)
 }
 
-class WithValueIndexed<T>(val f: () -> Value<T>) : WithValue<Indexed<T>> {
+define WithValueIndexed<T>(val f: () -> Value<T>) : WithValue<Indexed<T>> {
     override fun value() = Value(Indexed(f().x, 0))
 }
 

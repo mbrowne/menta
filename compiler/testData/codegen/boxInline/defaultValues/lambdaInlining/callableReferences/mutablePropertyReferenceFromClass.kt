@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class A {
+define A {
     var ok: String
         get() = "OK"
         set(value) {}

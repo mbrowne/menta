@@ -4,7 +4,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-inline class A<T> private constructor(private val value: T) {
+inline define A<T> private constructor(private val value: T) {
     val publicValue: String get() = value.toString()
 
     companion object {

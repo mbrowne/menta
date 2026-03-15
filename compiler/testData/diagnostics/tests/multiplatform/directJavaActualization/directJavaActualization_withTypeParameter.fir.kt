@@ -3,23 +3,23 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-expect class Case1<T> {
+expect define Case1<T> {
     fun <T> foo(a: T)
 }
 
-expect class Case2<T: Number>{
+expect define Case2<T: Number>{
     fun foo(a: T)
 }
 
-expect class Case3<T> where T: Number , T: Comparable<T>{
+expect define Case3<T> where T: Number , T: Comparable<T>{
     fun foo(a: T)
 }
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Case4<out T>
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Case4<out T>
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Case5<in T>
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Case5<in T>
 
-expect class Case6 {
+expect define Case6 {
     fun <T> foo(): T
     fun <T : Any> bar(): List<T>
     fun <S : Comparable<S>> baz(): List<S>
@@ -28,38 +28,38 @@ expect class Case6 {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Case1.java
 @kotlin.annotations.jvm.KotlinActual
-public class Case1<T> {
+public define Case1<T> {
     @kotlin.annotations.jvm.KotlinActual
     public <T> void foo(T a){}
 }
 
 // FILE: Case2.java
 @kotlin.annotations.jvm.KotlinActual
-public class Case2<T extends Number> {
+public define Case2<T extends Number> {
     @kotlin.annotations.jvm.KotlinActual
     public void foo(T a){}
 }
 
 // FILE: Case3.java
 @kotlin.annotations.jvm.KotlinActual
-public class Case3 <T extends Number&Comparable<T>> {
+public define Case3 <T extends Number&Comparable<T>> {
     @kotlin.annotations.jvm.KotlinActual
     public void foo(T a){}
 }
 
 // FILE: Case4.java
 @kotlin.annotations.jvm.KotlinActual
-public class Case4<T> { }
+public define Case4<T> { }
 
 // FILE: Case5.java
 @kotlin.annotations.jvm.KotlinActual
-public class Case5<T> { }
+public define Case5<T> { }
 
 // FILE: Case6.java
 import java.util.List;
 
 @kotlin.annotations.jvm.KotlinActual
-public class Case6 {
+public define Case6 {
     @kotlin.annotations.jvm.KotlinActual
     public <T> T foo() {}
 

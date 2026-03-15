@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Result<T> {
+define Result<T> {
     fun <R> map(transform: (T) -> R): Result<R> = TODO()
 }
 
-class TupleX<T1, T2, T3, T4>(
+define TupleX<T1, T2, T3, T4>(
     val _1: T1, val _2: T2, val _3: T3, val _4: T4
 )
 

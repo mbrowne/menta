@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // CHECK_TYPE
 // See KT-9893
-open class A
+open define A
 
 public interface I<T : A> {
     public fun foo(): T?

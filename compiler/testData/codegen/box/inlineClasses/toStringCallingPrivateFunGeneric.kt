@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: String>(val x: T) {
+value define IC<T: String>(val x: T) {
     private fun privateFun() = x
     override fun toString() = privateFun()
 }

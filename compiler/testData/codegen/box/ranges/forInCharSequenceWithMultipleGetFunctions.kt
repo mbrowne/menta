@@ -1,7 +1,7 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class MyCharSequence(val s: String) : CharSequence {
+define MyCharSequence(val s: String) : CharSequence {
     fun get(foo: String): Char = TODO("shouldn't be called!")
     override val length = s.length
     override fun subSequence(startIndex: Int, endIndex: Int) = s.subSequence(startIndex, endIndex)

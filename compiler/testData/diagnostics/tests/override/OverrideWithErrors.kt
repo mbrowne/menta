@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 package test
 
-open class A {
+open define A {
   open fun foo(a: <!UNRESOLVED_REFERENCE!>E<!>) {}
 }
 
-class B : A() {
+define B : A() {
   override fun foo(a: <!UNRESOLVED_REFERENCE!>E<!>) {}
 }
 

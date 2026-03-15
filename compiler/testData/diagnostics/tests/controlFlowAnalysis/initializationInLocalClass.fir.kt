@@ -3,7 +3,7 @@
 
 fun foo() {
     var x: String
-    class A {
+    define A {
         init {
             x = ""
         }
@@ -25,7 +25,7 @@ fun bar() {
 
 fun gav() {
     val x: String
-    class B {
+    define B {
         init {
             // Error! See KT-10445
             <!CAPTURED_VAL_INITIALIZATION!>x<!> = ""
@@ -34,7 +34,7 @@ fun gav() {
     // Error! See KT-10042
     <!UNINITIALIZED_VARIABLE!>x<!>.length
     val y: String
-    class C(val s: String) {
+    define C(val s: String) {
         constructor(): this("") {
             // Error!
             <!CAPTURED_VAL_INITIALIZATION!>y<!> = s
@@ -43,7 +43,7 @@ fun gav() {
     <!UNINITIALIZED_VARIABLE!>y<!>.length
 }
 
-open class Gau(val s: String)
+open define Gau(val s: String)
 
 fun gau() {
     val x: String
@@ -72,10 +72,10 @@ fun gau() {
     else "") {}
 }
 
-class My {
+define My {
     init {
         val x: String
-        class Your {
+        define Your {
             init {
                 // Error! See KT-10445
                 <!CAPTURED_VAL_INITIALIZATION!>x<!> = ""

@@ -6,7 +6,7 @@ interface IQ1
 interface IQ2
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: Any): IQ1, IQ2
+value define X(val x: Any): IQ1, IQ2
 
 interface IFoo1 {
     fun foo(): IQ1
@@ -16,7 +16,7 @@ interface IFoo2 {
     fun foo(): IQ2
 }
 
-class Test : IFoo1, IFoo2 {
+define Test : IFoo1, IFoo2 {
     override fun foo() = X("OK")
 }
 

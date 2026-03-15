@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 // WITH_STDLIB
 
-inline class Foo(val a: Any)
+inline define Foo(val a: Any)
 
 @JvmName("bar")
 fun bar(f: Foo) {}
@@ -16,7 +16,7 @@ fun returnsInlineClass() = Foo(1)
 @Suppress("RESULT_CLASS_IN_RETURN_TYPE")
 fun returnsKotlinResult(a: Result<Int>): Result<Int> = a
 
-class C {
+define C {
     @JvmName("test")
     fun returnsInlineClass() = Foo(1)
 

@@ -2,7 +2,7 @@
 package a
 
 interface Closeable {}
-class C : Closeable {}
+define C : Closeable {}
 
 public inline fun <T: Closeable, R> T.use1(block: (T)-> R) : R {
     return block(this)

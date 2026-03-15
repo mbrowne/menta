@@ -2,7 +2,7 @@
 // ISSUE: KT-60305
 // NI_EXPECTED_FILE
 
-class C<T>
+define C<T>
 
 typealias CStar = C<*>
 typealias CIn = C<in Int>

@@ -11,10 +11,10 @@ interface Lazy<out T> {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T = TODO()
 }
 
-expect class OuterClass {
-    class NestedClass {
-        class DeepNested {
-            class Another {
+expect define OuterClass {
+    define NestedClass {
+        define DeepNested {
+            define Another {
                 fun f(s: String)
                 val p: Int
                 val c: Int = <!EXPECTED_PROPERTY_INITIALIZER!>1<!>
@@ -23,7 +23,7 @@ expect class OuterClass {
         }
     }
 
-    inner class InnerClass {
+    inner define InnerClass {
         fun f(x: Int)
         val p: String
     }
@@ -31,7 +31,7 @@ expect class OuterClass {
     companion object
 }
 
-expect class OuterClassWithNamedCompanion {
+expect define OuterClassWithNamedCompanion {
     companion object Factory
 }
 
@@ -44,10 +44,10 @@ fun TODO(): Nothing = null!!
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class OuterClass {
-    actual class NestedClass {
-        actual class DeepNested {
-            actual class Another {
+actual define OuterClass {
+    actual define NestedClass {
+        actual define DeepNested {
+            actual define Another {
                 actual fun f(s: String) {}
                 actual val p: Int = 42
                 actual val c: Int = 2
@@ -56,7 +56,7 @@ actual class OuterClass {
         }
     }
 
-    actual inner class InnerClass {
+    actual inner define InnerClass {
         actual fun f(x: Int) {}
         actual val p: String = ""
     }
@@ -64,7 +64,7 @@ actual class OuterClass {
     actual companion object
 }
 
-actual class OuterClassWithNamedCompanion {
+actual define OuterClassWithNamedCompanion {
     actual companion object Factory
 }
 

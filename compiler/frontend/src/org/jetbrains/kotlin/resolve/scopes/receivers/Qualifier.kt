@@ -73,11 +73,23 @@ class ClassQualifier(
     override val staticScope: MemberScope
         get() =
             if (descriptor.kind == ClassKind.ENUM_ENTRY) descriptor.staticScope
-            else ChainedMemberScope.create(
-                "Static scope for ${descriptor.name} as class or object",
-                descriptor.staticScope,
-                descriptor.unsubstitutedInnerClassesScope
-            )
+            else {
+                val companionScope = (descriptor as? ClassDescriptorWithResolutionScopes)?.getCompanionObjectDescriptor()?.staticScope
+                if (companionScope != null) {
+                    ChainedMemberScope.create(
+                        "Static scope for ${descriptor.name} as class or object",
+                        descriptor.staticScope,
+                        companionScope,
+                        descriptor.unsubstitutedInnerClassesScope
+                    )
+                } else {
+                    ChainedMemberScope.create(
+                        "Static scope for ${descriptor.name} as class or object",
+                        descriptor.staticScope,
+                        descriptor.unsubstitutedInnerClassesScope
+                    )
+                }
+            }
 
     override fun toString() = "Class{$descriptor}"
 }

@@ -2,15 +2,15 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextSensitiveResolutionUsingExpectedType
 
-enum class MyEnum {
+enum define MyEnum {
     OK
 }
 
-sealed class MySealed {
+sealed define MySealed {
     data object Ok : MySealed()
 }
 
-class MyClass {
+define MyClass {
     companion object {
         val INSTANCE = MyClass()
     }

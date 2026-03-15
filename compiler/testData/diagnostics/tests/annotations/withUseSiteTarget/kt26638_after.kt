@@ -3,7 +3,7 @@
 // LANGUAGE: +ProhibitRepeatedUseSiteTargetAnnotations
 
 // Ann is not repeatable
-annotation class Ann(val x: Int)
+annotation define Ann(val x: Int)
 
 <!REPEATED_ANNOTATION!>@get:Ann(10)<!>
 val a: String

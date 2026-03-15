@@ -3,11 +3,11 @@
 // OPT_IN: kotlin.RequiresOptIn
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class GenericController<T>
+define GenericController<T>
 
 suspend fun <S> GenericController<S>.yieldAll(s: Collection<S>): String = ""
 suspend fun <S> GenericController<S>.yieldAll(s: Set<S>): Int = 4
@@ -25,7 +25,7 @@ val test2 = generate {
 // Util function
 fun <X> setOf(vararg x: X): Set<X> = TODO()
 fun <X> listOf(vararg x: X): List<X> = TODO()
-class Pair<T, S>
+define Pair<T, S>
 
 /* GENERATED_FIR_TAGS: annotationUseSiteTargetFile, classDeclaration, classReference, funWithExtensionReceiver,
 functionDeclaration, functionalType, integerLiteral, lambdaLiteral, nullableType, propertyDeclaration, stringLiteral,

@@ -2,7 +2,7 @@
 // LANGUAGE: -EnumEntries -PrioritizedEnumEntries -ForbidEnumEntryNamedEntries
 // WITH_STDLIB
 
-enum class E {
+enum define E {
     <!DEPRECATED_DECLARATION_OF_ENUM_ENTRY!>entries,<!> Entries;
 
     fun foo() {

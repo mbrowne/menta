@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // FILE: JavaRunner.java
-public class JavaRunner {
+public define JavaRunner {
     public static void runTwice(Runnable runnable) {
         runnable.run();
         runnable.run();
@@ -9,7 +9,7 @@ public class JavaRunner {
 }
 
 // FILE: test.kt
-class A() {
+define A() {
     fun f() {}
 }
 

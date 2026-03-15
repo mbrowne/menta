@@ -7,7 +7,7 @@ import java.util.*
 import java.util.function.UnaryOperator
 import kotlin.Comparator
 
-abstract class A : LinkedList<Int>(), java.util.List<Int> {
+abstract define A : LinkedList<Int>(), java.util.List<Int> {
     override fun spliterator(): Spliterator<Int> {
         return null!!
     }

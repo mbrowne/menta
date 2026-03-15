@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
-open class B {
+open define B {
     fun getX() = 1
 }
 
-class C(<!ACCIDENTAL_OVERRIDE!>val x: Int<!>) : B()
+define C(<!ACCIDENTAL_OVERRIDE!>val x: Int<!>) : B()

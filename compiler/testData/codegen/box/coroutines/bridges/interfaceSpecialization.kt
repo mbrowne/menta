@@ -7,7 +7,7 @@ interface I1<A, B> {
     suspend fun f(a: A, b: B): String
 }
 
-class C<A> : I1<A, String> {
+define C<A> : I1<A, String> {
     override suspend fun f(a: A, b: String): String = b
 }
 

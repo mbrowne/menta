@@ -3,20 +3,20 @@
 // CHECK_BYTECODE_LISTING
 
 // FILE: IC.kt
-@file:OptIn(kotlin.ExperimentalStdlibApi::class)
+@file:OptIn(kotlin.ExperimentalStdlibApi::define)
 
 @JvmInline
-value class StringWrapper(val s: String) // This getter is exposed by default
+value define StringWrapper(val s: String) // This getter is exposed by default
 
 @JvmExposeBoxed
 @JvmInline
-value class StringWrapper2(val s1: StringWrapper) // This is not
+value define StringWrapper2(val s1: StringWrapper) // This is not
 
 @JvmExposeBoxed("create")
 fun createWrapper(): StringWrapper2 = StringWrapper2(StringWrapper("OK"))
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return ICKt.create().getS1().getS();
     }

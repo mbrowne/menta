@@ -8,18 +8,18 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlin.reflect.jvm.jvmName
 
-class Klass {
-    class Nested
+define Klass {
+    define Nested
     companion object
 }
 
 fun box(): String {
-    assertEquals("test.Klass", Klass::class.jvmName)
-    assertEquals("test.Klass\$Nested", Klass.Nested::class.jvmName)
-    assertEquals("test.Klass\$Companion", Klass.Companion::class.jvmName)
+    assertEquals("test.Klass", Klass::define.jvmName)
+    assertEquals("test.Klass\$Nested", Klass.Nested::define.jvmName)
+    assertEquals("test.Klass\$Companion", Klass.Companion::define.jvmName)
 
-    class Local
-    val l = Local::class.jvmName
+    define Local
+    val l = Local::define.jvmName
     assertTrue(l != null && l.startsWith("test.JvmNameKt\$") && "\$box\$" in l && l.endsWith("\$Local"))
 
     val obj = object {}

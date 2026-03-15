@@ -6,13 +6,13 @@ interface EntityBase<out ID> {
     suspend fun id(): ID
 }
 
-inline class EntityId(val value: String)
+inline define EntityId(val value: String)
 
 interface Entity : EntityBase<EntityId>
 
 var c: Continuation<EntityId>? = null
 
-class EntityStub : Entity {
+define EntityStub : Entity {
     override suspend fun id(): EntityId = suspendCoroutine { c = it }
 }
 

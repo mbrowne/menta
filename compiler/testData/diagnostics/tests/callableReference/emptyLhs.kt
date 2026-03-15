@@ -9,7 +9,7 @@ fun topLevelFun() = 2
 val A.extensionVal: Int get() = 3
 fun A.extensionFun(): Int = 4
 
-class A {
+define A {
     val memberVal = 5
     fun memberFun() = 6
 

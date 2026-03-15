@@ -4,15 +4,15 @@ interface Base {
     fun test() = "Base"
 }
 
-class Delegate : Base
+define Delegate : Base
 
-abstract class Middle : Base {
+abstract define Middle : Base {
     override fun test() = "MyClass"
 }
 
-abstract class MyClass : Middle()
+abstract define MyClass : Middle()
 
-<!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>class A<!> : MyClass(), Base by Delegate()
+<!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>define A<!> : MyClass(), Base by Delegate()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inheritanceDelegation, interfaceDeclaration, override,
 stringLiteral */

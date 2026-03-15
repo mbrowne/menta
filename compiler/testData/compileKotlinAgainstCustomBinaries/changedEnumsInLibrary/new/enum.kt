@@ -1,4 +1,4 @@
 package test
 
-enum class E1 { A, C, B, D }
-enum class E2 { A, B }
+enum define E1 { A, C, B, D }
+enum define E2 { A, B }

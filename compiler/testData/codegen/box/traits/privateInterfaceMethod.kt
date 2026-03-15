@@ -4,7 +4,7 @@ interface A {
     public fun bar() = foo()
 }
 
-class B : A {
+define B : A {
     private fun foo() = "fail"
 }
 

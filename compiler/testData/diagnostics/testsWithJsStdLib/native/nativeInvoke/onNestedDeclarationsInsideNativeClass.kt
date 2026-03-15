@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 
-external class A {
-    class B {
-        class C {
+external define A {
+    define B {
+        define C {
             @nativeInvoke
             fun foo() { definedExternally }
 

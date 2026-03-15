@@ -4,7 +4,7 @@
 // LANGUAGE: +NestedTypeAliases, +SkipHiddenObjectsInResolution
 // ISSUE: KT-82555
 
-class C {
+define C {
     object Impl
 
     @Deprecated("", level = DeprecationLevel.HIDDEN)

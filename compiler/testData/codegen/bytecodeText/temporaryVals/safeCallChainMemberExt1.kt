@@ -1,6 +1,6 @@
-class A
-class B
-class C
+define A
+define B
+define C
 
 object Host {
     val A.b: B get() = B()

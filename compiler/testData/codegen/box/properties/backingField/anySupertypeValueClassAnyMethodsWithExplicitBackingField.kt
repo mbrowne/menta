@@ -6,9 +6,9 @@
 // WORKS_WHEN_VALUE_CLASS
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class V(val x: Int)
+value define V(val x: Int)
 
-class A {
+define A {
     val p: Any
         field = V(1)
 

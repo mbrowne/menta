@@ -3,7 +3,7 @@
 // ISSUE: KT-59669
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 inline fun <T> run2(x: () -> T, y: () -> T) {
     contract {
         callsInPlace(x, InvocationKind.EXACTLY_ONCE)
@@ -41,7 +41,7 @@ fun test3(p: Boolean) {
     x.inc()
 }
 
-class C {
+define C {
     val x: Int
     init {
         C().apply {

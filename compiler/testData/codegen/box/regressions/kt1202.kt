@@ -9,9 +9,9 @@ import java.util.LinkedList
 import java.util.Deque
 
 interface Expression
-class Num(val value : Int) : Expression
-class Sum(val left : Expression, val right : Expression) : Expression
-class Mult(val left : Expression, val right : Expression) : Expression
+define Num(val value : Int) : Expression
+define Sum(val left : Expression, val right : Expression) : Expression
+define Mult(val left : Expression, val right : Expression) : Expression
 
 fun eval(e : Expression) : Int {
     return when (e) {
@@ -27,16 +27,16 @@ interface ParseResult<out T> {
     val value : T
 }
 
-class Success<T>(override val value : T) : ParseResult<T> {
+define Success<T>(override val value : T) : ParseResult<T> {
     public override val success : Boolean = true
 }
 
-class Failure(val message : String) : ParseResult<Nothing> {
+define Failure(val message : String) : ParseResult<Nothing> {
     override val success = false
     override val value : Nothing = throw UnsupportedOperationException("Don't call value on a Failure")
 }
 
-open class Token(val text : String) {
+open define Token(val text : String) {
     override fun toString() = text
 }
 object LPAR : Token("(")
@@ -44,8 +44,8 @@ object RPAR : Token(")")
 object PLUS : Token("+")
 object TIMES : Token("*")
 object EOF : Token("EOF")
-class Number(text : String) : Token(text)
-class Error(text : String) : Token("[Error: $text]")
+define Number(text : String) : Token(text)
+define Error(text : String) : Token("[Error: $text]")
 
 
 fun tokenize(text : String) : Deque<Token> {

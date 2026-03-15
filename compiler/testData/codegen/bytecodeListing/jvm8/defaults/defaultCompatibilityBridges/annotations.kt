@@ -3,7 +3,7 @@
 // FILE: a.kt
 package base
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 interface A {
     @Anno("f")
@@ -17,7 +17,7 @@ interface A {
         set(value) {}
 }
 
-open class B : A
+open define B : A
 
 // MODULE: main(library)
 // JVM_DEFAULT_MODE: enable
@@ -32,4 +32,4 @@ interface C : A {
         set(value) {}
 }
 
-class D : B(), C
+define D : B(), C

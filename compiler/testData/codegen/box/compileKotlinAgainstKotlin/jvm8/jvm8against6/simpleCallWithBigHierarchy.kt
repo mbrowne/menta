@@ -21,7 +21,7 @@ interface Test2 : Test {
 interface Test3 : Test2 {
 
 }
-class TestClass : Test3
+define TestClass : Test3
 
 fun box(): String {
     return TestClass().test()

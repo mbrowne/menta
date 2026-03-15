@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 
-class Pair<T1, T2>(val x1: T1, val x2: T2)
+define Pair<T1, T2>(val x1: T1, val x2: T2)
 
-class C<T> {
+define C<T> {
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias P2 = Pair<T, T>
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias PT2<T2> = Pair<T, T2>
 

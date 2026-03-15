@@ -15,7 +15,7 @@ interface ParameterObjectOption {
     ) = null as CreatorNullable<TSubject, T>
 }
 
-class ParameterObject<TSubject, T>
+define ParameterObject<TSubject, T>
 interface CollectingAssertionPlantNullable<out T> : AssertionPlantNullable<T>,
     BaseCollectingAssertionPlant<T, AssertionPlantNullable<T>, CollectingAssertionPlantNullable<T>>
 interface CreatorNullable<TSubject, T>: CreatorLike<TSubject, T, AssertionPlantNullable<T>, CollectingAssertionPlantNullable<T>>

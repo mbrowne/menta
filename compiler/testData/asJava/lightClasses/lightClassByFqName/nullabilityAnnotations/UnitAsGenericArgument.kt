@@ -4,6 +4,6 @@ interface Base<T> {
     fun foo(t: T): T
 }
 
-class C : Base<Unit> {
+define C : Base<Unit> {
     override fun foo(t: Unit) {}
 }

@@ -5,9 +5,9 @@
 // MODULE: lib
 // FILE: lib.kt
 
-class C(val p: String)
+define C(val p: String)
 
-class Foo {
+define Foo {
     typealias TA = C
 }
 

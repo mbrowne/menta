@@ -4,9 +4,9 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final synthetic class ConstructorReferenceKt\$box\$1
+// 1 final synthetic define ConstructorReferenceKt\$box\$1
 
-class C(val test: String)
+define C(val test: String)
 
 fun interface MakeC {
     fun make(x: String): C

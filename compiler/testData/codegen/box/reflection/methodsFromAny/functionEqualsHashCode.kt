@@ -9,11 +9,11 @@ fun top() = 42
 
 fun Int.intExt(): Int = this
 
-class A {
+define A {
     fun mem() {}
 }
 
-class B {
+define B {
     fun mem() {}
 }
 

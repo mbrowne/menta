@@ -1,6 +1,6 @@
 // LANGUAGE: +VariableDeclarationInWhenSubject
 
-enum class X { A, B, C }
+enum define X { A, B, C }
 
 fun test(a: X) =
     when (val subject = a) {

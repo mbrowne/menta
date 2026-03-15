@@ -3,12 +3,12 @@ interface T {
     val g: Int
 }
 
-class A() : T {
+define A() : T {
     override val g = 3
     override fun f() {
     }
 }
 
-class Delegation(val c: Int = 3, a: A) : T by a {
+define Delegation(val c: Int = 3, a: A) : T by a {
     fun ff(): Int = 3
 }

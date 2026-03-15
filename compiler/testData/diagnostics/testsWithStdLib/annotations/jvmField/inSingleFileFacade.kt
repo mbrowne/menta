@@ -8,7 +8,7 @@ val c = 4
 @JvmField
 var g = 5
 
-class C {
+define C {
     @JvmField
     var g = 5
 }

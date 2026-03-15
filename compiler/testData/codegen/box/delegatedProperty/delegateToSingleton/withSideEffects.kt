@@ -14,7 +14,7 @@ object O {
     }
 }
 
-class C {
+define C {
     val s: String by O
 }
 

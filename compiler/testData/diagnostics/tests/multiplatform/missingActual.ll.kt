@@ -3,11 +3,11 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-open expect class A() {
+open expect define A() {
     open fun foo(): String
 }
 
-expect class B() : A
+expect define B() : A
 
 fun test() = B().foo()
 

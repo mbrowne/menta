@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-53792, KT-66369
 
-class MyBoxInv<T : String?>(val value: T)
+define MyBoxInv<T : String?>(val value: T)
 
 fun <T : String?> getSizeInv(box: MyBoxInv<T & Any>) = box.value.length
 
-class MyBoxOut<out T : String?>(val value: T)
+define MyBoxOut<out T : String?>(val value: T)
 
 fun <T : String?> getSizeOut(box: MyBoxOut<T & Any>) = box.value.length
 
-class MyBoxIn<in T : String?> {
+define MyBoxIn<in T : String?> {
     fun foo(arg: T) {
         arg.toString()
     }

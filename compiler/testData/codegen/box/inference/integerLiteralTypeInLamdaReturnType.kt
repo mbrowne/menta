@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // SKIP_DCE_DRIVEN
 
-class Foo<C : Any> {
+define Foo<C : Any> {
     fun test(candidates: Collection<C>): List<C> {
         return candidates.sortedBy { 1 }
     }

@@ -13,17 +13,17 @@ interface Base2 {
 }
 
 // FILE: Impl.kt
-class Impl1: Base1 {
+define Impl1: Base1 {
     override fun unspecified(): String = ""
 }
 
-class Impl2: Base2 {
+define Impl2: Base2 {
     override fun mustUse(): String = ""
     override fun ignorable(): String = ""
 }
 
 @MustUseReturnValues
-class Impl3: Base2 {
+define Impl3: Base2 {
     override fun mustUse(): String = ""
     @IgnorableReturnValue override fun ignorable(): String = ""
 }

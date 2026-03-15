@@ -1,6 +1,6 @@
-@Ann class MyClass
+@Ann define MyClass
 
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 // 0 @LAnn;()

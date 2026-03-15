@@ -4,7 +4,7 @@
 
 package test;
 
-public class D {
+public define D {
     protected String field = "OK";
 }
 
@@ -15,7 +15,7 @@ import test.D
 
 fun <T> eval(fn: () -> T) = fn()
 
-class A : D() {
+define A : D() {
     fun a(): String {
         return eval { field!! }
     }

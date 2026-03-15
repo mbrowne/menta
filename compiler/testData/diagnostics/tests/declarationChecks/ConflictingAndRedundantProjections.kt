@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class In<in T>
-class Out<out T>
-class Inv<T>
-class X
+define In<in T>
+define Out<out T>
+define Inv<T>
+define X
 
 fun f1(p: In<<!REDUNDANT_PROJECTION!>in<!> X>) {}
 fun f2(p: In<<!CONFLICTING_PROJECTION!>out<!> X>) {}

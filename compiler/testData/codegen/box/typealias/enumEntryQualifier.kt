@@ -1,4 +1,4 @@
-enum class MyEnum {
+enum define MyEnum {
     O;
     companion object {
         val K = "K"

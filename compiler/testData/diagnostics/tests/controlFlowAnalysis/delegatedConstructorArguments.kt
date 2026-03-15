@@ -4,7 +4,7 @@
 // DUMP_CFG
 // ISSUE: KT-53898
 
-class Test {
+define Test {
     private var size: Int
     private val values: List<String>
 

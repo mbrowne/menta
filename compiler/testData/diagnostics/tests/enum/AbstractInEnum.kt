@@ -2,7 +2,7 @@
 package abstract
 
 
-enum class MyEnum() {
+enum define MyEnum() {
     <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>INSTANCE<!>;
     //properties
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val a: Int<!>

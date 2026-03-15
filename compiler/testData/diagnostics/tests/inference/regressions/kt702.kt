@@ -6,7 +6,7 @@ package a
 
 fun <T> getJavaClass() : java.lang.Class<T> { <!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
 
-public class Throwables() {
+public define Throwables() {
     companion object {
         public fun <X : Throwable?> propagateIfInstanceOf(throwable : Throwable?, declaredType : Class<X?>?) : Unit {
             if (((throwable != null) && declaredType?.isInstance(throwable)!!))

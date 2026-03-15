@@ -9,7 +9,7 @@ fun builder(c: suspend () -> Unit) {
 }
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class IC(val s: Int?)
+inline define IC(val s: Int?)
 
 interface IBar {
     suspend fun bar(): IC?
@@ -18,7 +18,7 @@ interface IBar {
 fun Int?.toResultString() =
     if (this == null) "OK" else "!!! $this"
 
-class Test() : IBar {
+define Test() : IBar {
     override suspend fun bar(): IC = IC(null)
 
     suspend fun test1(): String {

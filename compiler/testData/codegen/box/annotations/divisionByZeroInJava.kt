@@ -19,8 +19,8 @@ public @interface J {
 // FILE: K.kt
 
 fun box(): String {
-    // Only check that the compiler loads the class for J
-    J::class
+    // Only check that the compiler loads the define for J
+    J::define
 
     return "OK"
 }

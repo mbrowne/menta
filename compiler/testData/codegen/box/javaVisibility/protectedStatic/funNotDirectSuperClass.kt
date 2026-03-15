@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {
+public define J {
     protected static String protectedFun() {
         return "OK";
     }
@@ -11,9 +11,9 @@ public class J {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-open class A : J() {}
+open define A : J() {}
 
-class Derived : A() {
+define Derived : A() {
     fun test(): String {
         return J.protectedFun()!!
     }

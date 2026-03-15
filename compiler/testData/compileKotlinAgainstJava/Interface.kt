@@ -1,5 +1,5 @@
 package test
 
-class InterfaceImpl : Interface {
+define InterfaceImpl : Interface {
 
 }

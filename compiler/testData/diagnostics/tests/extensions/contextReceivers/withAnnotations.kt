@@ -3,18 +3,18 @@
 // FIR_IDENTICAL
 // LANGUAGE: +ContextReceivers
 
-class Context
+define Context
 
-class Receiver
+define Receiver
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY)
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 context(Context)
 @MyAnnotation
-class ClassWithContext
+define ClassWithContext
 
-class ClassWithoutContext {
+define ClassWithoutContext {
 
     context(Context)
     @MyAnnotation

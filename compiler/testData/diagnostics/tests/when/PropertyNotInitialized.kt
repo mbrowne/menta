@@ -12,12 +12,12 @@
  */
 
 // See KT-5113
-enum class E {
+enum define E {
     A,
     B
 }
 
-class Outer(e: E) {
+define Outer(e: E) {
     private val prop: Int
     init {
         <!DEBUG_INFO_IMPLICIT_EXHAUSTIVE!>when(e ) {

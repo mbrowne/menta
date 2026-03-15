@@ -4,7 +4,7 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public <T> void foo(T a) { }
     public <T> T bar() {
         return null;
@@ -12,10 +12,10 @@ public class Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1 { }
+public define Java2 extends Java1 { }
 
 // FILE: Java3.java
-public class Java3 extends Java1   {
+public define Java3 extends Java1   {
     @Override
     public <T> void foo(T a) { }
     @Override
@@ -25,18 +25,18 @@ public class Java3 extends Java1   {
 }
 
 // FILE: 1.kt
-abstract class A : Java2()    // Kotlin ← Java1 ← Java2
+abstract define A : Java2()    // Kotlin ← Java1 ← Java2
 
-class B : A() {
+define B : A() {
     override fun <T> bar(): T {
         return null!!
     }
     override fun <T> foo(a: T) { }
 }
 
-class C : Java3()   //Kotlin ← Java1(override) ← Java2
+define C : Java3()   //Kotlin ← Java1(override) ← Java2
 
-class D : Java1() {
+define D : Java1() {
     override fun <T : Any?> bar(): T {
         return null!!
     }

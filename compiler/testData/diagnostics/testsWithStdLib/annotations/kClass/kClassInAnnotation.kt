@@ -2,24 +2,24 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KClass
 
-annotation class Ann1(val arg: KClass<*>)
-annotation class Ann2(vararg val arg: KClass<*>)
-annotation class Ann3(val arg: Array<KClass<*>>)
+annotation define Ann1(val arg: KClass<*>)
+annotation define Ann2(vararg val arg: KClass<*>)
+annotation define Ann3(val arg: Array<KClass<*>>)
 
-class A1
-class A2
+define A1
+define A2
 
-@Ann1(A1::class)
-@Ann2(A1::class, A2::class)
-@Ann3(arrayOf(A1::class, A2::class))
-class MyClass1
+@Ann1(A1::define)
+@Ann2(A1::define, A2::define)
+@Ann3(arrayOf(A1::define, A2::define))
+define MyClass1
 
-@Ann1(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>A3<!>::class<!>)
-class MyClass2
+@Ann1(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>A3<!>::define<!>)
+define MyClass2
 
-val x = A1::class
+val x = A1::define
 @Ann1(<!ANNOTATION_ARGUMENT_MUST_BE_KCLASS_LITERAL!>x<!>)
-class MyClass3
+define MyClass3
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, collectionLiteral, outProjection,
 primaryConstructor, propertyDeclaration, starProjection, vararg */

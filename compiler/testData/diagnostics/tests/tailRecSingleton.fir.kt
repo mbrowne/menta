@@ -13,7 +13,7 @@ object Foo {
     }
 }
 
-class Bar {
+define Bar {
     companion object {
         tailrec fun bar1() {
             bar1()
@@ -33,7 +33,7 @@ class Bar {
     }
 }
 
-enum class E {
+enum define E {
     A {
         override tailrec fun rec() {
             rec()

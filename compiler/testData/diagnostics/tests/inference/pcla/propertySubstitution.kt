@@ -8,7 +8,7 @@ interface FirJavaClass2 {
 
 interface ConeKotlinType2
 
-class ClassId2
+define ClassId2
 
 val ConeKotlinType2.classId: ClassId2? get() = null
 
@@ -26,7 +26,7 @@ inline fun buildResolvedTypeRef2(init: FirResolvedTypeRefBuilder2.() -> Unit): F
 
 interface FirResolvedTypeRef2 : FirTypeRef2
 
-class FirResolvedTypeRefBuilder2 {
+define FirResolvedTypeRefBuilder2 {
     lateinit var type: ConeKotlinType2
 }
 

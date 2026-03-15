@@ -9,5 +9,5 @@ public interface Java1 {
 // FILE: 1.kt
 import java.util.*;
 
-abstract class B : ArrayList<Int>(), Java1 {
+abstract define B : ArrayList<Int>(), Java1 {
 }

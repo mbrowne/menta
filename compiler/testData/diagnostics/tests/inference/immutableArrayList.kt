@@ -12,7 +12,7 @@ public interface J {
 
 import p.J.*
 
-class Foo<T>: Sub<T> {
+define Foo<T>: Sub<T> {
     fun foo(): Super<T> {
         return Foo()
     }

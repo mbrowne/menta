@@ -6,7 +6,7 @@ object TestObject {
     external fun foo()
 }
 
-class TestClassCompanion {
+define TestClassCompanion {
     companion object {
         @JvmStatic
         external fun foo()

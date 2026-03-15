@@ -1,6 +1,6 @@
 package test
 
-enum class E {
+enum define E {
     ONE,
     TWO,
     THREE,

@@ -10,7 +10,7 @@ suspend fun suspendThere(v: Any?): String = suspendCoroutineUninterceptedOrRetur
 }
 
 
-class A<T>(val arg: T) {
+define A<T>(val arg: T) {
     var result = ""
     inline suspend fun foo() {
         result = suspendThere(arg)

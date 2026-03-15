@@ -12,6 +12,6 @@ fun IEntity(f: ObserverSupport<IEntity>) {}
 package b
 import a.IEntity
 
-class ObserverSupport<T : IEntity>
+define ObserverSupport<T : IEntity>
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, typeConstraint, typeParameter */

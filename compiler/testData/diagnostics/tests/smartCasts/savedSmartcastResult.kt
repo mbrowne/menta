@@ -17,7 +17,7 @@ fun test2() {
     }
 }
 
-class A {
+define A {
     val a: String? = ""
 }
 fun test3(a: A){

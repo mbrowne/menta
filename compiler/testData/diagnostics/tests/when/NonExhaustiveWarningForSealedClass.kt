@@ -13,11 +13,11 @@
  * type-inference, smart-casts, smart-cast-types -> paragraph 9 -> sentence 1
  */
 
-sealed class S
+sealed define S
 
 object First : S()
 
-class Derived(val s: String) : S()
+define Derived(val s: String) : S()
 
 object Last : S()
 

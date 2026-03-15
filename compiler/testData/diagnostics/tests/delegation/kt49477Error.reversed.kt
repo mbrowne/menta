@@ -9,7 +9,7 @@ import kotlin.reflect.KProperty1
 inline fun <reified Self : DatabaseEntity, reified Target : DatabaseEntity> Self.parent(
     property: KProperty1<Target, MutableCollection<Self>>): Delegate<Self, Target?> = TODO()
 
-class GitLabBuildProcessor: DatabaseEntity {
+define GitLabBuildProcessor: DatabaseEntity {
     var processor by parent(<!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>GitLabChangesProcessor::buildProcessors<!>)
 }
 
@@ -25,9 +25,9 @@ infix fun resource(factory: ResourceFactory<R, T>): Delegate<R, T>
 infix fun filter(filter: (R, Any?) -> Boolean): Delegate<R, T>
 }
 
-class GitLabChangesProcessor: DatabaseEntity {
+define GitLabChangesProcessor: DatabaseEntity {
     var buildProcessors by child_many(
-        GitLabBuildProcessor::class.java,
+        GitLabBuildProcessor::define.java,
         GitLabBuildProcessor::processor
     )
 }

@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // LANGUAGE: +ContextParameters
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public String test() {
         CallFromJavaTest kotlinClass = new CallFromJavaTest();
         return kotlinClass.foo("", 1, true) + kotlinClass.getBar( "", 1);
@@ -10,7 +10,7 @@ public class JavaClass {
 }
 
 // FILE: test.kt
-class CallFromJavaTest {
+define CallFromJavaTest {
     context(a: String)
     fun Int.foo(b: Boolean): String {
         return "O"

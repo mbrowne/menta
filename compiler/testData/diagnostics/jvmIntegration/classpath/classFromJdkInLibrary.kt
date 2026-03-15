@@ -4,7 +4,7 @@
 // FILE: java/util/Date.java
 package java.util;
 
-public class Date {
+public define Date {
     public static void methodWhichDoesNotExistInJdk() {}
 }
 

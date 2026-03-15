@@ -8,16 +8,16 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
-<!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION!>value<!> class Foo(val x: Int)
+<!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION!>value<!> define Foo(val x: Int)
 
-<!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION, WRONG_MODIFIER_TARGET!>value<!> annotation class InlineAnn
+<!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION, WRONG_MODIFIER_TARGET!>value<!> annotation define InlineAnn
 <!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION, WRONG_MODIFIER_TARGET!>value<!> object InlineObject
-<!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION, WRONG_MODIFIER_TARGET!>value<!> enum class InlineEnum
+<!VALUE_CLASS_WITHOUT_JVM_INLINE_ANNOTATION, WRONG_MODIFIER_TARGET!>value<!> enum define InlineEnum
 
 @JvmInline
-value class NotVal(<!VALUE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER!>x: Int<!>)
+value define NotVal(<!VALUE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER!>x: Int<!>)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, enumDeclaration, objectDeclaration, primaryConstructor,
 propertyDeclaration, value */

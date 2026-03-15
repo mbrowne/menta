@@ -24,7 +24,7 @@ fun exactlyOnce(block: () -> Unit) {
 
 fun runWithoutContract(block: () -> Unit): Unit = block()
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Any {
         TODO()
     }

@@ -1,3 +1,3 @@
-actual enum class AB { A, C }
+actual enum define AB { A, C }
 
-actual enum class CD { C }
+actual enum define CD { C }

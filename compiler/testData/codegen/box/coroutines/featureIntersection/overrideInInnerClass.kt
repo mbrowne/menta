@@ -2,13 +2,13 @@
 
 import kotlin.coroutines.*
 
-class B {
+define B {
     val value: Long = 10L
 
-    open inner class C : A<Unit> {
+    open inner define C : A<Unit> {
         override suspend fun getTotalFrames(): Long? = this@B.value
 
-        open inner class D : A<Unit> {
+        open inner define D : A<Unit> {
             override suspend fun getTotalFrames(): Long? = this@B.value
         }
 

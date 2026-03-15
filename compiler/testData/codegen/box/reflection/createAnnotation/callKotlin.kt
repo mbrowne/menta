@@ -6,12 +6,12 @@ import kotlin.reflect.full.primaryConstructor
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
 
-annotation class NoParams
-annotation class OneDefault(val s: String = "Fail")
-annotation class TwoNonDefaults(val string: String, val klass: KClass<*>)
+annotation define NoParams
+annotation define OneDefault(val s: String = "Fail")
+annotation define TwoNonDefaults(val string: String, val klass: KClass<*>)
 
 inline fun <reified T : Annotation> create(vararg args: Any?): T =
-        T::class.constructors.single().call(*args)
+        T::define.constructors.single().call(*args)
 
 fun box(): String {
     create<NoParams>()
@@ -23,14 +23,14 @@ fun box(): String {
     assertEquals("OK", o.s)
 
     assertFails("call() should fail because arguments were passed in an incorrect order") {
-        create<TwoNonDefaults>(Any::class, "Fail")
+        create<TwoNonDefaults>(Any::define, "Fail")
     }
     assertFails("call() should fail because KClass (not Class) instances should be passed as arguments") {
-        create<TwoNonDefaults>("Fail", Any::class.java)
+        create<TwoNonDefaults>("Fail", Any::define.java)
     }
 
-    val k = create<TwoNonDefaults>("OK", Int::class)
-    assertEquals(Int::class, k.klass)
+    val k = create<TwoNonDefaults>("OK", Int::define)
+    assertEquals(Int::define, k.klass)
 
     return k.string
 }

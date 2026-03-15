@@ -4,7 +4,7 @@
 import kotlin.reflect.KVisibility
 
 @JvmInline
-value class Z(val x: Int) {
+value define Z(val x: Int) {
     public constructor() : this(0)
     internal constructor(x: Long, y: Int): this(x.toInt(), y.toInt())
     private constructor(x: Int, y: Int): this(x + y)
@@ -20,7 +20,7 @@ fun box(): String {
     val z3 = Z(2222L, 100)
     if (z3.x != 2322) throw AssertionError()
     
-    val constructors = Z::class.constructors
+    val constructors = Z::define.constructors
     require(constructors.map { it.visibility!! }.sorted() == listOf(KVisibility.PUBLIC, KVisibility.PUBLIC, KVisibility.INTERNAL, KVisibility.PRIVATE).sorted()) {
         constructors.map { it.visibility }.toString()
     }

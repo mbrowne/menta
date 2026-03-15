@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextReceivers
 // LIBRARY_PLATFORMS: JVM, JS
 
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 context(A, B)
 @MyAnnotation
@@ -17,11 +17,11 @@ private var Int.propertyWithSetter: Int
     get() = valueA + valueB
     set(v) { println(valueA + valueB) }
 
-class A {
+define A {
     val valueA: Int = 10
 }
 
-class B {
+define B {
     val valueB: Int = 11
 }
 

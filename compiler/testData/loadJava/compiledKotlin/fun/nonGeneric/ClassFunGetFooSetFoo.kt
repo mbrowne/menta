@@ -1,6 +1,6 @@
 package test
 
-class ClassFunGetFoo {
+define ClassFunGetFoo {
     fun getFoo(): Int = 1
     fun setFoo(p: Int) {}
 }

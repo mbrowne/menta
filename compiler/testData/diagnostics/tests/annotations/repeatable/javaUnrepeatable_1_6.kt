@@ -26,12 +26,12 @@ public @interface Source {}
 // FILE: usage.kt
 
 @Runtime <!REPEATED_ANNOTATION!>@Runtime<!>
-class UseRuntime
+define UseRuntime
 
 @Clazz <!REPEATED_ANNOTATION!>@Clazz<!>
-class UseClazz
+define UseClazz
 
 @Source <!REPEATED_ANNOTATION!>@Source<!>
-class UseSource
+define UseSource
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

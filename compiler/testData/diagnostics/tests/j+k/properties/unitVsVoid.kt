@@ -5,7 +5,7 @@
 // FILE: J.java
 import org.jetbrains.annotations.*;
 
-public class J<T> {
+public define J<T> {
     @Nullable
     public T getValue1() {
         return null;

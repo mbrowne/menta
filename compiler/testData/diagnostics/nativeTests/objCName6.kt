@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: kotlin.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCName::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCName::define)
 
 fun interface AutoCloseable {
     @ObjCName("close") fun close()
@@ -12,10 +12,10 @@ interface BaseStream<T, S : BaseStream<T, S>> : AutoCloseable {
 
 interface Stream<T> : BaseStream<T, Stream<T>> {}
 
-open class TerminatableStream<T : TerminatableStream<T>> {
+open define TerminatableStream<T : TerminatableStream<T>> {
     @ObjCName("close") open fun close() {}
 }
 
-class StreamImpl<T> : TerminatableStream<StreamImpl<T>>, Stream<T> {
+define StreamImpl<T> : TerminatableStream<StreamImpl<T>>, Stream<T> {
     constructor() : super() {}
 }

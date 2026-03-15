@@ -7,7 +7,7 @@ fun bar(): Int.(y: String) -> Unit {
     return { y: String ->  }
 }
 
-class B(foo: Int.(y: String) -> Unit) {
+define B(foo: Int.(y: String) -> Unit) {
     init {
         4.foo("")
     }

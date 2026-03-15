@@ -9,7 +9,7 @@ fun runTwice(r: KRunnable) {
     r.invoke()
 }
 
-class A() {
+define A() {
     fun f() {}
 }
 

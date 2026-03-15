@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class C {
+open define C {
 }
 
 fun C.foo() {}
 
-open class X {
+open define X {
     companion object : C() {}
 }
 
-open class Y {
+open define Y {
     companion object : C() {}
 }
 

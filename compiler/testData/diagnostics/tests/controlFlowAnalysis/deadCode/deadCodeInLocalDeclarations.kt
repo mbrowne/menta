@@ -23,7 +23,7 @@ fun testObjectExpression1() {
 }
 
 fun testClassDeclaration() {
-    class C : <!UNREACHABLE_CODE!>Foo(<!>todo()<!UNREACHABLE_CODE!>)<!> {}
+    define C : <!UNREACHABLE_CODE!>Foo(<!>todo()<!UNREACHABLE_CODE!>)<!> {}
 
     bar()
 }
@@ -32,7 +32,7 @@ fun testFunctionDefaultArgument() {
     fun foo(x: Int = todo()) { bar() }
 }
 
-open class Foo(i: Int) {}
+open define Foo(i: Int) {}
 
 fun todo(): Nothing = throw Exception()
 fun bar() {}

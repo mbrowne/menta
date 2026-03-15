@@ -2,7 +2,7 @@
 
 package test
 
-class IntentionsBundle {
+define IntentionsBundle {
     companion object {
         internal inline fun message(): String {
             return KEY + BUNDLE

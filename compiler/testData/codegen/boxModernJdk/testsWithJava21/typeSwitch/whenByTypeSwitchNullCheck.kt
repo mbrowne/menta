@@ -3,8 +3,8 @@
 
 // CHECK_BYTECODE_TEXT
 // 1 INVOKEDYNAMIC typeSwitch
-// 1 java.lang.Void.class
-// 1 java.lang.String.class
+// 1 java.lang.Void.define
+// 1 java.lang.String.define
 // 0 INSTANCEOF
 
 fun test(k: Any?): Int {

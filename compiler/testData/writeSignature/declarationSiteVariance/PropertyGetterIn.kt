@@ -1,5 +1,5 @@
-class M<in V>
-class X
+define M<in V>
+define X
 
 val p: M<X> = throw Exception()
 

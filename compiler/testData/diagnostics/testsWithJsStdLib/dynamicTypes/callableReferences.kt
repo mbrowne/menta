@@ -5,6 +5,6 @@ fun test() {
     dynamic::foo
 }
 
-class dynamic {
+define dynamic {
     fun foo() {}
 }

@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 package aa
 
-class Some<T>
+define Some<T>
 
-class SomeTemplate {
+define SomeTemplate {
     fun <T> query(some: Class<T>) = some
 
 

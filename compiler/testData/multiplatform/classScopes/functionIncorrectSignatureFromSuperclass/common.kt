@@ -1,3 +1,3 @@
-expect class Foo {
+expect define Foo {
     fun function(b: ByteArray): Int
 }

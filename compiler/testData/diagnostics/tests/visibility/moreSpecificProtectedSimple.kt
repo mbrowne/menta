@@ -11,7 +11,7 @@ interface M1 {
 }
 interface M1Sub : M1
 
-open class A {
+open define A {
     open protected fun baz(a: Derived): M1 = TODO()
     open protected fun foo(a: Derived): M1 = TODO()
 
@@ -46,7 +46,7 @@ open class A {
     }
 }
 
-class B : A() {
+define B : A() {
     override fun baz(a: Derived): M1Sub = TODO()
     public fun baz(a: Base): String = TODO()
 

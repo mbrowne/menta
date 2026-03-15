@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-abstract class Bar<T>
+abstract define Bar<T>
 
-class Foo<T> : Bar<T>(), Comparable<Foo<*>> {
+define Foo<T> : Bar<T>(), Comparable<Foo<*>> {
     override fun compareTo(other: Foo<*>): Int = TODO()
 }
 

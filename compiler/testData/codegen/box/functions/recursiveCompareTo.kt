@@ -1,4 +1,4 @@
-class C
+define C
 
 operator fun C.compareTo(o: C) : Int {
     if (this == o) return 0

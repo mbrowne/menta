@@ -19,7 +19,7 @@ fun box() : String {
     return "OK"
 }
 
-class Luhny() {
+define Luhny() {
     val buffer = LinkedList<Char>()
     val digits = LinkedList<Int>()
 

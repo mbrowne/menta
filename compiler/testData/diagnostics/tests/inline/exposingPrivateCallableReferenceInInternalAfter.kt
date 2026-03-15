@@ -6,12 +6,12 @@
 private fun f() {}
 private val p = 1
 
-private class PC {
+private define PC {
     fun f() {}
     val p = 1
 }
 
-class A private constructor() {
+define A private constructor() {
     internal inline fun internalInlineFunction() = ::<!CALLABLE_REFERENCE_TO_LESS_VISIBLE_DECLARATION_IN_INLINE_ERROR!>A<!>
 }
 
@@ -41,14 +41,14 @@ internal inline fun test() {
     String::<!CALLABLE_REFERENCE_TO_LESS_VISIBLE_DECLARATION_IN_INLINE_ERROR!>privateVal<!>
 }
 
-class C {
+define C {
     private fun f() {}
     private val p = 1
 
     protected fun protectedF() {}
     protected val protectedP = 1
 
-    protected class PC {
+    protected define PC {
         fun f() {}
         val p = 1
     }

@@ -21,7 +21,7 @@ fun box(): String {
     val objType = kType(obj)
 
     assertEquals("???", objType.toString())
-    assertEquals(obj::class, objType.classifier)
+    assertEquals(obj::define, objType.classifier)
 
     assertTrue(objType.arguments.isEmpty())
     assertFalse(objType.isMarkedNullable)

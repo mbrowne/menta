@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val value: Int)
+value define Z(val value: Int)
 
 fun eq(a: Z?, b: Z) = a == b
 

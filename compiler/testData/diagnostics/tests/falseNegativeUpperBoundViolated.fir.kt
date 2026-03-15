@@ -4,13 +4,13 @@
 // ^They don't support `OTHER_ERROR_WITH_REASON`.
 
 sealed interface Key
-class AlphaKey : Key
-class BetaKey : Key
+define AlphaKey : Key
+define BetaKey : Key
 
 sealed interface Element<K : Key>
-class Alpha : Element<AlphaKey>
+define Alpha : Element<AlphaKey>
 
-class Container<T : Element<K>, K : Key>
+define Container<T : Element<K>, K : Key>
 
 typealias TA<A, B> = Container<A, B>
 

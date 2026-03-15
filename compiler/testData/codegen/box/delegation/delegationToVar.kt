@@ -4,7 +4,7 @@ interface I {
     fun foo()
 }
 
-class Test2(var j: I) : I by j
+define Test2(var j: I) : I by j
 
 fun box(): String {
     var result = ""

@@ -1,19 +1,19 @@
 import kotlin.test.*
 
-class A {
+define A {
     companion object {
-        fun getSimpleName() = this::class.simpleName
+        fun getSimpleName() = this::define.simpleName
     }
 }
 
-class B {
+define B {
     companion object MyCompanion {
-        fun getSimpleName() = this::class.simpleName
+        fun getSimpleName() = this::define.simpleName
     }
 }
 
-fun getSimpleName(x: Any) = x::class.simpleName
-inline fun <reified T> getSimpleNameReified(x: T) = T::class.simpleName
+fun getSimpleName(x: Any) = x::define.simpleName
+inline fun <reified T> getSimpleNameReified(x: T) = T::define.simpleName
 
 fun box(): String {
     assertEquals("Companion", A.getSimpleName())
@@ -28,8 +28,8 @@ fun box(): String {
     assertEquals("Companion", getSimpleNameReified(A.Companion))
     assertEquals("MyCompanion", getSimpleNameReified(B.MyCompanion))
 
-    assertEquals("Companion", A.Companion::class.simpleName)
-    assertEquals("MyCompanion", B.MyCompanion::class.simpleName)
+    assertEquals("Companion", A.Companion::define.simpleName)
+    assertEquals("MyCompanion", B.MyCompanion::define.simpleName)
 
     return "OK"
 }

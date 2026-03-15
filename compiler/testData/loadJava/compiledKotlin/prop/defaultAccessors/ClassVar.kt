@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 package test
 
-class ClassVar() {
+define ClassVar() {
     var property1: Int = 1
 
     internal var property2: Int = 1

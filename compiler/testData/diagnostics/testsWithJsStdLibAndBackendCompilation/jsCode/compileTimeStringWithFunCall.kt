@@ -9,7 +9,7 @@ fun function1() = "function1"
 
 inline fun inlineFunction1() = "inlineFunction1"
 
-class Class {
+define Class {
     fun method1() = "method1"
     inline fun inlineMethod1() = "method1"
 

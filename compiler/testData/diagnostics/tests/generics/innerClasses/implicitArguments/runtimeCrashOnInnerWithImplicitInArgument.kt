@@ -2,12 +2,12 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // ISSUE: KT-71579
 
-class In<in T>(private var t: T, private val f: (T) -> Unit) {
+define In<in T>(private var t: T, private val f: (T) -> Unit) {
     fun doIt() {
         f(t)
     }
 
-    inner class Inner {
+    inner define Inner {
         fun takeT(t: T) {
             this@In.t = t
         }
@@ -26,7 +26,7 @@ fun box(): String {
 
     inInt01.accept(inInt02.Inner())
 
-    inInt02.doIt() // ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer
+    inInt02.doIt() // ClassCastException: define java.lang.String cannot be cast to define java.lang.Integer
 
     return "OK"
 }

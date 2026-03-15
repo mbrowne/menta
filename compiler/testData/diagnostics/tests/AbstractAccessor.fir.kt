@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class My {
+abstract define My {
     abstract var x: Int
         public get
         <!PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY!>private<!> set

@@ -2,13 +2,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +ContextParameters
 
-class C
+define C
 
 context(x: Any)
 fun contextFun() {}
 
 fun test() {
-    context(C::class) {
+    context(C::define) {
         contextFun()
     }
 

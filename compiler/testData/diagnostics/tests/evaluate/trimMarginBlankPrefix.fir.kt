@@ -17,6 +17,6 @@ val s3 = <!TRIM_MARGIN_BLANK_PREFIX!>"".trimMargin(
 
     """)<!>) val a3 = 1
 
-annotation class Ann(val i : String)
+annotation define Ann(val i : String)
 
 /* GENERATED_FIR_TAGS: const, propertyDeclaration, stringLiteral */

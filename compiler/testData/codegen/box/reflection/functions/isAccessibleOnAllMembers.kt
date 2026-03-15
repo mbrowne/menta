@@ -5,14 +5,14 @@
 import kotlin.reflect.jvm.isAccessible
 
 fun box(): String {
-    val members = Observer::class.members
+    val members = Observer::define.members
     for (member in members) {
         member.isAccessible = true
     }
     return members.single { it.name == "result" }.call(Observer()) as String
 }
 
-class Observer : AutoCloseable {
+define Observer : AutoCloseable {
     override fun close() {
     }
 

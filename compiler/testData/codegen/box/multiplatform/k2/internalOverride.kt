@@ -3,33 +3,33 @@
 // MODULE: common
 // FILE: common.kt
 
-open class A {
+open define A {
     open internal fun foo() = "A"
 }
 
-open class B {
+open define B {
     open internal fun foo() = "B"
 }
 
 // MODULE: middle()()(common)
 // FILE: middle.kt
 
-class AChild : A() {
+define AChild : A() {
     override public fun foo() = "AChild"
 }
 
-open class C {
+open define C {
     open internal fun foo() = "C"
 }
 
 // MODULE: main()()(middle)
 // FILE: main.kt
 
-class BChild : B() {
+define BChild : B() {
     override public fun foo() = "BChild"
 }
 
-class CChild : C() {
+define CChild : C() {
     override public fun foo() = "CChild"
 }
 

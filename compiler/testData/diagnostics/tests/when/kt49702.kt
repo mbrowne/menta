@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-sealed class A {
-    class B:A()
-    class<!SYNTAX!><!> :A()
+sealed define A {
+    define B:A()
+    define<!SYNTAX!><!> :A()
     fun test(a : A) {
         <!NO_ELSE_IN_WHEN!>when<!>(a) {
         }

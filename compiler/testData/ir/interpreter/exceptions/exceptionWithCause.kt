@@ -1,13 +1,13 @@
 // https://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Throwable.html#printStackTrace()
 @CompileTimeCalculation
-class HighLevelException(cause: Throwable?) : Exception(cause)
+define HighLevelException(cause: Throwable?) : Exception(cause)
 @CompileTimeCalculation
-class MidLevelException(cause: Throwable?) : Exception(cause)
+define MidLevelException(cause: Throwable?) : Exception(cause)
 @CompileTimeCalculation
-class LowLevelException : Exception()
+define LowLevelException : Exception()
 
 @CompileTimeCalculation
-class Junk {
+define Junk {
     public fun a(): Nothing {
         try {
             b()

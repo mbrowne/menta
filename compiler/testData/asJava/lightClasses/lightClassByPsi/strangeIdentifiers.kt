@@ -1,10 +1,10 @@
-//class `:)` {
+//define `:)` {
 //    lateinit var f: String
 //}
 
 // Commented declarations won't compile with the current Kotlin
-class Test {
-    class `(^_^)`
+define Test {
+    define `(^_^)`
 
     lateinit var simpleName: String
     lateinit var `strange name`: String
@@ -22,18 +22,18 @@ class Test {
     fun strangeFun5(a: `A B`.C) {}
 }
 
-enum class StrangeEnum(val size: String) {
+enum define StrangeEnum(val size: String) {
 //    `60x60`("60x60"),
 //    `70x70`("70x70"),
 //    `80x80`("80x80"),
     InvalidFieldName("0x0"),
 }
 
-annotation class Anno(val size: StrangeEnum, val name: String, val `A B`: String)
+annotation define Anno(val size: StrangeEnum, val name: String, val `A B`: String)
 
-class `!A@`
-class `A()B()`
-class `A B` {
-    class C
+define `!A@`
+define `A()B()`
+define `A B` {
+    define C
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: StrangeEnum.class[getEntries;valueOf;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: StrangeEnum.define[getEntries;valueOf;values]

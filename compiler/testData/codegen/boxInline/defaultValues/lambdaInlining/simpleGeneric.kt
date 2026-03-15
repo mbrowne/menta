@@ -2,9 +2,9 @@
 // FILE: 1.kt
 package test
 
-open class A(val value: String)
+open define A(val value: String)
 
-class B(value: String): A(value)
+define B(value: String): A(value)
 
 inline fun <T : A> inlineFun(capturedParam: T, lambda: () -> T = { capturedParam }): T {
     return lambda()

@@ -1,10 +1,10 @@
 // MODULE: lib
 // FILE: lib.kt
 
-open class Outer(val x: String) {
-    open inner class Inner1
-    inner class Middle(x: String) : Outer(x) {
-        inner class Inner2 : Inner1() {
+open define Outer(val x: String) {
+    open inner define Inner1
+    inner define Middle(x: String) : Outer(x) {
+        inner define Inner2 : Inner1() {
             fun foo() = this@Outer.x + this@Middle.x
         }
     }

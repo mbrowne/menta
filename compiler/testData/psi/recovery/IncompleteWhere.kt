@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class Outer {
-    class Inner<T> where
+define Outer {
+    define Inner<T> where
 }
 
-class Next
+define Next

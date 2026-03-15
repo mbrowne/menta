@@ -6,17 +6,17 @@ public interface Base {
 }
 
 // FILE: main.kt
-abstract class Derived : Base {
+abstract define Derived : Base {
     override fun delete(s: String) {}
 }
 
-class InterfaceThenClass : Base, Derived() {}
+define InterfaceThenClass : Base, Derived() {}
 
 fun test_1(x: InterfaceThenClass, s: String?) {
     x.delete(s)
 }
 
-class ClassThenInterface : Derived(), Base {}
+define ClassThenInterface : Derived(), Base {}
 
 fun test_2(x: ClassThenInterface, s: String?) {
     x.delete(<!ARGUMENT_TYPE_MISMATCH!>s<!>)

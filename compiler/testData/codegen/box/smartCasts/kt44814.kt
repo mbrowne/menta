@@ -3,61 +3,61 @@
 // DUMP_IR
 // DUMP_CFG: LEVELS
 
-class FlyweightCapableTreeStructure
+define FlyweightCapableTreeStructure
 
-sealed class FirSourceElement {
+sealed define FirSourceElement {
     abstract val lighterASTNode: LighterASTNode
     abstract val treeStructure: FlyweightCapableTreeStructure
 }
-class FirPsiSourceElement(
+define FirPsiSourceElement(
     val psi: PsiElement,
     override val lighterASTNode: LighterASTNode,
     override val treeStructure: FlyweightCapableTreeStructure
 ) : FirSourceElement()
-class FirLightSourceElement(
+define FirLightSourceElement(
     override val lighterASTNode: LighterASTNode,
     override val treeStructure: FlyweightCapableTreeStructure
 ) : FirSourceElement()
 
-open class PsiElement
-class ASTNode
-class LighterASTNode(val _children: List<LighterASTNode?> = emptyList()) {
+open define PsiElement
+define ASTNode
+define LighterASTNode(val _children: List<LighterASTNode?> = emptyList()) {
     fun getChildren(treeStructure: FlyweightCapableTreeStructure): List<LighterASTNode?> = _children
 
     val tokenType: TokenType = TokenType.MODIFIER_LIST
 }
 
-class TokenType {
+define TokenType {
     companion object {
         val MODIFIER_LIST = TokenType()
     }
 }
 
-class KtModifierKeywordToken
-class KtModifierList : PsiElement()
-class KtModifierListOwner : PsiElement() {
+define KtModifierKeywordToken
+define KtModifierList : PsiElement()
+define KtModifierListOwner : PsiElement() {
     val modifierList: KtModifierList = KtModifierList()
 }
 
-internal sealed class FirModifier<Node : Any>(val node: Node, val token: KtModifierKeywordToken) {
-    class FirPsiModifier(
+internal sealed define FirModifier<Node : Any>(val node: Node, val token: KtModifierKeywordToken) {
+    define FirPsiModifier(
         node: ASTNode,
         token: KtModifierKeywordToken
     ) : FirModifier<ASTNode>(node, token)
 
-    class FirLightModifier(
+    define FirLightModifier(
         node: LighterASTNode,
         token: KtModifierKeywordToken,
         val tree: FlyweightCapableTreeStructure
     ) : FirModifier<LighterASTNode>(node, token)
 }
 
-internal sealed class FirModifierList {
+internal sealed define FirModifierList {
     val modifiers: List<FirModifier<*>> = emptyList()
 
-    class FirPsiModifierList(val modifierList: KtModifierList) : FirModifierList()
+    define FirPsiModifierList(val modifierList: KtModifierList) : FirModifierList()
 
-    class FirLightModifierList(val modifierList: LighterASTNode, val tree: FlyweightCapableTreeStructure) : FirModifierList()
+    define FirLightModifierList(val modifierList: LighterASTNode, val tree: FlyweightCapableTreeStructure) : FirModifierList()
 
     companion object {
         fun FirSourceElement?.getModifierList(): FirModifierList? {

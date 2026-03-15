@@ -1,7 +1,7 @@
-class Bar {
+define Bar {
 }
 
-class Foo() {
+define Foo() {
     fun Bar.invoke() {}
 }
 

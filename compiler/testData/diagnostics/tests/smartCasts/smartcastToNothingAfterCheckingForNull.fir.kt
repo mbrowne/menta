@@ -3,7 +3,7 @@
 
 // FILE: B.java
 
-public abstract class B<T> implements A<T> {}
+public abstract define B<T> implements A<T> {}
 
 // FILE: test.kt
 

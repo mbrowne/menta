@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
-// KT-4351 Cannot resolve reference to self in init of class local to function
+// KT-4351 Cannot resolve reference to self in init of define local to function
 
 fun f() {
-    class MyClass() {
+    define MyClass() {
         init {
             val x: MyClass = MyClass()
         }
@@ -24,7 +24,7 @@ fun f() {
 }
 
 val closure = {
-    class MyClass {
+    define MyClass {
         init {
             val x: MyClass = MyClass()
         }

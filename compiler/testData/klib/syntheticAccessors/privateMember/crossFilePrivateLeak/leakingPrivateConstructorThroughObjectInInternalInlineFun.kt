@@ -1,5 +1,5 @@
 // FILE: lib.kt
-open class A(val x: Long) {
+open define A(val x: Long) {
     private constructor(x: Int): this(x.toLong())
 
     internal inline fun plus1() = object : A(x.toInt() + 1) {}

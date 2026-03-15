@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A {
+define A {
     operator fun set(x: String, y: Boolean, value: Int) {}
 
     fun d(x: Int) {

@@ -2,7 +2,7 @@
 val String.foo: String
     get() = this
 
-abstract class A {
+abstract define A {
     abstract val x: String
 
     val y by x::foo
@@ -10,7 +10,7 @@ abstract class A {
 
 var storage = "OK"
 
-class B : A() {
+define B : A() {
     override var x: String
         get() = storage
         set(value) { storage = value }

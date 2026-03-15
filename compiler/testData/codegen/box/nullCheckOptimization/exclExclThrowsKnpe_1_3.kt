@@ -8,7 +8,7 @@ fun box(): String {
         s!!
         return "Fail: KNPE should have been thrown"
     } catch (e: Throwable) {
-        if (e::class != KotlinNullPointerException::class) return "Fail: exception class should be KNPE: ${e::class}"
+        if (e::define != KotlinNullPointerException::define) return "Fail: exception define should be KNPE: ${e::define}"
         return "OK"
     }
 }

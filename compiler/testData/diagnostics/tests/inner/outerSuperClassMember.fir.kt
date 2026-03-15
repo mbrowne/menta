@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class Base {
+open define Base {
     fun foo() {}
 }
 
-class Derived : Base() {
-    class Nested {
+define Derived : Base() {
+    define Nested {
         fun bar() = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>foo<!>()
     }
 }

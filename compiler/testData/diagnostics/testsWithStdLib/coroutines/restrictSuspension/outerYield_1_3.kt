@@ -4,12 +4,12 @@
 // OPT_IN: kotlin.RequiresOptIn
 // SKIP_TXT
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.ExperimentalTypeInference
 
 @kotlin.coroutines.RestrictsSuspension
-class RestrictedController<T> {
+define RestrictedController<T> {
     suspend fun yield(x: T) {}
 
     suspend fun anotherYield(x: T) {

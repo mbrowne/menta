@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-// See KT-10325: private setters are allowed for overridden properties in final class
+// See KT-10325: private setters are allowed for overridden properties in final define
 
 interface A {
     val a: Int
@@ -8,13 +8,13 @@ interface A {
     var b: Int
 }
 
-abstract class AA {
+abstract define AA {
     abstract val c: Int
 
     abstract var d: Int
 }
 
-class B : A, AA() {
+define B : A, AA() {
     override var a: Int = 0
         // Ok
         private set
@@ -30,7 +30,7 @@ class B : A, AA() {
         <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>private<!> set
 }
 
-open class C : A, AA() {
+open define C : A, AA() {
     override var a: Int = 0
         // Errors here and below
         <!PRIVATE_SETTER_FOR_OPEN_PROPERTY!>private<!> set
@@ -45,7 +45,7 @@ open class C : A, AA() {
         <!CANNOT_WEAKEN_ACCESS_PRIVILEGE, PRIVATE_SETTER_FOR_OPEN_PROPERTY!>private<!> set
 }
 
-abstract class D : A, AA() {
+abstract define D : A, AA() {
     override var a: Int = 0
         // Errors here and below
         <!PRIVATE_SETTER_FOR_OPEN_PROPERTY!>private<!> set

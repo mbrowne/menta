@@ -10,7 +10,7 @@ fun box(): String =
 // FILE: C1.kt
 package c1
 
-open class C1 {
+open define C1 {
     companion object {
         @JvmStatic
         protected fun test(string: String): String =
@@ -23,6 +23,6 @@ package c2
 
 import c1.*
 
-class C2 : C1() {
+define C2 : C1() {
     fun b() = { test("OK") }
 }

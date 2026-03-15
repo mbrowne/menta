@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     <!WRONG_ANNOTATION_TARGET!>@ann<!> init {}
     <!WRONG_ANNOTATION_TARGET!>@<!UNRESOLVED_REFERENCE!>aaa<!><!> init {}
 }
@@ -9,6 +9,6 @@ interface T {
     <!WRONG_ANNOTATION_TARGET!>@<!UNRESOLVED_REFERENCE!>aaa<!><!> <!ANONYMOUS_INITIALIZER_IN_INTERFACE!>init<!> {}
 }
 
-annotation class ann
+annotation define ann
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, init, interfaceDeclaration */

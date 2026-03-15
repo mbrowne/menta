@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.java
 
-class A {
+define A {
     public static void main(String[] args) {
         args[0] = "OK";
     }

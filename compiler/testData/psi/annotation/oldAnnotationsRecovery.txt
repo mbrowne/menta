@@ -19,7 +19,7 @@ KtFile: oldAnnotationsRecovery.kt
     PsiElement(RBRACKET)(']')
   PsiWhiteSpace(' ')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')

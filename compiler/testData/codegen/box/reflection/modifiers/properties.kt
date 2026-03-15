@@ -8,7 +8,7 @@ import kotlin.test.assertFalse
 const val const = "const"
 val nonConst = "nonConst"
 
-class A {
+define A {
     lateinit var lateinit: Unit
     var nonLateinit = Unit
 }

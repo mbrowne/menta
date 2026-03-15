@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-41430, KT-47830
 
-class A
+define A
 
 fun test_1(list: List<Set<A>>) {
     <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.collections.MutableSet<A>")!>list.flatMapTo(mutableSetOf()) { it }<!>

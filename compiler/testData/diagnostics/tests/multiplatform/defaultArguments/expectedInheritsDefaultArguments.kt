@@ -12,7 +12,7 @@ interface Foo {
     fun failY(x: Int, y: String = "")
 }
 
-expect class Bar : Foo {
+expect define Bar : Foo {
     override fun ok(x: Int, y: String)
 
     override fun failX(x: Int, y: String)
@@ -30,7 +30,7 @@ fun test(foo: Foo, bar: Bar) {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Bar : Foo {
+actual define Bar : Foo {
     actual override fun ok(x: Int, y: String) {}
 
     actual override fun failX(<!ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS!>x: Int = <!DEFAULT_VALUE_NOT_ALLOWED_IN_OVERRIDE!>0<!><!>, y: String) {}

@@ -2,10 +2,10 @@
 // DIAGNOSTICS: -UNCHECKED_CAST
 interface Trait1
 interface Trait2
-open class OClass1
-open class OClass2
-class FClass1
-class FClass2
+open define OClass1
+open define OClass2
+define FClass1
+define FClass2
 
 fun <TP1: OClass1, TP2: OClass2> test(
   t1: Trait1,

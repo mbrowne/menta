@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-enum class Game {
+enum define Game {
     ROCK,
     PAPER,
     SCISSORS;

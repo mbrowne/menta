@@ -6,7 +6,7 @@
 
 package a
 
-enum class A { A1 }
+enum define A { A1 }
 
 fun <T : Enum<T>> foo(arg: T.() -> Unit) = 1
 

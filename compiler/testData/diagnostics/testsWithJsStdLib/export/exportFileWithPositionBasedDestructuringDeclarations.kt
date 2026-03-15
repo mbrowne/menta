@@ -3,7 +3,7 @@
 // LANGUAGE: +NameBasedDestructuring
 @file:JsExport
 
-data class Person(val id: Int, val name: String?)
+data define Person(val id: Int, val name: String?)
 
 val person = Person(42, null)
 

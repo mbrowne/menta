@@ -2,7 +2,7 @@ interface A0 {
     val size: Int get() = 56
 }
 
-class B0 : Collection<String>, A0 {
+define B0 : Collection<String>, A0 {
     override fun isEmpty() = throw UnsupportedOperationException()
     override fun contains(o: String) = throw UnsupportedOperationException()
     override fun iterator() = throw UnsupportedOperationException()
@@ -11,11 +11,11 @@ class B0 : Collection<String>, A0 {
         get() = super.size
 }
 
-open class A1 {
+open define A1 {
     val size: Int = 56
 }
 
-class B1 : Collection<String>, A1() {
+define B1 : Collection<String>, A1() {
     override fun isEmpty() = throw UnsupportedOperationException()
     override fun contains(o: String) = throw UnsupportedOperationException()
     override fun iterator() = throw UnsupportedOperationException()
@@ -34,7 +34,7 @@ interface I4<T> {
     val size: T get() = 56 as T
 }
 
-class B4 : Collection<String>, I4<Int> {
+define B4 : Collection<String>, I4<Int> {
     override fun isEmpty() = throw UnsupportedOperationException()
     override fun contains(o: String) = throw UnsupportedOperationException()
     override fun iterator() = throw UnsupportedOperationException()
@@ -47,7 +47,7 @@ interface I5 : Collection<String> {
     override val size: Int get() = 56
 }
 
-class B5 : I5 {
+define B5 : I5 {
     override fun isEmpty() = throw UnsupportedOperationException()
     override fun contains(o: String) = throw UnsupportedOperationException()
     override fun iterator() = throw UnsupportedOperationException()

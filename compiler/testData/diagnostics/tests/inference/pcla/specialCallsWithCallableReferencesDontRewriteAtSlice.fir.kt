@@ -24,16 +24,16 @@ var foo4: Float
 val <K> FlowCollector<K>.bar5: K get() = null as K
 val <K> FlowCollector<K>.foo5: K get() = null as K
 
-class Foo6
+define Foo6
 
-class Foo7<T>
+define Foo7<T>
 fun foo7() = null as Foo7<Int>
 
 interface FlowCollector<in T> {}
 
 fun <L> flow(block: suspend FlowCollector<L>.() -> Unit) = Flow(block)
 
-class Flow<out R>(private val block: suspend FlowCollector<R>.() -> Unit)
+define Flow<out R>(private val block: suspend FlowCollector<R>.() -> Unit)
 
 fun poll71(): Flow<String> {
     return flow {

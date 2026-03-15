@@ -7,7 +7,7 @@
 // FILE: common.kt
 expect sealed interface Base
 
-class A : Base
+define A : Base
 object B : Base
 
 fun testCommon(base: Base) {

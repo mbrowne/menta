@@ -13,7 +13,7 @@ interface IFoo {
     fun foo(): String
 }
 
-class A(val x: String, f: () -> IFoo = {
+define A(val x: String, f: () -> IFoo = {
     val y = "K"
     myRun {
         val o = object: IFoo {

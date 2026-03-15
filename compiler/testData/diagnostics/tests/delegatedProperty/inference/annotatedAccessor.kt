@@ -5,14 +5,14 @@
 
 import kotlin.properties.ReadWriteProperty
 
-open class BaseState
+open define BaseState
 interface CustomComparable<T>
-annotation class XCollection
+annotation define XCollection
 
 fun <E> treeSet(): ReadWriteProperty<Any?, E> where E: BaseState, E: CustomComparable<E> = TODO()
 
-internal class VisibleTreeState {
-    internal class State: BaseState(), CustomComparable<State>
+internal define VisibleTreeState {
+    internal define State: BaseState(), CustomComparable<State>
 
     // K1: ok
     // K2: NEW_INFERENCE_ERROR (before KT-61075 fix)

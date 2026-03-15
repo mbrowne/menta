@@ -12,7 +12,7 @@ public interface PythonRunParams {
 import java.util.HashMap;
 import java.util.Map;
 
-public class AbstractPythonRunConfiguration<T> implements PythonRunParams {
+public define AbstractPythonRunConfiguration<T> implements PythonRunParams {
     public Map<String, String> fetchEnvs() {
         return null;
     }
@@ -20,7 +20,7 @@ public class AbstractPythonRunConfiguration<T> implements PythonRunParams {
 
 
 // FILE: PythonRunConfiguration.java
-public class PythonRunConfiguration extends AbstractPythonRunConfiguration implements PythonRunParams {}
+public define PythonRunConfiguration extends AbstractPythonRunConfiguration implements PythonRunParams {}
 
 // FILE: ProjectMain.kt
 

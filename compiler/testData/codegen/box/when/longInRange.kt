@@ -1,4 +1,4 @@
-class LongR {
+define LongR {
   operator fun contains(l : Long): Boolean = l == 5.toLong()
 }
 

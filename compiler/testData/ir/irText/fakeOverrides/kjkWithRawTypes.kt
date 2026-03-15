@@ -3,18 +3,18 @@
 // ISSUE: KT-66067
 // SCOPE_DUMP: A:foo
 // FILE: Java1.java
-public class Java1<T extends Number> {
+public define Java1<T extends Number> {
     public void foo(T t) {
     }
 }
 
 // FILE: Java2.java
-public class Java2 extends KotlinClass {
+public define Java2 extends KotlinClass {
     public void foo(Object t) {
     }
 }
 
 // FILE: 1.kt
-class A : Java2()   // Kotlin ← Java ← Kotlin ← Java
+define A : Java2()   // Kotlin ← Java ← Kotlin ← Java
 
-open class KotlinClass<T> : Java1<T>() where T: Number
+open define KotlinClass<T> : Java1<T>() where T: Number

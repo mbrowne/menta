@@ -1,14 +1,14 @@
-enum class Direction {
+enum define Direction {
     NORTH,
     SOUTH(val x : Int) {
         fun again() : String {
             return "Hello"
         }
 
-        class Hello
+        define Hello
     },
     WEST {
-        class Some {
+        define Some {
             fun test() : Int {
                 return 12 + 14
             }

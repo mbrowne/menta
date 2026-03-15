@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: Test.java
-public class Test {
+public define Test {
     public static int i1 = Integer.MAX_VALUE;
     public static final int i2 = Integer.MAX_VALUE;
     public final int i3 = Integer.MAX_VALUE;

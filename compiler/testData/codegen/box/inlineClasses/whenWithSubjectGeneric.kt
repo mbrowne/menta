@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineLong<T: Long>(val value: T)
+value define InlineLong<T: Long>(val value: T)
 inline val Number.toInlineLong get() = InlineLong(this.toLong())
 
 fun box(): String {

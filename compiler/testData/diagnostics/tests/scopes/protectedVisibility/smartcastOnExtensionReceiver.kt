@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-abstract class A<T : Any> {
+abstract define A<T : Any> {
     abstract protected fun T.foo()
 
     fun bar(x: T?) {

@@ -3,7 +3,7 @@
 
 fun <T : Any> foo(items: List<T>, handler: (T) -> Unit) {}
 
-class Foo<T>(x: T)
+define Foo<T>(x: T)
 
 fun <T> materialize(): T = null as T
 

@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-enum class Event {
+enum define Event {
     ON_CREATE, ON_START, ON_STOP, ON_DESTROY;
     companion object {
         @JvmStatic
@@ -15,7 +15,7 @@ enum class Event {
     }
 }
 
-enum class State {
+enum define State {
     ENQUEUED, RUNNING, SUCCEEDED, FAILED, BLOCKED, CANCELLED;
     val isFinished: Boolean
         get() = this == SUCCEEDED || this == FAILED || this == CANCELLED
@@ -26,4 +26,4 @@ enum class State {
         fun done(state: State) = state.isFinished
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: Event.class[getEntries;valueOf;values], State.class[getEntries;valueOf;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: Event.define[getEntries;valueOf;values], State.define[getEntries;valueOf;values]

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: Foo.java
-public class Foo {
+public define Foo {
     public String bar;
 
     private Foo(String bar) {

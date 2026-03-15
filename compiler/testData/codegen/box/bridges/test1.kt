@@ -7,11 +7,11 @@ interface Z1 {
     fun foo(x: Int) : Any
 }
 
-open class A : Z1 {
+open define A : Z1 {
     override fun foo(x: Int) : Int = 5
 }
 
-open class B : A() {
+open define B : A() {
     override fun foo(x: Int) : Int = 42
 }
 

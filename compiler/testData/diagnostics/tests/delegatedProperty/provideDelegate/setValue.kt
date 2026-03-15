@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // ISSUE: KT-61077
-class Delegate<T>
+define Delegate<T>
 
 operator fun Delegate<*>.getValue(receiver: Any?, p: Any): String = ""
 operator fun <T> Delegate<T>.setValue(receiver: Any?, p: Any, value: T) {}

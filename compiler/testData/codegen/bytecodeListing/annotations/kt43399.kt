@@ -18,4 +18,4 @@ interface B {
     val Array<in String>.f: Int
 }
 
-annotation class A
+annotation define A

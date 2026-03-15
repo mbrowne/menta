@@ -2,11 +2,11 @@
 
 import kotlin.collections.HashMap
 
-class Inv1<T>
+define Inv1<T>
 
-class Inv2<K, V>
+define Inv2<K, V>
 
-class Something {
+define Something {
     val guilds = Inv2<Int, Inv1<String>>()
 
     fun test() {

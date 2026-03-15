@@ -10,7 +10,7 @@ interface A {
 }
 
 @CompileTimeCalculation
-class B : A {}
+define B : A {}
 
 const val sum1 = <!EVALUATED: `6`!>sum()<!>
 const val sum2 = <!EVALUATED: `1`!>sum(b = -3)<!>
@@ -26,10 +26,10 @@ const val sumInInterfaceDefault3 = <!EVALUATED: `-1`!>B().foo(x = 1, y = 2, z = 
 
 const val someConstProp = 0
 @CompileTimeCalculation
-class Outer {
+define Outer {
     val prop = -1
 
-    inner class Inner {
+    inner define Inner {
         val innerProp = -2
 
         fun withInner(x: Int = prop) = x
@@ -52,12 +52,12 @@ interface I<T> {
     fun foo(x: T = prop): T
 }
 
-open class C<T> {
+open define C<T> {
     open fun foo(x: T) = x
 }
 
 @CompileTimeCalculation
-class D(override val prop: Int): C<Int>(), I<Int> {}
+define D(override val prop: Int): C<Int>(), I<Int> {}
 
 const val fooB1 = <!EVALUATED: `10`!>D(10).foo()<!>
 const val fooB2 = <!EVALUATED: `-1`!>D(10).foo(-1)<!>

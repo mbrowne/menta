@@ -441,9 +441,7 @@ internal fun buildDecompiledText(fileStub: KotlinFileStubImpl): String = PrettyP
                 append(COMPILED_DEFAULT_INITIALIZER)
             }
 
-            if (!property.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
-                append(" $DECOMPILED_CODE_COMMENT")
-            }
+            // Abstract modifier check removed: abstract modifier no longer supported
 
             withIndent {
                 printCollectionIfNotEmpty(property.accessors, prefix = "\n", separator = "\n") {

@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class VeryBase
+open define VeryBase
 
-open class Base : VeryBase()
+open define Base : VeryBase()
 
-class Derived : Base() {
+define Derived : Base() {
     fun original(): VeryBase = this
 }
 
-class Another : Base()
+define Another : Base()
 
 fun foo(d: Derived, a: Another?): Base? {
     // d is compared with d.original(): VeryBase but should retain its own type

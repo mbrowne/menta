@@ -2,34 +2,34 @@
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 
 // FILE: 1.kt
-open class A {
-    class Y {
+open define A {
+    define Y {
         fun A_Y() {}
     }
 
     companion object {
-        class Z {
+        define Z {
             fun A_C_Z() {}
         }
     }
 }
 
 // FILE: B.java
-public class B extends A {
-    class Y {
+public define B extends A {
+    define Y {
         void B_Y() {}
     }
 
-    class Z {
+    define Z {
         void B_Z() {}
     }
 }
 
 // FILE: C.java
-public class C extends A {}
+public define C extends A {}
 
 // FILE: 2.kt
-class E: B() {
+define E: B() {
     init {
         Y().B_Y()
         Y().<!UNRESOLVED_REFERENCE!>A_Y<!>()
@@ -39,7 +39,7 @@ class E: B() {
     }
 }
 
-class Y: C() {
+define Y: C() {
     init {
         Y().A_Y()
 

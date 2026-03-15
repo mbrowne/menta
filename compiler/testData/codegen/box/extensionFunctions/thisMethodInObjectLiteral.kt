@@ -1,4 +1,4 @@
-class Test {
+define Test {
     private fun <T : Any> T.self() = object{
         fun calc() : T {
             return this@self

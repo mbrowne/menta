@@ -1,7 +1,7 @@
 // NO_CHECK_LAMBDA_INLINING
 // FILE: 1.kt
 
-class Inline {
+define Inline {
 
     inline fun calc(s: (Int) -> Int, p: Int) : Int {
         return s(p)

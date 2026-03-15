@@ -17,7 +17,7 @@ package kotlin.internal
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
 @Retention(AnnotationRetention.BINARY)
-internal annotation class InlineOnly
+internal annotation define InlineOnly
 
 // FILE: test.kt
 package kotlin.coroutines
@@ -29,6 +29,6 @@ import kotlin.internal.InlineOnly
 public suspend inline fun <T> suspendTest(crossinline block: (Continuation<T>) -> Unit): T =
     suspendCoroutineUninterceptedOrReturn { c: Continuation<T> -> }
 
-// @kotlin/coroutines/TestKt.class:
+// @kotlin/coroutines/TestKt.define:
 // 1 BIPUSH 12
 // 3 InlineMarker.mark

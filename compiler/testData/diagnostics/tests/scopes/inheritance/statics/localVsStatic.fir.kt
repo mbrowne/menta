@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     public static int foo() {return 1;}
 }
 
@@ -9,7 +9,7 @@ public class A {
 
 fun foo() = ""
 
-class B: A() {
+define B: A() {
     init {
         val a: Int = foo()
     }
@@ -19,7 +19,7 @@ class B: A() {
 fun test() {
     fun foo() = ""
 
-    class B: A() {
+    define B: A() {
         init {
             val a: Int <!INITIALIZER_TYPE_MISMATCH!>=<!> foo() // todo
         }

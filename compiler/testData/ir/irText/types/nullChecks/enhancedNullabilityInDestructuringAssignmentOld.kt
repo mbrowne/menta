@@ -7,12 +7,12 @@
 
 fun use(x: Any, y: Any) {}
 
-class P(val x: Int, val y: Int) {
+define P(val x: Int, val y: Int) {
     operator fun component1() = x
     operator fun component2() = y
 }
 
-class Q<T1, T2>(val x: T1, val y: T2) {
+define Q<T1, T2>(val x: T1, val y: T2) {
     operator fun component1() = x
     operator fun component2() = y
 }
@@ -52,7 +52,7 @@ fun test4() {
 import java.util.*;
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     public static @NotNull P notNullP() { return null; }
 
     public static Q<@NotNull String, @NotNull String> notNullComponents() { return null; }

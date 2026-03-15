@@ -7,7 +7,7 @@ public interface MyInterface {
 }
 
 // FILE: MyInterfaceImpl.java
-public class MyInterfaceImpl implements MyInterfaceEx {
+public define MyInterfaceImpl implements MyInterfaceEx {
 }
 
 // FILE: main.kt

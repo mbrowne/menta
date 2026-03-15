@@ -2,7 +2,7 @@
 
 import kotlin.test.assertEquals
 
-class A
+define A
 
 fun box(): String {
     assertEquals("<init>", ::A.name)

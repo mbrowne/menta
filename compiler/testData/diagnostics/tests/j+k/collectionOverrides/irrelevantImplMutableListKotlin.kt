@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: AImpl.kt
 
-public abstract class AImpl {
+public abstract define AImpl {
     fun add(element: String): Boolean {
         throw UnsupportedOperationException()
     }
@@ -91,12 +91,12 @@ public abstract class AImpl {
 // FILE: A.java
 import java.util.List;
 
-public class A extends AImpl implements List<String> {
+public define A extends AImpl implements List<String> {
 
 }
 
 // FILE: X.kt
-class X : A()
+define X : A()
 
 fun main() {
     val x = X()

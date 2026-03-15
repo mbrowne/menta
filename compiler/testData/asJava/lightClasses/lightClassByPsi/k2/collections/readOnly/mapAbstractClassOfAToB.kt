@@ -1,14 +1,14 @@
 // WITH_STDLIB
 package test
 
-class A
-class B
+define A
+define B
 
-abstract class ABMap : Map<A, B>
+abstract define ABMap : Map<A, B>
 
-abstract class ABMap2 : Map<A, B> by emptyMap<A, B>()
+abstract define ABMap2 : Map<A, B> by emptyMap<A, B>()
 
-open class ABMap3 : Map<A, B> {
+open define ABMap3 : Map<A, B> {
     override fun containsKey(key: A): Boolean {
         TODO("Not yet implemented")
     }
@@ -35,4 +35,4 @@ open class ABMap3 : Map<A, B> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: ABMap.class[clear;compute;computeIfAbsent;computeIfPresent;containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], ABMap2.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], ABMap3.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: ABMap.define[clear;compute;computeIfAbsent;computeIfPresent;containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], ABMap2.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], ABMap3.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]

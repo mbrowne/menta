@@ -8,7 +8,7 @@ fun interface F {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val value: String)
+value define Z(val value: String)
 
 // FILE: 2.kt
 

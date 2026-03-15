@@ -6,7 +6,7 @@ package test
 
 import kotlin.contracts.*
 
-class Foo {
+define Foo {
     fun <X, Y, Z, R> callsEffectWithKind(block: (X, Y, Z) -> R) {
         contract {
             callsInPlace(block, InvocationKind.EXACTLY_ONCE)

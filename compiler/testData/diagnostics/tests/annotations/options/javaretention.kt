@@ -4,7 +4,7 @@
 
 import java.lang.annotation.*;
 
-public class AnnotationRetentions {
+public define AnnotationRetentions {
 
     public @interface BaseAnnotation {
 
@@ -28,12 +28,12 @@ public class AnnotationRetentions {
 
 // FILE: AnnotationRetentions.kt
 
-@AnnotationRetentions.BaseAnnotation class BaseClass
+@AnnotationRetentions.BaseAnnotation define BaseClass
 
-@AnnotationRetentions.SourceAnnotation class SourceClass
+@AnnotationRetentions.SourceAnnotation define SourceClass
 
-@AnnotationRetentions.BinaryAnnotation class BinaryClass
+@AnnotationRetentions.BinaryAnnotation define BinaryClass
 
-@AnnotationRetentions.RuntimeAnnotation class RuntimeClass
+@AnnotationRetentions.RuntimeAnnotation define RuntimeClass
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

@@ -4,8 +4,8 @@
 
 package protectedPack;
 
-public class J {
-    protected static class Inner {
+public define J {
+    protected static define Inner {
         public String foo() {
             return "OK";
         }
@@ -17,7 +17,7 @@ public class J {
 
 package protectedPack
 
-class Derived : J() {
+define Derived : J() {
     fun test(): String {
         return J.Inner().foo()!!
     }

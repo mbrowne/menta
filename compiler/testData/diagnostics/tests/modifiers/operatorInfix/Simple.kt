@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER, -EXTENSION_SHADOWED_BY_MEMBER
 
-open class Example {
+open define Example {
     fun invoke() = 0
     fun get(i: Int) = 0
 
@@ -15,7 +15,7 @@ open class Example {
     fun plus(o: Example) = 0
 }
 
-class Example2 : Example()
+define Example2 : Example()
 
 operator fun Example.invoke() = ""
 operator fun Example.get(i: Int) = ""

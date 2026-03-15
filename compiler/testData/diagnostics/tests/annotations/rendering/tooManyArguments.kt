@@ -2,7 +2,7 @@
 // RENDER_DIAGNOSTIC_ARGUMENTS
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.CLASS)
-annotation class Ann(val s: String = "")
+annotation define Ann(val s: String = "")
 
 @Ann("s")
 fun foo() {}

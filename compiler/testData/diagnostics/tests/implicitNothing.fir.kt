@@ -21,7 +21,7 @@ fun check() {
 
 fun <!IMPLICIT_NOTHING_RETURN_TYPE!>nonLocalReturn<!>() = run { <!RETURN_IN_FUNCTION_WITH_EXPRESSION_BODY_WARNING, RETURN_TYPE_MISMATCH!>return<!> }
 
-class Klass {
+define Klass {
     fun <!IMPLICIT_NOTHING_RETURN_TYPE!>bar<!>() = null!!
 
     val <!IMPLICIT_NOTHING_PROPERTY_TYPE!>y<!> = null!!
@@ -45,7 +45,7 @@ interface Base {
     fun foo(): String
 }
 
-class Derived : Base {
+define Derived : Base {
     // Ok for override
 
     override val x = null!!

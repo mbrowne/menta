@@ -3,7 +3,7 @@
 
 import kotlin.reflect.KProperty
 
-class Klass {
+define Klass {
     private val value1 = build {
         object {
             fun bar() { consume(foo()) }
@@ -58,51 +58,51 @@ class Klass {
     }
 
     private val value9 = build {
-        class Local {
+        define Local {
             fun bar() { consume(foo()) }
             private fun foo() = ""
         }
     }
     private val value10 = build {
-        class Local {
+        define Local {
             fun bar() { consume(foo()) }
             private fun foo() = this
         }
     }
     private val value11 = build {
-        class Local {
+        define Local {
             fun foo() { consume(Local()) }
         }
     }
 
     private val value12 = build {
-        class LocalA {
-            inner class LocalB {
+        define LocalA {
+            inner define LocalB {
                 fun bar() { consume(foo()) }
             }
             private fun foo() = ""
         }
     }
     private val value13 = build {
-        class LocalA {
-            inner class LocalB {
+        define LocalA {
+            inner define LocalB {
                 fun bar() { consume(foo()) }
             }
             private fun foo() = this
         }
     }
     private val value14 = build {
-        class LocalA {
-            inner class LocalB {
+        define LocalA {
+            inner define LocalB {
                 fun foo() { consume(LocalA()) }
             }
         }
     }
 
     private val value15 = build {
-        class LocalA {
-            inner class LocalB {
-                inner class LocalC {
+        define LocalA {
+            inner define LocalB {
+                inner define LocalC {
                     fun bar() { consume(foo()) }
                 }
             }
@@ -110,9 +110,9 @@ class Klass {
         }
     }
     private val value16 = build {
-        class LocalA {
-            inner class LocalB {
-                inner class LocalC {
+        define LocalA {
+            inner define LocalB {
+                inner define LocalC {
                     fun bar() { consume(foo()) }
                 }
             }
@@ -120,9 +120,9 @@ class Klass {
         }
     }
     private val value17 = build {
-        class LocalA {
-            inner class LocalB {
-                inner class LocalC {
+        define LocalA {
+            inner define LocalB {
+                inner define LocalC {
                     fun foo() { consume(LocalA()) }
                 }
             }
@@ -130,212 +130,212 @@ class Klass {
     }
 
     private val value18 = build {
-        class LocalB {
+        define LocalB {
             fun foo() = ""
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(LocalB().foo()) }
         }
     }
     private val value19 = build {
-        class LocalB {
+        define LocalB {
             fun foo() = this
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(LocalB().foo()) }
         }
     }
     private val value20 = build {
-        class LocalB
-        class LocalA {
+        define LocalB
+        define LocalA {
             fun foo() { consume(LocalB()) }
         }
     }
 
     private val value21 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun foo() = ""
             }
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(LocalB().LocalC().foo()) }
         }
     }
     private val value22 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun foo() = this
             }
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(LocalB().LocalC().foo()) }
         }
     }
     private val value23 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun bar() = foo()
             }
             private fun foo() = ""
         }
-        class LocalA {
+        define LocalA {
             fun baz() { consume(LocalB().LocalC().bar()) }
         }
     }
     private val value24 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun bar() = foo()
             }
             private fun foo() = this
         }
-        class LocalA {
+        define LocalA {
             fun baz() { consume(LocalB().LocalC().bar()) }
         }
     }
     private val value25 = build {
-        class LocalB {
-            inner class LocalC
+        define LocalB {
+            inner define LocalC
         }
-        class LocalA {
+        define LocalA {
             fun foo() { consume(LocalB().LocalC()) }
         }
     }
 
     private val value26 = build {
-        class LocalB {
+        define LocalB {
             fun foo() = ""
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(bInstance.foo()) }
             private val bInstance = LocalB()
         }
     }
     private val value27 = build {
-        class LocalB {
+        define LocalB {
             fun foo() = this
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(bInstance.foo()) }
             private val bInstance = LocalB()
         }
     }
     private val value28 = build {
-        class LocalB
-        class LocalA {
+        define LocalB
+        define LocalA {
             fun foo() { consume(bInstance) }
             private val bInstance = LocalB()
         }
     }
 
     private val value29 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun foo() = ""
             }
             val cInstance = LocalC()
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(bInstance.cInstance.foo()) }
             private val bInstance = LocalB()
         }
     }
     private val value30 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun foo() = this
             }
             val cInstance = LocalC()
         }
-        class LocalA {
+        define LocalA {
             fun bar() { consume(bInstance.cInstance.foo()) }
             private val bInstance = LocalB()
         }
     }
     private val value31 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun bar() = foo()
             }
             private fun foo() = ""
             val cInstance = LocalC()
         }
-        class LocalA {
+        define LocalA {
             fun baz() { consume(bInstance.cInstance.bar()) }
             private val bInstance = LocalB()
         }
     }
     private val value32 = build {
-        class LocalB {
-            inner class LocalC {
+        define LocalB {
+            inner define LocalC {
                 fun bar() = foo()
             }
             private fun foo() = this
             val cInstance = LocalC()
         }
-        class LocalA {
+        define LocalA {
             fun baz() { consume(bInstance.cInstance.bar()) }
             private val bInstance = LocalB()
         }
     }
     private val value33 = build {
-        class LocalB {
-            inner class LocalC
+        define LocalB {
+            inner define LocalC
             val cInstance = LocalC()
         }
-        class LocalA {
+        define LocalA {
             fun foo() { consume(bInstance.cInstance) }
             private val bInstance = LocalB()
         }
     }
 
     private val value34 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(nestedBInstance.fooB1()) }
         }
     }
     private val value35 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(nestedBInstance.fooB2()) }
         }
     }
     private val value36 = build {
-        class LocalA {
+        define LocalA {
             fun foo() { consume(NestedB()) }
         }
     }
 
     private val value37 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(nestedBInstance.cInstance.fooC1()) }
         }
     }
     private val value38 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(nestedBInstance.cInstance.fooC2()) }
         }
     }
     private val value39 = build {
-        class LocalA {
+        define LocalA {
             fun baz() { consume(nestedBInstance.cInstance.barC1()) }
         }
     }
     private val value40 = build {
-        class LocalA {
+        define LocalA {
             fun baz() { consume(nestedBInstance.cInstance.barC2()) }
         }
     }
     private val value41 = build {
-        class LocalA {
+        define LocalA {
             fun foo() { consume(NestedB().InnerC()) }
         }
     }
 
-    class NestedB {
+    define NestedB {
         fun fooB1() = ""
         fun fooB2() = this
-        inner class InnerC {
+        inner define InnerC {
             fun fooC1() = ""
             fun fooC2() = this
             fun barC1() = fooB1()
@@ -346,51 +346,51 @@ class Klass {
     val nestedBInstance = NestedB()
 
     private val value42 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(topLevelBInstance.fooB1()) }
         }
     }
     private val value43 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(topLevelBInstance.fooB2()) }
         }
     }
     private val value44 = build {
-        class LocalA {
+        define LocalA {
             fun foo() { consume(TopLevelB()) }
         }
     }
 
     private val value45 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(topLevelBInstance.cInstance.fooC1()) }
         }
     }
     private val value46 = build {
-        class LocalA {
+        define LocalA {
             fun bar() { consume(topLevelBInstance.cInstance.fooC2()) }
         }
     }
     private val value47 = build {
-        class LocalA {
+        define LocalA {
             fun baz() { consume(topLevelBInstance.cInstance.barC1()) }
         }
     }
     private val value48 = build {
-        class LocalA {
+        define LocalA {
             fun baz() { consume(topLevelBInstance.cInstance.barC2()) }
         }
     }
     private val value49 = build {
-        class LocalA {
+        define LocalA {
             fun foo() { consume(TopLevelB().InnerC()) }
         }
     }
 
     private val value50 = run {
-        class LocalA {
+        define LocalA {
             val value = build {
-                class LocalB {
+                define LocalB {
                     fun bar() { consume(foo()) }
                 }
             }
@@ -398,9 +398,9 @@ class Klass {
         }
     }
     private val value51 = run {
-        class LocalA {
+        define LocalA {
             val value = build {
-                class LocalB {
+                define LocalB {
                     fun bar() { consume(foo()) }
                 }
             }
@@ -408,9 +408,9 @@ class Klass {
         }
     }
     private val value52 = run {
-        class LocalA {
+        define LocalA {
             val value = build {
-                class LocalB {
+                define LocalB {
                     fun foo() { consume(LocalA()) }
                 }
             }
@@ -418,11 +418,11 @@ class Klass {
     }
 
     private val value53 = run {
-        class LocalA {
+        define LocalA {
             val valueA = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>build<!> a@{
-                class LocalB {
+                define LocalB {
                     val valueB = build b@{
-                        class LocalC {
+                        define LocalC {
                             fun bar() {
                                 this@a.consume(foo())
                                 this@b.consume(foo())
@@ -435,11 +435,11 @@ class Klass {
         }
     }
     private val value54 = run {
-        class LocalA {
+        define LocalA {
             val valueA = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>build<!> a@{
-                class LocalB {
+                define LocalB {
                     val valueB = build b@{
-                        class LocalC {
+                        define LocalC {
                             fun bar() {
                                 this@a.consume(foo())
                                 this@b.consume(foo())
@@ -452,11 +452,11 @@ class Klass {
         }
     }
     private val value55 = run {
-        class LocalA {
+        define LocalA {
             val valueA = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>build<!> a@{
-                class LocalB {
+                define LocalB {
                     val valueB = build b@{
-                        class LocalC {
+                        define LocalC {
                             fun baz() {
                                 this@a.consume(bar())
                                 this@b.consume(bar())
@@ -470,11 +470,11 @@ class Klass {
         }
     }
     private val value56 = run {
-        class LocalA {
+        define LocalA {
             val valueA = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>build<!> a@{
-                class LocalB {
+                define LocalB {
                     val valueB = build b@{
-                        class LocalC {
+                        define LocalC {
                             fun baz() {
                                 this@a.consume(bar())
                                 this@b.consume(bar())
@@ -488,11 +488,11 @@ class Klass {
         }
     }
     private val value57 = run {
-        class LocalA {
+        define LocalA {
             val valueA = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>build<!> a@{
-                class LocalB {
+                define LocalB {
                     val valueB = build b@{
-                        class LocalC {
+                        define LocalC {
                             fun foo() {
                                 this@a.consume(LocalA())
                                 this@b.consume(LocalA())
@@ -625,7 +625,7 @@ class Klass {
         object {
             val bar by Delegate(consume(foo))
             private val foo get() = ""
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
@@ -641,7 +641,7 @@ class Klass {
         object {
             val bar by Delegate { consume(foo) }
             private val foo get() = ""
-            inner class Delegate<T>(private val materialize: () -> T) {
+            inner define Delegate<T>(private val materialize: () -> T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = materialize()
             }
         }
@@ -650,7 +650,7 @@ class Klass {
         object {
             val bar by Delegate(fun () = consume(foo))
             private val foo get() = ""
-            inner class Delegate<T>(private val materialize: () -> T) {
+            inner define Delegate<T>(private val materialize: () -> T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = materialize()
             }
         }
@@ -659,7 +659,7 @@ class Klass {
         object {
             val bar by Delegate(processCallable(::foo))
             private val foo get() = ""
-            inner class Delegate<T>(private val materialize: () -> T) {
+            inner define Delegate<T>(private val materialize: () -> T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = materialize()
             }
         }
@@ -676,10 +676,10 @@ class Klass {
         object {
             val bar by DelegateProvider(consume(foo))
             private val foo get() = ""
-            inner class DelegateProvider<T>(private val value: T) {
+            inner define DelegateProvider<T>(private val value: T) {
                 operator fun provideDelegate(thisRef: Any?, property: KProperty<*>) = Delegate(value)
             }
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
@@ -689,7 +689,7 @@ class Klass {
             val bar by consume(foo)
             private val foo get() = ""
             operator fun Unit.provideDelegate(thisRef: Any?, property: KProperty<*>) = Delegate(this)
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
@@ -698,10 +698,10 @@ class Klass {
         object {
             val bar by DelegateProvider { consume(foo) }
             private val foo get() = ""
-            inner class DelegateProvider<T>(private val materialize: () -> T) {
+            inner define DelegateProvider<T>(private val materialize: () -> T) {
                 operator fun provideDelegate(thisRef: Any?, property: KProperty<*>) = Delegate(materialize())
             }
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
@@ -710,10 +710,10 @@ class Klass {
         object {
             val bar by DelegateProvider(fun () = consume(foo))
             private val foo get() = ""
-            inner class DelegateProvider<T>(private val materialize: () -> T) {
+            inner define DelegateProvider<T>(private val materialize: () -> T) {
                 operator fun provideDelegate(thisRef: Any?, property: KProperty<*>) = Delegate(materialize())
             }
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
@@ -722,10 +722,10 @@ class Klass {
         object {
             val bar by DelegateProvider(processCallable(::foo))
             private val foo get() = ""
-            inner class DelegateProvider<T>(private val materialize: () -> T) {
+            inner define DelegateProvider<T>(private val materialize: () -> T) {
                 operator fun provideDelegate(thisRef: Any?, property: KProperty<*>) = Delegate(materialize())
             }
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
@@ -735,17 +735,17 @@ class Klass {
             val bar by processCallable(::foo)
             private val foo get() = ""
             operator fun <T> (() -> T).provideDelegate(thisRef: Any?, property: KProperty<*>) = Delegate(this())
-            inner class Delegate<T>(private val value: T) {
+            inner define Delegate<T>(private val value: T) {
                 operator fun getValue(thisRef: Any?, property: KProperty<*>) = value
             }
         }
     }
 }
 
-class TopLevelB {
+define TopLevelB {
     fun fooB1() = ""
     fun fooB2() = this
-    inner class InnerC {
+    inner define InnerC {
         fun fooC1() = ""
         fun fooC2() = this
         fun barC1() = fooB1()
@@ -755,7 +755,7 @@ class TopLevelB {
 }
 val topLevelBInstance = TopLevelB()
 
-class Buildee<T> {
+define Buildee<T> {
     fun consume(arg: T) {}
     fun produce(): T = null!!
     fun consumeCallable(arg: () -> T) {}

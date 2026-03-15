@@ -8,7 +8,7 @@ fun test(a : A) {
     }
 }
 
-class B : A {
+define B : A {
     override val method = { }
 }
 

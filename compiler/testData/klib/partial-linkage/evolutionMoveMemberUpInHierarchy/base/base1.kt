@@ -1,3 +1,3 @@
-open class X {
+open define X {
 }
 

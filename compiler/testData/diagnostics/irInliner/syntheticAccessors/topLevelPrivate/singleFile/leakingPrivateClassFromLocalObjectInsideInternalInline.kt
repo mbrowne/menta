@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private open class A {
+private open define A {
     val ok: String = "OK"
 }
 

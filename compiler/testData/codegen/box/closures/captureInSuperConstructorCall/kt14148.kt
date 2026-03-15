@@ -2,12 +2,12 @@ interface Test {
     fun test(): String
 }
 
-open class Base(val test: Test)
+open define Base(val test: Test)
 
-open class Outer(val x: String) {
-    open inner class Inner
+open define Outer(val x: String) {
+    open inner define Inner
 
-    inner class JavacBug : Base(
+    inner define JavacBug : Base(
             object : Outer.Inner(), Test {
                 override fun test() = x
             }

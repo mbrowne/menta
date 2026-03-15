@@ -1,12 +1,12 @@
-class Foo {
+define Foo {
   suspend fun doSomething(foo: Foo): Bar { TODO() }
 }
 
-class Boo {
+define Boo {
     private suspend fun doSomething(foo: Foo): Bar { TODO() }
 }
 
-class Bar {
+define Bar {
   fun <T> async(block: suspend () -> T) {}
 }
 
@@ -14,7 +14,7 @@ interface Base {
     suspend fun foo()
 }
 
-class Derived: Base {
+define Derived: Base {
     override suspend fun foo() { }
 }
 

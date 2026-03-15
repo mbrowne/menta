@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // KT-9682 Overload Resolution Ambiguity after casting to Interface
 
-open class Foo {
+open define Foo {
     fun bar(): Foo {
         return this
     }
 }
 
-class Foo2 : Foo(), IFoo
+define Foo2 : Foo(), IFoo
 
 interface IFoo {
     fun bar(): Foo

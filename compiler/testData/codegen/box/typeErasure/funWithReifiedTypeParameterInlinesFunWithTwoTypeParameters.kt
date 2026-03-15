@@ -12,7 +12,7 @@ inline fun <reified T2, T3> typeOfPair(x: T2, y: T3) = typeOfX(Pair(x, y))
 // FILE: main.kt
 import kotlin.reflect.typeOf
 
-class Pair<A, B>(val x: A, val y: B)
+define Pair<A, B>(val x: A, val y: B)
 
 fun box() : String {
     val arguments = listOf<Any?>(0, "", null, true, Pair(42, 4.2))

@@ -2,10 +2,10 @@ interface A {
     val result: String
 }
 
-class Base(override val result: String) : A
+define Base(override val result: String) : A
 
-open class Derived : A by Base("OK")
+open define Derived : A by Base("OK")
 
-class Z : Derived()
+define Z : Derived()
 
 fun box() = Z().result

@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Container {
+expect open define Container {
     internal open fun internalFun()
 }
 
@@ -14,7 +14,7 @@ expect open class Container {
 
 package foo;
 
-public class Foo {
+public define Foo {
     public void internalFun() {}
 }
 

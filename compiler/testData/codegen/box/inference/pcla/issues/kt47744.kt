@@ -5,10 +5,10 @@
 // FILE: lib.kt
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> flow(block: suspend FlowCollector<T>.() -> Unit) = Flow<T>()
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <E> produce(block: suspend SendChannel<E>.() -> Unit) {}
 
 interface SendChannel<in E> {
@@ -16,7 +16,7 @@ interface SendChannel<in E> {
 }
 
 interface SelectClause2<in P, out Q>
-class Flow<out T>
+define Flow<out T>
 interface FlowCollector<in T>
 
 interface SelectBuilder<in R> {

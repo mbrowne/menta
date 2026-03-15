@@ -1,5 +1,5 @@
 
-abstract class TextRendererActions1 {
+abstract define TextRendererActions1 {
     var fontSize: String = "OK"; private set
 }
 

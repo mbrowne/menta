@@ -8,7 +8,7 @@
  * (preferably accompanied by an analysis of the change's reasons)
  */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = reference as CT
 }
@@ -22,13 +22,13 @@ fun <FT> build(
 private var reference: Any? = null
 val <T> Buildee<T>.typeArgumentValue: T get() = reference as T
 
-class UserKlass
+define UserKlass
 
 // test 1: PTV is in consuming position (yield-case)
 fun testYield() {
     fun testTypeInfoOriginInsideLocalClass() {
         val buildee = build {
-            class Local<T> {
+            define Local<T> {
                 fun localOnlyFunc(): T = UserKlass() as T
 
                 fun initialize() {
@@ -46,7 +46,7 @@ fun testYield() {
 
     fun testThisExpression() {
         val buildee = build {
-            class Local<T> {
+            define Local<T> {
                 fun localOnlyFunc(): T = UserKlass() as T
 
                 fun initialize() {
@@ -69,7 +69,7 @@ fun testYield() {
 fun testMaterialize() {
     fun testTypeInfoOriginInsideLocalClass() {
         val buildee = build {
-            class Local<T> {
+            define Local<T> {
                 fun localOnlyFunc(): T = UserKlass() as T
 
                 fun initialize() {
@@ -87,7 +87,7 @@ fun testMaterialize() {
 
     fun testThisExpression() {
         val buildee = build {
-            class Local<T> {
+            define Local<T> {
                 fun localOnlyFunc(): T = UserKlass() as T
 
                 fun initialize() {

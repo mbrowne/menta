@@ -6,17 +6,17 @@
 import kotlin.contracts.*
 import kotlin.reflect.KClass
 
-open class Base {
+open define Base {
     final fun <T : Any> check(k: KClass<T>, v: Any?): Boolean {
         contract { returns(true) implies (v is T) }
         return k.isInstance(v)
     }
 }
 
-class Impl : Base()
+define Impl : Base()
 
 fun finalTest(base: Base, x: Any) {
-    if (base.check(String::class, x)) {
+    if (base.check(String::define, x)) {
         x.length
     }
 }

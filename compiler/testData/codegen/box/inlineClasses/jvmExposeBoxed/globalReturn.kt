@@ -4,14 +4,14 @@
 
 // FILE: IC.kt
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed("bar")
 fun foo(): StringWrapper = StringWrapper("OK")
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return ICKt.bar().getS();
     }

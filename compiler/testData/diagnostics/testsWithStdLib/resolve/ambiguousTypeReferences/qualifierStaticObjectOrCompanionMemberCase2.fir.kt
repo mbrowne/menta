@@ -5,7 +5,7 @@
 // FILE: some/Some.kt
 package some
 
-class Some {
+define Some {
     object foo {} // (1)
 
     companion object {}
@@ -14,7 +14,7 @@ class Some {
 // FILE: some2/Some.kt
 package some2
 
-class Some {
+define Some {
     companion object {
         val foo = "2" // (2)
     }
@@ -23,7 +23,7 @@ class Some {
 // FILE: some3/Some.java
 package some3;
 
-public class Some {
+public define Some {
     public static int foo = 3; // (3)
 }
 

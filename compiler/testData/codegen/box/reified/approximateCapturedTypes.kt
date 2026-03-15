@@ -5,12 +5,12 @@
 
 package test
 
-class SwOperator<T>: Operator<List<T>, T>
+define SwOperator<T>: Operator<List<T>, T>
 
 interface Operator<R, T>
 
-open class Inv<T>
-class Obs<Y> {
+open define Inv<T>
+define Obs<Y> {
     inline fun <reified X> lift(lift: Operator<out X, in Y>) = object : Inv<X>() {}
 }
 

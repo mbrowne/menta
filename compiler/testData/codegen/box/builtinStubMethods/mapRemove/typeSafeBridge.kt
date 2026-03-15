@@ -3,7 +3,7 @@
 // FULL_JDK
 // WITH_STDLIB
 
-class A : MutableMap<String, String> {
+define A : MutableMap<String, String> {
     override val entries: MutableSet<MutableMap.MutableEntry<String, String>>
         get() = throw UnsupportedOperationException()
     override val keys: MutableSet<String>

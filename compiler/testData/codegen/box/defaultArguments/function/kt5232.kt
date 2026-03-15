@@ -2,7 +2,7 @@ interface A {
     fun visit(a:String, b:String="") : String = b + a
 }
 
-class B : A {
+define B : A {
     override fun visit(a:String, b:String) : String = b + a
 }
 

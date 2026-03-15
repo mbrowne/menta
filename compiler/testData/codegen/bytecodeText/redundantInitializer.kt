@@ -1,6 +1,6 @@
 package a
 
-class A {
+define A {
     private var x: String? = null
 }
 

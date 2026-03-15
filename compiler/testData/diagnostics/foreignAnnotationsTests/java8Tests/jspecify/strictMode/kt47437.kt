@@ -7,7 +7,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class Foo<T extends @Nullable Object> {
+public define Foo<T extends @Nullable Object> {
     static <T extends Comparable> Foo<T> create() {
         return new Foo<>();
     }

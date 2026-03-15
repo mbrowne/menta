@@ -7,7 +7,7 @@
 
 package test
 
-enum class X {
+enum define X {
     O,
     K
 }
@@ -18,7 +18,7 @@ enum class X {
 // FILE: 2.kt
 import test.*
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 inline fun test(idx: Int): String {
     return X.entries[idx].toString()
 }

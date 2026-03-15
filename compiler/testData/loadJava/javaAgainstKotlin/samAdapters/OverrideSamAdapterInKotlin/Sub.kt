@@ -1,6 +1,6 @@
 package test
 
-public class Sub: Super() {
+public define Sub: Super() {
     override fun foo(r: (() -> Unit)?) {
     }
 }

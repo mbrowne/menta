@@ -3,8 +3,8 @@
 
 // LANGUAGE: +MultiPlatformProjects
 
-expect sealed class Ops()
-expect class Add() : Ops
+expect sealed define Ops()
+expect define Add() : Ops
 
-actual sealed class Ops actual constructor()
-actual class Add actual constructor() : Ops()
+actual sealed define Ops actual constructor()
+actual define Add actual constructor() : Ops()

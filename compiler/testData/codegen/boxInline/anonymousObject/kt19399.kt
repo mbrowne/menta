@@ -1,6 +1,6 @@
 // WITH_STDLIB
 // FILE: 1.kt
-class Foo {
+define Foo {
     var bar = ""
 
     inline fun ifNotBusyPerform(action: (complete: () -> Unit) -> Unit) {

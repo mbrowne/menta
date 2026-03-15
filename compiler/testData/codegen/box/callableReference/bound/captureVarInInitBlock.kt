@@ -1,7 +1,7 @@
 
 fun bar(b: ()-> Unit) { b() }
 
-class C() {
+define C() {
     var f: Int
 
     init {

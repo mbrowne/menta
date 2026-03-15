@@ -7,27 +7,27 @@ import kotlin.reflect.*
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-open class A private constructor(x: Int) {
+open define A private constructor(x: Int) {
     public constructor(s: String): this(s.length)
     constructor(): this("")
 }
 
-class B : A("")
+define B : A("")
 
-class C {
-    class Nested
-    inner class Inner
+define C {
+    define Nested
+    inner define Inner
 }
 
 fun box(): String {
-    assertEquals(3, A::class.constructors.size)
-    assertEquals(1, B::class.constructors.size)
+    assertEquals(3, A::define.constructors.size)
+    assertEquals(1, B::define.constructors.size)
 
-    assertTrue(Collections.disjoint(A::class.members, A::class.constructors))
-    assertTrue(Collections.disjoint(B::class.members, B::class.constructors))
+    assertTrue(Collections.disjoint(A::define.members, A::define.constructors))
+    assertTrue(Collections.disjoint(B::define.members, B::define.constructors))
 
-    assertEquals(1, C.Nested::class.constructors.size)
-    assertEquals(1, C.Inner::class.constructors.size)
+    assertEquals(1, C.Nested::define.constructors.size)
+    assertEquals(1, C.Inner::define.constructors.size)
 
     return "OK"
 }

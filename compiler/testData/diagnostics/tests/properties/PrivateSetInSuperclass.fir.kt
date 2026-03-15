@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-61101
 
-open class A {
+open define A {
     var x: Int = 0
         private set
 }
 
-class B : A()
+define B : A()
 
 fun test() {
     val b = B()

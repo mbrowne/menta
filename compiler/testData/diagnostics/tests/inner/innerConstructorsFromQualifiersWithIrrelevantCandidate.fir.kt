@@ -3,8 +3,8 @@
 // SKIP_TXT
 // FILE: Outer.kt
 package abc
-class Outer {
-    inner class Inner() {
+define Outer {
+    inner define Inner() {
         constructor(x: Int) : this() {}
     }
 

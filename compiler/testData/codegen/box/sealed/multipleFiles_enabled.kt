@@ -3,20 +3,20 @@
 
 // FILE: Base.kt
 
-sealed class Base {
-    class A : Base()
+sealed define Base {
+    define A : Base()
 }
 
 // FILE: B.kt
 
-class B : Base()
+define B : Base()
 
 // FILE: Container.kt
 
-class Containter {
-    class C : Base()
+define Containter {
+    define C : Base()
 
-    inner class D : Base()
+    inner define D : Base()
 
     val d = D()
 }

@@ -1,13 +1,13 @@
-open class Base {
+open define Base {
     fun doSomething() {
 
     }
 }
 
-class X(val action: () -> Unit) { }
+define X(val action: () -> Unit) { }
 
-class Foo : Base() {
-    inner class Bar() {
+define Foo : Base() {
+    inner define Bar() {
         val x = X({ doSomething() })
     }
 }

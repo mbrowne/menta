@@ -6,7 +6,7 @@ inline fun myValueOf(): String {
     return enumValueOf<Z>("OK").name
 }
 
-enum class Z {
+enum define Z {
     OK
 }
 

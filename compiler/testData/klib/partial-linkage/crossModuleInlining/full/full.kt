@@ -13,7 +13,7 @@ inline val String.inlineExtensionPropertyFull: String
     get() = "$this.inlineExtensionPropertyFull.v1 with context $c"
 
 
-class C {
+define C {
     inline fun inlineClassFunctionFull() = "inlineClassFunctionFull.v1"
 
     inline fun inlineClassFunctionWithParamFull(param: String = "defaultFull.v1") = "inlineClassFunctionWithParamFull.v1: $param"

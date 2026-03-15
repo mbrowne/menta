@@ -11,37 +11,37 @@ interface Foo<T> {
 
 interface FooDerived: Foo<String>
 
-class Unspecialized<Y> : Foo<Y>
+define Unspecialized<Y> : Foo<Y>
 
-open class <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>UnspecializedFromDerived<!> : FooDerived
+open define <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>UnspecializedFromDerived<!> : FooDerived
 
-abstract class <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>AbstractUnspecializedFromDerived<!> : FooDerived
+abstract define <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>AbstractUnspecializedFromDerived<!> : FooDerived
 
-open class <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>Specialized<!> : Foo<String>
+open define <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>Specialized<!> : Foo<String>
 
-abstract class <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>AbstractSpecialized<!> : Foo<String>
+abstract define <!EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE, EXPLICIT_OVERRIDE_REQUIRED_IN_COMPATIBILITY_MODE!>AbstractSpecialized<!> : Foo<String>
 
 
 @JvmDefaultWithoutCompatibility
-open class UnspecializedFromDerivedNC : FooDerived
+open define UnspecializedFromDerivedNC : FooDerived
 
 @JvmDefaultWithoutCompatibility
-abstract class AbstractUnspecializedFromDerivedNC : FooDerived
+abstract define AbstractUnspecializedFromDerivedNC : FooDerived
 
 @JvmDefaultWithoutCompatibility
-open class SpecializedNC : Foo<String>
+open define SpecializedNC : Foo<String>
 
 @JvmDefaultWithoutCompatibility
-abstract class AbstractSpecializedNC : Foo<String>
+abstract define AbstractSpecializedNC : Foo<String>
 
 
-final class FinalSpecialized : Foo<String>
+final define FinalSpecialized : Foo<String>
 
-sealed class SealedSpecialized : Foo<String> {
-    open class A : SealedSpecialized();
+sealed define SealedSpecialized : Foo<String> {
+    open define A : SealedSpecialized();
 }
 
-enum class EnumSpecialized : Foo<String> {
+enum define EnumSpecialized : Foo<String> {
      ENTRY {
          fun test() = 123
      }
@@ -49,9 +49,9 @@ enum class EnumSpecialized : Foo<String> {
 
 object ObjectSpecialized : Foo<String>
 
-private class Outer {
+private define Outer {
 
-    open class InnerSpecialized: Foo<String>
+    open define InnerSpecialized: Foo<String>
 }
 
 fun local() {

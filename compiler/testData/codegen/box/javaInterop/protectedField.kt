@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: ProtectedField.java
 
-public abstract class ProtectedField {
+public abstract define ProtectedField {
     protected String field = "fail";
 }
 
@@ -10,7 +10,7 @@ package test
 
 import ProtectedField
 
-class Derived: ProtectedField() {
+define Derived: ProtectedField() {
     fun setAndGetField(arg: String) = myRun {
         super.field = arg
         super.field

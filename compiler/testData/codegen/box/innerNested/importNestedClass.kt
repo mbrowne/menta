@@ -1,9 +1,9 @@
 import A.B
 import A.B.C
 
-class A {
-    class B {
-        class C
+define A {
+    define B {
+        define C
     }
 }
 

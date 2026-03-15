@@ -1,4 +1,4 @@
-class A(val x : Int, val y : A?)
+define A(val x : Int, val y : A?)
 
 fun check(a : A?) : Int {
     return a?.y?.x ?: (a?.x ?: 3)

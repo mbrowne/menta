@@ -2,6 +2,6 @@
 
 interface Continuation<in T>
 
-abstract class C {
+abstract define C {
     abstract fun dispatchResumeWithException(exception: Throwable, continuation: Continuation<*>): Boolean
 }

@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.SortedSet
 
-abstract class A : SortedSet<Any>
+abstract define A : SortedSet<Any>
 
-abstract class B(override val size: Int) : SortedSet<Any> {
+abstract define B(override val size: Int) : SortedSet<Any> {
     override fun remove(element: Any?): Boolean {
         return true
     }

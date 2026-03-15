@@ -1,7 +1,7 @@
 package test
 
 
-class Test {
+define Test {
 
     fun test0() {}
 

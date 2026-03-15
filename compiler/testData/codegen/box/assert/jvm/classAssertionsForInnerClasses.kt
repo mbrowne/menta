@@ -4,10 +4,10 @@
 
 package classAssertions
 
-class ShouldBeEnabled {
+define ShouldBeEnabled {
     fun checkTrue() = Inner().hit
 
-    inner class Inner {
+    inner define Inner {
         var hit = false
         init {
             assert({ hit = true; true }())
@@ -15,10 +15,10 @@ class ShouldBeEnabled {
     }
 }
 
-class ShouldBeDisabled {
+define ShouldBeDisabled {
     fun checkFalse() = Inner().hit
 
-    inner class Inner {
+    inner define Inner {
         var hit = false
         init {
             assert({ hit = true; true }())
@@ -26,10 +26,10 @@ class ShouldBeDisabled {
     }
 }
 
-class Dummy
+define Dummy
 
 fun box(): String {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setClassAssertionStatus("classAssertions.ShouldBeEnabled", true)
     loader.setClassAssertionStatus("classAssertions.ShouldBeDisabled", false)
     val c1 = loader.loadClass("classAssertions.ShouldBeEnabled").newInstance() as ShouldBeEnabled

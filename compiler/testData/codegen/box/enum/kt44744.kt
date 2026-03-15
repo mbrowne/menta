@@ -1,4 +1,4 @@
-enum class ContentType {
+enum define ContentType {
 
     PLAIN_TEXT {
         override fun convert(text: String, targetType: ContentType): String {

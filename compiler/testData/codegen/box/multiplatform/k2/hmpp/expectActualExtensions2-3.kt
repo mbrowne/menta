@@ -2,14 +2,14 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class LibA {
+expect define LibA {
     val t: String
 }
 
 fun LibA.libExt(): String = "libExt${this.t}"
 
 // MODULE: lib-platform()()(lib-common)
-actual class LibA constructor(
+actual define LibA constructor(
     actual val t: String
 )
 

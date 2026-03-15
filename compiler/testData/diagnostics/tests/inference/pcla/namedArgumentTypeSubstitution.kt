@@ -19,7 +19,7 @@ interface XFilteredListStateOnBatchSourceAggregator<out T : SortableItem>
 
 interface BatchSource<T>
 
-class WeightedBatchSourceOverProvider<TItem : SortableItem, TCursor> : BatchSource<TItem>
+define WeightedBatchSourceOverProvider<TItem : SortableItem, TCursor> : BatchSource<TItem>
 
 fun searchDialogListState2(
     sources: List<WeightedBatchSourceProvider<SortableItem, String>>,

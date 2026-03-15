@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: FRONTEND
 fun invokeLater(body: () -> Unit) {}
 
-class Stable(val x: String? = "...")
+define Stable(val x: String? = "...")
 
 interface I {
     val x: String?
 }
 
-abstract class ImplBase(override val x: String?) : I
+abstract define ImplBase(override val x: String?) : I
 
-class DefaultImpl : ImplBase("...")
+define DefaultImpl : ImplBase("...")
 
-class UnstableImpl : ImplBase("...") {
+define UnstableImpl : ImplBase("...") {
     override var x: String? = "..."
         get() = field.also { field = null }
 }

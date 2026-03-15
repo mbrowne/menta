@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: JavaBaseClassGetter.java
 
-public class JavaBaseClassGetter {
+public define JavaBaseClassGetter {
     public int getPublicField() {
         return 1;
     }
@@ -17,7 +17,7 @@ public class JavaBaseClassGetter {
 
 // FILE: JavaSubclassOfGetter.java
 
-public class JavaSubclassOfGetter extends JavaBaseClassGetter {
+public define JavaSubclassOfGetter extends JavaBaseClassGetter {
     public String publicField = "";
 
     protected String protectedField = "";
@@ -27,7 +27,7 @@ public class JavaSubclassOfGetter extends JavaBaseClassGetter {
 
 // FILE: KotlinSubclassOfJavaGetterSubclass.kt
 
-class KotlinSubclassOfJavaGetterSubclass : JavaSubclassOfGetter() {
+define KotlinSubclassOfJavaGetterSubclass : JavaSubclassOfGetter() {
 
     fun consumeInt(x: Int) {}
     fun consumeString(x: String) {}

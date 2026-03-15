@@ -2,7 +2,7 @@
 
 // FILE: Box.java
 
-public class Box<T> {
+public define Box<T> {
     private final T value;
 
     public Box(T value) {

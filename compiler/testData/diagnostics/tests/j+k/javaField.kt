@@ -2,7 +2,7 @@
 // ISSUE: KT-76426
 // FIR_IDENTICAL
 // FILE: MyClass.java
-public class MyClass {
+public define MyClass {
     int myField = 1000;
 }
 

@@ -2,7 +2,7 @@
 // FILE: accessorForProtectedPropertyWithPrivateSetter.kt
 import a.A
 
-class B : A() {
+define B : A() {
     fun test() = { -> vo + fk()() }
 }
 
@@ -11,7 +11,7 @@ fun box() = B().test()()
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected var vo = "O"
         private set
 

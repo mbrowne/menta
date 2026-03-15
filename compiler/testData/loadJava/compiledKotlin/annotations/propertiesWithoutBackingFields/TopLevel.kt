@@ -1,6 +1,6 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
 @[Anno] val property: Int
     get() = 42

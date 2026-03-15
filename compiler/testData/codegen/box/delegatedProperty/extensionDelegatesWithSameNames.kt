@@ -1,10 +1,10 @@
-open class C
+open define C
 
 object O : C()
 
 object K : C()
 
-class D(val value: String) {
+define D(val value: String) {
     operator fun getValue(thisRef: C, property: Any): String = value
 }
 

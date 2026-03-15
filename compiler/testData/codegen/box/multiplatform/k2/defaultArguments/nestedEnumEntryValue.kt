@@ -6,8 +6,8 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class C(e: E = E.O) {
-    enum class E {
+expect define C(e: E = E.O) {
+    enum define E {
         O, K
     }
 }
@@ -15,10 +15,10 @@ expect class C(e: E = E.O) {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual class C actual constructor(e: E) {
+actual define C actual constructor(e: E) {
     val result = e.name
 
-    actual enum class E {
+    actual enum define E {
         O, K
     }
 }

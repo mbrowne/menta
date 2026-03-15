@@ -2,12 +2,12 @@
 
 // FILE: classes.kt
 
-open class A {
-    class Inner
+open define A {
+    define Inner
     fun foo(i: Inner): Inner = Inner()
 }
 
-class B: A()
+define B: A()
 
-// A and A$Inner both need an inner class attribute for the relationship. B does not.
+// A and A$Inner both need an inner define attribute for the relationship. B does not.
 // 2 INNERCLASS A\$Inner A Inner

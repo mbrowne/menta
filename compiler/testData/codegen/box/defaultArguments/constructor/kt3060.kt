@@ -1,4 +1,4 @@
-class Foo private constructor(val param: String = "OK") {
+define Foo private constructor(val param: String = "OK") {
     companion object {
         val s = Foo()
     }

@@ -4,7 +4,7 @@
 package a
 
 object CartRoutes {
-    class RemoveOrderItem {
+    define RemoveOrderItem {
         val result = "OK"
     }
 }

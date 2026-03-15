@@ -3,13 +3,13 @@
 // FILE: common.kt
 package common.pack
 
-annotation class RegularAnnotation
-expect annotation class ExpectAnnotation
-expect class ExpectClass
+annotation define RegularAnnotation
+expect annotation define ExpectAnnotation
+expect define ExpectClass
 
 @RegularAnnotation
 @ExpectAnnotation
-class ClassToCheck {
+define ClassToCheck {
     fun t(t: ExpectClass) {
 
     }
@@ -18,8 +18,8 @@ class ClassToCheck {
 // FILE: annotations.kt
 package jvm.pack
 
-annotation class ActualAnnotation
-class ActualClass
+annotation define ActualAnnotation
+define ActualClass
 // FILE: jvm.kt
 package common.pack
 

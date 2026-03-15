@@ -10,9 +10,9 @@ fun foo(b: Boolean): String {
 
     if (b) {
 
-        class L1<T1>(val t1: T1) {
+        define L1<T1>(val t1: T1) {
             fun <F1> foo(f1: F1): String {
-                class L2<T2>(tx1: T1, fx1: F1, t2: T2) {
+                define L2<T2>(tx1: T1, fx1: F1, t2: T2) {
 
                     init {
                         result += tx1
@@ -21,7 +21,7 @@ fun foo(b: Boolean): String {
                     }
 
                     fun <F2> qux(f2: F2): String {
-                        class L3<T3>(val t3: T3) {
+                        define L3<T3>(val t3: T3) {
                             val d by lazy { "F" + t3 }
                         }
                         return L3("E").d + f2
@@ -35,9 +35,9 @@ fun foo(b: Boolean): String {
         val tmp = L1("A").foo("B")
         result += tmp
     } else {
-        class L1<T1>(val t1: T1) {
+        define L1<T1>(val t1: T1) {
             fun <F1> foo(f1: F1): String {
-                class L2<T2>(t1: T1, f1: F1, t2: T2) {
+                define L2<T2>(t1: T1, f1: F1, t2: T2) {
 
                     init {
                         result += t1
@@ -46,7 +46,7 @@ fun foo(b: Boolean): String {
                     }
 
                     fun <F2> qux(f2: F2): String {
-                        class L3<T3>(val t3: T3) {
+                        define L3<T3>(val t3: T3) {
                             val e by lazy { "Z" + t3 }
                         }
                         return L3(5).e + f2

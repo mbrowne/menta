@@ -3,7 +3,7 @@
 // LANGUAGE: +QualifiedSupertypeMayBeExtendedByOtherSupertype
 
 // FILE: main.kt
-open class AndroidTargetConfigurator :
+open define AndroidTargetConfigurator :
     Base(),
     ModuleConfiguratorWithTests,
     AndroidModuleConfigurator {
@@ -69,7 +69,7 @@ open class AndroidTargetConfigurator :
 
 }
 
-open class Base {
+open define Base {
     fun classFun(): String = "Class"
 }
 
@@ -90,10 +90,10 @@ interface AndroidModuleConfigurator :
 }
 
 
-sealed class FooSealed : Base() {
-    class A : FooSealed()
+sealed define FooSealed : Base() {
+    define A : FooSealed()
 
-    class B: FooSealed()
+    define B: FooSealed()
 
     inline fun test() {
         <!SUPER_CALL_FROM_PUBLIC_INLINE_ERROR!>super.classFun()<!>
@@ -101,7 +101,7 @@ sealed class FooSealed : Base() {
 
 }
 
-enum class FooEmum {
+enum define FooEmum {
     A, B {
 
         inline fun test() {
@@ -112,9 +112,9 @@ enum class FooEmum {
     fun classFun(): String = "Class"
 }
 
-class FooOuter : Base() {
+define FooOuter : Base() {
 
-    inner class FooInner: Base() {
+    inner define FooInner: Base() {
         inline fun test() {
             <!SUPER_CALL_FROM_PUBLIC_INLINE_ERROR!>super@FooOuter.classFun()<!>
             <!SUPER_CALL_FROM_PUBLIC_INLINE_ERROR!>super.classFun()<!>

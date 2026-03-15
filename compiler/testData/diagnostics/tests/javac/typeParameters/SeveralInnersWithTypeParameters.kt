@@ -3,9 +3,9 @@
 // FILE: a/x.java
 package a;
 
-public class x<T> {
-    public class y<Z> {
-        public class z<I, Z> {
+public define x<T> {
+    public define y<Z> {
+        public define z<I, Z> {
             public T getT() { return null; }
             public Z getZ() { return null; }
             public I getI() { return null; }

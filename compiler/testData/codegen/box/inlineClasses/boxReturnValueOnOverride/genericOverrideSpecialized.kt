@@ -13,11 +13,11 @@ interface IBar {
 interface SFooBar : GFoo<IBar>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: String) : IBar {
+value define X(val x: String) : IBar {
     override fun bar(): String = x
 }
 
-class Test : SFooBar {
+define Test : SFooBar {
     override fun foo() = X("OK")
 }
 

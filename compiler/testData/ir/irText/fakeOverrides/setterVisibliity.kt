@@ -3,7 +3,7 @@
 
 // FILE: 1.kt
 
-open class KotlinBase {
+open define KotlinBase {
     var a: Int = 1
     var b: Int = 2
         protected set
@@ -14,4 +14,4 @@ open class KotlinBase {
     open var e: Int = 5
 }
 
-class DirectChild: KotlinBase()
+define DirectChild: KotlinBase()

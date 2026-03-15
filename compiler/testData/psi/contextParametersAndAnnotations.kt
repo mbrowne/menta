@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-annotation class Ann
+annotation define Ann
 
 context(_: String)
 @Ann

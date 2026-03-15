@@ -1,6 +1,6 @@
 package test;
 
-class ExtendsB extends B {
+class ExtendsB implements B {
     @Override
     public Integer foo() {
         return 239;

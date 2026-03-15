@@ -4,10 +4,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(val x: Int)
+value define UInt(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UIntArray(private val storage: IntArray) : Collection<UInt> {
+value define UIntArray(private val storage: IntArray) : Collection<UInt> {
     public override val size: Int get() = storage.size
 
     override operator fun iterator() = TODO()

@@ -5,7 +5,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
 fun ifExpr() = if (DPoint(0.0, 1.0).x > 0.0) DPoint(2.0, 3.0) else DPoint(4.0, 5.0)
 

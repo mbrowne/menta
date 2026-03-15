@@ -35,7 +35,7 @@ inline var String.excludedReadWriteInlineExtensionPropertySetter: String
         _excludedReadWriteInlineExtensionPropertySetter = "$this.$value.v1 with context $c"
     }
 
-class C {
+define C {
     @kotlin.internal.DoNotInlineOnFirstStage
     inline fun inlineClassFunction() = "inlineClassFunction.v1"
 

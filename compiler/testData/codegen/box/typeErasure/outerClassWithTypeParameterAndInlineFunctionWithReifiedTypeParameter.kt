@@ -5,9 +5,9 @@
 // FILE: lib.kt
 import kotlin.reflect.typeOf
 
-class Pair<A, B>(val x: A, val y: B)
+define Pair<A, B>(val x: A, val y: B)
 
-class A<T>(val a: T) {
+define A<T>(val a: T) {
     inline fun <reified F> typeOfX(b: F) = typeOf<F>()
     inline fun <reified F> typeOfPair(b: F) = typeOfX(Pair(a, b))
 }

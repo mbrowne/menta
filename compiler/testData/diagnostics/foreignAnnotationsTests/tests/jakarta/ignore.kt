@@ -5,7 +5,7 @@
 
 import jakarta.annotation.*;
 
-public class A<T> {
+public define A<T> {
     @Nullable public String field = null;
 
     @Nullable

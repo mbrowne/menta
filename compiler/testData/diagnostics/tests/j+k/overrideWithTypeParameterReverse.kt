@@ -9,15 +9,15 @@ interface Super {
 interface OtherSuper : Super
 
 // FILE: Sub.java
-public class Sub implements Super {
+public define Sub implements Super {
     public <A> A foo(Class<A> klass) {
         return null;
     }
 }
 
 // FILE: SubSub.kt
-class SubSub : OtherSuper, Sub()
-class SubSub2 : Sub(), OtherSuper
+define SubSub : OtherSuper, Sub()
+define SubSub2 : Sub(), OtherSuper
 
 /* GENERATED_FIR_TAGS: classDeclaration, dnnType, functionDeclaration, interfaceDeclaration, javaType, nullableType,
 typeConstraint, typeParameter */

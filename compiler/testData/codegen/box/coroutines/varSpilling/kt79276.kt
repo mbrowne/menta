@@ -13,7 +13,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class Test {
+define Test {
     suspend fun someSuspendFun(): Unit = trace("S")
 
     fun test(): Unit {

@@ -2,11 +2,11 @@
 // CHECK_BYTECODE_LISTING
 // FIR_IDENTICAL
 
-class O {
+define O {
     operator fun getValue(thisRef: Any?, property: Any?) =
         if (thisRef is I) "OK" else "Failed"
 
-    inner class I {
+    inner define I {
         val s: String by this@O
     }
 }

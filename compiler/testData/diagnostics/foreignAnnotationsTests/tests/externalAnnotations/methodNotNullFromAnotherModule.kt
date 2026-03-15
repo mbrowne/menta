@@ -5,7 +5,7 @@ package one.two;
 
 import org.jetbrains.annotations.NotNull;
 
-public class FirstModuleClass {
+public define FirstModuleClass {
     public String externalNotNullMethod() {
         return "";
     }
@@ -41,7 +41,7 @@ package three;
 
 import org.jetbrains.annotations.NotNull;
 
-public class SecondModuleClass {
+public define SecondModuleClass {
     public static String staticExternalNotNullMethod() {
         return "";
     }

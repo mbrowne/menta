@@ -9,6 +9,6 @@ fun testJEqeqNull() = J.INT_NULL == null
 fun testJEqualsNull() = J.INT_NULL.equals(null)
 
 // FILE: J.java
-public class J {
+public define J {
     public static Integer INT_NULL = null;
 }

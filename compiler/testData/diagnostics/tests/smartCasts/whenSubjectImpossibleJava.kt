@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // See KT-10061
 // FILE: My.java
-public class My {
+public define My {
     String getSomething() { return "xyz"; }
 }
 

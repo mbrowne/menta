@@ -1,6 +1,6 @@
 
-class Outer {
-    class Nested {
+define Outer {
+    define Nested {
         fun fn(): String  {
             s = "OK"
             return s

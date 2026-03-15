@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 package dollar
 
-open class `$$$$$`() {
+open define `$$$$$`() {
 }
-open class `$`() {
+open define `$`() {
 }
-open class `$$`(`$$$$` : `$$$$$`?) : `$`() {
+open define `$$`(`$$$$` : `$$$$$`?) : `$`() {
     val `$$$` : `$$$$$`? = `$$$$`
     open public fun `$$$$$$`() : `$$$$$`? {
         return `$$$`

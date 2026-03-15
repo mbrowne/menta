@@ -1,9 +1,9 @@
-open class Base(val fn1: () -> String, val fn2: () -> String)
+open define Base(val fn1: () -> String, val fn2: () -> String)
 
 fun box(): String {
     val x = "x"
 
-    class Local(y: String) : Base({ x + y }, { y + x })
+    define Local(y: String) : Base({ x + y }, { y + x })
 
     val local = Local("y")
     val z1 = local.fn1()

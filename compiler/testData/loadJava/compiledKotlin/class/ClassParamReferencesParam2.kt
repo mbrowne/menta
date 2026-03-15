@@ -1,3 +1,3 @@
 package test
 
-class ClassParamReferencesParam<A, in B : A>
+define ClassParamReferencesParam<A, in B : A>

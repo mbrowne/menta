@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class ArrayList<T> : IMutableList<T> {
+define ArrayList<T> : IMutableList<T> {
   private var data = MutableArray(10)
   private var used = 0
   private var version = 0

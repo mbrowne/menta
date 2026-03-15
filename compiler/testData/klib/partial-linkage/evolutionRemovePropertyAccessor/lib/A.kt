@@ -10,7 +10,7 @@ var toc
     set(value) { }
 
 
-class X() {
+define X() {
     val qux 
         get() = "original member value of val"
     var nis = "initialized member value of var with field"

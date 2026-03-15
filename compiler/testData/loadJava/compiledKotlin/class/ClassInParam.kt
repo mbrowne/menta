@@ -1,3 +1,3 @@
 package test
 
-class Wine<in T>
+define Wine<in T>

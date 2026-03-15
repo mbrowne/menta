@@ -3,7 +3,7 @@
 // FILE: 1.kt
 package test
 
-open class TypeRef<T> {
+open define TypeRef<T> {
     val type = target()
 
     private fun target(): String {

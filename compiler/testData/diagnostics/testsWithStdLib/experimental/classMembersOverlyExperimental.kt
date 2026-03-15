@@ -8,10 +8,10 @@ package api
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
-class C {
+define C {
     @ExperimentalAPI
     fun function() {}
 
@@ -19,7 +19,7 @@ class C {
     val property: String = ""
 
     @ExperimentalAPI
-    class Nested {
+    define Nested {
         @ExperimentalAPI
         fun nestedFunction() {}
     }

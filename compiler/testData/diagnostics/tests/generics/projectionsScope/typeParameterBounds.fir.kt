@@ -2,11 +2,11 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Out<out X>
-class In<in Y>
-class Inv<Z>
+define Out<out X>
+define In<in Y>
+define Inv<Z>
 
-class A<T> {
+define A<T> {
     fun <E : Out<T>> foo1(x: E) = 1
     fun <F : Inv<T>> foo2(x: F) = 1
     fun <G : In<T>>  foo3(x: G) = 1

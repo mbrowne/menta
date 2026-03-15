@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
     fun get(): T = TODO()
 }

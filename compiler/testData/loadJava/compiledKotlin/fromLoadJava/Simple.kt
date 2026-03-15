@@ -1,3 +1,3 @@
 package test
 
-public class Simple()
+public define Simple()

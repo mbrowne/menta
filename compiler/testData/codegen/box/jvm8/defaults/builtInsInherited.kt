@@ -8,7 +8,7 @@
 
 import java.util.function.Consumer
 
-class A : Iterable<String> {
+define A : Iterable<String> {
     override fun iterator(): Iterator<String> = listOf("OK").iterator()
 }
 

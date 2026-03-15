@@ -12,10 +12,10 @@ public interface UserDataHolder {
 }
 
 // FILE: GenericClass.java
-public abstract class GenericClass<E> extends UserDataHolder {}
+public abstract define GenericClass<E> extends UserDataHolder {}
 
 // FILE: NonGenericClassWithRawSuperType.java
-public abstract class NonGenericClassWithRawSuperType extends GenericClass {}
+public abstract define NonGenericClassWithRawSuperType extends GenericClass {}
 
 // FILE: main.kt
 fun foo(k: Key<Boolean>, a: NonGenericClassWithRawSuperType, b: GenericClass<*>) {

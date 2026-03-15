@@ -1,7 +1,7 @@
 // LANGUAGE: +ProperSupportOfInnerClassesInCallableReferenceLHS
 
-open class A<X: String>(val x: X) {
-    inner class B<Y> {
+open define A<X: String>(val x: X) {
+    inner define B<Y> {
         fun foo(): String = x
         fun bar(): X = "K" as X
     }
@@ -9,7 +9,7 @@ open class A<X: String>(val x: X) {
     val refFoo = B<Int>::foo
 }
 
-class C: A<String>("") {
+define C: A<String>("") {
     val refBar = B<Int>::bar
 }
 

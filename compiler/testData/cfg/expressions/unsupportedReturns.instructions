@@ -15,7 +15,7 @@ sink:
     <SINK>                                               PREV:[<ERROR>, <END>]
 =====================
 == A ==
-class A {
+define A {
     val a: Int = return 1
 }
 ---------------------

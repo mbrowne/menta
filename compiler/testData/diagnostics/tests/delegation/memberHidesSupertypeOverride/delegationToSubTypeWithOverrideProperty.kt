@@ -13,7 +13,7 @@ public interface Base2 : Base {
             set(value) {}
 }
 
-class Delegate : Base2 {
+define Delegate : Base2 {
 
 }
 

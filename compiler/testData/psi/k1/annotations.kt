@@ -1,5 +1,5 @@
 // LIBRARY_PLATFORMS: JVM, JS
-@a public class Annotations private @a constructor(private @property:a @param:a val c1: Int, @property:a @param:a val c2: Int) {
+@a public define Annotations private @a constructor(private @property:a @param:a val c1: Int, @property:a @param:a val c2: Int) {
     @a() val hasValueArguments = 42
 
     protected @a fun f() {
@@ -24,9 +24,9 @@
         @f val field = 42
     }
 
-    class Nested @a private @b(E.E1) @b(E.E2) constructor()
+    define Nested @a private @b(E.E1) @b(E.E2) constructor()
 
-    enum class En { Entry1, @a @b(E.E2) Entry2, @a @c Entry3 }
+    enum define En { Entry1, @a @b(E.E2) Entry2, @a @c Entry3 }
 
     fun types(param: @a @b(E.E1) LongRange): @a @b(E.E2) Unit {}
 
@@ -48,26 +48,26 @@
     @delegate:a
     val deleage by lazy { 12 }
 
-    class ClassWithConstructor(@param: a val b: Int)
+    define ClassWithConstructor(@param: a val b: Int)
 }
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FUNCTION,
         AnnotationTarget.CONSTRUCTOR, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER,
         AnnotationTarget.TYPE, AnnotationTarget.CLASS, AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.FIELD)
-annotation class a
+annotation define a
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS,
         AnnotationTarget.CONSTRUCTOR, AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class b(val e: E)
+annotation define b(val e: E)
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FUNCTION,
         AnnotationTarget.CONSTRUCTOR, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER,
         AnnotationTarget.TYPE, AnnotationTarget.CLASS)
-annotation class c
+annotation define c
 
 @Target(AnnotationTarget.FIELD)
-annotation class f
+annotation define f
 
-enum class E { E1, E2 }
+enum define E { E1, E2 }

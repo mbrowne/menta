@@ -6,4 +6,4 @@ fun test() {
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class DontMemoize
+annotation define DontMemoize

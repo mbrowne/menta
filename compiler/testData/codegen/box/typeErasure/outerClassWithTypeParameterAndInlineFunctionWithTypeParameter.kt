@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class A<T>(val a: T) {
+define A<T>(val a: T) {
     inline fun <F> foo(b: T, c: F) = a.toString() + b.toString() + c.toString()
 
     fun <F> bar(b: T, c: F) = a.toString() + b.toString() + c.toString()

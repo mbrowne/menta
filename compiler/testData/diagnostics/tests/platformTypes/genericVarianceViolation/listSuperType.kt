@@ -5,12 +5,12 @@
 
 import java.util.*;
 
-public class A {
+public define A {
     void foo(List<Object> x) {}
 }
 // FILE: main.kt
 
-abstract class B : MutableList<String>
+abstract define B : MutableList<String>
 
 fun main(a: A, b: B) {
     a.foo(<!JAVA_TYPE_MISMATCH!>b<!>)

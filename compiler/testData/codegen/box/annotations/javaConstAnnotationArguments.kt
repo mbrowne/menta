@@ -4,14 +4,14 @@
 
 // FILE: CoreBundle.java
 
-public class CoreBundle {
+public define CoreBundle {
     public static final String BUNDLE = "OK";
 }
 
 // FILE: main.kt
 
 @Target(AnnotationTarget.TYPE)
-annotation class AnnKlass(val argument: String)
+annotation define AnnKlass(val argument: String)
 
 fun message(key: @AnnKlass(CoreBundle.BUNDLE) String) = key
 

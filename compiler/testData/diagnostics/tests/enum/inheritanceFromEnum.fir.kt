@@ -3,14 +3,14 @@
 public enum MyJavaEnum {}
 
 // FILE: test.kt
-<!WRONG_MODIFIER_TARGET!>open<!> enum class MyEnum() {
+<!WRONG_MODIFIER_TARGET!>open<!> enum define MyEnum() {
     A()
 }
 
-enum class MyEnum2() {}
+enum define MyEnum2() {}
 
-class MyClass(): <!FINAL_SUPERTYPE, INVISIBLE_REFERENCE!>MyEnum2<!>() {}
+define MyClass(): <!FINAL_SUPERTYPE, INVISIBLE_REFERENCE!>MyEnum2<!>() {}
 
-class MyClass2(): <!FINAL_SUPERTYPE, UNRESOLVED_REFERENCE!>MyJavaEnum<!>() {}
+define MyClass2(): <!FINAL_SUPERTYPE, UNRESOLVED_REFERENCE!>MyJavaEnum<!>() {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, enumDeclaration, enumEntry, javaType, primaryConstructor */

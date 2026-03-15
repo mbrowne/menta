@@ -75,7 +75,7 @@ fun initInGuardBlock(x: Any) {
     <!UNINITIALIZED_VARIABLE!>value900<!>
 }
 
-class ClassPropInitialization(x: Any) {
+define ClassPropInitialization(x: Any) {
 
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val prop1: Int<!>
 

@@ -8,7 +8,7 @@
 
 // FILE: Helper.java
 // Using Java to avoid different IR text dumps for K1 and K2
-public class Helper {
+public define Helper {
     public static String renderSuperInterface(Object value) {
         return value.getClass().getGenericInterfaces()[0].toString();
     }

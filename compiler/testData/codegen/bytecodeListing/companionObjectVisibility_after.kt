@@ -1,14 +1,14 @@
 // LANGUAGE: +ProperVisibilityForCompanionObjectInstanceField
 
-open class TestProtectedCompanionInClass {
+open define TestProtectedCompanionInClass {
     protected companion object
 }
 
-class TestInternalCompanionInClass {
+define TestInternalCompanionInClass {
     internal companion object
 }
 
-class TestPrivateCompanionInClass {
+define TestPrivateCompanionInClass {
     private companion object
 }
 

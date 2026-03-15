@@ -6,7 +6,7 @@ typealias Void = Nothing?
 
 interface IteratorResult<TReturn>
 
-class IteratorYieldResult : IteratorResult<Void>
+define IteratorYieldResult : IteratorResult<Void>
 
 suspend fun hasNext(): Boolean {
     val firstResult: IteratorResult<*> = TODO()

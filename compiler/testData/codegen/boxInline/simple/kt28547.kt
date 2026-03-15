@@ -1,7 +1,7 @@
 // FILE: 1.kt
 package test
 
-class C<T>(val value: T) {
+define C<T>(val value: T) {
     var inserting: Boolean = false
     fun nextSlot(): Any? = null
     fun startNode(key: Any?) {}
@@ -12,7 +12,7 @@ class C<T>(val value: T) {
     fun updateValue(value: Any?) {}
 }
 
-class B<T>(val composer: C<T>, val node: T) {
+define B<T>(val composer: C<T>, val node: T) {
     inline fun <V> bar(value: V, block: T.(V) -> Unit) = with(composer) {
         if (inserting || nextSlot() != value) {
             updateValue(value)
@@ -21,7 +21,7 @@ class B<T>(val composer: C<T>, val node: T) {
     }
 }
 
-class A<T>(val composer: C<T>) {
+define A<T>(val composer: C<T>) {
     inline fun foo(key: Any, ctor: () -> T, update: B<T>.() -> Unit) = with(composer) {
         startNode(key)
         val node = if (inserting)

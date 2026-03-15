@@ -4,17 +4,17 @@
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.CONSTRUCTOR, AnnotationTarget.PROPERTY)
-annotation class Experimental
+annotation define Experimental
 
 interface Foo {
     @Experimental
     val foo: Int
 }
 
-data class Bar @Experimental constructor(override val <!OPT_IN_OVERRIDE_ERROR!>foo<!>: Int): Foo
+data define Bar @Experimental constructor(override val <!OPT_IN_OVERRIDE_ERROR!>foo<!>: Int): Foo
 
 fun main() {
-    @OptIn(Experimental::class)
+    @OptIn(Experimental::define)
     val bar = Bar(42)
 
     bar.foo

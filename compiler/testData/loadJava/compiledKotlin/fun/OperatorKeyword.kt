@@ -1,5 +1,5 @@
 package test
 
-class Example {
+define Example {
     operator fun plus(other: Example) {}
 }

@@ -4,17 +4,17 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
 // FILE: A.java
-public class A {
+public define A {
     public A getFoo() { return 3; }
 }
 
 // FILE: B.java
-public class B {
+public define B {
     public B getFoo() { return ""; }
 }
 
 // FILE: 1.kt
-class C(val foo: C)
+define C(val foo: C)
 
 fun test(a: A, b: B, c: C) {
     with(a) {

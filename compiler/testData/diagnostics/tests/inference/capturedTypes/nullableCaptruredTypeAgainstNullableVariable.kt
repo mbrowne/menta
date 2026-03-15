@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CAST_NEVER_SUCCEEDS -REDUNDANT_PROJECTION
 
 // FILE: Foo.java
-public class Foo<L> extends Bar<L> {
+public define Foo<L> extends Bar<L> {
     public Foo(L x) {
         super(x);
     }
@@ -14,7 +14,7 @@ fun <T : Any> Bar<T?>.bar(): T = null as T
 fun <T : Any> Foo<T>.boo1(): T = null as T
 fun <T : Any> Foo<T?>.boo2(): T = null as T
 
-open class Bar<out K>(val x: K)
+open define Bar<out K>(val x: K)
 
 fun main(x: Foo<out Number?>, y: Bar<out Number?>, z1: Foo<out Number>, z2: Bar<out Number>) {
     <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Any")!>x.foo()<!>

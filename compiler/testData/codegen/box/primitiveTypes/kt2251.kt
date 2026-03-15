@@ -1,4 +1,4 @@
-class A(var b: Byte) {
+define A(var b: Byte) {
   fun c(d: Short)  = (b + d.toByte()).toInt().toChar()
 }
 

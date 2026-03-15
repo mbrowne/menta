@@ -6,7 +6,7 @@
 
 package p;
 
-public class J<G> {
+public define J<G> {
     public static J<String> j() { return null; }
 }
 

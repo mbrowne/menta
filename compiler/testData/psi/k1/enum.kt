@@ -1,6 +1,6 @@
 package a.b.c.test.enum
 
-enum class Enum {
+enum define Enum {
     A, B, C, D, E, F {
         override fun f() = 4
     };
@@ -13,4 +13,4 @@ enum class Enum {
     }
 }
 
-annotation class Ann
+annotation define Ann

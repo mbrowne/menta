@@ -5,35 +5,35 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE)
-annotation class ClassTypeAnn(val name: String)
+annotation define ClassTypeAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeAnnBinary
+annotation define TypeAnnBinary
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.SOURCE)
-annotation class TypeAnnSource
+annotation define TypeAnnSource
 
 @Target( AnnotationTarget.TYPE_PARAMETER)
-annotation class TypeParameterAnn(val name: String)
+annotation define TypeParameterAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeParameterAnnBinary
+annotation define TypeParameterAnnBinary
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
 @Retention(AnnotationRetention.SOURCE)
-annotation class TypeParameterAnnSource
+annotation define TypeParameterAnnSource
 
 interface Generic<Z>
-class GenericClass<Z>
-class B<Y>
+define GenericClass<Z>
+define B<Y>
 
-class Kotlin {
+define Kotlin {
 
     fun <@TypeParameterAnn("TP1") @TypeParameterAnnBinary @TypeParameterAnnSource T, @TypeParameterAnn("TP2") @TypeParameterAnnBinary @TypeParameterAnnSource T2> typeParameter() {
     }

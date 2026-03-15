@@ -23,13 +23,13 @@ fun runSuspend(c: suspend () -> Unit) {
 var test1 = "failed"
 var test2 = "failed"
 
-class A: Int.() -> Unit {
+define A: Int.() -> Unit {
     override fun invoke(p1: Int) {
         test1 = "O"
     }
 }
 
-class B: (Int) -> Unit {
+define B: (Int) -> Unit {
     override fun invoke(p1: Int) {
         test2 = "K"
     }

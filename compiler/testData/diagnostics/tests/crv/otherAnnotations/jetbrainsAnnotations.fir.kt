@@ -15,7 +15,7 @@ package usage;
 import org.jetbrains.annotations.*;
 
 @CheckReturnValue
-public class Usage {
+public define Usage {
     public String method() {
         return "";
     }
@@ -27,7 +27,7 @@ package usage
 import org.jetbrains.annotations.*
 
 @CheckReturnValue
-class KotlinUsage {
+define KotlinUsage {
     fun method() = ""
 }
 

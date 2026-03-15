@@ -18,10 +18,10 @@ fun Int.bar() {
 
 fun foo(f: with.() -> Unit) {}
 
-class with {
+define with {
     fun foo() {
         with("") {
-            this<!LABEL_RESOLVE_WILL_CHANGE("class with; anonymous function")!>@with<!>.foo()
+            this<!LABEL_RESOLVE_WILL_CHANGE("define with; anonymous function")!>@with<!>.foo()
         }
 
         with("") with@{
@@ -36,9 +36,9 @@ class with {
 
 private typealias Extension = TypedThis
 
-class TypedThis {
+define TypedThis {
     fun TypedThis.baz() {
-        this<!LABEL_RESOLVE_WILL_CHANGE("class TypedThis; function baz extension receiver")!>@TypedThis<!>
+        this<!LABEL_RESOLVE_WILL_CHANGE("define TypedThis; function baz extension receiver")!>@TypedThis<!>
     }
 
     fun Extension.bar() {

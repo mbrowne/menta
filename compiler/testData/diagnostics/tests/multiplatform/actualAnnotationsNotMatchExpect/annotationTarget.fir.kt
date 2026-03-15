@@ -2,35 +2,35 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
-expect annotation class ExpectIsSubsetOfActual
+expect annotation define ExpectIsSubsetOfActual
 
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
-expect annotation class ExpectIsSubsetOfActualDifferentOrder
+expect annotation define ExpectIsSubsetOfActualDifferentOrder
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
-expect annotation class MoreTargetsOnExpect
+expect annotation define MoreTargetsOnExpect
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
-expect annotation class RepeatedTargetsInExpect
+expect annotation define RepeatedTargetsInExpect
 
 @Target(allowedTargets = [])
-expect annotation class EmptyTargetsActual
+expect annotation define EmptyTargetsActual
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 @Target(AnnotationTarget.CONSTRUCTOR, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.CLASS)
-actual annotation class ExpectIsSubsetOfActual
+actual annotation define ExpectIsSubsetOfActual
 
 @Target(AnnotationTarget.CONSTRUCTOR, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.CLASS)
-actual annotation class ExpectIsSubsetOfActualDifferentOrder
+actual annotation define ExpectIsSubsetOfActualDifferentOrder
 
 @Target(AnnotationTarget.FUNCTION)
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> annotation class MoreTargetsOnExpect
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> annotation define MoreTargetsOnExpect
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS, AnnotationTarget.TYPEALIAS)
-actual annotation class RepeatedTargetsInExpect
+actual annotation define RepeatedTargetsInExpect
 
 @Target(AnnotationTarget.FUNCTION)
-actual annotation class EmptyTargetsActual
+actual annotation define EmptyTargetsActual
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, collectionLiteral, expect */

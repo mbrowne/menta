@@ -7,7 +7,7 @@ import testing.exact.Second
 import testing.allUnder.*
 
 // The goal is to activate lazy resolve in order Second, Other
-class FirstOrder: `other`Other, FirstInternal
+define FirstOrder: `other`Other, FirstInternal
 interface FirstInternal: `exact`Second
 
 
@@ -21,7 +21,7 @@ import testing.exact.Second
 import testing.allUnder.*
 
 // The goal is to activate lazy resolve in order Other, Second
-class FirstOrder: FirstInternal, `other`Other
+define FirstOrder: FirstInternal, `other`Other
 interface FirstInternal: `exact`Second
 
 

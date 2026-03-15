@@ -1,7 +1,7 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // WITH_STDLIB
 
-class C : Iterable<String> {
+define C : Iterable<String> {
     // Unused declaration, which is here only to confuse the backend who might lookup symbols by name
     private fun List<Int>.iterator(): Double = size.toDouble()
 

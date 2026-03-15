@@ -4,32 +4,32 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GCmp<T>(val xc: Comparable<T>)
+value define GCmp<T>(val xc: Comparable<T>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GSCmp<T>(val sc: Comparable<String>)
+value define GSCmp<T>(val sc: Comparable<String>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class SCmp(val sc: Comparable<String>)
+value define SCmp(val sc: Comparable<String>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ICmp(val intc: Comparable<Int>)
+value define ICmp(val intc: Comparable<Int>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GICmp<T>(val intc: Comparable<Int>)
+value define GICmp<T>(val intc: Comparable<Int>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class II(val i: Int) : Comparable<II> {
+value define II(val i: Int) : Comparable<II> {
     override fun compareTo(other: II): Int {
         return i.compareTo(other.i)
     }
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IICmp(val iic: Comparable<II>)
+value define IICmp(val iic: Comparable<II>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class GIICmp<T>(val iic: Comparable<II>)
+value define GIICmp<T>(val iic: Comparable<II>)
 
 fun testGCmp(x: GCmp<String>) {
     if (x.xc.compareTo("OK") != 0) throw AssertionError()

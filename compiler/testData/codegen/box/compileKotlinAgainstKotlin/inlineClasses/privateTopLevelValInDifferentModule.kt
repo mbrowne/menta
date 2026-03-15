@@ -9,7 +9,7 @@ package a
 
 import kotlin.reflect.jvm.isAccessible
 
-inline class S(val s: String)
+inline define S(val s: String)
 
 private val ok = S("OK")
 

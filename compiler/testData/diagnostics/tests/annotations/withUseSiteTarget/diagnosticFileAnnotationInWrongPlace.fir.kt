@@ -9,7 +9,7 @@ package bar
 fun func() {}
 
 @<!INAPPLICABLE_FILE_TARGET{PSI}!>file<!>:[<!INAPPLICABLE_FILE_TARGET{LT}, WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>baz<!>]
-class C
+define C
 
 <!SYNTAX!>@file:<!>
 interface T1
@@ -17,9 +17,9 @@ interface T1
 @file:[<!SYNTAX!><!>]
 interface T2
 
-annotation class foo
-annotation class bar
-annotation class baz
+annotation define foo
+annotation define bar
+annotation define baz
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, classDeclaration, functionDeclaration,
 interfaceDeclaration, propertyDeclaration */

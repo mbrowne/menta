@@ -6,7 +6,7 @@
 
 @file:MustUseReturnValues
 
-expect class Foo() {
+expect define Foo() {
     fun x(): String
     @IgnorableReturnValue fun ign(): String
 }
@@ -21,7 +21,7 @@ fun commonMain() {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: JavaFoo.java
 
-public class JavaFoo {
+public define JavaFoo {
     public String x() {
         return "";
     }
@@ -34,7 +34,7 @@ public class JavaFoo {
 
 // Foo.<init> and Java methods are Unspecified.
 // We report mismatch to Unspecified only if there is a meaningful (i.e. member) declaration to report on.
-actual class <!ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect constructor(): Foo' defined in 'Foo'; must-use; 'constructor(): Foo' defined in 'Foo'; unspecified (implicitly ignorable)")!>Foo<!> : JavaFoo() {
+actual define <!ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect constructor(): Foo' defined in 'Foo'; must-use; 'constructor(): Foo' defined in 'Foo'; unspecified (implicitly ignorable)")!>Foo<!> : JavaFoo() {
 }
 
 fun main() {

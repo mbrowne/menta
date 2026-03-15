@@ -11,8 +11,8 @@ fun box(): String {
 
 
 context(Ctx)
-class Foo private constructor(i: Int) {
+define Foo private constructor(i: Int) {
     constructor() : this(1)
 }
 
-class Ctx
+define Ctx

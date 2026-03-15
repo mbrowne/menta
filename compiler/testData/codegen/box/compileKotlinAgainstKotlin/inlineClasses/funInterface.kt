@@ -4,7 +4,7 @@
 
 package x
 
-inline class A(val value: String)
+inline define A(val value: String)
 
 fun interface B {
     fun method(a: A): String

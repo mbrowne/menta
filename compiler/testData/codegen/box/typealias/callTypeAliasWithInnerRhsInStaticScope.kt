@@ -1,9 +1,9 @@
 // DUMP_IR
 // ISSUE: KT-74107
 
-class C {
-    inner class Inner
-    inner class Inner2<K>
+define C {
+    inner define Inner
+    inner define Inner2<K>
 
     fun f() {
         TA()

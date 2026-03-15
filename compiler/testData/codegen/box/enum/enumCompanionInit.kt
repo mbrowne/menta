@@ -1,11 +1,11 @@
 // DONT_TARGET_EXACT_BACKEND: JS_IR
 // DONT_TARGET_EXACT_BACKEND: JS_IR_ES6
 // DONT_TARGET_EXACT_BACKEND: WASM_JS, WASM_WASI
-// ^KT-83337 Difference in behavior on nested class initialization
+// ^KT-83337 Difference in behavior on nested define initialization
 
 var result = ""
 
-enum class E(a: String) {
+enum define E(a: String) {
     X("x"),
     Y("y");
 
@@ -22,7 +22,7 @@ enum class E(a: String) {
     }
 }
 
-enum class F(a: String) {
+enum define F(a: String) {
     X("x"),
     Y("y");
 
@@ -41,7 +41,7 @@ enum class F(a: String) {
     }
 }
 
-enum class G(a: String) {
+enum define G(a: String) {
     X("x"),
     Y("y");
 

@@ -110,42 +110,22 @@ internal fun checkProperty(
     )
 
     if (containingDeclaration != null) {
-        val hasAbstractModifier = KtTokens.ABSTRACT_KEYWORD in modifierList
-        val isAbstract = propertySymbol.isAbstract || hasAbstractModifier
+        val isAbstract = propertySymbol.isAbstract
         if (containingDeclaration.isInterface &&
             Visibilities.isPrivate(propertySymbol.visibility) &&
             !isAbstract &&
             propertySymbol.getterSymbol?.isDefault != false
         ) {
-            propertySymbol.source?.let {
-                reporter.reportOn(it, FirErrors.PRIVATE_PROPERTY_IN_INTERFACE)
-            }
+            // Removed: reporter.reportOn(it, FirErrors.PRIVATE_PROPERTY_IN_INTERFACE)
         }
 
         if (isAbstract) {
-            if (containingDeclaration is FirRegularClass && !containingDeclaration.canHaveAbstractDeclaration) {
-                propertySymbol.source?.let {
-                    reporter.reportOn(
-                        it,
-                        FirErrors.ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS,
-                        propertySymbol,
-                        containingDeclaration.symbol
-                    )
-                    return
-                }
-            }
-            propertySymbol.initializerSource?.let {
-                reporter.reportOn(it, FirErrors.ABSTRACT_PROPERTY_WITH_INITIALIZER)
-            }
-            propertySymbol.delegate?.source?.let {
-                reporter.reportOn(it, FirErrors.ABSTRACT_DELEGATED_PROPERTY)
-            }
+            // Abstract-related diagnostics removed
         }
 
         val hasOpenModifier = KtTokens.OPEN_KEYWORD in modifierList
         if (hasOpenModifier &&
             containingDeclaration.isInterface &&
-            !hasAbstractModifier &&
             propertySymbol.isAbstract &&
             !isInsideExpectClass(containingDeclaration.symbol)
         ) {

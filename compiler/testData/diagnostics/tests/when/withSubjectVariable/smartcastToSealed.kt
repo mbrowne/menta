@@ -3,9 +3,9 @@
 // LANGUAGE: +VariableDeclarationInWhenSubject
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-sealed class Either
-class Left : Either()
-class Right : Either()
+sealed define Either
+define Left : Either()
+define Right : Either()
 
 fun testSmartcastToSealedInSubjectInitializer1(x: Any?) {
     val y1 = when (val either = x as Either) {

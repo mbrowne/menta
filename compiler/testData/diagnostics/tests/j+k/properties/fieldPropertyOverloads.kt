@@ -14,7 +14,7 @@ public enum CompressionType {
 }
 
 // FILE: CollectionWithSize.java
-public abstract class CollectionWithSize implements java.util.Collection<String> {
+public abstract define CollectionWithSize implements java.util.Collection<String> {
     public final String size = "";
 }
 

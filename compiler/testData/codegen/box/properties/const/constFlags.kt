@@ -14,7 +14,7 @@ public object A {
     public const val publicConst: Int = 3
 }
 
-public class B {
+public define B {
     companion object {
         private const val privateConst: Int = 1
         protected const val protectedConst: Int = 2
@@ -43,8 +43,8 @@ fun check(clazz: Class<*>, expectProtected: Boolean = true) {
 }
 
 fun box(): String {
-    check(A::class.java, false)
-    check(B::class.java)
+    check(A::define.java, false)
+    check(B::define.java)
     check(Class.forName("XYZ"), false)
 
     return "OK"

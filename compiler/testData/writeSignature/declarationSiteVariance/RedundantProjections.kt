@@ -1,6 +1,6 @@
-class Out<out E>
+define Out<out E>
 interface Open
-class Final
+define Final
 
 fun foo(x: Out<out Open>, y: Out<out Final>): Out<out Open> = Out()
 
@@ -8,7 +8,7 @@ fun foo(x: Out<out Open>, y: Out<out Final>): Out<out Open> = Out()
 // jvm signature: (LOut;LOut;)LOut;
 // generic signature: (LOut<+LOpen;>;LOut<LFinal;>;)LOut<LOpen;>;
 
-class In<in F>
+define In<in F>
 
 fun bar(x: In<in Open>, y: In<in Any?>): In<in Open> = In()
 

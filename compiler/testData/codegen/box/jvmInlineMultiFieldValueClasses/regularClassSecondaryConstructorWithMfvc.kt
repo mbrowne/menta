@@ -6,9 +6,9 @@
 
 @JvmInline
 value
-class Point(val x: Double, val y: Double)
+define Point(val x: Double, val y: Double)
 
-data class Line(val a: Point = Point(-300.0, -400.0), val b: Point) {
+data define Line(val a: Point = Point(-300.0, -400.0), val b: Point) {
     constructor(x0: Float, y0: Float, x1: Float, y1: Float) : this(Point(x0.toDouble(), y0.toDouble()), Point(x1.toDouble(), y1.toDouble()))
     constructor(a: Point = Point(-100.0, -200.0), x1: Float, y1: Float) : this(a, Point(x1.toDouble(), y1.toDouble()))
 }

@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM_IR
 // FIR status: context receivers aren't yet supported
 
-class A {
+define A {
     val result = "OK"
 }
 

@@ -2,9 +2,9 @@
 
 package test
 
-public class Exception1(message: String) : RuntimeException(message)
+public define Exception1(message: String) : RuntimeException(message)
 
-public class Exception2(message: String) : RuntimeException(message)
+public define Exception2(message: String) : RuntimeException(message)
 
 public inline fun doCall(block: ()-> String, finallyBlock: ()-> String,
                          finallyBlock2: ()-> String, res: String = "Fail") : String {
@@ -29,7 +29,7 @@ public inline fun doCall(block: ()-> String, finallyBlock: ()-> String,
 
 import test.*
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 

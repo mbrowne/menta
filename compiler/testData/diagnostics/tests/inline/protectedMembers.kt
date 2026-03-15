@@ -6,7 +6,7 @@
 
 package test
 
-open class P {
+open define P {
     protected open val FOO = "O"
 
     protected open fun test() = "K"
@@ -24,7 +24,7 @@ open class P {
 
 import test.*
 
-class A: P() {
+define A: P() {
     override val FOO: String
         get() = "fail"
 

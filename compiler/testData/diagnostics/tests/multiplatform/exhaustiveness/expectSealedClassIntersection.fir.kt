@@ -5,9 +5,9 @@
 
 // MODULE: m1-common
 // FILE: common.kt
-expect sealed class Base()
+expect sealed define Base()
 
-class A : Base()
+define A : Base()
 object B : Base()
 
 interface I
@@ -23,11 +23,11 @@ fun testCommon(base: Base) {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: Base.kt
-actual sealed class Base
+actual sealed define Base
 
 // FILE: C.kt
 
-class C : Base()
+define C : Base()
 
 fun testPlatformGood(base: Base) {
     if (base is I) {

@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import Outer.Inner
 
-open class Outer {
-    open inner class Inner
+open define Outer {
+    open inner define Inner
 }
 
-class Test : <!SUPERTYPE_NOT_INITIALIZED!>Inner<!> {
+define Test : <!SUPERTYPE_NOT_INITIALIZED!>Inner<!> {
     fun foo() {}
 }
 

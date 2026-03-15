@@ -1,5 +1,5 @@
 fun foo(): String {
-    class Local<T> {
+    define Local<T> {
         fun Local<String>.bar(): String {
             return "OK"
         }

@@ -3,14 +3,14 @@
 // LANGUAGE: +DiscriminateNothingAsNullabilityConstraintInInference
 
 // FILE: JavaUtils.java
-public class JavaUtils {
+public define JavaUtils {
     public static <T> T javaFunc() {
         return (T) "OK";
     }
 }
 
 // FILE: TestClass.kt
-class TestClass {
+define TestClass {
     private var str: String? = null
 
     fun testFun(): String? {

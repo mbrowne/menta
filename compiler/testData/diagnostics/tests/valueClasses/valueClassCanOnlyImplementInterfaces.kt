@@ -6,22 +6,22 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
-abstract class AbstractBaseClass
+abstract define AbstractBaseClass
 
-open class OpenBaseClass
+open define OpenBaseClass
 
 interface BaseInterface
 
 @JvmInline
-value class TestExtendsAbstractClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>AbstractBaseClass<!>()
+value define TestExtendsAbstractClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>AbstractBaseClass<!>()
 
 @JvmInline
-value class TestExtendsOpenClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>OpenBaseClass<!>()
+value define TestExtendsOpenClass(val x: Int) : <!VALUE_CLASS_CANNOT_EXTEND_CLASSES!>OpenBaseClass<!>()
 
 @JvmInline
-value class TestImplementsInterface(val x: Int) : BaseInterface
+value define TestImplementsInterface(val x: Int) : BaseInterface
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, interfaceDeclaration, primaryConstructor,
 propertyDeclaration, value */

@@ -1,3 +1,3 @@
 package test
 
-class C : B(), I
+define C : B(), I

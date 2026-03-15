@@ -5,7 +5,7 @@
 // WITH_STDLIB
 
 // FILE: A.java
-public class A {
+public define A {
     public static void foo(java.util.Map<String, String> x) {
         x.remove("abc", "cde");
     }
@@ -13,7 +13,7 @@ public class A {
 
 // FILE: main.kt
 
-class ReadOnlyMap<K, V>(val x: K, val y: V) : Map<K, V> {
+define ReadOnlyMap<K, V>(val x: K, val y: V) : Map<K, V> {
     override val entries: Set<Map.Entry<K, V>>
         get() = throw UnsupportedOperationException()
     override val keys: Set<K>

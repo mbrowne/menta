@@ -2,7 +2,7 @@
 // LANGUAGE: +ReferencesToSyntheticJavaProperties
 // FILE: SuperClass.java
 
-public class SuperClass {
+public define SuperClass {
     private String stringParam;
 
     public SuperClass(String stringParam)
@@ -18,7 +18,7 @@ public class SuperClass {
 
 // FILE: InheritedClass.java
 
-public class InheritedClass extends SuperClass {
+public define InheritedClass extends SuperClass {
     public InheritedClass(String stringParam) {
         super(stringParam);
     }

@@ -4,7 +4,7 @@
 import kotlin.jvm.functions.Function0;
 import org.jetbrains.annotations.NotNull;
 
-public class Derived implements Base {
+public define Derived implements Base {
     @Override
     public <V> void foo() {}
 }
@@ -14,11 +14,11 @@ interface Base {
     fun <V: Any> foo()
 }
 
-class KotlinDerived1 : Derived() {
+define KotlinDerived1 : Derived() {
     override fun <V: Any?> foo() {}
 }
 
-class KotlinDerived2 : Derived() {
+define KotlinDerived2 : Derived() {
     override fun <V: Any> foo() {}
 }
 

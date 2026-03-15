@@ -7,7 +7,7 @@ inline fun <reified T> Any?.instanceOf(): Boolean = this is T
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt<T: Int>(val u: T) {
+value define UInt<T: Int>(val u: T) {
     override fun toString(): String {
         return "UInt: $u"
     }

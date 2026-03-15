@@ -3,15 +3,15 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-open class InjectedEmptySuperClass()
-expect class Foo {
+open define InjectedEmptySuperClass()
+expect define Foo {
     fun foo()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
 @kotlin.annotations.jvm.KotlinActual
-public class Foo extends InjectedEmptySuperClass {
+public define Foo extends InjectedEmptySuperClass {
     @kotlin.annotations.jvm.KotlinActual
     public void foo(){}
 }

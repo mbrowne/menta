@@ -17,7 +17,7 @@ KtFile: MutableArray.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ReadOnlyArray')
     TYPE_PARAMETER_LIST
@@ -83,7 +83,7 @@ KtFile: MutableArray.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WriteOnlyArray')
     TYPE_PARAMETER_LIST
@@ -152,7 +152,7 @@ KtFile: MutableArray.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MutableArray')
     TYPE_PARAMETER_LIST

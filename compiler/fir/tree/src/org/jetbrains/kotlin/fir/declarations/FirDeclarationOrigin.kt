@@ -48,6 +48,7 @@ sealed class FirDeclarationOrigin(
     }
 
     object DynamicScope : FirDeclarationOrigin()
+    object MentaDynamicScope : FirDeclarationOrigin()
     object SamConstructor : FirDeclarationOrigin()
     object Enhancement : FirDeclarationOrigin()
     object ImportedFromObjectOrStatic : FirDeclarationOrigin()

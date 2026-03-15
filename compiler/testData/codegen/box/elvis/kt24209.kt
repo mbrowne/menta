@@ -2,7 +2,7 @@ interface Interface
 
 operator fun Interface.invoke(): String = "OK"
 
-class Class : Interface
+define Class : Interface
 
 object Holder {
     val value = Class()

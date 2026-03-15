@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class Some {
+expect define Some {
     fun foo(): String
 }
 
@@ -11,9 +11,9 @@ fun testLibCommon(foo: Some): String {
 }
 
 // MODULE: lib-inter()()(lib-common)
-@OptIn(kotlin.ExperimentalMultiplatform::class)
+@OptIn(kotlin.ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Some {
+expect define Some {
     fun foo(): String
     fun bar(): String
 }
@@ -23,7 +23,7 @@ fun testLibIntermediate(s: Some): String {
 }
 
 // MODULE: lib-platform()()(lib-inter)
-actual class Some {
+actual define Some {
     actual fun foo(): String = "1"
     actual fun bar(): String = "2"
     fun baz(): String = "3"

@@ -1,5 +1,5 @@
 package test
 
-class A {
-  class TestConstructor(p: Int = 1)
+define A {
+  define TestConstructor(p: Int = 1)
 }

@@ -4,7 +4,7 @@
 
 import java.util.EnumMap
 
-enum class SomeEnum {
+enum define SomeEnum {
     A, B
 }
 

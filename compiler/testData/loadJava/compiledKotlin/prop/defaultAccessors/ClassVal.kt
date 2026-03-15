@@ -2,7 +2,7 @@
 // ALLOW_AST_ACCESS
 package test
 
-class ClassVal() {
+define ClassVal() {
     val property1 = { 1 }()
 
     internal val property2 = { 1 }()

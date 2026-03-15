@@ -13,7 +13,7 @@ fun foo(javaClass: JavaClass) {
 fun bar(){}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     @Deprecated
     public void doSomething1(Runnable runnable) { runnable.run(); }
 

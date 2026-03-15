@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Direction(private val direction: Int) {
+value define Direction(private val direction: Int) {
     fun dx() = dx[direction]
     fun dy() = dy[direction]
 

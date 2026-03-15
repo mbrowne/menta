@@ -8,7 +8,7 @@ var globalA: A = A(-1)
     }
 
 
-class A(val p: Int) {
+define A(val p: Int) {
 
     var prop = this
 

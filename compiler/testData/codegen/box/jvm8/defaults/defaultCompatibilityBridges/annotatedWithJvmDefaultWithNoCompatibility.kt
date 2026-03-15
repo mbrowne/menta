@@ -20,10 +20,10 @@ interface KotlinEvaluatableUElement : UExpression {
     }
 }
 
-abstract class KotlinAbstractUExpression() : UExpression {}
+abstract define KotlinAbstractUExpression() : UExpression {}
 
 @JvmDefaultWithoutCompatibility
-class KotlinUBinaryExpressionWithType : KotlinAbstractUExpression(), KotlinEvaluatableUElement {}
+define KotlinUBinaryExpressionWithType : KotlinAbstractUExpression(), KotlinEvaluatableUElement {}
 
 fun box(): String {
     val foo = KotlinUBinaryExpressionWithType()

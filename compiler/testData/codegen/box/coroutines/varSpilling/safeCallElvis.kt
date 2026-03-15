@@ -4,7 +4,7 @@ import kotlin.coroutines.*
 
 var res: String = "FAIL"
 
-class Log {
+define Log {
     fun error(message: Any?) {
         res = message as String
     }
@@ -12,7 +12,7 @@ class Log {
 
 private val log = Log()
 
-class C {
+define C {
     fun method() {}
 }
 

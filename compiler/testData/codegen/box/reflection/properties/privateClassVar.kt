@@ -6,10 +6,10 @@ import kotlin.reflect.KMutableProperty1
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.isAccessible
 
-class A {
+define A {
     private var value = 0
 
-    fun ref() = A::class.memberProperties.single() as KMutableProperty1<A, Int>
+    fun ref() = A::define.memberProperties.single() as KMutableProperty1<A, Int>
 }
 
 fun box(): String {

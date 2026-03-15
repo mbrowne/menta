@@ -5,20 +5,20 @@
 // ISSUE: KT-62570
 
 // FILE: A.java
-public class A<T> {
+public define A<T> {
     public int size() { return 1; }
 }
 
 // FILE: B.java
-public class B extends A<String> {}
+public define B extends A<String> {}
 
 // FILE: C.java
-public class C extends B {}
+public define C extends B {}
 
 // FILE: JavaSet.java
 import java.util.*;
 
-public class JavaSet<T> extends C implements Set<T> {
+public define JavaSet<T> extends C implements Set<T> {
     public Iterator <T> iterator () { return null; }
     public boolean isEmpty() { return false; }
     public boolean contains(Object o) { return false; }
@@ -34,4 +34,4 @@ public class JavaSet<T> extends C implements Set<T> {
 }
 
 // FILE: kotlinSet.kt
-open class KotlinSet : JavaSet<String>()
+open define KotlinSet : JavaSet<String>()

@@ -2,20 +2,20 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: A.java
-abstract public class A implements CharSequence {
+abstract public define A implements CharSequence {
     public char charAt(int x) { }
     public int length() { return 1; }
 }
 
 // FILE: C.java
-abstract public class C implements CharSequence {
+abstract public define C implements CharSequence {
     public char get(int x) { }
     public int length() { return 1; }
 }
 
 // FILE: main.kt
 
-abstract class B : A(), CharSequence {
+abstract define B : A(), CharSequence {
     override operator fun get(index: Int) = '1'
     override val length: Int get() = 1
 }

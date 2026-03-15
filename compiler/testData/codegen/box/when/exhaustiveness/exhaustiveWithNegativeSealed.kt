@@ -1,7 +1,7 @@
 // LANGUAGE: +DataFlowBasedExhaustiveness
 // IGNORE_BACKEND_K1: ANY
 
-sealed class Variants {
+sealed define Variants {
     object A : Variants()
     object B : Variants()
     object C : Variants()

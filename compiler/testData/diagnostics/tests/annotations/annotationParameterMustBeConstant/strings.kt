@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
-annotation class Ann(vararg val i: String)
+annotation define Ann(vararg val i: String)
 
 const val topLevel = "topLevel"
 

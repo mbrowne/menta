@@ -1,6 +1,6 @@
-annotation class Ann
+annotation define Ann
 
-class Foo private @Ann constructor(@Ann s: String) {
+define Foo private @Ann constructor(@Ann s: String) {
 
     @Ann
     private fun foo(@Ann s: String) {}

@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KCallable
 
-class Foo {
+define Foo {
     fun <T> installRoute(handler: T) where T : (String) -> Any?, T : KCallable<*> {
     }
 

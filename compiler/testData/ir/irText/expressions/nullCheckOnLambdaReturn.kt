@@ -21,7 +21,7 @@ fun test6() = checkAnyN { J.nnFoo() }
 // FILE: J.java
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     public static String foo() { return null; }
 
     public static @NotNull String nnFoo() { return null; }

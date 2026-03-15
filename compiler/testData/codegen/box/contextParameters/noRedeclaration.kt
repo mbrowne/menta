@@ -8,7 +8,7 @@
 // IGNORE_BACKEND_K1: ANY
 // ISSUE: KT-53718
 
-class A
+define A
 
 context(_: A)
 val x: Int

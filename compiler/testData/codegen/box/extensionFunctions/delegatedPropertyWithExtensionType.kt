@@ -1,12 +1,12 @@
 import kotlin.reflect.KProperty
 
-class DelegateExtension {
+define DelegateExtension {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String.() -> String {
         return { this }
     }
 }
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): (String) -> String {
         return { a: String -> a }
     }

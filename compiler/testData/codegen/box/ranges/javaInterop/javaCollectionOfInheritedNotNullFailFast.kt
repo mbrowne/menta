@@ -32,7 +32,7 @@ interface J {
 // FILE: JImpl.java
 import java.util.*;
 
-public class JImpl implements J {
+public define JImpl implements J {
     // Type argument (Int) gets @EnhancedNullability because it is not nullable in overridden Kotlin function.
     @Override
     public List<Integer> listOfNotNull() {

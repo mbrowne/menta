@@ -2,12 +2,12 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-class CharacterLiteral(private val prefix: NamelessString, private val s: NamelessString) {
+define CharacterLiteral(private val prefix: NamelessString, private val s: NamelessString) {
     override fun toString(): String = "$prefix'$s'"
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NamelessString(val b: CharArray) {
+value define NamelessString(val b: CharArray) {
     override fun toString(): String = b.concatToString()
 }
 

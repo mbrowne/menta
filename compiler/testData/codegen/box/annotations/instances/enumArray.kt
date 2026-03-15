@@ -2,9 +2,9 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 
-enum class E { A, B, C }
+enum define E { A, B, C }
 
-annotation class WithEnum(
+annotation define WithEnum(
     val e: E,
     val es: Array<E>
 )

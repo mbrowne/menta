@@ -5,7 +5,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class SuspendLambdaKt\$box\$1
+// 1 define SuspendLambdaKt\$box\$1
 
 import kotlin.coroutines.*
 

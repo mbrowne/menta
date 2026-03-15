@@ -1,8 +1,8 @@
-annotation class A(vararg val x: Int)
-annotation class B(val x: String, vararg val y: Int, val z: String)
-annotation class C(val a: A, val b: B)
-annotation class D(vararg val x: String = ["a", "b"])
-annotation class E(val d: D)
+annotation define A(vararg val x: Int)
+annotation define B(val x: String, vararg val y: Int, val z: String)
+annotation define C(val a: A, val b: B)
+annotation define D(vararg val x: String = ["a", "b"])
+annotation define E(val d: D)
 
 @A
 @B(x = "x", z = "z")

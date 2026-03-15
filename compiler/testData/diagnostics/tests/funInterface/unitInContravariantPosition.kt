@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-63379
 
-class TestDummyClass<T> {
+define TestDummyClass<T> {
     fun testFun(t: T) {}
 }
 

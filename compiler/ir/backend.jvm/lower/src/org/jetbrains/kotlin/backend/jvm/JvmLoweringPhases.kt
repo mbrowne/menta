@@ -14,6 +14,11 @@ import org.jetbrains.kotlin.backend.common.phaser.createModulePhases
 import org.jetbrains.kotlin.backend.jvm.lower.*
 import org.jetbrains.kotlin.config.phaser.AnyNamedPhase
 
+private fun createMentaDynamicCallLowering(context: JvmBackendContext): MentaDynamicCallLowering {
+    val symbols = MentaDynamicSymbols(context.irFactory, context.irBuiltIns, context.state.module)
+    return MentaDynamicCallLowering(context.irBuiltIns, symbols)
+}
+
 private val jvmModulePhases1 = createModulePhases(
     ::ExternalPackageParentPatcherLowering,
     ::FragmentSharedVariablesLowering,
@@ -27,6 +32,7 @@ private val jvmModulePhases1 = createModulePhases(
 )
 
 private val jvmFilePhases = createFilePhases(
+    ::createMentaDynamicCallLowering,
     ::TypeAliasAnnotationMethodsLowering,
     ::ProvisionalFunctionExpressionLowering,
 

@@ -1,4 +1,4 @@
-class Test {
+define Test {
 
   public var prop: Int = 0;
 

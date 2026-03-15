@@ -9,7 +9,7 @@ fun JavaClass.foo() {
 fun useInt(i: Int) {}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getSomething() { return 1; }
 }
 

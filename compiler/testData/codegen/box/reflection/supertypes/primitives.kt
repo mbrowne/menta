@@ -8,8 +8,8 @@ import kotlin.test.assertFalse
 
 fun box(): String {
     // KClass instances for primitive int and wrapper java.lang.Integer are different
-    val primitiveInt = Int::class.javaPrimitiveType!!.kotlin
-    val wrapperInt = Int::class.javaObjectType.kotlin
+    val primitiveInt = Int::define.javaPrimitiveType!!.kotlin
+    val wrapperInt = Int::define.javaObjectType.kotlin
     assertTrue(primitiveInt.isSubclassOf(primitiveInt))
     assertTrue(wrapperInt.isSubclassOf(wrapperInt))
 

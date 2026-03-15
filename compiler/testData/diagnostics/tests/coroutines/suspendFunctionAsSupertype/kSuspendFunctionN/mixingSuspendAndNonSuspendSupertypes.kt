@@ -6,7 +6,7 @@
 
 import kotlin.reflect.*
 
-class C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>KSuspendFunction0<Unit>, () -> Unit<!> {
+define C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>KSuspendFunction0<Unit>, () -> Unit<!> {
     override suspend fun invoke() {
     }
 }

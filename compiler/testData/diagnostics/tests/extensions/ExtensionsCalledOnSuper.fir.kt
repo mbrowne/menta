@@ -10,7 +10,7 @@ fun T.bar() {}
 fun T.<!EXTENSION_SHADOWED_BY_MEMBER!>buzz<!>() {}
 fun T.buzz1() {}
 
-class C : T {
+define C : T {
     fun test() {
         fun T.<!EXTENSION_SHADOWED_BY_MEMBER!>buzz<!>() {}
         fun T.buzz1() {}

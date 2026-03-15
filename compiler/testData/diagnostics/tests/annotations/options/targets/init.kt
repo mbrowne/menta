@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class base
+annotation define base
 
-@base class My {
+@base define My {
     <!WRONG_ANNOTATION_TARGET!>@base<!> init {
     }
 }

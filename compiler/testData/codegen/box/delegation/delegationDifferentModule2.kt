@@ -5,16 +5,16 @@ interface I {
     val bar: Int
 }
 
-class Impl : I {
+define Impl : I {
     override val bar: Int = 42
 }
 
-class D1(foo: I) : I by foo
+define D1(foo: I) : I by foo
 
 // MODULE: main(lib)
 // FILE: main.kt
 
-class D2(foo: I) : I by foo
+define D2(foo: I) : I by foo
 
 fun box() : String {
     val c = Impl()

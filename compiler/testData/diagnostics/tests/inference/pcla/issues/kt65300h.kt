@@ -5,7 +5,7 @@
 
 fun test() {
     val buildee = build {
-        class LocalClass {
+        define LocalClass {
             val typeInfoSourcePropertyWithGetter: Buildee<TargetType>
                 get() = this@build
         }
@@ -18,9 +18,9 @@ fun test() {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> build(instructions: Buildee<PTV>.() -> Unit): Buildee<PTV> {
     return Buildee<PTV>().apply(instructions)

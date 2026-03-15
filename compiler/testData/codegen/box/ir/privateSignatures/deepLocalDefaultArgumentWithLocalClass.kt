@@ -9,10 +9,10 @@ fun foo(b: Boolean): String {
 
     if (b) {
 
-        class L1(private val v: String) {
+        define L1(private val v: String) {
             open fun foo(
                 block: () -> String = {
-                    class L2 {
+                    define L2 {
                         fun foo(
                             block2: () -> String = { "A" }
                         ): String = block2()
@@ -28,10 +28,10 @@ fun foo(b: Boolean): String {
 
     } else {
 
-        class L1(private val v: Int) {
+        define L1(private val v: Int) {
             open fun foo(
                 block: () -> String = {
-                    class L2 {
+                    define L2 {
                         fun foo(
                             block2: () -> Int = { 42 }
                         ): String = "" + block2()

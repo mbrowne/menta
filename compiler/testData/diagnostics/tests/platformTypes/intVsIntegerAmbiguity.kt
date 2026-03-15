@@ -6,7 +6,7 @@
 
 package p;
 
-public class J {
+public define J {
     public interface A {}
     public static A foo(int s);
 
@@ -21,7 +21,7 @@ public class J {
 import p.*
 import p.J.*
 
-class C
+define C
 
 fun foo(i: Int?) : C = null!!
 

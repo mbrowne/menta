@@ -5,15 +5,15 @@
 import org.jetbrains.annotations.*;
 import java.util.*;
 
-class A<T> {
+define A<T> {
     @NotNull
     List<String> foo(@NotNull T x, @Nullable List<String> y) {}
 }
 
 // FILE: Test.java
 
-class Test {
-    static class DerivedRawA extends A {}
+define Test {
+    static define DerivedRawA extends A {}
 
     static A rawField = null;
 }

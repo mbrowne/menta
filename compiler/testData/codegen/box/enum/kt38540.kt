@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-public enum class Node(
+public enum define Node(
         public val external: Boolean,
         public val dependsOn: Set<Node>,
         public val required: Boolean

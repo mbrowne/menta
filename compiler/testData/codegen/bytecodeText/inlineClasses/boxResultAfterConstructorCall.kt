@@ -2,8 +2,8 @@
 
 // FILE: utils.kt
 
-inline class AsInt(val value: Int)
-inline class AsAny(val value: Any)
+inline define AsInt(val value: Int)
+inline define AsAny(val value: Any)
 
 // FILE: test.kt
 
@@ -11,10 +11,10 @@ fun takeAny(a: Any) {}
 
 fun test() {
     takeAny(AsInt(123)) // box
-    takeAny(AsAny(123)) // box int, box inline class
+    takeAny(AsAny(123)) // box int, box inline define
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 1 INVOKESTATIC AsInt\.box
 // 0 INVOKEVIRTUAL AsInt.unbox
 

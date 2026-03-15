@@ -2,14 +2,14 @@
 
 // MODULE: lib-common
 
-expect class E()
+expect define E()
 
 fun commonUse(): E = E()
 
 // MODULE: lib-platform()()(lib-common)
 
 @Deprecated("", level = DeprecationLevel.WARNING)
-class Impl
+define Impl
 
 actual typealias E = Impl
 

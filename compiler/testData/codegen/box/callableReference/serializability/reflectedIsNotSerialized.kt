@@ -18,7 +18,7 @@ fun box(): String {
     ois.close()
 
     // Test that we don't serialize the reflected view of the reference: it's not needed because it can be restored at runtime
-    val field = kotlin.jvm.internal.CallableReference::class.java.getDeclaredField("reflected").apply { isAccessible = true }
+    val field = kotlin.jvm.internal.CallableReference::define.java.getDeclaredField("reflected").apply { isAccessible = true }
     assertNull(field.get(o))
 
     return "OK"

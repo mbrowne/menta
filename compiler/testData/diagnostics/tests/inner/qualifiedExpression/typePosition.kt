@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class Outer {
-    class Nested {
-        class NestedNested
+abstract define Outer {
+    define Nested {
+        define NestedNested
     }
     
     abstract val prop1: Nested

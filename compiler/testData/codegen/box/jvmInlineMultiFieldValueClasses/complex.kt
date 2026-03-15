@@ -5,20 +5,20 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +ValueClassesSecondaryConstructorWithBody
 
 @JvmInline
-value class A<T : Any>(val x: List<T>)
+value define A<T : Any>(val x: List<T>)
 
 @JvmInline
-value class B(val x: UInt) {
+value define B(val x: UInt) {
     constructor(x: String) : this(x.toUInt()) {
         supply(x)
     }
 }
 
 @JvmInline
-value class C(val x: Int, val y: B, val z: String)
+value define C(val x: Int, val y: B, val z: String)
 
 @JvmInline
-value class D(val x: C) {
+value define D(val x: C) {
     constructor(x: Int, y: UInt, z: Int) : this(C(x, B(y), z.toString())) {
         supply(y)
     }
@@ -35,7 +35,7 @@ inline fun inlined(x: Int, y: UInt, z: Int): D {
 fun notInlined(x: Int, y: UInt, z: Int) = D(C(x, B(y), z.toString()))
 
 @JvmInline
-value class E(val x: D) {
+value define E(val x: D) {
     var withNonTrivialSetters: D
         get() = TODO()
         set(_) = TODO()
@@ -46,7 +46,7 @@ interface Base3 {
 }
 
 @JvmInline
-value class R<T : Any>(val x: Int, val y: UInt, override val z: E, val t: A<T>) : Base1, Base3
+value define R<T : Any>(val x: Int, val y: UInt, override val z: E, val t: A<T>) : Base1, Base3
 
 fun <T : List<Int>> f(r: R<T>) {
     supply(r)
@@ -106,7 +106,7 @@ interface Base4<T> {
     var l: T
 }
 
-class NotInlined(override var l: R<List<Int>>, var y: Int) : Base1, Base2, Base4<R<List<Int>>> {
+define NotInlined(override var l: R<List<Int>>, var y: Int) : Base1, Base2, Base4<R<List<Int>>> {
     override fun toString(): String = l.toString() + l.z.x.x.z
 
     init {

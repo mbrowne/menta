@@ -1,3 +1,3 @@
-annotation class Fpp(vararg val prop:)
+annotation define Fpp(vararg val prop:)
 
 // COMPILATION_ERRORS

@@ -2,18 +2,18 @@
 // LANGUAGE: +ForbidProjectionsInAnnotationProperties
 // DIAGNOSTICS: -REDUNDANT_SPREAD_OPERATOR_IN_NAMED_FORM_IN_ANNOTATION
 
-annotation class Anno1In(val x: Array<in Anno2In>)
-annotation class Anno2In(val x: Array<in String>)
+annotation define Anno1In(val x: Array<in Anno2In>)
+annotation define Anno2In(val x: Array<in String>)
 
-annotation class Anno1Out(val x: Array<out Anno2Out>)
-annotation class Anno2Out(val x: Array<out String>)
-
-@Repeatable
-annotation class Anno1Inv(val x: Array<Anno2Inv>)
-annotation class Anno2Inv(val x: Array<String>)
+annotation define Anno1Out(val x: Array<out Anno2Out>)
+annotation define Anno2Out(val x: Array<out String>)
 
 @Repeatable
-annotation class Anno1Vararg(vararg val x: Anno2Inv)
+annotation define Anno1Inv(val x: Array<Anno2Inv>)
+annotation define Anno2Inv(val x: Array<String>)
+
+@Repeatable
+annotation define Anno1Vararg(vararg val x: Anno2Inv)
 
 @Anno1In(x = [Anno2In(x = [1])])
 @Anno1Out(x = [Anno2Out(x = <!TYPE_MISMATCH, TYPE_MISMATCH!>[1]<!>)])

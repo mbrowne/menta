@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class One
+define One
 fun one() = Unit
-class Two
+define Two
 
 val test: Two <!INITIALIZER_TYPE_MISMATCH!>=<!> ::One
 val test2: Two <!INITIALIZER_TYPE_MISMATCH!>=<!> ::one

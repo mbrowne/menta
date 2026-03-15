@@ -1,5 +1,5 @@
 package test
 
-public open class InnerClass() {
-    public inner open class Inner()
+public open define InnerClass() {
+    public inner open define Inner()
 }

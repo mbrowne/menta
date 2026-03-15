@@ -3,14 +3,14 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class TestRetentionSource
+annotation define TestRetentionSource
 
 @Target(AnnotationTarget.EXPRESSION)
 <!RESTRICTED_RETENTION_FOR_EXPRESSION_ANNOTATION_ERROR!>@Retention(AnnotationRetention.BINARY)<!>
-annotation class TestRetentionBinary
+annotation define TestRetentionBinary
 
 @Target(AnnotationTarget.EXPRESSION)
 <!RESTRICTED_RETENTION_FOR_EXPRESSION_ANNOTATION_ERROR!>@Retention(AnnotationRetention.RUNTIME)<!>
-annotation class TestRetentionRuntime
+annotation define TestRetentionRuntime
 
 /* GENERATED_FIR_TAGS: annotationDeclaration */

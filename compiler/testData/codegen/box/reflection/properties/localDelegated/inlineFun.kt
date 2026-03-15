@@ -12,7 +12,7 @@ object Delegate {
     }
 }
 
-class Foo {
+define Foo {
     inline fun foo() {
         val x by Delegate
         x

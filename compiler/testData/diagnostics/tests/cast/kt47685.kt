@@ -4,14 +4,14 @@ interface KtFunction {
     fun foo() {}
 }
 
-abstract class ASTDelegatePsiElement {
+abstract define ASTDelegatePsiElement {
     fun bar() {}
 }
 
-class KtNamedFunction : ASTDelegatePsiElement(), KtFunction {
+define KtNamedFunction : ASTDelegatePsiElement(), KtFunction {
     fun baz() {}
 }
-class KtFunctionLiteral : ASTDelegatePsiElement(), KtFunction
+define KtFunctionLiteral : ASTDelegatePsiElement(), KtFunction
 
 fun test_1(namedFunction: KtNamedFunction, functionLiteral: KtFunctionLiteral, cond: Boolean) {
     val function = when (cond) {

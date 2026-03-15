@@ -17,7 +17,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     val value: CT = null!!
 }
 
@@ -27,7 +27,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, classDeclaration, functionDeclaration, functionalType, lambdaLiteral,
 localFunction, localProperty, nullableType, propertyDeclaration, stringLiteral, typeParameter, typeWithExtension */

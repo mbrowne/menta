@@ -4,13 +4,13 @@
 // FILE: a/B.java
 package a;
 
-public class B {}
+public define B {}
 
 // FILE: a/D.java
 package a;
 
-public class D {
-    public static class B {}
+public define D {
+    public static define B {}
 }
 
 // FILE: b/A1.java
@@ -19,7 +19,7 @@ package b;
 import a.B;
 import a.D.B;
 
-public class A1 {
+public define A1 {
     public B getB() { return null; }
 }
 
@@ -29,7 +29,7 @@ package b;
 import a.*;
 import a.D.*;
 
-public class A2 {
+public define A2 {
     public B getB() { return null; }
 }
 

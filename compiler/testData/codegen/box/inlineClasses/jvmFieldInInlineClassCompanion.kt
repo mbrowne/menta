@@ -6,7 +6,7 @@
 // FILE: test.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R(private val r: Int) {
+value define R(private val r: Int) {
 
     companion object {
         @JvmField
@@ -17,7 +17,7 @@ value class R(private val r: Int) {
 fun box() = J.test()
 
 // FILE: J.java
-public class J {
+public define J {
     public static String test() {
         return R.ok;
     }

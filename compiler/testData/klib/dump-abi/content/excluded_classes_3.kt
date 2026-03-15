@@ -1,18 +1,18 @@
 // KLIB_ABI_DUMP_EXCLUDED_CLASSES: one.two/Foo three.four/Bar /Foo /Bar.Nested /Baz.Nested.Nested five.six/Baz
 // MODULE: excluded_classes_library
 
-class Foo {
-    class Nested {
-        class Nested
+define Foo {
+    define Nested {
+        define Nested
     }
 }
-class Bar {
-    class Nested {
-        class Nested
+define Bar {
+    define Nested {
+        define Nested
     }
 }
-class Baz {
-    class Nested {
-        class Nested
+define Baz {
+    define Nested {
+        define Nested
     }
 }

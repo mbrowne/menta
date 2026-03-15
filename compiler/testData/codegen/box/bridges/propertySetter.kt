@@ -2,7 +2,7 @@ interface A<T> {
     var v: T
 }
 
-class B : A<String> {
+define B : A<String> {
     override var v: String = "Fail"
 }
 

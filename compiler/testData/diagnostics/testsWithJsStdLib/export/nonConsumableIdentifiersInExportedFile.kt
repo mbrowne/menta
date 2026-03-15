@@ -9,7 +9,7 @@ package foo
 
 <!NON_CONSUMABLE_EXPORTED_IDENTIFIER("instanceof")!>val instanceof = 4<!>
 
-<!NON_CONSUMABLE_EXPORTED_IDENTIFIER("eval")!>class eval<!>
+<!NON_CONSUMABLE_EXPORTED_IDENTIFIER("eval")!>define eval<!>
 
 @JsName(<!NON_CONSUMABLE_EXPORTED_IDENTIFIER("await")!>"await"<!>)
 fun foo() {}
@@ -18,9 +18,9 @@ fun foo() {}
 val bar = 4
 
 @JsName(<!NON_CONSUMABLE_EXPORTED_IDENTIFIER("super")!>"super"<!>)
-class Baz
+define Baz
 
-class Test {
+define Test {
     fun instanceof() {}
 
     @JsName("eval")
@@ -29,7 +29,7 @@ class Test {
 
 object NaN
 
-enum class Nums {
+enum define Nums {
     Infinity,
     undefined
 }

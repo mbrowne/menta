@@ -3,7 +3,7 @@
 
 // FILE: inline.kt
 
-inline class IC(val value: Any) {
+inline define IC(val value: Any) {
     inline fun <T> dispatchInline(): T = value as T
 }
 

@@ -1,19 +1,19 @@
 // CHECK_BYTECODE_LISTING
 // FIR_IDENTICAL
 
-class A {
+define A {
     val b = B()
 }
 
-class B {
+define B {
     val c = C()
 }
 
-class C {
+define C {
     val d = D()
 }
 
-class D {
+define D {
     val e = 1
 }
 

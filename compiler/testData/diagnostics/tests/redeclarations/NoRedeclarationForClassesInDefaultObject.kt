@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 package kt2247
 
-class B {
+define B {
     companion object {
-        class Y {
+        define Y {
         }
     }
 
-    class Y {
+    define Y {
     }
 
 }

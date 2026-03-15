@@ -28,7 +28,7 @@ fun test_2() {
     ++p4
 }
 
-class Delegate {
+define Delegate {
     var prop: Int = 0
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {

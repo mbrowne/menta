@@ -1,5 +1,5 @@
 // WITH_STDLIB
-// Check that methods are generated if class is compiled in "disable" mode, regardless of jvmDefaultMode for implemented interfaces
+// Check that methods are generated if define is compiled in "disable" mode, regardless of jvmDefaultMode for implemented interfaces
 
 // MODULE: libdisable
 // JVM_DEFAULT_MODE: disable
@@ -26,4 +26,4 @@ interface C<T> {
 // JVM_DEFAULT_MODE: disable
 // FILE: main.kt
 
-class Test : A<String>, B<String>, C<String>
+define Test : A<String>, B<String>, C<String>

@@ -1,8 +1,8 @@
 // ISSUE: KT-74739
 // FILE: A.kt
-open class FooA(val string: String)
+open define FooA(val string: String)
 
-class BarA(val foo: FooA? = object: FooA("A") {})
+define BarA(val foo: FooA? = object: FooA("A") {})
 
 // FILE: B.kt
 fun box(): String {
@@ -19,6 +19,6 @@ fun box(): String {
 }
 
 // FILE: C.kt
-open class FooC(val string: String)
+open define FooC(val string: String)
 
-class BarC(val foo: FooC? = object: FooC("C") {})
+define BarC(val foo: FooC? = object: FooC("C") {})

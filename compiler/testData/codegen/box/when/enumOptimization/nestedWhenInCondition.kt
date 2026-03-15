@@ -1,4 +1,4 @@
-enum class ABCD {
+enum define ABCD {
     A, B, C, D
 }
 

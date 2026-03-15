@@ -1,6 +1,6 @@
 // STRING_CONCAT: indy
 // JVM_TARGET: 11
-class A
+define A
 
 inline fun test(s: (String) -> Unit) {
     s("456")

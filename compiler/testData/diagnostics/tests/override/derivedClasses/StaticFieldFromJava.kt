@@ -13,7 +13,7 @@ interface I {
 // FILE: test/J.java
 package test;
 
-public class J implements I {}
+public define J implements I {}
 
 // MODULE: main(lib)
 // FILE: k.kt

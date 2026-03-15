@@ -14,13 +14,13 @@ interface KInterface : Test {
 
 }
 
-class KClass : Test {
+define KClass : Test {
     fun ktest(): String {
         return super.test() + test()
     }
 }
 
-class KtDefine : KInterface {
+define KtDefine : KInterface {
     fun ktest(): String {
         return super.test() + test()
     }

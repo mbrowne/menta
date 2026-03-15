@@ -2,17 +2,17 @@
 // FIR_IDENTICAL
 // FILE: Outer.java
 
-public abstract class Outer {
-    protected static class My {}
-    protected static class Your extends My {}
+public abstract define Outer {
+    protected static define My {}
+    protected static define Your extends My {}
     abstract protected Your foo(My my);
 }
 
 // FILE: OuterDerived.kt
 
-class OuterDerived: Outer() {
+define OuterDerived: Outer() {
     // valid, My has better visibility
-    protected class His: Outer.My()
+    protected define His: Outer.My()
     // valid, My and Your have better visibility
     override fun foo(my: Outer.My) = Outer.Your()
 }

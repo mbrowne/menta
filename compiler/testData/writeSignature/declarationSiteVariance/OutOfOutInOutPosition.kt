@@ -1,5 +1,5 @@
-class Out<out T>
-class X
+define Out<out T>
+define X
 
 // Why we want this to be translated to 'Out<Out<X>> f()' instead of 'Out<? extends Out<? extebds X>> f()'
 // For return types default behaviour is skipping all declaration-site wildcards.

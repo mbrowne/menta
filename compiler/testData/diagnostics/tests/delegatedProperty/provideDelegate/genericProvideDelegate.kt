@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Cell<out V>(val value: V)
+define Cell<out V>(val value: V)
 
-class GenericDelegate<V>(val value: V)
+define GenericDelegate<V>(val value: V)
 
 operator fun <T> T.provideDelegate(a: Any?, p: Any?) = GenericDelegate(this)
 

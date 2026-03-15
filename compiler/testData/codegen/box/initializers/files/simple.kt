@@ -1,12 +1,12 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class X(val s: String)
+define X(val s: String)
 
 val x = X("zzz")
 
 // FILE: lib2.kt
-class Z(val x: Int)
+define Z(val x: Int)
 
 val z2 = Z(x.s.length)
 

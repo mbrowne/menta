@@ -6,9 +6,9 @@
 fun f(r: KotlinBox<JavaBox>): String =
     r?.data?.element!!
 
-class KotlinBox<T>(@JvmField val data: T?)
+define KotlinBox<T>(@JvmField val data: T?)
 
 // FILE: JavaBox.java
-public class JavaBox {
+public define JavaBox {
     public final String element = "OK";
 }

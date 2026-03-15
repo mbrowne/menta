@@ -9,10 +9,10 @@ inline fun <T, R> weirdMix(x: T, fn: (Int, T, Long, T) -> R) = fn(0, x, 0L, x)
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val int: T)
+value define Z<T: Int>(val int: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L<T: Long>(val long: T)
+value define L<T: Long>(val long: T)
 
 fun <T: Int> testS0Z(x: Z<T>) = s0(x) { _, xx -> Z(xx.int + 1) }
 fun <T: Long> testS0L(x: L<T>) = s0(x) { _, xx -> L(xx.long + 1L) }

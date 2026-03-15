@@ -5,7 +5,7 @@
 
 package test
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 interface Test {
     fun foo(@Anno("OK") a: String) = "123"

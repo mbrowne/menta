@@ -48,7 +48,7 @@ import spr.*;
 import java.util.*;
 
 @NonNullApi
-public class A {
+public define A {
     public String foo(String x) { return ""; }
     public @NullableApi String bar(@NullableApi String y) { return ""; }
     public @NullableApi List<String> baz1() { return null; }

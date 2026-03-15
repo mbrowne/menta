@@ -4,7 +4,7 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-expect enum class Foo {
+expect enum define Foo {
     ENTRY;
     fun getEntry()
 }

@@ -1,7 +1,7 @@
-enum class E {
+enum define E {
     ENTRY;
 
-    abstract class Nested
+    abstract define Nested
 }
 
 fun box(): String {

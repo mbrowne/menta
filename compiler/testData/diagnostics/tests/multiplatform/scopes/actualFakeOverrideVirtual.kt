@@ -7,22 +7,22 @@ interface Map {
     val size: Int
 }
 
-expect class HashMap : Map {
+expect define HashMap : Map {
     override val size: Int
 }
 
-expect abstract class AbstractMap : Map {
+expect abstract define AbstractMap : Map {
     override val size: Int
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual abstract class AbstractMap() : Map {
+actual abstract define AbstractMap() : Map {
     actual override val size: Int = 0
 }
 
-actual class HashMap : AbstractMap(), Map
+actual define HashMap : AbstractMap(), Map
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, integerLiteral, interfaceDeclaration, override,
 primaryConstructor, propertyDeclaration */

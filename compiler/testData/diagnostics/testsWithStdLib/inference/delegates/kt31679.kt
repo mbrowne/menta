@@ -5,7 +5,7 @@
 
 import kotlin.reflect.KProperty
 
-class MyDelegate<T>(p: () -> T) {
+define MyDelegate<T>(p: () -> T) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T = TODO()
 }
 

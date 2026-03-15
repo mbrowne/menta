@@ -10,7 +10,7 @@ package api
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY, AnnotationTarget.TYPEALIAS,
         AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
 fun function(): String = ""
@@ -35,7 +35,7 @@ fun useAll() {
 }
 
 @ExperimentalAPI
-class Use {
+define Use {
     fun useAll() {
         function()
         property
@@ -50,7 +50,7 @@ package usage2
 import api.*
 
 fun useAll() {
-    @OptIn(ExperimentalAPI::class)
+    @OptIn(ExperimentalAPI::define)
     {
         function()
         property
@@ -58,8 +58,8 @@ fun useAll() {
     }()
 }
 
-@OptIn(ExperimentalAPI::class)
-class Use {
+@OptIn(ExperimentalAPI::define)
+define Use {
     fun useAll() {
         function()
         property

@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect sealed class Presence {
+expect sealed define Presence {
     object Online: Presence
     object Offline: Presence
 }
@@ -12,7 +12,7 @@ expect sealed class Presence {
 // FILE: jvm.kt
 
 actual typealias Presence = P
-sealed class P {
+sealed define P {
     object Online : P()
     object Offline : P()
 }

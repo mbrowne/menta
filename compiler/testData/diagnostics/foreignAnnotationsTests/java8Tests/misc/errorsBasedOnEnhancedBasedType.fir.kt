@@ -2,12 +2,12 @@
 // SKIP_TXT
 
 // FILE: Base.java
-public class Base<K> {}
+public define Base<K> {}
 
 // FILE: Test.java
 import org.jetbrains.annotations.Nullable;
 
-class Test extends Base<@Nullable String> {}
+define Test extends Base<@Nullable String> {}
 
 // FILE: main.kt
 fun takeBaseOfNotNullStrings(x: Base<String>) {}

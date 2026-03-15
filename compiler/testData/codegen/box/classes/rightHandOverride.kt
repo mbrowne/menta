@@ -1,11 +1,11 @@
 // Changed when traits were introduced. May not make sense any more
 
 interface Left {}
-open class Right() {
+open define Right() {
     open fun f() = 42
 }
 
-class D() : Left, Right() {
+define D() : Left, Right() {
     override fun f() = 239
 }
 

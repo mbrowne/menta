@@ -8,19 +8,19 @@ interface MyCollectionInterface {
 interface MyAnotherCollectionInterface {
 }
 
-class MyCollection : MyCollectionInterface, MyAnotherCollectionInterface {
+define MyCollection : MyCollectionInterface, MyAnotherCollectionInterface {
 }
 
 fun MyCollectionInterface.iterator() = MyIterator()
 
 fun MyAnotherCollectionInterface.iterator() = MyIterator()
 
-class MyIterator {
+define MyIterator {
     fun next() : MyElement = MyElement()
     fun hasNext() = true
 }
 
-class MyElement
+define MyElement
 
 fun test1(collection: MyCollection) {
     collection.<!OVERLOAD_RESOLUTION_AMBIGUITY!>iterator<!>()

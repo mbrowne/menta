@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package Hello
 
-open class Base<T>
-class StringBase : Base<String>()
+open define Base<T>
+define StringBase : Base<String>()
 
-class Client<T, X: Base<T>>(x: X)
+define Client<T, X: Base<T>>(x: X)
 
 fun test() {
     val c = Client(StringBase()) // Type inference fails here for T.

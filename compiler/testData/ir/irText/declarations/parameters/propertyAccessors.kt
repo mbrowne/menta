@@ -12,7 +12,7 @@ val <T> T.testExt3 get() = 42
 
 var <T> T.testExt4 get() = 42; set(value) {}
 
-class Host<T> {
+define Host<T> {
     val testMem1 get() = 42
 
     var testMem2 get() = 42; set(value) {}

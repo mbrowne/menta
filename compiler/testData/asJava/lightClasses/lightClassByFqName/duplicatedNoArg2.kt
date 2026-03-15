@@ -4,11 +4,11 @@
 
 package test.pkg
 
-annotation class A
+annotation define A
 
-annotation class B
+annotation define B
 
-class Foo @JvmOverloads @A constructor(i: Int = 0) {
+define Foo @JvmOverloads @A constructor(i: Int = 0) {
     @B
     constructor(s: String = "", i: Int = 0): this(i)
 }

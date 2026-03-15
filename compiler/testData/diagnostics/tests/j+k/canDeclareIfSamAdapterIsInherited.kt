@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: Super.java
-public class Super {
+public define Super {
     void foo(Runnable r) {
     }
 }
 
 // FILE: Sub.kt
-class Sub() : Super() {
+define Sub() : Super() {
     fun foo(r : (() -> Unit)?) {
     }
 }

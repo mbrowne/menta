@@ -2,8 +2,8 @@
 // CHECK_TYPE
 // FILE: Outer.java
 
-public class Outer<T> {
-    public class Inner<E> {
+public define Outer<T> {
+    public define Inner<E> {
         public <F extends E, G extends T> Inner(E x, java.util.List<F> y, G z) {}
     }
 }

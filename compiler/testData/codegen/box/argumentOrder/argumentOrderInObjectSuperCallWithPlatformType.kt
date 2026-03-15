@@ -1,12 +1,12 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
-public class A {
+public define A {
     public static String f() {
         return "O";
     }
 }
 // FILE: a.kt
-open class C(x: String, y: String) {
+open define C(x: String, y: String) {
     val result = x + y
 }
 

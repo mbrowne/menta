@@ -1,4 +1,4 @@
-class C{
+define C{
     private var v : Int = 0
 
     public fun foo() : Int {
@@ -17,7 +17,7 @@ class C{
         return v
     }
 
-    private inner class Inner() {
+    private inner define Inner() {
         fun innerFun() {
             v = v + 1
         }

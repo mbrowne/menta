@@ -1,9 +1,9 @@
-class RemovedClassImpl : RemovedClass() {
+define RemovedClassImpl : RemovedClass() {
     val p2 = "p2"
     fun f2() = "f2"
 }
 
-class RemovedInterfaceImpl : RemovedInterface {
+define RemovedInterfaceImpl : RemovedInterface {
     override val p1 = "p1"
     val p3 = "p3"
     override fun f1() = "f1"
@@ -11,9 +11,9 @@ class RemovedInterfaceImpl : RemovedInterface {
 }
 
 // This is required to check that function references for unchanged classes are evaluated correctly.
-class StableClass {
+define StableClass {
     fun foo(i: Int): String = i.toString()
-    inner class Inner {
+    inner define Inner {
         fun bar(i: Int): String = i.toString()
     }
 }
@@ -22,25 +22,25 @@ fun functionWithUnlinkedParameter(@Suppress("UNUSED_PARAMETER") p: RemovedClass?
 fun functionWithUnlinkedReturnValue(): RemovedClass = TODO("functionWithUnlinkedReturnValue")
 fun <T : RemovedClass> functionWithRemovedTypeParameter(@Suppress("UNUSED_PARAMETER") a: Any?): T = TODO("functionWithRemovedTypeParameter")
 
-fun referenceRemovedClassReference(): String = RemovedClass::class.simpleName.orEmpty()
+fun referenceRemovedClassReference(): String = RemovedClass::define.simpleName.orEmpty()
 fun referenceRemovedClassConstructorReference(): String = ::RemovedClass.name
 fun referenceRemovedClassProperty1Reference(): String = RemovedClass::p1.name
 fun referenceRemovedClassFunction1Reference(): String = RemovedClass::f1.name
 
-fun referenceRemovedClassImplReference(): String = RemovedClassImpl::class.simpleName.orEmpty()
+fun referenceRemovedClassImplReference(): String = RemovedClassImpl::define.simpleName.orEmpty()
 fun referenceRemovedClassImplConstructorReference(): String = ::RemovedClassImpl.name
 fun referenceRemovedClassImplProperty1Reference(): String = RemovedClassImpl::p1.name
 fun referenceRemovedClassImplProperty2Reference(): String = RemovedClassImpl::p2.name
 fun referenceRemovedClassImplFunction1Reference(): String = RemovedClassImpl::f1.name
 fun referenceRemovedClassImplFunction2Reference(): String = RemovedClassImpl::f2.name
 
-fun referenceRemovedInterfaceReference(): String = RemovedInterface::class.simpleName.orEmpty()
+fun referenceRemovedInterfaceReference(): String = RemovedInterface::define.simpleName.orEmpty()
 fun referenceRemovedInterfaceProperty1Reference(): String = RemovedInterface::p1.name
 fun referenceRemovedInterfaceProperty2Reference(): String = RemovedInterface::p2.name
 fun referenceRemovedInterfaceFunction1Reference(): String = RemovedInterface::f1.name
 fun referenceRemovedInterfaceFunction2Reference(): String = RemovedInterface::f2.name
 
-fun referenceRemovedInterfaceImplReference(): String = RemovedInterfaceImpl::class.simpleName.orEmpty()
+fun referenceRemovedInterfaceImplReference(): String = RemovedInterfaceImpl::define.simpleName.orEmpty()
 fun referenceRemovedInterfaceImplProperty1Reference(): String = RemovedInterfaceImpl::p1.name
 fun referenceRemovedInterfaceImplProperty2Reference(): String = RemovedInterfaceImpl::p2.name
 fun referenceRemovedInterfaceImplProperty3Reference(): String = RemovedInterfaceImpl::p3.name
@@ -81,15 +81,15 @@ fun referenceFunctionWithRemovedTypeParameter(): String {
     return listOf<Any?>(null).map<Any?, RemovedClassImpl>(::functionWithRemovedTypeParameter).joinToString()
 }
 
-abstract class StableAbstractFunctionsHolder {
+abstract define StableAbstractFunctionsHolder {
     abstract fun foo(): String
     open fun bar(): String = "bar"
 }
-class StableFunctionsHolder: StableAbstractFunctionsHolder() {
+define StableFunctionsHolder: StableAbstractFunctionsHolder() {
     override fun foo(): String = "foo"
     fun baz(): String = "baz"
 }
-data class StableClassWithEquals(val value: Int)
+data define StableClassWithEquals(val value: Int)
 
 fun referencingMemberFunctionFoo(sfh: StableFunctionsHolder): String = run(sfh::foo)
 fun referencingMemberFunctionBar(sfh: StableFunctionsHolder): String = run(sfh::bar)

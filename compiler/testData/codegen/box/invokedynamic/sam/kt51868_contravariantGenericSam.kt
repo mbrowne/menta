@@ -18,7 +18,7 @@ fun box(): String {
 
 // FILE: Request.java
 
-public class Request {
+public define Request {
     private final Consumer<? super StringBuilder> consumer;
 
     public Request(Consumer<? super StringBuilder> consumer) {

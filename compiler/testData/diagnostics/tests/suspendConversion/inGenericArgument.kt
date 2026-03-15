@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // ISSUE: KT-61933
 
-data class Bar(
+data define Bar(
     val foo: Foo<suspend () -> Unit>
 )
 
-data class Foo<out TCallback : Any>(
+data define Foo<out TCallback : Any>(
     val state: TCallback?,
 )
 

@@ -5,7 +5,7 @@ package a
 public fun doAction(action : () -> Unit){
 }
 
-class Y<TItem>(val itemToString: (TItem) -> String){
+define Y<TItem>(val itemToString: (TItem) -> String){
 }
 
 fun <TItem> bar(context : Y<TItem>) : TItem{

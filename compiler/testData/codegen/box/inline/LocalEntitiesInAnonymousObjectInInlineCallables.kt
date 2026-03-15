@@ -5,11 +5,11 @@
 inline fun foo(): String {
     return object {
         fun func(): String {
-            abstract class A
+            abstract define A
             fun local() {}
-            open class B
-            class C
-            data class D(val i: Int)
+            open define B
+            define C
+            data define D(val i: Int)
 
             local()
             B()
@@ -23,11 +23,11 @@ inline fun foo(): String {
 inline val bar: String get() {
     return object {
         fun func(): String {
-            abstract class A
+            abstract define A
             fun local() {}
-            open class B
-            class C
-            data class D(val i: Int)
+            open define B
+            define C
+            data define D(val i: Int)
 
             local()
             B()

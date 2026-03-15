@@ -8,7 +8,7 @@ public interface MyConsumer<T> {
 }
 
 // FILE: MyAssert.java
-public class MyAssert<T> {
+public define MyAssert<T> {
     public static <F> MyAssert<F> assertThat(java.util.List<? extends F> l) {
         return new MyAssert<F>();
     }

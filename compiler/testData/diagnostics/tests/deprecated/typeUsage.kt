@@ -1,26 +1,26 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Deprecated("Class")
-open class Obsolete {
+open define Obsolete {
     fun use() {}
 }
 
 @Deprecated("Class")
-open class Obsolete2 @Deprecated("Constructor") constructor() {
+open define Obsolete2 @Deprecated("Constructor") constructor() {
     fun use() {}
 }
 
 interface Generic<T>
 
-open class Derived() : <!DEPRECATION!>Obsolete<!>()
+open define Derived() : <!DEPRECATION!>Obsolete<!>()
 
-class Derived2() : Derived()
+define Derived2() : Derived()
 
-class TypeParam : Generic<<!DEPRECATION!>Obsolete<!>>
+define TypeParam : Generic<<!DEPRECATION!>Obsolete<!>>
 
 object Object : <!DEPRECATION!>Obsolete<!>()
 
-class Properties {
+define Properties {
     val x : <!DEPRECATION!>Obsolete<!> = <!DEPRECATION!>Obsolete<!>()
     var y : <!DEPRECATION!>Obsolete<!> = <!DEPRECATION!>Obsolete<!>()
 

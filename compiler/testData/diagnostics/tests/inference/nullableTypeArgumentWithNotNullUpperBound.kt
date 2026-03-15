@@ -15,12 +15,12 @@ fun <S : Any> foo2(x: Array<out S>, y: Array<in S>) {
     f = yo
 }
 
-class A1<S : Any>(x: Array<out S?>, y: Array<in S?>) {
+define A1<S : Any>(x: Array<out S?>, y: Array<in S?>) {
     val xo = <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Array<S>")!>outANullable(x)<!>
     val yo = <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Array<S>")!>inANullable(y)<!>
 }
 
-class A2<S : Any>(x: Array<out S>, y: Array<in S>) {
+define A2<S : Any>(x: Array<out S>, y: Array<in S>) {
     val xo = <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Array<S>")!>outA(x)<!>
     val yo = <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Array<S>")!>inA(y)<!>
 }

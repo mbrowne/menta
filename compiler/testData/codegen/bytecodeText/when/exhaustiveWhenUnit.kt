@@ -1,4 +1,4 @@
-enum class AccessMode { READ, WRITE, EXECUTE }
+enum define AccessMode { READ, WRITE, EXECUTE }
 
 fun whenExpr(access: AccessMode) {
     return when (access) {

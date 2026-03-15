@@ -11,7 +11,7 @@ public interface B {
 }
 
 // FILE: box.kt
-class C : A, B {
+define C : A, B {
     fun test(): String = A.foo()
 }
 

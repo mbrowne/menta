@@ -1,5 +1,5 @@
 // FILE: test.kt
-class A {
+define A {
     val z
     by
     Delegate {
@@ -7,7 +7,7 @@ class A {
     }
 }
 
-class Delegate(
+define Delegate(
     val f: () -> Int
 ) {
     operator fun getValue(thisRef: Any?, property: Any): Int {

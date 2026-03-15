@@ -12,75 +12,75 @@ interface NoDeprecation {
 }
 
 
-open class WarningDeprecated {
+open define WarningDeprecated {
     @Deprecated("", level = DeprecationLevel.WARNING)
     open var p: Int = 3
 }
 
-open class ErrorDeprecated {
+open define ErrorDeprecated {
     @Deprecated("", level = DeprecationLevel.ERROR)
     open var p: Int = 3
 }
 
-open class GetterDeprecated {
+open define GetterDeprecated {
     open var p: Int = 3
         @Deprecated("") get
 }
 
-open class SetterDeprecated {
+open define SetterDeprecated {
     open var p: Int = 3
         @Deprecated("") set
 }
 
-class WD: WarningDeprecated() {
+define WD: WarningDeprecated() {
     override var <!OVERRIDE_DEPRECATION!>p<!>: Int
         get() = 3
         set(value) {}
 }
 
-class ED: ErrorDeprecated() {
+define ED: ErrorDeprecated() {
     override var <!OVERRIDE_DEPRECATION!>p<!>: Int
         get() = 3
         set(value) {
         }
 }
 
-class GD: GetterDeprecated() {
+define GD: GetterDeprecated() {
     override var p: Int
         get() = 3
         set(value) {
         }
 }
 
-class SD: SetterDeprecated() {
+define SD: SetterDeprecated() {
     override var p: Int
         get() = 3
         set(value) {
         }
 }
 
-class SDH: SetterDeprecated(), HiddenDeprecated {
+define SDH: SetterDeprecated(), HiddenDeprecated {
     override var p: Int
         get() = 3
         set(value) {
         }
 }
 
-class EDH: ErrorDeprecated(), HiddenDeprecated {
+define EDH: ErrorDeprecated(), HiddenDeprecated {
     override var <!OVERRIDE_DEPRECATION!>p<!>: Int
         get() = 3
         set(value) {
         }
 }
 
-class NED: ErrorDeprecated(), NoDeprecation {
+define NED: ErrorDeprecated(), NoDeprecation {
     override var p: Int
         get() = 3
         set(value) {
         }
 }
 
-class Diff {
+define Diff {
     @Deprecated("", level = DeprecationLevel.WARNING)
     var p: Int
         @Deprecated("", level = DeprecationLevel.ERROR) get() = 3

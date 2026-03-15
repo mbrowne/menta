@@ -7,16 +7,16 @@ package suspendLambdaAssertionsEnabled
 import helpers.*
 import kotlin.coroutines.*
 
-class Checker {
+define Checker {
     fun check() {
         builder { assert(false) }
     }
 }
 
-class Dummy
+define Dummy
 
 fun enableAssertions(): Checker {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setPackageAssertionStatus("suspendLambdaAssertionsEnabled", true)
     val c = loader.loadClass("suspendLambdaAssertionsEnabled.Checker")
     return c.newInstance() as Checker

@@ -13,12 +13,12 @@ interface I<G> {
     fun genericFromSuper(g: G) = g
 }
 
-open class BaseClass {
+open define BaseClass {
     val <T> T.fromClass: T
         get() = this
 }
 
-class Class {
+define Class {
     companion object C: BaseClass(), I<String> {
         fun f(s: Int) = 1
         fun f(s: String) = 2

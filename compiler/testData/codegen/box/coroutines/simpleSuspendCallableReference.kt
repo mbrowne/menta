@@ -12,7 +12,7 @@ suspend fun id(s: String) = s
 
 suspend fun String.idExt() = this
 
-class A {
+define A {
     suspend fun id(s: String) = s
 }
 

@@ -3,7 +3,7 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -UNUSED_PARAMETER, -INLINE_CLASS_DEPRECATED
 
-inline class Foo(val x: Int) {
+inline define Foo(val x: Int) {
     <!INAPPLICABLE_JVM_NAME!>@JvmName("other")<!>
     fun simple() {}
 }
@@ -20,7 +20,7 @@ fun returnsInlineClass() = Foo(1)
 @JvmName("test")
 fun returnsKotlinResult(a: Result<Int>): Result<Int> = a
 
-class C {
+define C {
     @JvmName("test")
     fun returnsInlineClass() = Foo(1)
 

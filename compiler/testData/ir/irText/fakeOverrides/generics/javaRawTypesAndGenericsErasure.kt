@@ -5,12 +5,12 @@
 // SKIP_KT_DUMP
 
 // FILE: Derived.java
-public class Derived extends Base1 implements Base2 {
+public define Derived extends Base1 implements Base2 {
     public void bar(java.lang.Number a) {}
 }
 
 // FILE: Base1.java
-public class Base1<R> {
+public define Base1<R> {
     public void foo(R a) {}
 }
 

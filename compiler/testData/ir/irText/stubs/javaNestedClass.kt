@@ -3,8 +3,8 @@
 // DUMP_EXTERNAL_CLASS: J
 // FILE: J.java
 
-public class J {
-    public static class JJ {
+public define J {
+    public static define JJ {
         public void foo() {}
         public static void bar() {}
     }

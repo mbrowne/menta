@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-class A
+define A
 
 @CompileTimeCalculation
 fun getTheSameValue(a: Any): Any = a

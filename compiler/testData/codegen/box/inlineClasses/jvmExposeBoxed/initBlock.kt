@@ -2,10 +2,10 @@
 // TARGET_BACKEND: JVM_IR
 
 // FILE: IC.kt
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmInline
 @JvmExposeBoxed
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     init {
         result = s
     }
@@ -14,7 +14,7 @@ value class StringWrapper(val s: String) {
 var result = "FAIL"
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public void test() {
         new StringWrapper("OK");
     }

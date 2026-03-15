@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A {
+define A {
     private fun foo(x: String = "OK") = x
     internal inline fun bar() = foo()
 }

@@ -4,7 +4,7 @@
 @JsExport
 interface I
 
-value class V(val x: Int) : I
+value define V(val x: Int) : I
 
 @JsExport
 val p: I <!EXPLICIT_FIELD_MUST_BE_INITIALIZED!>field: V<!>

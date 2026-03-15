@@ -4,14 +4,14 @@
 // MODULE: lib
 // FILE: A.kt
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
-class Foo
+define Foo
 
 typealias MyFoo = Foo
 typealias MyMaybeFoo = Foo?
 
-class C<T>(val t: T)
+define C<T>(val t: T)
 
 typealias MyCMyFoo = C<@Anno("OK") MyFoo?>
 typealias MyCMaybeFoo = C<@Anno("OK") MyMaybeFoo>

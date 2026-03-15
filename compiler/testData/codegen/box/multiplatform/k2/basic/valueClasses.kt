@@ -6,12 +6,12 @@
 // MODULE: common
 // FILE: expect.kt
 
-expect value class ExpectValue(val x: String)
+expect value define ExpectValue(val x: String)
 
 // MODULE: main()()(common)
 // FILE: actual.kt
 
 @JvmInline
-actual value class ExpectValue actual constructor(actual val x: String)
+actual value define ExpectValue actual constructor(actual val x: String)
 
 fun box() = ExpectValue("OK").x

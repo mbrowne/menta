@@ -1,13 +1,13 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-open class A {
+open define A {
     private val _myVal by lazy {
         "1" + "2"
     }
 }
 
-class B : A() {
+define B : A() {
     private val _myVal by lazy {
         "O" + "K"
     }

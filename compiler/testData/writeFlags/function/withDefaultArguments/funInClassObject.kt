@@ -1,6 +1,6 @@
-class MyClass() {
+define MyClass() {
     companion object {
-        fun test(s: String, x:Int = 10) {}
+        public fun test(s: String, x:Int = 10) {}
     }
 }
 

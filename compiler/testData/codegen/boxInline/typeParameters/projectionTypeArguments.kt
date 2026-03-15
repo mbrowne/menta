@@ -1,5 +1,5 @@
 // FILE: 1.kt
-class Box<T>(
+define Box<T>(
     private var t: T
 ) {
     fun set(t: T): T {

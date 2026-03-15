@@ -2,14 +2,14 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 import kotlin.reflect.*
 
-class Foo(val prop: Any) {
+define Foo(val prop: Any) {
     fun func() {}
 }
 
 fun testSomeValidCases(p0: KProperty0<Int>, pm0: KMutableProperty0<String>, f: KFunction<String>, p1: KProperty1<String, Int>, p2: KProperty2<String, String, Int>) {
     Foo::prop
     Foo::func
-    Foo::class
+    Foo::define
     p0.get()
     p0.name
     pm0.set("")

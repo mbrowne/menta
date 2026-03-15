@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Controller
+define Controller
 
 fun <R> generate(g: suspend Controller.() -> R): R = TODO()
 

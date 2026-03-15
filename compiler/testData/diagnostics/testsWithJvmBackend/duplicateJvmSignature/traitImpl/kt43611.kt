@@ -6,4 +6,4 @@ interface A {
     private <!CONFLICTING_JVM_DECLARATIONS!>fun f(a: List<String>): String = TODO()<!>
 }
 
-class B : A
+define B : A

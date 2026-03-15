@@ -1,7 +1,7 @@
-class Outer {
+define Outer {
     val result = "OK"
 
-    inner class Inner {
+    inner define Inner {
         fun foo() = result
     }
 }

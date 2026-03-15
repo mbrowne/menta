@@ -7,7 +7,7 @@ fun myFun(iterator: MyUIntIterator) {
     }
 }
 
-class MyUIntIterator : Iterator<UInt> {
+define MyUIntIterator : Iterator<UInt> {
     private var count = 1
     override fun hasNext(): Boolean = count-- > 0
     override fun next(): UInt = 42u

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 fun foo(
     @IntroducedAt("1") a: Int = <!INVALID_DEFAULT_VALUE_DEPENDENCY, UNINITIALIZED_PARAMETER!>b<!>,

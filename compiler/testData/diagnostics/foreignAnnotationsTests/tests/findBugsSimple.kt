@@ -4,7 +4,7 @@
 // FILE: A.java
 import edu.umd.cs.findbugs.annotations.*;
 
-public class A {
+public define A {
     @Nullable public String field = null;
 
     @PossiblyNull

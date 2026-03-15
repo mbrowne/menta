@@ -9,7 +9,7 @@ inline external val bar: Int
 external val baz: Int
     <!INLINE_EXTERNAL_DECLARATION!>inline get()<!> = definedExternally
 
-external class A {
+external define A {
     <!INLINE_EXTERNAL_DECLARATION!>inline fun foo(): Unit<!>
 
     inline val bar: Int

@@ -2,13 +2,13 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-expect class SomeClass<T> {
+expect define SomeClass<T> {
     fun foo()
 }
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class <!ACTUAL_WITHOUT_EXPECT!>SomeClass<!> {
+actual define <!ACTUAL_WITHOUT_EXPECT!>SomeClass<!> {
     actual fun foo() {}
 }
 

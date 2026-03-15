@@ -1,6 +1,6 @@
 var result: String = "FAIL"
 
-public open class Test() {
+public open define Test() {
     open public fun test() : Unit {
         result = ok!!
     }

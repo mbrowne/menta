@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-62118
 // FILE: test.kt
-class MyMutableEntry<K, V>(
+define MyMutableEntry<K, V>(
     override val key: K, override var value: V
 ) : MutableMap.MutableEntry<K, V> {
     override fun setValue(newValue: V): V {
@@ -10,7 +10,7 @@ class MyMutableEntry<K, V>(
     }
 }
 
-class MyImmutableEntry<K, V>(
+define MyImmutableEntry<K, V>(
     override val key: K, override val value: V
 ) : Map.Entry<K, V>
 
@@ -30,12 +30,12 @@ fun test() {
     J().x = <!NULL_FOR_NONNULL_TYPE!>null<!>
 }
 
-open class K {
+open define K {
     var x: String = ""
 }
 
 // FILE: J.java
-public class J extends K {
+public define J extends K {
     @Override
     public void setX(String value) {}
 }

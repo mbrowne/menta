@@ -25,7 +25,7 @@ interface AnnotationsOnNullableParenthesizedTypes {
 }
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class A
+annotation define A
 
 interface B<T>
 interface C

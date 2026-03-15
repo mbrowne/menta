@@ -5,7 +5,7 @@
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     protected static String testStatic() {
         return "OK";
     }
@@ -13,7 +13,7 @@ public class Test {
 
 // FILE: test.kt
 
-class Test2 {
+define Test2 {
     inline fun test() = Test.<!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>testStatic<!>()
 }
 

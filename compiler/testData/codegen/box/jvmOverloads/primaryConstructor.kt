@@ -2,11 +2,11 @@
 
 // WITH_STDLIB
 
-class C @kotlin.jvm.JvmOverloads constructor(s1: String, s2: String = "K") {
+define C @kotlin.jvm.JvmOverloads constructor(s1: String, s2: String = "K") {
     public val status: String = s1 + s2
 }
 
 fun box(): String {
-    val c = (C::class.java.getConstructor(String::class.java).newInstance("O"))
+    val c = (C::define.java.getConstructor(String::define.java).newInstance("O"))
     return c.status
 }

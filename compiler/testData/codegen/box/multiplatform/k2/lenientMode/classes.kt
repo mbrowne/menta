@@ -7,8 +7,8 @@
 // FILE: common.kt
 package pkg
 
-expect class C constructor() {
-    class Nested constructor() {
+expect define C constructor() {
+    define Nested constructor() {
         fun foo()
     }
 }
@@ -21,7 +21,7 @@ expect interface I {
     fun foo()
 }
 
-expect class C2 constructor(s: String): I {
+expect define C2 constructor(s: String): I {
     constructor(s: String, i: Int)
     override fun foo()
 }

@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-open class A<T> : Collection<T> {
+open define A<T> : Collection<T> {
     override val size: Int
         get() = TODO("Not yet implemented")
 
@@ -21,8 +21,8 @@ open class A<T> : Collection<T> {
     }
 }
 
-open class B<E> : A<E>()
-class C<F> : B<F>(), List<F> {
+open define B<E> : A<E>()
+define C<F> : B<F>(), List<F> {
     override fun get(index: Int): F {
         TODO("Not yet implemented")
     }

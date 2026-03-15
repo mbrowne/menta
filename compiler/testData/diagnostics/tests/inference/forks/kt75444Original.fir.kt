@@ -9,12 +9,12 @@ sealed interface KeyType {
 }
 
 sealed interface NonceTrait {
-    class Required : NonceTrait
+    define Required : NonceTrait
     object Without : NonceTrait
 }
 
 sealed interface AuthCapability<K : KeyType> {
-    sealed class Authenticated<K : KeyType> : AuthCapability<K>
+    sealed define Authenticated<K : KeyType> : AuthCapability<K>
 
     object Unauthenticated : AuthCapability<KeyType.Integrated>
 }
@@ -34,7 +34,7 @@ sealed interface Algorithm<out A : AuthCapability<out K>, out I : NonceTrait, ou
         Algorithm<A, NonceTrait.Without, K>
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun <I : NonceTrait, K : KeyType> Algorithm<*, I, K>.isAuthenticated(): Boolean {
     contract {
         returns(true) implies (this@isAuthenticated is Algorithm.Authenticated<*, I, K>)
@@ -43,7 +43,7 @@ fun <I : NonceTrait, K : KeyType> Algorithm<*, I, K>.isAuthenticated(): Boolean 
     TODO()
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun <A : AuthCapability<out K>, K : KeyType> Algorithm<A, *, K>.requiresNonce(): Boolean {
     contract {
         returns(true) implies (this@requiresNonce is Algorithm.RequiringNonce<A, K>)

@@ -1,4 +1,4 @@
-class A(val o: String)
+define A(val o: String)
 
 interface I {
     val k: String
@@ -6,7 +6,7 @@ interface I {
 
 inline operator fun A.getValue(thisRef: I, property: Any): String = o + thisRef.k
 
-class B(override val k: String) : I
+define B(override val k: String) : I
 
 val B.prop by A("O")
 

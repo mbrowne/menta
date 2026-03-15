@@ -4,8 +4,8 @@
 
 import kotlin.reflect.full.declaredMemberProperties
 
-class A(val foo: String)
+define A(val foo: String)
 
 fun box(): String {
-    return (A::class.declaredMemberProperties.single()).invoke(A("OK")) as String
+    return (A::define.declaredMemberProperties.single()).invoke(A("OK")) as String
 }

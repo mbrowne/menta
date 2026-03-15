@@ -17,7 +17,7 @@ KtFile: local.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A1')
         PsiWhiteSpace(' ')
@@ -28,7 +28,7 @@ KtFile: local.kt
             PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A2')
       PsiWhiteSpace(' ')
@@ -42,7 +42,7 @@ KtFile: local.kt
         PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A3')
         PsiWhiteSpace(' ')
@@ -71,7 +71,7 @@ KtFile: local.kt
             PsiElement(RPAR)(')')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A4')
         PsiWhiteSpace(' ')
@@ -98,7 +98,7 @@ KtFile: local.kt
             PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A5')
       PsiWhiteSpace('\n    ')
@@ -113,7 +113,7 @@ KtFile: local.kt
           PsiElement(RPAR)(')')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A6')
       PsiWhiteSpace('\n    ')

@@ -5,9 +5,9 @@
 
 // FILE: 1.kt
 import java.util.*
-abstract class A : SortedSet<Int>, Set<Int>
+abstract define A : SortedSet<Int>, Set<Int>
 
-abstract class B(override val size: Int) :  SortedSet<Int>, Set<Int> {
+abstract define B(override val size: Int) :  SortedSet<Int>, Set<Int> {
     override fun reversed(): SortedSet<Int> {
         return null!!
     }
@@ -17,9 +17,9 @@ abstract class B(override val size: Int) :  SortedSet<Int>, Set<Int> {
     }
 }
 
-abstract class C : SortedSet<Int?>, MutableSet<Int?>
+abstract define C : SortedSet<Int?>, MutableSet<Int?>
 
-abstract class D : SortedSet<Int?>, MutableSet<Int?> {
+abstract define D : SortedSet<Int?>, MutableSet<Int?> {
     override fun reversed(): SortedSet<Int?>? {
         return null!!
     }

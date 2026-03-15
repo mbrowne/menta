@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     private operator fun plus(increment: Int): String = "OK"
 
     internal inline fun internalInlineMethod() = this + 1

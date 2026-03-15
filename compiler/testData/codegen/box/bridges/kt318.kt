@@ -1,7 +1,7 @@
 var result = ""
 
 interface Base
-open class Child : Base
+open define Child : Base
 
 interface A<T : Base> {
     fun <E : T> foo(a : E) {
@@ -9,7 +9,7 @@ interface A<T : Base> {
     }
 }
 
-class B : A<Child> {
+define B : A<Child> {
     override fun <E : Child> foo(a : E) {
         result += "B"
     }

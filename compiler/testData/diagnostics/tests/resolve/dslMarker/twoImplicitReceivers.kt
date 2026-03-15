@@ -3,21 +3,21 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann1
+annotation define Ann1
 
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann2
+annotation define Ann2
 
-class A {
+define A {
     fun D.extA() {}
 }
 
-class B {
+define B {
     fun D.extB() {}
 }
 
-class D
+define D
 
 fun foo(x: (@Ann1 A).() -> Unit) {}
 fun bar(x: (@Ann2 B).() -> Unit) {}

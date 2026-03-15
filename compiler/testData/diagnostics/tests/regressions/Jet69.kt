@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Command() {}
+define Command() {}
 
 fun parse(cmd: String): Command? { return null  }
 

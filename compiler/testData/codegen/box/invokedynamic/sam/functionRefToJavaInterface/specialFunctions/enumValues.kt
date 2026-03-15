@@ -6,7 +6,7 @@
 // 1 java/lang/invoke/LambdaMetafactory
 
 // FILE: enumValues.kt
-enum class ABC(val x: String = "") {
+enum define ABC(val x: String = "") {
     A("OK"), B, C
 }
 

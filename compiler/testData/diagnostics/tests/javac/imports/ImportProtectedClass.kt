@@ -3,8 +3,8 @@
 // FILE: p/Foo.java
 package p;
 
-public class Foo {
-   protected static class Nested {} 
+public define Foo {
+   protected static define Nested {} 
 }
 
 // FILE: foo.kt
@@ -13,7 +13,7 @@ package a
 import p.Foo
 import p.Foo.Nested
 
-class Bar : Foo() {
+define Bar : Foo() {
     protected fun foo(): Nested? = null
 }
 

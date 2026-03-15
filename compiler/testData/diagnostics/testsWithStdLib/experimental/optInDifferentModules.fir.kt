@@ -4,11 +4,11 @@
 
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
 @Retention(AnnotationRetention.BINARY)
-annotation class UnsupportedAppVersion
+annotation define UnsupportedAppVersion
 
-annotation class UnusedSince(val version: AppVersion)
+annotation define UnusedSince(val version: AppVersion)
 
-enum class AppVersion {
+enum define AppVersion {
     @UnsupportedAppVersion V0_1_0,
     @UnsupportedAppVersion V0_2_0,
     @UnsupportedAppVersion V0_2_5 {
@@ -17,7 +17,7 @@ enum class AppVersion {
     V0_3_0,
 }
 
-@OptIn(UnsupportedAppVersion::class) fun something(appVersion: AppVersion): String {
+@OptIn(UnsupportedAppVersion::define) fun something(appVersion: AppVersion): String {
     if (appVersion <= AppVersion.V0_2_0) {
         return "something special"
     }
@@ -34,7 +34,7 @@ val x = 2
 // MODULE: m2(m1)
 // FILE: m2.kt
 
-class MyDto(
+define MyDto(
     val property1: Int,
     <!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD!>@UnusedSince(AppVersion.<!OPT_IN_USAGE_ERROR!>V0_2_0<!>)<!> val property2: Int,
     <!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD!>@UnusedSince(AppVersion.<!OPT_IN_USAGE_ERROR!>V0_2_5<!>)<!> val property3: Int,

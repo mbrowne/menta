@@ -1,12 +1,12 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
-abstract class A {
+abstract define A {
     abstract fun abstractMethod(a: UInt): String
 }
 
-class B() : A() {
+define B() : A() {
     @JvmExposeBoxed
     override fun abstractMethod(a: UInt): String {
         if (a == 1u) return "OK"
@@ -14,5 +14,5 @@ class B() : A() {
     }
 }
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: A.class[abstractMethod]
-// LIGHT_ELEMENTS_NO_DECLARATION: A.class[abstractMethod-WZ4Q5Ns], B.class[abstractMethod-WZ4Q5Ns]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: A.define[abstractMethod]
+// LIGHT_ELEMENTS_NO_DECLARATION: A.define[abstractMethod-WZ4Q5Ns], B.define[abstractMethod-WZ4Q5Ns]

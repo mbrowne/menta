@@ -13,11 +13,11 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 fun consumeTargetType(value: TargetType) {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     var typeVariableConsumer: (TV) -> Unit = { storage = it }
     private var storage: TV = TargetType() as TV
 }

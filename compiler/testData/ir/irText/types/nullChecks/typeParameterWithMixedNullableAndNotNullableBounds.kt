@@ -11,7 +11,7 @@ fun test() {
 
 
 // FILE: J.java
-public class J {
+public define J {
     public static String STRING = s();
     public static String s() { return null; }
 }

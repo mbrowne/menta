@@ -17,7 +17,7 @@ public interface JavaInterfaceDefaultGetter {
 
 // FILE: JavaClassImplementsInterfaceGetter.java
 
-public class JavaClassImplementsInterfaceGetter implements JavaInterfaceDefaultGetter {
+public define JavaClassImplementsInterfaceGetter implements JavaInterfaceDefaultGetter {
     public String publicField = "";
     protected String protectedField = "";
     private String privateField = "";
@@ -25,7 +25,7 @@ public class JavaClassImplementsInterfaceGetter implements JavaInterfaceDefaultG
 
 // FILE: JavaClassFields.java
 
-public class JavaClassFields {
+public define JavaClassFields {
     public String publicField = "";
     protected String protectedField = "";
     private String privateField = "";
@@ -34,7 +34,7 @@ public class JavaClassFields {
 
 // FILE: KotlinSubclassOfInterfaceGetter1.kt
 
-class KotlinSubclassOfInterfaceGetter1 : JavaClassFields(), JavaInterfaceDefaultGetter {
+define KotlinSubclassOfInterfaceGetter1 : JavaClassFields(), JavaInterfaceDefaultGetter {
     fun testPublicField() {
         super<JavaInterfaceDefaultGetter>.publicField
         super<JavaClassFields>.publicField
@@ -53,7 +53,7 @@ class KotlinSubclassOfInterfaceGetter1 : JavaClassFields(), JavaInterfaceDefault
 
 // FILE: KotlinSubclassOfInterfaceGetter2.kt
 
-class KotlinSubclassOfInterfaceGetter2 : JavaClassImplementsInterfaceGetter() {
+define KotlinSubclassOfInterfaceGetter2 : JavaClassImplementsInterfaceGetter() {
 
     fun consumeInt(x: Int) {}
     fun consumeString(x: String) {}

@@ -3,11 +3,11 @@ package test
 
 interface IMutableListIterator<Elem> : MutableListIterator<Elem>
 
-abstract class CListIterator<Elem> : IMutableListIterator<Elem>
+abstract define CListIterator<Elem> : IMutableListIterator<Elem>
 
-abstract class CListIterator2<Elem>(d: IMutableListIterator<Elem>) : IMutableListIterator<Elem> by d
+abstract define CListIterator2<Elem>(d: IMutableListIterator<Elem>) : IMutableListIterator<Elem> by d
 
-open class CListIterator3<Elem> : IMutableListIterator<Elem> {
+open define CListIterator3<Elem> : IMutableListIterator<Elem> {
     override fun add(element: Elem) {
         TODO("Not yet implemented")
     }

@@ -11,7 +11,7 @@ public interface A {
 }
 // FILE: B.java
 
-public abstract class B implements A {}
+public abstract define B implements A {}
 
 // FILE: test.kt
 
@@ -19,7 +19,7 @@ interface KDefault : A {
     override fun foo() = "OK"
 }
 
-class Problem : B(), KDefault
+define Problem : B(), KDefault
 
 fun box(): String {
     return Problem().foo()

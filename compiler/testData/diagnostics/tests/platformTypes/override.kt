@@ -15,7 +15,7 @@ public interface I {
 
 package p;
 
-public class J implements I {
+public define J implements I {
     public String s() { return null; }
 }
 

@@ -6,14 +6,14 @@
 
 package a
 
-open class A : ArrayList<String>()
+open define A : ArrayList<String>()
 
 // MODULE: main(lib)
 // FILE: B.kt
 
 import a.A
 
-class B : A()
+define B : A()
 
 fun box(): String {
     val b = B()

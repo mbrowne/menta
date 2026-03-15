@@ -5,7 +5,7 @@
 
 package a.b.c
 
-class D {
+define D {
     fun foo() = 42
 }
 

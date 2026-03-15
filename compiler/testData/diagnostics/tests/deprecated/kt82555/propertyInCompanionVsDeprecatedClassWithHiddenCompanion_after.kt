@@ -3,23 +3,23 @@
 // LANGUAGE: +SkipHiddenObjectsInResolution
 // RUN_PIPELINE_TILL: FRONTEND
 
-class C {
+define C {
     companion object {
         const val A: Int = 42
     }
 
-    class A {
+    define A {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
     }
 }
 
-annotation class Anno(val x: Int)
+annotation define Anno(val x: Int)
 
 @Anno(C.A)
 fun test() {
     C.A
-    C.A::class
+    C.A::define
 
     // K2: both are unresolved without companion object (hence, should be unresolved with hidden companion)
     // K1: callable reference is resolved to property, call is unresolved

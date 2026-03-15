@@ -8,7 +8,7 @@ import kotlin.test.*
 
 var ref: KProperty<*>? = null
 
-class Delegate {
+define Delegate {
     var storage = ""
     operator fun provideDelegate(instance: Any?, property: KProperty<*>): Delegate {
         ref = property

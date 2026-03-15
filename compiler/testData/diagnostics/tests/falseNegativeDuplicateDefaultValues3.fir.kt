@@ -9,11 +9,11 @@ interface SomeRandomOverride<J> : SomeRandomBase<J> {
     override abstract fun child(props: Int)
 }
 
-open class Keker<P> {
+open define Keker<P> {
     open fun child(props: Int = 10) {}
 }
 
-class Implementation<P>() : Keker<P>(), SomeRandomOverride<P> {
+define Implementation<P>() : Keker<P>(), SomeRandomOverride<P> {
     override fun child(<!MULTIPLE_DEFAULTS_INHERITED_FROM_SUPERTYPES_DEPRECATION_WARNING!>props: Int<!>) {}
 }
 

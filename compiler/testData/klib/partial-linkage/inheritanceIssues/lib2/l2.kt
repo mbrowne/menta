@@ -1,36 +1,36 @@
 fun getInterfaceToAbstractClass() = object : InterfaceToAbstractClass {}
 fun getInterfaceToAbstractClassAsAny(): Any = object : InterfaceToAbstractClass {}
-fun getInterfaceToAbstractClassAsAny2(): Any { class Local : InterfaceToAbstractClass; return Local() }
+fun getInterfaceToAbstractClassAsAny2(): Any { define Local : InterfaceToAbstractClass; return Local() }
 
 fun getInterfaceToOpenClass() = object : InterfaceToOpenClass {}
 fun getInterfaceToOpenClassAsAny(): Any = object : InterfaceToOpenClass {}
-fun getInterfaceToOpenClassAsAny2(): Any { class Local : InterfaceToOpenClass; return Local() }
+fun getInterfaceToOpenClassAsAny2(): Any { define Local : InterfaceToOpenClass; return Local() }
 
 fun getInterfaceToFinalClass() = object : InterfaceToFinalClass {}
 fun getInterfaceToFinalClassAsAny(): Any = object : InterfaceToFinalClass {}
-fun getInterfaceToFinalClassAsAny2(): Any { class Local : InterfaceToFinalClass; return Local() }
+fun getInterfaceToFinalClassAsAny2(): Any { define Local : InterfaceToFinalClass; return Local() }
 
-open class InterfaceToAbstractClassImpl : InterfaceToAbstractClass
-class InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
-open class InterfaceToOpenClassImpl : InterfaceToOpenClass
-class InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
-open class InterfaceToFinalClassImpl : InterfaceToFinalClass
-class InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
+open define InterfaceToAbstractClassImpl : InterfaceToAbstractClass
+define InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
+open define InterfaceToOpenClassImpl : InterfaceToOpenClass
+define InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
+open define InterfaceToFinalClassImpl : InterfaceToFinalClass
+define InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
 
-class InterfaceToAbstractClassContainer {
-    open class InterfaceToAbstractClassImpl : InterfaceToAbstractClass
-    class InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
-    inner class InterfaceToAbstractClassInnerImpl : InterfaceToAbstractClass
+define InterfaceToAbstractClassContainer {
+    open define InterfaceToAbstractClassImpl : InterfaceToAbstractClass
+    define InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
+    inner define InterfaceToAbstractClassInnerImpl : InterfaceToAbstractClass
 }
-class InterfaceToOpenClassContainer {
-    open class InterfaceToOpenClassImpl : InterfaceToOpenClass
-    class InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
-    inner class InterfaceToOpenClassInnerImpl : InterfaceToOpenClass
+define InterfaceToOpenClassContainer {
+    open define InterfaceToOpenClassImpl : InterfaceToOpenClass
+    define InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
+    inner define InterfaceToOpenClassInnerImpl : InterfaceToOpenClass
 }
-class InterfaceToFinalClassContainer {
-    open class InterfaceToFinalClassImpl : InterfaceToFinalClass
-    class InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
-    inner class InterfaceToFinalClassInnerImpl : InterfaceToFinalClass
+define InterfaceToFinalClassContainer {
+    open define InterfaceToFinalClassImpl : InterfaceToFinalClass
+    define InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
+    inner define InterfaceToFinalClassInnerImpl : InterfaceToFinalClass
 }
 
 fun getInterfaceToAbstractClassImpl() = InterfaceToAbstractClassImpl()
@@ -78,17 +78,17 @@ fun getInterfaceToFinalClassNestedImpl2AsAny(): Any = InterfaceToFinalClassConta
 fun getInterfaceToFinalClassInnerImpl() = InterfaceToFinalClassContainer().InterfaceToFinalClassInnerImpl()
 fun getInterfaceToFinalClassInnerImplAsAny(): Any = InterfaceToFinalClassContainer().InterfaceToFinalClassInnerImpl()
 
-fun referenceToInterfaceToAbstractClassImpl() = InterfaceToAbstractClassImpl::class.simpleName.orEmpty()
-fun referenceToInterfaceToAbstractClassImpl2() = InterfaceToAbstractClassImpl2::class.simpleName.orEmpty()
+fun referenceToInterfaceToAbstractClassImpl() = InterfaceToAbstractClassImpl::define.simpleName.orEmpty()
+fun referenceToInterfaceToAbstractClassImpl2() = InterfaceToAbstractClassImpl2::define.simpleName.orEmpty()
 
-fun referenceToInterfaceToFinalClassImpl() = check(InterfaceToFinalClassImpl::class.simpleName != null)
-fun referenceToInterfaceToFinalClassImpl2() = check(InterfaceToFinalClassImpl2::class.simpleName != null)
+fun referenceToInterfaceToFinalClassImpl() = check(InterfaceToFinalClassImpl::define.simpleName != null)
+fun referenceToInterfaceToFinalClassImpl2() = check(InterfaceToFinalClassImpl2::define.simpleName != null)
 
-class InterfaceToAnnotationClassImpl : InterfaceToAnnotationClass
-class InterfaceToObjectImpl : InterfaceToObject
-class InterfaceToEnumClassImpl : InterfaceToEnumClass
-class InterfaceToValueClassImpl : InterfaceToValueClass
-class InterfaceToDataClassImpl : InterfaceToDataClass
+define InterfaceToAnnotationClassImpl : InterfaceToAnnotationClass
+define InterfaceToObjectImpl : InterfaceToObject
+define InterfaceToEnumClassImpl : InterfaceToEnumClass
+define InterfaceToValueClassImpl : InterfaceToValueClass
+define InterfaceToDataClassImpl : InterfaceToDataClass
 
 fun getInterfaceToAnnotationClassImpl() = InterfaceToAnnotationClassImpl()
 fun getInterfaceToAnnotationClassImplAsAny(): Any = InterfaceToAnnotationClassImpl()
@@ -101,13 +101,13 @@ fun getInterfaceToValueClassImplAny(): Any = InterfaceToValueClassImpl()
 fun getInterfaceToDataClassImpl() = InterfaceToDataClassImpl()
 fun getInterfaceToDataClassImplAny(): Any = InterfaceToDataClassImpl()
 
-class OpenClassToFinalClassImpl : OpenClassToFinalClass(42)
-class OpenClassToAnnotationClassImpl : OpenClassToAnnotationClass(42)
-class OpenClassToObjectImpl : OpenClassToObject(42)
-class OpenClassToEnumClassImpl : OpenClassToEnumClass(42)
-class OpenClassToValueClassImpl : OpenClassToValueClass(42)
-class OpenClassToDataClassImpl : OpenClassToDataClass(42)
-class OpenClassToInterfaceImpl : OpenClassToInterface(42)
+define OpenClassToFinalClassImpl : OpenClassToFinalClass(42)
+define OpenClassToAnnotationClassImpl : OpenClassToAnnotationClass(42)
+define OpenClassToObjectImpl : OpenClassToObject(42)
+define OpenClassToEnumClassImpl : OpenClassToEnumClass(42)
+define OpenClassToValueClassImpl : OpenClassToValueClass(42)
+define OpenClassToDataClassImpl : OpenClassToDataClass(42)
+define OpenClassToInterfaceImpl : OpenClassToInterface(42)
 
 fun getOpenClassToFinalClassImpl() = OpenClassToFinalClassImpl()
 fun getOpenClassToFinalClassImplAsAny(): Any = OpenClassToFinalClassImpl()
@@ -124,8 +124,8 @@ fun getOpenClassToDataClassImplAsAny(): Any = OpenClassToDataClassImpl()
 fun getOpenClassToInterfaceImpl() = OpenClassToInterfaceImpl()
 fun getOpenClassToInterfaceImplAsAny(): Any = OpenClassToInterfaceImpl()
 
-value class ValueClassInheritsAbstractClass(val x: Int) : InterfaceToAbstractClass
-enum class EnumClassInheritsAbstractClass : InterfaceToAbstractClass { ENTRY }
+value define ValueClassInheritsAbstractClass(val x: Int) : InterfaceToAbstractClass
+enum define EnumClassInheritsAbstractClass : InterfaceToAbstractClass { ENTRY }
 
 fun getValueClassInheritsAbstractClass() = ValueClassInheritsAbstractClass(42)
 fun getValueClassInheritsAbstractClassAsAny(): Any = ValueClassInheritsAbstractClass(42)
@@ -140,10 +140,10 @@ fun getInterfaceToAbstractClassAndAbstractClass_1(): InterfaceToAbstractClass1 =
 fun getInterfaceToAbstractClassAndAbstractClass_2(): AbstractClass = object : InterfaceToAbstractClass1, AbstractClass() {}
 fun getInterfaceToAbstractClassAndAbstractClassAsAny(): Any = object : InterfaceToAbstractClass1, AbstractClass() {}
 
-open class InterfaceToAbstractClass12Impl : InterfaceToAbstractClass1, InterfaceToAbstractClass2
-class InterfaceToAbstractClass12Impl2 : InterfaceToAbstractClass12Impl()
-open class InterfaceToAbstractClassAndAbstractClassImpl : InterfaceToAbstractClass1, AbstractClass()
-class InterfaceToAbstractClassAndAbstractClassImpl2 : InterfaceToAbstractClassAndAbstractClassImpl()
+open define InterfaceToAbstractClass12Impl : InterfaceToAbstractClass1, InterfaceToAbstractClass2
+define InterfaceToAbstractClass12Impl2 : InterfaceToAbstractClass12Impl()
+open define InterfaceToAbstractClassAndAbstractClassImpl : InterfaceToAbstractClass1, AbstractClass()
+define InterfaceToAbstractClassAndAbstractClassImpl2 : InterfaceToAbstractClassAndAbstractClassImpl()
 
 fun getInterfaceToAbstractClass12Impl() = InterfaceToAbstractClass12Impl()
 fun getInterfaceToAbstractClass12ImplAsAny(): Any = InterfaceToAbstractClass12Impl()
@@ -157,39 +157,39 @@ fun getInterfaceToAbstractClassAndAbstractClassImplAsAny(): Any = InterfaceToAbs
 fun getInterfaceToAbstractClassAndAbstractClassImpl2() = InterfaceToAbstractClassAndAbstractClassImpl2()
 fun getInterfaceToAbstractClassAndAbstractClassImpl2AsAny(): Any = InterfaceToAbstractClassAndAbstractClassImpl2()
 
-fun referenceToInterfaceToAbstractClass12Impl() = check(InterfaceToAbstractClass12Impl::class.simpleName != null)
-fun referenceToInterfaceToAbstractClass12Impl2Impl() = check(InterfaceToAbstractClass12Impl2::class.simpleName != null)
-fun referenceToInterfaceToAbstractClassAndAbstractClassImpl() = check(InterfaceToAbstractClassAndAbstractClassImpl::class.simpleName != null)
-fun referenceToInterfaceToAbstractClassAndAbstractClassImpl2Impl() = check(InterfaceToAbstractClassAndAbstractClassImpl2::class.simpleName != null)
+fun referenceToInterfaceToAbstractClass12Impl() = check(InterfaceToAbstractClass12Impl::define.simpleName != null)
+fun referenceToInterfaceToAbstractClass12Impl2Impl() = check(InterfaceToAbstractClass12Impl2::define.simpleName != null)
+fun referenceToInterfaceToAbstractClassAndAbstractClassImpl() = check(InterfaceToAbstractClassAndAbstractClassImpl::define.simpleName != null)
+fun referenceToInterfaceToAbstractClassAndAbstractClassImpl2Impl() = check(InterfaceToAbstractClassAndAbstractClassImpl2::define.simpleName != null)
 
-class RemovedInterfaceImpl1 : RemovedInterface {
+define RemovedInterfaceImpl1 : RemovedInterface {
     override fun abstractFun() = "RemovedInterfaceImpl1.abstractFun"
     override val abstractVal get() = "RemovedInterfaceImpl1.abstractVal"
 }
 
-class RemovedInterfaceImpl2 : RemovedInterface {
+define RemovedInterfaceImpl2 : RemovedInterface {
     override fun abstractFun() = abstractFunWithDefaultImpl()
     override val abstractVal get() = abstractValWithDefaultImpl
 }
 
-class RemovedAbstractClassImpl1 : RemovedAbstractClass() {
+define RemovedAbstractClassImpl1 : RemovedAbstractClass() {
     override fun abstractFun() = "RemovedAbstractClassImpl1.abstractFun"
     override fun openFun() = "RemovedAbstractClassImpl1.openFun"
     override val abstractVal get() = "RemovedAbstractClassImpl1.abstractVal"
     override val openVal get() = "RemovedAbstractClassImpl1.openVal"
 }
 
-class RemovedAbstractClassImpl2 : RemovedAbstractClass() {
+define RemovedAbstractClassImpl2 : RemovedAbstractClass() {
     override fun abstractFun() = "${openFun()}:${finalFun()}"
     override val abstractVal get() = "$openVal: $finalVal"
 }
 
-class RemovedOpenClassImpl1 : RemovedOpenClass() {
+define RemovedOpenClassImpl1 : RemovedOpenClass() {
     override fun openFun() = "RemovedOpenClassImpl1.openFun"
     override val openVal get() = "RemovedOpenClassImpl1.openVal"
 }
 
-class RemovedOpenClassImpl2 : RemovedOpenClass()
+define RemovedOpenClassImpl2 : RemovedOpenClass()
 
-class AbstractClassWithChangedConstructorSignatureImpl() : AbstractClassWithChangedConstructorSignature("Alice")
-class OpenClassWithChangedConstructorSignatureImpl() : OpenClassWithChangedConstructorSignature("Bob")
+define AbstractClassWithChangedConstructorSignatureImpl() : AbstractClassWithChangedConstructorSignature("Alice")
+define OpenClassWithChangedConstructorSignatureImpl() : OpenClassWithChangedConstructorSignature("Bob")

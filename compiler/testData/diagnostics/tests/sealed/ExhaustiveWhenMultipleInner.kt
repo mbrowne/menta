@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-sealed class Sealed() {
+sealed define Sealed() {
     object First: Sealed()
-    open class NonFirst: Sealed() {
-        class NonSecond: NonFirst() {
+    open define NonFirst: Sealed() {
+        define NonSecond: NonFirst() {
             object Third: Sealed()
-            class NonThird: Sealed() {
+            define NonThird: Sealed() {
                 object Fourth: NonFirst()
-                class Fifth: Sealed()
+                define Fifth: Sealed()
             }    
         }
         object Second: Sealed()

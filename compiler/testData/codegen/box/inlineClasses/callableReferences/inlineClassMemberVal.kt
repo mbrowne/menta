@@ -3,17 +3,17 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int) {
+value define Z(val x: Int) {
     val xx get() = x
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L(val x: Long) {
+value define L(val x: Long) {
     val xx get() = x
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val x: String) {
+value define S(val x: String) {
     val xx get() = x
 }
 

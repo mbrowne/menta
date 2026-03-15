@@ -4,7 +4,7 @@
 
 // MODULE: lib
 // FILE: A.kt
-enum class MyEnum {
+enum define MyEnum {
     X, Y
 }
 

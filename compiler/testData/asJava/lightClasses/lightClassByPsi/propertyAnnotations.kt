@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-annotation class Anno(val p: String = "")
+annotation define Anno(val p: String = "")
 
 
 @Deprecated("deprecated")
@@ -10,7 +10,7 @@ val deprecated = 0
 @Transient
 var jvmFlags = 0
 
-class C {
+define C {
     companion object {
         @Anno("x")
         val x = 1
@@ -39,7 +39,7 @@ val nullable: String? = null
 @Anno("nonNullable")
 val nonNullable: String = ""
 
-open class O {
+open define O {
     @Anno("private")
     private val privateProperty: Int get() = 1
 

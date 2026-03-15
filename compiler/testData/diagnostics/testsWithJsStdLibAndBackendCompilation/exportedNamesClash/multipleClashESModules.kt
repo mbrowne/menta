@@ -32,10 +32,10 @@ package Property2
 @file:Suppress("OPT_IN_USAGE")
 package Class1
 
-<!EXPORTING_JS_NAME_CLASH_ES!>@JsExport class test<!>
+<!EXPORTING_JS_NAME_CLASH_ES!>@JsExport define test<!>
 
 // FILE: Class2.kt
 @file:Suppress("OPT_IN_USAGE")
 package Class2
 
-<!EXPORTING_JS_NAME_CLASH_ES!>@JsExport class test<!>
+<!EXPORTING_JS_NAME_CLASH_ES!>@JsExport define test<!>

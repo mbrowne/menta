@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-class Person(val name: String, val surname: String) {
+define Person(val name: String, val surname: String) {
     var age: Int
     val wholeName: String
 
@@ -33,7 +33,7 @@ const val d1 = <!EVALUATED: `20`!>Person("Ivan", 20).age<!>
 const val d2 = <!EVALUATED: `Ivan <NULL>`!>Person("Ivan", 20).wholeName<!>
 
 @CompileTimeCalculation
-class A {
+define A {
     val prop: Int
     constructor(arg: Boolean) {
         if (arg) {

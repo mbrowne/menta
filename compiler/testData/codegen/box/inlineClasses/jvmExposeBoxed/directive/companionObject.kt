@@ -5,7 +5,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public String test() {
         return StringWrapper.unwrap(new StringWrapper("OK"));
     }
@@ -14,7 +14,7 @@ public class J {
 // FILE: Box.kt
 
 @JvmInline
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     companion object {
         @JvmStatic
         fun unwrap(s: StringWrapper): String = s.s

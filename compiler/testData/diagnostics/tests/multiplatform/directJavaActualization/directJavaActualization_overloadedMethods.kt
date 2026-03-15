@@ -3,7 +3,7 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!>(name: String, age: Int) {
+expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!>(name: String, age: Int) {
     constructor(name: String)
     fun foo(a: Int, b: Int): Int
     fun foo(a: Double, b: Double): Double
@@ -14,7 +14,7 @@ expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!>(name: String, age: Int) {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
 @kotlin.annotations.jvm.KotlinActual
-public class Foo {
+public define Foo {
     @kotlin.annotations.jvm.KotlinActual
     public  Foo(String name, int age) { }
 

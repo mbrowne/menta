@@ -1,12 +1,12 @@
 //ALLOW_AST_ACCESS
 package test
 
-enum class Enum {
+enum define Enum {
     ENTRY1, ENTRY2;
 
-    inner class Inner
+    inner define Inner
 
-    class Nested
+    define Nested
 
     interface Trait
 

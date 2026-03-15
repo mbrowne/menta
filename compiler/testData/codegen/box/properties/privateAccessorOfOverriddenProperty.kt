@@ -2,7 +2,7 @@ interface A {
     val foo: String
 }
 
-class B : A {
+define B : A {
     override var foo: String = "Fail"
         private set
 

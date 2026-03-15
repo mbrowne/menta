@@ -2,7 +2,7 @@
 // WITH_COROUTINES
 // WITH_STDLIB
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     static String result = "FAIL";
     public static void foo(Integer x) {
         result = "OK";

@@ -6,7 +6,7 @@ fun test() {
     val bug = storing { "" }.default(null)
 }
 
-class Bar<out T>
+define Bar<out T>
 
 fun <T> Bar<T>.default(defaultValue: T): Bar<T> = TODO()
 fun <T> Bar<T>.default(defaultValue: () -> T): Bar<T> = TODO()

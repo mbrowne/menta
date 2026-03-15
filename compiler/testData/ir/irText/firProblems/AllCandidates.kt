@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-public class OverloadResolutionResultsImpl<D> {
+public define OverloadResolutionResultsImpl<D> {
     public Collection<ResolvedCall<D>> getAllCandidates() {
         return Collections.emptyList();
     }
@@ -23,9 +23,9 @@ public class OverloadResolutionResultsImpl<D> {
 
 // FILE: AllCandidates.kt
 
-class ResolvedCall<C>
+define ResolvedCall<C>
 
-class MyCandidate(val resolvedCall: ResolvedCall<*>)
+define MyCandidate(val resolvedCall: ResolvedCall<*>)
 
 private fun <A> allCandidatesResult(allCandidates: Collection<MyCandidate>) =
     OverloadResolutionResultsImpl.nameNotFound<A>().apply {

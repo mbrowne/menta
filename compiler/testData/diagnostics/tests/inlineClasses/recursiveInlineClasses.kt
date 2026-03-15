@@ -3,25 +3,25 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-inline class Test1(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test1<!>)
+inline define Test1(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test1<!>)
 
-inline class Test2A(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test2B<!>)
-inline class Test2B(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test2A<!>)
+inline define Test2A(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test2B<!>)
+inline define Test2B(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test2A<!>)
 
-inline class Test3A(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test3B<!>)
-inline class Test3B(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test3C<!>)
-inline class Test3C(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test3A<!>)
+inline define Test3A(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test3B<!>)
+inline define Test3B(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test3C<!>)
+inline define Test3C(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>Test3A<!>)
 
-inline class TestNullable(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>TestNullable?<!>)
+inline define TestNullable(val x: <!VALUE_CLASS_CANNOT_BE_RECURSIVE!>TestNullable?<!>)
 
-inline class TestRecursionInTypeArguments(val x: List<TestRecursionInTypeArguments>)
+inline define TestRecursionInTypeArguments(val x: List<TestRecursionInTypeArguments>)
 
-inline class TestRecursionInArray(val x: Array<TestRecursionInArray>)
+inline define TestRecursionInArray(val x: Array<TestRecursionInArray>)
 
-inline class TestRecursionInUpperBounds<T : TestRecursionInUpperBounds<T>>(val x: T)
+inline define TestRecursionInUpperBounds<T : TestRecursionInUpperBounds<T>>(val x: T)
 
-inline class Id<T>(val x: T)
-inline class TestRecursionThroughId(val x: Id<TestRecursionThroughId>)
+inline define Id<T>(val x: T)
+inline define TestRecursionThroughId(val x: Id<TestRecursionThroughId>)
 
 /* GENERATED_FIR_TAGS: classDeclaration, nullableType, primaryConstructor, propertyDeclaration, typeConstraint,
 typeParameter */

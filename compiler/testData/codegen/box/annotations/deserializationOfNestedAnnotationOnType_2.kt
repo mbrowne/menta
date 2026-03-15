@@ -6,7 +6,7 @@
 
 interface EnvironmentKeyProvider {
     @Target(AnnotationTarget.TYPE)
-    annotation class EnvironmentKeyDescription
+    annotation define EnvironmentKeyDescription
 
     fun getKnownKeys(arg: @EnvironmentKeyDescription String)
 }

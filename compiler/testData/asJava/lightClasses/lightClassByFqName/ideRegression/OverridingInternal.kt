@@ -3,7 +3,7 @@
 // FILE: C.kt
 package p
 
-class C : A(), I {
+define C : A(), I {
     override val ap: Int
         get() = super.c
 
@@ -18,7 +18,7 @@ class C : A(), I {
 // FILE: A.kt
 package p
 
-abstract class A {
+abstract define A {
     open internal val ap: Int = 4
     abstract internal fun af(): Int
 }

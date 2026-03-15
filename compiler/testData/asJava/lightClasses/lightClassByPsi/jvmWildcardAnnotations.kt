@@ -1,14 +1,14 @@
 // LIBRARY_PLATFORMS: JVM
 
-class Inv<E>
-class Out<out T>
-class OutPair<out Final, out Y>
-class In<in Z>
+define Inv<E>
+define Out<out T>
+define OutPair<out Final, out Y>
+define In<in Z>
 
-class Final
-open class Open
+define Final
+open define Open
 
-class Container {
+define Container {
     @JvmSuppressWildcards(true)
     fun deepOpen(x: Out<Out<Out<Open>>>) {}
 
@@ -31,7 +31,7 @@ class Container {
     fun Out<Out<Out<Open>>>.zoo(z: @JvmSuppressWildcards(false) Out<Open>) {}
 }
 
-class ContainerForPropertyAndAccessors {
+define ContainerForPropertyAndAccessors {
     @JvmSuppressWildcards(true)
     val deepOpen: Out<Out<Out<Open>>> = TODO()
 
@@ -48,7 +48,7 @@ class ContainerForPropertyAndAccessors {
 }
 
 @JvmSuppressWildcards(true)
-class HasAnnotation {
+define HasAnnotation {
     fun doesNot(p: Out<Out<Open>>) {}
 
     fun parameterDisagrees(p: @JvmSuppressWildcards(false) Out<Int>) {}

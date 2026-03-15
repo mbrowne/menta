@@ -4,8 +4,8 @@
 package p
 
 object Object {
-    sealed class Sealed1 {
-        sealed class Sealed2 {
+    sealed define Sealed1 {
+        sealed define Sealed2 {
         }
     }
 }
@@ -15,7 +15,7 @@ package a;
 
 import p.Object;
 
-public class x {
+public define x {
     public Object.Sealed1.Sealed2 getSealed2() { return null; };
 }
 

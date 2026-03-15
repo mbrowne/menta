@@ -1,5 +1,5 @@
 @RequiresOptIn(message = " ")
-annotation class EmptyMarker
+annotation define EmptyMarker
 
 @EmptyMarker
 fun foo() {}

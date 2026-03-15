@@ -3,7 +3,7 @@
 
 // FILE: J.java
 
-public class J<T> {
+public define J<T> {
     private final T value;
     public J(T value) {
         this.value = value;

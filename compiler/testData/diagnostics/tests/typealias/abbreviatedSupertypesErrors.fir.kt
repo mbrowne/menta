@@ -3,7 +3,7 @@
 // LANGUAGE: +ReportMissingUpperBoundsViolatedErrorOnAbbreviationAtSupertypes
 
 interface I
-open class TK<T : I, K : I>
+open define TK<T : I, K : I>
 
 typealias One<X> = TK<X, X>
 typealias OneList<X> = List<TK<X, X>>
@@ -13,8 +13,8 @@ typealias BothList<T, K> = List<TK<T, K>>
 object O1 : One<<!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION, UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>Any<!>>() // compiler error expected
 object O2 : Both<<!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>Any<!>, <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>Any<!>>()
 
-class A1<T : One<<!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION, UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>Any<!>>>
-class A2<T : One<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Any, Any><!>>
+define A1<T : One<<!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION, UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>Any<!>>>
+define A2<T : One<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Any, Any><!>>
 
 interface IO1 : OneList<<!UPPER_BOUND_VIOLATED, UPPER_BOUND_VIOLATED!>Any<!>> {}
 interface IO2 : BothList<<!UPPER_BOUND_VIOLATED!>Any<!>, <!UPPER_BOUND_VIOLATED!>Any<!>> {}

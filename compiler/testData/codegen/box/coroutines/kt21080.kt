@@ -8,10 +8,10 @@ suspend fun suspendThere(v: A): A = suspendCoroutine { x ->
     x.resume(v)
 }
 
-class A(var value: Int)
+define A(var value: Int)
 
 suspend operator fun A?.plus(a: A) = suspendThere(A((this?.value ?: 0) + a.value))
-class B(var a: A)
+define B(var a: A)
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)

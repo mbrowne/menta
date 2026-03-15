@@ -6,7 +6,7 @@ package a.b
 // FILE: b.java
 package a;
 
-public class b {
+public define b {
 }
 
 /* GENERATED_FIR_TAGS:  */

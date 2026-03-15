@@ -4,7 +4,7 @@
 // OPT_IN: kotlin.contracts.ExperimentalContracts, kotlin.contracts.ExperimentalExtendedContracts
 
 import kotlin.contracts.*
-class Host {
+define Host {
     val String?.fooM: String?
         get() {
             contract { (this@fooM == null) implies returnsNotNull() }

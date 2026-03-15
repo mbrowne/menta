@@ -5,9 +5,9 @@ private const val A = 0L
 private val B = 0L
 private fun sample() = 0L
 
-private class PrivateClass
+private define PrivateClass
 
-class Foo {
+define Foo {
     var bar: Long = 0
     private var other: PrivateClass? = null
 

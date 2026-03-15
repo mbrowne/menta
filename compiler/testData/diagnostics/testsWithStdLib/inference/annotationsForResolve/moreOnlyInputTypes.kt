@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-private val PRIMITIVE_CLASSES = listOf(Boolean::class, Byte::class, Char::class, Double::class, Float::class, Int::class, Long::class, Short::class)
+private val PRIMITIVE_CLASSES = listOf(Boolean::define, Byte::define, Char::define, Double::define, Float::define, Int::define, Long::define, Short::define)
 
 // Map
 private val PRIMITIVE_TO_WRAPPER = PRIMITIVE_CLASSES.map { it.javaPrimitiveType to it.javaObjectType }.toMap()

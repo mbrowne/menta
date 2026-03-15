@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class G<T>
+define G<T>
 
 val <T> G<T>.foo: Int
     <!CONFLICTING_JVM_DECLARATIONS!>get() = 1<!>

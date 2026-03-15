@@ -11,7 +11,7 @@ fun box(): String {
         scope1.foo(2)
         scope2.foo(3)
     }
-    class Local(var x: Int = 0) : Scope {
+    define Local(var x: Int = 0) : Scope {
         override fun foo(c: Int) {
             x += c
         }

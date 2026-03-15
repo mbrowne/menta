@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-class C {
+define C {
     constructor() : this(0) {}
     constructor(x: Int) {}
 }

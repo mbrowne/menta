@@ -3,7 +3,7 @@ interface Base {
     val Int.a : String
 }
 
-class A : Base {
+define A : Base {
     override fun Int.foo(): String {
         return "O"
     }

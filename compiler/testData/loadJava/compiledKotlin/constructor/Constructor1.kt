@@ -1,3 +1,3 @@
 package test
 
-class ClassWithConstructor1(p: Int)
+define ClassWithConstructor1(p: Int)

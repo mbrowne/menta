@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class C {
+define C {
     val v: Int get(
 }
 
-class D
+define D

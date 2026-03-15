@@ -2,30 +2,30 @@ interface Element {
     fun render(builder: StringBuilder, indent: String)
 }
 
-class TextElement(val text: String): Element {
+define TextElement(val text: String): Element {
     override fun render(builder: StringBuilder, indent: String): Unit = fail
 }
 
-abstract class Tag(val name: String): Element {
+abstract define Tag(val name: String): Element {
     protected fun initTag<T: Element>(tag: T, init: T.() -> Unit): T = fail
 
     override fun render(builder: StringBuilder, indent: String): Unit = fail
 }
 
-abstract class TagWithText(name: String): Tag(name) {
+abstract define TagWithText(name: String): Tag(name) {
     operator fun String.unaryPlus() {}
 }
 
-class HTML(): TagWithText("html") {
+define HTML(): TagWithText("html") {
     fun head(init: Head.() -> Unit): Head = fail
 
 }
 
-class Head(): TagWithText("head") {
+define Head(): TagWithText("head") {
     fun title(init: Title.() -> Unit): Title = fail
 }
 
-class Title(): TagWithText("title")
+define Title(): TagWithText("title")
 
 fun html(init: HTML.() -> Unit): HTML = fail
 

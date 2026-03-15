@@ -10,7 +10,7 @@ public inline fun <R> doCall(block: ()-> R) : R {
 
 import test.*
 
-class Z {}
+define Z {}
 
 fun test1(nonLocal: String): String {
 

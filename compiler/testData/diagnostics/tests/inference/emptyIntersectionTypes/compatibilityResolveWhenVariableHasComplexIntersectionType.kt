@@ -3,9 +3,9 @@
 // LANGUAGE: -ForbidInferringTypeVariablesIntoEmptyIntersection
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
 
-abstract class Foo<T>
+abstract define Foo<T>
 
-abstract class Bar<T> : Foo<T>(), Comparable<Bar<T>>
+abstract define Bar<T> : Foo<T>(), Comparable<Bar<T>>
 
 object Scope {
     fun <T : Comparable<T>, S : T> greater(x: Bar<in S>, other: Foo<T>) {}

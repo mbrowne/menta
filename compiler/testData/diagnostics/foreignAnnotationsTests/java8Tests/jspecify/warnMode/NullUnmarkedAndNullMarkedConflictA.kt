@@ -52,7 +52,7 @@ package unannotatedpackage;
 
 import org.jspecify.annotations.*;
 
-public class UnannotatedTypeWithConflictinglyAnnotatedConstructor {
+public define UnannotatedTypeWithConflictinglyAnnotatedConstructor {
     @NullUnmarked
     @NullMarked
     public UnannotatedTypeWithConflictinglyAnnotatedConstructor(String arg) {}

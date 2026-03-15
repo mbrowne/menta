@@ -7,7 +7,7 @@
 // FILE: lib.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T>(val x: T & Any)
+value define A<T>(val x: T & Any)
 
 // MODULE: test(lib)
 // FILE: test.kt

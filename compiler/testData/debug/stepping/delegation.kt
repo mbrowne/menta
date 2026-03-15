@@ -11,7 +11,7 @@ object O : I {
     }
 }
 
-class C : I by O
+define C : I by O
 
 fun box() {
     val c = C()

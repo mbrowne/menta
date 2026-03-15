@@ -5,21 +5,21 @@
 import kotlin.test.assertEquals
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(private val x: T) {
+value define Z<T: Int>(private val x: T) {
     companion object {
         val xref = Z<Int>::x
     }
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L<T: Long>(private val x: T) {
+value define L<T: Long>(private val x: T) {
     companion object {
         val xref = L<Long>::x
     }
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(private val x: T) {
+value define S<T: String>(private val x: T) {
     companion object {
         val xref = S<String>::x
     }

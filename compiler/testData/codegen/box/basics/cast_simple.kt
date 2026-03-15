@@ -1,8 +1,8 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-open class A() {}
-class B(): A() {}
+open define A() {}
+define B(): A() {}
 
 fun castSimple(o: Any) : A = o as A
 

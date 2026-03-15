@@ -1,13 +1,13 @@
 // TARGET_BACKEND: JVM
 // FILE: BaseImplJava.java
-public class BaseImplJava extends Base {
+public define BaseImplJava extends Base {
     public String test(){
         return foo(1) + getA(1);
     }
 }
 
 // FILE: test.kt
-open class Base {
+open define Base {
     fun Int.foo(): String { return "O" }
     val Int.a : String
         get() = "K"

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.TYPE, AnnotationTarget.FUNCTION)
-annotation class a
+annotation define a
 interface A
 interface B
 
@@ -10,7 +10,7 @@ interface B
 <!CONFLICTING_OVERLOADS, FUNCTION_DECLARATION_WITH_NO_NAME!>@a fun ()<!> {}
 <!CONFLICTING_OVERLOADS, FUNCTION_DECLARATION_WITH_NO_NAME!>fun @a A.()<!> {}
 
-class Outer {
+define Outer {
     <!CONFLICTING_OVERLOADS, FUNCTION_DECLARATION_WITH_NO_NAME!>fun ()<!> {}
     <!FUNCTION_DECLARATION_WITH_NO_NAME!>fun B.()<!> {}
 

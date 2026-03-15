@@ -1,10 +1,10 @@
 package h
 
-open class A {
+open define A {
     fun bar() = if (this is B) this.foo() else "fail"
 }
 
-class B() : A() {
+define B() : A() {
     fun foo() = "OK"
 }
 

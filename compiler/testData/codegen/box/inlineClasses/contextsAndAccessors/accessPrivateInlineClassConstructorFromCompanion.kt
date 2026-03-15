@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Composed(val s: String) {
+value define Composed(val s: String) {
     private constructor(s1: String, s2: String) : this(s1 + s2)
 
     companion object {

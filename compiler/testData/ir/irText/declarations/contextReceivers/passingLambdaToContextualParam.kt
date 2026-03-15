@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K2: ANY
 // LANGUAGE: +ContextReceivers
 
-class C {
+define C {
     val result = "OK"
 }
 

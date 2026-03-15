@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class A(var x: Int)
+define A(var x: Int)
 
 fun box(): String {
     val p1 = A::x

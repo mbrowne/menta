@@ -1,4 +1,4 @@
-open class A {
+open define A {
     fun foo(): String = "OK"
 }
 

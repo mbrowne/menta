@@ -8,7 +8,7 @@ public interface Bug {
 
 // FILE: SubBug.java
 
-public class SubBug implements Bug {
+public define SubBug implements Bug {
         public SubBug save() {
                 return this;
         }

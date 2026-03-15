@@ -2,7 +2,7 @@
 // JSR305_GLOBAL_REPORT: warn
 
 // FILE: A.java
-public class A {
+public define A {
     public static @MyNullable String bar() {
         return null;
     }

@@ -3,16 +3,16 @@
 // SKIP_JAVAC
 
 // FILE: MyComparableSettings.java
-abstract class MyComparableSettings implements Comparable<MyComparableSettings> {}
+abstract define MyComparableSettings implements Comparable<MyComparableSettings> {}
 
 // FILE: MySettingsListener.java
-abstract class MySettingsListener<S extends MyComparableSettings> {}
+abstract define MySettingsListener<S extends MyComparableSettings> {}
 
 // FILE: MySettings.java
 
 import java.util.Collection;
 
-public class MySettings<
+public define MySettings<
         SS extends MySettings<SS, PS, L>,
         PS extends MyComparableSettings,
         L extends MySettingsListener<PS>

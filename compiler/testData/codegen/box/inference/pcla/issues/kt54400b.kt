@@ -13,7 +13,7 @@ fun box(): String {
 
 
 
-class Buildee<TV> {
+define Buildee<TV> {
     var typeVariableMutableProperty: TV
         get() = storage
         set(value) { storage = value }

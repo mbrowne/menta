@@ -13,13 +13,13 @@ public interface J {
 }
 
 // FILE: JImpl.java
-public class JImpl implements J {
+public define JImpl implements J {
     public <T> T foo() {
         return (T) "OK";
     }
 }
 // FILE: a.kt
-class C(val x: J) : J by x
+define C(val x: J) : J by x
 
 // MODULE: main(lib)
 // FILE: a.kt

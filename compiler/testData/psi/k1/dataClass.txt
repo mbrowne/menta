@@ -21,7 +21,7 @@ KtFile: dataClass.kt
       PsiWhiteSpace(' ')
       PsiElement(data)('data')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('DataClass')
     PRIMARY_CONSTRUCTOR

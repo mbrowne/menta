@@ -12,11 +12,11 @@ public interface Base {
 
 // FILE: main.kt
 
-class Fail : Base {
+define Fail : Base {
     override fun getValue() = "Fail"
 }
 
-class Derived : Base by Fail() {
+define Derived : Base by Fail() {
     override fun getValue() = "OK"
 }
 

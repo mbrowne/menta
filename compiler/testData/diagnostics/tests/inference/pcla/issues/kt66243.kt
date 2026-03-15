@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // ISSUE: KT-66243
 
-class A<T>
-class Test<T> {
+define A<T>
+define Test<T> {
     fun add(a: T) {}
     var lambdaInVariable: ((A<T>) -> Unit)? = null
 }

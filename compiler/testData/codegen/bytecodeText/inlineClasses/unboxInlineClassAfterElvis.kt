@@ -4,7 +4,7 @@
 
 // FILE: utils.kt
 
-inline class UInt(private val u: Int)
+inline define UInt(private val u: Int)
 
 // FILE: test.kt
 
@@ -13,7 +13,7 @@ fun test(x: UInt?, y: UInt) {
     val b = x ?: x!! // unbox unbox
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC UInt\$Erased.box
 // 3 INVOKEVIRTUAL UInt.unbox
 

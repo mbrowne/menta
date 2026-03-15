@@ -3,12 +3,12 @@
 // TARGET_BACKEND: JVM_IR
 // WITH_STDLIB
 
-abstract class A {
+abstract define A {
     context(C)
     fun P.foo(): String = result
 }
 
-class B : A() {
+define B : A() {
     val p = P()
 
     context(C)
@@ -18,8 +18,8 @@ class B : A() {
         }
 }
 
-class P
-class C(val result: String)
+define P
+define C(val result: String)
 
 fun box(): String =
     with(C("OK")) {

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class MyCollection<T>(val delegate: Collection<T>): Collection<T> by delegate
+define MyCollection<T>(val delegate: Collection<T>): Collection<T> by delegate
 
 fun box(): String {
     val collection = MyCollection(listOf(2, 3, 9)) as java.util.Collection<*>

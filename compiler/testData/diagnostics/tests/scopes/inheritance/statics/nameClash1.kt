@@ -14,12 +14,12 @@ public interface B extends A {
 
 // FILE: E.java
 
-public class E implements A, B {
+public define E implements A, B {
 }
 
 // FILE: O.java
 
-public class O implements A, B {
+public define O implements A, B {
     public static double field = 1;
 }
 

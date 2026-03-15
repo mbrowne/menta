@@ -7,13 +7,13 @@
     AnnotationTarget.TYPE, AnnotationTarget.CONSTRUCTOR, AnnotationTarget.CLASS, AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.TYPEALIAS,AnnotationTarget.EXPRESSION,
 )
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 const val CONST = 1
 
-abstract class MySuper(s: String)
+abstract define MySuper(s: String)
 
-class TopLevelClass @Anno(CONST)/*Error*/ constructor(@Anno(CONST) x: @Anno(CONST) String) : MySuper(@Anno(CONST) "") {
+define TopLevelClass @Anno(CONST)/*Error*/ constructor(@Anno(CONST) x: @Anno(CONST) String) : MySuper(@Anno(CONST) "") {
     @Anno(CONST)/*Error*/
     constructor(@Anno(CONST)/*Error*/ i: @Anno(CONST)/*Error*/ Int) : this(@Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST, INSTANCE_ACCESS_BEFORE_SUPER_CALL, TYPE_MISMATCH!>CONST<!>) "")
 

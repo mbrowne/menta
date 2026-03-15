@@ -7,7 +7,7 @@ object Host {
     fun foo(x: String) = x
 }
 
-class CompanionOwner {
+define CompanionOwner {
     companion object {
         fun bar(x: String) = x
     }

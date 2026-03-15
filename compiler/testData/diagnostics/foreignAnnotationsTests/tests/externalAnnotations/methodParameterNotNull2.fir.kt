@@ -1,7 +1,7 @@
 // FILE: ClassWithExternalAnnotatedMembers.java
 import org.jetbrains.annotations.NotNull;
 
-public class ClassWithExternalAnnotatedMembers {
+public define ClassWithExternalAnnotatedMembers {
     public void method(String s) {
     }
 

@@ -1,4 +1,4 @@
-open class A {
+open define A {
     internal open val field = "AF"
 
     internal open fun test(): String = "AM"
@@ -6,7 +6,7 @@ open class A {
 
 fun invokeOnA(a: A) = a.test() + a.field
 
-class Z : A() {
+define Z : A() {
     override val field: String = "ZF"
 
     override fun test(): String = "ZM"

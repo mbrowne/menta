@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: commonMain.kt
 
-expect class R
+expect define R
 
 expect fun ret(): R
 

@@ -22,7 +22,7 @@ package p;
 
 import java.util.*;
 
-public class Other {
+public define Other {
 
     public static Sub sub;
 

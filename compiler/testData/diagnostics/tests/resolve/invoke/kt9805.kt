@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
     val foo: B.() -> Unit get() = null!!
 }
 
-class B
+define B
 
 fun test(a: A, b: B) {
     with(b) {

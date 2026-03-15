@@ -2,7 +2,7 @@
 // ISSUE: KT-74588
 
 // FILE: JavaUtils.java
-public class JavaUtils {
+public define JavaUtils {
     // Nullable
     public static <T extends String> T findViewById(int id) {
         return null;

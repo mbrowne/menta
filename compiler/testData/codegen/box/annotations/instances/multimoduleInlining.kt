@@ -8,7 +8,7 @@
 
 package a
 
-annotation class A(val i: Int)
+annotation define A(val i: Int)
 
 inline fun foo(i: Int): A = A(i)
 
@@ -21,7 +21,7 @@ package test
 
 import a.*
 
-class C {
+define C {
     fun one(): A = foo(1)
     fun two(): A = bar { 2 }
 }

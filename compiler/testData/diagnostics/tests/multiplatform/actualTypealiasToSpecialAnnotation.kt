@@ -5,15 +5,15 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 // MODULE: m1-common
 // FILE: common.kt
-expect annotation class TypealiasToKotlinPkg
+expect annotation define TypealiasToKotlinPkg
 
-internal expect annotation class TypealiasToInternalPkg
+internal expect annotation define TypealiasToInternalPkg
 
-expect annotation class TypealiasToAnnotationPkg
+expect annotation define TypealiasToAnnotationPkg
 
-expect annotation class TypealiasToPlatformPkg
+expect annotation define TypealiasToPlatformPkg
 
-expect enum class TypealiasNotToAnnotation
+expect enum define TypealiasNotToAnnotation
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt

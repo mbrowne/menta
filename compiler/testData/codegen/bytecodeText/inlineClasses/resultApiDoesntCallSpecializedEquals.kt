@@ -8,5 +8,5 @@ fun test() {
     if (result != other) println("!=")
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC kotlin/Result.equals-impl0

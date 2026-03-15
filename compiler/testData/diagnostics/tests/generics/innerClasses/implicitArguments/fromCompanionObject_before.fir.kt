@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
-open class Outer<E> {
-    inner class Inner<F>
+open define Outer<E> {
+    inner define Inner<F>
 
 }
 
-class Derived : Outer<String>() {
+define Derived : Outer<String>() {
     // Inner<Int> here means Outer<String>.Inner<Int>
     fun foo(x: Inner<Int>) {}
 }
 
-class A {
+define A {
     companion object : Outer<String>()
 
     // Does not work, could be Outer<String>.Inner<Int>

@@ -1,7 +1,7 @@
 // FREE_COMPILER_ARGS: -Xbinary=genericSafeCasts=true
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 
-open class A<T> {
+open define A<T> {
     val s: T = "zzz" as T
 }
 
@@ -9,9 +9,9 @@ interface C {
     val s: String
 }
 
-class B : C, A<String>()
+define B : C, A<String>()
 
-class Data(val x: Int)
+define Data(val x: Int)
 
 fun box(): String {
     val b = B()

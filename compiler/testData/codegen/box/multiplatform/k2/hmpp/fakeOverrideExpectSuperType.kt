@@ -2,14 +2,14 @@
 // MODULE: lib-common
 
 // MODULE: lib-inter()()(lib-common)
-open class InterException(message: String?) : Exception(message)
+open define InterException(message: String?) : Exception(message)
 
 // MODULE: lib-platform()()(lib-inter)
 
 // MODULE: app-common(lib-common)
-expect open class CommonException(message: String?) : Exception
+expect open define CommonException(message: String?) : Exception
 
-class CommonExceptionInheritor(message: String?) : CommonException(message)
+define CommonExceptionInheritor(message: String?) : CommonException(message)
 
 fun foo(e: CommonExceptionInheritor) {
     e.message

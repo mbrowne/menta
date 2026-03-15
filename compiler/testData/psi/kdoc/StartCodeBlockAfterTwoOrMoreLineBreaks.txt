@@ -127,7 +127,7 @@ KtFile: StartCodeBlockAfterTwoOrMoreLineBreaks.kt
       PsiWhiteSpace('\n ')
       PsiElement(KDOC_END)('*/')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('X')
   PsiWhiteSpace('\n\n')

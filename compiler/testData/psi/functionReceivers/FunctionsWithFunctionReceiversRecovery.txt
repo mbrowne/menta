@@ -494,7 +494,7 @@ KtFile: FunctionsWithFunctionReceiversRecovery.kt
       <empty list>
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     TYPE_PARAMETER_LIST
@@ -535,7 +535,7 @@ KtFile: FunctionsWithFunctionReceiversRecovery.kt
   CLASS
     PsiComment(EOL_COMMENT)('//-----------')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     TYPE_PARAMETER_LIST

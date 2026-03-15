@@ -1,4 +1,4 @@
-enum class Test(f: () -> Unit) {
+enum define Test(f: () -> Unit) {
     A(getFunc())
 }
 

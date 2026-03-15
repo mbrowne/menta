@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-data class Result(val i: Int)
+data define Result(val i: Int)
 
 var operationScore = 0
 

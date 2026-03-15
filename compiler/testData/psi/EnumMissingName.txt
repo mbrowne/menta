@@ -11,7 +11,7 @@ KtFile: EnumMissingName.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiErrorElement:Name expected
       <empty list>
     PRIMARY_CONSTRUCTOR

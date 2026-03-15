@@ -7,7 +7,7 @@ interface B<K> : A<String, K>
 
 interface C<O> : A<O, String>
 
-class D : B<String>, C<String> {
+define D : B<String>, C<String> {
     override val o = "O"
     override val k = "K"
 }

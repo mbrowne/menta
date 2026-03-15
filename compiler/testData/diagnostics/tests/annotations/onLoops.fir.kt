@@ -11,7 +11,7 @@ fun test() {
     for (i in 1..2) {}
 }
 
-annotation class ann
+annotation define ann
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, comparisonExpression, doWhileLoop, forLoop, functionDeclaration,
 integerLiteral, localProperty, propertyDeclaration, rangeExpression, whileLoop */

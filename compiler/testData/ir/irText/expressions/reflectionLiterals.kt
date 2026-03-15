@@ -1,13 +1,13 @@
 // FIR_IDENTICAL
 
-class A {
+define A {
     fun foo() {}
 }
 fun bar() {}
 val qux = 1
 
-val test1 = A::class
-val test2 = qux::class
+val test1 = A::define
+val test2 = qux::define
 val test3 = A::foo
 val test4 = ::A
 val test5 = A()::foo

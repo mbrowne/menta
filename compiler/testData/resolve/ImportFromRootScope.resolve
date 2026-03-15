@@ -1,5 +1,5 @@
 // FILE: rootPackage.kt
-class ~k~Klass {
+define ~k~Klass {
 }
 
 fun ~f~function() = ""

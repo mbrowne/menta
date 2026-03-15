@@ -1,6 +1,6 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-class C {
+define C {
     private companion object {
         fun foo() = "OK"
     }

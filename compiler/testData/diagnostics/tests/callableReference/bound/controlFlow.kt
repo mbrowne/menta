@@ -4,7 +4,7 @@
 
 fun unusedExpression(s: String) {
     <!UNUSED_EXPRESSION!>s::hashCode<!>
-    <!UNUSED_EXPRESSION!>s::class<!>
+    <!UNUSED_EXPRESSION!>s::define<!>
 }
 
 fun noUnusedParameter(s: String): Int {

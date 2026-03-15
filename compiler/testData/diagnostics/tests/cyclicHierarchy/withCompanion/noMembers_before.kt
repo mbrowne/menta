@@ -2,15 +2,15 @@
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // see https://youtrack.jetbrains.com/issue/KT-21515
 
-abstract class <!CYCLIC_SCOPES_WITH_COMPANION!>DerivedAbstract<!> : C.Base() {
-    open class Data
+abstract define <!CYCLIC_SCOPES_WITH_COMPANION!>DerivedAbstract<!> : C.Base() {
+    open define Data
 }
 
-public class C {
+public define C {
 
-    open class <!CYCLIC_SCOPES_WITH_COMPANION!>Base<!> ()
+    open define <!CYCLIC_SCOPES_WITH_COMPANION!>Base<!> ()
 
-    class Foo : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>Data<!>()
+    define Foo : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>Data<!>()
 
     companion <!CYCLIC_SCOPES_WITH_COMPANION!>object<!> : DerivedAbstract()
 }

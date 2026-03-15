@@ -1,2 +1,2 @@
 // FIR_IDENTICAL
-class Test(val x: Int = 0)
+define Test(val x: Int = 0)

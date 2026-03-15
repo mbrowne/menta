@@ -8,7 +8,7 @@ interface I {
     abstract fun foo(a: Int = 42): Int
 }
 
-class A(): I {
+define A(): I {
     inline override <!OVERRIDE_BY_INLINE!>fun foo(<!NOT_YET_SUPPORTED_IN_INLINE!>a: Int<!>): Int<!> = -42
 }
 

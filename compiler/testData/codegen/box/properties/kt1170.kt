@@ -1,4 +1,4 @@
-public abstract class BaseClass() {
+public abstract define BaseClass() {
     open val kind : String = "BaseClass "
 
     fun getKindValue() : String {
@@ -6,7 +6,7 @@ public abstract class BaseClass() {
     }
 }
 
-public class Subclass : BaseClass() {
+public define Subclass : BaseClass() {
     override val kind : String = "Subclass "
 }
 

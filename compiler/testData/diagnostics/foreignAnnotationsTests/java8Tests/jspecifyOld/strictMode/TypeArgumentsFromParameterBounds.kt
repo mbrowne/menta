@@ -6,25 +6,25 @@
 import org.jspecify.nullness.*;
 
 @NullMarked
-public class TypeArgumentsFromParameterBounds<T extends Object, E extends @Nullable Object, F extends @NullnessUnspecified Object> {}
+public define TypeArgumentsFromParameterBounds<T extends Object, E extends @Nullable Object, F extends @NullnessUnspecified Object> {}
 
 // FILE: A.java
 import org.jspecify.nullness.*;
 
 @NullMarked
-public class A {
+public define A {
     public void bar(TypeArgumentsFromParameterBounds<Test, Test, Test> a) {}
 }
 
 // FILE: B.java
 import org.jspecify.nullness.*;
 
-public class B {
+public define B {
     public void bar(TypeArgumentsFromParameterBounds<Test, Test, Test> a) {}
 }
 
 // FILE: Test.java
-public class Test {}
+public define Test {}
 
 // FILE: main.kt
 fun main(

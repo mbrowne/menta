@@ -18,13 +18,13 @@ object A {
     val ok = "OK"
 }
 
-class B(private val foo: String) {
+define B(private val foo: String) {
     val ok = foo
 
     constructor(arg: Int) : this(arg.toString())
 }
 
-enum class C {
+enum define C {
     OK
 }
 

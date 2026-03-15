@@ -9,13 +9,13 @@
 // FILE: serializableFakeOverrideFunRef.kt
 import java.io.*
 
-abstract class A(val s: String) {
+abstract define A(val s: String) {
     fun plus(ss: String) = ss + s
 }
 
-abstract class B(s: String) : A(s)
+abstract define B(s: String) : A(s)
 
-class C(s: String) : B(s)
+define C(s: String) : B(s)
 
 fun box(): String {
     return roundtrip(Sam(C::plus))

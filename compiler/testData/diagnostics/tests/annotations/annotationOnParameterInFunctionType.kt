@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-annotation class Ann
-annotation class Ann2
+annotation define Ann
+annotation define Ann2
 
 fun f(@Ann x: Int) {}
 
@@ -14,7 +14,7 @@ fun inParamNested(fn1: (fn2: (<!UNSUPPORTED!>@Ann<!> n: Int)->Unit)->Unit) {}
 
 fun inReturn(): (<!UNSUPPORTED!>@Ann<!> x: Int)->Unit = {}
 
-class A : (<!WRONG_ANNOTATION_TARGET!>@Ann<!> Int)->Unit {
+define A : (<!WRONG_ANNOTATION_TARGET!>@Ann<!> Int)->Unit {
     override fun invoke(p1: Int) {
         var lambda: (<!UNSUPPORTED!>@Ann<!> x: Int)->Unit = {}
     }
@@ -24,14 +24,14 @@ class A : (<!WRONG_ANNOTATION_TARGET!>@Ann<!> Int)->Unit {
 }
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn
+annotation define TypeAnn
 
 val onType: (@TypeAnn A).(<!UNSUPPORTED!>@Ann<!> a: @TypeAnn A, @TypeAnn A)->@TypeAnn A? = <!EXPECTED_PARAMETERS_NUMBER_MISMATCH!>{<!> null }
 
 fun (@TypeAnn A).extFun(@Ann a: @TypeAnn A): @TypeAnn A? = null
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnnWithArg(val arg: String)
+annotation define TypeAnnWithArg(val arg: String)
 
 fun badArgs(a: (@TypeAnnWithArg(<!NO_VALUE_FOR_PARAMETER!><!NAMED_PARAMETER_NOT_FOUND!>unresolved<!> = "")<!> Int) -> Unit) {}
 

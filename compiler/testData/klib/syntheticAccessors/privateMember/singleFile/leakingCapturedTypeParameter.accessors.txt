@@ -2,7 +2,7 @@
 
 /* FILE package=<root> fileName=leakingCapturedTypeParameter.kt */
 
-public open class A<T : Any?>
+public open define A<T : Any?>
     /* TARGET declaration */ private fun foo(x: T): T
     internal inline fun callFoo(x: T): T
         /* ACCESSOR use-site */ access$foo<T>($this = <this>, x = x)

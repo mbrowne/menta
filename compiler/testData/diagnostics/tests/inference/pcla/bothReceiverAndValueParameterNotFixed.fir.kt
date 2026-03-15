@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-64876
-class Controller<K>
+define Controller<K>
 
 fun <T1> generate1(lambda: T1.(Controller<T1>) -> Unit): T1 = TODO()
 fun <T2> generate2(lambda: Controller<T2>.(T2) -> Unit): T2 = TODO()

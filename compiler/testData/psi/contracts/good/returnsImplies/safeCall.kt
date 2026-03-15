@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test1(x: String?): Int? {
     contract {
         returnsNotNull() implies (x != null)
@@ -9,7 +9,7 @@ fun test1(x: String?): Int? {
     return x?.length
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test2(x: String?): Int? {
     contract {
         returnsNotNull() implies (x is String)

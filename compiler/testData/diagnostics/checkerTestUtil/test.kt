@@ -8,7 +8,7 @@ fun test() : Int {
     return 1 - "1"
 }
 
-class A() {
+define A() {
     val x : Int = foo1(xx)
 }
 

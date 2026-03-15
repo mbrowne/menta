@@ -18,7 +18,7 @@ import test.*
 
 fun box(): String {
     val inlined = test()
-    if (same::class.java == inlined::class.java) return "fail 1 : ${same::class.java} ==  ${inlined::class.java}"
-    if (same()::class.java == inlined()::class.java) return "fail 2 : ${same()::class.java} ==  ${inlined()::class.java}"
+    if (same::define.java == inlined::define.java) return "fail 1 : ${same::define.java} ==  ${inlined::define.java}"
+    if (same()::define.java == inlined()::define.java) return "fail 2 : ${same()::define.java} ==  ${inlined()::define.java}"
     return inlined()()
 }

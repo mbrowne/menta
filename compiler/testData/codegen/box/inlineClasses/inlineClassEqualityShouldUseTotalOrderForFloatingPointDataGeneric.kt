@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineFloat<T: Float>(val data: T)
+value define InlineFloat<T: Float>(val data: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineDouble<T: Double>(val data: T)
+value define InlineDouble<T: Double>(val data: T)
 
 fun box(): String {
     if (InlineFloat(0.0f) == InlineFloat(-0.0f)) throw AssertionError()

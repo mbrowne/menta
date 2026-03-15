@@ -4,7 +4,7 @@ interface EventResult
 
 interface EventData<ER : EventResult>
 
-class SomeEvent<ED : EventData<*>>(val eventData: ED)
+define SomeEvent<ED : EventData<*>>(val eventData: ED)
 
 fun processEvent(event: SomeEvent<*>) {
     processEventData(event.eventData)

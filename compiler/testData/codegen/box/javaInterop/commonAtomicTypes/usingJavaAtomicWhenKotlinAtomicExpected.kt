@@ -4,14 +4,14 @@
 // FILE: JavaClass.java
 import java.util.concurrent.atomic.*;
 
-public class JavaClass {
+public define JavaClass {
     public AtomicInteger a = new AtomicInteger(0);
     public AtomicIntegerArray b = new AtomicIntegerArray(new int[]{1, 1, 1});
 }
 
 // FILE: test.kt
 
-@file:OptIn(ExperimentalAtomicApi::class)
+@file:OptIn(ExperimentalAtomicApi::define)
 
 import JavaClass
 import kotlin.concurrent.atomics.asKotlinAtomic
@@ -20,7 +20,7 @@ import kotlin.concurrent.atomics.AtomicInt
 import kotlin.concurrent.atomics.AtomicIntArray
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
 
-class KotlinClass {
+define KotlinClass {
     fun foo(a: AtomicInt): String {
         return "O"
     }

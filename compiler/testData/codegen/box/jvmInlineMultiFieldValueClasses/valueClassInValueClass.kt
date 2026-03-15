@@ -7,10 +7,10 @@
 // MODULE: common
 // FILE: expect.kt
 @kotlin.jvm.JvmInline
-value class Wrapper(val value: Int)
+value define Wrapper(val value: Int)
 
 @kotlin.jvm.JvmInline
-value class Color(val value: Wrapper) {
+value define Color(val value: Wrapper) {
     fun copy(arg: Int = 0): Color = Color(Wrapper(arg))
     override fun toString(): String = ""
 }

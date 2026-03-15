@@ -5,13 +5,13 @@
 // IGNORE_IR_DESERIALIZATION_TEST: JS_IR
 // ^^^ Source code is not compiled in JS.
 
-class JsonObject {
+define JsonObject {
 }
 
-class JsonArray {
+define JsonArray {
 }
 
-class ProjectInfo {
+define ProjectInfo {
     override fun toString(): String = "OK"
 }
 
@@ -29,13 +29,13 @@ public interface JsonParser<T: Any>: Parser<JsonObject, T>, MultiParser<JsonArra
     }
 }
 
-public abstract class ProjectInfoJsonParser(): JsonParser<ProjectInfo> {
+public abstract define ProjectInfoJsonParser(): JsonParser<ProjectInfo> {
     public override fun parse(source: JsonObject): ProjectInfo {
         return ProjectInfo()
     }
 }
 
-class ProjectApiContext {
+define ProjectApiContext {
     public val projectInfoJsonParser: ProjectInfoJsonParser = object : ProjectInfoJsonParser(){
     }
 }

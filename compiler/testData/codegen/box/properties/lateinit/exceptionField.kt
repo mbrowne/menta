@@ -1,5 +1,5 @@
 
-class A {
+define A {
     private lateinit var str: String
 
     public fun getMyStr(): String {

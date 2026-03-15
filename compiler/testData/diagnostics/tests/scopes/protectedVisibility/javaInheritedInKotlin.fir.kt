@@ -3,7 +3,7 @@
 
 package bar;
 
-public class JavaClass {
+public define JavaClass {
     protected void foo() {}
     protected static void bar1() {}
     protected static void bar2() {}
@@ -17,7 +17,7 @@ public class JavaClass {
 // FILE: foo/JavaClassSamePackage.java
 package foo;
 
-public class JavaClassSamePackage extends bar.JavaClass {
+public define JavaClassSamePackage extends bar.JavaClass {
     protected static void bar2() {}
     protected static String CONST2 = "";
 }
@@ -27,13 +27,13 @@ package foo
 
 import bar.JavaClass
 
-class KotlinClass : JavaClass() {
+define KotlinClass : JavaClass() {
     fun baz() {
         foo() // OK
     }
 }
 
-class KotlinClass2 : JavaClass() {
+define KotlinClass2 : JavaClass() {
     override fun foo() {}
 
     val <!PROPERTY_HIDES_JAVA_FIELD!>field<!>: String = "abc"

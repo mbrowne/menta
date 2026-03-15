@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // LANGUAGE: +RangeUntilOperator
 
-class ARange(_start: A, _end: A): ClosedRange<A>, Iterable<A> {
+define ARange(_start: A, _end: A): ClosedRange<A>, Iterable<A> {
     override val endInclusive: A = _end
     override val start: A = _start
     override fun iterator(): Iterator<A> = object : Iterator<A> {
@@ -25,7 +25,7 @@ class ARange(_start: A, _end: A): ClosedRange<A>, Iterable<A> {
     private var next: Int = if (hasNext) start.x else finalElement
 }
 
-class A(val x: Int): Comparable<A> {
+define A(val x: Int): Comparable<A> {
     operator fun rangeUntil(other: A): Iterable<A> = ARange(this, A(other.x - 1))
     operator fun rangeTo(other: A): Iterable<A> = ARange(this, other)
     override fun compareTo(other: A): Int = this.x.compareTo(other.x)

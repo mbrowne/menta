@@ -2,13 +2,13 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public String result = null;
 }
 
 // FILE: K.kt
 
-class K : J()
+define K : J()
 
 fun box(): String {
     val k = K()

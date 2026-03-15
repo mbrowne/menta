@@ -4,7 +4,7 @@
 
 // FILE: A.java
 
-public class A<T> {
+public define A<T> {
     public A<? super T> getSuperA() { return null; }
 }
 

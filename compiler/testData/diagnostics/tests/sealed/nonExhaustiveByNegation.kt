@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // ISSUE: KT-82841
 
-sealed class Base
+sealed define Base
 
-abstract class Derived : Base()
+abstract define Derived : Base()
 
-class Implementation : Derived()
+define Implementation : Derived()
 
 fun test_1(x: Base) {
     val value = <!NO_ELSE_IN_WHEN!>when<!> (x) {

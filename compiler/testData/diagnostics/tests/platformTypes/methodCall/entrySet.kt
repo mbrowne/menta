@@ -6,7 +6,7 @@ package p;
 
 import java.util.*;
 
-public class MultiMap<K, V> {
+public define MultiMap<K, V> {
     public Set<Collection<V>> entrySet() {
         return null;
     }

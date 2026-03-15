@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
-open class Base
+open define Base
 
-class Test : Base {
+define Test : Base {
     constructor()
     constructor(xx: Int): super()
     constructor(xx: Short): this()

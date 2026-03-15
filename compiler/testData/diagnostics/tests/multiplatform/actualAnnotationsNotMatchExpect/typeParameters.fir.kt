@@ -3,17 +3,17 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Ann
+annotation define Ann
 
 expect fun <@Ann A> inMethod()
 
 expect fun <A, @Ann B> inMethodTwoParams()
 
-expect class InClass<@Ann A>
+expect define InClass<@Ann A>
 
-expect class ViaTypealias<@Ann A>
+expect define ViaTypealias<@Ann A>
 
-expect class TypealiasParamNotAccepted<@Ann A>
+expect define TypealiasParamNotAccepted<@Ann A>
 
 <!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>expect<!> fun <@Ann A, @Ann B> withIncompatibility()
 
@@ -23,13 +23,13 @@ expect class TypealiasParamNotAccepted<@Ann A>
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun <@Ann A, B> inMethodTwoParams() {}
 
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> class InClass<A>
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> define InClass<A>
 
-class ViaTypealiasImpl<@Ann A>
+define ViaTypealiasImpl<@Ann A>
 
 actual typealias ViaTypealias<A> = ViaTypealiasImpl<A>
 
-class TypealiasParamNotAcceptedImpl<A>
+define TypealiasParamNotAcceptedImpl<A>
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias TypealiasParamNotAccepted<@Ann A> = TypealiasParamNotAcceptedImpl<A>
 

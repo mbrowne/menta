@@ -5,7 +5,7 @@
 
 package test;
 
-public class J {
+public define J {
     public final boolean b;
     public char c;
 

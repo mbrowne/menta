@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class My(protected val x: Int) {
-    class Her(protected val x: Int)
+define My(protected val x: Int) {
+    define Her(protected val x: Int)
 
-    inner class Its(protected val x: Int)
+    inner define Its(protected val x: Int)
 }
 
 object Your {
     <!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> fun foo() = 3
 }
 
-annotation class His(<!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> val x: Int)
+annotation define His(<!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> val x: Int)
 
-enum class Our(protected val x: Int) {
+enum define Our(protected val x: Int) {
     FIRST(42) {
         <!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> fun foo() = 13
     }

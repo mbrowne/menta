@@ -1,16 +1,16 @@
 package serialization.fake_overrides
 
-open class X {
+open define X {
 }
 
-class Y: X() {
+define Y: X() {
     fun bar() = "barStale"
 }
 
-class B: A() {
+define B: A() {
 }
 
-class C: A() {
+define C: A() {
     override fun tic() = "ticChild"
 }
 

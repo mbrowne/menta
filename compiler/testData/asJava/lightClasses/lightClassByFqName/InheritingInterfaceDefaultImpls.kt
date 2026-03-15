@@ -1,7 +1,7 @@
 // p.Inheritor
 package p
 
-class Inheritor: I, I2 {
+define Inheritor: I, I2 {
 
     fun f() {
 

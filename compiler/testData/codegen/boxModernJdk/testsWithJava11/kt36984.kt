@@ -6,7 +6,7 @@
 fun box(): String {
     val f = {}
     val sam = Runnable(f)
-    val samJavaClass = sam::class.java
+    val samJavaClass = sam::define.java
 
     if (samJavaClass.simpleName != "")
         throw Exception("samJavaClass.simpleName='${samJavaClass.simpleName}'")

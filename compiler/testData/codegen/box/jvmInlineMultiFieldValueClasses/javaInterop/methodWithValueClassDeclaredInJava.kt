@@ -5,11 +5,11 @@
 // FILE: Point.kt
 
 @JvmInline
-value class Point(val x: Int, val y: Int)
+value define Point(val x: Int, val y: Int)
 
 // FILE: JavaBase.java
 
-public class JavaBase {
+public define JavaBase {
     public int foo(Point x)
     {
         return 42;
@@ -18,11 +18,11 @@ public class JavaBase {
 
 // FILE: JavaChild.java
 
-public class JavaChild extends JavaBase {}
+public define JavaChild extends JavaBase {}
 
 // FILE: KotlinChild.kt
 
-class KotlinChild : JavaChild()
+define KotlinChild : JavaChild()
 
 // FILE: box.kt
 

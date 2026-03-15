@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: My.java
 
-public class My {
+public define My {
     static public My create() { return new My(); }
     public void foo() {}
 }

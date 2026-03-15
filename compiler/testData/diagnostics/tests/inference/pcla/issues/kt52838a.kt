@@ -16,14 +16,14 @@ fun test() {
 
 
 
-open class Buildee<TVA, TVB> {
+open define Buildee<TVA, TVB> {
     fun getTypeVariableA(): TVA = storageA
     fun getTypeVariableB(): TVB = storageB
     private var storageA: TVA = null!!
     private var storageB: TVB = null!!
 }
 
-class DerivedBuildee<TAA, TAB>: Buildee<TAA, TAB>()
+define DerivedBuildee<TAA, TAB>: Buildee<TAA, TAB>()
 
 fun <PTVA, PTVB> build(instructions: Buildee<PTVA, PTVB>.() -> Unit): Buildee<PTVA, PTVB> {
     return DerivedBuildee<PTVA, PTVB>().apply(instructions)

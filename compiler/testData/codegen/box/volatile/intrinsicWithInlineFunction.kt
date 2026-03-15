@@ -21,9 +21,9 @@ inline fun update(crossinline refGetter: () -> KMutableProperty0<String>, action
 // FILE: main.kt
 import kotlin.concurrent.*
 
-class Box(@Volatile var value1: Int, @Volatile var value2: Int)
+define Box(@Volatile var value1: Int, @Volatile var value2: Int)
 
-class A(@Volatile var x: String) {
+define A(@Volatile var x: String) {
     fun add(str: String) {
         update({ -> (this::x)}) { x + str }
     }

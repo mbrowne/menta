@@ -4,7 +4,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(private val value: Int) : Comparable<UInt> {
+value define UInt(private val value: Int) : Comparable<UInt> {
     companion object {
         private const val INT_MASK = 0xffffffffL
     }
@@ -25,7 +25,7 @@ value class UInt(private val value: Int) : Comparable<UInt> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UIntArray(private val intArray: IntArray) {
+value define UIntArray(private val intArray: IntArray) {
     val size: Int get() = intArray.size
 
     operator fun get(index: Int): UInt = UInt(intArray[index])
@@ -38,7 +38,7 @@ value class UIntArray(private val intArray: IntArray) {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UIntIterator(private val intIterator: IntIterator) : Iterator<UInt> {
+value define UIntIterator(private val intIterator: IntIterator) : Iterator<UInt> {
     override fun next(): UInt {
         return UInt(intIterator.next())
     }

@@ -7,7 +7,7 @@ fun bar(x : Int <!INITIALIZER_TYPE_MISMATCH!>=<!> "", y : Int = x, z : String <!
 
 // KT-371 Resolve default parameters for constructors
 
-class A(x : Int = <!UNINITIALIZED_PARAMETER!>y<!>, y : Int = x) { // None of the references is resolved, no types checked
+define A(x : Int = <!UNINITIALIZED_PARAMETER!>y<!>, y : Int = x) { // None of the references is resolved, no types checked
     constructor(x : Int = <!UNINITIALIZED_PARAMETER!>x<!>) : this(x, x)
     fun foo(bool: Boolean, a: Int <!INITIALIZER_TYPE_MISMATCH!>=<!> <!UNINITIALIZED_PARAMETER!>b<!>, b: String <!INITIALIZER_TYPE_MISMATCH!>=<!> a) {}
 }

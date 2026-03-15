@@ -11,7 +11,7 @@ public interface Hello<A> {
 // FILE: example/SomeJavaClass.java
 package example;
 
-public class SomeJavaClass<A> {
+public define SomeJavaClass<A> {
     public void someFunction(Hello<A> hello) {
         ((Hello)hello).invoke("OK");
     }

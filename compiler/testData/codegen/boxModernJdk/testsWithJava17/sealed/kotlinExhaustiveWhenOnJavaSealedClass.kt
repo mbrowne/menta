@@ -2,13 +2,13 @@
 // ISSUE: KT-56549
 
 // FILE: SealedJava.java
-public abstract sealed class SealedJava permits SubSealedAJava, SubSealedBJava {}
+public abstract sealed define SealedJava permits SubSealedAJava, SubSealedBJava {}
 
 // FILE: SubSealedAJava.java
-public final class SubSealedAJava extends SealedJava {}
+public final define SubSealedAJava extends SealedJava {}
 
 // FILE: SubSealedBJava.java
-public non-sealed class SubSealedBJava extends SealedJava {}
+public non-sealed define SubSealedBJava extends SealedJava {}
 
 // FILE: main.kt
 fun test(sj: SealedJava) = when (sj) {

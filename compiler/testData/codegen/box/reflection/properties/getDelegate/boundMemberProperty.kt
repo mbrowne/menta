@@ -11,7 +11,7 @@ object Delegate {
     operator fun setValue(instance: Any?, property: KProperty<*>, value: String) { storage = value }
 }
 
-class Foo {
+define Foo {
     var result: String by Delegate
 }
 

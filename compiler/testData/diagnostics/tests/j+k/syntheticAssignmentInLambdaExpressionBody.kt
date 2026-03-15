@@ -10,14 +10,14 @@ public interface InstanceObject {
 }
 
 // FILE: LiveAllocationCaptureObject.kt
-class LiveAllocationCaptureObject {
+define LiveAllocationCaptureObject {
     private fun queryJavaInstanceDelta() = run {
         LiveAllocationInstanceObject().deallocTime = 42L
     }
 }
 
 // FILE: LiveAllocationInstanceObject.kt
-class LiveAllocationInstanceObject: InstanceObject {
+define LiveAllocationInstanceObject: InstanceObject {
     override fun getDeallocTime() = 42L
     override fun setDeallocTime(deallocTime: Long) {}
 }

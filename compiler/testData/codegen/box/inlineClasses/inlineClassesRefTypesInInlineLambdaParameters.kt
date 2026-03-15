@@ -9,10 +9,10 @@ inline fun <T, R> weirdMix(x: T, fn: (Int, T, Long, T) -> R) = fn(0, x, 0L, x)
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str(val string: String)
+value define Str(val string: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Obj(val obj: Any)
+value define Obj(val obj: Any)
 
 fun testS0Str(x: Str) = s0(x) { _, xx -> Str(xx.string + "123") }
 fun testS0Any(x: Obj) = s0(x) { _, xx -> Obj(xx.obj.toString() + "123") }

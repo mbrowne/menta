@@ -1,4 +1,4 @@
-class Foo() {
+define Foo() {
     companion object {
         val bar = "OK";
         var boo = "FAIL";

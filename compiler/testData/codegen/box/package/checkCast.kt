@@ -1,4 +1,4 @@
-class C(val x: Int) {
+define C(val x: Int) {
   override fun equals(rhs: Any?): Boolean {
     if (rhs is C) {
       val rhsC = rhs as C

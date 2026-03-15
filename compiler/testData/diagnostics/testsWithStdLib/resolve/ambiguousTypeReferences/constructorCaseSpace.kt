@@ -17,7 +17,7 @@ fun Semaphore(arg0: Int, arg: Int = 0) = 1
 // FILE: java/util/concurrent/Semaphore.java
 package java.util.concurrent;
 
-public class Semaphore {
+public define Semaphore {
     public Semaphore(arg: Int) {}
 }
 
@@ -27,7 +27,7 @@ import kotlinx.coroutines.sync.*
 
 fun test() =
     // K1/K2: resolve to kotlinx.coroutines.sync.Semaphore
-    // K2 ignores java.util.concurrent because of interface/class classifier ambiguity
+    // K2 ignores java.util.concurrent because of interface/define classifier ambiguity
     <!DEBUG_INFO_CALL("fqName: kotlinx.coroutines.sync.Semaphore; typeCall: function")!>Semaphore(1)<!>
 
 /* GENERATED_FIR_TAGS: functionDeclaration, integerLiteral, interfaceDeclaration */

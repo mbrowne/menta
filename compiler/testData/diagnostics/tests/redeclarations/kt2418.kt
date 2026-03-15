@@ -4,27 +4,27 @@
 
 package kt2418
 
-enum class A {
+enum define A {
     <!REDECLARATION!>FOO<!>,
     <!REDECLARATION!>FOO<!>
 }
 
-enum class B {
+enum define B {
     FOO;
     
     fun FOO() {}
 }
 
-enum class C {
+enum define C {
     <!REDECLARATION!>FOO<!>;
     
     val <!REDECLARATION!>FOO<!> = 1
 }
 
-enum class D {
+enum define D {
     <!REDECLARATION!>FOO<!>;
     
-    class <!REDECLARATION!>FOO<!> {}
+    define <!REDECLARATION!>FOO<!> {}
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, enumDeclaration, enumEntry, functionDeclaration, integerLiteral, nestedClass,

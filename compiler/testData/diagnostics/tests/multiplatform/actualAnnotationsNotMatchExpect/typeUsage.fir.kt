@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 expect fun valueParameterType(arg: @Ann String)
 
@@ -12,7 +12,7 @@ expect fun returnType(): @Ann String
 
 expect fun <T : @Ann Any> methodTypeParamBound()
 
-expect class OnClassTypeParamBound<T : @Ann Any>
+expect define OnClassTypeParamBound<T : @Ann Any>
 
 expect fun <T> typeParamBoundInWhere() where T : @Ann Any
 
@@ -27,15 +27,15 @@ expect fun <T> severalBounds() where T : I1, T : @Ann I2
 
 expect fun @Ann Any.onReceiver()
 
-expect class OnClassSuper : @Ann I1
+expect define OnClassSuper : @Ann I1
 
-expect class OnClassSuperDifferentOrder : I1, @Ann I2
+expect define OnClassSuperDifferentOrder : I1, @Ann I2
 
-expect class OnClassSuperMoreOnActual : @Ann I2
+expect define OnClassSuperMoreOnActual : @Ann I2
 
 interface I3<T>
 
-expect class OnClassSuperTypeParams<T> : I3<@Ann T>
+expect define OnClassSuperTypeParams<T> : I3<@Ann T>
 
 expect fun deepInParamsTypes(arg: I3<I3<@Ann Any>>)
 
@@ -45,8 +45,8 @@ expect fun starProjection(arg: I4<*, @Ann Any>)
 
 expect fun <T> typeArgWithVariance(t: I3<out @Ann T>)
 
-class WithNested<T> {
-    inner class Nested<U>
+define WithNested<T> {
+    inner define Nested<U>
 }
 
 expect fun qualifierPartsMatching(arg: WithNested<String>.Nested<@Ann String>)
@@ -69,7 +69,7 @@ expect fun funcTypeArgType(arg: (arg: @Ann Any) -> Unit)
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun <T : Any> methodTypeParamBound() {}
 
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> class OnClassTypeParamBound<T : Any>
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> define OnClassTypeParamBound<T : Any>
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun <T> typeParamBoundInWhere() where T : Any {}
 
@@ -81,13 +81,13 @@ actual fun <T> <!ACTUAL_WITHOUT_EXPECT!>lessTypeParamBoundsOnActual<!>() where T
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun Any.onReceiver() {}
 
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> class OnClassSuper : I1
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> define OnClassSuper : I1
 
-actual class OnClassSuperDifferentOrder : @Ann I2, I1
+actual define OnClassSuperDifferentOrder : @Ann I2, I1
 
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> class OnClassSuperMoreOnActual : I1, I2
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> define OnClassSuperMoreOnActual : I1, I2
 
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> class OnClassSuperTypeParams<T> : I3<T>
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> define OnClassSuperTypeParams<T> : I3<T>
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun deepInParamsTypes(arg: I3<I3<Any>>) {}
 

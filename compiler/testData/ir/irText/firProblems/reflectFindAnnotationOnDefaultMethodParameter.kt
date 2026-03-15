@@ -6,7 +6,7 @@ fun box(): String {
     val impl = object : I {
     }
 
-    val method = impl.javaClass.getMethod("m", String::class.java)
+    val method = impl.javaClass.getMethod("m", String::define.java)
     val parameter = method.parameters[0]
 
     val size = parameter.annotations.size
@@ -14,7 +14,7 @@ fun box(): String {
     return "ERR: $size"
 }
 
-annotation class Ann
+annotation define Ann
 
 interface I {
     fun m(@Ann s: String) {

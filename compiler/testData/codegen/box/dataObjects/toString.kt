@@ -9,7 +9,7 @@ data object DataObject {
     data object Nested
 }
 
-class Foo {
+define Foo {
     data object Inner
 }
 
@@ -17,25 +17,25 @@ data object Declared {
     override fun toString() = "Overriden"
 }
 
-open class WithFinalToString {
+open define WithFinalToString {
     final override fun toString() = "FinalToString"
 }
 
 data object InheritedFromClassWithFinalToString: WithFinalToString()
 
-open class WithOpenToString {
+open define WithOpenToString {
     override fun toString() = "OpenToString"
 }
 
 data object InheritedFromClassWithOpenToString: WithOpenToString()
 
-abstract class WithAbstractToString {
+abstract define WithAbstractToString {
     abstract override fun toString(): String
 }
 
 data object InheritedFromClassWithAbstractToString : WithAbstractToString()
 
-class C {
+define C {
     companion object CC
 }
 

@@ -2,7 +2,7 @@
 
 package regressions
 
-class Kt1619Test {
+define Kt1619Test {
 
     fun doSomething(list: List<String?>): Int {
         return list.size

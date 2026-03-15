@@ -6,14 +6,14 @@ import kotlin.test.assertEquals
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val x: String)
+annotation define Ann(val x: String)
 
 fun foo0(block: suspend () -> Unit) = block.javaClass
 
 fun testHasAnnotation(method: Method, name: String) {
     assertEquals(
         "OK",
-        method.getAnnotation(Ann::class.java)?.x,
+        method.getAnnotation(Ann::define.java)?.x,
         "Missing or incorrect annotation on method `${method.name}` of test named `$name`"
     )
 }
@@ -21,7 +21,7 @@ fun testHasAnnotation(method: Method, name: String) {
 fun testDoesNotHaveAnnotation(method: Method, name: String) {
     assertEquals(
         null,
-        method.getAnnotation(Ann::class.java),
+        method.getAnnotation(Ann::define.java),
         "Unexpected annotation on method `${method.name}` of test named `$name`"
     )
 }

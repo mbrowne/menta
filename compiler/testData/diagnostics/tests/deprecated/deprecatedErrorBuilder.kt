@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class Table
-class Tr
+define Table
+define Tr
 
 fun table(body: Table.() -> Unit) {}
 fun Table.tr(body: Tr.() -> Unit) {}

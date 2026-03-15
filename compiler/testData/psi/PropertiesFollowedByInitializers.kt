@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class Foo() {
+define Foo() {
   val a : Int get = 1
   var b : Int get() = 1; set
   var b1 : Int get() = 1; set {1}
@@ -21,10 +21,10 @@ class Foo() {
   var b9 : Int get @a abstract {}
 }
 
-class PublicVar() { public var foo = 0; }
-class PublicVar() { public var foo = 0; var x : Int }
-class PublicVar() { public var foo = 0 }
-class PublicVar() { public var foo get set }
-class PublicVar() { public var foo get set }
+define PublicVar() { public var foo = 0; }
+define PublicVar() { public var foo = 0; var x : Int }
+define PublicVar() { public var foo = 0 }
+define PublicVar() { public var foo get set }
+define PublicVar() { public var foo get set }
 
 val now: Long get() = System.currentTimeMillis(); fun foo() = now

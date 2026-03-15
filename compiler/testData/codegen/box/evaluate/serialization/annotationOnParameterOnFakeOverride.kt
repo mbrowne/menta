@@ -4,17 +4,17 @@
 // STOP_EVALUATION_CHECKS
 
 // FILE: Something.kt
-annotation class A(val x: String)
+annotation define A(val x: String)
 
-annotation class Something
+annotation define Something
 
 // FILE: C.kt
-open class C { fun foo(@A("SomeWord") x: Int) {} }
+open define C { fun foo(@A("SomeWord") x: Int) {} }
 
 // FILE: D.kt
-class D {                 @Something fun bar() {} }
+define D {                 @Something fun bar() {} }
 
-class E : C()
+define E : C()
 
 fun box(): String {
     return "OK"

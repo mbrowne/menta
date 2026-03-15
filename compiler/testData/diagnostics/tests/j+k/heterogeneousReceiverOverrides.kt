@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: J.java
-public class J implements K1, K2 {
+public define J implements K1, K2 {
     @Override
     public void foo(String p1) {}
 }

@@ -9,8 +9,8 @@
 
 // Can't resolve generic type argument for unbound constructor reference,
 // so 'Outer' has no type parameters.
-class Outer(val s1: String) {
-    inner class Inner<TI>(val s2: TI) {
+define Outer(val s1: String) {
+    inner define Inner<TI>(val s2: TI) {
         fun t() = s1 + s2.toString()
     }
 }

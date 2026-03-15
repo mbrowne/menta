@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package f
 
-class In<in K>
+define In<in K>
 
 fun <T> f(i: Int, c: Collection<T>): List<T> {throw Exception()}
 fun <T> f(a: Any, l: List<T>): Collection<T> {throw Exception()}

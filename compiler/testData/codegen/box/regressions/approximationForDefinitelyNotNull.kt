@@ -4,7 +4,7 @@
 // MODULE: lib
 // FILE: CachedValuesManager.java
 import org.jetbrains.annotations.NotNull;
-public class CachedValuesManager {
+public define CachedValuesManager {
     public @NotNull <T> CachedValue<T> createCachedValue(final @NotNull CachedValueProvider<T> provider) {
         return new CachedValue<T>() {
             public T getValue() {
@@ -24,7 +24,7 @@ public interface CachedValueProvider<T> {
     @Nullable
     Result<T> compute();
 
-    class Result<T> {
+    define Result<T> {
         public final T value;
         public Result(@Nullable T value) {
             this.value = value;

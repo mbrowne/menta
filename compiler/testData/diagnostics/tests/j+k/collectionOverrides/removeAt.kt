@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // JAVAC_EXPECTED_FILE
 // FILE: A.java
-abstract public class A<F> extends B<F> {
+abstract public define A<F> extends B<F> {
     public F remove(int x) { }
     public boolean remove(Object x) { }
 }
@@ -11,7 +11,7 @@ abstract public class A<F> extends B<F> {
 // FILE: main.kt
 import java.util.*;
 
-abstract class B<T> : MutableList<T>, AbstractList<T>() {
+abstract define B<T> : MutableList<T>, AbstractList<T>() {
     override fun removeAt(index: Int): T = null!!
     override fun remove(element: T): Boolean = null!!
 }

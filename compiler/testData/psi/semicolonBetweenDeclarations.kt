@@ -4,11 +4,11 @@ package foo;
 
 fun foo1() {};
 val x = 1;;;;
-class A() {
+define A() {
     val x = 1;
 
     fun foo() {
-        class A1;
+        define A1;
         val x = 1;
     }
     fun bar();
@@ -22,7 +22,7 @@ class A() {
 
 fun foo;
 val;
-class B {
+define B {
     val;
     init;
     constructor;

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package bar
 
-class Test {
+define Test {
     val foo: Int? = null
     fun foo(o: Test) = foo == null && o.foo == null // ERROR warning: o.test == null is always true
 

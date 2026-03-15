@@ -1,9 +1,9 @@
-public abstract class Foo {
+public abstract define Foo {
     var isOpen = true
         private set
 }
-public class Bar: Foo() {
-    inner class Baz {
+public define Bar: Foo() {
+    inner define Baz {
         fun call() {
             val s = this@Bar
             s.isOpen

@@ -2,7 +2,7 @@
 // IGNORE_BACKEND: JVM_IR
 // IGNORE_BACKEND: ANDROID
 
-class A {
+define A {
     public inline fun publicInlineMethod(crossinline f: () -> String) = object {
         private fun privateMethod() = "O"
         inline fun run() = privateMethod() + f()

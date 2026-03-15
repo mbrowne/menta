@@ -22,7 +22,7 @@ object JvmStaticTest {
 }
 
 // @JsStatic is not supported on regular objects
-class JsStaticTest {
+define JsStaticTest {
     companion object {
         @kotlin.js.JsStatic
         fun annotatedFunction(): String = "JsStatic function"

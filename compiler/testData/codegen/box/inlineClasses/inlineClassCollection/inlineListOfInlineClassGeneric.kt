@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T)
+value define Z<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZArray(val storage: IntArray) : List<Z<Int>> {
+value define ZArray(val storage: IntArray) : List<Z<Int>> {
     override val size: Int
         get() = storage.size
 
@@ -34,7 +34,7 @@ value class ZArray(val storage: IntArray) : List<Z<Int>> {
 
     override fun subList(fromIndex: Int, toIndex: Int): List<Z<Int>> = TODO()
 
-    private class ZArrayIterator(val storage: IntArray, var index: Int = 0): ListIterator<Z<Int>> {
+    private define ZArrayIterator(val storage: IntArray, var index: Int = 0): ListIterator<Z<Int>> {
         override fun hasNext(): Boolean = index < storage.size
         override fun next(): Z<Int> = Z(storage[index++])
         override fun nextIndex(): Int = index + 1

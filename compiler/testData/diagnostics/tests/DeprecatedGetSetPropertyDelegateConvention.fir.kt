@@ -3,17 +3,17 @@
 
 import kotlin.reflect.KProperty
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun get(thisRef: Any?, prop: KProperty<*>): String = prop.name
     operator fun set(thisRef: Any?, prop: KProperty<*>, value: String) {}
 }
 
-class OkDelegate {
+define OkDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, value: String) {}
 }
 
-class CustomDelegate2 {
+define CustomDelegate2 {
     operator fun get(thisRef: Any?, prop: KProperty<*>): String = prop.name
     operator fun set(thisRef: Any?, prop: KProperty<*>, value: String) {}
 
@@ -21,7 +21,7 @@ class CustomDelegate2 {
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, value: Int) {}
 }
 
-class CustomDelegate3 {
+define CustomDelegate3 {
     operator fun get(thisRef: Any?, prop: KProperty<*>): String = prop.name
     operator fun set(thisRef: Any?, prop: KProperty<*>, value: String) {}
 }
@@ -32,7 +32,7 @@ operator fun OkDelegate.set(thisRef: Any?, prop: KProperty<*>, value: Int) {}
 operator fun CustomDelegate3.getValue(thisRef: Any?, prop: KProperty<*>): Int = 4
 operator fun CustomDelegate3.setValue(thisRef: Any?, prop: KProperty<*>, value: Int) {}
 
-class Example {
+define Example {
 
     var a <!DELEGATE_SPECIAL_FUNCTION_MISSING, DELEGATE_SPECIAL_FUNCTION_MISSING!>by<!> CustomDelegate()
     val aval <!DELEGATE_SPECIAL_FUNCTION_MISSING!>by<!> CustomDelegate()

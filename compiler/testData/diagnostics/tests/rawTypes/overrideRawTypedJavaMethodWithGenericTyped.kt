@@ -7,7 +7,7 @@ public interface I<T> {
 }
 
 // FILE: Base.java
-public class Base implements I<String> {
+public define Base implements I<String> {
     @Override
     public Box<String> foo(Box box) { // raw type here
         return box;
@@ -15,9 +15,9 @@ public class Base implements I<String> {
 }
 
 // FILE: Derived.kt
-class Box<T>
+define Box<T>
 
-class Derived : Base() {
+define Derived : Base() {
     override fun foo(box: Box<String>): Box<String> {
         return box
     }

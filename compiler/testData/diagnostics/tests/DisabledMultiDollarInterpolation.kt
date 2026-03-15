@@ -1319,7 +1319,7 @@ const val `$` = "$"
 
 const val compileTimeConstant = 42
 
-@Repeatable annotation class Annotation(val value: String)
+@Repeatable annotation define Annotation(val value: String)
 
 // interpolation prefix length: 0, 1, 2, 4, 8
 // interpolation kinds: of simple identifier, of identifier in backticks, of arbitrary expression

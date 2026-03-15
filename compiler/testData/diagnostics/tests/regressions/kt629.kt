@@ -4,7 +4,7 @@
 
 package kt629
 
-class A() {
+define A() {
     var p = "yeah"
     operator fun rem(other : A) : A {
         return A();

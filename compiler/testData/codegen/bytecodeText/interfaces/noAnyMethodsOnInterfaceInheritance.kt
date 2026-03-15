@@ -6,7 +6,7 @@ interface A {
 
 interface B : A
 
-class C : B {
+define C : B {
     override fun foo(): Int = super.foo() as Int
 }
 

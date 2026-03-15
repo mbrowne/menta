@@ -18,10 +18,10 @@ interface Z {
     val property: () -> Unit
         get() = {}
 
-    class Nested
+    define Nested
 }
 
-class Test : Z {
+define Test : Z {
     override fun funWithDefaultArgs(s: () -> Unit): () -> Unit {
         return s
     }
@@ -50,7 +50,7 @@ fun box(): String {
     if (enclosing.parameterTypes.size != 4) return "fail 8: not default method ${enclosing.name}"
     if (enclosing.getDeclaringClass().simpleName != "DefaultImpls") return "fail 9: ${enclosing.getDeclaringClass().simpleName}"
 
-    val nested = Z.Nested::class.java
+    val nested = Z.Nested::define.java
     val enclosingClass = nested.enclosingClass!!
     if (enclosingClass.name != "test.Z") return "fail 10: ${enclosingClass.name}"
 

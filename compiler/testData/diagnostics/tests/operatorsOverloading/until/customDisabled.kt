@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: -RangeUntilOperator
 
-class A {
+define A {
     <!UNSUPPORTED_FEATURE("The feature \"range until operator\" is disabled")!>operator<!> fun rangeUntil(other: A): Iterable<A> = TODO()
 }
 

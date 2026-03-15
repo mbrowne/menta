@@ -4,10 +4,10 @@ sealed interface A
 sealed interface B : A
 sealed interface C : B
 
-class E : A
-class F : B
-abstract class G : B
-class H : G(), C
+define E : A
+define F : B
+abstract define G : B
+define H : G(), C
 
 fun test_1(a: A): Int = when (a) {
     is E -> 0

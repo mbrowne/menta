@@ -1,4 +1,4 @@
-open class A {
+open define A {
     lateinit var a: String
 
     lateinit var b: String
@@ -11,7 +11,7 @@ open class A {
         internal set
 }
 
-open class B {
+open define B {
     internal lateinit var a: String
 
     internal lateinit var b: String
@@ -24,7 +24,7 @@ open class B {
         internal set
 }
 
-open class C {
+open define C {
     protected lateinit var a: String
 
     protected lateinit var b: String
@@ -34,7 +34,7 @@ open class C {
         protected set
 }
 
-open class D {
+open define D {
     private lateinit var a: String
 
     private lateinit var b: String

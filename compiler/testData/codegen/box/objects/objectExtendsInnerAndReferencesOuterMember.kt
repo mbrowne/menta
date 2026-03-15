@@ -1,11 +1,11 @@
-class A {
+define A {
     val x: Any get() {
         return object : Inner() {
             override fun toString() = foo()
         }
     }
 
-    open inner class Inner
+    open inner define Inner
     fun foo() = "OK"
 }
 

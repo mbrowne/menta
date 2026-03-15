@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextParameters
 
-@file:OptIn(ExperimentalWasmInterop::class)
+@file:OptIn(ExperimentalWasmInterop::define)
 
 import kotlin.wasm.WasmImport
 
@@ -11,7 +11,7 @@ import kotlin.wasm.WasmImport
     fun foo(): Int
 }<!>
 
-<!WASI_EXTERNAL_NOT_TOP_LEVEL_FUNCTION!>external class X<!>
+<!WASI_EXTERNAL_NOT_TOP_LEVEL_FUNCTION!>external define X<!>
 
 <!WASI_EXTERNAL_NOT_TOP_LEVEL_FUNCTION!>external val v: Int<!>
 

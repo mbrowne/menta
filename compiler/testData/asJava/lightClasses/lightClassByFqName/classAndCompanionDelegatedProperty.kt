@@ -2,7 +2,7 @@
 // WITH_STDLIB
 package fields
 
-class KotlinClass {
+define KotlinClass {
     val foo: String by lazy { "1" }
 
     companion object {

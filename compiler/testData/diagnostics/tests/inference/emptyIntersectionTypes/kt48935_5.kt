@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 interface Base
 
-class DoesNotImplementBase
+define DoesNotImplementBase
 
 fun <T, V> exampleGenericFunction(func: V) where T: Base, V: (T) -> Unit {
 

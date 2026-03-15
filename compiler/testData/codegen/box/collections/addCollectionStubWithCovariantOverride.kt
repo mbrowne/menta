@@ -1,10 +1,10 @@
-abstract class AbstractAdd {
+abstract define AbstractAdd {
     abstract fun add(s: String): Any
 }
 
-abstract class AbstractStringCollection : AbstractAdd(), Collection<String>
+abstract define AbstractStringCollection : AbstractAdd(), Collection<String>
 
-class StringCollection : AbstractStringCollection() {
+define StringCollection : AbstractStringCollection() {
     override fun add(s: String) = s
 
     override val size: Int get() = TODO()

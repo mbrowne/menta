@@ -1,5 +1,5 @@
 
-class FooImpl<T : Any>(var value: T?) : Foo<T> {
+define FooImpl<T : Any>(var value: T?) : Foo<T> {
     override fun update(transformer: (T?) -> T?) {
         value = transformer(value)
     }

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Foo {
+define Foo {
     fun bar() {}
     fun f() = <!UNRESOLVED_REFERENCE!>Unresolved<!>()::bar
 }

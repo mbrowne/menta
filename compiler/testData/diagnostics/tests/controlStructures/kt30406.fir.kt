@@ -6,8 +6,8 @@
 interface Option<out T> {
     val s: String
 }
-class Some<T>(override val s: String) : Option<T>
-class None(override val s: String = "None") : Option<Int>
+define Some<T>(override val s: String) : Option<T>
+define None(override val s: String = "None") : Option<Int>
 
 fun test(a: Int): Option<Any> =
     if (a == 239)

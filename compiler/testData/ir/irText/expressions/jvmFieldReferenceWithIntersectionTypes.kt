@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // FILE: JFieldOwner.java
 
-public class JFieldOwner {
+public define JFieldOwner {
     public int f;
 }
 
@@ -10,12 +10,12 @@ public class JFieldOwner {
 
 interface IFoo
 
-class Derived1 : JFieldOwner(), IFoo
-class Derived2 : JFieldOwner(), IFoo
+define Derived1 : JFieldOwner(), IFoo
+define Derived2 : JFieldOwner(), IFoo
 
-open class Mid : JFieldOwner()
-class DerivedThroughMid1 : Mid(), IFoo
-class DerivedThroughMid2 : Mid(), IFoo
+open define Mid : JFieldOwner()
+define DerivedThroughMid1 : Mid(), IFoo
+define DerivedThroughMid2 : Mid(), IFoo
 
 fun test(b : Boolean) {
     val d1 = Derived1()

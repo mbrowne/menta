@@ -1,4 +1,4 @@
-class ConstructorWithTypeParameter<P>()
+define ConstructorWithTypeParameter<P>()
 
 // method: ConstructorWithTypeParameter::<init>
 // jvm signature:     ()V

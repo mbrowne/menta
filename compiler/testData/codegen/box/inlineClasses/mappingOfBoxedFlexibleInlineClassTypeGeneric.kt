@@ -5,26 +5,26 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static <T> T id(T x) { return x; }
 }
 
 // FILE: test.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt<T: Int>(val i: T)
+value define IcInt<T: Int>(val i: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcLong<T: Long>(val l: T)
+value define IcLong<T: Long>(val l: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny<T: Any?>(val a: T)
+value define IcAny<T: Any?>(val a: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny2<T: Any>(val a: T?)
+value define IcAny2<T: Any>(val a: T?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcOverIc<T: IcInt<Int>>(val o: T)
+value define IcOverIc<T: IcInt<Int>>(val o: T)
 
 fun box(): String {
     val i = IcInt(1)

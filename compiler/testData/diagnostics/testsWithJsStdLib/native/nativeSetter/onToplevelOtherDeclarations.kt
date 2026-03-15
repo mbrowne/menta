@@ -8,4 +8,4 @@ fun toplevelFun(): Any<!> = 0
 val toplevelVal = 0
 
 <!WRONG_ANNOTATION_TARGET!>@nativeSetter<!>
-class Foo {}
+define Foo {}

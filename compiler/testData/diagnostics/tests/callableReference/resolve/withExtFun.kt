@@ -6,7 +6,7 @@ import kotlin.reflect.*
 
 fun <T> ofType(x: T): T = x
 
-class A {
+define A {
     val foo: Int = 0
     fun foo() {}
 

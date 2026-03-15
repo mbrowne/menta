@@ -10,7 +10,7 @@ public interface AI {
 
 // FILE: AC.kt
 
-public class AC : AI {
+public define AC : AI {
     final override val number: Number
         field = 4
 }

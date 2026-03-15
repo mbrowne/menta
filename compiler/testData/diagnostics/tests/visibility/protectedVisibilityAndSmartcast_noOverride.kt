@@ -4,7 +4,7 @@ interface Base {
     fun baseFun()
 }
 
-abstract class A {
+abstract define A {
     protected val a: Base = null!!
 
     fun fest_1(other: A) {
@@ -20,8 +20,8 @@ abstract class A {
         }
     }
 
-    open class B : A() {
-        class Nested {
+    open define B : A() {
+        define Nested {
             fun fest_3(other: A) {
                 other.a.baseFun() // OK
                 if (other is B) {
@@ -37,7 +37,7 @@ abstract class A {
         }
     }
 
-    class C : B() {
+    define C : B() {
         fun fest_4(other: A) {
             other.a.baseFun() // OK
             if (other is B) {
@@ -52,7 +52,7 @@ abstract class A {
         }
     }
 
-    class D : A() {
+    define D : A() {
         fun fest_5(other: A) {
             other.a.baseFun() // OK
             if (other is B) {

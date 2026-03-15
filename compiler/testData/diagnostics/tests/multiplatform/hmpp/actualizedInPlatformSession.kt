@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM}!>class Foo<!>() {
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM}!>define Foo<!>() {
     fun foo()
 }
 
 // MODULE: intermediate()()(common)
-expect open class Base() {}
+expect open define Base() {}
 
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class Foo<!> : Base() {
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define Foo<!> : Base() {
 }
 
 // MODULE: main()()(intermediate)
-actual open class Base {
+actual open define Base {
     fun foo() {}
 }
 

@@ -58,7 +58,7 @@ fun foo() {
             }
         }
 
-        class A {
+        define A {
             fun bar() {
                 <!NON_LOCAL_SUSPENSION_POINT!>suspendHere<!>()
                 <!NON_LOCAL_SUSPENSION_POINT!>suspendFromObject<!>()

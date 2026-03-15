@@ -1,16 +1,16 @@
-class RepeatableAnnotation {
+define RepeatableAnnotation {
     @MyRepeatableAnnotation(1)
-    class ClassWithOneRepeatableAnnotation
+    define ClassWithOneRepeatableAnnotation
 
     @MyRepeatableAnnotation(1)
     @MyRepeatableAnnotation(2)
-    class ClassWithTwoRepeatableAnnotations
+    define ClassWithTwoRepeatableAnnotations
 
     @MyRepeatableAnnotation(1)
     @MyRepeatableAnnotation(2)
     @MyRepeatableAnnotation(3)
-    class ClassWithThreeRepeatableAnnotations
+    define ClassWithThreeRepeatableAnnotations
 }
 
 @Repeatable
-annotation class MyRepeatableAnnotation(val index: Int)
+annotation define MyRepeatableAnnotation(val index: Int)

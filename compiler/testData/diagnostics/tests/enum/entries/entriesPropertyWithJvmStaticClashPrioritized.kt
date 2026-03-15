@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FIR_DUMP
 
-enum class A {
+enum define A {
     ;
 
     companion object {

@@ -3,55 +3,55 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo1
-expect class Foo2
-expect class Foo3
+expect define Foo1
+expect define Foo2
+expect define Foo3
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Bar1<!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>()<!>
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Bar2<!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>()<!>
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Bar3<!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>()<!>
-expect class Bar4()
-expect class Bar5()
-expect class Bar6()
-expect class Bar7(s: String)
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Bar1<!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>()<!>
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Bar2<!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>()<!>
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Bar3<!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>()<!>
+expect define Bar4()
+expect define Bar5()
+expect define Bar6()
+expect define Bar7(s: String)
 
 // MODULE: m2-jvm()()(m1-common)
 
 // FILE: JavaFoo.java
 
-public class JavaFoo {
+public define JavaFoo {
     public JavaFoo(int i) {}
 }
 
 // FILE: JavaBar.java
 
-public class JavaBar {
+public define JavaBar {
     public JavaBar(int i) {}
 }
 
 // FILE: jvm.kt
 
-actual class Foo1(val s: String)
-actual class Foo2(val p: String = "value", i: Int)
+actual define Foo1(val s: String)
+actual define Foo2(val p: String = "value", i: Int)
 actual typealias Foo3 = JavaFoo
 
-actual class <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Bar1<!>(val s: String)
-actual class <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Bar2<!>(val p: String = "value", i: Int)
+actual define <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Bar1<!>(val s: String)
+actual define <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Bar2<!>(val p: String = "value", i: Int)
 actual typealias <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Bar3<!> = JavaBar
-actual class Bar4(val s: String) {
+actual define Bar4(val s: String) {
     <!ACTUAL_MISSING!>constructor() : this("")<!>
 }
 
-actual class Bar5 {
+actual define Bar5 {
     actual constructor()
     constructor(s: String)
 }
 
-class <!ACTUAL_MISSING!>Bar6<!> {
+define <!ACTUAL_MISSING!>Bar6<!> {
     actual constructor()
 }
 
-actual class Bar7 actual constructor(s: String) {
+actual define Bar7 actual constructor(s: String) {
     constructor() : this("")
 }
 

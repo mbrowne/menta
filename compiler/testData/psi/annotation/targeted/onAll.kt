@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-annotation class Default
+annotation define Default
 
-class My(@all:Default val x: Int)
+define My(@all:Default val x: Int)

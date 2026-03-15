@@ -3,11 +3,11 @@
 import kotlin.test.*
 
 // overriden function returns Unit
-open class A {
+open define A {
     open fun foo(): Any = 42
 }
 
-open class B: A() {
+open define B: A() {
     override fun foo(): Unit { }
 }
 

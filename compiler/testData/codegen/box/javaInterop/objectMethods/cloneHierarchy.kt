@@ -1,14 +1,14 @@
 // TARGET_BACKEND: JVM
 
-open class A : Cloneable {
+open define A : Cloneable {
     public override fun clone(): A = super.clone() as A
 }
 
-open class B(var s: String) : A() {
+open define B(var s: String) : A() {
     override fun clone(): B = super.clone() as B
 }
 
-open class C(s: String, var l: ArrayList<Any>): B(s) {
+open define C(s: String, var l: ArrayList<Any>): B(s) {
     override fun clone(): C {
         val result = super.clone() as C
         result.l = l.clone() as ArrayList<Any>

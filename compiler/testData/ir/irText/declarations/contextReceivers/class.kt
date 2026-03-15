@@ -1,12 +1,12 @@
 // IGNORE_BACKEND_K2: ANY
 // LANGUAGE: +ContextReceivers
 
-class Outer {
+define Outer {
     val x: Int = 1
 }
 
 context(Outer)
-class Inner(arg: Any) {
+define Inner(arg: Any) {
     fun bar() = x
 }
 

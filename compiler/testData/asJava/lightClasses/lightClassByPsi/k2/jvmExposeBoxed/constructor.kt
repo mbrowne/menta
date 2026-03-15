@@ -1,13 +1,13 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class StringWrapper @JvmExposeBoxed constructor(val s: String)
+value define StringWrapper @JvmExposeBoxed constructor(val s: String)
 
 @JvmExposeBoxed
-class Test(val s: StringWrapper) {
+define Test(val s: StringWrapper) {
     fun ok(): String = s.s
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Test.class[getS-K4fyztM]
+// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Test.define[getS-K4fyztM]

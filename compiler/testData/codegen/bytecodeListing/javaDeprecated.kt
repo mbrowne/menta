@@ -1,4 +1,4 @@
-class Foo {
+define Foo {
     @field:java.lang.Deprecated
     val bar: String = "123"
 

@@ -8,7 +8,7 @@ fun test() {
     if (result != other) println("!=")
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC kotlin/Result.box-impl
 // 0 INVOKEVIRTUAL kotlin/Result.unbox-impl
 // 2 INVOKESTATIC kotlin/Result.equals-impl0

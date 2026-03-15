@@ -1,10 +1,10 @@
 // Ensure the proper collection stubs are added, in
 // particular *not* when specialized implementations are provided.
 
-class MyList<E> : List<E> {
+define MyList<E> : List<E> {
     val elements = ArrayList<E>()
 
-    class MyListIterator<E>(
+    define MyListIterator<E>(
         val list: ArrayList<E>,
         start: Int,
         private val end: Int

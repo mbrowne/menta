@@ -3,7 +3,7 @@
 
 package test
 
-class Foo private constructor(val a: Int = 1) {}
+define Foo private constructor(val a: Int = 1) {}
 
 fun box(): String {
     try {

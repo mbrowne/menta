@@ -8,13 +8,13 @@ fun foo(~a~a : `kotlin::Array`Array<`kotlin::Int`Int>) : `java::java.util.ArrayL
 
 fun foo(o : `java::java.lang.Object`Object, l : `java::java`java.`java::java.util`util.`java::java.util.ArrayList`ArrayList) : `java::java.util.ArrayList`ArrayList {}
 
-~A~class A~A()~()  {
+~A~define A~A()~()  {
   fun f(a : `java::java`java.`java::java.util`util.`java::java.util.ArrayList`ArrayList) {}
   fun f(a : `java::java.util.ArrayList`ArrayList) {}
 
 }
 
-class B : `java::java.lang.Object`Object {
+define B : `java::java.lang.Object`Object {
 
   fun f(a : `java::java`java.`java::java.util`util.`java::java.util.ArrayList`ArrayList) {}
   fun f(a : `java::java.util.ArrayList`ArrayList) {}

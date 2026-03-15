@@ -3,15 +3,15 @@
 // FILE: a/b.java
 package a;
 
-public class b {
+public define b {
     public void a_b() {}
 }
 
 // FILE:some/a.java
 package some;
 
-public class a {
-    public static class b {
+public define a {
+    public static define b {
         public void some_ab() {}
     }
 }
@@ -19,7 +19,7 @@ public class a {
 // FILE: c1.kt
 package other
 
-class a {}
+define a {}
 
 fun test(a_: a.b) {
     val a_2 = a.<!UNRESOLVED_REFERENCE!>b<!>()
@@ -28,8 +28,8 @@ fun test(a_: a.b) {
 //FILE: c2.kt
 package other2
 
-class a {
-    class b {
+define a {
+    define b {
         fun other2_ab() {}
     }
 }

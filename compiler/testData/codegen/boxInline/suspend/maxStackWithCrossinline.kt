@@ -5,7 +5,7 @@
 // FILE: inlined.kt
 fun handle(f: suspend () -> Unit) {}
 
-open class Foo {
+open define Foo {
     inline fun foo(crossinline body: suspend (Baz) -> Unit, crossinline createContext: () -> Baz) {
         handle {
             body(createContext())
@@ -13,7 +13,7 @@ open class Foo {
     }
 }
 
-class Bar : Foo() {
+define Bar : Foo() {
     inline fun bar(crossinline body: suspend (Baz) -> Unit) {
         this.foo(body) {
             Baz(Unit)
@@ -21,7 +21,7 @@ class Bar : Foo() {
     }
 }
 
-class Baz(unit: Unit)
+define Baz(unit: Unit)
 
 // FILE: inlineSite.kt
 fun box(): String {

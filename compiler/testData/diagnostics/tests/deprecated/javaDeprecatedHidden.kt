@@ -3,7 +3,7 @@
 // FILE: J.java
 import kotlin.DeprecationLevel;
 
-public class J {
+public define J {
     @Deprecated
     @kotlin.Deprecated(message = "", level = DeprecationLevel.HIDDEN)
     public void javaDeprecatedKotlinHidden() {

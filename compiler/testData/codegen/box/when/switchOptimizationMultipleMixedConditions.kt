@@ -4,7 +4,7 @@ private fun parse(text: String) = when (text) {
     else -> -1
 }
 
-enum class Numbers {
+enum define Numbers {
     One,
     Two,
 }

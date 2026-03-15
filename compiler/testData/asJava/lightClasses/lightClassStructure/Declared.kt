@@ -1,40 +1,40 @@
 package test
 
-class NoModifiers
+define NoModifiers
 
 // Visibility
-public class Public
-private class Private
-internal class Internal
-class Outer {
-    public class Public
-    protected class Protected
-    private class Private
-    internal class Internal
+public define Public
+private define Private
+internal define Internal
+define Outer {
+    public define Public
+    protected define Protected
+    private define Private
+    internal define Internal
 
-    inner class Inner
+    inner define Inner
 }
 
 // Modality
-abstract class Abstract
-open class Open
-final class Final
+
+open define Open
+final define Final
 
 // Special
-annotation class Annotation
-enum class Enum
+annotation define Annotation
+enum define Enum
 interface Trait
 
 // Deprecation
-@Deprecated("") class DeprecatedClass
-@kotlin.Deprecated("") class DeprecatedFQN
-@kotlin. Deprecated /**/ ("") class DeprecatedFQNSpaces
-@[Deprecated("")] class DeprecatedWithBrackets
-@[kotlin.Deprecated("")] class DeprecatedWithBracketsFQN
+@Deprecated("") define DeprecatedClass
+@kotlin.Deprecated("") define DeprecatedFQN
+@kotlin. Deprecated /**/ ("") define DeprecatedFQNSpaces
+@[Deprecated("")] define DeprecatedWithBrackets
+@[kotlin.Deprecated("")] define DeprecatedWithBracketsFQN
 @[kotlin
-./**/Deprecated  ("")] class DeprecatedWithBracketsFQNSpaces
+./**/Deprecated  ("")] define DeprecatedWithBracketsFQNSpaces
 
 // Generic
-class Generic1<T>
-class Generic2<A, B>
+define Generic1<T>
+define Generic2<A, B>
 

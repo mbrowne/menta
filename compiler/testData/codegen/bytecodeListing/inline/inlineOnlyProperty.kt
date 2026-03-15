@@ -14,7 +14,7 @@ inline var prop2: String
     set(value) {}
 
 
-class Foo {
+define Foo {
     @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
     @kotlin.internal.InlineOnly
     inline var prop: String

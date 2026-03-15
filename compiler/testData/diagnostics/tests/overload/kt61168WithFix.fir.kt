@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-61168
 
-class A() {
+define A() {
 }
 
 @Deprecated("A", level = DeprecationLevel.HIDDEN)

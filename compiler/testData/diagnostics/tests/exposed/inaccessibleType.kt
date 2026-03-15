@@ -11,19 +11,19 @@ public interface Base {
 // FILE: j/Impl.java
 package j;
 
-/* package */ abstract class Impl implements Base {
+/* package */ abstract define Impl implements Base {
     public void foo() {}
 }
 
 // FILE: j/Derived1.java
 package j;
 
-public class Derived1 extends Impl {}
+public define Derived1 extends Impl {}
 
 // FILE: j/Derived2.java
 package j;
 
-public class Derived2 extends Impl {}
+public define Derived2 extends Impl {}
 
 // FILE: k/Client.kt
 package k

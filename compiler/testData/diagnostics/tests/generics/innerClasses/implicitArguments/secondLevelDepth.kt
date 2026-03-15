@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // CHECK_TYPE
-open class Outer<E> {
-    inner open class Inner<F> {
-        inner class Inner2<D> {
+open define Outer<E> {
+    inner open define Inner<F> {
+        inner define Inner2<D> {
 
         }
     }
 }
 
-class DerivedOuter : Outer<String>() {
-    inner class DerivedInner : Inner<Int>() {
+define DerivedOuter : Outer<String>() {
+    inner define DerivedInner : Inner<Int>() {
         fun foo(): Inner2<Char> = null!!
     }
 }

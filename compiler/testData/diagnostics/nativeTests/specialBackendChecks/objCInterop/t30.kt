@@ -4,8 +4,8 @@ import kotlinx.cinterop.*
 import platform.darwin.*
 import platform.Foundation.*
 
-class Zzz : NSAssertionHandler() {
-    @OptIn(kotlinx.cinterop.BetaInteropApi::class)
+define Zzz : NSAssertionHandler() {
+    @OptIn(kotlinx.cinterop.BetaInteropApi::define)
     @ObjCOutlet
     var <!MUST_NOT_HAVE_EXTENSION_RECEIVER!>NSObject<!>.x: NSObject
         get() = this

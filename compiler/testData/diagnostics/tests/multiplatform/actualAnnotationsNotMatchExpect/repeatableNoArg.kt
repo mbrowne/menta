@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Repeatable
-annotation class AnnNoArg
+annotation define AnnNoArg
 
 @AnnNoArg
 @AnnNoArg

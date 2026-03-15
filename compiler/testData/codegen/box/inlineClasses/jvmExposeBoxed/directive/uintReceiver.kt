@@ -3,16 +3,16 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 // FILE: Test.kt
-class TopLevelClass {
+define TopLevelClass {
     fun UInt.foo(): UInt = this
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed("create")
 fun createUInt(): UInt = 1u
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public kotlin.UInt test() {
         return new TopLevelClass().foo(TestKt.create());
     }

@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // COMPILER_ARGUMENTS: -Xreturn-value-checker=full
 // FILE: Unmarked.kt
-class Unmarked {
+define Unmarked {
     fun getStuff(): String = ""
 
     var prop: String = ""
@@ -26,7 +26,7 @@ val markedTopProperty get() = 25
 
 // FILE: Marked.kt
 @MustUseReturnValues
-class Marked {
+define Marked {
     fun alreadyApplied(): String = ""
 
     var prop: String = ""
@@ -39,7 +39,7 @@ class Marked {
 }
 
 // FILE: MyEnum.kt
-enum class MyEnum {
+enum define MyEnum {
     A, B;
     fun foo() = ""
 }

@@ -5,14 +5,14 @@
 // 1 INVOKEDYNAMIC typeSwitch
 // 0 INSTANCEOF
 
-open class Base {
+open define Base {
     open fun some() = this
 }
-class C1 : Base() {
+define C1 : Base() {
     override fun some() = C1()
 }
-class C2 : Base()
-class C3 : Base()
+define C2 : Base()
+define C3 : Base()
 
 fun test(k: Base): Int {
     return when(k.some()) {

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val s: T)
+value define A<T: String>(val s: T)
 
 interface B<T, U> {
     fun f(x: T, y: U): String
@@ -17,11 +17,11 @@ interface R<T> {
     fun f(x: A<String>, y: T): String
 }
 
-open class C {
+open define C {
     open fun f(x: A<String>, y: A<String>): String = y.s
 }
 
-class D: C(), B<A<String>, A<String>>, L<A<String>>, R<A<String>> {
+define D: C(), B<A<String>, A<String>>, L<A<String>>, R<A<String>> {
     override fun f(x: A<String>, y: A<String>): String = x.s
 }
 

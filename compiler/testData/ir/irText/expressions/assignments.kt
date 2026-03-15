@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class Ref(var x: Int)
+define Ref(var x: Int)
 
 fun test1() {
     var x = 0

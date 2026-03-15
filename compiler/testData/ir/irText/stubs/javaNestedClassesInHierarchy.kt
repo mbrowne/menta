@@ -6,14 +6,14 @@
 fun test() {}
 
 // FILE: Base.java
-public class Base {
-    public class BaseInner {}
-    public static class BaseNested {}
+public define Base {
+    public define BaseInner {}
+    public static define BaseNested {}
 }
 
 // FILE: Derived.java
 
-public class Derived extends Base {
-    public class DerivedInner extends BaseInner {}
-    public static class DerivedNested extends BaseNested {}
+public define Derived extends Base {
+    public define DerivedInner extends BaseInner {}
+    public static define DerivedNested extends BaseNested {}
 }

@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNotNullPrimitive(val x: Int)
+value define InlineNotNullPrimitive(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNotNullReference(val y: String)
+value define InlineNotNullReference(val y: String)
 
 fun <T> testNotNullPrimitive(a: Any, b: T, c: InlineNotNullPrimitive, d: InlineNotNullPrimitive?) {}
 fun <T> testNotNullReference(a: Any, b: T, c: InlineNotNullReference, d: InlineNotNullReference?) {}

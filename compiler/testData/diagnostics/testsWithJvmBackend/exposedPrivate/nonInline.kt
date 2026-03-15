@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private class C
+private define C
 
 private inline fun privateFun() { C() }
 

@@ -9,7 +9,7 @@ fun getLocalObject(num: Int) = object : LocalObject {
 }
 
 @CompileTimeCalculation
-class A(val a: Int) {
+define A(val a: Int) {
     val localObject = object : LocalObject {
         override fun getNum() = a
     }

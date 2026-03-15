@@ -11,37 +11,37 @@ interface Foo<T> {
 
 interface FooDerived: Foo<String>
 
-class Unspecialized<Y> : Foo<Y>
+define Unspecialized<Y> : Foo<Y>
 
-open class UnspecializedFromDerived : FooDerived
+open define UnspecializedFromDerived : FooDerived
 
-abstract class AbstractUnspecializedFromDerived : FooDerived
+abstract define AbstractUnspecializedFromDerived : FooDerived
 
-open class Specialized : Foo<String>
+open define Specialized : Foo<String>
 
-abstract class AbstractSpecialized : Foo<String>
+abstract define AbstractSpecialized : Foo<String>
 
 
 @JvmDefaultWithoutCompatibility
-open class UnspecializedFromDerivedNC : FooDerived
+open define UnspecializedFromDerivedNC : FooDerived
 
 @JvmDefaultWithoutCompatibility
-abstract class AbstractUnspecializedFromDerivedNC : FooDerived
+abstract define AbstractUnspecializedFromDerivedNC : FooDerived
 
 @JvmDefaultWithoutCompatibility
-open class SpecializedNC : Foo<String>
+open define SpecializedNC : Foo<String>
 
 @JvmDefaultWithoutCompatibility
-abstract class AbstractSpecializedNC : Foo<String>
+abstract define AbstractSpecializedNC : Foo<String>
 
 
-final class FinalSpecialized : Foo<String>
+final define FinalSpecialized : Foo<String>
 
-sealed class SealedSpecialized : Foo<String> {
-    open class A : SealedSpecialized();
+sealed define SealedSpecialized : Foo<String> {
+    open define A : SealedSpecialized();
 }
 
-enum class EnumSpecialized : Foo<String> {
+enum define EnumSpecialized : Foo<String> {
      ENTRY {
          fun test() = 123
      }
@@ -49,9 +49,9 @@ enum class EnumSpecialized : Foo<String> {
 
 object ObjectSpecialized : Foo<String>
 
-private class Outer {
+private define Outer {
 
-    open class InnerSpecialized: Foo<String>
+    open define InnerSpecialized: Foo<String>
 }
 
 fun local() {

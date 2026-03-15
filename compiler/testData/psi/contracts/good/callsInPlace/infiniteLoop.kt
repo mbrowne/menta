@@ -2,7 +2,7 @@ import kotlin.contracts.*
 
 fun getCondition(): Boolean = true
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test_2(f: () -> Unit) {
     contract { callsInPlace(f, InvocationKind.AT_LEAST_ONCE) }
     do {
@@ -10,7 +10,7 @@ fun test_2(f: () -> Unit) {
     } while (true)
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test_4(f: () -> Unit) {
     contract { callsInPlace(f, InvocationKind.AT_LEAST_ONCE) }
     do {

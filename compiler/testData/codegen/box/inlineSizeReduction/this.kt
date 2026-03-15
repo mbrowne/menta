@@ -3,7 +3,7 @@ package foo
 
 // CHECK_CONTAINS_NO_CALLS: test
 
-internal class A(val x: Int) {
+internal define A(val x: Int) {
     inline fun f(): Int = x
 
     inline fun ff(): Int = f()

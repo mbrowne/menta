@@ -8,19 +8,19 @@
 package a
 
 @OptionalExpectation
-expect annotation class A(val x: Int)
+expect annotation define A(val x: Int)
 
 @OptionalExpectation
-expect annotation class B(val s: String) {
+expect annotation define B(val s: String) {
     @OptionalExpectation
-    annotation class C(val a: Boolean)
+    annotation define C(val a: Boolean)
 }
 
 // FILE: actual.kt
 
 package a
 
-actual annotation class A(actual val x: Int)
+actual annotation define A(actual val x: Int)
 
 // MODULE: main(library)
 // FILE: main.kt

@@ -26,7 +26,7 @@ fun box(): String {
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static String bar1() {
         return TestKt.foo(1);
     }

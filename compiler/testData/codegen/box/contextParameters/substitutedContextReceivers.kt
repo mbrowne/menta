@@ -1,9 +1,9 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-class Box<E>(val x: E)
+define Box<E>(val x: E)
 
-class A<X, Y : Number> {
+define A<X, Y : Number> {
     context(box: Box<X>, y: Y)
     fun foo(): String = box.x.toString() + y.toString()
 

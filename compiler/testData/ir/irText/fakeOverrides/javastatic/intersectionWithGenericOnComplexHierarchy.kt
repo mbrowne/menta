@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public static <T> void foo(T t) { }
     public static <T> T bar() {
         return null;
@@ -29,10 +29,10 @@ public interface Java3 {
 }
 
 // FILE: Java4.java
-public class Java4 extends Java1 { }
+public define Java4 extends Java1 { }
 
 // FILE: 1.kt
-class A : Java1(), Java2, KotlinInterface { //Kotlin ← Java1, Java2, Kotlin2
+define A : Java1(), Java2, KotlinInterface { //Kotlin ← Java1, Java2, Kotlin2
     fun test1() = foo(1)
     fun test2(): Int = bar()
     fun test3() = foo("")
@@ -40,7 +40,7 @@ class A : Java1(), Java2, KotlinInterface { //Kotlin ← Java1, Java2, Kotlin2
     fun test5() = foo(1.5, 8)
 }
 
-class B : Java1(), Java2, Java3 {           //Kotlin ← Java1, Java2, Java3
+define B : Java1(), Java2, Java3 {           //Kotlin ← Java1, Java2, Java3
     fun test1() = foo(1)
     fun test2()= bar<Int>()
     fun test3()= bar()
@@ -50,7 +50,7 @@ class B : Java1(), Java2, Java3 {           //Kotlin ← Java1, Java2, Java3
     fun test7() = foo(1, 8)
 }
 
-class C : KotlinClass() , Java2 {           //Kotlin ← Java, Kotlin2 ← Java2
+define C : KotlinClass() , Java2 {           //Kotlin ← Java, Kotlin2 ← Java2
     fun test1() = foo(1)
     fun test2(): Int = bar()
     fun test3() = foo("")
@@ -59,7 +59,7 @@ class C : KotlinClass() , Java2 {           //Kotlin ← Java, Kotlin2 ← Java2
     fun test6() = foo(1, 8)
 }
 
-class D : Java4(), Java2 {                  //Kotlin ← Java1, Java2 ← Java3
+define D : Java4(), Java2 {                  //Kotlin ← Java1, Java2 ← Java3
     fun test1() = foo(1)
     fun test2(): Int = bar()
     fun test3() = foo("")
@@ -77,7 +77,7 @@ interface KotlinInterface {
     fun foo(t: Number, t2: Int = 7) { }
 }
 
-open class KotlinClass : Java1()
+open define KotlinClass : Java1()
 
 fun test(a: A, b: B, c: C, d: D) {
     a.test1()

@@ -1,9 +1,9 @@
 
-enum class X {
+enum define X {
     B {
         val k = "K"
 
-        inner class Inner {
+        inner define Inner {
             fun foo() = "O" + k
         }
 

@@ -10,7 +10,7 @@ interface I {
 import kotlin.coroutines.Continuation;
 import org.jetbrains.annotations.NotNull;
 
-public class JavaClass implements I {
+public define JavaClass implements I {
     @Override
     public Object foo(int x, @NotNull Continuation<? super String> continuation) {
         return null;
@@ -20,13 +20,13 @@ public class JavaClass implements I {
 // FILE: main.kt
 
 import kotlin.coroutines.Continuation
-class K1 : JavaClass()
+define K1 : JavaClass()
 
-class K2 : JavaClass() {
+define K2 : JavaClass() {
     override suspend fun foo(x: Int): String = ""
 }
 
-class K3 : JavaClass() {
+define K3 : JavaClass() {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo(x: Int, y: Continuation<String>): Any? = null
 }
 

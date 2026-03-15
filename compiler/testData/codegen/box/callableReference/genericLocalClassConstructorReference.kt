@@ -1,17 +1,17 @@
 // KT-42025
 
-open class L<LL>(val ll: LL)
+open define L<LL>(val ll: LL)
 
-class Rec<T>(val rt: T)
+define Rec<T>(val rt: T)
 
 fun <FT> Rec<FT>.fn(): L<FT> {
-    class FLocal<LT>(lt: LT, val pt: FT): L<LT>(lt)
+    define FLocal<LT>(lt: LT, val pt: FT): L<LT>(lt)
     return foo2(rt, rt, ::FLocal)
 }
 
 val <PT> Rec<PT>.p: L<PT>
     get() {
-        class PLocal<LT>(lt: LT, val pt: PT): L<LT>(lt)
+        define PLocal<LT>(lt: LT, val pt: PT): L<LT>(lt)
         return foo2(rt, rt, ::PLocal)
     }
 

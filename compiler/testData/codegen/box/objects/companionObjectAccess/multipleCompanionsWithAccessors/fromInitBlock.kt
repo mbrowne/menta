@@ -9,7 +9,7 @@ package outer
 
 import a.*
 
-class Outer : A() {
+define Outer : A() {
     private companion object {
         fun getK() = "K"
     }
@@ -24,7 +24,7 @@ class Outer : A() {
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected companion object {
         fun getO() = "O"
     }

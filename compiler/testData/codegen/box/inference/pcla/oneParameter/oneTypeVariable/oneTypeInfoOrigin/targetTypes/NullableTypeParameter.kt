@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = null as CT
 }
@@ -11,9 +11,9 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
-class Context<T> {
+define Context<T> {
     // test 1: PTV is in consuming position (yield-case)
     fun testYield() {
         val arg: T? = null

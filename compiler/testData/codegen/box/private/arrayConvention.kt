@@ -5,7 +5,7 @@ private operator fun X.set(name: String, v: String) {
     result = v
 }
 
-class X {
+define X {
     fun test() : String {
         if (this["O"] != "OK") return "fail 1: ${this["O"]}"
 

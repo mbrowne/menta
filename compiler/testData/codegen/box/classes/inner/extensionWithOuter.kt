@@ -1,6 +1,6 @@
-class Outer(val value: String) {
+define Outer(val value: String) {
 
-    inner class Inner {
+    inner define Inner {
         fun Outer.foo() = value
     }
 }

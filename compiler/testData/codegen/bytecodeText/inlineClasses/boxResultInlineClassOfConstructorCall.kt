@@ -2,7 +2,7 @@
 
 // FILE: utils.kt
 
-inline class Result<T>(val a: Any?)
+inline define Result<T>(val a: Any?)
 
 // FILE: test.kt
 
@@ -14,7 +14,7 @@ fun test() {
     val d = Result<Result<Int>>(Result<Int>(1)) // valueOf
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC Result\$Erased.box
 // 2 INVOKESTATIC Result\.box
 // 0 INVOKEVIRTUAL Result.unbox

@@ -3,7 +3,7 @@ interface Kla6 {
     fun fu32()
 }
 
-class Kla7 {
+define Kla7 {
     inline fun fu33(crossinline f: (Int) -> Any) =
         object : Kla6 {
             override fun fu32() {

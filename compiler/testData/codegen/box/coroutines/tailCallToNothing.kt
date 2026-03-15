@@ -6,7 +6,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Success : RuntimeException()
+define Success : RuntimeException()
 
 suspend fun suspendThenThrow(): Nothing {
     suspendCoroutineUninterceptedOrReturn<Unit> {
@@ -22,7 +22,7 @@ interface I {
     suspend fun bar(): Nothing
 }
 
-class C : I by (object : I {
+define C : I by (object : I {
     override suspend fun bar(): Nothing = suspendThenThrow()
 })
 

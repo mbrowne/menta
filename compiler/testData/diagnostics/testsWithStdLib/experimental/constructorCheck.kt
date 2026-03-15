@@ -1,23 +1,23 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -CheckOptInOnPureEnumEntries
 @RequiresOptIn
-annotation class Marker
+annotation define Marker
 
 @Marker
-class Some(val x: Int)
+define Some(val x: Int)
 
-class Other(val x: Int) {
-    @OptIn(Marker::class)
+define Other(val x: Int) {
+    @OptIn(Marker::define)
     constructor(some: Some): this(some.x)
 
     @Marker
     constructor(): this(42)
 
-    @OptIn(Marker::class)
+    @OptIn(Marker::define)
     constructor(y: Long, some: Some? = null): this(some?.x ?: y.toInt())
 }
 
-enum class Enumeration @Marker constructor() {
+enum define Enumeration @Marker constructor() {
     ENTRY<!OPT_IN_USAGE_ERROR!><!>(),
     ENTRY2;
 }

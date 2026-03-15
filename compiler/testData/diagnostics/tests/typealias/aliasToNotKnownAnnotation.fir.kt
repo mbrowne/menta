@@ -6,7 +6,7 @@
 // FILE: some/my/Ann.kt
 package some.my;
 
-annotation class Ann()
+annotation define Ann()
 
 // MODULE: alias(lib)
 // FILE: wrapper/KAnn.kt

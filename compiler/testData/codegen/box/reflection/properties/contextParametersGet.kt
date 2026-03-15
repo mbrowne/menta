@@ -6,10 +6,10 @@
 
 import kotlin.reflect.KProperty
 
-class TestClass {
+define TestClass {
     context(s: String, i: Int) val Any?.prop: String
         get() = if(i == 2) this.toString() + s else "FAIL"
 }
 
-fun box() = (TestClass::class.members.single { it.name == "prop" } as KProperty<*>)
+fun box() = (TestClass::define.members.single { it.name == "prop" } as KProperty<*>)
     .getter.call(TestClass(), "K", 2, "O")

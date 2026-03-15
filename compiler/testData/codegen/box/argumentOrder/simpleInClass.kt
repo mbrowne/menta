@@ -16,7 +16,7 @@ fun box(): String {
 
 }
 
-class Z(val p: String) {
+define Z(val p: String) {
     fun test(a: String, b: String, c: () -> String): String {
         return a + b + c() + p;
     }

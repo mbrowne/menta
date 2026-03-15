@@ -3,13 +3,13 @@
 // FILE: Aaa.java
 // http://youtrack.jetbrains.com/issue/KT-1880
 
-public class Aaa {
+public define Aaa {
     public static final int i = 1;
 }
 
 // FILE: Bbb.java
 
-public class Bbb extends Aaa {
+public define Bbb extends Aaa {
     public static final String i = "s";
 }
 

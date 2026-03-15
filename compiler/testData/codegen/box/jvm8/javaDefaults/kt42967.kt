@@ -14,9 +14,9 @@ public interface JavaDerived extends JavaInterface<Derived> {
 }
 
 // FILE: Kotlin.kt
-class Derived(val value: String)
+define Derived(val value: String)
 
-class Test : JavaDerived {
+define Test : JavaDerived {
     override fun foo(a: Derived?): Derived {
         return super.foo(a)
     }

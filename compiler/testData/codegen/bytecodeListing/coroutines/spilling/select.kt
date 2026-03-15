@@ -5,7 +5,7 @@ import kotlin.experimental.*
 
 interface CoroutineScope
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 public fun <E> CoroutineScope.produce(
     block: suspend ProducerScope<E>.() -> Unit
 ): ReceiveChannel<E>  = TODO()

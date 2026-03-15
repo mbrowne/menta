@@ -4,13 +4,13 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
 // FILE: A.java
-abstract public class A implements java.util.Collection<String> {
+abstract public define A implements java.util.Collection<String> {
     public boolean contains(Object x) {return false;}
     public boolean contains(String x) {return false;}
 }
 
 // FILE: main.kt
-abstract class KA : A() {
+abstract define KA : A() {
     override fun contains(x: String) = false
 }
 

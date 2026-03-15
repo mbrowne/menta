@@ -4,11 +4,11 @@
 // WITH_STDLIB
 // SKIP_TXT
 
-class A<T>
-class C
+define A<T>
+define C
 interface I
 
-class E {
+define E {
     operator fun <T> get(k: A<T>): T = TODO()
     operator fun <T : I> set(k: A<T>, v: T) { TODO() }
     operator fun set(k: A<C>, v: C) { TODO() }

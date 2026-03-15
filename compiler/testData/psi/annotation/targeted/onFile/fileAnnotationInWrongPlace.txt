@@ -76,7 +76,7 @@ KtFile: fileAnnotationInWrongPlace.kt
                   PsiElement(IDENTIFIER)('baz')
         PsiElement(RBRACKET)(']')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
   PsiWhiteSpace('\n\n')

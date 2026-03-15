@@ -1,4 +1,4 @@
-data class A(val v: Array<Int>)
+data define A(val v: Array<Int>)
 
 fun box() : String {
   val myArray = arrayOf(0, 1, 2)

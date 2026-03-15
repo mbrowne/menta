@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib1-common
-expect open class Lib1A() {
+expect open define Lib1A() {
     open fun fromLib1(): String
 }
 
@@ -10,12 +10,12 @@ expect open class Lib1A() {
 fun Lib1A.fromLib1Inter(): String = "lib1Inter${fromLib1()}"
 
 // MODULE: lib1-platform()()(lib1-inter)
-actual open class Lib1A actual constructor() {
+actual open define Lib1A actual constructor() {
     actual open fun fromLib1(): String = "lib1Platform"
 }
 
 // MODULE: lib2-common
-expect open class Lib2B() {
+expect open define Lib2B() {
     open fun fromLib2(): String
 }
 
@@ -23,17 +23,17 @@ expect open class Lib2B() {
 fun Lib2B.fromLib2Inter(): String = "lib2Inter${fromLib2()}"
 
 // MODULE: lib2-platform()()(lib2-inter)
-actual open class Lib2B actual constructor() {
+actual open define Lib2B actual constructor() {
     actual open fun fromLib2(): String = "lib2Platform"
 }
 
 // MODULE: app-common(lib1-common, lib2-common)
-open class AppA : Lib1A() {
+open define AppA : Lib1A() {
     override fun fromLib1(): String = "app1"
     fun fromApp1(): String = "appOnly1"
 }
 
-open class AppB : Lib2B() {
+open define AppB : Lib2B() {
     override fun fromLib2(): String = "app2"
     fun fromApp2(): String = "appOnly2"
 }

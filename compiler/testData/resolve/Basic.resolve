@@ -1,5 +1,5 @@
-~A~class A {
-  ~B~class B~B()~() {
+~A~define A {
+  ~B~define B~B()~() {
     ~B(int)~constructor(i: Int) {}
   }
 
@@ -10,8 +10,8 @@
   ~A.a~val a : `kotlin::Int`Int
 }
 
-~C~class C : `A`A {
-    ~C.B~class B : `C`C {
+~C~define C : `A`A {
+    ~C.B~define B : `C`C {
 
     }
 

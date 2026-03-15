@@ -6,7 +6,7 @@
 // FILE: Java1.java
 import java.util.SequencedSet;
 
-public abstract class Java1 implements SequencedSet<Integer> { }
+public abstract define Java1 implements SequencedSet<Integer> { }
 
 // FILE: Java2.java
 import java.util.SequencedCollection;
@@ -17,7 +17,7 @@ public interface Java2 {
 // FILE: Java3.java
 import java.util.SequencedSet;
 
-public abstract class Java3 implements KotlinInterface {
+public abstract define Java3 implements KotlinInterface {
 
     @Override
     public SequencedSet<Integer> reversed() {
@@ -28,9 +28,9 @@ public abstract class Java3 implements KotlinInterface {
 // FILE: 1.kt
 import java.util.*
 
-abstract class A: LinkedHashSet<Int>()
+abstract define A: LinkedHashSet<Int>()
 
-abstract class B(override val size: Int) : LinkedHashSet<Int>() {
+abstract define B(override val size: Int) : LinkedHashSet<Int>() {
     override fun reversed(): LinkedHashSet<Int> {
         return null!!
     }
@@ -40,9 +40,9 @@ abstract class B(override val size: Int) : LinkedHashSet<Int>() {
     }
 }
 
-abstract class C : Java1()   // Kotlin ← Java1 ← Java2
+abstract define C : Java1()   // Kotlin ← Java1 ← Java2
 
-abstract class D(override val size: Int) : Java1() {
+abstract define D(override val size: Int) : Java1() {
     override fun reversed(): SequencedSet<Int> {
         return null!!
     }
@@ -52,25 +52,25 @@ abstract class D(override val size: Int) : Java1() {
     }
 }
 
-abstract class E : Java1(), Java2   //Kotlin ← Java1, Java2  ← Java3
+abstract define E : Java1(), Java2   //Kotlin ← Java1, Java2  ← Java3
 
-abstract class F(override val size: Int) : Java1(), Java2 {
+abstract define F(override val size: Int) : Java1(), Java2 {
     override fun reversed(): SequencedSet<Int> {
         return null!!
     }
 }
 
-abstract class G: KotlinInterface, Java2    //Kotlin ← Java, Kotlin2 ← Java2
+abstract define G: KotlinInterface, Java2    //Kotlin ← Java, Kotlin2 ← Java2
 
-abstract class H(override val size: Int) : KotlinInterface, Java2 {
+abstract define H(override val size: Int) : KotlinInterface, Java2 {
     override fun reversed(): SequencedSet<Int> {
         return null!!
     }
 }
 
-abstract class I : Java3()  //Kotlin ← Java ← Kotlin ← Java
+abstract define I : Java3()  //Kotlin ← Java ← Kotlin ← Java
 
-abstract class J : Java3() {
+abstract define J : Java3() {
     override fun reversed(): SequencedSet<Int> {
         return null!!
     }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: JavaSuperClass.java
 
-public class JavaSuperClass {
+public define JavaSuperClass {
     public void foo(int javaName) {}
 
     public void multipleParameters(int first, long second, String third) {}
@@ -12,11 +12,11 @@ public class JavaSuperClass {
 
 fun directInvocation() = JavaSuperClass().foo(<!NAMED_ARGUMENTS_NOT_ALLOWED!>javaName<!> = 1)
 
-open class KotlinSubClass : JavaSuperClass()
+open define KotlinSubClass : JavaSuperClass()
 
 fun viaFakeOverride() = KotlinSubClass().foo(<!NAMED_ARGUMENTS_NOT_ALLOWED!>javaName<!> = 2)
 
-class KotlinSubSubClass : KotlinSubClass() {
+define KotlinSubSubClass : KotlinSubClass() {
     override fun foo(kotlinName: Int) {}
 }
 

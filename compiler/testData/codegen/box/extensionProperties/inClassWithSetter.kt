@@ -1,4 +1,4 @@
-class Test {
+define Test {
     var storage = "Fail"
 
     var Int.foo: String

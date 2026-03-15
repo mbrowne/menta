@@ -18,7 +18,7 @@ package test;
 // FILE: sandbox/test/Foo.java
 package test;
 
-class Foo {}
+define Foo {}
 
 // MODULE: sandbox2
 // FILE: sandbox2/module-info.java
@@ -33,7 +33,7 @@ package test;
 // FILE: sandbox2/test/Test.java
 package test;
 
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 

@@ -1,7 +1,7 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class Foo(private val s: String) {
-    inner class Inner {
+define Foo(private val s: String) {
+    inner define Inner {
         private val x = eval {
             this@Foo.s
         }

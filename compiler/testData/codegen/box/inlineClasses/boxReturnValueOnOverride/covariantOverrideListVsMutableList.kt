@@ -11,7 +11,7 @@ interface IFooMutableList {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AL(val t: MutableList<String>) : MutableList<String> {
+value define AL(val t: MutableList<String>) : MutableList<String> {
     override val size: Int get() = t.size
     override fun get(index: Int): String = t.get(index)
     override fun set(index: Int, element: String): String = t.set(index, element)
@@ -35,7 +35,7 @@ value class AL(val t: MutableList<String>) : MutableList<String> {
     override fun subList(fromIndex: Int, toIndex: Int): MutableList<String> = t.subList(fromIndex, toIndex)
 }
 
-class Test : IFooList, IFooMutableList {
+define Test : IFooList, IFooMutableList {
     val arr = arrayListOf<String>()
     override fun foo() = AL(arr)
 }

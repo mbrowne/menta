@@ -7,13 +7,13 @@ import kotlin.reflect.full.instanceParameter
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: String) {
+value define S(val value: String) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
 val default = S("-default")
 
-class C {
+define C {
     fun member(x: S, y: String, z: S?): S = x + S(y) + z!!
 
     fun memberDefault1_1(x: S = default): S = x

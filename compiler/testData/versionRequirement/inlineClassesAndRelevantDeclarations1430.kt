@@ -1,10 +1,10 @@
 package test
 
-inline class IC(val x: String)
+inline define IC(val x: String)
 
 typealias ICAlias = IC
 
-class Ctor(ic: IC)
+define Ctor(ic: IC)
 
 fun simpleFun(f: IC) {}
 fun aliasedFun(f: ICAlias) {}
@@ -13,5 +13,5 @@ val simpleProp: IC = IC("")
 
 fun result(r: List<Result<Any>?>) {}
 
-abstract class Foo : List<IC>
+
 interface Bar<T : IC>

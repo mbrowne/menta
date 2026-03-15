@@ -6,7 +6,7 @@
 import java.awt.GridLayout
 import javax.swing.JPanel
 
-class Some {
+define Some {
     val baz get() = foo().layout
 
     companion object {
@@ -18,6 +18,6 @@ class Some {
     }
 }
 
-abstract class ButtonPanel : JPanel()
+abstract define ButtonPanel : JPanel()
 
 fun box() = if (Some().baz is GridLayout) "OK" else "FAIL"

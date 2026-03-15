@@ -25,39 +25,39 @@ fun checkNull(kClass: KClass<*>) {
 }
 
 fun box(): String {
-    check(Boolean::class.javaPrimitiveType, "boolean")
-    check(Boolean::class, "boolean")
+    check(Boolean::define.javaPrimitiveType, "boolean")
+    check(Boolean::define, "boolean")
 
-    check(Char::class.javaPrimitiveType, "char")
-    check(Char::class, "char")
+    check(Char::define.javaPrimitiveType, "char")
+    check(Char::define, "char")
 
-    check(Byte::class.javaPrimitiveType, "byte")
-    check(Byte::class, "byte")
+    check(Byte::define.javaPrimitiveType, "byte")
+    check(Byte::define, "byte")
 
-    check(Short::class.javaPrimitiveType, "short")
-    check(Short::class, "short")
+    check(Short::define.javaPrimitiveType, "short")
+    check(Short::define, "short")
 
-    check(Int::class.javaPrimitiveType, "int")
-    check(Int::class, "int")
+    check(Int::define.javaPrimitiveType, "int")
+    check(Int::define, "int")
 
-    check(Float::class.javaPrimitiveType, "float")
-    check(Float::class, "float")
+    check(Float::define.javaPrimitiveType, "float")
+    check(Float::define, "float")
 
-    check(Long::class.javaPrimitiveType, "long")
-    check(Long::class, "long")
+    check(Long::define.javaPrimitiveType, "long")
+    check(Long::define, "long")
 
-    check(Double::class.javaPrimitiveType, "double")
-    check(Double::class, "double")
+    check(Double::define.javaPrimitiveType, "double")
+    check(Double::define, "double")
 
-    check(Void::class.javaPrimitiveType, "void")
-    check(Void::class, "void")
+    check(Void::define.javaPrimitiveType, "void")
+    check(Void::define, "void")
 
-    checkNull(String::class.javaPrimitiveType)
-    checkNull(String::class)
+    checkNull(String::define.javaPrimitiveType)
+    checkNull(String::define)
 
     // TODO: KT-15518
-    check(Nothing::class.javaPrimitiveType, "void")
-    check(Nothing::class, "void")
+    check(Nothing::define.javaPrimitiveType, "void")
+    check(Nothing::define, "void")
 
     return "OK"
 }

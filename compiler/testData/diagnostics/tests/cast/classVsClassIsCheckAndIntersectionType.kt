@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-76766
 
-open class A
-open class B
-open class C
+open define A
+open define B
+open define C
 
 fun test1(a: A) {
     <!USELESS_IS_CHECK!>a is B<!> && <!USELESS_IS_CHECK!>a is C<!>

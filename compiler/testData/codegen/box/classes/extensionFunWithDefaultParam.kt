@@ -1,4 +1,4 @@
-open class MyLogic {
+open define MyLogic {
     protected open val postfix = "ZZZ"
     open fun String.foo(prefix: String = "XXX"): String = transform(prefix + this + postfix)
     protected fun transform(a: String) = "$a:$a"
@@ -6,11 +6,11 @@ open class MyLogic {
         return "YYY".foo()
     }
 }
-open class MyLogicWithDifferentPostfix : MyLogic() {
+open define MyLogicWithDifferentPostfix : MyLogic() {
     override val postfix = "WWW"
 }
 
-class MyLogicSpecified : MyLogic() {
+define MyLogicSpecified : MyLogic() {
     override fun String.foo(prefix: String): String = "$prefix::$this::$postfix"
 }
 

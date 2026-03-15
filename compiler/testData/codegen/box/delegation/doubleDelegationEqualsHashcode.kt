@@ -6,15 +6,15 @@ interface A {
     override fun hashCode(): Int
 }
 
-class AImpl : A {
+define AImpl : A {
     override fun equals(other: Any?) = super.equals(other)
     override fun hashCode() = super.hashCode()
 }
 
 interface B
-class BImpl : B
+define BImpl : B
 
-class Impl : A by AImpl(), B by BImpl()
+define Impl : A by AImpl(), B by BImpl()
 
 fun box(): String {
     Impl()

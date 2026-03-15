@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Your
+define Your
 
 fun Your.foo() = Any()
 

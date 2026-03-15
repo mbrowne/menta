@@ -7,7 +7,7 @@ interface I {
     val f: (Boolean) -> String
 }
 
-class C(override val f: (Boolean) -> String) : I
+define C(override val f: (Boolean) -> String) : I
 
 object O : I by C(
     f = { flag ->

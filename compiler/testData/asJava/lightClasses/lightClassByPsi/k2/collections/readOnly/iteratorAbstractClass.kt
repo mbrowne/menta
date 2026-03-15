@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CIterator<Elem> : Iterator<Elem>
+abstract define CIterator<Elem> : Iterator<Elem>
 
-abstract class CIterator2<Elem> : Iterator<Elem> by emptyList<Elem>().iterator()
+abstract define CIterator2<Elem> : Iterator<Elem> by emptyList<Elem>().iterator()
 
-open class CIterator3<Elem> : Iterator<Elem> {
+open define CIterator3<Elem> : Iterator<Elem> {
     override fun hasNext(): Boolean {
         TODO("Not yet implemented")
     }
@@ -15,4 +15,4 @@ open class CIterator3<Elem> : Iterator<Elem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CIterator.class[remove], CIterator2.class[remove], CIterator3.class[remove]
+// LIGHT_ELEMENTS_NO_DECLARATION: CIterator.define[remove], CIterator2.define[remove], CIterator3.define[remove]

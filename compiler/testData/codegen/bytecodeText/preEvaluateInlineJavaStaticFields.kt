@@ -3,7 +3,7 @@
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class JClass {
+public define JClass {
     public final static int PrimitiveInt = 9000;
     public final static int BigPrimitiveInt = 59000;
     public final static long PrimitiveLong = 100000;
@@ -28,7 +28,7 @@ public class JClass {
 
 // FILE: test.kt
 
-enum class EClass {
+enum define EClass {
     VALUE
 }
 object KoKobject {
@@ -63,7 +63,7 @@ fun test() {
     "res5: " + KoKobject.JvmStatic
     "res6: " + KoKobject.JvmStaticString
     "res7: " + EClass.VALUE
-    "res8: " + EClass::class
+    "res8: " + EClass::define
 }
 
 // 1 LDC "res1: -2147483648 9223372036854775807 9000 59000 -8 K 100000 901 false 36.6 42.4242 :J nullable"

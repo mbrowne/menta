@@ -6,7 +6,7 @@
 var counter = 0
 
 @JvmInline
-value class MFVC(val x: Int, val y: Int) {
+value define MFVC(val x: Int, val y: Int) {
 
     fun equals(other: MFVC): Boolean {
         counter++

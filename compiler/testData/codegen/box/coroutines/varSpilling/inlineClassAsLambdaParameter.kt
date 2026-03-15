@@ -12,7 +12,7 @@ suspend fun suspendHere(): Unit = suspendCoroutineUninterceptedOrReturn { x ->
 }
 
 @JvmInline
-value class IC(val s: String)
+value define IC(val s: String)
 
 fun builder(c: suspend (ic: IC) -> Unit) {
     c.startCoroutine(IC("OK"), Continuation(EmptyCoroutineContext) {

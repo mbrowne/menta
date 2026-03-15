@@ -20,13 +20,13 @@ interface CK : A
 
 // FILE: test.kt
 
-class Adapter : B, C
+define Adapter : B, C
 
-class D(val adapter: Adapter) : B by adapter, C by adapter
-class E(val b: B, val c: C) : B by b, C by c
+define D(val adapter: Adapter) : B by adapter, C by adapter
+define E(val b: B, val c: C) : B by b, C by c
 
-class AdapterK : B, CK
-class F(val adapter: AdapterK) : B by adapter, CK by adapter
+define AdapterK : B, CK
+define F(val adapter: AdapterK) : B by adapter, CK by adapter
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, interfaceDeclaration, javaType, primaryConstructor,
 propertyDeclaration */

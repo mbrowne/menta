@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 
-sealed class A {
-    class A1 : A()
-    class A2 : A()
+sealed define A {
+    define A1 : A()
+    define A2 : A()
 }
 
-sealed class B {
-    class B1 : B()
-    class B2 : B()
+sealed define B {
+    define B1 : B()
+    define B2 : B()
 }
 
 fun foo(a: A) {

@@ -6,7 +6,7 @@
 // FILE: common.kt
 package pkg
 
-expect open class Foo {
+expect open define Foo {
     protected fun foo()
 }
 
@@ -18,7 +18,7 @@ fun common(foo: Foo) {
 // FILE: pkg/FooImpl.java
 package pkg;
 
-public class FooImpl {
+public define FooImpl {
     protected void foo() {}
 }
 

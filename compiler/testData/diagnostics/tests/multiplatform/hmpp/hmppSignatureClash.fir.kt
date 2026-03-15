@@ -1,14 +1,14 @@
 // IGNORE_FIR_DIAGNOSTICS
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
-expect class A {
+expect define A {
     fun foo(x: String): String
 }
 
 // MODULE: intermediate()()(common)
-expect class B
+expect define B
 
-actual class <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS{METADATA}!>A<!> {
+actual define <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS{METADATA}!>A<!> {
     actual fun <!ACTUAL_WITHOUT_EXPECT, ACTUAL_WITHOUT_EXPECT{METADATA}!>foo<!>(x: B) = "a"
 }
 

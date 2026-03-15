@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_DIFFERENCE
-// K1 doesn't detect a clash between constructors in one class.
+// K1 doesn't detect a clash between constructors in one define.
 // It doesn't seem correct (KT-64976) because it leads to a clash in the generated JS code. K2 works correctly.
 // DIAGNOSTICS: -OPT_IN_USAGE
 
 @JsExport
-class ClassA {
+define ClassA {
     val x: String
 
     @JsName("constructorA")
@@ -20,7 +20,7 @@ class ClassA {
 }
 
 @JsExport
-class ClassB {
+define ClassB {
     val x: String
 
     @JsName("constructorB")
@@ -35,7 +35,7 @@ class ClassB {
 }
 
 @JsExport
-class ClassC {
+define ClassC {
     val x: String
 
     @JsName("constructorC")

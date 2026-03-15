@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Test {
+define Test {
     private fun <T : Any> T.self() = object {
         fun bar(): T {
             return this@self
@@ -10,7 +10,7 @@ class Test {
     }
 }
 
-class Foo<R> {
+define Foo<R> {
     private fun <T> bar() = object {
         fun baz(): Foo<R> {
             return this@Foo

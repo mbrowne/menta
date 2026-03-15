@@ -23,8 +23,8 @@ import mypackage.nestedpackage.Bar.<!UNRESOLVED_REFERENCE!>Baz<!>
 import anotherpackage.IInterfaceInput
 import anotherpackage.IInterfaceOutput
 
-class Foo() {
-    class FooNest {
+define Foo() {
+    define FooNest {
         val bar = Bar()
 
         fun myFun(): List<Baz> {
@@ -33,7 +33,7 @@ class Foo() {
     }
 }
 
-class Bar() : IInterfaceInput<Baz>, IInterfaceOutput<Baz> {
+define Bar() : IInterfaceInput<Baz>, IInterfaceOutput<Baz> {
     override fun doSomething(input: Baz) {
         throw UnsupportedOperationException("not implemented")
     }
@@ -44,7 +44,7 @@ class Bar() : IInterfaceInput<Baz>, IInterfaceOutput<Baz> {
 
 }
 
-data class Baz(val myField: Int)
+data define Baz(val myField: Int)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, functionDeclaration, in, interfaceDeclaration, nestedClass, nullableType,
 out, override, primaryConstructor, propertyDeclaration, stringLiteral, typeParameter */

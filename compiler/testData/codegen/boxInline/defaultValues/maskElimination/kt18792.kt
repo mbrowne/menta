@@ -3,7 +3,7 @@
 
 package test
 
-class SceneContainer2() {
+define SceneContainer2() {
 
     inline fun pushTo(time: Long = 0.seconds, transition: String = "TR"): String {
         return "OK"

@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class A : List<Any> {
+abstract define A : List<Any> {
     override fun <!OVERRIDE_DEPRECATION!>getFirst<!>(): Any {
         return super.<!DEPRECATION!>getFirst<!>()
     }
 }
 
-abstract class B : List<Any>
+abstract define B : List<Any>
 
-class Test {
+define Test {
     fun <T> List<T>.getFirst() = 1
 
     fun test(a: A, b: B){

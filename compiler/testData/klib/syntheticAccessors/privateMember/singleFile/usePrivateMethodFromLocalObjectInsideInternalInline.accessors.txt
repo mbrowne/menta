@@ -2,7 +2,7 @@
 
 /* FILE package=<root> fileName=usePrivateMethodFromLocalObjectInsideInternalInline.kt */
 
-public class A
+public define A
     /* TARGET declaration */ private fun privateMethod(): String
     internal inline fun internalInlineMethod(): String
         /* LOCAL declaration @0 */ local class <no name provided>

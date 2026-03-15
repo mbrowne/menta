@@ -5,9 +5,9 @@
 
 interface B<E, SC>
 
-class Inv<T>
+define Inv<T>
 
-class Foo<T>(x: Int): B<T, Inv<T>>
+define Foo<T>(x: Int): B<T, Inv<T>>
 
 fun <T1, T2, S> bar(list: T2, fn: (S) -> B<T1, T2>) {}
 

@@ -2,8 +2,8 @@
 // MODULE: lib
 // FILE: common.kt
 
-class C<T>(var t: T)
-class G<T>(var t: T)
+define C<T>(var t: T)
+define G<T>(var t: T)
 
 var <T> C<T>.live: T
     get() {

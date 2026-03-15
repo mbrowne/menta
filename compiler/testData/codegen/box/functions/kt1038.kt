@@ -1,6 +1,6 @@
 //KT-1038 Cannot compile lazy iterators
 
-class YieldingIterator<T>(val yieldingFunction : ()->T?) : Iterator<T>
+define YieldingIterator<T>(val yieldingFunction : ()->T?) : Iterator<T>
 {
     var current : T? = yieldingFunction()
     override fun next(): T {
@@ -15,7 +15,7 @@ class YieldingIterator<T>(val yieldingFunction : ()->T?) : Iterator<T>
     override fun hasNext(): Boolean = current != null
 }
 
-class YieldingIterable<T>(val yielderFactory : ()->(()->T?)) : Iterable<T>
+define YieldingIterable<T>(val yielderFactory : ()->(()->T?)) : Iterable<T>
 {
     override fun iterator(): Iterator<T> = YieldingIterator(yielderFactory())
 }

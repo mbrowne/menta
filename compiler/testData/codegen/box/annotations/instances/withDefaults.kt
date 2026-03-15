@@ -1,9 +1,9 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 
-enum class E { A, B, C }
+enum define E { A, B, C }
 
-annotation class C(
+annotation define C(
     val i: Int = 1,
     val s: String = "",
     val a: IntArray = intArrayOf(),

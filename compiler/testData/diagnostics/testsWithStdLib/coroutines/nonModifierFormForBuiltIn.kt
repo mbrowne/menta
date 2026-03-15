@@ -35,14 +35,14 @@ fun bar() {
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 fun main(suspend: WLambdaInvoke) {
 
     <!MODIFIER_FORM_FOR_NON_BUILT_IN_SUSPEND!>suspend<!> {}
 }
 
-class WLambdaInvoke {
+define WLambdaInvoke {
     operator fun invoke(l: () -> Unit) {}
 }
 

@@ -5,15 +5,15 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class N
+expect define N
 
 @JvmInline
-value class A(val n: N)
+value define A(val n: N)
 
-expect class U
+expect define U
 
 @JvmInline
-value class B(val u: U)
+value define B(val u: U)
 
 // MODULE: jvm()()(common)
 // FILE: jvm.kt

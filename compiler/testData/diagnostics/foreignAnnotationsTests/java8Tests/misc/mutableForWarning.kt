@@ -11,7 +11,7 @@ public @interface Mutable {}
 import java.util.List;
 import org.jetbrains.annotations.Mutable;
 
-public class J {
+public define J {
     @Mutable
     public static List<String> foo() {
         return null;
@@ -29,6 +29,6 @@ fun main() {
 
 fun takeReadonly(l: List<String>) {}
 
-abstract class K : J() {
+abstract define K : J() {
     abstract override fun bar(): List<String>
 }

@@ -23,7 +23,7 @@ interface KotlinInterface : UExpression {
     }
 }
 
-class KotlinClass : UExpression {
+define KotlinClass : UExpression {
     override fun evaluate(): Any? {
         return super.evaluate()
     }

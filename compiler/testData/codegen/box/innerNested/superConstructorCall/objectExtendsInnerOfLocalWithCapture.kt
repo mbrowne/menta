@@ -1,6 +1,6 @@
 fun box(): String {
-    class Local {
-        open inner class Inner(val s: String) {
+    define Local {
+        open inner define Inner(val s: String) {
             open fun result() = "Fail"
         }
 

@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo(zzz: Int) {
+expect define Foo(zzz: Int) {
     constructor(aaa: Boolean)
 
     fun f1(xxx: String): String
@@ -21,7 +21,7 @@ fun testCommon() {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo actual constructor(val aaa: Boolean) {
+actual define Foo actual constructor(val aaa: Boolean) {
     actual constructor(zzz: Int) : this(zzz == 0)
 
     actual fun f1(xxx: String) = xxx

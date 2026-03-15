@@ -12,7 +12,7 @@ interface AB1 : A
 interface AB2 : A
 interface AB3 : AB1, AB2
 
-open class B : AB3
+open define B : AB3
 
 // MODULE: main(library)
 // JVM_DEFAULT_MODE: enable
@@ -31,6 +31,6 @@ interface CD1 : C
 interface CD2 : C
 interface CD3 : CD1, CD2
 
-class D : B(), CD3
+define D : B(), CD3
 
 fun box(): String = D().f()

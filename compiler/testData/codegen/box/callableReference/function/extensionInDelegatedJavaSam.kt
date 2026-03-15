@@ -6,7 +6,7 @@ public interface Sam  {
 // FILE: 1.kt
 fun String.foo(): String { return this }
 
-class Derived(b: Sam) : Sam by b
+define Derived(b: Sam) : Sam by b
 
 fun box(): String {
     val a = Derived(Sam(String::foo))

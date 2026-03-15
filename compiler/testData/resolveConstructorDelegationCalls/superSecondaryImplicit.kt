@@ -1,7 +1,7 @@
-open class B {
+open define B {
     constructor() {}
 }
 interface C
-class A : B, C {
+define A : B, C {
     <caret>constructor() { }
 }

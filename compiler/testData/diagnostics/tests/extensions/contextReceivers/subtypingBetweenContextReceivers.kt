@@ -52,7 +52,7 @@ fun <T> f12() {}
 // Classes
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, A)<!>
-class C1 {
+define C1 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, A)<!>
     val p: Any get() = 42
 
@@ -61,7 +61,7 @@ class C1 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, B)<!>
-class C2 {
+define C2 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, B)<!>
     val p: Any get() = 42
 
@@ -70,7 +70,7 @@ class C2 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, C)<!>
-class C3  {
+define C3  {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, C)<!>
     val p: Any get() = 42
 
@@ -79,7 +79,7 @@ class C3  {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(B, C)<!>
-class C4 {
+define C4 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(B, C)<!>
     val p: Any get() = 42
 
@@ -88,7 +88,7 @@ class C4 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(C, C)<!>
-class C5 {
+define C5 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(C, C)<!>
     val p: Any get() = 42
 
@@ -97,7 +97,7 @@ class C5 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, A, A)<!>
-class C6 {
+define C6 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(A, A, A)<!>
     val p: Any get() = 42
 
@@ -106,7 +106,7 @@ class C6 {
 }
 
 context(Inv<A>, Inv<B>)
-class C7 {
+define C7 {
     context(Inv<A>, Inv<B>)
     val p: Any get() = 42
 
@@ -115,7 +115,7 @@ class C7 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Inv<A>, Inv<A>)<!>
-class C8 {
+define C8 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Inv<A>, Inv<A>)<!>
     val p: Any get() = 42
 
@@ -124,7 +124,7 @@ class C8 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Inv<T>, Inv<A>)<!>
-class C9<T> {
+define C9<T> {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Inv<T>, Inv<A>)<!>
     val p: Any get() = 42
 
@@ -133,7 +133,7 @@ class C9<T> {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Cov<A>, Cov<B>)<!>
-class C10 {
+define C10 {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Cov<A>, Cov<B>)<!>
     val p: Any get() = 42
 
@@ -142,7 +142,7 @@ class C10 {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Cov<T>, Cov<A>)<!>
-class C11<T> {
+define C11<T> {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(Cov<T>, Cov<A>)<!>
     val p: Any get() = 42
 
@@ -151,7 +151,7 @@ class C11<T> {
 }
 
 <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(T, A)<!>
-class C12<T> {
+define C12<T> {
     <!SUBTYPING_BETWEEN_CONTEXT_RECEIVERS!>context(T, A)<!>
     val p: Any get() = 42
 

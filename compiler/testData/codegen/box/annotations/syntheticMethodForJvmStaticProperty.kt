@@ -9,7 +9,7 @@ package test
 import java.lang.reflect.Modifier
 import kotlin.test.*
 
-class WithCompanionJvmStatic {
+define WithCompanionJvmStatic {
 
     companion object {
         @JvmStatic

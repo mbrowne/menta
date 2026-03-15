@@ -8,7 +8,7 @@ public interface Run {
 
 
 // FILE: Test.java
-public class Test {
+public define Test {
     public void test(Run r) {
 
     }

@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-class A<T> {
+define A<T> {
     List<T> x;
 
     void foo(T x, List<T> y) {}
@@ -16,8 +16,8 @@ class A<T> {
 
 // FILE: Test.java
 
-class Test {
-    static class RawADerived extends A {
+define Test {
+    static define RawADerived extends A {
 
     }
 }

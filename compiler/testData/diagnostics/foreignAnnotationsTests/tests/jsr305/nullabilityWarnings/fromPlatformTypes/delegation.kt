@@ -3,7 +3,7 @@
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     @MyNonnull
     public static List<String> staticNN;
     @MyNullable
@@ -12,6 +12,6 @@ public class J {
 }
 
 // FILE: k.kt
-class A : List<String> by J.staticNN
-class B : List<String> by <!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>J.staticN<!>
-class C : List<String> by J.staticJ
+define A : List<String> by J.staticNN
+define B : List<String> by <!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>J.staticN<!>
+define C : List<String> by J.staticJ

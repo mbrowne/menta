@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-data class MyContainer(var i: Int)
+data define MyContainer(var i: Int)
 
 var operationScore = 0
 

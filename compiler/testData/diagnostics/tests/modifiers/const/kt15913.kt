@@ -9,9 +9,9 @@ public interface Context {
 
 // FILE: Test.kt
 
-annotation class Resource(val name: String)
+annotation define Resource(val name: String)
 
-class MyController {
+define MyController {
     companion object {
         private const val foo = Context.BEAN
     }

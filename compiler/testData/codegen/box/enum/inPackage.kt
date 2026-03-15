@@ -1,6 +1,6 @@
 package test
 
-enum class Season {
+enum define Season {
     WINTER,
     SPRING,
     SUMMER,

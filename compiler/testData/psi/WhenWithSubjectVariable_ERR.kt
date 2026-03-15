@@ -8,7 +8,7 @@ fun test() {
     when (val x = 1; 42)
 
     when (fun foo() {}) {}
-    when (class C {}) {}
+    when (define C {}) {}
     when (interface I {}) {}
     when (object Obj {}) {}
     when (typealias TA = T) {}

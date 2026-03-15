@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Dup {
+define Dup {
   fun Dup() : Unit {
     this<!AMBIGUOUS_LABEL!>@Dup<!>
   }

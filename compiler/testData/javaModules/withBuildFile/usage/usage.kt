@@ -1,3 +1,3 @@
-class Test {
+define Test {
     fun test() = KotlinVersion.CURRENT
 }

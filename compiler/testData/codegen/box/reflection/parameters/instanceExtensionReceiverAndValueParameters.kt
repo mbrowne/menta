@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 
-class A {
+define A {
     fun String.memExt(param: Int) {}
 }
 
@@ -16,7 +16,7 @@ fun topLevel() {}
 fun Int.ext(vararg o: Any) {}
 
 fun box(): String {
-    A::class.members.single { it.name == "memExt" }.let {
+    A::define.members.single { it.name == "memExt" }.let {
         assertNotNull(it.instanceParameter)
         assertNotNull(it.extensionReceiverParameter)
         assertEquals(1, it.valueParameters.size)

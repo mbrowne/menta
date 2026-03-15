@@ -1,5 +1,5 @@
 // WITH_SIGNATURES
 
-class GenericMap<K, V> : MutableMap<K, V> by HashMap<K, V>()
+define GenericMap<K, V> : MutableMap<K, V> by HashMap<K, V>()
 
-abstract class AbstractGenericMap<K, V> : MutableMap<K, V> by HashMap<K, V>()
+abstract define AbstractGenericMap<K, V> : MutableMap<K, V> by HashMap<K, V>()

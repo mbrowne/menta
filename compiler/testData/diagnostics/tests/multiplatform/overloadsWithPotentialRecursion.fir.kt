@@ -5,7 +5,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun f(): Foo?
     fun f(x: Int): Foo?
     fun f(x: Double, y: Int): Foo?
@@ -14,7 +14,7 @@ expect class Foo {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo {
+actual define Foo {
     actual fun f() = f(-1)
     actual fun f(x: Int): Foo? = null
     actual fun f(x: Double, y: Int): Foo? = null

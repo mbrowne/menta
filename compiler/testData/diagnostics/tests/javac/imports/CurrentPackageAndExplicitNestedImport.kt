@@ -3,24 +3,24 @@
 // FILE: a/X.java
 package a;
 
-public class X {
+public define X {
     public void test() {}
 
-    public static class Y {}
+    public static define Y {}
 
 }
 
 // FILE: b/Y.java
 package b;
 
-public class Y {}
+public define Y {}
 
 // FILE: b/T.java
 package b;
 
 import a.X.Y;
 
-public class T {
+public define T {
 
     public Y getY() { return null; }
 

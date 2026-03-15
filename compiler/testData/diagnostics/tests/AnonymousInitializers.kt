@@ -12,7 +12,7 @@ interface NoC {
   }
 }
 
-class WithC() {
+define WithC() {
   val x : Int = 1
   init {
     val b = x

@@ -2,7 +2,7 @@
 // JVM_TARGET: 1.8
 // WITH_STDLIB
 @Target(AnnotationTarget.PROPERTY)
-annotation class Foo
+annotation define Foo
 
 interface Deprecated {
 

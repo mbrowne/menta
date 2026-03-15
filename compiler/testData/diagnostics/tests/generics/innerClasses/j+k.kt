@@ -4,8 +4,8 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
 // FILE: Outer.java
 
-public class Outer<E> {
-    public class Inner<F> {
+public define Outer<E> {
+    public define Inner<F> {
         E foo() {}
         F bar() {}
 

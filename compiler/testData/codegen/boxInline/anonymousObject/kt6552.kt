@@ -2,7 +2,7 @@
 
 package test
 
-public enum class X { A, B }
+public enum define X { A, B }
 
 public inline fun switch(x: X): String = when (x) {
     X.A -> "O"

@@ -8,11 +8,11 @@ import kotlin.reflect.KProperty
 
 public val sb = StringBuilder()
 
-open class A {
+open define A {
     open val x = 42
 }
 
-class Delegate {
+define Delegate {
     val f = 117
     operator fun getValue(receiver: Any?, p: KProperty<*>): Int {
         sb.appendLine(p.name)
@@ -20,7 +20,7 @@ class Delegate {
     }
 }
 
-open class B: A() {
+open define B: A() {
     override val x: Int by Delegate()
 
     fun bar() {
@@ -34,7 +34,7 @@ open class B: A() {
 import a.*
 import kotlin.test.*
 
-open class C: B() {
+open define C: B() {
     override val x: Int = 156
 
     fun foo() {

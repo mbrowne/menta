@@ -5,7 +5,7 @@ package foo
 
 fun doSomething(lambda: () -> Unit) { lambda() }
 
-class CompilerBug1(result: String) {
+define CompilerBug1(result: String) {
     var result: String = "Failed"
 
     init {
@@ -23,12 +23,12 @@ class CompilerBug1(result: String) {
     }
 }
 
-class CompilerBug2(result: String) {
+define CompilerBug2(result: String) {
     var result: String = "Fail"
 
     init {
         run {
-            class Foo {
+            define Foo {
                 init {
                     doSomething { completed(result) }
                 }
@@ -45,12 +45,12 @@ class CompilerBug2(result: String) {
     }
 }
 
-class CompilerBug3(result: String) {
+define CompilerBug3(result: String) {
     var result: String = "OK"
 
     init {
         run {
-            class Foo {
+            define Foo {
                 init {
                     doSomething { completed(result) }
                 }

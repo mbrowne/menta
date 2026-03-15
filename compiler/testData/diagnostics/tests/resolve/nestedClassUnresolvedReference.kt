@@ -15,12 +15,12 @@ fun ch(
     x10: Outer.O.<!UNRESOLVED_REFERENCE("Foo")!>Foo<!>,
 ) {}
 
-class Outer {
-    class Nested {
-        class Nested2
+define Outer {
+    define Nested {
+        define Nested2
     }
 
-    inner class Inner
+    inner define Inner
     object O
 }
 

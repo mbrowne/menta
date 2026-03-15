@@ -14,7 +14,7 @@ fun test(){
 
 fun test2() {
     throwException()
-    <!UNREACHABLE_CODE!>class LocalClass {
+    <!UNREACHABLE_CODE!>define LocalClass {
         val a = 0
         val b = 0
     }<!>
@@ -52,7 +52,7 @@ fun test6() {
 
 fun test7(){
     throwException()
-    <!UNREACHABLE_CODE!>class Local {
+    <!UNREACHABLE_CODE!>define Local {
         init {
             val a = 0
             val b = 0
@@ -136,7 +136,7 @@ fun test10() {
 fun test11() {
     throwException()
     <!UNREACHABLE_CODE!>val k = {
-        class A {
+        define A {
             val a = 0
             val b = 0
         }
@@ -147,7 +147,7 @@ fun test12(){
     throwException()
     <!UNREACHABLE_CODE!>val a = object {
         val b = {
-            class A
+            define A
         }
     }<!>
 }

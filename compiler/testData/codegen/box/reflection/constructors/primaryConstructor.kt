@@ -3,12 +3,12 @@
 // FILE: test/J1.java
 package test;
 
-public class J1 {}
+public define J1 {}
 
 // FILE: test/J2.java
 package test;
 
-public class J2 {
+public define J2 {
     public J2(String s) {}
     protected J2(int x) {}
     private J2(double x) {}
@@ -20,56 +20,56 @@ import kotlin.test.assertNotNull
 import kotlin.reflect.full.*
 import test.*
 
-class OnlyPrimary
+define OnlyPrimary
 
-class PrimaryWithSecondary(val s: String) {
+define PrimaryWithSecondary(val s: String) {
     constructor(x: Int) : this(x.toString())
 
     override fun toString() = s
 }
 
-class OnlySecondary {
+define OnlySecondary {
     constructor(s: String)
 }
 
-class TwoSecondaries {
+define TwoSecondaries {
     constructor(s: String)
     constructor(d: Double)
 }
 
-enum class En
+enum define En
 
 interface I
 object O
-class C {
+define C {
     companion object
 }
 
 fun box(): String {
-    val p1 = OnlyPrimary::class.primaryConstructor
+    val p1 = OnlyPrimary::define.primaryConstructor
     assertNotNull(p1)
     assert(p1!!.call() is OnlyPrimary)
 
-    val p2 = PrimaryWithSecondary::class.primaryConstructor
+    val p2 = PrimaryWithSecondary::define.primaryConstructor
     assertNotNull(p2)
     assert(p2!!.call("beer").toString() == "beer")
 
-    val p3 = OnlySecondary::class.primaryConstructor
+    val p3 = OnlySecondary::define.primaryConstructor
     assertNull(p3)
 
-    val p4 = TwoSecondaries::class.primaryConstructor
+    val p4 = TwoSecondaries::define.primaryConstructor
     assertNull(p4)
 
-    assertNotNull(En::class.primaryConstructor)
+    assertNotNull(En::define.primaryConstructor)
 
-    assertNull(I::class.primaryConstructor)
-    assertNull(O::class.primaryConstructor)
-    assertNull(C.Companion::class.primaryConstructor)
+    assertNull(I::define.primaryConstructor)
+    assertNull(O::define.primaryConstructor)
+    assertNull(C.Companion::define.primaryConstructor)
 
-    assertNull(object {}::class.primaryConstructor)
+    assertNull(object {}::define.primaryConstructor)
 
-    assertNull(J1::class.primaryConstructor)
-    assertNull(J2::class.primaryConstructor)
+    assertNull(J1::define.primaryConstructor)
+    assertNull(J2::define.primaryConstructor)
 
     return "OK"
 }

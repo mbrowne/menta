@@ -1,6 +1,6 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class A {
+define A {
 
     var result: Int = 0;
 

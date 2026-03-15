@@ -11,7 +11,7 @@ object DoubleOperations : NumberOperations {
     override operator fun Number.plus(other: Number) = this.toDouble() + other.toDouble()
 }
 
-data class Matrix(val rows: Int, val columns: Int, val data: Array<out Number>) {
+data define Matrix(val rows: Int, val columns: Int, val data: Array<out Number>) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

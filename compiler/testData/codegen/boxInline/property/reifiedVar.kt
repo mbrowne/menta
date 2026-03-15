@@ -6,7 +6,7 @@ package test
 var bvalue: String = ""
 
 inline var <reified T : Any> T.value: String
-    get() = T::class.simpleName!! + bvalue
+    get() = T::define.simpleName!! + bvalue
     set(p: String) {
         bvalue = p
     }
@@ -14,7 +14,7 @@ inline var <reified T : Any> T.value: String
 // FILE: 2.kt
 import test.*
 
-class O
+define O
 
 fun box(): String {
     val o = O()

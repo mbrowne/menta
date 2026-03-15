@@ -4,9 +4,9 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class GenericFunInterfaceWithInlineAnyKt\$box\$t\$1
+// 1 define GenericFunInterfaceWithInlineAnyKt\$box\$t\$1
 
-inline class Z(val value: Any)
+inline define Z(val value: Any)
 
 fun interface IFoo<T> {
     fun foo(x: T): T

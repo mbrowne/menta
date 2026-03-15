@@ -1,7 +1,7 @@
 val <T> T.valProp: T
     get() = this
 
-class A {
+define A {
     val int: Int = 0
     val long: Long = 0.toLong()
     val short: Short = 0.toShort()

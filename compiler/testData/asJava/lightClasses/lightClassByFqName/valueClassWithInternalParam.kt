@@ -3,7 +3,7 @@
 // LIBRARY_PLATFORMS: JVM
 package pack
 
-class OriginalClass
+define OriginalClass
 
 @JvmInline
-value class ValueClass(internal val value: OriginalClass)
+value define ValueClass(internal val value: OriginalClass)

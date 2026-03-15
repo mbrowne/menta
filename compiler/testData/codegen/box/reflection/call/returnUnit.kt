@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 fun foo() {}
 
-class A {
+define A {
     fun bar() {}
 }
 
@@ -19,7 +19,7 @@ fun nullableUnit(unit: Boolean): Unit? = if (unit) Unit else null
 fun box(): String {
     assertEquals(Unit, ::foo.call())
     assertEquals(Unit, A::bar.call(A()))
-    assertEquals(Unit, O::class.members.single { it.name == "baz" }.call(O))
+    assertEquals(Unit, O::define.members.single { it.name == "baz" }.call(O))
 
     assertEquals(Unit, (::nullableUnit).call(true))
     assertEquals(null, (::nullableUnit).call(false))

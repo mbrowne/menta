@@ -2,7 +2,7 @@
 package test
 import kotlin.coroutines.*
 
-data class Modifiers(val x: Int) {
+data define Modifiers(val x: Int) {
     external fun extFun()
 
     var extVar: Int = 1
@@ -18,7 +18,7 @@ data class Modifiers(val x: Int) {
 
     override operator fun equals(other: Any?) = false
 
-    annotation class Ann
+    annotation define Ann
 
     suspend fun suspend(x: Continuation<Int>) {}
 

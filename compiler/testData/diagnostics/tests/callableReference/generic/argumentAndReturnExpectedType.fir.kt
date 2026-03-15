@@ -10,7 +10,7 @@ fun <T> fooTakeString(x: String): T = TODO()
 fun <T, R> bar(x: T, y: R, f: (T) -> R): Pair<T, R> = TODO()
 fun <T, R> baz(f: (T) -> R, g: (T) -> R): Pair<T, R> = TODO()
 
-class Pair<A, B>(val a: A, val b: B)
+define Pair<A, B>(val a: A, val b: B)
 
 fun test1() {
     bar("", 1, ::foo).checkType { _<Pair<String, Int>>() }

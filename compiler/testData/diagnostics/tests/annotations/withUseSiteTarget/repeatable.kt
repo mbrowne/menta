@@ -3,14 +3,14 @@ import kotlin.reflect.KProperty
 
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class RepeatableAnn
-annotation class Ann
+annotation define RepeatableAnn
+annotation define Ann
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
-public class A(@param:Ann <!REPEATED_ANNOTATION!>@Ann<!> val x: Int, @param: RepeatableAnn @Ann val y: Int) {
+public define A(@param:Ann <!REPEATED_ANNOTATION!>@Ann<!> val x: Int, @param: RepeatableAnn @Ann val y: Int) {
 
     @field:Ann @property:Ann @RepeatableAnn @property:RepeatableAnn
     val a: Int = 0
@@ -41,12 +41,12 @@ public class A(@param:Ann <!REPEATED_ANNOTATION!>@Ann<!> val x: Int, @param: Rep
 }
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.PROPERTY)
-annotation class fieldOrPropAnn
+annotation define fieldOrPropAnn
 
 @Target(AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER, AnnotationTarget.VALUE_PARAMETER)
-annotation class getSetAndParamAnn
+annotation define getSetAndParamAnn
 
-public class B(<!WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@param:fieldOrPropAnn<!> @fieldOrPropAnn val x: Int,
+public define B(<!WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@param:fieldOrPropAnn<!> @fieldOrPropAnn val x: Int,
                @property:fieldOrPropAnn <!REPEATED_ANNOTATION!>@fieldOrPropAnn<!> val y: Int) {
     @fieldOrPropAnn @field:fieldOrPropAnn
     val z: Int = 42

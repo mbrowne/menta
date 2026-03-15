@@ -3,7 +3,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public static void deinitialize(Foo foo) {
         foo.bar = null;
     }
@@ -11,7 +11,7 @@ public class J {
 
 // FILE: main.kt
 
-class Foo {
+define Foo {
     lateinit var bar: String
 
     fun test(): String {

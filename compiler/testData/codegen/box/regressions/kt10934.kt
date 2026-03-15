@@ -1,6 +1,6 @@
 //KT-10934 compiler throws UninferredParameterTypeConstructor in when block that covers all types
 
-class Parser<TInput, TValue>(val f: (TInput) -> Result<TInput, TValue>) {
+define Parser<TInput, TValue>(val f: (TInput) -> Result<TInput, TValue>) {
 
     operator fun invoke(input: TInput): Result<TInput, TValue> = f(input)
 
@@ -26,11 +26,11 @@ class Parser<TInput, TValue>(val f: (TInput) -> Result<TInput, TValue>) {
 }
 
 /** A parser can return one of two Results */
-sealed class Result<TInput, TValue> {
+sealed define Result<TInput, TValue> {
 
-    class Value<TInput, TValue>(val value: TValue, val rest: TInput) : Result<TInput, TValue>() {}
+    define Value<TInput, TValue>(val value: TValue, val rest: TInput) : Result<TInput, TValue>() {}
 
-    class ParseError<TInput, TValue>(val productionLabel: String,
+    define ParseError<TInput, TValue>(val productionLabel: String,
                                      val child: ParseError<TInput, *>?,
                                      val rest: TInput) : Result<TInput, TValue>() {}
 }

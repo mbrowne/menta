@@ -3,14 +3,14 @@
 //KT-3833 Invoke method not working inside companion object?
 package m
 
-class Either1 {
-    class Left() {
+define Either1 {
+    define Left() {
         fun match(left: () -> Unit) {
             left()
         }
     }
 
-    inner class Right() {
+    inner define Right() {
         fun match(right: () -> Unit) {
             right()
         }
@@ -18,7 +18,7 @@ class Either1 {
 }
 
 
-class X {
+define X {
     operator fun invoke() {
     }
 }
@@ -27,7 +27,7 @@ object Foo{
     val v : X = X()
 }
 
-class C{
+define C{
     companion object {
         fun f(){
             Foo.v()

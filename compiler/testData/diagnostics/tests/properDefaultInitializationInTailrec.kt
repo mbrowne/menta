@@ -7,7 +7,7 @@ fun withEffects(): String = "OK"
 
 const val Z = "123"
 
-enum class EnumA {
+enum define EnumA {
     A
 }
 
@@ -36,7 +36,7 @@ tailrec fun foo6(x: String = withEffects(), y: EnumA = EnumA.A) {
     foo6(x, y)
 }
 
-tailrec fun foo7(x: String = withEffects(), y: KClass<out EnumA> = EnumA.A::class) {
+tailrec fun foo7(x: String = withEffects(), y: KClass<out EnumA> = EnumA.A::define) {
     foo7(x, y)
 }
 

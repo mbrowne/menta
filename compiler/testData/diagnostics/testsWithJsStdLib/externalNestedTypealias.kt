@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +NestedTypeAliases
-external class A
-class B
+external define A
+define B
 
 external interface I {
     typealias Foo = A

@@ -3,9 +3,9 @@
 // MODULE: common
 // FILE: common.kt
 
-class C() : I1, C1()
+define C() : I1, C1()
 
-expect open class C1() {
+expect open define C1() {
     fun o(): String
 
     val k: String
@@ -23,7 +23,7 @@ fun f2(x: I1) = x.k
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual open class C1 {
+actual open define C1 {
     actual fun o() = "O"
 
     actual val k = "K"

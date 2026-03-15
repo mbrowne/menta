@@ -4,9 +4,9 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class LambdaWithInlineAnyKt\$box\$t\$1
+// 1 define LambdaWithInlineAnyKt\$box\$t\$1
 
-inline class Z(val value: Any)
+inline define Z(val value: Any)
 
 fun foo1(fs: (Z) -> Z) = fs(Z(1))
 

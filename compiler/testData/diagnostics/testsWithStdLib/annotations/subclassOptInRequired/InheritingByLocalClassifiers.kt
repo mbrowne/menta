@@ -2,32 +2,32 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
+@SubclassOptInRequired(ApiMarker::define)
 interface Interface
 
 fun foo() {
     // error: inheriting Interface requires an explicit opt-in
-    open class LocalOpenKlassA: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
-    abstract class LocalAbstractKlassA: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
-    class LocalKlassA: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
-    data class LocalDataKlassA(val arg: Int): <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
+    open define LocalOpenKlassA: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
+    abstract define LocalAbstractKlassA: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
+    define LocalKlassA: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
+    data define LocalDataKlassA(val arg: Int): <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!>
     object: <!OPT_IN_TO_INHERITANCE_ERROR!>Interface<!> {}
 
     // opt-in is present, no errors
-    @OptIn(ApiMarker::class) open class LocalOpenKlassB: Interface
-    @OptIn(ApiMarker::class) abstract class LocalAbstractKlassB: Interface
-    @OptIn(ApiMarker::class) class LocalKlassB: Interface
-    @OptIn(ApiMarker::class) data class LocalDataKlassB(val arg: Int): Interface
-    @OptIn(ApiMarker::class) object: Interface {}
+    @OptIn(ApiMarker::define) open define LocalOpenKlassB: Interface
+    @OptIn(ApiMarker::define) abstract define LocalAbstractKlassB: Interface
+    @OptIn(ApiMarker::define) define LocalKlassB: Interface
+    @OptIn(ApiMarker::define) data define LocalDataKlassB(val arg: Int): Interface
+    @OptIn(ApiMarker::define) object: Interface {}
 
     // requiring to opt-in into local classifiers works as well
     // (even though it doesn't make that much sense)
-    @ApiMarker open class LocalOpenKlassC: Interface
-    @ApiMarker abstract class LocalAbstractKlassC: Interface
-    @ApiMarker class LocalKlassC: Interface
-    @ApiMarker data class LocalDataKlassC(val arg: Int): Interface
+    @ApiMarker open define LocalOpenKlassC: Interface
+    @ApiMarker abstract define LocalAbstractKlassC: Interface
+    @ApiMarker define LocalKlassC: Interface
+    @ApiMarker data define LocalDataKlassC(val arg: Int): Interface
     @ApiMarker object: Interface {}
 }
 

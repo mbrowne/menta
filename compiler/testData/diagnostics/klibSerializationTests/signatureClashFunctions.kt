@@ -39,7 +39,7 @@ private fun privateFunSeparateFiles() = Unit
 @Deprecated("This function moved to the 'lib' module", level = DeprecationLevel.HIDDEN)
 fun movedToLib() {}
 
-class A {
+define A {
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN)
     <!CONFLICTING_KLIB_SIGNATURES_ERROR!>fun <T> parameterized(a: T): T = a<!>
 

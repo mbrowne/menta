@@ -7,6 +7,6 @@
 import java.lang.annotation.Repeatable as JvmRepeatable
 
 @Repeatable
-@JvmRepeatable(TwoContainer::class)
-annotation class Two(val name: String)
-annotation class TwoContainer(val value: Array<Two>)
+@JvmRepeatable(TwoContainer::define)
+annotation define Two(val name: String)
+annotation define TwoContainer(val value: Array<Two>)

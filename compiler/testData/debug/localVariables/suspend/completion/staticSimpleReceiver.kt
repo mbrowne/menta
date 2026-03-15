@@ -1,7 +1,7 @@
 
 
 // FILE: test.kt
-class A
+define A
 
 suspend fun A.foo() {}
 

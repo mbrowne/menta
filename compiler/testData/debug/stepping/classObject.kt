@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-class A {
+define A {
     companion object {
         val prop0 = 1
         val prop1 = 2

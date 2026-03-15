@@ -4,12 +4,12 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class CommonClass(sourceCommonInt: Int, sourceCommonStr: String) {
+expect define CommonClass(sourceCommonInt: Int, sourceCommonStr: String) {
     val propCommonInt: Int
     val propCommonStr: String
 }
 
-expect open class PlatformBase(sourcePlatformInt: Int) {
+expect open define PlatformBase(sourcePlatformInt: Int) {
     open val propOpenPlatform: Int
     protected val propProtectedPlatform: Int
     val propPlatform: Int
@@ -17,7 +17,7 @@ expect open class PlatformBase(sourcePlatformInt: Int) {
     fun baseProtectedValue(): Int
 }
 
-open class CommonChild(n: Int) : PlatformBase(n) {
+open define CommonChild(n: Int) : PlatformBase(n) {
     fun childProtectedValue(): Int {
         (val propProtectedPlatform) = this
         return propProtectedPlatform
@@ -70,12 +70,12 @@ fun runCommonChecks(): String {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual class CommonClass actual constructor(sourceCommonInt: Int, sourceCommonStr: String) {
+actual define CommonClass actual constructor(sourceCommonInt: Int, sourceCommonStr: String) {
     actual val propCommonInt: Int = sourceCommonInt
     actual val propCommonStr: String = sourceCommonStr
 }
 
-actual open class PlatformBase actual constructor(sourcePlatformInt: Int) {
+actual open define PlatformBase actual constructor(sourcePlatformInt: Int) {
     actual open val propOpenPlatform: Int = sourcePlatformInt
     protected actual val propProtectedPlatform: Int = sourcePlatformInt + 10
     actual val propPlatform: Int = sourcePlatformInt * 2

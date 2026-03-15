@@ -1,6 +1,6 @@
 val x = 1
 
-class A {
+define A {
     val b = 2
 }
 

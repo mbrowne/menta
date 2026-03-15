@@ -1,3 +1,3 @@
-annotation class Anno
+annotation define Anno
 
-class TestClass(@setparam:Anno var hello: Int)
+define TestClass(@setparam:Anno var hello: Int)

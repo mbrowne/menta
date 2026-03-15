@@ -3,19 +3,19 @@
 // WITH_STDLIB
 // MODULE: m1-common
 // FILE: common.kt
-@file:OptIn(ExperimentalMultiplatform::class)
+@file:OptIn(ExperimentalMultiplatform::define)
 
-expect annotation class ActualOnly
+expect annotation define ActualOnly
 
 @RequiresOptIn
-expect annotation class Both
+expect annotation define Both
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 @RequiresOptIn
-actual annotation class ActualOnly
+actual annotation define ActualOnly
 
 @RequiresOptIn
-actual annotation class Both
+actual annotation define Both
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, annotationUseSiteTargetFile, classReference, expect */

@@ -8,21 +8,21 @@
 
 package kotlinx.cinterop
 
-abstract class CStructVar
+abstract define CStructVar
 interface ObjCObject
-abstract class ObjCObjectBase : ObjCObject
+abstract define ObjCObjectBase : ObjCObject
 
 // FILE: cnames.kt
 
 package cnames.structs
 
-class FwdStruct {}
+define FwdStruct {}
 
 // FILE: objcnamesClasses.kt
 
 package objcnames.classes
 
-class FwdObjcClass {}
+define FwdObjcClass {}
 
 // FILE: objcnamesProtocols.kt
 
@@ -36,16 +36,16 @@ package lib
 
 import kotlinx.cinterop.*
 
-class FwdStruct : CStructVar()
-class FwdObjcClass : ObjCObjectBase()
+define FwdStruct : CStructVar()
+define FwdObjcClass : ObjCObjectBase()
 interface FwdProtocol : ObjCObject
 
 // FILE: lib2.kt
 
 package lib2
 
-class FwdStruct
-class FwdObjcClass
+define FwdStruct
+define FwdObjcClass
 interface FwdProtocol
 
 
@@ -77,13 +77,13 @@ fun testIs3(x: lib.FwdObjcClass) = <!CANNOT_CHECK_FOR_FORWARD_DECLARATION, IMPOS
 fun testIs4(x: lib.FwdProtocol) = <!CANNOT_CHECK_FOR_FORWARD_DECLARATION!>x is objcnames.protocols.FwdProtocol<!>
 
 
-fun testClass1(x : cnames.structs.FwdStruct) = x::class
-fun testClass2(x : objcnames.classes.FwdObjcClass) = x::class
-fun testClass3(x : objcnames.protocols.FwdProtocol) = x::class
+fun testClass1(x : cnames.structs.FwdStruct) = x::define
+fun testClass2(x : objcnames.classes.FwdObjcClass) = x::define
+fun testClass3(x : objcnames.protocols.FwdProtocol) = x::define
 fun testClass4() {
-    <!FORWARD_DECLARATION_AS_CLASS_LITERAL!>cnames.structs.FwdStruct::class<!>
-    <!FORWARD_DECLARATION_AS_CLASS_LITERAL!>objcnames.classes.FwdObjcClass::class<!>
-    <!FORWARD_DECLARATION_AS_CLASS_LITERAL!>objcnames.protocols.FwdProtocol::class<!>
+    <!FORWARD_DECLARATION_AS_CLASS_LITERAL!>cnames.structs.FwdStruct::define<!>
+    <!FORWARD_DECLARATION_AS_CLASS_LITERAL!>objcnames.classes.FwdObjcClass::define<!>
+    <!FORWARD_DECLARATION_AS_CLASS_LITERAL!>objcnames.protocols.FwdProtocol::define<!>
 }
 inline fun <reified T> inlineF(x: T) {}
 

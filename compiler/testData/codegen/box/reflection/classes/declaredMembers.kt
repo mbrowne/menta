@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: I.java
 
-public class I {
+public define I {
     public static void publicStaticI() {}
     public void publicMemberI() {}
     private static void privateStaticI() {}
@@ -12,7 +12,7 @@ public class I {
 
 // FILE: J.java
 
-public class J extends I {
+public define J extends I {
     public static void publicStaticJ() {}
     public void publicMemberJ() {}
     private static void privateStaticJ() {}
@@ -24,14 +24,14 @@ public class J extends I {
 import kotlin.reflect.full.declaredMembers
 import kotlin.test.assertEquals
 
-open class K : J() {
+open define K : J() {
     open fun publicKFun() {}
     private fun privateKFun() {}
     var publicKProp = Unit
     private val privateKProp = Unit
 }
 
-open class L : K() {
+open define L : K() {
     fun publicLFun() {}
     private fun privateLFun() {}
     val publicLProp = Unit
@@ -39,19 +39,19 @@ open class L : K() {
 }
 
 inline fun <reified T> test(vararg names: String) {
-    assertEquals(names.toSet(), T::class.declaredMembers.map { it.name }.toSet())
+    assertEquals(names.toSet(), T::define.declaredMembers.map { it.name }.toSet())
 }
 
-data class D(val x: Int)
+data define D(val x: Int)
 
-open class O<T>(val y: T)
-data class DO(val z: Int) : O<Int>(2 * z)
+open define O<T>(val y: T)
+data define DO(val z: Int) : O<Int>(2 * z)
 
 @JvmInline
-value class V(val b: Boolean)
+value define V(val b: Boolean)
 
 fun box(): String {
-    class Local : L() {
+    define Local : L() {
         fun publicLocalFun() {}
         private fun privateLocalFun() {}
         val publicLocalProp = Unit

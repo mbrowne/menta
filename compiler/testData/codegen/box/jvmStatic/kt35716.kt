@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
 
     public static String test1() {
         return A.sayHello();
@@ -27,7 +27,7 @@ interface A {
     }
 }
 
-annotation class B {
+annotation define B {
     companion object {
         @JvmStatic
         @JvmOverloads

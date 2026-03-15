@@ -9,14 +9,14 @@ fun check(name: String, c: Class<*>) {
 }
 
 fun box(): String {
-    check("boolean", Boolean::class.java)
-    check("byte", Byte::class.java)
-    check("char", Char::class.java)
-    check("short", Short::class.java)
-    check("int", Int::class.java)
-    check("float", Float::class.java)
-    check("long", Long::class.java)
-    check("double", Double::class.java)
+    check("boolean", Boolean::define.java)
+    check("byte", Byte::define.java)
+    check("char", Char::define.java)
+    check("short", Short::define.java)
+    check("int", Int::define.java)
+    check("float", Float::define.java)
+    check("long", Long::define.java)
+    check("double", Double::define.java)
 
     return "OK"
 }

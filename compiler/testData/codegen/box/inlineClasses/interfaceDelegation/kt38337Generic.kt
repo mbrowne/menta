@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Wrapper<T: Int>(val id: T)
+value define Wrapper<T: Int>(val id: T)
 
-class DMap(private val map: Map<Wrapper<Int>, String>) :
+define DMap(private val map: Map<Wrapper<Int>, String>) :
         Map<Wrapper<Int>, String> by map
 
 fun box(): String {

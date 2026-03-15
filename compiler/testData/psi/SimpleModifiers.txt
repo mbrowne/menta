@@ -45,7 +45,7 @@ KtFile: SimpleModifiers.kt
       PsiWhiteSpace('\n')
       PsiElement(out)('out')
     PsiWhiteSpace('\n ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Bar')
     TYPE_PARAMETER_LIST

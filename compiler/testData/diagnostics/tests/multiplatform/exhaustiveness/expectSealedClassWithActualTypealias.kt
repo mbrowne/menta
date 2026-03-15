@@ -4,17 +4,17 @@
 // SKIP_TXT
 
 // MODULE: m1-common
-expect sealed class SealedClass()
+expect sealed define SealedClass()
 
-class Derived1 : SealedClass()
+define Derived1 : SealedClass()
 
 // MODULE: m1-jvm()()(m1-common)
 actual typealias SealedClass = MySealedClass
 
-sealed class MySealedClass
+sealed define MySealedClass
 
-class Derived2 : SealedClass()
-class Derived3 : MySealedClass()
+define Derived2 : SealedClass()
+define Derived3 : MySealedClass()
 
 fun whenForSealed(s: SealedClass): Int {
     return when (s) { // Should be OK

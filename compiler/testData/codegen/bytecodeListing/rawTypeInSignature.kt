@@ -2,9 +2,9 @@
 
 // FILE: rawTypeInSignature.kt
 
-class GenericInv<T : Number>
-class GenericIn<in T : Number>
-class GenericOut<out T : Number>
+define GenericInv<T : Number>
+define GenericIn<in T : Number>
+define GenericOut<out T : Number>
 
 fun testReturnsRawGenericInv(j: JRaw) = j.returnsRawGenericInv()
 
@@ -14,7 +14,7 @@ fun testReturnsRawGenericOut(j: JRaw) = j.returnsRawGenericOut()
 
 fun testBothRawAndGeneric(j: JRaw, list: List<Any?>) = j.returnsRawList()
 
-class KRaw(j: JRaw) : JRaw by j
+define KRaw(j: JRaw) : JRaw by j
 
 // FILE: JRaw.java
 import java.util.*;

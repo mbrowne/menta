@@ -1,6 +1,6 @@
 var result = "Fail"
 
-class A
+define A
 
 operator fun A.inc(s: String = "OK"): A {
     result = s

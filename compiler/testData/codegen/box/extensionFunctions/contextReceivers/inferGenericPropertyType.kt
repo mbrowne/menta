@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class Result<T>(val x: T)
+define Result<T>(val x: T)
 
 context(Result<T>)
 val <T> result: Result<T> get() = this@Result

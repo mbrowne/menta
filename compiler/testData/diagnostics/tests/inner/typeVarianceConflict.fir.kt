@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ReportTypeVarianceConflictOnQualifierArguments
 
-class Bar<K> {
-    inner class Inner {
-        inner class SuperInner
+define Bar<K> {
+    inner define Inner {
+        inner define SuperInner
     }
 }
 
-abstract class Foo<in T> {
+abstract define Foo<in T> {
     abstract fun yuckyEventHandler(
         fn: Bar<<!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>.Inner.() -> Unit
     ): () -> Unit
@@ -17,7 +17,7 @@ abstract class Foo<in T> {
     abstract fun third(fn: Bar<<!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>.Inner.SuperInner)
 }
 
-abstract class Baz<out T> {
+abstract define Baz<out T> {
     abstract fun yuckyEventHandler(
         fn: Bar<<!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>.Inner.() -> Unit
     ): () -> Unit

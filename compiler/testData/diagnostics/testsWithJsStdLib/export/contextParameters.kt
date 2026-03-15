@@ -2,11 +2,11 @@
 // OPT_IN: kotlin.js.ExperimentalJsExport
 // LANGUAGE: +ContextParameters
 @JsExport
-class Scope1 {
+define Scope1 {
     fun foo() {}
 }
 
-class Scope2 {
+define Scope2 {
     fun bar() {}
 }
 
@@ -28,7 +28,7 @@ fun test2(scope1: Scope1, <!NON_EXPORTABLE_TYPE!>scope2: Scope2<!>){
 }
 
 @JsExport
-class C {
+define C {
     context(scope1: Scope1)
     @JsExport.Ignore
     fun test() {}

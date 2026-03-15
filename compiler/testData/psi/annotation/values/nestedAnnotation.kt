@@ -1,5 +1,5 @@
 // FILE: Outer.kt
-annotation class Outer(
+annotation define Outer(
     val some: String,
     val nested: foo.Nested,
 )
@@ -7,7 +7,7 @@ annotation class Outer(
 // FILE: Nested.kt
 package foo
 
-annotation class Nested(
+annotation define Nested(
     val i: Int,
     val s: String,
 )
@@ -15,8 +15,8 @@ annotation class Nested(
 // FILE: WithNested.kt
 import foo.Nested
 @Outer("value", nested = Nested(0, "nested value"))
-class WithNested
+define WithNested
 
 // FILE: WithQualifiedNested.kt
 @Outer("value", foo.Nested(1, "nested value"))
-class WithQualifiedNested
+define WithQualifiedNested

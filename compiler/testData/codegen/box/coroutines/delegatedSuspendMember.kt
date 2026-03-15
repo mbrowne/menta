@@ -10,13 +10,13 @@ interface SuspendInterface {
     suspend fun foo(v: String)
 }
 
-class Delegate : SuspendInterface {
+define Delegate : SuspendInterface {
     override suspend fun foo(v: String) {
         result = v
     }
 }
 
-class Decorator(parent: SuspendInterface) : SuspendInterface by parent
+define Decorator(parent: SuspendInterface) : SuspendInterface by parent
 
 fun execute(c: suspend () -> Unit) = c.startCoroutine(EmptyContinuation)
 

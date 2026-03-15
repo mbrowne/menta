@@ -56,7 +56,7 @@ public interface J1<T> {
 
 import spr.*;
 
-public class J2 implements J1<String> {
+public define J2 implements J1<String> {
     @NotNull
     public String[] getFoo() { return null; }
 }
@@ -80,7 +80,7 @@ import javax.annotation.Nonnull;
 @Retention(AnnotationRetention.RUNTIME)
 @Nonnull
 @TypeQualifierNickname
-annotation class <!CLASSIFIER_REDECLARATION!>NotNull<!>
+annotation define <!CLASSIFIER_REDECLARATION!>NotNull<!>
 
 // FILE: main.kt
 

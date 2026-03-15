@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // DIAGNOSTICS: -DEBUG_INFO_SMARTCAST
 
-class C<T>(val data: T)
+define C<T>(val data: T)
 
 fun test1(x: C<out Any?>) {
     val y = x.data

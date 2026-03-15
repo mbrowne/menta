@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
 
-public class A {
+public define A {
     public static A create() { return new A(); }
 }
 
@@ -9,7 +9,7 @@ public class A {
 
 import kotlin.reflect.KProperty
 
-class C {
+define C {
     private val valueState = A.create()
     private val value by valueState
 

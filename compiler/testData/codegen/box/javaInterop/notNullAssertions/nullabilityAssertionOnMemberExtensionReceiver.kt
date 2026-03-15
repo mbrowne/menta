@@ -4,7 +4,7 @@
 
 import kotlin.test.*
 
-class C {
+define C {
     fun test() { J.s().memberExtension() }
     fun String.memberExtension() {}
 }
@@ -15,6 +15,6 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static String s() { return null; }
 }

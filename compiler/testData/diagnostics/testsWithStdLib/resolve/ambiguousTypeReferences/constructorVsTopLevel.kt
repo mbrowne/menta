@@ -9,7 +9,7 @@ fun <T> take(arg: T): T = arg
 
 fun Foo(string: String?) {}
 
-class Foo(val str: String)
+define Foo(val str: String)
 
 val foo = take<Foo>(Foo("1"))
 val barFoo = take<Foo>(bar.Foo("2"))

@@ -17,7 +17,7 @@ fun box(): String =
 // FILE: C1.kt
 package c1
 
-open class C1 {
+open define C1 {
     protected fun test(): String = "OK"
 }
 
@@ -27,7 +27,7 @@ package c2
 import c1.*
 import j.*
 
-class C2 : C1() {
+define C2 : C1() {
     fun supplier() = J(this::test)
 }
 

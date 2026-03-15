@@ -5,8 +5,8 @@ fun test() {
 
 operator fun A.unaryMinus() {}
 operator fun B.unaryMinus() {}
-class A
-class B
+define A
+define B
 
 /* GENERATED_FIR_TAGS: classDeclaration, funWithExtensionReceiver, functionDeclaration, localProperty, operator,
 propertyDeclaration, unaryExpression */

@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String? {
         return null
     }
 }
 
-class Example {
+define Example {
     private val p: String? by Delegate()
 
     public val r: String? = "xyz"

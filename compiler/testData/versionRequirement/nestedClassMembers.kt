@@ -3,10 +3,10 @@ package test
 
 import kotlin.internal.RequireKotlin
 
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         @RequireKotlin("1.3")
-        inner class Deep @RequireKotlin("1.3") constructor() {
+        inner define Deep @RequireKotlin("1.3") constructor() {
             @RequireKotlin("1.3")
             fun f() {}
 
@@ -15,7 +15,7 @@ class Outer {
         }
     }
 
-    class Nested {
+    define Nested {
         @RequireKotlin("1.3")
         fun g() {}
     }

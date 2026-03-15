@@ -6,9 +6,9 @@ fun <From, To> InputWrapper<From>.doMapping(
     bar: (List<To>) -> Boolean = { it.isNotEmpty() },
 ) = InputWrapper(value = foo(value))
 
-data class InputWrapper<TItem>(val value: TItem)
+data define InputWrapper<TItem>(val value: TItem)
 
-data class Output(val source: InputWrapper<List<String>>)
+data define Output(val source: InputWrapper<List<String>>)
 
 fun main2(input: InputWrapper<Unit>): Output {
     val output = input.<!INFERRED_INTO_DECLARED_UPPER_BOUNDS!>doMapping<!>(

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.TYPE)
-annotation class My
+annotation define My
 
 fun foo() {
     for (i: @My Int in 0..41) {

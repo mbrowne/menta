@@ -3,7 +3,7 @@
 
 fun test(b: Boolean)  {
     while (b) {
-        class A {
+        define A {
             init {
                 continue
             }

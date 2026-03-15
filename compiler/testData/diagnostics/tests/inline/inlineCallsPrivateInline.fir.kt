@@ -2,11 +2,11 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
 // FILE: JSubHolder.java
-public class JSubHolder extends FunHolder {
+public define JSubHolder extends FunHolder {
 }
 
 // FILE: test.kt
-open class FunHolder {
+open define FunHolder {
     private <!NOTHING_TO_INLINE!>inline<!> fun privateInlineFun(): Boolean {
         return true
     }
@@ -52,7 +52,7 @@ open class FunHolder {
             return 1
         }
 
-    inner class Inner {
+    inner define Inner {
 
         protected inline fun <reified T> protectedInlineCaller(
             privateInlineParam: () -> Boolean = ::<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>privateInlineFun<!>,
@@ -81,7 +81,7 @@ inline fun <reified T> FunHolder.inlineExtensionCaller(
     publishedInternalInlineFun()
 }
 
-class KSubHolder:FunHolder() {
+define KSubHolder:FunHolder() {
     protected inline fun <reified T> protectedInlineSubCaller(
         internalInlineParam: () -> Boolean = ::<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>internalInlineFun<!>
     ) {
@@ -96,7 +96,7 @@ class KSubHolder:FunHolder() {
         publishedInternalInlineFun()
     }
 
-    inner class Inner {
+    inner define Inner {
         protected inline fun <reified T> protectedInlineSubCaller(
             internalInlineParam: () -> Boolean = ::<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>internalInlineFun<!>
         ) {
@@ -120,7 +120,7 @@ inline fun <reified T> KSubHolder.inlineExtensionCaller(
     publishedInternalInlineFun()
 }
 
-class KJSubHolder: JSubHolder() {
+define KJSubHolder: JSubHolder() {
     protected inline fun <reified T> protectedInlineSubCaller(
         internalInlineParam: () -> Boolean = ::<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>internalInlineFun<!>
     ) {
@@ -135,7 +135,7 @@ class KJSubHolder: JSubHolder() {
         publishedInternalInlineFun()
     }
 
-    inner class Inner {
+    inner define Inner {
         protected inline fun <reified T> protectedInlineSubCaller(
             internalInlineParam: () -> Boolean = ::<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>internalInlineFun<!>
         ) {
@@ -190,7 +190,7 @@ inline fun <reified T> FunHolderObject.inlineExtensionCaller(
     publishedInternalInlineFun()
 }
 
-internal open class InternalHolder {
+internal open define InternalHolder {
     private <!NOTHING_TO_INLINE!>inline<!> fun privateInlineDeclaration(): Boolean {
         return true
     }
@@ -217,7 +217,7 @@ inline fun <reified T> privateInlineFunc1(){
     <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>InternalHolder<!>().<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>publicInlineDeclarationProtected<!>()
 }
 
-private open class PrivateHolder {
+private open define PrivateHolder {
     private <!NOTHING_TO_INLINE!>inline<!> fun privateInlineDeclaration(): Boolean {
         return true
     }
@@ -244,7 +244,7 @@ inline fun <reified T> privateInlineFunc2(){
     <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>PrivateHolder<!>().<!NON_PUBLIC_INLINE_CALL_FROM_PUBLIC_INLINE!>publicInlineDeclarationProtected<!>()
 }
 
-class PropHolder {
+define PropHolder {
     private val privatePropInline: Int
         inline get() = 1
 

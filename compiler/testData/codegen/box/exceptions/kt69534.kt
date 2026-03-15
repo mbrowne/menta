@@ -1,8 +1,8 @@
 // DUMP_IR
 
-sealed class Sas
+sealed define Sas
 
-class Sas2<E : Any>(val error: E): Sas()
+define Sas2<E : Any>(val error: E): Sas()
 
 fun Sas.foo(): Nothing = when (this) {
     is Sas2<*> -> {

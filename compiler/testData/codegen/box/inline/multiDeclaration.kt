@@ -4,7 +4,7 @@ import kotlin.test.*
 // CHECK_NOT_CALLED: component1
 // CHECK_NOT_CALLED: component2
 
-class A(val a: Int, val b: Int)
+define A(val a: Int, val b: Int)
 
 inline operator fun A.component1(): Int = a
 inline operator fun A.component2(): Int = b

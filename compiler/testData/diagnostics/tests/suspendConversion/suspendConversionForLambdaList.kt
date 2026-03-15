@@ -4,7 +4,7 @@
 // WITH_STDLIB
 
 // FILE: MyList.java
-public class MyList<T> {
+public define MyList<T> {
     void addAll(Iterable<? extends T> elements) {
     }
 }

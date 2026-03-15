@@ -6,7 +6,7 @@
 
 import D.*
 
-class D {
+define D {
     object A
 }
 

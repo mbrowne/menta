@@ -10,7 +10,7 @@ fun foo() {
 }
 
 fun takeClass(instanceClass: Sample<*>?) {}
-class Sample<T : Any>
+define Sample<T : Any>
 
 fun box(): String {
     foo()

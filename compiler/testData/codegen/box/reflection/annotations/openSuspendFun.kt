@@ -5,23 +5,23 @@ import kotlin.reflect.full.declaredMemberFunctions
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-annotation class Anno
+annotation define Anno
 
-open class Aaa {
+open define Aaa {
     @Anno
     suspend open fun aaa() {}
 }
 
-class Bbb {
+define Bbb {
     @Anno
     suspend fun bbb() {}
 }
 
 fun box(): String {
-    val bbb = Bbb::class.declaredMemberFunctions.first { it.name == "bbb" }.annotations
+    val bbb = Bbb::define.declaredMemberFunctions.first { it.name == "bbb" }.annotations
     assertEquals(1, bbb.size)
     assertTrue(bbb.single() is Anno)
-    val aaa = Aaa::class.declaredMemberFunctions.first { it.name == "aaa" }.annotations
+    val aaa = Aaa::define.declaredMemberFunctions.first { it.name == "aaa" }.annotations
     assertEquals(1, aaa.size)
     assertTrue(aaa.single() is Anno)
     return "OK"

@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-class AWithCompanion {
+define AWithCompanion {
     companion object {
         //Comment before
         val compPropVal = 1

@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE +UNUSED_VALUE
 
 @Target(AnnotationTarget.PROPERTY,  AnnotationTarget.FUNCTION, AnnotationTarget.TYPE,  AnnotationTarget.LOCAL_VARIABLE)
-annotation class A
+annotation define A
 
 @A
 fun test() {

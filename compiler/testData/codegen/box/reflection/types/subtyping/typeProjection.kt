@@ -5,7 +5,7 @@ import kotlin.reflect.full.isSubtypeOf
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
-class G<T>
+define G<T>
 
 fun number(): G<Number> = null!!
 fun outNumber(): G<out Number> = null!!

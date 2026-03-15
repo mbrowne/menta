@@ -4,7 +4,7 @@
 
 package test
 
-expect class A {
+expect define A {
     fun Int.foo(): String
     val Int.a : String
 }
@@ -14,7 +14,7 @@ expect class A {
 
 package test
 
-actual class A {
+actual define A {
     actual fun Int.foo(): String {
         return "O"
     }

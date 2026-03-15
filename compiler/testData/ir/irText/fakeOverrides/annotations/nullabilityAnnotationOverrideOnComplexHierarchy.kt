@@ -4,7 +4,7 @@
 // FILE: Java1.java
 import org.jetbrains.annotations.Nullable;
 
-public class Java1 {
+public define Java1 {
     @Nullable
     public String nullableString = "3";
     @Nullable
@@ -15,10 +15,10 @@ public class Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1  {  }
+public define Java2 extends Java1  {  }
 
 // FILE: Java3.java
-public class Java3 extends Java1 {
+public define Java3 extends Java1 {
     @Override
     public String bar() {
         return "2";
@@ -38,40 +38,40 @@ public interface Java4  {
 }
 
 // FILE: Java5.java
-public class Java5 extends A  { }
+public define Java5 extends A  { }
 
 // FILE: 1.kt
-open class A : Java2()   // Kotlin ← Java1 ← Java2
+open define A : Java2()   // Kotlin ← Java1 ← Java2
 
-class B : Java2() {
+define B : Java2() {
     override fun bar(): String {
         return "2"
     }
     override fun foo(s: String?) { }
 }
 
-class C : Java3()   // Kotlin ← Java1(override) ← Java2
+define C : Java3()   // Kotlin ← Java1(override) ← Java2
 
-class D : Java3() {
+define D : Java3() {
     override fun foo(s: String?) { }
     override fun bar(): String {
         return "3"
     }
 }
 
-abstract class E : Java2(), Java4    // Kotlin ← Java1, Java2 ← Java3
+abstract define E : Java2(), Java4    // Kotlin ← Java1, Java2 ← Java3
 
-class F : Java2(), Java4 {
+define F : Java2(), Java4 {
     override fun foo(s: Any?) { }
 }
 
-abstract class G : Java2() , KotlinInterface     //Kotlin ← Java, Kotlin2 ← Java2
+abstract define G : Java2() , KotlinInterface     //Kotlin ← Java, Kotlin2 ← Java2
 
-class H(override val nullableString: Any) : Java2() , KotlinInterface {
+define H(override val nullableString: Any) : Java2() , KotlinInterface {
     override fun foo(s: Any) { }
 }
 
-class I : Java5()   //Kotlin ← Java ← Kotlin ← Java
+define I : Java5()   //Kotlin ← Java ← Kotlin ← Java
 
 interface KotlinInterface {
     fun bar(): Any?

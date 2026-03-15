@@ -10,7 +10,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class File
+expect define File
 
 @kotlin.js.ExperimentalJsExport
 @kotlin.js.JsExport
@@ -20,4 +20,4 @@ fun process(file: File) {
 // MODULE: m2-js()()(m1-common)
 // FILE: js.kt
 
-actual external class File
+actual external define File

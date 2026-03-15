@@ -35,7 +35,7 @@ interface Test {
     }
 }
 
-annotation class Anno {
+annotation define Anno {
     companion object {
         val x = "K"
 

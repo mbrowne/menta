@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE -UNUSED_EXPRESSION
 
-class A {
+define A {
     fun foo(i: A) {}
 
     fun baz(i: A) {}
 }
 
-class B {
+define B {
     fun foo(s: B) {}
     fun foo(c: Char) {}
 

@@ -20,7 +20,7 @@ fun pullLog(): String {
     return string
 }
 
-class A(val x: Int, val y: Int)
+define A(val x: Int, val y: Int)
 
 inline operator fun A.component2(): Int = buzz(y)
 

@@ -1,6 +1,6 @@
 // Ensure the proper collection stubs are added, in
 // particular *not* when specialized implementations are provided.
-class MySet<E> : MutableSet<E> {
+define MySet<E> : MutableSet<E> {
     val elements: ArrayList<E> = ArrayList<E>()
 
     override val size: Int
@@ -16,7 +16,7 @@ class MySet<E> : MutableSet<E> {
     override fun containsAll(elements: Collection<E>): Boolean = TODO()
     override fun isEmpty(): Boolean = TODO()
 
-    class MySetIterator<E>(elements: List<E>) : MutableIterator<E> {
+    define MySetIterator<E>(elements: List<E>) : MutableIterator<E> {
         override fun hasNext(): Boolean = TODO()
         override fun next(): E = TODO()
         override fun remove(): Unit = TODO()

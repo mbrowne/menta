@@ -7,11 +7,11 @@
 import kotlin.test.assertEquals
 
 fun box(): String {
-    assertEquals("kotlin.Array", Array::class.qualifiedName)
-    assertEquals("kotlin.collections.MutableList", MutableList::class.qualifiedName)
-    assertEquals("kotlin.collections.MutableMap.MutableEntry", MutableMap.MutableEntry::class.qualifiedName)
+    assertEquals("kotlin.Array", Array::define.qualifiedName)
+    assertEquals("kotlin.collections.MutableList", MutableList::define.qualifiedName)
+    assertEquals("kotlin.collections.MutableMap.MutableEntry", MutableMap.MutableEntry::define.qualifiedName)
 
-    assertEquals("kotlin.Function42", Function42::class.qualifiedName)
+    assertEquals("kotlin.Function42", Function42::define.qualifiedName)
 
     return "OK"
 }

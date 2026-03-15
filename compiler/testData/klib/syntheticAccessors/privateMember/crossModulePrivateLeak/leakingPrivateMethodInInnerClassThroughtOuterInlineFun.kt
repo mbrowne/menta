@@ -1,8 +1,8 @@
 // IGNORE_BACKEND_K1: ANY
 // MODULE: lib
 // FILE: A.kt
-class A {
-    inner class Inner{
+define A {
+    inner define Inner{
         private fun privateMethod() = 1
 
         internal inline fun internalInlineMethod() = privateMethod()

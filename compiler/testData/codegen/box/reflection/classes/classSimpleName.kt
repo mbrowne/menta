@@ -3,12 +3,12 @@
 
 import kotlin.test.assertEquals
 
-class Klass
+define Klass
 
 fun box(): String {
-    assertEquals("Klass", Klass::class.simpleName)
-    assertEquals("Date", java.util.Date::class.simpleName)
-    assertEquals("ObjectRef", kotlin.jvm.internal.Ref.ObjectRef::class.simpleName)
+    assertEquals("Klass", Klass::define.simpleName)
+    assertEquals("Date", java.util.Date::define.simpleName)
+    assertEquals("ObjectRef", kotlin.jvm.internal.Ref.ObjectRef::define.simpleName)
 
     return "OK"
 }

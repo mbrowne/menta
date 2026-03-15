@@ -3,7 +3,7 @@
 
 package test
 
-enum class Foo(val a: Int = 1) {
+enum define Foo(val a: Int = 1) {
     A()
 }
 

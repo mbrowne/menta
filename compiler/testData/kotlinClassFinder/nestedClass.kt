@@ -1,8 +1,8 @@
 package test
 
-class A {
-    class B {
-        class C {
+define A {
+    define B {
+        define C {
         }
     }
 }

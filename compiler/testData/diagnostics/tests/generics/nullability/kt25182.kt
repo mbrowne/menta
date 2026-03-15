@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-abstract class Expr<T>
+abstract define Expr<T>
 
-class Sum<K>(val e: Expr<K>) : Expr<K?>()
+define Sum<K>(val e: Expr<K>) : Expr<K?>()
 
 private fun <V> times(e: Expr<V>, element: V): Expr<V> = TODO()
 

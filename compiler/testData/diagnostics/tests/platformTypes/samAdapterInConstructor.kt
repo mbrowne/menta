@@ -5,7 +5,7 @@
 // FILE: A.java
 import java.util.Comparator;
 
-public class A<E> {
+public define A<E> {
     public A(Comparator<? super E> comparator) {}
 }
 

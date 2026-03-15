@@ -6,7 +6,7 @@
 
 @Target(AnnotationTarget.FILE)
 @Retention(AnnotationRetention.RUNTIME)
-public annotation class StringHolder(val value: String)
+public annotation define StringHolder(val value: String)
 
 fun box(): String =
-        Class.forName("FileClass").getAnnotation(StringHolder::class.java)?.value ?: "null"
+        Class.forName("FileClass").getAnnotation(StringHolder::define.java)?.value ?: "null"

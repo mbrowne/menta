@@ -4,7 +4,7 @@ interface Base {
     val parent: Base
 }
 
-class Derived : Base {
+define Derived : Base {
     override val parent: Base
         get() = TODO()
 }
@@ -16,7 +16,7 @@ fun test(d: Derived) {
 }
 
 fun Any?.take() {}
-class Something {
+define Something {
     var prop: String? = null
 
     fun String.take() {}

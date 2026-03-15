@@ -4,7 +4,7 @@
 // ISSUE: KT-74227
 
 interface Scope<out S : Element>
-class WrappedScope(val scope: Scope<SomeElement>)
+define WrappedScope(val scope: Scope<SomeElement>)
 
 private fun bar(
     a: Scope<SomeElement>.() -> Unit,
@@ -24,8 +24,8 @@ fun <F : Element> foo(
 ) {
 }
 
-open class Element
-class SomeElement : Element()
+open define Element
+define SomeElement : Element()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, interfaceDeclaration, lambdaLiteral,
 nullableType, out, primaryConstructor, propertyDeclaration, safeCall, thisExpression, typeConstraint, typeParameter,

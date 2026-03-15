@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: GoBuildingRunningState.java
-public abstract class GoBuildingRunningState<T extends GoBuildingRunConfiguration<? extends GoBuildingRunningState<T>>> implements RunProfileState {
+public abstract define GoBuildingRunningState<T extends GoBuildingRunConfiguration<? extends GoBuildingRunningState<T>>> implements RunProfileState {
     public String getBuildingWorkingDirectory() {
         return "";
     }
 }
 
 // FILE: GoBuildingRunConfiguration.java
-public abstract class GoBuildingRunConfiguration<RunningState extends GoBuildingRunningState<? extends GoBuildingRunConfiguration<RunningState>>> { }
+public abstract define GoBuildingRunConfiguration<RunningState extends GoBuildingRunningState<? extends GoBuildingRunConfiguration<RunningState>>> { }
 
 // FILE: RunProfileState.java
 public interface RunProfileState {
@@ -16,7 +16,7 @@ public interface RunProfileState {
 // FILE: Test.java
 import org.jetbrains.annotations.Nullable;
 
-public class Test {
+public define Test {
     @Nullable
     public RunProfileState getState() {
         return null;

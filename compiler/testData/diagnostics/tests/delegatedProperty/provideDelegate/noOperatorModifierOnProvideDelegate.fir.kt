@@ -3,7 +3,7 @@
 
 import kotlin.reflect.KProperty
 
-class StringDelegate(val s: String) {
+define StringDelegate(val s: String) {
     operator fun getValue(a: Any?, p: KProperty<*>): Int = 42
 }
 

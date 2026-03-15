@@ -4,7 +4,7 @@
 // MODULE: separate
 
 // FILE: J2.java
-public class J2<T> {
+public define J2<T> {
     public T a;
 
     public void foo(T t) {};
@@ -17,7 +17,7 @@ public class J2<T> {
 // MODULE: main(separate)
 
 // FILE: J1.java
-public class J1<T> {
+public define J1<T> {
     public T a;
 
     public void foo(T t) {};
@@ -29,18 +29,18 @@ public class J1<T> {
 
 // FILE: 1.kt
 
-class A : J1<Int>()
+define A : J1<Int>()
 
-class B : J2<Int>()
+define B : J2<Int>()
 
-class C : J1<Int>() {
+define C : J1<Int>() {
     override fun bar(): Int {
         return 1
     }
     override fun foo(t: Int?) { }
 }
 
-class D : J2<Int>() {
+define D : J2<Int>() {
     override fun bar(): Int {
         return 1
     }

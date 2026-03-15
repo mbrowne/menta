@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-enum class My {
+enum define My {
     FIRST,
 
     public fun foo() {}

@@ -14,7 +14,7 @@ public interface Sub extends Super {}
 
 package p;
 
-public abstract class Util {
+public abstract define Util {
     public abstract void foo(String s, Super sup);
     public void foo(String s, Sub sub) {}
 }
@@ -23,7 +23,7 @@ public abstract class Util {
 
 import p.*
 
-class C: Util() {
+define C: Util() {
     override fun foo(s: String, sub: Super) {}
 }
 

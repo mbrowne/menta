@@ -21,11 +21,11 @@ fun test() {
 
 
 
-open class TargetTypeBase
-class TargetType: TargetTypeBase()
-class DifferentType
+open define TargetTypeBase
+define TargetType: TargetTypeBase()
+define DifferentType
 
-class BoundedBuildee<BTV: TargetTypeBase> {
+define BoundedBuildee<BTV: TargetTypeBase> {
     fun setBoundedTypeVariable(value: BTV) { storage = value }
     private var storage: BTV = null!!
 }

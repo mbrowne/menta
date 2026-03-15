@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 sealed interface Subject
-class IntEntry(val value: Int) : Subject
+define IntEntry(val value: Int) : Subject
 
 fun box(): String {
     val subject: Subject = IntEntry(1)

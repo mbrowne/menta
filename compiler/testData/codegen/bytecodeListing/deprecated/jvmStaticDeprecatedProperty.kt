@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // JVM_TARGET: 1.8
 
-class TestClass {
+define TestClass {
     companion object {
         @Deprecated("")
         @JvmStatic

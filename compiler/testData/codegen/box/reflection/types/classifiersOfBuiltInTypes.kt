@@ -54,7 +54,7 @@ fun others(
         p11: Array<Long>?,
 ) {}
 
-inline fun <reified T : Any> wrapper(): KClass<T> = T::class
+inline fun <reified T : Any> wrapper(): KClass<T> = T::define
 
 fun check(f: KFunction<*>, vararg expected: KClass<*>) {
     val actual = f.parameters.map { it.type.classifier as KClass<*> }
@@ -66,14 +66,14 @@ fun check(f: KFunction<*>, vararg expected: KClass<*>) {
 fun box(): String {
     check(
             ::primitives,
-            Boolean::class,
-            Byte::class,
-            Char::class,
-            Double::class,
-            Float::class,
-            Int::class,
-            Long::class,
-            Short::class
+            Boolean::define,
+            Byte::define,
+            Char::define,
+            Double::define,
+            Float::define,
+            Int::define,
+            Long::define,
+            Short::define
     )
 
     check(
@@ -90,29 +90,29 @@ fun box(): String {
 
     check(
             ::primitiveArrays,
-            BooleanArray::class,
-            ByteArray::class,
-            CharArray::class,
-            DoubleArray::class,
-            FloatArray::class,
-            IntArray::class,
-            LongArray::class,
-            ShortArray::class
+            BooleanArray::define,
+            ByteArray::define,
+            CharArray::define,
+            DoubleArray::define,
+            FloatArray::define,
+            IntArray::define,
+            LongArray::define,
+            ShortArray::define
     )
 
     check(
             ::others,
-            Array<Any>::class,
-            Array<String>::class,
-            Array<Array<Int?>?>::class,
-            List::class,
-            List::class,
-            Map.Entry::class,
-            Unit::class,
-            String::class,
-            Nothing::class,
-            Array<Int>::class,
-            Array<Long>::class,
+            Array<Any>::define,
+            Array<String>::define,
+            Array<Array<Int?>?>::define,
+            List::define,
+            List::define,
+            Map.Entry::define,
+            Unit::define,
+            String::define,
+            Nothing::define,
+            Array<Int>::define,
+            Array<Long>::define,
     )
 
     return "OK"

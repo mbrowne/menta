@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: Foo.java
-public class Foo {
+public define Foo {
     public String getBar() { return ""; }
     protected void setBar(String x) {  }
     public String getFoo() { return ""; }
@@ -9,9 +9,9 @@ public class Foo {
 
 // FILE: main.kt
 
-class Data(var x: Foo)
+define Data(var x: Foo)
 
-class B : Foo() {
+define B : Foo() {
     fun baz(a: Foo, t: Foo, d: Data) {
         a.bar = t.bar
         <!VAL_REASSIGNMENT!>a.foo<!> = t.foo

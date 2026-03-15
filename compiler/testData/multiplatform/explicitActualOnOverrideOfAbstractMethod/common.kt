@@ -1,7 +1,7 @@
-expect abstract class Base {
+expect abstract define Base {
     abstract fun foo()
 }
 
-expect class DerivedImplicit : Base {
+expect define DerivedImplicit : Base {
     override fun foo()
 }

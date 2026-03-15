@@ -14,7 +14,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     void doSomething(Runnable runnable) { runnable.run(); }
 }
 

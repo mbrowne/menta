@@ -12,7 +12,7 @@ public interface SAM<R> {
 
 package p;
 
-public class Util {
+public define Util {
 
     public static void sam(SAM<Void> sam) {}
 }

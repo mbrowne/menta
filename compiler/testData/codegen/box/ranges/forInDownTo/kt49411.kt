@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-abstract class Foo<T>(@JvmField val foo: T)
+abstract define Foo<T>(@JvmField val foo: T)
 
-class Bar(foo: Int) : Foo<Int>(foo)
+define Bar(foo: Int) : Foo<Int>(foo)
 
 fun box(): String {
     var s1 = ""

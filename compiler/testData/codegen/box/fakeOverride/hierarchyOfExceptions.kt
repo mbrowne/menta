@@ -7,14 +7,14 @@ public interface MyInterface {
 }
 
 // FILE: MyException.java
-public class MyException extends RuntimeException implements MyInterface {
+public define MyException extends RuntimeException implements MyInterface {
     public MyException(String message) {
         super(message);
     }
 }
 
 // FILE: MyOtherException.java
-public class MyOtherException extends RuntimeException implements MyInterface {
+public define MyOtherException extends RuntimeException implements MyInterface {
     public MyOtherException(String message) {
         super(message);
     }

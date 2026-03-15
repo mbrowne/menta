@@ -1,6 +1,6 @@
 package a
 
-class C
+define C
 
 fun f() {}
 

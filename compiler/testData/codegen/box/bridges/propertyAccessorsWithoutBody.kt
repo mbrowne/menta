@@ -1,10 +1,10 @@
 
-open class A<T> {
+open define A<T> {
     open var x: T = "Fail" as T
     get
 }
 
-class B : A<String>() {
+define B : A<String>() {
     override var x: String = "Fail"
     set
 }

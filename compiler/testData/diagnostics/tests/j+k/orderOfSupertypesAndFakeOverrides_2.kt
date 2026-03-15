@@ -6,12 +6,12 @@ public interface JavaBase {
 }
 
 // FILE: main.kt
-abstract class KotlinBase {
+abstract define KotlinBase {
     open fun delete(s: String) {}
 }
 
-class InterfaceThenClass : JavaBase, KotlinBase() {}
-class ClassThenInterface : KotlinBase(), JavaBase {}
+define InterfaceThenClass : JavaBase, KotlinBase() {}
+define ClassThenInterface : KotlinBase(), JavaBase {}
 
 fun test_1(x: InterfaceThenClass, s: String?) {
     x.delete(s)

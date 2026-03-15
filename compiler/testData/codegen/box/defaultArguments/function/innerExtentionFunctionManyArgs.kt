@@ -1,4 +1,4 @@
-class A {
+define A {
     fun Int.foo(a: Int = 1,
                 b: Int = 2,
                 c: Int = 3,

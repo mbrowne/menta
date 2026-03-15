@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // see https://youtrack.jetbrains.com/issue/KT-21515
 
-abstract class DerivedAbstract : C.Base() {
+abstract define DerivedAbstract : C.Base() {
     override abstract fun m()
 }
 
-public class C {
-    class Data
+public define C {
+    define Data
 
-    open class Base () {
+    open define Base () {
         open fun m() {}
     }
 

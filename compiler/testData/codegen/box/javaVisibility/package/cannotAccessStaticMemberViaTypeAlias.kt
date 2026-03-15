@@ -3,7 +3,7 @@
 
 package javapackage;
 
-/*package-private*/ abstract class PackagePrivateGrandparentAbstractClass {
+/*package-private*/ abstract define PackagePrivateGrandparentAbstractClass {
     public static String publicStaticMethod() {
         return "OK";
     }
@@ -13,7 +13,7 @@ package javapackage;
 
 package javapackage;
 
-public class PublicParentClass extends PackagePrivateGrandparentAbstractClass {}
+public define PublicParentClass extends PackagePrivateGrandparentAbstractClass {}
 
 // FILE: foo.kt
 

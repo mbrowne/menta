@@ -6,7 +6,7 @@
 
 import kotlin.coroutines.*
 
-class C: SuspendFunction0<Unit> {
+define C: SuspendFunction0<Unit> {
     override suspend fun invoke() {
     }
 }

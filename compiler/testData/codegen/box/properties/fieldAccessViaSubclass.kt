@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: D.java
 
-public class D {
+public define D {
     public String fieldO;
 
     public static String fieldK;
@@ -13,7 +13,7 @@ public class D {
 
 // KT-3492
 
-class MyWrongClass : D() {
+define MyWrongClass : D() {
 }
 
 fun box() : String {

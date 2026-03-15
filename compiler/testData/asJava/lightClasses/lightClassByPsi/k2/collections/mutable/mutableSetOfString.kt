@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SMutableSet : MutableSet<String>
+abstract define SMutableSet : MutableSet<String>
 
-abstract class SMutableSet2 : MutableSet<String> by mutableSetOf<String>()
+abstract define SMutableSet2 : MutableSet<String> by mutableSetOf<String>()
 
-open class SMutableSet3 : MutableSet<String> {
+open define SMutableSet3 : MutableSet<String> {
     override fun add(element: String): Boolean {
         TODO("Not yet implemented")
     }
@@ -50,4 +50,4 @@ open class SMutableSet3 : MutableSet<String> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SMutableSet.class[contains;contains;getSize;remove;remove;size;toArray;toArray], SMutableSet2.class[size;toArray;toArray], SMutableSet3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: SMutableSet.define[contains;contains;getSize;remove;remove;size;toArray;toArray], SMutableSet2.define[size;toArray;toArray], SMutableSet3.define[size;toArray;toArray]

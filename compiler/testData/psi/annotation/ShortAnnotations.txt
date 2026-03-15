@@ -72,7 +72,7 @@ KtFile: ShortAnnotations.kt
     PsiElement(IDENTIFIER)('zoo')
   PsiWhiteSpace(' ')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
   PsiWhiteSpace('\n')
@@ -248,7 +248,7 @@ KtFile: ShortAnnotations.kt
       PsiElement(INTEGER_LITERAL)('0')
   PsiWhiteSpace('\n\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
     PsiWhiteSpace(' ')
@@ -326,7 +326,7 @@ KtFile: ShortAnnotations.kt
         PsiElement(IDENTIFIER)('zoo')
       PsiWhiteSpace(' ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('A')
       PsiWhiteSpace('\n  ')

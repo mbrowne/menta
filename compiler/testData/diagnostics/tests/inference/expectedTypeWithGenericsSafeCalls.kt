@@ -3,7 +3,7 @@
 // SKIP_TXT
 // LANGUAGE: +ExpectedTypeFromCast
 
-class X {
+define X {
     fun <T> foo(): T = TODO()
 }
 

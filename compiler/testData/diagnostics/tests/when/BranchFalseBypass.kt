@@ -9,7 +9,7 @@
  * type-inference, smart-casts, smart-cast-types -> paragraph 9 -> sentence 1
  * type-inference, smart-casts, smart-cast-types -> paragraph 9 -> sentence 8
  */
-enum class My { A, B }
+enum define My { A, B }
 
 fun test(a: My): String {
     val q: String?

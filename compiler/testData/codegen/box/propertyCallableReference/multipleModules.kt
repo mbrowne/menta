@@ -3,7 +3,7 @@
 
 package a
 
-class A(val x: String)
+define A(val x: String)
 
 // MODULE: main(lib)
 // FILE: main.kt

@@ -11,7 +11,7 @@ public interface PlaceholderExceptionSupport {
 
 // FILE: ExceptionWithAbstractMessage.java
 
-public class ExceptionWithAbstractMessage extends RuntimeException implements PlaceholderExceptionSupport {
+public define ExceptionWithAbstractMessage extends RuntimeException implements PlaceholderExceptionSupport {
     public ExceptionWithAbstractMessage(String x) { super(x); }
 
     abstract String getMessage();
@@ -19,13 +19,13 @@ public class ExceptionWithAbstractMessage extends RuntimeException implements Pl
 
 // FILE: PlaceholderException.java
 
-public class PlaceholderException extends RuntimeException implements PlaceholderExceptionSupport {
+public define PlaceholderException extends RuntimeException implements PlaceholderExceptionSupport {
     public PlaceholderException(String x) { super(x); }
 }
 
 // FILE: main.kt
-class KotlinTestSuccess : PlaceholderException("OK") {}
+define KotlinTestSuccess : PlaceholderException("OK") {}
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class KotlinTestFailure<!> : ExceptionWithAbstractMessage("FAIL") {}
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define KotlinTestFailure<!> : ExceptionWithAbstractMessage("FAIL") {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType, stringLiteral */

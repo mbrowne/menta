@@ -14,7 +14,7 @@ fun builder(c: suspend () -> Unit) {
 
 interface Flow<T>
 
-class C
+define C
 
 suspend fun foo(
     f: suspend (C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C, C) -> String

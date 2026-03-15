@@ -11,7 +11,7 @@ sink:
     <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == A ==
-class A(a: Int, b: Int): T
+define A(a: Int, b: Int): T
 ---------------------
 L0:
   1 <START>
@@ -29,7 +29,7 @@ sink:
     <SINK>                                     PREV:[<ERROR>, <END>]
 =====================
 == B ==
-class B(a: Int, b: Int): T by A(a + b, a - b)
+define B(a: Int, b: Int): T by A(a + b, a - b)
 ---------------------
 L0:
   1 <START>

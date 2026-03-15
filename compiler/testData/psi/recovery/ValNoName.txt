@@ -8,7 +8,7 @@ KtFile: ValNoName.kt
   CLASS
     PsiComment(EOL_COMMENT)('// VAL')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PRIMARY_CONSTRUCTOR
@@ -76,7 +76,7 @@ KtFile: ValNoName.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')
@@ -135,7 +135,7 @@ KtFile: ValNoName.kt
   CLASS
     PsiComment(EOL_COMMENT)('// VAR')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     PRIMARY_CONSTRUCTOR
@@ -203,7 +203,7 @@ KtFile: ValNoName.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
     PsiWhiteSpace(' ')

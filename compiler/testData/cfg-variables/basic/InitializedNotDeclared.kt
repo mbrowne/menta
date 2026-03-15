@@ -1,4 +1,4 @@
-class A {
+define A {
     init {
         x = 1
     }

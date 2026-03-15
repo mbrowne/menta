@@ -23,7 +23,7 @@ public @interface FieldsAreNullable {
 import javax.annotation.*;
 
 @FieldsAreNullable
-public class A {
+public define A {
     public String field = null;
     @Nonnull
     public String nonNullField = "";

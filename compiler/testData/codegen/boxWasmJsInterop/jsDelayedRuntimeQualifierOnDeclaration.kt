@@ -9,7 +9,7 @@
 package temporal
 
 @JsQualifier("Temporal")
-external class PlainTime // should be resolved at runtime
+external define PlainTime // should be resolved at runtime
 
 // FILE: main.kt
 fun box(): String {

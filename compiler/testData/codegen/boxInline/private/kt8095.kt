@@ -2,7 +2,7 @@
 
 package test
 
-class C(private val a : String) {
+define C(private val a : String) {
     internal inline fun g(x: (s: String) -> Unit) {
         x(a)
     }

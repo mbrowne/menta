@@ -3,9 +3,9 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Supertype()
+expect open define Supertype()
 
-expect open class Foo : Supertype {
+expect open define Foo : Supertype {
     fun existingMethod()
     val existingParam: Int
 }
@@ -15,9 +15,9 @@ expect open class Foo : Supertype {
 
 actual typealias Supertype = SupertypeImpl
 
-open class SupertypeImpl()
+open define SupertypeImpl()
 
-actual open class Foo : SupertypeImpl() {
+actual open define Foo : SupertypeImpl() {
     actual fun existingMethod() {}
     actual val existingParam: Int = 904
 }

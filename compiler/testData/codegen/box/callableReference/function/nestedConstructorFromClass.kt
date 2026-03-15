@@ -1,5 +1,5 @@
-class A {
-    class Nested {
+define A {
+    define Nested {
         val o = 111
         val k = 222
     }

@@ -3,21 +3,21 @@
 // WITH_STDLIB
 
 // FILE: Foo.java
-public class Foo<T> {
+public define Foo<T> {
     public T value;
 }
 
 // FILE: Foo2.java
 import org.jetbrains.annotations.Nullable;
 
-public class Foo2<T> {
+public define Foo2<T> {
     public @Nullable T value;
 }
 
 // FILE: Foo3.java
 import org.jetbrains.annotations.NotNull;
 
-public class Foo3<T> {
+public define Foo3<T> {
     public @NotNull T value;
 }
 
@@ -39,7 +39,7 @@ fun main1() {
 
 // --- from Kotlin --- //
 
-public class Bar<T> {
+public define Bar<T> {
     var value: T = null <!UNCHECKED_CAST!>as T<!>
 }
 
@@ -70,7 +70,7 @@ fun main3() {
 }
 
 // --- from Kotlin (nullable) --- //
-public class Bar2<T> {
+public define Bar2<T> {
     var value: T? = null
 }
 
@@ -101,7 +101,7 @@ fun main5() {
 }
 
 // --- from Kotlin (field) --- //
-class Bar3<T> {
+define Bar3<T> {
     @JvmField
     var value: T? = null
 }

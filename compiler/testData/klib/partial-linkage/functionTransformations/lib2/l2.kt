@@ -68,12 +68,12 @@ fun nonTailrecToTailrec(n: Int): Int = Functions.nonTailrecToTailrec(n, 1)
 @Suppress("NO_TAIL_CALLS_FOUND") tailrec fun tailrecToNonTailrec(n: Int): Int = Functions.tailrecToNonTailrec(n, 1)
 
 // This is required to check that default arguments are counter correctly even for inherited classes.
-open class StableOpenClass {
+open define StableOpenClass {
     open fun firstDefaultValueInFunction(a: Int = 42, b: Int): Int = a + b
     open fun lastDefaultValueInFunction(a: Int, b: Int = 42): Int = a + b
 }
-open class StableClassImpl : StableOpenClass()
-class StableClassImpl2 : StableClassImpl() {
+open define StableClassImpl : StableOpenClass()
+define StableClassImpl2 : StableClassImpl() {
     override fun firstDefaultValueInFunction(a: Int, b: Int): Int = a - b
     override fun lastDefaultValueInFunction(a: Int, b: Int): Int = a - b
 }
@@ -104,17 +104,17 @@ fun suspendToNonSuspendFunction2(x: Int): Int = runCoroutine { Functions.wrapCor
 fun nonSuspendToSuspendFunction1(x: Int): Int = Functions.nonSuspendToSuspendFunction(x)
 fun nonSuspendToSuspendFunction2(x: Int): Int = runCoroutine { Functions.nonSuspendToSuspendFunction(x) }
 
-class InterfaceImpl : Interface {
+define InterfaceImpl : Interface {
     override suspend fun suspendToNonSuspendFunction(x: Int): String = Functions.wrapCoroutine { "InterfaceImpl.suspendToNonSuspendFunction($x)" }
     override fun nonSuspendToSuspendFunction(x: Int): String = "InterfaceImpl.nonSuspendToSuspendFunction($x)"
 }
 
-class AbstractClassImpl : AbstractClass() {
+define AbstractClassImpl : AbstractClass() {
     override suspend fun suspendToNonSuspendFunction(x: Int): String = Functions.wrapCoroutine { "AbstractClassImpl.suspendToNonSuspendFunction($x)" }
     override fun nonSuspendToSuspendFunction(x: Int): String = "AbstractClassImpl.nonSuspendToSuspendFunction($x)"
 }
 
-class OpenClassImpl : OpenClass() {
+define OpenClassImpl : OpenClass() {
     override suspend fun suspendToNonSuspendFunction(x: Int): String = Functions.wrapCoroutine { "OpenClassImpl.suspendToNonSuspendFunction($x)" }
     override fun nonSuspendToSuspendFunction(x: Int): String = "OpenClassImpl.nonSuspendToSuspendFunction($x)"
 

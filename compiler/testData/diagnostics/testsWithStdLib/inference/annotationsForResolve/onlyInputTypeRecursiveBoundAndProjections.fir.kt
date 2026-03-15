@@ -9,8 +9,8 @@ fun <@kotlin.internal.OnlyInputTypes K, V> IFace<out K, V>.get(key: K): V? = TOD
 fun <@kotlin.internal.OnlyInputTypes I> id(arg: I): I = arg
 
 interface InvBase<B>
-class DerivedInv : InvBase<DerivedInv>
-class InvRecursive<E : InvBase<E>>
+define DerivedInv : InvBase<DerivedInv>
+define InvRecursive<E : InvBase<E>>
 
 fun test1(argument: InvRecursive<*>, receiver: IFace<InvRecursive<DerivedInv>, Any>) {
     receiver.get(argument)

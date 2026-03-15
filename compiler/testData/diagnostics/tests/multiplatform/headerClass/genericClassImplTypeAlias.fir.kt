@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class C1
+expect define C1
 <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> interface C2<A>
 <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> interface C3<B>
 expect interface C4<D, E>
@@ -18,8 +18,8 @@ expect interface C10<L>
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-class A<T : A<T>>
-class B<T>
+define A<T : A<T>>
+define B<T>
 
 actual typealias C1 = String
 <!ACTUAL_TYPE_ALIAS_TO_CLASS_WITH_DECLARATION_SITE_VARIANCE!>actual typealias <!EXPECT_ACTUAL_INCOMPATIBLE_TYPE_PARAMETER_VARIANCE!>C2<!><A> = List<String><!>

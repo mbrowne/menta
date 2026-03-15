@@ -32,6 +32,8 @@ val KtDeclaration.isOrdinaryClass
             !this.isAnnotation() &&
             !this.isInterface()
 
+val KtDeclaration.isAnnotationDefineClass: Boolean
+    get() = this is KtDefine && this.hasModifier(KtTokens.ANNOTATION_KEYWORD)
 val KtDeclaration.isAnnotated get() = this.annotationEntries.isNotEmpty()
 
 /**

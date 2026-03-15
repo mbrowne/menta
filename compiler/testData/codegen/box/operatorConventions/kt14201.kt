@@ -2,7 +2,7 @@ interface Intf {
     val aValue: String
 }
 
-class ClassB {
+define ClassB {
     val x = { "OK" }
 
     val value: Intf = object : Intf {

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     init {
         <!RETURN_NOT_ALLOWED!>return<!>
         <!UNREACHABLE_CODE!><!RETURN_NOT_ALLOWED!>return<!> 1<!>

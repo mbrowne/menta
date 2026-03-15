@@ -4,7 +4,7 @@ external interface I {
     val x: Int
 }
 
-class AliasHolder {
+define AliasHolder {
     typealias TA = I
 }
 

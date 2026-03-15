@@ -6,15 +6,15 @@ suspend fun testA() {
     testB(456)
 }
 
-class A {
+define A {
     suspend fun testC() {
         testA()
     }
 }
 
-fun getSimpleName0(x: suspend () -> Unit) = x::class.simpleName
-fun getSimpleName1(x: suspend (x: Int) -> Unit) = x::class.simpleName
-inline fun <reified T> getSimpleNameReified(x: T) = T::class.simpleName
+fun getSimpleName0(x: suspend () -> Unit) = x::define.simpleName
+fun getSimpleName1(x: suspend (x: Int) -> Unit) = x::define.simpleName
+inline fun <reified T> getSimpleNameReified(x: T) = T::define.simpleName
 
 fun box(): String {
     assertEquals("Function1", getSimpleName0(::testA))
@@ -25,8 +25,8 @@ fun box(): String {
     assertEquals("KSuspendFunction1", getSimpleNameReified(::testB))
     assertEquals("KSuspendFunction0", getSimpleNameReified(A()::testC))
 
-    assertEquals("Function1", (::testA)::class.simpleName)
-    assertEquals("Function2", (::testB)::class.simpleName)
-    assertEquals("Function1", (A()::testC)::class.simpleName)
+    assertEquals("Function1", (::testA)::define.simpleName)
+    assertEquals("Function2", (::testB)::define.simpleName)
+    assertEquals("Function1", (A()::testC)::define.simpleName)
     return "OK"
 }

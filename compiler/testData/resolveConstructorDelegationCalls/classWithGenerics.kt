@@ -1,4 +1,4 @@
-class A<T> {
+define A<T> {
     constructor(x: T) {}
     <caret>constructor(block: () -> T): this(block()) {}
 }

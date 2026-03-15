@@ -7,7 +7,7 @@ fun <T> foo(): T = null!!
 fun <T> genericSam(): T = J.g(::foo)
 
 // FILE: J.java
-public class J {
+public define J {
     static <T> T g(Sam<T> s) {
         return s.get();
     }

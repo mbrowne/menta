@@ -9,7 +9,7 @@ interface A3<X2>
 interface Res1<Y>
 interface Res2<Z>
 
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T) {}
 }
 
@@ -34,7 +34,7 @@ fun <E> foo(x: A1<E>, block: () -> Unit): A2<A3<E>> = TODO()
 
 fun <V1> A2<V1>.bar(transform: (A2<V1>) -> Res1<Int>) {}
 
-@OptIn(kotlin.experimental.ExperimentalTypeInference::class)
+@OptIn(kotlin.experimental.ExperimentalTypeInference::define)
 @OverloadResolutionByLambdaReturnType
 @kotlin.jvm.JvmName("bar1")
 fun <V2> A2<V2>.bar(transform: (A2<V2>) -> Res2<Int>) {}

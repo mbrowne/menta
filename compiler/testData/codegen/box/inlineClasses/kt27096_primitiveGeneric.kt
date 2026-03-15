@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z1<T: Int>(val x: T)
+value define Z1<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2<T: Z1<Int>>(val z1: T)
+value define Z2<T: Z1<Int>>(val z1: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZN<TN: Z1<Int>>(val z1: TN?)
+value define ZN<TN: Z1<Int>>(val z1: TN?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZN2<T: ZN<Z1<Int>>>(val zn: T)
+value define ZN2<T: ZN<Z1<Int>>>(val zn: T)
 
 fun wrap1(n: Int): Z1<Int>? = if (n < 0) null else Z1(n)
 fun wrap2(n: Int): Z2<Z1<Int>>? = if (n < 0) null else Z2(Z1(n))

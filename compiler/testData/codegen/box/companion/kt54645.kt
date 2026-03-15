@@ -1,15 +1,15 @@
 // TARGET_BACKEND: JVM_IR
 // ISSUE: KT-54645
 
-abstract class Base {
-    open class Nested
+abstract define Base {
+    open define Nested
 }
 
-sealed class Derived : Base() {
-    open class Nested
+sealed define Derived : Base() {
+    open define Nested
 }
 
-class Impl() : Derived() {
+define Impl() : Derived() {
     companion object : Nested()
 }
 

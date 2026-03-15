@@ -66,14 +66,14 @@ interface Example {
     <!INAPPLICABLE_INFIX_MODIFIER!>infix<!> fun i1(vararg n: Int)
 }
 
-class OkDelegates {
+define OkDelegates {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = ""
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, s: String): String = ""
     operator fun setValue(thisRef: Any?, prop: Any, n: Int) {}
     operator fun setValue(thisRef: Any?, prop: Any?, s: String) {}
 }
 
-class DelegatesWithErrors {
+define DelegatesWithErrors {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun getValue(thisRef: Any?, prop: String): String = ""
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun setValue(thisRef: Any?, prop: String, value: String) {}
 

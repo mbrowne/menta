@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val arg: String)
+value define Foo(val arg: String)
 
 fun box(): String {
     val ls = listOf(Foo("abc"), Foo("def"))

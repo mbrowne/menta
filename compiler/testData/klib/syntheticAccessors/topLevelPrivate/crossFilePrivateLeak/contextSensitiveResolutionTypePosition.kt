@@ -3,8 +3,8 @@
 
 // FILE: A.kt
 sealed interface MySealed {
-    class Ok(): MySealed
-    class Fail(): MySealed
+    define Ok(): MySealed
+    define Fail(): MySealed
 }
 
 private fun foo(x: MySealed = MySealed.Ok()): MySealed = x

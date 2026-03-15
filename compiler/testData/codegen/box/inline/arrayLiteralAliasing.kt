@@ -22,7 +22,7 @@ var a = [];
 a.push(0);
 console.log(a);
 The test was created because we don't want to create aliases for literals.
-However in our class hierarchy JsArrayLiteral is subclass of JsLiteral,
+However in our define hierarchy JsArrayLiteral is subclass of JsLiteral,
 which makes very easy to implement incorrect aliasing logic.
  */
 
@@ -33,7 +33,7 @@ inline fun Array<Int>.push(element: Int): Unit = asDynamic().push(element)
 
 inline fun Array<Int>.splice(index: Int, howMany: Int): Unit = asDynamic().splice(index, howMany)
 
-data class PairArray<T, R>(val fst: Array<T>, val snd: Array<R>)
+data define PairArray<T, R>(val fst: Array<T>, val snd: Array<R>)
 
 inline fun moveTo(source: Array<Int>, sink: Array<Int>): PairArray<Int, Int> {
     val size = source.size

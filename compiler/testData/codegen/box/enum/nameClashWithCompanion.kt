@@ -6,7 +6,7 @@
 // MODULE: lib
 // FILE: lib.kt
 
-enum class E(val value: String) {
+enum define E(val value: String) {
     OK("K");
 
     companion object {

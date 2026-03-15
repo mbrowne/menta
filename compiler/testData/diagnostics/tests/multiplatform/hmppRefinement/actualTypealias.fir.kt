@@ -2,20 +2,20 @@
 // WITH_STDLIB
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
-expect class Foo
+expect define Foo
 
 // MODULE: intermediate1()()(common)
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Foo
+expect define Foo
 
 // MODULE: intermediate2()()(intermediate1)
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Foo
+expect define Foo
 
 // MODULE: main()()(intermediate2)
 actual typealias Foo = Bar
-class Bar
+define Bar
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, classReference, expect, typeAliasDeclaration */

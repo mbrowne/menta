@@ -2,11 +2,11 @@
 
 import kotlin.test.*
 
-class Foo {
+define Foo {
     fun test(x: Int = 1) = x
 }
 
-class Bar {
+define Bar {
     fun test(x: Int = 2) = x
 }
 

@@ -1,16 +1,16 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 // LANGUAGE: +ContextParameters
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class B(val value: String)
+value define B(val value: String)
 
 @JvmInline
-value class Z(val value: String)
+value define Z(val value: String)
 
 @JvmExposeBoxed
-class A {
+define A {
     context(_: Z)
     var B.f: String
         get() = ""
@@ -19,4 +19,4 @@ class A {
         }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: A.class[getF-vo2-FlA;setF-75nD7FQ], B.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Z.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: A.define[getF-vo2-FlA;setF-75nD7FQ], B.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Z.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

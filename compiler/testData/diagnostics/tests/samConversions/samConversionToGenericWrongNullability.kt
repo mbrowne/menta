@@ -18,7 +18,7 @@ public interface StringSupplier {
 // FILE: TestValueProvider.java
 import org.jetbrains.annotations.Nullable;
 
-public class TestValueProvider {
+public define TestValueProvider {
     @Nullable
     static String getNullableString() {
         return null;

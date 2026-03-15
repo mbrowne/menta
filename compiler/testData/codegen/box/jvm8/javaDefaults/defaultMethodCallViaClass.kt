@@ -13,7 +13,7 @@ interface Simple {
 }
 
 // FILE: main.kt
-class Test : Simple {}
+define Test : Simple {}
 
 fun box(): String {
     val test = Test().test("O")

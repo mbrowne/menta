@@ -71,7 +71,7 @@ public interface B {
 import spr.*;
 
 @NonNullApi
-public class A implements B {
+public define A implements B {
     @ForceFlexibility
     public void foo(String x) {}
     public void bar(@ForceFlexibility String x) {}

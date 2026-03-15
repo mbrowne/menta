@@ -7,14 +7,14 @@ inline fun <reified T> Any?.isCheck() = this is T
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsAny(val a: Any?) {
+value define AsAny(val a: Any?) {
     fun myEq(other: Any?): Boolean {
         return other is AsAny && other.a == a
     }
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsInt(val a: Int) {
+value define AsInt(val a: Int) {
     fun myEq(other: Any?): Boolean {
         return other is AsInt && other.a == a
     }

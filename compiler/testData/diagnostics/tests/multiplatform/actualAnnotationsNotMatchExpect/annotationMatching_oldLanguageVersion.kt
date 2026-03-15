@@ -3,12 +3,12 @@
 // LANGUAGE: -MultiplatformRestrictions
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
 @Ann
-expect class AnnotationOnExpectOnly
+expect define AnnotationOnExpectOnly
 
-expect class AnnotationInside {
+expect define AnnotationInside {
     @Ann
     fun onlyOnExpect()
 }
@@ -16,9 +16,9 @@ expect class AnnotationInside {
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class AnnotationOnExpectOnly
+actual define AnnotationOnExpectOnly
 
-actual class AnnotationInside {
+actual define AnnotationInside {
     actual fun onlyOnExpect() {}
 }
 

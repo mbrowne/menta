@@ -6,9 +6,9 @@
 
 import kotlin.coroutines.*
 
-abstract class CSuper: () -> Unit
+abstract define CSuper: () -> Unit
 
-class C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>CSuper(), SuspendFunction0<Unit><!> {
+define C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>CSuper(), SuspendFunction0<Unit><!> {
     override suspend fun invoke() {
     }
 }
@@ -18,9 +18,9 @@ object O: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>CSuper(), SuspendFunction
     }
 }
 
-abstract class SCSuper: SuspendFunction0<Unit>
+abstract define SCSuper: SuspendFunction0<Unit>
 
-class C1: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SCSuper(), () -> Unit<!> {
+define C1: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SCSuper(), () -> Unit<!> {
     override suspend fun invoke() {
     }
 }

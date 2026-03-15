@@ -7,11 +7,11 @@
 // IGNORE_BACKEND: JVM_IR
 
 // FILE: A.kt
-open class Parent {
+open define Parent {
     private fun x() = "OK"
 }
 
-class Child : Parent() {
+define Child : Parent() {
     @Suppress("INVISIBLE_REFERENCE")
     internal inline fun internalInlineMethod() = super.x()
 }

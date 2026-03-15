@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     constructor()
     fun foo() = 1
     public constructor()

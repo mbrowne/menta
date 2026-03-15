@@ -2,6 +2,6 @@
 
 package p
 
-expect class B {
-    class Nested {}
+expect define B {
+    define Nested {}
 }

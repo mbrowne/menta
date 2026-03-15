@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +NameBasedDestructuring
 
-class Tuple(val first: String, val second: Int)
+define Tuple(val first: String, val second: Int)
 
 fun test1(x: Tuple): Boolean {
     (val a = first, val b = second) = x

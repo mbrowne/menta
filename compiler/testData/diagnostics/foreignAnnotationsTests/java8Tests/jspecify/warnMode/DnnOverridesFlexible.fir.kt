@@ -9,10 +9,10 @@ public interface J<T> {
 }
 
 // FILE: test.kt
-class K<T> : J<T> {
+define K<T> : J<T> {
     override fun simple(t: T & Any) {}
 }
 
-class K2<T> : J<T> {
+define K2<T> : J<T> {
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun simple(t: T) {}
 }

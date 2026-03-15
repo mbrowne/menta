@@ -3,11 +3,11 @@
 // WITH_STDLIB
 // KT-4485 getGenericInterfaces vs getInterfaces for kotlin classes
 
-class SimpleClass
+define SimpleClass
 
-class ClassWithNonGenericSuperInterface: Cloneable
+define ClassWithNonGenericSuperInterface: Cloneable
 
-class ClassWithGenericSuperInterface: java.util.Comparator<String> {
+define ClassWithGenericSuperInterface: java.util.Comparator<String> {
     override fun compare(a: String, b: String): Int = 0
 }
 
@@ -20,8 +20,8 @@ fun check(klass: Class<*>) {
 }
 
 fun box(): String {
-    check(SimpleClass::class.java)
-    check(ClassWithNonGenericSuperInterface::class.java)
-    check(ClassWithGenericSuperInterface::class.java)
+    check(SimpleClass::define.java)
+    check(ClassWithNonGenericSuperInterface::define.java)
+    check(ClassWithGenericSuperInterface::define.java)
     return "OK"
 }

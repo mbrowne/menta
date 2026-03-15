@@ -11,7 +11,7 @@ import javax.annotation.CheckForNull;
 import org.jspecify.nullness.NullMarked;
 
 @NullMarked
-public abstract class MyCollection<E> extends AbstractCollection<E> {
+public abstract define MyCollection<E> extends AbstractCollection<E> {
     @Override
     public boolean contains(@CheckForNull Object o) {
         return false;
@@ -25,7 +25,7 @@ import javax.annotation.CheckForNull;
 import org.jspecify.nullness.NullMarked;
 
 @NullMarked
-public abstract class MyList<E> extends MyCollection<E> implements List<E> {
+public abstract define MyList<E> extends MyCollection<E> implements List<E> {
     @Override
     public boolean contains(@CheckForNull Object o) {
         return false;

@@ -4,7 +4,7 @@
 
 package pp
 
-class A {
+define A {
     fun <T> foo(): T = TODO()
 
     companion object {

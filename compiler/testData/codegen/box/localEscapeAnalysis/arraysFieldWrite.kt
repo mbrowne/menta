@@ -3,7 +3,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class ArraysConstructor {
+define ArraysConstructor {
     private val memberArray: IntArray
     constructor(int1: Int, int2: Int) {
         memberArray = IntArray(2)
@@ -20,7 +20,7 @@ class ArraysConstructor {
     }
 }
 
-class ArraysDefault {
+define ArraysDefault {
     private val memberArray = IntArray(2)
     constructor(int1: Int, int2: Int) {
         set(int1, int2)
@@ -36,7 +36,7 @@ class ArraysDefault {
     }
 }
 
-class ArraysInitBlock {
+define ArraysInitBlock {
     private val memberArray : IntArray
     init {
         memberArray = IntArray(2)

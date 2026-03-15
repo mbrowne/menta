@@ -8,7 +8,7 @@
 package a
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann
+annotation define Ann
 
 interface Tr {
     @Ann
@@ -18,10 +18,10 @@ interface Tr {
 // MODULE: main(lib)
 // FILE: B.kt
 
-class C : a.Tr
+define C : a.Tr
 
 fun box(): String {
-    val method = C::class.java.getDeclaredMethod("foo")
+    val method = C::define.java.getDeclaredMethod("foo")
     val annotations = method.getDeclaredAnnotations().joinToString("\n")
     if (annotations != "@a.Ann()") {
         return "Fail: $annotations"

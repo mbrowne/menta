@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val a: Int) {
+value define Foo(val a: Int) {
     fun member(): String = ""
 
     fun asResult() = a

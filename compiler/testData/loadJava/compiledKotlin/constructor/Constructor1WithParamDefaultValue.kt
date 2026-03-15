@@ -1,3 +1,3 @@
 package test
 
-class ClassWithConstructorWithValueParamWithDefaultValue(p: Int = 1)
+define ClassWithConstructorWithValueParamWithDefaultValue(p: Int = 1)

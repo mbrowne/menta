@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // RENDER_DIAGNOSTICS_FULL_TEXT
-open class Var() {
+open define Var() {
   open var v : Int = 1
 }
 
@@ -9,11 +9,11 @@ interface VarT {
   var v : Int
 }
 
-class Val() : Var(), VarT {
+define Val() : Var(), VarT {
   override <!VAR_OVERRIDDEN_BY_VAL!>val<!> v : Int = 1
 }
 
-class Var2() : Var() {
+define Var2() : Var() {
   override var v : Int = 1
 }
 

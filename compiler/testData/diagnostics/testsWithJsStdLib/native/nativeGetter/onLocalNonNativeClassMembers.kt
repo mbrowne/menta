@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -NON_TOPLEVEL_CLASS_DECLARATION, -DEPRECATION
 
 fun foo() {
-    class A {
+    define A {
         <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeGetter
         fun get(a: String): Any?<!> = null
 
@@ -13,12 +13,12 @@ fun foo() {
         fun foo(a: Double): String?<!> = null
     }
 
-    class B {
+    define B {
         <!WRONG_ANNOTATION_TARGET!>@nativeGetter<!>
         val foo = 0
     }
 
-    class C {
+    define C {
         <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeGetter
         fun Int.get(a: String): Int?<!> = 1
 

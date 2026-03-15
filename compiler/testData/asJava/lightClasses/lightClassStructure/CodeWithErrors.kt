@@ -1,6 +1,6 @@
 package test
 
-class C() {
+define C() {
     fun V.f() : {
 
     }

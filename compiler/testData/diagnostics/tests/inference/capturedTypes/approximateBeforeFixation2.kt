@@ -3,8 +3,8 @@
 // WITH_STDLIB
 interface A
 
-class B : A
-class C : A
+define B : A
+define C : A
 
 fun main(x: List<String>) {
     x.fold(B()) { acc: A, s -> C() }

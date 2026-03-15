@@ -4,7 +4,7 @@
 
 package dependency;
 
-enum class Base(val s: String) {
+enum define Base(val s: String) {
     FIRST("O"),
     SECOND("K")
 }

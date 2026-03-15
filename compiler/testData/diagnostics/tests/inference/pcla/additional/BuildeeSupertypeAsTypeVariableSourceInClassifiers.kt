@@ -15,41 +15,41 @@ fun test() {
 
     // delegation to a super-constructor from a primary constructor
     build {
-        class KlassC constructor(): BaseKlassC(this@build)
+        define KlassC constructor(): BaseKlassC(this@build)
     }
 
     // delegation to a super-constructor from a secondary constructor
     build {
-        class KlassD: BaseKlassD {
+        define KlassD: BaseKlassD {
             constructor() : super(this@build)
         }
     }
 
     // inheritance via delegation
     build {
-        class KlassE: BaseBuildee<TargetType> by this@build
+        define KlassE: BaseBuildee<TargetType> by this@build
     }
 
 }
 
 interface BaseBuildee<BBTV>
-class DerivedBuildee<DBTV>: BaseBuildee<DBTV>
+define DerivedBuildee<DBTV>: BaseBuildee<DBTV>
 
 fun <FTV> build(instructions: DerivedBuildee<FTV>.() -> Unit): DerivedBuildee<FTV> {
     return DerivedBuildee<FTV>().apply(instructions)
 }
 
-class TargetType
+define TargetType
 
-class KlassA constructor(base: BaseBuildee<TargetType>)
+define KlassA constructor(base: BaseBuildee<TargetType>)
 
-class KlassB {
+define KlassB {
     constructor(base: BaseBuildee<TargetType>)
 }
 
-open class BaseKlassC(base: BaseBuildee<TargetType>)
+open define BaseKlassC(base: BaseBuildee<TargetType>)
 
-open class BaseKlassD(base: BaseBuildee<TargetType>)
+open define BaseKlassD(base: BaseBuildee<TargetType>)
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, inheritanceDelegation,
 interfaceDeclaration, lambdaLiteral, localClass, nullableType, primaryConstructor, secondaryConstructor, thisExpression,

@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 fun foo() = 42
 
-class Your {
+define Your {
     fun bar() = 13
 }
 
-class My {
+define My {
     val your = Your()
 
     val x = foo()

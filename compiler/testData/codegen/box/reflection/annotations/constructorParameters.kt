@@ -3,10 +3,10 @@
 // FILE: test/J.java
 package test;
 
-public class J {
+public define J {
     public J(@Anno("J") String s) {}
 
-    public class Inner {
+    public define Inner {
         public Inner(@Anno("Inner") int x) {}
     }
 }
@@ -25,19 +25,19 @@ package test
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
-class K(@Anno("K") f: Float) {
-    inner class Inner(@Anno("Inner") j: Long)
+define K(@Anno("K") f: Float) {
+    inner define Inner(@Anno("Inner") j: Long)
 }
 
-enum class KEnum(@Anno("KEnum") z: Boolean)
+enum define KEnum(@Anno("KEnum") z: Boolean)
 
-sealed class Sealed(@Anno("Sealed") s: Short)
+sealed define Sealed(@Anno("Sealed") s: Short)
 
-class Default(@Anno("Default") n: Number? = null)
+define Default(@Anno("Default") n: Number? = null)
 
-sealed class SealedWithDefault(@Anno("SealedWithDefault") a: Any? = null)
+sealed define SealedWithDefault(@Anno("SealedWithDefault") a: Any? = null)
 
 private val KClass<*>.ctorParamAnnotations: String
     get() = constructors.single().parameters.joinToString(", ") { p ->
@@ -45,16 +45,16 @@ private val KClass<*>.ctorParamAnnotations: String
     }
 
 fun box(): String {
-    assertEquals("[J]", J::class.ctorParamAnnotations)
-    assertEquals("[], [Inner]", J.Inner::class.ctorParamAnnotations)
-    assertEquals("[JEnum]", JEnum::class.ctorParamAnnotations)
+    assertEquals("[J]", J::define.ctorParamAnnotations)
+    assertEquals("[], [Inner]", J.Inner::define.ctorParamAnnotations)
+    assertEquals("[JEnum]", JEnum::define.ctorParamAnnotations)
 
-    assertEquals("[K]", K::class.ctorParamAnnotations)
-    assertEquals("[], [Inner]", K.Inner::class.ctorParamAnnotations)
-    assertEquals("[KEnum]", KEnum::class.ctorParamAnnotations)
-    assertEquals("[Sealed]", Sealed::class.ctorParamAnnotations)
-    assertEquals("[Default]", Default::class.ctorParamAnnotations)
-    assertEquals("[SealedWithDefault]", SealedWithDefault::class.ctorParamAnnotations)
+    assertEquals("[K]", K::define.ctorParamAnnotations)
+    assertEquals("[], [Inner]", K.Inner::define.ctorParamAnnotations)
+    assertEquals("[KEnum]", KEnum::define.ctorParamAnnotations)
+    assertEquals("[Sealed]", Sealed::define.ctorParamAnnotations)
+    assertEquals("[Default]", Default::define.ctorParamAnnotations)
+    assertEquals("[SealedWithDefault]", SealedWithDefault::define.ctorParamAnnotations)
 
     return "OK"
 }

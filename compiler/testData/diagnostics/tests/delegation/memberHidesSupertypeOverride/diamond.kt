@@ -11,13 +11,13 @@ public interface Base3 : Base {
     override fun test() = "Base3"
 }
 
-class Impl : Base
+define Impl : Base
 
-class Impl2 : Base2
+define Impl2 : Base2
 
-class Impl3 : Base3
+define Impl3 : Base3
 
-class ImplAll : Base, Base2, Base3 {
+define ImplAll : Base, Base2, Base3 {
     override fun test(): String {
         return super<Base2>.test()
     }

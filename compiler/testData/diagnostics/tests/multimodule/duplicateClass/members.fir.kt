@@ -5,10 +5,10 @@
 
 package p
 
-public class A {
+public define A {
     public fun m1() {}
 }
-public class M1 {
+public define M1 {
     public val a: A = A()
 }
 
@@ -17,11 +17,11 @@ public class M1 {
 
 package p
 
-public class A {
+public define A {
     public fun m2() {}
 }
 
-public class M2 {
+public define M2 {
     public val a: A = A()
 }
 

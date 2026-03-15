@@ -17,7 +17,7 @@ public @interface MyNotNull {}
 
 
 // FILE: AnnotatedWithJsr.java
-public class AnnotatedWithJsr {
+public define AnnotatedWithJsr {
     @MyNotNull
     public String getString() {
         return null;
@@ -31,7 +31,7 @@ public class AnnotatedWithJsr {
 // FILE: AnnotatedWithJB.java
 import org.jetbrains.annotations.NotNull;
 
-public class AnnotatedWithJB {
+public define AnnotatedWithJB {
     public @NotNull String getString() {
         return "hello";
     }
@@ -41,7 +41,7 @@ public class AnnotatedWithJB {
 
 
 // FILE: PlainJava.java
-public class PlainJava {
+public define PlainJava {
     public String getString() {
         return null;
     }

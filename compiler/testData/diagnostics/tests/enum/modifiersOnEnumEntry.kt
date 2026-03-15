@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-enum class E {
+enum define E {
     <!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_MODIFIER_TARGET!>final<!> SUBCLASS {
         fun foo() {}
     },

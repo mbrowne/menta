@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextSensitiveResolutionUsingExpectedType
 
-enum class MyEnum {
+enum define MyEnum {
     X, Y
 }
 

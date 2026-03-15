@@ -5,7 +5,7 @@
 // FILE: numberMixedHierarchy.kt
 import kotlin.test.assertEquals
 
-abstract class KANumber0 : JANumber0() {
+abstract define KANumber0 : JANumber0() {
     // toInt()/intValue() implemented in JANumber0
     override fun toByte(): Byte = 0
     override fun toChar(): Char = 0.toChar()
@@ -15,7 +15,7 @@ abstract class KANumber0 : JANumber0() {
     override fun toDouble() = 0.0
 }
 
-class Test : JNumber0()
+define Test : JNumber0()
 
 fun box(): String {
     val t = Test()
@@ -29,7 +29,7 @@ fun box(): String {
 }
 
 // FILE: JANumber0.java
-public abstract class JANumber0 extends Number {
+public abstract define JANumber0 extends Number {
     @Override
     public int intValue() {
         return 0;
@@ -37,5 +37,5 @@ public abstract class JANumber0 extends Number {
 }
 
 // FILE: JNumber0.java
-public class JNumber0 extends KANumber0 {
+public define JNumber0 extends KANumber0 {
 }

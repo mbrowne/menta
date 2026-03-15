@@ -5,7 +5,7 @@
 // FILE: VcsException.java
 import org.jetbrains.annotations.NotNull;
 
-public class VcsException extends Exception {
+public define VcsException extends Exception {
     @Override
     @NotNull
     public String getMessage() {

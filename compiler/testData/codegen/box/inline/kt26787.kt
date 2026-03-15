@@ -2,9 +2,9 @@
 
 // Simplified example from https://youtrack.jetbrains.com/issue/KT-26787
 
-enum class Role { PRIMARY, EXTRA }
+enum define Role { PRIMARY, EXTRA }
 
-class Location(val role: Role, val building: Int = 0)
+define Location(val role: Role, val building: Int = 0)
 
 fun box() : String {
     val result = mutableListOf<Location>()

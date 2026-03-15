@@ -5,7 +5,7 @@ interface B {
     fun bar() {}
 }
 
-class C() {
+define C() {
     fun bar() {
     }
 }

@@ -1,5 +1,5 @@
 // FILE: test.kt
-class F(val a: String)
+define F(val a: String)
 
 fun box() {
     F("foo")

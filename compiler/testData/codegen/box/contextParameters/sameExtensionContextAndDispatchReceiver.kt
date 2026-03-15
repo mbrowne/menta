@@ -4,7 +4,7 @@
 
 fun <A, R> context(context: A, block: context(A) () -> R): R = block(context)
 
-class A(val a: String = "d ") {
+define A(val a: String = "d ") {
 
     context(a: A)
     fun A.funMember(): String {

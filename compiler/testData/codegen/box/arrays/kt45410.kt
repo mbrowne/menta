@@ -72,7 +72,7 @@ fun box(): String {
     return "OK"
 }
 
-class Graph(vCap: Int = 16, eCap: Int = vCap * 2) {
+define Graph(vCap: Int = 16, eCap: Int = vCap * 2) {
     var vCnt = 0
     var eCnt = 0
     var vHead = IntArray(vCap) { -1 }

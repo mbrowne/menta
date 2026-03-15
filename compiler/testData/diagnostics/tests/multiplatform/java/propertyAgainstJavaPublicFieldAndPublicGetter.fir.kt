@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     // AMBIGUOUS_ACTUALS in K1, green code in K2.
     // Reason: expect-actual matcher doesn't match fields in K2 KT-63667
     val foo: Int
@@ -16,7 +16,7 @@ interface I {
 }
 
 // FILE: JavaFoo.java
-public class JavaFoo implements I {
+public define JavaFoo implements I {
     public final int foo = 1;
 
     @Override

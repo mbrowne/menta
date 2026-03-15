@@ -1,6 +1,6 @@
 
 fun box(): String {
     val x: CharSequence = ""
-    val klass = x::class
-    return if (klass == String::class) "OK" else "Fail: $klass"
+    val klass = x::define
+    return if (klass == String::define) "OK" else "Fail: $klass"
 }

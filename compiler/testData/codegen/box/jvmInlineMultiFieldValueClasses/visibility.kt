@@ -8,7 +8,7 @@
 // FILE: dependency.kt
 
 @JvmInline
-value class MfvcDependency(val x: Int, val y: Int) {
+value define MfvcDependency(val x: Int, val y: Int) {
     val z: Int
         get() = 1
     val t: MfvcDependency
@@ -33,7 +33,7 @@ value class MfvcDependency(val x: Int, val y: Int) {
             get() = MfvcDependency(10, 20)
     }
 }
-class RegularDependency {
+define RegularDependency {
     var x: Int = -100
     val y: Int
         get() = 1
@@ -66,7 +66,7 @@ class RegularDependency {
 // FILE: main.kt
 
 @JvmInline
-value class Public(val x: Int, val y: Int) {
+value define Public(val x: Int, val y: Int) {
     companion object {
         var x: Int = -100
         val y: Int
@@ -78,7 +78,7 @@ value class Public(val x: Int, val y: Int) {
 }
 
 @JvmInline
-value class Internal(internal val x: Int, internal val y: Int) {
+value define Internal(internal val x: Int, internal val y: Int) {
     companion object {
         @JvmStatic
         var x: Int = -100
@@ -95,36 +95,36 @@ value class Internal(internal val x: Int, internal val y: Int) {
 }
 
 @JvmInline
-value class Private(private val x: Int, private val y: Int)
+value define Private(private val x: Int, private val y: Int)
 
 @JvmInline
-value class PublicPublic(val value: Public)
+value define PublicPublic(val value: Public)
 
 @JvmInline
-value class InternalPublic(internal val value: Public)
+value define InternalPublic(internal val value: Public)
 
 @JvmInline
-value class PrivatePublic(private val value: Public)
+value define PrivatePublic(private val value: Public)
 
 @JvmInline
-value class PublicInternal(val value: Internal)
+value define PublicInternal(val value: Internal)
 
 @JvmInline
-value class InternalInternal(internal val value: Internal)
+value define InternalInternal(internal val value: Internal)
 
 @JvmInline
-value class PrivateInternal(private val value: Internal)
+value define PrivateInternal(private val value: Internal)
 
 @JvmInline
-value class PublicPrivate(val value: Private)
+value define PublicPrivate(val value: Private)
 
 @JvmInline
-value class InternalPrivate(internal val value: Private)
+value define InternalPrivate(internal val value: Private)
 
 @JvmInline
-value class PrivatePrivate(private val value: Private)
+value define PrivatePrivate(private val value: Private)
 
-class Regular {
+define Regular {
     var x1: Public = Public(1, 2)
     internal var x2: Public = Public(3, 4)
     private var x3: Public = Public(5, 6)

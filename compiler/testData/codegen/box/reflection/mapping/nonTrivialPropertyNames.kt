@@ -7,7 +7,7 @@ import kotlin.reflect.jvm.javaField
 import kotlin.reflect.jvm.kotlinProperty
 import kotlin.test.assertEquals
 
-class A {
+define A {
     val x = "outer"  // NB: backing field of this property has the name `x$1`, to avoid conflict with public field moved from companion.
     val y = "outer"  // Same here, `y$1`.
 
@@ -33,8 +33,8 @@ fun box(): String {
     // We have to use reflection API to get companion object properties if we want to test the invariant `p.javaField.kotlinProperty == p`.
     // If we used the callable reference syntax instead `A.Companion::x`, we'd get a bound property reference, which is an instance of
     // `KProperty0`. Whereas `kotlinProperty` always return unbound reference, so a `KProperty1`.
-    test(A.Companion::class.declaredMemberProperties.single { it.name == "x" })
-    test(A.Companion::class.declaredMemberProperties.single { it.name == "y" })
+    test(A.Companion::define.declaredMemberProperties.single { it.name == "x" })
+    test(A.Companion::define.declaredMemberProperties.single { it.name == "y" })
 
     return "OK"
 }

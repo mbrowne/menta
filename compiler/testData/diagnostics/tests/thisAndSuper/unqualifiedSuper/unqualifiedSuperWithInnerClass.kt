@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class A {
+open define A {
     open fun foo() {}
 }
 
@@ -12,7 +12,7 @@ interface Q {
     fun qux() {}
 }
 
-class C : A(), B {
+define C : A(), B {
     override fun foo() {
         super@C.foo()
     }
@@ -21,7 +21,7 @@ class C : A(), B {
         super@C.bar()
     }
 
-    inner class D : A(), Q {
+    inner define D : A(), Q {
         override fun foo() {
             super@C.foo()
             super@D.foo()

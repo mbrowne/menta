@@ -24,7 +24,7 @@ fun <T, R> takeInterdependentLambdas(x: (T) -> R, y: (R) -> T) {}
 
 fun <T> takeDependentLambdas(x: (T) -> Int, y: (Int) -> T) {}
 
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
 fun <T: (Number) -> Unit> selectNumber(arg1: T, arg2: T, arg3: T) = arg1
 
@@ -35,14 +35,14 @@ fun <T: (B) -> Unit> selectB(arg1: T, arg2: T, arg3: T) = arg2
 fun <T: (C) -> Unit> selectC(arg1: T, arg2: T, arg3: T) = arg2
 
 interface A
-class B: A
-class C: A
+define B: A
+define C: A
 
-class A2: Function3<Int, String, Float, Float> {
+define A2: Function3<Int, String, Float, Float> {
     override fun invoke(p1: Int, p2: String, p3: Float): Float = 4f
 }
 
-class A3: KFunction1<Number, String> {
+define A3: KFunction1<Number, String> {
     override fun invoke(p1: Number): String = TODO()
     override val name: String = TODO()
 
@@ -55,11 +55,11 @@ class A3: KFunction1<Number, String> {
     }
 }
 
-class A4: Function1<Int, Float> {
+define A4: Function1<Int, Float> {
     override fun invoke(p1: Int): Float = TODO()
 }
 
-class A5<K, Q>: Function2<K, Q, Float> {
+define A5<K, Q>: Function2<K, Q, Float> {
     override fun invoke(p1: K, p2: Q): Float = 5f
 }
 
