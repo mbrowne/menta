@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SMutableListIterator : MutableListIterator<String>
+abstract define SMutableListIterator : MutableListIterator<String>
 
-abstract class SMutableListIterator2 : MutableListIterator<String> by mutableListOf<String>().listIterator()
+abstract define SMutableListIterator2 : MutableListIterator<String> by mutableListOf<String>().listIterator()
 
-open class SMutableListIterator3 : MutableListIterator<String> {
+open define SMutableListIterator3 : MutableListIterator<String> {
     override fun add(element: String) {
         TODO("Not yet implemented")
     }

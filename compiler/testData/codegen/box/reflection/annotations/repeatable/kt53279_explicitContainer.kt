@@ -9,27 +9,27 @@
 import kotlin.test.assertEquals
 import kotlin.reflect.full.findAnnotations
 
-@JvmRepeatable(ArrayOfInt.ContainerOfInt::class)
-annotation class ArrayOfInt(val ints: IntArray = []) {
-    annotation class ContainerOfInt(val value: Array<ArrayOfInt>)
+@JvmRepeatable(ArrayOfInt.ContainerOfInt::define)
+annotation define ArrayOfInt(val ints: IntArray = []) {
+    annotation define ContainerOfInt(val value: Array<ArrayOfInt>)
 }
 
-@JvmRepeatable(ArrayOfString.ContainerOfString::class)
-annotation class ArrayOfString(val strings: Array<String> = []) {
-    annotation class ContainerOfString(val value: Array<ArrayOfString>)
+@JvmRepeatable(ArrayOfString.ContainerOfString::define)
+annotation define ArrayOfString(val strings: Array<String> = []) {
+    annotation define ContainerOfString(val value: Array<ArrayOfString>)
 }
 
-@JvmRepeatable(ArrayOfEnum.ContainerOfEnum::class)
-annotation class ArrayOfEnum(val enums: Array<DeprecationLevel> = []) {
-    annotation class ContainerOfEnum(val value: Array<ArrayOfEnum>)
+@JvmRepeatable(ArrayOfEnum.ContainerOfEnum::define)
+annotation define ArrayOfEnum(val enums: Array<DeprecationLevel> = []) {
+    annotation define ContainerOfEnum(val value: Array<ArrayOfEnum>)
 }
 
-@JvmRepeatable(ArrayOfAnnotation.ContainerOfAnnotation::class)
-annotation class ArrayOfAnnotation(val annotations: Array<ArrayOfString> = []) {
-    annotation class ContainerOfAnnotation(val value: Array<ArrayOfAnnotation>)
+@JvmRepeatable(ArrayOfAnnotation.ContainerOfAnnotation::define)
+annotation define ArrayOfAnnotation(val annotations: Array<ArrayOfString> = []) {
+    annotation define ContainerOfAnnotation(val value: Array<ArrayOfAnnotation>)
 }
 
-class C {
+define C {
     @ArrayOfInt([1])
     @ArrayOfInt([2])
     val arrayOfInt = ""

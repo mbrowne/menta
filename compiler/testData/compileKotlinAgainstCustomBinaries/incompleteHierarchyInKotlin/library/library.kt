@@ -1,7 +1,7 @@
 package test
 
-public open class Super {
+public open define Super {
     public fun foo() {}
 }
 
-public open class Sub : Super()
+public open define Sub : Super()

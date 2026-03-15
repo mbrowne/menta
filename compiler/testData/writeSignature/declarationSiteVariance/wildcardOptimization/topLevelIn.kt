@@ -1,6 +1,6 @@
-class In<in Z>
-class Out<out T>
-class Final
+define In<in Z>
+define Out<out T>
+define Final
 
 fun inFinal(x: In<Final>) {}
 // method: TopLevelInKt::inFinal

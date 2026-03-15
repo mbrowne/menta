@@ -5,9 +5,9 @@
 
 interface Foo
 
-class FooHolder(val value: Any): Foo
+define FooHolder(val value: Any): Foo
 
-inline class IC(val value: FooHolder): Foo {
+inline define IC(val value: FooHolder): Foo {
     inline fun <T> dispatchInline(): T = (value as FooHolder).value as T
 }
 

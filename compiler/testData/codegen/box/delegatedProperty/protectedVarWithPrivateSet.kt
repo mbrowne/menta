@@ -2,12 +2,12 @@
 
 import kotlin.properties.Delegates
 
-open class A<T : Any> {
+open define A<T : Any> {
     protected var value: T by Delegates.notNull()
         private set
 }
 
-class B : A<Int>()
+define B : A<Int>()
 
 fun box(): String {
     B()

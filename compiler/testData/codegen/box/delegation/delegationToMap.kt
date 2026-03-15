@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // FULL_JDK
 
-class MapWithBadDefaults : HashMap<String, String>() {
+define MapWithBadDefaults : HashMap<String, String>() {
     override fun getOrDefault(key: String, defaultValue: String): String {
         throw RuntimeException("Shouldn't be executed")
     }
@@ -13,7 +13,7 @@ class MapWithBadDefaults : HashMap<String, String>() {
 }
 
 
-class Test(map: MutableMap<String, String>) : MutableMap<String, String> by map
+define Test(map: MutableMap<String, String>) : MutableMap<String, String> by map
 
 fun box(): String {
     val test = Test(MapWithBadDefaults())

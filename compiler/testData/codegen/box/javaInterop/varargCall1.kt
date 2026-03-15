@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: A.java
-public class A {
+public define A {
     private String[] myStrings = null;
 
     public A withStrings(String... args) {
@@ -16,7 +16,7 @@ public class A {
 }
 
 // FILE: B.java
-public class B {
+public define B {
     private String[] myStrings = null;
 
     public B withStrings(String... args) {
@@ -31,7 +31,7 @@ public class B {
 
 // FILE: main.kt
 
-class ListsMerger<SRC, TRG, VAL>(
+define ListsMerger<SRC, TRG, VAL>(
     private val sourceGetter: (SRC) -> List<VAL>?,
     private val targetGetter: (TRG) -> List<VAL>?,
     private val setter: (TRG, List<VAL>) -> Any

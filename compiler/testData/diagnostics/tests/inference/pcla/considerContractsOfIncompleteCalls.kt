@@ -3,11 +3,11 @@
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun <R, B : Any> Controller<R>.ensureNotNull(value: B?, shift: () -> R): B {
     contract { returns() implies (value != null) }
     return value!!

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Id<T: String>(val id: T)
+value define Id<T: String>(val id: T)
 
 fun test(id: Id<String>) {
     if (id.id != "OK") throw AssertionError()

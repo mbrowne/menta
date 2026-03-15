@@ -4,9 +4,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-82555
 
-class Outer {
+define Outer {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
-    class C {
+    define C {
         fun foo() { }
     }
 
@@ -14,7 +14,7 @@ class Outer {
     val wrongRef = C::<!UNRESOLVED_REFERENCE!>foo<!>
 }
 
-class C
+define C
 
 /* GENERATED_FIR_TAGS: callableReference, classDeclaration, functionDeclaration, nestedClass, propertyDeclaration,
 stringLiteral */

@@ -6,7 +6,7 @@ package a
 
 internal interface InternalInterface
 
-public class PublicClass {
+public define PublicClass {
     internal fun internalMemberFun() {}
 
     internal companion object {}

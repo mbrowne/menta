@@ -2,7 +2,7 @@
 // LAMBDAS: CLASS
 // WITH_STDLIB
 
-open class C(val a: Any)
+open define C(val a: Any)
 
 fun box(): String {
     val l = object : C({}) {
@@ -16,10 +16,10 @@ fun box(): String {
 
     val enclosingClass = javaClass.getEnclosingClass()!!.getName()
     if (enclosingClass != "LambdaInObjectLiteralSuperCallKt" || enclosingClass != l.javaClass.getEnclosingClass()!!.getName())
-        return "enclosing class: $enclosingClass"
+        return "enclosing define: $enclosingClass"
 
     val declaringClass = javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

@@ -5,7 +5,7 @@
 // RETURN_VALUE_CHECKER_MODE: CHECKER
 
 // FILE: Lib.kt
-class Lib {
+define Lib {
     fun getStuff(): String = ""
 
     var prop: String = ""
@@ -18,7 +18,7 @@ class Lib {
 fun toplvl(): String = ""
 
 @MustUseReturnValues
-class A {
+define A {
     fun alreadyApplied(): String = ""
 
     var prop: String = ""
@@ -28,7 +28,7 @@ class A {
         }
 }
 
-enum class E {
+enum define E {
     A, B;
     fun foo() = ""
 }

@@ -3,12 +3,12 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val string: String)
+value define S(val string: String)
 
-class Outer {
+define Outer {
     private fun foo(s: S) = s.string
 
-    inner class Inner(val string: String) {
+    inner define Inner(val string: String) {
         fun bar() = foo(S(string))
     }
 }

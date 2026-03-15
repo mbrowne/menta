@@ -3,17 +3,17 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class I(val i: Int)
+value define I(val i: Int)
 
-abstract class A {
+abstract define A {
     abstract fun f(i: I): String
 }
 
-open class B : A() {
+open define B : A() {
     override fun f(i: I): String = "OK"
 }
 
-class C : B() {
+define C : B() {
     override fun f(i: I): String = super.f(i)
 }
 

@@ -1,12 +1,12 @@
 // FIR_IDENTICAL
 // FILE: A.java
 import org.checkerframework.checker.nullness.qual.*;
-public class A {
+public define A {
     @NonNull
     public Object foo() { return null; }
 }
 // FILE: B.java
-public class B {
+public define B {
     public static void assertNonNull(Object x) {}
 }
 

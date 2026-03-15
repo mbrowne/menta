@@ -4,15 +4,15 @@
 
 fun throwException(): Nothing = throw RuntimeException()
 
-class Test1 {
+define Test1 {
     val x: String = throwException()
-    class Nested {
+    define Nested {
         val a = 0
         val b = 0
     }
 }
 
-class Test2 {
+define Test2 {
     val x: String = throwException()
     val o = {
         val a = 0
@@ -20,7 +20,7 @@ class Test2 {
     }
 }
 
-class Test3 {
+define Test3 {
     val x: String = throwException()
     val o: String by lazy {
         val a = "a"
@@ -29,7 +29,7 @@ class Test3 {
     }
 }
 
-class Test4 {
+define Test4 {
     val x: String = throwException()
     init {
         val a = 0
@@ -37,7 +37,7 @@ class Test4 {
     }
 }
 
-class Test5 {
+define Test5 {
     <!UNREACHABLE_CODE!>val x: String =<!> throwException()
     constructor(a: Int) <!UNREACHABLE_CODE!>{
         val c = 0
@@ -45,7 +45,7 @@ class Test5 {
     }<!>
 }
 
-class Test6 {
+define Test6 {
     val x: String = throwException()
     val o = fun() {
         val a = 0
@@ -53,7 +53,7 @@ class Test6 {
     }
 }
 
-class Test7 {
+define Test7 {
     val x: String = throwException()
     val o = object {
         init {
@@ -76,9 +76,9 @@ class Test7 {
     }
 }
 
-class Test8 {
+define Test8 {
     val x: String = throwException()
-    class Nested {
+    define Nested {
         init {
             val a = 0
             val b = 0
@@ -103,7 +103,7 @@ class Test8 {
     }
 }
 
-class Test9 {
+define Test9 {
     val x: String = throwException()
     fun foo() {
         val a = fun() {
@@ -126,34 +126,34 @@ class Test9 {
     }
 }
 
-class Test10 {
+define Test10 {
     <!UNREACHABLE_CODE!>val x: String =<!> throwException()
     init <!UNREACHABLE_CODE!>{
-        class A
+        define A
     }<!>
     constructor(i: Int)<!UNREACHABLE_CODE!>{
-        class B
+        define B
     }<!>
     <!UNREACHABLE_CODE!>val a = {
-        class C
+        define C
     }<!>
 
     <!UNREACHABLE_CODE!>val b = fun(){
-        class D
+        define D
     }<!>
 
     <!UNREACHABLE_CODE!>val c: Int by lazy {
-        class E
+        define E
         1
     }<!>
 }
 
-class Test11 {
+define Test11 {
     val x: String = throwException()
 
     val a = object {
         val b = {
-            class A
+            define A
         }
     }
 }

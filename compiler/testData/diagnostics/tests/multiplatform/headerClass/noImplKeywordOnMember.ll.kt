@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun bar(): String
     fun bas(f: Int)
 }
@@ -11,7 +11,7 @@ expect class Foo {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo {
+actual define Foo {
     fun <!ACTUAL_MISSING!>bar<!>(): String = "bar"
     fun <!ACTUAL_MISSING!>bas<!>(g: Int) {}
 }

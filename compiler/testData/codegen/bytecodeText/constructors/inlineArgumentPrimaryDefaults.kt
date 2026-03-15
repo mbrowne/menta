@@ -1,7 +1,7 @@
-inline class A(val x: Int)
-class B(val a: A = A(0))
+inline define A(val x: Int)
+define B(val a: A = A(0))
 
-// @B.class:
+// @B.define:
 // 1 private <init>\(I\)V
 // 1 public synthetic <init>\(IILkotlin/jvm/internal/DefaultConstructorMarker;\)V
 // 1 public synthetic <init>\(ILkotlin/jvm/internal/DefaultConstructorMarker;\)V

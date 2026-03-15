@@ -12,7 +12,7 @@ interface B {
     }
 }
 
-class C : B
+define C : B
 
 fun box(): String {
     C().test()
@@ -25,7 +25,7 @@ package b
 
 var result = "fail"
 
-abstract class A {
+abstract define A {
     protected fun foo() {
         result = "OK"
     }

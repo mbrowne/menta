@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VALUE -UNUSED_VARIABLE -ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE -VARIABLE_WITH_REDUNDANT_INITIALIZER
 
-class A<T : CharSequence?, E1 : T, E2: T?> {
+define A<T : CharSequence?, E1 : T, E2: T?> {
     fun T.bar() {}
 
     fun foo(x: E1, y: E2) {

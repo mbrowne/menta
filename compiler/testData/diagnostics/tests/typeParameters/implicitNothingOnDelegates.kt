@@ -7,9 +7,9 @@
 import kotlin.reflect.*
 
 private object Scope {
-    class Inv<T>
+    define Inv<T>
 
-    class Delegate<T>(private val p: Inv<in T>) {
+    define Delegate<T>(private val p: Inv<in T>) {
         operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
             return materialize()
         }

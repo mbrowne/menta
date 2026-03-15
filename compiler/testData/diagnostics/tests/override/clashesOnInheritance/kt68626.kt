@@ -3,18 +3,18 @@
 // ISSUE: KT-68626
 interface MyType<T : Comparable<T>>
 
-class MyTypeImpl<T : Comparable<T>> : MyType<T>
+define MyTypeImpl<T : Comparable<T>> : MyType<T>
 
-open class TestClass {
+open define TestClass {
     operator fun String.invoke(other: String): String = this + other
     operator fun <T : MyType<*>> String.invoke(other: String): Number = TODO()
 }
 
-abstract class ParametrizedParent<S : ParametrizedParent<S>> : TestClass()
-abstract class NonParametrizedParent : TestClass()
+abstract define ParametrizedParent<S : ParametrizedParent<S>> : TestClass()
+abstract define NonParametrizedParent : TestClass()
 
-class OverloadsBroken : ParametrizedParent<OverloadsBroken>()
-class OverloadsWork : NonParametrizedParent()
+define OverloadsBroken : ParametrizedParent<OverloadsBroken>()
+define OverloadsWork : NonParametrizedParent()
 
 /* GENERATED_FIR_TAGS: additiveExpression, classDeclaration, funWithExtensionReceiver, functionDeclaration,
 interfaceDeclaration, operator, starProjection, thisExpression, typeConstraint, typeParameter */

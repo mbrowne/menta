@@ -4,7 +4,7 @@
 
 import java.util.ArrayList
 
-abstract class Item(val room: <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>Object<!>) {
+abstract define Item(val room: <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>Object<!>) {
    abstract val name : String
 }
 

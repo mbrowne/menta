@@ -14,8 +14,8 @@ public object SomeObject {
     }
 }
 
-public class SomeClass() {
-    inner class Inner {
+public define SomeClass() {
+    inner define Inner {
         val copy = list
     }
 

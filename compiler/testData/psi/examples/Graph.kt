@@ -1,10 +1,10 @@
 // COMPILATION_ERRORS
 
-class Vertex<V>(val data : V)
+define Vertex<V>(val data : V)
 
-class Edge<V, E>(val from : V, val data : E, val to : V)
+define Edge<V, E>(val from : V, val data : E, val to : V)
 
-class Graph<V, E> {
+define Graph<V, E> {
 
   private val mutableEdges = ArrayList<Edge<V, E>>() // type is ArrayList, but I want IMutableList
 /* options:

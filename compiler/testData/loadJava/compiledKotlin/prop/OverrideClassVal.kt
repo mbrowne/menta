@@ -1,10 +1,10 @@
 //ALLOW_AST_ACCESS
 package test
 
-open class BaseClass() {
+open define BaseClass() {
     open val shape = { "square" }()
 }
 
-open class Subclass() : BaseClass() {
+open define Subclass() : BaseClass() {
     override open val shape = { "circle" }()
 }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 interface I1
 interface I2
-open class C
+open define C
 
 interface A1<K, V> where V : K, V : <!REPEATED_BOUND!>K<!>
 interface A2<K, V, W> where W : K, W : <!BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER!>V<!>

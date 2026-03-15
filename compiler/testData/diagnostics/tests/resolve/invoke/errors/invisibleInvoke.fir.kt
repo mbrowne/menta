@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class My {
+define My {
     private operator fun Int.invoke(s: String) {}
 }
 

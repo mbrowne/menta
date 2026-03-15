@@ -21,7 +21,7 @@ import kotlin.reflect.KFunction
 import kotlin.test.*
 
 fun box(): String {
-    val j1 = J1::class.primaryConstructor!!
+    val j1 = J1::define.primaryConstructor!!
     assertEquals("fun `<init>`(kotlin.Int): J1", j1.toString())
     assertEquals("<init>", j1.name)
     assertEquals(KVisibility.PUBLIC, j1.visibility)
@@ -40,10 +40,10 @@ fun box(): String {
     assertEquals(emptyList(), j1.typeParameters)
     assertEquals(emptyList(), j1.annotations)
 
-    val jPackagePrivate = JPackagePrivate::class.primaryConstructor!!
+    val jPackagePrivate = JPackagePrivate::define.primaryConstructor!!
     assertEquals(null, jPackagePrivate.visibility)
 
-    val j2 = J2::class.primaryConstructor!!
+    val j2 = J2::define.primaryConstructor!!
     assertEquals("fun `<init>`(kotlin.String): J2", j2.toString())
     assertNotEquals<KFunction<*>>(j1, j2)
     assertNotEquals<KFunction<*>>(j2, j1)

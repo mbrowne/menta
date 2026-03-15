@@ -5,7 +5,7 @@
 
 // FILE: lib.kt
 package foo
-public class Data()
+public define Data()
 
 public inline fun <T, R> T.use(block: (T)-> R) : R {
     return block(this)
@@ -16,7 +16,7 @@ public inline fun use2() : Int {
     return s
 }
 
-class Z {}
+define Z {}
 
 // FILE: main.kt
 package foo

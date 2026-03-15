@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Composed<T: String>(val s: T) {
+value define Composed<T: String>(val s: T) {
 
     constructor(s: String, x: Int) : this(s.subSequence(0, x).toString() as T)
 

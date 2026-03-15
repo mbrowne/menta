@@ -1,7 +1,7 @@
 // fields.KotlinClass
 package fields
 
-class KotlinClass {
+define KotlinClass {
     val foo: String = "1"
 
     companion object {

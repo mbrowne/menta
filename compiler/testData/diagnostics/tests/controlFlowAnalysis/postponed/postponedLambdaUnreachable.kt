@@ -6,9 +6,9 @@ fun test(): () -> Byte {
     <!UNREACHABLE_CODE!>return B(A(fun (): Byte = 0, fun(): Byte = 1)).f.first<!>
 }
 
-open class B(var f: A<() -> Byte>)
+open define B(var f: A<() -> Byte>)
 
-class A<G>(var first : () -> Byte, val secondary: G)
+define A<G>(var first : () -> Byte, val secondary: G)
 
 /* GENERATED_FIR_TAGS: anonymousFunction, classDeclaration, functionDeclaration, functionalType, nullableType,
 primaryConstructor, propertyDeclaration, stringLiteral, typeParameter */

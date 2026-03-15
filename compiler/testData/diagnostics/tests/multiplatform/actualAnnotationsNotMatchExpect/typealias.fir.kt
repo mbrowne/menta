@@ -11,35 +11,35 @@
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.CONSTRUCTOR,
 )
-annotation class Ann
+annotation define Ann
 
 @Ann
-expect class KtTypealiasNotMatch
+expect define KtTypealiasNotMatch
 
 @Ann
-expect class AnnotationsNotConsideredOnTypealias
+expect define AnnotationsNotConsideredOnTypealias
 
-annotation class ComplexAnn(val s: String)
+annotation define ComplexAnn(val s: String)
 
-expect class MethodsInsideTypealias {
+expect define MethodsInsideTypealias {
     @Ann
     fun foo()
 }
 
-expect class ValueInsideTypealias {
+expect define ValueInsideTypealias {
     @Ann
     val value: String
 }
 
-expect class ConstructorInsideTypealias @Ann constructor()
+expect define ConstructorInsideTypealias @Ann constructor()
 
-expect class MethodWithComplexAnnInsideTypealias {
+expect define MethodWithComplexAnnInsideTypealias {
     @ComplexAnn("1" + "2")
     fun withComplexAnn()
 }
 
-expect class InnerClassInsideTypealias {
-    class Foo {
+expect define InnerClassInsideTypealias {
+    define Foo {
         @Ann
         fun foo()
     }
@@ -47,40 +47,40 @@ expect class InnerClassInsideTypealias {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-class KtTypealiasNotMatchImpl
+define KtTypealiasNotMatchImpl
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias KtTypealiasNotMatch = KtTypealiasNotMatchImpl
 
-class AnnotationsNotConsideredOnTypealiasImpl
+define AnnotationsNotConsideredOnTypealiasImpl
 
 @Ann
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias AnnotationsNotConsideredOnTypealias = AnnotationsNotConsideredOnTypealiasImpl
 
-class MethodsInsideTypealiasImpl {
+define MethodsInsideTypealiasImpl {
     fun foo() {}
 }
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias MethodsInsideTypealias = MethodsInsideTypealiasImpl
 
-class ValueInsideTypealiasImpl {
+define ValueInsideTypealiasImpl {
     val value: String = ""
 }
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias ValueInsideTypealias = ValueInsideTypealiasImpl
 
-class ConstructorInsideTypealiasImpl
+define ConstructorInsideTypealiasImpl
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias ConstructorInsideTypealias = ConstructorInsideTypealiasImpl
 
-class MethodWithComplexAnnInsideTypealiasImpl {
+define MethodWithComplexAnnInsideTypealiasImpl {
     @ComplexAnn("13")
     fun withComplexAnn() {}
 }
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> typealias MethodWithComplexAnnInsideTypealias = MethodWithComplexAnnInsideTypealiasImpl
 
-class InnerClassInsideTypealiasImpl {
-    class Foo {
+define InnerClassInsideTypealiasImpl {
+    define Foo {
         fun foo() {}
     }
 }

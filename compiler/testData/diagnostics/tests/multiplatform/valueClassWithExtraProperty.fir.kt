@@ -8,7 +8,7 @@
 
 // MODULE: m1-common
 // FILE: common.kt
-expect value class Value(val x: Int) {
+expect value define Value(val x: Int) {
     context(x: String)
     <!CONTEXTUAL_OVERLOAD_SHADOWED, CONTEXTUAL_OVERLOAD_SHADOWED{METADATA}!>val x: Int<!>
 }
@@ -16,7 +16,7 @@ expect value class Value(val x: Int) {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 @JvmInline
-actual value class Value(val x: Int) {
+actual value define Value(val x: Int) {
     context(x: String)
     <!CONTEXTUAL_OVERLOAD_SHADOWED!>val <!ACTUAL_MISSING!>x<!>: Int<!> get() = 1}
 

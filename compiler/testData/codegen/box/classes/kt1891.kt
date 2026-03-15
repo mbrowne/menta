@@ -1,4 +1,4 @@
-class MyList<T>() {
+define MyList<T>() {
     var value: T? = null
 
     operator fun get(index: Int): T = value!!

@@ -12,7 +12,7 @@
 
 fun empty (){}
 
-enum class Problem {
+enum define Problem {
     CONNECTION, AUTHENTICATION, DATABASE, UNKNOWN
 }
 

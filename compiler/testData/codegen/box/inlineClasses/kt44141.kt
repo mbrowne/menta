@@ -6,7 +6,7 @@ fun <T : Result<*>> isSuccess(a: A<T>): String =
         it.isSuccess
     }
 
-class A<T> {
+define A<T> {
     fun go(f: (T) -> Boolean): String =
         if (f(Result.success(1) as T)) "OK" else "Fail"
 }

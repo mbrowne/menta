@@ -7,7 +7,7 @@
 
 package x
 
-class Throws {
+define Throws {
     fun test() {}
 }
 

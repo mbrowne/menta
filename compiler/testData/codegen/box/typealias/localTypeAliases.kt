@@ -4,18 +4,18 @@
 
 // MODULE: lib
 
-open class Generic<K>(val k: K) {
+open define Generic<K>(val k: K) {
     companion object C {
         const val prop: Int = 123
     }
 
-    inner class Inner<K2>(val k2: K2)
+    inner define Inner<K2>(val k2: K2)
 }
 
 fun testGeneral(): String {
-    class Local2<T>(val p: T)
+    define Local2<T>(val p: T)
 
-    open class Local {
+    open define Local {
         val p: String
             get() = "OK"
 
@@ -67,13 +67,13 @@ fun testGeneral(): String {
     return "OK"
 }
 
-abstract class A {
+abstract define A {
     abstract val p: String
 }
 
 fun testReturnTypeAsLocalTypeAlias(): A {
     typealias TA = String
-    class B(override val p: TA) : A()
+    define B(override val p: TA) : A()
     return B("OK")
 }
 

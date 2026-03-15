@@ -37,7 +37,7 @@ val prop11: <!UNRESOLVED_REFERENCE!>aaa<!> = 1
 // val prop14: null
 val prop14: <!UNRESOLVED_REFERENCE!>aaa<!>? = 1
 
-class A
+define A
 
 // val prop15: null
 val prop15: A <!INITIALIZER_TYPE_MISMATCH!>=<!> 1

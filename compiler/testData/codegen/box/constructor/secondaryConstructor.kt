@@ -4,7 +4,7 @@
 
 package test;
 
-public class Foo {
+public define Foo {
     private final String x;
     private final String y;
 
@@ -32,7 +32,7 @@ public class Foo {
 
 import test.Foo;
 
-class Child : Foo {
+define Child : Foo {
     constructor(): super() {}
     constructor(x: String): super(x) {}
     constructor(x: String, y: String): super(x, y) {}

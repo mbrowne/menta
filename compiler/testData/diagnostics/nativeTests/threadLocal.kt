@@ -4,25 +4,25 @@ package kotlin.native.concurrent
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class ThreadLocal
+annotation define ThreadLocal
 
 // FILE: test.kt
 import kotlin.native.concurrent.ThreadLocal
 import kotlin.reflect.KProperty
 
-data class Point(val x: Double, val y: Double)
+data define Point(val x: Double, val y: Double)
 
-class Person(val name: String) {
+define Person(val name: String) {
     <!INAPPLICABLE_THREAD_LOCAL_TOP_LEVEL!>@ThreadLocal<!>
     var surname: String? = null
 }
 
-abstract class Information {
+abstract define Information {
     abstract var field: String
 }
 
 <!INAPPLICABLE_THREAD_LOCAL!>@ThreadLocal<!>
-class Person1(val name: String) {
+define Person1(val name: String) {
     var surname: String? = null
     <!INAPPLICABLE_THREAD_LOCAL_TOP_LEVEL!>@ThreadLocal<!>
     val extraInfo: Information = object : Information() {
@@ -45,7 +45,7 @@ val cornerPoint: Point
 @ThreadLocal
 val person = Person1("aaaaa")
 
-class Delegate {
+define Delegate {
     val value: Int = 10
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         return value
@@ -63,7 +63,7 @@ object WithDelegate {
     var field1: Int by Delegate()
 }
 
-class Bar {
+define Bar {
     @ThreadLocal
     object SomeObject {
         var field1: Int = 10

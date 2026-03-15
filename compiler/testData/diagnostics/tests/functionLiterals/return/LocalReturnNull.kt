@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A
+define A
 val flag = true
 
 val a /*: () -> A?*/ = l@ {

@@ -7,7 +7,7 @@ public interface Function<E extends CharSequence, F extends java.util.Map<String
 }
 
 // FILE: A.java
-public class A {
+public define A {
     public void foo(Function<?, ?> l) {
     }
 

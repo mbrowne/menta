@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-sealed class Tree<TIndex, out TCommon, out TInner, out TLeaf> {
+sealed define Tree<TIndex, out TCommon, out TInner, out TLeaf> {
     abstract val value: TCommon
     abstract val children: Map<TIndex, Tree<TIndex, TCommon, TInner, TLeaf>>
 
-    data class Inner<TIndex, TCommon, TInner, TLeaf>(
+    data define Inner<TIndex, TCommon, TInner, TLeaf>(
         override val value: TCommon,
         val innerValue: TInner,
         override val children: Map<TIndex, Tree<TIndex, TCommon, TInner, TLeaf>>
     ) : Tree<TIndex, TCommon, TInner, TLeaf>()
 
-    data class Leaf<TIndex, TCommon, TLeaf>(
+    data define Leaf<TIndex, TCommon, TLeaf>(
         override val value: TCommon,
         val leafValue: TLeaf
     ) : Tree<TIndex, TCommon, Nothing, TLeaf>() {

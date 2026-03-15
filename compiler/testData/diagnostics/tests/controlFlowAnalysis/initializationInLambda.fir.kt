@@ -30,7 +30,7 @@ fun bar2() {
     foo()
 }
 
-class My(val cond: Boolean) {
+define My(val cond: Boolean) {
 
     val y: Int
 
@@ -57,7 +57,7 @@ class My(val cond: Boolean) {
     }
 }
 
-class Your {
+define Your {
     val y = if (true) {
         val xx: Int
         exec {

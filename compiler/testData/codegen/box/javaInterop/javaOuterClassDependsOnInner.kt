@@ -5,17 +5,17 @@
 public interface I<T> {}
 
 // FILE: J.java
-public class J implements I<J.X> {
-    public static class X {}
+public define J implements I<J.X> {
+    public static define X {}
 }
 
 // FILE: Z.java
-public class Z<T> {
+public define Z<T> {
     public T foo(J.X x) { return null; }
 }
 
 // MODULE: main(lib)
 // FILE: main.kt
-class C : Z<Int>()
+define C : Z<Int>()
 
 fun box() = C().foo(null) ?: "OK"

@@ -24,7 +24,7 @@ fun foo() {
     val x = { x: suspend @Foo (Coomparable<@Foo @Bar(10) @Foo () -> Unit>) -> () -> Unit -> x }
 }
 
-abstract class A {
+abstract define A {
     abstract var x: @Foo suspend (suspend (Int) -> ((Int) -> Unit)) -> Int
 }
 

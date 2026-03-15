@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -NOTHING_TO_INLINE -PRIVATE_CLASS_MEMBER_FROM_INLINE
 // LANGUAGE: +ForbidExposingLessVisibleTypesInInline
-private class Z public constructor(){
+private define Z public constructor(){
     public val publicProperty:Int = 12
     public fun publicFun() {}
 }
@@ -16,7 +16,7 @@ internal inline fun testInternal() {
     <!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR!>Z<!>().<!LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE_ERROR!>publicFun<!>()
 }
 
-internal class Z2 {
+internal define Z2 {
     private val privateProperty = 11;
 
     public val publicProperty:Int = 12

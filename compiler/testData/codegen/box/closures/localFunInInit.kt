@@ -1,4 +1,4 @@
-class A {
+define A {
     val result: String
     init {
         val flag = "OK"

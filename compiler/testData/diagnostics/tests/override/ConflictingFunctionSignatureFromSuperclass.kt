@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class Aaa() {
+open define Aaa() {
     fun foo() = 1
 }
 
-open class Bbb() : Aaa() {
+open define Bbb() : Aaa() {
     <!CONFLICTING_OVERLOADS!>fun <T> foo()<!> = 2
 }
 

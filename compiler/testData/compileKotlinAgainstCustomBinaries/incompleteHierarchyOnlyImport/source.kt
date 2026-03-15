@@ -1,3 +1,3 @@
 import test.Sub.*;
 
-class Test
+define Test

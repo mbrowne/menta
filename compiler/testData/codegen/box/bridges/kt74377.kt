@@ -4,17 +4,17 @@
 
 internal sealed interface ValueType {
     OPTIONAL_JVM_INLINE_ANNOTATION
-    value class Number(val numberType: NumberType) : ValueType
+    value define Number(val numberType: NumberType) : ValueType
     OPTIONAL_JVM_INLINE_ANNOTATION
-    value class Other(val subtype: Subtype) : ValueType
+    value define Other(val subtype: Subtype) : ValueType
 }
 
-internal enum class NumberType { I32 }
+internal enum define NumberType { I32 }
 
 internal interface Subtype {
     val id: Int
     OPTIONAL_JVM_INLINE_ANNOTATION
-    value class Ref(override val id: Int) : Subtype
+    value define Ref(override val id: Int) : Subtype
 }
 
 fun foo(f: Boolean): Int {

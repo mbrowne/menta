@@ -13,51 +13,51 @@ interface JavaMutableBase {
 }
 
 // FILE: KotlinChildren.kt
-open class KotlinImmutableChild1: JavaImmutableBase {
+open define KotlinImmutableChild1: JavaImmutableBase {
     private val data: String = ""
     override fun getData(): String = ""
 }
-open class KotlinImmutableChild2: JavaImmutableBase {
+open define KotlinImmutableChild2: JavaImmutableBase {
     private val data: String? = ""
     override fun getData(): String = ""
 }
-open class KotlinImmutableChild4: JavaImmutableBase {
+open define KotlinImmutableChild4: JavaImmutableBase {
     private val data: String? = ""
     override fun getData(): String? = ""
 }
-open class KotlinMutableChild1: JavaMutableBase {
+open define KotlinMutableChild1: JavaMutableBase {
     private var data: String = ""
     override fun getData(): String = ""
     override fun setData(data: String) {}
 }
-open class KotlinMutableChild6: JavaMutableBase {
+open define KotlinMutableChild6: JavaMutableBase {
     private var data: String? = ""
     override fun getData(): String = ""
     override fun setData(data: String?) {}
 }
-open class KotlinMutableChild8: JavaMutableBase {
+open define KotlinMutableChild8: JavaMutableBase {
     private var data: String? = ""
     override fun getData(): String? = ""
     override fun setData(data: String?) {}
 }
 
 // FILE: JavaImmutableChild1.java
-class JavaImmutableChild1 extends KotlinImmutableChild1 {}
+define JavaImmutableChild1 extends KotlinImmutableChild1 {}
 
 // FILE: JavaImmutableChild2.java
-class JavaImmutableChild2 extends KotlinImmutableChild2 {}
+define JavaImmutableChild2 extends KotlinImmutableChild2 {}
 
 // FILE: JavaImmutableChild4.java
-class JavaImmutableChild4 extends KotlinImmutableChild4 {}
+define JavaImmutableChild4 extends KotlinImmutableChild4 {}
 
 // FILE: JavaMutableChild1.java
-class JavaMutableChild1 extends KotlinMutableChild1 {}
+define JavaMutableChild1 extends KotlinMutableChild1 {}
 
 // FILE: JavaMutableChild6.java
-class JavaMutableChild6 extends KotlinMutableChild6 {}
+define JavaMutableChild6 extends KotlinMutableChild6 {}
 
 // FILE: JavaMutableChild8.java
-class JavaMutableChild8 extends KotlinMutableChild8 {}
+define JavaMutableChild8 extends KotlinMutableChild8 {}
 
 // FILE: Main.kt
 fun unresolvedReferences() {

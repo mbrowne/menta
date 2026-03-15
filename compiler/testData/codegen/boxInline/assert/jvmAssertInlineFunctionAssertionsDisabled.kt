@@ -14,17 +14,17 @@ inline fun inlineMe() {
 
 import test.*
 
-class CheckerJvmAssertInlineFunctionAssertionsDisabled {
+define CheckerJvmAssertInlineFunctionAssertionsDisabled {
     fun check() {
         inlineMe()
         assert(false) { "FROM INLINESITE" }
     }
 }
 
-class Dummy
+define Dummy
 
 fun disableAssertions(): CheckerJvmAssertInlineFunctionAssertionsDisabled {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setClassAssertionStatus("CheckerJvmAssertInlineFunctionAssertionsDisabled", false)
     loader.setClassAssertionStatus("InlineKt", false)
     val c = loader.loadClass("CheckerJvmAssertInlineFunctionAssertionsDisabled")

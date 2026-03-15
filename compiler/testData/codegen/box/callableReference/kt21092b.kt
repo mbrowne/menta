@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // ISSUE: KT-21092, KT-81931
 
-class A<T>(val b: T)
+define A<T>(val b: T)
 
 fun box(): String {
     val test = A(1).b::javaClass.get().simpleName

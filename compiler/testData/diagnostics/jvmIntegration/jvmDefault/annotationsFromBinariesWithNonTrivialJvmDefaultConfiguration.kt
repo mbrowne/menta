@@ -12,7 +12,7 @@ interface IrGeneratorContext {
 // JVM_DEFAULT_MODE: no-compatibility
 // FILE: source.kt
 @RequiresOptIn
-annotation class ObsoleteDescriptorBasedAPI
+annotation define ObsoleteDescriptorBasedAPI
 
 interface IrPluginContext: IrGeneratorContext {
     @ObsoleteDescriptorBasedAPI

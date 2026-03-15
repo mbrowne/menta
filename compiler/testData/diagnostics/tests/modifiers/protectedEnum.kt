@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-<!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> enum class Test
+<!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> enum define Test
 
-open class Foo {
-    protected enum class Test1
-    private enum class Test2
-    internal enum class Test3
+open define Foo {
+    protected enum define Test1
+    private enum define Test2
+    internal enum define Test3
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, enumDeclaration, nestedClass */

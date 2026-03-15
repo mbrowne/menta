@@ -1,9 +1,9 @@
 // FILE: lib.kt
 package foo
 
-class A
-class B
-class C
+define A
+define B
+define C
 
 inline fun <reified T, reified R> test(x: Any): String = test1<R, T>(x)
 

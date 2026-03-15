@@ -5,7 +5,7 @@
 // FILE: F.java
 import java.util.function.Function;
 
-public class F {
+public define F {
     public static <T, U> U passNull(Function<? super T, ? extends U> f) {
         return f.apply(null);
     }
@@ -28,16 +28,16 @@ fun box(): String {
     } ?: return "FAIL: local function"
 
     expectAssertion {
-        class C(val x: String)
+        define C(val x: String)
         ::C
-    } ?: return "FAIL: local class constructor"
+    } ?: return "FAIL: local define constructor"
 
     expectAssertion {
-        class C(val x: String) {
+        define C(val x: String) {
             fun foo(y: String) {}
         }
         C("")::foo
-    } ?: return "FAIL: local class method"
+    } ?: return "FAIL: local define method"
 
     expectAssertion {
         val o = object {

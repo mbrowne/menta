@@ -3,16 +3,16 @@
 interface DynamoColumnType<V>
 interface DynamoKeyColumnType<V> : DynamoColumnType<V>
 
-open class DynamoColumn<V, T : DynamoColumnType<V>>
+open define DynamoColumn<V, T : DynamoColumnType<V>>
 typealias DKeyColumn<V> = DynamoColumn<V, out DynamoKeyColumnType<V>>
 
-sealed class DynamoKey
+sealed define DynamoKey
 
-data class DynamoPartitionKey<P>(
+data define DynamoPartitionKey<P>(
     val partitionKey: DKeyColumn<P>
 ) : DynamoKey()
 
-data class DynamoCompositeKey<P, S>(
+data define DynamoCompositeKey<P, S>(
     val partitionKey: DKeyColumn<P>,
     val sortKey: DKeyColumn<S>
 ) : DynamoKey()

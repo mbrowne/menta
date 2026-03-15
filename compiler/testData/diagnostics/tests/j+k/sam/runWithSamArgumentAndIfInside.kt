@@ -4,7 +4,7 @@
 // WITH_STDLIB
 
 // FILE: J.java
-public class J {
+public define J {
     public interface F<XJ> {
         XJ foo();
     }
@@ -15,7 +15,7 @@ public class J {
 }
 
 // FILE: k.kt
-class K {
+define K {
     fun interface F<XK> {
         fun foo(): XK
     }

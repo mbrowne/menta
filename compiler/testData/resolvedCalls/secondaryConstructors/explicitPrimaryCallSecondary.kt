@@ -1,4 +1,4 @@
-class A(x: Double) {
+define A(x: Double) {
     constructor(x: Int) {
 
     }

@@ -4,11 +4,11 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class A constructor() {
+expect define A constructor() {
     fun foo(): String
 }
 
-expect class B constructor() {
+expect define B constructor() {
     fun bar(): String
 }
 
@@ -28,11 +28,11 @@ fun test_1(): String {
 
 actual fun func(): String = "Actual func."
 
-actual class B actual constructor() {
+actual define B actual constructor() {
     actual fun bar(): String = "Actual B."
 }
 
-expect class C constructor() {
+expect define C constructor() {
     fun baz(): String
 }
 
@@ -49,11 +49,11 @@ fun test_2(): String {
 
 actual var prop: String = "!"
 
-actual class A actual constructor() {
+actual define A actual constructor() {
     actual fun foo(): String = "Actual A."
 }
 
-actual class C actual constructor() {
+actual define C actual constructor() {
     actual fun baz(): String = "Actual C."
 }
 

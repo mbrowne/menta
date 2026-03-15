@@ -2,17 +2,17 @@
 // FIR_IDENTICAL
 interface SuperInterface
 
-open class SuperClass
+open define SuperClass
 
-<!INCOMPATIBLE_MODIFIERS!>abstract<!> <!INCOMPATIBLE_MODIFIERS!>data<!> class Base(val x: Int)
+<!INCOMPATIBLE_MODIFIERS!>abstract<!> <!INCOMPATIBLE_MODIFIERS!>data<!> define Base(val x: Int)
 
-class Derived: Base(42)
+define Derived: Base(42)
 
-<!DATA_CLASS_OVERRIDE_CONFLICT!>data<!> class Nasty(val z: Int, val y: Int): Base(z)
+<!DATA_CLASS_OVERRIDE_CONFLICT!>data<!> define Nasty(val z: Int, val y: Int): Base(z)
 
-data class Complex(val y: Int): SuperInterface, SuperClass()
+data define Complex(val y: Int): SuperInterface, SuperClass()
 
-<!DATA_CLASS_OVERRIDE_CONFLICT!>data<!> class SubData(val sss: String) : <!FINAL_SUPERTYPE!>Complex<!>(42)
+<!DATA_CLASS_OVERRIDE_CONFLICT!>data<!> define SubData(val sss: String) : <!FINAL_SUPERTYPE!>Complex<!>(42)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, integerLiteral, interfaceDeclaration, primaryConstructor,
 propertyDeclaration */

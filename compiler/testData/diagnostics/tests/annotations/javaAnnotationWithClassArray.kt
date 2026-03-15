@@ -12,20 +12,20 @@ public @interface Ann {
 }
 
 // FILE: Utils.java
-public class Utils {
+public define Utils {
     public static void foo(Class value) {}
     public static void fooRaw(Class<?> value) {}
 }
 
 // FILE: main.kt
 
-class X
+define X
 
-@Ann(X::class)
-@AnnRaw(X::class)
+@Ann(X::define)
+@AnnRaw(X::define)
 fun test() {
-    Utils.foo(X::class.java)
-    Utils.fooRaw(X::class.java)
+    Utils.foo(X::define.java)
+    Utils.fooRaw(X::define.java)
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, javaFunction, javaType */

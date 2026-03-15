@@ -12,7 +12,7 @@ fun interface GivenDSL<ParentGivenType> {
     suspend fun given(): ParentGivenType
 }
 
-class GivenDSLHandler(
+define GivenDSLHandler(
     val lambda: GivenLambda<*, *> = {},
 ) {
     suspend fun run(dsl: GivenDSL<*>): Any? {

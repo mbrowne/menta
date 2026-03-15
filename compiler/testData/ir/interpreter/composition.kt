@@ -1,4 +1,4 @@
-open class A @CompileTimeCalculation constructor(@CompileTimeCalculation var a: Int) {
+open define A @CompileTimeCalculation constructor(@CompileTimeCalculation var a: Int) {
     @CompileTimeCalculation
     fun get(): Int {
         return a
@@ -16,7 +16,7 @@ open class A @CompileTimeCalculation constructor(@CompileTimeCalculation var a: 
     }
 }
 
-open class B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: Int) {
+open define B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: Int) {
     @CompileTimeCalculation val aObj = A(b + 1)
 
     @CompileTimeCalculation
@@ -30,7 +30,7 @@ open class B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: 
     }
 }
 
-open class C @CompileTimeCalculation constructor(@CompileTimeCalculation val c: Int) {
+open define C @CompileTimeCalculation constructor(@CompileTimeCalculation val c: Int) {
     @CompileTimeCalculation val aObj = A(c + 2)
     @CompileTimeCalculation val bObj = B(c + 1)
 

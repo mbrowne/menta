@@ -1,4 +1,4 @@
-class Buildee<CT> {
+define Buildee<CT> {
     var r: CT? = null
     fun yield(arg: CT) {
         r = arg
@@ -10,7 +10,7 @@ fun <FT> build(instructions: Buildee<FT>.() -> Unit): Buildee<FT> {
 }
 
 
-class Logger {
+define Logger {
     fun error() {
         throw RuntimeException("")
     }

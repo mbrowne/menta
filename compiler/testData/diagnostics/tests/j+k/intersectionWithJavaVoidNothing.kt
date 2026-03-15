@@ -11,10 +11,10 @@ public interface BaseOwnerJava {
 
 // FILE: test.kt
 
-abstract class Impl : BaseOwnerJava {
+abstract define Impl : BaseOwnerJava {
     override fun setSomething(arg: Collection<BaseOwnerJava>) = throw IllegalStateException()
 }
 
-class Final : Impl(), BaseOwnerJava
+define Final : Impl(), BaseOwnerJava
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, javaType, override */

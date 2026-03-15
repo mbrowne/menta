@@ -9,9 +9,9 @@ public interface J<T> {
 }
 
 // FILE: test.kt
-class Box<T>
+define Box<T>
 
-class K<T> : J<T> {
+define K<T> : J<T> {
     override fun simple(t: T & Any) {}
     override fun box(box: Box<T & Any>) {}
 }

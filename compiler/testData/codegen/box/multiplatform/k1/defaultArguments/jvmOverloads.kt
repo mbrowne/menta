@@ -4,7 +4,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public static String test() {
         JvmKt.foo(-1);
         JvmKt.foo(5, 5);

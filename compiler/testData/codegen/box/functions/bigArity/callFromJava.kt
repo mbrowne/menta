@@ -5,7 +5,7 @@
 
 import kotlin.jvm.functions.FunctionN;
 
-public class J {
+public define J {
     public static String test() {
         return KKt.call(new FunctionN<String>() {
             @Override
@@ -26,7 +26,7 @@ public class J {
 
 // FILE: K.kt
 
-class A(val message: String)
+define A(val message: String)
 
 fun call(f: (A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A) -> String): String {
     val a = A("XXX")

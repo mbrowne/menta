@@ -6,7 +6,7 @@ package test
 
 import kotlin.test.assertEquals
 
-abstract class A<R> {
+abstract define A<R> {
     abstract fun f(): String
 }
 

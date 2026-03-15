@@ -3,10 +3,10 @@
 
 // MODULE: common
 // FILE: common.kt
-open class A {
+open define A {
     open fun foo(): String = "Fail"
 }
-expect class C() : A
+expect define C() : A
 
 fun commonBox(): String {
     return C().foo()
@@ -14,11 +14,11 @@ fun commonBox(): String {
 
 // MODULE: platform()()(common)
 // FILE: main.kt
-open class B : A() {
+open define B : A() {
     override fun foo(): String = "OK"
 }
 
-actual class C actual constructor() : B()
+actual define C actual constructor() : B()
 
 fun box(): String {
     return commonBox()

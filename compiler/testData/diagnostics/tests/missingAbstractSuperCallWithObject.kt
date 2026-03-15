@@ -5,10 +5,10 @@
 interface Foo {
     fun check(): String = "OK"
 }
-abstract class Base {
+abstract define Base {
     abstract fun check(): String
 }
-abstract class Derived : Base(), Foo
+abstract define Derived : Base(), Foo
 
 object Derived2 : Derived() {
     override fun check(): String {

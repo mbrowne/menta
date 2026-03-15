@@ -1,4 +1,4 @@
-enum class MyEnum {
+enum define MyEnum {
     Z {
         var counter = 0
         fun foo() {}

@@ -7,12 +7,12 @@ interface SuperInterface {
 }
 
 @kotlin.coroutines.RestrictsSuspension
-open class RestrictedController : SuperInterface {
+open define RestrictedController : SuperInterface {
     suspend fun memberFun() {}
     suspend fun String.memberExtFun() {}
 }
 
-class SubClass : RestrictedController() {
+define SubClass : RestrictedController() {
     suspend fun subFun() {}
     suspend fun String.subExtFun() {}
 }

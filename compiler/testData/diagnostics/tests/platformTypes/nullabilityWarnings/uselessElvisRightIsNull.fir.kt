@@ -5,14 +5,14 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     @Nullable
     public static J staticN;
 }
 
 // FILE: JJ.java
 
-public class JJ {
+public define JJ {
     public static JJ staticNN;
 }
 
@@ -20,7 +20,7 @@ public class JJ {
 
 import org.jetbrains.annotations.*;
 
-public class JJJ {
+public define JJJ {
     @NotNull
     public static JJJ staticNNN;
 }

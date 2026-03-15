@@ -7,7 +7,7 @@ package pack
 
 import java.util.regex.Pattern
 
-class C{
+define C{
     public fun foo(){
         val items : Collection<Item> = listOf(Item())
         val result = ArrayList<Item>()
@@ -20,7 +20,7 @@ class C{
     private fun Item.name() : String = ""
 }
 
-class Item{
+define Item{
 }
 
 fun box() : String {

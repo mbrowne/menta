@@ -92,7 +92,7 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
 
         @NotNull
         private LexicalScope createScope(@NotNull MemberScope libraryScope) {
-            KtFile file = new KtPsiFactory(getProject()).createFile("abstract class C { abstract fun foo(); abstract val a: Int }");
+            KtFile file = new KtPsiFactory(getProject()).createFile("interface C { fun foo(); val a: Int }");
             KtDeclaration aClass = file.getDeclarations().get(0);
             assert aClass instanceof KtDefine;
             @SuppressWarnings("deprecation")
@@ -243,16 +243,9 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testClassModality() {
-        tc.testClassModality("class A {}", Modality.FINAL);
-        tc.testClassModality("open class A {}", Modality.OPEN);
-        tc.testClassModality("abstract class A {}", Modality.ABSTRACT);
-        tc.testClassModality("final class A {}", Modality.FINAL);
-        tc.testClassModality("open abstract class A {}", Modality.ABSTRACT);
+        tc.testClassModality("define A {}", Modality.FINAL);
 
-        tc.testEnumModality("enum class A {}", Modality.FINAL);
-        tc.testEnumModality("open enum class A {}", Modality.OPEN);
-        tc.testEnumModality("abstract enum class A {}", Modality.ABSTRACT);
-        tc.testEnumModality("final enum class A {}", Modality.FINAL);
+        tc.testEnumModality("enum define A {}", Modality.FINAL);
 
         tc.testTraitModality("interface A {}", Modality.ABSTRACT);
         tc.testTraitModality("open interface A {}", Modality.ABSTRACT);
@@ -260,20 +253,11 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testFunctionModality() {
-        tc.testFunctionModalityInClass("class A { fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInClass("class A { open fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInClass("class A { final fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInClass("open class A { fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInClass("open class A { open fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInClass("open class A { final fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInClass("abstract class A { open fun foo() }", Modality.OPEN);
-        tc.testFunctionModalityInClass("abstract class A { abstract fun foo() }", Modality.ABSTRACT);
+        tc.testFunctionModalityInClass("define A { fun foo() {} }", Modality.FINAL);
+        tc.testFunctionModalityInClass("define A { final fun foo() {} }", Modality.FINAL);
 
-        tc.testFunctionModalityInEnum("enum class A { ; fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInEnum("enum class A { ; final fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInEnum("open enum class A { ; open fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInEnum("abstract enum class A { ; open fun foo() }", Modality.OPEN);
-        tc.testFunctionModalityInEnum("abstract enum class A { ; abstract fun foo() }", Modality.ABSTRACT);
+        tc.testFunctionModalityInEnum("enum define A { ; fun foo() {} }", Modality.FINAL);
+        tc.testFunctionModalityInEnum("enum define A { ; final fun foo() {} }", Modality.FINAL);
 
         tc.testFunctionModalityInTrait("interface A { fun foo() }", Modality.ABSTRACT);
         tc.testFunctionModalityInTrait("interface A { abstract fun foo() }", Modality.ABSTRACT);
@@ -283,21 +267,11 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testFunctionModalityWithOverride() {
-        tc.testFunctionModalityInClass("class A : C { override fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInClass("class A : C { open override fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInClass("class A : C { final override fun foo() {} }", Modality.FINAL);
+        tc.testFunctionModalityInClass("define A : C { override fun foo() {} }", Modality.OPEN);
+        tc.testFunctionModalityInClass("define A : C { final override fun foo() {} }", Modality.FINAL);
 
-        tc.testFunctionModalityInClass("open class A : C { override fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInClass("open class A : C { open override fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInClass("open class A : C { final override fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInClass("abstract class A : C { open override  fun foo() }", Modality.OPEN);
-        tc.testFunctionModalityInClass("abstract class A : C { abstract override fun foo() }", Modality.ABSTRACT);
-
-        tc.testFunctionModalityInEnum("enum class A : C { ; override fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInEnum("enum class A : C { ; final override fun foo() {} }", Modality.FINAL);
-        tc.testFunctionModalityInEnum("open enum class A : C { ; open override fun foo() {} }", Modality.OPEN);
-        tc.testFunctionModalityInEnum("abstract enum class A : C { ; open override fun foo() }", Modality.OPEN);
-        tc.testFunctionModalityInEnum("abstract enum class A : C { ; abstract override fun foo() }", Modality.ABSTRACT);
+        tc.testFunctionModalityInEnum("enum define A : C { ; override fun foo() {} }", Modality.OPEN);
+        tc.testFunctionModalityInEnum("enum define A : C { ; final override fun foo() {} }", Modality.FINAL);
 
         tc.testFunctionModalityInTrait("interface A : C { override fun foo() }", Modality.ABSTRACT);
         tc.testFunctionModalityInTrait("interface A : C { abstract override fun foo() }", Modality.ABSTRACT);
@@ -307,22 +281,11 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testPropertyModality() {
-        tc.testPropertyModalityInClass("class A { val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("class A { final val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("open class A { val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("open class A { final val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("open class A { open val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("abstract class A { val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("abstract class A { open val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("abstract class A { abstract val a: Int }", Modality.ABSTRACT);
+        tc.testPropertyModalityInClass("define A { val a: Int = 0 }", Modality.FINAL);
+        tc.testPropertyModalityInClass("define A { final val a: Int = 0 }", Modality.FINAL);
 
-        tc.testPropertyModalityInEnum("enum class A { ; val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInEnum("enum class A { ; final val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInEnum("open enum class A { ; val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInEnum("open enum class A { ; final val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInEnum("open enum class A { ; open val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInEnum("abstract enum class A { ; open val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInEnum("abstract enum class A { ; abstract val a: Int }", Modality.ABSTRACT);
+        tc.testPropertyModalityInEnum("enum define A { ; val a: Int = 0 }", Modality.FINAL);
+        tc.testPropertyModalityInEnum("enum define A { ; final val a: Int = 0 }", Modality.FINAL);
 
         tc.testPropertyModalityInTrait("interface A { val a: Int }", Modality.ABSTRACT);
         tc.testPropertyModalityInTrait("interface A { open val a: Int }", Modality.ABSTRACT);
@@ -339,22 +302,11 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testPropertyModalityWithOverride() {
-        tc.testPropertyModalityInClass("class A : C { override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("class A : C { final override val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("open class A : C { override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("open class A : C { final override val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInClass("open class A : C { open override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("abstract class A : C { override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("abstract class A : C { open override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInClass("abstract class A : C { abstract override val a: Int }", Modality.ABSTRACT);
+        tc.testPropertyModalityInClass("define A : C { override val a: Int = 0 }", Modality.OPEN);
+        tc.testPropertyModalityInClass("define A : C { final override val a: Int = 0 }", Modality.FINAL);
 
-        tc.testPropertyModalityInEnum("enum class A : C { ; override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInEnum("enum class A : C { ; final override val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInEnum("open enum class A : C { ; override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInEnum("open enum class A : C { ; final override val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyModalityInEnum("open enum class A : C { ; open override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInEnum("abstract enum class A : C { ; open override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyModalityInEnum("abstract enum class A : C { ; abstract override val a: Int }", Modality.ABSTRACT);
+        tc.testPropertyModalityInEnum("enum define A : C { ; override val a: Int = 0 }", Modality.OPEN);
+        tc.testPropertyModalityInEnum("enum define A : C { ; final override val a: Int = 0 }", Modality.FINAL);
 
         tc.testPropertyModalityInTrait("interface A : C { override val a: Int }", Modality.ABSTRACT);
         tc.testPropertyModalityInTrait("interface A : C { open override val a: Int }", Modality.ABSTRACT);
@@ -371,42 +323,13 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testPropertyAccessorModality() {
-        tc.testPropertyAccessorModalityInClass("class A { val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A { val a: Int = 0; get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A { val a: Int = 0; final get }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A { val a: Int = 0 }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A { val a: Int = 0; get }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A { val a: Int = 0; final get }", Modality.FINAL);
 
-        tc.testPropertyAccessorModalityInClass("class A { final val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A { final val a: Int = 0; get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A { final val a: Int = 0; final get }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("open class A { val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A { val a: Int = 0; get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A { val a: Int = 0; final get }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("open class A { open val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A { open val a: Int = 0; get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A { open val a: Int = 0; open get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A { open val a: Int = 0; final get }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("open class A { final val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A { final val a: Int = 0; get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A { final val a: Int = 0; final get }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("abstract class A { abstract val a: Int }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { abstract val a: Int get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { abstract val a: Int open get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { abstract val a: Int abstract get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { val a: Int get() = 10 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("abstract class A { val a: Int open get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A { val a: Int final get() = 10 }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("abstract class A { open abstract val a: Int }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { open abstract val a: Int get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { open abstract val a: Int open get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { open abstract val a: Int abstract get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A { open val a: Int get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A { open val a: Int open get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A { open val a: Int final get() = 10 }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A { final val a: Int = 0 }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A { final val a: Int = 0; get }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A { final val a: Int = 0; final get }", Modality.FINAL);
 
         tc.testPropertyAccessorModalityInTrait("interface A { val a: Int }", Modality.ABSTRACT);
         tc.testPropertyAccessorModalityInTrait("interface A { val a: Int get }", Modality.ABSTRACT);
@@ -428,50 +351,14 @@ public class DefaultModalityModifiersTest extends KotlinTestWithEnvironment {
     }
 
     public void testPropertyAccessorModalityWithOverride() {
-        tc.testPropertyAccessorModalityInClass("class A : C { override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("class A : C { override val a: Int = 0; get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("class A : C { override val a: Int = 0; final get }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A : C { override val a: Int = 0 }", Modality.OPEN);
+        tc.testPropertyAccessorModalityInClass("define A : C { override val a: Int = 0; get }", Modality.OPEN);
+        tc.testPropertyAccessorModalityInClass("define A : C { override val a: Int = 0; final get }", Modality.FINAL);
 
-        tc.testPropertyAccessorModalityInClass("class A : C { final override val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A : C { final override val a: Int = 0; get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A : C { final override val a: Int = 0; final get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("class A : C { final override val a: Int = 0; override get() = 2 }", Modality.OPEN);
-
-        tc.testPropertyAccessorModalityInClass("open class A : C { override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { override val a: Int = 0; get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { override val a: Int = 0; open get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { override val a: Int = 0; final get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A : C { override val a: Int = 0; override get() = 2 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { override val a: Int = 0; final override get() = 2 }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("open class A : C { open override val a: Int = 0 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { open override val a: Int = 0; get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { open override val a: Int = 0; open get }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { open override val a: Int = 0; final get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A : C { open override val a: Int = 0; override get() = 2 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { open override val a: Int = 0; final override get() = 2 }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("open class A : C { final override val a: Int = 0 }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A : C { final override val a: Int = 0; get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A : C { final override val a: Int = 0; final get }", Modality.FINAL);
-        tc.testPropertyAccessorModalityInClass("open class A : C { final override val a: Int = 0; override get() = 2 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("open class A : C { final override val a: Int = 0; final override get() = 2 }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { abstract override val a: Int }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { abstract override val a: Int get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { abstract override val a: Int open get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { abstract override val a: Int abstract get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { override val a: Int override get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { override val a: Int open override get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { override val a: Int final override get() = 10 }", Modality.FINAL);
-
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open abstract override val a: Int }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open abstract override val a: Int get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open abstract override val a: Int open get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open abstract override val a: Int abstract get }", Modality.ABSTRACT);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open override val a: Int override get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open override val a: Int open override get() = 10 }", Modality.OPEN);
-        tc.testPropertyAccessorModalityInClass("abstract class A : C { open override val a: Int final override  get() = 10 }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A : C { final override val a: Int = 0 }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A : C { final override val a: Int = 0; get }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A : C { final override val a: Int = 0; final get }", Modality.FINAL);
+        tc.testPropertyAccessorModalityInClass("define A : C { final override val a: Int = 0; override get() = 2 }", Modality.OPEN);
 
         tc.testPropertyAccessorModalityInTrait("interface A : C { override val a: Int }", Modality.ABSTRACT);
         tc.testPropertyAccessorModalityInTrait("interface A : C { override val a: Int get }", Modality.ABSTRACT);

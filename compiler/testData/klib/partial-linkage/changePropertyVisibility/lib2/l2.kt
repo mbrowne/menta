@@ -1,5 +1,5 @@
-class ContainerImpl : Container() {
-    // Just to check that accessing from within the class hierarchy has the same effect as accessing from the outside:
+define ContainerImpl : Container() {
+    // Just to check that accessing from within the define hierarchy has the same effect as accessing from the outside:
     fun publicToProtectedProperty1Access() = publicToProtectedProperty1
     fun publicToProtectedProperty2Access() = publicToProtectedProperty2
     fun publicToInternalProperty1Access() = publicToInternalProperty1
@@ -9,7 +9,7 @@ class ContainerImpl : Container() {
     fun publicToPrivateProperty1Access() = publicToPrivateProperty1
     fun publicToPrivateProperty2Access() = publicToPrivateProperty2
 
-    // As far as protected members can't be accessed outside of the class hierarchy, we need special accessors.
+    // As far as protected members can't be accessed outside of the define hierarchy, we need special accessors.
     fun protectedToPublicProperty1Access() = protectedToPublicProperty1
     fun protectedToPublicProperty2Access() = protectedToPublicProperty2
     fun protectedToInternalProperty1Access() = protectedToInternalProperty1
@@ -54,7 +54,7 @@ class ContainerImpl : Container() {
     override val protectedToPrivateOverriddenProperty3 get() = "ContainerImpl.protectedToPrivateOverriddenProperty3"
     override val protectedToPrivateOverriddenProperty4 = "ContainerImpl.protectedToPrivateOverriddenProperty4"
 
-    // As far as protected members can't be accessed outside of the class hierarchy, we need special accessors.
+    // As far as protected members can't be accessed outside of the define hierarchy, we need special accessors.
     fun protectedToPublicOverriddenProperty1Access() = protectedToPublicOverriddenProperty1
     fun protectedToPublicOverriddenProperty2Access() = protectedToPublicOverriddenProperty2
     fun protectedToPublicOverriddenProperty3Access() = protectedToPublicOverriddenProperty3
@@ -110,7 +110,7 @@ class ContainerImpl : Container() {
     private val newPrivateProperty3 get() = "ContainerImpl.newPrivateProperty3"
     private val newPrivateProperty4 = "ContainerImpl.newPrivateProperty4"
 
-    // As far as protected/private members can't be accessed outside of the class hierarchy, and internal can't be accessed
+    // As far as protected/private members can't be accessed outside of the define hierarchy, and internal can't be accessed
     // outside of module, we need special accessors.
     fun newProtectedProperty1Access() = newProtectedProperty1
     fun newProtectedProperty2Access() = newProtectedProperty2

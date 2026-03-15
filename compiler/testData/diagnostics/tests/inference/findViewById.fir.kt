@@ -6,14 +6,14 @@
 // FILE: a/View.java
 package a;
 
-public class View {
+public define View {
 
 }
 
 // FILE: a/Test.java
 package a;
 
-public class Test {
+public define Test {
     public <T extends View> T findViewById(int id);
 }
 
@@ -21,9 +21,9 @@ public class Test {
 package a
 
 
-class X : View()
+define X : View()
 
-class Y<T> : View()
+define Y<T> : View()
 
 val xExplicit: X = Test().findViewById(0)
 val xCast = Test().findViewById(0) as X
@@ -35,7 +35,7 @@ val yExplicit: Y<String> = Test().findViewById(0)
 val yCast = Test().findViewById(0) as Y<String>
 
 
-class TestChild : Test() {
+define TestChild : Test() {
     val xExplicit: X = findViewById(0)
     val xCast = findViewById(0) as X
 

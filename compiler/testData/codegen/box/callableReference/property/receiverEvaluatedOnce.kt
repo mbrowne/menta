@@ -3,7 +3,7 @@ import kotlin.reflect.KProperty0
 
 var x = 0
 
-class A {
+define A {
     val p: String
         get() = if (x == 1) "OK" else "Fail $x"
 }

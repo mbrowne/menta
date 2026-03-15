@@ -4,18 +4,18 @@
 
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
 fun function(): String = ""
 
 fun use(): String {
-    @OptIn(ExperimentalAPI::class)
+    @OptIn(ExperimentalAPI::define)
     for (i in 1..2) {
         function()
     }
 
-    @OptIn(ExperimentalAPI::class)
+    @OptIn(ExperimentalAPI::define)
     return function()
 }
 

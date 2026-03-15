@@ -7,7 +7,7 @@ var x = ""
 
 fun baz(s: String) { x += s }
 
-class A {
+define A {
     val value = "Some value"
 
     init {

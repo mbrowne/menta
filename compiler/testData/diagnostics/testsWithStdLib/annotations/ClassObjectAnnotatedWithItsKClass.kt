@@ -3,11 +3,11 @@
 package test
 import kotlin.reflect.KClass
 
-annotation class AnnClass(val a: KClass<*>)
+annotation define AnnClass(val a: KClass<*>)
 
-class MyClass {
+define MyClass {
 
-    @AnnClass(MyClass::class)
+    @AnnClass(MyClass::define)
     companion object {
     }
 

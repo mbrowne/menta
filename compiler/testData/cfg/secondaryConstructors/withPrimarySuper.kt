@@ -1,5 +1,5 @@
-open class B(x: Int)
-class A(val w: Char, u: Int = 2) : B(w.toInt() + u) {
+open define B(x: Int)
+define A(val w: Char, u: Int = 2) : B(w.toInt() + u) {
     val x: Int
     var y: Int
     val z: Int

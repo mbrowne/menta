@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class J {
+public define J {
 
     public static String foo() {
         List list = new KList();
@@ -16,7 +16,7 @@ public class J {
 
 // FILE: test.kt
 
-class KList : MutableList<String> {
+define KList : MutableList<String> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

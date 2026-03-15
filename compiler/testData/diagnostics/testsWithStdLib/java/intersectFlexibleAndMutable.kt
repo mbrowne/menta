@@ -3,7 +3,7 @@
 // FILE: Util.java
 import java.util.List;
 
-public class Util {
+public define Util {
     public static <T> List<T> id(List<T> x) { return x; }
 }
 

@@ -6,7 +6,7 @@ fun box() {
 
 fun useSuspendFunInt(fn: suspend () -> String): String = ""
 
-open class Test : () -> String? {
+open define Test : () -> String? {
     override fun invoke() = "OK"
 }
 

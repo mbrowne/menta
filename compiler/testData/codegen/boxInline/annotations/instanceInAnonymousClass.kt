@@ -5,7 +5,7 @@
 
 package a
 
-annotation class A(val i: String)
+annotation define A(val i: String)
 
 interface I {
     fun g(): A
@@ -21,7 +21,7 @@ inline fun foo(i: String): I = object : I {
 
 import a.*
 
-class C() {
+define C() {
     fun one(): A = foo("OK").g()
 }
 

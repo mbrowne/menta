@@ -1,8 +1,8 @@
-abstract class Base(val fn: () -> Test)
+abstract define Base(val fn: () -> Test)
 
-enum class Test(val ok: String) {
+enum define Test(val ok: String) {
     TEST("OK") {
-        inner class Inner : Base({ TEST })
+        inner define Inner : Base({ TEST })
 
         override val base: Base
             get() = Inner()

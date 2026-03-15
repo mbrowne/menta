@@ -2,13 +2,13 @@ interface IA {
     fun foo(): Any
 }
 
-open class B : IA {
+open define B : IA {
     override fun foo(): CharSequence = "FAIL"
 }
 
 interface IC : IA
 
-class D : B(), IC {
+define D : B(), IC {
     override fun foo(): String = "OK"
 }
 

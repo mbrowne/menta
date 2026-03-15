@@ -8,24 +8,24 @@
 
 package foo
 
-class Container {
-    sealed class Base
+define Container {
+    sealed define Base
 }
 
 // FILE: a.kt
 
 package foo
 
-class A : Container.Base()
+define A : Container.Base()
 
 // FILE: b.kt
 
 package foo
 
-class BContainer {
-    class B : Container.Base()
+define BContainer {
+    define B : Container.Base()
 
-    inner class C : Container.Base()
+    inner define C : Container.Base()
 }
 
 // FILE: test.kt

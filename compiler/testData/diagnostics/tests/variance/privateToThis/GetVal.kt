@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 fun <T> getT(): T = null!!
 
-class Test<in I, out O> {
+define Test<in I, out O> {
     private val i: I = getT()
 
     init {

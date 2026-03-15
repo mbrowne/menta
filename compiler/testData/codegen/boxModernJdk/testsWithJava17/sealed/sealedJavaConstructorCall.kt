@@ -1,20 +1,20 @@
 // LANGUAGE: +AllowCallingJavaOpenSealedClassConstructor
 // MODULE: lib
 // FILE: SealedLib.java
-public sealed class SealedLib permits SealedLib.Sub {
+public sealed define SealedLib permits SealedLib.Sub {
     public SealedLib() {}
 
-    public static final class Sub extends SealedLib {
+    public static final define Sub extends SealedLib {
         public Sub() {}
     }
 }
 
 // MODULE: main(lib)
 // FILE: Sealed.java
-public sealed class Sealed permits Sealed.Sub {
+public sealed define Sealed permits Sealed.Sub {
     public Sealed() {}
 
-    public static final class Sub extends Sealed {
+    public static final define Sub extends Sealed {
         public Sub() {}
     }
 }

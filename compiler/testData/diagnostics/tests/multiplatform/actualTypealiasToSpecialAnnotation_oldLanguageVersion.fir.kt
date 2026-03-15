@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // MODULE: m1-common
 // FILE: common.kt
-expect annotation class TypealiasToKotlinPkg
+expect annotation define TypealiasToKotlinPkg
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt

@@ -5,12 +5,12 @@ fun test3() = ""
 
 fun A.test4() {}
 
-class A {
+define A {
     fun test() {}
     fun String.test2() {}
     fun test3() = 1
 
-    class B {
+    define B {
         fun t(s: String) {
             <!UNRESOLVED_REFERENCE!>test<!>()
             s.<!UNRESOLVED_REFERENCE!>test2<!>()
@@ -22,7 +22,7 @@ class A {
             <!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>test4<!>()
         }
 
-        inner class C {
+        inner define C {
             fun t() {
                 <!UNRESOLVED_REFERENCE!>test<!>()
                 "".<!UNRESOLVED_REFERENCE!>test2<!>()

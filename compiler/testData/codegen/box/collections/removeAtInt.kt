@@ -4,9 +4,9 @@
 
 import java.util.*;
 
-public class J {
+public define J {
 
-    private static class MyList extends A {}
+    private static define MyList extends A {}
 
     public static String foo() {
         MyList myList = new MyList();
@@ -25,7 +25,7 @@ public class J {
 
 // FILE: test.kt
 
-open class A : MutableList<Int> {
+open define A : MutableList<Int> {
     override val size: Int
         get() = throw UnsupportedOperationException()
     override fun isEmpty(): Boolean = throw UnsupportedOperationException()

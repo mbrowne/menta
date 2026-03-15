@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 import kotlin.jvm.*
 
-abstract class C {
+abstract define C {
     <!EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT!>abstract<!> external fun foo()
 }
 
 fun test() {
-    abstract class Local {
+    abstract define Local {
         <!EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT!>abstract<!> external fun foo()
     }
 }

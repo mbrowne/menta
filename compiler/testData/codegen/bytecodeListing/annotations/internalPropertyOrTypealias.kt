@@ -1,7 +1,7 @@
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.TYPEALIAS)
-annotation class Anno
+annotation define Anno
 
-class C {
+define C {
     @Anno
     internal val property: Int get() = 0
 }

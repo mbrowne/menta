@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 //  Anonymous object's initialization does not affect smart casts
 
-abstract class A(val s: String) {
+abstract define A(val s: String) {
     fun bar(): String = s
 }
 

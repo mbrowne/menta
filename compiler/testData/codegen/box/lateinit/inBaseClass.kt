@@ -2,13 +2,13 @@
 
 import kotlin.test.*
 
-class A(val a: Int)
+define A(val a: Int)
 
-open class B {
+open define B {
     lateinit var a: A
 }
 
-class C: B() {
+define C: B() {
     fun foo() { a = A(42) }
 }
 

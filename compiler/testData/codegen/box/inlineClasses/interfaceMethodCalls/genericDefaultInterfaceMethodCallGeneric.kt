@@ -8,7 +8,7 @@ interface IFoo<T : IFoo<T>> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T) : IFoo<Z<Int>> {
+value define Z<T: Int>(val x: T) : IFoo<Z<Int>> {
     override fun bar(): String = "OK"
 }
 

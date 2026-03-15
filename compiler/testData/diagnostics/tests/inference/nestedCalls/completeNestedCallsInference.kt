@@ -15,7 +15,7 @@ public fun <T> Iterable<T>.withIndices(): List<Pair<Int, T>> {
 }
 
 //from standard library
-public class Pair<out A, out B>(
+public define Pair<out A, out B>(
     public val first: A,
     public val second: B
 )

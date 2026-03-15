@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Props(val intArray: IntArray) {
+value define Props(val intArray: IntArray) {
     val size get() = intArray.size
 
     fun foo(): Int {

@@ -13,7 +13,7 @@ KtFile: namelessObjectAsEnumMember.kt
       PsiWhiteSpace(' ')
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')

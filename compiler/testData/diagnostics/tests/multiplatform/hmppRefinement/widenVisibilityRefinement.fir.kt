@@ -4,23 +4,23 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
 expect internal fun foo()
-expect class Foo {
+expect define Foo {
     internal fun foo()
 }
 
 // MODULE: intermediate()()(common)
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 <!WRONG_ANNOTATION_TARGET!>@kotlin.experimental.ExpectRefinement<!>
 expect public fun foo()
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Foo {
+expect define Foo {
     public fun foo()
 }
 
 // MODULE: main()()(intermediate)
 actual public fun foo() {}
-actual class Foo {
+actual define Foo {
     actual public fun foo() {}
 }
 

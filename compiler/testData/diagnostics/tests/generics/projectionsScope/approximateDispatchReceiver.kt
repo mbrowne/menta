@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 
-public abstract class A<E> {
+public abstract define A<E> {
     fun bar(): String = ""
 }
 
-public class B<F> : A<B<F>>()
+public define B<F> : A<B<F>>()
 
 fun test(b: B<*>) {
     // Here `bar` could have dispatch receiver parameter type 'A<B<Captured(*)>>', but it wouldn't work as

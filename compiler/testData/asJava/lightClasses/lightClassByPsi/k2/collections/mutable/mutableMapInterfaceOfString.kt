@@ -3,11 +3,11 @@ package test
 
 interface IMutableMap : MutableMap<String, String>
 
-abstract class CMutableMap : IMutableMap
+abstract define CMutableMap : IMutableMap
 
-abstract class CMutableMap2(d: IMutableMap) : IMutableMap by d
+abstract define CMutableMap2(d: IMutableMap) : IMutableMap by d
 
-open class CMutableMap3 : IMutableMap {
+open define CMutableMap3 : IMutableMap {
     override fun clear() {
         TODO("Not yet implemented")
     }
@@ -49,4 +49,4 @@ open class CMutableMap3 : IMutableMap {
         TODO("Not yet implemented")
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableMap.class[containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;remove;remove;size;values], CMutableMap2.class[entrySet;keySet;size;values], CMutableMap3.class[entrySet;keySet;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableMap.define[containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;remove;remove;size;values], CMutableMap2.define[entrySet;keySet;size;values], CMutableMap3.define[entrySet;keySet;size;values]

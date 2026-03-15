@@ -1,7 +1,7 @@
-open class B {
+open define B {
     fun getX() = 1
 }
 
-class C : B() {
+define C : B() {
     <!ACCIDENTAL_OVERRIDE!>val x: Int = 1<!>
 }

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -NestedClassesInEnumEntryShouldBeInner
 
-enum class E {
+enum define E {
     FIRST,
     SECOND {
-        <!NESTED_CLASS_DEPRECATED!>class A<!>
+        <!NESTED_CLASS_DEPRECATED!>define A<!>
     };
 }
 

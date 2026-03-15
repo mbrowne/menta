@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: J.java
-public class J {
+public define J {
     @Deprecated
     public void foo() {}
 }
 // FILE: J2.java
-public class J2 extends J implements WithDeprecation {
+public define J2 extends J implements WithDeprecation {
     @Override
     public void foo() {}
 }
@@ -17,7 +17,7 @@ interface WithDeprecation {
     fun foo()
 }
 
-class A : J(), WithDeprecation {
+define A : J(), WithDeprecation {
     override fun <!OVERRIDE_DEPRECATION!>foo<!>() {}
 }
 

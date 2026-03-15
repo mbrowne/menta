@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class IntWrapper(@Volatile var x: Int)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define IntWrapper(@Volatile var x: Int)
 
 val global = IntWrapper(1)
 

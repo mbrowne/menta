@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 // FILE: Test.java
-public class Test {
+public define Test {
     public <T> T with(Foo<T> matcher) {
         return null;
     }
@@ -12,7 +12,7 @@ public class Test {
 }
 
 // FILE: main.kt
-class Foo<T>
+define Foo<T>
 fun main(foo1: Foo<Boolean>, foo2: Foo<String>) {
     val x = object : Test() {} // FE exception is thrown here
 

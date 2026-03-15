@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // SKIP_TXT
-// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate class
+// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate define
 // JDK_KIND: FULL_JDK_21
 
 typealias LocalDateAlias = java.time.LocalDate
@@ -36,7 +36,7 @@ fun testMostTypes() {
     synchronized(java.lang.ProcessHandle.current()) {}
 }
 
-class TestField {
+define TestField {
     val prop = java.lang.Integer.valueOf(1)
     fun method() = <!FORBIDDEN_SYNCHRONIZED_BY_VALUE_CLASSES_OR_PRIMITIVES!>synchronized<!>(prop) {
 

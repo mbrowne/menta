@@ -179,7 +179,7 @@ KtFile: TypeAlias_ERR.kt
           PsiElement(IDENTIFIER)('bar')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiErrorElement:Name expected
       <empty list>
   PsiWhiteSpace('\n')

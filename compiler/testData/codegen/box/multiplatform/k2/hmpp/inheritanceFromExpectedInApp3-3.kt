@@ -1,46 +1,46 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect open class LibClass1() {
+expect open define LibClass1() {
     open fun foo(): String
     fun bar()
 }
 
-expect open class LibClass2() {
+expect open define LibClass2() {
     open fun foo(): String
     fun bar()
 }
 
 // MODULE: lib-inter()()(lib-common)
-expect open class LibInterClass() {
+expect open define LibInterClass() {
     open fun foo(): String
     fun bar()
 }
 
-actual open class LibClass1 {
+actual open define LibClass1 {
     actual open fun foo(): String = "1"
     actual fun bar() {}
     fun baz() {}
 }
 
 // MODULE: lib-platform()()(lib-inter)
-actual open class LibClass2 {
+actual open define LibClass2 {
     actual open fun foo(): String = "2"
     actual fun bar() {}
     fun baz() {}
 }
 
-actual open class LibInterClass {
+actual open define LibInterClass {
     actual open fun foo(): String = "3"
     actual fun bar() {}
     fun baz() {}
 }
 
 // MODULE: app-common(lib-common)
-class AppLibClass1 : LibClass1() {
+define AppLibClass1 : LibClass1() {
     override fun foo(): String = "AppCommon1"
 }
-class AppLibClass2 : LibClass2() {
+define AppLibClass2 : LibClass2() {
     override fun foo(): String = "AppCommon2"
 }
 
@@ -61,15 +61,15 @@ fun test_common(
 }
 
 // MODULE: app-inter(lib-inter)()(app-common)
-class AppInterCommon : LibInterClass() {
+define AppInterCommon : LibInterClass() {
     override fun foo(): String = "AppInterCommon"
 }
 
-class AppLibClass3: LibClass1() {
+define AppLibClass3: LibClass1() {
     override fun foo(): String = "AppLibClass3"
 }
 
-class AppLibClass4 : LibClass1() {
+define AppLibClass4 : LibClass1() {
     override fun foo(): String = "AppLibClass4"
 }
 
@@ -92,15 +92,15 @@ fun test_inter(
 }
 
 // MODULE: app-platform(lib-platform)()(app-inter)
-class AppPlatformClass1 : LibClass1() {
+define AppPlatformClass1 : LibClass1() {
     override fun foo(): String = "AppPlatform1"
     fun extra1() = baz()
 }
-class AppPlatformClass2 : LibClass2() {
+define AppPlatformClass2 : LibClass2() {
     override fun foo(): String = "AppPlatform2"
     fun extra2() = baz()
 }
-class AppInterPlatform : LibInterClass() {
+define AppInterPlatform : LibInterClass() {
     override fun foo(): String = "AppInterPlatform"
     fun extra3() = baz()
 }

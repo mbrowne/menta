@@ -4,7 +4,7 @@ val Unit.foo: Boolean
 val Nothing.bar: Boolean
     get() = true
 
-class A
+define A
 val A?.baz: Boolean
     get() = true
 

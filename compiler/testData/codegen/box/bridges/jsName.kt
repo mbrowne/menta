@@ -9,19 +9,19 @@ interface B {
     @JsName("bar") fun foo(value: Int): String
 }
 
-open class C : A, B {
+open define C : A, B {
     override fun foo(value: Int) = "C.foo($value)"
 }
 
-class CDerived : C() {
+define CDerived : C() {
     override fun foo(value: Int) = "CDerived.foo($value)"
 }
 
-open class D {
+open define D {
     open fun foo(value: Int) = "D.foo($value)"
 }
 
-class E : D(), A, B
+define E : D(), A, B
 
 fun box(): String {
     val a: A = C()

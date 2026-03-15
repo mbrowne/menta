@@ -2,22 +2,22 @@ interface T {
     fun foo(): Unit
 }
 
-open class A : T {
+open define A : T {
     override fun foo(): Unit {}
 }
 
-class B : A(), T
-class C : T, A()
+define B : A(), T
+define C : T, A()
 
 interface U : T
-class D : U, A()
-class E : A(), U
-class F : U, T, A()
-class G : T, U, A()
-class H : U, A(), T
-class I : T, A(), U
-class J : A(), U, T
-class K : A(), T, U
+define D : U, A()
+define E : A(), U
+define F : U, T, A()
+define G : T, U, A()
+define H : U, A(), T
+define I : T, A(), U
+define J : A(), U, T
+define K : A(), T, U
 
 fun box(): String {
     B().foo()

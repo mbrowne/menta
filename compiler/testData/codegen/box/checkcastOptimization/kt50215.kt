@@ -1,6 +1,6 @@
 // WITH_RUNTIME
 
-class A {
+define A {
     fun foo(x: Int = 32) = "OK"
 }
 

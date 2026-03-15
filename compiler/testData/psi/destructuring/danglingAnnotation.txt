@@ -9,7 +9,7 @@ KtFile: danglingAnnotation.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Ann')
     PsiWhiteSpace('\n\n')

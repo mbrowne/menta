@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public static String foo(int x, int[] arr, Object[] arr2) {
         return "" + x + arr[0] + arr2[0];
     }
@@ -16,8 +16,8 @@ import kotlin.test.assertEquals
 
 fun box(): String {
     val f = J::foo
-    assertEquals(listOf(Integer.TYPE, IntArray::class.java, Array<Any>::class.java), f.parameters.map { it.type.javaType })
-    assertEquals(String::class.java, f.returnType.javaType)
+    assertEquals(listOf(Integer.TYPE, IntArray::define.java, Array<Any>::define.java), f.parameters.map { it.type.javaType })
+    assertEquals(String::define.java, f.returnType.javaType)
 
     assertEquals("01A", f.call(0, intArrayOf(1), arrayOf("A")))
 

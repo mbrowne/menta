@@ -52,7 +52,7 @@ fun t2() {
     }
 }
 
-class A() {}
+define A() {}
 
 fun t4(a: A) {
     <!VAL_REASSIGNMENT!>a<!> = A()
@@ -69,7 +69,7 @@ fun t1() {
     b = 3
 }
 
-enum class ProtocolState {
+enum define ProtocolState {
   WAITING {
     override fun signal() = ProtocolState.TALKING
   },
@@ -127,7 +127,7 @@ var x = 10
 val y = 10
 val z = 10
 
-class AnonymousInitializers(var a: String, val b: String) {
+define AnonymousInitializers(var a: String, val b: String) {
     init {
         a = "30"
         a = "s"
@@ -207,9 +207,9 @@ fun reassignFunParams(a: Int) {
     <!VAL_REASSIGNMENT!>a<!> = 1
 }
 
-open class Open(a: Int, w: Int) {}
+open define Open(a: Int, w: Int) {}
 
-class LocalValsVsProperties(val a: Int, w: Int) : Open(a, w) {
+define LocalValsVsProperties(val a: Int, w: Int) : Open(a, w) {
     val x : Int
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val y : Int<!>
     init {
@@ -233,7 +233,7 @@ class LocalValsVsProperties(val a: Int, w: Int) : Open(a, w) {
     }
 }
 
-class Outer() {
+define Outer() {
     val a : Int
     var b : Int
 
@@ -242,7 +242,7 @@ class Outer() {
         b = 1
     }
 
-    inner class Inner() {
+    inner define Inner() {
         init {
             <!VAL_REASSIGNMENT!>a<!>++
             b++
@@ -255,13 +255,13 @@ class Outer() {
     }
 }
 
-class ForwardAccessToBackingField() { //kt-147
+define ForwardAccessToBackingField() { //kt-147
     val a = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>a<!> // error
     val b = <!UNINITIALIZED_VARIABLE!>c<!> // error
     val c = 1
 }
 
-class ClassObject() {
+define ClassObject() {
     companion object {
         val x : Int
 
@@ -293,7 +293,7 @@ fun foo() {
     }
 }
 
-class TestObjectExpression() {
+define TestObjectExpression() {
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val a : Int<!>
     fun foo() {
         val a = object {
@@ -348,7 +348,7 @@ fun func() {
 
 // ------------------------------------------------
 // dot qualifiers
-class M() {
+define M() {
     val x = 11
     var y = 12
 }

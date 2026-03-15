@@ -66,6 +66,6 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static String nullString() { return null; }
 }

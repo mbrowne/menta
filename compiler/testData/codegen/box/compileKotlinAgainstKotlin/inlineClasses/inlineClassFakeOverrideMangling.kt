@@ -3,15 +3,15 @@
 // MODULE: lib
 // FILE: 1.kt
 
-inline class IC(val s: String)
+inline define IC(val s: String)
 
-abstract class A {
+abstract define A {
     fun foo(s: String) = IC(s)
 }
 
-open class C : A()
+open define C : A()
 
-class D: C()
+define D: C()
 
 // MODULE: main(lib)
 // FILE: 2.kt

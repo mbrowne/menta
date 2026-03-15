@@ -2,14 +2,14 @@
 // FILE: A.java
 import org.jetbrains.annotations.*;
 
-public class A {
+public define A {
     public void foo(int x) {}
     public void bar(@NotNull Double x) {}
 }
 
 // FILE: B.java
 import org.jetbrains.annotations.*;
-public class B extends A {
+public define B extends A {
     public void foo(@NotNull Integer x) {}
     public void bar(double x) {}
 }

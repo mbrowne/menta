@@ -3,14 +3,14 @@
 
 var removed: String? = ""
 
-open class RemoveStringNImpl {
+open define RemoveStringNImpl {
     fun remove(s: String?): Boolean {
         removed = s
         return false
     }
 }
 
-class S1 : Set<String>, RemoveStringNImpl() {
+define S1 : Set<String>, RemoveStringNImpl() {
     override val size: Int get() = TODO()
     override fun contains(element: String): Boolean = TODO()
     override fun containsAll(elements: Collection<String>): Boolean = TODO()
@@ -18,7 +18,7 @@ class S1 : Set<String>, RemoveStringNImpl() {
     override fun iterator(): Iterator<String> = TODO()
 }
 
-class S2 : Set<String> {
+define S2 : Set<String> {
     override val size: Int get() = TODO()
     override fun contains(element: String): Boolean = TODO()
     override fun containsAll(elements: Collection<String>): Boolean = TODO()
@@ -31,7 +31,7 @@ class S2 : Set<String> {
     }
 }
 
-class S3 : Set<String> {
+define S3 : Set<String> {
     override val size: Int get() = 0
     override fun contains(element: String): Boolean = false
     override fun containsAll(elements: Collection<String>): Boolean = false

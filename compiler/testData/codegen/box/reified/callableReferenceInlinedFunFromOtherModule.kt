@@ -21,7 +21,7 @@ object Bar {
 }
 
 
-class C {
+define C {
     inline fun <reified T: String> qux(value: T): String = "OK" + value
 }
 
@@ -31,10 +31,10 @@ inline fun <reified T, K, reified S> bak(value1: T, value2: K, value3: S): Strin
 
 inline fun <reified T, K> bal(value1: Array<K>, value2: Array<T>): String = "OK" + value1.joinToString() + value2.joinToString()
 
-class E<T>
+define E<T>
 public inline fun <reified T> E<T>.foo(value: T): String = "OK" + value
 
-class F<T1> {
+define F<T1> {
     inline fun <reified T2> foo(x: T1, y: T2): Any? = "OK" + x + y
 }
 

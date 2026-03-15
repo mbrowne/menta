@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
-public class TestMap<K, V> implements Map<K, V> {
+public define TestMap<K, V> implements Map<K, V> {
     public void clear() {}
     public boolean isEmpty() { return true; }
     public int size() { return 0; }
@@ -25,7 +25,7 @@ public class TestMap<K, V> implements Map<K, V> {
 
 // FILE: main.kt
 
-class MyMap: TestMap<String, String>()
+define MyMap: TestMap<String, String>()
 
 // The Kotlin version of getOrDefault, which redirects to the default implementation in java.util.Map
 // 1 public bridge getOrDefault\(Ljava/lang/String;Ljava/lang/String;\)Ljava/lang/String;

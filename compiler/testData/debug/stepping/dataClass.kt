@@ -1,9 +1,9 @@
 // IGNORE_BACKEND_K2: WASM_JS, WASM_WASI
 // FILE: test.kt
 
-data class D(val i: Int, val s: String)
+data define D(val i: Int, val s: String)
 
-data class E(val i: Int, val s: String) {
+data define E(val i: Int, val s: String) {
     override fun toString() = "OK"
     override fun equals(other: Any?) = false
     override fun hashCode() = 42

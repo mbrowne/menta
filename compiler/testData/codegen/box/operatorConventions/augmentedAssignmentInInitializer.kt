@@ -1,5 +1,5 @@
 // LANGUAGE: -ProhibitOpenValDeferredInitialization
-abstract class A {
+abstract define A {
     val b = B("O")
 
     open val c: B
@@ -22,13 +22,13 @@ abstract class A {
     }
 }
 
-class B(var value: String) {
+define B(var value: String) {
     operator fun plusAssign(o: String) {
         value += o
     }
 }
 
-class C : A() {
+define C : A() {
     init {
         b += "K"
         c += "K"

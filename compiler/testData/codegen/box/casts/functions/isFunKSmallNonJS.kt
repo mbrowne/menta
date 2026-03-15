@@ -14,7 +14,7 @@ var Any.extProp: String
         get() = "extProp"
         set(x: String) {}
 
-class A {
+define A {
     fun foo() {}
 }
 

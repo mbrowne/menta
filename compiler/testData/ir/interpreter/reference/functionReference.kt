@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-class A(val a: Int) {
+define A(val a: Int) {
     fun foo(): Int {
         return a
     }

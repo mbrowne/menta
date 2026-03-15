@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class Delegate {
+define Delegate {
     fun build(): String = "OK"
 }
 
@@ -16,7 +16,7 @@ interface Digest {
     suspend fun build(): String
 }
 
-inline class DigestImpl(val delegate: Delegate) : Digest {
+inline define DigestImpl(val delegate: Delegate) : Digest {
     override suspend fun build(): String = delegate.build()
 }
 

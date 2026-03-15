@@ -3,7 +3,7 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-class A : HashMap<String, Double>()
+define A : HashMap<String, Double>()
 
 fun box(): String {
     val a = A()

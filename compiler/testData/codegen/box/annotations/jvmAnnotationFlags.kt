@@ -6,11 +6,11 @@
 import java.lang.reflect.Modifier
 import kotlin.reflect.KProperty
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
-class C {
+define C {
     @Volatile var vol = 1
     @kotlin.concurrent.Volatile var vol2 = 1
     @Transient val tra = 1
@@ -36,7 +36,7 @@ class C {
 }
 
 fun box(): String {
-    val c = C::class.java
+    val c = C::define.java
 
     if (c.getDeclaredField("vol").getModifiers() and Modifier.VOLATILE == 0) return "Fail: volatile"
     if (c.getDeclaredField("vol2").getModifiers() and Modifier.VOLATILE == 0) return "Fail: volatile from kotlin.concurrent"
@@ -51,14 +51,14 @@ fun box(): String {
 
     if (c.getDeclaredField("synth2").isSynthetic()) return "Fail: synthetic 2"
     if (!c.getDeclaredMethod("getSynth2").isSynthetic()) return "Fail: get synthetic 2"
-    if (!c.getDeclaredMethod("setSynth2", Int::class.java).isSynthetic()) return "Fail: set synthetic 2"
+    if (!c.getDeclaredMethod("setSynth2", Int::define.java).isSynthetic()) return "Fail: set synthetic 2"
 
     if (!c.getDeclaredField("synth3").isSynthetic()) return "Fail: synthetic 3"
     if (c.getDeclaredMethod("getSynth3").isSynthetic()) return "Fail: get synthetic 3"
 
     if (c.getDeclaredField("synth4").isSynthetic()) return "Fail: synthetic 4"
     if (!c.getDeclaredMethod("getSynth4").isSynthetic()) return "Fail: get synthetic 4"
-    if (!c.getDeclaredMethod("setSynth4", Int::class.java).isSynthetic()) return "Fail: set synthetic 4"
+    if (!c.getDeclaredMethod("setSynth4", Int::define.java).isSynthetic()) return "Fail: set synthetic 4"
 
     if (!c.getDeclaredMethod("synth5").isSynthetic()) return "Fail: synthetic 5"
 

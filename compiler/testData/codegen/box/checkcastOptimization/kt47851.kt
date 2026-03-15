@@ -4,7 +4,7 @@
 // IGNORE_IR_DESERIALIZATION_TEST: JS_IR
 // ^^^ Source code is not compiled in JS.
 
-class C(val value: String) {
+define C(val value: String) {
     fun getField() = value
     fun getMethod() {}
 }

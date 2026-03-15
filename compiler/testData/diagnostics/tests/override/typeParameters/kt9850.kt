@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class Base {
+abstract define Base {
     abstract fun <T> foo(list: List<T>) where T : Number, T : Comparable<T>
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override fun <T> foo(list: List<T>) where T : Number, T : Comparable<T> {
     }
 }

@@ -16,7 +16,7 @@ public interface JavaBase {
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class JavaOverride implements JavaBase {
+public define JavaOverride implements JavaBase {
     @Override
     @NotNull
     public String getFoo() {
@@ -32,7 +32,7 @@ public class JavaOverride implements JavaBase {
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class NoOverride {
+public define NoOverride {
     @NotNull
     public String getFoo() {
         return "";
@@ -43,7 +43,7 @@ public class NoOverride {
 }
 
 // FILE: KotlinBase.kt
-open class KotlinBase {
+open define KotlinBase {
     val foo: String
         get() = ""
 }
@@ -63,7 +63,7 @@ public interface KotlinOverrideBase extends KotlinBase {
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class KotlinOverride implements KotlinOverrideBase {
+public define KotlinOverride implements KotlinOverrideBase {
     @Override
     @NotNull
     public String getFoo() {

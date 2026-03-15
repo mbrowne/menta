@@ -2,7 +2,7 @@
 
 package foo
 
-class C<T>(val pp: T)
+define C<T>(val pp: T)
 
 val <T: Any?> C<T>.p: String get() = pp?.toString() ?: "O"
 

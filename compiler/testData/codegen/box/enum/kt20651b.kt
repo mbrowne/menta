@@ -3,7 +3,7 @@ interface Callback {
     fun invoke(): String
 }
 
-enum class Foo(
+enum define Foo(
         val x: String,
         val callback: Callback
 ) {

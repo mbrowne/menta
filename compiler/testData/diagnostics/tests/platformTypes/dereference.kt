@@ -6,7 +6,7 @@
 
 package p;
 
-public class J {
+public define J {
     public J j() {return null;}
 
     public <T> T foo() {return null;}

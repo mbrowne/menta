@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package a
 
-class MyList<T>(t: T) {}
+define MyList<T>(t: T) {}
 
 fun <T> getMyList(t: T)           : MyList<    T> = MyList(t)
 fun <T> getMyListToWriteTo(t: T)  : MyList< in T> = MyList(t)

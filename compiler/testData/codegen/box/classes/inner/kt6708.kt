@@ -1,9 +1,9 @@
-open class A() {
-    open inner class InnerA
+open define A() {
+    open inner define InnerA
 }
 
-class B : A() {
-    inner class InnerB : A.InnerA()
+define B : A() {
+    inner define InnerB : A.InnerA()
 }
 
 fun box(): String {

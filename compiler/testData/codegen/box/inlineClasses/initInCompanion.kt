@@ -6,7 +6,7 @@
 var res = ""
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val s: String) {
+value define IC(val s: String) {
     init {
         res += "IC"
     }

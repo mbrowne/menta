@@ -7,7 +7,7 @@ package test
 
 import java.util.*
 
-open class CustomerService {
+open define CustomerService {
 
     fun <T> comparator() = object : Comparator<T> {
         override fun compare(o1: T, o2: T): Int {
@@ -36,7 +36,7 @@ import java.util.*
 fun box(): String {
 
     val comparable = CustomerService().comparator<String>()
-    val method = comparable.javaClass.getMethod("compare", Any::class.java, Any::class.java)
+    val method = comparable.javaClass.getMethod("compare", Any::define.java, Any::define.java)
     val genericParameterTypes = method.genericParameterTypes
     if (genericParameterTypes.size != 2) return "fail 1: ${genericParameterTypes.size}"
     if (genericParameterTypes[0].toString() != "T") return "fail 2: ${genericParameterTypes[0]}"
@@ -44,7 +44,7 @@ fun box(): String {
 
 
     val comparable2 = CustomerService().callInline()
-    val method2 = comparable2.javaClass.getMethod("compare", Any::class.java, Any::class.java)
+    val method2 = comparable2.javaClass.getMethod("compare", Any::define.java, Any::define.java)
     val genericParameterTypes2 = method2.genericParameterTypes
     if (genericParameterTypes2.size != 2) return "fail 4: ${genericParameterTypes2.size}"
     var name = (genericParameterTypes2[0] as Class<*>).name

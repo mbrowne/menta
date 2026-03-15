@@ -1,8 +1,8 @@
-class Foo {
-    sealed class Bar
+define Foo {
+    sealed define Bar
 }
 
-// TESTED_OBJECT_KIND: class
+// TESTED_OBJECT_KIND: define
 // TESTED_OBJECTS: Foo$Bar
 // FLAGS: ACC_PUBLIC, ACC_ABSTRACT, ACC_SUPER
 

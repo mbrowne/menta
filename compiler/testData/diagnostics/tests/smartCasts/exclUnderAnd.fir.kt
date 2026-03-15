@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class D(val a: String, val b: Boolean)
+define D(val a: String, val b: Boolean)
 
 fun foo(p: Boolean, v: D?): String {
     if (p && v!!.b) v.a

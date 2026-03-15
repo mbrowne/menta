@@ -5,7 +5,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Expect {
+expect define Expect {
     fun o(): String
     val k: String
 }
@@ -25,12 +25,12 @@ interface Derived : Base1, Base2
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-class Impl : Derived {
+define Impl : Derived {
     override fun foo(x: Expect): String = x.o()
     override val Expect.bar: String get() = this.k
 }
 
-class ActualTarget {
+define ActualTarget {
     fun o(): String = "O"
     val k: String = "K"
 }

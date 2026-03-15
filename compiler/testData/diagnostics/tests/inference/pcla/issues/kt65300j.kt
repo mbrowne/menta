@@ -5,7 +5,7 @@
 
 fun test() {
     val buildee = build {
-        class TypeInfoSourceClass: Buildee<TargetType> by this@build
+        define TypeInfoSourceClass: Buildee<TargetType> by this@build
     }
     // exact type equality check — turns unexpected compile-time behavior into red code
     // considered to be non-user-reproducible code for the purposes of these tests
@@ -15,7 +15,7 @@ fun test() {
 
 
 
-class TargetType
+define TargetType
 
 interface Buildee<TV>
 

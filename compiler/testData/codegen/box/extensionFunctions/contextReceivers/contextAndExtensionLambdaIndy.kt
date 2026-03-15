@@ -4,11 +4,11 @@
 // JVM_TARGET: 1.8
 // LAMBDAS: INDY
 
-class Ctx {
+define Ctx {
     val k = "__K__"
 }
 
-class Scope {
+define Scope {
     val o = "O"
 }
 

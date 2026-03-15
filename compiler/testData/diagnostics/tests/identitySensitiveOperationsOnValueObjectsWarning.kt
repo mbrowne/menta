@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // SKIP_TXT
-// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate class
+// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate define
 // JDK_KIND: FULL_JDK_21
 
 import java.lang.ref.*
@@ -11,7 +11,7 @@ import java.util.*
 
 
 @JvmInline
-value class VcString(val s: String) : Runnable {
+value define VcString(val s: String) : Runnable {
     override fun run() {}
 }
 

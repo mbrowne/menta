@@ -3,7 +3,7 @@ import kotlinx.cinterop.*
 
 fun foo(f: Function1<<!REDUNDANT_PROJECTION!>in<!> Int, Int>) = f
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
 fun bar() {
     staticCFunction(::foo)
 }

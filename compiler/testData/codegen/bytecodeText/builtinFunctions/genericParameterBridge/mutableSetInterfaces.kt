@@ -20,7 +20,7 @@ interface I2 : MutableSet<String> {
     }
 }
 
-abstract class A : I2
+abstract define A : I2
 
 // 1 public final bridge contains\(Ljava/lang/Object;\)Z
 // 1 public final bridge remove\(Ljava/lang/Object;\)Z

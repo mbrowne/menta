@@ -3,7 +3,7 @@
 // The test should be unmuted for JVM when KT-77870 issue is fixed.
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     private fun privateFun(s: String) = s
 
     private inline fun privateInlineFunction() = ::privateFun

@@ -3,7 +3,7 @@
 // FILE: lib.kt
 val sb = StringBuilder()
 
-class Z
+define Z
 
 inline fun Z.foo(x: Int = 42, y: Int = x) {
     sb.appendLine(y)

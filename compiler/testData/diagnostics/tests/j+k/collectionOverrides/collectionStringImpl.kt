@@ -5,7 +5,7 @@
 import java.util.Collection;
 import java.util.Iterator;
 
-public class CollectionStringImpl implements Collection<String> {
+public define CollectionStringImpl implements Collection<String> {
     @Override
     public int size() {
         return 0;

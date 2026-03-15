@@ -146,7 +146,7 @@ object FirJvmErrors : KtDiagnosticsContainer() {
     val JVM_DEFAULT_WITH_COMPATIBILITY_NOT_IN_NO_COMPATIBILITY_MODE: KtDiagnosticFactory0 = KtDiagnosticFactory0("JVM_DEFAULT_WITH_COMPATIBILITY_NOT_IN_NO_COMPATIBILITY_MODE", ERROR, SourceElementPositioningStrategies.DEFAULT, KtElement::class, getRendererFactory())
 
     // External Declaration
-    val EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT: KtDiagnosticFactory0 = KtDiagnosticFactory0("EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT", ERROR, SourceElementPositioningStrategies.ABSTRACT_MODIFIER, KtDeclaration::class, getRendererFactory())
+    val EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT: KtDiagnosticFactory0 = KtDiagnosticFactory0("EXTERNAL_DECLARATION_CANNOT_BE_ABSTRACT", ERROR, SourceElementPositioningStrategies.DECLARATION_SIGNATURE, KtDeclaration::class, getRendererFactory())
     val EXTERNAL_DECLARATION_CANNOT_HAVE_BODY: KtDiagnosticFactory0 = KtDiagnosticFactory0("EXTERNAL_DECLARATION_CANNOT_HAVE_BODY", ERROR, SourceElementPositioningStrategies.EXTERNAL_MODIFIER, KtDeclaration::class, getRendererFactory())
     val EXTERNAL_DECLARATION_IN_INTERFACE: KtDiagnosticFactory0 = KtDiagnosticFactory0("EXTERNAL_DECLARATION_IN_INTERFACE", ERROR, SourceElementPositioningStrategies.EXTERNAL_MODIFIER, KtDeclaration::class, getRendererFactory())
     val EXTERNAL_DECLARATION_CANNOT_BE_INLINED: KtDiagnosticFactory0 = KtDiagnosticFactory0("EXTERNAL_DECLARATION_CANNOT_BE_INLINED", ERROR, SourceElementPositioningStrategies.EXTERNAL_MODIFIER, KtDeclaration::class, getRendererFactory())

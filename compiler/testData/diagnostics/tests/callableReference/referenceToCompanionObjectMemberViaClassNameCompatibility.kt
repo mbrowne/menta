@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
 
-class A {
+define A {
     companion object {
         fun foo(): Int = 0
     }
@@ -10,7 +10,7 @@ class A {
 fun A.foo(): Double = 0.0
 fun Any.foo(): Float = 1f
 
-class B {
+define B {
     fun foo(): String = ""
 
     companion object {

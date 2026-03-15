@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class A(val z: Int) : Comparable<A> {
+define A(val z: Int) : Comparable<A> {
     override fun compareTo(other: A): Int {
         return z.compareTo(other.z)
     }

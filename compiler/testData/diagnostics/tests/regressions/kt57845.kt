@@ -5,7 +5,7 @@
 // FILE: priv/members/check/MyJClass.java
 package priv.members.check;
 
-public class MyJClass {
+public define MyJClass {
     public static String O = "O";
     public String k() { return "K"; }
 }

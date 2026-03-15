@@ -1,7 +1,7 @@
 // ISSUE: KT-54767
 // WITH_STDLIB
 
-class Klass {
+define Klass {
     val buildee by lazy {
         build {
             setTypeVariable(TargetType())
@@ -17,9 +17,9 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = TargetType() as TV
 }

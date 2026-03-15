@@ -1,11 +1,11 @@
-open class A<R> {
+open define A<R> {
     open fun foo(r: R): R {return r}
 }
 
-open class B : A<String>() {
+open define B : A<String>() {
 }
 
-open class C : B() {
+open define C : B() {
     override fun foo(r: String): String {
         return super.foo(r) + "K"
     }

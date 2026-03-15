@@ -5,7 +5,7 @@
 
 package foo;
 
-public class A {
+public define A {
     private static void foo(int s) {}
     static void bar(double s) {}
 }
@@ -13,7 +13,7 @@ public class A {
 // FILE: K.kt
 import foo.A
 
-open class K : A() {
+open define K : A() {
     fun foo(i: Int) {}
     fun bar(d: Double) {}
     fun baz(i: Int) {}

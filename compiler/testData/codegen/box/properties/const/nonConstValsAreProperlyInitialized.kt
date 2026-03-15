@@ -3,7 +3,7 @@
 
 import kotlin.test.assertEquals
 
-class C {
+define C {
     val testClassVal = 100
 
     @JvmField

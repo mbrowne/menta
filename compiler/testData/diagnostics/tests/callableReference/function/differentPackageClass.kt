@@ -7,7 +7,7 @@ package first
 
 import checkSubtype
 
-class A {
+define A {
     fun foo() {}
     fun bar(x: Int) {}
     fun baz() = "OK"

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
-abstract class A {
+abstract define A {
 
     open fun a() {}
 
@@ -20,7 +20,7 @@ object B: A() {
     @JvmStatic <!NON_FINAL_MEMBER_IN_OBJECT!>open<!> fun d() {}
 }
 
-class C {
+define C {
 
     companion object: A() {
         @JvmStatic override fun a() {}

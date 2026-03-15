@@ -5,8 +5,8 @@
 public interface TestInterface {
 }
 
-class C {
-    inner class I {
+define C {
+    inner define I {
 
     }
 }

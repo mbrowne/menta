@@ -6,7 +6,7 @@
 // ^ resolves to C.foo instead of D.foo for some reason, does not seem important
 // FILE: A.java
 
-public class A<T> {
+public define A<T> {
     public String foo(T x) {
         return "A";
     }
@@ -18,11 +18,11 @@ interface B<T> {
     fun foo(x: T) = "B"
 }
 
-open class C : A<Int>()
+open define C : A<Int>()
 
 interface D : B<Int>
 
-class E : C(), D
+define E : C(), D
 
 fun main() {
     E().foo(42)

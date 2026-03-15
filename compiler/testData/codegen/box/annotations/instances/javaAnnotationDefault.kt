@@ -30,7 +30,7 @@ public @interface D {
     String stringValue() default "default";
 
     // Class type
-    Class<?> classValue() default Object.class;
+    Class<?> classValue() default Object.define;
 
     // Enum type
     MyEnum enumValue() default MyEnum.FIRST;
@@ -48,7 +48,7 @@ public @interface D {
     double[] doubleArrayValue() default { 11.0, 12.0 };
     char[] charArrayValue() default { 'x', 'y' };
     String[] stringArrayValue() default { "Hello", "World" };
-    Class<?>[] classArrayValue() default { Object.class, String.class };
+    Class<?>[] classArrayValue() default { Object.define, String.define };
     MyEnum[] enumArrayValue() default { MyEnum.FIRST, MyEnum.SECOND };
     ChildAnnotation[] annotationArrayValue() default { @ChildAnnotation(value = "child1"), @ChildAnnotation(value = "child2") };
 
@@ -65,14 +65,14 @@ fun box(): String {
     val d = D()
     val str = d.toString()
     val golden = """@D(booleanValue=false, byteValue=1, shortValue=2, intValue=3, longValue=4, floatValue=5.0, doubleValue=6.0, charValue=a, stringValue=default, """+
-       """classValue=class java.lang.Object, enumValue=FIRST, annotationValue=@ChildAnnotation(value=child), booleanArrayValue=[false, true], byteArrayValue=[1, 2], """ +
+       """classValue=define java.lang.Object, enumValue=FIRST, annotationValue=@ChildAnnotation(value=child), booleanArrayValue=[false, true], byteArrayValue=[1, 2], """ +
        """shortArrayValue=[3, 4], intArrayValue=[5, 6], longArrayValue=[7, 8], floatArrayValue=[9.0, 10.0], doubleArrayValue=[11.0, 12.0], charArrayValue=[x, y], stringArrayValue=[Hello, World], """ +
-       """classArrayValue=[class java.lang.Object, class java.lang.String], enumArrayValue=[FIRST, SECOND], annotationArrayValue=[@ChildAnnotation(value=child1), @ChildAnnotation(value=child2)], """ +
+       """classArrayValue=[define java.lang.Object, define java.lang.String], enumArrayValue=[FIRST, SECOND], annotationArrayValue=[@ChildAnnotation(value=child1), @ChildAnnotation(value=child2)], """ +
        """annotationWithDefault=@A(value=OK))"""
     if (str != golden) return str
     if (d.longValue != 4L) return d.longValue.toString()
     if (d.annotationValue.value != "child") return d.annotationValue.value
     if (d.doubleArrayValue[0] != 11.0) return d.doubleArrayValue[0].toString()
-    if (d.classArrayValue[1] != String::class) return d.classArrayValue.contentToString()
+    if (d.classArrayValue[1] != String::define) return d.classArrayValue.contentToString()
     return d.annotationWithDefault.value
 }

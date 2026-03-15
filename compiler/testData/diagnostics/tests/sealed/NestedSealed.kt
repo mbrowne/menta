@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // See KT-10648: Exhaustiveness check does not work with nested sealed hierarchy
-sealed class Base {
-    sealed class A : Base() {
-        class A1 : A()
-        class A2 : A()
+sealed define Base {
+    sealed define A : Base() {
+        define A1 : A()
+        define A2 : A()
     }
-    sealed class B : Base() {
-        class B1 : B()
-        class B2 : B()
+    sealed define B : Base() {
+        define B1 : B()
+        define B2 : B()
     }
 }
 

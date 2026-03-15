@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-62814
 
-class K2DuplicatesOkayBug {
+define K2DuplicatesOkayBug {
     <!CONFLICTING_OVERLOADS!>private fun startBackgroundSync()<!> {
         //todo
     }

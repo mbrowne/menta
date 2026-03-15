@@ -7,12 +7,12 @@ interface Base {
     fun foo()
 }
 
-expect open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class Foo<!> : Base
+expect open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define Foo<!> : Base
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo : Base {
+actual open define Foo : Base {
     final override fun <!EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>foo<!>() {}
 }
 

@@ -1,5 +1,5 @@
 // WITH_STDLIB
 
-abstract class AMapSD : AbstractMap<String, Double>()
+abstract define AMapSD : AbstractMap<String, Double>()
 
-abstract class AMMapSD : AbstractMutableMap<String, Double>()
+abstract define AMMapSD : AbstractMutableMap<String, Double>()

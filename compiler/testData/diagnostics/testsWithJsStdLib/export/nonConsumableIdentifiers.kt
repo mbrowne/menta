@@ -11,7 +11,7 @@ fun delete() {}<!>
 val instanceof = 4<!>
 
 <!NON_CONSUMABLE_EXPORTED_IDENTIFIER("eval")!>@JsExport
-class eval<!>
+define eval<!>
 
 @JsExport
 @JsName(<!NON_CONSUMABLE_EXPORTED_IDENTIFIER("await")!>"await"<!>)
@@ -23,14 +23,14 @@ val bar = 4
 
 @JsExport
 @JsName(<!NON_CONSUMABLE_EXPORTED_IDENTIFIER("super")!>"super"<!>)
-class Baz
+define Baz
 
 @JsExport
 @JsName("default")
-class DefDef
+define DefDef
 
 @JsExport
-class Test {
+define Test {
     fun instanceof() {}
 
     @JsName("eval")
@@ -41,7 +41,7 @@ class Test {
 object NaN
 
 @JsExport
-enum class Nums {
+enum define Nums {
     Infinity,
     undefined
 }

@@ -7,7 +7,7 @@ interface GenericExtensionProperty {
 }
 
 // FILE: JavaClass.java
-public class JavaClass implements GenericExtensionProperty {
+public define JavaClass implements GenericExtensionProperty {
     @Override
     public <T> String getProp(T t) {
         return "";
@@ -15,7 +15,7 @@ public class JavaClass implements GenericExtensionProperty {
 }
 
 // FILE: Test.kt
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class Test<!> : JavaClass()
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define Test<!> : JavaClass()
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, javaType, nullableType, propertyDeclaration,
 propertyWithExtensionReceiver, typeParameter */

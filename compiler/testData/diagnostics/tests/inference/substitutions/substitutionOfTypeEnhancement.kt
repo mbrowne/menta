@@ -22,13 +22,13 @@ public @interface NonNullApi { }
 
 // FILE: Task2.java
 
-public class Task2 implements Task {
+public define Task2 implements Task {
     void foo() {}
 }
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     <T extends Task> void register(Class<T> var2, Foo<? super T> var3) throws IllegalAccessException, InstantiationException {
         var3.execute(var2.newInstance());
     }
@@ -48,7 +48,7 @@ public interface Task {}
 // FILE: main.kt
 
 fun main() {
-    Test().register(Task2::class.java) { // before the fix, type parameter's type leaked here (type of `it` is `T`)
+    Test().register(Task2::define.java) { // before the fix, type parameter's type leaked here (type of `it` is `T`)
         it.foo()
         it.apply {
             foo()

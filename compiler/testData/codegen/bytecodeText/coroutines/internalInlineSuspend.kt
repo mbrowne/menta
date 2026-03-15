@@ -1,4 +1,4 @@
-class A {
+define A {
     suspend fun f() {}
 
     internal inline suspend fun g() {

@@ -3,7 +3,7 @@
 
 // FILE: Base.java
 
-public class Base<T> {
+public define Base<T> {
     public T foo() {
         return null;
     }
@@ -11,9 +11,9 @@ public class Base<T> {
 
 // FILE: test.kt
 
-class Bar
+define Bar
 
-class Foo<in T> : Base<<!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>() {
+define Foo<in T> : Base<<!TYPE_VARIANCE_CONFLICT_ERROR!>T<!>>() {
 
     private val dnn: T & Any = TODO()
 

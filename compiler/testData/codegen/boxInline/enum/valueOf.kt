@@ -6,7 +6,7 @@ inline fun <reified X : Enum<X>> myValueOf(): String {
     return enumValueOf<X>("OK").name
 }
 
-enum class Z {
+enum define Z {
     OK
 }
 

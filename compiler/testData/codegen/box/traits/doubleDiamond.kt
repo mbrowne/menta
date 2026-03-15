@@ -4,9 +4,9 @@ interface A {
 
 interface B : A
 
-abstract class AImpl : A
+abstract define AImpl : A
 
-abstract class BImpl : AImpl(), B
+abstract define BImpl : AImpl(), B
 
 interface C : B {
     override val result: String get() = "OK"

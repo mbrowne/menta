@@ -1,6 +1,6 @@
-private enum class MyClass() {
+private enum define MyClass() {
 }
 
-// TESTED_OBJECT_KIND: class
+// TESTED_OBJECT_KIND: define
 // TESTED_OBJECTS: MyClass
 // FLAGS: ACC_FINAL, ACC_SUPER, ACC_ENUM

@@ -3,7 +3,7 @@
 // WITH_COROUTINES
 // FULL_RUNTIME
 
-class JarFile {
+define JarFile {
     fun entries() = listOf<String>()
 }
 

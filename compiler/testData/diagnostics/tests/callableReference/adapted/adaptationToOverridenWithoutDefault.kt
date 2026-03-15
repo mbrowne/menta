@@ -6,7 +6,7 @@ interface Some {
     fun foo(b: Boolean? = null): Int = 10
 }
 
-class SomeImpl : Some {
+define SomeImpl : Some {
     override fun foo(b: Boolean?): Int {
         return 0
     }

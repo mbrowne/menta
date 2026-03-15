@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNCHECKED_CAST -OPT_IN_USAGE_ERROR -UNUSED_PARAMETER
 
-class Bar
+define Bar
 
 fun <T> materialize() = null as T
 

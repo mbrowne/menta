@@ -19,7 +19,7 @@ KtFile: contractsSecondaryConstructor.kt
       PsiElement(MUL)('*')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyClass')
     PsiWhiteSpace(' ')
@@ -42,7 +42,7 @@ KtFile: contractsSecondaryConstructor.kt
                   REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('ExperimentalContracts')
                   PsiElement(COLONCOLON)('::')
-                  PsiElement(class)('class')
+                  PsiElement(define)('define')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
         PsiElement(constructor)('constructor')

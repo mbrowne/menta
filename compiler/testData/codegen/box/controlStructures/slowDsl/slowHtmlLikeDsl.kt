@@ -1,7 +1,7 @@
 // this test might be rather slow
 
 // FILE: lib.kt
-class Builder(var content: String)
+define Builder(var content: String)
 
 fun Builder.begin(t: String) {
     content += "<$t>"

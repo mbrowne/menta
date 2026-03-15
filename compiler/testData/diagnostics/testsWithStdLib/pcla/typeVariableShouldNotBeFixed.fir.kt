@@ -12,13 +12,13 @@ public interface Exec<E> {
 // FILE: spr/foo.kt
 package spr
 
-open class Processor<P> {
+open define Processor<P> {
     fun process(t: P): Boolean {
         return true
     }
 }
 
-class Model
+define Model
 
 fun <C> context(p: Processor<in C>, exec: Exec<C>) {}
 

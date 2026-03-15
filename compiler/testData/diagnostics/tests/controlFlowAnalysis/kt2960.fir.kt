@@ -3,7 +3,7 @@
 
 package b
 
-class P {
+define P {
     var x : Int = 0
         private set
 }
@@ -25,7 +25,7 @@ val g = { ->
     doSmth(<!UNINITIALIZED_VARIABLE!>x<!>)
 }
 
-class A {
+define A {
     val a : Int = 1
       get() {
           val x : Int

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -REDUNDANT_PROJECTION
 
-class In<in T>() {
+define In<in T>() {
     fun f(t : T) {}
     fun f(t : Int) = t
 }

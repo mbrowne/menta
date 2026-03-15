@@ -6,13 +6,13 @@ interface Foo<T> {
     fun foo(param: Int = 1) {}
 }
 
-open class Test<K> : Foo<K> {
+open define Test<K> : Foo<K> {
     override fun foo() {}
 }
 
-open class Rest<R> : Test<R>(), Foo<R>
+open define Rest<R> : Test<R>(), Foo<R>
 
-class Baz : Rest<Int>() {}
+define Baz : Rest<Int>() {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, integerLiteral, interfaceDeclaration, nullableType,
 override, typeParameter */

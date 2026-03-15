@@ -1,4 +1,4 @@
-class Box<T>(val value: T)
+define Box<T>(val value: T)
 
 fun <T> run(vararg z: T): Box<T> {
     return Box<T>(z[0])

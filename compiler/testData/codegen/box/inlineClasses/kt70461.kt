@@ -15,16 +15,16 @@ interface Value2<out T> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class DecimalW1(override val value: List<Int>) : Value2<List<Int>>
+value define DecimalW1(override val value: List<Int>) : Value2<List<Int>>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class DecimalW2(override val value: ArrayList<Int>) : Value2<ArrayList<Int>>
+value define DecimalW2(override val value: ArrayList<Int>) : Value2<ArrayList<Int>>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class DecimalW3(override val value: Int) : Value2<Int>
+value define DecimalW3(override val value: Int) : Value2<Int>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class DecimalW4(override val value: UInt) : Value2<UInt>
+value define DecimalW4(override val value: UInt) : Value2<UInt>
 
 fun box(): String {
     for (i in 0..10) {

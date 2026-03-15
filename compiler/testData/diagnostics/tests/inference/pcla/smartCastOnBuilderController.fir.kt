@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Controller<T2>
+define Controller<T2>
 
 fun <T1> generate(
     block: (Controller<T1>) -> Unit

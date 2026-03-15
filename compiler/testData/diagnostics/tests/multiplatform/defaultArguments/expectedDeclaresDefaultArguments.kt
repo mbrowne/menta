@@ -10,7 +10,7 @@ expect fun failX(x: Int, y: String = "")
 
 expect fun failY(x: Int, y: String = "")
 
-expect open class Foo {
+expect open define Foo {
     fun ok(x: Int, y: String = "")
 
     fun failX(x: Int, y: String = "")
@@ -34,7 +34,7 @@ actual fun failX(<!ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS!>x: Int = 0<!>, y: Str
 
 actual fun failY(x: Int, <!ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS!>y: String = ""<!>) {}
 
-actual open class Foo {
+actual open define Foo {
     actual fun ok(x: Int, y: String) {}
 
     actual fun failX(<!ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS!>x: Int = 0<!>, y: String) {}

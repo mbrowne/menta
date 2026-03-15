@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-class A(var v: Int = 0)
+define A(var v: Int = 0)
 
 // plus
 

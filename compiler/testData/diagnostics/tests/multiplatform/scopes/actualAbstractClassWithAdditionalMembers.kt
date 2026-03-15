@@ -6,18 +6,18 @@
 
 // MODULE: common
 // FILE: common.kt
-expect abstract class Base
+expect abstract define Base
 
-expect class Derived : Base
+expect define Derived : Base
 
 // MODULE: jvm()()(common)
 // FILE: main.kt
 
-actual abstract class Base {
+actual abstract define Base {
     abstract fun foo()
 }
 
-actual class Derived : Base() {
+actual define Derived : Base() {
     override fun foo() {}
 }
 

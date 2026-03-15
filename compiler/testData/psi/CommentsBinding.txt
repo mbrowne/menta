@@ -72,7 +72,7 @@ KtFile: CommentsBinding.kt
       PsiWhiteSpace('\n ')
       PsiElement(KDOC_END)('*/')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -87,7 +87,7 @@ KtFile: CommentsBinding.kt
     PsiWhiteSpace('\n')
     PsiComment(EOL_COMMENT)('// comment for B 2')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')
@@ -100,14 +100,14 @@ KtFile: CommentsBinding.kt
   CLASS
     PsiComment(BLOCK_COMMENT)('/* Simple comment */')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     PsiWhiteSpace(' ')
     PsiComment(EOL_COMMENT)('// no body')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
     PsiWhiteSpace(' ')
@@ -241,7 +241,7 @@ KtFile: CommentsBinding.kt
           CLASS
             PsiComment(EOL_COMMENT)('// before local class')
             PsiWhiteSpace('\n        ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('Local')
             CLASS_BODY
@@ -344,7 +344,7 @@ KtFile: CommentsBinding.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E')
     PsiWhiteSpace(' ')

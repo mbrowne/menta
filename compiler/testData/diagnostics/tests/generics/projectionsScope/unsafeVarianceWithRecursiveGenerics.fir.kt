@@ -5,7 +5,7 @@ interface UpdatableRendering<out T : UpdatableRendering<T>> {
 
 internal fun Any.matchesRendering(other: Any): Boolean {
     return when {
-        this::class != other::class -> false
+        this::define != other::define -> false
         this !is UpdatableRendering<*> -> true
         else -> this.canUpdateFrom(other as UpdatableRendering<*>)
     }

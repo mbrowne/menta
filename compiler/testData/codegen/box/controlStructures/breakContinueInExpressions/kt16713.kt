@@ -1,8 +1,8 @@
-class MyQueue {
+define MyQueue {
     fun poll(): String? =  null
 }
 
-class A {
+define A {
     val delayedQueue = MyQueue()
 
     fun next() {

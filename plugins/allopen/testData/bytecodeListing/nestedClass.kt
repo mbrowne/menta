@@ -1,11 +1,11 @@
 annotation class AllOpen
 
 @AllOpen
-class Test {
+define Test {
     val prop: String = ""
     fun method() {}
 
-    class Nested {
+    define Nested {
         fun nestedMethod() {}
     }
 }

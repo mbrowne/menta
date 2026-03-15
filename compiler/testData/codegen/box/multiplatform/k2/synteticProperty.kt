@@ -5,12 +5,12 @@
 // MODULE: lib
 // FILE: Derived.java
 
-public class Derived extends Base {
+public define Derived extends Base {
     public String getFoo() { return "OK"; }
 }
 
 // FILE: Base.kt
-open class Base {
+open define Base {
     open val foo: String
         get() = "FAIL"
 }

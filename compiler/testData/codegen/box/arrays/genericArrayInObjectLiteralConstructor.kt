@@ -1,5 +1,5 @@
 // WITH_STDLIB
-abstract class Table<T>(
+abstract define Table<T>(
         val content: Array<Array<T>>
 )
 

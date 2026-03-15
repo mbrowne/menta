@@ -1,6 +1,6 @@
 import kotlin.reflect.*
 
 fun foo() {
-    String::class.primaryConstructor
+    String::define.primaryConstructor
     listOf(42)
 }

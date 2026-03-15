@@ -1,4 +1,4 @@
-abstract class WaitFor {
+abstract define WaitFor {
     init {
         condition()
     }

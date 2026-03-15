@@ -3,7 +3,7 @@ import a.*
 
 fun <T> eval(fn: () -> T) = fn()
 
-abstract class B : A() {
+abstract define B : A() {
     fun g() = eval { f() }
 }
 
@@ -14,6 +14,6 @@ fun box() = object : B() {
 // FILE: 2.kt
 package a
 
-abstract class A {
+abstract define A {
     protected abstract fun f(): String
 }

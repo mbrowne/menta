@@ -1,8 +1,8 @@
-abstract class Foo<T> {
+abstract define Foo<T> {
     fun hello(id: T) = "O$id"
 }
 
-class Bar: Foo<String>() {
+define Bar: Foo<String>() {
 }
 
 fun box() = Bar().hello("K")

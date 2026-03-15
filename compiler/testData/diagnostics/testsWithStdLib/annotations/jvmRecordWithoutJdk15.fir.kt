@@ -4,7 +4,7 @@
 // SKIP_TXT
 
 <!JVM_RECORDS_ILLEGAL_BYTECODE_TARGET!>@JvmRecord
-class MyRec(
+define MyRec(
     val x: String,
     val y: Int,
     vararg val z: Double,

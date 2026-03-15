@@ -9,7 +9,7 @@ public @interface ThreadSafe {
 
 // FILE: test.kt
 
-private annotation class AutoFactoryThreadSafe(
+private annotation define AutoFactoryThreadSafe(
     val threadSafe: ThreadSafe = ThreadSafe()
 )
 

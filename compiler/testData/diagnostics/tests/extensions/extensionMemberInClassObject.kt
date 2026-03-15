@@ -5,7 +5,7 @@ interface JPAEntityClass<D> {
     fun <T> T.findByName(s: String): D {null!!}
 }
 
-class Foo {
+define Foo {
     companion object : JPAEntityClass<Foo>
 }
 

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Foo(val bar: String?)
+define Foo(val bar: String?)
 
 fun test(foo: Foo?) {
     foo!!.bar.let {

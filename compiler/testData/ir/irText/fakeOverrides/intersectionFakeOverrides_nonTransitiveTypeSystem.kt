@@ -5,7 +5,7 @@
 // SKIP_KT_DUMP
 
 // FILE: A.java
-public class A {
+public define A {
     public void foo(String a) {}
 }
 
@@ -19,6 +19,6 @@ interface C {
 }
 
 // Any other order of supertypes leads to ABSTRACT_MEMBER_NOT_IMPLEMENTED and/or ACCIDENTAL_OVERRIDE and/or CONFLICTING_JVM_DECLARATIONS
-class D : A(), B, C
+define D : A(), B, C
 
-class E : A(), C, B
+define E : A(), C, B

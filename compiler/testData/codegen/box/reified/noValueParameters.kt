@@ -3,7 +3,7 @@ package foo
 
 // CHECK_NOT_CALLED: test
 
-class A
+define A
 
 inline fun <reified T> test(): String {
     val a: Any = A()

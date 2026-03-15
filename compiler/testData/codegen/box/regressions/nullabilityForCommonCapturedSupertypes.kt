@@ -6,7 +6,7 @@ fun star(): Sample<*> {
     return Sample<Int>()
 }
 
-class Sample<out T>
+define Sample<out T>
 
 fun box(): String {
     targetArgument

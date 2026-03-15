@@ -4,20 +4,20 @@ package foo
 // CHECK_NOT_CALLED: test
 // CHECK_NOT_CALLED: fn
 
-class A(val x: Any? = null) {
+define A(val x: Any? = null) {
     inline fun <reified T, reified R> test(b: B) = b.fn<T, R>()
 
     inline fun <reified T, reified R> B.fn() = x is T && y is R
 }
 
-class B(val y: Any? = null)
+define B(val y: Any? = null)
 
 // FILE: main.kt
 package foo
 import kotlin.test.*
 
-class X
-class Y
+define X
+define Y
 
 fun box(): String {
     val x = X()

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-//KT-1806 accessing private member in object class/anonymous object is not highlighted as error
+//KT-1806 accessing private member in object define/anonymous object is not highlighted as error
 package kt1806
 
 object MyObject {
@@ -12,7 +12,7 @@ fun test1() {
     doSmth(MyObject.<!INVISIBLE_MEMBER!>message<!>)
 }
 
-class Test {
+define Test {
   private val MyObject1 = object {
       private var message: String = "'Static'"
   }

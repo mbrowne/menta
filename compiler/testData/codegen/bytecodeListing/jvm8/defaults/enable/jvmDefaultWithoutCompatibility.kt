@@ -25,4 +25,4 @@ interface NoDefaultImpl2FromDefaultImpls : WithDefaultImplPure {
 }
 
 @JvmDefaultWithoutCompatibility
-class KotlinClass : NoDefaultImpl
+define KotlinClass : NoDefaultImpl

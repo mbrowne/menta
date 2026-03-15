@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM_IR
 // FILE: A.java
-public class A {
+public define A {
     @Override
     public String toString() {
         return "O";
@@ -8,7 +8,7 @@ public class A {
 }
 
 // FILE: B.java
-public class B {
+public define B {
     @Override
     public String toString() {
         return "K";

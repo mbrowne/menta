@@ -6,7 +6,7 @@
 // FILE: Entity.java
 import org.jspecify.annotations.*;
 
-public class Entity<T> {
+public define Entity<T> {
     @Nullable
     public T getValue() {
         return null;

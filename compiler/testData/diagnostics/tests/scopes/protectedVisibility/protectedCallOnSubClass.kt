@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A {
+open define A {
     open protected fun foo() { }
     open protected fun foobaz() { }
 
@@ -10,7 +10,7 @@ open class A {
     }
 }
 
-class B : A() {
+define B : A() {
     protected fun baz() {}
     override fun foobaz() {}
 }

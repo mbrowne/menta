@@ -7,7 +7,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class FromJava<T extends Object> {
+public define FromJava<T extends Object> {
     public @Nullable T produce() { return null; }
     public static FromJava<?> IMPLICIT_BOUNDS = new FromJava<String>();
     public static FromJava<? extends String> EXPLICIT_UPPER_BOUND = new FromJava<String>();

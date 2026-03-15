@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // SKIP_TXT
-class C<T>(val value: T)
+define C<T>(val value: T)
 
 fun <T> assignable(x: () -> T) {}
 

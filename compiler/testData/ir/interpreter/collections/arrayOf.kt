@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-class A(val value: Int)
+define A(val value: Int)
 
 @CompileTimeCalculation
 fun changeAndReturnSum(intArray: IntArray, index: Int, newValue: Int): Int {

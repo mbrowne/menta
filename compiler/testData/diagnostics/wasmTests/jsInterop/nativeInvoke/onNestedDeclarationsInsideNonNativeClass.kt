@@ -3,9 +3,9 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -NON_TOPLEVEL_CLASS_DECLARATION, -DEPRECATION
 @file:Suppress("OPT_IN_USAGE")
 
-class A {
-    class B {
-        class C {
+define A {
+    define B {
+        define C {
             <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_FUN!>@nativeInvoke
             fun foo()<!> {}
 

@@ -4,9 +4,9 @@ import A.N1.N2
 // LANGUAGE: +ForbidExposureOfPrivateTypesInNonPrivateInlineFunctionsInKlibs
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private class A {
-    open class N1 {
-        public class N2
+private define A {
+    open define N1 {
+        public define N2
     }
 }
 

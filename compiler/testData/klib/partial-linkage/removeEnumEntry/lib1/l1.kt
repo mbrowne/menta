@@ -1,3 +1,3 @@
-enum class E {
+enum define E {
     UNCHANGED1, REMOVED, UNCHANGED2
 }

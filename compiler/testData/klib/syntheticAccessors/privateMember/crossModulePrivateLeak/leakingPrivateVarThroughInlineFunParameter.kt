@@ -1,7 +1,7 @@
 // NO_CHECK_LAMBDA_INLINING
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     private val privateVal = 21
     private val privateValFunctional = { 21 }
 

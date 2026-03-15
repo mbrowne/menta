@@ -7,16 +7,16 @@ package bar
 
 fun <T> take(arg: T): T = arg
 
-class Owner {
+define Owner {
     companion object {
 
         fun Foo(string: String?) {}
 
-        class Foo(val str: String)
+        define Foo(val str: String)
 
         fun Bar(string: String) {}
 
-        class Bar(val str: String?)
+        define Bar(val str: String?)
 
         val foo = take<Unit>(Foo("1"))
         val bar = take<Unit>(Bar("2"))

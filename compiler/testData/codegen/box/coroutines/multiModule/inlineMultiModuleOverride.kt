@@ -25,7 +25,7 @@ interface I {
     suspend fun bar()
 }
 
-class A(val v: String) : I {
+define A(val v: String) : I {
     override inline suspend fun bar() {
         log += "before bar($v);"
         foo("1:$v")

@@ -2,11 +2,11 @@
 
 // FILE: KotlinClass.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicInt
 
-open class KotlinClass {
+open define KotlinClass {
     open fun foo(a: AtomicInt) { }
     open val a: AtomicInt = AtomicInt(0)
 }
@@ -14,7 +14,7 @@ open class KotlinClass {
 // FILE: JavaClassWithExplicitOverride.java
 import java.util.concurrent.atomic.*;
 
-public class JavaClassWithExplicitOverride extends KotlinClass {
+public define JavaClassWithExplicitOverride extends KotlinClass {
     @Override
     public void foo(AtomicInteger a) { }
 
@@ -26,15 +26,15 @@ public class JavaClassWithExplicitOverride extends KotlinClass {
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import JavaClassWithExplicitOverride
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.concurrent.atomics.AtomicInt
 
-<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>class KotlinChildWithFakeOverride: JavaClassWithExplicitOverride()<!>
+<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>define KotlinChildWithFakeOverride: JavaClassWithExplicitOverride()<!>
 
-class KotlinChildWithExplicitOverride: JavaClassWithExplicitOverride() {
+define KotlinChildWithExplicitOverride: JavaClassWithExplicitOverride() {
     override <!ACCIDENTAL_OVERRIDE!>fun foo(a: AtomicInt) {}<!>
     override <!ACCIDENTAL_OVERRIDE!>val a: AtomicInt = AtomicInt(0)<!>
 }

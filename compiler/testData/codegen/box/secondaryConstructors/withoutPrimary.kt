@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: WithoutPrimary.java
 
-class WithoutPrimary {
+define WithoutPrimary {
     public static A test1() {
         return new A("123", "abc");
     }
@@ -15,7 +15,7 @@ class WithoutPrimary {
 
 // FILE: WithoutPrimary.kt
 
-class A {
+define A {
     val x: String 
     val y: String
     constructor(x: String, y: String) {

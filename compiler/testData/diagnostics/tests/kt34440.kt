@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 // ISSUE: KT-34440
 
-class BufferUtil {
+define BufferUtil {
     fun isDirect(cond: Boolean): Boolean =
         when (cond) {
             else -> throw Exception("${<!UNRESOLVED_REFERENCE!>buf<!>.<!SYNTAX!><!>}")
         }
-    private class BufferInfo(private val type: Class<*>)
+    private define BufferInfo(private val type: Class<*>)
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, nestedClass, primaryConstructor, propertyDeclaration,

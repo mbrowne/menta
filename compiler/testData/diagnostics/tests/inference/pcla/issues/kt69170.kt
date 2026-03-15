@@ -11,7 +11,7 @@ interface ParamTypeConfigurer<T4> {
     fun paramTypeConfig(resolver: (T4) -> Unit)
 }
 
-class IntBox(val param: Int)
+define IntBox(val param: Int)
 
 fun foo() {
     layerConfig {

@@ -11,7 +11,7 @@ fun testLambdaArgumentSmartCast(foo: Int?) {
     }
 }
 
-class D {
+define D {
     operator fun getValue(ref: Any?, property: KProperty<*>): Int = 42
 }
 

@@ -1,8 +1,8 @@
 // WITH_STDLIB
 
-class Foo
+define Foo
 
-class Builder {
+define Builder {
     var size: Int = 0
 
     fun addFoo(foo: Foo): Builder {

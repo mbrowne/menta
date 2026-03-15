@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-public open class TestDelegate<T: Any>(private val initializer: () -> T) {
+public open define TestDelegate<T: Any>(private val initializer: () -> T) {
     private var value: T? = null
 
     operator open fun getValue(thisRef: Any?, desc: KProperty<*>): T {
@@ -15,10 +15,10 @@ public open class TestDelegate<T: Any>(private val initializer: () -> T) {
     }
 }
 
-class A
-class B
-class C
-class D
+define A
+define B
+define C
+define D
 
 public val A.s: String by TestDelegate({"A"})
 public val B.s: String by TestDelegate({"B"})

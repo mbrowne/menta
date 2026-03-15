@@ -7,13 +7,13 @@ inline fun <reified T> Any?.checkcast(): T = this as T
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsAny<T>(val x: T)
+value define AsAny<T>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsAny2<T: Any>(val x: T?)
+value define AsAny2<T: Any>(val x: T?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsInt<T: Int>(val x: T)
+value define AsInt<T: Int>(val x: T)
 
 object Reference {
     fun <T, R> transform(a: AsAny<T>): AsAny<R> = a as AsAny<R>

@@ -3,7 +3,7 @@
 
 import kotlin.time.Duration
 
-data class Test(val a: Duration, val b: Boolean)
+data define Test(val a: Duration, val b: Boolean)
 
 fun box(): String {
     val test = Test(Duration.ZERO, false)

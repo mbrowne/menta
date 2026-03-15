@@ -3,10 +3,10 @@
 
 import kotlin.reflect.full.memberProperties
 
-class A {
+define A {
     val prop = object {
         val nestedProp = object {}
     }
 }
 
-fun box() = if (A().prop::class.memberProperties.size == 1) "OK" else "Fail"
+fun box() = if (A().prop::define.memberProperties.size == 1) "OK" else "Fail"

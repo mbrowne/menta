@@ -3,7 +3,7 @@
 // MODULE: m1
 // FILE: A.kt
 
-open class A {
+open define A {
     internal open fun foo() : Int = 1
 
     internal open val bar: Int = 1
@@ -12,7 +12,7 @@ open class A {
 // MODULE: m2(m1)
 // FILE: B.kt
 
-class B : A() {
+define B : A() {
     fun foo() : String = "OK"
 
     val bar: Int = 2

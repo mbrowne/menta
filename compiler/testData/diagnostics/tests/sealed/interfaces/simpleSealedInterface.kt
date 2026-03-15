@@ -8,12 +8,12 @@ sealed interface Base
 
 interface A : Base
 
-sealed class B : Base {
-    class First : B()
-    class Second : B()
+sealed define B : Base {
+    define First : B()
+    define Second : B()
 }
 
-enum class C : Base {
+enum define C : Base {
     SomeValue, AnotherValue
 }
 

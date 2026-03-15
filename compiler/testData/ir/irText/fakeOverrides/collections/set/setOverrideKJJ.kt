@@ -6,12 +6,12 @@
 // FILE: Java1.java
 import java.util.HashMap;
 
-public abstract class Java1 extends HashMap<Void, Void> { }
+public abstract define Java1 extends HashMap<Void, Void> { }
 
 // FILE: 1.kt
-abstract class A : Java1()  //Kotlin ← Java1 ←Java2
+abstract define A : Java1()  //Kotlin ← Java1 ←Java2
 
-class B(override val size: Int) : Java1() {
+define B(override val size: Int) : Java1() {
     override fun get(key: Void?): Void? {
         return null
     }

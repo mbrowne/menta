@@ -4,12 +4,12 @@
 
 import kotlin.reflect.KProperty
 
-open class Base
-class Derived: Base()
+open define Base
+define Derived: Base()
 
 val a: Base by A()
 
-class A {
+define A {
   operator fun getValue(t: Any?, p: KProperty<*>): Derived {
     return Derived()
   }

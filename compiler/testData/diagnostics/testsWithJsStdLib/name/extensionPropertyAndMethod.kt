@@ -4,7 +4,7 @@
 // as the IR BE can resolve such name collisions.
 package foo
 
-class A
+define A
 
 fun A.get_bar() = 23
 

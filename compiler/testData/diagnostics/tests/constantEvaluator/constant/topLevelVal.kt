@@ -9,7 +9,7 @@ val a = 1
 // val prop2: 2
 <!DEBUG_INFO_CONSTANT_VALUE("2")!>val prop2 = a + 1<!>
 
-class A {
+define A {
     // val prop3: 1
     <!DEBUG_INFO_CONSTANT_VALUE("1")!>val prop3 = a<!>
 

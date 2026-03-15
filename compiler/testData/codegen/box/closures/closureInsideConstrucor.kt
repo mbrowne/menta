@@ -1,5 +1,5 @@
 //adopted snippet from kdoc
-open class KModel {
+open define KModel {
     val sourcesInfo: String
     init {
         fun relativePath(psiFile: String): String {

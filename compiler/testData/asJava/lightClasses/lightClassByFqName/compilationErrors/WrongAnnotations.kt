@@ -1,7 +1,7 @@
 // A
 // WITH_STDLIB
 
-class A {
+define A {
     companion object {
         @JvmName("realName")
         fun f1() {

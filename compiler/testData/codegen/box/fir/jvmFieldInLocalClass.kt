@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 fun box(): String {
-    class Bean {
+    define Bean {
         @JvmField
         val a: String = "OK"
     }

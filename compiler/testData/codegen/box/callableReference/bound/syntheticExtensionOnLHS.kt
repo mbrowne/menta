@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: A.java
 
-public class A {
+public define A {
     private final String field;
 
     public A(String field) {

@@ -1,4 +1,4 @@
-class Slot() {
+define Slot() {
   var vitality: Int = 10000
 
   fun increaseVitality(delta: Int) {

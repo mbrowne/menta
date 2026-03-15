@@ -6,7 +6,7 @@
 import java.util.List;
 import java.util.Iterator;
 
-public class First {
+public define First {
     public static <A> List<A> from(List<A> var0) {
         return null;
     }

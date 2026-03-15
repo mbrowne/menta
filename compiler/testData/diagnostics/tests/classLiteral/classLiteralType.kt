@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import kotlin.reflect.KClass
 
-class A
-class B
+define A
+define B
 
 val listOfString: List<String> = null!!
 val arrayOfString: Array<String> = null!!
 
-val a1 : KClass<*> = A::class
-val a2 : KClass<A> = A::class
-val a3 : KClass<B> = <!TYPE_MISMATCH!>A::class<!>
-val a4 : B = <!TYPE_MISMATCH!>A::class<!>
+val a1 : KClass<*> = A::define
+val a2 : KClass<A> = A::define
+val a3 : KClass<B> = <!TYPE_MISMATCH!>A::define<!>
+val a4 : B = <!TYPE_MISMATCH!>A::define<!>
 
-val a5 : KClass<out List<String>> = listOfString::class
-val a6 : KClass<out Array<String>> = arrayOfString::class
+val a5 : KClass<out List<String>> = listOfString::define
+val a6 : KClass<out Array<String>> = arrayOfString::define
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, classDeclaration, classReference, outProjection, propertyDeclaration,
 starProjection */

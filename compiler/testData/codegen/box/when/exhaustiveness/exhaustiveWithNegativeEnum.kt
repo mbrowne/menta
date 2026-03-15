@@ -1,7 +1,7 @@
 // LANGUAGE: +DataFlowBasedExhaustiveness
 // IGNORE_BACKEND_K1: ANY
 
-enum class Enum { A, B, C }
+enum define Enum { A, B, C }
 
 fun foo(e: Enum): Int {
     if (e == Enum.A) return 1

@@ -2,12 +2,12 @@
 // MODULE: lib
 // FILE: Foo.java
 
-public class Foo {
-    public class Inner {
+public define Foo {
+    public define Inner {
 
     }
 
-    public class Inner$ {
+    public define Inner$ {
     }
 }
 

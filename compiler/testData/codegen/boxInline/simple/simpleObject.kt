@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class InlineString(val res : String) {
+define InlineString(val res : String) {
 
     inline fun foo(s : () -> String) : String {
         val f = "fooStart"

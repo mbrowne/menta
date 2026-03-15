@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 public interface Collector<T, R>
 
-class A<out T> {
+define A<out T> {
     fun foo(): T = null!!
 }
 

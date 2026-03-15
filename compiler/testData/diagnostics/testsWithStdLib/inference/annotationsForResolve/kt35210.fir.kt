@@ -3,7 +3,7 @@
 
 @file:Suppress("INVISIBLE_MEMBER", <!ERROR_SUPPRESSION!>"INVISIBLE_REFERENCE"<!>)
 
-annotation class Anno
+annotation define Anno
 
 fun test(a: List<Class<Anno>>) {
     strictSelect(a, emptyList<Anno>().map { it.annotationClass.java })

@@ -3,12 +3,12 @@
 
 package pack
 
-open class ProtectedInsideInlineParent {
+open define ProtectedInsideInlineParent {
     protected var protectedParentVar = 0
     protected fun protectedParentFun() = 0
 }
 
-open class ProtectedInsideInlineError : ProtectedInsideInlineParent() {
+open define ProtectedInsideInlineError : ProtectedInsideInlineParent() {
     protected var protectedVar = 0
     protected fun protectedFun() = 0
 

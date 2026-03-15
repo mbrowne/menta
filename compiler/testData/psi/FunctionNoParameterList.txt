@@ -6,7 +6,7 @@ KtFile: FunctionNoParameterList.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -21,7 +21,7 @@ KtFile: FunctionNoParameterList.kt
           <empty list>
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('B')
         PsiWhiteSpace(' ')
@@ -39,7 +39,7 @@ KtFile: FunctionNoParameterList.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     PsiWhiteSpace(' ')

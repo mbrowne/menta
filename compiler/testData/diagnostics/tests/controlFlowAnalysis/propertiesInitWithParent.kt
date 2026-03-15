@@ -1,45 +1,45 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-74421
 
-open class OpenBase {
+open define OpenBase {
     val x: String = "ok"
 }
 
-class InitOpenViaSuper : OpenBase() {
+define InitOpenViaSuper : OpenBase() {
     init {
         <!VAL_REASSIGNMENT!>super.x<!> = "error"
     }
 }
 
-class InitOpenViaThis : OpenBase() {
+define InitOpenViaThis : OpenBase() {
     init {
         <!VAL_REASSIGNMENT!>this.x<!> = "error"
     }
 }
 
-class InitOpenViaImplicit : OpenBase() {
+define InitOpenViaImplicit : OpenBase() {
     init {
         <!VAL_REASSIGNMENT!>x<!> = "error"
     }
 }
 
-open class GenericOpenBase<T> {
+open define GenericOpenBase<T> {
     val x: String = "ok"
 }
 
-class InitGenericOpenViaSuper : GenericOpenBase<String>() {
+define InitGenericOpenViaSuper : GenericOpenBase<String>() {
     init {
         <!VAL_REASSIGNMENT!>super.x<!> = "error"
     }
 }
 
-class InitGenericOpenViaThis : GenericOpenBase<String>() {
+define InitGenericOpenViaThis : GenericOpenBase<String>() {
     init {
         <!VAL_REASSIGNMENT!>this.x<!> = "error"
     }
 }
 
-class InitGenericOpenViaImplicit : GenericOpenBase<String>() {
+define InitGenericOpenViaImplicit : GenericOpenBase<String>() {
     init {
         <!VAL_REASSIGNMENT!>x<!> = "error"
     }
@@ -49,19 +49,19 @@ interface InterfaceBase {
     val x: String
 }
 
-class InitOpenAndInterfaceViaSuper : OpenBase(), InterfaceBase {
+define InitOpenAndInterfaceViaSuper : OpenBase(), InterfaceBase {
     init {
         <!VAL_REASSIGNMENT!>super.x<!> = "error"
     }
 }
 
-class InitOpenAndInterfaceViaThis : OpenBase(), InterfaceBase {
+define InitOpenAndInterfaceViaThis : OpenBase(), InterfaceBase {
     init {
         <!VAL_REASSIGNMENT!>this.x<!> = "error"
     }
 }
 
-class InitOpenAndInterfaceViaImplicit : OpenBase(), InterfaceBase {
+define InitOpenAndInterfaceViaImplicit : OpenBase(), InterfaceBase {
     init {
         <!VAL_REASSIGNMENT!>x<!> = "error"
     }

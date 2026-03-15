@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.test.assertEquals
 
-class Controller {
+define Controller {
     suspend fun controllerSuspendHere() =
         if (coroutineContext != EmptyCoroutineContext)
             "${coroutineContext} != $EmptyCoroutineContext"

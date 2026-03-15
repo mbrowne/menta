@@ -34,7 +34,7 @@ KtFile: LocalDeclarations.kt
           PsiWhiteSpace(' ')
           PsiElement(abstract)('abstract')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foof')
         PsiWhiteSpace(' ')
@@ -54,7 +54,7 @@ KtFile: LocalDeclarations.kt
                   REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('a')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('foof')
         PsiWhiteSpace(' ')

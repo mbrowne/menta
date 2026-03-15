@@ -1,4 +1,4 @@
-class A(val result: Int) {
+define A(val result: Int) {
     object B {
         fun bar(): Int = 4
         val prop = 5

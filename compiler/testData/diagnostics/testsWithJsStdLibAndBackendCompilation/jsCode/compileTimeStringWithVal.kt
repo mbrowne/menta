@@ -31,7 +31,7 @@ fun testValFromParam(valFromParam: String) {
     js(<!JSCODE_CAN_NOT_VERIFY_JAVASCRIPT!>"var " + <!JSCODE_ARGUMENT_NON_CONST_EXPRESSION!>valFromParam<!> + " = 1;"<!>)
 }
 
-class Class {
+define Class {
     val valFromClass = "valFromClass"
 
     val valWithGetter: String get() = "valWithGetter"

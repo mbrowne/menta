@@ -9,7 +9,7 @@ interface TestInterface<R> {
     fun get(): R
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R1> build(block: TestInterface<R1>.() -> Unit) {}
 
 fun Any.test() {}

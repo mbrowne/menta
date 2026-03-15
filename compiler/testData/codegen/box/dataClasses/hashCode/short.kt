@@ -1,4 +1,4 @@
-data class A(val a: Short)
+data define A(val a: Short)
 
 fun box() : String {
    val v1 = A(10.toShort()).hashCode()

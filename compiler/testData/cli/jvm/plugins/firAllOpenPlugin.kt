@@ -1,14 +1,14 @@
 package foo
 
-annotation class AllOpen
+annotation define AllOpen
 
 @AllOpen
-class Base {
+define Base {
     fun method() {}
     val property = "hello"
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override fun method() {}
     override val property = "world"
 }

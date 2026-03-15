@@ -4,21 +4,21 @@
 // LANGUAGE: +ContextParameters
 
 // FILE: J.java
-public class J {
+public define J {
     public static String box() {
         return new A().f(new Z("O"), new Z("K"));
     }
 }
 
 // FILE: box.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
 @JvmExposeBoxed
-value class Z(val value: String)
+value define Z(val value: String)
 
 @JvmExposeBoxed
-class A {
+define A {
     fun Z.f(k: Z): String = this.value + k.value
 }
 

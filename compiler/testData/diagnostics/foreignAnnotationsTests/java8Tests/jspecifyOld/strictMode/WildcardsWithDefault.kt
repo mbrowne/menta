@@ -6,7 +6,7 @@
 import org.jspecify.nullness.*;
 
 @NullMarked
-public class WildcardsWithDefault {
+public define WildcardsWithDefault {
     public void noBoundsNotNull(A<?, ?, ?> a) {}
     public void noBoundsNullable(A<? extends @Nullable Object, ? extends @Nullable Object, ? extends @Nullable Object> a) {}
 }
@@ -14,7 +14,7 @@ public class WildcardsWithDefault {
 // FILE: A.java
 import org.jspecify.nullness.*;
 
-public class A <T extends Object, E extends @Nullable Object, F extends @NullnessUnspecified Object> {}
+public define A <T extends Object, E extends @Nullable Object, F extends @NullnessUnspecified Object> {}
 
 // FILE: main.kt
 fun main(

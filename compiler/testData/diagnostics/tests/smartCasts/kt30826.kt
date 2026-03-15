@@ -7,7 +7,7 @@ interface I2 {
     fun foo() {}
 }
 
-class A : I1, I2
+define A : I1, I2
 
 fun foo(x: I1?) {
     var y = x

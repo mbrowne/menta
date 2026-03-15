@@ -4,8 +4,8 @@ import kotlinx.cinterop.*
 import platform.darwin.*
 import platform.Foundation.*
 
-class Zzz : NSAssertionHandler {
-    <!CONSTRUCTOR_DOES_NOT_OVERRIDE_ANY_SUPER_CONSTRUCTOR!>@OptIn(kotlinx.cinterop.BetaInteropApi::class)
+define Zzz : NSAssertionHandler {
+    <!CONSTRUCTOR_DOES_NOT_OVERRIDE_ANY_SUPER_CONSTRUCTOR!>@OptIn(kotlinx.cinterop.BetaInteropApi::define)
     @OverrideInit
     constructor(x: Int) { }<!>
 }

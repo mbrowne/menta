@@ -8,7 +8,7 @@
 // FILE: A1.java
 import java.util.List;
 
-public class A1 {
+public define A1 {
     @org.eclipse.jdt.annotation.Nullable
     public static List<@io.reactivex.rxjava3.annotations.Nullable String> warningError() {
         return null;

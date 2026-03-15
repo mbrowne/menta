@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-abstract class A {
+abstract define A {
     fun foo(b: B) {
         b.<!INVISIBLE_MEMBER!>prv<!>()
     }
@@ -9,6 +9,6 @@ abstract class A {
     private fun prv() {}
 }
 
-abstract class B : A()
+abstract define B : A()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration */

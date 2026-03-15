@@ -3,18 +3,18 @@
 // FILE: a.kt
 package a
 
-open class Y
+open define Y
 
 // FILE: b.kt
 package b
 
-class X
+define X
 
 // FILE: b1.kt
 package b
 
 import a.Y as X
 
-class Y : X() // class from explicit import should take priority
+define Y : X() // define from explicit import should take priority
 
 /* GENERATED_FIR_TAGS: classDeclaration */

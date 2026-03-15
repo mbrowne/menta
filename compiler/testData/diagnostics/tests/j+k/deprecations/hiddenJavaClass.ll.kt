@@ -3,17 +3,17 @@
 // LL_FIR_DIVERGENCE
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     @kotlin.Deprecated(message = "nested", level = kotlin.DeprecationLevel.HIDDEN)
-    public static class Nested { }
+    public static define Nested { }
 }
 
 // FILE: main.kt
-class Nested {
+define Nested {
     fun foo() = "OK"
 }
 
-class MyClass : JavaClass() {
+define MyClass : JavaClass() {
     fun check(n: <!DEPRECATION_ERROR!>Nested<!>): String = n.<!UNRESOLVED_REFERENCE!>foo<!>()
 }
 

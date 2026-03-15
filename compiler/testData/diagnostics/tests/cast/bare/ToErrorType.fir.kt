@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class P
+define P
 
 fun foo(p: P): Any {
     val v = p as <!UNRESOLVED_REFERENCE!>G<!>

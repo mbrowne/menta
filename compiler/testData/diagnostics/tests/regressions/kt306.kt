@@ -16,11 +16,11 @@ fun test() {
     })
 }
 
-class Foo {
+define Foo {
     fun bar() {}
 }
 
-class Barr {
+define Barr {
     fun bar() {}
 }
 

@@ -4,7 +4,7 @@
 
 // FILE: Flexier.java
 
-public class Flexier {
+public define Flexier {
     public static <T> T flexify(T it) {
         return it;
     }

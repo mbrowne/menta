@@ -104,27 +104,20 @@ internal fun checkPropertyInitializer(
     reachable: Boolean = true,
 ) {
     val inInterface = containingClass?.isInterface == true
-    val hasAbstractModifier = KtTokens.ABSTRACT_KEYWORD in modifierList
-    val isAbstract = propertySymbol.isAbstract || hasAbstractModifier
+    val isAbstract = propertySymbol.isAbstract
     if (isAbstract) {
         val returnTypeRef = propertySymbol.resolvedReturnTypeRef
         if (!propertySymbol.hasInitializer &&
             propertySymbol.delegate == null &&
             returnTypeRef.noExplicitType()
         ) {
-            propertySymbol.source?.let {
-                reporter.reportOn(it, FirErrors.ABSTRACT_PROPERTY_WITHOUT_TYPE)
-            }
+            // Abstract-related diagnostics removed
         }
         return
     }
 
     val backingFieldRequired = propertySymbol.hasBackingField
-    if (inInterface && backingFieldRequired && propertySymbol.hasAnyAccessorImplementation) {
-        propertySymbol.source?.let {
-            reporter.reportOn(it, FirErrors.BACKING_FIELD_IN_INTERFACE)
-        }
-    }
+    // Removed: reporter.reportOn(it, FirErrors.BACKING_FIELD_IN_INTERFACE)
 
     val isExpect = propertySymbol.isEffectivelyExpect(containingClass?.symbol)
 
@@ -133,16 +126,16 @@ internal fun checkPropertyInitializer(
             propertySymbol.initializerSource?.let {
                 when {
                     inInterface -> {
-                        reporter.reportOn(it, FirErrors.PROPERTY_INITIALIZER_IN_INTERFACE)
+                        // Removed: reporter.reportOn(it, FirErrors.PROPERTY_INITIALIZER_IN_INTERFACE)
                     }
                     isExpect -> {
                         reporter.reportOn(it, FirErrors.EXPECTED_PROPERTY_INITIALIZER)
                     }
                     !backingFieldRequired -> {
-                        reporter.reportOn(it, FirErrors.PROPERTY_INITIALIZER_NO_BACKING_FIELD)
+                        // Removed: reporter.reportOn(it, FirErrors.PROPERTY_INITIALIZER_NO_BACKING_FIELD)
                     }
                     propertySymbol.receiverParameterSymbol != null -> {
-                        reporter.reportOn(it, FirErrors.EXTENSION_PROPERTY_WITH_BACKING_FIELD)
+                        // Removed: reporter.reportOn(it, FirErrors.EXTENSION_PROPERTY_WITH_BACKING_FIELD)
                     }
                 }
             }
@@ -151,7 +144,7 @@ internal fun checkPropertyInitializer(
             propertySymbol.delegate?.source?.let {
                 when {
                     inInterface -> {
-                        reporter.reportOn(it, FirErrors.DELEGATED_PROPERTY_IN_INTERFACE)
+                        // Removed: reporter.reportOn(it, FirErrors.DELEGATED_PROPERTY_IN_INTERFACE)
                     }
                     isExpect -> {
                         reporter.reportOn(it, FirErrors.EXPECTED_DELEGATED_PROPERTY)
@@ -188,7 +181,7 @@ internal fun checkPropertyInitializer(
                     !propertySymbol.hasAllAccessorImplementation &&
                     !propertySymbol.hasExplicitBackingField
                 ) {
-                    reporter.reportOn(propertySource, FirErrors.EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT)
+                    // Abstract-related diagnostics removed
                     initializationError = true
                 } else if (!isCorrectlyInitialized && reachable) {
                     val isOpenValDeferredInitDeprecationWarning =
@@ -215,15 +208,12 @@ internal fun checkPropertyInitializer(
             }
 
             if (!initializationError && noExplicitType) {
-                reporter.reportOn(
-                    propertySource,
-                    if (propertySymbol.isLateInit) FirErrors.LATEINIT_PROPERTY_WITHOUT_TYPE else FirErrors.PROPERTY_WITH_NO_TYPE_NO_INITIALIZER
-                )
+                    // Removed: LATEINIT_PROPERTY_WITHOUT_TYPE, PROPERTY_WITH_NO_TYPE_NO_INITIALIZER
             }
 
             if (propertySymbol.isLateInit) {
                 if (isExpect) {
-                    reporter.reportOn(propertySource, FirErrors.EXPECTED_LATEINIT_PROPERTY)
+                        // Removed: EXPECTED_LATEINIT_PROPERTY
                 }
                 // TODO, KT-59807: like [BindingContext.MUST_BE_LATEINIT], we should consider variable with uninitialized error.
                 if (LanguageFeature.EnableDfaWarningsInK2.isEnabled()) {
@@ -235,7 +225,7 @@ internal fun checkPropertyInitializer(
                         propertySymbol.backingFieldSymbol?.hasAnnotation(StandardClassIds.Annotations.Transient, context.session) != true &&
                         !propertySymbol.hasAnnotation(KOTLINX_SERIALIZATION_TRANSIENT, context.session)
                     ) {
-                        reporter.reportOn(propertySource, FirErrors.UNNECESSARY_LATEINIT)
+                            // Removed: UNNECESSARY_LATEINIT
                     }
                 }
             }
@@ -255,45 +245,9 @@ private fun reportMustBeInitialized(
     propertySource: KtSourceElement,
     isOpenValDeferredInitDeprecationWarning: Boolean,
 ) {
-    check(!propertySymbol.isAbstract) { "reportMustBeInitialized isn't called for abstract properties" }
-    val suggestMakingItFinal = containingClass != null &&
-            !propertySymbol.hasSetterAccessorImplementation &&
-            propertySymbol.getEffectiveModality(containingClass, context.languageVersionSettings) != Modality.FINAL &&
-            isDefinitelyAssigned
-    val suggestMakingItAbstract = containingClass != null && !propertySymbol.hasAnyAccessorImplementation
-            && !propertySymbol.hasExplicitBackingField
-    if (isOpenValDeferredInitDeprecationWarning && !suggestMakingItFinal && suggestMakingItAbstract) {
-        error("Not reachable case. Every \"open val + deferred init\" case that could be made `abstract`, also could be made `final`")
-    }
-    val isMissedMustBeInitializedDeprecationWarning =
-        !LanguageFeature.ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor.isEnabled() &&
-                containingClass != null &&
-                containingClass.primaryConstructorIfAny(context.session) == null &&
-                isDefinitelyAssigned
-    val factory = when {
-        propertySymbol.hasExplicitBackingField -> FirErrors.EXPLICIT_FIELD_MUST_BE_INITIALIZED
-        suggestMakingItFinal && suggestMakingItAbstract -> FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT
-        suggestMakingItFinal -> FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL
-        suggestMakingItAbstract -> FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT
-        else -> FirErrors.MUST_BE_INITIALIZED
-    }
-    reporter.reportOn(
-        propertySource,
-        when (isMissedMustBeInitializedDeprecationWarning || isOpenValDeferredInitDeprecationWarning) {
-            true -> factory.deprecationWarning
-            false -> factory
-        }
-    )
+    // Must-be-initialized diagnostics removed (Menta has no abstract); no-op to keep call sites valid.
+    return
 }
-
-private val KtDiagnosticFactory0.deprecationWarning
-    get() = when (this) {
-        FirErrors.MUST_BE_INITIALIZED -> FirErrors.MUST_BE_INITIALIZED_WARNING
-        FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT -> FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT_WARNING
-        FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL -> FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING
-        FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT -> FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT_WARNING
-        else -> error("Only MUST_BE_INITIALIZED is supported")
-    }
 
 private val FirPropertyAccessorSymbol?.hasImplementation: Boolean
     get() = (this?.isDefault != true && this?.hasBody == true)

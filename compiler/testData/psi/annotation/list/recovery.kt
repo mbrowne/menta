@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
 @[]
-class A {
+define A {
     @[] val x = 1
 
     @[@q]
     fun foo() {
-        @[] class A
+        @[] define A
     }
 
     @[@q1 @ @q2]

@@ -1,5 +1,5 @@
 
-class A() {
+define A() {
   fun action() = "OK"
 
   infix fun infix(a: String) = "O" + a

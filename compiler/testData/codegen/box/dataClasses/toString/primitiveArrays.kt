@@ -1,7 +1,7 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // KT-30080
 
-data class A(
+data define A(
     val z: BooleanArray,
     var c: CharArray,
     val b: ByteArray,

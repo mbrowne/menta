@@ -12,7 +12,7 @@ interface Base<A> {
     fun foo() {}
 }
 
-class MyClass(val prop: second.Base<second.Base<Int>>): Base<Base<Int>> by prop {
+define MyClass(val prop: second.Base<second.Base<Int>>): Base<Base<Int>> by prop {
     interface Base
 }
 

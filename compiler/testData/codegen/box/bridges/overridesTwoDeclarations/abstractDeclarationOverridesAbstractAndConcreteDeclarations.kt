@@ -2,15 +2,15 @@ interface IA {
     fun foo(): Any
 }
 
-open class B {
+open define B {
     open fun foo(): CharSequence = "FAIL"
 }
 
-abstract class C : B(), IA {
+abstract define C : B(), IA {
     abstract override fun foo(): String
 }
 
-class D : C() {
+define D : C() {
     override fun foo(): String = "OK"
 }
 fun box(): String {

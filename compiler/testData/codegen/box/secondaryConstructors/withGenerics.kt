@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: WithGenerics.java
 
-class WithGenerics {
+define WithGenerics {
     public static String foo1() {
         A<Double> x = new A<Double>("OK");
         return x.toString();
@@ -15,7 +15,7 @@ class WithGenerics {
 
 // FILE: WithGenerics.kt
 
-open class A<T> {
+open define A<T> {
     val prop: String
     constructor(x: String) {
         prop = x

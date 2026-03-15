@@ -9,7 +9,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PRIMARY_CONSTRUCTOR
@@ -70,7 +70,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PRIMARY_CONSTRUCTOR
@@ -98,7 +98,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     PRIMARY_CONSTRUCTOR
@@ -131,7 +131,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
     PRIMARY_CONSTRUCTOR
@@ -164,7 +164,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E')
     PRIMARY_CONSTRUCTOR
@@ -194,7 +194,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('F')
     PRIMARY_CONSTRUCTOR
@@ -231,7 +231,7 @@ KtFile: targetExpected.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('G')
     PRIMARY_CONSTRUCTOR

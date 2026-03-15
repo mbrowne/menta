@@ -3,16 +3,16 @@
 
 import kotlin.enums.EnumEntries
 
-enum class E
+enum define E
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-data class Some(val values: EnumEntries<E> = E.entries)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+data define Some(val values: EnumEntries<E> = E.entries)
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 fun foo(values: EnumEntries<E> = E.entries) {}
 
 fun test() {
-    <!OPT_IN_USAGE_FUTURE_ERROR("kotlin.ExperimentalStdlibApi; This declaration is experimental due to signature types and its usage must be marked (will become an error in future releases) with '@kotlin.ExperimentalStdlibApi' or '@OptIn(kotlin.ExperimentalStdlibApi::class)'")!>Some<!>()
+    <!OPT_IN_USAGE_FUTURE_ERROR("kotlin.ExperimentalStdlibApi; This declaration is experimental due to signature types and its usage must be marked (will become an error in future releases) with '@kotlin.ExperimentalStdlibApi' or '@OptIn(kotlin.ExperimentalStdlibApi::define)'")!>Some<!>()
     <!OPT_IN_USAGE_ERROR!>foo<!>()
 }
 

@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-data annotation enum class E {
+data annotation enum define E {
     D
 }
 

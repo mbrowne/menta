@@ -1,5 +1,5 @@
-class Foo {
-  public inner class MyClass() {
+define Foo {
+  public inner define MyClass() {
   }
 }
 

@@ -1,4 +1,4 @@
-class List<T>(val head: T, val tail: List<T>? = null)
+define List<T>(val head: T, val tail: List<T>? = null)
 
 fun <T> List<T>.mapHead(f: (T)-> T): List<T> = List<T>(f(head), null)
 

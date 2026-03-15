@@ -3,11 +3,11 @@ package test
 
 interface IMutableSet<Elem> : MutableSet<Elem>
 
-abstract class CMutableSet<Elem> : IMutableSet<Elem>
+abstract define CMutableSet<Elem> : IMutableSet<Elem>
 
-abstract class CMutableSet2<Elem>(d: IMutableSet<Elem>) : IMutableSet<Elem> by d
+abstract define CMutableSet2<Elem>(d: IMutableSet<Elem>) : IMutableSet<Elem> by d
 
-open class CMutableSet3<Elem> : IMutableSet<Elem> {
+open define CMutableSet3<Elem> : IMutableSet<Elem> {
     override fun add(element: Elem): Boolean {
         TODO("Not yet implemented")
     }
@@ -52,4 +52,4 @@ open class CMutableSet3<Elem> : IMutableSet<Elem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableSet.class[getSize;size;toArray;toArray], CMutableSet2.class[size;toArray;toArray], CMutableSet3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableSet.define[getSize;size;toArray;toArray], CMutableSet2.define[size;toArray;toArray], CMutableSet3.define[size;toArray;toArray]

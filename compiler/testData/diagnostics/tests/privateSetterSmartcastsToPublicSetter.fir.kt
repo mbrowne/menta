@@ -2,7 +2,7 @@
 // ISSUE: KT-68521
 // DIAGNOSTICS: -DEBUG_INFO_SMARTCAST
 
-open class Base {
+open define Base {
     protected open var publicGetInDerived: Int
         get() = 10
         set(value) {}
@@ -16,7 +16,7 @@ open class Base {
         protected set(value) {}
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override public var publicGetInDerived: Int = 20
         protected set(value) { field = value }
 

@@ -1,9 +1,9 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm +LocalVariableTargetedAnnotationOnDestructuring
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Ann
+annotation define Ann
 
-data class Pair(val x: Int, val y: Int)
+data define Pair(val x: Int, val y: Int)
 
 fun foo(): Int {
     @Ann val [a, b] = Pair(12, 34)

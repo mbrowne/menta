@@ -2,12 +2,12 @@
 
 // FILE: Test.java
 
-class Test {
+define Test {
     interface A {
         boolean add(String s);
     }
 
-    static class D extends C {}
+    static define D extends C {}
 
     void test() {
         A a = new D();
@@ -17,7 +17,7 @@ class Test {
 
 // FILE: test.kt
 
-abstract class C : Test.A, List<String> {
+abstract define C : Test.A, List<String> {
     override val size: Int get() = null!!
     override fun isEmpty(): Boolean = null!!
     override fun contains(o: String): Boolean = null!!

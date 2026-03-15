@@ -3,7 +3,7 @@
 // FILE: tt.kt
 package tt
 
-class CA {
+define CA {
     companion object {
       @JvmStatic
       @JvmName("uhoh")

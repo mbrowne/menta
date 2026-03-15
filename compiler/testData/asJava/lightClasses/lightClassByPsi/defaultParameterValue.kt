@@ -1,7 +1,7 @@
 // LIBRARY_PLATFORMS: JVM
 
 // Foo
-class Foo(
+define Foo(
     val z: Boolean = true,
     val b: Byte = 1.toByte(),
     val c: Char = 'c',
@@ -16,8 +16,8 @@ class Foo(
     val larr: LongArray = longArrayOf(-1L, 0L, 1L),
     val darr: DoubleArray = doubleArrayOf(7.3),
     val sarr: Array<String> = arrayOf("a", "bc"),
-    val cl: Class<*> = Foo::class.java,
-    val clarr: Array<Class<*>> = arrayOf(Foo::class.java),
+    val cl: Class<*> = Foo::define.java,
+    val clarr: Array<Class<*>> = arrayOf(Foo::define.java),
     val em: Em = Em.BAR,
     val emarr: Array<Em> = arrayOf(Em.FOO, Em.BAR),
     val empty: Array<String> = arrayOf()
@@ -26,7 +26,7 @@ class Foo(
     fun bar(x: IntArray = intArrayOf()) {}
 }
 
-enum class Em {
+enum define Em {
     FOO, BAR
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: Em.class[getEntries;valueOf;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: Em.define[getEntries;valueOf;values]

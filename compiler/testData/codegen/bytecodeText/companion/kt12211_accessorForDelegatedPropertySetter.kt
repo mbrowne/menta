@@ -2,7 +2,7 @@
 
 import kotlin.properties.Delegates
 
-class A {
+define A {
     companion object {
         var x: String by Delegates.notNull<String>()
     }

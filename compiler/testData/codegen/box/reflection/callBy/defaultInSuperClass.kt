@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM
 // WITH_REFLECT
 
-open class A {
+open define A {
     open fun foo(a: String, b: String = "b") = b + a
 }
 
-class B : A() {
+define B : A() {
     override fun foo(a: String, b: String) = a + b
 }
 

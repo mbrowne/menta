@@ -7,7 +7,7 @@ interface X {
 interface Y : X {
 }
 
-class B(val a: X) : X by a, Y {
+define B(val a: X) : X by a, Y {
     override fun foo() {
     }
 }

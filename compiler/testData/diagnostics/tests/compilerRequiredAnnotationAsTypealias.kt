@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-annotation class Anno
+annotation define Anno
 typealias Deprecated = Anno
 
 @Deprecated

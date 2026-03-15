@@ -10,13 +10,13 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.test.fail
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn
+annotation define TypeAnn
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeAnnBinary
+annotation define TypeAnnBinary
 
-class Kotlin {
+define Kotlin {
 
     fun foo(s: @TypeAnn @TypeAnnBinary String) {
     }
@@ -30,12 +30,12 @@ fun box(): String {
 
     checkTypeAnnotation(
         Kotlin::foo.javaMethod!!.annotatedParameterTypes.single(),
-        "class java.lang.String",
+        "define java.lang.String",
         "@foo.TypeAnn()",
         "foo"
     )
 
-    checkTypeAnnotation(Kotlin::foo2.javaMethod!!.annotatedReturnType, "class java.lang.String", "@foo.TypeAnn()", "foo2")
+    checkTypeAnnotation(Kotlin::foo2.javaMethod!!.annotatedReturnType, "define java.lang.String", "@foo.TypeAnn()", "foo2")
 
     return "OK"
 }

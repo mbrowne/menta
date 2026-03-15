@@ -11,7 +11,7 @@ interface A {
     fun g() = "K"
 }
 
-inline class B(val x: Int) : A
+inline define B(val x: Int) : A
 
 // 1 public static f-impl\(I\)Ljava/lang/String;
 // 1 public bridge f\(\)Ljava/lang/String;

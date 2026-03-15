@@ -2,7 +2,7 @@
 // COMPARE_WITH_LIGHT_TREE
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class test
+annotation define test
 
 fun foo(@test f : Int) {}
 
@@ -11,7 +11,7 @@ var bar : Int = 1
 
 val x : (Int) -> Int = {@test <!RETURN_TYPE_MISMATCH!>x<!> <!SYNTAX!>: Int -> x<!>} // todo fix parser annotation on lambda parameter
 
-class Hello(@test args: Any) {
+define Hello(@test args: Any) {
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, functionDeclaration, functionalType, integerLiteral,

@@ -2,4 +2,4 @@ package test
 
 interface TraitWithP<P>
 
-class ClassParamReferencesSelf<A : TraitWithP<A>>
+define ClassParamReferencesSelf<A : TraitWithP<A>>

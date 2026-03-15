@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class Z(val data: Int)
+inline define Z(val data: Int)
 
 val xs = Array(2) { Z(42) }
 

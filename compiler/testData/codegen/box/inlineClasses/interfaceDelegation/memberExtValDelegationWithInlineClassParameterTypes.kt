@@ -5,7 +5,7 @@
 import kotlin.test.assertEquals
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val x: String)
+value define S(val x: String)
 
 interface IFoo {
     val S.extVal: String
@@ -25,9 +25,9 @@ object GFooImpl : GFoo<S> {
         get() = x
 }
 
-class TestFoo : IFoo by FooImpl
+define TestFoo : IFoo by FooImpl
 
-class TestGFoo : GFoo<S> by GFooImpl
+define TestGFoo : GFoo<S> by GFooImpl
 
 fun box(): String {
     with(TestFoo()) {

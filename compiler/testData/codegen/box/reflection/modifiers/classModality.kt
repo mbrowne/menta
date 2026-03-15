@@ -6,15 +6,15 @@ import kotlin.reflect.KClass
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
-class FinalClass {
+define FinalClass {
     companion object Companion
 }
-open class OpenClass
-abstract class AbstractClass
+open define OpenClass
+abstract define AbstractClass
 interface Interface
-enum class EnumClass
-enum class EnumClassWithAbstractMember { ; abstract fun foo() }
-annotation class AnnotationClass
+enum define EnumClass
+enum define EnumClassWithAbstractMember { ; abstract fun foo() }
+annotation define AnnotationClass
 object Object
 
 private fun checkFinal(klass: KClass<*>) {
@@ -36,19 +36,19 @@ private fun checkAbstract(klass: KClass<*>) {
 }
 
 fun box(): String {
-    checkFinal(FinalClass::class)
-    checkFinal(FinalClass.Companion::class)
-    checkOpen(OpenClass::class)
-    checkAbstract(AbstractClass::class)
-    checkAbstract(Interface::class)
-    checkFinal(EnumClass::class)
-    checkFinal(EnumClassWithAbstractMember::class)
+    checkFinal(FinalClass::define)
+    checkFinal(FinalClass.Companion::define)
+    checkOpen(OpenClass::define)
+    checkAbstract(AbstractClass::define)
+    checkAbstract(Interface::define)
+    checkFinal(EnumClass::define)
+    checkFinal(EnumClassWithAbstractMember::define)
     // Note that unlike in JVM, annotation classes are final in Kotlin
-    checkFinal(AnnotationClass::class)
-    checkFinal(Object::class)
+    checkFinal(AnnotationClass::define)
+    checkFinal(Object::define)
 
-    checkAbstract(Function0::class)
-    checkAbstract(SuspendFunction3::class)
+    checkAbstract(Function0::define)
+    checkAbstract(SuspendFunction3::define)
 
     return "OK"
 }

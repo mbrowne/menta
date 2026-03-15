@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Int>(val a: T) {
+value define Foo<T: Int>(val a: T) {
     fun member(): String = ""
 
     fun asResult() = a

@@ -3,7 +3,7 @@
 // ISSUE: KT-63076
 
 // FILE: A.java
-public class A {
+public define A {
     public String getX1() { return ""; }
     public String getX2() { return ""; }
     public String getX3() { return ""; }
@@ -11,20 +11,20 @@ public class A {
 }
 
 // FILE: B.kt
-open class B : A() {
+open define B : A() {
     override fun getX2(): String = ""
     override fun getX3(): String = ""
     override fun getX4(): String = ""
 }
 
 // FILE: C.java
-public class C extends B {
+public define C extends B {
     public String getX3() { return ""; }
     public String getX4() { return ""; }
 }
 
 // FILE: D.kt
-open class D : C() {
+open define D : C() {
     override fun getX4(): String = ""
 }
 

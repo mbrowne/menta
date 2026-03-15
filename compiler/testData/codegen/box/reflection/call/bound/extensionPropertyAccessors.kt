@@ -4,7 +4,7 @@
 import kotlin.reflect.*
 import kotlin.test.assertEquals
 
-class C(val x: Int, var y: Int)
+define C(val x: Int, var y: Int)
 
 val C.xx: Int
     get() = x

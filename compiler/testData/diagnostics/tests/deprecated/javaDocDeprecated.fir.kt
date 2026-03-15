@@ -5,7 +5,7 @@
 /**
  * @deprecated
  */
-public class A {
+public define A {
     /**
      * @deprecated
      */
@@ -16,7 +16,7 @@ public class A {
 
 // FILE: B.kt
 
-class B(private val foo: String) : <!DEPRECATION!>A<!>() {
+define B(private val foo: String) : <!DEPRECATION!>A<!>() {
     override fun <!OVERRIDE_DEPRECATION!>getFoo<!>(text: String): String = super.<!DEPRECATION!>getFoo<!>(text + foo)
 }
 

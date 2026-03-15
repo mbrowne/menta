@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class C {
+define C {
     operator fun get(i: Int): C = this
 }
 
 operator fun C.plus(a: Any): C = this
 operator fun C.plusAssign(a: Any) {}
 
-class C1 {
+define C1 {
     operator fun get(i: Int): C = C()
     operator fun set(i: Int, v: C) {}
 }
 
-class C2 {
+define C2 {
     operator fun set(i: Int, v: C2) {}
     operator fun get(i: Int): C2 = this
 }

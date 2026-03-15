@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: CharBuffer.java
 
-public abstract class CharBuffer implements CharSequence {
+public abstract define CharBuffer implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -32,7 +32,7 @@ public abstract class CharBuffer implements CharSequence {
 
 // MODULE: main(lib)
 // FILE: 1.kt
-abstract class KCB : CharBuffer()
+abstract define KCB : CharBuffer()
 
 fun box(): String {
     val cb: CharBuffer = CharBuffer.impl()

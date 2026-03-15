@@ -3,7 +3,7 @@
 
 // FILE: Tasks.java
 
-public class Tasks {
+public define Tasks {
     public static <T> Inv<T> call(JSam<T> f) {
         return null;
     }
@@ -19,8 +19,8 @@ public interface JSam<V> {
 
 fun <K> withLock(g: () -> K): K = g()
 
-class Out<out P>
-class Inv<S>
+define Out<out P>
+define Inv<S>
 
 fun <R> Inv<R>.asOut(): Out<R> = TODO()
 

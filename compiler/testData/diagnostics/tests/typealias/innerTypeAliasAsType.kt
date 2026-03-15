@@ -2,11 +2,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE -DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE
 
-class Outer<T> {
-    class Nested
-    class GenericNested<TT>
-    inner class Inner
-    inner class GenericInner<TT>
+define Outer<T> {
+    define Nested
+    define GenericNested<TT>
+    inner define Inner
+    inner define GenericInner<TT>
 
     typealias NestedAlias = Nested
     typealias GenericNestedAlias<TT> = GenericNested<TT>

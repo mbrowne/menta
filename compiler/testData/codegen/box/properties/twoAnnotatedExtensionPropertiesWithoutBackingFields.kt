@@ -1,4 +1,4 @@
-annotation class Anno
+annotation define Anno
 
 @Anno val Int.foo: Int
     get() = this

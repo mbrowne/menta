@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // LANGUAGE: +ProhibitUseSiteGetTargetAnnotations
 
-@Target(AnnotationTarget.PROPERTY) annotation class Annotation
+@Target(AnnotationTarget.PROPERTY) annotation define Annotation
 
-enum class Foo {
+enum define Foo {
     <!INAPPLICABLE_TARGET_ON_PROPERTY!>@property:Annotation<!>
     Entry
 }

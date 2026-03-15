@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM
 // FILE: Generic.java
-class Generic<T> {
+define Generic<T> {
     T id(T x) { return x; }
 }
 
 // FILE: Specialized.java
-class Specialized extends Generic<Runnable> {}
+define Specialized extends Generic<Runnable> {}
 
 // FILE: use.kt
 fun box(): String {

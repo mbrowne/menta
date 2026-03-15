@@ -12,7 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 // MODULE: main(lib)
 // FILE: 1.kt
 
-@Foo class Bar
+@Foo define Bar
 
 fun box(): String {
     Bar()

@@ -10,10 +10,10 @@ interface KotlinCallback<T> {
     fun on(t : T);
 }
 
-public class Test(name : String) : KotlinProcessor<SomeTrait> {
+public define Test(name : String) : KotlinProcessor<SomeTrait> {
     public override fun execute(callback: KotlinCallback<SomeTrait>?) {
         if(callback != null) {
-            class InlineTrait : SomeTrait {}
+            define InlineTrait : SomeTrait {}
 
             var inlineTrait = InlineTrait()
             callback.on(inlineTrait)

@@ -6,7 +6,7 @@ import kotlin.reflect.jvm.*
 
 const val N_THREADS = 50
 
-class Delegate {
+define Delegate {
     operator fun getValue(x: Any?, y: Any?): String = "OK"
     operator fun setValue(x: Any?, y: Any?, z: String) {}
 }

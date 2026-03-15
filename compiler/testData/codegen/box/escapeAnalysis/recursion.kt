@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class A {
+define A {
     var f: A? = null
 }
 

@@ -1,4 +1,4 @@
-class Test {
+define Test {
   companion object {
     private var prop = 0;
   }

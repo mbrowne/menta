@@ -1,4 +1,4 @@
-private class A
+private define A
 
 private inline fun privateInlineFun1() {
     A()

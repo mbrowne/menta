@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-public expect abstract class AbstractMutableMap<K, V> : MutableMap<K, V> {
+public expect abstract define AbstractMutableMap<K, V> : MutableMap<K, V> {
     override val values: MutableCollection<V>
 }
 
@@ -13,7 +13,7 @@ public expect abstract class AbstractMutableMap<K, V> : MutableMap<K, V> {
 
 import java.util.AbstractMap
 
-public actual abstract class AbstractMutableMap<K, V>() : MutableMap<K, V>, AbstractMap<K, V>()
+public actual abstract define AbstractMutableMap<K, V>() : MutableMap<K, V>, AbstractMap<K, V>()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, nullableType, override, primaryConstructor, propertyDeclaration,
 typeParameter */

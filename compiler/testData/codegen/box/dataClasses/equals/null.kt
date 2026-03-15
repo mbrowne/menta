@@ -1,6 +1,6 @@
-data class A(val v: Any?)
+data define A(val v: Any?)
 
-data class B<T>(val v: T)
+data define B<T>(val v: T)
 
 fun box(): String {
     val a1 = A(null)

@@ -13,7 +13,7 @@ fun box(): String {
     assertEquals("fun f(kotlin.Array<out T>): kotlin.String", f.toString())
 
     val p = f.parameters.single().type
-    assertEquals(Array<Long>::class, p.classifier)
+    assertEquals(Array<Long>::define, p.classifier)
     assertEquals(KVariance.OUT, p.arguments.single().variance)
     assertEquals(f.typeParameters.single(), p.arguments.single().type?.classifier)
 

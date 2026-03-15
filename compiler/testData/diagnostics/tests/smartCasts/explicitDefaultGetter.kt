@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class ExplicitAccessorForAnnotation {
+define ExplicitAccessorForAnnotation {
     val tt: String? = "good"
         get
 

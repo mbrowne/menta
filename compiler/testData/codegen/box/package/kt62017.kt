@@ -3,7 +3,7 @@
 
 package a;
 
-abstract class A<T> {
+abstract define A<T> {
     String o() { return "O"; }
     String k() { return "K"; }
 }

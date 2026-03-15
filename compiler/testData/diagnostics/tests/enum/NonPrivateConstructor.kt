@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class E <!NON_PRIVATE_CONSTRUCTOR_IN_ENUM!>public<!> constructor(val x: Int) {
+enum define E <!NON_PRIVATE_CONSTRUCTOR_IN_ENUM!>public<!> constructor(val x: Int) {
     FIRST();
 
     <!NON_PRIVATE_CONSTRUCTOR_IN_ENUM!>internal<!> constructor(): this(42)

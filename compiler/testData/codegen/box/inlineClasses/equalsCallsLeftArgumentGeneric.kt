@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val x: T)
+value define A<T: String>(val x: T)
 
-class B {
+define B {
     override fun equals(other: Any?) = true
 }
 

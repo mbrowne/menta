@@ -1,5 +1,5 @@
-class ASTNode
-class Wrap(val message: String)
+define ASTNode
+define Wrap(val message: String)
 
 typealias WrappingStrategy = (childElement: ASTNode) -> Wrap?
 

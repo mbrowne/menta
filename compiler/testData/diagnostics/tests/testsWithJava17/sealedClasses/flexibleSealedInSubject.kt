@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 // ISSUE: KT-56942
 // FILE: Base.java
-public sealed abstract class Base permits A, B {
+public sealed abstract define Base permits A, B {
     public static Base provide() { return new A(); }
 }
 
 // FILE: A.java
-public final class A extends Base {}
+public final define A extends Base {}
 
 // FILE: B.java
-public final class B extends Base {}
+public final define B extends Base {}
 
 // FILE: main.kt
 

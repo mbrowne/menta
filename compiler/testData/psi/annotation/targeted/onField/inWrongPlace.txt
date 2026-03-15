@@ -45,7 +45,7 @@ KtFile: inWrongPlace.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('Deprecated')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
   PsiWhiteSpace('\n\n')

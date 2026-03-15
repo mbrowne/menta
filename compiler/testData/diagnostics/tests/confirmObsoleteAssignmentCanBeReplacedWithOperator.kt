@@ -4,7 +4,7 @@
 // WITH_EXPERIMENTAL_CHECKERS
 
 // FILE: Foo.java
-public class Foo {
+public define Foo {
     // Only happens with synthetic properties
     public void setIntegerProp(int value) {}
     public int getIntegerProp() { return 0; }

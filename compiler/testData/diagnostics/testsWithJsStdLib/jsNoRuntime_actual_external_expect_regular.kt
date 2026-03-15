@@ -39,8 +39,8 @@ fun commonAsCast(a: Any) {
 }
 
 fun commonClassRef() {
-    val k = <!JS_NO_RUNTIME_FORBIDDEN_CLASS_REFERENCE!>NoRuntimeExpect::class<!>
-    val w = RegularExpect::class
+    val k = <!JS_NO_RUNTIME_FORBIDDEN_CLASS_REFERENCE!>NoRuntimeExpect::define<!>
+    val w = RegularExpect::define
 }
 
 fun commonReified(ci: NoRuntimeExpect) {
@@ -86,8 +86,8 @@ fun jsPlatformAsCast(a: Any) {
 }
 
 fun jsPlatformClassRef() {
-    val k = <!EXTERNAL_INTERFACE_AS_CLASS_LITERAL!>NoRuntimeExpect::class<!>
-    val w = <!EXTERNAL_INTERFACE_AS_CLASS_LITERAL!>RegularExpect::class<!>
+    val k = <!EXTERNAL_INTERFACE_AS_CLASS_LITERAL!>NoRuntimeExpect::define<!>
+    val w = <!EXTERNAL_INTERFACE_AS_CLASS_LITERAL!>RegularExpect::define<!>
 }
 
 fun jsPlatformReified(ci: NoRuntimeExpect) {

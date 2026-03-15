@@ -5,7 +5,7 @@
 
 fun box(): String {
     build outerBuild@ {
-        class LocalClass {
+        define LocalClass {
             fun localClassMember() {
                 build innerBuild@ {
                     this@outerBuild.setTypeVariable(TargetType())
@@ -20,9 +20,9 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = TargetType() as TV
 }

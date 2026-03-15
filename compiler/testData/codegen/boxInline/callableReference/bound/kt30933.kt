@@ -2,7 +2,7 @@
 
 package test
 
-class Path {
+define Path {
     val events: String = "OK"
 }
 

@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // ISSUE: KT-60921
 
-abstract class A<T> {
-    inner class B {
-        inner class C
+abstract define A<T> {
+    inner define B {
+        inner define C
 
         fun f2(y: Any) {
             if (y is B<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><*><!>.C) { }

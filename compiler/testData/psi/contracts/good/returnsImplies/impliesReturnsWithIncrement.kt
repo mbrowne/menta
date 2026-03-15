@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 // LANGUAGE: +AllowContractsOnSomeOperators, +ConditionImpliesReturnsContracts
 // ISSUE: KT-79355
 

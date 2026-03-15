@@ -15,7 +15,7 @@ internal interface B : A {
 
 internal interface C : B
 
-internal class D : C {
+internal define D : C {
     override fun foo() {}
 }
 

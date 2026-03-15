@@ -5,7 +5,7 @@
 // MODULE: lib
 // FILE: Custom.java
 
-class Custom<K, V> {
+define Custom<K, V> {
     public interface MBiConsumer<T, U> {
         void accept(T t, U u);
     }

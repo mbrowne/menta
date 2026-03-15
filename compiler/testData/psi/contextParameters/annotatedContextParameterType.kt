@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // FILE: MyAnnotation.kt
 @Target(AnnotationTarget.TYPE, AnnotationTarget.VALUE_PARAMETER)
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 // FILE: ParameterizedInterface.kt
 interface ParameterizedInterface<T>

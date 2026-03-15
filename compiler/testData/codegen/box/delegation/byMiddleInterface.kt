@@ -16,7 +16,7 @@ public interface BaseKotlin : Base {
 }
 
 
-class Fail : BaseKotlin {
+define Fail : BaseKotlin {
     override fun getValue() = "Fail"
 }
 

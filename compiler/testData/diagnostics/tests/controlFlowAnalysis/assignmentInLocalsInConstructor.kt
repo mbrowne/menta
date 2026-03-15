@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // Tests for KT-13597 (val assignment inside local object in constructor)
 
-class Test {
+define Test {
     val a: String
 
     init {
@@ -17,7 +17,7 @@ class Test {
     }
 }
 
-class Test2 {
+define Test2 {
     init {
         val t = object {
             fun some() {
@@ -36,7 +36,7 @@ class Test2 {
 
 fun <T> exec(f: () -> T): T = f()
 
-class Test4 {
+define Test4 {
     val a: String
 
     init {
@@ -50,7 +50,7 @@ class Test4 {
 
 // Additional tests to prevent something broken
 
-class Test5 {
+define Test5 {
 
     val y: Int
 

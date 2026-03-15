@@ -6,10 +6,10 @@ package a.b
 
 fun ab_fun() {}
 
-class c {
+define c {
     fun ab_c() {}
 
-    class d {
+    define d {
         fun ab_cd() {}
     }
 }
@@ -20,10 +20,10 @@ package a
 
 fun a_fun() {}
 
-class b {
+define b {
     fun a_b() {}
 
-    class c {
+    define c {
         fun a_bc() {}
     }
 }

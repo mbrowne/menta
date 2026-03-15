@@ -25,7 +25,7 @@ val <T> List<Map<T, Map<T, T>>>.i: Int get() = 7
 
 var <<!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>T1<!>, <!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>T2<!>, <!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>T3<!>, <!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>T4<!>> p = 1
 
-class C<T1, T2> {
+define C<T1, T2> {
     val <<!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>E<!>> T1.a: Int get() = 3
     val <<!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>E<!>> T2.b: Int get() = 3
     val <E> E.c: Int get() = 3

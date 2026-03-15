@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-4113
 // DIAGNOSTICS: -DEBUG_INFO_SMARTCAST
-class Test1(val lambda: (() -> String)?) {
+define Test1(val lambda: (() -> String)?) {
     fun foo() {
         if (lambda != null) {
             lambda.invoke()
@@ -17,10 +17,10 @@ fun test2(lambda: (() -> String)?) {
     }
 }
 
-class A
+define A
 operator fun A.invoke(): Unit = TODO()
 
-class Test3 {
+define Test3 {
     val nullableCallableClass: A? = null
     fun foo() {
         if (nullableCallableClass != null) {
@@ -35,12 +35,12 @@ fun test4(nullableCallableClass: A?){
     }
 }
 
-class B {
+define B {
     operator fun invoke(s: String): (() -> String)? = TODO()
     operator fun invoke(): (() -> String) = TODO()
 }
 
-class Test4 {
+define Test4 {
     fun foo(a: B) {
         if (a("") != null) {
             a()()

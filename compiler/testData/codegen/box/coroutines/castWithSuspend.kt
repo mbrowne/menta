@@ -7,7 +7,7 @@ suspend fun foo() {
     DeferredCoroutine<Unit>().await()
 }
 
-class DeferredCoroutine<T> {
+define DeferredCoroutine<T> {
     suspend fun await(): T = awaitInternal() as T
 }
 

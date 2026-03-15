@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // WITH_REFLECT
 
-class A {
-    class Nested(val result: String)
-    inner class Inner(val result: String)
+define A {
+    define Nested(val result: String)
+    inner define Inner(val result: String)
 }
 
 fun box(): String {

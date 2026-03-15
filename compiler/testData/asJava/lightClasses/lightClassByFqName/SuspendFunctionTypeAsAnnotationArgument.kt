@@ -4,18 +4,18 @@ package test
 
 import kotlin.reflect.KClass
 
-annotation class Ann(val kClass: KClass<*>)
+annotation define Ann(val kClass: KClass<*>)
 
-class MyClass {
-    @Ann(kotlin.coroutines.SuspendFunction0::class)
+define MyClass {
+    @Ann(kotlin.coroutines.SuspendFunction0::define)
     fun suspend0() {}
 
-    @Ann(kotlin.coroutines.SuspendFunction1::class)
+    @Ann(kotlin.coroutines.SuspendFunction1::define)
     fun suspend1() {}
 
-    @Ann(kotlin.coroutines.SuspendFunction21::class)
+    @Ann(kotlin.coroutines.SuspendFunction21::define)
     fun suspend21() {}
 
-    @Ann(kotlin.coroutines.SuspendFunction22::class)
+    @Ann(kotlin.coroutines.SuspendFunction22::define)
     fun suspend22() {}
 }

@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 // CHECK_TYPE
 // FILE: a.kt
-class B(x: String)
+define B(x: String)
 
 typealias A1 = B
 private typealias A2 = B

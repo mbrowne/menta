@@ -16,7 +16,7 @@ sink:
     <SINK>          PREV:[<ERROR>, <END>]
 =====================
 == E ==
-enum class E(val x: Int) {
+enum define E(val x: Int) {
     E1(0)
 }
 ---------------------
@@ -39,7 +39,7 @@ sink:
     <SINK>                                         PREV:[<ERROR>, <END>]
 =====================
 == C ==
-class C {
+define C {
     companion object {
         val z = 2
     }

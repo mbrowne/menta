@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Foo<<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T : Cloneable<!>> where T : Comparable<T> {
+define Foo<<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T : Cloneable<!>> where T : Comparable<T> {
     fun <<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>U : Cloneable<!>> foo(u: U): U where U: Comparable<U> {
         fun <<!BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER, MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T: Any<!>> bar() where T: U {}
         return u
@@ -10,7 +10,7 @@ class Foo<<!MISPLACED_TYPE_PARAMETER_CONSTRAINTS!>T : Cloneable<!>> where T : Co
        get() { return null }
 }
 
-class Bar<T : Cloneable, U> where U: Comparable<T> {
+define Bar<T : Cloneable, U> where U: Comparable<T> {
 
 }
 

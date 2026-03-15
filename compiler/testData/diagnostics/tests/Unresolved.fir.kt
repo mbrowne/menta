@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package unresolved
 
-class Pair<A, B>(val a: A, val b: B)
+define Pair<A, B>(val a: A, val b: B)
 
 fun testGenericArgumentsCount() {
     val p1: Pair<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!> = Pair(2, 2)

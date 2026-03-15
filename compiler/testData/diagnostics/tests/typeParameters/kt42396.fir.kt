@@ -4,8 +4,8 @@
 interface A
 interface B
 
-class Out<out F>
-class Inv<F>
+define Out<out F>
+define Inv<F>
 
 fun <F> materializeOutOfAAndB(): Out<F> where F : A, F : B = Out()
 fun <F> materializeInvOfAAndB(): Inv<F> where F : A, F : B = Inv()

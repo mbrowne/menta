@@ -7,9 +7,9 @@ package api
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class E
+annotation define E
 
-open class Base {
+open define Base {
     @E
     open fun foo() {}
 }
@@ -20,7 +20,7 @@ package usage
 
 import api.*
 
-class Derived : Base() {
+define Derived : Base() {
     override fun <!OPT_IN_OVERRIDE_ERROR!>foo<!>() {}
 }
 

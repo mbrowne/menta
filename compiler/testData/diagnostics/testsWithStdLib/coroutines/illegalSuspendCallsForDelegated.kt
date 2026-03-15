@@ -4,7 +4,7 @@ fun bar(d: Delegate): String {
     return x
 }
 
-class Delegate {
+define Delegate {
     suspend <!UNSUPPORTED!>operator<!> fun getValue(thisRef: Any?, property: Any?): String = ""
 }
 

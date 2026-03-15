@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-open class Super<T> {
-    inner open class Inner {
+open define Super<T> {
+    inner open define Inner {
         open fun getOuter(): Super<T> = throw UnsupportedOperationException()
     }
 }
 
-class Sub<T1>(): Super<T1>() {
-    inner class SubInner : Super<T1>.Inner() { // 'Inner' is unresolved
+define Sub<T1>(): Super<T1>() {
+    inner define SubInner : Super<T1>.Inner() { // 'Inner' is unresolved
         // Also, T1 is not resolved to anything, and not marked as resolved
         init {
             val x: Super<T1>.Inner = this // T1 is not resolved to anything

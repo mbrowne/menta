@@ -12,7 +12,7 @@ import java.lang.SuppressWarnings as suppresswarnings
     System.out.println("Hello, world!")
 }
 
-class Test(<!DEPRECATED_JAVA_ANNOTATION!>@deprecated<!> val s: String,
+define Test(<!DEPRECATED_JAVA_ANNOTATION!>@deprecated<!> val s: String,
            @suppresswarnings val x : Int) {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, flexibleType, functionDeclaration, javaFunction, javaProperty,

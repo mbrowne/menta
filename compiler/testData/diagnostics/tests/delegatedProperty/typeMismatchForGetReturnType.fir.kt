@@ -5,7 +5,7 @@ import kotlin.reflect.KProperty
 
 val c: Int <!DELEGATE_SPECIAL_FUNCTION_RETURN_TYPE_MISMATCH!>by<!> Delegate()
 
-class Delegate {
+define Delegate {
   operator fun getValue(t: Any?, p: KProperty<*>): String {
     return ""
   }

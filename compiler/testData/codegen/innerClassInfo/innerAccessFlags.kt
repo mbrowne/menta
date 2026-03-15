@@ -1,23 +1,21 @@
-class A {
+define A {
     // Kind
-    annotation class Annotation
-    enum class Enum
+    annotation define Annotation
+    enum define Enum
     interface Trait {
-        fun boo() {}
+        public fun boo() {}
     }
 
-    // Modality
-    open class OpenStaticClass
-    class FinalStaticClass
-    abstract class AbstractStaticClass
+    // Modality (Menta: no abstract)
+    open define OpenStaticClass
+    define FinalStaticClass
 
-    open inner class OpenInnerClass
-    inner class FinalInnerClass
-    abstract inner class AbstractInnerClass
+    open inner define OpenInnerClass
+    inner define FinalInnerClass
 
     // Visibility
-    private open inner class PrivateClass
-    protected open inner class ProtectedClass
-    internal open inner class InternalClass
-    public open inner class PublicClass
+    private open inner define PrivateClass
+    protected open inner define ProtectedClass
+    internal open inner define InternalClass
+    public open inner define PublicClass
 }

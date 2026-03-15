@@ -5,9 +5,9 @@ package test
 
 inline fun <T> foo(operation: () -> T): T = operation()
 
-class Shape(val name: String)
+define Shape(val name: String)
 
-class Registry {
+define Registry {
     fun hasIntersectingObject(o: Shape): Boolean {
         return true
     }

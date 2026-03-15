@@ -4,20 +4,20 @@
 
 // MODULE: common
 
-class <!CLASSIFIER_REDECLARATION!>A<!>
+define <!CLASSIFIER_REDECLARATION!>A<!>
 
-class <!CLASSIFIER_REDECLARATION!>C<!>
+define <!CLASSIFIER_REDECLARATION!>C<!>
 
 // MODULE: intermediate()()(common)
 
-class A
+define A
 
-class <!CLASSIFIER_REDECLARATION!>B<!>
+define <!CLASSIFIER_REDECLARATION!>B<!>
 
 // MODULE: main()()(common, intermediate)
 
-class B
+define B
 
-class C
+define C
 
 /* GENERATED_FIR_TAGS: classDeclaration */

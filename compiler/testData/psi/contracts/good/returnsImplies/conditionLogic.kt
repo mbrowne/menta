@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test1(x: String?): Any? {
     contract {
         returnsNotNull() implies (!(x == null))
@@ -9,7 +9,7 @@ fun test1(x: String?): Any? {
     return x
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test2(x: String?): Any? {
     contract {
         returnsNotNull() implies (x is String)
@@ -18,7 +18,7 @@ fun test2(x: String?): Any? {
     return x
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test3(x: String?): Any? {
     contract {
         returnsNotNull() implies (x !is String)
@@ -27,7 +27,7 @@ fun test3(x: String?): Any? {
     return x
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test4(x: String?, y: String?): Any? {
     contract {
         returns(true) implies (x != null && y != null)
@@ -36,7 +36,7 @@ fun test4(x: String?, y: String?): Any? {
     return x != null && y != null
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test5(x: Any?): Any? {
     contract {
         returns(true) implies (x != null || x is Any)
@@ -45,7 +45,7 @@ fun test5(x: Any?): Any? {
     return x != null
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test6(x: Any?): Any? {
     contract {
         returns(true) implies (x is String? && x != null)
@@ -54,7 +54,7 @@ fun test6(x: Any?): Any? {
     return x is String
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test7(x: Any?): Any? {
     contract {
         returns(true) implies (x is String? && x != null || x is Int)
@@ -63,7 +63,7 @@ fun test7(x: Any?): Any? {
     return x is String
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test8(x: Any?): Any? {
     contract {
         returns(true) implies (x is String || x is Int)
@@ -72,7 +72,7 @@ fun test8(x: Any?): Any? {
     return x is String || x is Int
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test9(x: Any?): Any? {
     contract {
         returns(true) implies (x is String || x is Int)
@@ -84,7 +84,7 @@ fun test9(x: Any?): Any? {
     return x is Int
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test10(x: Any?): Any? {
     contract {
         returns(true) implies (x is Comparable<*> || x is CharSequence)
@@ -93,7 +93,7 @@ fun test10(x: Any?): Any? {
     return x is String
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test11(x: Any?): Any? {
     contract {
         returns(true) implies (x is Comparable<*> && x is CharSequence)
@@ -102,7 +102,7 @@ fun test11(x: Any?): Any? {
     return x is String
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test12(x: Any?): Any? {
     contract {
         returns(true) implies (x is Comparable<*> && (x is CharSequence || x is Number))
@@ -111,7 +111,7 @@ fun test12(x: Any?): Any? {
     return x is String || x is Int
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun test13(x: Any?): Any? {
     contract {
         returns(true) implies (!(x !is Comparable<*> || (x !is CharSequence && !(x is Number))))

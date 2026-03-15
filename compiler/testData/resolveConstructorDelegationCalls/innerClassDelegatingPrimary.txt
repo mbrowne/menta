@@ -1,5 +1,5 @@
-class A {
-    inner class B(arg: String) {
+define A {
+    inner define B(arg: String) {
         <caret>constructor (arg: Int): this("") {}
     }
 }

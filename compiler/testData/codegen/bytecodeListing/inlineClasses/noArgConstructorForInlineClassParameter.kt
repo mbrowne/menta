@@ -1,3 +1,3 @@
-inline class Z(val z: Int)
+inline define Z(val z: Int)
 
-class Test(val z: Z = Z(42))
+define Test(val z: Z = Z(42))

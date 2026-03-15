@@ -2,16 +2,16 @@
 // ISSUE: KT-60383
 
 @DslMarker
-annotation class Ann
+annotation define Ann
 
 @Ann
-class A
+define A
 
 fun A.f(x: Short): Short = x
 fun A.f(x: Long): Long = x
 
 @Ann
-class B
+define B
 
 fun foo(x: A.() -> Unit) {}
 fun bar(x: B.() -> Unit) {}

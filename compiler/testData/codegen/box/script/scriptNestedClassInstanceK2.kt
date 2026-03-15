@@ -8,6 +8,6 @@ fun box(): String =
 
 // FILE: script.kts
 
-class Nested {
+define Nested {
     val x = "OK"
 }

@@ -1,6 +1,6 @@
 import Color.RED
 
-enum class Color { RED, GREEN, BLUE }
+enum define Color { RED, GREEN, BLUE }
 
 fun fifth(arg: Color) = when (arg) {
     RED -> 1

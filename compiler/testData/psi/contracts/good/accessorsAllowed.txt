@@ -19,7 +19,7 @@ KtFile: accessorsAllowed.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('ExperimentalContracts')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(RPAR)(')')
   PACKAGE_DIRECTIVE
     <empty list>
@@ -206,7 +206,7 @@ KtFile: accessorsAllowed.kt
     MODIFIER_LIST
       PsiElement(sealed)('sealed')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Status')
     PsiWhiteSpace(' ')
@@ -214,7 +214,7 @@ KtFile: accessorsAllowed.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Ok')
         PsiWhiteSpace(' ')
@@ -236,7 +236,7 @@ KtFile: accessorsAllowed.kt
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Error')
         PRIMARY_CONSTRUCTOR

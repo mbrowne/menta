@@ -13,7 +13,7 @@ fun f() = true
 
 fun box(): String {
     if (f()) {
-        val mh = MethodHandles.lookup().findVirtual(O::class.java, "main", MethodType.methodType(Void.TYPE))
+        val mh = MethodHandles.lookup().findVirtual(O::define.java, "main", MethodType.methodType(Void.TYPE))
         mh.invokeExact(O)
     } else {}
     return "OK"

@@ -2,9 +2,9 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // SKIP_TXT
 
-sealed class A
-sealed class B : A()
-sealed class C : B()
+sealed define A
+sealed define B : A()
+sealed define C : B()
 object BB : B()
 object CC : C()
 

@@ -7,7 +7,7 @@
 import kotlin.contracts.contract
 import kotlin.contracts.ExperimentalContracts
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 inline fun <T, reified R> Refinement<T, R>.validate(value: T): Boolean {
     contract {
         returns() implies (value is R)
@@ -16,7 +16,7 @@ inline fun <T, reified R> Refinement<T, R>.validate(value: T): Boolean {
     return isValid(value)
 }
 
-class Refinement<T, R> {
+define Refinement<T, R> {
     fun isValid(value: T): Boolean {
         return value is String
     }

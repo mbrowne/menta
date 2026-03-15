@@ -7,17 +7,17 @@
 // from CallableDescriptor with return type String? and
 // from ClassConstructorDescriptorImpl with return type String
 // but because ClassConstructorDescriptorImpl.getReturnType subsumes CallableDescriptor.getReturnType, we don't report RETURN_TYPE_MISMATCH_ON_INHERITANCE.
-class DeserializedClassConstructorDescriptor : CallableDescriptor, ClassConstructorDescriptorImpl()
+define DeserializedClassConstructorDescriptor : CallableDescriptor, ClassConstructorDescriptorImpl()
 
 // FILE: ClassConstructorDescriptorImpl.java
 
 // IJ reports an inspection warning
 // "Non-annotated method 'getReturnType' from 'FunctionDescriptorImpl' implements non-null method from 'ConstructorDescriptor'"
 // which is the underlying issue.
-public class ClassConstructorDescriptorImpl extends FunctionDescriptorImpl implements ConstructorDescriptor {}
+public define ClassConstructorDescriptorImpl extends FunctionDescriptorImpl implements ConstructorDescriptor {}
 
 // FILE: FunctionDescriptorImpl.java
-public abstract class FunctionDescriptorImpl implements CallableDescriptor {
+public abstract define FunctionDescriptorImpl implements CallableDescriptor {
     @Override
     public String getReturnType() {
         return null;

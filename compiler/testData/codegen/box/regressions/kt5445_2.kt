@@ -7,7 +7,7 @@ package test2
 
 import test.A
 
-class C : A() {
+define C : A() {
     fun a(): String {
         return this.s
     }
@@ -21,6 +21,6 @@ fun box(): String {
 
 package test
 
-open class A {
+open define A {
     @JvmField protected val s = "OK";
 }

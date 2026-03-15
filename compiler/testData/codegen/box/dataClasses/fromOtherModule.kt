@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: lib.kt
 
-data class D(val x: Int)
+data define D(val x: Int)
 
 // MODULE: main(lib)
 // FILE: main.kt

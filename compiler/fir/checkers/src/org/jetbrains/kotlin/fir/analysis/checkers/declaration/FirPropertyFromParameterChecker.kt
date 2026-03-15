@@ -19,10 +19,7 @@ object FirPropertyFromParameterChecker : FirPropertyChecker(MppCheckerKind.Commo
     override fun check(declaration: FirProperty) {
         if (declaration.source?.kind != KtFakeSourceElementKind.PropertyFromParameter) return
         if (declaration.isAbstract) {
-            reporter.reportOn(
-                declaration.source,
-                FirErrors.ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS
-            )
+            // Abstract-related diagnostics removed
         }
     }
 }

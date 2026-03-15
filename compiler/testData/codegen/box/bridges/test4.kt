@@ -11,11 +11,11 @@ interface Y {
     fun foo(): Int
 }
 
-open class A {
+open define A {
     fun foo(): Int = 42
 }
 
-open class B: A(), Z, Y
+open define B: A(), Z, Y
 
 fun box(): String {
     val z: Z = B()

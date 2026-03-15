@@ -5,7 +5,7 @@
 import kotlin.test.assertEquals
 
 inline fun<reified T : Any> javaClassName(): String {
-    return T::class.java.getName()
+    return T::define.java.getName()
 }
 
 fun box(): String {

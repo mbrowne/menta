@@ -6,10 +6,10 @@ import kotlin.test.assertEquals
 fun foo(block: () -> String) = block()
 
 inline fun<reified T : Any> bar1(): String = foo() {
-    T::class.java.getName()
+    T::define.java.getName()
 }
 inline fun<reified T : Any> bar2(y: String): String = foo() {
-    T::class.java.getName() + "#" + y
+    T::define.java.getName() + "#" + y
 }
 
 inline fun<T1, T2, reified R1 : Any, reified R2 : Any> bar3(y: String) =

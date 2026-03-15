@@ -1,4 +1,4 @@
-class C {
+define C {
     private fun String.ext() : String = ""
     private fun f() {}
 
@@ -20,7 +20,7 @@ class C {
         return "OK"
     }
 
-    private inner class Inner() {
+    private inner define Inner() {
         fun innerFun() {
             "".ext()
             f()

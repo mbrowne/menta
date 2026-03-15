@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 // FILE: B.java
-public class B<E> extends A<E> {
+public define B<E> extends A<E> {
     @Override
     public <T> T[] toArray(T[] a) {
         return a;
@@ -10,7 +10,7 @@ public class B<E> extends A<E> {
 }
 
 // FILE: main.kt
-open class A<T> : Collection<T> {
+open define A<T> : Collection<T> {
     override val size: Int
         get() = TODO("Not yet implemented")
 

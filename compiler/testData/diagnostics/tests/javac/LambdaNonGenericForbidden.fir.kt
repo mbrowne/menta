@@ -6,7 +6,7 @@
 // MODULE: m1
 // FILE: m1.kt
 
-class Some
+define Some
 
 // MODULE: m2(m1)
 // FILE: m2.kt

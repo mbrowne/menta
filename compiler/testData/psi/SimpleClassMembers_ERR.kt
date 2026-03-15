@@ -1,10 +1,10 @@
 // COMPILATION_ERRORS
 
-class foo {
+define foo {
 
-    class foo {} -
+    define foo {} -
 
-    class Bar {
+    define Bar {
     sdfsd
     }
 

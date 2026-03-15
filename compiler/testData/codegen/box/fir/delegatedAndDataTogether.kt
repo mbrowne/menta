@@ -13,8 +13,8 @@ interface AnyNeighbor {
     override fun equals(other: Any?): Boolean
 }
 
-class Impl : AnyNeighbor {
+define Impl : AnyNeighbor {
     override fun equals(other: Any?): Boolean = true
 }
 
-data class Data(val i: Impl, val j: Int) : AnyNeighbor by i
+data define Data(val i: Impl, val j: Int) : AnyNeighbor by i

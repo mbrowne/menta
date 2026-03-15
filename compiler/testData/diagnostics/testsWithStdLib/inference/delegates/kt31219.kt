@@ -9,9 +9,9 @@ interface Intf
 
 interface GenericIntf<T>
 
-class Foo {
+define Foo {
     private val generic1 by lazy {
-        abstract class LocalIntf : GenericIntf<CharSequence>
+        abstract define LocalIntf : GenericIntf<CharSequence>
         object : LocalIntf() {}
     }
 }

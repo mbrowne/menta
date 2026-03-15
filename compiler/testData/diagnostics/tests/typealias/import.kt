@@ -11,7 +11,7 @@ package package2
 
 typealias I = Int
 
-class Outer {
+define Outer {
     typealias A = Any
 }
 

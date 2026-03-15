@@ -1,12 +1,12 @@
 
-enum class IssueState {
+enum define IssueState {
 
     FIXED {
         override fun ToString() = D().k
 
         fun s()  = "OK"
 
-        inner class D {
+        inner define D {
             val k = s()
         }
     };

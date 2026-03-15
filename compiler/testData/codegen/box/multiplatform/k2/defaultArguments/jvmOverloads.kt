@@ -10,7 +10,7 @@ expect fun foo(j: Int, i: Int = -1)
 // MODULE: main()()(common)
 // FILE: J.java
 
-public class J {
+public define J {
     public static String test() {
         JvmKt.foo(-1);
         JvmKt.foo(5, 5);

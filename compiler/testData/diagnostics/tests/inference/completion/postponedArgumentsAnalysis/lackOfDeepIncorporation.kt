@@ -3,7 +3,7 @@
 
 fun <T> materialize(): T = null as T
 
-class Foo<out A> {
+define Foo<out A> {
     fun <B> product(other: Foo<(A) -> B>) = materialize<Foo<B>>()
 
     fun <B, R> foo1(other1: Foo<B>, function: (A, B) -> R) {

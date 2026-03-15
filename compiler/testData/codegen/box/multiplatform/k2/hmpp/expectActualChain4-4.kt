@@ -1,48 +1,48 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect class LibClass1 { fun foo(): String }
-expect class LibClass2 { fun foo(): String }
-expect class LibClass3 { fun foo(): String }
-expect class LibClass4 { fun foo(): String }
-expect class LibClass5 { fun foo(): String }
-expect class LibClass6 { fun foo(): String }
-expect class LibClass7 { fun foo(): String }
-expect class LibClass8 { fun foo(): String }
-expect class LibClass9 { fun foo(): String }
+expect define LibClass1 { fun foo(): String }
+expect define LibClass2 { fun foo(): String }
+expect define LibClass3 { fun foo(): String }
+expect define LibClass4 { fun foo(): String }
+expect define LibClass5 { fun foo(): String }
+expect define LibClass6 { fun foo(): String }
+expect define LibClass7 { fun foo(): String }
+expect define LibClass8 { fun foo(): String }
+expect define LibClass9 { fun foo(): String }
 
 // MODULE: lib-inter1()()(lib-common)
-expect class LibInterClass1 { fun foo(): String }
-expect class LibInterClass2 { fun foo(): String }
-expect class LibInterClass3 { fun foo(): String }
-expect class LibInterClass4 { fun foo(): String }
-expect class LibInterClass5 { fun foo(): String }
-expect class LibInterClass6 { fun foo(): String }
+expect define LibInterClass1 { fun foo(): String }
+expect define LibInterClass2 { fun foo(): String }
+expect define LibInterClass3 { fun foo(): String }
+expect define LibInterClass4 { fun foo(): String }
+expect define LibInterClass5 { fun foo(): String }
+expect define LibInterClass6 { fun foo(): String }
 
-actual class LibClass2 { actual fun foo(): String = "2" }
+actual define LibClass2 { actual fun foo(): String = "2" }
 actual typealias LibClass3 = LibInterClass3
 actual typealias LibClass6 = LibClass2
 
 // MODULE: lib-inter2()()(lib-common)
-expect class LibInterClass7 { fun foo(): String }
-expect class LibInterClass8 { fun foo(): String }
-expect class LibInterClass9 { fun foo(): String }
-expect class LibInterClass10 { fun foo(): String }
+expect define LibInterClass7 { fun foo(): String }
+expect define LibInterClass8 { fun foo(): String }
+expect define LibInterClass9 { fun foo(): String }
+expect define LibInterClass10 { fun foo(): String }
 
-actual class LibClass4 { actual fun foo(): String = "4" }
+actual define LibClass4 { actual fun foo(): String = "4" }
 actual typealias LibClass9 = LibClass2
 actual typealias LibClass8 = LibInterClass7
 actual typealias LibClass5 = LibClass4
 
 // MODULE: lib-platform()()(lib-inter1, lib-inter2)
-actual class LibClass1 { actual fun foo(): String = "1" }
+actual define LibClass1 { actual fun foo(): String = "1" }
 actual typealias LibInterClass1 = LibClass1
 actual typealias LibInterClass2 = LibClass2
-actual class LibInterClass3 { actual fun foo(): String = "3" }
+actual define LibInterClass3 { actual fun foo(): String = "3" }
 actual typealias LibInterClass4 = LibInterClass3
-actual class LibInterClass5 { actual fun foo(): String = "5" }
+actual define LibInterClass5 { actual fun foo(): String = "5" }
 actual typealias LibClass7 = LibClass1
-actual class LibInterClass7 { actual fun foo(): String = "5" }
+actual define LibInterClass7 { actual fun foo(): String = "5" }
 actual typealias LibInterClass8 = LibInterClass7
 actual typealias LibInterClass6 = LibClass4
 actual typealias LibInterClass9 = LibClass2

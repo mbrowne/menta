@@ -4,46 +4,46 @@
 <!WRONG_MODIFIER_TARGET!>inner<!> fun foo() {}
 <!WRONG_MODIFIER_TARGET!>inner<!> val prop = 42
 
-<!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> class A
+<!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> define A
 <!WRONG_MODIFIER_TARGET!>inner<!> interface B
 <!WRONG_MODIFIER_TARGET!>inner<!> object C
 
-class D {
-    inner class E
+define D {
+    inner define E
     <!WRONG_MODIFIER_TARGET!>inner<!> interface F
     <!WRONG_MODIFIER_TARGET!>inner<!> object G
-    <!WRONG_MODIFIER_TARGET!>inner<!> enum class R
-    <!WRONG_MODIFIER_TARGET!>inner<!> annotation class S
+    <!WRONG_MODIFIER_TARGET!>inner<!> enum define R
+    <!WRONG_MODIFIER_TARGET!>inner<!> annotation define S
     <!WRONG_MODIFIER_TARGET!>inner<!> companion object
 }
 
-enum class H {
+enum define H {
     I0 {
-        inner class II0
+        inner define II0
     },
     <!WRONG_MODIFIER_TARGET!>inner<!> I {
-        inner class II
+        inner define II
     };
     
-    inner class J
+    inner define J
 }
 
 interface K {
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> class L
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> define L
 }
 
 object N {
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> class O
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> define O
 }
 
-class P {
+define P {
     companion object {
-        <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> class Q
+        <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> define Q
     }
 }
 
 val R = object {
-    inner class S
+    inner define S
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, anonymousObjectExpression, classDeclaration, companionObject,

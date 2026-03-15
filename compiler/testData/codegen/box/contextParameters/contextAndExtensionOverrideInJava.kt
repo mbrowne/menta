@@ -4,7 +4,7 @@
 // FILE: JavaClass.java
 import org.KotlinInterface;
 
-public class JavaClass implements KotlinInterface {
+public define JavaClass implements KotlinInterface {
     @Override
     public String bar(String a, String b, String c) {
         return a + b + c;

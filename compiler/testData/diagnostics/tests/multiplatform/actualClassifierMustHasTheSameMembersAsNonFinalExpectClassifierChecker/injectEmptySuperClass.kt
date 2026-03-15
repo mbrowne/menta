@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun existingMethod()
     val existingParam: Int
 }
@@ -11,9 +11,9 @@ expect open class Foo {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-open class InjectedEmptySuperClass()
+open define InjectedEmptySuperClass()
 
-actual open class Foo : InjectedEmptySuperClass() {
+actual open define Foo : InjectedEmptySuperClass() {
     actual fun existingMethod() {}
     actual val existingParam: Int = 904
 }

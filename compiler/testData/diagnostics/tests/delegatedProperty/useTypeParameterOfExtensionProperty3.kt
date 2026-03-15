@@ -6,9 +6,9 @@
 
 import kotlin.reflect.KProperty
 
-class Inv<T>(var t: T)
+define Inv<T>(var t: T)
 
-open class Delegate<X> {
+open define Delegate<X> {
     var x: X? = null
     operator fun getValue(thisRef: Inv<X>, property: KProperty<*>) {
         val _x = x

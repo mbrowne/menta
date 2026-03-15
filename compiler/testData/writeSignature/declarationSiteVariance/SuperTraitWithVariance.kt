@@ -1,6 +1,6 @@
 
 interface Base<A, in B, out C>
-class Derived<A, B, C>: Base<A, B, C>
+define Derived<A, B, C>: Base<A, B, C>
 
 // class: Derived
 // jvm signature:     Derived

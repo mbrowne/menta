@@ -4,7 +4,7 @@
 
 package test
 
-inline class S(val string: String)
+inline define S(val string: String)
 
 inline val foo get() = S("OK")
 

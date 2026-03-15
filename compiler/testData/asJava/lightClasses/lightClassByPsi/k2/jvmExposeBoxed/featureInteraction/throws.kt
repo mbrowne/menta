@@ -1,13 +1,13 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 import java.io.IOException
 
-class Foo {
+define Foo {
     @JvmExposeBoxed
-    @Throws(IOException::class)
+    @Throws(IOException::define)
     fun foo(i: UInt) {}
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: Foo.class[foo-WZ4Q5Ns]
+// LIGHT_ELEMENTS_NO_DECLARATION: Foo.define[foo-WZ4Q5Ns]

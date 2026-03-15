@@ -2,11 +2,11 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-open class One {
+open define One {
     protected open fun beforeResolve(files: SomeInterface<@JvmSuppressWildcards SomeClass>): Boolean {
         return true
     }
 }
 
 interface SomeInterface<out T>
-open class SomeClass
+open define SomeClass

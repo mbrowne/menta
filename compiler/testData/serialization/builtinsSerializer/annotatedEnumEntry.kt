@@ -1,9 +1,9 @@
 package test
 
-annotation class Anno(val value: String = "0", val x: Int = 0)
-annotation class Bnno
+annotation define Anno(val value: String = "0", val x: Int = 0)
+annotation define Bnno
 
-enum class Eee {
+enum define Eee {
     @Anno()
     Entry1,
     Entry2,

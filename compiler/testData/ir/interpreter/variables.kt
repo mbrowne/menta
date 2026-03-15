@@ -20,7 +20,7 @@
     return a
 }
 
-class A @CompileTimeCalculation constructor(@CompileTimeCalculation val a: Int)
+define A @CompileTimeCalculation constructor(@CompileTimeCalculation val a: Int)
 
 @CompileTimeCalculation fun createObject(a: Int): Int {
     val aObj = A(a)

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
-class Some {
+define Some {
     val e: SomeEnum? = null
 }
 
-enum class SomeEnum {
+enum define SomeEnum {
     A, B
 }
 

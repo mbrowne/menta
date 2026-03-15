@@ -6,7 +6,7 @@ object O : Tr<V<*>>
 
 interface Tr<T>
 
-class V<out S>
+define V<out S>
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, nullableType, objectDeclaration, out, starProjection,
 typeParameter */

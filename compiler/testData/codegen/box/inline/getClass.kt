@@ -8,7 +8,7 @@ fun foo() {
 
     cls1?.let {
         cls2?.let {
-            var itClass = it::class
+            var itClass = it::define
         }
     }
 }

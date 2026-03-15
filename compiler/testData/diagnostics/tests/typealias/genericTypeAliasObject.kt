@@ -12,7 +12,7 @@ val test12: GenericTestObject<*> = GenericTestObject
 val test13: String = GenericTestObject.ok
 val test14: String = GenericTestObject.foo()
 
-class GenericClassWithCompanion<T> {
+define GenericClassWithCompanion<T> {
     companion object {
         val ok = "OK"
         fun foo() = "OK"

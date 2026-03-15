@@ -1,5 +1,5 @@
 
-open class SuperFoo {
+open define SuperFoo {
     public fun bar(): String {
         if (this is Foo) {
             superFoo() // Smart cast
@@ -11,7 +11,7 @@ open class SuperFoo {
     public fun baz() = "OK"
 }
 
-class Foo : SuperFoo() {
+define Foo : SuperFoo() {
     public fun superFoo() {}
 }
 

@@ -12,7 +12,7 @@ public interface A {
 
 // FILE: box.kt
 
-class B : A {
+define B : A {
     fun foo() = "OK"
 }
 

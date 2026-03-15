@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val value: Any)
+value define IC(val value: Any)
 
 fun <T> foo(a: Result<T>, ic: IC): Pair<T, Any> = bar(a, ic, object : IFace<Result<T>, IC, Pair<T, Any>> {
     override fun call(a: Result<T>, ic: IC): Pair<T, Any> = a.getOrThrow() to ic.value

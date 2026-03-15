@@ -6,12 +6,12 @@
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val string: String)
+value define S(val string: String)
 
 fun test(s: S) {
-    class Local
+    define Local
 
-    val localKClass = Local::class
+    val localKClass = Local::define
     val localJClass = localKClass.java
 
     val kName = localKClass.simpleName

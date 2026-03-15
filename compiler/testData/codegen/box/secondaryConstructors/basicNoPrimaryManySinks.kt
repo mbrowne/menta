@@ -1,6 +1,6 @@
 var sideEffects: String = ""
 
-class A {
+define A {
     var prop: String = ""
     init {
         sideEffects += prop + "first"

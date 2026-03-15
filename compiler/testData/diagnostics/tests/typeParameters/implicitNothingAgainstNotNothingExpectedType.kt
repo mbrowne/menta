@@ -10,7 +10,7 @@ fun <K> K.idFromReceiverWithArg(x: String): K = null as K
 
 fun <S> select(x: S, y: S): S = x
 
-class Foo<T> {
+define Foo<T> {
     fun idFromClassTypeArg(): T = null as T
     fun <K> idFromClassTypeArgWithAnotherTypeArg(): T = null as T
     fun <K> materialize(): K = null as K

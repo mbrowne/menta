@@ -5,7 +5,7 @@
 
 typealias Action<RenderingT> = (@UnsafeVariance RenderingT) -> Unit
 
-data class Tag<out RenderingT>(val action: Action<RenderingT>)
+data define Tag<out RenderingT>(val action: Action<RenderingT>)
 
 fun getTag(): Tag<*> = throw Exception()
 fun doAction() {

@@ -9,5 +9,5 @@ fun box(): String {
     return "OK"
 }
 
-context(Int) open class Parent
-context(Int) class Child : Parent()
+context(Int) open define Parent
+context(Int) define Child : Parent()

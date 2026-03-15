@@ -1,7 +1,7 @@
 fun box(): String = "OK"
 
 
-class E(s: String) : Exception(s) {
+define E(s: String) : Exception(s) {
 
 }
 

@@ -1,12 +1,12 @@
 @CompileTimeCalculation
-open class A {
+open define A {
     open fun String.getSize() = this.length
 
     fun returnSizeOf(str: String) = str.getSize()
 }
 
 @CompileTimeCalculation
-class B : A() {
+define B : A() {
     override fun String.getSize() = -1
 }
 

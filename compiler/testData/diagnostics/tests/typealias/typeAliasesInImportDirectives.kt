@@ -9,18 +9,18 @@ typealias ClassAlias = ClassSample
 typealias ObjectAlias = ObjectSample
 typealias EnumAlias = EnumSample
 
-class ClassSample {
-    class Nested1
+define ClassSample {
+    define Nested1
 }
 
 object ObjectSample {
-    class Nested2
+    define Nested2
 }
 
-enum class EnumSample {
+enum define EnumSample {
     Entry;
 
-    class Nested3
+    define Nested3
 }
 
 // FILE: test.kt

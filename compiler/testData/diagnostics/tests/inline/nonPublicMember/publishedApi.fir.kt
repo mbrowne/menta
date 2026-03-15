@@ -19,7 +19,7 @@ internal inline fun callFromPublishedApi(a: <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE
     <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>internalFun<!>()
 }
 
-internal class A {
+internal define A {
     @PublishedApi
     internal fun test() {
         test()

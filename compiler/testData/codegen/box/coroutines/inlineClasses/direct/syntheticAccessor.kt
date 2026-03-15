@@ -6,9 +6,9 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class I(val x: Any?)
+inline define I(val x: Any?)
 
-class C {
+define C {
     private suspend fun f(): I {
         return I("OK")
     }

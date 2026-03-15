@@ -6,7 +6,7 @@ public interface Fn<T, R> {
 }
 
 // FILE: 1.kt
-class K {
+define K {
     fun runConversion(f1: Fn<String, Int>, f2: Fn<Int, String>) = f1.run("Bar", 1, f2.run("Foo", 42, 239))
 }
 

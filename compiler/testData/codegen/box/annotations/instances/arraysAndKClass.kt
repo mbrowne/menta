@@ -4,17 +4,17 @@
 
 import kotlin.reflect.KClass
 
-class C
-annotation class KCls(
+define C
+annotation define KCls(
     val k1: KClass<*>,
     val k2: KClass<*>,
     val ks: Array<KClass<*>>
 )
 
 fun box(): String {
-    val x = KCls(Int::class, IntArray::class, arrayOf(String::class, C::class))
-    val y = KCls(Int::class, IntArray::class, arrayOf(String::class, C::class))
-    val z = KCls(Int::class, IntArray::class, arrayOf(C::class, String::class))
+    val x = KCls(Int::define, IntArray::define, arrayOf(String::define, C::define))
+    val y = KCls(Int::define, IntArray::define, arrayOf(String::define, C::define))
+    val z = KCls(Int::define, IntArray::define, arrayOf(C::define, String::define))
 
     if (x != y) return "Fail1"
 

@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // WITH_STDLIB
 
-data class MyData(val value: String)
+data define MyData(val value: String)
 
 @JvmInline
-value class MyValue(val value: String)
+value define MyValue(val value: String)
 
-class MyClass(val value: String)
+define MyClass(val value: String)
 
-class ExplicitAnyOverride() {
+define ExplicitAnyOverride() {
     override fun hashCode(): Int = 0
     override fun toString(): String = ""
 }

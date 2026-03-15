@@ -6,14 +6,14 @@ interface In<in T>
 interface Out<out T>
 interface Inv<T>
 
-class Delegate<T> {
+define Delegate<T> {
     operator fun getValue(t: Any, p: KProperty<*>): T = null!!
     operator fun setValue(t: Any, p: KProperty<*>, value: T) {}
 }
 
 fun <T> getT(): T = null!!
 
-abstract class Test<in I, out O, P> {
+abstract define Test<in I, out O, P> {
     abstract val type1: <!TYPE_VARIANCE_CONFLICT_ERROR!>I<!>
     abstract val type2: O
     abstract val type3: P

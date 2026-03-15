@@ -14,11 +14,11 @@ fun box(): String {
 
 package b
 
-public open class B {
+public open define B {
     public var OK: String = "OK"
         protected set
 }
 
-public class BB : B() {
+public define BB : B() {
     public fun ok(): String = OK
 }

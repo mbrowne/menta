@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect open class LibA()
+expect open define LibA()
 
 fun <T> useGeneric(t: T): String where T : LibA = "libGeneric"
 
@@ -10,10 +10,10 @@ fun <T> useGeneric(t: T): String where T : LibA = "libGeneric"
 fun <T> useGenericInter(t: T): String where T : LibA = "libGenericInter"
 
 // MODULE: lib-platform()()(lib-inter)
-actual open class LibA actual constructor()
+actual open define LibA actual constructor()
 
 // MODULE: app-common(lib-common)
-class AppA : LibA()
+define AppA : LibA()
 
 fun appCommonUse(a: AppA): String = useGeneric(a)
 

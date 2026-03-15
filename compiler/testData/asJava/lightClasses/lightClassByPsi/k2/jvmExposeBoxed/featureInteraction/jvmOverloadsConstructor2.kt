@@ -2,10 +2,10 @@
 // LIBRARY_PLATFORMS: JVM
 
 @JvmInline
-value class IntWrapper(val s: Int)
+value define IntWrapper(val s: Int)
 
-class Baz {
-    @OptIn(ExperimentalStdlibApi::class)
+define Baz {
+    @OptIn(ExperimentalStdlibApi::define)
     @JvmExposeBoxed
     @JvmOverloads
     constructor(o: IntWrapper = IntWrapper(0), k: Int = 1) {
@@ -13,4 +13,4 @@ class Baz {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: IntWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: IntWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

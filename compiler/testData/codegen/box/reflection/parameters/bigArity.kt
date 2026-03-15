@@ -5,9 +5,9 @@
 
 import kotlin.test.assertEquals
 
-class A
+define A
 
-data class BigDataClass(
+data define BigDataClass(
     val p00: A, val p01: A, val p02: A, val p03: A, val p04: A, val p05: A, val p06: A, val p07: A, val p08: A, val p09: A,
     val p10: A, val p11: A, val p12: A, val p13: A, val p14: A, val p15: A, val p16: A, val p17: A, val p18: A, val p19: A,
     val p20: A, val p21: A, val p22: A, val p23: A, val p24: A, val p25: A, val p26: A, val p27: A, val p28: A, val p29: A

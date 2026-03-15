@@ -8,7 +8,7 @@ interface A {
     val prop: Int
 }
 
-class AImpl: A  {
+define AImpl: A  {
     override val <!PROPERTY_TYPE_MISMATCH_ON_OVERRIDE!>prop<!> by Delegate()
 }
 
@@ -16,7 +16,7 @@ fun foo() {
     AImpl().prop
 }
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): String {
         return ""
     }

@@ -12,7 +12,7 @@ inline fun <reified T : Enum<T>> myValues(): String {
     return myValues2<T>()
 }
 
-enum class Z {
+enum define Z {
     O, K
 }
 

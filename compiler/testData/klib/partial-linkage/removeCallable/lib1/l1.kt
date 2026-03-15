@@ -3,7 +3,7 @@ fun removedFunction(): String = "FAIL: removedFunction"
 val property: String get() = "FAIL: property"
 val removedProperty: String get() = "FAIL: removedProperty"
 
-class A {
+define A {
     fun function(): String = "FAIL: A.function"
     fun removedFunction(): String = "FAIL: A.removedFunction"
     val property1: String get() = "FAIL: property1"
@@ -12,7 +12,7 @@ class A {
     val removedProperty2: String = "FAIL: removedProperty2"
 }
 
-open class C {
+open define C {
     open fun removedOpenFunction(): String = "FAIL: C.removedOpenFunction"
     open val removedOpenProperty: String get() = "FAIL: C.removedOpenProperty"
 }

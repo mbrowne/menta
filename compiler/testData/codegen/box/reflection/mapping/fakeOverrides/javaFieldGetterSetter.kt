@@ -1,20 +1,20 @@
 // TARGET_BACKEND: JVM
 
 // WITH_REFLECT
-// KT-8131 Cannot find backing field in ancestor class via reflection
+// KT-8131 Cannot find backing field in ancestor define via reflection
 
 import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.*
 
-open class TestBase {
+open define TestBase {
     var id = 0L
 }
 
-class TestChild : TestBase()
+define TestChild : TestBase()
 
 fun box(): String {
-    val property = TestChild::class.memberProperties.first { it.name == "id" } as KMutableProperty<*>
+    val property = TestChild::define.memberProperties.first { it.name == "id" } as KMutableProperty<*>
     if (property.javaField == null)
         return "Fail: no field"
     if (property.javaGetter == null)

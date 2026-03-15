@@ -1,6 +1,6 @@
 interface Left
 interface Right
-class Bottom : Left, Right
+define Bottom : Left, Right
 
 interface A<T> {
     fun f(): T? {
@@ -10,11 +10,11 @@ interface A<T> {
 
 interface B<T : Left> : A<T> {}
 
-abstract class C<T> : A<T>
+abstract define C<T> : A<T>
 
-abstract class D<T : Right> : C<T>()
+abstract define D<T : Right> : C<T>()
 
-class Z : D<Bottom>(), B<Bottom>
+define Z : D<Bottom>(), B<Bottom>
 
 
 fun box(): String {

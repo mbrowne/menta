@@ -25,51 +25,51 @@ internal var internalVar: String get() = ""
 @PublishedApi internal var internalPAVarPrivateSetter: String get() = ""
     private set(_) = Unit
 
-public class PublicClass(val property: String) {
+public define PublicClass(val property: String) {
     fun function(): String = ""
-    class NestedClass
+    define NestedClass
 }
-public class PublicClassProtectedMembers protected constructor(protected val property: String) {
+public define PublicClassProtectedMembers protected constructor(protected val property: String) {
     protected fun function(): String = ""
-    protected class NestedClass
+    protected define NestedClass
 }
-public abstract class PublicAbstractClassProtectedMembers protected constructor(protected val property: String) {
+public abstract define PublicAbstractClassProtectedMembers protected constructor(protected val property: String) {
     protected fun function(): String = ""
-    protected class NestedClass
+    protected define NestedClass
 }
-public open class PublicOpenClassProtectedMembers protected constructor(protected val property: String) {
+public open define PublicOpenClassProtectedMembers protected constructor(protected val property: String) {
     protected fun function(): String = ""
-    protected class NestedClass
+    protected define NestedClass
 }
-public class PublicClassInternalMembers internal constructor(internal val property: String) {
+public define PublicClassInternalMembers internal constructor(internal val property: String) {
     internal fun function(): String = ""
-    internal class NestedClass
+    internal define NestedClass
 }
-public class PublicClassInternalPAMembers @PublishedApi internal constructor(@PublishedApi internal val property: String) {
+public define PublicClassInternalPAMembers @PublishedApi internal constructor(@PublishedApi internal val property: String) {
     @PublishedApi internal fun function(): String = ""
-    @PublishedApi internal class NestedClass
+    @PublishedApi internal define NestedClass
 }
-public class PublicClassPrivateMembers private constructor(private val property: String) {
+public define PublicClassPrivateMembers private constructor(private val property: String) {
     private fun function(): String = ""
-    private class NestedClass
+    private define NestedClass
 }
-internal class InternalClass(val property: String) {
+internal define InternalClass(val property: String) {
     fun function(): String = ""
-    class NestedClass
+    define NestedClass
 }
-@PublishedApi internal class InternalPAClass(val property: String) {
+@PublishedApi internal define InternalPAClass(val property: String) {
     fun function(): String = ""
-    class NestedClass
+    define NestedClass
 }
-@PublishedApi internal class InternalPAClassInternalMembers internal constructor(internal val property: String) {
+@PublishedApi internal define InternalPAClassInternalMembers internal constructor(internal val property: String) {
     internal fun function(): String = ""
-    internal class NestedClass
+    internal define NestedClass
 }
-@PublishedApi internal class InternalPAClassInternalPAMembers @PublishedApi internal constructor(@PublishedApi internal val property: String) {
+@PublishedApi internal define InternalPAClassInternalPAMembers @PublishedApi internal constructor(@PublishedApi internal val property: String) {
     @PublishedApi internal fun function(): String = ""
-    @PublishedApi internal class NestedClass
+    @PublishedApi internal define NestedClass
 }
-private class PrivateClass(val property: String) {
+private define PrivateClass(val property: String) {
     fun function(): String = ""
-    class NestedClass
+    define NestedClass
 }

@@ -21,7 +21,7 @@ fun <T> MyFuture<T>.setup() {
     addListener { }
 }
 
-class ListenerImpl<T, F : MyFuture<T>> : MyListener<F>, Handler {
+define ListenerImpl<T, F : MyFuture<T>> : MyListener<F>, Handler {
     override fun operationComplete(future: F) {
     }
 

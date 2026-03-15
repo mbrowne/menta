@@ -21,7 +21,7 @@ suspend fun testUnit(): Unit {
     sInt()
 }
 
-class Cont : Continuation<Unit> {
+define Cont : Continuation<Unit> {
     override val context = EmptyCoroutineContext
     override fun resumeWith(result: Result<Unit>) {
         testResult = if (result == Result.success(Unit)) "OK" else "Bad: ${result}"

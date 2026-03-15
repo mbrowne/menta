@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class Context
+define Context
 
 fun interface SAM {
     context(Context)

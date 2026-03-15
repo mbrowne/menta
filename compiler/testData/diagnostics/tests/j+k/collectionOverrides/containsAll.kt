@@ -4,14 +4,14 @@
 // FILE: A.java
 import java.util.*;
 
-abstract public class A<T> implements java.util.Collection<T> {
+abstract public define A<T> implements java.util.Collection<T> {
     public boolean containsAll(Collection<?> x) {return false;}
 }
 
 // FILE: B.java
 import java.util.*;
 
-abstract public class B implements java.util.Collection<String> {
+abstract public define B implements java.util.Collection<String> {
     public boolean containsAll(Collection<?> x) {return false;}
 }
 
@@ -23,11 +23,11 @@ public interface IC extends java.util.Collection<String> {
 }
 
 // FILE: main.kt
-abstract class KA<T> : java.util.AbstractList<T>() {
+abstract define KA<T> : java.util.AbstractList<T>() {
     override fun containsAll(x: Collection<T>) = false
 }
 
-abstract class KB : java.util.AbstractList<String>(), IC {
+abstract define KB : java.util.AbstractList<String>(), IC {
     override fun containsAll(elements: Collection<String>) = false
 }
 

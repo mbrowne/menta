@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // NI_EXPECTED_FILE
 
-class Foo<A : Number>
-class Bar<B : CharSequence>
+define Foo<A : Number>
+define Bar<B : CharSequence>
 
-class Hr<A, B, C, D>(val a: A, val b: B)
+define Hr<A, B, C, D>(val a: A, val b: B)
 
 typealias Test<A, B> = Hr<A, B, Foo<A>, Bar<B>>
 

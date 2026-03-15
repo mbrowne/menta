@@ -1,10 +1,10 @@
 import kotlin.reflect.KProperty1
 
-class Q {
+define Q {
   val s = "OK"
 }
 
-enum class PropEnum(val prop: KProperty1<Q, String>) {
+enum define PropEnum(val prop: KProperty1<Q, String>) {
     ELEM(Q::s)
 }
 

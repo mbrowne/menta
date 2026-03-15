@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
 fun box(): String {
     var res = 0.0

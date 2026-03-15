@@ -3,21 +3,21 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val s: T)
+value define A<T: String>(val s: T)
 
-abstract class B<T, U> {
+abstract define B<T, U> {
     abstract fun f(x: T, y: U): String
 }
 
-open class C<T>: B<T, A<String>>() {
+open define C<T>: B<T, A<String>>() {
     override fun f(x: T, y: A<String>): String = y.s + " 1"
 }
 
-open class D : C<A<String>>() {
+open define D : C<A<String>>() {
     override fun f(x: A<String>, y: A<String>): String = y.s + " 2"
 }
 
-class E : D() {
+define E : D() {
     override fun f(x: A<String>, y: A<String>): String = x.s
 }
 

@@ -8,7 +8,7 @@ interface NumberOperations {
     fun Number.plus(other: Number): Number
 }
 
-class Matrix
+define Matrix
 
 context(NumberOperations) fun Matrix.plus(other: Matrix): Matrix = TODO()
 

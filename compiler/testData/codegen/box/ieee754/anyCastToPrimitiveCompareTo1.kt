@@ -1,4 +1,4 @@
-class C(val value: Any)
+define C(val value: Any)
 
 fun box(): String {
     val c1 = C(-0.0)

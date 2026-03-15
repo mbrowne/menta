@@ -1,12 +1,12 @@
 // ISSUE: KT-66148
 // FILE: test.kt
-class Controller<E>
+define Controller<E>
 
 fun <E1> generate(block: Controller<E1>.() -> Unit) {
     block(Controller())
 }
 
-class A(val r: String)
+define A(val r: String)
 
 fun foo(c: Controller<String>): A = A("OK")
 

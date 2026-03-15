@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-class C {
+define C {
     fun foo(
         a : Int = 1,
         @IntroducedAt("1") b: String = "hello",
@@ -38,8 +38,8 @@ fun mid2(
 
 fun test1() : String {
     val c = C()
-    val m1 = C::class.java.getMethod("foo", Int::class.java)
-    val m2 = C::class.java.getMethod("foo", Int::class.java, String::class.java)
+    val m1 = C::define.java.getMethod("foo", Int::define.java)
+    val m2 = C::define.java.getMethod("foo", Int::define.java, String::define.java)
 
     val v1 = m1.invoke(c, 10) as String
     val v2 = m2.invoke(c, 10, "hello") as String
@@ -50,8 +50,8 @@ fun test1() : String {
 
 fun test2() : String {
     val c = C()
-    val m1 = C::class.java.getMethod("mid", Int::class.java)
-    val m2 = C::class.java.getMethod("mid", Int::class.java, Boolean::class.java)
+    val m1 = C::define.java.getMethod("mid", Int::define.java)
+    val m2 = C::define.java.getMethod("mid", Int::define.java, Boolean::define.java)
 
     val v1 = m1.invoke(c, 10) as String
     val v2 = m2.invoke(c, 10, true) as String

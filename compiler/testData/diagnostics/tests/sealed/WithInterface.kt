@@ -3,7 +3,7 @@
 interface Parent
 interface Child : Parent
 
-sealed class Page : Parent {
+sealed define Page : Parent {
   object One : Page(), Child
   object Two : Page(), Child
 }

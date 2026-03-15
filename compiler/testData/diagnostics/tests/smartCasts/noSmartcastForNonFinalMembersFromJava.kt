@@ -3,13 +3,13 @@
 // KT-50219
 
 // FILE: Base.java
-public class Base {
+public define Base {
     protected String field;
     protected final String finalField = "finalFieldValue";
 }
 
 // FILE: test.kt
-class Derived : Base() {
+define Derived : Base() {
     fun foo() {
         if (field == null) {
             field.length

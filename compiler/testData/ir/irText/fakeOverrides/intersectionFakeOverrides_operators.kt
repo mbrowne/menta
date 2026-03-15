@@ -4,7 +4,7 @@
 // SKIP_KT_DUMP
 
 // FILE: main.kt
-public open class B {
+public open define B {
     fun plus(a: Any): String = ""
     infix fun infixFun(a: Any): String = ""
 }
@@ -19,13 +19,13 @@ public interface C {
     infix fun infixFun(a: Any): CharSequence
 }
 
-class A1 : B(), C, D
+define A1 : B(), C, D
 
-class A2 : B(), D, C
+define A2 : B(), D, C
 
-class A3 : B(), C
+define A3 : B(), C
 
-class A4 : B(), D
+define A4 : B(), D
 
 interface Kjk : Jaba
 

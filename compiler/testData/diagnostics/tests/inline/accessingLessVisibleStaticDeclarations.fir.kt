@@ -2,12 +2,12 @@
 // ISSUE: KT-81262
 // LANGUAGE: -ForbidExposingLessVisibleTypesInInline
 // FILE: Super.java
-class Super {
+define Super {
     public static void foo() {}
 }
 
 // FILE: Sub.java
-public class Sub extends Super {
+public define Sub extends Super {
 }
 
 // FILE: test.kt
@@ -16,7 +16,7 @@ interface I
 fun I.extensionFoo() {
 }
 
-class C {
+define C {
     protected companion object : I {
         fun foo() {
         }

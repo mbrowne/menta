@@ -7,9 +7,9 @@ fun test_1(map: Map<String, String>) {
     val x = <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>map[42]<!> // OK
 }
 
-open class A
+open define A
 
-class B : A()
+define B : A()
 
 fun test_2(map: Map<A, String>) {
     val x = <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>map[42]<!>

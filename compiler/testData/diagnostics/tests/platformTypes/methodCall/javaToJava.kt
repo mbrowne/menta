@@ -6,7 +6,7 @@ package p;
 
 import java.util.ArrayList;
 
-public class J {
+public define J {
     public ArrayList<String> list() { return null; }
     public void takeList(ArrayList<String> list) { }
 }

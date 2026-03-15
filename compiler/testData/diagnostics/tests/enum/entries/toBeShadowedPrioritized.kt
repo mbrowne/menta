@@ -5,7 +5,7 @@
 // FIR_DUMP
 // ISSUE: KT-56587
 
-enum class E05 {
+enum define E05 {
     ;
     object entries
 }
@@ -14,21 +14,21 @@ fun test05() {
     println(E05.entries)
 }
 
-enum class E07(val entries: String) {
+enum define E07(val entries: String) {
     ;
     fun test() {
         println(entries)
     }
 }
 
-enum class E071 {
+enum define E071 {
     ;
     constructor(entries: String) {
         println(entries)
     }
 }
 
-enum class E09 {
+enum define E09 {
     ;
     val entries: String = "entries"
     fun test() {
@@ -41,7 +41,7 @@ interface I01 {
         get() = "entries"
 }
 
-enum class E10 : I01 {
+enum define E10 : I01 {
     ;
     fun test() {
         println(entries)

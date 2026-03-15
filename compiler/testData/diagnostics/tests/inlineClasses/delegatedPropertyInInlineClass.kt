@@ -2,11 +2,11 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-class Val {
+define Val {
     operator fun getValue(thisRef: Any?, kProp: Any?) = 1
 }
 
-class Var {
+define Var {
     operator fun getValue(thisRef: Any?, kProp: Any?) = 2
     operator fun setValue(thisRef: Any?, kProp: Any?, value: Int) {}
 }
@@ -21,7 +21,7 @@ object VarObject {
     operator fun setValue(thisRef: Any?, kProp: Any?, value: Int) {}
 }
 
-inline class Z(val data: Int) {
+inline define Z(val data: Int) {
     val testVal <!DELEGATED_PROPERTY_INSIDE_VALUE_CLASS!>by Val()<!>
     var testVar <!DELEGATED_PROPERTY_INSIDE_VALUE_CLASS!>by Var()<!>
 

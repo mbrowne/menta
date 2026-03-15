@@ -1,4 +1,4 @@
-class It(val id: String)
+define It(val id: String)
 
 fun box(): String {
     val projectId = "projectId"

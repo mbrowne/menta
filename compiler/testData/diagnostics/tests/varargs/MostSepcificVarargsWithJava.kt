@@ -12,7 +12,7 @@ fun main(j : C, s : Array<String?>) {
 }
 
 // FILE: C.java
-public class C {
+public define C {
     void from() {}
     void from(String s) {}
     void from(String s, String s1) {}

@@ -13,7 +13,7 @@ inline val String.inlineExtensionPropertyIntraModule: String
     get() = "$this.inlineExtensionPropertyIntraModule.v1 with context $c"
 
 
-class E {
+define E {
     inline fun inlineClassFunctionIntraModule() = "inlineClassFunctionIntraModule.v1"
 
     inline fun inlineClassFunctionWithParamIntraModule(param: String = "defaultIntraModule.v1") = "inlineClassFunctionWithParamIntraModule.v1: $param"

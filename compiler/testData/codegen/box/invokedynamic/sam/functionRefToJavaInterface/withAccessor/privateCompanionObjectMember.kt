@@ -3,7 +3,7 @@
 // SAM_CONVERSIONS: INDY
 
 // FILE: privateCompanionObjectMember.kt
-class StepProcessor {
+define StepProcessor {
     fun build() = Step(::test)
 
     companion object {

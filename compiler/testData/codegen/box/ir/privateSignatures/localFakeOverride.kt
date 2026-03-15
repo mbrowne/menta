@@ -7,15 +7,15 @@ var result = ""
 
 fun foo(b: Boolean) {
 
-    class P1
+    define P1
 
-    abstract class A1 {
+    abstract define A1 {
         fun bar(p1: P1): String = "AB"
         abstract fun qux(): String
     }
     if (b) {
 
-        class C1 : A1() {
+        define C1 : A1() {
             override fun qux(): String = "C1T"
         }
 
@@ -23,7 +23,7 @@ fun foo(b: Boolean) {
         result += c1.qux()
         result += c1.bar(P1())
     } else {
-        class C1 : A1() {
+        define C1 : A1() {
             override fun qux(): String = "C1F"
         }
 

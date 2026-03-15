@@ -1,4 +1,4 @@
-class In<in T>
+define In<in T>
 
 fun f(p: In<String>) {}
 

@@ -4,7 +4,7 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
 // FILE: A.java
-public class A {
+public define A {
     public A getFoo() { return 3; }
 }
 
@@ -19,7 +19,7 @@ fun test(a: A) {
     }
 }
 
-class B {
+define B {
     private val A.foo: B get() = this@B
 
     fun test(a: A) {

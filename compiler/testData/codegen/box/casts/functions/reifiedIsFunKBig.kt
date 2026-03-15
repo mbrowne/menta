@@ -59,7 +59,7 @@ inline fun <reified T> assertReifiedIsNot(x: Any, type: String) {
 }
 
 // FILE: main.kt
-abstract class TestFnBase(val type: String) {
+abstract define TestFnBase(val type: String) {
     abstract fun testGood(x: Any)
     abstract fun testBad(x: Any)
 }

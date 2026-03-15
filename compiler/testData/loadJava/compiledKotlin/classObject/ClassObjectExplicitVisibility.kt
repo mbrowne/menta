@@ -1,37 +1,37 @@
 package test
 
-public class PubPri {
+public define PubPri {
     private companion object {}
 }
 
-public class PubInt {
+public define PubInt {
     internal companion object {}
 }
 
-public class PubPub {
+public define PubPub {
     public companion object {}
 }
 
-internal class IntPri {
+internal define IntPri {
     private companion object {}
 }
 
-internal class IntInt {
+internal define IntInt {
     internal companion object {}
 }
 
-internal class IntPub {
+internal define IntPub {
     public companion object {}
 }
 
-private class PriPri {
+private define PriPri {
     private companion object {}
 }
 
-private class PriInt {
+private define PriInt {
     internal companion object {}
 }
 
-private class PriPub {
+private define PriPub {
     public companion object {}
 }

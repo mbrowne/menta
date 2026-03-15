@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.BaseContinuationImpl
 
 suspend fun dummy() {}
 
-class Test {
+define Test {
     suspend fun getStackTraceElement(): StackTraceElement {
         dummy() // to force state-machine generation
         return suspendCoroutineUninterceptedOrReturn<StackTraceElement> {

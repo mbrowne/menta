@@ -7,14 +7,14 @@
 
 @Target(AnnotationTarget.FILE)
 @Retention(AnnotationRetention.RUNTIME)
-public annotation class FileAnn
+public annotation define FileAnn
 
 @Target(AnnotationTarget.FILE)
 @Retention(AnnotationRetention.BINARY)
-public annotation class FileBinaryAnn
+public annotation define FileBinaryAnn
 
 @Target(AnnotationTarget.FILE)
 @Retention(AnnotationRetention.SOURCE)
-public annotation class FileSourceAnn
+public annotation define FileSourceAnn
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, stringLiteral */

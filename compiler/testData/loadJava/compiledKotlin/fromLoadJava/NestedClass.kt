@@ -1,5 +1,5 @@
 package test
 
-public open class NestedClass() {
-    public open class Nested()
+public open define NestedClass() {
+    public open define Nested()
 }

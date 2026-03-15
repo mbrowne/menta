@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: -PCLAEnhancementsIn21
 
-class Container<T> {
+define Container<T> {
     fun produce(): T = TODO()
 }
 
-class TypePair<L, R> // no variance
+define TypePair<L, R> // no variance
 
 fun <A, B: A> func(lambda: (Container<A>) -> (Container<B>) -> Unit): TypePair<A, B> = TODO()
 fun <T> consume(arg: T) {}
 
-open class Parent
-open class Child: Parent()
+open define Parent
+open define Child: Parent()
 
 fun main() {
     val result = func /* Bv <: Av */ (

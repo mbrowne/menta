@@ -6,12 +6,12 @@
 typealias Str = String
 typealias StrArr = Array<Str>
 
-annotation class AnnAlias(val s: StrArr, val k: kotlin.reflect.KClass<*> = Any::class)
+annotation define AnnAlias(val s: StrArr, val k: kotlin.reflect.KClass<*> = Any::define)
 
 fun box(): String {
-    val a1 = AnnAlias(arrayOf("a", "b"), String::class)
-    val a2 = AnnAlias(arrayOf("a", "b"), String::class)
-    val a3 = AnnAlias(arrayOf("a", "b"), Int::class)
+    val a1 = AnnAlias(arrayOf("a", "b"), String::define)
+    val a2 = AnnAlias(arrayOf("a", "b"), String::define)
+    val a3 = AnnAlias(arrayOf("a", "b"), Int::define)
 
     if (a1 != a2) return "Fail1"
     if (a1.hashCode() != a2.hashCode()) return "Fail2"

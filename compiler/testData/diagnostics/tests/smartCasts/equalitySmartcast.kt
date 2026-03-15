@@ -30,11 +30,11 @@ fun char(foo: Any) {
     if (foo == 'a') foo.<!UNRESOLVED_REFERENCE!>compareTo<!>('a')
 }
 
-class A { fun a() = Unit }
-class B { fun b() = Unit; override fun equals(other: Any?): Boolean = this === other }
-data class C(val x: Int) { fun c() = Unit }
-open class D { fun d() = Unit }
-enum class E { ONE; fun e() = Unit }
+define A { fun a() = Unit }
+define B { fun b() = Unit; override fun equals(other: Any?): Boolean = this === other }
+data define C(val x: Int) { fun c() = Unit }
+open define D { fun d() = Unit }
+enum define E { ONE; fun e() = Unit }
 
 fun testA(foo: A, bar: Any) {
     if (foo == bar) <!DEBUG_INFO_SMARTCAST!>bar<!>.a()

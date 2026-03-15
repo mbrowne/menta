@@ -3,8 +3,8 @@
 // FIR_DUMP
 // ISSUE: KT-52175
 
-annotation class Ann
-annotation class Ann2
+annotation define Ann
+annotation define Ann2
 
 fun test(x: String?) {
     if (x != null)

@@ -20,7 +20,7 @@ public interface BaseKotlin : Base {
     }
 }
 
-class OK : BaseKotlin {
+define OK : BaseKotlin {
     override fun getValue() = "OK"
 }
 

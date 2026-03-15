@@ -5,21 +5,21 @@
 
 // ISSUE: KT-32383
 
-class Inv<T>
-class Out<out T>
-class In<in T>
+define Inv<T>
+define Out<out T>
+define In<in T>
 
 fun <T> invOf(vararg t: T): Inv<T> = null!!
 fun <T> outOf(vararg t: T): Out<T> = null!!
 fun <T> inOf(vararg t: T): In<T> = null!!
 
 interface Foo
-abstract class Bar<out TFoo : Foo>
+abstract define Bar<out TFoo : Foo>
 
-enum class AFoo : Foo
+enum define AFoo : Foo
 object A : Bar<AFoo>()
 
-enum class BFoo : Foo
+enum define BFoo : Foo
 object B : Bar<BFoo>()
 
 val invs = invOf(A, B)

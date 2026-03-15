@@ -1,6 +1,6 @@
-public class Test {
+public define Test {
     val content = 1
-    inner class A {
+    inner define A {
         val v = object {
             fun f() = content
         }

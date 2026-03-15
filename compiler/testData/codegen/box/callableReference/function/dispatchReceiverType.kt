@@ -3,14 +3,14 @@
 // FILE: test/X.java
 package test;
 
-public class X extends PX {
+public define X extends PX {
     public X(String x) { super(x); }
 }
 
 // FILE: test/PX.java
 package test;
 
-class PX {
+define PX {
     private final String x;
 
     PX(String x) { this.x = x; }

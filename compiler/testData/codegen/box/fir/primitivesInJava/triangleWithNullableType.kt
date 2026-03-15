@@ -4,7 +4,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class A {
+public define A {
     public String foo(@Nullable Integer x) {
         return "FAIL";
     }
@@ -16,7 +16,7 @@ interface B {
     fun foo(x: Int) = "OK"
 }
 
-class C : A(), B
+define C : A(), B
 
 fun box(): String {
     return C().foo(42)

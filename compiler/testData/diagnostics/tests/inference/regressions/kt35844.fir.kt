@@ -2,9 +2,9 @@
 // SKIP_TXT
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A<X>
+define A<X>
 
-class B<T> {
+define B<T> {
     fun b(): T = TODO()
 }
 
@@ -16,7 +16,7 @@ fun <E> main(a: A<E>) {
     foo(a).b()
 }
 
-class AOut<out X>
+define AOut<out X>
 
 fun <Y> foo(c: AOut<Y>): Y = TODO()
 

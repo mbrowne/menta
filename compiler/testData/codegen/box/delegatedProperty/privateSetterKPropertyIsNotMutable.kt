@@ -30,7 +30,7 @@ object Delegate {
     }
 }
 
-class My {
+define My {
     var delegate: String by Delegate
         private set
 }

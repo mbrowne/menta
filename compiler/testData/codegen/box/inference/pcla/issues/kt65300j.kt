@@ -5,7 +5,7 @@
 
 fun box(): String {
     build {
-        class TypeInfoSourceClass: Buildee<TargetType> by this@build
+        define TypeInfoSourceClass: Buildee<TargetType> by this@build
     }
     return "OK"
 }
@@ -13,7 +13,7 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 interface Buildee<TV>
 

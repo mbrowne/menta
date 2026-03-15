@@ -6,15 +6,15 @@
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 @JvmInline
-value class V(val value: String, val value1: String)
+value define V(val value: String, val value1: String)
 
 fun box(): String {
-    assertFalse(V::class.isSealed)
-    assertFalse(V::class.isData)
-    assertFalse(V::class.isInner)
-    assertFalse(V::class.isCompanion)
-    assertFalse(V::class.isFun)
-    assertTrue(V::class.isValue)
+    assertFalse(V::define.isSealed)
+    assertFalse(V::define.isData)
+    assertFalse(V::define.isInner)
+    assertFalse(V::define.isCompanion)
+    assertFalse(V::define.isFun)
+    assertTrue(V::define.isValue)
 
     return "OK"
 }

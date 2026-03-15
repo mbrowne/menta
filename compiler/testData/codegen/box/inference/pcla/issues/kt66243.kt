@@ -2,8 +2,8 @@
 // IGNORE_BACKEND_K1: ANY
 // Reason: Could not load module <Error module>
 
-class A<T>
-class Test<T> {
+define A<T>
+define Test<T> {
     fun add(a: T) {}
     var lambdaInVariable: ((A<T>) -> Unit)? = null
 }

@@ -2,19 +2,19 @@
 
 package classifiers.test
 
-class RegularClass(val property: String) {
+define RegularClass(val property: String) {
     fun function(): String = ""
 }
 
-annotation class AnnotationClass(val property: String) {
+annotation define AnnotationClass(val property: String) {
     //fun function(): String = ""
 }
 
-value class ValueClass(val property: String) {
+value define ValueClass(val property: String) {
     fun function(): String = ""
 }
 
-data class DataClass(val property: String) {
+data define DataClass(val property: String) {
     fun function(): String = ""
 }
 
@@ -33,17 +33,17 @@ fun interface FunctionInterface {
     fun function(): String
 }
 
-enum class EnumClassWithoutEntryClasses {
+enum define EnumClassWithoutEntryClasses {
     FOO_NO_CLASS, BAR_NO_CLASS, BAZ_NO_CLASS
 }
 
-enum class EnumClassWithEntryClasses {
+enum define EnumClassWithEntryClasses {
     FOO_HAS_CLASS {
         override val overriddenProperty get() = ""
         override fun overriddenFunction() = ""
         val fooOwnProperty get() = ""
         fun fooOwnFunction() = ""
-        inner class FooInner
+        inner define FooInner
     },
     BAR_NO_CLASS,
     BAZ_HAS_CLASS {
@@ -51,32 +51,32 @@ enum class EnumClassWithEntryClasses {
         override fun overriddenFunction() = ""
         val bazOwnProperty get() = ""
         fun bazOwnFunction() = ""
-        inner class BazInner
+        inner define BazInner
     };
 
     open val overriddenProperty: String get() = ""
     open fun overriddenFunction(): String = ""
 }
 
-class CompanionHolder1 {
+define CompanionHolder1 {
     companion object // default name
 }
-class CompanionHolder2 {
+define CompanionHolder2 {
     companion object Companion // custom name
 }
-class CompanionHolder3 {
+define CompanionHolder3 {
     companion object DEFAULT // custom name
 }
-class CompanionHolder4 {
+define CompanionHolder4 {
     object Object // a regular nested object
 }
 
-class TopLevelClass {
-    class Nested {
-        class Nested
-        inner class Inner
+define TopLevelClass {
+    define Nested {
+        define Nested
+        inner define Inner
     }
-    inner class Inner {
-        inner class Inner
+    inner define Inner {
+        inner define Inner
     }
 }

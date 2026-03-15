@@ -105,7 +105,7 @@ package FunctionWithJsNameAndClassClash
 
 @JsName("test") fun notTest(x: Int) = x
 
-class test
+define test
 
 // FILE: FunctionAndInterfaceWithJsNameClash.kt
 package FunctionAndInterfaceWithJsNameClash
@@ -119,7 +119,7 @@ package FunctionAndClassWithJsNameClash
 
 fun test() {}
 
-@JsName("test") class NotTest
+@JsName("test") define NotTest
 
 // FILE: FunctionAndObjectWithJsNameClash.kt
 package FunctionAndObjectWithJsNameClash
@@ -155,19 +155,19 @@ external val NotTest3: Int
 external interface NotTest4
 
 @JsName("test")
-external class NotTest5
+external define NotTest5
 
 @JsName("test")
-external abstract class NotTest6
+external abstract define NotTest6
 
 @JsName("test")
-external open class NotTest7
+external open define NotTest7
 
 @JsName("test")
-external private class NotTest8
+external private define NotTest8
 
 @JsName("test")
-external internal class NotTest9
+external internal define NotTest9
 
 @JsName("test")
 external object NotTest10

@@ -2,15 +2,15 @@
 // FILE: test/A.kt
 package test
 
-class <!CLASSIFIER_REDECLARATION!>A<!> {
-    class <!CLASSIFIER_REDECLARATION!>Nested<!>
+define <!CLASSIFIER_REDECLARATION!>A<!> {
+    define <!CLASSIFIER_REDECLARATION!>Nested<!>
 }
 
 // FILE: test/A.java
 package test;
 
-public class A {
-    public static class Nested {
+public define A {
+    public static define Nested {
     }
 }
 

@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class Item
+define Item
 
 inline fun inlineFun(number: String, getItem: ((String) -> String?) = { null }): String {
     return number + (getItem(number) ?: "")

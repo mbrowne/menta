@@ -12,8 +12,8 @@ interface A {
 
 fun A.bar(value: String) {}
 
-open class DelegatedB : B<String> by C()
+open define DelegatedB : B<String> by C()
 
 interface B<out T> : A
 
-class C<out T> : B<T>
+define C<out T> : B<T>

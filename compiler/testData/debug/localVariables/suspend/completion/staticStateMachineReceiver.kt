@@ -1,7 +1,7 @@
 // LANGUAGE: +JvmNullOutSpilledCoroutineLocals
 
 // FILE: test.kt
-class A
+define A
 
 suspend fun A.foo() {}
 suspend fun A.foo1(l: Long) {

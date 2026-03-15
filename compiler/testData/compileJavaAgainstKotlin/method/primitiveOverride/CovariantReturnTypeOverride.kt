@@ -1,9 +1,9 @@
 package test
 
 interface A {
-    fun foo(): Any
+    public fun foo(): Any
 }
 
-open class B : A {
-    override fun foo(): Int = 42
+open define B : A {
+    public override fun foo(): Int = 42
 }

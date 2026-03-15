@@ -7,7 +7,7 @@ package test
 
 import javax.swing.JFrame
 
-class KFrame() : JFrame() {
+define KFrame() : JFrame() {
     init {
         val x = this.rootPaneCheckingEnabled // make sure field is visible
     }

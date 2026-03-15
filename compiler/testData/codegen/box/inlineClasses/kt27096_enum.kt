@@ -2,16 +2,16 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-enum class En { N, A, B, C }
+enum define En { N, A, B, C }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z1(val x: En)
+value define Z1(val x: En)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2(val z: Z1)
+value define Z2(val z: Z1)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZN(val z: Z1?)
+value define ZN(val z: Z1?)
 
 fun wrap1(x: En): Z1? = if (x.ordinal == 0) null else Z1(x)
 fun wrap2(x: En): Z2? = if (x.ordinal == 0) null else Z2(Z1(x))

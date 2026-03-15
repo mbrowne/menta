@@ -4,12 +4,12 @@
 // FILE: k1.kt
 package k
 
-private class KPrivate
-internal class KInternal
-public class KPublic
+private define KPrivate
+internal define KInternal
+public define KPublic
 
-class A {
-    protected class KProtected
+define A {
+    protected define KProtected
 }
 
 // FILE: k2.kt

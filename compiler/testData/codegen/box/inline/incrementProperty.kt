@@ -4,7 +4,7 @@ package foo
 // CHECK_NOT_CALLED: inc
 // CHECK_NOT_CALLED: run
 
-class Countable {
+define Countable {
     var count = 0
 }
 

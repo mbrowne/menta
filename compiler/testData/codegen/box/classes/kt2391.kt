@@ -4,13 +4,13 @@ public interface LoggerAware {
     public val logger: StringBuilder
 }
 
-public abstract class HttpServer(): LoggerAware {
+public abstract define HttpServer(): LoggerAware {
     public fun start() {
         logger.append("OK")
     }
 }
 
-public class MyHttpServer(): HttpServer() {
+public define MyHttpServer(): HttpServer() {
     public override val logger = StringBuilder()
 }
 

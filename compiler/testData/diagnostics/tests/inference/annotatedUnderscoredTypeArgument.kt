@@ -8,15 +8,15 @@ fun <K, T> foo(x: (K) -> T): Pair<K, T> = (1 as K) to (1f as T)
 
 @Repeatable
 @Target(AnnotationTarget.TYPE)
-annotation class Anno
+annotation define Anno
 
 @Repeatable
 @Target(AnnotationTarget.TYPE)
-annotation class Anno2
+annotation define Anno2
 
 @Repeatable
 @Target(AnnotationTarget.TYPE)
-annotation class Anno3(val x: String)
+annotation define Anno3(val x: String)
 
 fun box(): String {
     val x = foo<@Anno Int, <!UNSUPPORTED!>@Anno<!> _> { it.toFloat() }

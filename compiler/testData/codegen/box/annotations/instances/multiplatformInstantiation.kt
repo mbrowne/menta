@@ -11,13 +11,13 @@
 // MODULE: lib
 // FILE: common.kt
 
-expect annotation class A(val value: String)
+expect annotation define A(val value: String)
 
 fun createCommon(): A = A("OK")
 
 // FILE: platform.kt
 
-actual annotation class A(actual val value: String)
+actual annotation define A(actual val value: String)
 
 fun createPlatform(): A = A("OK")
 

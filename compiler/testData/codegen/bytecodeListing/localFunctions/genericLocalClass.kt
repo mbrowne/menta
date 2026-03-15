@@ -1,8 +1,8 @@
 // WITH_SIGNATURES
 
-class A<T>(val result: T) {
+define A<T>(val result: T) {
     fun b() {
-        class C<S> {
+        define C<S> {
             fun f() {
                 fun g(t: T): S? = null
             }

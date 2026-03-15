@@ -16,7 +16,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T, CT> {
+define TypeVariableOwner<T, CT> {
     fun constrain(subtypeValue: T) {}
     fun provide(): CT = null!!
 }
@@ -25,7 +25,7 @@ fun <OT> pcla(lambda: (TypeVariableOwner<OT, out OT>) -> Unit): OT = null!!
 
 interface BaseType
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun function() {}
 }
 

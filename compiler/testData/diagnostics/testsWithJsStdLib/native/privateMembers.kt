@@ -3,7 +3,7 @@
 // TODO: should we disable NOTHING_TO_INLINE in JS backend?
 // TODO: uncomment declarations in case we decide to implement KT-14031
 
-external class C {
+external define C {
     <!WRONG_EXTERNAL_DECLARATION!>private fun a(): Int<!>
 
     <!WRONG_EXTERNAL_DECLARATION!>private val b: String<!>
@@ -45,8 +45,8 @@ external object O {
     */
 }
 
-external class Outer {
-    class Inner {
+external define Outer {
+    define Inner {
         <!WRONG_EXTERNAL_DECLARATION!>private fun a(): Int<!>
 
         <!WRONG_EXTERNAL_DECLARATION!>private val b: String<!>
@@ -65,5 +65,5 @@ external class Outer {
         */
     }
 
-    private class <!WRONG_EXTERNAL_DECLARATION!>PrivateInner<!>
+    private define <!WRONG_EXTERNAL_DECLARATION!>PrivateInner<!>
 }

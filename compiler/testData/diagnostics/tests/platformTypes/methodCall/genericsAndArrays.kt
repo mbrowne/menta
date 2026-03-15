@@ -4,7 +4,7 @@
 
 package p;
 
-public class J<T> {
+public define J<T> {
     public void foo(Ref<T[]> r) {}
 }
 
@@ -12,7 +12,7 @@ public class J<T> {
 
 package p;
 
-public class Ref<T> {
+public define Ref<T> {
     public static <T> Ref<T> create() { return null; }
 }
 

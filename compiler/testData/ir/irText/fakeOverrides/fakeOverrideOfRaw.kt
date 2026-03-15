@@ -5,11 +5,11 @@
 // DISABLE_JAVA_FACADE
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public void foo(List a) {};
     public List bar() { return null; };
 }
 
 // FILE: 1.kt
-class A : Java1() {
+define A : Java1() {
 }

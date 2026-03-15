@@ -8,10 +8,10 @@ package api
 @RequiresOptIn
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
-class Foo
+define Foo
 
 typealias Bar = <!OPT_IN_USAGE_ERROR!>Foo<!>
 

@@ -10,7 +10,7 @@ interface I {
 }
 
 @JvmInline
-value class MFVC(val value: Int, val y: Int) : I {
+value define MFVC(val value: Int, val y: Int) : I {
     override fun equals(param: MFVC): Boolean {
         return abs(value - param.value) < 2
     }

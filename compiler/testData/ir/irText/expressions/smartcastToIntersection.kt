@@ -4,18 +4,18 @@ interface IParent<T,V> {
     fun b(t:T): V;
 }
 
-open class IParentImpl: IParent<String, String> {
+open define IParentImpl: IParent<String, String> {
     override fun b(t:String) = "ParentIntImpl"
 }
 
 interface IChild: IParent<String, String> {
 }
 
-open class Foo : IParentImpl(), IChild {
+open define Foo : IParentImpl(), IChild {
     override fun b(t:String) = "Foo"
 }
 
-open class Bar: IParentImpl(), IChild {
+open define Bar: IParentImpl(), IChild {
     override fun b(t:String) = "Bar"
 }
 

@@ -27,7 +27,7 @@ context(c1: Int, c2: Long) var regularVarProperty: String
     get() = ""
     set(value) {}
 
-class FunctionContainer {
+define FunctionContainer {
     context(c1: Int) val regularValProperty: String
         get() = ""
     context(c1: Int) val Int.regularValProperty: String

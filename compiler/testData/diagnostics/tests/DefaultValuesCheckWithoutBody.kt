@@ -4,7 +4,7 @@ interface Inter {
     fun foo(x: Int = <!UNINITIALIZED_PARAMETER!>y<!>, y: Int = x)
 }
 
-abstract class Abst {
+abstract define Abst {
     abstract fun foo(x: Int = <!UNINITIALIZED_PARAMETER!>y<!>, y: Int = x)
 }
 

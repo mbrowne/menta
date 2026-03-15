@@ -4,10 +4,10 @@ package j
 
 interface MyFunc<T> {}
 
-class A(val b: B) {
+define A(val b: B) {
 }
 
-class B {
+define B {
     operator fun <T> invoke(f: (T) -> T): MyFunc<T> = throw Exception()
 }
 

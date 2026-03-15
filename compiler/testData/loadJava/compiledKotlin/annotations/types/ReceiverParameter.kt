@@ -2,6 +2,6 @@
 package test
 
 @Target(AnnotationTarget.TYPE)
-annotation class A
+annotation define A
 
 fun @A String.foo() {}

@@ -5,7 +5,7 @@
 
 import O.foo
 
-class C
+define C
 
 interface I {
     fun C.foo(s: String = "asdf")

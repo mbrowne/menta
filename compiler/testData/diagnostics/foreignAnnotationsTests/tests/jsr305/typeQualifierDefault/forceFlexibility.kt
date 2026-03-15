@@ -83,7 +83,7 @@ public @interface ForceFlexibility {
 import spr.*;
 
 @NonNullApi
-public class A {
+public define A {
     public String foo(String x, @Nullable CharSequence y) {
         return "";
     }

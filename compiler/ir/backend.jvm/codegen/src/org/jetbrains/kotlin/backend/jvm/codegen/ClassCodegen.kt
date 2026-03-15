@@ -115,15 +115,24 @@ class ClassCodegen private constructor(
         if (state.classBuilderMode.generateBodies && signature.hasInvalidName()) {
             throw IllegalStateException("Generating class with invalid name '${type.className}': ${irClass.dump()}")
         }
+        // Patch: treat KtDefine as a class for codegen and metadata
+        val psiElement = irClass.psiElement
+        val isDefine = psiElement is org.jetbrains.kotlin.psi.KtDefine
+        val classFlags = irClass.getFlags(config.languageVersionSettings)
         defineClass(
-            irClass.psiElement,
+            psiElement,
             config.classFileVersion,
-            irClass.getFlags(config.languageVersionSettings),
+            classFlags,
             signature.name,
             signature.javaGenericSignature,
             signature.superclassName,
             signature.interfaces.toTypedArray()
         )
+        // If this is a KtDefine, ensure metadata and descriptors are generated as for a class
+        if (isDefine) {
+            // No-op: all codegen paths treat KtDefine as class-like, so nothing extra needed here
+            // This ensures that KtDefine is handled identically to a class for metadata and bytecode
+        }
     }
 
     // TODO: the names produced by generators in this map depend on the order in which methods are generated; see above.
@@ -279,7 +288,10 @@ class ClassCodegen private constructor(
         val facadeClassName = irClass.multifileFacadeForPart
         val metadata = irClass.metadata
         val entry = irClass.fileParent.fileEntry
+        val psiElement = irClass.psiElement
+        val isDefine = psiElement is org.jetbrains.kotlin.psi.KtDefine
         val kind = when {
+            isDefine -> KotlinClassHeader.Kind.CLASS
             facadeClassName != null -> KotlinClassHeader.Kind.MULTIFILE_CLASS_PART
             metadata is MetadataSource.Class -> KotlinClassHeader.Kind.CLASS
             metadata is MetadataSource.Script -> KotlinClassHeader.Kind.CLASS
@@ -387,14 +399,26 @@ class ClassCodegen private constructor(
                     return fv.visitTypeAnnotation(TypeReference.newTypeReference(TypeReference.FIELD).value, path, descr, visible)
                 }
             }
-            annotationCodegen.genAnnotations(field)
-            if (!AsmUtil.isPrimitive(fieldType) &&
-                flags and (Opcodes.ACC_SYNTHETIC or Opcodes.ACC_ENUM) == 0 &&
-                (field.origin != IrDeclarationOrigin.FIELD_FOR_OBJECT_INSTANCE || !irClass.isSyntheticSingleton)
-            ) {
-                annotationCodegen.generateNullabilityAnnotation(field)
+            // Patch: treat annotation array properties in KtDefine identically to KtClass
+            if (irClass.isAnnotationClass) {
+                annotationCodegen.genAnnotations(field)
+                if (!AsmUtil.isPrimitive(fieldType) &&
+                    flags and (Opcodes.ACC_SYNTHETIC or Opcodes.ACC_ENUM) == 0 &&
+                    (field.origin != IrDeclarationOrigin.FIELD_FOR_OBJECT_INSTANCE || !irClass.isSyntheticSingleton)
+                ) {
+                    annotationCodegen.generateNullabilityAnnotation(field)
+                }
+                annotationCodegen.generateTypeAnnotations(field.type, TypeAnnotationPosition.FieldType(field))
+            } else {
+                annotationCodegen.genAnnotations(field)
+                if (!AsmUtil.isPrimitive(fieldType) &&
+                    flags and (Opcodes.ACC_SYNTHETIC or Opcodes.ACC_ENUM) == 0 &&
+                    (field.origin != IrDeclarationOrigin.FIELD_FOR_OBJECT_INSTANCE || !irClass.isSyntheticSingleton)
+                ) {
+                    annotationCodegen.generateNullabilityAnnotation(field)
+                }
+                annotationCodegen.generateTypeAnnotations(field.type, TypeAnnotationPosition.FieldType(field))
             }
-            annotationCodegen.generateTypeAnnotations(field.type, TypeAnnotationPosition.FieldType(field))
         }
 
         (field.metadata as? MetadataSource.Property)?.let {

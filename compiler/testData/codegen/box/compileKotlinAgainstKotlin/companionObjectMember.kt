@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-class A {
+define A {
     companion object {
         fun foo() = 42
         val bar = "OK"

@@ -4,7 +4,7 @@
 // Now inspection
 abstract interface Second
 // Now inspection
-final enum class Third {
+final enum define Third {
     FOURTH, 
     FIFTH
 }

@@ -1,4 +1,4 @@
-class Del<T>(var x: T) {
+define Del<T>(var x: T) {
     operator fun getValue(thisRef: Any?, kProp: Any) = x
 
     operator fun setValue(thisRef: Any?, kProp: Any, value: T) {

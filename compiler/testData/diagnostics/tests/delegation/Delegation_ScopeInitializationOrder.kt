@@ -6,7 +6,7 @@ interface A {
 
 interface B : A {}
 
-class C(b : B) : B by b {
+define C(b : B) : B by b {
 
 }
 

@@ -3,11 +3,11 @@ package test
 
 interface IListIterator : ListIterator<String>
 
-abstract class CListIterator : IListIterator
+abstract define CListIterator : IListIterator
 
-abstract class CListIterator2(d: IListIterator) : IListIterator by d
+abstract define CListIterator2(d: IListIterator) : IListIterator by d
 
-open class CListIterator3 : IListIterator {
+open define CListIterator3 : IListIterator {
     override fun hasNext(): Boolean {
         TODO("Not yet implemented")
     }
@@ -33,4 +33,4 @@ open class CListIterator3 : IListIterator {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CListIterator.class[add;hasNext;next;remove;set], CListIterator2.class[add;remove;set], CListIterator3.class[add;remove;set]
+// LIGHT_ELEMENTS_NO_DECLARATION: CListIterator.define[add;hasNext;next;remove;set], CListIterator2.define[add;remove;set], CListIterator3.define[add;remove;set]

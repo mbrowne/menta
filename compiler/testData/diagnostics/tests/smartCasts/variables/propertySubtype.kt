@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class MyClass(var p: Any)
+define MyClass(var p: Any)
 
 fun bar(s: Any): Int {
     return s.hashCode()

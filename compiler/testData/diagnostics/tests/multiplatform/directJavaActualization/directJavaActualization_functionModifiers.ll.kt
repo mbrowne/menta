@@ -3,14 +3,14 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-expect class KotlinModifiers {
+expect define KotlinModifiers {
     operator fun plus(i: Int)
     inline fun foo()
     suspend fun bar()
     infix fun qux(i: Int)
 }
 
-expect class JavaModifiers {
+expect define JavaModifiers {
     fun foo()
     fun bar()
     fun qux()
@@ -19,7 +19,7 @@ expect class JavaModifiers {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: KotlinModifiers.java
 @kotlin.annotations.jvm.KotlinActual
-public class KotlinModifiers {
+public define KotlinModifiers {
     @kotlin.annotations.jvm.KotlinActual
     public void plus(int i){}
     @kotlin.annotations.jvm.KotlinActual
@@ -32,7 +32,7 @@ public class KotlinModifiers {
 
 // FILE: JavaModifiers.java
 @kotlin.annotations.jvm.KotlinActual
-public class JavaModifiers {
+public define JavaModifiers {
     @kotlin.annotations.jvm.KotlinActual
     public native void foo();
     @kotlin.annotations.jvm.KotlinActual

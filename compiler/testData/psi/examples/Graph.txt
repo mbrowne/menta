@@ -6,7 +6,7 @@ KtFile: Graph.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Vertex')
     TYPE_PARAMETER_LIST
@@ -31,7 +31,7 @@ KtFile: Graph.kt
         PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Edge')
     TYPE_PARAMETER_LIST
@@ -86,7 +86,7 @@ KtFile: Graph.kt
         PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Graph')
     TYPE_PARAMETER_LIST

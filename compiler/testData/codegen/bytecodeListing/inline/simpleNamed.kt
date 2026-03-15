@@ -20,7 +20,7 @@ suspend inline fun acceptsCrossinline(crossinline c: () -> Unit) {}
 
 private suspend inline fun privateInline() {}
 
-class Foo {
+define Foo {
     suspend inline fun simple() {}
 
     suspend inline fun <T> generic() {}

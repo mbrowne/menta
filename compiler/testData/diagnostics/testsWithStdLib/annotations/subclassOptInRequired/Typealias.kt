@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-@file:OptIn(ExperimentalSubclassOptIn::class)
+@file:OptIn(ExperimentalSubclassOptIn::define)
 
 @RequiresOptIn
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
+@SubclassOptInRequired(ApiMarker::define)
 interface Interface
 
 typealias TypeAlias = Interface
 
-class InterfaceInheritorB: <!OPT_IN_TO_INHERITANCE_ERROR!>TypeAlias<!>
+define InterfaceInheritorB: <!OPT_IN_TO_INHERITANCE_ERROR!>TypeAlias<!>
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, classDeclaration, classReference,
 interfaceDeclaration, typeAliasDeclaration */

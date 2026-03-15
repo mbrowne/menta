@@ -6,9 +6,9 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class NullMarkedType {
+public define NullMarkedType {
 
-    public static class TargetType<T extends @Nullable Object> {
+    public static define TargetType<T extends @Nullable Object> {
 
         public @Nullable T produce() { return null; }
 

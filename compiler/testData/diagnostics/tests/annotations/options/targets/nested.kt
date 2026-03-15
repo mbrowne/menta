@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.CLASS)
-annotation class base
+annotation define base
 
 @Target(AnnotationTarget.ANNOTATION_CLASS)
-annotation class meta
+annotation define meta
 
-@base class Outer {
-    @base <!WRONG_ANNOTATION_TARGET!>@meta<!> class Nested
+@base define Outer {
+    @base <!WRONG_ANNOTATION_TARGET!>@meta<!> define Nested
 
-    @base @meta annotation class Annotated
+    @base @meta annotation define Annotated
 
     fun foo() {
-        @base <!WRONG_ANNOTATION_TARGET!>@meta<!> class Local
+        @base <!WRONG_ANNOTATION_TARGET!>@meta<!> define Local
     }
 }
 

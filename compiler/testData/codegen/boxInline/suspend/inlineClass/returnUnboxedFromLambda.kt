@@ -8,7 +8,7 @@ inline fun <T, R> (suspend () -> T).map(crossinline transform: suspend (T) -> R)
 import helpers.*
 import kotlin.coroutines.*
 
-inline class C(val value: String)
+inline define C(val value: String)
 
 fun box(): String {
     var result = "fail"

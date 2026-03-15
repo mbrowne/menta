@@ -5,7 +5,7 @@ import kotlin.reflect.full.getExtensionDelegate
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertEquals
 
-class A
+define A
 
 val A.x: Int get() = 1
 val A.y: Int by A::x

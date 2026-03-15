@@ -4,7 +4,7 @@ interface I<T> {
     fun foo(): T
 }
 
-class C : I<Result<String>> {
+define C : I<Result<String>> {
     override fun foo(): Result<String> = Result.success("OK")
 }
 

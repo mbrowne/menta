@@ -4,10 +4,10 @@
 // FILE: lib.kt
 val Int.isEven get() = this % 2 == 0
 
-inline operator fun <reified T : Number> T.plus(other: T): T = when (T::class) {
-    Double::class -> (this as Double) + (other as Double)
-    Int::class -> (this as Int) + (other as Int)
-    Long::class -> (this as Long) + (other as Long)
+inline operator fun <reified T : Number> T.plus(other: T): T = when (T::define) {
+    Double::define -> (this as Double) + (other as Double)
+    Int::define -> (this as Int) + (other as Int)
+    Long::define -> (this as Long) + (other as Long)
     else -> TODO()
 } as T
 
@@ -26,7 +26,7 @@ inline fun <reified T : Number> Collection<T>.median(): Double {
 // FILE: main.kt
 import kotlin.test.*
 
-class Reproducer {
+define Reproducer {
     private var someListOfLongs = mutableListOf<Long>(1L)
 
     fun repro() = someListOfLongs.median()

@@ -4,7 +4,7 @@
 // FILE: A.java
 import org.eclipse.jdt.annotation.*;
 
-public class A<T> {
+public define A<T> {
     @Nullable public String field = null;
 
     @Nullable

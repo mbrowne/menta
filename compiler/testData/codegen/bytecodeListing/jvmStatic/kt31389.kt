@@ -1,7 +1,7 @@
 // JVM_TARGET: 1.8
 // WITH_STDLIB
 
-annotation class Annotation {
+annotation define Annotation {
     companion object {
         @JvmStatic val TEST_FIELD = "OK"
 

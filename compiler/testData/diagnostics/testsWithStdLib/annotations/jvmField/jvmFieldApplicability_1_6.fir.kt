@@ -7,10 +7,10 @@ fun foo() {
     <!WRONG_ANNOTATION_TARGET!>@kotlin.jvm.JvmField<!> val x = "A"
 }
 
-annotation class DemoAnnotation
+annotation define DemoAnnotation
 
 <!WRONG_ANNOTATION_TARGET!>@JvmField<!>
-abstract class C : I{
+abstract define C : I{
 
     <!WRONG_ANNOTATION_TARGET!>@kotlin.jvm.JvmField<!> constructor(s: String) {
     }
@@ -67,7 +67,7 @@ interface I {
         get() = 5
 }
 
-class G {
+define G {
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
     lateinit var lateInit: String
 
@@ -81,7 +81,7 @@ const val Const = 4
 @JvmField
 var i = 5
 
-class H {
+define H {
     companion object {
         @JvmField
         var c = 3
@@ -101,26 +101,26 @@ interface K {
     }
 }
 
-class KK : K {
+define KK : K {
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
     override val i: Int = 0
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
     override final val j: Int = 0
 }
 
-open class KKK : K {
+open define KKK : K {
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
     override val i: Int = 0
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
     override final val j: Int = 0
 }
 
-class JK(
+define JK(
     override val i: Int,
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!> override val j: Int,
 ) : K
 
-annotation class L {
+annotation define L {
     companion object {
         <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
         var c = 3
@@ -135,7 +135,7 @@ object O {
 <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
 private val private = 3
 
-inline class Foo(val x: Int)
+inline define Foo(val x: Int)
 
 object IObject {
     <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>

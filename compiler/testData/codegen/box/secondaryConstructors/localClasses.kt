@@ -1,11 +1,11 @@
-open class C(val grandParentProp: String)
+open define C(val grandParentProp: String)
 fun box(): String {
     var sideEffects: String = ""
     var parentSideEffects: String = ""
     val justForUsageInClosure = 7
     val justForUsageInParentClosure = "parentCaptured"
 
-    abstract class B : C {
+    abstract define B : C {
         val parentProp: String
         init {
             sideEffects += "minus-one#"
@@ -27,7 +27,7 @@ fun box(): String {
         }
     }
 
-    class A : B {
+    define A : B {
         var prop: String = ""
         init {
             sideEffects += prop + "first"

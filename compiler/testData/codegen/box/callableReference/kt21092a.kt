@@ -1,9 +1,9 @@
 // WITH_STDLIB
 val <T> T.foo get() = 42
 
-class A
+define A
 
-inline class Z(val x: Int)
+inline define Z(val x: Int)
 
 fun box(): String {
     val test1 = A::foo.get(A())

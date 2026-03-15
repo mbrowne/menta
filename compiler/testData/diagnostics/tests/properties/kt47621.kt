@@ -5,7 +5,7 @@
 // FILE: j/J.java
 package j;
 
-public class J {
+public define J {
     public int getX() { return 1; }
     protected void setX(int value) { throw new RuntimeException(); }
 }
@@ -13,7 +13,7 @@ public class J {
 // FILE: main.kt
 import j.*
 
-class C : J() {
+define C : J() {
     fun foo() {
         J()<!UNNECESSARY_SAFE_CALL!>?.<!><!INVISIBLE_SETTER!>x<!> = 1
     }

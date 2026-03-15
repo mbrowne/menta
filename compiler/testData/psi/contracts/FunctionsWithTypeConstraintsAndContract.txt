@@ -13,7 +13,7 @@ KtFile: FunctionsWithTypeConstraintsAndContract.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyClass')
   PsiWhiteSpace('\n\n')
@@ -23,7 +23,7 @@ KtFile: FunctionsWithTypeConstraintsAndContract.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyOtherClass')
   PsiWhiteSpace('\n\n')

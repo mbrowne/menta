@@ -13,13 +13,13 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 fun consumeAnyBuildee(value: Buildee<Any>) {}
 
-class ClassWithBoundedTypeParameter<T: Any>(val buildee: Buildee<T>)
+define ClassWithBoundedTypeParameter<T: Any>(val buildee: Buildee<T>)
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = TargetType() as TV
 }

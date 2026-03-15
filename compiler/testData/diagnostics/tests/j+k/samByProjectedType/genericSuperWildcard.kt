@@ -7,7 +7,7 @@ public interface EventListener<E> {
 }
 
 // FILE: A.java
-public class A {
+public define A {
     public void foo(EventListener<? super CharSequence> l) {
     }
 

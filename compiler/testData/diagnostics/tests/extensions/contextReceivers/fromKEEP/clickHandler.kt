@@ -3,8 +3,8 @@
 // LANGUAGE: +ContextReceivers
 // FIR_IDENTICAL
 
-class Button
-class ClickEvent
+define Button
+define ClickEvent
 
 typealias ClickHandler = context(Button) (ClickEvent) -> Unit
 

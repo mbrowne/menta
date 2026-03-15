@@ -4,7 +4,7 @@
 
 fun String.extension() {}
 
-class C {
+define C {
     fun String.memberExtension() {}
 }
 
@@ -17,6 +17,6 @@ fun C.testMemberExt() {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static String s() { return null; }
 }

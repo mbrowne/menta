@@ -2,7 +2,7 @@ package foo
 
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     inline operator fun getValue(t: Any?, p: KProperty<*>): String = p.name
 }
 

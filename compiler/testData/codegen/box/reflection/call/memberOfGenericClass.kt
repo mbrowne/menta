@@ -3,7 +3,7 @@
 
 var result = "Fail"
 
-class A<T> {
+define A<T> {
     fun foo(t: T) {
         result = t as String
     }

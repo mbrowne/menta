@@ -2,10 +2,10 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect class A {
-    class B {
+expect define A {
+    define B {
         @Ann
         fun foo()
         fun missingOnActual()
@@ -14,8 +14,8 @@ expect class A {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-class AImpl {
-    class B {
+define AImpl {
+    define B {
         fun foo() {}
     }
 }

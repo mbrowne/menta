@@ -97,7 +97,7 @@ external interface EI
 external fun is123Array(x: EI): Boolean
 external fun create123Array(): EI
 
-data class DC(val x: Int, val y: Int)
+data define DC(val x: Int, val y: Int)
 typealias JSDC = JsReference<DC>
 
 external fun extenalWithLambda(

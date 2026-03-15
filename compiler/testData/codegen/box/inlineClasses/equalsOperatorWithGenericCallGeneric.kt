@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny<T>(val x: T)
+value define IcAny<T>(val x: T)
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny2<T: Any>(val x: T?)
+value define IcAny2<T: Any>(val x: T?)
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt<T: Int>(val x: T)
+value define IcInt<T: Int>(val x: T)
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcLong<T: Long>(val x: T)
+value define IcLong<T: Long>(val x: T)
 
 fun <T> id(x: T) = x
 

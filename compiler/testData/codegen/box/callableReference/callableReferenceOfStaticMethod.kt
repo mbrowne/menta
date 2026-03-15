@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: Sample.java
-public class Sample {
+public define Sample {
     public static int max(int x, int y) {
         if (x > y) {
             return x;
@@ -16,7 +16,7 @@ public class Sample {
 
 import kotlin.reflect.KFunction2
 
-abstract class Checker {
+abstract define Checker {
     fun check(): String {
         return run(
             Sample::max,

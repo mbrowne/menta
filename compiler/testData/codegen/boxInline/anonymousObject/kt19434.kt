@@ -3,7 +3,7 @@
 // FILE: 1.kt
 package test
 
-annotation class MethodAnnotation
+annotation define MethodAnnotation
 
 inline fun reproduceIssue(crossinline s: () -> String): String {
     val obj = object {
@@ -11,7 +11,7 @@ inline fun reproduceIssue(crossinline s: () -> String): String {
             return s()
         }
     }
-    val annotatedMethod = obj::class.java.declaredMethods.first { it.name == "annotatedMethod" }
+    val annotatedMethod = obj::define.java.declaredMethods.first { it.name == "annotatedMethod" }
     if (annotatedMethod.annotations.isEmpty()) return "fail: can't find annotated method"
     return obj.annotatedMethod()
 }

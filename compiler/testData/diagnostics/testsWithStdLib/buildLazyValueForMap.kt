@@ -19,7 +19,7 @@ fun JavaAnnotationOwner.buildLazyValueForMap() = lazy {
     annotations.associateBy { it.classId?.hashCode() }
 }
 
-abstract class BinaryJavaMethodBase(): MapBasedJavaAnnotationOwner {
+abstract define BinaryJavaMethodBase(): MapBasedJavaAnnotationOwner {
     override val annotationsByFqNameHash by buildLazyValueForMap()
 }
 

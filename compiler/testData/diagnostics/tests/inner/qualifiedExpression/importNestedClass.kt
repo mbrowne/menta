@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: a.kt
-class A {
-    class B {
-        class C
+define A {
+    define B {
+        define C
     }
 }
 

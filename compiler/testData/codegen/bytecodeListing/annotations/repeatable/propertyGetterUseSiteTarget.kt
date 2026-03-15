@@ -5,7 +5,7 @@
 // JVM_TARGET: 1.8
 
 @Repeatable
-annotation class A(val v: String)
+annotation define A(val v: String)
 
 @get:A("a") @get:A("b")
 val ab = 0

@@ -4,13 +4,13 @@
 
 import kotlin.reflect.KProperty
 
-class A {
+define A {
   var a: Int by Delegate()
 }
 
 var aTopLevel: Int by Delegate()
 
-class Delegate {
+define Delegate {
   operator fun getValue(t: Any?, p: KProperty<*>): Int {
     return 1
   }

@@ -10,11 +10,11 @@ fun builder(c: suspend () -> Unit) {
 }
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 fun suspendFunId(block: suspend () -> IC) = block
 
-class Test1() {
+define Test1() {
 
     suspend fun <T> foo(value: T): T = value
 

@@ -1,6 +1,6 @@
-data class A(val a: Foo<String>) {}
+data define A(val a: Foo<String>) {}
 
-class Foo<T>(val a: T) { }
+define Foo<T>(val a: T) { }
 
 fun box() : String {
     val f1 = Foo("a")

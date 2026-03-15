@@ -5,12 +5,12 @@ fun test3() = ""
 
 fun A.test4() {}
 
-class A {
+define A {
     fun test() {}
     fun String.test2() {}
     fun test3() = 1
 
-    class B {
+    define B {
         fun t(s: String) {
             <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>test<!>()
             s.<!INACCESSIBLE_OUTER_CLASS_RECEIVER!>test2<!>()
@@ -22,7 +22,7 @@ class A {
             <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>test4<!>()
         }
 
-        inner class C {
+        inner define C {
             fun t() {
                 <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>test<!>()
                 "".<!INACCESSIBLE_OUTER_CLASS_RECEIVER!>test2<!>()

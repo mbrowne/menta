@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class AtomicRef<T>(val value: T)
+define AtomicRef<T>(val value: T)
 
 inline fun <F : Segment<F>> AtomicRef<F>.findSegmentAndMoveForward(createNewSegment: (prev: F?) -> F) = null
 
@@ -17,9 +17,9 @@ interface Queue<Q> {
 
 private fun <C> createSegment(prev: OneElementSegment<C>?) = OneElementSegment<C>()
 
-class OneElementSegment<O>() : Segment<OneElementSegment<O>>()
+define OneElementSegment<O>() : Segment<OneElementSegment<O>>()
 
-abstract class Segment<S : Segment<S>>
+abstract define Segment<S : Segment<S>>
 
 /* GENERATED_FIR_TAGS: callableReference, classDeclaration, funWithExtensionReceiver, functionDeclaration,
 functionalType, inline, interfaceDeclaration, nullableType, primaryConstructor, propertyDeclaration, typeConstraint,

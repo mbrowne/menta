@@ -2,8 +2,8 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VALUE -ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE
 
-class Outer<T> {
-    inner class Inner
+define Outer<T> {
+    inner define Inner
     fun foo(x: Outer<String>.Inner, y: <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer<!>.Inner, z: Inner) {
         var inner = Inner()
         x.checkType { <!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>_<!><Inner>() }
@@ -14,7 +14,7 @@ class Outer<T> {
         inner = <!TYPE_MISMATCH!>x<!>
     }
 
-    class Nested
+    define Nested
     fun bar(x: Outer.Nested) {
         var nested = Nested()
         nested = x

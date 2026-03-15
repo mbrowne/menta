@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class J implements Sized {
+public define J implements Sized {
     final public int getSize() { return 123; }
 }
 
@@ -14,7 +14,7 @@ interface Sized {
     val size: Int
 }
 
-class A<T> : J(), Collection<T> {
+define A<T> : J(), Collection<T> {
     override fun isEmpty(): Boolean {
         throw UnsupportedOperationException()
     }

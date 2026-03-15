@@ -28,7 +28,7 @@ public interface Sam extends Serializable {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static String plusK(String s) {
         return s + "K";
     }

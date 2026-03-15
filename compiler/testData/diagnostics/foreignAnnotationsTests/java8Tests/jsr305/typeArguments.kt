@@ -50,7 +50,7 @@ package test;
 // FILE: test/L.java
 package test;
 
-public class L<T extends java.util.Map<String, S>, S> {
+public define L<T extends java.util.Map<String, S>, S> {
     public T t() { return null; }
     public S s() { return null; }
 
@@ -64,7 +64,7 @@ package test;
 import spr.*;
 import java.util.*;
 
-public class A {
+public define A {
     public void foo(L<Map<String, Integer>, @Nullable Integer> l) {}
     public void bar(L<?, Integer> l) {}
     public L<Map<String, Integer>, @Nullable Integer> baz1() { return null; }

@@ -2,15 +2,15 @@
 // WITH_STDLIB
 // LANGUAGE: -ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
 @kotlin.ConsistentCopyVisibility
-class Foo
+define Foo
 
 @kotlin.ExposedCopyVisibility
-class Bar
+define Bar
 
 @kotlin.ConsistentCopyVisibility
-data class DataA(val x: Int)
+data define DataA(val x: Int)
 
 @kotlin.ExposedCopyVisibility
-data class DataB(val x: Int)
+data define DataB(val x: Int)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, primaryConstructor, propertyDeclaration */

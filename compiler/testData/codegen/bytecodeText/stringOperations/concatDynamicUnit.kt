@@ -1,5 +1,5 @@
 // JVM_TARGET: 11
-data class A(val x: Unit)
+data define A(val x: Unit)
 
 fun test(): Unit {}
 
@@ -9,7 +9,7 @@ interface B<T> {
     }
 }
 
-class Foo : B<Unit> {
+define Foo : B<Unit> {
 
 }
 
@@ -19,7 +19,7 @@ fun box(): String {
     val test = "Test ${a.component1()} ${test()} ${Foo().test()}"
     return "OK"
 }
-// one in data class `toString` and one in `box` method
+// one in data define `toString` and one in `box` method
 // 2 INVOKEDYNAMIC makeConcatWithConstants
 // 1 makeConcatWithConstants\(Lkotlin/Unit;\)
 // 1 makeConcatWithConstants\(Lkotlin/Unit;Lkotlin/Unit;Lkotlin/Unit;\)

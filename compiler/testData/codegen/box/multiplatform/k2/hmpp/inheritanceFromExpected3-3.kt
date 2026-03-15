@@ -1,47 +1,47 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect open class LibClass1() {
+expect open define LibClass1() {
     open fun foo(): String
     fun bar()
 }
 
-class LibClassDefault1 : LibClass1() {
+define LibClassDefault1 : LibClass1() {
     override fun foo(): String = "default1"
 }
 
-expect open class LibClass2() {
+expect open define LibClass2() {
     open fun foo(): String
     fun bar()
 }
-class LibClassDefault2 : LibClass2() {
+define LibClassDefault2 : LibClass2() {
     override fun foo(): String = "default2"
 }
 
 // MODULE: lib-inter()()(lib-common)
-expect open class LibInterClass() {
+expect open define LibInterClass() {
     open fun foo(): String
     fun bar()
 }
 
-class LibInterClassDefault : LibInterClass() {
+define LibInterClassDefault : LibInterClass() {
     override fun foo(): String = "idefault1"
 }
 
-actual open class LibClass1 {
+actual open define LibClass1 {
     actual open fun foo(): String = "1"
     actual fun bar() {}
     fun baz() {}
 }
 
 // MODULE: lib-platform()()(lib-inter)
-actual open class LibClass2 {
+actual open define LibClass2 {
     actual open fun foo(): String = "2"
     actual fun bar() {}
     fun baz() {}
 }
 
-actual open class LibInterClass {
+actual open define LibInterClass {
     actual open fun foo(): String = "3"
     actual fun bar() {}
     fun baz() {}

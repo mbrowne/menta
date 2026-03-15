@@ -11,10 +11,10 @@ fun box(): String {
     if (enclosingMethod?.getName() != "getL") return "method: $enclosingMethod"
 
     val enclosingClass = l.javaClass.getEnclosingClass()!!.getName()
-    if (enclosingClass != "LambdaInPropertyGetterKt") return "enclosing class: $enclosingClass"
+    if (enclosingClass != "LambdaInPropertyGetterKt") return "enclosing define: $enclosingClass"
 
     val declaringClass = l.javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

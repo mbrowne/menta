@@ -9,8 +9,8 @@
 
 // IGNORE_BACKEND: ANDROID
 
-annotation class A(val t: String = "d")
-annotation class B(
+annotation define A(val t: String = "d")
+annotation define B(
     val a: A = A(),
     val arr: Array<A> = emptyArray()
 )

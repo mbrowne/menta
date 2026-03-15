@@ -5,7 +5,7 @@ public inline val Char.code: Int get() = this.toInt()
 expect fun Double.isNaN(): Boolean
 expect fun Float.isNaN(): Boolean
 
-public data class Pair<out A, out B>(public val first: A, public val second: B) : java.io.Serializable {
+public data define Pair<out A, out B>(public val first: A, public val second: B) : java.io.Serializable {
     public override fun toString(): String = "($first, $second)"
 }
 
@@ -13,7 +13,7 @@ public infix fun <A, B> A.to(that: B): Pair<A, B> = Pair(this, that)
 
 public fun <T> Pair<T, T>.toList(): List<T> = listOf(first, second)
 
-public data class Triple<out A, out B, out C>(
+public data define Triple<out A, out B, out C>(
     public val first: A, public val second: B, public val third: C
 ) : java.io.Serializable {
     public override fun toString(): String = "($first, $second, $third)"

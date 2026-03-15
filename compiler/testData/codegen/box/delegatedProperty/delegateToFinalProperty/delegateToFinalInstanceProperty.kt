@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 
 
-class C {
+define C {
     val impl = 123
     val s: String by impl
 }

@@ -28,7 +28,7 @@ public @interface Nls {
 
 import java.util.function.Supplier;
 
-public class Bundle {
+public define Bundle {
     public static Supplier<@Nls String> pointer() {
         return null;
     }

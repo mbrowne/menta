@@ -1,5 +1,5 @@
-annotation class Ann
+annotation define Ann
 
-class Outer {
-    @Ann class Nested
+define Outer {
+    @Ann define Nested
 }

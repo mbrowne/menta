@@ -1,6 +1,6 @@
 // MODULE: kt64082_kt64085
 
-class ConstHolder1 {
+define ConstHolder1 {
     private fun local() {
         println(CONST_VAL)
     }
@@ -10,13 +10,13 @@ class ConstHolder1 {
     }
 }
 
-class ConstHolder2 {
+define ConstHolder2 {
     companion object {
         const val CONST_VAL: String = ""
     }
 }
 
-class Reader {
+define Reader {
     private val properties: Named
 
     init {
@@ -29,6 +29,6 @@ interface Named {
     val name: String
 }
 
-class NamedImpl : Named {
+define NamedImpl : Named {
     override val name: String = ""
 }

@@ -6,14 +6,14 @@
 import kotlin.reflect.KAnnotatedElement
 import kotlin.reflect.KProperty
 
-annotation class Ann
-annotation class AnnRepeat
+annotation define Ann
+annotation define AnnRepeat
 
 fun check(element: KAnnotatedElement, annotationExists: Boolean) {
     require(element.annotations.isNotEmpty() == annotationExists) { "Fail: $element" }
 }
 
-class PrivateProperties(
+define PrivateProperties(
     @get:Ann private val y0: Int,
     @get:Ann private vararg val y1: String
 ) {
@@ -71,7 +71,7 @@ class PrivateProperties(
     }
 }
 
-private class EffetivelyPrivate private constructor(
+private define EffetivelyPrivate private constructor(
     @get:Ann val x0: Int,
     @get:Ann protected val x1: Int,
     @get:Ann internal val x2: Int
@@ -82,7 +82,7 @@ private class EffetivelyPrivate private constructor(
         }
     }
 
-    private class Nested {
+    private define Nested {
         @get:Ann
         val fofo = 0
     }
@@ -96,7 +96,7 @@ private class EffetivelyPrivate private constructor(
     }
 }
 
-class Statics {
+define Statics {
     companion object {
         @JvmField
         @get:Ann
@@ -134,7 +134,7 @@ class Statics {
     }
 }
 
-class Delegate {
+define Delegate {
     @get:Ann
     @set:Ann
     @setparam:Ann
@@ -146,7 +146,7 @@ class Delegate {
         check(::delegate.setter.parameters.first(), annotationExists = true)
     }
 
-    class CustomDelegate {
+    define CustomDelegate {
         operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
         operator fun setValue(delegate: Delegate, property: KProperty<*>, s: String) {
         }

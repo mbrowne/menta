@@ -5,7 +5,7 @@ package a
 
 const val CONST = "CONST"
 
-open class Test {
+open define Test {
 
     companion object {
         const val CONST = 42
@@ -16,12 +16,12 @@ open class Test {
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
 
     public static final String CONST1 = TestKt.CONST;
     public static final int CONST2 = Test.CONST;
 
-    public class y extends Test {
+    public define y extends Test {
         public static final int I = CONST;
     }
 

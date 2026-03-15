@@ -4,7 +4,7 @@
 // LANGUAGE: +ContextSensitiveResolutionUsingExpectedType
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static JavaClass INSTANCE = new JavaClass();
 
     public static String foo4(JavaClass j) {
@@ -17,19 +17,19 @@ public class JavaClass {
 }
 
 // FILE: main.kt
-enum class MyEnum {
+enum define MyEnum {
     OK
 }
 
 fun foo1(m: MyEnum): String = m.name
 
-sealed class MySealed {
+sealed define MySealed {
     data object Ok : MySealed()
 }
 
 fun foo2(m: MySealed): String = m.toString()
 
-class MyClass {
+define MyClass {
     companion object {
         val INSTANCE = MyClass()
     }

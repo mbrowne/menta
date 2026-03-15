@@ -16,7 +16,7 @@ interface KInterface: Simple {
     }
 }
 
-class Test : KInterface {
+define Test : KInterface {
 
 }
 

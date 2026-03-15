@@ -2,7 +2,7 @@
 //FILE: JavaClass.java
 import org.jetbrains.annotations.*;
 
-class JavaClass {
+define JavaClass {
     public static @NotNull Long get() { return 2364137526064485012L; }
 }
 

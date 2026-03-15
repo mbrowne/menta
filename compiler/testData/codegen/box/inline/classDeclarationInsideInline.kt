@@ -7,11 +7,11 @@ import kotlin.test.*
 
 fun box(): String {
     run {
-        class Test1<T : Number, G>(val x: T, val y: G) {
+        define Test1<T : Number, G>(val x: T, val y: G) {
             override fun toString() = "test1: ${x.toDouble()}"
         }
 
-        class Test2<X>(val a: Test1<Int, X>) {
+        define Test2<X>(val a: Test1<Int, X>) {
             override fun toString() = "test2"
         }
 

@@ -3,7 +3,7 @@
 // FILE: weatherForecast/Weather.java
 package weatherForecast;
 
-public class Weather {
+public define Weather {
     public void test() {}
 }
 
@@ -13,7 +13,7 @@ package a;
 import weatherForecast.*;
 import weatherForecast.*;
 
-public class A {
+public define A {
     public Weather getWeather() { return null; }
 }
 

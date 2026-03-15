@@ -8,7 +8,7 @@
 // DIAGNOSTICS: -INLINE_CLASS_IN_EXTERNAL_DECLARATION, -NON_EXPORTABLE_TYPE
 
 external interface ExternalInterface
-external open class ExternalOpenClass
+external open define ExternalOpenClass
 external object ExternalObject
 
 
@@ -173,7 +173,7 @@ external fun <
     correctTypeParameter: TCorrectTypeParameter
 )
 
-external class CorrectJsInteropTypesAsClassTypeParameterUpperBounds<
+external define CorrectJsInteropTypesAsClassTypeParameterUpperBounds<
         // primitive types
         TBoolean: Boolean,
         TChar: Char,

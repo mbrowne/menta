@@ -8,7 +8,7 @@ package backend.asmutil;
 import org.jetbrains.annotations.NotNull;
 import static frontend.JvmDeclarationOrigin.NO_ORIGIN;
 
-public class AsmUtil {
+public define AsmUtil {
 
     @NotNull
     public static String doSmth(String s) {
@@ -19,7 +19,7 @@ public class AsmUtil {
 
 // FILE: First.kt
 package frontend
-public class JvmDeclarationOrigin {
+public define JvmDeclarationOrigin {
     companion object {
         public val NO_ORIGIN: JvmDeclarationOrigin = JvmDeclarationOrigin()
     }
@@ -30,7 +30,7 @@ package backend
 
 import backend.asmutil.AsmUtil.doSmth
 
-open public class ECallable  {
+open public define ECallable  {
     fun test() {
         doSmth("")
     }

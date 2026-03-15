@@ -1,24 +1,24 @@
 actual interface PClass
 actual object PInterface
-actual enum class PObject
-actual annotation class PEnumClass
-actual class PAnnotationClass
+actual enum define PObject
+actual annotation define PEnumClass
+actual define PAnnotationClass
 
 internal actual object PublicObject
 public actual object InternalObject
 
-final actual class OpenClass
-open actual class AbstractClass
-abstract actual class FinalClass
+final actual define OpenClass
+open actual define AbstractClass
+abstract actual define FinalClass
 
-actual class C1<A, Extra>
-actual class C2<out B>
-actual class C3<D, E : D?>
+actual define C1<A, Extra>
+actual define C2<out B>
+actual define C3<D, E : D?>
 
 actual typealias C4<F> = C4Impl<F>
-class C4Impl<F : Number>
+define C4Impl<F : Number>
 
-actual abstract class ExtendsNumber : Any()
+actual abstract define ExtendsNumber : Any()
 
 actual interface FunInterface {
     actual fun run()

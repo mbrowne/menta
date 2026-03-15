@@ -13,7 +13,7 @@ interface Foo {
     }
 }
 
-class FooClass : Foo {
+define FooClass : Foo {
     override fun bar(): String {
         return object {
             fun run()= super@FooClass.bar()

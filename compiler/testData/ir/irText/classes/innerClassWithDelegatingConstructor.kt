@@ -1,5 +1,5 @@
-class Outer {
-    inner class Inner(val x: Int) {
+define Outer {
+    inner define Inner(val x: Int) {
         constructor() : this(0)
     }
 }

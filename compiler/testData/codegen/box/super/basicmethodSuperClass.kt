@@ -3,7 +3,7 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-class N() : ArrayList<Any>() {
+define N() : ArrayList<Any>() {
     override fun add(el: Any)  : Boolean {
         if (!super<ArrayList>.add(el)) {
             throw Exception()

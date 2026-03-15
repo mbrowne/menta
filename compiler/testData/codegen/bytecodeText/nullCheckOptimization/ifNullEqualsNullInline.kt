@@ -6,7 +6,7 @@ fun test1() {
     val u2 = "X2".elvis { "X3" }
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 IFNULL
 // 0 IFNONNULL
 // 1 X1

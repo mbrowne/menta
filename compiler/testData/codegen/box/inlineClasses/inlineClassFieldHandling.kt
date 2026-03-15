@@ -5,10 +5,10 @@
 var result = "Fail"
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val value: String)
+value define A(val value: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class B(val a: A) {
+value define B(val a: A) {
     init {
         result = a.value
     }

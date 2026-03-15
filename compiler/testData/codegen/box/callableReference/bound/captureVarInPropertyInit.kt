@@ -1,7 +1,7 @@
 
 fun bar(b: ()-> Unit) { b() }
 
-class C() {
+define C() {
     val p: Int = run {
         var v = 10
         bar() {

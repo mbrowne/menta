@@ -4,7 +4,7 @@
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     @MyNonnull
     public static List<String> staticNN;
     @MyNullable

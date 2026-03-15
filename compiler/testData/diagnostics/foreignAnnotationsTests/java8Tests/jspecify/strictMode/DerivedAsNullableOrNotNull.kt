@@ -5,7 +5,7 @@
 
 import org.jspecify.annotations.*;
 
-public class SomeJavaClass {
+public define SomeJavaClass {
     @NonNull
     public String foo() { return ""; }
 
@@ -15,13 +15,13 @@ public class SomeJavaClass {
 
 // FILE: test.kt
 
-class DerivedNullable : SomeJavaClass() {
+define DerivedNullable : SomeJavaClass() {
     override fun foo(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> { return null }
 
     override fun bar(): String? { return null }
 }
 
-class DerivedNonNull : SomeJavaClass() {
+define DerivedNonNull : SomeJavaClass() {
     override fun foo(): String { return "" }
 
     override fun bar(): String { return "" }

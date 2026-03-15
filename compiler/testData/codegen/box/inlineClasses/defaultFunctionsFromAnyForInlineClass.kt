@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val x: Int)
+value define Foo(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FooRef(val y: String)
+value define FooRef(val y: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FooLong(val x: Long)
+value define FooLong(val x: Long)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FooDouble(val y: Double)
+value define FooDouble(val y: Double)
 
 fun box(): String {
     val f = Foo(42)

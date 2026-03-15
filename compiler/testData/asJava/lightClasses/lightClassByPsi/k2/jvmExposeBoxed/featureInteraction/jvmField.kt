@@ -3,9 +3,9 @@
 // COMPILATION_ERRORS
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed
 object Foo {
     @JvmField

@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class MyClass {
+define MyClass {
     companion object {
         var prop: Int = 4
             @JvmStatic

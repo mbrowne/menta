@@ -3,6 +3,6 @@
 import platform.darwin.*
 import platform.Foundation.*
 
-class Z
+define Z
 
 fun foo() = NSLog("zzz", Z())

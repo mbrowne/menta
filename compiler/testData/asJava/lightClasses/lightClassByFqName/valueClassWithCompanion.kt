@@ -5,7 +5,7 @@
 package pack
 
 @JvmInline
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     companion object {
         @JvmStatic
         fun unwrap(s: StringWrapper): String = s.s

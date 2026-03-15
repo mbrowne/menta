@@ -3,9 +3,9 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-inline class UInt(val x: Int)
+inline define UInt(val x: Int)
 
-inline class UIntArray(private val storage: IntArray) : Collection<UInt> {
+inline define UIntArray(private val storage: IntArray) : Collection<UInt> {
     public override val size: Int get() = storage.size
 
     override operator fun iterator() = TODO()

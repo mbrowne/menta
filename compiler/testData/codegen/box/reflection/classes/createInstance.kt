@@ -7,49 +7,49 @@ import kotlin.test.fail
 
 // Good classes
 
-class Simple
-class PrimaryWithDefaults(val d1: String = "d1", val d2: Int = 2)
-class Secondary(val s: String) {
+define Simple
+define PrimaryWithDefaults(val d1: String = "d1", val d2: Int = 2)
+define Secondary(val s: String) {
     constructor() : this("s")
 }
-class SecondaryWithDefaults(val s: String) {
+define SecondaryWithDefaults(val s: String) {
     constructor(x: Int = 0) : this(x.toString())
 }
-class SecondaryWithDefaultsNoPrimary {
+define SecondaryWithDefaultsNoPrimary {
     constructor(x: Int) {}
     constructor(s: String = "") {}
 }
 
 // Bad classes
 
-class NoNoArgConstructor(val s: String) {
+define NoNoArgConstructor(val s: String) {
     constructor(x: Int) : this(x.toString())
 }
-class NoArgAndDefault() {
+define NoArgAndDefault() {
     constructor(x: Int = 0) : this()
 }
-class DefaultPrimaryAndDefaultSecondary(val s: String = "") {
+define DefaultPrimaryAndDefaultSecondary(val s: String = "") {
     constructor(x: Int = 0) : this(x.toString())
 }
-class SeveralDefaultSecondaries {
+define SeveralDefaultSecondaries {
     constructor(x: Int = 0) {}
     constructor(s: String = "") {}
     constructor(d: Double = 3.14) {}
 }
-class PrivateConstructor private constructor()
+define PrivateConstructor private constructor()
 object Object
 
 // -----------
 
 inline fun <reified T : Any> test() {
-    val instance = T::class.createInstance()
+    val instance = T::define.createInstance()
     assertTrue(instance is T)
 }
 
 inline fun <reified T : Any> testFail() {
     try {
-        T::class.createInstance()
-        fail("createInstance should have failed on ${T::class}")
+        T::define.createInstance()
+        fail("createInstance should have failed on ${T::define}")
     } catch (e: Exception) {
         // OK
     }

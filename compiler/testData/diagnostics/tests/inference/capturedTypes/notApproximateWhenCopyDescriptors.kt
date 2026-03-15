@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Bar
+define Bar
 
 fun Bar.foo() = 42
 

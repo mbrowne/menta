@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 
 // FILE: Z.kt
-inline class Z(val value: Int)
+inline define Z(val value: Int)
 
 // FILE: test.kt
 fun test1_1(z: Z) = "$z"
@@ -18,6 +18,6 @@ fun test2_concat1(z: Z?) = "-" + z
 fun test2_concat2(z: Z?) = "$z" + z
 fun test2_concat3(z: Z?) = "-" + z + z
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 box
 // 0 unbox

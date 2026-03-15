@@ -2,16 +2,16 @@
 // LIBRARY_PLATFORMS: JVM
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed
-class Foo {
+define Foo {
     companion object {
         @JvmStatic
         fun foo(): StringWrapper = StringWrapper("OK")
     }
 }
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: Foo.class[foo]
-// LIGHT_ELEMENTS_NO_DECLARATION: Foo.class[foo-K4fyztM;foo-K4fyztM], StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: Foo.define[foo]
+// LIGHT_ELEMENTS_NO_DECLARATION: Foo.define[foo-K4fyztM;foo-K4fyztM], StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

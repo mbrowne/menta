@@ -8,11 +8,11 @@ public fun <@kotlin.internal.OnlyInputTypes T> Iterable<T>.contains1(element: T)
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 public fun <@kotlin.internal.OnlyInputTypes T> Iterable<T>.foo(element: T): T = null!!
 
-class Inv<T>
-class Inv2<T, R>
+define Inv<T>
+define Inv2<T, R>
 
-class In<in T>
-class Out<out T>
+define In<in T>
+define Out<out T>
 
 // -------------------------------------------------------
 

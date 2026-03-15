@@ -1,5 +1,5 @@
 @Target(AnnotationTarget.TYPEALIAS)
-annotation class Anno
+annotation define Anno
 
 @Anno
 typealias Foo = String

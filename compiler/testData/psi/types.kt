@@ -1,6 +1,6 @@
 package test
 
-abstract class Types {
+abstract define Types {
     val nullable: Int? = null
     abstract val list: List<Int>
     abstract val map: Map<Int, Int>

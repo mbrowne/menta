@@ -4,7 +4,7 @@
 // ISSUE: KT-66793
 
 // FILE: J.java
-public class J {
+public define J {
   public static String[] getArray() {
     String[] res = {"a", "b"};
     return res;

@@ -4,10 +4,10 @@
 
 import kotlin.reflect.KProperty1
 
-class TestClass(var prop: Int)
-open class OtherClass
+define TestClass(var prop: Int)
+open define OtherClass
 fun OtherClass.test(prop: KProperty1<TestClass, Int>): Unit = throw Exception()
-class OtherClass2: OtherClass() {
+define OtherClass2: OtherClass() {
     val result = test(TestClass::<!UNRESOLVED_REFERENCE!>result<!>)
 }
 

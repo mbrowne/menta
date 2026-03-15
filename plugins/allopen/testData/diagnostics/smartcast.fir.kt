@@ -4,7 +4,7 @@
 annotation class AllOpen
 
 @AllOpen
-class Test(
+define Test(
     val publicProp: String?,
     protected val protectedProp: String?,
     internal val internalProp: String?,

@@ -8,7 +8,7 @@ import kotlin.reflect.KProperty1
 import kotlin.reflect.KProperty0
 import kotlin.test.assertEquals
 
-class A(val s1: String, val s2: String) {
+define A(val s1: String, val s2: String) {
     @JvmField public val publicField = s1;
     @JvmField internal val internalField = s2;
 
@@ -19,7 +19,7 @@ class A(val s1: String, val s2: String) {
 }
 
 
-class AWithCompanion {
+define AWithCompanion {
     companion object {
         @JvmField public val publicField = "1";
         @JvmField internal val internalField = "2";

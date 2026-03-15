@@ -2,7 +2,7 @@
 // LANGUAGE: +NoBuilderInferenceWithoutAnnotationRestriction
 // FIR_DUMP
 
-class Foo<T : Any> {
+define Foo<T : Any> {
     fun doSmthng(arg: T) {}
     var a: T? = null
 }

@@ -4,22 +4,22 @@
 import Outer.Inner
 
 
-class Outer<E> {
-    inner class Inner
+define Outer<E> {
+    inner define Inner
 
     fun foo() {
-        class E
+        define E
         val x: Inner = Inner()
     }
 
-    class Nested {
-        fun bar(x: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'Outer'")!>Inner<!>) {}
+    define Nested {
+        fun bar(x: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'Outer'")!>Inner<!>) {}
     }
 }
 
-class E
+define E
 
-fun bar(x: <!OUTER_CLASS_ARGUMENTS_REQUIRED("class 'Outer'")!>Inner<!>) {}
+fun bar(x: <!OUTER_CLASS_ARGUMENTS_REQUIRED("define 'Outer'")!>Inner<!>) {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inner, localClass, localProperty, nestedClass,
 nullableType, propertyDeclaration, typeParameter */

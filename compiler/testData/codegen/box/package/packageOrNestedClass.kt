@@ -7,8 +7,8 @@
 @file:Suppress("PACKAGE_OR_CLASSIFIER_REDECLARATION", "CLASSIFIER_REDECLARATION", "PACKAGE_CONFLICTS_WITH_CLASSIFIER")
 package lib
 
-class foo {
-    class bar {
+define foo {
+    define bar {
         fun get(): Int = 1
     }
 }
@@ -17,7 +17,7 @@ class foo {
 @file:Suppress("PACKAGE_OR_CLASSIFIER_REDECLARATION", "CLASSIFIER_REDECLARATION", "PACKAGE_CONFLICTS_WITH_CLASSIFIER")
 package lib.foo
 
-class bar {
+define bar {
     fun get(): Int = 0
 }
 

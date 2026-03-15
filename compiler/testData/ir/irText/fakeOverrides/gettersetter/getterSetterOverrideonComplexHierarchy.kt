@@ -8,7 +8,7 @@ public interface Java1  {
 }
 
 // FILE: Java2.java
-public class Java2  {
+public define Java2  {
     private int a = 0;
     public int getA(){
         return 1;
@@ -40,36 +40,36 @@ public interface Java4 extends KotlinInterface {}
 public interface Java5  extends Java3 { }
 
 // FILE: 1.kt
-abstract class A : Java1, Java2(), KotlinInterface // Kotlin ← Java1, Java2, Kotlin2
+abstract define A : Java1, Java2(), KotlinInterface // Kotlin ← Java1, Java2, Kotlin2
 
-class B :  Java1, Java2(), KotlinInterface {
+define B :  Java1, Java2(), KotlinInterface {
     override var b: Boolean = false
         get() = true
 }
 
-class C(override var b: Boolean) : Java2(), KotlinInterface, KotlinInterface2 { // Kotlin ← Java, Kotlin1, Kotlin2
+define C(override var b: Boolean) : Java2(), KotlinInterface, KotlinInterface2 { // Kotlin ← Java, Kotlin1, Kotlin2
     override fun isB(): Boolean {
         return true
     }
 }
 
-abstract class D : Java1, Java2(), Java3    //Kotlin ← Java1, Java2, Java3
+abstract define D : Java1, Java2(), Java3    //Kotlin ← Java1, Java2, Java3
 
-class E : Java1, Java2(), Java3 {
+define E : Java1, Java2(), Java3 {
     override fun setA(t: Any?) { }
 }
 
-abstract class F : Java2(), Java4    //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define F : Java2(), Java4    //Kotlin ← Java1, Java2 ← Kotlin2
 
-class G(override var b: Boolean) : Java2(), Java4 {
+define G(override var b: Boolean) : Java2(), Java4 {
     override fun getA(): Int {
         return 10
     }
 }
 
-abstract class H : Java4, KotlinInterface2 // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define H : Java4, KotlinInterface2 // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class I : Java4, KotlinInterface2{
+define I : Java4, KotlinInterface2{
     override var b: Boolean = false
         get() = true
         set(value) {
@@ -77,15 +77,15 @@ class I : Java4, KotlinInterface2{
         }
 }
 
-abstract class J : KotlinInterface3, Java2()    //Kotlin ← Java, Kotlin2 ← Java2
+abstract define J : KotlinInterface3, Java2()    //Kotlin ← Java, Kotlin2 ← Java2
 
-class K : KotlinInterface3, Java2() {
+define K : KotlinInterface3, Java2() {
     override fun setA(t: Any?) {}
 }
 
-abstract class L : Java2(), Java5   //Kotlin ← Java1, Java2 ← Java3
+abstract define L : Java2(), Java5   //Kotlin ← Java1, Java2 ← Java3
 
-class M : Java2(), Java5 {
+define M : Java2(), Java5 {
     override fun setA(t: Any) { }
 }
 

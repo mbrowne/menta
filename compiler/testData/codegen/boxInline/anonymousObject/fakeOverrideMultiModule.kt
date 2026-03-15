@@ -4,7 +4,7 @@
 // FILE: lib.kt
 package lib
 
-open class C {
+open define C {
     fun o() = "O"
     val k = "K"
 }

@@ -15,4 +15,4 @@ fun test() =
         .collect(Collectors.toList())
 
 // 4 INVOKEDYNAMIC
-// 0 class StreamApiKt\$test\$
+// 0 define StreamApiKt\$test\$

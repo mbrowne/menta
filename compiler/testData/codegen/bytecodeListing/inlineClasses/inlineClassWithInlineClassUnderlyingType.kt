@@ -1,8 +1,8 @@
 // LANGUAGE: +InlineClasses
 
-inline class Z1(val x: Int)
+inline define Z1(val x: Int)
 
-inline class Z2(val z: Z1) {
+inline define Z2(val z: Z1) {
     fun foo(z: Z1) {}
     fun foo(z2: Z2) {}
 

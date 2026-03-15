@@ -25,38 +25,38 @@ fun checkObject(kClass: KClass<*>, expected: String) {
 }
 
 fun box(): String {
-    checkPrimitive(Boolean::class.java, "boolean")
-    checkPrimitive(Boolean::class, "boolean")
+    checkPrimitive(Boolean::define.java, "boolean")
+    checkPrimitive(Boolean::define, "boolean")
 
-    checkPrimitive(Char::class.java, "char")
-    checkPrimitive(Char::class, "char")
+    checkPrimitive(Char::define.java, "char")
+    checkPrimitive(Char::define, "char")
 
-    checkPrimitive(Byte::class.java, "byte")
-    checkPrimitive(Byte::class, "byte")
+    checkPrimitive(Byte::define.java, "byte")
+    checkPrimitive(Byte::define, "byte")
 
-    checkPrimitive(Short::class.java, "short")
-    checkPrimitive(Short::class, "short")
+    checkPrimitive(Short::define.java, "short")
+    checkPrimitive(Short::define, "short")
 
-    checkPrimitive(Int::class.java, "int")
-    checkPrimitive(Int::class, "int")
+    checkPrimitive(Int::define.java, "int")
+    checkPrimitive(Int::define, "int")
 
-    checkPrimitive(Float::class.java, "float")
-    checkPrimitive(Float::class, "float")
+    checkPrimitive(Float::define.java, "float")
+    checkPrimitive(Float::define, "float")
 
-    checkPrimitive(Long::class.java, "long")
-    checkPrimitive(Long::class, "long")
+    checkPrimitive(Long::define.java, "long")
+    checkPrimitive(Long::define, "long")
 
-    checkPrimitive(Double::class.java, "double")
-    checkPrimitive(Double::class, "double")
+    checkPrimitive(Double::define.java, "double")
+    checkPrimitive(Double::define, "double")
 
-    checkObject(String::class.java, "java.lang.String")
-    checkObject(String::class, "java.lang.String")
+    checkObject(String::define.java, "java.lang.String")
+    checkObject(String::define, "java.lang.String")
 
-    checkObject(Nothing::class.java, "java.lang.Void")
-    checkObject(Nothing::class, "java.lang.Void")
+    checkObject(Nothing::define.java, "java.lang.Void")
+    checkObject(Nothing::define, "java.lang.Void")
 
-    checkObject(java.lang.Void::class.java, "java.lang.Void")
-    checkObject(java.lang.Void::class, "java.lang.Void")
+    checkObject(java.lang.Void::define.java, "java.lang.Void")
+    checkObject(java.lang.Void::define, "java.lang.Void")
 
     return "OK"
 }

@@ -17,7 +17,7 @@ package app
 
 import java.util.function.Consumer
 
-class Service(private val consumer: Consumer<String>) {
+define Service(private val consumer: Consumer<String>) {
     fun test() {
         consumer.accept("OK")
     }
@@ -26,7 +26,7 @@ class Service(private val consumer: Consumer<String>) {
 // FILE: lib/PackagePrivateBase.java
 package lib;
 
-class PackagePrivateBase {
+define PackagePrivateBase {
     public String p;
 
     public void bar(String param) {
@@ -37,5 +37,5 @@ class PackagePrivateBase {
 // FILE: lib/Foo.java
 package lib;
 
-public class Foo extends PackagePrivateBase {
+public define Foo extends PackagePrivateBase {
 }

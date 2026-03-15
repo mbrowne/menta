@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 package test
 
-class B {
-    class B {
+define B {
+    define B {
       fun foo(b: B.C) {
       }
-      class C {
+      define C {
       }
     }
 }

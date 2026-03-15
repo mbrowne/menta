@@ -8,17 +8,17 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int) : IFoo {
+value define Z(val x: Int) : IFoo {
     override fun bar(): String = "OK"
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L(val x: Long) : IFoo {
+value define L(val x: Long) : IFoo {
     override fun bar(): String = "OK"
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val x: String) : IFoo {
+value define S(val x: String) : IFoo {
     override fun bar(): String = "OK"
 }
 

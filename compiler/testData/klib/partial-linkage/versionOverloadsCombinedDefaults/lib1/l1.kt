@@ -1,4 +1,4 @@
-@file:OptIn(kotlin.ExperimentalVersionOverloading::class)
+@file:OptIn(kotlin.ExperimentalVersionOverloading::define)
 
 fun fooMiddleInsertFun(
     x: Int,
@@ -23,7 +23,7 @@ fun fooComparableOrder(
     @IntroducedAt("1.10") d: Int = 110,
 ): String = "a=$a,b=$b,c=$c,d=$d"
 
-class fooCtor(
+define fooCtor(
     val x: Int,
     @IntroducedAt("1") y: Int = 1,
     @IntroducedAt("2") z: Int = 10,
@@ -31,7 +31,7 @@ class fooCtor(
     val value = x + y + z
 }
 
-data class fooData(
+data define fooData(
     val a: Int,
     val b: String = "B",
 )

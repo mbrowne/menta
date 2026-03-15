@@ -5,8 +5,8 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Clazz {
-    class Nested
+expect define Clazz {
+    define Nested
 
     fun memberFun()
     val memberProp: Clazz
@@ -16,11 +16,11 @@ expect interface Interface
 
 expect object Object
 
-expect annotation class Annotation
+expect annotation define Annotation
 
-expect enum class Enum
+expect enum define Enum
 
-expect class ActualTypealias
+expect define ActualTypealias
 
 expect fun function()
 
@@ -28,8 +28,8 @@ expect val property: Clazz
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class Clazz {
-    actual class Nested
+actual define Clazz {
+    actual define Nested
 
     actual fun memberFun() {}
     actual val memberProp: Clazz = null!!
@@ -39,13 +39,13 @@ actual interface Interface
 
 actual object Object
 
-actual annotation class Annotation
+actual annotation define Annotation
 
-actual enum class Enum
+actual enum define Enum
 
 actual typealias ActualTypealias = ActualTypealiasImpl
 
-class ActualTypealiasImpl
+define ActualTypealiasImpl
 
 actual fun function() {}
 

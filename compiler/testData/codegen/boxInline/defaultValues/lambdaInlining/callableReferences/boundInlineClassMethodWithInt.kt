@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-inline class C(val x: Int) {
+inline define C(val x: Int) {
     fun f() = x.toString()
 }
 

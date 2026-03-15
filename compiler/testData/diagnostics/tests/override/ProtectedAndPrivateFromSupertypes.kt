@@ -10,11 +10,11 @@ interface B {
     val a: String
 }
 
-open class C {
+open define C {
     private val a: String = ""
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class Subject<!> : C(), A, B {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define Subject<!> : C(), A, B {
     val c = a
 }
 

@@ -5,20 +5,20 @@
 
 // FILE: Test.java
 
-class Test {
+define Test {
     static <T> T foo(T x) { return x; }
 }
 
 // FILE: main.kt
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R1> build(block: TestInterface<R1>.() -> Unit) {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R2> build2(block: TestInterface<R2>.() -> Unit) {}
 
-class Out<out K>
+define Out<out K>
 
 interface TestInterface<R> {
     fun emit(r: R)

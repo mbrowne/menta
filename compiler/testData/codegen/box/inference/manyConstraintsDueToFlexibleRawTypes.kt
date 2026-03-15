@@ -4,7 +4,7 @@
 import java.util.Collection;
 import java.util.Collections;
 
-public class MySettings<
+public define MySettings<
         SS extends MySettings<SS, PS, L>,
         PS extends MyComparableSettings,
         L extends MySettingsListener<PS>
@@ -20,10 +20,10 @@ public class MySettings<
 }
 
 // FILE: MyComparableSettings.java
-public abstract class MyComparableSettings implements Comparable<MyComparableSettings> {}
+public abstract define MyComparableSettings implements Comparable<MyComparableSettings> {}
 
 // FILE: MySettingsListener.java
-public abstract class MySettingsListener<S extends MyComparableSettings> {}
+public abstract define MySettingsListener<S extends MyComparableSettings> {}
 
 // FILE: test.kt
 

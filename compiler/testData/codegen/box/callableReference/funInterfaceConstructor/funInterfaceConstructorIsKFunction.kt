@@ -13,5 +13,5 @@ fun box(): String {
     return if (kr is KFunction<*>)
         "OK"
     else
-        "Failed: kr is ${kr::class}"
+        "Failed: kr is ${kr::define}"
 }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 
-private class Foo {
+private define Foo {
     fun method() {}
 }
 
@@ -17,7 +17,7 @@ public fun f() {
     }
     i.foo = 1
 
-    class LocalClass {
+    define LocalClass {
         internal var foo = 0
     }
     LocalClass().foo = 1

@@ -10,7 +10,7 @@
  * control--and-data-flow-analysis, performing-analysis-on-the-control-flow-graph, variable-initialization-analysis -> paragraph 2 -> sentence 3
  */
 
-enum class Direction {
+enum define Direction {
     NORTH, SOUTH, WEST, EAST
 }
 

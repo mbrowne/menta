@@ -1,5 +1,5 @@
-open class Bar<T>(val prop: String)
-class Foo {
+open define Bar<T>(val prop: String)
+define Foo {
     companion object : Bar<Foo>("OK") {
         val p = Foo.prop
         val p2 = prop

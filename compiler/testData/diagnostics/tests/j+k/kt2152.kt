@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 //FILE: Bbb.kt
-open class Bbb
+open define Bbb
 
 //FILE: Ccc.java
-public class Ccc extends Bbb {
+public define Ccc extends Bbb {
 }
 
 //FILE: Ddd.kt

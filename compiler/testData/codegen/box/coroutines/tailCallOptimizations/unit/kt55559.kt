@@ -10,7 +10,7 @@ import kotlin.coroutines.intrinsics.*
 var globalContinuation: Continuation<Long>? = null
 var testResult: Any = "NONE"
 
-class Foo {
+define Foo {
     suspend fun bar1() {
         foo()
     }

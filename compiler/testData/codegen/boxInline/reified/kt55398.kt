@@ -9,10 +9,10 @@ import kotlin.reflect.KProperty
 interface Base {
 }
 
-class BaseImpl : Base {
+define BaseImpl : Base {
 }
 
-class ObjectContainer {
+define ObjectContainer {
 }
 
 typealias ObjectContainerProvider = () -> ObjectContainer?
@@ -21,7 +21,7 @@ internal inline fun <reified T : Base> ObjectContainerProvider.extensionFun(): R
 
     return object : ReadOnlyProperty<Any, T> {
         val emptyProxy: T by lazy {
-            T::class.java.getDeclaredConstructor().newInstance()
+            T::define.java.getDeclaredConstructor().newInstance()
         }
 
         override fun getValue(thisRef: Any, property: KProperty<*>): T = emptyProxy
@@ -32,7 +32,7 @@ internal inline fun <reified T : Base> ObjectContainerProvider.extensionFun(): R
 // FILE: 2.kt
 import test.*
 
-class DefaultObjectContainerProvider : ObjectContainerProvider {
+define DefaultObjectContainerProvider : ObjectContainerProvider {
     val baseImpl: BaseImpl by extensionFun<BaseImpl>()
 
     override fun invoke(): ObjectContainer? {

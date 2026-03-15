@@ -6,4 +6,4 @@ package kotlin
  */
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-public annotation class CompileTimeCalculation
+public annotation define CompileTimeCalculation

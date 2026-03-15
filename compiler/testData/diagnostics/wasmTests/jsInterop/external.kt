@@ -6,24 +6,24 @@
 
 // Classes
 
-external class C1
+external define C1
 
-external enum class <!WRONG_EXTERNAL_DECLARATION!>C2<!>
+external enum define <!WRONG_EXTERNAL_DECLARATION!>C2<!>
 
-external annotation class <!WRONG_EXTERNAL_DECLARATION!>C3<!>
+external annotation define <!WRONG_EXTERNAL_DECLARATION!>C3<!>
 
-external data class <!WRONG_EXTERNAL_DECLARATION!>C4(val x: String)<!>
+external data define <!WRONG_EXTERNAL_DECLARATION!>C4(val x: String)<!>
 
-external class C5 {
+external define C5 {
 
-    class C6
+    define C6
 
-    inner class <!WRONG_EXTERNAL_DECLARATION!>C7<!>
+    inner define <!WRONG_EXTERNAL_DECLARATION!>C7<!>
 }
 
-external inline class <!WRONG_EXTERNAL_DECLARATION!>C8(val x: Int)<!>
+external inline define <!WRONG_EXTERNAL_DECLARATION!>C8(val x: Int)<!>
 
-external value class <!WRONG_EXTERNAL_DECLARATION!>C9(val x: Int)<!>
+external value define <!WRONG_EXTERNAL_DECLARATION!>C9(val x: Int)<!>
 
 
 // Interfaces
@@ -57,4 +57,4 @@ external fun foo1(): Int
 
 
 // Property parameters
-external class C(x: Int, val y: String)
+external define C(x: Int, val y: String)

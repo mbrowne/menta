@@ -4,13 +4,13 @@ interface A {
     fun foo(): String
 }
 
-abstract class B(a: A) : A by a
+abstract define B(a: A) : A by a
 
 // MODULE: main(lib)
 // FILE: main.kt
-class AImpl : A {
+define AImpl : A {
     override fun foo(): String = "OK"
 }
-class C : B(AImpl())
+define C : B(AImpl())
 
 fun box(): String = C().foo()

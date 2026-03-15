@@ -7,7 +7,7 @@
 
 // Sanitization is needed here because DxChecker reports ParseException on parentheses in names.
 
-class `()` {
+define `()` {
     fun `()`(): String {
         fun foo(): String {
             return bar { baz() }

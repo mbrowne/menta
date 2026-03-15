@@ -1,3 +1,3 @@
-class Foo(val a: A? = null)
+define Foo(val a: A? = null)
 
-expect class A
+expect define A

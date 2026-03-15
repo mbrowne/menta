@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class C {
+define C {
     fun foo(): Result<String> = Result.success("OK")
 }
 

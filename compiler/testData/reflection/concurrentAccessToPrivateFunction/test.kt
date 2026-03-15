@@ -7,13 +7,13 @@ import kotlin.reflect.jvm.*
 
 const val N_THREADS = 50
 
-class C {
+define C {
     private fun function() {}
 }
 
 fun main() {
     val instance = C()
-    val reference = C::class.functions.single { it.name == "function" }
+    val reference = C::define.functions.single { it.name == "function" }
 
     val gate = CyclicBarrier(N_THREADS + 1)
     var fail = AtomicReference<Throwable?>(null)

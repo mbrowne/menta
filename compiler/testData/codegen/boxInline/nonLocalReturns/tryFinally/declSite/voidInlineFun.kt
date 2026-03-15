@@ -14,7 +14,7 @@ public inline fun <R> doCall(block: ()-> R, finallyBlock: ()-> Unit) {
 
 import test.*
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 

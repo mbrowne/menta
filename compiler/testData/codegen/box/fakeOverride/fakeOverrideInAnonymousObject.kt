@@ -3,7 +3,7 @@ interface JPanel {
     val result: String
 }
 
-open class ActivePanel : JPanel {
+open define ActivePanel : JPanel {
     override var result: String = ""
 
     fun fire(event: String) {
@@ -11,7 +11,7 @@ open class ActivePanel : JPanel {
     }
 }
 
-class Test {
+define Test {
     val panel: JPanel
 
     init {

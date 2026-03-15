@@ -2,7 +2,7 @@
 // WASM_MUTE_REASON: STDLIB_COLLECTION_INHERITANCE
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
-class A : ArrayList<String>()
+define A : ArrayList<String>()
 
 fun box(): String {
     val a = A()

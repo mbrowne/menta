@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 // FILE: A.java
-public class A {
+public define A {
     public String getS4ClassRepresentation() { return ""; }
 }
 

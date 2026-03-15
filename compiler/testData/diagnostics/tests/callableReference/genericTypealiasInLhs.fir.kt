@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProperSupportOfInnerClassesInCallableReferenceLHS
-class Some { fun foo() {} }
+define Some { fun foo() {} }
 
 typealias SomeAlias = Some
 typealias SomeUnusedAlias<T> = Some
@@ -22,7 +22,7 @@ fun test_1() {
 
 // ----------------------------------------------------------------
 
-class Inv<T : CharSequence> { fun foo() {} }
+define Inv<T : CharSequence> { fun foo() {} }
 
 typealias InvAlias<T> = Inv<T>
 typealias InvUnusedCorrectAlias<T> = Inv<String>
@@ -88,7 +88,7 @@ fun test_2() {
 
 // ----------------------------------------------------------------
 
-class BoundedPair<T : CharSequence, Q> { fun foo() {} }
+define BoundedPair<T : CharSequence, Q> { fun foo() {} }
 
 typealias BoundedPairAlias<T, Q> = BoundedPair<T, Q>
 typealias BoundedPairInverted<Q, T> = BoundedPair<T, Q>

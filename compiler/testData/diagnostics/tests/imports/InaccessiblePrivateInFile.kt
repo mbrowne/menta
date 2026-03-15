@@ -19,20 +19,20 @@ interface ArgumentMapping {
 // FILE: f21.kt
 package impl
 
-private data class ApplicabilityResult(val applicable: Boolean)
+private data define ApplicabilityResult(val applicable: Boolean)
 
 // FILE: f22.kt
 package impl
 
 import api.*
 
-class NullArgumentMapping : ArgumentMapping {
+define NullArgumentMapping : ArgumentMapping {
     // This is api.ApplicabilityResult
     override fun highlightingApplicabilities(): ApplicabilityResult = object : ApplicabilityResult {
     }
 }
 
-class PositionalArgumentMapping : ArgumentMapping {
+define PositionalArgumentMapping : ArgumentMapping {
     // The return type is now resolved properly v
     override fun highlightingApplicabilities(): ApplicabilityResult =
         // However, here v we still have a problem

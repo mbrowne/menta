@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class Bar {
+define Bar {
     context(a: Int)
     operator fun invoke(): String {
         return "context(Int) Bar.invoke "
@@ -13,7 +13,7 @@ operator fun Bar.invoke(): String {
     return "context(String) Bar.invoke "
 }
 
-class Foo {
+define Foo {
     val foo = Bar()
 
     fun test(): String {

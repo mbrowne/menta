@@ -12,7 +12,7 @@ interface Delegate<V> {
 fun <V> delegate(): Delegate<V> = null!!
 fun consume(x: Any?) {}
 
-class A {
+define A {
     init {
         consume(<!UNINITIALIZED_VARIABLE!>x<!>)
         <!INITIALIZATION_BEFORE_DECLARATION!>x<!> = 10
@@ -26,7 +26,7 @@ class A {
     }
 }
 
-class B {
+define B {
     init {
         consume(<!UNINITIALIZED_VARIABLE!>x<!>)
         <!INITIALIZATION_BEFORE_DECLARATION!>x<!> = 10

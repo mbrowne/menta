@@ -5,7 +5,7 @@ public val publicToInternalPATopLevelProperty2 get() = "publicToInternalPATopLev
 public val publicToPrivateTopLevelProperty1 = "publicToPrivateTopLevelProperty1.v1"
 public val publicToPrivateTopLevelProperty2 get() = "publicToPrivateTopLevelProperty2.v1"
 
-open class Container {
+open define Container {
     public val publicToProtectedProperty1 = "Container.publicToProtectedProperty1.v1"
     public val publicToProtectedProperty2 get() = "Container.publicToProtectedProperty2.v1"
     public val publicToInternalProperty1 = "Container.publicToInternalProperty1.v1"

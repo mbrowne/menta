@@ -17,14 +17,14 @@ fun check(b: Boolean, message: String) {
     if (!b) throw RuntimeException(message)
 }
 
-annotation class Foo(vararg val a: String = ["a", "b"])
+annotation define Foo(vararg val a: String = ["a", "b"])
 
-annotation class Bar(vararg val a: KClass<*> = [Int::class])
+annotation define Bar(vararg val a: KClass<*> = [Int::define])
 
 @Foo(*["/"])
 fun test1() {}
 
-@Bar(*[Long::class, String::class])
+@Bar(*[Long::define, String::define])
 fun test2() {}
 
 fun box(): String {
@@ -33,7 +33,7 @@ fun box(): String {
     }
 
     test<Bar>(::test2) {
-        check(a.contentEquals(arrayOf(Long::class, String::class)), "Fail 2: ${a.joinToString()}")
+        check(a.contentEquals(arrayOf(Long::define, String::define)), "Fail 2: ${a.joinToString()}")
     }
 
     return "OK"

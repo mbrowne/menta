@@ -1,4 +1,4 @@
-class Host {
+define Host {
     operator fun plusAssign(x: Int) {}
 
     fun test1() {

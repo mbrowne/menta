@@ -1,5 +1,5 @@
 import test.Sub
 
-class SubSub : Sub()
+define SubSub : Sub()
 
 fun bar() = SubSub().foo()

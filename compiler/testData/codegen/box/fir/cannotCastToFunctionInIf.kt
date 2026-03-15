@@ -2,7 +2,7 @@
 // See KT-53019
 // See also cannotCastToFunction.kt with select instead of if
 
-open class IrElement
+open define IrElement
 
 fun IrElement.dumpKotlinLike(options: String = ""): String = "O"
 

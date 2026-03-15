@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class Some {
+enum define Some {
     A {
         override fun foo(s: () -> String): String {
             return s() + s()

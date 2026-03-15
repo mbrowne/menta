@@ -5,9 +5,9 @@
 @RequiresOptIn
 @Target(AnnotationTarget.CLASS, AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-annotation class Internal
+annotation define Internal
 
-enum class Foo {
+enum define Foo {
     Bar,
     @Internal
     Deprecated,
@@ -18,7 +18,7 @@ enum class Foo {
 }
 
 @Internal
-enum class Baz {
+enum define Baz {
     Bar
 }
 

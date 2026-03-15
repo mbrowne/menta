@@ -5,7 +5,7 @@ fun <T> T.id() = this
 
 fun someSideEffect(value: Any?) = {}
 
-class A {
+define A {
     val a = ""
     fun b() = ""
     fun withParameters(a: Int, b: String) = ""

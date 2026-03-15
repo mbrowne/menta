@@ -2,26 +2,26 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-open class A {
-    class NC {}
-    inner class IC {}
+open define A {
+    define NC {}
+    inner define IC {}
     interface NI {}
 }
 
 interface I {
-    class NC {}
+    define NC {}
     interface NI {}
 }
 
-class B : A() {
+define B : A() {
 
 }
 
-class C : I {
+define C : I {
 
 }
 
-class D : A(), I {
+define D : A(), I {
 
 }
 

@@ -6,7 +6,7 @@
 // FILE: Java1.java
 import org.jetbrains.annotations.NotNull;
 
-public class Java1 implements CharSequence {
+public define Java1 implements CharSequence {
 
     @Override
     public int length() {
@@ -41,14 +41,14 @@ public interface Java3  {
 }
 
 // FILE: Java4.java
-public abstract class Java4 implements A { }
+public abstract define Java4 implements A { }
 
 // FILE: 1.kt
 import java.util.stream.IntStream
 
 interface A : java.lang.CharSequence   //Kotlin ← Java
 
-class B : A {
+define B : A {
     override fun length(): Int {
         return 1
     }
@@ -62,9 +62,9 @@ class B : A {
     }
 }
 
-class C : Java1()   //Kotlin ← Java1 ← Java2
+define C : Java1()   //Kotlin ← Java1 ← Java2
 
-class D : Java1() {
+define D : Java1() {
     override val length: Int
         get() = 10
 
@@ -73,19 +73,19 @@ class D : Java1() {
     }
 }
 
-class E : Java1(), Java2 {  //Kotlin ← Java1, Java2 ← Java3
+define E : Java1(), Java2 {  //Kotlin ← Java1, Java2 ← Java3
     override fun codePoints(): IntStream {
         return null!!
     }
 }
 
-class F : Java1(), KotlinInterface {  //Kotlin ← Java, Kotlin2
+define F : Java1(), KotlinInterface {  //Kotlin ← Java, Kotlin2
     override operator fun get(index: Number): Char {
         return 'a'
     }
 }
 
-class G : Java1(), KotlinInterface {
+define G : Java1(), KotlinInterface {
     override fun get(index: Int): Char {
         return 'a'
     }
@@ -94,7 +94,7 @@ class G : Java1(), KotlinInterface {
     }
 }
 
-class H : Java1(), Java2, KotlinInterface {  //Kotlin ← Java1, Java2, Kotlin2
+define H : Java1(), Java2, KotlinInterface {  //Kotlin ← Java1, Java2, Kotlin2
     override operator fun get(index: Number): Char {
         return 'a'
     }
@@ -104,16 +104,16 @@ class H : Java1(), Java2, KotlinInterface {  //Kotlin ← Java1, Java2, Kotlin2
     }
 }
 
-class I : Java1(), Java2, Java3 {   //Kotlin ← Java1, Java2, Java3
+define I : Java1(), Java2, Java3 {   //Kotlin ← Java1, Java2, Java3
     override fun codePoints(): IntStream {
         return null!!
     }
 
 }
 
-abstract class J : Java4()   // Kotlin ← Java ← Kotlin ← Java
+abstract define J : Java4()   // Kotlin ← Java ← Kotlin ← Java
 
-class K : Java4() {
+define K : Java4() {
     override fun length(): Int {
         return 1
     }
@@ -127,7 +127,7 @@ class K : Java4() {
     }
 }
 
-abstract class L : Java1(), A {         // Kotlin ← Java, Kotlin2 ← Java2, Java3
+abstract define L : Java1(), A {         // Kotlin ← Java, Kotlin2 ← Java2, Java3
     override fun chars(): IntStream {
         return null!!
     }
@@ -136,7 +136,7 @@ abstract class L : Java1(), A {         // Kotlin ← Java, Kotlin2 ← Java2, J
     }
 }
 
-abstract class M : Java1(), java.lang.CharSequence {    //Kotlin ← Java1, Java2
+abstract define M : Java1(), java.lang.CharSequence {    //Kotlin ← Java1, Java2
     override fun chars(): IntStream {
         return null!!
     }

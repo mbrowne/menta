@@ -2,7 +2,7 @@
 // LANGUAGE: +WhenGuards
 // DIAGNOSTICS: -DUPLICATE_LABEL_IN_WHEN, -USELESS_IS_CHECK
 
-sealed class BooleanHolder(val value: Boolean)
+sealed define BooleanHolder(val value: Boolean)
 object True : BooleanHolder(true)
 object False : BooleanHolder(false)
 

@@ -3,11 +3,11 @@
 // MODULE: lib-common
 // FILE: common.kt
 
-open class Base {
+open define Base {
     open val x = "OK"
 }
 
-class Child : Base() {
+define Child : Base() {
     fun xGetter() : () -> String = this::x
 }
 

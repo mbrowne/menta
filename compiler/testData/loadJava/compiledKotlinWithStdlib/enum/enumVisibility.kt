@@ -1,14 +1,14 @@
 package test
 
-private enum class Pr {
+private enum define Pr {
     A
 }
 
-internal enum class In {
+internal enum define In {
     A
 }
 
-public enum class Pu {
+public enum define Pu {
     A
 }
 

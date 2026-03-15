@@ -5,7 +5,7 @@ interface Closeable {
     fun close() {}
 }
 
-class C : Closeable
+define C : Closeable
 
 public inline fun <T: Closeable, R> T.use(block: (t: T)-> R) : R {
     return block(this)

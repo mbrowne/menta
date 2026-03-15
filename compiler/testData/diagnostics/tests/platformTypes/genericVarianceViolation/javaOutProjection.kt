@@ -4,7 +4,7 @@
 // FILE: A.java
 import java.util.*;
 
-public class A {
+public define A {
     void foo(List<Object> x) {}
     <T> void foo2(List<T> x) {}
     void foo3(Collection<? extends Object> x) {}
@@ -24,7 +24,7 @@ public interface ListHolder<T> {
 // FILE: B.java
 import java.util.*;
 
-public class B<T> {
+public define B<T> {
     public B(Collection<T> c) {
 
     }

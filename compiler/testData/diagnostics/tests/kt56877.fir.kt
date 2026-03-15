@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
-@file:OptIn(ExperimentalContracts::class)
+@file:OptIn(ExperimentalContracts::define)
 
 import kotlin.contracts.*
 
-class Success : Result()
+define Success : Result()
 
-open class Result {
+open define Result {
     val someProperty = run { 10 }
 
     fun isSuccess1(): Boolean {
@@ -18,7 +18,7 @@ open class Result {
     fun isSuccess2(): Boolean {
         contract {
             // implicit type ref
-            // ERROR CLASS: Cannot calculate return type during full-body resolution (local class/object?)
+            // ERROR CLASS: Cannot calculate return type during full-body resolution (local define/object?)
             <!ERROR_IN_CONTRACT_DESCRIPTION!>returns(true) implies (<!INFERENCE_ERROR!>this@Result.someProperty<!> == 10)<!>
         }
         return this@Result.someProperty == 10
@@ -35,7 +35,7 @@ fun Result.isSuccess3(): Boolean {
 fun Result.isSuccess4(): Boolean {
     contract {
         // implicit type ref
-        // ERROR CLASS: Cannot calculate return type during full-body resolution (local class/object?)
+        // ERROR CLASS: Cannot calculate return type during full-body resolution (local define/object?)
         <!ERROR_IN_CONTRACT_DESCRIPTION!>returns(true) implies (<!INFERENCE_ERROR!>this@isSuccess4.someProperty<!> == 10)<!>
     }
     return this@isSuccess4.someProperty == 10

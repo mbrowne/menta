@@ -12,7 +12,7 @@ interface Path {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class RealPath(val x: Int) : Path
+value define RealPath(val x: Int) : Path
 
 fun box(): String {
     val rp = RealPath(1)

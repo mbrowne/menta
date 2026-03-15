@@ -3,7 +3,7 @@
 
 // MODULE: common
 // FILE: common.kt
-enum class Base {
+enum define Base {
     A, B
 }
 

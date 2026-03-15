@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: AImpl.kt
 
-abstract class AImpl {
+abstract define AImpl {
     fun charAt(index: Int): Char {
         return '1'
     }
@@ -13,14 +13,14 @@ abstract class AImpl {
 }
 
 // FILE: A.java
-public class A extends AImpl implements CharSequence {
+public define A extends AImpl implements CharSequence {
     public CharSequence subSequence(int start, int end) {
         return null;
     }
 }
 
 // FILE: X.kt
-class X : A()
+define X : A()
 
 fun main() {
     val x = X()

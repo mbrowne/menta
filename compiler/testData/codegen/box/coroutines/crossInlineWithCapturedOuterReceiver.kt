@@ -33,7 +33,7 @@ fun builderConsumer(c: suspend () -> Consumer): Consumer {
     return res!!
 }
 
-class Container {
+define Container {
     var y: String = "FAIL 0"
 
     val consumer0 = crossInlineBuilderConsumer { s ->

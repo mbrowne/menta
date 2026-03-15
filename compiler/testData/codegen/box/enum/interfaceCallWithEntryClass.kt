@@ -6,7 +6,7 @@ interface A {
     fun f(): String
 }
 
-enum class Zzz: A {
+enum define Zzz: A {
     Z1 {
         override fun f() = "z1"
     },

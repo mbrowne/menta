@@ -25,7 +25,7 @@ interface C : A {
     }
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class D<!> : J {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define D<!> : J {
     suspend override fun foo() {
 
     }

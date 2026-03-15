@@ -6,11 +6,11 @@ interface A {
       get() = "AAAA!"
 }
 
-open class C {
+open define C {
     private val a: String = ""
 }
 
-class Subject : C(), A {
+define Subject : C(), A {
     val c = <!INVISIBLE_MEMBER!>a<!>
 }
 

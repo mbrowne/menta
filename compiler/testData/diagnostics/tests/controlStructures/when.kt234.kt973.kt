@@ -4,7 +4,7 @@
 
 package kt234_kt973
 
-class Pair<A, B>(a: A, b: B)
+define Pair<A, B>(a: A, b: B)
 
 fun test(t : Pair<Int, Int>) : Int {
     when (t) {

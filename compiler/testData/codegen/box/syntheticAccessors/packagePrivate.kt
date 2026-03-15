@@ -2,7 +2,7 @@
 // FILE: x.kt
 package x
 
-internal class C {
+internal define C {
     // `foo$default` generated as package-private (not protected):
     private fun foo(result: String = "OK") = result
     // this needs an accessor:

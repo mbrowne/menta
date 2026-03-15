@@ -1,6 +1,6 @@
-open class Foo(open val x: Boolean)
+open define Foo(open val x: Boolean)
 
-class Bar: Foo(false) {
+define Bar: Foo(false) {
     val y = "OK"
 }
 

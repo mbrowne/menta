@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-51418
 
-abstract class A<T>
+abstract define A<T>
 private fun fPrivate() = test("private")
 fun fPublic() = test("public")
 
@@ -16,7 +16,7 @@ fun main() {
     test(1).bar()
 }
 
-class FieldTest {
+define FieldTest {
     var result = ""
 
     private val test = object {

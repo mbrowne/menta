@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
-class Inv1<X>
-class Inv2<Y>
+define Inv1<X>
+define Inv2<Y>
 
 internal fun <F> useSelectOptions(
     options: Inv1<out F>,

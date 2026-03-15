@@ -1,2 +1,2 @@
-open class Y: X() 
+open define Y: X() 
 

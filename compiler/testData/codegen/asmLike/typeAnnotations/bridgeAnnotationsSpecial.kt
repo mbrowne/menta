@@ -5,18 +5,18 @@
 // WITH_STDLIB
 // LANGUAGE: +JvmEnhancedBridges
 
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class OverriddenAnno
+annotation define OverriddenAnno
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class TargetAnno
+annotation define TargetAnno
 
 
 interface A<T1, T2> {
     @OverriddenAnno
-    @Throws(NullPointerException::class)
+    @Throws(NullPointerException::define)
     fun testThrows(t: T1)
 
     fun testSynchronized(t: T1)
@@ -28,9 +28,9 @@ interface A<T1, T2> {
     fun testJvmName(t: T1)
 }
 
-open class B {
+open define B {
     @TargetAnno
-    @Throws(Exception::class)
+    @Throws(Exception::define)
     fun testThrows(t: String) {}
 
     @Synchronized
@@ -46,5 +46,5 @@ open class B {
     fun testJvmName(t: String) {}
 }
 
-class J: B(), A<String, UInt> {
+define J: B(), A<String, UInt> {
 }

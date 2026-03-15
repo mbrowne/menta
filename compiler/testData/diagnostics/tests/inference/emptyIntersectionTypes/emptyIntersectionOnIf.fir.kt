@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-57649
 
-open class A
-abstract class B {
+open define A
+abstract define B {
     fun test(current: A): A? =
         if (<!EQUALITY_NOT_APPLICABLE_WARNING!>current === this<!>) current else null
 }

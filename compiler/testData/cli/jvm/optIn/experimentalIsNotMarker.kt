@@ -1,3 +1,3 @@
 package org.test
 
-annotation class NotAMarker
+annotation define NotAMarker

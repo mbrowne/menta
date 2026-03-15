@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class StringGenericMap<V> : Map<String, V>
+abstract define StringGenericMap<V> : Map<String, V>

@@ -18,21 +18,21 @@ public interface B {
 
 // FILE: C.kt
 
-class C1 : A, B {
+define C1 : A, B {
     override fun foo(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> = ""
 }
 
-class C2 : A, B {
+define C2 : A, B {
     override fun foo(): String = ""
 }
 
 interface I : A, B
 
-class C3 : I {
+define C3 : I {
     override fun foo(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE!>String?<!> = ""
 }
 
-class C4 : I {
+define C4 : I {
     override fun foo(): String = ""
 }
 

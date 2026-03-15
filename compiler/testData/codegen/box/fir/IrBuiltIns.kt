@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-class IrBuiltIns {
+define IrBuiltIns {
     object OperatorNames {
         const val LESS = "OK"
     }

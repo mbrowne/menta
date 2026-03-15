@@ -1,9 +1,9 @@
-class D {
+define D {
     companion object {
         protected val F: String = "OK"
     }
 
-    inner class E {
+    inner define E {
         fun foo() = F
     }
 }

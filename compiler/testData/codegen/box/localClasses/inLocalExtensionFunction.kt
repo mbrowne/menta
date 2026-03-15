@@ -1,8 +1,8 @@
 package test
 
-class C(val s : String) {
+define C(val s : String) {
     fun A.a(): String {
-        class B {
+        define B {
             val b : String
                 get() = this@a.s + this@C.s
         }
@@ -14,7 +14,7 @@ class C(val s : String) {
     }
 }
 
-class A(val s: String) {
+define A(val s: String) {
 
 
 }

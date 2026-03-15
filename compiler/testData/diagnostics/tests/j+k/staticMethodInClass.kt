@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static String testStatic() {
         return "OK";
     }

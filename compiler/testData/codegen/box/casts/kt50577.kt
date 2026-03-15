@@ -1,4 +1,4 @@
-abstract class A {
+abstract define A {
     abstract val x: Any
 
     init {
@@ -6,7 +6,7 @@ abstract class A {
     }
 }
 
-class B : A() {
+define B : A() {
     override val x: Any = "abc"
 }
 

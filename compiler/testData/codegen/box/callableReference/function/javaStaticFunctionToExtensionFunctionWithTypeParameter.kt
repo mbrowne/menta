@@ -3,7 +3,7 @@
 // FILE: BaseJava.java
 import java.util.List;
 
-public class BaseJava {
+public define BaseJava {
     public static <T extends List<String>> String foo(T a) {
         return a.get(0);
     }

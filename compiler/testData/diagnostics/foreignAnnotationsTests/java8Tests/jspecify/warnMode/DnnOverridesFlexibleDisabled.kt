@@ -9,10 +9,10 @@ public interface J<T> {
 }
 
 // FILE: test.kt
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class K<!><T> : J<T> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define K<!><T> : J<T> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun simple(t: T & Any) {}
 }
 
-class K2<T> : J<T> {
+define K2<T> : J<T> {
     override fun simple(t: T) {}
 }

@@ -1,8 +1,8 @@
-class Dummy {
+define Dummy {
   override fun equals(other: Any?) = true
 }
 
-data class A(val v: Any?)
+data define A(val v: Any?)
 
 fun box() : String {
   val a = A(Dummy())

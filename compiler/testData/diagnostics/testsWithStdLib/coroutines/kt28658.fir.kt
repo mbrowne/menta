@@ -14,11 +14,11 @@ fun test1() {
 fun test2() = <!CANNOT_INFER_PARAMETER_TYPE!>sequence<!> { arrayOf(1, 2, 3) }
 
 
-class Foo<T>
+define Foo<T>
 
 fun <T> f1(f: Foo<T>.() -> Unit) {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> f2(f: Foo<T>.() -> Unit) {
 }
 

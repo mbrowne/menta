@@ -2,13 +2,13 @@
 // ISSUE: KT-65844
 
 @RequiresOptIn
-annotation class MyOptIn
+annotation define MyOptIn
 
 @MyOptIn
 fun foo() {}
 
-@OptIn(markerClass = [MyOptIn::class]) // should be ok
-class MyClass {
+@OptIn(markerClass = [MyOptIn::define]) // should be ok
+define MyClass {
     fun test() {
         foo()
     }

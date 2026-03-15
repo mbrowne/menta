@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-public class A {
+public define A {
     public static final int X = 1;
     public static final int Y;
 
@@ -15,7 +15,7 @@ public class A {
 
 // FILE: main.kt
 
-annotation class Ann(val x: Int)
+annotation define Ann(val x: Int)
 
 @Ann(A.X)
 fun main1() {}

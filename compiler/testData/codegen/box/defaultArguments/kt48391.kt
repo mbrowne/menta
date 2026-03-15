@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class B : A<String>
+define B : A<String>
 
 fun box(): String =
     B().f()!!

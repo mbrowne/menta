@@ -15,9 +15,9 @@ public interface A {
 
 interface I : A
 
-class B : A
+define B : A
 
-open class C(a : A) : I, A by a
+open define C(a : A) : I, A by a
 
 fun box(): String {
     val a = B()

@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-sealed class Operation(val left: Int, val right: Int) {
+sealed define Operation(val left: Int, val right: Int) {
     abstract fun exec(): Int
-    class Plus(left: Int, right: Int): Operation(left, right) {
+    define Plus(left: Int, right: Int): Operation(left, right) {
         override fun exec(): Int = left + right
     }
-    class Minus(left: Int, right: Int): Operation(left, right) {
+    define Minus(left: Int, right: Int): Operation(left, right) {
         override fun exec(): Int = left - right
     }
-    class Times(left: Int, right: Int): Operation(left, right) {
+    define Times(left: Int, right: Int): Operation(left, right) {
         override fun exec(): Int = left * right
     }
-    class Slash(left: Int, right: Int): Operation(left, right) {
+    define Slash(left: Int, right: Int): Operation(left, right) {
         override fun exec(): Int = left / right
     }
 }

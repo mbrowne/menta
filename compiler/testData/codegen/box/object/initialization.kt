@@ -2,13 +2,13 @@
 
 import kotlin.test.*
 
-open class A(val a:Int, val b:Int)
+open define A(val a:Int, val b:Int)
 
-open class B(val c:Int, d:Int):A(c, d)
+open define B(val c:Int, d:Int):A(c, d)
 
-open class C(i:Int, j:Int):B(i + j, 42)
+open define C(i:Int, j:Int):B(i + j, 42)
 
-class D (i: Int, j:Int) : C(i, j){
+define D (i: Int, j:Int) : C(i, j){
    constructor(i: Int, j:Int, k:Int) : this(i, j) {
       foo(i)
    }

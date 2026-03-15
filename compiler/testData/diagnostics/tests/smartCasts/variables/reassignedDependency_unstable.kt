@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class C {
+define C {
     val x: String?
         get() = null
 }

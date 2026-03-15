@@ -9,7 +9,7 @@ import helpers.*
 // Block is allowed to be called inside the body of owner inline function
 // suspend calls possible inside lambda matching to the parameter
 
-class Controller {
+define Controller {
     var res = "FAIL 1"
 
     suspend inline fun test(c: Controller.() -> Unit) {

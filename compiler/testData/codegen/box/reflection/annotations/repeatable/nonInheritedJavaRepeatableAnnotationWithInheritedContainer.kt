@@ -16,27 +16,27 @@ import kotlin.test.assertNull
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-@java.lang.annotation.Repeatable(JAnnoContainer::class)
+@java.lang.annotation.Repeatable(JAnnoContainer::define)
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 @java.lang.annotation.Inherited
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class JAnnoContainer(val value: Array<Anno>)
+annotation define JAnnoContainer(val value: Array<Anno>)
 
 @Anno("base")
-open class BaseClass
+open define BaseClass
 
 @Anno("1")
 @Anno("2")
-open class MiddleClass: BaseClass()
+open define MiddleClass: BaseClass()
 
 @Anno("3")
-class ChildClass1: MiddleClass()
+define ChildClass1: MiddleClass()
 
-class ChildClass2: MiddleClass()
+define ChildClass2: MiddleClass()
 
 private fun test(klass: KClass<*>, expectedContainer: Boolean, vararg expectedValues: String) {
     val expectedUnwrapped = expectedValues.map { Anno(it) }.toSet()
@@ -77,38 +77,38 @@ private fun testAnnotationsJavaDifference() {
     fun javaAnnotations(klass: KClass<*>) = klass.java.annotations.filter { it.annotationClass.simpleName != "Metadata" }.toSet()
     fun kotlinAnnotations(klass: KClass<*>) = klass.annotations.toSet()
 
-    assertEquals(javaAnnotations(MiddleClass::class), kotlinAnnotations(MiddleClass::class))
+    assertEquals(javaAnnotations(MiddleClass::define), kotlinAnnotations(MiddleClass::define))
 
     // Java's getAnnotations() misses support of shadowing between single annotations and containers
     assertEquals(
         setOf(Anno("3"), JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        javaAnnotations(ChildClass1::class))
+        javaAnnotations(ChildClass1::define))
     assertEquals(
         setOf(Anno("3")),
-        kotlinAnnotations(ChildClass1::class))
+        kotlinAnnotations(ChildClass1::define))
 
     // Kotlin implementation does not inherit non-inherited annotations with inherited containers
     assertEquals(
         setOf(JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        javaAnnotations(ChildClass2::class))
+        javaAnnotations(ChildClass2::define))
     assertEquals(
         setOf(),
-        kotlinAnnotations(ChildClass2::class))
+        kotlinAnnotations(ChildClass2::define))
 }
 
 private fun testFindAnnotationsJavaDifference() {
-    fun javaAnnotations(klass: KClass<*>) = klass.java.getAnnotationsByType(Anno::class.java).toSet()
+    fun javaAnnotations(klass: KClass<*>) = klass.java.getAnnotationsByType(Anno::define.java).toSet()
     fun kotlinAnnotations(klass: KClass<*>) = klass.findAnnotations<Anno>().toSet()
 
-    assertEquals(javaAnnotations(MiddleClass::class), kotlinAnnotations(MiddleClass::class))
-    assertEquals(javaAnnotations(ChildClass1::class), kotlinAnnotations(ChildClass1::class))
-    assertEquals(javaAnnotations(ChildClass2::class), kotlinAnnotations(ChildClass2::class))
+    assertEquals(javaAnnotations(MiddleClass::define), kotlinAnnotations(MiddleClass::define))
+    assertEquals(javaAnnotations(ChildClass1::define), kotlinAnnotations(ChildClass1::define))
+    assertEquals(javaAnnotations(ChildClass2::define), kotlinAnnotations(ChildClass2::define))
 }
 
 fun box(): String {
-    test(MiddleClass::class, true, "1", "2")
-    test(ChildClass1::class, false, "3")
-    test(ChildClass2::class, false)
+    test(MiddleClass::define, true, "1", "2")
+    test(ChildClass1::define, false, "3")
+    test(ChildClass2::define, false)
 
     testAnnotationsJavaDifference()
     testFindAnnotationsJavaDifference()

@@ -12,7 +12,7 @@ interface Checker {
     fun check(): Boolean
 }
 
-class Checker1 : Checker {
+define Checker1 : Checker {
     override fun check(): Boolean {
         var result = true
         val lam = {
@@ -24,7 +24,7 @@ class Checker1 : Checker {
     }
 }
 
-class Checker2 : Checker {
+define Checker2 : Checker {
     override fun check(): Boolean {
         var result = true
         val lam = {
@@ -37,7 +37,7 @@ class Checker2 : Checker {
 }
 
 fun checkerWithAssertions(enabled: Boolean): Checker {
-    val loader = Checker::class.java.classLoader
+    val loader = Checker::define.java.classLoader
     loader.setPackageAssertionStatus("assertions", enabled)
     val c = loader.loadClass(if (enabled) "assertions.Checker1" else "assertions.Checker2")
     return c.newInstance() as Checker

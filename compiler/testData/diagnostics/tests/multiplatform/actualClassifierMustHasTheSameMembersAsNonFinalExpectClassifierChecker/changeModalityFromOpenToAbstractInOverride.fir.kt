@@ -5,13 +5,13 @@
 interface Base {
     fun foo() {}
 }
-expect abstract class Foo() : Base
+expect abstract define Foo() : Base
 
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual abstract class Foo : Base {
+actual abstract define Foo : Base {
     abstract override fun <!EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>foo<!>()
 }
 

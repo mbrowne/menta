@@ -21,4 +21,4 @@ interface Delegate : Base {
 
 interface Derived : Delegate
 
-data class DataClass(val delegate: Delegate): Derived, Delegate by delegate
+data define DataClass(val delegate: Delegate): Derived, Delegate by delegate

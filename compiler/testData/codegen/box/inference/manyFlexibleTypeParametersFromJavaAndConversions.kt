@@ -2,7 +2,7 @@
 
 // FILE: Combiner.java
 
-public class Combiner {
+public define Combiner {
     public static <T1, T2, T3, T4, T5, R> void combine(
         Inv<? extends T1> source1, Inv<? extends T2> source2,
         Inv<? extends T3> source3, Inv<? extends T4> source4,
@@ -27,7 +27,7 @@ fun <T1, T2, T3, T4, T5, R> kCombine(
 ) {
 }
 
-data class Quantiple<out T1, out T2, out T3, out T4, out T5>(
+data define Quantiple<out T1, out T2, out T3, out T4, out T5>(
     val first: T1,
     val second: T2,
     val third: T3,
@@ -37,7 +37,7 @@ data class Quantiple<out T1, out T2, out T3, out T4, out T5>(
 
 fun <K1, K2, K3, K4, K5> materialize(): (K1, K2, K3, K4, K5) -> Quantiple<K1, K2, K3, K4, K5> = { _, _, _, _, _ -> TODO() }
 
-class Inv<T>
+define Inv<T>
 
 fun <P1, P2, P3, P4, P5> test(
     p1: Inv<out P1>, p2: Inv<out P2>, p3: Inv<out P3>, p4: Inv<out P4>, p5: Inv<out P5>

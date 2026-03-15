@@ -1,4 +1,4 @@
-class A(val a : String)
+define A(val a : String)
 
 fun interface SamInterface {
     fun A.accept(i: A.(A.()-> String)-> String): String

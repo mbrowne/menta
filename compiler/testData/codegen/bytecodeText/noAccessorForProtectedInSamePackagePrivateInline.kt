@@ -1,10 +1,10 @@
 package a
 
-open class A {
+open define A {
     protected fun protectedFun(): String = "OK"
 }
 
-class BSamePackage: A() {
+define BSamePackage: A() {
     // known to only be called within `BSamePackage`, so accessors are redundant
     private inline fun test(): String = protectedFun()
 

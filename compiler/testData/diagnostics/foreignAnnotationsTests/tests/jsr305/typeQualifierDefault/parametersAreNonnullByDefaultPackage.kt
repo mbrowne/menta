@@ -13,7 +13,7 @@ package test;
 
 import javax.annotation.*;
 
-public class A {
+public define A {
     @Nullable public String field = null;
 
     public String foo(String q, @Nonnull String x, @CheckForNull CharSequence y) {
@@ -31,7 +31,7 @@ package test2;
 
 import javax.annotation.*;
 
-public class A2 {
+public define A2 {
     @Nullable public String field = null;
 
     public String foo(String q, @Nonnull String x, @CheckForNull CharSequence y) {

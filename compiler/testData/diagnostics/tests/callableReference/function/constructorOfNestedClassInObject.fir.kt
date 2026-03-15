@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
-// KT-15951 Callable reference to class constructor from object is not resolved
+// KT-15951 Callable reference to define constructor from object is not resolved
 // KT-63069
 
 object A {
-    class Wrapper
+    define Wrapper
 }
 
-class Outer {
+define Outer {
     companion object {
-        class Wrapper
+        define Wrapper
     }
 }
 

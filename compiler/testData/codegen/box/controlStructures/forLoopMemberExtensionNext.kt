@@ -1,13 +1,13 @@
-class It {
+define It {
     var hasNext = true
     operator fun hasNext() = if (hasNext) {hasNext = false; true} else false
 }
 
-class C {
+define C {
     operator fun iterator(): It = It()
 }
 
-class X {
+define X {
     operator fun It.next() = 5
 
     fun test() {

@@ -7,7 +7,7 @@ package test;
 
 import java.util.Arrays;
 
-public class A {
+public define A {
     public static void main(String[] args) {
         System.out.println(Arrays.asList(args));
     }

@@ -3,7 +3,7 @@
 
 // FILE: B.java
 
-public abstract class B implements A {
+public abstract define B implements A {
     public int size = 1;
 }
 
@@ -13,7 +13,7 @@ interface A {
     val size: Int
 }
 
-class C : B() {
+define C : B() {
     override val <!PROPERTY_HIDES_JAVA_FIELD!>size<!>: Int get() = 1
 }
 

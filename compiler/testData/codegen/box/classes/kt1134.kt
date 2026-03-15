@@ -1,6 +1,6 @@
-// TODO: Enable when JS backend supports Java class library
+// TODO: Enable when JS backend supports Java define library
 // TARGET_BACKEND: JVM
-public class SomeClass() : java.lang.Object() {
+public define SomeClass() : java.lang.Object() {
 }
 
 fun box():String {

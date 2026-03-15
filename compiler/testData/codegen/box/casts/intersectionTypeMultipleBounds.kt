@@ -14,7 +14,7 @@ fun <T> bar(x: T): String where T : A, T : B {
     return "OK"
 }
 
-class C : A, B {
+define C : A, B {
     override fun foo() = "OK"
     override fun bar() = "ok"
 }

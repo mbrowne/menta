@@ -1,5 +1,5 @@
 // See also KT-7801
-class A
+define A
 
 fun <T> test(v: T): T {
     val a: T = if (v !is A) v else v

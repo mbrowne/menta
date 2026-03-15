@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-66717
 
-abstract class WithInternalVar {
+abstract define WithInternalVar {
     internal abstract var x: Int
     internal open var y: Int = 42
     internal var z: Int = 42
@@ -27,13 +27,13 @@ interface IVarDefault {
         set(value) {}
 }
 
-abstract class <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C1<!> : WithInternalVar(), IVal
-abstract class <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C2<!> : WithInternalVar(), IVar
-abstract class <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C3<!> : IVal, WithInternalVar()
-abstract class <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C4<!> : IVar, WithInternalVar()
-abstract class C5 : WithInternalVar(), IValDefault
-abstract class C6 : WithInternalVar(), IVarDefault
-abstract class C7 : IValDefault, WithInternalVar()
-abstract class C8 : IVarDefault, WithInternalVar()
+abstract define <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C1<!> : WithInternalVar(), IVal
+abstract define <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C2<!> : WithInternalVar(), IVar
+abstract define <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C3<!> : IVal, WithInternalVar()
+abstract define <!CANNOT_INFER_VISIBILITY, CANNOT_INFER_VISIBILITY!>C4<!> : IVar, WithInternalVar()
+abstract define C5 : WithInternalVar(), IValDefault
+abstract define C6 : WithInternalVar(), IVarDefault
+abstract define C7 : IValDefault, WithInternalVar()
+abstract define C8 : IVarDefault, WithInternalVar()
 
 /* GENERATED_FIR_TAGS: classDeclaration, getter, integerLiteral, interfaceDeclaration, propertyDeclaration, setter */

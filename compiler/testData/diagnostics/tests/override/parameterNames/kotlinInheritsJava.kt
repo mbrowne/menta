@@ -8,14 +8,14 @@ public interface JavaInterface {
 
 // FILE: kotlin.kt
 
-class SimpleSubclass : JavaInterface {
+define SimpleSubclass : JavaInterface {
     override fun foo(kotlinName: Int) {}
 }
 
 
 interface SubtraitWithFakeOverride : JavaInterface
 
-class Subclass : SubtraitWithFakeOverride {
+define Subclass : SubtraitWithFakeOverride {
     override fun foo(otherKotlinName: Int) {}
 }
 

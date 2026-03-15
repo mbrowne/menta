@@ -4,8 +4,8 @@
 // FILE: DialogWrapper.kt
 package pkg
 
-open class DialogWrapper {
-    protected open class DialogWrapperAction
+open define DialogWrapper {
+    protected open define DialogWrapperAction
 }
 
 // FILE: Main.kt

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-data class Foo(val name: String)
+data define Foo(val name: String)
 
 fun main() {
     val foo = Foo("John")

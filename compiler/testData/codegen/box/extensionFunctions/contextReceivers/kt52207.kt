@@ -2,9 +2,9 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class A
+define A
 
-class Example {
+define Example {
     context(A)
     inline fun fn(x: Int) {}
 }

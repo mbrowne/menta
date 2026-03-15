@@ -1,4 +1,4 @@
-data class A(val x: Int, val y: String)
+data define A(val x: Int, val y: String)
 
 fun box(): String {
     val a = A(42, "OK")

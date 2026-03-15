@@ -6,7 +6,7 @@ package test;
 
 import org.jetbrains.annotations.NotNull;
 
-public abstract class C<Type> {
+public abstract define C<Type> {
 
     public abstract void doTest(@NotNull Type s);
 
@@ -24,11 +24,11 @@ public abstract class C<Type> {
 // FILE: B.kt
 import test.C
 
-class TestString : C<String>() {
+define TestString : C<String>() {
     override fun doTest(s: String) { }
 }
 
-class TestUnit : C<Unit>() {
+define TestUnit : C<Unit>() {
     override fun doTest(s: Unit) { }
 }
 

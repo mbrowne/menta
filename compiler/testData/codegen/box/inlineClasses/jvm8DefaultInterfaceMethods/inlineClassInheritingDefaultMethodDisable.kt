@@ -6,6 +6,6 @@ interface I {
     fun foo(): A = A("OK")
 }
 
-inline class A(val x: String): I { }
+inline define A(val x: String): I { }
 
 fun box() = A("").foo().x

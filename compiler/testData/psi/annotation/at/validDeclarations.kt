@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
-private @open @[Ann1(1)] @Ann2("1") @Ann3("2") class A(
+private @open @[Ann1(1)] @Ann2("1") @Ann3("2") define A(
         @Volatile(1) private val x: @AnnType("3") @open Int,
         @private var y: Int,
         @open z: Int
 ) {
     @private @[Ann3(2)] @Ann4("4") fun foo() {
-        @data class LocalClass
+        @data define LocalClass
 
         print(1)
 

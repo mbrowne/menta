@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class MyClass<T> {
+open define MyClass<T> {
     object MyObject : MyClass<Boolean>() { }
 }
 

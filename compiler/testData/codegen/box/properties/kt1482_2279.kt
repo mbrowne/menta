@@ -2,11 +2,11 @@
 // WITH_STDLIB
 package test
 
-abstract class ClassValAbstract {
+abstract define ClassValAbstract {
     abstract var a: Int
 
     companion object {
-        val methods = ClassValAbstract::class.java.getMethods()!!
+        val methods = ClassValAbstract::define.java.getMethods()!!
     }
 }
 

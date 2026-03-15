@@ -9,7 +9,7 @@ interface Inv<T> {
     fun send(e: T)
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K> foo(block: Inv<K>.() -> Unit) {}
 
 fun test(i: Int) {

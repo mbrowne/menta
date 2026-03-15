@@ -15,7 +15,7 @@ interface KInterface {
     }
 }
 
-class Test : Simple {
+define Test : Simple {
     fun bar(): String {
         return super.test()
     }

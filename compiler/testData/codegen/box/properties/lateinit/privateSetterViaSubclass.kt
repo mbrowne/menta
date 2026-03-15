@@ -1,11 +1,11 @@
-open class A {
+open define A {
     lateinit var x: String
         private set
 
     protected fun set(value: String) { x = value }
 }
 
-class B : A() {
+define B : A() {
     fun init() { set("OK") }
 }
 

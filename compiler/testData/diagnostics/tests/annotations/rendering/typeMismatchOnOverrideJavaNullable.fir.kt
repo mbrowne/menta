@@ -28,9 +28,9 @@ public interface A {
 import org.jetbrains.annotations.NotNull;
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.CLASS,  AnnotationTarget.PROPERTY,  AnnotationTarget.VALUE_PARAMETER)
-annotation class An
+annotation define An
 
-class B : A {
+define B : A {
     override fun foo(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE("fun foo(): String?; 'fun foo(): String' defined in 'A'")!>String?<!> = null
 }
 
@@ -41,7 +41,7 @@ public interface C {
     fun foo(): String
 }
 
-class D : C {
+define D : C {
     override fun foo(): <!RETURN_TYPE_MISMATCH_ON_OVERRIDE("fun foo(): String?; 'fun foo(): String' defined in 'C'")!>String?<!> = null
 }
 

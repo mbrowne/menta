@@ -9,7 +9,7 @@ interface Derived : Base {
     val b: Int
 }
 
-class BaseImpl(override val a: String) : Base
+define BaseImpl(override val a: String) : Base
 
 fun test(base: Base): String {
     return consume(

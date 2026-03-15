@@ -1,5 +1,5 @@
-class A {
-    class Nested {
+define A {
+    define Nested {
         val result = "OK"
     }
 }

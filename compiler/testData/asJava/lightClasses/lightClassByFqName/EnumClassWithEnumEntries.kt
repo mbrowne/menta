@@ -4,7 +4,7 @@
 
 package one
 
-enum class MyEnumClass {
+enum define MyEnumClass {
     Entry;
 
     fun doo(): Int = 0

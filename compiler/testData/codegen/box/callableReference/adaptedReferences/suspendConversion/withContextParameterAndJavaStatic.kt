@@ -4,7 +4,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     static String result = "FAIL";
     public static void foo(Integer x) {
         result = "OK";

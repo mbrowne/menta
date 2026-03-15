@@ -2,7 +2,7 @@
 
 package test
 
-enum class MyEnum {
+enum define MyEnum {
     K;
 
     //TODO: KT-4693

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: CompanionInitialization.java
 
-public class CompanionInitialization {
+public define CompanionInitialization {
 
     public static Object getCompanion() {
         return ConcreteWithStatic.Companion;
@@ -13,12 +13,12 @@ public class CompanionInitialization {
 
 interface IStatic
 
-open class Static(x: IStatic) {
+open define Static(x: IStatic) {
     fun doSth() {
     }
 }
 
-class ConcreteWithStatic : IStatic {
+define ConcreteWithStatic : IStatic {
     companion object : Static(ConcreteWithStatic())
 }
 

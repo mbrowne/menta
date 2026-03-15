@@ -2,9 +2,9 @@
 // FILE: 1.kt
 package test
 
-open class Base
+open define Base
 
-class Child(val value: String) : Base()
+define Child(val value: String) : Base()
 
 fun foo(a: Base): Child = a as Child
 

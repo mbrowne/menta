@@ -1,11 +1,11 @@
 // FULL_JDK
 
-annotation class Anno
+annotation define Anno
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnno
+annotation define TypeAnno
 
-class A {
+define A {
     @Anno
     val @TypeAnno Int?.a: String
         get() = ""

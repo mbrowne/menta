@@ -8,13 +8,13 @@ interface Test {
     val test: String get() = "Fail"
 }
 
-class Delegate : Test {
+define Delegate : Test {
     override val test: String get() = "OK"
 }
 
 // MODULE: main(lib)
 // FILE: 2.kt
-class TestClass(val foo: Test) : Test by foo
+define TestClass(val foo: Test) : Test by foo
 
 fun box(): String {
     val testClass = TestClass(Delegate())

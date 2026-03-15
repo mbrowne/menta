@@ -3,7 +3,7 @@
 // FILE: C.kt
 package p
 
-class C : A() {
+define C : A() {
     override val ap: Int
         get() = super.c
 
@@ -15,7 +15,7 @@ class C : A() {
 // FILE: A.kt
 package p
 
-abstract class A {
+abstract define A {
     protected val ap: Int = 4
     abstract protected fun af(): Int
 }

@@ -9,7 +9,7 @@ interface Holder {
         fun f()
     }
 
-    annotation class Annotation(
+    annotation define Annotation(
         val value: Array<String>,
     )
 }
@@ -20,7 +20,7 @@ interface ByteHolder {
         fun f()
     }
 
-    annotation class Annotation(
+    annotation define Annotation(
         val value: ByteArray,
     )
 }
@@ -31,7 +31,7 @@ interface HolderWithDefault {
         fun f()
     }
 
-    annotation class Annotation(
+    annotation define Annotation(
         val value: Array<String> = [""],
     )
 }
@@ -42,7 +42,7 @@ interface HolderWithEmpty {
         fun f()
     }
 
-    annotation class Annotation(
+    annotation define Annotation(
         val value: Array<String>,
     )
 }
@@ -53,7 +53,7 @@ interface HolderWithTypeAnnotation {
     }
 
     @Target(AnnotationTarget.TYPE)
-    annotation class Annotation(
+    annotation define Annotation(
         val value: Array<String>,
     )
 }

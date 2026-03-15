@@ -6,12 +6,12 @@ var accumulator = 0
 
 interface PropertyOwner
 
-class Something<T : PropertyOwner>(private val ref: T) {
+define Something<T : PropertyOwner>(private val ref: T) {
 
     val PropertyOwner.offset
         get() = 42
 
-    private inner class Item {
+    private inner define Item {
         fun update(owner: T, offset: Int = owner.offset) {
             accumulator += offset
         }

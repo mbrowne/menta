@@ -1,7 +1,7 @@
-class CInt(val value: Int)
+define CInt(val value: Int)
 val nCInt3: CInt? = CInt(3)
 
-class CLong(val value: Long)
+define CLong(val value: Long)
 val nCLong3: CLong? = CLong(3)
 
 var subjectEvaluated: Int = 0

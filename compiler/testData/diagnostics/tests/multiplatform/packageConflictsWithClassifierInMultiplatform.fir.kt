@@ -4,7 +4,7 @@
 // FILE: common.kt
 package a
 
-class b
+define b
 
 // FILE: common2.kt
 package <!PACKAGE_CONFLICTS_WITH_CLASSIFIER!>c.d<!>
@@ -16,6 +16,6 @@ package <!PACKAGE_CONFLICTS_WITH_CLASSIFIER!>a.b<!>
 // FILE: jvm2.kt
 package c
 
-class d
+define d
 
 /* GENERATED_FIR_TAGS: classDeclaration */

@@ -3,8 +3,8 @@
 
 package test
 
-class A {
-    public inner class Foo(val a: Int = 1) {}
+define A {
+    public inner define Foo(val a: Int = 1) {}
 
     fun foo() {
         Foo()

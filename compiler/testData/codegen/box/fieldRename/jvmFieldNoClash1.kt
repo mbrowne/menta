@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class A {
+define A {
     @JvmField
     val x = "outer"
 

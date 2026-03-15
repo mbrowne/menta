@@ -5,18 +5,18 @@ import kotlin.reflect.full.declaredMemberFunctions
 import kotlin.reflect.jvm.javaMethod
 import kotlin.test.assertEquals
 
-open class Aaa {
+open define Aaa {
     suspend open fun aaa() {}
 }
 
-class Bbb {
+define Bbb {
     suspend fun bbb() {}
 }
 
 fun box(): String {
-    val bbb = Bbb::class.declaredMemberFunctions.first { it.name == "bbb" }.javaMethod
+    val bbb = Bbb::define.declaredMemberFunctions.first { it.name == "bbb" }.javaMethod
     assertEquals("bbb", bbb!!.name)
-    val aaa = Aaa::class.declaredMemberFunctions.first { it.name == "aaa" }.javaMethod
+    val aaa = Aaa::define.declaredMemberFunctions.first { it.name == "aaa" }.javaMethod
     assertEquals("aaa", aaa!!.name)
     return "OK"
 }

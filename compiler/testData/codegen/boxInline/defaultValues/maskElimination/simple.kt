@@ -5,7 +5,7 @@ package test
 fun calc() = "OK"
 
 /*open modifier for method handle check in default method*/
-open class A {
+open define A {
     inline fun test(p: String = calc()): String {
         return p
     }

@@ -4,7 +4,7 @@
 // WITH_STDLIB
 
 // FILE: Schematic.kt
-class Schematic {
+define Schematic {
     var name: String? = null
 
     var error: String? = null
@@ -17,7 +17,7 @@ class Schematic {
 // FILE: SortedListModel.java
 import java.util.Comparator;
 
-public class SortedListModel<T> {
+public define SortedListModel<T> {
     public SortedListModel(Comparator<? super T> comparator) {
     }
 }

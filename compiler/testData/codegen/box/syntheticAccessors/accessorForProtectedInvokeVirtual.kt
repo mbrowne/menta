@@ -4,7 +4,7 @@
 import test.A
 import kotlin.test.assertEquals
 
-open class B : A() {
+open define B : A() {
     fun box(): String {
         val overriddenMethod: () -> String = {
             method()
@@ -42,7 +42,7 @@ open class B : A() {
     }
 }
 
-class C : B() {
+define C : B() {
     override fun method() = "C.method"
     override var property: String
         get() = "C.property"
@@ -55,7 +55,7 @@ fun box() = C().box()
 
 package test
 
-abstract class A {
+abstract define A {
     public var state = ""
 
     // These implementations should not be called, because they are overridden in C

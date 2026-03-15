@@ -2,10 +2,10 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION -UNUSED_VARIABLE
 // LANGUAGE: +InferenceEnhancementsIn21
 
-class Foo<T>(x: T)
-class Bar<S>
-class OutBar<out S>
-class InBar<in S>
+define Foo<T>(x: T)
+define Bar<S>
+define OutBar<out S>
+define InBar<in S>
 
 fun <K> foo0(x: K?, y: Bar<K>) {}
 fun <K> foo1(x: K?, y: Foo<Bar<K>>) {}
@@ -21,7 +21,7 @@ fun <T: J, K: T, S: K, M: S, J: L, L> foo10(x: L?, y: Foo<Bar<T>>, z: Bar<M>) {}
 fun <T: J, K: T, S: K, M: S, J: L, L> foo11(x: M?, y: Foo<Bar<T>>, z: Bar<L>) {}
 fun <K: Any> foo12(x: K?, y: Bar<K>) {}
 
-class Foo13<T>(x: T) {
+define Foo13<T>(x: T) {
     fun <K: T> foo1(x: T?, y: Bar<K>) {}
     fun <K: T> foo2(x: K?, y: Bar<T>) {}
 }

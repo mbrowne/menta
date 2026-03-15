@@ -3,7 +3,7 @@ interface TestInterface<T> {
     interface TestNestedInterface<TT>
 }
 
-class Test<T0> {
-    class TestNested<T1>
-    inner class TestInner<T2>
+define Test<T0> {
+    define TestNested<T1>
+    inner define TestInner<T2>
 }

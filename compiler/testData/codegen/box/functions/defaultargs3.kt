@@ -1,5 +1,5 @@
 
-class C() {
+define C() {
     fun Any.toMyPrefixedString(prefix: String = "", suffix: String="") : String = prefix + " " + suffix
 
     fun testReceiver() : String {

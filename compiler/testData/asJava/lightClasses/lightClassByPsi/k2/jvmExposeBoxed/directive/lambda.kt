@@ -3,8 +3,8 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class TopLevelValueClass(val s: String)
+value define TopLevelValueClass(val s: String)
 
 val lambda : () ->  TopLevelValueClass = {TopLevelValueClass("OK")}
 
-// LIGHT_ELEMENTS_NO_DECLARATION: TopLevelValueClass.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: TopLevelValueClass.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

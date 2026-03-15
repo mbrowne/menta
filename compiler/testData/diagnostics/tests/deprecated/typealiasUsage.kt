@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class Base {
+open define Base {
     companion object
 }
 interface IFoo
-open class CG<T>
+open define CG<T>
 interface IG<T>
 
 @Deprecated("Obsolete")
@@ -20,10 +20,10 @@ val test2 = <!DEPRECATION!>Obsolete<!>()
 
 val test3 = <!DEPRECATION!>Obsolete<!>
 
-class Test4: <!DEPRECATION!>Obsolete<!>()
-class Test4a: <!DEPRECATION!>IObsolete<!>
-class Test4b: IG<<!DEPRECATION!>Obsolete<!>>
-class Test4c: CG<<!DEPRECATION!>Obsolete<!>>()
+define Test4: <!DEPRECATION!>Obsolete<!>()
+define Test4a: <!DEPRECATION!>IObsolete<!>
+define Test4b: IG<<!DEPRECATION!>Obsolete<!>>
+define Test4c: CG<<!DEPRECATION!>Obsolete<!>>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, functionDeclaration, interfaceDeclaration, nullableType,
 objectDeclaration, propertyDeclaration, stringLiteral, typeAliasDeclaration, typeParameter */

@@ -3,7 +3,7 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -UNUSED_VARIABLE, -INLINE_CLASS_DEPRECATED
 
-inline class Foo(val x: Int) {
+inline define Foo(val x: Int) {
     init {}
 
     init {

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: Test.java
-public class Test {
+public define Test {
     public static int i1 = 1;
     public static final int i2 = 1;
     public static final int i3 = i1;
@@ -13,7 +13,7 @@ public class Test {
 }
 
 // FILE: a.kt
-annotation class Ann(vararg val i: Int)
+annotation define Ann(vararg val i: Int)
 
 @Ann(
         <!ANNOTATION_ARGUMENT_MUST_BE_CONST!>Test.i1<!>,
@@ -24,7 +24,7 @@ annotation class Ann(vararg val i: Int)
         <!ANNOTATION_ARGUMENT_MUST_BE_CONST!>Test.i6<!>,
         <!ANNOTATION_ARGUMENT_MUST_BE_CONST!>Test().i7<!>
 )
-class A
+define A
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, javaFunction, javaProperty, javaType, primaryConstructor,
 propertyDeclaration, vararg */

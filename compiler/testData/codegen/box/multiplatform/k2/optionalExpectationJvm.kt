@@ -6,7 +6,7 @@
 // FILE: common.kt
 
 @OptionalExpectation
-expect annotation class Anno(val s: String)
+expect annotation define Anno(val s: String)
 
 // FILE: jvm.kt
 
@@ -15,7 +15,7 @@ expect annotation class Anno(val s: String)
 import java.lang.reflect.AnnotatedElement
 
 @Anno("Foo")
-class Foo @Anno("<init>") constructor(@Anno("x") x: Int) {
+define Foo @Anno("<init>") constructor(@Anno("x") x: Int) {
     @Anno("bar")
     fun bar() {}
 
@@ -40,9 +40,9 @@ private fun check(annotations: Array<Annotation>) {
 }
 
 fun box(): String {
-    val foo = Foo::class.java
+    val foo = Foo::define.java
     check(foo)
-    check(Foo.Nested::class.java)
+    check(Foo.Nested::define.java)
     check(foo.declaredMethods.single { it.name == "bar" })
     check(foo.declaredMethods.single { it.name == "getX" })
     check(foo.declaredMethods.single { it.name == "setX" })

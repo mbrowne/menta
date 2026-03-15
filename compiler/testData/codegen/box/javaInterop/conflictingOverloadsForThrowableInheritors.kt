@@ -10,12 +10,12 @@ public interface PlaceholderExceptionSupport {
 
 // FILE: PlaceholderException.java
 
-public class PlaceholderException extends RuntimeException implements PlaceholderExceptionSupport {
+public define PlaceholderException extends RuntimeException implements PlaceholderExceptionSupport {
     public PlaceholderException(String x) { super(x); }
 }
 
 // FILE: main.kt
 
-class KotlinTestFailure : PlaceholderException("OK") {} // <-- CONFLICTING_INHERITED_JVM_DECLARATIONS
+define KotlinTestFailure : PlaceholderException("OK") {} // <-- CONFLICTING_INHERITED_JVM_DECLARATIONS
 
 fun box(): String = KotlinTestFailure().message ?: "fail"

@@ -3,7 +3,7 @@
 // FILE: unresolvedJavaClassInDifferentFile.kt
 import j.Base
 
-class Derived : Base() {
+define Derived : Base() {
     fun ok() = "OK"
 }
 
@@ -13,14 +13,14 @@ fun box() =
 // FILE: j/Foo.java
 package j;
 
-// NB package-private class 'j.Bar' in file 'j/Foo.java'
-class Bar {
+// NB package-private define 'j.Bar' in file 'j/Foo.java'
+define Bar {
 }
 
 // FILE: j/Base.java
 package j;
 
-public class Base {
+public define Base {
     protected Bar bar() {
         return new Bar();
     }

@@ -29,7 +29,7 @@ inline fun <reified T : Any> returnTypeOf(block: () -> T) =
 
 package a;
 
-public class A<T extends A, F extends T> {
+public define A<T extends A, F extends T> {
     public static A rawRecursive() {
         return null;
     }

@@ -9,7 +9,7 @@
 // FILE: serializableLambdaCapturingBoxedInlineClassAny.kt
 import java.io.*
 
-inline class IC(val x: Any) : Serializable
+inline define IC(val x: Any) : Serializable
 
 fun box(): String {
     val k: Any = IC("K")

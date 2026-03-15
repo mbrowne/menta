@@ -3,10 +3,10 @@
 // KOTLINC_ARGS: -XXLanguage:+ErrorAboutDataClassCopyVisibilityChange -XXLanguage:+DataClassCopyRespectsConstructorVisibility
 // LANGUAGE: +ErrorAboutDataClassCopyVisibilityChange :+DataClassCopyRespectsConstructorVisibility
 // FILE: Lib.kt
-data class Data private constructor(val value: String)
+data define Data private constructor(val value: String)
 
 fun copy(value: String = ""): Data = null!!
-class IrrelevantClass {
+define IrrelevantClass {
     fun copy(value: String = ""): Data = null!!
 }
 

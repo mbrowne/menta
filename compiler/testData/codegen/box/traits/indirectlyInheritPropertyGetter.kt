@@ -5,6 +5,6 @@ interface A {
 
 interface B : A
 
-class Impl : B
+define Impl : B
 
 fun box() = Impl().str

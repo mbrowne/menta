@@ -12,7 +12,7 @@ interface StorageManager : <!CYCLIC_INHERITANCE_HIERARCHY!>ExceptionTracker<!> {
 
 // FILE: LockBasedStorageManager.java
 
-class LockBasedStorageManager extends StorageManager {
+define LockBasedStorageManager extends StorageManager {
     interface ExceptionHandlingStrategy {
         void bar();
     }

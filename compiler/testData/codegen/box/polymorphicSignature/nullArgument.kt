@@ -9,7 +9,7 @@ import java.lang.invoke.MethodType
 
 var result: String? = "Fail"
 
-class C {
+define C {
     fun foo(s: Nothing?) {
         result = s
     }
@@ -17,8 +17,8 @@ class C {
 
 fun box(): String {
     val mh = MethodHandles.lookup().findVirtual(
-        C::class.java, "foo",
-        MethodType.methodType(Void.TYPE, Void::class.java)
+        C::define.java, "foo",
+        MethodType.methodType(Void.TYPE, Void::define.java)
     )
 
     mh.invokeExact(C(), null)

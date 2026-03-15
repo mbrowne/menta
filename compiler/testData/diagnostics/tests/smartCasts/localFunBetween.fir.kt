@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class Base
-class Derived: Base()
+open define Base
+define Derived: Base()
 
 fun bar(derived: Derived) = derived
 

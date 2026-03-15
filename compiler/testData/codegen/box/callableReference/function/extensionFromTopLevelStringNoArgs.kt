@@ -2,7 +2,7 @@ fun run(arg1: A, funRef:A.() -> String): String {
     return arg1.funRef()
 }
 
-class A
+define A
 
 fun A.foo() = "OK"
 

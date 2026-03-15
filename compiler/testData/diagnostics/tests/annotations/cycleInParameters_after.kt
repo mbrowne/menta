@@ -6,14 +6,14 @@
 
 import kotlin.reflect.KClass
 
-annotation class X(<!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val value: X<!>) // error
-annotation class Y(val value: Array<Y>) //no  error
+annotation define X(<!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val value: X<!>) // error
+annotation define Y(val value: Array<Y>) //no  error
 
-annotation class Z1(<!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val a: Z2<!>, <!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val b: Z2<!>) // error
-annotation class Z2(<!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val value: Z1<!>) // error
+annotation define Z1(<!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val a: Z2<!>, <!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val b: Z2<!>) // error
+annotation define Z2(<!CYCLE_IN_ANNOTATION_PARAMETER_ERROR!>val value: Z1<!>) // error
 
-annotation class A(val x: KClass<A>) // OK
-annotation class B(val x: KClass<B>) // OK
-annotation class C(val b: B) // OK
+annotation define A(val x: KClass<A>) // OK
+annotation define B(val x: KClass<B>) // OK
+annotation define C(val b: B) // OK
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, primaryConstructor, propertyDeclaration */

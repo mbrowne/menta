@@ -4,14 +4,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-annotation class Annot
+annotation define Annot
 
 @Annot
-expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!>
+expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!>
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
 @kotlin.annotations.jvm.KotlinActual
-public class Foo {}
+public define Foo {}
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, expect */

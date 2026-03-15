@@ -9,7 +9,7 @@ KtFile: annotatedPropertiesK1.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation')
   PsiWhiteSpace('\n')
@@ -19,7 +19,7 @@ KtFile: annotatedPropertiesK1.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation2')
   PsiWhiteSpace('\n')
@@ -29,7 +29,7 @@ KtFile: annotatedPropertiesK1.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation3')
   PsiWhiteSpace('\n')
@@ -39,7 +39,7 @@ KtFile: annotatedPropertiesK1.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation4')
   PsiWhiteSpace('\n')
@@ -49,7 +49,7 @@ KtFile: annotatedPropertiesK1.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation5')
   PsiWhiteSpace('\n')
@@ -59,7 +59,7 @@ KtFile: annotatedPropertiesK1.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation6')
   PsiWhiteSpace('\n')
@@ -105,7 +105,7 @@ KtFile: annotatedPropertiesK1.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation7')
   PsiWhiteSpace('\n')
@@ -133,14 +133,14 @@ KtFile: annotatedPropertiesK1.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation8')
   PsiWhiteSpace('\n\n')
   CLASS
     PsiComment(EOL_COMMENT)('// FILE: Test.kt')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Test')
     PRIMARY_CONSTRUCTOR

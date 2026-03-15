@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // WITH_STDLIB
 
-class Lib {
+define Lib {
     val anon = object {
         fun f1() = ""
         fun f2(): String {

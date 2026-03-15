@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
     companion object B {
-        class <!REDECLARATION!>G<!>
+        define <!REDECLARATION!>G<!>
         val <!REDECLARATION!>G<!> = 1
     }
 }

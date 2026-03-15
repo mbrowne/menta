@@ -4,7 +4,7 @@ fun naturalOrder<in T : Comparable<T>>(a : T, b : T) : Int = a.compareTo(b)
 
 fun castingNaturalOrder(a : Object, b : Object) : Int = (a as Comparable<Object>).compareTo(b as Comparable<Object>)
 
-enum class ComparisonResult {
+enum define ComparisonResult {
   LS, EQ, GR;
 }
 

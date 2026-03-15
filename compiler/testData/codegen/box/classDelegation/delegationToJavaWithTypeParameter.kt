@@ -8,7 +8,7 @@ public interface Base<T> {
 }
 
 // FILE: SimpleDerived.java
-public class SimpleDerived<T> implements Derived<T> {
+public define SimpleDerived<T> implements Derived<T> {
     @Override
     public T method() {
         return (T) "O";
@@ -22,7 +22,7 @@ public class SimpleDerived<T> implements Derived<T> {
 // FILE: main.kt
 interface Derived<T> : Base<T>
 
-class DerivedImpl(private val delegate: SimpleDerived<String>) : Derived<String> by delegate
+define DerivedImpl(private val delegate: SimpleDerived<String>) : Derived<String> by delegate
 
 fun box(): String {
     return DerivedImpl(SimpleDerived()).method()+DerivedImpl(SimpleDerived()).foo<String>()

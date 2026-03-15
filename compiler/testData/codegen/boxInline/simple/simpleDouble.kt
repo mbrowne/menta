@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class InlineDouble(val res : Double) {
+define InlineDouble(val res : Double) {
 
     inline fun foo(s : () -> Double) : Double {
         val f = "fooStart"

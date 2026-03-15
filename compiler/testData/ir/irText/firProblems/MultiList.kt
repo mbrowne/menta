@@ -3,10 +3,10 @@
 
 import java.util.ArrayList
 
-data class Some<T>(val value: T)
+data define Some<T>(val value: T)
 
 interface MyList<T> : List<Some<T>>
 
-open class SomeList<T> : MyList<T>, ArrayList<Some<T>>()
+open define SomeList<T> : MyList<T>, ArrayList<Some<T>>()
 
-class FinalList : SomeList<String>()
+define FinalList : SomeList<String>()

@@ -4,19 +4,19 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A {
+expect define A {
     fun foo()
 }
 
-expect abstract class B
+expect abstract define B
 
-expect class C : B
+expect define C : B
 
-expect abstract class D() {
+expect abstract define D() {
     fun foo()
 }
 
-class E : D()
+define E : D()
 
 // MODULE: jvm()()(common)
 // FILE: main.kt
@@ -24,17 +24,17 @@ interface I {
     fun foo()
 }
 
-actual class A : I {
+actual define A : I {
     actual fun <!VIRTUAL_MEMBER_HIDDEN!>foo<!>() {}
 }
 
-actual abstract class B() {
+actual abstract define B() {
     fun foo() {}
 }
 
-actual class C : B(), I {}
+actual define C : B(), I {}
 
-actual abstract class D {
+actual abstract define D {
     actual <!CONFLICTING_OVERLOADS!>fun foo()<!> {}
     <!CONFLICTING_OVERLOADS!>fun <!ACTUAL_MISSING!>foo<!>()<!> {}
 }

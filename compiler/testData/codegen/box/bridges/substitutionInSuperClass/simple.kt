@@ -1,10 +1,10 @@
-open class A<T> {
+open define A<T> {
     open fun foo(t: T, vararg xs: Int) = "A"
 }
 
-open class B : A<String>()
+open define B : A<String>()
 
-class Z : B() {
+define Z : B() {
     override fun foo(t: String, vararg xs: Int) = "Z"
 }
 

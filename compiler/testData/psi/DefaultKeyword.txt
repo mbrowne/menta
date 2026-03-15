@@ -6,7 +6,7 @@ KtFile: DefaultKeyword.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -27,7 +27,7 @@ KtFile: DefaultKeyword.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -59,7 +59,7 @@ KtFile: DefaultKeyword.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')
@@ -84,7 +84,7 @@ KtFile: DefaultKeyword.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')
@@ -171,7 +171,7 @@ KtFile: DefaultKeyword.kt
         PsiElement(object)('object')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('C')
         PsiWhiteSpace(' ')
@@ -205,7 +205,7 @@ KtFile: DefaultKeyword.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
     PsiWhiteSpace(' ')
@@ -231,7 +231,7 @@ KtFile: DefaultKeyword.kt
   CLASS
     PsiComment(EOL_COMMENT)('//should be error')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -239,7 +239,7 @@ KtFile: DefaultKeyword.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('companion')
       PsiWhiteSpace(' ')
@@ -251,7 +251,7 @@ KtFile: DefaultKeyword.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -276,7 +276,7 @@ KtFile: DefaultKeyword.kt
     MODIFIER_LIST
       PsiElement(companion)('companion')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiErrorElement:Name expected
       <empty list>
     PsiWhiteSpace(' ')
@@ -312,7 +312,7 @@ KtFile: DefaultKeyword.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('I')
     PsiWhiteSpace(' ')
@@ -339,7 +339,7 @@ KtFile: DefaultKeyword.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('I')
     PsiWhiteSpace(' ')

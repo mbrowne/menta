@@ -5,7 +5,7 @@
 
 package test
 
-expect class Sample
+expect define Sample
 
 fun Sample.extensionFunction(): String = "O"
 
@@ -14,7 +14,7 @@ fun Sample.extensionFunction(): String = "O"
 
 package test
 
-actual class Sample
+actual define Sample
 
 fun Sample.platformSpecificExtension(): String = "K"
 

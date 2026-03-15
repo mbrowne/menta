@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // LANGUAGE: +ForbidInferringTypeVariablesIntoEmptyIntersection
-class Foo<T>
+define Foo<T>
 
-class Bar<T> {
+define Bar<T> {
     fun <S : T> takeFoo(foo: Foo<in S>): S = null <!UNCHECKED_CAST!>as S<!>
 }
 
-class Out<out K>
+define Out<out K>
 
 fun <K : L, L : N, N: <!FINAL_UPPER_BOUND!>Out<Int><!>> main() {
     val foo = Foo<K>()

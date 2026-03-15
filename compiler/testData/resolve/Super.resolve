@@ -1,11 +1,11 @@
 ~T~interface T {
     fun foo() {}
 }
-~C~open class C() {
+~C~open define C() {
     fun bar() {}
 }
 
-~A~class A<E>() : C(), T {
+~A~define A<E>() : C(), T {
 
     fun test() {
         `T`super<T>.foo()
@@ -14,7 +14,7 @@
         `C`super<C>@A.bar()
     }
 
-    inner class B : T {
+    inner define B : T {
         fun test() {
             `T`super<T>.foo();
             `C`super<C>@A.bar()
@@ -29,7 +29,7 @@
     fun foo() {}
 }
 
-class CG : G<Int> {
+define CG : G<Int> {
     fun test() {
         `G`super<`G`G>.foo() // OK
     }

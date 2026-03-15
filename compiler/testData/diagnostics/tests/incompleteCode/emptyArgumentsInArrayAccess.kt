@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // ISSUE: KT-79116
 
-class Get {
+define Get {
     operator fun get(a: Int, b: Int, c: Int) = 0
 }
 

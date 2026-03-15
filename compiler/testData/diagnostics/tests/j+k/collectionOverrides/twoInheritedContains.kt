@@ -9,14 +9,14 @@ public interface I {
 }
 
 // FILE: A.java
-abstract public class A implements java.util.Collection<String> {
+abstract public define A implements java.util.Collection<String> {
     public boolean contains(Object x) {return false;}
 }
 
 // FILE: B.java
-public abstract class B extends A implements I {}
+public abstract define B extends A implements I {}
 
 // FILE: main.kt
-abstract class KB : B()
+abstract define KB : B()
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

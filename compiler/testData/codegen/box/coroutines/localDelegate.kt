@@ -5,7 +5,7 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED
 import kotlin.coroutines.intrinsics.suspendCoroutineUninterceptedOrReturn
 
-class OkDelegate {
+define OkDelegate {
     operator fun getValue(receiver: Any?, property: Any?): String = "OK"
 }
 

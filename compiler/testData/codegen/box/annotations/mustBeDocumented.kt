@@ -5,20 +5,20 @@
 
 import java.lang.annotation.Documented
 
-annotation class NoDocumented
+annotation define NoDocumented
 
 @MustBeDocumented
-annotation class ExplicitMustBeDocumented
+annotation define ExplicitMustBeDocumented
 
 @Documented
-annotation class ExplicitJavaDocumented
+annotation define ExplicitJavaDocumented
 
 @MustBeDocumented
 @Documented
-annotation class ExplicitBoth
+annotation define ExplicitBoth
 
 inline fun <reified A> isDocumented(): Boolean =
-    A::class.java.getDeclaredAnnotation(Documented::class.java) != null
+    A::define.java.getDeclaredAnnotation(Documented::define.java) != null
 
 fun box(): String {
     if (isDocumented<NoDocumented>()) return "Fail NoDocumented"

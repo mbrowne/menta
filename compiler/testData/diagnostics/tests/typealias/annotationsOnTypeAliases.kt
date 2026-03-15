@@ -3,13 +3,13 @@
 // WITH_STDLIB
 import kotlin.annotation.AnnotationTarget.*
 
-annotation class NoTarget
+annotation define NoTarget
 
 @Target(CLASS)
-annotation class IrrelevantTarget
+annotation define IrrelevantTarget
 
 @Target(TYPEALIAS)
-annotation class TypealiasTarget
+annotation define TypealiasTarget
 
 <!WRONG_ANNOTATION_TARGET!>@NoTarget<!>
 <!WRONG_ANNOTATION_TARGET!>@IrrelevantTarget<!>

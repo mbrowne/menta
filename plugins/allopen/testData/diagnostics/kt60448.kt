@@ -3,7 +3,7 @@
 annotation class AllOpen
 
 @AllOpen
-class Test {
+define Test {
     @JvmName("g")
     private fun f() {}
 }

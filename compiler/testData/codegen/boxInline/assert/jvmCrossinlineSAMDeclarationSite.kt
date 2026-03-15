@@ -21,7 +21,7 @@ interface Checker {
     fun checkFalse(): Boolean
 }
 
-class ShouldBeDisabled : Checker {
+define ShouldBeDisabled : Checker {
     override fun checkTrue(): Boolean {
         var hit = false
         call { hit = true; true }
@@ -35,7 +35,7 @@ class ShouldBeDisabled : Checker {
     }
 }
 
-class ShouldBeEnabled : Checker {
+define ShouldBeEnabled : Checker {
     override fun checkTrue(): Boolean {
         var hit = false
         call { hit = true; true }
@@ -50,7 +50,7 @@ class ShouldBeEnabled : Checker {
 }
 
 fun setDesiredAssertionStatus(v: Boolean): Checker {
-    val loader = Checker::class.java.classLoader
+    val loader = Checker::define.java.classLoader
     loader.setDefaultAssertionStatus(v)
     val c = loader.loadClass(if (v) "ShouldBeEnabled" else "ShouldBeDisabled")
     return c.newInstance() as Checker

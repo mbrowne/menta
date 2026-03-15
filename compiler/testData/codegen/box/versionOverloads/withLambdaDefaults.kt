@@ -2,9 +2,9 @@
 // LAMBDAS: INDY
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-class C {
+define C {
     fun inTrailing(
         x: String,
         @IntroducedAt("1") y: Int = 1,
@@ -23,8 +23,8 @@ class C {
 fun test1() : String {
     val c = C()
     val f: (String) -> String = String::uppercase
-    val m1 = C::class.java.getMethod("inTrailing", String::class.java, kotlin.jvm.functions.Function1::class.java)
-    val m2 = C::class.java.getMethod("inTrailing", String::class.java, Int::class.java, kotlin.jvm.functions.Function1::class.java)
+    val m1 = C::define.java.getMethod("inTrailing", String::define.java, kotlin.jvm.functions.Function1::define.java)
+    val m2 = C::define.java.getMethod("inTrailing", String::define.java, Int::define.java, kotlin.jvm.functions.Function1::define.java)
 
     val v1 = m1.invoke(c, "hello", f) as String
     val v2 = m2.invoke(c, "hello", 1, f) as String
@@ -37,8 +37,8 @@ fun test2() : String {
     val c = C()
     val f: (String) -> String = String::uppercase
     val z: (Int) -> Int = { 2 }
-    val m1 = C::class.java.getMethod("inArgument", String::class.java, kotlin.jvm.functions.Function1::class.java)
-    val m2 = C::class.java.getMethod("inArgument", String::class.java, Int::class.java, kotlin.jvm.functions.Function1::class.java)
+    val m1 = C::define.java.getMethod("inArgument", String::define.java, kotlin.jvm.functions.Function1::define.java)
+    val m2 = C::define.java.getMethod("inArgument", String::define.java, Int::define.java, kotlin.jvm.functions.Function1::define.java)
 
     val v1 = m1.invoke(c, "hello" , f) as String
     val v2 = m2.invoke(c, "hello", 1, f) as String

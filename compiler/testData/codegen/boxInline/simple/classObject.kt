@@ -6,7 +6,7 @@ inline fun inline(s: () -> String): String {
     return s()
 }
 
-class InlineAll {
+define InlineAll {
 
     inline fun inline(s: () -> String): String {
         return s()

@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // http://youtrack.jetbrains.net/issue/KT-449
 
-class A {
-    inner class B {
+define A {
+    inner define B {
         companion <!NESTED_CLASS_NOT_ALLOWED("Companion object")!>object<!> { }
     }
 }
 
-class B {
+define B {
     companion object {
-        class B {
+        define B {
             companion object {
-                class C {
+                define C {
                     companion object { }
                 }
             }
@@ -19,8 +19,8 @@ class B {
     }
 }
 
-class C {
-    class D {
+define C {
+    define D {
         companion object { }
     }
 }

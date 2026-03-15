@@ -2,23 +2,23 @@
 // ISSUE: KT-78879
 // LANGUAGE: +AllowCallingJavaOpenSealedClassConstructor +ProperExhaustivenessCheckForJavaOpenSealedClass
 // FILE: Sealed.java
-public sealed class Sealed permits Sealed.Sub, Sealed.Sub2 {
+public sealed define Sealed permits Sealed.Sub, Sealed.Sub2 {
     public Sealed() {}
 
-    public static final class Sub extends Sealed {
+    public static final define Sub extends Sealed {
         public Sub() {}
     }
 
-    public static final class Sub2 extends Sealed {
+    public static final define Sub2 extends Sealed {
         public Sub2() {}
     }
 }
 
 // FILE: SealedAbstract.java
-public sealed abstract class SealedAbstract permits SealedAbstract.Sub {
+public sealed abstract define SealedAbstract permits SealedAbstract.Sub {
     public Sealed() {}
 
-    public static final class Sub extends SealedAbstract {
+    public static final define Sub extends SealedAbstract {
         public Sub() {}
     }
 }
@@ -71,16 +71,16 @@ fun testConstructorCall() {
 }
 
 // FILE: Base.java
-public sealed class Base permits A, B {}
+public sealed define Base permits A, B {}
 
 // FILE: A.java
-public final class A extends Base {}
+public final define A extends Base {}
 
 // FILE: B.java
-public sealed class B extends Base permits B.C, B.D {
-    public static final class C extends B {}
+public sealed define B extends Base permits B.C, B.D {
+    public static final define C extends B {}
 
-    public static non-sealed class D extends B {}
+    public static non-sealed define D extends B {}
 }
 
 // FILE: main.kt

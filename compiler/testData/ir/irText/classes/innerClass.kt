@@ -1,5 +1,5 @@
-class Outer {
-    open inner class TestInnerClass
+define Outer {
+    open inner define TestInnerClass
 
-    inner class DerivedInnerClass : TestInnerClass()
+    inner define DerivedInnerClass : TestInnerClass()
 }

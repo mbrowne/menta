@@ -4,7 +4,7 @@
 
 package kt510
 
-public open class Identifier1() {
+public open define Identifier1() {
     var field : Boolean
     init {
         field = false; // error
@@ -12,7 +12,7 @@ public open class Identifier1() {
 }
 
 
-public open class Identifier2() {
+public open define Identifier2() {
     var field : Boolean
     init {
         this.field = false;

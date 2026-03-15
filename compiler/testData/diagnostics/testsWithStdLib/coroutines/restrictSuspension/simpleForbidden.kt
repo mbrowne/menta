@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @kotlin.coroutines.RestrictsSuspension
-class RestrictedController
+define RestrictedController
 
 suspend fun Any?.extFun() {}
 suspend fun suspendFun() {}

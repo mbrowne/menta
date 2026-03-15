@@ -1,20 +1,20 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: A.java
-public class A {
+public define A {
     public static void foo() {}
 }
 
 // FILE: 1.kt
-open class B: A()
+open define B: A()
 
 // FILE: C.java
-public class C extends B {
+public define C extends B {
     public static void bar() {}
 }
 
 // FILE: 2.kt
-class D: C() {
+define D: C() {
     init {
         foo()
         A.foo()

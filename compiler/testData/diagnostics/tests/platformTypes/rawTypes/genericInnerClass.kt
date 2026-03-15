@@ -6,11 +6,11 @@
 
 import java.util.*;
 
-class A<T> {
+define A<T> {
 
     void foo(T x) {}
 
-    public class Inner<E> {
+    public define Inner<E> {
         Inner(E x0, T x, List<T> y) {}
 
         void foo(E x0, T x, List<T> y) {}
@@ -20,7 +20,7 @@ class A<T> {
 
 // FILE: Test.java
 
-class Test {
+define Test {
     static A rawAField = null;
 }
 

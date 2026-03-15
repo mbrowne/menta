@@ -4,7 +4,7 @@
 // ISSUE: KT-50776
 interface Entities<Target> : MutableCollection<Target>, Sequence<Target>
 
-abstract class StringEntities : Entities<String> {
+abstract define StringEntities : Entities<String> {
     fun foo() {
         forEach {
             println(it)

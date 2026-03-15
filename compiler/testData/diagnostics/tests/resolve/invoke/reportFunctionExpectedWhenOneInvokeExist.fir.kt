@@ -3,7 +3,7 @@
 
 fun Int.invoke() {}
 
-class SomeClass
+define SomeClass
 
 fun test(identifier: SomeClass, fn: String.() -> Unit) {
     <!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>identifier<!>()

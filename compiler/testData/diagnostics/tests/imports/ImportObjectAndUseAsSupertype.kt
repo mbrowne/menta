@@ -14,7 +14,7 @@ package baz
 
 import foo.Bar
 
-class C: <!SINGLETON_IN_SUPERTYPE!>Bar<!>
+define C: <!SINGLETON_IN_SUPERTYPE!>Bar<!>
 
 fun test() {
     Bar.bar()

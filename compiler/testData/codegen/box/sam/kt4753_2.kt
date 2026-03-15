@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: ParamBase.java
 
-class ParamBase<T> {}
+define ParamBase<T> {}
 
 // FILE: F.java
 

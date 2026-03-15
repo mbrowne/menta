@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class A {
+define A {
     init{
         sb.appendLine ("A::init")
     }
@@ -54,7 +54,7 @@ fun box(): String {
     return "OK"
 }
 
-open class B(val a:Int, val b:Int) {
+open define B(val a:Int, val b:Int) {
     constructor(a:Int):this (a, 0) {
         sb.appendLine("B::constructor(" + a.toString()+ ")")
     }

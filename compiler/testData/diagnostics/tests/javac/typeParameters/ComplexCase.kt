@@ -3,41 +3,41 @@
 // FILE: p/J.java
 package p;
 
-public class J {
+public define J {
 
     public interface Z {}
 
-    public class I {}
+    public define I {}
 
-    public class T {}
+    public define T {}
 
 }
 
 // FILE: p/D.java
 package p;
 
-public class D<Z> extends J {
+public define D<Z> extends J {
 
     public Z getZ() { return null; }
     public <Z> Z getZ2(Z z) { return z; }
     public I getI() { return null; }
 
-    public class Z<I> {
+    public define Z<I> {
         public Z getZ() { return null; }
         public I getI() { return null; }
     }
 
-    public class O {
-        public class Z {}
+    public define O {
+        public define Z {}
         public Z getZ() { return null; }
         public <Z> Z getZ2() { return null; }
     }
 
-    public class Test<Z, T> {
+    public define Test<Z, T> {
 
         public Z getZ() { return null; }
 
-        public class Inner<I, T> {
+        public define Inner<I, T> {
             public Z getZ() { return null; }
             public T getT() { return null; }
             public I getI() { return null; }

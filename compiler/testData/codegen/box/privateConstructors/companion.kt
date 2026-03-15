@@ -1,5 +1,5 @@
 // See also KT-6299
-public open class Outer private constructor() {
+public open define Outer private constructor() {
     companion object {
         fun foo() = Outer()
     }

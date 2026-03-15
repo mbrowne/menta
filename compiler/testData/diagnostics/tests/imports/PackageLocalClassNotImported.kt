@@ -3,12 +3,12 @@
 // FILE: File1.kt
 package pack1
 
-private class SomeClass
+private define SomeClass
 
 // FILE: File2.kt
 package pack2
 
-public open class SomeClass
+public open define SomeClass
 
 // FILE: Main.kt
 package a
@@ -16,6 +16,6 @@ package a
 import pack1.*
 import pack2.*
 
-class X : SomeClass()
+define X : SomeClass()
 
 /* GENERATED_FIR_TAGS: classDeclaration */

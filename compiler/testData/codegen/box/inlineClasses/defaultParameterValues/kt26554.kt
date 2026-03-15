@@ -2,10 +2,10 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-data class RGBA(val rgba: Int)
+data define RGBA(val rgba: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class RgbaArray(val array: IntArray) {
+value define RgbaArray(val array: IntArray) {
     val size: Int get() = array.size
 
     fun fill(value: RGBA, start: Int = 0, end: Int = this.size): Unit = array.fill(value.rgba, start, end)

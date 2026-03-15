@@ -3,13 +3,13 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class A<!>
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class A<!>
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define A<!>
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define A<!>
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class B<!>
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class B<!>
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define B<!>
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define B<!>
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect */

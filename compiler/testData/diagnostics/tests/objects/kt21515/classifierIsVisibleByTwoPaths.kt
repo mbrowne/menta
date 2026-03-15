@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class A {
-    class FromA {
+open define A {
+    define FromA {
         fun foo() = 42
     }
 }
 
-class B : A() {
+define B : A() {
     companion object : A() { }
 
     // we're seeing FromA here by two paths: one is deprecated (via companion object), and another one is not,

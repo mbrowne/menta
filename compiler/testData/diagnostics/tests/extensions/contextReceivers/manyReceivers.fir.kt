@@ -2,15 +2,15 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class A {
+define A {
     val a = 1
 }
 
-class B {
+define B {
     val b = 2
 }
 
-class C {
+define C {
     val c = 3
 }
 

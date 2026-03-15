@@ -5,7 +5,7 @@
 // FILE: 1.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class C(val x: String)
+value define C(val x: String)
 
 // FILE: 2.kt
 @file:JvmMultifileClass

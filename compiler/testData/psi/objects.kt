@@ -22,7 +22,7 @@ public object Objects {
         }
     }
 
-    public open class NestedClass
+    public open define NestedClass
 
 
 }

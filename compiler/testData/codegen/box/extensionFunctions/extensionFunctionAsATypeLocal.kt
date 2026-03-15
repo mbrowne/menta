@@ -5,7 +5,7 @@
 // ^^^ Source code is not compiled in JS.
 
 fun foo(): String {
-    class Local : Int.() -> String {
+    define Local : Int.() -> String {
         override fun invoke(p1: Int): String {
             return "O"
         }

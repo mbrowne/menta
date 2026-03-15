@@ -5,7 +5,7 @@
 
 import kotlin.reflect.jvm.reflect
 
-class C {
+define C {
     val x = { OK: String -> }
 }
 

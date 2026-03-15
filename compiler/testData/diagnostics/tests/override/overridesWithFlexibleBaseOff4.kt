@@ -16,11 +16,11 @@ public interface CustomSubscriber<T> {
 }
 
 // FILE: LoggingObserver.kt
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class LoggingObserver<!><T> : CustomObserver<T>, CustomSubscriber<T> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define LoggingObserver<!><T> : CustomObserver<T>, CustomSubscriber<T> {
     override fun onNext(value: T & Any) {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class LoggingObserverLegacy<!><T> : CustomObserver<T>, CustomSubscriber<T> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define LoggingObserverLegacy<!><T> : CustomObserver<T>, CustomSubscriber<T> {
     override fun onNext(value: T) {}
 }
 

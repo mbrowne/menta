@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X<T>(val x: T)
+value define X<T>(val x: T)
 
 interface IFoo<out T : X<String>?> {
     fun foo(): T
 }
 
-class Test : IFoo<X<String>> {
+define Test : IFoo<X<String>> {
     override fun foo(): X<String> = X("OK")
 }
 

@@ -1,4 +1,4 @@
-class C<T : C<T>>
+define C<T : C<T>>
 
 fun bar(c: C<*>): C<*> = null!!
 

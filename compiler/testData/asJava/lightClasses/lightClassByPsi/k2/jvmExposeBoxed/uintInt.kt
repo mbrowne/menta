@@ -1,10 +1,10 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmExposeBoxed
-class TopLevelClass {
+define TopLevelClass {
     fun UInt.foo(i: Int): UInt = this + i.toUInt()
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: TopLevelClass.class[foo-mPSJhXU]
+// LIGHT_ELEMENTS_NO_DECLARATION: TopLevelClass.define[foo-mPSJhXU]

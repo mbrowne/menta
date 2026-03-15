@@ -3,7 +3,7 @@
 
 import kotlin.reflect.*
 
-class Delegate {
+define Delegate {
     var inner = "OK"
     operator fun getValue(t: Any?, p: KProperty<*>): String = inner
 }

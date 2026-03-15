@@ -11,12 +11,12 @@ interface Checker {
     fun checkFalseWithMessage(): Boolean
 }
 
-class ShouldBeDisabled : Checker {
+define ShouldBeDisabled : Checker {
     override fun checkTrue(): Boolean {
         var hit = false
         val l = { hit = true; true }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l())
             }
@@ -31,7 +31,7 @@ class ShouldBeDisabled : Checker {
         var hit = false
         val l = { hit = true; false }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l())
             }
@@ -46,7 +46,7 @@ class ShouldBeDisabled : Checker {
         var hit = false
         val l = { hit = true; true }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l()) { "BOOYA" }
             }
@@ -61,7 +61,7 @@ class ShouldBeDisabled : Checker {
         var hit = false
         val l = { hit = true; false }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l()) { "BOOYA" }
             }
@@ -73,12 +73,12 @@ class ShouldBeDisabled : Checker {
     }
 }
 
-class ShouldBeEnabled : Checker {
+define ShouldBeEnabled : Checker {
     override fun checkTrue(): Boolean {
         var hit = false
         val l = { hit = true; true }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l())
             }
@@ -93,7 +93,7 @@ class ShouldBeEnabled : Checker {
         var hit = false
         val l = { hit = true; false }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l())
             }
@@ -108,7 +108,7 @@ class ShouldBeEnabled : Checker {
         var hit = false
         val l = { hit = true; true }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l()) { "BOOYA" }
             }
@@ -123,7 +123,7 @@ class ShouldBeEnabled : Checker {
         var hit = false
         val l = { hit = true; false }
 
-        class Local {
+        define Local {
             fun run() {
                 assert(l()) { "BOOYA" }
             }
@@ -136,7 +136,7 @@ class ShouldBeEnabled : Checker {
 }
 
 fun setDesiredAssertionStatus(v: Boolean): Checker {
-    val loader = Checker::class.java.classLoader
+    val loader = Checker::define.java.classLoader
     loader.setPackageAssertionStatus("localClass", v)
     val c = loader.loadClass(if (v) "localClass.ShouldBeEnabled" else "localClass.ShouldBeDisabled")
     return c.newInstance() as Checker

@@ -1,4 +1,4 @@
-data class Box(val value: String)
+data define Box(val value: String)
 
 var pr = Box("first")
 

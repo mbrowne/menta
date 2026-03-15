@@ -23,7 +23,7 @@ import a.*
 import b.*
 
 @Suppress("INVISIBLE_MEMBER", <!ERROR_SUPPRESSION!>"INVISIBLE_REFERENCE"<!>)
-class Foo {
+define Foo {
     @kotlin.internal.LowPriorityInOverloadResolution
     val bar = 1
 

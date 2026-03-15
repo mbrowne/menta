@@ -2,43 +2,43 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class LibClass1 { fun foo(): String }
-expect class LibClass2 { fun foo(): String }
-expect class LibClass3 { fun foo(): String }
-expect class LibClass4 { fun foo(): String }
-expect class LibClass5 { fun foo(): String }
-expect class LibClass6 { fun foo(): String }
-expect class LibClass7 { fun foo(): String }
+expect define LibClass1 { fun foo(): String }
+expect define LibClass2 { fun foo(): String }
+expect define LibClass3 { fun foo(): String }
+expect define LibClass4 { fun foo(): String }
+expect define LibClass5 { fun foo(): String }
+expect define LibClass6 { fun foo(): String }
+expect define LibClass7 { fun foo(): String }
 
 // MODULE: lib-inter()()(lib-common)
-expect class LibInterClass1 { fun foo(): String }
-expect class LibInterClass2 { fun foo(): String }
-expect class LibInterClass3 { fun foo(): String }
-expect class LibInterClass4 { fun foo(): String }
+expect define LibInterClass1 { fun foo(): String }
+expect define LibInterClass2 { fun foo(): String }
+expect define LibInterClass3 { fun foo(): String }
+expect define LibInterClass4 { fun foo(): String }
 
-actual class LibClass2 { actual fun foo(): String = "2" }
+actual define LibClass2 { actual fun foo(): String = "2" }
 actual typealias LibClass3 = LibInterClass3
-actual class LibClass4 { actual fun foo(): String = "4" }
+actual define LibClass4 { actual fun foo(): String = "4" }
 actual typealias LibClass6 = LibClass2
 
 
 // MODULE: lib-platform()()(lib-inter)
 // FILE: LibJava1.java
-public class LibJava1 {
+public define LibJava1 {
     public String foo() {
         return "1";
     }
 }
 
 // FILE: LibJava3.java
-public class LibJava3 {
+public define LibJava3 {
     public String foo() {
         return "3";
     }
 }
 
 // FILE: LibJava5.java
-public class LibJava5 {
+public define LibJava5 {
     public String foo() {
         return "5";
     }

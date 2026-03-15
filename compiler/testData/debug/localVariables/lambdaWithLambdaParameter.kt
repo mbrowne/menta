@@ -1,6 +1,6 @@
 
 // FILE: test.kt
-class Foo {
+define Foo {
     var bar = ""
 
     inline fun inlineCall(action: (complete: () -> Unit) -> Unit) {

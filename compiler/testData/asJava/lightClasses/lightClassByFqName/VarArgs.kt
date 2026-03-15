@@ -1,6 +1,6 @@
 // C
 
-class C {
+define C {
 
     fun f(vararg i: Int) {
 

@@ -1,4 +1,4 @@
-class C(x: Int, val y: Int) {
+define C(x: Int, val y: Int) {
     fun initChild(x0: Int): Any {
         var x = x0
         return object {

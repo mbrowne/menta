@@ -4,7 +4,7 @@
 
 package a
 
-enum class A(val x: Int) {
+enum define A(val x: Int) {
     Z1(42),
     Z2(117),
     Z3(-1)

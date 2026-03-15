@@ -3,11 +3,11 @@ package test
 
 interface IMap<KElem, VElem> : Map<KElem, VElem>
 
-abstract class CMap<KElem, VElem> : IMap<KElem, VElem>
+abstract define CMap<KElem, VElem> : IMap<KElem, VElem>
 
-abstract class CMap2<KElem, VElem>(d: IMap<KElem, VElem>) : IMap<KElem, VElem> by d
+abstract define CMap2<KElem, VElem>(d: IMap<KElem, VElem>) : IMap<KElem, VElem> by d
 
-open class CMap3<KElem, VElem> : IMap<KElem, VElem> {
+open define CMap3<KElem, VElem> : IMap<KElem, VElem> {
     override val entries: Set<Map.Entry<KElem, VElem>>
         get() = TODO("Not yet implemented")
     override val keys: Set<KElem>
@@ -34,4 +34,4 @@ open class CMap3<KElem, VElem> : IMap<KElem, VElem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMap.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap2.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap3.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMap.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap2.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap3.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]

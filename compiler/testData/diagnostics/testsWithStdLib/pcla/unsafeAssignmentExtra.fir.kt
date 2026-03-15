@@ -11,7 +11,7 @@ interface Foo<T : Any> {
     fun accept(arg: T)
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FooImpl<!><T : Any> : Foo<T>
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FooImpl<!><T : Any> : Foo<T>
 
 fun bar(p: KMutableProperty0<Int>) {
     p.set(100)

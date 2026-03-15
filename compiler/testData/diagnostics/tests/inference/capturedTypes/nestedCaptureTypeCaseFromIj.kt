@@ -4,7 +4,7 @@
 import kotlin.reflect.KClass
 
 // Just some case found in IJ
-class ExceptionDescriptor<T : Throwable>(
+define ExceptionDescriptor<T : Throwable>(
     val type: KClass<out T>,
 )
 

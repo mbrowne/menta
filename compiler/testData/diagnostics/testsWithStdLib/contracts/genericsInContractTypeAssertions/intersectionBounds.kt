@@ -8,7 +8,7 @@ import kotlin.contracts.*
 interface A { fun a(): Int }
 interface B { fun b(): String }
 
-class AB : A, B {
+define AB : A, B {
     override fun a() = 42
     override fun b() = "ok"
 }

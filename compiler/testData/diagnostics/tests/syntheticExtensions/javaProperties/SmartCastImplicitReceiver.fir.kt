@@ -9,13 +9,13 @@ fun Any.foo(): Int {
 }
 
 // FILE: JavaClass.java
-public abstract class JavaClass extends BaseClass implements JavaInterface {
+public abstract define JavaClass extends BaseClass implements JavaInterface {
     public int getSomething() { return 1; }
     public void setSomething(int value) { }
 }
 
 // FILE: BaseClass.java
-public abstract class BaseClass implements JavaInterface {
+public abstract define BaseClass implements JavaInterface {
 }
 
 // FILE: JavaInterface.java

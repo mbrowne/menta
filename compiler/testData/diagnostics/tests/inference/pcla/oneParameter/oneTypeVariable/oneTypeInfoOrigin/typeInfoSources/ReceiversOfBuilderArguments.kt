@@ -16,7 +16,7 @@ fun testYield() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
 }
 
@@ -26,7 +26,7 @@ fun <FT> build(
     return Buildee<FT>().apply { UserKlass().instructions(this) }
 }
 
-class UserKlass
+define UserKlass
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, lambdaLiteral, localProperty, nullableType,
 propertyDeclaration, stringLiteral, thisExpression, typeParameter, typeWithExtension */

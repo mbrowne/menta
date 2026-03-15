@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 fun <E> foo(x: Any, y: Any) : Any {
-    class C
+    define C
     // without E?
     if (x is <!CANNOT_CHECK_FOR_ERASED!>C<!>) {
         return x
@@ -14,8 +14,8 @@ fun <E> foo(x: Any, y: Any) : Any {
         x <!UNCHECKED_CAST!>as? C<!>
     }
 
-    class Outer<F> {
-        inner class Inner
+    define Outer<F> {
+        inner define Inner
     }
 
     // bare type
@@ -45,7 +45,7 @@ fun <E> foo(x: Any, y: Any) : Any {
 }
 
 fun noTypeParameters(x: Any) : Any {
-    class C
+    define C
     if(x is C) {
         return x
     }

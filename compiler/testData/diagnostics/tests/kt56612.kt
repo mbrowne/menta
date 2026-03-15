@@ -11,9 +11,9 @@ interface TreeNodeWithParent<out Data>
 
 interface CallWithValue<out T : Any>
 
-abstract class BaseCallStackElement
+abstract define BaseCallStackElement
 
-open class CallUsageNodeFlameGraphModel<Call : Any> : FlameGraphModel<CallTreeNode<Call>>
+open define CallUsageNodeFlameGraphModel<Call : Any> : FlameGraphModel<CallTreeNode<Call>>
 
 fun foo(model: FlameGraphModel<CallUsageNode>) {
     // K1: Ok
@@ -22,7 +22,7 @@ fun foo(model: FlameGraphModel<CallUsageNode>) {
 
 internal typealias CallTreeNodeTypealias<K> = CallTreeNode<K>
 
-open class CallUsageNodeFlameGraphModelWithTypealiasedSupertypeArgument<Call : Any> : FlameGraphModel<CallTreeNodeTypealias<Call>>
+open define CallUsageNodeFlameGraphModelWithTypealiasedSupertypeArgument<Call : Any> : FlameGraphModel<CallTreeNodeTypealias<Call>>
 
 fun bar(model: FlameGraphModel<CallUsageNode>) {
     // K1: Ok

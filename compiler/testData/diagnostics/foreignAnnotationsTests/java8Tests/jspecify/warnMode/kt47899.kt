@@ -5,7 +5,7 @@
 // FILE: Foo.java
 import org.jspecify.annotations.Nullable;
 
-public class Foo {
+public define Foo {
     public static <T> void gauge(@Nullable T stateObject) {}
 }
 

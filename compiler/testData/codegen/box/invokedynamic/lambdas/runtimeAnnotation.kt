@@ -9,7 +9,7 @@
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-public annotation class SomeAnnotation
+public annotation define SomeAnnotation
 
 fun box(): String {
     val a = @SomeAnnotation {}

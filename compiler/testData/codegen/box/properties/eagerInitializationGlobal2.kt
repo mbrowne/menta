@@ -8,7 +8,7 @@ var z2 = false
 
 // FILE: lib2.kt
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 @EagerInitialization
 val x = run { z1 = true; 42 }
 

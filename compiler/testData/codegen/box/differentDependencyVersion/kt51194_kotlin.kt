@@ -13,7 +13,7 @@ interface Base {
 
 // MODULE: lib(coreLib_1)
 // FILE: Derived.kt
-abstract class Derived : Base {
+abstract define Derived : Base {
     override fun foo(): Any? = null
 }
 
@@ -25,6 +25,6 @@ interface Base {
 
 // MODULE: main(coreLib_2, lib)
 // FILE: main.kt
-<!CONFLICTING_INHERITED_MEMBERS_WARNING!>class Implementation<!> : Derived()
+<!CONFLICTING_INHERITED_MEMBERS_WARNING!>define Implementation<!> : Derived()
 
 fun box() = "OK"

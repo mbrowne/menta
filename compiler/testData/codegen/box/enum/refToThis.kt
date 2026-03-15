@@ -1,4 +1,4 @@
-enum class Enum {
+enum define Enum {
     ENUM_VALUE {
         override fun test() = ENUM_VALUE
     };

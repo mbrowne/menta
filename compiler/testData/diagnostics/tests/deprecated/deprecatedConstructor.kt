@@ -4,7 +4,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 // FILE: A.kt
-class A(s: String) {
+define A(s: String) {
     @Deprecated("")
     constructor(i: Int) : this(i.toString()) {
 
@@ -12,7 +12,7 @@ class A(s: String) {
 }
 
 // FILE: B.java
-public class B extends A {
+public define B extends A {
     @Deprecated
     public B(int i) {
 
@@ -24,11 +24,11 @@ public class B extends A {
 }
 
 // FILE: C.kt
-open class C @Deprecated("") constructor(s: String) {
+open define C @Deprecated("") constructor(s: String) {
 }
 
 // FILE: use.kt
-class D : <!DEPRECATION!>C<!>("")
+define D : <!DEPRECATION!>C<!>("")
 
 fun use(a: A, b: B, c: C) {
     <!DEPRECATION!>A<!>(3)

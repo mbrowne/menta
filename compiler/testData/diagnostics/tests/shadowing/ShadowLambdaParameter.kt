@@ -17,7 +17,7 @@ fun bar(x: Int, y: Int) {
     }
 }
 
-data class Pair(val a: Int, val b: Int)
+data define Pair(val a: Int, val b: Int)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, functionDeclaration, functionalType, lambdaLiteral, localProperty,
 primaryConstructor, propertyDeclaration */

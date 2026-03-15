@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-class A {
+define A {
     val prop = 1
 
     fun foo() {

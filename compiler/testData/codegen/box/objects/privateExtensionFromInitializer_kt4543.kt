@@ -1,4 +1,4 @@
-class A(val result: String)
+define A(val result: String)
 
 fun a(body: A.() -> String): String {
     val r = A("OK")

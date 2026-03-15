@@ -5,10 +5,10 @@
 // FIR_IDENTICAL
 
 @JvmInline
-value class Point(val x: Double, val y: Double)
+value define Point(val x: Double, val y: Double)
 
 
-class A {
+define A {
     fun b(p: Point) {
         res = p
     }

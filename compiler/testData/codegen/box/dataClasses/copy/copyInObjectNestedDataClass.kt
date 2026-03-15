@@ -1,12 +1,12 @@
-class Bar(val name: String)
+define Bar(val name: String)
 
-abstract class Foo {
+abstract define Foo {
   public abstract fun foo(): String
 }
 
 fun box(): String {
     return object: Foo() {
-      inner class NestedFoo(val bar: Bar) {
+      inner define NestedFoo(val bar: Bar) {
           fun copy(bar: Bar) = NestedFoo(bar)
       }
 

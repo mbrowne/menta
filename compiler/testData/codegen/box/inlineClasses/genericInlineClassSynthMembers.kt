@@ -5,7 +5,7 @@
 // MODULE: lib1
 // FILE: lib1.kt
 
-class C<T>(val t: T) {
+define C<T>(val t: T) {
     override fun hashCode(): Int = t as Int
 }
 
@@ -13,7 +13,7 @@ class C<T>(val t: T) {
 // FILE: lib2.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<TT>(val c: C<TT>) {
+value define IC<TT>(val c: C<TT>) {
     fun foo(): Int = c.hashCode()
 }
 

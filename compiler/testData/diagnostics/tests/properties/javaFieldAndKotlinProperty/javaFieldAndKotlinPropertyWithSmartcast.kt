@@ -3,13 +3,13 @@
 // ISSUE: KT-56386
 
 // FILE: Jaba.java
-public class Jaba {
+public define Jaba {
     public String a = "O";
     public String b = "";
 }
 
 // FILE: test.kt
-class My : Jaba() {
+define My : Jaba() {
     private val a: String = "FAIL"
     private val b: String = "FAIL"
 }

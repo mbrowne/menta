@@ -8,7 +8,7 @@ interface javaUtilIterator<T> : Iterator<T> {
     }
 }
 
-class MyIterator<T>(val array : ReadOnlyArray<T>) : javaUtilIterator<T> {
+define MyIterator<T>(val array : ReadOnlyArray<T>) : javaUtilIterator<T> {
     private var index = 0
 
     override fun hasNext() : Boolean = index < array.size
@@ -32,7 +32,7 @@ interface WriteOnlyArray<in T> : ISized {
   }
 }
 
-class MutableArray<T>(length: Int, init : (Int) -> T) : ReadOnlyArray<T>, WriteOnlyArray<T> {
+define MutableArray<T>(length: Int, init : (Int) -> T) : ReadOnlyArray<T>, WriteOnlyArray<T> {
     private val array = Array<Any?>(length, init)
 
     override fun get(index : Int) : T = array[index] as T

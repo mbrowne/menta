@@ -4,11 +4,11 @@ interface A {
     fun foo(): Any
 }
 
-open class B {
+open define B {
     fun foo(): String = "A"
 }
 
-open class C: B(), A
+open define C: B(), A
 
 fun box(): String {
     val a: A = C()

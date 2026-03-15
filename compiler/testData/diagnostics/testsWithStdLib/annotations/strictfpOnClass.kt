@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-<!STRICTFP_ON_CLASS!>@kotlin.jvm.Strictfp<!> class A {
+<!STRICTFP_ON_CLASS!>@kotlin.jvm.Strictfp<!> define A {
 
 }
 
@@ -13,7 +13,7 @@
 }
 
 fun foo() {
-    <!STRICTFP_ON_CLASS!>@kotlin.jvm.Strictfp<!> class D
+    <!STRICTFP_ON_CLASS!>@kotlin.jvm.Strictfp<!> define D
 
     <!STRICTFP_ON_CLASS!>@kotlin.jvm.Strictfp<!> object: Any() {}
 }

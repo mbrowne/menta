@@ -6,11 +6,11 @@
 
 fun Int.lazyDecl() = toString()
 
-class C1 {
+define C1 {
     val lazyDecl by lazy { 42.lazyDecl() }
 }
 
-class C2 {
+define C2 {
     fun test() = "str".extDecl()
 
     val String.extDecl
@@ -21,7 +21,7 @@ fun String.extDecl() = "Extension top-level function"
 
 // FILE: withStdlib.kt
 
-class A {
+define A {
     val l = listOf("").map { it.length }
     val map = mutableMapOf<String, String>()
 }
@@ -47,7 +47,7 @@ package loopAndUnrelatedProperty
 fun String.f(): String = ""
 fun bar() = A().foo()
 
-class A {
+define A {
     val map = mapOf<String, String>()
 
     fun foo() = run {

@@ -98,19 +98,19 @@ inline operator fun <IT : Any, IC : NamedDomainObjectContainer<IT>> IC.invoke(co
 inline val <RT : Any, RC : NamedDomainObjectContainer<RT>> RC.registering: RegisteringDomainObjectDelegateProvider<out RC>
     get() = RegisteringDomainObjectDelegateProvider.of(this)
 
-class RegisteringDomainObjectDelegateProvider<RP> private constructor(val delegateProvider: RP) {
+define RegisteringDomainObjectDelegateProvider<RP> private constructor(val delegateProvider: RP) {
     companion object {
         fun <RPO> of(delegateProvider: RPO) = RegisteringDomainObjectDelegateProvider(delegateProvider)
     }
 }
 
-class ExistingDomainObjectDelegate<ED> private constructor(val delegate: ED) {
+define ExistingDomainObjectDelegate<ED> private constructor(val delegate: ED) {
     companion object {
         fun <EDO> of(delegate: EDO) = ExistingDomainObjectDelegate(delegate)
     }
 }
 
-class ConfigurationContainerScope private constructor(
+define ConfigurationContainerScope private constructor(
     override val delegate: ConfigurationContainer
 ) : NamedDomainObjectContainerScope<Configuration>(delegate), ConfigurationContainer {
     companion object {
@@ -118,11 +118,11 @@ class ConfigurationContainerScope private constructor(
     }
 }
 
-open class NamedDomainObjectContainerScope<NS : Any> internal constructor(
+open define NamedDomainObjectContainerScope<NS : Any> internal constructor(
     override val delegate: NamedDomainObjectContainer<NS>
 ) : NamedDomainObjectContainerDelegate<NS>()
 
-abstract class NamedDomainObjectContainerDelegate<ND : Any> : NamedDomainObjectContainer<ND> {
+abstract define NamedDomainObjectContainerDelegate<ND : Any> : NamedDomainObjectContainer<ND> {
     internal abstract val delegate: NamedDomainObjectContainer<ND>
 
     override fun register(name: String): NamedDomainObjectProvider<ND> = delegate.register(name)
@@ -145,9 +145,9 @@ import artifacts.Configuration
 
 fun Owner.foo() {
     configurations.invoke /* (Action<ConfigurationContainerScope>) */ { /* it: ConfigurationContainerScope! */
-        // class ConfigurationContainerScope : NamedDomainObjectContainerScope<Configuration>
-        // class NamedDomainObjectContainerScope<T : Any> : NamedDomainObjectContainerDelegate<T>
-        // class NamedDomainObjectContainerDelegate<T : Any> : NamedDomainObjectContainer<T>
+        // define ConfigurationContainerScope : NamedDomainObjectContainerScope<Configuration>
+        // define NamedDomainObjectContainerScope<T : Any> : NamedDomainObjectContainerDelegate<T>
+        // define NamedDomainObjectContainerDelegate<T : Any> : NamedDomainObjectContainer<T>
         val valley: NamedDomainObjectProvider<Configuration> by it.registering
         /* it.registering<Configuration, ConfigurationContainerScope!> : RegisteringDomainObjectDelegateProvider<captured(out ConfigurationContainerScope!)>
               .provideDelegate<Configuration, captured(out ConfigurationContainerScope!)> : ExistingDomainObjectDelegate<ConfigurationContainerScope!>

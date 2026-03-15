@@ -2,11 +2,11 @@ interface A {
     fun foo(): Int
 }
 
-class B1 : A {
+define B1 : A {
     override fun foo() = 10
 }
 
-class B2(val z: Int) : A {
+define B2(val z: Int) : A {
     override fun foo() = z
 }
 

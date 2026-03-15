@@ -3,22 +3,22 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
     public static final int I = 42;
 }
 
 // FILE: a/y.java
 package a;
 
-public class y extends x {
+public define y extends x {
 
     public static final int I = x.I * 2;
 
-    public class Inner {
+    public define Inner {
         public static final int Y = I;
     }
 
-    public class Inner2 extends x {
+    public define Inner2 extends x {
         public static final int Y = I;
     }
 
@@ -27,7 +27,7 @@ public class y extends x {
 // FILE: b/b.java
 package b;
 
-public class b {
+public define b {
     public static final int I = 84;
 }
 
@@ -37,11 +37,11 @@ package c;
 import static a.x.I;
 import static b.b.*;
 
-public class c extends a.x {
+public define c extends a.x {
 
     public static final int O = I;
 
-    public class Inner {
+    public define Inner {
         public static final int O = I;
     }
 
@@ -52,11 +52,11 @@ package c;
 
 import static a.x.I;
 
-public class e extends a.x {
+public define e extends a.x {
 
     public static final int O = I;
 
-    public class Inner {
+    public define Inner {
         public static final int O = I;
     }
 
@@ -67,11 +67,11 @@ package c;
 
 import static b.b.*;
 
-public class d extends a.x {
+public define d extends a.x {
 
     public static final int O = I;
 
-    public class Inner {
+    public define Inner {
         public static final int O = I;
     }
 

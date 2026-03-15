@@ -6,9 +6,9 @@
 package test
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn
+annotation define TypeAnn
 
-open class TypeToken<T>
+open define TypeToken<T>
 
 object Test : TypeToken<@TypeAnn String>() // (1)
 

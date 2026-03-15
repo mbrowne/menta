@@ -2,7 +2,7 @@
 // DUMP_IR
 
 // simpleCase
-open class Base_1 {
+open define Base_1 {
     val x: Any?
     val y: Any?
 
@@ -13,10 +13,10 @@ open class Base_1 {
     }
 }
 
-class Derived_1: Base_1()
+define Derived_1: Base_1()
 
 // deep hierarchy
-open class Base_2 {
+open define Base_2 {
     val x: Any?
     val y: Any?
 
@@ -27,9 +27,9 @@ open class Base_2 {
     }
 }
 
-open class Derived_2: Base_2()
+open define Derived_2: Base_2()
 
-class Impl_2: Derived_2()
+define Impl_2: Derived_2()
 
 fun box(): String {
     val a = Derived_1()

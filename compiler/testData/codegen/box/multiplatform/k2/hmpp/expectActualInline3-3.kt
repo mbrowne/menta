@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class LibBox {
+expect define LibBox {
     val v: String
 }
 
@@ -12,7 +12,7 @@ inline fun <T> LibBox.map(block: (String) -> T): T = block(v)
 inline fun LibBox.interMap(): String = this.map { "inter$it" }
 
 // MODULE: lib-platform()()(lib-inter)
-actual class LibBox constructor(
+actual define LibBox constructor(
     actual val v: String
 )
 

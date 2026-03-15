@@ -3,7 +3,7 @@
 // FILE: File.kt
 package pack
 
-public open class InetAddressImpl
+public open define InetAddressImpl
 
 // FILE: Main.kt
 package a
@@ -11,6 +11,6 @@ package a
 import java.net.* // should not import java.net.InetAddressImpl because it's package local
 import pack.*
 
-class X : InetAddressImpl() // should resolve to our pack.InetAddressImpl
+define X : InetAddressImpl() // should resolve to our pack.InetAddressImpl
 
 /* GENERATED_FIR_TAGS: classDeclaration */

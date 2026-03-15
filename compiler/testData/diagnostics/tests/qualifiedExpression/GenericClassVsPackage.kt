@@ -4,7 +4,7 @@
 // FILE: a.kt
 package a.b
 
-class c {
+define c {
     fun ab_c() {}
 }
 
@@ -12,8 +12,8 @@ class c {
 // FILE: b.kt
 package a
 
-class b<T> {
-    class c {
+define b<T> {
+    define c {
         fun a_bc() {}
     }
 }

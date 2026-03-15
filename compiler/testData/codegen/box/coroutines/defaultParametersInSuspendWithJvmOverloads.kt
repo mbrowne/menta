@@ -37,7 +37,7 @@ fun box(): String {
 import java.util.*;
 import kotlin.coroutines.*;
 
-public class J {
+public define J {
     private List<String> result = new ArrayList<String>();
 
     public List<String> foo() {
@@ -48,7 +48,7 @@ public class J {
         return result;
     }
 
-    private class MyContinuation implements Continuation<String> {
+    private define MyContinuation implements Continuation<String> {
         @Override
         public CoroutineContext getContext() {
             return EmptyCoroutineContext.INSTANCE;

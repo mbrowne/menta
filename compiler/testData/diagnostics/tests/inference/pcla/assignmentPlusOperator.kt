@@ -7,7 +7,7 @@ fun reproduce() {
     }
 }
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     var myVar: T = null!!
     val myVal: T = null!!
@@ -15,7 +15,7 @@ class TypeVariableOwner<T> {
 
 fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
-class ScopeOwner {
+define ScopeOwner {
     operator fun plus(other: ScopeOwner): ScopeOwner = this
 }
 

@@ -17,12 +17,12 @@ fun runSuspend(block: suspend () -> Unit) {
 import kotlin.math.sqrt
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
 fun Double.square() = this * this
 
 @JvmInline
-value class DSegment(val p1: DPoint, val p2: DPoint) {
+value define DSegment(val p1: DPoint, val p2: DPoint) {
     inline val length
         get() = sqrt((p1.x - p2.x).square() + (p1.y - p2.y).square())
     inline val middle
@@ -44,7 +44,7 @@ import kotlin.math.sqrt
 fun supply(x: Any?) = Unit
 
 object InfiniteDPoints {
-    class DPointsIterator {
+    define DPointsIterator {
         @PublishedApi
         internal var i = 1.0
         inline operator fun next() = DPoint(i, -i).also { i++ }
@@ -126,7 +126,7 @@ suspend fun suspendFun(): String {
     return x.toString()
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 valueOf
 // 0 INVOKE(STATIC|VIRTUAL) (DPoint|DSegment).*\.(un)?box
 // 0 INVOKE(STATIC|VIRTUAL) .*(stub_for_inlining|lambda)

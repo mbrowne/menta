@@ -1,4 +1,4 @@
-class A(var x: String)
+define A(var x: String)
 
 fun f(s: String): String {
     fun A.localX() {

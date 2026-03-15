@@ -10,7 +10,7 @@
 
 val<!SYNTAX!><!> : Int = 1
 
-class<!SYNTAX!><!> {
+define<!SYNTAX!><!> {
 
 }
 
@@ -22,22 +22,22 @@ interface<!SYNTAX!><!> {
 
 }
 
-enum class<!SYNTAX!><!> {
+enum define<!SYNTAX!><!> {
 
 }
 
-annotation class<!SYNTAX!><!> {
+annotation define<!SYNTAX!><!> {
 
 }
 
-class Outer {
+define Outer {
     <!FUNCTION_DECLARATION_WITH_NO_NAME!>fun ()<!> {
 
     }
 
     val<!SYNTAX!><!> : Int = 1
 
-    class<!SYNTAX!><!> {
+    define<!SYNTAX!><!> {
 
     }
 
@@ -49,11 +49,11 @@ class Outer {
 
     }
 
-    enum class<!SYNTAX!><!> {
+    enum define<!SYNTAX!><!> {
 
     }
 
-    annotation class<!SYNTAX!><!> {
+    annotation define<!SYNTAX!><!> {
 
     }
 }

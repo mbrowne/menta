@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class Marker
+annotation define Marker
 
 @Marker
-@OptIn(ExperimentalSubclassOptIn::class)
-@SubclassOptInRequired(Marker::class)
+@OptIn(ExperimentalSubclassOptIn::define)
+@SubclassOptInRequired(Marker::define)
 interface MessApi
 
-open class MessImpl: <!OPT_IN_TO_INHERITANCE_ERROR, OPT_IN_USAGE_ERROR!>MessApi<!>
+open define MessImpl: <!OPT_IN_TO_INHERITANCE_ERROR, OPT_IN_USAGE_ERROR!>MessApi<!>
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, interfaceDeclaration */

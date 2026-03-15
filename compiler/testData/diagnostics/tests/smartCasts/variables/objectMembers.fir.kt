@@ -45,7 +45,7 @@ fun classInit() {
     x.length // ok
     y.length // ok
     val ctor = run {
-        class C {
+        define C {
             init { <!SMARTCAST_IMPOSSIBLE!>x<!>.length } // ?
             init { x = null }
             init { <!SMARTCAST_IMPOSSIBLE!>x<!>.length } // bad
@@ -75,7 +75,7 @@ fun classMethod() {
     x.length // ok
     y.length // ok
     val ctor = run {
-        class C {
+        define C {
             init { <!SMARTCAST_IMPOSSIBLE!>x<!>.length } // sort of bad
             init { <!SMARTCAST_IMPOSSIBLE!>y<!>.length } // bad
             fun foo() = <!SMARTCAST_IMPOSSIBLE!>x<!>.length // bad

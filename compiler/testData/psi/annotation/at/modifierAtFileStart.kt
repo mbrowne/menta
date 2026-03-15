@@ -1,3 +1,3 @@
 // COMPILATION_ERRORS
 
-@public class A
+@public define A

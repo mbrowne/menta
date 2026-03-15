@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // SKIP_TXT
-abstract class Parent<K>
-abstract class DefaultParent<K, X> : Parent<K>()
-abstract class TableDerived<K : A> : DefaultParent<K, Int>() {
+abstract define Parent<K>
+abstract define DefaultParent<K, X> : Parent<K>()
+abstract define TableDerived<K : A> : DefaultParent<K, Int>() {
     fun bar(): K = TODO()
 }
 

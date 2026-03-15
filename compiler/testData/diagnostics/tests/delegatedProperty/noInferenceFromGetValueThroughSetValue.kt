@@ -2,7 +2,7 @@
 import kotlin.reflect.KProperty
 
 // Definitions
-class M<E>
+define M<E>
 
 operator fun <X> M<out X>.getValue(thisRef: Any?, property: KProperty<*>): String = "value"
 operator fun <Z> M<in Z>.setValue(thisRef: Any?, property: KProperty<*>, value: Z) {}

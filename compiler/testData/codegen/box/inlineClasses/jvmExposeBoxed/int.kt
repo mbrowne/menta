@@ -3,7 +3,7 @@
 // CHECK_BYTECODE_LISTING
 
 // FILE: Test.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmExposeBoxed("create")
 fun createUInt(): UInt = 1u
@@ -12,7 +12,7 @@ fun createUInt(): UInt = 1u
 fun foo(u: UInt): Int = u.toInt()
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public int test() {
         return TestKt.foo(TestKt.create());
     }

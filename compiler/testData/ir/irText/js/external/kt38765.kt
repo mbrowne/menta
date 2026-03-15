@@ -3,20 +3,20 @@
 
 package events
 
-external open class internal {
+external open define internal {
     fun function(): String
     var property: Int
 
-    open class EventEmitterP : internal {
+    open define EventEmitterP : internal {
     }
 
-    open class EventEmitterS : internal {
+    open define EventEmitterS : internal {
         constructor(a: Any)
     }
 
     object NestedExternalObject : internal {}
 
-    enum class NestedExternalEnum {
+    enum define NestedExternalEnum {
         A, B
     }
 

@@ -46,7 +46,7 @@ fun testLocalClass() {
         <!SMARTCAST_IMPOSSIBLE!>x<!>.length
     }
     x.length
-    class F {
+    define F {
         init {
             <!SMARTCAST_IMPOSSIBLE!>x<!>.length
             var x: Any = "hello"

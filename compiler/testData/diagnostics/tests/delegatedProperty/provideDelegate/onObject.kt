@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class C {
+define C {
     operator fun getValue(x: Any?, y: Any?): String = ""
 }
 

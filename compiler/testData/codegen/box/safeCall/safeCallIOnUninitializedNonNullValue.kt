@@ -1,4 +1,4 @@
-abstract class Base() {
+abstract define Base() {
     init {
         foo()
     }
@@ -6,7 +6,7 @@ abstract class Base() {
     abstract fun foo()
 }
 
-class Derived(val x: String) : Base() {
+define Derived(val x: String) : Base() {
     override fun foo() {
         x?.length
     }

@@ -12,7 +12,7 @@ fun <T> main(t: T): T {
     return t
 }
 
-class C {
+define C {
     fun main() {
         println("C.main()")
     }
@@ -49,7 +49,7 @@ fun <T> main(t: T): T {
     return t
 }
 
-class C {
+define C {
     fun main() {
         println("foo.C.main()")
     }

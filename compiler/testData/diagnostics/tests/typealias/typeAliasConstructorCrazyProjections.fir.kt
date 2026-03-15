@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // NI_EXPECTED_FILE
 
-class Bound<X, Y : X>(val x: X, val y: Y)
+define Bound<X, Y : X>(val x: X, val y: Y)
 typealias B<X, Y> = Bound<X, Y>
 typealias BOutIn<T> = Bound<out List<T>, in T>
 typealias BInIn<T> = Bound<in List<T>, in T>

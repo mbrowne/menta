@@ -1,4 +1,4 @@
-class Comment() {
+define Comment() {
     var article = ""
 }
 
@@ -8,12 +8,12 @@ fun new(body: Comment.() -> Unit) : Comment {
     return c
 }
 
-open class Request(val handler : Any.() -> Comment) {
+open define Request(val handler : Any.() -> Comment) {
     val s = handler().article
 }
 
 
-class A : Request ({
+define A : Request ({
    new {
        this.article = "OK"
    }

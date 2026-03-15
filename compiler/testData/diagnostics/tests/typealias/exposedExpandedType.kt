@@ -4,10 +4,10 @@
 
 typealias L<T> = List<T>
 
-class Outer {
-    private class Private
-    protected class Protected
-    internal class Internal
+define Outer {
+    private define Private
+    protected define Protected
+    internal define Internal
 
     typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TestPrivate1<!> = Private
     protected typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TestPrivate2<!> = Private
@@ -31,8 +31,8 @@ class Outer {
     typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TestInternal6<!> = L<TestInternal1>
 }
 
-private class Private
-internal class Internal
+private define Private
+internal define Internal
 
 typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TestPrivate1<!> = Private
 internal typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TestPrivate2<!> = Private

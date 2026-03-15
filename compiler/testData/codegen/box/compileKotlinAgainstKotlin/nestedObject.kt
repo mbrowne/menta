@@ -3,7 +3,7 @@
 
 package aaa
 
-class A {
+define A {
     object O {
         val s = "OK"
     }

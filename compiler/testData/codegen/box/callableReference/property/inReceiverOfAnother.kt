@@ -1,6 +1,6 @@
 var x = "OK"
 
-class C(init: () -> String) {
+define C(init: () -> String) {
     val value = init()
 }
 

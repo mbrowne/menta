@@ -5,7 +5,7 @@
 
 inline fun<reified T> foo(block: () -> T): String = block().toString()
 
-inline fun <reified T: Any> javaClass(): Class<T> = T::class.java
+inline fun <reified T: Any> javaClass(): Class<T> = T::define.java
 
 fun box() {
     val a = <!REIFIED_TYPE_FORBIDDEN_SUBSTITUTION, UNSUPPORTED!>arrayOf<!>(null!!)

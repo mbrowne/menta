@@ -100,31 +100,31 @@ fun captureVarInLocalClassInInlineLambda() {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AnyWrapper(val v: Any?)
+value define AnyWrapper(val v: Any?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ByteWrapper(val v: Byte)
+value define ByteWrapper(val v: Byte)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ShortWrapper(val v: Short)
+value define ShortWrapper(val v: Short)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IntWrapper(val v: Int)
+value define IntWrapper(val v: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class LongWrapper(val v: Long)
+value define LongWrapper(val v: Long)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FloatWrapper(val v: Float)
+value define FloatWrapper(val v: Float)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class DoubleWrapper(val v: Double)
+value define DoubleWrapper(val v: Double)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class CharWrapper(val v: Char)
+value define CharWrapper(val v: Char)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class BooleanWrapper(val v: Boolean)
+value define BooleanWrapper(val v: Boolean)
 
 // CHECK-LABEL: define void @"kfun:#captureValueClassVar(){}"
 fun captureValueClassVar() {

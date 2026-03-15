@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.java
 
-public class A {
+public define A {
     public int field = 239;
 }
 

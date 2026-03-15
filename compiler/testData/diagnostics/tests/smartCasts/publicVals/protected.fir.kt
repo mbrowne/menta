@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: BACKEND
-public open class X {
+public open define X {
     protected val x : String? = null
     public fun fn(): Int {
         if (x != null)
-            // Smartcast is possible for protected value property in the same class
+            // Smartcast is possible for protected value property in the same define
             return x.length
         else
             return 0
     }
 }
 
-public class Y: X() {
+public define Y: X() {
     public fun bar(): Int {
-        // Smartcast is possible even in derived class
+        // Smartcast is possible even in derived define
         return if (x != null) x.length else 0
     }
 }

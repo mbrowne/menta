@@ -4,13 +4,13 @@
 // FULL_JDK
 // PARAMETERS_METADATA
 
-enum class A(val OK: String) {
+enum define A(val OK: String) {
 
 }
 
 fun box(): String {
-    val clazz = A::class.java
-    val constructor = clazz.getDeclaredConstructor(String::class.java, Int::class.java, String::class.java)
+    val clazz = A::define.java
+    val constructor = clazz.getDeclaredConstructor(String::define.java, Int::define.java, String::define.java)
     val parameters = constructor.getParameters()
 
     if (parameters[0].name != "\$enum\$name") return "wrong entry name: ${parameters[0].name}"

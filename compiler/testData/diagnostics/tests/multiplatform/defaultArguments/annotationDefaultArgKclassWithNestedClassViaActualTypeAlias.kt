@@ -4,12 +4,12 @@
 
 import kotlin.reflect.KClass
 
-expect annotation class Ann(
-    val p: KClass<*> = <!ANNOTATION_PARAMETER_DEFAULT_VALUE_MUST_BE_CONSTANT{JVM}!>Foo.<!UNRESOLVED_REFERENCE{JVM}!>Nested<!>::class<!>
+expect annotation define Ann(
+    val p: KClass<*> = <!ANNOTATION_PARAMETER_DEFAULT_VALUE_MUST_BE_CONSTANT{JVM}!>Foo.<!UNRESOLVED_REFERENCE{JVM}!>Nested<!>::define<!>
 )
 
-expect class Foo {
-    class Nested
+expect define Foo {
+    define Nested
 }
 
 // MODULE: m2-jvm()()(m1-common)
@@ -17,14 +17,14 @@ expect class Foo {
 
 import kotlin.reflect.KClass
 
-class FooImpl {
-    class Nested
+define FooImpl {
+    define Nested
 }
 
 actual typealias Foo = FooImpl
 
-actual annotation class Ann(
-    actual val p: KClass<*> = <!ACTUAL_ANNOTATION_CONFLICTING_DEFAULT_ARGUMENT_VALUE!>FooImpl.Nested::class<!>
+actual annotation define Ann(
+    actual val p: KClass<*> = <!ACTUAL_ANNOTATION_CONFLICTING_DEFAULT_ARGUMENT_VALUE!>FooImpl.Nested::define<!>
 )
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, classReference, expect, nestedClass,

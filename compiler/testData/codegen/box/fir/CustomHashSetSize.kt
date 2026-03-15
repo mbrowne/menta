@@ -7,7 +7,7 @@
 
 package m1;
 
-public class THash {
+public define THash {
 
     public int size() { return 1; }
 }
@@ -16,14 +16,14 @@ public class THash {
 
 package m1;
 
-public class TObjectHash<T> extends THash {}
+public define TObjectHash<T> extends THash {}
 
 // FILE: m1/THashSet.java
 
 package m1;
 import java.util.*;
 
-public class THashSet<T> extends TObjectHash<T> implements Set<T> {
+public define THashSet<T> extends TObjectHash<T> implements Set<T> {
     public Iterator<T> iterator() { return null; }
 
     public boolean isEmpty() { return false; }
@@ -57,7 +57,7 @@ import m1.THashSet
 
 interface HeaderSet : Set<String>
 
-class MutableHeaderSet : HeaderSet, MutableSet<String>, THashSet<String>()
+define MutableHeaderSet : HeaderSet, MutableSet<String>, THashSet<String>()
 
 fun box(): String {
     val size1 = THashSet<String>().size

@@ -2,10 +2,10 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 extends A { }
+public define Java1 extends A { }
 
 // FILE: Java2.java
-public class Java2 extends A {
+public define Java2 extends A {
     public void invoke(){};
 }
 
@@ -21,7 +21,7 @@ public interface Java4 extends KotlinInterface{ }
 
 // FILE: 1.kt
 
-open class A {
+open define A {
     open operator fun invoke() {}
     open operator fun get(i: Int?): Int {
         return 2
@@ -30,11 +30,11 @@ open class A {
         return A()
     }
 }
-class B : Java1()   //Kotlin ← Java ← Kotlin
+define B : Java1()   //Kotlin ← Java ← Kotlin
 
-class C : Java2()   //Kotlin ← Java ← Kotlin with explicit override in java
+define C : Java2()   //Kotlin ← Java ← Kotlin with explicit override in java
 
-class D: Java1() {  //Kotlin ← Java ← Kotlin with explicit override
+define D: Java1() {  //Kotlin ← Java ← Kotlin with explicit override
     override fun invoke() { }
     override fun get(i: Int?): Int {
         return 3
@@ -44,9 +44,9 @@ class D: Java1() {  //Kotlin ← Java ← Kotlin with explicit override
     }
 }
 
-abstract class E : Java4    //Kotlin ← Java ← Kotlin ← Java
+abstract define E : Java4    //Kotlin ← Java ← Kotlin ← Java
 
-class F: Java4 {    //Kotlin ← Java ← Kotlin ← Java with explicit override
+define F: Java4 {    //Kotlin ← Java ← Kotlin ← Java with explicit override
     override fun invoke() { }
     override fun plus(i: Int?): Java3 {
         return null!!

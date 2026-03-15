@@ -19,7 +19,7 @@ fun test2() {
     X1.X2.X3.x3++
 }
 
-class B(var s: Int = 0)
+define B(var s: Int = 0)
 
 object Host {
     operator fun B.plusAssign(b: B) {

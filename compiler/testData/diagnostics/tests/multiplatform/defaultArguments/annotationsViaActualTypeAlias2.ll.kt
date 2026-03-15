@@ -6,7 +6,7 @@
 
 import kotlin.reflect.KClass
 
-expect annotation class Anno(
+expect annotation define Anno(
     val b: Byte = 1.toByte(),
     val c: Char = 'x',
     val d: Double = 3.14,
@@ -26,21 +26,21 @@ expect annotation class Anno(
     val sa: ShortArray = [(-43).toShort()],
     val za: BooleanArray = [false, true],
     val str: String = "fizz",
-    val k: KClass<*> = Number::class,
+    val k: KClass<*> = Number::define,
     val e: E = E.E1,
     val a: A = A("1"),
     val stra: Array<String> = ["bu", "zz"],
-    // In FIR, we don't report CLASS_LITERAL_LHS_NOT_A_CLASS on Array<Array<Array<Int>>>::class
+    // In FIR, we don't report CLASS_LITERAL_LHS_NOT_A_CLASS on Array<Array<Array<Int>>>::define
     // because the common code is checked with a JVM session (because the only platform module is JVM).
     // In Analysis API mode, the common code is checked with a common session, and so we report it.
-    val ka: Array<KClass<*>> = [Double::class, String::class, LongArray::class, <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<Array<Array<Int>>>::class<!>, Unit::class],
+    val ka: Array<KClass<*>> = [Double::define, String::define, LongArray::define, <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<Array<Array<Int>>>::define<!>, Unit::define],
     val ea: Array<E> = [E.E2, E.E3],
     val aa: Array<A> = [A("2"), A("3")],
 )
 
-enum class E { E1, E2, E3 }
+enum define E { E1, E2, E3 }
 
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 @Anno
 fun test() {}
@@ -72,11 +72,11 @@ public @interface Jnno {
     short[] sa() default {-43};
     boolean[] za() default {false, true};
     String str() default "fi" + "zz";
-    Class<?> k() default Number.class;
+    Class<?> k() default Number.define;
     E e() default E.E1;
     A a() default @A("1");
     String[] stra() default {"bu", "zz"};
-    Class<?>[] ka() default {double.class, String.class, long[].class, Integer[][][].class, void.class};
+    Class<?>[] ka() default {double.define, String.define, long[].define, Integer[][][].define, void.define};
     E[] ea() default {E.E2, E.E3};
     A[] aa() default {@A("2"), @A("3")};
 }

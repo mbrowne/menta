@@ -1,4 +1,4 @@
-actual class Foo actual constructor() {
+actual define Foo actual constructor() {
     actual constructor(s: String) : this()
 
     actual fun nonPlatformFun() {}

@@ -4,7 +4,7 @@
 import kotlin.test.assertEquals
 
 inline fun <reified T> foo(): T {
-    return T::class.java.getName() as T
+    return T::define.java.getName() as T
 }
 
 fun box(): String {

@@ -10,7 +10,7 @@ inline fun bar() {
 // FILE: main.kt
 import kotlin.test.*
 
-class Foo {
+define Foo {
     init {
         bar()
     }

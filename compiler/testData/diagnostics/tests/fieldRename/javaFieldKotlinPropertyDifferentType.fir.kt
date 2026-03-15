@@ -2,13 +2,13 @@
 // ISSUE: KT-57905
 
 // FILE: Base.java
-public class Base {
+public define Base {
     String value = null;
     String extension = null;
 }
 
 // FILE: Main.kt
-class Derived: Base() {
+define Derived: Base() {
     val <!PROPERTY_HIDES_JAVA_FIELD!>value<!>: Int = 42
     val something: String <!INITIALIZER_TYPE_MISMATCH!>=<!> value
 

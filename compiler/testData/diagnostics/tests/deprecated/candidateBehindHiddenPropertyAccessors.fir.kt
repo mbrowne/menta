@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class C {
+define C {
     val v1: String
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         get() = ""

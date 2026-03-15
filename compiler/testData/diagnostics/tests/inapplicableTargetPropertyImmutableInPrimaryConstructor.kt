@@ -3,9 +3,9 @@
 
 package second
 
-annotation class Anno
+annotation define Anno
 
-class SimpleVarClass(
+define SimpleVarClass(
     @Anno
     @get:Anno
     <!INAPPLICABLE_TARGET_PROPERTY_IMMUTABLE!>@set:Anno<!>

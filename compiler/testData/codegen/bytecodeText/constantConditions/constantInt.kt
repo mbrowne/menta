@@ -42,7 +42,7 @@ fun test() {
     doStuffIfGe(100)
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC UtilKt.doStuffEq
 // 1 INVOKESTATIC UtilKt.doStuffNotEq
 // 0 INVOKESTATIC UtilKt.doStuffLt

@@ -10,7 +10,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getSomething1(int p) { return p; }
 
     public <T> T getSomething2() { return null; }

@@ -6,12 +6,12 @@
 // FILE: Java1.java
 import java.util.SortedMap;
 
-abstract public class Java1 implements SortedMap<Object, Object> {}
+abstract public define Java1 implements SortedMap<Object, Object> {}
 
 // FILE: 1.kt
-abstract class A : Java1()
+abstract define A : Java1()
 
-abstract class B(override val size: Int) : Java1() {
+abstract define B(override val size: Int) : Java1() {
     override fun put(key: Any?, value: Any?): Any? {
         return null
     }

@@ -8,7 +8,7 @@ interface C
 fun C.foo(body: () -> Unit) {}
 
 context(C)
-class A {
+define A {
     val foo = <!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!> {}
 }
 

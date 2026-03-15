@@ -9,11 +9,11 @@ interface I : K {
 
 interface J : K {}
 
-class A: I, J {
+define A: I, J {
     override fun ff() {}
 }
 
-class B: I, J {
+define B: I, J {
     override fun ff() {}
 }
 
@@ -33,7 +33,7 @@ fun testFlexible2(a: A, b: B) {
 }
 
 // FILE: Java.java
-public class Java {
+public define Java {
     public static A a() { return new A(); }
     public static B b() { return new B(); }
     public static <T> T id(T x) { return x; }

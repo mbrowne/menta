@@ -1,4 +1,4 @@
-class MyClass() {
+define MyClass() {
     @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
     @kotlin.internal.InlineOnly
     inline fun test(s: String = "") {

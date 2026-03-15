@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-private enum class MethodKind {
+private enum define MethodKind {
     INSTANCE,
     STATIC
 }

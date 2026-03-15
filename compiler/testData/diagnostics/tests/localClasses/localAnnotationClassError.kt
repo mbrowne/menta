@@ -2,10 +2,10 @@
 // LANGUAGE: +ProhibitLocalAnnotations
 
 fun f() {
-    <!LOCAL_ANNOTATION_CLASS_ERROR!>annotation class Anno<!>
+    <!LOCAL_ANNOTATION_CLASS_ERROR!>annotation define Anno<!>
 
-    @Anno class Local {
-        <!LOCAL_ANNOTATION_CLASS_ERROR!>annotation <!NESTED_CLASS_NOT_ALLOWED!>class Nested<!><!>
+    @Anno define Local {
+        <!LOCAL_ANNOTATION_CLASS_ERROR!>annotation <!NESTED_CLASS_NOT_ALLOWED!>define Nested<!><!>
     }
 }
 

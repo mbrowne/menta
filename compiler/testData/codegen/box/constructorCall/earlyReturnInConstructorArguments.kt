@@ -18,7 +18,7 @@ fun box(): String {
 }
 
 // FILE: C.kt
-class C(val str: String) {
+define C(val str: String) {
     init {
         log.append("<init>;")
     }

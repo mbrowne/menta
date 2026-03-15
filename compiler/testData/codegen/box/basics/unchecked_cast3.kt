@@ -9,7 +9,7 @@ fun box(): String {
     return "OK"
 }
 
-class TestKlass
+define TestKlass
 
 fun ensure(b: Boolean) {
     if (!b) {

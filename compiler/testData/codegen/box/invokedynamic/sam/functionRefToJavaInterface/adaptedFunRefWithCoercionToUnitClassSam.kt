@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final synthetic class AdaptedFunRefWithCoercionToUnitKt\$box\$[0-9]+
+// 1 final synthetic define AdaptedFunRefWithCoercionToUnitKt\$box\$[0-9]+
 
 // FILE: adaptedFunRefWithCoercionToUnit.kt
 var ok = "Failed"

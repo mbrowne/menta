@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class TopLevel {
+define TopLevel {
     @Deprecated("Nested")
-    class Nested {
+    define Nested {
         companion object {
             fun use() {}
 
-            class CompanionNested2
+            define CompanionNested2
         }
 
-        class Nested2
+        define Nested2
     }
 }
 

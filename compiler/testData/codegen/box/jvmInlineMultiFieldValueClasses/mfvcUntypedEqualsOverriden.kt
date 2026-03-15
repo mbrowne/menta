@@ -6,7 +6,7 @@
 import kotlin.math.abs
 
 @JvmInline
-value class MFVC(val x: Int, val y: Int) {
+value define MFVC(val x: Int, val y: Int) {
     override fun equals(other: Any?): Boolean {
         if (other !is MFVC) {
             return false

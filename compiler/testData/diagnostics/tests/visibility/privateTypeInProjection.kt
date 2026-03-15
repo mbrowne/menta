@@ -3,11 +3,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: a.kt
 
-private class A
+private define A
 
 // FILE: b.kt
 
-class B<T>
+define B<T>
 
 fun <R> foo(): R = null!!
 

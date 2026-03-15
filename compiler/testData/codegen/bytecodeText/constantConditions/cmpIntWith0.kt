@@ -16,7 +16,7 @@ fun testle(x: Int) = ile(x, 0)
 fun testgt(x: Int) = igt(x, 0)
 fun testge(x: Int) = ige(x, 0)
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 IF_ICMPEQ
 // 0 IF_ICMPNE
 // 0 IF_ICMPGE

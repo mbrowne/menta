@@ -6,7 +6,7 @@ package test
 import kotlin.test.assertEquals
 
 @Target(AnnotationTarget.TYPE)
-annotation class A(val values: Array<String> = ["Fail"])
+annotation define A(val values: Array<String> = ["Fail"])
 
 fun f(): @A Unit {}
 

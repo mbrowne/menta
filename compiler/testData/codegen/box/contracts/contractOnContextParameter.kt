@@ -7,7 +7,7 @@
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 context(a: String?)
 fun validate1() {
     contract {
@@ -21,7 +21,7 @@ fun validate1() {
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 context(a: String?)
 fun validate2() {
     contract {

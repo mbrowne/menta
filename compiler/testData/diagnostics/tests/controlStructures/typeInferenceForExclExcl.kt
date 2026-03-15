@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 // FILE: A.java
-public class A {
+public define A {
     public static String foo() {
         return "";
     }

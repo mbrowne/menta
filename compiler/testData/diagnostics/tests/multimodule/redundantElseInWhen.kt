@@ -4,13 +4,13 @@
 
 package test
 
-enum class E {
+enum define E {
     FIRST
 }
 
-sealed class S
+sealed define S
 
-class Derived : S()
+define Derived : S()
 
 // MODULE: m2(m1)
 // FILE: b.kt

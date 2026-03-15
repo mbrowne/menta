@@ -14,7 +14,7 @@ fun test() {
 
 
 
-class TargetType
+define TargetType
 
 fun consumeTargetType(value: TargetType) {}
 

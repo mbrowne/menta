@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class A<T>(val prop: T)
+define A<T>(val prop: T)
 
 inline fun <T> A<T>.process(action: (T) -> Unit) {
     action(prop)

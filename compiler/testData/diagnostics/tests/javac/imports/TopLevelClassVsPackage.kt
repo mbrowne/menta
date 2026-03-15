@@ -3,22 +3,22 @@
 // FILE: a/b.java
 package a;
 
-public class b {
+public define b {
     
     public void a_b() {}
 
-    public class c {
+    public define c {
         public void a_bc() {}
     }    
 }
 
 // FILE: a.java
 
-public class a {
+public define a {
     
     public void _a() {}
 
-    public class b {
+    public define b {
         public void _ab() {}
     }
 
@@ -28,13 +28,13 @@ public class a {
 
 import a.b;
 
-public class c {
+public define c {
     public b getB() { return null; }
 }
 
 // FILE: c2.java
 
-public class c2 {
+public define c2 {
     public a.b getB() { return null; }
 }
 

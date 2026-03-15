@@ -6,7 +6,7 @@ KtFile: trailingCommaForbidden.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiElement(COLON)(':')
@@ -36,7 +36,7 @@ KtFile: trailingCommaForbidden.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     TYPE_PARAMETER_LIST
@@ -117,7 +117,7 @@ KtFile: trailingCommaForbidden.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PRIMARY_CONSTRUCTOR
@@ -689,7 +689,7 @@ KtFile: trailingCommaForbidden.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Comparable')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(COMMA)(',')
         PsiWhiteSpace('\n    ')
         WHEN_CONDITION_WITH_EXPRESSION
@@ -697,7 +697,7 @@ KtFile: trailingCommaForbidden.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Iterable')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(COMMA)(',')
         PsiWhiteSpace('\n    ')
         WHEN_CONDITION_WITH_EXPRESSION
@@ -705,7 +705,7 @@ KtFile: trailingCommaForbidden.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('String')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(COMMA)(',')
         PsiWhiteSpace('\n    ')
         PsiErrorElement:Expecting a when-condition
@@ -779,7 +779,7 @@ KtFile: trailingCommaForbidden.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Comparable')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(COMMA)(',')
         PsiWhiteSpace('\n    ')
         PsiElement(ARROW)('->')
@@ -847,7 +847,7 @@ KtFile: trailingCommaForbidden.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('Comparable')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(ARROW)('->')
         PsiWhiteSpace(' ')

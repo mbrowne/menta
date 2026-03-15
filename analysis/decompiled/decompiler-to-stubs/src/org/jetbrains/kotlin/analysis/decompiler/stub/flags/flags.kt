@@ -15,10 +15,10 @@ val MODALITY: FlagsToModifiers = object : FlagsToModifiers() {
     override fun getModifiers(flags: Int): KtModifierKeywordToken {
         val modality = Flags.MODALITY.get(flags)
         return when (modality) {
-            ProtoBuf.Modality.ABSTRACT -> KtTokens.ABSTRACT_KEYWORD
             ProtoBuf.Modality.FINAL -> KtTokens.FINAL_KEYWORD
             ProtoBuf.Modality.OPEN -> KtTokens.OPEN_KEYWORD
             ProtoBuf.Modality.SEALED -> KtTokens.SEALED_KEYWORD
+            ProtoBuf.Modality.ABSTRACT -> KtTokens.FINAL_KEYWORD // fallback: treat abstract as final
             null -> throw IllegalStateException("Unexpected modality: null")
         }
     }

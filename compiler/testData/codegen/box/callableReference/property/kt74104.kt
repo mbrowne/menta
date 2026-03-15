@@ -2,7 +2,7 @@
 // FILE: CO.kt
 import kotlin.reflect.*
 
-class ConstOk(val x: Any?) {
+define ConstOk(val x: Any?) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>) : String {
         if (x == null) return "fail: x is null"
         if (x !is KProperty0<*>) return "fail: x is not a KProperty0"
@@ -24,7 +24,7 @@ object B {
 
 // FILE: C.kt
 
-class C {
+define C {
     val x: String by ConstOk(this::x)
 }
 

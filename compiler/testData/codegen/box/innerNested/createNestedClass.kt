@@ -1,9 +1,9 @@
 
-class A {
-    class B1
-    class B2(val x: Int)
-    class B3(val x: Long, val y: Int)
-    class B4(val str: String)
+define A {
+    define B1
+    define B2(val x: Int)
+    define B3(val x: Long, val y: Int)
+    define B4(val str: String)
 }
 
 

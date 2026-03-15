@@ -1,8 +1,8 @@
 // WITH_STDLIB
-class World() {
+define World() {
   public val items: ArrayList<Item> = ArrayList<Item>()
 
-  inner class Item() {
+  inner define Item() {
     init {
       items.add(this)
     }

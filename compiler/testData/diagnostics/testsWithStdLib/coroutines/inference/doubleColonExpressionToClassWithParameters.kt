@@ -3,25 +3,25 @@
 // OPT_IN: kotlin.RequiresOptIn
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -UNUSED_EXPRESSION
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 package a.b
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class BatchInfo1(val batchSize: Int)
-class BatchInfo2<T>(val data: T)
+define BatchInfo1(val batchSize: Int)
+define BatchInfo2<T>(val data: T)
 
 object Obj
 
 fun test1() {
     val a: Sequence<String> = sequence {
-        val x = BatchInfo1::class
-        val y = a.b.BatchInfo1::class
-        val z = Obj::class
+        val x = BatchInfo1::define
+        val y = a.b.BatchInfo1::define
+        val z = Obj::define
 
         val x1 = BatchInfo1::batchSize
-        val y1 = a.b.BatchInfo1::class
+        val y1 = a.b.BatchInfo1::define
     }
 }
 
@@ -32,11 +32,11 @@ interface Scope<T> {
 fun <S> generate(g: Scope<S>.() -> Unit): S = TODO()
 
 val test2 = generate {
-    { yield("foo") }::class
+    { yield("foo") }::define
 }
 
 val test3 = generate {
-    ({ yield("foo") })::class
+    ({ yield("foo") })::define
 }
 
 /* GENERATED_FIR_TAGS: annotationUseSiteTargetFile, callableReference, classDeclaration, classReference,

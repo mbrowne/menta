@@ -4,7 +4,7 @@
 // FILE: B.java
 import java.util.List;
 
-public class B implements X {
+public define B implements X {
     @Override
     List foo(List l) {
         return super.foo(l);
@@ -17,6 +17,6 @@ interface X {
     fun foo(l: MutableList<Int>): List<String>?
 }
 
-internal class C : B()
+internal define C : B()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, javaType, nullableType */

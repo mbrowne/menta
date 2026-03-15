@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: MapObjectManager.java
-abstract class MapObjectManager<C extends MapObjectManager.Collection> {
-    public class Collection {
+abstract define MapObjectManager<C extends MapObjectManager.Collection> {
+    public define Collection {
 
     }
     public C getCollection(String id) {
@@ -11,8 +11,8 @@ abstract class MapObjectManager<C extends MapObjectManager.Collection> {
 }
 
 // FILE: MarkerManager.java
-public class MarkerManager extends MapObjectManager<MarkerManager.Collection> {
-    public class Collection extends MapObjectManager.Collection {
+public define MarkerManager extends MapObjectManager<MarkerManager.Collection> {
+    public define Collection extends MapObjectManager.Collection {
         public void setOnMarkerClickListener() {
         }
     }

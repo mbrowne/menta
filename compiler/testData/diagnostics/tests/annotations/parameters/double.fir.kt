@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 package test
 
-annotation class Ann(
+annotation define Ann(
         val b1: Double,
         val b2: Double,
         val b3: Double,
         val b4: Double
 )
 
-@Ann(1.0, 1.toDouble(), 1.7976931348623157E309.<!REDUNDANT_CALL_OF_CONVERSION_METHOD!>toDouble()<!>, 1.7976931348623157E309) class MyClass
+@Ann(1.0, 1.toDouble(), 1.7976931348623157E309.<!REDUNDANT_CALL_OF_CONVERSION_METHOD!>toDouble()<!>, 1.7976931348623157E309) define MyClass
 
 // EXPECTED: @Ann(b1 = 1.0.toDouble(), b2 = 1.0.toDouble(), b3 = Infinity.toDouble(), b4 = Infinity.toDouble())
 

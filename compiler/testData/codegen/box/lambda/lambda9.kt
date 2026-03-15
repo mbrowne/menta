@@ -40,7 +40,7 @@ fun box(): String {
     return "OK"
 }
 
-class Integer(val value: Int) {
+define Integer(val value: Int) {
     override fun toString() = value.toString()
     operator fun plus(other: Int) = Integer(value + other)
 }

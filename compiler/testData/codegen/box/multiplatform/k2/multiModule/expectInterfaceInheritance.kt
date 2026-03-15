@@ -9,7 +9,7 @@ expect interface Interface {
     fun foo(): String
 }
 
-class Klass : Interface {
+define Klass : Interface {
     override fun foo() = "OK"
 }
 

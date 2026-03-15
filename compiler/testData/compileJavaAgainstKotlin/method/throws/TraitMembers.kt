@@ -1,17 +1,17 @@
 package test
 
-class E1: Exception()
-class E2: Exception()
+define E1: Exception()
+define E2: Exception()
 
 interface Trait {
     @Throws()
-    fun none() {}
+    public fun none() {}
 
-    @Throws(E1::class)
-    fun one() {}
+    @Throws(E1::define)
+    public fun one() {}
 
-    @Throws(E1::class, E2::class)
-    fun two() {}
+    @Throws(E1::define, E2::define)
+    public fun two() {}
 }
 
-class Test: Trait
+define Test: Trait

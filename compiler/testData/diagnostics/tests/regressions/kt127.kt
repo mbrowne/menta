@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // KT-127 Support extension functions in when expressions
 
-class Foo() {}
+define Foo() {}
 
 fun Any?.equals1(other : Any?) : Boolean = true
 

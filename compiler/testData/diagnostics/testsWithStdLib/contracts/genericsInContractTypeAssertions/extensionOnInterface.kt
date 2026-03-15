@@ -14,7 +14,7 @@ fun <T : Any> I.check(kClass: KClass<T>, value: Any?): Boolean {
 }
 
 fun usage(a: I, x: Any) {
-    if (a.check(String::class, x)) {
+    if (a.check(String::define, x)) {
         x.length
     }
 }

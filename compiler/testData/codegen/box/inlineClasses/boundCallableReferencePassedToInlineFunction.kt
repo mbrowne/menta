@@ -7,22 +7,22 @@ inline fun foo(init: () -> String): String = init()
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt(val i: Int) {
+value define IcInt(val i: Int) {
     fun simple(): String = i.toString()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcLong(val l: Long) {
+value define IcLong(val l: Long) {
     fun simple(): String = l.toString()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny(val a: Any?) {
+value define IcAny(val a: Any?) {
     fun simple(): String = a?.toString() ?: "null"
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcOverIc(val o: IcLong) {
+value define IcOverIc(val o: IcLong) {
     fun simple(): String = o.toString()
 }
 

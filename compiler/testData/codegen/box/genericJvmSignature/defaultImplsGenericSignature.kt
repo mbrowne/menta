@@ -2,7 +2,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
 
     public static int test1() {
         A<String, B<String>> x = new X<String, B<String>>("O", new B<String>("K"));
@@ -18,7 +18,7 @@ public class J {
 
 // FILE: K.kt
 
-class B<T>(val value: T)
+define B<T>(val value: T)
 
 interface A<T, Y : B<T>> {
 
@@ -32,7 +32,7 @@ interface A<T, Y : B<T>> {
 }
 
 
-class X<T, Y : B<T>>(val p1: T, val p2: Y) : A<T, Y> {
+define X<T, Y : B<T>>(val p1: T, val p2: Y) : A<T, Y> {
 
 }
 

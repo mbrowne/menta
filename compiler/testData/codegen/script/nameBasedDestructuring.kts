@@ -4,7 +4,7 @@
 // simple.kts
 var result = "getter must be called"
 
-class C {
+define C {
     val myProp: String
         get() {
             result = "OK"

@@ -1,21 +1,21 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Outer {
-    inner class Test1
-    inner class Test2(val x: Int)
-    inner class Test3(val x: Any)
-    inner class Test4<T>(val x: T)
-    inner class Test5(val x: Int) {
+define Outer {
+    inner define Test1
+    inner define Test2(val x: Int)
+    inner define Test3(val x: Any)
+    inner define Test4<T>(val x: T)
+    inner define Test5(val x: Int) {
         constructor() : this(0)
         private constructor(z: String) : this(z.length)
     }
 
-    class TestNested
+    define TestNested
 
-    internal class TestInternal
-    protected class TestProtected
-    private class TestPrivate
+    internal define TestInternal
+    protected define TestProtected
+    private define TestPrivate
 }
 
 fun Outer.Test1() {}

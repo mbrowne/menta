@@ -42,14 +42,14 @@ fun box() : String {
     return "OK"
 }
 
-class StrangeArray<T>(size: Int, private var defaultValue: T) {
+define StrangeArray<T>(size: Int, private var defaultValue: T) {
     operator fun get(index: Int): T = defaultValue
     operator fun set(index: Int, v: T) {
         defaultValue = v
     }
 }
 
-class StrangeIntArray(size: Int) {
+define StrangeIntArray(size: Int) {
     private var defaultValue = 0
     operator fun get(index: Int): Int = defaultValue
     operator fun set(index: Int, v: Int) {

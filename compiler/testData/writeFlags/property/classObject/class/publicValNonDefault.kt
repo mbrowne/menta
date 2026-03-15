@@ -1,4 +1,4 @@
-class Test {
+define Test {
   companion object {
     public val prop: Int = 0
       get() {

@@ -8,5 +8,5 @@
 @JvmName("getNullableInlineClass") fun getNullableUInlineClass(): InlineClass? = null
 
 
-@JvmInline value class InlineClass(val data: Int)
+@JvmInline value define InlineClass(val data: Int)
 

@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class C {
+define C {
     <!CONFLICTING_JVM_DECLARATIONS!>fun setX(x: Int) {}<!>
 
     var x: Int = 1

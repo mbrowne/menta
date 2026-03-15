@@ -1,4 +1,4 @@
 // FIR_IDENTICAL
-annotation class Ann
+annotation define Ann
 
-class Test(@param:Ann val x: Int)
+define Test(@param:Ann val x: Int)

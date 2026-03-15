@@ -1,4 +1,4 @@
-class X {
+define X {
     operator fun get(name: String, type: String = "none") = name + type
 }
 

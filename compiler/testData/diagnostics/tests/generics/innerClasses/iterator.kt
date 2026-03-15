@@ -4,13 +4,13 @@
 // JAVAC_EXPECTED_FILE
 import java.util.*
 
-class A<T> : AbstractCollection<T>() {
+define A<T> : AbstractCollection<T>() {
     override fun iterator(): MyIt = MyIt()
 
     override val size: Int
         get() = 1
 
-    inner class MyIt : MutableIterator<T> {
+    inner define MyIt : MutableIterator<T> {
         override fun next(): T {
             throw UnsupportedOperationException()
         }

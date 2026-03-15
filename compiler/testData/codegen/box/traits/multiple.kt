@@ -9,10 +9,10 @@ interface ALE<T> : AL {
     }
 }
 
-open class SmartArrayList() : ALE<String> {
+open define SmartArrayList() : ALE<String> {
 }
 
-class SmartArrayList2() : SmartArrayList(), AL {
+define SmartArrayList2() : SmartArrayList(), AL {
 }
 
 fun box() : String {

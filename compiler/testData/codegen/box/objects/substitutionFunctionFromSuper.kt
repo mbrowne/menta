@@ -1,13 +1,13 @@
 // KT-44054
-enum class Enum {
+enum define Enum {
     Entry1,
     Entry2
 }
 
-class Outer {
+define Outer {
     fun fooCaller(): Enum = obj.foo()
 
-    private abstract inner class Inner<T>(val default: T) {
+    private abstract inner define Inner<T>(val default: T) {
         fun foo(): T {
             return default
         }

@@ -11,7 +11,7 @@ interface MissedInterface {
 // FILE: b.kt
 interface Intermediate : MissedInterface
 
-class Implementation : Intermediate {
+define Implementation : Intermediate {
     val Implementation.onlyClassReferences: Implementation? get() = null
 
     val Intermediate.allHierarchy: MissedInterface? get() = null

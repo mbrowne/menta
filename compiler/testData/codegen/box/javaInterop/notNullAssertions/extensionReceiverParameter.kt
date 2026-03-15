@@ -2,7 +2,7 @@
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static String invokeFoo() {
         try {
             ExtensionKt.foo(null);

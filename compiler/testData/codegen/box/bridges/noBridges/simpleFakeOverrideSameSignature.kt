@@ -1,8 +1,8 @@
-open class A {
+open define A {
     open fun foo(): String = "OK"
 }
 
-class B : A()
+define B : A()
 
 fun box(): String {
     val x = B()

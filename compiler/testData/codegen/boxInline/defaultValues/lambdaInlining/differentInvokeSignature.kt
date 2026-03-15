@@ -3,8 +3,8 @@
 package test
 
 
-open class Base
-class Child(val value: String): Base()
+open define Base
+define Child(val value: String): Base()
 
 inline fun inlineFun(s: (Child) -> Base = { a: Base -> a as Child}): Base {
     return s(Child("OK"))

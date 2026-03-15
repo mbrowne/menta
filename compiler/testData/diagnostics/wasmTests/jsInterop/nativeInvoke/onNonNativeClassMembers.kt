@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 @file:Suppress("OPT_IN_USAGE")
 
-class A {
+define A {
     <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_FUN!>@nativeInvoke
     fun foo()<!> {}
 

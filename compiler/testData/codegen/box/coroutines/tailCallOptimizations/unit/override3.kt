@@ -20,7 +20,7 @@ interface Base {
     suspend fun generic(): Unit
 }
 
-class Derived: Base, Foo {
+define Derived: Base, Foo {
     override suspend fun generic(): Unit {
         tx { Dummy }
     }

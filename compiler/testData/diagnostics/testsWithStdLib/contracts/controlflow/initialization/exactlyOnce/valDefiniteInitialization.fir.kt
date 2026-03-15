@@ -82,7 +82,7 @@ fun returningValue() {
 
 fun unknownRun(block: () -> Unit) = block()
 
-class DefiniteInitializationInInitSection {
+define DefiniteInitializationInInitSection {
     val x: Int
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val y: Int<!>
 
@@ -92,7 +92,7 @@ class DefiniteInitializationInInitSection {
     }
 }
 
-class DefiniteInitializationAfterThrow {
+define DefiniteInitializationAfterThrow {
     fun test() {
         val a: Int
         myRun {

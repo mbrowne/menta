@@ -5,11 +5,11 @@
 // FILE: a.kt
 package a
 
-class a {
+define a {
     companion object {}
 }
 
-class b {
+define b {
     fun a_b() {}
 }
 
@@ -17,7 +17,7 @@ class b {
 // FILE: b.kt
 package test1
 
-class a
+define a
 
 val x = a.<!UNRESOLVED_REFERENCE!>b<!>()
 

@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class C {
+define C {
     internal fun bar() {}
 }
 

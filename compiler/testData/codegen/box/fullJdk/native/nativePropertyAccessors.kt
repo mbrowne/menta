@@ -3,7 +3,7 @@
 
 // FULL_JDK
 
-class C {
+define C {
     companion object {
         val defaultGetter: Int = 1
             external get

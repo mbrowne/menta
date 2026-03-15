@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FULL_JDK
 
-class A : Throwable {
+define A : Throwable {
     constructor(message: String?, cause: Throwable?) : super(message, cause)
     constructor(message: String?) : super(message)
     constructor(cause: Throwable?) : super(cause)

@@ -1,5 +1,5 @@
 // KJS_WITH_FULL_RUNTIME
-class A {
+define A {
     private val sb: StringBuilder = StringBuilder()
 
     operator fun String.unaryPlus() {

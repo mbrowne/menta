@@ -3,23 +3,23 @@
 // FILE: a/k.kt
 package a
 
-open class k {
+open define k {
     fun getK(): k? = null
     fun getI(): i? = null
-    inner class i
+    inner define i
 }
 
 // FILE: a/y.java
 package a;
 
-public class y {
+public define y {
     public k getK() { return null; }
 }
 
 // FILE: a/x.java
 package a;
 
-public class x extends k {
+public define x extends k {
     public i getIFromJava() { return null; }
 }
 

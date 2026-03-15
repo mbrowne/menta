@@ -8,9 +8,9 @@ package a
 
 import kotlin.reflect.jvm.isAccessible
 
-inline class S(val s: String)
+inline define S(val s: String)
 
-class Host {
+define Host {
     companion object {
         private val ok = S("OK")
         val ref = ::ok.apply { isAccessible = true }

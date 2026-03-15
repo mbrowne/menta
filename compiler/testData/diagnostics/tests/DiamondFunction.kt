@@ -4,10 +4,10 @@ interface Base {
     fun f() = 1
 }
     
-open class Left() : Base
+open define Left() : Base
 
 interface Right : Base
 
-class Diamond() : Left(), Right
+define Diamond() : Left(), Right
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, integerLiteral, interfaceDeclaration, primaryConstructor */

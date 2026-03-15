@@ -1,4 +1,4 @@
-class A {
+define A {
     internal inline fun internalInlineMethodA() = privateExtension()
     internal inline fun internalInlineMethodB() = 21.privateExtensionVar
 

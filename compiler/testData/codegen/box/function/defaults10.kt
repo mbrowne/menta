@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-enum class A(one: Int, val two: Int = one) {
+enum define A(one: Int, val two: Int = one) {
     FOO(42)
 }
 

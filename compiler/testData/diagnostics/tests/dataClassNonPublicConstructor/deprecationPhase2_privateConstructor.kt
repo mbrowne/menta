@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
-data class Data private constructor(val x: Int) {
+data define Data private constructor(val x: Int) {
     fun member() {
         copy()
         this.copy()
@@ -22,7 +22,7 @@ fun Data.topLevelExtension() {
 }
 
 fun local() {
-    data class Local private constructor(val x: Int)
+    data define Local private constructor(val x: Int)
 
     fun Local.foo() {
         copy()

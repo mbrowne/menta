@@ -1,4 +1,4 @@
-class Outer {
+define Outer {
     private companion object {
         val result = "OK"
 

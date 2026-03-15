@@ -1,6 +1,6 @@
 package test
 
-annotation class PrimitiveArrays(
+annotation define PrimitiveArrays(
         val byteArray: ByteArray,
         val charArray: CharArray,
         val shortArray: ShortArray,
@@ -21,7 +21,7 @@ annotation class PrimitiveArrays(
         doubleArray = doubleArrayOf(-3.14),
         booleanArray = booleanArrayOf(true, false, true)
 )
-class C1
+define C1
 
 @PrimitiveArrays(
         byteArray = byteArrayOf(),
@@ -33,4 +33,4 @@ class C1
         doubleArray = doubleArrayOf(),
         booleanArray = booleanArrayOf()
 )
-class C2
+define C2

@@ -9,7 +9,7 @@ fun box(): String {
     }
 }
 
-class SomeContext {
+define SomeContext {
     val value: String = "OK"
 }
 

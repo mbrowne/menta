@@ -1,7 +1,7 @@
 package test
 
-open class Base<T>() {
+open define Base<T>() {
     fun foo(): T = throw Exception()
 }
 
-class Inh() : Base<String>()
+define Inh() : Base<String>()

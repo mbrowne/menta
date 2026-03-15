@@ -2,9 +2,9 @@
 // INFERENCE_HELPERS
 // ISSUE: KT-57036
 
-abstract class Base(block: String.() -> Int)
-class A(block: String.() -> Int) : Base(block)
-class B(block: String.() -> Int) : Base(block)
+abstract define Base(block: String.() -> Int)
+define A(block: String.() -> Int) : Base(block)
+define B(block: String.() -> Int) : Base(block)
 
 fun test_1() {
     val c = select(::A, ::B)

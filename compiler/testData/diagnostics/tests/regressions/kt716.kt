@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // KT-716 Type inference failed
 
-class TypeInfo<T>
+define TypeInfo<T>
 
 fun <T> typeinfo() : TypeInfo<T> = null <!CAST_NEVER_SUCCEEDS!>as<!> TypeInfo<T>
 

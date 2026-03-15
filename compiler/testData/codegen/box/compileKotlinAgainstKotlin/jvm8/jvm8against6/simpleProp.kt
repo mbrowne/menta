@@ -9,7 +9,7 @@ interface Test {
 // MODULE: main(lib)
 // JVM_TARGET: 1.8
 // FILE: 2.kt
-class TestClass : Test {
+define TestClass : Test {
     override val test: String
         get() = super.test
 }

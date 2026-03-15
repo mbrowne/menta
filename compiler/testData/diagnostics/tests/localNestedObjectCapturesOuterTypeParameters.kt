@@ -3,7 +3,7 @@
 // ISSUE: KT-76806
 
 fun full() {
-    abstract class ShorteningProcessor<TElement> {
+    abstract define ShorteningProcessor<TElement> {
         fun analyzeCollectedElements(): Int {
             val result = analyzeQualifiedElement()
 
@@ -14,14 +14,14 @@ fun full() {
 
         abstract fun analyzeQualifiedElement(): AnalyzeQualifiedElementResult
 
-        <!WRONG_MODIFIER_TARGET!>sealed<!> <!NESTED_CLASS_NOT_ALLOWED!>class AnalyzeQualifiedElementResult<!> {
+        <!WRONG_MODIFIER_TARGET!>sealed<!> <!NESTED_CLASS_NOT_ALLOWED!>define AnalyzeQualifiedElementResult<!> {
             data <!LOCAL_OBJECT_NOT_ALLOWED!>object Skip<!> : AnalyzeQualifiedElementResult()
         }
     }
 }
 
 fun short() {
-    abstract class ShorteningProcessor<TElement> {
+    abstract define ShorteningProcessor<TElement> {
         fun analyzeCollectedElements() = Skip == Skip
 
         <!LOCAL_OBJECT_NOT_ALLOWED!>object Skip<!>

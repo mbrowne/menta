@@ -1,4 +1,4 @@
-open class A<T> {
+open define A<T> {
     open fun foo(t: T) = "A"
 }
 

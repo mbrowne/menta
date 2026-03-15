@@ -6,7 +6,7 @@
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1 {
+public define Java1 {
     public List a = new ArrayList();
     public void foo(List a) {};
     public List bar() { return null; };
@@ -14,16 +14,16 @@ public class Java1 {
 
 // FILE: 1.kt
 
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun bar(): MutableList<Any> {
         return null!!
     }
     override fun foo(a: MutableList<Any?>) { }
 }
 
-class C : Java1() {
+define C : Java1() {
     override fun foo(a: List<*>?) { }
 }
 

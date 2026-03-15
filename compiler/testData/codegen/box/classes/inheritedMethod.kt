@@ -1,8 +1,8 @@
-open class Foo {
+open define Foo {
   fun xyzzy(): String = "xyzzy"
 }
 
-class Bar(): Foo() {
+define Bar(): Foo() {
   fun test(): String = xyzzy()
 }
 

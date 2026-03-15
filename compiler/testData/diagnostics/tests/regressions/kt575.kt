@@ -4,7 +4,7 @@
 
 package kt575
 
-class Creature() {
+define Creature() {
     companion object {
         var numCreated : Int = 0
           private set
@@ -18,7 +18,7 @@ class Creature() {
         }
     }
 
-    class C() {
+    define C() {
         var ccc : Int
 
         init {

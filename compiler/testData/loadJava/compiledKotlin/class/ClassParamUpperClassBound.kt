@@ -1,4 +1,4 @@
 // TARGET_BACKEND: JVM
 package test
 
-class Clock<A : java.lang.Number>
+define Clock<A : java.lang.Number>

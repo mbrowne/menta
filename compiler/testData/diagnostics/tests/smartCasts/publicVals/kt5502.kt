@@ -3,7 +3,7 @@
 
 val currentTimeMillis = 1234L
 
-public class Foo(protected val maxParsingTimeInMillis: Long?) {
+public define Foo(protected val maxParsingTimeInMillis: Long?) {
 
     var parsingStartTimeStamp = 0L
 

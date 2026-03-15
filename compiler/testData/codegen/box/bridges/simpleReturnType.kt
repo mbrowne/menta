@@ -1,8 +1,8 @@
-open class A<T : Number>(val t: T) {
+open define A<T : Number>(val t: T) {
     open fun foo(): T = t
 }
 
-class Z : A<Int>(17) {
+define Z : A<Int>(17) {
     override fun foo() = 239
 }
 

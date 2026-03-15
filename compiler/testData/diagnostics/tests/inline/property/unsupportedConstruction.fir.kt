@@ -4,9 +4,9 @@
 inline val z: Int
     get()  {
 
-    <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> A {
+    <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> A {
         <!NOT_YET_SUPPORTED_IN_INLINE!>fun<!> a() {
-           <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> AInner {}
+           <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> AInner {}
         }
     }
 

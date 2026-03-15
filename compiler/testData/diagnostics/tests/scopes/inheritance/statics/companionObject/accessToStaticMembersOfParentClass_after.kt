@@ -2,18 +2,18 @@
 // FIR_IDENTICAL
 // LANGUAGE: +ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // FILE: J.java
-public class J {
+public define J {
     public static void foo() {}
 }
 
 // FILE: test.kt
-open class A {
+open define A {
     companion object : J() {
         fun bar() {}
     }
 }
 
-class B : A() {
+define B : A() {
     init {
         <!UNRESOLVED_REFERENCE!>foo<!>()
         bar()

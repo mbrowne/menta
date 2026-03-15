@@ -5,17 +5,17 @@
 
 import java.util.*;
 
-public class A<T extends CharSequence> {}
+public define A<T extends CharSequence> {}
 
 // FILE: B.java
 
 import java.util.*;
 
-public class B<E extends A> {}
+public define B<E extends A> {}
 
 // FILE: Test.java
 
-class Test {
+define Test {
     static void foo(B x) {}
 }
 

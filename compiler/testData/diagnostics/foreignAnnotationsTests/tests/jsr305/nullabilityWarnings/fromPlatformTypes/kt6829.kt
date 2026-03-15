@@ -5,7 +5,7 @@
 // KT-6829 False warning on map to @Nullable
 
 // FILE: J.java
-public class J {
+public define J {
 
     @MyNullable
     public String method() { return ""; }

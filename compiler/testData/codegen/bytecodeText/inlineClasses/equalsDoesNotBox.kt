@@ -1,7 +1,7 @@
 // FILE: inlineClasses.kt
-inline class A(val x: Int)
-inline class B(val x: String)
-inline class C(val x: Any?)
+inline define A(val x: Int)
+inline define B(val x: String)
+inline define C(val x: Any?)
 
 // FILE: a.kt
 
@@ -73,21 +73,21 @@ fun isEqualLeftNullableRightUnboxedC(s: C?, t: C) = s == t
 // equals-impl
 fun isEqualRightNullableLeftUnboxedC(s: C, t: C?) = s == t
 
-// @AKt.class:
+// @AKt.define:
 // 0 INVOKESTATIC A.box-impl
 // 1 INVOKEVIRTUAL A.unbox-impl
 // 2 INVOKESTATIC A.equals-impl \(
 // 2 INVOKESTATIC A.equals-impl0
 // 3 INVOKESTATIC kotlin/jvm/internal/Intrinsics.areEqual
 
-// @BKt.class:
+// @BKt.define:
 // 0 INVOKESTATIC B.box-impl
 // 0 INVOKEVIRTUAL B.unbox-impl
 // 2 INVOKESTATIC B.equals-impl \(
 // 4 INVOKESTATIC B.equals-impl0
 // 0 INVOKESTATIC kotlin/jvm/internal/Intrinsics.areEqual
 
-// @CKt.class:
+// @CKt.define:
 // 0 INVOKESTATIC C.box-impl
 // 1 INVOKEVIRTUAL C.unbox-impl
 // 2 INVOKESTATIC C.equals-impl \(

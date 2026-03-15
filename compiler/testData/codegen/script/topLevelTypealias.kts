@@ -1,4 +1,4 @@
-class SimpleClass(val s: String) {
+define SimpleClass(val s: String) {
     fun foo() = s
 }
 

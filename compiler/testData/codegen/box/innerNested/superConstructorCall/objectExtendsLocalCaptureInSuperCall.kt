@@ -1,7 +1,7 @@
-open class A(val s: String)
+open define A(val s: String)
 
 fun box(): String {
-    class B {
+    define B {
         val result = "OK"
 
         val f = object : A(result) {}.s

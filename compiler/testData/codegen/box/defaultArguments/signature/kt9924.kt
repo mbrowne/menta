@@ -1,8 +1,8 @@
-abstract class A<T> {
+abstract define A<T> {
     abstract fun test(a: T, b:Boolean = false) : String
 }
 
-class B : A<String>() {
+define B : A<String>() {
     override fun test(a: String, b: Boolean): String {
         return a
     }

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-69724
 // MODULE: common
-expect class A
-expect class B
+expect define A
+expect define B
 
 expect fun commonFun(a: A)
 

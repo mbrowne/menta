@@ -4,7 +4,7 @@
 
 // FILE: PsiType.java
 
-public abstract class PsiType {
+public abstract define PsiType {
 }
 
 // FILE: JavaCodeFragment.java
@@ -16,7 +16,7 @@ public interface JavaCodeFragment {
 
 // FILE: KtCodeFragment.kt
 
-abstract class KtCodeFragment : JavaCodeFragment {
+abstract define KtCodeFragment : JavaCodeFragment {
     private var thisType: PsiType? = null
 
     override fun getThisType() = thisType

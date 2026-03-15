@@ -34,7 +34,7 @@ fun <T> MyList<T>.noOverloadResolutionByLambdaReturnType(producer: (T) -> MyList
 
 fun <T> MyList<T>.limitedFlatMap(producer: (T) -> MyList<T>): MyList<T> = TODO()
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 @OverloadResolutionByLambdaReturnType
 @kotlin.jvm.JvmName("limitedFlatMapSeq")
 fun <T> MyList<T>.limitedFlatMap(producer: (T) -> MySequence<T>): MyList<T> = TODO()

@@ -4,17 +4,17 @@
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: String) {
+value define S(val value: String) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
-class C {
+define C {
     fun member(a: S, b: S = S("b")): S = a + b
 }
 
 fun topLevel(c: S, d: S = S("d")): S = c + d
 
-class D(e: S, f: S = S("f")) {
+define D(e: S, f: S = S("f")) {
     val result = e + f
 }
 

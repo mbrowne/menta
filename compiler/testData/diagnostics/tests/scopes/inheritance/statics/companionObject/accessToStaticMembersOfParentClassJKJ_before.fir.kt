@@ -1,23 +1,23 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // FILE: J.java
-public class J {
+public define J {
     public static void foo() {}
 }
 
 // FILE: J2.java
-public class J2 extends A {
+public define J2 extends A {
     public static void boo() {}
 }
 
 // FILE: test.kt
-open class A {
+open define A {
     companion object : J() {
         fun bar() {}
     }
 }
 
-class B : J2() {
+define B : J2() {
     init {
         <!UNRESOLVED_REFERENCE!>foo<!>()
         bar()

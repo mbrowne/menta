@@ -29,7 +29,7 @@ public interface NullMarkedType {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class NullMarkedTypeWithNullUnmarkedConstructor {
+public define NullMarkedTypeWithNullUnmarkedConstructor {
     @NullUnmarked
     public NullMarkedTypeWithNullUnmarkedConstructor(String arg) {}
 }

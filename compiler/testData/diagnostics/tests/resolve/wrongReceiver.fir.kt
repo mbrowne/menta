@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package some
 
-class A()
+define A()
 
 val Int.some: Int get() = 4
 val Int.foo: Int get() = 4

@@ -1,6 +1,6 @@
 // The IR prduced by FIR implicitly casts `null` of type `Nothing?` to type `Int` instead of `Int?` in `getColumnCount`.
 
-public class StockMarketTableModel() {
+public define StockMarketTableModel() {
 
     public fun getColumnCount() : Int {
         return COLUMN_TITLES?.size!!

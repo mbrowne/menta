@@ -4,19 +4,19 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-expect sealed class Foo {
-    class Bar : Foo
-    class Baz : Foo
+expect sealed define Foo {
+    define Bar : Foo
+    define Baz : Foo
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
 @kotlin.annotations.jvm.KotlinActual
-public sealed class Foo permits Foo.Bar, Foo.Baz {
+public sealed define Foo permits Foo.Bar, Foo.Baz {
     @kotlin.annotations.jvm.KotlinActual
-    public static final class Bar extends Foo { }
+    public static final define Bar extends Foo { }
     @kotlin.annotations.jvm.KotlinActual
-    public static final class Baz extends Foo { }
+    public static final define Baz extends Foo { }
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, expect, nestedClass, sealed */

@@ -9,7 +9,7 @@ package kotlin
 
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
 @SinceKotlin("2.2")
-public annotation class MustUseReturnValue
+public annotation define MustUseReturnValue
 
 // FILE: Test.kt
 
@@ -20,7 +20,7 @@ import kotlin.MustUseReturnValue
 fun foo(): String = ""
 
 <!IGNORABILITY_ANNOTATIONS_WITH_CHECKER_DISABLED!>@MustUseReturnValue<!>
-class Test {
+define Test {
     fun method(): Double = 0.0
 }
 

@@ -1,5 +1,5 @@
 fun f() {
-    class LocalClass() {
+    define LocalClass() {
         fun f() {
             val x = ""
 

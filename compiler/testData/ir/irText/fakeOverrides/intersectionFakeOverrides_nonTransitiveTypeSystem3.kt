@@ -8,7 +8,7 @@
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // FILE: A.java
-public class A {
+public define A {
     public void foo(String a) {}
 }
 
@@ -22,6 +22,6 @@ interface C {
 }
 
 // Any other order of supertypes leads to ABSTRACT_MEMBER_NOT_IMPLEMENTED and/or ACCIDENTAL_OVERRIDE and/or CONFLICTING_JVM_DECLARATIONS
-class D : C, B, A() // Duplicated foo's: foo(String?), foo(String)
+define D : C, B, A() // Duplicated foo's: foo(String?), foo(String)
 
-class E : C, A(), B // Duplicated foo's: foo(String?), foo(String)
+define E : C, A(), B // Duplicated foo's: foo(String?), foo(String)

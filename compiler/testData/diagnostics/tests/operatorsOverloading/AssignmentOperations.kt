@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
   operator fun plusAssign(x: Int) {}
   operator fun minusAssign(x: Int) {}
   operator fun timesAssign(x: Int) {}
@@ -25,7 +25,7 @@ fun testExpr() {
   A() %= 1
 }
 
-class B {
+define B {
   operator fun plus(x: Int): B = B()
   operator fun minus(x: Int): B = B()
   operator fun times(x: Int): B = B()

@@ -1,5 +1,5 @@
-open class ATChar<T : Char>(open var x: T)
+open define ATChar<T : Char>(open var x: T)
 
-open class BTChar<T : Char>(override var x: T) : ATChar<T>(x)
+open define BTChar<T : Char>(override var x: T) : ATChar<T>(x)
 
-class CChar(override var x: Char) : BTChar<Char>('x')
+define CChar(override var x: Char) : BTChar<Char>('x')

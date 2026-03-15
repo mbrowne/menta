@@ -5,7 +5,7 @@
 // FILE: Test.java
 import java.util.List;
 
-public class Test {
+public define Test {
     public static B foo() { return null; }
     public static <T> T bar() { return null; }
     public static <T> T id(T x) { return null; }
@@ -14,8 +14,8 @@ public class Test {
 }
 
 // FILE: main.kt
-class A<T>(x: T)
-class B
+define A<T>(x: T)
+define B
 
 fun <T> select(vararg x: T): T = null as T
 
@@ -57,7 +57,7 @@ fun case_4() {
     <!DEBUG_INFO_EXPRESSION_TYPE("A<(kotlin.Nothing..kotlin.Nothing?)>")!>result<!>
 }
 
-class C<T, K, L>(x: T, y: K, z: L)
+define C<T, K, L>(x: T, y: K, z: L)
 
 fun case_5() {
     val x = Test.foo() // B!

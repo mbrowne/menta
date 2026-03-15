@@ -5,7 +5,7 @@
 
 package p
 
-public class A {
+public define A {
     @PublishedApi
     internal val a = A()
     @PublishedApi
@@ -13,7 +13,7 @@ public class A {
     @PublishedApi
     internal fun a() = A()
     @PublishedApi
-    internal inner class B
+    internal inner define B
 }
 
 @PublishedApi
@@ -23,7 +23,7 @@ internal var v = A()
 @PublishedApi
 internal fun a() = A()
 @PublishedApi
-internal class B
+internal define B
 
 // MODULE: m2(m1)
 // FILE: b.kt

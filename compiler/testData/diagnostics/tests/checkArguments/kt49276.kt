@@ -12,7 +12,7 @@ fun append(x: Collection<*>) {}
 fun append2(x: Iterable<*>) {}
 fun append2(x: Collection<*>) {}
 
-class In<in T>(x: T)
+define In<in T>(x: T)
 
 @JvmName("append31")
 fun append3(x: In<Nothing>) {}

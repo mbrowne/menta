@@ -5,7 +5,7 @@
 // FILE: J1.java
 import io.reactivex.rxjava3.annotations.*;
 
-public class J1<@NonNull T> {}
+public define J1<@NonNull T> {}
 
 // FILE: main.kt
 fun main() {

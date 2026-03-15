@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     fun getValue(_this: Nothing?, p: KProperty<*>): Int = 0
 }
 

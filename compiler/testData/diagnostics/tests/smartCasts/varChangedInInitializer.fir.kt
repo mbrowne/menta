@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My {
+define My {
     init {
         var y: Int?
         y = 42

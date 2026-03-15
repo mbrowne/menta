@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: JavaBaseClass.java
 
-public class JavaBaseClass {
+public define JavaBaseClass {
     public int getMissingField() {
         return 1;
     }
@@ -14,7 +14,7 @@ public class JavaBaseClass {
 
 // FILE: KotlinSubclassOfJavaQualifiers.kt
 
-class KotlinSubclassOfJavaQualifiers : JavaBaseClass() {
+define KotlinSubclassOfJavaQualifiers : JavaBaseClass() {
 
     fun consumeInt(x: Int) {}
     fun consumeString(x: String) {}
@@ -39,7 +39,7 @@ class KotlinSubclassOfJavaQualifiers : JavaBaseClass() {
         inner.testMissingField()
     }
 
-    inner class Inner : JavaBaseClass() {
+    inner define Inner : JavaBaseClass() {
         fun testPrivateField() {
             consumeString(super@KotlinSubclassOfJavaQualifiers.<!INVISIBLE_MEMBER!>privateField<!>)
             consumeInt(<!TYPE_MISMATCH!>super@KotlinSubclassOfJavaQualifiers.<!INVISIBLE_MEMBER!>privateField<!><!>)

@@ -6,12 +6,12 @@
 // MODULE: common
 // FILE: common.kt
 
-open class CommonBase {
+open define CommonBase {
     fun commonFakeOverride(): Int = 2
     open fun commonOverride(): Int = null!! // 7
 }
 
-expect class Foo() : CommonBase {
+expect define Foo() : CommonBase {
     fun foo(): Int // 5
 }
 
@@ -19,7 +19,7 @@ fun common(): Int = Foo().foo() * Foo().commonFakeOverride() * Foo().commonOverr
 
 // MODULE: platform()()(common)
 // FILE: Foo.java
-@kotlin.annotations.jvm.KotlinActual public class Foo extends CommonBase implements JvmBase {
+@kotlin.annotations.jvm.KotlinActual public define Foo extends CommonBase implements JvmBase {
     @kotlin.annotations.jvm.KotlinActual public Foo() {}
     @kotlin.annotations.jvm.KotlinActual public int foo() { return 5; }
     @Override public int commonOverride() { return 7; }

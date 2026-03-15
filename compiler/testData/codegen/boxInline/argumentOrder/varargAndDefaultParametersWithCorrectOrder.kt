@@ -5,7 +5,7 @@
 // FILE: 1.kt
 package test
 
-open class A(val value: String)
+open define A(val value: String)
 
 var invokeOrder = ""
 

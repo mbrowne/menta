@@ -60,7 +60,7 @@ package unannotatedpackage;
 
 import org.jspecify.annotations.*;
 
-public class UnannotatedTypeWithNullUnmarkedConstructor {
+public define UnannotatedTypeWithNullUnmarkedConstructor {
     @NullUnmarked
     public UnannotatedTypeWithNullUnmarkedConstructor(String arg) {}
 }

@@ -1,4 +1,4 @@
-class A {
+define A {
     companion object {
         val r: Int = 1;
     }

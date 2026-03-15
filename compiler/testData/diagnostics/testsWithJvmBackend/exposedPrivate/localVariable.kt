@@ -1,6 +1,6 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE -UNUSED_VARIABLE
 
-private class C
+private define C
 
 private inline fun simple() {
     val c: C? = null

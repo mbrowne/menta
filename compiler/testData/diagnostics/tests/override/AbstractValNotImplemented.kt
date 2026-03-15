@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-abstract class A {
+abstract define A {
     abstract val i: Int
 }
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class B<!>() : A() {
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define B<!>() : A() {
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, primaryConstructor, propertyDeclaration */

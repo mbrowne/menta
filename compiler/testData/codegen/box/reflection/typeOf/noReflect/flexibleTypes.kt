@@ -34,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
-public class J {
+public define J {
     public static String nullabilityFlexible() { return null; }
 
     @NotNull

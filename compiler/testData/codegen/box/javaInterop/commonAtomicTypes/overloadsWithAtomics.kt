@@ -2,22 +2,22 @@
 // WITH_STDLIB
 
 // FILE: JavaOverloadsChild.java
-public class JavaOverloadsChild extends OverloadsWithAtomicIntAndInteger { }
+public define JavaOverloadsChild extends OverloadsWithAtomicIntAndInteger { }
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import JavaOverloadsChild
 import kotlin.concurrent.atomics.AtomicInt
 import java.util.concurrent.atomic.AtomicInteger
 
-open class OverloadsWithAtomicIntAndInteger {
+open define OverloadsWithAtomicIntAndInteger {
     open fun f(x: AtomicInt): Int = 1
     open fun f(y: AtomicInteger): String = "2"
 }
 
-class KotlinOverloadsChild: OverloadsWithAtomicIntAndInteger()
+define KotlinOverloadsChild: OverloadsWithAtomicIntAndInteger()
 
 fun box(): String {
     val x = OverloadsWithAtomicIntAndInteger()

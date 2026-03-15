@@ -1,4 +1,4 @@
-data class Box(var value: String)
+data define Box(var value: String)
 
 fun box(): String {
     val o = Box("lorem")

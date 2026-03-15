@@ -3,12 +3,12 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 @Target(AnnotationTarget.TYPE)
-annotation class a
+annotation define a
 
 @Target(AnnotationTarget.TYPE)
-annotation class b(val i: Int)
+annotation define b(val i: Int)
 
-annotation class c
+annotation define c
 
 fun foo(i: @a Int?) {}
 

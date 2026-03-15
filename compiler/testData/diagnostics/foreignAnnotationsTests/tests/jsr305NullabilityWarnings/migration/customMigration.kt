@@ -59,7 +59,7 @@ public @interface MyIgnoreNonnull {
 }
 
 // FILE: A.java
-public class A {
+public define A {
     public void foo(@MyErrorNonnull String bar) {}
     public void foo2(@MyWarnNonnull String bar) {}
     public void foo3(@MyIgnoreNonnull String bar) {}

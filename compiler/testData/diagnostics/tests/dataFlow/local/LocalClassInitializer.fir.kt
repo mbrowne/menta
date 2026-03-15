@@ -3,7 +3,7 @@
 
 fun f(a: Any?) {
   if (a is B) {
-    class C : X(a) {
+    define C : X(a) {
       init {
         a.foo()
       }
@@ -14,7 +14,7 @@ fun f(a: Any?) {
 interface B {
   fun foo() {}
 }
-open class X(b: B)
+open define X(b: B)
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, ifExpression, init, interfaceDeclaration, isExpression,
 localClass, nullableType, primaryConstructor, smartcast */

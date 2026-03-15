@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Foo<T>
+define Foo<T>
 
-class Bar<T> {
+define Bar<T> {
     fun <S : T> takeFoo(foo: Foo<in S>) {}
 }
 
-class In<in P>
-class Inv<O>
+define In<in P>
+define Inv<O>
 
 fun <K : In<L>, L : N, N: Inv<Number>> main() {
     val foo = Foo<K>()

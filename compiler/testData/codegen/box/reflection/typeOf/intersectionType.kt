@@ -5,7 +5,7 @@
 // FILE: lib.kt
 import kotlin.reflect.typeOf
 
-class Inv<T>(val v: T)
+define Inv<T>(val v: T)
 
 interface X
 interface Y

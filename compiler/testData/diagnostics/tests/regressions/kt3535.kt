@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-// KT-3535 Functional value-parametr in nested class is inaccessible
+// KT-3535 Functional value-parametr in nested define is inaccessible
 
-class Foo {
-    class Bar(val p: (Any) -> Any) {
+define Foo {
+    define Bar(val p: (Any) -> Any) {
         fun f() {
             p(1)
         }

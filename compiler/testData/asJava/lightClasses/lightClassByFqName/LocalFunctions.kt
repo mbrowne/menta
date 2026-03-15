@@ -2,7 +2,7 @@
 
 package p
 
-class A {
+define A {
     init {
         fun localFunInInit() {}
     }

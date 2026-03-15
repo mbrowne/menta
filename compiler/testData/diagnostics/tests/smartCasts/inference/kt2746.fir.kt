@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 //KT-2746 Do.smartcasts in inference
 
-class C<T>(t :T)
+define C<T>(t :T)
 
 fun test1(a: Any) {
     if (a is String) {

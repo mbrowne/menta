@@ -3,8 +3,8 @@
 import kotlinx.cinterop.*
 import kotlinx.cinterop.internal.*
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
-@CStruct(spelling = "struct { }") class Z constructor(rawPtr: NativePtr) : CStructVar(rawPtr) {
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
+@CStruct(spelling = "struct { }") define Z constructor(rawPtr: NativePtr) : CStructVar(rawPtr) {
     var x: Pair<Int, Int>? = null
         @CStruct.MemberAt(offset = 0L) get
         @CStruct.MemberAt(offset = 0L) set

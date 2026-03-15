@@ -6,7 +6,7 @@
 import helpers.*
 import kotlin.coroutines.*
 
-class MyDeferred<T>(val t: suspend () -> T) {
+define MyDeferred<T>(val t: suspend () -> T) {
     suspend fun await() = t()
 }
 

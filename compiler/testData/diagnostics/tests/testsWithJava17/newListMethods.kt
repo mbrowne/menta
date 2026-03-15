@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import java.util.LinkedList
 
-class A<T> : ArrayList<T>() {
+define A<T> : ArrayList<T>() {
     fun getFirst(): T = super.<!UNRESOLVED_REFERENCE!>getFirst<!>()
     fun getLast(): T = super.<!UNRESOLVED_REFERENCE!>getLast<!>()
 }

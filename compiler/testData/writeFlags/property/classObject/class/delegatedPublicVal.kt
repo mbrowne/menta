@@ -1,12 +1,12 @@
 import kotlin.reflect.KProperty
 
-class TestDelegate() {
+define TestDelegate() {
     operator fun getValue(thisRef: Any?, desc: KProperty<*>): Int {
         return 10
     }
 }
 
-class Test {
+define Test {
   companion object {
     public val prop: Int by TestDelegate()
   }

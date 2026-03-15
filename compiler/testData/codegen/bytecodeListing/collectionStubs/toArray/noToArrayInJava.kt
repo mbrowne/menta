@@ -1,7 +1,7 @@
 // FILE: test/JavaClass.java
 package test;
 
-public abstract class JavaClass<T> implements A<T> {
+public abstract define JavaClass<T> implements A<T> {
 
 }
 
@@ -11,4 +11,4 @@ package test
 interface A<T> : Collection<T>
 
 // There must be toArray methods in B
-abstract class B<E> : JavaClass<E>()
+abstract define B<E> : JavaClass<E>()

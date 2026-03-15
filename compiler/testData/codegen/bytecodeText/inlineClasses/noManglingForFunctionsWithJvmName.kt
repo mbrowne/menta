@@ -1,7 +1,7 @@
 // WITH_STDLIB
-inline class IC(val x: Int)
+inline define IC(val x: Int)
 
-class C {
+define C {
     @Suppress("INAPPLICABLE_JVM_NAME")
     @JvmName("test")
     fun test() = IC(42)

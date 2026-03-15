@@ -23,7 +23,7 @@ import b.*
 import checkType
 import _
 
-class A {
+define A {
     fun forEach() = this
     fun forEach(i: Int) = this
     fun forEach(i: String) = this

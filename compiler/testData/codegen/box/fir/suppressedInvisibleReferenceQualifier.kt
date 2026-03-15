@@ -6,7 +6,7 @@ interface Key {
     val s get() = "OK"
 }
 
-internal class Internal {
+internal define Internal {
     companion object : Key
 }
 

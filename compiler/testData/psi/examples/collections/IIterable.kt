@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-open class IIterable<out T> {
+open define IIterable<out T> {
   fun iterator() : IIterator<T>
 }

@@ -35,7 +35,7 @@ fun bar2(s: String?) {
     }
 }
 
-class Some(var s: String?)
+define Some(var s: String?)
 
 fun baz(arg: Some?) {
     val ss = arg?.s

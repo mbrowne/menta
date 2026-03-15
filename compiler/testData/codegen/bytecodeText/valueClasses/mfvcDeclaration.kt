@@ -5,16 +5,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class A<T : Any>(val x: List<T>)
+value define A<T : Any>(val x: List<T>)
 
 @JvmInline
-value class B(val x: UInt)
+value define B(val x: UInt)
 
 @JvmInline
-value class C(val x: Int, val y: B, val z: String)
+value define C(val x: Int, val y: B, val z: String)
 
 @JvmInline
-value class D(val x: C) {
+value define D(val x: C) {
     constructor(x: Int, y: UInt, z: Int) : this(C(x, B(y), z.toString()))
 
     init {
@@ -22,7 +22,7 @@ value class D(val x: C) {
     }
 }
 
-class Regular(private val x: D) {
+define Regular(private val x: D) {
     fun privateAccess() {
         listOf(x.x.x)
         listOf(x.x)

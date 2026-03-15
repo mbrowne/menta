@@ -2,16 +2,16 @@
 
 // MODULE: common
 // FILE: commonMain.kt
-internal annotation class AnnInCommon
+internal annotation define AnnInCommon
 
 // MODULE: friend
 // FILE: friendMain.kt
-internal annotation class AnnInFriend
+internal annotation define AnnInFriend
 
 // MODULE: main()(friend)(common)
 // FILE: main.kt
 @AnnInCommon
 @AnnInFriend
-class A
+define A
 
 fun box() = "OK"

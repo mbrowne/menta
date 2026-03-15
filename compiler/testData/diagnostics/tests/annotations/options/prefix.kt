@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.FUNCTION)
-annotation class FunAnn
+annotation define FunAnn
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class ExprAnn
+annotation define ExprAnn
 
 fun foo(): Int {
     var x = 5

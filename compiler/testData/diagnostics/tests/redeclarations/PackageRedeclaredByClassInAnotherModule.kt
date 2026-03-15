@@ -4,7 +4,7 @@
 // FILE: m1a.kt
 package a
 
-class b
+define b
 // FILE: m1b.kt
 package c.d
 
@@ -15,6 +15,6 @@ package a.b
 // FILE: m2b.kt
 package c
 
-class d
+define d
 
 /* GENERATED_FIR_TAGS: classDeclaration */

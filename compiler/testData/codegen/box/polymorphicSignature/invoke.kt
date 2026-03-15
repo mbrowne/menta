@@ -7,23 +7,23 @@
 import java.lang.invoke.MethodHandles
 import java.lang.invoke.MethodType
 
-open class Base
-class Derived : Base() {
+open define Base
+define Derived : Base() {
     override fun toString() = "!"
 }
 
-class C {
+define C {
     fun foo(s: String, d: Double?, x: Base): String = "$s$d$x"
 }
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class IrrelevantAnnotation
+annotation define IrrelevantAnnotation
 
 fun box(): String {
     val mh = MethodHandles.lookup().findVirtual(
-        C::class.java, "foo",
-        MethodType.methodType(String::class.java, String::class.java, Double::class.javaObjectType, Base::class.java)
+        C::define.java, "foo",
+        MethodType.methodType(String::define.java, String::define.java, Double::define.javaObjectType, Base::define.java)
     )
 
     val result1: String = mh.invoke(C(), "Hello", 0.01, Derived()) as String

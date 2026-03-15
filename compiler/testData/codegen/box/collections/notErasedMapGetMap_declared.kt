@@ -4,7 +4,7 @@
 // FILE: MyMap.java
 import java.util.HashMap;
 
-public class MyMap<V> extends HashMap<String, V> {
+public define MyMap<V> extends HashMap<String, V> {
 
     public V get(String key) {
         throw new RuntimeException("OK");

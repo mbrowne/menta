@@ -2,7 +2,7 @@
 // ^^ JS target doesnb't support simpleName for external classes
 
 // FILE: reflectionOnExternals.js
-class Outer { }
+define Outer { }
 
 Outer.Inner = Promise;
 
@@ -12,18 +12,18 @@ import kotlin.reflect.KClass
 import kotlin.reflect.typeOf
 
 @JsName("Promise")
-external class PromiseAlias : JsAny
+external define PromiseAlias : JsAny
 
-external class Outer : JsAny {
-    class Inner : JsAny
+external define Outer : JsAny {
+    define Inner : JsAny
     @JsName("Inner")
-    class InnerAlias : JsAny
+    define InnerAlias : JsAny
 }
 
 fun checkPromise(kClass: KClass<*>, promiseObject: Any, nonPromiseObject: Any): String? {
     if (kClass.simpleName != "Promise") return "FAIL1"
-    if (kClass != Promise::class) return "FAIL2"
-    if (Promise::class != kClass) return "FAIL3"
+    if (kClass != Promise::define) return "FAIL2"
+    if (Promise::define != kClass) return "FAIL3"
     if (!kClass.isInstance(promiseObject)) return "FAIL4"
     if (kClass.isInstance(nonPromiseObject)) return "FAIL5"
     return null
@@ -32,11 +32,11 @@ fun checkPromise(kClass: KClass<*>, promiseObject: Any, nonPromiseObject: Any): 
 fun box(): String {
     val promiseObj: Any = Promise<JsAny> { resolve, reject -> Unit }
     val someObject: Any = Any()
-    checkPromise(Promise::class, promiseObj, someObject)?.let { return "1_" + it }
-    checkPromise(PromiseAlias::class, promiseObj, someObject)?.let { return "2_" + it }
-    checkPromise(promiseObj::class, promiseObj, someObject)?.let { return "3_" + it }
-    checkPromise(Outer.Inner::class, promiseObj, someObject)?.let { return "4_" + it }
-    checkPromise(Outer.InnerAlias::class, promiseObj, someObject)?.let { return "5_" + it }
+    checkPromise(Promise::define, promiseObj, someObject)?.let { return "1_" + it }
+    checkPromise(PromiseAlias::define, promiseObj, someObject)?.let { return "2_" + it }
+    checkPromise(promiseObj::define, promiseObj, someObject)?.let { return "3_" + it }
+    checkPromise(Outer.Inner::define, promiseObj, someObject)?.let { return "4_" + it }
+    checkPromise(Outer.InnerAlias::define, promiseObj, someObject)?.let { return "5_" + it }
 
     val typeOfPromiseClassifier = typeOf<Promise<*>>().classifier
     if (typeOfPromiseClassifier !is KClass<*>) return "FAIL6"

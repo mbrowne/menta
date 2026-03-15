@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun foo(x: Any, y: Any) {
     contract {
         returns() implies (x is Int && y is String)

@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM_IR
 // IGNORE_BACKEND_K2: ANY
 
-class View {
+define View {
     val coefficient = 42
 }
 

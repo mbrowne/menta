@@ -1,4 +1,4 @@
-class A(val x: String)
+define A(val x: String)
 
 val A.a : A.(String) -> String
     get() = fun A.(y: String): String { return this@a.x + this.x + y }

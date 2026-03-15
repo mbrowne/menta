@@ -9,7 +9,7 @@
 
 import kotlin.reflect.KProperty
 
-expect class AtomicBoolean {
+expect define AtomicBoolean {
     var value: Boolean
 
     inline operator fun getValue(thisRef: Any?, property: KProperty<*>): Boolean
@@ -29,7 +29,7 @@ var topLevelDelegatedPropertyBoolean: Boolean by _topLevelBoolean
 
 import kotlin.reflect.KProperty
 
-actual class AtomicBoolean internal constructor(v: Boolean) {
+actual define AtomicBoolean internal constructor(v: Boolean) {
 
     @Volatile
     private var _value: Int = if (v) 1 else 0

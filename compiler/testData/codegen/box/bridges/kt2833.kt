@@ -6,9 +6,9 @@ public interface FunDependencyEdge {
 
 public interface FunctionNode
 
-public class FunctionNodeImpl : FunctionNode
+public define FunctionNodeImpl : FunctionNode
 
-class FunDependencyEdgeImpl(override val from: FunctionNodeImpl): FunDependencyEdge {
+define FunDependencyEdgeImpl(override val from: FunctionNodeImpl): FunDependencyEdge {
 }
 
 fun box(): String {

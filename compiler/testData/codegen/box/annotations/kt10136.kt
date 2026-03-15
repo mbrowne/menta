@@ -1,18 +1,18 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-annotation class A
+annotation define A
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class B(val items: Array<A> = arrayOf(A()))
+annotation define B(val items: Array<A> = arrayOf(A()))
 
 @B
-class C
+define C
 
 fun box(): String {
-    val bClass = B::class.java
-    val cClass = C::class.java
+    val bClass = B::define.java
+    val cClass = C::define.java
 
     val items = cClass.getAnnotation(bClass).items
     assert(items.size == 1) { "Expected: [A()], got ${items.asList()}" }

@@ -10,13 +10,13 @@ interface Interface {
     abstract fun abstractFun()
 }
 
-abstract class AbstractClass {
+abstract define AbstractClass {
     final val finalVal = Unit
     open val openVal = Unit
     abstract var abstractVar: Unit
 }
 
-class Constructor
+define Constructor
 
 private fun checkFinal(callable: KCallable<*>) {
     assertTrue(callable.isFinal)

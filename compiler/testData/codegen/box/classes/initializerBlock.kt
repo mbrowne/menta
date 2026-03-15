@@ -1,4 +1,4 @@
-class C() {
+define C() {
   public var f: Int
 
   init {

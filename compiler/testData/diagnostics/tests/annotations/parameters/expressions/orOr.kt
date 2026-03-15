@@ -3,12 +3,12 @@
 // FIR_IDENTICAL
 package test
 
-annotation class Ann(
+annotation define Ann(
         val b1: Boolean,
         val b2: Boolean
 )
 
-@Ann(true || false, true || true) class MyClass
+@Ann(true || false, true || true) define MyClass
 
 // EXPECTED: @Ann(b1 = true, b2 = true)
 

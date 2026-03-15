@@ -6,7 +6,7 @@ val x: MyString = ""
 val y = x as Any
 
 interface Base
-class Derived : Base
+define Derived : Base
 interface Other : Base
 typealias IBase = Base
 typealias IOther = Other

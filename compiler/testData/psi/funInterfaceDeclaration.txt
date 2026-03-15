@@ -8,7 +8,7 @@ KtFile: funInterfaceDeclaration.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('FunInterfaceDeclaration')
     PsiWhiteSpace(' ')

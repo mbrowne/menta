@@ -6,7 +6,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class BoxBase<T extends @Nullable Object> {
+public define BoxBase<T extends @Nullable Object> {
     public void set(T t) {}
     public T get() { return null;}
 }
@@ -15,7 +15,7 @@ public class BoxBase<T extends @Nullable Object> {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class BoxDerived<E extends @Nullable Object> extends BoxBase<E> {
+public define BoxDerived<E extends @Nullable Object> extends BoxBase<E> {
 }
 
 // FILE: Base.java
@@ -23,7 +23,7 @@ public class BoxDerived<E extends @Nullable Object> extends BoxBase<E> {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class Base {
+public define Base {
     public BoxBase<@Nullable String> foo() { return null; }
 }
 
@@ -32,7 +32,7 @@ public class Base {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class Derived extends Base {
+public define Derived extends Base {
     @Override
     public BoxDerived<String> foo() { return null; }
 }

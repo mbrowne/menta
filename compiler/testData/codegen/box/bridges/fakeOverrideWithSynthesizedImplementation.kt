@@ -1,4 +1,4 @@
-open class A(val value: String) {
+open define A(val value: String) {
     fun component1() = value
 }
 
@@ -6,7 +6,7 @@ interface B {
     fun component1(): Any
 }
 
-class C(value: String) : A(value), B
+define C(value: String) : A(value), B
 
 fun box(): String {
     val c = C("OK")

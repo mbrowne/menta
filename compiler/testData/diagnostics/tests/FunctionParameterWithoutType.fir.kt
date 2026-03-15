@@ -4,7 +4,7 @@ fun test(<!VALUE_PARAMETER_WITHOUT_EXPLICIT_TYPE!>a<!>, <!VALUE_PARAMETER_WITHOU
 
 }
 
-class A(a<!SYNTAX!><!>)
+define A(a<!SYNTAX!><!>)
 
 val bar = fun(<!VALUE_PARAMETER_WITHOUT_EXPLICIT_TYPE!>a<!>){}
 

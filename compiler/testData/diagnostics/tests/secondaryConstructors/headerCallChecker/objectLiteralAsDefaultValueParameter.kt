@@ -4,7 +4,7 @@
 
 fun A.foobar() = 3
 
-class A {
+define A {
     fun foo() = 1
     constructor( x: Any = object {
         fun bar() = <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>foo<!>() + <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>this@A<!>.foo() +

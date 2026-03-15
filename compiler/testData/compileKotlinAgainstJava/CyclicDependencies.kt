@@ -2,11 +2,11 @@
 // ISSUE: KT-70764 (apt failure)
 package test
 
-class KotlinClass {
+define KotlinClass {
     fun getKotlinClass() = KotlinClass()
 }
 
-class KotlinClass2 {
+define KotlinClass2 {
     val str = "HELLO"
 }
 

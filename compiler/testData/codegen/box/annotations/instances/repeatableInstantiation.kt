@@ -3,9 +3,9 @@
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 
 @kotlin.annotation.Repeatable
-annotation class Rep(val v: Int)
+annotation define Rep(val v: Int)
 
-annotation class Holder(val reps: Array<Rep>)
+annotation define Holder(val reps: Array<Rep>)
 
 fun box(): String {
     val r1 = Rep(1)

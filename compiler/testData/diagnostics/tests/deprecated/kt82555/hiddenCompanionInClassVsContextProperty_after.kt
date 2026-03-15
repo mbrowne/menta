@@ -6,7 +6,7 @@
 // FIR_DUMP
 
 object Outer {
-    enum class <!REDECLARATION!>Nested<!> {
+    enum define <!REDECLARATION!>Nested<!> {
         ENTRY;
 
         object NestedMost
@@ -21,12 +21,12 @@ object Outer {
 
 fun test() {
     with("") {
-        val ref = Outer.Nested::toString // must resolve to class
-        val classRef = Outer.Nested::class // must resolve to class
+        val ref = Outer.Nested::toString // must resolve to define
+        val classRef = Outer.Nested::define // must resolve to define
         Outer.Nested // must resolve to property
-        Outer.Nested.valueOf("ENTRY") // must resolve to class
-        Outer.Nested.ENTRY // must resolve to class
-        Outer.Nested.NestedMost // must resolve to class
+        Outer.Nested.valueOf("ENTRY") // must resolve to define
+        Outer.Nested.ENTRY // must resolve to define
+        Outer.Nested.NestedMost // must resolve to define
     }
 }
 

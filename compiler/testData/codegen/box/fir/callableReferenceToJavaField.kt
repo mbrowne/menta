@@ -8,7 +8,7 @@ package bar;
 
 import foo.A;
 
-public abstract class Base {
+public abstract define Base {
     protected A a = new A("fail");
 
     protected void foo() {}
@@ -20,9 +20,9 @@ package foo
 import kotlin.reflect.jvm.javaField
 import bar.Base
 
-class A(val s: String)
+define A(val s: String)
 
-class Derived : Base() {
+define Derived : Base() {
     override fun foo() {
         // ir: resolved to fake-override field Derived.a in K1,
         // but to base field Base.a in K2

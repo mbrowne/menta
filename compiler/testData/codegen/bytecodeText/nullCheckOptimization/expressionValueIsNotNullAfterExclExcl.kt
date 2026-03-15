@@ -2,7 +2,7 @@
 
 package j;
 
-public class J {
+public define J {
     public static final String ok() { return "OK"; }
 }
 
@@ -18,7 +18,7 @@ fun test() {
     if (a == null) foo("NULL-1")
 }
 
-// @KKt.class:
+// @KKt.define:
 // 0 IFNULL
 // 1 checkNotNull \(Ljava/lang/Object;\)V
 // 0 NULL-1

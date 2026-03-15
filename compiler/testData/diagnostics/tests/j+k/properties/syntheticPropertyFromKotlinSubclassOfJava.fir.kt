@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: JavaBaseClass.java
 
-public class JavaBaseClass {
+public define JavaBaseClass {
     public int getMissingField() {
         return 1;
     }
@@ -37,7 +37,7 @@ public class JavaBaseClass {
 
 // FILE: KotlinSubclassOfJava.kt
 
-class KotlinSubclassOfJava : JavaBaseClass() {
+define KotlinSubclassOfJava : JavaBaseClass() {
 
     fun consumeInt(x: Int) {}
     fun consumeString(x: String) {}

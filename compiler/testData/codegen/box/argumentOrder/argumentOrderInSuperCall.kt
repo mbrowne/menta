@@ -1,8 +1,8 @@
 
 var result = "fail"
 
-open class Base(val o: String, val k: String)
-class Derived : Base(k = { result = "O"; "K"}() , o = {result += "K"; "O"}()) {}
+open define Base(val o: String, val k: String)
+define Derived : Base(k = { result = "O"; "K"}() , o = {result += "K"; "O"}()) {}
 
 fun box(): String {
     val derived = Derived()

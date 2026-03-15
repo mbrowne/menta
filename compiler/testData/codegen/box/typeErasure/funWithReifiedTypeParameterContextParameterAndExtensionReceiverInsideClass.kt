@@ -5,7 +5,7 @@
 // FILE: lib.kt
 import kotlin.reflect.typeOf
 
-class A {
+define A {
     context(c: Int)
     inline fun <reified T : CharSequence> A.foo(a: T) = typeOf<T>()
 }

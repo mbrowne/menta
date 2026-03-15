@@ -5,7 +5,7 @@
 
 // FILE: kt45934.kt
 
-class C(client: J) : I by client
+define C(client: J) : I by client
 
 // FILE: I.java
 
@@ -19,7 +19,7 @@ public interface I {
 
 import java.util.List;
 
-public class J implements I {
+public define J implements I {
     @Override
     public List<String> foo() {
         return null;

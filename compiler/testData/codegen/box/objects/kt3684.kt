@@ -1,4 +1,4 @@
-open class X(private val n: String) {
+open define X(private val n: String) {
 
     fun foo(): String {
         return object : X("inner") {

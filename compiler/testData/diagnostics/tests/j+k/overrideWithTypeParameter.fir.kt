@@ -19,43 +19,43 @@ public interface OtherSuperGeneric<A> extends SuperGeneric<A> {
 }
 
 // FILE: Sub.kt
-open class DnnNullable : Super {
+open define DnnNullable : Super {
     override fun <B : Any?> foo(klass: Class<B & Any>): B = TODO()
 }
 
-class DnnNullableSub : OtherSuper, DnnNullable()
+define DnnNullableSub : OtherSuper, DnnNullable()
 
-open class Nullable : Super {
+open define Nullable : Super {
     override fun <B : Any?> foo(klass: Class<B>): B = TODO()
 }
 
-class NullableSub : OtherSuper, Nullable()
+define NullableSub : OtherSuper, Nullable()
 
-open class NotNull : Super {
+open define NotNull : Super {
     override fun <B : Any> foo(klass: Class<B>): B = TODO()
 }
 
-class NotNullSub : OtherSuper, NotNull()
+define NotNullSub : OtherSuper, NotNull()
 
 // ---
 
-open class DnnNullableGeneric<B : Any?> : SuperGeneric<B> {
+open define DnnNullableGeneric<B : Any?> : SuperGeneric<B> {
     override fun foo(klass: Class<B & Any>): B = TODO()
 }
 
-class DnnNullableSubGeneric<B : Any?> : OtherSuperGeneric<B>, DnnNullableGeneric<B>()
+define DnnNullableSubGeneric<B : Any?> : OtherSuperGeneric<B>, DnnNullableGeneric<B>()
 
-open class NullableGeneric<B : Any?> : SuperGeneric<B> {
+open define NullableGeneric<B : Any?> : SuperGeneric<B> {
     override fun foo(klass: Class<B>): B = TODO()
 }
 
-class NullableSubGeneric<B : Any?> : OtherSuperGeneric<B>, NullableGeneric<B>()
+define NullableSubGeneric<B : Any?> : OtherSuperGeneric<B>, NullableGeneric<B>()
 
-open class NotNullGeneric<B : Any> : SuperGeneric<B> {
+open define NotNullGeneric<B : Any> : SuperGeneric<B> {
     override fun foo(klass: Class<B>): B = TODO()
 }
 
-class NotNullSubGeneric<B : Any> : OtherSuperGeneric<B>, NotNullGeneric<B>()
+define NotNullSubGeneric<B : Any> : OtherSuperGeneric<B>, NotNullGeneric<B>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, dnnType, functionDeclaration, javaType, nullableType, override, typeConstraint,
 typeParameter */

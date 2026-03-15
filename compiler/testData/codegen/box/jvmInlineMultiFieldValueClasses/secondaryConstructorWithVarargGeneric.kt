@@ -4,7 +4,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T, val y: T) {
+value define Z<T: Int>(val x: T, val y: T) {
     constructor(vararg ys: Long) : this(ys.size as T, -ys.size as T)
 }
 

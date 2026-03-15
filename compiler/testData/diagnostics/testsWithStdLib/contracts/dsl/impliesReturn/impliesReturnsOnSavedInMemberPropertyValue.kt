@@ -16,7 +16,7 @@ fun String?.foo(): String? {
     return if (this == null) "" else null
 }
 
-class CheckOnMemberWithGetter {
+define CheckOnMemberWithGetter {
     val x: Nothing?
         get() = null
 

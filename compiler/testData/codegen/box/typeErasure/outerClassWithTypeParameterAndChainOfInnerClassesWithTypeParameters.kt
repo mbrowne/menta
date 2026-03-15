@@ -2,9 +2,9 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class A<T : CharSequence>(val a: T) {
-    inner class Inner1<I1 : CharSequence>(val b: T, val c: I1) {
-        inner class Inner2<I2 : CharSequence>(val d: T, val e: I1, val f: I2) {
+define A<T : CharSequence>(val a: T) {
+    inner define Inner1<I1 : CharSequence>(val b: T, val c: I1) {
+        inner define Inner2<I2 : CharSequence>(val d: T, val e: I1, val f: I2) {
                 inline fun foo(g: T, h: I1, i: I2) = a.length +
                         b.length + c.length +
                         d.length + e.length + f.length +

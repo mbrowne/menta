@@ -2,7 +2,7 @@
 
 package name
 
-class Test() {
+define Test() {
   var i = 5
   val ten = 10.toLong()
 

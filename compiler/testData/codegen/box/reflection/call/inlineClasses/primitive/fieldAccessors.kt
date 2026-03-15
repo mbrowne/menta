@@ -5,11 +5,11 @@ import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: Int) {
+value define S(val value: Int) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
-class C {
+define C {
     private var nonNullMember: S = S(-1)
     private var nullableMember: S? = S(-1)
 

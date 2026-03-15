@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-public open class A {
-    protected open class B
+public open define A {
+    protected open define B
 }
 
-public open class C : A() {
-    protected open class D {
+public open define C : A() {
+    protected open define D {
         // internal & protected(in C) <= protected(in A): Ok
-        internal open class E : A.B()
+        internal open define E : A.B()
     }
 }
 

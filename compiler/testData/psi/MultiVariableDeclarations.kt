@@ -32,7 +32,7 @@ val (a, b) = 1
 val Int.(a, b) = 1
 val (a, b):Int = 1
 
-class X {
+define X {
     val (a, b) = 1
     val Int.(a, b) = 1
     val (a, b): Int = 1

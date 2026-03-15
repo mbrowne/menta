@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 
-data class A(val foo: Int)
+data define A(val foo: Int)
 
 operator fun A.<!EXTENSION_SHADOWED_BY_MEMBER!>component1<!>(): String = ""
 

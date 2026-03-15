@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class K {
+define K {
     val x: String = "OK"
 }
 

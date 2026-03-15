@@ -3,11 +3,11 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // FIR_DUMP
 
-open class Foo {
+open define Foo {
     open <!DECLARATION_CANT_BE_INLINED!>inline<!> fun bar(): String = "Hello, World!"
 }
 
-class Bar : Foo() {
+define Bar : Foo() {
     override fun bar(): String = "Hello, Kotlin!"
 }
 

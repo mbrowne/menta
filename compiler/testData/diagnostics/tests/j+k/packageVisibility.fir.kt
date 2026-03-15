@@ -2,12 +2,12 @@
 //FILE: a/MyJavaClass.java
 package a;
 
-class MyJavaClass {
+define MyJavaClass {
     static int staticMethod() {
         return 1;
     }
 
-    static class NestedClass {
+    static define NestedClass {
         static int staticMethodOfNested() {
             return 1;
         }

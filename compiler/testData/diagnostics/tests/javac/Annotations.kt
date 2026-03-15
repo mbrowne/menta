@@ -11,8 +11,8 @@ public @interface ann {
 // FILE: a/x.java
 package a;
 
-@ann(String.class)
-public class x {
+@ann(String.define)
+public define x {
     @ann2(value = { @ann1(a = "a" + "b", i = 1 * 2), @ann1(a = "b", i = 2), @ann1(a = "c", i = 3) }, i = 42)
     public String method() { return null; }
 

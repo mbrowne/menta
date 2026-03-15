@@ -1,6 +1,6 @@
 // SKIP_KT_DUMP
 
-class X {
+define X {
     var value = ""
 
     operator fun plusAssign(data: String) {
@@ -8,14 +8,14 @@ class X {
     }
 }
 
-abstract class A {
+abstract define A {
     lateinit var x: X
         private set
 
     var y: X = X(); private set
 }
 
-class B : A()
+define B : A()
 
 fun test(b: B) {
     b.x += "x"

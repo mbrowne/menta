@@ -3,7 +3,7 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class Expect
+expect define Expect
 interface OtherBase {
     fun foo(e: Expect): Expect
 }
@@ -11,7 +11,7 @@ interface OtherBase {
 interface Base {
     fun foo(e: String): String
 }
-abstract class Derived: Base, OtherBase {
+abstract define Derived: Base, OtherBase {
     override fun foo(e: Expect) = e
 }
 fun bar(d: Derived, e : String, f: Expect) : String {
@@ -23,7 +23,7 @@ fun bar(d: Derived, e : String, f: Expect) : String {
 // MODULE: jvm()()(common)
 // FILE: jvm.kt
 
-class Platform : Derived()
+define Platform : Derived()
 
 actual typealias Expect = String
 

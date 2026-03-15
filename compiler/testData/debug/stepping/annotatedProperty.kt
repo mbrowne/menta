@@ -1,9 +1,9 @@
 // FILE: test.kt
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class Anno
+annotation define Anno
 
-class C {
+define C {
     @Anno
     var x: Any = 1
 

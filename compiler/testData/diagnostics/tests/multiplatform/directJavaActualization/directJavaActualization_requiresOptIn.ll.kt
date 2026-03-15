@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect annotation class Foo
+expect annotation define Foo
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java

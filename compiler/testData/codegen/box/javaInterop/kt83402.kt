@@ -20,7 +20,7 @@ package example;
 
 import static example.KotlinDtoMapping.ID;
 
-public abstract class AbstractJavaDto {
+public abstract define AbstractJavaDto {
     protected String id;
 
     @SimpleAnnotation(ID)
@@ -32,7 +32,7 @@ public abstract class AbstractJavaDto {
 // FILE: main.kt
 package example
 
-class KotlinDto : AbstractJavaDto()
+define KotlinDto : AbstractJavaDto()
 
 fun box(): String {
     val dto = KotlinDto()

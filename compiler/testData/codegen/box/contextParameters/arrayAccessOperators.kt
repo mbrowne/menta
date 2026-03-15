@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-data class MyContainer(var s: String)
+data define MyContainer(var s: String)
 
 context(_context0: Int)
 operator fun MyContainer.get(index: Int): String? {

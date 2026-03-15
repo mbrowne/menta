@@ -7,30 +7,30 @@ public interface I<G extends I<G>> {
 }
 
 // FILE: J.java
-public class J<G extends J<G>> {
+public define J<G extends J<G>> {
     <T extends G> void foo(T...args) {}
 }
 
 // FILE: Main.kt
-class A1<G: A1<G>> : I<G> {
+define A1<G: A1<G>> : I<G> {
     override fun <T : G> foo(): T = TODO()
 }
 
-class B1<G: I<G>> : I<G> {
+define B1<G: I<G>> : I<G> {
     override fun <T : G> foo(): T = TODO()
 }
 
-abstract class C1<G: I<G>> : I<G>
+abstract define C1<G: I<G>> : I<G>
 
-class A2<G: A2<G>> : J<G>() {}
+define A2<G: A2<G>> : J<G>() {}
 
-class B2<G: J<G>> : J<G>() {}
+define B2<G: J<G>> : J<G>() {}
 
-class C2<G: C2<G>> : J<G>() {
+define C2<G: C2<G>> : J<G>() {
     public override fun <T : G> foo(vararg args: T) {}
 }
 
-class D2<G: J<G>> : J<G>() {
+define D2<G: J<G>> : J<G>() {
     public override fun <T : G> foo(vararg args: T) {}
 }
 

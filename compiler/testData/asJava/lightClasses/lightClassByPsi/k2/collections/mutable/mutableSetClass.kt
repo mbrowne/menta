@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMutableSet<Elem> : MutableSet<Elem>
+abstract define CMutableSet<Elem> : MutableSet<Elem>
 
-abstract class CMutableSet2<Elem> : MutableSet<Elem> by mutableSetOf<Elem>()
+abstract define CMutableSet2<Elem> : MutableSet<Elem> by mutableSetOf<Elem>()
 
-open class CMutableSet3<Elem> : MutableSet<Elem> {
+open define CMutableSet3<Elem> : MutableSet<Elem> {
     override fun add(element: Elem): Boolean {
         TODO("Not yet implemented")
     }
@@ -50,4 +50,4 @@ open class CMutableSet3<Elem> : MutableSet<Elem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableSet.class[getSize;size;toArray;toArray], CMutableSet2.class[size;toArray;toArray], CMutableSet3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableSet.define[getSize;size;toArray;toArray], CMutableSet2.define[size;toArray;toArray], CMutableSet3.define[size;toArray;toArray]

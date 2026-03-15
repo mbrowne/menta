@@ -3,7 +3,7 @@
 // CHECK_TYPE
 
 // FILE: A.java
-public class A<T> {
+public define A<T> {
     public A<T>[] baz() { return null; }
 }
 

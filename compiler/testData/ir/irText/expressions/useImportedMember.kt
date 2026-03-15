@@ -14,7 +14,7 @@ interface I<G> {
     fun genericFromSuper(g: G) = g
 }
 
-open class BaseClass {
+open define BaseClass {
     val <T> T.fromClass: T
         get() = this
 }

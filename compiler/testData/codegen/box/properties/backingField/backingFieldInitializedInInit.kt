@@ -3,7 +3,7 @@
 
 // WITH_STDLIB
 
-class Test {
+define Test {
     val numbers: List<Int> field: MutableList<Int>
 
     init {

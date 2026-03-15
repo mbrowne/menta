@@ -1,7 +1,7 @@
 // JVM_TARGET: 11
-class A
+define A
 
-inline class IC(val x: String)
+inline define IC(val x: String)
 
 inline fun test(s: (String) -> Unit) {
     s("456")

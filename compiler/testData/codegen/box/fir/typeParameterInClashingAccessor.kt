@@ -3,20 +3,20 @@
 // ISSUE: KT-59038
 
 // FILE: C.java
-abstract class C extends B {
+abstract define C extends B {
     protected C(A a) {
         super(a);
     }
 }
 
 // FILE: test.kt
-private class D(a: A) : C(a)
+private define D(a: A) : C(a)
 
-open class A
+open define A
 
-class E : A()
+define E : A()
 
-open class B(private val a: A) {
+open define B(private val a: A) {
     open fun <T : A> getA(): T {
         return a as T
     }

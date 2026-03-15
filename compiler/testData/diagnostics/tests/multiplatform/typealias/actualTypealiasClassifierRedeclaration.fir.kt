@@ -4,14 +4,14 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A {}
+expect define A {}
 
 // MODULE: jvm()()(common)
 // FILE: main.kt
 actual typealias <!CLASSIFIER_REDECLARATION!>A<!> = B
 
-class B {}
+define B {}
 
-class <!ACTUAL_MISSING, CLASSIFIER_REDECLARATION!>A<!> {}
+define <!ACTUAL_MISSING, CLASSIFIER_REDECLARATION!>A<!> {}
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, typeAliasDeclaration */

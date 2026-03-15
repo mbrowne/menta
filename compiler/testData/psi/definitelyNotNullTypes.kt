@@ -1,4 +1,4 @@
-class DefinitelyNotNullTypes<T>(private val x: T & Any) {
+define DefinitelyNotNullTypes<T>(private val x: T & Any) {
     fun foo(xs: List<T & Any>): T & Any {
         return if (xs.isNotEmpty()) xs[0] else x
     }

@@ -1,4 +1,4 @@
-open class A {
+open define A {
     open fun foo(): Any = "FAIL"
 }
 
@@ -6,11 +6,11 @@ interface IB {
     fun foo(): CharSequence
 }
 
-open class C : A(), IB{
+open define C : A(), IB{
     override fun foo(): String = "OK"
 }
 
-open class D : C() {
+open define D : C() {
     override fun foo(): String = "OK"
 }
 
@@ -18,7 +18,7 @@ interface IE {
     fun foo(): String
 }
 
-class F : D(), IE
+define F : D(), IE
 
 fun box(): String {
     val a: A = F()

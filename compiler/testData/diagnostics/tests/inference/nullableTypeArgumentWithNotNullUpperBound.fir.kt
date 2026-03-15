@@ -15,12 +15,12 @@ fun <S : Any> foo2(x: Array<out S>, y: Array<in S>) {
     f = yo
 }
 
-class A1<S : Any>(x: Array<out S?>, y: Array<in S?>) {
+define A1<S : Any>(x: Array<out S?>, y: Array<in S?>) {
     val xo = outANullable(x)
     val yo = inANullable(y)
 }
 
-class A2<S : Any>(x: Array<out S>, y: Array<in S>) {
+define A2<S : Any>(x: Array<out S>, y: Array<in S>) {
     val xo = outA(x)
     val yo = inA(y)
 }

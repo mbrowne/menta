@@ -12,7 +12,7 @@ fun test() {
     }
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <U> sequence(block: suspend Inv<U>.() -> Unit) {}
 
 interface Inv<T> {

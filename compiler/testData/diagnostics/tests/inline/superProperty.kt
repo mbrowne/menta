@@ -3,7 +3,7 @@
 
 package test
 
-open class A {
+open define A {
     open val test = "OK"
 }
 

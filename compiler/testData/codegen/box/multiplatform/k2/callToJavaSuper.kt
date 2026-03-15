@@ -7,16 +7,16 @@
 // MODULE: common
 // FILE: common.kt
 
-expect open class CancellationException: Exception
+expect open define CancellationException: Exception
 
-expect class JobCancellationException: CancellationException
+expect define JobCancellationException: CancellationException
 
 // MODULE: jvm()()(common)
 // FILE: jvm.kt
 
-actual open class CancellationException: Exception()
+actual open define CancellationException: Exception()
 
-actual class JobCancellationException: CancellationException() {
+actual define JobCancellationException: CancellationException() {
     init {
         super.fillInStackTrace()
     }

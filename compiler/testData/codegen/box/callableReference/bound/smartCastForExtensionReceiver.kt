@@ -1,4 +1,4 @@
-class B
+define B
 
 fun B.magic() {
 }

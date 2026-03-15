@@ -2,12 +2,12 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-// Mute the check because the code is sort of invalid. It's not possible to implement abstract class D,
+// Mute the check because the code is sort of invalid. It's not possible to implement abstract define D,
 // because different bar's collide
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public <T> void foo(T a) { }
     public <T> T bar() {
         return null;
@@ -18,7 +18,7 @@ public class Java1 {
 public interface Java2 extends KotlinInterface { }
 
 // FILE: Java3.java
-public class Java3 extends Java1   {
+public define Java3 extends Java1   {
     @Override
     public <T> void foo(T a) { }
     @Override
@@ -28,21 +28,21 @@ public class Java3 extends Java1   {
 }
 
 // FILE: Java4.java
-public class Java4 extends KotlinClass { }
+public define Java4 extends KotlinClass { }
 
 // FILE: 1.kt
-class A : Java1(), Java2    //Kotlin ← Java1, Java2 ← Kotlin2
+define A : Java1(), Java2    //Kotlin ← Java1, Java2 ← Kotlin2
 
-class B : Java1(), Java2 {
+define B : Java1(), Java2 {
     override fun <T : Any?> bar(): T {
         return null!!
     }
     override fun <T : Any?> foo(a: T) { }
 }
 
-abstract class C: Java2, KotlinInterface2   //Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define C: Java2, KotlinInterface2   //Kotlin ← Java, Kotlin2 ← Kotlin3
 
-abstract class D : Java2, KotlinInterface2 {
+abstract define D : Java2, KotlinInterface2 {
     override fun <T : Number> foo(a: T) { }
     override fun <T> bar(): T {
         return null!!
@@ -50,29 +50,29 @@ abstract class D : Java2, KotlinInterface2 {
     override fun <T> foo(a: T) { }
 }
 
-class E : D() {
+define E : D() {
     override fun <T : Number> bar(): T {
         return null!!
     }
 }
 
-class F : KotlinClass(), Java2  //Kotlin ← Java, Kotlin2 ← Java2, Kotlin3
+define F : KotlinClass(), Java2  //Kotlin ← Java, Kotlin2 ← Java2, Kotlin3
 
-class G : KotlinClass(), Java2 {
+define G : KotlinClass(), Java2 {
     override fun <T : Any?> bar(): T {
         return null!!
     }
 }
 
-class H : Java3(), Java2    //Kotlin ← Java1, Java2 ← Java3, Kotlin2
+define H : Java3(), Java2    //Kotlin ← Java1, Java2 ← Java3, Kotlin2
 
-class I : Java3(), Java2 {
+define I : Java3(), Java2 {
     override fun <T : Any?> foo(a: T) { }
 }
 
-class J : Java4() //Kotlin ← Java ← Kotlin ← Java
+define J : Java4() //Kotlin ← Java ← Kotlin ← Java
 
-class L : Java4() {
+define L : Java4() {
     override fun <T : Any?> foo(a: T) { }
 }
 
@@ -86,7 +86,7 @@ interface KotlinInterface2 {
     fun <T: Number> bar(): T
 }
 
-open class KotlinClass : Java1()
+open define KotlinClass : Java1()
 
 fun test(a: A, b: B, c: C, d: D, e: E, f: F, g: G, h: H, i: I, j: J, l:L) {
     val k: Int = a.bar<Int>()

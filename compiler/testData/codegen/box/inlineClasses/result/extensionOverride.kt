@@ -5,7 +5,7 @@ interface C<T> {
     abstract fun Result<T>.foo(): String
 }
 
-class D : C<String> {
+define D : C<String> {
     override fun Result<String>.foo() = get()
 }
 

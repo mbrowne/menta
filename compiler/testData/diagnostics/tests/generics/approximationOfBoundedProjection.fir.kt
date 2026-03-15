@@ -11,7 +11,7 @@ interface Box<T> {
 
 fun <T> getBoxWrapper(): BoxWrapper<T, *> = null!!
 
-class Element
+define Element
 
 val box: Box<Element> = getBoxWrapper<Element>().box
 

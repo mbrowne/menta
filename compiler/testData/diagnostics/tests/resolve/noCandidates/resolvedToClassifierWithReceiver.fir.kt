@@ -5,7 +5,7 @@ object X {
     interface A
 
     object B
-    class C
+    define C
 }
 
 fun testX() {
@@ -16,11 +16,11 @@ fun testX() {
     val class_as_val = X.<!NO_COMPANION_OBJECT!>C<!>
 }
 
-class Y {
+define Y {
     interface A
 
     object B
-    class C
+    define C
 }
 
 fun testY() {

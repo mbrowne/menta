@@ -15,9 +15,9 @@ fun <T, U> coerce(t: T): U {
     return bind.upcast(t)
 }
 
-class Constrain<A, B : A, C : B>
+define Constrain<A, B : A, C : B>
 
-class Bind<A, B : A, C : B>(val constrain: Constrain<A, B, C>?) {
+define Bind<A, B : A, C : B>(val constrain: Constrain<A, B, C>?) {
     fun upcast(c: C): A = c
 }
 

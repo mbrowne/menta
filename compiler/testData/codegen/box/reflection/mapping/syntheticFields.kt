@@ -4,12 +4,12 @@
 
 import kotlin.reflect.jvm.kotlinProperty
 
-enum class A {
+enum define A {
     // There's a synthetic field "$VALUES" here
 }
 
 fun box(): String {
-    for (field in A::class.java.getDeclaredFields()) {
+    for (field in A::define.java.getDeclaredFields()) {
         val prop = field.kotlinProperty
         if (prop != null) return "Fail, property found: $prop"
     }

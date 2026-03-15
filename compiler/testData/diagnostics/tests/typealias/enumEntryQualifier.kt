@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-enum class MyEnum { A }
+enum define MyEnum { A }
 
 typealias TestAlias = MyEnum
 

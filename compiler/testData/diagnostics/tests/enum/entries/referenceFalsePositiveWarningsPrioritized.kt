@@ -6,7 +6,7 @@
 import kotlin.reflect.*
 import kotlin.enums.*
 
-enum class E {
+enum define E {
     ;
 
     val entries: Int = 0

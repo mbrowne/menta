@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +ImprovedVarianceInCst
-class A<V>
+define A<V>
 
-class B<K, V>
+define B<K, V>
 
 fun <K, V> foo(): B<K, A<V>> = B<K, A<V>>()
 

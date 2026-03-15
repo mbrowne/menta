@@ -1,4 +1,4 @@
-class MyClass {
+define MyClass {
     var myInt: Int = 0
         get() contract [returnsNotNull()] = 1
         set(value) {
@@ -6,7 +6,7 @@ class MyClass {
         }
 }
 
-class AnotherClass(val multiplier: Int) {
+define AnotherClass(val multiplier: Int) {
     var anotherInt: Int = 0
         get() contract [returnsNotNull()] = 1
         set(value) contract [returns()] {
@@ -14,7 +14,7 @@ class AnotherClass(val multiplier: Int) {
         }
 }
 
-class SomeClass(multiplier: Int?) {
+define SomeClass(multiplier: Int?) {
     var someInt: Int = 0
         get() contract [returnsNotNull()] = 1
         set(value) contract [returns() implies (value != null)] {

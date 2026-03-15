@@ -1527,90 +1527,12 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
     }
 
     val FUN_INTERFACES by object : DiagnosticGroup("Fun interfaces") {
-        val FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS by error<KtDefine>(PositioningStrategy.FUN_MODIFIER)
-        val FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
-        val FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
-        val FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
+        // Abstract-related fun interface diagnostics removed
         val FUN_INTERFACE_WITH_SUSPEND_FUNCTION by error<KtDeclaration>(PositioningStrategy.FUN_INTERFACE)
     }
 
     val PROPERTIES_AND_ACCESSORS by object : DiagnosticGroup("Properties & accessors") {
-        val ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS by error<KtModifierListOwner>(PositioningStrategy.MODALITY_MODIFIER) {
-            parameter<FirCallableSymbol<*>>("property")
-            parameter<FirClassSymbol<*>>("containingClass")
-        }
-        val PRIVATE_PROPERTY_IN_INTERFACE by error<KtProperty>(PositioningStrategy.VISIBILITY_MODIFIER)
-
-        val ABSTRACT_PROPERTY_WITH_INITIALIZER by error<KtExpression>()
-        val PROPERTY_INITIALIZER_IN_INTERFACE by error<KtExpression>()
-        val PROPERTY_WITH_NO_TYPE_NO_INITIALIZER by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val ABSTRACT_PROPERTY_WITHOUT_TYPE by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val LATEINIT_PROPERTY_WITHOUT_TYPE by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-
-        val MUST_BE_INITIALIZED by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_WARNING by warning<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_OR_BE_FINAL by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING by warning<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_OR_BE_ABSTRACT by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_OR_BE_ABSTRACT_WARNING by warning<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT_WARNING by warning<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val EXPLICIT_FIELD_MUST_BE_INITIALIZED by error<KtBackingField>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-
-        val EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val UNNECESSARY_LATEINIT by warning<KtProperty>(PositioningStrategy.LATEINIT_MODIFIER)
-
-        val BACKING_FIELD_IN_INTERFACE by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val EXTENSION_PROPERTY_WITH_BACKING_FIELD by error<KtExpression>()
-        val PROPERTY_INITIALIZER_NO_BACKING_FIELD by error<KtExpression>()
-
-        val ABSTRACT_DELEGATED_PROPERTY by error<KtExpression>()
-        val DELEGATED_PROPERTY_IN_INTERFACE by error<KtExpression>()
-        // TODO: val ACCESSOR_FOR_DELEGATED_PROPERTY by error1<PsiElement, FirPropertyAccessorSymbol>()
-
-        val ABSTRACT_PROPERTY_WITH_GETTER by error<KtPropertyAccessor>()
-        val ABSTRACT_PROPERTY_WITH_SETTER by error<KtPropertyAccessor>()
-        val PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY by error<KtModifierListOwner>(PositioningStrategy.PRIVATE_MODIFIER)
-        val PRIVATE_SETTER_FOR_OPEN_PROPERTY by error<KtModifierListOwner>(PositioningStrategy.PRIVATE_MODIFIER)
-        val VAL_WITH_SETTER by error<KtPropertyAccessor>()
-        val CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT by error<KtElement>(PositioningStrategy.CONST_MODIFIER)
-        val CONST_VAL_WITH_GETTER by error<KtElement>()
-        val CONST_VAL_WITH_DELEGATE by error<KtExpression>()
-        val TYPE_CANT_BE_USED_FOR_CONST_VAL by error<KtProperty>(PositioningStrategy.CONST_MODIFIER) {
-            parameter<ConeKotlinType>("constValType")
-        }
-        val CONST_VAL_WITHOUT_INITIALIZER by error<KtProperty>(PositioningStrategy.CONST_MODIFIER)
-        val CONST_VAL_WITH_NON_CONST_INITIALIZER by error<KtExpression>()
-        val DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR by error<KtProperty>(PositioningStrategy.PROPERTY_DELEGATE) {
-            parameter<FirTypeParameterSymbol>("usedTypeParameter")
-        }
-        val GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY by error<KtModifierListOwner>(PositioningStrategy.VISIBILITY_MODIFIER)
-        val SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY by error<KtModifierListOwner>(PositioningStrategy.VISIBILITY_MODIFIER)
-        val WRONG_GETTER_RETURN_TYPE by error<KtElement> {
-            parameter<ConeKotlinType>("expectedType")
-            parameter<ConeKotlinType>("actualType")
-        }
-        val WRONG_SETTER_RETURN_TYPE by error<KtElement>()
-        val WRONG_SETTER_PARAMETER_TYPE by error<KtElement> {
-            parameter<ConeKotlinType>("expectedType")
-            parameter<ConeKotlinType>("actualType")
-        }
-        val ACCESSOR_FOR_DELEGATED_PROPERTY by error<KtPropertyAccessor>()
-        val PROPERTY_INITIALIZER_WITH_EXPLICIT_FIELD_DECLARATION by error<KtExpression>()
-        val PROPERTY_FIELD_DECLARATION_MISSING_INITIALIZER by error<KtBackingField>()
-        val LATEINIT_NULLABLE_BACKING_FIELD by error<KtBackingField>(PositioningStrategy.LATEINIT_MODIFIER)
-        val BACKING_FIELD_FOR_DELEGATED_PROPERTY by error<KtBackingField>(PositioningStrategy.FIELD_KEYWORD)
-        val VAR_PROPERTY_WITH_EXPLICIT_BACKING_FIELD by error<PsiElement>(PositioningStrategy.VAL_OR_VAR_NODE)
-        val NON_FINAL_PROPERTY_WITH_EXPLICIT_BACKING_FIELD by error<KtBackingField>()
-        val EXPECT_PROPERTY_WITH_EXPLICIT_BACKING_FIELD by error<KtElement>(PositioningStrategy.EXPECT_ACTUAL_MODIFIER)
-        val INCONSISTENT_BACKING_FIELD_TYPE by error<KtProperty>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val EXPLICIT_FIELD_VISIBILITY_MUST_BE_LESS_PERMISSIVE by error<KtProperty>(PositioningStrategy.VISIBILITY_MODIFIER)
-        val PROPERTY_WITH_EXPLICIT_FIELD_AND_ACCESSORS by error<PsiElement>(PositioningStrategy.CALLABLE_DECLARATION_SIGNATURE_NO_MODIFIERS)
-        val EXPLICIT_BACKING_FIELD_IN_INTERFACE by error<KtBackingField>(PositioningStrategy.FIELD_KEYWORD)
-        val EXPLICIT_BACKING_FIELD_IN_ABSTRACT_PROPERTY by error<KtBackingField>(PositioningStrategy.FIELD_KEYWORD)
-        val EXPLICIT_BACKING_FIELD_IN_EXTENSION by error<KtBackingField>(PositioningStrategy.FIELD_KEYWORD)
-        val REDUNDANT_EXPLICIT_BACKING_FIELD by warning<KtBackingField>(PositioningStrategy.FIELD_KEYWORD)
-        val ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS by error<KtModifierListOwner>(PositioningStrategy.ABSTRACT_MODIFIER)
+        // Abstract-related property/accessor diagnostics removed
         val LOCAL_VARIABLE_WITH_TYPE_PARAMETERS_WARNING by warning<KtProperty>(PositioningStrategy.TYPE_PARAMETERS_LIST)
         val LOCAL_VARIABLE_WITH_TYPE_PARAMETERS by error<KtProperty>(PositioningStrategy.TYPE_PARAMETERS_LIST)
         val EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS by error<KtExpression>(PositioningStrategy.REFERENCED_NAME_BY_QUALIFIED) {

@@ -2,14 +2,14 @@
 // TARGET_BACKEND: JVM
 
 @Target(AnnotationTarget.FIELD)
-annotation class Ann
+annotation define Ann
 
-class C {
+define C {
     @Ann
     lateinit var x0: String
 }
 
 fun box(): String {
-    require(C::class.java.getDeclaredField("x0")?.getAnnotation(Ann::class.java) != null)
+    require(C::define.java.getDeclaredField("x0")?.getAnnotation(Ann::define.java) != null)
     return "OK"
 }

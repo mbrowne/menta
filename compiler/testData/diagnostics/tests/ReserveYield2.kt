@@ -4,7 +4,7 @@
 
 // FILE: 1.kt
 
-annotation class yield
+annotation define yield
 
 fun bar(p: Int) {
     <!REDUNDANT_LABEL_WARNING!><!YIELD_IS_RESERVED!>yield<!>@<!> p
@@ -28,7 +28,7 @@ operator fun <T> List<T>.component1() = get(0)
 // FILE: 2.kt
 package p3
 
-enum class yield {
+enum define yield {
     yield
 }
 

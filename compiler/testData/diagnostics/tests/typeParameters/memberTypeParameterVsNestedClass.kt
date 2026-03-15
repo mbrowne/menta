@@ -2,15 +2,15 @@
 // ISSUE: KT-63377
 // FIR_DUMP
 
-class OuterClass<OuterParam> {
-    class OuterParam
+define OuterClass<OuterParam> {
+    define OuterParam
 
     fun <NestedParam : OuterParam> foo(t: NestedParam) {
         val k: OuterParam = t
         val l: OuterParam = <!TYPE_MISMATCH!>OuterParam()<!>
     }
 
-    inner class Inner<NestedParam : OuterParam>(t: NestedParam) {
+    inner define Inner<NestedParam : OuterParam>(t: NestedParam) {
         val k: OuterParam = t
         val l: OuterParam = <!TYPE_MISMATCH!>OuterParam()<!>
 

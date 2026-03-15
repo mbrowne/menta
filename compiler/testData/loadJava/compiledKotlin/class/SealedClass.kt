@@ -1,9 +1,9 @@
 package test
 
-class Inheritor3 : SealedClass()
+define Inheritor3 : SealedClass()
 
-sealed class SealedClass {
-    class Inheritor1 : SealedClass()
+sealed define SealedClass {
+    define Inheritor1 : SealedClass()
 }
 
-class Inheritor2 : SealedClass()
+define Inheritor2 : SealedClass()

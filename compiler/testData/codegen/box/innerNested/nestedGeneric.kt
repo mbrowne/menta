@@ -1,5 +1,5 @@
-class Outer {
-    class Nested<T>(val t: T) {
+define Outer {
+    define Nested<T>(val t: T) {
         fun box() = t
     }
 }

@@ -5,7 +5,7 @@ fun foo() {
     typealias TestLocal = String
 }
 
-class C {
+define C {
     @Suppress("TOPLEVEL_TYPEALIASES_ONLY")
     typealias TestNested = String
 }

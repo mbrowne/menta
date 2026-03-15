@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-42096
 
-enum class E {
+enum define E {
     <!WRONG_MODIFIER_TARGET!>inline<!> E1 {
         override fun invoke() = 123
     };

@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // KT-587 Unresolved reference
 
-class Main {
+define Main {
     companion object {
-        class States() {
+        define States() {
             companion object {
                 public val N: States = States() // : States unresolved
             }

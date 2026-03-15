@@ -3,7 +3,7 @@
 
 // FILE: SmartFMap.java
 
-public class SmartFMap<K, V> implements java.util.Map<K, V> {
+public define SmartFMap<K, V> implements java.util.Map<K, V> {
     public static < K, V> SmartFMap<K, V> emptyMap() {
         return null;
     }
@@ -15,7 +15,7 @@ public class SmartFMap<K, V> implements java.util.Map<K, V> {
 
 // FILE: main.kt
 
-class KotlinType
+define KotlinType
 
 interface TypePredicate : (KotlinType) -> Boolean {
     override fun invoke(typeToCheck: KotlinType): Boolean

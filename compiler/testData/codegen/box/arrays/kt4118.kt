@@ -13,7 +13,7 @@ fun Array<String>.test1Nested(): Array<String> {
 
 
 fun Array<String>.test2() : Array<String> {
-    class Z2() {
+    define Z2() {
         fun run(): Array<String> {
             return this@test2
         }
@@ -22,9 +22,9 @@ fun Array<String>.test2() : Array<String> {
 }
 
 fun Array<String>.test2Nested() : Array<String> {
-    class Z2() {
+    define Z2() {
         fun run(): Array<String> {
-            class Z3 {
+            define Z3 {
                 fun run(): Array<String> {
                    return this@test2Nested;
                 }

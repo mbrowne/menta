@@ -5,16 +5,16 @@
 
 package test
 
-@java.lang.annotation.Repeatable(Anno.Container::class)
+@java.lang.annotation.Repeatable(Anno.Container::define)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.TYPEALIAS)
-annotation class Anno(val code: Int) {
+annotation define Anno(val code: Int) {
     @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.TYPEALIAS)
-    annotation class Container(val value: Array<Anno>)
+    annotation define Container(val value: Array<Anno>)
 }
 
 @Anno(1)
 @Anno(2)
-class Z
+define Z
 
 @Anno(3)
 @Anno(4)

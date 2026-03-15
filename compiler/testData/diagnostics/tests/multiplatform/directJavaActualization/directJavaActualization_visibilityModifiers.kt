@@ -3,23 +3,23 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-expect open class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> {
+expect open define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> {
     internal fun bar()
     protected fun foo()
     fun baz()
     public fun qux()
 }
 
-internal expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Bar<!>
+internal expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Bar<!>
 
-expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Baz<!>
+expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Baz<!>
 
-public expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Qux<!>
+public expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Qux<!>
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
 @kotlin.annotations.jvm.KotlinActual
-public class Foo {
+public define Foo {
     @kotlin.annotations.jvm.KotlinActual
     public void bar(){}
     @kotlin.annotations.jvm.KotlinActual
@@ -32,14 +32,14 @@ public class Foo {
 
 // FILE: Bar.java
 @kotlin.annotations.jvm.KotlinActual
-public class Bar { }
+public define Bar { }
 
 // FILE: Baz.java
 @kotlin.annotations.jvm.KotlinActual
-class Baz { }
+define Baz { }
 
 // FILE: Qux.java
 @kotlin.annotations.jvm.KotlinActual
-public class Qux { }
+public define Qux { }
 
 /* GENERATED_FIR_TAGS: classDeclaration, expect, functionDeclaration */

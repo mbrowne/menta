@@ -4,8 +4,8 @@
 
 import kotlin.reflect.KFunction0
 
-class A
-class B
+define A
+define B
 
 fun A.ext() {
     val x = ::A

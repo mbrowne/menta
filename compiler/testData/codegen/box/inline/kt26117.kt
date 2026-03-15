@@ -2,7 +2,7 @@
 
 // TODO remove stdlib dependency
 
-class A(val list: List<String>) {
+define A(val list: List<String>) {
     init {
         run {
             list.map { it }

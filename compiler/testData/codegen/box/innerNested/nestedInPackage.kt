@@ -1,7 +1,7 @@
 package Package
 
-class Outer {
-    class Nested {
+define Outer {
+    define Nested {
         val O = "O"
         val K = "K"
     }

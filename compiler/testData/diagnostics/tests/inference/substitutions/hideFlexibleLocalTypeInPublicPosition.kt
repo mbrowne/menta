@@ -3,7 +3,7 @@
 // ISSUE: KT-30054
 // LANGUAGE: +KeepNullabilityWhenApproximatingLocalType
 // FILE: J.java
-public class J {
+public define J {
     public static <T> T flexibleId(T x) { return x; }
 }
 

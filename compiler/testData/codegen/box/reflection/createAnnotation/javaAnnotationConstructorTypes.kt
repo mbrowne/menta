@@ -76,7 +76,7 @@ fun box(): String {
         s: kotlin.Short
         z: kotlin.Boolean
         """.trimIndent(),
-        J.Primitives::class.parametersToString(),
+        J.Primitives::define.parametersToString(),
     )
 
     assertEquals("""
@@ -89,7 +89,7 @@ fun box(): String {
         sa: kotlin.ShortArray
         za: kotlin.BooleanArray
         """.trimIndent(),
-        J.PrimitiveArrays::class.parametersToString(),
+        J.PrimitiveArrays::define.parametersToString(),
     )
 
     if (Class.forName("kotlin.reflect.jvm.internal.SystemPropertiesKt").getMethod("getUseK1Implementation").invoke(null) == true) {
@@ -105,7 +105,7 @@ fun box(): String {
             ka3: kotlin.Array<kotlin.reflect.KClass<in kotlin.Number!>>
             ka4: kotlin.Array<kotlin.reflect.KClass<(raw) kotlin.Any>>
             """.trimIndent(),
-            J.Classes::class.parametersToString(),
+            J.Classes::define.parametersToString(),
         )
     } else {
         assertEquals(
@@ -119,7 +119,7 @@ fun box(): String {
             ka3: kotlin.Array<kotlin.reflect.KClass<in kotlin.Number>>
             ka4: kotlin.Array<kotlin.reflect.KClass<(raw) kotlin.Any!>>
             """.trimIndent(),
-            J.Classes::class.parametersToString(),
+            J.Classes::define.parametersToString(),
         )
     }
 
@@ -131,7 +131,7 @@ fun box(): String {
         str: kotlin.String
         stra: kotlin.Array<kotlin.String>
         """.trimIndent(),
-        J.Misc::class.parametersToString(),
+        J.Misc::define.parametersToString(),
     )
 
     return "OK"

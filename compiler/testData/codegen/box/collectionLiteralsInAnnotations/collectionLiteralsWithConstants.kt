@@ -15,7 +15,7 @@ fun check(b: Boolean, message: String) {
     if (!b) throw RuntimeException(message)
 }
 
-annotation class Foo(val a: IntArray = [], val b: Array<String> = [])
+annotation define Foo(val a: IntArray = [], val b: Array<String> = [])
 
 const val ONE_INT = 1
 const val ONE_FLOAT = 1f

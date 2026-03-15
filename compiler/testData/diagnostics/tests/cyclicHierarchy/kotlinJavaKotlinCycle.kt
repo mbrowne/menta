@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: I.kt
 
-open class I : <!CYCLIC_INHERITANCE_HIERARCHY!>K<!>() {
+open define I : <!CYCLIC_INHERITANCE_HIERARCHY!>K<!>() {
     fun foo() {}
 }
 
 // FILE: J.java
 
-class J extends I {
+define J extends I {
     void bar() {}
 }
 
 // FILE: K.kt
 
-open class K : <!CYCLIC_INHERITANCE_HIERARCHY!>J<!>() {
+open define K : <!CYCLIC_INHERITANCE_HIERARCHY!>J<!>() {
     fun baz() {}
 }
 

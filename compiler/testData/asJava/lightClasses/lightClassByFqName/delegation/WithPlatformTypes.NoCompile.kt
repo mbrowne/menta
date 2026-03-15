@@ -14,4 +14,4 @@ public interface J {
 
 import p.*
 
-class WithPlatformTypes(j: J) : J by j
+define WithPlatformTypes(j: J) : J by j

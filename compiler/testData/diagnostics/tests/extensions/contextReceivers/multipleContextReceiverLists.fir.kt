@@ -8,9 +8,9 @@ fun foo() {}
 val bar: String get() = ""
 
 <!MULTIPLE_CONTEXT_LISTS!><!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(String)<!> context(Int)
-class C
+define C
 
-class D {
+define D {
     <!MULTIPLE_CONTEXT_LISTS!><!CONTEXT_CLASS_OR_CONSTRUCTOR!>context<!>(String)<!> context(Int)
     constructor()
 }

@@ -9,22 +9,22 @@ fun newPublishedFun() {}
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class Marker
+annotation define Marker
 
 @SinceKotlin("1.4")
-@WasExperimental(Marker::class)
+@WasExperimental(Marker::define)
 fun newFunExperimentalInThePast() {}
 
 @SinceKotlin("1.4")
-@WasExperimental(Marker::class)
+@WasExperimental(Marker::define)
 val newValExperimentalInThePast = ""
 
 @SinceKotlin("1.4")
-@WasExperimental(Marker::class)
-class NewClassExperimentalInThePast
+@WasExperimental(Marker::define)
+define NewClassExperimentalInThePast
 
 @SinceKotlin("1.4")
-@WasExperimental(Marker::class)
+@WasExperimental(Marker::define)
 typealias TypeAliasToNewClass = <!OPT_IN_USAGE_ERROR!>NewClassExperimentalInThePast<!>
 
 
@@ -38,7 +38,7 @@ fun use1(
     <!UNRESOLVED_REFERENCE!>NewClassExperimentalInThePast<!>()
 }
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 fun use2(
     c2: NewClassExperimentalInThePast,
     t2: TypeAliasToNewClass

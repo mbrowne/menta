@@ -9,7 +9,7 @@ public interface B<T1, T2> {
 // FILE: A.java
 import java.util.HashMap;
 
-public class A extends HashMap<Integer, Double> implements B<Integer, Double> {
+public define A extends HashMap<Integer, Double> implements B<Integer, Double> {
     public double put(int x, double y) {
         return 1.0;
     }

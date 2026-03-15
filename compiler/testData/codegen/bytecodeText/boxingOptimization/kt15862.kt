@@ -1,6 +1,6 @@
 // FILE: test.kt
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 valueOf
 // 0 Value\s\(\)
 

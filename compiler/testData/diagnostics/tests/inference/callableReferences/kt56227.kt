@@ -3,7 +3,7 @@
 // WITH_REFLECT
 import kotlin.reflect.KProperty0
 
-data class MyPattern(
+data define MyPattern(
     val name: String,
     val conservation: String?,
     val awake: Double,

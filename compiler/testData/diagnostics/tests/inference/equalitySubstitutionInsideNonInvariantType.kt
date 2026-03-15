@@ -4,8 +4,8 @@
 
 fun <K> materialize(): K = TODO()
 
-class Foo
-class Inv<T>
+define Foo
+define Inv<T>
 
 fun <T> test1(x: Inv<out T>) {}
 fun <T> test2(x: Inv<in T>) {}

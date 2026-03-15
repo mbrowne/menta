@@ -25,7 +25,7 @@ internal fun internalInThisFile() {}
 
 public fun publicInThisFile() {}
 
-// @test/Util__ThisFileKt.class:
+// @test/Util__ThisFileKt.define:
 // 1 INVOKESTATIC test/Util__ThisFileKt.privateInThisFile
 // 1 INVOKESTATIC test/Util.internalInThisFile
 // 1 INVOKESTATIC test/Util.publicInThisFile

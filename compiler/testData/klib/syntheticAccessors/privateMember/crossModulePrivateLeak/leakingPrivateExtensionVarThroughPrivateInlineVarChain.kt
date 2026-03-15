@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     internal inline var inlineVar: Int
         get() = privateInlineVar2
         set(value) {

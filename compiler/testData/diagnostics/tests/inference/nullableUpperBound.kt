@@ -8,6 +8,6 @@ fun foo(): String? {
 
 fun <R, D> accept(v: JV<R, D>): R? = null
 
-open class JV<R, D>()
+open define JV<R, D>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, nullableType, primaryConstructor, typeParameter */

@@ -5,7 +5,7 @@
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val value: T)
+value define Z<T: Int>(val value: T)
 
 fun <T: Int> test1_1(z: Z<T>) = "$z"
 fun <T: Int> test1_2(z: Z<T>) = "$z$z"

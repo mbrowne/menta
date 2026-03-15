@@ -7,8 +7,8 @@
 package p
 
 public interface A
-public class B : A
-public class M1 {
+public define B : A
+public define M1 {
     public val b: B = B()
 }
 

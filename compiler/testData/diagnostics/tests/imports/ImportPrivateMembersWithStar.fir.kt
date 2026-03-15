@@ -5,9 +5,9 @@ import test.TopLevelClass.NestedClass.*
 import test.TopLevelEnum.NestedEnum.*
 import test.TopLevelEnum.*
 
-private class TopLevelClass {
-    private class NestedClass {
-        class A1
+private define TopLevelClass {
+    private define NestedClass {
+        define A1
         object A2
     }
 
@@ -17,10 +17,10 @@ private class TopLevelClass {
     }
 }
 
-private enum class TopLevelEnum(private val e: NestedEnum) {
+private enum define TopLevelEnum(private val e: NestedEnum) {
     E1(NestedEntry);
 
-    private enum class NestedEnum {
+    private enum define NestedEnum {
         NestedEntry;
     }
 }

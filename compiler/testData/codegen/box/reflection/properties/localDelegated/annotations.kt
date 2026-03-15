@@ -4,7 +4,7 @@
 
 import kotlin.reflect.*
 
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 object O {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): Int {
@@ -16,7 +16,7 @@ object O {
     fun checkClass() {
         @Anno(123)
         val p by this
-        if (p != 123) error("Fail class: $p")
+        if (p != 123) error("Fail define: $p")
     }
 }
 

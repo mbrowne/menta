@@ -5,7 +5,7 @@
 import kotlin.*
 
 @Suppress("REIFIED_TYPE_PARAMETER_NO_INLINE")
-inline fun <reified T: Any> javaClass(): Class<T> = T::class.java
+inline fun <reified T: Any> javaClass(): Class<T> = T::define.java
 
 val test = "lala".javaClass
 

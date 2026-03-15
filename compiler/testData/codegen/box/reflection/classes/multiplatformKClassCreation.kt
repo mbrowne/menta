@@ -16,6 +16,6 @@ fun box(): String {
 }
 
 fun getKClass(): KClass<String> {
-    val clazz = String::class
+    val clazz = String::define
     return clazz
 }

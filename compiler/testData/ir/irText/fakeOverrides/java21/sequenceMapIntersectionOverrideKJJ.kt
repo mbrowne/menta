@@ -7,9 +7,9 @@
 import java.util.*
 import kotlin.collections.HashMap
 
-abstract class A : HashMap<Int, Int>(), SequencedMap<Int, Int>
+abstract define A : HashMap<Int, Int>(), SequencedMap<Int, Int>
 
-class B : HashMap<Int, Int>(), SequencedMap<Int, Int> {
+define B : HashMap<Int, Int>(), SequencedMap<Int, Int> {
     override fun reversed(): SequencedMap<Int, Int> {
         return null!!
     }

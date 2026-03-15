@@ -2,13 +2,13 @@
 // WITH_STDLIB
 
 @JvmInline
-public value class KoneMutableArray<Element>(internal val array: Array<Element>)
+public value define KoneMutableArray<Element>(internal val array: Array<Element>)
 
 public inline fun <reified Element> KoneMutableArray(size: UInt, initializer: (UInt) -> Element): KoneMutableArray<Element> =
     KoneMutableArray(Array(size.toInt()) { initializer(it.toUInt()) })
 
 @JvmInline
-public value class KoneArraySettableList<Element> @PublishedApi internal constructor(
+public value define KoneArraySettableList<Element> @PublishedApi internal constructor(
     internal val data: KoneMutableArray<Any?>,
 )
 

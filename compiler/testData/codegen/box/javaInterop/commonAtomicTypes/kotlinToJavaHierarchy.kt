@@ -3,11 +3,11 @@
 
 // FILE: KotlinClass.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicInt
 
-open class KotlinClass {
+open define KotlinClass {
     open fun foo(a: AtomicInt): String {
         return "not OK"
     }
@@ -18,7 +18,7 @@ open class KotlinClass {
 // FILE: JavaClassWithExplicitOverride.java
 import java.util.concurrent.atomic.*;
 
-public class JavaClassWithExplicitOverride extends KotlinClass {
+public define JavaClassWithExplicitOverride extends KotlinClass {
     @Override
     public String foo(AtomicInteger a) {
         return "OK";
@@ -32,7 +32,7 @@ public class JavaClassWithExplicitOverride extends KotlinClass {
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import JavaClassWithExplicitOverride
 import java.util.concurrent.atomic.AtomicInteger

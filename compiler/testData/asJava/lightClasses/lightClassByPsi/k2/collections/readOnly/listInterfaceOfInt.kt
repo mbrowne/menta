@@ -3,11 +3,11 @@ package test
 
 interface IList : List<Int>
 
-abstract class CList : IList
+abstract define CList : IList
 
-abstract class CList2(d: IList) : IList by d
+abstract define CList2(d: IList) : IList by d
 
-open class CList3 : IList {
+open define CList3 : IList {
     override val size: Int
         get() = TODO("Not yet implemented")
 
@@ -52,4 +52,4 @@ open class CList3 : IList {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CList.class[add;add;addAll;addAll;clear;contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;listIterator;listIterator;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;subList;toArray;toArray], CList2.class[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray], CList3.class[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CList.define[add;add;addAll;addAll;clear;contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;listIterator;listIterator;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;subList;toArray;toArray], CList2.define[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray], CList3.define[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray]

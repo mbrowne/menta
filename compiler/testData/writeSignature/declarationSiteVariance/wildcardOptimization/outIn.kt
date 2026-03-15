@@ -1,7 +1,7 @@
-class Out<out T>
-class In<in Z>
+define Out<out T>
+define In<in Z>
 
-class Final
+define Final
 
 fun outIn(x: Out<In<Final>>) {}
 // method: OutInKt::outIn

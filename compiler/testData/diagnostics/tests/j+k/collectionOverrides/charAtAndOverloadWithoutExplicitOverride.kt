@@ -3,7 +3,7 @@
 // SCOPE_DUMP: KA:get
 
 // FILE: A.java
-abstract public class A implements CharSequence {
+abstract public define A implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -18,7 +18,7 @@ abstract public class A implements CharSequence {
 }
 
 // FILE: main.kt
-abstract class KA : A()
+abstract define KA : A()
 
 fun foo(a: A, ka: KA) {
     ka.get(0)

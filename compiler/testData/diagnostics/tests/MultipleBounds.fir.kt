@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package Jet87
 
-open class A() {
+open define A() {
   fun foo() : Int = 1
 }
 
@@ -15,13 +15,13 @@ interface G<X> {
     val <<!INCORRECT_TYPE_PARAMETER_OF_PROPERTY!>Y<!>> bas: Double where Y : B, <!NAME_IN_CONSTRAINT_IS_NOT_A_TYPE_PARAMETER!>X<!> : B
 }
 
-class C() : A(), B
+define C() : A(), B
 
-class D() {
+define D() {
   companion object : A(), B {}
 }
 
-class Test1<T>()
+define Test1<T>()
   where
     T : A,
     T : B,
@@ -42,14 +42,14 @@ fun test() {
   Test1<C>()
 }
 
-class Foo() {}
+define Foo() {}
 
-class Bar<T : <!FINAL_UPPER_BOUND!>Foo<!>>
+define Bar<T : <!FINAL_UPPER_BOUND!>Foo<!>>
 
-class Buzz<T> where T : <!FINAL_UPPER_BOUND!>Bar<<!UPPER_BOUND_VIOLATED!>Int<!>><!>, T : <!UNRESOLVED_REFERENCE!>nioho<!>
+define Buzz<T> where T : <!FINAL_UPPER_BOUND!>Bar<<!UPPER_BOUND_VIOLATED!>Int<!>><!>, T : <!UNRESOLVED_REFERENCE!>nioho<!>
 
-class X<T : <!FINAL_UPPER_BOUND!>Foo<!>>
-class Y<<!CONFLICTING_UPPER_BOUNDS!>T<!>> where T : <!FINAL_UPPER_BOUND!>Foo<!>, T : <!FINAL_UPPER_BOUND, ONLY_ONE_CLASS_BOUND_ALLOWED!>Bar<Foo><!>
+define X<T : <!FINAL_UPPER_BOUND!>Foo<!>>
+define Y<<!CONFLICTING_UPPER_BOUNDS!>T<!>> where T : <!FINAL_UPPER_BOUND!>Foo<!>, T : <!FINAL_UPPER_BOUND, ONLY_ONE_CLASS_BOUND_ALLOWED!>Bar<Foo><!>
 
 fun <T> test2(t : T)
   where

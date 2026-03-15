@@ -5,7 +5,7 @@ fun <T> T.doSomething(): String where T : FirstTrait, T : SecondTrait {
     return "OK"
 }
 
-class Foo : FirstTrait, SecondTrait {
+define Foo : FirstTrait, SecondTrait {
     fun bar(): String {
         return doSomething()
     }

@@ -1,4 +1,4 @@
-class A {
+define A {
     companion object {
         @JvmStatic
         internal fun f(): String = "OK"

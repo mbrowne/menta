@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
 }
 
@@ -20,7 +20,7 @@ fun foo(x1: List<String>, x2: List<String>) {
 
 fun <T1> Iterable<T1>.flatMap1(transform: (T1) -> String): String = TODO()
 
-@OptIn(kotlin.experimental.ExperimentalTypeInference::class)
+@OptIn(kotlin.experimental.ExperimentalTypeInference::define)
 @OverloadResolutionByLambdaReturnType
 @kotlin.jvm.JvmName("flatMapSequence")
 fun <T2> Iterable<T2>.flatMap1(transform: (T2) -> Int): Int = TODO()

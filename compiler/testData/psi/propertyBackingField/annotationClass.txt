@@ -9,7 +9,7 @@ KtFile: annotationClass.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoWithDefaultName')
     PRIMARY_CONSTRUCTOR
@@ -33,7 +33,7 @@ KtFile: annotationClass.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoWithCustomName')
     PRIMARY_CONSTRUCTOR
@@ -57,7 +57,7 @@ KtFile: annotationClass.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoWithCustomNameAndDefaultValue')
     PRIMARY_CONSTRUCTOR
@@ -89,7 +89,7 @@ KtFile: annotationClass.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoWithDefaultNameAndDefaultValue')
     PRIMARY_CONSTRUCTOR
@@ -120,7 +120,7 @@ KtFile: annotationClass.kt
       PsiWhiteSpace(' ')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoWithVararg')
     PRIMARY_CONSTRUCTOR
@@ -151,7 +151,7 @@ KtFile: annotationClass.kt
       PsiWhiteSpace(' ')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoWithVarargAndDefaultVakue')
     PRIMARY_CONSTRUCTOR

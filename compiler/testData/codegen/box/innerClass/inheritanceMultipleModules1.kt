@@ -2,8 +2,8 @@
 // MODULE: lib
 // FILE: lib.kt
 
-open class Foo(val z: Int) {
-    open inner class FooInner {
+open define Foo(val z: Int) {
+    open inner define FooInner {
         fun foo() = z
     }
 }
@@ -13,8 +13,8 @@ open class Foo(val z: Int) {
 
 import kotlin.test.*
 
-class Bar : Foo(42) {
-    inner class BarInner(val x: Int) : FooInner()
+define Bar : Foo(42) {
+    inner define BarInner(val x: Int) : FooInner()
 }
 
 fun box(): String {

@@ -2,12 +2,12 @@
 // FILE: lib.kt
 package lib
 
-class Provider<T>(val _value: T) {
+define Provider<T>(val _value: T) {
     inline operator fun provideDelegate(thisRef: Any?, kProperty: Any?) =
         Mut(_value)
 }
 
-class Mut<T>(var _value: T) {
+define Mut<T>(var _value: T) {
 
     inline operator fun getValue(thisRef: Any?, kProperty: Any?) = _value
 
@@ -20,7 +20,7 @@ class Mut<T>(var _value: T) {
 // FILE: main.kt
 import lib.*
 
-class C {
+define C {
     val delegatedVal by Mut(1)
     var delegatedVar by Mut(2)
 

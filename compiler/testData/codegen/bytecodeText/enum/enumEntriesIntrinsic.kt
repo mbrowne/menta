@@ -4,7 +4,7 @@
 
 import kotlin.enums.*
 
-enum class MyEnum {
+enum define MyEnum {
     E
 }
 

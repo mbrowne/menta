@@ -1,8 +1,8 @@
 // A$B
-class `A$B` {
-    inner class `C$D`
+define `A$B` {
+    inner define `C$D`
 
-    class `$$$$$$$` {
-        inner class `G$G$`
+    define `$$$$$$$` {
+        inner define `G$G$`
     }
 }

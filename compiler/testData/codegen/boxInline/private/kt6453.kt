@@ -2,7 +2,7 @@
 
 package test
 
-class A() {
+define A() {
     private val x = "OK"
     internal inline fun foo(p: (String) -> Unit) {
         p(x)

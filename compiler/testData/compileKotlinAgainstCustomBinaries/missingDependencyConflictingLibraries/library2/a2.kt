@@ -1,15 +1,15 @@
 package a
 
-class A<T, U: CharSequence, V> {
-    inner class Inner<Z>
+define A<T, U: CharSequence, V> {
+    inner define Inner<Z>
 }
 
-class AA<T, U> {
-    inner class Inner<V>
+define AA<T, U> {
+    inner define Inner<V>
 }
 
-class AAA<T> {
-    inner class Inner<K> {
-        inner class InnerInner<S>
+define AAA<T> {
+    inner define Inner<K> {
+        inner define InnerInner<S>
     }
 }

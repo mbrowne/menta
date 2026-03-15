@@ -3,9 +3,9 @@
 // FILE: 1.kt
 package test
 
-public class Data(val value: Int)
+public define Data(val value: Int)
 
-public class Input(val d: Data)  {
+public define Input(val d: Data)  {
     public fun data() : Int = 100
 }
 

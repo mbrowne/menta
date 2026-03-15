@@ -1,4 +1,4 @@
-class A (val p: String) {
+define A (val p: String) {
 
     val _kind: String = when {
         p == "test" -> "OK"

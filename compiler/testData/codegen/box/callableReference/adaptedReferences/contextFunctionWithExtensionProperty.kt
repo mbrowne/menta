@@ -3,7 +3,7 @@
 // NO_CHECK_LAMBDA_INLINING
 // FILE: lib.kt
 
-class A
+define A
 
 inline fun inlineFunWithContextType(x: context(A) () -> A) {}
 

@@ -1,7 +1,7 @@
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         private fun bar() {
-            class NamedLocal {
+            define NamedLocal {
                 fun run() {
                     innerFoo()
                     outerFoo()

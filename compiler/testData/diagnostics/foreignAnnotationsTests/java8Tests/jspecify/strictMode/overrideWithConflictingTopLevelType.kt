@@ -7,7 +7,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class ParentA {
+public define ParentA {
     public String testNullability(String input) {
         return input;
     }
@@ -19,7 +19,7 @@ public class ParentA {
 }
 
 // FILE: main.kt
-class SubA : ParentA() {
+define SubA : ParentA() {
     override fun equals(other: Any?): Boolean {
         return super.equals(other)
     }

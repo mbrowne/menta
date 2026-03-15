@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -EXPOSED_PARAMETER_TYPE
 // LANGUAGE: +ForbidExposingLessVisibleTypesInInline
 
-private class S public constructor() {
+private define S public constructor() {
     fun a() {
 
     }

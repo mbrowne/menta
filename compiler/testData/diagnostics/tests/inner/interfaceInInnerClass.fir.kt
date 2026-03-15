@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         <!NESTED_CLASS_NOT_ALLOWED!>interface TestNestedInterface<!>
     }
 }

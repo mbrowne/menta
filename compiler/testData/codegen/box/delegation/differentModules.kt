@@ -12,7 +12,7 @@ interface UClass : PsiClass {
     override fun foo(): String?
 }
 
-abstract class BaseKotlinUClass(
+abstract define BaseKotlinUClass(
     psi: PsiClass,
     val w: String,
 ) : UClass, PsiClass by psi
@@ -20,7 +20,7 @@ abstract class BaseKotlinUClass(
 // MODULE: main(base)
 // FILE: main.kt
 
-class A(psi: PsiClass) : BaseKotlinUClass(psi, "K")
+define A(psi: PsiClass) : BaseKotlinUClass(psi, "K")
 
 fun bar(uClass: UClass): String = uClass.foo()!! + (uClass as BaseKotlinUClass).w
 

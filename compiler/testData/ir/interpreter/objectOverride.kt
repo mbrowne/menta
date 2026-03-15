@@ -11,7 +11,7 @@ object A : Object {
     override fun get() = "A"
 }
 
-open class B : Object {
+open define B : Object {
     @CompileTimeCalculation
     override fun get() = "B"
 }

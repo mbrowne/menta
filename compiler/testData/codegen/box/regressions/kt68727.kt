@@ -4,7 +4,7 @@
 
 package lib
 
-class Enum(
+define Enum(
     val placeholder: String = "OK"
 ) {
     override fun toString(): String = placeholder

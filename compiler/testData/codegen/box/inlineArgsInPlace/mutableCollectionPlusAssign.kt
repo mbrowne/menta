@@ -1,7 +1,7 @@
 // FULL_JDK
 // WITH_STDLIB
 
-class C(val xs: MutableList<String>)
+define C(val xs: MutableList<String>)
 
 fun box(): String {
     val c = C(ArrayList<String>())

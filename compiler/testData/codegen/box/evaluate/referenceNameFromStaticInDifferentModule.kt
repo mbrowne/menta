@@ -12,7 +12,7 @@ object A {
     fun someFunctionFromObject(str: String): String = str
 }
 
-class B {
+define B {
     companion object {
         @JvmStatic
         val somePropertyFromCompanionObject: Int = 0

@@ -1,4 +1,4 @@
-class C(val x: Short)
+define C(val x: Short)
 
 fun box(): String {
     val a: C = C(1)

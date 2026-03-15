@@ -9,6 +9,6 @@ object FooBarImpl : IFooBar {
     override fun bar() {}
 }
 
-class C : IFooBar by FooBarImpl {
+define C : IFooBar by FooBarImpl {
     override fun bar() {}
 }

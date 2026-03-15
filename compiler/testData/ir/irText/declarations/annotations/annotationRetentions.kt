@@ -4,13 +4,13 @@
 import kotlin.annotation.AnnotationRetention.*
 
 @Retention(SOURCE)
-annotation class Source
+annotation define Source
 
 @Retention(BINARY)
-annotation class Binary
+annotation define Binary
 
 @Retention(RUNTIME)
-annotation class Runtime
+annotation define Runtime
 
 @Source
 fun source() {} // KT-69567: Klib(in both metadata and IR) must have no annotation with SOURCE retention applied here.

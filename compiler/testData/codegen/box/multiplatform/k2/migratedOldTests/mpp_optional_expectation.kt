@@ -5,7 +5,7 @@
 @file:Suppress("OPT_IN_USAGE_ERROR", "OPTIONAL_DECLARATION_USAGE_IN_NON_COMMON_SOURCE")
 
 @OptionalExpectation
-expect annotation class Optional()
+expect annotation define Optional()
 
 @Optional
 fun foo() = "42"

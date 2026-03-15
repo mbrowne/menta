@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_DUMP
 
-class Foo {
+define Foo {
     companion object {
         fun bar() {}
         val baz = 42

@@ -10,7 +10,7 @@ KtFile: localClass.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('LocalClass')
     PsiWhiteSpace(' ')
@@ -41,7 +41,7 @@ KtFile: localClass.kt
                 PsiWhiteSpace('\n        ')
                 BLOCK
                   CLASS
-                    PsiElement(class)('class')
+                    PsiElement(define)('define')
                     PsiWhiteSpace(' ')
                     PsiElement(IDENTIFIER)('Local')
                   PsiWhiteSpace('\n\n        ')

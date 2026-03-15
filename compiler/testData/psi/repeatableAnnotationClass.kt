@@ -1,3 +1,3 @@
 @Repeatable
-annotation class RepeatableAnnotationClass
+annotation define RepeatableAnnotationClass
 

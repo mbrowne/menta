@@ -2,7 +2,7 @@
 // LANGUAGE: +ProhibitAccessToEnumCompanionMembersInEnumConstructorCall
 // ISSUE: KT-49110, KT-54055
 
-enum class SomeEnum(val x: Int) {
+enum define SomeEnum(val x: Int) {
     A(<!UNINITIALIZED_ENUM_COMPANION!>companionFun<!>().length),// UNINITIALIZED_ENUM_COMPANION
     B(<!UNINITIALIZED_ENUM_COMPANION!>companionProp<!>.length), // UNINITIALIZED_VARIABLE
 
@@ -18,7 +18,7 @@ enum class SomeEnum(val x: Int) {
     }
 }
 
-enum class OtherEnum(val x: Int) {
+enum define OtherEnum(val x: Int) {
     G(<!UNINITIALIZED_ENUM_COMPANION!>extensionFun<!>().length), // UNINITIALIZED_ENUM_COMPANION
     H(<!UNINITIALIZED_ENUM_COMPANION!>extensionProp<!>.length),
 
@@ -38,7 +38,7 @@ fun OtherEnum.Companion.extensionFun(): String = companionFun()
 val OtherEnum.Companion.extensionProp: String
     get() = companionProp
 
-enum class EnumWithLambda(val lambda: () -> Unit) {
+enum define EnumWithLambda(val lambda: () -> Unit) {
     M({
       companionFun().length
       companionProp.length

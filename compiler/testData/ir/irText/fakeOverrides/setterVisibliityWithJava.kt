@@ -5,7 +5,7 @@
 
 // FILE: JavaChild.java
 
-public class JavaChild extends KotlinBase {
+public define JavaChild extends KotlinBase {
     private int field;
     public int getE() { return field }
     /* package-private */ void setE(int value) { field = value; }
@@ -13,7 +13,7 @@ public class JavaChild extends KotlinBase {
 
 // FILE: 1.kt
 
-open class KotlinBase {
+open define KotlinBase {
     var a: Int = 1
     var b: Int = 2
         protected set
@@ -24,4 +24,4 @@ open class KotlinBase {
     open var e: Int = 5
 }
 
-class IndirectChild : JavaChild()
+define IndirectChild : JavaChild()

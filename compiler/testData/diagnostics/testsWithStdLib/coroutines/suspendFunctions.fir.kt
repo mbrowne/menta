@@ -3,7 +3,7 @@
 // CHECK_TYPE
 import kotlin.coroutines.*
 
-class Controller {
+define Controller {
     suspend fun noParams() {
 
     }

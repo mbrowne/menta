@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // See KT-10824: Smart cast depending on control flow does not work inside `if`
-class A
+define A
 fun foo(a: A?, aOther: A?): A {
     return if (a == null) {
         A()

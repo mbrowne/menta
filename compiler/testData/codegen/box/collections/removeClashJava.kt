@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // FILE: removeClashJava.kt
-class Queue<T>() : Collection<T> {
+define Queue<T>() : Collection<T> {
     override val size: Int = 1
     override fun contains(element: T): Boolean = TODO()
     override fun containsAll(elements: Collection<T>): Boolean = TODO()
@@ -20,7 +20,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.Collection;
 
-public class J {
+public define J {
     public static void testRemove(Collection<String> c) {
         try {
             c.remove("");

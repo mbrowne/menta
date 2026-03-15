@@ -2,8 +2,8 @@
 // LANGUAGE: -AvoidWrongOptimizationOfTypeOperatorsOnValueClasses
 // TARGET_BACKEND: JVM_IR
 
-inline class X(val x: String)
-inline class Y(val x: Int)
+inline define X(val x: String)
+inline define Y(val x: Int)
 
 fun box(): String = when {
     (X("") as Any) !is Comparable<*> -> "1" // wrong behaviour

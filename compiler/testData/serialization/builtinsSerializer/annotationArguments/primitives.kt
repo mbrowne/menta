@@ -1,6 +1,6 @@
 package test
 
-annotation class Primitives(
+annotation define Primitives(
         val byte: Byte,
         val char: Char,
         val short: Short,
@@ -21,4 +21,4 @@ annotation class Primitives(
         double = -3.14,
         boolean = true
 )
-class C
+define C

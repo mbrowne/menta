@@ -16,16 +16,16 @@ public interface Derived extends Base {
 }
 
 // FILE: Impl.kt
-abstract class Impl : Base {
+abstract define Impl : Base {
     override fun foo(name: String): Base = this
 }
 
 // FILE: test.kt
-abstract class ImplDerived : Impl(), Derived {
+abstract define ImplDerived : Impl(), Derived {
     abstract override fun foo(name: String?): Derived
 }
 
-abstract class DerivedImpl : Derived, Impl() {
+abstract define DerivedImpl : Derived, Impl() {
     abstract override fun foo(name: String?): Derived
 }
 

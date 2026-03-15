@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -CAST_NEVER_SUCCEEDS -UNUSED_VARIABLE
 
-class Foo<T>
-class P<K, T>(x: K, y: T)
+define Foo<T>
+define P<K, T>(x: K, y: T)
 
 val Foo<Int>.bar: Foo<Int> get() = this
 

@@ -2,7 +2,7 @@
 // LANGUAGE: +DontMakeExplicitJavaTypeArgumentsFlexible
 
 // FILE: JavaGeneric.java
-public class JavaGeneric<T> {
+public define JavaGeneric<T> {
 
     public JavaBox<?> foo(JavaBox<?> a) { return null; }
 
@@ -20,7 +20,7 @@ public class JavaGeneric<T> {
 }
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) { a = b; }
     public T a;
 }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_JAVAC
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public void foo(? x) {}
 
     public void bar(? extends String y) { }

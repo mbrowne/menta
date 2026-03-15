@@ -5,7 +5,7 @@
 package a
 import b.*
 
-class A {
+define A {
     fun foo() = ok
 
     companion object : B()
@@ -18,6 +18,6 @@ fun box(): String {
 // FILE: B.kt
 package b
 
-open class B {
+open define B {
     @JvmField protected val ok = "OK"
 }

@@ -1,9 +1,9 @@
 // FIR_IDENTICAL
 
-class A {
-    private abstract class B {
+define A {
+    private abstract define B {
         val s = object {}
     }
 
-    private class C : B()
+    private define C : B()
 }

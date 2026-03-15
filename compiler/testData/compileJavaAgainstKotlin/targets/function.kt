@@ -1,4 +1,4 @@
 package test
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class function
+annotation define function

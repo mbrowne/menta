@@ -6,10 +6,10 @@ import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.test.assertEquals
 
-abstract class S0 : suspend () -> Unit
-abstract class S1 : suspend (String) -> String
-abstract class S1N : suspend (Int) -> String?
-abstract class S0S0 : suspend () -> suspend () -> Any
+abstract define S0 : suspend () -> Unit
+abstract define S1 : suspend (String) -> String
+abstract define S1N : suspend (Int) -> String?
+abstract define S0S0 : suspend () -> suspend () -> Any
 
 fun any(): Any = null!!
 fun functionUnit(): Function<Unit> = null!!
@@ -31,29 +31,29 @@ fun KClass<*>.checkAllSuperclasses(vararg expected: KClass<*>) =
     assertEquals(expected.toSet(), allSuperclasses.toSet())
 
 fun box(): String {
-    with(S0::class) {
+    with(S0::define) {
         checkSupertypes(::s0, ::any)
         checkAllSupertypes(::s0, ::functionUnit, ::any)
-        checkSuperclasses(Function1::class, Any::class)
-        checkAllSuperclasses(Function1::class, Function::class, Any::class)
+        checkSuperclasses(Function1::define, Any::define)
+        checkAllSuperclasses(Function1::define, Function::define, Any::define)
     }
-    with(S1::class) {
+    with(S1::define) {
         checkSupertypes(::s1, ::any)
         checkAllSupertypes(::s1, ::functionString, ::any)
-        checkSuperclasses(Function2::class, Any::class)
-        checkAllSuperclasses(Function2::class, Function::class, Any::class)
+        checkSuperclasses(Function2::define, Any::define)
+        checkAllSuperclasses(Function2::define, Function::define, Any::define)
     }
-    with(S1N::class) {
+    with(S1N::define) {
         checkSupertypes(::s1n, ::any)
         checkAllSupertypes(::s1n, ::functionStringN, ::any)
-        checkSuperclasses(Function2::class, Any::class)
-        checkAllSuperclasses(Function2::class, Function::class, Any::class)
+        checkSuperclasses(Function2::define, Any::define)
+        checkAllSuperclasses(Function2::define, Function::define, Any::define)
     }
-    with(S0S0::class) {
+    with(S0S0::define) {
         checkSupertypes(::s0s0, ::any)
         checkAllSupertypes(::s0s0, ::functionS0, ::any)
-        checkSuperclasses(Function1::class, Any::class)
-        checkAllSuperclasses(Function1::class, Function::class, Any::class)
+        checkSuperclasses(Function1::define, Any::define)
+        checkAllSuperclasses(Function1::define, Function::define, Any::define)
     }
 
     return "OK"

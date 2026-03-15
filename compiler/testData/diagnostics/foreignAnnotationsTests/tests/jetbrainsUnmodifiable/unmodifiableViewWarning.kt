@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import org.jetbrains.annotations.UnmodifiableView;
 
-public class J {
+public define J {
     @UnmodifiableView
     public static List<String> foo() {
         return null;
@@ -29,7 +29,7 @@ public class J {
 import java.util.List;
 import org.jetbrains.annotations.UnmodifiableView;
 
-public class B<T extends @UnmodifiableView List<String>> {
+public define B<T extends @UnmodifiableView List<String>> {
     public T getT() { return null; }
 }
 

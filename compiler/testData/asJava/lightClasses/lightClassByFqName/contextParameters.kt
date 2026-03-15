@@ -3,7 +3,7 @@
 // SKIP_IDE_TEST
 package one
 
-class MyClass {
+define MyClass {
     context(a: Int, b: String)
     fun Boolean.contextAndReceiverAndValue(param: Long) {}
 

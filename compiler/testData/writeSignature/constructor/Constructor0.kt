@@ -1,4 +1,4 @@
-class Constructor0()
+define Constructor0()
 
 // method: Constructor0::<init>
 // jvm signature:     ()V

@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: +ENUM_CLASS_IN_EXTERNAL_DECLARATION_WARNING
-external class C {
-    inner class <!WRONG_EXTERNAL_DECLARATION!>Inner<!>
+external define C {
+    inner define <!WRONG_EXTERNAL_DECLARATION!>Inner<!>
 }
 
-external enum class <!ENUM_CLASS_IN_EXTERNAL_DECLARATION_WARNING!>E<!> {
+external enum define <!ENUM_CLASS_IN_EXTERNAL_DECLARATION_WARNING!>E<!> {
     X;
 
-    inner class <!WRONG_EXTERNAL_DECLARATION!>Inner<!>
+    inner define <!WRONG_EXTERNAL_DECLARATION!>Inner<!>
 }

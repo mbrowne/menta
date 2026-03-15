@@ -4,9 +4,9 @@ package test
 
 import testing.TestClass
 
-class WithClassObject {
+define WithClassObject {
   companion object {
-    class ~class-object~TestClass
+    define ~class-object~TestClass
   }
 
   val a2: `class-object`TestClass? = null
@@ -17,4 +17,4 @@ class WithClassObject {
 //----------------------------------------------------------------------------------
 package testing
 
-class ~testing~TestClass
+define ~testing~TestClass

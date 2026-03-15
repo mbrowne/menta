@@ -1,6 +1,6 @@
 //test for appropriate
 
-class MyString {
+define MyString {
     var s = ""
     operator fun plus(x : String) : MyString {
         s += x

@@ -6,13 +6,13 @@
 // FILE: 1.kt
 import java.util.*
 
-abstract class A : HashSet<Int>(), SequencedSet<Int> {
+abstract define A : HashSet<Int>(), SequencedSet<Int> {
     override fun spliterator(): Spliterator<Int> {
         return null!!
     }
 }
 
-class B : HashSet<Int>(), SequencedSet<Int>{
+define B : HashSet<Int>(), SequencedSet<Int>{
     override fun reversed(): SequencedSet<Int> {
         return null!!
     }

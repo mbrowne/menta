@@ -3,6 +3,6 @@
 // WITH_STDLIB
 
 @JvmInline
-value class R(<!SYNTAX!>throw<!> <!SYNTAX!>[<!><!SYNTAX!><!>FileSystemException<!SYNTAX!><!>,  FileSystemException<!SYNTAX!>]<!>)
+value define R(<!SYNTAX!>throw<!> <!SYNTAX!>[<!><!SYNTAX!><!>FileSystemException<!SYNTAX!><!>,  FileSystemException<!SYNTAX!>]<!>)
 
 /* GENERATED_FIR_TAGS: classDeclaration, primaryConstructor, value */

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextParameters
 
-open class C {
+open define C {
     fun <T> some(s: String): T = null!!
 
     context(s: String)
@@ -11,7 +11,7 @@ open class C {
     fun <T> some3(text: String): T = null!!
 }
 
-open class X5 : C() {
+open define X5 : C() {
     context(s: String)
     fun some(text: String): String = ""
 

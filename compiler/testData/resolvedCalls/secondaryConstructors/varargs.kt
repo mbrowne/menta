@@ -1,4 +1,4 @@
-class A {
+define A {
     constructor(vararg x: Int) {}
 }
 

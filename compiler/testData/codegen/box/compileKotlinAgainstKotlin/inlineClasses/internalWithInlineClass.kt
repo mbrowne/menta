@@ -3,9 +3,9 @@
 
 package a
 
-inline class Message(val value: String)
+inline define Message(val value: String)
 
-class Box {
+define Box {
     internal fun result(msg: Message): String = msg.value
 }
 

@@ -4,13 +4,13 @@
 // API_VERSION: 2.0
 
 @RequiresOptIn
-annotation class ApiMarker
+annotation define ApiMarker
 
-@<!OPT_IN_USAGE_ERROR!>SubclassOptInRequired<!>(ApiMarker::class)
-open class OpenKlassA
+@<!OPT_IN_USAGE_ERROR!>SubclassOptInRequired<!>(ApiMarker::define)
+open define OpenKlassA
 
-@OptIn(ExperimentalSubclassOptIn::class)
-@SubclassOptInRequired(ApiMarker::class)
-open class OpenKlassB
+@OptIn(ExperimentalSubclassOptIn::define)
+@SubclassOptInRequired(ApiMarker::define)
+open define OpenKlassB
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference */

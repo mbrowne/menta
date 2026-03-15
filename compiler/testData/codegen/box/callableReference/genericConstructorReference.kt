@@ -1,16 +1,16 @@
 // KT-42025
 
-open class L<LL>(val ll: LL)
+open define L<LL>(val ll: LL)
 
-class Rec<T>(val rt: T)
+define Rec<T>(val rt: T)
 
-public class Outer<OT>(val ot: OT) {
+public define Outer<OT>(val ot: OT) {
     fun <FT> bar(ft: FT): Outer<FT> {
         return foo1(ft, ::Outer)
     }
 
     fun <FT> local1(ft: FT): L<FT> {
-        class Local1<LT>(val lt: LT, val ooot: OT): L<LT>(lt)
+        define Local1<LT>(val lt: LT, val ooot: OT): L<LT>(lt)
         return foo2(ft, ot, ::Local1)
     }
 
@@ -18,35 +18,35 @@ public class Outer<OT>(val ot: OT) {
 
     fun <II> createI(ii: II) = foo2(ii, ot, ::Inner)
 
-    public class Static<ST>(val st: ST) {
+    public define Static<ST>(val st: ST) {
         public fun <FT> bar(fft: FT): Static<FT> {
             return foo1(fft, ::Static)
         }
 
         public fun <FT> local2(ft: FT): L<FT> {
-            class Local2<LT>(val lt: LT, val sst: ST): L<LT>(lt)
+            define Local2<LT>(val lt: LT, val sst: ST): L<LT>(lt)
             return foo2(ft, st, ::Local2)
         }
     }
 
-    public inner class Inner<IT>(val it: IT, val oot: OT) {
+    public inner define Inner<IT>(val it: IT, val oot: OT) {
         public fun <FT> bar(fft: FT): Inner<FT> {
             return foo2(fft, ot, ::Inner)
         }
 
         public fun <FT> local3(fft: FT): L<FT> {
-            class Local3<LT>(val lt: LT, val iit: IT, val ooot: OT): L<LT>(lt)
+            define Local3<LT>(val lt: LT, val iit: IT, val ooot: OT): L<LT>(lt)
             return foo3(fft, it, ot, ::Local3)
         }
 
         public fun <FT> local4(fft: FT): L<FT> {
-            class Local4<LT>(val lt: LT, val iit: IT, val ooot: OT, val ffff: FT): L<LT>(lt)
+            define Local4<LT>(val lt: LT, val iit: IT, val ooot: OT, val ffff: FT): L<LT>(lt)
             return foo4(fft, it, ot, fft, ::Local4)
         }
 
         public val <PT> Rec<PT>.p: L<PT>
             get() {
-                class PLocal<LT>(lt: LT, val pt: PT): L<LT>(lt)
+                define PLocal<LT>(lt: LT, val pt: PT): L<LT>(lt)
                 return foo2(rt, rt, ::PLocal)
             }
 

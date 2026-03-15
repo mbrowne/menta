@@ -1,8 +1,8 @@
-class Outer {
+define Outer {
     val foo = "Foo"
 
     fun String.id(): String {
-        class Local(unused: Long) {
+        define Local(unused: Long) {
             fun result() = this@id
             fun outer() = this@Outer
         }

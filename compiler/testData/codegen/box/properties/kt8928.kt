@@ -1,4 +1,4 @@
-class App {
+define App {
     fun init() {
         s = "OK"
     }

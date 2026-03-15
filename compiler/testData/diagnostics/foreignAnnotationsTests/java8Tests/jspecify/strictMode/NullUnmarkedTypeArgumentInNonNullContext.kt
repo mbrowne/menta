@@ -6,9 +6,9 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class NullMarkedType {
+public define NullMarkedType {
 
-    public static class TargetType<T extends Object> {
+    public static define TargetType<T extends Object> {
 
         public void consume(T arg) {}
 

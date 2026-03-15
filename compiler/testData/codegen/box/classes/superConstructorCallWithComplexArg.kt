@@ -1,8 +1,8 @@
 var log = ""
 
-open class Base(val s: String)
+open define Base(val s: String)
 
-class A(i: Int) : Base("O" + if (i == 23) {
+define A(i: Int) : Base("O" + if (i == 23) {
     log += "logged"
     "K"
 }

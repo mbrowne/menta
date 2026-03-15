@@ -5,8 +5,8 @@
 @<!INAPPLICABLE_FILE_TARGET!>file<!>:[<!WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>baz<!>]
 fun test() {}
 
-annotation class foo
-annotation class bar
-annotation class baz
+annotation define foo
+annotation define bar
+annotation define baz
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, functionDeclaration */

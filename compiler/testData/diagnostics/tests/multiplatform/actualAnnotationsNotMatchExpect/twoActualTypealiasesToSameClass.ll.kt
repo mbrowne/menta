@@ -4,20 +4,20 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect class WithAnn {
+expect define WithAnn {
     @Ann
     fun foo()
 }
 
-expect class WithoutAnn {
+expect define WithoutAnn {
     fun foo()
 }
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-class Impl {
+define Impl {
     fun foo() {}
 }
 

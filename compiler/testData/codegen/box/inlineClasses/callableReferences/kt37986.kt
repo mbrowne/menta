@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R(val x: Any)
+value define R(val x: Any)
 
 fun useR(r: R) {
     if (r.x as String != "OK") throw AssertionError("$r")

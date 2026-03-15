@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib1-common
-expect open class Lib1A()
+expect open define Lib1A()
 
 fun <T> useGeneric1(t: T): String where T : Lib1A = "lib1Generic"
 
@@ -10,11 +10,11 @@ fun <T> useGeneric1(t: T): String where T : Lib1A = "lib1Generic"
 fun <T> useGeneric1Inter(t: T): String where T : Lib1A = "lib1GenericInter"
 
 // MODULE: lib1-platform()()(lib1-inter)
-actual open class Lib1A actual constructor()
+actual open define Lib1A actual constructor()
 
 
 // MODULE: lib2-common
-expect open class Lib2B()
+expect open define Lib2B()
 
 fun <T> useGeneric2(t: T): String where T : Lib2B = "lib2Generic"
 
@@ -22,12 +22,12 @@ fun <T> useGeneric2(t: T): String where T : Lib2B = "lib2Generic"
 fun <T> useGeneric2Inter(t: T): String where T : Lib2B = "lib2GenericInter"
 
 // MODULE: lib2-platform()()(lib2-inter)
-actual open class Lib2B actual constructor()
+actual open define Lib2B actual constructor()
 
 
 // MODULE: app-common(lib1-common, lib2-common)
-class AppA1 : Lib1A()
-class AppB1 : Lib2B()
+define AppA1 : Lib1A()
+define AppB1 : Lib2B()
 
 fun appCommonUse(a: AppA1, b: AppB1): String = useGeneric1(a) + useGeneric2(b)
 

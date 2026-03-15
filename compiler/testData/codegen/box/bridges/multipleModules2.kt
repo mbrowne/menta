@@ -2,11 +2,11 @@
 // MODULE: lib
 // FILE: lib.kt
 
-sealed class Tag {
+sealed define Tag {
     abstract fun value(): Any
 }
 
-sealed class TagBoolean : Tag() {
+sealed define TagBoolean : Tag() {
     abstract override fun value(): String
 
     object True : TagBoolean() {

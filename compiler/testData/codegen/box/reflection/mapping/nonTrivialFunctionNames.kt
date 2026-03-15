@@ -6,7 +6,7 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.reflect.jvm.kotlinFunction
 import kotlin.test.assertEquals
 
-class A {
+define A {
     @JvmName("jvmFoo")
     fun foo(s: String): Int = s.length
 
@@ -22,7 +22,7 @@ class A {
 }
 
 @JvmInline
-value class Z(val value: Number)
+value define Z(val value: Number)
 
 fun test(f: KFunction<*>) {
     val javaMethod = f.javaMethod

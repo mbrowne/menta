@@ -1,24 +1,24 @@
 // test.C
 package test
 
-annotation class AllOpen
+annotation define AllOpen
 
 @AllOpen
-class C {
+define C {
     fun f() {}
 
     fun g() {}
 
     val p: Int
 
-    class D {
+    define D {
         fun z() {
 
         }
     }
 
     @AllOpen
-    class H {
+    define H {
         fun j() {}
     }
 }

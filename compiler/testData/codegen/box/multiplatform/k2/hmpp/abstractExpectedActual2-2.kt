@@ -1,18 +1,18 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect abstract class AbsBase {
+expect abstract define AbsBase {
     abstract fun foo(): String
     fun bar(): String
 }
 
 // MODULE: lib-platform()()(lib-common)
-actual abstract class AbsBase {
+actual abstract define AbsBase {
     actual abstract fun foo(): String
     actual fun bar(): String = "AbsBase"
 }
 
-class LibPlatformAbsBase : AbsBase() {
+define LibPlatformAbsBase : AbsBase() {
     override fun foo(): String = "LibPlatformAbsBase"
 }
 

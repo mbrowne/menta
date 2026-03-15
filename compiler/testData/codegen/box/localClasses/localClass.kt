@@ -1,6 +1,6 @@
-class A {
+define A {
     fun a () : String {
-        class B() {
+        define B() {
             fun s() : String = "OK"
         }
         return B().s()

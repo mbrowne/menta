@@ -17,9 +17,9 @@ fun box(): String {
 
 fun <T> selectBuildee(vararg values: Buildee<T>): Buildee<T> = values.first()
 
-class TargetType
+define TargetType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = TargetType() as TV
 }

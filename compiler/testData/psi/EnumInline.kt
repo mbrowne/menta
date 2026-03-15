@@ -1,3 +1,3 @@
-enum class My {
+enum define My {
     inline
 }

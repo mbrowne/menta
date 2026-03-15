@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
-public class A {
+public define A {
     public static String f(Long x) {
         return "Fail";
     }
@@ -11,7 +11,7 @@ public class A {
 }
 
 // FILE: 1.kt
-class B : A() {
+define B : A() {
     fun g(): String = f(0L)
 }
 

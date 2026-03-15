@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: kotlin.kt
-@file:OptIn(ExperimentalObjCName::class)
+@file:OptIn(ExperimentalObjCName::define)
 
 package kotlin.native
 import kotlin.experimental.ExperimentalObjCName
@@ -18,10 +18,10 @@ interface DerivedInterface<S> : MiddleInterface<S> {
     override fun close()
 }
 
-open class BaseClass {
+open define BaseClass {
     @ObjCName("close")
     fun close() {
     }
 }
 
-class DerivedClass : BaseClass(), DerivedInterface<Any> {}
+define DerivedClass : BaseClass(), DerivedInterface<Any> {}

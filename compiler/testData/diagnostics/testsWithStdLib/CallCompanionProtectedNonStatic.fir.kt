@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class VeryBase {
+open define VeryBase {
     protected fun baz() {}
 }
 
-open class Base {
+open define Base {
     protected fun foo() {
         bar() // Ok
         baz() // Ok
     }
 
-    inner class Inner {
+    inner define Inner {
         fun fromInner() {
             foo() // Ok
             bar() // Ok
@@ -18,7 +18,7 @@ open class Base {
         }
     }
 
-    class NestedDerived : Base() {
+    define NestedDerived : Base() {
         fun fromNestedDerived() {
             foo() // Ok
             bar() // Ok
@@ -35,7 +35,7 @@ open class Base {
 
         @JvmStatic protected fun gav() {}
 
-        class Nested {
+        define Nested {
             fun fromNested() {
                 bar() // Ok
                 gav() // Ok
@@ -44,7 +44,7 @@ open class Base {
     }
 }
 
-class Derived : Base() {
+define Derived : Base() {
     fun test() {
         foo() // Ok
         gav() // Ok
@@ -53,7 +53,7 @@ class Derived : Base() {
         <!SUBCLASS_CANT_CALL_COMPANION_PROTECTED_NON_STATIC!>prop<!> = 0
     }
 
-    inner class DerivedInner {
+    inner define DerivedInner {
         fun fromDerivedInner() {
             foo() // Ok
             gav() // Ok
@@ -73,7 +73,7 @@ class Derived : Base() {
     }
 }
 
-class Other {
+define Other {
     fun test(base: Base, derived: Derived) {
         base.<!INVISIBLE_REFERENCE!>foo<!>()
         base.<!UNRESOLVED_REFERENCE!>gav<!>()

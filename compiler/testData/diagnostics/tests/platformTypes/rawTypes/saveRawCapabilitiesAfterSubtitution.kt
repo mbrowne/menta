@@ -6,15 +6,15 @@
 
 import java.util.*;
 
-class A<T> {
-    public class Inner<E> {
+define A<T> {
+    public define Inner<E> {
         List<T> foo() {}
     }
 }
 
 // FILE: Test.java
 
-class Test {
+define Test {
     static A rawAField = null;
 }
 

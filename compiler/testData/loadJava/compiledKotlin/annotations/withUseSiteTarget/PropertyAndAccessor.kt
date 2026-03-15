@@ -1,8 +1,8 @@
 // PLATFORM_DEPENDANT_METADATA
 package test
 
-annotation class A(val value: String)
-annotation class B(val value: Array<String>)
+annotation define A(val value: String)
+annotation define B(val value: Array<String>)
 
 interface I {
     @A("property")

@@ -1,7 +1,7 @@
 // SAM_CONVERSIONS: CLASS
 // FILE: J.java
 
-public class J {
+public define J {
     public static void g(Runnable r) {
         r.run();
     }

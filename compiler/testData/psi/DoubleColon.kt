@@ -35,15 +35,15 @@ fun nullableType() {
 }
 
 fun classLiteral() {
-    A::class
-    a<b,c>::class
-    ::class
-    a b ::class
+    A::define
+    a<b,c>::define
+    ::define
+    a b ::define
 
-    this::class
-    super::class
-    X()::class
-    object {}::class
+    this::define
+    super::define
+    X()::define
+    object {}::define
 }
 
 fun expressions() {

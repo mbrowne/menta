@@ -2,9 +2,9 @@
 // OPT_IN: kotlin.js.ExperimentalJsExport
 // LANGUAGE: +NestedTypeAliases
 @JsExport
-class A
+define A
 
-class B
+define B
 
 @JsExport
 interface I {

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: JHost.java
-public class JHost {
+public define JHost {
     public static interface Runnable {
         void run();
     }

@@ -4,7 +4,7 @@
 import helpers.*
 import kotlin.coroutines.*
 
-enum class Foo(vararg expected: String) {
+enum define Foo(vararg expected: String) {
     A("start", "A", "end"),
     B("start", "BCD", "end"),
     C("start", "BCD", "end"),

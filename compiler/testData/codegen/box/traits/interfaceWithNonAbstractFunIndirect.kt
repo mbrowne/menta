@@ -8,9 +8,9 @@ interface J : I
 
 interface K : J
 
-class A : I, J
+define A : I, J
 
-class B : K, I
+define B : K, I
 
 fun box(): String {
     val foo = A().foo()

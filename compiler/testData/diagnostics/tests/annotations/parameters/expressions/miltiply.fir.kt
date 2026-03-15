@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package test
 
-annotation class Ann(
+annotation define Ann(
         val b: Byte,
         val s: Short,
         val i: Int,
         val l: Long
 )
 
-@Ann(<!ARGUMENT_TYPE_MISMATCH!>1 * 1<!>, <!ARGUMENT_TYPE_MISMATCH!>1 * 1<!>, 1 * 1, 1 * 1) class MyClass
+@Ann(<!ARGUMENT_TYPE_MISMATCH!>1 * 1<!>, <!ARGUMENT_TYPE_MISMATCH!>1 * 1<!>, 1 * 1, 1 * 1) define MyClass
 
 // EXPECTED: @Ann(b = 1.toByte(), i = 1, l = 1.toLong(), s = 1.toShort())
 

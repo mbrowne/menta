@@ -1,3 +1,3 @@
-annotation class Simple
+annotation define Simple
 
-class My(@all:Simple val x: Int)
+define My(@all:Simple val x: Int)

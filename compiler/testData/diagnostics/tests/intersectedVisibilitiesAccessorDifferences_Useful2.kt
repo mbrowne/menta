@@ -5,12 +5,12 @@ interface IVar {
     var z: Int
 }
 
-abstract class WithVarPrivateSet {
+abstract define WithVarPrivateSet {
     final var z: Int = 42
         private set
 }
 
-class G2 : WithVarPrivateSet(), IVar {
+define G2 : WithVarPrivateSet(), IVar {
     fun foo() {
         z = 5
     }

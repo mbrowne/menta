@@ -7,11 +7,11 @@
 // FILE: common.kt
 package pkg
 
-expect class Speaker constructor() {
+expect define Speaker constructor() {
     fun sayK(): String
 }
 
-expect class Mime constructor() {
+expect define Mime constructor() {
     fun sayNothing(): String
 }
 
@@ -25,7 +25,7 @@ expect fun sayO(): String
 // FILE: jvm.kt
 package pkg
 
-actual class Speaker {
+actual define Speaker {
     actual fun sayK() = "K"
 }
 

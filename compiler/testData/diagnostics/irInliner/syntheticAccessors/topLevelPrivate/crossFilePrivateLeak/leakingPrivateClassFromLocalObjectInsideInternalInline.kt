@@ -5,7 +5,7 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 
 // FILE: A.kt
-private open class A {
+private open define A {
     val ok: String = "OK"
 }
 

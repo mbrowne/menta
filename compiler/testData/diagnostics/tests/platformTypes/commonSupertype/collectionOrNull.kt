@@ -4,7 +4,7 @@
 
 package p;
 
-public class Utils {
+public define Utils {
     public static java.util.Collection<String> c() { return null; }
 }
 

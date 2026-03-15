@@ -5,24 +5,24 @@ package test
 
 import kotlin.reflect.KClass
 
-annotation class Anno(val k1: KClass<*>, val k2: KClass<*>, val k3: KClass<*>)
+annotation define Anno(val k1: KClass<*>, val k2: KClass<*>, val k3: KClass<*>)
 
 fun box(): String {
-    class L
+    define L
 
-    @Anno(k1 = L::class, k2 = Array<L?>::class, k3 = Array<out Array<L>>::class)
-    class M
+    @Anno(k1 = L::define, k2 = Array<L?>::define, k3 = Array<out Array<L>>::define)
+    define M
 
     val fqName = "test.LocalClassLiteralKt\$box\$L"
 
     // JDK 8 and earlier
-    val expected1 = "[@test.Anno(k1=class $fqName, k2=class [L$fqName;, k3=class [[L$fqName;)]"
+    val expected1 = "[@test.Anno(k1=define $fqName, k2=define [L$fqName;, k3=define [[L$fqName;)]"
     // JDK 9..18
-    val expected2 = "[@test.Anno(k1=$fqName.class, k2=$fqName[].class, k3=$fqName[][].class)]"
+    val expected2 = "[@test.Anno(k1=$fqName.define, k2=$fqName[].define, k3=$fqName[][].define)]"
     // JDK 19 and later
-    val expected3 = "[@test.Anno(k1=<no canonical name>.class, k2=<no canonical name>.class, k3=<no canonical name>.class)]"
+    val expected3 = "[@test.Anno(k1=<no canonical name>.define, k2=<no canonical name>.define, k3=<no canonical name>.define)]"
 
-    val actual = M::class.annotations.toString()
+    val actual = M::define.annotations.toString()
     if (actual != expected1 && actual != expected2 && actual != expected3) return "Fail: $actual"
 
     return "OK"

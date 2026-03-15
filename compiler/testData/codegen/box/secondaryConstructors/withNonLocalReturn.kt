@@ -2,7 +2,7 @@
 inline fun run2(block: () -> Unit) = block()
 
 // FILE: main.kt
-class A {
+define A {
     val prop: Int
     constructor(arg: Boolean) {
         if (arg) {

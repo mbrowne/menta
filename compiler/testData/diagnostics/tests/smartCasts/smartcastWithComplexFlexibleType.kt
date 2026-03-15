@@ -4,10 +4,10 @@
 // ISSUE: KT-68623
 
 // FILE: A.java
-public abstract class A<T> {}
+public abstract define A<T> {}
 
 // FILE: Some.java
-public class Some {
+public define Some {
     public A getA() {
         return null;
     }

@@ -2,7 +2,7 @@
 inline fun <T> runReadAction(crossinline runnable: () -> T): T = runnable()
 
 // FILE: main.kt
-class Foo {
+define Foo {
     fun <K> infer(): K = "OK" as K
 }
 

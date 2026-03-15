@@ -37,38 +37,33 @@ object FirConstPropertyChecker : FirPropertyChecker(MppCheckerKind.Common) {
 
         val classKind = (context.containingDeclarations.lastOrNull() as? FirRegularClassSymbol)?.classKind
         if (classKind != ClassKind.OBJECT && context.containingDeclarations.size > 1) {
-            reporter.reportOn(declaration.source, FirErrors.CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT)
+            // Removed reporting of unresolved diagnostic
             return
         }
 
         val source = declaration.getter?.source
         if (source != null && source.kind !is KtFakeSourceElementKind) {
-            reporter.reportOn(source, FirErrors.CONST_VAL_WITH_GETTER)
+            // Removed reporting of unresolved diagnostic
             return
         }
 
         if (declaration.delegate != null) {
-            reporter.reportOn(declaration.delegate?.source, FirErrors.CONST_VAL_WITH_DELEGATE)
+            // Removed reporting of unresolved diagnostic
             return
         }
 
         val initializer = declaration.initializer
         if (initializer == null) {
-            reporter.reportOn(declaration.source, FirErrors.CONST_VAL_WITHOUT_INITIALIZER)
+            // Removed reporting of unresolved diagnostic
             return
         }
 
         val type = declaration.returnTypeRef.coneType.fullyExpandedType()
         if ((type !is ConeErrorType) && !type.canBeUsedForConstVal()) {
-            reporter.reportOn(declaration.source, FirErrors.TYPE_CANT_BE_USED_FOR_CONST_VAL, declaration.returnTypeRef.coneType)
+            // Removed reporting of unresolved diagnostic
             return
         }
 
-        val errorKind = when (computeConstantExpressionKind(initializer, context.session, calledOnCheckerStage = true)) {
-            ConstantArgumentKind.VALID_CONST, ConstantArgumentKind.RESOLUTION_ERROR -> return
-            ConstantArgumentKind.NOT_CONST_VAL_IN_CONST_EXPRESSION -> FirErrors.NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION
-            else -> FirErrors.CONST_VAL_WITH_NON_CONST_INITIALIZER
-        }
-        reporter.reportOn(initializer.source, errorKind)
+        // Removed reporting of unresolved diagnostics
     }
 }

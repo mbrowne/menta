@@ -4,11 +4,11 @@ interface A {
     fun bar(arg: Int = 240) : Int = bar2(arg/2)
 }
 
-open abstract class B : A {
+open abstract define B : A {
     override fun bar2(arg: Int) : Int = arg
 }
 
-class C : B()
+define C : B()
 
 fun box() : String {
     if(C().bar(10) != 5) return "fail"

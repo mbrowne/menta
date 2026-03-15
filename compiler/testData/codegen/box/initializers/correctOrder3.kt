@@ -4,7 +4,7 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class Foo(initValue: Int) {
+define Foo(initValue: Int) {
     init { setValue(initValue) }
     fun setValue(value: Int) { field = value }
     var field: Int = 0

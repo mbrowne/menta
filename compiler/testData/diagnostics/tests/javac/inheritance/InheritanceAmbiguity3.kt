@@ -4,20 +4,20 @@
 package a;
 
 public interface i {
-    public class Z {}
+    public define Z {}
 }
 
 // FILE: a/i2.java
 package a;
 
 public interface i2 {
-    public class Z {}
+    public define Z {}
 }
 
 // FILE: a/x.java
 package a;
 
-public class x implements i, i2 {
+public define x implements i, i2 {
     public Z getZ() { return null; }
 }
 

@@ -3,7 +3,7 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class bar
+annotation define bar
 
 fun <T> foo(): T = TODO()
 

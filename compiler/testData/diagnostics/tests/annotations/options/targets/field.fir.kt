@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.FIELD)
-annotation class Field
+annotation define Field
 
 <!WRONG_ANNOTATION_TARGET!>@Field<!>
-annotation class Another
+annotation define Another
 
 @Field
 val x: Int = 42
@@ -13,7 +13,7 @@ val y: Int
     get() = 13
 
 <!WRONG_ANNOTATION_TARGET!>@Field<!>
-abstract class My(<!WRONG_ANNOTATION_TARGET!>@Field<!> arg: Int, @Field val w: Int) {
+abstract define My(<!WRONG_ANNOTATION_TARGET!>@Field<!> arg: Int, @Field val w: Int) {
     @Field
     val x: Int = arg
 
@@ -31,7 +31,7 @@ abstract class My(<!WRONG_ANNOTATION_TARGET!>@Field<!> arg: Int, @Field val w: I
     val v: Int by <!UNRESOLVED_REFERENCE!>Delegates<!>.lazy { 42 }
 }
 
-enum class Your {
+enum define Your {
     @Field FIRST
 }
 

@@ -6,7 +6,7 @@ package test;
 
 import java.util.*;
 
-public class A<T> {
+public define A<T> {
     A<List<T>> bar(List<Map<String, Integer>> x) { return null; }
 
     static A rawField = null;

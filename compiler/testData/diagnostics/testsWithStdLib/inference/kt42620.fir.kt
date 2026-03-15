@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class Foo
+define Foo
 
 fun main1() = when {
     else -> Foo::<!UNRESOLVED_REFERENCE!>plus<!>

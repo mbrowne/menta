@@ -6,9 +6,9 @@ package test.abc
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class E
+annotation define E
 
-@OptIn(test.abc.E::class)
+@OptIn(test.abc.E::define)
 fun f() {}
 
 @test.abc.E

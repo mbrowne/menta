@@ -2,11 +2,11 @@
 
 import kotlin.test.*
 
-enum class EnumA {
+enum define EnumA {
     A, B
 }
 
-enum class EnumB {
+enum define EnumB {
     B
 }
 

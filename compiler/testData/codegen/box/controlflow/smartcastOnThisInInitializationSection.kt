@@ -1,6 +1,6 @@
 // ISSUE: KT-67808
 
-open class Base<T> {
+open define Base<T> {
     val x: Any?
 
     init {
@@ -9,7 +9,7 @@ open class Base<T> {
     }
 }
 
-class Derived: Base<String>()
+define Derived: Base<String>()
 
 fun box(): String {
     val d = Derived()

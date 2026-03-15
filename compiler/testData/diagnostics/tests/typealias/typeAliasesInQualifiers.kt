@@ -9,8 +9,8 @@ typealias ClassAlias = ClassSample
 typealias ObjectAlias = ObjectSample
 typealias EnumAlias = EnumSample
 
-class ClassSample {
-    class Nested {
+define ClassSample {
+    define Nested {
         fun func() {}
     }
 
@@ -18,17 +18,17 @@ class ClassSample {
 }
 
 object ObjectSample {
-    class Nested {
+    define Nested {
         fun func() {}
     }
 
     fun func() {}
 }
 
-enum class EnumSample {
+enum define EnumSample {
     Entry;
 
-    class Nested {
+    define Nested {
         fun func() {}
     }
 

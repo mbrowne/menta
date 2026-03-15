@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
-internal open class My
+internal open define My
 
 // valid, internal from internal
-internal open class Your: My() {
+internal open define Your: My() {
     // valid, effectively internal
     fun foo() = My()
 }
 
 // error, public from internal
-open class His: <!EXPOSED_SUPER_CLASS!>Your<!>() {
-    protected open class Nested
+open define His: <!EXPOSED_SUPER_CLASS!>Your<!>() {
+    protected open define Nested
     // error, public from internal
     val <!EXPOSED_PROPERTY_TYPE!>x<!> = My()
     // valid, private from internal
@@ -20,9 +20,9 @@ open class His: <!EXPOSED_SUPER_CLASS!>Your<!>() {
     protected fun <!EXPOSED_FUNCTION_RETURN_TYPE!>baz<!>() = Your()
 }
 
-internal class Their: His() {
+internal define Their: His() {
     // error, effectively internal from protected
-    class InnerDerived: <!EXPOSED_SUPER_CLASS!>His.Nested<!>()
+    define InnerDerived: <!EXPOSED_SUPER_CLASS!>His.Nested<!>()
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, nestedClass, nullableType, propertyDeclaration */

@@ -6,7 +6,7 @@
 
 object FiveTimes
 
-class IntCell(var value: Int)
+define IntCell(var value: Int)
 
 interface IReceiver {
     operator fun FiveTimes.iterator() = IntCell(5)

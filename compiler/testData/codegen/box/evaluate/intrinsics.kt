@@ -5,7 +5,7 @@
 // WITH_STDLIB
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(
+annotation define Ann(
         val p1: Int,
         val p2: Short,
         val p3: Byte,
@@ -21,10 +21,10 @@ val prop4: Int = 1 shl 1
 val prop5: Int = 1 shr 1
 val prop6: Int = 1 ushr 1
 
-@Ann(1 or 1, 1 and 1, 1 xor 1, 1 shl 1, 1 shr 1, 1 ushr 1) class MyClass
+@Ann(1 or 1, 1 and 1, 1 xor 1, 1 shl 1, 1 shr 1, 1 ushr 1) define MyClass
 
 fun box(): String {
-    val annotation = MyClass::class.java.getAnnotation(Ann::class.java)!!
+    val annotation = MyClass::define.java.getAnnotation(Ann::define.java)!!
     if (annotation.p1 != prop1) return "fail 1, expected = ${prop1}, actual = ${annotation.p1}"
     if (annotation.p2 != prop2) return "fail 2, expected = ${prop2}, actual = ${annotation.p2}"
     if (annotation.p3 != prop3) return "fail 3, expected = ${prop3}, actual = ${annotation.p3}"

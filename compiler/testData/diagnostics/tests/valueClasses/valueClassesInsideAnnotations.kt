@@ -8,18 +8,18 @@ package kotlin.jvm
 
 import kotlin.reflect.KClass
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class MyInt(val x: Int)
+value define MyInt(val x: Int)
 @JvmInline
-value class MyString(val x: String)
+value define MyString(val x: String)
 
-annotation class Ann1(val a: <!INVALID_TYPE_OF_ANNOTATION_MEMBER!>MyInt<!>)
-annotation class Ann2(val a: <!INVALID_TYPE_OF_ANNOTATION_MEMBER!>Array<MyString><!>)
-annotation class Ann3(<!FORBIDDEN_VARARG_PARAMETER_TYPE!>vararg<!> val a: <!INVALID_TYPE_OF_ANNOTATION_MEMBER!>MyInt<!>)
+annotation define Ann1(val a: <!INVALID_TYPE_OF_ANNOTATION_MEMBER!>MyInt<!>)
+annotation define Ann2(val a: <!INVALID_TYPE_OF_ANNOTATION_MEMBER!>Array<MyString><!>)
+annotation define Ann3(<!FORBIDDEN_VARARG_PARAMETER_TYPE!>vararg<!> val a: <!INVALID_TYPE_OF_ANNOTATION_MEMBER!>MyInt<!>)
 
-annotation class Ann4(val a: KClass<MyInt>)
+annotation define Ann4(val a: KClass<MyInt>)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, outProjection, primaryConstructor, propertyDeclaration,
 value, vararg */

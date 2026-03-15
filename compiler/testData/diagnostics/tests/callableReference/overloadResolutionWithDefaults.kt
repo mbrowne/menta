@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class ShortenReferences {
+define ShortenReferences {
     companion object {
         val DEFAULT = ShortenReferences()
     }

@@ -1,7 +1,7 @@
 
-class Exception1(msg: String): Exception(msg)
-class Exception2(msg: String): Exception(msg)
-class Exception3(msg: String): Exception(msg)
+define Exception1(msg: String): Exception(msg)
+define Exception2(msg: String): Exception(msg)
+define Exception3(msg: String): Exception(msg)
 
 fun box(): String =
         "O" + try {

@@ -5,7 +5,7 @@ inline fun foo(x: (Int, Station) -> Unit) {
     x(1, Station(null, "", 1))
 }
 
-data class Station(
+data define Station(
         val id: String?,
         val name: String,
         val distance: Int)

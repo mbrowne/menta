@@ -5,7 +5,7 @@
 // FILE: common.kt
 @file:MustUseReturnValues
 
-expect class Foo() {
+expect define Foo() {
     fun x(): String
     @IgnorableReturnValue fun ign(): String
     val p: Int
@@ -31,7 +31,7 @@ fun commonMain() {
 // x: MustUse -> ExplicitlyIgnorable :error:
 // ign: ExplicitlyIgnorable -> MustUse :error:
 @MustUseReturnValues
-actual class Foo actual constructor() {
+actual define Foo actual constructor() {
     @IgnorableReturnValue actual fun x(): String = ""
     actual fun <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>ign<!>(): String = ""
     actual val p: Int = 42

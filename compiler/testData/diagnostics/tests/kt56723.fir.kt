@@ -5,7 +5,7 @@ fun foo(f: () -> Unit) {
     f()
 }
 
-class Wrapper(var s: String)
+define Wrapper(var s: String)
 
 fun bar(w: Wrapper?) {
     // K1: type is () -> Unit, K2: type is () -> Unit?
@@ -16,7 +16,7 @@ fun bar(w: Wrapper?) {
     foo(lambda)
 }
 
-class Wrapper2(val w: Wrapper?)
+define Wrapper2(val w: Wrapper?)
 
 fun baz(w2: Wrapper2?) {
     val lambda = {
@@ -29,8 +29,8 @@ object Indexible {
     operator fun get(index: Int) = "$index"
     operator fun set(index: Int, value: String) {}
 }
-class IndexibleRef(val ind: Indexible)
-class IndexibleRefRef(val ref: IndexibleRef?)
+define IndexibleRef(val ind: Indexible)
+define IndexibleRefRef(val ref: IndexibleRef?)
 
 fun ban(refRef: IndexibleRefRef?, ref: IndexibleRef?) {
     val lambda = {
@@ -63,7 +63,7 @@ object Indexible2 {
     operator fun set(index: Int, value: String) {}
 }
 
-class Indexible2Ref(val ind: Indexible2)
+define Indexible2Ref(val ind: Indexible2)
 
 fun bam(ref: Indexible2Ref?) {
     val lambda = {
@@ -77,7 +77,7 @@ fun bam(ref: Indexible2Ref?) {
     foo(lambda)
 }
 
-class DelegatedHolder {
+define DelegatedHolder {
     var delegated by object {
         operator fun getValue(thisRef: Any?, desc: KProperty<*>) = "test"
         operator fun setValue(thisRef: Any?, desc: KProperty<*>, value: String) {}

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(val a: Int) {
+value define UInt(val a: Int) {
     fun test() {
         takeNullable(this)
         takeAnyInside(this)

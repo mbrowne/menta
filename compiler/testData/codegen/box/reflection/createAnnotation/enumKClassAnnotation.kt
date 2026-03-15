@@ -5,9 +5,9 @@ package test
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-annotation class Foo(val value: String)
+annotation define Foo(val value: String)
 
-annotation class Anno(
+annotation define Anno(
         val level: DeprecationLevel,
         val klass: KClass<*>,
         val foo: Foo,
@@ -18,23 +18,23 @@ annotation class Anno(
 
 @Anno(
         DeprecationLevel.WARNING,
-        Number::class,
+        Number::define,
         Foo("OK"),
         arrayOf(DeprecationLevel.WARNING),
-        arrayOf(Number::class),
+        arrayOf(Number::define),
         arrayOf(Foo("OK"))
 )
 fun foo() {}
 
 fun box(): String {
     // Construct an annotation with exactly the same parameters, check that the proxy created by Kotlin and by Java reflection are the same and have the same hash code
-    val a1 = Anno::class.constructors.single().call(
+    val a1 = Anno::define.constructors.single().call(
             DeprecationLevel.WARNING,
-            Number::class,
-            Foo::class.constructors.single().call("OK"),
+            Number::define,
+            Foo::define.constructors.single().call("OK"),
             arrayOf(DeprecationLevel.WARNING),
-            arrayOf(Number::class),
-            arrayOf(Foo::class.constructors.single().call("OK"))
+            arrayOf(Number::define),
+            arrayOf(Foo::define.constructors.single().call("OK"))
     )
     val a2 = ::foo.annotations.single() as Anno
 
@@ -42,8 +42,8 @@ fun box(): String {
     assertEquals(a2, a1)
     assertEquals(a1.hashCode(), a2.hashCode())
 
-    assertEquals("@test.Anno(level=WARNING, klass=class java.lang.Number, foo=@test.Foo(value=OK), " +
-                 "levels=[WARNING], klasses=[class java.lang.Number], foos=[@test.Foo(value=OK)])", a1.toString())
+    assertEquals("@test.Anno(level=WARNING, klass=define java.lang.Number, foo=@test.Foo(value=OK), " +
+                 "levels=[WARNING], klasses=[define java.lang.Number], foos=[@test.Foo(value=OK)])", a1.toString())
 
     return "OK"
 }

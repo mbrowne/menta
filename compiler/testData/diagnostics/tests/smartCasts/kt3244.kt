@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // Should work already in M11
 
-open class A(val s : String)
-class B(s : String) : A(s)
+open define A(val s : String)
+define B(s : String) : A(s)
 
 fun test(a : A): String? {
     if (a is B) {

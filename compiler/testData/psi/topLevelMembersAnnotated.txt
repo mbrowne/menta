@@ -21,7 +21,7 @@ KtFile: topLevelMembersAnnotated.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('a')
   PsiWhiteSpace('\n\n')
@@ -29,7 +29,7 @@ KtFile: topLevelMembersAnnotated.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('b')
   PsiWhiteSpace('\n\n')
@@ -173,6 +173,6 @@ KtFile: topLevelMembersAnnotated.kt
       PsiElement(INTEGER_LITERAL)('0')
   PsiWhiteSpace('\n\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')

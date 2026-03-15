@@ -31,7 +31,7 @@ fun <T> fizz(x: T): T {
     return x
 }
 
-class A {
+define A {
     val x: Int
 
     init {

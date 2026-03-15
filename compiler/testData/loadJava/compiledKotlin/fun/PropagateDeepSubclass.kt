@@ -6,9 +6,9 @@ interface A {
   fun bar() {}
 }
 
-open class B : A {
+open define B : A {
 }
 
-class C : B() {
+define C : B() {
   override fun bar() {}
 }

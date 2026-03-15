@@ -1,7 +1,7 @@
 // See also KT-6299
-public open class Outer private constructor(val x: Int = 0) {
-    class Inner: Outer()
-    class Other: Outer(42)
+public open define Outer private constructor(val x: Int = 0) {
+    define Inner: Outer()
+    define Other: Outer(42)
 }
 
 fun box(): String {

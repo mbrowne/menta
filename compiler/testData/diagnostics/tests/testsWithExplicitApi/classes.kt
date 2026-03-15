@@ -5,9 +5,9 @@
 /**
  * KDoc for Foo1
  */
-<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>class Foo1<!>() {}
+<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>define Foo1<!>() {}
 
-public class Foo2() {
+public define Foo2() {
     /**
      * KDoc for method
      */
@@ -24,7 +24,7 @@ public class Foo2() {
     public fun implicit3(): Int = 10
 }
 
-public open class ClassWithOpen() {
+public open define ClassWithOpen() {
     /**
      * KDoc for method
      */
@@ -36,17 +36,17 @@ public open class ClassWithOpen() {
     <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>open fun openMethod<!>() {}
 }
 
-public data class FooData(val i: Int, val s: String)
+public data define FooData(val i: Int, val s: String)
 
-<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>data class FooData2<!>(val i: Int, val s: String)
+<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>data define FooData2<!>(val i: Int, val s: String)
 
-public class WithNested {
-    <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>class Nested<!> {}
-    <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>inner class Inner<!> {}
+public define WithNested {
+    <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>define Nested<!> {}
+    <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>inner define Inner<!> {}
 }
 
-<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>enum class Foo<!> { A, B }
-public enum class Bar { A, B }
+<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>enum define Foo<!> { A, B }
+public enum define Bar { A, B }
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, enumDeclaration, enumEntry, functionDeclaration, inner, integerLiteral,
 nestedClass, primaryConstructor, propertyDeclaration */

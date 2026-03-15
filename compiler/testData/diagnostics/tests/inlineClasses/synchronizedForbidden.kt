@@ -6,7 +6,7 @@
 // LANGUAGE: +ProhibitSynchronizationByValueClassesAndPrimitives
 
 @JvmInline
-value class A(val a: Int) {
+value define A(val a: Int) {
     <!SYNCHRONIZED_ON_VALUE_CLASS!>@get:Synchronized<!>
     val f0
         get() = Unit
@@ -41,7 +41,7 @@ value class A(val a: Int) {
         get() = Unit
 }
 
-class Usual {
+define Usual {
 
     @get:Synchronized
     val A.f9

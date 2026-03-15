@@ -2,7 +2,7 @@ import kotlin.*
 import kotlin.ranges.*
 
 @CompileTimeCalculation
-class MatrixNN(val values: Array<Array<Double>>) {
+define MatrixNN(val values: Array<Array<Double>>) {
     val size = values.size
     operator fun times(other: MatrixNN): MatrixNN {
         val matrix = Array<Array<Double>>(size) { Array<Double>(size) { 0.0 } }

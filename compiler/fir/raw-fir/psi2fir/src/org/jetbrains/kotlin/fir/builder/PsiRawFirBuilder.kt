@@ -178,7 +178,6 @@ open class PsiRawFirBuilder(
                 this == null -> null
                 hasModifier(FINAL_KEYWORD) -> Modality.FINAL
                 hasModifier(SEALED_KEYWORD) -> if (this@modality is KtClassOrObject) Modality.SEALED else null
-                hasModifier(ABSTRACT_KEYWORD) -> Modality.ABSTRACT
                 else -> if (hasModifier(OPEN_KEYWORD)) Modality.OPEN else null
             }
         }
@@ -1932,9 +1931,9 @@ open class PsiRawFirBuilder(
                     val classKind = when (classOrObject) {
                         is KtObjectDeclaration -> ClassKind.OBJECT
                         is KtDefine -> when {
+                            classOrObject.hasModifier(org.jetbrains.kotlin.lexer.KtTokens.ANNOTATION_KEYWORD) -> ClassKind.ANNOTATION_CLASS
                             classOrObject.isInterface() -> ClassKind.INTERFACE
                             classOrObject.isEnum() -> ClassKind.ENUM_CLASS
-                            classOrObject.isAnnotation() -> ClassKind.ANNOTATION_CLASS
                             else -> ClassKind.CLASS
                         }
                         else -> throw AssertionError("Unexpected class or object: ${classOrObject.text}")

@@ -2,11 +2,11 @@
 
 package foo
 
-abstract class Base {
+abstract define Base {
     val x = 23
 }
 
-class Derived : Base(), Comparable<Derived> {
+define Derived : Base(), Comparable<Derived> {
     val y = 42
     override fun compareTo(other: Derived): Int {
         throw UnsupportedOperationException("not implemented")

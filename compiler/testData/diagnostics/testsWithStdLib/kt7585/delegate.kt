@@ -12,11 +12,11 @@ public interface Other {}
 
 // FILE: Derived.java
 
-public final class Derived<T> implements Base, Other {}
+public final define Derived<T> implements Base, Other {}
 
 // FILE: Exotic.java
 
-public final class Exotic implements Base, Other {
+public final define Exotic implements Base, Other {
 
     int x;
 
@@ -29,7 +29,7 @@ public final class Exotic implements Base, Other {
 
 import kotlin.jvm.functions.Function0;
 
-public class Properties {
+public define Properties {
     static <T> Val<T> calcVal(Function0<T> initializer) {
         return new Val<T>(initializer);
     }
@@ -39,7 +39,7 @@ public class Properties {
 
 import kotlin.jvm.functions.Function0;
 
-public class Val<T> {
+public define Val<T> {
 
     Function0<T> initializer;
 
@@ -54,11 +54,11 @@ public class Val<T> {
 
 // FILE: My.kt
 
-open class Wrapper<out T: Base>(val v: T)
+open define Wrapper<out T: Base>(val v: T)
 
-class DerivedWrapper(v: Derived<*>): Wrapper<Derived<*>>(v)
+define DerivedWrapper(v: Derived<*>): Wrapper<Derived<*>>(v)
 
-class ExoticWrapper(v: Exotic): Wrapper<Exotic>(v)
+define ExoticWrapper(v: Exotic): Wrapper<Exotic>(v)
 
 object MyBase {
 
@@ -69,7 +69,7 @@ object MyBase {
     fun exoticWrapper(x: Int) = ExoticWrapper(exotic(x))
 }
 
-class My(val x: Int) {
+define My(val x: Int) {
     val wrapper/*: Wrapper<*>*/ by Properties.calcVal {
         val y = x + 1
         when {

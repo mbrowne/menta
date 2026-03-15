@@ -10,7 +10,7 @@
 
 // FILE: test.kt
 
-annotation class Ann(vararg val s: String)
+annotation define Ann(vararg val s: String)
 
 @Ann(s = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_ANNOTATION_ERROR, TYPE_MISMATCH!>"value"<!>)
 fun test1() {}

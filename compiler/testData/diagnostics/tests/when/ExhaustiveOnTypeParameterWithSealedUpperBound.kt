@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ImprovedExhaustivenessChecksIn21
-sealed class Bird
+sealed define Bird
 
-class Penguin : Bird()
-class Ostrich : Bird()
-class Kiwi : Bird()
+define Penguin : Bird()
+define Ostrich : Bird()
+define Kiwi : Bird()
 
-sealed class Vehicle
+sealed define Vehicle
 
-class Car : Vehicle()
-class Motocycle : Vehicle()
+define Car : Vehicle()
+define Motocycle : Vehicle()
 
 interface I
 

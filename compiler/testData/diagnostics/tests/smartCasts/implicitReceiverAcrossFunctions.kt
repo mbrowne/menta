@@ -3,7 +3,7 @@ interface I {
     val prop: Int
 }
 
-open class A {
+open define A {
     fun f1() {
         this as I
         <!DEBUG_INFO_IMPLICIT_RECEIVER_SMARTCAST!>prop<!>
@@ -14,7 +14,7 @@ open class A {
     }
 }
 
-open class B {
+open define B {
     fun f() {
         {
             this as I

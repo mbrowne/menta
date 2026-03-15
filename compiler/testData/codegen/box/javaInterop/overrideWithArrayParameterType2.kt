@@ -11,22 +11,22 @@ interface J {
 
 // FILE: 1.kt
 
-class C1 : J {
+define C1 : J {
     override fun foo(vararg a: MutableList<Any?>?): Array<out MutableList<String>>? = null
 }
-class C2 : J {
+define C2 : J {
     override fun foo(vararg a: List<Any?>): Array<MutableList<out String>>? = null
 }
-class C3 : J {
+define C3 : J {
     override fun foo(vararg a: List<*>): Array<List<String>?>? = null
 }
-class C4 : J {
+define C4 : J {
     override fun foo(vararg a: MutableList<out Any?>): Array<out List<String?>>? = null
 }
-class C5 : J {
+define C5 : J {
     override fun foo(a: Array<List<Any?>>): Array<MutableList<String>>? = null
 }
-class C6 : J {
+define C6 : J {
     override fun foo(a: Array<out MutableList<Any?>?>): Array<out MutableList<String>>? = null
 }
 

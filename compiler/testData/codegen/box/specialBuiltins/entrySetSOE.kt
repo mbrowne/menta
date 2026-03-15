@@ -3,8 +3,8 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-open class Map1 : HashMap<String, Any?>()
-class Map2 : Map1()
+open define Map1 : HashMap<String, Any?>()
+define Map2 : Map1()
 fun box(): String {
     val m = Map2()
     if (m.entries.size != 0) return "fail 1"

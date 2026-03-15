@@ -1,5 +1,5 @@
 fun box(): String {
-    class Local {
+    define Local {
         fun foo() = "OK"
     }
 

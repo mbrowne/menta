@@ -3,7 +3,7 @@
 // FILE: base/Base.java
 package base;
 
-public abstract class Base {
+public abstract define Base {
     public void foo() {
         packagePrivateFoo();
     }
@@ -15,7 +15,7 @@ public abstract class Base {
 package impl
 import base.*
 
-class Impl : Base() {
+define Impl : Base() {
     fun packagePrivateFoo() { /*not an override*/ }
 }
 

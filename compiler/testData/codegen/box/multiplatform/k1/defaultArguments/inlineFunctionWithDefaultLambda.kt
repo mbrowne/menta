@@ -5,7 +5,7 @@
 
 expect inline fun topLevel(a: String, b: Int = 0, c: () -> Double? = { null }): String
 
-expect class Foo() {
+expect define Foo() {
     inline fun member(a: String, b: Int = 0, c: () -> Double? = { null }): String
 }
 
@@ -15,7 +15,7 @@ import kotlin.test.assertEquals
 
 actual inline fun topLevel(a: String, b: Int, c: () -> Double?): String = a + "," + b + "," + c()
 
-actual class Foo actual constructor() {
+actual define Foo actual constructor() {
     actual inline fun member(a: String, b: Int, c: () -> Double?): String = a + "," + b + "," + c()
 }
 

@@ -11,8 +11,8 @@ fun bar2() = {
 }
 
 //properties
-//in a class
-class A() {
+//in a define
+define A() {
     val x = { <!DEBUG_INFO_MISSING_UNRESOLVED, TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM_ERROR!>x<!> }
 }
 

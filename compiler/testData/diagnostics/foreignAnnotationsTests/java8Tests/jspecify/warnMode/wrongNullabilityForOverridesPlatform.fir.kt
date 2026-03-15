@@ -3,13 +3,13 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A() {}
+expect define A() {}
 
 // MODULE: jvm()()(common)
 // FILE: J.java
 import org.jspecify.annotations.*;
 
-public class J {
+public define J {
     @NonNull
     public String foo() { return ""; }
 
@@ -20,7 +20,7 @@ public class J {
 }
 
 // FILE: jvm.kt
-actual class A : J() {
+actual define A : J() {
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun foo() = null
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun bar(): String? = ""
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun baz(s: String?) {}

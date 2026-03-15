@@ -7,7 +7,7 @@ fun box() = B().test()()
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected companion object {
         fun getO() = "O"
     }
@@ -18,7 +18,7 @@ package b
 
 import a.A
 
-class B : A() {
+define B : A() {
     fun test() = { getO() + getK() }
 
     private companion object {

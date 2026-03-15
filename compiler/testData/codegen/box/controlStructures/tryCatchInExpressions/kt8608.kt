@@ -7,7 +7,7 @@ interface Callable {
 inline fun run(f: () -> Unit) { f() }
 
 // FILE: main.kt
-class A {
+define A {
     fun foo(): String {
         run {
             val x = object : Callable {

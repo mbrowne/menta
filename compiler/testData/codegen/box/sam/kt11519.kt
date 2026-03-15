@@ -5,7 +5,7 @@
 // MODULE: lib
 // FILE: Custom.java
 
-class Custom<K, V> {
+define Custom<K, V> {
     static Class<?> lambdaClass;
 
     private K k;

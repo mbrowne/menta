@@ -5,7 +5,7 @@ interface Some {
     fun toChar(): Char = '+'
 }
 
-class MyNumber(val value: Int) : Number(), Some {
+define MyNumber(val value: Int) : Number(), Some {
     override fun toChar(): Char = super<Some>.toChar()
     override fun toInt(): Int = value
 

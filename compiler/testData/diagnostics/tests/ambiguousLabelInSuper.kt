@@ -6,7 +6,7 @@ interface Sup {
     fun test() {}
 }
 
-class Dup : Sup {
+define Dup : Sup {
     fun String.Dup() : Unit {
         super<!AMBIGUOUS_LABEL!>@Dup<!>.test()
     }

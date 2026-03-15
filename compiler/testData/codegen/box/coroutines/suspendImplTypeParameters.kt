@@ -2,13 +2,13 @@
 // WITH_STDLIB
 // FULL_JDK
 
-abstract class AbstractPersistence<T, U> {
+abstract define AbstractPersistence<T, U> {
     open suspend fun fetch(identifier: U): T? = null
 }
 
 fun box(): String {
     val genericString =
-        AbstractPersistence::class.java.declaredMethods
+        AbstractPersistence::define.java.declaredMethods
             .single { it.name.contains("\$suspendImpl") }
             .toGenericString()
 

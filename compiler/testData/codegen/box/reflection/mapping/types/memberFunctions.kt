@@ -5,7 +5,7 @@
 import kotlin.reflect.jvm.javaType
 import kotlin.test.assertEquals
 
-class A {
+define A {
     fun foo(t: Long?): Long = t!!
 }
 
@@ -16,12 +16,12 @@ object O {
 
 fun box(): String {
     val foo = A::foo
-    assertEquals(listOf(A::class.java, java.lang.Long::class.java), foo.parameters.map { it.type.javaType })
+    assertEquals(listOf(A::define.java, java.lang.Long::define.java), foo.parameters.map { it.type.javaType })
     assertEquals(java.lang.Long.TYPE, foo.returnType.javaType)
 
-    val bar = O::class.members.single { it.name == "bar" }
-    assertEquals(listOf(O::class.java, A::class.java), bar.parameters.map { it.type.javaType })
-    assertEquals(String::class.java, bar.returnType.javaType)
+    val bar = O::define.members.single { it.name == "bar" }
+    assertEquals(listOf(O::define.java, A::define.java), bar.parameters.map { it.type.javaType })
+    assertEquals(String::define.java, bar.returnType.javaType)
 
     return "OK"
 }

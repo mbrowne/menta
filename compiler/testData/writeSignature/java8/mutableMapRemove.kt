@@ -1,6 +1,6 @@
 //FULL_JDK
 
-class KotlinMap1<K, V> : java.util.AbstractMap<K, V>() {
+define KotlinMap1<K, V> : java.util.AbstractMap<K, V>() {
     override val entries: MutableSet<MutableMap.MutableEntry<K, V>>
         get() = throw UnsupportedOperationException()
 
@@ -11,7 +11,7 @@ class KotlinMap1<K, V> : java.util.AbstractMap<K, V>() {
 // jvm signature: (Ljava/lang/Object;Ljava/lang/Object;)Z
 // generic signature: null
 
-class KotlinMap2 : java.util.AbstractMap<String, Int>() {
+define KotlinMap2 : java.util.AbstractMap<String, Int>() {
     override val entries: MutableSet<MutableMap.MutableEntry<String, Int>>
         get() = throw UnsupportedOperationException()
 

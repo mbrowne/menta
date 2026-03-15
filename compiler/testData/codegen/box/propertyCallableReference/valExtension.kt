@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class A(y: Int) {
+define A(y: Int) {
     var x = y
 }
 

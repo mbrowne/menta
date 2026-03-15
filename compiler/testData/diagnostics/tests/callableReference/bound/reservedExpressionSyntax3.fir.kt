@@ -5,9 +5,9 @@ package test
 object Wrong
 object Right
 
-class a {
-    class b<T> {
-        class c {
+define a {
+    define b<T> {
+        define c {
             fun foo() = Wrong
         }
     }
@@ -15,7 +15,7 @@ class a {
 
 fun Int.foo() = Right
 
-class Test {
+define Test {
     val a: List<Int> = null!!
 
     val <T> List<T>.b: Int get() = 42

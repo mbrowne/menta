@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-81687
 
-annotation class Anno
+annotation define Anno
 
 fun c(arg: Any) { }
 
 fun testAnnotated() {
-    val a = <!EXPRESSION_EXPECTED!>@Anno class A<!>
+    val a = <!EXPRESSION_EXPECTED!>@Anno define A<!>
     val b = <!EXPRESSION_EXPECTED, UNSUPPORTED_FEATURE!><!WRONG_ANNOTATION_TARGET!>@Anno<!> typealias B = Anno<!>
     c(<!EXPRESSION_EXPECTED!>@Anno <!LOCAL_OBJECT_NOT_ALLOWED!>object C<!><!>)
     val d = <!EXPRESSION_EXPECTED!>@Anno val D: Int<!>
@@ -14,7 +14,7 @@ fun testAnnotated() {
 }
 
 fun testRHS() {
-    val a = 0 < <!EXPRESSION_EXPECTED!>class A<!>
+    val a = 0 < <!EXPRESSION_EXPECTED!>define A<!>
     val b = 0 <!NONE_APPLICABLE!>+<!> object <!SYNTAX!>C<!> { }
     c(0 + <!EXPRESSION_EXPECTED, UNSUPPORTED_FEATURE!>typealias C = Anno<!>)
     val d = <!CONDITION_TYPE_MISMATCH!>0<!> && <!EXPRESSION_EXPECTED!>val D: Int = 5<!>

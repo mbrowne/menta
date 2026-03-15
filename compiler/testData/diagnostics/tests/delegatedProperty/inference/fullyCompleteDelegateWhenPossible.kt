@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty
 
-class Cached<T>(val f: () -> T) {
+define Cached<T>(val f: () -> T) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T = TODO()
 }
 

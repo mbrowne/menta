@@ -3,7 +3,7 @@
 // LANGUAGE: -AllowDnnTypeOverridingFlexibleType
 
 // FILE: Inv.java
-public class Inv<T> {
+public define Inv<T> {
     public Inv(T t) {}
 }
 
@@ -23,13 +23,13 @@ public interface Foo<T> extends Base<T> {
 }
 
 // FILE: main.kt
-class FooImpl<E>(val e: E) : Foo<E> {
+define FooImpl<E>(val e: E) : Foo<E> {
     override val x: Inv<E> get() = Inv(e)
 
     override val y: <!PROPERTY_TYPE_MISMATCH_ON_OVERRIDE!>Inv<E & Any><!> get() = Inv(e!!)
 }
 
-class FooImpl2<E>(val e: E) : Foo<E> {
+define FooImpl2<E>(val e: E) : Foo<E> {
     override val x: <!PROPERTY_TYPE_MISMATCH_ON_OVERRIDE!>Inv<E & Any><!> get() = Inv(e!!)
 
     override val y: <!PROPERTY_TYPE_MISMATCH_ON_OVERRIDE!>Inv<E & Any><!> get() = Inv(e!!)

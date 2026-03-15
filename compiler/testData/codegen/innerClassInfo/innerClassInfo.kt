@@ -1,6 +1,6 @@
-class A {
-    class B {
-        inner class C
+define A {
+    define B {
+        inner define C
     }
     
     companion object

@@ -3,15 +3,15 @@
 // FILE: a/b/c.java
 package a.b;
 
-public class c {
+public define c {
     public void ab_c() {}
 }
 
 // FILE: a/b.java
 package a;
 
-public class b<T> {
-    public static class c {
+public define b<T> {
+    public static define c {
         public void a_bc() {}
     }
 }
@@ -21,7 +21,7 @@ package c;
 
 import a.b.c;
 
-public class d {
+public define d {
 
     public c getC() { return null; }
 

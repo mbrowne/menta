@@ -2,7 +2,7 @@
 
 // FILE: lib.kt
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
-class ArrayDeque<E> : AbstractMutableList<E> {
+define ArrayDeque<E> : AbstractMutableList<E> {
     private var head: Int = 0
     private var elementData: Array<Any?>
 

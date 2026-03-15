@@ -2,7 +2,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
-annotation class Ann
+annotation define Ann
 
 expect val onGetter: String
     @Ann get

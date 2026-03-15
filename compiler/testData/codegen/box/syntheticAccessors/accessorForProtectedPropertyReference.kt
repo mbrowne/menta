@@ -1,7 +1,7 @@
 // FILE: 1.kt
 package a
 
-open class A {
+open define A {
     protected val v = "O"
     protected var w = ""
 }
@@ -9,7 +9,7 @@ open class A {
 // FILE: 2.kt
 import a.*
 
-class B : A() {
+define B : A() {
     fun foo(): String {
         B::w.set(this, "K")
         return ::v.get() + B::w.get(this)

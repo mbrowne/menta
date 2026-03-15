@@ -18,7 +18,7 @@ fun <R : C> Any?.uncheckedCast() where R : I1, R : I2 {
 
 interface I1
 interface I2
-open class C
+open define C
 
-class CI1I2 : C(), I1, I2
-class OtherCI1I2 : C(), I1, I2
+define CI1I2 : C(), I1, I2
+define OtherCI1I2 : C(), I1, I2

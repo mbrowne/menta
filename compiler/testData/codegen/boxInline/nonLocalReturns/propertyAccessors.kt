@@ -10,7 +10,7 @@ inline fun <R> doCall(p: () -> R) {
 
 import test.*
 
-class A {
+define A {
     var result = 0;
 
     var field: Int

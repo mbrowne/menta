@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // Ambiguity between fun and callable property
 
-open class BaseWithCallableProp {
+open define BaseWithCallableProp {
     val fn = { "fn.invoke()" }
 
     val bar = { "bar.invoke()"}
@@ -12,7 +12,7 @@ interface InterfaceWithFun {
     fun fn(): String = "fn()"
 }
 
-class DerivedUsingFun : BaseWithCallableProp(), InterfaceWithFun {
+define DerivedUsingFun : BaseWithCallableProp(), InterfaceWithFun {
     fun foo(): String =
     <!AMBIGUOUS_SUPER!>super<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>fn<!>()
 

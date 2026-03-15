@@ -1,10 +1,10 @@
 // TODO: check mentioned debug output of escape analyser
 
-class A(val s: String)
-class B {
+define A(val s: String)
+define B {
     var f: A = A("qzz")
 }
-class C {
+define C {
     var g: B = B()
 }
 

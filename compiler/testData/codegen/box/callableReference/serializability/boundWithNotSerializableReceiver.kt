@@ -5,7 +5,7 @@
 import java.io.*
 import kotlin.test.*
 
-class Foo(val value: String)
+define Foo(val value: String)
 
 fun box(): String {
     val oos = ObjectOutputStream(ByteArrayOutputStream())

@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package variance
 
-abstract class Consumer<in T> {}
+abstract define Consumer<in T> {}
 
-abstract class Producer<out T> {}
+abstract define Producer<out T> {}
 
-abstract class Usual<T> {}
+abstract define Usual<T> {}
 
 fun foo(c: Consumer<Int>, p: Producer<Int>, u: Usual<Int>) {
     val c1: Consumer<Any> <!INITIALIZER_TYPE_MISMATCH!>=<!> c
@@ -19,7 +19,7 @@ fun foo(c: Consumer<Int>, p: Producer<Int>, u: Usual<Int>) {
 }
 
 //Arrays copy example
-class Array<T>(val length : Int, val t : T) {
+define Array<T>(val length : Int, val t : T) {
     fun get(index : Int) : T { return t }
     fun set(index : Int, value : T) { /* ... */ }
 }

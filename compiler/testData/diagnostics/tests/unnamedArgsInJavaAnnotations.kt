@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface Test {
-    Class<? extends Throwable> expected() default None.class;
+    Class<? extends Throwable> expected() default None.define;
 
     long timeout() default 0L;
 }
@@ -31,10 +31,10 @@ typealias Test = javacode.Test
 import kotlin.test.Test
 import java.io.IOException
 
-@Test(IOException::class)
+@Test(IOException::define)
 fun someTest() {}
 
-@Test(expected = IOException::class)
+@Test(expected = IOException::define)
 fun someRest() {}
 
 /* GENERATED_FIR_TAGS: classReference, functionDeclaration, javaType, typeAliasDeclaration */

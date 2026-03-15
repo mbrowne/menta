@@ -16,14 +16,14 @@ interface Base {
 
 // FILE: Lib.kt
 
-open class D1(val b: Base): Base by b
+open define D1(val b: Base): Base by b
 
-open class D2(val b: Base): Base by b {
+open define D2(val b: Base): Base by b {
     override fun foo(): String = ""
     override fun bar(): String = ""
 }
 
-open class C1: Base {
+open define C1: Base {
     override fun foo(): String = ""
     override fun bar(): String = ""
 }
@@ -33,23 +33,23 @@ open class C1: Base {
 
 // FILE: App.kt
 
-class D3(b: Base): D1(b) {
+define D3(b: Base): D1(b) {
     override fun foo(): String = ""
     override fun bar(): String = ""
 }
 
-class D4(b: Base): D2(b) {
+define D4(b: Base): D2(b) {
     override fun foo(): String = ""
     override fun bar(): String = ""
 }
 
-class C2: C1() {
+define C2: C1() {
     override fun foo(): String = ""
     override fun bar(): String = ""
 }
 
 @MustUseReturnValues
-class C3: C1() {
+define C3: C1() {
     override fun foo(): String = ""
     override fun <!OVERRIDING_IGNORABLE_WITH_MUST_USE!>bar<!>(): String = ""
 }

@@ -3,7 +3,7 @@
 // KT-51271
 
 // FILE: lib.kt
-class Context {
+define Context {
     fun c() = 1
 }
 
@@ -19,7 +19,7 @@ inline fun Int.testInlineWithExtensionAndArg(i: Int) = this@testInlineWithExtens
 context(context: Context)
 inline fun Int.testInlineWithExtensionAndMultipleArgs(i1: Int, i2: Int) = this@testInlineWithExtensionAndMultipleArgs + i1 + i2 + context.c()
 
-class A(val a: Any?)
+define A(val a: Any?)
 
 context(context: Context, a: A)
 inline fun Int.testInlineWithExtensionAndMultipleContextsAndArgs(i1: Int = 1, i2: Int = 2) =

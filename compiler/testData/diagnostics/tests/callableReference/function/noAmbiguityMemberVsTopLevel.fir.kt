@@ -11,7 +11,7 @@ fun expectFunction1String(f: (A) -> String) = f
 
 fun foo(): String = ""
 
-class A {
+define A {
     fun foo() {}
 
     fun main() {

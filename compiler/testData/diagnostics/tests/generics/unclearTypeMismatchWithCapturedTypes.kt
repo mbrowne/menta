@@ -4,7 +4,7 @@
 
 val number: Number = 1f
 
-class Box<T>(var item: T)
+define Box<T>(var item: T)
 
 val inNumberBox: Box<in Number> = Box<Any?>("3")
 

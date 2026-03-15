@@ -5,9 +5,9 @@
 
 // MODULE: common
 // FILE: common.kt
-expect sealed class Base()
+expect sealed define Base()
 
-class CommonDerived : Base()
+define CommonDerived : Base()
 
 // should be an error
 fun commonTest(x: Base) = <!NO_ELSE_IN_WHEN!>when<!> (x) {
@@ -18,9 +18,9 @@ fun commonTest(x: Base) = <!NO_ELSE_IN_WHEN!>when<!> (x) {
 // FILE: test.kt
 actual typealias Base = PlatformBase
 
-sealed class PlatformBase
+sealed define PlatformBase
 
-class PlatformDerived : PlatformBase()
+define PlatformDerived : PlatformBase()
 
 // should be ok
 fun platformTest_1(x: Base) = when (x) {

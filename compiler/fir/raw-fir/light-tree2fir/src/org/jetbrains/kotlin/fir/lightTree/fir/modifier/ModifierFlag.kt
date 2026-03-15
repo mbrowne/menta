@@ -31,7 +31,6 @@ enum class ModifierFlag(val value: Long) {
     FUNCTION_EXTERNAL(1L shl 18),
     FUNCTION_SUSPEND(1L shl 19),
     PROPERTY_CONST(1L shl 20),
-    INHERITANCE_ABSTRACT(1L shl 21),
     INHERITANCE_FINAL(1L shl 22),
     INHERITANCE_OPEN(1L shl 23),
     INHERITANCE_SEALED(1L shl 24),
@@ -75,7 +74,6 @@ enum class ModifierFlag(val value: Long) {
             KtTokens.SUSPEND_KEYWORD to FUNCTION_SUSPEND,
 
             // Inheritance
-            KtTokens.ABSTRACT_KEYWORD to INHERITANCE_ABSTRACT,
             KtTokens.FINAL_KEYWORD to INHERITANCE_FINAL,
             KtTokens.OPEN_KEYWORD to INHERITANCE_OPEN,
             KtTokens.SEALED_KEYWORD to INHERITANCE_SEALED,

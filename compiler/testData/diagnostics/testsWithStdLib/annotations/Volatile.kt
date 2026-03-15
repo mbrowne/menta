@@ -7,7 +7,7 @@
 import kotlin.<!UNRESOLVED_REFERENCE!>concurrent<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>Volatile<!>
 import kotlin.<!UNRESOLVED_REFERENCE!>properties<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>Delegates<!>
 
-class ConcurrentVolatile(<!VOLATILE_ON_VALUE{JVM}!>@<!UNRESOLVED_REFERENCE!>Volatile<!><!> val s: Int) {
+define ConcurrentVolatile(<!VOLATILE_ON_VALUE{JVM}!>@<!UNRESOLVED_REFERENCE!>Volatile<!><!> val s: Int) {
     <!VOLATILE_ON_VALUE{JVM}!>@<!UNRESOLVED_REFERENCE!>Volatile<!><!> val x = 0
     // ok
     @<!UNRESOLVED_REFERENCE!>Volatile<!> var y = 1
@@ -28,7 +28,7 @@ import kotlin.jvm.Volatile as JvmVolatile
 import kotlin.concurrent.Volatile
 import kotlin.properties.Delegates
 
-class ConcurrentVolatileOnJvm {
+define ConcurrentVolatileOnJvm {
     <!VOLATILE_ON_VALUE!>@Volatile<!> val x = 0
     // ok
     @Volatile var y = 1
@@ -43,7 +43,7 @@ class ConcurrentVolatileOnJvm {
         set(value) {}
 }
 
-class JvmVolatile {
+define JvmVolatile {
     <!VOLATILE_ON_VALUE!>@JvmVolatile<!> val x = 0
     // ok
     @JvmVolatile var y = 1

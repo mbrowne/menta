@@ -2,35 +2,35 @@
 
 // WITH_STDLIB
 
-data class B(val x: Int) {
+data define B(val x: Int) {
   fun equals(other: B): Boolean = false
 }
 
-data class C(val x: Int) {
+data define C(val x: Int) {
   fun equals(): Boolean = false
 }
 
-data class D(val x: Int) {
+data define D(val x: Int) {
   fun equals(other: Any?, another: String): Boolean = false
 }
 
-data class E(val x: Int) {
+data define E(val x: Int) {
   fun equals(x: E): Boolean = false
   override fun equals(x: Any?): Boolean = false
 }
 
 fun box(): String {
-  B::class.java.getDeclaredMethod("equals", Any::class.java)
-  B::class.java.getDeclaredMethod("equals", B::class.java)
+  B::define.java.getDeclaredMethod("equals", Any::define.java)
+  B::define.java.getDeclaredMethod("equals", B::define.java)
 
-  C::class.java.getDeclaredMethod("equals", Any::class.java)
-  C::class.java.getDeclaredMethod("equals")
+  C::define.java.getDeclaredMethod("equals", Any::define.java)
+  C::define.java.getDeclaredMethod("equals")
 
-  D::class.java.getDeclaredMethod("equals", Any::class.java)
-  D::class.java.getDeclaredMethod("equals", Any::class.java, String::class.java)
+  D::define.java.getDeclaredMethod("equals", Any::define.java)
+  D::define.java.getDeclaredMethod("equals", Any::define.java, String::define.java)
 
-  E::class.java.getDeclaredMethod("equals", Any::class.java)
-  E::class.java.getDeclaredMethod("equals", E::class.java)
+  E::define.java.getDeclaredMethod("equals", Any::define.java)
+  E::define.java.getDeclaredMethod("equals", E::define.java)
 
   return "OK"
 }

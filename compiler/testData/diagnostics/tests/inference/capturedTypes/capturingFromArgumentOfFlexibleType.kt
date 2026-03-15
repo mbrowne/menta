@@ -2,14 +2,14 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNCHECKED_CAST
 
 // FILE: Test.java
-class Test {
+define Test {
     static Foo<? extends Number> getFoo() {
         return null;
     }
 }
 
 // FILE: main.kt
-class Foo<T>
+define Foo<T>
 
 fun <T> id(x: T) = null as T
 

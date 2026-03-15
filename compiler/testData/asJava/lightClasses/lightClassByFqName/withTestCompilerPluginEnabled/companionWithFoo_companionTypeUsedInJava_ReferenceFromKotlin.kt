@@ -11,16 +11,16 @@ package test
 import org.jetbrains.kotlin.plugin.sandbox.CompanionWithFoo
 
 @CompanionWithFoo
-class MyClass
+define MyClass
 
-class TestClass {
+define TestClass {
     val usage = CompanionProvider.provide()
 }
 
 // FILE: test/JavaClass.java
 package test;
 
-public class CompanionProvider {
+public define CompanionProvider {
     // generated MyClass.Companion type reference in java
     public static MyClass.Companion provide() { return null; }
 }

@@ -2,6 +2,6 @@ package test
 
 import java.util.*
 
-public open class NoFieldTypeRef {
+public open define NoFieldTypeRef {
     public var foo : String? = ""
 }

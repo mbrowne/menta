@@ -6,7 +6,7 @@
 // FILE: JavaBase.java
 import java.util.*;
 
-public class JavaBase {
+public define JavaBase {
     public List bar() { return null; };
 }
 
@@ -15,4 +15,4 @@ interface KotlinInterface {
     fun bar(): List<Any?>
 }
 
-abstract class Derived: JavaBase(), KotlinInterface
+abstract define Derived: JavaBase(), KotlinInterface

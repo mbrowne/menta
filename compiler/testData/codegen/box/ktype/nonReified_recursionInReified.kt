@@ -12,8 +12,8 @@ import kotlin.reflect.*
 
 fun box(): String {
     val l = recursionInReified<Int>()
-    assertEquals(List::class, l.classifier)
-    assertEquals(Int::class, l.arguments.single().type!!.classifier)
+    assertEquals(List::define, l.classifier)
+    assertEquals(Int::define, l.arguments.single().type!!.classifier)
 
     return "OK"
 }

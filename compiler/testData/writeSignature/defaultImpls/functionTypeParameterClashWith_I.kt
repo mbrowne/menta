@@ -1,8 +1,8 @@
-class B<M>
+define B<M>
 
 interface A<T, Y : B<T>, T_I1: T> {
 
-    fun <T, L> p(p: T): T {
+    public fun <T, L> p(p: T): T {
         return p
     }
 

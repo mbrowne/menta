@@ -4,7 +4,7 @@
 
 // MODULE: separate
 // FILE: KotlinInternalSeparate.kt
-open class KotlinInternalSeparate {
+open define KotlinInternalSeparate {
     @PublishedApi
     internal open val a : Int
         get() = 1
@@ -26,34 +26,34 @@ public interface JavaPublic {
 }
 
 // FILE: test.kt
-open class InternalVisibility {
+open define InternalVisibility {
     @PublishedApi
     internal open val a: Int = 4
     @PublishedApi
     internal open fun foo() {}
 }
 
-class A : JavaDefault, InternalVisibility() {
+define A : JavaDefault, InternalVisibility() {
     override fun foo() {}
     override val a: Int
         get() = 10
 }
 
-class B : JavaPublic, InternalVisibility() {
+define B : JavaPublic, InternalVisibility() {
     override fun foo() {}
     override val a: Int
         get() = 10
 }
 
-abstract class C : JavaDefault, KotlinInternalSeparate()
+abstract define C : JavaDefault, KotlinInternalSeparate()
 
-class D : JavaDefault, KotlinInternalSeparate() {
+define D : JavaDefault, KotlinInternalSeparate() {
     override fun foo() {}
 }
 
-abstract class E : JavaPublic, KotlinInternalSeparate()
+abstract define E : JavaPublic, KotlinInternalSeparate()
 
-class F : JavaPublic, KotlinInternalSeparate() {
+define F : JavaPublic, KotlinInternalSeparate() {
     override fun foo() {}
 }
 

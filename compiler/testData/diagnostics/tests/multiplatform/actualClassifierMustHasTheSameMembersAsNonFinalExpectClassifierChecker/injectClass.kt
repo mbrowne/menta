@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun existingFun()
     val existingParam: Int
 }
@@ -11,17 +11,17 @@ expect open class Foo {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo {
+actual open define Foo {
     actual fun existingFun() {}
     actual val existingParam: Int = 904
 
-    class InjectedClass
+    define InjectedClass
 
     // Injected classes can be considered as members (because they caputer `this`) => scopes are different
     // => the diagnostic should be reported.
     //
-    // But since `override inner class` isn't possible in Kotlin, red code here is unnecessary
-    inner class InjectedInnerClass
+    // But since `override inner define` isn't possible in Kotlin, red code here is unnecessary
+    inner define InjectedInnerClass
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, inner, integerLiteral, nestedClass,

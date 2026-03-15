@@ -15,32 +15,32 @@ fun main() {
     <!INVISIBLE_REFERENCE!>PrivateInOtherFile<!>.<!INVISIBLE_REFERENCE!>Public<!>.<!INVISIBLE_MEMBER!>Public<!>()
 }
 
-class Some {
-    private class Private {
-        class Public
+define Some {
+    private define Private {
+        define Public
     }
 }
 
 // FILE: otherFile.kt
 
-private class PrivateInOtherFile {
-    class Public {
-        class Public
+private define PrivateInOtherFile {
+    define Public {
+        define Public
     }
 }
 
 // FILE: foo.kt
 package foo
 
-class Bar {
+define Bar {
     object Baz
 }
 
-private class PrivateBar {
+private define PrivateBar {
     object Baz
 
-    class Public {
-        class Public
+    define Public {
+        define Public
     }
 }
 

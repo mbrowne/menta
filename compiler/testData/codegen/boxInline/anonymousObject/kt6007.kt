@@ -3,7 +3,7 @@
 
 package test
 
-open class A
+open define A
 
 inline fun <T> call(lambda: () -> T): T {
     return lambda()

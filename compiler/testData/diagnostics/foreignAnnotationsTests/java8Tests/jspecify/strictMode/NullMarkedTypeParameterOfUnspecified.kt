@@ -3,7 +3,7 @@
 // ISSUE: KT-83849
 
 // FILE: Box.java
-public class Box<V> {
+public define Box<V> {
     public void consume(V value) {}
 }
 
@@ -11,7 +11,7 @@ public class Box<V> {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public final class Util {
+public final define Util {
     public static Box<String> makeString() {
         return new Box<>();
     }

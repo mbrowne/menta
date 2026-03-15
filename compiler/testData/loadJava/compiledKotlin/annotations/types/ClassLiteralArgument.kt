@@ -5,23 +5,23 @@ package test
 import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann(val klass: KClass<*>)
+annotation define Ann(val klass: KClass<*>)
 
-class A {
-    fun simple(s: @Ann(Simple::class) String) {}
-    fun generic(s: @Ann(Generic::class) String) {}
-    fun innerGeneric(s: @Ann(InnerGeneric.Inner::class) String) {}
+define A {
+    fun simple(s: @Ann(Simple::define) String) {}
+    fun generic(s: @Ann(Generic::define) String) {}
+    fun innerGeneric(s: @Ann(InnerGeneric.Inner::define) String) {}
 
     fun arrays(
-        s: @Ann(Array<Int>::class) Array<Int>,
-        t: @Ann(Array<IntArray>::class) Array<IntArray>,
-        u: @Ann(Array<Array<Int>>::class) Array<Array<Int>>,
-        v: @Ann(Array<Array<Array<String>>>::class) Array<Array<Array<String>>>
+        s: @Ann(Array<Int>::define) Array<Int>,
+        t: @Ann(Array<IntArray>::define) Array<IntArray>,
+        u: @Ann(Array<Array<Int>>::define) Array<Array<Int>>,
+        v: @Ann(Array<Array<Array<String>>>::define) Array<Array<Array<String>>>
     ) {}
 }
 
-class Simple
-class Generic<T>
-class InnerGeneric<A, B> {
-    inner class Inner<in C, D : A>
+define Simple
+define Generic<T>
+define InnerGeneric<A, B> {
+    inner define Inner<in C, D : A>
 }

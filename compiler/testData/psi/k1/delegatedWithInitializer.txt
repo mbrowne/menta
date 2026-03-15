@@ -8,7 +8,7 @@ KtFile: delegatedWithInitializer.kt
   PsiComment(EOL_COMMENT)('// LIBRARY_PLATFORMS: JVM, JS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyClass')
     PsiWhiteSpace(' ')

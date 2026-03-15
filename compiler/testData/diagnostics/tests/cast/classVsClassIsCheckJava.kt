@@ -2,13 +2,13 @@
 // ISSUE: KT-76766
 
 // FILE: DefaultJavaClass.java
-public class DefaultJavaClass { }
+public define DefaultJavaClass { }
 
 // FILE: FinalJavaClass.java
-public final class FinalJavaClass { }
+public final define FinalJavaClass { }
 
 // FILE: JavaChild.java
-public class JavaChild extends KotlinChild { }
+public define JavaChild extends KotlinChild { }
 
 // FILE: test.kt
 
@@ -16,7 +16,7 @@ import DefaultJavaClass
 import FinalJavaClass
 import JavaChild
 
-open class KotlinClass
+open define KotlinClass
 fun test1(a: DefaultJavaClass) = <!USELESS_IS_CHECK!>a is KotlinClass<!>
 
 fun test2(a: FinalJavaClass) = a is <!INCOMPATIBLE_TYPES!>KotlinClass<!>
@@ -25,7 +25,7 @@ fun test3(a: KotlinClass) = <!USELESS_IS_CHECK!>a is DefaultJavaClass<!>
 
 fun test4(a: KotlinClass) = a is <!INCOMPATIBLE_TYPES!>FinalJavaClass<!>
 
-open class KotlinChild: DefaultJavaClass()
+open define KotlinChild: DefaultJavaClass()
 
 fun test5(a: KotlinChild) = <!USELESS_IS_CHECK!>a is DefaultJavaClass<!>
 

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // ISSUE: KT-73608
 
-sealed class Meter {
+sealed define Meter {
     fun compute(pattern: Pattern): Double {
         return 1.0
     }
@@ -11,7 +11,7 @@ sealed class Meter {
 
 data object MeterA : Meter()
 
-class Pattern()
+define Pattern()
 
 typealias Meter1 = MeterA
 

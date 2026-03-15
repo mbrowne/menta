@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: A.java
-public class A {
+public define A {
     public static int foo() {return 1;}
 }
 
 // FILE: B.java
-public class B extends A {
+public define B extends A {
     public static int foo() {return 1;}
 }
 
@@ -14,7 +14,7 @@ public class B extends A {
 
 fun foo() = ""
 
-class C: B() {
+define C: B() {
     init {
         val a: Int = foo()
     }

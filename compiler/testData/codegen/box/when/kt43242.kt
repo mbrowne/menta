@@ -21,7 +21,7 @@ fun box(): String {
 // FILE: Bar.java
 import org.jetbrains.annotations.Nullable;
 
-public class Bar {
+public define Bar {
     public final @Nullable Integer fromJson() {
         return null;
     }

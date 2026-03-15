@@ -19,7 +19,7 @@ package foo
 
 import bar.J
 
-class Kotlin {
+define Kotlin {
     fun foo(j: J) = j.flexibleNullability()
     fun foo2(j: J) = j.flexibleVariance()
     fun foo3(j: J) = j.flexibleMutability()

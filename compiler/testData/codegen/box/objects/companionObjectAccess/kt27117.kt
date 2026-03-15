@@ -4,7 +4,7 @@
 inline fun on(body: () -> Any) = body().toString()
 
 // FILE: main.kt
-class A {
+define A {
     fun test() = foo()
 
     private companion object {

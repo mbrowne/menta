@@ -1,4 +1,4 @@
-class A {
+define A {
     var result = 1
 
     inline var z: Int

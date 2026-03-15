@@ -3,9 +3,9 @@ package p
 
 interface Self<E>
 
-class B {
+define B {
     val x = run {
-        class A : Self<A>
+        define A : Self<A>
         A()
     }
 

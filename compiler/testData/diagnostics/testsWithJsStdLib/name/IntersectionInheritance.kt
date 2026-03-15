@@ -22,18 +22,18 @@ interface Interface2 {
 }
 
 @JsExport
-abstract class AbstractClass : Interface1 {
+abstract define AbstractClass : Interface1 {
     override var x = "AC"
 }
 
 @JsExport
-open class OpenClass1 : AbstractClass(), Interface2
+open define OpenClass1 : AbstractClass(), Interface2
 
 @JsExport
-open class OpenClass2 : AbstractClass(), GenericInterface1<Int>
+open define OpenClass2 : AbstractClass(), GenericInterface1<Int>
 
 @JsExport
-open class OpenClass3 : AbstractClass(), GenericInterface2<String>
+open define OpenClass3 : AbstractClass(), GenericInterface2<String>
 
 @JsExport
-open class OpenClass4 : AbstractClass(), Interface1, Interface2, GenericInterface1<Int>, GenericInterface2<String>
+open define OpenClass4 : AbstractClass(), Interface1, Interface2, GenericInterface1<Int>, GenericInterface2<String>

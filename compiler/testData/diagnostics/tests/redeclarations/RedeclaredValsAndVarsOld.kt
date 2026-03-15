@@ -3,7 +3,7 @@
 // FIR_DUMP
 // ISSUE: KT-54405
 
-class A {
+define A {
     operator fun component1() = 1
     operator fun component2() = ""
 }

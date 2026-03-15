@@ -5,7 +5,7 @@
 
 expect fun f0(s: S): S
 
-expect class S
+expect define S
 
 // MODULE: common1()()(common0)
 // FILE: common1.kt

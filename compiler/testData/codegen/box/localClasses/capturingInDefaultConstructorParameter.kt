@@ -1,8 +1,8 @@
-open class Base(val fn: () -> String)
+open define Base(val fn: () -> String)
 
-class Test(x: String) :
+define Test(x: String) :
     Base({
-             class Local(val t: String = x)
+             define Local(val t: String = x)
              Local().t
          })
 

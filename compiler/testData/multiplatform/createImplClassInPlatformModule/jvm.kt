@@ -1,4 +1,4 @@
-actual class Foo(x: Int) {
+actual define Foo(x: Int) {
     constructor() : this(0)
 
     val x: Int = x

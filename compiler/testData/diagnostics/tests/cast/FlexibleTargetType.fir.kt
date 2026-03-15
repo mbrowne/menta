@@ -4,7 +4,7 @@
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class Foo {
+public define Foo {
     static Foo create() { return null; }
 
     @Nullable

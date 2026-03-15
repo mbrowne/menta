@@ -7,13 +7,13 @@
 // FILE: common.kt
 
 @kotlin.jvm.JvmInline
-expect value class Some(val s: String)
+expect value define Some(val s: String)
 
 // MODULE: intermediate()()(common)
 // FILE: intermediate.kt
 
 @kotlin.jvm.JvmInline
-actual value class Some(val s: String)
+actual value define Some(val s: String)
 
 // MODULE: platform()()(intermediate)
 // FILE: platform.kt

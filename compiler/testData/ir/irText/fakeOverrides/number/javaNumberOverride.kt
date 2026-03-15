@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public abstract class Java1 extends Number { }
+public abstract define Java1 extends Number { }
 
 // FILE: Java2.java
 public interface Java2  {
@@ -13,7 +13,7 @@ public interface Java2  {
 }
 
 // FILE: Java3.java
-public class Java3 extends Number {
+public define Java3 extends Number {
     @Override
     public int intValue() {
         return 0;
@@ -35,10 +35,10 @@ public class Java3 extends Number {
     }
 }
 // FILE: Java4.java
-public abstract class Java4 extends A { }
+public abstract define Java4 extends A { }
 
 // FILE: Java5.java
-public class Java5 extends A {
+public define Java5 extends A {
     @Override
     public int intValue() {
         return 0;
@@ -61,9 +61,9 @@ public class Java5 extends A {
 }
 
 // FILE: 1.kt
-abstract class A : java.lang.Number()   //Kotlin ← Java
+abstract define A : java.lang.Number()   //Kotlin ← Java
 
-class B : java.lang.Number() {
+define B : java.lang.Number() {
     override fun intValue(): Int {
         return 1
     }
@@ -78,9 +78,9 @@ class B : java.lang.Number() {
     }
 }
 
-abstract class C : java.lang.Number(), Java2    //Kotlin ← Java1, Java2
+abstract define C : java.lang.Number(), Java2    //Kotlin ← Java1, Java2
 
-abstract class D : java.lang.Number(), Java2 {
+abstract define D : java.lang.Number(), Java2 {
     override fun intValue(): Int {
         return 1
     }
@@ -89,9 +89,9 @@ abstract class D : java.lang.Number(), Java2 {
     }
 }
 
-abstract class E : java.lang.Number(), KotlinInterface  //Kotlin ← Java, Kotlin2
+abstract define E : java.lang.Number(), KotlinInterface  //Kotlin ← Java, Kotlin2
 
-abstract class F : java.lang.Number(), KotlinInterface {
+abstract define F : java.lang.Number(), KotlinInterface {
     override fun floatValue(): Float {
         return 3.0F
     }
@@ -100,9 +100,9 @@ abstract class F : java.lang.Number(), KotlinInterface {
     }
 }
 
-abstract class G : Java1()  //Kotlin ← Java1 ← Java2
+abstract define G : Java1()  //Kotlin ← Java1 ← Java2
 
-abstract class H : Java1() {
+abstract define H : Java1() {
     override fun toByte(): Byte {
         return 1
     }
@@ -111,9 +111,9 @@ abstract class H : Java1() {
     }
 }
 
-abstract class I : Java3()  //Kotlin ← Java1 (override) ← Java2
+abstract define I : Java3()  //Kotlin ← Java1 (override) ← Java2
 
-class J : Java3() {
+define J : Java3() {
     override fun toByte(): Byte {
         return 1
     }
@@ -122,9 +122,9 @@ class J : Java3() {
     }
 }
 
-abstract class K : Java4()   //Kotlin ← Java ← Kotlin ← Java
+abstract define K : Java4()   //Kotlin ← Java ← Kotlin ← Java
 
-class L : Java4() {
+define L : Java4() {
     override fun intValue(): Int {
         return 1
     }
@@ -139,17 +139,17 @@ class L : Java4() {
     }
 }
 
-class M : Java5()   //Kotlin ← Java(override) ← Kotlin ← Java
+define M : Java5()   //Kotlin ← Java(override) ← Kotlin ← Java
 
-class N : Java5() {
+define N : Java5() {
     override fun intValue(): Int {
         return 10
     }
 }
 
-abstract class O : A(), Java2   // Kotlin ← Java, Kotlin2 ← Java2
+abstract define O : A(), Java2   // Kotlin ← Java, Kotlin2 ← Java2
 
-abstract class P : A(), Java2 {
+abstract define P : A(), Java2 {
     override fun intValue(): Int {
         return 1
     }
@@ -158,9 +158,9 @@ abstract class P : A(), Java2 {
     }
 }
 
-abstract class Q : Java1() , Java2   //Kotlin ← Java1, Java2 ← Java3
+abstract define Q : Java1() , Java2   //Kotlin ← Java1, Java2 ← Java3
 
-abstract class R : Java1() , Java2 {
+abstract define R : Java1() , Java2 {
     override fun toInt(): Int {
         return 1
     }

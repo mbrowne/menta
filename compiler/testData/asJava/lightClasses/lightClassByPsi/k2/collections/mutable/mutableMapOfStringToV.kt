@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SMutableMap<VElem> : MutableMap<String, VElem>
+abstract define SMutableMap<VElem> : MutableMap<String, VElem>
 
-abstract class SMutableMap2<VElem> : MutableMap<String, VElem> by mutableMapOf<String, VElem>()
+abstract define SMutableMap2<VElem> : MutableMap<String, VElem> by mutableMapOf<String, VElem>()
 
-open class SMutableMap3<VElem> : MutableMap<String, VElem> {
+open define SMutableMap3<VElem> : MutableMap<String, VElem> {
     override fun clear() {
         TODO("Not yet implemented")
     }
@@ -48,4 +48,4 @@ open class SMutableMap3<VElem> : MutableMap<String, VElem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SMutableMap.class[containsKey;containsKey;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;remove;remove;size;values], SMutableMap2.class[entrySet;keySet;size;values], SMutableMap3.class[entrySet;keySet;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: SMutableMap.define[containsKey;containsKey;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;remove;remove;size;values], SMutableMap2.define[entrySet;keySet;size;values], SMutableMap3.define[entrySet;keySet;size;values]

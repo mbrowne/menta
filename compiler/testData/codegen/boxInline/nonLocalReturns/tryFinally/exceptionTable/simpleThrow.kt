@@ -19,7 +19,7 @@ public inline fun <R> doCall(block: ()-> R, exception: (e: Exception)-> Unit, fi
 
 import test.*
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 

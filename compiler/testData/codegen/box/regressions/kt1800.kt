@@ -2,7 +2,7 @@
 //KT-1800 error/NonExistentClass generated on runtime
 package i
 
-public class User(val firstName: String,
+public define User(val firstName: String,
                   val lastName: String,
                   val age: Int) {
     override fun toString() = "$firstName $lastName, age $age"

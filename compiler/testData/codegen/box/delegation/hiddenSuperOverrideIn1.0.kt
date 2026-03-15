@@ -6,7 +6,7 @@ public interface Base2 : Base {
     override fun test() = "base 2fail"
 }
 
-class Delegate : Base {
+define Delegate : Base {
     override fun test(): String {
         return "OK"
     }

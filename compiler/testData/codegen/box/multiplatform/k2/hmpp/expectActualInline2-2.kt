@@ -2,14 +2,14 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class LibBox {
+expect define LibBox {
     val v: String
 }
 
 inline fun <T> LibBox.map(block: (String) -> T): T = block(v)
 
 // MODULE: lib-platform()()(lib-common)
-actual class LibBox constructor(
+actual define LibBox constructor(
     actual val v: String
 )
 

@@ -30,7 +30,7 @@ KtFile: DocCommentAfterFileAnnotations.kt
       PsiWhiteSpace('\n ')
       PsiElement(KDOC_END)('*/')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     CLASS_BODY

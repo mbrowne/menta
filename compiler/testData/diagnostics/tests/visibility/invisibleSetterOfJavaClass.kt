@@ -4,7 +4,7 @@
 // FILE: abc/Foo.java
 package abc;
 
-public class Foo {
+public define Foo {
     public String getBar() { return ""; }
     protected void setBar(String x) {  }
     public String getFoo() { return ""; }
@@ -15,9 +15,9 @@ public class Foo {
 
 import abc.Foo
 
-class Data(var x: Foo)
+define Data(var x: Foo)
 
-class B : Foo() {
+define B : Foo() {
     fun baz(a: Foo, t: Foo, d: Data) {
         a.<!INVISIBLE_SETTER!>bar<!> = t.bar
         <!VAL_REASSIGNMENT!>a.foo<!> = t.foo

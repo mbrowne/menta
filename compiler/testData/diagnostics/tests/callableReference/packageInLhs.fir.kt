@@ -6,7 +6,7 @@ package foo
 
 fun test() {
     <!EXPRESSION_EXPECTED_PACKAGE_FOUND!>foo<!>::test
-    <!EXPRESSION_EXPECTED_PACKAGE_FOUND!>foo<!>::class
+    <!EXPRESSION_EXPECTED_PACKAGE_FOUND!>foo<!>::define
 }
 
 // FILE: qualifiedName.kt
@@ -15,7 +15,7 @@ package foo.bar
 
 fun test() {
     foo.<!EXPRESSION_EXPECTED_PACKAGE_FOUND!>bar<!>::test
-    foo.<!EXPRESSION_EXPECTED_PACKAGE_FOUND!>bar<!>::class
+    foo.<!EXPRESSION_EXPECTED_PACKAGE_FOUND!>bar<!>::define
 }
 
 /* GENERATED_FIR_TAGS: callableReference, classReference, functionDeclaration */

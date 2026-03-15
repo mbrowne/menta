@@ -2,7 +2,7 @@
 // ISSUE: KT-66515
 
 interface A
-abstract class B
+abstract define B
 
 fun process(a: A): String {
     var b: B? = null
@@ -14,7 +14,7 @@ fun process(a: A): String {
     }
 }
 
-class C : B(), A
+define C : B(), A
 
 fun box(): String {
     return process(C())

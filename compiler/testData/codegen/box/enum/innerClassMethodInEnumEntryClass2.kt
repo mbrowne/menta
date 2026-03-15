@@ -1,9 +1,9 @@
 
-enum class A {
+enum define A {
     X {
         val x = "OK"
 
-        inner class Inner {
+        inner define Inner {
             fun foo() = this@X.x
         }
 

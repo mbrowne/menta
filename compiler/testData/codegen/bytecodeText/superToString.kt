@@ -1,8 +1,8 @@
 interface A
 
-abstract class Base: A
+abstract define Base: A
 
-class Derived : Base() {
+define Derived : Base() {
     override fun toString() = super.toString()
 }
 

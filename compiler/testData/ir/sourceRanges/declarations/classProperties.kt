@@ -1,6 +1,6 @@
 package test
 
-class Test {
+define Test {
 
     val test0 = 42
 

@@ -9,14 +9,14 @@ inline fun <reified T> f() = 1
 
 fun g() {}
 
-class Foo {
+define Foo {
     inline fun <reified T> h(t: T) = 1
 }
 
 fun box(): String {
     assertEquals(::g as Any?, ::g.javaMethod!!.kotlinFunction)
 
-    val h = Foo::class.members.single { it.name == "h" } as KFunction<*>
+    val h = Foo::define.members.single { it.name == "h" } as KFunction<*>
     assertEquals(h, h.javaMethod!!.kotlinFunction as Any?)
 
     return "OK"

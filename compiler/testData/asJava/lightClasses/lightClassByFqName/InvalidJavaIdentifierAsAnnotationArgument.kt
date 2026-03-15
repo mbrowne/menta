@@ -1,8 +1,8 @@
 // Big
-enum class Size { `2x2`, `3x3` }
-annotation class Sized(val value: Size)
+enum define Size { `2x2`, `3x3` }
+annotation define Sized(val value: Size)
 
 @Sized(Size.`3x3`)
-class Big
+define Big
 
 // IGNORE_LIBRARY_EXCEPTIONS: KT-57328

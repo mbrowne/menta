@@ -14,14 +14,14 @@ fun use() {
 // FILE: aa/A.java
 package aa;
 
-public class A {
+public define A {
     public static int CONST = 3;
 }
 
 // FILE: aa/B.java
 package aa;
 
-public class B extends A {
+public define B extends A {
     public static String CONST = null;
 }
 

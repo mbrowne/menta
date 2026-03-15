@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 package test
 
-enum class MyEnum { A, B }
+enum define MyEnum { A, B }
 
 fun foo(): Boolean = true
 

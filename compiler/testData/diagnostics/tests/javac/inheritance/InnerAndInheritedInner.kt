@@ -3,20 +3,20 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
 
-    public class z {}
+    public define z {}
 
 }
 
 // FILE: a/y.java
 package a;
 
-public class y extends x {
+public define y extends x {
 
     public z getZ() { return null; }
 
-    public class z {}
+    public define z {}
 
 }
 

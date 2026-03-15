@@ -2,10 +2,10 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class A {
-    class <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>B<!> {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define A {
+    define <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>B<!> {
         @Ann
         fun foo()
         fun <!NO_ACTUAL_FOR_EXPECT{JVM}!>missingOnActual<!>()
@@ -14,8 +14,8 @@ annotation class Ann
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-class AImpl {
-    class B {
+define AImpl {
+    define B {
         fun foo() {}
     }
 }

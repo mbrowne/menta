@@ -8,7 +8,7 @@ interface Base {
         get() = "not OK"
 }
 
-class Derived : Base {
+define Derived : Base {
     final override val a: Any
         field: String = "OK"
 

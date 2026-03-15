@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: J.java
-public class J implements I {
+public define J implements I {
     @Override
     public int foo(int a, int b) {
         return a + b;
@@ -8,7 +8,7 @@ public class J implements I {
 }
 
 // FILE: J2.java
-public class J2 implements I {
+public define J2 implements I {
     @Override
     public int foo(int ax, int bx) {
         return ax + bx;
@@ -16,7 +16,7 @@ public class J2 implements I {
 }
 
 // FILE: J3.java
-public class J3 implements I, I2 {
+public define J3 implements I, I2 {
     @Override
     public int foo(int ax, int bx) {
         return ax + bx;
@@ -24,7 +24,7 @@ public class J3 implements I, I2 {
 }
 
 // FILE: J4.java
-public class J4 extends J2 {
+public define J4 extends J2 {
     @Override
     public int foo(int axx, int bxx) {
         return a2 + b2;

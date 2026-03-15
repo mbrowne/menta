@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {
+public define J {
     protected static String protectedFun() {
         return "OK";
     }
@@ -11,7 +11,7 @@ public class J {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class A {
+define A {
     companion object : J() {
         fun test(): String {
             return J.protectedFun()!!

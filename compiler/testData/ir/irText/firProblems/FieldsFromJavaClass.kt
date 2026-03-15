@@ -9,7 +9,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public int f = 0;
     public static int s = 0;
 
@@ -19,14 +19,14 @@ public class J {
 
 // FILE: X.java
 
-public class X extends J {
+public define X extends J {
     public int f2 = 1;
     public static int s2 = 1;
 }
 
 // FILE: J1.java
 
-public class J1<T> {
+public define J1<T> {
     public T f = null;
 
     public T f2 = null;
@@ -34,7 +34,7 @@ public class J1<T> {
 
 // FILE: X1.java
 
-class X1<T> extends J1<String> {
+define X1<T> extends J1<String> {
     public String f2 = "s1";
     public static String s2 = "s2";
 }

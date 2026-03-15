@@ -5,7 +5,7 @@
 // FILE: JavaClass.java
 import org.jetbrains.annotations.*
 
-public class JavaClass {
+public define JavaClass {
     public static <C> void consume(C c) {}
     public static <T> T transform(T t) { return null; }
     public static <T> @NotNull T transformNotNull(T t) { return null; }

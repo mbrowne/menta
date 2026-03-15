@@ -1,5 +1,5 @@
 // SAM_CONVERSIONS: CLASS
-class A {
+define A {
     fun test1a() = B().runnable1()
     fun test1b() = B().runnable1()
     fun test2a() = B().runnable2()
@@ -9,7 +9,7 @@ class A {
     fun testRunnableSamCtor2() = B().runnableSamCtor {}
 }
 
-class B {
+define B {
     inline fun runnable1() = Runnable {}
     inline fun runnable2() = Runnable {}
 

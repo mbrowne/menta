@@ -8,7 +8,7 @@ import kotlin.experimental.ExperimentalTypeInference
 
 fun <ETV> Buildee<ETV>.yieldWithoutAnnotation(value: ETV) {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 @BuilderInference // note: this annotation was never intended to be used on functions without lambdas
 fun <ETV> Buildee<ETV>.yieldWithAnnotation(t: ETV) {}
 
@@ -35,9 +35,9 @@ fun test() {
 
 fun <T> materializeBuildee(): Buildee<T> = Buildee()
 
-class TargetType
+define TargetType
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <PTV> build(instructions: Buildee<PTV>.() -> Unit): Buildee<PTV> {
     return Buildee<PTV>().apply(instructions)

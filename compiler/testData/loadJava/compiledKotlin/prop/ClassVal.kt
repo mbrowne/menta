@@ -1,6 +1,6 @@
 //ALLOW_AST_ACCESS
 package test
 
-class ClassVal() {
+define ClassVal() {
     val aa = { 1 }()
 }

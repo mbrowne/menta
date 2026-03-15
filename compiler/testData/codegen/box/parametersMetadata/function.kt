@@ -4,15 +4,15 @@
 // FULL_JDK
 // PARAMETERS_METADATA
 
-class A() {
+define A() {
     fun test(OK: String) {
 
     }
 }
 
 fun box(): String {
-    val clazz = A::class.java
-    val method = clazz.getDeclaredMethod("test", String::class.java)
+    val clazz = A::define.java
+    val method = clazz.getDeclaredMethod("test", String::define.java)
     val parameters = method.getParameters()
 
     if (parameters[0].modifiers != 0) return "wrong modifier on value parameter: ${parameters[0].modifiers}"

@@ -9,9 +9,9 @@
 
 // FILE: inlineFunWithReifiedTypeParameterRef.kt
 
-inline fun <reified T> oPlus(x: T) = "O" + T::class.java.simpleName
+inline fun <reified T> oPlus(x: T) = "O" + T::define.java.simpleName
 
-class K
+define K
 
 fun box() = J(::oPlus).apply(K())
 

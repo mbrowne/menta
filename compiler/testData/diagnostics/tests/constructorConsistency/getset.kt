@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My(var x: String) {
+define My(var x: String) {
 
     var y: String
         get() = if (x != "") x else z

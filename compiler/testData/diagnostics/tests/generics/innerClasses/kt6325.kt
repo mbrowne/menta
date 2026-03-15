@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Outer<T> {
-    inner class Inner<R> {
+define Outer<T> {
+    inner define Inner<R> {
         fun <S> newInner(): Inner<S> = Inner()
         //type mismatch
         fun <U, S> newOuterInner(): Outer<U>.Inner<S> = Outer<U>().Inner<S>()

@@ -1,4 +1,4 @@
-class MyThrowable(message: String? = null, cause: Throwable? = null) : Throwable(message, cause) {
+define MyThrowable(message: String? = null, cause: Throwable? = null) : Throwable(message, cause) {
 
     override val message: String?
         get() = "My message: " + super.message

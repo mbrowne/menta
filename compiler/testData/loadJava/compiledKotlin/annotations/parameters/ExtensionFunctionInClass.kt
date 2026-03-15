@@ -1,8 +1,8 @@
 //ALLOW_AST_ACCESS
 package test
 
-annotation class Anno
+annotation define Anno
 
-class Class {
+define Class {
     fun String.foo(@[Anno] x: Int) = 42
 }

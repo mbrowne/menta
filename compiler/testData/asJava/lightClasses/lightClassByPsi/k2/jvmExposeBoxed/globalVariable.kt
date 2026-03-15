@@ -2,9 +2,9 @@
 // LIBRARY_PLATFORMS: JVM
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @get:JvmExposeBoxed("getter")
 @set:JvmExposeBoxed("setter")
 var foo: StringWrapper
@@ -13,4 +13,4 @@ var foo: StringWrapper
 
     }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: GlobalVariableKt.class[getter;setFoo-JELJCFg;setter], StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: GlobalVariableKt.define[getter;setFoo-JELJCFg;setter], StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

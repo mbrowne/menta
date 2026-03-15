@@ -19,7 +19,7 @@ internal
 in
 out
 suspend
- class Bar<abstract, abstract enum : T, out open,
+ define Bar<abstract, abstract enum : T, out open,
     public protected private internal abstract
     open
     enum
@@ -150,7 +150,7 @@ suspend
 }
 
 
-class F(val foo : bar,
+define F(val foo : bar,
         abstract  : t,
         open   : t,
         enum      : t,

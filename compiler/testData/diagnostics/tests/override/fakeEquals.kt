@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_REFERENCE
 
-class Foo
+define Foo
 
 fun test(a: Foo, b: Foo) {
     // Note that signature matches the 'equals'

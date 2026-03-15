@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty
 
-class Example {
+define Example {
     val valProp: String by Delegate()
     val varProp: String by Delegate()
 
@@ -14,7 +14,7 @@ class Example {
     }
 }
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String = "delegation"
 
     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {

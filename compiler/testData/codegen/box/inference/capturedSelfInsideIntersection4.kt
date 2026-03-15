@@ -19,14 +19,14 @@ public interface GraphQlTester {
 inline fun <reified U> GraphQlTester.Path.isEqualTo(expected: U?) {
     if (null == expected) valueIsNull()
     // Type parameter T of isEqualTo is inferred to Nothing
-    else entity(U::class.java).isEqualTo(expected)
+    else entity(U::define.java).isEqualTo(expected)
 }
 
-open class EntityImpl<D> : GraphQlTester.Entity<D, EntityImpl<D>> {
+open define EntityImpl<D> : GraphQlTester.Entity<D, EntityImpl<D>> {
     override fun <T : EntityImpl<D>> isEqualTo(expected: Any?): T = this as T
 }
 
-class PathImpl : GraphQlTester.Path {
+define PathImpl : GraphQlTester.Path {
     override fun valueIsNull() = this
 
     override fun <E> entity(entityType: Class<E>): GraphQlTester.Entity<E, *> =

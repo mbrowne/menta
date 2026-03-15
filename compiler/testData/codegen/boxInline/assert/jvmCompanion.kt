@@ -7,7 +7,7 @@ package test
 
 var result = "OK"
 
-class State {
+define State {
 
     companion object {
         inline fun inlineMe() {
@@ -19,17 +19,17 @@ class State {
 // FILE: inlineSite.kt
 import test.*
 
-class CheckerJvmAssertInlineFunctionAssertionsEnabled {
+define CheckerJvmAssertInlineFunctionAssertionsEnabled {
     fun check() {
         State.inlineMe()
         throw RuntimeException("FAIL 0")
     }
 }
 
-class Dummy
+define Dummy
 
 fun enableAssertions(): CheckerJvmAssertInlineFunctionAssertionsEnabled {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setDefaultAssertionStatus(true)
     val c = loader.loadClass("CheckerJvmAssertInlineFunctionAssertionsEnabled")
     return c.newInstance() as CheckerJvmAssertInlineFunctionAssertionsEnabled

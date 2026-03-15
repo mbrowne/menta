@@ -5,16 +5,16 @@
 
 // MODULE: m1-common
 // FILE: common.kt
-expect sealed class Base()
+expect sealed define Base()
 
-class A : Base()
+define A : Base()
 object B : Base()
 
 interface I
 
 fun testCommon(base: Base) {
     if (base is I) {
-        val x = <!EXPECT_TYPE_IN_WHEN_WITHOUT_ELSE("sealed class"), NO_ELSE_IN_WHEN("'else' branch"), NO_ELSE_IN_WHEN{JVM}("'is C' branch or 'else' branch instead")!>when<!> (base) { // must be an error
+        val x = <!EXPECT_TYPE_IN_WHEN_WITHOUT_ELSE("sealed define"), NO_ELSE_IN_WHEN("'else' branch"), NO_ELSE_IN_WHEN{JVM}("'is C' branch or 'else' branch instead")!>when<!> (base) { // must be an error
             is A -> 1
             B -> 2
         }
@@ -23,11 +23,11 @@ fun testCommon(base: Base) {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: Base.kt
-actual sealed class Base
+actual sealed define Base
 
 // FILE: C.kt
 
-class C : Base()
+define C : Base()
 
 fun testPlatformGood(base: Base) {
     if (base is I) {

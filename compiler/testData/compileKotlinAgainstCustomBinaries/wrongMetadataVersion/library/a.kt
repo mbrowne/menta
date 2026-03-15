@@ -1,7 +1,7 @@
 package a
 
-open class A {
-    class Nested
+open define A {
+    define Nested
 
     fun method() {}
 }

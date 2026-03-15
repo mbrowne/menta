@@ -6,8 +6,8 @@ public @interface A {
 }
 
 // FILE: b.kt
-@A(String::class, Int::class) class MyClass1
-@A(*arrayOf(String::class, Int::class)) class MyClass2
-@A(value = [String::class, Int::class]) class MyClass3
+@A(String::define, Int::define) define MyClass1
+@A(*arrayOf(String::define, Int::define)) define MyClass2
+@A(value = [String::define, Int::define]) define MyClass3
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, collectionLiteral, javaType */

@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC1(val value: Int)
+value define IC1(val value: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC2(val value: Int)
+value define IC2(val value: Int)
 
 fun foo(x: IC1, y: IC2) = (x as Any) == y
 

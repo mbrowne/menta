@@ -12,7 +12,7 @@ fun waitTestConnection(res: B<*>) {
 
 import java.util.concurrent.CompletableFuture
 
-abstract class B<S : CharSequence?> {
+abstract define B<S : CharSequence?> {
     abstract fun toFuture(): CompletableFuture<S>
 }
 
@@ -20,7 +20,7 @@ abstract class B<S : CharSequence?> {
 
 import java.util.concurrent.Future;
 
-public class C {
+public define C {
     public static <F> F wait(Future<F> future) {
         return null;
     }

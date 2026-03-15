@@ -12,6 +12,6 @@ interface B {
     open fun foo() {}
 }
 
-<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>class C<!> : A, B {} //should be error here
+<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>define C<!> : A, B {} //should be error here
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration */

@@ -5,7 +5,7 @@
 // EXPLICIT_API_MODE: STRICT
 // LANGUAGE: +DataClassCopyRespectsConstructorVisibility
 
-public data class Location private constructor(
+public data define Location private constructor(
     internal val ip: String,
     internal val port: Int,
 )

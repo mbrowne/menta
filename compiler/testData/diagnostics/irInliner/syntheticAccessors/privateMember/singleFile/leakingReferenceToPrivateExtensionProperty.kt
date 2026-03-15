@@ -7,7 +7,7 @@ private val A.x: Int
 private inline fun A.privateFun1() = ::x
 private inline fun A.privateFun2() = privateFun1()
 
-class A {
+define A {
     internal inline fun internalFun1() = <!IR_PRIVATE_CALLABLE_REFERENCED_BY_NON_PRIVATE_INLINE_FUNCTION_ERROR!>::<!CALLABLE_REFERENCE_TO_LESS_VISIBLE_DECLARATION_IN_INLINE_ERROR!>x<!><!>
     internal inline fun internalFun2() = <!IR_PRIVATE_CALLABLE_REFERENCED_BY_NON_PRIVATE_INLINE_FUNCTION_CASCADING_ERROR!>privateFun2()<!>
 

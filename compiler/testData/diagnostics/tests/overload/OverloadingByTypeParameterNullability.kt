@@ -5,7 +5,7 @@
 <!CONFLICTING_OVERLOADS!>fun <B> topLevelFoo(arg: B)<!> {}
 <!CONFLICTING_OVERLOADS!>fun <C> topLevelFoo(arg: C & Any)<!> {}
 
-class Klass<T> {
+define Klass<T> {
     fun memberFoo(arg: T?) {}
     fun memberFoo(arg: T) {}
     fun memberFoo(arg: T & Any) {}
@@ -32,7 +32,7 @@ fun <C> fooC(arg: C & Any): C {
 // fooA can't delegate to fooC, fooC can delegate to fooA => fooA & fooC can be overloads (fooC is more specific)
 // fooB can't delegate to fooC, fooC can delegate to fooB => fooB & fooC can be overloads (fooC is more specific)
 
-class RationaleKlass<T> {
+define RationaleKlass<T> {
     fun fooD(arg: T?) {
         fooE(<!TYPE_MISMATCH("T; T?")!>arg<!>)
         fooF(<!TYPE_MISMATCH("T & Any; T?")!>arg<!>)

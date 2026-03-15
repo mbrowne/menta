@@ -5,4 +5,4 @@
 package pack
 
 @JvmInline
-internal value class ValueClass(val value: String)
+internal value define ValueClass(val value: String)

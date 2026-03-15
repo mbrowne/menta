@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 package test
 
-public open class MethodTypePOneUpperBound() {
+public open define MethodTypePOneUpperBound() {
     public open fun <T : Cloneable?> bar() : Unit = Unit
 }

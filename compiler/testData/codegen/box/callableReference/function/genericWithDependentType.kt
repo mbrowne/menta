@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class Wrapper<T>(val value: T)
+define Wrapper<T>(val value: T)
 
 fun box(): String {
     val ls = listOf("OK").map(::Wrapper)

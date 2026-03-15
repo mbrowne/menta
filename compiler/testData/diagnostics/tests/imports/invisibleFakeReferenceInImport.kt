@@ -12,7 +12,7 @@ object B : C<String>()
 
 // FILE: C.kt
 
-open class C<T> {
+open define C<T> {
     private var foo: String = "abc"
 }
 

@@ -6,7 +6,7 @@ KtFile: ktij23263.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('InitOrderDemo')
     PRIMARY_CONSTRUCTOR
@@ -47,7 +47,7 @@ KtFile: ktij23263.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('InitOrderDemo2')
     PsiWhiteSpace(' ')

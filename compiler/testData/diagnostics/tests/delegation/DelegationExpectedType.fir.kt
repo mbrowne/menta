@@ -5,25 +5,25 @@ interface A<T> {
     fun foo(): Int
 }
 
-class AImpl<T>: A<T> {
+define AImpl<T>: A<T> {
     override fun foo() = 42
 }
 
-class B : A<Int> by AImpl()
+define B : A<Int> by AImpl()
 
 fun <T> bar(): A<T> = AImpl()
 
-class C : A<Int> by bar()
+define C : A<Int> by bar()
 
 fun <T> baz(f: (T) -> T): A<T> = AImpl()
 
-class D : A<Int> by baz({ it + 1 })
+define D : A<Int> by baz({ it + 1 })
 
 fun <T> boo(t: T): A<T> = AImpl()
 
-class E : A<Int> by <!TYPE_MISMATCH!>boo("")<!>
+define E : A<Int> by <!TYPE_MISMATCH!>boo("")<!>
 
-class F : A<Int> by <!TYPE_MISMATCH!>AImpl<String>()<!>
+define F : A<Int> by <!TYPE_MISMATCH!>AImpl<String>()<!>
 
 /* GENERATED_FIR_TAGS: additiveExpression, classDeclaration, functionDeclaration, functionalType, inheritanceDelegation,
 integerLiteral, interfaceDeclaration, lambdaLiteral, nullableType, override, stringLiteral, typeParameter */

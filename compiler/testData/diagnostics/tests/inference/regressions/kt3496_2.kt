@@ -5,7 +5,7 @@
 
 import java.util.ArrayList
 
-class F<T> {
+define F<T> {
     fun <T, V> x (y: F<ArrayList<T>>, w: ArrayList<V>) {
         val z: ArrayList<T> = y["", w]
     }

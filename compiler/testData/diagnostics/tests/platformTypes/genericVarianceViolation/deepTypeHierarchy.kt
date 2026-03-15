@@ -6,7 +6,7 @@
 import java.util.*;
 
 
-public class A {
+public define A {
     void foo(List<Object> x) {}
     <T> void foo2(List<T> x) {}
 }

@@ -6,7 +6,7 @@
 package boo
 
 @field:Deprecated
-class A
+define A
 
 @field:Deprecated
 interface I

@@ -2,14 +2,14 @@
 // ISSUE: KT-76766
 // LANGUAGE: +NestedTypeAliases
 
-open class A
-open class B
+open define A
+open define B
 
 typealias TypeAlias = B
 
 fun test1(a: A) = <!IMPOSSIBLE_IS_CHECK_ERROR!>a is TypeAlias<!>
 
-open class WithNestedTypealias {
+open define WithNestedTypealias {
     typealias NestedTypealias = WithNestedTypealias
 }
 

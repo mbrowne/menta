@@ -6,19 +6,19 @@ package test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-annotation class Anno(@get:JvmName("uglyJvmName") val value: String)
+annotation define Anno(@get:JvmName("uglyJvmName") val value: String)
 
 @Anno(value = "OK")
-class Foo
+define Foo
 
 
-annotation class Meta(val anno: Anno)
+annotation define Meta(val anno: Anno)
 
 @Meta(Anno(value = "OK"))
 fun bar() {}
 
 fun box(): String {
-    val f = Foo::class.annotations.single()
+    val f = Foo::define.annotations.single()
     assertTrue("@test.Anno\\(uglyJvmName=\"?OK\"?\\)".toRegex().matches(f.toString()))
     assertEquals("OK", (f as Anno).value)
 

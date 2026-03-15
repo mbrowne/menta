@@ -4,8 +4,8 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class MixPrimitiveAndBoxedKt\$box\$f0\$1
-// 1 class MixPrimitiveAndBoxedKt\$box\$f1\$1
+// 1 define MixPrimitiveAndBoxedKt\$box\$f0\$1
+// 1 define MixPrimitiveAndBoxedKt\$box\$f1\$1
 
 fun interface IFooT<T> {
     fun foo(x: T): T

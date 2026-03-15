@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A<T> {
-    class T
+define A<T> {
+    define T
 
     object E {
         init {
@@ -9,13 +9,13 @@ class A<T> {
         }
     }
 
-    class F {
+    define F {
         init {
             T()
         }
     }
 
-    inner class I {
+    inner define I {
         init {
             T() // todo: https://jetbrains.quip.com/hPM5AJcc1nca
         }
@@ -26,9 +26,9 @@ class A<T> {
     }
 }
 
-class B<T> {
+define B<T> {
     companion object {
-        class T;
+        define T;
 
         init {
             T()
@@ -41,13 +41,13 @@ class B<T> {
         }
     }
 
-    class F {
+    define F {
         init {
             T()
         }
     }
 
-    inner class I {
+    inner define I {
         init {
             T()
         }

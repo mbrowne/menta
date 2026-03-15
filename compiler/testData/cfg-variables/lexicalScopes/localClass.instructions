@@ -1,7 +1,7 @@
 == foo ==
 fun foo() {
     "before"
-    class A(val x: Int) {
+    define A(val x: Int) {
         init {
             val a = x
         }
@@ -13,21 +13,21 @@ fun foo() {
 }
 ---------------------
 L0:
-  1 <START>                                                                                          INIT: in: {} out: {}
-  2 mark({ "before" class A(val x: Int) { init { val a = x } fun foo() { val b = x } } "after" })
+  1 <START>                                                                                           INIT: in: {} out: {}
+  2 mark({ "before" define A(val x: Int) { init { val a = x } fun foo() { val b = x } } "after" })
     mark("before")
     r("before") -> <v0>
     jmp?(L2)
-    v(val x: Int)                                                                                    INIT: in: {} out: {}
-    magic[FAKE_INITIALIZER](val x: Int) -> <v1>                                                      INIT: in: {} out: {}
-    w(x|<v1>)                                                                                        INIT: in: {} out: {}
-  3 mark({ val a = x })                                                                              INIT: in: {} out: {}
-    v(val a = x)                                                                                     INIT: in: {} out: {}
-    magic[IMPLICIT_RECEIVER](x) -> <v2>                                                              INIT: in: {} out: {}
+    v(val x: Int)                                                                                     INIT: in: {} out: {}
+    magic[FAKE_INITIALIZER](val x: Int) -> <v1>                                                       INIT: in: {} out: {}
+    w(x|<v1>)                                                                                         INIT: in: {} out: {}
+  3 mark({ val a = x })                                                                               INIT: in: {} out: {}
+    v(val a = x)                                                                                      INIT: in: {} out: {}
+    magic[IMPLICIT_RECEIVER](x) -> <v2>                                                               INIT: in: {} out: {}
     r(x|<v2>) -> <v3>
-    w(a|<v3>)                                                                                        INIT: in: {} out: {}
-  2 jmp?(L3)                                                                                         INIT: in: {} out: {}
-    d(fun foo() { val b = x })                                                                       INIT: in: {} out: {}
+    w(a|<v3>)                                                                                         INIT: in: {} out: {}
+  2 jmp?(L3)                                                                                          INIT: in: {} out: {}
+    d(fun foo() { val b = x })                                                                        INIT: in: {} out: {}
 L2 [after local class]:
 L3 [after local declaration]:
     mark("after")
@@ -37,7 +37,7 @@ L1:
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                                                   USE: in: {} out: {}
+    <SINK>                                                                                                                    USE: in: {} out: {}
 =====================
 == foo ==
 fun foo() {

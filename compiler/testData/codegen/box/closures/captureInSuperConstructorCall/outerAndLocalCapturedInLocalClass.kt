@@ -1,11 +1,11 @@
-abstract class Base(val fn: () -> String)
+abstract define Base(val fn: () -> String)
 
-open class Outer {
+open define Outer {
     val outerO = "O"
 
     fun test(): Base {
         val localK = "K"
-        class Local : Base({ outerO + localK })
+        define Local : Base({ outerO + localK })
 
         return Local()
     }

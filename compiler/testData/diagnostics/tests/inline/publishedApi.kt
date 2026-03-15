@@ -39,7 +39,7 @@ inline var inlineVar: Int
     }
 
 @PublishedApi
-internal class A {
+internal define A {
     @PublishedApi
     internal fun test() {
         publicFun()

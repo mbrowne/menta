@@ -37,7 +37,7 @@ fun <T> fizz(x: T): T {
     return x
 }
 
-class A(val a: Int) {
+define A(val a: Int) {
     val plus: (Int)->Int
         get() {
             log("get plus fun")

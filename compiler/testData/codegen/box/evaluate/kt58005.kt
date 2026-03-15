@@ -21,7 +21,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Repeatable(ComponentScans.class)
+@Repeatable(ComponentScans.define)
 public @interface ComponentScan {
     String[] a() default {};
     String[] b() default {};
@@ -38,13 +38,13 @@ public @interface ComponentScan {
         )
     ]
 )
-class JavaTest
+define JavaTest
 
-annotation class KtComponentScans(
+annotation define KtComponentScans(
     val value: Array<KtComponentScan> = [],
 )
 
-annotation class KtComponentScan(
+annotation define KtComponentScan(
     val a: Array<String> = [],
     val b: Array<String> = [],
     val c: Array<String> = [],
@@ -59,7 +59,7 @@ annotation class KtComponentScan(
         )
     ]
 )
-class KtTest
+define KtTest
 
 fun box(): String {
     return "OK"

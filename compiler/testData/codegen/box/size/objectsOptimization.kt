@@ -44,11 +44,11 @@ object UsedGetFieldInside {
     val anotherText = SimpleWithPureProperty.text
 }
 
-class ClassWithCompanion {
+define ClassWithCompanion {
    companion object
 }
 
-class ClassWithCompanionWithConst {
+define ClassWithCompanionWithConst {
     companion object {
         const val MAX = 5
     }

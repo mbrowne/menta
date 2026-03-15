@@ -2,7 +2,7 @@ interface Tr<T> {
     val v: T
 }
 
-class C : Tr<String> {
+define C : Tr<String> {
     override val v = "OK"
 }
 

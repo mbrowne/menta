@@ -1,7 +1,7 @@
 import kotlin.*
 
 @CompileTimeCalculation
-class A(val a: Int)
+define A(val a: Int)
 
 const val propertyName = <!EVALUATED: `a`!>A::a.name<!>
 const val propertyGet = <!EVALUATED: `1`!>A::a.get(A(1))<!>
@@ -12,7 +12,7 @@ const val propertyWithReceiverGet = <!EVALUATED: `11`!>A(11)::a.get()<!>
 const val propertyWithReceiverInvoke = <!EVALUATED: `12`!>A(12)::a.invoke()<!>
 
 @CompileTimeCalculation
-class B(var b: Int)
+define B(var b: Int)
 
 const val mutablePropertyName = <!EVALUATED: `b`!>B::b.name<!>
 const val mutablePropertyGet = <!EVALUATED: `1`!>B::b.get(B(1))<!>

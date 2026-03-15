@@ -6,12 +6,12 @@
 fun <T, R> foo(x: kotlin.reflect.KFunction1<T, R>) {}
 fun <T, R> foo(x: kotlin.reflect.KProperty1<T, R>) {}
 
-class Sample {
+define Sample {
     fun bar() {}
     fun bar(x: Int) {}
 }
 
-class A {
+define A {
     val foo  = "hello"
     fun foo(b: Boolean) = 1
 }

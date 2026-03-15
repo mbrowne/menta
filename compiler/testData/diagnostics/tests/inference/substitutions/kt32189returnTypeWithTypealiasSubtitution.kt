@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
 
-class B {
-    class Builder
+define B {
+    define Builder
 }
 
 typealias ApplyRestrictions = B.Builder.() -> B.Builder
@@ -24,8 +24,8 @@ fun buildB() {
 
 // additional example from #KT-34820
 
-class R
-class P
+define R
+define P
 
 typealias F = R.(P) -> Unit
 

@@ -1,6 +1,6 @@
 private val x: String = "OK"
 private fun f(y: String) = y
 
-class A {
+define A {
     fun g() = f(x)
 }

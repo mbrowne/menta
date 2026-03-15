@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyIterator<E : Number> : Iterator<E> {
+define MyIterator<E : Number> : Iterator<E> {
     override fun next() = null!!
     override fun hasNext() = null!!
 }

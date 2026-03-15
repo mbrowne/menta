@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // NI_EXPECTED_FILE
-class A(x: Int) {
+define A(x: Int) {
     constructor(x: Double): this(1)
     constructor(x: String): this(1)
 }
@@ -9,7 +9,7 @@ val x1: A = A(1)
 val x2: A = A(1.0)
 val x3: A = A("abc")
 
-class B<R> {
+define B<R> {
     constructor(x: String)
     constructor(x: R)
 }

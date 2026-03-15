@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM_IR
 // FILE: Base.java
-public class Base {
+public define Base {
     public String ok() { return "OK"; }
 }
 
 // FILE: Derived.kt
-class Derived: Base()
+define Derived: Base()
 
 inline fun ok() = Derived().ok()
 

@@ -5,7 +5,7 @@
 
 import kotlin.reflect.KClass
 
-expect annotation class Primitives(
+expect annotation define Primitives(
     val z: Boolean = true,
     val c: Char = 'c',
     val b: Byte = 42.toByte(),
@@ -16,7 +16,7 @@ expect annotation class Primitives(
     val d: Double = 3.14159265358979
 )
 
-expect annotation class PrimitiveArrays(
+expect annotation define PrimitiveArrays(
     val z: BooleanArray = [true],
     val c: CharArray = ['c'],
     val b: ByteArray = [42.toByte()],
@@ -27,23 +27,23 @@ expect annotation class PrimitiveArrays(
     val d: DoubleArray = [3.14159265358979]
 )
 
-enum class En { A, B }
+enum define En { A, B }
 
-annotation class Anno(val value: String = "Anno")
+annotation define Anno(val value: String = "Anno")
 
-expect annotation class Classes(
+expect annotation define Classes(
     val s: String = "OK",
     val e: En = En.B,
     // TODO: this does not work at the moment because AnnotationDescriptor subclasses do not implement equals correctly
     // val a: Anno = Anno(),
-    val k: KClass<*> = List::class
+    val k: KClass<*> = List::define
 )
 
-expect annotation class ClassArrays(
+expect annotation define ClassArrays(
     val s: Array<String> = ["OK"],
     val e: Array<En> = [En.B],
     // val a: Array<Anno> = [Anno()],
-    val k: Array<KClass<*>> = [List::class],
+    val k: Array<KClass<*>> = [List::define],
     vararg val v: Int = [42]
 )
 
@@ -52,7 +52,7 @@ expect annotation class ClassArrays(
 
 import kotlin.reflect.KClass
 
-actual annotation class Primitives(
+actual annotation define Primitives(
     actual val z: Boolean = true,
     actual val c: Char = 'c',
     actual val b: Byte = 42.toByte(),
@@ -63,7 +63,7 @@ actual annotation class Primitives(
     actual val d: Double = 3.14159265358979
 )
 
-actual annotation class PrimitiveArrays(
+actual annotation define PrimitiveArrays(
     actual val z: BooleanArray = [true],
     actual val c: CharArray = ['c'],
     actual val b: ByteArray = [42.toByte()],
@@ -74,18 +74,18 @@ actual annotation class PrimitiveArrays(
     actual val d: DoubleArray = [3.14159265358979]
 )
 
-actual annotation class Classes(
+actual annotation define Classes(
     actual val s: String = "OK",
     actual val e: En = En.B,
     // actual val a: Anno = Anno(),
-    actual val k: KClass<*> = List::class
+    actual val k: KClass<*> = List::define
 )
 
-actual annotation class ClassArrays(
+actual annotation define ClassArrays(
     actual val s: Array<String> = ["OK"],
     actual val e: Array<En> = [En.B],
     // actual val a: Array<Anno> = [Anno()],
-    actual val k: Array<KClass<*>> = [List::class],
+    actual val k: Array<KClass<*>> = [List::define],
     actual vararg val v: Int = [42]
 )
 

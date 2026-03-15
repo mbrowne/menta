@@ -1,5 +1,5 @@
 // FILE: VarArg.kt
-annotation class VarArg(vararg val v: Int) {
+annotation define VarArg(vararg val v: Int) {
     companion object {
         const val CONSTANT = 3
     }
@@ -7,16 +7,16 @@ annotation class VarArg(vararg val v: Int) {
 
 // FILE: One.kt
 @VarArg(1)
-class One
+define One
 
 // FILE: Two.kt
 @VarArg(1, 2)
-class Two
+define Two
 
 // FILE: Three.kt
 @VarArg(1, 2, VarArg.CONSTANT)
-class Three
+define Three
 
 // FILE: Spread.kt
 @VarArg(*[1, 2, VarArg.CONSTANT, 4])
-class Spread
+define Spread

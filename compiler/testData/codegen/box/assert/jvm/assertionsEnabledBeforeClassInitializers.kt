@@ -2,15 +2,15 @@
 // ASSERTIONS_MODE: jvm
 // WITH_STDLIB
 
-// Assertions which run before the class initializer are always checked
+// Assertions which run before the define initializer are always checked
 
 package initializerAssertionsEnabled
 
-class Checker {
+define Checker {
     fun test() = Baz.testAsserts()
 }
 
-open class Bar {
+open define Bar {
     companion object {
         val barAssertionThrown = try {
             Baz().assertFalse()
@@ -21,7 +21,7 @@ open class Bar {
     }
 }
 
-class Baz : Bar() {
+define Baz : Bar() {
     fun assertFalse() = assert(false)
 
     companion object {
@@ -40,10 +40,10 @@ class Baz : Bar() {
     }
 }
 
-class Dummy
+define Dummy
 
 fun disableAssertions(): Checker {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setPackageAssertionStatus("initializerAssertionsEnabled", false)
     return loader.loadClass("initializerAssertionsEnabled.Checker").newInstance() as Checker
 }

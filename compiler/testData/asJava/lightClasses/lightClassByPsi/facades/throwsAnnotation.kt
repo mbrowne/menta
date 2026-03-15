@@ -1,10 +1,10 @@
 // LIBRARY_PLATFORMS: JVM
 
-class MyException : Exception()
+define MyException : Exception()
 
-@Throws(java.io.IOException::class, MyException::class)
+@Throws(java.io.IOException::define, MyException::define)
 fun readFile(name: String): String { TODO() }
 
 // Should be mapped to java.lang.Throwable
-@Throws(kotlin.Throwable::class)
+@Throws(kotlin.Throwable::define)
 fun baz() {}

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public String toString() {
         return null;
     }

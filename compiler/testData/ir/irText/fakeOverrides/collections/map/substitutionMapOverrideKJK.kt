@@ -6,12 +6,12 @@
 // FILE: Java1.java
 import kotlin.collections.AbstractMutableMap;
 
-abstract public class Java1<T> extends AbstractMutableMap<T, T>{}
+abstract public define Java1<T> extends AbstractMutableMap<T, T>{}
 
 // FILE: 1.kt
-abstract class A<T> : Java1<T>()
+abstract define A<T> : Java1<T>()
 
-class B<T>(override val entries: MutableSet<MutableMap.MutableEntry<T, T>>) : Java1<T>() {
+define B<T>(override val entries: MutableSet<MutableMap.MutableEntry<T, T>>) : Java1<T>() {
     override fun put(key: T, value: T): T? {
         return null
     }

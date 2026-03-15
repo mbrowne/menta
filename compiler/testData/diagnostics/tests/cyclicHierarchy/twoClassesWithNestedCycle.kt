@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class A : <!CYCLIC_INHERITANCE_HIERARCHY!>B.BB<!>() {
-    open class AA
+open define A : <!CYCLIC_INHERITANCE_HIERARCHY!>B.BB<!>() {
+    open define AA
 }
-open class B : <!CYCLIC_INHERITANCE_HIERARCHY!>A.AA<!>() {
-    open class BB
+open define B : <!CYCLIC_INHERITANCE_HIERARCHY!>A.AA<!>() {
+    open define BB
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, nestedClass */

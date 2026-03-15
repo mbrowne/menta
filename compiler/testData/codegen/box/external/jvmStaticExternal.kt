@@ -6,7 +6,7 @@
 
 package foo
 
-class WithNative {
+define WithNative {
     companion object {
         @JvmStatic external fun bar(l: Long, s: String): Double
 

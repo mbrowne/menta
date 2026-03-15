@@ -3,7 +3,7 @@
 // KT-61141: kotlin.collections.HashMap instead of java.util.HashMap
 // IGNORE_BACKEND: NATIVE
 
-class C {
+define C {
     val test1 = 0
 
     val test2: Int get() = 0

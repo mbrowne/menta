@@ -1,5 +1,5 @@
 // KJS_WITH_FULL_RUNTIME
-class ArrayWrapper<T>() {
+define ArrayWrapper<T>() {
     val contents = ArrayList<T>()
 
     fun add(item: T) {

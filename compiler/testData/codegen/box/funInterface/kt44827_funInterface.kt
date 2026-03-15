@@ -12,7 +12,7 @@ fun invoke(j: J): String {
     return j()
 }
 
-class A(val result: String)
+define A(val result: String)
 
 fun box(): String {
     var a = A("OK")

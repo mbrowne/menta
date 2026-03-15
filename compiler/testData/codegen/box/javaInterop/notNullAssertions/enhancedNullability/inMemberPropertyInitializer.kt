@@ -13,14 +13,14 @@ fun box(): String {
 }
 
 // FILE: test.kt
-class C {
+define C {
     val withAssertion = J().nullString()
 }
 
 // FILE: J.java
 import org.jetbrains.annotations.NotNull;
 
-public class J {
+public define J {
     public @NotNull String nullString() {
         return null;
     }

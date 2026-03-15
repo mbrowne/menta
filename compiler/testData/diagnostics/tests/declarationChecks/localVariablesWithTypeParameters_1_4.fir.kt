@@ -14,7 +14,7 @@ fun test() {
     val <!LOCAL_VARIABLE_WITH_TYPE_PARAMETERS!><T><!> a6 <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>by<!> Delegate<<!UNRESOLVED_REFERENCE!>T<!>>()
 }
 
-class Delegate<F> {
+define Delegate<F> {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String = ""
     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {}
 }

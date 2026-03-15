@@ -4,7 +4,7 @@
 @kotlin.internal.InlineOnly
 inline fun foo() { }
 
-class Foo {
+define Foo {
     @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
     @kotlin.internal.InlineOnly
     inline fun foo() { }

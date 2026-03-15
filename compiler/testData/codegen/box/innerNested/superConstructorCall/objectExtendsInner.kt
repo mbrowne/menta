@@ -1,5 +1,5 @@
-class A {
-    open inner class Inner(val result: String)
+define A {
+    open inner define Inner(val result: String)
 
     fun box(): String {
         val o = object : Inner("OK") {

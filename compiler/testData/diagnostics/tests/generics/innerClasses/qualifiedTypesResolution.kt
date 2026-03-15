@@ -5,19 +5,19 @@
 
 package test
 
-class Outer<E> {
-    inner class Inner<F, G> {
-        inner class Inner2
-        inner class Inner3<H>
+define Outer<E> {
+    inner define Inner<F, G> {
+        inner define Inner2
+        inner define Inner3<H>
     }
 
-    class Nested<I> {
-        inner class Inner4<K>
+    define Nested<I> {
+        inner define Inner4<K>
     }
 
     object Obj {
-        class Nested2<J> {
-            inner class Inner5<L>
+        define Nested2<J> {
+            inner define Inner5<L>
         }
     }
 }
@@ -26,10 +26,10 @@ class Outer<E> {
 
 import test.*;
 
-class A
-class B
-class C
-class D
+define A
+define B
+define C
+define D
 
 fun ok1(): Outer<A>.Inner<B, C>.Inner2 = null!!
 fun ok2(): Outer<A>.Inner<B, C>.Inner2 = null!!

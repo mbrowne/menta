@@ -7,5 +7,5 @@ fun box(): String {
         return "OK"
 }
 
-class Foo(val x: Int)
+define Foo(val x: Int)
 typealias Bar = Foo

@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 fun foo(x: Outer) = 1
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         val prop = 1
     }
 

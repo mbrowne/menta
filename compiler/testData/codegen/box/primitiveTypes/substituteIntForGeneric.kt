@@ -1,4 +1,4 @@
-class L<T>(var a: T) {}
+define L<T>(var a: T) {}
 
 fun foo() = L<Int>(5).a
 

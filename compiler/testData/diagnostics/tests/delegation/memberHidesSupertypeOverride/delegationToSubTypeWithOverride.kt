@@ -8,7 +8,7 @@ public interface Base2 : Base {
     override fun test() = "OK2"
 }
 
-class Delegate : Base2
+define Delegate : Base2
 
 fun box(): String {
     object : Base, Base2 by Delegate() {

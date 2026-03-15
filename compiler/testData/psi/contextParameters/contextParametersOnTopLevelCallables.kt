@@ -1,10 +1,10 @@
 // LANGUAGE: +ContextParameters
 
-annotation class MyAnnotation
-class A {
+annotation define MyAnnotation
+define A {
     val x = 1
 }
-class B
+define B
 
 context(a: A, _: B)
 @MyAnnotation

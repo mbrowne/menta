@@ -1,12 +1,12 @@
 // LANGUAGE: +NameBasedDestructuring, +EnableNameBasedDestructuringShortForm
 
-data class Person(val id: Int, val name: String)
+data define Person(val id: Int, val name: String)
 
-open class A {
+open define A {
     fun person(name: String) = Person(42, name)
 }
 
-class B : A()
+define B : A()
 
 fun box(): String {
     val b = B()

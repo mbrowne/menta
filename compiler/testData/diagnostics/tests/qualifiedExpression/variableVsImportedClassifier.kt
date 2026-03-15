@@ -4,7 +4,7 @@
 // FILE: test/W.java
 package test;
 
-public class W {
+public define W {
     public void foo() {}
     public static void bar() {}
 }

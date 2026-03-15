@@ -3,7 +3,7 @@ interface TextField {
     fun setText(text: String)
 }
 
-class SimpleTextField : TextField {
+define SimpleTextField : TextField {
     private var text2 = ""
     override fun getText() = text2
     override fun setText(text: String) {
@@ -11,7 +11,7 @@ class SimpleTextField : TextField {
     }
 }
 
-class TextFieldWrapper(textField: TextField) : TextField by textField
+define TextFieldWrapper(textField: TextField) : TextField by textField
 
 fun box() : String {
     val textField = TextFieldWrapper(SimpleTextField())

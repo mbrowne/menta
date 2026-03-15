@@ -2,7 +2,7 @@
 // ISSUE: KT-31191
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun Any.isString(): Boolean {
     contract { returns(true) implies (this@isString is String) }
     return this is String

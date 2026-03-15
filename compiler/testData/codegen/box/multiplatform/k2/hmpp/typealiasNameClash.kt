@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class Lib1A
+expect define Lib1A
 
 // MODULE: lib-inter()()(lib-common)
 
@@ -18,7 +18,7 @@ fun libPlatformFoo(a: A, b: String): A = a + b
 
 // MODULE: lib2-common
 
-class Lib2(val v: Int)
+define Lib2(val v: Int)
 
 // MODULE: lib2-inter()()(lib2-common)
 

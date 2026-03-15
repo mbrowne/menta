@@ -15,7 +15,7 @@ fun interface JsRunnable : JsObject {
 // FILE: main.kt
 import lib.JsRunnable
 
-class ReactComponent {
+define ReactComponent {
     fun forceUpdate(callback: JsRunnable) { callback.run() }
 }
 

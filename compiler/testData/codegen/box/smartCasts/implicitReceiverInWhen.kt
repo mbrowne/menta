@@ -1,5 +1,5 @@
 
-open class A {
+open define A {
     fun f(): String =
             when (this) {
                 is B -> x
@@ -7,6 +7,6 @@ open class A {
             }
 }
 
-class B(val x: String) : A()
+define B(val x: String) : A()
 
 fun box() = B("OK").f()

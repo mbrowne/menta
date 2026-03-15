@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class List<out T>(val size : Int) {
+define List<out T>(val size : Int) {
     companion object {
         val Nil = List<Nothing>(0)
     }

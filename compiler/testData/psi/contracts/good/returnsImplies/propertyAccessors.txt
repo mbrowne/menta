@@ -50,7 +50,7 @@ KtFile: propertyAccessors.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(var)('var')

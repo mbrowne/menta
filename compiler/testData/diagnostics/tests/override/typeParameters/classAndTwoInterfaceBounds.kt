@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 interface I1
 interface I2
-open class C
+open define C
 
 interface A {
     fun <T> foo(t: T) where T : I1, T : C, T : I2

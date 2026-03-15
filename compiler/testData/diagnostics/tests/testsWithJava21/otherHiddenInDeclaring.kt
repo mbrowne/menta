@@ -19,7 +19,7 @@ fun String.<!EXTENSION_SHADOWED_BY_MEMBER!>resolveConstantDesc<!>(lookup: Method
 
 fun <E : Enum<E>> Enum<E>.<!EXTENSION_SHADOWED_BY_MEMBER!>describeConstable<!>() = 1
 
-enum class MyEnum { E }
+enum define MyEnum { E }
 
 fun test(c: Collection<String>, l: List<String>, s: Set<String>) {
     consumeInt(<!TYPE_MISMATCH!>c.<!DEPRECATION, JAVA_MODULE_DOES_NOT_EXPORT_PACKAGE!>toArray<!> { i -> arrayOfNulls<String>(i) }<!>)

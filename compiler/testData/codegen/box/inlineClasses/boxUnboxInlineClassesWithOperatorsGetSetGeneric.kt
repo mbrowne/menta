@@ -3,12 +3,12 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt<T: Int>(private val value: T) {
+value define UInt<T: Int>(private val value: T) {
     fun asInt() = value
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UIntArray(private val intArray: IntArray) {
+value define UIntArray(private val intArray: IntArray) {
     operator fun get(index: Int): UInt<Int> = UInt<Int>(intArray[index])
 
     operator fun set(index: Int, value: UInt<Int>) {

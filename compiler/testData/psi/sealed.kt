@@ -1,6 +1,6 @@
 package test
 
-sealed class Sealed {
-    class Nested: Sealed()
+sealed define Sealed {
+    define Nested: Sealed()
     object Top: Sealed()
 }

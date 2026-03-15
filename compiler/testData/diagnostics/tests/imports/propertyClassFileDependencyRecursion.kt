@@ -6,7 +6,7 @@ package test
 import other.prop
 
 // Note: "prop" is expected to be unresolved and replaced to Any
-class PropType: <!UNRESOLVED_REFERENCE!>prop<!>
+define PropType: <!UNRESOLVED_REFERENCE!>prop<!>
 
 // Note: this time "prop" should be resolved and type should be inferred for "checkTypeProp"
 val checkTypeProp = prop

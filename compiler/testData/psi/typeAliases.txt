@@ -31,7 +31,7 @@ KtFile: typeAliases.kt
           PsiElement(IDENTIFIER)('AnnotationTarget')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer')
     TYPE_PARAMETER_LIST
@@ -51,7 +51,7 @@ KtFile: typeAliases.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
         TYPE_PARAMETER_LIST
@@ -187,12 +187,12 @@ KtFile: typeAliases.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Ann')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('TypeAliases')
     PsiWhiteSpace(' ')
@@ -200,7 +200,7 @@ KtFile: typeAliases.kt
       PsiElement(LBRACE)('{')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('OrderB')
       PsiWhiteSpace('\n\n    ')
@@ -462,7 +462,7 @@ KtFile: typeAliases.kt
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('OrderA')
       PsiWhiteSpace('\n')
@@ -547,6 +547,6 @@ KtFile: typeAliases.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('SomeClass')

@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class R<T: R<T>>
+define R<T: R<T>>
 
-open class Base<T> {
+open define Base<T> {
     fun foo(r: R<*>) {}
 }
 
-class Derived: Base<String>()
+define Derived: Base<String>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, nullableType, starProjection, typeConstraint,
 typeParameter */

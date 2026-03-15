@@ -1,6 +1,6 @@
 package test
 
-class AbstractClassImpl : AbstractClass() {
+define AbstractClassImpl : AbstractClass() {
 
     override fun implementMe() {}
 

@@ -4,7 +4,7 @@
 
 package test
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 

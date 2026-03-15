@@ -7,7 +7,7 @@
 package p1
 
 @SinceKotlin("1.1")
-class A {
+define A {
     fun m1() {}
 }
 
@@ -16,7 +16,7 @@ class A {
 
 package p2
 
-class A {
+define A {
     fun m2() {}
 }
 

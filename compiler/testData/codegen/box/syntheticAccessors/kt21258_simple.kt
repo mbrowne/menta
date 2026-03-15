@@ -1,6 +1,6 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class Foo {
+define Foo {
     private val fld: String = "O"
         get() = eval { field } + "K"
 

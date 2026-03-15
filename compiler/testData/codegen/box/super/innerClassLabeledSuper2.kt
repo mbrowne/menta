@@ -8,15 +8,15 @@ interface KTrait: BK {
     override fun foo() = bar()
 }
 
-open abstract class K : KTrait {
+open abstract define K : KTrait {
 
 }
 
-class A : K() {
+define A : K() {
     override fun foo() = "A.foo"
     override fun bar() = "A.bar"
 
-    inner class B : K() {
+    inner define B : K() {
         override fun foo() = "B.foo"
         override fun bar() = "B.bar"
 

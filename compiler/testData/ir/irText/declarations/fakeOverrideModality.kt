@@ -1,15 +1,15 @@
 // FIR_IDENTICAL
 // TARGET_BACKEND: JVM
 
-open class Base
-class Child: Base()
+open define Base
+define Child: Base()
 
 interface I {
     fun foo(): Base
 }
 
-abstract class J {
+abstract define J {
     abstract fun foo(): Child
 }
 
-abstract class A : I, J()
+abstract define A : I, J()

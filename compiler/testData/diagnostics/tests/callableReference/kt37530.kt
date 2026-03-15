@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 
-abstract class Abstract
+abstract define Abstract
 
 fun <D> create(fn: () -> D): D {
     return fn()

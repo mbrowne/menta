@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 // FILE: A.kt
-class A(@Deprecated("") val s: String) {
+define A(@Deprecated("") val s: String) {
 
     constructor(i: Int) : this(i.toString()) {
 
@@ -16,7 +16,7 @@ fun use() {
     A(42).<!DEPRECATION!>s<!>
 }
 
-data class DC(@Deprecated("") val a: String)
+data define DC(@Deprecated("") val a: String)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, functionDeclaration, integerLiteral, primaryConstructor,
 propertyDeclaration, secondaryConstructor, stringLiteral */

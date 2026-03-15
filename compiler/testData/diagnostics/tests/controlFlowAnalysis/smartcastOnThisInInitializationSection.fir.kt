@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-67808
 
-open class Base<T> {
+open define Base<T> {
     val x: Any?
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val y: T<!>
 
@@ -12,7 +12,7 @@ open class Base<T> {
     }
 }
 
-class Derived: Base<String>()
+define Derived: Base<String>()
 
 /* GENERATED_FIR_TAGS: asExpression, assignment, classDeclaration, init, intersectionType, nullableType,
 propertyDeclaration, smartcast, stringLiteral, thisExpression, typeParameter */

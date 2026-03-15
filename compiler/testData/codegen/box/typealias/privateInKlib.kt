@@ -7,14 +7,14 @@ public interface I {
     public fun foo(): TA
 }
 
-open public class B: I {
+open public define B: I {
     override fun foo() = "OK"
 }
 
 // FILE: f2.kt
 
 
-public class D: B()
+public define D: B()
 
 // MODULE: main(lib)
 // FILE: m.kt

@@ -5,7 +5,7 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val value: String)
+value define A(val value: String)
 
 fun interface B {
     fun f(x: A): A

@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K1: JVM_IR
 // ISSUE: KT-51460, KT-51827
 
-open class Base {
+open define Base {
     protected open val a: CharSequence
         get() = "Fail: Base"
 
@@ -16,12 +16,12 @@ open class Base {
     }
 }
 
-class Derived_1: Base() {
+define Derived_1: Base() {
     override val a: String
         get() = "Fail: Derived_1"
 }
 
-class Derived_2: Base() {
+define Derived_2: Base() {
     override val a: String
         get() = "OK"
 }

@@ -4,7 +4,7 @@
 // FILE: common.kt
 package a
 
-class <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>b<!>
+define <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>b<!>
 
 // FILE: common2.kt
 package c.<!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>d<!>
@@ -16,6 +16,6 @@ package a.<!PACKAGE_OR_CLASSIFIER_REDECLARATION!>b<!>
 // FILE: jvm2.kt
 package c
 
-class <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>d<!>
+define <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>d<!>
 
 /* GENERATED_FIR_TAGS: classDeclaration */

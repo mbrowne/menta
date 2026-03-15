@@ -3,26 +3,26 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-open expect class A1() {
+open expect define A1() {
     open fun foo(): String
 }
 
-expect class B1() : A1
+expect define B1() : A1
 
 fun test1() = B1().foo()
 
-open class A2() {
+open define A2() {
     open fun foo(): String = "OK"
 }
 
-expect class B2() : A2
+expect define B2() : A2
 
 fun test2() = B2().foo()
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
-open actual class A1 {
+open actual define A1 {
     open actual fun foo(): String = "OK"
 }
 

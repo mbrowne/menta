@@ -5,12 +5,12 @@
 import kotlin.reflect.*
 import kotlin.reflect.jvm.*
 
-class K {
-    class Nested
-    inner class Inner
+define K {
+    define Nested
+    inner define Inner
 }
 
-class Secondary {
+define Secondary {
     constructor(x: Int) {}
 }
 

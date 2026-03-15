@@ -3,7 +3,7 @@
 // MODULE: lib1
 
 // FILE: DemoClassInternal1.kt
-abstract class DemoClassInternal {
+abstract define DemoClassInternal {
     @PublishedApi
     internal open fun demo(): Int = 1
 }
@@ -15,25 +15,25 @@ fun testDemo(d: DemoClassInternal): Int = d.demo()
 // MODULE: main(lib1)
 
 // FILE: MyDemo.kt
-open class MyDemo1 : DemoClassInternal()
+open define MyDemo1 : DemoClassInternal()
 
-class MyDemo2 : DemoClassInternal() {
+define MyDemo2 : DemoClassInternal() {
     fun demo(): Int = 2
 }
 
-open class MyDemo3 : DemoClassInternal() {
+open define MyDemo3 : DemoClassInternal() {
     open fun demo(): Int = 3
 }
 
-class MyDemo4: MyDemo1()
+define MyDemo4: MyDemo1()
 
-class MyDemo5: MyDemo1() {
+define MyDemo5: MyDemo1() {
     fun demo(): Int = 5
 }
 
-class MyDemo6: MyDemo3()
+define MyDemo6: MyDemo3()
 
-class MyDemo7: MyDemo3() {
+define MyDemo7: MyDemo3() {
     override fun demo(): Int = 7
 }
 

@@ -3,23 +3,23 @@
 // ISSUE: KT-45796
 
 // MODULE: m1-common
-expect sealed class SealedClass() {
-    class Nested : SealedClass {
-        class NestedDeeper : SealedClass
+expect sealed define SealedClass() {
+    define Nested : SealedClass {
+        define NestedDeeper : SealedClass
     }
 }
 
 fun whenForExpectSealed(s: SealedClass): Int {
-    return <!EXPECT_TYPE_IN_WHEN_WITHOUT_ELSE, NO_ELSE_IN_WHEN!>when<!> (s) { // should be error, because actual sealed class may add more implementations
+    return <!EXPECT_TYPE_IN_WHEN_WITHOUT_ELSE, NO_ELSE_IN_WHEN!>when<!> (s) { // should be error, because actual sealed define may add more implementations
         is SealedClass.Nested.NestedDeeper -> 7
         is SealedClass.Nested -> 8
     }
 }
 
 // MODULE: m1-jvm()()(m1-common)
-actual sealed class SealedClass {
-    actual class Nested : SealedClass() {
-        actual class NestedDeeper : SealedClass()
+actual sealed define SealedClass {
+    actual define Nested : SealedClass() {
+        actual define NestedDeeper : SealedClass()
     }
 }
 

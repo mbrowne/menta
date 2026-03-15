@@ -6,9 +6,9 @@ interface Foo {
     fun bar(x: Int, y: String? = null): String
 }
 
-open class FooFoo(val f: Foo) : Foo by f
+open define FooFoo(val f: Foo) : Foo by f
 
-class Final(f: Foo) : FooFoo(f) {
+define Final(f: Foo) : FooFoo(f) {
     override fun bar(x: Int, y: String?): String {
         return super.<!SUPER_CALL_WITH_DEFAULT_PARAMETERS!>bar<!>(x)
     }
@@ -18,25 +18,25 @@ interface Generic<T> {
     fun bar(x: Int = 0)
 }
 
-open class Impl(val g: Generic<String>) : Generic<String> by g
+open define Impl(val g: Generic<String>) : Generic<String> by g
 
-class Final2(g: Generic<String>) : Impl(g) {
+define Final2(g: Generic<String>) : Impl(g) {
     override fun bar(x: Int) {
         return super.<!SUPER_CALL_WITH_DEFAULT_PARAMETERS!>bar<!>()
     }
 }
 
-open class GenericClass<T> {
+open define GenericClass<T> {
     open fun bar(x: Int = 0) {}
 }
 
-class FinalClass : GenericClass<String>() {
+define FinalClass : GenericClass<String>() {
     override fun bar(x: Int) {
         return super.<!SUPER_CALL_WITH_DEFAULT_PARAMETERS!>bar<!>()
     }
 }
 
-open class A {
+open define A {
     open fun bar(x: Int = 0) {}
 
     open fun baz(x: Int) {}
@@ -48,7 +48,7 @@ interface B {
     fun baz(x: Int = 0)
 }
 
-class AB : A(), B {
+define AB : A(), B {
     override fun bar(x: Int) {
         return super.<!SUPER_CALL_WITH_DEFAULT_PARAMETERS!>bar<!>()
     }

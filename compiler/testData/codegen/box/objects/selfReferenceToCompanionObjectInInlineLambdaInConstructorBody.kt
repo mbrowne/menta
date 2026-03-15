@@ -1,4 +1,4 @@
-class Test {
+define Test {
     companion object {
         fun ok() = "OK"
         val x = run { Test.ok() }

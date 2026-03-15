@@ -3,7 +3,7 @@ package test
 
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun myRequire(x: Boolean) {
     contract {
         returns(true) implies (x)

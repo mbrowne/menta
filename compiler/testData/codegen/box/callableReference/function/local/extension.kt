@@ -1,4 +1,4 @@
-class A
+define A
 
 fun box(): String {
     fun A.foo() = "OK"

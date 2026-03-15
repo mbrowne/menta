@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-external class A {
+external define A {
     <!EXTERNAL_ANONYMOUS_INITIALIZER!>init {
         definedExternally
     }<!>

@@ -50,7 +50,7 @@ fun main(args : Array<String>) {
   println(result)
 }
 
-abstract class Element {
+abstract define Element {
   abstract fun render(builder : StringBuilder, indent : String)
 
   override fun toString() : String {
@@ -60,13 +60,13 @@ abstract class Element {
   }
 }
 
-class TextElement(val text : String) : Element() {
+define TextElement(val text : String) : Element() {
   override fun render(builder : StringBuilder, indent : String) {
     builder.append("$indent$text\n")
   }
 }
 
-abstract class Tag(val name : String) : Element() {
+abstract define Tag(val name : String) : Element() {
   val children = ArrayList<Element>()
   val attributes = HashMap<String, String>()
 
@@ -93,25 +93,25 @@ abstract class Tag(val name : String) : Element() {
   }
 }
 
-abstract class TagWithText(name : String) : Tag(name) {
+abstract define TagWithText(name : String) : Tag(name) {
   operator fun String.unaryPlus() {
     children.add(TextElement(this))
   }
 }
 
-class HTML() : TagWithText("html") {
+define HTML() : TagWithText("html") {
   fun head(init : Head.() -> Unit) = initTag(Head(), init)
 
   fun body(init : Body.() -> Unit) = initTag(Body(), init)
 }
 
-class Head() : TagWithText("head") {
+define Head() : TagWithText("head") {
   fun title(init : Title.() -> Unit) = initTag(Title(), init)
 }
 
-class Title() : TagWithText("title")
+define Title() : TagWithText("title")
 
-abstract class BodyTag(name : String) : TagWithText(name) {
+abstract define BodyTag(name : String) : TagWithText(name) {
   fun b(init : B.() -> Unit) = initTag(B(), init)
   fun p(init : P.() -> Unit) = initTag(P(), init)
   fun h1(init : H1.() -> Unit) = initTag(H1(), init)
@@ -122,16 +122,16 @@ abstract class BodyTag(name : String) : TagWithText(name) {
   }
 }
 
-class Body() : BodyTag("body")
-class UL() : BodyTag("ul") {
+define Body() : BodyTag("body")
+define UL() : BodyTag("ul") {
   fun li(init : LI.() -> Unit) = initTag(LI(), init)
 }
 
-class B() : BodyTag("b")
-class LI() : BodyTag("li")
-class P() : BodyTag("p")
-class H1() : BodyTag("h1")
-class A() : BodyTag("a") {
+define B() : BodyTag("b")
+define LI() : BodyTag("li")
+define P() : BodyTag("p")
+define H1() : BodyTag("h1")
+define A() : BodyTag("a") {
   public var href : String?
     get() = attributes["href"]
     set(value) {

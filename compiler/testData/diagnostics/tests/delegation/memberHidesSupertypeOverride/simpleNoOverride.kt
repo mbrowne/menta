@@ -4,9 +4,9 @@ interface Base {
     fun test() = "OK"
 }
 
-open class Base2 : Base
+open define Base2 : Base
 
-class Delegate : Base
+define Delegate : Base
 
 fun box(): String {
     object : Base2(), Base by Delegate() {

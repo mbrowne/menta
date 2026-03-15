@@ -1,7 +1,7 @@
 package foo
 
 
-class Foo {
+define Foo {
 
     inline fun inlineFoo(crossinline s: () -> Unit) {
         val localObject = object {
@@ -19,7 +19,7 @@ class Foo {
 }
 
 
-class Bar {
+define Bar {
     fun callToInline() {
         Foo().inlineFoo { 1 }
     }

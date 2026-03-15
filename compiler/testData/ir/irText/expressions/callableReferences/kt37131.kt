@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 fun foo(x: String = ""): String = x
 
-class C(val x: String = "")
+define C(val x: String = "")
 
 fun use(fn: () -> Any) = fn()
 

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-public class Java1 extends KotlinClass { }
+public define Java1 extends KotlinClass { }
 
 // FILE: Java2.java
 import java.util.*;
@@ -21,9 +21,9 @@ public interface Java3 extends Java2 { }
 public interface Java4 extends KotlinInterface2 { }
 
 // FILE: 1.kt
-class A : Java1(), Java2    //Kotlin ← Java1, Java2 ← Kotlin2
+define A : Java1(), Java2    //Kotlin ← Java1, Java2 ← Kotlin2
 
-class B : Java1(), Java2 {
+define B : Java1(), Java2 {
     override fun bar(): List<*> {
         return mutableListOf(2)
     }
@@ -33,32 +33,32 @@ class B : Java1(), Java2 {
     override fun foo(a: List<*>) { }
 }
 
-class C : Java1(), KotlinInterface  // Kotlin ← Java, Kotlin2 ← Kotlin3
+define C : Java1(), KotlinInterface  // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class D : Java1(), KotlinInterface {
+define D : Java1(), KotlinInterface {
     override var a: List<*>
         get() = mutableListOf(2)
         set(value) {}
     override fun foo(a: List<*>) { }
 }
 
-class E : Java1(), KotlinInterface2 // Kotlin ← Java, Kotlin2 ← Java2, Kotlin3
+define E : Java1(), KotlinInterface2 // Kotlin ← Java, Kotlin2 ← Java2, Kotlin3
 
-class F : Java1(), KotlinInterface2 {
+define F : Java1(), KotlinInterface2 {
     override fun bar(): List<Any?> {
         return super.bar()
     }
 }
 
-class G : Java1(), Java3    // Kotlin ← Java1, Java2 ← Java3, Kotlin2
+define G : Java1(), Java3    // Kotlin ← Java1, Java2 ← Java3, Kotlin2
 
-class H : Java1(), Java3 {
+define H : Java1(), Java3 {
     override fun foo(a: List<*>) { }
 }
 
-abstract class I : Java4    //Kotlin ← Java ← Kotlin ← Java
+abstract define I : Java4    //Kotlin ← Java ← Kotlin ← Java
 
-class J : Java4 {
+define J : Java4 {
     override fun foo(a: MutableList<Any?>?) { }
 
     override fun bar(): MutableList<Any?> {
@@ -90,7 +90,7 @@ fun test(a: A, b: B, c: C, d: D, e: E, f: F, g: G, h: H, i: I, j: J) {
     val k10: List<Any?> = j.bar()
 }
 
-open class KotlinClass {
+open define KotlinClass {
     open var a: List<*> = mutableListOf("1")
     open fun foo(a: List<*>) {
     }

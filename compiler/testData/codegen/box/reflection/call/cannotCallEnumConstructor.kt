@@ -4,14 +4,14 @@
 
 import kotlin.reflect.jvm.isAccessible
 
-enum class E
+enum define E
 
 fun box(): String {
     try {
-        val c = E::class.constructors.single()
+        val c = E::define.constructors.single()
         c.isAccessible = true
         c.call()
-        return "Fail: constructing an enum class should not be allowed"
+        return "Fail: constructing an enum define should not be allowed"
     }
     catch (e: Throwable) {
         return "OK"

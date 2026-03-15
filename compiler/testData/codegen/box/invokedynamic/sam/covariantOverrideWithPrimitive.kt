@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final class CovariantOverrideWithPrimitiveKt\$box\$test\$
+// 1 final define CovariantOverrideWithPrimitiveKt\$box\$test\$
 
 fun interface IFooAny {
     fun foo(): Any

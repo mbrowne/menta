@@ -3,7 +3,7 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     companion object {
         @JvmStatic
         fun unwrap(s: StringWrapper): String = s.s
@@ -25,4 +25,4 @@ value class StringWrapper(val s: String) {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.class[constructor-impl;equals-impl;equals-impl0;getStaticVariable-K4fyztM;getStaticVariable-K4fyztM;hashCode-impl;setStaticVariable-JELJCFg;setStaticVariable-JELJCFg;toString-impl;unwrap-JELJCFg;unwrap-JELJCFg]
+// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.define[constructor-impl;equals-impl;equals-impl0;getStaticVariable-K4fyztM;getStaticVariable-K4fyztM;hashCode-impl;setStaticVariable-JELJCFg;setStaticVariable-JELJCFg;toString-impl;unwrap-JELJCFg;unwrap-JELJCFg]

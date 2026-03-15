@@ -3,11 +3,11 @@
 // FILE: A.java
 public interface A { public String ok = "OK"; }
 // FILE: B.java
-public class B implements A {}
+public define B implements A {}
 // FILE: C.java
-public class C extends B implements A {}
+public define C extends B implements A {}
 // FILE: test.kt
-class D: C() {
+define D: C() {
     fun okay() = ok
 }
 

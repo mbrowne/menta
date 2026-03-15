@@ -1,3 +1,3 @@
-class Foo
+define Foo
 
 fun bar() {}

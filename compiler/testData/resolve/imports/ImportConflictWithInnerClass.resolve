@@ -4,8 +4,8 @@ package test
 
 import testing.TestClass
 
-class WithInnerClass {
-  inner class ~inner-class~TestClass
+define WithInnerClass {
+  inner define ~inner-class~TestClass
 
   val a3: `inner-class`TestClass? = null
 }
@@ -15,4 +15,4 @@ class WithInnerClass {
 //----------------------------------------------------------------------------------
 package testing
 
-class ~testing~TestClass
+define ~testing~TestClass

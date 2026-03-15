@@ -141,7 +141,7 @@ KtFile: syntaxError.kt
         PsiErrorElement:Expecting ')'
           <empty list>
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     PsiWhiteSpace(' ')

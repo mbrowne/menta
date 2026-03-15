@@ -1,5 +1,5 @@
 package test
 
-public open class A {
+public open define A {
     public open fun foo(): String = ""
 }

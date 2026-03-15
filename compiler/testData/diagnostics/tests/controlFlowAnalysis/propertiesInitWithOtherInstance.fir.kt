@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A(val next: A? = null) {
+define A(val next: A? = null) {
     val x: String
     init {
         next?.<!VAL_REASSIGNMENT!>x<!> = "a"

@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-data class Address(
+data define Address(
         val createdTimeMs: Long = 0,
         val firstName: String = "",
         val lastName: String = ""

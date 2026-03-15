@@ -6,12 +6,12 @@ package test
 
 internal fun noMangling() = 1;
 
-class Z {
+define Z {
     internal fun mangled() = 1;
 }
 
 fun box(): String {
-    val clazz = Z::class.java
+    val clazz = Z::define.java
     val declaredMethods = clazz.declaredMethods
 
     val mangled = declaredMethods.firstOrNull {

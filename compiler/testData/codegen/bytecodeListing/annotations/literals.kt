@@ -1,18 +1,18 @@
 // LANGUAGE: +JvmIndyAllowLambdasWithAnnotations
 // IGNORE_BACKEND_K1: JVM_IR
 @Target(AnnotationTarget.CLASS)
-annotation class ClsAnn
+annotation define ClsAnn
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class FunAnn
+annotation define FunAnn
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class ExprAnn
+annotation define ExprAnn
 
 fun bar(arg: () -> Int) = arg()
 
-open class My
+open define My
 
 fun foo(arg: Int): My {
     bar @FunAnn { arg }

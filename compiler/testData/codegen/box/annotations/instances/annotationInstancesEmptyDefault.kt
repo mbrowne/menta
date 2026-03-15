@@ -7,30 +7,30 @@ import kotlin.reflect.KClass
 import kotlin.test.assertTrue as assert
 import kotlin.test.assertEquals
 
-enum class E { A, B }
+enum define E { A, B }
 
-annotation class A()
+annotation define A()
 
-annotation class B(val a: A = A())
+annotation define B(val a: A = A())
 
-annotation class C(
+annotation define C(
     val i: Int = 42,
     val b: B = B(),
-    val kClass: KClass<*> = B::class,
-    val kClassArray: Array<KClass<*>> = [E::class, A::class],
+    val kClass: KClass<*> = B::define,
+    val kClassArray: Array<KClass<*>> = [E::define, A::define],
     val e: E = E.B,
     val aS: Array<String> = arrayOf("a", "b"),
     val aI: IntArray = intArrayOf(1, 2)
 )
 
-annotation class EmptyDefaultArrays(
+annotation define EmptyDefaultArrays(
     val kClassArray: Array<KClass<*>> = [],
     val intArray: IntArray = [],
     val stringArray: Array<String> = [],
     val enumArray : Array<E> = []
 )
 
-annotation class Partial(
+annotation define Partial(
     val i: Int = 42,
     val s: String = "foo",
     val e: E = E.A
@@ -40,7 +40,7 @@ fun box(): String {
     val c = C()
     assertEquals(42, c.i)
     assertEquals(A(), c.b.a)
-    assertEquals(B::class, c.kClass)
+    assertEquals(B::define, c.kClass)
     assertEquals(2, c.kClassArray.size)
     assertEquals(E.B, c.e)
     assert(arrayOf("a", "b").contentEquals(c.aS))

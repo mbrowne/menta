@@ -4,19 +4,19 @@
 
 package test
 
-open class Base {
+open define Base {
     fun Int.foo(): String { return "O" }
     val Int.a : String
         get() = "K"
 }
 
-expect class A : Base
+expect define A : Base
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
 package test
 
-actual class A : Base()
+actual define A : Base()
 
 fun box(): String = with(A()) { 1.foo() + 1.a }

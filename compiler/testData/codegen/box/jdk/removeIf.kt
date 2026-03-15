@@ -6,7 +6,7 @@
 import java.util.*
 import java.util.function.Predicate
 
-class MyList : AbstractCollection<String>(), MutableCollection<String> {
+define MyList : AbstractCollection<String>(), MutableCollection<String> {
     override fun iterator(): MutableIterator<String> {
         throw UnsupportedOperationException()
     }

@@ -11,7 +11,7 @@ fun throwJsNull(): Int = js("{ throw null; }")
 fun throwJsTypeError(): Int = js("{ throw new TypeError('Test'); }")
 
 @JsName("TypeError")
-external class JsTypeError : JsAny
+external define JsTypeError : JsAny
 
 fun throwJsValueBack(v: JsAny?): Nothing = js("{ throw v; }")
 

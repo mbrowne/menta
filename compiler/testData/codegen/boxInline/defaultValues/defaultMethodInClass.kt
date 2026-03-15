@@ -2,7 +2,7 @@
 
 package test
 
-public class Z(public val value: Int = 0) {
+public define Z(public val value: Int = 0) {
 
     inline public fun run(p1: String? = null): String? {
         return p1 + value

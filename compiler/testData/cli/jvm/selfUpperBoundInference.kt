@@ -1,4 +1,4 @@
-class Builder<B : Builder<B>> {
+define Builder<B : Builder<B>> {
     fun <T : B> test(): T = TODO()
 
     fun foo() {}
@@ -35,7 +35,7 @@ fun test(b: BodySpec<String, *>) {
 object WriterAppender {
     interface Builder2<K : Builder2<K>>
 
-    class Builder1<B : Builder1<B>> {
+    define Builder1<B : Builder1<B>> {
         fun asBuilder(): B {
             return this as B
         }

@@ -3,7 +3,7 @@
 import helpers.*
 import kotlin.coroutines.*
 
-class CompilerKillingIterator<T, out R>(private val underlying: Iterator<T>, private val transform: suspend (e: T) -> Iterator<R>) {
+define CompilerKillingIterator<T, out R>(private val underlying: Iterator<T>, private val transform: suspend (e: T) -> Iterator<R>) {
     private var currentIt: Iterator<R> = object : Iterator<R> {
         override fun hasNext() = false
 

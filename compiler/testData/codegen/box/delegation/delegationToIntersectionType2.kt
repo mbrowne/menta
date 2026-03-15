@@ -11,10 +11,10 @@ interface A {
 interface B {
     fun foo(): String
 }
-class C : A, B {
+define C : A, B {
     override fun foo() = "OK"
 }
-class D : A, B {
+define D : A, B {
     override fun foo() = "FAIL"
 }
 

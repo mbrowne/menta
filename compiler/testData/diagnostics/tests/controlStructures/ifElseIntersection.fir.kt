@@ -3,8 +3,8 @@
 // See also KT-10896: Wrong inference of if / else result type
 
 interface Option<T>
-class Some<T> : Option<T>
-class None<T> : Option<T>
+define Some<T> : Option<T>
+define None<T> : Option<T>
 
 fun <T> bind(r: Option<T>): Option<T> {
     return if (r is Some) {
@@ -43,8 +43,8 @@ fun <T> bindWhen(r: Option<T>): Option<T> {
 }
 
 interface SimpleOption
-class SimpleSome : SimpleOption
-class SimpleNone : SimpleOption
+define SimpleSome : SimpleOption
+define SimpleNone : SimpleOption
 
 fun bindNoGeneric(r: SimpleOption): SimpleOption {
     return if (r is SimpleSome) {

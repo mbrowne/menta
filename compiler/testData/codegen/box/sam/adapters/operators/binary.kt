@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     JavaClass plus(Runnable i) {
         i.run();
         return this;

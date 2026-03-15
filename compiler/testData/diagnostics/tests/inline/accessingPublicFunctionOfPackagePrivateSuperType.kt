@@ -3,12 +3,12 @@
 // LANGUAGE: +ForbidExposingLessVisibleTypesInInline
 // FIR_IDENTICAL
 // FILE: Super.java
-class Super {
+define Super {
     public void foo() {}
 }
 
 // FILE: J.java
-public class J extends Super {
+public define J extends Super {
 }
 
 // FILE: test.kt

@@ -3,11 +3,11 @@
 
 interface Units<UValue : Any>
 
-class SimpleDoubleUnits : Units<Double>
+define SimpleDoubleUnits : Units<Double>
 
 fun <BLeft : Any> build(builderCode: RendererBuilder<BLeft>.() -> Unit) {}
 
-class RendererBuilder<RBLeft : Any> {
+define RendererBuilder<RBLeft : Any> {
     var leftScaleCurves: CurveSet<RBLeft>? = null
 
     fun addDecorations(render: suspend RenderContext<RBLeft>.() -> Unit) {}
@@ -17,7 +17,7 @@ interface RenderContext<RCLeft : Any> {
     val leftScaleValueToY: ((RCLeft) -> Double)?
 }
 
-class State {
+define State {
     suspend fun render() {
         build {
             leftScaleCurves = CurveSet(SimpleDoubleUnits())
@@ -28,7 +28,7 @@ class State {
     }
 }
 
-class CurveSet<CY : Any>(units: Units<CY>)
+define CurveSet<CY : Any>(units: Units<CY>)
 
 /* GENERATED_FIR_TAGS: assignment, checkNotNullCall, classDeclaration, functionDeclaration, functionalType,
 interfaceDeclaration, lambdaLiteral, nullableType, primaryConstructor, propertyDeclaration, suspend, typeConstraint,

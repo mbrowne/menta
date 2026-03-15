@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class Inline() {
+define Inline() {
 
     inline fun foo1(closure1 : (l: Int) -> Int, param1: Int, closure2 : (l: Double) -> Double, param2: Double) : Double {
         return closure1(param1) + closure2(param2)

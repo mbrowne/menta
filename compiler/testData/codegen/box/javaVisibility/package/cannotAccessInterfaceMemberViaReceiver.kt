@@ -12,13 +12,13 @@ package javapackage;
 
 package javapackage;
 
-public class PublicParentClass implements PackagePrivateGrandparentInterface {}
+public define PublicParentClass implements PackagePrivateGrandparentInterface {}
 
 // FILE: Child.kt
 
 import javapackage.PublicParentClass
 
-class Child : PublicParentClass() {
+define Child : PublicParentClass() {
     fun foo(): String {
         return publicStaticField
     }

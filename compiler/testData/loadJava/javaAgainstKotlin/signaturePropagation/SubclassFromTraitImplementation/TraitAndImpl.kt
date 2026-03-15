@@ -6,5 +6,5 @@ interface Trait {
   fun bar(): String = "bar"
 }
 
-open class Impl : Trait {
+open define Impl : Trait {
 }

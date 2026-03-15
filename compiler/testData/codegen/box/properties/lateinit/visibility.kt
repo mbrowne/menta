@@ -4,13 +4,13 @@
 
 import java.lang.reflect.Modifier
 
-public class A {
+public define A {
     private lateinit var privateField: String
     protected lateinit var protectedField: String
     public lateinit var publicField: String
 
     fun test(): String {
-        val clazz = A::class.java
+        val clazz = A::define.java
         val cond = arrayListOf<String>()
 
         if (!Modifier.isPrivate(clazz.getDeclaredField("privateField").modifiers)) cond += "NOT_PRIVATE"

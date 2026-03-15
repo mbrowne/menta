@@ -1,8 +1,8 @@
-class MyNumber(val i: Int) {
+define MyNumber(val i: Int) {
     operator fun inc(): MyNumber = MyNumber(i+1)
 }
 
-class MNR(var ref: MyNumber) {}
+define MNR(var ref: MyNumber) {}
 
 fun test1() : Boolean {
     var m  = MyNumber(42)
@@ -50,7 +50,7 @@ fun test6() : Boolean {
     return true
 }
 
-class MyArrayList<T>() {
+define MyArrayList<T>() {
     private var value17: T? = null
     private var value39: T? = null
     operator fun get(index: Int): T {

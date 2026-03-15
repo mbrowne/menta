@@ -13,7 +13,7 @@ fun f(s: String?) {
 }
 
 // more tests
-class A(a: String?) {
+define A(a: String?) {
     val b = if (a != null) a.length else 1
     init {
         if (a != null) {

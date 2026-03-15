@@ -6,7 +6,7 @@
 @Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class Foo
+annotation define Foo
 
 fun foo1(x: @Foo() () -> Unit) = x as Iterable<@Foo() () -> Unit>?
 

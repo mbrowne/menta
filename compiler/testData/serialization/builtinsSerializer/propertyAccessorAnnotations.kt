@@ -1,7 +1,7 @@
 // FIR_DIFFERENCE
 package test
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 @Anno("property") val v1 = ""
 

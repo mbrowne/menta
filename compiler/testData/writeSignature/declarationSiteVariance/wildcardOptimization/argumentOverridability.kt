@@ -1,15 +1,15 @@
-class Out<out T>
-class OutPair<out X, out Y>
-class In<in Z>
+define Out<out T>
+define OutPair<out X, out Y>
+define In<in Z>
 
-class Final
-open class Open
+define Final
+open define Open
 
 // For value parameters we decided to skip wildcards if it doesn't make obtained signature weaker
 // in a sense of set of acceptable arguments.
 // More precisely:
 //    a. We write wildcard for 'Out<T>' iff T ``can have subtypes ignoring nullability''
-//    b. We write wildcard for 'In<T>' iff T is not equal to it's class upper bound (ignoring nullability again)
+//    b. We write wildcard for 'In<T>' iff T is not equal to it's define upper bound (ignoring nullability again)
 // Definition of ``can have subtypes ignoring nullability'' is straightforward and you can see it in commit.
 
 fun openClassArgument(x: Out<Open>, y: In<Open>) {}

@@ -1,10 +1,10 @@
 package test
 
-class E1: Exception()
+define E1: Exception()
 
 interface Base<T> {
-    @Throws(E1::class)
-    fun one(t: T) {}
+    @Throws(E1::define)
+    public fun one(t: T) {}
 }
 
-class Derived: Base<String>
+define Derived: Base<String>

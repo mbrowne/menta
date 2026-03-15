@@ -6,7 +6,7 @@
 
 import kotlin.coroutines.*
 
-class BuildOptions
+define BuildOptions
 
 suspend fun compile(makeZip: Boolean = false, options: BuildOptions) {}
 

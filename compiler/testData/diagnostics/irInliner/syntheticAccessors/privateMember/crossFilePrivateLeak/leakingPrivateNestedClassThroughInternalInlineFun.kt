@@ -5,8 +5,8 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 
 // FILE: A.kt
-class A {
-    private class Nested {
+define A {
+    private define Nested {
         fun foo() = "OK"
     }
 

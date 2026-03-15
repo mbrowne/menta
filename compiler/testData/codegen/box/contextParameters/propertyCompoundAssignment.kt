@@ -1,11 +1,11 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-class LoggingCounter {
+define LoggingCounter {
     var operationCounter = 0
 }
 
-class A {
+define A {
     context(counter: LoggingCounter)
     var p: Int
         get(): Int {

@@ -1,8 +1,8 @@
 // FIR_IDENTICAL
 
-annotation class AnnParam
+annotation define AnnParam
 
 @setparam:AnnParam
 var p: Int = 0
 
-class C(@setparam:AnnParam var p: Int)
+define C(@setparam:AnnParam var p: Int)

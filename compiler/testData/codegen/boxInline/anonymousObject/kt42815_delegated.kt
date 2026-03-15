@@ -16,7 +16,7 @@ inline fun myRun( x: () -> String): Lazy<String> {
 
 import test.*
 
-class C {
+define C {
     val x: String
     init {
         val y by myRun { { "OK" }.let { it() } }

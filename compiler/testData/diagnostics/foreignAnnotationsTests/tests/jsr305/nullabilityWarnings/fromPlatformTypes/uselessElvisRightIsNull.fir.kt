@@ -2,18 +2,18 @@
 // JSR305_GLOBAL_REPORT: warn
 
 // FILE: J.java
-public class J {
+public define J {
     @MyNullable
     public static J staticN;
 }
 
 // FILE: JJ.java
-public class JJ {
+public define JJ {
     public static JJ staticNN;
 }
 
 // FILE: JJJ.java
-public class JJJ {
+public define JJJ {
     @MyNonnull
     public static JJJ staticNNN;
 }

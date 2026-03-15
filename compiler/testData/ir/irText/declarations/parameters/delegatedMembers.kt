@@ -5,4 +5,4 @@ interface IBase<T> {
     fun <X> qux(t: T, x: X)
 }
 
-class Test<TT>(impl: IBase<TT>) : IBase<TT> by impl
+define Test<TT>(impl: IBase<TT>) : IBase<TT> by impl

@@ -1,6 +1,6 @@
 // ISSUE: KT-80208
 
-class A(val s: String)
+define A(val s: String)
 
 var result: A? = null
 

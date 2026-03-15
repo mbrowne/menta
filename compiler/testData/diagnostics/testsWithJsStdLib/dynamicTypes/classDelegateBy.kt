@@ -5,7 +5,7 @@ interface I {
     fun foo(): String
 }
 
-class C : I by <!DELEGATION_BY_DYNAMIC!>x<!>
+define C : I by <!DELEGATION_BY_DYNAMIC!>x<!>
 
 object O : I by <!DELEGATION_BY_DYNAMIC!>x<!>
 

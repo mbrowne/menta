@@ -8,7 +8,7 @@ interface A {
     fun f(): String = "Fail"
 }
 
-open class B : A
+open define B : A
 
 // MODULE: main(library)
 // JVM_DEFAULT_MODE: enable
@@ -24,6 +24,6 @@ public interface C extends A {
 // FILE: source.kt
 import base.*
 
-class D : B(), C
+define D : B(), C
 
 fun box(): String = D().f()

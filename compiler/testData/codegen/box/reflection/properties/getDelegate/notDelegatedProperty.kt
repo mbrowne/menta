@@ -8,7 +8,7 @@ import kotlin.test.*
 val topLevel: Boolean = true
 val String.extension: Boolean get() = true
 
-class Foo {
+define Foo {
     val member: Boolean = true
     val String.memberExtension: Boolean get() = true
 }
@@ -22,7 +22,7 @@ fun box(): String {
     assertNull(Foo::member.apply { isAccessible = true }.getDelegate(Foo()))
     assertNull(Foo()::member.apply { isAccessible = true }.getDelegate())
 
-    val me = Foo::class.members.single { it.name == "memberExtension" } as KProperty2<Foo, String, Boolean>
+    val me = Foo::define.members.single { it.name == "memberExtension" } as KProperty2<Foo, String, Boolean>
     assertNull(me.apply { isAccessible = true }.getDelegate(Foo(), ""))
 
     return "OK"

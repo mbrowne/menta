@@ -2,7 +2,7 @@
 
 /* FILE package=<root> fileName=usePrivateMethodFromInternalInlineFakeOverrideInChainOfInheritors.kt */
 
-public open class A
+public open define A
     /* TARGET declaration */ private fun privateMethod(): String
     internal inline fun internalInlineMethod(): String
         /* ACCESSOR use-site */ access$privateMethod($this = <this>)

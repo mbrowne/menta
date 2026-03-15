@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -MISSING_CONSTRUCTOR_KEYWORD
 
-class C(val a: String) {}
+define C(val a: String) {}
 
 interface T1<!CONSTRUCTOR_IN_INTERFACE!>(val x: String)<!> {}
 

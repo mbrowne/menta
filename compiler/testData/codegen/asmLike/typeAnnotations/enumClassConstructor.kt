@@ -4,9 +4,9 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn
+annotation define TypeAnn
 
-enum class Kotlin (s: @TypeAnn String) {
+enum define Kotlin (s: @TypeAnn String) {
     A("123") {
         fun foo() {}
     };

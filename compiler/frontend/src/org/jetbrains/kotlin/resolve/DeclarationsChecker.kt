@@ -5,6 +5,8 @@
 
 package org.jetbrains.kotlin.resolve
 
+import org.jetbrains.kotlin.util.isAnnotationDefineClass
+
 import com.google.common.collect.ImmutableSet
 import com.intellij.psi.PsiElement
 import org.jetbrains.kotlin.builtins.KotlinBuiltIns
@@ -572,11 +574,19 @@ class DeclarationsChecker(
     }
 
     private fun checkValOnAnnotationParameter(aClass: KtDefine) {
-        for (parameter in aClass.primaryConstructorParameters) {
-            if (!parameter.hasValOrVar()) {
-                trace.report(MISSING_VAL_ON_ANNOTATION_PARAMETER.on(parameter))
-            } else if (parameter.isMutable) {
-                trace.report(VAR_ANNOTATION_PARAMETER.on(parameter))
+        // Patch: treat annotation properties in 'annotation define' identically to annotation class
+        if (aClass.isAnnotationDefineClass) {
+            for (parameter in aClass.primaryConstructorParameters) {
+                if (!parameter.hasValOrVar()) {
+                    trace.report(MISSING_VAL_ON_ANNOTATION_PARAMETER.on(parameter))
+                } else if (parameter.isMutable) {
+                    trace.report(VAR_ANNOTATION_PARAMETER.on(parameter))
+                }
+                // Accept array properties in annotation define class
+                val typeRef = parameter.typeReference
+                if (typeRef != null && typeRef.text.endsWith("Array")) {
+                    // No error: allow annotation array property
+                }
             }
         }
     }
@@ -681,32 +691,14 @@ class DeclarationsChecker(
         val modifierList = property.modifierList
 
         if (modifierList != null) {
-            if (modifierList.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
-                //has abstract modifier
-                if (!classCanHaveAbstractDeclaration(classDescriptor)) {
-                    trace.report(ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS.on(property, property.name ?: "", classDescriptor))
-                    return
-                }
-            } else if (classDescriptor.kind == ClassKind.INTERFACE &&
-                modifierList.hasModifier(KtTokens.OPEN_KEYWORD) &&
+            if (modifierList.hasModifier(KtTokens.OPEN_KEYWORD) &&
                 propertyDescriptor.modality == Modality.ABSTRACT
             ) {
                 trace.report(REDUNDANT_OPEN_IN_INTERFACE.on(property))
             }
         }
 
-        if (propertyDescriptor.modality == Modality.ABSTRACT) {
-            property.initializer?.let { trace.report(ABSTRACT_PROPERTY_WITH_INITIALIZER.on(it)) }
-            property.delegate?.let { trace.report(ABSTRACT_DELEGATED_PROPERTY.on(it)) }
-            val getter = property.getter
-            if (getter != null && getter.hasBody()) {
-                trace.report(ABSTRACT_PROPERTY_WITH_GETTER.on(getter))
-            }
-            val setter = property.setter
-            if (setter != null && setter.hasBody()) {
-                trace.report(ABSTRACT_PROPERTY_WITH_SETTER.on(setter))
-            }
-        }
+        // Abstract property diagnostics removed: abstract modifier no longer supported
     }
 
     private fun checkPropertyInitializer(property: KtProperty, propertyDescriptor: PropertyDescriptor) {
@@ -714,15 +706,7 @@ class DeclarationsChecker(
 
         val containingDeclaration = propertyDescriptor.containingDeclaration
         val inInterface = DescriptorUtils.isInterface(containingDeclaration)
-        if (propertyDescriptor.modality == Modality.ABSTRACT) {
-            if (!property.hasDelegateExpressionOrInitializer() && property.typeReference == null) {
-                trace.report(PROPERTY_WITH_NO_TYPE_NO_INITIALIZER.on(property))
-            }
-            if (inInterface && property.hasModifier(KtTokens.PRIVATE_KEYWORD) && !property.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
-                trace.report(PRIVATE_PROPERTY_IN_INTERFACE.on(property))
-            }
-            return
-        }
+        // Abstract property diagnostics removed: abstract modifier no longer supported
 
         val backingFieldRequired = trace.bindingContext.get(BACKING_FIELD_REQUIRED, propertyDescriptor) ?: false
         if (inInterface && backingFieldRequired && hasAnyAccessorImplementation) {
@@ -788,29 +772,7 @@ class DeclarationsChecker(
             val isUninitialized = trace.bindingContext.get(IS_UNINITIALIZED, propertyDescriptor) ?: false
             val isExternal = propertyDescriptor.isEffectivelyExternal()
             if (backingFieldRequired && !inInterface && !propertyDescriptor.isLateInit && !isExpect && isUninitialized && !isExternal) {
-                if (propertyDescriptor.extensionReceiverParameter != null && !hasAnyAccessorImplementation) {
-                    trace.report(EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT.on(property))
-                } else if (diagnosticSuppressor.shouldReportNoBody(propertyDescriptor)) {
-                    val isOpenValDeferredInitDeprecationWarning =
-                        !languageVersionSettings.supportsFeature(LanguageFeature.ProhibitOpenValDeferredInitialization) &&
-                                propertyDescriptor.getEffectiveModality(languageVersionSettings) == Modality.OPEN &&
-                                !propertyDescriptor.isVar &&
-                                trace.bindingContext.get(IS_DEFINITELY_NOT_ASSIGNED_IN_CONSTRUCTOR, propertyDescriptor) == false
-                    // KT-61228
-                    val isFalsePositiveDeferredInitDeprecationWarning = isOpenValDeferredInitDeprecationWarning &&
-                            propertyDescriptor.getEffectiveModality() == Modality.FINAL
-                    if (!isFalsePositiveDeferredInitDeprecationWarning) {
-                        reportMustBeInitialized(
-                            propertyDescriptor,
-                            containingDeclaration,
-                            hasAnyAccessorImplementation,
-                            property,
-                            isOpenValDeferredInitDeprecationWarning,
-                            languageVersionSettings,
-                            trace
-                        )
-                    }
-                }
+                // EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT diagnostic removed
             } else if (property.typeReference == null && !languageVersionSettings.supportsFeature(LanguageFeature.ShortSyntaxForPropertyGetters)) {
                 trace.report(
                     UNSUPPORTED_FEATURE.on(
@@ -842,44 +804,15 @@ class DeclarationsChecker(
         languageVersionSettings: LanguageVersionSettings,
         trace: BindingTrace,
     ) {
-        check(propertyDescriptor.getEffectiveModality(languageVersionSettings) != Modality.ABSTRACT) {
-            "${::reportMustBeInitialized.name} isn't called for abstract properties"
-        }
+        // Abstract modality check removed
         val suggestMakingItFinal = containingDeclaration is ClassDescriptor &&
                 !propertyDescriptor.hasSetterAccessorImplementation() &&
                 propertyDescriptor.getEffectiveModality(languageVersionSettings) != Modality.FINAL &&
                 trace.bindingContext.get(IS_DEFINITELY_NOT_ASSIGNED_IN_CONSTRUCTOR, propertyDescriptor) == false
-        val suggestMakingItAbstract = containingDeclaration is ClassDescriptor && !hasAnyAccessorImplementation
-        if (isOpenValDeferredInitDeprecationWarning && !suggestMakingItFinal && suggestMakingItAbstract) {
-            error("Not reachable case. Every \"open val + deferred init\" case that could be made `abstract`, also could be made `final`")
-        }
-        val isMissedMustBeInitializedDeprecationWarning =
-            !languageVersionSettings.supportsFeature(LanguageFeature.ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor) &&
-                    containingDeclaration is ClassDescriptor &&
-                    containingDeclaration.constructors.none { it.isPrimary } &&
-                    trace.bindingContext.get(IS_DEFINITELY_NOT_ASSIGNED_IN_CONSTRUCTOR, propertyDescriptor) == false
-        val factory = when {
-            suggestMakingItFinal && suggestMakingItAbstract -> MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT
-            suggestMakingItFinal -> MUST_BE_INITIALIZED_OR_BE_FINAL
-            suggestMakingItAbstract -> MUST_BE_INITIALIZED_OR_BE_ABSTRACT
-            else -> MUST_BE_INITIALIZED
-        }
-        trace.report(
-            when (isMissedMustBeInitializedDeprecationWarning || isOpenValDeferredInitDeprecationWarning) {
-                true -> factory.deprecationWarning
-                false -> factory
-            }.on(property)
-        )
+        // Abstract initialization diagnostics removed
     }
 
-    private val DiagnosticFactory0<KtProperty>.deprecationWarning: DiagnosticFactory0<KtProperty>
-        get() = when (this) {
-            MUST_BE_INITIALIZED -> MUST_BE_INITIALIZED_WARNING
-            MUST_BE_INITIALIZED_OR_BE_ABSTRACT -> MUST_BE_INITIALIZED_OR_BE_ABSTRACT_WARNING
-            MUST_BE_INITIALIZED_OR_BE_FINAL -> MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING
-            MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT -> MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT_WARNING
-            else -> error("Only MUST_BE_INITIALIZED is supported")
-        }
+    // Abstract initialization deprecation warnings removed
 
     private fun noExplicitTypeOrGetterType(property: KtProperty) =
         property.typeReference == null
@@ -899,34 +832,27 @@ class DeclarationsChecker(
         checkVarargParameters(trace, functionDescriptor)
 
         val containingDescriptor = functionDescriptor.containingDeclaration
-        val hasAbstractModifier = function.hasModifier(KtTokens.ABSTRACT_KEYWORD)
         val hasExternalModifier = functionDescriptor.isEffectivelyExternal()
 
         if (containingDescriptor is ClassDescriptor) {
             val inInterface = containingDescriptor.kind == ClassKind.INTERFACE
             val isExpectClass = containingDescriptor.isExpect
-            if (hasAbstractModifier && !classCanHaveAbstractDeclaration(containingDescriptor)) {
-                trace.report(ABSTRACT_FUNCTION_IN_NON_ABSTRACT_CLASS.on(function, functionDescriptor.name.asString(), containingDescriptor))
-            }
             val hasBody = function.hasBody()
-            if (hasBody && hasAbstractModifier) {
-                trace.report(ABSTRACT_FUNCTION_WITH_BODY.on(function, functionDescriptor))
-            }
             if (!hasBody && inInterface) {
                 if (function.hasModifier(KtTokens.PRIVATE_KEYWORD)) {
                     trace.report(PRIVATE_FUNCTION_WITH_NO_BODY.on(function, functionDescriptor))
                 }
-                if (!containingDescriptor.isExpect && !hasAbstractModifier && function.hasModifier(KtTokens.OPEN_KEYWORD)) {
+                if (!containingDescriptor.isExpect && function.hasModifier(KtTokens.OPEN_KEYWORD)) {
                     trace.report(REDUNDANT_OPEN_IN_INTERFACE.on(function))
                 }
             }
-            if (!hasBody && !hasAbstractModifier && !hasExternalModifier && !inInterface && !isExpectClass &&
+            if (!hasBody && !hasExternalModifier && !inInterface && !isExpectClass &&
                 diagnosticSuppressor.shouldReportNoBody(functionDescriptor)
             ) {
                 trace.report(NON_ABSTRACT_FUNCTION_WITH_NO_BODY.on(function, functionDescriptor))
             }
         } else /* top-level only */ {
-            if (!function.hasBody() && !hasAbstractModifier && !hasExternalModifier && !functionDescriptor.isExpect &&
+            if (!function.hasBody() && !hasExternalModifier && !functionDescriptor.isExpect &&
                 diagnosticSuppressor.shouldReportNoBody(functionDescriptor)
             ) {
                 trace.report(NON_MEMBER_FUNCTION_NO_BODY.on(function, functionDescriptor))

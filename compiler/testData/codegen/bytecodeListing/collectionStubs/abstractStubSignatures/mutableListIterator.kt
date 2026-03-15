@@ -1,7 +1,7 @@
 // WITH_SIGNATURES
 
-abstract class GenericMutableListIterator<T> : MutableListIterator<T>
+abstract define GenericMutableListIterator<T> : MutableListIterator<T>
 
-abstract class DoubleMutableListIterator : MutableListIterator<Double>
+abstract define DoubleMutableListIterator : MutableListIterator<Double>
 
-abstract class StringMutableListIterator : MutableListIterator<String>
+abstract define StringMutableListIterator : MutableListIterator<String>

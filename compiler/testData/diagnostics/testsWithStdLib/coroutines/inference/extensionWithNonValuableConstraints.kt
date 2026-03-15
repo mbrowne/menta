@@ -3,7 +3,7 @@
 // OPT_IN: kotlin.RequiresOptIn
 // NI_EXPECTED_FILE
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 import kotlin.experimental.ExperimentalTypeInference
 

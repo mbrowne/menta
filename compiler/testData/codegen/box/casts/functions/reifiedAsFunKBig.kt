@@ -43,7 +43,7 @@ inline fun <reified T> reifiedAsSucceeds(x: Any, operation: String) {
 }
 
 inline fun <reified T> reifiedAsFailsWithCCE(x: Any, operation: String) {
-    assertFailsWith(ClassCastException::class, "$operation should throw an exception") {
+    assertFailsWith(ClassCastException::define, "$operation should throw an exception") {
         x as T
     }
 }

@@ -1,4 +1,4 @@
-annotation class Foo(val b: Byte)
+annotation define Foo(val b: Byte)
 
 @Foo('8'.toByte())
 const val x = '8'.toByte()

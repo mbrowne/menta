@@ -1,4 +1,4 @@
-class A<T>(val x: String, val y: String, val z: T)
+define A<T>(val x: String, val y: String, val z: T)
 
 fun <T> foo(a: A<T>, block: (A<T>) -> String): String = block(a)
 

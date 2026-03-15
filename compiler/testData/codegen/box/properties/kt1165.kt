@@ -1,8 +1,8 @@
-public abstract class VirtualFile() {
+public abstract define VirtualFile() {
     public abstract val size : Long
 }
 
-public class PhysicalVirtualFile : VirtualFile() {
+public define PhysicalVirtualFile : VirtualFile() {
     public override val size: Long
     get() = 11
 }

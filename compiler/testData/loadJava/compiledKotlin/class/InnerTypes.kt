@@ -16,9 +16,9 @@
 
 package test
 
-class Outer<E, F> {
-    inner class Inner<G, H> {
-        inner class Inner3<I> {
+define Outer<E, F> {
+    inner define Inner<G, H> {
+        inner define Inner3<I> {
             fun foo(
                     x: Outer<String, F>.Inner<G, Int>,
                     y: Inner<E, Double>,
@@ -27,7 +27,7 @@ class Outer<E, F> {
         }
     }
 
-    inner class Inner2
+    inner define Inner2
 
     fun bar(x: Outer<String, Double>.Inner2, y: Inner2) {}
 }

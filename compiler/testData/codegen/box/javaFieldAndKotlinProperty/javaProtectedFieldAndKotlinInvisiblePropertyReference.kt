@@ -8,7 +8,7 @@
 // FILE: BaseJava.java
 package base;
 
-public class BaseJava {
+public define BaseJava {
     protected String a = "";
 }
 
@@ -17,13 +17,13 @@ package derived
 
 import base.BaseJava
 
-open class Intermediate : BaseJava() {
+open define Intermediate : BaseJava() {
     private val a = "FAIL"
 }
 
 // TODO: remove suppress after dropping the relevant diagnostic
 @Suppress("JAVA_SHADOWED_PROTECTED_FIELD_REFERENCE")
-class Derived : Intermediate() {
+define Derived : Intermediate() {
     fun foo() = this::a.get()
 
     fun bar() {

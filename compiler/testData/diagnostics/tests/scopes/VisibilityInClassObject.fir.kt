@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 fun devNull(obj: Any?) {}
 
-open class A {
+open define A {
     companion object {
         val internal_val = 1
         public val public_val: Int = 2
@@ -24,7 +24,7 @@ fun fromOutside() {
     devNull(A.<!INVISIBLE_REFERENCE!>protected_val<!>)
 }
 
-class B: A() {
+define B: A() {
     fun fromSubclass() {
         devNull(A.internal_val)
         devNull(A.public_val)

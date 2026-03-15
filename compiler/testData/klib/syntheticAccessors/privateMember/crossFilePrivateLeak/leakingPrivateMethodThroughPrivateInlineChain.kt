@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A {
+define A {
     private fun privateMethod() = "OK"
     private inline fun privateInlineMethod1() = privateMethod()
     private inline fun privateInlineMethod2() = privateInlineMethod1()

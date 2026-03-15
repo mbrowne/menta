@@ -3,7 +3,7 @@
 // MODULE: lib
 // FILE: Super.java
 
-class Super {
+define Super {
     public String lastCalled = null;
 
     void foo(Runnable r) {
@@ -16,7 +16,7 @@ class Super {
 import kotlin.jvm.functions.Function0;
 import kotlin.Unit;
 
-class Sub extends Super {
+define Sub extends Super {
     void foo(Function0<Unit> r) {
         lastCalled = "sub";
     }

@@ -7,7 +7,7 @@
 
 import java.util.function.IntFunction
 
-class A<T> : ArrayList<T>() {
+define A<T> : ArrayList<T>() {
     override fun addFirst(t: T) {
         super.addFirst(t)
     }
@@ -32,7 +32,7 @@ class A<T> : ArrayList<T>() {
     }
 }
 
-abstract class B<T>: List<T> {
+abstract define B<T>: List<T> {
     override fun <!OVERRIDE_DEPRECATION!>getFirst<!>(): T {
         return super.<!DEPRECATION!>getFirst<!>()
     }

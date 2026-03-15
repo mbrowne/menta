@@ -1,9 +1,9 @@
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-76782
-class Foo
+define Foo
 
-class Unrelated
+define Unrelated
 
 operator fun Unrelated.invoke() {}
 

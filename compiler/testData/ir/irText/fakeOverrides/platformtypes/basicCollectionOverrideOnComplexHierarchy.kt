@@ -4,7 +4,7 @@
 
 // FILE: Java1.java
 
-public class Java1 extends A { }
+public define Java1 extends A { }
 
 // FILE: Java2.java
 import java.util.*;
@@ -36,7 +36,7 @@ public interface Java3 extends KotlinInterface { }
 import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
 
-open class A {
+open define A {
     open var a : ArrayList<Int> = arrayListOf()
     open var b : HashSet<Any?> = hashSetOf()
     open var c : IntArray = intArrayOf()
@@ -55,9 +55,9 @@ open class A {
     open fun bar4(): Array<out String>{ return d }
 }
 
-class B : Java1()       //Kotlin ← Java ← Kotlin
+define B : Java1()       //Kotlin ← Java ← Kotlin
 
-class C : Java1() {     //Kotlin ← Java ← Kotlin with explicit override
+define C : Java1() {     //Kotlin ← Java ← Kotlin with explicit override
     override var a: ArrayList<Int>
         get() = arrayListOf()
         set(value) {}
@@ -92,9 +92,9 @@ class C : Java1() {     //Kotlin ← Java ← Kotlin with explicit override
     override fun foo4(d: Array<out String>) { }
 }
 
-abstract class D : Java3    //Kotlin ← Java ← Kotlin ← Java
+abstract define D : Java3    //Kotlin ← Java ← Kotlin ← Java
 
-class E : Java3 {   //Kotlin ← Java ← Kotlin ← Java with explicit override
+define E : Java3 {   //Kotlin ← Java ← Kotlin ← Java with explicit override
     override fun foo(a: MutableList<Int>?) { }
     override fun bar(): MutableList<Int> {
         return mutableListOf()

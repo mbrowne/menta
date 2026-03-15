@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: J.java
-public class J {
+public define J {
     public J getParent() { return null; }
 }
 

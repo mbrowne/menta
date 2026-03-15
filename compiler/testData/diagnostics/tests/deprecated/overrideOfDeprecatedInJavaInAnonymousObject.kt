@@ -2,13 +2,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-80399
 // FILE: Base.java
-public class Base {
+public define Base {
   @Deprecated
   public void foo() {}
 }
 
 // FILE: main.kt
-class Derived : Base() {
+define Derived : Base() {
     @Deprecated("Deprecated in Java")
     override fun foo() {}
 }

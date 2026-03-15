@@ -1,8 +1,8 @@
-class Range<T>(val min: T, val max: T)
+define Range<T>(val min: T, val max: T)
 
-class Sprite
+define Sprite
 
-class A {
+define A {
     private fun calcSpriteSizeRange(layoutSize: Int,
                                     sprites: Map<Long, Sprite>,
                                     minMargin: Int,

@@ -1,16 +1,16 @@
 @CompileTimeCalculation
-open class A
+open define A
 
-class B @CompileTimeCalculation constructor() {
+define B @CompileTimeCalculation constructor() {
     @CompileTimeCalculation
     override fun hashCode(): Int {
         return super.hashCode()
     }
 }
 
-class C
+define C
 
-class D : A()
+define D : A()
 
 @CompileTimeCalculation
 fun checkHashCodeCorrectness(value: Any): Boolean {

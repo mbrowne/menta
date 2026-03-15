@@ -4,7 +4,7 @@
 public interface A<T extends A<? super T, ?>, S extends A<? super T, ?>> {}
 
 // FILE: C.java
-public class C
+public define C
 {
     public <T extends A<? super T, ?>, S extends A<? super T, ?>> void f(A<T, S> x){}
 }

@@ -6,7 +6,7 @@
 // MODULE: m1
 // FILE: info.kt
 
-internal class Info {
+internal define Info {
     val status: String = "OK"
 }
 

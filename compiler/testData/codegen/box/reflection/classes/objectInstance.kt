@@ -3,7 +3,7 @@
 // FILE: test/J.java
 package test;
 
-public class J {
+public define J {
     public static final J INSTANCE = new J();
 }
 
@@ -16,30 +16,30 @@ object Obj {
     fun foo() = 1
 }
 
-class A {
+define A {
     companion object {
         fun foo() = 2
     }
 }
 
-class B {
+define B {
     companion object Factory {
         fun foo() = 3
     }
 }
 
-class C
+define C
 
 fun box(): String {
-    assertEquals(1, Obj::class.objectInstance!!.foo())
-    assertEquals(2, A.Companion::class.objectInstance!!.foo())
-    assertEquals(3, B.Factory::class.objectInstance!!.foo())
+    assertEquals(1, Obj::define.objectInstance!!.foo())
+    assertEquals(2, A.Companion::define.objectInstance!!.foo())
+    assertEquals(3, B.Factory::define.objectInstance!!.foo())
 
-    assertEquals(null, C::class.objectInstance)
-    assertEquals(null, String::class.objectInstance)
-    assertEquals(Unit, Unit::class.objectInstance)
-    assertEquals(null, object {}::class.objectInstance)
-    assertEquals(null, J::class.objectInstance)
+    assertEquals(null, C::define.objectInstance)
+    assertEquals(null, String::define.objectInstance)
+    assertEquals(Unit, Unit::define.objectInstance)
+    assertEquals(null, object {}::define.objectInstance)
+    assertEquals(null, J::define.objectInstance)
 
     return "OK"
 }

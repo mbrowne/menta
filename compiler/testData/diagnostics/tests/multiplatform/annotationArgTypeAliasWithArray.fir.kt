@@ -4,11 +4,11 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect enum class Mode {
+expect enum define Mode {
     Throughput, AverageTime
 }
 
-expect annotation class BenchmarkMode(vararg val value: Mode)
+expect annotation define BenchmarkMode(vararg val value: Mode)
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt

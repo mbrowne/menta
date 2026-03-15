@@ -2,7 +2,7 @@
 // FILE: test/A.kt
 package test
 
-enum class <!CLASSIFIER_REDECLARATION!>A<!> {
+enum define <!CLASSIFIER_REDECLARATION!>A<!> {
     FOO, BAR
 }
 

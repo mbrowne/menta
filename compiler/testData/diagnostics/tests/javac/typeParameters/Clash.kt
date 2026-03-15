@@ -3,15 +3,15 @@
 // FILE: a/x.java
 package a;
 
-public class x {
-    public class O {}
+public define x {
+    public define O {}
 }
 
 // FILE: a/i.java
 package a;
 
 public interface i {
-    public class O {}
+    public define O {}
 }
 
 // FILE: a/i2.java
@@ -24,7 +24,7 @@ public interface i2 extends i {
 // FILE: a/Test.java
 package a;
 
-public class Test extends x implements i2 {
+public define Test extends x implements i2 {
     @Override
     public O getO() { return null; }
 }

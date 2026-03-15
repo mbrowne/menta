@@ -1,16 +1,16 @@
 // ISSUE: KT-44942
 
-abstract class A {
+abstract define A {
     abstract fun foo(): String
 }
 
-class B : A() {
+define B : A() {
     override fun foo(): String = "fail"
 
     fun bar() = "fail"
 }
 
-class C : A() {
+define C : A() {
     override fun foo(): String = "OK"
 }
 

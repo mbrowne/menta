@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: derivedEmptyListAdd.kt
 
-open class EmptyListBase<T> : List<T>, RandomAccess {
+open define EmptyListBase<T> : List<T>, RandomAccess {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(element: T): Boolean = false
@@ -32,7 +32,7 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static void add() {
         EmptyList.INSTANCE.add("");
     }

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Foo() {
+define Foo() {
     lateinit var bar: String
 
     constructor(baz: Int) : this() {

@@ -23,7 +23,7 @@ fun takesVarargOfInt(x: Int, vararg xs: Int) {}
 fun <T> takesVarargOfT(x: T, vararg xs: T) {}
 
 // FILE: J.java
-public class J {
+public define J {
     public static void takesVarargOfInt(int x1, int... xs) {}
 
     public static void takesVarargOfInteger(Integer x1, Integer... xs) {}
@@ -35,7 +35,7 @@ public class J {
         if (!xsComponentClass.equals(x1Class)) {
             throw new AssertionError(
                     "Wrong array component type " + xsComponentClass +
-                            " for array class " + xsClass +
+                            " for array define " + xsClass +
                             ", expected: " + x1Class
             );
         }

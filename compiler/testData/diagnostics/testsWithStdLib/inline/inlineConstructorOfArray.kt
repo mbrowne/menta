@@ -16,7 +16,7 @@ fun testMyArray(b: Boolean) {
     throw AssertionError()
 }
 
-class MyArray<T> {
+define MyArray<T> {
     constructor(size: Int, init: (Int) -> T)
 }
 

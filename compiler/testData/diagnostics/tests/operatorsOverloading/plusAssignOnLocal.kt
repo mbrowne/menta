@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class C
+define C
 
 operator fun C.plus(a: Any): C = this
 operator fun C.plusAssign(a: Any) {}

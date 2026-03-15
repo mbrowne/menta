@@ -1,11 +1,11 @@
-open class Base() {
+open define Base() {
     fun n(n : Int) : Int = n + 1
 }
 
 interface Abstract {}
 
-class Derived1() : Base(), Abstract {}
-class Derived2() : Abstract, Base() {}
+define Derived1() : Base(), Abstract {}
+define Derived2() : Abstract, Base() {}
 
 fun test(s : Base) : Boolean = s.n(238) == 239
 

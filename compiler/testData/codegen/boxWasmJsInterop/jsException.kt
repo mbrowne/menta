@@ -13,7 +13,7 @@ private fun String.contains(moduleName: String, funName: String) =
     contains("$moduleName.$funName") || contains("$funName@$moduleName")
 
 @JsName("TypeError")
-external class JsTypeError : JsAny
+external define JsTypeError : JsAny
 
 inline fun <reified T : Throwable> wasThrown(fn: () -> Any?): Boolean {
     try {

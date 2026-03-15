@@ -4,10 +4,10 @@
 
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Dsl
+annotation define Dsl
 
-class A
-class B
+define A
+define B
 
 val invokeExtensionOnA: A.() -> Unit = {}
 

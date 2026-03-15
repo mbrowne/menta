@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-53113
-abstract class AbstractCollectionAssert<SELF : AbstractCollectionAssert<SELF, ELEMENT>, ELEMENT> {
+abstract define AbstractCollectionAssert<SELF : AbstractCollectionAssert<SELF, ELEMENT>, ELEMENT> {
     fun describedAs(s: String): SELF = TODO()
     fun anyMatch(x: (ELEMENT) -> Boolean) {}
 }

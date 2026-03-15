@@ -9,7 +9,7 @@ var topLevel: Int
         throw AssertionError("Nooo")
     }
 
-class A {
+define A {
     val member: String
         get() {
             state += "2"

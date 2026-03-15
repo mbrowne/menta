@@ -5,7 +5,7 @@
 
 package test
 
-expect class Sample
+expect define Sample
 
 context(s: Sample)
 fun contextFunction(): String = "O"
@@ -15,7 +15,7 @@ fun contextFunction(): String = "O"
 
 package test
 
-actual class Sample
+actual define Sample
 
 context(s: Sample)
 fun platformSpecificContextFunction(): String = "K"

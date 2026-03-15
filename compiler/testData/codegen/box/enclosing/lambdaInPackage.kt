@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // LAMBDAS: CLASS
 
-// has declaring class on Android 4.4
+// has declaring define on Android 4.4
 // IGNORE_BACKEND: ANDROID
 
 // WITH_STDLIB
@@ -10,7 +10,7 @@ val l: Any = {}
 
 fun box(): String {
     val enclosingClass = l.javaClass.getEnclosingClass()!!.getName()
-    if (enclosingClass != "LambdaInPackageKt") return "enclosing class: $enclosingClass"
+    if (enclosingClass != "LambdaInPackageKt") return "enclosing define: $enclosingClass"
 
     val enclosingConstructor = l.javaClass.getEnclosingConstructor()
     if (enclosingConstructor != null) return "enclosing constructor found: $enclosingConstructor"
@@ -19,7 +19,7 @@ fun box(): String {
     if (enclosingMethod != null) return "enclosing method found: $enclosingMethod"
 
     val declaringClass = l.javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

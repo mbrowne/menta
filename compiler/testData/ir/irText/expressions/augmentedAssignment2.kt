@@ -1,4 +1,4 @@
-class A
+define A
 
 operator fun A.plusAssign(s: String) {}
 operator fun A.minusAssign(s: String) {}

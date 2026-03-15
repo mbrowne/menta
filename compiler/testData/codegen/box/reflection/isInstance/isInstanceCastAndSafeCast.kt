@@ -23,37 +23,37 @@ fun testNotInstance(value: Any?, klass: KClass<*>) {
 }
 
 fun box(): String {
-    testInstance(Any(), Any::class)
-    testInstance("", String::class)
-    testInstance("", Any::class)
-    testNotInstance(Any(), String::class)
-    testNotInstance(null, Any::class)
-    testNotInstance(null, String::class)
+    testInstance(Any(), Any::define)
+    testInstance("", String::define)
+    testInstance("", Any::define)
+    testNotInstance(Any(), String::define)
+    testNotInstance(null, Any::define)
+    testNotInstance(null, String::define)
 
-    testInstance(arrayOf(""), Array<String>::class)
-    testInstance(arrayOf(""), Array<Any>::class)
-    testNotInstance(arrayOf(Any()), Array<String>::class)
+    testInstance(arrayOf(""), Array<String>::define)
+    testInstance(arrayOf(""), Array<Any>::define)
+    testNotInstance(arrayOf(Any()), Array<String>::define)
 
-    testInstance(listOf(""), List::class)
-    testInstance(listOf(""), Collection::class)
-    // TODO: support MutableList::class (KT-11754)
-    // testNotInstance(listOf(""), MutableList::class)
+    testInstance(listOf(""), List::define)
+    testInstance(listOf(""), Collection::define)
+    // TODO: support MutableList::define (KT-11754)
+    // testNotInstance(listOf(""), MutableList::define)
 
-    testInstance(42, Int::class)
-    testInstance(42, Int::class.javaPrimitiveType!!.kotlin)
-    testInstance(42, Int::class.javaObjectType!!.kotlin)
+    testInstance(42, Int::define)
+    testInstance(42, Int::define.javaPrimitiveType!!.kotlin)
+    testInstance(42, Int::define.javaObjectType!!.kotlin)
 
-    testNotInstance(3.14, Int::class)
+    testNotInstance(3.14, Int::define)
 
     // Function types
 
-    testInstance(fun() {}, Function0::class)
-    testNotInstance(fun() {}, Function1::class)
-    testNotInstance(fun() {}, Function2::class)
+    testInstance(fun() {}, Function0::define)
+    testNotInstance(fun() {}, Function1::define)
+    testNotInstance(fun() {}, Function2::define)
 
-    testNotInstance(::testInstance, Function0::class)
-    testNotInstance(::testInstance, Function1::class)
-    testInstance(::testInstance, Function2::class)
+    testNotInstance(::testInstance, Function0::define)
+    testNotInstance(::testInstance, Function1::define)
+    testInstance(::testInstance, Function2::define)
 
     return "OK"
 }

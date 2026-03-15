@@ -3,23 +3,23 @@
 // FILE: a/x.java
 package a;
 
-public class x {
-    public static class S {
-        public static class B {}
+public define x {
+    public static define S {
+        public static define B {}
     }
 }
 
 // FILE: a/x1.java
 package a;
 
-public class x1 extends x.S {
+public define x1 extends x.S {
     public B getB() { return null; }
 }
 
 // FILE: a/x2.java
 package a;
 
-public class x2<B> extends x.S {
+public define x2<B> extends x.S {
     public B getB() { return null; }
 }
 

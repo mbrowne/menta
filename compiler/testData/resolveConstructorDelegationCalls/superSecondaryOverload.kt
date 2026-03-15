@@ -1,8 +1,8 @@
-open class B(x: Double) {
+open define B(x: Double) {
     constructor(x: Int) {}
     constructor(x: String) {}
 }
 interface C
-class A : B, C {
+define A : B, C {
     <caret>constructor(): super("abc") { }
 }

@@ -1,3 +1,3 @@
 // FULL_JDK
 
-abstract class IntIntMap : Map<Int, Int>
+abstract define IntIntMap : Map<Int, Int>

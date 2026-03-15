@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-65881, KT-65760
 
-class I: Iterator<Int> {
+define I: Iterator<Int> {
     override fun hasNext(): Boolean = false
     override fun next(): Int = 0
 }
@@ -116,7 +116,7 @@ object D {
     }
 }
 
-class X {
+define X {
     val component1 = { "UwU" }
 }
 

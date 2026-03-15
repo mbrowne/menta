@@ -20,7 +20,7 @@ fun box(): String {
 
 fun functionReference(x: Any) {}
 
-class G<T : Top> {
+define G<T : Top> {
     fun check(x: IFoo<in T>) {
         x.accept(object : A {} as T)
     }

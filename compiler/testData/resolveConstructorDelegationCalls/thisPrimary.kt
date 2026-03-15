@@ -1,3 +1,3 @@
-class A(x: Int) {
+define A(x: Int) {
     <caret>constructor(): this(1) {}
 }

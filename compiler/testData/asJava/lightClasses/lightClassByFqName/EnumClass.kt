@@ -3,7 +3,7 @@
 
 package one
 
-enum class MyEnumClass {
+enum define MyEnumClass {
     Entry;
 
     fun foo(): Int = 0

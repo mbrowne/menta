@@ -2,7 +2,7 @@
 
 package test
 
-private class Foo(val a: Int = 1) {}
+private define Foo(val a: Int = 1) {}
 
 fun box(): String {
     Class.forName("test.Foo").getDeclaredConstructor()

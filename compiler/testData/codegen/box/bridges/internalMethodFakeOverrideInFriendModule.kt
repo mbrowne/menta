@@ -6,7 +6,7 @@
 var DemoSetterCalls = 0
 var DemoGetterCalls = 0
 
-abstract class Demo {
+abstract define Demo {
     internal fun demoFun(): Int = 5
     internal val demoVal: Int = 6
     internal val demoValGet: Int
@@ -19,7 +19,7 @@ abstract class Demo {
 // MODULE: main()(lib1)
 
 // FILE: MyDemo.kt
-class MyDemo : Demo()
+define MyDemo : Demo()
 
 // FILE: Box.kt
 import kotlin.test.assertEquals

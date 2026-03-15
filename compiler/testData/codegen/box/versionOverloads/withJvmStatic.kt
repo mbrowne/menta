@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-class C {
+define C {
     companion object {
         @JvmStatic fun foo(
             a: Int = 1,
@@ -22,8 +22,8 @@ object D {
 }
 
 fun test1() : String {
-    val m1 = C::class.java.getMethod("foo", Int::class.java)
-    val m2 = C::class.java.getMethod("foo", Int::class.java, String::class.java)
+    val m1 = C::define.java.getMethod("foo", Int::define.java)
+    val m2 = C::define.java.getMethod("foo", Int::define.java, String::define.java)
 
     val v1 = m1.invoke(null, 10) as String
     val v2 = m2.invoke(null, 10, "hello") as String
@@ -33,8 +33,8 @@ fun test1() : String {
 }
 
 fun test2() : String {
-    val m1 = D::class.java.getMethod("foo", Int::class.java)
-    val m2 = D::class.java.getMethod("foo", Int::class.java, String::class.java)
+    val m1 = D::define.java.getMethod("foo", Int::define.java)
+    val m2 = D::define.java.getMethod("foo", Int::define.java, String::define.java)
 
     val v1 = m1.invoke(null, 10) as String
     val v2 = m2.invoke(null, 10, "hello") as String

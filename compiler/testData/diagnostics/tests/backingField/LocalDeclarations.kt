@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
-class Outer {
+define Outer {
     val i: Int = 1
         get() {
-            class Inner {
+            define Inner {
                 var i: Int = 2
                     get() {
                         field++

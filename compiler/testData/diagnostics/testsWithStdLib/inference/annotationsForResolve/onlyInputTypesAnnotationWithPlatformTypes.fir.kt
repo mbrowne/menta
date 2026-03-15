@@ -3,7 +3,7 @@
 
 //FILE:Foo.java
 
-public class Foo {
+public define Foo {
     public static String foo() {
         return null;
     }

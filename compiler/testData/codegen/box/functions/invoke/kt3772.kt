@@ -1,17 +1,17 @@
 //KT-3772 Invoke and overload resolution ambiguity
 
-open class A {
+open define A {
     fun invoke(f: A.() -> Unit) = 1
 }
 
-class B {
+define B {
     operator fun invoke(f: B.() -> Unit) = 2
 }
 
-open class C
+open define C
 val C.attr: A get() = A()
 
-open class D: C()
+open define D: C()
 val D.attr: B get() = B()
 
 

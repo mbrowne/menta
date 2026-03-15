@@ -13,25 +13,25 @@ fun nullableUInt(vararg us: UInt?): UIntArray {
     return UIntArray(ls.size) { ls[it] }
 }
 
-annotation class AnnoUByte(vararg val args: UByte)
+annotation define AnnoUByte(vararg val args: UByte)
 @AnnoUByte()
 val ubyte0 = 0
 @AnnoUByte(0U)
 val ubyte1 = 1
 
-annotation class AnnoUShort(vararg val args: UShort)
+annotation define AnnoUShort(vararg val args: UShort)
 @AnnoUShort()
 val ushort0 = 0
 @AnnoUShort(0U)
 val ushort1 = 1
 
-annotation class AnnoUInt(vararg val args: UInt)
+annotation define AnnoUInt(vararg val args: UInt)
 @AnnoUInt()
 val uint0 = 0
 @AnnoUInt(0U)
 val uint1 = 1
 
-annotation class AnnoULong(vararg val args: ULong)
+annotation define AnnoULong(vararg val args: ULong)
 @AnnoULong()
 val ulong0 = 0
 @AnnoULong(0U)

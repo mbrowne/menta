@@ -1,13 +1,13 @@
 // CHECK_CONTAINS_NO_CALLS: testDispatch except=Unit_getInstance
 // CHECK_CONTAINS_NO_CALLS: testExtension except=Unit_getInstance
-class Bar {
+define Bar {
     inline operator fun invoke(f: () -> String) { f() }
 }
 
-class Baz
+define Baz
 inline operator fun Baz.invoke(f: () -> String) { f() }
 
-class Foo {
+define Foo {
     val bar = Bar()
     val baz = Baz()
 }

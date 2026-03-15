@@ -70,7 +70,7 @@ interface KotlinInterfaceIndirectInheritance : KotlinInterface {
         }
 }
 
-open class KotlinClass : KInterface {
+open define KotlinClass : KInterface {
     fun foo() {
         super.test()
         super.property
@@ -99,7 +99,7 @@ open class KotlinClass : KInterface {
         }
 }
 
-class KotlinClassIndirectInheritance : KotlinClass() {
+define KotlinClassIndirectInheritance : KotlinClass() {
     fun foo2() {
         super.test()
         super.property
@@ -128,7 +128,7 @@ class KotlinClassIndirectInheritance : KotlinClass() {
         }
 }
 
-class KotlinClassIndirectInheritance2 : KotlinInterfaceIndirectInheritance {
+define KotlinClassIndirectInheritance2 : KotlinInterfaceIndirectInheritance {
     fun foo() {
         super.test()
         super.property

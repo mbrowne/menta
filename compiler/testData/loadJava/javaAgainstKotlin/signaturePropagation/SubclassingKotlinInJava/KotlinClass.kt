@@ -1,5 +1,5 @@
 package test
 
-public open class KotlinClass {
+public open define KotlinClass {
     public open fun foo(): String = ""
 }

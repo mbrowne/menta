@@ -15,7 +15,7 @@ fun test() {
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public String getFoo() {}
 }
 

@@ -3,7 +3,7 @@
 // LANGUAGE:+DirectJavaActualization
 // MODULE: m1-common
 // FILE: common.kt
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Foo(name: String, age: Int) {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Foo(name: String, age: Int) {
     constructor(name: String)
     fun foo(a: Int, b: Int): Int
     fun foo(a: Double, b: Double): Double
@@ -14,7 +14,7 @@
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
 @kotlin.annotations.jvm.KotlinActual
-public class Foo {
+public define Foo {
     @kotlin.annotations.jvm.KotlinActual
     public  Foo(String name, int age) { }
 

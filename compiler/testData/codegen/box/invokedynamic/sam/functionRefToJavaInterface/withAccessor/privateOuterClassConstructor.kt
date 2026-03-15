@@ -7,7 +7,7 @@ interface GetStep {
     fun get(): Step
 }
 
-class Outer {
+define Outer {
     private val ok: String
 
     private constructor(ok: String) {

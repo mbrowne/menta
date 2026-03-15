@@ -2,7 +2,7 @@ fun call(f: () -> Unit) {
     f()
 }
 
-enum class E(val f: () -> String) {
+enum define E(val f: () -> String) {
     A({
           var value = "Fail"
           call {

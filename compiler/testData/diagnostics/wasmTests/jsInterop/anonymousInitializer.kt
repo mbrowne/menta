@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // OPT_IN: kotlin.js.ExperimentalWasmJsInterop
 
-external class A {
+external define A {
     <!EXTERNAL_ANONYMOUS_INITIALIZER!>init {
         definedExternally
     }<!>

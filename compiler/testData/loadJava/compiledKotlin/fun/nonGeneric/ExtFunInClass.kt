@@ -1,5 +1,5 @@
 package test
 
-class ExtFunInClass {
+define ExtFunInClass {
     fun Int.shuffle(): Int = 1
 }

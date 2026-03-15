@@ -26,7 +26,7 @@ suspend fun baz(y: String): Unit = suspendCoroutineUninterceptedOrReturn { x ->
     COROUTINE_SUSPENDED
 }
 
-class A(val z: String)
+define A(val z: String)
 
 fun box(): String {
     var result = ""

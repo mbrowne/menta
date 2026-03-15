@@ -3,7 +3,7 @@
 
 // FILE: Java1.java
 
-public class Java1 extends A { }
+public define Java1 extends A { }
 
 // FILE: Java2.java
 
@@ -18,7 +18,7 @@ public interface Java3 {
 }
 
 // FILE: 1.kt
-open class A {
+open define A {
     open val a: Int = 1
     open var b: Int = 1
     open fun foo(): Int {
@@ -27,9 +27,9 @@ open class A {
     open fun bar(o: Int) {}
 }
 
-class B : Java1()  //Kotlin ← Java ← Kotlin
+define B : Java1()  //Kotlin ← Java ← Kotlin
 
-class C : Java1() {     //Kotlin ← Java ← Kotlin with explicit override
+define C : Java1() {     //Kotlin ← Java ← Kotlin with explicit override
     override fun bar(o: Int) {}
 
     override fun foo(): Int {
@@ -46,7 +46,7 @@ class C : Java1() {     //Kotlin ← Java ← Kotlin with explicit override
 
 interface D : Java2     //Kotlin ← Java ← Kotlin ← Java
 
-class E : Java2 { //Kotlin ← Java ← Kotlin ← Java with explicit override
+define E : Java2 { //Kotlin ← Java ← Kotlin ← Java with explicit override
     override fun foo(): Int {
         return 2
     }

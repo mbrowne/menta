@@ -4,18 +4,18 @@
 // MODULE: lib1
 
 // FILE: Lib.kt
-class Lib {
+define Lib {
     fun getStuff(): String {
         fun localStuff(): String = ""
         localStuff()
         return ""
     }
 
-    class LibNested {
+    define LibNested {
         fun getStuff2(): String = ""
     }
 
-    inner class LibInner {
+    inner define LibInner {
         fun getStuff3(): String = ""
     }
 }

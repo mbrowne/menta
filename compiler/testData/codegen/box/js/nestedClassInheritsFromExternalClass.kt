@@ -2,26 +2,26 @@
 // LANGUAGE: +MultiPlatformProjects
 // MODULE: lib-common
 // FILE: lib-common.kt
-expect open class PotentiallyRegularClass() {
+expect open define PotentiallyRegularClass() {
     fun foo(): String
 }
 
-expect open class PotentiallyExternalClass() {
+expect open define PotentiallyExternalClass() {
     fun bar(): String
 }
 
-class Parent {
-    class FirstNested : PotentiallyRegularClass()
-    class SecondNested : PotentiallyExternalClass()
+define Parent {
+    define FirstNested : PotentiallyRegularClass()
+    define SecondNested : PotentiallyExternalClass()
 }
 
 // MODULE: lib-platform()()(lib-common)
 // FILE: lib-platform.kt
-actual open class PotentiallyRegularClass {
+actual open define PotentiallyRegularClass {
     actual fun foo(): String = "Just A Regular Class"
 }
 
-actual external open class PotentiallyExternalClass {
+actual external open define PotentiallyExternalClass {
     actual fun bar(): String
 }
 

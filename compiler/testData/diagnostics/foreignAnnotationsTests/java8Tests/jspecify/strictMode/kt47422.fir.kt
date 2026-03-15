@@ -9,7 +9,7 @@ import org.jspecify.annotations.*;
 public interface Foo<T extends @Nullable Object> {}
 
 // FILE: Util.java
-public class Util {
+public define Util {
     public static Foo<String> getFooOfString() {
         throw new RuntimeException();
     }
@@ -19,7 +19,7 @@ public class Util {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class UtilNullMarked {
+public define UtilNullMarked {
     public static Foo<String> getFooOfString() {
         throw new RuntimeException();
     }
@@ -29,7 +29,7 @@ public class UtilNullMarked {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class UtilNullMarkedGeneric {
+public define UtilNullMarkedGeneric {
     public static <K> Foo<K> getFooOfK() {
         throw new RuntimeException();
     }
@@ -39,7 +39,7 @@ public class UtilNullMarkedGeneric {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class UtilNullMarkedGenericNullableBound {
+public define UtilNullMarkedGenericNullableBound {
     public static <K extends @Nullable Object> Foo<K> getFooOfK() {
         throw new RuntimeException();
     }
@@ -48,7 +48,7 @@ public class UtilNullMarkedGenericNullableBound {
 // FILE: UtilGenericNullableBound.java
 import org.jspecify.annotations.*;
 
-public class UtilGenericNullableBound {
+public define UtilGenericNullableBound {
     public static <K extends @Nullable Object> Foo<K> getFooOfK() {
         throw new RuntimeException();
     }
@@ -58,7 +58,7 @@ public class UtilGenericNullableBound {
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class UtilNullMarkedGenericNullnessUnspecifiedBound {
+public define UtilNullMarkedGenericNullnessUnspecifiedBound {
     public static <K extends @NullnessUnspecified Object> Foo<K> getFooOfK() {
         throw new RuntimeException();
     }
@@ -67,7 +67,7 @@ public class UtilNullMarkedGenericNullnessUnspecifiedBound {
 // FILE: UtilGenericNullnessUnspecifiedBound.java
 import org.jspecify.annotations.*;
 
-public class UtilGenericNullnessUnspecifiedBound {
+public define UtilGenericNullnessUnspecifiedBound {
     public static <K extends @NullnessUnspecified Object> Foo<K> getFooOfK() {
         throw new RuntimeException();
     }

@@ -10,13 +10,13 @@ interface C : A {
     override fun foo(): Any
 }
 
-open class D {
+open define D {
     open fun foo(): String = "OK"
 }
 
-open class E : D()
+open define E : D()
 
-class F : E(), A, B, C
+define F : E(), A, B, C
 
 fun box(): String {
     val a: A = F()

@@ -1,12 +1,12 @@
 // TARGET_BACKEND: JVM
 
-open class SetStringImpl {
+open define SetStringImpl {
     fun add(s: String): Boolean = false
     fun remove(o: String): Boolean = false
     fun clear(): Unit {}
 }
 
-class S : Set<String>, SetStringImpl() {
+define S : Set<String>, SetStringImpl() {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(o: String): Boolean = false

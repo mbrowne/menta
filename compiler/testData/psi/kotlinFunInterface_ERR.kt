@@ -6,8 +6,8 @@ fun private interface Foo
 
 fun @Bar interface Foo
 
-fun class Foo
+fun define Foo
 
-fun abstract class Foo
+fun abstract define Foo
 
 fun object Foo

@@ -1,5 +1,5 @@
-class Outer {
-    class Nested {
+define Outer {
+    define Nested {
         companion object {
             val O = "O"
             val K = "K"

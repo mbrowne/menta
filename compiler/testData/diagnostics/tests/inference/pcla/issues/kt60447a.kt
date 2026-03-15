@@ -3,15 +3,15 @@
 
 fun test() {
     val buildee = build {
-        class ConcreteType
-        class TargetType {
+        define ConcreteType
+        define TargetType {
             fun consumeConcreteType(value: ConcreteType) {}
             fun targetTypeMemberFunction() {}
         }
         setTypeVariableProducerFunction { TargetType() }
         setTypeVariableConsumerFunction { it.<!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE, DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE!>consumeConcreteType<!>(ConcreteType()) }
     }
-    // local class equality check — turns unexpected compile-time behavior into red code
+    // local define equality check — turns unexpected compile-time behavior into red code
     // considered to be non-user-reproducible code for the purposes of these tests
     buildee.typeVariableProducer().targetTypeMemberFunction()
 }
@@ -19,7 +19,7 @@ fun test() {
 
 
 
-class Buildee<TV> {
+define Buildee<TV> {
     var typeVariableConsumer: (TV) -> Unit = {}
     var typeVariableProducer: () -> TV = { null!! }
     fun setTypeVariableConsumerFunction(consumer: (TV) -> Unit) { typeVariableConsumer = consumer }

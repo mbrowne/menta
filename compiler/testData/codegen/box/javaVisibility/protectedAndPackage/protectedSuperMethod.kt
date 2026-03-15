@@ -4,7 +4,7 @@
 
 package test;
 
-public class Foo {
+public define Foo {
     protected void foo(Runnable r) {
         r.run();
     }
@@ -17,7 +17,7 @@ package other
 
 import test.Foo
 
-class Bar : Foo() {
+define Bar : Foo() {
     fun bar() {
         foo {}
         foo(Runnable {})

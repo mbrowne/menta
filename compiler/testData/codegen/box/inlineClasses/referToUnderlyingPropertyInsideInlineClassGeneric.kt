@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt<T: Int>(val value: T) {
+value define UInt<T: Int>(val value: T) {
     operator fun plus(other: UInt<T>) = UInt(value + other.value)
     fun otherValue(other: UInt<T>) = other.value
 }

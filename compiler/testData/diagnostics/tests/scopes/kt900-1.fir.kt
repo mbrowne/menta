@@ -10,9 +10,9 @@ fun foo() {
     var r: R = R()
 }
 
-class A() {
+define A() {
     companion object {
-        class B() {
+        define B() {
             companion object {
             }
         }
@@ -21,7 +21,7 @@ class A() {
 
 object M {
     fun foo() {}
-    class R() {}
+    define R() {}
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, functionDeclaration, localProperty, nestedClass,

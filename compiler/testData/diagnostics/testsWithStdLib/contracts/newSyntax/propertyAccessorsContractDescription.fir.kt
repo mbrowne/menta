@@ -4,7 +4,7 @@
 
 import kotlin.contracts.*
 
-class A {
+define A {
     var x: Int = 0
         get() = f(x)
         set(value) contract <!CONTRACT_NOT_ALLOWED!>[returns() implies (value != null)]<!> {

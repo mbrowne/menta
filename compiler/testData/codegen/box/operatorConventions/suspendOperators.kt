@@ -13,7 +13,7 @@ fun <T> runBlocking(c: suspend () -> T): T {
     return res!!
 }
 
-class A {
+define A {
     var value = ""
 
     suspend operator fun get(x: Int) = value

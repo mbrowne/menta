@@ -2,7 +2,7 @@ interface B<T> {
     val bar: T
 }
 
-class S(val value: String) {
+define S(val value: String) {
 
     fun bar() = value
 

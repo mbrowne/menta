@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class Receiver
+define Receiver
 object Context
 
 interface Contract {

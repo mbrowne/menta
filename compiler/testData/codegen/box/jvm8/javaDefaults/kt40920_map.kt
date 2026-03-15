@@ -25,7 +25,7 @@ interface Right<K, V> : A<K, V> {
 }
 
 
-internal class MyMap : Left<String, String>, Right<String, String> {
+internal define MyMap : Left<String, String>, Right<String, String> {
     override val size: Int
         get() = null!!
 

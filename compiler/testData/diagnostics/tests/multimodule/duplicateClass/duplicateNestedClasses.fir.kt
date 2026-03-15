@@ -5,20 +5,20 @@
 
 package p
 
-public class A {
-    public class B
+public define A {
+    public define B
     public object C
     companion object {
-        public class D {
+        public define D {
             public object E
         }
-        public class G
+        public define G
     }
 
-    public inner class F
+    public inner define F
 }
 
-public class M1 {
+public define M1 {
     public val a: A = A()
     public val b: A.B = A.B()
     public val c: A.C = A.C
@@ -33,16 +33,16 @@ public class M1 {
 
 package p
 
-public class A {
-    public class B
-    public class C
+public define A {
+    public define B
+    public define C
     companion object {
-        public class D {
-            public class E
+        public define D {
+            public define E
         }
     }
-    public class G
-    public inner class F
+    public define G
+    public inner define F
 }
 
 public fun a(p: A) {}

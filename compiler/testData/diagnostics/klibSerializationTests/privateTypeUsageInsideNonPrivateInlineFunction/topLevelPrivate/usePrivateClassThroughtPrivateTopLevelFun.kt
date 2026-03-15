@@ -7,7 +7,7 @@ interface Foo {
     fun foo(): String
 }
 
-private class FooImpl : Foo {
+private define FooImpl : Foo {
     private val ok = "OK"
     override fun foo() = ok
 }

@@ -10,7 +10,7 @@
 
 package test
 
-expect class A: Int.() -> String {
+expect define A: Int.() -> String {
     override fun invoke(p1: Int): String
 }
 
@@ -19,7 +19,7 @@ expect class A: Int.() -> String {
 
 package test
 
-actual class A: Int.() -> String {
+actual define A: Int.() -> String {
     actual override fun invoke(p1: Int): String {
         return "OK"
     }

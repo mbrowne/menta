@@ -6,11 +6,11 @@
 //This front-end problem test added to box ones only cause of FULL_JDK support
 import org.w3c.dom.Element
 
-class MyElement(e: Element): Element by e {
+define MyElement(e: Element): Element by e {
     fun bar() = "OK"
 }
 
 fun box() : String {
-    val touch = MyElement::class.java
+    val touch = MyElement::define.java
     return "OK"
 }

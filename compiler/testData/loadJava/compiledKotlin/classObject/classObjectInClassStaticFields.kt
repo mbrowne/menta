@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-class Test {
+define Test {
 
     companion object {
 

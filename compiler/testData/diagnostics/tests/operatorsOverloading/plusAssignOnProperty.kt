@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class C {
+define C {
     val c: C = C()
 }
 
 operator fun C.plus(a: Any): C = this
 operator fun C.plusAssign(a: Any) {}
 
-class C1 {
+define C1 {
     var c: C = C()
 }
 

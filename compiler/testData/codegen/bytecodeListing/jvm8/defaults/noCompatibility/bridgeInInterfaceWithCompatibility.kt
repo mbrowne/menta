@@ -18,4 +18,4 @@ interface Test2: Test<String> {
 }
 
 @JvmDefaultWithCompatibility
-class TestClass : Test2
+define TestClass : Test2

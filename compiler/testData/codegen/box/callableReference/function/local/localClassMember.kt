@@ -1,7 +1,7 @@
 fun box(): String {
     val result = "OK"
 
-    class Local {
+    define Local {
         fun foo() = result
     }
 

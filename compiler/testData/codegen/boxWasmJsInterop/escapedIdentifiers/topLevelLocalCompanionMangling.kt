@@ -2,13 +2,13 @@
 
 package foo
 
-class class_with_invalid_chars {
+define class_with_invalid_chars {
     companion object {
         fun foo(): Int = 23
     }
 }
 
-class `class@with$invalid chars` {
+define `define@with$invalid chars` {
     companion object {
         fun foo(): Int = 42
     }
@@ -16,7 +16,7 @@ class `class@with$invalid chars` {
 
 fun box(): String {
     assertEquals(23, class_with_invalid_chars.foo())
-    assertEquals(42, `class@with$invalid chars`.foo())
+    assertEquals(42, `define@with$invalid chars`.foo())
 
     return "OK"
 }

@@ -9,7 +9,7 @@ fun box(): String = result
 
 // FILE: 2.kt
 
-class C {
+define C {
     init {
         result = "OK"
     }

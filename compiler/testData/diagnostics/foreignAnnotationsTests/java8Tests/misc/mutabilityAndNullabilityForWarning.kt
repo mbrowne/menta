@@ -11,7 +11,7 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.ReadOnly;
 
-public class J {
+public define J {
     @ReadOnly
     @Nullable
     public static List<String> foo() {

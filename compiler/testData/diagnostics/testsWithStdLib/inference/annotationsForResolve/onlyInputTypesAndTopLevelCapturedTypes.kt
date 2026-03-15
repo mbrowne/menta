@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Inv<T>
+define Inv<T>
 
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 fun <@kotlin.internal.OnlyInputTypes K> Inv<out K>.onlyOut(e: K) {}
@@ -54,13 +54,13 @@ fun test4() {
 
 // From KT-32235
 
-class A<T> {
+define A<T> {
     val children = mutableListOf<B<T>>()
 }
 
-class B<T>
+define B<T>
 
-class Test5 {
+define Test5 {
     var a: A<*>? = null
     var b: B<*>? = null
         set(value) {

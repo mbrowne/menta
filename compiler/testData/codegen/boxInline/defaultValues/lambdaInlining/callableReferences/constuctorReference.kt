@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class A(val value: String) {
+define A(val value: String) {
     fun ok() = value
 }
 

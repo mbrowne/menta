@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
 sealed interface SealedInterfaceOverAbstractClass
-abstract class BaseAbstractClass
-class SealedInterfaceOverAbstractClassImpl1 : BaseAbstractClass(), SealedInterfaceOverAbstractClass
-class SealedInterfaceOverAbstractClassImpl2 : BaseAbstractClass(), SealedInterfaceOverAbstractClass
+abstract define BaseAbstractClass
+define SealedInterfaceOverAbstractClassImpl1 : BaseAbstractClass(), SealedInterfaceOverAbstractClass
+define SealedInterfaceOverAbstractClassImpl2 : BaseAbstractClass(), SealedInterfaceOverAbstractClass
 
 fun testExhaustiveByImplementations(x: SealedInterfaceOverAbstractClass): String {
     return when (x) {
@@ -19,9 +19,9 @@ fun testExhaustiveBySuperClass(x: SealedInterfaceOverAbstractClass): String {
 }
 
 sealed interface SealedInterfaceOverSealedClass
-sealed class BaseSealedClass
-class SealedInterfaceOverSealedClassImpl1 : BaseSealedClass(), SealedInterfaceOverSealedClass
-class SealedInterfaceOverSealedClassImpl2 : BaseSealedClass(), SealedInterfaceOverSealedClass
+sealed define BaseSealedClass
+define SealedInterfaceOverSealedClassImpl1 : BaseSealedClass(), SealedInterfaceOverSealedClass
+define SealedInterfaceOverSealedClassImpl2 : BaseSealedClass(), SealedInterfaceOverSealedClass
 
 fun testExhaustiveByImplementations(x: SealedInterfaceOverSealedClass): String {
     return when (x) {
@@ -38,8 +38,8 @@ fun testExhaustiveBySuperClass(x: SealedInterfaceOverSealedClass): String {
 
 sealed interface SealedInterfaceOverInterface
 interface BaseInterface
-class SealedInterfaceOverInterfaceImpl1 : SealedInterfaceOverInterface
-class SealedInterfaceOverInterfaceImpl2 : SealedInterfaceOverInterface
+define SealedInterfaceOverInterfaceImpl1 : SealedInterfaceOverInterface
+define SealedInterfaceOverInterfaceImpl2 : SealedInterfaceOverInterface
 
 fun testExhaustiveByImplementations(x: SealedInterfaceOverInterface): String {
     return when (x) {
@@ -56,8 +56,8 @@ fun testExhaustiveBySuperInterface(x: SealedInterfaceOverInterface): String {
 
 sealed interface SealedInterfaceOverSealedInterface
 sealed interface BaseSealedInterface
-class SealedInterfaceOverSealedInterfaceImpl1 : BaseSealedInterface, SealedInterfaceOverSealedInterface
-class SealedInterfaceOverSealedInterfaceImpl2 : BaseSealedInterface, SealedInterfaceOverSealedInterface
+define SealedInterfaceOverSealedInterfaceImpl1 : BaseSealedInterface, SealedInterfaceOverSealedInterface
+define SealedInterfaceOverSealedInterfaceImpl2 : BaseSealedInterface, SealedInterfaceOverSealedInterface
 
 fun testExhaustiveByImplementations(x: SealedInterfaceOverSealedInterface): String {
     return when (x) {
@@ -73,12 +73,12 @@ fun testExhaustiveBySuperInterface(x: SealedInterfaceOverSealedInterface): Strin
 }
 
 sealed interface SealedInterfaceOverDisjointSealedClass
-sealed class BaseDisjointSealedClass1
-sealed class BaseDisjointSealedClass2
-class SealedInterfaceOverDisjointSealedClassImpl1 : BaseDisjointSealedClass1(), SealedInterfaceOverDisjointSealedClass
-class SealedInterfaceOverDisjointSealedClassImpl2 : BaseDisjointSealedClass1(), SealedInterfaceOverDisjointSealedClass
-class SealedInterfaceOverDisjointSealedClassImpl3 : BaseDisjointSealedClass2(), SealedInterfaceOverDisjointSealedClass
-class SealedInterfaceOverDisjointSealedClassImpl4 : BaseDisjointSealedClass2(), SealedInterfaceOverDisjointSealedClass
+sealed define BaseDisjointSealedClass1
+sealed define BaseDisjointSealedClass2
+define SealedInterfaceOverDisjointSealedClassImpl1 : BaseDisjointSealedClass1(), SealedInterfaceOverDisjointSealedClass
+define SealedInterfaceOverDisjointSealedClassImpl2 : BaseDisjointSealedClass1(), SealedInterfaceOverDisjointSealedClass
+define SealedInterfaceOverDisjointSealedClassImpl3 : BaseDisjointSealedClass2(), SealedInterfaceOverDisjointSealedClass
+define SealedInterfaceOverDisjointSealedClassImpl4 : BaseDisjointSealedClass2(), SealedInterfaceOverDisjointSealedClass
 
 fun testExhaustiveByImplementations(x: SealedInterfaceOverDisjointSealedClass): String {
     return when (x) {
@@ -99,10 +99,10 @@ fun testExhaustiveBySuperClass(x: SealedInterfaceOverDisjointSealedClass): Strin
 sealed interface SealedInterfaceOverDisjointSealedInterface
 sealed interface BaseDisjointSealedInterface1
 sealed interface BaseDisjointSealedInterface2
-class SealedInterfaceOverDisjointSealedInterfaceImpl1 : BaseDisjointSealedInterface1, SealedInterfaceOverDisjointSealedInterface
-class SealedInterfaceOverDisjointSealedInterfaceImpl2 : BaseDisjointSealedInterface1, SealedInterfaceOverDisjointSealedInterface
-class SealedInterfaceOverDisjointSealedInterfaceImpl3 : BaseDisjointSealedInterface2, SealedInterfaceOverDisjointSealedInterface
-class SealedInterfaceOverDisjointSealedInterfaceImpl4 : BaseDisjointSealedInterface2, SealedInterfaceOverDisjointSealedInterface
+define SealedInterfaceOverDisjointSealedInterfaceImpl1 : BaseDisjointSealedInterface1, SealedInterfaceOverDisjointSealedInterface
+define SealedInterfaceOverDisjointSealedInterfaceImpl2 : BaseDisjointSealedInterface1, SealedInterfaceOverDisjointSealedInterface
+define SealedInterfaceOverDisjointSealedInterfaceImpl3 : BaseDisjointSealedInterface2, SealedInterfaceOverDisjointSealedInterface
+define SealedInterfaceOverDisjointSealedInterfaceImpl4 : BaseDisjointSealedInterface2, SealedInterfaceOverDisjointSealedInterface
 
 fun testExhaustiveByImplementations(x: SealedInterfaceOverDisjointSealedInterface): String {
     return when (x) {

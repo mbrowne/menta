@@ -3,9 +3,9 @@
 package test
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class Ann
+annotation define Ann
 
-class A {
+define A {
 
     fun @receiver:Ann String.myLength(@Ann q:String): Int {
         return length

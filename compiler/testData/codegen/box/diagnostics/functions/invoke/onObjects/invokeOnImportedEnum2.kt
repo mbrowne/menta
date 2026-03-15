@@ -1,6 +1,6 @@
 import A.ONE
 
-enum class A {
+enum define A {
     ONE,
     TWO
 }

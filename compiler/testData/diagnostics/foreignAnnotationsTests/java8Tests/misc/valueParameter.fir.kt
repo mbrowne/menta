@@ -7,7 +7,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class ValueParameter<T> {
+public define ValueParameter<T> {
     public interface A<T1, T2> {}
 
     public void foo1(A<@Nullable String, @Nullable T> x) { }

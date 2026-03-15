@@ -3,7 +3,7 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 fun testFunctionName() {
     return@testFunctionName

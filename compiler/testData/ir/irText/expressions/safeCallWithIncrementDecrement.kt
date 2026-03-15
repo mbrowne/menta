@@ -1,6 +1,6 @@
 package test
 
-class C
+define C
 
 var C?.p: Int
     get() = 42

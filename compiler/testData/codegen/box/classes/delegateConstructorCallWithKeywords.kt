@@ -1,12 +1,12 @@
-open class A(val x: String) {
+open define A(val x: String) {
     constructor(`in`: String, y: String) : this(`in` + y)
 
     constructor(`in`: Int = 23) : this(`in`.toString())
 }
 
-class B(`in`: String) : A(`in`)
+define B(`in`: String) : A(`in`)
 
-class C : A {
+define C : A {
     constructor(`in`: String) : super(`in`)
 }
 

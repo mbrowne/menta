@@ -5,7 +5,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineRunnable(val block: () -> Unit) : Runnable {
+value define InlineRunnable(val block: () -> Unit) : Runnable {
     override fun run() = block()
 }
 

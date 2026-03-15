@@ -1,6 +1,6 @@
 interface In<in E>
-class A : In<A>
-class B : In<B>
+define A : In<A>
+define B : In<B>
 fun <T> select(x: T, y: T) = x ?: y
 
 // This test just checks that no internal error happens in backend

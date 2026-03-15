@@ -6,15 +6,15 @@ interface I {
     fun foo(): String
 }
 
-abstract class A {
+abstract define A {
     abstract fun bar(): String
 }
 
-abstract class G<T> {
+abstract define G<T> {
     abstract fun baz(): T
 }
 
-class C {
+define C {
     private val propA = object : A() {
         override fun bar() = "propA.bar"
 
@@ -42,23 +42,23 @@ class C {
     }
 
     private val propOI = object {
-        inner class D {
+        inner define D {
             fun df() {}
         }
         fun d(): D = D()
     }.d()
 
     private val propL = run {
-        class L {
+        define L {
             fun l() = "propL.l"
         }
         L()
     }
 
     private val propL2 = run {
-        class L {
-            inner class L1 {
-                inner class L2 {
+        define L {
+            inner define L1 {
+                inner define L2 {
                     fun l2() = "propL2.l2"
                 }
             }

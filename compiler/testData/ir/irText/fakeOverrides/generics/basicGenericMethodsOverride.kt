@@ -5,7 +5,7 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public <T> void foo(T a) { }
     public <T> T bar() {
         return null;
@@ -14,9 +14,9 @@ public class Java1 {
 
 // FILE: 1.kt
 
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun <T : Any> foo(a: T?) { }
     override fun <T : Any> bar(): T? {
         return null!!

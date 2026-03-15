@@ -16,9 +16,9 @@ external var propSet
     get(): <!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!>Int.() -> Int<!> = definedExternally
     set(v: <!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!>Int<!>.() -> Int) = definedExternally
 
-external class A(f: <!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!>Int<!>.() -> Int)
+external define A(f: <!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!>Int<!>.() -> Int)
 
-external data class <!WRONG_EXTERNAL_DECLARATION!>B(
+external data define <!WRONG_EXTERNAL_DECLARATION!>B(
         val a: <!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!><!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!>Int<!>.() -> Int<!>,
         var b: <!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!><!EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION!>Int<!>.() -> Int<!>
 )<!> {

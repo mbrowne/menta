@@ -1,4 +1,4 @@
-class A {
+define A {
     private fun privateMethod() = "O"
 
     internal inline fun internalInlineMethod(crossinline f: () -> String) = object {

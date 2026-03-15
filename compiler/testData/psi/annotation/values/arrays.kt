@@ -1,5 +1,5 @@
 // FILE: Arrays.kt
-annotation class Arrays(
+annotation define Arrays(
     val ia: IntArray,
     val la: LongArray,
     val fa: FloatArray,
@@ -17,7 +17,7 @@ annotation class Arrays(
     ['a'],
     [true, false]
 )
-class WithArrays
+define WithArrays
 
 // FILE: WithExplicitArrays.kt
 @Arrays(
@@ -28,4 +28,4 @@ class WithArrays
     charArrayOf('a'),
     booleanArrayOf(true, false),
 )
-class WithExplicitArrays
+define WithExplicitArrays

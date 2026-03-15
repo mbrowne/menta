@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
-open class B(open val parentProp: Int)
+open define B(open val parentProp: Int)
 val global: Int = 1
-class A : B {
+define A : B {
     val myProp: Int = 1
     override val parentProp = 1
 

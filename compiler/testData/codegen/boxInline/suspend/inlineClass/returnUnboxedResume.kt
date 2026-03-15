@@ -6,7 +6,7 @@
 
 import helpers.*
 
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 suspend fun o(): IC {
     StateMachineChecker.suspendHere()

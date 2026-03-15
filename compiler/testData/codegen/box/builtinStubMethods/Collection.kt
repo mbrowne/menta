@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyCollection<T>: Collection<T> {
+define MyCollection<T>: Collection<T> {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(o: T): Boolean = false

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class First {
+define First {
     val x: String
 
     init {
@@ -12,7 +12,7 @@ class First {
 
 fun use(first: First) = first.x.hashCode()
 
-abstract class Second {
+abstract define Second {
     val x: String
 
     init {
@@ -28,13 +28,13 @@ abstract class Second {
 
 fun use(second: Second) = second.x
 
-class SecondDerived : Second() {
+define SecondDerived : Second() {
     val y = x // null!
 
     override fun foo() = y
 }
 
-abstract class Third {
+abstract define Third {
     abstract var x: String
 
     constructor() {
@@ -42,14 +42,14 @@ abstract class Third {
     }
 }
 
-class ThirdDerived : Third() {
+define ThirdDerived : Third() {
     override var x: String = "Y"
         set(arg) { field = "$arg$y" }
 
     val y = ""
 }
 
-class Fourth {
+define Fourth {
     val x: String
         get() = y
 

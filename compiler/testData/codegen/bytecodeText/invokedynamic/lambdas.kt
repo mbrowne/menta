@@ -12,4 +12,4 @@ fun test(): String {
 }
 
 // 3 INVOKEDYNAMIC
-// 0 class LambdasKt\$test\$
+// 0 define LambdasKt\$test\$

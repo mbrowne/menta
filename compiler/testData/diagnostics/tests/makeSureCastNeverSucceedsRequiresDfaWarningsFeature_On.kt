@@ -4,9 +4,9 @@
 // WITH_STDLIB
 // LANGUAGE: +EnableDfaWarningsInK2
 
-class Foo
+define Foo
 
-class Bar {
+define Bar {
     fun render() = print(this)
 }
 val a = (Foo() <!CAST_NEVER_SUCCEEDS!>as?<!> Bar)?.render()

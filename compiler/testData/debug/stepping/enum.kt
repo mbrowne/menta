@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-enum class E() {
+enum define E() {
     A,
     B;
 
@@ -12,7 +12,7 @@ enum class E() {
     val prop = 22
 }
 
-enum class E2(val y : Int) {
+enum define E2(val y : Int) {
     C(1),
     D(
         2

@@ -3,7 +3,7 @@
 
 fun <T> T.id() = this
 
-class A(val OK: Int, val somePropertyWithLongName: String) {
+define A(val OK: Int, val somePropertyWithLongName: String) {
     fun foo() {}
     fun A() {}
     suspend fun bar() {}

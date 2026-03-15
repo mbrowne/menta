@@ -7,16 +7,16 @@ interface AIPowered {
     fun getAvatarReleaseYear(): Int
 }
 
-enum class BufferedEnum : Buffered {
+enum define BufferedEnum : Buffered {
     A, B;
     override fun flush() {}
 }
 
-enum class UsualEnum {
+enum define UsualEnum {
     C, D;
 }
 
-enum class CleverEnum : Buffered, AIPowered {
+enum define CleverEnum : Buffered, AIPowered {
     E, F;
     override fun flush() {}
     override fun getAvatarReleaseYear() = 2022
@@ -46,7 +46,7 @@ fun <P> processInfo2(info: String, printer: P) where P: AIPowered, P: Buffered {
     printer === CleverEnum.E
 }
 
-abstract class Printer {
+abstract define Printer {
     abstract fun print(command: String)
 }
 

@@ -3,11 +3,11 @@
 // FILE: a/x.java
 package a;
 
-public class x<T> {
+public define x<T> {
 
     public T getT() { return null; }
 
-    public class y<T> {
+    public define y<T> {
         public T getT() { return null; }
     }
 

@@ -2,7 +2,7 @@
 // LANGUAGE: +ReadDeserializedContracts +UseCallsInPlaceEffect
 // See KT-17479
 
-class Test {
+define Test {
     val str: String
     init {
         run {

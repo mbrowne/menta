@@ -13,7 +13,7 @@ interface TestInterface<R> {
     fun getOut(): Inv<out R>
 }
 
-class Inv<T> {
+define Inv<T> {
 }
 
 fun <K> capture(x: Inv<K>): K = null as K

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-enum class E {
+enum define E {
     E1 {
         override fun foo() = outerFun() + super.outerFun()
     },

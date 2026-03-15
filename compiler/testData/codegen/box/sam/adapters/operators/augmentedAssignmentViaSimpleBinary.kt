@@ -4,7 +4,7 @@
 
 import org.jetbrains.annotations.NotNull;
 
-class JavaClass {
+define JavaClass {
     @NotNull JavaClass plus(Runnable i) {
         i.run();
         return this;

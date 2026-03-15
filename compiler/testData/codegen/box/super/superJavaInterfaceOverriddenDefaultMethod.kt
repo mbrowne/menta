@@ -17,7 +17,7 @@ interface K : I, J {
     fun j_f(): Int = super<J>.f()
 }
 
-class C : K
+define C : K
 
 fun box(): String {
     if (C().i_f() != 1) return "Fail C.i_f"

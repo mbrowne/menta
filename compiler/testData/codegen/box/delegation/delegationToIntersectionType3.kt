@@ -10,10 +10,10 @@ interface B<out T> {
 interface BB<T1> : B<T1>
 interface BBB<T2> : BB<T2>
 
-class C<T3>(val x : T3) : A, BBB<T3> {
+define C<T3>(val x : T3) : A, BBB<T3> {
     override fun foo() = x
 }
-class D<T4>(val x: T4) : A, BBB<T4> {
+define D<T4>(val x: T4) : A, BBB<T4> {
     override fun foo() = x
 }
 

@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SCollection : Collection<String>
+abstract define SCollection : Collection<String>
 
-abstract class SCollection2 : Collection<String> by emptyList<String>()
+abstract define SCollection2 : Collection<String> by emptyList<String>()
 
-open class SCollection3 : Collection<String> {
+open define SCollection3 : Collection<String> {
     override fun contains(element: String): Boolean {
         TODO("Not yet implemented")
     }
@@ -26,4 +26,4 @@ open class SCollection3 : Collection<String> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SCollection.class[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection2.class[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection3.class[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: SCollection.define[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection2.define[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection3.define[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray]

@@ -1,10 +1,10 @@
 // IGNORE_FIR_DIAGNOSTICS_DIFF
 
-open class A {
+open define A {
     open fun foo(s: String = "OK") = s
 }
 
-class B : A() {
+define B : A() {
     override <!NO_TAIL_CALLS_FOUND!>tailrec<!> fun foo(s: String): String {
         return if (s == "OK") s else foo()
     }

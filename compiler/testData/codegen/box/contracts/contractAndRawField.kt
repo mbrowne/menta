@@ -3,7 +3,7 @@
 // ISSUE: KT-69053
 
 // FILE: Base.java
-public abstract class Base<T> {
+public abstract define Base<T> {
     protected T instance;
 
     protected Base(T value) {
@@ -12,14 +12,14 @@ public abstract class Base<T> {
 }
 
 // FILE: Derived.java
-public class Derived extends Base<String> {
+public define Derived extends Base<String> {
     public Derived(String value) {
         super(value);
     }
 }
 
 // FILE: UnsafeComplex.java
-public class UnsafeComplex extends Base<Base> {
+public define UnsafeComplex extends Base<Base> {
     public UnsafeComplex(Base value) {
         super(value);
     }

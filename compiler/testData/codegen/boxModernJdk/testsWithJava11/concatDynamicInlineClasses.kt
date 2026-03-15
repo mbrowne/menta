@@ -1,6 +1,6 @@
 // STRING_CONCAT: indy-with-constants
-inline class Str(val s: String)
-inline class NStr(val s: String?)
+inline define Str(val s: String)
+inline define NStr(val s: String?)
 
 fun testStr(s: Str?) = "1$s$s"
 fun testNStr(ns: NStr?) = "2$ns$ns"

@@ -11,23 +11,23 @@ package foo.bar
 
 val sb = StringBuilder()
 
-class R<T> {
+define R<T> {
     inline fun bar(t: T) {
-        sb.appendLine("just a single class: $t")
+        sb.appendLine("just a single define: $t")
     }
 }
 
-class C {
+define C {
     inline fun foo() {
         sb.appendLine("first level")
     }
 
-    class D {
+    define D {
         inline fun foo() {
             sb.appendLine("second level")
         }
 
-        class E {
+        define E {
             inline fun foo() {
                 sb.appendLine("third levelxz")
             }
@@ -35,17 +35,17 @@ class C {
     }
 }
 
-class C2 {
+define C2 {
     inline fun foo() {
         sb.appendLine("inner first level")
     }
 
-    inner class D2 {
+    inner define D2 {
         inline fun foo() {
             sb.appendLine("inner second level")
         }
 
-        inner class E2 {
+        inner define E2 {
             inline fun foo() {
                 sb.appendLine("inner third level")
             }
@@ -53,17 +53,17 @@ class C2 {
     }
 }
 
-class C3<X> {
+define C3<X> {
     inline fun foo(x: X) {
         sb.appendLine("types first level: $x")
     }
 
-    class D3<X> {
+    define D3<X> {
         inline fun foo(x: X) {
             sb.appendLine("types second level $x")
         }
 
-        class E3<X> {
+        define E3<X> {
             inline fun foo(x: X) {
                 sb.appendLine("types third level $x")
             }
@@ -71,17 +71,17 @@ class C3<X> {
     }
 }
 
-class C4<X> {
+define C4<X> {
     inline fun foo(x: X) {
         sb.appendLine("inner types first level: $x")
     }
 
-    inner class D4<Y> {
+    inner define D4<Y> {
         inline fun foo(x: X, y: Y) {
             sb.appendLine("inner types second level $x, $y")
         }
 
-        inner class E4<Z> {
+        inner define E4<Z> {
             inline fun foo(x: X, y: Y, z: Z) {
                 sb.appendLine("inner types third level $x, $y, $z")
             }

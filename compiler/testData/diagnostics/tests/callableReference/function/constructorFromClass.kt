@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KFunction0
 
-class A {
+define A {
     fun main() {
         val x = ::A
 
@@ -12,7 +12,7 @@ class A {
     }
 }
 
-class SomeOtherClass {
+define SomeOtherClass {
     fun main() {
         val x = ::A
 

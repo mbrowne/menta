@@ -2,10 +2,10 @@
 
 package test
 
-open class A {
+open define A {
     val v = "OK"
 
-    open inner class AA {
+    open inner define AA {
         protected inline fun inAA(crossinline modifier: (String) -> String): String = modifier(v)
     }
 }
@@ -14,8 +14,8 @@ open class A {
 
 import test.*
 
-class B : A() {
-    inner class BB : AA() {
+define B : A() {
+    inner define BB : AA() {
         fun test(): String = inAA { i -> i }
     }
 }

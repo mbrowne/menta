@@ -1,6 +1,6 @@
 import kotlin.reflect.*
 
-class A {
+define A {
     val x = 1
     fun x(): String = "OK"
 }

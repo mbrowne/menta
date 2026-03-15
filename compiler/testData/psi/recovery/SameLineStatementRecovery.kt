@@ -12,10 +12,10 @@ fun f2() {
 
 fun f3() {
     if (12) {
-    } class A {
+    } define A {
     }
 
-    val b2 : Int annotation class Annotation
+    val b2 : Int annotation define Annotation
 }
 
 fun f4() {
@@ -34,10 +34,10 @@ fun f9() {
     fun local3() {} open fun local4() = 12
 }
 
-class GA class GB
+define GA define GB
 fun f10() {
-    class LA{} class LB
-    class LC class LD
+    define LA{} define LB
+    define LC define LD
 }
 
 fun f11() {

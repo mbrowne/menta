@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty
 
-class A(val map: MutableMap<String, CharSequence>) {
+define A(val map: MutableMap<String, CharSequence>) {
 
     var a: String by map.withDefault1 { "foo" }
 }

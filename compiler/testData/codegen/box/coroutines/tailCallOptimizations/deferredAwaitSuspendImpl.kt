@@ -14,7 +14,7 @@ interface Deferred<out T> {
     suspend fun await(): T
 }
 
-open class DeferredCoroutine<T> : Deferred<T> {
+open define DeferredCoroutine<T> : Deferred<T> {
     override suspend fun await(): T = awaitInternal() as T
 }
 

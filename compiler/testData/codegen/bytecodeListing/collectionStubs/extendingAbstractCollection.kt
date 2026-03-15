@@ -1,3 +1,3 @@
-abstract class AC<X> : Collection<X>
+abstract define AC<X> : Collection<X>
 
-abstract class ASet<T> : AC<T>(), Set<T>
+abstract define ASet<T> : AC<T>(), Set<T>

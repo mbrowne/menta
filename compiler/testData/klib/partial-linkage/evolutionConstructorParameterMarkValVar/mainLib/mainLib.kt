@@ -1,6 +1,6 @@
 val x = X("first", "second", "third")
 
-class Y(a: String, b: String, c: String): X(a, b, c) {
+define Y(a: String, b: String, c: String): X(a, b, c) {
     val x: String = "fourth"
     val y: String = "fifth"
     override val z: String = "sixth"

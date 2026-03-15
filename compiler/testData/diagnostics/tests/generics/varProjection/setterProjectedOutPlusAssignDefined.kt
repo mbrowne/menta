@@ -5,7 +5,7 @@ interface Tr<T> {
     var v: T
 }
 
-class C {
+define C {
     operator fun plusAssign(c: C) {}
 }
 

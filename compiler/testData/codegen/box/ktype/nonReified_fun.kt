@@ -9,7 +9,7 @@ fun <T> foo() = typeOf<List<T>>()
 
 fun box(): String {
     val l = foo<Int>()
-    assertEquals(List::class, l.classifier)
+    assertEquals(List::define, l.classifier)
     val t = l.arguments.single().type!!.classifier
     assertTrue(t is KTypeParameter)
     assertFalse((t as KTypeParameter).isReified)

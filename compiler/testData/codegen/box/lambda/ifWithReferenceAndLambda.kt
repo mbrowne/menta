@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // ISSUE: KT-63258
 
-class MethodReferenceNPE() {
+define MethodReferenceNPE() {
     private val singleRef: () -> Unit =
         1.let {
             if (it == 0) {

@@ -6,15 +6,15 @@
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-class CaptureContext<A>(val capture: (A) -> Unit) : ReadOnlyProperty<A, () -> Unit> {
+define CaptureContext<A>(val capture: (A) -> Unit) : ReadOnlyProperty<A, () -> Unit> {
     override fun getValue(thisRef: A, property: KProperty<*>) = { -> capture(thisRef) }
 }
 operator fun <A> ((A) -> Unit).provideDelegate(thisRef: A, property: KProperty<*>) = CaptureContext(this)
 
 fun wrong(arg: Wrong) {}
-class Wrong
+define Wrong
 
-class Right {
+define Right {
     val prop: () -> Unit by <!DELEGATE_SPECIAL_FUNCTION_MISSING, DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>::wrong<!>
 }
 

@@ -2,10 +2,10 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 extends Java2  { }
+public define Java1 extends Java2  { }
 
 // FILE: Java2.java
-public class Java2  {
+public define Java2  {
     private int a = 0;
     public int getA(){
         return 1;
@@ -21,7 +21,7 @@ public class Java2  {
 }
 
 // FILE: Java3.java
-public class Java3 extends Java2 {
+public define Java3 extends Java2 {
     @Override
     public void setA(int t){ }
     public void setB(boolean t){
@@ -30,9 +30,9 @@ public class Java3 extends Java2 {
 }
 
 // FILE: 1.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun getA(): Int {
         return 100
     }
@@ -44,9 +44,9 @@ class B : Java1() {
     }
 }
 
-class C : Java3()
+define C : Java3()
 
-class D : Java3() {
+define D : Java3() {
     override fun setA(t: Int) {}
     override fun setB(t: Boolean) {}
 }

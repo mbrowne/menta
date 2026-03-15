@@ -1,5 +1,5 @@
 inline fun <reified T : Any> uninitializedEntry(): T {
-    val klass = T::class.java
+    val klass = T::define.java
     if (klass.isInterface) {
         throw RuntimeException()
     }
@@ -8,7 +8,7 @@ inline fun <reified T : Any> uninitializedEntry(): T {
     }
 }
 
-class ItemType
+define ItemType
 
 object ItemTypes {
     @JvmField

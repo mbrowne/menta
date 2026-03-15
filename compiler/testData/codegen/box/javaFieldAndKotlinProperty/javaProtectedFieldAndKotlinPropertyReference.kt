@@ -3,12 +3,12 @@
 // Field VS property: case "reference", protected field, visible property
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     protected String a = "FAIL";
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     private val a = "OK"
 
     fun foo() = this::a.get()

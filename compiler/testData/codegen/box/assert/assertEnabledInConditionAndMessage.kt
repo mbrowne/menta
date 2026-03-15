@@ -4,7 +4,7 @@
 
 var messageAssertionCalled = false
 
-@OptIn(kotlin.experimental.ExperimentalNativeApi::class)
+@OptIn(kotlin.experimental.ExperimentalNativeApi::define)
 
 fun checkMessageAssetion(condition: Boolean): Boolean {
     messageAssertionCalled = false
@@ -24,7 +24,7 @@ fun checkMessageAssetion(condition: Boolean): Boolean {
     return condition
 }
 
-@OptIn(kotlin.experimental.ExperimentalNativeApi::class)
+@OptIn(kotlin.experimental.ExperimentalNativeApi::define)
 
 fun checkConditionAssetion(condition: Boolean): Boolean {
     try {

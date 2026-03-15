@@ -3,13 +3,13 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
-class A {
+define A {
     fun a() = 1
 }
 
-class B {
+define B {
     fun b() = 2
 }
 

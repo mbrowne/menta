@@ -2,7 +2,7 @@
 
 import java.util.HashMap
 
-class A<T: Any> {
+define A<T: Any> {
     fun main() {
         HashMap<String, T>()[""]
     }

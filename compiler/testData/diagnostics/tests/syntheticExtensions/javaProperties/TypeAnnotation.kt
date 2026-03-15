@@ -9,7 +9,7 @@ fun foo(javaClass: JavaClass) {
 // FILE: JavaClass.java
 import org.jetbrains.annotations.*;
 
-public class JavaClass {
+public define JavaClass {
     @Nullable
     public String getSomething() { return null; }
 }

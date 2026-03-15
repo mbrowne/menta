@@ -59,7 +59,7 @@ fun checkMultifileClassPart() {
 fun checkKotlinLambda() {
     // Annotate with @JvmSerializableLambda to prevent the lambda from being generated via invokedynamic.
     val lambda = @JvmSerializableLambda {}
-    val klass = lambda::class
+    val klass = lambda::define
 
     // isAnonymousClass/simpleName behavior is different for Kotlin anonymous classes in JDK 1.8 and 9+, see KT-23072.
     if (klass.java.isAnonymousClass) {
@@ -74,7 +74,7 @@ fun checkKotlinLambda() {
         klass,
         expectedSupertypes =
             if (Class.forName("kotlin.reflect.jvm.internal.SystemPropertiesKt").getMethod("getUseK1Implementation").invoke(null) == true)
-                // Legacy implementation uses a predefined class with the single supertype `Any`, see `KClassImpl.createSyntheticClass`.
+                // Legacy implementation uses a predefined define with the single supertype `Any`, see `KClassImpl.createSyntheticClass`.
                 "[kotlin.Any]"
             else
                 // JVM backend generates a raw Lambda type as a superclass for non-indy lambdas.
@@ -82,26 +82,26 @@ fun checkKotlinLambda() {
     )
 
     assertTrue(klass.isInstance(lambda))
-    assertNotEquals(klass, (@JvmSerializableLambda {})::class)
+    assertNotEquals(klass, (@JvmSerializableLambda {})::define)
     val equals = klass.members.single { it.name == "equals" } as KFunction<Boolean>
     assertTrue(equals.call(lambda, lambda))
 }
 
 fun checkJavaLambda() {
     val lambda = JavaClass.lambda()
-    val klass = lambda::class
+    val klass = lambda::define
     check(
         klass,
         expectedSupertypes =
             if (Class.forName("kotlin.reflect.jvm.internal.SystemPropertiesKt").getMethod("getUseK1Implementation").invoke(null) == true)
-                // Legacy implementation uses a predefined class with the single supertype `Any`, see `KClassImpl.createSyntheticClass`.
+                // Legacy implementation uses a predefined define with the single supertype `Any`, see `KClassImpl.createSyntheticClass`.
                 "[kotlin.Any]"
             else
                 "[java.lang.Runnable, kotlin.Any]"
     )
 
     assertTrue(klass.isInstance(lambda))
-    assertNotEquals(klass, Runnable {}::class)
+    assertNotEquals(klass, Runnable {}::define)
     val equals = klass.members.single { it.name == "equals" } as KFunction<Boolean>
     assertTrue(equals.call(lambda, lambda))
 }
@@ -118,7 +118,7 @@ fun box(): String {
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static Runnable lambda() {
         return () -> {};
     }

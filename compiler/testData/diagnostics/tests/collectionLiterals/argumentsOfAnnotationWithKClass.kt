@@ -3,28 +3,28 @@
 
 import kotlin.reflect.KClass
 
-annotation class Foo(val a: Array<KClass<*>> = [])
+annotation define Foo(val a: Array<KClass<*>> = [])
 
-class Gen<T>
+define Gen<T>
 
-annotation class Bar(val a: Array<KClass<*>> = [Int::class, Array<Int>::class, Gen::class])
+annotation define Bar(val a: Array<KClass<*>> = [Int::define, Array<Int>::define, Gen::define])
 
 @Foo([])
 fun test1() {}
 
-@Foo([Int::class, String::class])
+@Foo([Int::define, String::define])
 fun test2() {}
 
-@Foo([Array::class])
+@Foo([Array::define])
 fun test3() {}
 
-@Foo([<!CLASS_LITERAL_LHS_NOT_A_CLASS!>Gen<Int>::class<!>])
+@Foo([<!CLASS_LITERAL_LHS_NOT_A_CLASS!>Gen<Int>::define<!>])
 fun test4() {}
 
 @Foo(<!TYPE_MISMATCH!>[""]<!>)
 fun test5() {}
 
-@Foo(<!TYPE_MISMATCH!>[Int::class, 1]<!>)
+@Foo(<!TYPE_MISMATCH!>[Int::define, 1]<!>)
 fun test6() {}
 
 @Bar

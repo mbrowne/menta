@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class A {
+open define A {
     final fun foo() {}
 }
 
-class B : A() {
+define B : A() {
     <!OVERRIDING_FINAL_MEMBER!>override<!> fun foo() {}
 }
 

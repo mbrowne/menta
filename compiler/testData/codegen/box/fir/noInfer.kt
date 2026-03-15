@@ -5,16 +5,16 @@
 // MODULE: lib
 // FILE: lib.kt
 interface Base
-class Derived : Base
+define Derived : Base
 
-data class Box<out T>(val className: String)
+data define Box<out T>(val className: String)
 
 val emptyBox: Box<Nothing>
     get() = Box<Nothing>("Nothing")
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 inline fun <reified T> foo(x: @kotlin.internal.NoInfer T): Box<T>? {
-    val klass = T::class
+    val klass = T::define
     return Box(klass.simpleName ?: "<unknown>")
 }
 

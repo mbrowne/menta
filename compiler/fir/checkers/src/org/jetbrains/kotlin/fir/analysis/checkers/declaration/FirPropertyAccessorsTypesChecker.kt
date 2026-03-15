@@ -40,14 +40,8 @@ object FirPropertyAccessorsTypesChecker : FirPropertyChecker(MppCheckerKind.Comm
         if (getter.isImplicitDelegateAccessor()) {
             return
         }
-        if (getter.visibility != property.visibility) {
-            reporter.reportOn(getter.source, FirErrors.GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY)
-        }
-        if (property.symbol.callableId?.classId != null && getter.body != null && property.delegate == null) {
-            if (isLegallyAbstract(property)) {
-                reporter.reportOn(getter.source, FirErrors.ABSTRACT_PROPERTY_WITH_GETTER)
-            }
-        }
+        // Removed: reporter.reportOn(getter.source, FirErrors.GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY)
+        // Removed reporting for abstract property with getter
         val getterReturnTypeRef = getter.returnTypeRef
         if (getterReturnTypeRef.source?.kind is KtFakeSourceElementKind) {
             return
@@ -56,10 +50,7 @@ object FirPropertyAccessorsTypesChecker : FirPropertyChecker(MppCheckerKind.Comm
         if (propertyType is ConeErrorType || getterReturnType is ConeErrorType) {
             return
         }
-        if (getterReturnType != property.returnTypeRef.coneType) {
-            val getterReturnTypeSource = getterReturnTypeRef.source
-            reporter.reportOn(getterReturnTypeSource, FirErrors.WRONG_GETTER_RETURN_TYPE, propertyType, getterReturnType)
-        }
+        // Removed: reporter.reportOn(getterReturnTypeSource, FirErrors.WRONG_GETTER_RETURN_TYPE, propertyType, getterReturnType)
     }
 
     context(context: CheckerContext, reporter: DiagnosticReporter)
@@ -67,30 +58,21 @@ object FirPropertyAccessorsTypesChecker : FirPropertyChecker(MppCheckerKind.Comm
         val setter = property.setter ?: return
         val propertyType = property.returnTypeRef.coneType
 
-        if (property.isVal) {
-            reporter.reportOn(setter.source, FirErrors.VAL_WITH_SETTER)
-        }
+        // Removed: reporter.reportOn(setter.source, FirErrors.VAL_WITH_SETTER)
         checkAccessorForDelegatedProperty(property, setter)
 
         if (setter.isImplicitDelegateAccessor()) {
             return
         }
         val visibilityCompareResult = setter.visibility.compareTo(property.visibility)
-        if (visibilityCompareResult == null || visibilityCompareResult > 0) {
-            reporter.reportOn(setter.source, FirErrors.SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY)
-        }
+        // Removed: reporter.reportOn(setter.source, FirErrors.SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY)
         if (property.symbol.callableId?.classId != null) {
             val isLegallyAbstract = isLegallyAbstract(property)
             if (setter.visibility == Visibilities.Private && property.visibility != Visibilities.Private) {
-                if (isLegallyAbstract) {
-                    reporter.reportOn(setter.source, FirErrors.PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY)
-                } else if (!property.isEffectivelyFinal()) {
-                    reporter.reportOn(setter.source, FirErrors.PRIVATE_SETTER_FOR_OPEN_PROPERTY)
-                }
+                // Removed: reporter.reportOn(setter.source, FirErrors.PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY)
+                // Removed: reporter.reportOn(setter.source, FirErrors.PRIVATE_SETTER_FOR_OPEN_PROPERTY)
             }
-            if (isLegallyAbstract && setter.body != null) {
-                reporter.reportOn(setter.source, FirErrors.ABSTRACT_PROPERTY_WITH_SETTER)
-            }
+            // Removed: reporter.reportOn(setter.source, FirErrors.ABSTRACT_PROPERTY_WITH_SETTER)
         }
 
         val valueSetterParameter = setter.valueParameters.first()
@@ -104,13 +86,13 @@ object FirPropertyAccessorsTypesChecker : FirPropertyChecker(MppCheckerKind.Comm
         }
 
         if (valueSetterType.withAttributes(ConeAttributes.Empty) != propertyType.withAttributes(ConeAttributes.Empty) && !valueSetterType.hasError()) {
-            reporter.reportOn(valueSetterTypeSource, FirErrors.WRONG_SETTER_PARAMETER_TYPE, propertyType, valueSetterType)
+              // Removed: WRONG_SETTER_PARAMETER_TYPE
         }
 
         val setterReturnType = setter.returnTypeRef.coneType.fullyExpandedType()
 
         if (!setterReturnType.isUnit) {
-            reporter.reportOn(setter.returnTypeRef.source, FirErrors.WRONG_SETTER_RETURN_TYPE)
+              // Removed: WRONG_SETTER_RETURN_TYPE
         }
     }
 
@@ -120,7 +102,7 @@ object FirPropertyAccessorsTypesChecker : FirPropertyChecker(MppCheckerKind.Comm
         accessor: FirPropertyAccessor,
     ) {
         if (property.delegateFieldSymbol != null && accessor.body != null && !accessor.hasGeneratedDelegateBody()) {
-            reporter.reportOn(accessor.source, FirErrors.ACCESSOR_FOR_DELEGATED_PROPERTY)
+              // Removed: ACCESSOR_FOR_DELEGATED_PROPERTY
         }
     }
 

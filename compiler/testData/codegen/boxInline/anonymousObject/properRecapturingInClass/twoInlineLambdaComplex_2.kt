@@ -6,7 +6,7 @@ interface A {
     fun run()
 }
 
-class B(val o: String, val k: String) {
+define B(val o: String, val k: String) {
 
     inline fun testNested(crossinline f: (String) -> Unit, crossinline f2: (String) -> Unit) {
         object : A {

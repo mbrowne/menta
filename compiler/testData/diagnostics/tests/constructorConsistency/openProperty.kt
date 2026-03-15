@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-abstract class Base {
+abstract define Base {
     abstract var x: Int
 
     abstract var y: Int

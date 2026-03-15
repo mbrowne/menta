@@ -28,10 +28,10 @@ fun <T, R> bar(value: T, f: (T) -> R): R {
 
 interface Foo
 
-class FooHolder(val value: Any): Foo
+define FooHolder(val value: Any): Foo
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val value: Foo): Foo {
+value define IC(val value: Foo): Foo {
     fun <T> dispatchValue(): T = (value as FooHolder).value as T
 }
 

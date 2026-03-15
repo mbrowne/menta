@@ -2,13 +2,13 @@
 // ISSUE: KT-55953
 
 // FILE: Invariant.java
-public class Invariant<T> {}
+public define Invariant<T> {}
 
 // FILE: Generic.java
 import java.util.ArrayList;
 import java.util.List;
 
-public class Generic<T> {
+public define Generic<T> {
     public Generic raw = new Generic();
     public static Generic staticRaw = new Generic();
     public Invariant<String> getStringInvariant() { return new Invariant<>(); }
@@ -16,7 +16,7 @@ public class Generic<T> {
 }
 
 // FILE: GenericBox.java
-public class GenericBox<T extends Generic> {
+public define GenericBox<T extends Generic> {
     public T raw = (T) new Generic();
 }
 
@@ -37,7 +37,7 @@ fun `acquire raw type by instance field`(instance: Generic<*>) {
     val listOfAny: List<Any> = <!TYPE_MISMATCH!>raw.getListOfStrings()<!> // K1 & K2: inferred type is (Mutable)List<(raw) Any?>!
 }
 
-fun `acquire raw type via type parameter's upper bound of another class`(instance: GenericBox<*>) {
+fun `acquire raw type via type parameter's upper bound of another define`(instance: GenericBox<*>) {
     val raw = instance.raw
     val nullableAnyInvariant: Invariant<Any?> = <!TYPE_MISMATCH!>raw.getStringInvariant()<!> // K1 & K2: error
     val anyInvariant: Invariant<Any> = <!TYPE_MISMATCH!>raw.getStringInvariant()<!> // K1 & K2: error

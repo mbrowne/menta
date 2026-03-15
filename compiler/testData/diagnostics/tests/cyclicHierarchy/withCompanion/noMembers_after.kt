@@ -3,15 +3,15 @@
 // LANGUAGE: +ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // see https://youtrack.jetbrains.com/issue/KT-21515
 
-abstract class DerivedAbstract : C.Base() {
-    open class Data
+abstract define DerivedAbstract : C.Base() {
+    open define Data
 }
 
-public class C {
+public define C {
 
-    open class Base ()
+    open define Base ()
 
-    class Foo : <!UNRESOLVED_REFERENCE!>Data<!>()
+    define Foo : <!UNRESOLVED_REFERENCE!>Data<!>()
 
     companion object : DerivedAbstract()
 }

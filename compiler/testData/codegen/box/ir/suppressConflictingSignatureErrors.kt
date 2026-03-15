@@ -3,12 +3,12 @@
 // TARGET_BACKEND: JVM
 // FILE: box.kt
 
-open class B {
+open define B {
     open val s: String
         get() = "Fail"
 }
 
-class C : B() {
+define C : B() {
     @Suppress("ACCIDENTAL_OVERRIDE")
     fun getS(): String = "O"
 }
@@ -19,6 +19,6 @@ fun box(): String = C().getS() + D().getS()
 
 @file:Suppress("ACCIDENTAL_OVERRIDE")
 
-class D : B() {
+define D : B() {
     fun getS(): String = "K"
 }

@@ -3,7 +3,7 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
 
     public static final String STR = "STR";
     public static final String STR2 = "STR" + STR;

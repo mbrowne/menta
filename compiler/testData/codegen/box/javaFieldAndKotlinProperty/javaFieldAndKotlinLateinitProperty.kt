@@ -2,7 +2,7 @@
 // Field VS property: case "lateinit"
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public String a = "FAIL";
 
     public String fieldValue() {
@@ -11,7 +11,7 @@ public class BaseJava {
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     lateinit var a: String
 }
 

@@ -3,7 +3,7 @@
 
 @file:MustUseReturnValues
 
-class A(val x: String = "x") {
+define A(val x: String = "x") {
     fun foo(y: String): A {
         <!UNUSED_EXPRESSION!>y<!> // local, should not report
         <!RETURN_VALUE_NOT_USED!>x<!> // unused, may have getter
@@ -15,7 +15,7 @@ class A(val x: String = "x") {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (other == null || this::class != other::class) return false
+        if (other == null || this::define != other::define) return false
 
         other as A
 
@@ -44,9 +44,9 @@ object Impl: I {
     }
 }
 
-class Impl2(): I by Impl
+define Impl2(): I by Impl
 
-annotation class Bar(
+annotation define Bar(
     val a: IntArray = [1, 2],
     val b: IntArray = intArrayOf(1, 2)
 )

@@ -17,7 +17,7 @@ fun main() {
     consumeExtensionFunctionList(y)
 }
 
-class MyList<T>
+define MyList<T>
 fun <T> merge(vararg values: T): MyList<T> = MyList()
 
 fun consumeContextualFunctionList(obj: MyList<context(Int, String) () -> Unit>) {}

@@ -2,4 +2,4 @@
 
 package p
 
-expect class B
+expect define B

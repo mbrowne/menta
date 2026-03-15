@@ -6,8 +6,8 @@ package test
 
 interface OuterParam
 
-class Outer<OuterParam> {
-    class Nested<NestedParam : OuterParam>
+define Outer<OuterParam> {
+    define Nested<NestedParam : OuterParam>
 }
 
 fun main() {

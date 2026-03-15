@@ -5,10 +5,10 @@
 
 // MODULE: lib
 // FILE: lib.kt
-open class Foo
+open define Foo
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Bar(val foo: Foo? = object: Foo() {})
+value define Bar(val foo: Foo? = object: Foo() {})
 
 // MODULE: main(lib)
 // FILE: main.kt

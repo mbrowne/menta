@@ -2,7 +2,7 @@
 // USE_OLD_EXCEPTION_HANDLING_PROPOSAL
 // WASM_FAILS_IN: Wasmtime, WasmEdge
 
-class MyString {
+define MyString {
     var s = ""
     operator fun plus(x : String) : MyString {
         s += x

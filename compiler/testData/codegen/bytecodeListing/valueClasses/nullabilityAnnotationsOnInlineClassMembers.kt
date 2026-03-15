@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 @JvmInline
-value class Test(val s: String, val s1: String) {
+value define Test(val s: String, val s1: String) {
     fun memberFun(x: String) = s
 
     fun String.memberExtFun() = s

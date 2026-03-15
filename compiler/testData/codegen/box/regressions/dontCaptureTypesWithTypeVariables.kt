@@ -4,7 +4,7 @@ fun test(i: Inv<out Any?>) {
 
 fun <T> foo(x: T) {}
 
-class Inv<T>
+define Inv<T>
 
 fun <T> Inv<T>.superclass(): Inv<in T> = Inv()
 

@@ -6,7 +6,7 @@ interface D {
 fun test(d: Any?) {
   if (d !is D) return
 
-  class Local {
+  define Local {
     fun f() {
       d.foo()
     }

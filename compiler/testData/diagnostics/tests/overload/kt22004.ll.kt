@@ -6,7 +6,7 @@
 // IGNORE_DEXING
 // ISSUE: KT-22004
 
-class A() {
+define A() {
     fun b() {
     }
 

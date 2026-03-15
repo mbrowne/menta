@@ -4,7 +4,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun foo(): String
 }
 
@@ -15,9 +15,9 @@ fun common(foo: Foo): String {
 // MODULE: intermediate()()(common)
 // FILE: intermediate.kt
 
-@OptIn(kotlin.ExperimentalMultiplatform::class)
+@OptIn(kotlin.ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Foo {
+expect define Foo {
     fun foo(): String
     fun bar(): String
 }
@@ -29,7 +29,7 @@ fun intermediate(foo: Foo): String {
 // MODULE: platform()()(intermediate)
 // FILE: platform.kt
 
-actual class Foo {
+actual define Foo {
     actual fun foo(): String = "O"
     actual fun bar(): String = "K"
 }

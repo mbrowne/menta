@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class In<in I>(arg: I)
-class Out<out O>(val prop: O)
-class Inv<T>(val prop: T)
+define In<in I>(arg: I)
+define Out<out O>(val prop: O)
+define Inv<T>(val prop: T)
 
 interface Upper
-class Lower : Upper
+define Lower : Upper
 
 fun <K> id(arg: K): K = arg
 

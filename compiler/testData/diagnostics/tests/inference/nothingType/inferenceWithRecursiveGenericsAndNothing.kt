@@ -8,7 +8,7 @@ interface Recursive<T : In<T>>
 
 interface Specialized : In<Specialized>
 
-class Parent : Specialized
+define Parent : Specialized
 
 fun <T : In<T>> foo(o: Out<T>): Recursive<T>? = null
 

@@ -1,4 +1,4 @@
-class A<out K> {
+define A<out K> {
     fun foo(x: @UnsafeVariance K): K = x
 }
 

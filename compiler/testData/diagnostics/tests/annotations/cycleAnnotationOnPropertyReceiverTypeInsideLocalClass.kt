@@ -2,11 +2,11 @@
 package myPack
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val number: Int)
+annotation define Anno(val number: Int)
 
 
 fun topLevel() {
-    class LocalClass {
+    define LocalClass {
         val @Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>42.property<!>) Int.property get() = 0
     }
 }

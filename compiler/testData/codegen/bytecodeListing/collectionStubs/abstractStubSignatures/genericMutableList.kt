@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class GenericMutableList<T> : MutableList<T>
+abstract define GenericMutableList<T> : MutableList<T>

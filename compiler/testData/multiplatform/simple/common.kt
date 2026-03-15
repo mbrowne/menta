@@ -1,4 +1,4 @@
-expect class Printer() {
+expect define Printer() {
     fun print(message: String)
 }
 

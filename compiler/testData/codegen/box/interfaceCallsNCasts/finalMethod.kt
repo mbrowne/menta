@@ -11,7 +11,7 @@ interface I2 : I1<Int> {
 
 }
 
-class C : I2 {
+define C : I2 {
     override fun defaultX() = 42
     override fun foo(x: Int) = x
 }

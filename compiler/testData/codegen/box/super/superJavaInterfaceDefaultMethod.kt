@@ -10,7 +10,7 @@ public interface Base {
 interface Derived : Base {
     fun ff(): Int = super.f()
 }
-class DerivedImpl : Derived
+define DerivedImpl : Derived
 
 // FILE: WithOverride.kt
 interface WithOverride : Base {
@@ -19,14 +19,14 @@ interface WithOverride : Base {
 interface DerivedWithOverride : WithOverride {
     fun ff(): Int = super.f()
 }
-class DerivedWithOverrideImpl : DerivedWithOverride
+define DerivedWithOverrideImpl : DerivedWithOverride
 
 // FILE: Mid.kt
 interface Mid : Base
 interface DerivedWithMid : Mid {
     fun ff(): Int = super.f()
 }
-class DerivedWithMidImpl : DerivedWithMid
+define DerivedWithMidImpl : DerivedWithMid
 
 // FILE: box.kt
 fun box(): String {

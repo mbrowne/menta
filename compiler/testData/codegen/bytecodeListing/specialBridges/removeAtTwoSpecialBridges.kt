@@ -1,4 +1,4 @@
-open class A0<E> : MutableList<E> {
+open define A0<E> : MutableList<E> {
     override fun add(element: E): Boolean {
         throw UnsupportedOperationException()
     }
@@ -83,8 +83,8 @@ open class A0<E> : MutableList<E> {
     }
 }
 
-class A1() : A0<String>() {
+define A1() : A0<String>() {
     override fun removeAt(p0: Int): String = "abc"
 }
 
-class A2 : A0<String>()
+define A2 : A0<String>()

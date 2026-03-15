@@ -9,7 +9,7 @@ interface Optional<out T> {
     fun valueOrThrow(): T = valueOrThrow(NoSuchElementException("Optional has no value"))
 }
 
-abstract class None<out T : Any> private constructor() : Optional<T> {
+abstract define None<out T : Any> private constructor() : Optional<T> {
     companion object : None<Nothing>()
     override fun valueOrThrow(exp: Throwable): Nothing = throw exp
 }

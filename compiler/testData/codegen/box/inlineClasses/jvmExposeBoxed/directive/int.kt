@@ -4,14 +4,14 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 // FILE: Test.kt
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed("create")
 fun createUInt(): UInt = 1u
 
 fun foo(u: UInt): Int = u.toInt()
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public int test() {
         return TestKt.foo(TestKt.create());
     }

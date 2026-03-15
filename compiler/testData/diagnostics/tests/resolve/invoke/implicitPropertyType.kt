@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-57947
 
-class A
+define A
 
 fun A.bar() = baz("")
 

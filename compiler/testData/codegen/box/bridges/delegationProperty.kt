@@ -2,7 +2,7 @@ interface A<T> {
     var result: T
 }
 
-class B(a: A<String>): A<String> by a
+define B(a: A<String>): A<String> by a
 
 fun box(): String {
     val o = object : A<String> {

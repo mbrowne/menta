@@ -1,4 +1,4 @@
-class A {
+define A {
     companion object {
         val b = 0
         val c = b

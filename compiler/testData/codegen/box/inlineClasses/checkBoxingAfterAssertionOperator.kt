@@ -3,15 +3,15 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithPrimitive(val a: Int)
+value define WithPrimitive(val a: Int)
 fun takeWithPrimitive(a: WithPrimitive) {}
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithReference(val a: Any)
+value define WithReference(val a: Any)
 fun takeWithReference(a: WithReference) {}
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WithNullableReference(val a: Any?)
+value define WithNullableReference(val a: Any?)
 fun takeWithNullableReference(a: WithNullableReference) {}
 
 fun foo(a: WithPrimitive?, b: WithPrimitive) {

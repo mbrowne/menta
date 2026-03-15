@@ -4,7 +4,7 @@
 // DIAGNOSTICS: -MISPLACED_TYPE_PARAMETER_CONSTRAINTS, -NOTHING_TO_INLINE, -NO_TAIL_CALLS_FOUND
 
 
-class MemberScope {
+define MemberScope {
 
 
     @Deprecated(message = "", level = DeprecationLevel.HIDDEN) <!CONFLICTING_JVM_DECLARATIONS!>fun testBasic() {}<!>
@@ -476,12 +476,12 @@ class MemberScope {
 }
 
 
-open class Invariant<T>
+open define Invariant<T>
 
 
-class UserKlass
-class UserKlassA
-class UserKlassB
+define UserKlass
+define UserKlassA
+define UserKlassB
 typealias SameUserKlass = UserKlass
 typealias SameUserKlassA = UserKlassA
 typealias SameUserKlassB = UserKlassB

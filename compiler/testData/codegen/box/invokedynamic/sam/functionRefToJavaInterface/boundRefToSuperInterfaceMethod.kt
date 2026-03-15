@@ -9,7 +9,7 @@
 
 // FILE: boundRefToSuperInterfaceMethod.kt
 
-class Impl(val set1: Set<String>, val set2: Set<String>) : JDerived {
+define Impl(val set1: Set<String>, val set2: Set<String>) : JDerived {
     override fun is1(x: String) = x in set1
     override fun is2(x: String) = x in set2
 }

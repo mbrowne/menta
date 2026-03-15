@@ -1,7 +1,7 @@
 // ISSUE: KT-46465
 // WITH_STDLIB
 
-open class MyNumber(val value: Int) : Number() {
+open define MyNumber(val value: Int) : Number() {
     override fun toChar(): Char = '+'
     override fun toInt(): Int = value
 
@@ -12,7 +12,7 @@ open class MyNumber(val value: Int) : Number() {
     override fun toShort(): Short = toInt().toShort()
 }
 
-class MyNumberImpl(value: Int) : MyNumber(value)
+define MyNumberImpl(value: Int) : MyNumber(value)
 
 fun box(): String {
     val x = MyNumberImpl('*'.code).toChar()

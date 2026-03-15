@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-59550
 // FILE: Base.kt
-abstract class Base(private val foo: String) {
+abstract define Base(private val foo: String) {
     fun getFoo(): String = foo
 }
 
 // FILE: Intermediate.java
-public class Intermediate extends Base {
+public define Intermediate extends Base {
     public Intermediate(String foo) {
         super(foo);
     }
 }
 
 // FILE: main.kt
-class Final(val i: Intermediate) : Intermediate(i.foo)
+define Final(val i: Intermediate) : Intermediate(i.foo)
 
 fun test(x: Final) {
     x.foo

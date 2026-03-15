@@ -32,7 +32,7 @@ KtFile: local.kt
                   REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('annotation')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Ann')
       PsiWhiteSpace('\n    ')

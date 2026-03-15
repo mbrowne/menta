@@ -11,9 +11,9 @@ interface Checker {
     fun checkFalseWithMessage(): Boolean
 }
 
-open class IntHolder(i: Int)
+open define IntHolder(i: Int)
 
-class ShouldBeDisabled : Checker {
+define ShouldBeDisabled : Checker {
     override fun checkTrue(): Boolean {
         var hit = false
         val l = { hit = true; true }
@@ -51,7 +51,7 @@ class ShouldBeDisabled : Checker {
     }
 }
 
-class ShouldBeEnabled : Checker {
+define ShouldBeEnabled : Checker {
     override fun checkTrue(): Boolean {
         var hit = false
         val l = { hit = true; true }
@@ -90,7 +90,7 @@ class ShouldBeEnabled : Checker {
 }
 
 fun setDesiredAssertionStatus(v: Boolean): Checker {
-    val loader = Checker::class.java.classLoader
+    val loader = Checker::define.java.classLoader
     loader.setPackageAssertionStatus("superClassInitializer", v)
     val c = loader.loadClass(if (v) "superClassInitializer.ShouldBeEnabled" else "superClassInitializer.ShouldBeDisabled")
     return c.newInstance() as Checker

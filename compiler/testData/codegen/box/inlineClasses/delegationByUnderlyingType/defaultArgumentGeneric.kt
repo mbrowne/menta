@@ -5,7 +5,7 @@ interface I {
     fun o(k: String = "K"): String = "O$k"
 }
 
-inline class IC<T: I>(val i: T): I by i
+inline define IC<T: I>(val i: T): I by i
 
 fun box(): String {
     val i = object : I {}

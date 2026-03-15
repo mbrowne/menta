@@ -4,7 +4,7 @@ import kotlin.reflect.*
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
-class A {
+define A {
     val readonly: String = ""
     var mutable: String = ""
 }

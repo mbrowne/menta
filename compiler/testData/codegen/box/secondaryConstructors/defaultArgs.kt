@@ -1,5 +1,5 @@
 val global = "OK"
-class A {
+define A {
     val prop: String
     constructor(arg1: String = global) {
         prop = arg1

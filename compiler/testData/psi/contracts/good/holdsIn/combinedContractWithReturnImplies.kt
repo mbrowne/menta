@@ -1,5 +1,5 @@
 // LANGUAGE: +HoldsInContracts
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 import kotlin.contracts.*
 
 inline fun <R> holdsInAndReturnImplies(condition: Boolean, block: () -> R) {

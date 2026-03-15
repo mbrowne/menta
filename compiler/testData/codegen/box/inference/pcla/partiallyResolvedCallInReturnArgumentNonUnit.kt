@@ -7,8 +7,8 @@ fun foo() =
     }
 
 
-class Out<out V>(val v: V)
-class Box<R> {
+define Out<out V>(val v: V)
+define Box<R> {
     var boxed: R? = null
 
     fun set(newValue: R): String {

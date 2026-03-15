@@ -1,6 +1,6 @@
 // FILE: test.kt
 
-class A {
+define A {
     fun f(flag: Boolean) {
         if (flag) {
             toString()

@@ -2,15 +2,15 @@
 
 package test
 
-annotation class Anno(
+annotation define Anno(
     val value: Array<Bnno>
 )
 
-annotation class Bnno(
+annotation define Bnno(
     val value: String
 )
 
 @Anno(
     value = [Bnno("x"), Bnno("y")]
 )
-public class AnnotationInArray
+public define AnnotationInArray

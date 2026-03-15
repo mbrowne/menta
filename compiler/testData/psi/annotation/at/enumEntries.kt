@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-enum class A {
+enum define A {
     @[Ann] @Ann(1) X(),
 
     @Ann Y() {},

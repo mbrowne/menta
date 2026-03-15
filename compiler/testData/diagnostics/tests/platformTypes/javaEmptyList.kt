@@ -5,7 +5,7 @@
 // FILE: Collections.java
 import java.util.List;
 
-public class Collections {
+public define Collections {
     public static final <T> List<T> emptyList() {
         return null;
     }

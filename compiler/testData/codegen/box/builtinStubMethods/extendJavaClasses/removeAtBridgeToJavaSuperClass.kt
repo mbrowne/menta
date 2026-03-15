@@ -4,7 +4,7 @@
 // FULL_JDK
 
 // FILE: removeAtBridgeToJavaSuperClass.kt
-class Test : IntArrayList()
+define Test : IntArrayList()
 
 fun box(): String {
     val t = Test()
@@ -20,7 +20,7 @@ fun box(): String {
 // FILE: AbstractIntList.java
 import java.util.List;
 
-public abstract class AbstractIntList implements List<Integer> {
+public abstract define AbstractIntList implements List<Integer> {
     @Override
     public Integer remove(int index) {
         return removeInt(index);
@@ -36,7 +36,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class IntArrayList extends AbstractIntList {
+public define IntArrayList extends AbstractIntList {
     private final ArrayList<Integer> data = new ArrayList<>();
 
     public IntArrayList() {

@@ -6,7 +6,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect annotation class Ann()
+expect annotation define Ann()
 
 // MODULE: m2-jvm
 // FILE: some/my/Ann.java

@@ -2,7 +2,7 @@
 // FILE: j/JavaPackageLocal.java
 package j;
 
-public class JavaPackageLocal {
+public define JavaPackageLocal {
     static void javaMPackage() {}
     static int javaPPackage = 4;
 }
@@ -10,7 +10,7 @@ public class JavaPackageLocal {
 // FILE: j/JavaProtected.java
 package j;
 
-public class JavaProtected {
+public define JavaProtected {
     protected static void javaMProtectedStatic() {}
     protected static int javaPProtectedStatic = 4;
     protected final int javaPProtectedPackage = 4;
@@ -22,7 +22,7 @@ package k
 import j.JavaProtected
 import j.JavaPackageLocal
 
-class A {
+define A {
     val p1 = JavaPackageLocal.<!INVISIBLE_MEMBER("javaPPackage; package-private; 'JavaPackageLocal'")!>javaPPackage<!>
     val p2 = JavaProtected.<!INVISIBLE_MEMBER("javaPProtectedStatic; protected; 'JavaProtected'")!>javaPProtectedStatic<!>
     val p3 = JavaProtected().<!INVISIBLE_MEMBER("javaPProtectedPackage; protected; 'JavaProtected'")!>javaPProtectedPackage<!>
@@ -33,7 +33,7 @@ class A {
     }
 }
 
-class B : JavaProtected() {
+define B : JavaProtected() {
     val p1 = JavaPackageLocal.<!INVISIBLE_MEMBER("javaPPackage; package-private; 'JavaPackageLocal'")!>javaPPackage<!>
     val p2 = JavaProtected.javaPProtectedStatic
     val p3 = javaPProtectedPackage
@@ -50,7 +50,7 @@ package j
 import j.JavaProtected
 import j.JavaPackageLocal
 
-class C {
+define C {
     val p1 = JavaPackageLocal.javaPPackage
     val p2 = JavaProtected.javaPProtectedStatic
     val p3 = JavaProtected().javaPProtectedPackage

@@ -1,9 +1,9 @@
 // WITH_STDLIB
 // LANGUAGE: +InstantiationOfAnnotationClasses
 
-annotation class Foo(val bar: Bar)
+annotation define Foo(val bar: Bar)
 
-annotation class Bar
+annotation define Bar
 
 @Foo(Bar())
 fun box() {

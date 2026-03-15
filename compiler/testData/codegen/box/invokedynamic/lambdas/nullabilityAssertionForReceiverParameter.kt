@@ -22,7 +22,7 @@ fun box(): String {
 
 import kotlin.jvm.functions.Function1;
 
-public class J {
+public define J {
     public static void test(Function1<String, String> fn) {
         fn.invoke(null);
     }

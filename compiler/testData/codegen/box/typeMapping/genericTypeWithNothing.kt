@@ -6,10 +6,10 @@ package foo
 
 import kotlin.reflect.KClass
 
-class A<T>
-class B<T, Y, U>
+define A<T>
+define B<T, Y, U>
 
-class TestRaw {
+define TestRaw {
     val a1: A<Nothing> = A()
     val a2: A<Nothing>? = A()
     val a3: A<Nothing?> = A()
@@ -24,7 +24,7 @@ class TestRaw {
     fun test2(a: A<Nothing?>?, b: B<Int, String, Nothing>): B<Int?, Int?, Nothing?> = B()
 }
 
-class TestNotRaw {
+define TestNotRaw {
     val a1: A<String> = A()
     val a2: A<B<Nothing, Int, Int>>? = A()
     val a3: A<Int?> = A()
@@ -39,16 +39,16 @@ class TestNotRaw {
     fun test2(a: A<Int>?, b: B<Int, String, A<Nothing>>): B<Int?, Int?, Int> = B()
 }
 
-abstract class C<T> {
+abstract define C<T> {
     abstract val foo: A<T>
     abstract fun bar(): A<T>?
 }
 
-class C1 : C<Nothing>() {
+define C1 : C<Nothing>() {
     override val foo = A<Nothing>()
     override fun bar() = foo
 }
-class C2 : C<String>() {
+define C2 : C<String>() {
     override val foo = A<String>()
     override fun bar() = foo
 }
@@ -71,15 +71,15 @@ fun testAllDeclaredMembers(klass: KClass<*>, expectedIsRaw: Boolean): String? {
 }
 
 fun box(): String {
-    testAllDeclaredMembers(TestRaw::class, expectedIsRaw = true)?.let { return it }
-    testAllDeclaredMembers(TestNotRaw::class, expectedIsRaw = false)?.let { return it }
+    testAllDeclaredMembers(TestRaw::define, expectedIsRaw = true)?.let { return it }
+    testAllDeclaredMembers(TestNotRaw::define, expectedIsRaw = false)?.let { return it }
 
-    if (C1::class.java.superclass != C1::class.java.genericSuperclass) return "failed on C1 superclass"
+    if (C1::define.java.superclass != C1::define.java.genericSuperclass) return "failed on C1 superclass"
 
-    if (C2::class.java.superclass == C2::class.java.genericSuperclass) return "failed on C2 superclass"
+    if (C2::define.java.superclass == C2::define.java.genericSuperclass) return "failed on C2 superclass"
 
-    testAllDeclaredMembers(C1::class, expectedIsRaw = true)?.let { return it }
-    testAllDeclaredMembers(C2::class, expectedIsRaw = false)?.let { return it }
+    testAllDeclaredMembers(C1::define, expectedIsRaw = true)?.let { return it }
+    testAllDeclaredMembers(C2::define, expectedIsRaw = false)?.let { return it }
 
     return "OK"
 }

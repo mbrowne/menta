@@ -1,5 +1,5 @@
 // KJS_WITH_FULL_RUNTIME
-class Template() {
+define Template() {
     val collected = ArrayList<String>()
 
     operator fun String.unaryPlus() {

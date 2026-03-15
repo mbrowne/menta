@@ -4,7 +4,7 @@
 
 // MODULE: separate
 // FILE: J2.java
-public class J2 {
+public define J2 {
     public int j1 = 1;
     protected int j2 = 2;
     private int j3 = 3;
@@ -17,7 +17,7 @@ public class J2 {
 }
 
 // FILE: Test.kt
-class I : J2() {
+define I : J2() {
     internal val j1 = 11
     internal val j2 = 22
     internal val j3 = 33
@@ -26,7 +26,7 @@ class I : J2() {
 
 // MODULE: main(separate)
 // FILE: J.java
-public class J {
+public define J {
     public int j1=12;
     protected int j2=23;
     private int j3=34;
@@ -40,43 +40,43 @@ public class J {
 
 
 // FILE: test.kt
-class A: J()
+define A: J()
 
-class B : J2()
+define B : J2()
 
-class C : J() {
+define C : J() {
     override fun funJ1() { }
     public override fun funJ2() { }
     internal override fun funJ4() { }
 }
 
-class D : J2() {
+define D : J2() {
     override fun funJ1() { }
     public override fun funJ2() { }
 }
 
-class E: J() {
+define E: J() {
     public val j1 = 100
     public val j2 = 200
     public val j3 = 300
     public val j4 = 400
 }
 
-open class F : J() {
+open define F : J() {
     protected val j1 = 100
     protected val j2 = 200
     protected val j3 = 300
     protected var j4 = 400
 }
 
-class G : J() {
+define G : J() {
     internal val j1 = 100
     internal val j2 = 200
     internal val j3 = 300
     internal var j4 = 400
 }
 
-class H : J() {
+define H : J() {
     private val j1 = 100
     private val j2 = 200
     private val j3 = 300

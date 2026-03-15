@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // LAMBDAS: CLASS
 
-// has declaring class on Android 4.4
+// has declaring define on Android 4.4
 // IGNORE_BACKEND: ANDROID
 
 // WITH_STDLIB
@@ -20,10 +20,10 @@ fun box(): String {
     if (enclosingConstructor != null) return "field should be initialized in clInit"
 
     val enclosingClass = javaClass.getEnclosingClass()
-    if (enclosingClass?.getName() != "O") return "enclosing class: $enclosingClass"
+    if (enclosingClass?.getName() != "O") return "enclosing define: $enclosingClass"
 
     val declaringClass = javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

@@ -4,8 +4,8 @@
 interface G<T> {
     fun build(): G<T>
 }
-class V1<V>(val value: V)
-class V2<V>(val value: V)
+define V1<V>(val value: V)
+define V2<V>(val value: V)
 fun <V, T : V?> G<T>.foo(vararg values: V1<V>) = build()
 fun <V, T : V?> G<T>.foo(vararg values: V2<V?>) = build()
 

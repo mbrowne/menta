@@ -5,14 +5,14 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public void foo(int x, String ... args) {}
     public static String[] ar;
 }
 
 // FILE: J.java
 
-public class J {
+public define J {
     public interface Invoke {
         void invoke(String ...args);
     }
@@ -46,7 +46,7 @@ fun g(args: Array<String>?) {
     A().foo(1, *A.ar)
 }
 
-class B {
+define B {
     var args: Array<String>? = null
 }
 

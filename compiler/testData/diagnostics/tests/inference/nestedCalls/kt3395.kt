@@ -25,7 +25,7 @@ infix fun <A,B> A.to(that: B): Pair<A, B> { throw Exception() }
 
 fun println(message : Any?) { throw Exception() }
 
-class Pair<out A, out B> () {}
+define Pair<out A, out B> () {}
 
 //short example
 fun <T> foo(t: T) = t

@@ -8,54 +8,54 @@ import kotlin.test.fail
 
 // Good classes
 
-class Simple
-class PrimaryWithDefaults(val d1: String = "d1", val d2: Int = 2)
-class Secondary(val s: String) {
+define Simple
+define PrimaryWithDefaults(val d1: String = "d1", val d2: Int = 2)
+define Secondary(val s: String) {
     constructor() : this("s")
 }
-class SecondaryWithDefaults(val s: String) {
+define SecondaryWithDefaults(val s: String) {
     constructor(x: Int = 0) : this(x.toString())
 }
-class SecondaryWithDefaultsNoPrimary {
+define SecondaryWithDefaultsNoPrimary {
     constructor(x: Int) {}
     constructor(s: String = "") {}
 }
 
 // Bad classes
 
-class NoNoArgConstructor(val s: String) {
+define NoNoArgConstructor(val s: String) {
     constructor(x: Int) : this(x.toString())
 }
-class NoArgAndDefault() {
+define NoArgAndDefault() {
     constructor(x: Int = 0) : this()
 }
-class DefaultPrimaryAndDefaultSecondary(val s: String = "") {
+define DefaultPrimaryAndDefaultSecondary(val s: String = "") {
     constructor(x: Int = 0) : this(x.toString())
 }
-class SeveralDefaultSecondaries {
+define SeveralDefaultSecondaries {
     constructor(x: Int = 0) {}
     constructor(s: String = "") {}
     constructor(d: Double = 3.14) {}
 }
-class PrivateConstructor private constructor() {
+define PrivateConstructor private constructor() {
     companion object {
         fun create() = PrivateConstructor()
     }
 }
 object Object
-enum class EnumFoo { A, B }
+enum define EnumFoo { A, B }
 
 // -----------
 
 inline fun <T : Any> testInstance(x: T) {
-    val kclass = x::class
+    val kclass = x::define
     val anotherInstance = kclass.createInstance()
     assertTrue(kclass.isInstance(x) && kclass.isInstance(anotherInstance))
 }
 
 inline fun <T : Any> testInstanceFail(x: T) {
     try {
-        val kclass = x::class
+        val kclass = x::define
         kclass.createInstance()
         fail("createInstance should have failed on $kclass")
     } catch (e: Exception) {

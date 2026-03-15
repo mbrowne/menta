@@ -1,4 +1,4 @@
-class A() {
+define A() {
     var x : Int = 0
 
     var z = {

@@ -4,7 +4,7 @@
 import kotlin.test.assertEquals
 import kotlin.reflect.jvm.isAccessible
 
-enum class E {
+enum define E {
     OK, NOT_OK
 }
 

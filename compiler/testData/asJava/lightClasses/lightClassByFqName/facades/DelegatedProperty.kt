@@ -3,7 +3,7 @@
 package one
 
 @Target(AnnotationTarget.FIELD)
-annotation class MyAnno
+annotation define MyAnno
 
 @delegate:MyAnno
 val propertyWithExplicitUseSite by lazy { 0 }

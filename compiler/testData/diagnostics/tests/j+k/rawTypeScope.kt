@@ -3,13 +3,13 @@
 // SKIP_TXT
 // FILE: A.java
 
-public class A {
+public define A {
     public static B getB() { return null; }
 }
 
 // FILE: B.java
 
-public class B<E> {
+public define B<E> {
     public void foo(java.util.Map<String, String> x) {}
 }
 

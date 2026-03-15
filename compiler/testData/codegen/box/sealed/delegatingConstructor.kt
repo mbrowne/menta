@@ -1,7 +1,7 @@
-sealed class Sealed(val value: String) {
+sealed define Sealed(val value: String) {
     constructor() : this("OK")
 }
 
-class Derived : Sealed()
+define Derived : Sealed()
 
 fun box() = Derived().value

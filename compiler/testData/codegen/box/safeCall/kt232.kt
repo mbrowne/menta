@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM_IR
 
-class A() {
+define A() {
     fun foo() {
         System.out?.println(1)
     }

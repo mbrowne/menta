@@ -15,7 +15,7 @@ interface Test2: Test<String> {
     }
 }
 
-class TestClass : Test2 {
+define TestClass : Test2 {
 }
 
 fun <T> execute(t: Test<T>, p: T): T {

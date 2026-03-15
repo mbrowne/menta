@@ -1,8 +1,8 @@
 // LANGUAGE: -NameBasedDestructuring -DeprecateNameMismatchInShortDestructuringWithParentheses -EnableNameBasedDestructuringShortForm
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class MyClass
-class SomeClass
+define MyClass
+define SomeClass
 
 operator fun SomeClass.component1() {}
 operator fun SomeClass.component2() {}

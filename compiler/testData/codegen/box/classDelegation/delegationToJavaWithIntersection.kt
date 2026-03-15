@@ -14,7 +14,7 @@ public interface JavaBase2 {
 }
 
 // FILE: SimpleDerived.java
-public class SimpleDerived implements Derived {
+public define SimpleDerived implements Derived {
     @Override
     public void foo(Integer a) {}
 
@@ -30,7 +30,7 @@ public class SimpleDerived implements Derived {
 // FILE: main.kt
 interface Derived : JavaBase1, JavaBase2
 
-class DerivedImpl(private val delegate: SimpleDerived) : Derived by delegate
+define DerivedImpl(private val delegate: SimpleDerived) : Derived by delegate
 
 fun box(): String {
     DerivedImpl(SimpleDerived()).foo("")

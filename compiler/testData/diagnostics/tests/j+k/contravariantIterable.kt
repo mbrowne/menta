@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: A.java
 import java.util.*;
-public class A {
+public define A {
     public static void foo(Iterable<? super CharSequence> x) {}
     public static void bar(Iterator<? super CharSequence> x) {}
 }

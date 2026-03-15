@@ -11,7 +11,7 @@ expect <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>object Implementation<!> : B
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
-abstract class RealImplementation : Base {
+abstract define RealImplementation : Base {
     override fun foo() {}
 }
 

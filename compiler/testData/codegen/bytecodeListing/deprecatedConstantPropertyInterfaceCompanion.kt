@@ -5,7 +5,7 @@ interface A {
     }
 }
 
-class B {
+define B {
     companion object {
         @Deprecated("no")
         const val s = "yes"

@@ -7,7 +7,7 @@ package test
 
 fun foo(): String = bar()
 fun bar(): String {
-    class Local(val x: String)
+    define Local(val x: String)
     return Local("OK").x
 }
 

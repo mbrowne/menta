@@ -1,4 +1,4 @@
-class A {
+define A {
     public val f : ()->String = {"OK"}
 }
 

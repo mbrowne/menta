@@ -6,11 +6,11 @@
 // WITH_STDLIB
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class V(val x: Int) : Comparable<Int> {
+value define V(val x: Int) : Comparable<Int> {
     override fun compareTo(other: Int): Int = x - other
 }
 
-class A {
+define A {
     val p: Comparable<Int>
         field = V(1)
 

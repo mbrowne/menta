@@ -3,7 +3,7 @@
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static boolean isNull(Runnable r) {
         if (r == null)
             return true;

@@ -5,7 +5,7 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class Foo7<T>
+define Foo7<T>
 
 fun foo7() = null as Foo7<Int>
 

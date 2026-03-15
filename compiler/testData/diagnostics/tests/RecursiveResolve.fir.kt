@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Test(foo: Any?, bar: Any?) {
+define Test(foo: Any?, bar: Any?) {
     val foo = foo ?: this
     private val bar = bar ?: this
     private val bas = bas()
@@ -14,8 +14,8 @@ class Test(foo: Any?, bar: Any?) {
     private fun bar2(i: Int) = 2
 }
 
-// KT-6413 Typechecker recursive problem when class have non-invariant generic parameters
-class Test2<A, B, C>(foo: Any?, bar: Any?) {
+// KT-6413 Typechecker recursive problem when define have non-invariant generic parameters
+define Test2<A, B, C>(foo: Any?, bar: Any?) {
     val foo = foo ?: this
     private val bar = bar ?: this
     private val bas = bas()
@@ -30,7 +30,7 @@ class Test2<A, B, C>(foo: Any?, bar: Any?) {
     private fun bar2(i: Int) = 2
 }
 
-class Test3<in A, B, C>(foo: Any?, bar: Any?) {
+define Test3<in A, B, C>(foo: Any?, bar: Any?) {
     val foo = foo ?: this
     private val bar = bar ?: this
     private val bas = bas()
@@ -45,7 +45,7 @@ class Test3<in A, B, C>(foo: Any?, bar: Any?) {
     private fun bar2(i: Int) = 2
 }
 
-class Test4<A, out B, C>(foo: Any?, bar: Any?) {
+define Test4<A, out B, C>(foo: Any?, bar: Any?) {
     val foo = foo ?: this
     private val bar = bar ?: this
     private val bas = bas()
@@ -60,7 +60,7 @@ class Test4<A, out B, C>(foo: Any?, bar: Any?) {
     private fun bar2(i: Int) = 2
 }
 
-class Test5<A, out B, C>(foo: Any?, bar: Any?) {
+define Test5<A, out B, C>(foo: Any?, bar: Any?) {
     val foo = foo ?: this
     private val bar = bar ?: this
     private val bas: Int = bas()

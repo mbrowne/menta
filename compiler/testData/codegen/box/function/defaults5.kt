@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class TestClass(val x: Int) {
+define TestClass(val x: Int) {
     fun foo(y: Int = x) {
         sb.appendLine(y)
     }

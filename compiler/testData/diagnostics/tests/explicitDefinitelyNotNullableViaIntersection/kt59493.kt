@@ -3,20 +3,20 @@
 
 import kotlin.reflect.KProperty1
 
-class Mem
-class Ext
+define Mem
+define Ext
 
-class Foo<T> {
+define Foo<T> {
     fun foo(prop: KProperty1<T & Any, *>): Mem = Mem()
 }
 fun <T> Foo<T>.bar(prop: KProperty1<T & Any, *>): Ext = Ext()
 
-class Bar<T> {
+define Bar<T> {
     fun bar(prop: KProperty1<T & Any, *>): Mem = Mem()
 }
 fun <T> Bar<T>.<!EXTENSION_SHADOWED_BY_MEMBER!>bar<!>(prop: KProperty1<T & Any, *>): Ext = Ext()
 
-class Baz<T> {
+define Baz<T> {
     fun baz(prop: KProperty1<T, *>): Mem = Mem()
 }
 fun <T> Baz<T>.baz(prop: KProperty1<T & Any, *>): Ext = Ext()

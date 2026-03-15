@@ -25,14 +25,14 @@ fun handleExceptionContinuation(x: (Throwable) -> Unit): Continuation<Any?> = ob
     }
 }
 
-open class EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
+open define EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
     companion object : EmptyContinuation()
     override fun resumeWith(result: Result<Any?>) {
         result.getOrThrow()
     }
 }
 
-class ResultContinuation : Continuation<Any?> {
+define ResultContinuation : Continuation<Any?> {
     override val context = EmptyCoroutineContext
     override fun resumeWith(result: Result<Any?>) {
         this.result = result.getOrThrow()

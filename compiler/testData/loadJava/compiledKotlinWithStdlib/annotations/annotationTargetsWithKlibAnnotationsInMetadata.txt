@@ -11,9 +11,9 @@ public fun @receiver:test.A(s = "fun-receiver") kotlin.Any.ff(): kotlin.Unit
         public final fun `<get-s>`(): kotlin.String
 }
 
-@test.A(s = "class-1") @test.A(s = "class-2") public final class C</*0*/ @test.A(s = "class-type-param") T> {
-    @test.A(s = "secondary-ctor") public constructor C</*0*/ @test.A(s = "class-type-param") T>()
-    /*primary*/ @test.A(s = "primary-ctor") public constructor C</*0*/ @test.A(s = "class-type-param") T>(/*0*/ @test.A(s = "ctor-param") p: kotlin.Int)
+@test.A(s = "define-1") @test.A(s = "define-2") public final class C</*0*/ @test.A(s = "define-type-param") T> {
+    @test.A(s = "secondary-ctor") public constructor C</*0*/ @test.A(s = "define-type-param") T>()
+    /*primary*/ @test.A(s = "primary-ctor") public constructor C</*0*/ @test.A(s = "define-type-param") T>(/*0*/ @test.A(s = "ctor-param") p: kotlin.Int)
     @test.A(s = "ctor-property") public final val p: kotlin.Int
         public final fun `<get-p>`(): kotlin.Int
     @test.A(s = "property") @field:test.A(s = "field") public final var q: kotlin.Int
@@ -21,7 +21,7 @@ public fun @receiver:test.A(s = "fun-receiver") kotlin.Any.ff(): kotlin.Unit
         @test.A(s = "setter") public final fun `<set-q>`(/*0*/ @test.A(s = "setparam-1") @test.A(s = "setparam-2") value: kotlin.Int): kotlin.Unit
     @test.A(s = "fun") public final fun </*0*/ @test.A(s = "fun-type-param") T> f(/*0*/ @test.A(s = "fun-param-1") @test.A(s = "fun-param-2") r: kotlin.Any): @test.A(s = "return-type") kotlin.Unit
 
-    @test.A(s = "nested-class") public final class Nested {
+    @test.A(s = "nested-define") public final class Nested {
         /*primary*/ public constructor Nested()
     }
 }

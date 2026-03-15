@@ -6,12 +6,12 @@
 // FILE: Java1.java
 import java.util.SortedMap;
 
-abstract public class Java1<T> implements SortedMap<T, T> {}
+abstract public define Java1<T> implements SortedMap<T, T> {}
 
 // FILE: 1.kt
-abstract class A<T> : Java1<T>()
+abstract define A<T> : Java1<T>()
 
-abstract class B<T>(override val size: Int) : Java1<T>() {
+abstract define B<T>(override val size: Int) : Java1<T>() {
     override fun remove(key: T, value: T): Boolean {
         return true
     }

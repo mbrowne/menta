@@ -18,7 +18,7 @@ interface B2 : A1, A2
 
 interface C : B2
 
-abstract class D : B1, C
+abstract define D : B1, C
 
 fun box(): String {
     assertEquals("public abstract void test.A1.a1()", D::a1.javaMethod!!.toString())

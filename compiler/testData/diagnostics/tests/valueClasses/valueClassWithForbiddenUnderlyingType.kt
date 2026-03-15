@@ -7,32 +7,32 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class Foo<T>(val x: T)
+value define Foo<T>(val x: T)
 @JvmInline
-value class FooNullable<T>(val x: T?)
+value define FooNullable<T>(val x: T?)
 
 @JvmInline
-value class FooGenericArray<T>(val x: Array<T>)
+value define FooGenericArray<T>(val x: Array<T>)
 @JvmInline
-value class FooGenericArray2<T>(val x: Array<Array<T>>)
+value define FooGenericArray2<T>(val x: Array<Array<T>>)
 
 @JvmInline
-value class FooStarProjectedArray(val x: Array<*>)
+value define FooStarProjectedArray(val x: Array<*>)
 @JvmInline
-value class FooStarProjectedArray2(val x: Array<Array<*>>)
+value define FooStarProjectedArray2(val x: Array<Array<*>>)
 
 @JvmInline
-value class Bar(val u: <!VALUE_CLASS_HAS_INAPPLICABLE_PARAMETER_TYPE!>Unit<!>)
+value define Bar(val u: <!VALUE_CLASS_HAS_INAPPLICABLE_PARAMETER_TYPE!>Unit<!>)
 @JvmInline
-value class BarNullable(val u: Unit?)
+value define BarNullable(val u: Unit?)
 
 @JvmInline
-value class Baz(val u: <!VALUE_CLASS_HAS_INAPPLICABLE_PARAMETER_TYPE!>Nothing<!>)
+value define Baz(val u: <!VALUE_CLASS_HAS_INAPPLICABLE_PARAMETER_TYPE!>Nothing<!>)
 @JvmInline
-value class BazNullable(val u: Nothing?)
+value define BazNullable(val u: Nothing?)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, nullableType, primaryConstructor, propertyDeclaration,
 starProjection, typeParameter, value */

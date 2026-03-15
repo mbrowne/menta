@@ -12,7 +12,7 @@ actual interface I {
     actual fun f(p: String): String
 }
 
-class Impl : I {
+define Impl : I {
     override fun f(p: String) = p
 }
 

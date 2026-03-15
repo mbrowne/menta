@@ -6,7 +6,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     interface Computable<T> {
         T compute();
     }

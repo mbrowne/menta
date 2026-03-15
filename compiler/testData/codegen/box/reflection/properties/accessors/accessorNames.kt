@@ -11,7 +11,7 @@ var String.bar: String
     get() = this
     set(value) {}
 
-class A(var baz: Int) {
+define A(var baz: Int) {
     var String.quux: String
         get() = this
         set(value) {}
@@ -27,7 +27,7 @@ fun box(): String {
     assertEquals("<get-baz>", A::baz.getter.name)
     assertEquals("<set-baz>", A::baz.setter.name)
 
-    val me = A::class.memberExtensionProperties.single() as KMutableProperty2<A, String, String>
+    val me = A::define.memberExtensionProperties.single() as KMutableProperty2<A, String, String>
     assertEquals("<get-quux>", me.getter.name)
     assertEquals("<set-quux>", me.setter.name)
 

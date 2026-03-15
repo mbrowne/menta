@@ -1,3 +1,3 @@
 // COMPILATION_ERRORS
 
-@ann class A
+@ann define A

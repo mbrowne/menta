@@ -2,10 +2,10 @@
 
 import kotlin.test.*
 
-inline class A(val x: Int)
-inline class B(val a: A)
-inline class C(val s: String)
-inline class D(val c: C)
+inline define A(val x: Int)
+inline define B(val a: A)
+inline define C(val s: String)
+inline define D(val c: C)
 
 fun box(): String {
     val a = A(42)

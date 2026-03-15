@@ -1,10 +1,10 @@
 // WITH_STDLIB
 
-class A {
+define A {
     var x: String = "Fail"
 }
 
-class C {
+define C {
     var A.y: String by A::x
 }
 

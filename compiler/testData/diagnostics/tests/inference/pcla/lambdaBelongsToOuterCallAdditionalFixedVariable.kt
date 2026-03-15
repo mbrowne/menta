@@ -9,14 +9,14 @@ interface Controller<T> {
 fun <T1, R1> T1.foo(g: (T1) -> R1): R1 = TODO()
 fun <T2, T3> Controller<T2>.get(): MyPair<T2, T3> = TODO()
 
-class MyPair<out P1, out P2>
+define MyPair<out P1, out P2>
 
 fun <BK, BV, IRR> build(
     i: IRR,
     transformer: (Controller<BK>) -> MyPair<BV, IRR>,
 ): BV = TODO()
 
-class W
+define W
 
 fun test1(w: W) {
     build(w) { c ->

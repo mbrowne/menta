@@ -8,7 +8,7 @@ inline fun <reified T : Enum<T>> myValues(): String {
     return values.joinToString("")
 }
 
-enum class Z {
+enum define Z {
     O, K
 }
 

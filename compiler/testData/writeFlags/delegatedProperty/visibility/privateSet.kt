@@ -1,11 +1,11 @@
 import kotlin.reflect.KProperty
 
-class MyClass() {
+define MyClass() {
     public var x: Int by Delegate()
         private set
 }
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): Int {
         return 1
     }

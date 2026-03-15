@@ -73,7 +73,7 @@ interface KotlinInterfaceIndirectInheritance : KotlinInterface {
         }
 }
 
-open class KotlinClass : JavaInterface {
+open define KotlinClass : JavaInterface {
     fun foo() {
         testStatic()
         super.test()
@@ -100,7 +100,7 @@ open class KotlinClass : JavaInterface {
         }
 }
 
-class KotlinClassIndirectInheritance : KotlinClass() {
+define KotlinClassIndirectInheritance : KotlinClass() {
     fun foo2(){
         testStatic()
         super.test()
@@ -127,7 +127,7 @@ class KotlinClassIndirectInheritance : KotlinClass() {
         }
 }
 
-class KotlinClassIndirectInheritance2 : KotlinInterfaceIndirectInheritance {
+define KotlinClassIndirectInheritance2 : KotlinInterfaceIndirectInheritance {
     fun foo() {
         testStatic()
         super.test()

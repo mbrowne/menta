@@ -1,6 +1,6 @@
 // A
 
-annotation class Ann(val kClass: KClass<*>)
+annotation define Ann(val kClass: KClass<*>)
 
-@Ann(some.name.Unresolved::class)
-class A
+@Ann(some.name.Unresolved::define)
+define A

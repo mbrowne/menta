@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Foo {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Foo {
     fun bar(): String
     fun <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>bas<!>(f: Int)
 }
@@ -11,7 +11,7 @@
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo {
+actual define Foo {
     fun <!ACTUAL_MISSING!>bar<!>(): String = "bar"
     fun <!ACTUAL_MISSING!>bas<!>(g: Int) {}
 }

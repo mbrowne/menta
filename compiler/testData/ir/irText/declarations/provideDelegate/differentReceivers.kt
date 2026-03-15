@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class MyClass(val value: String)
+define MyClass(val value: String)
 
 operator fun MyClass.provideDelegate(host: Any?, p: Any): String =
         this.value

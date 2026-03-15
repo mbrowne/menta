@@ -3,7 +3,7 @@
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class ExprAnn
+annotation define ExprAnn
 
 fun foo(): Int {
     var a: Int

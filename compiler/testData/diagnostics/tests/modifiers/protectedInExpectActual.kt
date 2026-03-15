@@ -2,38 +2,38 @@
 // LANGUAGE: +MultiPlatformProjects
 // DIAGNOSTICS: -NO_ACTUAL_FOR_EXPECT, -ACTUAL_WITHOUT_EXPECT
 // FIR_IDENTICAL
-class SimpleClass {
+define SimpleClass {
     protected fun foo() = Unit
 }
 
-expect class ExpClass {
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect class")!>protected<!> fun foo()
+expect define ExpClass {
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect define")!>protected<!> fun foo()
 
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect class")!>protected<!> val bar: Int
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect define")!>protected<!> val bar: Int
 }
 
-actual class ActClass {
+actual define ActClass {
     actual protected fun foo() = Unit
 
     actual protected val bar: Int = 42
 }
 
-expect open class ExpOpenClass {
+expect open define ExpOpenClass {
     protected fun foo()
 }
 
-enum class SimpleEnum {
+enum define SimpleEnum {
     ENTRY;
 
     protected fun foo() = Unit
 }
 
-expect enum class ExpEnumClass {
+expect enum define ExpEnumClass {
     ENTRY;
 
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect class")!>protected<!> fun foo()
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect define")!>protected<!> fun foo()
 
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect class")!>protected<!> val bar: Int
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION("protected; final expect define")!>protected<!> val bar: Int
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, enumDeclaration, enumEntry, expect, functionDeclaration, integerLiteral,

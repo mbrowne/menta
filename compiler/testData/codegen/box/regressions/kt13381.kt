@@ -7,6 +7,6 @@ interface A {
 }
 
 interface B : A
-class C : B
+define C : B
 
 fun box() = C().foo()

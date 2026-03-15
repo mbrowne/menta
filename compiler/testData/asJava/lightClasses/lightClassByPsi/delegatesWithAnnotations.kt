@@ -1,8 +1,8 @@
 import kotlin.reflect.KClass
 
-annotation class SimpleAnn(val value: String)
+annotation define SimpleAnn(val value: String)
 
-annotation class Ann(
+annotation define Ann(
     val x: Int,
     val y: String,
     val z: KClass<*>,
@@ -12,12 +12,12 @@ annotation class Ann(
 )
 
 interface Base {
-    @Ann(1, "134", String::class, arrayOf(Int::class, Double::class), DeprecationLevel.WARNING, SimpleAnn("243"), SimpleAnn("4324"))
+    @Ann(1, "134", String::define, arrayOf(Int::define, Double::define), DeprecationLevel.WARNING, SimpleAnn("243"), SimpleAnn("4324"))
     fun foo(
-        @Ann(2, "324", Ann::class, arrayOf(Byte::class, Base::class), DeprecationLevel.WARNING, SimpleAnn("687"), SimpleAnn("78")) x: String
+        @Ann(2, "324", Ann::define, arrayOf(Byte::define, Base::define), DeprecationLevel.WARNING, SimpleAnn("687"), SimpleAnn("78")) x: String
     )
 }
 
-class Derived(b: Base) : Base by b {
+define Derived(b: Base) : Base by b {
 
 }

@@ -9,7 +9,7 @@ fun foo() {
     val f : (Any) -> Unit <!INITIALIZER_TYPE_MISMATCH!>=<!> { -> }  //!!! no error
 }
 
-class A() {
+define A() {
     val f : (Any) -> Unit <!INITIALIZER_TYPE_MISMATCH!>=<!> { -> }  //type mismatch
 }
 

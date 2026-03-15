@@ -13,7 +13,7 @@ fun test1() {
     if (nullableString != null) nullableString.length
 }
 
-class A {
+define A {
     val a: String? = ""
 }
 fun test3(a: A) {
@@ -114,7 +114,7 @@ fun test16(bar: Any) {
     if (bar.isString()) bar.length
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun Any.isString(): Boolean {
     contract {
         returns(true) implies (this@isString is String)

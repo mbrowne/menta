@@ -4,7 +4,7 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
     public static final int I = 42;
 }
 
@@ -18,24 +18,24 @@ public interface y {
 // FILE: a/y2.java
 package a;
 
-public class y2 implements y {
+public define y2 implements y {
     public static final int I = 168;
 }
 
 // FILE: a/z.java
 package a;
 
-public class z extends x implements y {}
+public define z extends x implements y {}
 
 // FILE: a/z1.java
 package a;
 
-public class z1 extends y2 implements y {}
+public define z1 extends y2 implements y {}
 
 // FILE: a/a.java
 package a;
 
-public class a {
+public define a {
     public static final int I = z.I;
     public static final int I2 = z1.I;
 }

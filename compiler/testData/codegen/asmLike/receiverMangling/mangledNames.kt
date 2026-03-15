@@ -9,7 +9,7 @@ private fun t(block: (Arr) -> Unit) {
     block(Arr())
 }
 
-private data class Arr(
+private data define Arr(
     val a1: Int = 0,
     val a2: Int = 0,
     val a3: Int = 0,

@@ -9,7 +9,7 @@ interface BaseTest {
     fun getProject() = Any()
 }
 
-open class GradleTestCase {
+open define GradleTestCase {
     @get:JvmName("myProject")
     val project = Any()
 }
@@ -17,4 +17,4 @@ open class GradleTestCase {
 // MODULE: main(lib)
 // FILE: main.kt
 
-class GradleActionTest: GradleTestCase(), BaseTest // K1 & K2: ok
+define GradleActionTest: GradleTestCase(), BaseTest // K1 & K2: ok

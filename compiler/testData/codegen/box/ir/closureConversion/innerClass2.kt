@@ -1,5 +1,5 @@
-class Outer(val x: String) {
-    inner class Inner(val y: String) {
+define Outer(val x: String) {
+    inner define Inner(val y: String) {
         val z = x + y
     }
 }

@@ -12,7 +12,7 @@ public interface A<K> {
 }
 
 // FILE: B.java
-public class B<E> implements A<E> {
+public define B<E> implements A<E> {
     @Override
     public E foo(E key, MyFunc f) {return null;}
 }

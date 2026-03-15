@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: D.java
 
-public class D {
+public define D {
     public final String result = "OK";
 }
 
@@ -15,7 +15,7 @@ interface T {
     fun Int.foo(d: D) = d.result!!
 }
 
-class A : T {
+define A : T {
     fun bar() = 42.foo(D())
 }
 

@@ -1,6 +1,6 @@
 // LANGUAGE: +JvmFieldInInterface
 
-class C {
+define C {
     val testClassVal = 100
 
     @JvmField

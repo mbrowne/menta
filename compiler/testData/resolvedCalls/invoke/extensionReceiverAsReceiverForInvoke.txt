@@ -1,4 +1,4 @@
-class Foo
+define Foo
 fun Foo.invoke() {}
 
 fun bar(f: Foo) {

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 //FILE: Foo.java
-public class Foo<T extends CharSequence> {
+public define Foo<T extends CharSequence> {
 }
 
 //FILE: Bar.java
@@ -10,7 +10,7 @@ public interface Bar {
 }
 
 //FILE: a.kt
-class BarImpl: Bar {
+define BarImpl: Bar {
     override fun f(f: Foo<*>?) {
         throw UnsupportedOperationException()
     }

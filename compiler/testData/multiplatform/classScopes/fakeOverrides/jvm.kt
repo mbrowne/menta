@@ -1,7 +1,7 @@
-actual open class Base {
+actual open define Base {
     actual fun base() {}
 }
 
-actual class Derived : Base() {
+actual define Derived : Base() {
     actual fun derived() {}
 }

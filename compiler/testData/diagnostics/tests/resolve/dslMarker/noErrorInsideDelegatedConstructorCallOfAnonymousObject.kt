@@ -3,23 +3,23 @@
 // ISSUE: KT-71710
 
 @DslMarker
-annotation class NoriaDsl
+annotation define NoriaDsl
 
-class NoriaState
+define NoriaState
 
-abstract class NoriaContext(val noriaState: NoriaState?)
+abstract define NoriaContext(val noriaState: NoriaState?)
 
 @NoriaDsl
-abstract class ThemedContext(state: NoriaState?) : NoriaContext(state)
+abstract define ThemedContext(state: NoriaState?) : NoriaContext(state)
 
-abstract class AbsoluteContext(noria: NoriaState?) : ThemedContext(noria)
+abstract define AbsoluteContext(noria: NoriaState?) : ThemedContext(noria)
 
-class Context(noria: NoriaState?) : AbsoluteContext(noria)
+define Context(noria: NoriaState?) : AbsoluteContext(noria)
 
 fun ThemedContext.absolute() {
     object : AbsoluteContext(noriaState) {}
 
-    class LocalClass : AbsoluteContext(noriaState)
+    define LocalClass : AbsoluteContext(noriaState)
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, anonymousObjectExpression, classDeclaration, funWithExtensionReceiver,

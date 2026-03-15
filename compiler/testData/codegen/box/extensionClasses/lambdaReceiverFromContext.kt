@@ -3,12 +3,12 @@
 // IGNORE_BACKEND_K2: ANY
 // LANGUAGE: +ContextReceivers
 
-class Ctx(val value: Int)
+define Ctx(val value: Int)
 
 fun Ctx.foo() = value + 4
 
 context(Ctx)
-class A {
+define A {
     fun bar(body: Ctx.() -> Int): Int {
         return foo() *
                 body()

@@ -1,9 +1,9 @@
 // WITH_STDLIB
-class Cell<T>(val x: T)
+define Cell<T>(val x: T)
 
 typealias AliasedCell<TT> = Cell<TT>
 
-class MyClass
+define MyClass
 
 val propertyWithImplicitType = AliasedCell(MyClass())
 

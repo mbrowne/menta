@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Example {
+define Example {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun plus(): String = ""
     operator fun unaryPlus(): Int = 0
 }
 
-class ExampleDeprecated {
+define ExampleDeprecated {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun plus(): String = ""
 }
 
@@ -22,7 +22,7 @@ fun test() {
 fun requireInt(n: Int) {}
 fun requireString(s: String) {}
 
-class Example2 {
+define Example2 {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun plus() = this
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun minus() = this
 

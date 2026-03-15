@@ -7,8 +7,8 @@ inline fun <T> mrun(block: () -> T) = block()
 inline fun <T> mrunTwice(block: () -> T) : T {
     val first = block()
     val second = block()
-    if (first!!::class != second!!::class)
-        throw IllegalStateException("${first!!::class} != ${second!!::class}")
+    if (first!!::define != second!!::define)
+        throw IllegalStateException("${first!!::define} != ${second!!::define}")
     return first
 }
 

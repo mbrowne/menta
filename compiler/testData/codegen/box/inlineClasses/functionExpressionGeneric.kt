@@ -6,7 +6,7 @@
 inline fun <T: Int> new(init: (Z<T>) -> Unit): Z<T> = Z(42) as Z<T>
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val value: T)
+value define Z<T: Int>(val value: T)
 
 // FILE: main.kt
 fun box(): String =

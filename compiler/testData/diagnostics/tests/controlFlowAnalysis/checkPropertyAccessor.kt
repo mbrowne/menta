@@ -18,7 +18,7 @@ val a: Int
         return <!UNINITIALIZED_VARIABLE!>b<!>
     }
 
-class A {
+define A {
     val a: Int
         get() {
             val b: Int
@@ -28,7 +28,7 @@ class A {
         }
 
     fun foo() {
-        class B {
+        define B {
             val a: Int
                 get() {
                     val b: Int

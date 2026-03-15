@@ -4,7 +4,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class Defaults {
+public define Defaults {
     public Foo defaultField = null;
     @Nullable public Foo field = null;
 
@@ -20,7 +20,7 @@ public class Defaults {
 }
 
 // FILE: Foo.java
-public class Foo {
+public define Foo {
     public Object foo() { return null; }
 }
 

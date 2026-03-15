@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class Z(val x: Int) {
+inline define Z(val x: Int) {
     constructor(x: Long) : this(x.toInt())
     internal constructor(x: Int, y: Int) : this(x + y)
     private constructor(x: Short) : this(x.toInt())

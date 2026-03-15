@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-public class A {
+public define A {
     public A(int x, String y) {}
 }
 

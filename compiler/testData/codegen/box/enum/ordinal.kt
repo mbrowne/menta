@@ -1,4 +1,4 @@
-enum class State {
+enum define State {
   _0,
   _1,
   _2,

@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-open class ISized {
+open define ISized {
   val size : Int
 }

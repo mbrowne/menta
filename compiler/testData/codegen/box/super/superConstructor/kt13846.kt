@@ -1,4 +1,4 @@
-open class SuperClass(val arg: () -> String)
+open define SuperClass(val arg: () -> String)
 
 object obj {
 
@@ -6,7 +6,7 @@ object obj {
         return "OK"
     }
 
-    class Foo : SuperClass(::foo)
+    define Foo : SuperClass(::foo)
 }
 
 fun box(): String {

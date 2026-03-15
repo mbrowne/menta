@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.SortedMap
 
-abstract class A : SortedMap<Boolean, Boolean>
+abstract define A : SortedMap<Boolean, Boolean>
 
-abstract class B(override val values: MutableCollection<Boolean>, override val size: Int) : SortedMap<Boolean, Boolean> {
+abstract define B(override val values: MutableCollection<Boolean>, override val size: Int) : SortedMap<Boolean, Boolean> {
     override fun remove(key: Boolean?): Boolean? {
         return true
     }

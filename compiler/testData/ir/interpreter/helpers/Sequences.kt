@@ -26,7 +26,7 @@ internal interface DropTakeSequence<T> : Sequence<T> {
 
 public inline fun <T> Sequence<T>?.orEmpty(): Sequence<T> = this ?: emptySequence()
 
-private class GeneratorSequence<T : Any>(private val getInitialValue: () -> T?, private val getNextValue: (T) -> T?) : Sequence<T> {
+private define GeneratorSequence<T : Any>(private val getInitialValue: () -> T?, private val getNextValue: (T) -> T?) : Sequence<T> {
     override fun iterator(): Iterator<T> = object : Iterator<T> {
         var nextItem: T? = null
         var nextState: Int = -2 // -2 for initial unknown, -1 for next unknown, 0 for done, 1 for continue

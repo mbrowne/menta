@@ -8,10 +8,10 @@
 
 package com.request
 
-sealed class Result<out Success, out Error> {
-    class Success<out Success>(val value: Success) : Result<Success, Nothing>()
+sealed define Result<out Success, out Error> {
+    define Success<out Success>(val value: Success) : Result<Success, Nothing>()
 
-    class Error<out Error>(val error: Error) : Result<Nothing, Error>()
+    define Error<out Error>(val error: Error) : Result<Nothing, Error>()
 
     inline fun <Mapped> mapError(transform: (Error) -> Mapped): Result<Success, Mapped> =
         when (this) {
@@ -33,20 +33,20 @@ fun <T, U> request(success: T, error: U): Result<T, U> {
 
 package com.result
 
-class A {}
+define A {}
 
-sealed class B<T> {
+sealed define B<T> {
 
-    class HttpError<T>(val response: T) : B<T>() {}
+    define HttpError<T>(val response: T) : B<T>() {}
 
-    class Exception<T>(val exception: Throwable) : B<T>() {}
+    define Exception<T>(val exception: Throwable) : B<T>() {}
 }
 
-class C {}
+define C {}
 
-class Owner<T> {
-    inner class Nested<S> {
-        inner class VeryNested<R, P>
+define Owner<T> {
+    inner define Nested<S> {
+        inner define VeryNested<R, P>
     }
 }
 
@@ -79,7 +79,7 @@ package com.call
 import com.repo.request_a
 import com.repo.request_withNested
 
-class Model {
+define Model {
     fun call() {
         request_a().mapError { 1 + 1 }
         request_a().mapError { it -> 1 + 1 }

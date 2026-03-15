@@ -21,12 +21,12 @@ fun box(): String {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
 fun consumeDifferentType(value: DifferentType) {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun getTypeVariable(): TV = storage
     private var storage: TV = TargetType() as TV

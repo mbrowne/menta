@@ -1,6 +1,6 @@
 // KT-2202 Wrong instruction for invoke private setter
 
-class A {
+define A {
     private fun f1() {}
 
     fun foo() {
@@ -8,7 +8,7 @@ class A {
     }
 }
 
-class B {
+define B {
     var foo = 1
         private set(value) { field = value }
 

@@ -5,7 +5,7 @@ object Hello {
     val hello = "hello"
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <E> buildList0(builder: MutableList<E>.() -> Unit): List<E> = mutableListOf<E>().apply { builder() }
 
 val numbers = buildList0 {

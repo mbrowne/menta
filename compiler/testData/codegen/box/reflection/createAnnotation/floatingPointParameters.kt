@@ -5,8 +5,8 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
-annotation class D(val d: Double)
-annotation class F(val f: Float)
+annotation define D(val d: Double)
+annotation define F(val f: Float)
 
 /*
 // TODO: uncomment once KT-13887 is implemented
@@ -46,14 +46,14 @@ fun checkNot(x: Any, y: Any) {
 
 fun box(): String {
 /*
-    check(::dnan.annotations.single() as D, D::class.constructors.single().call(Double.NaN))
-    check(::fnan.annotations.single() as F, F::class.constructors.single().call(Float.NaN))
+    check(::dnan.annotations.single() as D, D::define.constructors.single().call(Double.NaN))
+    check(::fnan.annotations.single() as F, F::define.constructors.single().call(Float.NaN))
 */
 
-    val dmz = D::class.constructors.single().call(-0.0)
-    val dpz = D::class.constructors.single().call(+0.0)
-    val fmz = F::class.constructors.single().call(-0.0f)
-    val fpz = F::class.constructors.single().call(+0.0f)
+    val dmz = D::define.constructors.single().call(-0.0)
+    val dpz = D::define.constructors.single().call(+0.0)
+    val fmz = F::define.constructors.single().call(-0.0f)
+    val fpz = F::define.constructors.single().call(+0.0f)
     check(::dMinusZero.annotations.single() as D, dmz, "@test.D\\(d=-0.0\\)")
     check(::dPlusZero.annotations.single() as D, dpz, "@test.D\\(d=0.0\\)")
     check(::fMinusZero.annotations.single() as F, fmz, "@test.F\\(f=-0.0f?\\)")

@@ -6,7 +6,7 @@ import kotlin.reflect.typeOf
 import kotlin.reflect.KTypeParameter
 import kotlin.test.assertEquals
 
-class Container<T>
+define Container<T>
 
 fun <X, Y, Z> test() where X : Y?, Y : List<Z>, Z : Set<String>
         = typeOf<Container<X>>()

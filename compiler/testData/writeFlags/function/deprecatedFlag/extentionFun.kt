@@ -1,4 +1,4 @@
-class MyClass() { }
+define MyClass() { }
 
 @Deprecated("") fun MyClass.test() {}
 

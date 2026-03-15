@@ -2,8 +2,8 @@
 // SKIP_KT_DUMP
 
 // FILE: kt44855.kt
-open class Child(val x: Parent?) : Parent() {
-    inner class QQQ {
+open define Child(val x: Parent?) : Parent() {
+    inner define QQQ {
         fun z() {
             x as Child
             val q = x.qqq
@@ -13,7 +13,7 @@ open class Child(val x: Parent?) : Parent() {
 }
 
 // FILE: Parent.java
-public class Parent {
+public define Parent {
     protected String qqq = "";
 
     public String getQqq() {

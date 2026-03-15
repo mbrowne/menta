@@ -7,7 +7,7 @@
 // FILE: IntrinsicConstEvaluation.kt
 package kotlin.internal
 
-annotation class IntrinsicConstEvaluation
+annotation define IntrinsicConstEvaluation
 
 // FILE: usage.kt
 import kotlin.internal.IntrinsicConstEvaluation

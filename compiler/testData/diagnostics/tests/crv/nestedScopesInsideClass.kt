@@ -3,12 +3,12 @@
 // ISSUE: KT-76776
 
 @MustUseReturnValues
-class A {
+define A {
     companion object {
         fun foo(): Int = 123
     }
 
-    class Nested {
+    define Nested {
         fun bar(): Int = 123
     }
 }

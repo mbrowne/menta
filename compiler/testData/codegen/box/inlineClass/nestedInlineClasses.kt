@@ -3,11 +3,11 @@
 import kotlin.test.*
 
 interface I {
-    inline class IC(val x: Int)
+    inline define IC(val x: Int)
 }
 
 interface I2 {
-    inline class IC(val x: Int)
+    inline define IC(val x: Int)
 }
 
 fun box(): String {

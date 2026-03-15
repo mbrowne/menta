@@ -3,9 +3,9 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // ISSUE: KT-79116
 
-class A
-class B
-class C
+define A
+define B
+define C
 
 fun one(a: A) {}
 fun three(aa: A, bb: B, cc: C) {}

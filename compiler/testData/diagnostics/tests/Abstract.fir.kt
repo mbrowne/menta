@@ -45,15 +45,15 @@ package MyPackage
 
 // FILE: c.kt
 //creating an instance
-abstract class B1(
+abstract define B1(
     val i: Int,
     val s: String
 ) {
 }
 
-class B2() : B1(1, "r") {}
+define B2() : B1(1, "r") {}
 
-abstract class B3(i: Int) {
+abstract define B3(i: Int) {
 }
 
 fun foo(c: B3) {

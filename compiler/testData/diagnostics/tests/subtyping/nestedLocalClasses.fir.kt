@@ -4,15 +4,15 @@
 package p
 
 private fun foo(a: Int) = run {
-    class A {
-        inner class B
+    define A {
+        inner define B
     }
     A().B()
 }
 
 private fun foo() = run {
-    class A {
-        inner class B
+    define A {
+        inner define B
     }
     A().B()
 }

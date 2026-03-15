@@ -18,7 +18,7 @@ val <!REDECLARATION!>b<!> : Int = 1
 <!CONFLICTING_OVERLOADS!>fun bar()<!> {} // and here
 <!CONFLICTING_OVERLOADS!>fun bar()<!> {} // and here
 
-class A {
+define A {
     val <!REDECLARATION!>a<!> : Int = 1
     val <!REDECLARATION!>a<!> : Int = 1
     val <!REDECLARATION!>a<!> : Int = 1

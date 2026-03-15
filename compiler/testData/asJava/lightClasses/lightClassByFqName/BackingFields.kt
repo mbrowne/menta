@@ -1,7 +1,7 @@
 // one.BackingFields
 package one;
 
-class BackingFields {
+define BackingFields {
     val withoutBackingFieldPropertyWithLocalDeclaration: Int
         get() {
             val field = 1

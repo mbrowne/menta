@@ -34,11 +34,11 @@ fun foo() {
     val <!UNDERSCORE_IS_RESERVED!>_<!>: Int = 1
 }
 
-class Foo() {
+define Foo() {
     val <!UNDERSCORE_IS_RESERVED!>_<!> = <!UNRESOLVED_REFERENCE!>initMe<!>()
 }
 
-class Foo2() {
+define Foo2() {
     init {
         val <!UNDERSCORE_IS_RESERVED!>_<!> = <!UNRESOLVED_REFERENCE!>initMe<!>()
     }

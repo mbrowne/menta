@@ -39,7 +39,7 @@ val ~getter5~Int.getter5: Int
     }
 
 
-class Test {
+define Test {
     val ~innerGetter1~Int.innerGetter1: Int
         get() {
             return `innerGetter1`this@innerGetter1

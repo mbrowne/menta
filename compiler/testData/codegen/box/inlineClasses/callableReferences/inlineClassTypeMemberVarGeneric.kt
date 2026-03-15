@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val x: T)
+value define Z<T: Int>(val x: T)
 
-class C(var z: Z<Int>)
+define C(var z: Z<Int>)
 
 fun box(): String {
     val ref = C::z

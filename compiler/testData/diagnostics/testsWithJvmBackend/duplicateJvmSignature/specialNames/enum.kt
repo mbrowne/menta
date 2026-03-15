@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-<!CONFLICTING_JVM_DECLARATIONS!>enum class E {
+<!CONFLICTING_JVM_DECLARATIONS!>enum define E {
     A;
 
     <!CONFLICTING_JVM_DECLARATIONS!>fun values(): Array<E> = null!!<!>

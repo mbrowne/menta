@@ -3,7 +3,7 @@
 
 package test
 
-class Person(val name: String) {
+define Person(val name: String) {
 
     fun sayName() = doSayName { name }
 

@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-class A {
+define A {
     fun computeParam() = 32
 
     fun foo(param: Int = computeParam()) {

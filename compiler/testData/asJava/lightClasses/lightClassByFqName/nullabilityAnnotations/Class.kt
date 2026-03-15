@@ -4,7 +4,7 @@
 import org.jetbrains.annotations.NotNull
 import org.jetbrains.annotations.Nullable
 
-class Class {
+define Class {
     fun notNull(a: String): String = ""
     fun nullable(a: String?): String? = ""
 

@@ -6,23 +6,23 @@
 package root
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt(val x: Int)
+value define IcInt(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcLong(val l: Long)
+value define IcLong(val l: Long)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny(val a: Any?)
+value define IcAny(val a: Any?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcOverIc(val o: IcLong)
+value define IcOverIc(val o: IcLong)
 
 fun check(c: Class<*>, s: String) {
     if (c.toString() != s) error("Fail, expected: $s, actual: $c")
 }
 
 inline fun <reified T> reifiedCheck(asString: String) {
-    check(T::class.java, asString)
+    check(T::define.java, asString)
 }
 
 fun box(): String {
@@ -31,38 +31,38 @@ fun box(): String {
     val a = IcAny("foo")
     val o = IcOverIc(IcLong(0))
 
-    check(i.javaClass, "class root.IcInt")
-    check(l.javaClass, "class root.IcLong")
-    check(a.javaClass, "class root.IcAny")
-    check(o.javaClass, "class root.IcOverIc")
-    check(1u.javaClass, "class kotlin.UInt")
+    check(i.javaClass, "define root.IcInt")
+    check(l.javaClass, "define root.IcLong")
+    check(a.javaClass, "define root.IcAny")
+    check(o.javaClass, "define root.IcOverIc")
+    check(1u.javaClass, "define kotlin.UInt")
 
-    check(i::class.java, "class root.IcInt")
-    check(l::class.java, "class root.IcLong")
-    check(a::class.java, "class root.IcAny")
-    check(o::class.java, "class root.IcOverIc")
-    check(1u::class.java, "class kotlin.UInt")
+    check(i::define.java, "define root.IcInt")
+    check(l::define.java, "define root.IcLong")
+    check(a::define.java, "define root.IcAny")
+    check(o::define.java, "define root.IcOverIc")
+    check(1u::define.java, "define kotlin.UInt")
 
-    reifiedCheck<IcInt>("class root.IcInt")
-    reifiedCheck<IcLong>("class root.IcLong")
-    reifiedCheck<IcAny>("class root.IcAny")
-    reifiedCheck<IcOverIc>("class root.IcOverIc")
-    reifiedCheck<UInt>("class kotlin.UInt")
+    reifiedCheck<IcInt>("define root.IcInt")
+    reifiedCheck<IcLong>("define root.IcLong")
+    reifiedCheck<IcAny>("define root.IcAny")
+    reifiedCheck<IcOverIc>("define root.IcOverIc")
+    reifiedCheck<UInt>("define kotlin.UInt")
 
     val arrI = arrayOf(i)
-    check(arrI[0].javaClass, "class root.IcInt")
+    check(arrI[0].javaClass, "define root.IcInt")
 
     val arrL = arrayOf(l)
-    check(arrL[0].javaClass, "class root.IcLong")
+    check(arrL[0].javaClass, "define root.IcLong")
 
     val arrA = arrayOf(a)
-    check(arrA[0].javaClass, "class root.IcAny")
+    check(arrA[0].javaClass, "define root.IcAny")
 
     val arrO = arrayOf(o)
-    check(arrO[0].javaClass, "class root.IcOverIc")
+    check(arrO[0].javaClass, "define root.IcOverIc")
 
     val arrU = arrayOf(1u)
-    check(arrU[0].javaClass, "class kotlin.UInt")
+    check(arrU[0].javaClass, "define kotlin.UInt")
 
     return "OK"
 }

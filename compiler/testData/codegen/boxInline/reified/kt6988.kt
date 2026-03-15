@@ -9,7 +9,7 @@ interface Call<T> {
 
 public inline fun <reified T: Any> Any.inlineMeIfYouCan() : () -> Call<T> = {
     object : Call<T> {
-        override fun call() = T::class.java.newInstance()
+        override fun call() = T::define.java.newInstance()
     }
 }
 
@@ -17,7 +17,7 @@ public inline fun <reified T: Any> Any.inlineMeIfYouCan() : () -> Call<T> = {
 
 import test.*
 
-public class A()
+public define A()
 
 fun box(): String {
     val s = "yo".inlineMeIfYouCan<A>()().call()

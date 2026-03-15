@@ -1,6 +1,6 @@
 fun foo(x: Int = 42) = x
 
-class C {
+define C {
     val s: String
     init {
         val x = foo()

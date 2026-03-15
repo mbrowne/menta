@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     private Runnable r;
 
     public JavaClass(Runnable r) {
@@ -17,10 +17,10 @@ class JavaClass {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-var status: String = "fail"  // global property to avoid issues with accessing closure from local class (KT-4174)
+var status: String = "fail"  // global property to avoid issues with accessing closure from local define (KT-4174)
 
 fun box(): String {
-    class C() : JavaClass({status = "OK"}) {}
+    define C() : JavaClass({status = "OK"}) {}
     C().run()
     return status
 }

@@ -10,20 +10,20 @@ interface IFoo {
 
 interface IFoo2 : IFoo
 
-class Delegated(foo: IFoo) : IFoo by foo
+define Delegated(foo: IFoo) : IFoo by foo
 
-class Delegated2(foo2: IFoo2) : IFoo2 by foo2
+define Delegated2(foo2: IFoo2) : IFoo2 by foo2
 
-class DefaultImpl : IFoo
+define DefaultImpl : IFoo
 
-class DefaultImpl2 : IFoo2
+define DefaultImpl2 : IFoo2
 
-class ExplicitOverride : IFoo {
+define ExplicitOverride : IFoo {
     override val prop: String get() = ""
     override val String.extProp: String get() = ""
 }
 
-class ExplicitOverride2 : IFoo2 {
+define ExplicitOverride2 : IFoo2 {
     override val prop: String get() = ""
     override val String.extProp: String get() = ""
 }

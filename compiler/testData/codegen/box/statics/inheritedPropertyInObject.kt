@@ -1,4 +1,4 @@
-open class Bar<T>(val prop: String)
+open define Bar<T>(val prop: String)
 object Foo : Bar<Foo>("OK") {
 
     val p = Foo.prop

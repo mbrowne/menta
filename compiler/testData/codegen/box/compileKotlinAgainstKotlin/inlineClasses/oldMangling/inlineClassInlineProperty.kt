@@ -6,7 +6,7 @@
 
 package a
 
-inline class S(val value: String) {
+inline define S(val value: String) {
     inline val k: String
         get() = value + "K"
 }

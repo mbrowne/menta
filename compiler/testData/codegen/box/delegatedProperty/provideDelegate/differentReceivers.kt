@@ -11,7 +11,7 @@ inline fun <T> runLogged(entry: String, action: () -> T): T {
 // FILE: main.kt
 import kotlin.test.*
 
-class MyClass(val value: String)
+define MyClass(val value: String)
 
 operator fun MyClass.provideDelegate(host: Any?, p: Any): String =
         runLogged("tdf(${this.value});") { this.value }

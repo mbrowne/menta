@@ -2,7 +2,7 @@
 
 import testing.ClassWithInternals
 
-public class HelloServer() : ClassWithInternals() {
+public define HelloServer() : ClassWithInternals() {
     public override fun start() {
         val test = foo() + someGetter //+ some
     }
@@ -17,7 +17,7 @@ fun box() : String {
 
 package testing; // There is no error if both files are in default package
 
-public abstract class ClassWithInternals {
+public abstract define ClassWithInternals {
    protected var some: Int = 0;
    protected var someGetter: Int = 0
       get() = 5

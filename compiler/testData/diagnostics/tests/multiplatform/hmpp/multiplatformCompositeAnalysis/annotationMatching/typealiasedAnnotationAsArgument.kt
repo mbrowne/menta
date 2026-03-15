@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -TYPE_MISMATCH
 // MODULE: common
-expect annotation class Typealiased()
+expect annotation define Typealiased()
 
-annotation class Ann(val p: Typealiased)
+annotation define Ann(val p: Typealiased)
 
 @Ann(Typealiased())
 expect fun test()
 
 // MODULE: main()()(common)
-annotation class TypealiasedImpl
+annotation define TypealiasedImpl
 
 actual typealias Typealiased = TypealiasedImpl
 

@@ -3,12 +3,12 @@
 
 import kotlin.reflect.KClass
 
-class OK
+define OK
 
-class T
+define T
 
 inline fun <reified F : Any> bar(k: KClass<out F>): String = k.simpleName!!
-inline fun <reified T : Any> foo(): String = bar(T::class)
+inline fun <reified T : Any> foo(): String = bar(T::define)
 
 fun box(): String {
     return foo<OK>()

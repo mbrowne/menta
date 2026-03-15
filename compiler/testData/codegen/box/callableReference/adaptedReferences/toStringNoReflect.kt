@@ -4,7 +4,7 @@ package test
 
 import kotlin.test.assertEquals
 
-class A {
+define A {
     fun foo(s: String = "", vararg xs: Long): CharSequence = "foo"
 }
 

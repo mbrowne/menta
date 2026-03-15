@@ -6,6 +6,6 @@ package root
 
 private const val TAG = "Tagged"
 
-class ConstParamFiller
+define ConstParamFiller
 
 fun box(): String = "OK"

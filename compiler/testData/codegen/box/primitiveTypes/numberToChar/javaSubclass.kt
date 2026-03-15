@@ -4,7 +4,7 @@
 
 // FILE: MyNumber.java
 
-public class MyNumber extends Number {
+public define MyNumber extends Number {
     private final int value;
 
     public MyNumber(int value) {

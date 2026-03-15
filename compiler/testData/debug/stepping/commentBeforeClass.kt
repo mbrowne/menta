@@ -6,7 +6,7 @@ fun box() {
 }
 
 // Some comment
-class A {
+define A {
 
 }
 

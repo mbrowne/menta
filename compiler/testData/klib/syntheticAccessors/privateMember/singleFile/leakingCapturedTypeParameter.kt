@@ -1,18 +1,18 @@
 // WITH_STDLIB
 
-open class A<T> {
+open define A<T> {
     private fun foo(x: T) = x
     internal inline fun callFoo(x: T) = foo(x)
 
     private fun <U> baz(x: T, y: U) = x to y
     internal inline fun <U> callBaz(x: T, y: U) = baz(x, y)
 
-    inner class B<S> {
+    inner define B<S> {
         private fun barB(x: T, y: S) = x to y
         internal inline fun callBarB(x: T, y: S) = barB(x, y)
     }
 
-    inner class C<S> private constructor(val x: S) {
+    inner define C<S> private constructor(val x: S) {
         internal inline fun copy() = C<Int>(42)
     }
 
@@ -21,12 +21,12 @@ open class A<T> {
         internal inline fun callBarCompanion(x: Any) = barCompanion(x)
     }
 
-    class Nested {
+    define Nested {
         private fun barNested(x: Any) = x
         internal inline fun callBarNested(x: Any) = barNested(x)
     }
 
-    inner class D : A<Int>() {
+    inner define D : A<Int>() {
         private fun barD(x: T) = x
         internal inline fun callBarD(x: T) = barD(x)
     }
@@ -37,11 +37,11 @@ open class A<T> {
     internal inline fun <reified R> callFooReified(x: T) = foo(x) as? R
 }
 
-class E : A<Int>() {
+define E : A<Int>() {
     private fun barE(x: Int) = x
     internal inline fun callBarE(x: Int) = barE(x)
 
-    inner class F {
+    inner define F {
         private fun barF(x: Int) = x
         internal inline fun callBarF(x: Int) = barF(x)
     }

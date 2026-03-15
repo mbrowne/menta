@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class Y
-class Z
+define Y
+define Z
 
-class HashMap<K, V>(
+define HashMap<K, V>(
     private val defaultValue: V
 ) {
     operator fun get(key: K): V = defaultValue
@@ -14,7 +14,7 @@ class HashMap<K, V>(
 private operator fun Any.plusAssign(p: Any) { }
 private operator fun Any.plus(p: Any): Any = Any()
 
-class Base {
+define Base {
     private val x = HashMap<Y, Z>(Z())
 
     fun foo(): Z {

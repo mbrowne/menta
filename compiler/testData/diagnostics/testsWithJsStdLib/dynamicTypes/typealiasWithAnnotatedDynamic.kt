@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.TYPE)
-annotation class Ann1
+annotation define Ann1
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann2
+annotation define Ann2
 
 typealias AnnGenList<T> = List<@Ann1 T>
 typealias TestAnnGen1 = AnnGenList<dynamic>

@@ -4,7 +4,7 @@
 import kotlin.reflect.*
 import kotlin.test.*
 
-class Delegate<out T>(val value: T) {
+define Delegate<out T>(val value: T) {
     lateinit var property: KProperty<*>
 
     operator fun getValue(instance: Any?, kProperty: KProperty<*>): T {
@@ -13,8 +13,8 @@ class Delegate<out T>(val value: T) {
     }
 }
 
-class A<X> {
-    inner class B<Y> {
+define A<X> {
+    inner define B<Y> {
         fun <Z> classMember() {
             val delegate = Delegate<Map<Pair<X, Y>, Z>>(emptyMap())
             val c: Map<Pair<X, Y>, Z> by delegate
@@ -28,7 +28,7 @@ class A<X> {
             assertEquals("X", x.classifier.toString())
 
             // They should be equal, but currently it works incorrectly, see KT-82319.
-            assertNotEquals(A::class.typeParameters.single(), x.classifier)
+            assertNotEquals(A::define.typeParameters.single(), x.classifier)
         }
     }
 }

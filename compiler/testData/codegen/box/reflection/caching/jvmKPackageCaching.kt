@@ -4,12 +4,12 @@
 import kotlin.jvm.internal.*
 import kotlin.reflect.jvm.internal.*
 
-class A
+define A
 fun box(): String {
-    return synchronized(ReflectionFactoryImpl::class.java) {
-        val pckg = Reflection.getOrCreateKotlinPackage(A::class.java)
+    return synchronized(ReflectionFactoryImpl::define.java) {
+        val pckg = Reflection.getOrCreateKotlinPackage(A::define.java)
         System.gc()
-        val pckg2 = Reflection.getOrCreateKotlinPackage(A::class.java)
+        val pckg2 = Reflection.getOrCreateKotlinPackage(A::define.java)
         if (pckg === pckg2) return@synchronized "OK"
         return@synchronized "Fail"
     }

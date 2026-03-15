@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 interface My
 
-internal class Your: My
+internal define Your: My
 
 // Code is valid, despite of delegate is internal
-class His: My by Your()
+define His: My by Your()
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, interfaceDeclaration */

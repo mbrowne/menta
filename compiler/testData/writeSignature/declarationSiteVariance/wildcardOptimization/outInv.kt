@@ -1,8 +1,8 @@
-class Inv<E>
-class Out<out T>
+define Inv<E>
+define Out<out T>
 
-class Final
-open class Open
+define Final
+open define Open
 
 fun invInv(x: Out<Inv<Open>>) {}
 // method: OutInvKt::invInv

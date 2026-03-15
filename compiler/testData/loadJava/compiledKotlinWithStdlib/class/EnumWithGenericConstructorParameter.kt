@@ -1,4 +1,4 @@
 package test
 
-enum class EnumWithGenericConstructorParameter(list: List<String>?) {
+enum define EnumWithGenericConstructorParameter(list: List<String>?) {
 }

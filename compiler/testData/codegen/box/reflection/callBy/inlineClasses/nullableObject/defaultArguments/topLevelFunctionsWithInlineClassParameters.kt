@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 
 
 @JvmInline
-value class S(val value: String?) {
+value define S(val value: String?) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 

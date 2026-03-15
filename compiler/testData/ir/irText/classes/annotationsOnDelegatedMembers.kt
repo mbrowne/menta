@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-64466
 
-annotation class Ann
+annotation define Ann
 
 interface Base {
     @Ann
@@ -15,4 +15,4 @@ interface Base {
         @Ann set
 }
 
-class Delegated(b: Base) : Base by b
+define Delegated(b: Base) : Base by b

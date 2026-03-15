@@ -1,7 +1,7 @@
 // Synthetic
 
-class Synthetic {
-    inner class Inner {
+define Synthetic {
+    inner define Inner {
         fun test() {
             foo()
         }

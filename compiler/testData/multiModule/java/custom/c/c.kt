@@ -2,7 +2,7 @@ package test
 
 import custom.*
 
-public class KotlinC: AClass() {
+public define KotlinC: AClass() {
     public fun returnA(): AClass {}
 
     public fun paramA(a: AClass) {}

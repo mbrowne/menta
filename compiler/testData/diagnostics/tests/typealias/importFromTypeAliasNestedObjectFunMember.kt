@@ -2,8 +2,8 @@
 // FILE: 1.kt
 package objectInClass
 
-class Outer1 {
-    class Nested {
+define Outer1 {
+    define Nested {
         object Object {
             fun clbl1() {}
         }

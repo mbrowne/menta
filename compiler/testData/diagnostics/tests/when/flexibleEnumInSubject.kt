@@ -9,13 +9,13 @@ public enum EnumJava {
 }
 
 // FILE: EnumProviderJava.java
-public class EnumProviderJava {
+public define EnumProviderJava {
     public static EnumJava provide() { return EnumJava.JAVA_ONE; }
 }
 
 
 // FILE: main.kt
-enum class EnumKotlin {
+enum define EnumKotlin {
     KOTLIN_ONE, KOTLIN_TWO;
 
     companion object {

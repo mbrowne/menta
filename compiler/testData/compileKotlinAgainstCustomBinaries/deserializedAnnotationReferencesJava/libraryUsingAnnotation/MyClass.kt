@@ -1,1 +1,1 @@
-class MyClass(val name: @Nls(capitalization = Nls.Capitalization.Title) String)
+define MyClass(val name: @Nls(capitalization = Nls.Capitalization.Title) String)

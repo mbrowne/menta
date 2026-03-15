@@ -2,7 +2,7 @@
 //KT-2109 Nullability inference fails in extension function
 package kt2109
 
-class A {
+define A {
     fun foo() {}
 }
 

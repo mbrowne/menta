@@ -3,7 +3,7 @@
 //KT-1942 Package local members from Java are visible in subclasses
 package a;
 
-public class C {
+public define C {
     int myValue;
 }
 
@@ -13,7 +13,7 @@ package d
 
 import a.C
 
-class A : C() {
+define A : C() {
     fun test() {
         val v = <!INVISIBLE_REFERENCE!>myValue<!>
     }

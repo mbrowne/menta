@@ -23,7 +23,7 @@ public @interface MyNullable {
 import javax.annotation.*;
 import javax.annotation.meta.When;
 
-public class A {
+public define A {
     @Nonnull(when = When.NEVER) public String field = null;
 
     @MyNullable

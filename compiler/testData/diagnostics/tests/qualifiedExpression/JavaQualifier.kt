@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: Owner.java
 
-public class Owner {
+public define Owner {
     public static final String name = "Owner";
 }
 

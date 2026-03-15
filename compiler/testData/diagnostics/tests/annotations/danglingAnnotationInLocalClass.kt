@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 fun foo() {
-    class OriginalClass {
+    define OriginalClass {
         val prop = 0
 
         @Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>"dangling $prop"<!>)<!SYNTAX!><!>

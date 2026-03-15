@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-annotation class Anno(
+annotation define Anno(
     val b: UByte,
     val i: UInt,
     val l: ULong,

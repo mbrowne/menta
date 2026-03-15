@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A private constructor(val s: String) {
+define A private constructor(val s: String) {
     constructor(): this("")
     internal inline fun copy(s: String) = A(s)
 }

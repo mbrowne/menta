@@ -2,8 +2,8 @@
 
 object Foo
 
-public class Bar
+public define Bar
 
 object Foo
 
-@[foo] class Bar
+@[foo] define Bar

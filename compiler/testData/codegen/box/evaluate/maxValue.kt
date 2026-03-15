@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(
+annotation define Ann(
         val p1: Int,
         val p2: Int,
         val p3: Int,
@@ -19,10 +19,10 @@ annotation class Ann(
         p4 = java.lang.Integer.MAX_VALUE + 1,
         p5 = java.lang.Integer.MAX_VALUE + 1.toLong(),
         p6 = java.lang.Long.MAX_VALUE + 1
-) class MyClass
+) define MyClass
 
 fun box(): String {
-    val annotation = MyClass::class.java.getAnnotation(Ann::class.java)!!
+    val annotation = MyClass::define.java.getAnnotation(Ann::define.java)!!
     if (annotation.p1 != 128) return "fail 1, expected = ${128}, actual = ${annotation.p1}"
     if (annotation.p2 != 32768) return "fail 2, expected = ${32768}, actual = ${annotation.p2}"
     if (annotation.p3 != -2147483648) return "fail 3, expected = ${-2147483648}, actual = ${annotation.p3}"

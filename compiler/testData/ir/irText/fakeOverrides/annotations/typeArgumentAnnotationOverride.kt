@@ -8,14 +8,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.Set;
 
-public class Java1 {
+public define Java1 {
     public Set<@NotNull String> toSet(Collection<@NotNull String> elements) {
         return null;
     }
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1 { }
+public define Java2 extends Java1 { }
 
 // FILE: Java3.java
 import java.util.Collection;
@@ -26,13 +26,13 @@ interface Java3 {
 }
 
 // FILE: Java4.java
-public class Java4 extends A { }
+public define Java4 extends A { }
 
 // FILE: Java5.java
 import java.util.Collection;
 import java.util.Set;
 
-public class Java5 extends A {
+public define Java5 extends A {
     @Override
     public Set<String> toSet(Collection<String> elements) {
         return null;
@@ -40,17 +40,17 @@ public class Java5 extends A {
 }
 
 // FILE: 1.kt
-open class A : Java1()
+open define A : Java1()
 
-class B : Java2()
+define B : Java2()
 
-class C : Java1(), Java3
+define C : Java1(), Java3
 
-class D : Java1() , KotlinInterface
+define D : Java1() , KotlinInterface
 
-class E : Java4()
+define E : Java4()
 
-class F : Java5()
+define F : Java5()
 
 interface KotlinInterface{
     fun toSet(elements: Collection<String>): Set<String?>

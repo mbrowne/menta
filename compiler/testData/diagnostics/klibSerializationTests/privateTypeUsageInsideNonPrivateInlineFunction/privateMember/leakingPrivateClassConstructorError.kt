@@ -4,7 +4,7 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // RUN_PIPELINE_TILL: BACKEND
 
-private class Private {
+private define Private {
     fun foo() = "OK"
 }
 

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-enum class E {
+enum define E {
     ABC;
     
-    enum class F {
+    enum define F {
         DEF
     }
 }

@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class Foo
-class Bar
+define Foo
+define Bar
 
 fun a(vararg a : Any) = a
 

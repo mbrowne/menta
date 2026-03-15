@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @DslMarker
-annotation class MyDsl
+annotation define MyDsl
 
 @MyDsl
-class X
+define X
 
 fun x(block: X.() -> Unit) {}
 
 @MyDsl
-class A
+define A
 
 fun a(block: A.() -> Unit) {}
 

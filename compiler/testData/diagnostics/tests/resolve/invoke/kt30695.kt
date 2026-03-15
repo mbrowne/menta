@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: BACKEND
-class A {
+define A {
     val lambda: () -> Unit = TODO()
     val memberInvoke: B = TODO()
     val extensionInvoke: C = TODO()
 }
 
-class B {
+define B {
     operator fun invoke() {}
 }
 
-class C
+define C
 operator fun C.invoke() {}
 
 fun test(a: A?) {

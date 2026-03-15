@@ -1,8 +1,8 @@
 interface N
 
-open class Base(n: N)
+open define Base(n: N)
 
-class Derived : Base(object: N{}) {
+define Derived : Base(object: N{}) {
 
 }
 

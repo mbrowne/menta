@@ -9,8 +9,7 @@ public open class B : test.A<kotlin.Int> {
     public open fun foo(): kotlin.Int
 }
 
-public abstract class C : test.A<kotlin.Int> {
-    public constructor C()
+public interface C : test.A<kotlin.Int> {
     public abstract /*fake_override*/ fun foo(): kotlin.Int
 }
 

@@ -5,7 +5,7 @@
 //    Derived
 //
 
-open class Base() {
+open define Base() {
     open fun foo() {}
 
     open fun ambiguous() {}
@@ -26,7 +26,7 @@ interface Interface {
         get() = 222
 }
 
-class Derived : Base(), Interface {
+define Derived : Base(), Interface {
     override fun foo() {}
     override fun bar() {}
 

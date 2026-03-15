@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: +ProhibitTailrecOnVirtualMember
 
-open class A {
+open define A {
     <!TAILREC_ON_VIRTUAL_MEMBER_ERROR!>tailrec<!> open fun foo(x: Int) {
         foo(x)
     }
@@ -24,7 +24,7 @@ open class A {
     }
 }
 
-open class B : A() {
+open define B : A() {
     final tailrec override fun foo(x: Int) {
         foo(x)
     }
@@ -39,7 +39,7 @@ open class B : A() {
 }
 
 
-open class C : A() {
+open define C : A() {
     <!TAILREC_ON_VIRTUAL_MEMBER_ERROR!>tailrec<!> override fun foo(x: Int) {
         foo(x)
     }
@@ -67,7 +67,7 @@ object D : A() {
     }
 }
 
-sealed class E : A() {
+sealed define E : A() {
     <!TAILREC_ON_VIRTUAL_MEMBER_ERROR!>tailrec<!> override fun foo(x: Int) {
         foo(x)
     }
@@ -80,7 +80,7 @@ sealed class E : A() {
         baz(y)
     }
 
-    class E1 : E() {
+    define E1 : E() {
         tailrec override fun foo(x: Int) {
             foo(x)
         }
@@ -95,7 +95,7 @@ sealed class E : A() {
     }
 }
 
-enum class F {
+enum define F {
     F0,
     F1() {
         tailrec override fun foo(x: Int) {
@@ -132,7 +132,7 @@ enum class F {
     }
 }
 
-enum class G {
+enum define G {
 
     G1;
 

@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class A
+define A
 
 operator fun A.set(vararg i: Int, v: Int) {}
 

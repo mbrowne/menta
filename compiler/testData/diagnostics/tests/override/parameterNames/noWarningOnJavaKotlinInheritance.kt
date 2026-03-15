@@ -12,7 +12,7 @@ public interface JavaInterface {
 
 // Simple inheritance. Checks that there's no PARAMETER_NAME_CHANGED_ON_OVERRIDE warning
 
-class SimpleSubclass : JavaInterface {
+define SimpleSubclass : JavaInterface {
     override fun foo(kotlinName: Int) {}
 }
 
@@ -22,7 +22,7 @@ interface KotlinInterface {
     public fun foo(someOtherName: Int) {}
 }
 
-class BothTraitsSubclass : JavaInterface, KotlinInterface {
+define BothTraitsSubclass : JavaInterface, KotlinInterface {
     override fun foo(someOtherName: Int) {
         super.foo(someOtherName)
     }

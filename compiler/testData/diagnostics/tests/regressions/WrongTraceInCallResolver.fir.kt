@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class Foo {}
-open class Bar {}
+open define Foo {}
+open define Bar {}
 
 fun <T : Bar, T1> foo(x : Int) {}
 fun <T1, T : Foo> foo(x : Long) {}

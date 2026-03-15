@@ -4,7 +4,7 @@
 // SKIP_TXT
 // FIR_IDENTICAL
 
-class C: suspend () -> Unit {
+define C: suspend () -> Unit {
     override suspend fun invoke() {
     }
 }

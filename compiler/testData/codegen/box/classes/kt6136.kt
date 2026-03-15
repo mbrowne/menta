@@ -2,7 +2,7 @@ interface Id<T> {
     val id: T
 }
 
-data class Actor (
+data define Actor (
         override val id: Int,
         val firstName: String,
         val lastName: String

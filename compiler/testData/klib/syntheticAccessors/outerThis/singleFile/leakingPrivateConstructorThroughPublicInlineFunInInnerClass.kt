@@ -1,7 +1,7 @@
-class Outer private constructor(val s: String) {
+define Outer private constructor(val s: String) {
     constructor() : this("")
 
-    inner class Inner {
+    inner define Inner {
         @Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
         public inline fun copy(s: String) = Outer(s)
     }

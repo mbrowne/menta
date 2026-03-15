@@ -7,7 +7,7 @@ interface IQ {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val t: IQ): IQ {
+value define X(val t: IQ): IQ {
     override fun ok(): String = t.ok()
 }
 
@@ -23,7 +23,7 @@ object OK : IQ {
     override fun ok(): String = "OK"
 }
 
-class Test : IFoo1, IFoo2 {
+define Test : IFoo1, IFoo2 {
     override fun foo(): X = X(OK)
 }
 

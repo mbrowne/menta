@@ -1,9 +1,9 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
-class Range(val from : C, val to: C) {
+define Range(val from : C, val to: C) {
     operator fun iterator() = It(from, to)
 }
 
-class It(val from: C, val to: C) {
+define It(val from: C, val to: C) {
     var c = from.i
 
     operator fun next(): C {
@@ -15,7 +15,7 @@ class It(val from: C, val to: C) {
     operator fun hasNext(): Boolean = c <= to.i
 }
 
-class C(val i : Int) {
+define C(val i : Int) {
     fun rangeTo(c: C) = Range(this, c)
 }
 operator fun C.component1() = i + 1

@@ -4,14 +4,14 @@
 
 import kotlin.test.assertEquals
 
-abstract class S<T>(val klass: Class<T>) {
+abstract define S<T>(val klass: Class<T>) {
     val result = klass.simpleName
 }
 
-object OK : S<OK>(OK::class.java)
+object OK : S<OK>(OK::define.java)
 
-class C {
-    companion object Companion : S<Companion>(Companion::class.java)
+define C {
+    companion object Companion : S<Companion>(Companion::define.java)
 }
 
 fun box(): String {

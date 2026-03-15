@@ -4,14 +4,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun <!AMBIGUOUS_ACTUALS{JVM}!>foo<!>()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo {
+actual open define Foo {
     actual fun foo() {}
 
     context(_: Int)

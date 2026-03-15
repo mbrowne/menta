@@ -13,7 +13,7 @@ interface Test<T> {
 
 // FILE: main.kt
 
-class Child : Test<String> {
+define Child : Test<String> {
     override fun call() : String {
         return "OK"
     }

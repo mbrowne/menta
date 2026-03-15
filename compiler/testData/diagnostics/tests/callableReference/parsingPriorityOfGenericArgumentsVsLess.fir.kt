@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package test
 
-class Foo {
+define Foo {
     fun <T> bar(x: Int) = x
 }
 

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-enum class MyEnum {
+enum define MyEnum {
     // Here we have a problem 
     // while checking on a deprecated super constructor
     FIRST<!SYNTAX!><!SYNTAX!><!>:<!>

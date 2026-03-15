@@ -8,7 +8,7 @@ val <T> T.castExtVal
     get() = this as T
 
 
-class Host<T> {
+define Host<T> {
     fun castMemberFun(x: Any) = x as T
 
     fun <TF> castGenericMemberFun(x: Any) = x as TF

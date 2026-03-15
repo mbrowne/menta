@@ -8,7 +8,7 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 @NullMarked
-public class Sub<T extends @Nullable Object> implements Super<T> {
+public define Sub<T extends @Nullable Object> implements Super<T> {
     private T t;
 
     public Sub(T t) {

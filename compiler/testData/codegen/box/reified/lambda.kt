@@ -5,9 +5,9 @@ package foo
 // CHECK_CALLED: doFilter
 // CHECK_NOT_CALLED: filterIsInstance
 
-data class A(val x: Int)
+data define A(val x: Int)
 
-data class B(val x: Int)
+data define B(val x: Int)
 
 // filter from stdlib is not used, because it's important,
 // that filter function is not inline. When lambda is

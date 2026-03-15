@@ -11,7 +11,7 @@ KtFile: annotatedParameterInEnumConstructor.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoA')
   PsiWhiteSpace('\n')
@@ -19,7 +19,7 @@ KtFile: annotatedParameterInEnumConstructor.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoB')
   PsiWhiteSpace('\n\n')
@@ -27,7 +27,7 @@ KtFile: annotatedParameterInEnumConstructor.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnotatedParameterInEnumConstructor')
     PRIMARY_CONSTRUCTOR

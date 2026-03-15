@@ -4,7 +4,7 @@
 
 interface HttpResponse<T>
 
-class GitLabMergeRequestShortRestDTO
+define GitLabMergeRequestShortRestDTO
 
 fun loadMergeRequests(): HttpResponse<out List<GitLabMergeRequestShortRestDTO>> = TODO()
 

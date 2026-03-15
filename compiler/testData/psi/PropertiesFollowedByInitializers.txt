@@ -6,7 +6,7 @@ KtFile: PropertiesFollowedByInitializers.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Foo')
     PRIMARY_CONSTRUCTOR
@@ -336,7 +336,7 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PublicVar')
     PRIMARY_CONSTRUCTOR
@@ -364,7 +364,7 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PublicVar')
     PRIMARY_CONSTRUCTOR
@@ -404,7 +404,7 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PublicVar')
     PRIMARY_CONSTRUCTOR
@@ -431,7 +431,7 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PublicVar')
     PRIMARY_CONSTRUCTOR
@@ -459,7 +459,7 @@ KtFile: PropertiesFollowedByInitializers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PublicVar')
     PRIMARY_CONSTRUCTOR

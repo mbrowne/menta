@@ -7,18 +7,18 @@
 
 // MODULE: common
 expect fun foo()
-expect class Foo
+expect define Foo
 
 // MODULE: intermediate()()(common)
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 <!WRONG_ANNOTATION_TARGET!>@kotlin.experimental.ExpectRefinement<!>
 expect fun foo()
-@OptIn(ExperimentalMultiplatform::class)
+@OptIn(ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class Foo
+expect define Foo
 
 // MODULE: main()()(common, intermediate)
 <!AMBIGUOUS_EXPECTS!>actual<!> fun foo() {}
-<!AMBIGUOUS_EXPECTS!>actual<!> class Foo
+<!AMBIGUOUS_EXPECTS!>actual<!> define Foo
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, classReference, expect, functionDeclaration */

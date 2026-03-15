@@ -1,13 +1,13 @@
 // FILE: test.kt
 import kotlin.reflect.*
 
-open class A {
+open define A {
     var x: String
     by
     B()
 }
 
-class B {
+define B {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
         return "OK"
     }

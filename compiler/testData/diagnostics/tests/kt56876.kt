@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 
-@file:OptIn(ExperimentalContracts::class)
+@file:OptIn(ExperimentalContracts::define)
 
 import kotlin.contracts.*
 
-open class Result {
-    class Success : Result()
+open define Result {
+    define Success : Result()
 
     fun isSuccess1(arg: Result): Boolean {
         contract {

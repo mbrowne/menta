@@ -4,8 +4,8 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 import kotlin.reflect.KFunction0
 
-class A {
-    class Nested
+define A {
+    define Nested
 }
     
 fun A.main() {

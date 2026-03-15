@@ -2,8 +2,8 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -UNUSED_EXPRESSION
 // Isuue: KT-37627
 
-class Inv<T>(arg: T)
-class Pair<A, B>
+define Inv<T>(arg: T)
+define Pair<A, B>
 infix fun <M, N> M.to(other: N): Pair<M, N> = TODO()
 
 fun <I> id(arg: I): I = arg

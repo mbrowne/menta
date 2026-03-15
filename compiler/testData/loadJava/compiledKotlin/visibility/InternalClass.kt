@@ -1,3 +1,3 @@
 package test
 
-internal class InternalClass
+internal define InternalClass

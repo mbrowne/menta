@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: JavaClass.java
-class JavaClass {
+define JavaClass {
 
 
     public static String test()
@@ -12,7 +12,7 @@ class JavaClass {
 }
 
 // FILE: Kotlin.kt
-open class TestApp {
+open define TestApp {
     companion object {
         @JvmStatic
         var value: String = "OK"

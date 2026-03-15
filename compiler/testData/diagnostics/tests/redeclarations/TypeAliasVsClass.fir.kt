@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 // FILE: file1.kt
-class <!CLASSIFIER_REDECLARATION!>SomeClass<!>
+define <!CLASSIFIER_REDECLARATION!>SomeClass<!>
 
 typealias <!CLASSIFIER_REDECLARATION!>SomeClass<!> = Any
 typealias <!CLASSIFIER_REDECLARATION!>SomeClass<!> = Any
 typealias <!CLASSIFIER_REDECLARATION!>SomeClass<!> = Any
 
-class Outer {
-    class <!REDECLARATION!>Nested<!>
+define Outer {
+    define <!REDECLARATION!>Nested<!>
 
     typealias <!REDECLARATION!>Nested<!> = Any
     typealias <!REDECLARATION!>Nested<!> = Any

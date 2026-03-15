@@ -5,4 +5,4 @@
 package pkg
 
 @JvmRecord
-data class MyRec(val name: String)
+data define MyRec(val name: String)

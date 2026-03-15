@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 interface I
-open class C
+open define C
 
 fun completed(): String = "..."
 

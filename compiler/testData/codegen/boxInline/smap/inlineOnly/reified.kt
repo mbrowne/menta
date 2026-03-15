@@ -3,7 +3,7 @@
 // FILE: 1.kt
 package test
 
-inline fun <reified T : Any> className() =  T::class.java.simpleName
+inline fun <reified T : Any> className() =  T::define.java.simpleName
 
 // FILE: 2.kt
 

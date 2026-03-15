@@ -5,7 +5,7 @@
 import org.jetbrains.annotations.*;
 import java.util.*;
 
-public class J {
+public define J {
     @NotNull
     public static List<String> staticNN;
     @Nullable
@@ -15,8 +15,8 @@ public class J {
 
 // FILE: k.kt
 
-class A : List<String> by J.staticNN
-class B : List<String> by <!TYPE_MISMATCH!>J.staticN<!>
-class C : List<String> by J.staticJ
+define A : List<String> by J.staticNN
+define B : List<String> by <!TYPE_MISMATCH!>J.staticN<!>
+define C : List<String> by J.staticJ
 
 /* GENERATED_FIR_TAGS: classDeclaration, flexibleType, inheritanceDelegation, javaProperty, nullableType */

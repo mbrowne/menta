@@ -2,7 +2,7 @@
 // FILE: foo/Super.java
 package foo
 
-public abstract class Super<T> {
+public abstract define Super<T> {
     protected abstract String getName();
     protected abstract void setName(String s);
 
@@ -16,7 +16,7 @@ public abstract class Super<T> {
 // FILE: bar/Sub.kt
 package bar
 
-abstract class Sub<T>: foo.Super<T>() {
+abstract define Sub<T>: foo.Super<T>() {
     abstract override fun getName(): String
     abstract override fun setName(s: String)
     abstract override fun doSomething()

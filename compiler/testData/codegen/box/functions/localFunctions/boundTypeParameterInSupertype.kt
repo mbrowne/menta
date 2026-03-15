@@ -4,7 +4,7 @@ interface I<TT> {
 
 fun <T> forClass(x: T): T {
     fun g(z: T): T {
-        class C : I<T>
+        define C : I<T>
 
         return C().id(z)
     }

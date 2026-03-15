@@ -6,7 +6,7 @@ interface IB {
     fun foo(): CharSequence
 }
 
-class C : IA, IB {
+define C : IA, IB {
     override fun foo(): String = "OK"
 }
 

@@ -3,7 +3,7 @@
 // IGNORE_BACKEND: ANDROID
 
 // FILE: A.kt
-class A {
+define A {
     public inline fun publicInlineMethod(crossinline f: () -> String) = object {
         private fun privateMethod() = "O"
         inline fun run() = privateMethod() + f()

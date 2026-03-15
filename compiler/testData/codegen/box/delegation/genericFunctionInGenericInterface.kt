@@ -6,7 +6,7 @@ interface Base {
 
 interface Derived<T> : Base
 
-class Impl<T> : Derived<T>
+define Impl<T> : Derived<T>
 
 fun box(): String {
     val impl = Impl<String>()

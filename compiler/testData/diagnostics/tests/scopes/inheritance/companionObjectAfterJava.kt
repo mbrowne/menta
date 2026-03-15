@@ -6,25 +6,25 @@ interface A {
     companion object {
         fun foo() {}
 
-        class A_
+        define A_
     }
 }
 
-open class B {
+open define B {
     companion object {
         fun bar() {}
 
-        class B_
+        define B_
     }
 }
 
 // FILE: C.java
-public class C extends B implements A {
+public define C extends B implements A {
 
 }
 
 // FILE: 2.kt
-class D: C() {
+define D: C() {
     init {
         <!UNRESOLVED_REFERENCE!>foo<!>()
         A.foo()

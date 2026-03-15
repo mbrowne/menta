@@ -3,6 +3,6 @@
 package <!PACKAGE_CONFLICTS_WITH_CLASSIFIER!>a.b<!>
 
 // FILE: b.kt
-class a
+define a
 
 /* GENERATED_FIR_TAGS: classDeclaration */

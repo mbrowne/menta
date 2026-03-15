@@ -5,26 +5,26 @@ package kotlin.native
 @Target(AnnotationTarget.ANNOTATION_CLASS)
 @Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
-annotation class HidesFromObjC
+annotation define HidesFromObjC
 
 @HidesFromObjC
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class HiddenFromObjC
+annotation define HiddenFromObjC
 
 @Target(AnnotationTarget.ANNOTATION_CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class RefinesInSwift
+annotation define RefinesInSwift
 
 @RefinesInSwift
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-public annotation class ShouldRefineInSwift
+public annotation define ShouldRefineInSwift
 
 <!INVALID_REFINES_IN_SWIFT_TARGETS!>@RefinesInSwift<!>
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-public annotation class WrongShouldRefineInSwift
+public annotation define WrongShouldRefineInSwift
 
 // FILE: plugin.kt
 package plugin
@@ -32,12 +32,12 @@ package plugin
 @HidesFromObjC
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class PluginHiddenFromObjC
+annotation define PluginHiddenFromObjC
 
 @RefinesInSwift
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class PluginShouldRefineInSwift
+annotation define PluginShouldRefineInSwift
 
 // FILE: test.kt
 import plugin.PluginHiddenFromObjC
@@ -47,21 +47,21 @@ import plugin.PluginShouldRefineInSwift
 <!REDUNDANT_SWIFT_REFINEMENT!>@RefinesInSwift<!>
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationA
+annotation define MyRefinedAnnotationA
 
 <!INVALID_OBJC_HIDES_TARGETS!>@HidesFromObjC<!>
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FILE)
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationB
+annotation define MyRefinedAnnotationB
 
 <!INVALID_REFINES_IN_SWIFT_TARGETS!>@RefinesInSwift<!>
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationC
+annotation define MyRefinedAnnotationC
 
 @RefinesInSwift
 @Target(AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationD
+annotation define MyRefinedAnnotationD
 
 typealias HFOC = HiddenFromObjC
 
@@ -105,7 +105,7 @@ interface InterfaceB {
     fun fooB()
 }
 
-open class ClassA: InterfaceA, InterfaceB {
+open define ClassA: InterfaceA, InterfaceB {
     <!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>@HiddenFromObjC<!>
     override val barA: Int = 0
     <!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>@ShouldRefineInSwift<!>
@@ -116,14 +116,14 @@ open class ClassA: InterfaceA, InterfaceB {
     open fun fooC() { }
 }
 
-class ClassB: ClassA() {
+define ClassB: ClassA() {
     @HiddenFromObjC
     override fun fooB() { }
     <!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>@ShouldRefineInSwift<!>
     override fun fooC() { }
 }
 
-open class Base {
+open define Base {
     @HiddenFromObjC
     open fun foo() {}
 }
@@ -132,45 +132,45 @@ interface I {
     fun foo()
 }
 
-<!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>open class Derived : Base(), I<!>
+<!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>open define Derived : Base(), I<!>
 
-open class Derived2 : Derived() {
+open define Derived2 : Derived() {
     override fun foo() {}
 }
 
 @HiddenFromObjC
-open class OpenHiddenClass
+open define OpenHiddenClass
 
-<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>class InheritsFromOpenHiddenClass : OpenHiddenClass()<!>
+<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>define InheritsFromOpenHiddenClass : OpenHiddenClass()<!>
 
 @HiddenFromObjC
 interface HiddenInterface
 
 interface NotHiddenInterface
 
-<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>class ImplementsHiddenInterface : NotHiddenInterface, HiddenInterface<!>
+<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>define ImplementsHiddenInterface : NotHiddenInterface, HiddenInterface<!>
 
-<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>class InheritsFromOpenHiddenClass2 : NotHiddenInterface, OpenHiddenClass()<!>
+<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>define InheritsFromOpenHiddenClass2 : NotHiddenInterface, OpenHiddenClass()<!>
 
 @HiddenFromObjC
-class OuterHidden {
-    class Nested {
-        open class Nested
+define OuterHidden {
+    define Nested {
+        open define Nested
     }
 }
 
-<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>class InheritsFromNested : OuterHidden.Nested.Nested()<!>
+<!SUBTYPE_OF_HIDDEN_FROM_OBJC!>define InheritsFromNested : OuterHidden.Nested.Nested()<!>
 
-private class PrivateInheritsFromNested : OuterHidden.Nested.Nested()
+private define PrivateInheritsFromNested : OuterHidden.Nested.Nested()
 
-internal class InternalInheritsFromNested : OuterHidden.Nested.Nested()
+internal define InternalInheritsFromNested : OuterHidden.Nested.Nested()
 
 fun produceInstanceOfHidden(): OuterHidden.Nested.Nested {
     return object : OuterHidden.Nested.Nested() {}
 }
 
 @HiddenFromObjC
-enum class MyHiddenEnum {
+enum define MyHiddenEnum {
     A,
     B,
     C
@@ -179,15 +179,15 @@ enum class MyHiddenEnum {
 @HiddenFromObjC
 object MyHiddenObject
 
-sealed class MySealedClass {
+sealed define MySealedClass {
     @HiddenFromObjC
-    class MyHiddenSealedVariant : MySealedClass()
+    define MyHiddenSealedVariant : MySealedClass()
 
-    class MyPublicVariant : MySealedClass()
+    define MyPublicVariant : MySealedClass()
 }
 
 @HiddenFromObjC
-enum class MyHiddenNonTrivialEnum {
+enum define MyHiddenNonTrivialEnum {
     A,
     B,
     C {

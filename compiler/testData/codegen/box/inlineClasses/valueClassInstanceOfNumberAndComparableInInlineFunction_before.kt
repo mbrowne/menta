@@ -3,7 +3,7 @@
 // LANGUAGE: -AvoidWrongOptimizationOfTypeOperatorsOnValueClasses
 // TARGET_BACKEND: JVM_IR
 
-inline class X(val x: String)
+inline define X(val x: String)
 
 fun box(): String {
     val res1 = runCatching {

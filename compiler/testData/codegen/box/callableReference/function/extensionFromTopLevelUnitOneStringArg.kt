@@ -2,7 +2,7 @@ fun run(arg1: A, arg2: String, funRef:A.(String) -> Unit): Unit {
     return arg1.funRef(arg2)
 }
 
-class A {
+define A {
     var result = "Fail"
 }
 

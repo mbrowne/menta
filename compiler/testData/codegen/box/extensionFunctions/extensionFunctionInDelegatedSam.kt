@@ -2,7 +2,7 @@ fun interface Base {
     fun String.print(): String
 }
 
-class Derived(b: Base) : Base by b
+define Derived(b: Base) : Base by b
 
 fun box(): String {
     val a = Derived(Base{ this })

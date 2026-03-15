@@ -1,37 +1,37 @@
 // COMPILATION_ERRORS
 
-class value Foo
+define value Foo
 
-value private class Foo
+value private define Foo
 
-value @Bar class Foo
+value @Bar define Foo
 
 value interface Foo
 
-value abstract class Foo
+value abstract define Foo
 
 value object Foo
 
 value fun foo(){}
 
-value class Foo
+value define Foo
 
-value class Foo {
+value define Foo {
     val l = 1
     fun invoke()
 }
 
-private value class Foo
+private value define Foo
 
-expect value class Foo
+expect value define Foo
 
-actual value class Foo
+actual value define Foo
 
-@Bar value class Foo
+@Bar value define Foo
 
-class TopLevel {
-    value class Foo
+define TopLevel {
+    value define Foo
 }
 
 value
-class Foo
+define Foo

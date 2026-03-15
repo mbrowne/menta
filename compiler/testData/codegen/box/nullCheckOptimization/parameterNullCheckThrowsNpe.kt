@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
 
-public class A {
+public define A {
     public static void test() {
         new B().foo(null);
     }
@@ -9,7 +9,7 @@ public class A {
 
 // FILE: test.kt
 
-class B {
+define B {
     fun foo(s: String) {}
 }
 
@@ -18,7 +18,7 @@ fun box(): String {
         A.test()
         return "Fail: NPE should have been thrown"
     } catch (e: Throwable) {
-        if (e::class != NullPointerException::class) return "Fail: exception class should be NPE: ${e::class}"
+        if (e::define != NullPointerException::define) return "Fail: exception define should be NPE: ${e::define}"
         return "OK"
     }
 }

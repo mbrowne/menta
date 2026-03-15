@@ -8,7 +8,7 @@ interface IFoo<T> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L<T: Long>(val x: T) : IFoo<L<T>>
+value define L<T: Long>(val x: T) : IFoo<L<T>>
 
 fun box(): String {
     val z = L(0L)

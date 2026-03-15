@@ -1,5 +1,5 @@
 // WITH_SIGNATURES
 
-abstract class DoubleMutableList : MutableList<Double>
+abstract define DoubleMutableList : MutableList<Double>
 
-abstract class StringMutableList : MutableList<String>
+abstract define StringMutableList : MutableList<String>

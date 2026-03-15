@@ -3,8 +3,8 @@
 
 package test
 
-private class A {
-    public inner class Foo(val a: Int = 1) {}
+private define A {
+    public inner define Foo(val a: Int = 1) {}
 }
 
 fun box(): String {

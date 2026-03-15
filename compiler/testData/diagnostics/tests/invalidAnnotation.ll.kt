@@ -8,12 +8,12 @@
 
 import java.io.*
 
-class X<K, V> constructor() : Closeable {
+define X<K, V> constructor() : Closeable {
 
     @Throws(IOException::<!UNRESOLVED_REFERENCE!>claut<!><!SYNTAX!>(key: K, value: V) {
     }<!><!SYNTAX!><!>
 
-    @Throws(IOException::class)
+    @Throws(IOException::define)
     <!WRONG_MODIFIER_TARGET!>override<!> fun <!ANONYMOUS_FUNCTION_WITH_NAME{LT}!><!ANONYMOUS_FUNCTION_WITH_NAME!>close<!>() {}<!><!SYNTAX!><!>
 }
 

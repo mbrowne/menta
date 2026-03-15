@@ -2,7 +2,7 @@
 
 // FILE: C.java
 
-class C<T> {
+define C<T> {
     public C<? super T> getXx() { return this; }
 }
 

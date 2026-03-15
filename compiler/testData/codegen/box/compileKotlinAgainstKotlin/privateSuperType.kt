@@ -8,7 +8,7 @@ private interface I {
 
 interface G<T>
 
-class Z : I, G<I> {
+define Z : I, G<I> {
     val o = "O"
 }
 

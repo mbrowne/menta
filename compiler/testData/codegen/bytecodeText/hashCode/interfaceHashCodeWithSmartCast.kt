@@ -1,6 +1,6 @@
 interface I
 
-class A : I {
+define A : I {
     fun f1(other: Any?): Int =
         if (other is I) other.hashCode() else 0
 

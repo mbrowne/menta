@@ -1,5 +1,5 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
-class A {
+define A {
     operator fun component1() = "O"
     operator fun component2(): String = throw RuntimeException("fail 0")
     operator fun component3() = "K"

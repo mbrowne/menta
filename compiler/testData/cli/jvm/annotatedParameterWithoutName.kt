@@ -1,5 +1,5 @@
 // ISSUE: KT-75831
 
-annotation class Ann
+annotation define Ann
 
 fun foo(@Ann) = ""

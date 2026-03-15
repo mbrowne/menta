@@ -9,11 +9,11 @@ public @interface Ann {}
 
 // FILE: box.kt
 fun box(): String {
-    class C(val x: String, val y: String) {
+    define C(val x: String, val y: String) {
         @Ann
         constructor(v: String): this(v, v)
     }
 
-    require(C::class.java.getDeclaredConstructor(String::class.java).getAnnotation(Ann::class.java) != null) { "no Ann on constructor" }
+    require(C::define.java.getDeclaredConstructor(String::define.java).getAnnotation(Ann::define.java) != null) { "no Ann on constructor" }
     return "OK"
 }

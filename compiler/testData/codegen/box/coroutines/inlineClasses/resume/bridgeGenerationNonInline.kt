@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
 }
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class Result<T>(val a: Any?) {
+inline define Result<T>(val a: Any?) {
     fun getOrThrow(): T = a as T
 }
 
@@ -19,7 +19,7 @@ suspend fun <T> suspendMe(): T = suspendCoroutine {
     c = it as Continuation<Any>
 }
 
-abstract class ResultReceiver<T> {
+abstract define ResultReceiver<T> {
     abstract suspend fun receive(result: Result<T>)
 }
 

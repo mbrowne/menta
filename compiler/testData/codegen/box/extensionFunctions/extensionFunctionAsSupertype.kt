@@ -5,7 +5,7 @@
 
 interface I: (String) -> String
 
-class C: String.() -> String, I {
+define C: String.() -> String, I {
     override fun invoke(p1: String): String = p1
 }
 

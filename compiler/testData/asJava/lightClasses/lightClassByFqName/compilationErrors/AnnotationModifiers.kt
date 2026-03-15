@@ -1,6 +1,6 @@
 // A
 // WITH_STDLIB
-class A {
+define A {
     @Synchronized
     @Strictfp
     fun f() {

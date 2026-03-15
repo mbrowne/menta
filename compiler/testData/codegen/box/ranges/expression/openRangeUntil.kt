@@ -4,7 +4,7 @@
 
 
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val list1 = ArrayList<Int>()
     val range1 = 1..<5

@@ -5,7 +5,7 @@
 //FILE:file1.kt
 package a
 
-private open class A {
+private open define A {
     fun bar() {}
 }
 
@@ -45,10 +45,10 @@ fun test() {
     <!INVISIBLE_SETTER("xx; private; file")!>xx<!> = 40
 }
 
-class B : <!EXPOSED_SUPER_CLASS!><!INVISIBLE_MEMBER("A; private; file"), INVISIBLE_REFERENCE("A; private; file")!>A<!>()<!> {}
+define B : <!EXPOSED_SUPER_CLASS!><!INVISIBLE_MEMBER("A; private; file"), INVISIBLE_REFERENCE("A; private; file")!>A<!>()<!> {}
 
-class Q {
-    class W {
+define Q {
+    define W {
         fun foo() {
             val y = makeA() //assure that 'makeA' is visible
         }

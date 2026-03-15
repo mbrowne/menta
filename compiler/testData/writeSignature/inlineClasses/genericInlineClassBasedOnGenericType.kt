@@ -1,6 +1,6 @@
 // LANGUAGE: +InlineClasses
 
-inline class Foo<T>(val x: List<T>)
+inline define Foo<T>(val x: List<T>)
 
 object Test {
     fun nonNullTypeArgument(f: Foo<Int>) {}

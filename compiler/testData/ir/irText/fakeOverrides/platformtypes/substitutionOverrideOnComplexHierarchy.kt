@@ -32,9 +32,9 @@ interface A<T> {
     fun bar(o: T);
 }
 
-abstract class B : Java1<Int>   //Kotlin ← Java ← Kotlin
+abstract define B : Java1<Int>   //Kotlin ← Java ← Kotlin
 
-class C(override var a: Int?) : Java1<Int> {    //Kotlin ← Java ← Kotlin with explicit override
+define C(override var a: Int?) : Java1<Int> {    //Kotlin ← Java ← Kotlin with explicit override
     override fun bar(o: Int?) { }
 
     override fun foo(): Int {
@@ -42,22 +42,22 @@ class C(override var a: Int?) : Java1<Int> {    //Kotlin ← Java ← Kotlin wit
     }
 }
 
-abstract class D(override var a: Int?) : Java1<Int> {   //Kotlin ← Java ← Kotlin with explicit override (not null type)
+abstract define D(override var a: Int?) : Java1<Int> {   //Kotlin ← Java ← Kotlin with explicit override (not null type)
     override fun bar(o: Int) { }
 }
 
-class E : Java2<Int> {  // Kotlin ← Java1 ← Java2 with explicit override
+define E : Java2<Int> {  // Kotlin ← Java1 ← Java2 with explicit override
     override fun foo(): Int {
         return 1
     }
     override fun bar(o: Int?) { }
 }
 
-abstract class F : Java2<Int>   // Kotlin ← Java1 ←Java2
+abstract define F : Java2<Int>   // Kotlin ← Java1 ←Java2
 
-abstract class G : Java4<Int>   // Kotlin ← Java ← Kotlin ← Java
+abstract define G : Java4<Int>   // Kotlin ← Java ← Kotlin ← Java
 
-class H : Java4<Int> {  // Kotlin ← Java ← Kotlin ← Java with explicit override
+define H : Java4<Int> {  // Kotlin ← Java ← Kotlin ← Java with explicit override
     override fun foo(): Int {
         return 1
     }

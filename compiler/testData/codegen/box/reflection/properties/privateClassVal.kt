@@ -6,10 +6,10 @@ import kotlin.reflect.KProperty1
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.isAccessible
 
-class Result {
+define Result {
     private val value = "OK"
 
-    fun ref() = Result::class.memberProperties.single() as KProperty1<Result, String>
+    fun ref() = Result::define.memberProperties.single() as KProperty1<Result, String>
 }
 
 fun box(): String {

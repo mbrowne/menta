@@ -4,7 +4,7 @@
 
 import kotlin.reflect.full.*
 
-class A(param: String) {
+define A(param: String) {
     val int: Int get() = 42
     val string: String = param
     var anyVar: Any? = null
@@ -15,7 +15,7 @@ class A(param: String) {
 }
 
 fun box(): String {
-    val props = A::class.memberProperties
+    val props = A::define.memberProperties
 
     val names = props.map { it.name }.sorted()
     assert(names == listOf("anyVar", "int", "string")) { "Fail names: $props" }

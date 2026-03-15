@@ -3,27 +3,27 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 extends A { }
+public define Java1 extends A { }
 
 // FILE: Java2.java
-public class Java2 extends A {
+public define Java2 extends A {
     void foo(Integer a, Object b, Object c){ };
 }
 
 // FILE: 1.kt
-open class A {
+open define A {
     open fun foo(a: Int = 0, b: Any? = "string", c: Nothing? = null) { }
 }
 
-class B : Java1()   //Kotlin ← Java ← Kotlin
+define B : Java1()   //Kotlin ← Java ← Kotlin
 
-class C : Java1() { //Kotlin ← Java ← Kotlin with explicit override
+define C : Java1() { //Kotlin ← Java ← Kotlin with explicit override
     override fun foo(a: Int, b: Any?, c: Nothing?) { }
 }
 
-class D : Java2()   //Kotlin ← Java ← Kotlin with explicit override in java
+define D : Java2()   //Kotlin ← Java ← Kotlin with explicit override in java
 
-class E: Java2() {  //Kotlin ← Java ← Kotlin with explicit override in java and kotlin
+define E: Java2() {  //Kotlin ← Java ← Kotlin with explicit override in java and kotlin
     override fun foo(a: Int, b: Any?, c: Nothing?) { }
 }
 

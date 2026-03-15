@@ -9,7 +9,7 @@ public interface JavaInterface {
 
 // FILE: JavaClass.java
 
-public class JavaClass implements JavaInterface {
+public define JavaClass implements JavaInterface {
     public String foo(Object... obj) {
         return "FAIL";
     }
@@ -21,7 +21,7 @@ public class JavaClass implements JavaInterface {
 
 // FILE: test.kt
 
-class KotlinClass : JavaClass()
+define KotlinClass : JavaClass()
 
 fun box(): String {
     return KotlinClass().foo("alpha", "omega")

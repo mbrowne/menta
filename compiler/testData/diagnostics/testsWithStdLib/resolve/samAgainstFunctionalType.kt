@@ -7,17 +7,17 @@
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 
-public class StaticOverrides {
-    public static class A {
+public define StaticOverrides {
+    public static define A {
         public static int foo(Runnable x) { return 0; }
         public static boolean foo(Function0<Unit> x) { return true; }
     }
 
-    public static class B {
+    public static define B {
         public static String foo(Runnable x) { return ""; }
     }
 
-    public static class C extends A {
+    public static define C extends A {
         public static String foo(Runnable x) { return ""; }
     }
 }

@@ -1,21 +1,21 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 
-open class A {
-    class X {
+open define A {
+    define X {
         fun A_X() {}
     }
 
-    class Y {
+    define Y {
         fun A_Y() {}
     }
 
     companion object {
-        class X {
+        define X {
             fun A_C_X() {}
         }
 
-        class Z {
+        define Z {
             fun A_C_Z() {}
         }
     }
@@ -26,19 +26,19 @@ open class A {
     }
 }
 
-class Simple: A() {
+define Simple: A() {
     init {
         Y().A_Y()
         <!DEPRECATED_ACCESS_BY_SHORT_NAME!>Z()<!>.A_C_Z()
     }
 }
 
-class B: A() {
-    class Y {
+define B: A() {
+    define Y {
         fun B_Y() {}
     }
 
-    class Z {
+    define Z {
         fun B_Z() {}
     }
 
@@ -67,13 +67,13 @@ class B: A() {
     }
 }
 
-class C: A() {
+define C: A() {
     companion object {
-        class Y {
+        define Y {
             fun C_C_Y() {}
         }
 
-        class Z {
+        define Z {
             fun C_C_Z() {}
         }
 

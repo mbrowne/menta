@@ -16,7 +16,7 @@ package light.ann.array
 import light.ann.array.AnnAuxEnum.ANN_ENUM_VAL_A;
 import light.ann.array.AnnAuxEnum.ANN_ENUM_VAL_B;
 
-enum class AnnAuxEnum { ANN_ENUM_VAL_A, ANN_ENUM_VAL_B }
+enum define AnnAuxEnum { ANN_ENUM_VAL_A, ANN_ENUM_VAL_B }
 
 @ArrayAnnEnumJava(enumValDef = arrayOf(ANN_ENUM_VAL_A, ANN_ENUM_VAL_B))
 fun box() = "OK"

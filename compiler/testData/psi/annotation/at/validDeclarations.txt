@@ -68,7 +68,7 @@ KtFile: validDeclarations.kt
               PsiElement(CLOSING_QUOTE)('"')
           PsiElement(RPAR)(')')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PRIMARY_CONSTRUCTOR
@@ -238,7 +238,7 @@ KtFile: validDeclarations.kt
                       REFERENCE_EXPRESSION
                         PsiElement(IDENTIFIER)('data')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('LocalClass')
           PsiWhiteSpace('\n\n        ')

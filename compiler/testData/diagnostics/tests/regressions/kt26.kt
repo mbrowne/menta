@@ -9,7 +9,7 @@ import html.* // Must not be an error
 
 package html
 
-abstract class Factory<T: Any> {
+abstract define Factory<T: Any> {
 fun create() : T? = null
 }
 

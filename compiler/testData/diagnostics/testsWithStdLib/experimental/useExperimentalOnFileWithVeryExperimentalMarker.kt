@@ -7,12 +7,12 @@ package api
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Retention(AnnotationRetention.BINARY)
-annotation class VeryExperimentalAPI
+annotation define VeryExperimentalAPI
 
 @ExperimentalAPI
 @VeryExperimentalAPI
@@ -23,7 +23,7 @@ fun g() {}
 
 // FILE: usage.kt
 
-@file:OptIn(ExperimentalAPI::class, VeryExperimentalAPI::class)
+@file:OptIn(ExperimentalAPI::define, VeryExperimentalAPI::define)
 package usage
 
 import api.*

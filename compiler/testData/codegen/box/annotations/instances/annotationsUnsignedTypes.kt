@@ -1,8 +1,8 @@
 // WITH_STDLIB
 // LANGUAGE: +InstantiationOfAnnotationClasses
 
-annotation class AnnotationWithSignedArray(val array: IntArray)
-annotation class AnnotationWithUnsignedArray(val array: UIntArray)
+annotation define AnnotationWithSignedArray(val array: IntArray)
+annotation define AnnotationWithUnsignedArray(val array: UIntArray)
 
 fun box(): String {
     if (!(AnnotationWithSignedArray(intArrayOf()) == AnnotationWithSignedArray(intArrayOf()))) return "Fail signed"

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static String invokeMethodWithOverloads() {
         C c = new C();
         return c.foo();
@@ -12,7 +12,7 @@ public class Test {
 
 // FILE: simple.kt
 
-class C {
+define C {
     @kotlin.jvm.JvmOverloads public fun foo(o: String = "O", k: String = "K"): String = o + k
 }
 

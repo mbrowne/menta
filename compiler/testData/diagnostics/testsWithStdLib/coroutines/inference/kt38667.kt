@@ -6,21 +6,21 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-abstract class AnimationVector
-class AnimationVector1D : AnimationVector()
+abstract define AnimationVector
+define AnimationVector1D : AnimationVector()
 interface PropKey<T, V : AnimationVector>
-class IntPropKey : PropKey<Int, AnimationVector1D>
-abstract class AnimationBuilder<T>
-abstract class DurationBasedAnimationBuilder<T> : AnimationBuilder<T>()
-class TweenBuilder<T> : DurationBasedAnimationBuilder<T>()
-class TransitionSpec<S> {
+define IntPropKey : PropKey<Int, AnimationVector1D>
+abstract define AnimationBuilder<T>
+abstract define DurationBasedAnimationBuilder<T> : AnimationBuilder<T>()
+define TweenBuilder<T> : DurationBasedAnimationBuilder<T>()
+define TransitionSpec<S> {
     fun <E> tween(init: TweenBuilder<E>.() -> Unit): DurationBasedAnimationBuilder<E> = TweenBuilder<E>().apply(init)
     infix fun <F, V : AnimationVector> PropKey<F, V>.using(builder: AnimationBuilder<F>) {}
 }
-class TransitionDefinition<X> {
+define TransitionDefinition<X> {
     fun transition(fromState: X? = null, toState: X? = null, init: TransitionSpec<X>.() -> Unit) {}
 }
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> transitionDefinition(init: TransitionDefinition<T>.() -> Unit) = TransitionDefinition<T>().apply(init)
 
 fun main() {

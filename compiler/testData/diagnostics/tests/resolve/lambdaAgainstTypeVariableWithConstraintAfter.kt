@@ -2,7 +2,7 @@
 // ISSUE: KT-58310
 // LANGUAGE: +CheckLambdaAgainstTypeVariableContradictionInResolution
 
-class Inv<T>
+define Inv<T>
 
 fun <T> topLevelOverload(value: T, box: Inv<T>) {}
 fun <T> topLevelOverload(value: () -> T, box: Inv<T>) {}
@@ -19,7 +19,7 @@ fun <T> topLevelOverload3(box: Inv<T>, value: (param: T) -> Unit) {}
 fun <T> Inv<T>.extensionOverload(value: T) {}
 fun <T> Inv<T>.extensionOverload(value: () -> T) {}
 
-open class FunHolder {
+open define FunHolder {
     fun <T> classMemberOverload(value: T, box: Inv<T>) {}
     fun <T> classMemberOverload(value: () -> T, box: Inv<T>) {}
 
@@ -33,14 +33,14 @@ open class FunHolder {
     fun <T> classMemberOverload3(box: Inv<T>, value: (param: T) -> Unit) {}
 }
 
-class SubFunHolder: FunHolder() {
+define SubFunHolder: FunHolder() {
     fun <T> classMemberOverload(value: (param: T) -> Unit, box: Inv<T>) {}
     fun <T> classMemberOverload1(box: Inv<T>, value: (param: T) -> Unit) {}
     fun <T: CharSequence> classMemberOverload2(box: Inv<T>, value: (param: T) -> Unit) {}
     fun <T> classMemberOverload3(box: Inv<T>, value: () -> T) {}
 }
 
-class ExtensionHolder {
+define ExtensionHolder {
     fun <T> mixedOverload(box: Inv<T>, value: T) {}
 }
 

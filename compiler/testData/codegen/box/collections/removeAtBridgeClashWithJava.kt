@@ -2,9 +2,9 @@
 // WITH_STDLIB
 // FILE: removeAtBridgeClashWithJava.kt
 
-abstract class AJALI : JavaAbstractList<Int>()
+abstract define AJALI : JavaAbstractList<Int>()
 
-class K : AJALI() {
+define K : AJALI() {
     override val size: Int get() = TODO()
     override fun contains(element: Int?): Boolean = TODO()
     override fun containsAll(elements: Collection<Int>): Boolean = TODO()
@@ -36,7 +36,7 @@ fun box(): String {
 // FILE: JavaAbstractList.java
 import java.util.List;
 
-public abstract class JavaAbstractList<T> implements List<T> {
+public abstract define JavaAbstractList<T> implements List<T> {
     public static String OK = "";
 
     @Override

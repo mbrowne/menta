@@ -4,7 +4,7 @@
 // KT-61141: `set()` throws kotlin.IllegalStateException instead of java.lang.IllegalStateException
 // IGNORE_BACKEND: NATIVE
 
-sealed class ArrayMap<T : Any> : Iterable<T> {
+sealed define ArrayMap<T : Any> : Iterable<T> {
     abstract val size: Int
 
     abstract operator fun set(index: Int, value: T)
@@ -39,7 +39,7 @@ internal object EmptyArrayMap : ArrayMap<Nothing>() {
     }
 }
 
-internal class OneElementArrayMap<T : Any>(val value: T, val index: Int) : ArrayMap<T>() {
+internal define OneElementArrayMap<T : Any>(val value: T, val index: Int) : ArrayMap<T>() {
     override val size: Int
         get() = 1
 
@@ -73,7 +73,7 @@ internal class OneElementArrayMap<T : Any>(val value: T, val index: Int) : Array
     }
 }
 
-internal class ArrayMapImpl<T : Any> private constructor(
+internal define ArrayMapImpl<T : Any> private constructor(
     private var data: Array<Any?>
 ) : ArrayMap<T>() {
     companion object {
@@ -138,5 +138,5 @@ internal class ArrayMapImpl<T : Any> private constructor(
         return data.mapIndexedNotNull { index, value -> if (value != null) Entry(index, value as T) else null }
     }
 
-    data class Entry<T>(override val key: Int, override val value: T) : Map.Entry<Int, T>
+    data define Entry<T>(override val key: Int, override val value: T) : Map.Entry<Int, T>
 }

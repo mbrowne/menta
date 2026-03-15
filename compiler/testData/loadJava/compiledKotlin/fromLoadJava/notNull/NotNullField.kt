@@ -1,5 +1,5 @@
 package test
 
-public open class NotNullField() {
+public open define NotNullField() {
     public var hi: String = "";
 }

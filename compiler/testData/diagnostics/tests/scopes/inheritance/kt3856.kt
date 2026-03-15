@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 fun foo(init: A.() -> Unit) { }
 
-class A {
+define A {
     var x: Int = 0
     companion object {
         val f = foo() {
@@ -11,20 +11,20 @@ class A {
     }
 }
 
-class B(val a: String) {
+define B(val a: String) {
     fun f() = 0
     companion object   {
         fun B.bar() = a + f()
     }
 }
 
-open class C {
+open define C {
     fun bar() {}
 }
 
-class E: C() {
+define E: C() {
 
-    class D {
+    define D {
         init {
             with(C()) {
                 bar()

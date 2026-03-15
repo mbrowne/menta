@@ -1,6 +1,6 @@
 package a
 
-open class A {
+open define A {
     protected fun protectedFun(): String = "OK"
 }
 
@@ -8,7 +8,7 @@ inline fun foo(crossinline bar: () -> String) = object {
     fun baz() = bar()
 }.baz()
 
-class BSamePackage: A() {
+define BSamePackage: A() {
     fun test(): String = foo {
         protectedFun()
     }

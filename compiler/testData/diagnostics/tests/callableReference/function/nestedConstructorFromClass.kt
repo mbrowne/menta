@@ -4,8 +4,8 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 import kotlin.reflect.KFunction0
 
-class A {
-    class Nested
+define A {
+    define Nested
     
     fun main() {
         val x = ::Nested
@@ -25,7 +25,7 @@ class A {
     }
 }
 
-class B {
+define B {
     fun main() {
         ::<!UNRESOLVED_REFERENCE!>Nested<!>
         val y = A::Nested

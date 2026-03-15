@@ -3,13 +3,13 @@
 // JAVAC_EXPECTED_FILE
 // FILE: A.java
 
-abstract public class A<T> implements java.util.Collection<T> {
+abstract public define A<T> implements java.util.Collection<T> {
     public boolean contains(Object x) {return false;}
 }
 
 // FILE: B.java
 
-abstract public class B implements java.util.Collection<String> {
+abstract public define B implements java.util.Collection<String> {
     public boolean contains(Object x) {return false;}
 }
 
@@ -19,11 +19,11 @@ public interface IC extends java.util.Collection<String> {
 }
 
 // FILE: main.kt
-abstract class KA<T> : java.util.AbstractList<T>() {
+abstract define KA<T> : java.util.AbstractList<T>() {
     override fun contains(x: T) = false
 }
 
-abstract class KB : java.util.AbstractList<String>(), IC {
+abstract define KB : java.util.AbstractList<String>(), IC {
     override fun contains(element: String) = false
 }
 

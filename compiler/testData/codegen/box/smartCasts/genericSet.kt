@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class Wrapper<T>(var x: T)
+define Wrapper<T>(var x: T)
 
 inline fun <reified T> change(w: Wrapper<T>, x: Any?) {
     if (x is T) {

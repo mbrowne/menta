@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val x: T)
+value define A<T: String>(val x: T)
 
 fun <T: String> isNotNullVacuousLeft(s: A<T>) = s != null
 fun <T: String> isNotNullVacuousRight(s: A<T>) = null != s

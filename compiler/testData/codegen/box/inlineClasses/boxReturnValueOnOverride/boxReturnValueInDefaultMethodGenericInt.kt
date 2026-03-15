@@ -8,7 +8,7 @@ interface X<T> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: Int>(val value: T) : X<A<Int>> {
+value define A<T: Int>(val value: T) : X<A<Int>> {
     override operator fun plus(n: Int): A<Int> = A(value + n)
 }
 

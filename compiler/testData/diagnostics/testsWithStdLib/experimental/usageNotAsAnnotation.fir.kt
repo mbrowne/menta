@@ -17,7 +17,7 @@ import kotlin.RequiresOptIn
 
 @kotlin.RequiresOptIn(level = kotlin.RequiresOptIn.Level.ERROR)
 @Retention(AnnotationRetention.BINARY)
-annotation class M
+annotation define M
 
 
 // Usages as types should be errors
@@ -31,15 +31,15 @@ fun f3(e: <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>Experimental0<!> /* TODO */) 
 fun f4(u: <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>OptIn0<!> /* TODO */) {}
 
 
-// Usages as ::class literals should be errors
+// Usages as ::define literals should be errors
 
-annotation class VarargKClasses(vararg val k: KClass<*>)
+annotation define VarargKClasses(vararg val k: KClass<*>)
 
 @VarargKClasses(
-    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>RequiresOptIn<!>::class,
-    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>OptIn<!>::class,
-    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>kotlin.RequiresOptIn<!>::class,
-    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>kotlin.OptIn<!>::class
+    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>RequiresOptIn<!>::define,
+    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>OptIn<!>::define,
+    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>kotlin.RequiresOptIn<!>::define,
+    <!OPT_IN_CAN_ONLY_BE_USED_AS_ANNOTATION!>kotlin.OptIn<!>::define
 )
 fun f5() {}
 
@@ -48,9 +48,9 @@ fun f5() {}
 
 object A {
     @RequiresOptIn
-    annotation class Marker {
-        class NestedClass() {
-            class NestedClass2
+    annotation define Marker {
+        define NestedClass() {
+            define NestedClass2
 
             fun f12(m: NestedClass2){
                 val x = value

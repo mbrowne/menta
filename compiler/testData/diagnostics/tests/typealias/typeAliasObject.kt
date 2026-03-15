@@ -19,7 +19,7 @@ val test22: TestObject2 = TestObject2
 val test23: String = TestObject2.ok
 val test24: String = TestObject2.foo()
 
-class ClassWithCompanion {
+define ClassWithCompanion {
     companion object {
         val ok = "OK"
         fun foo() = "OK"

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Container<A> {
+define Container<A> {
     fun consume(arg: A) {}
 }
 

@@ -8,7 +8,7 @@
 
 import java.util.*
 
-private class IntervalTreeMap : TreeMap<String, String>()
+private define IntervalTreeMap : TreeMap<String, String>()
 
 fun box(): String {
     val intervalTreeMap = IntervalTreeMap()

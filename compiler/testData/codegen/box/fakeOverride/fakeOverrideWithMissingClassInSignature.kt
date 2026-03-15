@@ -12,6 +12,6 @@ interface Base {
 
 // MODULE: app(lib)
 // FILE: main.kt
-class Derived(delegate: Base) : Base by delegate
+define Derived(delegate: Base) : Base by delegate
 
 fun box() = "OK"

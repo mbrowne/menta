@@ -1,14 +1,14 @@
 // WITH_STDLIB
 // TARGET_BACKEND: JVM
 // FILE: Test.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class MyUint(val a: UInt)
+value define MyUint(val a: UInt)
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed
-class MyClass(val a: MyUint) {
+define MyClass(val a: MyUint) {
     constructor(param1: UInt, param2: String): this(MyUint(param1 + 3u)) {
     }
 }
@@ -17,7 +17,7 @@ class MyClass(val a: MyUint) {
 fun create(i: Int): UInt = i.toUInt()
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public MyUint test() {
         return new MyClass(TestKt.createUInt(42), "OK").getA();
     }

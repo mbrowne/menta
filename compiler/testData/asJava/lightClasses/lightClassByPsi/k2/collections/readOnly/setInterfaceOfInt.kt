@@ -3,11 +3,11 @@ package test
 
 interface ISet : Set<Int>
 
-abstract class CSet : ISet
+abstract define CSet : ISet
 
-abstract class CSet2(d: ISet) : ISet by d
+abstract define CSet2(d: ISet) : ISet by d
 
-open class CSet3 : ISet {
+open define CSet3 : ISet {
     override val size: Int
         get() = TODO("Not yet implemented")
 
@@ -28,4 +28,4 @@ open class CSet3 : ISet {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CSet.class[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;retainAll;size;toArray;toArray], CSet2.class[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray], CSet3.class[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CSet.define[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;retainAll;size;toArray;toArray], CSet2.define[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray], CSet3.define[add;addAll;clear;remove;removeAll;retainAll;size;toArray;toArray]

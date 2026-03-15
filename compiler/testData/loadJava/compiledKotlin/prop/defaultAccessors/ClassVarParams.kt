@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 package test
 
-class ClassVarParams(
+define ClassVarParams(
   var pr1: String,
   internal var pr2 : Int,
   private var pr3: Long,

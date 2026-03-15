@@ -6,7 +6,7 @@
 import kotlin.math.abs
 
 @JvmInline
-value class MFVC(val x: Double, val y: Int) {
+value define MFVC(val x: Double, val y: Int) {
     fun equals(other: MFVC): Boolean {
         return abs(x - other.x) < 0.1
     }

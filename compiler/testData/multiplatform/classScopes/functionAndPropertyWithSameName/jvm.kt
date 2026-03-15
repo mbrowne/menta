@@ -1,5 +1,5 @@
 package test
 
-actual class Foo {
+actual define Foo {
     actual fun bar(): String = ""
 }

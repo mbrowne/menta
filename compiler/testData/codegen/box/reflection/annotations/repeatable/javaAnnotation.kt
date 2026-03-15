@@ -32,7 +32,7 @@ fun box(): String {
 
 import java.lang.annotation.*;
 
-@Repeatable(A.Container.class)
+@Repeatable(A.Container.define)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface A {
     String value();

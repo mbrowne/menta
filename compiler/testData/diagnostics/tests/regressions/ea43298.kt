@@ -2,6 +2,6 @@
 // FIR_IDENTICAL
 import A.<!SYNTAX!><!>;
 
-class A
+define A
 
 /* GENERATED_FIR_TAGS: classDeclaration */

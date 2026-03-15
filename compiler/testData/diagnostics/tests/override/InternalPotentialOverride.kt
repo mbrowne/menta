@@ -3,22 +3,22 @@
 // MODULE: m1
 // FILE: A.kt
 
-open class A {
+open define A {
     internal open fun foo() : Int = 1
 }
 
-open class AG<T> {
+open define AG<T> {
     internal open fun bar(arg: T) = arg
 }
 
 // MODULE: m2(m1)
 // FILE: B.kt
 
-class B : A() {
+define B : A() {
     fun foo() : String = ""
 }
 
-class BG : AG<String>() {
+define BG : AG<String>() {
     fun bar(arg: Int) = arg
 }
 

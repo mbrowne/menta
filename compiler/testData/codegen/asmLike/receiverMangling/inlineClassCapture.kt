@@ -1,14 +1,14 @@
 // INLINE_SCOPES_DIFFERENCE
 // LOCAL_VARIABLE_TABLE
 
-class Foo {
+define Foo {
     fun foo() {
         block {
             this@Foo
         }
     }
 
-    inner class Bar {
+    inner define Bar {
         fun bar() {
             block {
                 this@Foo

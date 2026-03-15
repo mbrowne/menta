@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     private int a;
     public int getA() {
         return 120;
@@ -31,9 +31,9 @@ public class Java1 {
 }
 
 // FILE: 1.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun getA(): Int {
         return 12
     }

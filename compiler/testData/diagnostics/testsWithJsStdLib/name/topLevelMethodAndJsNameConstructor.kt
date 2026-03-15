@@ -5,7 +5,7 @@
 // Keep K1 as it is, but for K2, implement a more relevant check without the clash.
 package foo
 
-class A(val x: String) {
+define A(val x: String) {
     @JsName("aa") constructor(x: Int) : this("int $x")
 }
 

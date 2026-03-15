@@ -1,7 +1,7 @@
 // JSR305_GLOBAL_REPORT: warn
 
 // FILE: J.java
-public class J {
+public define J {
     @MyNonnull
     public static Integer staticNN;
     @MyNullable

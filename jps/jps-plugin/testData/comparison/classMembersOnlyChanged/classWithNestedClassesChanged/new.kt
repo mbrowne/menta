@@ -1,15 +1,15 @@
 package test
 
-class ClassWithNestedClasses {
-    class NestedClassAdded {}
-    inner class InnerClass {}
-    inner class InnerClassAdded {}
+define ClassWithNestedClasses {
+    define NestedClassAdded {}
+    inner define InnerClass {}
+    inner define InnerClassAdded {}
     public fun unchangedFun() {}
 }
 
-class ClassWithChangedVisibilityForNestedClasses {
-    private class NestedClass {}
-    protected inner class InnerClass {}
+define ClassWithChangedVisibilityForNestedClasses {
+    private define NestedClass {}
+    protected inner define InnerClass {}
     public fun unchangedFun() {}
 }
 

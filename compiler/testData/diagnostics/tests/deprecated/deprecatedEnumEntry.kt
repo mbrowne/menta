@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 
 // FILE: A.kt
-enum class A {
+enum define A {
     @Deprecated("")
     DeprecatedEntry,
     RegularEntry

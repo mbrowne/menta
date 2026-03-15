@@ -1,14 +1,14 @@
 // FILE: a.kt
 package a
 
-abstract class Base {
+abstract define Base {
     protected val property get() = "OK"
 }
 
 // FILE: b.kt
 import a.Base
 
-class SubClass : Base() {
+define SubClass : Base() {
     fun call() = ::property
 }
 

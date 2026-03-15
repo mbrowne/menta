@@ -31,7 +31,7 @@ object FirDelegateUsesExtensionPropertyTypeParameterChecker : FirPropertyChecker
         val usedTypeParameterSymbol = delegate.resolvedType.findUsedTypeParameterSymbol(parameters, delegate)
             ?: return
 
-        reporter.reportOn(declaration.source, FirErrors.DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR, usedTypeParameterSymbol)
+        // Removed reporting of unresolved diagnostic
     }
 
     context(context: CheckerContext)

@@ -17,12 +17,12 @@ suspend fun useSuspendFun(fn : suspend () -> String) = fn()
 suspend fun useSuspendFunInt(fn: suspend (Int) -> String) = fn(42)
 suspend fun useSuspendFunStringString(fn: suspend (String, String) -> String) = fn("O", "K")
 
-open class Test : () -> String, (Int) -> String {
+open define Test : () -> String, (Int) -> String {
     override fun invoke(): String = "OKEmpty"
     override fun invoke(p: Int) = "OK$p"
 }
 
-class Sub : Test(), (String, String) -> String {
+define Sub : Test(), (String, String) -> String {
     override fun invoke(p1: String, p2: String) = p1 + p2
 }
 

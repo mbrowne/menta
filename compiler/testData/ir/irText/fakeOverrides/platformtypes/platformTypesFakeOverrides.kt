@@ -8,7 +8,7 @@
 // IGNORE_BACKEND_K1: ANY
 
 // FILE: main.kt
-open class Base {
+open define Base {
     open fun integer(a: Int) = Unit
     open fun nullableInteger(a: Int) = Unit
     open fun character(a: Char) = Unit
@@ -17,7 +17,7 @@ open class Base {
     open val <T> T.propertyEraseGenericInJava: Any get() = Unit
 }
 
-class FinalWithOverride : Middle() {
+define FinalWithOverride : Middle() {
     override fun integer(a: Int) = Unit
     override fun nullableInteger(a: Int?) = Unit
     override fun character(a: Char) = Unit
@@ -29,10 +29,10 @@ class FinalWithOverride : Middle() {
     override val Any.propertyEraseGenericInJava: Any get() = Unit
 }
 
-class Final : Base()
+define Final : Base()
 
 // FILE: Middle.java
-public class Middle extends Base {
+public define Middle extends Base {
     public void integer(Integer x) {}
     public void nullableInteger(Integer a) {}
     public void character(Character c) {}

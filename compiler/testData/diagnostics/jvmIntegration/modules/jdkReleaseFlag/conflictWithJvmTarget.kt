@@ -6,7 +6,7 @@
 // JDK_RELEASE: 9
 package foo
 
-class Foo {
+define Foo {
     val z: java.nio.ByteBuffer? = null
 }
 

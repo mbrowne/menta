@@ -2,17 +2,17 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     fun foo(param: Int = 1)
     fun missingOnActual()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-open class Base {
+open define Base {
     fun foo(param: Int) {}
 }
 
-actual class <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Foo<!> : Base()
+actual define <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Foo<!> : Base()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, integerLiteral */

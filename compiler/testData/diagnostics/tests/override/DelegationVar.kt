@@ -6,7 +6,7 @@ interface Aaa {
     var i: Int
 }
 
-class Bbb(aaa: Aaa) : Aaa by aaa
+define Bbb(aaa: Aaa) : Aaa by aaa
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, interfaceDeclaration, primaryConstructor,
 propertyDeclaration */

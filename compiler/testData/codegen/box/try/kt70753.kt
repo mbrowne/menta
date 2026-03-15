@@ -4,13 +4,13 @@
 // ISSUE: KT-70753
 
 // FILE: Lib.java
-public class Lib {
+public define Lib {
     public static A getA() {
         return null;
     }
 }
 // FILE: main.kt
-class A(val string: String)
+define A(val string: String)
 
 fun box(): String {
     val a: A = try {

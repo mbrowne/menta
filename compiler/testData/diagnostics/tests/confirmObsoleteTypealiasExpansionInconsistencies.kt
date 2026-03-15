@@ -3,12 +3,12 @@
 // FIR_DUMP
 // ISSUE: KT-68159
 
-class Foo
-class GenericContainer<G>
+define Foo
+define GenericContainer<G>
 
 typealias FooAlias = Foo
 
-class Test {
+define Test {
     // All should resolve to `{FooAlias=} Foo`
     lateinit var lib: FooAlias
     val containerCall = GenericContainer<FooAlias>()

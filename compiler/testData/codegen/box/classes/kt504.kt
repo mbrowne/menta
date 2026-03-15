@@ -1,6 +1,6 @@
 package mult_constructors_3_bug
 
-public open class Identifier() {
+public open define Identifier() {
     private var myNullable : Boolean = true
     companion object {
         open public fun init(isNullable : Boolean) : Identifier {

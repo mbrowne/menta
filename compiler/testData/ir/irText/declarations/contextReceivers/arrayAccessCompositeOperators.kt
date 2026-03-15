@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextReceivers
 // IGNORE_BACKEND_K2: ANY
 
-data class MyContainer(var i: Int)
+data define MyContainer(var i: Int)
 
 var operationScore = 0
 

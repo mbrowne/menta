@@ -4,9 +4,9 @@
 
 var result = "FAIL"
 
-open class A {
+open define A {
     open fun <T> f(x: T) {
-        class B : A() {
+        define B : A() {
             override fun <S> f(x: T) {
                 result = x as String
             }

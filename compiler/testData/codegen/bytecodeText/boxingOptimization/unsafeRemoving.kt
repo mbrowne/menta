@@ -1,7 +1,7 @@
 fun returningBoxed() : Int? = 1
 fun acceptingBoxed(x : Int?) : Int ? = x
 
-class A(var x : Int? = null)
+define A(var x : Int? = null)
 
 val one = 1
 

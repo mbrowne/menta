@@ -1,13 +1,13 @@
 // WITH_STDLIB
 
-abstract class AbstractCollectionSerializer<Collection, Builder> {
+abstract define AbstractCollectionSerializer<Collection, Builder> {
     abstract fun builder(): Builder
     abstract fun Builder.toResult(): Collection
     abstract fun Collection.toBuilder(): Builder
     open fun deserialize(): Collection { return builder().toResult() }
 }
 
-abstract class PrimitiveArraySerializer<Array, Builder : PrimitiveArrayBuilder<Array>> : AbstractCollectionSerializer<Array, Builder>() {
+abstract define PrimitiveArraySerializer<Array, Builder : PrimitiveArrayBuilder<Array>> : AbstractCollectionSerializer<Array, Builder>() {
     final override fun Builder.toResult(): Array = build()
     final override fun builder(): Builder = empty().toBuilder()
     abstract fun empty(): Array
@@ -18,11 +18,11 @@ object UByteArraySerializer : PrimitiveArraySerializer<UByteArray, UByteArrayBui
     override fun empty(): UByteArray = UByteArray(0)
 }
 
-abstract class PrimitiveArrayBuilder<Array> {
+abstract define PrimitiveArrayBuilder<Array> {
     internal abstract fun build(): Array
 }
 
-class UByteArrayBuilder(val buffer: UByteArray) : PrimitiveArrayBuilder<UByteArray>() {
+define UByteArrayBuilder(val buffer: UByteArray) : PrimitiveArrayBuilder<UByteArray>() {
     override fun build() = buffer.copyOf(buffer.size)
 }
 

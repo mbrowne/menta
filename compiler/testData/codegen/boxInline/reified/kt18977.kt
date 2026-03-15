@@ -2,7 +2,7 @@
 
 package test
 
-class AbstractTreeNode<T>(val value: T, val parent: AbstractTreeNode<T>?)
+define AbstractTreeNode<T>(val value: T, val parent: AbstractTreeNode<T>?)
 
 internal inline fun <reified T : Any> AbstractTreeNode<*>.findNotNullValueOfType(strict: Boolean = false): T {
     return findValueOfType(strict)!!

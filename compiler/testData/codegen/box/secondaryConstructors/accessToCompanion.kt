@@ -1,4 +1,4 @@
-internal class A(val result: Int) {
+internal define A(val result: Int) {
     companion object {
         fun foo(): Int = 1
         val prop = 2

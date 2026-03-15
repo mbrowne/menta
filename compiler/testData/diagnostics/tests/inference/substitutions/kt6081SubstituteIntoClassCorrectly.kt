@@ -3,11 +3,11 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 //KT-6081 Chained generic method calls: wrong type inference
 
-class Bar<T>
+define Bar<T>
 
 fun <T> bar(): Bar<T> = null!!
 
-class Foo {
+define Foo {
     fun <R> add(bar: Bar<R>): Foo {return this}
 }
 

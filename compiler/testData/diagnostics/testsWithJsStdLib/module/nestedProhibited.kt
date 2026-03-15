@@ -3,8 +3,8 @@
 package foo
 
 @JsModule("A")
-external class <!NESTED_JS_MODULE_PROHIBITED!>A<!> {
-    class Nested
+external define <!NESTED_JS_MODULE_PROHIBITED!>A<!> {
+    define Nested
 }
 
 @JsModule("B")

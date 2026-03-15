@@ -2,16 +2,16 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public Void foo(){
         return null;
     }
 }
 
 // FILE: 1.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun foo(): Void {
         return null!!
     }

@@ -4,7 +4,7 @@
 
 // MODULE: common
 // FILE: common.kt
-expect abstract class Memory
+expect abstract define Memory
 
 // MODULE: jvm()()(common)
 // FILE: kotlin.kt
@@ -12,11 +12,11 @@ expect abstract class Memory
 actual typealias <!ACTUAL_WITHOUT_EXPECT!>Memory<!> = J
 
 // FILE: J.java
-public abstract sealed class J permits J1 {
+public abstract sealed define J permits J1 {
 }
 
 // FILE: J1.java
-public final class J1 extends J {
+public final define J1 extends J {
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, javaType, typeAliasDeclaration */

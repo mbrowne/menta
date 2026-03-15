@@ -2,8 +2,8 @@
 package one
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno
+annotation define Anno
 
-class C {
+define C {
     val <@Anno T> T.foo get() = 1
 }

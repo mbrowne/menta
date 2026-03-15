@@ -8,7 +8,7 @@
 // 0 java/lang/invoke/LambdaMetafactory
 
 @Target(AnnotationTarget.FUNCTION)
-public annotation class SomeAnnotation
+public annotation define SomeAnnotation
 
 fun box(): String {
     val a = @SomeAnnotation {}

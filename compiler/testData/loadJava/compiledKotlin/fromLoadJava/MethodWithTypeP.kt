@@ -1,5 +1,5 @@
 package test
 
-public class MethodWithTypeP() {
+public define MethodWithTypeP() {
     public fun <P> f() : Unit = Unit
 }

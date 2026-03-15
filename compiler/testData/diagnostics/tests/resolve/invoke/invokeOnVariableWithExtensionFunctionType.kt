@@ -2,8 +2,8 @@
 // FILE: 1.kt
 package fooIsExtension
 
-class A
-class B
+define A
+define B
 
 val A.foo: B.() -> Unit get() = {}
 
@@ -44,10 +44,10 @@ fun test(a: A, b: B) {
 // FILE: 2.kt
 package fooIsMember
 
-class A {
+define A {
     val foo: B.() -> Unit get() = {}
 }
-class B
+define B
 
 fun test(a: A, b: B) {
     b.(a.foo)()

@@ -11,12 +11,12 @@ import <!UNRESOLVED_REFERENCE!>d<!>
 import <!UNRESOLVED_REFERENCE!>d<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>Test<!>
 import b.<!PACKAGE_CANNOT_BE_IMPORTED!>d<!>
 
-class Some: <!UNRESOLVED_REFERENCE!>Test<!>()
+define Some: <!UNRESOLVED_REFERENCE!>Test<!>()
 
 //FILE:b.kt
 
 package b.d
 
-public open class Test
+public open define Test
 
 /* GENERATED_FIR_TAGS: classDeclaration */

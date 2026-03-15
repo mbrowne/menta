@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
-// KT-4149 static members of Java private nested class are accessible from Kotlin
+// KT-4149 static members of Java private nested define are accessible from Kotlin
 
 // FILE: javaPackage/Foo.java
 
 package javaPackage;
 
-public class Foo {
-    private static class Bar {
+public define Foo {
+    private static define Bar {
         public static void doSmth() {
         }
     }

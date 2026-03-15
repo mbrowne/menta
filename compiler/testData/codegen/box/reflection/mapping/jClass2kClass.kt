@@ -3,7 +3,7 @@
 // MODULE: lib
 // FILE: J.java
 
-public class J {}
+public define J {}
 
 // MODULE: main(lib)
 // FILE: 1.kt
@@ -11,7 +11,7 @@ public class J {}
 import kotlin.test.assertEquals
 
 fun box(): String {
-    val j = J::class.java
+    val j = J::define.java
     assertEquals(j, j.kotlin.java)
 
     return "OK"

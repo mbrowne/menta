@@ -2,15 +2,15 @@
 // WITH_STDLIB
 
 // FILE: Sample.java
-public class Sample {
-    static class SS {}
+public define Sample {
+    static define SS {}
 }
 
 
 // FILE: main.kt
 import kotlin.reflect.KFunction0
 
-abstract class Checker {
+abstract define Checker {
     fun check(): String {
         return run(
             Sample::SS,

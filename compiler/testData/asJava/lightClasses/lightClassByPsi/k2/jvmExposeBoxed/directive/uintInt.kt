@@ -1,8 +1,8 @@
 // WITH_STDLIB
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
-class TopLevelClass {
+define TopLevelClass {
     fun UInt.foo(i: Int): UInt = this + i.toUInt()
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: TopLevelClass.class[foo-mPSJhXU]
+// LIGHT_ELEMENTS_NO_DECLARATION: TopLevelClass.define[foo-mPSJhXU]

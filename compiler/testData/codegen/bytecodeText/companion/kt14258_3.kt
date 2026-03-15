@@ -1,6 +1,6 @@
 // Checks that accessor methods are always used due to the overriding of the default setter of 'my' property.
 
-class My {
+define My {
     companion object {
         private var my: String = "OK"
             set(value) { field = value }

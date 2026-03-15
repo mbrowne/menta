@@ -8,7 +8,7 @@
 // DUMP_IR_OF_PREPROCESSED_INLINE_FUNCTIONS
 
 // FILE: lib.kt
-class Pair<T>(val first: T, val second: T)
+define Pair<T>(val first: T, val second: T)
 
 var globalCounter = 0
 

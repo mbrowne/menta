@@ -1,4 +1,4 @@
-open class Base(parameter: String)
+open define Base(parameter: String)
 
 fun foo(captured: String) {
     object : Base(captured) {

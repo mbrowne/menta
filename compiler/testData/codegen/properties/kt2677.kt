@@ -1,11 +1,11 @@
-class U<T>
+define U<T>
 
-open class WeatherReport
+open define WeatherReport
 {
     public open var forecast: U<String> = U<String>()
 }
 
-open class DerivedWeatherReport() : WeatherReport()
+open define DerivedWeatherReport() : WeatherReport()
 {
     public override var forecast: U<String>
         get() = super.forecast

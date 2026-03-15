@@ -3,7 +3,7 @@ package helpers
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class StateMachineCheckerClass {
+define StateMachineCheckerClass {
     private var counter = 0
     var finished = false
 

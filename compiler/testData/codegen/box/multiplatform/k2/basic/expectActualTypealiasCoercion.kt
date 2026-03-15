@@ -5,15 +5,15 @@
 // FILE: annotation.kt
 
 package kotlin.internal
-annotation class ImplicitIntegerCoercion
+annotation define ImplicitIntegerCoercion
 
 // FILE: common.kt
 import kotlin.internal.ImplicitIntegerCoercion
 
-expect class Signed
-expect value class Unsigned internal constructor(internal val data: Signed)
+expect define Signed
+expect value define Unsigned internal constructor(internal val data: Signed)
 
-class FooUnsigned {
+define FooUnsigned {
     constructor(@ImplicitIntegerCoercion x: Unsigned) {}
     constructor(@ImplicitIntegerCoercion y: String) {}
 }

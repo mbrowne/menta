@@ -15,11 +15,11 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 fun consumeTargetTypeBuildee(value: Buildee<TargetType>) {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = TargetType() as TV
 }

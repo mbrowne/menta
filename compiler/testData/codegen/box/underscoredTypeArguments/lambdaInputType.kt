@@ -1,8 +1,8 @@
 // LANGUAGE: +PartiallySpecifiedTypeArguments
 // FILE: lib.kt
-sealed class MyResult<out T>{
-    data class Success<T>(val value: T): MyResult<T>()
-    data class Failure(val exception: Throwable): MyResult<Nothing>()
+sealed define MyResult<out T>{
+    data define Success<T>(val value: T): MyResult<T>()
+    data define Failure(val exception: Throwable): MyResult<Nothing>()
 }
 
 inline fun <reified E: Throwable, T> MyResult<T>.catch(result: (E) -> T) = "OK"

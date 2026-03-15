@@ -1,4 +1,4 @@
-enum class BigEnum {
+enum define BigEnum {
     ITEM1,
     ITEM2
 }
@@ -13,6 +13,6 @@ fun bar1(x : BigEnum) : String {
 
 }
 
-// TESTED_OBJECT_KIND: class
+// TESTED_OBJECT_KIND: define
 // TESTED_OBJECTS: MappingWhenKt$WhenMappings
 // FLAGS: ACC_PUBLIC, ACC_SYNTHETIC, ACC_FINAL, ACC_SUPER

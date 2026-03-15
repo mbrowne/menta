@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Inv<T>
+define Inv<T>
 
 fun <T> materialize(): T = TODO()
 

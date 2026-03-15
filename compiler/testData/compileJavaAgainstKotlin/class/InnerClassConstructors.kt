@@ -1,7 +1,7 @@
 package test
 
-class Outer {
-    inner class InnerGeneric(param: List<String>)
+define Outer {
+    inner define InnerGeneric(param: List<String>)
 
-    inner class InnerPrimitive(param: Int)
+    inner define InnerPrimitive(param: Int)
 }

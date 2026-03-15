@@ -1,4 +1,4 @@
-class A {}
+define A {}
 
 fun foo(a: A) {}
 fun foo(a: A, s: String) {}

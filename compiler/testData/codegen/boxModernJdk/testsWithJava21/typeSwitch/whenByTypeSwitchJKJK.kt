@@ -6,9 +6,9 @@
 // 0 INSTANCEOF
 
 //FILE: 1.kt
-class A: Java1 {}
+define A: Java1 {}
 
-abstract class B : Java1
+abstract define B : Java1
 
 interface KotlinInterface : Java2
 

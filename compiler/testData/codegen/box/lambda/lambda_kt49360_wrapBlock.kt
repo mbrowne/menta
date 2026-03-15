@@ -7,7 +7,7 @@ import kotlin.coroutines.*
 
 // https://youtrack.jetbrains.com/issue/KT-49360
 
-class Block(val block: () -> Int)
+define Block(val block: () -> Int)
 
 fun testWrapBlockCreate(flag: Boolean): Block {
     return (if (flag) Block { 11 } else null) ?: Block { 22 }

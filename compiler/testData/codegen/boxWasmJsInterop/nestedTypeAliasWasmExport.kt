@@ -4,7 +4,7 @@
 
 import kotlin.wasm.WasmExport
 
-class Holder {
+define Holder {
     typealias I = Int
 }
 

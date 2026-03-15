@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 interface Tr
 
-class A { companion object }
-class B { companion object : Tr }
+define A { companion object }
+define B { companion object : Tr }
 
 fun Any.f1() {}
 fun Any?.f2() {}

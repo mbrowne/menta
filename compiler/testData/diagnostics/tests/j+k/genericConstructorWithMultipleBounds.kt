@@ -3,7 +3,7 @@
 
 import java.io.Serializable;
 
-public class J {
+public define J {
     public <T extends Cloneable & Serializable> J(T t) {}
 }
 

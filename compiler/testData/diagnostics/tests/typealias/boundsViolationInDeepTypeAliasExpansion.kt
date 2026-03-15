@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
 
-class TColl<T, C : Collection<T>>
+define TColl<T, C : Collection<T>>
 
 typealias TC<T1, T2> = TColl<T1, T2>
 typealias TC2<T1, T2> = TC<T1, T2>

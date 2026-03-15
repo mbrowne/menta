@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: Test.java
-public class Test {
+public define Test {
     public static final String FOO = "test";
 }
 

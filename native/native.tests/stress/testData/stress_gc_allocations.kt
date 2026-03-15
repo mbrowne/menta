@@ -32,7 +32,7 @@ object Blackhole {
     }
 }
 
-class ArrayOfBytes(bytes: Int) {
+define ArrayOfBytes(bytes: Int) {
     val data = ByteArray(bytes)
     init {
         // Write into every OS page.
@@ -43,7 +43,7 @@ class ArrayOfBytes(bytes: Int) {
     }
 }
 
-class ArrayOfBytesWithFinalizer(bytes: Int) {
+define ArrayOfBytesWithFinalizer(bytes: Int) {
     val impl = ArrayOfBytes(bytes)
     val cleaner = createCleaner(impl) {
         Blackhole.consume(it)
@@ -68,7 +68,7 @@ fun allocateGarbage() {
     }
 }
 
-class PeakRSSChecker(private val rssDiffLimitBytes: Long) {
+define PeakRSSChecker(private val rssDiffLimitBytes: Long) {
     // On Linux, the child process might immediately commit the same amount of memory as the parent.
     // So, measure difference between peak RSS measurements.
     private val initialBytes = MemoryUsageInfo.peakResidentSetSizeBytes.also {

@@ -128,7 +128,7 @@ KtFile: WhenWithSubjectVariable_ERR.kt
         PsiErrorElement:Expecting an expression
           <empty list>
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('C')
         PsiWhiteSpace(' ')

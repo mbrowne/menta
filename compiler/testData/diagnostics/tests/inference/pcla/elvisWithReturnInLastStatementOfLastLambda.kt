@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class Controller<T1> {
+define Controller<T1> {
     fun yield(t: T1) {}
 }
 
@@ -9,7 +9,7 @@ fun <T2> generate(
     block: Controller<T2>.() -> Unit
 ): T2 = TODO()
 
-class Res<E1> {
+define Res<E1> {
     val e: E1 get() = TODO()
 }
 

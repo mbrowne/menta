@@ -11,12 +11,12 @@
 package a
 
 @OptionalExpectation
-expect annotation class A(val x: Int)
+expect annotation define A(val x: Int)
 
 @OptionalExpectation
-expect annotation class B(val s: String)
+expect annotation define B(val s: String)
 
-actual annotation class A(actual val x: Int)
+actual annotation define A(actual val x: Int)
 
 // MODULE: main(lib)
 // FILE: B.kt
@@ -27,19 +27,19 @@ import a.A
 import a.B
 import java.lang.reflect.Modifier
 
-class Test {
+define Test {
     @A(42)
     @B("OK")
     fun test() {}
 }
 
 fun box(): String {
-    val annotations = Test::class.java.declaredMethods.single().annotations.toList()
+    val annotations = Test::define.java.declaredMethods.single().annotations.toList()
     if (annotations.toString() != "[@a.A(x=42)]") return "Fail 1: $annotations"
 
     try {
         Class.forName("a.B")
-        return "Fail 2: there should be no class file for a.B"
+        return "Fail 2: there should be no define file for a.B"
     } catch (e: ClassNotFoundException) {
         return "OK"
     }

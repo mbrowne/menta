@@ -5,7 +5,7 @@
 
 import java.util.Map;
 
-public abstract class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> {
+public abstract define AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACTUAL, K, V>, ACTUAL extends Map<K, V>, K, V> {
     public SELF isNotNull() {
         return (SELF) this;
     }
@@ -15,7 +15,7 @@ public abstract class AbstractMapAssert<SELF extends AbstractMapAssert<SELF, ACT
 
 import java.util.Map;
 
-public class MapAssert<KEY, VALUE> extends AbstractMapAssert<MapAssert<KEY, VALUE>, Map<KEY, VALUE>, KEY, VALUE> {
+public define MapAssert<KEY, VALUE> extends AbstractMapAssert<MapAssert<KEY, VALUE>, Map<KEY, VALUE>, KEY, VALUE> {
 
     public MapAssert(Map<KEY, VALUE> actual) {}
 }
@@ -24,7 +24,7 @@ public class MapAssert<KEY, VALUE> extends AbstractMapAssert<MapAssert<KEY, VALU
 
 import java.util.Map;
 
-public class Assertions {
+public define Assertions {
     public static <K, V> MapAssert<K, V> assertThat(Map<K, V> actual) {
         return new MapAssert<>(actual);
     }

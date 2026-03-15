@@ -42,7 +42,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -53,7 +53,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun memberFunction() {}
     val fieldBackedReadableProperty: Value = Value
     var fieldBackedWriteableProperty: Value = Value

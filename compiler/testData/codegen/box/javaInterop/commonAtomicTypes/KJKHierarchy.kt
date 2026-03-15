@@ -3,11 +3,11 @@
 
 // FILE: KotlinClass.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicInt
 
-open class KotlinClass {
+open define KotlinClass {
     open fun foo(a: AtomicInt): String {
         return "KotlinClass"
     }
@@ -16,18 +16,18 @@ open class KotlinClass {
 
 // FILE: JavaClassWithFakeOverride.java
 
-public class JavaClassWithFakeOverride extends KotlinClass {}
+public define JavaClassWithFakeOverride extends KotlinClass {}
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import JavaClassWithFakeOverride
 import kotlin.concurrent.atomics.*
 
-class KotlinChildWithFakeOverride: JavaClassWithFakeOverride()
+define KotlinChildWithFakeOverride: JavaClassWithFakeOverride()
 
-class KotlinChildWithExplicitOverride: JavaClassWithFakeOverride() {
+define KotlinChildWithExplicitOverride: JavaClassWithFakeOverride() {
     override fun foo(i: AtomicInt): String {
         return "KotlinChildWithExplicitOverride"
     }

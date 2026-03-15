@@ -27,7 +27,7 @@ public interface JDerived extends KBase {
 }
 
 // FILE: JClass.java
-public class JClass implements KDerived {
+public define JClass implements KDerived {
 
     public String test2() {
         return KDerived.DefaultImpls.test2(this);
@@ -41,7 +41,7 @@ interface KDerived  : JDerived {
     override public fun test2(): String = "K"
 }
 
-class KClass : KDerived
+define KClass : KDerived
 
 fun box(): String {
     val kClass = KClass()

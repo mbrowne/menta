@@ -15,12 +15,12 @@ fun test() {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
 fun DifferentType.consumeDifferentTypeReceiver() {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun getTypeVariable(): TV = storage
     private var storage: TV = null!!

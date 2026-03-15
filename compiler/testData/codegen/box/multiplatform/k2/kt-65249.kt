@@ -7,18 +7,18 @@ interface Source {
     fun read(sink: Buffer): String
 }
 
-expect class Buffer()
+expect define Buffer()
 
-expect abstract class ForwardingSource: Source {
+expect abstract define ForwardingSource: Source {
     override fun read(sink: Buffer): String
 }
 
 // MODULE: jvm()()(common)
 // FILE: platfrom.kt
 
-actual class Buffer actual constructor()
+actual define Buffer actual constructor()
 
-actual abstract class ForwardingSource : Source {
+actual abstract define ForwardingSource : Source {
     actual override fun read(sink: Buffer): String = "OK"
 }
 

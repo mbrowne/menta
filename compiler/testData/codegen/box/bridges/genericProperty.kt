@@ -1,4 +1,4 @@
-open class A<T> {
+open define A<T> {
     var size: T = 56 as T
 }
 
@@ -6,7 +6,7 @@ interface C {
     var size: Int
 }
 
-class B : C, A<Int>()
+define B : C, A<Int>()
 
 fun box(): String {
     val b = B()

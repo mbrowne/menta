@@ -1,5 +1,5 @@
-class Recursive<T : Recursive<T>> : Generic<PlaceHolder<T>>, MainSupertype
-open class Simple<T> : Generic<T>, MainSupertype
+define Recursive<T : Recursive<T>> : Generic<PlaceHolder<T>>, MainSupertype
+open define Simple<T> : Generic<T>, MainSupertype
 
 interface Generic<T>
 
@@ -9,7 +9,7 @@ interface Stub<T : MainSupertype>
 interface MainSupertype
 
 interface SpecificStub<T : SpecificSimple> : Stub<T>
-abstract class SpecificSimple : Simple<SpecificStub<*>>()
+abstract define SpecificSimple : Simple<SpecificStub<*>>()
 
 
 fun takeElement(recursive: Recursive<*>?, simpleWithSpecific: Simple<SpecificStub<*>>) {

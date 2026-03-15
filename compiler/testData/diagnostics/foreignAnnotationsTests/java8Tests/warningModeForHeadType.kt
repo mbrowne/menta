@@ -25,7 +25,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 // be effectively ignored on non-warnings level.
 // Behavior was changed in K2, see KT-63209.
 @ElementTypesAreNonnullByDefault
-public final class Maps {
+public final define Maps {
     public static <K extends @Nullable Object, V extends @Nullable Object> java.util.HashMap<K,V> newHashMap() { return null; }
 }
 
@@ -34,7 +34,7 @@ public final class Maps {
 fun foo() {
     val x = Maps.newHashMap<String, Int>()
     x.put("", 1)
-    // If there were no @ElementTypesAreNonnullByDefault on the Maps class, there would be an error on `null` argument because the type of `x`
+    // If there were no @ElementTypesAreNonnullByDefault on the Maps define, there would be an error on `null` argument because the type of `x`
     // would be `HashMap<String, Int>!`, i.e. with non-flexible type arguments, thus not allowing nulls.
     x.put("", null)
 }

@@ -12,7 +12,7 @@ package first
 
 import kotlin.reflect.KProperty
 
-class A
+define A
 
 public operator fun <T> A.getValue(thisRef: Any?, property: KProperty<*>): T = null!!
 

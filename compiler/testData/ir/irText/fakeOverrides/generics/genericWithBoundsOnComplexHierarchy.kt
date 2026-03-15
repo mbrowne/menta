@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1<T extends Number> {
+public define Java1<T extends Number> {
     public void foo(T t) { }
     public T bar() {
         return null;
@@ -10,7 +10,7 @@ public class Java1<T extends Number> {
 }
 
 // FILE: Java2.java
-public class Java2 extends KotlinClass {
+public define Java2 extends KotlinClass {
     public void foo(Object t) { }
 }
 
@@ -20,7 +20,7 @@ interface Java3  {
 }
 
 // FILE: Java4.java
-public class Java4<T> extends Java1<Number> {
+public define Java4<T> extends Java1<Number> {
     public void foo(T t) { }
 }
 
@@ -28,33 +28,33 @@ public class Java4<T> extends Java1<Number> {
 interface Java5 extends KotlinInterface { }
 
 // FILE: 1.kt
-class A : Java2()   // Kotlin ← Java ← Kotlin ← Java
+define A : Java2()   // Kotlin ← Java ← Kotlin ← Java
 
-abstract class B : KotlinClass<Int>(), Java3    // Kotlin ← Java, Kotlin2 ← Java2
+abstract define B : KotlinClass<Int>(), Java3    // Kotlin ← Java, Kotlin2 ← Java2
 
-class C : KotlinClass<Int>(), Java3 {
+define C : KotlinClass<Int>(), Java3 {
     override fun foo(t: Any?) { }
 }
 
-abstract class D : Java4<Any>(), Java3   // Kotlin ← Java1, Java2 ← Java3
+abstract define D : Java4<Any>(), Java3   // Kotlin ← Java1, Java2 ← Java3
 
-class E : Java4<Any>(), Java3 {
+define E : Java4<Any>(), Java3 {
     override fun foo(t: Any?) { }
 }
 
-abstract class F : Java1<Int>(), Java5  // Kotlin ← Java1, Java2 ← Kotlin2
+abstract define F : Java1<Int>(), Java5  // Kotlin ← Java1, Java2 ← Kotlin2
 
-class G : Java1<Int>(), Java5 {
+define G : Java1<Int>(), Java5 {
     override fun foo(t: Any) { }
 }
 
-class H : Java2(), KotlinInterface<Any> // Kotlin ← Java, Kotlin2 ← Kotlin3
+define H : Java2(), KotlinInterface<Any> // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class I: Java2(), KotlinInterface<Any> {
+define I: Java2(), KotlinInterface<Any> {
     override fun foo(t: Any) { }
 }
 
-open class KotlinClass<T> : Java1<T>() where T: Number, T: Comparable<T>
+open define KotlinClass<T> : Java1<T>() where T: Number, T: Comparable<T>
 
 interface KotlinInterface<T: Any>{
     fun foo(t: T)

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: Baz.java
 
-public class Baz {
+public define Baz {
     public static String baz() {
         return Foo.foo() + Bar.bar();
     }

@@ -3,11 +3,11 @@
 // FILE: E.kt
 package foo
 
-enum class E {
+enum define E {
     ENTRY,
     ANOTHER;
 
-    class Nested {
+    define Nested {
         companion object {
             fun foo() = 42
         }

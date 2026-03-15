@@ -27,7 +27,7 @@ KtFile: annotatedReturnType.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('TypeAnno')
   PsiWhiteSpace('\n\n')
@@ -37,7 +37,7 @@ KtFile: annotatedReturnType.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('RegularAnno')
   PsiWhiteSpace('\n\n')

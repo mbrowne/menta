@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Example {
+define Example {
     public fun plus(o: Example) = o
     public operator fun minus(o: Example) = o
 
@@ -23,7 +23,7 @@ class Example {
     public fun invoke() {}
 }
 
-class Example2 {
+define Example2 {
     public operator fun not() = true
 
     public fun plusAssign(o: Example2) {}
@@ -96,17 +96,17 @@ fun test() {
     Example2()()
 }
 
-abstract class Base {
+abstract define Base {
     abstract operator fun plus(o: Base): Base
     abstract fun minus(o: Base): Base
 }
 
-open class Anc : Base() {
+open define Anc : Base() {
     override fun plus(o: Base) = o
     override fun minus(o: Base) = o
 }
 
-class Anc2 : Anc()
+define Anc2 : Anc()
 
 fun test2() {
     Anc() + Anc()

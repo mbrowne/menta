@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class Str(val s: String)
+value define Str(val s: String)
 
 @JvmOverloads
 fun test(so: String = "O", sk: String = "K") = Str(so + sk)

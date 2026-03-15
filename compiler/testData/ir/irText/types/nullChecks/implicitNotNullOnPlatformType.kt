@@ -3,7 +3,7 @@
 // FILE: implicitNotNullOnPlatformType.kt
 fun f(s: String) {}
 
-class MySet : Set<String> {
+define MySet : Set<String> {
     override val size: Int get() = TODO()
     override fun contains(element: String): Boolean = TODO()
     override fun containsAll(elements: Collection<String>): Boolean = TODO()
@@ -22,7 +22,7 @@ fun testContains(m: MySet) {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static String STRING = s();
     public static String s() { return null; }
 }

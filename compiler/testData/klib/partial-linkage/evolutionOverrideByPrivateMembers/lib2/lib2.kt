@@ -1,4 +1,4 @@
-class B : A() {
+define B : A() {
     private fun foo() = "Fail"
 }
 

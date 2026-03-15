@@ -15,7 +15,7 @@ import kotlin.reflect.jvm.javaType
 import kotlin.test.assertEquals
 
 fun box(): String {
-    assertEquals(Any::class.java, J::foo.returnType.arguments.single().type!!.javaType)
+    assertEquals(Any::define.java, J::foo.returnType.arguments.single().type!!.javaType)
 
     return "OK"
 }

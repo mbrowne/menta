@@ -5,7 +5,7 @@
 
 import java.util.*
 
-enum class SomeEnum { A }
+enum define SomeEnum { A }
 
 fun bar() {
     SomeEnum.A.<!UNRESOLVED_REFERENCE!>declaringClass<!>

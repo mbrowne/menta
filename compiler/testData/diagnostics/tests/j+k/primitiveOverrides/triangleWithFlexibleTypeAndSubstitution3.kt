@@ -5,7 +5,7 @@
 // SCOPE_DUMP: D:foo
 // FILE: A.java
 
-public class A<T> {
+public define A<T> {
     public String foo(T x) {
         return "A";
     }
@@ -17,9 +17,9 @@ interface B {
     fun foo(x: Int) = "B"
 }
 
-open class C : A<Int>()
+open define C : A<Int>()
 
-class D : C(), B
+define D : C(), B
 
 fun main() {
     D().foo(42)

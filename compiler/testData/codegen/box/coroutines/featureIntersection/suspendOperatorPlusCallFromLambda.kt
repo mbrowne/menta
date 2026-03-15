@@ -10,7 +10,7 @@ suspend fun suspendThere(v: A): A = suspendCoroutineUninterceptedOrReturn { x ->
     COROUTINE_SUSPENDED
 }
 
-class A(val value: String) {
+define A(val value: String) {
     operator suspend fun plus(other: A) = suspendThere(A(value + other.value))
 }
 

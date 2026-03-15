@@ -9,7 +9,7 @@ KtFile: EnumEntrySpaceMember.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('My')
     PsiWhiteSpace(' ')

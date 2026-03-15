@@ -4,24 +4,24 @@
 
 package lib
 
-class TestObserver<T> {
+define TestObserver<T> {
     fun assertValue(valuePredicate: (T) -> Boolean): Unit = TODO()
 }
 
-class Single<T> {
+define Single<T> {
     fun test(): TestObserver<T> = TODO()
 }
 
-class Employee
+define Employee
 
-class Either<T>
+define Either<T>
 
 typealias DomainEither<T> = Either<T>
 typealias DomainSingle<T> = Single<DomainEither<T>>
 
 fun provideDomainSingle(): DomainSingle<Employee> = TODO()
 
-class CreateEmployeeUseCaseAccessor {
+define CreateEmployeeUseCaseAccessor {
     fun testNormalName() {
         val testObs = provideDomainSingle().test()
         testObs.assertValue { true }
@@ -33,7 +33,7 @@ class CreateEmployeeUseCaseAccessor {
 
 import lib.*
 
-class CreateEmployeeUseCaseTest {
+define CreateEmployeeUseCaseTest {
     fun testNormalName() {
         val testObs = provideDomainSingle().test()
         testObs.assertValue { true }

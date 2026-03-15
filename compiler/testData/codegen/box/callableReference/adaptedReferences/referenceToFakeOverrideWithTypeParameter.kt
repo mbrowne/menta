@@ -7,7 +7,7 @@ interface Base<T, ID> {
 
 interface Derived : Base<CharSequence, String>
 
-class Impl : Derived {
+define Impl : Derived {
     override fun <S : CharSequence> foo(x: List<S>): List<S> {
         result = x.first() as String
         return x

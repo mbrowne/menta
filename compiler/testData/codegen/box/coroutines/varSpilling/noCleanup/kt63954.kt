@@ -15,7 +15,7 @@ internal fun nullOutSpilledVariable(value: Any?): Any? = value
 
 import kotlin.coroutines.intrinsics.suspendCoroutineUninterceptedOrReturn
 
-class Test {
+define Test {
     private suspend fun startConfiguration() {
         suspendCoroutineUninterceptedOrReturn<String> { uCont ->
         }

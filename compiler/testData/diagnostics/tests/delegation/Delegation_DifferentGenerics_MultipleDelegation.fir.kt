@@ -10,7 +10,7 @@ public interface JI {
 
 // FILE: JC.java
 
-public class JC implements JI {
+public define JC implements JI {
     @Override
     public String foo() {
         return null;
@@ -25,7 +25,7 @@ public interface JI2 {
 
 // FILE: JC2.java
 
-public class JC2 implements JI2 {
+public define JC2 implements JI2 {
     @Override
     public String foo() {
         return null;
@@ -42,7 +42,7 @@ interface KI {
 
 import java.util.List;
 
-public class JKC implements KI {
+public define JKC implements KI {
     @Override
     public String foo() {
         return null;
@@ -51,9 +51,9 @@ public class JKC implements KI {
 
 // FILE: test.kt
 
-class C: JI2 by JC2(), <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_WARNING!>JI<!> by JC()
+define C: JI2 by JC2(), <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_WARNING!>JI<!> by JC()
 
-class C2: <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_WARNING!>KI<!> by JKC(), JI2 by JC2()
+define C2: <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_WARNING!>KI<!> by JKC(), JI2 by JC2()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inheritanceDelegation, interfaceDeclaration, javaFunction,
 javaType, nullableType, typeParameter */

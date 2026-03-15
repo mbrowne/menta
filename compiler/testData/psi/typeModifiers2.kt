@@ -1,4 +1,4 @@
-public class TypeModifiers {
+public define TypeModifiers {
     val function: () -> Unit = null!!
 
     val suspendFunction: suspend () -> Unit = null!!

@@ -3,7 +3,7 @@
 // FILE: JavaClass.java
 import kotlin.jvm.functions.Function1;
 
-public class JavaClass {
+public define JavaClass {
     public <T, R> void foo(Function1<T, R> a){}
 }
 

@@ -6,7 +6,7 @@
 // FILE: J.java
 import org.jetbrains.annotations.NotNull;
 
-public class J {
+public define J {
     public static void foo(int x, Object y) {}
     public static void foo(Integer x, String y) {}
 

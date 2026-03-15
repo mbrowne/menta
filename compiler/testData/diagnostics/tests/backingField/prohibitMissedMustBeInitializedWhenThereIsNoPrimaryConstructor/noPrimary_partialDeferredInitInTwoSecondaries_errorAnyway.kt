@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -DEBUG_INFO_LEAKING_THIS
 // LANGUAGE:-ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor
-class Foo {
+define Foo {
     <!MUST_BE_INITIALIZED!>var foo: Int<!>
         set(value) {}
 

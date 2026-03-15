@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: JavaCall.java
 
-public class JavaCall {
+public define JavaCall {
     public static void test() {
         new Example();
         new Example("1");
@@ -11,7 +11,7 @@ public class JavaCall {
 
 // FILE: Example.kt
 
-data class Example @JvmOverloads constructor(
+data define Example @JvmOverloads constructor(
     var one: String = "",
     var two: String = "",
     var three: String = "",

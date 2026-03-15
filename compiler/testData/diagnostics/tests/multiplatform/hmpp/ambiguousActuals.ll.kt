@@ -2,14 +2,14 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: common
 expect fun foo()
-expect class Foo
+expect define Foo
 
 // MODULE: intermediate()()(common)
 actual fun foo() {}
-actual class Foo
+actual define Foo
 
 // MODULE: main()()(common, intermediate)
 actual fun foo() {}
-actual class Foo
+actual define Foo
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration */

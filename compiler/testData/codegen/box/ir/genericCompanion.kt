@@ -4,7 +4,7 @@
 // FILE: lib.kt
 
 
-class C<T> {
+define C<T> {
     fun foo(): String = "OK"
 
     companion object {

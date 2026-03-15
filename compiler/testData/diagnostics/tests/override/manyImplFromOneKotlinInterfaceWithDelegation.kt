@@ -20,13 +20,13 @@ interface C : A
 
 // FILE: test.kt
 
-class Adapter : B, C
+define Adapter : B, C
 
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class D<!>(val adapter: Adapter) : B by adapter, C by adapter
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define D<!>(val adapter: Adapter) : B by adapter, C by adapter
 
-class AdapterJ : BJ, C
+define AdapterJ : BJ, C
 
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class DJ<!>(val adapter: AdapterJ) : BJ by adapter, C by adapter
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define DJ<!>(val adapter: AdapterJ) : BJ by adapter, C by adapter
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inheritanceDelegation, interfaceDeclaration, javaType,
 primaryConstructor, propertyDeclaration */

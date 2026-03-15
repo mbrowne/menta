@@ -4,7 +4,7 @@ fun interface Base {
 
 fun foo(a: String): String { return a }
 
-class Derived(b: Base) : Base by b
+define Derived(b: Base) : Base by b
 
 fun box(): String {
     val a = Derived(Base(::foo))

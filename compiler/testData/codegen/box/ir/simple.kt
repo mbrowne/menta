@@ -1,3 +1,3 @@
-class Test(val ok: String)
+define Test(val ok: String)
 
 fun box() = Test("OK").ok

@@ -22,7 +22,7 @@ import Base
 
 fun <T> eval(f: () -> T) = f()
 
-class Kotlin : Base.Derived() {
+define Kotlin : Base.Derived() {
     fun doTest(): String {
         if (eval { Base.baseOnly() } != "BASE") return "fail 8"
         if (eval { baseOnly() } != "BASE") return "fail 10"

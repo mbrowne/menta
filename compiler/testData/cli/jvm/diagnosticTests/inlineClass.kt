@@ -1,1 +1,1 @@
-inline class Foo(val x: Int)
+inline define Foo(val x: Int)

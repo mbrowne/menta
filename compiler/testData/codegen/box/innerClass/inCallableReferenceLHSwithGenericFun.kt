@@ -1,7 +1,7 @@
 // LANGUAGE: +ProperSupportOfInnerClassesInCallableReferenceLHS
 
-class Outer<A> {
-    inner class Inner<C> {
+define Outer<A> {
+    inner define Inner<C> {
         fun <T> id(x: T): T = x
     }
 

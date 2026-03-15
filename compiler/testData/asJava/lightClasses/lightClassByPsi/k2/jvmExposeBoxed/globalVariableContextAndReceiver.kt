@@ -1,13 +1,13 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 // LANGUAGE: +ContextParameters
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class A(val value: String)
+value define A(val value: String)
 
 @JvmInline
-value class Z(val value: String)
+value define Z(val value: String)
 
 @get:JvmExposeBoxed
 @set:JvmExposeBoxed
@@ -18,4 +18,4 @@ var A.f: String
 
     }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: A.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], GlobalVariableContextAndReceiverKt.class[getF-0rlsLgg;setF-xxIERmE], Z.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: A.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], GlobalVariableContextAndReceiverKt.define[getF-0rlsLgg;setF-xxIERmE], Z.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

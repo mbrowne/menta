@@ -1,9 +1,9 @@
 package test
 
-class A {
-    annotation class Anno
+define A {
+    annotation define Anno
 }
 
-@A.Anno class B {
+@A.Anno define B {
     @A.Anno fun f() {}
 }

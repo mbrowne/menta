@@ -1,6 +1,6 @@
 package test
 
-class Some(
+define Some(
     val c: Int,
     val b: Int,
     val a: Int,

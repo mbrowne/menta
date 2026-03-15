@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ImprovedResolutionInSecondaryConstructors
 // ISSUE: KT-77275
-abstract class Super(x: String)
+abstract define Super(x: String)
 
 val y: String = ""
 
-class A(x: String = y) : Super(y) {
+define A(x: String = y) : Super(y) {
     constructor(
         w: Int,
         z: Int,

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My {
+define My {
     // No initialization needed because no backing field
     val two: Int
         get() {
