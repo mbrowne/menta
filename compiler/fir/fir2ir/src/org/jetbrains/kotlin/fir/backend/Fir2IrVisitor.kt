@@ -477,7 +477,7 @@ class Fir2IrVisitor(
     }
 
     override fun visitNamedFunction(namedFunction: FirNamedFunction, data: Any?): IrElement = whileAnalysing(session, namedFunction) {
-        val irFunction = if (namedFunction.visibility == Visibilities.Local) {
+        val irFunction = if (namedFunction.visibility == Visibilities.Local || namedFunction.origin is FirDeclarationOrigin.MentaRole) {
             declarationStorage.createAndCacheIrFunction(
                 namedFunction, irParent = conversionScope.parent(), predefinedOrigin = IrDeclarationOrigin.LOCAL_FUNCTION, isLocal = true
             )

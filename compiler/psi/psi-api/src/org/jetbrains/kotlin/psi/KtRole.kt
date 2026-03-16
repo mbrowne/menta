@@ -36,4 +36,7 @@ class KtRole(node: ASTNode) : KtDeclarationImpl(node) {
         get() = findChildByType(KtTokens.ROLE_KEYWORD)!!
 
     fun getNameIdentifier(): PsiElement? = findChildByType(KtTokens.IDENTIFIER)
+
+    fun getFunctionDeclarations(): List<KtNamedFunction> =
+        body?.statements?.filterIsInstance<KtNamedFunction>() ?: emptyList()
 }

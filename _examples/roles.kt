@@ -1,7 +1,30 @@
 define MyContext {
-    role foo {}
+    // ...
+
+    role foo {
+        fun hello() {
+            println("hi")
+        }
+    }
+}
+
+interface NamedPerson {
+    public val name: String
+}
+
+define Person(public override val name: String): NamedPerson {}
+
+fun MyFunctionContext(greeter: NamedPerson) {
+    greeter.hello()
+
+    role greeter {
+        public fun hello() {
+            println("hi, I'm ${name}")
+        }
+    }
 }
 
 fun main() {
-    println(MyContext())
+    val fred = Person("Fred")
+    MyFunctionContext(fred)
 }

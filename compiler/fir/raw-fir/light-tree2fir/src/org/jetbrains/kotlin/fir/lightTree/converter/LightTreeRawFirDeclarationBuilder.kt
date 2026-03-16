@@ -150,6 +150,8 @@ class LightTreeRawFirDeclarationBuilder(
         kind: KtFakeSourceElementKind? = null,
         convertOnlyFirstStatement: Boolean = false
     ): FirBlockBuilder {
+        // Collect role-desugared extension functions to hoist before regular statements
+        val hoistedRoleExtensions = mutableListOf<FirStatement>()
         val firStatements = block.forEachChildrenReturnList { node, container ->
             if (!convertOnlyFirstStatement || container.isEmpty()) {
                 when (node.tokenType) {
@@ -160,12 +162,15 @@ class LightTreeRawFirDeclarationBuilder(
                         convertDestructingDeclaration(node).toFirDestructingDeclaration(this, baseModuleData)
                     TYPEALIAS -> container += convertTypeAlias(node) as FirStatement
                     CLASS_INITIALIZER -> shouldNotBeCalled("CLASS_INITIALIZER expected to be processed during class body conversion")
+                    ROLE -> hoistedRoleExtensions += convertRoleToExtensionFunctions(node, block)
                     else -> if (node.isExpression()) container += expressionConverter.getAsFirStatement(node)
                 }
             }
         }
         return FirBlockBuilder().apply {
             source = block.toFirSourceElement(kind)
+            // Emit hoisted role extension functions first
+            statements += hoistedRoleExtensions
             firStatements.forEach { firStatement ->
                 val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
                 if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
@@ -174,6 +179,140 @@ class LightTreeRawFirDeclarationBuilder(
                     statements += firStatement.statements
                 }
             }
+        }
+    }
+
+    private fun convertRoleToExtensionFunctions(roleNode: LighterASTNode, blockNode: LighterASTNode): List<FirStatement> {
+        // Extract role name from IDENTIFIER child
+        val roleName = roleNode.getChildNodeByType(IDENTIFIER)?.asText ?: return emptyList()
+
+        // Walk up: ROLE -> BLOCK -> FUN to find enclosing function
+        val enclosingFunNode = blockNode.getParent()?.takeIf { it.tokenType == FUN } ?: return emptyList()
+
+        // Find the VALUE_PARAMETER_LIST in the enclosing function
+        val valueParamList = enclosingFunNode.getChildNodeByType(VALUE_PARAMETER_LIST) ?: return emptyList()
+
+        // Find the parameter whose name matches the role name and get its type
+        var matchingParamTypeNode: LighterASTNode? = null
+        valueParamList.forEachChildren { paramNode ->
+            if (paramNode.tokenType == VALUE_PARAMETER) {
+                val paramName = paramNode.getChildNodeByType(IDENTIFIER)?.asText
+                if (paramName == roleName) {
+                    paramNode.forEachChildren { child ->
+                        if (child.tokenType == TYPE_REFERENCE) {
+                            matchingParamTypeNode = child
+                        }
+                    }
+                }
+            }
+        }
+        val paramTypeNode = matchingParamTypeNode ?: return emptyList()
+
+        // Find the BLOCK child of the role node (role body)
+        val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return emptyList()
+
+        // Convert each FUN in the role body to an extension function with receiver type
+        val result = mutableListOf<FirStatement>()
+        roleBody.forEachChildren { childNode ->
+            if (childNode.tokenType == FUN) {
+                result += convertRoleFunctionDeclaration(childNode, paramTypeNode, roleName)
+            }
+        }
+        return result
+    }
+
+    private fun convertRoleFunctionDeclaration(
+        functionDeclaration: LighterASTNode,
+        receiverTypeNode: LighterASTNode,
+        roleName: String,
+    ): FirStatement {
+        var modifiers: ModifierList? = null
+        var identifier: String? = null
+        var valueParametersList: LighterASTNode? = null
+        var isReturnType = false
+        var returnType: FirTypeRef? = null
+        var block: LighterASTNode? = null
+        var expression: LighterASTNode? = null
+        var hasEqToken = false
+        var typeParameterList: LighterASTNode? = null
+        functionDeclaration.getChildNodeByType(IDENTIFIER)?.let {
+            identifier = it.asText
+        }
+
+        val functionSource = functionDeclaration.toFirSourceElement()
+        val functionName = identifier.nameAsSafeName()
+        val functionSymbol = FirNamedFunctionSymbol(callableIdForName(functionName))
+
+        return withContainerSymbol(functionSymbol, true) {
+            val labelName = functionName.identifier
+            val target = FirFunctionTarget(labelName, isLambda = false)
+
+            functionDeclaration.forEachChildren {
+                when (it.tokenType) {
+                    MODIFIER_LIST -> modifiers = convertModifierList(it)
+                    TYPE_PARAMETER_LIST -> typeParameterList = it
+                    VALUE_PARAMETER_LIST -> valueParametersList = it
+                    COLON -> isReturnType = true
+                    TYPE_REFERENCE -> if (isReturnType) returnType = convertType(it)
+                    BLOCK -> block = it
+                    EQ -> hasEqToken = true
+                    else -> if (it.isExpression()) expression = it
+                }
+            }
+
+            val resolvedReturnType = returnType
+                ?: if (block != null || !hasEqToken) implicitUnitType else implicitType
+
+            val firTypeParameters = mutableListOf<FirTypeParameter>()
+            typeParameterList?.let { firTypeParameters += convertTypeParameters(it, emptyList(), functionSymbol) }
+
+            // Public role methods are callable on the role player; private (default) are not
+            val calculatedModifiers = modifiers ?: ModifierList()
+            val isPublic = calculatedModifiers.getVisibility() == Visibilities.Public
+            val roleVisibility = if (isPublic) Visibilities.Local else Visibilities.Private
+
+            val function = FirNamedFunctionBuilder().apply {
+                source = functionSource
+                receiverParameter = createReceiverParameter(
+                    { convertType(receiverTypeNode) },
+                    baseModuleData,
+                    functionSymbol,
+                )
+                name = functionName
+                this.isLocal = true
+                status = FirDeclarationStatusImpl(
+                    roleVisibility,
+                    calculatedModifiers.getModality(isClassOrObject = false),
+                )
+                symbol = functionSymbol
+                dispatchReceiverType = null
+
+                moduleData = baseModuleData
+                origin = FirDeclarationOrigin.MentaRole(roleName)
+                returnTypeRef = resolvedReturnType
+
+                context.firFunctionTargets += target
+                modifiers?.convertAnnotationsTo(annotations)
+                typeParameters += firTypeParameters
+
+                withCapturedTypeParameters(true, functionSource, typeParameters) {
+                    valueParametersList?.let { list ->
+                        valueParameters += convertValueParameters(
+                            list, functionSymbol, ValueParameterDeclaration.FUNCTION,
+                        ).map { it.firValueParameter }
+                    }
+
+                    val bodyWithContractDescription = withForcedLocalContext {
+                        convertFunctionBody(block, expression, allowLegacyContractDescription = false)
+                    }
+                    this.body = bodyWithContractDescription.first
+                }
+                context.firFunctionTargets.removeLast()
+            }.build().also {
+                target.bind(it)
+            }
+
+            function
         }
     }
 

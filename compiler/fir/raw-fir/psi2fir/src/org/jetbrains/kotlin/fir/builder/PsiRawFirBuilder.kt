@@ -3204,7 +3204,22 @@ open class PsiRawFirBuilder(
         private fun configureBlockWithoutBuilding(expression: KtBlockExpression, kind: KtFakeSourceElementKind? = null): FirBlockBuilder {
             return FirBlockBuilder().apply {
                 source = expression.toFirSourceElement(kind)
+
+                // Partition statements: hoist role-desugared extension functions before regular statements
+                val roleDeclarations = expression.statements.filterIsInstance<KtRole>()
+                for (role in roleDeclarations) {
+                    val roleName = role.getNameIdentifier()?.text ?: continue
+                    val enclosingFunction = role.parents.filterIsInstance<KtNamedFunction>().firstOrNull() ?: continue
+                    val matchingParam = enclosingFunction.valueParameters.find { it.name == roleName } ?: continue
+                    val paramTypeReference = matchingParam.typeReference ?: continue
+
+                    for (roleFunc in role.getFunctionDeclarations()) {
+                        statements += convertRoleFunctionToExtension(roleFunc, paramTypeReference, roleName)
+                    }
+                }
+
                 for (statement in expression.statements) {
+                    if (statement is KtRole) continue
                     val firStatement = statement.toFirStatement { "Statement expected: ${statement.text}" }
                     val isForLoopBlock =
                         firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
@@ -3213,6 +3228,66 @@ open class PsiRawFirBuilder(
                     } else {
                         statements += firStatement.statements
                     }
+                }
+            }
+        }
+
+        private fun convertRoleFunctionToExtension(
+            roleFunc: KtNamedFunction,
+            receiverTypeReference: KtTypeReference,
+            roleName: String,
+        ): FirNamedFunction {
+            val functionSymbol = FirNamedFunctionSymbol(callableIdForName(roleFunc.nameAsSafeName))
+            return withContainerSymbol(functionSymbol, true) {
+                val labelName = roleFunc.nameAsSafeName.identifier
+                val target = FirFunctionTarget(labelName, isLambda = false)
+                val functionSource = roleFunc.toFirSourceElement()
+
+                // Public role methods are callable on the role player; private (default) are not
+                val isPublic = roleFunc.hasModifier(PUBLIC_KEYWORD)
+                val roleVisibility = if (isPublic) Visibilities.Local else Visibilities.Private
+
+                FirNamedFunctionBuilder().apply {
+                    source = functionSource
+                    moduleData = baseModuleData
+                    origin = FirDeclarationOrigin.MentaRole(roleName)
+                    name = roleFunc.nameAsSafeName
+                    symbol = functionSymbol
+                    dispatchReceiverType = null
+                    isLocal = true
+                    status = FirDeclarationStatusImpl(roleVisibility, roleFunc.modality)
+
+                    returnTypeRef = if (roleFunc.hasBlockBody()) {
+                        roleFunc.typeReference.toFirOrUnitType()
+                    } else {
+                        roleFunc.typeReference.toFirOrImplicitType()
+                    }
+
+                    receiverParameter = createReceiverParameter(
+                        { receiverTypeReference.toFirType() },
+                        baseModuleData,
+                        functionSymbol,
+                    )
+
+                    context.firFunctionTargets += target
+                    roleFunc.extractAnnotationsTo(this)
+                    roleFunc.extractTypeParametersTo(this, functionSymbol)
+
+                    for (valueParameter in roleFunc.valueParameters) {
+                        valueParameters += valueParameter.toFirValueParameter(
+                            null, functionSymbol, ValueParameterDeclaration.FUNCTION,
+                        )
+                    }
+
+                    withCapturedTypeParameters(true, functionSource, typeParameters) {
+                        val (body, _) = withForcedLocalContext {
+                            roleFunc.buildFirBody()
+                        }
+                        this.body = body
+                    }
+                    context.firFunctionTargets.removeLast()
+                }.build().also {
+                    bindFunctionTarget(target, it)
                 }
             }
         }
