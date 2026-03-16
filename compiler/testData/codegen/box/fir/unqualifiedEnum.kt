@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // LANGUAGE: +ContextSensitiveResolutionUsingExpectedType
 
-enum class Rainbow {
+enum define Rainbow {
     RED,
     ORANGE,
     YELLOW,

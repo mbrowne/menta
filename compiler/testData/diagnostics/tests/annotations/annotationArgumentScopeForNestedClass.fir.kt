@@ -2,14 +2,14 @@
 // ISSUE: KT-76357
 
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.TYPE)
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 const val CONST = 1
 
-class MyClass {
+define MyClass {
     val CONST = ""
     @Anno(CONST)
-    class NestedClass(
+    define NestedClass(
         @Anno(CONST) val a: String,
     ) : @Anno(CONST) Any() {
         @Anno(CONST)
@@ -17,7 +17,7 @@ class MyClass {
     }
 
     @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST<!>)
-    inner class InnerClass(
+    inner define InnerClass(
         @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST<!>) val a: String,
     ) : @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST<!>) Any() {
         @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST<!>)
@@ -25,17 +25,17 @@ class MyClass {
     }
 }
 
-open class SuperClass {
+open define SuperClass {
     companion object {
         const val CONST2 = 1
     }
 }
 
-class Subclass : SuperClass() {
+define Subclass : SuperClass() {
     val CONST2 = "str"
 
     @Anno(CONST2)
-    class NestedClass(
+    define NestedClass(
         @Anno(CONST2) val a: String,
     ) : @Anno(CONST2) Any() {
         @Anno(CONST2)
@@ -43,7 +43,7 @@ class Subclass : SuperClass() {
     }
 
     @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST2<!>)
-    inner class InnerClass(
+    inner define InnerClass(
         @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST2<!>) val a: String,
     ) : @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST2<!>) Any() {
         @Anno(<!ARGUMENT_TYPE_MISMATCH, NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>CONST2<!>)

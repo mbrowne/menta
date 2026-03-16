@@ -16,7 +16,7 @@ fun test(f: Function<*>, arity: Int) {
 }
 
 suspend fun foo(s: String, i: Int) {}
-class A {
+define A {
     suspend fun bar(s: String, i: Int) {}
 }
 

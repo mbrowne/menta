@@ -8,11 +8,11 @@ interface D2 {
 
 interface F3 : D1, D2
 
-open class D4 {
+open define D4 {
     fun foo(): Int = 42
 }
 
-class F5 : F3, D4()
+define F5 : F3, D4()
 
 fun box(): String {
     val z = F5()

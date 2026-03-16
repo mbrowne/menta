@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
-public class A<T> {
+public define A<T> {
     public interface I<T> {
         String apply(T x);
     }

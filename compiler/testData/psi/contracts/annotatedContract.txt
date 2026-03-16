@@ -45,7 +45,7 @@ KtFile: annotatedContract.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Anno')
   PsiErrorElement:imports are only allowed in the beginning of file
@@ -82,7 +82,7 @@ KtFile: annotatedContract.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')

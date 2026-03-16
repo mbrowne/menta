@@ -14,17 +14,17 @@ interface C<A : Any, B : Any> {
 }
 
 
-data class A(val s: String) {
+data define A(val s: String) {
     companion object : C<A, String> by C.inlinefun(
         fooParam = { it.s }
     )
 }
 
-class OtherB {
+define OtherB {
     var a: String? = null
 }
 
-data class B(val a: A?) {
+data define B(val a: A?) {
     companion object : C<B, OtherB> by C.inlinefun(
         fooParam = {
             OtherB().apply {

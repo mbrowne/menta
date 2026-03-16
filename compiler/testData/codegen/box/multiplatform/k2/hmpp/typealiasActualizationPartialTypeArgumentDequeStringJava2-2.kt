@@ -3,7 +3,7 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class A {
+expect define A {
     fun push(x: String)
     fun pop(): String
 }
@@ -12,7 +12,7 @@ expect class A {
 // FILE: JavaDeque.java
 import java.util.ArrayDeque;
 
-public class JavaDeque {
+public define JavaDeque {
     private final ArrayDeque<String> deque = new ArrayDeque<>();
 
     public void push(String x) {

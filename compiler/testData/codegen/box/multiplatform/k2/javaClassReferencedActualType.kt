@@ -17,7 +17,7 @@ public actual interface Base {
 }
 
 // FILE: Derived.java
-public abstract class Derived implements Base {
+public abstract define Derived implements Base {
     @Override
     public Base.PropType getValue() { // /Base/PropType
         return new Base.PropType() {
@@ -30,7 +30,7 @@ public abstract class Derived implements Base {
 }
 
 // FILE: main.kt
-class Impl : Derived()
+define Impl : Derived()
 
 fun box(): String {
     return Impl().value.name

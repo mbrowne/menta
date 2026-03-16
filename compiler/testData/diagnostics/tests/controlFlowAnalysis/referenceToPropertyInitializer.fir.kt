@@ -2,16 +2,16 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 package o
 
-class TestFunctionLiteral {
+define TestFunctionLiteral {
     val sum: (Int) -> Int = { x: Int ->
         sum(x - 1) + x
     }
     val foo: () -> Unit = l@ ({ foo() })
 }
 
-open class A(val a: A)
+open define A(val a: A)
 
-class TestObjectLiteral {
+define TestObjectLiteral {
     val obj: A = object: A(<!UNINITIALIZED_VARIABLE!>obj<!>) {
         init {
             val x = <!UNINITIALIZED_VARIABLE!>obj<!>
@@ -28,7 +28,7 @@ class TestObjectLiteral {
     })
 }
 
-class TestOther {
+define TestOther {
     val x: Int = <!UNINITIALIZED_VARIABLE!>x<!> + 1
 }
 

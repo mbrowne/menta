@@ -1,8 +1,8 @@
-open class A<T> {
+open define A<T> {
     open fun f(args : Array<T>) {}
 }
 
-class B(): A<String>() {
+define B(): A<String>() {
     override fun f(args : Array<String>) {}
 }
 

@@ -6,13 +6,13 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class UInt(val x: Int)
+value define UInt(val x: Int)
 
 @JvmInline
-value class UIntArray(private val storage: IntArray) : Collection<UInt> {
+value define UIntArray(private val storage: IntArray) : Collection<UInt> {
     public override val size: Int get() = storage.size
 
     override operator fun iterator() = TODO()

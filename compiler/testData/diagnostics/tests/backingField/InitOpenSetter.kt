@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class My(val v: Int) {
+abstract define My(val v: Int) {
     // Ok: variable is just abstract
     abstract var x: Int
 

@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class ValByMapExtensionsTest {
+define ValByMapExtensionsTest {
     val map: Map<String, String> = hashMapOf("a" to "all", "b" to "bar", "c" to "code")
     val genericMap = mapOf<String, Any?>("i" to 1, "x" to 1.0)
     val mmapOut: MutableMap<String, out String> = mutableMapOf("g" to "out", "g1" to "in")

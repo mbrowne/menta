@@ -5,21 +5,21 @@
 // FILE: Point.kt
 
 @JvmInline
-value class Point(val x: Int, val y: Int)
+value define Point(val x: Int, val y: Int)
 
 // FILE: KotlinBase.kt
 
-open class KotlinBase {
+open define KotlinBase {
     open fun foo(x : Point) = 42
 }
 
 // FILE: JavaChild.java
 
-public class JavaChild extends KotlinBase {}
+public define JavaChild extends KotlinBase {}
 
 // FILE: KotlinChild.kt
 
-class KotlinChild : JavaChild() {
+define KotlinChild : JavaChild() {
     override fun foo(x : Point) = 24
 }
 

@@ -6,7 +6,7 @@ package test
 
 import kotlin.reflect.full.*
 
-class A {
+define A {
     var String.id: String
         get() = this
         set(value) {}
@@ -15,10 +15,10 @@ class A {
 }
 
 fun box(): String {
-    val p = A::class.memberExtensionProperties.single()
+    val p = A::define.memberExtensionProperties.single()
     return if ("$p" == "var test.A.(kotlin.String.)id: kotlin.String") "OK" else "Fail $p"
 
-    val q = A::class.declaredFunctions.single()
+    val q = A::define.declaredFunctions.single()
     if ("$q" != "fun test.A.(kotlin.Int.)foo(): kotlin.Double") return "Fail q $q"
 
     return "OK"

@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: BaseImplJava.java
-public class BaseImplJava implements Base {
+public define BaseImplJava implements Base {
     @Override
     public String foo(int a) {
         return "O";

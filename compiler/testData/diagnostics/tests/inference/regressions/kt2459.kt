@@ -5,7 +5,7 @@ package b
 
 import java.util.*
 
-class B<T>(val x: List<T>)
+define B<T>(val x: List<T>)
 fun <T> f(x: T): B<T> = B(arrayList(x))
 
 // from standard library

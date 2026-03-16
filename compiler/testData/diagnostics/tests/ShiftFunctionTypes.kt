@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: a.kt
-class A {
+define A {
 }
 
 // FILE: b.kt
 package n
-  class B
+  define B
 // FILE: c.kt
-abstract class XXX() {
+abstract define XXX() {
     abstract val a : Int
     abstract val a2 : n.B
     abstract val a3 : (A)
@@ -35,7 +35,7 @@ abstract class XXX() {
     abstract val a19 : ((Int) -> Int) -> Int
 }
 
-abstract class YYY() {
+abstract define YYY() {
     abstract val a7 : (a : A) -> n.B
     abstract val a8 : (a : A, b : n.B) -> n.B
 //val a9 : (A, B)

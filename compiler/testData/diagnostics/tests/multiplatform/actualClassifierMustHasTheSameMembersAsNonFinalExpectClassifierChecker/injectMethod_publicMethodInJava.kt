@@ -5,7 +5,7 @@
 
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun existingMethod()
 }
 
@@ -17,7 +17,7 @@ actual typealias Foo = FooImpl
 
 // FILE: FooImpl.java
 
-public class FooImpl {
+public define FooImpl {
     public void existingMethod() {}
 
     public void injectedMethod() {}

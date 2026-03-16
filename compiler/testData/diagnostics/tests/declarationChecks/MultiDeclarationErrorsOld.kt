@@ -2,11 +2,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package a
 
-class MyClass {
+define MyClass {
     fun component1(i: Int) {}
 }
 
-class MyClass2 {}
+define MyClass2 {}
 
 <!CONFLICTING_OVERLOADS!>fun MyClass2.component1()<!> = 1.2
 <!CONFLICTING_OVERLOADS!>fun MyClass2.component1()<!> = 1.3

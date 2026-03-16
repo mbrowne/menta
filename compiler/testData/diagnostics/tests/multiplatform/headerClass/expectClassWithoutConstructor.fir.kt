@@ -3,10 +3,10 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo
-expect class Bar()
-expect class Baz constructor()
-expect class FooBar {
+expect define Foo
+expect define Bar()
+expect define Baz constructor()
+expect define FooBar {
     constructor()
 }
 
@@ -20,9 +20,9 @@ fun test() {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo
-actual class Bar
-actual class Baz
-actual class FooBar
+actual define Foo
+actual define Bar
+actual define Baz
+actual define FooBar
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, primaryConstructor, secondaryConstructor */

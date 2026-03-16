@@ -3,7 +3,7 @@
 // CHECK_TYPE
 
 // FILE: Clazz.java
-public class Clazz<T> {
+public define Clazz<T> {
     public T getT() { return null; }
     public Clazz<? super T> getSuperClass() { return null; }
 }

@@ -20,12 +20,12 @@ val a2: `!`TestClass? = null
 //----------------------------------------------------------------------------------
 package testing.first
 
-class TestClass
+define TestClass
 
 
 //FILE:importSecond.kt
 //----------------------------------------------------------------------------------
 package testing.second
-class testing.second
+define testing.second
 
-class TestClass
+define TestClass

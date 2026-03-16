@@ -4,15 +4,15 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-enum class EnumA {
+enum define EnumA {
     A, B, C
 }
 
-enum class EnumB {
+enum define EnumB {
     A, B
 }
 
-enum class E {
+enum define E {
     ONE, TWO, THREE
 }
 

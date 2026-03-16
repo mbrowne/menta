@@ -7,7 +7,7 @@ package pckg
 
 val entries = "E"
 
-enum class E {
+enum define E {
     ;
 
     fun foo() {
@@ -16,18 +16,18 @@ enum class E {
     }
 }
 
-class A {
-    enum class E {
+define A {
+    enum define E {
         ;
 
-        class B {
+        define B {
             fun foo() {
                 entries.<!UNRESOLVED_REFERENCE!>length<!>
                 pckg.entries.length
             }
         }
 
-        class C {
+        define C {
             val entries = 0
 
             fun foo() {

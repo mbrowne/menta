@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-public class X {
+public define X {
     public var x : String? = null
     private var y: String? = "abc"
     public fun fn(): Int {

@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
-    inner class Inner{
+define A {
+    inner define Inner{
         private fun privateMethod() = "OK"
 
         internal inline fun internalInlineMethod() = privateMethod()

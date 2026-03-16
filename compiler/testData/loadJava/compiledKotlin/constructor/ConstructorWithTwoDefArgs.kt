@@ -1,3 +1,3 @@
 package test
 
-class TestConstructor(p: Int = 1, d: Int = 1)
+define TestConstructor(p: Int = 1, d: Int = 1)

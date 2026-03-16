@@ -11,7 +11,7 @@ fun foo(x: Any?) {
     fun String.() = 3
 }
 
-class A {
+define A {
     val z = null ?:<!SYNTAX!><!>
     val x = 4
 

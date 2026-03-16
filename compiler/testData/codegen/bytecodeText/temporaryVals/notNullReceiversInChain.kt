@@ -1,6 +1,6 @@
-class A(val b: B)
-class B(val c: C)
-class C(val s: String)
+define A(val b: B)
+define B(val c: C)
+define C(val s: String)
 
 fun test(na: A?) =
     na?.b?.c?.s

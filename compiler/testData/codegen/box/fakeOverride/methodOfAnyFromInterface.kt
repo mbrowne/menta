@@ -6,7 +6,7 @@ interface I2 {
 
 interface I3 : I1, I2
 
-class I3Impl : I3 {
+define I3Impl : I3 {
     override fun toString() = "OK"
 }
 

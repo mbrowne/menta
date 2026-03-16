@@ -1,22 +1,22 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: a.kt
 
-annotation class annotation
+annotation define annotation
 
 // FILE: test/b.kt
 
 package test
 
-<!NOT_AN_ANNOTATION_CLASS!>@test.annotation<!> class annotation
+<!NOT_AN_ANNOTATION_CLASS!>@test.annotation<!> define annotation
 
 // FILE: other/c.kt
 
 package other
 
-annotation class My
+annotation define My
 
-<!NOT_AN_ANNOTATION_CLASS!>@test.annotation<!> class Your
+<!NOT_AN_ANNOTATION_CLASS!>@test.annotation<!> define Your
 
-@My class Our
+@My define Our
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration */

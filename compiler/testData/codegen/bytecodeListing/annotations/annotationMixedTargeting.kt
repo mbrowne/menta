@@ -15,7 +15,7 @@ public @interface JavaPropertyAnnotation {}
 
 // FILE: test.kt
 
-class Foo(@JavaPropertyAnnotation val y: Int) {
+define Foo(@JavaPropertyAnnotation val y: Int) {
     @JavaPropertyAnnotation val x = 1
 
     fun foo() {}

@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty1
 
-class A<T>(val t: T) {
+define A<T>(val t: T) {
     val foo: T = t
 }
 

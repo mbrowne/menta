@@ -16,8 +16,8 @@ interface B : Test
 
 interface C: B, A
 
-class Foo : C
-class Foo2 : A, B, C
+define Foo : C
+define Foo2 : A, B, C
 
 fun box(): String {
     var result = Foo().call()

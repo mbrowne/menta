@@ -10,8 +10,8 @@ expect interface Marker
     val <!NO_ACTUAL_FOR_EXPECT{JVM}!>test<!>: String
 }
 
-open class B : Marker {}
-class C : B(), Marker {}
+open define B : Marker {}
+define C : B(), Marker {}
 
 interface Marker2: Marker
 interface Marker3: Marker2, Marker

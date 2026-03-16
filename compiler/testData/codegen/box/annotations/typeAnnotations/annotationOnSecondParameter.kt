@@ -3,9 +3,9 @@
 // FULL_JDK
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Ann(val value: String)
+annotation define Ann(val value: String)
 
-class C<T, @Ann("OK") U>
+define C<T, @Ann("OK") U>
 
 fun box(): String =
-    C::class.java.typeParameters[1].getAnnotation(Ann::class.java).value
+    C::define.java.typeParameters[1].getAnnotation(Ann::define.java).value

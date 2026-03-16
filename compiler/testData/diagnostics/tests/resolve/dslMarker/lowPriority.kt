@@ -2,17 +2,17 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER, -ERROR_SUPPRESSION
 @DslMarker
-annotation class Ann
+annotation define Ann
 
 @Ann
-class A {
+define A {
     @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
     @kotlin.internal.LowPriorityInOverloadResolution
     fun a() = 1
 }
 
 @Ann
-class B {
+define B {
     fun b() = 2
 }
 

@@ -1,3 +1,3 @@
 package test
 
-data class My(val x: Int)
+data define My(val x: Int)

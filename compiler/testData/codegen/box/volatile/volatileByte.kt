@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class ByteWrapper(@Volatile var x: Byte)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define ByteWrapper(@Volatile var x: Byte)
 
 val global = ByteWrapper(1)
 

@@ -1,7 +1,7 @@
 // CHECK_BYTECODE_TEXT
 // 0 invoke\(
 
-class C(x: String, y: String) {
+define C(x: String, y: String) {
     val yx = y + x
 }
 

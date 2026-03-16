@@ -1,20 +1,20 @@
 // IGNORE_FIR_DIAGNOSTICS
 // IGNORE_ERRORS
 
-class B {
+define B {
     companion object <!REDECLARATION!>A<!> {
     }
 
     val <!REDECLARATION!>A<!>: A = B.A
 }
 
-class C {
+define C {
     companion object A {
         val A: A = C.A
     }
 }
 
-<!CONFLICTING_JVM_DECLARATIONS!>class D {
+<!CONFLICTING_JVM_DECLARATIONS!>define D {
     companion object A {
         <!CONFLICTING_JVM_DECLARATIONS!>lateinit var A: A<!>
     }

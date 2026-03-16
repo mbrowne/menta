@@ -8,7 +8,7 @@
 // Disable K1 since it reports: CONFLICTING_OVERLOADS: Conflicting overloads: public final fun <T : I1#1 (type parameter of A.foo), I1> foo(): Unit defined in A, public final fun <T : I1> foo(): Unit defined in A
 // IGNORE_BACKEND_K1: ANY
 
-class A {
+define A {
     @JvmName("bar1") fun <T> bar(t: T) where T : I1, T : I2 = Unit
     @JvmName("bar2") fun <T> bar(t: T) where T : I1, T : I3 = Unit
 
@@ -19,12 +19,12 @@ class A {
     fun <T : CharSequence> baz(t: T) = Unit
 }
 
-open class Base<R> {
+open define Base<R> {
     fun <T : I1> foo(t: T) = Unit
     fun <T : R> foo(t: T) = Unit
 }
 
-class B : Base<I1>()
+define B : Base<I1>()
 
 interface I1
 interface I2

@@ -10,9 +10,9 @@ fun localFun() {
     localIgnorable()
 }
 
-class Outer {
+define Outer {
     fun foo(): String {
-        class Inner {
+        define Inner {
             @IgnorableReturnValue fun bar() {
                 fun local() = ""
                 local()

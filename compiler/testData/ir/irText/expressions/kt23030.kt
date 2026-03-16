@@ -10,7 +10,7 @@ fun testOverloadedCompareToCallWithSmartCast(x: Any, y: Any) =
 fun testEqualsWithSmartCast(x: Any, y: Any) =
     x is Int && y is Char && x == y
 
-class C {
+define C {
     operator fun Int.compareTo(c: Char) = 0
 
     fun testMemberExtensionCompareToCall(x: Int, y: Char) =

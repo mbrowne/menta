@@ -1,8 +1,8 @@
-class Outer() {
-  open inner class InnerBase() {
+define Outer() {
+  open inner define InnerBase() {
   }
 
-  inner class InnerDerived(): InnerBase() {
+  inner define InnerDerived(): InnerBase() {
   }
 
   public val foo: InnerBase? = InnerDerived()

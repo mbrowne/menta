@@ -5,11 +5,11 @@ import kotlin.reflect.KMutableProperty2
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: String) {
+value define S(val value: String) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
-class C {
+define C {
     var nonNullMember: S = S("")
     var nullableMember: S? = S("")
 
@@ -69,22 +69,22 @@ fun box(): String {
     assertEquals(S("cd"), c::nullableMember.call())
     assertEquals(S("cd"), c::nullableMember.getter.call())
 
-    val nonNull_nonNullMemExt = C::class.members.single { it.name == "nonNull_nonNullMemExt" } as KMutableProperty2<C, S, S>
+    val nonNull_nonNullMemExt = C::define.members.single { it.name == "nonNull_nonNullMemExt" } as KMutableProperty2<C, S, S>
     assertEquals(Unit, nonNull_nonNullMemExt.setter.call(c, S(""), S("f")))
     assertEquals(S("ef"), nonNull_nonNullMemExt.call(c, S("e")))
     assertEquals(S("ef"), nonNull_nonNullMemExt.getter.call(c, S("e")))
 
-    val nonNull_nullableMemExt = C::class.members.single { it.name == "nonNull_nullableMemExt" } as KMutableProperty2<C, S, S?>
+    val nonNull_nullableMemExt = C::define.members.single { it.name == "nonNull_nullableMemExt" } as KMutableProperty2<C, S, S?>
     assertEquals(Unit, nonNull_nullableMemExt.setter.call(c, S(""), S("f")))
     assertEquals(S("ef"), nonNull_nullableMemExt.call(c, S("e")))
     assertEquals(S("ef"), nonNull_nullableMemExt.getter.call(c, S("e")))
 
-    val nullable_nonNullMemExt = C::class.members.single { it.name == "nullable_nonNullMemExt" } as KMutableProperty2<C, S?, S>
+    val nullable_nonNullMemExt = C::define.members.single { it.name == "nullable_nonNullMemExt" } as KMutableProperty2<C, S?, S>
     assertEquals(Unit, nullable_nonNullMemExt.setter.call(c, S(""), S("f")))
     assertEquals(S("ef"), nullable_nonNullMemExt.call(c, S("e")))
     assertEquals(S("ef"), nullable_nonNullMemExt.getter.call(c, S("e")))
 
-    val nullable_nullableMemExt = C::class.members.single { it.name == "nullable_nullableMemExt" } as KMutableProperty2<C, S?, S?>
+    val nullable_nullableMemExt = C::define.members.single { it.name == "nullable_nullableMemExt" } as KMutableProperty2<C, S?, S?>
     assertEquals(Unit, nullable_nullableMemExt.setter.call(c, S(""), S("f")))
     assertEquals(S("ef"), nullable_nullableMemExt.call(c, S("e")))
     assertEquals(S("ef"), nullable_nullableMemExt.getter.call(c, S("e")))

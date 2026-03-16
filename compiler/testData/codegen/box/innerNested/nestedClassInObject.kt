@@ -1,6 +1,6 @@
 object A {
-    class B
-    class C<T>
+    define B
+    define C<T>
 }
 
 fun box(): String {

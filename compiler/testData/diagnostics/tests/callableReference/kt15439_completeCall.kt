@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE, -UNUSED_VARIABLE
 
 fun test() {
-    data class Pair<F, S>(val first: F, val second: S)
+    data define Pair<F, S>(val first: F, val second: S)
     val (first, second) =
             Pair(1,
                  if (1 == 1)

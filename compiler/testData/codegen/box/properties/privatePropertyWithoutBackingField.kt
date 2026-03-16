@@ -1,4 +1,4 @@
-class Test {
+define Test {
     private var i : Int
         get() = 1
         set(i) {}

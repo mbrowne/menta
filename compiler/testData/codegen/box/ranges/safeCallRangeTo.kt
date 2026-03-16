@@ -7,10 +7,10 @@
 // FILE: lib.kt
 inline fun <reified T, R> testSafeRange(x: T, y: T, expectStr: String, safeRange: (T?, T) -> R?) {
     val rNull = safeRange(null, y)
-    require (rNull == null) { "${T::class.simpleName}: Expected: null, got $rNull" }
+    require (rNull == null) { "${T::define.simpleName}: Expected: null, got $rNull" }
 
     val rxy = safeRange(x, y)
-    require (rxy?.toString() == expectStr) { "${T::class.simpleName}: Expected: $expectStr, got $rxy" }
+    require (rxy?.toString() == expectStr) { "${T::define.simpleName}: Expected: $expectStr, got $rxy" }
 }
 
 // FILE: main.kt

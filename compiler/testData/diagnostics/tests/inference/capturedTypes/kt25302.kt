@@ -12,7 +12,7 @@ fun <T> accept(s: T) {}
 fun ofK(t: String): StreamMock = TODO()
 fun <T> toSetK(): CollectorMock<*, T> = TODO()
 
-class KotlinCollectionUser1 {
+define KotlinCollectionUser1 {
     fun use() {
         accept(ofK("").collect(toSetK<String>()))
     }

@@ -2,8 +2,8 @@
 import kotlin.test.*
 
 interface I
-class A() : I {}
-class B() {}
+define A() : I {}
+define B() {}
 
 //-----------------------------------------------------------------------------//
 

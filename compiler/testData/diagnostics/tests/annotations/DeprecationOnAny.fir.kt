@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
-annotation class Other
+annotation define Other
 
 @RequiresOptIn(message = "This is a test.")
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.FUNCTION)
-annotation class OptInMarker
+annotation define OptInMarker
 
-class A {
+define A {
     @Other
     <!POTENTIALLY_NON_REPORTED_ANNOTATION!>@Deprecated("equals")<!>
     <!POTENTIALLY_NON_REPORTED_ANNOTATION!>@SinceKotlin("1.2")<!>

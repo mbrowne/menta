@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class TestClass {
+define TestClass {
     val x: Int
 
     init {

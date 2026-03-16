@@ -3,7 +3,7 @@
 // FILE: main.kt
 import kotlin.reflect.KFunction2
 
-class Sample {
+define Sample {
     object A {
         fun max(x: Int, y: Int): Int {
             return if (x > y) {
@@ -25,7 +25,7 @@ object A2 {
     }
 }
 
-abstract class Checker {
+abstract define Checker {
     fun check(): String {
         return run(
             Sample.A::max,

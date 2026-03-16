@@ -11,9 +11,9 @@
 import java.util.HashMap
 import java.util.SortedMap
 
-abstract class A : SortedMap<Boolean, Boolean>, HashMap<Boolean, Boolean>()
+abstract define A : SortedMap<Boolean, Boolean>, HashMap<Boolean, Boolean>()
 
-abstract class B : SortedMap<Boolean, Boolean>, HashMap<Boolean, Boolean>() {
+abstract define B : SortedMap<Boolean, Boolean>, HashMap<Boolean, Boolean>() {
     override fun put(key: Boolean, value: Boolean): Boolean? {
         return false
     }

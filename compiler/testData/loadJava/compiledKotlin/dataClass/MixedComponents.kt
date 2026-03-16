@@ -1,3 +1,3 @@
 package test
 
-data class DataClass(var x: String, val z: Double)
+data define DataClass(var x: String, val z: Double)

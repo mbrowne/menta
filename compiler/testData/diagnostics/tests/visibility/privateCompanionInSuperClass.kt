@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
-open class BaseWithPrivate {
+open define BaseWithPrivate {
     private companion object {
         val X: Int = 1
         val Y: Int = 1
     }
 }
 
-open class Base {
+open define Base {
     companion object {
         val X: String = ""
     }
 }
 
-class Derived : Base() {
+define Derived : Base() {
     fun foo() {
         object : BaseWithPrivate() {
             fun bar() {

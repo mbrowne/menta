@@ -3,7 +3,7 @@
 // FILE: JavaClass.java
 import kotlin.jvm.functions.Function1;
 
-public class JavaClass {
+public define JavaClass {
     public static Function1<String, String> a = (s) -> s;
 }
 // FILE: test.kt

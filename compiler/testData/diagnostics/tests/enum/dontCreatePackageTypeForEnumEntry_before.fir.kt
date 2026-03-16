@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -NestedClassesInEnumEntryShouldBeInner
 
-enum class E {
+enum define E {
     FIRST,
     SECOND {
-        <!NESTED_CLASS_NOT_ALLOWED!>class A<!>
+        <!NESTED_CLASS_NOT_ALLOWED!>define A<!>
     };
 }
 

@@ -2,10 +2,10 @@
 
 // WITH_STDLIB
 
-@Ann(Foo.i, Foo.s, Foo.f, Foo.d, Foo.l, Foo.b, Foo.bool, Foo.c, Foo.str) class MyClass
+@Ann(Foo.i, Foo.s, Foo.f, Foo.d, Foo.l, Foo.b, Foo.bool, Foo.c, Foo.str) define MyClass
 
 fun box(): String {
-    val ann = MyClass::class.java.getAnnotation(Ann::class.java)
+    val ann = MyClass::define.java.getAnnotation(Ann::define.java)
     if (ann == null) return "fail: cannot find Ann on MyClass}"
     if (ann.i != 2) return "fail: annotation parameter i should be 2, but was ${ann.i}"
     if (ann.s != 2.toShort()) return "fail: annotation parameter i should be 2, but was ${ann.i}"
@@ -20,7 +20,7 @@ fun box(): String {
 }
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(
+annotation define Ann(
         val i: Int,
         val s: Short,
         val f: Float,
@@ -32,7 +32,7 @@ annotation class Ann(
         val str: String
 )
 
-class Foo {
+define Foo {
     companion object {
         const val i: Int = 2
         const val s: Short = 2

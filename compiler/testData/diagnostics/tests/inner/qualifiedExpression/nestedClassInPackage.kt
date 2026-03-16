@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 package A
 
-class B {
-    class C {
+define B {
+    define C {
     }
 }
 

@@ -3,7 +3,7 @@
 @nativeSetter
 fun Int.foo(a: String, v: Int): Int = definedExternally
 
-external class Bar(b: Int, c: Char) {
+external define Bar(b: Int, c: Char) {
     @nativeSetter
     fun baz(d: Int, v: Int) { definedExternally }
 }

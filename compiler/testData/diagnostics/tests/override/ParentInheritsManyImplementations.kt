@@ -10,12 +10,12 @@ interface B {
     fun foo() = 2
 }
 
-open <!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>class C<!> : A, B {}
+open <!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>define C<!> : A, B {}
 
 interface E {
     fun foo(): Int
 }
 
-class D : C() {}
+define D : C() {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, integerLiteral, interfaceDeclaration */

@@ -6,7 +6,7 @@
 
 package kotlin.test
 
-annotation class IrrelevantClass
+annotation define IrrelevantClass
 
 public typealias Test = IrrelevantClass
 
@@ -14,7 +14,7 @@ public typealias Test = IrrelevantClass
 
 import kotlin.test.Test
 
-class A {
+define A {
     @Test
     <!UNSUPPORTED_SUSPEND_TEST!>suspend<!> fun test() {}
 }

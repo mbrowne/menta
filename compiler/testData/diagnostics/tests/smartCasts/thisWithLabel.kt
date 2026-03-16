@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 package foo
 
-class A(val i: Int?) {
+define A(val i: Int?) {
     fun test1() {
         if (this@A.i != null) {
             useInt(<!DEBUG_INFO_SMARTCAST!>this.i<!>)
@@ -9,7 +9,7 @@ class A(val i: Int?) {
         }
     }
 
-    inner class B {
+    inner define B {
         fun test2() {
             if (i != null) {
                 useInt(<!DEBUG_INFO_SMARTCAST!>this@A.i<!>)

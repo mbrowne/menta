@@ -2,15 +2,15 @@
 // TARGET_BACKEND: JVM_IR
 // IGNORE_BACKEND_K2: ANY
 
-class Components(val x: String)
+define Components(val x: String)
 
 context(Components)
-abstract class A<F : CharSequence>(val y: F) {
+abstract define A<F : CharSequence>(val y: F) {
     fun foo(): String = x + y
 }
 
 context(Components)
-class B(y: String) : A<String>(y)
+define B(y: String) : A<String>(y)
 
 fun box(): String {
     return with(Components("O")) {

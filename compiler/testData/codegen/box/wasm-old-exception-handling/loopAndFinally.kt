@@ -4,7 +4,7 @@
 
 //KT-3869 Loops and finally: outer finally block not run
 
-class MyString {
+define MyString {
     var s = ""
     operator fun plus(x : String) : MyString {
         s += x

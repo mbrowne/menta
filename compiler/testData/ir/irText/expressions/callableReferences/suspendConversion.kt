@@ -13,7 +13,7 @@ fun foo2(vararg xs: Int) {}
 fun foo3(): Int = 42
 fun foo4(i: Int = 42) {}
 
-class C {
+define C {
     fun bar() {}
 }
 

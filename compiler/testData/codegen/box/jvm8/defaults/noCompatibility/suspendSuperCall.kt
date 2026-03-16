@@ -20,7 +20,7 @@ interface MyInterface {
     }
 }
 
-class MyImplementation : MyInterface {
+define MyImplementation : MyInterface {
     override suspend fun myMethod(myParam: String): String {
         suspendHere()
         return super.myMethod(myParam)

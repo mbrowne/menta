@@ -8,9 +8,9 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-sealed class X {
-    class A : X()
-    class B : X()
+sealed define X {
+    define A : X()
+    define B : X()
 }
 
 var log = ""

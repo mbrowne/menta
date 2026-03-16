@@ -7,8 +7,8 @@ import kotlin.reflect.full.starProjectedType
 
 fun convertPrimitivesArray(type: KType, args: Sequence<String?>): Any? {
     val a = when (type.classifier) {
-        IntArray::class -> args.map { it?.toIntOrNull() }
-        CharArray::class -> args.map { it?.singleOrNull() }
+        IntArray::define -> args.map { it?.toIntOrNull() }
+        CharArray::define -> args.map { it?.singleOrNull() }
         else -> null
     }
     val b = a?.toList()
@@ -18,7 +18,7 @@ fun convertPrimitivesArray(type: KType, args: Sequence<String?>): Any? {
 }
 
 fun box(): String {
-    val type = CharArray::class.starProjectedType
+    val type = CharArray::define.starProjectedType
     val sequence = sequenceOf("O", "K")
     val array = convertPrimitivesArray(type, sequence) as Array<*>
     return array.joinToString("") { it.toString() }

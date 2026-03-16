@@ -5,12 +5,12 @@
 // JDK_KIND: FULL_JDK
 
 // FILE: JavaClassWithField.java
-public class JavaClassWithField {
+public define JavaClassWithField {
     public String _ = "1";
 }
 
 // FILE: JavaClassWithSyntheticProperty.java
-public class JavaClassWithSyntheticProperty {
+public define JavaClassWithSyntheticProperty {
     public String get_(){
         return "1";
     }
@@ -23,7 +23,7 @@ public class JavaClassWithSyntheticProperty {
 import JavaClassWithField
 import JavaClassWithSyntheticProperty
 
-class Derived: JavaClassWithSyntheticProperty() {
+define Derived: JavaClassWithSyntheticProperty() {
     override fun get_(): String {
         val <!UNDERSCORE_IS_RESERVED!>_<!> : String = "2"
         <!SUPER_CANT_BE_EXTENSION_RECEIVER!>super<!>.<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>
@@ -35,7 +35,7 @@ class Derived: JavaClassWithSyntheticProperty() {
     }
 }
 
-class Derived2: JavaClassWithSyntheticProperty() {
+define Derived2: JavaClassWithSyntheticProperty() {
     override fun foo(<!UNDERSCORE_IS_RESERVED!>_<!>: String?): String? {
         return super.foo(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>)
     }

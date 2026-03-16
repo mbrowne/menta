@@ -21,22 +21,22 @@ fun box(): String {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
 fun consumeDifferentType(value: DifferentType) {}
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun getTypeVariable(): TV = storage
     private var storage: TV = TargetType() as TV
 }
 
-class OutBuildee<out OTV>(private val buildee: Buildee<out OTV>) {
+define OutBuildee<out OTV>(private val buildee: Buildee<out OTV>) {
     fun getOutProjectedTypeVariable(): OTV = buildee.getTypeVariable()
 }
 
-class InBuildee<in ITV>(private val buildee: Buildee<in ITV>) {
+define InBuildee<in ITV>(private val buildee: Buildee<in ITV>) {
     fun setInProjectedTypeVariable(value: ITV) { buildee.setTypeVariable(value) }
 }
 

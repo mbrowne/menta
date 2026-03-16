@@ -2,13 +2,13 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class Storage<T> {
-    inner class Info
+define Storage<T> {
+    inner define Info
 
     fun info(name: String) = Info()
 }
-class User
-class Logger {
+define User
+define Logger {
     fun info(message: String) {}
 }
 

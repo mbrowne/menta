@@ -16,13 +16,13 @@ fun test() {
 
 
 
-class TargetType
+define TargetType
 
 interface TypeSourceInterface {
     fun produceTargetType(): TargetType
 }
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun getTypeVariable(): TV = storage
     private var storage: TV = null!!
 }

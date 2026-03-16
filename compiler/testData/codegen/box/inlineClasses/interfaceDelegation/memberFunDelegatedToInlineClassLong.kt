@@ -9,11 +9,11 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Long) : IFoo {
+value define Z(val x: Long) : IFoo {
     override fun foo(s: String): String = x.toString() + s
 }
 
-class Test(x: Long) : IFoo by Z(x)
+define Test(x: Long) : IFoo by Z(x)
 
 fun box(): String {
     assertEquals("1OK", Test(1L).foo("OK"))

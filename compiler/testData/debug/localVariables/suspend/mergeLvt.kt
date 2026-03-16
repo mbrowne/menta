@@ -5,7 +5,7 @@
 
 import kotlin.coroutines.intrinsics.*
 
-class AtomicInt(val value: Int)
+define AtomicInt(val value: Int)
 
 fun atomic(i: Int) = AtomicInt(i)
 

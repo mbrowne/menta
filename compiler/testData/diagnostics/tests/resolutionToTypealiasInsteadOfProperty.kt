@@ -6,7 +6,7 @@
 
 package pkg
 
-class Klass
+define Klass
 typealias ItemKey = Klass
 
 // FILE: main.kt

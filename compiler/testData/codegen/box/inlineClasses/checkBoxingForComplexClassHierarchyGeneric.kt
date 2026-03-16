@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: Int>(val x: T)
+value define IC<T: Int>(val x: T)
 
 interface I<T> {
     fun foo(t: T): T
@@ -11,7 +11,7 @@ interface I<T> {
 
 interface I2: I<IC<Int>>
 
-open class A<T> {
+open define A<T> {
     fun foo(t: T): T =
         if (t is IC<*>)
             IC(20 + t.x) as T
@@ -19,8 +19,8 @@ open class A<T> {
             t
 }
 
-open class B: A<IC<Int>>()
-class C: I2, B()
+open define B: A<IC<Int>>()
+define C: I2, B()
 
 fun box(): String {
     val ic = IC(10)
@@ -34,7 +34,7 @@ fun box(): String {
     if (fooI != 30) return "Fail I"
 
     // Test calling abstract fake override methods
-    // with signature specialized by inline class
+    // with signature specialized by inline define
     val fooI2 = i2.foo(ic).x
     if (fooI2 != 30) return "Fail I2"
 

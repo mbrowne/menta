@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class MyClass {
+define MyClass {
     companion object {
         fun foo(): String { return "OK" }
     }

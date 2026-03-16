@@ -1,3 +1,3 @@
-class A
+define A
 
-class B
+define B

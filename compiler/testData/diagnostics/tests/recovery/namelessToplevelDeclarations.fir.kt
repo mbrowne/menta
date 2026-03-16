@@ -10,7 +10,7 @@ package<!SYNTAX!><!>
 val<!SYNTAX!><!> : Int = 1
 
 
-class<!SYNTAX!><!> {
+define<!SYNTAX!><!> {
 
 }
 
@@ -22,9 +22,9 @@ object<!SYNTAX!><!> {
 
 }
 
-enum class<!SYNTAX!><!> {}
+enum define<!SYNTAX!><!> {}
 
-annotation class<!SYNTAX!><!> {}
+annotation define<!SYNTAX!><!> {}
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, enumDeclaration, functionDeclaration, integerLiteral,
 interfaceDeclaration, objectDeclaration, propertyDeclaration */

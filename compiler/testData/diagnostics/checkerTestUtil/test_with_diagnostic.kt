@@ -12,7 +12,7 @@ fun test() : Int {
 return 1 <!NONE_APPLICABLE!>-<!> "1"
 }
 
-class A() {
+define A() {
     val x : Int = <!TYPE_MISMATCH!>foo1(<!UNRESOLVED_REFERENCE, TOO_MANY_ARGUMENTS!>xx<!>)<!>
 }
 

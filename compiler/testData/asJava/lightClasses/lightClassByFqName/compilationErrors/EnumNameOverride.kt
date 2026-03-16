@@ -8,4 +8,4 @@ interface Bar : Foo {
     var name: String
 }
 
-enum class EnumNameOverride : Bar
+enum define EnumNameOverride : Bar

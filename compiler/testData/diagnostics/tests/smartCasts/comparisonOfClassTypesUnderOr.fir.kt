@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -DEBUG_INFO_SMARTCAST
 
 interface A
-class B : A
+define B : A
 
 fun test1(x:Any?) {
     if (x is A || x !is B) {
@@ -58,8 +58,8 @@ fun test4(x:Any?) {
 }
 
 sealed interface A2
-class B2 : A2
-class C2 : A2
+define B2 : A2
+define C2 : A2
 
 fun test5(x:Any?) {
     if (x is C2 || x is B2) {

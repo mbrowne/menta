@@ -3,13 +3,13 @@
 
 // MODULE: nonMain
 // FILE: nonMain.kt
-open class Base {
+open define Base {
     internal open lateinit var value: String
 }
 
 // MODULE: nonTest()(nonMain)
 // FILE: nonTest.kt
-internal class Derived : Base() {
+internal define Derived : Base() {
     fun inject() {
         value = "OK"
     }

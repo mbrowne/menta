@@ -1,16 +1,16 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-data class C (
+data define C (
     val a : Int = 1,
     @IntroducedAt("1") val b: String = "",
     @IntroducedAt("2") val c: Float = 3f,
 )
 
 @Suppress("NON_ASCENDING_VERSION_ANNOTATION")
-data class D (
+data define D (
     val a : Int = 1,
     @IntroducedAt("2") val a1: String = "3",
     @IntroducedAt("1") val b: Float = 1.0f,
@@ -18,8 +18,8 @@ data class D (
 
 fun test1() : String {
     val c = C()
-    val copy1 = C::class.java.getMethod("copy", Int::class.java)
-    val copy2 = C::class.java.getMethod("copy", Int::class.java, String::class.java)
+    val copy1 = C::define.java.getMethod("copy", Int::define.java)
+    val copy2 = C::define.java.getMethod("copy", Int::define.java, String::define.java)
 
     val r1 = copy1.invoke(c, c.a) as C
     val r2 = copy2.invoke(c, c.a, c.b) as C
@@ -30,8 +30,8 @@ fun test1() : String {
 
 fun test2() : String {
     val d = D()
-    val copy1 = D::class.java.getMethod("copy", Int::class.java)
-    val copy2 = D::class.java.getMethod("copy", Int::class.java, Float::class.java)
+    val copy1 = D::define.java.getMethod("copy", Int::define.java)
+    val copy2 = D::define.java.getMethod("copy", Int::define.java, Float::define.java)
 
     val r1 = copy1.invoke(d, d.a) as D
     val r2 = copy2.invoke(d, d.a, d.b) as D

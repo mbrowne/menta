@@ -3,7 +3,7 @@
 // JAVAC_EXPECTED_FILE
 // KT-588 Unresolved static method
 
-class Test() : Thread("Test") {
+define Test() : Thread("Test") {
     companion object {
         fun init2() {
 

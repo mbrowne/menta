@@ -29,7 +29,7 @@ inline fun case_2(block: () -> Unit) = <!CONTRACT_NOT_ALLOWED("Contracts are onl
 }
 
 fun case_3(block: () -> Unit) {
-    class Class {
+    define Class {
         fun innerFun(block2: () -> Unit) {
             <!CONTRACT_NOT_ALLOWED("Contracts are not allowed for local functions.")!>contract<!> {
                 callsInPlace(block2, InvocationKind.EXACTLY_ONCE)

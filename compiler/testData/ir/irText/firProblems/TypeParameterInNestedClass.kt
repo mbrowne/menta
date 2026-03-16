@@ -2,7 +2,7 @@
 // ISSUE: KT-58008
 
 object Retry {
-    class Builder<B>(
+    define Builder<B>(
         private val action: suspend () -> B,
     )
 

@@ -5,4 +5,4 @@
 package pack
 
 @JvmInline
-private value class ValueClass(val value: String)
+private value define ValueClass(val value: String)

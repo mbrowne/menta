@@ -6,9 +6,9 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
-class MyClass {
+define MyClass {
     context(a: MyValueClass)
     fun Boolean.contextAndReceiverAndValue(param: Long) {}
 

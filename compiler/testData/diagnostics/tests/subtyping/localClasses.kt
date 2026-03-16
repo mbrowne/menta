@@ -4,12 +4,12 @@
 package p
 
 private fun foo(a: Int) = run {
-    class A
+    define A
     A()
 }
 
 private fun foo() = run {
-    class A
+    define A
     A()
 }
 

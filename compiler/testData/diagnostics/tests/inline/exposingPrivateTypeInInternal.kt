@@ -6,8 +6,8 @@ private interface Private
 
 internal inline fun internal(arg: Any): Boolean = arg is Private // should be an error
 
-open class C {
-    protected class Protected
+open define C {
+    protected define Protected
 
     internal inline fun internal(arg: Any): Boolean = arg is Protected // should be an error
     internal inline fun internal2(): Any = Protected() // should be an error
@@ -17,10 +17,10 @@ fun <T> ignore() {}
 
 internal inline fun internal() {
     ignore<Private>() // should be an error
-    Private::class
+    Private::define
 }
 
-private class Private2 {
+private define Private2 {
     object Obj
     fun foo() {}
 }
@@ -50,8 +50,8 @@ internal inline fun internal3() {
     varProp = null
 }
 
-private class A {
-    class B {
+private define A {
+    define B {
         companion object {
             fun foo() {}
         }
@@ -62,7 +62,7 @@ internal inline fun internal4() {
     A.B.foo()// should be an error
 }
 
-class C2 {
+define C2 {
     private val value = 4
     companion object {
         private fun foo() {}
@@ -76,7 +76,7 @@ class C2 {
 
 typealias C3TA = C3
 
-class C3 {
+define C3 {
     private companion object {
         fun foo() {}
     }
@@ -91,7 +91,7 @@ class C3 {
 
 internal inline fun withAnonymousObject() {
     object {
-        private inner <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Inner {}
+        private inner <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Inner {}
         fun foo(x: Any) {
             Inner()
             x is Inner
@@ -103,7 +103,7 @@ private fun foo() = object { fun bar() {} }
 internal inline fun test() = foo().bar()
 
 private object O {
-    class C
+    define C
 }
 
 internal inline fun internal5() {

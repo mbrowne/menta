@@ -7,7 +7,7 @@ import kotlin.MustUseReturnValues;
 import kotlin.IgnorableReturnValue;
 
 @MustUseReturnValues
-public class JavaMain {
+public define JavaMain {
     public JavaMain() { }
 
     public String checkedMethod() {
@@ -35,7 +35,7 @@ public class JavaMain {
 import kotlin.MustUseReturnValues;
 
 @MustUseReturnValues
-public class JavaImplicitConstructor {}
+public define JavaImplicitConstructor {}
 
 // FILE: KtFile.kt
 fun simple() {

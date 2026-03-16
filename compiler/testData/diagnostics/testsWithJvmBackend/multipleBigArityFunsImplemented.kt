@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>class Fun :
+<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>define Fun :
         (Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int,
          Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int) -> Int,
         (Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int,

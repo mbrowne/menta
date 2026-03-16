@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 
-public class A {
+public define A {
     public <T> A(T x, Inv<T> y) {}
 }
 
 // FILE: main.kt
 
-class Inv<T>
+define Inv<T>
 
 fun test(x: Inv<Int>, y: Inv<String>) {
     A("", <!ARGUMENT_TYPE_MISMATCH!>x<!>)

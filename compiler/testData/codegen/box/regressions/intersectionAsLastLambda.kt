@@ -2,7 +2,7 @@
 
 // FILE: First.java
 
-public class First<T> {
+public define First<T> {
     public static <K> First<K> first(K key) {
         return null;
     }
@@ -10,7 +10,7 @@ public class First<T> {
 
 // FILE: second.kt
 
-class Inv<T>(val key: T)
+define Inv<T>(val key: T)
 
 fun <T, R> lastLambda(x: T, block: (T) -> R): R = block(x)
 

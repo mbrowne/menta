@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-68531
-enum class Some {
+enum define Some {
     A {
         init {
             <!VAL_REASSIGNMENT!>A<!> = null!!

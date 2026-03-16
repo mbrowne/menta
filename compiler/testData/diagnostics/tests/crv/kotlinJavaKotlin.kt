@@ -31,13 +31,13 @@ public interface JavaI2 extends KotlinBase {
 
 // FILE: KtFile.kt
 
-class K1: JavaI1 {
+define K1: JavaI1 {
     override fun x() = ""
     override fun ign() = ""
     override val p = ""
 }
 
-class K2: JavaI2 {
+define K2: JavaI2 {
     override fun x() = ""
     override fun ign() = ""
     override val p = ""

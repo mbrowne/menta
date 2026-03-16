@@ -1,6 +1,6 @@
 //KT-1572 Frontend doesn't mark all vars included in closure as refs.
 
-class A(val t : Int) {}
+define A(val t : Int) {}
 
 fun testKt1572() : Boolean {
     var a = A(0)

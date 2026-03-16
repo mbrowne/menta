@@ -3,7 +3,7 @@
 // LANGUAGE: +InferenceEnhancementsIn23, +DontIgnoreUpperBoundViolatedOnImplicitArguments
 // FIR_IDENTICAL
 
-class Recursive<T1 : Recursive<T1>>
+define Recursive<T1 : Recursive<T1>>
 
 fun <T2 : Recursive<T2>> createRecursive(): T2 = TODO()
 

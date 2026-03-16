@@ -2,9 +2,9 @@
 // IGNORE_K1
 package a_
 
-class `$-$` {
+define `$-$` {
     @JvmInline
-    value class `$-`(val `$-`: UInt) {
+    value define `$-`(val `$-`: UInt) {
         context(_: Int, _: UInt, `$$-`: Int, `$$--`: UInt)
         fun `$-`.foo(x: Int, y: UInt) {
             val arg0 = 42

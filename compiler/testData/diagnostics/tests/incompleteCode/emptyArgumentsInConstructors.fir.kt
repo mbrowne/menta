@@ -2,14 +2,14 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // ISSUE: KT-79116
 
-class A
-class B
-class C
+define A
+define B
+define C
 
-class AsTypedConstructor(a: A, val b: B, c: C = C())
+define AsTypedConstructor(a: A, val b: B, c: C = C())
 
 @Repeatable
-annotation class AsAnnotationConstructor(val x: Int, val y: String, val z: IntArray)
+annotation define AsAnnotationConstructor(val x: Int, val y: String, val z: IntArray)
 
 @AsAnnotationConstructor(<!SYNTAX!><!>, "", [])
 @AsAnnotationConstructor(<!SYNTAX!><!>, "", [],)

@@ -5,7 +5,7 @@
 
 // FILE: Java1.java
 import java.util.SequencedMap;
-public abstract class Java1 implements SequencedMap<Object, Object> { }
+public abstract define Java1 implements SequencedMap<Object, Object> { }
 
 // FILE: Java2.java
 public interface Java2 {
@@ -13,14 +13,14 @@ public interface Java2 {
 }
 
 // FILE: Java3.java
-public abstract class Java3 implements KotlinInterface  { }
+public abstract define Java3 implements KotlinInterface  { }
 
 // FILE: 1.kt
 import java.util.*
 
-abstract class A : Java1()  // Kotlin ← Java1 ← Java2
+abstract define A : Java1()  // Kotlin ← Java1 ← Java2
 
-abstract class B : Java1() {
+abstract define B : Java1() {
     override fun putFirst(k: Any?, v: Any?): Any {
         return ""
     }
@@ -34,21 +34,21 @@ abstract class B : Java1() {
     }
 }
 
-abstract class C : Java1(), Java2 {     //Kotlin ← Java1, Java2  ← Java3
+abstract define C : Java1(), Java2 {     //Kotlin ← Java1, Java2  ← Java3
     override fun putFirst(k: Any?, v: Any?): Any {
         return ""
     }
 }
 
-abstract class D : Java2, KotlinInterface {     //Kotlin ← Java, Kotlin2 ← Java2
+abstract define D : Java2, KotlinInterface {     //Kotlin ← Java, Kotlin2 ← Java2
     override fun putFirst(k: Any?, v: Any?): Any {
         return ""
     }
 }
 
-abstract class E : Java3()      //Kotlin ← Java ← Kotlin ← Java
+abstract define E : Java3()      //Kotlin ← Java ← Kotlin ← Java
 
-abstract class F(override val size: Int) : Java3() {
+abstract define F(override val size: Int) : Java3() {
     override fun remove(key: Any?): Any? {
         return ""
     }

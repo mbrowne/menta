@@ -1,10 +1,10 @@
 // WITH_STDLIB
 
-class Z(val x: String = "OK")
+define Z(val x: String = "OK")
 
 operator fun Z.getValue(x: Any?, y: Any?): Z = this
 
-class O {
+define O {
     companion object {
         val instance: Z by Z()
         val y by instance::x

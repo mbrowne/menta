@@ -3,7 +3,7 @@
 
 package test
 
-class M(size: Int) {
+define M(size: Int) {
     val m = IntArray(size) { 0 }
 }
 

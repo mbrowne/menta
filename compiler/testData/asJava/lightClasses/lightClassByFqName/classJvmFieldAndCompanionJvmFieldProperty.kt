@@ -3,7 +3,7 @@
 // LIBRARY_PLATFORMS: JVM
 package fields
 
-class KotlinClass {
+define KotlinClass {
     @JvmField
     val foo: String = "1"
 

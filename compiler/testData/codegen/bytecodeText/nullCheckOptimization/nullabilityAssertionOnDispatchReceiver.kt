@@ -14,7 +14,7 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public Object field;
 
     public void method() {}
@@ -22,6 +22,6 @@ public class J {
     public static J j() { return null; }
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 checkNotNullExpressionValue
 // 0 checkExpressionValueIsNotNull

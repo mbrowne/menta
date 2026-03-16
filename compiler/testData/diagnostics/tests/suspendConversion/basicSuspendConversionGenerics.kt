@@ -2,7 +2,7 @@
 // LANGUAGE: +SuspendConversion
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
 
-class Inv2<T, K>
+define Inv2<T, K>
 
 fun <T> foo1(f: suspend (T) -> String): T = TODO()
 fun <T> foo2(f: suspend () -> T): T = TODO()

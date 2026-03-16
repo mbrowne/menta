@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Coll {
+define Coll {
   operator fun iterator(): It? = null
 }
 
-class It {
+define It {
   operator fun next() = 1
   operator fun hasNext() = false
 }

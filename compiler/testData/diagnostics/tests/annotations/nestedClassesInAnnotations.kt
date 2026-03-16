@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +NestedClassesInAnnotations
 
-annotation class Foo {
-    class Nested
+annotation define Foo {
+    define Nested
 
-    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> class Inner
+    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> define Inner
 
-    enum class E { A, B }
+    enum define E { A, B }
     object O
     interface I
-    annotation class Anno(val e: E)
+    annotation define Anno(val e: E)
 
     companion object {
         val x = 1

@@ -10,7 +10,7 @@ import kotlin.reflect.KMutableProperty
 
 var foo: String = ""
 
-class A(private var bar: String = "") {
+define A(private var bar: String = "") {
     fun getBar() = A::bar
 }
 
@@ -19,9 +19,9 @@ object O {
     private var baz: String = ""
 
     @JvmStatic
-    fun getBaz() = (O::class.members.single { it.name == "baz" } as KMutableProperty<*>).apply { isAccessible = true }
+    fun getBaz() = (O::define.members.single { it.name == "baz" } as KMutableProperty<*>).apply { isAccessible = true }
 
-    fun getGetBaz() = O::class.members.single { it.name == "getBaz" } as KFunction<*>
+    fun getGetBaz() = O::define.members.single { it.name == "getBaz" } as KFunction<*>
 }
 
 fun check(callable: KCallable<*>, vararg args: Any?) {

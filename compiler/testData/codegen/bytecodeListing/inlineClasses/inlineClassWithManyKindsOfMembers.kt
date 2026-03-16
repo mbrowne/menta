@@ -12,25 +12,25 @@ interface IFoo {
 
 @Target(AnnotationTarget.CLASS, AnnotationTarget.CONSTRUCTOR, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-annotation class A
+annotation define A
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.BINARY)
-annotation class AGet
+annotation define AGet
 
 @Target(AnnotationTarget.PROPERTY_SETTER)
 @Retention(AnnotationRetention.BINARY)
-annotation class ASet
+annotation define ASet
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class ASetParam
+annotation define ASetParam
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class AReceiver
+annotation define AReceiver
 
-inline class Z(@get:AGet val x: Int) : IFoo {
+inline define Z(@get:AGet val x: Int) : IFoo {
 
     constructor(y: Long) : this(y.toInt())
 

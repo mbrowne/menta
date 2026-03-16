@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 fun foo(@IntroducedAt("1") vararg xs: Int) = xs.size
 

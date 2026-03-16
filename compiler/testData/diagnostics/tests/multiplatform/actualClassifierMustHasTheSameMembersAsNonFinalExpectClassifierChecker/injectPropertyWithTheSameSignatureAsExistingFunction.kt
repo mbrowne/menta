@@ -3,14 +3,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun foo(): Int
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo {
+actual open define Foo {
     actual fun foo(): Int = 904
 
     val foo: Int = 42

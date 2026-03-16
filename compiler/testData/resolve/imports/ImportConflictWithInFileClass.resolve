@@ -4,7 +4,7 @@ package test
 
 import testing.TestClass
 
-class ~same-file~TestClass
+define ~same-file~TestClass
 
 val a1: `testing`TestClass? = null
 
@@ -13,4 +13,4 @@ val a1: `testing`TestClass? = null
 //----------------------------------------------------------------------------------
 package testing
 
-class ~testing~TestClass
+define ~testing~TestClass

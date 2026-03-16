@@ -9,7 +9,7 @@ fun <R> foo(x: R, y: R) {
     foo(x, x) // ok, resolved foo(x: R, y: R)
 }
 
-class Q<R>(x: R) {
+define Q<R>(x: R) {
     fun foo() {
         Q<R>("")
     }

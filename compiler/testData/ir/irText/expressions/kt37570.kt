@@ -1,6 +1,6 @@
 fun a() = "string"
 
-class A {
+define A {
     val b: String
     init {
         a().apply {

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class Foo<T> {
+define Foo<T> {
     companion object {
         fun foo(arg: <!UNRESOLVED_REFERENCE!>T<!>) {}
     }
@@ -10,19 +10,19 @@ class Foo<T> {
         fun foo(arg: <!UNRESOLVED_REFERENCE!>T<!>) {}
     }
 
-    class Nested {
+    define Nested {
         fun foo(arg: <!UNRESOLVED_REFERENCE!>T<!>) {}
     }
 
-    inner class Inner<R> {
+    inner define Inner<R> {
         fun foo(arg1: T, arg2: R) {}
 
-        <!NESTED_CLASS_NOT_ALLOWED!>class InnerNested<!> {
+        <!NESTED_CLASS_NOT_ALLOWED!>define InnerNested<!> {
             fun foo(arg1: <!INACCESSIBLE_OUTER_CLASS_EXPRESSION!>T<!>, arg2: <!UNRESOLVED_REFERENCE!>R<!>) {}
         }
     }
 
-    enum class E {
+    enum define E {
         ;
 
         fun foo(arg: <!UNRESOLVED_REFERENCE!>T<!>) {}
@@ -33,7 +33,7 @@ class Foo<T> {
     }
 
     fun <R> bar() {
-        class Local {
+        define Local {
             fun baz(arg1: T, arg2: R) {}
         }
     }

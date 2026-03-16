@@ -1,4 +1,4 @@
-class A : Collection<Char> {
+define A : Collection<Char> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

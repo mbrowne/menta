@@ -9,7 +9,7 @@
 // SKIP_TXT
 
 <!NON_DATA_CLASS_JVM_RECORD!>@JvmRecord<!>
-class MyRec(
+define MyRec(
     val x: String,
     val y: Int,
     vararg val z: Double,

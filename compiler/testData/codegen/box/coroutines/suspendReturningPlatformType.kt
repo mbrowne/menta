@@ -4,17 +4,17 @@
 
 // FILE: I.kt
 
-open class A<T> {
+open define A<T> {
     suspend fun id(x: T): T = x
 }
 
-class B {
+define B {
     fun ok() = "OK"
 }
 
 // FILE: JavaClass.java
 
-public class JavaClass extends A<B> {}
+public define JavaClass extends A<B> {}
 
 // FILE: main.kt
 import helpers.*

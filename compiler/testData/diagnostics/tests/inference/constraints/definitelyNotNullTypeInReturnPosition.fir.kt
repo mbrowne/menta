@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION -CAST_NEVER_SUCCEEDS -UNUSED_VARIABLE -UNCHECKED_CAST
 
-class Foo<T>(x: T)
-class Bar<S>
-class OutBar<out S>
-class InBar<in S>
+define Foo<T>(x: T)
+define Bar<S>
+define OutBar<out S>
+define InBar<in S>
 
 interface IBar<S>
 interface IFoo<S>
@@ -28,7 +28,7 @@ fun <T: J, K: T, S: K, M: S, J: L, L> foo10(x: L?, y: Foo<Bar<T>>): Bar<M> = mat
 fun <T: J, K: T, S: K, M: S, J: L, L> foo11(x: M?, y: Foo<Bar<T>>): Bar<L> = materialize()
 fun <K: Any> foo12(x: K?): Bar<K> = materialize()
 
-class Foo13<T>(x: T) {
+define Foo13<T>(x: T) {
     fun <K: T> foo1(x: K?): Bar<T> = materialize()
 }
 
@@ -73,7 +73,7 @@ val <K> K?.vfoo0: Foo<Bar<K>> get() = materialize()
 val <K> K?.vfoo1: OutBar<Bar<out OutBar<K>>> get() = materialize()
 val <K> K?.vfoo2: OutBar<Bar<in OutBar<K>>> get() = materialize()
 
-class Main<L>(x: L?, y: L) {
+define Main<L>(x: L?, y: L) {
     init {
         if (x != null && y != null) {
             val x12 = foo1(x)
@@ -274,8 +274,8 @@ fun <L> test() {
     take(null as Foo<String?>, nullsLast())
 }
 
-class Inv1<T>
-class Inv2<T>
+define Inv1<T>
+define Inv2<T>
 fun <K : Comparable<K>> Inv1<K>.assertStableSorted() {}
 fun <K : Comparable<K>> Inv2<K>.assertStableSorted() = Inv1<K>().assertStableSorted()
 

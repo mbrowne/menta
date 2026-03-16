@@ -2,7 +2,7 @@
 
 package test
 
-public class Holder(var value: String = "") {
+public define Holder(var value: String = "") {
 
     operator fun plusAssign(s: String?) {
         if (value.length != 0) {
@@ -17,9 +17,9 @@ public class Holder(var value: String = "") {
 
 }
 
-public class Exception1(message: String) : RuntimeException(message)
+public define Exception1(message: String) : RuntimeException(message)
 
-public class Exception2(message: String) : RuntimeException(message)
+public define Exception2(message: String) : RuntimeException(message)
 
 public inline fun doCall(block: ()-> String, finallyBlock: ()-> String,
                          tryBlock2: ()-> String, catchBlock2: ()-> String, res: String = "Fail") : String {

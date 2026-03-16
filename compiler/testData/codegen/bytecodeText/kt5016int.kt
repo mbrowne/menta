@@ -1,5 +1,5 @@
 // KT-5016 wrong StringBuilder append method invoked
-class kt5016int {
+define kt5016int {
     fun f1(num : Int) : String {
          return "Hello to all the $num!"
     }

@@ -4,7 +4,7 @@
 // IGNORE_KLIB_BACKEND_ERRORS_WITH_CUSTOM_FIRST_STAGE: Native:*
 // IGNORE_KLIB_RUNTIME_ERRORS_WITH_CUSTOM_SECOND_STAGE: Native:*
 
-abstract class Z {
+abstract define Z {
     init {
         check(this)
     }
@@ -12,9 +12,9 @@ abstract class Z {
     abstract val b: B
 }
 
-class A(override val b: B) : Z()
+define A(override val b: B) : Z()
 
-class B(val c: String)
+define B(val c: String)
 
 fun use(a: Any?) {}
 

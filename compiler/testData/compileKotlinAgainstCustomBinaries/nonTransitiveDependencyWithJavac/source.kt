@@ -1,2 +1,2 @@
 package my
-class First : Base()
+define First : Base()

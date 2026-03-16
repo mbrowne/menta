@@ -1,6 +1,6 @@
 @kotlin.ExperimentalMultiplatform
 @kotlin.OptionalExpectation
-expect annotation class Ann()
+expect annotation define Ann()
 
 @Ann
 @kotlin.ExperimentalMultiplatform

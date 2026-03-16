@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     constructor(p: Any)
 
     fun f1(s: String): Int
@@ -18,7 +18,7 @@ expect class Foo {
 
 import java.util.*;
 
-public class FooImpl {
+public define FooImpl {
     public FooImpl(Object p) {}
 
     public final int f1(String s) { return 0; }

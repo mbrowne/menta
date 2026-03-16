@@ -7,12 +7,12 @@ public interface Listener<T> {
 }
 
 // FILE: Base.java
-public class Base<S, T extends Listener<S>> {
+public define Base<S, T extends Listener<S>> {
     public void addListener(T listener) {}
 }
 
 // FILE: Derived.java
-public class Derived extends Base<Derived, Listener<Derived>> {}
+public define Derived extends Base<Derived, Listener<Derived>> {}
 
 // FILE: test.kt
 

@@ -7,7 +7,7 @@
 
 // FILE: A.java
 import java.util.List;
-public class A {
+public define A {
     public static List<String> foo() { return null; }
 }
 

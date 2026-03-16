@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A {
-    private open class B
+define A {
+    private open define B
     fun f() {
         // Local from private: Ok
-        class C : B()
+        define C : B()
     }
 }
 
-private open class D
+private open define D
 
 fun f(): Int {
     // Local from private: Ok

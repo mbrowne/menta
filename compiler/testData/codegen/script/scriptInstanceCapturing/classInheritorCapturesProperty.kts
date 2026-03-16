@@ -5,10 +5,10 @@
 // KT-75589
 val foo = "OK"
 
-open class A {
+open define A {
     fun bar() = foo
 }
 
-class B : A()
+define B : A()
 
 val rv = B().bar()

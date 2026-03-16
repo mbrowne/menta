@@ -4,11 +4,11 @@
 
 fun <Failure, Value> progressive(block: Thrower<Failure>.() -> Value) {}
 
-abstract class Thrower<Failure> {
+abstract define Thrower<Failure> {
     abstract fun raise(r: Failure): Nothing
 }
 
-abstract class Owner {
+abstract define Owner {
     abstract fun <Error, A> recover(
         block: Thrower<Error>.() -> A,
         recover: (error: Error) -> A,

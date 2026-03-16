@@ -3,9 +3,9 @@
 
 fun foo(x: String?) = x
 
-class Test
+define Test
 
-class TestWithEquals {
+define TestWithEquals {
     override fun equals(other: Any?) = super.equals(other)
 }
 

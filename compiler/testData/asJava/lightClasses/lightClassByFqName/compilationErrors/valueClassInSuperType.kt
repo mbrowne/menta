@@ -2,9 +2,9 @@
 // WITH_STDLIB
 package pack
 
-open class OriginalClass
+open define OriginalClass
 
 @JvmInline
-value class ValueClass(val original: OriginalClass)
+value define ValueClass(val original: OriginalClass)
 
-class TargetClass : ValueClass(OriginalClass())
+define TargetClass : ValueClass(OriginalClass())

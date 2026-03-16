@@ -5,16 +5,16 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class LockFreeLinkedListNode()
+expect open define LockFreeLinkedListNode()
 
-class NodeList: LockFreeLinkedListNode() {
+define NodeList: LockFreeLinkedListNode() {
     override fun toString(): String = ""
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: platform.kt
 
-actual open class LockFreeLinkedListNode {
+actual open define LockFreeLinkedListNode {
     override fun toString(): String = ""
 }
 

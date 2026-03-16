@@ -3,7 +3,7 @@
 // FILE: Base.kt
 package a
 
-open class Base {
+open define Base {
     protected companion object {
         fun foo() = 1
     }
@@ -12,9 +12,9 @@ open class Base {
 // FILE: Host.kt
 import a.*
 
-class Host : Base() {
+define Host : Base() {
     fun test() = { foo() }
 }
 
-// @Host.class:
+// @Host.define:
 // 1 synthetic access\$

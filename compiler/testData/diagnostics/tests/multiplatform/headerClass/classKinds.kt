@@ -5,26 +5,26 @@
 
 expect interface Interface
 
-expect annotation class Anno(val prop: String)
+expect annotation define Anno(val prop: String)
 
 expect object Object
 
-expect class Class
+expect define Class
 
-expect enum class En { ENTRY }
+expect enum define En { ENTRY }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
 actual interface Interface
 
-actual annotation class Anno actual constructor(actual val prop: String)
+actual annotation define Anno actual constructor(actual val prop: String)
 
 actual object Object
 
-actual class Class
+actual define Class
 
-actual enum class En { ENTRY }
+actual enum define En { ENTRY }
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, enumDeclaration, enumEntry, expect,
 interfaceDeclaration, objectDeclaration, primaryConstructor, propertyDeclaration */

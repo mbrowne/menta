@@ -2,9 +2,9 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect enum class E {
+expect enum define E {
     @Ann
     FOO,
     MISSING_ON_ACTUAL
@@ -12,7 +12,7 @@ expect enum class E {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-actual enum class <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT, EXPECT_ACTUAL_INCOMPATIBLE_ENUM_ENTRIES!>E<!> {
+actual enum define <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT, EXPECT_ACTUAL_INCOMPATIBLE_ENUM_ENTRIES!>E<!> {
     FOO
 }
 

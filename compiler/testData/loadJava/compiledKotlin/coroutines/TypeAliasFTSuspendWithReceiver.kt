@@ -2,7 +2,7 @@
 // Type-alias info is lost during serialization in K1
 package test
 
-class Context
+define Context
 
 typealias SuspendWithContext = suspend Context.() -> Unit
 

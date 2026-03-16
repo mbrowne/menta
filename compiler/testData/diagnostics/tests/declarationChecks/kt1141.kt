@@ -16,7 +16,7 @@ fun foo() {
 
 <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>object Rr<!> : SomeTrait {}
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class C<!> : SomeTrait {}
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define C<!> : SomeTrait {}
 
 fun foo2() {
     val r = <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>object<!> : Runnable {} //no error

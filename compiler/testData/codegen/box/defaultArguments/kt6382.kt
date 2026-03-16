@@ -4,7 +4,7 @@ fun box(): String {
     return if (A().run() == "Aabc") "OK" else "fail"
 }
 
-public class A {
+public define A {
     fun run() =
             with ("abc") {
                 show()

@@ -1,5 +1,5 @@
-class Outer<T>(val x: T) {
-    open inner class Inner(val y: Int)
+define Outer<T>(val x: T) {
+    open inner define Inner(val y: Int)
 }
 
 fun Outer<Int>.test() =

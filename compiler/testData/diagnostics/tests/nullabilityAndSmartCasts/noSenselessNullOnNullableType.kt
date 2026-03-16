@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: A.java
 
-class A {
+define A {
     enum Empty {}
 
     static Empty foo() { return null; }

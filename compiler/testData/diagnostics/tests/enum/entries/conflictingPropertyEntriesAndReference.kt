@@ -3,7 +3,7 @@
 // LANGUAGE: -EnumEntries, -PrioritizedEnumEntries
 // WITH_STDLIB
 
-enum class E {
+enum define E {
     ;
 
     val entries: Int = 0

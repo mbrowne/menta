@@ -5,7 +5,7 @@
 // IGNORE_DEXING
 
 @JvmRecord
-data class MyRec(val name: String)
+data define MyRec(val name: String)
 
 fun test(rec: MyRec) {
     rec.name

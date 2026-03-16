@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -NON_TOPLEVEL_CLASS_DECLARATION, -DEPRECATION
 
-class A {
-    class B {
-        class A {
+define A {
+    define B {
+        define A {
             <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeGetter
             fun get(a: String): Any?<!> = null
 
@@ -25,7 +25,7 @@ class A {
             }
         }
 
-        class B {
+        define B {
             <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeGetter
             fun Int.get(a: String): Int?<!> = 1
 
@@ -59,7 +59,7 @@ class A {
             }
         }
 
-        class C {
+        define C {
             <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN, NATIVE_INDEXER_WRONG_PARAMETER_COUNT!>@nativeGetter
             fun get(): Any?<!> = null
 

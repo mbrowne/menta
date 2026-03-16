@@ -6,7 +6,7 @@ package test
 
 import kotlin.contracts.*
 
-class A
+define A
 
 fun deeplyNested(x: Any?, y: Any?, b: Boolean, s: String?) {
     contract {

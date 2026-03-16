@@ -5,16 +5,16 @@
 
 // MODULE: m1-common
 // FILE: common.kt
-expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> : Base {
+expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> : Base {
 }
 
-open class Base {
+open define Base {
     fun foo(a: Int = 1) {}
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
-@kotlin.annotations.jvm.KotlinActual public class Foo extends Base {
+@kotlin.annotations.jvm.KotlinActual public define Foo extends Base {
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, expect, functionDeclaration, integerLiteral */

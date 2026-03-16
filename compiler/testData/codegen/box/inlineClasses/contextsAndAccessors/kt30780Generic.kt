@@ -4,7 +4,7 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Test<T: Int>(val x: T) {
+value define Test<T: Int>(val x: T) {
     private companion object {
         private const val CONSTANT = "OK"
     }

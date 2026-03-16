@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class Holder(val list: List<String>?)
+define Holder(val list: List<String>?)
 
 fun box(): String {
     val holder1 = Holder(emptyList()) // No problem

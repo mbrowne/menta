@@ -6,7 +6,7 @@ fun iterate(iterator: MyIterator): String {
     return "Fail"
 }
 
-class MyIterator : Iterator<String> {
+define MyIterator : Iterator<String> {
     @JvmName("unrelated")
     private fun String.next(): String = throw AssertionError("Should not be called")
 

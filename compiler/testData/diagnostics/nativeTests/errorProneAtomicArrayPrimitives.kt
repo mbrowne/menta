@@ -5,7 +5,7 @@
 
 // FILE: K.kt
 
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 import kotlin.concurrent.AtomicReference
 import kotlin.concurrent.AtomicArray

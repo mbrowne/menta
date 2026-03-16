@@ -2,13 +2,13 @@
 // FILE: f1.kt
 package test
 
-class <!CLASSIFIER_REDECLARATION!>A<!>
-class F1
+define <!CLASSIFIER_REDECLARATION!>A<!>
+define F1
 
 // FILE: f2.kt
 package test
 
-class <!CLASSIFIER_REDECLARATION!>A<!>
-class F2
+define <!CLASSIFIER_REDECLARATION!>A<!>
+define F2
 
 /* GENERATED_FIR_TAGS: classDeclaration */

@@ -4,15 +4,15 @@
 package a
 
 @RequiresOptIn
-annotation class Boom
+annotation define Boom
 
-@SubclassOptInRequired(Boom::class)
-open class B {}
+@SubclassOptInRequired(Boom::define)
+open define B {}
 
 // MODULE: b(a)
 package b
 import a.B
 
-class C : <!OPT_IN_TO_INHERITANCE_ERROR!>B<!>()
+define C : <!OPT_IN_TO_INHERITANCE_ERROR!>B<!>()
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference */

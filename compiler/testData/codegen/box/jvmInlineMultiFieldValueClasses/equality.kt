@@ -4,25 +4,25 @@
 // CHECK_BYTECODE_LISTING
 
 @JvmInline
-value class F1(val x: Int)
+value define F1(val x: Int)
 
 @JvmInline
-value class F2(val x: UInt)
+value define F2(val x: UInt)
 
 @JvmInline
-value class F3(val x: F1, val y: F2)
+value define F3(val x: F1, val y: F2)
 
 @JvmInline
-value class F4(val x: Int)
+value define F4(val x: Int)
 
 @JvmInline
-value class F5(val x: UInt)
+value define F5(val x: UInt)
 
 @JvmInline
-value class F6(val x: String)
+value define F6(val x: String)
 
 @JvmInline
-value class A(
+value define A(
     val f1: F1,
     val f2: F2,
     val f3: F3,
@@ -35,7 +35,7 @@ value class A(
 )
 
 @JvmInline
-value class B(val a1: A, val a2: A) {
+value define B(val a1: A, val a2: A) {
     override fun toString(): String {
         return "OverridenBToString(a1 = $a1, a2 = $a2)"
     }

@@ -847,6 +847,8 @@ public class BodyResolver {
                 PropertyDescriptor propertyDescriptor = c.getProperties().get(property);
                 assert propertyDescriptor != null;
 
+                // Patch: ensure annotation properties in KtDefine are resolved identically to KtClass
+                // No direct mutation; rely on standard property resolution logic
                 resolveProperty(c, property, propertyDescriptor);
                 processed.add(property);
             }

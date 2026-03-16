@@ -3,9 +3,9 @@
 // ISSUE: KT-45033
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-internal class Bar
+internal define Bar
 
-sealed class Foo(
+sealed define Foo(
     internal val x: Bar,
     y: Bar
 )

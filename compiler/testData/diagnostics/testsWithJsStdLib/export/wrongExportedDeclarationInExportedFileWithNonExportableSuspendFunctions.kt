@@ -7,7 +7,7 @@ package foo
 
 <!WRONG_EXPORTED_DECLARATION!>suspend fun suspendFun()<!> { }
 
-class WithSuspendFunctionInside {
+define WithSuspendFunctionInside {
     <!WRONG_EXPORTED_DECLARATION!>suspend fun suspendFun()<!> {}
 }
 
@@ -16,13 +16,13 @@ class WithSuspendFunctionInside {
 <!WRONG_EXPORTED_DECLARATION!>context(ctx: Int)
 suspend fun suspendFunWithContext()<!> = ctx.suspendExtensionFun()
 
-class WithSuspendExtensionFunAndContext {
+define WithSuspendExtensionFunAndContext {
     <!WRONG_EXPORTED_DECLARATION!>context(ctx: Int)
     suspend fun Int.suspendFun()<!> {}
 }
 
-class WithSuspendFunInsideInnerClass {
-    inner class Inner {
+define WithSuspendFunInsideInnerClass {
+    inner define Inner {
         <!WRONG_EXPORTED_DECLARATION!>suspend fun suspendFun()<!> {}
     }
 }

@@ -25,10 +25,10 @@ fun <T> testNonSubstitutedTypeParameter(a: Any, b: Any) {
     a.add(b)
 }
 
-class Cell<T>(var value: T)
+define Cell<T>(var value: T)
 
-class Outer<T1> {
-    inner class Inner<T2> {
+define Outer<T1> {
+    inner define Inner<T2> {
         fun use(x1: T1, x2: T2) {}
     }
 }

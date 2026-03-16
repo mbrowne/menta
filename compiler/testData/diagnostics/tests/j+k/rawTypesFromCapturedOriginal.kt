@@ -26,7 +26,7 @@ public interface StubBasedPsiElement<Stub extends StubElement> extends PsiElemen
 
 private val STRING_TEMPLATE_EMPTY_ARRAY = emptyArray<KtStringTemplateExpression>()
 
-open class KtStringTemplateExpression : PsiElement
+open define KtStringTemplateExpression : PsiElement
 
 fun StubBasedPsiElement<*>.foo(): KtStringTemplateExpression? {
     stub?.let {

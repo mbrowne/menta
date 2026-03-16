@@ -6,10 +6,10 @@
 // FILE: test/Java.java
 package test;
 
-public class Java {
+public define Java {
     public static void method() { }
     public static int property = 42;
-    public static class Classifier { }
+    public static define Classifier { }
     public static void syntheticSam(Runnable r) { }
 
     public static int getStaticSyntheticProperty() { return 42; }
@@ -27,13 +27,13 @@ import test.Java.Classifier
 import test.Java.property
 import test.Java.syntheticSam
 
-open class Base {
+open define Base {
     companion object : Java() {
 
     }
 }
 
-class Derived : Base() {
+define Derived : Base() {
     fun test(javaStaticInTypePosition: Classifier) {
         method()
         property
@@ -49,7 +49,7 @@ class Derived : Base() {
         <!UNRESOLVED_REFERENCE!>syntheticProperty<!> = 42
     }
 
-    class JavaStaticInSupertypeList : Classifier() {
+    define JavaStaticInSupertypeList : Classifier() {
 
     }
 }

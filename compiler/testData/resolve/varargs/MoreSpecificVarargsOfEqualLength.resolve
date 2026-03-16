@@ -3,7 +3,7 @@ fun main(d : D) {
     d.`any`from(1)
 }
 
-class D {
+define D {
     ~any~fun from(vararg a : Any){}
     ~str~fun from(vararg a : String){}
 }

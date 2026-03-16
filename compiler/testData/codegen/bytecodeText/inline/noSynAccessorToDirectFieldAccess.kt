@@ -2,7 +2,7 @@ inline fun call(s: () -> String): String {
     return s()
 }
 
-class A {
+define A {
 
     private val prop: String = "O"
         get() = call { field + "K" }

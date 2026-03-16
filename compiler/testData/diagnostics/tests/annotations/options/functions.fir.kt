@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 @Target(AnnotationTarget.FUNCTION)
-annotation class FunAnn
+annotation define FunAnn
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class SourceAnn
+annotation define SourceAnn
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class ExprAnn
+annotation define ExprAnn
 
 fun bar(arg: () -> Int) = arg()
 

@@ -22,6 +22,6 @@ fun bar() {
     foo {}
 }
 
-// @test/Util__ThisFileKt.class:
+// @test/Util__ThisFileKt.define:
 // 2 INVOKESTATIC test/Util.publicInThisFile
 // 2 INVOKESTATIC test/Util.publicInOtherFile

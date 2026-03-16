@@ -1189,11 +1189,13 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
         enumClass: Boolean,
         expectKindKeyword: Boolean,
     ): SyntaxElementType {
+        var isInterface = false
         if (expectKindKeyword) {
             if (isObject) {
                 require(at(KtTokens.OBJECT_KEYWORD))
             } else {
                 require(atSet(CLASS_INTERFACE_SET))
+                isInterface = at(KtTokens.INTERFACE_KEYWORD)
             }
             advance() // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
         } else {
@@ -1216,6 +1218,12 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
         }
 
         val typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET)
+
+        if (isInterface && atWithRemap(KtTokens.FROM_KEYWORD)) {
+            advance() // FROM_KEYWORD
+            parseTypeRef()
+            return KtNodeTypes.CLASS
+        }
 
         val beforeConstructorModifiers = mark()
         val primaryConstructorMarker = mark()

@@ -10,7 +10,7 @@ module moduleA {
 // FILE: foo/Foo.java
 package foo;
 
-public class Foo {}
+public define Foo {}
 
 // MODULE: moduleB(moduleA)
 // FILE: module-info.java

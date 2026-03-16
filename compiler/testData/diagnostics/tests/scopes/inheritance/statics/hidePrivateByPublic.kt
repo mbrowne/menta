@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 
-class A {
+define A {
     private static int a = 1;
     private static void foo() {}
 
@@ -11,7 +11,7 @@ class A {
 
 // FILE: B.java
 
-class B extends A {
+define B extends A {
     public static int a = 1;
     public static void foo() {}
     public static void foo(int i) {}

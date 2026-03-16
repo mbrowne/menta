@@ -3,26 +3,26 @@
 // WITH_STDLIB
 // MODULE: m1-common
 // FILE: common.kt
-@file:OptIn(ExperimentalMultiplatform::class)
+@file:OptIn(ExperimentalMultiplatform::define)
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> annotation class ActualOnly
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> annotation define ActualOnly
 
 @RequiresOptIn
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}, EXPECT_ACTUAL_OPT_IN_ANNOTATION!>expect<!> annotation class Both
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}, EXPECT_ACTUAL_OPT_IN_ANNOTATION!>expect<!> annotation define Both
 
 @RequiresOptIn
 @OptionalExpectation
-expect annotation class MyOptIn
+expect annotation define MyOptIn
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 @RequiresOptIn
-actual annotation class <!EXPECT_ACTUAL_INCOMPATIBLE_ILLEGAL_REQUIRES_OPT_IN!>ActualOnly<!>
+actual annotation define <!EXPECT_ACTUAL_INCOMPATIBLE_ILLEGAL_REQUIRES_OPT_IN!>ActualOnly<!>
 
 @RequiresOptIn
-actual annotation class <!EXPECT_ACTUAL_INCOMPATIBLE_ILLEGAL_REQUIRES_OPT_IN!>Both<!>
+actual annotation define <!EXPECT_ACTUAL_INCOMPATIBLE_ILLEGAL_REQUIRES_OPT_IN!>Both<!>
 
 @RequiresOptIn
-actual annotation class MyOptIn
+actual annotation define MyOptIn
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, annotationUseSiteTargetFile, classReference, expect */

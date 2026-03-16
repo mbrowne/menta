@@ -7,7 +7,7 @@
 
 expect val foo: Any
 
-expect class Bar() {
+expect define Bar() {
     val bus: Any
 }
 
@@ -15,7 +15,7 @@ expect class Bar() {
 // FILE: jvm.kt
 actual val foo: Any = 2
 
-actual class Bar actual constructor() {
+actual define Bar actual constructor() {
     actual val bus: Any
         get() = "bus"
 }

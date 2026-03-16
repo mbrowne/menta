@@ -2,9 +2,9 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 
-annotation class Inner(val v: String)
+annotation define Inner(val v: String)
 
-annotation class AnnArrays(
+annotation define AnnArrays(
     val ints: IntArray = intArrayOf(),
     val strs: Array<String> = [],
     val inn: Inner = Inner("x")

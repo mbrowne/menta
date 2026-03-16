@@ -3,22 +3,22 @@
 
 import kotlin.reflect.full.*
 
-open class A {
+open define A {
     fun mem() {}
     fun Int.memExt() {}
 }
 
-class B : A()
+define B : A()
 
 fun box(): String {
-    val all = A::class.functions.map { it.name }.sorted()
-    assert(all == listOf("equals", "hashCode", "mem", "memExt", "toString")) { "Fail A functions: ${A::class.functions}" }
+    val all = A::define.functions.map { it.name }.sorted()
+    assert(all == listOf("equals", "hashCode", "mem", "memExt", "toString")) { "Fail A functions: ${A::define.functions}" }
 
-    val declared = A::class.declaredFunctions.map { it.name }.sorted()
-    assert(declared == listOf("mem", "memExt")) { "Fail A declaredFunctions: ${A::class.declaredFunctions}" }
+    val declared = A::define.declaredFunctions.map { it.name }.sorted()
+    assert(declared == listOf("mem", "memExt")) { "Fail A declaredFunctions: ${A::define.declaredFunctions}" }
 
-    val declaredSubclass = B::class.declaredFunctions.map { it.name }.sorted()
-    assert(declaredSubclass.isEmpty()) { "Fail B declaredFunctions: ${B::class.declaredFunctions}" }
+    val declaredSubclass = B::define.declaredFunctions.map { it.name }.sorted()
+    assert(declaredSubclass.isEmpty()) { "Fail B declaredFunctions: ${B::define.declaredFunctions}" }
 
     return "OK"
 }

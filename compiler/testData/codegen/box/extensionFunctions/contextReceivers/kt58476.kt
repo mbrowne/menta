@@ -4,11 +4,11 @@
 // WITH_STDLIB
 // WITH_COROUTINES
 
-class InContext
-class MyReciever {
+define InContext
+define MyReciever {
     public suspend fun MyOutput.innerFun(): Int = 123
 }
-class MyOutput
+define MyOutput
 
 // 2 - Declare the caller that calls the suspended function in a context
 public fun caller(block: suspend context(InContext) MyReciever.() -> Int): MyOutput = MyOutput()

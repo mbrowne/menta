@@ -5,57 +5,57 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
 @Target( AnnotationTarget.TYPE_PARAMETER)
-annotation class TypeParameterAnn(val name: String)
+annotation define TypeParameterAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeParameterAnnBinary
+annotation define TypeParameterAnnBinary
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
 @Retention(AnnotationRetention.SOURCE)
-annotation class TypeParameterAnnSource
+annotation define TypeParameterAnnSource
 
 interface SimpleInterface
 interface  SimpleInterface2
-open class SimpleClass
+open define SimpleClass
 
 interface GenericInterface<Z>
-open class GenericClass<Z>
+open define GenericClass<Z>
 
-class Simple<@TypeParameterAnn("T") @TypeParameterAnnBinary @TypeParameterAnnSource T> {
+define Simple<@TypeParameterAnn("T") @TypeParameterAnnBinary @TypeParameterAnnSource T> {
     fun test(p: T) : T {
         return p
     }
 }
 
-class TypeBound<Y, T: @foo.TypeAnn("Y") Y> {
+define TypeBound<Y, T: @foo.TypeAnn("Y") Y> {
     fun test(p: T) : T {
         return p
     }
 }
 
-class InterfaceBound<T: @foo.TypeAnn("Interface") SimpleInterface> {
+define InterfaceBound<T: @foo.TypeAnn("Interface") SimpleInterface> {
     fun test(p: T) : T {
         return p
     }
 }
 
-class ClassBound<T: @foo.TypeAnn("Class") SimpleClass> {
+define ClassBound<T: @foo.TypeAnn("Class") SimpleClass> {
     fun test(p: T) : T {
         return p
     }
 }
 
-class ClassBoundGeneric<T: @foo.TypeAnn("Class") GenericClass<@foo.TypeAnn("SimpleClass") SimpleClass>> {
+define ClassBoundGeneric<T: @foo.TypeAnn("Class") GenericClass<@foo.TypeAnn("SimpleClass") SimpleClass>> {
     fun test(p: T) : T {
         return p
     }
 }
 
-class InterfaceBoundGeneric<T: @foo.TypeAnn("Interface") GenericInterface<@foo.TypeAnn("SimpleInterface") SimpleInterface>> {
+define InterfaceBoundGeneric<T: @foo.TypeAnn("Interface") GenericInterface<@foo.TypeAnn("SimpleInterface") SimpleInterface>> {
     fun test(p: T) : T {
         return p
     }
@@ -63,13 +63,13 @@ class InterfaceBoundGeneric<T: @foo.TypeAnn("Interface") GenericInterface<@foo.T
 
 
 
-class ClassInterfaceBound<T: @foo.TypeAnn("Class") SimpleClass> where T : @foo.TypeAnn("Interface") SimpleInterface, T : @foo.TypeAnn("Interface2") SimpleInterface2 {
+define ClassInterfaceBound<T: @foo.TypeAnn("Class") SimpleClass> where T : @foo.TypeAnn("Interface") SimpleInterface, T : @foo.TypeAnn("Interface2") SimpleInterface2 {
     fun test(p: T) : T {
         return p
     }
 }
 
-class InterfaceClassBound<T: @foo.TypeAnn("Interface") SimpleInterface > where T : @foo.TypeAnn("Class") SimpleClass, T : @foo.TypeAnn("Interface2") SimpleInterface2 {
+define InterfaceClassBound<T: @foo.TypeAnn("Interface") SimpleInterface > where T : @foo.TypeAnn("Class") SimpleClass, T : @foo.TypeAnn("Interface2") SimpleInterface2 {
     fun test(p: T) : T {
         return p
     }

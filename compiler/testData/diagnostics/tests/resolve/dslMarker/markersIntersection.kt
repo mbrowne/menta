@@ -3,17 +3,17 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class L1
+annotation define L1
 
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class L2
+annotation define L2
 
-class A {
+define A {
     fun a() = 1
 }
 
-class B {
+define B {
     fun b() = 2
 }
 

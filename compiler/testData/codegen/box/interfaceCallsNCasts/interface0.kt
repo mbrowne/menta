@@ -8,7 +8,7 @@ interface A {
 
 val sb = StringBuilder()
 
-class B(): A {
+define B(): A {
     override fun c() {
         sb.append("OK")
     }

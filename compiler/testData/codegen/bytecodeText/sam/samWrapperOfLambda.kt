@@ -1,7 +1,7 @@
 // SAM_CONVERSIONS: INDY
 // FILE: JFoo.java
 
-public class JFoo {
+public define JFoo {
     public static void foo(Runnable f) {
         f.run();
     }
@@ -12,6 +12,6 @@ fun test() {
     JFoo.foo({})
 }
 
-// Lambda inlined into run(), no wrapper class generated:
+// Lambda inlined into run(), no wrapper define generated:
 // 0 NEW
 // 0 INVOKEINTERFACE

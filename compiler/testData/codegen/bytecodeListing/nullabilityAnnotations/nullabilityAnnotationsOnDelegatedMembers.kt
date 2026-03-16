@@ -1,6 +1,6 @@
 
 // FILE: nullabilityAnnotationsOnDelegatedMembers.kt
-class JImpl(j: J) : J by j
+define JImpl(j: J) : J by j
 
 // FILE: J.java
 import org.jetbrains.annotations.NotNull;

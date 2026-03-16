@@ -6,12 +6,12 @@
 // FILE: Java1.java
 import kotlin.collections.AbstractMutableSet;
 
-public abstract class Java1 extends AbstractMutableSet<Object> { }
+public abstract define Java1 extends AbstractMutableSet<Object> { }
 
 // FILE: 1.kt
-abstract class A : Java1()  //Kotlin ← Java ← Kotlin
+abstract define A : Java1()  //Kotlin ← Java ← Kotlin
 
-class B(override val size: Int) : Java1() {
+define B(override val size: Int) : Java1() {
     override fun add(element: Any?): Boolean {
         return true
     }

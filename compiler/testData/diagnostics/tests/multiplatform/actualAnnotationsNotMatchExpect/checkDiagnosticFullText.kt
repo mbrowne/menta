@@ -11,25 +11,25 @@
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.TYPE,
 )
-annotation class Ann
+annotation define Ann
 
 @Ann
-expect class OnClass
+expect define OnClass
 
-expect class OnMember {
+expect define OnMember {
     @Ann
     fun onMember()
 }
 
 @Ann
-expect class ViaTypealias
+expect define ViaTypealias
 
-expect class MemberScopeViaTypealias {
+expect define MemberScopeViaTypealias {
     @Ann
     fun foo()
 }
 
-annotation class WithArg(val s: String)
+annotation define WithArg(val s: String)
 
 @WithArg("str")
 expect fun withDifferentArg()
@@ -45,17 +45,17 @@ expect fun onType(param: @Ann Any)
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>OnClass<!>
+actual define <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>OnClass<!>
 
-actual class OnMember {
+actual define OnMember {
     actual fun <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>onMember<!>() {}
 }
 
-class ViaTypealiasImpl
+define ViaTypealiasImpl
 
 actual typealias <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>ViaTypealias<!> = ViaTypealiasImpl
 
-class MemberScopeViaTypealiasImpl {
+define MemberScopeViaTypealiasImpl {
     fun foo() {}
 }
 actual typealias <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>MemberScopeViaTypealias<!> = MemberScopeViaTypealiasImpl

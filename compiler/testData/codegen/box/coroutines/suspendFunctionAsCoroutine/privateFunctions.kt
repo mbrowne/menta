@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class X {
+define X {
     var res = ""
     suspend fun execute() {
         a()

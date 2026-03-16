@@ -4,26 +4,26 @@
 // FILE: 1.kt
 package a
 
-class someFun() {}
+define someFun() {}
 fun someFun(i: Int) {}
 
-class someVal() {}
+define someVal() {}
 val Int.someVal: Int get() = 3
 
-class A
+define A
 
-class B
+define B
 
 // FILE: 2.kt
 package b
 
-class someFun
-class someVal
-class someAll
+define someFun
+define someVal
+define someAll
 
 fun A() {}
 
-class B
+define B
 
 
 // FILE: 3.kt

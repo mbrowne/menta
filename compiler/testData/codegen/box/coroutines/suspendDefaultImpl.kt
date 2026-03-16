@@ -11,7 +11,7 @@ interface TestInterface {
     }
 }
 
-class TestClass2 : TestInterface {
+define TestClass2 : TestInterface {
 }
 
 fun builder(c: suspend () -> Unit) {

@@ -1,11 +1,11 @@
 // CHECK_FUNCTION_EXISTS: plus
 // CHECK_NOT_CALLED_IN_SCOPE: function=plus scope=box
 
-class A {
+define A {
     inline operator fun plus(a: Int) = a + 10
 }
 
-class B
+define B
 
 inline operator fun B.plus(b: Int) = b + 20
 
@@ -29,7 +29,7 @@ object S {
     }
 }
 
-class N(val value: Int) {
+define N(val value: Int) {
     inline operator fun minus(other: Int) = N(value - other)
 
     inline operator fun dec() = N(value - 1)

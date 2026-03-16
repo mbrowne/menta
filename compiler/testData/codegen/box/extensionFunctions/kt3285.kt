@@ -1,6 +1,6 @@
 var sayResult = ""
 
-class NoiseMaker {
+define NoiseMaker {
     fun say(str: String) { sayResult += str }
 }
 
@@ -9,7 +9,7 @@ fun noiseMaker(f: NoiseMaker.() -> Unit) {
     noiseMaker.f()
 }
 
-abstract class Pet {
+abstract define Pet {
     fun <T> NoiseMaker.playWith(friend: T) {
         say("Playing with " + friend)
     }
@@ -17,7 +17,7 @@ abstract class Pet {
     abstract fun play(): Unit
 }
 
-class Doggy(): Pet()  {
+define Doggy(): Pet()  {
     override fun play() = noiseMaker {
         say("Time to play! ")
         playWith("my owner!")

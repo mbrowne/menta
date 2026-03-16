@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z1(val x: Int?)
+value define Z1(val x: Int?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2(val z: Z1)
+value define Z2(val z: Z1)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZN(val z: Z1?)
+value define ZN(val z: Z1?)
 
 fun wrap1(n: Int): Z1? = if (n < 0) null else Z1(n)
 fun wrap2(n: Int): Z2? = if (n < 0) null else Z2(Z1(n))

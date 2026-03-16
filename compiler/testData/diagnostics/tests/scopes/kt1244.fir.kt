@@ -3,11 +3,11 @@
 
 package kt1244
 
-class A {
+define A {
     private var a = ""
 }
 
-class B() {
+define B() {
     init {
         A().<!INVISIBLE_REFERENCE!>a<!> = "Hello"
     }

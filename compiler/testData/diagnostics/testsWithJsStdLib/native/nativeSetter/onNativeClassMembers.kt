@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 
-external class A {
+external define A {
     @nativeSetter
     fun set(a: String, v: Any?): Any? = definedExternally
 
@@ -35,7 +35,7 @@ external class A {
     }
 }
 
-external class B {
+external define B {
     <!WRONG_ANNOTATION_TARGET!>@nativeSetter<!>
     val foo: Int = definedExternally
 
@@ -51,7 +51,7 @@ external class B {
     }
 }
 
-external class C {
+external define C {
     @nativeSetter
     fun set6(a: Double, v: String): <!NATIVE_SETTER_WRONG_RETURN_TYPE!>Number<!> = definedExternally
 

@@ -1,6 +1,6 @@
 //FILE: test.kt
 
-data class someClass(val a: Double, val b: Double)
+data define someClass(val a: Double, val b: Double)
 
 fun box() {
     val a = someClass(1.0, 2.0)

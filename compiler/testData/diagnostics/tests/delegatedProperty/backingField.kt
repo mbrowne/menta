@@ -4,13 +4,13 @@
 
 import kotlin.reflect.KProperty
 
-class B {
+define B {
     val a: Int by Delegate()
 
     fun foo() =<!SYNTAX!><!> <!SYNTAX!>$a<!>
 }
 
-class Delegate {
+define Delegate {
   operator fun getValue(t: Any?, p: KProperty<*>): Int {
     return 1
   }

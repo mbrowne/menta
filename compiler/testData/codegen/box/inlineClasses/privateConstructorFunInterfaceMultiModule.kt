@@ -5,7 +5,7 @@
 // FILE: lib.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z private constructor(private val value: Any?) {
+value define Z private constructor(private val value: Any?) {
     fun result(): String = value as String
 
     companion object {

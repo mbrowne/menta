@@ -1,11 +1,11 @@
 // p.Inheritor
 package p
 
-annotation class Anno(vararg val s: String)
+annotation define Anno(vararg val s: String)
 
-annotation class Bueno(val anno: Anno)
+annotation define Bueno(val anno: Anno)
 
-class Inheritor: I, I2 {
+define Inheritor: I, I2 {
 
     fun f() {
 

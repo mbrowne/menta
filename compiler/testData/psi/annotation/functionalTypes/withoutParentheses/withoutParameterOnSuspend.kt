@@ -24,7 +24,7 @@ fun foo() {
     val x = { x: suspend @Foo () -> () -> Unit -> x }
 }
 
-abstract class A {
+abstract define A {
     abstract var x: @Foo suspend (suspend () -> (() -> Unit)) -> Int
 }
 

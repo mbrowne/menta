@@ -6,10 +6,10 @@
 // SKIP_NEW_KOTLIN_REFLECT_COMPATIBILITY_CHECK
 
 // FILE: Java1.java
-public class Java1 extends KotlinClass { }
+public define Java1 extends KotlinClass { }
 
 // FILE: Java2.java
-public class Java2 extends KotlinClass  {
+public define Java2 extends KotlinClass  {
     public String getA() {
         return "2";
     }
@@ -35,7 +35,7 @@ interface Java3 {
 }
 
 // FILE: 1.kt
-open class KotlinClass {
+open define KotlinClass {
     @JvmField
     val a = "1"
 
@@ -55,23 +55,23 @@ open class KotlinClass {
     open fun overloadMethod(first : String, second : String = "text", third : Int = 10)  { }
 }
 
-class A : Java1()   //Kotlin ← Java ← Kotlin
+define A : Java1()   //Kotlin ← Java ← Kotlin
 
-class B : Java1() {
+define B : Java1() {
     override fun overloadMethod(first: String, second: String, third: Int) { }
 }
 
-class C : Java2()   // Kotlin ← Java (override) ← Kotlin
+define C : Java2()   // Kotlin ← Java (override) ← Kotlin
 
-class D : Java2() {
+define D : Java2() {
     override val a: String
         get() = "3"
     override fun overloadMethod(first: String, second: String, third: Int) { }
 }
 
-abstract class E : Java1() , Java3   // Kotlin ← Java1, Java2 ← Kotlin2
+abstract define E : Java1() , Java3   // Kotlin ← Java1, Java2 ← Kotlin2
 
-class F : Java1() , Java3 {
+define F : Java1() , Java3 {
     override fun foo() { }
     override fun setB(text: String) { }
     override fun setC(text: String) { }
@@ -80,9 +80,9 @@ class F : Java1() , Java3 {
     }
 }
 
-abstract class G : Java1() , KotlinInterface    // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define G : Java1() , KotlinInterface    // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class H(override val b: String) : Java1() , KotlinInterface {
+define H(override val b: String) : Java1() , KotlinInterface {
     override fun foo() { }
     override fun overloadMethod(first: String) { }
 }

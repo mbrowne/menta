@@ -14,9 +14,9 @@ object DerivedImpl : IDerived {
     override fun toString(): String = "A"
 }
 
-class Test1 : IBase by BaseImpl
+define Test1 : IBase by BaseImpl
 
-class Test2 : IDerived by DerivedImpl
+define Test2 : IDerived by DerivedImpl
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inheritanceDelegation, interfaceDeclaration,
 objectDeclaration, override, stringLiteral */

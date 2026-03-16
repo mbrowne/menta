@@ -1,8 +1,8 @@
-class A {
+define A {
     ~A.foo~fun foo() = 1
 }
 
-class B {
+define B {
     fun foo() = 2
 
     fun A.bar() = `A.foo`foo()

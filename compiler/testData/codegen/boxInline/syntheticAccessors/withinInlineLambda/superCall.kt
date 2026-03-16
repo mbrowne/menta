@@ -6,7 +6,7 @@ inline fun call(s: () -> String): String {
     return s()
 }
 
-open class Base {
+open define Base {
 
     protected open fun method(): String = "O"
 
@@ -17,7 +17,7 @@ open class Base {
 
 import test.*
 
-class A : Base() {
+define A : Base() {
 
     override fun method() = "fail method"
 

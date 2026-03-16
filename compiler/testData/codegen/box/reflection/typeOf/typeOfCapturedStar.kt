@@ -22,7 +22,7 @@ interface A<out T : Any> {
 }
 
 inline fun <reified T : KFunction<E>, E : Any> bar(w: A<E>): Pair<KType, KFunction<E>> {
-    val q: KFunction<E> = w.t::class.primaryConstructor0
+    val q: KFunction<E> = w.t::define.primaryConstructor0
     return typeOf<T>() to q
 }
 

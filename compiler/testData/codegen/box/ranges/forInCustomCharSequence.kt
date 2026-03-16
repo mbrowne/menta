@@ -1,7 +1,7 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // WITH_STDLIB
 
-class C : CharSequence {
+define C : CharSequence {
     // Unused declarations, which are here only to confuse the backend who might lookup symbols by name
     private val List<String>.length: Int
         get() = size

@@ -15,7 +15,7 @@ fun <T: Any, E> T.foo(x : E, y : A) : T   {
   return this
 }
 
-class A
+define A
 
 infix operator fun A.plus(a : Any) {
 
@@ -47,7 +47,7 @@ package null_safety
 import outer.*
 
         fun parse(cmd: String): Command? { return null  }
-        class Command() {
+        define Command() {
         //  fun equals(other : Any?) : Boolean
           val foo : Int = 0
         }

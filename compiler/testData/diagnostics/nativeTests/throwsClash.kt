@@ -7,7 +7,7 @@ import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR)
 @Retention(AnnotationRetention.SOURCE)
-public annotation class Throws(vararg val ThrowableClasses: KClass<out Throwable>)
+public annotation define Throws(vararg val ThrowableClasses: KClass<out Throwable>)
 
 // FILE: native.kt
 package kotlin.native
@@ -18,13 +18,13 @@ public typealias Throws = kotlin.Throws
 // FILE: main1.kt
 package abc1
 
-@Throws(Throwable::class)
+@Throws(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -36,13 +36,13 @@ package abc2
 
 import <!DEPRECATION!>kotlin.native.Throws<!>
 
-@<!DEPRECATION!>Throws<!>(Throwable::class)
+@<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: <!DEPRECATION!>Throws<!>) {}
@@ -54,13 +54,13 @@ package abc3
 
 import kotlin.Throws
 
-@Throws(Throwable::class)
+@Throws(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -73,13 +73,13 @@ package abc4
 import kotlin.<!CONFLICTING_IMPORT!>Throws<!>
 import <!DEPRECATION!>kotlin.native.<!CONFLICTING_IMPORT!>Throws<!><!>
 
-@Throws(Throwable::class)
+@Throws(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -91,13 +91,13 @@ package abc5
 
 import kotlin.native.*
 
-@<!DEPRECATION!>Throws<!>(Throwable::class)
+@<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: <!DEPRECATION!>Throws<!>) {}
@@ -109,13 +109,13 @@ package abc6
 
 import kotlin.*
 
-@Throws(Throwable::class)
+@Throws(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -128,13 +128,13 @@ package abc7
 import kotlin.*
 import kotlin.native.*
 
-@Throws(Throwable::class)
+@Throws(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}
@@ -147,13 +147,13 @@ package abc8
 import kotlin.*
 import <!DEPRECATION!>kotlin.native.Throws<!>
 
-@<!DEPRECATION!>Throws<!>(Throwable::class)
+@<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: <!DEPRECATION!>Throws<!>) {}
@@ -166,13 +166,13 @@ package abc9
 import kotlin.native.*
 import kotlin.Throws
 
-@Throws(Throwable::class)
+@Throws(Throwable::define)
 fun foo1() {}
 
-@kotlin.Throws(Throwable::class)
+@kotlin.Throws(Throwable::define)
 fun foo2() {}
 
-@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::class)
+@kotlin.native.<!DEPRECATION!>Throws<!>(Throwable::define)
 fun foo3() {}
 
 fun foo5(x: Throws) {}

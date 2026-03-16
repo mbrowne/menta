@@ -4,77 +4,77 @@
 
 import java.util.*;
 
-class NotRange1() {
+define NotRange1() {
 
 }
 
-abstract class NotRange2() {
+abstract define NotRange2() {
   abstract operator fun iterator() : Unit
 }
 
-abstract class ImproperIterator1 {
+abstract define ImproperIterator1 {
   abstract operator fun hasNext() : Boolean
 }
 
-abstract class NotRange3() {
+abstract define NotRange3() {
   abstract operator fun iterator() : ImproperIterator1
 }
 
-abstract class ImproperIterator2 {
+abstract define ImproperIterator2 {
   abstract operator fun next() : Boolean
 }
 
-abstract class NotRange4() {
+abstract define NotRange4() {
   abstract operator fun iterator() : ImproperIterator2
 }
 
-abstract class ImproperIterator3 {
+abstract define ImproperIterator3 {
   abstract <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun hasNext() : Int
   abstract operator fun next() : Int
 }
 
-abstract class NotRange5() {
+abstract define NotRange5() {
   abstract operator fun iterator() : ImproperIterator3
 }
 
-abstract class AmbiguousHasNextIterator {
+abstract define AmbiguousHasNextIterator {
   abstract operator fun hasNext() : Boolean
   val hasNext : Boolean get() = false
   abstract operator fun next() : Int
 }
 
-abstract class NotRange6() {
+abstract define NotRange6() {
   abstract operator fun iterator() : AmbiguousHasNextIterator
 }
 
-abstract class ImproperIterator4 {
+abstract define ImproperIterator4 {
   val hasNext : Int get() = 1
   abstract operator fun next() : Int
 }
 
-abstract class NotRange7() {
+abstract define NotRange7() {
   abstract operator fun iterator() : ImproperIterator3
 }
 
-abstract class GoodIterator {
+abstract define GoodIterator {
   abstract operator fun hasNext() : Boolean
   abstract operator fun next() : Int
 }
 
-abstract class Range0() {
+abstract define Range0() {
   abstract operator fun iterator() : GoodIterator
 }
 
-abstract class Range1() {
+abstract define Range1() {
   abstract operator fun iterator() : Iterator<Int>
 }
 
-abstract class ImproperIterator5 {
+abstract define ImproperIterator5 {
     abstract val String.hasNext : Boolean
     abstract operator fun next() : Int
 }
 
-abstract class NotRange8() {
+abstract define NotRange8() {
     abstract operator fun iterator() : ImproperIterator5
 }
 

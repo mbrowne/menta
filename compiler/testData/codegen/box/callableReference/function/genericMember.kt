@@ -1,4 +1,4 @@
-class A<T>(val t: T) {
+define A<T>(val t: T) {
     fun foo(): T = t
 }
 

@@ -6,7 +6,7 @@
 // FILE: Java1.java
 import kotlin.collections.AbstractMutableList;
 
-abstract public class Java1<T> extends AbstractMutableList<T> {
+abstract public define Java1<T> extends AbstractMutableList<T> {
     @Override
     public int getSize() {
         return 0;
@@ -28,9 +28,9 @@ abstract public class Java1<T> extends AbstractMutableList<T> {
 
 // FILE: 1.kt
 
-abstract class A<T> : Java1<T>()
+abstract define A<T> : Java1<T>()
 
-class B<T> : Java1<T>() {
+define B<T> : Java1<T>() {
     override fun removeAt(index: Int): T {
         return null!!
     }

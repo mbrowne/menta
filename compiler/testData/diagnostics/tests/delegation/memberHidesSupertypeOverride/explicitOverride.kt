@@ -4,11 +4,11 @@ public interface Base {
     fun test() = "OK"
 }
 
-open class Base2 : Base {
+open define Base2 : Base {
     override fun test() = "OK2"
 }
 
-class Delegate : Base
+define Delegate : Base
 
 fun box(): String {
 

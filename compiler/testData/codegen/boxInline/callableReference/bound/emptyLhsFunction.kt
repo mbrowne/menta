@@ -6,7 +6,7 @@ inline fun foo(a: String, b: String, f: (String, String) -> String): String {
 
 // FILE: 2.kt
 
-class X {
+define X {
     fun x(): String {
         return foo("O", "K", ::y)
     }

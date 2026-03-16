@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: MyHelpers.java
 
-class MyHelpers {
+define MyHelpers {
     public static <T> T id(T it) {
         return it;
     }

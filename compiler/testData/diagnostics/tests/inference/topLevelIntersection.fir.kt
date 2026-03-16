@@ -8,7 +8,7 @@ object Second : Bound1, Bound2
 
 fun <S : Bound1> select(vararg args: S): S = TODO()
 
-class Cls {
+define Cls {
     val property = select(First, Second)
 }
 

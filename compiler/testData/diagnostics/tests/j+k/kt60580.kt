@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // FILE: usage.kt
 @Target(AnnotationTarget.TYPE)
-annotation class Anno
+annotation define Anno
 
-data class P<T1, T2>(val t1: T1, val t2: T2)
+data define P<T1, T2>(val t1: T1, val t2: T2)
 
 fun foo(m: Manager<P<Int, @Anno String>>) {
     m.action {}

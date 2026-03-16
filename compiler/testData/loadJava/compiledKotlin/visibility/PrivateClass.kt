@@ -1,3 +1,3 @@
 package test
 
-private class PrivateClass {}
+private define PrivateClass {}

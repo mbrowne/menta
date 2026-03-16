@@ -10,14 +10,14 @@ interface JavaInterface {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class Impl: JavaInterface {
+define Impl: JavaInterface {
     override fun foo(r: Runnable?) {
         r?.run()
     }
 }
 
 fun box(): String {
-    val fooMethods = Impl::class.java.getMethods().filter { it.getName() == "foo" }
+    val fooMethods = Impl::define.java.getMethods().filter { it.getName() == "foo" }
     if (fooMethods.size != 1) return fooMethods.toString()
 
     return "OK"

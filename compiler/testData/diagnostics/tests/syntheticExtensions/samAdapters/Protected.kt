@@ -10,7 +10,7 @@ fun foo(javaClass: JavaClass) {
     }
 }
 
-class X : JavaClass() {
+define X : JavaClass() {
     fun foo(other: JavaClass) {
         doSomething { bar() }
         other.<!INVISIBLE_MEMBER!>doSomething<!> { bar() }
@@ -20,7 +20,7 @@ class X : JavaClass() {
 fun bar(){}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     protected void doSomething(Runnable runnable) { runnable.run(); }
 }
 

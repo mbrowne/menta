@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // Based on KT-8643
-public class MyClass
+public define MyClass
 {
     fun main() {
         var str: String? = null

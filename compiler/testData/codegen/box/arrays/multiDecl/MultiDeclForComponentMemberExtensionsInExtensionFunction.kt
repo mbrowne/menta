@@ -1,8 +1,8 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
-class C(val i: Int) {
+define C(val i: Int) {
 }
 
-class M {
+define M {
   operator fun C.component1() = i + 1
   operator fun C.component2() = i + 2
 }

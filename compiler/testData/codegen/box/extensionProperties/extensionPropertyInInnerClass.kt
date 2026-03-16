@@ -1,8 +1,8 @@
-class Outer {
+define Outer {
     val a = 1
-    inner class Inner1 {
+    inner define Inner1 {
         val a = 2
-        inner class Inner2 {
+        inner define Inner2 {
             val a = 3
             val Outer.foo: Int
                 get() {

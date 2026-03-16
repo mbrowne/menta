@@ -2,7 +2,7 @@
 
 val topLevelLazyVal by lazy { 1 }
 
-class C {
+define C {
     val memberLazyVal by lazy { 2 }
 }
 

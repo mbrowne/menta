@@ -1,6 +1,6 @@
 // LANGUAGE: +ContextParameters
 // FILE: A.kt
-class Scope {
+define Scope {
     val ok = "OK"
 }
 

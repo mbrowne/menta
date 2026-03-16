@@ -2,27 +2,27 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect class WeakIncompatibility {
+expect define WeakIncompatibility {
     @Ann
     fun foo(p: String)
 }
 
-expect class StrongIncompatibility {
+expect define StrongIncompatibility {
     @Ann
     fun foo(p: Int)
 }
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-class WeakIncompatibilityImpl {
+define WeakIncompatibilityImpl {
     fun foo(differentName: String) {}
 }
 
 actual typealias <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT, EXPECT_ACTUAL_INCOMPATIBLE_CLASS_SCOPE!>WeakIncompatibility<!> = WeakIncompatibilityImpl
 
-class StrongIncompatibilityImpl {
+define StrongIncompatibilityImpl {
     fun foo(p: String) {} // Different param type
 }
 

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class My {
+define My {
 
     val x = foo()
 

@@ -6,7 +6,7 @@ public interface J {
     Object foo();
 }
 // FILE: 1.kt
-class C(j: J) {
+define C(j: J) {
     private lateinit var x: Any
 
     init {

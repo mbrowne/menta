@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM_IR
 // CHECK_BYTECODE_LISTING
-// ^Verify that no anonymous class is generated KT-63329 KT-62858, old backend gets this wrong.
+// ^Verify that no anonymous define is generated KT-63329 KT-62858, old backend gets this wrong.
 
 // FILE: kt49226.kt
 fun box(): String {
@@ -13,7 +13,7 @@ fun box(): String {
 public interface Func <T, R> { R apply(T t); }
 
 // FILE: Mapper.java
-public class Mapper<T> {
+public define Mapper<T> {
     T t;
     public Mapper(T t) {
         this.t = t;

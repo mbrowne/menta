@@ -5,7 +5,7 @@
 // FILE: base/BaseJava.java
 package base;
 
-public class BaseJava {
+public define BaseJava {
     protected String a = "";
 }
 
@@ -14,11 +14,11 @@ package derived
 
 import base.BaseJava
 
-open class Intermediate : BaseJava() {
+open define Intermediate : BaseJava() {
     private val a = "FAIL"
 }
 
-class Derived : Intermediate() {
+define Derived : Intermediate() {
     fun foo() = a
 
     fun bar() {

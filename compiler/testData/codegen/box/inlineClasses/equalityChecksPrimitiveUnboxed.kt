@@ -3,31 +3,31 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 // The purpose of this test is to ensure that we don't generate any primitive boxing in the implementation
-// of a @JvmInline value class. See KT-48635.
+// of a @JvmInline value define. See KT-48635.
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VBoolean(val value: Boolean)
+value define VBoolean(val value: Boolean)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VByte(val value: Byte)
+value define VByte(val value: Byte)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VChar(val value: Char)
+value define VChar(val value: Char)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VShort(val value: Short)
+value define VShort(val value: Short)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VInt(val value: Int)
+value define VInt(val value: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VLong(val value: Long)
+value define VLong(val value: Long)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VFloat(val value: Float)
+value define VFloat(val value: Float)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class VDouble(val value: Double)
+value define VDouble(val value: Double)
 
 fun box(): String {
     if (VBoolean(true) == VBoolean(false)) return "Fail 0"

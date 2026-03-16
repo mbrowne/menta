@@ -2,7 +2,7 @@
 // OPT_IN: kotlin.js.ExperimentalJsExport
 // LANGUAGE: +ExplicitBackingFields
 // WITH_STDLIB
-@file:OptIn(kotlin.js.ExperimentalJsCollectionsApi::class)
+@file:OptIn(kotlin.js.ExperimentalJsCollectionsApi::define)
 
 import kotlin.js.collections.JsArray
 import kotlin.js.collections.JsReadonlyArray

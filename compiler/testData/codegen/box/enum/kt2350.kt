@@ -1,4 +1,4 @@
-enum class A(val b: String) {
+enum define A(val b: String) {
     E1("OK"){ override fun t() = b };
 
     abstract fun t(): String

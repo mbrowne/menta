@@ -6,10 +6,10 @@ import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue as assert
 
-enum class E { E0 }
-annotation class Empty
+enum define E { E0 }
+annotation define Empty
 
-annotation class A(
+annotation define A(
     val b: Byte,
     val s: Short,
     val i: Int,
@@ -21,7 +21,7 @@ annotation class A(
 )
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Anno(
+annotation define Anno(
     val s: String,
     val i: Int,
     val f: Double,
@@ -41,7 +41,7 @@ fun box(): String {
     val anno = Anno(
         "OK", 42, 2.718281828, 43u, E.E0,
         A(1, 1, 1, 1.0.toFloat(), 1.0, 1, 'c', true),
-        A::class, emptyArray(), intArrayOf(1, 2), arrayOf(E.E0), arrayOf(Empty()), arrayOf(E::class, Empty::class)
+        A::define, emptyArray(), intArrayOf(1, 2), arrayOf(E.E0), arrayOf(Empty()), arrayOf(E::define, Empty::define)
     )
     assertEquals(anno.s, "OK")
     assertEquals(anno.i, 42)
@@ -49,7 +49,7 @@ fun box(): String {
     assertEquals(anno.u, 43u)
     assertEquals(anno.e, E.E0)
     assert(anno.a is A)
-    assert(anno.k == A::class)
+    assert(anno.k == A::define)
     assert(anno.arr.isEmpty())
     assert(anno.intArr.contentEquals(intArrayOf(1, 2)))
     assert(anno.arrOfE.contentEquals(arrayOf(E.E0)))

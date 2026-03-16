@@ -6,7 +6,7 @@
 import kotlin.coroutines.*
 
 @JvmInline
-value class MyValueClass(val value: Any?)
+value define MyValueClass(val value: Any?)
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(Continuation(EmptyCoroutineContext) {

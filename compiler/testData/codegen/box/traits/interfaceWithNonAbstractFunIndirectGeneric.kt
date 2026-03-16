@@ -6,9 +6,9 @@ interface I<T> {
 
 interface J : I<String>
 
-class A : I<String>, J
+define A : I<String>, J
 
-class B : J, I<String>
+define B : J, I<String>
 
 fun box(): String {
     val foo = A().foo("q")

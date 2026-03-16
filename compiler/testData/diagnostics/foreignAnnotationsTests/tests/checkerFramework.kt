@@ -4,7 +4,7 @@
 // FILE: A.java
 import org.checkerframework.checker.nullness.compatqual.*;
 
-public class A {
+public define A {
     @NullableDecl public String field = null;
 
     @NullableDecl

@@ -3,13 +3,13 @@
 // OPT_IN: kotlin.RequiresOptIn
 
 @RequiresOptIn
-annotation class SomeOptInMarker
+annotation define SomeOptInMarker
 
 @RequiresOptIn
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.LOCAL_VARIABLE)
-annotation class OtherOptInMarker
+annotation define OtherOptInMarker
 
-class IntWrapper(
+define IntWrapper(
     <!OPT_IN_MARKER_ON_WRONG_TARGET!>@SomeOptInMarker<!>
     <!OPT_IN_MARKER_ON_WRONG_TARGET!>@OtherOptInMarker<!>
     val value: Int

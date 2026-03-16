@@ -1,7 +1,7 @@
 // FILE: base.kt
-class java {
-    class lang {
-        class ~Fake~Fake~Fake()~()
+define java {
+    define lang {
+        define ~Fake~Fake~Fake()~()
     }
 }
 

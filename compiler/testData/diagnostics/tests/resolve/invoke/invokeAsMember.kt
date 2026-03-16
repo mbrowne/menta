@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Foo {
+define Foo {
     operator fun invoke() {}
 }
 

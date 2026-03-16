@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val value: Long)
+value define Z(val value: Long)
 
 fun f(g: (
     z: Z,

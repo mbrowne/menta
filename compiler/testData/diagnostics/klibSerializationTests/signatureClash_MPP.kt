@@ -8,7 +8,7 @@
 // FILE: common.kt
 <!CONFLICTING_KLIB_SIGNATURES_ERROR!><!CONFLICTING_OVERLOADS!>fun foo(): String<!> = ""<!>
 
-expect class A
+expect define A
 <!CONFLICTING_KLIB_SIGNATURES_ERROR!><!CONFLICTING_OVERLOADS!>fun bar(x: A): Int<!> = 2<!>
 
 @Suppress("REDECLARATION")
@@ -18,7 +18,7 @@ expect class A
 // FILE: platform.kt
 <!CONFLICTING_KLIB_SIGNATURES_ERROR!>fun foo(): Int = 0<!>
 
-class B
+define B
 actual typealias A = B
 <!CONFLICTING_KLIB_SIGNATURES_ERROR!>fun bar(x: B): Int = 3<!>
 

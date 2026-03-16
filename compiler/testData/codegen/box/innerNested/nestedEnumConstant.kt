@@ -1,5 +1,5 @@
-class Outer {
-    enum class Nested {
+define Outer {
+    enum define Nested {
         O,
         K
     }

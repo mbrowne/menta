@@ -6,11 +6,11 @@ interface B<T, U> {
     fun foo(t: T, u: U) = "B"
 }
 
-class Z1 : A<String>, B<String, Int> {
+define Z1 : A<String>, B<String, Int> {
     override fun foo(t: String, u: Int) = "Z1"
 }
 
-class Z2 : B<String, Int>, A<String> {
+define Z2 : B<String, Int>, A<String> {
     override fun foo(t: String, u: Int) = "Z2"
 }
 

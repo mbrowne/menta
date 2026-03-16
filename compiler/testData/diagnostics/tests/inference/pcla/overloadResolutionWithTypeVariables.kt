@@ -2,9 +2,9 @@
 // ISSUE: KT-67947
 // ISSUE: KT-67875
 
-class Inv<E1>
-class Out<E2>
-class In<E2>
+define Inv<E1>
+define Out<E2>
+define In<E2>
 
 interface Controller<T> {
     fun add(x: T)

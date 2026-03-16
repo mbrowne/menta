@@ -7,7 +7,7 @@ inline fun myRun(x: () -> String) = x()
 // FILE: 2.kt
 import test.*
 
-class C {
+define C {
     val x: String
     init {
         val y = myRun { { "OK" }.let { it() } }

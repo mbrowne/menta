@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class BoolWrapper(@Volatile var x: Boolean)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define BoolWrapper(@Volatile var x: Boolean)
 
 val global = BoolWrapper(false)
 

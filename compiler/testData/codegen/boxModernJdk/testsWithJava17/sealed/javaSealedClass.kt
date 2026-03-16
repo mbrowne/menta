@@ -1,16 +1,16 @@
 // ISSUE: KT-41215, KT-43551
 
 // FILE: Base.java
-public sealed abstract class Base permits A, B {}
+public sealed abstract define Base permits A, B {}
 
 // FILE: A.java
-public final class A extends Base {}
+public final define A extends Base {}
 
 // FILE: B.java
-public sealed abstract class B extends Base permits B.C, B.D {
-    public static final class C extends B {}
+public sealed abstract define B extends Base permits B.C, B.D {
+    public static final define C extends B {}
 
-    public static non-sealed class D extends B {}
+    public static non-sealed define D extends B {}
 }
 
 // FILE: main.kt

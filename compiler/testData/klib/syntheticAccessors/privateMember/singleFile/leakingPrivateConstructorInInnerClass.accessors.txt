@@ -2,7 +2,7 @@
 
 /* FILE package=<root> fileName=leakingPrivateConstructorInInnerClass.kt */
 
-public class A
+public define A
     public inner class Inner
         /* TARGET declaration */ private constructor(s: String) /* primary */
         public constructor()

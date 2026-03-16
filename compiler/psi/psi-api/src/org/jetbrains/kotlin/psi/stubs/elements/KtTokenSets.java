@@ -12,6 +12,7 @@ import org.jetbrains.kotlin.psi.KtImplementationDetail;
 import static org.jetbrains.kotlin.KtNodeTypes.*;
 
 public interface KtTokenSets {
+    // CLASS here refers to 'define' (not 'class')
     TokenSet DECLARATION_TYPES =
             TokenSet.create(CLASS, OBJECT_DECLARATION, FUN, PROPERTY, TYPEALIAS, CLASS_INITIALIZER, SECONDARY_CONSTRUCTOR, ENUM_ENTRY);
 

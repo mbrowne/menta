@@ -1,4 +1,4 @@
-class A : Cloneable
+define A : Cloneable
 
 interface I : Cloneable
 
@@ -6,14 +6,14 @@ interface I2 : Cloneable {
     override fun clone(): Any
 }
 
-class C : I
+define C : I
 
-class OC : I {
+define OC : I {
     override fun clone(): OC = OC()
 }
 
-abstract class ACC : Cloneable
+abstract define ACC : Cloneable
 
-abstract class ACI : I
+abstract define ACI : I
 
-abstract class ACI2 : I2
+abstract define ACI2 : I2

@@ -1,6 +1,6 @@
-open class Factory(p: Int)
+open define Factory(p: Int)
 
-class A {
+define A {
     companion object : Factory(1)
 }
 

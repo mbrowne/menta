@@ -16,7 +16,7 @@ interface My {
         <!SYNCHRONIZED_IN_INTERFACE!>@Synchronized<!> set(value) {}
 }
 
-abstract class Your {
+abstract define Your {
     <!SYNCHRONIZED_ON_ABSTRACT!>@Synchronized<!> abstract fun foo()
 
     @Synchronized fun bar() = 1

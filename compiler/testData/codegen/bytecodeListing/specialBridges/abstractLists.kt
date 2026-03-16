@@ -1,13 +1,13 @@
-abstract class ALA : List<Any>
+abstract define ALA : List<Any>
 
-abstract class ALAN : List<Any?>
+abstract define ALAN : List<Any?>
 
-abstract class ALT<T> : List<T>
+abstract define ALT<T> : List<T>
 
-abstract class ALI : List<Int>
+abstract define ALI : List<Int>
 
-abstract class ALIN : List<Int?>
+abstract define ALIN : List<Int?>
 
-abstract class ALS : List<String>
+abstract define ALS : List<String>
 
-abstract class ALSN : List<String?>
+abstract define ALSN : List<String?>

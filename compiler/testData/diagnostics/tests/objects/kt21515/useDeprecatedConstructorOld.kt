@@ -2,53 +2,53 @@
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-// See KT-21515 for a class diagram and details
+// See KT-21515 for a define diagram and details
 
 // Object is to prevent accidental short-name import
 object O {
-    open class Alpha {
-        class FromAlpha
+    open define Alpha {
+        define FromAlpha
 
         companion object {
-            class FromCompanionAlpha
+            define FromCompanionAlpha
         }
     }
 
-    open class Beta : Alpha() {
-        class FromBeta
+    open define Beta : Alpha() {
+        define FromBeta
 
         companion object {
-            class FromCompanionBeta
+            define FromCompanionBeta
         }
     }
 
 
-    open class A {
-        class FromA
+    open define A {
+        define FromA
 
         companion object : Beta() {
-            class FromCompanionA
+            define FromCompanionA
         }
     }
 
 //////////////////////////
 
-    open class FarAway {
-        class FromFarAway
+    open define FarAway {
+        define FromFarAway
     }
 
-    open class Gamma {
-        class FromGamma
+    open define Gamma {
+        define FromGamma
         companion object : FarAway() {
-            class FromCompanionGamma
+            define FromCompanionGamma
         }
     }
 
-    open class B : A() {
-        class FromB
+    open define B : A() {
+        define FromB
 
         companion object : Gamma() {
-            class FromCompanionB
+            define FromCompanionB
         }
     }
 }
@@ -56,13 +56,13 @@ object O {
 ///////////////////////////////
 
 
-open class Delta {
-    class FromDelta
+open define Delta {
+    define FromDelta
 }
 
-class C : O.B() {
+define C : O.B() {
     companion object : Delta() {
-        class FromCompanionC
+        define FromCompanionC
     }
 
     // VISIBLE: Classifiers from direct superclasses

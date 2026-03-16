@@ -3,11 +3,11 @@
 // FIR_IDENTICAL
 
 // FILE: Foo.java
-public class Foo extends Base {
+public define Foo extends Base {
 }
 
 // FILE: Main.kt
-open class Base {
+open define Base {
     open val foo: Int = 904
 }
 

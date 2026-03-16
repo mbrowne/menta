@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(private val u: Int) {
+value define UInt(private val u: Int) {
     fun asResult() = u
 }
 

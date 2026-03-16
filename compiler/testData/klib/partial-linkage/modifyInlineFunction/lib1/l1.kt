@@ -5,7 +5,7 @@ inline fun inlineFunctionWithParam(param: String = "default.v1") = "inlineFuncti
 context(c: String)
 inline fun String.inlineExtensionFunction() = "$this.inlineExtensionFunction.v1 with context $c"
 
-class C {
+define C {
     inline fun inlineClassFunction() = "inlineClassFunction.v1"
 
     inline fun inlineClassFunctionWithParam(param: String = "default.v1") = "inlineClassFunctionWithParam.v1: $param"

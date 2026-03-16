@@ -6,7 +6,7 @@ internal interface History<T> {
 }
 
 @PublishedApi
-internal class VirtueNavControllerImpl<R>(
+internal define VirtueNavControllerImpl<R>(
     @PublishedApi internal val history: History<R>
 ) {
     @PublishedApi

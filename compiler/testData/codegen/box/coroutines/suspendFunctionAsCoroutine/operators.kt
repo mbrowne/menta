@@ -11,7 +11,7 @@ suspend fun suspendThere(v: String): String = suspendCoroutineUninterceptedOrRet
     COROUTINE_SUSPENDED
 }
 
-class A(val x: String) {
+define A(val x: String) {
     var isSetValueCalled = false
     var isProvideDelegateCalled = false
     var isMinusAssignCalled = false

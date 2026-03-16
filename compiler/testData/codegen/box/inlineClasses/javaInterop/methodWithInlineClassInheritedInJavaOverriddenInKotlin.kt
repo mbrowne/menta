@@ -3,17 +3,17 @@
 
 // FILE: KotlinBase.kt
 
-open class KotlinBase {
+open define KotlinBase {
     open fun foo(x : UInt) = 42
 }
 
 // FILE: JavaChild.java
 
-public class JavaChild extends KotlinBase {}
+public define JavaChild extends KotlinBase {}
 
 // FILE: KotlinChild.kt
 
-class KotlinChild : JavaChild() {
+define KotlinChild : JavaChild() {
     override fun foo(x : UInt) = 24
 }
 

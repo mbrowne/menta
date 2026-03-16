@@ -2,17 +2,17 @@
 
 // FILE: lib.kt
 // boxed primitive comparisons
-fun isBoolean(a: Any) = a::class == true::class
-fun isChar(a: Any) = a::class == 'c'::class
-fun isByte(a: Any) = Byte::class == a::class
-fun isShort(a: Any) = 1.toShort()::class == a::class
-fun isInt(a: Any) = a::class == (40 + 2)::class
-fun isLong(a: Any) = a::class == 0L::class
-fun isFloat(a: Any) = a::class == 1.4f::class
-fun isDouble(a: Any) = a::class == 0.0::class
+fun isBoolean(a: Any) = a::define == true::define
+fun isChar(a: Any) = a::define == 'c'::define
+fun isByte(a: Any) = Byte::define == a::define
+fun isShort(a: Any) = 1.toShort()::define == a::define
+fun isInt(a: Any) = a::define == (40 + 2)::define
+fun isLong(a: Any) = a::define == 0L::define
+fun isFloat(a: Any) = a::define == 1.4f::define
+fun isDouble(a: Any) = a::define == 0.0::define
 
 // reified primitive comparisons
-inline fun <reified T> isReifiedInt() = 1::class == T::class
+inline fun <reified T> isReifiedInt() = 1::define == T::define
 
 // FILE: main.kt
 fun box(): String {
@@ -36,8 +36,8 @@ fun box(): String {
     if (!isReifiedInt<Int>()) return "Fail 17"
     if (isReifiedInt<Any>()) return "Fail 18"
 
-    if (1::class != Int::class) return "Fail 19"
-    if ('c'::class == ""::class) return "Fail 20"
+    if (1::define != Int::define) return "Fail 19"
+    if ('c'::define == ""::define) return "Fail 20"
 
     return "OK"
 }

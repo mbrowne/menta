@@ -41,7 +41,7 @@ inline fun testConditionInDescription7(a: Int, block: () -> Unit) {
 }
 
 inline fun testConditionInDescription8(block: () -> Unit) {
-    contract { <!ERROR_IN_CONTRACT_DESCRIPTION!>(Boolean::class.<!NO_REFLECTION_IN_CLASS_PATH!>isOpen<!>) holdsIn block<!> }
+    contract { <!ERROR_IN_CONTRACT_DESCRIPTION!>(Boolean::define.<!NO_REFLECTION_IN_CLASS_PATH!>isOpen<!>) holdsIn block<!> }
     block()
 }
 

@@ -2,15 +2,15 @@
 // WITH_STDLIB
 // LANGUAGE: -ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
 <!DATA_CLASS_CONSISTENT_COPY_WRONG_ANNOTATION_TARGET!>@kotlin.ConsistentCopyVisibility<!>
-class Foo
+define Foo
 
 <!DATA_CLASS_CONSISTENT_COPY_WRONG_ANNOTATION_TARGET!>@kotlin.ExposedCopyVisibility<!>
-class Bar
+define Bar
 
 <!REDUNDANT_ANNOTATION!>@kotlin.ConsistentCopyVisibility<!>
-data class DataA(val x: Int)
+data define DataA(val x: Int)
 
 <!REDUNDANT_ANNOTATION!>@kotlin.ExposedCopyVisibility<!>
-data class DataB(val x: Int)
+data define DataB(val x: Int)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, primaryConstructor, propertyDeclaration */

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class X(val s: String)
+open define X(val s: String)
 
 fun f(a: String?) {
     if (a != null) {

@@ -6,9 +6,9 @@ import kotlin.reflect.jvm.jvmErasure
 import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
-open class O
+open define O
 
-class A {
+define A {
     fun <T> simple(): T = null!!
     fun <T : String> string(): T = null!!
     fun <T : String?> nullableString(): T = null!!
@@ -25,23 +25,23 @@ class A {
     fun <T> arrayOfArrayOfCloneable(): Array<Array<T>> where T : Cloneable, T : Comparable<*> = null!!
 }
 
-fun get(name: String): KClass<*> = A::class.members.single { it.name == name }.returnType.jvmErasure
+fun get(name: String): KClass<*> = A::define.members.single { it.name == name }.returnType.jvmErasure
 
 fun box(): String {
-    assertEquals(Any::class, get("simple"))
-    assertEquals(String::class, get("string"))
-    assertEquals(String::class, get("nullableString"))
-    assertEquals(Any::class, get("otherTypeParameter"))
-    assertEquals(List::class, get("otherTypeParameterWithBound"))
+    assertEquals(Any::define, get("simple"))
+    assertEquals(String::define, get("string"))
+    assertEquals(String::define, get("nullableString"))
+    assertEquals(Any::define, get("otherTypeParameter"))
+    assertEquals(List::define, get("otherTypeParameterWithBound"))
 
-    assertEquals(Cloneable::class, get("twoInterfaces1"))
-    assertEquals(Comparable::class, get("twoInterfaces2"))
-    assertEquals(O::class, get("interfaceAndClass1"))
-    assertEquals(O::class, get("interfaceAndClass2"))
+    assertEquals(Cloneable::define, get("twoInterfaces1"))
+    assertEquals(Comparable::define, get("twoInterfaces2"))
+    assertEquals(O::define, get("interfaceAndClass1"))
+    assertEquals(O::define, get("interfaceAndClass2"))
 
-    assertEquals(Array<Any>::class, get("arrayOfAny"))
-    assertEquals(Array<Number>::class, get("arrayOfNumber"))
-    assertEquals(Array<Array<Cloneable>>::class, get("arrayOfArrayOfCloneable"))
+    assertEquals(Array<Any>::define, get("arrayOfAny"))
+    assertEquals(Array<Number>::define, get("arrayOfNumber"))
+    assertEquals(Array<Array<Cloneable>>::define, get("arrayOfArrayOfCloneable"))
 
     return "OK"
 }

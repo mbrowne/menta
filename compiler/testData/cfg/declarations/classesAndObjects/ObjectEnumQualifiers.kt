@@ -4,11 +4,11 @@ object O {
     val y = 1
 }
 
-enum class E(val x: Int) {
+enum define E(val x: Int) {
     E1(0)
 }
 
-class C {
+define C {
     companion object {
         val z = 2
     }

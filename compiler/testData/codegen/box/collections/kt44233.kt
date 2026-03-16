@@ -3,7 +3,7 @@
 
 import java.util.concurrent.ConcurrentSkipListSet
 
-class StringIterable : Iterable<String> {
+define StringIterable : Iterable<String> {
     private val strings = ConcurrentSkipListSet<String>()
     override fun iterator() = strings.iterator()
 }

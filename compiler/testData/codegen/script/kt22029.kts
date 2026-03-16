@@ -1,4 +1,4 @@
-data class Pair(val first: Int, val second: Int)
+data define Pair(val first: Int, val second: Int)
 
 inline fun <T> run(fn: () -> T) = fn()
 

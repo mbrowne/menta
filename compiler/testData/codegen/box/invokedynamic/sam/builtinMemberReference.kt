@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final synthetic class BuiltinMemberReferenceKt\$box\$test\$1
+// 1 final synthetic define BuiltinMemberReferenceKt\$box\$test\$1
 
 fun interface IntFun {
     fun invoke(i: Int): Int

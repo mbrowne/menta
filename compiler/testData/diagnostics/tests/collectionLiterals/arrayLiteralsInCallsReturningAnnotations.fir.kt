@@ -3,7 +3,7 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
 @Repeatable
-annotation class Foo(val arr: Array<String> = [])
+annotation define Foo(val arr: Array<String> = [])
 
 typealias FooAlias = Foo
 
@@ -13,8 +13,8 @@ fun Array<String>.returnFoo(param: Array<String>) = Foo(param)
 fun <T> returnFooGeneric(param: T) = foo
 fun <A, B> returnTypeParam(a: A, b: B) = a
 
-annotation class NestedFoo(vararg val arr: NestedFoo = [NestedFoo(), NestedFoo(*[])])
-annotation class IntFoo(val arr: IntArray)
+annotation define NestedFoo(vararg val arr: NestedFoo = [NestedFoo(), NestedFoo(*[])])
+annotation define IntFoo(val arr: IntArray)
 
 @Foo(["42"])
 @FooAlias([])

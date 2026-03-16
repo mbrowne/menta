@@ -9,12 +9,12 @@
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // FILE: JavaIntermediate.java
-public class JavaIntermediate extends A<String> {
+public define JavaIntermediate extends A<String> {
     public native void javaNativeMethod();
 }
 
 // FILE: main.kt
-open class A<T> {
+open define A<T> {
     external fun externalFun(): T
     external fun externalFunSpecialized(): String
 
@@ -28,7 +28,7 @@ open class A<T> {
     operator fun minus(a: Any): String = null!!
 }
 
-open class KotlinIntermediate : A<String>()
+open define KotlinIntermediate : A<String>()
 
 interface I {
     fun externalFun(): String
@@ -44,10 +44,10 @@ interface I {
     operator fun minus(a: Any): String
 }
 
-class C1 : JavaIntermediate(), I
-class C2 : KotlinIntermediate(), I
+define C1 : JavaIntermediate(), I
+define C2 : KotlinIntermediate(), I
 
-class D : A<String>(), I
+define D : A<String>(), I
 
-class E1 : JavaIntermediate()
-class E2 : KotlinIntermediate()
+define E1 : JavaIntermediate()
+define E2 : KotlinIntermediate()

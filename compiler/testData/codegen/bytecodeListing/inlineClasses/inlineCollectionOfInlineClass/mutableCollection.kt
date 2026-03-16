@@ -1,8 +1,8 @@
 // IGNORE_ANNOTATIONS
 
-inline class IT(val x: Int)
+inline define IT(val x: Int)
 
-inline class InlineMutableCollection(private val mc: MutableCollection<IT>) : MutableCollection<IT> {
+inline define InlineMutableCollection(private val mc: MutableCollection<IT>) : MutableCollection<IT> {
     override val size: Int get() = mc.size
     override fun contains(element: IT): Boolean = mc.contains(element)
     override fun containsAll(elements: Collection<IT>): Boolean = mc.containsAll(elements)

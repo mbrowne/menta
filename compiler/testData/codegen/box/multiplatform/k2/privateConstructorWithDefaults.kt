@@ -4,12 +4,12 @@
 // MODULE: common
 // FILE: common.kt
 
-expect open class Frame private constructor(disposableHandle: String = "OK")
+expect open define Frame private constructor(disposableHandle: String = "OK")
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
-actual open class Frame actual constructor(val disposableHandle: String) {
-    class Break : Frame()
+actual open define Frame actual constructor(val disposableHandle: String) {
+    define Break : Frame()
 }
 
 fun box() = Frame.Break().disposableHandle

@@ -15,7 +15,7 @@ interface C extends A, B {
 
 // FILE: JavaClass.java
 
-class JavaClass implements C {
+define JavaClass implements C {
     public String getOk() { return "OK"; }
 }
 

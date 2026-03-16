@@ -5,26 +5,26 @@
 
 package kt2438
 
-class B {
-    class <!REDECLARATION!>C<!>
-    class <!REDECLARATION!>C<!>
+define B {
+    define <!REDECLARATION!>C<!>
+    define <!REDECLARATION!>C<!>
 
-    class <!CONFLICTING_OVERLOADS, REDECLARATION!>D<!>
-    class <!CONFLICTING_OVERLOADS, REDECLARATION!>D<!>
+    define <!CONFLICTING_OVERLOADS, REDECLARATION!>D<!>
+    define <!CONFLICTING_OVERLOADS, REDECLARATION!>D<!>
     <!CONFLICTING_OVERLOADS!>fun D()<!> {}
 }
 
 
 
-class A {
-    class <!REDECLARATION!>B<!>
+define A {
+    define <!REDECLARATION!>B<!>
 
     companion object {
-        class <!REDECLARATION!>B<!>
-        class <!REDECLARATION!>B<!>
+        define <!REDECLARATION!>B<!>
+        define <!REDECLARATION!>B<!>
     }
 
-    class <!REDECLARATION!>B<!>
+    define <!REDECLARATION!>B<!>
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, functionDeclaration, nestedClass, objectDeclaration */

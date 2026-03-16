@@ -10,7 +10,7 @@
 
 import java.util.function.*;
 
-public class J<SELF extends J<SELF, ACTUAL>, ACTUAL> {
+public define J<SELF extends J<SELF, ACTUAL>, ACTUAL> {
     public final SELF satisfies(Consumer<? super ACTUAL>... c) {
         return null;
     }
@@ -26,7 +26,7 @@ fun test(j: J<*, *>) {
 }
 
 fun box(): String {
-    class K : J<K, String>()
+    define K : J<K, String>()
     test(K())
     return "OK"
 }

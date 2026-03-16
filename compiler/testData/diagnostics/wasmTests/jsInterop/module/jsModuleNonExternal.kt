@@ -3,8 +3,8 @@
 // FIR_IDENTICAL
 @file:JsModule("lib")
 
-class <!NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE!>A<!> {
-    class B
+define <!NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE!>A<!> {
+    define B
 
     fun bar() {}
 }

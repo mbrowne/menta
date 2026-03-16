@@ -5,7 +5,7 @@
 
 import kotlin.coroutines.*
 
-class A : BlockingDoubleChain
+define A : BlockingDoubleChain
 
 interface BlockingDoubleChain : BlockingBufferChain
 

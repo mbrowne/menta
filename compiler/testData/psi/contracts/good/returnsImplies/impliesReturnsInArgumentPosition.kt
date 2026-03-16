@@ -1,5 +1,5 @@
 // LANGUAGE: +ConditionImpliesReturnsContracts
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 // ISSUE: KT-79277, KT-79526
 import kotlin.contracts.*
 

@@ -1,4 +1,4 @@
-open class Base(val addr: Long, val name: String)
+open define Base(val addr: Long, val name: String)
 
 fun box(): String {
     val obj1 = object : Base(name = "OK", addr = 0x1234L) {}

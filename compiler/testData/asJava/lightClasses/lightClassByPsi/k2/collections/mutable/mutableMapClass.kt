@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMutableMap<KElem, VElem> : MutableMap<KElem, VElem>
+abstract define CMutableMap<KElem, VElem> : MutableMap<KElem, VElem>
 
-abstract class CMutableMap2<KElem, VElem> : MutableMap<KElem, VElem> by mutableMapOf<KElem, VElem>()
+abstract define CMutableMap2<KElem, VElem> : MutableMap<KElem, VElem> by mutableMapOf<KElem, VElem>()
 
-open class CMutableMap3<KElem, VElem> : MutableMap<KElem, VElem> {
+open define CMutableMap3<KElem, VElem> : MutableMap<KElem, VElem> {
     override fun clear() {
         TODO("Not yet implemented")
     }
@@ -47,4 +47,4 @@ open class CMutableMap3<KElem, VElem> : MutableMap<KElem, VElem> {
         TODO("Not yet implemented")
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableMap.class[entrySet;getEntries;getKeys;getSize;getValues;keySet;size;values], CMutableMap2.class[entrySet;keySet;size;values], CMutableMap3.class[entrySet;keySet;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableMap.define[entrySet;getEntries;getKeys;getSize;getValues;keySet;size;values], CMutableMap2.define[entrySet;keySet;size;values], CMutableMap3.define[entrySet;keySet;size;values]

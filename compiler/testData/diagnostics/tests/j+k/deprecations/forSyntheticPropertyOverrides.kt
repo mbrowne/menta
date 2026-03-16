@@ -3,14 +3,14 @@
 // LANGUAGE: -StopPropagatingDeprecationThroughOverrides
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public String getFoo() { return ""; }
     public String getBar() { return ""; }
 }
 
 // FILE: main.kt
 
-open class KotlinClass : JavaClass() {
+open define KotlinClass : JavaClass() {
     @Deprecated("sdas")
     override fun getFoo(): String {
         return super.getFoo()
@@ -22,7 +22,7 @@ open class KotlinClass : JavaClass() {
     }
 }
 
-class KotlinSubClass : KotlinClass() {
+define KotlinSubClass : KotlinClass() {
     override fun <!OVERRIDE_DEPRECATION!>getFoo<!>(): String {
         return super.<!DEPRECATION!>getFoo<!>()
     }

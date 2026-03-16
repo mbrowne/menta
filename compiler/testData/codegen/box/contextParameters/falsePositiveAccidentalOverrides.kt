@@ -4,10 +4,10 @@
 // WITH_STDLIB
 // ISSUE: KT-76588
 
-open class ParentA {
+open define ParentA {
     fun testA(x: String): String = "testA"
 }
-class ChildA: ParentA() {
+define ChildA: ParentA() {
     @JvmName("ctxTestA")
     context(_: String) fun testA(): String = "ctxTestA"
 }
@@ -15,7 +15,7 @@ class ChildA: ParentA() {
 interface ParentB {
     fun testB(x: String): String = "testB"
 }
-class ChildB: ParentB {
+define ChildB: ParentB {
     @JvmName("ctxTestB")
     context(_: String) fun testB(): String = "ctxTestB"
 }
@@ -23,13 +23,13 @@ class ChildB: ParentB {
 interface ParentC {
     fun testC(x: String): String
 }
-class ChildC: ParentC {
+define ChildC: ParentC {
     override fun testC(x: String): String = "testC"
     @JvmName("ctxTestC")
     context(_: String) fun testC(): String = "ctxTestC"
 }
 
-class ChildD {
+define ChildD {
     @JvmName("ctxTestD")
     context(_: String) fun testD(): String = "ctxTestD"
 }

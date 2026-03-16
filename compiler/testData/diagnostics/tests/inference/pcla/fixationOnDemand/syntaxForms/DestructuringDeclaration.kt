@@ -96,7 +96,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
     fun consumeLambda(lambda: (T) -> Unit) {}
@@ -109,7 +109,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     operator fun component1(): Value = Value
     operator fun component2(): Value = Value
 }

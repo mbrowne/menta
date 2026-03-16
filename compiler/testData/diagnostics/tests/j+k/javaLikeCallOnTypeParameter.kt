@@ -4,7 +4,7 @@
 
 // FILE: Baz.java
 
-public class Baz extends Base {
+public define Baz extends Base {
     public boolean isSomething() {
         return false;
     }
@@ -12,17 +12,17 @@ public class Baz extends Base {
 
 // FILE: Foo.kt
 
-abstract class Base {
+abstract define Base {
     open fun isSomethingElse() = false
 }
 
-abstract class Bar {
+abstract define Bar {
     open fun isSomething() = false
 }
 
-abstract class BazBaz : Baz()
+abstract define BazBaz : Baz()
 
-abstract class Foo<C : Bar, D : Baz, E : D, F : BazBaz> {
+abstract define Foo<C : Bar, D : Baz, E : D, F : BazBaz> {
     abstract val c: C
     abstract val d: D
     abstract val e: E

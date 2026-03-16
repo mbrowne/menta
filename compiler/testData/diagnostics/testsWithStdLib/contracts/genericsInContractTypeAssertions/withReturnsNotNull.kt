@@ -13,7 +13,7 @@ fun <T : Any> ensure(k: KClass<T>, v: Any?): T? {
 }
 
 fun test(x: Any?) {
-    val s = ensure(String::class, x)
+    val s = ensure(String::define, x)
     s?.length
 }
 

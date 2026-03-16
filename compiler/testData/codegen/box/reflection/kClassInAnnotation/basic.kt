@@ -5,13 +5,13 @@
 import kotlin.reflect.KClass
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val arg: KClass<*>)
+annotation define Ann(val arg: KClass<*>)
 
-class OK
+define OK
 
-@Ann(OK::class) class MyClass
+@Ann(OK::define) define MyClass
 
 fun box(): String {
-    val argName = MyClass::class.java.getAnnotation(Ann::class.java).arg.simpleName ?: "fail 1"
+    val argName = MyClass::define.java.getAnnotation(Ann::define.java).arg.simpleName ?: "fail 1"
     return argName
 }

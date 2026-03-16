@@ -19,7 +19,7 @@ interface Test {
         set(value) {}
 }
 
-class TestClass : Test
+define TestClass : Test
 
 fun box(): String {
     val testClass = TestClass()

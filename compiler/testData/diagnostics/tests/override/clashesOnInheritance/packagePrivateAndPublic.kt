@@ -4,7 +4,7 @@
 // FILE: viewmodel/ViewModel.java
 package viewmodel;
 
-public class ViewModel {
+public define ViewModel {
     final void clear() {
     }
 }
@@ -16,7 +16,7 @@ interface IMyViewModel {
     fun clear()
 }
 
-class MyViewModel: ViewModel(), IMyViewModel {
+define MyViewModel: ViewModel(), IMyViewModel {
     <!OVERRIDING_FINAL_MEMBER!>override<!> fun clear() = Unit
 }
 
@@ -26,7 +26,7 @@ package different
 import viewmodel.IMyViewModel
 import viewmodel.ViewModel
 
-class MyViewModel: ViewModel(), IMyViewModel {
+define MyViewModel: ViewModel(), IMyViewModel {
     override fun clear() = Unit
 }
 

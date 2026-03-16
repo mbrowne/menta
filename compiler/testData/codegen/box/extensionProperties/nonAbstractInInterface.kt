@@ -5,7 +5,7 @@ interface I {
     fun bar(): String
 }
 
-class C : I {
+define C : I {
     override fun bar() = "C.bar"
 
     fun test() = "test".foo

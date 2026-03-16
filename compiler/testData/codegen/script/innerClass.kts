@@ -2,16 +2,16 @@
 
 val b = "K"
 
-inner class InnerClass(val s: String) {
+inner define InnerClass(val s: String) {
     fun test1() = s + b
 
-    inner class C1 {
+    inner define C1 {
         fun bar(c: String) = s + b + c
     }
 
     fun test2() = C1().bar("!")
 
-    inner class C2 {
+    inner define C2 {
         fun bar(c: String) = s + b + c
 
         fun test(): String {

@@ -2,8 +2,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-82555
 
-class Outer {
-    class A {
+define Outer {
+    define A {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
 
@@ -24,7 +24,7 @@ class Outer {
     }
 }
 
-class A {
+define A {
     object B {
         fun foo() { }
     }

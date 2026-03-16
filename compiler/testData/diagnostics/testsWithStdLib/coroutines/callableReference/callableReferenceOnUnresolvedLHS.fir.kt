@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
 interface Inv
-class Impl : Inv
+define Impl : Inv
 
-class Scope<InterfaceT, ImplementationT : InterfaceT>(private val implClass: <!UNRESOLVED_REFERENCE!>j<!>.Class<ImplementationT>) {
+define Scope<InterfaceT, ImplementationT : InterfaceT>(private val implClass: <!UNRESOLVED_REFERENCE!>j<!>.Class<ImplementationT>) {
     fun foo(c: Collection<InterfaceT>) {
         val hm = c.asSequence()
             .filter(implClass::<!UNRESOLVED_REFERENCE!>isInstance<!>)

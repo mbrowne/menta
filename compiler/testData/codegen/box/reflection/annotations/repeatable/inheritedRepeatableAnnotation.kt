@@ -16,26 +16,26 @@ import kotlin.test.assertTrue
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class NotInheritedAnno
+annotation define NotInheritedAnno
 
 @java.lang.annotation.Inherited
 @Repeatable
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 @NotInheritedAnno
 @Anno("base")
-open class BaseClass
+open define BaseClass
 
 @Anno("1")
 @Anno("2")
-open class MiddleClass: BaseClass()
+open define MiddleClass: BaseClass()
 
 @Anno("3")
-class ChildClass1: MiddleClass()
+define ChildClass1: MiddleClass()
 
-class ChildClass2: MiddleClass()
+define ChildClass2: MiddleClass()
 
 private fun test(klass: KClass<*>, vararg expectedValues: String) {
     val expected = expectedValues.map { Anno(it) }.toSet()
@@ -51,9 +51,9 @@ private fun test(klass: KClass<*>, vararg expectedValues: String) {
 }
 
 fun box(): String {
-    test(MiddleClass::class, "1", "2")
-    test(ChildClass1::class, "3")
-    test(ChildClass2::class, "1", "2")
+    test(MiddleClass::define, "1", "2")
+    test(ChildClass1::define, "3")
+    test(ChildClass2::define, "1", "2")
 
     return "OK"
 }

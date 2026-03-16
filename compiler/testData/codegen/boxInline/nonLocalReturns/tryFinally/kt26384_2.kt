@@ -13,7 +13,7 @@ public inline fun <T> T.myapply(block: T.() -> Unit): T {
 import test.*
 var globalResult = ""
 
-class Test(val value: () -> String) {
+define Test(val value: () -> String) {
     fun test(): String {
         globalResult = ""
         try {

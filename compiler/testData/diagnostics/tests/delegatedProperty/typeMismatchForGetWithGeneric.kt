@@ -3,21 +3,21 @@
 
 import kotlin.reflect.KProperty
 
-class A
+define A
 
-class B {
+define B {
   val b: Int by <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>Delegate<A>()<!>
 }
 
 val bTopLevel: Int by <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>Delegate<A>()<!>
 
-class C {
+define C {
   val c: Int by Delegate<C>()
 }
 
 val cTopLevel: Int by Delegate<Nothing?>()
 
-class Delegate<T> {
+define Delegate<T> {
   operator fun getValue(t: T, p: KProperty<*>): Int {
     return 1
   }

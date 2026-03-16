@@ -1,4 +1,4 @@
-class A(val a: Int = 0, val b: String = "a")
+define A(val a: Int = 0, val b: String = "a")
 
 fun box(): String {
   val a1 = A()

@@ -17,7 +17,7 @@ suspend fun suspendHere(x: String): Unit {
     }
 }
 
-class A(val x: String) {
+define A(val x: String) {
     suspend fun foo() = suspendHere("A.foo($x)")
 }
 

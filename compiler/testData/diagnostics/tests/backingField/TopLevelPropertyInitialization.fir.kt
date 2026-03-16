@@ -7,7 +7,7 @@ import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 import kotlin.properties.ReadOnlyProperty
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 inline fun <T> inPlaceRun(block: () -> T): T {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     return block()
@@ -17,7 +17,7 @@ fun <T> notInPlaceRun(block: () -> T): T = null!!
 
 fun <T> simpleDelegate(value: T): ReadOnlyProperty<Any?, T> = null!!
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun <T> inPlaceDelegate(block: () -> T): ReadOnlyProperty<Any?, T> {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     return null!!
@@ -25,7 +25,7 @@ fun <T> inPlaceDelegate(block: () -> T): ReadOnlyProperty<Any?, T> {
 
 fun <T> notInPlaceDelegate(block: () -> T): ReadOnlyProperty<Any?, T> = null!!
 
-class Some {
+define Some {
     val a: String = <!UNINITIALIZED_VARIABLE!>a<!>
     val b: String = inPlaceRun { <!UNINITIALIZED_VARIABLE!>b<!> }
     val c: String = notInPlaceRun { c }

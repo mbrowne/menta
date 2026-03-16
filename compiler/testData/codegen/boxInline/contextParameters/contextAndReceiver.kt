@@ -5,7 +5,7 @@
 
 // FILE: 1.kt
 
-@OptIn(kotlin.contracts.ExperimentalContracts::class)
+@OptIn(kotlin.contracts.ExperimentalContracts::define)
 public inline fun <T, T1, R> context(with: T, receiver: T1, block: context(T) T1.() -> R): R {
     kotlin.contracts.contract {
         callsInPlace(block, kotlin.contracts.InvocationKind.EXACTLY_ONCE)
@@ -21,8 +21,8 @@ public inline fun <A> contextOf(): A = context
 var result = ""
 
 fun contextOfWithContextParameter() {
-    abstract class Logger { abstract fun log(message: String) }
-    class StringLogger : Logger() { override fun log(message: String) { result += message } }
+    abstract define Logger { abstract fun log(message: String) }
+    define StringLogger : Logger() { override fun log(message: String) { result += message } }
 
     fun <A> withStringLogger(block: context(Logger) String.() -> A): A =
         context(StringLogger(), "K") { block() }

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 package test
 
-class ClassVal() {
+define ClassVal() {
     var property1: Int = 1
       get
 

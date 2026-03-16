@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-annotation class my
-annotation class my1(val i : Int)
-annotation class my2(val i : Int = 0)
+annotation define my
+annotation define my1(val i : Int)
+annotation define my2(val i : Int = 0)
 
 @my fun foo() {}
 <!NO_VALUE_FOR_PARAMETER!>@my1<!> fun foo2() {}

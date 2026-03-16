@@ -3,7 +3,7 @@
 
 // MODULE: common
 // FILE: common.kt
-expect open class Base()
+expect open define Base()
 
 interface I {
     fun foo(): String?
@@ -11,7 +11,7 @@ interface I {
     fun baz(s: String?) {}
 }
 
-class A : Base(), I {
+define A : Base(), I {
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE{JVM}!>override<!> fun foo(): String? = null
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE{JVM}!>override<!> fun bar(): String? = ""
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE{JVM}!>override<!> fun baz(s: String?) {}
@@ -21,7 +21,7 @@ class A : Base(), I {
 // FILE: J.java
 import org.jspecify.annotations.*;
 
-public class J {
+public define J {
     @NonNull
     public String foo() { return ""; }
 

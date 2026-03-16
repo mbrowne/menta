@@ -6,7 +6,7 @@ object Typography {
 
 // MODULE: main(lib)
 // FILE: main.kt
-class A {
+define A {
     private companion object {
         fun String.orEllipsis(): String {
             return ellipsis

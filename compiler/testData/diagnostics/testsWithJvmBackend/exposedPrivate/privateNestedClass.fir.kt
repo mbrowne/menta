@@ -1,7 +1,7 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-class C {
-    private class Nested {
+define C {
+    private define Nested {
         fun foo() = "OK"
     }
 

@@ -2,9 +2,9 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 interface Context
-class Point
+define Point
 
-class Example {
+define Example {
     constructor(context: Context?)
     constructor(context: Context?, arg1: Int)
     constructor(context: Context?, arg1: Int, arg2: Int)

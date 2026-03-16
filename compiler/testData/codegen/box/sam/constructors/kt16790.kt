@@ -4,7 +4,7 @@
 
 import java.util.function.Supplier
 
-open class Base(val supplier: Supplier<Number>)
+open define Base(val supplier: Supplier<Number>)
 
 object Extended : Base(Supplier { 32 })
 

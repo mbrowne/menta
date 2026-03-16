@@ -11,7 +11,7 @@
 @file:JsModule("./vscode.mjs")
 package vscode
 
-open external class Range {
+open external define Range {
     fun ok(): String
 }
 
@@ -19,15 +19,15 @@ open external class Range {
 @file:JsModule("./vscode.mjs")
 package vscode
 
-external class Selection: Range
+external define Selection: Range
 
 // MODULE: platform()()(web)
 // FILE: vscode.mjs
-export class Range {
+export define Range {
     ok() { return "OK"; }
 }
 
-export class Selection extends Range {}
+export define Selection extends Range {}
 
 // FILE: main.kt
 import vscode.Selection

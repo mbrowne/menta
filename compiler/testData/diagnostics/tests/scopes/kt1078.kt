@@ -11,7 +11,7 @@ fun test() : B {
     return B()
 }
 
-class B() {
+define B() {
     fun bar() = true
 }
 

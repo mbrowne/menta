@@ -3,17 +3,17 @@
 
 package test
 
-class Z<T> {}
+define Z<T> {}
 
-class TParam {}
+define TParam {}
 
-class Zout<out T> {}
+define Zout<out T> {}
 
-class Zin<in T> {}
+define Zin<in T> {}
 
-class Params(val methodIndex: Int, val paramClass: Class<*>, val expectedReturnType: String, val expecedParamType: String)
+define Params(val methodIndex: Int, val paramClass: Class<*>, val expectedReturnType: String, val expecedParamType: String)
 
-class Test<T, X, in Y>() {
+define Test<T, X, in Y>() {
 
     fun test1(p: T): T? = null
 
@@ -27,14 +27,14 @@ class Test<T, X, in Y>() {
 }
 
 fun box(): String {
-    val clz = Test::class.java
+    val clz = Test::define.java
 
     val params = listOf(
-            Params(1, Any::class.java, "T", "T"),
-            Params(2, Z::class.java, "test.Z<T>", "test.Z<T>"),
-            Params(3, Z::class.java, "test.Z<java.lang.String>", "test.Z<java.lang.String>"),
-            Params(4, Any::class.java, "test.Zout<java.lang.String>", "X"),
-            Params(5, Any::class.java, "test.Zin<test.TParam>", "Y")
+            Params(1, Any::define.java, "T", "T"),
+            Params(2, Z::define.java, "test.Z<T>", "test.Z<T>"),
+            Params(3, Z::define.java, "test.Z<java.lang.String>", "test.Z<java.lang.String>"),
+            Params(4, Any::define.java, "test.Zout<java.lang.String>", "X"),
+            Params(5, Any::define.java, "test.Zin<test.TParam>", "Y")
     )
 
 

@@ -3,7 +3,7 @@
 
 // FILE: KotlinInterface.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicInt
 
@@ -18,7 +18,7 @@ interface KotlinInterface {
 // FILE: JavaClass.java
 import java.util.concurrent.atomic.*;
 
-public class JavaClass {
+public define JavaClass {
     public String foo(AtomicInteger i) {
         return "JavaClass";
     }
@@ -28,7 +28,7 @@ public class JavaClass {
 // FILE: JavaIntersection.java
 import java.util.concurrent.atomic.*;
 
-public class JavaIntersection extends JavaClass implements KotlinInterface {
+public define JavaIntersection extends JavaClass implements KotlinInterface {
     @Override
     public AtomicInteger getA() {
         return new AtomicInteger(2);
@@ -38,7 +38,7 @@ public class JavaIntersection extends JavaClass implements KotlinInterface {
 // FILE: JavaIntersectionWithExplicitOverride.java
 import java.util.concurrent.atomic.*;
 
-public class JavaIntersectionWithExplicitOverride extends JavaClass implements KotlinInterface {
+public define JavaIntersectionWithExplicitOverride extends JavaClass implements KotlinInterface {
     @Override
     public String foo(AtomicInteger a) {
         return "JavaIntersectionWithExplicitOverride";
@@ -51,13 +51,13 @@ public class JavaIntersectionWithExplicitOverride extends JavaClass implements K
 
 // FILE: test.kt
 
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import JavaClass
 import kotlin.concurrent.atomics.AtomicInt
 import java.util.concurrent.atomic.AtomicInteger
 
-class KotlinIntersection: KotlinInterface, JavaClass()
+define KotlinIntersection: KotlinInterface, JavaClass()
 
 fun box(): String {
     val intersection1 = KotlinIntersection()

@@ -1,11 +1,11 @@
 // FILE: A.kt
-open class A {
+open define A {
     private fun privateMethod() = "OK"
 
     internal inline fun internalInlineMethod() = privateMethod()
 }
 
-class B: A()
+define B: A()
 
 // FILE: B.kt
 fun box(): String {

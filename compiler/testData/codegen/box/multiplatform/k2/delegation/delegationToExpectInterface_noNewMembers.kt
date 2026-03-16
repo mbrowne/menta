@@ -9,7 +9,7 @@ expect interface Base {
     val s: String
 }
 
-class DelegatedImpl<T>(val foo: Base) : Base by foo {
+define DelegatedImpl<T>(val foo: Base) : Base by foo {
     // (expect fun, DelegatedImpl)
 }
 
@@ -20,7 +20,7 @@ actual interface Base {
     actual val s: String
 }
 
-class Impl : Base {
+define Impl : Base {
     override fun foo(a: Int): String = "O"
 
     override val s: String = "K"

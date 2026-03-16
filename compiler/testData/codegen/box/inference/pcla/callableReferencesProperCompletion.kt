@@ -6,25 +6,25 @@ fun <T> id(x: T) = x
 
 fun test1(): Sequence<String> = sequence {
     yield("")
-    this::class
+    this::define
 }
 
 fun <T> sequence2(block: suspend SequenceScope<T>.() -> Unit): Sequence<T> = Sequence { iterator(block) }
 
 fun foo() {
     sequence2<String> {
-        id(this::class)
+        id(this::define)
     }
 }
 
 fun test2(): Sequence<String> = sequence {
     yield("")
-    id(this::class)
+    id(this::define)
 }
 
 fun test3(): Sequence<String> = sequence {
     yield("")
-    nonGenericId(this::class)
+    nonGenericId(this::define)
 }
 
 fun test4(): Sequence<String> = sequence {

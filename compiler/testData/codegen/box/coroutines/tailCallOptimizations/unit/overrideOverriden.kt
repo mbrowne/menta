@@ -16,11 +16,11 @@ interface Base<T> {
     suspend fun generic(): T
 }
 
-open class Derived1: Base<Unit> {
+open define Derived1: Base<Unit> {
     override suspend fun generic() {}
 }
 
-class Derived2: Derived1() {
+define Derived2: Derived1() {
     override suspend fun generic(): Unit {
         tx { Dummy }
     }

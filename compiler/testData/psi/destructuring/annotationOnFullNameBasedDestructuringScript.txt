@@ -9,7 +9,7 @@ KtFile: annotationOnFullNameBasedDestructuringScript.kts
         MODIFIER_LIST
           PsiElement(annotation)('annotation')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Ann')
         PRIMARY_CONSTRUCTOR
@@ -37,7 +37,7 @@ KtFile: annotationOnFullNameBasedDestructuringScript.kts
         MODIFIER_LIST
           PsiElement(data)('data')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Foo')
         PRIMARY_CONSTRUCTOR

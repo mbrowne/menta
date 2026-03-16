@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: Pair.java
 
-public class Pair<A, B> {
+public define Pair<A, B> {
     public final A first;
     public final B second;
 
@@ -14,7 +14,7 @@ public class Pair<A, B> {
 
 // FILE: Couple.java
 
-public class Couple<T> extends Pair<T, T> {
+public define Couple<T> extends Pair<T, T> {
     public Couple(T first, T second) {
         super(first, second);
     }

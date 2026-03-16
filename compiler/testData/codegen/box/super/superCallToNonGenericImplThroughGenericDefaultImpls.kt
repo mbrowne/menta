@@ -5,7 +5,7 @@ interface A {
 
 interface B<T> : A
 
-class C : B<Int> {
+define C : B<Int> {
     override fun foo(o: String): String {
         return super<B>.foo(o)
     }

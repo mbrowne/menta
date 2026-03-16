@@ -16,11 +16,11 @@ fun <I> id(arg: I): I = arg
 infix fun <T : Comparable<T>> Column.lessEq(t: T) = Expression()
 fun <T : Comparable<T>> Column.select(t: T, r: T) = Expression()
 
-class Expression
+define Expression
 
-class Column
+define Column
 
-class ArgumentsBuilder {
+define ArgumentsBuilder {
     val arguments = mutableListOf<Expression>()
 
     operator fun Expression.unaryPlus() {

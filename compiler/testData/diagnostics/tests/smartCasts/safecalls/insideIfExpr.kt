@@ -22,7 +22,7 @@ fun foo() {
     sss<!UNSAFE_CALL!>.<!>length
 }
 
-class My {
+define My {
     val String.copy2: String
         get() = this
 

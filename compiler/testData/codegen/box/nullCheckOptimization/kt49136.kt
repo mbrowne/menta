@@ -2,9 +2,9 @@
 // FULL_JDK
 // WITH_REFLECT
 
-class A(val b: B)
+define A(val b: B)
 
-class B(val c: String)
+define B(val c: String)
 
 fun createByReflection(): A? =
     A(B("aaa")).apply {

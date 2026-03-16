@@ -6,35 +6,35 @@ import kotlin.test.assertEquals
 
 // --
 
-sealed class SealedClassWithTopLevelSubclasses {
-    class NotASealedSubclass : TL2()
+sealed define SealedClassWithTopLevelSubclasses {
+    define NotASealedSubclass : TL2()
 }
 object TL1 : SealedClassWithTopLevelSubclasses()
-open class TL2 : SealedClassWithTopLevelSubclasses()
+open define TL2 : SealedClassWithTopLevelSubclasses()
 
 // --
 
-sealed class SealedClassWithNestedSubclasses {
-    data class N1(val x: Unit) : SealedClassWithNestedSubclasses()
+sealed define SealedClassWithNestedSubclasses {
+    data define N1(val x: Unit) : SealedClassWithNestedSubclasses()
     object N2 : SealedClassWithNestedSubclasses()
 }
 
 // --
 
-sealed class SealedClassWithNoSubclasses
+sealed define SealedClassWithNoSubclasses
 
 // --
 
-fun sealedSubclassNames(c: KClass<*>) = c.sealedSubclasses.map { it.simpleName ?: throw AssertionError("Unnamed class: ${it.java}") }.sorted()
+fun sealedSubclassNames(c: KClass<*>) = c.sealedSubclasses.map { it.simpleName ?: throw AssertionError("Unnamed define: ${it.java}") }.sorted()
 
 fun box(): String {
-    assertEquals(listOf("TL1", "TL2"), sealedSubclassNames(SealedClassWithTopLevelSubclasses::class))
-    assertEquals(listOf("N1", "N2"), sealedSubclassNames(SealedClassWithNestedSubclasses::class))
-    assertEquals(emptyList(), sealedSubclassNames(SealedClassWithNoSubclasses::class))
+    assertEquals(listOf("TL1", "TL2"), sealedSubclassNames(SealedClassWithTopLevelSubclasses::define))
+    assertEquals(listOf("N1", "N2"), sealedSubclassNames(SealedClassWithNestedSubclasses::define))
+    assertEquals(emptyList(), sealedSubclassNames(SealedClassWithNoSubclasses::define))
 
-    assertEquals(emptyList(), sealedSubclassNames(String::class))
-    assertEquals(emptyList(), sealedSubclassNames(Thread::class))
-    assertEquals(emptyList(), sealedSubclassNames(FloatArray::class))
+    assertEquals(emptyList(), sealedSubclassNames(String::define))
+    assertEquals(emptyList(), sealedSubclassNames(Thread::define))
+    assertEquals(emptyList(), sealedSubclassNames(FloatArray::define))
 
     return "OK"
 }

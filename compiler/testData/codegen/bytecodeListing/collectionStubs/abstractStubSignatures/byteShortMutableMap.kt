@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class ByteShortMutableMap : MutableMap<Byte, Short>
+abstract define ByteShortMutableMap : MutableMap<Byte, Short>

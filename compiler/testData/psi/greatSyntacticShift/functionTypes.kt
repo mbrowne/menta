@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
 }
 
 package n {
-  class B
+  define B
 }
-abstract class XXX() {
+abstract define XXX() {
     abstract val a : Int
     abstract val a1 : package.Int
     abstract val a2 : n.B
@@ -34,7 +34,7 @@ abstract class XXX() {
     abstract val a19 : ((Int) -> Int) -> Int
 }
 
-abstract class YYY() {
+abstract define YYY() {
     abstract val a7 : (a : A) -> n.B
     abstract val a8 : (a : A, b : n.B) -> n.B
 //val a9 : (A, B)

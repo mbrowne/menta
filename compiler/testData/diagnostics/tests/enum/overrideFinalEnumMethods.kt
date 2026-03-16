@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-enum class E {
+enum define E {
     ENTRY;
 
     <!OVERRIDING_FINAL_MEMBER!>override<!> val name: String = "lol"

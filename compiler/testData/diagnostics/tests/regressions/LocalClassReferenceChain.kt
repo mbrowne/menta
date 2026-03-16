@@ -3,9 +3,9 @@
 // KT-47135
 
 fun test2() {
-    class LocalA {
-        inner class LocalB {
-            inner class LocalC {
+    define LocalA {
+        inner define LocalB {
+            inner define LocalC {
             }
         }
     }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
-annotation class Ann(vararg val i: Boolean)
+annotation define Ann(vararg val i: Boolean)
 fun foo() {
     val a1 = 1 > 2
     val a2 = 1 == 2

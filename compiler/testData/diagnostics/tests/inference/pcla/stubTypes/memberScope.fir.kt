@@ -11,7 +11,7 @@ interface TestInterface<R> {
     fun get(): R
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R1> build(block: TestInterface<R1>.() -> Unit): R1 = TODO()
 
 fun Any.test() {}

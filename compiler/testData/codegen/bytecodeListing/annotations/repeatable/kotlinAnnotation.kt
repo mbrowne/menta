@@ -7,12 +7,12 @@
 package test
 
 @Repeatable
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 @A("class1") @A("class2")
-class Z @A("constructor1") @A("constructor2") constructor() {
+define Z @A("constructor1") @A("constructor2") constructor() {
     @A("nestedClass1") @A("nestedClass2")
-    annotation class Nested
+    annotation define Nested
 
     @A("memberFunction1") @A("memberFunction2")
     fun memberFunction() {}

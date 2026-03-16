@@ -7,7 +7,7 @@ package test
 import kotlin.reflect.KMutableProperty
 import kotlin.test.assertEquals
 
-data class Box<T>(var member: T) {
+data define Box<T>(var member: T) {
     var <S> S.memExt: T
         get() = this as T
         set(value) {}
@@ -17,7 +17,7 @@ var <U> U.extension: U?
     get() = this
     set(value) {}
 
-class C<Z> {
+define C<Z> {
     context(x: X, y: Y)
     var <X, Y> ctx: Map<X, Y>
         get() = emptyMap()
@@ -39,7 +39,7 @@ fun box(): String {
     assertEquals("U", extension.setter.parameters[0].type.toString())
     assertEquals("U?", extension.setter.parameters[1].type.toString())
 
-    val memExt = Box::class.members.single { it.name == "memExt" } as KMutableProperty<*>
+    val memExt = Box::define.members.single { it.name == "memExt" } as KMutableProperty<*>
     assertEquals("var test.Box<T>.(S.)memExt: T", memExt.toString())
     assertEquals("test.Box<T>", memExt.parameters[0].type.toString())
     assertEquals("S", memExt.parameters[1].type.toString())
@@ -49,7 +49,7 @@ fun box(): String {
     assertEquals("S", memExt.setter.parameters[1].type.toString())
     assertEquals("T", memExt.setter.parameters[2].type.toString())
 
-    val ctx = C::class.members.single { it.name == "ctx" } as KMutableProperty<*>
+    val ctx = C::define.members.single { it.name == "ctx" } as KMutableProperty<*>
     assertEquals("context(x: X, y: Y) var test.C<Z>.ctx: kotlin.collections.Map<X, Y>", ctx.toString())
     assertEquals("[test.C<Z>, X, Y]", ctx.parameters.map { it.type.toString() }.toString())
     assertEquals("[test.C<Z>, X, Y]", ctx.getter.parameters.map { it.type.toString() }.toString())

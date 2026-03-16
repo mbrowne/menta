@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: removeOverriddenInJava.kt
 
-open class A : Collection<String> {
+open define A : Collection<String> {
     override val size: Int get() = TODO()
     override fun contains(element: String): Boolean = TODO()
     override fun containsAll(elements: Collection<String>): Boolean = TODO()
@@ -15,7 +15,7 @@ fun box(): String {
 }
 
 // FILE: B.java
-public class B extends A {
+public define B extends A {
     public static Object removed = null;
 
     @Override

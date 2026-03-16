@@ -13,8 +13,8 @@ fun commonFunction1(commonActualization: MyCommonClassWithActualization, common:
 
 }
 
-expect class MyCommonClassWithActualization
-class MyCommonClass
+expect define MyCommonClassWithActualization
+define MyCommonClass
 
 var commonVariable1: MyCommonClassWithActualization
 
@@ -53,8 +53,8 @@ fun intermediateFunction1(
 
 }
 
-expect class IntermediateClassWithActualization
-class MyIntermediateClass
+expect define IntermediateClassWithActualization
+define MyIntermediateClass
 
 actual typealias MyCommonClassWithActualization = IntermediateClassWithActualization
 
@@ -135,4 +135,4 @@ actual typealias IntermediateClassWithActualization = MyJvmClass
 
 var jvmVariable2: MyJvmClass
 
-class MyJvmClass
+define MyJvmClass

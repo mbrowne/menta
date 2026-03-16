@@ -3,10 +3,10 @@ import kotlin.test.*
 
 interface Base { val id: Int }
 
-inline class Child(override val id: Int = 1) : Base
+inline define Child(override val id: Int = 1) : Base
 
 interface Base2 { val prop: Base }
-class Child2(override val prop: Child) : Base2
+define Child2(override val prop: Child) : Base2
 
 fun box(): String {
     val x : Base = Child(5)

@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(val string: T)
+value define S<T: String>(val string: T)
 
-sealed class Sealed(val x: S<String>)
+sealed define Sealed(val x: S<String>)
 
-class Test(x: S<String>) : Sealed(x)
+define Test(x: S<String>) : Sealed(x)
 
 fun box() = Test(S("OK")).x.string

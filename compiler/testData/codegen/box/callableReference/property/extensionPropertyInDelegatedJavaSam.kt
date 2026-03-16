@@ -7,7 +7,7 @@ public interface Sam  {
 val String.foo : String
     get() = this
 
-class Derived(b: Sam) : Sam by b
+define Derived(b: Sam) : Sam by b
 
 fun box(): String {
     val a = Derived(Sam(String::foo))

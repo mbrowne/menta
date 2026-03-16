@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J extends K {
+public define J extends K {
 }
 
 // FILE: K.kt
@@ -12,7 +12,7 @@ import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.*
 
-public open class K {
+public open define K {
     var prop: String = ":("
 
     val Int.ext: Int get() = this
@@ -32,7 +32,7 @@ fun box(): String {
     if (prop == K::prop) return "Fail J::prop == K::prop (these are different properties)"
 
 
-    val klass = J::class
+    val klass = J::define
     if (klass.declaredMemberProperties.isNotEmpty()) return "Fail: declaredMemberProperties should be empty"
     if (klass.declaredMemberExtensionProperties.isNotEmpty()) return "Fail: declaredMemberExtensionProperties should be empty"
 

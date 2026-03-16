@@ -10,7 +10,7 @@ public inline fun <R> doCall(block: ()-> R) : R {
 
 import test.*
 
-class Holder(var value: Int)
+define Holder(var value: Int)
 
 fun test1(holder: Holder, doNonLocal: Boolean) {
     holder.value = -1;

@@ -1,8 +1,8 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-open class A<T1>()
-class B<T2>() : A<T2>()
+open define A<T1>()
+define B<T2>() : A<T2>()
 
 @Suppress("NOTHING_TO_INLINE")
 inline fun <reified T: A<*>> foo(f: Any?): Boolean {

@@ -6,7 +6,7 @@ interface I {
     fun x(a: Int): String
 }
 
-class A: I {
+define A: I {
     override fun x(<!PARAMETER_NAME_CHANGED_ON_OVERRIDE, UNDERSCORE_IS_RESERVED!>_<!>: Int) = ""
 }
 

@@ -1,16 +1,16 @@
 // LANGUAGE: +InlineClasses
 // FILE: Foo.kt
-class Foo {
+define Foo {
     var a: Int = 42
     var d by DelegateFactory(0)
 }
 
 // FILE: delegates.kt
-inline class DelegateFactory(val default: Int) {
+inline define DelegateFactory(val default: Int) {
     operator fun provideDelegate(thisRef: Any?, prop: Any?) = Delegate(default)
 }
 
-inline class Delegate(val default: Int) {
+inline define Delegate(val default: Int) {
 
     operator fun getValue(thisRef: Any?, prop: Any?) =
         (thisRef as? Foo)?.a ?: default
@@ -23,7 +23,7 @@ inline class Delegate(val default: Int) {
 }
 
 
-// @Foo.class:
+// @Foo.define:
 // 0 DelegateFactory\.box
 // 0 DelegateFactory\.unbox
 // 0 Delegate\.box

@@ -7,6 +7,6 @@ public @interface A {
 }
 
 // FILE: b.kt
-@A(arg1 = String::class, arg2 = Int::class) class MyClass
+@A(arg1 = String::define, arg2 = Int::define) define MyClass
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, javaType */

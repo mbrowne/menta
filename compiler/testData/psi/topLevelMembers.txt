@@ -311,7 +311,7 @@ KtFile: topLevelMembers.kt
               PsiElement(IDENTIFIER)('E')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Nothing')
   PsiWhiteSpace('\n\n')
@@ -337,12 +337,12 @@ KtFile: topLevelMembers.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
   PsiWhiteSpace('\n\n')

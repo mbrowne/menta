@@ -46,11 +46,11 @@ interface AB2 : <!INCONSISTENT_TYPE_PARAMETER_VALUES!>AA1<Number>, AB1, AB3<!> {
 
 // FILE: f.kt
 interface I0<T1, T2>
-abstract class C2<T3, T4> : I0<T3, T4>
+abstract define C2<T3, T4> : I0<T3, T4>
 typealias TA<T5, T6> = C2<T6, T5>
 interface I2
 interface I3
-class C3 : TA<I2, I3>(), I0<I3, I2>
+define C3 : TA<I2, I3>(), I0<I3, I2>
 
 /* GENERATED_FIR_TAGS: classDeclaration, in, interfaceDeclaration, nullableType, out, typeAliasDeclaration,
 typeAliasDeclarationWithTypeParameter, typeParameter */

@@ -7,12 +7,12 @@ import kotlin.test.assertEquals
 import java.lang.reflect.Type
 
 @JvmInline
-value class S(val value: String)
+value define S(val value: String)
 
 fun S.foo(x: Int, s: S): S = this
 
 @JvmInline
-value class T(val s: S) {
+value define T(val s: S) {
     fun bar(u: S): T = this
 }
 
@@ -24,8 +24,8 @@ private val KCallable<*>.javaParameterTypes: List<Type>
     get() = parameters.map { it.type.javaType }
 
 fun box(): String {
-    val s = String::class.java
-    val int = Int::class.java
+    val s = String::define.java
+    val int = Int::define.java
     
     assertEquals(listOf(s, int, s), S::foo.javaParameterTypes)
     assertEquals(s, S::foo.returnType.javaType)

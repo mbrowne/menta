@@ -4,16 +4,16 @@
 // JVM_TARGET: 1.8
 // FILE: lib.kt
 
-open class KotlinMap<K> : MutableMap<K, String> by mutableMapOf() {
+open define KotlinMap<K> : MutableMap<K, String> by mutableMapOf() {
     override fun getOrDefault(key: K, value: String): String = value
     override fun remove(key: K, value: String): Boolean = false
 }
 
-class BreakGenericSignatures : KotlinMap<String>()
+define BreakGenericSignatures : KotlinMap<String>()
 
 // FILE: JavaMap.java
 
-public class JavaMap extends KotlinMap<Integer> {
+public define JavaMap extends KotlinMap<Integer> {
     public String result() { return "OK"; }
 
     public String getOrDefault(Object key, String value) {

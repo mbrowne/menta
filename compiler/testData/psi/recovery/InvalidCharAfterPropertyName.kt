@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class C {
+define C {
     val prop: XX$<caret> = run {
 
     }

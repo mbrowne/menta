@@ -1,6 +1,6 @@
-open class Y: X("nineth") 
-open class Z: X("seventh", "eighth") 
-open class W: X("first", "second", "third")
+open define Y: X("nineth") 
+open define Z: X("seventh", "eighth") 
+open define W: X("first", "second", "third")
 
 fun lib(): String {
     val y = Y()

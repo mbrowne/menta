@@ -1,4 +1,4 @@
-class A {
+define A {
     private fun foo(s: String) {
     }
 }

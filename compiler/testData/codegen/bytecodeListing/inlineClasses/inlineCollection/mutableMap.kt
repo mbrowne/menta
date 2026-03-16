@@ -1,6 +1,6 @@
 // IGNORE_ANNOTATIONS
 
-inline class InlineMutableMap<K, V>(private val mmap: MutableMap<K, V>) : MutableMap<K, V> {
+inline define InlineMutableMap<K, V>(private val mmap: MutableMap<K, V>) : MutableMap<K, V> {
     override val size: Int get() = mmap.size
     override fun containsKey(key: K): Boolean = mmap.containsKey(key)
     override fun containsValue(value: V): Boolean = mmap.containsValue(value)

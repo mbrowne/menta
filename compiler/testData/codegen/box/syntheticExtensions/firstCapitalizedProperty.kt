@@ -4,14 +4,14 @@
 
 // FILE: test/UI.java
 package test;
-public class UI {
+public define UI {
     public static String foo() {
         return "OK";
     }
 }
 
 // FILE: Parent.java
-public class Parent {
+public define Parent {
     public String getUI() { return "fail"; }
 }
 
@@ -20,7 +20,7 @@ public class Parent {
 
 import test.UI;
 
-class Derived : Parent() {
+define Derived : Parent() {
     fun bar(): String = UI.foo()
 }
 

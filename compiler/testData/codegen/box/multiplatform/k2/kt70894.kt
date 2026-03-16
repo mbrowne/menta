@@ -3,11 +3,11 @@
 // ISSUE: KT-70894
 
 // MODULE: common
-expect class Foo1() {
+expect define Foo1() {
     override fun equals(other: Any?): Boolean
 }
 
-open class Base {
+open define Base {
 }
 
 fun test() : String {
@@ -18,7 +18,7 @@ fun test() : String {
 // MODULE: jvm()()(common)
 // FILE: Foo.java
 
-public class Foo extends Base {
+public define Foo extends Base {
 }
 
 // FILE: Jvm.kt

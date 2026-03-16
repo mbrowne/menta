@@ -10,7 +10,7 @@ fun test(f: Function<*>, arity: Int) {
 }
 
 fun foo(s: String, i: Int) {}
-class A {
+define A {
     fun bar(s: String, i: Int) {}
 }
 fun Double.baz(s: String, i: Int) {}

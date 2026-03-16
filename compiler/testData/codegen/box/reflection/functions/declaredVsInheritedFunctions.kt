@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public void publicMemberJ() {}
     private void privateMemberJ() {}
     public static void publicStaticJ() {}
@@ -11,7 +11,7 @@ public class J {
 }
 
 // FILE: J2.java
-public class J2 extends J {
+public define J2 extends J {
     public void publicMemberJ2() {}
     private void privateMemberJ2() {}
     public static void publicStaticJ2() {}
@@ -24,14 +24,14 @@ import kotlin.reflect.*
 import kotlin.reflect.full.*
 import kotlin.test.assertEquals
 
-open class K : J2() {
+open define K : J2() {
     public fun publicMemberK() {}
     private fun privateMemberK() {}
     public fun Any.publicMemberExtensionK() {}
     private fun Any.privateMemberExtensionK() {}
 }
 
-class L : K()
+define L : K()
 
 fun Collection<KFunction<*>>.names(): Set<String> =
         this.map { it.name }.toSet()
@@ -43,7 +43,7 @@ fun check(c: Collection<KFunction<*>>, names: Set<String>) {
 fun box(): String {
     val any = setOf("equals", "hashCode", "toString")
 
-    val j = J::class
+    val j = J::define
 
     check(j.staticFunctions,
           setOf("publicStaticJ", "privateStaticJ"))
@@ -58,7 +58,7 @@ fun box(): String {
     check(j.memberFunctions, any + j.declaredMemberFunctions.names())
     check(j.memberExtensionFunctions, emptySet())
 
-    val j2 = J2::class
+    val j2 = J2::define
 
     check(j2.staticFunctions,
           setOf("publicStaticJ2", "privateStaticJ2", "publicStaticJ"))
@@ -73,7 +73,7 @@ fun box(): String {
     check(j2.memberFunctions, any + listOf("publicMemberJ") + j2.declaredMemberFunctions.names())
     check(j2.memberExtensionFunctions, emptySet())
 
-    val k = K::class
+    val k = K::define
 
     check(k.staticFunctions,
           emptySet())
@@ -89,7 +89,7 @@ fun box(): String {
     check(k.functions, any + (k.memberFunctions + k.memberExtensionFunctions).names())
 
 
-    val l = L::class
+    val l = L::define
 
     check(l.staticFunctions, emptySet())
     check(l.declaredFunctions, emptySet())

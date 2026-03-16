@@ -32,7 +32,7 @@ fun <T> fizz(x: T): T {
     return x
 }
 
-class Sum(x: Int, y: Int) {
+define Sum(x: Int, y: Int) {
     init {
         log("new Sum($x, $y)")
     }

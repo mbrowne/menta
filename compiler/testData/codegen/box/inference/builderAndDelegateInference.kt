@@ -6,7 +6,7 @@ interface A {
     fun getCallableNames(): Set<String>
 }
 
-class B(val declared: A, val supers: List<A>) {
+define B(val declared: A, val supers: List<A>) {
     private val callableNamesCached by lazy(LazyThreadSafetyMode.PUBLICATION) {
         buildSet {
             addAll(declared.getCallableNames())

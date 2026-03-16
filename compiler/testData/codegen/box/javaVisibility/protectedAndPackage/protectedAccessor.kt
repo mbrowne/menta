@@ -3,7 +3,7 @@
 // FILE: protectedPack/A.java
 package protectedPack;
 
-public class A {
+public define A {
     protected final String field;
 
     public A(String value) {
@@ -15,8 +15,8 @@ public class A {
 // FILE: B.kt
 import protectedPack.A
 
-class B(value: String) : A(value) {
-    inner class C : A(field) {
+define B(value: String) : A(value) {
+    inner define C : A(field) {
         val result = field
     }
 }

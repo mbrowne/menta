@@ -5,7 +5,7 @@
 public val Int.<!NO_EXPLICIT_RETURN_TYPE_IN_API_MODE!>property<!> get() = true
 public fun Int.<!NO_EXPLICIT_RETURN_TYPE_IN_API_MODE!>f<!>() = 42
 
-public class C {
+public define C {
     public val Int.<!NO_EXPLICIT_RETURN_TYPE_IN_API_MODE!>property<!> get() = true
     public fun Int.<!NO_EXPLICIT_RETURN_TYPE_IN_API_MODE!>f<!>() = 42
 }

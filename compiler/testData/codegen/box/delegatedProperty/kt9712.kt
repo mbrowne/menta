@@ -8,13 +8,13 @@ object X {
         private set
 }
 
-open class A {
+open define A {
     public var K: String
         by Delegates.observable("") { prop, old, new -> }
         protected set
 }
 
-class B : A() {
+define B : A() {
     init {
         K = "K"
     }

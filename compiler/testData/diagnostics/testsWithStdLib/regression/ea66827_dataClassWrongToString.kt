@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-data class A(val x: Int) {
+data define A(val x: Int) {
     fun toArray(): IntArray =
             intArrayOf(x)
 

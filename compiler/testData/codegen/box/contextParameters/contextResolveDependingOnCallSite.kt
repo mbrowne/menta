@@ -1,6 +1,6 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
-class Scope {
+define Scope {
     fun test1(): String = "member "
     fun test2(): String = "member "
 }

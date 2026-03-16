@@ -9,7 +9,7 @@ expect val <!NO_ACTUAL_FOR_EXPECT{JVM}!>bar<!>: String
 expect var <!NO_ACTUAL_FOR_EXPECT{JVM}!>baz<!>: Int
 
 expect interface <!NO_ACTUAL_FOR_EXPECT{JVM}!>I<!>
-expect class <!NO_ACTUAL_FOR_EXPECT{JVM}!>C<!> {
+expect define <!NO_ACTUAL_FOR_EXPECT{JVM}!>C<!> {
     fun foo()
     val bar: String
 }

@@ -8,13 +8,13 @@ interface I2 {
     val size: Int
 }
 
-class B2 : ArrayList<String>(list), I2
+define B2 : ArrayList<String>(list), I2
 
 interface I3<T> {
     val size: T
 }
 
-class B3 : ArrayList<String>(list), I3<Int>
+define B3 : ArrayList<String>(list), I3<Int>
 
 fun box(): String {
     list.add("1")

@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // http://youtrack.jetbrains.net/issue/KT-526
-// KT-526 Unresolved reference for inner static class
+// KT-526 Unresolved reference for inner static define
 
 package demo
 
-class Foo {
+define Foo {
     companion object {
-        class Bar() { }
+        define Bar() { }
     }
 }
-class User {
+define User {
     fun main() : Unit {
         var boo : Foo.Companion.Bar? /* <-- this reference is red */ = Foo.Companion.Bar()
     }

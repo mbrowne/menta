@@ -15,15 +15,15 @@ interface I3<T: Number> : I2<T> {
     override fun bar(): Number
 }
 
-open abstract class C1<T: Int> : I3<T>
+open abstract define C1<T: Int> : I3<T>
 
-open abstract class C2<T: Int> : C1<T>() {
+open abstract define C2<T: Int> : C1<T>() {
     abstract override var property: T
     abstract override fun foo(p: T)
     abstract override fun bar(): Int
 }
 
-open class C3<T: Int> : C2<T>() {
+open define C3<T: Int> : C2<T>() {
     @Suppress("UNCHECKED_CAST")
     override var property: T = 0 as T
 

@@ -20,7 +20,7 @@ interface A {
 
 interface B : Java1
 
-abstract class C(
+abstract define C(
     override val a: Nothing,
     override val b: List<Nothing>
 ) : Java1 {

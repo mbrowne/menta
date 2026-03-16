@@ -3,7 +3,7 @@
 // DUMP_IR
 // ISSUE: KT-71732
 
-class Test
+define Test
 
 fun testBuilder(id: String = "", lambda: Test.() -> Unit) = Test()
 

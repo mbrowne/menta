@@ -3,10 +3,10 @@
 
 import kotlin.reflect.KProperty
 
-annotation class Ann
-annotation class AnnRepeat
+annotation define Ann
+annotation define AnnRepeat
 
-class LateinitProperties {
+define LateinitProperties {
     @get:Ann
     lateinit var y0: String
 

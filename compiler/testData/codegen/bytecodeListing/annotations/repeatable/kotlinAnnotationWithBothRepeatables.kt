@@ -9,11 +9,11 @@
 package test
 
 @Repeatable
-@JvmRepeatable(As::class)
-annotation class A(val value: String)
+@JvmRepeatable(As::define)
+annotation define A(val value: String)
 
-annotation class As(val value: Array<A>)
+annotation define As(val value: Array<A>)
 
 @A("a1")
 @A("a2")
-class Z
+define Z

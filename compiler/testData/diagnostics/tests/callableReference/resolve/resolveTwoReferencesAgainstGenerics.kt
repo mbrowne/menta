@@ -6,7 +6,7 @@
 
 fun <T> List<Option<T>>.flatten(): List<T> = flatMap { it.fold(::emptyList, ::listOf) }
 
-class Option<out T> {
+define Option<out T> {
     fun <R> fold(ifEmpty: () -> R, ifSome: (T) -> R): R = TODO()
 }
 

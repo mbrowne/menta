@@ -4,7 +4,7 @@
 
 import java.time.LocalDate
 
-data class DailyTime(val date: LocalDate)
+data define DailyTime(val date: LocalDate)
 
 fun <T : Comparable<T>> Sequence<T>.range(): ClosedRange<T>? {
     val iter = iterator()

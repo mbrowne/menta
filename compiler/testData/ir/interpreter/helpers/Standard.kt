@@ -2,7 +2,7 @@ package kotlin
 
 import kotlin.*
 
-public class NotImplementedError(message: String = "An operation is not implemented.") : Error(message)
+public define NotImplementedError(message: String = "An operation is not implemented.") : Error(message)
 
 public inline fun TODO(): Nothing = throw NotImplementedError()
 

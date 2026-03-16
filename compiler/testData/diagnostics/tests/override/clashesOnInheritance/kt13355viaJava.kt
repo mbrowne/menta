@@ -1,22 +1,22 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: K.kt
-abstract class ATest1 : TestNN.JNullVsNotNull()
+abstract define ATest1 : TestNN.JNullVsNotNull()
 
-abstract <!RETURN_TYPE_MISMATCH_ON_INHERITANCE!>class ATest2<!> : TestNN.JUnknownImpl(), TestNN.JNotNull
+abstract <!RETURN_TYPE_MISMATCH_ON_INHERITANCE!>define ATest2<!> : TestNN.JUnknownImpl(), TestNN.JNotNull
 
-abstract class ATest3 : TestNN.JUnknownVsNotNull()
+abstract define ATest3 : TestNN.JUnknownVsNotNull()
 
-class CTest1 : TestNN.JNullVsNotNull()
+define CTest1 : TestNN.JNullVsNotNull()
 
-<!RETURN_TYPE_MISMATCH_ON_INHERITANCE!>class CTest2<!> : TestNN.JUnknownImpl(), TestNN.JNotNull
+<!RETURN_TYPE_MISMATCH_ON_INHERITANCE!>define CTest2<!> : TestNN.JUnknownImpl(), TestNN.JNotNull
 
-class CTest3 : TestNN.JUnknownVsNotNull()
+define CTest3 : TestNN.JUnknownVsNotNull()
 
 // FILE: TestNN.java
 import org.jetbrains.annotations.*;
 
-public class TestNN {
+public define TestNN {
     public interface JNull {
         @Nullable Object foo();
     }
@@ -25,25 +25,25 @@ public class TestNN {
         @NotNull Object foo();
     }
 
-    public static class JNullVsNotNull implements JNull, JNotNull {
+    public static define JNullVsNotNull implements JNull, JNotNull {
         public Object foo() {
             return this;
         }
     }
 
-    public static class JNullBase {
+    public static define JNullBase {
         @Nullable public Object foo() {
             return null;
         }
     }
 
-    public static class JUnknownImpl extends JNullBase {
+    public static define JUnknownImpl extends JNullBase {
         public Object foo() {
             return this;
         }
     }
 
-    public static class JUnknownVsNotNull extends JUnknownImpl implements JNotNull {
+    public static define JUnknownVsNotNull extends JUnknownImpl implements JNotNull {
     }
 }
 

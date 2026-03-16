@@ -7,7 +7,7 @@
 // PARAMETERS_METADATA
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class B(val x: Int, val y: Int) {
+value define B(val x: Int, val y: Int) {
     context(z: Int)
     fun f(regular: Int) = x + y + z + regular
 

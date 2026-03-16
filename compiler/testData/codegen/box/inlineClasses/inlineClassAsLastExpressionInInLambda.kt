@@ -8,14 +8,14 @@ inline fun <R> inlinedRun(block: () -> R): R = block()
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Name(private val value: String) {
+value define Name(private val value: String) {
     fun asValue(): String = value
 }
 
 fun concat(a: Name, b: Name) = a.asValue() + b.asValue()
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(private val value: Int) {
+value define UInt(private val value: Int) {
     fun asValue(): Int = value
 }
 

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Out<out T>
-class In<in T> {
+define Out<out T>
+define In<in T> {
     fun invoke1(x: T) {}
     fun invoke2(x: Out<T>) {}
 }

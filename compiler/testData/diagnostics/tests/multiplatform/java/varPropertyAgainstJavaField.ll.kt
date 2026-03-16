@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     var foo: Int
 }
 
@@ -11,7 +11,7 @@ expect class Foo {
 actual typealias <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>Foo<!> = JavaFoo
 
 // FILE: JavaFoo.java
-public class JavaFoo {
+public define JavaFoo {
     public int foo = 0;
 }
 

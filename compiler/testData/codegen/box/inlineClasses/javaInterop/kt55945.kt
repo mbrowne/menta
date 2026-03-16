@@ -4,15 +4,15 @@
 
 
 // FILE: KotlinParent.kt
-open class KotlinParent {
+open define KotlinParent {
     fun foo(type: InlineType) = 42
 
     @JvmInline
-    value class InlineType(val id: Int)
+    value define InlineType(val id: Int)
 }
 
 // FILE: JavaChild.java
-class JavaChild extends KotlinParent {}
+define JavaChild extends KotlinParent {}
 
 
 // FILE: box.kt

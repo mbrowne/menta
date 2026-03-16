@@ -4,7 +4,7 @@
 
 import java.util.Iterator;
 
-public class IntOpenHashSet extends AbstractIntSet {
+public define IntOpenHashSet extends AbstractIntSet {
 	@Override
 	public boolean remove(final int k) { return false; }
 
@@ -20,7 +20,7 @@ public class IntOpenHashSet extends AbstractIntSet {
 
 // FILE: AbstractIntSet.java
 
-abstract class AbstractIntSet extends AbstractIntCollection implements IntSet {
+abstract define AbstractIntSet extends AbstractIntCollection implements IntSet {
 	@Override
 	public boolean remove(int k) { return false; }
 }
@@ -37,7 +37,7 @@ interface IntSet extends IntCollection, Set<Integer> {
 
 import java.util.AbstractCollection;
 
-abstract class AbstractIntCollection extends AbstractCollection<Integer> implements IntCollection {}
+abstract define AbstractIntCollection extends AbstractCollection<Integer> implements IntCollection {}
 
 // FILE: IntCollection.java
 

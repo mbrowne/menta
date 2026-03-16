@@ -4,20 +4,20 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static void foo() {}
     public static void baz(String s) {}
 }
 
 // FILE: B.java
 
-public class B extends A {
+public define B extends A {
     public static void bar(int i) {}
 }
 
 // FILE: K.kt
 
-open class K : B() {
+open define K : B() {
     companion object {
         @JvmStatic
         <!ACCIDENTAL_OVERRIDE!>fun foo() {}<!>

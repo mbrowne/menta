@@ -1,5 +1,5 @@
 // WITH_STDLIB
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun foo1() {
     buildList {
         object {
@@ -8,16 +8,16 @@ fun foo1() {
     }
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun foo2() {
     buildList {
-        class A {
+        define A {
             fun foo() = add("")
         }
     }
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun foo3() {
     buildList {
         object {
@@ -30,10 +30,10 @@ fun foo3() {
     }
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun foo4() {
     buildList {
-        class A {
+        define A {
             var x: Int
                 get() = 1
                 set(value) {

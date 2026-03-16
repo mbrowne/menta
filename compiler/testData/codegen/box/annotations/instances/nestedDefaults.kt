@@ -2,8 +2,8 @@
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 // WITH_STDLIB
 
-annotation class Inner(val i: Int = 1, val s: String = "")
-annotation class Outer(
+annotation define Inner(val i: Int = 1, val s: String = "")
+annotation define Outer(
     val one: Inner,
     val many: Array<Inner>
 )

@@ -9,7 +9,7 @@ interface Test<T> {
     }
 }
 
-class TestClass : Test<String> {
+define TestClass : Test<String> {
     override fun test(p: String): String {
         return p + "K"
     }

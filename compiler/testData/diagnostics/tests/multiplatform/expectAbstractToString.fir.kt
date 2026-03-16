@@ -7,20 +7,20 @@ interface B {
     override fun toString(): String
 }
 
-expect value <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class C<!>(val s: String) : B
+expect value <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define C<!>(val s: String) : B
 
-expect value <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class D<!>(val s: String) : B
+expect value <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define D<!>(val s: String) : B
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
 @JvmInline
-actual value class C(actual val s: String) : B {
+actual value define C(actual val s: String) : B {
     override fun toString(): String = s
 }
 
 @JvmInline
-actual value class D(actual val s: String) : B
+actual value define D(actual val s: String) : B
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, interfaceDeclaration, override,
 primaryConstructor, propertyDeclaration, value */

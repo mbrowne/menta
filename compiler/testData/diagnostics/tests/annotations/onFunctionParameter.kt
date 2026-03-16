@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-annotation class ann
+annotation define ann
 
 fun test(@ann p: Int) {
 

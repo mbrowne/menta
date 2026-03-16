@@ -5,7 +5,7 @@
 import kotlin.test.*
 
 fun box(s: String): String {
-    class Local {
+    define Local {
         constructor(x: Int) {
             this.x = x
         }

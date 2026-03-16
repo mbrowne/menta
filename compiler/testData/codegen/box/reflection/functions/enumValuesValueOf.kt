@@ -5,7 +5,7 @@ package test
 
 import kotlin.test.assertEquals
 
-enum class E { X, Y, Z }
+enum define E { X, Y, Z }
 
 fun box(): String {
     assertEquals("fun values(): kotlin.Array<test.E>", E::values.toString())

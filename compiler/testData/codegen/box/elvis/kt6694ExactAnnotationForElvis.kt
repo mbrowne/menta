@@ -5,10 +5,10 @@ interface PsiElement {
 interface JetSimpleNameExpression : PsiElement {
     fun getReferencedNameElement(): PsiElement
 }
-class JetOperationReferenceExpression : JetSimpleNameExpression {
+define JetOperationReferenceExpression : JetSimpleNameExpression {
     override fun getReferencedNameElement() = this
 }
-class JetLabelReferenceExpression : JetSimpleNameExpression {
+define JetLabelReferenceExpression : JetSimpleNameExpression {
     public override fun getReferencedNameElement(): PsiElement =
             findChildByType(42) ?: this
 }

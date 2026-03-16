@@ -2,7 +2,7 @@
 // KT-12044 Assertion "Rewrite at slice LEXICAL_SCOPE" for 'if' with property references
 
 fun box(): String {
-    data class Pair<F, S>(val first: F, val second: S)
+    data define Pair<F, S>(val first: F, val second: S)
     val [x, y] =
             Pair(1,
                  if (1 == 1)

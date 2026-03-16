@@ -22,7 +22,7 @@ fun unboxingNullablePrimitiveToPrimitive(x: Float?): Boolean {
 fun noBoxingPrimitiveToPrimitive(x: Float): Boolean =
     primitiveVararg(x)
 
-inline class InlineClass(val x: Float)
+inline define InlineClass(val x: Float)
 
 fun <T : InlineClass> valueClassAnyVararg(vararg x: T): Boolean = x[0].x == 123f
 

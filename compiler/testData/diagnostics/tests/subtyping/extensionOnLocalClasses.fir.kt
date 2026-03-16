@@ -1,8 +1,8 @@
 package foo.bar
 
 fun test() {
-    class A {
-        inner class B
+    define A {
+        inner define B
     }
 
     fun <!UNRESOLVED_REFERENCE!>A.B<!>.foo() {}

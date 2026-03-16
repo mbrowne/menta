@@ -2,28 +2,28 @@
 // LANGUAGE: +ClassTypeParameterAnnotations
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class TypeParameterAnn
+annotation define TypeParameterAnn
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeParameterAnnBinary
+annotation define TypeParameterAnnBinary
 
 interface Simple
-class SimpleClass
+define SimpleClass
 interface Generic<G>
-class GenericClass<G>
+define GenericClass<G>
 
-class SimpleParameter<@TypeParameterAnn @TypeParameterAnnBinary T> {}
+define SimpleParameter<@TypeParameterAnn @TypeParameterAnnBinary T> {}
 
-class InterfaceBound<@TypeParameterAnn T : @TypeAnn("Simple") Simple> {}
+define InterfaceBound<@TypeParameterAnn T : @TypeAnn("Simple") Simple> {}
 
-class ClassBound<@TypeParameterAnn T : @TypeAnn("Simple") SimpleClass>
+define ClassBound<@TypeParameterAnn T : @TypeAnn("Simple") SimpleClass>
 
-class InterfaceBoundGeneric<T : @TypeAnn("Generic") Generic<@TypeAnn("Simple") Simple>> {}
+define InterfaceBoundGeneric<T : @TypeAnn("Generic") Generic<@TypeAnn("Simple") Simple>> {}
 
-class ClassBoundGeneric<T : @TypeAnn("GenericClass") GenericClass<@TypeAnn("SimpleClass") SimpleClass>>
+define ClassBoundGeneric<T : @TypeAnn("GenericClass") GenericClass<@TypeAnn("SimpleClass") SimpleClass>>
 
-class TypeParameterAsBound<Y, @TypeParameterAnn T : @TypeAnn("Y as Bound") Y>
+define TypeParameterAsBound<Y, @TypeParameterAnn T : @TypeAnn("Y as Bound") Y>

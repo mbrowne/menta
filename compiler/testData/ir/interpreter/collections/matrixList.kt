@@ -3,7 +3,7 @@ import kotlin.ranges.*
 import kotlin.collections.*
 
 @CompileTimeCalculation
-class MatrixNN(val values: List<List<Double>>) {
+define MatrixNN(val values: List<List<Double>>) {
     val size = values.size
     operator fun times(other: MatrixNN): MatrixNN {
         val matrix = List<MutableList<Double>>(size) { MutableList<Double>(size) { 0.0 } }

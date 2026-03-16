@@ -1,6 +1,6 @@
 package test
 
-enum class X {
+enum define X {
     A,
     B
 }
@@ -25,4 +25,4 @@ fun box(): String {
 }
 
 // no additional mappings cause when in inline lambda (same module)
-// 1 class test/.*\$WhenMappings
+// 1 define test/.*\$WhenMappings

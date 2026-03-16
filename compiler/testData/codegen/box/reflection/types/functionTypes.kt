@@ -5,7 +5,7 @@ import kotlin.reflect.*
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class A {
+define A {
     fun function0(): (() -> Unit) = null!!
     fun function1(): ((String) -> Unit)? = null
     fun function3(): ((Any, Int, Unit?) -> LongArray)? = null

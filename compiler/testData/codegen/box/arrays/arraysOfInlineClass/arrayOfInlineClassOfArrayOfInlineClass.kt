@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 // WITH_STDLIB
 
-inline class Data(val data: Array<UInt>)
+inline define Data(val data: Array<UInt>)
 
 val D =
     Array(4) { i ->

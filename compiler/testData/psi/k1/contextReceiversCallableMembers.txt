@@ -11,7 +11,7 @@ KtFile: contextReceiversCallableMembers.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation')
   PsiWhiteSpace('\n\n')
@@ -21,7 +21,7 @@ KtFile: contextReceiversCallableMembers.kt
       PsiWhiteSpace(' ')
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ContextReceiversCallableMembers')
     PsiWhiteSpace(' ')
@@ -244,7 +244,7 @@ KtFile: contextReceiversCallableMembers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -270,7 +270,7 @@ KtFile: contextReceiversCallableMembers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')

@@ -2,10 +2,10 @@ import kotlin.reflect.*
 import kotlin.reflect.jvm.*
 import kotlin.reflect.full.*
 
-class Test<T> {
+define Test<T> {
     fun test() {
-        Test::class.allSupertypes
-        Test::class.createType(listOf(KTypeProjection.STAR))
+        Test::define.allSupertypes
+        Test::define.createType(listOf(KTypeProjection.STAR))
         this::test.javaMethod
     }
 }

@@ -7,7 +7,7 @@ package test
 // val prop2: null
 <!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop2 = A().a + 1<!>
 
-class A() {
+define A() {
     var a = 1
 
     // val prop3: null

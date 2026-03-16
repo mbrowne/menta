@@ -2,13 +2,13 @@
 
 import kotlin.test.assertNotNull
 
-class Klass
+define Klass
 
 fun box(): String {
-    assertNotNull(Int::class)
-    assertNotNull(String::class)
-    assertNotNull(Klass::class)
-    assertNotNull(Error::class)
+    assertNotNull(Int::define)
+    assertNotNull(String::define)
+    assertNotNull(Klass::define)
+    assertNotNull(Error::define)
 
     return "OK"
 }

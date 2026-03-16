@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public abstract class AImpl {
+public abstract define AImpl {
     public int size() {
         return 0;
     }
@@ -104,12 +104,12 @@ public abstract class AImpl {
 // FILE: A.java
 import java.util.List;
 
-public class A extends AImpl implements List<String> {
+public define A extends AImpl implements List<String> {
 
 }
 
 // FILE: X.kt
-class X : A()
+define X : A()
 
 fun main() {
     val x = X()

@@ -7,7 +7,7 @@ public interface Function<E extends java.util.Map<String, Integer>, F extends Ch
 }
 
 // FILE: A.java
-public class A {
+public define A {
     public void foo(Function<?, ?> l) {
     }
 

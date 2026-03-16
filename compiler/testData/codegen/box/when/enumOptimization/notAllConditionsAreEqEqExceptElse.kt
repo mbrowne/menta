@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM_IR
 // WITH_STDLIB
 
-enum class E {
+enum define E {
     A, B, C, D;
 }
 

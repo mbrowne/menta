@@ -2,12 +2,12 @@
 // WITH_STDLIB
 // FILE: lib.kt
 
-abstract class AbstractStringMap<K> : Map<K, String>
-class KotlinMap<K> : AbstractStringMap<K>(), MutableMap<K, String> by mutableMapOf()
+abstract define AbstractStringMap<K> : Map<K, String>
+define KotlinMap<K> : AbstractStringMap<K>(), MutableMap<K, String> by mutableMapOf()
 
 // FILE: UseMap.java
 
-public class UseMap {
+public define UseMap {
     public static <K> String first(AbstractStringMap<K> map) {
         return map.getEntries().iterator().next().getValue();
     }

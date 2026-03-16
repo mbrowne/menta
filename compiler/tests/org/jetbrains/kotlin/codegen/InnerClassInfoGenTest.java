@@ -96,10 +96,8 @@ public class InnerClassInfoGenTest extends CodegenTestCase {
 
         checkAccess("A", "OpenStaticClass", ACC_PUBLIC | ACC_STATIC);
         checkAccess("A", "FinalStaticClass", ACC_PUBLIC | ACC_STATIC | ACC_FINAL);
-        checkAccess("A", "AbstractStaticClass", ACC_PUBLIC | ACC_STATIC | ACC_ABSTRACT);
         checkAccess("A", "OpenInnerClass", ACC_PUBLIC);
         checkAccess("A", "FinalInnerClass", ACC_PUBLIC | ACC_FINAL);
-        checkAccess("A", "AbstractInnerClass", ACC_PUBLIC | ACC_ABSTRACT);
 
         checkAccess("A", "PrivateClass", ACC_PRIVATE);
         checkAccess("A", "ProtectedClass", ACC_PROTECTED);

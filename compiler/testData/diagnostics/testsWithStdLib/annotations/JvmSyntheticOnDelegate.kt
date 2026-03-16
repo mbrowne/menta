@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_ANONYMOUS_PARAMETER
 import kotlin.properties.Delegates
 
-class My {
+define My {
     <!JVM_SYNTHETIC_ON_DELEGATE!>@delegate:JvmSynthetic<!> val s: String by lazy { "s" }
 
     // Both Ok

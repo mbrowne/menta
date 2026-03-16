@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: Super.java
-public class Super {
+public define Super {
     public boolean foo;
     public boolean bar;
 
@@ -11,7 +11,7 @@ public class Super {
 }
 
 // FILE: b.kt
-public class Sub: Super() {
+public define Sub: Super() {
 }
 
 fun main() {

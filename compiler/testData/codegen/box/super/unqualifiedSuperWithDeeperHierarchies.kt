@@ -1,11 +1,11 @@
-open class DeeperBase {
+open define DeeperBase {
     open fun deeperBaseFun(): String = "DeeperBase.deeperBaseFun()"
 
     open val deeperBaseProp: String
         get() = "DeeperBase.deeperBaseProp"
 }
 
-open class DeepBase : DeeperBase() {
+open define DeepBase : DeeperBase() {
 }
 
 interface DeeperInterface {
@@ -19,7 +19,7 @@ interface DeepInterface : DeeperInterface {
     fun deepInterfaceFun(): String = "DeepInterface.deepInterfaceFun()"
 }
 
-class DeepDerived : DeepBase(), DeepInterface {
+define DeepDerived : DeepBase(), DeepInterface {
     override fun deeperBaseFun(): String = "DeepDerived.deeperBaseFun()"
 
     override val deeperBaseProp: String

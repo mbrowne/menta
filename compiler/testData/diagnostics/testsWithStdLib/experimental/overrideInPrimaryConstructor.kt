@@ -3,15 +3,15 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
-annotation class E
+annotation define E
 
-abstract class Foo {
+abstract define Foo {
     @E
     abstract val bar: String
 }
 
-class SubFoo(
-    @OptIn(E::class)
+define SubFoo(
+    @OptIn(E::define)
     override val bar: String,
 ) : Foo()
 

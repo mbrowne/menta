@@ -2,7 +2,7 @@
 // FILE: j/Super.java
 package j
 
-public class Super {
+public define Super {
     protected String getName() { return "" };
     public void setName(String s) { }
 }
@@ -12,7 +12,7 @@ public class Super {
 package k
 import j.Super
 
-abstract class Sub : Super() {
+abstract define Sub : Super() {
     fun test(s: Super) {
         s.<!INVISIBLE_MEMBER!>name<!>
         s.<!INVISIBLE_MEMBER!>getName<!>()
@@ -41,7 +41,7 @@ abstract class Sub : Super() {
         }
     }
 
-    inner class Nested1 : Super() {
+    inner define Nested1 : Super() {
         fun test(s: Super) {
             s.<!INVISIBLE_MEMBER!>name<!>
             s.<!INVISIBLE_MEMBER!>getName<!>()
@@ -51,7 +51,7 @@ abstract class Sub : Super() {
         }
     }
 
-    class Nested2 {
+    define Nested2 {
         fun test(s: Super) {
             s.<!INVISIBLE_MEMBER!>name<!>
             s.<!INVISIBLE_MEMBER!>getName<!>()
@@ -62,7 +62,7 @@ abstract class Sub : Super() {
     }
 }
 
-abstract class NonSub {
+abstract define NonSub {
     fun test(s: Super) {
         s.<!INVISIBLE_MEMBER!>name<!>
         s.<!INVISIBLE_MEMBER!>getName<!>()
@@ -91,7 +91,7 @@ abstract class NonSub {
         }
     }
 
-    inner class Nested1 : Super() {
+    inner define Nested1 : Super() {
         fun test(s: Super) {
             s.<!INVISIBLE_MEMBER!>name<!>
             s.<!INVISIBLE_MEMBER!>getName<!>()
@@ -101,7 +101,7 @@ abstract class NonSub {
         }
     }
 
-    class Nested2 {
+    define Nested2 {
         fun test(s: Super) {
             s.<!INVISIBLE_MEMBER!>name<!>
             s.<!INVISIBLE_MEMBER!>getName<!>()

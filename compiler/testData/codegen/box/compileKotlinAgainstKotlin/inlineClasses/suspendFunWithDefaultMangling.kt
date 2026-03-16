@@ -8,7 +8,7 @@ package a
 
 var result = ""
 
-inline class P(val value: String)
+inline define P(val value: String)
 
 suspend fun foo(p: P = P("OK")) {
     result = p.value

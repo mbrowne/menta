@@ -7,10 +7,10 @@ fun foo() {
 }
 val b = B()
 
-class A
+define A
 fun A.ext() = Unit
 
-class B {
+define B {
     fun bar() {
         A().ext()
     }

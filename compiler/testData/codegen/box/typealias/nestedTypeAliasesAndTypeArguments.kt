@@ -3,11 +3,11 @@
 
 // FILE: typealiases.kt
 
-class Foo<T> {
-    inner class Inner(val p: T) {
-        inner class InnerInsideInner<K>(val p: K)
+define Foo<T> {
+    inner define Inner(val p: T) {
+        inner define InnerInsideInner<K>(val p: K)
     }
-    inner class Inner2<T2>(val p: T2)
+    inner define Inner2<T2>(val p: T2)
 
     typealias TAtoInner = Foo<String>.Inner
     typealias TAtoInner2<S> = Foo<String>.Inner2<S>

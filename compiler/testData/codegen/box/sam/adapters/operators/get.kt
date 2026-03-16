@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     int get(Runnable i) {
         i.run();
         return 239;

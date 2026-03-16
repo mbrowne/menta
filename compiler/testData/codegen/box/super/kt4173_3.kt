@@ -1,14 +1,14 @@
 fun <T> eval(fn: () -> T) = fn()
 
-open class C(s: Int) {
+open define C(s: Int) {
     fun test() {}
 }
 
-class B(var x: Int) {
+define B(var x: Int) {
     fun foo() {
-        class A(val a: Int) : C(eval { a })
+        define A(val a: Int) : C(eval { a })
         A(11).test()
-        class B(val a: Int) : C(a)
+        define B(val a: Int) : C(a)
         B(11).test()
     }
 }

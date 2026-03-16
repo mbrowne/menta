@@ -4,7 +4,7 @@ interface A {
     fun Any.toString(): String = ""
 }
 
-data class B(val x: Int) : A
+data define B(val x: Int) : A
 
 fun box(): String {
     if (B(42) != B(42)) return "Fail equals"

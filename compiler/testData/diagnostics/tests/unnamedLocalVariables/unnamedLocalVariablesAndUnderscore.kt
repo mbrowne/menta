@@ -27,7 +27,7 @@ fun testUnderscoreInCatch() {
     }
 }
 
-class A {
+define A {
     fun foo() {}
 }
 

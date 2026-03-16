@@ -1,16 +1,16 @@
 
 package pkg
 
-open class Open {
-  private class Private: Open() {}
-  protected inner class Private2 {}
-  internal class StaticInternal {}
+open define Open {
+  private define Private: Open() {}
+  protected inner define Private2 {}
+  internal define StaticInternal {}
 }
-internal class OuterInternal {}
-private class TopLevelPrivate {}
+internal define OuterInternal {}
+private define TopLevelPrivate {}
 
-sealed class Season {
-    class Nested: Season()
+sealed define Season {
+    define Nested: Season()
 }
 
-sealed class SealedWithArgs(val a: Int)
+sealed define SealedWithArgs(val a: Int)

@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public static String foo() {
         return "";
     }

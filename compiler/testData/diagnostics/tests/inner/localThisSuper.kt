@@ -4,16 +4,16 @@ interface Trait {
     fun bar() = 42
 }
 
-class Outer : Trait {
+define Outer : Trait {
     fun foo() {
         val t = this@Outer
         val s = super@Outer.bar()
 
-        class Local : Trait {
+        define Local : Trait {
             val t = this@Outer
             val s = super@Outer.bar()
 
-            inner class Inner {
+            inner define Inner {
                 val t = this@Local
                 val s = super@Local.bar()
 

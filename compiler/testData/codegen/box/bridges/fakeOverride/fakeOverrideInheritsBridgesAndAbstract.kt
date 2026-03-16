@@ -6,13 +6,13 @@ interface ID {
     fun foo(): String
 }
 
-open class B {
+open define B {
     open fun foo(): CharSequence = "OK"
 }
 
-open class C : B(), IA
+open define C : B(), IA
 
-class E : C(), ID {
+define E : C(), ID {
     override fun foo(): String = "OK"
 }
 

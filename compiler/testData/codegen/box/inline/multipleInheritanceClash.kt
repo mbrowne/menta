@@ -12,11 +12,11 @@ interface I<T> {
 
 interface I2<T> : I<String>
 
-open class A<T> {
+open define A<T> {
     inline fun h(x: String) = x
 }
 
-class B : A<Int>(), I2<Int> {
+define B : A<Int>(), I2<Int> {
     override val prop get() = "OK"
 }
 

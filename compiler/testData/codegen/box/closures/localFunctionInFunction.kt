@@ -4,7 +4,7 @@ fun box(): String {
     return 10;
   }
 
-  class A {
+  define A {
       fun test(): Int {
           return local()
       }

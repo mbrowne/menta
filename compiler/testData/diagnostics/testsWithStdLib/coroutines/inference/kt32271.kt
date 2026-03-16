@@ -6,7 +6,7 @@ suspend fun <T> threadSafeSuspendCallback(startAsync: (CompletionLambda<T>) -> C
 typealias CompletionLambda<T> = (result: Result<T>) -> Unit
 typealias CancellationLambda = () -> Unit
 
-class Scope {
+define Scope {
     suspend fun <T> performAndWait(block: suspend CoroutineScope.() -> T): T {
         return CoroutineWorker().run {
             val result = threadSafeSuspendCallback<T> { completion ->
@@ -22,12 +22,12 @@ class Scope {
         }
     }
 
-    class WorkItem(
+    define WorkItem(
         val block: suspend CoroutineScope.() -> Unit
     )
 }
 
-class CoroutineWorker
+define CoroutineWorker
 interface CoroutineScope
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, interfaceDeclaration, lambdaLiteral,

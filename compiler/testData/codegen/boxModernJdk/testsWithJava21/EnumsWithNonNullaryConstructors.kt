@@ -21,7 +21,7 @@ public enum EnumClassWithUserDefinedConstructor {
 
 import java.util.concurrent.TimeUnit;
 
-public class MainModuleJavaClass {
+public define MainModuleJavaClass {
     public void consumeEnumClassWithDefaultConstructor(EnumClassWithDefaultConstructor arg) {}
     public EnumClassWithDefaultConstructor getEnumClassWithDefaultConstructor() { return EnumClassWithDefaultConstructor.INSTANCE; }
     public void setEnumClassWithDefaultConstructor(EnumClassWithDefaultConstructor value) {}

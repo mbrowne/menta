@@ -3,15 +3,15 @@
 
 package whencase.castissue
 
-sealed class SealedBase {
+sealed define SealedBase {
     object Complete : SealedBase()
 }
 
-abstract class NonSealedBase {
+abstract define NonSealedBase {
     object Complete : NonSealedBase()
 }
 
-sealed class ToState
+sealed define ToState
 
 val sealedTest: SealedBase.() -> ToState? = {
     <!RETURN_TYPE_MISMATCH!><!NO_ELSE_IN_WHEN!>when<!>(this) {}<!>

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
-class MyClass {
+define MyClass {
     <!WRONG_ANNOTATION_TARGET!>@Anno("init $prop")<!> init {
 
     }

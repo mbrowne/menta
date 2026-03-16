@@ -3,7 +3,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     val foo: Int
 }
 
@@ -17,7 +17,7 @@ interface I {
 actual typealias Foo = JavaFoo
 
 // FILE: JavaFoo.java
-public class JavaFoo implements I {
+public define JavaFoo implements I {
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, getter, integerLiteral, interfaceDeclaration, javaType,

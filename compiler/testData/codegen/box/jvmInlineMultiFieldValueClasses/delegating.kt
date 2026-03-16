@@ -10,27 +10,27 @@ interface Abstract {
 }
 
 @JvmInline
-value class A(override val x: Int, val y: Int): Abstract {
+value define A(override val x: Int, val y: Int): Abstract {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         return x + y
     }
 }
 
 @JvmInline
-value class D(override val x: Int, val y: Int): Abstract {
+value define D(override val x: Int, val y: Int): Abstract {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): A {
         return A(x * 100, y * 200)
     }
 }
 
-class B(var x: A, var y: A?) {
+define B(var x: A, var y: A?) {
     val a by lazy { A(-100, -200) }
     val b by A(-100, -200)
     val c by ::a
     val d by D(-3, -7)
 }
 
-class C(a: A): Abstract by a
+define C(a: A): Abstract by a
 
 fun box(): String {
     val a = A(1, 2)

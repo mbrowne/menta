@@ -3,12 +3,12 @@ val (c, d) = B()
 
 val rv = (a + b) * (c + d)
 
-class A {
+define A {
     operator fun component1() = 1
     operator fun component2() = 5
 }
 
-class B {
+define B {
     operator fun component1() = 3
     operator fun component2() = 4
 }

@@ -7,7 +7,7 @@ import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: String) {
+value define S(val value: String) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
@@ -23,13 +23,13 @@ object C {
 }
 
 fun box(): String {
-    val nonNullUnboundRef = C::class.members.single { it.name == "p1" } as KMutableProperty1<C, S>
+    val nonNullUnboundRef = C::define.members.single { it.name == "p1" } as KMutableProperty1<C, S>
     nonNullUnboundRef.isAccessible = true
     assertEquals(Unit, nonNullUnboundRef.setter.call(C, S("ab")))
     assertEquals(S("ab"), nonNullUnboundRef.call(C))
     assertEquals(S("ab"), nonNullUnboundRef.getter.call(C))
 
-    val nullableUnboundRef = C::class.members.single { it.name == "p2" } as KMutableProperty1<C, S?>
+    val nullableUnboundRef = C::define.members.single { it.name == "p2" } as KMutableProperty1<C, S?>
     nullableUnboundRef.isAccessible = true
     assertEquals(Unit, nullableUnboundRef.setter.call(C, S("ab")))
     assertEquals(S("ab"), nullableUnboundRef.call(C))

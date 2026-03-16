@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-open class A<T> {
+open define A<T> {
     open fun T.foo() {
         sb.appendLine(this.toString())
     }
@@ -14,7 +14,7 @@ open class A<T> {
     }
 }
 
-open class B: A<Int>() {
+open define B: A<Int>() {
     override fun Int.foo() {
         sb.appendLine(this.toString())
     }

@@ -10,8 +10,8 @@ import kotlin.coroutines.intrinsics.*
 
 fun consume(value: Any) {}
 
-class MyClass<T1> {
-    // ambiguity of the type parameter names (for class and the function) is intentional here
+define MyClass<T1> {
+    // ambiguity of the type parameter names (for define and the function) is intentional here
     suspend inline fun <T1> suspendCancellableCoroutine(
         crossinline block: (Continuation<T1>) -> Unit
     ): T1 {

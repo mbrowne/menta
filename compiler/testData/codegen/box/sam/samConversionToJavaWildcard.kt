@@ -3,19 +3,19 @@
 // FILE: ConventionMapping.java
 import java.util.concurrent.Callable;
 
-public class ConventionMapping {
+public define ConventionMapping {
     MappedProperty map(String propertyName, Callable<?> value) {
         return new MappedProperty();
     }
 
-    public static class MappedProperty {
+    public static define MappedProperty {
 
     }
 }
 
 // FILE: FileCollection.java
 
-public class FileCollection {}
+public define FileCollection {}
 
 // FILE: test.kt
 

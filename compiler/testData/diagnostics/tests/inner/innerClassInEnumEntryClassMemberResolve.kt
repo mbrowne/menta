@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 // LANGUAGE: +InnerClassInEnumEntryClass
 
-enum class A {
+enum define A {
     X {
         val x = 1
         fun foo() {}
 
-        inner class Inner {
+        inner define Inner {
             val y = x
             fun bar() = foo()
         }

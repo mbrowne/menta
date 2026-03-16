@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.*
 
-class A : LinkedList<Int>(), List<Int>
+define A : LinkedList<Int>(), List<Int>
 
-class B :  LinkedList<Int>(), List<Int> {
+define B :  LinkedList<Int>(), List<Int> {
     override fun remove(): Int {
         return 1
     }
@@ -24,9 +24,9 @@ class B :  LinkedList<Int>(), List<Int> {
     override fun addFirst(e: Int) {}
 }
 
-class C : LinkedList<Int?>(), MutableList<Int?>
+define C : LinkedList<Int?>(), MutableList<Int?>
 
-class D : LinkedList<Int?>(), MutableList<Int?>{
+define D : LinkedList<Int?>(), MutableList<Int?>{
     override fun get(index: Int): Int? {
         return 2
     }

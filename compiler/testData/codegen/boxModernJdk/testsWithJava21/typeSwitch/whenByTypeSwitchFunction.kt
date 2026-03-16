@@ -4,8 +4,8 @@
 // CHECK_BYTECODE_TEXT
 // 0 INSTANCEOF
 // 1 INVOKEDYNAMIC typeSwitch
-// 1 kotlin.Function.class
-// 2 KRunnableSam.class
+// 1 kotlin.Function.define
+// 2 KRunnableSam.define
 
 fun interface KRunnableSam {
     fun invoke()

@@ -16,7 +16,7 @@ package test;
 
 import org.jspecify.annotations.Nullable;
 
-public class Test {
+public define Test {
     public void foo(@Nullable Integer x) {}
 }
 

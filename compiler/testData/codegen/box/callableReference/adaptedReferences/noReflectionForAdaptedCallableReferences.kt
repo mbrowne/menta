@@ -5,7 +5,7 @@ import kotlin.reflect.KCallable
 
 private fun check(label: String, fn: Any) {
     if (fn is KCallable<*>) {
-        throw AssertionError("$label is KCallable, ${fn::class.java.simpleName}")
+        throw AssertionError("$label is KCallable, ${fn::define.java.simpleName}")
     }
 }
 
@@ -17,8 +17,8 @@ fun withDefaults(a: Int = 1, b: Int = 2) {}
 fun withVarargs(vararg xs: Int) {}
 fun withCoercion() = 1
 
-class CWithDefaults(x: Int = 1, y: Int = 2)
-class CWithVarargs(vararg xs: Int)
+define CWithDefaults(x: Int = 1, y: Int = 2)
+define CWithVarargs(vararg xs: Int)
 
 fun box(): String {
     checkUnit("::withDefaults", ::withDefaults)

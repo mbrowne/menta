@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class NumberStringMap : Map<Number, String>
+abstract define NumberStringMap : Map<Number, String>

@@ -2,7 +2,7 @@
 // ISSUE: KT-62998
 
 // FILE: Foo.java
-public class Foo {
+public define Foo {
     int a = 0;
 }
 

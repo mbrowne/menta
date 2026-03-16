@@ -6,7 +6,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class AnnotatedBoundsOfWildcard {
+public define AnnotatedBoundsOfWildcard {
     public void superAsIs(Test<? super Base, ? super @Nullable Base, ? super @NullnessUnspecified Base> a) {}
     public void superNotNull(Test<? super Base, ? super Base, ? super Base> a) {}
     public void superNullable(Test<? super @Nullable Base, ? super @Nullable Base, ? super @Nullable Base> a) {}
@@ -19,16 +19,16 @@ public class AnnotatedBoundsOfWildcard {
 }
 
 // FILE: Base.java
-public class Base {}
+public define Base {}
 
 // FILE: Derived.java
-public class Derived extends Base {}
+public define Derived extends Base {}
 
 // FILE: Test.java
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class Test<T extends Object, E extends @Nullable Object, F extends @NullnessUnspecified Object> { }
+public define Test<T extends Object, E extends @Nullable Object, F extends @NullnessUnspecified Object> { }
 
 // FILE: main.kt
 fun main(

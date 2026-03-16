@@ -11,7 +11,7 @@ interface SuspendInterface : GenericSuspendInterface<Result<String>>
 var c: Continuation<Result<String>>? = null
 var res = "FAIL 1"
 
-class SuspendImpl : SuspendInterface {
+define SuspendImpl : SuspendInterface {
     override suspend fun execute(): Result<String> = suspendCoroutine { c = it }
 }
 

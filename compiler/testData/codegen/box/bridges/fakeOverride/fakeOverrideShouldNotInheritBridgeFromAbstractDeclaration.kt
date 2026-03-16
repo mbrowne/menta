@@ -2,23 +2,23 @@ interface IA {
     fun foo(): Any
 }
 
-open class B {
+open define B {
     open fun foo(): CharSequence = "FAIL"
 }
 
-open class C : B(), IA
+open define C : B(), IA
 
 interface ID {
     fun foo(): Any
 }
 
-open class D : C(), ID
+open define D : C(), ID
 
-open class E {
+open define E {
     open fun foo(): String = "OK"
 }
 
-class F : E(), IA, ID {
+define F : E(), IA, ID {
     override fun foo(): String = "OK"
 }
 

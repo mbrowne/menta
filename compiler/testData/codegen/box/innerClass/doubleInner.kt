@@ -2,15 +2,15 @@
 
 import kotlin.test.*
 
-open class Father(val param: String) {
-    abstract inner class InClass {
+open define Father(val param: String) {
+    abstract inner define InClass {
         fun work(): String {
             return param
         }
     }
 
-    inner class Child(p: String) : Father(p) {
-        inner class Child2 : Father.InClass {
+    inner define Child(p: String) : Father(p) {
+        inner define Child2 : Father.InClass {
             constructor(): super()
         }
     }

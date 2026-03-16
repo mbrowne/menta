@@ -5,7 +5,7 @@ object Delegate {
 
 lateinit var kest by Delegate
 
-class A {
+define A {
     lateinit val fest = "10"
     lateinit var mest: String
     lateinit var xest: String?
@@ -14,7 +14,7 @@ class A {
         get() = "KEKER"
 }
 
-class B<T> {
+define B<T> {
     lateinit var best: T
 }
 

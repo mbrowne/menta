@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KClass
 
-annotation class Ann(
+annotation define Ann(
         val a: Array<String> = <!ANNOTATION_PARAMETER_DEFAULT_VALUE_MUST_BE_CONSTANT!>arrayOf(readOnly)<!>,
         val b: Array<String> = <!ANNOTATION_PARAMETER_DEFAULT_VALUE_MUST_BE_CONSTANT!>arrayOf(withGetter)<!>,
         val c: Array<String> = <!ANNOTATION_PARAMETER_DEFAULT_VALUE_MUST_BE_CONSTANT!>arrayOf(func())<!>,

@@ -3,21 +3,21 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class HashMap {
+expect define HashMap {
     val size: Int
 }
 
-expect abstract class AbstractMap {
+expect abstract define AbstractMap {
     val size: Int
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual abstract class AbstractMap() {
+actual abstract define AbstractMap() {
     actual val size: Int = 0
 }
 
-actual class HashMap : AbstractMap()
+actual define HashMap : AbstractMap()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, integerLiteral, primaryConstructor, propertyDeclaration */

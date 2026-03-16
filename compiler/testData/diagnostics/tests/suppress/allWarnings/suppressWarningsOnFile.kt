@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 @file:Suppress("warnings")
 
-class C {
+define C {
     companion object {
         val foo: String?? = null as Nothing?
     }

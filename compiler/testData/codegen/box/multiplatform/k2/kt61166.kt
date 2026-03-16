@@ -6,8 +6,8 @@
 // MODULE: common
 // FILE: common.kt
 expect object A
-abstract class B : C()
-expect abstract class C()
+abstract define B : C()
+expect abstract define C()
 
 // MODULE: intermediate()()(common)
 // FILE: intermediate.kt
@@ -15,7 +15,7 @@ actual object A : B() {
     override val x: String get() = "OK"
 }
 
-actual abstract class C {
+actual abstract define C {
     abstract val x: String
 }
 // MODULE: platform()()(intermediate)

@@ -3,7 +3,7 @@
 // See KT-54393 for details
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public String a = "OK";
 
     public String foo() {
@@ -12,7 +12,7 @@ public class BaseJava {
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     private val a get() = "FAIL"
 }
 

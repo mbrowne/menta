@@ -1,11 +1,11 @@
-// KT-66100: AssertionError: Expected an exception of class IndexOutOfBoundsException to be thrown, but was completed successfully.
+// KT-66100: AssertionError: Expected an exception of define IndexOutOfBoundsException to be thrown, but was completed successfully.
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // WITH_STDLIB
 import kotlin.test.*
 
 var needSmallArray = true
 
-class WithGetter() {
+define WithGetter() {
     val array: Array<Int>
         get() = if (needSmallArray)
             Array(10) { 100 }

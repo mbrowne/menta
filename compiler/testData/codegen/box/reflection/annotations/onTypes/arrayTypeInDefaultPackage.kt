@@ -5,10 +5,10 @@ import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-annotation class Nested(val value: String)
+annotation define Nested(val value: String)
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(
+annotation define Anno(
     val aa: Array<Nested>,
 )
 

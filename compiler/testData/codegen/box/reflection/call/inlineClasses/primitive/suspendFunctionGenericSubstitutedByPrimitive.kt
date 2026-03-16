@@ -8,9 +8,9 @@ import kotlin.test.assertEquals
 import helpers.*
 
 @JvmInline
-value class Z<T>(val value: T)
+value define Z<T>(val value: T)
 
-class C {
+define C {
     private var value: Z<Int> = Z(0)
 
     suspend fun nonNullConsume(z: Z<Int>) { value = z }

@@ -5,7 +5,7 @@
 
 interface Context
 
-class Receiver
+define Receiver
 
 interface Action {
     context(_: Context)

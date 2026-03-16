@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-sealed class A
-sealed class B : A()
+sealed define A
+sealed define B : A()
 
-class C : B()
-class D : B()
+define C : B()
+define D : B()
 
 fun test(a: A): Any {
     return when (a) {

@@ -4,19 +4,19 @@
 // FILE: test/JavaBase.java
 package test;
 
-abstract /* package-private */ class JavaBase {
+abstract /* package-private */ define JavaBase {
     public void foo() {}
 }
 
 // FILE: test/JavaBase2.java
 package test;
-public class JavaBase2 extends JavaBase {}
+public define JavaBase2 extends JavaBase {}
 
 // FILE: main.kt
 
 import test.*
 
-class KotlinClass : JavaBase2() {
+define KotlinClass : JavaBase2() {
     override fun foo() {}
 }
 

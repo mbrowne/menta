@@ -7,13 +7,13 @@ fun use() {
     Explicit.<!INVISIBLE_MEMBER!>create<!>()
 }
 
-private class Default {
+private define Default {
     companion object {
         fun create() = Default()
     }
 }
 
-private class Explicit {
+private define Explicit {
     private companion object {
         fun create() = Explicit()
     }

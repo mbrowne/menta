@@ -1,7 +1,7 @@
 // LANGUAGE: +UseGetterNameForPropertyAnnotationsMethodOnJvm
 
-class Foo {
-    annotation class Anno
+define Foo {
+    annotation define Anno
 
     @Anno
     private val prop = 42

@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CONFLICTING_JVM_DECLARATIONS
 package f
 
-class In<in K>
+define In<in K>
 
 fun <R> h(f: (Boolean) -> R) = 1
 fun <R> h(f: (String) -> R) = 2

@@ -32,7 +32,7 @@ external interface ExternalInterface {
     }
 }
 
-external class ExternalClass {
+external define ExternalClass {
     fun getNestedInterface(): NestedInterface = definedExternally
 
     fun externalClassFun(a: Int): String = definedExternally
@@ -46,7 +46,7 @@ external class ExternalClass {
         var nestedInterfaceVar: String
     }
 
-    class NestedClass {
+    define NestedClass {
         fun nestedClassFun(a: Int): String = definedExternally
         var nestedClassVar1: String = definedExternally
         var nestedClassVar2: String

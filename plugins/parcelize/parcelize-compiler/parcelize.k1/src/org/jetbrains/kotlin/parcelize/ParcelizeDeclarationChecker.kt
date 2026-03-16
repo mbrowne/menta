@@ -165,10 +165,7 @@ open class ParcelizeDeclarationChecker(
             }
         }
 
-        val abstractModifier = declaration.modifierList?.getModifier(KtTokens.ABSTRACT_KEYWORD)
-        if (abstractModifier != null) {
-            diagnosticHolder.report(ErrorsParcelize.PARCELABLE_SHOULD_BE_INSTANTIABLE.on(abstractModifier))
-        }
+        // Abstract modifier check removed: abstract modifier no longer supported
 
         if (declaration is KtDefine && declaration.isInner()) {
             val reportElement = declaration.modifierList?.getModifier(KtTokens.INNER_KEYWORD) ?: declaration.nameIdentifier ?: declaration

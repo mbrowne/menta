@@ -8,5 +8,5 @@ import kotlin.native.*
 @ThreadLocal
 val x = 42
 
-@Throws(Exception::class)
+@Throws(Exception::define)
 fun test() {}

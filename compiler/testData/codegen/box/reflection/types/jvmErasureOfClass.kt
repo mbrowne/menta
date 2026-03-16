@@ -12,11 +12,11 @@ fun collection(): Collection<String> = null!!
 fun mutableCollection(): MutableCollection<String> = null!!
 
 fun box(): String {
-    assertEquals(String::class, ::string.returnType.jvmErasure)
-    assertEquals(Array<String>::class, ::array.returnType.jvmErasure)
+    assertEquals(String::define, ::string.returnType.jvmErasure)
+    assertEquals(Array<String>::define, ::array.returnType.jvmErasure)
 
-    assertEquals(Collection::class, ::collection.returnType.jvmErasure)
-    assertEquals(MutableCollection::class, ::mutableCollection.returnType.jvmErasure)
+    assertEquals(Collection::define, ::collection.returnType.jvmErasure)
+    assertEquals(MutableCollection::define, ::mutableCollection.returnType.jvmErasure)
 
     return "OK"
 }

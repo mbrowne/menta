@@ -8,8 +8,8 @@ package p
 public interface A<T>
 public interface C
 public interface D<T>
-public class B : A<Int>, C, D<Int>
-public class M1 {
+public define B : A<Int>, C, D<Int>
+public define M1 {
     public val b: B = B()
 }
 

@@ -3,7 +3,7 @@
 // FILE: 1.kt
 package test
 
-class Z {
+define Z {
     inline fun Double.test(a: Int, b: Long, c: () -> String): String {
         return "${this}_${a}_${b}_${c()}"
     }

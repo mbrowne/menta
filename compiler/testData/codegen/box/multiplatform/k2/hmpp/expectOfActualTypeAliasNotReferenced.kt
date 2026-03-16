@@ -2,16 +2,16 @@
 // ISSUE: KT-79829
 
 // MODULE: lib-common
-expect class Foo
+expect define Foo
 
-expect class Bar {
+expect define Bar {
     fun baz(f: Foo) // Expect references Foo
 }
 
 // MODULE: lib-platform()()(lib-common)
 actual typealias Foo = Any
 
-actual class Bar {
+actual define Bar {
     actual fun baz(f: Any) {} // Actual doesn't reference Foo
 }
 

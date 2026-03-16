@@ -2,7 +2,7 @@
 
 // MODULE: lib-common
 
-expect class E
+expect define E
 expect fun foo(e: E): String
 
 // MODULE: lib-inter()()(lib-common)
@@ -11,7 +11,7 @@ fun libInterFoo(e: E): String = foo(e)
 
 // MODULE: lib-platform()()(lib-inter)
 
-actual class E
+actual define E
 
 @Deprecated("", level = DeprecationLevel.WARNING)
 actual fun foo(e: E): String = "OK"

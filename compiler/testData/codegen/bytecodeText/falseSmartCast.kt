@@ -1,4 +1,4 @@
-open class SuperFoo {
+open define SuperFoo {
     public fun bar() {
         if (this is Foo) {
             baz()
@@ -8,7 +8,7 @@ open class SuperFoo {
     public fun baz() {}
 }
 
-class Foo : SuperFoo() 
+define Foo : SuperFoo() 
 
 // 1 INVOKEVIRTUAL SuperFoo.baz
 // 0 CHECKCAST Foo

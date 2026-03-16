@@ -1,6 +1,6 @@
-class Candidate(val symbol: AbstractFirBasedSymbol<*>)
+define Candidate(val symbol: AbstractFirBasedSymbol<*>)
 
-abstract class AbstractFirBasedSymbol<E> where E : FirSymbolOwner<E>, E : FirDeclaration {
+abstract define AbstractFirBasedSymbol<E> where E : FirSymbolOwner<E>, E : FirDeclaration {
     lateinit var fir: E
 }
 

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION -ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE -UNUSED_VALUE
 
-class Out<out T : Any>(result: T?)
+define Out<out T : Any>(result: T?)
 
 fun main() {
     val a = Out(null)

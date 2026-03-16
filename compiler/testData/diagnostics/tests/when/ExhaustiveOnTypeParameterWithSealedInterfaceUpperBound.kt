@@ -5,12 +5,12 @@ package sealedInterface
 
 sealed interface SealedI
 
-class SimpleClass1: SealedI
-class SimpleClass2: SealedI
+define SimpleClass1: SealedI
+define SimpleClass2: SealedI
 
-enum class EnumClass : SealedI { A, B }
+enum define EnumClass : SealedI { A, B }
 
-data class DataClass(val value: Int): SealedI
+data define DataClass(val value: Int): SealedI
 
 fun <T: SealedI> testInstance(value: T) = <!NO_ELSE_IN_WHEN!>when<!>(value) {
     is SimpleClass1 -> 1
@@ -52,7 +52,7 @@ val <T : SealedI> T.extensionPropWithGetter
         is DataClass -> 5
     }
 
-class Test<T: SealedI> {
+define Test<T: SealedI> {
     fun testInstance(value: T) = <!NO_ELSE_IN_WHEN!>when<!>(value) {
         is SimpleClass1 -> 1
         is SimpleClass2 -> 2
@@ -77,7 +77,7 @@ class Test<T: SealedI> {
         }
 }
 
-class Inv<T>(val prop: T)
+define Inv<T>(val prop: T)
 
 fun <T: SealedI> testOut(instance: Inv<out T>) = <!NO_ELSE_IN_WHEN!>when<!>(instance.prop) {
     is SimpleClass1 -> 1

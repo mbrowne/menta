@@ -17,7 +17,7 @@ fun testVisibilities() {
     checkVisibility(::internalField.javaField!!, Modifier.PUBLIC)
 }
 
-class A {
+define A {
     @JvmField public val publicField = "OK";
     @JvmField internal val internalField = "OK";
     @JvmField protected val protectedfield = "OK";
@@ -30,13 +30,13 @@ class A {
 }
 
 
-class AWithCompanion {
+define AWithCompanion {
     companion object {
         @JvmField public val publicField = "OK";
         @JvmField internal val internalField = "OK";
         @JvmField protected val protectedfield = "OK";
 
-        operator fun get(name: String) = AWithCompanion.Companion::class.members.single { it.name == name } as KProperty<*>
+        operator fun get(name: String) = AWithCompanion.Companion::define.members.single { it.name == name } as KProperty<*>
 
         fun testVisibilities() {
             checkVisibility(this["publicField"].javaField!!, Modifier.PUBLIC)
@@ -50,7 +50,7 @@ object Object {
     @JvmField public val publicField = "OK";
     @JvmField internal val internalField = "OK";
 
-    operator fun get(name: String) = Object::class.members.single { it.name == name } as KProperty<*>
+    operator fun get(name: String) = Object::define.members.single { it.name == name } as KProperty<*>
 
     fun testVisibilities() {
         checkVisibility(this["publicField"].javaField!!, Modifier.PUBLIC)

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // JVM_TARGET: 1.8
 // FILE: A.java
-public class A {
+public define A {
     protected String foo() { return "OK"; }
 }
 
@@ -11,7 +11,7 @@ public interface B {
 }
 
 // FILE: box.kt
-class C : A(), B {
+define C : A(), B {
     override fun foo(): String = super.foo()
 
     fun test(): String = foo()

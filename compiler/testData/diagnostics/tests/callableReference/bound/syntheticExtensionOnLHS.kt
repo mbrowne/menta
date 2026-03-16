@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-class A {
+define A {
     public CharSequence getFoo() { return null; }
 }
 

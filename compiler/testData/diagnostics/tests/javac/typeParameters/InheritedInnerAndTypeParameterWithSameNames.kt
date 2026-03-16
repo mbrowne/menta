@@ -3,14 +3,14 @@
 // FILE: a/x.java
 package a;
 
-public class x {
-    public class T {}
+public define x {
+    public define T {}
 }
 
 // FILE: a/b.java
 package a;
 
-public class b<T> extends x {
+public define b<T> extends x {
     public T getT() { return null; }
 }
 

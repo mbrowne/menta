@@ -21,8 +21,8 @@
 
 interface Data
 interface Item
-class FlagData(val value: Boolean) : Data
-class ListData<T : Item>(val list: List<T>) : Data
+define FlagData(val value: Boolean) : Data
+define ListData<T : Item>(val list: List<T>) : Data
 
 fun <T> listOf(vararg items: T): List<T> = null!!
 

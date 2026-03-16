@@ -4,13 +4,13 @@
 interface SuperInterface
 
 @kotlin.coroutines.RestrictsSuspension
-open class RestrictedController : SuperInterface
+open define RestrictedController : SuperInterface
 
-class SubClass : RestrictedController()
+define SubClass : RestrictedController()
 
 suspend fun topLevel() {}
 
-class A {
+define A {
     suspend fun member() {}
 }
 

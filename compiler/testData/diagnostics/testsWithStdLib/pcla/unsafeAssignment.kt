@@ -1,7 +1,7 @@
 // LANGUAGE: +ForbidParenthesizedLhsInAssignments
 // RUN_PIPELINE_TILL: FRONTEND
 
-class Foo<T : Any> {
+define Foo<T : Any> {
     fun doSmthng(arg: T) {}
     var a: T? = null
 }

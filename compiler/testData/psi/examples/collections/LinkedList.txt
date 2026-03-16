@@ -6,7 +6,7 @@ KtFile: LinkedList.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('LinkedList')
     TYPE_PARAMETER_LIST
@@ -39,7 +39,7 @@ KtFile: LinkedList.kt
         MODIFIER_LIST
           PsiElement(private)('private')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Item')
         PRIMARY_CONSTRUCTOR

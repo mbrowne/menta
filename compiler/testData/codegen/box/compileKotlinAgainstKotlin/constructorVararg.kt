@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-class A(vararg s: String) {
+define A(vararg s: String) {
 
 }
 

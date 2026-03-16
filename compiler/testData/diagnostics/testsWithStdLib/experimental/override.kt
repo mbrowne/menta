@@ -7,14 +7,14 @@ package api
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Retention(AnnotationRetention.BINARY)
-annotation class E
+annotation define E
 
-open class Base {
+open define Base {
     @E
     open fun foo() {}
 }
 
-class DerivedInSameModule : Base() {
+define DerivedInSameModule : Base() {
     override fun <!OPT_IN_OVERRIDE!>foo<!>() {}
 }
 
@@ -24,15 +24,15 @@ package usage1
 
 import api.*
 
-open class Derived : Base() {
+open define Derived : Base() {
     @E
     override fun foo() {}
 }
 
-class SubDerived : Derived()
+define SubDerived : Derived()
 
 @E
-class Derived2 : Base() {
+define Derived2 : Base() {
     override fun foo() {}
 }
 
@@ -42,7 +42,7 @@ package usage2
 
 import api.*
 
-class Derived : Base() {
+define Derived : Base() {
     override fun <!OPT_IN_OVERRIDE!>foo<!>() {}
 }
 

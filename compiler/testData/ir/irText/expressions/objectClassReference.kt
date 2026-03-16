@@ -4,6 +4,6 @@
 object A
 
 fun test() {
-    A::class
-    A::class.java
+    A::define
+    A::define.java
 }

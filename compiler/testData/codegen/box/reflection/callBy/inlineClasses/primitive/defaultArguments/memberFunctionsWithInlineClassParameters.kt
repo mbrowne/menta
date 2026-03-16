@@ -8,13 +8,13 @@ import kotlin.test.assertEquals
 
 
 @JvmInline
-value class S(val value: Int) {
+value define S(val value: Int) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
 val default = S(1000)
 
-class C {
+define C {
     fun member(x: S, y: Int, z: S?): S = x + S(y) + z!!
 
     fun memberDefault1_1(x: S = default): S = x

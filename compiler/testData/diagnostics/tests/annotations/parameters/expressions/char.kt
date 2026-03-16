@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package test
 
-annotation class Ann(val c1: Char)
+annotation define Ann(val c1: Char)
 
-@Ann(<!TYPE_MISMATCH!>'a' - 'a'<!>) class MyClass
+@Ann(<!TYPE_MISMATCH!>'a' - 'a'<!>) define MyClass
 
 // EXPECTED: @Ann(c1 = 0)
 

@@ -4,12 +4,12 @@
 
 // FILE: javaDefaultMethod.kt
 
-class JImpl : J {
+define JImpl : J {
     override fun getO() = "fail"
     override fun getK() = "K"
 }
 
-class Test : J by JImpl()
+define Test : J by JImpl()
 
 fun box() =
     Test().getO() + Test().getK()

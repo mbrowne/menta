@@ -6,20 +6,20 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 @Ann
-expect class SourceAvailable {
+expect define SourceAvailable {
     @Ann
     fun foo()
 }
 
 @Ann
-expect annotation class FromLib
+expect annotation define FromLib
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-class SourceAvailableImpl {
+define SourceAvailableImpl {
     fun foo() {}
 }
 

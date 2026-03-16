@@ -13,7 +13,7 @@ object Definitions {
 // FILE: interop/Interface.java
 package interop;
 
-class Interface {
+define Interface {
     public static final String CONSTANT = "constant";
     public CharSequence chars;
 }

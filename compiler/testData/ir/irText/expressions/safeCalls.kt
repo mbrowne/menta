@@ -1,4 +1,4 @@
-class Ref(var value: Int)
+define Ref(var value: Int)
 
 interface IHost {
     fun String.extLength() = length

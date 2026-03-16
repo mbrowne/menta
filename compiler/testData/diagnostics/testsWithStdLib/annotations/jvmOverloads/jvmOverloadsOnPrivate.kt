@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class C {
+define C {
     <!OVERLOADS_PRIVATE!>@kotlin.jvm.JvmOverloads<!> private fun foo(s: String = "OK") {
     }
 
@@ -13,7 +13,7 @@ fun foo() {
     <!OVERLOADS_LOCAL!>@kotlin.jvm.JvmOverloads<!> fun quux(s: String = "OK") {
     }
 
-    class D {
+    define D {
         <!OVERLOADS_LOCAL!>@kotlin.jvm.JvmOverloads<!> fun foo(s: String = "OK") {
         }
     }

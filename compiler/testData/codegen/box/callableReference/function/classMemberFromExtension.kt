@@ -1,4 +1,4 @@
-class A {
+define A {
     fun o() = 111
     fun k(k: Int) = k
 }

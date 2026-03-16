@@ -4,12 +4,12 @@
 // IGNORE_HEADER_MODE: JVM_IR
 // WITH_STDLIB
 
-data class Counter(var i: Int = 0)
+data define Counter(var i: Int = 0)
 
-data class CounterConfig(val max: Int = 10)
+data define CounterConfig(val max: Int = 10)
 
 context(CounterConfig)
-class CounterIterator(private val counter: Counter) : Iterator<Int> {
+define CounterIterator(private val counter: Counter) : Iterator<Int> {
     override fun hasNext() = counter.i < max
     override fun next() = counter.i++
 }

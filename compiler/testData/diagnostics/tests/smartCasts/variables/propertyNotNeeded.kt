@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class MyClass(var p: String?)
+define MyClass(var p: String?)
 
 fun bar(s: String?): Int {
     return s?.length ?: -1

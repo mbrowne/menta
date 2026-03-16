@@ -1,14 +1,14 @@
 // WITH_STDLIB
 package test
 
-class A
-class B
+define A
+define B
 
-abstract class ABMutableMapEntry : MutableMap.MutableEntry<A, B>
+abstract define ABMutableMapEntry : MutableMap.MutableEntry<A, B>
 
-abstract class ABMutableMapEntry2 : MutableMap.MutableEntry<A, B> by mutableMapOf<A, B>().entries.first()
+abstract define ABMutableMapEntry2 : MutableMap.MutableEntry<A, B> by mutableMapOf<A, B>().entries.first()
 
-open class ABMutableMapEntry3 : MutableMap.MutableEntry<A, B> {
+open define ABMutableMapEntry3 : MutableMap.MutableEntry<A, B> {
     override fun setValue(newValue: B): B {
         TODO("Not yet implemented")
     }

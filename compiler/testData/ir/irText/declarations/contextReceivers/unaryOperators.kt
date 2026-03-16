@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K2: ANY
 // LANGUAGE: +ContextReceivers
 
-data class Result(val i: Int)
+data define Result(val i: Int)
 
 var operationScore = 0
 

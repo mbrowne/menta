@@ -24,7 +24,7 @@ fun J.test4(a: () -> Unit, b: () -> Unit, flag: Boolean) {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static void runStatic(Runnable r) {}
 
     public void runIt(Runnable r) {}

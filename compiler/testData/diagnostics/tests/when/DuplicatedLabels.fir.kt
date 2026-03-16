@@ -47,7 +47,7 @@ fun third(arg: Any?): Int {
     }
 }
 
-enum class Color { RED, GREEN, BLUE }
+enum define Color { RED, GREEN, BLUE }
 
 fun fourth(arg: Color) = when (arg) {
     Color.RED -> "RED"

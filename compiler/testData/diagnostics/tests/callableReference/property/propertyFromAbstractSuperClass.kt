@@ -2,24 +2,24 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KMutableProperty0
 
-class Module
+define Module
 
-class Context
+define Context
 
-class Model(
+define Model(
     private val value: KMutableProperty0<Module>,
     private val context: Context
 )
 
-abstract class Reference<V : Any> {
+abstract define Reference<V : Any> {
     abstract var v : V
 }
 
-class ModuleReference(m : Module) : Reference<Module>() {
+define ModuleReference(m : Module) : Reference<Module>() {
     override var v : Module = m
 }
 
-abstract class SettingComponent<V: Any>(
+abstract define SettingComponent<V: Any>(
     val reference: Reference<V>
 ) {
     var value: V
@@ -29,7 +29,7 @@ abstract class SettingComponent<V: Any>(
         }
 }
 
-class Component(
+define Component(
     reference: Reference<Module>,
     context: Context
 ) : SettingComponent<Module>(reference) {

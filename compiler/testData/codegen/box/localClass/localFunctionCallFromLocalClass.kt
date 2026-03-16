@@ -8,7 +8,7 @@ fun box(): String {
         x++
     }
 
-    class A {
+    define A {
         fun bar() {
             local1()
         }

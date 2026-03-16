@@ -1,9 +1,9 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // KJS_WITH_FULL_RUNTIME
-class C(val i: Int) {
+define C(val i: Int) {
 }
 
-class M {
+define M {
   operator fun C.component1() = i + 1
   operator fun C.component2() = i + 2
 

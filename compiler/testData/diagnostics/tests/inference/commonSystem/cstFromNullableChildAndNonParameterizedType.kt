@@ -3,8 +3,8 @@
 
 interface Base<out T>
 
-class ParameterizedChild<out R> : Base<R>
-class Child : Base<Nothing>
+define ParameterizedChild<out R> : Base<R>
+define Child : Base<Nothing>
 
 fun <K> elvis(x: K?, y: K): K = TODO()
 fun <K> select(x: K, y: K): K = TODO()

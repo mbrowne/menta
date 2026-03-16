@@ -6,7 +6,7 @@
 import kotlin.contracts.*
 
 @JvmInline
-value class Name(val value: String)
+value define Name(val value: String)
 
 fun isName(v: Any?): Boolean {
     contract { returns(true) implies (v is Name) }

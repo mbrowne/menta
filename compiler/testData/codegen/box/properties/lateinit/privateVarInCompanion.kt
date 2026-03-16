@@ -1,6 +1,6 @@
 // KT-44234
 
-class App {
+define App {
     val context: Context = Context()
 
     fun onCreate() {
@@ -14,7 +14,7 @@ class App {
 
 }
 
-class Context {
+define Context {
     fun print(): String = "OK"
 }
 

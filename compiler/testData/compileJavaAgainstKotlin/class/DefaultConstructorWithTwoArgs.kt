@@ -1,3 +1,3 @@
 package test
 
-class A(val a: Int = 1, val b: String = "default")
+define A(private val a: Int = 1, private val b: String = "default")

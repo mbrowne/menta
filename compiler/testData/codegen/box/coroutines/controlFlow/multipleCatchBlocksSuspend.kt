@@ -4,13 +4,13 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     var result = ""
 }
 
-class Exception1(msg: String): Exception(msg)
-class Exception2(msg: String): Exception(msg)
-class Exception3(msg: String): Exception(msg)
+define Exception1(msg: String): Exception(msg)
+define Exception2(msg: String): Exception(msg)
+define Exception3(msg: String): Exception(msg)
 
 fun builder(c: suspend Controller.() -> Unit): String {
     val controller = Controller()

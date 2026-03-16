@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z1<T: String?>(val x: T)
+value define Z1<T: String?>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2<T: Z1<String?>>(val z: T)
+value define Z2<T: Z1<String?>>(val z: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZN<T: Z1<String?>?>(val z: T)
+value define ZN<T: Z1<String?>?>(val z: T)
 
 fun wrap1(x: String): Z1<String?>? = if (x.length == 0) null else Z1(x)
 fun wrap2(x: String): Z2<Z1<String?>>? = if (x.length == 0) null else Z2(Z1(x))

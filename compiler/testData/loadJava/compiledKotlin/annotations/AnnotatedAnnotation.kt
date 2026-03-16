@@ -1,4 +1,4 @@
 package test
 
 @[AnnotatedAnnotation]
-public annotation class AnnotatedAnnotation
+public annotation define AnnotatedAnnotation

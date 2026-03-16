@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +ForbidExposingLessVisibleTypesInInline
-private class Private
+private define Private
 
 internal <!NOTHING_TO_INLINE!>inline<!> fun test(
     noinline a: (Any) -> Unit = {

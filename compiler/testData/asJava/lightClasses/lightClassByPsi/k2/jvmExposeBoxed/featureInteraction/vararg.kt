@@ -1,17 +1,17 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 // COMPILATION_ERRORS
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 @JvmExposeBoxed
 fun foo(vararg sw: StringWrapper) {
 
 }
 
-class Bar {
+define Bar {
     @JvmExposeBoxed
     fun foo(vararg sw: StringWrapper) {
 

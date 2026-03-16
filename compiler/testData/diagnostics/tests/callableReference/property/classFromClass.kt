@@ -4,7 +4,7 @@
 
 import kotlin.reflect.*
 
-class A(var g: A) {
+define A(var g: A) {
     val f: Int = 0
 
     fun test() {

@@ -1,5 +1,5 @@
 // Check that this code doesn't contains INVOKEVIRTUAL instruction
-class B {
+define B {
     private fun foo(i: Int = 1) {
     }
 

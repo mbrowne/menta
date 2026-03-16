@@ -6,7 +6,7 @@ import kotlin.coroutines.intrinsics.*
 
 
 
-class Controller {
+define Controller {
     var result = ""
 
     suspend fun <T> suspendAndLog(value: T): T = suspendCoroutineUninterceptedOrReturn { c ->

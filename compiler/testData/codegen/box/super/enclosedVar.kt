@@ -1,12 +1,12 @@
-open class M() {
+open define M() {
     open var y = 500
 }
 
-open class N() : M() {
+open define N() : M() {
 
     override var y = 200
 
-    open inner class C() {
+    open inner define C() {
         fun test5() = y
         fun test6() : Int {
             super<M>@N.y += 200

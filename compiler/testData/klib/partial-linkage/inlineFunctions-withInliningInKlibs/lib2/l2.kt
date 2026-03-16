@@ -75,28 +75,28 @@ inline fun getInnerToNestedCompanionNameInline() = InnerClassContainer().InnerTo
 inline fun getInnerToNestedNestedNameInline() = InnerClassContainer().InnerToNested().Nested().name()
 inline fun getInnerToNestedInnerNameInline() = InnerClassContainer().InnerToNested().Inner().name()
 
-annotation class AnnotationClassWithParameterThatBecomesRegularClass(val x: AnnotationClassThatBecomesRegularClass)
-annotation class AnnotationClassWithParameterOfParameterThatBecomesRegularClass(val x: AnnotationClassWithParameterThatBecomesRegularClass)
-annotation class AnnotationClassWithParameterThatDisappears(val x: AnnotationClassThatDisappears)
-annotation class AnnotationClassWithParameterOfParameterThatDisappears(val x: AnnotationClassWithParameterThatDisappears)
-annotation class AnnotationClassWithClassReferenceParameterThatDisappears1(val x: kotlin.reflect.KClass<RemovedClass> = RemovedClass::class)
-annotation class AnnotationClassWithClassReferenceParameterThatDisappears2(val x: kotlin.reflect.KClass<*> = RemovedClass::class)
-annotation class AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(val x: AnnotationClassWithClassReferenceParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterThatDisappears1())
-annotation class AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(val x: AnnotationClassWithClassReferenceParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterThatDisappears2())
-annotation class AnnotationClassWithRemovedEnumEntryParameter(val x: EnumClassWithDisappearingEntry = EnumClassWithDisappearingEntry.REMOVED)
-annotation class AnnotationClassWithRemovedEnumEntryParameterOfParameter(val x: AnnotationClassWithRemovedEnumEntryParameter = AnnotationClassWithRemovedEnumEntryParameter())
-annotation class AnnotationClassWithParameterThatBecomesPrivate1(val x: PublicTopLevelLib1.AnnotationClassThatBecomesPrivate = PublicTopLevelLib1.AnnotationClassThatBecomesPrivate())
-annotation class AnnotationClassWithParameterThatBecomesPrivate2(val x: kotlin.reflect.KClass<PublicTopLevelLib1.ClassThatBecomesPrivate> = PublicTopLevelLib1.ClassThatBecomesPrivate::class)
-annotation class AnnotationClassWithParameterOfParameterThatBecomesPrivate2(val x: AnnotationClassWithParameterThatBecomesPrivate2 = AnnotationClassWithParameterThatBecomesPrivate2())
-annotation class AnnotationClassWithParameterThatBecomesPrivate3(val x: kotlin.reflect.KClass<*> = PublicTopLevelLib1.ClassThatBecomesPrivate::class)
-annotation class AnnotationClassWithParameterOfParameterThatBecomesPrivate3(val x: AnnotationClassWithParameterThatBecomesPrivate3 = AnnotationClassWithParameterThatBecomesPrivate3())
-annotation class AnnotationClassWithParameterThatBecomesPrivate4(val x: PublicTopLevelLib1.EnumClassThatBecomesPrivate = PublicTopLevelLib1.EnumClassThatBecomesPrivate.ENTRY)
-annotation class AnnotationClassWithParameterOfParameterThatBecomesPrivate4(val x: AnnotationClassWithParameterThatBecomesPrivate4 = AnnotationClassWithParameterThatBecomesPrivate4())
+annotation define AnnotationClassWithParameterThatBecomesRegularClass(val x: AnnotationClassThatBecomesRegularClass)
+annotation define AnnotationClassWithParameterOfParameterThatBecomesRegularClass(val x: AnnotationClassWithParameterThatBecomesRegularClass)
+annotation define AnnotationClassWithParameterThatDisappears(val x: AnnotationClassThatDisappears)
+annotation define AnnotationClassWithParameterOfParameterThatDisappears(val x: AnnotationClassWithParameterThatDisappears)
+annotation define AnnotationClassWithClassReferenceParameterThatDisappears1(val x: kotlin.reflect.KClass<RemovedClass> = RemovedClass::define)
+annotation define AnnotationClassWithClassReferenceParameterThatDisappears2(val x: kotlin.reflect.KClass<*> = RemovedClass::define)
+annotation define AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(val x: AnnotationClassWithClassReferenceParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterThatDisappears1())
+annotation define AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(val x: AnnotationClassWithClassReferenceParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterThatDisappears2())
+annotation define AnnotationClassWithRemovedEnumEntryParameter(val x: EnumClassWithDisappearingEntry = EnumClassWithDisappearingEntry.REMOVED)
+annotation define AnnotationClassWithRemovedEnumEntryParameterOfParameter(val x: AnnotationClassWithRemovedEnumEntryParameter = AnnotationClassWithRemovedEnumEntryParameter())
+annotation define AnnotationClassWithParameterThatBecomesPrivate1(val x: PublicTopLevelLib1.AnnotationClassThatBecomesPrivate = PublicTopLevelLib1.AnnotationClassThatBecomesPrivate())
+annotation define AnnotationClassWithParameterThatBecomesPrivate2(val x: kotlin.reflect.KClass<PublicTopLevelLib1.ClassThatBecomesPrivate> = PublicTopLevelLib1.ClassThatBecomesPrivate::define)
+annotation define AnnotationClassWithParameterOfParameterThatBecomesPrivate2(val x: AnnotationClassWithParameterThatBecomesPrivate2 = AnnotationClassWithParameterThatBecomesPrivate2())
+annotation define AnnotationClassWithParameterThatBecomesPrivate3(val x: kotlin.reflect.KClass<*> = PublicTopLevelLib1.ClassThatBecomesPrivate::define)
+annotation define AnnotationClassWithParameterOfParameterThatBecomesPrivate3(val x: AnnotationClassWithParameterThatBecomesPrivate3 = AnnotationClassWithParameterThatBecomesPrivate3())
+annotation define AnnotationClassWithParameterThatBecomesPrivate4(val x: PublicTopLevelLib1.EnumClassThatBecomesPrivate = PublicTopLevelLib1.EnumClassThatBecomesPrivate.ENTRY)
+annotation define AnnotationClassWithParameterOfParameterThatBecomesPrivate4(val x: AnnotationClassWithParameterThatBecomesPrivate4 = AnnotationClassWithParameterThatBecomesPrivate4())
 
 object PublicTopLevelLib2 {
-    private class PrivateClass
-    annotation class AnnotationClassWithParameterWithPrivateDefaultValue(val x: kotlin.reflect.KClass<*> = PrivateClass::class)
-    annotation class AnnotationClassWithParameterOfParameterWithPrivateDefaultValue(val x: AnnotationClassWithParameterWithPrivateDefaultValue = AnnotationClassWithParameterWithPrivateDefaultValue())
+    private define PrivateClass
+    annotation define AnnotationClassWithParameterWithPrivateDefaultValue(val x: kotlin.reflect.KClass<*> = PrivateClass::define)
+    annotation define AnnotationClassWithParameterOfParameterWithPrivateDefaultValue(val x: AnnotationClassWithParameterWithPrivateDefaultValue = AnnotationClassWithParameterWithPrivateDefaultValue())
 }
 
 inline fun getAnnotationClassWithChangedParameterTypeInline(): AnnotationClassWithChangedParameterType = AnnotationClassWithChangedParameterType(102)
@@ -120,21 +120,21 @@ inline fun getAnnotationClassWithReorderedParametersAsAnyInline(): Any = Annotat
 inline fun getAnnotationClassWithNewParameterInline(): AnnotationClassWithNewParameter = AnnotationClassWithNewParameter(138)
 inline fun getAnnotationClassWithNewParameterAsAnyInline(): Any = AnnotationClassWithNewParameter(140)
 
-inline fun getAnnotationClassWithClassReferenceParameterThatDisappears1Inline(): AnnotationClassWithClassReferenceParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::class)
-inline fun getAnnotationClassWithClassReferenceParameterThatDisappears1AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::class)
+inline fun getAnnotationClassWithClassReferenceParameterThatDisappears1Inline(): AnnotationClassWithClassReferenceParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::define)
+inline fun getAnnotationClassWithClassReferenceParameterThatDisappears1AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::define)
 inline fun getAnnotationClassWithDefaultClassReferenceParameterThatDisappears1Inline(): AnnotationClassWithClassReferenceParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterThatDisappears1()
 inline fun getAnnotationClassWithDefaultClassReferenceParameterThatDisappears1AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterThatDisappears1()
-inline fun getAnnotationClassWithClassReferenceParameterThatDisappears2Inline(): AnnotationClassWithClassReferenceParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::class)
-inline fun getAnnotationClassWithClassReferenceParameterThatDisappears2AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::class)
+inline fun getAnnotationClassWithClassReferenceParameterThatDisappears2Inline(): AnnotationClassWithClassReferenceParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::define)
+inline fun getAnnotationClassWithClassReferenceParameterThatDisappears2AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::define)
 inline fun getAnnotationClassWithDefaultClassReferenceParameterThatDisappears2Inline(): AnnotationClassWithClassReferenceParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterThatDisappears2()
 inline fun getAnnotationClassWithDefaultClassReferenceParameterThatDisappears2AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterThatDisappears2()
 
-inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1Inline(): AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::class))
-inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::class))
+inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1Inline(): AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::define))
+inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::define))
 inline fun getAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears1Inline(): AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1 = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1()
 inline fun getAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears1AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1()
-inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2Inline(): AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::class))
-inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::class))
+inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2Inline(): AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::define))
+inline fun getAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::define))
 inline fun getAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears2Inline(): AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2 = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2()
 inline fun getAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears2AsAnyInline(): Any = AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2()
 inline fun getAnnotationClassWithRemovedEnumEntryParameterInline(): AnnotationClassWithRemovedEnumEntryParameter = AnnotationClassWithRemovedEnumEntryParameter(EnumClassWithDisappearingEntry.REMOVED)
@@ -165,37 +165,37 @@ inline fun getAnnotationClassWithParameterWithPrivateDefaultValueInlineAsAny(): 
 inline fun getAnnotationClassWithParameterOfParameterWithPrivateDefaultValueInline(): PublicTopLevelLib2.AnnotationClassWithParameterOfParameterWithPrivateDefaultValue = PublicTopLevelLib2.AnnotationClassWithParameterOfParameterWithPrivateDefaultValue()
 inline fun getAnnotationClassWithParameterOfParameterWithPrivateDefaultValueInlineAsAny(): Any = PublicTopLevelLib2.AnnotationClassWithParameterOfParameterWithPrivateDefaultValue()
 
-@AnnotationClassWithChangedParameterType(1) class HolderOfAnnotationClassWithChangedParameterType { override fun toString() = "HolderOfAnnotationClassWithChangedParameterType" }
-@AnnotationClassThatBecomesRegularClass(2) class HolderOfAnnotationClassThatBecomesRegularClass { override fun toString() = "HolderOfAnnotationClassThatBecomesRegularClass" }
-@AnnotationClassWithParameterThatBecomesRegularClass(AnnotationClassThatBecomesRegularClass(3)) class HolderOfAnnotationClassWithParameterThatBecomesRegularClass { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesRegularClass" }
-@AnnotationClassWithParameterOfParameterThatBecomesRegularClass(AnnotationClassWithParameterThatBecomesRegularClass(AnnotationClassThatBecomesRegularClass(4))) class HolderOfAnnotationClassWithParameterOfParameterThatBecomesRegularClass { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesRegularClass" }
-@AnnotationClassThatDisappears(5) class HolderOfAnnotationClassThatDisappears { override fun toString() = "HolderOfAnnotationClassThatDisappears" }
-@AnnotationClassWithParameterThatDisappears(AnnotationClassThatDisappears(6)) class HolderOfAnnotationClassWithParameterThatDisappears { override fun toString() = "HolderOfAnnotationClassWithParameterThatDisappears" }
-@AnnotationClassWithParameterOfParameterThatDisappears(AnnotationClassWithParameterThatDisappears(AnnotationClassThatDisappears(7))) class HolderOfAnnotationClassWithParameterOfParameterThatDisappears { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatDisappears" }
-@AnnotationClassWithRenamedParameters(8, "Grape") class HolderOfAnnotationClassWithRenamedParameters { override fun toString() = "HolderOfAnnotationClassWithRenamedParameters" }
-@AnnotationClassWithReorderedParameters(9, "Figs") class HolderOfAnnotationClassWithReorderedParameters { override fun toString() = "HolderOfAnnotationClassWithReorderedParameters" }
-@AnnotationClassWithNewParameter(10) class HolderOfAnnotationClassWithNewParameter { override fun toString() = "HolderOfAnnotationClassWithNewParameter" }
-@AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::class) class HolderOfAnnotationClassWithClassReferenceParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterThatDisappears1" }
-@AnnotationClassWithClassReferenceParameterThatDisappears1() class HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears1" }
-@AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::class) class HolderOfAnnotationClassWithClassReferenceParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterThatDisappears2" }
-@AnnotationClassWithClassReferenceParameterThatDisappears2() class HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears2" }
-@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::class)) class HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1" }
-@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1() class HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears1" }
-@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::class)) class HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2" }
-@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2() class HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears2" }
-@AnnotationClassWithRemovedEnumEntryParameter(EnumClassWithDisappearingEntry.REMOVED) class HolderOfAnnotationClassWithRemovedEnumEntryParameter { override fun toString() = "HolderOfAnnotationClassWithRemovedEnumEntryParameter" }
-@AnnotationClassWithRemovedEnumEntryParameter() class HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameter { override fun toString() = "HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameter" }
-@AnnotationClassWithRemovedEnumEntryParameterOfParameter(AnnotationClassWithRemovedEnumEntryParameter(EnumClassWithDisappearingEntry.REMOVED)) class HolderOfAnnotationClassWithRemovedEnumEntryParameterOfParameter { override fun toString() = "HolderOfAnnotationClassWithRemovedEnumEntryParameterOfParameter" }
-@AnnotationClassWithRemovedEnumEntryParameterOfParameter() class HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameterOfParameter { override fun toString() = "HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameterOfParameter" }
-@AnnotationClassWithParameterThatBecomesPrivate1 class HolderOfAnnotationClassWithParameterThatBecomesPrivate1 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate1" }
-@AnnotationClassWithParameterThatBecomesPrivate2 class HolderOfAnnotationClassWithParameterThatBecomesPrivate2 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate2" }
-@AnnotationClassWithParameterOfParameterThatBecomesPrivate2 class HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate2 { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate2" }
-@AnnotationClassWithParameterThatBecomesPrivate3 class HolderOfAnnotationClassWithParameterThatBecomesPrivate3 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate3" }
-@AnnotationClassWithParameterOfParameterThatBecomesPrivate3 class HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate3 { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate3" }
-@AnnotationClassWithParameterThatBecomesPrivate4 class HolderOfAnnotationClassWithParameterThatBecomesPrivate4 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate4" }
-@AnnotationClassWithParameterOfParameterThatBecomesPrivate4 class HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate4 { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate4" }
-@PublicTopLevelLib2.AnnotationClassWithParameterWithPrivateDefaultValue class HolderOfAnnotationClassWithParameterWithPrivateDefaultValue { override fun toString() = "HolderOfAnnotationClassWithParameterWithPrivateDefaultValue" }
-@PublicTopLevelLib2.AnnotationClassWithParameterOfParameterWithPrivateDefaultValue class HolderOfAnnotationClassWithParameterOfParameterWithPrivateDefaultValue { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterWithPrivateDefaultValue" }
+@AnnotationClassWithChangedParameterType(1) define HolderOfAnnotationClassWithChangedParameterType { override fun toString() = "HolderOfAnnotationClassWithChangedParameterType" }
+@AnnotationClassThatBecomesRegularClass(2) define HolderOfAnnotationClassThatBecomesRegularClass { override fun toString() = "HolderOfAnnotationClassThatBecomesRegularClass" }
+@AnnotationClassWithParameterThatBecomesRegularClass(AnnotationClassThatBecomesRegularClass(3)) define HolderOfAnnotationClassWithParameterThatBecomesRegularClass { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesRegularClass" }
+@AnnotationClassWithParameterOfParameterThatBecomesRegularClass(AnnotationClassWithParameterThatBecomesRegularClass(AnnotationClassThatBecomesRegularClass(4))) define HolderOfAnnotationClassWithParameterOfParameterThatBecomesRegularClass { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesRegularClass" }
+@AnnotationClassThatDisappears(5) define HolderOfAnnotationClassThatDisappears { override fun toString() = "HolderOfAnnotationClassThatDisappears" }
+@AnnotationClassWithParameterThatDisappears(AnnotationClassThatDisappears(6)) define HolderOfAnnotationClassWithParameterThatDisappears { override fun toString() = "HolderOfAnnotationClassWithParameterThatDisappears" }
+@AnnotationClassWithParameterOfParameterThatDisappears(AnnotationClassWithParameterThatDisappears(AnnotationClassThatDisappears(7))) define HolderOfAnnotationClassWithParameterOfParameterThatDisappears { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatDisappears" }
+@AnnotationClassWithRenamedParameters(8, "Grape") define HolderOfAnnotationClassWithRenamedParameters { override fun toString() = "HolderOfAnnotationClassWithRenamedParameters" }
+@AnnotationClassWithReorderedParameters(9, "Figs") define HolderOfAnnotationClassWithReorderedParameters { override fun toString() = "HolderOfAnnotationClassWithReorderedParameters" }
+@AnnotationClassWithNewParameter(10) define HolderOfAnnotationClassWithNewParameter { override fun toString() = "HolderOfAnnotationClassWithNewParameter" }
+@AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::define) define HolderOfAnnotationClassWithClassReferenceParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterThatDisappears1" }
+@AnnotationClassWithClassReferenceParameterThatDisappears1() define HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears1" }
+@AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::define) define HolderOfAnnotationClassWithClassReferenceParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterThatDisappears2" }
+@AnnotationClassWithClassReferenceParameterThatDisappears2() define HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterThatDisappears2" }
+@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1(AnnotationClassWithClassReferenceParameterThatDisappears1(RemovedClass::define)) define HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears1" }
+@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears1() define HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears1 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears1" }
+@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2(AnnotationClassWithClassReferenceParameterThatDisappears2(RemovedClass::define)) define HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithClassReferenceParameterOfParameterThatDisappears2" }
+@AnnotationClassWithClassReferenceParameterOfParameterThatDisappears2() define HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears2 { override fun toString() = "HolderOfAnnotationClassWithDefaultClassReferenceParameterOfParameterThatDisappears2" }
+@AnnotationClassWithRemovedEnumEntryParameter(EnumClassWithDisappearingEntry.REMOVED) define HolderOfAnnotationClassWithRemovedEnumEntryParameter { override fun toString() = "HolderOfAnnotationClassWithRemovedEnumEntryParameter" }
+@AnnotationClassWithRemovedEnumEntryParameter() define HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameter { override fun toString() = "HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameter" }
+@AnnotationClassWithRemovedEnumEntryParameterOfParameter(AnnotationClassWithRemovedEnumEntryParameter(EnumClassWithDisappearingEntry.REMOVED)) define HolderOfAnnotationClassWithRemovedEnumEntryParameterOfParameter { override fun toString() = "HolderOfAnnotationClassWithRemovedEnumEntryParameterOfParameter" }
+@AnnotationClassWithRemovedEnumEntryParameterOfParameter() define HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameterOfParameter { override fun toString() = "HolderOfAnnotationClassWithDefaultRemovedEnumEntryParameterOfParameter" }
+@AnnotationClassWithParameterThatBecomesPrivate1 define HolderOfAnnotationClassWithParameterThatBecomesPrivate1 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate1" }
+@AnnotationClassWithParameterThatBecomesPrivate2 define HolderOfAnnotationClassWithParameterThatBecomesPrivate2 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate2" }
+@AnnotationClassWithParameterOfParameterThatBecomesPrivate2 define HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate2 { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate2" }
+@AnnotationClassWithParameterThatBecomesPrivate3 define HolderOfAnnotationClassWithParameterThatBecomesPrivate3 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate3" }
+@AnnotationClassWithParameterOfParameterThatBecomesPrivate3 define HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate3 { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate3" }
+@AnnotationClassWithParameterThatBecomesPrivate4 define HolderOfAnnotationClassWithParameterThatBecomesPrivate4 { override fun toString() = "HolderOfAnnotationClassWithParameterThatBecomesPrivate4" }
+@AnnotationClassWithParameterOfParameterThatBecomesPrivate4 define HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate4 { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterThatBecomesPrivate4" }
+@PublicTopLevelLib2.AnnotationClassWithParameterWithPrivateDefaultValue define HolderOfAnnotationClassWithParameterWithPrivateDefaultValue { override fun toString() = "HolderOfAnnotationClassWithParameterWithPrivateDefaultValue" }
+@PublicTopLevelLib2.AnnotationClassWithParameterOfParameterWithPrivateDefaultValue define HolderOfAnnotationClassWithParameterOfParameterWithPrivateDefaultValue { override fun toString() = "HolderOfAnnotationClassWithParameterOfParameterWithPrivateDefaultValue" }
 
 inline fun getHolderOfAnnotationClassWithChangedParameterTypeInline() = HolderOfAnnotationClassWithChangedParameterType()
 inline fun getHolderOfAnnotationClassThatBecomesRegularClassInline() = HolderOfAnnotationClassThatBecomesRegularClass()
@@ -250,7 +250,7 @@ private fun <R> runCoroutine(coroutine: suspend () -> R): R {
     return (coroutineResult ?: error("Coroutine finished without any result")).getOrThrow()
 }
 
-class OpenClassImpl : OpenClass() {
+define OpenClassImpl : OpenClass() {
     override fun openNonInlineToInlineFunction(x: Int): String = "OpenClassImpl.openNonInlineToInlineFunction($x)"
     override fun openNonInlineToInlineFunctionWithDelegation(x: Int): String = super.openNonInlineToInlineFunctionWithDelegation(x) + " called from OpenClassImpl.openNonInlineToInlineFunctionWithDelegation($x)"
     fun newInlineFunction1(x: Int): String = "OpenClassImpl.newInlineFunction1($x)" // overrides accidentally appeared inline function
@@ -289,7 +289,7 @@ inline fun readInlinedRemovedProperty() = removedProperty
 /***** Extracted from 'removeClass': *****/
 /*****************************************/
 
-open class OpenClassInheritedFromRemovedOpenClass : RemovedOpenClass()
+open define OpenClassInheritedFromRemovedOpenClass : RemovedOpenClass()
 
 inline fun inlinedFunctionWithRemovedOpenClassVariableType() {
     val foo: RemovedOpenClass? = null
@@ -343,27 +343,27 @@ inline fun getInterfaceToOpenClassAsAnyInline(): Any = object : InterfaceToOpenC
 inline fun getInterfaceToFinalClassInline() = object : InterfaceToFinalClass {}
 inline fun getInterfaceToFinalClassAsAnyInline(): Any = object : InterfaceToFinalClass {}
 
-open class InterfaceToAbstractClassImpl : InterfaceToAbstractClass
-class InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
-open class InterfaceToOpenClassImpl : InterfaceToOpenClass
-class InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
-open class InterfaceToFinalClassImpl : InterfaceToFinalClass
-class InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
+open define InterfaceToAbstractClassImpl : InterfaceToAbstractClass
+define InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
+open define InterfaceToOpenClassImpl : InterfaceToOpenClass
+define InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
+open define InterfaceToFinalClassImpl : InterfaceToFinalClass
+define InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
 
-class InterfaceToAbstractClassContainer {
-    open class InterfaceToAbstractClassImpl : InterfaceToAbstractClass
-    class InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
-    inner class InterfaceToAbstractClassInnerImpl : InterfaceToAbstractClass
+define InterfaceToAbstractClassContainer {
+    open define InterfaceToAbstractClassImpl : InterfaceToAbstractClass
+    define InterfaceToAbstractClassImpl2 : InterfaceToAbstractClassImpl()
+    inner define InterfaceToAbstractClassInnerImpl : InterfaceToAbstractClass
 }
-class InterfaceToOpenClassContainer {
-    open class InterfaceToOpenClassImpl : InterfaceToOpenClass
-    class InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
-    inner class InterfaceToOpenClassInnerImpl : InterfaceToOpenClass
+define InterfaceToOpenClassContainer {
+    open define InterfaceToOpenClassImpl : InterfaceToOpenClass
+    define InterfaceToOpenClassImpl2 : InterfaceToOpenClassImpl()
+    inner define InterfaceToOpenClassInnerImpl : InterfaceToOpenClass
 }
-class InterfaceToFinalClassContainer {
-    open class InterfaceToFinalClassImpl : InterfaceToFinalClass
-    class InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
-    inner class InterfaceToFinalClassInnerImpl : InterfaceToFinalClass
+define InterfaceToFinalClassContainer {
+    open define InterfaceToFinalClassImpl : InterfaceToFinalClass
+    define InterfaceToFinalClassImpl2 : InterfaceToFinalClassImpl()
+    inner define InterfaceToFinalClassInnerImpl : InterfaceToFinalClass
 }
 
 inline fun getInterfaceToAbstractClassImplInline() = InterfaceToAbstractClassImpl()
@@ -411,11 +411,11 @@ inline fun getInterfaceToFinalClassNestedImpl2AsAnyInline(): Any = InterfaceToFi
 inline fun getInterfaceToFinalClassInnerImplInline() = InterfaceToFinalClassContainer().InterfaceToFinalClassInnerImpl()
 inline fun getInterfaceToFinalClassInnerImplAsAnyInline(): Any = InterfaceToFinalClassContainer().InterfaceToFinalClassInnerImpl()
 
-inline fun referenceToInterfaceToAbstractClassImplInline() = InterfaceToAbstractClassImpl::class.simpleName.orEmpty()
-inline fun referenceToInterfaceToAbstractClassImpl2Inline() = InterfaceToAbstractClassImpl2::class.simpleName.orEmpty()
+inline fun referenceToInterfaceToAbstractClassImplInline() = InterfaceToAbstractClassImpl::define.simpleName.orEmpty()
+inline fun referenceToInterfaceToAbstractClassImpl2Inline() = InterfaceToAbstractClassImpl2::define.simpleName.orEmpty()
 
-inline fun referenceToInterfaceToFinalClassImplInline() = check(InterfaceToFinalClassImpl::class.simpleName != null)
-inline fun referenceToInterfaceToFinalClassImpl2Inline() = check(InterfaceToFinalClassImpl2::class.simpleName != null)
+inline fun referenceToInterfaceToFinalClassImplInline() = check(InterfaceToFinalClassImpl::define.simpleName != null)
+inline fun referenceToInterfaceToFinalClassImpl2Inline() = check(InterfaceToFinalClassImpl2::define.simpleName != null)
 
 inline fun getInterfaceToAbstractClass12_1Inline(): InterfaceToAbstractClass1 = object : InterfaceToAbstractClass1, InterfaceToAbstractClass2 {}
 inline fun getInterfaceToAbstractClass12_2Inline(): InterfaceToAbstractClass2 = object : InterfaceToAbstractClass1, InterfaceToAbstractClass2 {}
@@ -425,10 +425,10 @@ inline fun getInterfaceToAbstractClassAndAbstractClass_1Inline(): InterfaceToAbs
 inline fun getInterfaceToAbstractClassAndAbstractClass_2Inline(): AbstractClass = object : InterfaceToAbstractClass1, AbstractClass() {}
 inline fun getInterfaceToAbstractClassAndAbstractClassAsAnyInline(): Any = object : InterfaceToAbstractClass1, AbstractClass() {}
 
-open class InterfaceToAbstractClass12Impl : InterfaceToAbstractClass1, InterfaceToAbstractClass2
-class InterfaceToAbstractClass12Impl2 : InterfaceToAbstractClass12Impl()
-open class InterfaceToAbstractClassAndAbstractClassImpl : InterfaceToAbstractClass1, AbstractClass()
-class InterfaceToAbstractClassAndAbstractClassImpl2 : InterfaceToAbstractClassAndAbstractClassImpl()
+open define InterfaceToAbstractClass12Impl : InterfaceToAbstractClass1, InterfaceToAbstractClass2
+define InterfaceToAbstractClass12Impl2 : InterfaceToAbstractClass12Impl()
+open define InterfaceToAbstractClassAndAbstractClassImpl : InterfaceToAbstractClass1, AbstractClass()
+define InterfaceToAbstractClassAndAbstractClassImpl2 : InterfaceToAbstractClassAndAbstractClassImpl()
 
 inline fun getInterfaceToAbstractClass12ImplInline() = InterfaceToAbstractClass12Impl()
 inline fun getInterfaceToAbstractClass12ImplAsAnyInline(): Any = InterfaceToAbstractClass12Impl()
@@ -442,19 +442,19 @@ inline fun getInterfaceToAbstractClassAndAbstractClassImplAsAnyInline(): Any = I
 inline fun getInterfaceToAbstractClassAndAbstractClassImpl2Inline() = InterfaceToAbstractClassAndAbstractClassImpl2()
 inline fun getInterfaceToAbstractClassAndAbstractClassImpl2AsAnyInline(): Any = InterfaceToAbstractClassAndAbstractClassImpl2()
 
-inline fun referenceToInterfaceToAbstractClass12ImplInline() = check(InterfaceToAbstractClass12Impl::class.simpleName != null)
-inline fun referenceToInterfaceToAbstractClass12Impl2Inline() = check(InterfaceToAbstractClass12Impl2::class.simpleName != null)
-inline fun referenceToInterfaceToAbstractClassAndAbstractClassImplInline() = check(InterfaceToAbstractClassAndAbstractClassImpl::class.simpleName != null)
-inline fun referenceToInterfaceToAbstractClassAndAbstractClassImpl2Inline() = check(InterfaceToAbstractClassAndAbstractClassImpl2::class.simpleName != null)
+inline fun referenceToInterfaceToAbstractClass12ImplInline() = check(InterfaceToAbstractClass12Impl::define.simpleName != null)
+inline fun referenceToInterfaceToAbstractClass12Impl2Inline() = check(InterfaceToAbstractClass12Impl2::define.simpleName != null)
+inline fun referenceToInterfaceToAbstractClassAndAbstractClassImplInline() = check(InterfaceToAbstractClassAndAbstractClassImpl::define.simpleName != null)
+inline fun referenceToInterfaceToAbstractClassAndAbstractClassImpl2Inline() = check(InterfaceToAbstractClassAndAbstractClassImpl2::define.simpleName != null)
 
 /*************************************/
 /***** Extracted from 'kt73511': *****/
 /*************************************/
 
-annotation class MyAnnotation
+annotation define MyAnnotation
 
-@MyAnnotationMarker(MyAnnotation::class)
-data class MyAnnotationHolder(val x: Int)
+@MyAnnotationMarker(MyAnnotation::define)
+data define MyAnnotationHolder(val x: Int)
 
 /******************************************************/
 /***** Extracted from 'richReferencesOperations': *****/
@@ -491,7 +491,7 @@ fun removedInlineVarReferenceSet(): Unit = ::removedInlineVar.set(123)
 /***** Extracted from 'propertyTransformations': *****/
 /*****************************************************/
 
-class OpenClassWithPropertiesImpl : OpenClassWithProperties() {
+define OpenClassWithPropertiesImpl : OpenClassWithProperties() {
     override var openNonInlineToInlineProperty: String
         get() = "OpenClassWithPropertiesImpl.openNonInlineToInlineProperty"
         set(value) { lastRecordedState = "OpenClassWithPropertiesImpl.openNonInlineToInlineProperty=$value" }

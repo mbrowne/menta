@@ -1,3 +1,3 @@
 package test
 
-class A(vararg a: Int) {}
+define A(vararg a: Int) {}

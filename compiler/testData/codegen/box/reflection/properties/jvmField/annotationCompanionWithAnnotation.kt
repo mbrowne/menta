@@ -3,11 +3,11 @@
 
 import kotlin.reflect.full.declaredMemberProperties
 
-annotation class Ann(val value: String)
+annotation define Ann(val value: String)
 
-public class Bar(public val value: String)
+public define Bar(public val value: String)
 
-annotation class Foo {
+annotation define Foo {
     companion object {
         @JvmField @Ann("O")
         val FOO = Bar("K")
@@ -15,6 +15,6 @@ annotation class Foo {
 }
 
 fun box(): String {
-    val field = Foo.Companion::class.declaredMemberProperties.single()
+    val field = Foo.Companion::define.declaredMemberProperties.single()
     return (field.annotations.single() as Ann).value + (field.get(Foo.Companion) as Bar).value
 }

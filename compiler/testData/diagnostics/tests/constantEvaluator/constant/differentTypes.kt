@@ -37,7 +37,7 @@ package test
 // val prop14: null
 <!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop14: <!UNRESOLVED_REFERENCE!>aaa<!>? = 1<!>
 
-class A
+define A
 
 // val prop15: null
 <!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop15: A = <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!>

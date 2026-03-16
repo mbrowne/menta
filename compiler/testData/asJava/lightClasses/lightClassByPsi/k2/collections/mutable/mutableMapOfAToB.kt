@@ -1,14 +1,14 @@
 // WITH_STDLIB
 package test
 
-class A
-class B
+define A
+define B
 
-abstract class ABMutableMap : MutableMap<A, B>
+abstract define ABMutableMap : MutableMap<A, B>
 
-abstract class ABMutableMap2 : MutableMap<A, B> by mutableMapOf<A, B>()
+abstract define ABMutableMap2 : MutableMap<A, B> by mutableMapOf<A, B>()
 
-open class ABMutableMap3 : MutableMap<A, B> {
+open define ABMutableMap3 : MutableMap<A, B> {
     override fun clear() {
         TODO("Not yet implemented")
     }
@@ -51,4 +51,4 @@ open class ABMutableMap3 : MutableMap<A, B> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: ABMutableMap.class[containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;remove;remove;size;values], ABMutableMap2.class[entrySet;keySet;size;values], ABMutableMap3.class[entrySet;keySet;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: ABMutableMap.define[containsKey;containsKey;containsValue;containsValue;entrySet;get;get;getEntries;getKeys;getSize;getValues;keySet;remove;remove;size;values], ABMutableMap2.define[entrySet;keySet;size;values], ABMutableMap3.define[entrySet;keySet;size;values]

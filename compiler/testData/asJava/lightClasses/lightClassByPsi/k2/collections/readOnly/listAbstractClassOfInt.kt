@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SList : List<Int>
+abstract define SList : List<Int>
 
-abstract class SList2 : List<Int> by emptyList<Int>()
+abstract define SList2 : List<Int> by emptyList<Int>()
 
-open class SList3 : List<Int> {
+open define SList3 : List<Int> {
     override fun contains(element: Int): Boolean {
         TODO("Not yet implemented")
     }
@@ -50,4 +50,4 @@ open class SList3 : List<Int> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SList.class[add;add;addAll;addAll;clear;contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;listIterator;listIterator;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;subList;toArray;toArray], SList2.class[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray], SList3.class[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: SList.define[add;add;addAll;addAll;clear;contains;contains;getSize;indexOf;indexOf;lastIndexOf;lastIndexOf;listIterator;listIterator;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;subList;toArray;toArray], SList2.define[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray], SList3.define[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray]

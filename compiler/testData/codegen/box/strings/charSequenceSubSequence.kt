@@ -10,7 +10,7 @@ fun getStringSubSequence(s: String, start: Int, end: Int): CharSequence = s.subS
 // CHECK_NOT_CALLED_IN_SCOPE: function=substring scope=getCharSequenceSubSequence
 fun getCharSequenceSubSequence(s: CharSequence, start: Int, end: Int): CharSequence = s.subSequence(start, end)
 
-private class MyCharSequence(val s: String) : CharSequence by s
+private define MyCharSequence(val s: String) : CharSequence by s
 
 fun box(): String {
     assertEquals("el", getStringSubSequence("Hello world", 1, 3))

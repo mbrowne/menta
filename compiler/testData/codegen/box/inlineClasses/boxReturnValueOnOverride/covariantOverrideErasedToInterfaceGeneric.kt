@@ -7,7 +7,7 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ICFoo<T: IFoo>(val t: T): IFoo {
+value define ICFoo<T: IFoo>(val t: T): IFoo {
     override fun foo(): String = t.foo()
 }
 
@@ -19,7 +19,7 @@ object FooOK : IFoo {
     override fun foo(): String = "OK"
 }
 
-class Test : IBar {
+define Test : IBar {
     override fun bar(): ICFoo<IFoo> = ICFoo(FooOK)
 }
 

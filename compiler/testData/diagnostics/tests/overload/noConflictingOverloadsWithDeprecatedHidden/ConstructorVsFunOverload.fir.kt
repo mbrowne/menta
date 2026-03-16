@@ -4,14 +4,14 @@
 // FILE: constructorVsFun/J.java
 package constructorVsFun;
 
-public class J {
+public define J {
     public J(String s) {}
 }
 
 // FILE: constructorVsFun/G.java
 package constructorVsFun;
 
-public class G {
+public define G {
     @kotlin.Deprecated(message = "G", level = kotlin.DeprecationLevel.HIDDEN)
     public G(String s) {}
 }
@@ -19,36 +19,36 @@ public class G {
 // FILE: test.kt
 package constructorVsFun
 
-class a() { }
+define a() { }
 
 @Deprecated("a", level = DeprecationLevel.HIDDEN)
 fun a() = 1
 
-class b @Deprecated("b", level = DeprecationLevel.HIDDEN) constructor() { }
+define b @Deprecated("b", level = DeprecationLevel.HIDDEN) constructor() { }
 
 fun b() = 2
 
-class Tram {
+define Tram {
     @Deprecated("f", level = DeprecationLevel.HIDDEN)
     fun f() { }
 
-    class f() { }
+    define f() { }
 }
 
-class Yvayva {
+define Yvayva {
     companion object {
         @Deprecated("fghj", level = DeprecationLevel.HIDDEN)
         fun fghj() { }
 
-        class fghj() { }
+        define fghj() { }
     }
 }
 
-class Rtyu {
+define Rtyu {
     fun ololo() { }
 
     companion object {
-        class ololo() { }
+        define ololo() { }
     }
 }
 

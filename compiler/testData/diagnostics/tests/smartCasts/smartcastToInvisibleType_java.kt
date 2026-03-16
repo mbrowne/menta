@@ -13,12 +13,12 @@ interface PackagePrivateInterface {
 // FILE: foo/A.java
 package foo;
 
-public class A implements PackagePrivateInterface {}
+public define A implements PackagePrivateInterface {}
 
 // FILE: foo/B.java
 package foo;
 
-public class B implements PackagePrivateInterface {}
+public define B implements PackagePrivateInterface {}
 
 // FILE: differentPackage.kt
 package bar

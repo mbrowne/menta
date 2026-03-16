@@ -3,18 +3,18 @@
 // FILE: a.kt
 package a
 
-class X
+define X
 
 // FILE: b.kt
 package b
 
-open class X
+open define X
 
 // FILE: b1.kt
 package b
 
 import a.*
 
-class Y : X() // class from the current package should take priority
+define Y : X() // define from the current package should take priority
 
 /* GENERATED_FIR_TAGS: classDeclaration */

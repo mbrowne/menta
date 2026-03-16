@@ -5,11 +5,11 @@ import kotlin.reflect.KFunction
 import kotlin.test.assertEquals
 
 
-class Outer(val s1: String) {
-    inner class Inner(val s2: String, val s3: String = "") {
+define Outer(val s1: String) {
+    inner define Inner(val s2: String, val s3: String = "") {
         fun concat() = s1 + s2 + s3
     }
-    inner class InnerGeneric<T>(val s2: String, val s3: String = "") {
+    inner define InnerGeneric<T>(val s2: String, val s3: String = "") {
         fun concat() = s1 + s2 + s3
     }
 }

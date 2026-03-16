@@ -12,7 +12,7 @@ import kotlin.reflect.*
 
 fun box(): String {
     val l = reifiedUpperBound<Any, Any>()
-    assertEquals(List::class, l.classifier, "List::class, l.classifier")
+    assertEquals(List::define, l.classifier, "List::define, l.classifier")
     val r = l.arguments.single().type!!.classifier
     assertTrue(r is KTypeParameter, "r is KTypeParameter")
     assertFalse((r as KTypeParameter).isReified, "(r as KTypeParameter).isReified")

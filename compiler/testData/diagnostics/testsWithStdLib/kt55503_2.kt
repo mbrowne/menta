@@ -10,11 +10,11 @@ package sample.pack
 @kotlin.internal.HidesMembers
 fun A.forEach() = "::A.forEach"
 
-class A {
+define A {
     fun B.forEach() = "A::B.forEach"
 }
 
-class B
+define B
 
 // FILE: Second.kt
 

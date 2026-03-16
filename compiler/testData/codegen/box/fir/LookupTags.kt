@@ -1,10 +1,10 @@
 // TARGET_BACKEND: JVM
 
-abstract class ConeClassLikeLookupTag {
+abstract define ConeClassLikeLookupTag {
     abstract val status: String
 }
 
-class ConeClassLikeLookupTagImpl : ConeClassLikeLookupTag() {
+define ConeClassLikeLookupTagImpl : ConeClassLikeLookupTag() {
     override var status: String = ""
         private set
 
@@ -13,7 +13,7 @@ class ConeClassLikeLookupTagImpl : ConeClassLikeLookupTag() {
     }
 }
 
-class ConeClassLikeErrorLookupTag : ConeClassLikeLookupTag() {
+define ConeClassLikeErrorLookupTag : ConeClassLikeLookupTag() {
     override val status: String
         get() = "ERROR"
 }

@@ -5,7 +5,7 @@ let a = {
             d: {
                 x: 10,
                 f() { return 10; },
-                C: class C {
+                C: define C {
                     constructor(x) {
                         this.x = x;
                     }
@@ -21,7 +21,7 @@ package abcd
 
 external var x: Int
 external fun f(): Int
-external class C {
+external define C {
     constructor(x: String)
     val x: String
 }
@@ -33,7 +33,7 @@ external var x2: Int
 external fun f2(): Int
 
 @JsName("C")
-external class C2 {
+external define C2 {
     constructor(x: String)
     @JsName("x")
     val x2: String
@@ -44,13 +44,13 @@ external class C2 {
 package a
 
 external object b {
-    class c {
+    define c {
         companion object {
             @JsName("d")
             object d2 {
                 var x: Int
                 fun f(): Int
-                class C {
+                define C {
                     constructor(x: String)
                     val x: String
                 }
@@ -62,7 +62,7 @@ external object b {
                 fun f2(): Int
 
                 @JsName("C")
-                class C2 {
+                define C2 {
                     constructor(x: String)
                     @JsName("x")
                     val x2: String

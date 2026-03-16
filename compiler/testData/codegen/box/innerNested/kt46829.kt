@@ -1,4 +1,4 @@
-class Outer<T> {
+define Outer<T> {
     var <V> Inner<T, V>.prop: V
         get() = this.value
         set(value) {
@@ -6,7 +6,7 @@ class Outer<T> {
         }
 }
 
-class Inner<T, V>(
+define Inner<T, V>(
     val key: T,
     var value: V
 )

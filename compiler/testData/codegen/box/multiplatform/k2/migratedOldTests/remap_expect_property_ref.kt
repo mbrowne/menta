@@ -5,7 +5,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     val p: Int
     fun bar(r: () -> Int = this::p): Int
 }
@@ -13,7 +13,7 @@ expect class Foo {
 // MODULE: actual()()(common)
 // FILE: actual.kt
 
-actual class Foo {
+actual define Foo {
     actual val p = 42
     actual fun bar(r: () -> Int) = r()
 }

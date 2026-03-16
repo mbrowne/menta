@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Direction<T: Int>(private val direction: T) {
+value define Direction<T: Int>(private val direction: T) {
     fun dx() = dx[direction]
     fun dy() = dy[direction]
 

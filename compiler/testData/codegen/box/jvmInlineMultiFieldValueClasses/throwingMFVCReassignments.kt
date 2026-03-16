@@ -5,9 +5,9 @@
 // FIR_IDENTICAL
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
-class PointBox(var value: DPoint)
+define PointBox(var value: DPoint)
 
 fun box(): String {
     var p = DPoint(1.0, 2.0)

@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val string: String)
+value define S(val string: String)
 
-class Outer private constructor(val s: S) {
-    class Nested {
+define Outer private constructor(val s: S) {
+    define Nested {
         fun test(s: S) = Outer(s)
     }
 }

@@ -14,6 +14,6 @@ fun box(): String {
 
 // MODULE: native()()(common)
 // FILE: native.kt
-@OptIn(kotlin.experimental.ExperimentalNativeApi::class)
+@OptIn(kotlin.experimental.ExperimentalNativeApi::define)
 
 actual fun foo() = assert(false)

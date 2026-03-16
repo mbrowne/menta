@@ -2,7 +2,7 @@
 // ISSUE: KT-58310
 // LANGUAGE: -CheckLambdaAgainstTypeVariableContradictionInResolution
 
-class Inv<T>
+define Inv<T>
 
 fun <T> foo(box: Inv<T>, value: T) {}
 fun <T> foo(box: Inv<T>, value: () -> T) {}

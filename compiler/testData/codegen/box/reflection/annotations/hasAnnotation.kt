@@ -5,21 +5,21 @@ import kotlin.reflect.full.hasAnnotation
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-annotation class Baz
-annotation class Far
+annotation define Baz
+annotation define Far
 
 @Baz
 @Far
-class Foo
+define Foo
 
-class Bar
+define Bar
 
 fun box(): String {
-    assertFalse(Bar::class.hasAnnotation<Baz>())
-    assertFalse(Bar::class.hasAnnotation<Far>())
+    assertFalse(Bar::define.hasAnnotation<Baz>())
+    assertFalse(Bar::define.hasAnnotation<Far>())
 
-    assertTrue(Foo::class.hasAnnotation<Baz>())
-    assertTrue(Foo::class.hasAnnotation<Far>())
+    assertTrue(Foo::define.hasAnnotation<Baz>())
+    assertTrue(Foo::define.hasAnnotation<Far>())
 
     return "OK"
 }

@@ -1,27 +1,27 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-abstract class Itr : Iterator<String>
-abstract class MItr : MutableIterator<String>
-abstract class LItr : ListIterator<String>
-abstract class MLItr : MutableListIterator<String>
-abstract class It : Iterable<String>
-abstract class MIt : MutableIterable<String>
-abstract class C : Collection<String>
-abstract class MC : MutableCollection<String>
-abstract class L : List<String>
-abstract class ML : MutableList<String>
-abstract class S : Set<String>
-abstract class MS : MutableSet<String>
-abstract class M : Map<String, String>
-abstract class MM : MutableMap<String, String>
-abstract class ME : Map.Entry<String, String>
-abstract class MME : MutableMap.MutableEntry<String, String>
+abstract define Itr : Iterator<String>
+abstract define MItr : MutableIterator<String>
+abstract define LItr : ListIterator<String>
+abstract define MLItr : MutableListIterator<String>
+abstract define It : Iterable<String>
+abstract define MIt : MutableIterable<String>
+abstract define C : Collection<String>
+abstract define MC : MutableCollection<String>
+abstract define L : List<String>
+abstract define ML : MutableList<String>
+abstract define S : Set<String>
+abstract define MS : MutableSet<String>
+abstract define M : Map<String, String>
+abstract define MM : MutableMap<String, String>
+abstract define ME : Map.Entry<String, String>
+abstract define MME : MutableMap.MutableEntry<String, String>
 
-abstract class L2 : L()
-abstract class ML2 : ML()
+abstract define L2 : L()
+abstract define ML2 : ML()
 
-abstract class Weird : Iterator<String>, MutableList<String>
+abstract define Weird : Iterator<String>, MutableList<String>
 
 fun expectInterfaces(jClass: Class<*>, expectedInterfaceNames: Set<String>) {
     val actualInterfaceNames = jClass.getInterfaces().mapTo(linkedSetOf<String>()) { it.name }
@@ -32,25 +32,25 @@ fun expectInterfaces(jClass: Class<*>, expectedInterfaceNames: Set<String>) {
 }
 
 fun box(): String {
-    expectInterfaces(Itr::class.java, setOf("java.util.Iterator", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MItr::class.java, setOf("java.util.Iterator", "kotlin.jvm.internal.markers.KMutableIterator"))
-    expectInterfaces(LItr::class.java, setOf("java.util.ListIterator", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MLItr::class.java, setOf("java.util.ListIterator", "kotlin.jvm.internal.markers.KMutableListIterator"))
-    expectInterfaces(It::class.java, setOf("java.lang.Iterable", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MIt::class.java, setOf("java.lang.Iterable", "kotlin.jvm.internal.markers.KMutableIterable"))
-    expectInterfaces(C::class.java, setOf("java.util.Collection", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MC::class.java, setOf("java.util.Collection", "kotlin.jvm.internal.markers.KMutableCollection"))
-    expectInterfaces(L::class.java, setOf("java.util.List", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(ML::class.java, setOf("java.util.List", "kotlin.jvm.internal.markers.KMutableList"))
-    expectInterfaces(S::class.java, setOf("java.util.Set", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MS::class.java, setOf("java.util.Set", "kotlin.jvm.internal.markers.KMutableSet"))
-    expectInterfaces(M::class.java, setOf("java.util.Map", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MM::class.java, setOf("java.util.Map", "kotlin.jvm.internal.markers.KMutableMap"))
-    expectInterfaces(ME::class.java, setOf("java.util.Map\$Entry", "kotlin.jvm.internal.markers.KMappedMarker"))
-    expectInterfaces(MME::class.java, setOf("java.util.Map\$Entry", "kotlin.jvm.internal.markers.KMutableMap\$Entry"))
-    expectInterfaces(L2::class.java, setOf<String>())
-    expectInterfaces(ML2::class.java, setOf<String>())
-    expectInterfaces(Weird::class.java,
+    expectInterfaces(Itr::define.java, setOf("java.util.Iterator", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MItr::define.java, setOf("java.util.Iterator", "kotlin.jvm.internal.markers.KMutableIterator"))
+    expectInterfaces(LItr::define.java, setOf("java.util.ListIterator", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MLItr::define.java, setOf("java.util.ListIterator", "kotlin.jvm.internal.markers.KMutableListIterator"))
+    expectInterfaces(It::define.java, setOf("java.lang.Iterable", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MIt::define.java, setOf("java.lang.Iterable", "kotlin.jvm.internal.markers.KMutableIterable"))
+    expectInterfaces(C::define.java, setOf("java.util.Collection", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MC::define.java, setOf("java.util.Collection", "kotlin.jvm.internal.markers.KMutableCollection"))
+    expectInterfaces(L::define.java, setOf("java.util.List", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(ML::define.java, setOf("java.util.List", "kotlin.jvm.internal.markers.KMutableList"))
+    expectInterfaces(S::define.java, setOf("java.util.Set", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MS::define.java, setOf("java.util.Set", "kotlin.jvm.internal.markers.KMutableSet"))
+    expectInterfaces(M::define.java, setOf("java.util.Map", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MM::define.java, setOf("java.util.Map", "kotlin.jvm.internal.markers.KMutableMap"))
+    expectInterfaces(ME::define.java, setOf("java.util.Map\$Entry", "kotlin.jvm.internal.markers.KMappedMarker"))
+    expectInterfaces(MME::define.java, setOf("java.util.Map\$Entry", "kotlin.jvm.internal.markers.KMutableMap\$Entry"))
+    expectInterfaces(L2::define.java, setOf<String>())
+    expectInterfaces(ML2::define.java, setOf<String>())
+    expectInterfaces(Weird::define.java,
                      setOf("java.util.Iterator", "kotlin.jvm.internal.markers.KMappedMarker",
                            "java.util.List", "kotlin.jvm.internal.markers.KMutableList"))
 

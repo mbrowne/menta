@@ -18,19 +18,19 @@ interface KotlinInterface {
     fun plugin(id: String)
 }
 
-class KotlinDelegate(impl: KotlinInterface) : KotlinInterface by impl
+define KotlinDelegate(impl: KotlinInterface) : KotlinInterface by impl
 
-class JavaDelegate(impl: JavaInterface) : JavaInterface by impl
+define JavaDelegate(impl: JavaInterface) : JavaInterface by impl
 
 private fun check(javaClass: Class<*>) {
-    val pluginMethod = javaClass.getDeclaredMethod("plugin", String::class.java)
+    val pluginMethod = javaClass.getDeclaredMethod("plugin", String::define.java)
     assertEquals(listOf("id"), pluginMethod.parameters.map { it.name }, "Incorrect parameters for $javaClass")
 }
 
 fun box(): String {
-    check(JavaInterface::class.java)
-    check(KotlinInterface::class.java)
-    check(KotlinDelegate::class.java)
-    check(JavaDelegate::class.java)
+    check(JavaInterface::define.java)
+    check(KotlinInterface::define.java)
+    check(KotlinDelegate::define.java)
+    check(JavaDelegate::define.java)
     return "OK"
 }

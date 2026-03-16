@@ -10,7 +10,7 @@ public interface J<T> {
 
 import J
 
-class SamWithLambda {
+define SamWithLambda {
     fun test1(): J<String?> = J<String?> { x -> x }
     fun test2(): J<String?> = J<String?> { x -> null }
     fun test3(): J<String?> = <!RETURN_TYPE_MISMATCH!>J<String> { x -> x }<!>

@@ -2,10 +2,10 @@ package a
 
 import b.*
 
-class A
+define A
 
-class X(val y: Y? = null)
-class Z : Y()
+define X(val y: Y? = null)
+define Z : Y()
 
 fun topLevelA1() {
     topLevelB()

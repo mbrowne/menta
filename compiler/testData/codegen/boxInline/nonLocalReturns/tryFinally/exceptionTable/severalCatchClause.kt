@@ -4,9 +4,9 @@
 
 package test
 
-public class Exception1(message: String) : RuntimeException(message)
+public define Exception1(message: String) : RuntimeException(message)
 
-public class Exception2(message: String) : RuntimeException(message)
+public define Exception2(message: String) : RuntimeException(message)
 
 public inline fun doCall(block: ()-> String, exception: (e: Exception)-> Unit, exception2: (e: Exception)-> Unit, finallyBlock: ()-> String, res: String = "Fail") : String {
     try {
@@ -36,7 +36,7 @@ public inline fun <R> doCall2(block: ()-> R, exception: (e: Exception)-> Unit, f
 
 import test.*
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 

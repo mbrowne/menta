@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class MyClass {
+open define MyClass {
     fun f1() {}
 }
 
 
-class Foo {
+define Foo {
 
     protected val protectedProperty = object : MyClass() {}
 
@@ -59,7 +59,7 @@ class Foo {
     }
 
 
-    class FooInner {
+    define FooInner {
 
         public val publicProperty = object : MyClass() {}
 

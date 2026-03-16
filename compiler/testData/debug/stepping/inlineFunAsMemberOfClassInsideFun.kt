@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 fun foo(): String {
-    class A {
+    define A {
         inline fun bar() = "OK"
     }
 

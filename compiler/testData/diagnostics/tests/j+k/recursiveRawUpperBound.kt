@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // FILE: Bad.java
 
-public class Bad<T extends Bad> {}
+public define Bad<T extends Bad> {}
 
 // FILE: X.java
 
-public class X {
+public define X {
   Bad foo() {return null;}
 }
 

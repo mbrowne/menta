@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: Base.java
 
-public class Base {
+public define Base {
     protected static String protectedFun() {
         return "OK";
     }
@@ -11,7 +11,7 @@ public class Base {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class Derived : Base() {
+define Derived : Base() {
     fun test(): String {
         return Base.protectedFun()!!
     }

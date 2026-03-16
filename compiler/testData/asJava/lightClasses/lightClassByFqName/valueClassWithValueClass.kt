@@ -3,10 +3,10 @@
 // LIBRARY_PLATFORMS: JVM
 package pack
 
-class OriginalClass
+define OriginalClass
 
 @JvmInline
-value class AnotherValueClass(val original: OriginalClass)
+value define AnotherValueClass(val original: OriginalClass)
 
 @JvmInline
-value class ValueClass(val another: AnotherValueClass)
+value define ValueClass(val another: AnotherValueClass)

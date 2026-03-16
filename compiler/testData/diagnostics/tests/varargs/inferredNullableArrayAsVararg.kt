@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 // FILE: Test.java
-public class Test {
+public define Test {
     static public void foo(String ... x) {
 
     }

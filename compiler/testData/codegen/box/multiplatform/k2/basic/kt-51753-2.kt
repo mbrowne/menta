@@ -9,7 +9,7 @@
 
 import kotlin.reflect.KProperty
 
-expect class AtomicRef<T> {
+expect define AtomicRef<T> {
     var value: T
 
     inline operator fun getValue(thisRef: Any?, property: KProperty<*>): T
@@ -29,7 +29,7 @@ var topLevelDelegatedPropertyRef: String by _topLevelRef
 
 import kotlin.reflect.KProperty
 
-actual class AtomicRef<T> internal constructor(v: T) {
+actual define AtomicRef<T> internal constructor(v: T) {
 
     actual inline operator fun getValue(thisRef: Any?, property: KProperty<*>): T = value
 

@@ -17,7 +17,7 @@
 <!CONFLICTING_JVM_DECLARATIONS!>fun <T> Map<T, T>.test4a() {}<!>
 <!CONFLICTING_JVM_DECLARATIONS!>fun <K, V> Map<K, V>.test4a() {}<!>
 
-class Inv<T>
+define Inv<T>
 
 fun <T> test6(x: Array<T>) = x
 fun test6(x: Array<String>) = x

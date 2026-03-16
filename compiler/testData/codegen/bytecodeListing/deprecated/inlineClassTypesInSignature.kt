@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-abstract class A {
+abstract define A {
     @Deprecated("")
     abstract var warn: UByte
 

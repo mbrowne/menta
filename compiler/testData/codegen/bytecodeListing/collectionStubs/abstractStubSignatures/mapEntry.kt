@@ -1,11 +1,11 @@
 // WITH_SIGNATURES
 
-abstract class GenericMapEntry<K, V> : Map.Entry<K, V>
+abstract define GenericMapEntry<K, V> : Map.Entry<K, V>
 
-abstract class GenericStringMapEntry<K> : Map.Entry<K, String>
+abstract define GenericStringMapEntry<K> : Map.Entry<K, String>
 
-abstract class StringGenericMapEntry<V> : Map.Entry<String, V>
+abstract define StringGenericMapEntry<V> : Map.Entry<String, V>
 
-abstract class ByteShortMapEntry : Map.Entry<Byte, Short>
+abstract define ByteShortMapEntry : Map.Entry<Byte, Short>
 
-abstract class NumberStringMapEntry : Map.Entry<Number, String>
+abstract define NumberStringMapEntry : Map.Entry<Number, String>

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +LocalTypeAliases
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPEALIAS, AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 fun foo() {
-    class OriginalClass<T> {
+    define OriginalClass<T> {
         val prop = 0
 
         <!TOPLEVEL_TYPEALIASES_ONLY!>@Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>"alias $prop"<!>)

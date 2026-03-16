@@ -13,7 +13,7 @@ external fun d2(): Unit
 <!CONTEXT_PARAMETERS_UNSUPPORTED!>context(x: <!DEBUG_INFO_MISSING_UNRESOLVED!>Int<!>)<!>
 external fun d3(): Unit
 
-external class E {
+external define E {
     <!CONTEXT_PARAMETERS_UNSUPPORTED!>context(x: <!DEBUG_INFO_MISSING_UNRESOLVED!>Int<!>)<!>
     fun d4(): Unit
 }

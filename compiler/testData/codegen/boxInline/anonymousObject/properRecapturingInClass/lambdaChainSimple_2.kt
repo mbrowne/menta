@@ -4,7 +4,7 @@
 
 package test
 
-class A {
+define A {
     val param = "start"
     var result = "fail"
     var addParam = "_additional_"

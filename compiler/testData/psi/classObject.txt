@@ -12,7 +12,7 @@ KtFile: classObject.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ClassObject')
     PsiWhiteSpace(' ')
@@ -77,7 +77,7 @@ KtFile: classObject.kt
               PsiElement(INTEGER_LITERAL)('0')
           PsiWhiteSpace('\n\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('A')
             PsiWhiteSpace(' ')
@@ -85,7 +85,7 @@ KtFile: classObject.kt
               PsiElement(LBRACE)('{')
               PsiWhiteSpace('\n            ')
               CLASS
-                PsiElement(class)('class')
+                PsiElement(define)('define')
                 PsiWhiteSpace(' ')
                 PsiElement(IDENTIFIER)('B')
                 PsiWhiteSpace(' ')
@@ -128,7 +128,7 @@ KtFile: classObject.kt
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('B')
         PsiWhiteSpace(' ')
@@ -145,7 +145,7 @@ KtFile: classObject.kt
               PsiElement(LBRACE)('{')
               PsiWhiteSpace('\n            ')
               CLASS
-                PsiElement(class)('class')
+                PsiElement(define)('define')
                 PsiWhiteSpace(' ')
                 PsiElement(IDENTIFIER)('C')
                 PsiWhiteSpace(' ')
@@ -162,7 +162,7 @@ KtFile: classObject.kt
                       PsiElement(LBRACE)('{')
                       PsiWhiteSpace('\n                    ')
                       CLASS
-                        PsiElement(class)('class')
+                        PsiElement(define)('define')
                         PsiWhiteSpace(' ')
                         PsiElement(IDENTIFIER)('D')
                         PsiWhiteSpace(' ')
@@ -205,7 +205,7 @@ KtFile: classObject.kt
                                 MODIFIER_LIST
                                   PsiElement(enum)('enum')
                                 PsiWhiteSpace(' ')
-                                PsiElement(class)('class')
+                                PsiElement(define)('define')
                                 PsiWhiteSpace(' ')
                                 PsiElement(IDENTIFIER)('En')
                               PsiWhiteSpace('\n\n                            ')
@@ -213,7 +213,7 @@ KtFile: classObject.kt
                                 MODIFIER_LIST
                                   PsiElement(annotation)('annotation')
                                 PsiWhiteSpace(' ')
-                                PsiElement(class)('class')
+                                PsiElement(define)('define')
                                 PsiWhiteSpace(' ')
                                 PsiElement(IDENTIFIER)('Anno')
                               PsiWhiteSpace('\n                        ')

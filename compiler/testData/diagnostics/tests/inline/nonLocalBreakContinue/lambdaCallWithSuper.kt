@@ -3,11 +3,11 @@
 // DIAGNOSTICS: -UNREACHABLE_CODE
 // ISSUE: KT-1436
 
-open class Test {
+open define Test {
     inline fun foo(block: () -> Unit) = block()
     fun bar(block: () -> Unit) = block()
 }
-class Test2: Test() {
+define Test2: Test() {
     init {
         loop@ for (i in 0..10) {
             super.foo {

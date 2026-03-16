@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 // ISSUE: KT-65341
-class Controller<K> {
+define Controller<K> {
     fun yield(k: K) {}
 }
 

@@ -16,7 +16,7 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 fun consumeTargetType(value: TargetType) {}
 

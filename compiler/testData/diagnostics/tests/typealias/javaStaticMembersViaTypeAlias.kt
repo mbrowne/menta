@@ -2,23 +2,23 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: JTest.java
-public class JTest {
+public define JTest {
     public static String foo() { return ""; }
-    public static class Nested {}
+    public static define Nested {}
 }
 
 // FILE: JDerived.java
-public class JDerived extends JTest {
+public define JDerived extends JTest {
 }
 
 // FILE: test.kt
-class KTest {
-    class Nested
-    inner class Inner
+define KTest {
+    define Nested
+    inner define Inner
 }
 
 interface ITest {
-    class Nested
+    define Nested
 }
 
 typealias JT = JTest
@@ -26,10 +26,10 @@ typealias JD = JDerived
 typealias KT = KTest
 typealias IT = ITest
 
-// Referencing Java class static members via type alias should be ok
+// Referencing Java define static members via type alias should be ok
 val testFoo: String = JT.foo()
 val seeAlsoFoo: String = JTest.foo()
-// Referencing base Java class static members via type alias for derived Java class should be ok
+// Referencing base Java define static members via type alias for derived Java define should be ok
 val testDerivedFoo: String = JD.foo()
 val seeAlsoDerivedFoo: String = JDerived.foo()
 

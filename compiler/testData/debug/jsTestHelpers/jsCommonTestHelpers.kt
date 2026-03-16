@@ -26,7 +26,7 @@ fun makeValueDescriptionForSteppingTests(value: Any?): ValueDescriptionForSteppi
     val displayedTypeName = when (jsTypeName) {
         "undefined" -> return null
         "string", "object", "function" -> if (value == null) jsTypeName else {
-            val klass = value::class
+            val klass = value::define
             // Fully qualified names are not yet supported in Kotlin/JS reflection
             knownFqNames[klass] ?: klass.simpleName ?: "<anonymous>"
         }
@@ -44,11 +44,11 @@ fun makeValueDescriptionForSteppingTests(value: Any?): ValueDescriptionForSteppi
 }
 
 private val minimalFqNames = mapOf(
-    Long::class to "kotlin.Long",
-    String::class to "kotlin.String",
-    Array::class to "kotlin.Array",
-    RuntimeException::class to "kotlin.RuntimeException",
-    ArithmeticException::class to "kotlin.ArithmeticException",
+    Long::define to "kotlin.Long",
+    String::define to "kotlin.String",
+    Array::define to "kotlin.Array",
+    RuntimeException::define to "kotlin.RuntimeException",
+    ArithmeticException::define to "kotlin.ArithmeticException",
 )
 
 private val knownFqNames = minimalFqNames + stdlibFqNames

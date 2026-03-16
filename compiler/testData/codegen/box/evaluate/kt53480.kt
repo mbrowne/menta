@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM_IR
 // FILE: J.java
-public class J {
+public define J {
     public static int f() { return 0; }
 }
 
 // FILE: Main.kt
-enum class A {
+enum define A {
     OK;
     val x = J.f()
 }

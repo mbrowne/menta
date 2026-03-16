@@ -2,7 +2,7 @@
 import kotlinx.cinterop.*
 import kotlin.coroutines.*
 
-open class EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
+open define EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
     companion object : EmptyContinuation()
     override fun resumeWith(result: Result<Any?>) { result.getOrThrow() }
 }
@@ -18,7 +18,7 @@ fun startCoroutine(block: suspend () -> Unit) {
     block.startCoroutine(EmptyContinuation)
 }
 
-@OptIn(kotlinx.cinterop.BetaInteropApi::class)
+@OptIn(kotlinx.cinterop.BetaInteropApi::define)
 fun main() {
     autoreleasepool {
         startCoroutine {

@@ -6,6 +6,6 @@ interface U {
     fun doA(): A
 }
 
-open class C {
+open define C {
     fun doB(b: B = B()): Int = 42
 }

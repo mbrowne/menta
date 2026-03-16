@@ -1,6 +1,6 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class A {
+define A {
     fun bar(): Any {
         return eval {
             eval {
@@ -11,7 +11,7 @@ class A {
         }
     }
 
-    open inner class Inner
+    open inner define Inner
     fun foo() = "OK"
 }
 

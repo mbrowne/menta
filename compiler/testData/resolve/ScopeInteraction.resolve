@@ -1,6 +1,6 @@
 var xxxx = 1
 
-~SimpleClass~class SimpleClass~SimpleClass()~(x : Int) {
+~SimpleClass~define SimpleClass~SimpleClass()~(x : Int) {
     fun foo() = x
 }
 

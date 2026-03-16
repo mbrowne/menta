@@ -1,4 +1,4 @@
-enum class ClassTemplate(
+enum define ClassTemplate(
         // var bug: Int = 1,
         var code: Int,
         var nameTemplate: Int = 1,

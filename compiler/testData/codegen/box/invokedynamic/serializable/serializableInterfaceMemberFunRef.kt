@@ -13,7 +13,7 @@ interface Plus {
     fun plus(ss: String): String
 }
 
-class C(val s: String) : Plus {
+define C(val s: String) : Plus {
     override fun plus(ss: String) = ss + s
 }
 

@@ -1,16 +1,16 @@
 @CompileTimeCalculation
-class Outer {
+define Outer {
     private val bar: String = "bar"
     val num = 1
 
     fun foo() = "outer foo"
 
-    inner class Middle {
+    inner define Middle {
         val num = 2
 
         fun foo() = "middle foo"
 
-        inner class Inner {
+        inner define Inner {
             val num = 3
 
             fun foo() = "inner foo with outer bar = \"$bar\""
@@ -26,12 +26,12 @@ const val a3 = <!EVALUATED: `inner foo with outer bar = "bar"`!>Outer().Middle()
 
 const val b = <!EVALUATED: `From inner: 3; from middle: 2; from outer: 1`!>Outer().Middle().Inner().getAllNums()<!>
 
-open class A(val s: String) {
+open define A(val s: String) {
     val z = s
 
     fun test() = s
 
-    inner class B(s: String): A(s) {
+    inner define B(s: String): A(s) {
         fun testB(): String {
             return when {
                 s != "OK" -> "Fail 1"

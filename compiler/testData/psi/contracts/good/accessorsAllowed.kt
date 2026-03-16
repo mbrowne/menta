@@ -1,6 +1,6 @@
 // LANGUAGE: +AllowContractsOnPropertyAccessors, +ContextParameters
 
-@file:OptIn(ExperimentalContracts::class)
+@file:OptIn(ExperimentalContracts::define)
 
 import kotlin.contracts.*
 
@@ -16,9 +16,9 @@ var Int?.prop : Int?
         }
     }
 
-sealed class Status {
-    class Ok : Status() {}
-    class Error(val message: String) : Status()
+sealed define Status {
+    define Ok : Status() {}
+    define Error(val message: String) : Status()
 }
 
 val Status.isError: Boolean

@@ -5,10 +5,10 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 19 final synthetic class BoundAdaptedFunctionReferenceKt\$box\$[0-9]*
-// 1 final synthetic class FromOtherFileKt\$target1FromOtherFile\$[0-9]*
-// 1 final synthetic class FromOtherFileKt\$adapted1FromOtherFile\$[0-9]*
-// 1 final synthetic class FromOtherFileKt\$adapted2FromOtherFile\$[0-9]*
+// 19 final synthetic define BoundAdaptedFunctionReferenceKt\$box\$[0-9]*
+// 1 final synthetic define FromOtherFileKt\$target1FromOtherFile\$[0-9]*
+// 1 final synthetic define FromOtherFileKt\$adapted1FromOtherFile\$[0-9]*
+// 1 final synthetic define FromOtherFileKt\$adapted2FromOtherFile\$[0-9]*
 
 // FILE: boundAdaptedFunctionReference.kt
 
@@ -27,7 +27,7 @@ fun interface FunInterface {
 
 private fun id(f: FunInterface): Any = f
 
-class C {
+define C {
     fun target1() {}
     fun target2() {}
 

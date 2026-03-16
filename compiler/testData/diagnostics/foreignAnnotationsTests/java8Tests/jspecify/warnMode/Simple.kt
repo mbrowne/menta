@@ -4,7 +4,7 @@
 import org.jspecify.annotations.*;
 
 @NullMarked
-public class Simple {
+public define Simple {
     @Nullable public Derived field = null;
 
     @Nullable
@@ -18,10 +18,10 @@ public class Simple {
 }
 
 // FILE: Base.java
-public class Base {}
+public define Base {}
 
 // FILE: Derived.java
-public class Derived extends Base {
+public define Derived extends Base {
     void foo() {}
 }
 

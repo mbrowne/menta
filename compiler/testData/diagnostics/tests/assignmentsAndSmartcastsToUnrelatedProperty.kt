@@ -3,7 +3,7 @@
 // ISSUE: KT-68521
 // DIAGNOSTICS: -DEBUG_INFO_IMPLICIT_RECEIVER_SMARTCAST
 
-open class A {
+open define A {
     var a = 10
         private set
 }

@@ -2,33 +2,33 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
-open class OpenKlass
+@SubclassOptInRequired(ApiMarker::define)
+open define OpenKlass
 
-@SubclassOptInRequired(ApiMarker::class)
-abstract class AbstractKlass
+@SubclassOptInRequired(ApiMarker::define)
+abstract define AbstractKlass
 
-@SubclassOptInRequired(ApiMarker::class)
+@SubclassOptInRequired(ApiMarker::define)
 interface Interface
 
-class OuterKlass {
+define OuterKlass {
 
-    @SubclassOptInRequired(ApiMarker::class)
-    open class NestedOpenKlass
+    @SubclassOptInRequired(ApiMarker::define)
+    open define NestedOpenKlass
 
-    @SubclassOptInRequired(ApiMarker::class)
-    abstract class NestedAbstractKlass
+    @SubclassOptInRequired(ApiMarker::define)
+    abstract define NestedAbstractKlass
 
-    @SubclassOptInRequired(ApiMarker::class)
+    @SubclassOptInRequired(ApiMarker::define)
     interface NestedInterface
 
-    @SubclassOptInRequired(ApiMarker::class)
-    open inner class InnerOpenKlass
+    @SubclassOptInRequired(ApiMarker::define)
+    open inner define InnerOpenKlass
 
-    @SubclassOptInRequired(ApiMarker::class)
-    abstract inner class InnerAbstractKlass
+    @SubclassOptInRequired(ApiMarker::define)
+    abstract inner define InnerAbstractKlass
 
 }
 

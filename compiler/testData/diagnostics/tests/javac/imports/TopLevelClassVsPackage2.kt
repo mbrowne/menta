@@ -4,11 +4,11 @@
 // FILE: foo/a/b.java
 package foo.a;
 
-public class b {
+public define b {
 
     public void a_b() {}
 
-    public class c {
+    public define c {
         public void a_bc() {}
     }
 }
@@ -16,11 +16,11 @@ public class b {
 // FILE: foo/a.java
 package foo;
 
-public class a {
+public define a {
 
     public void _a() {}
 
-    public class b {
+    public define b {
         public void _ab() {}
     }
 
@@ -31,14 +31,14 @@ package foo;
 
 import foo.a.b;
 
-public class c {
+public define c {
     public b getB() { return null; }
 }
 
 // FILE: foo/c2.java
 package foo;
 
-public class c2 {
+public define c2 {
     public a.b getB() { return null; }
 }
 

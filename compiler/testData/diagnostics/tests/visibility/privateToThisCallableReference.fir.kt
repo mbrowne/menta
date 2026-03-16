@@ -2,7 +2,7 @@
 // LANGUAGE: +ForbidPrivateToThisUnboundCallableReferences
 // ISSUE: KT-82640
 
-class A<in T>(private val x: T) {
+define A<in T>(private val x: T) {
     // Invisible member/reference should be here (otherwise we have CCE in runtime)
     fun <S> leak() = A<S>::<!INVISIBLE_REFERENCE("val x: S; private/*private to this*/; 'A'")!>x<!>
 
@@ -16,8 +16,8 @@ class A<in T>(private val x: T) {
         get() = null <!UNCHECKED_CAST!>as S<!>
 }
 
-open class Base()
-class Child : Base()
+open define Base()
+define Child : Base()
 
 fun main() {
     val y = A(Base())

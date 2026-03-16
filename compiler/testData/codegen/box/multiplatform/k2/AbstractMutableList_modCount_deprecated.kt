@@ -5,13 +5,13 @@
 
 // MODULE: common
 // FILE: common.kt
-expect open class AbstractMutableList {
+expect open define AbstractMutableList {
     var modCount: Int
 }
 
 // MODULE: jvm()()(common)
 // FILE: jvm.kt
-actual open class AbstractMutableList : Jaba() {
+actual open define AbstractMutableList : Jaba() {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     actual var modCount: Int
         get() = 42
@@ -28,6 +28,6 @@ fun box(): String {
 }
 
 // FILE: Jaba.java
-public class Jaba {
+public define Jaba {
     public int modCount = 0;
 }

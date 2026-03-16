@@ -5,11 +5,11 @@
 
 package test
 
-class A {}
+define A {}
 
 fun getMain(className: String): java.lang.reflect.Method {
     val classLoader = A().javaClass.classLoader
-    return classLoader.loadClass(className).getDeclaredMethod("main", Array<String>::class.java)
+    return classLoader.loadClass(className).getDeclaredMethod("main", Array<String>::define.java)
 }
 
 fun box(): String {

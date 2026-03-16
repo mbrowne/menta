@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-class A {
+define A {
   companion object {
     val some = { 1 }()
   }

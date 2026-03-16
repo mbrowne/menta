@@ -3,7 +3,7 @@
 // SKIP_TXT
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A(
+define A(
     val l: MutableList<Int>,
     val ll: MutableList<MutableList<Int>>,
     var w: Int,

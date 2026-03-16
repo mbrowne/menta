@@ -1,4 +1,4 @@
-class X {
+define X {
     var result: String = "fail"
 
     operator fun get(name: String, type: String = "none") = name + type
@@ -8,7 +8,7 @@ class X {
     }
 }
 
-class Y {
+define Y {
     var result: String = "fail"
 
     operator fun get(name: String, type: String = "no", type2: String = "ne") = name + type + type2

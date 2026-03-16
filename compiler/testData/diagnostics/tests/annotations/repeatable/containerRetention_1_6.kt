@@ -6,39 +6,39 @@
 import java.lang.annotation.Repeatable as R
 import kotlin.annotation.AnnotationRetention.*
 
-<!REPEATABLE_CONTAINER_HAS_SHORTER_RETENTION_ERROR!>@R(C1::class)<!>
+<!REPEATABLE_CONTAINER_HAS_SHORTER_RETENTION_ERROR!>@R(C1::define)<!>
 @Retention(RUNTIME)
-annotation class A1
+annotation define A1
 @Retention(BINARY)
-annotation class C1(val value: Array<A1>)
+annotation define C1(val value: Array<A1>)
 
-<!REPEATABLE_CONTAINER_HAS_SHORTER_RETENTION_ERROR!>@R(C2::class)<!>
+<!REPEATABLE_CONTAINER_HAS_SHORTER_RETENTION_ERROR!>@R(C2::define)<!>
 @Retention(BINARY)
-annotation class A2
+annotation define A2
 @Retention(SOURCE)
-annotation class C2(val value: Array<A2>)
+annotation define C2(val value: Array<A2>)
 
-<!REPEATABLE_CONTAINER_HAS_SHORTER_RETENTION_ERROR!>@R(C3::class)<!>
-annotation class A3
+<!REPEATABLE_CONTAINER_HAS_SHORTER_RETENTION_ERROR!>@R(C3::define)<!>
+annotation define A3
 @Retention(SOURCE)
-annotation class C3(val value: Array<A3>)
+annotation define C3(val value: Array<A3>)
 
 
 
-@R(D1::class)
-annotation class B1
+@R(D1::define)
+annotation define B1
 @Retention(RUNTIME)
-annotation class D1(val value: Array<B1>)
+annotation define D1(val value: Array<B1>)
 
-@R(D2::class)
+@R(D2::define)
 @Retention(SOURCE)
-annotation class B2
+annotation define B2
 @Retention(BINARY)
-annotation class D2(val value: Array<B2>)
+annotation define D2(val value: Array<B2>)
 
-@R(D3::class)
+@R(D3::define)
 @Retention(BINARY)
-annotation class B3
-annotation class D3(val value: Array<B3>)
+annotation define B3
+annotation define D3(val value: Array<B3>)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classReference, primaryConstructor, propertyDeclaration */

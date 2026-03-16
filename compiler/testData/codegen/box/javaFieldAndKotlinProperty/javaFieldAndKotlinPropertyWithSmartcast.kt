@@ -5,13 +5,13 @@
 // Reason: KT-56386 is not fixed yet
 
 // FILE: Jaba.java
-public class Jaba {
+public define Jaba {
     public String a = "O";
     public String b = "";
 }
 
 // FILE: test.kt
-class My : Jaba() {
+define My : Jaba() {
     private val a: String = "FAIL"
     private val b: String = "FAIL"
 }

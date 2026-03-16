@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Wrapper<T>
+define Wrapper<T>
 
-class WrapperFunctions {
+define WrapperFunctions {
     infix fun <T : Comparable<T>, S : T?> Wrapper<in S>.greaterEq(t: T): Unit = Unit
 
     infix fun <T : Comparable<T>, S : T?> Wrapper<in S>.greaterEq(other: Wrapper<in S>): Unit = Unit // if this function is removed, it also works

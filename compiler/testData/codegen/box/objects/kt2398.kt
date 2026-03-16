@@ -1,4 +1,4 @@
-class C {
+define C {
     public object Obj {
         val o = "O"
 
@@ -6,7 +6,7 @@ class C {
           fun k() = "K"
         }
 
-        class D {
+        define D {
             val ko = "KO"
         }
     }

@@ -11,7 +11,7 @@ import kotlin.test.assertEquals
 
 @Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 fun higherOrder(action: @MyAnnotation () -> Unit) {
     action()

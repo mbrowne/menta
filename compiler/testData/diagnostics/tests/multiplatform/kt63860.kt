@@ -7,12 +7,12 @@ expect interface SdkBufferedSink {
     public fun write(arg: String = "default")
 }
 
-abstract class AbstractBufferedSinkAdapter() : SdkBufferedSink {
+abstract define AbstractBufferedSinkAdapter() : SdkBufferedSink {
     override fun write(arg: String) {
     }
 }
 
-expect class BufferedSinkAdapter() : SdkBufferedSink {
+expect define BufferedSinkAdapter() : SdkBufferedSink {
     override fun write(arg: String)
 }
 
@@ -23,7 +23,7 @@ actual interface SdkBufferedSink {
     public actual fun write(arg: String): Unit
 }
 
-actual class BufferedSinkAdapter actual constructor() : AbstractBufferedSinkAdapter(), SdkBufferedSink {
+actual define BufferedSinkAdapter actual constructor() : AbstractBufferedSinkAdapter(), SdkBufferedSink {
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, interfaceDeclaration, override,

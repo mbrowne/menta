@@ -1,6 +1,6 @@
-class MyClass() {
+define MyClass() {
     @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
-    fun test() {}
+    public fun test() {}
 }
 
 // TESTED_OBJECT_KIND: function

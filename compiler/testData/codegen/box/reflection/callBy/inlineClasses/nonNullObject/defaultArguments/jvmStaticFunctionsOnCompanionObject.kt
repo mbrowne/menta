@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 
 
 @JvmInline
-value class S(val value: String) {
+value define S(val value: String) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
@@ -99,7 +99,7 @@ fun box(): String {
     val one = S("1")
     val four = S("4")
 
-    val cMembers = I.Companion::class.members.associateBy { it.name }
+    val cMembers = I.Companion::define.members.associateBy { it.name }
     assertEquals(S("124"), cMembers.getValue("bar").callBy(I, one, "2", four))
     assertEquals(four, cMembers.getValue("staticDefault1_1").callBy(I, four))
     assertEquals(default, cMembers.getValue("staticDefault1_1").callByEmpty(I))

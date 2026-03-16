@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class Test {
+define Test {
 
     val prop: String = "OK"
 

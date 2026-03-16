@@ -2,11 +2,11 @@ interface FooTrait {
         val propertyTest: String
 }
 
-class FooDelegate: FooTrait {
+define FooDelegate: FooTrait {
         override val propertyTest: String = "OK"
 }
 
-class DelegateTest(): FooTrait by FooDelegate() {
+define DelegateTest(): FooTrait by FooDelegate() {
   fun test() = propertyTest
 }
 

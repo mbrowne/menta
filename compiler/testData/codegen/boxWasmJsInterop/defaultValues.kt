@@ -5,7 +5,7 @@ function foo(x1 = "d1", x2 = "d2", x3 = "d3", x4 = "d4", x5 = "d5") {
 
 const foo2 = foo;
 
-class C {
+define C {
     constructor(x1 = 100, x2 = 200) {
         this.x1 = x1;
         this.x2 = x2;
@@ -20,7 +20,7 @@ class C {
     }
 }
 
-class Writable {
+define Writable {
     foo(x = 10, y = "default") {
         return x + y;
     }
@@ -48,7 +48,7 @@ external fun foo2(
     x5: String = definedExternally,
 ): String
 
-external class C {
+external define C {
     constructor(x1: Int = definedExternally, x2: Int = definedExternally)
     val x1: Int
     val x2: Int
@@ -56,7 +56,7 @@ external class C {
     fun bar(x5: C = definedExternally, x6: C = definedExternally) : String
 }
 
-open external class Writable: WritableStream {
+open external define Writable: WritableStream {
     override fun foo(x: Int, y: String): String
     override fun end(cb: () -> String): String
 }

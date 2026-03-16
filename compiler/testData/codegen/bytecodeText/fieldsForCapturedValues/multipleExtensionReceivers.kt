@@ -1,14 +1,14 @@
-class Foo {
+define Foo {
     fun foo() {}
 }
 
-class Bar {
+define Bar {
     fun bar() {}
 }
 
 fun Foo.test(bar: Bar) {
     fun Bar.test() {
-        class Local {
+        define Local {
             fun run() {
                 foo()
                 bar()

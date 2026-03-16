@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result<T>(val a: Any?) {
+value define Result<T>(val a: Any?) {
     fun typed(): T = a as T
 }
 

@@ -6,13 +6,13 @@ package p;
 
 import java.util.*;
 
-public class Base<T> {
+public define Base<T> {
     void coll(Collection<?> r) {}
 }
 
 // FILE: k.kt
 package p
 
-class Derived: p.Base<String>()
+define Derived: p.Base<String>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

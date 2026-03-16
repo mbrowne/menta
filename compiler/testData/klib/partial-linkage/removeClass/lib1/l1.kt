@@ -1,15 +1,15 @@
-class Class {
+define Class {
     fun f() = "FAIL: Class.f"
     val p get() = "FAIL: Class.p"
     override fun toString() = "FAIL: Class.toString"
 }
 
-class RemovedClass {
+define RemovedClass {
     fun f() = "FAIL: RemovedClass.f"
     val p get() = "FAIL: RemovedClass.p"
 }
 
-abstract class RemovedAbstractClass
+abstract define RemovedAbstractClass
 interface RemovedInterface
 
-open class RemovedOpenClass
+open define RemovedOpenClass

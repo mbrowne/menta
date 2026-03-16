@@ -3,16 +3,16 @@
 
 import org.jetbrains.annotations.NotNull;
 
-public abstract class Base {
+public abstract define Base {
     @NotNull
     protected String result = "OK";
 }
 
 // FILE: Derived.kt
 
-open class Mid : Base()
+open define Mid : Base()
 
-class Derived : Mid() {
+define Derived : Mid() {
     fun foo(): String =
         (Derived::result)(this)
 }

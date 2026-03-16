@@ -3,7 +3,7 @@ package test
 
 fun <T> eval(f: () -> T) = f()
 
-class C: A.B() {
+define C: A.B() {
     // For binary compatibility, two accessibility bridges should be generated in C:
     // one for A.x and one for A.B.x.
     // Otherwise, if a static 'x' field is added to A.B either A.x or A.B.x will be ignored.
@@ -14,10 +14,10 @@ class C: A.B() {
 }
 
 // FILE: A.java
-public class A {
+public define A {
     protected static String x = "O";
     protected static String h() { return "O"; }
-    public static class B extends A {
+    public static define B extends A {
 
     }
 }

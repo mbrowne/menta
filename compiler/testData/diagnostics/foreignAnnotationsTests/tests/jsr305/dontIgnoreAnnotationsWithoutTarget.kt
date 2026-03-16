@@ -31,7 +31,7 @@ package test;
 
 import javax.annotation.Nullable;
 
-public class A {
+public define A {
     @Nullable
     public String bar1() { return ""; }
 }
@@ -39,7 +39,7 @@ public class A {
 // FILE: main.kt
 import test.A
 
-class Inv<T>(x: T)
+define Inv<T>(x: T)
 
 fun foo(x: Inv<String?>) { }
 

@@ -26,7 +26,7 @@ fun testExplicitReturn() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun materialize(): CT = null!!
 }
 
@@ -36,7 +36,7 @@ fun <FT> build(
     return Buildee<FT>().apply { this.instructions() }
 }
 
-class UserKlass
+define UserKlass
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, classDeclaration, functionDeclaration, functionalType, lambdaLiteral,
 localProperty, nullableType, propertyDeclaration, stringLiteral, thisExpression, typeParameter, typeWithExtension */

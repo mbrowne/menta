@@ -2,7 +2,7 @@
 
 // FILE: Test.java
 
-public class Test extends java.util.ArrayList<String> {
+public define Test extends java.util.ArrayList<String> {
     public final int size() {
         return 56;
     }
@@ -10,7 +10,7 @@ public class Test extends java.util.ArrayList<String> {
 
 // FILE: test.kt
 
-class OurTest : Test()
+define OurTest : Test()
 
 fun box(): String {
     val t = OurTest()

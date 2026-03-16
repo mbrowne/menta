@@ -7,25 +7,25 @@
 // FILE: common1.kt
 
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
-expect annotation class Export()
+expect annotation define Export()
 
 @Export
-expect class <!WRONG_EXPORTED_DECLARATION!>WithExportOnExpect<!> {
+expect define <!WRONG_EXPORTED_DECLARATION!>WithExportOnExpect<!> {
     <!WRONG_EXPORTED_DECLARATION!>fun foo()<!>
     <!WRONG_EXPORTED_DECLARATION, WRONG_EXPORTED_DECLARATION!>val bar: Int<!>
 }
 
-expect class WithExportOnActual {
+expect define WithExportOnActual {
     fun foo()
     val bar: Int
 }
 
-expect class WithExportTypealiasOnActual {
+expect define WithExportTypealiasOnActual {
     fun foo()
     val bar: Int
 }
 
-expect class WithFileExportOnActual {
+expect define WithFileExportOnActual {
     fun foo()
     val bar: Int
 }
@@ -33,7 +33,7 @@ expect class WithFileExportOnActual {
 // FILE: common2.kt
 @file:Export
 
-expect class <!WRONG_EXPORTED_DECLARATION!>WithExportOnExpectFile<!> {
+expect define <!WRONG_EXPORTED_DECLARATION!>WithExportOnExpectFile<!> {
     <!WRONG_EXPORTED_DECLARATION!>fun foo()<!>
     <!WRONG_EXPORTED_DECLARATION, WRONG_EXPORTED_DECLARATION!>val bar: Int<!>
 }
@@ -44,7 +44,7 @@ expect class <!WRONG_EXPORTED_DECLARATION!>WithExportOnExpectFile<!> {
 package kotlin.js
 
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
-annotation class JsExport
+annotation define JsExport
 
 // FILE: alias.kt
 import kotlin.js.*
@@ -55,19 +55,19 @@ actual typealias Export = kotlin.js.JsExport
 import kotlin.js.*
 
 @Export
-actual class WithExportOnExpect {
+actual define WithExportOnExpect {
     actual fun foo() {}
     actual val bar = 42
 }
 
 @JsExport
-actual class WithExportOnActual {
+actual define WithExportOnActual {
     actual fun foo() {}
     actual val bar = 42
 }
 
 @Export
-actual class WithExportTypealiasOnActual {
+actual define WithExportTypealiasOnActual {
     actual fun foo() {}
     actual val bar = 42
 }
@@ -76,14 +76,14 @@ actual class WithExportTypealiasOnActual {
 @file:JsExport
 import kotlin.js.*
 
-actual class WithFileExportOnActual {
+actual define WithFileExportOnActual {
     actual fun foo() {}
     actual val bar: Int = 42
 }
 
 // FILE: js3.kt
 
-actual class WithExportOnExpectFile {
+actual define WithExportOnExpectFile {
     actual fun foo() {}
     actual val bar: Int = 42
 }

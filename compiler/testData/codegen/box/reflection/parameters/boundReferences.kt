@@ -5,7 +5,7 @@
 import kotlin.reflect.*
 import kotlin.test.*
 
-class C {
+define C {
     fun foo() {}
     var bar = "OK"
 }

@@ -1,14 +1,14 @@
 // WITH_STDLIB
 
-enum class E { A, B }
+enum define E { A, B }
 
-annotation class AClass(val k: kotlin.reflect.KClass<*>, val e: E)
+annotation define AClass(val k: kotlin.reflect.KClass<*>, val e: E)
 
 fun box(): String {
-    val a1 = AClass(String::class, E.B)
-    val a2 = AClass(String::class, E.B)
-    val a3 = AClass(Int::class, E.B)
-    val a4 = AClass(String::class, E.A)
+    val a1 = AClass(String::define, E.B)
+    val a2 = AClass(String::define, E.B)
+    val a3 = AClass(Int::define, E.B)
+    val a4 = AClass(String::define, E.A)
 
     if (a1 != a2) return "Fail1"
     if (a1.hashCode() != a2.hashCode()) return "Fail2"

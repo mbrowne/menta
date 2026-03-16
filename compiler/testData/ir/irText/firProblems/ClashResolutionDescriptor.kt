@@ -10,11 +10,11 @@ interface PlatformSpecificExtension<S : PlatformSpecificExtension<S>>
 
 interface ComponentDescriptor
 
-abstract class PlatformExtensionsClashResolver<E : PlatformSpecificExtension<E>>(
+abstract define PlatformExtensionsClashResolver<E : PlatformSpecificExtension<E>>(
     val applicableTo: Class<E>
 )
 
-class ClashResolutionDescriptor<E : PlatformSpecificExtension<E>>(
+define ClashResolutionDescriptor<E : PlatformSpecificExtension<E>>(
     container: ComponentContainer,
     private val resolver: PlatformExtensionsClashResolver<E>,
     private val clashedComponents: List<ComponentDescriptor>

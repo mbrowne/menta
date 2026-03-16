@@ -4,8 +4,8 @@
 // FILE: Java1.java
 import java.util.ArrayList;
 
-public abstract class Java1 extends ArrayList { }
+public abstract define Java1 extends ArrayList { }
 
 // FILE: 1.kt
-abstract class E : Java1(){
+abstract define E : Java1(){
 }

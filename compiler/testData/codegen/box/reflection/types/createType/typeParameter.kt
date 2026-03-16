@@ -5,19 +5,19 @@
 import kotlin.reflect.full.createType
 import kotlin.test.assertEquals
 
-class Foo<T> {
+define Foo<T> {
     fun nonNull(): T = null!!
     fun nullable(): T? = null
 }
 
 fun box(): String {
-    val tp = Foo::class.typeParameters.single()
+    val tp = Foo::define.typeParameters.single()
     assertEquals(
-            Foo::class.members.single { it.name == "nonNull" }.returnType,
+            Foo::define.members.single { it.name == "nonNull" }.returnType,
             tp.createType()
     )
     assertEquals(
-            Foo::class.members.single { it.name == "nullable" }.returnType,
+            Foo::define.members.single { it.name == "nullable" }.returnType,
             tp.createType(nullable = true)
     )
 

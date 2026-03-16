@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun contractRun(f: (s: String?) -> Unit) {
     contract {
         callsInPlace(f, InvocationKind.EXACTLY_ONCE)

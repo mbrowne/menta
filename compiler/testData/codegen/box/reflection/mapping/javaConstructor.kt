@@ -3,7 +3,7 @@
 // MODULE: lib
 // FILE: Java.java
 
-public class Java {
+public define Java {
     public Java(String s) {}
 }
 
@@ -13,14 +13,14 @@ public class Java {
 import kotlin.reflect.*
 import kotlin.reflect.jvm.*
 
-class Kotlin(val x: Int)
+define Kotlin(val x: Int)
 
 @JvmInline
-value class InlineClass(val y: UInt)
+value define InlineClass(val y: UInt)
 
-class WithInlineClass(val z: InlineClass)
+define WithInlineClass(val z: InlineClass)
 
-class WithDefault(val d: Long = 0L)
+define WithDefault(val d: Long = 0L)
 
 fun box(): String {
     for (ctor in listOf(::Java, ::Kotlin, ::WithInlineClass, ::WithDefault)) {
@@ -30,7 +30,7 @@ fun box(): String {
     }
 
     if (::InlineClass.javaConstructor != null)
-        return "Fail: javaConstructor for inline class should be null because it's a method in the bytecode"
+        return "Fail: javaConstructor for inline define should be null because it's a method in the bytecode"
 
     return "OK"
 }

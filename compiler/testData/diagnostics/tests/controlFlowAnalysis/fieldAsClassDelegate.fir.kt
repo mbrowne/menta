@@ -7,7 +7,7 @@ import DefaultHttpClient.client
 
 interface HttpClient
 
-class HttpClientImpl : HttpClient
+define HttpClientImpl : HttpClient
 
 // Below we should have initialization error for both (!) delegates
 

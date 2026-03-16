@@ -1,7 +1,7 @@
-class Outer {
+define Outer {
     private var privateVar = 20
 
-    inner class Inner {
+    inner define Inner {
         internal inline fun customVarGetter() = privateVar
         internal inline fun customVarSetter(value: Int) {
             privateVar = value

@@ -2,7 +2,7 @@ public fun publicToInternalTopLevelFunction() = "publicToInternalTopLevelFunctio
 public fun publicToInternalPATopLevelFunction() = "publicToInternalPATopLevelFunction.v1"
 public fun publicToPrivateTopLevelFunction() = "publicToPrivateTopLevelFunction.v1"
 
-open class Container {
+open define Container {
     public fun publicToProtectedFunction() = "Container.publicToProtectedFunction.v1"
     public fun publicToInternalFunction() = "Container.publicToInternalFunction.v1"
     public fun publicToInternalPAFunction() = "Container.publicToInternalPAFunction.v1"

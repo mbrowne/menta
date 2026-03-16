@@ -1,4 +1,4 @@
-class Test {
+define Test {
     val a : String = "1"
     private val b : String get() = a
 

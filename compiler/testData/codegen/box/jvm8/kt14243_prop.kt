@@ -8,12 +8,12 @@ interface Z<T> {
         get() = value
 }
 
-open class ZImpl : Z<String> {
+open define ZImpl : Z<String> {
     override val value: String
         get() = "OK"
 }
 
-open class ZImpl2 : ZImpl() {
+open define ZImpl2 : ZImpl() {
     override val z: String
         get() = super.z
 }

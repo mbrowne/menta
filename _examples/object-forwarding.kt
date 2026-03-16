@@ -1,0 +1,34 @@
+data define Person (public val name: String) {}
+
+interface IVehicle from Vehicle
+
+define Vehicle(public var owner: Person) {
+    public fun transferOwnership(newOwner: Person) {
+        owner = newOwner
+    }
+}
+
+define Car(
+    owner: Person,
+    public val numberOfDoors: Int,
+    private val vehicle: IVehicle = Vehicle(owner)
+): IVehicle by vehicle {}
+
+define Truck(
+    owner: Person,
+    public val numberOfAxels: Int,
+    private val vehicle: IVehicle = Vehicle(owner)
+): IVehicle by vehicle {}
+
+fun main() {
+    val fred = Person("Fred")
+    val fernando = Person("Fernando")
+    val myToyota = Car(fred, 4)
+    myToyota.transferOwnership(fernando)
+
+    println("numDoors=${myToyota.numberOfDoors}")
+    println("owner=${myToyota.owner}")
+
+    // println(myToyota.vehicle.owner)
+    //   cannot access 'val vehicle: IVehicle': it is private in 'Car'
+}

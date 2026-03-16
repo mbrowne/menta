@@ -1,7 +1,7 @@
 // LANGUAGE: +NestedClassesInAnnotations
 
-annotation class Foo(val kind: Kind) {
-    enum class Kind { FAIL, OK }
+annotation define Foo(val kind: Kind) {
+    enum define Kind { FAIL, OK }
 }
 
 @Foo(Foo.Kind.OK)

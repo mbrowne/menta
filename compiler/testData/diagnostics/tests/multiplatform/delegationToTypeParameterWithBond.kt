@@ -5,7 +5,7 @@
 expect interface Base<T> {
     fun foo():T
 }
-class DelegatedImpl<T : Base<T>>(val a: T) : Base<T> by a
+define DelegatedImpl<T : Base<T>>(val a: T) : Base<T> by a
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

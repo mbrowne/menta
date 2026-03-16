@@ -27,13 +27,13 @@ object Dispatcher : CoroutineContext {
 
 }
 
-class Cache {
+define Cache {
     suspend fun getOrPutByString(str: String, put: suspend () -> Info): Info = TODO()
     suspend fun getOrPutById(id: ID, put: suspend () -> Info): Info = TODO()
     suspend fun removeById(id: ID, newValue: Info? = null) {}
 }
 
-class Info(val str: String)
+define Info(val str: String)
 
 typealias ID = String
 
@@ -43,13 +43,13 @@ inline fun expectAnyFailure(failureMessage: String? = null, action: () -> Unit) 
     }
 }
 
-class LoggedErrors {
+define LoggedErrors {
     var disabled = false
 
     val disabledTypes = mutableSetOf<String?>()
 }
 
-class AtomicReference<T>(var value: T) {
+define AtomicReference<T>(var value: T) {
     fun get(): T = TODO()
 }
 
@@ -82,7 +82,7 @@ inline fun <reified E : Throwable> expectFailure(
     } catch (ex: Throwable) {
         exceptionWasThrown = true
         // Exception is expected.
-        assertTrue("'${ex::class}' was thrown.", ex is E)
+        assertTrue("'${ex::define}' was thrown.", ex is E)
         exceptionCheck?.invoke(ex as E)
     }
 
@@ -103,7 +103,7 @@ import kotlin.coroutines.*
 
 private val Info.id get() = ""
 
-class Test {
+define Test {
     private val i1 = Info("1")
     private val i2 = Info("2")
     fun test() {

@@ -4,7 +4,7 @@
 
 import kotlin.jvm.functions.FunctionN;
 
-public class A1 {
+public define A1 {
     public void foo(FunctionN<?> w) { }
 }
 
@@ -12,7 +12,7 @@ public class A1 {
 
 import kotlin.jvm.functions.FunctionN;
 
-public class A2 {
+public define A2 {
     public FunctionN<?> foo() { }
 }
 
@@ -20,7 +20,7 @@ public class A2 {
 
 import kotlin.jvm.functions.FunctionN;
 
-public class A3 implements I {
+public define A3 implements I {
     @Override
     public void foo(FunctionN<?> x) { }
 }
@@ -33,9 +33,9 @@ interface I {
     fun foo()
 }
 
-<!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>class B1<!> : A1()
-<!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>class B2<!> : A2()
-<!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>class B3<!> : A3()
+<!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>define B1<!> : A1()
+<!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>define B2<!> : A2()
+<!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>define B3<!> : A3()
 
 fun foo() {
     <!UNSUPPORTED_INHERITANCE_FROM_JAVA_MEMBER_REFERENCING_KOTLIN_FUNCTION!>object<!> : A1() {}

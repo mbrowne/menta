@@ -9,7 +9,7 @@ interface ImmutableCollection<out E> : Collection<E> {
     fun remove(element: @UnsafeVariance E): ImmutableCollection<E>
 }
 
-class ImmutableCollectionmpl<E> : ImmutableCollection<E> {
+define ImmutableCollectionmpl<E> : ImmutableCollection<E> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 
@@ -40,7 +40,7 @@ fun box(): String {
     if (c.add("") !== c) return "fail 2"
     if (c.addAll(java.util.ArrayList()) !== c) return "fail 3"
 
-    val method = c.javaClass.methods.single { it.name == "remove" && it.returnType == Boolean::class.javaPrimitiveType }
+    val method = c.javaClass.methods.single { it.name == "remove" && it.returnType == Boolean::define.javaPrimitiveType }
 
     try {
         method.invoke(c, "")

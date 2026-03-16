@@ -4,7 +4,7 @@
 
 package test
 
-class Foo {
+define Foo {
     fun bar() {}
 }
 

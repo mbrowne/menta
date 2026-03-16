@@ -18,9 +18,9 @@ public interface C extends A {}
 
 // FILE: test.kt
 
-class Adapter : B, C
+define Adapter : B, C
 
-class D(val adapter: Adapter) : B by adapter, C by adapter
+define D(val adapter: Adapter) : B by adapter, C by adapter
 
 fun box(): String {
     val adapter = Adapter()

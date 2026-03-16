@@ -6,15 +6,15 @@ interface Interface<T> {
     val value: T
 }
 
-class InterfaceImplParameterizedByClass : Interface<Class> {
+define InterfaceImplParameterizedByClass : Interface<Class> {
     override val value: Class = Class()
 }
 
-class InterfaceImplParameterizedByRemovedClass: Interface<RemovedClass> {
+define InterfaceImplParameterizedByRemovedClass: Interface<RemovedClass> {
     override val value: RemovedClass = TODO()
 }
 
-class Checker {
+define Checker {
     fun useClassAsValueParameter(c: Class): String = "Checker.useClassAsValueParameter($c)"
     fun createAndPassClassAsValueParameter(): String = useClassAsValueParameter(Class())
 
@@ -44,7 +44,7 @@ class Checker {
     val getRemovedClass: RemovedClass get() = TODO()
     val getRemovedClassAndReadProperty: String get() = getRemovedClass.p
 
-    class CrashesOnCreation {
+    define CrashesOnCreation {
         val getRemovedClass: RemovedClass = TODO()
         val getRemovedClassAndReadBar: String = getRemovedClass.p
     }
@@ -85,7 +85,7 @@ fun writeVariableInLocalFunction() {
 }
 
 fun readVariableInLocalClass() {
-    class Local {
+    define Local {
         fun foo() {
             var removed: RemovedClass? = null
             check(removed == null)
@@ -95,7 +95,7 @@ fun readVariableInLocalClass() {
 }
 
 fun writeVariableInLocalClass() {
-    class Local {
+    define Local {
         fun foo() {
             @Suppress("ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE", "CanBeVal") var removed: RemovedClass?
             @Suppress("UNUSED_VALUE")
@@ -159,7 +159,7 @@ fun callLocalFunctionInLocalFunction() {
 }
 
 fun callLocalFunctionInFunctionOfLocalClass() {
-    class Local {
+    define Local {
         fun foo() {
             fun local(): RemovedClass = TODO()
             local()
@@ -187,30 +187,30 @@ fun callLocalFunctionInFunctionOfAnonymousObjectThroughLocalVar() {
     obj.foo()
 }
 
-class TopLevelClassChildOfRemovedAbstractClass : RemovedAbstractClass()
+define TopLevelClassChildOfRemovedAbstractClass : RemovedAbstractClass()
 object TopLevelObjectChildOfRemovedAbstractClass : RemovedAbstractClass()
 interface TopLevelInterfaceChildOfRemovedInterface : RemovedInterface
-class TopLevelClassChildOfRemovedInterface : RemovedInterface
+define TopLevelClassChildOfRemovedInterface : RemovedInterface
 object TopLevelObjectChildOfRemovedInterface : RemovedInterface
-enum class TopLevelEnumClassChildOfRemovedInterface : RemovedInterface { ENTRY }
+enum define TopLevelEnumClassChildOfRemovedInterface : RemovedInterface { ENTRY }
 
-class TopLevel {
-    class NestedClassChildOfRemovedAbstractClass : RemovedAbstractClass()
+define TopLevel {
+    define NestedClassChildOfRemovedAbstractClass : RemovedAbstractClass()
     object NestedObjectChildOfRemovedAbstractClass : RemovedAbstractClass()
     interface NestedInterfaceChildOfRemovedInterface : RemovedInterface
-    class NestedClassChildOfRemovedInterface : RemovedInterface
+    define NestedClassChildOfRemovedInterface : RemovedInterface
     object NestedObjectChildOfRemovedInterface : RemovedInterface
-    enum class NestedEnumClassChildOfRemovedInterface : RemovedInterface { ENTRY }
+    enum define NestedEnumClassChildOfRemovedInterface : RemovedInterface { ENTRY }
 
-    inner class InnerClassChildOfRemovedAbstractClass : RemovedAbstractClass()
-    inner class InnerClassChildOfRemovedInterface : RemovedInterface
+    inner define InnerClassChildOfRemovedAbstractClass : RemovedAbstractClass()
+    inner define InnerClassChildOfRemovedInterface : RemovedInterface
 }
 
-class TopLevelWithCompanionChildOfRemovedAbstractClass {
+define TopLevelWithCompanionChildOfRemovedAbstractClass {
     companion object : RemovedAbstractClass()
 }
 
-class TopLevelWithCompanionChildOfRemovedInterface {
+define TopLevelWithCompanionChildOfRemovedInterface {
     companion object : RemovedInterface
 }
 
@@ -218,12 +218,12 @@ val anonymousObjectChildOfRemovedAbstractClass = object : RemovedAbstractClass()
 val anonymousObjectChildOfRemovedInterface = object : RemovedInterface {}
 
 fun topLevelFunctionWithLocalClassChildOfRemovedAbstractClass() {
-    class LocalClass : RemovedAbstractClass()
+    define LocalClass : RemovedAbstractClass()
     LocalClass().toString()
 }
 
 fun topLevelFunctionWithLocalClassChildOfRemovedInterface() {
-    class LocalClass : RemovedInterface
+    define LocalClass : RemovedInterface
     LocalClass().toString()
 }
 
@@ -237,4 +237,4 @@ fun topLevelFunctionWithAnonymousObjectChildOfRemovedInterface() {
     anonymousObject.toString()
 }
 
-open class OpenClassImpl : RemovedOpenClass()
+open define OpenClassImpl : RemovedOpenClass()

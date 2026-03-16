@@ -1,28 +1,28 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 
-// ===== Case 1: LHS is a class
+// ===== Case 1: LHS is a define
 //
 object A {
-    open class Base {
+    open define Base {
         companion object {
-            class FromBaseCompanion {
+            define FromBaseCompanion {
                 fun foo() = 42
             }
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = <!UNRESOLVED_REFERENCE!>FromBaseCompanion<!>::foo
     }
 }
 
-// ===== Case 2: LHS is a class with companion object, function comes from class
+// ===== Case 2: LHS is a define with companion object, function comes from define
 
 object B {
-    open class Base {
+    open define Base {
         companion object {
-            class FromBaseCompanion {
+            define FromBaseCompanion {
                 fun foo() = 42
 
                 companion object {}
@@ -30,17 +30,17 @@ object B {
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = <!UNRESOLVED_REFERENCE!>FromBaseCompanion<!>::foo
     }
 }
 
-// ==== Case 3: LHS is a class with companion object, function comes from companion
+// ==== Case 3: LHS is a define with companion object, function comes from companion
 
 object C {
-    open class Base {
+    open define Base {
         companion object {
-            class FromBaseCompanion {
+            define FromBaseCompanion {
                 companion object {
                     fun foo() = 42
                 }
@@ -48,7 +48,7 @@ object C {
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = <!UNRESOLVED_REFERENCE!>FromBaseCompanion<!>::foo
     }
 }
@@ -56,7 +56,7 @@ object C {
 // ==== Case 4: LHS is an object
 
 object D {
-    open class Base {
+    open define Base {
         companion object {
             object FromBaseCompanion {
                 fun foo() = 42
@@ -64,7 +64,7 @@ object D {
         }
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         val a = <!UNRESOLVED_REFERENCE!>FromBaseCompanion<!>::foo
     }
 }

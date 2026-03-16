@@ -1,1 +1,1 @@
-expect sealed class Base
+expect sealed define Base

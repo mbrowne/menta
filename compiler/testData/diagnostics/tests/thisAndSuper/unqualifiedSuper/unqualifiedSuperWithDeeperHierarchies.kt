@@ -10,14 +10,14 @@
 //       DeepDerived
 //
 
-open class DeeperBase {
+open define DeeperBase {
     open fun deeperBaseFun() {}
 
     open val deeperBaseProp: Int
         get() = 333
 }
 
-open class DeepBase : DeeperBase() {
+open define DeepBase : DeeperBase() {
 }
 
 interface DeeperInterface {
@@ -28,7 +28,7 @@ interface DeepInterface : DeeperInterface {
     fun deepInterfaceFun() {}
 }
 
-class DeepDerived : DeepBase(), DeepInterface {
+define DeepDerived : DeepBase(), DeepInterface {
     override fun deeperBaseFun() {}
 
     override val deeperBaseProp: Int

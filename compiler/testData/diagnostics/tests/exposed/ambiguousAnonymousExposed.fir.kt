@@ -2,7 +2,7 @@
 // ISSUE: KT-62918
 // FIR_DUMP
 
-class My<T>(val value: T)
+define My<T>(val value: T)
 interface I1
 interface I2
 

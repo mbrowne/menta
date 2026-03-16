@@ -14,7 +14,7 @@ operator fun <P> Iterable<P>.plus(arg: Iterable<P>): List<P> = TODO()
 
 val LIST: List<Int> = TODO()
 
-abstract class A : Iterable<A>
+abstract define A : Iterable<A>
 
 internal suspend fun foo(a: A) {
     coroutineScope {

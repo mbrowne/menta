@@ -6,19 +6,19 @@ interface T {
     val v : Int
 }
 
-open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class Br<!>(t : T) : T {
+open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define Br<!>(t : T) : T {
 
 }
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class Br3<!>(t : T) : Br(t) {
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define Br3<!>(t : T) : Br(t) {
 
 }
 
-open class Br1(t : T) : T by t {
+open define Br1(t : T) : T by t {
 
 }
 
-class Br2(t : T) : Br1(t) {
+define Br2(t : T) : Br1(t) {
 
 }
 
@@ -26,15 +26,15 @@ interface G<T> {
     fun foo(t : T) : T
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class GC<!>() : G<Int> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define GC<!>() : G<Int> {
 
 }
 
-open class GC1(g : G<Int>) : G<Int> by g {
+open define GC1(g : G<Int>) : G<Int> by g {
 
 }
 
-open class GC2(g : G<Int>) : GC1(g) {
+open define GC2(g : G<Int>) : GC1(g) {
 
 }
 

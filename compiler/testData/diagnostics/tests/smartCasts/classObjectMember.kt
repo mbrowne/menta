@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class T {
+open define T {
     val x : Int? = null
 }
 
-class A {
+define A {
     companion object: T() {
     }
 }
 
-class B {
+define B {
     companion object: T() {
     }
 }

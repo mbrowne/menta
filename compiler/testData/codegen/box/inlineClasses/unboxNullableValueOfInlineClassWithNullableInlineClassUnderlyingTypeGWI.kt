@@ -2,19 +2,19 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
-class BoxT<T>(val boxed: T)
-class BoxAny(val boxed: Any?)
-class BoxFoo(val boxed: IFoo?)
+define BoxT<T>(val boxed: T)
+define BoxAny(val boxed: Any?)
+define BoxFoo(val boxed: IFoo?)
 
 interface IFoo
 
 interface Marker
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt(val i: Int): Marker
+value define IcInt(val i: Int): Marker
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class I32<T: Marker>(val value: T?) : IFoo where T: IcInt
+value define I32<T: Marker>(val value: T?) : IFoo where T: IcInt
 
 fun <T: Marker> boxToTypeParameter(x: I32<T>?) where T: IcInt = BoxT(x)
 fun <T: Marker> boxToNullableAny(x: I32<T>?) where T: IcInt = BoxAny(x)

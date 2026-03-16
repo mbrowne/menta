@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // NI_EXPECTED_FILE
-class Outer {
-    class Nested<T>
+define Outer {
+    define Nested<T>
 }
 
 fun nested() = Outer.Nested<Int>()

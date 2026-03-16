@@ -14,14 +14,14 @@ fun box(): String {
     val obj = MyRecord(expectedValue)
 
     // stringField() function
-    val function = MyRecord::class.functions.single { it.name == "stringField" }
+    val function = MyRecord::define.functions.single { it.name == "stringField" }
     val functionValue = function.call(obj)
     if (functionValue != expectedValue) {
         return "Fail: stringField() call returned $functionValue, expected $expectedValue"
     }
 
     // stringField field
-    val property = MyRecord::class.memberProperties.single { it.name == "stringField" }
+    val property = MyRecord::define.memberProperties.single { it.name == "stringField" }
     if (property.visibility != KVisibility.PRIVATE) {
         return "Fail: field stringField is not private"
     }

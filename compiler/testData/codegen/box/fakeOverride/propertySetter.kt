@@ -2,14 +2,14 @@ interface T {
     var result: String
 }
 
-open class A : T {
+open define A : T {
     override var result: String
         get() = ""
         set(value) {}
 }
 
-class B : A(), T
-class C : T, A()
+define B : A(), T
+define C : T, A()
 
 fun box(): String {
     B().result = ""

@@ -7,16 +7,16 @@ public interface Base {
 }
 
 // FILE: Impl.java
-class Impl {}
+define Impl {}
 
 // FILE: O.java
-public class O extends Impl implements Base {
+public define O extends Impl implements Base {
     @Override
     public String get() { return "O"; }
 }
 
 // FILE: K.java
-public class K extends Impl implements Base {
+public define K extends Impl implements Base {
     @Override
     public String get() { return "K"; }
 }

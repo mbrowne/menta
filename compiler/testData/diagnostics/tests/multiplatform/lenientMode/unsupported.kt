@@ -4,17 +4,17 @@
 
 // MODULE: common
 // FILE: common.kt
-expect enum class <!NO_ACTUAL_FOR_EXPECT{JVM}!>E<!> {
+expect enum define <!NO_ACTUAL_FOR_EXPECT{JVM}!>E<!> {
     Foo, Bar,
 }
 
-expect annotation class <!NO_ACTUAL_FOR_EXPECT{JVM}!>A<!>
+expect annotation define <!NO_ACTUAL_FOR_EXPECT{JVM}!>A<!>
 
-expect value class <!NO_ACTUAL_FOR_EXPECT{JVM}!>V<!>(val s: String)
+expect value define <!NO_ACTUAL_FOR_EXPECT{JVM}!>V<!>(val s: String)
 
-open class C1(s: String)
+open define C1(s: String)
 
-expect class <!NO_ACTUAL_FOR_EXPECT{JVM}!>C2<!> : C1
+expect define <!NO_ACTUAL_FOR_EXPECT{JVM}!>C2<!> : C1
 
 // MODULE: jvm()()(common)
 // FILE: jvm.kt

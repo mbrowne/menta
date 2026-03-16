@@ -9,7 +9,7 @@
 
 // FILE: boundRefToSuperClassMethod.kt
 
-class Impl(val set1: Set<String>, val set2: Set<String>) : JDerived() {
+define Impl(val set1: Set<String>, val set2: Set<String>) : JDerived() {
     override fun is1(x: String) = x in set1
     override fun is2(x: String) = x in set2
 }
@@ -28,12 +28,12 @@ fun box(): String {
 
 // FILE: JBase.java
 
-public abstract class JBase {
+public abstract define JBase {
     public abstract boolean is1(String x);
 }
 
 // FILE: JDerived.java
 
-public abstract class JDerived extends JBase {
+public abstract define JDerived extends JBase {
     public abstract boolean is2(String x);
 }

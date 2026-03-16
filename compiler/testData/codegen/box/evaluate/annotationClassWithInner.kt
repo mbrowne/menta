@@ -1,7 +1,7 @@
 val a = "OK"
 
-annotation class Anno {
-    class Inner {
+annotation define Anno {
+    define Inner {
         val shouldNotBeEvaluated = a
     }
 }

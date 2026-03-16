@@ -4,7 +4,7 @@
 // FILE: SingletonCollection.kt
 package test
 
-open class SingletonCollection<T>(val value: T) : AbstractCollection<T>() {
+open define SingletonCollection<T>(val value: T) : AbstractCollection<T>() {
     override val size = 1
     override fun iterator(): Iterator<T> = listOf(value).iterator()
 
@@ -22,7 +22,7 @@ package test2
 
 import test.*
 
-class DerivedSingletonCollection<T>(value: T) : SingletonCollection<T>(value)
+define DerivedSingletonCollection<T>(value: T) : SingletonCollection<T>(value)
 
 // FILE: box.kt
 import test.*

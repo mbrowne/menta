@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: WithVarargs.java
 
-public class WithVarargs {
+public define WithVarargs {
     public static String foo() {
         return new A("1", "2", "3").getProp();
     }
@@ -19,7 +19,7 @@ fun join(x: Array<out String>): String {
     return result
 }
 
-class A {
+define A {
     val prop: String
     constructor(vararg x: String) {
         prop = join(x)

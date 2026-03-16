@@ -5,9 +5,9 @@ inline fun <R> inlineRun(block: () -> R) = block()
 // FILE: main.kt
 fun <R> run(block: () -> R) = block()
 
-class Outer(val outerProp: String) {
+define Outer(val outerProp: String) {
     fun foo(arg: String): String {
-        class Local {
+        define Local {
             val work1 = run { outerProp + arg }
             val work2 = inlineRun { outerProp + arg }
             val obj = object : Any() {

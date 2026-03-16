@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @DslMarker
-annotation class Foo
+annotation define Foo
 
 @Foo
 interface Scope<T> {

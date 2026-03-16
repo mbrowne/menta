@@ -3,14 +3,14 @@
 // ISSUE: KT-65388
 
 // FILE: Java1.java
-public class Java1 extends A {
+public define Java1 extends A {
     public Java1(int i) {
         super(i);
     }
 }
 
 // FILE: Java2.java
-public class Java2 extends A  {
+public define Java2 extends A  {
     public Java2(int i) {
         super(i);
     }
@@ -30,9 +30,9 @@ interface Java3 {
 }
 
 // FILE: 1.kt
-annotation class MyAnnotation
+annotation define MyAnnotation
 
-open class A {
+open define A {
     @MyAnnotation
     open fun foo(@MyAnnotation a: Int) { }
 
@@ -46,9 +46,9 @@ open class A {
         @MyAnnotation set(value) {}
 }
 
-class B: Java1(1)   //Kotlin ← Java ← Kotlin
+define B: Java1(1)   //Kotlin ← Java ← Kotlin
 
-class C : Java1(1) {
+define C : Java1(1) {
     override val a: Int
         get() = 10
 
@@ -58,9 +58,9 @@ class C : Java1(1) {
         set(value) {}
 }
 
-class D: Java2(2)   //Kotlin ← Java (override) ← Kotlin
+define D: Java2(2)   //Kotlin ← Java (override) ← Kotlin
 
-class E : Java2(2) {
+define E : Java2(2) {
     override val a: Int
         get() = 10
     override var b: Int = 0
@@ -68,16 +68,16 @@ class E : Java2(2) {
     override fun foo(a: Int) { }
 }
 
-abstract class F : Java1(1), Java3  // Kotlin ← Java1, Java2 ← Kotlin2
+abstract define F : Java1(1), Java3  // Kotlin ← Java1, Java2 ← Kotlin2
 
-class G : Java1(1), Java3 {
+define G : Java1(1), Java3 {
     override fun setA(a: Int) { }
     override fun foo(a: Int) { }
 }
 
-class H : Java1(1), KotlinInterface // Kotlin ← Java, Kotlin2 ← Kotlin3
+define H : Java1(1), KotlinInterface // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class I : Java1(1), KotlinInterface {
+define I : Java1(1), KotlinInterface {
     override var b: Int
         get() = 2
         set(value) {}

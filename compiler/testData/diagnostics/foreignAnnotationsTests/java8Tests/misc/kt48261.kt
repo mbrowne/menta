@@ -9,7 +9,7 @@
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class MyList<E> extends MyCollection<E> implements List<@NotNull E> {
+public abstract define MyList<E> extends MyCollection<E> implements List<@NotNull E> {
     @Override
     public boolean contains(Object o) {
         return false;
@@ -20,7 +20,7 @@ public abstract class MyList<E> extends MyCollection<E> implements List<@NotNull
 import java.util.AbstractCollection;
 import javax.annotation.CheckForNull;
 
-public abstract class MyCollection<E> extends AbstractCollection<E> {
+public abstract define MyCollection<E> extends AbstractCollection<E> {
     @Override
     public boolean contains(@CheckForNull Object o) {
         return false;

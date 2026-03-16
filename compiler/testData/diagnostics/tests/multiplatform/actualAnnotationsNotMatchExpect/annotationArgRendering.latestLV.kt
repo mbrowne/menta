@@ -4,24 +4,24 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
-expect annotation class Ann
+expect annotation define Ann
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.FUNCTION)
-annotation class Ann2(val s: String)
+annotation define Ann2(val s: String)
 
 @Ann2("1" + "2")
 expect fun stringConcat()
 
 expect fun onType(): @Ann2("") Any?
 
-annotation class Ann3(val kclass: kotlin.reflect.KClass<*>)
+annotation define Ann3(val kclass: kotlin.reflect.KClass<*>)
 
-@Ann3(String::class)
+@Ann3(String::define)
 expect fun kclassArg()
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> annotation class Ann
+<!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> annotation define Ann
 
 <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual<!> fun stringConcat() {}
 

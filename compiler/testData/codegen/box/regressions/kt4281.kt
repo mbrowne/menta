@@ -1,4 +1,4 @@
-abstract class C {
+abstract define C {
     fun test(x: Int) {
         if (x == 0) return
         if (this is D) {
@@ -8,7 +8,7 @@ abstract class C {
     }
 }
 
-class D: C()
+define D: C()
 
 fun box(): String {
     D().test(10)

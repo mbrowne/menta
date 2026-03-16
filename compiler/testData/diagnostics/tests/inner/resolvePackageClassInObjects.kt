@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class PackageTest
+open define PackageTest
 
-class MoreTest() {
+define MoreTest() {
     companion object: PackageTest() {
 
     }

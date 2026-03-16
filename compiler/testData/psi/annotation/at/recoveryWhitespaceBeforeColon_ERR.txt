@@ -18,7 +18,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
     <empty list>
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A1')
   PsiWhiteSpace('\n\n')
@@ -39,7 +39,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ann2')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A2')
   PsiWhiteSpace('\n\n')
@@ -56,7 +56,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ann3')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A3')
   PsiWhiteSpace('\n\n')
@@ -74,7 +74,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ann4')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A4')
   PsiWhiteSpace('\n\n')
@@ -92,7 +92,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ann5')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A5')
   PsiWhiteSpace('\n\n')
@@ -110,7 +110,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
     PsiElement(IDENTIFIER)('ann8')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A8')
   PsiWhiteSpace('\n\n')
@@ -129,7 +129,7 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ann9')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A9')
   PsiWhiteSpace('\n\n')
@@ -140,6 +140,6 @@ KtFile: recoveryWhitespaceBeforeColon_ERR.kt
         PsiWhiteSpace(' ')
         PsiElement(COLON)(':')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A10')

@@ -6,7 +6,7 @@ package test
 import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 
-class C
+define C
 
 fun assertEqual(a: KType, b: KType) {
     if (a != b || b != a) throw AssertionError("Fail equals: $a != $b")

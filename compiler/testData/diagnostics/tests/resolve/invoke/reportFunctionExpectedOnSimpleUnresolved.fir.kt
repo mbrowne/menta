@@ -8,7 +8,7 @@ object Scope1 {
 }
 
 object Scope2 {
-    class Foo
+    define Foo
 
     fun use() {
         val foo = Foo()

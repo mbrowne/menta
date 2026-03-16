@@ -8,7 +8,7 @@
 
 import kotlin.wasm.WasmExport
 
-class MyCustomKotlinException(message: String) : RuntimeException(message)
+define MyCustomKotlinException(message: String) : RuntimeException(message)
 
 @WasmExport
 fun runWithCustomKotlinException() {

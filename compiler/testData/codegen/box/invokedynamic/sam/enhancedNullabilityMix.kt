@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 final class EnhancedNullabilityKt\$box\$t1\$1
+// 1 final define EnhancedNullabilityKt\$box\$t1\$1
 //  TODO check why EnhancedNullabilityKt\$box\$t1\$1 is not synthetic
 
 // FILE: enhancedNullability.kt

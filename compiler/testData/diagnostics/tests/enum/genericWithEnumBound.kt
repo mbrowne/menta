@@ -6,19 +6,19 @@ interface MyInterface {
     val value: String
 }
 
-enum class WrongTypeEnum {
+enum define WrongTypeEnum {
     WrongEnum1,
     WrongEnum2,
 }
 
-enum class CorrectTypeEnum(override val value: String) : MyInterface {
+enum define CorrectTypeEnum(override val value: String) : MyInterface {
     CorrectEnum1("1"),
     CorrectEnum2("2"),
 }
 
 fun <T : Enum<out MyInterface>> myFunction(arg: T) {}
 
-class MyClass<T : Enum<out <!UPPER_BOUND_VIOLATED!>MyInterface<!>>>(val arg: T)
+define MyClass<T : Enum<out <!UPPER_BOUND_VIOLATED!>MyInterface<!>>>(val arg: T)
 
 fun test() {
     myFunction(CorrectTypeEnum.CorrectEnum1)

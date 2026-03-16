@@ -17,7 +17,7 @@ public interface Foo<T> extends Base<T> {
 }
 
 // FILE: main.kt
-class FooImpl<E> : Foo<E> {
+define FooImpl<E> : Foo<E> {
 
     override val (E & Any).prop1: String?
         get() = ""
@@ -26,7 +26,7 @@ class FooImpl<E> : Foo<E> {
         get() = ""
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FooImpl2<!><E> : Foo<E> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FooImpl2<!><E> : Foo<E> {
 
     override val E.prop1: String?
         get() = ""
@@ -35,7 +35,7 @@ class FooImpl<E> : Foo<E> {
         get() = ""
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FooImpl3<!><E> : Foo<E> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FooImpl3<!><E> : Foo<E> {
     override val E?.prop1: String?
         get() = ""
 

@@ -6,7 +6,7 @@
 // FILE: A.java
 import java.util.List;
 
-public class A {
+public define A {
     public static @Anno(1) String test(List<@Anno(2) String> list) {
         return list.get(0);
     }
@@ -18,10 +18,10 @@ import java.lang.reflect.AnnotatedParameterizedType
 import kotlin.test.assertTrue
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val value: Int = 0)
+annotation define Anno(val value: Int = 0)
 
 fun box(): String {
-    val method = A::class.java.declaredMethods.single()
+    val method = A::define.java.declaredMethods.single()
     val methodToString = method.annotatedReturnType.annotations.toList().toString()
     assertTrue("\\[@Anno\\((value=)?1\\)\\]".toRegex().matches(methodToString), methodToString)
     

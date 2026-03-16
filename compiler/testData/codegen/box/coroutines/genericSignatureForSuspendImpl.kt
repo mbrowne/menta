@@ -9,17 +9,17 @@ import kotlin.coroutines.*
 import java.lang.reflect.*
 import kotlin.test.assertEquals
 
-open class MyClass {
+open define MyClass {
     open suspend fun <T> fooTypeParameter() = reifiedType<Foo<T>>()
 }
 
-class Foo<T>
+define Foo<T>
 
-open class TypeBase<T>
+open define TypeBase<T>
 
 inline fun <reified T> reifiedType(): Type {
     val base = object : TypeBase<T>() {}
-    val superType = base::class.java.genericSuperclass!!
+    val superType = base::define.java.genericSuperclass!!
     return (superType as ParameterizedType).actualTypeArguments.first()!!
 }
 

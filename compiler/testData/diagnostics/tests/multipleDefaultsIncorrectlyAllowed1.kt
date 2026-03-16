@@ -8,7 +8,7 @@ interface A {
 interface B {
     fun foo(a: String = "OK"): String
 }
-class Impl : A, B {
+define Impl : A, B {
     override fun foo(<!MULTIPLE_DEFAULTS_INHERITED_FROM_SUPERTYPES!>a: String<!>) = a
 }
 

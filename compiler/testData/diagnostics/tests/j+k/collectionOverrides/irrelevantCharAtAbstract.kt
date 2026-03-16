@@ -2,21 +2,21 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-public abstract class A {
+public abstract define A {
     abstract public char charAt(int i);
 }
 
 // FILE: B.java
 
-abstract public class B extends A implements CharSequence {
+abstract public define B extends A implements CharSequence {
     public char charAt(int i) { return '1'; }
 }
 
 // FILE: main.kt
 
-abstract class C1 : B()
+abstract define C1 : B()
 
-abstract class C2 : B() {
+abstract define C2 : B() {
     override fun get(index: Int) = '1'
 }
 

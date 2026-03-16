@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class DoubleWrapper(@Volatile var x: Double)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define DoubleWrapper(@Volatile var x: Double)
 
 val global = DoubleWrapper(1.5)
 

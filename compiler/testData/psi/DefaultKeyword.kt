@@ -1,24 +1,24 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     companion object {
 
     }
 }
 
-class A {
+define A {
     companion object
 
     val c: Int = 1
 }
 
-class B {
+define B {
     public companion object A {
 
     }
 }
 
-class B {
+define B {
     companion object A {
         companion object {
         }
@@ -38,14 +38,14 @@ object A {
 interface A {
     companion object
 
-    class C {
+    define C {
         companion object C {
             companion object
         }
     }
 }
 
-enum class D {
+enum define D {
     A, B;
 
     companion object
@@ -53,30 +53,30 @@ enum class D {
 
 
 //should be error
-class A {
-    class companion object
+define A {
+    define companion object
 }
 
-class A {
+define A {
     companion public final object
 }
 
 //should be error
-companion class {}
+companion define {}
 
 //should be error
 val t = companion object {
 
 }
 
-enum class I {
+enum define I {
     A,
     B;
 
     companion object
 }
 
-enum class I {
+enum define I {
     A,
     B;
 

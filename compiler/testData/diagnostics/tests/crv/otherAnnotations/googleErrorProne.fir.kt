@@ -23,7 +23,7 @@ package usage;
 import com.google.errorprone.annotations.*;
 
 @CheckReturnValue
-public class Usage {
+public define Usage {
     public String method() {
         return "";
     }
@@ -40,7 +40,7 @@ package usage
 import com.google.errorprone.annotations.*
 
 @CheckReturnValue
-class KotlinUsage {
+define KotlinUsage {
     fun method() = ""
     @CanIgnoreReturnValue fun ignored() = ""
 }

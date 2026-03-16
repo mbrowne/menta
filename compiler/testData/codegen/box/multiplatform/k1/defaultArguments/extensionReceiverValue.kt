@@ -2,7 +2,7 @@
 
 // FILE: common.kt
 
-class Receiver(val value: String)
+define Receiver(val value: String)
 
 expect fun Receiver.test(result: String = value): String
 

@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // Issue: KT-30734
 
-class Sample {
+define Sample {
     fun foo(): Boolean = true
 }
 

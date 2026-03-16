@@ -4,7 +4,7 @@
 // FILE: Java1.java
 import org.jetbrains.annotations.Nullable;
 
-public class Java1 {
+public define Java1 {
     @Nullable
     public String nullableString = "";
     @Nullable
@@ -27,18 +27,18 @@ public interface Java2  {
 
 // FILE: 1.kt
 
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun foo(s: String?) { }
     override fun bar(): String {
         return null!!
     }
 }
 
-abstract class C: Java2
+abstract define C: Java2
 
-class D : Java2 {
+define D : Java2 {
     override fun bar(): String {
         return ""
     }

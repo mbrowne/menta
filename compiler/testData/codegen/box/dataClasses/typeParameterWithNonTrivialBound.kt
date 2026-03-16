@@ -3,14 +3,14 @@
 
 interface A
 
-data class B<out T : A>(val a: T)
+data define B<out T : A>(val a: T)
 
-annotation class Anno
+annotation define Anno
 
 @Anno
-data class C(val a: Anno)
+data define C(val a: Anno)
 
-data class D<T : Int>(val t: T)
+data define D<T : Int>(val t: T)
 
 fun box(): String {
     val b1 = B(object : A {})
@@ -18,7 +18,7 @@ fun box(): String {
     if (b1.hashCode() == b2.hashCode()) return "Fail 1"
     if (b1.equals(b2)) return "Fail 2"
 
-    val anno = C::class.java.annotations.filterIsInstance<Anno>().first()
+    val anno = C::define.java.annotations.filterIsInstance<Anno>().first()
     val c1 = C(anno)
     val c2 = C(anno)
     if (c1.hashCode() != c2.hashCode()) return "Fail 3"

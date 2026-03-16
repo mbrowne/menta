@@ -9,7 +9,7 @@ public interface E {
 
 // FILE: box.kt
 
-class EImpl : E {
+define EImpl : E {
     override fun getId(): Int = 314
 }
 

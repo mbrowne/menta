@@ -3,7 +3,7 @@
 // FILE: A.java
 import java.io.Closeable;
 
-public class A {
+public define A {
     public static void foo(Runnable r) {
     }
 

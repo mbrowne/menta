@@ -5,7 +5,7 @@ public interface Base {
         get() = "OK"
 }
 
-open class Delegate : Base {
+open define Delegate : Base {
     override val test: String
         get() = "OK"
 }

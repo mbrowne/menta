@@ -3,12 +3,12 @@
 // FILE: SameClassNameResolveTest.kt
 package test
 
-open class Base
-class SubBase: Base()
+open define Base
+define SubBase: Base()
 
 // FILE: SameClassNameResolveRoot.kt
 
-open class Base
-class SubBase: Base()
+open define Base
+define SubBase: Base()
 
 /* GENERATED_FIR_TAGS: classDeclaration */

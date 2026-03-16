@@ -5,7 +5,7 @@ interface I {
     fun foo()
 }
 
-enum class E1 : I {
+enum define E1 : I {
     A {
         override fun foo() {
             <!EQUALITY_NOT_APPLICABLE!>this == E2.A<!>
@@ -28,7 +28,7 @@ enum class E1 : I {
     }
 }
 
-enum class E2 : I {
+enum define E2 : I {
     A {
         override fun foo() {
 

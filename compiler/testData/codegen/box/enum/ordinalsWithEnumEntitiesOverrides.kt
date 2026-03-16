@@ -4,7 +4,7 @@ package foo
 
 import kotlin.test.assertEquals
 
-enum class TestA {
+enum define TestA {
     FIRST {
         override val label: String = "first A"
     },
@@ -18,7 +18,7 @@ enum class TestA {
     abstract val label: String
 }
 
-enum class TestB(val label: String) {
+enum define TestB(val label: String) {
     FIRST("first B"),
     SECOND("second B"),
     THIRD("third B");

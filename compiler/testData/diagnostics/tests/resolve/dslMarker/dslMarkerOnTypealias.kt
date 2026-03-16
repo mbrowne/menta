@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 @DslMarker
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPEALIAS)
-annotation class XMarker
+annotation define XMarker
 
 @XMarker
-class Foo
+define Foo
 
-class Bar
+define Bar
 
 @XMarker
 typealias XBar = Bar

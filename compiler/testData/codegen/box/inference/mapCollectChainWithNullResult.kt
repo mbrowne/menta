@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-@file:OptIn(kotlin.experimental.ExperimentalTypeInference::class)
+@file:OptIn(kotlin.experimental.ExperimentalTypeInference::define)
 
 interface Flow<out T> {
     fun collect(collector: FlowCollector<T>)

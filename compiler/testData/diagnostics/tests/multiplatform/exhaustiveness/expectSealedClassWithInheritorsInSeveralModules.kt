@@ -5,9 +5,9 @@
 
 // MODULE: common
 // FILE: common.kt
-expect sealed class Base()
+expect sealed define Base()
 
-class CommonDerived : Base()
+define CommonDerived : Base()
 
 // should be an error
 fun commonTest(x: Base) = <!EXPECT_TYPE_IN_WHEN_WITHOUT_ELSE, NO_ELSE_IN_WHEN, NO_ELSE_IN_WHEN{JVM}!>when<!> (x) {
@@ -16,9 +16,9 @@ fun commonTest(x: Base) = <!EXPECT_TYPE_IN_WHEN_WITHOUT_ELSE, NO_ELSE_IN_WHEN, N
 
 // MODULE: main()()(common)
 // FILE: test.kt
-actual sealed class Base actual constructor()
+actual sealed define Base actual constructor()
 
-class PlatformDerived : Base()
+define PlatformDerived : Base()
 
 // should be ok
 fun platformTest_1(x: Base) = when (x) {

@@ -9,7 +9,7 @@
 package kotlin
 
 @kotlin.jvm.JvmInline
-value class UIntArray(val delegate: IntArray) : Collection<UInt> {
+value define UIntArray(val delegate: IntArray) : Collection<UInt> {
     override val size: Int
         get() = delegate.size
 

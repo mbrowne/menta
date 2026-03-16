@@ -1,10 +1,10 @@
 // MODULE: lib
 // FILE: l.kt
 
-open class LightParam : LightVariab<Unit>() { // i/o public String getName
+open define LightParam : LightVariab<Unit>() { // i/o public String getName
 }
 
-open class LightVariab<W> {
+open define LightVariab<W> {
     fun W.name(): String? = "O"
     val W.name2: String? get() = "K"
 }

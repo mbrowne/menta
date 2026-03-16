@@ -12,7 +12,7 @@ inline fun <reified T2, T3, reified T4> typeOfTriple2(x: T2, y: T3, z: T4) = typ
 // FILE: main.kt
 import kotlin.reflect.typeOf
 
-class Triple<A, B, C>(val x: A, val y: B, val z: C)
+define Triple<A, B, C>(val x: A, val y: B, val z: C)
 
 fun box() : String {
     val arguments = listOf<Any?>(0, "", null, true, Triple(42, 4.2, 42L))

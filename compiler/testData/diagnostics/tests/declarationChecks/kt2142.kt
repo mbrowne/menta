@@ -5,7 +5,7 @@
 package a
 
 fun foo() {
-    class Foo() {}
+    define Foo() {}
     Foo() // Unresolved reference Foo
 }
 

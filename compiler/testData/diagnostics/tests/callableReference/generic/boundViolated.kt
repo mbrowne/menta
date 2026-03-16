@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // ISSUE: KT-56187
 
-class Foo<T : Number> {
+define Foo<T : Number> {
     val value: String = "OK"
     val genericValue: T = null!!
 }

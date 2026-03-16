@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: JClass.java
-public class JClass {
+public define JClass {
     public String field;
 
     public JClass(String field){

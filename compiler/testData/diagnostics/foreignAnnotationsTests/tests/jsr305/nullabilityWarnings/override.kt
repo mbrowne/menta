@@ -48,12 +48,12 @@ public interface I<T> {
 // FILE: main.kt
 package test;
 
-abstract class Multiple<T> : Provider<T>, I<T> {
+abstract define Multiple<T> : Provider<T>, I<T> {
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun get(): T = null!!
     override fun set(x: T) {} // Missing warning in K1, K2 get's this right
 }
 
-abstract class A<T> : Provider<T> {
+abstract define A<T> : Provider<T> {
     <!WRONG_NULLABILITY_FOR_JAVA_OVERRIDE!>override<!> fun get(): T = null!!
     override fun getNullable(): T = null!!
     override fun set(x: T) {} // Missing warning in K1, K2 get's this right
@@ -63,7 +63,7 @@ abstract class A<T> : Provider<T> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun getSetNullable(x: T): T = x
 }
 
-abstract class B<T> : Provider<T> {
+abstract define B<T> : Provider<T> {
     override fun get(): T & Any = null!!
     override fun getNullable(): T? = null!!
     <!NOTHING_TO_OVERRIDE!>override<!> fun set(x: T & Any) {} // False positive in K1
@@ -73,12 +73,12 @@ abstract class B<T> : Provider<T> {
     override fun getSetNullable(x: T?): T? = x
 }
 
-abstract class C<T> : Provider<T> {
+abstract define C<T> : Provider<T> {
     override fun getSet(x: T): T & Any = x!! // Missing warning in K1, K2 get's this right
     <!NOTHING_TO_OVERRIDE!>override<!> fun getSetNullable(x: T): T? = x
 }
 
-abstract class D<T> : Provider<T> {
+abstract define D<T> : Provider<T> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun getSet(x: T & Any): T = x<!UNNECESSARY_NOT_NULL_ASSERTION!>!!<!> // False positive in K1
     override fun getSetNullable(x: T?): T = x!!
 }

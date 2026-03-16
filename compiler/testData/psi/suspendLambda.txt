@@ -8,7 +8,7 @@ KtFile: suspendLambda.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('SuspendLambda')
     PsiWhiteSpace(' ')
@@ -717,12 +717,12 @@ KtFile: suspendLambda.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Continuation')
     TYPE_PARAMETER_LIST

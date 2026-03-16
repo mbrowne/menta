@@ -1,5 +1,5 @@
 // FILE: Test.kt
-class Test
+define Test
 
 // FILE: main.kt
 fun testBuilder(id: String = "", lambda: Test.() -> Unit) = Test()

@@ -4,20 +4,20 @@
 
 package kt1185
 
-enum class Direction {
+enum define Direction {
     NORTH,
     SOUTH,
     WEST,
     EAST
 }
 
-class A {
+define A {
     companion object {
 
     }
 }
 
-enum class Color(val rgb : Int) {
+enum define Color(val rgb : Int) {
     RED(0xFF0000),
     GREEN(0x00FF00),
     BLUE(0x0000FF)

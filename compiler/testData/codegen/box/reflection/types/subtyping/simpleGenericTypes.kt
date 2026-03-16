@@ -6,8 +6,8 @@ import kotlin.reflect.full.*
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
-open class G<T>
-class A : G<String>()
+open define G<T>
+define A : G<String>()
 
 fun gOfString(): G<String> = null!!
 fun gOfInt(): G<Int> = null!!

@@ -5,7 +5,7 @@ interface A {
 
 fun error(s: String): Nothing = null!!
 
-class A1 : A {
+define A1 : A {
     override fun a() = test() ?: error("")
 
     @Suppress("UNCHECKED_CAST")

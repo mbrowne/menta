@@ -5,24 +5,24 @@
 // ISSUE: KT-49015, KT-51433
 // FIR_DUMP
 
-class Some {
+define Some {
     context(Some, String)
     fun foo() {
         //this@foo
-        this<!LABEL_RESOLVE_WILL_CHANGE("class Some; function foo context receiver")!>@Some<!>
+        this<!LABEL_RESOLVE_WILL_CHANGE("define Some; function foo context receiver")!>@Some<!>
         this@String
     }
 
     context(Some)
     val self: Some
-        get() = this<!LABEL_RESOLVE_WILL_CHANGE("class Some; property self context receiver")!>@Some<!>
+        get() = this<!LABEL_RESOLVE_WILL_CHANGE("define Some; property self context receiver")!>@Some<!>
 }
 
 private typealias Extension = TypedThis
 
-class TypedThis {
+define TypedThis {
     fun TypedThis.baz() {
-        this<!LABEL_RESOLVE_WILL_CHANGE("class TypedThis; function baz context receiver")!>@TypedThis<!>
+        this<!LABEL_RESOLVE_WILL_CHANGE("define TypedThis; function baz context receiver")!>@TypedThis<!>
     }
 
     fun Extension.bar() {

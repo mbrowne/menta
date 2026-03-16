@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // CHECK_TYPE
-class A {
+define A {
     val x get() = 1
     val y get() = id(1)
     val y2 get() = id(id(2))

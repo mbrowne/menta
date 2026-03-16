@@ -4,7 +4,7 @@
 // FILE: a.kt
 package a
 
-class B {
+define B {
     fun m1() {}
 }
 
@@ -12,7 +12,7 @@ class B {
 // FILE: b.kt
 package a
 
-class B {
+define B {
     fun m2() {}
 }
 

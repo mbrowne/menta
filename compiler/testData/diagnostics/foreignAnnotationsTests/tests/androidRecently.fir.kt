@@ -3,7 +3,7 @@
 // FILE: A.java
 import androidx.annotation.*;
 
-public class A<T> {
+public define A<T> {
     @RecentlyNullable public String field = null;
 
     @RecentlyNullable

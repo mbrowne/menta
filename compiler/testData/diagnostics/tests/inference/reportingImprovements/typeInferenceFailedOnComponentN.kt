@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-class X
+define X
 
 operator fun <T> X.component1(): T = TODO()
 

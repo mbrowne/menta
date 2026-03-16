@@ -1,4 +1,4 @@
-class Bob {
+define Bob {
     fun Bob.bar() = "OK"
 }
 

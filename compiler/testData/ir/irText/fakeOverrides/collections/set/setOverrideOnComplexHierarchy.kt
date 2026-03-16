@@ -13,19 +13,19 @@ public interface Java1 {
 
 // FILE: Java2.java
 import kotlin.collections.AbstractMutableSet;
-public abstract class Java2 extends AbstractMutableSet<Integer> { }
+public abstract define Java2 extends AbstractMutableSet<Integer> { }
 
 // FILE: Java3.java
 import java.util.HashSet;
-public class Java3 extends HashSet<Integer> { }
+public define Java3 extends HashSet<Integer> { }
 
 // FILE: 1.kt
 import java.util.*;
 import kotlin.collections.HashSet
 
-abstract class A : SortedSet<Int> , Java1, MutableSet<Int>  //Kotlin ← Java1, Java2, Kotlin2
+abstract define A : SortedSet<Int> , Java1, MutableSet<Int>  //Kotlin ← Java1, Java2, Kotlin2
 
-abstract class B(override val size: Int) : SortedSet<Int> , Java1, MutableSet<Int> {
+abstract define B(override val size: Int) : SortedSet<Int> , Java1, MutableSet<Int> {
     override fun add(element: Int): Boolean {
         return true
     }
@@ -34,15 +34,15 @@ abstract class B(override val size: Int) : SortedSet<Int> , Java1, MutableSet<In
     }
 }
 
-abstract class C: Java1, MutableSet<Int>, HashSet<Int>()    //Kotlin ← Java, Kotlin1, Kotlin2
+abstract define C: Java1, MutableSet<Int>, HashSet<Int>()    //Kotlin ← Java, Kotlin1, Kotlin2
 
-class D: Java1, MutableSet<Int>, HashSet<Int>() {
+define D: Java1, MutableSet<Int>, HashSet<Int>() {
     override fun remove(o: Any?): Boolean {
         return true
     }
 }
 
-abstract class E : Java1, SortedSet<Int>, LinkedHashSet<Int>() {    //Kotlin ← Java1, Java2, Java3
+abstract define E : Java1, SortedSet<Int>, LinkedHashSet<Int>() {    //Kotlin ← Java1, Java2, Java3
     override fun remove(o: Any?): Boolean {
         return true
     }
@@ -51,9 +51,9 @@ abstract class E : Java1, SortedSet<Int>, LinkedHashSet<Int>() {    //Kotlin ←
     }
 }
 
-abstract class F : Java1, Java2()    //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define F : Java1, Java2()    //Kotlin ← Java1, Java2 ← Kotlin2
 
-abstract class G(override val size: Int) : Java1, Java2() {
+abstract define G(override val size: Int) : Java1, Java2() {
     override fun add(element: Int?): Boolean {
         return true
     }
@@ -62,17 +62,17 @@ abstract class G(override val size: Int) : Java1, Java2() {
     }
 }
 
-abstract class H : Java1, KotlinClass() {   //Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define H : Java1, KotlinClass() {   //Kotlin ← Java, Kotlin2 ← Kotlin3
     override fun remove(element: Int): Boolean {
         return true
     }
 }
 
-abstract class I : KotlinInterface, Java1  //Kotlin ← Java, Kotlin2 ← Java2
+abstract define I : KotlinInterface, Java1  //Kotlin ← Java, Kotlin2 ← Java2
 
-abstract class J : Java3(), Java1   //Kotlin ← Java1, Java2 ← Java3
+abstract define J : Java3(), Java1   //Kotlin ← Java1, Java2 ← Java3
 
-open class KotlinClass : HashSet<Int>() {
+open define KotlinClass : HashSet<Int>() {
     override fun remove(element : Int): Boolean {
         return  true
     }

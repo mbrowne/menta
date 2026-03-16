@@ -9,7 +9,7 @@
 // FILE: serializableConstructorRef.kt
 import java.io.*
 
-class C(val t: String)
+define C(val t: String)
 
 fun box(): String {
     return roundtrip(Sam(::C))

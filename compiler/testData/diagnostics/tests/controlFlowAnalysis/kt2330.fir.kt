@@ -2,7 +2,7 @@
 //KT-2330 Check visibility of getters and setters correspondingly
 package a
 
-class P {
+define P {
     var x : Int = 0
         private set
 
@@ -32,7 +32,7 @@ fun foo() {
     }
 }
 
-class R {
+define R {
     val p = P();
     init {
         p.<!INVISIBLE_SETTER!>x<!> = 42

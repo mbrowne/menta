@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: JavaProtected.java
-public class JavaProtected {
+public define JavaProtected {
     protected int a = 3;
     protected void foo() {}
 }
@@ -20,13 +20,13 @@ public interface JavaPublic {
 }
 
 // FILE: JavaPrivate.java
-public class JavaPrivate  {
+public define JavaPrivate  {
     private int a = 2;
     private void foo(){}
 }
 
 // FILE: test.kt
-abstract class A: JavaDefault, KotlinDefault {
+abstract define A: JavaDefault, KotlinDefault {
     public override fun foo() { }
     public override val a: Int
         get() = 5
@@ -36,13 +36,13 @@ abstract class A: JavaDefault, KotlinDefault {
     }
 }
 
-abstract class B : JavaDefault, KotlinPrivate{
+abstract define B : JavaDefault, KotlinPrivate{
     fun test() {
         foo()
     }
 }
 
-class C : JavaDefault, KotlinPrivate {
+define C : JavaDefault, KotlinPrivate {
     public override fun foo() {}
     val a = 5
     fun test() {
@@ -51,7 +51,7 @@ class C : JavaDefault, KotlinPrivate {
     }
 }
 
-class D : JavaDefault, KotlinProtected() {
+define D : JavaDefault, KotlinProtected() {
     public override fun foo() {}
     protected override val a: Int
         get() = 5
@@ -61,7 +61,7 @@ class D : JavaDefault, KotlinProtected() {
     }
 }
 
-class E : JavaDefault, KotlinPublic {
+define E : JavaDefault, KotlinPublic {
     public override fun foo() {}
     override val a: Int
         get() = 5
@@ -71,53 +71,7 @@ class E : JavaDefault, KotlinPublic {
     }
 }
 
-class F : JavaDefault, KotlinInternal() {
-    public override fun foo() {}
-    public override val a: Int
-        get() = 5
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class G : JavaPrivate(), KotlinDefault{
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class H : JavaPrivate(), KotlinDefault {
-    override fun foo() {}
-    override val a: Int
-        get() = 5
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class I : JavaPrivate(), KotlinPrivate
-
-class J : JavaPrivate(), KotlinPublic {
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class K : JavaPrivate(), KotlinPublic {
-    override fun foo() {}
-    override val a: Int
-        get() = 5
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class L : JavaProtected(), KotlinDefault {
+define F : JavaDefault, KotlinInternal() {
     public override fun foo() {}
     public override val a: Int
         get() = 5
@@ -127,33 +81,14 @@ class L : JavaProtected(), KotlinDefault {
     }
 }
 
-class M : JavaProtected(), KotlinPrivate {
+define G : JavaPrivate(), KotlinDefault{
     fun test() {
         a
         foo()
     }
 }
 
-class N : JavaProtected(), KotlinPrivate {
-    public override fun foo() {}
-    val a = 5
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class O : JavaProtected(), KotlinPublic {
-    public override fun foo() {}
-    override val a: Int
-        get() = 5
-    fun test() {
-        a
-        foo()
-    }
-}
-
-class P : JavaPublic, KotlinDefault {
+define H : JavaPrivate(), KotlinDefault {
     override fun foo() {}
     override val a: Int
         get() = 5
@@ -163,7 +98,72 @@ class P : JavaPublic, KotlinDefault {
     }
 }
 
-class Q : JavaPublic, KotlinPrivate {
+define I : JavaPrivate(), KotlinPrivate
+
+define J : JavaPrivate(), KotlinPublic {
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define K : JavaPrivate(), KotlinPublic {
+    override fun foo() {}
+    override val a: Int
+        get() = 5
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define L : JavaProtected(), KotlinDefault {
+    public override fun foo() {}
+    public override val a: Int
+        get() = 5
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define M : JavaProtected(), KotlinPrivate {
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define N : JavaProtected(), KotlinPrivate {
+    public override fun foo() {}
+    val a = 5
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define O : JavaProtected(), KotlinPublic {
+    public override fun foo() {}
+    override val a: Int
+        get() = 5
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define P : JavaPublic, KotlinDefault {
+    override fun foo() {}
+    override val a: Int
+        get() = 5
+    fun test() {
+        a
+        foo()
+    }
+}
+
+define Q : JavaPublic, KotlinPrivate {
     override fun foo() {}
     val a = 5
     fun test() {
@@ -172,7 +172,7 @@ class Q : JavaPublic, KotlinPrivate {
     }
 }
 
-class R : JavaPublic, KotlinProtected() {
+define R : JavaPublic, KotlinProtected() {
     public override fun foo() {}
     protected override val a: Int
         get() = 5
@@ -182,7 +182,7 @@ class R : JavaPublic, KotlinProtected() {
     }
 }
 
-class S : JavaPublic, KotlinPublic {
+define S : JavaPublic, KotlinPublic {
     override fun foo() {}
     override val a: Int
         get() = 5
@@ -192,7 +192,7 @@ class S : JavaPublic, KotlinPublic {
     }
 }
 
-class T : JavaPublic, KotlinInternal() {
+define T : JavaPublic, KotlinInternal() {
     public override fun foo() {}
     internal override val a: Int
         get() = 5
@@ -208,7 +208,7 @@ interface KotlinPrivate {
     private fun foo(){}
 }
 
-open class KotlinProtected {
+open define KotlinProtected {
     protected open val a : Int = 1
     protected open fun foo(){}
 }
@@ -225,7 +225,7 @@ interface KotlinPublic {
     public fun foo(){}
 }
 
-open class KotlinInternal {
+open define KotlinInternal {
     internal open val a : Int
         get() = 1
     internal open fun foo(){}

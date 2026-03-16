@@ -16,7 +16,7 @@ sink:
     <SINK>                                                                USE: in: {} out: {}
 =====================
 == Demo0 ==
-class Demo0 {
+define Demo0 {
     private val some = object {
         fun foo() {
             println(state) // Ok
@@ -65,7 +65,7 @@ sink:
     <SINK>                                                                USE: in: {} out: {}
 =====================
 == Demo1 ==
-class Demo1 {
+define Demo1 {
     private val some = object {
         fun foo() {
             if (state)
@@ -132,7 +132,7 @@ sink:
     <SINK>                                                                     INIT: in: {state=I} out: {state=I}    USE: in: {} out: {}
 =====================
 == Demo1A ==
-class Demo1A {
+define Demo1A {
     fun foo() {
         if (state)
             state = true
@@ -190,7 +190,7 @@ sink:
     <SINK>                                                                            USE: in: {} out: {}
 =====================
 == Demo2 ==
-class Demo2 {
+define Demo2 {
     private val some = object {
         fun foo() {
             if (state)
@@ -263,7 +263,7 @@ sink:
     <SINK>                                                                       INIT: in: {state=I} out: {state=I}    USE: in: {} out: {}
 =====================
 == Demo3 ==
-class Demo3 {
+define Demo3 {
     private val some = run {
         if (state)
             state = true
@@ -370,7 +370,7 @@ sink:
     <SINK>                                                                 USE: in: {} out: {}
 =====================
 == Demo4 ==
-class Demo4 {
+define Demo4 {
     private val some = exec {
         if (state)
             state = true
@@ -437,7 +437,7 @@ sink:
     <SINK>                                                                 INIT: in: {state=I} out: {state=I}    USE: in: {} out: {}
 =====================
 == Demo5 ==
-class Demo5 {
+define Demo5 {
     private var state: Boolean = true
 
     private val some = object {

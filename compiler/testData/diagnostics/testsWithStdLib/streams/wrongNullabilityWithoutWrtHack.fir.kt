@@ -7,7 +7,7 @@ import java.util.function.IntPredicate
 import java.util.stream.Stream
 import kotlin.streams.toList
 
-class IntLongPair(val i: Int, val l: Long)
+define IntLongPair(val i: Int, val l: Long)
 
 interface Process {
     fun pid(): Int

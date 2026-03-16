@@ -9,19 +9,19 @@ public interface X {
 
     interface Y extends X {
         int O = I;
-        class XY implements X, Y {
+        define XY implements X, Y {
             public static final int I = O + X.I;
-            public class XYZ extends XY implements Y {
+            public define XYZ extends XY implements Y {
                 int O = I;
             }
         }
     }
 
-    class C {
+    define C {
         public static final double Pi = 3.14;
         interface I {
             double Pi = 41.3;
-            class Z {
+            define Z {
                 public static final double CONST = Pi;
             }
 

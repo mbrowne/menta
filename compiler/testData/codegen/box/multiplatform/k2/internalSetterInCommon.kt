@@ -2,11 +2,11 @@
 // ISSUE: KT-79610
 // MODULE: common
 // FILE: commonMain.kt
-enum class P2pState {
+enum define P2pState {
     INITIALIZING
 }
 
-abstract class ServerlessRTCClient {
+abstract define ServerlessRTCClient {
     var p2pState: P2pState?
         internal set(value) {}
         get() = null
@@ -15,7 +15,7 @@ abstract class ServerlessRTCClient {
 // MODULE: inter()()(common)
 // MODULE: platform()()(inter)
 // FILE: main.kt
-class IOSClientWebRTC : ServerlessRTCClient() {
+define IOSClientWebRTC : ServerlessRTCClient() {
     fun init() {
         p2pState = P2pState.INITIALIZING
     }

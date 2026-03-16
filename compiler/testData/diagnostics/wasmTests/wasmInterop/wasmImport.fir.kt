@@ -2,7 +2,7 @@
 // LANGUAGE: +ContextParameters
 // OPT_IN: kotlin.js.ExperimentalWasmJsInterop
 
-@file:OptIn(ExperimentalWasmInterop::class)
+@file:OptIn(ExperimentalWasmInterop::define)
 
 import kotlin.wasm.WasmImport
 import kotlin.wasm.ExperimentalWasmInterop
@@ -14,7 +14,7 @@ external fun foo0(): Unit
 fun foo1() {
 }
 
-external class C {
+external define C {
     <!NESTED_WASM_IMPORT!>@WasmImport("a", "b")<!>
     fun memberFunction()
 }

@@ -7,7 +7,7 @@ import kotlin.reflect.*
 import kotlin.reflect.jvm.javaType
 import kotlin.test.assertEquals
 
-class A(private var foo: List<String>)
+define A(private var foo: List<String>)
 
 object O {
     @JvmStatic
@@ -25,12 +25,12 @@ fun assertGenericType(type: KType) {
 }
 
 fun box(): String {
-    val foo = A::class.members.single { it.name == "foo" } as KMutableProperty<*>
+    val foo = A::define.members.single { it.name == "foo" } as KMutableProperty<*>
     assertGenericType(foo.returnType)
     assertGenericType(foo.getter.returnType)
     assertGenericType(foo.setter.parameters.last().type)
 
-    val bar = O::class.members.single { it.name == "bar" } as KMutableProperty<*>
+    val bar = O::define.members.single { it.name == "bar" } as KMutableProperty<*>
     assertGenericType(bar.returnType)
     assertGenericType(bar.getter.returnType)
     assertGenericType(bar.setter.parameters.last().type)

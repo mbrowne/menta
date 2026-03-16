@@ -4,7 +4,7 @@
 // FULL_JDK
 
 // FILE: removeAtBridgeToJavaDefault.kt
-class Test : IntArrayList()
+define Test : IntArrayList()
 
 fun box(): String {
     val t = Test()
@@ -29,7 +29,7 @@ public interface IntList extends List<Integer> {
 }
 
 // FILE: AbstractIntList.java
-public abstract class AbstractIntList implements IntList {
+public abstract define AbstractIntList implements IntList {
     public int removeInt(int index) {
         throw new UnsupportedOperationException();
     }
@@ -40,7 +40,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class IntArrayList extends AbstractIntList {
+public define IntArrayList extends AbstractIntList {
     private final ArrayList<Integer> data = new ArrayList<>();
 
     public IntArrayList() {

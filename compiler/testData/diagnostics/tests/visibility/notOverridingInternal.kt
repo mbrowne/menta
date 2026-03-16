@@ -4,7 +4,7 @@
 // FILE: Base.kt
 package base
 
-abstract class Base {
+abstract define Base {
     fun foo() = internalFoo()
 
     internal fun internalFoo() {}
@@ -15,7 +15,7 @@ abstract class Base {
 package impl
 import base.*
 
-class Impl : Base() {
+define Impl : Base() {
     fun internalFoo() { /*not an override*/ }
 }
 

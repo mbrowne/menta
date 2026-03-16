@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // See KT-28847
 
-class Foo(val str: String?) {
+define Foo(val str: String?) {
     val first = run {
         str.isNullOrEmpty()
         second

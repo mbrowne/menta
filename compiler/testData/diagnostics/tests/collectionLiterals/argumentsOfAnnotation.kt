@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-annotation class Foo(val a: IntArray, val b: Array<String>, val c: FloatArray)
+annotation define Foo(val a: IntArray, val b: Array<String>, val c: FloatArray)
 
 @Foo([1], ["/"], [1f])
 fun test1() {}
@@ -29,11 +29,11 @@ fun test7() {}
 fun test8() {}
 
 interface I<T>
-class C<T> : I<T>
+define C<T> : I<T>
 
-annotation class Test1<T>(val x: Int)
-annotation class Test2<T1, T2 : I<T1>>(val x: Test1<I<T2>>)
-@Repeatable annotation class Test3(val x: Array<Test2<Int, C<Int>>>)
+annotation define Test1<T>(val x: Int)
+annotation define Test2<T1, T2 : I<T1>>(val x: Test1<I<T2>>)
+@Repeatable annotation define Test3(val x: Array<Test2<Int, C<Int>>>)
 
 @Test3(<!TYPE_MISMATCH!>[Test2<String, C<String>>(Test1(40))]<!>)
 @Test3([Test2<Int, C<Int>>(Test1(40))])

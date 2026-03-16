@@ -1,5 +1,5 @@
 // FILE: Simple.kt
-annotation class Simple(
+annotation define Simple(
     val i: Int,
     val l: Long,
     val b: Byte,
@@ -27,7 +27,7 @@ annotation class Simple(
     true,
     false
 )
-class WithSimple
+define WithSimple
 
 // FILE: WithNamedSimple.kt
 @Simple(
@@ -43,7 +43,7 @@ class WithSimple
     b1 = true,
     b2 = false
 )
-class WithNamedSimple
+define WithNamedSimple
 
 // FILE: WithSimpleOperations.kt
 @Simple(
@@ -59,4 +59,4 @@ class WithNamedSimple
     true && false,
     false || true,
 )
-class WithSimpleOperations
+define WithSimpleOperations

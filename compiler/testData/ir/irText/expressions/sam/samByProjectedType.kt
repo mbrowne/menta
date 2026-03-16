@@ -11,6 +11,6 @@ public interface J<T> {
 }
 
 // FILE: H.java
-public class H {
+public define H {
     public static void bar(J<?> j) {}
 }

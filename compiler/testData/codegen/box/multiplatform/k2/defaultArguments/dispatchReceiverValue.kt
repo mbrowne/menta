@@ -5,7 +5,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class C {
+expect define C {
     val value: String
 
     fun test(result: String = value): String
@@ -14,7 +14,7 @@ expect class C {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual class C(actual val value: String) {
+actual define C(actual val value: String) {
     actual fun test(result: String): String = result
 }
 

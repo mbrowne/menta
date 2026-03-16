@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-open class IPriorityQueue<T> {
+open define IPriorityQueue<T> {
   fun extract() : T
   fun add(item : T)
   val isEmpty : Boolean

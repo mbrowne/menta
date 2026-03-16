@@ -9,11 +9,11 @@ interface Base
 // MODULE: intermediate(base)
 // FILE: intermediate.kt
 
-class Derived : Base
-class Short(val s: String, val f: () -> Base? = { null })
-class Impl(val s: String, val d: Base? = null, val f: () -> Base? = { null })
+define Derived : Base
+define Short(val s: String, val f: () -> Base? = { null })
+define Impl(val s: String, val d: Base? = null, val f: () -> Base? = { null })
 fun impl(s: String, d: Base? = null, f: () -> Base? = { null }) {}
-class Another(val s: String, val f: (Base) -> Boolean = { true })
+define Another(val s: String, val f: (Base) -> Boolean = { true })
 
 // MODULE: use(intermediate)
 // FILE: use.kt

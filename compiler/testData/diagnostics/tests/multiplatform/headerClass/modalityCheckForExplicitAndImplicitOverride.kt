@@ -4,15 +4,15 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo1 {
+expect define Foo1 {
     val x: String
 }
 
-expect class Foo2 {
+expect define Foo2 {
     val x: String
 }
 
-expect class Foo3 {
+expect define Foo3 {
     val x: String
 }
 
@@ -20,20 +20,20 @@ expect class Foo3 {
 
 // FILE: jvm.kt
 
-open class Open {
+open define Open {
     open val x = "42"
 }
 
-actual open class Foo1 : Open() {
+actual open define Foo1 : Open() {
     override val <!ACTUAL_MISSING!>x<!> = super.x
 }
 
-actual open class Foo2 : Open()
+actual open define Foo2 : Open()
 
-open class WithFinal {
+open define WithFinal {
     val x = "42"
 }
 
-actual open class Foo3 : WithFinal()
+actual open define Foo3 : WithFinal()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, override, propertyDeclaration, stringLiteral, superExpression */

@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = { -> } as CT
 }

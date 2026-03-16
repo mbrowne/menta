@@ -7,7 +7,7 @@ interface GetStep {
     fun get(): Any
 }
 
-class Outer protected constructor(val ok: Any) {
+define Outer protected constructor(val ok: Any) {
     constructor(): this("xxx")
 
     val obj = object : GetStep {

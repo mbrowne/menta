@@ -7,7 +7,7 @@ fun test3(vararg args: String) {}
 
 fun String.textExt1(i: Int, j: String) {}
 
-class Host {
+define Host {
     fun String.testMembetExt1(i: Int, j: String) {}
 
     fun <T> String.testMembetExt2(i: Int, j: T) {}

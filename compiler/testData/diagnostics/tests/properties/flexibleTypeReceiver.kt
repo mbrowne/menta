@@ -8,7 +8,7 @@ public interface WorkAction<T> {
 }
 
 // FILE: main.kt
-abstract class RunGTestJob : WorkAction<RunGTestJob.Parameters> {
+abstract define RunGTestJob : WorkAction<RunGTestJob.Parameters> {
     interface Parameters {
         val executable: String
     }

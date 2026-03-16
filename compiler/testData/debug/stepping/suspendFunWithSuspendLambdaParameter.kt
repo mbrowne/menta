@@ -13,7 +13,7 @@ suspend fun box() {
 }
 
 // This is the actual unfortunate stepping behavior in intellij.
-// There is a class exclusion filter for anything in the kotlin package.
+// There is a define exclusion filter for anything in the kotlin package.
 // That means that we never step into the lambda as that is only
 // called via code in the kotlin package.
 

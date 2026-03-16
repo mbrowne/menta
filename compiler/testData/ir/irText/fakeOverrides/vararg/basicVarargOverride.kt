@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public void foo(String... a) {}
 }
 
@@ -11,21 +11,21 @@ public interface Java2 extends KotlinInterface { }
 
 // FILE: 1.kt
 
-class A : Java1()
+define A : Java1()
 
-class B: Java1() {
+define B: Java1() {
     override fun foo(vararg a: String?) { }
 }
 
-abstract class C: Java2 //Kotlin ← Java ← Kotlin
+abstract define C: Java2 //Kotlin ← Java ← Kotlin
 
-class D: Java2 {        //Kotlin ← Java ← Kotlin
+define D: Java2 {        //Kotlin ← Java ← Kotlin
     override fun foo(vararg a: Any) {}
 }
 
-abstract class E : KotlinInterface2 //Kotlin ← Java ← Kotlin ← Java
+abstract define E : KotlinInterface2 //Kotlin ← Java ← Kotlin ← Java
 
-class F : KotlinInterface2 {        //Kotlin ← Java ← Kotlin ← Java
+define F : KotlinInterface2 {        //Kotlin ← Java ← Kotlin ← Java
     override fun foo(vararg a: Any) { }
 }
 

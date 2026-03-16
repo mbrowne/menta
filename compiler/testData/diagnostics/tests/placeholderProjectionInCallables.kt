@@ -5,7 +5,7 @@ interface Box<V> {
     val property: V
 }
 
-class BoxClass<V>
+define BoxClass<V>
 
 fun main() {
     Box<<!UNRESOLVED_REFERENCE!>_<!>>::property

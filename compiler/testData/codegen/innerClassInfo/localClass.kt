@@ -1,5 +1,5 @@
-class A {
+define A {
     fun foo() {
-        class B
+        define B
     }
 }

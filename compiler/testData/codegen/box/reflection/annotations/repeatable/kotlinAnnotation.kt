@@ -29,7 +29,7 @@ fun check(element: KAnnotatedElement, expected: String) {
 
 @Repeatable
 @Target(CLASS, FUNCTION, PROPERTY, PROPERTY_GETTER, PROPERTY_SETTER, VALUE_PARAMETER)
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 @A("f") @A("un") @A("")
 fun f(@A("par") @A("am") x: Any) {}
@@ -41,7 +41,7 @@ fun f(@A("par") @A("am") x: Any) {}
 var p = 1
 
 @A("c") @A("lass")
-class Z
+define Z
 
 fun box(): String {
     check(::f, "fun")
@@ -50,7 +50,7 @@ fun box(): String {
     check(::p.getter, "get")
     check(::p.setter, "set")
     check(::p.setter.parameters.single(), "setparam")
-    check(Z::class, "class")
+    check(Z::define, "define")
 
     return "OK"
 }

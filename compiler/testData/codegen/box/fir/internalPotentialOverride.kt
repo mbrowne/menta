@@ -2,14 +2,14 @@
 // MODULE: m1
 // FILE: A.kt
 
-open class A {
+open define A {
     internal open fun foo() : Int = 1
 }
 
 // MODULE: m2(m1)
 // FILE: B.kt
 
-class B : A() {
+define B : A() {
     fun foo() : String = "OK"
 }
 

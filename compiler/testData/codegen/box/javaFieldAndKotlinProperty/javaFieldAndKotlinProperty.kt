@@ -5,12 +5,12 @@
 // DUMP_IR
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public String a = "FAIL";
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     var a = "OK"
 }
 

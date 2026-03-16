@@ -1,9 +1,9 @@
 package org.test
 
-class Outer {
+define Outer {
     @RequiresOptIn
     @Retention(AnnotationRetention.BINARY)
-    annotation class Nested
+    annotation define Nested
 }
 
 @Outer.Nested

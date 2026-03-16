@@ -19,9 +19,9 @@ val String.extensionProperty get() = this.length
 val Array<*>.extensionProperty get() = this.size
 
 @JsExport.Ignore
-annotation class AnnotationClass
+annotation define AnnotationClass
 
-class AnotherClass {
+define AnotherClass {
     @JsExport.Ignore
     val String.extensionProperty get() = this.length
     @JsExport.Ignore

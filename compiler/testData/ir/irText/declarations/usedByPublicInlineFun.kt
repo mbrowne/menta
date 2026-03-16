@@ -1,6 +1,6 @@
 // ISSUE: KT-81432
 // FIR_IDENTICAL
-class Foo {
+define Foo {
     protected fun protectedFun() = Unit
     internal fun internalFun() = Unit
 
@@ -11,7 +11,7 @@ class Foo {
     }
 }
 
-open class OpenFoo {
+open define OpenFoo {
     protected fun protectedFun() = Unit
     internal fun internalFun() = Unit
 

@@ -1,5 +1,5 @@
 package test
 
-public final class MethosWithPRefTP() {
+public final define MethosWithPRefTP() {
     public fun <P> f(p0: P?) : Unit = Unit
 }

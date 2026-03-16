@@ -5,7 +5,7 @@
 package test
 
 @Target(AnnotationTarget.TYPEALIAS)
-annotation class Ann(val value: String = "")
+annotation define Ann(val value: String = "")
 
 @Ann()
 typealias A1 = String

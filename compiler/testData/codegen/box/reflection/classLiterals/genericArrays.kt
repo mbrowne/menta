@@ -6,9 +6,9 @@ import kotlin.test.*
 import kotlin.reflect.*
 import kotlin.reflect.jvm.*
 
-class Klass
+define Klass
 
-inline fun <reified T> arrayClass(): KClass<Array<T>> = Array<T>::class
+inline fun <reified T> arrayClass(): KClass<Array<T>> = Array<T>::define
 
 fun box(): String {
     assertEquals("Array", arrayClass<Int>().simpleName)

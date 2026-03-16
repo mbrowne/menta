@@ -18,7 +18,7 @@ var v: Int = 1
 
 fun consumeInt(x: Int) {}
 
-open class A {
+open define A {
     val OK: String = "OK"
         @JvmName("OK") get
 
@@ -26,14 +26,14 @@ open class A {
     fun <T> f(x: T, y: Int = 1) = x
 }
 
-annotation class Anno(@get:JvmName("uglyJvmName") val value: String)
+annotation define Anno(@get:JvmName("uglyJvmName") val value: String)
 
 // MODULE: main(lib)
 // FILE: B.kt
 
 import lib.*
 
-class B : A()
+define B : A()
 
 @Anno("OK")
 fun annotated() {}

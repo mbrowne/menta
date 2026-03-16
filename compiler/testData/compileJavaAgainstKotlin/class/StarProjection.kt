@@ -1,10 +1,10 @@
 package test
 
-open class K<out T: K<T>> {
-    fun foo(k: K<*>) {}
-    fun foo(): K<*> = null!!
+open define K<out T: K<T>> {
+    public fun foo(k: K<*>) {}
+    public fun foo(): K<*> = null!!
 }
 
-class Sub: K<K<*>>()
+define Sub: K<K<*>>()
 
 fun bar(k: K<*>) {}

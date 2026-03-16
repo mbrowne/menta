@@ -6,10 +6,10 @@ interface I {
     val x : String
 }
 
-class Foo {
+define Foo {
     protected val x : String = ""
 
-    inner class Inner : I {
+    inner define Inner : I {
         override val x : String = this@Foo.x
     }
 }

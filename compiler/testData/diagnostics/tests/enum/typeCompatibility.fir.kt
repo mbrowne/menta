@@ -1,23 +1,23 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A<T>
-class AIn<in T>
-class AOut<out T>
-class A2
+define A<T>
+define AIn<in T>
+define AOut<out T>
+define A2
 
-open class B<T>
-open class BIn<in T>
-open class BOut<out T>
+open define B<T>
+open define BIn<in T>
+open define BOut<out T>
 
-open class C
-open class D
+open define C
+open define D
 
-enum class E
+enum define E
 interface I
 
 interface T<T>
 
-open class TSub1 : T<String>
-open class TSub2 : T<Int>
+open define TSub1 : T<String>
+open define TSub2 : T<Int>
 
 fun foo(
     string: String, int: Int,

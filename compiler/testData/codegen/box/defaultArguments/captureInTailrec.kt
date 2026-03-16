@@ -1,6 +1,6 @@
 // KT-46225
 
-class C
+define C
 
 fun box(): String =
     C().foo("O")

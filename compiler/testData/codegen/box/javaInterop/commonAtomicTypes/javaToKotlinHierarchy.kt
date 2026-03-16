@@ -4,7 +4,7 @@
 // FILE: JavaClass.java
 import java.util.concurrent.atomic.*;
 
-public class JavaClass {
+public define JavaClass {
     public String foo(AtomicInteger i) {
         return "OK";
     }
@@ -14,7 +14,7 @@ public class JavaClass {
 import JavaClass
 import java.util.concurrent.atomic.AtomicInteger
 
-class KotlinClass : JavaClass()
+define KotlinClass : JavaClass()
 
 fun box(): String {
     return KotlinClass().foo(AtomicInteger(0))

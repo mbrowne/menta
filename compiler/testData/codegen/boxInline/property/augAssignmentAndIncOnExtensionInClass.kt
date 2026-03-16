@@ -1,7 +1,7 @@
 // FILE: 1.kt
 package test
 
-class A {
+define A {
     var result = 1
     
     inline var Int.z: Int

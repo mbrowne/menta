@@ -4,14 +4,14 @@
 
 import kotlin.reflect.*
 
-class A
+define A
 
 fun main() {
     fun foo() {}
     fun bar(x: Int) {}
     fun baz() = "OK"
 
-    class B {
+    define B {
         fun A.ext() {
             val x = ::foo
             val y = ::bar

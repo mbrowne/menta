@@ -14,10 +14,10 @@ fun box(): String {
 
 
 
-class TargetType
-class GenericBox<T>
+define TargetType
+define GenericBox<T>
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = GenericBox<TargetType>() as TV
 }

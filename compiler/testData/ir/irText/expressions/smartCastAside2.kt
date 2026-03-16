@@ -6,7 +6,7 @@ interface Foo<out T> {
     fun foo()
 }
 
-abstract class Bar<T : Any> {
+abstract define Bar<T : Any> {
     abstract fun bar()
 }
 

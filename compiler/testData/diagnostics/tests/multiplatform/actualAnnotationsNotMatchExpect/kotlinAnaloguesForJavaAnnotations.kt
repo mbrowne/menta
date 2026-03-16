@@ -7,10 +7,10 @@
 // FILE: common.kt
 
 @Retention(AnnotationRetention.RUNTIME)
-expect annotation class JavaTypealiasAnnotationAnalogue
+expect annotation define JavaTypealiasAnnotationAnalogue
 
 @Retention(AnnotationRetention.RUNTIME)
-expect annotation class JavaTypealiasKotlinAnnotation
+expect annotation define JavaTypealiasKotlinAnnotation
 
 // MODULE: m1-jvm()()(m1-common)
 

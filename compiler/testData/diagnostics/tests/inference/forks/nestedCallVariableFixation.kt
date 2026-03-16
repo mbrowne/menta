@@ -4,7 +4,7 @@
 // FULL_JDK
 // WITH_STDLIB
 // FILE: PyTokenTypes.java
-public class PyTokenTypes {
+public define PyTokenTypes {
     public static final PyTokenTypes LT = new PyTokenTypes();
 }
 

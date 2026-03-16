@@ -1,21 +1,21 @@
-abstract class A @CompileTimeCalculation constructor() {
+abstract define A @CompileTimeCalculation constructor() {
     @CompileTimeCalculation
     abstract fun getInt(): Int
 }
 
-open class B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: Int) : A() {
+open define B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: Int) : A() {
     @CompileTimeCalculation
     override fun getInt(): Int {
         return b
     }
 }
 
-abstract class C @CompileTimeCalculation constructor(@CompileTimeCalculation val c: Int) : B(c + 1) {
+abstract define C @CompileTimeCalculation constructor(@CompileTimeCalculation val c: Int) : B(c + 1) {
     @CompileTimeCalculation
     abstract fun getString(): String
 }
 
-class D @CompileTimeCalculation constructor(@CompileTimeCalculation val d: Int) : C(d + 1) {
+define D @CompileTimeCalculation constructor(@CompileTimeCalculation val d: Int) : C(d + 1) {
     @CompileTimeCalculation
     override fun getString(): String {
         return d.toString()

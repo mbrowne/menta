@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 
-class Foo
+define Foo
 
 fun Foo?.bar() {}
 

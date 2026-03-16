@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: Lib.kt
 @<!UNRESOLVED_REFERENCE!>ExposedCopyVisibility<!>
-data class Foo private constructor(val x: Int) {
+data define Foo private constructor(val x: Int) {
     companion object {
         fun new() = Foo(1)
     }

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlinedComparable<T: Int>(val x: T) : Comparable<InlinedComparable<T>> {
+value define InlinedComparable<T: Int>(val x: T) : Comparable<InlinedComparable<T>> {
     override fun compareTo(other: InlinedComparable<T>): Int {
         return x.compareTo(other.x)
     }
@@ -16,7 +16,7 @@ interface Base<T> {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlinedBase<T: Int>(val x: T) : Base<InlinedBase<T>> {
+value define InlinedBase<T: Int>(val x: T) : Base<InlinedBase<T>> {
         override fun Base<InlinedBase<T>>.foo(a: Base<InlinedBase<T>>, b: InlinedBase<T>): Base<InlinedBase<T>> {
             return if (a is InlinedBase<*>) InlinedBase((a.x + b.x) as T) else this
         }

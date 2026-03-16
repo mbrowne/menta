@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: String>(val a: T)
+value define A<T: String>(val a: T)
 
 fun <T: String> isEqualNA(x: A<T>?, y: A<T>) = x == y
 fun <T: String> isEqualAN(x: A<T>, y: A<T>?) = x == y

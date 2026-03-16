@@ -19,9 +19,9 @@ public inline fun <T : MCloseable, R> T.muse(block: (T) -> R): R {
 import test.*
 import kotlin.test.assertEquals
 
-class MyException(message: String) : Exception(message)
+define MyException(message: String) : Exception(message)
 
-class Holder(var value: String) {
+define Holder(var value: String) {
     operator fun plusAssign(s: String?) {
         value += s
         if (s != "closed") {
@@ -30,7 +30,7 @@ class Holder(var value: String) {
     }
 }
 
-class Test() : MCloseable {
+define Test() : MCloseable {
 
     val status = Holder("")
 

@@ -86,7 +86,7 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -97,7 +97,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner<SOT>(private val value: SOT): BaseType {
+define ScopeOwner<SOT>(private val value: SOT): BaseType {
     val accessorBackedMemberProperty: SOT
         get() = value
 

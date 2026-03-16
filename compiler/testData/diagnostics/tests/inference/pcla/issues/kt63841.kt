@@ -2,8 +2,8 @@
 // ISSUE: KT-63841
 // CHECK_TYPE_WITH_EXACT
 
-class TargetType { fun targetTypeMemberFunction() {} }
-class DifferentType
+define TargetType { fun targetTypeMemberFunction() {} }
+define DifferentType
 
 fun test() {
     val targetTypeBuildee = build {
@@ -41,7 +41,7 @@ fun test() {
 
 
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun getTypeVariable(): TV = storage
     private var storage: TV = null!!
 }

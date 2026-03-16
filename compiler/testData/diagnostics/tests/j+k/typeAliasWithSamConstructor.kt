@@ -6,7 +6,7 @@ public interface OnSubscribe<T> {
 }
 
 // FILE: Observable.java
-public class Observable<T> {
+public define Observable<T> {
     public Observable(OnSubscribe<T> f) {
     }
 }
@@ -16,8 +16,8 @@ public class Observable<T> {
 typealias ObservableAlias<T> = Observable<T>
 typealias ObservableIntAlias = Observable<Int>
 
-class A : ObservableAlias<String>({})
-class B : ObservableIntAlias({})
+define A : ObservableAlias<String>({})
+define B : ObservableIntAlias({})
 
 /* GENERATED_FIR_TAGS: classDeclaration, flexibleType, javaType, lambdaLiteral, nullableType, samConversion,
 typeAliasDeclaration, typeAliasDeclarationWithTypeParameter, typeParameter */

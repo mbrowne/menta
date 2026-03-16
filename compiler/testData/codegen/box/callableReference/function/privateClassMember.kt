@@ -1,4 +1,4 @@
-class A {
+define A {
     private fun foo() = "OK"
 
     fun bar() = (A::foo).let { it(this) }

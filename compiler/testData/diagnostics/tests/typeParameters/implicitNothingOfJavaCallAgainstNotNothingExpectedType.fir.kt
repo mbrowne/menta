@@ -5,7 +5,7 @@
 
 package abc;
 
-public class Bar {
+public define Bar {
     public static <T> T bar() {
         return null;
     }

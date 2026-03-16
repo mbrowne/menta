@@ -4,14 +4,14 @@
 // FILE: top_a.kt
 package a
 
-class b {
+define b {
     fun a_b() {}
 }
 
 // MODULE: top_m2
 // FILE: top_b.kt
-class a<T> {
-    class b {
+define a<T> {
+    define b {
         fun _ab() {}
     }
     fun _a() {}

@@ -8,7 +8,7 @@ import kotlin.contracts.*
 
 
 // ============= Class =====================
-open class Class {
+open define Class {
     constructor(f: () -> Unit = {}) {
         contract { callsInPlace(f, InvocationKind.EXACTLY_ONCE) }
         f()
@@ -35,7 +35,7 @@ open class Class {
     }
 }
 
-open class Inheritor : Class() {
+open define Inheritor : Class() {
     override fun openMemeber(x: Boolean) {
         <!CONTRACT_NOT_ALLOWED!>contract<!> { returns() implies (x) }
     }

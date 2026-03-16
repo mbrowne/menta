@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 fun foo(@IntroducedAt("1") b: Int = 1, <!INVALID_NON_OPTIONAL_PARAMETER_POSITION!>x: String<!>) {}
 

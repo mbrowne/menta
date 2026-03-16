@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun checkNotNull(x: Any?): Boolean {
     contract {
         returns(true) implies (x != null)
@@ -9,7 +9,7 @@ fun checkNotNull(x: Any?): Boolean {
     return x != null
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun trickyRequireNotNull(x: Any?) {
     contract {
         returns() implies (!(x == null))

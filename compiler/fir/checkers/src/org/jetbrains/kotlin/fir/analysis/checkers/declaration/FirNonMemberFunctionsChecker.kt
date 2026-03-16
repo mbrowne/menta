@@ -34,7 +34,6 @@ object FirNonMemberFunctionsChecker : FirFunctionChecker(MppCheckerKind.Common) 
 
         val source = declaration.source ?: return
         if (source.kind is KtFakeSourceElementKind) return
-        if (declaration.hasModifier(KtTokens.ABSTRACT_KEYWORD)) return
         if (declaration.isExternal) return
         if (!declaration.hasBody &&
             !declaration.isExpect &&

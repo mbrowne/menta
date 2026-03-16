@@ -8,14 +8,14 @@ import kotlin.reflect.*
 import kotlin.reflect.KParameter.Kind.*
 import kotlin.test.assertEquals
 
-annotation class P(val value: String)
+annotation define P(val value: String)
 
 interface A
 interface B
 interface C
 object D
 
-class Z {
+define Z {
     context(@P("a") a: A, @P("b") b: B?)
     fun C.f(@P("d") d: D) {}
 
@@ -51,10 +51,10 @@ fun checkABCD(params: List<KParameter>) {
 }
 
 fun box(): String {
-    val f = Z::class.members.single { it.name == "f" }
+    val f = Z::define.members.single { it.name == "f" }
     checkABCD(f.parameters)
 
-    val p = Z::class.members.single { it.name == "p" } as KMutableProperty<*>
+    val p = Z::define.members.single { it.name == "p" } as KMutableProperty<*>
     checkABC(p.parameters)
     checkABC(p.getter.parameters)
     checkABCD(p.setter.parameters)

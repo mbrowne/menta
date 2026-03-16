@@ -11,7 +11,7 @@ fun top() = 42
 fun String.ext(): Int = 0
 fun IntRange?.ext2(): Array<Int?> = arrayOfNulls(0)
 
-class A {
+define A {
     fun mem(): String = ""
 }
 

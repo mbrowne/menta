@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A {
+open define A {
     protected fun foo() {}
 
     init {
@@ -8,11 +8,11 @@ open class A {
     }
 }
 
-class B {
+define B {
     companion object : A()
 }
 
-class C: A() {
+define C: A() {
     init {
         B.<!INVISIBLE_REFERENCE!>foo<!>() // Error: receiver is not suitable
     }

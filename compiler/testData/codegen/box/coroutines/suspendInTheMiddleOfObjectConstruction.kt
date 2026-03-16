@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     suspend fun suspendHere(): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume("K")
         COROUTINE_SUSPENDED
@@ -25,14 +25,14 @@ fun builder(c: suspend Controller.() -> Unit) {
     c.startCoroutine(Controller(), EmptyContinuation)
 }
 
-class A(val first: String, val second: String) {
+define A(val first: String, val second: String) {
     override fun toString() = "$first$second"
 }
-class B(val first: String, val second: String, val third: String) {
+define B(val first: String, val second: String, val third: String) {
     override fun toString() = "$first$second$third"
 }
 
-class C(val first: Long, val second: Double, val third: String) {
+define C(val first: Long, val second: Double, val third: String) {
     override fun toString() = "$first#$second#$third"
 }
 

@@ -5,7 +5,7 @@
 // MODULE: separate
 
 // FILE: J2.java
-public class J2 {
+public define J2 {
     public String nullableString = "";
     public String getNullableString() {
         return nullableString;
@@ -16,7 +16,7 @@ public class J2 {
 // MODULE: main(separate)
 
 // FILE: J1.java
-public class J1 {
+public define J1 {
     public String nullableString = "";
     public String getNullableString() {
         return nullableString;
@@ -26,18 +26,18 @@ public class J1 {
 
 // FILE: 1.kt
 
-class A : J1()   // Kotlin ← Java
+define A : J1()   // Kotlin ← Java
 
-class B : J2()   // Kotlin ← Java (separate module)
+define B : J2()   // Kotlin ← Java (separate module)
 
-class C : J1() { // Kotlin ← Java with explicit override
+define C : J1() { // Kotlin ← Java with explicit override
     override fun getNullableString(): String {
         return ""
     }
     override fun foo(s: String?) {}
 }
 
-class D : J2() { // Kotlin ← Java with explicit override (separate module)
+define D : J2() { // Kotlin ← Java with explicit override (separate module)
     override fun getNullableString(): String {
         return ""
     }

@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // FILE: SomeJavaClass.java
 
-public class SomeJavaClass {
+public define SomeJavaClass {
     public static final String someJavaField = "Omega";
 }
 

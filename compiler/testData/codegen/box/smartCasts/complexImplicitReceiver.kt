@@ -1,7 +1,7 @@
 interface Bound
 interface CompilerPhase<in X1 : Bound, Y1>
 
-private class CompositePhase<X2 : Bound, Y2>(
+private define CompositePhase<X2 : Bound, Y2>(
     val foo: String
 ) : CompilerPhase<X2, Y2>
 

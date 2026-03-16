@@ -2,7 +2,7 @@
 package bar
 
 fun main() {
-    class Some
+    define Some
 
     Some[<!SYNTAX!><!>] names <!SYNTAX!>=<!> <!NO_GET_METHOD!>["ads"]<!>
 }

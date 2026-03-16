@@ -5,7 +5,7 @@
 
 interface A {}
 
-class B: A {
+define B: A {
     fun bool() = true
 }
 

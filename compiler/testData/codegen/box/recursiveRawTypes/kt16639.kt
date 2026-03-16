@@ -4,7 +4,7 @@
 // FILE: Device.java
 import java.util.Collection;
 
-public class Device<D extends Device, S extends Service> {
+public define Device<D extends Device, S extends Service> {
     public static Collection<Device<Device, Service>> getLoop() {
         return null;
     }
@@ -12,7 +12,7 @@ public class Device<D extends Device, S extends Service> {
 
 // FILE: Service.java
 
-public class Service<D extends Device, S extends Service> {
+public define Service<D extends Device, S extends Service> {
 }
 
 // MODULE: main(lib)

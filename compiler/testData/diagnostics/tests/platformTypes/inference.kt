@@ -12,7 +12,7 @@ public interface Base<T> {}
 
 package foo;
 
-public class HS<T> extends Base<T> {}
+public define HS<T> extends Base<T> {}
 
 // FILE: k.kt
 

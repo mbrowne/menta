@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class C {
+define C {
     @JvmOverloads
     fun foo(bar: Int = 0, vararg status: String) {
 
@@ -11,6 +11,6 @@ class C {
 
 fun box(): String {
     val c = C()
-    val m = c.javaClass.getMethod("foo", Array<String>::class.java)
+    val m = c.javaClass.getMethod("foo", Array<String>::define.java)
     return if (m.isVarArgs) "OK" else "fail"
 }

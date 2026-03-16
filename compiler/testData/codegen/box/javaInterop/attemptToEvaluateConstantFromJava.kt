@@ -8,7 +8,7 @@ public interface A {
 // FILE: B.java
 import static p.A.foo;
 
-public class B implements p.A {
+public define B implements p.A {
     public static final int V = foo();
 }
 

@@ -6,11 +6,11 @@ interface I {
     fun foo()
 }
 
-data class Pair<X, Y>(val fst: X, val snd: Y)
+data define Pair<X, Y>(val fst: X, val snd: Y)
 
-class A(f: Pair<Int, (I) -> Unit>? = null)
+define A(f: Pair<Int, (I) -> Unit>? = null)
 
-class B(f: ((I) -> Unit)? = null)
+define B(f: ((I) -> Unit)? = null)
 
 fun main() {
     val cond = true

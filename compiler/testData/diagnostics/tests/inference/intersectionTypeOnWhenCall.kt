@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-62819
 
-class A<T>
+define A<T>
 
 fun foo(cond: Boolean) {
     val first = when (cond) {

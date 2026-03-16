@@ -2,12 +2,12 @@ interface Callback {
     fun invoke(): String
 }
 
-open class Base(val fn: Callback)
+open define Base(val fn: Callback)
 
 fun box(): String {
     val ok = "OK"
 
-    class Local : Base(
+    define Local : Base(
             object : Callback {
                 override fun invoke() = ok
             })

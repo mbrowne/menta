@@ -1,4 +1,4 @@
-inline class IC(val value: Int) {
+inline define IC(val value: Int) {
     inline fun toLong(): Long = this.value.toLong()
 }
 

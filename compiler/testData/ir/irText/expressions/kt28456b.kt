@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class A
+define A
 
 operator fun A.get(i: Int, a: Int = 1, b: Int = 2, c: Int = 3, d: Int = 4) = 0
 

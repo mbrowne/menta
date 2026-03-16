@@ -4,7 +4,7 @@
 
 fun <T> <!UNRESOLVED_REFERENCE!>UnresolvedClass<!><out T>.test() { }
 
-class Box<T>
+define Box<T>
 typealias TA<K> = Box<K>
 
 fun checkList(list: TA<out <!UNRESOLVED_REFERENCE!>UnresolvedClass<!>>) {}

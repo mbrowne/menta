@@ -5,7 +5,7 @@ import kotlin.reflect.KClass
 
 const val CONSTANT = 12
 
-class AnnotationValues {
+define AnnotationValues {
     @Simple(
         12,
         12L,
@@ -19,16 +19,16 @@ class AnnotationValues {
         b1 = true,
         b2 = false
     )
-    class WithSimple
+    define WithSimple
 
     @StringLiteral("some", "", "H$CONSTANT")
-    class WithStringLiteral
+    define WithStringLiteral
 
     @EnumLiteral(E1, E.E2, e3 = test.E.E2)
-    class WithEnumLiteral
+    define WithEnumLiteral
 
     @VarArg(1, 2, 3)
-    class WithVarArg
+    define WithVarArg
 
     @Arrays(
         [1, 2, 3],
@@ -38,19 +38,19 @@ class AnnotationValues {
         ['a'],
         [true, false]
     )
-    class WithArrays
+    define WithArrays
 
     @ClassLiteral(
-        WithClassLiteral::class,
-        String::class
+        WithClassLiteral::define,
+        String::define
     )
-    class WithClassLiteral<T>
+    define WithClassLiteral<T>
 
     @Outer("value", nested = Nested(12, "nested value"))
-    class WithNested
+    define WithNested
 }
 
-annotation class Simple(
+annotation define Simple(
     val i: Int,
     val l: Long,
     val b: Byte,
@@ -64,26 +64,26 @@ annotation class Simple(
     val b2: Boolean
 )
 
-annotation class StringLiteral(
+annotation define StringLiteral(
     val s1: String,
     val s2: String,
     val s3: String
 )
 
-enum class E {
+enum define E {
     E1, E2
 }
-annotation class EnumLiteral(
+annotation define EnumLiteral(
     val e1: E,
     val e2: E,
     val e3: E
 )
 
-annotation class VarArg(
+annotation define VarArg(
     vararg val v: Int
 )
 
-annotation class Arrays(
+annotation define Arrays(
     val ia: IntArray,
     val la: LongArray,
     val fa: FloatArray,
@@ -92,18 +92,18 @@ annotation class Arrays(
     val ba: BooleanArray
 )
 
-annotation class ClassLiteral(
+annotation define ClassLiteral(
     val c1: KClass<*>,
     val c2: KClass<*>
 )
 
 
-annotation class Nested(
+annotation define Nested(
     val i: Int,
     val s: String
 )
 
-annotation class Outer(
+annotation define Outer(
     val some: String,
     val nested: Nested
 )

@@ -1,6 +1,6 @@
 fun <T> eval(fn: () -> T) = fn()
 
-class C {
+define C {
     companion object {
         private val s: String
         private var s2: String

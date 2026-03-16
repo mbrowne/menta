@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // JVM_TARGET: 1.8
 // FILE: box.kt
-class E : D()
+define E : D()
 
 fun box(): String =
     E().foo(0)
@@ -16,19 +16,19 @@ public interface A {
 }
 
 // FILE: B.java
-public abstract class B implements A {
+public abstract define B implements A {
     public String foo(int value) {
         return "OK";
     }
 }
 
 // FILE: C.kt
-open class C : B()
+open define C : B()
 
 // FILE: D.java
 import org.jetbrains.annotations.Nullable;
 
-public class D extends C {
+public define D extends C {
     @Override
     public String foo(@Nullable Integer value) {
         return "Fail: D";

@@ -6,7 +6,7 @@ fun test() = "OK"
 
 val prop = "OK"
 
-class Foo {
+define Foo {
     fun test() = "OK"
     val prop = "OK"
 }
@@ -35,11 +35,11 @@ inline fun default10(s : () -> String = <!INVALID_DEFAULT_FUNCTIONAL_PARAMETER_F
     }
 }) {}
 
-abstract class Base {
+abstract define Base {
     abstract fun foo(f: () -> Unit = { })
 }
 
-class Derived : Base() {
+define Derived : Base() {
     <!OVERRIDE_BY_INLINE!>override final inline fun foo(<!NOT_YET_SUPPORTED_IN_INLINE!>f: () -> Unit<!>)<!> {
         f()
     }

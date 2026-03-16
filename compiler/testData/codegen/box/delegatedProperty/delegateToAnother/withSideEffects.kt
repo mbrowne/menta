@@ -6,7 +6,7 @@ object O {
     init { result = "OK" }
 }
 
-class A {
+define A {
     val x by O::z
 }
 

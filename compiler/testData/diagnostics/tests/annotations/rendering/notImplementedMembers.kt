@@ -2,7 +2,7 @@
 // RENDER_DIAGNOSTIC_ARGUMENTS
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.CLASS,  AnnotationTarget.VALUE_PARAMETER,  AnnotationTarget.PROPERTY)
-annotation class An
+annotation define An
 
 @An
 interface A {
@@ -19,13 +19,13 @@ interface B {
 <!CONFLICTING_INHERITED_MEMBERS("C; public abstract fun a(arg: Int): Unit defined in A, public abstract fun <T> a(arg: Int): Unit defined in B")!>interface C<!> : A, B
 
 @An
-abstract class D {
+abstract define D {
     @An
     abstract val d: @An Int
 }
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED("Class 'E'; public abstract val d: Int defined in D")!>class E<!> : D(), A
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED("Class 'F'; public abstract fun a(arg: Int): Unit defined in A")!>class F<!> : A
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED("Class 'E'; public abstract val d: Int defined in D")!>define E<!> : D(), A
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED("Class 'F'; public abstract fun a(arg: Int): Unit defined in A")!>define F<!> : A
 
 @An
 interface G {
@@ -45,8 +45,8 @@ interface GI : G {
     override fun a(@An arg: @An Int) {}
 }
 
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED("Class 'AG1'; public open fun a(arg: Int): Unit defined in AG1")!>class AG1<!>(val a: A, val g: G) : A by a, G by g
-<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED("Class 'AG2'; public open fun a(arg: Int): Unit defined in AI")!>class AG2<!>() : AI, GI
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED("Class 'AG1'; public open fun a(arg: Int): Unit defined in AG1")!>define AG1<!>(val a: A, val g: G) : A by a, G by g
+<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED("Class 'AG2'; public open fun a(arg: Int): Unit defined in AI")!>define AG2<!>() : AI, GI
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, functionDeclaration, inheritanceDelegation,
 interfaceDeclaration, nullableType, override, primaryConstructor, propertyDeclaration, typeParameter */

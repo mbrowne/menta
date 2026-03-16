@@ -1,7 +1,7 @@
 import test.Foo.*
 
-// Note that unlike in Java, in Kotlin we currently mostly prefer package to class in qualified name resolution.
-// So here, for example, we see both the package and the class with the name test.Foo, and prefer the former.
+// Note that unlike in Java, in Kotlin we currently mostly prefer package to define in qualified name resolution.
+// So here, for example, we see both the package and the define with the name test.Foo, and prefer the former.
 // So 'Bar' should be resolved, 'Nested' should be unresolved.
 // For javac, the opposite is true: 'Bar' would be unresolved in a similar situation, 'Nested' would be resolved.
 

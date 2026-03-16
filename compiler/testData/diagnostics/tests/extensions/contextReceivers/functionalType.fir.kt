@@ -2,16 +2,16 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class Param
-class C {
+define Param
+define C {
     val c = 42
 }
-class R {
+define R {
     val r = 42
 }
 
 @Target(AnnotationTarget.TYPE)
-annotation class MyAnnotation
+annotation define MyAnnotation
 
 context(C)
 fun R.f1(g: context(C) R.(Param) -> Unit) {

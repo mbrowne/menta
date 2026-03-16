@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FULL_JDK
 
-class C {
+define C {
     companion object {
         private @JvmStatic external fun foo()
     }

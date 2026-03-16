@@ -14,12 +14,12 @@ interface I {
 }
 
 // MODULE: intermediate(lib)
-open class Intermediate: I {
+open define Intermediate: I {
     open override fun foo(a: Int): Int = 24
 }
 
 // MODULE: main(intermediate, lib)
-class A(): Intermediate() {
+define A(): Intermediate() {
     inline override <!OVERRIDE_BY_INLINE!>fun foo(a: Int): Int<!> = -42
 }
 

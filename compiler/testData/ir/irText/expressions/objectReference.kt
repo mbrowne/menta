@@ -9,7 +9,7 @@ object Z {
         Z.foo()
     }
 
-    class Nested {
+    define Nested {
         init {
             counter = 1
             foo()

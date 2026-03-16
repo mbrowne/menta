@@ -7,11 +7,11 @@ interface A<T> {
     fun foo(): T
 }
 
-abstract class B<T>: A<T>
+abstract define B<T>: A<T>
 
-abstract class C: B<Int>()
+abstract define C: B<Int>()
 
-class D: C() {
+define D: C() {
     override fun foo(): Int {
         return 42
     }

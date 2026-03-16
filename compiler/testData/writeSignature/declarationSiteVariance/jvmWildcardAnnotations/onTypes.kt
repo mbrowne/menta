@@ -1,9 +1,9 @@
 // WITH_STDLIB
-class OutPair<out T, out E>
-class Out<out F>
-class In<in H>
+define OutPair<out T, out E>
+define Out<out F>
+define In<in H>
 
-class X
+define X
 
 fun simpleOut(x: Out<@JvmWildcard X>) {}
 // method: OnTypesKt::simpleOut
@@ -17,7 +17,7 @@ fun falseTrueFalse(): @JvmSuppressWildcards(false) OutPair<X, @JvmSuppressWildca
 // method: OnTypesKt::falseTrueFalse
 // generic signature: ()LOutPair<+LX;LOutPair<LOut<LX;>;LOut<+LX;>;>;>;
 
-open class Open
+open define Open
 fun combination(): @JvmSuppressWildcards OutPair< Open, @JvmWildcard OutPair<Open, @JvmWildcard Out<Open>>> = null!!
 // method: OnTypesKt::combination
 // generic signature: ()LOutPair<LOpen;+LOutPair<LOpen;+LOut<LOpen;>;>;>;

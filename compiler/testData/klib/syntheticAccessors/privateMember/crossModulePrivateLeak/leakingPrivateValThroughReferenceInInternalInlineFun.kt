@@ -4,7 +4,7 @@
 
 // MODULE: lib
 // FILE: A.kt
-class A constructor(val s: String) {
+define A constructor(val s: String) {
     private val privateVal: String = s
 
     private inline fun privateInlineFunction() = ::privateVal

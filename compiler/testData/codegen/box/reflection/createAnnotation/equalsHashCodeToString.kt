@@ -3,15 +3,15 @@
 
 package test
 
-annotation class A
-annotation class B(val s: String)
+annotation define A
+annotation define B(val s: String)
 
 @A
 @B("2")
 fun javaReflectionAnnotationInstances() {}
 
 fun box(): String {
-    val createA = A::class.constructors.single()
+    val createA = A::define.constructors.single()
 
     val a1 = createA.call()
     if (a1.toString() != "@test.A()") return "Fail: toString does not correspond to the documentation of java.lang.annotation.Annotation#toString: $a1"
@@ -22,7 +22,7 @@ fun box(): String {
     if (a1.hashCode() != a2.hashCode()) return "Fail: hash codes of equal instances should be equal"
     if (a1.hashCode() != 0) return "Fail: hashCode does not correspond to the documentation of java.lang.annotation.Annotation#hashCode: ${a1.hashCode()}"
 
-    val createB = B::class.constructors.single()
+    val createB = B::define.constructors.single()
     val b1 = createB.call("1")
     if (b1.toString() != "@test.B(s=1)") return "Fail: toString does not correspond to the documentation of java.lang.annotation.Annotation#toString: $b1"
     if (b1 != b1) return "Fail: instance should be equal to itself"

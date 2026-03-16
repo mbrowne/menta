@@ -3,7 +3,7 @@
 
 fun <T> foo(): T = TODO()
 
-class A {
+define A {
     fun <T> fooA(): T = TODO()
 }
 

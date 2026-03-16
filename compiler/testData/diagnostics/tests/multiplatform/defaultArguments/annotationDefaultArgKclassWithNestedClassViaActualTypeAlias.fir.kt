@@ -4,12 +4,12 @@
 
 import kotlin.reflect.KClass
 
-expect annotation class Ann(
-    val p: KClass<*> = Foo.Nested::class
+expect annotation define Ann(
+    val p: KClass<*> = Foo.Nested::define
 )
 
-expect class Foo {
-    class Nested
+expect define Foo {
+    define Nested
 }
 
 // MODULE: m2-jvm()()(m1-common)
@@ -17,14 +17,14 @@ expect class Foo {
 
 import kotlin.reflect.KClass
 
-class FooImpl {
-    class Nested
+define FooImpl {
+    define Nested
 }
 
 actual typealias Foo = FooImpl
 
-actual annotation class Ann(
-    actual val p: KClass<*> = FooImpl.Nested::class
+actual annotation define Ann(
+    actual val p: KClass<*> = FooImpl.Nested::define
 )
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, classReference, expect, nestedClass,

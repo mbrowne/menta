@@ -6,7 +6,7 @@ expect interface Base {
     fun foo(a: String): String
 }
 
-class DelegatedImpl(val foo: Base) : Base by foo
+define DelegatedImpl(val foo: Base) : Base by foo
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
@@ -15,7 +15,7 @@ actual interface Base {
     fun foo(a: Any): Any
 }
 
-class Impl : Base {
+define Impl : Base {
     override fun foo(a: String): String = "O"
     override fun foo(a: Any): Any = "K"
 }

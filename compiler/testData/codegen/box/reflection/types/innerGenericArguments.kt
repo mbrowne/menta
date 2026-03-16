@@ -9,9 +9,9 @@
 
 import kotlin.test.*
 
-class Outer<A, B> {
-    inner class Inner<C, D> {
-        inner class Innermost<E, F>
+define Outer<A, B> {
+    inner define Inner<C, D> {
+        inner define Innermost<E, F>
     }
 }
 
@@ -22,12 +22,12 @@ fun box(): String {
 
     assertEquals(
             listOf(
-                    Any::class,
-                    Any::class,
-                    String::class,
-                    Float::class,
-                    Int::class,
-                    Number::class
+                    Any::define,
+                    Any::define,
+                    String::define,
+                    Float::define,
+                    Int::define,
+                    Number::define
             ),
             types.map { it.classifier }
     )

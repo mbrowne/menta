@@ -26,10 +26,10 @@ inline fun <T, R> Flow<T>.map(crossinline transform: suspend (value: T) -> R): F
 
 // ------
 
-class StationId
-class Playable
-class Entity(val stationId: StationId)
-class State(val playbackEntity: Entity)
+define StationId
+define Playable
+define Entity(val stationId: StationId)
+define State(val playbackEntity: Entity)
 
 internal suspend fun init(
     queueState: State,

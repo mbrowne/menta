@@ -4,20 +4,20 @@
 
 package kt456
 
-class A() {
+define A() {
     val i: Int
     get() : Int {  //no error
     <!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
 }
 
 //more tests
-class B() {
+define B() {
     val i: Int
     get() {  //no error
     <!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
 }
 
-class C() {
+define C() {
     val i : Int
     get() : Int {
         try {

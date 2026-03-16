@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: test.kt
 
-abstract class A {
+abstract define A {
     @JvmField
     protected var flag: String = "Fail"
 }
@@ -13,6 +13,6 @@ fun box(): String = object : J() {
 
 // FILE: J.java
 
-public class J extends A {
+public define J extends A {
     protected String flag = "OK";
 }

@@ -9,7 +9,7 @@
 // FILE: serializableBoundClassMemberFunRef.kt
 import java.io.*
 
-class C(val s: String) : Serializable {
+define C(val s: String) : Serializable {
     fun plus(ss: String) = ss + s
 }
 

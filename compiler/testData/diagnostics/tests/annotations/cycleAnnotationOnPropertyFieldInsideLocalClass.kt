@@ -2,10 +2,10 @@
 // FIR_IDENTICAL
 package myPack
 
-annotation class Anno(val number: String)
+annotation define Anno(val number: String)
 
 fun topLevelFun() {
-    class LocalClass {
+    define LocalClass {
         @Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>variableToResolve<!>)
         @field:Anno(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!>variableToResolve<!>)
         var variableToResolve = "${42}"

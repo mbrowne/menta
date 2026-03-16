@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Int>(val arg: T)
+value define Foo<T: Int>(val arg: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsAny<T: Any>(val arg: T)
+value define AsAny<T: Any>(val arg: T)
 
 fun box(): String {
     val arr = arrayOf(Foo(1), Foo(2))

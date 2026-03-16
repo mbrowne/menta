@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: removeNullFromList.kt
 
-class MyList : List<String> {
+define MyList : List<String> {
     override val size: Int get() = 0
     override fun contains(element: String): Boolean = false
     override fun containsAll(elements: Collection<String>): Boolean = false
@@ -27,7 +27,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.List;
 
-public class J {
+public define J {
     public static void test(List<String> list) {
         list.remove(null);
     }

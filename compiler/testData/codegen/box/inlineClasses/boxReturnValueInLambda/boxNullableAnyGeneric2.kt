@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X<T: Any>(val x: T?)
+value define X<T: Any>(val x: T?)
 
 fun useX(x: X<String>): String = x.x!!
 

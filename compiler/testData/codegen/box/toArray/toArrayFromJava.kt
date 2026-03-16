@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: MyListWithCustomToArray.java
 
-public abstract class MyListWithCustomToArray<E> extends java.util.AbstractList<E> {
+public abstract define MyListWithCustomToArray<E> extends java.util.AbstractList<E> {
     public Object[] toArray() {
         return new Object[]{null};
     }
@@ -13,21 +13,21 @@ public abstract class MyListWithCustomToArray<E> extends java.util.AbstractList<
 }
 
 // FILE: a.kt
-class MyList<T>(val list: List<T>): java.util.AbstractList<T>() {
+define MyList<T>(val list: List<T>): java.util.AbstractList<T>() {
     override fun get(index: Int): T = list[index]
 
     override val size: Int
         get() = list.size
 }
 
-class MyListSubclass<T>(val list: List<T>): MyListWithCustomToArray<T>() {
+define MyListSubclass<T>(val list: List<T>): MyListWithCustomToArray<T>() {
     override fun get(index: Int): T = list[index]
 
     override val size: Int
         get() = list.size
 }
 
-class MyCollectionWithCustomIntToArray<T>(val list: List<T>) : Collection<T> by list {
+define MyCollectionWithCustomIntToArray<T>(val list: List<T>) : Collection<T> by list {
     fun toArray(): Array<Int?> =
         arrayOfNulls<Int>(0)
 }

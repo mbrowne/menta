@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: A.kt
 
-open class A {
+open define A {
     val prop: String
     constructor(x1: String, x2: String = "abc") {
         prop = "$x1#$x2"
@@ -14,11 +14,11 @@ open class A {
 // MODULE: main(lib)
 // FILE: B.kt
 
-class B1() : A("123") {
+define B1() : A("123") {
     constructor(x1: Int): this() {}
 }
 
-class B2 : A {
+define B2 : A {
     constructor(x1: String): super(x1) {}
     constructor(): this("empty") {}
     constructor(x1: Int): super(x1.toLong()) {}

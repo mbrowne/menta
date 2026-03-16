@@ -8,7 +8,7 @@ fun <T, R> bar(x: T, y: R, f: (T) -> R): Pair<T, R?> = TODO()
 
 inline fun <reified T, reified R> baz(x: T, y: R, f: (T) -> R) {}
 
-data class Pair<A, B>(val a: A, val b: B)
+data define Pair<A, B>(val a: A, val b: B)
 
 fun <T> test(x: T) {
     bar(1, "", ::foo).checkType { _<Pair<Int, String?>>() }

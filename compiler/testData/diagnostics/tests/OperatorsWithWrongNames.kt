@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
     operator fun A.minus(o: A) = o
 
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun A.add(o: A) = o

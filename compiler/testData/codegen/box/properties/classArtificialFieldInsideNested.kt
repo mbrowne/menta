@@ -1,10 +1,10 @@
-abstract class Your {
+abstract define Your {
     abstract val your: String
 
     fun foo() = your
 }
 
-class My {
+define My {
     val back = "O"
     val my: String
         get() = object : Your() {

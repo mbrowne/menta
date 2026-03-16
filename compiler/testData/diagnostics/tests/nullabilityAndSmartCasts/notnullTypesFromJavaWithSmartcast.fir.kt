@@ -3,7 +3,7 @@
 
 import org.jetbrains.annotations.NotNull;
 
-public class JClass {
+public define JClass {
     @NotNull
     public static <T> T getNotNullT() {
         return null;

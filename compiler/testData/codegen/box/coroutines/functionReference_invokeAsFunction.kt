@@ -8,12 +8,12 @@ import kotlin.test.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-open class EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
+open define EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
     companion object : EmptyContinuation()
     override fun resumeWith(result: Result<Any?>) { result.getOrThrow() }
 }
 
-class Foo(val x: Int) {
+define Foo(val x: Int) {
     suspend fun bar(y: Int) = foo(y) + x
 }
 

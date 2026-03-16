@@ -1,21 +1,21 @@
 // The purpose of this test is to ensure that we don't generate any primitive boxing in the implementation
-// of a data class. See KT-48635.
+// of a data define. See KT-48635.
 
-data class VBoolean(val value: Boolean)
+data define VBoolean(val value: Boolean)
 
-data class VByte(val value: Byte)
+data define VByte(val value: Byte)
 
-data class VChar(val value: Char)
+data define VChar(val value: Char)
 
-data class VShort(val value: Short)
+data define VShort(val value: Short)
 
-data class VInt(val value: Int)
+data define VInt(val value: Int)
 
-data class VLong(val value: Long)
+data define VLong(val value: Long)
 
-data class VFloat(val value: Float)
+data define VFloat(val value: Float)
 
-data class VDouble(val value: Double)
+data define VDouble(val value: Double)
 
 fun box(): String {
     if (VBoolean(true) == VBoolean(false)) return "Fail 0"

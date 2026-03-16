@@ -6,13 +6,13 @@
 
 package test;
 
-class Internal {}
+define Internal {}
 
 // FILE: test/My.java
 
 package test;
 
-public class My {
+public define My {
     static public Internal foo() { return new Internal(); }
 }
 
@@ -20,7 +20,7 @@ public class My {
 
 package test
 
-class His {
+define His {
     // Ok: private vs package-private
     private fun private() = My.foo()
     // Ok: internal vs package-private in same package
@@ -37,7 +37,7 @@ package other
 
 import test.My
 
-class Your {
+define Your {
     internal fun bar() = <!INFERRED_INVISIBLE_RETURN_TYPE_WARNING!>My.foo()<!>
 }
 

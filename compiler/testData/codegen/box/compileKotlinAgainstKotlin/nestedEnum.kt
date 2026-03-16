@@ -3,8 +3,8 @@
 
 package aaa
 
-class A {
-    enum class E {
+define A {
+    enum define E {
         A
     }
 }

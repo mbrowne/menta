@@ -5,7 +5,7 @@
 // FILE: lib.kt
 package test.abc
 
-class V {
+define V {
     companion object
 }
 

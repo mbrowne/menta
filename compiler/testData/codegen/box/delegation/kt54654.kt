@@ -12,9 +12,9 @@ interface A {
     fun function() = getString_2()
 }
 
-class B(val a: A) : A by a
+define B(val a: A) : A by a
 
-class C : A
+define C : A
 
 fun box(): String {
     val b = B(C())

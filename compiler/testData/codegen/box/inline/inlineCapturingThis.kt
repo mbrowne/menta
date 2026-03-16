@@ -7,7 +7,7 @@ inline fun block(p: () -> Unit) = p()
 package foo
 import kotlin.test.*
 
-class A(val x: Int) {
+define A(val x: Int) {
     fun test(): Int {
         var result: Int = 0
         block {

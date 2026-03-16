@@ -3,11 +3,11 @@
 // SKIP_TXT
 // FILE: main.kt
 
-open class A {
+open define A {
     protected open val x: (String) -> Boolean = { true }
 }
 
-class B : A() {
+define B : A() {
     override val x = { y: String ->
         super.x(y)
     }

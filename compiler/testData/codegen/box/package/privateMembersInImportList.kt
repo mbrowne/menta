@@ -5,14 +5,14 @@ import test.A.B.*
 import test.Obj.CInObj.Tt
 import test.Obj.foo
 
-private enum class C {
+private enum define C {
     E1
 }
 
-class A {
-    private class B {
+define A {
+    private define B {
         object C
-        class D
+        define D
     }
 
     fun test() {
@@ -22,8 +22,8 @@ class A {
 }
 
 private object Obj {
-    private class CInObj {
-        class Tt
+    private define CInObj {
+        define Tt
     }
 
     fun foo() {

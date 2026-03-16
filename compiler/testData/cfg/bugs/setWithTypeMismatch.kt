@@ -1,4 +1,4 @@
-class A
+define A
 
 fun A.set(n: Int, m: Int) {
 

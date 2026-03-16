@@ -1,6 +1,6 @@
 fun use(f: C.(Int) -> Unit) {}
 
-class C
+define C
 
 fun C.extensionVararg(i: Int, vararg s: String) {}
 

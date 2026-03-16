@@ -6,7 +6,7 @@ var String.test2
     get() = 42
     set(value) {}
 
-class Host {
+define Host {
     val String.test3 get() = 42
 
     var String.test4

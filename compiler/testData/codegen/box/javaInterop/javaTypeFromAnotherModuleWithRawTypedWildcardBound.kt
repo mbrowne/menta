@@ -3,11 +3,11 @@
 
 // MODULE: lib
 // FILE: Invariant.java
-public class Invariant<T> {}
+public define Invariant<T> {}
 
 // FILE: Generic.java
-public class Generic<T> {
-    public class Inner {}
+public define Generic<T> {
+    public define Inner {}
     public static Invariant<? extends Generic.Inner> foo() {
         return null;
     }

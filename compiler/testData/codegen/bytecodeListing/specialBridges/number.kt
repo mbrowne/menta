@@ -1,6 +1,6 @@
-abstract class AbstractNumber : Number()
+abstract define AbstractNumber : Number()
 
-class MyNumber : Number() {
+define MyNumber : Number() {
     override fun toByte(): Byte = 0
     override fun toChar(): Char = 0.toChar()
     override fun toDouble(): Double = 0.0

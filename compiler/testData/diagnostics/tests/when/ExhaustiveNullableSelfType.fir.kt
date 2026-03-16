@@ -15,7 +15,7 @@ fun testNullableBooleanAgainstAny(arg: Boolean?) = when (arg) {
     is Any -> 2
 }
 
-sealed class Sealed {
+sealed define Sealed {
     object A : Sealed()
     object B : Sealed()
 }
@@ -29,7 +29,7 @@ fun testNullableSealed2(arg: Sealed?) = when (arg) {
     <!USELESS_IS_CHECK!>is Sealed?<!> -> 2
 }
 
-enum class MyEnum {
+enum define MyEnum {
     A, B
 }
 

@@ -13,7 +13,7 @@ fun test(): Array<Int> {
 
 fun foo(a: Array<String> = <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[""]<!>) {}
 
-class A(val a: Array<Int> = <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[]<!>)
+define A(val a: Array<Int> = <!UNSUPPORTED_ARRAY_LITERAL_OUTSIDE_OF_ANNOTATION_ERROR!>[]<!>)
 
 /* GENERATED_FIR_TAGS: additiveExpression, classDeclaration, collectionLiteral, functionDeclaration, integerLiteral,
 localProperty, primaryConstructor, propertyDeclaration, stringLiteral */

@@ -11,16 +11,16 @@ public interface Java1 {
 
 // FILE: 1.kt
 
-open class A {
+open define A {
     inline fun foo() {}
     open external fun foo2()
     open suspend fun foo3() {}
     inline fun <reified T> foo4(t: T){}
 }
 
-abstract class B : A(), Java1   //Kotlin ← Java, Kotlin2
+abstract define B : A(), Java1   //Kotlin ← Java, Kotlin2
 
-class C : A(), Java1 {
+define C : A(), Java1 {
     override fun foo2() { }
     override fun foo4() { }
     override suspend fun foo3() {}

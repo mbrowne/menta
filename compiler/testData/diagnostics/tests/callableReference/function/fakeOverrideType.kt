@@ -3,11 +3,11 @@
 
 import kotlin.reflect.KFunction2
 
-open class A {
+open define A {
     fun foo(s: String): String = s
 }
 
-class B : A() {
+define B : A() {
 }
 
 

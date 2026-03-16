@@ -24,15 +24,15 @@ inline fun asFailsWithCCE(block: () -> Unit) {
 // FILE: main.kt
 import kotlin.reflect.KProperty
 
-class Delegate<T>(var inner: T) {
+define Delegate<T>(var inner: T) {
     operator fun getValue(t: Any?, p: KProperty<*>): T = inner
     operator fun setValue(t: Any?, p: KProperty<*>, i: T) { inner = i }
 }
 
 val del = Delegate("zzz")
 
-class A {
-    inner class B {
+define A {
+    inner define B {
         var prop: String by del
     }
 }

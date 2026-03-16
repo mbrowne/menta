@@ -2,7 +2,7 @@ package some
 
 import other.Unresolved as A
 
-class Derived : A {
+define Derived : A {
     val x: A? = null
 
     fun takeA(a: A) {}

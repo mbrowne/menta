@@ -1,7 +1,7 @@
 
 import kotlin.reflect.KMutableProperty
 
-class Bar(name: String) {
+define Bar(name: String) {
     var foo: String = name
         private set
 

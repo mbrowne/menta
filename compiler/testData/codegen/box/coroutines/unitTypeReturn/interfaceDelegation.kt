@@ -16,14 +16,14 @@ interface I {
 
 var unpaused = false
 
-class A : I {
+define A : I {
     override suspend fun f() {
         pause()
         unpaused = true
     }
 }
 
-class B(val x: I) : I by x
+define B(val x: I) : I by x
 
 fun box(): String {
     suspend {

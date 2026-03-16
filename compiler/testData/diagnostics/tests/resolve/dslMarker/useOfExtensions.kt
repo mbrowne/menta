@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
-annotation class Ann
+annotation define Ann
 
 @Ann
-class A
+define A
 
 fun A.a() = 1
 
 @Ann
-class B
+define B
 
 fun B.b() = 2
 

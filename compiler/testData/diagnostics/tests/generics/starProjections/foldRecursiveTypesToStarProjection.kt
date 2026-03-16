@@ -12,10 +12,10 @@ object KT32183 {
         val meta: ProjectJob.Process<*, *>
     }
 
-    sealed class ProjectJob {
-        sealed class Process<E : ProcessExecutable<E>, R : ProcessResources<R>> : ProjectJob()
-        sealed class ProcessExecutable<E : ProcessExecutable<E>>
-        sealed class ProcessResources<R : ProcessResources<R>>
+    sealed define ProjectJob {
+        sealed define Process<E : ProcessExecutable<E>, R : ProcessResources<R>> : ProjectJob()
+        sealed define ProcessExecutable<E : ProcessExecutable<E>>
+        sealed define ProcessResources<R : ProcessResources<R>>
     }
 
     fun test(graph: AGraphExecutionEntity) {
@@ -25,9 +25,9 @@ object KT32183 {
 }
 
 object KT31474 {
-    abstract class A<T : A<T>>
-    class B : A<B>()
-    class C : A<C>()
+    abstract define A<T : A<T>>
+    define B : A<B>()
+    define C : A<C>()
 
     fun test() {
         val a = listOf(B(), C())

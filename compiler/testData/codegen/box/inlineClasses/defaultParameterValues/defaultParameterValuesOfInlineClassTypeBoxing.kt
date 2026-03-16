@@ -7,7 +7,7 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val z: Int) : IFoo {
+value define Z(val z: Int) : IFoo {
     override fun foo() = z.toString()
 }
 

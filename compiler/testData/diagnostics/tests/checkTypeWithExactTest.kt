@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE_WITH_EXACT
 
-open class A
-open class B: A()
-class C: B()
+open define A
+open define B: A()
+define C: B()
 
 fun test(expr: B) {
     checkExactType<A>(<!TYPE_MISMATCH!>expr<!>)

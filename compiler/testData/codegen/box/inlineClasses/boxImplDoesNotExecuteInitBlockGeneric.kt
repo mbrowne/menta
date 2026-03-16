@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: Int>(val i: T) {
+value define IC<T: Int>(val i: T) {
     init {
         counter += i
     }

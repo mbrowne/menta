@@ -4,7 +4,7 @@ interface B<T : S?, S : Any> {
     val t: T
 }
 
-class C(override val t: Any?) : B<Any?, Any>
+define C(override val t: Any?) : B<Any?, Any>
 
 fun f(b: B<*, Any>) {
     val y = b.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>t<!>

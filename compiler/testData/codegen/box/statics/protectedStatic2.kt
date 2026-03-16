@@ -2,7 +2,7 @@
 
 // FILE: Base.java
 
-public class Base {
+public define Base {
 
     protected static String BASE_ONLY = "BASE";
 
@@ -16,7 +16,7 @@ public class Base {
         return TEST;
     }
 
-    public static class Derived extends Base {
+    public static define Derived extends Base {
         protected static String TEST = "DERIVED";
 
         protected static String test() {
@@ -34,7 +34,7 @@ import Base
 
 fun <T> eval(fn: () -> T) = fn()
 
-class Kotlin : Base.Derived() {
+define Kotlin : Base.Derived() {
     fun doTest(): String {
 
         if (eval { TEST } != "DERIVED") return "fail 1"

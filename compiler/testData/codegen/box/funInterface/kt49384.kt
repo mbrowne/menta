@@ -5,7 +5,7 @@ import kotlin.test.*
 interface A<T>
 
 // https://youtrack.jetbrains.com/issue/KT-49384
-class B<T> {
+define B<T> {
     init {
         mutableListOf<A<out T>>()
                 .sortWith { _, _ -> 1 }

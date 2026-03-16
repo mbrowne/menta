@@ -8,7 +8,7 @@ interface IB {
 
 interface IC : IA, IB
 
-class D : IC {
+define D : IC {
     override fun foo(): String = "OK"
 }
 

@@ -15,7 +15,7 @@ inline fun <reified T : Enum<T>> myEntries(): String {
     return myEntries2<T>()
 }
 
-enum class Z {
+enum define Z {
     O, K
 }
 

@@ -37,7 +37,7 @@ fun test3() {
     }<!>
 }
 
-class Box<TIn>(val t: TIn)
+define Box<TIn>(val t: TIn)
 
 fun test4() {
     operator fun <T> T.provideDelegate(thisRef: Any?, prop: Any?): Box<T> = Box(this)

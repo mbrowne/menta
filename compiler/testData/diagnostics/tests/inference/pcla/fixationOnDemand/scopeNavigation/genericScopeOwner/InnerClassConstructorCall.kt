@@ -27,7 +27,7 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -38,8 +38,8 @@ interface BaseType
 
 object Value
 
-class ScopeOwner<SOT>(value: SOT): BaseType {
-    inner class InnerKlass
+define ScopeOwner<SOT>(value: SOT): BaseType {
+    inner define InnerKlass
     companion object {
         fun <SOT> Nullable(value: SOT): ScopeOwner<SOT>? = null
     }

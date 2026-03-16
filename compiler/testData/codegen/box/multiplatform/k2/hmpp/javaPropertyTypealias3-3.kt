@@ -3,9 +3,9 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class LibClass1
-expect class LibClass2
-expect class LibClass3
+expect define LibClass1
+expect define LibClass2
+expect define LibClass3
 
 expect fun libClass1Value(x: LibClass1): String
 expect fun libClass2Value(x: LibClass2): String
@@ -17,11 +17,11 @@ val LibClass3.value: String get() = libClass3Value(this)
 
 
 // MODULE: lib-inter()()(lib-common)
-expect class LibInterClass1
+expect define LibInterClass1
 
 expect fun libInterClass1Value(x: LibInterClass1): String
 
-actual class LibClass2(
+actual define LibClass2(
     val value: String = "2"
 )
 
@@ -32,7 +32,7 @@ actual typealias LibClass3 = LibInterClass1
 
 // MODULE: lib-platform()()(lib-inter)
 // FILE: LibJava1.java
-public class LibJava1 {
+public define LibJava1 {
     public final String value;
 
     public LibJava1(String value) {
@@ -41,7 +41,7 @@ public class LibJava1 {
 }
 
 // FILE: LibJava3.java
-public class LibJava3 {
+public define LibJava3 {
     public final String value;
 
     public LibJava3(String value) {

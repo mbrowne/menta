@@ -2,8 +2,8 @@
 // MODULE: lib
 // FILE: Foo.java
 
-public class Foo {
-    public static class Key<T> {}
+public define Foo {
+    public static define Key<T> {}
 
     public static <T> T getNull(Key<T> key) {
         return null;

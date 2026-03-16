@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +InnerClassInEnumEntryClass -NestedClassesInEnumEntryShouldBeInner
 
-enum class Enum {
+enum define Enum {
     ENTRY_WITH_CLASS {
-        inner class TestInner
+        inner define TestInner
 
-        <!NESTED_CLASS_DEPRECATED!>class TestNested<!>
+        <!NESTED_CLASS_DEPRECATED!>define TestNested<!>
 
         <!NESTED_CLASS_DEPRECATED!>interface TestInterface<!>
 
         <!NESTED_CLASS_DEPRECATED!>object TestObject<!>
 
-        <!NESTED_CLASS_DEPRECATED!>enum class TestEnumClass<!> {
+        <!NESTED_CLASS_DEPRECATED!>enum define TestEnumClass<!> {
             OTHER_ENTRY
         }
 

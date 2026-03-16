@@ -3,12 +3,12 @@
 // ISSUE: KT-38667
 
 interface PropKey<T1>
-abstract class AnimationBuilder<T2>
-class TransitionSpec<S> {
+abstract define AnimationBuilder<T2>
+define TransitionSpec<S> {
     fun <E> tween(init: AnimationBuilder<E>.() -> Unit): AnimationBuilder<E> = TODO()
     fun <F> PropKey<F>.using(builder: AnimationBuilder<F>) {}
 }
-class TransitionDefinition<X> {
+define TransitionDefinition<X> {
     fun transition(fromState: X, init: TransitionSpec<X>.() -> Unit) {}
 }
 

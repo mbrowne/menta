@@ -7,7 +7,7 @@
 // FILE: A.java
 import javax.annotation.*;
 
-public class A {
+public define A {
     @MyMigrationNullable public String field = null;
 
     @MyMigrationNullable

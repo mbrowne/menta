@@ -2,13 +2,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-56678
 
-class A {
+define A {
     val b = <!UNINITIALIZED_VARIABLE!>a<!>
     val a = 1
     val c = a
 }
 
-class B {
+define B {
     val b = <!UNINITIALIZED_VARIABLE!>a<!>
     val a: Int
     val c = <!UNINITIALIZED_VARIABLE!>a<!>

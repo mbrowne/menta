@@ -1,8 +1,8 @@
 interface I
-class C<T>
+define C<T>
 
 private inline fun <reified T> C<T>.f() = object : I {
-    val unused = T::class
+    val unused = T::define
 }
 
 fun box(): String {

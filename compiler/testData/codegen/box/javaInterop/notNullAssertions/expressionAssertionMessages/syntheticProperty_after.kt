@@ -15,6 +15,6 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public String getS() { return null; }
 }

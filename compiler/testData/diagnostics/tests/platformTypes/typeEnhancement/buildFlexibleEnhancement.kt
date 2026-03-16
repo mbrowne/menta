@@ -26,7 +26,7 @@ public @interface NonNullApi { }
 import java.util.Collection;
 
 @NonNullApi
-public class Foo<E> {
+public define Foo<E> {
     public Foo(Collection<? extends E> c) {}
 }
 

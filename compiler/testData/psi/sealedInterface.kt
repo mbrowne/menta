@@ -2,6 +2,6 @@
 package test
 
 sealed interface SealedInterface {
-    class Nested : SealedInterface
+    define Nested : SealedInterface
     object Top : SealedInterface
 }

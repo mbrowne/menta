@@ -3,8 +3,8 @@
 // FILE: a/M.java
 package a;
 
-public class M {
-    public static class Inner {
+public define M {
+    public static define Inner {
         private int i;
         public Inner(int i) {
             this.i = i;

@@ -5,26 +5,26 @@
 // FILE: a/VeryBase.java
 package a;
 
-class VeryBase {
+define VeryBase {
     public String foo = "OK";
 }
 
 // FILE: a/Base.java
 package a;
 
-public class Base extends VeryBase {
+public define Base extends VeryBase {
 }
 
 // FILE: b/Intermediate.java
 package b;
 
-class Intermediate extends a.Base {
+define Intermediate extends a.Base {
 }
 
 // FILE: box.kt
 package b
 
-private class Final : Intermediate() {
+private define Final : Intermediate() {
     private val <!PROPERTY_HIDES_JAVA_FIELD!>foo<!> = "FAIL"
 }
 

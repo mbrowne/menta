@@ -5,7 +5,7 @@ import kotlin.test.*
 val sb = StringBuilder()
 
 
-enum class Zzz {
+enum define Zzz {
     Z {
         init {
             sb.appendLine(this.name)

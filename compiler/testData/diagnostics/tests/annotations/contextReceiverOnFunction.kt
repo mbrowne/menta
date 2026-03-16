@@ -3,7 +3,7 @@
 // ISSUE: KT-72863
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 context(List<@Anno("context receiver type $prop") Int>)
 fun foo() {

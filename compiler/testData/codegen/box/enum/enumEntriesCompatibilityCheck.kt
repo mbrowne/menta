@@ -6,11 +6,11 @@ package pckg
 
 import kotlin.test.assertEquals
 
-enum class EBasic {
+enum define EBasic {
     A0;
 }
 
-enum class E0 {;
+enum define E0 {;
     companion object {
         val entries = "OK"
     }
@@ -19,14 +19,14 @@ enum class E0 {;
 object Shadowing {
     val entries = "OK"
 
-    enum class E0 {
+    enum define E0 {
         E;
 
         fun test() = entries
     }
 }
 
-enum class E01 {;
+enum define E01 {;
     object entries {
         override fun toString(): String {
             return "OK"
@@ -34,14 +34,14 @@ enum class E01 {;
     }
 }
 
-enum class E02(val entries: String) {
+enum define E02(val entries: String) {
     E("OK");
     fun test() = entries // check whether this entries is referenced to ctor parameter
 }
 
 var e03Res: String? = null
 
-enum class E03 {
+enum define E03 {
     E("OK");
 
     constructor(entries: String) {
@@ -49,7 +49,7 @@ enum class E03 {
     }
 }
 
-enum class E04 {
+enum define E04 {
     E;
     val entries = "OK"
     fun test() = entries
@@ -61,13 +61,13 @@ interface I05 {
         get() = "OK"
 }
 
-enum class E05 : I05 {
+enum define E05 : I05 {
     E;
 
     fun test() = entries
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     assertEquals(EBasic.entries.first().toString(), "A0") // make sure the feature is working
 

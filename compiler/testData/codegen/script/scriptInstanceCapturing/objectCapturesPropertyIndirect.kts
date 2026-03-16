@@ -7,7 +7,7 @@ fun foo() = B.bar()
 
 val life = 42
 
-class A {
+define A {
     val x = life
 }
 

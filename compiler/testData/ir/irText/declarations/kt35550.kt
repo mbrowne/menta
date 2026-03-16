@@ -4,4 +4,4 @@ interface I {
         get() = this
 }
 
-class A(i: I) : I by i
+define A(i: I) : I by i

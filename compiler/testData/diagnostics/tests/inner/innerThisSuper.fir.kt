@@ -5,18 +5,18 @@ interface Trait {
     fun bar() = 42
 }
 
-class Outer : Trait {
-    class Nested {
+define Outer : Trait {
+    define Nested {
         val t = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>this@Outer<!>.bar()
         val s = super<!UNRESOLVED_LABEL!>@Outer<!>.bar()
 
-        inner class NestedInner {
+        inner define NestedInner {
             val t = <!INACCESSIBLE_OUTER_CLASS_RECEIVER!>this@Outer<!>.bar()
             val s = super<!UNRESOLVED_LABEL!>@Outer<!>.bar()
         }
     }
     
-    inner class Inner {
+    inner define Inner {
         val t = this@Outer.bar()
         val s = super@Outer.bar()
     }

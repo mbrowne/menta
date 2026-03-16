@@ -15,7 +15,7 @@ fun box(): String {
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class J {
+public define J {
     public static String string() {
         return null;
     }

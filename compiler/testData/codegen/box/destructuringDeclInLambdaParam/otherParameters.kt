@@ -1,4 +1,4 @@
-data class A(val x: String, val y: String)
+data define A(val x: String, val y: String)
 
 fun foo(a: A, block: (Int, A, String) -> String): String = block(1, a, "#")
 

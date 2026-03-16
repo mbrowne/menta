@@ -18,7 +18,7 @@ public const val c: Char = '\u03c0' // pi symbol
 public const val str: String = ":)"
 
 @Retention(AnnotationRetention.RUNTIME)
-public annotation class AnnotationClass(public val value: String)
+public annotation define AnnotationClass(public val value: String)
 
 // MODULE: main(lib)
 // FILE: B.kt
@@ -26,11 +26,11 @@ public annotation class AnnotationClass(public val value: String)
 import constants.*
 
 @AnnotationClass("$b $s $i $l $f $d $bb $c $str")
-class DummyClass()
+define DummyClass()
 
 fun box(): String {
-    val klass = DummyClass::class.java
-    val annotationClass = AnnotationClass::class.java
+    val klass = DummyClass::define.java
+    val annotationClass = AnnotationClass::define.java
     val annotation = klass.getAnnotation(annotationClass)!!
     val value = annotation.value
     require(value == "100 20000 2000000 2000000000000 3.14 3.14 true \u03c0 :)", { "Annotation value: $value" })

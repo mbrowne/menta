@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-abstract class SubFunction : kotlin.Function0<Unit>
+abstract define SubFunction : kotlin.Function0<Unit>
 
 fun <T> takeIt(x: T, f: SubFunction) {}
 

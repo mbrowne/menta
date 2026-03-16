@@ -9,9 +9,9 @@ package a
 import checkSubtype
 
 interface MyType {}
-class MyClass<T> : MyType {}
+define MyClass<T> : MyType {}
 
-public open class HttpResponse() {
+public open define HttpResponse() {
     public open fun <T> parseAs(dataClass : MyClass<T>) : T {
         throw Exception()
     }

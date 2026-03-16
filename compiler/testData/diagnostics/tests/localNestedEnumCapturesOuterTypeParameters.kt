@@ -2,10 +2,10 @@
 // ISSUE: KT-77149
 
 fun foo() {
-    abstract class ShorteningProcessor<TElement> {
+    abstract define ShorteningProcessor<TElement> {
         fun analyzeCollectedElements() = E.A == E.A
 
-        <!WRONG_MODIFIER_TARGET!>enum<!> class E {
+        <!WRONG_MODIFIER_TARGET!>enum<!> define E {
             A;
         }
     }

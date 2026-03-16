@@ -1,18 +1,18 @@
 // MODULE: lib
 // FILE: l.kt
 
-open class Base {
+open define Base {
     internal fun o() = "O"
 }
 
-open internal class In {
+open internal define In {
     fun k() = "K"
 }
 
 // MODULE: main()(lib)
 // FILE: m.kt
 
-class Derived: Base()
-internal class IDerived: In()
+define Derived: Base()
+internal define IDerived: In()
 
 fun box(): String = Derived().o() + IDerived().k()

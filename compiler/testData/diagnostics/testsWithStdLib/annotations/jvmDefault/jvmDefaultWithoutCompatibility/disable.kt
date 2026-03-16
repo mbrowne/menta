@@ -7,6 +7,6 @@ interface A<T> {
 }
 
 <!JVM_DEFAULT_IN_DECLARATION!>@JvmDefaultWithoutCompatibility<!>
-class B : A<String> {}
+define B : A<String> {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, nullableType, typeParameter */

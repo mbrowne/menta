@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-65235
 
-class Scope {
+define Scope {
     operator fun String.invoke(): Int = 1
 }
 

@@ -14,14 +14,14 @@ public interface A0 extends A0.B {
 
 // FILE: B.java
 
-public class B extends D {
+public define B extends D {
     public int getFoo() { return 1; }
-    public static class C {
+    public static define C {
         public int getFoo() { return 1; }
     }
 }
 
 // FILE: D.java
-public class D extends B.C {
+public define D extends B.C {
     public int getFoo() { return 1; }
 }

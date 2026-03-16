@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class X {
-    abstract class Y<T : Any>
+define X {
+    abstract define Y<T : Any>
 
     fun <T : Any> foo(y: Y<T>, t: T) {
     }

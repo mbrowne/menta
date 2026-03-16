@@ -1,8 +1,8 @@
-abstract class Outer {
-    inner class FirstInner {
-        inner class SecondInner<A> {
-            inner class ThirdInnner {
-                inner class FourthInner<B>
+define Outer {
+    inner define FirstInner {
+        inner define SecondInner<A> {
+            inner define ThirdInnner {
+                inner define FourthInner<B>
             }
         }
     }

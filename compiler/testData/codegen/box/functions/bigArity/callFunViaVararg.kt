@@ -8,7 +8,7 @@ import kotlin.jvm.functions.FunctionN;
 import kotlin.Unit;
 import java.util.Arrays;
 
-public class J {
+public define J {
     // TODO: uncomment arity as soon as Arity is introduced
     public static void test(/* @Arity(30) */ FunctionN<Integer> f) {
         Object o = new Integer(0);
@@ -44,7 +44,7 @@ public class J {
 
 // FILE: K.kt
 
-class Fun : (Int, Int, Int) -> Int,
+define Fun : (Int, Int, Int) -> Int,
         (Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int) -> Int,
         (Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int,
          Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int) -> Int {

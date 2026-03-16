@@ -4,7 +4,7 @@ var toc = "second"
     get() = field
 
 
-class X() {
+define X() {
     val bar = "third"
     var muc = 19
     var toc = "fourth"

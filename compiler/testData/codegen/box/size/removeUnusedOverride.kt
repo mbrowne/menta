@@ -9,11 +9,11 @@ interface I {
     fun foo() = "OK"
 }
 
-abstract class A : I
+abstract define A : I
 
-class B : A()
+define B : A()
 
-class C : A() {
+define C : A() {
     override fun foo(): String {
         return "C::foo"
     }

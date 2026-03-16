@@ -6,33 +6,33 @@
 // FILE: common.kt
 
 <!CONFLICTING_OVERLOADS{JVM}!>fun foo()<!> {}
-class <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>Foo<!>
+define <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>Foo<!>
 
-open class Base {
+open define Base {
     open fun foo() {}
 }
-expect class Bar : Base {
+expect define Bar : Base {
 }
 
-expect open class ExpectBase {
+expect open define ExpectBase {
     open fun foo()
 }
-expect class Baz : ExpectBase
+expect define Baz : ExpectBase
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
 <!CONFLICTING_OVERLOADS!>actual fun <!ACTUAL_WITHOUT_EXPECT!>foo<!>()<!> {}
-actual class <!ACTUAL_WITHOUT_EXPECT, PACKAGE_OR_CLASSIFIER_REDECLARATION!>Foo<!>
+actual define <!ACTUAL_WITHOUT_EXPECT, PACKAGE_OR_CLASSIFIER_REDECLARATION!>Foo<!>
 
-actual class Bar : Base() {
+actual define Bar : Base() {
     actual override fun <!ACTUAL_WITHOUT_EXPECT!>foo<!>() {}
 }
 
-actual open class ExpectBase {
+actual open define ExpectBase {
     actual open fun foo() {}
 }
-actual class Baz : ExpectBase() {
+actual define Baz : ExpectBase() {
     actual override fun <!ACTUAL_WITHOUT_EXPECT!>foo<!>() {}
 }
 

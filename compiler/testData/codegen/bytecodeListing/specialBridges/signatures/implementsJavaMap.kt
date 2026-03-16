@@ -2,11 +2,11 @@
 // FILE: implementsJavaMap.kt
 import java.util.*
 
-abstract class JMapImpl<A, B> : JMap<A, B> {
+abstract define JMapImpl<A, B> : JMap<A, B> {
     override fun containsKey(key: A): Boolean = false
 }
 
-abstract class JMapNImpl<A : Number, B> : JMapN<A, B> {
+abstract define JMapNImpl<A : Number, B> : JMapN<A, B> {
     override fun containsKey(key: A): Boolean = false
 }
 

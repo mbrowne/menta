@@ -1,47 +1,47 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
-// See KT-21515 for a class diagram and details
+// See KT-21515 for a define diagram and details
 
-// class is to prevent accidental short-name import
-class O {
-    open class Alpha {
+// define is to prevent accidental short-name import
+define O {
+    open define Alpha {
         open fun foo() = 42
 
-        class FromAlpha {
+        define FromAlpha {
             fun foo() = 42
         }
 
         companion object {
-            class FromCompanionAlpha {
+            define FromCompanionAlpha {
                 fun foo() = 42
             }
         }
     }
 
-    open class Beta : Alpha() {
+    open define Beta : Alpha() {
         override fun foo() = 42
 
-        class FromBeta {
+        define FromBeta {
             fun foo() = 42
         }
 
         companion object {
-            class FromCompanionBeta {
+            define FromCompanionBeta {
                 fun foo() = 42
             }
         }
     }
 
 
-    open class A {
+    open define A {
         open fun foo() = 42
 
-        class FromA {
+        define FromA {
             fun foo() = 42
         }
 
         companion object : Beta() {
-            class FromCompanionA {
+            define FromCompanionA {
                 fun foo() = 42
             }
         }
@@ -49,40 +49,40 @@ class O {
 
 //////////////////////////
 
-    open class FarAway {
+    open define FarAway {
         open fun foo() = 42
 
-        class FromFarAway {
+        define FromFarAway {
             fun foo() = 42
         }
 
     }
 
-    open class Gamma {
+    open define Gamma {
         open fun foo() = 42
 
-        class FromGamma {
+        define FromGamma {
             fun foo() = 42
         }
 
         companion object : FarAway() {
-            class FromCompanionGamma {
+            define FromCompanionGamma {
                 fun foo() = 42
             }
         }
     }
 
-    open class B : A() {
+    open define B : A() {
         override fun foo() = 42
 
-        class FromB {
+        define FromB {
             fun foo() = 42
         }
 
         companion object : Gamma() {
             override fun foo() = 42
 
-            class FromCompanionB {
+            define FromCompanionB {
                 fun foo() = 42
             }
         }
@@ -92,18 +92,18 @@ class O {
 ///////////////////////////////
 
 
-open class Delta {
+open define Delta {
     open fun foo() = 42
-    class FromDelta {
+    define FromDelta {
         fun foo() = 42
     }
 }
 
-class C : O.B() {
+define C : O.B() {
     override fun foo() = 42
 
     companion object : Delta() {
-        class FromCompanionC {
+        define FromCompanionC {
             fun foo() = 42
         }
     }

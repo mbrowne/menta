@@ -8,7 +8,7 @@
  * expressions, when-expression, exhaustive-when-expressions -> paragraph 2 -> sentence 10
  */
 
-enum class E { A, B }
+enum define E { A, B }
 
 fun foo(e: E, something: Any?): Int {
     if (something != null) return 0

@@ -1,10 +1,10 @@
-open class A(val s: String) {
+open define A(val s: String) {
 
     val z = s
 
     fun test() = s
 
-    open inner class B(s: String): A(s) {
+    open inner define B(s: String): A(s) {
         fun testB() = z + test()
     }
 }

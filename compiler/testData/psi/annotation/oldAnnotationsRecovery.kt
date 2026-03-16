@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-[data(1)] class A {
+[data(1)] define A {
     fun foo() {
         [inline] fun bar() {
             return 1

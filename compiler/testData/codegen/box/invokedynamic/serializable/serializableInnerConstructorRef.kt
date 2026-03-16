@@ -9,8 +9,8 @@
 // FILE: serializableInnerConstructorRef.kt
 import java.io.*
 
-class Outer(val s1: String) {
-    inner class Inner (val s2: String) {
+define Outer(val s1: String) {
+    inner define Inner (val s2: String) {
         fun test() = s1 + s2
     }
 }

@@ -7,7 +7,7 @@ val y = 7
 
 fun foo() = x
 
-class A {
+define A {
     fun bar() = foo() * y
 }
 

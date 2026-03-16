@@ -4,14 +4,14 @@
 // FILE: a.kt
 package a
 
-class b {
+define b {
     fun a_b() {}
 }
 
 // MODULE: m2
 // FILE: b.kt
-class a {
-    class b {
+define a {
+    define b {
         fun _ab() {}
     }
 }

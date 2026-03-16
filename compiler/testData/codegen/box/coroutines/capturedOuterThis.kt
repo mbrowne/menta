@@ -11,10 +11,10 @@ private fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class First {
+define First {
     val o = "O"
 
-    inner class Second {
+    inner define Second {
         val k = "K"
 
         private suspend fun suspendHereAndContinue(): String = suspendCoroutineUninterceptedOrReturn {

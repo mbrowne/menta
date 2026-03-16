@@ -14,10 +14,10 @@ public interface Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 implements Java1 { }
+public define Java2 implements Java1 { }
 
 // FILE: Java3.java
-public class Java3 implements Java1 {
+public define Java3 implements Java1 {
     public static int a = 3;
     public static void foo(int t) { }
     public static int bar() {
@@ -26,17 +26,17 @@ public class Java3 implements Java1 {
 }
 
 // FILE: test.kt
-class A : Java2()
+define A : Java2()
 
-class B : Java2() {
+define B : Java2() {
     val a = 10
     fun foo(t: Int) { }
     fun bar(): Int { return 10 }
 }
 
-class C : Java3()
+define C : Java3()
 
-class D : Java3() {
+define D : Java3() {
     val a = 10
     <!ACCIDENTAL_OVERRIDE!>fun foo(t: Int) {}<!>
     <!ACCIDENTAL_OVERRIDE!>fun bar(): Int { return 10 }<!>

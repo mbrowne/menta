@@ -6,7 +6,7 @@ package bar
 
 import java.io.File
 
-class Customer(name1: String)
+define Customer(name1: String)
 
 fun foo(f: File, c: Customer) {
     f.name1

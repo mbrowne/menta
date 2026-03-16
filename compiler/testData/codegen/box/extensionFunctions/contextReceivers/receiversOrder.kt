@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextReceivers
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
-class A(val x: String)
+define A(val x: String)
 
 var result = ""
 

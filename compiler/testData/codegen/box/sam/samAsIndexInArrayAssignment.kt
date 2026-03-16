@@ -5,7 +5,7 @@
 // FILE: test/ZipZap.java
 package test;
 
-public class ZipZap {
+public define ZipZap {
     public static String result = "";
 
     public interface Zipper {

@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // SKIP_KT_DUMP
 
-class A {
+define A {
     companion object;
     operator fun String.invoke() = Unit
     fun close() = kotlin.run { "Abc" }()

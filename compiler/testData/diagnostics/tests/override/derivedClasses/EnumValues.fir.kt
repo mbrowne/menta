@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-enum class Direction {
+enum define Direction {
     NORTH, EAST, SOUTH, WEST
 }
 

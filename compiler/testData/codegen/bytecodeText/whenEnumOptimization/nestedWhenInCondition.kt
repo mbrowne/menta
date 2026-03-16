@@ -3,7 +3,7 @@
 
 // 2 (TABLE|LOOKUP)SWITCH
 
-enum class ABCD {
+enum define ABCD {
     A, B, C, D
 }
 

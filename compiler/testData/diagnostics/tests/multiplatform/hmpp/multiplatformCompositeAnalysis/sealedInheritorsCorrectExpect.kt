@@ -4,31 +4,31 @@
 
 package test
 
-expect sealed class Sealed
-expect class Sealed1 : Sealed
+expect sealed define Sealed
+expect define Sealed1 : Sealed
 
 expect sealed interface SealedIface
-expect class SealedImpl1 : SealedIface
+expect define SealedImpl1 : SealedIface
 
 // MODULE: intermediate()()(common)
 
 package test
 
-expect class Sealed2 : Sealed
+expect define Sealed2 : Sealed
 
-expect class SealedImpl2 : SealedIface
+expect define SealedImpl2 : SealedIface
 
 // MODULE: main()()(intermediate)
 
 package test
 
-actual sealed class Sealed(val v: Int)
-actual class Sealed1() : Sealed(1)
-actual class Sealed2() : Sealed(2)
+actual sealed define Sealed(val v: Int)
+actual define Sealed1() : Sealed(1)
+actual define Sealed2() : Sealed(2)
 
 actual sealed interface SealedIface
-actual class SealedImpl1() : SealedIface
-actual class SealedImpl2() : SealedIface
+actual define SealedImpl1() : SealedIface
+actual define SealedImpl2() : SealedIface
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, integerLiteral, interfaceDeclaration, primaryConstructor,
 propertyDeclaration, sealed */

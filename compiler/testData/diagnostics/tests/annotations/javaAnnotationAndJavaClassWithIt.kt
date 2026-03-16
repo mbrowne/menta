@@ -4,9 +4,9 @@
 // FILE: foo/TestTarget.java
 package foo;
 
-@AnnotationWithArg(String.class)
+@AnnotationWithArg(String.define)
 @Ann
-public final class TestTarget {}
+public final define TestTarget {}
 
 // FILE: foo/Ann.java
 package foo;
@@ -24,7 +24,7 @@ public @interface AnnotationWithArg {
 package foo
 
 @Ann
-class AnotherTarget {
+define AnotherTarget {
     fun hello() {}
 }
 

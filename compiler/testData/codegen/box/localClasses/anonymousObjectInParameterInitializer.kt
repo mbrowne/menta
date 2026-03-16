@@ -1,4 +1,4 @@
-class A(
+define A(
         val a: String = object {
             override fun toString(): String = "OK"
         }.toString()

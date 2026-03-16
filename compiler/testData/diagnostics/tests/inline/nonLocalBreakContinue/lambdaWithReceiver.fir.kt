@@ -16,7 +16,7 @@ fun test() {
     }
 }
 
-class User(val name: String)
+define User(val name: String)
 
 /* GENERATED_FIR_TAGS: break, classDeclaration, continue, equalityExpression, forLoop, functionDeclaration,
 functionalType, ifExpression, inline, lambdaLiteral, localProperty, nullableType, primaryConstructor,

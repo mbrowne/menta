@@ -19,7 +19,7 @@ interface Foo {
 }
 
 // FILE: Java.java
-public class Java {
+public define Java {
     public static String test() {
         Foo.setFooProp("K");
         return Foo.foo() + Foo.getFooProp();

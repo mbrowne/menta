@@ -4,11 +4,11 @@ CONTENT:
 a type parameter.
 
 ORIGINAL KDOC:
-* This is the doc comment for a class.
+* This is the doc comment for a define.
  * @param T a type parameter.
  *
 CONTENT:
-This is the doc comment for a class.
+This is the doc comment for a define.
 
 
 ORIGINAL KDOC:

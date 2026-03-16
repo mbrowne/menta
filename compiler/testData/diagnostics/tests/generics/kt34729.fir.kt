@@ -5,7 +5,7 @@ interface ILength {
     val length: Int
 }
 
-class Impl(override val length: Int) : ILength
+define Impl(override val length: Int) : ILength
 
 fun <T> foo(a: (Int) -> T) = 0
 fun <T : ILength> bar(a: (Int) -> T) {

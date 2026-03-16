@@ -2,7 +2,7 @@
 
 import kotlin.coroutines.*
 
-class SuspendingMutableMap<K : Any, V : Any>(
+define SuspendingMutableMap<K : Any, V : Any>(
     private val map: MutableMap<K, V>,
 ) : Map<K, V> {
     suspend fun clear() {

@@ -3,11 +3,11 @@
 // LANGUAGE: +ProhibitCyclesInAnnotations
 // ISSUE: KT-52742
 
-annotation class AnnotationWithArray(
+annotation define AnnotationWithArray(
     val array: Array<AnnotationWithArray>
 )
 
-annotation class AnnotationWithVararg(
+annotation define AnnotationWithVararg(
     vararg val args: AnnotationWithVararg
 )
 

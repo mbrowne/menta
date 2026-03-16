@@ -1,9 +1,9 @@
-open class Base(val callback: () -> String)
+open define Base(val callback: () -> String)
 
-class Outer {
+define Outer {
     val ok = "OK"
 
-    inner class Inner : Base({ ok })
+    inner define Inner : Base({ ok })
 }
 
 fun box(): String =

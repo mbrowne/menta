@@ -1,8 +1,8 @@
-class A {
-    class B
+define A {
+    define B
     companion object
     object C
-    inner class D
+    inner define D
 }
 
 fun A.B.foo(): Boolean {

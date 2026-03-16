@@ -6,7 +6,7 @@
 // FILE: main.kt
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R> build(block: TestInterface<R>.() -> Unit): R = TODO()
 
 interface TestInterface<R> {

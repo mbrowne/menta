@@ -1,12 +1,12 @@
-class A {
+define A {
     val z: String = "OK"
 }
 
-class B {
+define B {
     operator fun A.invoke(): String = z
 }
 
-class ClassB {
+define ClassB {
     val x = A()
 
     fun B.test(): String {

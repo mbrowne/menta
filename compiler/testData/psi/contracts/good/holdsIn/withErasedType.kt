@@ -1,5 +1,5 @@
 // LANGUAGE: +HoldsInContracts, +AllowCheckForErasedTypesInContracts
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 import kotlin.contracts.*
 
 inline fun <T> runIfIs(value: Any, block: () -> Unit) {

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(private val i: T) {
+value define Z<T: Int>(private val i: T) {
     fun toByteArray() = ByteArray(1) { i.toByte() }
 }
 

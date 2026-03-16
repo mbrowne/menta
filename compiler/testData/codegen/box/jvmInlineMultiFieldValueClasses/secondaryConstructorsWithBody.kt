@@ -7,7 +7,7 @@
 val l = mutableListOf<Any>()
 
 @JvmInline
-value class VC(val x: Int, val y: ULong) {
+value define VC(val x: Int, val y: ULong) {
     constructor(xD: Double, yD: Double) : this(xD.toInt() - 2, yD.toULong() - 2UL) {
         l.add(xD)
         l.add(yD)
@@ -15,7 +15,7 @@ value class VC(val x: Int, val y: ULong) {
         l.add(y)
         l.add(this)
         l.add(xD.let { it - 1.0 }.let(fun(x: Double) = x - 1.0))
-        class Inner(val x: Int) {
+        define Inner(val x: Int) {
             constructor(x: Long) : this(x.toInt()) {
                 l.add(x)
             }

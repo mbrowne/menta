@@ -3,24 +3,24 @@
 // FILE: a/a.java
 package a;
 
-public class a {}
+public define a {}
 
 // FILE: a/b.java
 package a;
 
-public class b {
+public define b {
     public void a_b() {}
 }
 
 // FILE: test/a.java
 package test;
 
-public class a {}
+public define a {}
 
 // FILE: test/d.java
 package test;
 
-public class d {
+public define d {
     public a.b getB() { return null; }
 }
 
@@ -34,7 +34,7 @@ package test;
 
 import a.a;
 
-public class c {
+public define c {
     public static a getA() { return null; }
 }
 

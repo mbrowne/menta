@@ -5,7 +5,7 @@ interface I<T> {
     fun foo(p: T)
 }
 
-class C : I<Nothing> {
+define C : I<Nothing> {
     override fun foo(p: Nothing) {
         println(p.toString())
     }

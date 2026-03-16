@@ -7,7 +7,7 @@ package a
 import checkType
 import _
 
-class B(x: String)
+define B(x: String)
 typealias A1 = B
 private typealias A2 = B
 private typealias A3 = B

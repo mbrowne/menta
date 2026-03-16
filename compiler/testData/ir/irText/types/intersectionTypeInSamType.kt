@@ -19,11 +19,11 @@ fun interface IBar2<T> where T : X, T : Z {
 
 fun <T> sel(x: T, y: T) = x
 
-class G1<T : X> {
+define G1<T : X> {
     fun checkFoo(x: IFoo<in T>) {}
 }
 
-class G2<T> where T : X, T : Z {
+define G2<T> where T : X, T : Z {
     fun checkFoo(x: IFoo<in T>) {}
     fun checkBar1(x: IBar1<in T>) {}
     fun checkBar2(x: IBar2<in T>) {}

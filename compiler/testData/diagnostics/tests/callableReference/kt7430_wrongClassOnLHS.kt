@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 
-class Unrelated()
+define Unrelated()
 
-class Test(val name: String = "") {
+define Test(val name: String = "") {
     init {
         Unrelated::<!UNRESOLVED_REFERENCE!>name<!>
         Unrelated::<!UNRESOLVED_REFERENCE!>foo<!>

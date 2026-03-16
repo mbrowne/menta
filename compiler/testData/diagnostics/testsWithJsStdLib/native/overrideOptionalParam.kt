@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open external class A {
+open external define A {
     open fun f(x: Int = definedExternally)
 }
 
-class B : A() {
+define B : A() {
     <!OVERRIDING_EXTERNAL_FUN_WITH_OPTIONAL_PARAMS!>override fun f(x: Int)<!> {}
 }
 
-class BB : A()
+define BB : A()
 
-external class C : A {
+external define C : A {
     override fun f(x: Int)
 }
 
@@ -28,34 +28,34 @@ interface II {
 
 interface IIJ : II, J
 
-open external class D {
+open external define D {
     open fun f(x: Int)
 }
 
-class E : D() {
+define E : D() {
     override fun f(x: Int) { }
 }
 
-class F : D(), I {
+define F : D(), I {
     <!OVERRIDING_EXTERNAL_FUN_WITH_OPTIONAL_PARAMS!>override fun f(x: Int)<!> {}
 }
 
-external class G : D, I {
+external define G : D, I {
     override fun f(x: Int)
 }
 
-open class X {
+open define X {
     fun f(x: Int) {}
 }
 
-open external class XE {
+open external define XE {
     fun f(x: Int)
 }
 
-class <!OVERRIDING_EXTERNAL_FUN_WITH_OPTIONAL_PARAMS_WITH_FAKE!>Y<!> : X(), I
+define <!OVERRIDING_EXTERNAL_FUN_WITH_OPTIONAL_PARAMS_WITH_FAKE!>Y<!> : X(), I
 
-class <!OVERRIDING_EXTERNAL_FUN_WITH_OPTIONAL_PARAMS_WITH_FAKE!>YY<!> : A(), II
+define <!OVERRIDING_EXTERNAL_FUN_WITH_OPTIONAL_PARAMS_WITH_FAKE!>YY<!> : A(), II
 
-external class YE: XE, I
+external define YE: XE, I
 
-class Z : X(), J
+define Z : X(), J

@@ -2,7 +2,7 @@
 // LANGUAGE: -EnumEntries, -PrioritizedEnumEntries
 // WITH_STDLIB
 
-enum class A {
+enum define A {
     ;
 
     companion object {

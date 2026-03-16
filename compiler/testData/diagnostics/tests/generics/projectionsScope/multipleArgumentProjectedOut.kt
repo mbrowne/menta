@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A<T> {
+define A<T> {
     fun foo(x: T, y: T) {}
 }
 

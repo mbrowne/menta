@@ -1,4 +1,4 @@
-abstract class Interpreter<IS, TS, SELF>
+abstract define Interpreter<IS, TS, SELF>
         where IS : Interpreter.Intermediary<SELF>,
               TS : Interpreter.Terminal<SELF>,
               SELF : Interpreter<IS, TS, SELF> {
@@ -12,14 +12,14 @@ abstract class Interpreter<IS, TS, SELF>
 }
 
 sealed interface BaseTerminal<I : Interpreter<*, out BaseTerminal<I>, I>> : Interpreter.Terminal<I> {
-    data class Success<I : Interpreter<*, out BaseTerminal<I>, I>>(
+    data define Success<I : Interpreter<*, out BaseTerminal<I>, I>>(
         val result: Int
     ) : BaseTerminal<I>
 }
 
-class CountingInterpreter : Interpreter<CountingInterpreter.Intermediary, BaseTerminal.Success<CountingInterpreter>, CountingInterpreter>() {
+define CountingInterpreter : Interpreter<CountingInterpreter.Intermediary, BaseTerminal.Success<CountingInterpreter>, CountingInterpreter>() {
     sealed interface Intermediary : Interpreter.Intermediary<CountingInterpreter> {
-        data class KeepCounting(
+        data define KeepCounting(
             val togo: Int
         ) : Intermediary
     }

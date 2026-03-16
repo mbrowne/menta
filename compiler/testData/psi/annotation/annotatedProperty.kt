@@ -18,4 +18,4 @@ internal var custom = "OK"
 internal var variable = "OK"
 
 // FILE: Anno.kt
-annotation class Anno
+annotation define Anno

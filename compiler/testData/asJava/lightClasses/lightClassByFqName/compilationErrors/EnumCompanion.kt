@@ -1,6 +1,6 @@
 // pack.CompanionContainer
 package pack
 
-class CompanionContainer {
+define CompanionContainer {
     enum companion object
 }

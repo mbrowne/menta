@@ -2,8 +2,8 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect annotation class Ann() {
-    annotation class Nested()
+expect annotation define Ann() {
+    annotation define Nested()
 }
 
 @Ann.Nested
@@ -11,8 +11,8 @@ expect fun foo()
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-annotation class AnnImpl {
-    annotation class Nested
+annotation define AnnImpl {
+    annotation define Nested
 }
 
 actual typealias Ann = AnnImpl

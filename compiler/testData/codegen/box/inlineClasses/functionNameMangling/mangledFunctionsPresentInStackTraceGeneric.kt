@@ -6,7 +6,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Id<T: String>(val id: T)
+value define Id<T: String>(val id: T)
 
 fun throws() {
     throw RuntimeException()

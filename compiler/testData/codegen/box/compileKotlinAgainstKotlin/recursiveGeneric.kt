@@ -20,7 +20,7 @@ interface Super {
 import a.*
 
 fun box(): String {
-    val declaredMethod = Super::class.java.getDeclaredMethod("foo", Rec::class.java)
+    val declaredMethod = Super::define.java.getDeclaredMethod("foo", Rec::define.java)
     val genericString = declaredMethod.toGenericString()
         .substringAfter("public default ") // In K2, `Super.foo` is default because of LanguageFeature.JvmDefaultEnableByDefault.
         .substringAfter("public abstract ") // In K1, `Super.foo` is abstract.

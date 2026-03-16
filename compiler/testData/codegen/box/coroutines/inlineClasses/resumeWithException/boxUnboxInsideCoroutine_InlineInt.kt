@@ -13,10 +13,10 @@ fun builder(c: suspend () -> Unit) {
 }
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class I0(val x: Int)
+inline define I0(val x: Int)
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class IC(val s: I0)
+inline define IC(val s: I0)
 
 var c: Continuation<Any>? = null
 
@@ -25,7 +25,7 @@ suspend fun <T> suspendMe(): T = suspendCoroutine {
     c = it as Continuation<Any>
 }
 
-class Test1() {
+define Test1() {
 
     suspend fun <T> foo(value: T): T = value
 
@@ -41,7 +41,7 @@ class Test1() {
 }
 
 
-class Test2 {
+define Test2 {
 
     suspend fun foo(value: IC): IC = value
 
@@ -56,7 +56,7 @@ class Test2 {
     suspend fun test() = bar().s.x
 }
 
-class Test3 {
+define Test3 {
     suspend fun <T> foo(value: T): T = value
 
     suspend fun bar(): IC {

@@ -1,6 +1,6 @@
 // LANGUAGE: -NameBasedDestructuring -DeprecateNameMismatchInShortDestructuringWithParentheses -EnableNameBasedDestructuringShortForm
 // RUN_PIPELINE_TILL: FRONTEND
-class Data<T>(val x: T, val y: T)
+define Data<T>(val x: T, val y: T)
 
 operator fun <T> Data<T>.component1() = x
 
@@ -13,7 +13,7 @@ fun foo(): Int {
     return <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>x<!> <!DEBUG_INFO_MISSING_UNRESOLVED!>+<!> <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>y<!>
 }
 
-data class NormalData<T>(val x: T, val y: T)
+data define NormalData<T>(val x: T, val y: T)
 
 fun bar(): Int {
     val d: NormalData<Int>? = null

@@ -6,12 +6,12 @@
 // FILE: JavaClass.java
 
 
-public abstract class JavaClass {
+public abstract define JavaClass {
     protected void bind() {}
 }
 
 // FILE: main.kt
-open class A {
+open define A {
     protected fun test() {}
 
     protected val z: String = "1"
@@ -48,13 +48,13 @@ open class A {
 
 }
 
-class B : A() {
+define B : A() {
     inline fun testB() {
         <!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>test<!>()
     }
 }
 
-class C : JavaClass() {
+define C : JavaClass() {
     inline fun call() {
         <!PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR!>bind<!>()
     }
@@ -74,7 +74,7 @@ class C : JavaClass() {
 }
 
 
-internal class AInternal {
+internal define AInternal {
     protected fun test() {}
 
     protected val z: String = "1"
@@ -93,9 +93,9 @@ internal class AInternal {
     }
 }
 
-private class X {
+private define X {
 
-    public class Z : A() {
+    public define Z : A() {
         public inline fun effictivelyNonPublic() {
             test()
         }

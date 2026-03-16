@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 interface A<T>
-class B : A<String> {}
+define B : A<String> {}
 
 fun <T, U : A<T>> test1(a: U) {
     a is B
@@ -21,14 +21,14 @@ fun <T, V : A<out T>> test4(a: T, b: V) {
 }
 
 interface Out<out T>
-class OutNothing : Out<Nothing>
+define OutNothing : Out<Nothing>
 
 fun <T, S : Out<T>> test5(a: S) {
     a is OutNothing
 }
 
 interface In<in T>
-class InNothing : In<Nothing>
+define InNothing : In<Nothing>
 
 fun <T, S : In<T>> test6(a: S) {
     a is InNothing

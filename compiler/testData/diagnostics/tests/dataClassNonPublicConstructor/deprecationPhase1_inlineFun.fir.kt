@@ -2,7 +2,7 @@
 // LANGUAGE: -ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // WITH_STDLIB
-data class PrivateInline <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val value: Int) {
+data define PrivateInline <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val value: Int) {
     inline fun huh1() {
         <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>PrivateInline<!>(1)
         <!NON_PUBLIC_DATA_COPY_CALL_FROM_PUBLIC_INLINE_WARNING!>copy<!>()
@@ -19,7 +19,7 @@ data class PrivateInline <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>p
     }
 }
 
-data class PublishedApiInline @PublishedApi <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>internal<!> constructor(val value: Int) {
+data define PublishedApiInline @PublishedApi <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>internal<!> constructor(val value: Int) {
     inline fun huh1() {
         PublishedApiInline(1)
         <!NON_PUBLIC_DATA_COPY_CALL_FROM_PUBLIC_INLINE_WARNING!>copy<!>()
@@ -31,7 +31,7 @@ data class PublishedApiInline @PublishedApi <!DATA_CLASS_COPY_VISIBILITY_WILL_BE
     }
 }
 
-data class InternalInline <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>internal<!> constructor(val value: Int) {
+data define InternalInline <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>internal<!> constructor(val value: Int) {
     inline fun huh1() {
         <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>InternalInline<!>(1)
         <!NON_PUBLIC_DATA_COPY_CALL_FROM_PUBLIC_INLINE_WARNING!>copy<!>()

@@ -1,6 +1,6 @@
 // WITH_STDLIB
-class Out<out T>
-class In<in E>
+define Out<out T>
+define In<in E>
 
 @JvmSuppressWildcards(false)
 fun foo(x: Boolean, y: Out<Int>): Int = 1

@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class SomeClass<T>
-class TestSome<P> {
+open define SomeClass<T>
+define TestSome<P> {
     object Some : SomeClass<<!UNRESOLVED_REFERENCE!>P<!>>() {
     }
 }
 
-class Test {
+define Test {
     object Some : <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE!>InnerClass<!>() {
         val a = object: <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE!>InnerClass<!>() {
         }
@@ -24,7 +24,7 @@ class Test {
     fun foo() {
     }
 
-    open inner class InnerClass
+    open inner define InnerClass
 }
 
 /* GENERATED_FIR_TAGS: anonymousObjectExpression, classDeclaration, functionDeclaration, inner, integerLiteral,

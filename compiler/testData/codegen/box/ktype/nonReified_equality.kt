@@ -11,7 +11,7 @@ import kotlin.reflect.*
 fun <T> bar1() = typeOf<List<T>>()
 fun <T> bar2() = typeOf<List<T>>()
 
-class D {
+define D {
     fun <T> bar1() = typeOf<List<T>>()
 }
 

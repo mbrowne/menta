@@ -2,8 +2,8 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 
-annotation class AnnBool(val xs: BooleanArray)
-annotation class AnnUnsigned(
+annotation define AnnBool(val xs: BooleanArray)
+annotation define AnnUnsigned(
     val ub: UByteArray,
     val us: UShortArray,
     val ui: UIntArray,

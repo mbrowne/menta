@@ -10,7 +10,7 @@ inline fun f(x: Int): Int {
 // FILE: main.kt
 fun bar() = 10
 
-class Test {
+define Test {
     val value: Int
 
     init {

@@ -4,14 +4,14 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-public class Java1 extends KotlinClass { }
+public define Java1 extends KotlinClass { }
 
 // FILE: 1.kt
 import java.util.HashSet
 
-abstract class A : Java1()  //Kotlin ← Java ← Kotlin ← Java
+abstract define A : Java1()  //Kotlin ← Java ← Kotlin ← Java
 
-class B : Java1() {
+define B : Java1() {
     override val size: Int
         get() = 5
 
@@ -20,7 +20,7 @@ class B : Java1() {
     }
 }
 
-open class KotlinClass : HashSet<String>()
+open define KotlinClass : HashSet<String>()
 
 fun test(a: A, b: B) {
     a.size

@@ -4,8 +4,8 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 import kotlin.reflect.KFunction1
 
-class A {
-    inner class Inner
+define A {
+    inner define Inner
 }
 
 fun main() {

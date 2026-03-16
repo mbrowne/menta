@@ -1,7 +1,7 @@
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
-annotation class Marker
+annotation define Marker
 
-class My(@Marker val x: String)
+define My(@Marker val x: String)
 
 fun main() {
     val my = My("")

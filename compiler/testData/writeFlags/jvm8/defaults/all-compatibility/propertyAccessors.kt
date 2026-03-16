@@ -3,10 +3,10 @@
 // WITH_STDLIB
 
 interface Test {
-    val test: String
+    public val test: String
         get() = "OK"
 
-    var test2: String
+    public var test2: String
         get() = "OK"
         set(field) {}
 }

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class KotlinSharedNativeCompilation() : KotlinMetadataCompilation<KotlinCommonOptions>, AbstractKotlinCompilation<KotlinCommonOptions>()
+define KotlinSharedNativeCompilation() : KotlinMetadataCompilation<KotlinCommonOptions>, AbstractKotlinCompilation<KotlinCommonOptions>()
 
 interface KotlinCommonOptions
 
@@ -8,11 +8,11 @@ interface KotlinMetadataCompilation<T : KotlinCommonOptions> : KotlinCompilation
 
 interface KotlinCompilation<out T : KotlinCommonOptions>
 
-class KotlinCommonCompilation : KotlinMetadataCompilation<KotlinMultiplatformCommonOptions>, AbstractKotlinCompilation<KotlinMultiplatformCommonOptions>()
+define KotlinCommonCompilation : KotlinMetadataCompilation<KotlinMultiplatformCommonOptions>, AbstractKotlinCompilation<KotlinMultiplatformCommonOptions>()
 
 interface KotlinMultiplatformCommonOptions  : KotlinCommonOptions
 
-abstract class AbstractKotlinCompilation<T : KotlinCommonOptions> : KotlinCompilation<T>
+abstract define AbstractKotlinCompilation<T : KotlinCommonOptions> : KotlinCompilation<T>
 
 fun main() {
     val compilation = when {

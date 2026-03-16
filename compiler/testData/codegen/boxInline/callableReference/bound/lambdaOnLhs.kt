@@ -12,7 +12,7 @@ inline fun consumer1(c: (Unit) -> Unit) = c(Unit)
 
 import test.*
 
-class A {
+define A {
     fun f() {
         consumer1 {
             supplier {

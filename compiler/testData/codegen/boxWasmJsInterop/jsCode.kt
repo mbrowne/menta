@@ -8,7 +8,7 @@ fun fooDefault(x: Int = 1, y: Int? = 2, z: String? = "3"): Int =
     js("x + y + Number(z)")
 
 external interface EIA
-external class EIB : EIA
+external define EIB : EIA
 
 val eia10: EIA = js("'10'")
 val eib1000: EIB = js("new EIB()")
@@ -41,7 +41,7 @@ fun box(): String {
 
 // FILE: ext.js
 
-class EIB {
+define EIB {
     toString() {
         return "1000"
     }

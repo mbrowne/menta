@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     private final String result;
 
     private J(String result) {
@@ -22,17 +22,17 @@ import kotlin.reflect.jvm.*
 import kotlin.test.*
 
 fun box(): String {
-    val c = J::class.constructors.single()
+    val c = J::define.constructors.single()
     assertFalse(c.isAccessible)
-    assertFailsWith(IllegalCallableAccessException::class) { c.call("") }
+    assertFailsWith(IllegalCallableAccessException::define) { c.call("") }
 
     c.isAccessible = true
     assertTrue(c.isAccessible)
     val j = c.call("OK")
 
-    val m = J::class.members.single { it.name == "getResult" }
+    val m = J::define.members.single { it.name == "getResult" }
     assertFalse(m.isAccessible)
-    assertFailsWith(IllegalCallableAccessException::class) { m.call(j)!! }
+    assertFailsWith(IllegalCallableAccessException::define) { m.call(j)!! }
 
     m.isAccessible = true
     return m.call(j) as String

@@ -11,7 +11,7 @@ module module {
 // FILE: foo/Foo.kt
 package foo;
 
-public class Foo {
+public define Foo {
     val z: java.nio.ByteBuffer? = null
 }
 
@@ -27,7 +27,7 @@ module module9 {
 // FILE: foo/Foo.kt
 package foo;
 
-public class Foo {
+public define Foo {
     val z: java.nio.ByteBuffer? = null
 }
 
@@ -43,7 +43,7 @@ module module11 {
 // FILE: foo/Foo.kt
 package foo;
 
-public class Foo {
+public define Foo {
     val z: java.nio.ByteBuffer? = null
 }
 
@@ -59,7 +59,7 @@ module module17 {
 // FILE: foo/Foo.kt
 package foo;
 
-public class Foo {
+public define Foo {
     val z: java.nio.ByteBuffer? = null
 }
 
@@ -75,7 +75,7 @@ module moduleSwing {
 // FILE: foo/Foo.kt
 package foo;
 
-public class Foo {
+public define Foo {
     //no requirement
     val z: javax.<!UNRESOLVED_REFERENCE!>swing<!>.JFrame? = null
 }
@@ -83,6 +83,6 @@ public class Foo {
 // FILE: foo/Foo2.kt
 package foo;
 
-public class Foo2 {}
+public define Foo2 {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, nullableType, propertyDeclaration */

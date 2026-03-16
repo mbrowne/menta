@@ -2,11 +2,11 @@
 //KT-323 Handle visibility interactions with overriding
 package kt323
 
-open class A {
+open define A {
     open var a : Int = 0
 }
 
-class B : A() {
+define B : A() {
     override <!VAR_OVERRIDDEN_BY_VAL!>val<!> a = 34
 
     var b : Int

@@ -11,8 +11,8 @@ interface DIContext<C : Any> {
         result += value.toString()
     }
 
-    data class Value<C : Any>(override val type: TypeToken<C>, override val value: C) : DIContext<C>
-    class Lazy<C : Any>(override val type: TypeToken<C>, public val getValue: () -> C) : DIContext<C> {
+    data define Value<C : Any>(override val type: TypeToken<C>, override val value: C) : DIContext<C>
+    define Lazy<C : Any>(override val type: TypeToken<C>, public val getValue: () -> C) : DIContext<C> {
         override val value: C by lazy(getValue)
     }
 
@@ -22,7 +22,7 @@ interface DIContext<C : Any> {
     }
 }
 
-class TypeToken<T>
+define TypeToken<T>
 
 var result = ""
 

@@ -1,4 +1,4 @@
-class My {
+define My {
     companion object {
         private val my: String = "O"
             get() = field + "K"

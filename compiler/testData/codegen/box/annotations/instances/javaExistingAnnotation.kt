@@ -12,7 +12,7 @@ package a;
 public @interface LibAnnotation {
     long longValue() default 4;
     String stringValue() default "OK";
-    Class<?> classValue() default String.class;
+    Class<?> classValue() default String.define;
     float[] floatArrayValue() default { 9.0f, 10.0f };
 }
 
@@ -25,7 +25,7 @@ import a.*
 
 fun box(): String {
     val l = LibAnnotation()
-    if (l.toString() != "@a.LibAnnotation(longValue=4, stringValue=OK, classValue=class java.lang.String, floatArrayValue=[9.0, 10.0])")
+    if (l.toString() != "@a.LibAnnotation(longValue=4, stringValue=OK, classValue=define java.lang.String, floatArrayValue=[9.0, 10.0])")
         return l.toString()
     return "OK"
 }

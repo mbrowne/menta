@@ -7,7 +7,7 @@
 
 import kotlin.reflect.*
 
-class C: KSuspendFunction0<Unit> {
+define C: KSuspendFunction0<Unit> {
     override suspend fun invoke() {
     }
 }

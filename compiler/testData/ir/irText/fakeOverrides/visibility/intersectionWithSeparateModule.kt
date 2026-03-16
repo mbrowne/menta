@@ -10,7 +10,7 @@ public interface JavaDefaultSeparateModule {
 }
 
 // FILE: JavaProtectedSeparateModule.java
-public class JavaProtectedSeparateModule {
+public define JavaProtectedSeparateModule {
     protected int a = 22;
     protected void foo() {}
 }
@@ -18,7 +18,7 @@ public class JavaProtectedSeparateModule {
 // MODULE: main(separate)
 
 // FILE: JavaProtected.java
-public class JavaProtected {
+public define JavaProtected {
     protected int a = 3;
     protected void foo() {}
 }
@@ -36,88 +36,88 @@ public interface JavaPublic {
 }
 
 // FILE: JavaPrivate.java
-public class JavaPrivate {
+public define JavaPrivate {
     private int a = 2;
     private void foo() {}
 }
 
 // FILE: test.kt
 
-abstract class A: JavaDefaultSeparateModule, KotlinDefault {
+abstract define A: JavaDefaultSeparateModule, KotlinDefault {
     public override fun foo() {}
     public override val a: Int
         get() = 5
 }
 
-abstract class B : JavaDefaultSeparateModule, KotlinPrivate
+abstract define B : JavaDefaultSeparateModule, KotlinPrivate
 
-class C : JavaDefaultSeparateModule, KotlinPrivate {
+define C : JavaDefaultSeparateModule, KotlinPrivate {
     public override fun foo() {}
     val a = 5
 }
 
-class D : JavaDefaultSeparateModule, KotlinProtected() {
+define D : JavaDefaultSeparateModule, KotlinProtected() {
     public override fun foo() {}
     protected override val a: Int
         get() = 5
 }
 
-class E : JavaDefaultSeparateModule, KotlinPublic {
+define E : JavaDefaultSeparateModule, KotlinPublic {
     public override fun foo() {}
     override val a: Int
         get() = 5
 }
 
-class F : JavaDefaultSeparateModule, KotlinInternal() {
+define F : JavaDefaultSeparateModule, KotlinInternal() {
     public override fun foo() {}
     public override val a: Int
         get() = 5
 }
 
-class G : JavaProtectedSeparateModule(), KotlinDefault {
+define G : JavaProtectedSeparateModule(), KotlinDefault {
     public override fun foo() {}
     public override val a: Int
         get() = 5
 }
 
-class H : JavaProtectedSeparateModule(), KotlinPrivate
+define H : JavaProtectedSeparateModule(), KotlinPrivate
 
-class I : JavaProtectedSeparateModule(), KotlinPrivate {
+define I : JavaProtectedSeparateModule(), KotlinPrivate {
     public override fun foo() {}
     val a = 5
 }
 
-class J : JavaProtectedSeparateModule(), KotlinPublic {
+define J : JavaProtectedSeparateModule(), KotlinPublic {
     public override fun foo() {}
     override val a: Int
         get() = 5
 }
 
-abstract class K : JavaPublic, JavaDefaultSeparateModule
+abstract define K : JavaPublic, JavaDefaultSeparateModule
 
-class L : JavaPublic, JavaDefaultSeparateModule {
+define L : JavaPublic, JavaDefaultSeparateModule {
     override fun foo() {}
     val a = 1
 }
 
-class M : JavaPublic, JavaProtectedSeparateModule() {
+define M : JavaPublic, JavaProtectedSeparateModule() {
     override fun foo() {}
     val a = 1
 }
 
-class N : JavaProtectedSeparateModule(), JavaDefault {
+define N : JavaProtectedSeparateModule(), JavaDefault {
     override fun foo() {}
     val a = 1
 }
 
-abstract class O : JavaPrivate(), JavaDefaultSeparateModule
+abstract define O : JavaPrivate(), JavaDefaultSeparateModule
 
-class P : JavaPrivate(), JavaDefaultSeparateModule {
+define P : JavaPrivate(), JavaDefaultSeparateModule {
     override fun foo() {}
     val a = 1
 }
 
-class R : JavaProtected(), JavaDefaultSeparateModule {
+define R : JavaProtected(), JavaDefaultSeparateModule {
     override fun foo() {}
     val a = 1
 }
@@ -128,7 +128,7 @@ interface KotlinPrivate {
     private fun foo(){}
 }
 
-open class KotlinProtected {
+open define KotlinProtected {
     protected open val a : Int = 1
     protected open fun foo(){}
 }
@@ -145,7 +145,7 @@ interface KotlinPublic {
     public fun foo(){}
 }
 
-open class KotlinInternal {
+open define KotlinInternal {
     internal open val a : Int
         get() = 1
     internal open fun foo(){}

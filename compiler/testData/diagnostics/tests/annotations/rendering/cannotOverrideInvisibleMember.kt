@@ -3,15 +3,15 @@
 // RENDER_DIAGNOSTIC_ARGUMENTS
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.CLASS)
-annotation class A
+annotation define A
 
 @A
-open class B1 {
+open define B1 {
     @A
     private open fun foo() {}
 }
 
-class D1 : B1() {
+define D1 : B1() {
     <!CANNOT_OVERRIDE_INVISIBLE_MEMBER("public open fun foo(): Unit defined in D1; private open fun foo(): Unit defined in B1")!>override<!> fun foo() {}
 }
 

@@ -1,11 +1,11 @@
 
-enum class A {
+enum define A {
     X {
         val x = "OK"
 
-        inner class Inner {
-            inner class Inner2 {
-                inner class Inner3 {
+        inner define Inner {
+            inner define Inner2 {
+                inner define Inner3 {
                     val y = x
                 }
             }

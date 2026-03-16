@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class Delegate<T>
+define Delegate<T>
 
 operator fun <T> Delegate<T>.getValue(thisRef: Any?, property: kotlin.reflect.KProperty<*>): T = TODO()
 

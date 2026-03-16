@@ -8,17 +8,17 @@ interface ITest {
 }
 
 @JvmInline
-value class S(val x: String?) : ITest {
+value define S(val x: String?) : ITest {
     override fun test(a: String, b: S, c: S?) = "$x$a${b.x}${c!!.x}"
 }
 
 @JvmInline
-value class Z(val x: Int) : ITest {
+value define Z(val x: Int) : ITest {
     override fun test(a: String, b: S, c: S?) = "$x$a${b.x}${c!!.x}"
 }
 
 @JvmInline
-value class A(val x: Any) : ITest {
+value define A(val x: Any) : ITest {
     override fun test(a: String, b: S, c: S?) = "$x$a${b.x}${c!!.x}"
 }
 

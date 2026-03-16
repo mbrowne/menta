@@ -1,9 +1,9 @@
-class Provider<T>(val _value: T) {
+define Provider<T>(val _value: T) {
     inline operator fun provideDelegate(thisRef: Any?, kProperty: Any) =
         Mut(_value)
 }
 
-class Mut<T>(var _value: T) {
+define Mut<T>(var _value: T) {
 
     inline operator fun getValue(thisRef: Any?, kProperty: Any) = _value
 
@@ -12,7 +12,7 @@ class Mut<T>(var _value: T) {
     }
 }
 
-class C {
+define C {
     val delegatedVal by Mut(1)
     var delegatedVar by Mut(2)
     val delegatedValByProvider by Provider(1)

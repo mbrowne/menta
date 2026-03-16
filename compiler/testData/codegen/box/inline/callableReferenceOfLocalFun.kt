@@ -1,6 +1,6 @@
 // NO_CHECK_LAMBDA_INLINING
 // FILE: lib.kt
-class TestData(var status: String) {
+define TestData(var status: String) {
     fun updateStatus(newStatus: String) {
         status = newStatus
     }
@@ -12,7 +12,7 @@ inline fun inlineFunction(f: () -> Unit) = f()
 
 // FILE: main.kt
 fun testCase1(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus = inlineGenericTestFunction {
         fun localFunction() { obj.status = "OK" }
@@ -22,7 +22,7 @@ fun testCase1(obj: TestData) = inlineFunction {
 }
 
 fun testCase2(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus = inlineGenericTestFunction {
         fun localFunction(msg: String) { obj.status = msg }
@@ -32,7 +32,7 @@ fun testCase2(obj: TestData) = inlineFunction {
 }
 
 fun testCase3(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus = inlineGenericTestFunction {
         fun localFunction(flag: Boolean, msg: String) { obj.status = if (flag) msg else "ERROR" }
@@ -42,7 +42,7 @@ fun testCase3(obj: TestData) = inlineFunction {
 }
 
 fun testCase4(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: String.() -> Unit = inlineGenericTestFunction {
         fun String.localFunction() { obj.status = this }
@@ -53,7 +53,7 @@ fun testCase4(obj: TestData) = inlineFunction {
 }
 
 fun testCase5(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: () -> Unit = inlineGenericTestFunction {
         fun String.localFunction() { obj.status = this }
@@ -63,7 +63,7 @@ fun testCase5(obj: TestData) = inlineFunction {
 }
 
 fun testCase6(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: TestData.(String) -> Unit = inlineGenericTestFunction {
         fun TestData.localFunction(msg: String) { status = msg }
@@ -74,7 +74,7 @@ fun testCase6(obj: TestData) = inlineFunction {
 }
 
 fun testCase7(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: (String) -> Unit = inlineGenericTestFunction {
         fun TestData.localFunction(msg: String) { status = msg }
@@ -84,7 +84,7 @@ fun testCase7(obj: TestData) = inlineFunction {
 }
 
 fun testCase8(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: (String) -> Unit = inlineGenericTestFunction {
         obj::updateStatus
@@ -93,7 +93,7 @@ fun testCase8(obj: TestData) = inlineFunction {
 }
 
 fun testCase9(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: String.() -> Unit = inlineGenericTestFunction {
         { obj.updateStatus(this) }
@@ -103,7 +103,7 @@ fun testCase9(obj: TestData) = inlineFunction {
 }
 
 fun testCase10(obj: TestData) = inlineFunction {
-    class InlineClass
+    define InlineClass
 
     val updateStatus: String.() -> Unit = inlineGenericTestFunction {
         fun <T> T.localFunction() { obj.status = this.toString() }
@@ -115,7 +115,7 @@ fun testCase10(obj: TestData) = inlineFunction {
 
 fun testCase11(obj: TestData) {
     fun testCaseImpl(msg: String) = inlineFunction {
-        class InlineClass
+        define InlineClass
 
         val updateStatus: (Boolean) -> Unit = inlineGenericTestFunction {
             fun TestData.localFunction(flag: Boolean) { status = if (flag) msg else "ERROR" }
@@ -128,7 +128,7 @@ fun testCase11(obj: TestData) {
 
 fun testCase12(obj: TestData) {
     fun testCaseImpl(msg: String) = inlineFunction {
-        class InlineClass
+        define InlineClass
 
         val updateStatus: TestData.(Boolean) -> Unit = inlineGenericTestFunction {
             fun TestData.localFunction(flag: Boolean) { status = if (flag) msg else "ERROR" }
@@ -142,7 +142,7 @@ fun testCase12(obj: TestData) {
 
 fun testCase13(obj: TestData) {
     fun testCaseImpl(msg: String) = inlineFunction {
-        class InlineClass
+        define InlineClass
 
         val updateStatus: (Boolean) -> Unit = inlineGenericTestFunction {
             fun <T, F> T.localFunction(flag: F) { obj.status = if (flag!!.equals(true)) this.toString() else "ERROR" }

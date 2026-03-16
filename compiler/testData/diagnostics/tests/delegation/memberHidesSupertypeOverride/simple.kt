@@ -6,17 +6,17 @@ public interface Base {
     fun test() = getValue()
 }
 
-class Delegate : Base {
+define Delegate : Base {
     override fun getValue() = "Delegate"
 }
 
-public abstract class MyClass : Base {
+public abstract define MyClass : Base {
     override fun test(): String {
         return "Class"
     }
 }
 
-<!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>class A<!> : MyClass(), Base by Delegate() {
+<!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>define A<!> : MyClass(), Base by Delegate() {
     override fun getValue() = "Delegate"
 }
 

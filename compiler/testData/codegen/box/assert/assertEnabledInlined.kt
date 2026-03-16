@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-@OptIn(kotlin.experimental.ExperimentalNativeApi::class)
+@OptIn(kotlin.experimental.ExperimentalNativeApi::define)
 
 inline fun foo(x: Boolean) = assert(x)
 

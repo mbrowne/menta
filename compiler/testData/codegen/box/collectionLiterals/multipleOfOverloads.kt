@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +CollectionLiterals
 
-class MyList(val data: String) {
+define MyList(val data: String) {
     companion object {
         operator fun of(vararg strs: String) = MyList("")
         operator fun of(s1: String, s2: String) = MyList("O")

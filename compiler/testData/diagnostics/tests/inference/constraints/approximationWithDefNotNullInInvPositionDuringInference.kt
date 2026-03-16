@@ -4,8 +4,8 @@
 
 interface Parent<T>
 
-class Foo<K>(x: K?): Parent<K> {}
-class Bar<T>(x: T): Parent<T> {}
+define Foo<K>(x: K?): Parent<K> {}
+define Bar<T>(x: T): Parent<T> {}
 
 fun <R> select(vararg x: R) = x[0]
 
@@ -17,7 +17,7 @@ fun <S> main(x: S) {
 
 inline fun <R> test(transform: () -> R) {}
 
-class Inv<T>(x: T?) {}
+define Inv<T>(x: T?) {}
 
 fun <K> foo(x: K) {
     test { <!DEBUG_INFO_EXPRESSION_TYPE("Inv<K>")!>Inv(x)<!> }

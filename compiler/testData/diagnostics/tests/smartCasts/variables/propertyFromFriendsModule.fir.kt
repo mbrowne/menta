@@ -2,9 +2,9 @@
 
 // MODULE: direct
 // FILE: Direct.kt
-annotation class Ann
+annotation define Ann
 
-class Direct(
+define Direct(
     val finalConstructorProperty: Any = "",
     @get:Ann val annotatedConstructorProperty: Any = "",
 ) {
@@ -15,7 +15,7 @@ class Direct(
 }
 
 // MODULE: app()(direct)
-class Same(
+define Same(
     val finalConstructorProperty: Any = "",
     @get:Ann val annotatedConstructorProperty: Any = "",
 ) {

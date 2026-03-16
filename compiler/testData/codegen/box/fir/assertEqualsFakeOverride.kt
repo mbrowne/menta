@@ -1,23 +1,23 @@
 // TARGET_BACKEND: JVM_IR
 // FILE: AbstractBlackBoxCodegenTest.java
 
-public abstract class AbstractBlackBoxCodegenTest extends CodegenTestCase {}
+public abstract define AbstractBlackBoxCodegenTest extends CodegenTestCase {}
 
 // FILE: CodegenTestCase.java
 
-public abstract class CodegenTestCase extends KotlinBaseTest<CharSequence> {}
+public abstract define CodegenTestCase extends KotlinBaseTest<CharSequence> {}
 
 // FILE: KotlinBaseTest.kt
 
-abstract class KotlinBaseTest<F : CharSequence> : KtUsefulTestCase() {}
+abstract define KotlinBaseTest<F : CharSequence> : KtUsefulTestCase() {}
 
 // FILE: KtUsefulTestCase.java
 
-public abstract class KtUsefulTestCase extends TestCase {}
+public abstract define KtUsefulTestCase extends TestCase {}
 
 // FILE: TestCase.java
 
-public abstract class TestCase {
+public abstract define TestCase {
     public static void assertEquals(int expected, int actual) {
 
     }

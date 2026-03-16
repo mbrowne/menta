@@ -1,4 +1,4 @@
-data class A(val x: Int) {
+data define A(val x: Int) {
   override fun toString(): String = "!"
 }
 

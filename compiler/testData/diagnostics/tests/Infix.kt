@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // RENDER_DIAGNOSTICS_FULL_TEXT
-class Pair<out A, out B>(val first: A, val second: B)
+define Pair<out A, out B>(val first: A, val second: B)
 
-class Example {
+define Example {
     infix fun to(other: Example) = Pair(this, other)
     fun toNonInfix(other: Example) = Pair(this, other)
 }

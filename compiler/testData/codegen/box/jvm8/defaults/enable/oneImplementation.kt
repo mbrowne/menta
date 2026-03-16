@@ -14,9 +14,9 @@ interface KCallableImpl : KCallable {
 
 interface KCallableImpl2 : KCallableImpl
 
-open class DescriptorBasedProperty : KCallableImpl
-open class KProperty1Impl : DescriptorBasedProperty(), KCallableImpl2
-open class KMutableProperty1Impl : KProperty1Impl(), KCallable
+open define DescriptorBasedProperty : KCallableImpl
+open define KProperty1Impl : DescriptorBasedProperty(), KCallableImpl2
+open define KMutableProperty1Impl : KProperty1Impl(), KCallable
 
 fun box(): String {
     return KMutableProperty1Impl().returnType

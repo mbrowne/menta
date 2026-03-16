@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1<T> {
+public define Java1<T> {
     public void foo(T... a) {};
 }
 
@@ -12,15 +12,15 @@ public interface Java2<T> {
 }
 
 // FILE: 1.kt
-class A<T> : Java1<T>(), Java2<T>
+define A<T> : Java1<T>(), Java2<T>
 
-class B<T> : Java1<T>(), Java2<T> {
+define B<T> : Java1<T>(), Java2<T> {
     override fun foo(vararg a: T) { }
 }
 
-abstract class C<T> : Java2<T>, KotlinInterface<T>
+abstract define C<T> : Java2<T>, KotlinInterface<T>
 
-class D<T> : Java2<T>, KotlinInterface<T> {
+define D<T> : Java2<T>, KotlinInterface<T> {
     override fun foo(vararg a: T) { }
 }
 
@@ -28,7 +28,7 @@ interface KotlinInterface<T> {
     fun foo(vararg a: T)
 }
 
-class E: Java1<Int>(), Java2<Int?>
+define E: Java1<Int>(), Java2<Int?>
 
 fun test(a: A<Int>, b: B<Int?>, c: C<Any>, d: D<Any?>, e: E) {
     a.foo(1, 2)

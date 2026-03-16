@@ -5,7 +5,7 @@ package test
 
 inline fun stub() {}
 
-enum class Z {
+enum define Z {
     OK
 }
 

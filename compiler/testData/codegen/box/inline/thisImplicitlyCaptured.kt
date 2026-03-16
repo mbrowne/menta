@@ -4,11 +4,11 @@
 package foo
 import kotlin.test.*
 
-class Runner {
+define Runner {
     public fun run(f: () -> Unit): Unit = f()
 }
 
-class Counter() {
+define Counter() {
     var count = 0
     val runner = Runner()
 

@@ -4,7 +4,7 @@
 val foo: dynamic = 1
 
 fun bar() {
-    class C {
+    define C {
         val foo: dynamic = 1
     }
 }

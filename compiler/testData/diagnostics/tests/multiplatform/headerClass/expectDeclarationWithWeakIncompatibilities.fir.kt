@@ -4,14 +4,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Foo1
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Foo2
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Foo1
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Foo2
 
 expect fun foo2(): Int
 
 <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> val s: String
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open class Foo3
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open define Foo3
 
 // MODULE: m2-jvm()()(m1-common)
 
@@ -24,9 +24,9 @@ actual var <!EXPECT_ACTUAL_INCOMPATIBLE_PROPERTY_KIND!>s<!>: String = "value"
 
 fun <!ACTUAL_MISSING!>foo2<!>(): Int = 0
 
-actual class <!CLASSIFIER_REDECLARATION, EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>Foo3<!>
+actual define <!CLASSIFIER_REDECLARATION, EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>Foo3<!>
 
-class <!ACTUAL_MISSING, CLASSIFIER_REDECLARATION!>Foo3<!>
+define <!ACTUAL_MISSING, CLASSIFIER_REDECLARATION!>Foo3<!>
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, integerLiteral, interfaceDeclaration,
 propertyDeclaration, stringLiteral */

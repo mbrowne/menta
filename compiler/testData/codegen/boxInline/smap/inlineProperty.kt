@@ -1,5 +1,5 @@
 // FILE: 1.kt
-class A {
+define A {
     inline val s: Int
         get() = 1
 }

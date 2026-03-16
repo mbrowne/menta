@@ -1,12 +1,12 @@
 // DISABLE_JAVA_FACADE
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: GenericJava.java
-public class GenericJava<F> {
+public define GenericJava<F> {
     public java.util.List<F> getFoo() {}
 }
 
 // FILE: main.kt
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T) {}
 
     fun gg(): GenericJava<T> = TODO()

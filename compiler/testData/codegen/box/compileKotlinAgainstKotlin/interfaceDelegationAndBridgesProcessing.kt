@@ -15,18 +15,18 @@ interface CompositeCodeBlock: CodeBlock {
 
 interface ForLoopBody : CodeBlock
 
-abstract class CodeBlockBase: CompositeCodeBlock
+abstract define CodeBlockBase: CompositeCodeBlock
 
-abstract class LineSeparatedCodeBlock: CodeBlockBase()
+abstract define LineSeparatedCodeBlock: CodeBlockBase()
 
 // MODULE: main(lib)
 // FILE: B.kt
 
 import test.*
 
-open class KotlinCodeBlock: LineSeparatedCodeBlock()
+open define KotlinCodeBlock: LineSeparatedCodeBlock()
 
-class KotlinForLoopBody : KotlinCodeBlock(), ForLoopBody
+define KotlinForLoopBody : KotlinCodeBlock(), ForLoopBody
 
 fun box(): String {
     return KotlinForLoopBody().foo()

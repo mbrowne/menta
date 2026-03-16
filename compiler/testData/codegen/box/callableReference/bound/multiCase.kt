@@ -1,4 +1,4 @@
-class A(var v: Int) {
+define A(var v: Int) {
     fun f(x: Int) = x * v
 }
 

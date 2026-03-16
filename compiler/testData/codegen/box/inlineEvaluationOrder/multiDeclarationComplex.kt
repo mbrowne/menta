@@ -21,7 +21,7 @@ fun pullLog(): String {
     return string
 }
 
-class A(val a: Int, val b: Int, val c: Int, val d: Int, val e: Int)
+define A(val a: Int, val b: Int, val c: Int, val d: Int, val e: Int)
 
 inline operator fun A.component2(): Int = buzz(b)
 

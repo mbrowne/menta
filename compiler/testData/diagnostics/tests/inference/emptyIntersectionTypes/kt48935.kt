@@ -3,7 +3,7 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 interface Base
 
-class DoesNotImplementBase
+define DoesNotImplementBase
 
 fun <T, V> exampleGenericFunction(func: V) where T: Base, V: (T) -> Unit {
 

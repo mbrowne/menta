@@ -7,7 +7,7 @@ fun foo(i: Int) = i
 
 fun dontRun(body: () -> Unit) = Unit
 
-class Case1 {
+define Case1 {
     fun test() {
         dontRun { val x = bar(bar { -> bar { -> 2} }) }
     }

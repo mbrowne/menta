@@ -4,7 +4,7 @@ fun <T> T.id() = this
 
 var result = "OK"
 
-enum class EnumClass {
+enum define EnumClass {
     OK;
 
     init {

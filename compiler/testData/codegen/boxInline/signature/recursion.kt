@@ -16,8 +16,8 @@ import test.*
 import java.util.*
 
 
-class I<A>(val s: A)
-class A<T : Any>(val elements: List<I<T>>) {
+define I<A>(val s: A)
+define A<T : Any>(val elements: List<I<T>>) {
     val p = elements.sortedBy { it.hashCode() }
 }
 

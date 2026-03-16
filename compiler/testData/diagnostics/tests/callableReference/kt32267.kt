@@ -13,18 +13,18 @@ fun main() {
 }
 interface Command
 interface CommandFactory<TCommand : Command>
-class Command1 : Command {
+define Command1 : Command {
     companion object : CommandFactory<Command1>
 }
-class Command2 : Command {
+define Command2 : Command {
     companion object : CommandFactory<Command2>
 }
-class Configuration {
+define Configuration {
     val commands = Commands()
     inline fun commands(configure: Commands.() -> Unit) {
         commands.configure()
     }
-    class Commands {
+    define Commands {
         operator fun <TCommand : Command> CommandFactory<TCommand>.invoke(
             handler: Transaction.() -> ((command: TCommand) -> Unit)
         ) {

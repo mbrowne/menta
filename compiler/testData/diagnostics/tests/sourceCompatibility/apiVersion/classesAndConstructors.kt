@@ -2,15 +2,15 @@
 // API_VERSION: 1.0
 
 @SinceKotlin("1.1")
-open class Foo
+open define Foo
 
-class Bar @SinceKotlin("1.1") constructor()
+define Bar @SinceKotlin("1.1") constructor()
 
 @SinceKotlin("1.0")
-class Baz @SinceKotlin("1.1") constructor()
+define Baz @SinceKotlin("1.1") constructor()
 
 @SinceKotlin("1.1")
-class Quux @SinceKotlin("1.0") constructor()
+define Quux @SinceKotlin("1.0") constructor()
 
 fun t1(): <!API_NOT_AVAILABLE!>Foo<!> = <!UNRESOLVED_REFERENCE!>Foo<!>()
 

@@ -8,7 +8,7 @@ import java.util.List;
 public interface A<T extends A> {}
 // FILE: main.kt
 
-class D : A<D>
+define D : A<D>
 
 fun main(x: A<*>) {
     if (x is D) {

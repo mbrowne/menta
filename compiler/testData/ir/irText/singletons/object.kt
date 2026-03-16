@@ -3,7 +3,7 @@ object Z {
 
     fun test() {}
 
-    class A {
+    define A {
         fun test2() {
             test()
         }

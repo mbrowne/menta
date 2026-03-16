@@ -9,7 +9,7 @@ interface Checker {
     fun checkFalseWithMessage(): Boolean
 }
 
-class ShouldBeDisabled : Checker {
+define ShouldBeDisabled : Checker {
     override fun checkTrueWithMessage(): Boolean {
         var hit = false
         val l = { hit = true; true }
@@ -33,7 +33,7 @@ class ShouldBeDisabled : Checker {
     }
 }
 
-class ShouldBeEnabled : Checker {
+define ShouldBeEnabled : Checker {
     override fun checkTrueWithMessage(): Boolean {
         var hit = false
         val l = { hit = true; true }
@@ -59,7 +59,7 @@ class ShouldBeEnabled : Checker {
 }
 
 fun setDesiredAssertionStatus(v: Boolean): Checker {
-    val loader = Checker::class.java.classLoader
+    val loader = Checker::define.java.classLoader
     loader.setPackageAssertionStatus("nonLocalReturn", v)
     val c = loader.loadClass(if (v) "nonLocalReturn.ShouldBeEnabled" else "nonLocalReturn.ShouldBeDisabled")
     return c.newInstance() as Checker

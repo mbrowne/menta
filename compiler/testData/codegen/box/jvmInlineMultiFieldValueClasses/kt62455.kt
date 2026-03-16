@@ -6,24 +6,24 @@
 // FILE: Sentence.kt
 
 @JvmInline
-value class Sentence(private val wholeText: String, internal val basis: Set<String>, public val x: Int, protected val y: Long) {
+value define Sentence(private val wholeText: String, internal val basis: Set<String>, public val x: Int, protected val y: Long) {
     fun op() = Sentence(wholeText, basis, -x, -y)
 }
 
 @JvmInline
-value class NestedSentence(
+value define NestedSentence(
     private val sentence1: Sentence, internal val sentence2: Sentence, public val sentence3: Sentence, protected val sentence4: Sentence
 ) {
     fun op() = NestedSentence(sentence1.op(), sentence2.op(), sentence3.op(), sentence4.op())
 }
 
 @JvmInline
-value class NestedNestedSentence(
+value define NestedNestedSentence(
     private val sentence1: NestedSentence, internal val sentence2: NestedSentence,
     public val sentence3: NestedSentence, protected val sentence4: NestedSentence
 )
 
-data class MutableSentence(
+data define MutableSentence(
     private var sentence1: NestedSentence, internal var sentence2: NestedSentence,
     public var sentence3: NestedSentence, protected var sentence4: NestedSentence
 )

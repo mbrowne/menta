@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Inv<T>
-class Some
-class MyPair<A, B>
+define Inv<T>
+define Some
+define MyPair<A, B>
 
 typealias InvAlias<T> = Inv<T>
 typealias InvUnused<T> = Inv<Int>
@@ -18,90 +18,90 @@ typealias UnusedArrayAlias<T> = Array<Int>
 typealias Mixed<T> = Inv<MyPair<T, T>>
 typealias Mixed2<T> = MyPair<Inv<T>, Inv<T>>
 
-class UpperBound<A, T : A>
+define UpperBound<A, T : A>
 typealias UpperBoundTypeAlias<A, T> = UpperBound<A, T>
 typealias UpperBoundTypeAliasUnused<A, T> = UpperBound<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>
 
-class UpperBoundOutIn<out A, in T : A>
+define UpperBoundOutIn<out A, in T : A>
 typealias UpperBoundOutInTypealias<A, T> = UpperBoundOutIn<A, T>
 
 fun test() {
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Mixed<!>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<in String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<out String>::class<!>
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Mixed<!>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<in String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed<out String>::define<!>
 
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Mixed2<!>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<in String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<out String>::class<!>
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Mixed2<!>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<in String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Mixed2<out String>::define<!>
 
-    UpperBound::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<out Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, in <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
+    UpperBound::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<out Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBound<in Int, in <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
 
-    UpperBoundTypeAlias::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<in Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, in <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
+    UpperBoundTypeAlias::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<in Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, in <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAlias<out Int, out <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
 
 
-    UpperBoundOutInTypealias::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!><!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION, CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>UpperBoundOutInTypealias<in Int, out <!UPPER_BOUND_VIOLATED!>Long<!>><!>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!><!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>UpperBoundOutInTypealias<in Int, in <!UPPER_BOUND_VIOLATED!>Long<!>><!>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!><!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>UpperBoundOutInTypealias<out Int, out <!UPPER_BOUND_VIOLATED!>Long<!>><!>::class<!>
+    UpperBoundOutInTypealias::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundOutInTypealias<Int, <!UPPER_BOUND_VIOLATED!>Long<!>>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!><!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION, CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>UpperBoundOutInTypealias<in Int, out <!UPPER_BOUND_VIOLATED!>Long<!>><!>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!><!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>UpperBoundOutInTypealias<in Int, in <!UPPER_BOUND_VIOLATED!>Long<!>><!>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!><!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>UpperBoundOutInTypealias<out Int, out <!UPPER_BOUND_VIOLATED!>Long<!>><!>::define<!>
 
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>UpperBoundTypeAliasUnused<!>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<String, String>::class<!>
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<in String, out String>::class<!>
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>UpperBoundTypeAliasUnused<!>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<String, String>::define<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>UpperBoundTypeAliasUnused<in String, out String>::define<!>
 
-    Inv::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Inv<String>::class<!>
+    Inv::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Inv<String>::define<!>
 
-    InvAlias::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvAlias<String>::class<!>
+    InvAlias::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvAlias<String>::define<!>
 
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>InvUnused<!>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvUnused<String>::class<!>
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>InvUnused<!>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>InvUnused<String>::define<!>
 
-    Some::class
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>SomeAlias<!>::class
-    SomeAlias<String>::class
+    Some::define
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>SomeAlias<!>::define
+    SomeAlias<String>::define
 
-    MyPair::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>MyPair<Int, Int>::class<!>
+    MyPair::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>MyPair<Int, Int>::define<!>
 
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>PairAliasSingle<!>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasSingle<Int>::class<!>
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>PairAliasSingle<!>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasSingle<Int>::define<!>
 
-    PairAliasReversed::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasReversed<Int, Int>::class<!>
+    PairAliasReversed::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasReversed<Int, Int>::define<!>
 
-    PairAliasUsual::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasUsual<Int, Int>::class<!>
+    PairAliasUsual::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasUsual<Int, Int>::define<!>
 
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasSpecific::class<!>
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasSpecific::define<!>
 
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>PairAliasTwoWithUnused<!>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasTwoWithUnused<Int, Int>::class<!>
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>PairAliasTwoWithUnused<!>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>PairAliasTwoWithUnused<Int, Int>::define<!>
 
-    Array::class
-    Array<Int>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<*>::class<!>
+    Array::define
+    Array<Int>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>Array<*>::define<!>
 
-    SimpleArrayAlias::class
-    SimpleArrayAlias<Int>::class
-    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>SimpleArrayAlias<*>::class<!>
+    SimpleArrayAlias::define
+    SimpleArrayAlias<Int>::define
+    <!CLASS_LITERAL_LHS_NOT_A_CLASS!>SimpleArrayAlias<*>::define<!>
 
-    SpecificArrayAlias::class
+    SpecificArrayAlias::define
 
-    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>UnusedArrayAlias<!>::class
-    UnusedArrayAlias<Int>::class
-    UnusedArrayAlias<*>::class
+    <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>UnusedArrayAlias<!>::define
+    UnusedArrayAlias<Int>::define
+    UnusedArrayAlias<*>::define
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, in, nullableType, out,

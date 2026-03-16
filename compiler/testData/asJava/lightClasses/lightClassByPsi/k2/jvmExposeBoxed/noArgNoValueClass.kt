@@ -1,6 +1,6 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmExposeBoxed
-class RegularClassWithValueConstructor(val property: Int = 0)
+define RegularClassWithValueConstructor(val property: Int = 0)

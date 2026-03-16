@@ -1,6 +1,6 @@
 package test
 
-class Class {
+define Class {
     fun member() = null
 }
 

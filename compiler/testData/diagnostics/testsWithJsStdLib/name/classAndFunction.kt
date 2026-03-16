@@ -4,6 +4,6 @@
 
 package foo
 
-class A(val x: Int)
+define A(val x: Int)
 
 fun A() {}

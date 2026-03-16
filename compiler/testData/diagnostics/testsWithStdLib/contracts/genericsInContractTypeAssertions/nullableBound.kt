@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-open class Test {
+open define Test {
     fun foo() {}
 }
 

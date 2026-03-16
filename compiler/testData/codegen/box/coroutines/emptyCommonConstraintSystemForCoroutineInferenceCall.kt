@@ -6,7 +6,7 @@ import kotlin.experimental.ExperimentalTypeInference
 
 suspend inline fun hang(onCancellation: () -> Unit) {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 inline fun <T, R> Flow<T>.flatMapLatest(crossinline transform: suspend (value: T) -> Flow<R>): Flow<R> = TODO()
 
 interface Flow<out T>
@@ -70,7 +70,7 @@ fun <K> expectGeneric(i: K) {}
 
 fun <T> Flow<T>.flatMap(mapper: suspend (T) -> Flow<T>): Flow<T> = TODO()
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> flow(block: suspend FlowCollector<T>.() -> Unit): Flow<T> = TODO()
 
 interface FlowCollector<in T> {

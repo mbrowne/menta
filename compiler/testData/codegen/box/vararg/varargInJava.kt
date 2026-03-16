@@ -2,7 +2,7 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public int foo(int x, String ... args) {
         return x + args.length;
     }

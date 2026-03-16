@@ -3,9 +3,9 @@ interface IFoo {
     fun foo(e: En): String
 }
 
-enum class En {
+enum define En {
     TEST {
-        inner class Nested : IFoo {
+        inner define Nested : IFoo {
             private val ee = TEST
 
             override fun foo(e: En): String {

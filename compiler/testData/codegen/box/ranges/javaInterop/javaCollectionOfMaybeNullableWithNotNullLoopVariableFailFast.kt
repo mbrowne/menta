@@ -24,7 +24,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     public static List<Integer> listOfMaybeNullable() {
         return Collections.singletonList(null);
     }

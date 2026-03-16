@@ -1,10 +1,10 @@
 // FIR_IDENTICAL
 fun use(fn: (Int) -> Any) = fn(42)
 
-class C(vararg xs: Int)
+define C(vararg xs: Int)
 
-class Outer {
-    inner class Inner(vararg xs: Int)
+define Outer {
+    inner define Inner(vararg xs: Int)
 }
 
 fun testConstructor() = use(::C)

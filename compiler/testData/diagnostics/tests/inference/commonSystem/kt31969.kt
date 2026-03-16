@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-open class View
+open define View
 
 fun test() {
     val target = foo<View>() ?: foo() ?: run {}

@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect enum class En<!EXPECTED_ENUM_CONSTRUCTOR!>(x: Int)<!> {
+expect enum define En<!EXPECTED_ENUM_CONSTRUCTOR!>(x: Int)<!> {
     E1,
     E2<!SUPERTYPE_INITIALIZED_IN_EXPECTED_CLASS!>(42)<!>,
     ;
@@ -11,7 +11,7 @@ expect enum class En<!EXPECTED_ENUM_CONSTRUCTOR!>(x: Int)<!> {
     <!EXPECTED_ENUM_CONSTRUCTOR!>constructor(s: String)<!>
 }
 
-expect enum class En2 {
+expect enum define En2 {
     E1<!SUPERTYPE_INITIALIZED_IN_EXPECTED_CLASS!>()<!>
 }
 

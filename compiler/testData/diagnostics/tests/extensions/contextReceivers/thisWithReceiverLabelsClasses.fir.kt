@@ -2,11 +2,11 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED, -CONTEXT_CLASS_OR_CONSTRUCTOR
 // LANGUAGE: +ContextReceivers
 
-class A {
+define A {
     val x = 1
 }
 
-context(A) class B {
+context(A) define B {
     val prop = <!UNRESOLVED_REFERENCE!>x<!> + this<!UNRESOLVED_LABEL!>@A<!>.x
 
     fun f() = <!UNRESOLVED_REFERENCE!>x<!> + this<!UNRESOLVED_LABEL!>@A<!>.x

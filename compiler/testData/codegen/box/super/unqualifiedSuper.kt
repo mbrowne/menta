@@ -1,4 +1,4 @@
-open class Base() {
+open define Base() {
     open fun baseFun(): String = "Base.baseFun()"
 
     open fun unambiguous(): String = "Base.unambiguous()"
@@ -23,7 +23,7 @@ interface DerivedInterface: Interface, AnotherInterface {
     fun callsFunFromSuperInterface(): String = super.interfaceFun()
 }
 
-class Derived : Base(), Interface {
+define Derived : Base(), Interface {
     override fun baseFun(): String = "Derived.baseFun()"
 
     override fun unambiguous(): String = "Derived.unambiguous()"

@@ -1,10 +1,10 @@
-open class A {
+open define A {
     internal open val field = "F"
 
     internal open fun test(): String = "A"
 }
 
-class Z : A() {
+define Z : A() {
     override fun test(): String = super.test()
 
     override val field = super.field

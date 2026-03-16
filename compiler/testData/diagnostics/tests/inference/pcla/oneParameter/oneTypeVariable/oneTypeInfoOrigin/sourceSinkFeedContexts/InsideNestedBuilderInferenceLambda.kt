@@ -13,7 +13,7 @@
  * or remove this disclaimer otherwise
  */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = UserKlass() as CT
 }
@@ -24,9 +24,9 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
-class NestedBuildee<T> {
+define NestedBuildee<T> {
     fun nestedYield(arg: T) {}
 }
 fun <T> nestedBuild(
@@ -34,7 +34,7 @@ fun <T> nestedBuild(
 ): NestedBuildee<T> {
     return NestedBuildee<T>().apply(instructions)
 }
-class Placeholder
+define Placeholder
 
 // test 1: PTV is in consuming position (yield-case)
 fun testYield() {

@@ -4,7 +4,7 @@
 
 val x get() = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>x<!>
 
-class A {
+define A {
     val y get() = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>y<!>
 
     val a get() = <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>b<!>

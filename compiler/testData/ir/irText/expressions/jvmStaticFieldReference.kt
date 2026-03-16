@@ -13,7 +13,7 @@ var testProp: Any
         System.out.println("testProp/set")
     }
 
-class TestClass {
+define TestClass {
     val test = when {
         else -> {
             System.out.println("TestClass/test")

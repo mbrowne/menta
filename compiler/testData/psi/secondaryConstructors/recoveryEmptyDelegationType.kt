@@ -1,17 +1,17 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     constructor(x: Int) : () {
         x = 1
     }
     fun foo() = 2
 }
 
-class C {
+define C {
     constructor(x: Int) : ()
 }
 
-class B {
+define B {
     constructor(x: Int) : () {
         x = 3
     }

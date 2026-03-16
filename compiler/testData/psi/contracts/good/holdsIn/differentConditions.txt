@@ -19,7 +19,7 @@ KtFile: differentConditions.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('ExperimentalContracts')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(COMMA)(',')
         PsiWhiteSpace(' ')
         VALUE_ARGUMENT
@@ -27,7 +27,7 @@ KtFile: differentConditions.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('ExperimentalExtendedContracts')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(RPAR)(')')
   PACKAGE_DIRECTIVE
     <empty list>

@@ -5,7 +5,7 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 interface MyInterface {
     fun publicRegularMethod() {}

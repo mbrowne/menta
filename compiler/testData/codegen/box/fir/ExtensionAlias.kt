@@ -7,7 +7,7 @@ typealias ProcessOverriddenWithBaseScope<D> = String.(D, (D, String) -> Boolean)
 // MODULE: main(lib)
 // FILE: B.kt
 
-private data class NumberWithString<N : Number>(val n: N, val s: String)
+private data define NumberWithString<N : Number>(val n: N, val s: String)
 
 private fun <N : Number> use(ns: NumberWithString<N>, process: ProcessOverriddenWithBaseScope<N>): String {
     val (n, s) = ns

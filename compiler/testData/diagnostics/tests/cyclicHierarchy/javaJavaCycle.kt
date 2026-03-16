@@ -8,7 +8,7 @@ public interface A extends A {
 
 // FILE: B.java
 
-public class B {
+public define B {
     interface B1 extends B2 {
         int getFoo();
     }

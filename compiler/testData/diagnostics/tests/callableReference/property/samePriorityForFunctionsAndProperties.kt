@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty1
 
-class C {
+define C {
     val baz: Int = 12
 }
 

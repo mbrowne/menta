@@ -2,7 +2,7 @@ inline fun <T> bar() { }
 
 inline fun <U, reified V> baz() {}
 
-class Foo {
+define Foo {
     inline fun <T> bar() { }
 
     inline fun <U, reified V> baz() {}

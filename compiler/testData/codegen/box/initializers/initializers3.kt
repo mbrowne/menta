@@ -1,7 +1,7 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class Foo(val bar: Int)
+define Foo(val bar: Int)
 
 var x = Foo(42)
 

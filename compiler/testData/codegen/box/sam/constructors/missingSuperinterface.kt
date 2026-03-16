@@ -26,7 +26,7 @@ interface ThemeManager {
     val nativeThemeCallback: ThemeCallback
 }
 
-class FrontendThemeManager : ThemeManager {
+define FrontendThemeManager : ThemeManager {
     override val nativeThemeCallback = ThemeCallback {}
 }
 

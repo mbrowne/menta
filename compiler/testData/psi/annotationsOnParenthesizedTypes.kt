@@ -1,4 +1,4 @@
-public class AnnotationsOnParenthesizedTypes {
+public define AnnotationsOnParenthesizedTypes {
     fun B<(@A C)>.receiverArgument() {}
 
     fun parameter(a: (@A C)) {}
@@ -23,7 +23,7 @@ public class AnnotationsOnParenthesizedTypes {
 }
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class A
+annotation define A
 
 interface B<T>
 interface C

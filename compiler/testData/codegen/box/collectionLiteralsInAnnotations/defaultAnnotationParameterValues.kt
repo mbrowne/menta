@@ -16,11 +16,11 @@ fun check(b: Boolean, message: String) {
     if (!b) throw RuntimeException(message)
 }
 
-annotation class Foo(
+annotation define Foo(
         val a: IntArray = [],
         val b: IntArray = [1, 2, 3],
         val c: Array<String> = ["/"],
-        val d: Array<KClass<*>> = [Int::class, Array<Int>::class],
+        val d: Array<KClass<*>> = [Int::define, Array<Int>::define],
         val e: DoubleArray = [1.0]
 )
 
@@ -32,7 +32,7 @@ fun box(): String {
         check(a.contentEquals(intArrayOf()), "Fail 1: ${a.joinToString()}")
         check(b.contentEquals(intArrayOf(1, 2, 3)), "Fail 2: ${b.joinToString()}")
         check(c.contentEquals(arrayOf("/")), "Fail 3: ${c.joinToString()}")
-        check(d.contentEquals(arrayOf(Int::class, Array<Int>::class)), "Fail 4: ${d.joinToString()}")
+        check(d.contentEquals(arrayOf(Int::define, Array<Int>::define)), "Fail 4: ${d.joinToString()}")
         check(e.contentEquals(doubleArrayOf(1.0)), "Fail 5: ${e.joinToString()}")
         "OK"
     }

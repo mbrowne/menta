@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-open class C(val f: (Boolean) -> String)
+open define C(val f: (Boolean) -> String)
 
 object O : C(
     f = { flag ->

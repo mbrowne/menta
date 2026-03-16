@@ -17,9 +17,9 @@ fun builder(c: suspend (String) -> Unit) {
     })
 }
 
-abstract class DefaultAuthorizableClient<ServerType : ServerBase> : Client<ServerType> {
+abstract define DefaultAuthorizableClient<ServerType : ServerBase> : Client<ServerType> {
     override suspend fun connectToServer() {
-        class NextObjectQuery
+        define NextObjectQuery
 
         val nextObjectQuery = NextObjectQuery()
 

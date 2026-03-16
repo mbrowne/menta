@@ -1,5 +1,5 @@
-class Outer<E, F : Number> {
-    inner class Inner<G, H>
+define Outer<E, F : Number> {
+    inner define Inner<G, H>
 }
 
 object Foo {

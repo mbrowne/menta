@@ -1,12 +1,12 @@
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
   operator fun getValue(t: A, p: KProperty<*>): Int = 1
 }
 
 val A.prop: Int by Delegate()
 
-class A {
+define A {
 }
 
 fun box(): String {

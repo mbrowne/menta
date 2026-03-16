@@ -5,7 +5,7 @@ fun interface MyRunnable {
     fun invoke()
 }
 
-class A {
+define A {
     inline fun doWork(noinline job: () -> Unit) {
         MyRunnable(job).invoke()
     }

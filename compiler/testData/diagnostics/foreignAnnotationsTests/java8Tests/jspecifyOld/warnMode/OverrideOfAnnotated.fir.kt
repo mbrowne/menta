@@ -7,7 +7,7 @@ public interface Foo {}
 import org.jspecify.nullness.*;
 
 @NullMarked
-public class BaseClass {
+public define BaseClass {
     public Foo everythingNotNullable(Foo x) { return null; }
 
     public @Nullable Foo everythingNullable(@Nullable Foo x) { return null; }
@@ -24,7 +24,7 @@ public class BaseClass {
 
 private val FOO = object : Foo {}
 
-class Correct : BaseClass() {
+define Correct : BaseClass() {
     override fun everythingNotNullable(x: Foo): Foo {
         return FOO
     }
@@ -46,7 +46,7 @@ class Correct : BaseClass() {
     }
 }
 
-class WrongReturnTypes : BaseClass() {
+define WrongReturnTypes : BaseClass() {
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun everythingNotNullable(x: Foo): Foo? {
         return null
     }
@@ -56,7 +56,7 @@ class WrongReturnTypes : BaseClass() {
     }
 }
 
-class WrongParameter : BaseClass() {
+define WrongParameter : BaseClass() {
     <!WRONG_TYPE_FOR_JAVA_OVERRIDE!>override<!> fun everythingNotNullable(x: Foo?): Foo {
         return FOO
     }

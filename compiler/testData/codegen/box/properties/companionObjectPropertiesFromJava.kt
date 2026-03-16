@@ -3,15 +3,15 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
     String test() {
         String s;
 
         s = Klass.NAME;
-        if (!s.equals("Klass")) throw new AssertionError("Fail class: " + s);
+        if (!s.equals("Klass")) throw new AssertionError("Fail define: " + s);
 
         s = Klass.JVM_NAME;
-        if (!s.equals("JvmKlass")) throw new AssertionError("Fail jvm class: " + s);
+        if (!s.equals("JvmKlass")) throw new AssertionError("Fail jvm define: " + s);
 
         s = Trait.NAME;
         if (!s.equals("Trait")) throw new AssertionError("Fail interface: " + s);
@@ -28,7 +28,7 @@ class Test {
 
 // FILE: test.kt
 
-class Klass {
+define Klass {
     companion object {
         const val NAME = "Klass"
         @JvmField val JVM_NAME = "JvmKlass"
@@ -41,7 +41,7 @@ interface Trait {
     }
 }
 
-enum class Enoom {
+enum define Enoom {
     ;
     companion object {
         const val NAME = "Enum"

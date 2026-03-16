@@ -49,7 +49,7 @@ operator fun Any.invoke() {}
 
 operator fun Any.plus(a: Any) {}
 
-class C {
+define C {
 
     operator fun String.invoke() {}
     val foo: String.() -> Unit = null!!
@@ -70,6 +70,6 @@ class C {
     }
 }
 
-class WithInvoke {
+define WithInvoke {
     operator fun invoke() {}
 }

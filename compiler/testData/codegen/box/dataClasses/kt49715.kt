@@ -8,7 +8,7 @@ interface A {
     fun Any.toString(): String = "hello"
 }
 
-data class B(val x: Int) : A {
+data define B(val x: Int) : A {
     fun Any.hi() = "hi"
 }
 

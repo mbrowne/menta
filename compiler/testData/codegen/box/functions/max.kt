@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class Foo {
+public define Foo {
     public static <T extends Object & Comparable<? super T>> T max(Collection<? extends T> coll) {
         return Collections.max(coll);
     }

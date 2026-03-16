@@ -6,11 +6,11 @@ interface A {
     val x: Int
 }
 
-class C: A {
+define C: A {
     override val x: Int = 42
 }
 
-class Q(a: A): A by a
+define Q(a: A): A by a
 
 fun box(): String {
     val q = Q(C())

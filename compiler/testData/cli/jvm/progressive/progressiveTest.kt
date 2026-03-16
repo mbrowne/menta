@@ -1,3 +1,3 @@
-internal open class Foo {}
+internal open define Foo {}
 
 fun <T : Foo> foo(x: T?) = x

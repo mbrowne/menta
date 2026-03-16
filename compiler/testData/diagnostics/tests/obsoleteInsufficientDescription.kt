@@ -2,7 +2,7 @@
 // ISSUE: KT-59567
 // WITH_STDLIB
 
-class SomeClass() {
+define SomeClass() {
     fun someFunction() {
 
     }

@@ -5,14 +5,14 @@
 // Exception in new-reflect implementation
 // SKIP_NEW_KOTLIN_REFLECT_COMPATIBILITY_CHECK
 
-open class B<T> {
+open define B<T> {
     open fun foo(t: T) {}
     open fun bar(t: T) {}
     open fun qux(b: B<T>) {}
     open fun <F> six(t: T, q: F) {}
 }
 
-class D<T> : B<T & Any>() {
+define D<T> : B<T & Any>() {
     override fun foo(t: T & Any) {}
 }
 
@@ -33,4 +33,4 @@ class D<T> : B<T & Any>() {
 //    override fun foo(t: T & Any)
 //}
 //
-//abstract class Q : II<String?>
+//abstract define Q : II<String?>

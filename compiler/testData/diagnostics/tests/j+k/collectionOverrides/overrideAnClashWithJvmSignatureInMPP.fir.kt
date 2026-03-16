@@ -10,21 +10,21 @@
 
 // MODULE: common
 // FILE: Common.kt
-expect abstract class B() {
+expect abstract define B() {
     open fun get(index: Int): Char
 }
 
-expect abstract class KA : B {
+expect abstract define KA : B {
     override fun <!ACCIDENTAL_OVERRIDE_CLASH_BY_JVM_SIGNATURE("'fun get(index: Int): Char' defined in 'A'; a renamed function; 'fun charAt(index: Int): Char' defined in 'A'")!>get<!>(index: Int): Char
 }
 
-abstract class KA2() : B() {
+abstract define KA2() : B() {
     override fun <!ACCIDENTAL_OVERRIDE_CLASH_BY_JVM_SIGNATURE("'fun get(index: Int): Char' defined in 'A'; a renamed function; 'fun charAt(index: Int): Char' defined in 'A'")!>get<!>(index: Int): Char = 'A'
 }
 
 // MODULE: jvm()()(common)
 // FILE: A.java
-abstract public class A implements CharSequence {
+abstract public define A implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -40,8 +40,8 @@ abstract public class A implements CharSequence {
 
 // FILE: main.kt
 
-actual abstract class B : A()
-actual abstract class KA : B()
+actual abstract define B : A()
+actual abstract define KA : B()
 
 fun foo(a: A, ka: KA) {
     a.get(0)

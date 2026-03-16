@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-enum class E {
+enum define E {
     E1,
     E2
 }

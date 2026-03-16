@@ -3,7 +3,7 @@
 
 import java.util.Arrays
 
-class MyCollection<T>(val delegate: Collection<T>): Collection<T> by delegate {
+define MyCollection<T>(val delegate: Collection<T>): Collection<T> by delegate {
     public fun toArray(): Array<Any?> {
         val a = arrayOfNulls<Any?>(3)
         a[0] = 0

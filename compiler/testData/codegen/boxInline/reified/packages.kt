@@ -4,7 +4,7 @@
 // FILE: 1.kt
 package test
 
-public abstract class A<T>
+public abstract define A<T>
 
 inline fun <reified T> foo1(): A<T> {
     return object : A<T>() {

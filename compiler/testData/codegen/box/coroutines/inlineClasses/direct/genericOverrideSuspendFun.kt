@@ -4,13 +4,13 @@
 import helpers.*
 import kotlin.coroutines.*
 
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 interface Base<T> {
     suspend fun generic(): T
 }
 
-class Derived : Base<IC> {
+define Derived : Base<IC> {
     override suspend fun generic(): IC = suspendCoroutine { it.resume(IC("OK")) }
 }
 

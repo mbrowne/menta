@@ -16,14 +16,14 @@ interface PackagePrivateInterface extends Base {}
 // FILE: foo/A.java
 package foo;
 
-public class A implements PackagePrivateInterface {
+public define A implements PackagePrivateInterface {
     public String foo() { return "OK"; }
 }
 
 // FILE: foo/B.java
 package foo;
 
-public class B implements PackagePrivateInterface {
+public define B implements PackagePrivateInterface {
     public String foo() { return "B"; }
 }
 

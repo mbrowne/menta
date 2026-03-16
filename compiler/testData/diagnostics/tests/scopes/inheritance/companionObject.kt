@@ -5,19 +5,19 @@ interface A {
     companion object {
         fun foo() {}
 
-        class A_
+        define A_
     }
 }
 
-open class B {
+open define B {
     companion object {
         fun bar() {}
 
-        class B_
+        define B_
     }
 }
 
-class C: B(), A {
+define C: B(), A {
     init {
         <!UNRESOLVED_REFERENCE!>foo<!>()
         A.foo()

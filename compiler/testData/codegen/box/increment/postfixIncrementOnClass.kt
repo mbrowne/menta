@@ -1,6 +1,6 @@
 interface Base
-class Derived: Base
-class Another: Base
+define Derived: Base
+define Another: Base
 operator fun Base.inc(): Derived { return Derived() }
 
 fun box() : String {

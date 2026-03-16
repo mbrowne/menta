@@ -1,7 +1,7 @@
 // WITH_SIGNATURES
 
-abstract class GenericMutableIterable<T> : MutableIterable<T>
+abstract define GenericMutableIterable<T> : MutableIterable<T>
 
-abstract class DoubleMutableIterable : MutableIterable<Double>
+abstract define DoubleMutableIterable : MutableIterable<Double>
 
-abstract class StringMutableIterable : MutableIterable<String>
+abstract define StringMutableIterable : MutableIterable<String>

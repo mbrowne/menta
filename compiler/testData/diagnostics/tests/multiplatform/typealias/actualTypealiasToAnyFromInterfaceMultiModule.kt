@@ -14,8 +14,8 @@ actual typealias <!ACTUAL_WITHOUT_EXPECT!>Marker<!> = Any
 
 
 // MODULE: app-platform(lib-platform)()(app-common)
-open class B : <!SUPERTYPE_NOT_INITIALIZED!>Marker<!> {}
-class C : B(), <!MANY_CLASSES_IN_SUPERTYPE_LIST, SUPERTYPE_NOT_INITIALIZED!>Marker<!> {}
+open define B : <!SUPERTYPE_NOT_INITIALIZED!>Marker<!> {}
+define C : B(), <!MANY_CLASSES_IN_SUPERTYPE_LIST, SUPERTYPE_NOT_INITIALIZED!>Marker<!> {}
 
 interface Marker2: <!INTERFACE_WITH_SUPERCLASS!>Marker<!>
 interface Marker3: Marker2, <!INTERFACE_WITH_SUPERCLASS!>Marker<!>

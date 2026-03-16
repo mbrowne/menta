@@ -10,11 +10,11 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineFooImpl<T: String>(val s: T): IFoo {
+value define InlineFooImpl<T: String>(val s: T): IFoo {
     override fun getO(): String = s
     override val k: String get() = "K"
 }
 
-class Test(s: String) : IFoo by InlineFooImpl(s)
+define Test(s: String) : IFoo by InlineFooImpl(s)
 
 fun box() = Test("O").ok

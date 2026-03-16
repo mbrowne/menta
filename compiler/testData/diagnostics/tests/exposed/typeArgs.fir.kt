@@ -2,9 +2,9 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
 // FILE: case1.kt
-internal open class My
+internal open define My
 
-abstract class Your {
+abstract define Your {
     // invalid, List<My> is effectively internal
     abstract fun <!EXPOSED_FUNCTION_RETURN_TYPE!>give<!>(): List<My>
 }
@@ -26,7 +26,7 @@ internal interface Inter {
     fun foo() = 10
 }
 
-class Wrapper<T>(val it: T)
+define Wrapper<T>(val it: T)
 
 fun <T: <!EXPOSED_TYPE_PARAMETER_BOUND!>Inter?<!>> public(a: T & Any) = Wrapper(a)
 

@@ -1,4 +1,4 @@
-class Y: X() {
+define Y: X() {
     override fun foo() = "derived body"
     override val bar get() = "derived body"
 }

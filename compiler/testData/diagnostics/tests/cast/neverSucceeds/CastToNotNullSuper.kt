@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class A {
+open define A {
     fun foo() {}
 }
-class B : A()
+define B : A()
 
 fun test(b: B?) {
     (b as A).foo()

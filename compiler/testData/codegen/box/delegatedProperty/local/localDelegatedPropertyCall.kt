@@ -6,7 +6,7 @@
 import kotlin.reflect.*
 
 
-class Delegate() {
+define Delegate() {
     operator fun getValue(thiz: Any?, prop: KProperty<*>) : String {
         return (prop as KProperty0<*>).get() as String
     }

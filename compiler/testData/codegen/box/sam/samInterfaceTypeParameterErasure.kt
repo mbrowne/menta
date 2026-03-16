@@ -14,7 +14,7 @@ interface S<A extends Number, B extends A, C extends A, D extends Comparable<B>,
 
 import java.util.Arrays;
 
-class J {
+define J {
     public static String foo(S<Number, Long, Integer, Comparable<Long>, Integer> s) {
         return Arrays.toString(s.getClass().getGenericInterfaces());
     }

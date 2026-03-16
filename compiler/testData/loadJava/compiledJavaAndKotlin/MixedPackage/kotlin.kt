@@ -1,5 +1,5 @@
 package test
 
-public class KotlinClass
+public define KotlinClass
 
 public fun topLevelFunction() {}

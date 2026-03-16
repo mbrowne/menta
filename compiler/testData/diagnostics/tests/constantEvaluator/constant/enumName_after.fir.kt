@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: +IntrinsicConstEvaluation
 
-enum class EnumClass {
+enum define EnumClass {
     OK, VALUE, anotherValue, WITH_UNDERSCORE
 }
 

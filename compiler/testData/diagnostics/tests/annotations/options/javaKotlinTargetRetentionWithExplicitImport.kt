@@ -3,6 +3,6 @@ import java.lang.annotation.Target
 import java.lang.annotation.ElementType.PACKAGE
 
 <!DEPRECATED_JAVA_ANNOTATION!>@Target(PACKAGE)<!>
-annotation class my
+annotation define my
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, javaProperty */

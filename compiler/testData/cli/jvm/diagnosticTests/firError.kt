@@ -5,8 +5,8 @@ fun main() {
     println(x)
 }
 
-private class Private
+private define Private
 
-class Public : Private() {
+define Public : Private() {
     val x: Private
 }

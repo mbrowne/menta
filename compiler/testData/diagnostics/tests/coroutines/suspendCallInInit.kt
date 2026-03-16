@@ -3,7 +3,7 @@
 suspend fun foo() {}
 
 suspend fun test() {
-    class Foo {
+    define Foo {
         init {
             <!NON_LOCAL_SUSPENSION_POINT!>foo<!>()
         }

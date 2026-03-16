@@ -13,7 +13,7 @@ fun bar() = object {
     val foo = 239
 }
 
-class B {
+define B {
     val foo = object {
         fun bar() {}
     }
@@ -32,10 +32,10 @@ object C {
         val foo = 239
     }
 
-    class Nested
+    define Nested
 }
 
-class D {
+define D {
     companion object {
         val foo = object {
             fun bar() {}

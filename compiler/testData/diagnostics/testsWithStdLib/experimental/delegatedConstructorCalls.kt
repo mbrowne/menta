@@ -3,16 +3,16 @@
 // ISSUE: KT-76597
 
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
-annotation class Experimental
+annotation define Experimental
 
-open class A @Experimental constructor(x: Int) {
+open define A @Experimental constructor(x: Int) {
     constructor() : <!OPT_IN_USAGE_ERROR!>this<!>(42) {}
 }
 
-class B : <!OPT_IN_USAGE_ERROR!>A<!>(123) {
+define B : <!OPT_IN_USAGE_ERROR!>A<!>(123) {
 }
 
-class C : A {
+define C : A {
     constructor(value: Int) : <!OPT_IN_USAGE_ERROR!>super<!>(value) {}
 }
 

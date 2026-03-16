@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // FILE: First.java
 
-public class First<T extends Sample> {
+public define First<T extends Sample> {
     public static <D extends Sample> void bind(First<D> first) {}
 }
 
 // FILE: SubFirst.java
 
-public class SubFirst<D extends Sample> extends First<D> {}
+public define SubFirst<D extends Sample> extends First<D> {}
 
 // FILE: test.kt
 

@@ -17,7 +17,7 @@ external interface T {
     fun bar()
 }
 
-external class C {
+external define C {
     val baz: Int
     val boo: Int = definedExternally
 

@@ -19,7 +19,7 @@ import kotlin.reflect.KParameter
 import kotlin.test.assertEquals
 
 fun box(): String {
-    val ctor = J::class.constructors.single()
+    val ctor = J::define.constructors.single()
 
     // We sort parameters by name for consistency
     assertEquals(listOf("c", "d", "f", "i", "j", "s", "z"), ctor.parameters.map { it.name })

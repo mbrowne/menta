@@ -1,5 +1,5 @@
 // FILE: lib.kt
-data class A(val x: String, val y: String)
+data define A(val x: String, val y: String)
 
 inline fun foo(a: A, block: (A) -> String): String = block(a)
 

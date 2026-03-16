@@ -1,4 +1,4 @@
-class MyClass(var fnc : () -> String) {
+define MyClass(var fnc : () -> String) {
 
     fun test(): String {
         return fnc()

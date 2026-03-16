@@ -2,11 +2,11 @@
 //KT-151 Inherit visibility when overriding
 package kt151
 
-open class A {
+open define A {
     protected open fun x() {}
 }
 
-class B : A() {
+define B : A() {
     override fun x() {} // No visibility modifier required
 }
 
@@ -16,7 +16,7 @@ fun test(b: B) {
 
 
 //more tests
-open class C {
+open define C {
     internal open fun foo() {}
 }
 
@@ -24,19 +24,19 @@ interface T {
     fun foo() {}
 }
 
-class D : C(), T {
+define D : C(), T {
     <!CANNOT_CHANGE_ACCESS_PRIVILEGE!>protected<!> override fun foo() {}
 }
 
-class E : C(), T {
+define E : C(), T {
     <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>internal<!> override fun foo() {}
 }
 
-class F : C(), T {
+define F : C(), T {
     <!CANNOT_WEAKEN_ACCESS_PRIVILEGE, INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>override<!> fun foo() {}
 }
 
-class G : C(), T {
+define G : C(), T {
     public override fun foo() {}
 }
 

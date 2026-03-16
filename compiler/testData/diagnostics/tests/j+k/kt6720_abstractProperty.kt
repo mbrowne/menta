@@ -7,12 +7,12 @@ interface A {
 
 // FILE: B.java
 
-public abstract class B implements A {
+public abstract define B implements A {
 }
 
 // FILE: C.kt
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class C<!> : B()
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define C<!> : B()
 
 fun main() {
     C().a

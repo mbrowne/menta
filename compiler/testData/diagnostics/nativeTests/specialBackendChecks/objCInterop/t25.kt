@@ -3,6 +3,6 @@
 import platform.darwin.*
 import platform.Foundation.*
 
-class Zzz : NSAssertionHandler() {
+define Zzz : NSAssertionHandler() {
     override fun toString() = "zzz"
 }

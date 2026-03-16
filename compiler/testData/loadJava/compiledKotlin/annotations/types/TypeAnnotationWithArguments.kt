@@ -3,8 +3,8 @@
 package test
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann(val x: String, val y: Double)
+annotation define Ann(val x: String, val y: Double)
 
-class TypeAnnotationWithArguments {
+define TypeAnnotationWithArguments {
     fun foo(param: @Ann("param", 3.14) IntRange): @Ann("fun", 2.72) Unit {}
 }

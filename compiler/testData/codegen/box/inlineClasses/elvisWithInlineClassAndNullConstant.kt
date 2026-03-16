@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(private val data: Int) {
+value define UInt(private val data: Int) {
     fun result(): String = if (data == 1) "OK" else "fail"
 }
 

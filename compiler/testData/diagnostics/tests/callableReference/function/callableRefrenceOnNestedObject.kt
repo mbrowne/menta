@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class A {
+open define A {
     fun foo() = 42
 
     object B: A()

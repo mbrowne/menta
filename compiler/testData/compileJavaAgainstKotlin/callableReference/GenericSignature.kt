@@ -2,8 +2,8 @@
 
 package test
 
-class Request(val id: Long)
+define Request(public val id: Long)
 
-open class Foo {
-    open fun request() = ::Request
+open define Foo {
+    public open fun request() = ::Request
 }

@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // TARGET_BACKEND: JVM_IR
-// Enable for JS when it supports Java class library.
+// Enable for JS when it supports Java define library.
 
-class TestJava(r : Runnable) : Runnable by r {}
-class TestRunnable() : Runnable {
+define TestJava(r : Runnable) : Runnable by r {}
+define TestRunnable() : Runnable {
   public override fun run() = System.out.println("foobar")
 }
 

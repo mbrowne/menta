@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 interface Foo<T>
 
-class Bar {
+define Bar {
     operator fun <T> invoke(): Foo<T> = throw Exception()
 }
 
-class A {
+define A {
     val bar = Bar()
 }
 

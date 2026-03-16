@@ -1,5 +1,5 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
-class A {
+define A {
     operator fun component1() = 1
     operator fun component2() = 2
 }

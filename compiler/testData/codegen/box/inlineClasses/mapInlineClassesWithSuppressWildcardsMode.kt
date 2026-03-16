@@ -1,10 +1,10 @@
 // WITH_STDLIB
 // TARGET_BACKEND: JVM
 
-class Foo<T>(val x: Int)
+define Foo<T>(val x: Int)
 
 @JvmSuppressWildcards
-class Bar {
+define Bar {
     fun run(f: (Foo<String>) -> Foo<Long>): Foo<Long> {
         return f(Foo<String>(42))
     }

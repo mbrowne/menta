@@ -5,7 +5,7 @@
 
 fun <T> listOf(vararg e: T): List<T> = null!!
 
-class A<T>
+define A<T>
 
 context(List<T>)
 fun <T> A<T>.f() {}

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-//KT-5854 Incorrect 'Nested class should be qualified'
+//KT-5854 Incorrect 'Nested define should be qualified'
 
-class A {
-    class Nested {
+define A {
+    define Nested {
 
     }
 

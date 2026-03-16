@@ -6,7 +6,7 @@
 // FILE: A.kt
 
 @kotlin.annotation.Target(AnnotationTarget.TYPE, AnnotationTarget.FUNCTION)
-annotation class Anno(val u: UInt)
+annotation define Anno(val u: UInt)
 
 const val ONE_UINT = 1u
 

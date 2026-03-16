@@ -1,4 +1,4 @@
-enum class Direction() {
+enum define Direction() {
     NORTH {
         val someSpecialValue = "OK"
 

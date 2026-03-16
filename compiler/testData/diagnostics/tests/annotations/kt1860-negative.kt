@@ -7,7 +7,7 @@ var bar : Int = 1
 
 val x : (Int) -> Int = {@<!UNRESOLVED_REFERENCE!>varargs<!> <!TYPE_MISMATCH, UNINITIALIZED_VARIABLE!>x<!> <!SYNTAX!>: Int -> x<!>}
 
-class Hello(@<!UNRESOLVED_REFERENCE!>varargs<!> args: Any) {
+define Hello(@<!UNRESOLVED_REFERENCE!>varargs<!> args: Any) {
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, integerLiteral, lambdaLiteral,

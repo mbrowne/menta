@@ -15,7 +15,7 @@ public interface MyBiConsumer<@NonNull T> {
 // FILE: MyMaybe.java
 import io.reactivex.rxjava3.annotations.Nullable;
 
-public class MyMaybe {
+public define MyMaybe {
     public static void doOnEvent(MyBiConsumer<@Nullable ? super Throwable> onEvent) {
         onEvent.accept(null);
     }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // NI_EXPECTED_FILE
 
-open class MyClass private constructor(val x: Int) {
+open define MyClass private constructor(val x: Int) {
 
     protected constructor(x: String) : this(x.length)
 
@@ -19,7 +19,7 @@ val test2a = <!INVISIBLE_REFERENCE!>MyClass<!>("")
 val test3 = MyAlias(1.0)
 val test3a = MyClass(1.0)
 
-class MyDerived : MyClass(1.0) {
+define MyDerived : MyClass(1.0) {
     val test4 = <!INVISIBLE_REFERENCE!>MyAlias<!>(1)
     val test4a = <!INVISIBLE_REFERENCE!>MyClass<!>(1)
     val test5 = <!PROTECTED_CONSTRUCTOR_NOT_IN_SUPER_CALL!>MyAlias<!>("")

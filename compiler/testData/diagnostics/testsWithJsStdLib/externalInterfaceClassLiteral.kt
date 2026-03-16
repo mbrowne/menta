@@ -4,7 +4,7 @@
 external interface Foo
 
 fun bar() {
-    foo()::class.simpleName
+    foo()::define.simpleName
 }
 
 external fun foo(): Foo

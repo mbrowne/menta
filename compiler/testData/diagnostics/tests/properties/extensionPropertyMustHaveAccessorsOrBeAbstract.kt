@@ -5,7 +5,7 @@
 
 <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>var String.test3: Int<!>; public set
 
-class C {
+define C {
     <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>val String.test1: Int<!>
     <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>var String.test2: Int<!>
     <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>var String.test3: Int<!>; public set
@@ -17,7 +17,7 @@ interface I {
     var String.test3: Int; public set
 }
 
-abstract class A {
+abstract define A {
     <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>val String.test1: Int<!>
     <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>var String.test2: Int<!>
     <!EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT!>var String.test3: Int<!>; public set

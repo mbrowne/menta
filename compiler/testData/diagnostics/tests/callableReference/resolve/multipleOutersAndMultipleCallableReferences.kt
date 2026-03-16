@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 interface Base
-class Inv<K> : Base
+define Inv<K> : Base
 
 fun foo(x: Int): Inv<Int> = TODO()
 fun foo(y: String): Inv<String> = TODO()

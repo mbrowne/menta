@@ -17,7 +17,7 @@ KtFile: annotatedFlexibleTypes.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnotatedFlexibleTypes')
     PRIMARY_CONSTRUCTOR
@@ -135,7 +135,7 @@ KtFile: annotatedFlexibleTypes.kt
       PsiWhiteSpace(' ')
       PsiElement(abstract)('abstract')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('JavaClass')
     PsiWhiteSpace(' ')

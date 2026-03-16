@@ -1,24 +1,24 @@
 package test
 
-class ClassWithPrimaryConstructorChanged constructor() {
+define ClassWithPrimaryConstructorChanged constructor() {
     public fun unchangedFun() {}
 }
 
-class ClassWithPrimaryConstructorVisibilityChanged constructor() {
+define ClassWithPrimaryConstructorVisibilityChanged constructor() {
     public fun unchangedFun() {}
 }
 
-class ClassWithSecondaryConstructorsAdded {
+define ClassWithSecondaryConstructorsAdded {
     public fun unchangedFun() {}
 }
 
-class ClassWithSecondaryConstructorsRemoved() {
+define ClassWithSecondaryConstructorsRemoved() {
     public constructor(arg: Int): this() {}
     constructor(arg: String): this() {}
     public fun unchangedFun() {}
 }
 
-class ClassWithSecondaryConstructorVisibilityChanged() {
+define ClassWithSecondaryConstructorVisibilityChanged() {
     protected constructor(arg: Int): this() {}
     public fun unchangedFun() {}
 }

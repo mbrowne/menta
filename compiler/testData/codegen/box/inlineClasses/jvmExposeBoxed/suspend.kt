@@ -4,10 +4,10 @@
 
 import kotlin.coroutines.*
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JvmInline
 @JvmExposeBoxed
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 suspend fun foo(sw: StringWrapper): String = sw.s
 

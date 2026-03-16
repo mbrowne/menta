@@ -5,14 +5,14 @@
 typealias Action<K> = (@UnsafeVariance K) -> Unit
 typealias Action2<K> = (@UnsafeVariance K) -> K
 
-data class Tag<L>(val action: Action<L>)
-data class Tag2<L>(val action: Action<<!REDUNDANT_PROJECTION!>in<!> L>)
-data class Tag3<in L>(val action: Action<L>)
-data class Tag4<in L>(val action: Action<<!REDUNDANT_PROJECTION!>in<!> L>)
-data class Tag5<L>(val action: Action2<L>)
-data class Tag6<out L>(val action: Action<<!REDUNDANT_PROJECTION!>in<!> L>)
-data class Tag7<out L>(val action: Action<L>)
-data class Tag8<out L>(val action: Action2<L>)
+data define Tag<L>(val action: Action<L>)
+data define Tag2<L>(val action: Action<<!REDUNDANT_PROJECTION!>in<!> L>)
+data define Tag3<in L>(val action: Action<L>)
+data define Tag4<in L>(val action: Action<<!REDUNDANT_PROJECTION!>in<!> L>)
+data define Tag5<L>(val action: Action2<L>)
+data define Tag6<out L>(val action: Action<<!REDUNDANT_PROJECTION!>in<!> L>)
+data define Tag7<out L>(val action: Action<L>)
+data define Tag8<out L>(val action: Action2<L>)
 
 fun getTag(): Tag<*> = Tag<Int> {}
 fun getTag2(): Tag2<*> = Tag2<Int> {}

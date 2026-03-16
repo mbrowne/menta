@@ -1,3 +1,3 @@
 package test
 
-class Beer<T>
+define Beer<T>

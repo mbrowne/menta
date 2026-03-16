@@ -3,7 +3,7 @@
 
 interface I𝔹
 
-class C𝔹 : I𝔹
+define C𝔹 : I𝔹
 
 fun f𝔹() = 1
 

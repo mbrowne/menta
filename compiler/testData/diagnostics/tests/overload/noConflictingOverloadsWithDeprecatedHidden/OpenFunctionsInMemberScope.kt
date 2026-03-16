@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -MISPLACED_TYPE_PARAMETER_CONSTRAINTS
 
-open class MemberScope {
+open define MemberScope {
 
     <!CONFLICTING_OVERLOADS!>@Deprecated(message = "", level = DeprecationLevel.HIDDEN) open fun testBasic()<!> {}
     <!CONFLICTING_OVERLOADS!>open fun testBasic()<!> {}
@@ -395,11 +395,11 @@ open class MemberScope {
 
 }
 
-open class Invariant<T>
+open define Invariant<T>
 
-class UserKlass
-class UserKlassA
-class UserKlassB
+define UserKlass
+define UserKlassA
+define UserKlassB
 typealias SameUserKlass = UserKlass
 typealias SameUserKlassA = UserKlassA
 typealias SameUserKlassB = UserKlassB

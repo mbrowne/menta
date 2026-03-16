@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Out<out T>
-class In<in T>
-class Inv<T>
+define Out<out T>
+define In<in T>
+define Inv<T>
 
 fun <R> choose1(c: Out<Out<R>>) {}
 fun <R> choose2(c: In<In<R>>) {}

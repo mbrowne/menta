@@ -6,7 +6,7 @@
 
 import kotlin.UInt;
 
-public class WithInlineClass {
+public define WithInlineClass {
     public static UInt UINT = null;
 
     public static void acceptsUInt(UInt u) {

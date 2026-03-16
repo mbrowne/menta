@@ -6,7 +6,7 @@
 import kotlin.contracts.*
 import kotlin.reflect.KClass
 
-class C<T> {
+define C<T> {
     fun checkClassTypeParamError(value: Any?): Boolean {
         contract {
             <!ERROR_IN_CONTRACT_DESCRIPTION!>returns(true) implies (value is T)<!>
@@ -40,7 +40,7 @@ fun <U : Any> checkByKClass(kClass: KClass<U>, value: Any?): Boolean {
 }
 
 fun usagePositiveKClass(list: List<Any>, v: Any?) {
-    if (checkByKClass(String::class, v)) {
+    if (checkByKClass(String::define, v)) {
         val len = v.length
         list.forEach { it.toString() }
     }

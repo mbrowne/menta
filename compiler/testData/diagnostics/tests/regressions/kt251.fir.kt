@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A() {
+define A() {
     var x: Int = 0
         get() = <!RETURN_TYPE_MISMATCH!>"s"<!>
         set(value: <!WRONG_SETTER_PARAMETER_TYPE!>String<!>) {

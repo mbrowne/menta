@@ -4,9 +4,9 @@
 
 interface Bound
 interface Upper : Bound
-class Lower : Upper
+define Lower : Upper
 
-class Inv<T>
+define Inv<T>
 
 fun <T : Bound, U : T> makeInv(v: U): Inv<T> = TODO()
 fun <K> id(arg: K): K = arg

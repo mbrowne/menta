@@ -42,7 +42,7 @@ import kotlin.collections.ArrayList
 
 interface A : Java1, Java2  //Kotlin ← Java1, Java2
 
-abstract class B: Java1, Java2 {    //Kotlin ← Java1, Java2 with explicit override
+abstract define B: Java1, Java2 {    //Kotlin ← Java1, Java2 with explicit override
     override fun foo(a: MutableList<Int>) { }
     override fun bar(): ArrayList<Int> {
         return null!!
@@ -61,7 +61,7 @@ abstract class B: Java1, Java2 {    //Kotlin ← Java1, Java2 with explicit over
 
 interface C : Java2, KotlinInterface //Kotlin ← Java, Kotlin2
 
-abstract class D : Java2, KotlinInterface { //Kotlin ← Java, Kotlin2 with explicit override
+abstract define D : Java2, KotlinInterface { //Kotlin ← Java, Kotlin2 with explicit override
     override fun foo(o: ArrayList<Int>) { }
     override fun bar(): ArrayList<Int> {
         return null!!

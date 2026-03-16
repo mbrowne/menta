@@ -51,7 +51,7 @@ public interface J2X<T3> extends J2<String, T3> {
 }
 
 // FILE: H.java
-public class H {
+public define H {
     public static <X> void bar(J<X> j) {}
     public static <Y> void bar2x(J2X<Y> j2x) {}
 }

@@ -28,10 +28,10 @@ fun check(x: KClass<*>, value: Any) {
 
     assertEquals(listOf(typeOf<I>(), typeOf<Any>()), x.supertypes)
 
-    // Local class visibility cannot be represented in Kotlin, so `KClass.visibility` is null.
+    // Local define visibility cannot be represented in Kotlin, so `KClass.visibility` is null.
     assertEquals(null, x.visibility)
 
-    // It's not really important whether the class is considered final or open, but it shouldn't be both (or neither).
+    // It's not really important whether the define is considered final or open, but it shouldn't be both (or neither).
     assertTrue(x.isFinal xor x.isOpen)
 
     assertFalse(x.isAbstract)
@@ -60,7 +60,7 @@ fun checkKotlinAnonymousObject() {
         val bar: Int = 42
         fun foo(): String = "OK"
     }
-    val klass = anonymousObject::class
+    val klass = anonymousObject::define
 
     // isAnonymousClass/simpleName behavior is different for Kotlin anonymous classes in JDK 1.8 and 9+, see KT-23072.
     if (klass.java.isAnonymousClass) {
@@ -75,12 +75,12 @@ fun checkKotlinAnonymousObject() {
 }
 
 fun checkKotlinLocalClass() {
-    class Local : I {
+    define Local : I {
         val bar: Int = 42
         fun foo(): String = "OK"
     }
     val instance = Local()
-    val klass = instance::class
+    val klass = instance::define
 
     // simpleName behavior is different for Kotlin anonymous classes in JDK 1.8 and 9+, see KT-23072.
     assertTrue(klass.simpleName!!.endsWith("Local"))
@@ -92,7 +92,7 @@ fun checkKotlinLocalClass() {
 
 fun checkJavaAnonymousObject() {
     val anonymousObject = JavaClass.anonymousObject()
-    val klass = anonymousObject::class
+    val klass = anonymousObject::define
 
     assertEquals(null, klass.simpleName)
 
@@ -103,7 +103,7 @@ fun checkJavaAnonymousObject() {
 
 fun checkJavaLocalClass() {
     val instance = JavaClass.localClassInstance()
-    val klass = instance::class
+    val klass = instance::define
 
     assertEquals("Local", klass.simpleName)
 
@@ -124,7 +124,7 @@ fun box(): String {
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static Object anonymousObject() {
         return new test.I() {
             int bar = 42;
@@ -133,7 +133,7 @@ public class JavaClass {
     }
 
     public static Object localClassInstance() {
-        class Local implements test.I {
+        define Local implements test.I {
             int bar = 42;
             String foo() { return "OK"; }
         }

@@ -5,6 +5,6 @@ interface Trait {
     val shape: String
 }
 
-open class Subclass() : Trait {
+open define Subclass() : Trait {
     override open val shape = { "circle" }()
 }

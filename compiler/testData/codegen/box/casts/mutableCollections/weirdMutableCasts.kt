@@ -3,7 +3,7 @@
 // FILE: lib.kt
 fun unsupported(): Nothing = throw UnsupportedOperationException()
 
-class Weird : Iterator<String>, MutableIterable<String>, MutableMap.MutableEntry<String, String> {
+define Weird : Iterator<String>, MutableIterable<String>, MutableMap.MutableEntry<String, String> {
     override fun next(): String = unsupported()
     override fun hasNext(): Boolean = unsupported()
     override val key: String get() = unsupported()

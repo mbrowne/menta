@@ -9,7 +9,7 @@ KtFile: IOSamples.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IAdder')
     TYPE_PARAMETER_LIST
@@ -54,7 +54,7 @@ KtFile: IOSamples.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ICloseable')
     PsiWhiteSpace(' ')
@@ -75,7 +75,7 @@ KtFile: IOSamples.kt
     MODIFIER_LIST
       PsiElement(abstract)('abstract')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('JavaCloseableWrapper')
     PRIMARY_CONSTRUCTOR
@@ -201,7 +201,7 @@ KtFile: IOSamples.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('FileInput')
     PsiWhiteSpace(' ')
@@ -445,7 +445,7 @@ KtFile: IOSamples.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('FileOutput')
     PsiWhiteSpace(' ')

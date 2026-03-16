@@ -4,9 +4,9 @@ interface A {
     fun foo() {}
 }
 
-open class B(a: A) : A by a
+open define B(a: A) : A by a
 
-class C(a: A): B(a), A {
+define C(a: A): B(a), A {
 }
 
 fun b(c: C) {

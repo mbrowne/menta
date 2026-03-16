@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package foo
 
-class A {
+define A {
     <!JS_NAME_IS_NOT_ON_ALL_ACCESSORS!>var x: Int<!>
         @JsName("get_x") get() = 23
         set(value) {}

@@ -1,12 +1,12 @@
-class It {
+define It {
     operator fun next() = 5
 }
 
-class C {
+define C {
     operator fun iterator(): It = It()
 }
 
-class X {
+define X {
     var hasNext = true
     operator fun It.hasNext() = if (hasNext) {hasNext = false; true} else false
 

@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class FloatWrapper(@Volatile var x: Float)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define FloatWrapper(@Volatile var x: Float)
 
 val global = FloatWrapper(1.5f)
 

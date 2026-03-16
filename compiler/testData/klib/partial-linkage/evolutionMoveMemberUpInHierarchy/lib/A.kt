@@ -1,4 +1,4 @@
-open class Y: X() {
+open define Y: X() {
     fun foo() = "non-open member function"
     val bar = "non-open member property"
     fun nux() = "non-open member function"

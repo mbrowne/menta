@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun foo(): Int
 }
 
@@ -14,6 +14,6 @@ interface FooProvider {
     fun foo(): Int = 42
 }
 
-actual class Foo : FooProvider
+actual define Foo : FooProvider
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, integerLiteral, interfaceDeclaration */

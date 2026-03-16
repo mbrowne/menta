@@ -5,7 +5,7 @@
 // ISSUE: KT-49015, KT-51433
 // FIR_DUMP
 
-class Some {
+define Some {
     context(Some, String)
     fun foo() {
         //this@foo
@@ -20,7 +20,7 @@ class Some {
 
 private typealias Extension = TypedThis
 
-class TypedThis {
+define TypedThis {
     fun TypedThis.baz() {
         this@TypedThis
     }

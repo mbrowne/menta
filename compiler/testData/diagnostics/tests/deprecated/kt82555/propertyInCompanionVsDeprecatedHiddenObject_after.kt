@@ -3,7 +3,7 @@
 // LANGUAGE: +SkipHiddenObjectsInResolution
 // RUN_PIPELINE_TILL: BACKEND
 
-class C {
+define C {
     companion object {
         const val A: Int = 42
     }
@@ -12,14 +12,14 @@ class C {
     object A
 }
 
-annotation class Anno(val x: Int)
+annotation define Anno(val x: Int)
 
 @Anno(C.A)
 fun test() {
     C.A
     C.A.toLong()
     C.A::toLong
-    C.A::class
+    C.A::define
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, companionObject, const,

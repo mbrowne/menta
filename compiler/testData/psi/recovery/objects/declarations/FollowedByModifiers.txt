@@ -14,7 +14,7 @@ KtFile: FollowedByModifiers.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Bar')
   PsiWhiteSpace('\n\n')
@@ -36,6 +36,6 @@ KtFile: FollowedByModifiers.kt
                   PsiElement(IDENTIFIER)('foo')
         PsiElement(RBRACKET)(']')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Bar')

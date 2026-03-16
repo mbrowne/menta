@@ -8,7 +8,7 @@ interface I {
     fun f() = object {}
 }
 
-class C : I
+define C : I
 
 fun box(): String {
     val t = C().f().javaClass

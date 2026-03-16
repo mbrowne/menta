@@ -4,7 +4,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     public @NotNull String nn() { return ""; }
 }
 

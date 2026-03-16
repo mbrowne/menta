@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-class C {
+define C {
     var x: Int = 0
 }
 

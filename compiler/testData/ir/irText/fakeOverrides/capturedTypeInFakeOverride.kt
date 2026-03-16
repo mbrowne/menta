@@ -13,6 +13,6 @@ interface A {
 
 interface B<T : List<out Number>>
 
-abstract class C : A {
+abstract define C : A {
     override fun m(x: B<out List<Number>>): Int = TODO()
 }

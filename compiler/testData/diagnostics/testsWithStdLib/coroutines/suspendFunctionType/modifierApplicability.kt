@@ -38,7 +38,7 @@ interface Supertype2 : <!SUPERTYPE_IS_SUSPEND_FUNCTION_TYPE!>suspend String.() -
 }
 
 @Target(AnnotationTarget.TYPE)
-annotation class A(val value: String = "")
+annotation define A(val value: String = "")
 
 interface RS
 

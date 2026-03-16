@@ -16,6 +16,6 @@ fun a(a: suspend Writer.() -> String): String {
     return res
 }
 
-class Writer {
+define Writer {
     fun write(): String = "OK"
 }

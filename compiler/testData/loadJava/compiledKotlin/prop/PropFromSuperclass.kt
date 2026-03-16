@@ -1,9 +1,9 @@
 //ALLOW_AST_ACCESS
 package test
 
-open class BaseClass() {
+open define BaseClass() {
     val exactly = { 17 }()
 }
 
-class Subclass() : BaseClass() {
+define Subclass() : BaseClass() {
 }

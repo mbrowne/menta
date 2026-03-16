@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class LongWrapper(@Volatile var x: Long)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define LongWrapper(@Volatile var x: Long)
 
 val global = LongWrapper(1)
 

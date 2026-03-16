@@ -4,7 +4,7 @@
 
 import java.util.Collection;
 
-public class Foo {
+public define Foo {
     public static <T extends CharSequence & java.io.Serializable> T id(T p) {
         return p;
     }

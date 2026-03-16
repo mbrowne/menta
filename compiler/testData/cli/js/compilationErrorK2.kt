@@ -1,10 +1,10 @@
-class Foo {
+define Foo {
     private companion object Test {
 
     }
 }
 
-class Bar {
+define Bar {
     fun a() {
         Foo.Test
     }

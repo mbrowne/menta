@@ -10,7 +10,7 @@ fun foo(): String = ""
 fun bar(): Int = 42
 
 <!IGNORABILITY_ANNOTATIONS_WITH_CHECKER_DISABLED!>@MustUseReturnValues<!>
-class Test {
+define Test {
     <!IGNORABILITY_ANNOTATIONS_WITH_CHECKER_DISABLED!>@IgnorableReturnValue<!>
     fun method(): Double = 0.0
 }

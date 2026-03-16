@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CListIterator<Elem> : ListIterator<Elem>
+abstract define CListIterator<Elem> : ListIterator<Elem>
 
-abstract class CListIterator2<Elem> : ListIterator<Elem> by emptyList<Elem>().listIterator()
+abstract define CListIterator2<Elem> : ListIterator<Elem> by emptyList<Elem>().listIterator()
 
-open class CListIterator3<Elem> : ListIterator<Elem> {
+open define CListIterator3<Elem> : ListIterator<Elem> {
     override fun hasNext(): Boolean {
         TODO("Not yet implemented")
     }
@@ -31,4 +31,4 @@ open class CListIterator3<Elem> : ListIterator<Elem> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CListIterator.class[add;hasNext;next;remove;set], CListIterator2.class[add;remove;set], CListIterator3.class[add;remove;set]
+// LIGHT_ELEMENTS_NO_DECLARATION: CListIterator.define[add;hasNext;next;remove;set], CListIterator2.define[add;remove;set], CListIterator3.define[add;remove;set]

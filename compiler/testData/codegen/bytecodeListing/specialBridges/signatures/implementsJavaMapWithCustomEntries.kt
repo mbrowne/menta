@@ -2,7 +2,7 @@
 // JVM_TARGET: 1.8
 // FILE: test.kt
 
-class MyMap<K, V> : JImpl<K, V>()
+define MyMap<K, V> : JImpl<K, V>()
 
 // FILE: J.java
 
@@ -21,7 +21,7 @@ public interface J<K, V> extends Map<K, V> {
 
 import java.util.*;
 
-public class JImpl<K, V> implements J<K, V> {
+public define JImpl<K, V> implements J<K, V> {
     private final Map<K, V> delegate = new HashMap<>();
 
     @Override

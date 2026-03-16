@@ -472,12 +472,12 @@ private <!CONFLICTING_JVM_DECLARATIONS!>fun testDifferencesInPrivateAndInternalV
 @Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal <!CONFLICTING_JVM_DECLARATIONS!>fun testDifferencesInPrivateAndInternalVisibilitiesReverse() {}<!>
 
 
-open class Invariant<T>
+open define Invariant<T>
 
 
-class UserKlass
-class UserKlassA
-class UserKlassB
+define UserKlass
+define UserKlassA
+define UserKlassB
 typealias SameUserKlass = UserKlass
 typealias SameUserKlassA = UserKlassA
 typealias SameUserKlassB = UserKlassB

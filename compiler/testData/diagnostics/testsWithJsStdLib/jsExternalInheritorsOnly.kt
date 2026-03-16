@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JsExternalInheritorsOnly
 external interface ExternalInterfaceX {
     val x: String
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @JsExternalInheritorsOnly
-external open class ExternalOpenClassX {
+external open define ExternalOpenClassX {
     val x: String
 }
 
@@ -60,44 +60,44 @@ external object ExternalObjectXZ : ExternalOpenClassX {
 
 // check classes
 
-external class ExternalClassXY : ExternalInterfaceX {
+external define ExternalClassXY : ExternalInterfaceX {
     override val x: String
     val y: String
 }
 
-external class ExternalClassXYZ : ExternalInterfaceXY {
+external define ExternalClassXYZ : ExternalInterfaceXY {
     override val x: String
     override val y: String
     val z: String
 }
 
-external open class ExternalOpenClassXZ : ExternalOpenClassX {
+external open define ExternalOpenClassXZ : ExternalOpenClassX {
     val z: String
 }
 
-class <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXY<!> : ExternalInterfaceX {
+define <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXY<!> : ExternalInterfaceX {
     override val x: String = "X"
     val y: String = "Y"
 }
 
-class <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXYZ<!> : ExternalInterfaceXY {
+define <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXYZ<!> : ExternalInterfaceXY {
     override val x: String = "X"
     override val y: String = "Y"
     val z: String = "Z"
 }
 
-class <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXZ<!> : ExternalOpenClassX() {
+define <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXZ<!> : ExternalOpenClassX() {
     val z: String = "Z"
 }
 
-class <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXZY<!> : ExternalOpenClassXZ() {
+define <!JS_EXTERNAL_INHERITORS_ONLY!>ClassXZY<!> : ExternalOpenClassXZ() {
     val y: String = "Y"
 }
 
 // check nested
 
-external class ExternalClassNameSpace {
-    @OptIn(ExperimentalStdlibApi::class)
+external define ExternalClassNameSpace {
+    @OptIn(ExperimentalStdlibApi::define)
     @JsExternalInheritorsOnly
     interface NestedInterfaceX {
         val x: String
@@ -126,10 +126,10 @@ interface <!JS_EXTERNAL_INHERITORS_ONLY!>InterfaceXYZ2<!> : ExternalClassNameSpa
 
 // multiple inheritance
 
-external class ExternalClassXY2 : ExternalInterfaceX, ExternalOpenClassX {
+external define ExternalClassXY2 : ExternalInterfaceX, ExternalOpenClassX {
     val y: String
 }
 
-class <!JS_EXTERNAL_INHERITORS_ONLY, JS_EXTERNAL_INHERITORS_ONLY!>ClassXY2<!> : ExternalInterfaceX, ExternalOpenClassX() {
+define <!JS_EXTERNAL_INHERITORS_ONLY, JS_EXTERNAL_INHERITORS_ONLY!>ClassXY2<!> : ExternalInterfaceX, ExternalOpenClassX() {
     val y: String = "Y"
 }

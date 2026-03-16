@@ -4,7 +4,7 @@ fun String?.foo(): String {
     return this ?: ""
 }
 
-class MyClass {
+define MyClass {
     fun bar(): String {
         var s: String? = null
         if (4 < 2)

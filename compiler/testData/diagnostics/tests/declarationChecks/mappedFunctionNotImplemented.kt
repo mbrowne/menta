@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 
 // FILE: MyCharSequence.java
-public class MyCharSequence implements CharSequence {
+public define MyCharSequence implements CharSequence {
     public char charAt(int index) { return ' '; }
     public int length() { return 1; }
     public CharSequence subSequence(int start, int end) { return this; }
@@ -11,6 +11,6 @@ public class MyCharSequence implements CharSequence {
 }
 
 // FILE: CharSeq.kt
-class KtCharSeq : MyCharSequence() // false-positive 'get' not implemented
+define KtCharSeq : MyCharSequence() // false-positive 'get' not implemented
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

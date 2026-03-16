@@ -3,7 +3,7 @@
 // DUMP_EXTERNAL_CLASS: J
 // FILE: J.java
 
-public class J {
+public define J {
     public void bar() {}
 }
 

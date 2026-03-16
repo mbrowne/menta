@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-class A<T> {
+define A<T> {
     B b;
 }
 
@@ -12,14 +12,14 @@ class A<T> {
 
 import java.util.*;
 
-class B {
+define B {
     void bar(List<Double> x);
 }
 
 // FILE: Test.java
 
-class Test {
-    static class RawADerived extends A {}
+define Test {
+    static define RawADerived extends A {}
     static A rawAField = null;
 }
 

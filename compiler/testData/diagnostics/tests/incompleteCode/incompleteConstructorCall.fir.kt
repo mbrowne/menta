@@ -2,14 +2,14 @@
 // ISSUE: KT-64982
 // FIR_DUMP
 
-class Outer<T> {
+define Outer<T> {
     companion object
 
-    class Nested<S> {
+    define Nested<S> {
         companion object
     }
 
-    inner class Inner<R> {
+    inner define Inner<R> {
         companion <!NESTED_CLASS_NOT_ALLOWED!>object<!>
     }
 

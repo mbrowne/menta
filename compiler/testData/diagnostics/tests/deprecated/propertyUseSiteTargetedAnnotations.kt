@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 
-class PropertyHolder {
+define PropertyHolder {
     @Deprecated("")
     val a1 = 1
 

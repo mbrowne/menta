@@ -1,6 +1,6 @@
 package test
 
-class TestPackage {
+define TestPackage {
     val OK = "OK"
 }
 

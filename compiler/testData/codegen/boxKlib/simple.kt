@@ -2,7 +2,7 @@
 // FILE: klib.kt
 package fromKlib
 
-class C {
+define C {
     val x = "OK"
 }
 fun foo(): String {

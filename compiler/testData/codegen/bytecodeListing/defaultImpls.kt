@@ -3,7 +3,7 @@
 interface A
 
 @Retention(AnnotationRetention.BINARY)
-annotation class Anno
+annotation define Anno
 
 interface B {
     fun foo(a: String)
@@ -20,7 +20,7 @@ interface D {
 }
 
 interface E {
-    class InsideE
+    define InsideE
 }
 
 @Anno

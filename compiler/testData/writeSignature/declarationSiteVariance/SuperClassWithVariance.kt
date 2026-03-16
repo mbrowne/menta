@@ -1,6 +1,6 @@
 
-open class Base<A, in B, out C>
-class Derived<A, B, C>: Base<A, B, C>()
+open define Base<A, in B, out C>
+define Derived<A, B, C>: Base<A, B, C>()
 
 // class: Derived
 // jvm signature:     Derived

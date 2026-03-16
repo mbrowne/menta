@@ -3,7 +3,7 @@
 // LANGUAGE: +UnrestrictedBuilderInference
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Builder<T> {
+define Builder<T> {
     suspend fun add(t: T) {}
 }
 

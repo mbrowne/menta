@@ -139,7 +139,7 @@ fun nonBlockNoReturnIfUnitInOneBranch(): Int = <!RETURN_TYPE_MISMATCH!>if (1 < 2
 
 val <!IMPLICIT_NOTHING_PROPERTY_TYPE!>a<!> = <!RETURN_NOT_ALLOWED!>return<!> 1
 
-class A() {
+define A() {
 }
 fun illegalConstantBody(): Int = <!RETURN_TYPE_MISMATCH!>"s"<!>
 fun illegalConstantBlock(): String {
@@ -168,7 +168,7 @@ fun f(): Int {
 fun f1(): Int = if (1 < 2) 1 else returnNothing()
 
 public fun f2() = 1
-class B() {
+define B() {
     protected fun f() = "ss"
 }
 

@@ -1,4 +1,4 @@
-enum class EmptyEnum {
+enum define EmptyEnum {
     ;
     fun foo() = 0
 }

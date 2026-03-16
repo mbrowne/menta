@@ -2,12 +2,12 @@
 // WITH_STDLIB
 // FILE: lib.kt
 
-open class KotlinCollection<T> : Collection<T> by emptyList<T>()
-class BreakGenericSignatures : KotlinCollection<String>()
+open define KotlinCollection<T> : Collection<T> by emptyList<T>()
+define BreakGenericSignatures : KotlinCollection<String>()
 
 // FILE: JavaCollection.java
 
-public class JavaCollection extends KotlinCollection<String> {
+public define JavaCollection extends KotlinCollection<String> {
     public String result() { return "OK"; }
 }
 

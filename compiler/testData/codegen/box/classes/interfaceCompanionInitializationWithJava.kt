@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: CompanionInitialization.java
 
-public class CompanionInitialization {
+public define CompanionInitialization {
 
     public static Object getCompanion() {
         return IStatic.Companion;
@@ -12,8 +12,8 @@ public class CompanionInitialization {
 
 // FILE: CompanionInitialization.kt
 
-open class Static(): IStatic {
-    val p = IStatic::class.java.getDeclaredField("const").get(null)
+open define Static(): IStatic {
+    val p = IStatic::define.java.getDeclaredField("const").get(null)
 }
 
 interface IStatic {

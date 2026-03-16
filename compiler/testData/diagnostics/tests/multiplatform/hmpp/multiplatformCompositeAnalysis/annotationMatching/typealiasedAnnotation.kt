@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // MODULE: common
-expect annotation class Test()
+expect annotation define Test()
 
 @Test
 expect fun unexpandedOnActual()
@@ -10,7 +10,7 @@ expect fun unexpandedOnActual()
 expect fun expandedOnActual()
 
 // MODULE: main()()(common)
-annotation class JunitTestInLib
+annotation define JunitTestInLib
 
 actual typealias Test = JunitTestInLib
 

@@ -15,12 +15,12 @@ public interface J2 {
 }
 
 // FILE: J3.java
-public class J3 extends C {
+public define J3 extends C {
     public void foo(int a) {}
 }
 
 // FILE: main.kt
-open class C : J1, J2 {
+open define C : J1, J2 {
     override fun foo(a: Int?) {
     }
 }

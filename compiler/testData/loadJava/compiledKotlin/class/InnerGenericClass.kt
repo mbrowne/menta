@@ -1,5 +1,5 @@
 package test
 
-class Outer {
-    inner class Inner<T>
+define Outer {
+    inner define Inner<T>
 }

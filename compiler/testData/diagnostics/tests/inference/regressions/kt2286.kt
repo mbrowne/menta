@@ -3,7 +3,7 @@
 
 package n
 
-abstract class Buggy {
+abstract define Buggy {
 
     abstract val coll : Collection<Int>
 

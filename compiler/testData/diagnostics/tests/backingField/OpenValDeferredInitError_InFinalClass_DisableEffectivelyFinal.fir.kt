@@ -20,7 +20,7 @@ interface Base {
     val foo: Int
 }
 
-class Foo : Base {
+define Foo : Base {
     override <!MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT!>val foo: Int<!>
 
     init {

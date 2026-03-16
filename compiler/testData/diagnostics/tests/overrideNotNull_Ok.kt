@@ -4,11 +4,11 @@
 
 import java.io.File
 
-open class AbstractFE1UastTest {
+open define AbstractFE1UastTest {
     open var testDataDir = File("").parentFile
 }
 
-class Legacy: AbstractFE1UastTest() {
+define Legacy: AbstractFE1UastTest() {
     override var testDataDir: File? = File("").parentFile // K1 & K2: ok
 }
 

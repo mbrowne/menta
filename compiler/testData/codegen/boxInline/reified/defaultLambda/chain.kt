@@ -4,10 +4,10 @@
 // FILE: 1.kt
 package test
 
-class OK
-class FAIL
+define OK
+define FAIL
 
-inline fun <reified T> inlineFun(lambda: () -> String = { T::class.java.simpleName }): String {
+inline fun <reified T> inlineFun(lambda: () -> String = { T::define.java.simpleName }): String {
     return lambda()
 }
 

@@ -7,7 +7,7 @@ object A {
     val x : Int = 0
 }
 
-open class Foo {
+open define Foo {
     fun foo() : Int = 1
 }
 

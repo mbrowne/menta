@@ -3,7 +3,7 @@
 
 import A.Companion.companionExtensionFunction
 
-expect class A() {
+expect define A() {
     fun memberFunction(x: Int, y: String = "ok")
     companion object {
         fun companionFunction(x: Int, y: String = "ok")
@@ -40,7 +40,7 @@ fun A.test() {
 
 import A.Companion.companionExtensionFunction
 
-actual class A {
+actual define A {
     actual fun memberFunction(x: Int, y: String) = Unit
     actual companion object {
         actual fun companionFunction(x: Int, y: String) = Unit

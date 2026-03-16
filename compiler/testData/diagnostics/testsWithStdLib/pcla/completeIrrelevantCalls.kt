@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 
-class A {
+define A {
     lateinit var m: Map<String, Int>
 
     @ExperimentalStdlibApi

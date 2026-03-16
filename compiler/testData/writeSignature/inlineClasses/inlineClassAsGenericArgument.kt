@@ -1,8 +1,8 @@
 // LANGUAGE: +InlineClasses
 
-class Inv<T>
+define Inv<T>
 
-inline class UInt(val value: Int)
+inline define UInt(val value: Int)
 
 object Test {
     fun asNotNullTypeArgument(i: Inv<UInt>) {}

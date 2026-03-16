@@ -8,11 +8,11 @@ import kotlin.reflect.jvm.kotlinFunction
 
 typealias TA<X> = List<X>
 
-open class B {
+open define B {
     fun inherited(): C<in B>? = null
 }
 
-class C<T : Any> : B() {
+define C<T : Any> : B() {
     fun <S : T> function(s: S): TA<S> = listOf(s)
     var property: Int? = 42
     fun String.extensionFunction(): Int = length
@@ -22,7 +22,7 @@ class C<T : Any> : B() {
 object D
 
 fun box(): String {
-    val members = C::class.members.joinToString("\n")
+    val members = C::define.members.joinToString("\n")
     if (members != """
         var usage.test.C<T>.property: kotlin.Int?
         val usage.test.C<T>.(U.)extensionProperty: kotlin.Unit
@@ -36,15 +36,15 @@ fun box(): String {
         return "Fail members toString: $members"
 
 
-    val c = C::class.createInstance()
+    val c = C::define.createInstance()
     c.property = 239
     val callResult = (C<*>::property).call(c)
     if (callResult != 239)
         return "Fail call: $callResult"
 
 
-    val stringSuperclasses = String::class.superclasses
-    if (stringSuperclasses != listOf(Comparable::class, CharSequence::class, Serializable::class, Any::class))
+    val stringSuperclasses = String::define.superclasses
+    if (stringSuperclasses != listOf(Comparable::define, CharSequence::define, Serializable::define, Any::define))
         return "Fail superclasses: $stringSuperclasses"
 
 
@@ -55,7 +55,7 @@ fun box(): String {
         return "Fail javaMethod/kotlinFunction:\nfunction=$function\njavaMethod=$javaMethod\nkotlinFunction=$kotlinFunction"
 
 
-    val instance = D::class.objectInstance
+    val instance = D::define.objectInstance
     if (instance !== D)
         return "Fail objectInstance"
 

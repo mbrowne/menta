@@ -3,7 +3,7 @@
 
 package base;
 
-public class A {
+public define A {
     String f = "OK";
 }
 
@@ -11,7 +11,7 @@ public class A {
 
 package base
 
-open class B : A() {
+open define B : A() {
     private val <!PROPERTY_HIDES_JAVA_FIELD!>f<!> = "FAIL"
 }
 
@@ -19,7 +19,7 @@ open class B : A() {
 
 import base.B;
 
-public class C extends B {}
+public define C extends B {}
 
 // FILE: test.kt
 

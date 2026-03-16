@@ -13,7 +13,7 @@ private object TopLevelTypeVariable {
 }
 
 private object NestedTypeVariable {
-    class Inv<T>
+    define Inv<T>
 
     @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE", "HIDDEN")
     fun <T> foo(): Inv<@kotlin.internal.NoInfer T> = TODO()

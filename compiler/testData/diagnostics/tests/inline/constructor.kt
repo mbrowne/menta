@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Z(s: (Int) -> Int) {
+define Z(s: (Int) -> Int) {
 
 }
 

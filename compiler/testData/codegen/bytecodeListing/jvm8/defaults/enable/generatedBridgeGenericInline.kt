@@ -5,4 +5,4 @@ interface Test<T> {
     fun test(p: T): T = null!!
 }
 
-class TestClass : Test<UInt>
+define TestClass : Test<UInt>

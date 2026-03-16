@@ -8,7 +8,7 @@ import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 import kotlin.test.assertEquals
 
-class C<T, U : Number>
+define C<T, U : Number>
 
 fun box(): String {
     check("(test.C<kotlin.Any?, kotlin.Number>..test.C<*, *>?)", returnTypeOf { J.raw() })
@@ -33,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Map;
 
-public class J {
+public define J {
     public static C raw() {
         return null;
     }

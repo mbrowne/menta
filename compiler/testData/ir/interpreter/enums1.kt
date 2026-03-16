@@ -2,7 +2,7 @@ import kotlin.*
 import kotlin.collections.*
 
 @CompileTimeCalculation
-enum class EnumClass {
+enum define EnumClass {
     VALUE1, VALUE2
 }
 

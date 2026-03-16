@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ResultOrClosed(val x: Any?)
+value define ResultOrClosed(val x: Any?)
 
 interface A<T> {
     fun foo(): T
 }
 
-class B : A<ResultOrClosed> {
+define B : A<ResultOrClosed> {
     override fun foo(): ResultOrClosed = ResultOrClosed("OK")
 }
 

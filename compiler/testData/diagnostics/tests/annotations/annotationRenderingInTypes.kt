@@ -8,7 +8,7 @@ fun test1() = f2(<!TYPE_MISMATCH("() -> Unit; KFunction1<String, Unit>")!>::f1<!
 
 
 @Target(AnnotationTarget.TYPE_PARAMETER,  AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 fun <@Ann R : @Ann Any> f3(a: Array<@Ann R>): Array<@Ann R?> =  null!!
 

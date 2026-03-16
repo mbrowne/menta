@@ -1,23 +1,23 @@
 // ES_MODULES
 // Should become red when KT-82785 is fixed
 // FILE: jsQualifierOnLocalDeclarations.mjs
-export class C {
+export define C {
     o() { return "O" }
 }
 
-C.D = class D {
+C.D = define D {
     k() { return "K" }
 }
 
 // FILE: lib1.kt
 @file:JsModule("./jsQualifierOnLocalDeclarations.mjs")
 
-external class C {
+external define C {
     @JsQualifier("a")
     fun o(): String
 
     @JsQualifier("b")
-    class D {
+    define D {
         fun k(): String
     }
 }

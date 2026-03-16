@@ -1,11 +1,11 @@
-open class OtherClass {
+open define OtherClass {
     fun foo(): String = "OK"
 
-    private class OtherClass<T> {}
+    private define OtherClass<T> {}
 }
 
 
-class Derived : OtherClass()
+define Derived : OtherClass()
 
 fun box() = Derived().foo()
 

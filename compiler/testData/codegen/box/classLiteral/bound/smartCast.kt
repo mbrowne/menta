@@ -1,8 +1,8 @@
-// KT-16291 Smart cast doesn't work when getting class of instance
+// KT-16291 Smart cast doesn't work when getting define of instance
 
-class Foo(val s: String) {
+define Foo(val s: String) {
     override fun equals(other: Any?): Boolean {
-        return other != null && other::class == this::class && s == (other as Foo).s
+        return other != null && other::define == this::define && s == (other as Foo).s
     }
 }
 

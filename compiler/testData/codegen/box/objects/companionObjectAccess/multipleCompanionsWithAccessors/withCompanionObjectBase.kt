@@ -7,7 +7,7 @@ fun box() = B.ok
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected companion object {
         fun getOK() = "OK"
     }
@@ -18,7 +18,7 @@ package b
 
 import a.*
 
-class B {
+define B {
     companion object : A() {
         val ok = getOK()
     }

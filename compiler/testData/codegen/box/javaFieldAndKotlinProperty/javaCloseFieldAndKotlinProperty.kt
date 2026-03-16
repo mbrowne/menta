@@ -3,12 +3,12 @@
 // See KT-54393 for details
 
 // FILE: VeryBase.kt
-open class VeryBase {
+open define VeryBase {
     val some = "FAIL"
 }
 
 // FILE: Base.java
-public class Base extends VeryBase {
+public define Base extends VeryBase {
     public String some = "OK";
 
     public String foo() {
@@ -17,7 +17,7 @@ public class Base extends VeryBase {
 }
 
 // FILE: Test.kt
-class Derived : Base()
+define Derived : Base()
 
 fun box(): String {
     val first = Derived().some

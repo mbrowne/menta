@@ -1,9 +1,9 @@
 fun Int.foo() {}
 
-open class A {
+open define A {
    ~A.foo~fun foo(i: Int) {}
 }
-open class B {}
+open define B {}
 
 fun test(a: A, b: B) {
     with (a) {

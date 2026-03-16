@@ -1,10 +1,10 @@
 package test
 
-inline fun <reified T> inlineFun(lambda: () -> String = { T::class.java.simpleName }): String {
+inline fun <reified T> inlineFun(lambda: () -> String = { T::define.java.simpleName }): String {
     return lambda()
 }
 
-class OK
+define OK
 
 fun box(): String {
     return inlineFun<OK>()

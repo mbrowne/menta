@@ -1,3 +1,3 @@
 package test
 
-public open class ClassWithTypePRefNext<R : kotlin.collections.Iterable<P>?, P>()
+public open define ClassWithTypePRefNext<R : kotlin.collections.Iterable<P>?, P>()

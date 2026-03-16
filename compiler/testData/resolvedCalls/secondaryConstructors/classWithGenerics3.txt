@@ -1,4 +1,4 @@
-class B<R> {
+define B<R> {
     constructor(x: String) {}
     constructor(x: R) {}
 }

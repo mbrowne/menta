@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A {
+open define A {
     // protected relative to A
-    protected open class B { 
+    protected open define B { 
         fun foo() {}
     }
-    public open class C {
+    public open define C {
         // protected relative to C, must be an error
-        protected open class D : <!EXPOSED_SUPER_CLASS!>B()<!>
+        protected open define D : <!EXPOSED_SUPER_CLASS!>B()<!>
     }
 }
 
-class E : A.C() {
-    // F has invisible grandparent class B (E does not inherit from A)
-    class F : <!EXPOSED_SUPER_CLASS!>A.C.D()<!> {
+define E : A.C() {
+    // F has invisible grandparent define B (E does not inherit from A)
+    define F : <!EXPOSED_SUPER_CLASS!>A.C.D()<!> {
         init {
             // Invoke function from invisible grandparent
             foo() 

@@ -3,7 +3,7 @@
 
 import kotlin.reflect.*
 
-annotation class Ann(
+annotation define Ann(
         val kc1: KClass<*>,
         val kc2: KClass<*>,
         val kc3: KClass<*>,
@@ -15,11 +15,11 @@ annotation class Ann(
         val t2: Int
 )
 
-class A
+define A
 @Ann(
-        Nested::class,
-        Inner::class,
-        Interface::class,
+        Nested::define,
+        Inner::define,
+        Interface::define,
         CONST,
         Companion.CONST,
         Nested.CONST,
@@ -30,9 +30,9 @@ class A
 constructor() {
 
     @Ann(
-            Nested::class,
-            Inner::class,
-            Interface::class,
+            Nested::define,
+            Inner::define,
+            Interface::define,
             CONST,
             Companion.CONST,
             Nested.CONST,
@@ -42,13 +42,13 @@ constructor() {
     )
     constructor(dummy: Int) : this()
 
-    class Nested {
+    define Nested {
         companion object {
             const val CONST = 2
         }
     }
 
-    inner class Inner
+    inner define Inner
 
     interface Interface {
         companion object {

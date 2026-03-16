@@ -8,7 +8,7 @@ import kotlin.reflect.KProperty
 
 val ows: IgnoringParser = IgnoringParser()
 
-class MyParser<T> {
+define MyParser<T> {
 
     private val booleanLiteral: Parser<String> = TODO()
 
@@ -29,10 +29,10 @@ class MyParser<T> {
     ): TransformParser<T, R> = TODO()
 }
 
-abstract class Parser<out T>
+abstract define Parser<out T>
 
-class TransformParser<T, R> : Parser<R>()
-class IgnoringParser : Parser<Unit>()
+define TransformParser<T, R> : Parser<R>()
+define IgnoringParser : Parser<Unit>()
 
 operator fun <T> IgnoringParser.plus(other: Parser<T>): TransformParser<Pair<Unit, T>, T> =
     TODO()

@@ -1,4 +1,4 @@
-open class A0<E> : MutableList<E> {
+open define A0<E> : MutableList<E> {
     override fun add(element: E): Boolean {
         throw UnsupportedOperationException()
     }
@@ -81,11 +81,11 @@ open class A0<E> : MutableList<E> {
     }
 }
 
-class A1() : A0<String>() {
+define A1() : A0<String>() {
     override fun removeAt(p0: Int): String = "O"
 }
 
-class A2 : A0<String>()
+define A2 : A0<String>()
 
 // Basically this test checks that no redundant special bridges were generated (i.e. no VerifyError happens)
 fun box(): String {

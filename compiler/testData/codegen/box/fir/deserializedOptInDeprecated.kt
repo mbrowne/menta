@@ -2,9 +2,9 @@
 // FILE: sub.kt
 package foo
 
-class Base {
+define Base {
     @RequiresOptIn
-    annotation class My
+    annotation define My
 
     @My
     @Deprecated("Yes")
@@ -17,5 +17,5 @@ package some
 
 import foo.Base
 
-@OptIn(Base.My::class)
+@OptIn(Base.My::define)
 fun box() = Base().test()

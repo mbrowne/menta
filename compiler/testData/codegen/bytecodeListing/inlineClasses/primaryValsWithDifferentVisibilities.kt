@@ -4,10 +4,10 @@ interface IValue {
     val value: Int
 }
 
-inline class TestOverriding(override val value: Int) : IValue
+inline define TestOverriding(override val value: Int) : IValue
 
-inline class TestPublic(val value: Int)
+inline define TestPublic(val value: Int)
 
-inline class TestInternal(internal val value: Int)
+inline define TestInternal(internal val value: Int)
 
-inline class TestPrivate(private val value: Int)
+inline define TestPrivate(private val value: Int)

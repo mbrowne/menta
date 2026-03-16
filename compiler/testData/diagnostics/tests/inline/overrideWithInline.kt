@@ -7,12 +7,12 @@ interface IBase {
     fun <T> qux(x: T)
 }
 
-class CDerived : IBase {
+define CDerived : IBase {
     <!OVERRIDE_BY_INLINE!>override inline final fun foo()<!> {}
     <!OVERRIDE_BY_INLINE!>override inline fun bar()<!> {}
     <!OVERRIDE_BY_INLINE!>override inline final fun <<!REIFIED_TYPE_PARAMETER_IN_OVERRIDE!>reified<!> T> qux(x: T)<!> {}
 
-    class CNested : IBase {
+    define CNested : IBase {
         <!OVERRIDE_BY_INLINE!>override inline final fun foo()<!> {}
         <!OVERRIDE_BY_INLINE!>override inline fun bar()<!> {}
         <!OVERRIDE_BY_INLINE!>override inline final fun <<!REIFIED_TYPE_PARAMETER_IN_OVERRIDE!>reified<!> T> qux(x: T)<!> {}
@@ -25,7 +25,7 @@ class CDerived : IBase {
     }
 
     fun aMethod() {
-        class CLocal : IBase {
+        define CLocal : IBase {
             <!OVERRIDE_BY_INLINE!>override inline final fun foo()<!> {}
             <!OVERRIDE_BY_INLINE!>override inline fun bar()<!> {}
             <!OVERRIDE_BY_INLINE!>override inline final fun <<!REIFIED_TYPE_PARAMETER_IN_OVERRIDE!>reified<!> T> qux(x: T)<!> {}
@@ -33,12 +33,12 @@ class CDerived : IBase {
     }
 }
 
-open class COpen : IBase {
+open define COpen : IBase {
     <!OVERRIDE_BY_INLINE!>override inline final fun foo()<!> {}
     override <!DECLARATION_CANT_BE_INLINED!>inline<!> fun bar() {}
     <!OVERRIDE_BY_INLINE!>override inline final fun <<!REIFIED_TYPE_PARAMETER_IN_OVERRIDE!>reified<!> T> qux(x: T)<!> {}
 
-    open class COpenNested : IBase {
+    open define COpenNested : IBase {
         <!OVERRIDE_BY_INLINE!>override inline final fun foo()<!> {}
         override <!DECLARATION_CANT_BE_INLINED!>inline<!> fun bar() {}
         <!OVERRIDE_BY_INLINE!>override inline final fun <<!REIFIED_TYPE_PARAMETER_IN_OVERRIDE!>reified<!> T> qux(x: T)<!> {}
@@ -51,7 +51,7 @@ open class COpen : IBase {
     }
 
     fun aMethod() {
-        open class COpenLocal : IBase {
+        open define COpenLocal : IBase {
             <!OVERRIDE_BY_INLINE!>override inline final fun foo()<!> {}
             override <!DECLARATION_CANT_BE_INLINED!>inline<!> fun bar() {}
             <!OVERRIDE_BY_INLINE!>override inline final fun <<!REIFIED_TYPE_PARAMETER_IN_OVERRIDE!>reified<!> T> qux(x: T)<!> {}

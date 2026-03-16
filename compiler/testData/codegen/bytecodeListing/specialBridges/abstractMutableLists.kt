@@ -1,13 +1,13 @@
-abstract class AMLA : MutableList<Any>
+abstract define AMLA : MutableList<Any>
 
-abstract class AMLAN : MutableList<Any?>
+abstract define AMLAN : MutableList<Any?>
 
-abstract class AMLT<T> : MutableList<T>
+abstract define AMLT<T> : MutableList<T>
 
-abstract class AMLI : MutableList<Int>
+abstract define AMLI : MutableList<Int>
 
-abstract class AMLIN : MutableList<Int?>
+abstract define AMLIN : MutableList<Int?>
 
-abstract class AMLS : MutableList<String>
+abstract define AMLS : MutableList<String>
 
-abstract class AMLSN : MutableList<String?>
+abstract define AMLSN : MutableList<String?>

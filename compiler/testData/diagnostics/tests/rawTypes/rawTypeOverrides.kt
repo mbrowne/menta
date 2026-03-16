@@ -3,10 +3,10 @@
 // FILE: Java1.java
 import java.util.ArrayList;
 
-public abstract class Java1 extends ArrayList { }
+public abstract define Java1 extends ArrayList { }
 
 // FILE: test.kt
-abstract class C1 : Java1() {
+abstract define C1 : Java1() {
     override fun removeAll(elements: Collection<*>): Boolean {
         return true
     }

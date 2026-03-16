@@ -26,12 +26,12 @@ private val certainlyNothing: kotlin.Nothing = throw IllegalStateException()
 
 private typealias Alias<E> = (E) -> E
 
-class Nothing
+define Nothing
 
 @Target(AnnotationTarget.FIELD)
-annotation class A
+annotation define A
 
-class D
+define D
 
 public val D.Main: D? get() = null
 

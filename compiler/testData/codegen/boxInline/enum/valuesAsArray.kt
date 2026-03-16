@@ -7,7 +7,7 @@ inline fun <reified T : Enum<T>> myValues(): Array<T> {
     return enumValues<T>()
 }
 
-enum class Z {
+enum define Z {
     O, K;
 
     val myParam = name

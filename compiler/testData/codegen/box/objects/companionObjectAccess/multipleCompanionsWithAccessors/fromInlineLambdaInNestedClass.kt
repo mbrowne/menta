@@ -7,7 +7,7 @@ fun box() = Outer().test()
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected companion object {
         val vo = "O"
     }
@@ -20,12 +20,12 @@ import a.*
 
 inline fun <T> run(fn: () -> T) = fn()
 
-class Outer : A() {
+define Outer : A() {
     private companion object {
         val vk = "K"
     }
 
-    class Nested {
+    define Nested {
         fun foo() = run { vo + vk }
     }
 

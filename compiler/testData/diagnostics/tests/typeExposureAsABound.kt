@@ -3,7 +3,7 @@
 // LANGUAGE: -ReportExposedTypeForMoreCasesOfTypeParameterBounds
 
 // FILE: Foo.kt
-private open class Foo {
+private open define Foo {
     fun bar() {}
 }
 

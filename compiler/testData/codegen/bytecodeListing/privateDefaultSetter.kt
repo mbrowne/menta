@@ -1,4 +1,4 @@
-open class Test {
+open define Test {
     var publicProperty: String = ""
         private set
 

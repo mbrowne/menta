@@ -2,7 +2,7 @@
 //KT-2014 Better diagnostic when using property syntax to call a method
 package c
 
-class Foo {
+define Foo {
     fun prop() : Int = 1
     fun bar(i: Int) : Int = i
 

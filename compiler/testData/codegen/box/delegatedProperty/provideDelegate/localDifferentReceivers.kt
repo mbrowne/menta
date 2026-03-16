@@ -4,7 +4,7 @@ import kotlin.test.*
 
 var log: String = ""
 
-class MyClass(val value: String)
+define MyClass(val value: String)
 
 fun runLogged(entry: String, action: () -> String): String {
     log += entry

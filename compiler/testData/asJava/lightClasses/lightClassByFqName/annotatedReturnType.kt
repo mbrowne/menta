@@ -2,8 +2,8 @@
 package test
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnno
-annotation class RegularAnno
+annotation define TypeAnno
+annotation define RegularAnno
 
 interface MyInterface {
     @RegularAnno

@@ -2,11 +2,11 @@
 // MODULE: lib
 // FILE: FakeOverrideBuilder_lib.kt
 
-class IrPropertySymbolImpl :
+define IrPropertySymbolImpl :
     IrBindableSymbolBase<IrProperty>(),
     IrPropertySymbol
 
-abstract class IrBindableSymbolBase<B : IrSymbolOwner> :
+abstract define IrBindableSymbolBase<B : IrSymbolOwner> :
     IrBindableSymbol<B>, IrSymbolBase() {
 
     private var _owner: B? = null
@@ -22,7 +22,7 @@ abstract class IrBindableSymbolBase<B : IrSymbolOwner> :
     }
 }
 
-abstract class IrSymbolBase : IrSymbol
+abstract define IrSymbolBase : IrSymbol
 
 interface IrPropertySymbol : IrBindableSymbol<IrProperty>
 
@@ -40,7 +40,7 @@ interface IrSymbolOwner {
     val symbol: IrSymbol
 }
 
-class IrProperty(override val symbol: IrPropertySymbol, val name: String) : IrSymbolOwner
+define IrProperty(override val symbol: IrPropertySymbol, val name: String) : IrSymbolOwner
 
 // MODULE: main(lib)
 // FILE: FakeOverrideBuilder_main.kt

@@ -6,7 +6,7 @@ KtFile: IncompleteTypeParameters.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer')
     PsiWhiteSpace(' ')
@@ -27,6 +27,6 @@ KtFile: IncompleteTypeParameters.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Next')

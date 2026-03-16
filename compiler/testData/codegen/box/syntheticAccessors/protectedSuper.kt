@@ -1,10 +1,10 @@
 // TARGET_BACKEND: JVM
-open class C {
+open define C {
     protected open fun foo() = "OK"
 }
 
-class D : C() {
-    // same package, but `super` needs to be related by class hierarchy:
+define D : C() {
+    // same package, but `super` needs to be related by define hierarchy:
     fun bar() = { super.foo() }
 }
 

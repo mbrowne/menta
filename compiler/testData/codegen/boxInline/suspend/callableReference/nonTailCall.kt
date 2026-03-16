@@ -5,7 +5,7 @@
 import kotlin.coroutines.intrinsics.*
 import kotlin.coroutines.*
 
-class Delayed(val run: suspend() -> Unit)
+define Delayed(val run: suspend() -> Unit)
 
 inline fun asyncThenAddK(crossinline block: suspend () -> Unit) =
     Delayed {

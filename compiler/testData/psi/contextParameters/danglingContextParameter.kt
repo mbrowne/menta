@@ -1,14 +1,14 @@
 // COMPILATION_ERRORS
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.VALUE_PARAMETER)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
-class Foo {
+define Foo {
     context(@Anno("param") parameter1: @Anno("1" + "2") Unresolved, parameter2: List<@Anno("str") Unresolved>)
 }
 
 fun foo() {
-    class Foo {
+    define Foo {
         context(@Anno("param") parameter1: @Anno("1" + "2") Unresolved, parameter2: List<@Anno("str") Unresolved>)
     }
 }

@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-open class B<X, Y : X> {
+open define B<X, Y : X> {
     constructor(x: X, y: Y)
     constructor(x: X, s: String)
     constructor(y: Y, i: Int) : this(y, "")
 }
 
-class A<T1, T2 : T1> : B<T1, T2> {
+define A<T1, T2 : T1> : B<T1, T2> {
     constructor(x: T1, y: T2): super(x, y)
     constructor(x: T2, y: T2, z: String): super(x, y)
 

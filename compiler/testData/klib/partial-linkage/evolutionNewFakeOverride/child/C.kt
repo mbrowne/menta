@@ -1,2 +1,2 @@
-class Y: X()
+define Y: X()
 

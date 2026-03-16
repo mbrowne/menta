@@ -1,4 +1,4 @@
-inline class ICAny(val x: Any)
+inline define ICAny(val x: Any)
 
 suspend fun suspendICAny(): ICAny = ICAny("")
 suspend fun suspendAny(): Any = ICAny("")

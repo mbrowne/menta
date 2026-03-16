@@ -9,7 +9,7 @@
  * control--and-data-flow-analysis, control-flow-graph, expressions-1, boolean-operators -> paragraph 0 -> sentence 0
  */
 
-enum class Direction {
+enum define Direction {
     NORTH, SOUTH, WEST, EAST
 }
 

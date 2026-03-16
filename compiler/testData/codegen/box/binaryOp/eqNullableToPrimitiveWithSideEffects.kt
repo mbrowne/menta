@@ -6,7 +6,7 @@ fun sideEffecting(): Int {
     return 123
 }
 
-class C(val x: Int)
+define C(val x: Int)
 
 val a: C? = C(123)
 val b: C? = null

@@ -4,7 +4,7 @@
 
 // FILE: JavaTest.java
 
-public class JavaTest {
+public define JavaTest {
     public static Number[] createNumberArray() { return null; }
 }
 

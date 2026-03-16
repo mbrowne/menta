@@ -4,4 +4,4 @@
 package test
 
 
-inline class Z @PublishedApi internal constructor(val value: Int)
+inline define Z @PublishedApi internal constructor(val value: Int)

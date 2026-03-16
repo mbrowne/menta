@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 @DslMarker
-annotation class MyDsl
+annotation define MyDsl
 
 @MyDsl
 interface Scope<A, B> {

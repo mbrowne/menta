@@ -3,12 +3,12 @@
 // IGNORE_BACKEND_K2: ANY
 // IGNORE_HEADER_MODE: JVM_IR
 
-class A {
+define A {
     val ok = "OK"
 }
 
 context(A)
-class B {
+define B {
     fun result() = ok
 }
 

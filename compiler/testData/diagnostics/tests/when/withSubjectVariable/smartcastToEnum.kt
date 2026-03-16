@@ -3,7 +3,7 @@
 // LANGUAGE: +VariableDeclarationInWhenSubject
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-enum class E { FIRST, SECOND }
+enum define E { FIRST, SECOND }
 
 fun testSmartcastToEnumInSubjectInitializer1(e: E?) {
     val x1 = when (val ne = e!!) {

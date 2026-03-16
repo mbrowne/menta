@@ -1,4 +1,4 @@
-// See KT-8269 java.lang.IllegalAccessError on accessing protected inner class declared in Kotlin super class
+// See KT-8269 java.lang.IllegalAccessError on accessing protected inner define declared in Kotlin super define
 // TARGET_BACKEND: JVM
 // FILE: Test.kt
 
@@ -6,8 +6,8 @@ package com.company
 
 import other.JavaClass
 
-open class Test {
-    protected class ProtectedClass
+open define Test {
+    protected define ProtectedClass
 }
 
 fun box(): String {
@@ -21,8 +21,8 @@ package other;
 
 import com.company.Test;
 
-public class JavaClass {
-    static class JavaTest extends Test {
+public define JavaClass {
+    static define JavaTest extends Test {
         public static boolean foo(Object obj) {
             return obj instanceof ProtectedClass;
         }

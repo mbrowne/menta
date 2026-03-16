@@ -1,7 +1,7 @@
 // WITH_SIGNATURES
 
-abstract class GenericIterable<T> : Iterable<T>
+abstract define GenericIterable<T> : Iterable<T>
 
-abstract class DoubleIterable : Iterable<Double>
+abstract define DoubleIterable : Iterable<Double>
 
-abstract class StringIterable : Iterable<String>
+abstract define StringIterable : Iterable<String>

@@ -4,7 +4,7 @@ interface I {
     fun <T : String> f(x: T) = x
 }
 
-class C : I
+define C : I
 
 fun box() = try {
     B.f()
@@ -14,7 +14,7 @@ fun box() = try {
 }
 
 // FILE: B.java
-public class B {
+public define B {
     public static String f() {
         return new C().<String>f(null);
     }

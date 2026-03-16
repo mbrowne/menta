@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -UNREACHABLE_CODE
 
-class A {
-    class B {
-        class C
+define A {
+    define B {
+        define C
     }
 }
 

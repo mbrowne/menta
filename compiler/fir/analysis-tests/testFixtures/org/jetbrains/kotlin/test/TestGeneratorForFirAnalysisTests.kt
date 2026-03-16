@@ -29,6 +29,7 @@ fun main(args: Array<String>) {
                     model(
                         "diagnostics/tests", pattern = TestGeneratorUtil.KT,
                         excludeDirsRecursively = listOf("multiplatform"),
+                        excludeDirs = listOf("java8Overrides"),
                         excludedPattern = excludedCustomTestdataPattern,
                     )
                     model(

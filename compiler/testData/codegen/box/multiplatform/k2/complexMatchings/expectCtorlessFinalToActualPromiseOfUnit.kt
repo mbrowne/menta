@@ -8,7 +8,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class TestResult
+expect define TestResult
 
 expect fun createTestResult(): TestResult
 
@@ -28,7 +28,7 @@ fun commonBox(): String {
 
 import kotlin.js.Promise
 
-class PromiseOfUnit(executor: (resolve: (Unit) -> Unit, reject: (Throwable) -> Unit) -> Unit) : Promise<Unit>(executor)
+define PromiseOfUnit(executor: (resolve: (Unit) -> Unit, reject: (Throwable) -> Unit) -> Unit) : Promise<Unit>(executor)
 
 actual typealias TestResult = PromiseOfUnit
 

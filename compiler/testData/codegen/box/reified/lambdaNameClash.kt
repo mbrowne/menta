@@ -4,8 +4,8 @@ package foo
 // CHECK_CALLED: doRun
 // CHECK_NOT_CALLED: test
 
-class X
-class Y
+define X
+define Y
 
 fun <R> doRun(fn: ()->R): R = fn()
 

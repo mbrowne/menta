@@ -2,6 +2,6 @@
 
 var topLevelInt: Int = 0
 
-class MyClass {
+define MyClass {
     var delegatedToTopLevel: Int by ::topLevelInt
 }

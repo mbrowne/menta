@@ -2,7 +2,7 @@
 // FILE: lib.kt
 import kotlin.reflect.KProperty
 
-open class A {
+open define A {
     inline operator fun Int.getValue(thisRef: Any?, property: KProperty<*>): String =
         property.name
 }
@@ -11,7 +11,7 @@ open class A {
 // FILE: main.kt
 import kotlin.reflect.KProperty
 
-open class B : A() {
+open define B : A() {
     var result = "fail"
 
     inline operator fun String.getValue(thisRef: Any?, property: KProperty<*>): String =
@@ -22,7 +22,7 @@ open class B : A() {
     }
 }
 
-class C : B() {
+define C : B() {
     val O by 1
     var K by O
 }

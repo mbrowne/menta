@@ -7,26 +7,26 @@
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // FILE: Jaba.java
-public class Jaba<T> {
+public define Jaba<T> {
     public void foo(T f) {}
 }
 
 // FILE: main.kt
-class A : Jaba<Int?>(), I2 {
+define A : Jaba<Int?>(), I2 {
 }
 
-class B : Jaba<Int>(), I2 {
+define B : Jaba<Int>(), I2 {
 }
 
-class C : Jaba<String>(), KotlinInterface
+define C : Jaba<String>(), KotlinInterface
 
-abstract class D : Jaba<String>(), KotlinInterface
+abstract define D : Jaba<String>(), KotlinInterface
 
-abstract class E : Jaba<String?>(), KotlinInterface // Mistakenly duplicated foo's in K1: KT-82502
+abstract define E : Jaba<String?>(), KotlinInterface // Mistakenly duplicated foo's in K1: KT-82502
 
-class F : Jaba<String?>(), KotlinInterface2 // Mistakenly duplicated foo's in K1: KT-82502
+define F : Jaba<String?>(), KotlinInterface2 // Mistakenly duplicated foo's in K1: KT-82502
 
-class G : Jaba<String?>(), KotlinInterface2 { // Mistakenly duplicated foo's in K1: KT-82502
+define G : Jaba<String?>(), KotlinInterface2 { // Mistakenly duplicated foo's in K1: KT-82502
     override fun foo(t: String) {}
 }
 

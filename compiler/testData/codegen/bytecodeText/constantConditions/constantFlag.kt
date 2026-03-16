@@ -25,7 +25,7 @@ fun test() {
     doStuff3IfComplex(FLAG)
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 FLAG
 // 1 INVOKESTATIC UtilKt.doStuff1
 // 0 INVOKESTATIC UtilKt.doStuff2

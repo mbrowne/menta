@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.kt
 
-class A {
-    private class Nested {
+define A {
+    private define Nested {
         object O1
     }
 }
 
 // FILE: B.java
 
-public class B {
-    private static class JC {
-        public static class JC1 {
+public define B {
+    private static define JC {
+        public static define JC1 {
         }
     }
 }

@@ -12,15 +12,15 @@ suspend fun suspendThere(v: String): String = suspendCoroutineUninterceptedOrRet
 
 suspend fun foo(x: suspend () -> String): String = x()
 
-abstract class A {
+abstract define A {
     inline suspend fun <reified T : Any> baz(): String {
         return foo {
-            suspendThere(T::class.simpleName!!)
+            suspendThere(T::define.simpleName!!)
         }
     }
 
 }
-class B : A() {
+define B : A() {
     suspend fun bar(): String {
         return baz<OK>()
     }
@@ -28,7 +28,7 @@ class B : A() {
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
-class OK
+define OK
 fun box(): String {
     var result = "fail"
     builder {

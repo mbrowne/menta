@@ -5,8 +5,8 @@
 
 fun box(): String {
     val buildee = build {
-        class ConcreteType
-        class TargetType {
+        define ConcreteType
+        define TargetType {
             fun consumeConcreteType(value: ConcreteType) {}
         }
         setTypeVariableProducerFunction { TargetType() }
@@ -20,7 +20,7 @@ fun box(): String {
 
 
 
-class Buildee<TV> {
+define Buildee<TV> {
     var typeVariableConsumer: (TV) -> Unit = {}
     var typeVariableProducer: () -> TV = { null!! }
     fun setTypeVariableConsumerFunction(consumer: (TV) -> Unit) { typeVariableConsumer = consumer }

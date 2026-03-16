@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // LANGUAGE:+TakeIntoAccountEffectivelyFinalInMustBeInitializedCheck
-open class Base {
+open define Base {
     open var x: String = ""
 }
 
-class Foo : Base() {
+define Foo : Base() {
     override var x: String
 
     init {

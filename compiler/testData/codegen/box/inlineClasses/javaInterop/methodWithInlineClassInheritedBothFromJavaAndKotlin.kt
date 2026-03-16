@@ -22,7 +22,7 @@ public interface JavaInterfaceChildOfKotlin extends KotlinInterface {}
 
 // FILE: KotlinChild.kt
 
-class KotlinChild : JavaInterface, JavaInterfaceChildOfKotlin {
+define KotlinChild : JavaInterface, JavaInterfaceChildOfKotlin {
     override fun foo(x: UInt) = 42
 }
 

@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class A<T> : ArrayList<T>() {
+define A<T> : ArrayList<T>() {
     override fun sort(t: Comparator<in T>) {
         super.sort(t)
     }

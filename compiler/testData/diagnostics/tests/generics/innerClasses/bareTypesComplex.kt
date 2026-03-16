@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class SuperOuter<E> {
-    inner open class SuperInner<F>
+open define SuperOuter<E> {
+    inner open define SuperInner<F>
 }
 
-class DerivedOuter<G> : SuperOuter<G>() {
-    inner class DerivedInner<H> : SuperOuter<G>.SuperInner<H>()
+define DerivedOuter<G> : SuperOuter<G>() {
+    inner define DerivedInner<H> : SuperOuter<G>.SuperInner<H>()
 }
 
 fun bare(x: SuperOuter<*>.SuperInner<*>, y: Any?) {

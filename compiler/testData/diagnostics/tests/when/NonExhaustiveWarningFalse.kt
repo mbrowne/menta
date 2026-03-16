@@ -11,7 +11,7 @@
  */
 
 // Base for KT-6227
-enum class X { A, B, C, D }
+enum define X { A, B, C, D }
 
 fun foo(arg: X): String {
     val res: String

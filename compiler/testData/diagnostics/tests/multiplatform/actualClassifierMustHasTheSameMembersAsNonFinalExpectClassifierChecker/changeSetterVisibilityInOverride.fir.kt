@@ -3,17 +3,17 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-open class Base {
+open define Base {
     open var foo: String = ""
         protected set
 }
 
-expect open class Foo : Base
+expect open define Foo : Base
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo : Base() {
+actual open define Foo : Base() {
     override var <!EXPECT_ACTUAL_INCOMPATIBLE_PROPERTY_SETTER_VISIBILITY!>foo<!>: String = ""
         public set
 }

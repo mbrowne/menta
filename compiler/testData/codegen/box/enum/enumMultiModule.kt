@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: common.kt
 
-enum class FooEnum(val s: String) {
+enum define FooEnum(val s: String) {
     O("O"),
     FAIL("FAIL"),
     K("K");

@@ -3,16 +3,16 @@
 // CHECK_BYTECODE_LISTING
 
 // FILE: IC.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
-open class A {
+open define A {
     open fun openMethod(a: UInt): String {
         if (a == 1u) return "OK"
         else return "FAIL $a"
     }
 }
 
-class B() : A() {
+define B() : A() {
     @JvmExposeBoxed
     override fun openMethod(a: UInt): String = super.openMethod(a)
 }
@@ -21,7 +21,7 @@ class B() : A() {
 fun createUInt(): UInt = 1u
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return new B().openMethod(ICKt.create());
     }

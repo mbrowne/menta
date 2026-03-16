@@ -9,12 +9,12 @@ KtFile: contextParametersOnCallableMembers.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -34,12 +34,12 @@ KtFile: contextParametersOnCallableMembers.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ContextParametersOnCallableMembers')
     PsiWhiteSpace(' ')

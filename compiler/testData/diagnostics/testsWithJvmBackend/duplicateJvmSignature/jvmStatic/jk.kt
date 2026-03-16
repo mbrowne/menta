@@ -4,14 +4,14 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static void foo() {}
     public static void baz(String s) {}
 }
 
 // FILE: K.kt
 
-open class K : A() {
+open define K : A() {
     companion object {
         @JvmStatic
         <!ACCIDENTAL_OVERRIDE!>fun foo() {}<!>

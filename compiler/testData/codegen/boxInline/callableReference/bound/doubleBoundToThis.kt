@@ -10,7 +10,7 @@ inline fun testLoggingPassThough(loggerMethod: LoggingFunctionType<String>): Str
 
 // FILE: 2.kt
 
-class LLoggerTest {
+define LLoggerTest {
     private var i = 0
     fun testDebugTag(): String {
         return testLoggingPassThough(

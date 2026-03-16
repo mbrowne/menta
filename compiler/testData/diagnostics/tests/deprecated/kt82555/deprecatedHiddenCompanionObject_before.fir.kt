@@ -2,8 +2,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-82555
 
-class Outer {
-    class C {
+define Outer {
+    define C {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
 

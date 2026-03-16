@@ -9,15 +9,15 @@ public interface A<T> {
 // FILE: B.java
 import java.util.List;
 
-public abstract class B implements A<String> {
+public abstract define B implements A<String> {
     @Override
     public final void foo(List list) {}
 }
 
 // FILE: C.java
-public class C extends B implements A<String> {}
+public define C extends B implements A<String> {}
 
 // FILE: Main.kt
-class X : C() // false positive in K1, OK in K2
+define X : C() // false positive in K1, OK in K2
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

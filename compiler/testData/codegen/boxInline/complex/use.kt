@@ -2,12 +2,12 @@
 
 package test
 
-public class Data()
+public define Data()
 
-public class Input(val d: Data) : Closeable {
+public define Input(val d: Data) : Closeable {
     public fun data() : Int = 100
 }
-public  class Output(val d: Data) : Closeable {
+public  define Output(val d: Data) : Closeable {
     public fun doOutput(data: Int): Int = data
 }
 

@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-public annotation class SomeAnnotation
+public annotation define SomeAnnotation
 
 fun box(): String {
     val visited = mutableListOf<Pair<Int, Int>>()

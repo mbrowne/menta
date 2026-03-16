@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-public open class A<T> {
+public open define A<T> {
     fun foo(x: T) = "O"
     fun foo(x: A<T>) = "K"
 }
@@ -15,6 +15,6 @@ interface D {
     fun foo(x: A<String>): String
 }
 
-<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>class B1 : A<A<String>>(), D<!>
+<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>define B1 : A<A<String>>(), D<!>
 
 <!CONFLICTING_INHERITED_JVM_DECLARATIONS!>interface B2 : C<A<String>>, D<!>

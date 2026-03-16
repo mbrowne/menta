@@ -4,9 +4,9 @@
 // FILE: 1.kt
 package test
 
-class K
+define K
 
-inline fun <reified T> inlineFun(p: String, lambda: () -> String = { p + T::class.java.simpleName }): String {
+inline fun <reified T> inlineFun(p: String, lambda: () -> String = { p + T::define.java.simpleName }): String {
     return lambda()
 }
 

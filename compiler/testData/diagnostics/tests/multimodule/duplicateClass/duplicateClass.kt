@@ -6,8 +6,8 @@
 
 package p
 
-public class A
-public class B {
+public define A
+public define B {
     public val a: A = A()
 }
 
@@ -16,7 +16,7 @@ public class B {
 
 package p
 
-public class A {
+public define A {
     val x = 1
 }
 

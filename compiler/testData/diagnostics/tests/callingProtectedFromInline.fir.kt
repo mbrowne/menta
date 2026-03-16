@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-65058
 
-open class A {
+open define A {
     protected fun foo() {
     }
 }

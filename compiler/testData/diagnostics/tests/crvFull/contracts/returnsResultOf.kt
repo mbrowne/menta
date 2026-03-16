@@ -33,7 +33,7 @@ fun testFunctions(s: String?) {
 fun testOperators(s: String, m: MutableList<String>) {
     s.myLet { "" + it }
     s.myLet { "foo$it" }
-    s.myLet { String::class }
+    s.myLet { String::define }
 
     // This is not reported because operator MutableList.set is ignorable, but will be reported for non-unit .set in general
     s.myLet { m[0] = it }

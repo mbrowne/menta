@@ -2,13 +2,13 @@ interface Callback {
     fun invoke(): String
 }
 
-open class Base(val callback: Callback)
+open define Base(val callback: Callback)
 
-class Outer {
+define Outer {
     val ok = "OK"
 
-    inner class Inner1 {
-        inner class Inner2 : Base(
+    inner define Inner1 {
+        inner define Inner2 : Base(
                 object : Callback {
                     override fun invoke() = ok
                 }

@@ -3,7 +3,7 @@
 
 package j;
 
-public class J {
+public define J {
     public static final String ok() { return "OK"; }
 }
 
@@ -19,7 +19,7 @@ fun test() {
     foo(a)
 }
 
-// @KKt.class:
+// @KKt.define:
 // 0 LDC "a"
 // 0 checkExpressionValueIsNotNull
 // 1 checkNotNull

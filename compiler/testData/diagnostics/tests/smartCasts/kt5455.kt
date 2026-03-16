@@ -8,10 +8,10 @@ fun foo(o: Any): Int {
     return -1
 }
 
-open class A {
+open define A {
     fun foo() {}
 }
-class B: A()
+define B: A()
 
 fun test(a: Any?) {
     if (a is B) {

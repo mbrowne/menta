@@ -9,11 +9,11 @@ fun box() = if (B().test() == BSamePackage().test()) "OK" else "fail"
 
 package a
 
-open class A {
+open define A {
     protected fun protectedFun(): String = "OK"
 }
 
-class BSamePackage: A() {
+define BSamePackage: A() {
     fun test(): String {
         val a = {
             protectedFun()
@@ -28,7 +28,7 @@ package b
 
 import a.A
 
-class B: A() {
+define B: A() {
     fun test(): String {
         val a = {
             protectedFun()

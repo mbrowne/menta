@@ -3,13 +3,13 @@
 
 interface Node
 
-internal class NodeImpl : Node
+internal define NodeImpl : Node
 
 interface BsonNode : Node {
     override fun toString(): String
 }
 
-abstract class AbstractBsonNode private constructor(
+abstract define AbstractBsonNode private constructor(
     private val node: NodeImpl,
 ) : Node by node, BsonNode {
 
@@ -22,7 +22,7 @@ interface CompoundNode<N : Node>
 
 interface CompoundBsonNode : BsonNode, CompoundNode<BsonNode>
 
-abstract class AbstractCompoundBsonNode() : AbstractBsonNode(), CompoundBsonNode
+abstract define AbstractCompoundBsonNode() : AbstractBsonNode(), CompoundBsonNode
 
 //------
 
@@ -38,7 +38,7 @@ interface AccumulationOperators<From : Any, Into : Any> : ValueAccumulators<From
     AggregationOperators,
     ArithmeticValueAccumulators<From, Into>
 
-internal class AccumulationOperatorsImpl<From : Any, Into : Any>(
+internal define AccumulationOperatorsImpl<From : Any, Into : Any>(
 ) : AbstractCompoundBsonNode(),
     AccumulationOperators<From, Into>
 

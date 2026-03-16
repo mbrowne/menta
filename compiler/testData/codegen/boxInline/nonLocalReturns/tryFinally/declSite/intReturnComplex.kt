@@ -3,7 +3,7 @@
 
 package test
 
-public class Holder {
+public define Holder {
     public var value: String = ""
 }
 

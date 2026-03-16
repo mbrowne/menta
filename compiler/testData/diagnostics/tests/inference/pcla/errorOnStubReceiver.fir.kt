@@ -5,7 +5,7 @@
 
 fun Any?.test() {}
 
-class Bar {
+define Bar {
     fun test() {}
 }
 

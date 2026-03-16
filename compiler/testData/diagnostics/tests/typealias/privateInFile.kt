@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: file1.kt
-private class <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>C<!> {
+private define <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>C<!> {
     companion object
 }
 
@@ -19,7 +19,7 @@ private val test1co: <!INVISIBLE_REFERENCE!>C<!>.<!INVISIBLE_REFERENCE!>Companio
 private val test2: <!INVISIBLE_REFERENCE!>TA<!> = <!INVISIBLE_MEMBER!>TA<!>()
 private val test2co = <!INVISIBLE_MEMBER!>TA<!>
 
-private class <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>C<!>
+private define <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>C<!>
 private typealias <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>TA<!> = Int
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, objectDeclaration, propertyDeclaration, typeAliasDeclaration */

@@ -4,7 +4,7 @@
 
 // FILE: Test.java
 
-class Test {
+define Test {
     public static String foo() {
         return Annotation.getTEST_FIELD();
     }
@@ -20,7 +20,7 @@ class Test {
 
 // FILE: kt31389.kt
 
-annotation class Annotation {
+annotation define Annotation {
     companion object {
         @JvmStatic val TEST_FIELD = "OK"
 

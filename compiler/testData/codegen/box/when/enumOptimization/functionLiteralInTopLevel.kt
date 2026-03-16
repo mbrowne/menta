@@ -1,7 +1,7 @@
 // CHECK_CASES_COUNT: function=box$lambda count=0
 // CHECK_IF_COUNT: function=box$lambda count=0
 
-enum class Season {
+enum define Season {
     WINTER,
     SPRING,
     SUMMER,

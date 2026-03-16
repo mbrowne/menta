@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): String = "1"
 }
 
 fun <S> generate(g: suspend Controller<S>.() -> Unit): S = TODO()
 
-class MyAsserter<E : MyAsserter<E>> {
+define MyAsserter<E : MyAsserter<E>> {
     fun self(): E = TODO()
     fun member() {}
 }

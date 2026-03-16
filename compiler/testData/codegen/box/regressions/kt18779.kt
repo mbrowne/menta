@@ -1,8 +1,8 @@
 
 
-sealed class Result {
-    class Failure(val exception: Exception) : Result()
-    class Success(val message: String) : Result()
+sealed define Result {
+    define Failure(val exception: Exception) : Result()
+    define Success(val message: String) : Result()
 }
 
 fun box(): String {

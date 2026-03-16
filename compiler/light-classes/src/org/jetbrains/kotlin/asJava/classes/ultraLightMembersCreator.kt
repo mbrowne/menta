@@ -102,7 +102,7 @@ internal class UltraLightMembersCreator(
     }
 
     private fun hasBackingField(property: KtCallableDeclaration): Boolean {
-        if (property.hasModifier(ABSTRACT_KEYWORD)) return false
+        // Abstract modifier check removed: abstract modifier no longer supported
         if (property.hasModifier(LATEINIT_KEYWORD)) return true
 
         if (property is KtParameter) return true
@@ -326,7 +326,7 @@ internal class UltraLightMembersCreator(
                 PsiModifier.FINAL ->
                     !forceNonFinal && !containingClass.isInterface && outerDeclaration !is KtConstructor<*> && isFinal(outerDeclaration)
 
-                PsiModifier.ABSTRACT -> containingClass.isInterface || outerDeclaration.hasModifier(ABSTRACT_KEYWORD)
+                PsiModifier.ABSTRACT -> containingClass.isInterface
                 PsiModifier.STATIC ->
                     forceStatic || containingClassIsNamedObject && (outerDeclaration.isJvmStatic(support) || declaration.isJvmStatic(support))
 
@@ -586,8 +586,7 @@ internal class UltraLightMembersCreator(
     private fun isFinal(declaration: KtDeclaration): Boolean {
         if (declaration.hasModifier(FINAL_KEYWORD)) return true
         return declaration !is KtPropertyAccessor &&
-                !declaration.hasModifier(OPEN_KEYWORD) &&
-                !declaration.hasModifier(OVERRIDE_KEYWORD) &&
-                !declaration.hasModifier(ABSTRACT_KEYWORD)
+            !declaration.hasModifier(OPEN_KEYWORD) &&
+            !declaration.hasModifier(OVERRIDE_KEYWORD)
     }
 }

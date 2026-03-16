@@ -3,7 +3,7 @@
 
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 operator fun Boolean.plus(x: Boolean): Boolean {
     @Suppress("CONTRACT_NOT_ALLOWED")
     contract { returns() implies (x) }

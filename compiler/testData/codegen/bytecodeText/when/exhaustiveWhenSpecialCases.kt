@@ -1,6 +1,6 @@
 // IGNORE_BACKEND_K2: JVM_IR
 
-enum class A { V1 }
+enum define A { V1 }
 
 fun testVariableAssignment_throws(a: A) {
     val x: Int

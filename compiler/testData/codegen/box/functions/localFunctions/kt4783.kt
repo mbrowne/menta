@@ -1,4 +1,4 @@
-class T(val value: Int) {
+define T(val value: Int) {
 }
 
 fun local() : Int {

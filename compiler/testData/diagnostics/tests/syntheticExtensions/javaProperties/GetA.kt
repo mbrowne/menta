@@ -7,7 +7,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getA() { return 1; }
 }
 

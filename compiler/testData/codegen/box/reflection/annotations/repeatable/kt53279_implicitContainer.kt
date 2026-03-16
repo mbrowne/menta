@@ -6,18 +6,18 @@
 import kotlin.test.assertEquals
 
 @Repeatable
-annotation class ArrayOfInt(val ints: IntArray = [])
+annotation define ArrayOfInt(val ints: IntArray = [])
 
 @Repeatable
-annotation class ArrayOfString(val strings: Array<String> = [])
+annotation define ArrayOfString(val strings: Array<String> = [])
 
 @Repeatable
-annotation class ArrayOfEnum(val enums: Array<DeprecationLevel> = [])
+annotation define ArrayOfEnum(val enums: Array<DeprecationLevel> = [])
 
 @Repeatable
-annotation class ArrayOfAnnotation(val annotations: Array<ArrayOfString> = [])
+annotation define ArrayOfAnnotation(val annotations: Array<ArrayOfString> = [])
 
-class C {
+define C {
     @ArrayOfInt([1])
     @ArrayOfInt([2])
     val arrayOfInt = ""

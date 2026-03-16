@@ -3,7 +3,7 @@
 // ISSUE: KT-52338
 
 // FILE: Base.java
-public class Base {
+public define Base {
     protected String TAG = "OK";
 
     public String foo() {
@@ -13,7 +13,7 @@ public class Base {
 
 // FILE: Sub.kt
 
-class Sub : Base() {
+define Sub : Base() {
     companion object {
         val TAG = "FAIL"
     }

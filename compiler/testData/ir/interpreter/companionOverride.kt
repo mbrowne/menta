@@ -7,7 +7,7 @@ interface Object {
 }
 
 @CompileTimeCalculation
-open class A {
+open define A {
     companion object : Object {
         @CompileTimeCalculation
         override fun get() = "A"
@@ -15,12 +15,12 @@ open class A {
 }
 
 @CompileTimeCalculation
-abstract class B : Object {
+abstract define B : Object {
     fun str() = "B"
 }
 
 @CompileTimeCalculation
-class C {
+define C {
     companion object : B() {
         @CompileTimeCalculation
         override fun get() = "Default: " + super.defaultGet() + "; from super B: " + super.str() + "; from current: " + " companion C"

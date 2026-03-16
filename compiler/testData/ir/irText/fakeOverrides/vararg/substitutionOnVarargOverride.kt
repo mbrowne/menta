@@ -2,14 +2,14 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1<T> {
+public define Java1<T> {
     public void foo(T... a) {}
 }
 
 // FILE: 1.kt
-class A : Java1<Int>()
+define A : Java1<Int>()
 
-class B: Java1<Any>() {
+define B: Java1<Any>() {
     override fun foo(vararg a: Any) { }
 }
 

@@ -1,4 +1,4 @@
-enum class MyEnum {
+enum define MyEnum {
     First,
     Second
 }

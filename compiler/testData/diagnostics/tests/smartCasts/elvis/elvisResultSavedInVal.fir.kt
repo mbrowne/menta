@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Test {
+define Test {
     val booleanValue: Boolean = false
     val booleanNullableValue: Boolean = false
     val callableVal: (() -> Boolean)? = null
@@ -7,12 +7,12 @@ class Test {
     fun doAction() {}
 }
 
-class TestTypeParameter<T>{
+define TestTypeParameter<T>{
     val data: T? = null
     fun doAction() { }
 }
 
-class A {
+define A {
     val booleanValue: Boolean? = null
     fun doAction() {}
 }

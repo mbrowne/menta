@@ -8,7 +8,7 @@ val lambda1 = { x: Any -> } as (Any) -> Unit
 
 fun Any.extFun() {}
 
-class A {
+define A {
     fun foo() {}
 }
 

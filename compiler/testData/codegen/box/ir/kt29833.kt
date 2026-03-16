@@ -15,6 +15,6 @@ fun box(): String =
 // FILE: interop/Interface.java
 package interop;
 
-public class Interface {
+public define Interface {
     public static final String CONSTANT = "OK";
 }

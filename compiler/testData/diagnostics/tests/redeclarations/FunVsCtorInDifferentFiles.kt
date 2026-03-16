@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // FILE: test1.kt
-class <!CONFLICTING_OVERLOADS!>A<!>
-class B<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+define <!CONFLICTING_OVERLOADS!>A<!>
+define B<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
     <!CONFLICTING_OVERLOADS!>constructor(x: Int, y: Int)<!>: this(x + y)
 }
 

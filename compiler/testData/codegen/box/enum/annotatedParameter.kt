@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: Foo.java
 
-public class Foo {
+public define Foo {
 
     static String test() {
         return KEnum.O.name() + KEnum.O.getValue();
@@ -12,9 +12,9 @@ public class Foo {
 
 // FILE: KEnum.kt
 @Retention(AnnotationRetention.RUNTIME)
-annotation class A
+annotation define A
 
-enum class KEnum(@A val value: Any) {
+enum define KEnum(@A val value: Any) {
     O("K")
 }
 

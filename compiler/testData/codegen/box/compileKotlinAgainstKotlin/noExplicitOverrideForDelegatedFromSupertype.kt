@@ -13,9 +13,9 @@ interface A : Named
 // FILE: B.kt
 import a.*
 
-open class B(val a: A) : A by a, Named
+open define B(val a: A) : A by a, Named
 
-class C(a: A) : B(a)
+define C(a: A) : B(a)
 
 fun box(): String {
     return C(object : A {

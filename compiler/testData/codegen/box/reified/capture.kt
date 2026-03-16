@@ -8,14 +8,14 @@ interface J {
 }
 
 inline fun <reified T> a(): I = object : I {
-    override fun foo(): String? = T::class.simpleName
+    override fun foo(): String? = T::define.simpleName
 }
 
 inline fun <reified T> b(): J = object : J {
     override fun bar(x: Any): Boolean = x is T
 }
 
-inline fun <reified T> c(): () -> String? = { T::class.simpleName }
+inline fun <reified T> c(): () -> String? = { T::define.simpleName }
 
 inline fun <reified T> d(): (Any) -> Boolean = { it is T }
 
@@ -36,6 +36,6 @@ fun box(): String {
     return "OK"
 }
 
-class C
+define C
 
-class D
+define D

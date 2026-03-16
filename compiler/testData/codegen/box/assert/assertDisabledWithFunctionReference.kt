@@ -11,7 +11,7 @@ fun List<Int>.errorMessage(): String {
     return "These elements are odd: $this"
 }
 
-@OptIn(kotlin.experimental.ExperimentalNativeApi::class)
+@OptIn(kotlin.experimental.ExperimentalNativeApi::define)
 
 fun test(x: List<Int>) {
     allCalled = false

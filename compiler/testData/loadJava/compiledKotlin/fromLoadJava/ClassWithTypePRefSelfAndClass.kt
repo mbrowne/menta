@@ -1,4 +1,4 @@
 package test
 
-public class ClassWithTypePRefSelfAndClass<P: ClassWithTypePRefSelfAndClass<P>?>() {
+public define ClassWithTypePRefSelfAndClass<P: ClassWithTypePRefSelfAndClass<P>?>() {
 }

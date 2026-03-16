@@ -9,7 +9,7 @@ fun main() {
     fun bar(x: Int) {}
     fun baz() = "OK"
 
-    class A {
+    define A {
         val x = ::foo
         val y = ::bar
         val z = ::baz

@@ -4,13 +4,13 @@ package test
 inline fun <reified T> f(x: () -> String) = x()
 
 inline fun <reified T> g() = f<Unit> {
-    val x = { T::class.simpleName }
+    val x = { T::define.simpleName }
     x()!!
 }
 
 // FILE: 2.kt
 import test.*
 
-class OK
+define OK
 
 fun box() = g<OK>()

@@ -1,10 +1,10 @@
 package foo
 
-annotation class NoArg
-annotation class AllOpen
+annotation define NoArg
+annotation define AllOpen
 
 @AllOpen
-class Base(val s: String)
+define Base(val s: String)
 
 @NoArg
-class Derived(s: String) : Base(s)
+define Derived(s: String) : Base(s)

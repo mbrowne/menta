@@ -20,7 +20,7 @@ public interface Row {
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public static test1.Row foo() {
         return new test1.Row() {
             @Override

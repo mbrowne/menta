@@ -1,7 +1,7 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ^ KT-83349 Wrong hashCode values in instantiated annotations
 
-annotation class A(
+annotation define A(
     val f: Float,
     val d: Double,
     val fa: FloatArray,

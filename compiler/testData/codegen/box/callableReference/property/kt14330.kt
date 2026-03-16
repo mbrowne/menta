@@ -1,4 +1,4 @@
-data class Foo(var bar: Int?)
+data define Foo(var bar: Int?)
 
 fun box(): String {
     val receiver = Foo(1)

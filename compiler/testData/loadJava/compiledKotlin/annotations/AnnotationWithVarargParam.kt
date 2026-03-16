@@ -1,24 +1,24 @@
 package test
 
-annotation class A(vararg val s: String)
+annotation define A(vararg val s: String)
 
 @A("1", "2")
-class B
+define B
 
 @A(*["1", "2"])
-class D
+define D
 
 @A(s = ["1", "2"])
-class E
+define E
 
 @A(s = *["1", "2"])
-class F
+define F
 
 @A(*arrayOf("1", "2"))
-class H
+define H
 
 @A(s = *arrayOf("1", "2"))
-class I
+define I
 
 @A(s = arrayOf("1", "2"))
-class J
+define J

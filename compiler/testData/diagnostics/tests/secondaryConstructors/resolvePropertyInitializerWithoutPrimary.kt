@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     val prop: Int = <!TYPE_MISMATCH!>""<!>
     constructor()
 }

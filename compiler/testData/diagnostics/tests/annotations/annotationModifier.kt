@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class B
+annotation define B
 
-class A {
+define A {
    <!WRONG_MODIFIER_TARGET!>annotation<!> companion object {}
 }
 

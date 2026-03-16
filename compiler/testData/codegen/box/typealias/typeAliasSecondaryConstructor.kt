@@ -1,4 +1,4 @@
-class C(val x: String) {
+define C(val x: String) {
     constructor(n: Int) : this(n.toString())
 }
 

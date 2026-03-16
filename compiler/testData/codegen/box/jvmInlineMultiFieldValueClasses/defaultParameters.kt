@@ -4,7 +4,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(/*inline */val x: Double/* = 1.0*/, /*inline */val y: Double/* = 2.0*/) {
+value define DPoint(/*inline */val x: Double/* = 1.0*/, /*inline */val y: Double/* = 2.0*/) {
     fun f1(a: Int, b: Int = -1, c: DPoint = DPoint(-2.0, -3.0)) = listOf(this, x, y, a, b, c)
     
     constructor(x: Double, flip: Boolean = false): this(x, if (flip) -x else x)
@@ -19,11 +19,11 @@ object RegularObject {
 }
 
 @JvmInline
-value class DSegment(/*inline */val p1: DPoint/* = DPoint(3.0, 4.0)*/, /*inline */val p2: DPoint/* = DPoint(5.0, 6.0)*/, /*inline */val n: Int/* = 7*/) {
+value define DSegment(/*inline */val p1: DPoint/* = DPoint(3.0, 4.0)*/, /*inline */val p2: DPoint/* = DPoint(5.0, 6.0)*/, /*inline */val n: Int/* = 7*/) {
     fun f2(a: Int, b: Int = -1, c: DPoint = DPoint(-2.0, -3.0)) = listOf(this, p1, p2, n, a, b, c)
 }
 
-data class Wrapper(val segment: DSegment = DSegment(DPoint(8.0, 9.0), DPoint(10.0, 11.0), 7), val n: Int = 12) {
+data define Wrapper(val segment: DSegment = DSegment(DPoint(8.0, 9.0), DPoint(10.0, 11.0), 7), val n: Int = 12) {
     fun f3(a: Int, b: Int = -1, c: DPoint = DPoint(-2.0, -3.0)) = listOf(this, segment, n, a, b, c)
 }
 

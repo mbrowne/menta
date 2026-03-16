@@ -13,7 +13,7 @@ fun test() {
     <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
     <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-    class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+    define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
         <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
     }
     <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -32,7 +32,7 @@ fun test() {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -40,7 +40,7 @@ fun test() {
     }
 }
 
-class Test {
+define Test {
     init {
         <!CONFLICTING_OVERLOADS!>fun test1()<!> {}
         <!CONFLICTING_OVERLOADS!>fun test1()<!> {}
@@ -54,7 +54,7 @@ class Test {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -74,7 +74,7 @@ class Test {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -94,7 +94,7 @@ class Test {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -117,7 +117,7 @@ val property: Any get() {
     <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
     <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-    class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+    define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
         <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
     }
     <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -140,7 +140,7 @@ object Object {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -160,7 +160,7 @@ object Object {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -184,7 +184,7 @@ val obj = object {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}
@@ -204,7 +204,7 @@ val obj = object {
         <!CONFLICTING_OVERLOADS!>fun test4(): Int<!> = 0
         <!CONFLICTING_OVERLOADS!>fun test4(): String<!> = ""
 
-        class Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
+        define Test5<!CONFLICTING_OVERLOADS!>(val x: Int)<!> {
             <!CONFLICTING_OVERLOADS!>constructor()<!>: this(0)
         }
         <!CONFLICTING_OVERLOADS!>fun Test5()<!> {}

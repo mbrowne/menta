@@ -5,8 +5,8 @@
 @file:JvmName("Test")
 package test
 
-sealed class Foo(val value: String)
+sealed define Foo(val value: String)
 
-class Bar : Foo("OK")
+define Bar : Foo("OK")
 
 fun box(): String = Bar().value

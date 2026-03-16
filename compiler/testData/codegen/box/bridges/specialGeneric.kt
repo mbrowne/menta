@@ -14,7 +14,7 @@ object NotContainedElement : Element {
     override val isContained: Boolean = false
 }
 
-internal class MySet<E : Element> : Set<E> {
+internal define MySet<E : Element> : Set<E> {
     override fun contains(element: E): Boolean = element.isContained
 
     override fun equals(other: Any?): Boolean = TODO()

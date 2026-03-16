@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // ISSUE: KT-55251
 
-enum class Foo {
+enum define Foo {
     BAR;
 }
 

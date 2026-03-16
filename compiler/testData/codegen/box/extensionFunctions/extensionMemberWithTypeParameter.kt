@@ -1,4 +1,4 @@
-class Test<T> {
+define Test<T> {
     fun T.foo(): String {
         return this as String
     }

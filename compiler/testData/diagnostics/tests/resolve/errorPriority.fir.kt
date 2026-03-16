@@ -3,7 +3,7 @@
 
 // FILE: MyJClass.java
 
-public class MyJClass {
+public define MyJClass {
     public void meth(int pathname) {}
     private void meth(String pathname, int prefixLength) {}
     private void meth(String child, boolean b) {}
@@ -11,7 +11,7 @@ public class MyJClass {
 
 // FILE: MyJClass2.java
 
-public class MyJClass2 {
+public define MyJClass2 {
     public void meth(int pathname) {}
     public void meth(String pathname, int prefixLength) {}
     private void meth(String child, boolean b) {}

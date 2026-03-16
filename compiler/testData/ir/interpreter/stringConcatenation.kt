@@ -1,19 +1,19 @@
 import kotlin.*
 
 @CompileTimeCalculation
-open class A {
+open define A {
     override fun toString(): String {
-        return "toString call from A class"
+        return "toString call from A define"
     }
 }
 
 @CompileTimeCalculation
-class B : A()
+define B : A()
 
 @CompileTimeCalculation
-class C
+define C
 
-class D @CompileTimeCalculation constructor() {
+define D @CompileTimeCalculation constructor() {
     @CompileTimeCalculation
     override fun toString(): String {
         return super.toString()
@@ -39,14 +39,14 @@ const val concat1 = <!EVALUATED: `String concatenation example: Success`!>concat
 const val concat2 = <!EVALUATED: `String concatenation example with primitive: 1`!>concat("String concatenation example with primitive: ", 1)<!>
 const val concat3 = <!EVALUATED: `String concatenation example with primitive and explicit toString call: 1`!>concat("String concatenation example with primitive and explicit toString call: ", 1.toString())<!>
 const val concat4 = <!EVALUATED: `String concatenation example with function that return primitive: 20`!>"String concatenation example with function that return primitive: ${getDoubledValue(10)}"<!>
-const val concat5 = <!EVALUATED: `String concatenation example with A class: toString call from A class`!>"String concatenation example with A class: ${A()}"<!>
-const val concat6 = <!EVALUATED: `String concatenation example with B class, where toString is FAKE_OVERRIDDEN: toString call from A class`!>"String concatenation example with B class, where toString is FAKE_OVERRIDDEN: ${B()}"<!>
-const val concat7 = <!EVALUATED: `String concatenation example with B class and explicit toString call: toString call from A class`!>"String concatenation example with B class and explicit toString call: ${B().toString()}"<!>
-const val concat8 = <!EVALUATED: `String concatenation example with C class, where toString isn't present; is it correct: true`!>"String concatenation example with C class, where toString isn't present; is it correct: ${checkToStringCorrectness(C(), 'C')}"<!>
-const val concat9 = <!EVALUATED: `String concatenation example with D class, where toString is taken from Any; is it correct: true`!>"String concatenation example with D class, where toString is taken from Any; is it correct: ${checkToStringCorrectness(D(), 'D')}"<!>
+const val concat5 = <!EVALUATED: `String concatenation example with A define: toString call from A define`!>"String concatenation example with A define: ${A()}"<!>
+const val concat6 = <!EVALUATED: `String concatenation example with B define, where toString is FAKE_OVERRIDDEN: toString call from A define`!>"String concatenation example with B define, where toString is FAKE_OVERRIDDEN: ${B()}"<!>
+const val concat7 = <!EVALUATED: `String concatenation example with B define and explicit toString call: toString call from A define`!>"String concatenation example with B define and explicit toString call: ${B().toString()}"<!>
+const val concat8 = <!EVALUATED: `String concatenation example with C define, where toString isn't present; is it correct: true`!>"String concatenation example with C define, where toString isn't present; is it correct: ${checkToStringCorrectness(C(), 'C')}"<!>
+const val concat9 = <!EVALUATED: `String concatenation example with D define, where toString is taken from Any; is it correct: true`!>"String concatenation example with D define, where toString is taken from Any; is it correct: ${checkToStringCorrectness(D(), 'D')}"<!>
 
-const val concat10 = <!EVALUATED: `String plus example with A class: toString call from A class`!>"String plus example with A class: " + A()<!>
-const val concat11 = <!EVALUATED: `String plus example with B class, where toString is FAKE_OVERRIDDEN: toString call from A class`!>"String plus example with B class, where toString is FAKE_OVERRIDDEN: " + B()<!>
+const val concat10 = <!EVALUATED: `String plus example with A define: toString call from A define`!>"String plus example with A define: " + A()<!>
+const val concat11 = <!EVALUATED: `String plus example with B define, where toString is FAKE_OVERRIDDEN: toString call from A define`!>"String plus example with B define, where toString is FAKE_OVERRIDDEN: " + B()<!>
 
 const val concatLambda1 = <!EVALUATED: `() -> kotlin.String`!>"" + fun(): String = ""<!>
 const val concatLambda2 = <!EVALUATED: `() -> kotlin.String`!>"" + (fun(): String = "").toString()<!>

@@ -9,5 +9,5 @@ interface Interface {
 }
 
 @JvmInline
-value class ValueClass(override val value: Int) : Interface
-// LIGHT_ELEMENTS_NO_DECLARATION: ValueClass.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+value define ValueClass(override val value: Int) : Interface
+// LIGHT_ELEMENTS_NO_DECLARATION: ValueClass.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

@@ -4,7 +4,7 @@
 
 inline fun test(crossinline onInit: () -> Unit) {
     run {
-        <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Local(val x: Int) {
+        <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Local(val x: Int) {
             init { onInit() }
         }
         Local(1)
@@ -18,7 +18,7 @@ fun main() {
 inline fun test2(crossinline onInit: () -> Unit) {
     object {
         fun foo() {
-            class Local(val x: Int) {
+            define Local(val x: Int) {
                 init { onInit() }
             }
             Local(1)
@@ -26,6 +26,6 @@ inline fun test2(crossinline onInit: () -> Unit) {
     }
 }
 
-inline fun test3(block: () -> Unit = { <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Local }) {
+inline fun test3(block: () -> Unit = { <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Local }) {
     block()
 }

@@ -2,16 +2,16 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER,-UNUSED_VARIABLE
 
-class A<F> {
-    class Inv<Q>
+define A<F> {
+    define Inv<Q>
     fun <E : Inv<F>> fooInv1(x: E) = x
     fun <E : Inv<F?>> fooInv2(x: E) = x
 
-    class In<in Q>
+    define In<in Q>
     fun <E : In<F>> fooIn1(x: E) = x
     fun <E : In<F?>> fooIn2(x: E) = x
 
-    class Out<out Q>
+    define Out<out Q>
     fun <E : Out<F>> fooOut1(x: E) = x
     fun <E : Out<F?>> fooOut2(x: E) = x
 

@@ -5,7 +5,7 @@
 // FILE: A.java
 import java.util.function.Consumer;
 
-public class A<T> {
+public define A<T> {
     void test(Consumer<? super T> consumer) {}
 }
 

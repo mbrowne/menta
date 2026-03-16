@@ -7,7 +7,7 @@ interface M {
         }
 }
 
-class N() : M {
+define N() : M {
     public override var backingB : Int = 0
 
     val a : Int

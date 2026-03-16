@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: Bar.java
 
-public class Bar {
+public define Bar {
     public static String bar() {
         return Foo.foo();
     }

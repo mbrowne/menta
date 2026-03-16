@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package foo
 
-class A
+define A
 
 <!JS_NAME_PROHIBITED_FOR_EXTENSION_PROPERTY!>@JsName("xx")<!> val A.x: Int
     get() = 23

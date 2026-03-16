@@ -16,8 +16,7 @@ public open class ClassVarModality {
         private final fun `<set-property4>`(/*0*/ `<set-?>`: kotlin.Int): kotlin.Unit
 }
 
-public abstract class ClassVarModalityAbstract {
-    /*primary*/ public constructor ClassVarModalityAbstract()
+public interface ClassVarModalityAbstract {
     public abstract var property1: java.util.Date
         public abstract fun `<get-property1>`(): java.util.Date
         public abstract fun `<set-property1>`(/*0*/ `<set-?>`: java.util.Date): kotlin.Unit

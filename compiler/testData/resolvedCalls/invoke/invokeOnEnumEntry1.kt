@@ -1,4 +1,4 @@
-enum class A {
+enum define A {
     ONE, TWO
 
     fun invoke(i: Int) = i

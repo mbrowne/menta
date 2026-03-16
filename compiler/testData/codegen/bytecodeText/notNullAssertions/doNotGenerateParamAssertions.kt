@@ -1,6 +1,6 @@
 // DISABLE_PARAM_ASSERTIONS
 
-class A {
+define A {
     fun foo(s: String) {
     }
 }

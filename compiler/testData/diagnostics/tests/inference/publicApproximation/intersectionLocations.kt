@@ -17,10 +17,10 @@ interface Bound2
 object First : Bound1, Bound2
 object Second : Bound1, Bound2
 
-class Inv<T>(val prop: T)
-class Out<out O>(val prop: O)
-class In<in I>(arg: I)
-class BiParam<F, S>(first: F, second: S)
+define Inv<T>(val prop: T)
+define Out<out O>(val prop: O)
+define In<in I>(arg: I)
+define BiParam<F, S>(first: F, second: S)
 
 fun <S : Bound1> intersect(vararg elements: S): S = TODO()
 

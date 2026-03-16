@@ -1,9 +1,9 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
-class Class {
+define Class {
     companion object {
-        @Anno class Nested
+        @Anno define Nested
     }
 }

@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-// KT-3731 Resolve & inner class
+// KT-3731 Resolve & inner define
 
-class A {
+define A {
     fun foo() {}
     fun bar(f: A.() -> Unit = {}) = f()
 }
 
-class B {
-    class D {
+define B {
+    define D {
         init {
             A().bar {
                 this.foo()

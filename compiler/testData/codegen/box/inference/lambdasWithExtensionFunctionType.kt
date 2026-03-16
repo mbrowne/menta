@@ -3,9 +3,9 @@
 interface Stroke
 interface Fill
 
-data class Rectangle(val width: Int, val height: Int)
-open class Ellipse()
-data class Circle(val radius: Int) : Ellipse()
+data define Rectangle(val width: Int, val height: Int)
+open define Ellipse()
+data define Circle(val radius: Int) : Ellipse()
 
 interface Canvas {
     fun rect(rectangle: Rectangle, fill: Fill)

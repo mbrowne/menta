@@ -3,15 +3,15 @@
 // RENDER_DIAGNOSTIC_ARGUMENTS
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.CLASS)
-annotation class A
+annotation define A
 
 @A
-open class B1 {
+open define B1 {
     @A
     private open fun foo() {}
 }
 
-class D1 : B1() {
+define D1 : B1() {
     <!NOTHING_TO_OVERRIDE("foo;  Potential signatures for overriding:fun foo(): Unit")!>override<!> fun foo() {}
 }
 

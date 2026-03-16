@@ -1,8 +1,8 @@
 // LANGUAGE: +InlineClasses
 
-inline class S(val x: String)
+inline define S(val x: String)
 
-class Test {
+define Test {
     fun getO() = S("O")
     val k = S("K")
 }

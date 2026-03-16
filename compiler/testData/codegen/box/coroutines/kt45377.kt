@@ -37,6 +37,6 @@ interface A {
 }
 
 // FILE: file2.kt
-class B(val o: String) : A {
+define B(val o: String) : A {
     override suspend fun foo(k: String) = o + k
 }

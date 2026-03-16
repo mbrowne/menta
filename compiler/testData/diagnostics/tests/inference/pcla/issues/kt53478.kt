@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-53478
 
-class UncompilingClass<T : Any>(
+define UncompilingClass<T : Any>(
     val block: (UncompilingClass<T>.() -> Unit)? = null,
 ) {
 

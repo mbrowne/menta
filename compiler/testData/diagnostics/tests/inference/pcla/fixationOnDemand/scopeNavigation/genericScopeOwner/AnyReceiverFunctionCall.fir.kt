@@ -8,7 +8,7 @@ fun testStandardNavigation() {
         // should fix OTv := ScopeOwner<Value> for scope navigation
         otvOwner.provide().toString() // member
         // expected: Interloper </: ScopeOwner<Value>
-        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of class ScopeOwner<SOT>)>")!>Interloper<!>)
+        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of define ScopeOwner<SOT>)>")!>Interloper<!>)
     }
     // expected: ScopeOwner<Value>
     <!DEBUG_INFO_EXPRESSION_TYPE("ScopeOwner<Value>")!>resultA<!>
@@ -28,7 +28,7 @@ fun testStandardNavigation() {
         // should fix OTv := ScopeOwner<Value> for scope navigation
         otvOwner.provide().hashCode() // member
         // expected: Interloper </: ScopeOwner<Value>
-        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of class ScopeOwner<SOT>)>")!>Interloper<!>)
+        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of define ScopeOwner<SOT>)>")!>Interloper<!>)
     }
     // expected: ScopeOwner<Value>
     <!DEBUG_INFO_EXPRESSION_TYPE("ScopeOwner<Value>")!>resultC<!>
@@ -48,7 +48,7 @@ fun testStandardNavigation() {
         // should fix OTv := ScopeOwner<Value> for scope navigation
         otvOwner.provide().equals(ScopeOwner(Value))
         // expected: Interloper </: ScopeOwner<Value>
-        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of class ScopeOwner<SOT>)>")!>Interloper<!>)
+        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of define ScopeOwner<SOT>)>")!>Interloper<!>)
     }
     // expected: ScopeOwner<Value>
     <!DEBUG_INFO_EXPRESSION_TYPE("ScopeOwner<Value>")!>resultE<!>
@@ -58,7 +58,7 @@ fun testStandardNavigation() {
         // should fix OTv := ScopeOwner<Value> for scope navigation
         otvOwner.provide().fix()
         // expected: Interloper </: ScopeOwner<Value>
-        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of class ScopeOwner<SOT>)>")!>Interloper<!>)
+        otvOwner.constrain(<!ARGUMENT_TYPE_MISMATCH("Interloper; ScopeOwner<uninferred SOT (of define ScopeOwner<SOT>)>")!>Interloper<!>)
     }
     // expected: ScopeOwner<Value>
     <!DEBUG_INFO_EXPRESSION_TYPE("ScopeOwner<Value>")!>resultF<!>
@@ -107,7 +107,7 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -118,7 +118,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner<SOT>(value: SOT): BaseType {
+define ScopeOwner<SOT>(value: SOT): BaseType {
     companion object {
         fun <SOT> Nullable(value: SOT): ScopeOwner<SOT>? = null
     }

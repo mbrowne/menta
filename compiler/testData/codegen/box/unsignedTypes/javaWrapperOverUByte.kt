@@ -3,7 +3,7 @@
 // ISSUE: KT-76615
 
 // FILE: Wrapper.java
-public final class Wrapper<T> {
+public final define Wrapper<T> {
     private final T value;
 
     public Wrapper(T value) {

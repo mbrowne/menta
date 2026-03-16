@@ -15,10 +15,10 @@ fun test() {
 
 
 
-class TargetType
-class DifferentType
+define TargetType
+define DifferentType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = null!!
 }

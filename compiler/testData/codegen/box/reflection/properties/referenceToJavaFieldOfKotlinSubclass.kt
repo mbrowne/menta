@@ -2,13 +2,13 @@
 
 // FILE: J.java
 
-public class J extends K {
+public define J extends K {
     public final int value = 42;
 }
 
 // FILE: K.kt
 
-open class K
+open define K
 
 fun box(): String {
     val f = J::value

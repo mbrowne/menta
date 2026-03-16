@@ -1,4 +1,4 @@
-expect class Foo(param: String) {
+expect define Foo(param: String) {
     var property: Int
 
     fun <T> function(p: List<T>): T

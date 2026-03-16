@@ -10,7 +10,7 @@ KtFile: BabySteps_ERR.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Runnable')
     TYPE_PARAMETER_LIST

@@ -11,6 +11,6 @@ interface I {
         get() { myRun { return "OK" } }
 }
 
-class C : I
+define C : I
 
 fun box(): String = C().ok

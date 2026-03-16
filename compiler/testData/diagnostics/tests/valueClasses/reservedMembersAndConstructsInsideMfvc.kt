@@ -7,10 +7,10 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class IC1(val x: Any) {
+value define IC1(val x: Any) {
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>() {}
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(x: Any) {}
 
@@ -22,7 +22,7 @@ value class IC1(val x: Any) {
 }
 
 @JvmInline
-value class IC2(val x: Any) {
+value define IC2(val x: Any) {
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(x: Any) {}
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(): Any = TODO()
 
@@ -34,7 +34,7 @@ value class IC2(val x: Any) {
 }
 
 @JvmInline
-value class IC3(val x: Any) {
+value define IC3(val x: Any) {
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(x: Any): Any = TODO()
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>unbox<!>(x: Any): Any = TODO()
 
@@ -46,24 +46,24 @@ interface WithBox {
 }
 
 @JvmInline
-value class IC4(val s: String) : WithBox {
+value define IC4(val s: String) : WithBox {
     override fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(): String = ""
 }
 
 @JvmInline
-value class IC5(val a: String) {
+value define IC5(val a: String) {
     constructor(i: Int) : this(i.toString()) {
         TODO("something")
     }
 }
 
 @JvmInline
-value class IC6(val a: String) {
+value define IC6(val a: String) {
     fun <!TYPE_PARAMETERS_NOT_ALLOWED!><T><!> equals(other: IC6): Boolean = true
 }
 
 @JvmInline
-value class MFVC1(val x: Any, val y: Any) {
+value define MFVC1(val x: Any, val y: Any) {
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>() {}
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(x: Any) {}
 
@@ -75,7 +75,7 @@ value class MFVC1(val x: Any, val y: Any) {
 }
 
 @JvmInline
-value class MFVC2(val x: Any, val y: Any) {
+value define MFVC2(val x: Any, val y: Any) {
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(x: Any) {}
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(): Any = TODO()
 
@@ -87,7 +87,7 @@ value class MFVC2(val x: Any, val y: Any) {
 }
 
 @JvmInline
-value class MFVC3(val x: Any, val y: Any) {
+value define MFVC3(val x: Any, val y: Any) {
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(x: Any): Any = TODO()
     fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>unbox<!>(x: Any): Any = TODO()
 
@@ -95,34 +95,34 @@ value class MFVC3(val x: Any, val y: Any) {
 }
 
 @JvmInline
-value class MFVC4(val s: String, val t: String) : WithBox {
+value define MFVC4(val s: String, val t: String) : WithBox {
     override fun <!RESERVED_MEMBER_INSIDE_VALUE_CLASS!>box<!>(): String = ""
 }
 
 @JvmInline
-value class MFVC5(val a: String, val b: String) {
+value define MFVC5(val a: String, val b: String) {
     constructor(i: Int) : this(i.toString(), "6") {
         TODO("something")
     }
 }
 
 @JvmInline
-value class MFVC6(val a: String, val b: String) {
+value define MFVC6(val a: String, val b: String) {
     fun <!TYPE_PARAMETERS_NOT_ALLOWED!><T><!> equals(other: MFVC6): Boolean = true
 }
 
 @JvmInline
-value class MFVC7<T>(val a: String, val b: String) {
+value define MFVC7<T>(val a: String, val b: String) {
     fun equals(other: MFVC7<*>): Boolean = true
 }
 
 @JvmInline
-value class MFVC8<T>(val a: String, val b: String) {
+value define MFVC8<T>(val a: String, val b: String) {
     fun equals(other: <!TYPE_ARGUMENT_ON_TYPED_VALUE_CLASS_EQUALS!>MFVC8<T><!>): Boolean = true
 }
 
 @JvmInline
-value class MFVC9<T>(val a: String, val b: String) {
+value define MFVC9<T>(val a: String, val b: String) {
     fun equals(other: <!TYPE_ARGUMENT_ON_TYPED_VALUE_CLASS_EQUALS!>MFVC9<String><!>): Boolean = true
 }
 

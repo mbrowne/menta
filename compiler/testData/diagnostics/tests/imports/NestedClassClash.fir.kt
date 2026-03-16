@@ -3,15 +3,15 @@
 // FILE: a.kt
 package a
 
-class A {
-    class B
+define A {
+    define B
 }
 
 // FILE: b.kt
 package a
 
-class D {
-    class B
+define D {
+    define B
 }
 
 // FILE: c.kt

@@ -13,7 +13,7 @@ inline var String.topLevelPropertyWithReceiver: String
         _topLevelPropertyWithReceiver = "$this.$value with context $c"
     }
 
-class C {
+define C {
     var _classProperty = ""
     inline var classProperty: String
         get() = "classProperty"

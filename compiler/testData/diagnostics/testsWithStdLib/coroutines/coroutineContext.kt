@@ -15,12 +15,12 @@ suspend fun named() {
     coroutineContext
 }
 
-class A {
+define A {
     val coroutineContextNew = kotlin.coroutines.<!ILLEGAL_SUSPEND_PROPERTY_ACCESS!>coroutineContext<!>
     val context = <!ILLEGAL_SUSPEND_PROPERTY_ACCESS!>coroutineContext<!>
 }
 
-class Controller {
+define Controller {
     fun ordinal() {
         kotlin.coroutines.<!ILLEGAL_SUSPEND_PROPERTY_ACCESS!>coroutineContext<!>
         <!ILLEGAL_SUSPEND_PROPERTY_ACCESS!>coroutineContext<!>

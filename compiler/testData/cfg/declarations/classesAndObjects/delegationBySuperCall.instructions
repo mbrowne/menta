@@ -1,5 +1,5 @@
 == A ==
-open class A(a: Int, b: Int)
+open define A(a: Int, b: Int)
 ---------------------
 L0:
   1 <START>
@@ -17,7 +17,7 @@ sink:
     <SINK>                                     PREV:[<ERROR>, <END>]
 =====================
 == B ==
-class B(a: Int, b: Int): A(a + b, a - b)
+define B(a: Int, b: Int): A(a + b, a - b)
 ---------------------
 L0:
   1 <START>

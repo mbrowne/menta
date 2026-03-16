@@ -8,11 +8,11 @@ interface I {
     fun foo(): Int
 }
 
-open class A : I {
+open define A : I {
     override fun foo() = 42
 }
 
-open class B : I by A() {
+open define B : I by A() {
     val x = 117
     val y = "zzz"
 }
@@ -23,7 +23,7 @@ open class B : I by A() {
 import zzz.*
 import kotlin.test.*
 
-class C : B() {
+define C : B() {
     val a = "qxx"
     val b = 123
 }

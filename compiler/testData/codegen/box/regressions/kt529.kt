@@ -19,7 +19,7 @@ fun box() : String {
     return "OK"
 }
 
-class Luhny() {
+define Luhny() {
     private val buffer = ArrayDeque<Char>()
     private val digits = ArrayDeque<Int>(16)
 

@@ -10,6 +10,6 @@ interface Bar {
     fun foo(): Unit
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class Baz<!> : Foo, Bar
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define Baz<!> : Foo, Bar
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration */

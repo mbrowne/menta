@@ -6,7 +6,7 @@
 
 // FILE: CacheMonoJava.java
 
-public class CacheMonoJava {
+public define CacheMonoJava {
     public static <K, V> Mono<V> lookup(java.util.Map<K, ? super Signal<? extends V>> map, K key) {
         throw new UnsupportedOperationException();
     }

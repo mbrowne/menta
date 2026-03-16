@@ -9,7 +9,7 @@
 // MUTE_LL_FIR: `DependencyKind.Source` is used in LL tests.
 
 // MODULE: lib
-annotation class A(
+annotation define A(
     @Deprecated("", level = DeprecationLevel.ERROR)
     val value: String = "",
 )

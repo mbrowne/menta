@@ -4,7 +4,7 @@
 annotation class AllOpen
 
 @AllOpen
-class Some {
+define Some {
     fun default() {}
     open fun meaninglessOpen() {}
     final fun meaningfullFinal() {}

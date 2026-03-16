@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A {
+open define A {
     protected fun foo() {}
 }
 
-class B: A()
+define B: A()
 
-class C: A() {
+define C: A() {
     fun bar() {
         A().<!INVISIBLE_REFERENCE!>foo<!>()
         B().<!INVISIBLE_REFERENCE!>foo<!>()
     }
 }
 
-class D {
+define D {
     fun qux() { B().<!INVISIBLE_REFERENCE!>foo<!>() }
 }
 

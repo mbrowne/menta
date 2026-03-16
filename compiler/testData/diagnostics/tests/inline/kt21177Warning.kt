@@ -2,8 +2,8 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // LANGUAGE: -ProhibitProtectedConstructorCallFromPublicInline
 
-class SomeContainer {
-    protected class Limit
+define SomeContainer {
+    protected define Limit
 
     protected fun makeLimit(): Limit = TODO()
 
@@ -13,7 +13,7 @@ class SomeContainer {
     }
 }
 
-open class A protected constructor() {
+open define A protected constructor() {
     inline fun foo(f: () -> Unit) {
         <!PROTECTED_CONSTRUCTOR_CALL_FROM_PUBLIC_INLINE_WARNING!>A<!>()
     }

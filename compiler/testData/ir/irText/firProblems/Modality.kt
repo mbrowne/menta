@@ -27,16 +27,16 @@ public interface MemberDescriptor extends DeclarationDescriptorNonRoot, Declarat
 // FILE: Modality.kt
 interface Substitutable<out T : DeclarationDescriptorNonRoot>
 
-abstract class ResolutionPart {
+abstract define ResolutionPart {
     abstract fun KotlinResolutionCandidate.process(): String
 
     // helper functions
     //protected inline val KotlinResolutionCandidate.candidateDescriptor get() = resolvedCall.candidateDescriptor
 }
 
-class KotlinResolutionCandidate(val resolvedCall: Atom)
+define KotlinResolutionCandidate(val resolvedCall: Atom)
 
-class Atom(val candidateDescriptor: CallableDescriptor)
+define Atom(val candidateDescriptor: CallableDescriptor)
 
 object Owner : ResolutionPart() {
     override fun KotlinResolutionCandidate.process(): String {

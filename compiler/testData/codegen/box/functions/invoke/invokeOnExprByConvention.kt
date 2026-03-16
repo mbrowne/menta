@@ -1,7 +1,7 @@
 //KT-3217 Invoke convention after function invocation doesn't work
 //KT-2728 Can't compile A()()
 
-class A {
+define A {
     operator fun invoke() = "##"
     operator fun invoke(i: Int) = "#${i}"
 }

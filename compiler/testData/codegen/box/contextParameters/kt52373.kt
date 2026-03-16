@@ -1,10 +1,10 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-class Context
-class Extended
+define Context
+define Extended
 
-class Containing {
+define Containing {
     context(_: Context) fun Extended.foo(obj: Any? = null) {}
 }
 

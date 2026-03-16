@@ -1,10 +1,10 @@
 
-open class Foo(val args: String){
+open define Foo(val args: String){
     constructor(arg: Any = 1) : this(arg.toString()) {
     }
 }
-open class Base(val baseArgs: String)
-open class Bar(arg: Any = 1) : Base(arg.toString()) {
+open define Base(val baseArgs: String)
+open define Bar(arg: Any = 1) : Base(arg.toString()) {
     val args = arg.toString()
 }
 object TF : Foo() {}

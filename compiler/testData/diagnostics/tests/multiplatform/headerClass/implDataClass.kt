@@ -3,14 +3,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo(x: Int, y: String) {
+expect define Foo(x: Int, y: String) {
     val x: Int
     val y: String
 }
 
-expect class Bar(z: Double)
+expect define Bar(z: Double)
 
-expect class Baz(w: List<String>) {
+expect define Baz(w: List<String>) {
     val w: List<String>
 
     operator fun component1(): List<String>
@@ -26,11 +26,11 @@ expect class Baz(w: List<String>) {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual data class Foo actual constructor(actual val x: Int, actual val y: String)
+actual data define Foo actual constructor(actual val x: Int, actual val y: String)
 
-actual data class Bar actual constructor(val z: Double)
+actual data define Bar actual constructor(val z: Double)
 
-actual data class Baz actual constructor(actual val w: List<String>)
+actual data define Baz actual constructor(actual val w: List<String>)
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, data, expect, functionDeclaration, nullableType, operator, override,
 primaryConstructor, propertyDeclaration */

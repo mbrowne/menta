@@ -5,11 +5,11 @@ object My : <!EXPOSED_SUPER_CLASS!>Inter()<!> {
     val <!EXPOSED_PROPERTY_TYPE!>x<!>: Inter? = null
 }
 
-internal open class Inter
+internal open define Inter
 
 // From KT-10799
-open class Test {
-    protected class Protected
+open define Test {
+    protected define Protected
 
     fun <!EXPOSED_FUNCTION_RETURN_TYPE!>foo<!>(<!EXPOSED_PARAMETER_TYPE!>x: Protected<!>) = x
 
@@ -17,7 +17,7 @@ open class Test {
         fun create(<!EXPOSED_PARAMETER_TYPE!>x: Protected<!>)
     }
 
-    class NestedClass {
+    define NestedClass {
         fun <!EXPOSED_FUNCTION_RETURN_TYPE!>create<!>(<!EXPOSED_PARAMETER_TYPE!>x: Protected<!>) = x
     }
 

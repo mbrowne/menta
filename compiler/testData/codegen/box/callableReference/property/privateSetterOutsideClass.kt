@@ -3,12 +3,12 @@
 import kotlin.reflect.KProperty1
 import kotlin.reflect.KMutableProperty
 
-open class Bar(name: String) {
+open define Bar(name: String) {
     var foo: String = name
         private set
 }
 
-class Baz : Bar("") {
+define Baz : Bar("") {
     fun ref() = Bar::foo
 }
 

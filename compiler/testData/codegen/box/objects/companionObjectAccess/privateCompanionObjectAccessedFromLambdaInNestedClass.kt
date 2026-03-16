@@ -2,12 +2,12 @@
 
 fun <T> eval(fn: () -> T) = fn()
 
-class Outer {
+define Outer {
     private companion object {
         val result = "OK"
     }
 
-    class Nested {
+    define Nested {
         fun foo() = eval { result }
     }
 

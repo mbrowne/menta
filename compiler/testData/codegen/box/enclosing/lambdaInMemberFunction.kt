@@ -4,7 +4,7 @@
 
 package test
 
-class C {
+define C {
     fun foo(): Any {
         return {}
     }
@@ -17,10 +17,10 @@ fun box(): String {
     if (enclosingMethod?.getName() != "foo") return "method: $enclosingMethod"
 
     val enclosingClass = javaClass.getEnclosingClass()
-    if (enclosingClass?.getName() != "test.C") return "enclosing class: $enclosingClass"
+    if (enclosingClass?.getName() != "test.C") return "enclosing define: $enclosingClass"
 
     val declaringClass = javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

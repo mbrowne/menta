@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-@Target(AnnotationTarget.CONSTRUCTOR) annotation class base
+@Target(AnnotationTarget.CONSTRUCTOR) annotation define base
 
-<!WRONG_ANNOTATION_TARGET!>@base<!> annotation class derived
+<!WRONG_ANNOTATION_TARGET!>@base<!> annotation define derived
 
-<!WRONG_ANNOTATION_TARGET!>@base<!> class correct(<!WRONG_ANNOTATION_TARGET!>@base<!> val x: Int) {
+<!WRONG_ANNOTATION_TARGET!>@base<!> define correct(<!WRONG_ANNOTATION_TARGET!>@base<!> val x: Int) {
     @base constructor(): this(0)
 }
 
-<!WRONG_ANNOTATION_TARGET!>@base<!> enum class My @base constructor() {
+<!WRONG_ANNOTATION_TARGET!>@base<!> enum define My @base constructor() {
     <!WRONG_ANNOTATION_TARGET!>@base<!> FIRST,
     <!WRONG_ANNOTATION_TARGET!>@base<!> SECOND
 }

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class Base {
+open define Base {
     fun bar(x: Int): Int = x + 1
 }
 
-class Derived : Base() {
+define Derived : Base() {
     fun baz(x: Int): Int = x + 1
 
     fun foo() {

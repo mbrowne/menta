@@ -12,7 +12,7 @@ fun builder(c: suspend () -> Unit) {
     })
 }
 
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 var c: Continuation<Any>? = null
 

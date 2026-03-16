@@ -10,7 +10,7 @@ fun box(): String = name
 
 // FILE: 2.kt
 
-enum class E(val parent: E?) {
+enum define E(val parent: E?) {
     X(null),
     OK(X),
 }

@@ -4,7 +4,7 @@ interface Addable {
     fun add(s: String): Boolean = true
 }
 
-class C : Addable, List<String> {
+define C : Addable, List<String> {
     override val size: Int get() = null!!
     override fun isEmpty(): Boolean = null!!
     override fun contains(o: String): Boolean = null!!

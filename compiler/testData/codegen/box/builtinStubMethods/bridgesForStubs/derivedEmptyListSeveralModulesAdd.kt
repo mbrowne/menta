@@ -3,12 +3,12 @@
 // MODULE: lib
 // FILE: RandomAccessList.kt
 
-abstract class RandomAccessList<T> : List<T>, RandomAccess
+abstract define RandomAccessList<T> : List<T>, RandomAccess
 
 // MODULE: main(lib)
 // FILE: derivedEmptyListSeveralModulesAdd.kt
 
-open class EmptyListBase<T> : RandomAccessList<T>() {
+open define EmptyListBase<T> : RandomAccessList<T>() {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(element: T): Boolean = false
@@ -39,7 +39,7 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static void add() {
         EmptyList.INSTANCE.add("");
     }

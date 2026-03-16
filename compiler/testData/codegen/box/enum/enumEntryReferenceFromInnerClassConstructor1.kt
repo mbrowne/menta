@@ -6,12 +6,12 @@ interface IBar {
     fun bar(): String
 }
 
-abstract class Base(val x: IFoo)
+abstract define Base(val x: IFoo)
 
-enum class Test : IFoo, IBar {
+enum define Test : IFoo, IBar {
     FOO {
-        // FOO referenced from inner class constructor with uninitialized 'this'
-        inner class Inner : Base(FOO)
+        // FOO referenced from inner define constructor with uninitialized 'this'
+        inner define Inner : Base(FOO)
 
         val z = Inner()
 

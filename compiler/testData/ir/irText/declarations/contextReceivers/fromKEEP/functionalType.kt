@@ -1,11 +1,11 @@
 // LANGUAGE: +ContextReceivers
 // IGNORE_BACKEND_K2: ANY
 
-class Param
-class O {
+define Param
+define O {
     val o = "O"
 }
-class K {
+define K {
     val k = "K"
 }
 

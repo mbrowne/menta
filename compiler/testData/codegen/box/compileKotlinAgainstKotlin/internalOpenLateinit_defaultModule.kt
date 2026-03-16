@@ -3,13 +3,13 @@
 
 // MODULE: main
 // FILE: main.kt
-open class Base {
+open define Base {
     internal open lateinit var value: String
 }
 
 // MODULE: test()(main)
 // FILE: test.kt
-internal class Derived : Base() {
+internal define Derived : Base() {
     fun inject() {
         value = "OK"
     }

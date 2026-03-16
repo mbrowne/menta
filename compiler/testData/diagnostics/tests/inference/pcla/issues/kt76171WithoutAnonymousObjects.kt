@@ -3,7 +3,7 @@
 // ISSUE: KT-76171
 import kotlin.reflect.KProperty
 
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
 }
 
@@ -21,7 +21,7 @@ fun awaitResult(
     }
 }
 
-class FakeMutableState<T>(var value: T) {
+define FakeMutableState<T>(var value: T) {
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
         return value

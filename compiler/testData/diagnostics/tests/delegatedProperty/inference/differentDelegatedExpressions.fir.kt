@@ -3,7 +3,7 @@ package baz
 
 import kotlin.reflect.KProperty
 
-class A(outer: Outer) {
+define A(outer: Outer) {
     var i: String by  + getMyConcreteProperty()
     var d: String by  getMyConcreteProperty() - 1
     var c: String by  O.getMyProperty()
@@ -22,7 +22,7 @@ fun <A, B> getMyProperty() = MyProperty<A, B>()
 
 fun getMyConcreteProperty() = MyProperty<Any?, String>()
 
-class MyProperty<R, T> {
+define MyProperty<R, T> {
 
     operator fun getValue(thisRef: R, desc: KProperty<*>): T {
         println("get $thisRef ${desc.name}")

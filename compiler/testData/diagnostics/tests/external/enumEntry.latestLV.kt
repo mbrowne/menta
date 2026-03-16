@@ -2,7 +2,7 @@
 // ISSUE: KT-83104
 // LATEST_LV_DIFFERENCE
 
-enum class E {
+enum define E {
     <!WRONG_MODIFIER_TARGET!>external<!> A {
         fun foo() {}
     },

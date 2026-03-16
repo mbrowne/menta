@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class A {
+define A {
     companion object {
 
         fun callTest() = test()

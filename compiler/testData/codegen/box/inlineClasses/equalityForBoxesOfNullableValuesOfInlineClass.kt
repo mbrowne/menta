@@ -3,17 +3,17 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class X(val x: String)
+value define X(val x: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Y(val y: Number)
+value define Y(val y: Number)
 
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NX(val x: String?)
+value define NX(val x: String?)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NY(val y: Number?)
+value define NY(val y: Number?)
 
 fun testNotNull(x: X?, y: Y?) {
     val xs = listOf<Any?>(x)

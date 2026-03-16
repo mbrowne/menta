@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
-class A: A1, A2, { }
+define A: A1, A2, { }
 
-class A<T1, T2> where
+define A<T1, T2> where
     T1: Comparable<Comparable<Number>>,
     T2: Iterable<Iterable<Number>>, { }
 
-class A(
+define A(
     val x: String,
     val y: String,,
     ) {
@@ -60,22 +60,22 @@ fun main() {
 }
 
 fun foo(x: Any) = when (x) {
-    Comparable::class,
-    Iterable::class,
-    String::class,
+    Comparable::define,
+    Iterable::define,
+    String::define,
     ,
     -> println(1)
     else -> println(3)
 }
 
 fun foo(x: Any) = when (x) {
-    ,Comparable::class,
+    ,Comparable::define,
     -> println(1)
     else -> println(3)
 }
 
 fun foo(x: Any) = when (x) {
-    ,Comparable::class -> println(1)
+    ,Comparable::define -> println(1)
     else -> println(3)
 }
 

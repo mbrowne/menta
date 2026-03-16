@@ -1,7 +1,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Ok(x: Int, y: String = "")
+expect define Ok(x: Int, y: String = "")
 
 fun test() {
     Ok<!NO_VALUE_FOR_PARAMETER!>()<!>
@@ -12,7 +12,7 @@ fun test() {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Ok actual constructor(x: Int, y: String)
+actual define Ok actual constructor(x: Int, y: String)
 
 fun testJvm() {
     Ok<!NO_VALUE_FOR_PARAMETER!>()<!>

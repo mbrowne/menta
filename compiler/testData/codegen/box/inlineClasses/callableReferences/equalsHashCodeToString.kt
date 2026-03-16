@@ -6,7 +6,7 @@
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val s: String)
+value define Z(val s: String)
 
 fun box(): String {
     val a = Z("a")

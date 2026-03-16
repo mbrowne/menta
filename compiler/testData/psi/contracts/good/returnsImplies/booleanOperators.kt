@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun myRequire(b: Boolean) {
     contract {
         returns() implies (b)
@@ -8,7 +8,7 @@ fun myRequire(b: Boolean) {
     if (!b) throw IllegalStateException()
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun myRequireAnd(b1: Boolean, b2: Boolean) {
     contract {
         returns() implies (b1 && b2)
@@ -16,7 +16,7 @@ fun myRequireAnd(b1: Boolean, b2: Boolean) {
     if (!(b1 && b2)) throw IllegalStateException()
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun myRequireOr(b1: Boolean, b2: Boolean) {
     contract {
         returns() implies (b1 || b2)
@@ -24,7 +24,7 @@ fun myRequireOr(b1: Boolean, b2: Boolean) {
     if (!(b1 || b2)) throw IllegalStateException()
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun myRequireNot(b: Boolean) {
     contract {
         returns() implies (!b)

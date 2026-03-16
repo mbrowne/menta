@@ -19,10 +19,10 @@ fun test() {
 
 
 
-class TargetType
-class GenericBox<T>
+define TargetType
+define GenericBox<T>
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = null!!
 }

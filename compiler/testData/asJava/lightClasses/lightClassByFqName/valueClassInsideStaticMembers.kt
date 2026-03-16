@@ -5,9 +5,9 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
-class MyClass {
+define MyClass {
     companion object {
         @JvmStatic
         fun staticFunction(param: MyValueClass) {

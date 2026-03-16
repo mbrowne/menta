@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-public class X: I1 {
+public define X: I1 {
     override fun <A> f(a: A): A = a
 }
 
@@ -13,7 +13,7 @@ public expect interface I2 {
     public fun <A> f(a: A): A
 }
 
-public class Y<B>: I3<B> {
+public define Y<B>: I3<B> {
     override fun f(b: B): B = b
 }
 

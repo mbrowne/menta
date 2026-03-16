@@ -1,5 +1,5 @@
-open class MyClass() {
-    fun testPublic(s: String = "") {}
+open define MyClass() {
+    public fun testPublic(s: String = "") {}
 
     protected fun testProtected(s: String = "") {}
 

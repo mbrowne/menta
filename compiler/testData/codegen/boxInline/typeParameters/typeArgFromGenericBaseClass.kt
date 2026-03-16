@@ -1,5 +1,5 @@
 // FILE: 1.kt
-open class Box<T>(
+open define Box<T>(
     private var t: T
 ) {
     fun set(t: T): T {
@@ -12,7 +12,7 @@ open class Box<T>(
         return set(u)
     }
 }
-class StringBox(t: String) : Box<String>(t)
+define StringBox(t: String) : Box<String>(t)
 
 fun foo(uuu: StringBox): String {
     val x = uuu.act()

@@ -1,7 +1,7 @@
 == foo ==
 fun foo() {
     var x: String
-    class A {
+    define A {
         init {
             x = ""
         }
@@ -10,22 +10,22 @@ fun foo() {
 }
 ---------------------
 L0:
-  1 <START>                                                         INIT: in: {} out: {}              USE: in: {} out: {}
-  2 mark({ var x: String class A { init { x = "" } } x.length })
-    v(var x: String)                                                INIT: in: {} out: {x=D}
-    jmp?(L2)                                                        INIT: in: {x=D} out: {x=D}        USE: in: {x=READ} out: {x=READ}
+  1 <START>                                                          INIT: in: {} out: {}              USE: in: {} out: {}
+  2 mark({ var x: String define A { init { x = "" } } x.length })
+    v(var x: String)                                                 INIT: in: {} out: {x=D}
+    jmp?(L2)                                                         INIT: in: {x=D} out: {x=D}        USE: in: {x=READ} out: {x=READ}
   3 mark({ x = "" })
     mark("")
-    r("") -> <v0>                                                                                     USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
-    w(x|<v0>)                                                       INIT: in: {x=D} out: {x=ID}       USE: in: {x=READ} out: {x=WRITTEN_AFTER_READ}
+    r("") -> <v0>                                                                                      USE: in: {x=WRITTEN_AFTER_READ} out: {x=WRITTEN_AFTER_READ}
+    w(x|<v0>)                                                        INIT: in: {x=D} out: {x=ID}       USE: in: {x=READ} out: {x=WRITTEN_AFTER_READ}
 L2 [after local class]:
-  2 mark(x.length)                                                  INIT: in: {x=I?D} out: {x=I?D}    USE: in: {x=READ} out: {x=READ}
-    r(x) -> <v2>                                                                                      USE: in: {} out: {x=READ}
+  2 mark(x.length)                                                   INIT: in: {x=I?D} out: {x=I?D}    USE: in: {x=READ} out: {x=READ}
+    r(x) -> <v2>                                                                                       USE: in: {} out: {x=READ}
     r(length|<v2>) -> <v3>
 L1:
-  1 <END>                                                           INIT: in: {} out: {}
+  1 <END>                                                            INIT: in: {} out: {}
 error:
     <ERROR>
 sink:
-    <SINK>                                                                                            USE: in: {} out: {}
+    <SINK>                                                                                             USE: in: {} out: {}
 =====================

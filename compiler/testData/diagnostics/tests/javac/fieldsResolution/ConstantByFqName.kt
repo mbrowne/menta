@@ -3,8 +3,8 @@
 // FILE: a/x.java
 package a;
 
-public class x {
-    public static class y {
+public define x {
+    public static define y {
         public static final int I = 42;
     }
 }
@@ -12,6 +12,6 @@ public class x {
 // FILE: b/x.java
 package b;
 
-public class x {
+public define x {
     public static final int I = a.x.y.I;
 }

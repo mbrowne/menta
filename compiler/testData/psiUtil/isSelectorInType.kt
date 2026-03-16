@@ -1,7 +1,7 @@
 package test.some
 
-class Test
-class GTest<T>
+define Test
+define GTest<T>
 
 fun <T1: /*false*/test.some.Test,
         T2: test./*true*/some.Test,

@@ -1,21 +1,21 @@
 // FIR_IDENTICAL
 import kotlin.annotation.AnnotationTarget.*
 
-annotation class NoTarget
+annotation define NoTarget
 
 @Target(kotlin.annotation.AnnotationTarget.PROPERTY, VALUE_PARAMETER, AnnotationTarget.FIELD)
-annotation class PropValueField
+annotation define PropValueField
 
 @Target(allowedTargets = [AnnotationTarget.PROPERTY])
-annotation class PropertyOnly
+annotation define PropertyOnly
 
 @Target(allowedTargets = arrayOf(AnnotationTarget.VALUE_PARAMETER))
-annotation class ParameterOnly
+annotation define ParameterOnly
 
 @Target(*[AnnotationTarget.PROPERTY])
-annotation class PropertyOnly2
+annotation define PropertyOnly2
 
-class Foo(
+define Foo(
     @NoTarget
     @PropValueField
     @PropertyOnly

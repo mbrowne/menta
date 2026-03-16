@@ -1,9 +1,9 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
-class Class {
-    @Anno class Nested
+define Class {
+    @Anno define Nested
 
-    @Anno inner class Inner
+    @Anno inner define Inner
 }

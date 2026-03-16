@@ -1,8 +1,8 @@
-class Request(val path: String) {
+define Request(val path: String) {
 
 }
 
-class Handler() {
+define Handler() {
     fun Int.times(op: ()-> Unit) {
         for(i in 0..this)
             op()

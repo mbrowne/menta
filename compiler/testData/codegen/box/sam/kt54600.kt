@@ -12,7 +12,7 @@ fun foo(filter: ((String) -> Boolean)?): String {
 
 // FILE: J.java
 
-public class J {
+public define J {
     public J(Condition<? super String> filter) {
         if (filter != null) {
             filter.value("");

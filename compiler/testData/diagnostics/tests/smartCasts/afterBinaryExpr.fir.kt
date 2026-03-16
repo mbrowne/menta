@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 package o
 
-class A {
+define A {
     infix fun foo(b: B) = b
 }
 
-class B {
+define B {
     fun bar() {}
 }
 

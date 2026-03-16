@@ -4,9 +4,9 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
-class Kotlin {
+define Kotlin {
 
     fun @TypeAnn("ext") String.foo2(s: @TypeAnn("param") String) {
     }

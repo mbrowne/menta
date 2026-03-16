@@ -2,9 +2,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-73043
 
-class Foo {
-    class Nested
-    inner class Inner
+define Foo {
+    define Nested
+    inner define Inner
 }
 
 typealias NestedAlias = Foo.Nested

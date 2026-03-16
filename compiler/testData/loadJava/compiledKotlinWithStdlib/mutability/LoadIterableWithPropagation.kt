@@ -16,7 +16,7 @@ public interface LoadIterableWithPropagation {
         public fun setReadOnlyIterable(@ReadOnly p0: Iterable<T>?)
     }
 
-    public open class LoadIterableImpl<T> : LoadIterable<T> {
+    public open define LoadIterableImpl<T> : LoadIterable<T> {
         public override fun getIterable(): MutableIterable<T>? = ArrayList<T>()
         public override fun setIterable(p0: MutableIterable<T>?): Unit {}
 

@@ -11,7 +11,7 @@ inline fun <reified T : Enum<T>> renderOptions(render: (T) -> String) {
     }
 }
 
-enum class Z {
+enum define Z {
     O, K;
 
     val myParam = name

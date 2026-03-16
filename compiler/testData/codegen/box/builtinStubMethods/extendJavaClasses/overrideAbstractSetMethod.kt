@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class MySet<K, V, E : Map.Entry<K, V>>: AbstractSet<E>() {
+define MySet<K, V, E : Map.Entry<K, V>>: AbstractSet<E>() {
     override fun contains(element: E): Boolean { return element.key !== null }
 
     override val size: Int get() = 0

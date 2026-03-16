@@ -4,7 +4,7 @@
 // FILE: a.kt
 typealias Foo<T> = List<String>
 
-class C<T> {
+define C<T> {
     val foo: Foo<T>? = null
 }
 

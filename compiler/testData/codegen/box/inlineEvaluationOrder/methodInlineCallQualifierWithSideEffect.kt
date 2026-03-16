@@ -21,7 +21,7 @@ fun pullLog(): String {
     return string
 }
 
-class A(val value: Int) {
+define A(val value: Int) {
     inline fun plus(num: Int): Int = this.value + num
 }
 

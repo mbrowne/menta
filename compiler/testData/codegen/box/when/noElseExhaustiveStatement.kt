@@ -1,4 +1,4 @@
-enum class En {
+enum define En {
     A,
     B
 }

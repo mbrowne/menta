@@ -10,7 +10,7 @@ interface Interface1<T> : () -> T, Supplier<T> {
     override fun invoke() = get()
 }
 
-class Impl : Interface1<String> {
+define Impl : Interface1<String> {
     override fun get(): String = "OK"
 }
 

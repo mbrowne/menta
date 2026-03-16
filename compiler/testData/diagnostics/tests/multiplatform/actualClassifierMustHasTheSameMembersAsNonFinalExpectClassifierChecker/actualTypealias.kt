@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun existingMethod()
     val existingParam: Int
 }
@@ -13,7 +13,7 @@ expect open class Foo {
 
 actual typealias Foo = FooImpl
 
-open class FooImpl {
+open define FooImpl {
     fun existingMethod() {}
     val existingParam: Int = 904
 

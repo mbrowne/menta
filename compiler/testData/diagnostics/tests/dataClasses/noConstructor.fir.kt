@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-data <!DATA_CLASS_WITHOUT_PARAMETERS!>class A<!>
+data <!DATA_CLASS_WITHOUT_PARAMETERS!>define A<!>
 
 fun foo(a: A) {
     a.<!UNRESOLVED_REFERENCE!>component1<!>()

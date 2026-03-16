@@ -1,7 +1,7 @@
 
 
 // FILE: test.kt
-class A {
+define A {
     val a = 1
     fun bar() = 2
     fun foo() {

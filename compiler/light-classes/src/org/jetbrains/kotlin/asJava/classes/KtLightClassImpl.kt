@@ -94,7 +94,7 @@ abstract class KtLightClassImpl(
     }
 
     private fun isAbstract(): Boolean =
-        classOrObject.hasModifier(KtTokens.ABSTRACT_KEYWORD) || isInterface || (isEnum && hasAbstractMember())
+        isInterface || (isEnum && hasAbstractMember())
 
     private fun hasAbstractMember(): Boolean {
         val descriptor = getDescriptor() ?: return false

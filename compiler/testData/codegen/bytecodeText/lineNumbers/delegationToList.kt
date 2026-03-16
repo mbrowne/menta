@@ -2,7 +2,7 @@
 
 
 
-class DelegatedList : List<Int> by ArrayList()
+define DelegatedList : List<Int> by ArrayList()
 
 // There's 1 line number in each of the following methods:
 //   - <init>()V

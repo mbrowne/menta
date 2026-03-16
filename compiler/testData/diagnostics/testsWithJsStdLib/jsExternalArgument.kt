@@ -1,21 +1,21 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun anyExample(@JsExternalArgument x : Any) = x
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun anyOrNullExample(@JsExternalArgument x : Any?) = x
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun <T> genericExample(@JsExternalArgument x : T) = x
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun <T> genericOrNullExample(@JsExternalArgument x : T?) = x
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun dynamicExample(@JsExternalArgument x : dynamic) = x
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun severalParams(@JsExternalArgument x : Any?, @JsExternalArgument y : Any?, @JsExternalArgument z : dynamic) = x ?: y ?: z
 
 external interface ExternalInterface
@@ -35,7 +35,7 @@ fun boxExternalInterfaceOrNull(iOrNull: ExternalInterface?) {
     dynamicExample(iOrNull)
 }
 
-external class ExternalClass
+external define ExternalClass
 
 fun boxExternalClass(c: ExternalClass) {
     anyExample(c)
@@ -72,7 +72,7 @@ fun boxInterfaceOrNull(iOrNull: Interface?) {
     dynamicExample(<!JS_EXTERNAL_ARGUMENT!>iOrNull<!>)
 }
 
-class Class
+define Class
 
 fun boxInterface(c: Class) {
     anyExample(<!JS_EXTERNAL_ARGUMENT!>c<!>)

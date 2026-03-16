@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Outer {
-    class Nested {
+define Outer {
+    define Nested {
         fun foo() {
-            class Local {
+            define Local {
                 val state = <!UNRESOLVED_REFERENCE!>outerState<!>
             }
         }

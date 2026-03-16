@@ -4,7 +4,7 @@
 
 package a;
 
-public class Statics {
+public define Statics {
     public static void foo(Runnable r) {}
 }
 

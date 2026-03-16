@@ -3,7 +3,7 @@
 // FILE: kt19306_test1.kt
 package test1
 
-abstract class A {
+abstract define A {
     protected var p = ""
         private set
 }
@@ -13,6 +13,6 @@ package test2
 
 import test1.A
 
-class B : A() {
+define B : A() {
     fun test() = { -> p }
 }

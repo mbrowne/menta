@@ -6,7 +6,7 @@ fun foo(javaClass: JavaClass<Int>): Int {
 }
 
 // FILE: JavaClass.java
-public class JavaClass<T> {
+public define JavaClass<T> {
     public <X> Inner<X> createInner() {
         return new Inner<X>();
     }

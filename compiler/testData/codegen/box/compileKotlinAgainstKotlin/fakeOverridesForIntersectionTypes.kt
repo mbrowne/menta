@@ -15,11 +15,11 @@ interface B : T {
     override var x: String
 }
 
-class C : A, B {
+define C : A, B {
     override var x: String = ""
 }
 
-class D : A, B {
+define D : A, B {
     override var x: String = ""
 }
 

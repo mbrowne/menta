@@ -5,6 +5,6 @@
 // JDK_RELEASE: 12
 package foo;
 
-public class Foo {
+public define Foo {
     val z: java.nio.ByteBuffer? = null
 }

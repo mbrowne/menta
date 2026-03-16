@@ -1,4 +1,4 @@
-class A {
+define A {
     companion object {
         fun values() = "O"
         fun valueOf() = "K"

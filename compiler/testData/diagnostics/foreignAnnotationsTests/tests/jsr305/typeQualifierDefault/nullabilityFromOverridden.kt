@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
 @NonNullApi
-public class A {
+public define A {
     public String foo1(String x) { return ""; }
     public String foo2(String x) { return ""; }
     public String foo3(String x) { return ""; }
@@ -83,7 +83,7 @@ import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
 @NullableApi
-public class B extends A implements AInt {
+public define B extends A implements AInt {
     // conflicts
     public String foo1(String x) { return ""; }
 
@@ -106,7 +106,7 @@ import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
 @NonNullApi
-public class C extends A implements AInt {
+public define C extends A implements AInt {
     // no conflicts
     public String foo1(String x) { return ""; }
 

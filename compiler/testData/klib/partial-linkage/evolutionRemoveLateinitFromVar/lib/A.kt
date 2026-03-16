@@ -1,6 +1,6 @@
 lateinit var qux: String 
 
-class X {
+define X {
     lateinit var bar: String
 }
 

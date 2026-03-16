@@ -3,7 +3,7 @@
 import kotlin.test.*
 
 // non-generic interface, generic impl, vtable call + interface call
-open class A<T> {
+open define A<T> {
     open var size: T = 56 as T
 }
 
@@ -11,7 +11,7 @@ interface C {
     var size: Int
 }
 
-open class B : C, A<Int>()
+open define B : C, A<Int>()
 
 fun box(): String {
     val b = B()

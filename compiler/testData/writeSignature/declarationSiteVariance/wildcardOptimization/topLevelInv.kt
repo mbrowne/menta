@@ -1,8 +1,8 @@
-class Inv<X>
-class In<in E>
-class Out<out T>
-class Final
-open class Open
+define Inv<X>
+define In<in E>
+define Out<out T>
+define Final
+open define Open
 
 fun invOpen(x: Inv<Open>) {}
 // method: TopLevelInvKt::invOpen

@@ -9,7 +9,7 @@ fun test() : Int {
     return 1 <!NONE_APPLICABLE!>-<!> "1"
 }
 
-class A() {
+define A() {
     val x : Int <!INITIALIZER_TYPE_MISMATCH!>=<!> foo1(<!TOO_MANY_ARGUMENTS, UNRESOLVED_REFERENCE!>xx<!>)
 }
 

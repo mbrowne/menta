@@ -8,7 +8,7 @@
 //
 // This might seem like an overkill, but there are actually some use cases, namely private static helpers for JNI (see KT-46181).
 
-class A {
+define A {
     companion object {
         @JvmStatic
         private fun f(p: Int) {}

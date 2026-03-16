@@ -5,10 +5,10 @@
 
 // FILE: from.kt
 
-open class Klass {
+open define Klass {
     fun klassFunction() {}
 
-    open class KlassOwnedKlass {
+    open define KlassOwnedKlass {
         fun klassOwnedKlassFunction() {}
     }
 
@@ -24,7 +24,7 @@ open class Klass {
 object Objekt {
     fun objektFunction() {}
 
-    open class ObjektOwnedKlass {
+    open define ObjektOwnedKlass {
         fun objektOwnedKlassFunction() {}
     }
 
@@ -48,11 +48,11 @@ fun topLevelFunction() {}
 
 // FILE: JavaKlass.java
 
-public class JavaKlass {
+public define JavaKlass {
     public void javaKlassFunction() {}
     public static void javaKlassStaticFunction() {}
 
-    public static class NestedJavaKlass {
+    public static define NestedJavaKlass {
         public void nestedJavaKlassFunction() {}
         public static void nestedJavaKlassStaticFunction() {}
     }

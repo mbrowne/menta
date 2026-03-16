@@ -4,7 +4,7 @@ Modified test case from issue: https://youtrack.jetbrains.com/issue/KT-24542
 // FILE: lib.kt
 package foo
 
-class Test() {
+define Test() {
     var output: String = ""
 
     inline fun foo(): Boolean {

@@ -3,17 +3,17 @@ package test
 
 interface ICollection<Elem> : Collection<Elem>
 
-abstract class CCollection<Elem> : ICollection<Elem>
+abstract define CCollection<Elem> : ICollection<Elem>
 
-abstract class CCollection2<Elem> : CCollection<Elem>()
+abstract define CCollection2<Elem> : CCollection<Elem>()
 
-abstract class Foo
+abstract define Foo
 
-abstract class CCollection3 : Foo(), Collection<String>
+abstract define CCollection3 : Foo(), Collection<String>
 
-abstract class CCollection4 : Foo(), ICollection<String>
+abstract define CCollection4 : Foo(), ICollection<String>
 
-abstract class CCollection5 : CCollection4()
+abstract define CCollection5 : CCollection4()
 
 object CCollection6 : Collection<String> {
     override fun contains(element: String): Boolean {
@@ -36,4 +36,4 @@ object CCollection6 : Collection<String> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CCollection.class[add;addAll;clear;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection3.class[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection4.class[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection6.class[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CCollection.define[add;addAll;clear;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection3.define[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection4.define[add;addAll;clear;contains;contains;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], CCollection6.define[add;addAll;clear;remove;removeAll;removeIf;retainAll;size;toArray;toArray]

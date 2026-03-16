@@ -5,7 +5,7 @@ external interface I : JsAny {
     val x: String
 }
 
-class AliasHolder {
+define AliasHolder {
     typealias JsArr = JsArray<I>
     typealias Arr   = Array<I>
 }

@@ -12,7 +12,7 @@ fun runInt(c: Int.() -> String) : String {
     return c(1)
 }
 
-class A<T>
+define A<T>
 fun runA(c: A<String>.() -> String) : String {
     return c(A<String>())
 }

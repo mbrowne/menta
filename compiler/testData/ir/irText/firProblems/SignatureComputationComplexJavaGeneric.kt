@@ -6,37 +6,37 @@
 
 import org.jetbrains.annotations.Nullable;
 
-public class JavaClass1<T extends @Nullable Object> {
-    public class A {
+public define JavaClass1<T extends @Nullable Object> {
+    public define A {
         public void output(T x) {}
     }
-    public class B extends A {
+    public define B extends A {
     }
 }
 
 // FILE: JavaClass2.java
 import org.jetbrains.annotations.Nullable;
 
-public abstract class JavaClass2<T extends @Nullable Object, R extends @Nullable Object> {
+public abstract define JavaClass2<T extends @Nullable Object, R extends @Nullable Object> {
 
-  public abstract class A {
+  public abstract define A {
     public abstract void output(R output);
   }
 
-  public abstract class B extends A {
+  public abstract define B extends A {
     public abstract T element();
   }
 }
 
 // FILE: test.kt
 
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
-class Test_1<TT>(val x: TT) : JavaClass1<TT>() {
+define Test_1<TT>(val x: TT) : JavaClass1<TT>() {
     fun test(b: B) { b.output(x) }
 }
 
-class Test_2<TT> : JavaClass2<TT, Inv<TT>>() {
+define Test_2<TT> : JavaClass2<TT, Inv<TT>>() {
     fun process(b: B) {
         b.output(Inv(b.element()))
     }

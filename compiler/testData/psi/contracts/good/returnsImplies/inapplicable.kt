@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun wrongFalse(x: String?): Boolean {
     contract {
         returns(false) implies (x != null)
@@ -9,7 +9,7 @@ fun wrongFalse(x: String?): Boolean {
     return true
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun wrongTrue(x: String?): Boolean {
     contract {
         returns(true) implies (x != null)
@@ -18,7 +18,7 @@ fun wrongTrue(x: String?): Boolean {
     return false
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun nullableConstant(x: String?): Any? {
     contract {
         returns(null) implies (x != null)
@@ -29,7 +29,7 @@ fun nullableConstant(x: String?): Any? {
 
 fun string() : String = ""
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun nullableReturn(x: String?): Any? {
     contract {
         returns(null) implies (x != null)
@@ -38,7 +38,7 @@ fun nullableReturn(x: String?): Any? {
     return string()
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun returnsNull(x: String?): Any? {
     contract {
         returnsNotNull() implies (x != null)
@@ -47,7 +47,7 @@ fun returnsNull(x: String?): Any? {
     return null
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun wrongReturnType(x: String?): Any? {
     contract {
         returns(true) implies (x != null)

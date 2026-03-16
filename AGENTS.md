@@ -1,5 +1,5 @@
 ---
-project: Kotlin
+project: Menta
 languages: [Kotlin, Java]
 build-system: Gradle
 repository: monorepo

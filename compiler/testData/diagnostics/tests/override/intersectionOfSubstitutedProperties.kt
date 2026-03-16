@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-abstract class C<T, ModelPropertyT : ModelListPropertyCore<T>>() :
+abstract define C<T, ModelPropertyT : ModelListPropertyCore<T>>() :
     A<ModelPropertyT, T>(),
     I<List<T>>
 
-abstract class A<out ModelPropertyT : ModelPropertyCore<*>, T> {
+abstract define A<out ModelPropertyT : ModelPropertyCore<*>, T> {
     abstract val property: ModelPropertyT
 }
 

@@ -23,7 +23,7 @@ KtFile: LineCommentAfterFileAnnotations.kt
   CLASS
     PsiComment(EOL_COMMENT)('// class C')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     CLASS_BODY

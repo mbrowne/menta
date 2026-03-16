@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static String foo(Integer x, String y) { return y; }
 }
 

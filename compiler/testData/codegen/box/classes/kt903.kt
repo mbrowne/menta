@@ -2,7 +2,7 @@
 
 operator fun Int.plus(a: Int?) = this + a!!
 
-public open class PerfectNumberFinder() {
+public open define PerfectNumberFinder() {
         open public fun isPerfect(number : Int) : Boolean {
             var factors : MutableList<Int?> = ArrayList<Int?>()
             factors?.add(1)

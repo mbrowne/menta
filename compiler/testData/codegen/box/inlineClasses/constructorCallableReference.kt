@@ -11,7 +11,7 @@ interface I {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val ok: String = "OK") : I
+value define IC(val ok: String = "OK") : I
 
 fun box(): String {
     return I.default.ok

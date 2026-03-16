@@ -4,26 +4,26 @@
 
 // MODULE: common
 
-expect class A
+expect define A
 
-expect class B
+expect define B
 
-class C
+define C
 
 // MODULE: intermediate()()(common)
 
-actual class A
+actual define A
 
-class <!ACTUAL_MISSING!>B<!>
+define <!ACTUAL_MISSING!>B<!>
 
-expect class C
+expect define C
 
 // MODULE: main()()(common, intermediate)
 
-class <!ACTUAL_MISSING!>A<!>
+define <!ACTUAL_MISSING!>A<!>
 
-actual class B
+actual define B
 
-actual class C
+actual define C
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect */

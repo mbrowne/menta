@@ -5,7 +5,7 @@
 interface Base {
     fun foo()
 }
-expect open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class Foo<!>() : Base
+expect open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>define Foo<!>() : Base
 
 
 // MODULE: m2-jvm()()(m1-common)
@@ -14,7 +14,7 @@ expect open <!ABSTRACT_MEMBER_NOT_IMPLEMENTED{METADATA}!>class Foo<!>() : Base
 // Mismatched scope must be reported here. But it's false negative checker in K1.
 // For some reason, K1 says that modality of `exect_Foo.foo` is `abstract`.
 // https://youtrack.jetbrains.com/issue/KT-59739
-actual open class Foo : Base {
+actual open define Foo : Base {
     override fun <!EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>foo<!>() {}
 }
 

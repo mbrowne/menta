@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: A.java
 
-class A {
+define A {
     public A(double x, int y) { }
 }
 

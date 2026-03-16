@@ -16,7 +16,7 @@ module moduleA {
 // FILE: a/A.java
 package a;
 
-public class A {}
+public define A {}
 
 // MODULE: moduleB(moduleA)
 // FILE: module-info.java

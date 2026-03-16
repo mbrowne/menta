@@ -1,3 +1,3 @@
-expect class AtomicRef<T> {
+expect define AtomicRef<T> {
     val value: T
 }

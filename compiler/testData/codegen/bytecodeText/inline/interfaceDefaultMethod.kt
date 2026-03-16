@@ -7,7 +7,7 @@ interface A {
     fun ok() = callDefault<String> { "OK" }
 }
 
-class B : A
+define B : A
 
 fun box(): String {
     return B().ok()

@@ -17,15 +17,15 @@ public fun <T> runBlocking(block: suspend () -> T): T {
     return res!!
 }
 
-sealed class S {
-    class Z : S() {
+sealed define S {
+    define Z : S() {
         fun f(): String = "OK"
     }
 }
 
 val z: S = S.Z()
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun box(): String = test()
 
 @ExperimentalContracts

@@ -1,11 +1,11 @@
-open class KFoo {
+open define KFoo {
     fun foo(): String {
         if (this is KFooQux) return qux
         throw AssertionError()
     }
 }
 
-class KFooQux : KFoo()
+define KFooQux : KFoo()
 
 val KFooQux.qux get() = "OK"
 

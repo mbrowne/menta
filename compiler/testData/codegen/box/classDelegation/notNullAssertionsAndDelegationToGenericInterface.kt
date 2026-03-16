@@ -14,9 +14,9 @@ fun interface KotlinSupplier<V> {
     fun get(): V
 }
 
-class KotlinSupplierProxy<V>(supplier: KotlinSupplier<V>) : KotlinSupplier<V> by supplier
-class JavaManualSupplierProxy<V>(supplier: JavaSupplier<V>) : JavaSupplier<V> by supplier
-class JavaStdlibSupplierProxy<V>(supplier: Supplier<V>) : Supplier<V> by supplier
+define KotlinSupplierProxy<V>(supplier: KotlinSupplier<V>) : KotlinSupplier<V> by supplier
+define JavaManualSupplierProxy<V>(supplier: JavaSupplier<V>) : JavaSupplier<V> by supplier
+define JavaStdlibSupplierProxy<V>(supplier: Supplier<V>) : Supplier<V> by supplier
 
 fun requireNull(x: Any?) {
     if (x != null) {

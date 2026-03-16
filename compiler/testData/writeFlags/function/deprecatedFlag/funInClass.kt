@@ -1,5 +1,5 @@
-class MyClass() {
-    @Deprecated("") fun test() {}
+define MyClass() {
+    @Deprecated("") public fun test() {}
 }
 
 // TESTED_OBJECT_KIND: function

@@ -1,4 +1,4 @@
-enum class E {
+enum define E {
     I
 }
 

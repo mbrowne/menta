@@ -1,8 +1,8 @@
 // TARGET_BACKEND: JVM
 // WITH_REFLECT
 // FILE: A.java
-public class A<T> {
-    public class B<U> {
+public define A<T> {
+    public define B<U> {
         public T test(U u) { return null; }
     }
 }
@@ -13,10 +13,10 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
 fun box(): String {
-    val fn = A.B::class.members.single { it.name == "test" }
+    val fn = A.B::define.members.single { it.name == "test" }
 
-    val t = A::class.typeParameters.single()
-    val u = A.B::class.typeParameters.single()
+    val t = A::define.typeParameters.single()
+    val u = A.B::define.typeParameters.single()
 
     assertEquals("T", t.name)
     assertEquals(KVariance.INVARIANT, t.variance)

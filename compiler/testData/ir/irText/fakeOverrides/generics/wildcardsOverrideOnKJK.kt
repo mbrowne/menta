@@ -7,7 +7,7 @@
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1 extends KotlinClass {
+public define Java1 extends KotlinClass {
     @Override
     public void foo(ArrayList<? extends Number> a) { }
     @Override
@@ -30,12 +30,12 @@ public class Java1 extends KotlinClass {
 }
 
 // FILE: Java2.java
-public class Java2 extends KotlinClass  { }
+public define Java2 extends KotlinClass  { }
 
 // FILE: 1.kt
-class A: Java2()    // Kotlin ← Java ← Kotlin
+define A: Java2()    // Kotlin ← Java ← Kotlin
 
-class B : Java2() {
+define B : Java2() {
     override fun foo(a: ArrayList<out Number>){ }
     override fun bar(): ArrayList<out Number> {
         return arrayListOf(2)
@@ -50,16 +50,16 @@ class B : Java2() {
     }
 }
 
-class C : Java1()   // Kotlin ← Java(override) ← Kotlin
+define C : Java1()   // Kotlin ← Java(override) ← Kotlin
 
-class D : Java1() {
+define D : Java1() {
     override fun foo(a: ArrayList<out Number>) { }
     override fun bar(): ArrayList<out Number> {
         return arrayListOf(3)
     }
 }
 
-open class KotlinClass {
+open define KotlinClass {
     open fun foo(a: ArrayList<out Number>) { }
     open fun bar(): ArrayList<out Number> {
         return arrayListOf(1)

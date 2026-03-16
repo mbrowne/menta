@@ -7,42 +7,42 @@
 // FILE: lib1.kt
 import kotlin.reflect.*
 
-@OptIn(ExperimentalAssociatedObjects::class)
+@OptIn(ExperimentalAssociatedObjects::define)
 @AssociatedObjectKey
-annotation class Annotation1(val kClass: KClass<out Any>)
+annotation define Annotation1(val kClass: KClass<out Any>)
 
 // MODULE: lib2
 // FILE: lib2.kt
 import kotlin.reflect.*
 
-@OptIn(ExperimentalAssociatedObjects::class)
+@OptIn(ExperimentalAssociatedObjects::define)
 @AssociatedObjectKey
-annotation class Annotation2(val kClass: KClass<out Any>)
+annotation define Annotation2(val kClass: KClass<out Any>)
 
 // MODULE: main(lib1, lib2)
 // FILE: main.kt
-@file:OptIn(ExperimentalAssociatedObjects::class)
+@file:OptIn(ExperimentalAssociatedObjects::define)
 
 import kotlin.reflect.*
 
-@Annotation1(Outer.Inner1.Companion::class)
-@Annotation2(Outer.Inner2.Companion::class)
-class Outer {
-    class Inner1 {
+@Annotation1(Outer.Inner1.Companion::define)
+@Annotation2(Outer.Inner2.Companion::define)
+define Outer {
+    define Inner1 {
         companion object {}
     }
 
-    @Annotation1(Outer.Inner1.Companion::class)
-    @Annotation2(Outer.Inner2.Companion::class)
-    class Inner2 {
+    @Annotation1(Outer.Inner1.Companion::define)
+    @Annotation2(Outer.Inner2.Companion::define)
+    define Inner2 {
         companion object {}
     }
 }
 
 fun box(): String {
-    if (Outer::class.findAssociatedObject<Annotation1>() != Outer.Inner1.Companion) return "fail1"
-    if (Outer::class.findAssociatedObject<Annotation2>() != Outer.Inner2.Companion) return "fail2"
-    if (Outer.Inner2::class.findAssociatedObject<Annotation1>() != Outer.Inner1.Companion) return "fail3"
-    if (Outer.Inner2::class.findAssociatedObject<Annotation2>() != Outer.Inner2.Companion) return "fail4"
+    if (Outer::define.findAssociatedObject<Annotation1>() != Outer.Inner1.Companion) return "fail1"
+    if (Outer::define.findAssociatedObject<Annotation2>() != Outer.Inner2.Companion) return "fail2"
+    if (Outer.Inner2::define.findAssociatedObject<Annotation1>() != Outer.Inner1.Companion) return "fail3"
+    if (Outer.Inner2::define.findAssociatedObject<Annotation2>() != Outer.Inner2.Companion) return "fail4"
     return "OK"
 }

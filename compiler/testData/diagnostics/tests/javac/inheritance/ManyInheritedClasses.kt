@@ -6,11 +6,11 @@ package a;
 
 public interface x {
 
-    public class d {}
+    public define d {}
 
-    public class z {}
+    public define z {}
 
-    public class o {}
+    public define o {}
 }
 
 // FILE: a/b.java
@@ -18,25 +18,25 @@ package a;
 
 public interface b extends x {
 
-    public class y {}
+    public define y {}
 
 }
 
 // FILE: a/c.java
 package a;
 
-public class c implements x {
+public define c implements x {
 
-    public class d {}
+    public define d {}
 
 }
 
 // FILE: a/f.java
 package a;
 
-public class f extends c implements b {
+public define f extends c implements b {
 
-    public class o {}
+    public define o {}
 
     public d getD() { return null; }
     public y getY() { return null; }

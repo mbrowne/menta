@@ -8,7 +8,7 @@ object Host {
     @JvmStatic fun foo(x: String) = x
 }
 
-class CompanionOwner {
+define CompanionOwner {
     companion object {
         @JvmStatic fun bar(x: String) = x
     }

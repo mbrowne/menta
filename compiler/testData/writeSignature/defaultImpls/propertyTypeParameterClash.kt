@@ -1,8 +1,8 @@
-class B<M>
+define B<M>
 
 interface A<T, Y : B<T>> {
 
-    val <T> T.z: T?
+    public val <T> T.z: T?
         get() = null
 }
 

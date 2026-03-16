@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KMutableProperty1
 
-class Foo {
+define Foo {
     protected var x = 0
 
     fun baz(p: KMutableProperty1<Foo, Int>) = p
@@ -12,15 +12,15 @@ class Foo {
 }
 
 
-open class A {
+open define A {
     protected fun a() {}
 }
 
-open class B : A() {
+open define B : A() {
     val x = C::a
     val y = C()::a
 }
 
-class C : B()
+define C : B()
 
 /* GENERATED_FIR_TAGS: callableReference, classDeclaration, functionDeclaration, integerLiteral, propertyDeclaration */

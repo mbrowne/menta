@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class IncDec {
+define IncDec {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun inc(): Unit {}
 }
 

@@ -2,18 +2,18 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 // FILE: JavaClass.java
-public class JavaClass extends ContainerType<Container<JavaClass.Nested>> {
-    public static class Nested extends Container<String> {}
+public define JavaClass extends ContainerType<Container<JavaClass.Nested>> {
+    public static define Nested extends Container<String> {}
 }
 
 // FILE: ContainerType.java
-public class ContainerType<T> {}
+public define ContainerType<T> {}
 
 // FILE: Container.java
-public class Container<K> {}
+public define Container<K> {}
 
 // FILE: Usage.java
-public class Usage {
+public define Usage {
     public static JavaClass.Nested foo() { return null; }
 }
 

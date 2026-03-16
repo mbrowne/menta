@@ -1,6 +1,6 @@
-class B () {}
+define B () {}
 
-open class A(val b : B) {
+open define A(val b : B) {
     fun a(): A = object: A(b) {}
 }
 

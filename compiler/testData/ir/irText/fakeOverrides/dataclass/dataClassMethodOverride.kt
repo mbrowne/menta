@@ -4,7 +4,7 @@
 // FULL_JDK
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public Object component1(){
         return "java1";
     };
@@ -22,19 +22,19 @@ public interface Java2 {
 public interface Java3 extends KotlinInterface { }
 
 // FILE: 1.kt
-data class A (val a : Int): Java1() {   //Kotlin ← Java
+data define A (val a : Int): Java1() {   //Kotlin ← Java
     override fun foo(i: Int?) { }
 }
 
-data class B(val a : Int) : Java1(), Java2 {    //Kotlin ← Java1, Java2
+data define B(val a : Int) : Java1(), Java2 {    //Kotlin ← Java1, Java2
     override fun foo(i: Any?) { }
 }
 
-data class C(val a: Int): Java1(), KotlinInterface {    //Kotlin ← Java, Kotlin2
+data define C(val a: Int): Java1(), KotlinInterface {    //Kotlin ← Java, Kotlin2
     override fun foo(i: Any) { }
 }
 
-data class D(val a: Int): Java3 {   //Kotlin ← Java ← Kotlin
+data define D(val a: Int): Java3 {   //Kotlin ← Java ← Kotlin
     override fun foo(i: Any) { }
 }
 

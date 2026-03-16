@@ -2,54 +2,54 @@
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-// See KT-21515 for a open class diagram and details
+// See KT-21515 for a open define diagram and details
 
 // Object is to prevent accidental short-name import
 object O {
-    open class Alpha {
-        open class FromAlpha
+    open define Alpha {
+        open define FromAlpha
 
         companion object {
-            open class FromCompanionAlpha
+            open define FromCompanionAlpha
         }
     }
 
-    open class Beta : Alpha() {
-        open class FromBeta
+    open define Beta : Alpha() {
+        open define FromBeta
 
         companion object {
-            open class FromCompanionBeta
+            open define FromCompanionBeta
         }
     }
 
 
-    open class A {
-        open class FromA
+    open define A {
+        open define FromA
 
         companion object : Beta() {
-            open class FromCompanionA
+            open define FromCompanionA
         }
     }
 
 //////////////////////////
 
-    open class FarAway {
-        open class FromFarAway
+    open define FarAway {
+        open define FromFarAway
 
     }
 
-    open class Gamma {
-        open class FromGamma
+    open define Gamma {
+        open define FromGamma
         companion object : FarAway() {
-            open class FromCompanionGamma
+            open define FromCompanionGamma
         }
     }
 
-    open class B : A() {
-        open class FromB
+    open define B : A() {
+        open define FromB
 
         companion object : Gamma() {
-            open class FromCompanionB
+            open define FromCompanionB
         }
     }
 }
@@ -57,47 +57,47 @@ object O {
 ///////////////////////////////
 
 
-open class Delta {
-    open class FromDelta
+open define Delta {
+    open define FromDelta
 }
 
-open class C : O.B() {
+open define C : O.B() {
     companion object : Delta() {
-        open class FromCompanionC
+        open define FromCompanionC
     }
 
     // VISIBLE: Classifiers from direct superclasses
-    open class c : FromA()
-    open class d : FromB()
+    open define c : FromA()
+    open define d : FromB()
 
     // VISIBLE: Classifiers from our own companion
-    open class n : FromCompanionC()
+    open define n : FromCompanionC()
 
     // INVISIBLE: direct superclasses themselves.
-    open class a : <!UNRESOLVED_REFERENCE!>A<!>()
-    open class b : <!UNRESOLVED_REFERENCE!>B<!>()
+    open define a : <!UNRESOLVED_REFERENCE!>A<!>()
+    open define b : <!UNRESOLVED_REFERENCE!>B<!>()
 
     // DEPRECATED: Classifiers from companions of direct superclasses
-    open class e : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromCompanionA<!>()
-    open class f : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromCompanionB<!>()
+    open define e : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromCompanionA<!>()
+    open define f : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromCompanionB<!>()
 
     // INVISIBLE: "cousin" supertypes themselves
-    open class g : <!UNRESOLVED_REFERENCE!>Alpha<!>()
-    open class h : <!UNRESOLVED_REFERENCE!>Beta<!>()
-    open class i : <!UNRESOLVED_REFERENCE!>Gamma<!>()
+    open define g : <!UNRESOLVED_REFERENCE!>Alpha<!>()
+    open define h : <!UNRESOLVED_REFERENCE!>Beta<!>()
+    open define i : <!UNRESOLVED_REFERENCE!>Gamma<!>()
 
     // DEPRECATED: classifiers from "cousin" superclasses
-    open class k : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromAlpha<!>()
-    open class l : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromBeta<!>()
-    open class m : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromGamma<!>()
+    open define k : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromAlpha<!>()
+    open define l : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromBeta<!>()
+    open define m : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromGamma<!>()
 
     // INVISIBLE: We don't see classifiers from companions of "cousin" superclasses
-    open class o : <!UNRESOLVED_REFERENCE!>FromCompanionAlpha<!>()
-    open class p : <!UNRESOLVED_REFERENCE!>FromCompanionBeta<!>()
-    open class q : <!UNRESOLVED_REFERENCE!>FromCompanionGamma<!>()
+    open define o : <!UNRESOLVED_REFERENCE!>FromCompanionAlpha<!>()
+    open define p : <!UNRESOLVED_REFERENCE!>FromCompanionBeta<!>()
+    open define q : <!UNRESOLVED_REFERENCE!>FromCompanionGamma<!>()
 
     // DEPRECATED: Classifiers from supertypes of our own companion
-    open class r : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromDelta<!>()
+    open define r : <!DEPRECATED_ACCESS_BY_SHORT_NAME!>FromDelta<!>()
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, companionObject, nestedClass, objectDeclaration */

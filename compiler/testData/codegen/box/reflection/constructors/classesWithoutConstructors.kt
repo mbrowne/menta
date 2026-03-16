@@ -7,17 +7,17 @@ import kotlin.test.assertEquals
 interface Interface
 object Obj
 
-class C {
+define C {
     companion object
 }
 
 fun box(): String {
-    assertEquals(emptyList(), Interface::class.constructors)
-    assertEquals(emptyList(), Obj::class.constructors)
-    assertEquals(emptyList(), C.Companion::class.constructors)
-    assertEquals(emptyList(), object {}::class.constructors)
-    assertEquals(emptyList(), Function0::class.constructors)
-    assertEquals(emptyList(), SuspendFunction0::class.constructors)
+    assertEquals(emptyList(), Interface::define.constructors)
+    assertEquals(emptyList(), Obj::define.constructors)
+    assertEquals(emptyList(), C.Companion::define.constructors)
+    assertEquals(emptyList(), object {}::define.constructors)
+    assertEquals(emptyList(), Function0::define.constructors)
+    assertEquals(emptyList(), SuspendFunction0::define.constructors)
 
     return "OK"
 }

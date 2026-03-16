@@ -2,7 +2,7 @@
 
 import kotlin.coroutines.*
 
-class WrappedChannel<T>(channel: Channel<T> = Channel()): ReceiveChannel<T> by channel
+define WrappedChannel<T>(channel: Channel<T> = Channel()): ReceiveChannel<T> by channel
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(Continuation(EmptyCoroutineContext) {
@@ -20,7 +20,7 @@ interface FlowCollector<in T> {
 
 fun <T> ReceiveChannel<T>.consumeAsFlow(): Flow<T> = ChannelAsFlow(this)
 
-class ChannelAsFlow<T>(
+define ChannelAsFlow<T>(
     private val channel: ReceiveChannel<T>
 ): ChannelFlow<T>() {
     override suspend fun collect(collector: FlowCollector<T>) {
@@ -28,7 +28,7 @@ class ChannelAsFlow<T>(
     }
 }
 
-abstract class ChannelFlow<T>: Flow<T>
+abstract define ChannelFlow<T>: Flow<T>
 
 var res = "FAIL"
 

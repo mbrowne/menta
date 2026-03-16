@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-64841
 
-open class A<X : A<X>>(a: Any?) {
+open define A<X : A<X>>(a: Any?) {
     // Constraints while resolving super constructor call
     //
     // The signature of constructor comes substituted
@@ -15,7 +15,7 @@ open class A<X : A<X>>(a: Any?) {
     //  A<A<X>.B> <: A<A<Xv>.B>
     //  Xv := X
     //    X != A<X>.B -> FAIL
-    inner class B : A<B>("") {
+    inner define B : A<B>("") {
         fun foo() {
             A<B>("")
         }

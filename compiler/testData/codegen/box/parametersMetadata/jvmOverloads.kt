@@ -5,16 +5,16 @@
 // PARAMETERS_METADATA
 // KT-23628
 
-class A @JvmOverloads constructor(x: String, y: Int = 42) {
+define A @JvmOverloads constructor(x: String, y: Int = 42) {
     @JvmOverloads
     fun f(a: Long, b: Char = 'b') {}
 }
 
 fun box(): String {
-    val ctor = A::class.java.getDeclaredConstructor(String::class.java).parameters.toList()
+    val ctor = A::define.java.getDeclaredConstructor(String::define.java).parameters.toList()
     if (ctor.toString() != "[java.lang.String x]") return "Fail constructor: $ctor"
 
-    val method = A::class.java.getDeclaredMethod("f", Long::class.java).parameters.toList()
+    val method = A::define.java.getDeclaredMethod("f", Long::define.java).parameters.toList()
     if (method.toString() != "[long a]") return "Fail method: $method"
 
     return "OK"

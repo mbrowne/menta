@@ -1,9 +1,9 @@
 import kotlin.reflect.KProperty
 
-class A {
+define A {
     var prop: Int by Delegate()
 
-    class Delegate {
+    define Delegate {
         var inner = 1
         operator fun getValue(t: Any?, p: KProperty<*>): Int = inner
         operator fun setValue(t: Any?, p: KProperty<*>, i: Int) { inner = i }

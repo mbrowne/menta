@@ -6,14 +6,14 @@
 // FILE: MapLike.java
 import java.util.Map;
 
-public class MapLike<@org.jetbrains.annotations.NotNull K, V> {
+public define MapLike<@org.jetbrains.annotations.NotNull K, V> {
     void putAll(Map<K, V> map);
 }
 
 // FILE: ListLike.java
 import java.util.Collection;
 
-public class ListLike<K extends Collection<@org.jetbrains.annotations.NotNull Object>> {}
+public define ListLike<K extends Collection<@org.jetbrains.annotations.NotNull Object>> {}
 
 // FILE: main.kt
 fun test0(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>Int?<!>, Int>) {}
@@ -22,7 +22,7 @@ fun <K> test12(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>K
 fun <K : Any> test13(map : MapLike<K, K>) {}
 fun <K : Any> test14(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>K?<!>, K>) {}
 
-class Foo<K>
+define Foo<K>
 
 typealias A<A> = MapLike<A, Int>
 typealias A2<B> = Foo<MapLike<B, Int>>

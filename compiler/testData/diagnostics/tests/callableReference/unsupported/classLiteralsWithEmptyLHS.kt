@@ -1,20 +1,20 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 fun regular() {
-    <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::class<!>
+    <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::define<!>
 
     with(Any()) {
-        <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::class<!>
+        <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::define<!>
     }
 }
 
 fun Any.extension() {
-    <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::class<!>
+    <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::define<!>
 }
 
-class A {
+define A {
     fun member() {
-        <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::class<!>
+        <!UNSUPPORTED_CLASS_LITERALS_WITH_EMPTY_LHS!>::define<!>
     }
 }
 

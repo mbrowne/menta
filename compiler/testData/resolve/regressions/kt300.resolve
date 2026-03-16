@@ -1,6 +1,6 @@
 // KT-300 Overload ambiguity while accessing range
 
-class MyRange() : Range<Int> {
+define MyRange() : Range<Int> {
     ~in~override fun contains(item: Int) = true
 }
 

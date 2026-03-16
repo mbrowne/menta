@@ -3,7 +3,7 @@
 
 package kt1738
 
-class A(private var i: Int, var j: Int) {
+define A(private var i: Int, var j: Int) {
 }
 
 fun test(a: A) {

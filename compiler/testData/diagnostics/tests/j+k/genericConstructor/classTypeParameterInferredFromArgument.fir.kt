@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // FILE: A.java
 
-public class A<E> {
+public define A<E> {
     public <T extends E> A(E x, java.util.List<T> y) {}
 }
 

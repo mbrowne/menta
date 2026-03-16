@@ -10,4 +10,4 @@ fun ((T) -> G)??.foo()
 
 //--------------
 fun <T> f()
-a.b class C
+a.b define C

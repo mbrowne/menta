@@ -5,10 +5,10 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 13 final synthetic class UnboundAdaptedFunctionReferenceKt\$box\$[0-9]+
-// 1 final synthetic class FromOtherFileKt\$target1FromOtherFile\$[0-9]*
-// 1 final synthetic class FromOtherFileKt\$adapted1FromOtherFile\$[0-9]*
-// 1 final synthetic class FromOtherFileKt\$adapted2FromOtherFile\$[0-9]*
+// 13 final synthetic define UnboundAdaptedFunctionReferenceKt\$box\$[0-9]+
+// 1 final synthetic define FromOtherFileKt\$target1FromOtherFile\$[0-9]*
+// 1 final synthetic define FromOtherFileKt\$adapted1FromOtherFile\$[0-9]*
+// 1 final synthetic define FromOtherFileKt\$adapted2FromOtherFile\$[0-9]*
 
 // FILE: unboundAdaptedFunctionReference.kt
 fun checkEqual(x: Any, y: Any) {

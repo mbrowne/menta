@@ -8,7 +8,7 @@ package first
 
 import checkSubtype
 
-class A
+define A
 
 fun A.foo() {}
 fun A.bar() {}

@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 //KT-3988 This@label for outer function not resolved
 
-class Comment() {
+define Comment() {
     var article = ""
 
 }
-class Comment2() {
+define Comment2() {
     var article2 = ""
 }
 

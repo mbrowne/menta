@@ -17,7 +17,7 @@ public interface Foo<T> extends Base<T> {
 }
 
 // FILE: main.kt
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FooImpl<!><E> : Foo<E> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FooImpl<!><E> : Foo<E> {
 
     <!NOTHING_TO_OVERRIDE!>override<!> val (E & Any).prop1: String
         get() = ""
@@ -26,7 +26,7 @@ public interface Foo<T> extends Base<T> {
         get() = ""
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED("Class 'FooImpl2'; public abstract fun getProp1(t: E!): String! defined in Foo")!>class FooImpl2<!><E> : Foo<E> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED("Class 'FooImpl2'; public abstract fun getProp1(t: E!): String! defined in Foo")!>define FooImpl2<!><E> : Foo<E> {
 
     override val E.prop1: String
         get() = ""
@@ -35,7 +35,7 @@ public interface Foo<T> extends Base<T> {
         get() = ""
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED("Class 'FooImpl3'; public abstract val E.prop2: String defined in Foo")!>class FooImpl3<!><E> : Foo<E> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED("Class 'FooImpl3'; public abstract val E.prop2: String defined in Foo")!>define FooImpl3<!><E> : Foo<E> {
     override val E?.prop1: String
         get() = ""
 

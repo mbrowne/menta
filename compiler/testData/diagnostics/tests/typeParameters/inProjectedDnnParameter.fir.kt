@@ -12,7 +12,7 @@ interface KotlinAction<T> {
     fun execute(t: T & Any)
 }
 
-class A<T> {
+define A<T> {
     fun checkJavaIn(element: T, action: JavaAction<in T>) {
         action.execute(<!ARGUMENT_TYPE_MISMATCH!>element<!>) // OK in K1, type mismatch in K2
     }

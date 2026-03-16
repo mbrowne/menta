@@ -1,8 +1,8 @@
 // FIR_IDENTICAL
-annotation class TestAnn(val x: String)
+annotation define TestAnn(val x: String)
 
-@TestAnn("class")
-class TestClass
+@TestAnn("define")
+define TestClass
 
 @TestAnn("interface")
 interface TestInterface
@@ -10,13 +10,13 @@ interface TestInterface
 @TestAnn("object")
 object TestObject
 
-class Host {
+define Host {
     @TestAnn("companion")
     companion object TestCompanion
 }
 
 @TestAnn("enum")
-enum class TestEnum
+enum define TestEnum
 
 @TestAnn("annotation")
-annotation class TestAnnotation
+annotation define TestAnnotation

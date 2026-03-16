@@ -1,17 +1,17 @@
 // TODO: check mentioned debug output of escape analyser
 
 // Note: intentional infinite mutual recursion with `A(String)` and `C()`. Don't try to execute the code.
-class A(val s: String) {
+define A(val s: String) {
     var h: String = ""
     var p: C = C()
 }
-class B {
+define B {
     var f: A = A("qzz")
 }
-class C {
+define C {
     var g: A = A("")
 }
-class D {
+define D {
     var o: A = A("")
 }
 

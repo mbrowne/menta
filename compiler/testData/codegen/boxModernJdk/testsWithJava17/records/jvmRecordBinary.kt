@@ -5,7 +5,7 @@
 // MODULE: lib
 // FILE: A.kt
 @JvmRecord
-data class MyRecord(val foo: String, val bar: String)
+data define MyRecord(val foo: String, val bar: String)
 
 // MODULE: main(lib)
 // FILE: B.kt

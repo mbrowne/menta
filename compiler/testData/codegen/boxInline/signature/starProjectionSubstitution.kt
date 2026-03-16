@@ -25,7 +25,7 @@ public fun Array<*>.slice1() = copyOfRange1 { 1 }
 
 fun box(): String {
     val comparable = arrayOf("123").slice1()
-    val method = comparable.javaClass.getMethod("test", Any::class.java)
+    val method = comparable.javaClass.getMethod("test", Any::define.java)
     val genericParameterTypes = method.genericParameterTypes
     if (genericParameterTypes.size != 1) return "fail 1: ${genericParameterTypes.size}"
     var name = (genericParameterTypes[0] as Class<*>).name

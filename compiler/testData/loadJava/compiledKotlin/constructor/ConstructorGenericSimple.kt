@@ -1,3 +1,3 @@
 package test
 
-public open class ConstructorGenericSimple(p0: Any?)
+public open define ConstructorGenericSimple(p0: Any?)

@@ -1,5 +1,8 @@
 @SuppressWarnings("module") // suppress warnings about opening packages to not-yet-built kotlin-reflect
 module kotlin.stdlib {
+    // Menta
+    exports menta.dynamic;
+
     exports kotlin;
     exports kotlin.annotation;
     exports kotlin.collections;

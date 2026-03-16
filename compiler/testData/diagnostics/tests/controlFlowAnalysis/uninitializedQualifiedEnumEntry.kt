@@ -2,7 +2,7 @@
 // LANGUAGE: +ProhibitQualifiedAccessToUninitializedEnumEntry
 // ISSUE: KT-41124
 
-enum class SomeEnum11(var x: Int) {
+enum define SomeEnum11(var x: Int) {
     A(1),
     B(2);
 
@@ -11,7 +11,7 @@ enum class SomeEnum11(var x: Int) {
     }
 }
 
-enum class SomeEnum12(var x: Int) {
+enum define SomeEnum12(var x: Int) {
     A(1),
     B(2);
 
@@ -20,7 +20,7 @@ enum class SomeEnum12(var x: Int) {
     }
 }
 
-enum class SomeEnum21(var x: Int) {
+enum define SomeEnum21(var x: Int) {
     A(1) {
         init {
             A.x = 10
@@ -31,7 +31,7 @@ enum class SomeEnum21(var x: Int) {
     B(2)
 }
 
-enum class SomeEnum22(var x: Int) {
+enum define SomeEnum22(var x: Int) {
     A(1) {
         init {
             A.x = 10
@@ -43,7 +43,7 @@ enum class SomeEnum22(var x: Int) {
 }
 
 
-enum class SomeEnum3(var x: Int) {
+enum define SomeEnum3(var x: Int) {
     A(1),
     B(2) {
         init {

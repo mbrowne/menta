@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // FILE: J.java
 
-public class J implements K {
+public define J implements K {
     private String foo;
 
     @Override

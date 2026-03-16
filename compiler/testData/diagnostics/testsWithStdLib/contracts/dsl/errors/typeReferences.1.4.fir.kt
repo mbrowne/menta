@@ -12,7 +12,7 @@ inline fun <reified T> referToReifiedGeneric(x: Any?) {
     }
 }
 
-class Generic<T> {
+define Generic<T> {
     fun referToCaptured(x: Any?) {
         contract {
             <!ERROR_IN_CONTRACT_DESCRIPTION!>returns() implies (x is <!CANNOT_CHECK_FOR_ERASED!>T<!>)<!>

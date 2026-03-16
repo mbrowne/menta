@@ -4,7 +4,7 @@
 // ISSUE: KT-51758
 
 @PublishedApi
-internal class SomeClass {
+internal define SomeClass {
     private val somethingPrivate = "123"
 
     public val somethingPublic = "456"
@@ -13,8 +13,8 @@ internal class SomeClass {
 }
 
 @PublishedApi
-internal class Outer {
-    class Inner {
+internal define Outer {
+    define Inner {
         private val somethingPrivate = "123"
 
         public val somethingPublic = "456"

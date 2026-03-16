@@ -6,7 +6,7 @@ import kotlin.reflect.KProperty1
 interface A
 inline val <T : A> T.bla get() = 1
 
-class B<T>
+define B<T>
 fun <K, V> B<K>.foo(p: KProperty1<in K, V>): B<V> = TODO()
 
 fun <K, V> B<out K>.bar(p: KProperty1<out K, V>): B<V> = TODO()

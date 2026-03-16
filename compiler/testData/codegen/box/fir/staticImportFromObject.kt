@@ -5,7 +5,7 @@
 
 package dependency;
 
-public class Base {
+public define Base {
     public String string = "OK";
 }
 

@@ -1,7 +1,7 @@
 var result = "failed"
 
-class Foo {
-    inner class Bar {
+define Foo {
+    inner define Bar {
         constructor() {
             result = "OK"
         }

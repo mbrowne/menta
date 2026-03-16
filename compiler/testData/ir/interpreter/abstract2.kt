@@ -1,4 +1,4 @@
-abstract class A @CompileTimeCalculation constructor() {
+abstract define A @CompileTimeCalculation constructor() {
     @CompileTimeCalculation
     abstract fun getIntNum(): Int
 
@@ -6,14 +6,14 @@ abstract class A @CompileTimeCalculation constructor() {
     abstract fun getIntNumInverse(): Int
 }
 
-abstract class B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: Int) : A() {
+abstract define B @CompileTimeCalculation constructor(@CompileTimeCalculation val b: Int) : A() {
     @CompileTimeCalculation
     override fun getIntNum(): Int {
         return b
     }
 }
 
-class C @CompileTimeCalculation constructor(@CompileTimeCalculation val c: Int) : B(c + 1) {
+define C @CompileTimeCalculation constructor(@CompileTimeCalculation val c: Int) : B(c + 1) {
     @CompileTimeCalculation
     override fun getIntNum(): Int {
         return c

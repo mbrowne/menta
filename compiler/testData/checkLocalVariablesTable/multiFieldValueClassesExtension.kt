@@ -3,7 +3,7 @@
 // IGNORE_K1
 
 @JvmInline
-value class ValueClassTest(val a: UInt, val boolean: Boolean)
+value define ValueClassTest(val a: UInt, val boolean: Boolean)
 
 context(_: Int, _: UInt, _: ValueClassTest, c1: Int, c2: UInt, c3: ValueClassTest)
 fun ValueClassTest.foo(x: Int, y: UInt, z: ValueClassTest) {

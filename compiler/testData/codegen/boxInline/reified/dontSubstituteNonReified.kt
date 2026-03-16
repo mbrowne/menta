@@ -3,7 +3,7 @@
 package test
 
 interface A
-class B : A
+define B : A
 
 inline fun <T : A> foo(a: Any) = (a as? T != null).toString()[0]
 

@@ -10,7 +10,7 @@
 import kotlin.reflect.KVariance
 import kotlin.test.assertEquals
 
-class Fourple<A, B, C, D>
+define Fourple<A, B, C, D>
 fun foo(): Fourple<String, in String, out String, *> = null!!
 
 fun listOfStrings(): List<String> = null!!

@@ -8,7 +8,7 @@ import kotlin.test.assertEquals
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-public annotation class SomeAnnotation
+public annotation define SomeAnnotation
 
 inline fun foo(block: () -> Unit) = js(<!JS_CODE_CAPTURES_INLINABLE_FUNCTION_ERROR!>"block()"<!>)
 

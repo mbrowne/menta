@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     void set(Runnable i, Runnable value) {
         i.run();
         value.run();

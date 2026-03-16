@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
-annotation class Ann
+annotation define Ann
 
 @Ann
-class A {
+define A {
     var a = 1
 }
 
@@ -13,7 +13,7 @@ var A.a1: Int
     set(value) {}
 
 @Ann
-class B {
+define B {
     var b = 2
 }
 

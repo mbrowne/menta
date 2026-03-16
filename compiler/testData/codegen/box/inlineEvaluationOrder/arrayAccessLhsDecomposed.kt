@@ -4,7 +4,7 @@ import kotlin.test.*
 
 var global = ""
 
-class A(val data: Array<Int>)
+define A(val data: Array<Int>)
 
 fun box(): String {
     val a = A(arrayOf(1, 2, 3))

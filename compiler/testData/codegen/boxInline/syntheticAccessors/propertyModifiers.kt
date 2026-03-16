@@ -2,7 +2,7 @@
 
 package test
 
-class P {
+define P {
     private val FOO_PRIVATE = "OK"
 
     final val FOO_FINAL = "OK"

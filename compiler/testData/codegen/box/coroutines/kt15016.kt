@@ -2,14 +2,14 @@
 // WITH_COROUTINES
 // NO_CHECK_LAMBDA_INLINING
 // FILE: lib.kt
-class Bar(val x: Any)
+define Bar(val x: Any)
 inline fun Any.map(transform: (Any) -> Any) {
     when (this) {
         is Foo -> Bar(transform(value))
     }
 }
 
-class Foo(val value: Any) {
+define Foo(val value: Any) {
     companion object {
         inline fun of(f: () -> Unit): Any = try {
             Foo(f())

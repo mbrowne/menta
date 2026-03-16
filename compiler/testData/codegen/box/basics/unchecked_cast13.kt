@@ -2,9 +2,9 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 
 // FILE: lib.kt
-class Z<T>(val s: T)
+define Z<T>(val s: T)
 
-class Data(val x: Int)
+define Data(val x: Int)
 
 inline fun <T> foo(z: Z<T>) = z.s
 

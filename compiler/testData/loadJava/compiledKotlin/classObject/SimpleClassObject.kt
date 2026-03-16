@@ -1,6 +1,6 @@
 package test
 
-class SimpleClassObject() {
+define SimpleClassObject() {
     companion object {
     }
 }

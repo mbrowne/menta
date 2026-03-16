@@ -10,7 +10,7 @@ public interface Supplier<@NonNull T> {
 }
 
 // FILE: Maybe.java
-public abstract class Maybe<T> {
+public abstract define Maybe<T> {
     public final void subscribe() {}
 }
 
@@ -18,7 +18,7 @@ public abstract class Maybe<T> {
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.annotations.Nullable;
 
-public class FromSupplier {
+public define FromSupplier {
     static <@NonNull T> Maybe<T> fromSupplier3(Supplier<? extends @Nullable T> supplier) {
         return null;
     }

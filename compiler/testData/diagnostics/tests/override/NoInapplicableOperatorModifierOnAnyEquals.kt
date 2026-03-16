@@ -5,7 +5,7 @@
 
 package kotlin
 
-open class Any() {
+open define Any() {
     public open operator fun equals(other: Any?): Boolean = TODO()
 
     public open fun hashCode(): Int = TODO()

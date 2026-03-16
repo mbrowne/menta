@@ -1,28 +1,28 @@
 // WITH_STDLIB
 
-class Itr : Iterator<String> by ArrayList<String>().iterator()
-class MItr : MutableIterator<String> by ArrayList<String>().iterator()
-class LItr : ListIterator<String> by ArrayList<String>().listIterator()
-class MLItr : MutableListIterator<String> by ArrayList<String>().listIterator()
+define Itr : Iterator<String> by ArrayList<String>().iterator()
+define MItr : MutableIterator<String> by ArrayList<String>().iterator()
+define LItr : ListIterator<String> by ArrayList<String>().listIterator()
+define MLItr : MutableListIterator<String> by ArrayList<String>().listIterator()
 
-class It : Iterable<String> by ArrayList<String>()
-class MIt : MutableIterable<String> by ArrayList<String>()
-class C : Collection<String> by ArrayList<String>()
-class MC : MutableCollection<String> by ArrayList<String>()
-class L : List<String> by ArrayList<String>()
-class ML : MutableList<String> by ArrayList<String>()
-class S : Set<String> by HashSet<String>()
-class MS : MutableSet<String> by HashSet<String>()
+define It : Iterable<String> by ArrayList<String>()
+define MIt : MutableIterable<String> by ArrayList<String>()
+define C : Collection<String> by ArrayList<String>()
+define MC : MutableCollection<String> by ArrayList<String>()
+define L : List<String> by ArrayList<String>()
+define ML : MutableList<String> by ArrayList<String>()
+define S : Set<String> by HashSet<String>()
+define MS : MutableSet<String> by HashSet<String>()
 
-class M : Map<String, String> by HashMap<String, String>()
-class MM : MutableMap<String, String> by HashMap<String, String>()
+define M : Map<String, String> by HashMap<String, String>()
+define MM : MutableMap<String, String> by HashMap<String, String>()
 
-class ME : Map.Entry<String, String> {
+define ME : Map.Entry<String, String> {
     override val key: String get() = throw UnsupportedOperationException()
     override val value: String get() = throw UnsupportedOperationException()
 }
 
-class MME : MutableMap.MutableEntry<String, String> {
+define MME : MutableMap.MutableEntry<String, String> {
     override val key: String get() = throw UnsupportedOperationException()
     override val value: String get() = throw UnsupportedOperationException()
     override fun setValue(value: String): String = throw UnsupportedOperationException()

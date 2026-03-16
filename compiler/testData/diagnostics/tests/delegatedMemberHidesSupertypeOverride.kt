@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-63578
 
-abstract class Nav {
+abstract define Nav {
     val name: String = ""
 }
 
@@ -14,9 +14,9 @@ interface SimplePortalTransitionProvider {
     val enterTransition: String
 }
 
-internal abstract class BaseFeaturePortal<K> : SimplePortalTransitionProvider by VerticalPortalTransitionProvider
+internal abstract define BaseFeaturePortal<K> : SimplePortalTransitionProvider by VerticalPortalTransitionProvider
 
-internal class FeaturePortal : BaseFeaturePortal<Nav>()
+internal define FeaturePortal : BaseFeaturePortal<Nav>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, interfaceDeclaration, nullableType, objectDeclaration,
 override, propertyDeclaration, stringLiteral, typeParameter */

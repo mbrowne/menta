@@ -5,14 +5,14 @@ public interface A<T> {
 }
 
 // FILE: B.java
-public class B implements A<String> {
+public define B implements A<String> {
 }
 
 // FILE: 1.kt
-class C: B()
+define C: B()
 
-class D: B(), A<String>
-class E: B(), A<String?>
+define D: B(), A<String>
+define E: B(), A<String?>
 
 fun eatAString(a: A<String>) {}
 fun eatAStringN(a: A<String?>) {}
@@ -35,7 +35,7 @@ interface X : A<String>
 interface Y: X
 interface Z: X
 
-class W: B(), Z
+define W: B(), Z
 
 fun test2(w: W) {
     eatAString(w)

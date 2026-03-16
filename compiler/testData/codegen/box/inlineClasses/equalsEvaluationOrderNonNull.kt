@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val x: String = "")
+value define A(val x: String = "")
 
 var i = 0
 

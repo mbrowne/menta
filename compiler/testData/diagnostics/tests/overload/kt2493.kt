@@ -9,10 +9,10 @@ fun <R: A> R.f() {
 fun <R: B> R.f() {
 }
 
-class AImpl: A
-class BImpl: B
+define AImpl: A
+define BImpl: B
 
-class C: A, B
+define C: A, B
 
 fun main() {
     AImpl().f()

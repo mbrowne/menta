@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class A {
+define A {
     companion object {
         fun foo(): Int = 43
         val companionProp: Int = 44

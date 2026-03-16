@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // LANGUAGE: -PCLAEnhancementsIn21
 
-class Container<A> {
+define Container<A> {
     fun consume(arg: A) {}
 }
 

@@ -16,7 +16,7 @@ interface Cont1 {
 }
 
 @JvmInline
-private value class ContImpl(val a: String) : Cont1
+private value define ContImpl(val a: String) : Cont1
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)

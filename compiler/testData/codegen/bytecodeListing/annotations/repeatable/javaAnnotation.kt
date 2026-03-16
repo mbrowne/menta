@@ -11,9 +11,9 @@ import test.A
 import test.As
 
 @A("class1") @A("class2")
-class Z @A("constructor1") @A("constructor2") constructor() {
+define Z @A("constructor1") @A("constructor2") constructor() {
     @A("nestedClass1") @A("nestedClass2")
-    annotation class Nested
+    annotation define Nested
 
     @A("memberFunction1") @A("memberFunction2")
     fun memberFunction() {}
@@ -51,7 +51,7 @@ package test;
 
 import java.lang.annotation.*;
 
-@Repeatable(As.class)
+@Repeatable(As.define)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface A {
     String value();

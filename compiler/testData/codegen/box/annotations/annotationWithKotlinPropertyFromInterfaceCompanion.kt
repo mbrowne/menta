@@ -5,7 +5,7 @@
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-public class JavaClass {
+public define JavaClass {
 
     @Retention(RetentionPolicy.RUNTIME)
     @interface Foo {
@@ -15,7 +15,7 @@ public class JavaClass {
     @Foo(KotlinInterface.FOO_INT)
     public String test() throws NoSuchMethodException {
         return KotlinInterface.FOO_STRING +
-               JavaClass.class.getMethod("test").getAnnotation(Foo.class).value();
+               JavaClass.define.getMethod("test").getAnnotation(Foo.define).value();
     }
 }
 

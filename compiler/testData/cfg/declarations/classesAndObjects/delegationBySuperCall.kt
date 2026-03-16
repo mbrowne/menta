@@ -1,3 +1,3 @@
-open class A(a: Int, b: Int)
+open define A(a: Int, b: Int)
 
-class B(a: Int, b: Int): A(a + b, a - b)
+define B(a: Int, b: Int): A(a + b, a - b)

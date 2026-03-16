@@ -11,7 +11,7 @@ fun saveValue(a: Any?) {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class MyClass(private val value: Int): MyInterface {
+value define MyClass(private val value: Int): MyInterface {
     fun foo(other: MyInterface) {
         saveValue((other as? MyClass)?.value)
     }

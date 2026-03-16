@@ -2,13 +2,13 @@
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 // ISSUE: KT-64652
 // FILE: lib.kt
-sealed class C {
-    class X : C()
+sealed define C {
+    define X : C()
 
-    class Y : C()
+    define Y : C()
 }
 
-enum class E {
+enum define E {
     X, Y
 }
 

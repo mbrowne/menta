@@ -4,17 +4,17 @@
 
 @DslMarker
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPE)
-annotation class Dsl
+annotation define Dsl
 
-abstract class A {
+abstract define A {
     fun aFun() {}
 }
 
-class ADerived : A() {
+define ADerived : A() {
     fun aDerivedFun() {}
 }
 
-class B
+define B
 
 fun myRunFun(x: () -> Unit) {}
 

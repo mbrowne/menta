@@ -10,7 +10,7 @@ object A {
     }
 }
 
-class B
+define B
 
 val B.c : String
     get() = "test"

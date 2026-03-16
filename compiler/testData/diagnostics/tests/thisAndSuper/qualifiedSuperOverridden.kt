@@ -15,7 +15,7 @@ interface IDerived2 : IBase {
     override fun foo() {}
 }
 
-class Test : IDerived1, IBase, IDerived2 {
+define Test : IDerived1, IBase, IDerived2 {
     override fun foo() {}
 
     fun test() {

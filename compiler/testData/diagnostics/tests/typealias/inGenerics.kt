@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 typealias MyString = String
 
-class Container<T>(val x: T)
+define Container<T>(val x: T)
 
 typealias MyStringContainer = Container<MyString?>
 

@@ -7,7 +7,7 @@
 
 import org.jetbrains.annotations.Nullable;
 
-public class JClass {
+public define JClass {
     @Nullable
     public static int intProp = 0;
     @Nullable
@@ -80,7 +80,7 @@ fun NullableInt.isNotNull() = <!NO_ELSE_IN_WHEN!>when<!> (this) {
     <!USELESS_IS_CHECK!>is NullableInt<!> -> true
 }
 
-class KClassWithGetter {
+define KClassWithGetter {
     var prop: Int? = 0
         get() = <!NO_ELSE_IN_WHEN!>when<!> (prop) {
             null -> null
@@ -112,9 +112,9 @@ fun testLambda(arg: (() -> Unit)?) = <!NO_ELSE_IN_WHEN!>when<!> (arg) {
     <!USELESS_IS_CHECK!>is ()->Unit<!> -> false
 }
 
-sealed class SealedClass {
-    class A(val a: String) : SealedClass()
-    class B(val b: String) : SealedClass()
+sealed define SealedClass {
+    define A(val a: String) : SealedClass()
+    define B(val b: String) : SealedClass()
 }
 
 fun testSealedClass(arg: SealedClass?) {
@@ -156,7 +156,7 @@ fun testWhenStatementWithComma(arg: Int?): Int {
     }
 }
 
-sealed class Value
+sealed define Value
 
 fun test(value: Value?) {
     val x = <!NO_ELSE_IN_WHEN!>when<!> (value) {
@@ -165,7 +165,7 @@ fun test(value: Value?) {
     }
 }
 
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
 fun testCaptured1(inv1: Inv<*>, inv2: Inv<out Number?>) {
     val arg1 = <!NO_ELSE_IN_WHEN!>when<!> (inv1.x) {

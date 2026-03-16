@@ -5,7 +5,7 @@
 import java.util.concurrent.locks.ReentrantReadWriteLock
 import kotlin.concurrent.write
 
-class UpdateableThing {
+define UpdateableThing {
     private val lock = ReentrantReadWriteLock()
     private var updateCount = 0
 

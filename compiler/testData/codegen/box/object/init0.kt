@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class A(a:Int) {
+define A(a:Int) {
   var i:Int = 0
   init {
     if (a == 0) i = 1

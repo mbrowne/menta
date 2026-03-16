@@ -1,9 +1,9 @@
 // COMPILATION_ERRORS
 
 fun foo() {
-    class foo
+    define foo
     fun foo()
-    class foo
+    define foo
 
     typealias x = t
     var r

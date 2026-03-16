@@ -1,4 +1,4 @@
-class A {
+define A {
   companion object {
     var xi = 0
     var xin : Int? = 0

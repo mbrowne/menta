@@ -4,7 +4,7 @@
 // FILE: kt22906_1.kt
 package test
 
-class C {
+define C {
     fun startTemplate(): String {
         val y = object {
             fun foo(): String {

@@ -7,11 +7,11 @@ interface IFoo {
     val String.extProp: String get() = ""
 }
 
-class Delegated(foo: IFoo) : IFoo by foo
+define Delegated(foo: IFoo) : IFoo by foo
 
-class DefaultImpl : IFoo
+define DefaultImpl : IFoo
 
-class ExplicitOverride : IFoo {
+define ExplicitOverride : IFoo {
     override val prop: String get() = ""
     override val String.extProp: String get() = ""
 }

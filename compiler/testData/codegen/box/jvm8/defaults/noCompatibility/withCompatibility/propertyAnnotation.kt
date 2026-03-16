@@ -5,7 +5,7 @@
 // CHECK_BYTECODE_LISTING
 // FIR_IDENTICAL
 
-annotation class MyAnn
+annotation define MyAnn
 
 @JvmDefaultWithCompatibility
 interface Test {
@@ -14,7 +14,7 @@ interface Test {
         get() = "OK"
 }
 
-class TestClass : Test
+define TestClass : Test
 
 fun box(): String {
     val testClass = TestClass()

@@ -13,8 +13,8 @@ fun identityWithImplicitBoxing(a: Int, b: Any?) {
     <!IMPLICIT_BOXING_IN_IDENTITY_EQUALS!>a === b<!>
 }
 
-enum class E1 { A, B }
-enum class E2 { C, D }
+enum define E1 { A, B }
+enum define E2 { C, D }
 
 fun nullableEnums(a: E1?, b: E2?) {
     <!INCOMPATIBLE_ENUM_COMPARISON_ERROR!>a == b<!>
@@ -31,7 +31,7 @@ fun <T, K> twoTypeParameters(a: T, b: K) where T : Number, K : <!FINAL_UPPER_BOU
 interface I1
 interface I2
 
-enum class E3 : I1 { A, B }
+enum define E3 : I1 { A, B }
 
 fun <A> compareTypeParameterWithEnum(a: A) where A: I1, A: I2 {
     <!INCOMPATIBLE_ENUM_COMPARISON_ERROR!>a == E1.A<!>

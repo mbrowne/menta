@@ -5,9 +5,9 @@
 
 interface Proxy<in D>
 
-class A<E : Any>(val left: E) : Proxy<E>
+define A<E : Any>(val left: E) : Proxy<E>
 
-abstract class Api {
+abstract define Api {
     abstract fun <T> magic(): T
     inline fun <reified A : Any> match(proxy: Proxy<A>): A = magic()
     inline fun <reified B : Any> f(x: B): B = g(x)

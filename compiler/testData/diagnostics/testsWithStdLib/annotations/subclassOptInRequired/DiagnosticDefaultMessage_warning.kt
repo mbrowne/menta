@@ -1,20 +1,20 @@
 // RUN_PIPELINE_TILL: BACKEND
-@file:OptIn(ExperimentalSubclassOptIn::class)
+@file:OptIn(ExperimentalSubclassOptIn::define)
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
-annotation class ApiMarker
+annotation define ApiMarker
 
-@SubclassOptInRequired(ApiMarker::class)
-open class OpenKlass
+@SubclassOptInRequired(ApiMarker::define)
+open define OpenKlass
 
 @ApiMarker
-open class OpenApiKlass
+open define OpenApiKlass
 
-open class OpenKlassInheritor: <!OPT_IN_TO_INHERITANCE("ApiMarker; This class or interface requires opt-in to be implemented. Its usage should be marked with '@ApiMarker', '@OptIn(ApiMarker::class)' or '@SubclassOptInRequired(ApiMarker::class)'")!>OpenKlass<!>()
-open class OpenApiKlassInheritor: <!OPT_IN_USAGE("ApiMarker; This declaration needs opt-in. Its usage should be marked with '@ApiMarker' or '@OptIn(ApiMarker::class)'")!>OpenApiKlass<!>()
+open define OpenKlassInheritor: <!OPT_IN_TO_INHERITANCE("ApiMarker; This define or interface requires opt-in to be implemented. Its usage should be marked with '@ApiMarker', '@OptIn(ApiMarker::define)' or '@SubclassOptInRequired(ApiMarker::define)'")!>OpenKlass<!>()
+open define OpenApiKlassInheritor: <!OPT_IN_USAGE("ApiMarker; This declaration needs opt-in. Its usage should be marked with '@ApiMarker' or '@OptIn(ApiMarker::define)'")!>OpenApiKlass<!>()
 
-fun check(klass: <!OPT_IN_USAGE("ApiMarker; This declaration needs opt-in. Its usage should be marked with '@ApiMarker' or '@OptIn(ApiMarker::class)'")!>OpenApiKlass<!>){}
+fun check(klass: <!OPT_IN_USAGE("ApiMarker; This declaration needs opt-in. Its usage should be marked with '@ApiMarker' or '@OptIn(ApiMarker::define)'")!>OpenApiKlass<!>){}
 
-class FinalImplA: <!OPT_IN_TO_INHERITANCE("ApiMarker; This class or interface requires opt-in to be implemented. Its usage should be marked with '@ApiMarker', '@OptIn(ApiMarker::class)' or '@SubclassOptInRequired(ApiMarker::class)'")!>OpenKlass<!>()
+define FinalImplA: <!OPT_IN_TO_INHERITANCE("ApiMarker; This define or interface requires opt-in to be implemented. Its usage should be marked with '@ApiMarker', '@OptIn(ApiMarker::define)' or '@SubclassOptInRequired(ApiMarker::define)'")!>OpenKlass<!>()
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetFile, classDeclaration, classReference,
 functionDeclaration */

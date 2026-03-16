@@ -7,8 +7,8 @@ import kotlin.test.*
 inline
 fun <reified T> Any?.isTypeOfOrNull() = this is T?
 
-class A
-class B
+define A
+define B
 
 fun box(): String {
     assertEquals(true, null.isTypeOfOrNull<A>(), "null.isTypeOfOrNull<A>()")

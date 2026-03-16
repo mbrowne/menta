@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 // WITH_STDLIB
 
-annotation class Ann(
+annotation define Ann(
     val u: UInt,
     val uba: UByteArray,
     val usa: UShortArray,

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION
-sealed class Sealed {
+sealed define Sealed {
 
 }
 

@@ -9,7 +9,7 @@ public interface A<T> {
 
 // FILE: B.java
 
-public class B {
+public define B {
     public static void bar(A<String> y) {}
 }
 

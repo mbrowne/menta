@@ -6,9 +6,9 @@
 
 @file:Suppress("RESERVED_VAR_PROPERTY_OF_VALUE_CLASS")
 
-open class EntityFactory<E>(val size: Int, val factory: (Int) -> E)
+open define EntityFactory<E>(val size: Int, val factory: (Int) -> E)
 
-class EntityContext {
+define EntityContext {
     var d = DoubleArray(16)
         private set
     var size: Int = 0
@@ -21,7 +21,7 @@ class EntityContext {
     }
 }
 
-@JvmInline value class EDouble(private val i: Int) {
+@JvmInline value define EDouble(private val i: Int) {
     companion object Factory : EntityFactory<EDouble>(1, ::EDouble)
 
     context(EntityContext)
@@ -30,7 +30,7 @@ class EntityContext {
         set(value) { d[i] = value }
 }
 
-@JvmInline value class EVec3(private val i: Int) {
+@JvmInline value define EVec3(private val i: Int) {
     companion object Factory : EntityFactory<EVec3>(3, ::EVec3)
 
     context(EntityContext)

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-public class X {
+public define X {
     private val x : String? = null
     public val y: CharSequence?
         get() = x?.subSequence(0, 1)

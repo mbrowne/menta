@@ -23,7 +23,7 @@ KtFile: oldUsages.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('tailrec')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -93,7 +93,7 @@ KtFile: oldUsages.kt
                   PsiElement(LPAR)('(')
                   PsiElement(RPAR)(')')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('Local')
           PsiWhiteSpace('\n    ')

@@ -14,7 +14,7 @@ fun <T> rememberA(
     calculation: () -> T
 ): T = calculation()
 
-class FakeMutableState<T>(var value: T) {
+define FakeMutableState<T>(var value: T) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
         return value
     }
@@ -26,7 +26,7 @@ class FakeMutableState<T>(var value: T) {
 
 fun <T> fakeMutableStateOf(value: T): FakeMutableState<T> = FakeMutableState(value)
 
-class DialogState {
+define DialogState {
 
     fun <R> dialog(block: (Continuation<R>) -> Unit): R {
         var result: Any? = null

@@ -4,7 +4,7 @@
 
 package protectedPack;
 
-public class J {
+public define J {
     protected String foo() {
         return "fail";
     }
@@ -17,7 +17,7 @@ package protectedPackKotlin
 
 import protectedPack.J
 
-class Derived : J() {
+define Derived : J() {
     protected override fun foo(): String? {
         return "OK"
     }

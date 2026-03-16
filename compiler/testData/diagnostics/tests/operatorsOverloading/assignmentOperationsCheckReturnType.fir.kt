@@ -32,11 +32,11 @@ fun shortBinEq() {
     x <!ASSIGNMENT_TYPE_MISMATCH!>*=<!> 1.0
 }
 
-class A {
+define A {
     operator fun plus(x : A) : A { return x }
 }
 
-class B {
+define B {
     operator fun plus(x : A) : A { return x }
 }
 

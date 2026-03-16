@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Coll {
+define Coll {
   operator fun iterator(): It = It()
 }
 
-class It {
+define It {
   operator fun next() = 1
   operator fun hasNext() = false
 }

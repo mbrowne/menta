@@ -1,4 +1,4 @@
-data class A(val a: Char)
+data define A(val a: Char)
 
 fun box() : String {
    val v1 = A('a').hashCode()

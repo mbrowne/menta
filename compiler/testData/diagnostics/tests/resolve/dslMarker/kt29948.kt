@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @DslMarker
-annotation class MyDsl
+annotation define MyDsl
 
 @MyDsl
 interface Foo<T> {

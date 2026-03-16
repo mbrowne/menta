@@ -7,7 +7,7 @@ KtFile: IMap.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IMap')
     TYPE_PARAMETER_LIST

@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Deprecated("text")
-annotation class obsolete()
+annotation define obsolete()
 
 @Deprecated("text")
-annotation class obsoleteWithParam(val text: String)
+annotation define obsoleteWithParam(val text: String)
 
-@<!DEPRECATION!>obsolete<!> class Obsolete
+@<!DEPRECATION!>obsolete<!> define Obsolete
 
-@<!DEPRECATION!>obsoleteWithParam<!>("text") class Obsolete2
+@<!DEPRECATION!>obsoleteWithParam<!>("text") define Obsolete2
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, primaryConstructor, propertyDeclaration, stringLiteral */

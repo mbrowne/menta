@@ -7,7 +7,7 @@ KtFile: innerClassEnumEntry.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('InnerClassEnumEntry')
     PsiWhiteSpace(' ')
@@ -24,7 +24,7 @@ KtFile: innerClassEnumEntry.kt
             MODIFIER_LIST
               PsiElement(inner)('inner')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('InnerClass')
           PsiWhiteSpace('\n    ')

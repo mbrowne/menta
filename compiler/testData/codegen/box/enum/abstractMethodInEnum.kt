@@ -1,4 +1,4 @@
-enum class A() {
+enum define A() {
     ENTRY(){ override fun t() = "OK"};
 
     abstract fun t(): String

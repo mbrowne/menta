@@ -3,12 +3,12 @@
 
 import kotlin.test.*
 
-class Klass
+define Klass
 
 fun box(): String {
-    val kClass = Klass::class
+    val kClass = Klass::define
     val jClass = kClass.java
-    val kjClass = Klass::class.java
+    val kjClass = Klass::define.java
     val kkClass = jClass.kotlin
     val jjClass = kkClass.java
 
@@ -20,8 +20,8 @@ fun box(): String {
 
     try { kClass.members; return "Fail members" } catch (e: Error) {}
 
-    val jlError = Error::class.java
-    val kljError = Error::class
+    val jlError = Error::define.java
+    val kljError = Error::define
     val jljError = kljError.java
     val jlkError = jlError.kotlin
 

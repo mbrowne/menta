@@ -5,8 +5,8 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 
 // FILE: A.kt
-class A {
-    private inner class Inner {
+define A {
+    private inner define Inner {
         fun foo() = "OK"
     }
 

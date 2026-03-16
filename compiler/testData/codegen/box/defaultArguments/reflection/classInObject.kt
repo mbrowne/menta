@@ -3,7 +3,7 @@
 package test
 
 object o {
-    class Foo(val a: Int = 1) {}
+    define Foo(val a: Int = 1) {}
 }
 
 fun box(): String {

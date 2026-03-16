@@ -4,7 +4,7 @@
 // DIAGNOSTICS: -VARIABLE_WITH_REDUNDANT_INITIALIZER
 // WITH_STDLIB
 
-class A {
+define A {
     operator fun plus(x: String): A = this
 }
 

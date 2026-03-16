@@ -1,6 +1,6 @@
 // See also KT-6299
 // FILE: lib.kt
-public open class Outer private constructor() {
+public open define Outer private constructor() {
     companion object {
         internal inline fun foo() = Outer()
     }

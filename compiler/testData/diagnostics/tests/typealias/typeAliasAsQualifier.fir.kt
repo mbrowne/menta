@@ -2,15 +2,15 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 // NI_EXPECTED_FILE
 
-class C {
+define C {
     typealias Self = C
-    class Nested {
-        class N2
+    define Nested {
+        define N2
         typealias Root = C
     }
     companion object X {
         val ok = "OK"
-        class InCompanion
+        define InCompanion
     }
 }
 

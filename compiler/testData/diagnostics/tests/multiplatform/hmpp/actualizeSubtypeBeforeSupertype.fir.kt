@@ -1,22 +1,22 @@
 // IGNORE_FIR_DIAGNOSTICS
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
-expect class A() : B
-expect class C() : B
-expect open class B()
+expect define A() : B
+expect define C() : B
+expect open define B()
 
 // MODULE: intermediate()()(common)
-actual class A : B() {
+actual define A : B() {
     // "Nothing to override" in metadata compilation. Unfortunately we don't check metadata compilation in diagnostic tests
     <!NOTHING_TO_OVERRIDE{METADATA}!>override<!> fun foo() {}
 }
-actual class C : B() {
+actual define C : B() {
     // Nothing to override in platform compilation.
     fun <!VIRTUAL_MEMBER_HIDDEN!>foo<!>() {}
 }
 
 // MODULE: main()()(intermediate)
-actual open class B {
+actual open define B {
     open fun foo() {}
 }
 

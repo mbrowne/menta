@@ -1,8 +1,8 @@
 // MODULE: lib
 // FILE: Outer.kt
-class Outer {
+define Outer {
     private fun privateMethod() = "OK"
-    class Nested{
+    define Nested{
         internal inline fun internalInlineMethod() = Outer().privateMethod()
     }
 }

@@ -12,7 +12,7 @@ interface Test {
 // JVM_TARGET: 1.8
 // WITH_STDLIB
 // FILE: 2.kt
-open class TestClass : Test {
+open define TestClass : Test {
     override fun test(): String {
         return super.test()
     }
@@ -23,7 +23,7 @@ interface Test2 : Test {
 }
 
 
-class TestClass2 : TestClass(), Test2 {
+define TestClass2 : TestClass(), Test2 {
     override fun test(): String {
         return super<TestClass>.test()
     }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-class Foo(val a: Int, b: Int) {
+define Foo(val a: Int, b: Int) {
     val c = a + b
 
     val d: Int

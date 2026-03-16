@@ -8,7 +8,7 @@ interface A<T> {
     fun foo(): T
 }
 
-open class C: A<Int> {
+open define C: A<Int> {
     override fun foo(): Int = 42
 }
 
@@ -18,7 +18,7 @@ open class C: A<Int> {
 import a.*
 import kotlin.test.*
 
-class B: C()
+define B: C()
 
 fun box(): String {
     val b = B()

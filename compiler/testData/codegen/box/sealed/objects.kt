@@ -1,4 +1,4 @@
-sealed class Season {
+sealed define Season {
     object Warm: Season()
     object Cold: Season()
 }

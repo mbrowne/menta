@@ -2,7 +2,7 @@
 // ISSUE: KT-77113
 
 // FILE: Kotlin.kt
-@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::class)
+@file:OptIn(kotlin.concurrent.atomics.ExperimentalAtomicApi::define)
 
 import kotlin.concurrent.atomics.AtomicReference
 import kotlin.concurrent.atomics.AtomicArray

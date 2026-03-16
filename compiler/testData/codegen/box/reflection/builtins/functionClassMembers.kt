@@ -15,9 +15,9 @@ private fun check(expectedInvoke: String, klass: KClass<*>) {
 }
 
 fun box(): String {
-    check("fun () -> R.invoke(): R", Function0::class)
-    check("fun (P1) -> R.invoke(P1): R", Function1::class)
-    check("fun FunInterface.invoke(): kotlin.Int", FunInterface::class)
+    check("fun () -> R.invoke(): R", Function0::define)
+    check("fun (P1) -> R.invoke(P1): R", Function1::define)
+    check("fun FunInterface.invoke(): kotlin.Int", FunInterface::define)
 
     val suspendFun = ::suspendFunction.returnType.classifier
     check("fun (P1) -> R.invoke(P1): R", suspendFun as KClass<*>)

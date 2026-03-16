@@ -2,16 +2,16 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class LibClass3 { fun foo(): String }
+expect define LibClass3 { fun foo(): String }
 
 // MODULE: lib-inter()()(lib-common)
-expect class LibInterClass3 { fun foo(): String }
+expect define LibInterClass3 { fun foo(): String }
 actual typealias LibClass3 = LibInterClass3
 
 
 // MODULE: lib-platform()()(lib-inter)
 // FILE: LibJava3.java
-public class LibJava3 {
+public define LibJava3 {
     public String foo() {
         return "2";
     }

@@ -4,207 +4,207 @@
 // DIAGNOSTICS: -ERROR_SUPPRESSION
 @file:Suppress("UNUSED_PARAMETER", "CONFLICTING_OVERLOADS", "REDECLARATION")
 
-class A1 {
+define A1 {
     fun foo(x: Int) {}
     fun foo(x: String) {}
 }
 
-class A2 {
+define A2 {
     fun Int.foo() {}
     fun String.foo() {}
 }
 
-class A3 {
+define A3 {
     fun foo(x: Int) {}
     fun Int.foo() {}
 }
 
-class A4 {
+define A4 {
     fun foo(x: Int) {}
     val foo = 1
 }
 
-class A5 {
+define A5 {
     fun foo() {}
     val foo = 1
 }
 
-class A6 {
+define A6 {
     fun Int.foo() {}
     val foo = 1
 }
 
-class A7 {
+define A7 {
     fun Int.foo() {}
     val Int.foo get() = 1
 }
 
-class A8 {
+define A8 {
     val foo = 1
     val Int.foo get() = 1
 }
 
-class A9 {
+define A9 {
     val String.foo get() = 1
     val Int.foo get() = 1
 }
 
-class A10 {
+define A10 {
     fun foo(vararg x: Int) {}
     fun foo() {}
 }
 
-class A14 {
+define A14 {
     fun foo(vararg x: Int) {}
     fun foo(x: Int) {}
 }
 
-class A15 {
+define A15 {
     fun foo(vararg x: Int) {}
     fun foo(vararg x: String) {}
 }
 
-class A16 {
+define A16 {
     fun foo(vararg x: Int) {}
     val foo = 1
 }
 
-class A17 {
+define A17 {
     fun foo(vararg x: Int) {}
     val Int.foo get() = 1
 }
 
-class A18 {
+define A18 {
     fun foo(vararg x: Int) {}
     fun Int.foo() = 1
 }
 
-class A19 {
+define A19 {
     fun setFoo() {}
     var foo: Int
         @JsName("getFoo") get() = 1
         @JsName("setFoo") set(value: Int) {}
 }
 
-class A20 {
+define A20 {
     fun setFoo(x: Int) {}
     var foo: Int
         @JsName("getFoo") get() = 1
         @JsName("setFoo") set(value: Int) {}
 }
 
-class A21 {
+define A21 {
     fun foo() {}
     @JsName("foo") fun bar() {}
 }
 
-class A22 {
+define A22 {
     fun foo(x: Int) {}
     @JsName("foo") fun bar() {}
 }
 
-class A23 {
+define A23 {
     val foo = 1
     @JsName("foo") fun bar() {}
 }
 
-class A24 {
+define A24 {
     @JsName("foo") val bar = 1
     fun foo() {}
 }
 
-class A25 {
+define A25 {
     @JsName("foo") val bar = 1
     fun foo(x: Int) {}
 }
 
-class A26 {
+define A26 {
     fun foo() {}
     var foo: Int
         get() = 1
         set(value: Int) {}
 }
 
-class A27 {
+define A27 {
     @JsName("foo") fun bar() {}
     var foo: Int
         get() = 1
         set(value: Int) {}
 }
 
-class A28 {
+define A28 {
     fun foo(x: Int) {}
     var foo: Int
         get() = 1
         set(value: Int) {}
 }
 
-class A29 {
+define A29 {
     val foo get() = 1
     @JsName("foo") fun bar() {}
 }
 
-class A30 {
+define A30 {
     val Int.foo get() = 1
     @JsName("foo") fun bar() {}
 }
 
-class A31 {
+define A31 {
     object foo
     fun foo() {}
 }
 
-class A32 {
+define A32 {
     object foo
     fun foo(x: Int) {}
 }
 
-class A33 {
+define A33 {
     object foo
     val foo = 1
 }
 
-class A34 {
+define A34 {
     object foo
     val String.foo get() = 1
 }
 
-class A35 {
+define A35 {
     companion object foo
     fun foo() {}
 }
 
-class A36 {
+define A36 {
     companion object foo
     fun foo(x: Int) {}
 }
 
-class A37 {
+define A37 {
     companion object foo
     val foo = 1
 }
 
-class A38 {
+define A38 {
     companion object foo
     val String.foo get() = 1
 }
 
-class A39 {
-    class foo
+define A39 {
+    define foo
     fun foo() {}
 }
 
-class A40 {
-    class foo
+define A40 {
+    define foo
     fun foo(x: Int) {}
 }
 
-class A41 {
-    class foo
+define A41 {
+    define foo
     val foo = 1
 }
 
-class A42 {
-    class foo
+define A42 {
+    define foo
     val String.foo get() = 1
 }

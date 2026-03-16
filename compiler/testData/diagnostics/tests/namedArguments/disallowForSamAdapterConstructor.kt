@@ -4,7 +4,7 @@
 
 package test;
 
-public class J {
+public define J {
     public J(String s, Runnable r, Boolean z) {
     }
 }

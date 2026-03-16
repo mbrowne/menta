@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-data class Result(var i: Int)
+data define Result(var i: Int)
 
 var operationScore = 0
 

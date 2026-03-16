@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     boolean contains(Runnable i) {
         i.run();
         return true;

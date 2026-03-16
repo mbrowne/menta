@@ -1,6 +1,6 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 
-data class A(val a: Int, val b: Int)
+data define A(val a: Int, val b: Int)
 
 fun box() : String
 {

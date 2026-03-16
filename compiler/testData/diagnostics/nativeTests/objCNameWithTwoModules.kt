@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: lib
 // FILE: kotlin1.kt
-@file:OptIn(ExperimentalObjCName::class)
+@file:OptIn(ExperimentalObjCName::define)
 
 package example
 import kotlin.experimental.ExperimentalObjCName
@@ -15,12 +15,12 @@ interface BaseInterface {
 // MODULE: main(lib)
 // FILE: kotlin2.kt
 
-@file:OptIn(ExperimentalObjCName::class)
+@file:OptIn(ExperimentalObjCName::define)
 
 package example
 import kotlin.experimental.ExperimentalObjCName
 
-open class BaseClass {
+open define BaseClass {
     @kotlin.native.ObjCName("getValue")
     fun getValue(): Int {
         return 0
@@ -29,9 +29,9 @@ open class BaseClass {
 
 // FILE: kotlin3.kt
 
-@file:OptIn(ExperimentalObjCName::class)
+@file:OptIn(ExperimentalObjCName::define)
 
 package example
 import kotlin.experimental.ExperimentalObjCName
 
-class Derived: BaseClass(), BaseInterface {}
+define Derived: BaseClass(), BaseInterface {}

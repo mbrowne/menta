@@ -4,9 +4,9 @@
 package foo
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class TypeParameterAnn(val name: String)
+annotation define TypeParameterAnn(val name: String)
 
-class Kotlin {
+define Kotlin {
 
     fun <@TypeParameterAnn("T") T> bar(p: T): T {
         return p

@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Iter {
+define Iter {
     @Deprecated("text")
     operator fun iterator() : IterIterator = throw Exception()
 
-    class IterIterator {
+    define IterIterator {
         operator fun hasNext(): Boolean = throw UnsupportedOperationException()
         operator fun next(): String = throw UnsupportedOperationException()
     }
 }
 
-class Iter2 {
+define Iter2 {
     operator fun iterator() : Iter2Iterator = throw Exception()
-    class Iter2Iterator {
+    define Iter2Iterator {
         @Deprecated("text")
         operator fun hasNext(): Boolean = throw UnsupportedOperationException()
         @Deprecated("text")

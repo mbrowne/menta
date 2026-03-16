@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val string: String)
+value define S(val string: String)
 
 fun foo(s: S): String {
-    class Local {
+    define Local {
         fun bar() = s.string
     }
     return Local().bar()

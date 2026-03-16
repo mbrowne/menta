@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class Outer {
+define Outer {
     val prop = 1
-    inner class Inner {
+    inner define Inner {
         constructor(x: Int)
         constructor(x: Int, y: Int, z: Int = x + prop + this@Outer.prop) : this(x + prop + this@Outer.prop)
     }

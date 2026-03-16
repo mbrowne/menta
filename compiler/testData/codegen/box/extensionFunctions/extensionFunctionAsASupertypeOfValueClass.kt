@@ -7,7 +7,7 @@
 // ^^^ Source code is not compiled in JS.
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ValueClass(private val s: Int) : Int.() -> String {
+value define ValueClass(private val s: Int) : Int.() -> String {
     override fun invoke(p1: Int): String {
         return "OK"
     }

@@ -2,7 +2,7 @@
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
 
     public String runZ(Z z) {
         return z.run("O", "K");
@@ -20,7 +20,7 @@ package zzz
 import JavaClass
 import JavaClass.Z
 
-class A : JavaClass() {
+define A : JavaClass() {
     fun test() = runZ(JavaClass.Z {a, b -> a + b})
 }
 

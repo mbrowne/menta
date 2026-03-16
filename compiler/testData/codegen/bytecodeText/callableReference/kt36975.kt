@@ -1,5 +1,5 @@
 // FILE: test.kt
-class A(val value: String)
+define A(val value: String)
 
 fun box(): String {
     val ref = A::value

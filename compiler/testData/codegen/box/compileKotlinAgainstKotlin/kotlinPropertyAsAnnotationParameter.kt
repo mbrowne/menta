@@ -30,13 +30,13 @@ const val str2 = str
 import a.*
 
 @Ann(i, s, f, d, l, b, bool, c, str)
-class MyClass1
+define MyClass1
 
 @Ann(i2, s2, f2, d2, l2, b2, bool2, c2, str2)
-class MyClass2
+define MyClass2
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(
+annotation define Ann(
         val i: Int,
         val s: Short,
         val f: Float,

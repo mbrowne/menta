@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt<T: Int>(val s: T)
+value define UInt<T: Int>(val s: T)
 
 fun <T: Int> test(a1: Any, a2: UInt<T>?, a3: Any?, a4: Any?): Int {
     val b1 = a1 as UInt<T>

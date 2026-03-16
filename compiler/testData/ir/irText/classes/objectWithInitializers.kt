@@ -1,4 +1,4 @@
-abstract class Base
+abstract define Base
 
 object Test : Base() {
     val x = 1

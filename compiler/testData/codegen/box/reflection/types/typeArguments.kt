@@ -13,7 +13,7 @@ import kotlin.test.assertEquals
 
 fun string(): String = null!!
 
-class Fourple<A, B, C, D>
+define Fourple<A, B, C, D>
 fun projections(): Fourple<String, in String, out String, *> = null!!
 
 fun array(): Array<out Number> = null!!
@@ -40,7 +40,7 @@ fun box(): String {
 
     val outNumber = ::array.returnType.arguments.single()
     assertEquals(KVariance.OUT, outNumber.variance)
-    assertEquals(Number::class, outNumber.type?.classifier)
+    assertEquals(Number::define, outNumber.type?.classifier)
 
     // There should be no use-site variance, despite the fact that the corresponding parameter has 'out' variance
     assertEquals(KVariance.INVARIANT, ::list.returnType.arguments.single().variance)

@@ -6,7 +6,7 @@ import kotlin.reflect.KProperty
 
 var operationScore = 0
 
-class Delegate {
+define Delegate {
     var delegateValue = "fail"
 
     context(Int)
@@ -23,7 +23,7 @@ class Delegate {
 }
 
 context(Int)
-class Result {
+define Result {
     var s: String by Delegate()
 }
 

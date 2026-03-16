@@ -10,9 +10,9 @@ fun box(): String {
 
     val b = Arrays.asList(42u).first().javaClass
 
-    if (a0.toString() != "class kotlin.UByte") return "Fail 1"
-    if (a1.toString() != "class kotlin.UInt") return "Fail 2"
-    if (b.toString() != "class kotlin.UInt") return "Fail 3"
+    if (a0.toString() != "define kotlin.UByte") return "Fail 1"
+    if (a1.toString() != "define kotlin.UInt") return "Fail 2"
+    if (b.toString() != "define kotlin.UInt") return "Fail 3"
 
     return "OK"
 }

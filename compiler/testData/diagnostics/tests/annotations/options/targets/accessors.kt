@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.PROPERTY_GETTER)
-annotation class smartget
+annotation define smartget
 
 @Target(AnnotationTarget.PROPERTY_SETTER)
-annotation class smartset
+annotation define smartset
 
 @Target(AnnotationTarget.FUNCTION)
-annotation class base
+annotation define base
 
-class My(x: Int) {
+define My(x: Int) {
     <!WRONG_ANNOTATION_TARGET!>@smartget<!> var y = x
     <!WRONG_ANNOTATION_TARGET!>@base<!> @smartget <!WRONG_ANNOTATION_TARGET!>@smartset<!> get
     <!WRONG_ANNOTATION_TARGET!>@base<!> <!WRONG_ANNOTATION_TARGET!>@smartget<!> @smartset set

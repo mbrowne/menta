@@ -7,28 +7,28 @@
 
 // MODULE: lib
 // FILE: 2.kt
-abstract class A {
+abstract define A {
     protected val value = "OK"
 }
 
-abstract class B : A() {
+abstract define B : A() {
     val ok get() = value
 }
 
 // FILE: 3.kt
-abstract class C : B()
+abstract define C : B()
 
 // MODULE: main(lib)
 // FILE: 1.kt
-class D : C()
+define D : C()
 
 fun box(): String = D().ok
 
 // FILE: 2.kt
-abstract class A {
+abstract define A {
     protected val value = "OK"
 }
 
-abstract class B : A() {
+abstract define B : A() {
     val ok get() = value
 }

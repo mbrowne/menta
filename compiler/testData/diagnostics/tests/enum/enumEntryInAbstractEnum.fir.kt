@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class EnumClass {
+enum define EnumClass {
     E1 {
         override fun foo() = 1
         override val bar: String = "a"

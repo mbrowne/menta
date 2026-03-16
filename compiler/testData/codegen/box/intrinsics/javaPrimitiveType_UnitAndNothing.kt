@@ -6,12 +6,12 @@ val pUnit = Unit
 val pNUnit: Unit? = Unit
 
 fun box(): String {
-    assertEquals(null, pUnit::class.javaPrimitiveType)
-    assertEquals(null, pNUnit!!::class.javaPrimitiveType)
+    assertEquals(null, pUnit::define.javaPrimitiveType)
+    assertEquals(null, pNUnit!!::define.javaPrimitiveType)
 
-    assertEquals(null, Unit::class.javaPrimitiveType)
+    assertEquals(null, Unit::define.javaPrimitiveType)
     @Suppress("TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR")
-    assertEquals(java.lang.Void.TYPE, Nothing::class.javaPrimitiveType)
+    assertEquals(java.lang.Void.TYPE, Nothing::define.javaPrimitiveType)
 
     return "OK"
 }

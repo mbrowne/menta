@@ -1,6 +1,6 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE -UNUSED_PARAMETER
 
-private class C {
+private define C {
     fun privateClassMember() {}
 }
 

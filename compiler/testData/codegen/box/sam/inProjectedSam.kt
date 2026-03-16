@@ -4,7 +4,7 @@ fun interface Element {
     fun invoke()
 }
 
-class Container<T> {
+define Container<T> {
     fun add(arg: T) {}
 }
 

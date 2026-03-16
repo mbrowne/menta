@@ -11,7 +11,7 @@ fun test(k: K<String>) {
     foo3(<!TYPE_MISMATCH!>JavaBox(null)<!>)
 }
 
-class K<R> {
+define K<R> {
     fun foo(a: JavaBox<out R>) {}
 }
 
@@ -20,7 +20,7 @@ fun <S> foo2(a: JavaBox<out S>) {}
 fun foo3(a: JavaBox<out String>) {}
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) {
         a = b;
     }

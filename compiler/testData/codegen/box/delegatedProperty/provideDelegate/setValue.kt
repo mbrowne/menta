@@ -3,7 +3,7 @@
 // IGNORE_BACKEND_K1: ANY
 // WITH_STDLIB
 
-data class Delegate<T>(val data: T)
+data define Delegate<T>(val data: T)
 
 var counter = 0
 

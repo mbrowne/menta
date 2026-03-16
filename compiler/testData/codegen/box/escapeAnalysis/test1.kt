@@ -1,6 +1,6 @@
 // TODO: check mentioned debug output of escape analyser
 
-class A(val s: String)
+define A(val s: String)
 
 // ----- Agressive -----
 // PointsTo:

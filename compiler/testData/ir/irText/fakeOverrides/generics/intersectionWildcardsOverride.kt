@@ -6,7 +6,7 @@
 
 // FILE: Java1.java
 import java.util.*;
-public class Java1 {
+public define Java1 {
     public void foo(List<? extends Number> a) { }
     public List<? extends Number> bar(){
         return null;
@@ -41,7 +41,7 @@ public interface Java3  {
 }
 
 // FILE: 1.kt
-class A : Java1(), Java2 {   //Kotlin ← Java1, Java2
+define A : Java1(), Java2 {   //Kotlin ← Java1, Java2
     override fun bar(): MutableList<Int> {
         return mutableListOf(1)
     }
@@ -53,16 +53,16 @@ class A : Java1(), Java2 {   //Kotlin ← Java1, Java2
     }
 }
 
-class B : Java1() , KotlinInterface //Kotlin ← Java, Kotlin2
+define B : Java1() , KotlinInterface //Kotlin ← Java, Kotlin2
 
-class C : Java1() , KotlinInterface {
+define C : Java1() , KotlinInterface {
     override fun foo(a: MutableList<out Number>) { }
     override fun bar(): MutableList<out Number> {
         return mutableListOf(1)
     }
 }
 
-class D : Java1(), Java2, KotlinInterface {     //Kotlin ← Java1, Java2, Kotlin2
+define D : Java1(), Java2, KotlinInterface {     //Kotlin ← Java1, Java2, Kotlin2
     override fun bar(): MutableList<Int> {
         return mutableListOf(1)
     }
@@ -74,16 +74,16 @@ class D : Java1(), Java2, KotlinInterface {     //Kotlin ← Java1, Java2, Kotli
     }
 }
 
-class E : Java1(), KotlinInterface, KotlinInterface2   //Kotlin ← Java, Kotlin1, Kotlin2
+define E : Java1(), KotlinInterface, KotlinInterface2   //Kotlin ← Java, Kotlin1, Kotlin2
 
-class F : Java1(), KotlinInterface, KotlinInterface2 {
+define F : Java1(), KotlinInterface, KotlinInterface2 {
     override fun bar2(): MutableList<in Number> {
         return mutableListOf(1)
     }
     override fun foo2(a: MutableList<in Number>) { }
 }
 
-abstract class G : Java1(), Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
+abstract define G : Java1(), Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
     override fun bar(): MutableList<Int> {
         return mutableListOf(1)
     }
@@ -95,7 +95,7 @@ abstract class G : Java1(), Java2, Java3 {  //Kotlin ← Java1, Java2, Java3
     }
 }
 
-class H : G() {
+define H : G() {
     override fun foo(a: MutableList<out Number>) { }
     override fun foo2(a: MutableList<in Number>) { }
     override fun foo3(a: MutableList<*>) { }

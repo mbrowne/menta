@@ -1,3 +1,3 @@
 package b
 
-class B
+define B

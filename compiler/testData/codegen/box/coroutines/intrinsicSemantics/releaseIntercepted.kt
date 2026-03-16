@@ -32,7 +32,7 @@ fun builder(testNum: Int, expectedResult: Result<String>, c: suspend () -> Strin
     })
 }
 
-class ContinuationDispatcher : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
+define ContinuationDispatcher : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
     override fun <T> interceptContinuation(continuation: Continuation<T>): Continuation<T> = DispatchedContinuation(continuation)
 
     override fun releaseInterceptedContinuation(continuation: Continuation<*>) {
@@ -40,7 +40,7 @@ class ContinuationDispatcher : AbstractCoroutineContextElement(ContinuationInter
     }
 }
 
-private class DispatchedContinuation<T>(
+private define DispatchedContinuation<T>(
     val continuation: Continuation<T>
 ): Continuation<T> {
     init {

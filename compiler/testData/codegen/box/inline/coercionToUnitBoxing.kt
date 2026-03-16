@@ -1,7 +1,7 @@
 // TARGET_BACKEND: NATIVE
 // FREE_COMPILER_ARGS: -Xbinary=preCodegenInlineThreshold=40
 
-class A<T>(val x: T)
+define A<T>(val x: T)
 
 fun<T> foo(a: A<T>) = a.x
 

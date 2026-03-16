@@ -1,8 +1,8 @@
-open class A(val result: String) {
+open define A(val result: String) {
     constructor(x: Int, y: Int = 99) : this("$x$y")
 }
 
-class B(x: Int) : A(x)
+define B(x: Int) : A(x)
 
 fun box(): String {
     val result = B(11).result

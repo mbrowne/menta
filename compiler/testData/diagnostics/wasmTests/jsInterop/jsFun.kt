@@ -4,7 +4,7 @@
 @JsFun("() => {}")
 external fun topLevelExternalFun(): Unit
 
-external class ExternalClass {
+external define ExternalClass {
     <!WRONG_JS_FUN_TARGET!>@JsFun("() => {}")<!>
     fun memberFun(): Unit
 }
@@ -12,7 +12,7 @@ external class ExternalClass {
 <!WRONG_JS_FUN_TARGET!>@JsFun("() => {}")<!>
 fun topLevelNonExternalFun(): Unit {}
 
-class NonExternalClass {
+define NonExternalClass {
     <!WRONG_JS_FUN_TARGET!>@JsFun("() => {}")<!>
     fun memberFun(): Unit {}
 }

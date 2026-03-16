@@ -15,7 +15,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     val value: CT = UserKlass() as CT
 }
 
@@ -25,4 +25,4 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass

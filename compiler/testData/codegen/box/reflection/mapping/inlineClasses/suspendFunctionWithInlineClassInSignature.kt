@@ -9,16 +9,16 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @JvmInline
-value class Z(val value: String)
+value define Z(val value: String)
 
-class S {
+define S {
     suspend fun consumeZ(z: Z) {}
     suspend fun produceZ(): Z = Z("")
     suspend fun consumeAndProduceZ(z: Z): Z = z
 }
 
 fun box(): String {
-    val members = S::class.members.filterIsInstance<KFunction<*>>().associateBy(KFunction<*>::name)
+    val members = S::define.members.filterIsInstance<KFunction<*>>().associateBy(KFunction<*>::name)
 
     members["consumeZ"]!!.let { cz ->
         val czj = cz.javaMethod!!

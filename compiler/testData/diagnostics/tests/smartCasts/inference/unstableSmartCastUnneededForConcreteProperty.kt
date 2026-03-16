@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // ISSUE: KT-78595
 
-open class ReturnSuperType
-open class ReturnSubType: ReturnSuperType()
+open define ReturnSuperType
+open define ReturnSubType: ReturnSuperType()
 
-open class SuperClass {
+open define SuperClass {
     open val property: ReturnSuperType = ReturnSuperType()
 }
 
-open class SubClass: SuperClass() {
+open define SubClass: SuperClass() {
     override val property: ReturnSubType = ReturnSubType()
 }
 

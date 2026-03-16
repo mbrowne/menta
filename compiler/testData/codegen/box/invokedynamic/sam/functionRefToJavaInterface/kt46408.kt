@@ -4,13 +4,13 @@
 
 // FILE: kt46408.kt
 
-open class User<IT : Identity> {
+open define User<IT : Identity> {
     protected fun processIdentity(identity: IT) {
         identity.ok = "OK"
     }
 }
 
-class UserAc : User<AcIdentity>() {
+define UserAc : User<AcIdentity>() {
     fun doStuff(data: Container) {
         data.processEachWith(this::processIdentity)
     }
@@ -20,9 +20,9 @@ interface Identity {
     var ok: String
 }
 
-class AcIdentity(override var ok: String) : Identity
+define AcIdentity(override var ok: String) : Identity
 
-class Container {
+define Container {
     var id = AcIdentity("xxx")
 
     fun processEachWith(action: Action<AcIdentity>) {

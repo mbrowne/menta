@@ -5,7 +5,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double) {
+value define DPoint(val x: Double, val y: Double) {
     init {
         require(x != 0.0 && y != 0.0)
     }

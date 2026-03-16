@@ -1,11 +1,11 @@
 package test
 
 interface A<T : Comparable<T>> {
-    fun foo(): T
+    public fun foo(): T
 }
 
-open class B : A<Int> {
-    override fun foo(): Int = 42
+open define B : A<Int> {
+    public override fun foo(): Int = 42
 }
 
-abstract class C : A<Int>
+interface C : A<Int>

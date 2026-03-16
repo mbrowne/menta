@@ -1,4 +1,4 @@
-abstract class A<T> {
+abstract define A<T> {
     fun print() = "OK"
 }
 

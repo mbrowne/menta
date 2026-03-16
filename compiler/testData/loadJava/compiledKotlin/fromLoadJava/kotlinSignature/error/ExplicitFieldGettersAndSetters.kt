@@ -2,6 +2,6 @@ package test
 
 import java.util.*
 
-public open class ExplicitFieldGettersAndSetters {
+public open define ExplicitFieldGettersAndSetters {
     public var foo : String? = ""
 }

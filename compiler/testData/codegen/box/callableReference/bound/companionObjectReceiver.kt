@@ -1,5 +1,5 @@
 
-class A {
+define A {
     companion object {
         fun ok() = "OK"
     }

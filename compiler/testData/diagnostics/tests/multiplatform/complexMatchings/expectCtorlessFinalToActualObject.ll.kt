@@ -3,28 +3,28 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class E01
-expect class E02()
-expect open class E03
+expect define E01
+expect define E02()
+expect open define E03
 
-expect class E04 {
+expect define E04 {
     constructor()
 }
 
-expect class E05(e: E01)
-expect class E06 {
+expect define E05(e: E01)
+expect define E06 {
     constructor(e: E02)
 }
 
 expect interface I01
 
-expect class M01 {
+expect define M01 {
     fun foo()
 }
 
-expect enum class ENUM01
+expect enum define ENUM01
 
-expect annotation class ANNO01
+expect annotation define ANNO01
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt

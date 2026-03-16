@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
 // VAL
-class A(
+define A(
         val
         val x: Int,
         val
@@ -12,7 +12,7 @@ class A(
 val
 fun foo() {}
 
-class B {
+define B {
     val
     fun foo() {}
 
@@ -23,7 +23,7 @@ class B {
 }
 
 // VAR
-class C(
+define C(
         var
         val x: Int,
         var
@@ -34,7 +34,7 @@ class C(
 var
 fun baz() {}
 
-class D {
+define D {
     var
     fun foo() {}
 

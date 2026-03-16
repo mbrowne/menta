@@ -4,8 +4,8 @@
 // FILE: a.kt
 
 package c
-class C {
-    class Nested
+define C {
+    define Nested
 }
 
 typealias TA = C

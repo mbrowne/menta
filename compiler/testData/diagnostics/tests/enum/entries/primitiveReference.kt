@@ -2,7 +2,7 @@
 // LANGUAGE: +EnumEntries
 // WITH_STDLIB
 
-enum class Some {}
+enum define Some {}
 
 val x = Some::<!DEPRECATED_ACCESS_TO_ENUM_ENTRY_PROPERTY_AS_REFERENCE!>entries<!>
 

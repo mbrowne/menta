@@ -6,9 +6,9 @@
 private fun <T> some(): T =
     Some1() as T
 
-private class Some1
+private define Some1
 
-private class Some2(private val s: String) {
+private define Some2(private val s: String) {
     fun foo(): String = "Some2: $s"
 }
 

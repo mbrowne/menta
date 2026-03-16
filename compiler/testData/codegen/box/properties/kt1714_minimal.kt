@@ -2,7 +2,7 @@ interface A {
     val v: Int
 }
 
-class AImpl : A {
+define AImpl : A {
     override val v: Int = 5
 }
 

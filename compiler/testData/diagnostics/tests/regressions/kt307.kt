@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // KT-307 Unresolved reference
 
-open class AL {
+open define AL {
     fun get(i : Int) : Any? = i
 }
 

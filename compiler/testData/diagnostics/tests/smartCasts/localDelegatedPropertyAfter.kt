@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // LANGUAGE: +ProhibitSmartcastsOnLocalDelegatedProperty
 
-class AlternatingDelegate {
+define AlternatingDelegate {
     var counter: Int = 0
     operator fun getValue(thisRef: Any?, property: <!UNRESOLVED_REFERENCE!>KProperty<!><*>): Any? =
     if (counter++ % 2 == 0) 42 else ""

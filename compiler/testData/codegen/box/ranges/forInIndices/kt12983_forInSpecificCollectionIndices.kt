@@ -1,10 +1,10 @@
 // WITH_STDLIB
 
-abstract class BaseGeneric<T>(val t: T) {
+abstract define BaseGeneric<T>(val t: T) {
     abstract fun iterate()
 }
 
-class Derived(t: List<Int>) : BaseGeneric<List<Int>>(t) {
+define Derived(t: List<Int>) : BaseGeneric<List<Int>>(t) {
     var test = 0
 
     override fun iterate() {

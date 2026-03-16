@@ -9,7 +9,7 @@ public interface A {
 // FILE: AImpl.java
 import org.jetbrains.annotations.NotNull;
 
-public class AImpl implements A {
+public define AImpl implements A {
     @Override
     @NotNull
     public String f() {
@@ -21,22 +21,22 @@ public class AImpl implements A {
 interface B : A
 
 // FILE: BImpl.kt
-open class BImpl : AImpl(), B
+open define BImpl : AImpl(), B
 
 // FILE: C.java
 public interface C extends B { }
 
 // FILE: CImpl.java
-public class CImpl extends BImpl implements C { }
+public define CImpl extends BImpl implements C { }
 
 // FILE: D.java
 public interface D extends C { }
 
 // FILE: DImpl.java
-public class DImpl extends CImpl implements D { }
+public define DImpl extends CImpl implements D { }
 
 // FILE: box.kt
-class Z : DImpl(), D
+define Z : DImpl(), D
 
 fun box(): String {
     return Z().f()

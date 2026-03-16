@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Ann
+annotation define Ann
 
-class C {
+define C {
     fun foo() {
-        class Local {
+        define Local {
             @Ann<!SYNTAX!><!>
         }
     }

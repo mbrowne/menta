@@ -43,7 +43,7 @@ var <!DYNAMIC_RECEIVER_NOT_ALLOWED!>dynamic<!>.varOnDynamic: Int
     set(v) {}
 
 
-class ForMemberExtensions {
+define ForMemberExtensions {
     fun test(d: dynamic) {
         d.<!DEBUG_INFO_DYNAMIC!>memberExtensionVar<!>
         d.<!DEBUG_INFO_DYNAMIC!>memberExtensionVar<!> = 1

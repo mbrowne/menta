@@ -1,2 +1,2 @@
-abstract class A<T> : List<T>
-abstract class B<E> : A<E>()
+abstract define A<T> : List<T>
+abstract define B<E> : A<E>()

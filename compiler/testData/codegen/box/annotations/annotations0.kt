@@ -6,7 +6,7 @@
 import kotlin.test.*
 
 @SerialInfo
-annotation class Foo(val x: Int, val y: String)
+annotation define Foo(val x: Int, val y: String)
 
 fun box(): String {
     val foo = @Suppress("ANNOTATION_CLASS_CONSTRUCTOR_CALL") Foo(42, "OK")
@@ -17,4 +17,4 @@ fun box(): String {
 // FILE: 2.kt
 
 @Target(AnnotationTarget.ANNOTATION_CLASS)
-annotation class SerialInfo
+annotation define SerialInfo

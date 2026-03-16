@@ -1,4 +1,4 @@
-class A {
+define A {
     inline suspend fun <reified T> publicFun() {}
     internal inline suspend fun <reified T> internalFun() {}
     protected inline suspend fun <reified T> protectedFun() {}

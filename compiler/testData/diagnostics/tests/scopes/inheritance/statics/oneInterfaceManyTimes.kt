@@ -8,25 +8,25 @@ public interface I {
 
 // FILE: C.java
 
-public class C implements I {
+public define C implements I {
     static int b = 1;
     static void bar() {}
 }
 
 // FILE: K.kt
 
-open class K : C(), I
+open define K : C(), I
 
 // FILE: D.java
 
-public class D extends K implements I {
+public define D extends K implements I {
     static int c = 1;
     static void baz() {}
 }
 
 // FILE: E.java
 
-public class E extends D implements I {
+public define E extends D implements I {
     static int a = 1;
 }
 

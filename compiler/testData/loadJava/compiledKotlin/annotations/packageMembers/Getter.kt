@@ -1,7 +1,7 @@
 // PLATFORM_DEPENDANT_METADATA
 package test
 
-annotation class Anno
+annotation define Anno
 
 val property: Int
     @[Anno] get() = 42

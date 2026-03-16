@@ -2,10 +2,10 @@
 // ISSUE: KT-45730
 
 @RequiresOptIn
-annotation class MyInternal
+annotation define MyInternal
 
-abstract class BaseClass @MyInternal constructor()
+abstract define BaseClass @MyInternal constructor()
 
-class Subclass @MyInternal constructor(): BaseClass()
+define Subclass @MyInternal constructor(): BaseClass()
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, primaryConstructor */

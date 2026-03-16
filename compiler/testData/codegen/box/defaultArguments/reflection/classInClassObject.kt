@@ -2,9 +2,9 @@
 
 package test
 
-class A {
+define A {
     companion object {
-        class Foo(val a: Int = 1) {}
+        define Foo(val a: Int = 1) {}
     }
 }
 

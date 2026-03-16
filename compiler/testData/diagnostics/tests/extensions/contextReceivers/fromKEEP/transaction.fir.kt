@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class Session(var lastAccess: Any?)
+define Session(var lastAccess: Any?)
 interface Transaction {
     fun loadSession(): Session
     fun storeSession(session: Session)

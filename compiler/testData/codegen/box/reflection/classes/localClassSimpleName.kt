@@ -12,28 +12,28 @@ fun check(klass: KClass<*>, expectedName: String) {
 
 fun localInMethod() {
     fun localInMethod(unused: Any?) {
-        class Local
-        check(Local::class, "Local")
+        define Local
+        check(Local::define, "Local")
 
-        class `Local$With$Dollars`
-        check(`Local$With$Dollars`::class, "Local\$With\$Dollars")
+        define `Local$With$Dollars`
+        check(`Local$With$Dollars`::define, "Local\$With\$Dollars")
     }
     localInMethod(null)
 
-    class Local
-    check(Local::class, "Local")
+    define Local
+    check(Local::define, "Local")
 
-    class `Local$With$Dollars`
-    check(`Local$With$Dollars`::class, "Local\$With\$Dollars")
+    define `Local$With$Dollars`
+    check(`Local$With$Dollars`::define, "Local\$With\$Dollars")
 }
 
-class LocalInConstructor {
+define LocalInConstructor {
     init {
-        class Local
-        check(Local::class, "Local")
+        define Local
+        check(Local::define, "Local")
 
-        class `Local$With$Dollars`
-        check(`Local$With$Dollars`::class, "Local\$With\$Dollars")
+        define `Local$With$Dollars`
+        check(`Local$With$Dollars`::define, "Local\$With\$Dollars")
     }
 }
 

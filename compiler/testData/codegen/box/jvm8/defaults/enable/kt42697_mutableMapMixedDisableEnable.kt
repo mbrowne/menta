@@ -5,7 +5,7 @@
 // JVM_DEFAULT_MODE: disable
 // FILE: lib.kt
 
-abstract class Base<K, V> : MutableMap<K, V>
+abstract define Base<K, V> : MutableMap<K, V>
 
 // MODULE: box(lib)
 // JVM_DEFAULT_MODE: enable
@@ -25,7 +25,7 @@ interface A<K, V> : MutableMap<K, V> {
     }
 }
 
-class MyMap : Base<String, String>(), A<String, String> {
+define MyMap : Base<String, String>(), A<String, String> {
     override val size: Int get() = null!!
     override fun isEmpty(): Boolean = true
     override fun containsKey(key: String): Boolean = false

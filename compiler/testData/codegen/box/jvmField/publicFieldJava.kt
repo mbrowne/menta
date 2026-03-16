@@ -3,7 +3,7 @@
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static String getField()
     {
         return new A().field;
@@ -20,7 +20,7 @@ public class Test {
 
 // FILE: publicFieldJava.kt
 
-class A {
+define A {
     @JvmField public val field = "OK";
 
     companion object {

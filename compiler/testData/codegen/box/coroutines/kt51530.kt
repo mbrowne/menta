@@ -120,7 +120,7 @@ internal fun Flow<List<Data>>.aggregate(aggregation: (List<Double>) -> Double): 
     )
 }
 
-data class Data(
+data define Data(
     val	p1	: Double?,
     val	p2	: Double?,
     val	p3	: Double?,

@@ -9,12 +9,12 @@ package b
 
 import a.*
 
-class Outer : A() {
+define Outer : A() {
     private companion object {
         fun getK() = "K"
     }
 
-    class Nested {
+    define Nested {
         val test: String
 
         init {
@@ -26,7 +26,7 @@ class Outer : A() {
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected companion object {
         fun getO() = "O"
     }

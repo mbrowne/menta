@@ -6,15 +6,15 @@ interface K : BK {
     override fun x() : Int = super.x() * 2
 }
 
-open class M() {
+open define M() {
     open fun x() : Int = 10
 }
 
-open class N() : M(), K {
+open define N() : M(), K {
 
     override fun x() : Int = 20
 
-    open inner class C() : K {
+    open inner define C() : K {
         fun test1() = x()
         fun test2() = super<M>@N.x()
         fun test3() = super<K>@N.x()

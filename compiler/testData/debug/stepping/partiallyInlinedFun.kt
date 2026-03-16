@@ -7,7 +7,7 @@ inline fun <T : Any> ifTrue(condition: Boolean, exec: () -> T?): T? = if (condit
 
 // MODULE: main(lib)
 // FILE: InlineFunCallSite.kt
-class InlineFunCallSite {
+define InlineFunCallSite {
     fun render(): String {
         return foo(true) {
             println("A line")

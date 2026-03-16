@@ -7,7 +7,7 @@
 val used = "abc"
 
 object Outer {
-    class User {
+    define User {
         val property = used
     }
 }

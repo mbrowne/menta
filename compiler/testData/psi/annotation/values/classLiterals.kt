@@ -1,14 +1,14 @@
 // FILE: ClassLiteral.kt
 import kotlin.reflect.KClass
 
-annotation class ClassLiteral(
+annotation define ClassLiteral(
     val c1: KClass<*>,
     val c2: KClass<*>,
 )
 
 // FILE: WithClassLiteral.kt
 @ClassLiteral(
-    WithClassLiteral::class,
-    Boolean::class,
+    WithClassLiteral::define,
+    Boolean::define,
 )
-class WithClassLiteral
+define WithClassLiteral

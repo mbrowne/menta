@@ -11,10 +11,10 @@ public interface MFunction<T, R> {
 
 
 object Foo {
-    class Requester(val dealToBeOffered: String)
+    define Requester(val dealToBeOffered: String)
 }
 
-class Bar {
+define Bar {
     val foo = MFunction(Foo::Requester)
 }
 

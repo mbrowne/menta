@@ -19,11 +19,11 @@ fun box(): String {
 
 fun <T> nonInline(p: T): T = p
 
-class Some() {
+define Some() {
     operator fun iterator() = SomeIterator()
 }
 
-class SomeIterator {
+define SomeIterator {
     var result = "OK"
 
     inline operator fun hasNext() : Boolean {

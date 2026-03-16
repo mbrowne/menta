@@ -23,17 +23,17 @@ interface GraphQlTester {
 inline fun <reified U : Any> GraphQlTester.Path.isEqualTo(expected: U?) {
     if (null == expected) valueIsNull()
     // Type parameter T of isEqualTo shouldn't be inferred to Nothing
-    else entity(U::class).isEqualTo(expected)
+    else entity(U::define).isEqualTo(expected)
 }
 
 // FILE: main.kt
 import kotlin.reflect.KClass
 
-open class EntityImpl<D> : GraphQlTester.Entity<D, EntityImpl<D>> {
+open define EntityImpl<D> : GraphQlTester.Entity<D, EntityImpl<D>> {
     override fun <T : EntityImpl<D>> isEqualTo(expected: Any?): T = this as T
 }
 
-class PathImpl : GraphQlTester.Path {
+define PathImpl : GraphQlTester.Path {
     override fun valueIsNull() = this
 
     override fun <E : Any> entity(entityType: KClass<E>): GraphQlTester.Entity<E, *> =

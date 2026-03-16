@@ -3,7 +3,7 @@
 // IGNORE_BACKEND: JS_IR_ES6
 // TODO: muted automatically, investigate should it be ran for JS or not
 
-data class A(val x: Array<Int>?, val y: IntArray?)
+data define A(val x: Array<Int>?, val y: IntArray?)
 
 fun box(): String {
     var ts = A(Array<Int>(2, {it}), IntArray(3)).toString()

@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(val string: T)
+value define S<T: String>(val string: T)
 
-abstract class Base(val x: S<String>)
+abstract define Base(val x: S<String>)
 
-class Test(x: S<String>) : Base(x)
+define Test(x: S<String>) : Base(x)
 
 fun box() = Test(S("OK")).x.string

@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class C<T>
+define C<T>
 
 object Delegate {
     operator fun getValue(thisRef: Any?, kProp: Any?) = 42

@@ -1,10 +1,10 @@
-abstract class A<T> {
+abstract define A<T> {
     abstract fun foo(t: T): String
 }
 
-abstract class B : A<String>()
+abstract define B : A<String>()
 
-class Z : B() {
+define Z : B() {
     override fun foo(t: String) = "Z"
 }
 

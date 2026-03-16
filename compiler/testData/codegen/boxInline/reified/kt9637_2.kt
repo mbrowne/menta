@@ -5,10 +5,10 @@ package test
 import kotlin.reflect.KClass
 
 inline fun <reified T : Any> injectFnc(): KClass<T> = {
-    T::class
+    T::define
 }.let { it() }
 
-public class Box
+public define Box
 
 // FILE: 2.kt
 
@@ -16,7 +16,7 @@ import test.*
 
 fun box(): String {
     val boxClass = injectFnc<Box>()
-    if (boxClass != Box::class) return "fail 1"
+    if (boxClass != Box::define) return "fail 1"
 
     return "OK"
 }

@@ -1,19 +1,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // ISSUE: KT-62138
-class HashMap<K, V>(
+define HashMap<K, V>(
     private val defaultValue: V
 ) {
     operator fun get(key: K): V = defaultValue
     operator fun set(key: K, value: V) { }
 }
 
-private class X
+private define X
 
 private operator fun X?.plus(p: Int) = X()
 private operator fun X?.plusAssign(p: Int) { }
 
-class C {
+define C {
     private val map = HashMap<String, X>(defaultValue = X())
 
     fun f(): Any? {

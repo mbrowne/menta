@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class NothingReturnTypeAsGenericKt\$box\$1
+// 1 define NothingReturnTypeAsGenericKt\$box\$1
 
 fun interface IFoo<T> {
     fun foo(): T

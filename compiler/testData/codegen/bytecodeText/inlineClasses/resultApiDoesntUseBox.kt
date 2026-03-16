@@ -17,7 +17,7 @@ fun test() {
     println(result.getOrDefault("oops"))
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC kotlin/Result.box-impl
 // 0 INVOKEVIRTUAL kotlin/Result.unbox-impl
 // 0 Result\$Failure

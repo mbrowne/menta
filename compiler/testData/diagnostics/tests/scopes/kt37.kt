@@ -2,7 +2,7 @@
 //KT-37 Typechecker doesn't complain about accessing non-public property
 package kt37
 
-class C() {
+define C() {
     private var f: Int
 
     init {

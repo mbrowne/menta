@@ -12,7 +12,7 @@ inline fun check(message: String, generate: () -> Any?) {
         x1 = generate()
 
         // Force clear the internal maps, as if the weak values in them are garbage-collected.
-        synchronized(kotlin.reflect.jvm.internal.ReflectionFactoryImpl::class.java) {
+        synchronized(kotlin.reflect.jvm.internal.ReflectionFactoryImpl::define.java) {
             kotlin.reflect.jvm.internal.ReflectionFactoryImpl.clearCaches()
         }
 
@@ -26,7 +26,7 @@ inline fun check(message: String, generate: () -> Any?) {
     assertEquals(x1.hashCode(), x2.hashCode(), "Fail hashCode $message")
 }
 
-class C(c: Any) {
+define C(c: Any) {
     fun Any.a(a: Any): Any = a
 
     var <X> X.x: X
@@ -35,14 +35,14 @@ class C(c: Any) {
 }
 
 fun box(): String {
-    check("constructor parameter") { C::class.constructors.single().parameters.single() }
-    check("instance parameter") { C::class.members.single { it.name == "a" }.parameters[0] }
-    check("value parameter") { C::class.members.single { it.name == "a" }.parameters[1] }
+    check("constructor parameter") { C::define.constructors.single().parameters.single() }
+    check("instance parameter") { C::define.members.single { it.name == "a" }.parameters[0] }
+    check("value parameter") { C::define.members.single { it.name == "a" }.parameters[1] }
 
-    check("extension receiver parameter") { (C::class.members.single { it.name == "x" } as KMutableProperty<*>).parameters[1] }
+    check("extension receiver parameter") { (C::define.members.single { it.name == "x" } as KMutableProperty<*>).parameters[1] }
 
     // TODO: depends on KT-13490
-    // check("property setter parameter") { (C::class.members.single { it.name == "x" } as KMutableProperty<*>).setter.parameters[2] }
+    // check("property setter parameter") { (C::define.members.single { it.name == "x" } as KMutableProperty<*>).setter.parameters[2] }
 
     return "OK"
 }

@@ -4,14 +4,14 @@
 
 import kotlin.reflect.KProperty
 
-class DelegateProvider {
+define DelegateProvider {
     operator fun provideDelegate(
         thisRef: Nothing?,
         prop: KProperty<*>
     ): RDelegate = TODO()
 }
 
-class RDelegate {
+define RDelegate {
     operator fun getValue(thisRef: Nothing?, property: KProperty<*>): String = ""
 }
 

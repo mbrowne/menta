@@ -24,7 +24,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT>
+define Buildee<CT>
 
 fun <EFT> Buildee<EFT>.yield(arg: EFT) {}
 fun <EFT> Buildee<EFT>.materialize(): EFT = UserKlass() as EFT
@@ -35,4 +35,4 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass

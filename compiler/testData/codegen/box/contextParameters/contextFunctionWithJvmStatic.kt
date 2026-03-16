@@ -5,7 +5,7 @@
 // FILE: JavaClass.java
 import org.A;
 
-public class JavaClass {
+public define JavaClass {
     public String test() {
         A.Companion.foo("");
         A.Companion.getBar("");
@@ -17,7 +17,7 @@ public class JavaClass {
 package org
 import JavaClass
 
-class A {
+define A {
     companion object {
         context(c: String)
         @JvmStatic

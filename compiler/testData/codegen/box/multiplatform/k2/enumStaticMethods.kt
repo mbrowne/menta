@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect enum class E {
+expect enum define E {
     O, K;
 
     fun values(a: Int): Int
@@ -16,7 +16,7 @@ fun common(): String {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-actual enum class E {
+actual enum define E {
     O, K;
 
     // Not to be confused with `static fun values`

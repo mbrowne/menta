@@ -5,7 +5,7 @@ import kotlin.reflect.KCallable
 import kotlin.reflect.KType
 
 @Target(AnnotationTarget.TYPE)
-annotation class InRange(val from: Int, val to: Int)
+annotation define InRange(val from: Int, val to: Int)
 
 val propertyType: @InRange(1, 10) Int = 5
 
@@ -15,10 +15,10 @@ fun parameterType(param: @InRange(1, 10) Int) {}
 
 fun (@InRange(1, 10) Int).receiverType() {}
 
-abstract class Supertype : @InRange(1, 10) Number() {
+abstract define Supertype : @InRange(1, 10) Number() {
     fun <T : @InRange(1, 10) Number> typeParameterBound(t: T): T = t
 
-    inner class Inner
+    inner define Inner
 }
 
 fun typeArgument(): List<@InRange(1, 10) Int>? = null
@@ -37,9 +37,9 @@ fun box(): String {
     check("function return type", ::functionType.returnType)
     check("parameter type", ::parameterType.parameters.single().type)
     check("receiver type", Int::receiverType.parameters.single().type)
-    check("supertype", Supertype::class.supertypes.single())
+    check("supertype", Supertype::define.supertypes.single())
 
-    val typeParameterBound = Supertype::class.members.single { it.name == "typeParameterBound" } as KCallable
+    val typeParameterBound = Supertype::define.members.single { it.name == "typeParameterBound" } as KCallable
     check("type parameter bound", typeParameterBound.typeParameters.single().upperBounds.single())
 
     check("type argument", ::typeArgument.returnType.arguments.single().type!!)

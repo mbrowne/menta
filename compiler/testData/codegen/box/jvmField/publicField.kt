@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class A {
+define A {
     @JvmField public val field = "OK";
 
     companion object {

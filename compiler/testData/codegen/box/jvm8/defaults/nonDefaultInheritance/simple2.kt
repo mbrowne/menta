@@ -20,7 +20,7 @@ interface Derived : Foo {
     override fun toOverride() = Thread.currentThread().getStackTrace().map { it.className + "." + it.methodName }
 }
 
-class DerivedClass : Derived 
+define DerivedClass : Derived 
 
 
 fun box(): String {

@@ -2,7 +2,7 @@
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static void checkCallFromJava() {
         try {
             String x = TestKt.foo().iterator().next();
@@ -15,7 +15,7 @@ public class Test {
 
 interface MyIterable<T> : Iterable<T>
 
-class E : RuntimeException()
+define E : RuntimeException()
 fun foo(): MyIterable<String> = throw E()
 
 fun box(): String {

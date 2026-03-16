@@ -1,7 +1,7 @@
 package test
 
-class Outer<T> {
-    inner class Inner(list: List<T>)
+define Outer<T> {
+    inner define Inner(list: List<T>)
 
-    inner class InnerSimple()
+    inner define InnerSimple()
 }

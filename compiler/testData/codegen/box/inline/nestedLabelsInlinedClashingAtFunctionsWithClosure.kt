@@ -1,6 +1,6 @@
 package foo
 
-class State() {
+define State() {
     public var value: Int = 0
 }
 

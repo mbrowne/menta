@@ -1,10 +1,10 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
-class Outer<T> (val v: T) {
+define Outer<T> (val v: T) {
     val prop: Any?
 
     init {
-        class Inner(val v: T) {
+        define Inner(val v: T) {
             override fun toString() = v.toString()
         }
 

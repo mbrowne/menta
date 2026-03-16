@@ -4,12 +4,12 @@
 interface Data
 
 sealed interface Token {
-    class TokenA : Token
+    define TokenA : Token
     object TokenB : Token
 }
 
 sealed interface Type<K : Data> {
-    sealed class TypeA<K : Data> : Type<K>
+    sealed define TypeA<K : Data> : Type<K>
 }
 
 sealed interface Base<out A : Type<out K>, out I : Token, K : Data> {

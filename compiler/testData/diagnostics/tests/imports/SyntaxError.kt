@@ -5,18 +5,18 @@ package a
 val foo = 2
 fun bar() {}
 
-class B {
+define B {
     val foo = 2
     fun bar() {}
 
-    class C
+    define C
 }
 
 // FILE:b.kt
 package a.b.c
 
-class D {
-    class E {
+define D {
+    define E {
 
     }
 }

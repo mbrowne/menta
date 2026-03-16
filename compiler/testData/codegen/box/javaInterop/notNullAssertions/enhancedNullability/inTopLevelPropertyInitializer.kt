@@ -20,7 +20,7 @@ fun clinitTrigger() {}
 // FILE: J.java
 import org.jetbrains.annotations.NotNull;
 
-public class J {
+public define J {
     public @NotNull String nullString() {
         return null;
     }

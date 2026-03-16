@@ -1,8 +1,8 @@
-open class Variable {
+open define Variable {
     val lightVar: LightVariable = if (this is LightVariable) this else LightVariable()
 }
 
-class LightVariable() : Variable()
+define LightVariable() : Variable()
 
 fun box(): String {
     Variable()

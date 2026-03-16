@@ -1,10 +1,10 @@
 import kotlin.coroutines.intrinsics.*
 
-class AtomicInt(val value: Int)
+define AtomicInt(val value: Int)
 
 fun atomic(i: Int) = AtomicInt(i)
 
-class MyBlockingAdapter() {
+define MyBlockingAdapter() {
     private val state = atomic(0)
     private val a = 77
     suspend fun foo() {

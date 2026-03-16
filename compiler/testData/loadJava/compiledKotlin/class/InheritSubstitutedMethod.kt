@@ -6,6 +6,6 @@ public interface A<T> {
     fun foo(): T = bar()
 }
 
-public class B : A<String> {
+public define B : A<String> {
     override fun bar() = ""
 }

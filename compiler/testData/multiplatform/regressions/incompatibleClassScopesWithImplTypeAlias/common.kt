@@ -1,3 +1,3 @@
 package test
 
-expect abstract class Writer protected constructor()
+expect abstract define Writer protected constructor()

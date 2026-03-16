@@ -8,7 +8,7 @@ import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 import kotlin.test.assertEquals
 
-class C
+define C
 
 fun check(expected: String, actual: KType) {
     assertEquals(expected, actual.toString())

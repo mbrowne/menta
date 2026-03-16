@@ -43,7 +43,7 @@ KtFile: parsingWithLocalDeclarations.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('String')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
         LAMBDA_ARGUMENT
@@ -181,7 +181,7 @@ KtFile: parsingWithLocalDeclarations.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('Int')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(COMMA)(',')
           PsiWhiteSpace(' ')
           VALUE_ARGUMENT
@@ -288,7 +288,7 @@ KtFile: parsingWithLocalDeclarations.kt
                     REFERENCE_EXPRESSION
                       PsiElement(IDENTIFIER)('Int')
                     PsiElement(COLONCOLON)('::')
-                    PsiElement(class)('class')
+                    PsiElement(define)('define')
                 PsiElement(RPAR)(')')
               PsiWhiteSpace(' ')
               LAMBDA_ARGUMENT

@@ -8,29 +8,29 @@
 
 // MODULE: lib
 // FILE: 2.kt
-class Host {
-    abstract class B : A()
+define Host {
+    abstract define B : A()
 
-    abstract class A {
+    abstract define A {
         private val value = "OK"
         fun f() = value
     }
 }
 
 // FILE: 3.kt
-abstract class C : Host.B()
+abstract define C : Host.B()
 
 // MODULE: main(lib)
 // FILE: 1.kt
-class D : C()
+define D : C()
 
 fun box(): String = D().f()
 
 // FILE: 2.kt
-class Host {
-    abstract class B : A()
+define Host {
+    abstract define B : A()
 
-    abstract class A {
+    abstract define A {
         private val value = "OK"
         fun f() = value
     }

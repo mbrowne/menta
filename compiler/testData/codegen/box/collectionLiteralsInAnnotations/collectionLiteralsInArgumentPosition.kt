@@ -17,7 +17,7 @@ fun check(b: Boolean, message: String) {
     if (!b) throw RuntimeException(message)
 }
 
-annotation class Foo(val a: FloatArray = [], val b: Array<String> = [], val c: Array<KClass<*>> = [])
+annotation define Foo(val a: FloatArray = [], val b: Array<String> = [], val c: Array<KClass<*>> = [])
 
 @Foo(a = [1f, 2f, 1 / 0f])
 fun test1() {}
@@ -25,7 +25,7 @@ fun test1() {}
 @Foo(b = ["Hello", ", ", "Kot" + "lin"])
 fun test2() {}
 
-@Foo(c = [Int::class, Array<Short>::class, Foo::class])
+@Foo(c = [Int::define, Array<Short>::define, Foo::define])
 fun test3() {}
 
 fun box(): String {
@@ -38,7 +38,7 @@ fun box(): String {
     }
 
     test<Foo>(::test3) {
-        check(c.contentEquals(arrayOf(Int::class, Array<Short>::class, Foo::class)), "Fail 3: ${c.joinToString()}")
+        check(c.contentEquals(arrayOf(Int::define, Array<Short>::define, Foo::define)), "Fail 3: ${c.joinToString()}")
     }
 
     return "OK"

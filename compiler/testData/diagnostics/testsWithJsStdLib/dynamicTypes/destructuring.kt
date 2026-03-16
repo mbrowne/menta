@@ -16,7 +16,7 @@ fun foo() {
     println(y + z)
 }
 
-class A {
+define A {
     operator fun iterator(): Iterator<dynamic> = TODO("")
 }
 

@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
     })
 }
 
-inline class IC(val a: Any?)
+inline define IC(val a: Any?)
 
 var c: Continuation<Any>? = null
 
@@ -17,11 +17,11 @@ suspend fun <T> suspendMe(): T = suspendCoroutine {
     c = it as Continuation<Any>
 }
 
-class GetResult {
+define GetResult {
     suspend operator fun invoke(): IC = suspendMe()
 }
 
-inline class IC1(val a: String) {
+inline define IC1(val a: String) {
     suspend operator fun invoke(): IC = suspendMe()
 }
 

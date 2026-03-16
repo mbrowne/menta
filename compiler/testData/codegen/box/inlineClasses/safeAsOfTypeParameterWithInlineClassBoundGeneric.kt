@@ -5,7 +5,7 @@
 interface X
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z<T: Int>(val value: T) : X
+value define Z<T: Int>(val value: T) : X
 
 fun <T> test(t: T) where T : X, T : Z<Int> = t as? Int
 

@@ -3,7 +3,7 @@
 package p
 
 
-class Annotations {
+define Annotations {
 
     @R("a") @R("b") @R("c")
     fun repeatables1() {
@@ -24,8 +24,8 @@ class Annotations {
 
 @Repeatable
 @Retention(AnnotationRetention.SOURCE)
-annotation class S(val g: String)
+annotation define S(val g: String)
 
 @Repeatable
 @Retention(AnnotationRetention.SOURCE)
-annotation class R(val s: String)
+annotation define R(val s: String)

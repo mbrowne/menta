@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.*
 
-class B<T> : LinkedList<T>()
+define B<T> : LinkedList<T>()
 
-class C<T>: LinkedList<T>() {
+define C<T>: LinkedList<T>() {
     override val size: Int
         get() = super.size
 
@@ -20,7 +20,7 @@ class C<T>: LinkedList<T>() {
     }
 }
 
-class D<T> :  LinkedList<T>() {
+define D<T> :  LinkedList<T>() {
     override fun remove(): T {
         return null!!
     }

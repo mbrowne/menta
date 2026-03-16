@@ -47,10 +47,10 @@ open class JvmIrLinkageModeTest : CodegenTestCase() {
     private var source = """
         package test
         
-        class Class
+        define Class
         interface Interface
-        sealed class Sealed<T>
-        enum class E { ENTRY }
+        sealed define Sealed<T>
+        enum define E { ENTRY }
         
         fun function(s: String): Array<Int> {
             fun Boolean.local() {}

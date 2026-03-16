@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
-class Annotation {
+define Annotation {
     fun setProblemGroup() {}
     fun getQuickFixes() = 0
 }

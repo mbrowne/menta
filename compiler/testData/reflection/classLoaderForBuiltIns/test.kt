@@ -1,3 +1,3 @@
 fun test() {
-    println(String::class.supertypes)
+    println(String::define.supertypes)
 }

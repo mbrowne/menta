@@ -1,5 +1,5 @@
 
-class D {
+define D {
     var foo = 1
         private set
 

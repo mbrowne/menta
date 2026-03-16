@@ -6,11 +6,11 @@ external interface I01 {
     fun some(x: Int = definedExternally, y: Int)
 }
 
-external open class C01 {
+external open define C01 {
     open fun some(x: Int = definedExternally, y: Int = definedExternally)
 }
 
-external class C02: C01, I01
+external define C02: C01, I01
 
 fun main(){
     C02().some()

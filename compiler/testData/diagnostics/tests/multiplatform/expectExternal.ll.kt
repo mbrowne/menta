@@ -19,7 +19,7 @@ expect var getAndSet: String
 <!EXPECTED_EXTERNAL_DECLARATION!>external<!> expect val explicitGetter: String
     <!EXPECTED_EXTERNAL_DECLARATION!>external<!> get
 
-expect <!EXPECTED_EXTERNAL_DECLARATION!>external<!> class A {
+expect <!EXPECTED_EXTERNAL_DECLARATION!>external<!> define A {
     <!EXPECTED_EXTERNAL_DECLARATION!>external<!> fun foo()
     fun bar()
 }
@@ -38,7 +38,7 @@ actual var getAndSet: String
 actual <!WRONG_MODIFIER_TARGET!>external<!> val explicitGetter: String
     external get
 
-actual class A {
+actual define A {
     actual external fun foo()
     actual external fun bar()
 }

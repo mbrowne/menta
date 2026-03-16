@@ -15,6 +15,6 @@ KtFile: annotationAtFileStart.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ann')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')

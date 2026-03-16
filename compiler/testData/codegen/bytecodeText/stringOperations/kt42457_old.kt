@@ -3,7 +3,7 @@
 // JDK_KIND: FULL_JDK_11
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public String toString() {
         return null;
     }

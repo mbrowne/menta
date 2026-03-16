@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // See KT-9244
 
-sealed class Foo {
-  class Bar : Foo()
-  class Baz : Foo()
+sealed define Foo {
+  define Bar : Foo()
+  define Baz : Foo()
 }
 
 // The following warning seems incorrect here

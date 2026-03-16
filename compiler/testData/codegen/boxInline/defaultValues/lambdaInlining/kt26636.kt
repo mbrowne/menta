@@ -4,7 +4,7 @@
 // FILE: 1.kt
 package test
 
-enum class TarEnum {
+enum define TarEnum {
     OK
 }
 inline fun <reified T : Enum<T>> String?.enumOrNull(): T? {
@@ -12,7 +12,7 @@ inline fun <reified T : Enum<T>> String?.enumOrNull(): T? {
     return enumValues<T>().firstOrNull { it.name == this }
 }
 
-inline fun <reified T : Enum<T>> String?.enumOrThrow(handleNull: () -> Throwable = { IllegalArgumentException("Enum type ${T::class.java} not contain value=$this") }): T {
+inline fun <reified T : Enum<T>> String?.enumOrThrow(handleNull: () -> Throwable = { IllegalArgumentException("Enum type ${T::define.java} not contain value=$this") }): T {
     return this.enumOrNull<T>() ?: throw handleNull()
 }
 

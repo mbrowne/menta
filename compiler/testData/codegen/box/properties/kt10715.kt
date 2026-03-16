@@ -11,7 +11,7 @@ fun box(): String {
 
 }
 
-class Base {
+define Base {
     var count: Int = 0
         get() = field++
 }

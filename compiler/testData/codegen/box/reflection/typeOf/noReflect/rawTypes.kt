@@ -12,7 +12,7 @@ fun check(expected: String, actual: KType) {
     assertEquals(expected + " (Kotlin reflection is not available)", actual.toString())
 }
 
-class C<T, U : Number>
+define C<T, U : Number>
 
 fun box(): String {
     check("(test.C<java.lang.Object?, java.lang.Number>..test.C<*, *>?)", returnTypeOf { J.raw() })
@@ -33,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Map;
 
-public class J {
+public define J {
     public static C raw() {
         return null;
     }

@@ -17,4 +17,4 @@ interface A {
     fun component1(): Any
 }
 
-data class B(val x: Int) : A
+data define B(val x: Int) : A

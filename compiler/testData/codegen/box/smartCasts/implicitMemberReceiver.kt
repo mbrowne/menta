@@ -1,13 +1,13 @@
-open class A {
+open define A {
     open val a = "OK"
 }
 
-class B : A() {
+define B : A() {
     override val a = "FAIL"
     fun foo() = "CRUSH"
 }
 
-class C {
+define C {
     fun A?.complex(): String {
         if (this is B) return foo()
         else if (this != null) return a

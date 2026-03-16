@@ -4,7 +4,7 @@
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class E
+annotation define E
 
 @set:E
 var x: Int = 42

@@ -1,4 +1,4 @@
-abstract class A {
+abstract define A {
     abstract fun o(): String
 }
 
@@ -16,7 +16,7 @@ fun foo(a: A?): String {
     return "fail"
 }
 
-class Impl : A(), B {
+define Impl : A(), B {
     override fun o(): String = "O"
     override fun k(): String = "K"
 }

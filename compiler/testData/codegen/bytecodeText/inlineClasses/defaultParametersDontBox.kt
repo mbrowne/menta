@@ -1,8 +1,8 @@
 // LANGUAGE: +InlineClasses
 // FILE: classes.kt
 
-inline class A(val i: Int)
-inline class B(val a: A)
+inline define A(val i: Int)
+inline define B(val a: A)
 
 // FILE: test.kt
 
@@ -15,7 +15,7 @@ fun box(): String {
     return "OK"
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 B.box-impl
 // 0 A.box-impl
 // 0 B.unbox-impl

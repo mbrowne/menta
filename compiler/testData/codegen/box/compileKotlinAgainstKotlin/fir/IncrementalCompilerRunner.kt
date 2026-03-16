@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: A.kt
 
-abstract class IncrementalCompilerRunner<T>(
+abstract define IncrementalCompilerRunner<T>(
     private val workingDir: String,
     val fail: Boolean,
     val output: Collection<String> = emptyList()
@@ -11,7 +11,7 @@ abstract class IncrementalCompilerRunner<T>(
     fun res(res: T? = null): String = (res as? String) ?: (if (fail) "FAIL" else workingDir)
 }
 
-class IncrementalJsCompilerRunner(
+define IncrementalJsCompilerRunner(
     private val workingDir: String,
     fail: Boolean = true
 ) : IncrementalCompilerRunner<String>(workingDir, fail) {

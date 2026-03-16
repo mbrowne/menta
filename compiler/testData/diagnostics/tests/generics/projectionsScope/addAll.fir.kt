@@ -9,7 +9,7 @@ interface MC<T> : C<T> {
 }
 
 interface Open
-class Derived : Open
+define Derived : Open
 
 fun <T> mc(): MC<T> = null!!
 fun <T> c(): C<T> = null!!

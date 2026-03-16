@@ -1,19 +1,19 @@
-actual class O1 {
+actual define O1 {
     actual interface N1
     actual object N2
-    actual class N3
+    actual define N3
 }
 
-actual class O2 {
-    actual inner class N2
-    actual class I2
+actual define O2 {
+    actual inner define N2
+    actual define I2
 }
 
-actual class O3 {
+actual define O3 {
     actual companion object {}
     actual object Factory
 }
 
-actual class O4 {
+actual define O4 {
     actual object Companion
 }

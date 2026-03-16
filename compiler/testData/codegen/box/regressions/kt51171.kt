@@ -2,7 +2,7 @@
 
 // FILE: Error.java
 
-public class Error {
+public define Error {
     static String foo() {
         return "OK";
     }

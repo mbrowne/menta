@@ -9,18 +9,18 @@ import kotlin.test.*
 inline
 public fun <T> apply(arg: T, func: (T)->T): T = func(arg)
 
-public open class L {
+public open define L {
     inline
     protected fun <T> applyL(arg: T, func: (T)->T): T = func(arg)
     fun test4(l: L, x: Int, y: Int): Int = l.applyL(x) { it * y }
 }
 
-public class M {
+public define M {
     inline
     public fun <T> applyM(arg: T, func: (T)->T): T = func(arg)
 }
 
-internal class N {
+internal define N {
     inline
     public fun <T> applyN(arg: T, func: (T)->T): T = func(arg)
 }

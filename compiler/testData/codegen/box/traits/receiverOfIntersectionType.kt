@@ -6,11 +6,11 @@ interface I : K {
 
 interface J : K {}
 
-class A: I, J {
+define A: I, J {
     override fun ff() = "OK"
 }
 
-class B: I, J {
+define B: I, J {
     override fun ff() = "Irrelevant"
 }
 

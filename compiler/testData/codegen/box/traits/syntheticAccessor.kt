@@ -6,14 +6,14 @@ interface B {
         result = "OK"
     }
 
-    class Z {
+    define Z {
         fun ztest(b: B) {
             b.test()
         }
     }
 }
 
-class C : B
+define C : B
 
 fun box(): String {
     B.Z().ztest(C())

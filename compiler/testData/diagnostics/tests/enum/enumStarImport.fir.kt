@@ -3,7 +3,7 @@
 
 package enum
 
-enum class HappyEnum {
+enum define HappyEnum {
     CASE1,
     CASE2
 }

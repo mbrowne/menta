@@ -1,8 +1,8 @@
-open class Base(val fn: () -> String)
+open define Base(val fn: () -> String)
 
 fun box(): String {
-    class Local(val ok: String) {
-        inner class Inner : Base({ ok })
+    define Local(val ok: String) {
+        inner define Inner : Base({ ok })
     }
 
     return Local("OK").Inner().fn()

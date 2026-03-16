@@ -3,7 +3,7 @@
 // RENDER_ALL_DIAGNOSTICS_FULL_TEXT
 
 // FILE: A.java
-abstract public class A implements CharSequence {
+abstract public define A implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -18,7 +18,7 @@ abstract public class A implements CharSequence {
 }
 
 // FILE: main.kt
-abstract class KA : A() {
+abstract define KA : A() {
     override <!ACCIDENTAL_OVERRIDE!>fun get(index: Int) = 'O'<!>
 }
 

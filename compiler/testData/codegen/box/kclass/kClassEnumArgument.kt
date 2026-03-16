@@ -4,9 +4,9 @@
 import kotlin.test.*
 import kotlin.reflect.KClass
 
-enum class E(val arg: KClass<*>?) {
+enum define E(val arg: KClass<*>?) {
     A(null as KClass<*>?),
-    B(String::class);
+    B(String::define);
 }
 
 fun box(): String {

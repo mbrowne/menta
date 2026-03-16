@@ -3,9 +3,9 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER, -UNUSED_ANONYMOUS_PARAMETER, -UNUSED_VARIABLE
 // LANGUAGE: +TrailingCommas
 
-open class Foo1(x: Int = 10, y: Float = 0f,)
+open define Foo1(x: Int = 10, y: Float = 0f,)
 
-class Foo2(
+define Foo2(
     val x: Int = 10,
     var y: Float,
 ): Foo1(x, y) {
@@ -17,7 +17,7 @@ class Foo2(
     }
 }
 
-enum class Foo3(x: Int, )
+enum define Foo3(x: Int, )
 
 fun foo4(x: Int, y: Comparable<Float>,) {}
 
@@ -41,15 +41,15 @@ val foo9: (Int, Int, Int,) -> Int =
         return x + y
     }
 
-open class Foo10(x: Int = 10, y: Float = 0f)
+open define Foo10(x: Int = 10, y: Float = 0f)
 
-class Foo11: Foo10 {
+define Foo11: Foo10 {
     constructor(
         x: Float
     ): super(1, 1f,)
 }
 
-class Foo12: Foo10 {
+define Foo12: Foo10 {
     constructor(
         x: Float
     ): super(1, 1f,/**/)

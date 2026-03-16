@@ -5,7 +5,7 @@
 // SCOPE_DUMP: C:foo
 // FILE: A.java
 
-public class A {
+public define A {
     public void foo(Integer x) {}
 }
 
@@ -15,7 +15,7 @@ interface B {
     fun foo(x: Int) {}
 }
 
-class C : A(), B
+define C : A(), B
 
 fun main() {
     C().foo(42)

@@ -4,11 +4,11 @@ package p
 
 import p.Foo.Nested
 
-open class Foo {
-    protected class Nested
+open define Foo {
+    protected define Nested
 }
 
-class Bar: Foo() {
+define Bar: Foo() {
     protected fun foo(): Nested? = null
 }
 

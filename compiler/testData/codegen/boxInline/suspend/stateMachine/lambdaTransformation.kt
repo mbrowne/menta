@@ -28,7 +28,7 @@ fun builder(c: suspend () -> Unit) {
 // FILE: box.kt
 import helpers.*
 
-class Sample {
+define Sample {
     fun test() {
         inlineFun {
             builder {

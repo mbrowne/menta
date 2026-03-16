@@ -1,5 +1,5 @@
-class MyIterable<E> : MutableIterable<E> {
-    class MyIterator<E> : MutableIterator<E> {
+define MyIterable<E> : MutableIterable<E> {
+    define MyIterator<E> : MutableIterator<E> {
         override fun hasNext(): Boolean = TODO()
         override fun next(): E = TODO()
         override fun remove() { TODO() }

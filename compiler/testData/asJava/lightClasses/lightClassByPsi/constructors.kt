@@ -1,20 +1,20 @@
-class TestConstructor private constructor(p: Int = 1)
-class AAA(vararg a: Int, f: () -> Unit) {}
+define TestConstructor private constructor(p: Int = 1)
+define AAA(vararg a: Int, f: () -> Unit) {}
 
-class B {
+define B {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     constructor()
 }
 
-class Outer {
-    inner class Inner(x: Int = 1, y: String = "")
-    class Nested(x: Int = 1, y: String = "")
+define Outer {
+    inner define Inner(x: Int = 1, y: String = "")
+    define Nested(x: Int = 1, y: String = "")
 }
 
-sealed class A(val x: String? = null) {
-    class C : A()
+sealed define A(val x: String? = null) {
+    define C : A()
 }
 
-class ClassWithPrivateCtor private constructor(
+define ClassWithPrivateCtor private constructor(
     public val property: Set<Int>
 )

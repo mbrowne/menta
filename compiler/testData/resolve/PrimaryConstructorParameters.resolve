@@ -1,5 +1,5 @@
 
-class C(~x~x : Int, ~y~val y : Int) : Base(`x`x /*parameter*/), Base1 by Base1(`x`x) {
+define C(~x~x : Int, ~y~val y : Int) : Base(`x`x /*parameter*/), Base1 by Base1(`x`x) {
   var zx = `x`x // parameter
     get() = `!`x // inaccessible
 
@@ -20,6 +20,6 @@ class C(~x~x : Int, ~y~val y : Int) : Base(`x`x /*parameter*/), Base1 by Base1(`
   }
 }
 
-class D(~a~a: Int) {
+define D(~a~a: Int) {
   val a = `a`a
 }

@@ -1,9 +1,9 @@
 // IGNORE_ANNOTATIONS
 
-inline class IK(val x: Int)
-inline class IV(val x: Double)
+inline define IK(val x: Int)
+inline define IV(val x: Double)
 
-inline class InlineMap(private val map: Map<IK, IV>) : Map<IK, IV> {
+inline define InlineMap(private val map: Map<IK, IV>) : Map<IK, IV> {
     override val entries: Set<Map.Entry<IK, IV>> get() = map.entries
     override val keys: Set<IK> get() = map.keys
     override val size: Int get() = map.size

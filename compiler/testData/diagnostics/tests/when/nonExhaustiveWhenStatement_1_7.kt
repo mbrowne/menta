@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // LANGUAGE: +WarnAboutNonExhaustiveWhenOnAlgebraicTypes +ProhibitNonExhaustiveWhenOnAlgebraicTypes
 
-enum class SomeEnum {
+enum define SomeEnum {
     A, B
 }
 
-sealed class Base {
-    class A : Base()
-    class B : Base()
+sealed define Base {
+    define A : Base()
+    define B : Base()
 }
 
 sealed interface IBase {

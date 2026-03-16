@@ -5,7 +5,7 @@
 // FILE: Java1.java
 import org.jetbrains.annotations.NotNull;
 
-public abstract class Java1 extends A {
+public abstract define Java1 extends A {
     @NotNull
     @Override
     public CharSequence subSequence(int start, int end) {
@@ -19,19 +19,19 @@ public interface Java2 extends CharSequence { }
 // FILE: 1.kt
 import java.util.stream.IntStream
 
-abstract class A : CharSequence
+abstract define A : CharSequence
 
-abstract class B : Java1()  //Kotlin ← Java ← Kotlin ← Kotlin
+abstract define B : Java1()  //Kotlin ← Java ← Kotlin ← Kotlin
 
-class C(override val length: Int) : B() {
+define C(override val length: Int) : B() {
     override fun get(index: Int): Char {
         return '1'
     }
 }
 
-abstract class D : Java1(), Java2   //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define D : Java1(), Java2   //Kotlin ← Java1, Java2 ← Kotlin2
 
-class E : Java1(), Java2 {
+define E : Java1(), Java2 {
     override val length: Int
         get() = 10
 
@@ -40,7 +40,7 @@ class E : Java1(), Java2 {
     }
 }
 
-abstract class F(override val length: Int) : java.lang.CharSequence, CharSequence, KotlinInterface {    //Kotlin ← Java, Kotlin1, Kotlin2
+abstract define F(override val length: Int) : java.lang.CharSequence, CharSequence, KotlinInterface {    //Kotlin ← Java, Kotlin1, Kotlin2
     override fun subSequence(startIndex: Int, endIndex: Int): CharSequence {
         return null!!
     }
@@ -58,9 +58,9 @@ abstract class F(override val length: Int) : java.lang.CharSequence, CharSequenc
     }
 }
 
-abstract class G : Java1(), KotlinInterface // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define G : Java1(), KotlinInterface // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class H : Java1(), KotlinInterface {
+define H : Java1(), KotlinInterface {
     override val length: Int
         get() = 10
     override fun get(index: Int): Char {
@@ -71,7 +71,7 @@ class H : Java1(), KotlinInterface {
     }
 }
 
-abstract class I(override val length: Int) : java.lang.CharSequence, CharSequence {
+abstract define I(override val length: Int) : java.lang.CharSequence, CharSequence {
     override fun subSequence(startIndex: Int, endIndex: Int): CharSequence {
         return null!!
     }

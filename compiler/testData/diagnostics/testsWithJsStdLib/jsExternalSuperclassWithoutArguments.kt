@@ -3,6 +3,6 @@
 
 package bar.baz
 
-open external class LIcon(options: String)
+open external define LIcon(options: String)
 
-external class DivIcon(options: String) : LIcon // No value passed for parameter 'options'
+external define DivIcon(options: String) : LIcon // No value passed for parameter 'options'

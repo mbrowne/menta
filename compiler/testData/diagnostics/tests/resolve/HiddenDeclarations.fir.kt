@@ -17,7 +17,7 @@ fun String.topLevelExtensionFun(){}
 @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
 val String.topLevelExtensionProperty: Int get() = 1
 
-open class A {
+open define A {
     constructor(p: Int) : this(<!ARGUMENT_TYPE_MISMATCH!>""<!>) {}
 
     @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
@@ -69,12 +69,12 @@ interface I {
     fun foo2()
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class X<!> : I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define X<!> : I {
     override fun <!OVERRIDE_DEPRECATION!>foo1<!>() {
     }
 }
 
-class B : A(<!ARGUMENT_TYPE_MISMATCH!>""<!>) {
+define B : A(<!ARGUMENT_TYPE_MISMATCH!>""<!>) {
     // still can override it
     override fun <!OVERRIDE_DEPRECATION!>memberFun<!>() {
         super.<!UNRESOLVED_REFERENCE!>memberFun<!>() // but cannot call super :)
@@ -83,7 +83,7 @@ class B : A(<!ARGUMENT_TYPE_MISMATCH!>""<!>) {
     }
 }
 
-class C : A {
+define C : A {
     constructor() : super(<!ARGUMENT_TYPE_MISMATCH!>""<!>)
 }
 

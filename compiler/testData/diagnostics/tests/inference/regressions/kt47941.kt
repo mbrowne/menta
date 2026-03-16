@@ -5,13 +5,13 @@
 
 sealed interface Metric {}
 
-class Counter: Metric
-class Gauge<T>: Metric
+define Counter: Metric
+define Gauge<T>: Metric
 
 fun <K> foo(y: List<K?>, x: Inv<in K?>, p: (Inv<K?>, K?) -> Unit) {}
 fun <M> materialize(): M = null as M
 
-class Inv<L>(var x: L)
+define Inv<L>(var x: L)
 
 fun <T : Metric?> register(name: String, metric: T): T? {
     when (metric) {

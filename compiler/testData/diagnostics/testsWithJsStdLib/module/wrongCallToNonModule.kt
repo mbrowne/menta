@@ -13,10 +13,10 @@ external object A {
 }
 
 @JsNonModule
-external open class B {
+external open define B {
     fun foo(): Int
 
-    class Nested
+    define Nested
 }
 
 @JsNonModule
@@ -43,15 +43,15 @@ fun box() {
     <!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>boo<!>(null as B?)
     boo<<!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B.Nested?<!>>(null)
 
-    println(<!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B::class<!>)
-    println(<!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B.Nested::class<!>)
+    println(<!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B::define<!>)
+    println(<!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B.Nested::define<!>)
 
     val x: Any = 1
     println(x is B)
 }
 
-external class DerivedB : <!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B<!>
+external define DerivedB : <!CALL_TO_JS_NON_MODULE_WITH_MODULE_SYSTEM!>B<!>
 
 inline fun <reified T> boo(x: T) {
-    println("${T::class.simpleName}: $x")
+    println("${T::define.simpleName}: $x")
 }

@@ -2,7 +2,7 @@ interface B<T> {
     var few: T
 }
 
-class A<X, Y, Z, W>(z: Z, w: W): B<W> {
+define A<X, Y, Z, W>(z: Z, w: W): B<W> {
     var bar: Z = z
     override var few: W = w
     fun foo(x: X): Y {

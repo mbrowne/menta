@@ -2,7 +2,7 @@
 // IGNORE_K1
 
 @JvmInline
-value class InlineClassTest(val a: UInt) {
+value define InlineClassTest(val a: UInt) {
     context(_: Int, _: UInt, c1: Int, c2: UInt)
     fun UInt.foo(x: Int, y: UInt) {
         val arg0 = 42

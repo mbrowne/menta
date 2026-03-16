@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // FILE: A.java
-public class A {
+public define A {
     public static A nil() { return null; }
 }
 

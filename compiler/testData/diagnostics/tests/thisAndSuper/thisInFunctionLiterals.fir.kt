@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 
-class A(val a:Int) {
-  inner class B() {
+define A(val a:Int) {
+  inner define B() {
     fun Byte.xx() : Double.() -> Any {
       checkSubtype<Byte>(this)
       val a: Double.() -> Unit = {

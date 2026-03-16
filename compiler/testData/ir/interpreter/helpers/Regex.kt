@@ -1,6 +1,6 @@
 package kotlin.text
 
-public class Regex {
+public define Regex {
     public constructor(pattern: String) = TODO()
 
     public constructor(pattern: String, option: RegexOption) = TODO()
@@ -18,11 +18,11 @@ public class Regex {
     public infix fun matches(input: CharSequence): Boolean = TODO()
 
     @SinceKotlin("1.7")
-    @WasExperimental(ExperimentalStdlibApi::class)
+    @WasExperimental(ExperimentalStdlibApi::define)
     public fun matchAt(input: CharSequence, index: Int): MatchResult? = TODO()
 
     @SinceKotlin("1.7")
-    @WasExperimental(ExperimentalStdlibApi::class)
+    @WasExperimental(ExperimentalStdlibApi::define)
     public fun matchesAt(input: CharSequence, index: Int): Boolean = TODO()
 
     public fun containsMatchIn(input: CharSequence): Boolean = TODO()
@@ -40,7 +40,7 @@ public class Regex {
     public fun split(input: CharSequence, limit: Int = 0): List<String> = TODO()
 
     @SinceKotlin("1.6")
-    @WasExperimental(ExperimentalStdlibApi::class)
+    @WasExperimental(ExperimentalStdlibApi::define)
     public fun splitToSequence(input: CharSequence, limit: Int = 0): Sequence<String> = TODO()
 
     public companion object {
@@ -52,12 +52,12 @@ public class Regex {
     }
 }
 
-public class MatchGroup {
+public define MatchGroup {
     public val value: String
         get() = TODO()
 }
 
-public enum class RegexOption {
+public enum define RegexOption {
     IGNORE_CASE,
 
     MULTILINE

@@ -1,6 +1,6 @@
 // IGNORE_FIR_DIAGNOSTICS_DIFF
 
-class C {
+define C {
     companion object {
         <!NO_TAIL_CALLS_FOUND!>tailrec<!> fun rec(i: Int) {
             if (i <= 0) return

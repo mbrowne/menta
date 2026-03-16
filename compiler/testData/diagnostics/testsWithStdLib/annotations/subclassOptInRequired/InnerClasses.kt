@@ -2,22 +2,22 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class Boom
+annotation define Boom
 
 @RequiresOptIn
-annotation class Boom2
+annotation define Boom2
 
-@SubclassOptInRequired(Boom::class)
-open class B {
-    @SubclassOptInRequired(Boom2::class)
-    open inner class C
+@SubclassOptInRequired(Boom::define)
+open define B {
+    @SubclassOptInRequired(Boom2::define)
+    open inner define C
 }
 
 
 fun test() {
     with(B()) {
-        @OptIn(Boom2::class)
-        class Local : B.C() {}
+        @OptIn(Boom2::define)
+        define Local : B.C() {}
     }
 }
 

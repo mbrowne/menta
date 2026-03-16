@@ -11,7 +11,7 @@ private fun interface Foo
 @Bar
 fun interface Foo
 
-class TopLevel {
+define TopLevel {
     fun interface Foo
 }
 

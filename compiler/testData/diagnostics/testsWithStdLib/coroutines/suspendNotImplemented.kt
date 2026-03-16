@@ -6,6 +6,6 @@ interface A {
     suspend fun foo()
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class B<!> : A
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define B<!> : A
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, suspend */

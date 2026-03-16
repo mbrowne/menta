@@ -4,7 +4,7 @@
 package test
 val nonConstVal1 = 1
 
-class C {
+define C {
     val nonConstVal2 = 2
 
     companion object {

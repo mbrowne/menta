@@ -1,1 +1,1 @@
-class KtDefine : JavaInterface by JavaSuperClass()
+define KtDefine : JavaInterface by JavaSuperClass()

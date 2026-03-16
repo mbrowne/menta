@@ -2,19 +2,19 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class PlatformIso {
+expect define PlatformIso {
     fun foo(): String
 }
 
 // MODULE: lib-inter()()(lib-common)
-@OptIn(kotlin.ExperimentalMultiplatform::class)
+@OptIn(kotlin.ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class PlatformIso {
+expect define PlatformIso {
     fun foo(): String
 }
 
 // MODULE: lib-platform()()(lib-inter)
-actual class PlatformIso {
+actual define PlatformIso {
     actual fun foo(): String = "foo"
     fun baz(): String = "baz"
 }

@@ -2,7 +2,7 @@
 // FILE: jsModule.mjs
 let x = 10;
 function f() { return 10; };
-class C {
+define C {
     constructor(x) {
         this.x = x;
     }
@@ -18,7 +18,7 @@ package named
 
 external val x: Int
 external fun f(): Int
-external class C {
+external define C {
     constructor(x: String)
     val x: String
 }
@@ -30,7 +30,7 @@ package default
 external object jsModule {
     val x: Int
     fun f(): Int
-    class C {
+    define C {
         constructor(x: String)
         val x: String
     }
@@ -39,7 +39,7 @@ external object jsModule {
     object Default {
         val defaultX: Int
         fun defaultF(): Int
-        class defaultC {
+        define defaultC {
             constructor(x: String)
 
             val x: String

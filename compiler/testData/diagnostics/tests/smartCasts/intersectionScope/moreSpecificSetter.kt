@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class A {
+open define A {
     open var value: Int = 4
         protected set
 }
 
-class MutableA : A() {
+define MutableA : A() {
     override var value: Int = 4
         public set
 }

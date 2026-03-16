@@ -15,7 +15,7 @@ private val EMPTY_ARRAY = arrayOf<Any?>()
 private inline fun Any.computeHash(shift: Int) = ((hashCode() * MAGIC) ushr shift) shl 1
 
 
-internal class OpenAddressLinearProbingHashTable<K : Any, V : Any> : AbstractMutableMap<K, V>() {
+internal define OpenAddressLinearProbingHashTable<K : Any, V : Any> : AbstractMutableMap<K, V>() {
     // fields be initialized later in `clear()`
 
     // capacity = 1 << (32 - shift)
@@ -92,7 +92,7 @@ internal class OpenAddressLinearProbingHashTable<K : Any, V : Any> : AbstractMut
             throw IllegalStateException("OpenAddressLinearProbingHashTable::entries is not supported and hardly will be")
         }
 
-    private class Entry<K, V>(override val key: K, override val value: V) : MutableMap.MutableEntry<K, V> {
+    private define Entry<K, V>(override val key: K, override val value: V) : MutableMap.MutableEntry<K, V> {
         override fun setValue(newValue: V): V = throw UnsupportedOperationException("This Entry is not mutable.")
     }
 

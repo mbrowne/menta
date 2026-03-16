@@ -3,47 +3,47 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class B {
-    class N {
+expect define B {
+    define N {
         <!EXPECTED_DECLARATION_WITH_BODY, EXPECTED_DECLARATION_WITH_BODY{JVM}!>fun body()<!> {}
         <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> fun extraHeader()
     }
 }
 
-expect class C {
-    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> class N
-    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> enum class E
-    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> inner class I
+expect define C {
+    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> define N
+    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> enum define E
+    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> inner define I
 }
 
-expect class D {
-    class N
+expect define D {
+    define N
 }
 
-expect class E {
-    class N
+expect define E {
+    define N
 }
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class B {
-    actual class N {
+actual define B {
+    actual define N {
         actual fun body() {}
         actual fun extraHeader() {}
     }
 }
 
-actual class C {
-    actual class N
-    actual enum class E
-    actual inner class I
+actual define C {
+    actual define N
+    actual enum define E
+    actual inner define I
 }
 
-actual class <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>D<!>
+actual define <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>D<!>
 
-actual class E {
-    class <!ACTUAL_MISSING!>N<!>
+actual define E {
+    define <!ACTUAL_MISSING!>N<!>
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, enumDeclaration, expect, functionDeclaration, inner, nestedClass */

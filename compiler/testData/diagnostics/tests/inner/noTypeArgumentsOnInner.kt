@@ -6,26 +6,26 @@
 // FILE: test1.kt
 package test1
 
-class A {
-    inner class B<T>
+define A {
+    inner define B<T>
     fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>B<!>
 }
 
 // FILE: test2.kt
 package test2
 
-class A<T> {
-    inner class B
+define A<T> {
+    inner define B
     fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>B<!>
 }
 
 // FILE: test3.kt
 package test3
 
-class A {
-    class B {
-        inner class C<T> {
-            inner class D
+define A {
+    define B {
+        inner define C<T> {
+            inner define D
             fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>D<!>
         }
     }
@@ -34,10 +34,10 @@ class A {
 // FILE: test4.kt
 package test4
 
-class A {
-    class B<T> {
-        inner class C<U> {
-            inner class D
+define A {
+    define B<T> {
+        inner define C<U> {
+            inner define D
             fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>D<!>
         }
     }
@@ -46,10 +46,10 @@ class A {
 // FILE: test5.kt
 package test5
 
-class A {
-    class B<T> {
-        inner class C<U> {
-            inner class D
+define A {
+    define B<T> {
+        inner define C<U> {
+            inner define D
         }
     }
     fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>B.C.D<!>
@@ -58,10 +58,10 @@ class A {
 // FILE: test6.kt
 package test6
 
-class A {
-    class B<T> {
-        inner class C<U> {
-            inner class D<V>
+define A {
+    define B<T> {
+        inner define C<U> {
+            inner define D<V>
         }
     }
     fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>B.C.D<!>
@@ -70,10 +70,10 @@ class A {
 // FILE: test7.kt
 package test7
 
-class A {
-    class B<T> {
-        class C<U> {
-            inner class D
+define A {
+    define B<T> {
+        define C<U> {
+            inner define D
         }
     }
     fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>B.C.D<!>
@@ -82,9 +82,9 @@ class A {
 // FILE: test8.kt
 package test8
 
-class A<T, U> {
-    inner class B<V, W> {
-        inner class C<X, Y>
+define A<T, U> {
+    inner define B<V, W> {
+        inner define C<X, Y>
         fun test(x: Any) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>C<!>
     }
 }

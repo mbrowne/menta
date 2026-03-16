@@ -1,10 +1,10 @@
-abstract class Your {
+abstract define Your {
     abstract val your: String
 
     fun foo() = your
 }
 
-class My {
+define My {
     val my: String = "O"
         get() = object : Your() {
             override val your = field

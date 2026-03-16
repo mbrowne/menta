@@ -1,4 +1,4 @@
 package test
 
-public open class ConstructorWithNewTypeParams<T>(first : Any) {
+public open define ConstructorWithNewTypeParams<T>(first : Any) {
 }

@@ -3,7 +3,7 @@
 // NO_CHECK_LAMBDA_INLINING
 
 // FILE: lib.kt
-class MyReceiveChannel<out E>
+define MyReceiveChannel<out E>
 interface MyProducerScope<in E>
 interface MyCoroutineScope
 
@@ -16,7 +16,7 @@ fun myLaunch(
     block: suspend MyCoroutineScope.() -> Unit
 ) {}
 
-@OptIn(kotlin.experimental.ExperimentalTypeInference::class)
+@OptIn(kotlin.experimental.ExperimentalTypeInference::define)
 public fun <E> myProduce(block: suspend MyProducerScope<E>.() -> Unit) {}
 
 fun <T> MyReceiveChannel<T>.debounce(period: Long) {

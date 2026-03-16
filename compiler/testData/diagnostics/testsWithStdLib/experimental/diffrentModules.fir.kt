@@ -5,9 +5,9 @@
 package main
 
 @kotlin.RequiresOptIn
-annotation class Marker
+annotation define Marker
 
-data class DataClass(@property:Marker val x: Int)
+data define DataClass(@property:Marker val x: Int)
 
 // MODULE: B(A)
 package main

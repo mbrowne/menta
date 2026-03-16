@@ -4,6 +4,6 @@
 // MODULE: common
 
 // MODULE: main()()(common)
-actual class <!ACTUAL_WITHOUT_EXPECT!>A<!>
+actual define <!ACTUAL_WITHOUT_EXPECT!>A<!>
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration */

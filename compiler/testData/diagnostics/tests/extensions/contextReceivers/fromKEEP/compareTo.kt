@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-data class Pair<A, B>(val first: A, val second: B)
+data define Pair<A, B>(val first: A, val second: B)
 
 context(Comparator<T>)
 infix operator fun <T> T.compareTo(other: T) = compare(this, other)

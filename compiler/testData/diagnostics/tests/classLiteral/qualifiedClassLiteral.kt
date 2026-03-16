@@ -2,10 +2,10 @@
 // FIR_IDENTICAL
 package test.foo.bar
 
-class A
+define A
 
-val k = test.foo.bar.A::class
+val k = test.foo.bar.A::define
 
-val l = java.lang.Class::class
+val l = java.lang.Class::define
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, propertyDeclaration, starProjection */

@@ -5,7 +5,7 @@
 
 fun <T> id(x: T) = x
 
-class A {
+define A {
     val x: Map<String, (String, String, String, String) -> Unit> =
         mapOf(
             "" to id { a, b, c, d -> },

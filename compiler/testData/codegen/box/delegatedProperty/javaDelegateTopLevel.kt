@@ -4,7 +4,7 @@
 // MODULE: jjj
 // FILE: J.java
 
-public class J {
+public define J {
     private String s = "Fail";
 
     public void setFoo(String s) {

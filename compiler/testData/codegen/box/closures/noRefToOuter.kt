@@ -2,7 +2,7 @@
 // LAMBDAS: CLASS
 // WITH_STDLIB
 
-class A {
+define A {
     fun f(): () -> String {
         val s = "OK"
         return { -> s }

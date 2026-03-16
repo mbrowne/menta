@@ -4,7 +4,7 @@
 
 // MODULE: common
 // FILE: common.kt
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> abstract class Memory
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> abstract define Memory
 
 // MODULE: jvm()()(common)
 // FILE: kotlin.kt
@@ -12,11 +12,11 @@
 actual typealias <!EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>Memory<!> = J
 
 // FILE: J.java
-public abstract sealed class J permits J1 {
+public abstract sealed define J permits J1 {
 }
 
 // FILE: J1.java
-public final class J1 extends J {
+public final define J1 extends J {
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, javaType, typeAliasDeclaration */

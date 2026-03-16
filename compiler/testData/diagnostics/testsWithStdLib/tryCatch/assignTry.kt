@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class ExcA : Exception()
+define ExcA : Exception()
 
-class ExcB : Exception()
+define ExcB : Exception()
 
 fun test2() {
     val s: String? = try {

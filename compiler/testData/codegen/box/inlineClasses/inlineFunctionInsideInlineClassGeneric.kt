@@ -4,7 +4,7 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Int>(val x: T) {
+value define Foo<T: Int>(val x: T) {
     inline fun inc(): Foo<T> = Foo(x + 1) as Foo<T>
 }
 

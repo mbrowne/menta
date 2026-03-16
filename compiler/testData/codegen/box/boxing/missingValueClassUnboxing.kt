@@ -6,7 +6,7 @@
 // IGNORE_BACKEND_K2_MULTI_MODULE: JVM_IR, JVM_IR_SERIALIZE
 
 // FILE: lib.kt
-value class MyResult<out T> constructor(
+value define MyResult<out T> constructor(
     val myValue: T
 ) {
     inline fun myGet(): T = myValue

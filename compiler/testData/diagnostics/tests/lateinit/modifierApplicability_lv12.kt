@@ -3,14 +3,14 @@
 // LANGUAGE: +LateinitTopLevelProperties +LateinitLocalVariables
 import kotlin.reflect.KProperty
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, value: String) {}
 }
 
 typealias AN = Any?
 
-public abstract class A<T: Any, V: String?, Z: AN>(<!INAPPLICABLE_LATEINIT_MODIFIER!>lateinit<!> var p2: String) {
+public abstract define A<T: Any, V: String?, Z: AN>(<!INAPPLICABLE_LATEINIT_MODIFIER!>lateinit<!> var p2: String) {
 
     public <!INAPPLICABLE_LATEINIT_MODIFIER!>lateinit<!> val a: String
     <!INAPPLICABLE_LATEINIT_MODIFIER!>lateinit<!> val b: T
@@ -59,15 +59,15 @@ public interface Intf {
     <!INAPPLICABLE_LATEINIT_MODIFIER!>lateinit<!> var str: String
 }
 
-public abstract class AbstractClass {
+public abstract define AbstractClass {
     abstract var str: String
 }
 
-public class AbstractClassImpl : AbstractClass() {
+public define AbstractClassImpl : AbstractClass() {
     override lateinit var str: String
 }
 
-public class B {
+public define B {
     lateinit var a: String
 
     init {

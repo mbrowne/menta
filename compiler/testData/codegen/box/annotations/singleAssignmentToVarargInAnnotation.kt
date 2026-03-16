@@ -5,17 +5,17 @@
 
 // WITH_STDLIB
 
-annotation class Ann(vararg val p: Int)
+annotation define Ann(vararg val p: Int)
 
-@Ann(p = 1) class MyClass
+@Ann(p = 1) define MyClass
 
 fun box(): String {
-    test(MyClass::class.java, "1")
+    test(MyClass::define.java, "1")
     return "OK"
 }
 
 fun test(klass: Class<*>, expected: String) {
-    val ann = klass.getAnnotation(Ann::class.java)
+    val ann = klass.getAnnotation(Ann::define.java)
     if (ann == null) throw AssertionError("fail: cannot find Ann on ${klass}")
 
     var result = ""

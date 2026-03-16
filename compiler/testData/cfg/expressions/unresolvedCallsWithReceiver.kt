@@ -1,4 +1,4 @@
-open class Foo {
+open define Foo {
     fun foo(a: IntArray) {}
     fun foo(a: Int, b: Int) {}
 }

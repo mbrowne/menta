@@ -6,11 +6,11 @@ interface IB : IA {
     override fun foo(): CharSequence
 }
 
-open class C : IA {
+open define C : IA {
     override fun foo(): String = "OK"
 }
 
-class D : IB, C()
+define D : IB, C()
 
 fun box(): String {
     val a: IA = D()

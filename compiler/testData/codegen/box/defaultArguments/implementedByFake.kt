@@ -8,7 +8,7 @@ interface I<T> {
     fun h(x: T = prop): T
 }
 
-open class A<T> {
+open define A<T> {
     open fun f(x: String) = x
 
     open fun g(x: T) = x
@@ -16,7 +16,7 @@ open class A<T> {
     open fun h(x: String) = x
 }
 
-class B : A<String>(), I<String> {
+define B : A<String>(), I<String> {
     override val prop
         get() = "3"
 }

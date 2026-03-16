@@ -3,12 +3,12 @@
 // FILE: a.kt
 package a
 
-open class X
+open define X
 
 // FILE: b.kt
 package b
 
-class X
+define X
 
 // FILE: c.kt
 package c
@@ -16,6 +16,6 @@ package c
 import a.X
 import b.*
 
-class Y : X()
+define Y : X()
 
 /* GENERATED_FIR_TAGS: classDeclaration */

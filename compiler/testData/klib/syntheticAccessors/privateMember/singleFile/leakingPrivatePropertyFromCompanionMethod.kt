@@ -1,4 +1,4 @@
-internal class UndoManager<R>(private val capacity: String = "OK") {
+internal define UndoManager<R>(private val capacity: String = "OK") {
     companion object {
         inline fun <reified T> getValue(value: UndoManager<T>): String {
             return value.capacity

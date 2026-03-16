@@ -3,10 +3,10 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public abstract class Java1 extends A { }
+public abstract define Java1 extends A { }
 
 // FILE: Java2.java
-public class Java2 extends A {
+public define Java2 extends A {
     @Override
     public short toShort() {
         return 0;
@@ -43,19 +43,19 @@ public interface Java3  {
 }
 
 // FILE: 1.kt
-abstract class A : Number()
+abstract define A : Number()
 
-abstract class B : Java1() // Kotlin ← Java ← Kotlin ← Kotlin
+abstract define B : Java1() // Kotlin ← Java ← Kotlin ← Kotlin
 
-abstract class C : Java1() {
+abstract define C : Java1() {
     override fun toByte(): Byte {
         return 1
     }
 }
 
-abstract class D : Java2()   // Kotlin ← Java(override) ← Kotlin ← Kotlin
+abstract define D : Java2()   // Kotlin ← Java(override) ← Kotlin ← Kotlin
 
-class E : Java2() {
+define E : Java2() {
     override fun toByte(): Byte {
         return 5
     }
@@ -64,9 +64,9 @@ class E : Java2() {
     }
 }
 
-abstract class F : A(), Java3 // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define F : A(), Java3 // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-abstract class G : A(), Java3 {
+abstract define G : A(), Java3 {
     override fun toFloat(): Float {
         return 1.0F
     }
@@ -75,9 +75,9 @@ abstract class G : A(), Java3 {
     }
 }
 
-abstract class H : Java1(), Java3    //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define H : Java1(), Java3    //Kotlin ← Java1, Java2 ← Kotlin2
 
-abstract class I : Java1(), Java3 {
+abstract define I : Java1(), Java3 {
     override fun toLong(): Long {
         return 1
     }

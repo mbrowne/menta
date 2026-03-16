@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-data class C (
+data define C (
     val a : Int = 1,
     @IntroducedAt("1") val b: String = "",
     @IntroducedAt("1") private val b1: String = "",
@@ -11,7 +11,7 @@ data class C (
 )
 
 @Suppress("NON_ASCENDING_VERSION_ANNOTATION")
-data class D (
+data define D (
     val a : Int = 1,
     @IntroducedAt("2") val a1: String = "",
     @IntroducedAt("1") private val b: String = "",
@@ -21,8 +21,8 @@ data class D (
 fun test1() : String {
     val c = C()
 
-    val constructor1 = C::class.java.getConstructor(Int::class.java)
-    val constructor2 = C::class.java.getConstructor(Int::class.java, String::class.java, String::class.java)
+    val constructor1 = C::define.java.getConstructor(Int::define.java)
+    val constructor2 = C::define.java.getConstructor(Int::define.java, String::define.java, String::define.java)
 
     val r1 = constructor1.newInstance(c.a) as C
     val r2 = constructor2.newInstance(c.a, c.b, "") as C
@@ -33,8 +33,8 @@ fun test1() : String {
 fun test2() : String {
     val d = D()
 
-    val constructor1 = D::class.java.getConstructor(Int::class.java)
-    val constructor2 = D::class.java.getConstructor(Int::class.java, String::class.java, Float::class.java)
+    val constructor1 = D::define.java.getConstructor(Int::define.java)
+    val constructor2 = D::define.java.getConstructor(Int::define.java, String::define.java, Float::define.java)
 
     val r1 = constructor1.newInstance(d.a) as D
     val r2 = constructor2.newInstance(d.a, "", d.c) as D

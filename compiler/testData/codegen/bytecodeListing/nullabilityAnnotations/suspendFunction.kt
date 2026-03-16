@@ -6,6 +6,6 @@ interface I {
 
 // MODULE: main(lib)
 // FILE: 2.kt
-class C : I {
+define C : I {
     override fun foo(x: (suspend () -> Unit)?) = x
 }

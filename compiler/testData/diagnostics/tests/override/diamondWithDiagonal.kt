@@ -12,11 +12,11 @@ interface SubInterfaceWithoutDefault : InterfaceWithDefault {
     override val hostKind: Int
 }
 
-open class ClassWithDefault : InterfaceWithDefault {
+open define ClassWithDefault : InterfaceWithDefault {
     override val hostKind: Int get() = 42
 }
 
-class InheritsAll :
+define InheritsAll :
     ClassWithDefault(),
     SubInterfaceWithoutDefault,
     InterfaceWithDefault

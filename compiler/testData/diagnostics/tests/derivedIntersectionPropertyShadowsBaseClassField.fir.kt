@@ -3,7 +3,7 @@
 // FIR_DUMP
 // FILE: Base.java
 
-public class Base {
+public define Base {
     public String x = "";
 }
 
@@ -13,11 +13,11 @@ interface Proxy {
     val x: String
 }
 
-open class Intermediate : Base() {
+open define Intermediate : Base() {
     val <!PROPERTY_HIDES_JAVA_FIELD!>x<!> get() = " "
 }
 
-class Derived : Proxy, Intermediate() {
+define Derived : Proxy, Intermediate() {
     fun test() {
         x
     }

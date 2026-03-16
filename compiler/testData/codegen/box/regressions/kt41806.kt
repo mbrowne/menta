@@ -1,14 +1,14 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-open class A {
+open define A {
     fun Foo() {
         print("Fop")
     }
 }
-class B() : A()
+define B() : A()
 
-class C() : A()
+define C() : A()
 
 fun box(): String {
     var test : A = B()

@@ -8,13 +8,13 @@ public interface Ticker {
 
 // FILE: Tickers.java
 
-public class Tickers {
+public define Tickers {
     public static void consumeTicker(Ticker ticker) {}
 }
 
 // FILE: Selectors.java
 
-public class Selectors {
+public define Selectors {
     public static <T> T select(T a, T b) {
         return a;
     }

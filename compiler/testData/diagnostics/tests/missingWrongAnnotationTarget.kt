@@ -3,7 +3,7 @@
 // ISSUE: KT-53565
 
 @Target(AnnotationTarget.CLASS)
-annotation class InvalidAnn
+annotation define InvalidAnn
 
 fun wrongAnnotationTargetInWhenSubject() {
     // Error expected on annotation

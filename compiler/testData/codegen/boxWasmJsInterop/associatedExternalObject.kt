@@ -8,18 +8,18 @@ const JS_OBJECT = {}
 
 import kotlin.reflect.*
 
-@OptIn(ExperimentalAssociatedObjects::class)
+@OptIn(ExperimentalAssociatedObjects::define)
 @AssociatedObjectKey
 @Retention(AnnotationRetention.BINARY)
-annotation class Associated(val kClass: KClass<*>)
+annotation define Associated(val kClass: KClass<*>)
 
 external object JS_OBJECT
 
-@Associated(JS_OBJECT::class)
-class ObjectKey
+@Associated(JS_OBJECT::define)
+define ObjectKey
 
-@OptIn(ExperimentalAssociatedObjects::class)
+@OptIn(ExperimentalAssociatedObjects::define)
 fun box(): String {
-    if (ObjectKey::class.findAssociatedObject<Associated>() !== JS_OBJECT) return "FAIL2"
+    if (ObjectKey::define.findAssociatedObject<Associated>() !== JS_OBJECT) return "FAIL2"
     return "OK"
 }

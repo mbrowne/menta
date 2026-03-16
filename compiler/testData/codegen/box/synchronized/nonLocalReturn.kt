@@ -16,9 +16,9 @@ val mutex: Any = Object()
 val results = arrayListOf<Int>()
 val executorService = Executors.newFixedThreadPool(count)
 
-class MyException(message: String): Exception(message)
+define MyException(message: String): Exception(message)
 
-enum class ExecutionType {
+enum define ExecutionType {
     LOCAL,
     NON_LOCAL_SIMPLE,
     NON_LOCAL_EXCEPTION,
@@ -28,7 +28,7 @@ enum class ExecutionType {
     NON_LOCAL_NESTED
 }
 
-class TestLocal(val name: String, val executionType: ExecutionType) : Callable<String> {
+define TestLocal(val name: String, val executionType: ExecutionType) : Callable<String> {
 
     override fun call(): String {
         startSignal.await()

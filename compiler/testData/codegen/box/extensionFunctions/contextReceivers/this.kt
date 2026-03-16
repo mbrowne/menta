@@ -2,8 +2,8 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class A<T>(val a: T)
-class B(val b: Any?)
+define A<T>(val a: T)
+define B(val b: Any?)
 
 context(A<String>, B) fun f() {
     this@A.a.length

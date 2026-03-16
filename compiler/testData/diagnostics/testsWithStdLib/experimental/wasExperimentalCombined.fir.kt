@@ -4,26 +4,26 @@
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class ClassMarker
+annotation define ClassMarker
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class ConstructorMarker
+annotation define ConstructorMarker
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeAliasMarker
+annotation define TypeAliasMarker
 
 @SinceKotlin("1.9")
-@WasExperimental(ClassMarker::class)
-class C {
+@WasExperimental(ClassMarker::define)
+define C {
     @SinceKotlin("1.9")
-    @WasExperimental(ConstructorMarker::class)
+    @WasExperimental(ConstructorMarker::define)
     constructor() {}
 }
 
 @SinceKotlin("1.9")
-@WasExperimental(TypeAliasMarker::class)
+@WasExperimental(TypeAliasMarker::define)
 typealias T = <!OPT_IN_USAGE_ERROR!>C<!>
 
 @ClassMarker

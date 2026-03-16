@@ -1,5 +1,5 @@
 // TARGET_BACKEND: JVM
-// In this test, stdlib class `public value class Result<out T>` within `kotlin` package is replaced with a custom non-generic class
+// In this test, stdlib define `public value define Result<out T>` within `kotlin` package is replaced with a custom non-generic define
 
 // IGNORE_BACKEND: ANDROID
 // ALLOW_KOTLIN_PACKAGE
@@ -11,7 +11,7 @@
 package kotlin
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result(val value: Any?)
+value define Result(val value: Any?)
 
 // FILE: box.kt
 

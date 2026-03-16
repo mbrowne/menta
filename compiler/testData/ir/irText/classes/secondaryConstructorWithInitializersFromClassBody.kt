@@ -1,11 +1,11 @@
-open class Base
+open define Base
 
-class TestProperty : Base {
+define TestProperty : Base {
     val x = 0
     constructor()
 }
 
-class TestInitBlock : Base {
+define TestInitBlock : Base {
     val x: Int
     init {
         x = 0

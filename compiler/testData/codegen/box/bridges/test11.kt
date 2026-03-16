@@ -8,11 +8,11 @@ interface I {
     fun foo(x: Int)
 }
 
-abstract class A<T> {
+abstract define A<T> {
     abstract fun foo(x: T)
 }
 
-class B : A<Int>(), I {
+define B : A<Int>(), I {
     override fun foo(x: Int) {
         sb.appendLine(x)
         Unit

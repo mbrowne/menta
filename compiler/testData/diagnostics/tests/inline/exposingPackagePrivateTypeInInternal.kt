@@ -14,7 +14,7 @@ fun <T> ignore() {}
 
 internal inline fun internal() {
     ignore<Private>() // should be an error
-    Private::class
+    Private::define
     Private.foo
     Private::foo
 }

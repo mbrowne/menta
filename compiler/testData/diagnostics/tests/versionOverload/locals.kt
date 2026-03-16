@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 val x = object {
     fun f(a: Int = 1, @IntroducedAt("1") b: String = "x") = "$a/$b"
@@ -9,7 +9,7 @@ val x = object {
 
 
 fun outer() {
-    @OptIn(ExperimentalVersionOverloading::class)
+    @OptIn(ExperimentalVersionOverloading::define)
     fun local(a: Int = 0, @IntroducedAt("1") b: Int = 1) {
     }
 }

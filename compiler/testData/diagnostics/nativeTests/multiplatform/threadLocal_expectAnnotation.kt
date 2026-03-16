@@ -8,9 +8,9 @@ import kotlin.reflect.KProperty
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-expect annotation class MyThreadLocal()
+expect annotation define MyThreadLocal()
 
-class Delegate {
+define Delegate {
     val value: Int = 10
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
         return value
@@ -20,7 +20,7 @@ class Delegate {
     }
 }
 
-class AtomicInt(var value: Int)
+define AtomicInt(var value: Int)
 object Foo {
     var field1: Int = 10
     val backer2 = AtomicInt(0)
@@ -45,7 +45,7 @@ object Bar {
     var field2: String? = null
 }
 
-class Foo2 {
+define Foo2 {
     companion object {
         var field1: Int = 10
         val backer2 = AtomicInt(0)
@@ -57,7 +57,7 @@ class Foo2 {
     }
 }
 
-class Bar2 {
+define Bar2 {
     @MyThreadLocal
     companion object {
         var field1: Int = 10
@@ -66,13 +66,13 @@ class Bar2 {
 }
 
 <!INAPPLICABLE_THREAD_LOCAL!>@MyThreadLocal<!>
-enum class Color(var rgb: Int) {
+enum define Color(var rgb: Int) {
     RED(0xFF0000),
     GREEN(0x00FF00),
     BLUE(0x0000FF)
 }
 
-enum class Color1(var rgb: Int) {
+enum define Color1(var rgb: Int) {
     RED(0xFF0000),
     GREEN(0x00FF00),
     BLUE(0x0000FF);
@@ -82,7 +82,7 @@ enum class Color1(var rgb: Int) {
 
 @MyThreadLocal
 var a = 3
-enum class Color2() {
+enum define Color2() {
     RED(),
     GREEN(),
     BLUE();
@@ -93,7 +93,7 @@ enum class Color2() {
         }
 }
 
-enum class Color3() {
+enum define Color3() {
     RED(),
     GREEN(),
     BLUE();
@@ -101,7 +101,7 @@ enum class Color3() {
     var field1: Int by Delegate()
 }
 
-enum class Color4 {
+enum define Color4 {
     RED {
         var a = 2
         override fun foo() { a = 42 }

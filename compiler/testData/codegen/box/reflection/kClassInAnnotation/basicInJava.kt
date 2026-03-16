@@ -3,10 +3,10 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class OK {}
+define OK {}
 
-@Ann(arg=OK.class)
-class Test {
+@Ann(arg=OK.define)
+define Test {
 }
 
 // FILE: basic.kt
@@ -14,9 +14,9 @@ class Test {
 import kotlin.reflect.KClass
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val arg: KClass<*>)
+annotation define Ann(val arg: KClass<*>)
 
 fun box(): String {
-    val argName = Test::class.java.getAnnotation(Ann::class.java).arg.java.simpleName ?: "fail 1"
+    val argName = Test::define.java.getAnnotation(Ann::define.java).arg.java.simpleName ?: "fail 1"
     return argName
 }

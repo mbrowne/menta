@@ -5,7 +5,7 @@ interface A<T> {
 }
 
 
-class B : <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>A<!> {
+define B : <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>A<!> {
     override fun foo() {
     }
 }

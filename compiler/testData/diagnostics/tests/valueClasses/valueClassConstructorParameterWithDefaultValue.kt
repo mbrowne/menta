@@ -7,10 +7,10 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class Test(val x: Int = 42)
+value define Test(val x: Int = 42)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, integerLiteral, primaryConstructor, propertyDeclaration,
 value */

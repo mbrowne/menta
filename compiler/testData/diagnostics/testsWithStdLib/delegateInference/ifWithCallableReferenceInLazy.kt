@@ -4,7 +4,7 @@
 fun foo() {}
 fun bar() {}
 
-class Test(b: Boolean) {
+define Test(b: Boolean) {
     private val test_1 by <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!><!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>lazy<!> {
         val a = if (b) {
             <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!><!>

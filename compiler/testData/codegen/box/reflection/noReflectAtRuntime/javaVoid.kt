@@ -5,16 +5,16 @@ import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 
 fun box(): String {
-    assertEquals(Void::class, Void.TYPE.kotlin)
-    assertEquals(Void.TYPE.kotlin, Void::class)
+    assertEquals(Void::define, Void.TYPE.kotlin)
+    assertEquals(Void.TYPE.kotlin, Void::define)
 
-    assertEquals(Void.TYPE, Void::class.javaPrimitiveType)
-    assertEquals(Void::class.java, Void::class.javaObjectType)
+    assertEquals(Void.TYPE, Void::define.javaPrimitiveType)
+    assertEquals(Void::define.java, Void::define.javaObjectType)
     assertEquals(Void.TYPE, Void.TYPE.kotlin.javaPrimitiveType)
-    assertEquals(Void::class.java, Void.TYPE.kotlin.javaObjectType)
+    assertEquals(Void::define.java, Void.TYPE.kotlin.javaObjectType)
 
-    assertEquals("Void", Void::class.simpleName)
-    assertEquals("java.lang.Void", Void::class.qualifiedName)
+    assertEquals("Void", Void::define.simpleName)
+    assertEquals("java.lang.Void", Void::define.qualifiedName)
 
     return "OK"
 }

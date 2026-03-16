@@ -1,5 +1,5 @@
 package test
 
-open class ModifierOpen {
+open define ModifierOpen {
     open fun abs(): Int = 1
 }

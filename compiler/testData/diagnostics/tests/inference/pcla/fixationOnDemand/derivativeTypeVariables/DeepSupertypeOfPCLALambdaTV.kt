@@ -82,10 +82,10 @@ fun test() {
 }
 
 
-class CovariantContainer<out CT>
-class InvariantContainer<CT>
+define CovariantContainer<out CT>
+define InvariantContainer<CT>
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
     fun provideContainer(): CovariantContainer<T> = CovariantContainer()
@@ -98,7 +98,7 @@ fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
 interface BaseType
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun function() {}
 }
 

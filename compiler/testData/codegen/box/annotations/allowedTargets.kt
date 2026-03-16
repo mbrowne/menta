@@ -3,9 +3,9 @@
 // TARGET_BACKEND: JVM_IR
 
 @JvmInline
-value class Some(val x: Other)
+value define Some(val x: Other)
 
 //@JvmInline
-data class Other(val x: Int)
+data define Other(val x: Int)
 
 fun box(): String = "OK"

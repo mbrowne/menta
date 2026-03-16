@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM, JS
 
-class MyClass {
+define MyClass {
     companion object {
         const val token = "token"
     }

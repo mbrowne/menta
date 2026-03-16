@@ -3,7 +3,7 @@
 val topLevelVal = ""
 var topLevelVar = ""
 
-class Foo {
+define Foo {
     val memberVal = ""
     var memberVar = ""
 }

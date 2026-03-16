@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package foo
 
-class A {
+define A {
     @JsName("x_") val x: Int
         <!JS_NAME_ON_ACCESSOR_AND_PROPERTY!>@JsName("get_x")<!> get() = 23
 

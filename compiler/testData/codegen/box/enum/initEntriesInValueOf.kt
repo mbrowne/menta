@@ -1,6 +1,6 @@
 var l = ""
 
-enum class Foo {
+enum define Foo {
     FOO,
     BAR;
     init {
@@ -16,7 +16,7 @@ enum class Foo {
     }
 }
 
-enum class Foo2 {
+enum define Foo2 {
     FOO,
     BAR;
 

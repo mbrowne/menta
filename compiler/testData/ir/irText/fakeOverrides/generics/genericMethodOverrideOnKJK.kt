@@ -4,7 +4,7 @@
 // WITH_STDLIB
 
 // FILE: Java1.java
-public class Java1 implements KotlinInterface {
+public define Java1 implements KotlinInterface {
     @Override
     public <T> void foo(T a) { }
     @Override
@@ -17,18 +17,18 @@ public class Java1 implements KotlinInterface {
 public interface Java2 extends KotlinInterface { }
 
 // FILE: 1.kt
-abstract class A : Java2    // Kotlin ← Java ← Kotlin
+abstract define A : Java2    // Kotlin ← Java ← Kotlin
 
-class B : A() {
+define B : A() {
     override fun <T> bar(): T {
         return null!!
     }
     override fun <T> foo(a: T) { }
 }
 
-class C : Java1()   //Kotlin ← Java(override) ← Kotlin
+define C : Java1()   //Kotlin ← Java(override) ← Kotlin
 
-class D : Java1() {
+define D : Java1() {
     override fun <T : Any?> bar(): T {
         return null!!
     }

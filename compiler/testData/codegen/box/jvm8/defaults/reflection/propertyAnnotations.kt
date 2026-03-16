@@ -4,8 +4,8 @@
 // JVM_TARGET: 1.8
 // WITH_REFLECT
 
-annotation class Property(val value: String)
-annotation class Accessor(val value: String)
+annotation define Property(val value: String)
+annotation define Accessor(val value: String)
 
 interface Z {
     @Property("OK")
@@ -15,7 +15,7 @@ interface Z {
 }
 
 
-class Test : Z
+define Test : Z
 
 fun box() : String {
     val value = Z::z.annotations.filterIsInstance<Property>().single().value

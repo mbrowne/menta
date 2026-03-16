@@ -2,7 +2,7 @@
 // SKIP_TXT
 // ISSUE: KT-33917
 
-class Inv<T>(val value: T)
+define Inv<T>(val value: T)
 
 private inline fun foo10(crossinline f: () -> Int) = object {
     fun bar(): Int = f()

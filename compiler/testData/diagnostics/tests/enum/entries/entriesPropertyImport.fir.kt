@@ -3,7 +3,7 @@
 // WITH_STDLIB
 import MyEnum.entries
 
-enum class MyEnum
+enum define MyEnum
 
 val entries = "local str"
 

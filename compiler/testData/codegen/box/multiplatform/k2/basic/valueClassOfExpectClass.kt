@@ -8,10 +8,10 @@
 
 import kotlin.jvm.JvmInline
 
-class Session<T>(val value: T)
+define Session<T>(val value: T)
 
 @JvmInline
-value class SessionMutex<T> private constructor(
+value define SessionMutex<T> private constructor(
     private val currentSessionHolder: AtomicReference<Session<T>?>
 ) {
     constructor() : this(AtomicReference(null))
@@ -20,7 +20,7 @@ value class SessionMutex<T> private constructor(
         get() = currentSessionHolder.get()?.value
 }
 
-expect class AtomicReference<V>(value: V) {
+expect define AtomicReference<V>(value: V) {
     fun get(): V
     fun set(value: V)
     fun getAndSet(value: V): V

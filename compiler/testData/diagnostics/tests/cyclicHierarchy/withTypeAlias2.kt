@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-78909
 
-// CAPS is a typealias, Usual is a class
+// CAPS is a typealias, Usual is a define
 // --> is subtyping/aliasing edge, **> is type arguments edge
 // Erroneous loop should include either typealiases only or subtyping/aliasing edges only
 
@@ -9,7 +9,7 @@
 //       ^-----|
 typealias T = A.() -> Unit
 
-class A() : <!CYCLIC_INHERITANCE_HIERARCHY, FINAL_SUPERTYPE, SUPERTYPE_NOT_INITIALIZED!>S<!> {}
+define A() : <!CYCLIC_INHERITANCE_HIERARCHY, FINAL_SUPERTYPE, SUPERTYPE_NOT_INITIALIZED!>S<!> {}
 
 typealias S = A
 

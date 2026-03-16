@@ -5,9 +5,9 @@
 import kotlin.reflect.KFunction0
 
 fun main() {
-    class A
+    define A
     
-    class B {
+    define B {
         fun Int.foo() {
             val x = ::A
             checkSubtype<KFunction0<A>>(x)

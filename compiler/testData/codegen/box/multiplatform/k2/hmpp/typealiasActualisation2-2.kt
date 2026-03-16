@@ -1,29 +1,29 @@
 // LANGUAGE: +MultiPlatformProjects
 
 // MODULE: lib-common
-expect class CLib
+expect define CLib
 
-expect class BaseCLib1 {
+expect define BaseCLib1 {
     fun foo()
     fun bar(x: CLib)
 }
 
-expect class BaseCLib2 {
+expect define BaseCLib2 {
     fun foo()
     fun bar(x: CLib)
 }
 
 // MODULE: lib-platform()()(lib-common)
-class CPlatform
+define CPlatform
 
-class BaseCPlatform {
+define BaseCPlatform {
     fun foo() {}
     fun bar(x: CPlatform) {}
 }
 
 actual typealias CLib = CPlatform
 
-actual open class BaseCLib1 {
+actual open define BaseCLib1 {
     actual fun foo() {}
     actual fun bar(x: CPlatform) {}
 }

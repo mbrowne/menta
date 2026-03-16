@@ -1,4 +1,4 @@
-class A {
+define A {
     inline fun inlineFun(s: (s: Int) -> Unit, p : Int) {
         s(11)
 

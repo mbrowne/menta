@@ -9,9 +9,9 @@ package test
 interface A
 interface B
 
-annotation class Ann
+annotation define Ann
 
-class C {
+define C {
     context(@Ann c: B) fun f() {}
     context(@Ann c: B) val p: Int get() = 42
 }

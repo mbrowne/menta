@@ -1,4 +1,4 @@
-open class A {
+open define A {
     open fun foo(): CharSequence = "OK"
 }
 
@@ -26,11 +26,11 @@ interface I {
     fun foo(): String
 }
 
-open class D : A(), B, C
+open define D : A(), B, C
 
-open class G : D(), E, F
+open define G : D(), E, F
 
-class J : G(), H, I {
+define J : G(), H, I {
     override fun foo(): String = "OK"
 }
 

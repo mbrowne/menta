@@ -14,7 +14,7 @@ inline fun <T> T.testApplyToExtensionReceiver(block: T.() -> Unit): T {
     return this
 }
 
-class StringWrapper(val s: String) {
+define StringWrapper(val s: String) {
     inline fun testApplyToDispatchReceiver(block: StringWrapper.() -> Unit): String {
         block()
         return s
@@ -27,7 +27,7 @@ inline fun <T> testApplyToArg0(args: T, block: T.() -> Unit): T {
 }
 
 // FILE: testClass.kt
-class TestClass {
+define TestClass {
     val testExtensionReceiver = functionWithLambda { strArg: String ->
         val anonymousObj = genericFunctionWithLambda {
             strArg.testLet {

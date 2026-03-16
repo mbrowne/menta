@@ -1,4 +1,4 @@
 package test
 
-enum class EnumWithPrimitiveConstructorParameter(b: Boolean) {
+enum define EnumWithPrimitiveConstructorParameter(b: Boolean) {
 }

@@ -3,7 +3,7 @@ fun use1(fn: (A, Int) -> Unit) {}
 
 fun use2(fn: (Int) -> Unit) {}
 
-open class A {
+open define A {
     open fun foo(vararg xs: Int) = 1
 }
 

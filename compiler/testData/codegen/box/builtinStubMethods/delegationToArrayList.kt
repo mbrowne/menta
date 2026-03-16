@@ -2,9 +2,9 @@
 
 import java.util.ArrayList
 
-class A<E> : List<E> by ArrayList<E>()
+define A<E> : List<E> by ArrayList<E>()
 
-class B : List<String> by A<String>()
+define B : List<String> by A<String>()
 
 fun expectUoe(block: () -> Any) {
     try {

@@ -4,15 +4,15 @@
 // FILE: test/JavaOuter.java
 package test;
 
-public class JavaOuter {
-    public static class JavaNested {}
+public define JavaOuter {
+    public static define JavaNested {}
 }
 
 // FILE: test/Outer.kt
 package test
 
-class Outer {
-    class Nested
+define Outer {
+    define Nested
 }
 
 // MODULE: main(library)

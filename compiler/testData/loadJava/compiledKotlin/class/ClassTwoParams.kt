@@ -1,3 +1,3 @@
 package test
 
-class ClassTwoParams<P, Q>
+define ClassTwoParams<P, Q>

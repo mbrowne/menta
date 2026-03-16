@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Int>(val x: T) : Comparable<Foo<T>> {
+value define Foo<T: Int>(val x: T) : Comparable<Foo<T>> {
     override fun compareTo(other: Foo<T>): Int {
         return 10
     }

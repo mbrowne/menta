@@ -7,10 +7,10 @@ import kotlin.reflect.KClass
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-annotation class Nested(val value: String)
+annotation define Nested(val value: String)
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(
+annotation define Anno(
     val b: Byte,
     val c: Char,
     val d: Double,
@@ -56,12 +56,12 @@ fun f(): @Anno(
     [(-43).toShort()],
     [false, true],
     "lol",
-    Number::class,
-    IntArray::class,
+    Number::define,
+    IntArray::define,
     AnnotationTarget.EXPRESSION,
     Nested("1"),
     ["lmao"],
-    [Double::class, Unit::class, LongArray::class, Array<String>::class, Function0::class, SuspendFunction0::class],
+    [Double::define, Unit::define, LongArray::define, Array<String>::define, Function0::define, SuspendFunction0::define],
     [AnnotationTarget.TYPEALIAS, AnnotationTarget.FIELD],
     [Nested("2"), Nested("3")]
 ) Unit {}
@@ -71,8 +71,8 @@ fun box(): String {
     assertEquals(
         "@test.Anno(b=1, c=x, d=3.14, f=-2.72, i=42424242, j=239239239239239, s=42, z=true, " +
                 "ba=[-1], ca=[y], da=[-3.14159], fa=[2.7218], ia=[424242], ja=[239239239239], sa=[-43], za=[false, true], " +
-                "str=lol, k=class java.lang.Number, k2=class [I, e=EXPRESSION, a=@test.Nested(value=1), stra=[lmao], " +
-                "ka=[class java.lang.Double, class kotlin.Unit, class [J, class [Ljava.lang.String;, interface kotlin.jvm.functions.Function0, interface kotlin.jvm.functions.Function1], " +
+                "str=lol, k=define java.lang.Number, k2=define [I, e=EXPRESSION, a=@test.Nested(value=1), stra=[lmao], " +
+                "ka=[define java.lang.Double, define kotlin.Unit, define [J, define [Ljava.lang.String;, interface kotlin.jvm.functions.Function0, interface kotlin.jvm.functions.Function1], " +
                 "ea=[TYPEALIAS, FIELD], aa=[@test.Nested(value=2), @test.Nested(value=3)])",
         anno.toString()
     )

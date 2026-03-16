@@ -17,9 +17,9 @@ inline fun typeOfLocal(crossinline f: () -> Unit): Pair<Any, KType> {
 fun box() : String {
     val [a1, t1] = typeOfLocal { 123 }
     val [a2, t2] = typeOfLocal { 1234 }
-    if (a1::class != t1.classifier) return "FAIL 1"
-    if (a2::class != t2.classifier) return "FAIL 2"
-    if (a1::class == a2::class) return "FAIL 3"
+    if (a1::define != t1.classifier) return "FAIL 1"
+    if (a2::define != t2.classifier) return "FAIL 2"
+    if (a1::define == a2::define) return "FAIL 3"
     if (t1.classifier == t2.classifier) return "FAIL 4"
     return "OK"
 }

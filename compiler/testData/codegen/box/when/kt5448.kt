@@ -1,10 +1,10 @@
 // WITH_STDLIB
 
-class A
+define A
 
-class B(val items: Collection<A>)
+define B(val items: Collection<A>)
 
-class C {
+define C {
     fun foo(p: Int) {
         when (p) {
             1 -> arrayListOf<Int>().add(1)

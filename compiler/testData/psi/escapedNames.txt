@@ -62,7 +62,7 @@ KtFile: escapedNames.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('`Annotation Class`')
   PsiWhiteSpace('\n\n')
@@ -76,7 +76,7 @@ KtFile: escapedNames.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('`Annotation Class`')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('`Top Level Class`')
     TYPE_PARAMETER_LIST
@@ -339,7 +339,7 @@ KtFile: escapedNames.kt
       PsiWhiteSpace('\n')
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('`Enum Class`')
     PsiWhiteSpace(' ')

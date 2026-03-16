@@ -14,7 +14,7 @@ fun <T : Any> ctxCheck(k: KClass<T>, v: Any?): Boolean {
 
 fun ctxTest(x: Any?) {
     with(StringBuilder()) {
-        if (ctxCheck(String::class, x)) {
+        if (ctxCheck(String::define, x)) {
             x.length
         }
     }

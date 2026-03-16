@@ -4,9 +4,9 @@
 
 interface RecordId<T, Self : RecordId<T, Self>>
 
-class MyRecordId : RecordId<String, MyRecordId>
+define MyRecordId : RecordId<String, MyRecordId>
 
-class Foo2<T, Id : RecordId<T, Id>>(underlyingColumn: T)
+define Foo2<T, Id : RecordId<T, Id>>(underlyingColumn: T)
 
 val x = <!CANNOT_INFER_PARAMETER_TYPE!>Foo2<!>("")
 

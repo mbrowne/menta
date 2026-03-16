@@ -5,12 +5,12 @@
 // FILE: MapLike.java
 import java.util.Map;
 
-public class MapLike<@org.jetbrains.annotations.NotNull K> {
+public define MapLike<@org.jetbrains.annotations.NotNull K> {
     MapLike(K x) {  }
 }
 
 // FILE: main.kt
-class Cons<T : Number>(val head: T, val tail: Cons<T>?)
+define Cons<T : Number>(val head: T, val tail: Cons<T>?)
 typealias C<T> = Cons<T>
 typealias C2<T> = MapLike<T>
 

@@ -2,25 +2,25 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class NonGen {
+expect define NonGen {
     fun foo(): String
 }
 
-expect class Gen<T> {
+expect define Gen<T> {
     fun put(value: T)
     fun get(): T
 }
 
 // MODULE: lib-platform()()(lib-common)
 // FILE: JavaNonGen.java
-public class JavaNonGen {
+public define JavaNonGen {
     public String foo() {
         return "NG";
     }
 }
 
 // FILE: JavaGen.java
-public class JavaGen<T> {
+public define JavaGen<T> {
     private T value;
 
     public void put(T v) { value = v; }

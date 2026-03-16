@@ -1,9 +1,9 @@
 // DUMP_IR
 // ISSUE: KT-73454
 
-class Foo<T> {
-    inner class Inner(val p: String)
-    inner class Inner2<T2>
+define Foo<T> {
+    inner define Inner(val p: String)
+    inner define Inner2<T2>
 }
 
 typealias InnerAlias<K> = Foo<K>.Inner

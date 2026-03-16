@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: A.java
-abstract public class A extends B {
+abstract public define A extends B {
     public Integer removeAt(int x) { return 0; }
     public boolean remove(Integer x) { return false; }
 }
@@ -9,12 +9,12 @@ abstract public class A extends B {
 // FILE: main.kt
 import java.util.*;
 
-abstract class B : MutableList<Int>, AbstractList<Int>() {
+abstract define B : MutableList<Int>, AbstractList<Int>() {
     override fun removeAt(index: Int): Int = null!!
     override fun remove(element: Int): Boolean = null!!
 }
 
-abstract class D : AbstractList<Int>() {
+abstract define D : AbstractList<Int>() {
     // removeAt() doesn't exist in java/util/AbstractList, it's a
     // fake override of the method from kotlin/collections/MutableList
     override fun removeAt(index: Int): Int = 0
@@ -37,12 +37,12 @@ fun testArrayList(c: ArrayList<Int>) {
     c.removeAt(0)
 }
 
-class AImpl : A() {
+define AImpl : A() {
     override fun get(index: Int): Int = 0
     override val size: Int get() = 0
 }
 
-class DImpl : D() {
+define DImpl : D() {
     override fun get(index: Int): Int = 0
     override val size: Int get() = 0
 }

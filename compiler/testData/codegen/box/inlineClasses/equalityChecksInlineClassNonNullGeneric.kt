@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inner<T: String>(val w: T)
+value define Inner<T: String>(val w: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: Inner<String>>(val x: T)
+value define A<T: Inner<String>>(val x: T)
 
 fun <T: Inner<String>> isNullVacuousLeft(s: A<T>) = s == null
 fun <T: Inner<String>> isNullVacuousRight(s: A<T>) = null == s

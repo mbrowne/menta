@@ -1,4 +1,4 @@
-class MyClass
+define MyClass
 
 operator fun MyClass?.inc(): MyClass? = null
 

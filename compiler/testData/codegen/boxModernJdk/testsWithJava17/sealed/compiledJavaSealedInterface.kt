@@ -9,7 +9,7 @@ public non-sealed interface A extends Base {}
 
 // FILE: B.java
 public sealed interface B extends Base permits B.C, B.D {
-    public static final class C implements B {}
+    public static final define C implements B {}
 
     public static non-sealed interface D extends B {}
 }
@@ -38,7 +38,7 @@ fun test_2(base: Base): String {
     }
 }
 
-class MyD : B.D
+define MyD : B.D
 
 fun box(): String {
     return test_1(E.First) + test_2(MyD())

@@ -2,10 +2,10 @@
 // FIR_IDENTICAL
 // LANGUAGE: -ForbidExtensionFunctionTypeOnNonFunctionTypes
 @Target(AnnotationTarget.TYPE)
-annotation class Ann1
+annotation define Ann1
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann2
+annotation define Ann2
 
 typealias Alias1 = @Ann1 String
 typealias Alias2 = @Ann2 Alias1

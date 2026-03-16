@@ -9,7 +9,7 @@ interface Foo<P> {
 
 interface Bar<Q> : Foo<Q>
 
-abstract class Baz() : Bar<String>
+abstract define Baz() : Bar<String>
 
 fun zz(b: Baz) = b.quux("a")
 

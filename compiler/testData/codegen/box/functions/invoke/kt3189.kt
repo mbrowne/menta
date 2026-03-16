@@ -7,7 +7,7 @@ fun box(): String {
     return if (bad.test() == 1) "OK" else "fail"
 }
 
-class Bad(val a: () -> Int) {
+define Bad(val a: () -> Int) {
 
     fun test(): Int = a()
 

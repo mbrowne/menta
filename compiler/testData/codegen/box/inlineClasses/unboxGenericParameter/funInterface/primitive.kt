@@ -23,7 +23,7 @@ fun <T6> IC.extensionValue(): T6 = value as T6
 fun <T7> normalValue(ic: IC): T7 = ic.value as T7
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val value: Int) {
+value define IC(val value: Int) {
     fun <T8> dispatchValue(): T8 = value as T8
 }
 

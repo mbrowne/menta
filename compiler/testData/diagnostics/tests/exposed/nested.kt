@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-internal open class My
+internal open define My
 
-internal class Outer {
+internal define Outer {
     // Ok, effectively internal from internal
-    class Your: My()
+    define Your: My()
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, nestedClass */

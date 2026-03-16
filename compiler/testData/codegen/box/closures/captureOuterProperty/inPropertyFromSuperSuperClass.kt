@@ -2,11 +2,11 @@ interface T {
     fun result(): String
 }
 
-abstract class A<Z>(val x: Z)
+abstract define A<Z>(val x: Z)
 
-open class B : A<String>("OK")
+open define B : A<String>("OK")
 
-class C : B() {
+define C : B() {
     fun foo() = object : T {
         val bar = x
 

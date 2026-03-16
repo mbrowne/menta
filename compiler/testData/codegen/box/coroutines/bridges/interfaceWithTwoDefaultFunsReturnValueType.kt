@@ -37,7 +37,7 @@ fun box(): String {
     return res
 }
 
-// @Repository$DefaultImpls.class:
+// @Repository$DefaultImpls.define:
 // 0 @Lkotlin/coroutines/jvm/internal/DebugMetadata;
 // 0 L$0
 // 2 ALOAD 1

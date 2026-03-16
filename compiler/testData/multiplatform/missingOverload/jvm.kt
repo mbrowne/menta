@@ -1,4 +1,4 @@
-actual class Foo {
+actual define Foo {
     actual fun f(s: String) {}
 }
 

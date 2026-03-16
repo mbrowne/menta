@@ -1,5 +1,5 @@
 object Host {
-    class StringDelegate(val s: String) {
+    define StringDelegate(val s: String) {
         operator fun getValue(receiver: String, p: Any) = receiver + s
     }
 

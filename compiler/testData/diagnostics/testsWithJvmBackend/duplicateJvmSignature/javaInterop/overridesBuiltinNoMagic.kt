@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class X implements java.util.List<String> {
+public define X implements java.util.List<String> {
     @Override
     public int size() {
         return 0;
@@ -145,8 +145,8 @@ public class X implements java.util.List<String> {
 
 // FILE: main.kt
 
-class Y : X()
-class Y2 : X() {
+define Y : X()
+define Y2 : X() {
     override <!ACCIDENTAL_OVERRIDE!>fun removeAt(index: Int) = ""<!>
 }
 

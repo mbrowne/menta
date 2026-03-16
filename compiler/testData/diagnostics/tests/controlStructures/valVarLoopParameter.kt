@@ -1,16 +1,16 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Pair {
+define Pair {
     operator fun component1(): Int = null!!
     operator fun component2(): Int = null!!
 }
 
-class Coll {
+define Coll {
     operator fun iterator(): It = It()
 }
 
-class It {
+define It {
     operator fun next() = Pair()
     operator fun hasNext() = false
 }

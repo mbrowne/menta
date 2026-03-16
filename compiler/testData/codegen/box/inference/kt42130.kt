@@ -16,6 +16,6 @@ fun foo(a: A): String {
     }
 }
 
-class C : B
+define C : B
 
 fun box(): String = foo(C())

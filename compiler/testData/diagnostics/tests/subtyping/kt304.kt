@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 
-//KT-304: Resolve supertype reference to class anyway
+//KT-304: Resolve supertype reference to define anyway
 
-open class Foo() : <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Bar<!>() {
+open define Foo() : <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Bar<!>() {
 }
 
-open class Bar<T>() {
+open define Bar<T>() {
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, nullableType, primaryConstructor, typeParameter */

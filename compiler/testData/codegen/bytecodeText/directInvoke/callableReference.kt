@@ -1,4 +1,4 @@
-class Z{
+define Z{
 
     fun a(s: Int) {}
 

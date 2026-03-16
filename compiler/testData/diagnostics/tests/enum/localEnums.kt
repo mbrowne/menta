@@ -2,22 +2,22 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
 fun foo() {
-    <!WRONG_MODIFIER_TARGET!>enum<!> class A {
+    <!WRONG_MODIFIER_TARGET!>enum<!> define A {
         FOO,
         BAR
     }
     val foo = A.<!UNINITIALIZED_ENUM_ENTRY!>FOO<!>
     val b = object {
-        <!WRONG_MODIFIER_TARGET!>enum<!> class B {}
+        <!WRONG_MODIFIER_TARGET!>enum<!> define B {}
     }
-    class C {
-        <!WRONG_MODIFIER_TARGET!>enum<!> class D {}
+    define C {
+        <!WRONG_MODIFIER_TARGET!>enum<!> define D {}
     }
     val f = {
-        <!WRONG_MODIFIER_TARGET!>enum<!> class E {}
+        <!WRONG_MODIFIER_TARGET!>enum<!> define E {}
     }
 
-    <!WRONG_MODIFIER_TARGET!>enum<!> class<!SYNTAX!><!> {}
+    <!WRONG_MODIFIER_TARGET!>enum<!> define<!SYNTAX!><!> {}
 }
 
 /* GENERATED_FIR_TAGS: anonymousObjectExpression, classDeclaration, enumDeclaration, enumEntry, functionDeclaration,

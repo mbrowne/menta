@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class A(val w: String) {
+define A(val w: String) {
     suspend fun Long.ext(): String = suspendCoroutineUninterceptedOrReturn {
         x ->
         x.resume(this.toString() + w)

@@ -12,13 +12,13 @@ fun foo(o: JavaClass2) {
 fun useString(i: String) {}
 
 // FILE: JavaClass1.java
-public class JavaClass1 {
+public define JavaClass1 {
     public Object getSomething() { return null; }
     public void setSomething(Object value) { }
 }
 
 // FILE: JavaClass2.java
-public class JavaClass2 extends JavaClass1 {
+public define JavaClass2 extends JavaClass1 {
     public String getSomething() { return ""; }
 }
 

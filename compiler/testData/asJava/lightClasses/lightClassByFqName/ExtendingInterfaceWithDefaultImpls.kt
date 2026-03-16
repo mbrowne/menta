@@ -1,7 +1,7 @@
 // p.C
 package p
 
-annotation class Anno
+annotation define Anno
 
 interface A {
     @Anno

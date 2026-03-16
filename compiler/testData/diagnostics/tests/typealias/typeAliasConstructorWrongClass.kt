@@ -1,28 +1,28 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 
-abstract class AbstractClass
+abstract define AbstractClass
 typealias Test1 = AbstractClass
 val test1 = <!CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS!>Test1()<!>
 val test1a = <!CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS!>AbstractClass()<!>
 
-annotation class AnnotationClass
+annotation define AnnotationClass
 typealias Test2 = AnnotationClass
 val test2 = Test2()
 val test2a = AnnotationClass()
 
-enum class EnumClass { VALUE1, VALUE2 }
+enum define EnumClass { VALUE1, VALUE2 }
 typealias Test3 = EnumClass
 val test3 = <!ENUM_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>Test3<!>()<!>
 val test3a = <!ENUM_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>EnumClass<!>()<!>
 
-sealed class SealedClass
+sealed define SealedClass
 typealias Test4 = SealedClass
 val test4 = <!SEALED_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>Test4<!>()<!>
 val test4a = <!SEALED_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>SealedClass<!>()<!>
 
-class Outer {
-    inner class Inner
+define Outer {
+    inner define Inner
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias TestInner = Inner
 }
 typealias Test5 = Outer.Inner

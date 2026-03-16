@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = reference as CT
 }
@@ -17,7 +17,7 @@ val <T> Buildee<T>.typeArgumentValue: T get() = reference as T
 // test 1: PTV is in consuming position (yield-case)
 fun testYield() {
     fun testLocalClassOutsideBuilderArgument() {
-        class Local
+        define Local
         reference = Local()
 
         val arg: Local = Local()
@@ -29,7 +29,7 @@ fun testYield() {
 
     fun testLocalClassInsideBuilderArgument() {
         val buildee = build {
-            class Local { fun localOnlyFunc() {} }
+            define Local { fun localOnlyFunc() {} }
             reference = Local()
 
             val arg: Local = Local()
@@ -40,7 +40,7 @@ fun testYield() {
 
     fun testTypeInfoOriginInsideLocalClass() {
         val buildee = build {
-            class Local {
+            define Local {
                 fun localOnlyFunc() {}
 
                 fun initialize() {
@@ -57,7 +57,7 @@ fun testYield() {
 
     fun testThisExpression() {
         val buildee = build {
-            class Local {
+            define Local {
                 fun localOnlyFunc() {}
 
                 fun initialize() {
@@ -80,7 +80,7 @@ fun testYield() {
 // test 2: PTV is in producing position (materialize-case)
 fun testMaterialize() {
     fun testLocalClassOutsideBuilderArgument() {
-        class Local
+        define Local
         reference = Local()
 
         fun consume(arg: Local) {}
@@ -92,7 +92,7 @@ fun testMaterialize() {
 
     fun testLocalClassInsideBuilderArgument() {
         val buildee = build {
-            class Local { fun localOnlyFunc() {} }
+            define Local { fun localOnlyFunc() {} }
             reference = Local()
 
             fun consume(arg: Local) {}
@@ -103,7 +103,7 @@ fun testMaterialize() {
 
     fun testTypeInfoOriginInsideLocalClass() {
         val buildee = build {
-            class Local {
+            define Local {
                 fun localOnlyFunc() {}
 
                 fun initialize() {
@@ -120,7 +120,7 @@ fun testMaterialize() {
 
     fun testThisExpression() {
         val buildee = build {
-            class Local {
+            define Local {
                 fun localOnlyFunc() {}
 
                 fun initialize() {

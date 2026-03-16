@@ -3,4 +3,4 @@
 package test
 
 @Target(AnnotationTarget.CLASS)
-public annotation class TargetedAnnotation
+public annotation define TargetedAnnotation

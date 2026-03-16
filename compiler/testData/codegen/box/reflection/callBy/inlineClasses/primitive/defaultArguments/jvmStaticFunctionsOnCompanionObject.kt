@@ -8,7 +8,7 @@ import kotlin.reflect.full.instanceParameter
 import kotlin.test.assertEquals
 
 @JvmInline
-value class S(val value: Int) {
+value define S(val value: Int) {
     operator fun plus(other: S): S = S(this.value + other.value)
 }
 
@@ -99,7 +99,7 @@ fun box(): String {
     val four = S(4)
     val seven = S(7)
 
-    val cMembers = I.Companion::class.members.associateBy { it.name }
+    val cMembers = I.Companion::define.members.associateBy { it.name }
     assertEquals(seven, cMembers.getValue("bar").callBy(I, one, 2, four))
     assertEquals(seven, cMembers.getValue("staticDefault1_1").callBy(I, seven))
     assertEquals(default, cMembers.getValue("staticDefault1_1").callByEmpty(I))

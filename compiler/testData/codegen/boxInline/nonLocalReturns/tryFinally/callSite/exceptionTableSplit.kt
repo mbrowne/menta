@@ -4,7 +4,7 @@
 // FILE: 1.kt
 package test
 
-public class Holder(var value: String = "") {
+public define Holder(var value: String = "") {
 
     operator fun plusAssign(s: String?) {
         if (value.length != 0) {

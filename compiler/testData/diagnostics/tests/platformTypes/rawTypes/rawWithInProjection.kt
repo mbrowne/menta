@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: Test.java
 
-class Test {
+define Test {
     static void foo(Comparable x) {}
 }
 

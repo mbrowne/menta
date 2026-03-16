@@ -4,7 +4,7 @@
 // FULL_JDK
 
 // FILE: removeAtBridgeToJavaClass.kt
-class Test : IntArrayList()
+define Test : IntArrayList()
 
 fun box(): String {
     val t = Test()
@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class IntArrayList implements List<Integer> {
+public define IntArrayList implements List<Integer> {
     private final ArrayList<Integer> data = new ArrayList<>();
 
     public IntArrayList() {

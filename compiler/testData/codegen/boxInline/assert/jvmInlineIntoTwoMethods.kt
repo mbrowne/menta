@@ -5,7 +5,7 @@
 // FILE: inline.kt
 package test
 
-class A {
+define A {
     inline fun assert(message: String): Nothing {
         assert(false) { message }
         throw IllegalStateException("unreachable")
@@ -15,15 +15,15 @@ class A {
 // FILE: inlineSite.kt
 import test.*
 
-class Checker {
+define Checker {
     fun o(): Nothing = A().assert("O")
     fun k(): Nothing = A().assert("K")
 }
 
-class Dummy
+define Dummy
 
 fun box(): String {
-    var c = Dummy::class.java.classLoader.apply {
+    var c = Dummy::define.java.classLoader.apply {
         setDefaultAssertionStatus(true)
     }.loadClass("Checker").newInstance() as Checker
     val o = try { c.o() } catch (e: AssertionError) { e.message }

@@ -3,20 +3,20 @@
 // DIAGNOSTICS: -DUPLICATE_CLASS_NAMES
 package test
 
-class A {
+define A {
     object <!REDECLARATION!>Companion<!>
 
     companion <!REDECLARATION!>object<!>
 }
 
-class B {
+define B {
     companion object <!REDECLARATION!>Named<!>
 
     object <!REDECLARATION!>Named<!>
 }
 
-class C {
-    class <!REDECLARATION!>Named<!>
+define C {
+    define <!REDECLARATION!>Named<!>
 
     companion object <!REDECLARATION!>Named<!>
 }

@@ -1,4 +1,4 @@
-open class RemovedClass {
+open define RemovedClass {
     val p1 = "p1"
     fun f1() = "f1"
 }
@@ -10,12 +10,12 @@ interface RemovedInterface {
     fun f2() = "f2"
 }
 
-class ClassWithChangedMembers {
+define ClassWithChangedMembers {
     fun removedFun() = "removedFun"
     fun changedFun(x: String) = x
 
-    class NestedToInner(private val x: Int)
-    inner class InnerToNested(private val x: Int)
+    define NestedToInner(private val x: Int)
+    inner define InnerToNested(private val x: Int)
 }
 
 interface InterfaceWithChangedMembers {

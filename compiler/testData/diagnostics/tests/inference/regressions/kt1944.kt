@@ -7,7 +7,7 @@ package j
 
 import checkSubtype
 
-class P {
+define P {
     var x : Int = 0
         private set
 

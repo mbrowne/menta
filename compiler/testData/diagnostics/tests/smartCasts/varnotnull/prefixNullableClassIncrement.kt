@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class MyClass
+define MyClass
 
 // Correct at compile time but wrong at run-time
 operator fun MyClass?.inc(): MyClass? { return null }

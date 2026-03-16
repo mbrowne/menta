@@ -2,8 +2,8 @@
 
 // MODULE: lib-common
 
-expect class A
-expect class B
+expect define A
+expect define B
 
 expect interface Base1 {
     open fun foo(x: A): String
@@ -16,13 +16,13 @@ expect interface Base2 {
 interface I1 : Base1
 interface I2 : Base2
 
-abstract class Derived : I1, I2 {
+abstract define Derived : I1, I2 {
     abstract override fun foo(x: A): String
 }
 
 // MODULE: lib-platform()()(lib-common)
 
-class C
+define C
 
 actual typealias A = C
 actual typealias B = C
@@ -35,7 +35,7 @@ actual interface Base2 {
     actual fun foo(x: C): String = "Base2"
 }
 
-class Impl : Derived(), I1, I2 {
+define Impl : Derived(), I1, I2 {
     override fun foo(x: C): String {
         return "Impl" + super<I1>.foo(x)
     }

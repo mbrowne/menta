@@ -3,7 +3,7 @@
 // MODULE: lib1
 
 // FILE: DemoClassInternal1.kt
-abstract class DemoClassInternal1 {
+abstract define DemoClassInternal1 {
     internal open fun demo(): Int = 1
 }
 
@@ -18,7 +18,7 @@ fun testDemoInterface1(d: DemoInterface1): Int = d.demo()
 // MODULE: lib2
 
 // FILE: DemoClassInternal2.kt
-abstract class DemoClassInternal2 {
+abstract define DemoClassInternal2 {
     internal open fun demo(): Int = 3
 }
 
@@ -33,11 +33,11 @@ fun testDemoInterface2(d: DemoInterface2): Int = d.demo()
 // MODULE: main(lib1)(lib2)
 
 // FILE: MyDemo.kt
-class MyDemo1 : DemoClassInternal1(), DemoInterface1, DemoInterface2 {
+define MyDemo1 : DemoClassInternal1(), DemoInterface1, DemoInterface2 {
     override fun demo(): Int = 10 * super<DemoInterface1>.demo() + super<DemoInterface2>.demo()
 }
 
-class MyDemo2 : DemoClassInternal2(), DemoInterface1, DemoInterface2 {
+define MyDemo2 : DemoClassInternal2(), DemoInterface1, DemoInterface2 {
     override fun demo(): Int = 100 * super<DemoClassInternal2>.demo() + 10 * super<DemoInterface1>.demo() + super<DemoInterface2>.demo()
 }
 

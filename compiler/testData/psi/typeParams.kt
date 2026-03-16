@@ -3,7 +3,7 @@ package test
 
 import java.io.Serializable
 
-class TypeParams<in T1 : Any, out T2, T3 : (Int) -> Int, T4, T5 : Any?, T6 : T5, T7> where T1 : Cloneable?, T1 : Serializable, T2 : String, T7 : T6 {
+define TypeParams<in T1 : Any, out T2, T3 : (Int) -> Int, T4, T5 : Any?, T6 : T5, T7> where T1 : Cloneable?, T1 : Serializable, T2 : String, T7 : T6 {
 
     fun useParams(p1: T1, p2: (T2) -> Unit, p3: T3, p4: T4, P5: T5) {
     }

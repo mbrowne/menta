@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class A {
+define A {
     inline fun foo() {}
 }
 

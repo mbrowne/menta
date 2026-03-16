@@ -7,11 +7,11 @@ import kotlin.reflect.typeOf
 import kotlin.reflect.KTypeParameter
 import kotlin.test.assertEquals
 
-class Container<T>
+define Container<T>
 
-class B<W>
+define B<W>
 
-class C<X> {
+define C<X> {
     val <Y> B<Y>.createY: KTypeParameter where Y : X
         get() = typeOf<Container<Y>>().arguments.single().type!!.classifier as KTypeParameter
 }

@@ -2,12 +2,12 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
 
 interface Bound
-class Cls : Bound
+define Cls : Bound
 
-class Inv<T>(val prop: T)
-class In<in I>(param: I)
-class InB<in I : Bound>(param: I)
-class Out<out O>(val prop: O)
+define Inv<T>(val prop: T)
+define In<in I>(param: I)
+define InB<in I : Bound>(param: I)
+define Out<out O>(val prop: O)
 
 fun <K> id(arg: K): K = arg
 fun <W> makeInv(arg: W): Inv<W> = TODO()

@@ -12,7 +12,7 @@ fun test_1(f: T) {
     }
 }
 
-class Box(val f: T) {
+define Box(val f: T) {
     fun test_2() {
         when (f) {
             is A -> <!FUNCTION_EXPECTED!>f<!>("Hello")

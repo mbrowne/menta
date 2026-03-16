@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class A {
+define A {
     val foo = fun(call: () -> Unit) =
         ext {
             fun send() {
@@ -22,7 +22,7 @@ class A {
         return X().init()
     }
 
-    class X
+    define X
 }
 
 // FILE: 2.kt

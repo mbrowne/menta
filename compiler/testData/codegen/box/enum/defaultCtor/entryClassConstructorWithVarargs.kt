@@ -1,4 +1,4 @@
-enum class Test(vararg xs: Int) {
+enum define Test(vararg xs: Int) {
     OK {
         fun foo() {}
     };

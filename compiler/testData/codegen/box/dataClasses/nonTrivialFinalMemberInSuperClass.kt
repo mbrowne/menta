@@ -1,10 +1,10 @@
-abstract class Base {
+abstract define Base {
     final override fun toString() = "OK"
     final override fun hashCode() = 42
     final override fun equals(other: Any?) = false
 }
 
-data class DataClass(val field: String) : Base()
+data define DataClass(val field: String) : Base()
 
 fun box(): String {
     val d = DataClass("x")

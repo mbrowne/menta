@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class Outer {
-    class Inner(
+define Outer {
+    define Inner(
 }
 
-class Next
+define Next

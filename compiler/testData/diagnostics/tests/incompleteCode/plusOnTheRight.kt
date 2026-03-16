@@ -2,7 +2,7 @@
 //EA-35646
 package a
 
-class MyClass1 {
+define MyClass1 {
     public operator fun unaryPlus() {}
 }
 

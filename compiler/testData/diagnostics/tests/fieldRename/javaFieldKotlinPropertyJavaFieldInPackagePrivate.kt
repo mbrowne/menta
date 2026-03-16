@@ -3,7 +3,7 @@
 
 package base;
 
-class A {
+define A {
     public String f = "OK";
 }
 
@@ -11,7 +11,7 @@ class A {
 
 package base
 
-open class B : <!EXPOSED_SUPER_CLASS!>A()<!> {
+open define B : <!EXPOSED_SUPER_CLASS!>A()<!> {
     private val f = "FAIL"
 }
 
@@ -19,7 +19,7 @@ open class B : <!EXPOSED_SUPER_CLASS!>A()<!> {
 
 import base.B;
 
-public class C extends B {}
+public define C extends B {}
 
 // FILE: test.kt
 

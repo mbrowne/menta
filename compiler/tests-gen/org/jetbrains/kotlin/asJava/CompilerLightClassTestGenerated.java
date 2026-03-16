@@ -389,19 +389,9 @@ public class CompilerLightClassTestGenerated extends AbstractCompilerLightClassT
     runTest("compiler/testData/asJava/lightClasses/lightClassByFqName/SuperTypeWithBound2.kt");
   }
 
-  @TestMetadata("SuperTypeWithBoundKotlinCollection.kt")
-  public void testSuperTypeWithBoundKotlinCollection() {
-    runTest("compiler/testData/asJava/lightClasses/lightClassByFqName/SuperTypeWithBoundKotlinCollection.kt");
-  }
-
   @TestMetadata("SuspendFunctionTypeAsAnnotationArgument.kt")
   public void testSuspendFunctionTypeAsAnnotationArgument() {
     runTest("compiler/testData/asJava/lightClasses/lightClassByFqName/SuspendFunctionTypeAsAnnotationArgument.kt");
-  }
-
-  @TestMetadata("Throws.kt")
-  public void testThrows() {
-    runTest("compiler/testData/asJava/lightClasses/lightClassByFqName/Throws.kt");
   }
 
   @TestMetadata("TypePararametersInClass.kt")

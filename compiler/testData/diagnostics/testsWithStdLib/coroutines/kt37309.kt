@@ -5,12 +5,12 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <E> myBuildList(builderAction: MutableList<E>.() -> Unit) {
     ArrayList<E>().builderAction()
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun main() {
     val newList1 = myBuildList {
         addAll(
@@ -23,7 +23,7 @@ fun main() {
     }
 }
 
-class Foo(val notNullProp: String)
+define Foo(val notNullProp: String)
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, functionDeclaration, functionalType, integerLiteral,
 lambdaLiteral, localProperty, nullableType, primaryConstructor, propertyDeclaration, typeParameter, typeWithExtension */

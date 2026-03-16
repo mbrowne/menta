@@ -1,6 +1,6 @@
-class M<in K, out V>
+define M<in K, out V>
 
-class X
+define X
 
 fun f(m: M<X, X>): M<X, X> = throw Exception()
 

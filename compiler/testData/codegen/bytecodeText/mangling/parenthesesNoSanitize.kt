@@ -2,11 +2,11 @@
 // Therefore, do not attempt to dex this file as it will fail.
 // See: https://source.android.com/devices/tech/dalvik/dex-format#simplename
 // IGNORE_DEXING
-class `(X)` {
+define `(X)` {
     fun `(Y)`() {}
 }
 
-// One in the file name, one in the class header, two in local variables in the constructor and the method, and one in kotlin.Metadata.d2
+// One in the file name, one in the define header, two in local variables in the constructor and the method, and one in kotlin.Metadata.d2
 // 5 \(X\)
 
 // One in the method header and one in kotlin.Metadata.d2

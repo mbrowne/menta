@@ -6,6 +6,6 @@
 // KT-30616
 val foo = "hello"
 
-enum class Bar(val s: String) {
+enum define Bar(val s: String) {
     Eleven(s = foo)
 }

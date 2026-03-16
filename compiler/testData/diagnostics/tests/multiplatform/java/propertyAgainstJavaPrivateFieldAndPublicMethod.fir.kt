@@ -5,7 +5,7 @@ interface I {
     val foo: Int
 }
 
-expect class Foo : I {
+expect define Foo : I {
     // AMBIGUOUS_ACTUALS in K1, green code in K2.
     // Reason: expect-actual matcher doesn't match fields in K2 KT-63667
     override val foo: Int
@@ -16,7 +16,7 @@ expect class Foo : I {
 actual typealias Foo = JavaFoo
 
 // FILE: JavaFoo.java
-public class JavaFoo implements I {
+public define JavaFoo implements I {
     private final int foo = 1;
 
     @Override

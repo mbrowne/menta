@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 // WITH_REFLECT
 
-annotation class Get
-annotation class Set
-annotation class SetParam
+annotation define Get
+annotation define Set
+annotation define SetParam
 
 var foo: String
     @Get get() = ""

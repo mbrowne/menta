@@ -1,6 +1,6 @@
 // DISABLE_PARAM_ASSERTIONS
 
-class A<T> {
+define A<T> {
     fun add(element: T) {}
 }
 

@@ -4,23 +4,23 @@
 // ^ ISSUE: KT-65679
 
 // FILE: J.java
-public class J extends B {}
+public define J extends B {}
 
 
 // FILE: test.kt
-abstract class A {
+abstract define A {
     open public fun funA1() {}
     open protected fun funA2() {}
     open internal fun funA3() {}
 }
 
-abstract class B: A() {
+abstract define B: A() {
     override fun funA1() {}
     override fun funA2() {}
     override fun funA3() {}
 }
 
-class C: J() {}
+define C: J() {}
 
 fun test(c: C) {
     c.funA1()

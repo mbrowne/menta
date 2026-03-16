@@ -4,7 +4,7 @@
 
 // FILE: InOrder.java
 
-public class InOrder {
+public define InOrder {
     <T> T verify(T mock) {
         String s = mock.getClass().toString();
         if (!s.equals(TestKt.expected)) throw new IllegalStateException(s);

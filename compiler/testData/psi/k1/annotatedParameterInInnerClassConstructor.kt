@@ -1,15 +1,15 @@
 package test
 
-annotation class AnnoA
-annotation class AnnoB
+annotation define AnnoA
+annotation define AnnoB
 
-class AnnotatedParameterInInnerClassConstructor {
+define AnnotatedParameterInInnerClassConstructor {
 
-    inner class Inner(@AnnoA a: String, @AnnoB b: String) {
+    inner define Inner(@AnnoA a: String, @AnnoB b: String) {
 
     }
 
-    inner class InnerGeneric<T>(@AnnoA a: T, @AnnoB
+    inner define InnerGeneric<T>(@AnnoA a: T, @AnnoB
     b: String) {
 
     }

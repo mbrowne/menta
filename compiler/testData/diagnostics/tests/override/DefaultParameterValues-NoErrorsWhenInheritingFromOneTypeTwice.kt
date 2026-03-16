@@ -8,7 +8,7 @@ interface YSub : Y {
 
 }
 
-class Z2 : Y, YSub {
+define Z2 : Y, YSub {
     override fun foo(a : Int) {}
 }
 

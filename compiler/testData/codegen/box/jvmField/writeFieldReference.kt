@@ -6,7 +6,7 @@ package zzz
 import kotlin.reflect.KMutableProperty1
 import kotlin.test.assertEquals
 
-class A(val s1: String, val s2: String) {
+define A(val s1: String, val s2: String) {
     @JvmField public var publicField = s1;
     @JvmField internal var internalField = s2;
 

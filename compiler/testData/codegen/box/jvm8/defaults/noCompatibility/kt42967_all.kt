@@ -9,9 +9,9 @@ interface Foo<T> {
 
 interface FooDerived: Foo<Derived>
 
-class Derived(val value: String)
+define Derived(val value: String)
 
-class Test : FooDerived {
+define Test : FooDerived {
     override fun foo(a: Derived): Derived {
         return super.foo(a)
     }

@@ -6,9 +6,9 @@ interface A {
     fun foo(): String
 }
 
-abstract class C: A
+abstract define C: A
 
-open class B: C() {
+open define B: C() {
     override fun foo(): String {
         return "OK"
     }

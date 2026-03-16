@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
-@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
 import kotlinx.cinterop.*
 
-class Z(rawPtr: NativePtr): CStructVar(rawPtr)
+define Z(rawPtr: NativePtr): CStructVar(rawPtr)
 
 fun foo(x: CValue<Z>) = x
 

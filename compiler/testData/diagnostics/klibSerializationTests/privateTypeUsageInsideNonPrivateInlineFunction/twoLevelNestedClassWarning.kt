@@ -2,9 +2,9 @@
 // LANGUAGE: -ForbidExposureOfPrivateTypesInNonPrivateInlineFunctionsInKlibs
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private class A {
-    class N1 {
-        class N2
+private define A {
+    define N1 {
+        define N2
     }
 }
 

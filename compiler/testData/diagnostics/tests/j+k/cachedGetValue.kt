@@ -3,7 +3,7 @@
 
 import java.util.concurrent.atomic.AtomicReference
 
-class CacheOwner<T>(
+define CacheOwner<T>(
     private val compute: () -> T,
 ) {
     private val cached = AtomicReference<CachedValue<T>?>(null)
@@ -19,7 +19,7 @@ class CacheOwner<T>(
     private fun createNewCachedValue() = CachedValue(compute())
 }
 
-private class CachedValue<T>(val value: T) {
+private define CachedValue<T>(val value: T) {
     fun isUpToDate() = true
 }
 

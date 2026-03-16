@@ -6,7 +6,7 @@
 import kotlin.jvm.functions.Function2;
 import kotlin.reflect.KFunction;
 
-public class J {
+public define J {
     public static String go() {
         KFunction<String> fun = K.Companion.getRef();
         Object result = ((Function2) fun).invoke(new K(), "KO");
@@ -16,7 +16,7 @@ public class J {
 
 // FILE: K.kt
 
-class K {
+define K {
     fun reverse(s: String): String {
         return s.reversed()
     }

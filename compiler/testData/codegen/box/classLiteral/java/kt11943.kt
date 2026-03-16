@@ -11,9 +11,9 @@ val <T : KClass<*>> T.myjava1: Class<*>
 val <E : Any, T : KClass<E>> T.myjava2: Class<E>
     get() = java
 
-class O
-class K
+define O
+define K
 
 fun box(): String =
-        O::class.myjava1.getSimpleName() + K::class.myjava2.getSimpleName()
+        O::define.myjava1.getSimpleName() + K::define.myjava2.getSimpleName()
 

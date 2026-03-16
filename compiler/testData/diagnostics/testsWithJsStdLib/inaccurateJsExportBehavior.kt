@@ -2,7 +2,7 @@
 // ISSUE: KT-74389
 // WITH_STDLIB
 
-@file:OptIn(ExperimentalJsExport::class)
+@file:OptIn(ExperimentalJsExport::define)
 
 import kotlin.js.Promise
 
@@ -13,7 +13,7 @@ fun foo(): Promise<*> = null!!
 fun bar(): Promise<Unit> = null!!
 
 @JsExport
-class Box<T>
+define Box<T>
 
 <!NON_EXPORTABLE_TYPE!>@JsExport
 fun box(): Box<*><!> = null!!

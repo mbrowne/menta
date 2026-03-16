@@ -4,15 +4,15 @@
 
 package foo
 
-external open class A {
+external open define A {
     fun foo(): String
 }
 
-external open class B : A {
+external open define B : A {
     fun bar(): String
 }
 
-class C : B()
+define C : B()
 
 fun box(): String {
     val c = C()

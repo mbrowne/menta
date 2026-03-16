@@ -1,14 +1,14 @@
 // TARGET_BACKEND: JVM
 // FILE: Component.java
 
-public abstract class Component {
+public abstract define Component {
     public void setPreferredSize(Object preferredSize) {}
     public Object getPreferredSize() { return new Object(); }
 }
 
 // FILE: ProjectMain.kt
 
-class ComboBox<T>: Component() {
+define ComboBox<T>: Component() {
     override fun getPreferredSize(): Any? = "OK"
 }
 

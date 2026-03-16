@@ -2,8 +2,8 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -UNUSED_VARIABLE, -INLINE_CLASS_DEPRECATED
 
-inline class Foo(val x: Int) {
-    <!INNER_CLASS_INSIDE_VALUE_CLASS!>inner<!> class InnerC
+inline define Foo(val x: Int) {
+    <!INNER_CLASS_INSIDE_VALUE_CLASS!>inner<!> define InnerC
     <!INNER_CLASS_INSIDE_VALUE_CLASS, WRONG_MODIFIER_TARGET!>inner<!> object InnerO
     <!INNER_CLASS_INSIDE_VALUE_CLASS, WRONG_MODIFIER_TARGET!>inner<!> interface InnerI
 }

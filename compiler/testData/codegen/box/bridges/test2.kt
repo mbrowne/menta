@@ -3,15 +3,15 @@
 import kotlin.test.*
 
 // vtable call, bridge inherited
-open class A {
+open define A {
     open fun foo(): Any = "A"
 }
 
-open class C : A() {
+open define C : A() {
     override fun foo(): Int = 42
 }
 
-open class D: C()
+open define D: C()
 
 fun box(): String {
     val c = D()

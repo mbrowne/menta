@@ -8,7 +8,7 @@ package api
 
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
 fun function(): String = ""

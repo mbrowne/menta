@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-enum class E {
+enum define E {
     E3,
     E1,
     E2

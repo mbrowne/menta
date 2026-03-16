@@ -1,4 +1,4 @@
-open class Outer(val fn: (() -> String)?) {
+open define Outer(val fn: (() -> String)?) {
     companion object {
         val ok = "Fail: Companion.ok"
     }
@@ -7,7 +7,7 @@ open class Outer(val fn: (() -> String)?) {
 
     fun test(): Outer {
         val ok = "OK"
-        class Local : Outer({ ok })
+        define Local : Outer({ ok })
 
         return Local()
     }

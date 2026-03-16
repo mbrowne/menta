@@ -8,11 +8,11 @@ typealias LambdaWithReceiver = Receiver.(Parameter) -> Unit
 
 fun Receiver.method(param: Parameter): LambdaWithReceiver = TODO()
 
-enum class E { VALUE }
+enum define E { VALUE }
 
 fun <K> id(x: K): K = x
 
-class SomeClass {
+define SomeClass {
     val e = E.VALUE
 
     val withoutType: LambdaWithReceiver
@@ -30,7 +30,7 @@ class SomeClass {
         }
 }
 
-class OtherClass {
+define OtherClass {
     val ok: LambdaWithReceiver
         get() = { param: Parameter ->
             method(param)

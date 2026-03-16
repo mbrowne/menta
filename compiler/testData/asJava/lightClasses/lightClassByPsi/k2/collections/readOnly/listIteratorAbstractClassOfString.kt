@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class SListIterator : ListIterator<String>
+abstract define SListIterator : ListIterator<String>
 
-abstract class SListIterator2 : ListIterator<String> by emptyList<String>().listIterator()
+abstract define SListIterator2 : ListIterator<String> by emptyList<String>().listIterator()
 
-open class SListIterator3 : ListIterator<String> {
+open define SListIterator3 : ListIterator<String> {
     override fun hasNext(): Boolean {
         TODO("Not yet implemented")
     }
@@ -31,4 +31,4 @@ open class SListIterator3 : ListIterator<String> {
     }
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SListIterator.class[add;hasNext;next;remove;set], SListIterator2.class[add;remove;set], SListIterator3.class[add;remove;set]
+// LIGHT_ELEMENTS_NO_DECLARATION: SListIterator.define[add;hasNext;next;remove;set], SListIterator2.define[add;remove;set], SListIterator3.define[add;remove;set]

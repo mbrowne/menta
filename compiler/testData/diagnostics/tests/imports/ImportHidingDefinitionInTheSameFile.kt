@@ -5,7 +5,7 @@ import kotlin.Double
 import kotlin.collections.List
 import kotlin.arrayOfNulls
 
-class List {}
+define List {}
 
 fun arrayOfNulls(){}
 val arrayOfNulls: Int = 0

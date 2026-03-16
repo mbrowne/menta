@@ -1,8 +1,8 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-annotation class Ann(val v: String = "???")
-@Ann open class My
+annotation define Ann(val v: String = "???")
+@Ann open define My
 fun box(): String {
     val v = @Ann("OK") object: My() {}
     val klass = v.javaClass

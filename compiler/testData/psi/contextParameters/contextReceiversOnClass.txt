@@ -11,7 +11,7 @@ KtFile: contextReceiversOnClass.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyAnnotation')
   PsiWhiteSpace('\n\n')
@@ -46,7 +46,7 @@ KtFile: contextReceiversOnClass.kt
       PsiWhiteSpace(' ')
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ContextReceiversOnClass')
     PsiWhiteSpace(' ')
@@ -56,7 +56,7 @@ KtFile: contextReceiversOnClass.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -82,7 +82,7 @@ KtFile: contextReceiversOnClass.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')

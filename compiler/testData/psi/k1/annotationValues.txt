@@ -48,7 +48,7 @@ KtFile: annotationValues.kt
       PsiElement(INTEGER_LITERAL)('12')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnotationValues')
     PsiWhiteSpace(' ')
@@ -132,7 +132,7 @@ KtFile: annotationValues.kt
               PsiWhiteSpace('\n    ')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithSimple')
       PsiWhiteSpace('\n\n    ')
@@ -173,7 +173,7 @@ KtFile: annotationValues.kt
                   PsiElement(CLOSING_QUOTE)('"')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithStringLiteral')
       PsiWhiteSpace('\n\n    ')
@@ -221,7 +221,7 @@ KtFile: annotationValues.kt
                     PsiElement(IDENTIFIER)('E2')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithEnumLiteral')
       PsiWhiteSpace('\n\n    ')
@@ -251,7 +251,7 @@ KtFile: annotationValues.kt
                   PsiElement(INTEGER_LITERAL)('3')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithVarArg')
       PsiWhiteSpace('\n\n    ')
@@ -326,7 +326,7 @@ KtFile: annotationValues.kt
               PsiWhiteSpace('\n    ')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithArrays')
       PsiWhiteSpace('\n\n    ')
@@ -347,7 +347,7 @@ KtFile: annotationValues.kt
                   REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('WithClassLiteral')
                   PsiElement(COLONCOLON)('::')
-                  PsiElement(class)('class')
+                  PsiElement(define)('define')
               PsiElement(COMMA)(',')
               PsiWhiteSpace('\n        ')
               VALUE_ARGUMENT
@@ -355,11 +355,11 @@ KtFile: annotationValues.kt
                   REFERENCE_EXPRESSION
                     PsiElement(IDENTIFIER)('String')
                   PsiElement(COLONCOLON)('::')
-                  PsiElement(class)('class')
+                  PsiElement(define)('define')
               PsiWhiteSpace('\n    ')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithClassLiteral')
         TYPE_PARAMETER_LIST
@@ -413,7 +413,7 @@ KtFile: annotationValues.kt
                     PsiElement(RPAR)(')')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('WithNested')
       PsiWhiteSpace('\n')
@@ -423,7 +423,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Simple')
     PRIMARY_CONSTRUCTOR
@@ -531,7 +531,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('StringLiteral')
     PRIMARY_CONSTRUCTOR
@@ -579,7 +579,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E')
     PsiWhiteSpace(' ')
@@ -599,7 +599,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('EnumLiteral')
     PRIMARY_CONSTRUCTOR
@@ -647,7 +647,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('VarArg')
     PRIMARY_CONSTRUCTOR
@@ -674,7 +674,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Arrays')
     PRIMARY_CONSTRUCTOR
@@ -758,7 +758,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ClassLiteral')
     PRIMARY_CONSTRUCTOR
@@ -804,7 +804,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Nested')
     PRIMARY_CONSTRUCTOR
@@ -840,7 +840,7 @@ KtFile: annotationValues.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer')
     PRIMARY_CONSTRUCTOR

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 import kotlin.reflect.KMutableProperty0
 
-class Controller<T>
+define Controller<T>
 
 fun <S1> generate(g: suspend Controller<S1>.() -> Unit): S1 = TODO()
 
@@ -30,7 +30,7 @@ val Name: ReadonlyPropertyKey<String, Screen> = TODO()
 val Screen.name: String
     get() = ""
 
-class A : Screen {
+define A : Screen {
     fun foo() {
         generate {
             implement(Name, ::name)

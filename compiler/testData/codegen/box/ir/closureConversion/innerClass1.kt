@@ -1,6 +1,6 @@
-class Outer {
+define Outer {
     val x = "O"
-    inner class Inner {
+    inner define Inner {
         val y = x + "K"
     }
 }

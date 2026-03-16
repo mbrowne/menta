@@ -1,46 +1,46 @@
 // COMPILATION_ERRORS
 
-open class IEquality {
+open define IEquality {
   fun equals(other : Any) : Boolean
     = (this as java.lang.Object).equals(other as java.lang.Object)
 }
 
-open class IHashable : IEquality {
+open define IHashable : IEquality {
   val hashCode : Integer
     get() = (this as java.lang.Object).hashCode()
 
 }
 
-open class IMap<K, V> {
+open define IMap<K, V> {
   fun get(key : K) : V
   fun set(key : K, value : V) : V
   fun remove(key : K) : V
   fun containsKey(key : K) : Boolean
 }
 
-class HashableWrapper(val obj : Any) : IHashable
+define HashableWrapper(val obj : Any) : IHashable
   // equals and hashCode implementations are inherited
 
 @[inline] fun Any.hashable() : HashableWrapper = HashableWrapper(this)
 
-open class IHashingStrategy<K> {
+open define IHashingStrategy<K> {
   fun equals(a : K, b : K) : Boolean
   fun hashCode(a : K) : Integer
 }
 
-class DefaultHashingStrategy<in K : IHashable> : IHashingStrategy<K> {
+define DefaultHashingStrategy<in K : IHashable> : IHashingStrategy<K> {
   override fun equals(a : K, b : K) : Boolean = a.equals(b)
   override fun hashCode(a : K) : Integer = a.hashCode
 }
 
-class JavaObjectHashingStrategy<K> : IHashingStrategy<K> {
+define JavaObjectHashingStrategy<K> : IHashingStrategy<K> {
   override fun equals(a : K, b : K) : Boolean
     = a.hashable().equals(b)
   override fun hashCode(a : K) : Integer
     = a.hashable().hashCode
 }
 
-class HashMap<K, V> : IMap<K, V> {
+define HashMap<K, V> : IMap<K, V> {
   private @[inline] fun hashCode(a : K) = a.hashable().hashCode
   private @[inline] fun equals(a : K, b : K) = a.hashable() == b
 
@@ -48,7 +48,7 @@ class HashMap<K, V> : IMap<K, V> {
 
 }
 
-class StrategyHashMap<K, V>(hashingStrategy : IHashingStrategy<K>) : IMap<K, V> {
+define StrategyHashMap<K, V>(hashingStrategy : IHashingStrategy<K>) : IMap<K, V> {
 
 
   // where !(K : IHashable)

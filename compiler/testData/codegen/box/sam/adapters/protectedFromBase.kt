@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass<T> {
+define JavaClass<T> {
     protected void execute(T t, Runnable r) {
         r.run();
     }
@@ -11,7 +11,7 @@ class JavaClass<T> {
 // MODULE: main(lib)
 // FILE: 1.kt
 
-internal class KotlinClass : JavaClass<String>() {
+internal define KotlinClass : JavaClass<String>() {
     fun doIt(): String {
         var result = ""
         execute("") {

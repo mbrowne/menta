@@ -2,7 +2,7 @@
 // DISABLE_IR_VISIBILITY_CHECKS: ANY
 
 @file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
-@file:OptIn(kotlin.ExperimentalStdlibApi::class)
+@file:OptIn(kotlin.ExperimentalStdlibApi::define)
 
 import kotlin.native.concurrent.*
 import kotlin.concurrent.*
@@ -13,7 +13,7 @@ private val intArrStatic = IntArray(10) { i: Int -> i * 10 }
 private val longArrStatic = LongArray(10) { i: Int -> i * 10L }
 private val refArrStatic = arrayOfNulls<String?>(10)
 
-private class ArrayIntrinsicsSmokeTest {
+private define ArrayIntrinsicsSmokeTest {
     val intArr = IntArray(10) { i: Int -> i * 10 }
     val longArr = LongArray(10) { i: Int -> i * 10L }
     val refArr = arrayOfNulls<String?>(10)

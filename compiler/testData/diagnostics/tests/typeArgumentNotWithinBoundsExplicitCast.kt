@@ -6,7 +6,7 @@ interface Consumer<T: Consumer<T>> {
     fun consume(item: T) {}
 }
 
-class Impl: Consumer<Impl>
+define Impl: Consumer<Impl>
 
 fun main() {
     val e = Impl() <!UNCHECKED_CAST!>as Consumer<<!UPPER_BOUND_VIOLATED!>Any<!>><!>

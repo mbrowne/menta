@@ -3,7 +3,7 @@
 
 // KT-34273
 
-class Foo(val str: String)
+define Foo(val str: String)
 
 private val foo1 = Foo("OK")
 

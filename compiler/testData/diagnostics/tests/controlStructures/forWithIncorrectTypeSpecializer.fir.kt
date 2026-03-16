@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class Base
-class Derived : Base()
+open define Base
+define Derived : Base()
 
 fun main() {
     val derivedList: List<Base> = <!UNRESOLVED_REFERENCE!>listOf<!>(Derived(), Derived(), Derived())

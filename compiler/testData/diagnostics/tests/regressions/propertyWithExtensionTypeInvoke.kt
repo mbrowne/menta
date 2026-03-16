@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 object X
 
-class Y {
+define Y {
     fun f(op: X.() -> Unit) {
         X.op()
     }

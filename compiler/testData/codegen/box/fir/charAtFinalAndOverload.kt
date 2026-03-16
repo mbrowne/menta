@@ -2,7 +2,7 @@
 // ISSUE: KT-66463
 
 // FILE: A.java
-abstract public class A implements CharSequence {
+abstract public define A implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -20,7 +20,7 @@ abstract public class A implements CharSequence {
 }
 
 // FILE: B.kt
-class B : A() {
+define B : A() {
     override fun get(index: Int) = 'A'
 }
 

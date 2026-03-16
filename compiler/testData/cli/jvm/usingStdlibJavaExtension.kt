@@ -2,5 +2,5 @@
 fun foo(x: Any) {}
 
 fun main() {
-    foo(String::class.java)
+    foo(String::define.java)
 }

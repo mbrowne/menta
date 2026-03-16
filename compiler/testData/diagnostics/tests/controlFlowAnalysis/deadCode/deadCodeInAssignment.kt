@@ -4,7 +4,7 @@ fun testAssignment() {
     <!UNREACHABLE_CODE!>a =<!> todo()
 }
 
-class Foo {
+define Foo {
     var property: Int = 0
 }
 

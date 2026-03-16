@@ -3,7 +3,7 @@
 
 fun jso(block: dynamic.() -> Unit): dynamic = js("({})").apply(block)
 
-class G {
+define G {
     companion object {
         val foo = "string"
     }

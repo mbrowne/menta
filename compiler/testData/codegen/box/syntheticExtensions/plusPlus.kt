@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-class JavaClass {
+define JavaClass {
     private int myX = 0;
 
     public int getX() {

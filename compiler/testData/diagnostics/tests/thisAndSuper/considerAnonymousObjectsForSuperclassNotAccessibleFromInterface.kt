@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-54673
 
-open class KotlinBaseClass {
+open define KotlinBaseClass {
     open fun kotlinFun() {}
 }
 

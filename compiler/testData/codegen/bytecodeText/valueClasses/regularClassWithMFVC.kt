@@ -5,12 +5,12 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double) {
+value define DPoint(val x: Double, val y: Double) {
     val opposite: DPoint
         get() = DPoint(-x, -y)
 }
 
-class DSegment(var p1: DPoint, var p2: DPoint) {
+define DSegment(var p1: DPoint, var p2: DPoint) {
 
     val center: DPoint
         get() = DPoint(p1.x / 2 + p2.x / 2, p1.y / 2 + p2.y / 2)

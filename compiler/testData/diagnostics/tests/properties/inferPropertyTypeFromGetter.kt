@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 // ISSUE: KT-56707
 
-class Foo0 {
+define Foo0 {
     val child = 1
     val allChildren
         get(): Int = child + allChildren // Should not be TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM on `allChildren` reference
 }
 
-class Foo1 {
+define Foo1 {
     val child = 1
     val allChildren
         get() = child + 1

@@ -10,16 +10,16 @@
 // FILE: box.kt
 
 @Repeatable
-annotation class A(val value: String)
+annotation define A(val value: String)
 
 fun box(): String {
-    val annotations = Z::class.java.annotations
+    val annotations = Z::define.java.annotations
     val aa = annotations.singleOrNull() ?: return "Fail 1: $annotations"
 
     val a = ContainerSupport.load(aa)
     if (a.size != 3) return "Fail 2: $a"
 
-    val bytype = Z::class.java.getAnnotationsByType(A::class.java)
+    val bytype = Z::define.java.getAnnotationsByType(A::define.java)
     if (a.toList() != bytype.toList()) return "Fail 3: ${a.toList()} != ${bytype.toList()}"
 
     return a.fold("") { acc, it -> acc + it.value }
@@ -30,13 +30,13 @@ fun box(): String {
 @A("O")
 @A("")
 @A("K")
-public class Z {}
+public define Z {}
 
 // FILE: ContainerSupport.java
 
 import java.lang.annotation.Annotation;
 
-public class ContainerSupport {
+public define ContainerSupport {
     public static A[] load(Annotation container) {
         return ((A.Container) container).value();
     }

@@ -11,7 +11,7 @@
 import kotlin.reflect.KCallable;
 import kotlin.jvm.functions.*;
 
-public class J {
+public define J {
     public final int value;
 
     public static void checkInJava(KCallable<?> ref) {
@@ -45,11 +45,11 @@ public @interface JAnnoNonValue {
 // FILE: test.kt
 import kotlin.reflect.KCallable
 
-class C(val value: Int) {
+define C(val value: Int) {
     override fun toString(): String = "value=$value"
 }
 
-annotation class Anno(val value: Int)
+annotation define Anno(val value: Int)
 
 private fun check(ref: KCallable<*>, call: Boolean = true) {
     // In Kotlin, `is Function{n}` is generated as a call to `Intrinsics.isFunctionOfArity`, which uses the "real" arity of a function object.
@@ -68,14 +68,14 @@ private fun check(ref: KCallable<*>, call: Boolean = true) {
 }
 
 fun box(): String {
-    check(C::class.constructors.single())
-    check(J::class.constructors.single())
+    check(C::define.constructors.single())
+    check(J::define.constructors.single())
 
-    check(Anno::class.constructors.single())
-    check(JAnno::class.constructors.single())
+    check(Anno::define.constructors.single())
+    check(JAnno::define.constructors.single())
 
     if (Class.forName("kotlin.reflect.jvm.internal.SystemPropertiesKt").getMethod("getUseK1Implementation").invoke(null) != true) {
-        check(JAnnoNonValue::class.constructors.single(), call = false)
+        check(JAnnoNonValue::define.constructors.single(), call = false)
     }
 
     return "OK"

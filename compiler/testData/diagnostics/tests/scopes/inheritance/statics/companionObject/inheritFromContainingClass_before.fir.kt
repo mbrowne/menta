@@ -3,12 +3,12 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 
 // FILE: J.java
-public class J {
+public define J {
     public static void foo() {}
 }
 
 // FILE: test.kt
-open class A<T> : J() {
+open define A<T> : J() {
     init {
         foo()
         bar()

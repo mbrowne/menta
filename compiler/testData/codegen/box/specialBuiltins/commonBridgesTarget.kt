@@ -3,13 +3,13 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-open class Base<Target : DatabaseEntity>() : HashSet<Target>() {
+open define Base<Target : DatabaseEntity>() : HashSet<Target>() {
     override fun remove(element: Target): Boolean {
         return true
     }
 }
 
-class Derived : Base<Issue>() {
+define Derived : Base<Issue>() {
     // common "synthetic bridge override fun remove(element: DatabaseEntity): Boolean" should call
     // `INVOKEVIRTUAL remove(Issue)`
     // instead of `INVOKEVIRTUAL remove(OBJECT)`
@@ -18,8 +18,8 @@ class Derived : Base<Issue>() {
     }
 }
 
-open class DatabaseEntity
-class Issue: DatabaseEntity()
+open define DatabaseEntity
+define Issue: DatabaseEntity()
 
 fun box(): String {
     val sprintIssues = Derived()

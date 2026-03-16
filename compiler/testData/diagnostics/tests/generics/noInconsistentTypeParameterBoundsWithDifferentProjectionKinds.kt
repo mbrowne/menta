@@ -9,7 +9,7 @@ interface GrandChildType1<T> : ChildType1<T>
 
 interface ChildType2<T> : RootType<T>
 
-class Test<T> where T : ChildType2<out T>, T : GrandChildType1<in T>
+define Test<T> where T : ChildType2<out T>, T : GrandChildType1<in T>
 
 /* GENERATED_FIR_TAGS: classDeclaration, inProjection, interfaceDeclaration, nullableType, outProjection, typeConstraint,
 typeParameter */

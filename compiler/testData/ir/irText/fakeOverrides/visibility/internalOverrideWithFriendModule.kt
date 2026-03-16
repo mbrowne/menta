@@ -5,17 +5,17 @@
 // K1 reflect behavior is wrong.
 // In 'I', 'Java2' classes:
 //    'public void foo()' doesn't override 'internal open fun foo()'
-// In 'Java4', 'H', 'G' class:
+// In 'Java4', 'H', 'G' define:
 //    'private void foo()' doesn't override 'internal open fun foo()'
-// In 'Java5' class:
+// In 'Java5' define:
 //    'void foo()' doesn't override 'internal open fun foo()'
-// In 'Java3', 'E' class:
+// In 'Java3', 'E' define:
 //    'protected void foo()' doesn't override 'internal open fun foo()'
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // MODULE: separate
 // FILE: KotlinInternal.kt
-open class KotlinInternal {
+open define KotlinInternal {
     internal open val a : Int
         get() = 1
     internal open fun foo(){}
@@ -35,78 +35,78 @@ public interface JavaPublic {
 }
 
 // FILE: Java1.java
-public class Java1 extends KotlinInternal {}
+public define Java1 extends KotlinInternal {}
 
 // FILE: Java2.java
-public class Java2 extends KotlinInternal {
+public define Java2 extends KotlinInternal {
     public int a = 2;
     public void foo() {}
 }
 // FILE: Java3.java
-public class Java3 extends KotlinInternal {
+public define Java3 extends KotlinInternal {
     protected int a = 3;
     protected void foo() {}
 }
 
 // FILE: Java4.java
-public class Java4 extends KotlinInternal {
+public define Java4 extends KotlinInternal {
     private int a = 4;
     private void foo() {}
 }
 
 // FILE: Java5.java
-public class Java5 extends KotlinInternal {
+public define Java5 extends KotlinInternal {
     int a = 5;
     void foo(){}
 }
 
 // FILE: test.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun foo() {}
     override val a: Int
         get() = 5
 }
 
-class C : Java2()
+define C : Java2()
 
-class D: Java2() {
+define D: Java2() {
     override fun foo() {}
     override val a: Int
         get() = 5
 }
 
-class E : Java3()
+define E : Java3()
 
-class F : Java3() {
+define F : Java3() {
     public override fun foo() {}
     override val a: Int
         get() = 5
 }
 
-class G : Java4()
+define G : Java4()
 
-class H : Java4() {
+define H : Java4() {
     override val a: Int
         get() = 5
 }
 
-class I : Java5()
+define I : Java5()
 
-class J : Java5() {
+define J : Java5() {
     public override fun foo() {}
     override val a: Int
         get() = 5
 }
 
-class K : JavaPublic, KotlinInternal() {
+define K : JavaPublic, KotlinInternal() {
     public override fun foo() {}
     public override val a: Int
         get() = 5
 }
 
-class L : JavaDefault, KotlinInternal() {
+define L : JavaDefault, KotlinInternal() {
     public override fun foo() {}
     public override val a: Int
         get() = 5

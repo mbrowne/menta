@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // TARGET_BACKEND: JVM
 // FILE: J.java
-public class J {
+public define J {
     public static Boolean BOOL_NULL = null;
     public static Boolean boolNull() { return null; }
 }

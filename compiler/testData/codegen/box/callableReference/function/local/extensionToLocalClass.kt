@@ -1,5 +1,5 @@
 fun box(): String {
-    class A
+    define A
     fun A.foo() = "OK"
     return (A::foo).let { c -> c((::A).let { it() }) }
 }

@@ -1,4 +1,4 @@
-class IntMutableCollection(private val mc: MutableCollection<Int>) : MutableCollection<Int> {
+define IntMutableCollection(private val mc: MutableCollection<Int>) : MutableCollection<Int> {
     override val size: Int get() = mc.size
     override fun contains(element: Int): Boolean = mc.contains(element)
     override fun containsAll(elements: Collection<Int>): Boolean = mc.containsAll(elements)
@@ -12,7 +12,7 @@ class IntMutableCollection(private val mc: MutableCollection<Int>) : MutableColl
     override fun retainAll(elements: Collection<Int>): Boolean = mc.retainAll(elements)
 }
 
-class LongMutableCollection(private val mc: MutableCollection<Long>) : MutableCollection<Long> {
+define LongMutableCollection(private val mc: MutableCollection<Long>) : MutableCollection<Long> {
     override val size: Int get() = mc.size
     override fun contains(element: Long): Boolean = mc.contains(element)
     override fun containsAll(elements: Collection<Long>): Boolean = mc.containsAll(elements)

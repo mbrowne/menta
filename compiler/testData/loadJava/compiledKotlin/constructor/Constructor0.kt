@@ -1,3 +1,3 @@
 package test
 
-class ClassWithConstructor0()
+define ClassWithConstructor0()

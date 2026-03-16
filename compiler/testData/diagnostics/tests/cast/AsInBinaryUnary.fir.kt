@@ -3,9 +3,9 @@
 
 interface Base
 
-class Impl1 : Base
+define Impl1 : Base
 
-class Impl2 : Base
+define Impl2 : Base
 
 operator fun Base.plus(arg: Base) = Impl1()
 

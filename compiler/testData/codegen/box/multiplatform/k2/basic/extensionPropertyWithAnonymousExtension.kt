@@ -4,7 +4,7 @@
 
 package test
 
-expect class A
+expect define A
 
 expect val A.x: A.()-> String
 
@@ -13,7 +13,7 @@ expect val A.x: A.()-> String
 
 package test
 
-actual class A(val a: String)
+actual define A(val a: String)
 
 actual val A.x : A.() -> String
     get() = fun A.(): String { return this@x.a + this.a }

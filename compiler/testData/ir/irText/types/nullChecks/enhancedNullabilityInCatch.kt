@@ -3,7 +3,7 @@
 // FILE: J.java
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     @NotNull
     public static String foo() {
         return null;

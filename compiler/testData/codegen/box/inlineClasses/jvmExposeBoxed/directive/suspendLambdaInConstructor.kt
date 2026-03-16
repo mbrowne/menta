@@ -6,9 +6,9 @@
 import kotlin.coroutines.*
 
 @JvmInline
-value class E2Test1(val x: suspend () -> Unit)
+value define E2Test1(val x: suspend () -> Unit)
 
-data class E2Test2(val y: E2Test1 = E2Test1( { result = "OK" } ))
+data define E2Test2(val y: E2Test1 = E2Test1( { result = "OK" } ))
 
 var result = "FAIL"
 

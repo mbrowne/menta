@@ -11,7 +11,7 @@ public interface B extends A {
 }
 
 // FILE: test.kt
-class C: B {
+define C: B {
     override fun foo(r: Runnable?) {
     }
 

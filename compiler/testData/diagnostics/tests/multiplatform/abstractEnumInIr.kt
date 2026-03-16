@@ -3,14 +3,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 // ISSUE: KT-68734
-expect enum class MMKVMode {
+expect enum define MMKVMode {
     SINGLE_PROCESS,
     MULTI_PROCESS,
 }
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-actual enum class MMKVMode {
+actual enum define MMKVMode {
     SINGLE_PROCESS {
         override val rawValue: String = "single"
     },

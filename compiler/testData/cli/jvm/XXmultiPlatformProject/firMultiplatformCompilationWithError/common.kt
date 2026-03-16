@@ -4,4 +4,4 @@ expect interface A {
 
 expect interface B
 
-class CommonClass : B
+define CommonClass : B

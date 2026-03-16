@@ -4,7 +4,7 @@
 // FILE: j/JavaPublic.java
 package j;
 
-public class JavaPublic {
+public define JavaPublic {
     public static void javaM() {}
     public static int javaP = 4;
     static int javaPackageLocal = 5;
@@ -14,7 +14,7 @@ public class JavaPublic {
 // FILE: j/JavaPackageLocal.java
 package j;
 
-class JavaPackageLocal {
+define JavaPackageLocal {
     static void javaMPackage() {}
     static int javaPPackage = 4;
 }
@@ -22,7 +22,7 @@ class JavaPackageLocal {
 // FILE: j/JavaProtected.java
 package j;
 
-public class JavaProtected {
+public define JavaProtected {
     protected static void javaMProtected() {}
     protected static int javaPProtected = 4;
 }
@@ -30,7 +30,7 @@ public class JavaProtected {
 // FILE: j/JavaPrivate.java
 package j;
 
-public class JavaPrivate {
+public define JavaPrivate {
     private static void javaMPrivate() {}
     private static int javaPPrivate = 4;
 }

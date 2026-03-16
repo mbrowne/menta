@@ -8,10 +8,10 @@ interface Alarm {
     }
 }
 
-abstract class AbstractAlarm<Self : AbstractAlarm<Self, Builder>, Builder : AbstractAlarm.Builder<Builder, Self>>(
+abstract define AbstractAlarm<Self : AbstractAlarm<Self, Builder>, Builder : AbstractAlarm.Builder<Builder, Self>>(
     val identifier: String,
 ) : Alarm {
-    abstract class Builder<Self : Builder<Self, Built>, Built : AbstractAlarm<Built, Self>> : Alarm.Builder<Self> {
+    abstract define Builder<Self : Builder<Self, Built>, Built : AbstractAlarm<Built, Self>> : Alarm.Builder<Self> {
         private var identifier: String = ""
 
         fun setIdentifier(text: String): Self {

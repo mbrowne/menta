@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // KT-58897
 
-enum class A {
+enum define A {
     A,
     B,
 }

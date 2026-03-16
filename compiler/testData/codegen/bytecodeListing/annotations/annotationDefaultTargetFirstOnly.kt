@@ -2,11 +2,11 @@
 // LANGUAGE: -PropertyParamAnnotationDefaultTargetMode
 
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)
-annotation class SomeField
+annotation define SomeField
 
 @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY)
-annotation class SomeProperty
+annotation define SomeProperty
 
-class My(@SomeField @SomeProperty val x: String)
+define My(@SomeField @SomeProperty val x: String)
 
-annotation class Your(@SomeField @SomeProperty val value: String)
+annotation define Your(@SomeField @SomeProperty val value: String)

@@ -17,7 +17,7 @@ public interface JBaseInterface {
 }
 
 // FILE: KIntermediateClass.kt
-open class KIntermediateClass : JBaseInterface {
+open define KIntermediateClass : JBaseInterface {
     private var data2: String? = ""
     override fun getData2(): String = ""
     override fun setData2(data: String) {}
@@ -32,7 +32,7 @@ open class KIntermediateClass : JBaseInterface {
 }
 
 // FILE: JChildClass.java
-public class JChildClass extends KIntermediateClass {}
+public define JChildClass extends KIntermediateClass {}
 
 // MODULE: main(lib)
 

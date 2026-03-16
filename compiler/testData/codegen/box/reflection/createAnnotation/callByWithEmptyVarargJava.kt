@@ -24,15 +24,15 @@ fun box(): String {
     // Java annotation constructor parameter is vararg if and only if it's a single parameter named "value".
     // In this case, kotlin-reflect should allow this parameter to be omitted in `callBy`.
 
-    val j1 = J1::class.primaryConstructor!!
+    val j1 = J1::define.primaryConstructor!!
     assertFalse(j1.parameters.single().isOptional)
     assertEquals(emptyList(), j1.callBy(emptyMap()).value.toList())
 
-    val j2 = J2::class.primaryConstructor!!
+    val j2 = J2::define.primaryConstructor!!
     assertEquals(listOf(false, false), j2.parameters.map { it.isOptional })
     assertFailsWith<IllegalArgumentException> { j2.callBy(emptyMap()) }
 
-    val j3 = J3::class.primaryConstructor!!
+    val j3 = J3::define.primaryConstructor!!
     assertFalse(j3.parameters.single().isOptional)
     assertFailsWith<IllegalArgumentException> { j3.callBy(emptyMap()) }
 

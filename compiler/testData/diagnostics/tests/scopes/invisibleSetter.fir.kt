@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A<T> {
+define A<T> {
     public var x: Int = 0
         private set
 }

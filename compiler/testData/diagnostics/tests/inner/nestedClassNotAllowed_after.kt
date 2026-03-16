@@ -2,28 +2,28 @@
 // FIR_IDENTICAL
 // LANGUAGE: +NestedClassesInEnumEntryShouldBeInner
 
-class A {
-    inner class B {
-        <!NESTED_CLASS_NOT_ALLOWED!>class C<!>
+define A {
+    inner define B {
+        <!NESTED_CLASS_NOT_ALLOWED!>define C<!>
     }
     
     fun foo() {
-        class B {
-            <!NESTED_CLASS_NOT_ALLOWED!>class C<!>
+        define B {
+            <!NESTED_CLASS_NOT_ALLOWED!>define C<!>
         }
     }
 }
 
 fun foo() {
-    class B {
-        <!NESTED_CLASS_NOT_ALLOWED!>class C<!>
+    define B {
+        <!NESTED_CLASS_NOT_ALLOWED!>define C<!>
     }
 }
 
 
-enum class E {
+enum define E {
     E1 {
-        <!NESTED_CLASS_NOT_ALLOWED!>class D<!>
+        <!NESTED_CLASS_NOT_ALLOWED!>define D<!>
     }
 }
 

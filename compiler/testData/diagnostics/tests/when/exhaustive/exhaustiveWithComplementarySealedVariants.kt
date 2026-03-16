@@ -58,7 +58,7 @@ fun checkSomething(stuff: Stuff) {
     }
 }
 
-enum class Stuff { ObjA, ObjB, ObjC }
+enum define Stuff { ObjA, ObjB, ObjC }
 
 /* GENERATED_FIR_TAGS: data, disjunctionExpression, enumDeclaration, enumEntry, equalityExpression, functionDeclaration,
 interfaceDeclaration, isExpression, lambdaLiteral, nestedClass, objectDeclaration, sealed, smartcast, stringLiteral,

@@ -1,10 +1,10 @@
 fun String.bar(): String {
-    open class Local {
+    open define Local {
         fun result() = this@bar
     }
 
-    class Outer {
-        inner class Inner : Local() {
+    define Outer {
+        inner define Inner : Local() {
             fun outer() = this@Outer
         }
     }

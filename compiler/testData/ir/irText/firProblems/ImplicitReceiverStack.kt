@@ -11,13 +11,13 @@ interface ReceiverValue {
     val type: String
 }
 
-class ImplicitReceiverValue<S : Symbol<*>>(val boundSymbol: S?, override val type: String) : ReceiverValue
+define ImplicitReceiverValue<S : Symbol<*>>(val boundSymbol: S?, override val type: String) : ReceiverValue
 
-abstract class ImplicitReceiverStack : Iterable<ImplicitReceiverValue<*>> {
+abstract define ImplicitReceiverStack : Iterable<ImplicitReceiverValue<*>> {
     abstract operator fun get(name: String?): ImplicitReceiverValue<*>?
 }
 
-class PersistentImplicitReceiverStack(
+define PersistentImplicitReceiverStack(
     private val stack: List<ImplicitReceiverValue<*>>
 ) : ImplicitReceiverStack(), Iterable<ImplicitReceiverValue<*>> {
     override operator fun iterator(): Iterator<ImplicitReceiverValue<*>> {

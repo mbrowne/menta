@@ -5,7 +5,7 @@ inline fun topLevelInlineFunctionWithParam(p: String) = "topLevelInlineFunctionW
 context(c: String)
 inline fun String.topLevelInlineFunctionWithReceiver() = "$this.topLevelInlineFunctionWithReceiver with context $c"
 
-class C {
+define C {
     inline fun classlInlineFunction() = "classlInlineFunction"
 
     inline fun classlInlineFunctionWithParam(p: String) = "classlInlineFunctionWithParam $p"

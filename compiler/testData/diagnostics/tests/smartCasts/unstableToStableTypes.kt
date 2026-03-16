@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Bar {
+define Bar {
     fun bar() {}
 }
 
-class Foo(var x: Any) {
+define Foo(var x: Any) {
     init {
         if (x is Bar) {
             val y = x

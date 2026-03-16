@@ -1,5 +1,5 @@
 // SKIP_MANGLE_VERIFICATION
-enum class Foo(
+enum define Foo(
         val x: String,
         val callback: () -> String
 ) {

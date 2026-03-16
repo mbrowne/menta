@@ -15,7 +15,7 @@ public @interface Ann {
 
 // FILE: main.kt
 
-class Temp {
+define Temp {
     @Ann(cascade = [<!UNRESOLVED_REFERENCE!>unresolved<!>])
     var x: Int = 1
 }

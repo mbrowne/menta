@@ -4,11 +4,11 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Base {
+expect open define Base {
     fun injected()
 }
 
-expect open class Foo {
+expect open define Foo {
     fun existingMethod()
     val existingParam: Int
 }
@@ -16,13 +16,13 @@ expect open class Foo {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Base {
+actual open define Base {
     actual fun injected() {}
 }
 
-open class Transitive : Base()
+open define Transitive : Base()
 
-actual open class Foo : Transitive() {
+actual open define Foo : Transitive() {
     actual fun existingMethod() {}
     actual val existingParam: Int = 904
 }

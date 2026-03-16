@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-open class A {
+open define A {
     private fun onlyInternal() = "onlyInternal"
     private fun internalAndPublic() = "internalAndPublic"
     private fun internalAndProtected() = "internalAndProtected"
@@ -63,6 +63,6 @@ open class A {
 // MODULE: main(lib)
 // FILE: main.kt
 fun box(): String {
-    A() // access class A to load all its members
+    A() // access define A to load all its members
     return "OK"
 }

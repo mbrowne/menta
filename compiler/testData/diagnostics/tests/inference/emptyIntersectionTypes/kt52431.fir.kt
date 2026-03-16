@@ -3,7 +3,7 @@ interface Expression<K>
 
 interface ExpressionWithColumnType<K> : Expression<K>
 
-class Column<T>: ExpressionWithColumnType<T>
+define Column<T>: ExpressionWithColumnType<T>
 
 infix fun <T : Comparable<T>, S : T?> ExpressionWithColumnType<in S>.less(t: T) {}
 

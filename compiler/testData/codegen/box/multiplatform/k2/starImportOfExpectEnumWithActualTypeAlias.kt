@@ -5,7 +5,7 @@
 
 package test
 
-expect enum class E
+expect enum define E
 
 // MODULE: lib()()(lib-common)
 // FILE: jvm.kt
@@ -14,7 +14,7 @@ package test
 
 actual typealias E = F
 
-enum class F {
+enum define F {
     OK;
 }
 

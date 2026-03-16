@@ -6,7 +6,7 @@
 
 package foo
 
-class Some(val s: String)
+define Some(val s: String)
 
 internal fun Some.foo(): String = s
 

@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: Calendar.java
-public class Calendar {
+public define Calendar {
     public void setTimeInMillis(long millis) {}
     public long getTimeInMillis() { return 1; }
 }
 
 // FILE: 1.kt
-class A
+define A
 
 var A.timeInMillis: String
     get() = ""

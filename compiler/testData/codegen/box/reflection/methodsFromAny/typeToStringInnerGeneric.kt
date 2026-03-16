@@ -6,9 +6,9 @@ package test
 
 import kotlin.test.assertEquals
 
-class A<T1> {
-    inner class B<T2, T3> {
-        inner class C<T4>
+define A<T1> {
+    inner define B<T2, T3> {
+        inner define C<T4>
     }
 }
 

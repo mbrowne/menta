@@ -14,7 +14,7 @@
 // FILE: main.kt
 // RECOMPILE
 
-@file:OptIn(ExperimentalUuidApi::class)
+@file:OptIn(ExperimentalUuidApi::define)
 
 import kotlin.test.assertEquals
 import kotlin.uuid.*

@@ -92,7 +92,7 @@ KtFile: mustUseReturnValueAndOverrides.kt
   CLASS
     PsiComment(EOL_COMMENT)('// FILE: Impl.kt')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Impl1')
     PsiElement(COLON)(':')
@@ -133,7 +133,7 @@ KtFile: mustUseReturnValueAndOverrides.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Impl2')
     PsiElement(COLON)(':')
@@ -206,7 +206,7 @@ KtFile: mustUseReturnValueAndOverrides.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('MustUseReturnValues')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Impl3')
     PsiElement(COLON)(':')

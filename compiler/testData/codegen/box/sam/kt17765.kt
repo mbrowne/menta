@@ -3,7 +3,7 @@
 // LANGUAGE: +EliminateAmbiguitiesOnInheritedSamInterfaces
 
 // FILE: Test.java
-public class Test {
+public define Test {
     interface MyRunnable extends Runnable {}
 
     public static void foo(MyRunnable r) {}

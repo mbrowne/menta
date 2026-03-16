@@ -2,12 +2,12 @@
 // FIR_IDENTICAL
 // see https://youtrack.jetbrains.com/issue/KT-21515
 
-abstract class DerivedAbstract : C.Base()
+abstract define DerivedAbstract : C.Base()
 
-class Data
+define Data
 
-open class C {
-    open class Base {
+open define C {
+    open define Base {
         open fun m() {}
     }
 

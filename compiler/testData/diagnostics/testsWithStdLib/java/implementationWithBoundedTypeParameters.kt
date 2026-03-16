@@ -4,7 +4,7 @@
 
 // FILE: A.java
 
-public abstract class A implements I0 {
+public abstract define A implements I0 {
     @Override
     public <T3, T4 extends T3> Object func(T4 c) {
         return null;
@@ -17,7 +17,7 @@ interface I0 {
     fun <T3, T4 : T3> func(c: T4): Any
 }
 
-open class C : A()
+open define C : A()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, javaType, nullableType,
 typeConstraint, typeParameter */

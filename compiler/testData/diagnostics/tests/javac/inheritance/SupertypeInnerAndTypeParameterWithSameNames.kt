@@ -4,14 +4,14 @@
 package a;
 
 public interface Parent {
-    public class Foo {}
+    public define Foo {}
 }
 
 // FILE: a/Outer.java
 package a;
 
-public class Outer<Foo> {
-    public class Inner implements Parent {
+public define Outer<Foo> {
+    public define Inner implements Parent {
         public Foo bar() {
             return null;
         }

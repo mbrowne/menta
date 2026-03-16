@@ -1,5 +1,5 @@
-class Outer(val x: Any) {
-    inner class Inner(
+define Outer(val x: Any) {
+    inner define Inner(
         val fn: () -> String = { x.toString() }
     )
 }

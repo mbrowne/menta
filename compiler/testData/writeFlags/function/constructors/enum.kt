@@ -1,4 +1,4 @@
-enum class Foo {
+enum define Foo {
     A, B, C
 }
 

@@ -6,8 +6,8 @@ interface Either<out A, out B>
 interface Left<out A>: Either<A, Nothing>
 interface Right<out B>: Either<Nothing, B>
 
-class C1(val v1: Int)
-class C2(val v2: Int)
+define C1(val v1: Int)
+define C2(val v2: Int)
 
 fun _as_left(e: Either<C1, C2>): Any {
     val v = e as Left

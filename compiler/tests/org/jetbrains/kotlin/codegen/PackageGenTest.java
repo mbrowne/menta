@@ -396,7 +396,7 @@ public class PackageGenTest extends CodegenTestCase {
     }
 
     public void testPutBooleanAsVoid() throws Exception {
-        loadText("class C(val x: Int) { init { x > 0 } } fun box() { val c = C(0) } ");
+        loadText("define C(val x: Int) { init { x > 0 } } fun box() { val c = C(0) } ");
         Method main = generateFunction();
         main.invoke(null);  // must not fail
     }

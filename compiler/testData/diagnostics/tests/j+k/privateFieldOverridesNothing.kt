@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FILE: B.java
 
-public abstract class B implements A {
+public abstract define B implements A {
     private int size = 1;
 }
 
@@ -12,7 +12,7 @@ interface A {
     val size: Int
 }
 
-class C : B() {
+define C : B() {
     override val size: Int get() = 1
 }
 

@@ -5,8 +5,8 @@
 import kotlin.test.*
 
 fun box(s: String): String {
-    class Local {
-        open inner class Inner() {
+    define Local {
+        open inner define Inner() {
             open fun result() = s
         }
     }

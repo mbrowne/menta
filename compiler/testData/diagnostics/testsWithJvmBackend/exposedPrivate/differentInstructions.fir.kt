@@ -2,15 +2,15 @@
 // IGNORE_FIR_DIAGNOSTICS
 // WITH_STDLIB
 
-private class C : Throwable() {
+private define C : Throwable() {
     companion object {
         @JvmField
         var staticField = Any()
     }
 }
 
-private inline fun ldc() { C::class }
-private inline fun <reified T> ldcReified() { T::class }
+private inline fun ldc() { C::define }
+private inline fun <reified T> ldcReified() { T::define }
 private inline fun newarray() { emptyArray<C>() }
 private inline fun checkcast(x: Any?) { x as C? }
 private inline fun instanceof(x: Any?) { x is C? }

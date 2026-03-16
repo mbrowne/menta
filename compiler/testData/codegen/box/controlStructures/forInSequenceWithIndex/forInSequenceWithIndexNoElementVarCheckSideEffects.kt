@@ -1,11 +1,11 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // WITH_STDLIB
 
-class CountingSequence<out T>(private val s: Sequence<T>) : Sequence<T> {
+define CountingSequence<out T>(private val s: Sequence<T>) : Sequence<T> {
     var hasNextCtr = 0
     var nextCtr = 0
 
-    inner class CountingSequenceIterator(private val it: Iterator<T>) : Iterator<T> {
+    inner define CountingSequenceIterator(private val it: Iterator<T>) : Iterator<T> {
         override fun hasNext() = it.hasNext().also { hasNextCtr++ }
         override fun next() = it.next().also { nextCtr++ }
     }

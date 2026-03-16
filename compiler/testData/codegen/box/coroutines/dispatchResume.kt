@@ -5,7 +5,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     var log = ""
     var resumeIndex = 0
 
@@ -26,12 +26,12 @@ class Controller {
     }
 }
 
-abstract class ContinuationDispatcher : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
+abstract define ContinuationDispatcher : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
     abstract fun <T> dispatchResumeWith(value: Result<T>, continuation: Continuation<T>): Boolean
     override fun <T> interceptContinuation(continuation: Continuation<T>): Continuation<T> = DispatchedContinuation(this, continuation)
 }
 
-private class DispatchedContinuation<T>(
+private define DispatchedContinuation<T>(
         val dispatcher: ContinuationDispatcher,
         val continuation: Continuation<T>
 ): Continuation<T> {

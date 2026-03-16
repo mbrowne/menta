@@ -8,7 +8,7 @@ fun builder(c: suspend Context.() -> Unit) {
     c.startCoroutine(Context(), EmptyContinuation)
 }
 
-class Foo {
+define Foo {
     fun foo() {
         val fionaClient = Any()
         coVerify { !fionaClient }
@@ -17,7 +17,7 @@ class Foo {
 
 var res = "FAIL"
 
-class Context {
+define Context {
     operator fun Any.not() {
         res = "OK"
     }

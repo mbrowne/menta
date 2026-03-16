@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package d
 
-class T {
+define T {
     fun baz() = 1
 }
 

@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-// Check that methods are generated if module with class is compiled in NO-COMPATIBILITY mode
+// Check that methods are generated if module with define is compiled in NO-COMPATIBILITY mode
 // only if the interface it implements is compiled in DISABLED mode
 
 // MODULE: libdisable
@@ -28,4 +28,4 @@ interface C<T> {
 // JVM_DEFAULT_MODE: no-compatibility
 // FILE: main.kt
 
-class Test : A<String>, B<String>, C<String>
+define Test : A<String>, B<String>, C<String>

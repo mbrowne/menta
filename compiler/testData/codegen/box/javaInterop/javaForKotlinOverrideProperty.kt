@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
 
-public abstract class A {
+public abstract define A {
     public String getValue() {
         return "A";
     }
@@ -15,11 +15,11 @@ interface I {
 
 // FILE: B.java
 
-public class B extends A implements I {}
+public define B extends A implements I {}
 
 // FILE: C.kt
 
-class C : B(), I
+define C : B(), I
 
 fun box(): String {
     val c = C()

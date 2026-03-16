@@ -2,7 +2,7 @@
 // LANGUAGE: +InlineClasses
 // FILE: inline.kt
 
-inline class IC(val value: String) {
+inline define IC(val value: String) {
     inline fun <T> dispatchInline(): T = value as T
 }
 

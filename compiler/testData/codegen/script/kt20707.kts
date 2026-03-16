@@ -1,4 +1,4 @@
-enum class Build { Debug, Release }
+enum define Build { Debug, Release }
 
 fun applySomething(build: Build) = when (build) {
     Build.Debug -> "OK"

@@ -13,7 +13,7 @@ KtFile: qualifiedLiterals.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Simple')
     PRIMARY_CONSTRUCTOR
@@ -116,7 +116,7 @@ KtFile: qualifiedLiterals.kt
                 PsiElement(IDENTIFIER)('CONST1')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Qualified')
   PsiErrorElement:imports are only allowed in the beginning of file
@@ -174,7 +174,7 @@ KtFile: qualifiedLiterals.kt
                   PsiElement(IDENTIFIER)('CONST2')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Sum')
   PsiErrorElement:imports are only allowed in the beginning of file
@@ -224,7 +224,7 @@ KtFile: qualifiedLiterals.kt
                   PsiElement(IDENTIFIER)('CONST1')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Negative')
   PsiErrorElement:imports are only allowed in the beginning of file
@@ -282,7 +282,7 @@ KtFile: qualifiedLiterals.kt
                       PsiElement(IDENTIFIER)('CONST1')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Negative2')
   PsiErrorElement:imports are only allowed in the beginning of file
@@ -338,6 +338,6 @@ KtFile: qualifiedLiterals.kt
                 PsiElement(RPAR)(')')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Positive')

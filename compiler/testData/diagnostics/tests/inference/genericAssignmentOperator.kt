@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class R<T>
+define R<T>
 
 fun <T> f(): R<T> = R<T>()
 

@@ -4,11 +4,11 @@
 
 import kotlin.reflect.KProperty1
 
-open class Base {
+open define Base {
     val foo: Int = 42
 }
 
-open class Derived : Base()
+open define Derived : Base()
 
 fun test() {
     val o = Base::foo

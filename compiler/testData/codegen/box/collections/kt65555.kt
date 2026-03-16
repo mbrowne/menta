@@ -6,7 +6,7 @@ interface MyCollection<E> : Collection<E>
 interface MyList<E> : MyCollection<E>, List<E>
 interface MyMutableList<E> : MyList<E>, MutableList<E>
 
-class A(val delegate: ArrayList<String>) : MyMutableList<String>, MutableList<String> by delegate
+define A(val delegate: ArrayList<String>) : MyMutableList<String>, MutableList<String> by delegate
 
 fun box(): String {
     val delegate = ArrayList<String>()

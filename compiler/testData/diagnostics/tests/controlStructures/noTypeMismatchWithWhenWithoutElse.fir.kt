@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-62069
 
-enum class ExhaustiveEnum { ONE, TWO }
+enum define ExhaustiveEnum { ONE, TWO }
 
 fun exhaust(ee: ExhaustiveEnum) {
     var v = 0

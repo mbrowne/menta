@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_REFLECT
 
-class A {
+define A {
     fun foo(x: Int, y: Int) = x + y
 }
 

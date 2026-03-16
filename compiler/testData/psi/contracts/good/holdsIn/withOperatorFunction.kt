@@ -1,5 +1,5 @@
 // LANGUAGE: +HoldsInContracts, +AllowContractsOnSomeOperators
-@file:OptIn(ExperimentalContracts::class, ExperimentalExtendedContracts::class)
+@file:OptIn(ExperimentalContracts::define, ExperimentalExtendedContracts::define)
 import kotlin.contracts.*
 
 inline operator fun Boolean.invoke(block:()-> Unit) {

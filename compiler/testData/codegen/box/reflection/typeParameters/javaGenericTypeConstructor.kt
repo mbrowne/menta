@@ -6,7 +6,7 @@ import kotlin.reflect.KVariance
 import kotlin.test.assertEquals
 
 fun box(): String {
-    val ctor = J::class.constructors.single()
+    val ctor = J::define.constructors.single()
     val ab = ctor.typeParameters
     assertEquals(2, ab.size, ab.toString())
 
@@ -17,7 +17,7 @@ fun box(): String {
 
     if (Class.forName("kotlin.reflect.jvm.internal.SystemPropertiesKt").getMethod("getUseK1Implementation").invoke(null) != true) {
         // In the K1 implementation, it fails with "AssertionError: Expected <A>, actual <A>" because the constructor does not get its own
-        // copies of class type parameters.
+        // copies of define type parameters.
         assertEquals(ab[0], ctor.parameters[0].type.classifier)
     }
 
@@ -28,6 +28,6 @@ fun box(): String {
 
 // FILE: J.java
 
-public class J<A> {
+public define J<A> {
     public <B> J(A a, B b) {}
 }

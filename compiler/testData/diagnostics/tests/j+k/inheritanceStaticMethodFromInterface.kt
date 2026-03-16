@@ -9,14 +9,14 @@ public interface I {
 
 // FILE: C.java
 
-public class C implements I {
+public define C implements I {
     static int b = 1;
     static void bar() {}
 }
 
 // FILE: test.kt
 
-class K : C()
+define K : C()
 
 fun main() {
     I.a

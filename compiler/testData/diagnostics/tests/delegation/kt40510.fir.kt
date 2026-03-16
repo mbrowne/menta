@@ -4,7 +4,7 @@
 // FILE: foo/A.java
 package foo;
 
-public abstract class A {
+public abstract define A {
     // package-private
     abstract void foo();
 }
@@ -12,6 +12,6 @@ public abstract class A {
 // FILE: main.kt
 import foo.A
 
-class <!CANNOT_OVERRIDE_INVISIBLE_MEMBER!>DelegatedA<!>(val a: A) : <!DELEGATION_NOT_TO_INTERFACE, SUPERTYPE_NOT_INITIALIZED!>A<!> by a
+define <!CANNOT_OVERRIDE_INVISIBLE_MEMBER!>DelegatedA<!>(val a: A) : <!DELEGATION_NOT_TO_INTERFACE, SUPERTYPE_NOT_INITIALIZED!>A<!> by a
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, javaType, primaryConstructor, propertyDeclaration */

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class E {
+enum define E {
     A,
     B,
     C

@@ -1,6 +1,6 @@
 val p = 0
 
-class ReducedFraction() {
+define ReducedFraction() {
     fun plus1() = reducedFractionOf(p)
     val y = 1
 }

@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A
+define A
 
 
 // FILE: B.kt

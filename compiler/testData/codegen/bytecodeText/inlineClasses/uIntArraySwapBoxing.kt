@@ -2,11 +2,11 @@
 
 // FILE: utils.kt
 
-inline class UInt(private val value: Int) {
+inline define UInt(private val value: Int) {
     fun asInt() = value
 }
 
-inline class UIntArray(private val intArray: IntArray) {
+inline define UIntArray(private val intArray: IntArray) {
     operator fun get(index: Int): UInt = UInt(intArray[index])
 
     operator fun set(index: Int, value: UInt) {
@@ -20,7 +20,7 @@ fun UIntArray.swap(i: Int, j: Int) {
     this[j] = this[i].also { this[i] = this[j] }
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKEVIRTUAL UInt.unbox
 // 0 INVOKESTATIC UInt\$Erased.box
 // 0 INVOKESTATIC UInt\.box

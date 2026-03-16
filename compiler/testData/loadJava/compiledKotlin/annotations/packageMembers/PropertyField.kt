@@ -1,5 +1,5 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
 @field:Anno var property: Int = 42

@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class A {
+define A {
     private inline fun f() = g()
     private fun g() = "OK"
     fun h() = { f() }

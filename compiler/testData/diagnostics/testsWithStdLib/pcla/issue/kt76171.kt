@@ -10,7 +10,7 @@ interface DialogScope<R> {
     var expectedValue: R
 }
 
-class DialogState {
+define DialogState {
 
     fun <R> dialog(block: (Continuation<R>) -> Unit) = Unit
 
@@ -33,7 +33,7 @@ fun <T> rememberA(
     TODO()
 }
 
-class FakeMutableState<T>(var value: T) {
+define FakeMutableState<T>(var value: T) {
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
         return value

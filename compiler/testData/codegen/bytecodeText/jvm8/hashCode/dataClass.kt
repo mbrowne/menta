@@ -1,6 +1,6 @@
 // JVM_TARGET: 1.8
 
-data class Hash(
+data define Hash(
         val a: Boolean,
         val b: Byte,
         val c: Char,

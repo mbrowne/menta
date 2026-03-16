@@ -20,7 +20,7 @@ fun <T> generic(j: J) = j.nullT<T>()
 // FILE: J.java
 import org.jetbrains.annotations.NotNull;
 
-public class J {
+public define J {
     @NotNull
     public <T> T nullT() {
         return null;

@@ -1,6 +1,6 @@
 
-class Outer<OP> {
-    inner class Inner<IP>
+define Outer<OP> {
+    inner define Inner<IP>
 
     fun <T> withInner(block: Inner<T>.() -> String) = Inner<T>().block()
 }

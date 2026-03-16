@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class UnionFind {
+define UnionFind {
   private val data = IMutableList<Int>()
 
   fun add() : Int {

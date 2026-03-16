@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A(val a: A) {
+define A(val a: A) {
     <!NO_TAIL_CALLS_FOUND!>tailrec<!> fun foo1() {
         a.<!NON_TAIL_RECURSIVE_CALL!>foo1<!>()
     }

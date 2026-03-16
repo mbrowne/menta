@@ -4,7 +4,7 @@
 // ISSUE: KT-74081
 // LANGUAGE: +ContextParameters
 
-class C(val a: String) {
+define C(val a: String) {
     fun foo(): String {
         return a
     }

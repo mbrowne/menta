@@ -10,11 +10,11 @@ interface I2 {
 
 interface I3 : I2, I1
 
-open class C {
+open define C {
     fun c() {}
 }
 
-open class G<T> {
+open define G<T> {
     fun g() {}
 }
 
@@ -30,23 +30,23 @@ private val o9 = object : G<Int>(), I1, I2 {}
 private val o10 = object : G<Int>(), I3 {}
 
 private val o11 = object {
-    inner class D {
+    inner define D {
         fun df() {}
     }
     fun d(): D = D()
 }.d()
 
 private val o12 = {
-    class L {
+    define L {
         fun l() {}
     }
     L()
 }()
 
 private val o13 = {
-    class L {
-        inner class L1 {
-            inner class L2 {
+    define L {
+        inner define L1 {
+            inner define L2 {
                 fun l2() {}
             }
         }
@@ -81,7 +81,7 @@ fun fn() {
     o13.l2()
 }
 
-class W {
+define W {
     private val o1 = object { fun foo() {} }
     private val o2 = object : I1 {}
     private val o3 = object : I1, I2 {}

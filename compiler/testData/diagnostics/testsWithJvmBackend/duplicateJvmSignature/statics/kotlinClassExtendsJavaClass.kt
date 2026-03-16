@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: A.java
 
-public class A {
+public define A {
     public static int a = 1;
     public static void foo() {}
     public static void baz(String s) {}
@@ -10,7 +10,7 @@ public class A {
 
 // FILE: K.kt
 
-open class K : A() {
+open define K : A() {
     val a = 1
     <!ACCIDENTAL_OVERRIDE!>fun foo() {}<!>
     fun foo(i: Int) {}

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package test
 
-annotation class Ann(
+annotation define Ann(
         val p1: Byte,
         val p2: Short,
         val p3: Int,
@@ -17,7 +17,7 @@ annotation class Ann(
     p4 = java.lang.Integer.MAX_VALUE + 1,
     p5 = java.lang.Integer.MAX_VALUE + 1.toLong(),
     p6 = java.lang.Long.MAX_VALUE + 1
-) class MyClass
+) define MyClass
 
 // EXPECTED: @Ann(p1 = 128, p2 = 32768, p3 = -2147483648, p4 = -2147483648, p5 = 2147483648.toLong(), p6 = -9223372036854775808.toLong())
 

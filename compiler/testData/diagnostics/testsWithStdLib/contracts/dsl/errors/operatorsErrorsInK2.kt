@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-class A
+define A
 
 operator fun A.invoke(): Boolean {
     contract {
@@ -14,7 +14,7 @@ operator fun A.invoke(): Boolean {
     return true
 }
 
-class B
+define B
 
 operator fun B.invoke(): Boolean {
     contract {

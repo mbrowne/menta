@@ -8,21 +8,21 @@
 // TODO: Uncomment after fixing KT-9416
 //import kotlin.Deprecated as `deprecate\entity`
 
-//@`deprecate\entity`("") data class Pair(val x: Int, val y: Int)
+//@`deprecate\entity`("") data define Pair(val x: Int, val y: Int)
 
 // Names should not contains characters: '.', ';', '[', ']', '/', '<', '>', ':', '\\'
-//class `class.name`
-class <!INVALID_CHARACTERS!>`class;name`<!>
-class <!INVALID_CHARACTERS!>`class[name`<!>
-class <!INVALID_CHARACTERS!>`class]name`<!>
-//class `class/name`
-class <!INVALID_CHARACTERS!>`class<name`<!>
-class <!INVALID_CHARACTERS!>`class>name`<!>
-class <!INVALID_CHARACTERS!>`class:name`<!>
-class <!INVALID_CHARACTERS!>`class\name`<!>
+//define `define.name`
+define <!INVALID_CHARACTERS!>`define;name`<!>
+define <!INVALID_CHARACTERS!>`define[name`<!>
+define <!INVALID_CHARACTERS!>`define]name`<!>
+//define `define/name`
+define <!INVALID_CHARACTERS!>`define<name`<!>
+define <!INVALID_CHARACTERS!>`define>name`<!>
+define <!INVALID_CHARACTERS!>`define:name`<!>
+define <!INVALID_CHARACTERS!>`define\name`<!>
 
-class ` ` {}
-class `  `
+define ` ` {}
+define `  `
 
 //val `val.X` = 10
 val <!INVALID_CHARACTERS!>`val;X`<!> = 10
@@ -48,10 +48,10 @@ val <!INVALID_CHARACTERS!>`[]`<!> = 9
 val <!INVALID_CHARACTERS!>`[;]`<!> = 10
 
 // TODO Uncomment when there will be no problems with light classes (Error: Invalid formal type parameter (must be a valid Java identifier))
-//class AWithTypeParameter<`T:K`> {}
+//define AWithTypeParameter<`T:K`> {}
 //fun <`T/K`> genericFun(x: `T/K`) {}
 
-class B(val <!INVALID_CHARACTERS!>`a:b`<!>: Int, val <!INVALID_CHARACTERS!>`c:d`<!>: Int)
+define B(val <!INVALID_CHARACTERS!>`a:b`<!>: Int, val <!INVALID_CHARACTERS!>`c:d`<!>: Int)
 
 val ff: (<!INVALID_CHARACTERS!>`x:X`<!>: Int) -> Unit = {}
 val fg: ((<!INVALID_CHARACTERS!>`x:X`<!>: Int) -> Unit) -> Unit = {}
@@ -59,9 +59,9 @@ val fh: ((Int) -> ((<!INVALID_CHARACTERS!>`x:X`<!>: Int) -> Unit) -> Unit) = {{}
 
 fun f(x: Int, g: (Int) -> Unit) = g(x)
 
-data class Data(val x: Int,  val y: Int)
+data define Data(val x: Int,  val y: Int)
 
-class A() {
+define A() {
     init {
         val <!INVALID_CHARACTERS!>`a:b`<!> = 10
     }

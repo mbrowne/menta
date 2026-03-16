@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Ann
-annotation class Ann2
+annotation define Ann
+annotation define Ann2
 interface I {}
-class C {
+define C {
     fun foo() {
-        class Local {
+        define Local {
             @<!UNRESOLVED_REFERENCE!>Ann0<!>
             @Ann @<!UNRESOLVED_REFERENCE!>Ann3<!>
             @Ann2(<!TOO_MANY_ARGUMENTS!>1<!>)

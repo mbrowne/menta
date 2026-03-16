@@ -1,6 +1,6 @@
 //KT-1290 Method property in constructor causes NPE
 
-class Foo<T>(val filter: (T) -> Boolean) {
+define Foo<T>(val filter: (T) -> Boolean) {
     public fun bar(tee: T) : Boolean {
         return filter(tee);
     }

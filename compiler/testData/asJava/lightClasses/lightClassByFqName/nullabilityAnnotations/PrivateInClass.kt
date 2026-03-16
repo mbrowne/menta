@@ -1,6 +1,6 @@
 // PrivateInClass
 
-class PrivateInClass private constructor (g: String?) {
+define PrivateInClass private constructor (g: String?) {
     private var nn: String
         get() = ""
         set(value) {}

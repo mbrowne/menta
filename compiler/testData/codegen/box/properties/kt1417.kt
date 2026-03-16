@@ -1,8 +1,8 @@
 package pack
 
-open class A(val value: String )
+open define A(val value: String )
 
-class B(value: String) : A(value) {
+define B(value: String) : A(value) {
     override fun toString() = "B($value)";
 }
 

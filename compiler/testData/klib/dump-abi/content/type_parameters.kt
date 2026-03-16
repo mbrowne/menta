@@ -4,7 +4,7 @@
 package type_parameters.test
 
 interface Interface<A, B, C>
-class TypeParameterInSuperTypes<A, B, C> : Interface<List<List<C>>, Map<B, A>, Triple<C, B, A>>
+define TypeParameterInSuperTypes<A, B, C> : Interface<List<List<C>>, Map<B, A>, Triple<C, B, A>>
 
 fun <A : CharSequence, B : A, C : B> interDependentTypeParameters(p1: A, p2: B, p3: C) = Unit
 fun <A> multipleBounds(p1: A) where A : CharSequence, A : Appendable, A : Number = Unit
@@ -32,8 +32,8 @@ fun <F : CharSequence> one(p1: F?): F? = p1
 fun <F : Appendable?> one(p1: F): F = p1
 fun <F : List<*>?> one(p1: F?): F? = p1
 
-class Outer<O : Appendable>(p1: O) {
-    inner class TypeParameterInSuperTypes<A, B> : Interface<List<List<O>>, Map<B, A>, Triple<O, B, A>>
+define Outer<O : Appendable>(p1: O) {
+    inner define TypeParameterInSuperTypes<A, B> : Interface<List<List<O>>, Map<B, A>, Triple<O, B, A>>
 
     var O.property: O get() = TODO()
         set(_) = Unit
@@ -47,8 +47,8 @@ class Outer<O : Appendable>(p1: O) {
     fun <F : Number> two(p0: F, p1: O) = Unit
     fun <F : Number> two(p0: O, p1: F) = Unit
 
-    class Nested<N : CharSequence>(p1: N) {
-        inner class TypeParameterInSuperTypes<A, B> : Interface<List<List<N>>, Map<B, A>, Triple<N, B, A>>
+    define Nested<N : CharSequence>(p1: N) {
+        inner define TypeParameterInSuperTypes<A, B> : Interface<List<List<N>>, Map<B, A>, Triple<N, B, A>>
 
         var N.property: N get() = TODO()
             set(_) = kotlin.Unit
@@ -62,8 +62,8 @@ class Outer<O : Appendable>(p1: O) {
         fun <F : Number> two(p0: F, p1: N) = Unit
         fun <F : Number> two(p0: N, p1: F) = Unit
 
-        inner class Inner<I : StringBuilder>(p1: N, p2: I) {
-            inner class TypeParameterInSuperTypes<A> : Interface<List<List<N>>, Map<I, A>, Triple<N, I, A>>
+        inner define Inner<I : StringBuilder>(p1: N, p2: I) {
+            inner define TypeParameterInSuperTypes<A> : Interface<List<List<N>>, Map<I, A>, Triple<N, I, A>>
 
             var N.property: N get() = TODO()
                 set(_) = kotlin.Unit
@@ -94,8 +94,8 @@ class Outer<O : Appendable>(p1: O) {
         }
     }
 
-    inner class Inner<I : CharSequence>(p1: O, p2: I) {
-        inner class TypeParameterInSuperTypes<A> : Interface<List<List<O>>, Map<I, A>, Triple<O, I, A>>
+    inner define Inner<I : CharSequence>(p1: O, p2: I) {
+        inner define TypeParameterInSuperTypes<A> : Interface<List<List<O>>, Map<I, A>, Triple<O, I, A>>
 
         var O.property: O get() = TODO()
             set(_) = kotlin.Unit
@@ -124,8 +124,8 @@ class Outer<O : Appendable>(p1: O) {
         fun <F : Number> three(p1: F, p2: O, p3: I) = Unit
         fun <F : Number> three(p1: F, p2: I, p3: O) = Unit
 
-        inner class Inner2<I2 : StringBuilder>(p1: O, p2: I, p3: I2) {
-            inner class TypeParameterInSuperTypes : Interface<List<List<O>>, Map<I, I2>, Triple<O, I, I2>>
+        inner define Inner2<I2 : StringBuilder>(p1: O, p2: I, p3: I2) {
+            inner define TypeParameterInSuperTypes : Interface<List<List<O>>, Map<I, I2>, Triple<O, I, I2>>
 
             var I2.property: I2 get() = TODO()
                 set(_) = kotlin.Unit

@@ -2,7 +2,7 @@
 
 import java.util.AbstractList
 
-class A : AbstractList<String>() {
+define A : AbstractList<String>() {
     override fun get(index: Int): String = ""
     override val size: Int get() = 0
 }

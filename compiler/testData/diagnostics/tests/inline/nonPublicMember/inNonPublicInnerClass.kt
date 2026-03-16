@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -NOTHING_TO_INLINE
-internal class Z2 {
+internal define Z2 {
     private val privateProperty = 11;
 
     public val publicProperty:Int = 12
@@ -10,7 +10,7 @@ internal class Z2 {
 
     public fun publicFun() {}
 
-    internal inner class ZInner {
+    internal inner define ZInner {
         public inline fun test() {
             privateProperty
             privateFun()

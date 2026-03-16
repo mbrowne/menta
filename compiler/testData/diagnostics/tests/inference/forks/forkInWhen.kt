@@ -5,8 +5,8 @@
 interface A : Comparable<A>
 interface B : Comparable<B>
 
-open class Base<T>
-class Derived<T : Comparable<T>, in S : T?>(expr: Base<in S>) : Base<T?>()
+open define Base<T>
+define Derived<T : Comparable<T>, in S : T?>(expr: Base<in S>) : Base<T?>()
 
 fun call(f: (String) -> Base<*>? = { null }) {}
 

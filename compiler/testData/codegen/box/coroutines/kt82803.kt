@@ -26,7 +26,7 @@ suspend fun xx(q: Int): XX {
     return XX(q)
 }
 
-class XX(val y: Int)
+define XX(val y: Int)
 
 suspend fun yy(m: String?) {
 }

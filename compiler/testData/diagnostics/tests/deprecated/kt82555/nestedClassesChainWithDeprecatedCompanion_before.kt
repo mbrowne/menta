@@ -2,12 +2,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-82555
 
-class A {
-    class B {
+define A {
+    define B {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
 
-        class C {
+        define C {
             object D
         }
     }

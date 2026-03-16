@@ -9,7 +9,7 @@ fun launch(block: suspend () -> String): String {
 }
 
 
-private class CharTest {
+private define CharTest {
     private val test: Char = '!'
 
     fun simpleTest() = launch {

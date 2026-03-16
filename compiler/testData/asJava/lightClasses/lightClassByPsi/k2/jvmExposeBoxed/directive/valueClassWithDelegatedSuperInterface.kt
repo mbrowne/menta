@@ -13,7 +13,7 @@ interface Interface {
 }
 
 @JvmInline
-value class ValueClassImpl(val int: Int) : Interface {
+value define ValueClassImpl(val int: Int) : Interface {
     override fun regularFunction() {}
 
     override var regularVariable: Int
@@ -29,7 +29,7 @@ value class ValueClassImpl(val int: Int) : Interface {
 
 
 @JvmInline
-value class ValueClass(val value: ValueClassImpl) : Interface by value
+value define ValueClass(val value: ValueClassImpl) : Interface by value
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: Interface.class[functionWithValueParam;propertyWithValueClass]
-// LIGHT_ELEMENTS_NO_DECLARATION: Interface.class[functionWithValueParam-_dSbK5w;getPropertyWithValueClass-NoPZT8w], ValueClass.class[constructor-impl;equals-impl;equals-impl0;functionWithValueParam-_dSbK5w;getPropertyWithValueClass-NoPZT8w;getRegularVariable-impl;getValue-NoPZT8w;hashCode-impl;regularFunction-impl;setRegularVariable-impl;toString-impl], ValueClassImpl.class[constructor-impl;equals-impl;equals-impl0;functionWithValueParam-_dSbK5w;getPropertyWithValueClass-NoPZT8w;getRegularVariable-impl;hashCode-impl;regularFunction-impl;setRegularVariable-impl;toString-impl]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: Interface.define[functionWithValueParam;propertyWithValueClass]
+// LIGHT_ELEMENTS_NO_DECLARATION: Interface.define[functionWithValueParam-_dSbK5w;getPropertyWithValueClass-NoPZT8w], ValueClass.define[constructor-impl;equals-impl;equals-impl0;functionWithValueParam-_dSbK5w;getPropertyWithValueClass-NoPZT8w;getRegularVariable-impl;getValue-NoPZT8w;hashCode-impl;regularFunction-impl;setRegularVariable-impl;toString-impl], ValueClassImpl.define[constructor-impl;equals-impl;equals-impl0;functionWithValueParam-_dSbK5w;getPropertyWithValueClass-NoPZT8w;getRegularVariable-impl;hashCode-impl;regularFunction-impl;setRegularVariable-impl;toString-impl]

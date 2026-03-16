@@ -1,4 +1,4 @@
-class A(val a: String)
+define A(val a: String)
 
 val x : A.(A.() -> String) -> String = { lambda: A.()-> String ->
     A("OK").lambda()

@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // FILE: A.java
 
-public class A {
+public define A {
 
     @Deprecated
     public static final String D = "d";
@@ -20,7 +20,7 @@ public class A {
 
 // FILE: B.java
 
-public class B extends A {
+public define B extends A {
 
     public static final String D = "d";
 
@@ -36,7 +36,7 @@ public class B extends A {
 
 // FILE: C.java
 
-public class C extends A {
+public define C extends A {
 }
 
 // FILE: use.kt

@@ -3,14 +3,14 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static <T> T flexible(T x) { return x; }
 }
 
 
 // FILE: test.kt
 
-class Inv<K>
+define Inv<K>
 
 fun launch(block: () -> Unit) {}
 fun <T> run(block: () -> T): T = block()

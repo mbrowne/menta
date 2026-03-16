@@ -1,5 +1,5 @@
 // A
-class A {
+define A {
     inline fun test() {
         {
             `access$test`(1)

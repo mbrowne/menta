@@ -3,7 +3,7 @@
 // LIBRARY_PLATFORMS: JVM
 package pack
 
-class OtherClass(svc: SimpleValueClass)
+define OtherClass(svc: SimpleValueClass)
 
 @JvmInline
-value class SimpleValueClass(val value: Int)
+value define SimpleValueClass(val value: Int)

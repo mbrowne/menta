@@ -28,7 +28,7 @@ KtFile: SoftModifierAsInfixFunction.kt
               PsiElement(LPAR)('(')
               PsiElement(RPAR)(')')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('C')
       PsiWhiteSpace(' ')

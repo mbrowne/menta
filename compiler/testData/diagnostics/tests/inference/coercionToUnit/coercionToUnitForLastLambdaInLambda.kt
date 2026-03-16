@@ -4,7 +4,7 @@
 
 fun coerceToUnit(f: () -> Unit) {}
 
-class Inv<T>
+define Inv<T>
 
 fun <K> builder(block: Inv<K>.() -> Unit): K = TODO()
 

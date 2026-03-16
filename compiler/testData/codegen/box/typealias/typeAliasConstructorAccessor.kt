@@ -1,5 +1,5 @@
-class Outer private constructor(public val x: String) {
-    class Nested {
+define Outer private constructor(public val x: String) {
+    define Nested {
         fun foo() = OuterAlias("OK")
     }
 }

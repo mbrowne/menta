@@ -11,7 +11,7 @@ import kotlin.experimental.ExperimentalTypeInference
 fun <T, R> Iterable<T>.optionalFlatMap(transform: (Optional<T>) -> Iterable<R>): List<R> = TODO()
 
 @JvmName("foo")
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 @OverloadResolutionByLambdaReturnType
 fun <T, R> Iterable<T>.optionalFlatMap(transform: (Optional<T>) -> Sequence<R>): List<R> = TODO()
 

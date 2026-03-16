@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 // NI_EXPECTED_FILE
-private class Outer<E> {
-    private inner class Inner<out F> {
+private define Outer<E> {
+    private inner define Inner<out F> {
         private fun <G> foo() = {
             fun baz() = {
-                class Local {
+                define Local {
                     val e: E = magic()
                     val f: F = magic()
                     val g: G = magic()

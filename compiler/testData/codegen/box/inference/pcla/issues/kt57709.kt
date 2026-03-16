@@ -31,9 +31,9 @@ fun box(): String {
 
 
 
-class DifferentType
+define DifferentType
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     private var storage: TV = Any() as TV
 }

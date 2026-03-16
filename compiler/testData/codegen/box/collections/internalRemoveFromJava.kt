@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: internalRemoveFromJava.kt
 
-class Test<T> : Collection<T> {
+define Test<T> : Collection<T> {
     override val size: Int get() = TODO()
     override fun contains(element: T): Boolean = TODO()
     override fun containsAll(elements: Collection<T>): Boolean = TODO()
@@ -22,7 +22,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.Collection;
 
-public class J {
+public define J {
     public static <T> boolean testRemove(Collection<T> c, T x) {
         return c.remove(x);
     }

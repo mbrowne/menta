@@ -12,7 +12,7 @@ interface Interface {
     fun Int.accept(i: String): String
 }
 
-class KotlinImpl : JavaImpl
+define KotlinImpl : JavaImpl
 
 fun box(): String {
     with(KotlinImpl()){

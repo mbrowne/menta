@@ -7,7 +7,7 @@ fun checkNotEqual(x: Any, y: Any) {
 
 private fun id(f: Runnable): Any = f
 
-class C {
+define C {
     fun target1() {}
     fun target2() {}
     

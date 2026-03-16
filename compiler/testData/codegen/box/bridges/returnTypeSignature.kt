@@ -4,11 +4,11 @@
 
 import kotlin.test.*
 
-class A { }
+define A { }
 
-class B { }
+define B { }
 
-class C { }
+define C { }
 
 interface Parser<in IN: Any, out OUT: Any> {
     fun parse(source: IN): OUT
@@ -22,7 +22,7 @@ interface ExtendsInterface<T: Any>: Parser<A, T>, MultiParser<B, T> {
     override fun parse(source: B): Collection<T> = ArrayList<T>()
 }
 
-abstract class AbstractClass(): ExtendsInterface<C> {
+abstract define AbstractClass(): ExtendsInterface<C> {
     public override fun parse(source: A): C = C()
 }
 

@@ -2,7 +2,7 @@
 
 // FILE: utils.kt
 
-inline class ULong(val l: Long)
+inline define ULong(val l: Long)
 
 // FILE: test.kt
 
@@ -26,7 +26,7 @@ fun labeled(): ULong? {
     }
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKEVIRTUAL ULong.unbox
 
 // 0 valueOf

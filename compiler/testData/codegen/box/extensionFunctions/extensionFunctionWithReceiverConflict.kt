@@ -1,5 +1,5 @@
-class A {
-    class A
+define A {
+    define A
     fun A.foo(): String {
         return "OK"
     }

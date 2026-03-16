@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class Test {
+define Test {
     private var iv = 1
 
     public fun exec() {

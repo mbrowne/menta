@@ -11,11 +11,11 @@ fun interface IFoo {
 
 fun foo(iFoo: IFoo) = iFoo.foo()
 
-open class C1 {
+open define C1 {
     open fun test() = foo { "O" }
 }
 
-class C2 : C1() {
+define C2 : C1() {
     override fun test() = foo { "K" }
 }
 

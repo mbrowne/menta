@@ -1,7 +1,7 @@
 // WITH_STDLIB
 fun <T> T.id() = this
 
-enum class EnumClass {
+enum define EnumClass {
     OK
 }
 

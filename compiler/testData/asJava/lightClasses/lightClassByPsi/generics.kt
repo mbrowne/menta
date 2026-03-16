@@ -1,5 +1,5 @@
 
-abstract class C<T>(var constructorParam: List<CharSequence>) {
+
   fun foo<V, U : V>(p1: V, p2: C<V>, p4: Sequence<V>): T {}
 
   inline fun <reified T : Enum<T>> printAllValues() {
@@ -23,7 +23,7 @@ abstract class C<T>(var constructorParam: List<CharSequence>) {
 
 }
 
-open class K<out T: K<T>> { }
-class Sub: K<K<*>>()
+open define K<out T: K<T>> { }
+define Sub: K<K<*>>()
 
 // COMPILATION_ERRORS

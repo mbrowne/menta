@@ -8,7 +8,7 @@ KtFile: innerTypes.kt
     <empty list>
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('InnerTypes')
     TYPE_PARAMETER_LIST
@@ -28,7 +28,7 @@ KtFile: innerTypes.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
         TYPE_PARAMETER_LIST
@@ -48,7 +48,7 @@ KtFile: innerTypes.kt
             MODIFIER_LIST
               PsiElement(inner)('inner')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('Inner3')
             TYPE_PARAMETER_LIST
@@ -219,7 +219,7 @@ KtFile: innerTypes.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner2')
       PsiWhiteSpace('\n\n    ')

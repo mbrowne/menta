@@ -6,9 +6,9 @@
 // IGNORE_IR_DESERIALIZATION_TEST: JS_IR
 // ^^^ Source code is not compiled in JS.
 
-class A(val value: String)
+define A(val value: String)
 
-class Fun : (A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A) -> String {
+define Fun : (A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A, A) -> String {
     override fun invoke(
         p1: A, p2: A, p3: A, p4: A, p5: A, p6: A, p7: A, p8: A, p9: A,
         p10: A, p11: A, p12: A, p13: A, p14: A, p15: A, p16: A, p17: A, p18: A, p19: A,

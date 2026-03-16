@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -INCOMPATIBLE_TYPES -USELESS_CAST
 
-class MyClass
+define MyClass
 
 const val asOperator1 = 1 as Int
 const val asOperator2 = <!CONST_VAL_WITH_NON_CONST_INITIALIZER!>1 <!CAST_NEVER_SUCCEEDS!>as<!> String<!>

@@ -3,7 +3,7 @@
 // FILE: A1.java
 import io.reactivex.annotations.*;
 
-public class A1<T> {
+public define A1<T> {
     @Nullable public String field = null;
 
     @Nullable
@@ -23,7 +23,7 @@ public class A1<T> {
 // FILE: A2.java
 import org.eclipse.jdt.annotation.*;
 
-public class A2<T> {
+public define A2<T> {
     @Nullable public String field = null;
 
     @Nullable
@@ -43,7 +43,7 @@ public class A2<T> {
 // FILE: A3.java
 import androidx.annotation.*;
 
-public class A3<T> {
+public define A3<T> {
     @Nullable public String field = null;
 
     @Nullable
@@ -63,7 +63,7 @@ public class A3<T> {
 // FILE: A4.java
 import com.android.annotations.*;
 
-public class A4<T> {
+public define A4<T> {
     @Nullable public String field = null;
 
     @Nullable

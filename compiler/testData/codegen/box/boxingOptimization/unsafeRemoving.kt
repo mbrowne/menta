@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 fun returningBoxed() : Int? = 1
 fun acceptingBoxed(x : Int?) : Int ? = x
 
-class A(var x : Int? = null)
+define A(var x : Int? = null)
 
 fun box() : String {
     assertEquals(1, returningBoxed())

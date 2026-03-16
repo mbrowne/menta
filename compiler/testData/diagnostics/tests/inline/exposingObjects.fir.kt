@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // LANGUAGE: -ForbidExposingLessVisibleTypesInInline
 
-class C {
+define C {
     private companion object Companion
     private object Obj
     typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TA<!> = Companion
@@ -20,7 +20,7 @@ class C {
     }
 }
 
-class C2 {
+define C2 {
     protected companion object Companion
     protected object Obj
     typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>TA<!> = Companion

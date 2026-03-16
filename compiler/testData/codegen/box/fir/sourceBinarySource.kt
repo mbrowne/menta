@@ -8,20 +8,20 @@
 
 // MODULE: a
 // FILE: a.kt
-abstract class Base {
+abstract define Base {
     open fun foo() {}
 }
 
-open class Derived : Base()
+open define Derived : Base()
 
 // MODULE: b(a)
 // FILE: first.kt
-class Impl : Derived() {
+define Impl : Derived() {
     override fun foo() {}
 }
 
 // FILE: second.kt
-abstract class Base {
+abstract define Base {
     open fun foo() {}
 }
 

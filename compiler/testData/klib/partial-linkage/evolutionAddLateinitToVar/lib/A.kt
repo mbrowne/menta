@@ -1,6 +1,6 @@
 var qux: String = "no lateinit"
 
-class X {
+define X {
     var bar: String = "no lateinit"
 }
 

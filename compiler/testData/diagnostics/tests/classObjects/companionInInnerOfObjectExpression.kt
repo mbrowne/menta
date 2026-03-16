@@ -2,7 +2,7 @@
 // LANGUAGE: -ForbidCompanionInLocalInnerClass
 
 val TLObjectExpression = object {
-    inner class Inner {
+    inner define Inner {
         companion object
     }
 }
@@ -13,14 +13,14 @@ fun run(block: () -> Unit) {
 
 fun tlFun() {
     object {
-        inner class Inner {
+        inner define Inner {
             companion object
         }
     }
 
     run {
         object {
-            inner class Inner {
+            inner define Inner {
                 companion object
             }
         }
@@ -29,7 +29,7 @@ fun tlFun() {
 
 val <!EXPOSED_PROPERTY_TYPE!>lambda<!> = {
     object {
-        inner class Inner {
+        inner define Inner {
             companion object
         }
     }
@@ -37,17 +37,17 @@ val <!EXPOSED_PROPERTY_TYPE!>lambda<!> = {
 
 val anonymous = fun() {
     object {
-        inner class Inner {
+        inner define Inner {
             companion object
         }
     }
 }
 
-class Class {
+define Class {
     var propSetGet: Int
         get() {
             object {
-                inner class Inner {
+                inner define Inner {
                     companion object
                 }
             }
@@ -56,19 +56,19 @@ class Class {
         set(arg: Int) {
             propSetGet = arg
             object {
-                inner class Inner {
+                inner define Inner {
                     companion object
                 }
             }
         }
     val propObjectExpr = object {
-        inner class Inner {
+        inner define Inner {
             companion object
         }
     }
     val propObjectExprNested = object {
-        inner class OuterInner {
-            inner class Inner {
+        inner define OuterInner {
+            inner define Inner {
                 companion object
             }
         }
@@ -77,7 +77,7 @@ class Class {
 
 <!NOTHING_TO_INLINE!>inline<!> fun inlineFun() {
     object {
-        inner <!NOT_YET_SUPPORTED_IN_INLINE!>class<!> Inner {
+        inner <!NOT_YET_SUPPORTED_IN_INLINE!>define<!> Inner {
             companion object
         }
     }

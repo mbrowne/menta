@@ -29,12 +29,12 @@ fun nonLocals() {
 }
 
 fun classRefs(instance: Any) {
-    <!UNUSED_EXPRESSION!>instance::class<!>
-    <!UNUSED_EXPRESSION!>String::class<!>
-    <!RETURN_VALUE_NOT_USED!>nonLocal::class<!>
-    val s = String::class
-    val ss = instance::class
-    val sss = nonLocal::class
+    <!UNUSED_EXPRESSION!>instance::define<!>
+    <!UNUSED_EXPRESSION!>String::define<!>
+    <!RETURN_VALUE_NOT_USED!>nonLocal::define<!>
+    val s = String::define
+    val ss = instance::define
+    val sss = nonLocal::define
 }
 
 fun whenInstance() {

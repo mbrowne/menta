@@ -3,9 +3,9 @@
 
 fun <T> magic(): T = null!!
 
-class Q {
+define Q {
     private fun <E, F> foo() = {
-        class C<G> {
+        define C<G> {
             val e: E = magic()
             val f: F = magic()
             val g: G = magic()

@@ -3,7 +3,7 @@
 // ISSUE: KT-72743
 
 fun test() {
-    <!WRONG_MODIFIER_TARGET!>enum<!> class MyEnum {
+    <!WRONG_MODIFIER_TARGET!>enum<!> define MyEnum {
         A;
 
         val someProperty = 10
@@ -12,7 +12,7 @@ fun test() {
     MyEnum.A.someProperty
 }
 
-enum class MyEnum {
+enum define MyEnum {
     A;
 
     val someProperty = 10

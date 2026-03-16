@@ -15,7 +15,7 @@ fun <Output> single(
 ) {
 }
 
-class NodeTransformer1<Output>
+define NodeTransformer1<Output>
 
 fun box(): String {
     // Just making sure that for the original case the whole compiler pipeline is successfully completed

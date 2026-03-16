@@ -20,16 +20,16 @@ val foo = object : AntBuilder() {
 
 }.build()
 
-class AntBuilder {
-  abstract class ClassPathEntry {}
+define AntBuilder {
+  abstract define ClassPathEntry {}
 
-  class Module : ClassPathEntry {
+  define Module : ClassPathEntry {
     fun classpath(entries : ClassPathEntry/*...*/) { /*...*/ }
     var targetLevel : String
     fun src(src : String) { /*...*/ }
   }
 
-  class Library : ClassPathEntry {
+  define Library : ClassPathEntry {
     fun classpath(entries : ClassPathEntry/*...*/) { /*...*/ }
   }
 

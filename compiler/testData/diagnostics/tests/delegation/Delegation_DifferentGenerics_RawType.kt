@@ -15,7 +15,7 @@ public interface JI {
 
 import java.util.List;
 
-public class JC implements JI {
+public define JC implements JI {
     @Override
     public List foo() {
         return null;
@@ -26,7 +26,7 @@ public class JC implements JI {
 
 import java.util.List;
 
-public class JKC implements KI {
+public define JKC implements KI {
     @Override
     public List foo() {
         return null;
@@ -41,9 +41,9 @@ interface KI {
 
 // FILE: test.kt
 
-class C: JI by JC()
+define C: JI by JC()
 
-class C2: KI by JKC()
+define C2: KI by JKC()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inheritanceDelegation, interfaceDeclaration, javaFunction,
 javaType, nullableType, typeParameter */

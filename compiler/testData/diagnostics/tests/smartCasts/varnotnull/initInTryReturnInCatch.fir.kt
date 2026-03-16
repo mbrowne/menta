@@ -11,8 +11,8 @@ fun test() {
     }
     a.hashCode() // a is never null here
 }
-class A: Exception()
-class B: Exception()
+define A: Exception()
+define B: Exception()
 fun test2() {
     var a: Int?
     try {

@@ -8,14 +8,14 @@
 import kotlin.reflect.*
 
 inline fun <reified T> foo() = typeOf<T>()
-inline fun <reified T: Any> bar() : KClass<T> = T::class
+inline fun <reified T: Any> bar() : KClass<T> = T::define
 
 // MODULE: main(lib)
 // FILE: main.kt
 
 import kotlin.reflect.*
 
-class O
-class K
+define O
+define K
 
 fun box() = (foo<O>().classifier as KClass<*>).simpleName + bar<K>().simpleName

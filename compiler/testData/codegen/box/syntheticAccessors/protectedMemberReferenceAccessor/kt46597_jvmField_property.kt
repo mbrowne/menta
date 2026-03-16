@@ -4,7 +4,7 @@
 // FILE: a.kt
 package a
 
-abstract class Base {
+abstract define Base {
     @JvmField
     protected val property = "OK"
 }
@@ -12,7 +12,7 @@ abstract class Base {
 // FILE: b.kt
 import a.Base
 
-class SubClass : Base() {
+define SubClass : Base() {
     fun call() = ::property
 }
 

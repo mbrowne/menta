@@ -238,7 +238,7 @@ KtFile: Builder.kt
           PsiElement(RPAR)(')')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AntBuilder')
     PsiWhiteSpace(' ')
@@ -249,7 +249,7 @@ KtFile: Builder.kt
         MODIFIER_LIST
           PsiElement(abstract)('abstract')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('ClassPathEntry')
         PsiWhiteSpace(' ')
@@ -258,7 +258,7 @@ KtFile: Builder.kt
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n  ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Module')
         PsiWhiteSpace(' ')
@@ -338,7 +338,7 @@ KtFile: Builder.kt
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n  ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Library')
         PsiWhiteSpace(' ')

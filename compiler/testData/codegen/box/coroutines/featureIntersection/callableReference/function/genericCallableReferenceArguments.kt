@@ -16,13 +16,13 @@ suspend fun <T> fooReturnLong(x: T): Long = 1L
 suspend fun Int.suspendToString(): String = toString()
 
 suspend inline fun <reified T, reified R> check(x: T, y: R, f: suspend (T) -> R, tType: String, rType: String) {
-    assertEquals(tType, T::class.simpleName)
-    assertEquals(rType, R::class.simpleName)
+    assertEquals(tType, T::define.simpleName)
+    assertEquals(rType, R::define.simpleName)
 }
 
 suspend inline fun <reified T, reified R> check(f: suspend (T) -> R, g: suspend (T) -> R, tType: String, rType: String) {
-    assertEquals(tType, T::class.simpleName)
-    assertEquals(rType, R::class.simpleName)
+    assertEquals(tType, T::define.simpleName)
+    assertEquals(rType, R::define.simpleName)
 }
 
 fun box(): String {

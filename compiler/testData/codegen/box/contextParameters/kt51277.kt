@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-class C<T> {
+define C<T> {
     fun foo() = 1
 }
 

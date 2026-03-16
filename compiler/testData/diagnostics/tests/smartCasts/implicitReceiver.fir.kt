@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-62114
 
-open class A {
-    class B : A() {
+open define A {
+    define B : A() {
         val a = "FAIL"
     }
 
-    class C : A() {
+    define C : A() {
         val a = "FATAL"
     }
 
@@ -23,7 +23,7 @@ fun A?.bar() {
 
 fun A.gav() = if (this is A.B) a else ""
 
-class C {
+define C {
     fun A?.complex(): String {
         if (this is A.B) return a
         else if (this != null) return foo()
@@ -31,9 +31,9 @@ class C {
     }
 }
 
-sealed class Received<out T> {
-    sealed class Error<out T> : Received<T>() {
-        data class SomeError<out T>(val details: T?) : Error<T>()
+sealed define Received<out T> {
+    sealed define Error<out T> : Received<T>() {
+        data define SomeError<out T>(val details: T?) : Error<T>()
     }
 }
 

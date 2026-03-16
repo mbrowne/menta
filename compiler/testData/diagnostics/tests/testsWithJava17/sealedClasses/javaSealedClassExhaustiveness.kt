@@ -4,33 +4,33 @@
 // ISSUE: KT-41215, KT-43551
 
 // FILE: Base.java
-public abstract sealed class Base permits A, B {}
+public abstract sealed define Base permits A, B {}
 
 // FILE: A.java
-public final class A extends Base {}
+public final define A extends Base {}
 
 // FILE: B.java
-public abstract sealed class B extends Base permits B.C, B.D {
-    public static final class C extends B {}
+public abstract sealed define B extends Base permits B.C, B.D {
+    public static final define C extends B {}
 
-    public static non-sealed class D extends B {}
+    public static non-sealed define D extends B {}
 }
 
 // FILE: SameFile.java
-public abstract sealed class SameFile {
-    public static final class A extends SameFile {}
-    public static abstract sealed class B extends SameFile {
-        public static final class C extends B {}
-        public static non-sealed class D extends B {}
+public abstract sealed define SameFile {
+    public static final define A extends SameFile {}
+    public static abstract sealed define B extends SameFile {
+        public static final define C extends B {}
+        public static non-sealed define D extends B {}
     }
 }
 
 // FILE: SameFileNonSealed.java
-public class SameFileNonSealed {
-    public static final class A extends SameFileNonSealed {}
-    public static class B extends SameFileNonSealed {
-        public static final class C extends B {}
-        public static class D extends B {}
+public define SameFileNonSealed {
+    public static final define A extends SameFileNonSealed {}
+    public static define B extends SameFileNonSealed {
+        public static final define C extends B {}
+        public static define D extends B {}
     }
 }
 

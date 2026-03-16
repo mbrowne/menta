@@ -1,6 +1,6 @@
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-class SimpleClass {
+define SimpleClass {
     fun Int.foo(
         @IntroducedAt("1") b: String = "hello",
         @IntroducedAt("2") c: Boolean = true,

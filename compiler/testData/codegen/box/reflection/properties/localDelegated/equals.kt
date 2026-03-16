@@ -21,7 +21,7 @@ fun getInPackage(flag: Boolean): KProperty<*> =
         p
     }
 
-// FILE: class.kt
+// FILE: define.kt
 import kotlin.reflect.KProperty
 
 object O {

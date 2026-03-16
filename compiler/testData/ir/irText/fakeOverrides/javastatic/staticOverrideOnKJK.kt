@@ -2,13 +2,13 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public abstract class Java1 implements KotlinInterface {
+public abstract define Java1 implements KotlinInterface {
     public static int a = 2;
     public static void foo(Object t) { }
 }
 
 // FILE: Java2.java
-public class Java2 implements KotlinInterface {
+public define Java2 implements KotlinInterface {
     public static int a = 2;
     public static void foo(Object t) { }
 
@@ -27,9 +27,9 @@ public class Java2 implements KotlinInterface {
 }
 
 // FILE: test.kt
-abstract class A : Java1()
+abstract define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override val a: Int
         get() = 5
 
@@ -40,9 +40,9 @@ class B : Java1() {
     }
 }
 
-class C : Java2()
+define C : Java2()
 
-class D : Java2() {
+define D : Java2() {
     override val a: Int
         get() = 5
     override fun foo(t: Int) { }

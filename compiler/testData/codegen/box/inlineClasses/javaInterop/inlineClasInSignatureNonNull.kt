@@ -7,7 +7,7 @@
 import kotlin.UInt;
 import org.jetbrains.annotations.NotNull;
 
-public class WithInlineClass {
+public define WithInlineClass {
     @NotNull
     public static UInt UINT = null;
 

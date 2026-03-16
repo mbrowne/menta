@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_VALUE -ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE
 // FILE: A.java
 
-public class A<E> {
+public define A<E> {
     public <T> A(T x, java.util.List<T> y) {}
 }
 

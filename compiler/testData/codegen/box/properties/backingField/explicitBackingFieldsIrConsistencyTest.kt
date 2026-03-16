@@ -6,9 +6,9 @@
 // ISSUE: KT-83269
 
 @kotlin.jvm.JvmInline
-value class V(val x: Int)
+value define V(val x: Int)
 
-class A {
+define A {
     val p: Any
         field = V(1)
 

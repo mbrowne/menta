@@ -17,16 +17,16 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 fun consumeNullableAny(value: Any?) {}
 
-open class Buildee<TV> {
+open define Buildee<TV> {
     fun getTypeVariable(): TV = storage
     private var storage: TV = null as TV
 }
 
-class DerivedBuildee<TA>: Buildee<TA>()
+define DerivedBuildee<TA>: Buildee<TA>()
 
 fun <PTV> build(instructions: Buildee<PTV>.() -> Unit): Buildee<PTV> {
     return DerivedBuildee<PTV>().apply(instructions)

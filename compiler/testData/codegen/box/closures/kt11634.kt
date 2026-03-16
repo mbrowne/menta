@@ -2,15 +2,15 @@ interface A {
     fun foo(): String
 }
 
-class AImpl(val z: String) : A {
+define AImpl(val z: String) : A {
     override fun foo(): String = z
 }
 
-open class AFabric {
+open define AFabric {
     open fun createA(): A = AImpl("OK")
 }
 
-class AWrapperFabric : AFabric() {
+define AWrapperFabric : AFabric() {
 
     override fun createA(): A {
         return AImpl("fail")

@@ -20,12 +20,12 @@ public interface B extends A {
 }
 
 // FILE: C.java
-public abstract class C {
+public abstract define C {
     public abstract <T> void bar(Fun<T> y);
 
     public static <T> void aStaticMethod(T x, Fun<T> y) {}
 
-    public static abstract class D extends C {
+    public static abstract define D extends C {
         @Override
         public <T> void bar(Fun<T> y) {}
 
@@ -34,11 +34,11 @@ public abstract class C {
 }
 
 // FILE: main.kt
-class E1 : C.D(), B {
+define E1 : C.D(), B {
     override fun foo(x: Any, y: Fun<Any?>) {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class E2<!> : B {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define E2<!> : B {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo(x: Any, y: Fun<String?>) {}
 }
 

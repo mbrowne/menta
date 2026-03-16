@@ -1,4 +1,4 @@
-class C(private val value: String) {
+define C(private val value: String) {
     fun foo(): String = value
 }
 

@@ -5,7 +5,7 @@ interface Aaa<T> {
   fun zzz(value: T): Unit
 }
 
-class Bbb<T>() : Aaa<T> {
+define Bbb<T>() : Aaa<T> {
     override fun zzz(value: T) { }
 }
 

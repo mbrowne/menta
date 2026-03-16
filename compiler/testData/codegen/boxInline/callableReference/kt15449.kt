@@ -8,7 +8,7 @@ inline fun linearLayout2(init: X.() -> Unit) {
 }
 
 var result = "fail"
-class X {
+define X {
     fun calc() {
         result = "OK"
     }
@@ -17,7 +17,7 @@ class X {
 // FILE: 2.kt
 import test.*
 
-class A  {
+define A  {
     fun test() {
         linearLayout2 {
             {

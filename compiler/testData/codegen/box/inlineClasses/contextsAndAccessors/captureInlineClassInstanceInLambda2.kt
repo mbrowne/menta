@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R(private val r: Long) {
+value define R(private val r: Long) {
     fun test() = { ok() }.let { it() }
 
     fun ok() = "OK"

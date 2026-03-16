@@ -8,11 +8,11 @@ interface In<in E> {
     fun send(element: E)
 }
 
-class InImpl<E> : In<E> {
+define InImpl<E> : In<E> {
     override fun send(element: E) {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 public fun <T> builder(block: In<T>.() -> Unit) {
     InImpl<T>().block()
 }

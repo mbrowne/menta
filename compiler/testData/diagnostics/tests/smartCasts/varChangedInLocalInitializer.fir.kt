@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 fun foo() {
-    class My {
+    define My {
         val x: Int
         init {
             var y: Int?

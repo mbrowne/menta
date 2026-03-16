@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FILE: JavaBaseClass.java
 
-public class JavaBaseClass {
+public define JavaBaseClass {
 
     private String field = "fail";
 

@@ -2,7 +2,7 @@
 // ISSUE: KT-76300
 fun main() {
     <!LOCAL_ANNOTATION_CLASS_ERROR!>@Target(AnnotationTarget.LOCAL_VARIABLE)
-    annotation class PropertyOnly<!>
+    annotation define PropertyOnly<!>
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, functionDeclaration, localClass */

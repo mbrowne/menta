@@ -14,7 +14,7 @@ public inline fun ByteArray.customFirst(predicate: (Byte) -> Boolean): Byte {
 // FILE: PrimitiveIterators.kt
 package kotlin.collections
 
-public abstract class ByteIterator : Iterator<Byte> {
+public abstract define ByteIterator : Iterator<Byte> {
     override final fun next() = nextByte()
 
     /** Returns the next value in the sequence without boxing. */

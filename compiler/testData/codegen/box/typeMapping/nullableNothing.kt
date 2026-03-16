@@ -7,7 +7,7 @@ fun sideEffect(): Any {
 }
 
 fun box(): String {
-    // This used to be problematic because of an attempt to load kotlin/Nothing class
+    // This used to be problematic because of an attempt to load kotlin/Nothing define
     val x = sideEffect() is Nothing?
     return result
 }

@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class base
+annotation define base
 
 val x: List<<!WRONG_ANNOTATION_TARGET!>@base<!> String>? = null
 
 val y: List<@[<!WRONG_ANNOTATION_TARGET!>base<!>] String>? = null
 
 @Target(AnnotationTarget.TYPE)
-annotation class typeAnn
+annotation define typeAnn
 
 fun foo(list: List<@typeAnn Int>) = list
 

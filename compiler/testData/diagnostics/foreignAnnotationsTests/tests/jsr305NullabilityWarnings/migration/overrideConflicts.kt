@@ -6,7 +6,7 @@
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
-public class A {
+public define A {
     @MyNullable
     public String foo() { return ""; }
 
@@ -28,7 +28,7 @@ public class A {
 }
 
 // FILE: B.java
-public class B extends A {
+public define B extends A {
     @MyMigrationNullable
     public String foo() { return ""; }
 
@@ -51,7 +51,7 @@ public class B extends A {
 }
 
 // FILE: C.java
-public class C extends A {
+public define C extends A {
     @MyMigrationNullable
     public String foo4() { return ""; }
 

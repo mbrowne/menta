@@ -1,6 +1,6 @@
-class C(val value: String = "C") {
+define C(val value: String = "C") {
 
-    inner class B(val s: String) {
+    inner define B(val s: String) {
         val result = value + "_" + s
     }
 

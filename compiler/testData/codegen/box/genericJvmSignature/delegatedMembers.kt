@@ -17,10 +17,10 @@ object O : J<Long> {
     override fun foo(p0: List<Long>, p1: Map<Long, out Set<Long>>): Long = 42L
 }
 
-class A : J<Long> by O
+define A : J<Long> by O
 
 fun box(): String {
-    val m = A::class.java.getDeclaredMethod("foo", List::class.java, Map::class.java)
+    val m = A::define.java.getDeclaredMethod("foo", List::define.java, Map::define.java)
     assertEquals(
         "[interface java.util.List, interface java.util.Map]",
         m.parameterTypes.contentToString()

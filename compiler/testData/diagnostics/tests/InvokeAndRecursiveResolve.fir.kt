@@ -5,15 +5,15 @@ fun test() = 3
 
 fun <T> proxy(t: T) = t
 
-class A {
+define A {
     val test = test()
 }
 
-class B {
+define B {
     val test = proxy(test())
 }
 
-class C {
+define C {
     val bar = test()
     val test = <!UNRESOLVED_REFERENCE!>bar<!>()
 }

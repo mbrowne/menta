@@ -3,10 +3,10 @@
 // RENDER_DIAGNOSTIC_ARGUMENTS
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.TYPE, AnnotationTarget.CLASS)
-annotation class A
+annotation define A
 
 @A
-class C<T> {
+define C<T> {
     @A
     operator fun set(x: @A Int, y: @A T) {}
 }
