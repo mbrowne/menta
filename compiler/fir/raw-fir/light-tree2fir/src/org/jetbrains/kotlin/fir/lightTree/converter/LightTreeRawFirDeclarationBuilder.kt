@@ -6,6 +6,7 @@
 package org.jetbrains.kotlin.fir.lightTree.converter
 
 import com.intellij.lang.LighterASTNode
+import com.intellij.openapi.util.Ref
 import com.intellij.psi.TokenType
 import com.intellij.util.diff.FlyweightCapableTreeStructure
 import org.jetbrains.kotlin.*
@@ -150,8 +151,8 @@ class LightTreeRawFirDeclarationBuilder(
         kind: KtFakeSourceElementKind? = null,
         convertOnlyFirstStatement: Boolean = false
     ): FirBlockBuilder {
-        // Collect role-desugared extension functions to hoist before regular statements
-        val hoistedRoleExtensions = mutableListOf<FirStatement>()
+        // Collect role nodes for deferred dependency-sorted conversion
+        val roleNodes = mutableListOf<LighterASTNode>()
         val firStatements = block.forEachChildrenReturnList { node, container ->
             if (!convertOnlyFirstStatement || container.isEmpty()) {
                 when (node.tokenType) {
@@ -162,11 +163,24 @@ class LightTreeRawFirDeclarationBuilder(
                         convertDestructingDeclaration(node).toFirDestructingDeclaration(this, baseModuleData)
                     TYPEALIAS -> container += convertTypeAlias(node) as FirStatement
                     CLASS_INITIALIZER -> shouldNotBeCalled("CLASS_INITIALIZER expected to be processed during class body conversion")
-                    ROLE -> hoistedRoleExtensions += convertRoleToExtensionFunctions(node, block)
+                    ROLE -> roleNodes.add(node)
                     else -> if (node.isExpression()) container += expressionConverter.getAsFirStatement(node)
                 }
             }
         }
+
+        // Phase 1: collect metadata from all role nodes
+        val allRoleMethodInfos = mutableListOf<LightTreeRoleMethodInfo>()
+        val rolePlayerNames = mutableSetOf<String>()
+        val allRoleMethodNames = mutableSetOf<String>()
+        for (roleNode in roleNodes) {
+            collectRoleMethodInfos(roleNode, block, allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+        }
+
+        // Phase 2: sort by dependency and convert (callees before callers)
+        val hoistedRoleExtensions = sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+            .map { info -> convertRoleFunctionDeclaration(info.funcNode, info.typeNode, info.roleName) }
+
         return FirBlockBuilder().apply {
             source = block.toFirSourceElement(kind)
             // Emit hoisted role extension functions first
@@ -219,6 +233,148 @@ class LightTreeRawFirDeclarationBuilder(
             }
         }
         return result
+    }
+
+    private data class LightTreeRoleMethodInfo(
+        val funcNode: LighterASTNode,
+        val typeNode: LighterASTNode,
+        val roleName: String,
+    )
+
+    private fun collectRoleMethodInfos(
+        roleNode: LighterASTNode,
+        blockNode: LighterASTNode,
+        infos: MutableList<LightTreeRoleMethodInfo>,
+        rolePlayerNames: MutableSet<String>,
+        allRoleMethodNames: MutableSet<String>,
+    ) {
+        val roleName = roleNode.getChildNodeByType(IDENTIFIER)?.asText ?: return
+        val enclosingFunNode = blockNode.getParent()?.takeIf { it.tokenType == FUN } ?: return
+        val valueParamList = enclosingFunNode.getChildNodeByType(VALUE_PARAMETER_LIST) ?: return
+
+        var matchingParamTypeNode: LighterASTNode? = null
+        valueParamList.forEachChildren { paramNode ->
+            if (paramNode.tokenType == VALUE_PARAMETER) {
+                val paramName = paramNode.getChildNodeByType(IDENTIFIER)?.asText
+                if (paramName == roleName) {
+                    paramNode.forEachChildren { child ->
+                        if (child.tokenType == TYPE_REFERENCE) {
+                            matchingParamTypeNode = child
+                        }
+                    }
+                }
+            }
+        }
+        val paramTypeNode = matchingParamTypeNode ?: return
+
+        rolePlayerNames.add(roleName)
+        val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return
+        roleBody.forEachChildren { childNode ->
+            if (childNode.tokenType == FUN) {
+                val methodName = childNode.getChildNodeByType(IDENTIFIER)?.asText ?: return@forEachChildren
+                infos.add(LightTreeRoleMethodInfo(childNode, paramTypeNode, roleName))
+                allRoleMethodNames.add(methodName)
+            }
+        }
+    }
+
+    private fun sortRoleMethodsByDependencyLightTree(
+        methods: List<LightTreeRoleMethodInfo>,
+        rolePlayerNames: Set<String>,
+        allRoleMethodNames: Set<String>,
+    ): List<LightTreeRoleMethodInfo> {
+        if (methods.size <= 1) return methods
+
+        fun LightTreeRoleMethodInfo.key(): String =
+            "$roleName.${funcNode.getChildNodeByType(IDENTIFIER)?.asText ?: ""}"
+
+        val methodByKey = methods.associateBy { it.key() }
+        val roleByMethod = methods.associate { info ->
+            (info.funcNode.getChildNodeByType(IDENTIFIER)?.asText ?: "") to info.roleName
+        }
+
+        val deps: Map<String, Set<String>> = methods.associate { info ->
+            val key = info.key()
+            val calledNames = findRoleMethodDependenciesLightTree(info.funcNode, rolePlayerNames, allRoleMethodNames)
+            val calledKeys = calledNames.mapNotNull { name ->
+                roleByMethod[name]?.let { role -> "$role.$name" }
+            }.toSet()
+            key to calledKeys
+        }
+
+        val inDegree = methodByKey.keys.associateWith { 0 }.toMutableMap()
+        val dependents = methodByKey.keys.associateWith { mutableListOf<String>() }.toMutableMap()
+        for ((key, keyDeps) in deps) {
+            for (dep in keyDeps) {
+                if (dep in inDegree) {
+                    inDegree[key] = inDegree[key]!! + 1
+                    dependents[dep]?.add(key)
+                }
+            }
+        }
+
+        val queue = ArrayDeque(inDegree.filter { it.value == 0 }.keys)
+        val sorted = mutableListOf<LightTreeRoleMethodInfo>()
+        while (queue.isNotEmpty()) {
+            val key = queue.removeFirst()
+            methodByKey[key]?.let { sorted.add(it) }
+            for (dep in dependents[key] ?: emptyList()) {
+                inDegree[dep] = inDegree[dep]!! - 1
+                if (inDegree[dep] == 0) queue.add(dep)
+            }
+        }
+
+        // Cycle fallback: append remaining in source order
+        if (sorted.size < methods.size) {
+            val sortedKeys = sorted.map { it.key() }.toSet()
+            sorted.addAll(methods.filter { it.key() !in sortedKeys })
+        }
+        return sorted
+    }
+
+    private fun findRoleMethodDependenciesLightTree(
+        funcNode: LighterASTNode,
+        rolePlayerNames: Set<String>,
+        allRoleMethodNames: Set<String>,
+    ): Set<String> {
+        val deps = mutableSetOf<String>()
+        val bodyBlock = funcNode.getChildNodeByType(BLOCK) ?: return deps
+        scanForRoleCallsLightTree(bodyBlock, rolePlayerNames, allRoleMethodNames, deps)
+        return deps
+    }
+
+    private fun scanForRoleCallsLightTree(
+        node: LighterASTNode,
+        rolePlayerNames: Set<String>,
+        allRoleMethodNames: Set<String>,
+        deps: MutableSet<String>,
+    ) {
+        // Use tree.getChildren directly to safely handle leaf nodes (getChildrenAsArray returns null for tokens)
+        val kidsRef = Ref<Array<LighterASTNode?>>()
+        tree.getChildren(node, kidsRef)
+        val kids = kidsRef.get() ?: return
+        for (child in kids) {
+            child ?: break
+            if (child.tokenType == DOT_QUALIFIED_EXPRESSION) {
+                var receiver: LighterASTNode? = null
+                var callExpr: LighterASTNode? = null
+                child.forEachChildren { grandchild ->
+                    when (grandchild.tokenType) {
+                        REFERENCE_EXPRESSION -> if (receiver == null) receiver = grandchild
+                        CALL_EXPRESSION -> callExpr = grandchild
+                    }
+                }
+                val receiverName = receiver?.asText
+                if (receiverName != null && receiverName in rolePlayerNames && callExpr != null) {
+                    val calleeRef2 = callExpr.getChildNodeByType(REFERENCE_EXPRESSION)
+                    val calleeName = calleeRef2?.asText
+                    if (calleeName != null && calleeName in allRoleMethodNames) {
+                        deps.add(calleeName)
+                    }
+                }
+            }
+            scanForRoleCallsLightTree(child, rolePlayerNames, allRoleMethodNames, deps)
+        }
     }
 
     private fun convertRoleFunctionDeclaration(

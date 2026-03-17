@@ -3205,17 +3205,26 @@ open class PsiRawFirBuilder(
             return FirBlockBuilder().apply {
                 source = expression.toFirSourceElement(kind)
 
-                // Partition statements: hoist role-desugared extension functions before regular statements
-                val roleDeclarations = expression.statements.filterIsInstance<KtRole>()
-                for (role in roleDeclarations) {
+                // Phase 1: collect all role methods across all roles
+                val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                val rolePlayerNames = mutableSetOf<String>()
+                val allRoleMethodNames = mutableSetOf<String>()
+
+                for (role in expression.statements.filterIsInstance<KtRole>()) {
                     val roleName = role.getNameIdentifier()?.text ?: continue
                     val enclosingFunction = role.parents.filterIsInstance<KtNamedFunction>().firstOrNull() ?: continue
                     val matchingParam = enclosingFunction.valueParameters.find { it.name == roleName } ?: continue
                     val paramTypeReference = matchingParam.typeReference ?: continue
-
+                    rolePlayerNames.add(roleName)
                     for (roleFunc in role.getFunctionDeclarations()) {
-                        statements += convertRoleFunctionToExtension(roleFunc, paramTypeReference, roleName)
+                        allRoleMethods.add(RoleMethodInfo(roleFunc, paramTypeReference, roleName))
+                        allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
                     }
+                }
+
+                // Phase 2: sort by dependency and emit (callees before callers)
+                for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
+                    statements += convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName)
                 }
 
                 for (statement in expression.statements) {
@@ -3290,6 +3299,78 @@ open class PsiRawFirBuilder(
                     bindFunctionTarget(target, it)
                 }
             }
+        }
+
+        private fun sortRoleMethodsByDependency(
+            methods: List<RoleMethodInfo>,
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): List<RoleMethodInfo> {
+            if (methods.size <= 1) return methods
+
+            val methodByKey = methods.associateBy { "${it.roleName}.${it.func.nameAsSafeName.identifier}" }
+            val roleByMethod = methods.associate { it.func.nameAsSafeName.identifier to it.roleName }
+
+            val deps: Map<String, Set<String>> = methods.associate { info ->
+                val key = "${info.roleName}.${info.func.nameAsSafeName.identifier}"
+                val calledNames = findRoleMethodDependencies(info.func, rolePlayerNames, allRoleMethodNames)
+                val calledKeys = calledNames.mapNotNull { name ->
+                    roleByMethod[name]?.let { role -> "$role.$name" }
+                }.toSet()
+                key to calledKeys
+            }
+
+            val inDegree = methodByKey.keys.associateWith { 0 }.toMutableMap()
+            val dependents = methodByKey.keys.associateWith { mutableListOf<String>() }.toMutableMap()
+            for ((key, keyDeps) in deps) {
+                for (dep in keyDeps) {
+                    if (dep in inDegree) {
+                        inDegree[key] = inDegree[key]!! + 1
+                        dependents[dep]?.add(key)
+                    }
+                }
+            }
+
+            val queue = ArrayDeque(inDegree.filter { it.value == 0 }.keys)
+            val sorted = mutableListOf<RoleMethodInfo>()
+            while (queue.isNotEmpty()) {
+                val key = queue.removeFirst()
+                methodByKey[key]?.let { sorted.add(it) }
+                for (dep in dependents[key] ?: emptyList()) {
+                    inDegree[dep] = inDegree[dep]!! - 1
+                    if (inDegree[dep] == 0) queue.add(dep)
+                }
+            }
+
+            // Cycle fallback: append remaining in source order
+            if (sorted.size < methods.size) {
+                val sortedKeys = sorted.map { "${it.roleName}.${it.func.nameAsSafeName.identifier}" }.toSet()
+                sorted.addAll(methods.filter { "${it.roleName}.${it.func.nameAsSafeName.identifier}" !in sortedKeys })
+            }
+            return sorted
+        }
+
+        private fun findRoleMethodDependencies(
+            func: KtNamedFunction,
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): Set<String> {
+            val deps = mutableSetOf<String>()
+            func.bodyExpression?.accept(object : KtVisitorVoid() {
+                override fun visitDotQualifiedExpression(expr: KtDotQualifiedExpression) {
+                    val receiver = expr.receiverExpression
+                    val selector = expr.selectorExpression
+                    if (receiver is KtSimpleNameExpression &&
+                        receiver.getReferencedName() in rolePlayerNames &&
+                        selector is KtCallExpression
+                    ) {
+                        val callee = (selector.calleeExpression as? KtSimpleNameExpression)?.getReferencedName()
+                        if (callee != null && callee in allRoleMethodNames) deps.add(callee)
+                    }
+                    super.visitDotQualifiedExpression(expr)
+                }
+            }, null)
+            return deps
         }
 
         override fun visitSimpleNameExpression(expression: KtSimpleNameExpression, data: FirElement?): FirElement {
@@ -4166,6 +4247,12 @@ open class PsiRawFirBuilder(
             }
         }
     }
+
+    private data class RoleMethodInfo(
+        val func: KtNamedFunction,
+        val typeRef: KtTypeReference,
+        val roleName: String,
+    )
 }
 
 enum class BodyBuildingMode {
