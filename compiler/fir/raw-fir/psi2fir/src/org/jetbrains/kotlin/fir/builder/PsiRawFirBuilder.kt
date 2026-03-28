@@ -2002,16 +2002,41 @@ open class PsiRawFirBuilder(
                                 }
                             }
 
+                            // Collect roles for deferred processing as member extension functions
+                            val roles = mutableListOf<KtRole>()
                             for (declaration in classOrObject.declarations) {
-                                addDeclaration(
-                                    declaration.toFirDeclaration(
-                                        delegatedSuperType,
-                                        delegatedSelfType,
-                                        classOrObject,
-                                        this,
-                                        typeParameters
+                                if (declaration is KtRole) {
+                                    roles.add(declaration)
+                                } else {
+                                    addDeclaration(
+                                        declaration.toFirDeclaration(
+                                            delegatedSuperType,
+                                            delegatedSelfType,
+                                            classOrObject,
+                                            this,
+                                            typeParameters
+                                        )
                                     )
-                                )
+                                }
+                            }
+
+                            // Convert roles in class body to member extension functions
+                            if (roles.isNotEmpty()) {
+                                val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                                val rolePlayerNames = mutableSetOf<String>()
+                                val allRoleMethodNames = mutableSetOf<String>()
+                                for (role in roles) {
+                                    val roleName = role.getNameIdentifier()?.text ?: continue
+                                    val requiresTypeRef = role.requiresTypeReference ?: continue
+                                    rolePlayerNames.add(roleName)
+                                    for (roleFunc in role.getFunctionDeclarations()) {
+                                        allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
+                                        allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
+                                    }
+                                }
+                                for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
+                                    addDeclaration(convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName, isMember = true))
+                                }
                             }
 
                             if (hasInterfaceFromSupertypes) {
@@ -3243,16 +3268,21 @@ open class PsiRawFirBuilder(
             roleFunc: KtNamedFunction,
             receiverTypeReference: KtTypeReference,
             roleName: String,
+            isMember: Boolean = false,
         ): FirNamedFunction {
             val functionSymbol = FirNamedFunctionSymbol(callableIdForName(roleFunc.nameAsSafeName))
-            return withContainerSymbol(functionSymbol, true) {
+            return withContainerSymbol(functionSymbol, !isMember) {
                 val labelName = roleFunc.nameAsSafeName.identifier
                 val target = FirFunctionTarget(labelName, isLambda = false)
                 val functionSource = roleFunc.toFirSourceElement()
 
                 // Public role methods are callable on the role player; private (default) are not
                 val isPublic = roleFunc.hasModifier(PUBLIC_KEYWORD)
-                val roleVisibility = if (isPublic) Visibilities.Local else Visibilities.Private
+                val roleVisibility = if (isMember) {
+                    Visibilities.Private
+                } else {
+                    if (isPublic) Visibilities.Local else Visibilities.Private
+                }
 
                 FirNamedFunctionBuilder().apply {
                     source = functionSource
@@ -3260,8 +3290,8 @@ open class PsiRawFirBuilder(
                     origin = FirDeclarationOrigin.MentaRole(roleName)
                     name = roleFunc.nameAsSafeName
                     symbol = functionSymbol
-                    dispatchReceiverType = null
-                    isLocal = true
+                    dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                    isLocal = !isMember
                     status = FirDeclarationStatusImpl(roleVisibility, roleFunc.modality)
 
                     returnTypeRef = if (roleFunc.hasBlockBody()) {

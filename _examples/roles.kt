@@ -1,13 +1,3 @@
-define MyContext {
-    // ...
-
-    role foo {
-        fun hello() {
-            println("hi")
-        }
-    } requires Any
-}
-
 interface NamedPerson {
     public val name: String
 }
@@ -24,7 +14,51 @@ fun MyFunctionContext(greeter: NamedPerson) {
     } requires NamedPerson
 }
 
+// Explicit role binding to a local variable (val)
+fun MyLocalValContext() {
+    val foo = object {}
+    foo.x()
+
+    role foo {
+        public fun x() {
+            println("x called")
+        }
+    } requires Any
+}
+
+// Explicit role binding to a local variable (var)
+fun MyLocalVarContext() {
+    var counter = 0
+    counter.increment()
+
+    role counter {
+        public fun increment() {
+            println("incrementing")
+        }
+    } requires Int
+}
+
+define MyContext(
+    val items: MutableList<String> = mutableListOf<String>()
+) {
+    public fun addItem(item: String) {
+        items.addAndLog(item)
+    }
+
+    role items {
+        public fun addAndLog(item: String) {
+            add(item)
+            println("added: $item")
+        }
+    } requires MutableList<String>
+}
+
 fun main() {
     val fred = Person("Fred")
     MyFunctionContext(fred)
+    MyLocalValContext()
+    MyLocalVarContext()
+
+    val ctxObj = MyContext()
+    ctxObj.addItem("milk")
 }

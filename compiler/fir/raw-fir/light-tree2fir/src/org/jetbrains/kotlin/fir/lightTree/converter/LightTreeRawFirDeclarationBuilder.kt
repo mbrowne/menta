@@ -345,6 +345,7 @@ class LightTreeRawFirDeclarationBuilder(
         functionDeclaration: LighterASTNode,
         receiverTypeNode: LighterASTNode,
         roleName: String,
+        isMember: Boolean = false,
     ): FirStatement {
         var modifiers: ModifierList? = null
         var identifier: String? = null
@@ -363,7 +364,7 @@ class LightTreeRawFirDeclarationBuilder(
         val functionName = identifier.nameAsSafeName()
         val functionSymbol = FirNamedFunctionSymbol(callableIdForName(functionName))
 
-        return withContainerSymbol(functionSymbol, true) {
+        return withContainerSymbol(functionSymbol, !isMember) {
             val labelName = functionName.identifier
             val target = FirFunctionTarget(labelName, isLambda = false)
 
@@ -389,7 +390,11 @@ class LightTreeRawFirDeclarationBuilder(
             // Public role methods are callable on the role player; private (default) are not
             val calculatedModifiers = modifiers ?: ModifierList()
             val isPublic = calculatedModifiers.getVisibility() == Visibilities.Public
-            val roleVisibility = if (isPublic) Visibilities.Local else Visibilities.Private
+            val roleVisibility = if (isMember) {
+                Visibilities.Private
+            } else {
+                if (isPublic) Visibilities.Local else Visibilities.Private
+            }
 
             val function = FirNamedFunctionBuilder().apply {
                 source = functionSource
@@ -399,13 +404,13 @@ class LightTreeRawFirDeclarationBuilder(
                     functionSymbol,
                 )
                 name = functionName
-                this.isLocal = true
+                this.isLocal = !isMember
                 status = FirDeclarationStatusImpl(
                     roleVisibility,
                     calculatedModifiers.getModality(isClassOrObject = false),
                 )
                 symbol = functionSymbol
-                dispatchReceiverType = null
+                dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
 
                 moduleData = baseModuleData
                 origin = FirDeclarationOrigin.MentaRole(roleName)
@@ -1627,8 +1632,26 @@ class LightTreeRawFirDeclarationBuilder(
      */
     private fun convertClassBody(classBody: LighterASTNode, classWrapper: ClassWrapper?): List<FirDeclaration> {
         val modifierLists = mutableListOf<LighterASTNode>()
+        val roleNodes = mutableListOf<LighterASTNode>()
         val firDeclarations = classBody.forEachChildrenReturnList { node, container ->
-            convertDeclarationFromClassBody(node, container, classWrapper, modifierLists)
+            if (node.tokenType == ROLE) {
+                roleNodes.add(node)
+            } else {
+                convertDeclarationFromClassBody(node, container, classWrapper, modifierLists)
+            }
+        }
+
+        // Convert roles in class body to member extension functions
+        if (roleNodes.isNotEmpty()) {
+            val allRoleMethodInfos = mutableListOf<LightTreeRoleMethodInfo>()
+            val rolePlayerNames = mutableSetOf<String>()
+            val allRoleMethodNames = mutableSetOf<String>()
+            for (roleNode in roleNodes) {
+                collectRoleMethodInfos(roleNode, allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+            }
+            val roleDeclarations = sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+                .map { info -> convertRoleFunctionDeclaration(info.funcNode, info.typeNode, info.roleName, isMember = true) as FirDeclaration }
+            firDeclarations.addAll(0, roleDeclarations)
         }
 
         convertDanglingModifierListsInClassBody(modifierLists, firDeclarations)
