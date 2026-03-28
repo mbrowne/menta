@@ -40,6 +40,7 @@ import org.jetbrains.kotlin.fir.symbols.impl.*
 import org.jetbrains.kotlin.fir.types.*
 import org.jetbrains.kotlin.fir.types.builder.*
 import org.jetbrains.kotlin.fir.types.impl.ConeClassLikeTypeImpl
+import org.jetbrains.kotlin.fir.types.impl.FirImplicitAnyTypeRef
 import org.jetbrains.kotlin.fir.types.impl.FirImplicitTypeRefImplWithoutSource
 import org.jetbrains.kotlin.fir.types.impl.FirQualifierPartImpl
 import org.jetbrains.kotlin.fir.types.impl.FirTypeArgumentListImpl
@@ -2027,7 +2028,8 @@ open class PsiRawFirBuilder(
                                 val allRoleMethodNames = mutableSetOf<String>()
                                 for (role in roles) {
                                     val roleName = role.getNameIdentifier()?.text ?: continue
-                                    val requiresTypeRef = role.requiresTypeReference ?: continue
+                                    if (!role.hasRequiresClause) continue
+                                    val requiresTypeRef = role.requiresTypeReference  // null for requires {}
                                     rolePlayerNames.add(roleName)
                                     for (roleFunc in role.getFunctionDeclarations()) {
                                         allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
@@ -3237,7 +3239,8 @@ open class PsiRawFirBuilder(
 
                 for (role in expression.statements.filterIsInstance<KtRole>()) {
                     val roleName = role.getNameIdentifier()?.text ?: continue
-                    val requiresTypeRef = role.requiresTypeReference ?: continue
+                    if (!role.hasRequiresClause) continue
+                    val requiresTypeRef = role.requiresTypeReference  // null for requires {}
                     rolePlayerNames.add(roleName)
                     for (roleFunc in role.getFunctionDeclarations()) {
                         allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
@@ -3266,7 +3269,7 @@ open class PsiRawFirBuilder(
 
         private fun convertRoleFunctionToExtension(
             roleFunc: KtNamedFunction,
-            receiverTypeReference: KtTypeReference,
+            receiverTypeReference: KtTypeReference?,
             roleName: String,
             isMember: Boolean = false,
         ): FirNamedFunction {
@@ -3301,7 +3304,7 @@ open class PsiRawFirBuilder(
                     }
 
                     receiverParameter = createReceiverParameter(
-                        { receiverTypeReference.toFirType() },
+                        { receiverTypeReference?.toFirType() ?: FirImplicitAnyTypeRef(functionSource) },
                         baseModuleData,
                         functionSymbol,
                     )
@@ -4278,7 +4281,7 @@ open class PsiRawFirBuilder(
 
     private data class RoleMethodInfo(
         val func: KtNamedFunction,
-        val typeRef: KtTypeReference,
+        val typeRef: KtTypeReference?,
         val roleName: String,
     )
 }

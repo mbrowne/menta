@@ -1423,7 +1423,24 @@ public class KotlinParsing extends AbstractKotlinParsing {
 
         if (at(REQUIRES_KEYWORD)) {
             advance(); // REQUIRES_KEYWORD
-            parseTypeRef();
+            if (at(LBRACE)) {
+                if (lookahead(1) == RBRACE) {
+                    advance(); // LBRACE
+                    advance(); // RBRACE
+                } else {
+                    error("Role-object contracts do not currently support inline types");
+                    // Recover by skipping to matching RBRACE
+                    advance(); // LBRACE
+                    int depth = 1;
+                    while (!eof() && depth > 0) {
+                        if (at(LBRACE)) depth++;
+                        if (at(RBRACE)) depth--;
+                        advance();
+                    }
+                }
+            } else {
+                parseTypeRef();
+            }
         }
         else {
             error("Role declaration must have a 'requires' clause specifying the role player type");

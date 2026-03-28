@@ -47,6 +47,7 @@ import org.jetbrains.kotlin.fir.symbols.impl.*
 import org.jetbrains.kotlin.fir.types.*
 import org.jetbrains.kotlin.fir.types.builder.*
 import org.jetbrains.kotlin.fir.types.impl.ConeClassLikeTypeImpl
+import org.jetbrains.kotlin.fir.types.impl.FirImplicitAnyTypeRef
 import org.jetbrains.kotlin.fir.types.impl.FirImplicitTypeRefImplWithoutSource
 import org.jetbrains.kotlin.fir.types.impl.FirQualifierPartImpl
 import org.jetbrains.kotlin.fir.types.impl.FirTypeArgumentListImpl
@@ -218,7 +219,7 @@ class LightTreeRawFirDeclarationBuilder(
 
     private data class LightTreeRoleMethodInfo(
         val funcNode: LighterASTNode,
-        val typeNode: LighterASTNode,
+        val typeNode: LighterASTNode?,
         val roleName: String,
     )
 
@@ -229,7 +230,9 @@ class LightTreeRawFirDeclarationBuilder(
         allRoleMethodNames: MutableSet<String>,
     ) {
         val roleName = roleNode.getChildNodeByType(IDENTIFIER)?.asText ?: return
-        val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE) ?: return
+        val hasRequires = roleNode.getChildNodeByType(REQUIRES_KEYWORD) != null
+        if (!hasRequires) return
+        val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE)  // null for requires {}
 
         rolePlayerNames.add(roleName)
         val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return
@@ -343,7 +346,7 @@ class LightTreeRawFirDeclarationBuilder(
 
     private fun convertRoleFunctionDeclaration(
         functionDeclaration: LighterASTNode,
-        receiverTypeNode: LighterASTNode,
+        receiverTypeNode: LighterASTNode?,
         roleName: String,
         isMember: Boolean = false,
     ): FirStatement {
@@ -399,7 +402,7 @@ class LightTreeRawFirDeclarationBuilder(
             val function = FirNamedFunctionBuilder().apply {
                 source = functionSource
                 receiverParameter = createReceiverParameter(
-                    { convertType(receiverTypeNode) },
+                    { receiverTypeNode?.let { convertType(it) } ?: FirImplicitAnyTypeRef(functionSource) },
                     baseModuleData,
                     functionSymbol,
                 )

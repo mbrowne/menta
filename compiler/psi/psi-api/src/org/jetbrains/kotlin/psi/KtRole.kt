@@ -42,7 +42,20 @@ class KtRole(node: ASTNode) : KtDeclarationImpl(node) {
 
     /**
      * The type reference from the `requires` clause, e.g. `NamedPerson` in `role greeter { ... } requires NamedPerson`.
+     * Returns `null` for `requires {}` (empty contract).
      */
     val requiresTypeReference: KtTypeReference?
         get() = findChildByClass(KtTypeReference::class.java)
+
+    /**
+     * Whether this role has a `requires` clause (either `requires Type` or `requires {}`).
+     */
+    val hasRequiresClause: Boolean
+        get() = findChildByType<PsiElement>(KtTokens.REQUIRES_KEYWORD) != null
+
+    /**
+     * Whether this role has an empty requires clause (`requires {}`), meaning no member requirements on the role player.
+     */
+    val isEmptyRequires: Boolean
+        get() = hasRequiresClause && requiresTypeReference == null
 }

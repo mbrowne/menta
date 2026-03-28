@@ -53,11 +53,24 @@ define MyContext(
     } requires MutableList<String>
 }
 
+// Empty requires clause: no member requirements on the role player
+fun EmptyRequiresExample() {
+    val ctx = Unit
+    ctx.doSomething()
+
+    role ctx {
+        public fun doSomething() {
+            println("doing something")
+        }
+    } requires {}
+}
+
 fun main() {
     val fred = Person("Fred")
     MyFunctionContext(fred)
     MyLocalValContext()
     MyLocalVarContext()
+    EmptyRequiresExample()
 
     val ctxObj = MyContext()
     ctxObj.addItem("milk")
