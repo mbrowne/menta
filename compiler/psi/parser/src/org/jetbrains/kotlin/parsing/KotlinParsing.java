@@ -1407,7 +1407,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
 
     /*
      * role
-     *   : "role" SimpleName ("{" "}")? ("requires" typeRef)?
+     *   : "role" SimpleName ("{" "}")? "requires" typeRef
      *   ;
      */
     IElementType parseRole() {
@@ -1424,6 +1424,9 @@ public class KotlinParsing extends AbstractKotlinParsing {
         if (at(REQUIRES_KEYWORD)) {
             advance(); // REQUIRES_KEYWORD
             parseTypeRef();
+        }
+        else {
+            error("Role declaration must have a 'requires' clause specifying the role player type");
         }
 
         return ROLE;
