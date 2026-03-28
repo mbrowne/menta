@@ -5,7 +5,7 @@ define MyContext {
         fun hello() {
             println("hi")
         }
-    }
+    } requires Any
 }
 
 interface NamedPerson {
@@ -21,7 +21,7 @@ fun MyFunctionContext(greeter: NamedPerson) {
         public fun hello() {
             println("hi, I'm ${name}")
         }
-    }
+    } requires NamedPerson
 }
 
 fun main() {

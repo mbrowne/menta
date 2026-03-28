@@ -166,7 +166,8 @@ public interface KtTokens {
     int ALL_KEYWORD_Id = 148;
     int CLASS_RESERVED_KEYWORD_Id = 149;
     int ROLE_KEYWORD_Id = 150;
-    int FROM_KEYWORD_Id = 151;
+    int REQUIRES_KEYWORD_Id = 151;
+    int FROM_KEYWORD_Id = 152;
 
     KtToken EOF   = new KtToken("EOF", EOF_Id);
 
@@ -301,6 +302,7 @@ public interface KtTokens {
     KtKeywordToken CONSTRUCTOR_KEYWORD = KtKeywordToken.softKeyword("constructor", CONSTRUCTOR_KEYWORD_Id);
     KtKeywordToken INIT_KEYWORD        = KtKeywordToken.softKeyword("init", INIT_KEYWORD_Id);
     KtKeywordToken CONTEXT_KEYWORD     = KtKeywordToken.softKeyword("context", CONTEXT_KEYWORD_Id);
+    KtKeywordToken REQUIRES_KEYWORD    = KtKeywordToken.softKeyword("requires", REQUIRES_KEYWORD_Id);
     KtKeywordToken FROM_KEYWORD        = KtKeywordToken.softKeyword("from", FROM_KEYWORD_Id);
 
         // KtModifierKeywordToken ABSTRACT_KEYWORD  = KtModifierKeywordToken.softKeywordModifier("abstract", ABSTRACT_KEYWORD_Id);
@@ -369,7 +371,8 @@ public interface KtTokens {
                                                                                          ANNOTATION_KEYWORD, CROSSINLINE_KEYWORD, CONST_KEYWORD, OPERATOR_KEYWORD, INFIX_KEYWORD,
                                                                                          SUSPEND_KEYWORD, EXPECT_KEYWORD, ACTUAL_KEYWORD,
                                                                                          VALUE_KEYWORD, CONTEXT_KEYWORD,
-                                                                                         FROM_KEYWORD
+                                                                                         FROM_KEYWORD,
+                                                                                         REQUIRES_KEYWORD
         );
 
     /**

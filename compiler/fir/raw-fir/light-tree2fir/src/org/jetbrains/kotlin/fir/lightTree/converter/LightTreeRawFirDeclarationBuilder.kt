@@ -174,7 +174,7 @@ class LightTreeRawFirDeclarationBuilder(
         val rolePlayerNames = mutableSetOf<String>()
         val allRoleMethodNames = mutableSetOf<String>()
         for (roleNode in roleNodes) {
-            collectRoleMethodInfos(roleNode, block, allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+            collectRoleMethodInfos(roleNode, allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
         }
 
         // Phase 2: sort by dependency and convert (callees before callers)
@@ -196,31 +196,12 @@ class LightTreeRawFirDeclarationBuilder(
         }
     }
 
-    private fun convertRoleToExtensionFunctions(roleNode: LighterASTNode, blockNode: LighterASTNode): List<FirStatement> {
+    private fun convertRoleToExtensionFunctions(roleNode: LighterASTNode): List<FirStatement> {
         // Extract role name from IDENTIFIER child
         val roleName = roleNode.getChildNodeByType(IDENTIFIER)?.asText ?: return emptyList()
 
-        // Walk up: ROLE -> BLOCK -> FUN to find enclosing function
-        val enclosingFunNode = blockNode.getParent()?.takeIf { it.tokenType == FUN } ?: return emptyList()
-
-        // Find the VALUE_PARAMETER_LIST in the enclosing function
-        val valueParamList = enclosingFunNode.getChildNodeByType(VALUE_PARAMETER_LIST) ?: return emptyList()
-
-        // Find the parameter whose name matches the role name and get its type
-        var matchingParamTypeNode: LighterASTNode? = null
-        valueParamList.forEachChildren { paramNode ->
-            if (paramNode.tokenType == VALUE_PARAMETER) {
-                val paramName = paramNode.getChildNodeByType(IDENTIFIER)?.asText
-                if (paramName == roleName) {
-                    paramNode.forEachChildren { child ->
-                        if (child.tokenType == TYPE_REFERENCE) {
-                            matchingParamTypeNode = child
-                        }
-                    }
-                }
-            }
-        }
-        val paramTypeNode = matchingParamTypeNode ?: return emptyList()
+        // Get the requires type from the TYPE_REFERENCE child of the role node
+        val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE) ?: return emptyList()
 
         // Find the BLOCK child of the role node (role body)
         val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return emptyList()
@@ -229,7 +210,7 @@ class LightTreeRawFirDeclarationBuilder(
         val result = mutableListOf<FirStatement>()
         roleBody.forEachChildren { childNode ->
             if (childNode.tokenType == FUN) {
-                result += convertRoleFunctionDeclaration(childNode, paramTypeNode, roleName)
+                result += convertRoleFunctionDeclaration(childNode, requiresTypeNode, roleName)
             }
         }
         return result
@@ -243,36 +224,19 @@ class LightTreeRawFirDeclarationBuilder(
 
     private fun collectRoleMethodInfos(
         roleNode: LighterASTNode,
-        blockNode: LighterASTNode,
         infos: MutableList<LightTreeRoleMethodInfo>,
         rolePlayerNames: MutableSet<String>,
         allRoleMethodNames: MutableSet<String>,
     ) {
         val roleName = roleNode.getChildNodeByType(IDENTIFIER)?.asText ?: return
-        val enclosingFunNode = blockNode.getParent()?.takeIf { it.tokenType == FUN } ?: return
-        val valueParamList = enclosingFunNode.getChildNodeByType(VALUE_PARAMETER_LIST) ?: return
-
-        var matchingParamTypeNode: LighterASTNode? = null
-        valueParamList.forEachChildren { paramNode ->
-            if (paramNode.tokenType == VALUE_PARAMETER) {
-                val paramName = paramNode.getChildNodeByType(IDENTIFIER)?.asText
-                if (paramName == roleName) {
-                    paramNode.forEachChildren { child ->
-                        if (child.tokenType == TYPE_REFERENCE) {
-                            matchingParamTypeNode = child
-                        }
-                    }
-                }
-            }
-        }
-        val paramTypeNode = matchingParamTypeNode ?: return
+        val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE) ?: return
 
         rolePlayerNames.add(roleName)
         val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return
         roleBody.forEachChildren { childNode ->
             if (childNode.tokenType == FUN) {
                 val methodName = childNode.getChildNodeByType(IDENTIFIER)?.asText ?: return@forEachChildren
-                infos.add(LightTreeRoleMethodInfo(childNode, paramTypeNode, roleName))
+                infos.add(LightTreeRoleMethodInfo(childNode, requiresTypeNode, roleName))
                 allRoleMethodNames.add(methodName)
             }
         }

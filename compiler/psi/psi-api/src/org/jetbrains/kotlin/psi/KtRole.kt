@@ -39,4 +39,10 @@ class KtRole(node: ASTNode) : KtDeclarationImpl(node) {
 
     fun getFunctionDeclarations(): List<KtNamedFunction> =
         body?.statements?.filterIsInstance<KtNamedFunction>() ?: emptyList()
+
+    /**
+     * The type reference from the `requires` clause, e.g. `NamedPerson` in `role greeter { ... } requires NamedPerson`.
+     */
+    val requiresTypeReference: KtTypeReference?
+        get() = findChildByClass(KtTypeReference::class.java)
 }

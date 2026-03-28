@@ -13,7 +13,7 @@ fun SayHello(user: NamedUser) {
         public fun greet() {
             println("Hello and welcome, ${user.name}!")
         }
-    }
+    } requires SayHello
 
     role User requires NamedUser
 }

@@ -1407,7 +1407,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
 
     /*
      * role
-     *   : "role" SimpleName "{" "}"
+     *   : "role" SimpleName ("{" "}")? ("requires" typeRef)?
      *   ;
      */
     IElementType parseRole() {
@@ -1420,8 +1420,10 @@ public class KotlinParsing extends AbstractKotlinParsing {
         if (at(LBRACE)) {
             parseBlock();
         }
-        else {
-            mark().error("Expecting '{'");
+
+        if (at(REQUIRES_KEYWORD)) {
+            advance(); // REQUIRES_KEYWORD
+            parseTypeRef();
         }
 
         return ROLE;

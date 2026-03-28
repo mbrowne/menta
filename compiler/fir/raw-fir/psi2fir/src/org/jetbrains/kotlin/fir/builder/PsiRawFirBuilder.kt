@@ -3212,12 +3212,10 @@ open class PsiRawFirBuilder(
 
                 for (role in expression.statements.filterIsInstance<KtRole>()) {
                     val roleName = role.getNameIdentifier()?.text ?: continue
-                    val enclosingFunction = role.parents.filterIsInstance<KtNamedFunction>().firstOrNull() ?: continue
-                    val matchingParam = enclosingFunction.valueParameters.find { it.name == roleName } ?: continue
-                    val paramTypeReference = matchingParam.typeReference ?: continue
+                    val requiresTypeRef = role.requiresTypeReference ?: continue
                     rolePlayerNames.add(roleName)
                     for (roleFunc in role.getFunctionDeclarations()) {
-                        allRoleMethods.add(RoleMethodInfo(roleFunc, paramTypeReference, roleName))
+                        allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
                         allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
                     }
                 }
