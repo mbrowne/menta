@@ -260,6 +260,7 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DYNAMIC_UPPER_BOU
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ELSE_MISPLACED_IN_WHEN
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_CHARACTER_LITERAL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_RANGE
+import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ENUM_CLASS_CONSTRUCTOR_CALL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ENUM_ENTRY_AS_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EQUALITY_NOT_APPLICABLE
@@ -3629,6 +3630,13 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
         map.put(
             VERSION_OVERLOADS_TOO_COMPLEX_EXPRESSION,
             "Not supported in combination with '@IntroducedAt'."
+        )
+
+        // Menta role diagnostics
+        map.put(
+            EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS,
+            "A role with ''requires '{}''' cannot be played by type ''{0}'' because it has members. Use ''requires'' with a specific type, or use a type with no members.",
+            RENDER_TYPE,
         )
     }
 }

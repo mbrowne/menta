@@ -3290,7 +3290,7 @@ open class PsiRawFirBuilder(
                 FirNamedFunctionBuilder().apply {
                     source = functionSource
                     moduleData = baseModuleData
-                    origin = FirDeclarationOrigin.MentaRole(roleName)
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
                     name = roleFunc.nameAsSafeName
                     symbol = functionSymbol
                     dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null

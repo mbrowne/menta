@@ -416,7 +416,7 @@ class LightTreeRawFirDeclarationBuilder(
                 dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
 
                 moduleData = baseModuleData
-                origin = FirDeclarationOrigin.MentaRole(roleName)
+                origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeNode == null)
                 returnTypeRef = resolvedReturnType
 
                 context.firFunctionTargets += target

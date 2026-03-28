@@ -2276,6 +2276,12 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
         }
         val VERSION_OVERLOADS_TOO_COMPLEX_EXPRESSION by error<PsiElement>()
     }
+
+    val MENTA_ROLES by object : DiagnosticGroup("Menta roles") {
+        val EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS by error<PsiElement> {
+            parameter<ConeKotlinType>("type")
+        }
+    }
 }
 
 private val exposedVisibilityDiagnosticInit: DiagnosticBuilder.() -> Unit = {
