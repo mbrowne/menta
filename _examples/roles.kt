@@ -1,7 +1,77 @@
-define MyContext {
-    role foo {}
+interface NamedPerson {
+    public val name: String
+}
+
+define Person(public override val name: String): NamedPerson {}
+
+fun MyFunctionContext(greeter: NamedPerson) {
+    greeter.hello()
+
+    role greeter {
+        public fun hello() {
+            println("hi, I'm ${name}")
+        }
+    } requires NamedPerson
+}
+
+// Explicit role binding to a local variable (val)
+fun MyLocalValContext() {
+    val foo = object {}
+    foo.x()
+
+    role foo {
+        public fun x() {
+            println("x called")
+        }
+    } requires Any
+}
+
+// Explicit role binding to a local variable (var)
+fun MyLocalVarContext() {
+    var counter = 0
+    counter.increment()
+
+    role counter {
+        public fun increment() {
+            println("incrementing")
+        }
+    } requires Int
+}
+
+define MyContext(
+    val items: MutableList<String> = mutableListOf<String>()
+) {
+    public fun addItem(item: String) {
+        items.addAndLog(item)
+    }
+
+    role items {
+        public fun addAndLog(item: String) {
+            add(item)
+            println("added: $item")
+        }
+    } requires MutableList<String>
+}
+
+// Empty requires clause: no member requirements on the role player
+fun EmptyRequiresExample() {
+    val ctx = Unit
+    ctx.doSomething()
+
+    role ctx {
+        public fun doSomething() {
+            println("doing something")
+        }
+    } requires {}
 }
 
 fun main() {
-    println(MyContext())
+    val fred = Person("Fred")
+    MyFunctionContext(fred)
+    MyLocalValContext()
+    MyLocalVarContext()
+    EmptyRequiresExample()
+
+    val ctxObj = MyContext()
+    ctxObj.addItem("milk")
 }

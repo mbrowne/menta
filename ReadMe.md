@@ -77,6 +77,12 @@ To reproduce TeamCity build use `-Pteamcity=true` flag. Local builds don't run p
 **OPTIONAL:** Some artifacts, mainly Maven plugin ones, are built separately with Maven.
 Refer to [libraries/ReadMe.md](libraries/ReadMe.md) for details.
 
+# TODO
+
+kotlin-native needs to be renamed to menta-native
+
+---
+
 To build Menta/Native, see
 [menta-native/README.md](menta-native/README.md#building-from-source).
 

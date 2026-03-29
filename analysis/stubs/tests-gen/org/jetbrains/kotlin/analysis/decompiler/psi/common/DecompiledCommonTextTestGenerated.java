@@ -1067,6 +1067,12 @@ public class DecompiledCommonTextTestGenerated extends AbstractDecompiledCommonT
   }
 
   @Test
+  @TestMetadata("RoleDeclaration.kt")
+  public void testRoleDeclaration() {
+    run("RoleDeclaration.kt");
+  }
+
+  @Test
   @TestMetadata("sealed.kt")
   public void testSealed() {
     run("sealed.kt");

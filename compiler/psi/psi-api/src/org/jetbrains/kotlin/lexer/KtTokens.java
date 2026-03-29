@@ -165,7 +165,9 @@ public interface KtTokens {
     int INTERPOLATION_PREFIX_Id = 147;
     int ALL_KEYWORD_Id = 148;
     int CLASS_RESERVED_KEYWORD_Id = 149;
-    int FROM_KEYWORD_Id = 150;
+    int ROLE_KEYWORD_Id = 150;
+    int REQUIRES_KEYWORD_Id = 151;
+    int FROM_KEYWORD_Id = 152;
 
     KtToken EOF   = new KtToken("EOF", EOF_Id);
 
@@ -199,6 +201,7 @@ public interface KtTokens {
     KtKeywordToken DEFINE_KEYWORD           = KtKeywordToken.keyword("define", DEFINE_KEYWORD_Id);
     /** Reserved word: "class" is not used as a keyword (use "define" instead) but cannot be used as an identifier. */
     KtKeywordToken CLASS_RESERVED_KEYWORD = KtKeywordToken.keyword("class", CLASS_RESERVED_KEYWORD_Id);
+    KtKeywordToken ROLE_KEYWORD             = KtKeywordToken.keyword("role", ROLE_KEYWORD_Id);
     KtKeywordToken THIS_KEYWORD             = KtKeywordToken.keyword("this", THIS_KEYWORD_Id);
     KtKeywordToken SUPER_KEYWORD            = KtKeywordToken.keyword("super", SUPER_KEYWORD_Id);
     KtKeywordToken VAL_KEYWORD              = KtKeywordToken.keyword("val", VAL_KEYWORD_Id);
@@ -299,6 +302,7 @@ public interface KtTokens {
     KtKeywordToken CONSTRUCTOR_KEYWORD = KtKeywordToken.softKeyword("constructor", CONSTRUCTOR_KEYWORD_Id);
     KtKeywordToken INIT_KEYWORD        = KtKeywordToken.softKeyword("init", INIT_KEYWORD_Id);
     KtKeywordToken CONTEXT_KEYWORD     = KtKeywordToken.softKeyword("context", CONTEXT_KEYWORD_Id);
+    KtKeywordToken REQUIRES_KEYWORD    = KtKeywordToken.softKeyword("requires", REQUIRES_KEYWORD_Id);
     KtKeywordToken FROM_KEYWORD        = KtKeywordToken.softKeyword("from", FROM_KEYWORD_Id);
 
         // KtModifierKeywordToken ABSTRACT_KEYWORD  = KtModifierKeywordToken.softKeywordModifier("abstract", ABSTRACT_KEYWORD_Id);
@@ -352,7 +356,7 @@ public interface KtTokens {
                                         IN_KEYWORD, THROW_KEYWORD, RETURN_KEYWORD, BREAK_KEYWORD, CONTINUE_KEYWORD, OBJECT_KEYWORD, IF_KEYWORD,
                                         ELSE_KEYWORD, WHILE_KEYWORD, DO_KEYWORD, TRY_KEYWORD, WHEN_KEYWORD,
                                         NOT_IN, NOT_IS, AS_SAFE,
-                                        TYPEOF_KEYWORD
+                                        TYPEOF_KEYWORD, ROLE_KEYWORD
     );
 
         TokenSet SOFT_KEYWORDS = TokenSet.create(FILE_KEYWORD, IMPORT_KEYWORD, WHERE_KEYWORD, BY_KEYWORD, GET_KEYWORD,
@@ -367,7 +371,8 @@ public interface KtTokens {
                                                                                          ANNOTATION_KEYWORD, CROSSINLINE_KEYWORD, CONST_KEYWORD, OPERATOR_KEYWORD, INFIX_KEYWORD,
                                                                                          SUSPEND_KEYWORD, EXPECT_KEYWORD, ACTUAL_KEYWORD,
                                                                                          VALUE_KEYWORD, CONTEXT_KEYWORD,
-                                                                                         FROM_KEYWORD
+                                                                                         FROM_KEYWORD,
+                                                                                         REQUIRES_KEYWORD
         );
 
     /**

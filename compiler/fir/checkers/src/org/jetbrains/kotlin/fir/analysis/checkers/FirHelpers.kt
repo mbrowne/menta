@@ -725,6 +725,7 @@ fun getActualTargetList(container: FirAnnotationContainer, session: FirSession):
         }
         is FirNamedFunction -> {
             when {
+                annotated.origin is FirDeclarationOrigin.MentaRole -> TargetLists.T_MEMBER_FUNCTION
                 annotated.status.visibility == Visibilities.Local -> TargetLists.T_LOCAL_FUNCTION
                 annotated.isMember -> TargetLists.T_MEMBER_FUNCTION
                 else -> TargetLists.T_TOP_LEVEL_FUNCTION

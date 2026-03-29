@@ -19,6 +19,7 @@ public interface KtNodeTypes {
     IElementType FUN       = KtStubBasedElementTypes.FUNCTION;
     IElementType PROPERTY  = KtStubBasedElementTypes.PROPERTY;
     IElementType DESTRUCTURING_DECLARATION = new KtNodeType("DESTRUCTURING_DECLARATION", KtDestructuringDeclaration.class);
+    IElementType ROLE = new KtNodeType("ROLE", KtRole.class);
     IElementType DESTRUCTURING_DECLARATION_ENTRY = new KtNodeType("DESTRUCTURING_DECLARATION_ENTRY", KtDestructuringDeclarationEntry.class);
 
     IElementType OBJECT_DECLARATION = KtStubBasedElementTypes.OBJECT_DECLARATION;

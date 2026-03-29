@@ -49,6 +49,10 @@ sealed class FirDeclarationOrigin(
 
     object DynamicScope : FirDeclarationOrigin()
     object MentaDynamicScope : FirDeclarationOrigin()
+    class MentaRole(val roleName: String, val isEmptyRequires: Boolean = false) : FirDeclarationOrigin(fromSource = true) {
+        override fun equals(other: Any?): Boolean = other is MentaRole && roleName == other.roleName
+        override fun hashCode(): Int = roleName.hashCode()
+    }
     object SamConstructor : FirDeclarationOrigin()
     object Enhancement : FirDeclarationOrigin()
     object ImportedFromObjectOrStatic : FirDeclarationOrigin()
@@ -95,6 +99,7 @@ val GeneratedDeclarationKey.origin: FirDeclarationOrigin
 val FirDeclarationOrigin.isLazyResolvable: Boolean
     get() = when (this) {
         is FirDeclarationOrigin.Source,
+        is FirDeclarationOrigin.MentaRole,
         is FirDeclarationOrigin.ImportedFromObjectOrStatic,
         is FirDeclarationOrigin.Delegated,
         is FirDeclarationOrigin.Synthetic,

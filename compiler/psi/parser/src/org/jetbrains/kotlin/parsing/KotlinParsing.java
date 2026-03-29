@@ -1080,6 +1080,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
             if (!object && !isInterface && at(DYNAMIC_KEYWORD)) {
                 advance(); // DYNAMIC_KEYWORD
             }
+
         }
         else {
             assert enumClass : "Currently classifiers without class/interface/object are only allowed for enums";
@@ -1370,6 +1371,10 @@ public class KotlinParsing extends AbstractKotlinParsing {
     }
 
     private IElementType parseMemberDeclarationRest(@NotNull ModifierDetector modifierDetector) {
+        if (at(ROLE_KEYWORD)) {
+            return parseRole();
+        }
+
         IElementType declType = parseCommonDeclaration(
                 modifierDetector,
                 modifierDetector.isCompanionDetected() ? NameParsingMode.ALLOWED : NameParsingMode.REQUIRED,
@@ -1398,6 +1403,50 @@ public class KotlinParsing extends AbstractKotlinParsing {
             declType = FUN;
         }
         return declType;
+    }
+
+    /*
+     * role
+     *   : "role" SimpleName ("{" "}")? "requires" typeRef
+     *   ;
+     */
+    IElementType parseRole() {
+        assert _at(ROLE_KEYWORD);
+
+        advance(); // ROLE_KEYWORD
+
+        expect(IDENTIFIER, "Role name expected", LBRACE_RBRACE_SET);
+
+        if (at(LBRACE)) {
+            parseClassBody();
+        }
+
+        if (at(REQUIRES_KEYWORD)) {
+            advance(); // REQUIRES_KEYWORD
+            if (at(LBRACE)) {
+                if (lookahead(1) == RBRACE) {
+                    advance(); // LBRACE
+                    advance(); // RBRACE
+                } else {
+                    error("Role-object contracts do not currently support inline types");
+                    // Recover by skipping to matching RBRACE
+                    advance(); // LBRACE
+                    int depth = 1;
+                    while (!eof() && depth > 0) {
+                        if (at(LBRACE)) depth++;
+                        if (at(RBRACE)) depth--;
+                        advance();
+                    }
+                }
+            } else {
+                parseTypeRef();
+            }
+        }
+        else {
+            error("Role declaration must have a 'requires' clause specifying the role player type");
+        }
+
+        return ROLE;
     }
 
     /*

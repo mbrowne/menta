@@ -40,6 +40,7 @@ import org.jetbrains.kotlin.fir.symbols.impl.*
 import org.jetbrains.kotlin.fir.types.*
 import org.jetbrains.kotlin.fir.types.builder.*
 import org.jetbrains.kotlin.fir.types.impl.ConeClassLikeTypeImpl
+import org.jetbrains.kotlin.fir.types.impl.FirImplicitAnyTypeRef
 import org.jetbrains.kotlin.fir.types.impl.FirImplicitTypeRefImplWithoutSource
 import org.jetbrains.kotlin.fir.types.impl.FirQualifierPartImpl
 import org.jetbrains.kotlin.fir.types.impl.FirTypeArgumentListImpl
@@ -2002,16 +2003,49 @@ open class PsiRawFirBuilder(
                                 }
                             }
 
+                            // Collect roles for deferred processing as member extension functions
+                            val roles = mutableListOf<KtRole>()
                             for (declaration in classOrObject.declarations) {
-                                addDeclaration(
-                                    declaration.toFirDeclaration(
-                                        delegatedSuperType,
-                                        delegatedSelfType,
-                                        classOrObject,
-                                        this,
-                                        typeParameters
+                                if (declaration is KtRole) {
+                                    roles.add(declaration)
+                                } else {
+                                    addDeclaration(
+                                        declaration.toFirDeclaration(
+                                            delegatedSuperType,
+                                            delegatedSelfType,
+                                            classOrObject,
+                                            this,
+                                            typeParameters
+                                        )
                                     )
-                                )
+                                }
+                            }
+
+                            // Convert roles in class body to member extension functions/properties
+                            if (roles.isNotEmpty()) {
+                                val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                                val allRoleProperties = mutableListOf<RolePropertyInfo>()
+                                val rolePlayerNames = mutableSetOf<String>()
+                                val allRoleMethodNames = mutableSetOf<String>()
+                                for (role in roles) {
+                                    val roleName = role.getNameIdentifier()?.text ?: continue
+                                    if (!role.hasRequiresClause) continue
+                                    val requiresTypeRef = role.requiresTypeReference  // null for requires {}
+                                    rolePlayerNames.add(roleName)
+                                    for (roleFunc in role.getFunctionDeclarations()) {
+                                        allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
+                                        allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
+                                    }
+                                    for (roleProp in role.getPropertyDeclarations()) {
+                                        allRoleProperties.add(RolePropertyInfo(roleProp, requiresTypeRef, roleName))
+                                    }
+                                }
+                                for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
+                                    addDeclaration(convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName, isMember = true))
+                                }
+                                for (info in allRoleProperties) {
+                                    addDeclaration(convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName, isMember = true))
+                                }
                             }
 
                             if (hasInterfaceFromSupertypes) {
@@ -3204,7 +3238,38 @@ open class PsiRawFirBuilder(
         private fun configureBlockWithoutBuilding(expression: KtBlockExpression, kind: KtFakeSourceElementKind? = null): FirBlockBuilder {
             return FirBlockBuilder().apply {
                 source = expression.toFirSourceElement(kind)
+
+                // Phase 1: collect all role methods across all roles
+                val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                val rolePlayerNames = mutableSetOf<String>()
+                val allRoleMethodNames = mutableSetOf<String>()
+
+                val allRoleProperties = mutableListOf<RolePropertyInfo>()
+
+                for (role in expression.statements.filterIsInstance<KtRole>()) {
+                    val roleName = role.getNameIdentifier()?.text ?: continue
+                    if (!role.hasRequiresClause) continue
+                    val requiresTypeRef = role.requiresTypeReference  // null for requires {}
+                    rolePlayerNames.add(roleName)
+                    for (roleFunc in role.getFunctionDeclarations()) {
+                        allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
+                        allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
+                    }
+                    for (roleProp in role.getPropertyDeclarations()) {
+                        allRoleProperties.add(RolePropertyInfo(roleProp, requiresTypeRef, roleName))
+                    }
+                }
+
+                // Phase 2: sort by dependency and emit (callees before callers)
+                for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
+                    statements += convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName)
+                }
+                for (info in allRoleProperties) {
+                    statements += convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName)
+                }
+
                 for (statement in expression.statements) {
+                    if (statement is KtRole) continue
                     val firStatement = statement.toFirStatement { "Statement expected: ${statement.text}" }
                     val isForLoopBlock =
                         firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
@@ -3215,6 +3280,219 @@ open class PsiRawFirBuilder(
                     }
                 }
             }
+        }
+
+        private fun convertRoleFunctionToExtension(
+            roleFunc: KtNamedFunction,
+            receiverTypeReference: KtTypeReference?,
+            roleName: String,
+            isMember: Boolean = false,
+        ): FirNamedFunction {
+            val functionSymbol = FirNamedFunctionSymbol(callableIdForName(roleFunc.nameAsSafeName))
+            return withContainerSymbol(functionSymbol, !isMember) {
+                val labelName = roleFunc.nameAsSafeName.identifier
+                val target = FirFunctionTarget(labelName, isLambda = false)
+                val functionSource = roleFunc.toFirSourceElement()
+
+                // Public role methods are callable on the role player; private (default) are not
+                val isPublic = roleFunc.hasModifier(PUBLIC_KEYWORD)
+                val roleVisibility = if (isMember) {
+                    Visibilities.Private
+                } else {
+                    if (isPublic) Visibilities.Local else Visibilities.Private
+                }
+
+                FirNamedFunctionBuilder().apply {
+                    source = functionSource
+                    moduleData = baseModuleData
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    name = roleFunc.nameAsSafeName
+                    symbol = functionSymbol
+                    dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                    isLocal = !isMember
+                    status = FirDeclarationStatusImpl(roleVisibility, roleFunc.modality)
+
+                    returnTypeRef = if (roleFunc.hasBlockBody()) {
+                        roleFunc.typeReference.toFirOrUnitType()
+                    } else {
+                        roleFunc.typeReference.toFirOrImplicitType()
+                    }
+
+                    receiverParameter = createReceiverParameter(
+                        { receiverTypeReference?.toFirType() ?: FirImplicitAnyTypeRef(functionSource) },
+                        baseModuleData,
+                        functionSymbol,
+                    )
+
+                    context.firFunctionTargets += target
+                    roleFunc.extractAnnotationsTo(this)
+                    roleFunc.extractTypeParametersTo(this, functionSymbol)
+
+                    for (valueParameter in roleFunc.valueParameters) {
+                        valueParameters += valueParameter.toFirValueParameter(
+                            null, functionSymbol, ValueParameterDeclaration.FUNCTION,
+                        )
+                    }
+
+                    withCapturedTypeParameters(true, functionSource, typeParameters) {
+                        val (body, _) = withForcedLocalContext {
+                            roleFunc.buildFirBody()
+                        }
+                        this.body = body
+                    }
+                    context.firFunctionTargets.removeLast()
+                }.build().also {
+                    bindFunctionTarget(target, it)
+                }
+            }
+        }
+
+        private fun convertRolePropertyToExtension(
+            roleProp: KtProperty,
+            receiverTypeReference: KtTypeReference?,
+            roleName: String,
+            isMember: Boolean = false,
+        ): FirProperty {
+            val propertyName = roleProp.nameAsSafeName
+            val propertySymbol = if (isMember) {
+                FirRegularPropertySymbol(callableIdForName(propertyName))
+            } else {
+                FirLocalPropertySymbol()
+            }
+
+            return withContainerSymbol(propertySymbol, !isMember) {
+                val propertySource = roleProp.toFirSourceElement()
+
+                val isPublic = roleProp.hasModifier(PUBLIC_KEYWORD)
+                val roleVisibility = if (isMember) {
+                    Visibilities.Private
+                } else {
+                    if (isPublic) Visibilities.Local else Visibilities.Private
+                }
+
+                buildProperty {
+                    source = propertySource
+                    moduleData = baseModuleData
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    name = propertyName
+                    symbol = propertySymbol
+                    isVar = roleProp.isVar
+                    isLocal = !isMember
+                    dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                    status = FirDeclarationStatusImpl(roleVisibility, roleProp.modality)
+
+                    returnTypeRef = roleProp.typeReference.toFirOrImplicitType()
+
+                    receiverParameter = createReceiverParameter(
+                        { receiverTypeReference?.toFirType() ?: FirImplicitAnyTypeRef(propertySource) },
+                        baseModuleData,
+                        propertySymbol,
+                    )
+
+                    roleProp.extractAnnotationsTo(this)
+                    roleProp.extractTypeParametersTo(this, propertySymbol)
+
+                    withCapturedTypeParameters(true, propertySource, typeParameters) {
+                    getter = roleProp.getter.toFirPropertyAccessor(
+                        roleProp,
+                        returnTypeRef,
+                        propertySymbol = propertySymbol,
+                        isGetter = true,
+                        accessorAnnotationsFromProperty = emptyList(),
+                        parameterAnnotationsFromProperty = emptyList(),
+                    ) ?: FirDefaultPropertyGetter(
+                        source = propertySource.fakeElement(KtFakeSourceElementKind.DefaultAccessor),
+                        moduleData = baseModuleData,
+                        origin = FirDeclarationOrigin.Source,
+                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                        visibility = roleVisibility,
+                        propertySymbol = propertySymbol,
+                        modality = roleProp.modality,
+                    )
+
+                    setter = roleProp.setter.toFirPropertyAccessor(
+                        roleProp,
+                        returnTypeRef,
+                        propertySymbol = propertySymbol,
+                        isGetter = false,
+                        accessorAnnotationsFromProperty = emptyList(),
+                        parameterAnnotationsFromProperty = emptyList(),
+                    )
+                    } // withCapturedTypeParameters
+                }
+            }
+        }
+
+        private fun sortRoleMethodsByDependency(
+            methods: List<RoleMethodInfo>,
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): List<RoleMethodInfo> {
+            if (methods.size <= 1) return methods
+
+            val methodByKey = methods.associateBy { "${it.roleName}.${it.func.nameAsSafeName.identifier}" }
+            val roleByMethod = methods.associate { it.func.nameAsSafeName.identifier to it.roleName }
+
+            val deps: Map<String, Set<String>> = methods.associate { info ->
+                val key = "${info.roleName}.${info.func.nameAsSafeName.identifier}"
+                val calledNames = findRoleMethodDependencies(info.func, rolePlayerNames, allRoleMethodNames)
+                val calledKeys = calledNames.mapNotNull { name ->
+                    roleByMethod[name]?.let { role -> "$role.$name" }
+                }.toSet()
+                key to calledKeys
+            }
+
+            val inDegree = methodByKey.keys.associateWith { 0 }.toMutableMap()
+            val dependents = methodByKey.keys.associateWith { mutableListOf<String>() }.toMutableMap()
+            for ((key, keyDeps) in deps) {
+                for (dep in keyDeps) {
+                    if (dep in inDegree) {
+                        inDegree[key] = inDegree[key]!! + 1
+                        dependents[dep]?.add(key)
+                    }
+                }
+            }
+
+            val queue = ArrayDeque(inDegree.filter { it.value == 0 }.keys)
+            val sorted = mutableListOf<RoleMethodInfo>()
+            while (queue.isNotEmpty()) {
+                val key = queue.removeFirst()
+                methodByKey[key]?.let { sorted.add(it) }
+                for (dep in dependents[key] ?: emptyList()) {
+                    inDegree[dep] = inDegree[dep]!! - 1
+                    if (inDegree[dep] == 0) queue.add(dep)
+                }
+            }
+
+            // Cycle fallback: append remaining in source order
+            if (sorted.size < methods.size) {
+                val sortedKeys = sorted.map { "${it.roleName}.${it.func.nameAsSafeName.identifier}" }.toSet()
+                sorted.addAll(methods.filter { "${it.roleName}.${it.func.nameAsSafeName.identifier}" !in sortedKeys })
+            }
+            return sorted
+        }
+
+        private fun findRoleMethodDependencies(
+            func: KtNamedFunction,
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): Set<String> {
+            val deps = mutableSetOf<String>()
+            func.bodyExpression?.accept(object : KtVisitorVoid() {
+                override fun visitDotQualifiedExpression(expr: KtDotQualifiedExpression) {
+                    val receiver = expr.receiverExpression
+                    val selector = expr.selectorExpression
+                    if (receiver is KtSimpleNameExpression &&
+                        receiver.getReferencedName() in rolePlayerNames &&
+                        selector is KtCallExpression
+                    ) {
+                        val callee = (selector.calleeExpression as? KtSimpleNameExpression)?.getReferencedName()
+                        if (callee != null && callee in allRoleMethodNames) deps.add(callee)
+                    }
+                    super.visitDotQualifiedExpression(expr)
+                }
+            }, null)
+            return deps
         }
 
         override fun visitSimpleNameExpression(expression: KtSimpleNameExpression, data: FirElement?): FirElement {
@@ -4091,6 +4369,18 @@ open class PsiRawFirBuilder(
             }
         }
     }
+
+    private data class RoleMethodInfo(
+        val func: KtNamedFunction,
+        val typeRef: KtTypeReference?,
+        val roleName: String,
+    )
+
+    private data class RolePropertyInfo(
+        val prop: KtProperty,
+        val typeRef: KtTypeReference?,
+        val roleName: String,
+    )
 }
 
 enum class BodyBuildingMode {

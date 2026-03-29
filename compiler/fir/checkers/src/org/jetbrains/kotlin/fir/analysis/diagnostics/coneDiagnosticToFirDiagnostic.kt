@@ -18,9 +18,13 @@ import org.jetbrains.kotlin.fir.analysis.checkers.projectionKindAsString
 import org.jetbrains.kotlin.fir.analysis.checkers.type.FirDynamicUnsupportedChecker
 import org.jetbrains.kotlin.fir.analysis.getChild
 import org.jetbrains.kotlin.fir.builder.FirSyntaxErrors
+import org.jetbrains.kotlin.descriptors.Visibilities
 import org.jetbrains.kotlin.fir.declarations.FirAnonymousFunction
+import org.jetbrains.kotlin.fir.declarations.FirDeclarationOrigin
 import org.jetbrains.kotlin.fir.declarations.FirValueParameter
 import org.jetbrains.kotlin.fir.declarations.utils.*
+import org.jetbrains.kotlin.name.ClassId
+import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.fir.diagnostics.*
 import org.jetbrains.kotlin.fir.expressions.*
 import org.jetbrains.kotlin.fir.languageVersionSettings
@@ -68,7 +72,10 @@ fun FirBasedSymbol<*>.toInvisibleReferenceDiagnostic(source: KtSourceElement?, s
             source,
             symbol,
             symbol.visibility,
-            symbol.callableId?.classId,
+            (symbol.origin as? FirDeclarationOrigin.MentaRole)
+                ?.takeIf { symbol.visibility == Visibilities.Private }
+                ?.let { ClassId.topLevel(FqName(it.roleName)) }
+                ?: symbol.callableId?.classId,
             session
         )
         is FirClassLikeSymbol<*> -> FirErrors.INVISIBLE_REFERENCE.createOn(
