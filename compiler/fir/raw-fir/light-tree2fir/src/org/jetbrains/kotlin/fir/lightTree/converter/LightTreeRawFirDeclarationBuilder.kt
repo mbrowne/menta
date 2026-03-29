@@ -70,6 +70,7 @@ class LightTreeRawFirDeclarationBuilder(
     private val expressionConverter = LightTreeRawFirExpressionBuilder(session, tree, this, context)
     private val headerMode = session.languageVersionSettings.getFlag(AnalysisFlags.headerMode)
 
+
     /**
      * [org.jetbrains.kotlin.parsing.KotlinParsing.parseFile]
      * [org.jetbrains.kotlin.parsing.KotlinParsing.parsePreamble]
@@ -170,7 +171,7 @@ class LightTreeRawFirDeclarationBuilder(
             }
         }
 
-        // Phase 1: collect metadata from all role nodes
+        // Collect metadata from all role nodes, sort by dependency, and convert
         val allRoleMethodInfos = mutableListOf<LightTreeRoleMethodInfo>()
         val allRolePropertyInfos = mutableListOf<LightTreeRolePropertyInfo>()
         val rolePlayerNames = mutableSetOf<String>()
@@ -178,24 +179,45 @@ class LightTreeRawFirDeclarationBuilder(
         for (roleNode in roleNodes) {
             collectRoleMethodInfos(roleNode, allRoleMethodInfos, allRolePropertyInfos, rolePlayerNames, allRoleMethodNames)
         }
-
-        // Phase 2: sort by dependency and convert (callees before callers)
-        val hoistedRoleExtensions = sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+        val convertedRoleExtensions = sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
             .map { info -> convertRoleFunctionDeclaration(info.funcNode, info.typeNode, info.roleName) }
-        val hoistedRoleProperties = allRolePropertyInfos
+        val convertedRoleProperties = allRolePropertyInfos
             .map { info -> convertRolePropertyDeclaration(info.propNode, info.typeNode, info.roleName) }
 
         return FirBlockBuilder().apply {
             source = block.toFirSourceElement(kind)
-            // Emit hoisted role extension functions/properties first
-            statements += hoistedRoleExtensions
-            statements += hoistedRoleProperties
-            firStatements.forEach { firStatement ->
-                val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
-                if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
-                    statements += firStatement
-                } else {
-                    statements += firStatement.statements
+            if (roleNodes.isEmpty()) {
+                // No roles — emit statements normally
+                firStatements.forEach { firStatement ->
+                    val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
+                    if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
+                        statements += firStatement
+                    } else {
+                        statements += firStatement.statements
+                    }
+                }
+            } else {
+                // Emit declarations first, then role extensions, then remaining statements.
+                // This ensures local variable declarations are in scope for role method bodies,
+                // and role methods are in scope for subsequent expression statements (DCI pattern).
+                var roleExtensionsEmitted = false
+                for (firStatement in firStatements) {
+                    val isDeclaration = firStatement is FirDeclaration
+                    if (!isDeclaration && !roleExtensionsEmitted) {
+                        statements += convertedRoleExtensions
+                        statements += convertedRoleProperties
+                        roleExtensionsEmitted = true
+                    }
+                    val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
+                    if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
+                        statements += firStatement
+                    } else {
+                        statements += firStatement.statements
+                    }
+                }
+                if (!roleExtensionsEmitted) {
+                    statements += convertedRoleExtensions
+                    statements += convertedRoleProperties
                 }
             }
         }
