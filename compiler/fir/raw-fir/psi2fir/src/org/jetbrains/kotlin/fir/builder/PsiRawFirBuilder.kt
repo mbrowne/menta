@@ -2236,6 +2236,7 @@ open class PsiRawFirBuilder(
             }
 
             val interfaceSource = interfaceDefine.toFirSourceElement()
+                .fakeElement(KtFakeSourceElementKind.InterfaceFromGeneratedMember)
 
             for (param in sourceClass.primaryConstructorParameters) {
                 if (!param.hasValOrVar()) continue
