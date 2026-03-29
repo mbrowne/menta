@@ -1351,9 +1351,10 @@ class LightTreeRawFirDeclarationBuilder(
         val typeRef = typeRefNode?.let { convertType(it) } ?: return
 
         val propertySymbol = FirRegularPropertySymbol(callableIdForName(name))
+        val fakeSource = interfaceSource.fakeElement(KtFakeSourceElementKind.InterfaceFromGeneratedMember)
         withContainerSymbol(propertySymbol) {
             classBuilder.addDeclaration(buildProperty {
-                source = interfaceSource
+                source = fakeSource
                 moduleData = baseModuleData
                 origin = FirDeclarationOrigin.Source
                 returnTypeRef = typeRef
@@ -1413,9 +1414,10 @@ class LightTreeRawFirDeclarationBuilder(
         val returnTypeRef = returnTypeNode?.let { convertType(it) } ?: implicitUnitType
 
         val funcSymbol = FirNamedFunctionSymbol(callableIdForName(name))
+        val fakeSource = interfaceSource.fakeElement(KtFakeSourceElementKind.InterfaceFromGeneratedMember)
         withContainerSymbol(funcSymbol) {
             classBuilder.addDeclaration(buildNamedFunction {
-                source = interfaceSource
+                source = fakeSource
                 moduleData = baseModuleData
                 origin = FirDeclarationOrigin.Source
                 this.returnTypeRef = returnTypeRef
@@ -1438,7 +1440,7 @@ class LightTreeRawFirDeclarationBuilder(
                         val pName = paramName?.let { Name.identifier(it) } ?: return@forEachChildren
                         val pTypeRef = paramTypeNode?.let { convertType(it) } ?: return@forEachChildren
                         valueParameters += buildValueParameter {
-                            source = interfaceSource
+                            source = fakeSource
                             moduleData = baseModuleData
                             origin = FirDeclarationOrigin.Source
                             this.returnTypeRef = pTypeRef
@@ -1481,9 +1483,10 @@ class LightTreeRawFirDeclarationBuilder(
         val typeRef = typeRefNode?.let { convertType(it) } ?: FirImplicitTypeRefImplWithoutSource
 
         val propSymbol = FirRegularPropertySymbol(callableIdForName(name))
+        val fakeSource = interfaceSource.fakeElement(KtFakeSourceElementKind.InterfaceFromGeneratedMember)
         withContainerSymbol(propSymbol) {
             classBuilder.addDeclaration(buildProperty {
-                source = interfaceSource
+                source = fakeSource
                 moduleData = baseModuleData
                 origin = FirDeclarationOrigin.Source
                 returnTypeRef = typeRef

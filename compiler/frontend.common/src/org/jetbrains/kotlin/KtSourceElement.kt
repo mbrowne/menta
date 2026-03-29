@@ -602,6 +602,12 @@ sealed class KtFakeSourceElementKind(final override val shouldSkipErrorTypeRepor
      * When resolving a collection literal, this is used as a source for the generated callee reference.
      */
     object CalleeReferenceForOperatorOfCall : KtFakeSourceElementKind()
+
+    /**
+     * for interface members generated from 'interface X from Y' declarations
+     * with a fake source which refers to the interface declaration
+     */
+    object InterfaceFromGeneratedMember : KtFakeSourceElementKind()
 }
 
 sealed class AbstractKtSourceElement {

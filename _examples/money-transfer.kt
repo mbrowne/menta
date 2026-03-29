@@ -56,7 +56,7 @@ fun TransferMoney(
 
 fun main() {
     val sourceAcct = Account(30)
-    val destinationAcct = Account(30)
+    val destinationAcct = Account(0)
 
     TransferMoney(sourceAcct, destinationAcct, 10)
 
