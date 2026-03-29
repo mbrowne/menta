@@ -65,6 +65,28 @@ fun EmptyRequiresExample() {
     } requires {}
 }
 
+fun CircularDependency() {
+    val a = object {}
+    val b = object {}
+    a.x()
+
+    role a {
+        public fun x() {
+            b.y()
+        }
+
+        public fun z() {
+            println("z")
+        }
+    } requires {}
+
+    role b {
+        public fun y() {
+            a.z()
+        }
+    } requires {}
+}
+
 fun main() {
     val fred = Person("Fred")
     MyFunctionContext(fred)
@@ -74,4 +96,6 @@ fun main() {
 
     val ctxObj = MyContext()
     ctxObj.addItem("milk")
+
+    CircularDependency()
 }

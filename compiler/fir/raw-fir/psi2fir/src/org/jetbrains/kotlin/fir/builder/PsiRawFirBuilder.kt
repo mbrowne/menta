@@ -3240,11 +3240,10 @@ open class PsiRawFirBuilder(
             return FirBlockBuilder().apply {
                 source = expression.toFirSourceElement(kind)
 
-                // Phase 1: collect all role methods across all roles
+                // Collect all role methods/properties across all roles
                 val allRoleMethods = mutableListOf<RoleMethodInfo>()
                 val rolePlayerNames = mutableSetOf<String>()
                 val allRoleMethodNames = mutableSetOf<String>()
-
                 val allRoleProperties = mutableListOf<RolePropertyInfo>()
 
                 for (role in expression.statements.filterIsInstance<KtRole>()) {
@@ -3261,17 +3260,26 @@ open class PsiRawFirBuilder(
                     }
                 }
 
-                // Phase 2: sort by dependency and emit (callees before callers)
-                for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
-                    statements += convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName)
-                }
-                for (info in allRoleProperties) {
-                    statements += convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName)
-                }
+                // Sort by dependency and convert (callees before callers)
+                val convertedRoleFunctions = sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)
+                    .map { info -> convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName) }
+                val convertedRoleProperties = allRoleProperties
+                    .map { info -> convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName) }
 
+                // Emit declarations first, then role extensions, then remaining statements.
+                // This ensures local variable declarations are in scope for role method bodies,
+                // and role methods are in scope for subsequent expression statements (DCI pattern).
+                val hasRoles = convertedRoleFunctions.isNotEmpty() || convertedRoleProperties.isNotEmpty()
+                var roleExtensionsEmitted = !hasRoles
                 for (statement in expression.statements) {
                     if (statement is KtRole) continue
                     val firStatement = statement.toFirStatement { "Statement expected: ${statement.text}" }
+                    val isDeclaration = firStatement is FirDeclaration
+                    if (!isDeclaration && !roleExtensionsEmitted) {
+                        statements += convertedRoleFunctions
+                        statements += convertedRoleProperties
+                        roleExtensionsEmitted = true
+                    }
                     val isForLoopBlock =
                         firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
                     if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
@@ -3279,6 +3287,10 @@ open class PsiRawFirBuilder(
                     } else {
                         statements += firStatement.statements
                     }
+                }
+                if (!roleExtensionsEmitted) {
+                    statements += convertedRoleFunctions
+                    statements += convertedRoleProperties
                 }
             }
         }
