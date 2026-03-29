@@ -3635,7 +3635,7 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
         // Menta role diagnostics
         map.put(
             EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS,
-            "A role with ''requires '{}''' cannot be played by type ''{0}'' because it has members. Use ''requires'' with a specific type, or use a type with no members.",
+            "A role with empty \"requires\" contract cannot be played by type \"{0}\" because it has members. Use \"requires\" with a specific type, or use a type with no members.",
             RENDER_TYPE,
         )
     }
