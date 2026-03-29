@@ -1418,7 +1418,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
         expect(IDENTIFIER, "Role name expected", LBRACE_RBRACE_SET);
 
         if (at(LBRACE)) {
-            parseBlock();
+            parseClassBody();
         }
 
         if (at(REQUIRES_KEYWORD)) {

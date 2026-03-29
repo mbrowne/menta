@@ -2021,9 +2021,10 @@ open class PsiRawFirBuilder(
                                 }
                             }
 
-                            // Convert roles in class body to member extension functions
+                            // Convert roles in class body to member extension functions/properties
                             if (roles.isNotEmpty()) {
                                 val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                                val allRoleProperties = mutableListOf<RolePropertyInfo>()
                                 val rolePlayerNames = mutableSetOf<String>()
                                 val allRoleMethodNames = mutableSetOf<String>()
                                 for (role in roles) {
@@ -2035,9 +2036,15 @@ open class PsiRawFirBuilder(
                                         allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
                                         allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
                                     }
+                                    for (roleProp in role.getPropertyDeclarations()) {
+                                        allRoleProperties.add(RolePropertyInfo(roleProp, requiresTypeRef, roleName))
+                                    }
                                 }
                                 for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
                                     addDeclaration(convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName, isMember = true))
+                                }
+                                for (info in allRoleProperties) {
+                                    addDeclaration(convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName, isMember = true))
                                 }
                             }
 
@@ -3237,6 +3244,8 @@ open class PsiRawFirBuilder(
                 val rolePlayerNames = mutableSetOf<String>()
                 val allRoleMethodNames = mutableSetOf<String>()
 
+                val allRoleProperties = mutableListOf<RolePropertyInfo>()
+
                 for (role in expression.statements.filterIsInstance<KtRole>()) {
                     val roleName = role.getNameIdentifier()?.text ?: continue
                     if (!role.hasRequiresClause) continue
@@ -3246,11 +3255,17 @@ open class PsiRawFirBuilder(
                         allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
                         allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
                     }
+                    for (roleProp in role.getPropertyDeclarations()) {
+                        allRoleProperties.add(RolePropertyInfo(roleProp, requiresTypeRef, roleName))
+                    }
                 }
 
                 // Phase 2: sort by dependency and emit (callees before callers)
                 for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
                     statements += convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName)
+                }
+                for (info in allRoleProperties) {
+                    statements += convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName)
                 }
 
                 for (statement in expression.statements) {
@@ -3328,6 +3343,82 @@ open class PsiRawFirBuilder(
                     context.firFunctionTargets.removeLast()
                 }.build().also {
                     bindFunctionTarget(target, it)
+                }
+            }
+        }
+
+        private fun convertRolePropertyToExtension(
+            roleProp: KtProperty,
+            receiverTypeReference: KtTypeReference?,
+            roleName: String,
+            isMember: Boolean = false,
+        ): FirProperty {
+            val propertyName = roleProp.nameAsSafeName
+            val propertySymbol = if (isMember) {
+                FirRegularPropertySymbol(callableIdForName(propertyName))
+            } else {
+                FirLocalPropertySymbol()
+            }
+
+            return withContainerSymbol(propertySymbol, !isMember) {
+                val propertySource = roleProp.toFirSourceElement()
+
+                val isPublic = roleProp.hasModifier(PUBLIC_KEYWORD)
+                val roleVisibility = if (isMember) {
+                    Visibilities.Private
+                } else {
+                    if (isPublic) Visibilities.Local else Visibilities.Private
+                }
+
+                buildProperty {
+                    source = propertySource
+                    moduleData = baseModuleData
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    name = propertyName
+                    symbol = propertySymbol
+                    isVar = roleProp.isVar
+                    isLocal = !isMember
+                    dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                    status = FirDeclarationStatusImpl(roleVisibility, roleProp.modality)
+
+                    returnTypeRef = roleProp.typeReference.toFirOrImplicitType()
+
+                    receiverParameter = createReceiverParameter(
+                        { receiverTypeReference?.toFirType() ?: FirImplicitAnyTypeRef(propertySource) },
+                        baseModuleData,
+                        propertySymbol,
+                    )
+
+                    roleProp.extractAnnotationsTo(this)
+                    roleProp.extractTypeParametersTo(this, propertySymbol)
+
+                    withCapturedTypeParameters(true, propertySource, typeParameters) {
+                    getter = roleProp.getter.toFirPropertyAccessor(
+                        roleProp,
+                        returnTypeRef,
+                        propertySymbol = propertySymbol,
+                        isGetter = true,
+                        accessorAnnotationsFromProperty = emptyList(),
+                        parameterAnnotationsFromProperty = emptyList(),
+                    ) ?: FirDefaultPropertyGetter(
+                        source = propertySource.fakeElement(KtFakeSourceElementKind.DefaultAccessor),
+                        moduleData = baseModuleData,
+                        origin = FirDeclarationOrigin.Source,
+                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                        visibility = roleVisibility,
+                        propertySymbol = propertySymbol,
+                        modality = roleProp.modality,
+                    )
+
+                    setter = roleProp.setter.toFirPropertyAccessor(
+                        roleProp,
+                        returnTypeRef,
+                        propertySymbol = propertySymbol,
+                        isGetter = false,
+                        accessorAnnotationsFromProperty = emptyList(),
+                        parameterAnnotationsFromProperty = emptyList(),
+                    )
+                    } // withCapturedTypeParameters
                 }
             }
         }
@@ -4281,6 +4372,12 @@ open class PsiRawFirBuilder(
 
     private data class RoleMethodInfo(
         val func: KtNamedFunction,
+        val typeRef: KtTypeReference?,
+        val roleName: String,
+    )
+
+    private data class RolePropertyInfo(
+        val prop: KtProperty,
         val typeRef: KtTypeReference?,
         val roleName: String,
     )

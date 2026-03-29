@@ -27,10 +27,10 @@ class KtRole(node: ASTNode) : KtDeclarationImpl(node) {
     override fun <R, D> accept(visitor: KtVisitor<R, D>, data: D): R = visitor.visitRole(this, data)
 
     /**
-     * The body block of the role.
+     * The class-body of the role (parsed like a class body so property accessors work).
      */
-    val body: KtBlockExpression?
-        get() = findChildByClass(KtBlockExpression::class.java)
+    val body: KtClassBody?
+        get() = findChildByClass(KtClassBody::class.java)
 
     val roleKeyword: PsiElement
         get() = findChildByType(KtTokens.ROLE_KEYWORD)!!
@@ -38,7 +38,10 @@ class KtRole(node: ASTNode) : KtDeclarationImpl(node) {
     fun getNameIdentifier(): PsiElement? = findChildByType(KtTokens.IDENTIFIER)
 
     fun getFunctionDeclarations(): List<KtNamedFunction> =
-        body?.statements?.filterIsInstance<KtNamedFunction>() ?: emptyList()
+        body?.functions ?: emptyList()
+
+    fun getPropertyDeclarations(): List<KtProperty> =
+        body?.properties ?: emptyList()
 
     /**
      * The type reference from the `requires` clause, e.g. `NamedPerson` in `role greeter { ... } requires NamedPerson`.

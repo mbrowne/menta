@@ -172,20 +172,24 @@ class LightTreeRawFirDeclarationBuilder(
 
         // Phase 1: collect metadata from all role nodes
         val allRoleMethodInfos = mutableListOf<LightTreeRoleMethodInfo>()
+        val allRolePropertyInfos = mutableListOf<LightTreeRolePropertyInfo>()
         val rolePlayerNames = mutableSetOf<String>()
         val allRoleMethodNames = mutableSetOf<String>()
         for (roleNode in roleNodes) {
-            collectRoleMethodInfos(roleNode, allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+            collectRoleMethodInfos(roleNode, allRoleMethodInfos, allRolePropertyInfos, rolePlayerNames, allRoleMethodNames)
         }
 
         // Phase 2: sort by dependency and convert (callees before callers)
         val hoistedRoleExtensions = sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
             .map { info -> convertRoleFunctionDeclaration(info.funcNode, info.typeNode, info.roleName) }
+        val hoistedRoleProperties = allRolePropertyInfos
+            .map { info -> convertRolePropertyDeclaration(info.propNode, info.typeNode, info.roleName) }
 
         return FirBlockBuilder().apply {
             source = block.toFirSourceElement(kind)
-            // Emit hoisted role extension functions first
+            // Emit hoisted role extension functions/properties first
             statements += hoistedRoleExtensions
+            statements += hoistedRoleProperties
             firStatements.forEach { firStatement ->
                 val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
                 if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
@@ -204,8 +208,8 @@ class LightTreeRawFirDeclarationBuilder(
         // Get the requires type from the TYPE_REFERENCE child of the role node
         val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE) ?: return emptyList()
 
-        // Find the BLOCK child of the role node (role body)
-        val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return emptyList()
+        // Find the CLASS_BODY child of the role node (role body)
+        val roleBody = roleNode.getChildNodeByType(CLASS_BODY) ?: return emptyList()
 
         // Convert each FUN in the role body to an extension function with receiver type
         val result = mutableListOf<FirStatement>()
@@ -223,9 +227,16 @@ class LightTreeRawFirDeclarationBuilder(
         val roleName: String,
     )
 
+    private data class LightTreeRolePropertyInfo(
+        val propNode: LighterASTNode,
+        val typeNode: LighterASTNode?,
+        val roleName: String,
+    )
+
     private fun collectRoleMethodInfos(
         roleNode: LighterASTNode,
         infos: MutableList<LightTreeRoleMethodInfo>,
+        propertyInfos: MutableList<LightTreeRolePropertyInfo>,
         rolePlayerNames: MutableSet<String>,
         allRoleMethodNames: MutableSet<String>,
     ) {
@@ -235,12 +246,14 @@ class LightTreeRawFirDeclarationBuilder(
         val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE)  // null for requires {}
 
         rolePlayerNames.add(roleName)
-        val roleBody = roleNode.getChildNodeByType(BLOCK) ?: return
+        val roleBody = roleNode.getChildNodeByType(CLASS_BODY) ?: return
         roleBody.forEachChildren { childNode ->
             if (childNode.tokenType == FUN) {
                 val methodName = childNode.getChildNodeByType(IDENTIFIER)?.asText ?: return@forEachChildren
                 infos.add(LightTreeRoleMethodInfo(childNode, requiresTypeNode, roleName))
                 allRoleMethodNames.add(methodName)
+            } else if (childNode.tokenType == KtNodeTypes.PROPERTY) {
+                propertyInfos.add(LightTreeRolePropertyInfo(childNode, requiresTypeNode, roleName))
             }
         }
     }
@@ -441,6 +454,96 @@ class LightTreeRawFirDeclarationBuilder(
             }
 
             function
+        }
+    }
+
+    private fun convertRolePropertyDeclaration(
+        propertyNode: LighterASTNode,
+        receiverTypeNode: LighterASTNode?,
+        roleName: String,
+        isMember: Boolean = false,
+    ): FirProperty {
+        var modifiers: ModifierList? = null
+        var identifier: String? = null
+        var isReturnType = false
+        var isVar = false
+        var returnType: FirTypeRef = implicitType
+        val accessors = mutableListOf<LighterASTNode>()
+        var propertyInitializer: FirExpression? = null
+        propertyNode.getChildNodeByType(IDENTIFIER)?.let {
+            identifier = it.asText
+        }
+
+        val propertySource = propertyNode.toFirSourceElement()
+        val propertyName = identifier.nameAsSafeName()
+        val propertySymbol = if (isMember) {
+            FirRegularPropertySymbol(callableIdForName(propertyName))
+        } else {
+            FirLocalPropertySymbol()
+        }
+
+        return withContainerSymbol(propertySymbol, !isMember) {
+            propertyNode.forEachChildren {
+                when (it.tokenType) {
+                    MODIFIER_LIST -> modifiers = convertModifierList(it)
+                    COLON -> isReturnType = true
+                    TYPE_REFERENCE -> if (isReturnType) returnType = convertType(it)
+                    VAR_KEYWORD -> isVar = true
+                    PROPERTY_ACCESSOR -> accessors += it
+                    else -> if (it.isExpression()) {
+                        propertyInitializer = expressionConverter.getAsFirExpression(it, "Should have initializer")
+                    }
+                }
+            }
+
+            val calculatedModifiers = modifiers ?: ModifierList()
+            val isPublic = calculatedModifiers.getVisibility() == Visibilities.Public
+            val roleVisibility = if (isMember) {
+                Visibilities.Private
+            } else {
+                if (isPublic) Visibilities.Local else Visibilities.Private
+            }
+
+            buildProperty {
+                source = propertySource
+                moduleData = baseModuleData
+                origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeNode == null)
+                this.returnTypeRef = returnType
+                name = propertyName
+                symbol = propertySymbol
+                this.isVar = isVar
+                isLocal = !isMember
+                dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                status = FirDeclarationStatusImpl(
+                    roleVisibility,
+                    calculatedModifiers.getModality(isClassOrObject = false),
+                )
+
+                receiverParameter = createReceiverParameter(
+                    { receiverTypeNode?.let { convertType(it) } ?: FirImplicitAnyTypeRef(propertySource) },
+                    baseModuleData,
+                    propertySymbol,
+                )
+
+                initializer = propertyInitializer
+                modifiers?.convertAnnotationsTo(annotations)
+
+                val propertyAnnotations = calculatedModifiers.convertAnnotations()
+                val convertedAccessors = accessors.map {
+                    convertGetterOrSetter(it, returnType, roleVisibility, propertySymbol, calculatedModifiers, propertyAnnotations)
+                }
+                this.getter = convertedAccessors.find { it.isGetter }
+                    ?: FirDefaultPropertyGetter(
+                        source = propertyNode.toFirSourceElement(KtFakeSourceElementKind.DefaultAccessor),
+                        moduleData = baseModuleData,
+                        origin = FirDeclarationOrigin.Source,
+                        propertyTypeRef = returnType.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                        visibility = roleVisibility,
+                        propertySymbol = propertySymbol,
+                        modality = calculatedModifiers.getModality(isClassOrObject = false),
+                    )
+                this.setter = convertedAccessors.find { it.isSetter }
+            }
         }
     }
 
@@ -1644,16 +1747,20 @@ class LightTreeRawFirDeclarationBuilder(
             }
         }
 
-        // Convert roles in class body to member extension functions
+        // Convert roles in class body to member extension functions/properties
         if (roleNodes.isNotEmpty()) {
             val allRoleMethodInfos = mutableListOf<LightTreeRoleMethodInfo>()
+            val allRolePropertyInfos = mutableListOf<LightTreeRolePropertyInfo>()
             val rolePlayerNames = mutableSetOf<String>()
             val allRoleMethodNames = mutableSetOf<String>()
             for (roleNode in roleNodes) {
-                collectRoleMethodInfos(roleNode, allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+                collectRoleMethodInfos(roleNode, allRoleMethodInfos, allRolePropertyInfos, rolePlayerNames, allRoleMethodNames)
             }
-            val roleDeclarations = sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
+            val roleDeclarations = mutableListOf<FirDeclaration>()
+            roleDeclarations += sortRoleMethodsByDependencyLightTree(allRoleMethodInfos, rolePlayerNames, allRoleMethodNames)
                 .map { info -> convertRoleFunctionDeclaration(info.funcNode, info.typeNode, info.roleName, isMember = true) as FirDeclaration }
+            roleDeclarations += allRolePropertyInfos
+                .map { info -> convertRolePropertyDeclaration(info.propNode, info.typeNode, info.roleName, isMember = true) }
             firDeclarations.addAll(0, roleDeclarations)
         }
 
