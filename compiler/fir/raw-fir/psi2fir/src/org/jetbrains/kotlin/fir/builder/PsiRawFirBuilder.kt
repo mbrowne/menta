@@ -3301,6 +3301,10 @@ open class PsiRawFirBuilder(
             roleName: String,
             isMember: Boolean = false,
         ): FirNamedFunction {
+            // Detect forwarding stub: no value parameter list and body is a callable reference
+            val isForwardingStub = roleFunc.valueParameterList == null
+                    && roleFunc.bodyExpression is KtCallableReferenceExpression
+
             val functionSymbol = FirNamedFunctionSymbol(callableIdForName(roleFunc.nameAsSafeName))
             return withContainerSymbol(functionSymbol, !isMember) {
                 val labelName = roleFunc.nameAsSafeName.identifier
@@ -3318,7 +3322,7 @@ open class PsiRawFirBuilder(
                 FirNamedFunctionBuilder().apply {
                     source = functionSource
                     moduleData = baseModuleData
-                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null, isForwardingStub = isForwardingStub)
                     name = roleFunc.nameAsSafeName
                     symbol = functionSymbol
                     dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
