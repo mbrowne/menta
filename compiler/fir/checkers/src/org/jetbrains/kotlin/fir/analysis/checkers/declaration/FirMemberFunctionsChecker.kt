@@ -62,7 +62,7 @@ object FirMemberFunctionsChecker : FirSimpleFunctionChecker(MppCheckerKind.Commo
                 if (Visibilities.isPrivate(function.visibility)) {
                     reporter.reportOn(source, FirErrors.PRIVATE_FUNCTION_WITH_NO_BODY, functionSymbol)
                 }
-                if (!isInsideExpectClass && !hasOpenModifier) {
+                if (!isInsideExpectClass && hasOpenModifier) {
                     reporter.reportOn(source, FirErrors.REDUNDANT_OPEN_IN_INTERFACE)
                 }
             } else if (!isInsideExpectClass && !hasOpenModifier && !function.isExternal && !isInsideExternal) {
