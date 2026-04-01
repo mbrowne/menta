@@ -608,6 +608,12 @@ sealed class KtFakeSourceElementKind(final override val shouldSkipErrorTypeRepor
      * with a fake source which refers to the interface declaration
      */
     object InterfaceFromGeneratedMember : KtFakeSourceElementKind()
+
+    /**
+     * for synthetic type-check statements that verify role player types
+     * against the requires clause
+     */
+    object RolePlayerTypeCheck : KtFakeSourceElementKind()
 }
 
 sealed class AbstractKtSourceElement {
