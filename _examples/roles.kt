@@ -19,11 +19,15 @@ fun MyLocalValContext() {
     val foo = object {}
     foo.x()
 
+    val bar: Int = 2
+
     role foo {
         public fun x() {
             println("x called")
         }
     } requires Any
+
+    role bar {} requires Int
 }
 
 // Explicit role binding to a local variable (var)

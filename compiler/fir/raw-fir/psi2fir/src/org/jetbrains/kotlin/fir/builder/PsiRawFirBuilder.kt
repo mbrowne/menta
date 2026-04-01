@@ -3266,6 +3266,30 @@ open class PsiRawFirBuilder(
                 val convertedRoleProperties = allRoleProperties
                     .map { info -> convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName) }
 
+                // Generate synthetic type-check statements for role player type compatibility
+                val roleTypeChecks = expression.statements.filterIsInstance<KtRole>().mapNotNull { role ->
+                    val roleName = role.getNameIdentifier()?.text ?: return@mapNotNull null
+                    if (!role.hasRequiresClause) return@mapNotNull null
+                    val requiresTypeRef = role.requiresTypeReference
+                    val isEmptyRequires = requiresTypeRef == null
+                    val fakeSource = role.toFirSourceElement()
+                        .fakeElement(KtFakeSourceElementKind.RolePlayerTypeCheck)
+                    generateTemporaryVariable(
+                        baseModuleData,
+                        fakeSource,
+                        Name.special(if (isEmptyRequires) "<role\$$roleName\$emptyRequiresCheck>" else "<role\$$roleName\$typeCheck>"),
+                        initializer = buildPropertyAccessExpression {
+                            source = fakeSource
+                            calleeReference = buildSimpleNamedReference {
+                                source = fakeSource
+                                name = Name.identifier(roleName)
+                            }
+                        },
+                        typeRef = requiresTypeRef?.toFirType() ?: FirImplicitAnyTypeRef(fakeSource),
+                        extractAnnotationsTo = {},
+                    )
+                }
+
                 // Emit all declarations first, then role extensions, then all expression statements.
                 // This ensures local variable declarations are in scope for role method bodies,
                 // and role methods are in scope for subsequent expression statements (DCI pattern).
@@ -3293,6 +3317,8 @@ open class PsiRawFirBuilder(
                 statements += convertedRoleFunctions
                 statements += convertedRoleProperties
                 statements += expressionStatements
+                // Emit role player type checks at the end so all variables are in scope
+                statements += roleTypeChecks
             }
         }
 
