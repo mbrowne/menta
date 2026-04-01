@@ -184,6 +184,11 @@ class LightTreeRawFirDeclarationBuilder(
         val convertedRoleProperties = allRolePropertyInfos
             .map { info -> convertRolePropertyDeclaration(info.propNode, info.typeNode, info.roleName) }
 
+        // Generate synthetic type-check statements for role player type compatibility
+        val roleTypeChecks = roleNodes.mapNotNull { roleNode ->
+            generateRolePlayerTypeCheck(roleNode)
+        }
+
         return FirBlockBuilder().apply {
             source = block.toFirSourceElement(kind)
             if (roleNodes.isEmpty()) {
@@ -219,6 +224,8 @@ class LightTreeRawFirDeclarationBuilder(
                     statements += convertedRoleExtensions
                     statements += convertedRoleProperties
                 }
+                // Emit role player type checks at the end so all variables are in scope
+                statements += roleTypeChecks
             }
         }
     }
@@ -278,6 +285,38 @@ class LightTreeRawFirDeclarationBuilder(
                 propertyInfos.add(LightTreeRolePropertyInfo(childNode, requiresTypeNode, roleName))
             }
         }
+    }
+
+    /**
+     * Generates a synthetic local property that enforces type compatibility between
+     * the role player variable and the requires clause type. For `role bar {} requires String`,
+     * this generates `val <role$bar$typeCheck>: String = bar` which will produce an
+     * INITIALIZER_TYPE_MISMATCH error if `bar` is not assignable to `String`.
+     */
+    private fun generateRolePlayerTypeCheck(roleNode: LighterASTNode): FirStatement? {
+        val roleName = roleNode.getChildNodeByType(IDENTIFIER)?.asText ?: return null
+        val hasRequires = roleNode.getChildNodeByType(REQUIRES_KEYWORD) != null
+        if (!hasRequires) return null
+
+        val requiresTypeNode = roleNode.getChildNodeByType(TYPE_REFERENCE)
+        val isEmptyRequires = requiresTypeNode == null
+
+        val fakeSource = roleNode.toFirSourceElement().fakeElement(KtFakeSourceElementKind.RolePlayerTypeCheck)
+        val requiresType = requiresTypeNode?.let { convertType(it) } ?: FirImplicitAnyTypeRef(fakeSource)
+
+        return generateTemporaryVariable(
+            baseModuleData,
+            fakeSource,
+            Name.special(if (isEmptyRequires) "<role\$$roleName\$emptyRequiresCheck>" else "<role\$$roleName\$typeCheck>"),
+            initializer = buildPropertyAccessExpression {
+                source = fakeSource
+                calleeReference = buildSimpleNamedReference {
+                    source = fakeSource
+                    name = Name.identifier(roleName)
+                }
+            },
+            typeRef = requiresType,
+        )
     }
 
     private fun sortRoleMethodsByDependencyLightTree(
