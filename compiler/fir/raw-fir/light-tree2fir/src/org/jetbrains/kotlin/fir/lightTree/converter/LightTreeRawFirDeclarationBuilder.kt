@@ -202,28 +202,30 @@ class LightTreeRawFirDeclarationBuilder(
                     }
                 }
             } else {
-                // Emit declarations first, then role extensions, then remaining statements.
+                // Emit all declarations first, then role extensions, then all expression statements.
                 // This ensures local variable declarations are in scope for role method bodies,
                 // and role methods are in scope for subsequent expression statements (DCI pattern).
-                var roleExtensionsEmitted = false
+                val declarationStatements = mutableListOf<FirStatement>()
+                val expressionStatements = mutableListOf<FirStatement>()
                 for (firStatement in firStatements) {
-                    val isDeclaration = firStatement is FirDeclaration
-                    if (!isDeclaration && !roleExtensionsEmitted) {
-                        statements += convertedRoleExtensions
-                        statements += convertedRoleProperties
-                        roleExtensionsEmitted = true
-                    }
                     val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
-                    if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
-                        statements += firStatement
+                    val flattened = if (firStatement is FirBlock && !isForLoopBlock && firStatement.annotations.isEmpty()) {
+                        firStatement.statements
                     } else {
-                        statements += firStatement.statements
+                        listOf(firStatement)
+                    }
+                    for (stmt in flattened) {
+                        if (stmt is FirDeclaration) {
+                            declarationStatements += stmt
+                        } else {
+                            expressionStatements += stmt
+                        }
                     }
                 }
-                if (!roleExtensionsEmitted) {
-                    statements += convertedRoleExtensions
-                    statements += convertedRoleProperties
-                }
+                statements += declarationStatements
+                statements += convertedRoleExtensions
+                statements += convertedRoleProperties
+                statements += expressionStatements
                 // Emit role player type checks at the end so all variables are in scope
                 statements += roleTypeChecks
             }

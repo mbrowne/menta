@@ -3290,32 +3290,33 @@ open class PsiRawFirBuilder(
                     )
                 }
 
-                // Emit declarations first, then role extensions, then remaining statements.
+                // Emit all declarations first, then role extensions, then all expression statements.
                 // This ensures local variable declarations are in scope for role method bodies,
                 // and role methods are in scope for subsequent expression statements (DCI pattern).
-                val hasRoles = convertedRoleFunctions.isNotEmpty() || convertedRoleProperties.isNotEmpty() || roleTypeChecks.isNotEmpty()
-                var roleExtensionsEmitted = !hasRoles
+                val declarationStatements = mutableListOf<FirStatement>()
+                val expressionStatements = mutableListOf<FirStatement>()
                 for (statement in expression.statements) {
                     if (statement is KtRole) continue
                     val firStatement = statement.toFirStatement { "Statement expected: ${statement.text}" }
-                    val isDeclaration = firStatement is FirDeclaration
-                    if (!isDeclaration && !roleExtensionsEmitted) {
-                        statements += convertedRoleFunctions
-                        statements += convertedRoleProperties
-                        roleExtensionsEmitted = true
-                    }
                     val isForLoopBlock =
                         firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
-                    if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
-                        statements += firStatement
+                    val flattened = if (firStatement is FirBlock && !isForLoopBlock && firStatement.annotations.isEmpty()) {
+                        firStatement.statements
                     } else {
-                        statements += firStatement.statements
+                        listOf(firStatement)
+                    }
+                    for (stmt in flattened) {
+                        if (stmt is FirDeclaration) {
+                            declarationStatements += stmt
+                        } else {
+                            expressionStatements += stmt
+                        }
                     }
                 }
-                if (!roleExtensionsEmitted) {
-                    statements += convertedRoleFunctions
-                    statements += convertedRoleProperties
-                }
+                statements += declarationStatements
+                statements += convertedRoleFunctions
+                statements += convertedRoleProperties
+                statements += expressionStatements
                 // Emit role player type checks at the end so all variables are in scope
                 statements += roleTypeChecks
             }
