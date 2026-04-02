@@ -67,8 +67,14 @@ abstract class AbstractCheckLocalVariablesTableTest : CodegenTestCase() {
             it.toString().replaceFirst("<name for destructuring parameter [0-9]+>".toRegex(), "<destruct>") // use FIR name for it
         }.sorted().joinToString("\n")
 
-    private fun getExpectedVariablesAsString(testFileLines: List<String>): String =
-        testFileLines.asSequence().filter { line -> line.startsWith("// VARIABLE ") }.joinToString("\n")
+    private fun getExpectedVariablesAsString(testFileLines: List<String>): String {
+        // If running with FIR and the test file has K2-specific variable expectations, use those
+        val k2Lines = testFileLines.asSequence().filter { line -> line.startsWith("// VARIABLE_K2 ") }.toList()
+        if (useFir && k2Lines.isNotEmpty()) {
+            return k2Lines.joinToString("\n") { it.replace("// VARIABLE_K2 ", "// VARIABLE ") }
+        }
+        return testFileLines.asSequence().filter { line -> line.startsWith("// VARIABLE ") }.joinToString("\n")
+    }
 
     private class LocalVariable(
         val name: String,
