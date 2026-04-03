@@ -44,6 +44,7 @@ typealias NodeRolePlayer<TId> = Node<TId>
 interface GraphRolePlayer<TNodeId> {
     public fun pathsFrom(n: NodeRolePlayer<TNodeId>): Map<NodeRolePlayer<TNodeId>, Distance>?
     public fun distanceBetween(x: NodeRolePlayer<TNodeId>, y: NodeRolePlayer<TNodeId>): Distance?
+    public val nodes: Set<Node<TNodeId>>
 }
 
 fun <TNodeId> CalculateShortestPath(
@@ -55,6 +56,7 @@ fun <TNodeId> CalculateShortestPath(
     
     // initialize role players
     val graph = graph_ as GraphRolePlayer<TNodeId>
+    val pathFinder = object {}
     val shortestPathSegments = mutableMapOf<NodeRolePlayer<TNodeId>, NodeRolePlayer<TNodeId>>()
     val unvisitedNodes = graph_.nodes.toMutableSet()
     val tentativeDistances = graph_.nodes.associateWith { Distance.Infinity }
@@ -64,31 +66,37 @@ fun <TNodeId> CalculateShortestPath(
     var currentNode = startNode
     lateinit var neighborNode: NodeRolePlayer<TNodeId>
 
-    while (unvisitedNodes.contains(destinationNode)) {
-        currentNode.traverse()
+    return pathFinder.buildPath()
 
-        val nextNode = unvisitedNodes.minByOrNull { tentativeDistances.getValue(it) }
-        // break if no reachable nodes left or destination reached
-        if (nextNode == null || tentativeDistances[nextNode] == Distance.Infinity) {
-            break
+
+    role pathFinder {
+        fun findPath() {
+            while (unvisitedNodes.contains(destinationNode)) {
+                currentNode.traverse()
+
+                val nextNode = unvisitedNodes.minByOrNull { tentativeDistances.getValue(it) }
+                // break if no reachable nodes left or destination reached
+                if (nextNode == null || tentativeDistances[nextNode] == Distance.Infinity) {
+                    break
+                }
+                currentNode = nextNode
+            }
         }
-        currentNode = nextNode
-    }
-    
-    return buildPath()
 
+        public fun buildPath(): List<NodeRolePlayer<TNodeId>> {
+            pathFinder.findPath()
 
-    fun buildPath(): List<NodeRolePlayer<TNodeId>> {
-        val prevNodes = generateSequence(destinationNode) {
-            shortestPathSegments[it]
+            val prevNodes = generateSequence(destinationNode) {
+                shortestPathSegments[it]
+            }
+            val path = prevNodes
+                .take(graph.size) // safety break: path can't be longer than total nodes
+                .toList()
+                .reversed() // put the nodes in order
+
+            return if (path.firstOrNull() == startNode) path else emptyList()
         }
-        val path = prevNodes
-            .take(graph_.nodes.size) // safety break: path can't be longer than total nodes
-            .toList()
-            .reversed() // put the nodes in order
-
-        return if (path.firstOrNull() == startNode) path else emptyList()
-    }
+    } requires {}
 
     role graph {
         public fun unvisitedNeighborsOf(n: NodeRolePlayer<TNodeId>): List<NodeRolePlayer<TNodeId>> {
@@ -98,6 +106,9 @@ fun <TNodeId> CalculateShortestPath(
         public fun distanceBetweenNodes(from: Node<TNodeId>, to: Node<TNodeId>): Distance {
             return distanceBetween(from, to)!!
         }
+
+        public val size: Int get() = nodes.size
+        
     } requires GraphRolePlayer<TNodeId>
 
     role currentNode {

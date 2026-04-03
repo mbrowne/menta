@@ -19,7 +19,7 @@ data define Edge<TNodeId>(public val from: Node<TNodeId>, public val to: Node<TN
 
 define Graph<TNodeId>(edges: Array<Edge<TNodeId>>) : GraphRolePlayer<TNodeId> {
     val paths: Map<Node<TNodeId>, Map<Node<TNodeId>, Distance>>
-    public val nodes: Set<Node<TNodeId>> get() = paths.keys
+    public override val nodes: Set<Node<TNodeId>> get() = paths.keys
 
     init {
         val pathMaps = mutableMapOf<Node<TNodeId>, MutableMap<Node<TNodeId>, Distance>>()

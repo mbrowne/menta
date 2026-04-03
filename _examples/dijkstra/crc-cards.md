@@ -6,6 +6,16 @@
 | Tracks paths between nodes | |
 | Knows distance between neighbors | |
 
+## PathFinder
+
+| Responsibilities | Collaborators |
+| :--- | :--- |
+| Find the shortest path | CurrentNode |
+| | DestinationNode |
+| | UnvisitedNodes |
+| | TentativeDistances |
+| | Graph |
+
 ## CurrentNode
 
 | Responsibilities | Collaborators |
