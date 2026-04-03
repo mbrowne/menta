@@ -48,8 +48,11 @@ open class LocalDeclarationPopupLowering(
                 declaration.setter?.transformStatement(this)
 
                 val delegate = declaration.delegate
-                requireNotNull(delegate) { "Local delegated property ${declaration.render()} has no delegate" }
-                return delegate.transformStatement(this)
+                if (delegate != null) {
+                    return delegate.transformStatement(this)
+                }
+                // Properties without a delegate (e.g. role extension properties) — replace with empty composite
+                return IrCompositeImpl(declaration.startOffset, declaration.endOffset, context.irBuiltIns.unitType)
             }
 
             override fun visitRichFunctionReference(expression: IrRichFunctionReference): IrExpression {

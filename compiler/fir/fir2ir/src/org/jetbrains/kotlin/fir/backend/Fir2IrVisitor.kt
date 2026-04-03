@@ -8,6 +8,7 @@ package org.jetbrains.kotlin.fir.backend
 import com.intellij.psi.tree.IElementType
 import org.jetbrains.kotlin.*
 import org.jetbrains.kotlin.contracts.description.LogicOperationKind
+import org.jetbrains.kotlin.descriptors.DescriptorVisibilities
 import org.jetbrains.kotlin.descriptors.Visibilities
 import org.jetbrains.kotlin.descriptors.isObject
 import org.jetbrains.kotlin.diagnostics.findChildByType
@@ -480,7 +481,13 @@ class Fir2IrVisitor(
         val irFunction = if (namedFunction.visibility == Visibilities.Local || (namedFunction.origin is FirDeclarationOrigin.MentaRole && namedFunction.isLocal)) {
             declarationStorage.createAndCacheIrFunction(
                 namedFunction, irParent = conversionScope.parent(), predefinedOrigin = IrDeclarationOrigin.LOCAL_FUNCTION, isLocal = true
-            )
+            ).also {
+                // Role functions have Private FIR visibility (to restrict access from outside the role),
+                // but must have LOCAL IR visibility so LocalDeclarationsLowering processes them.
+                if (namedFunction.origin is FirDeclarationOrigin.MentaRole) {
+                    it.visibility = DescriptorVisibilities.LOCAL
+                }
+            }
         } else {
             @OptIn(UnsafeDuringIrConstructionAPI::class)
             declarationStorage.getCachedIrFunctionSymbol(namedFunction)!!.owner
@@ -523,6 +530,19 @@ class Fir2IrVisitor(
         }.also {
             cleaner.cleanAnonymousFunction(anonymousFunction)
         }
+    }
+
+    private fun visitLocalRoleProperty(property: FirProperty): IrElement = whileAnalysing(session, property) {
+        val irProperty = declarationStorage.createAndCacheIrLocalRoleProperty(property, conversionScope.parentFromStack())
+        conversionScope.withFunction(irProperty.getter) {
+            memberGenerator.convertFunctionContent(irProperty.getter, property.getter, null)
+        }
+        irProperty.setter?.let {
+            conversionScope.withFunction(it) {
+                memberGenerator.convertFunctionContent(it, property.setter, null)
+            }
+        }
+        return irProperty
     }
 
     private fun visitLocalVariable(variable: FirProperty): IrElement = whileAnalysing(session, variable) {
@@ -574,7 +594,12 @@ class Fir2IrVisitor(
     }
 
     override fun visitProperty(property: FirProperty, data: Any?): IrElement = whileAnalysing(session, property) {
-        if (property.symbol is FirLocalPropertySymbol) return visitLocalVariable(property)
+        if (property.symbol is FirLocalPropertySymbol) {
+            if (property.origin is FirDeclarationOrigin.MentaRole && property.isExtension) {
+                return visitLocalRoleProperty(property)
+            }
+            return visitLocalVariable(property)
+        }
         @OptIn(UnsafeDuringIrConstructionAPI::class)
         val irProperty = declarationStorage.getCachedIrPropertySymbol(property, fakeOverrideOwnerLookupTag = null)?.owner
             ?: return IrErrorExpressionImpl(

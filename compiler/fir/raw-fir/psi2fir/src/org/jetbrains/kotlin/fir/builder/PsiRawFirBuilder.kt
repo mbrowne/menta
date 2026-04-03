@@ -3314,8 +3314,8 @@ open class PsiRawFirBuilder(
                     }
                 }
                 statements += declarationStatements
-                statements += convertedRoleFunctions
                 statements += convertedRoleProperties
+                statements += convertedRoleFunctions
                 statements += expressionStatements
                 // Emit role player type checks at the end so all variables are in scope
                 statements += roleTypeChecks

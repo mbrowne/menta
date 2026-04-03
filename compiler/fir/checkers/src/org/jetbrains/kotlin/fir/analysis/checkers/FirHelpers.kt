@@ -692,6 +692,8 @@ fun getActualTargetList(container: FirAnnotationContainer, session: FirSession):
         )
         is FirProperty -> {
             when {
+                annotated.origin is FirDeclarationOrigin.MentaRole ->
+                    TargetLists.T_MEMBER_PROPERTY(annotated.hasBackingField, annotated.delegate != null)
                 annotated.symbol is FirLocalPropertySymbol ->
                     when {
                         annotated.name == SpecialNames.DESTRUCT -> if (session.languageVersionSettings.supportsFeature(LanguageFeature.LocalVariableTargetedAnnotationOnDestructuring)) {

@@ -1045,6 +1045,19 @@ class Fir2IrDeclarationStorage(
         return irProperty
     }
 
+    fun createAndCacheIrLocalRoleProperty(
+        property: FirProperty,
+        irParent: IrDeclarationParent
+    ): IrLocalDelegatedProperty {
+        val symbols = createLocalDelegatedPropertySymbols(property)
+        val irProperty = callablesGenerator.createIrLocalRoleProperty(property, irParent, symbols)
+        val symbol = irProperty.symbol
+        getterForPropertyCache[symbol] = irProperty.getter.symbol
+        irProperty.setter?.let { setterForPropertyCache[symbol] = it.symbol }
+        localStorage.putDelegatedProperty(property, symbol)
+        return irProperty
+    }
+
     private fun createLocalDelegatedPropertySymbols(property: FirProperty): LocalDelegatedPropertySymbols {
         val propertySymbol = IrLocalDelegatedPropertySymbolImpl()
         val getterSymbol = createFunctionSymbol()
