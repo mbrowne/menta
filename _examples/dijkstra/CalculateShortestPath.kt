@@ -94,7 +94,7 @@ fun <TNodeId> CalculateShortestPath(
                 .toList()
                 .reversed() // put the nodes in order
 
-            return if (path.firstOrNull() == startNode) path else emptyList()
+            return if (path[0] == startNode) path else emptyList()
         }
     } requires {}
 
