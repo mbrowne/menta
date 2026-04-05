@@ -1044,6 +1044,7 @@ object FirErrors : KtDiagnosticsContainer() {
 
     // Menta roles
     val EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS: KtDiagnosticFactory1<ConeKotlinType> = KtDiagnosticFactory1("EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
+    val ROLE_PLAYER_RESOLVES_TO_TYPE: KtDiagnosticFactory1<String> = KtDiagnosticFactory1("ROLE_PLAYER_RESOLVES_TO_TYPE", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
 
     override fun getRendererFactory(): BaseDiagnosticRendererFactory = FirErrorsDefaultMessages
 }

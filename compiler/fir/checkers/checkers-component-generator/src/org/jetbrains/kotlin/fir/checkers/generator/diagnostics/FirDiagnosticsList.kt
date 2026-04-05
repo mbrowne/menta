@@ -2281,6 +2281,9 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
         val EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS by error<PsiElement> {
             parameter<ConeKotlinType>("type")
         }
+        val ROLE_PLAYER_RESOLVES_TO_TYPE by error<PsiElement> {
+            parameter<String>("roleName")
+        }
     }
 }
 
