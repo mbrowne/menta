@@ -352,7 +352,7 @@ class JvmIdeServicesTest : TestCase() {
 
             val compilerArgs = arrayOf(
                 "$MODULE_PATH/testData/$inputKtFileName",
-                "-kotlin-home", "dist/kotlinc",
+                "-kotlin-home", "dist/mentac",
                 "-d", jarPath
             )
 

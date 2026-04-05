@@ -102,7 +102,7 @@ class ResolveDependenciesTest {
             ${thisPackage}.ShouldBeVisibleFromScript().x
         """.trimIndent().toScriptSource()
         val classpath = listOf(
-            File("dist/kotlinc/lib/kotlin-main-kts.jar").also {
+            File("dist/mentac/lib/kotlin-main-kts.jar").also {
                 assertTrue(it.exists(), "kotlin-main-kts.jar not found, run dist task: ${it.absolutePath}")
             }
         )

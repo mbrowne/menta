@@ -99,7 +99,7 @@ val jpsBootstrap by configurations.creating
 
 val commonBuildDir = File(rootDir, "build")
 val distDir by extra("$rootDir/dist")
-val distKotlinHomeDir by extra("$distDir/kotlinc")
+val distKotlinHomeDir by extra("$distDir/mentac")
 val distLibDir = "$distKotlinHomeDir/lib"
 val commonLocalDataDir = "$rootDir/local"
 val ideaSandboxDir = "$commonLocalDataDir/ideaSandbox"
@@ -1196,7 +1196,7 @@ val zipCompiler by tasks.registering(Zip::class) {
     archiveFileName.set("kotlin-compiler-$kotlinVersion.zip")
 
     from(distKotlinHomeDir)
-    into("kotlinc")
+    into("mentac")
 
     doLast {
         logger.lifecycle("Compiler artifacts packed to ${archiveFile.get().asFile.absolutePath}")

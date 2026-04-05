@@ -30,7 +30,7 @@ projectTests {
         )
         val defaultMavenLocal: String = rootProject.projectDir.resolve("build/repo").absolutePath
         val mavenLocal = System.getProperty("maven.repo.local") ?: defaultMavenLocal
-        val defaultKotlincArtifactPath: String = rootProject.projectDir.resolve("dist/kotlinc").absolutePath
+        val defaultKotlincArtifactPath: String = rootProject.projectDir.resolve("dist/mentac").absolutePath
         val kotlincArtifactPath = System.getProperty("kotlinc.dist.path") ?: defaultKotlincArtifactPath
         doFirst {
             systemProperty("maven.repo.local", mavenLocal)

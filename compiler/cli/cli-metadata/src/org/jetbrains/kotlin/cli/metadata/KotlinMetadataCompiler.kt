@@ -124,7 +124,7 @@ class KotlinMetadataCompiler : CLICompiler<K2MetadataCompilerArguments>() {
     }
 
     // TODO: update this once a launcher script for K2MetadataCompiler is available
-    override fun executableScriptFileName(): String = "kotlinc"
+    override fun executableScriptFileName(): String = "mentac"
 
     public override fun createMetadataVersion(versionArray: IntArray): BinaryVersion = BuiltInsBinaryVersion(*versionArray)
 

@@ -304,7 +304,7 @@ class ScriptingWithCliCompilerTest {
         val quoteForWin = if (SystemInfo.isWindows) "\"" else ""
         runWithKotlinc(
             arrayOf(
-                "-Xplugin=dist/kotlinc/lib/allopen-compiler-plugin.jar",
+                "-Xplugin=dist/mentac/lib/allopen-compiler-plugin.jar",
                 "-P", "${quoteForWin}plugin:org.jetbrains.kotlin.allopen:annotation=AllOpen$quoteForWin",
                 "-script", "$TEST_DATA_DIR/integration/withAllOpenPlugin.kts",
             ), listOf("OK")
@@ -319,7 +319,7 @@ class ScriptingWithCliCompilerTest {
         val quoteForWin = if (SystemInfo.isWindows) "\"" else ""
         runWithKotlinc(
             arrayOf(
-                "-Xcompiler-plugin=${quoteForWin}dist/kotlinc/lib/allopen-compiler-plugin.jar=annotation=AllOpen$quoteForWin",
+                "-Xcompiler-plugin=${quoteForWin}dist/mentac/lib/allopen-compiler-plugin.jar=annotation=AllOpen$quoteForWin",
                 "-script", "$TEST_DATA_DIR/integration/withAllOpenPlugin.kts",
             ), listOf("OK")
         )
@@ -327,7 +327,7 @@ class ScriptingWithCliCompilerTest {
 
     private fun getMainKtsClassPath(): List<File> {
         return listOf(
-            File("dist/kotlinc/lib/kotlin-main-kts.jar").also {
+            File("dist/mentac/lib/kotlin-main-kts.jar").also {
                 assertTrue(it.exists(), "kotlin-main-kts.jar not found, run dist task: ${it.absolutePath}")
             }
         )

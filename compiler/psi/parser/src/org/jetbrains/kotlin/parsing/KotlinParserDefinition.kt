@@ -116,7 +116,7 @@ open class KotlinParserDefinition : KotlinCommonParserDefinition() {
     companion object {
 
         @JvmField
-        val STD_SCRIPT_SUFFIX = "kts"
+        val STD_SCRIPT_SUFFIX = "mnts"
 
         @JvmField
         val STD_SCRIPT_EXT = "." + STD_SCRIPT_SUFFIX

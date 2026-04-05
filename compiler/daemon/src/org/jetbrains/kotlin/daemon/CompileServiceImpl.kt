@@ -674,7 +674,7 @@ abstract class CompileServiceImplBase(
     ): ExitCode {
         reporter.startMeasureGc()
         @Suppress("DEPRECATION") // TODO: get rid of that parsing KT-62759
-        val allKotlinFiles = extractKotlinSourcesFromFreeCompilerArguments(args, setOf("kt"), includeJavaSources = false)
+        val allKotlinFiles = extractKotlinSourcesFromFreeCompilerArguments(args, setOf("mnt"), includeJavaSources = false)
 
         val workingDir = incrementalCompilationOptions.workingDir
         val modulesApiHistory = incrementalCompilationOptions.multiModuleICSettings?.run {

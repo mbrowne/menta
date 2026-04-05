@@ -254,7 +254,7 @@ abstract class AbstractJavaModulesIntegrationTest(
     }
 
     fun testDependencyOnStdlibJdk78() {
-        module("usage", listOf(File("dist/kotlinc/lib/kotlin-stdlib-jdk7.jar"), File("dist/kotlinc/lib/kotlin-stdlib-jdk8.jar")))
+        module("usage", listOf(File("dist/mentac/lib/kotlin-stdlib-jdk7.jar"), File("dist/mentac/lib/kotlin-stdlib-jdk8.jar")))
     }
 
     @Suppress("DEPRECATION")
