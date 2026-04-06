@@ -72,9 +72,9 @@ projectTests {
 
         // Prepend Menta parser (define/annotation define) so it is used when creating KtFile via PsiFileFactory
         val parserProject = project(":compiler:psi:parser")
-        val parserRuntimeClasspath = parserProject.configurations["runtimeClasspath"].resolve()
+        val parserRuntimeClasspath = parserProject.configurations["runtimeClasspath"]
         dependsOn(parserProject.tasks.named("jar"))
-        classpath = files(parserRuntimeClasspath) + sourceSets.getByName("test").runtimeClasspath
+        classpath = parserRuntimeClasspath + sourceSets.getByName("test").runtimeClasspath
     }
 
     testTask("fastJarFSLongTests", jUnitMode = JUnitMode.JUnit4, skipInLocalBuild = true) {
