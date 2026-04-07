@@ -145,7 +145,7 @@ abstract class PlainTextMessageRenderer @JvmOverloads constructor(private val co
         private fun decapitalizeIfNeeded(message: String): String {
             // TODO: invent something more clever
             // An ad-hoc heuristic to prevent decapitalization of some names
-            if (message.startsWith("Java") || message.startsWith("Kotlin")) {
+            if (message.startsWith("Java") || message.startsWith("Kotlin") || message.startsWith("Menta")) {
                 return message
             }
 

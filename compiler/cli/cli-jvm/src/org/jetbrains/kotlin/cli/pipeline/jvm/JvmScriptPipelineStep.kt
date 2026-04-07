@@ -58,7 +58,7 @@ object JvmScriptPipelinePhase : PipelinePhase<ConfigurationPipelineArtifact, Jvm
             if (!configuration.replMode) {
                 messageCollector.report(
                     ERROR,
-                    "Kotlin REPL is deprecated and should be enabled explicitly for now; please use the '-Xrepl' option"
+                    "Menta REPL is deprecated and should be enabled explicitly for now; please use the '-Xrepl' option"
                 )
                 return null
             }
