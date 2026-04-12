@@ -8,7 +8,7 @@ The first reason to avoid inheritance is that it frequently becomes a footgun (m
 Even for true "is-a" relationships where all you need is simple inheritance of data or behavior from a base object, it's possible to achieve the same thing with composition. Let's take simple inheritance example, using standard Kotlin:
 
 ```kotlin
-class Shoe(val brand: Brand, val modelName: String) {
+open class Shoe(val brand: Brand, val modelName: String) {
     fun compareWith(shoe: Shoe): ComparisonMatrix {...}
 }
 
@@ -16,7 +16,7 @@ class RunningShoe(
     brand: Brand,
     modelName: String,
     val trainingUsages: List<TrainingUsage> // e.g. daily trainer, racing, trail
-): Shoe() {}
+): Shoe(brand, modelName) {}
 ```
 
 Here's an example that achieves the same API using composition, written out manually for clarity:
@@ -28,21 +28,21 @@ interface IShoe {
     fun compareWith(shoe: Shoe): ComparisonMatrix
 }
 
-class Shoe(val brand: Brand, val modelName: String): IShoe {
-    fun compareWith(shoe: Shoe): ComparisonMatrix {...}
+class Shoe(override val brand: Brand, override val modelName: String): IShoe {
+    override fun compareWith(shoe: Shoe) {}
 }
 
 class RunningShoe(
     brand: Brand,
     modelName: String,
     val trainingUsages: List<TrainingUsage>
-): Shoe() {
+): IShoe {
     private val shoe = Shoe(brand, modelName)
 
-    val brand: Brand
+    override val brand: Brand
         get() = shoe.brand
 
-    val modelName: Brand
+    override val modelName: Brand
         get() = shoe.modelName
 }
 ```
@@ -56,7 +56,7 @@ class RunningShoe(
     brand: Brand,
     modelName: String,
     val trainingUsages: List<TrainingUsage>,
-    private val shoe = Shoe(brand, modelName)
+    private val shoe: IShoe = Shoe(brand, modelName)
 ): IShoe by shoe {}
 ```
 
@@ -64,15 +64,16 @@ In Menta, we could write it as follows:
 
 ```menta
 // convenience syntax provided by Menta to make it easier to create interfaces for base types
+// (for cases when the interface only applies to one base type)
 interface IShoe from Shoe
 
 define Shoe(public val brand: Brand, public val modelName: String) {}
 
 define RunningShoe(
-    public brand: Brand,
-    public modelName: String,
+    brand: Brand,
+    modelName: String,
     public val trainingUsages: List<TrainingUsage>,
-    val shoe = Shoe(brand, modelName)
+    val shoe: IShoe = Shoe(brand, modelName)
 ): IShoe by shoe {}
 ```
 
@@ -88,7 +89,7 @@ The absence of inheritance in Menta was partly inspired by Go, which successfull
 
 Before answering this question, it's important to clarify that Menta is not just one thing: it's a multi-paradigm language. If you wanted to, you could use Menta strictly for functional programming (for example), avoiding its other features. Now on to the question...
 
-Depending on whom you ask, programmers often think object-oriented programming is a good thing or a bad thing, but in both cases they are probably thinking of something different than what OOP was originally intended to mean. If the real question is whether Menta is a good language for programming objects and their relationships and interactions with each other, the short answer is yes—in fact more so than class-oriented languages like Java or C++. Menta allows you to focus on individual objects and how they will behave at run-time, without requiring that all objects of a given type always conform to the same class definition for all their behavior. This more object-focused approach was already possible in Kotlin via extension functions, and Menta takes it a step further with DCI roles and contexts.
+Depending on whom you ask, programmers often think object-oriented programming is a good thing or a bad thing, but in both cases they are probably thinking of something different than what OOP was originally intended to mean. If the real question is whether Menta is a good language for programming objects and their relationships and interactions with each other, the short answer is yes—in fact more so than class-oriented languages like Java or C++. Menta allows you to focus on individual objects and how they will behave at run-time, without requiring that all objects of a given type always conform to the same class definition for all their behavior. This more object-focused approach was already possible in Kotlin via `object` declarations as well as extension functions, and Menta takes it a step further with DCI roles and contexts.
 
 But to really answer this question properly, we need to take a step back and define "object-oriented programming". The usage of software objects to model real-world objects originated in the 1960s with the Simula language, followed by the work of Alan Kay, who coined the term "object-oriented programming" and invented the Smalltalk language.
 
@@ -104,11 +105,11 @@ Here are some other quotes from Kay about the original concepts:
 
 (For more detailed history including further discussion of the biological inspiration, see <i>The Early History of Smalltalk</i> (1993), and Kay's talks on YouTube.)
 
-Kay's vision definitely went beyond what he and his team were able to actually implement in Smalltalk (on limited hardware) in the 70s, but it even goes beyond anything that exists today, except—to some extent—the Internet itself:
+Alan Kay's vision definitely went beyond what he and his team were able to actually implement in Smalltalk (on limited hardware) in the 70s, but it even goes beyond anything that exists today, except—to some extent—the Internet itself:
 
 > A good example of a large system I consider “object-oriented” is the Internet. It has billions of completely encapsulated objects (the computers themselves) and uses a pure messaging system of “requests not commands”, etc.[^4]
 
-What would this kind of messaging look like in a single system, or at least something a bit smaller than the Internet? We can find some hints by looking at the first version of Smalltalk (Smalltalk-72), which was actually more message-oriented than Smalltalk-76 and all subsequent versions. Smalltalk-72 "implemented objects internally as a 'receive the message' mechanism—a kind of quick parser—and didn't have dedicated selectors."[^5] So rather than method names and arguments being the only way to send messages to objects, there was a special message parsing syntax built into the language; you can see the original syntax in the [Smalltalk-72 user manual](https://smalltalkzoo.computerhistory.org/papers/Smalltalk72_Manual.pdf). The original syntax included a couple of special symbols that are best understood by reading the manual, but here is a fictional language showing the idea of how this worked:
+What would this kind of messaging look like in a single system, or at least something a bit smaller than the Internet? We can find some hints by looking at the first version of Smalltalk (Smalltalk-72), which was actually more message-oriented than Smalltalk-76 and all subsequent versions. Smalltalk-72 "implemented objects internally as a 'receive the message' mechanism—a kind of quick parser—and didn't have dedicated selectors."[^5] So rather than method names and arguments being the only way to send messages to objects, there was a special message parsing syntax built into the language; you can see the original syntax in the [Smalltalk-72 user manual](https://smalltalkzoo.computerhistory.org/papers/Smalltalk72_Manual.pdf). The only reason they didn't continue down this path in the next version of Smalltalk was technical limits at the time that are irrelevant today. The original syntax included a couple of special symbols that are best understood by reading the manual, but here is a fictional language showing the idea of how this worked:
 
 ```
 class Turtle {
@@ -123,7 +124,7 @@ class Turtle {
             self.xPosition = self.xPosition - distance
         }
         ...
-        // draw the turtle on the screen at the new position and/or rotation
+        // draw the turtle on the screen at the new position
         self.draw
     }
 
@@ -137,15 +138,33 @@ joe.turn 30
 joe.move right 10
 ```
 
-Another hint about what Kay ultimately wanted to achieve with "messaging" is his interest in distributed systems such as Croquet[^6] (the latest iteration of which is known as Multisynq), where objects are no longer just local. The concept scales to objects communicating over a network, or being kept in sync over a network to facilitate collaboration (think collaborative document editing like Google Docs, or multiplayer online games).
+Another hint about what Kay ultimately wanted to achieve with "messaging" is his interest in distributed systems such as Croquet[^6] (the latest iteration of which is named Multisynq), where objects are no longer just local. The concept scales to objects communicating over a network, or being kept in sync over a network to facilitate collaboration (think collaborative document editing like Google Docs, or multiplayer online games).
 
-Having said all of that, if it had been named "message-oriented programming", that still could have been misleading, because it's not *only* the messages that matter. Over the years and with the benefit of hindsight, Kay has suggested some other possible terms to convey his ideas, including "process-oriented programming" and "server-oriented programming". And the technical connotations of such terms is only one side of the coin. From its inception, OOP was always focused on user experience, mental models, and its connection to software design; that's the bigger picture (see the main readme in this repo).
+Having said all of that, if it had been named "message-oriented programming", that still could have been misleading, because it's not *only* the messages that matter. Over the years and with the benefit of hindsight, Kay has suggested some other possible terms to convey his ideas, including "process-oriented programming" and "server-oriented programming". The technical connotations of such terms is only one side of the coin. From its inception, true OOP was always just as focused on user experience, mental models, and its connection to software design; that's the bigger picture (see the main readme in this repo).
 
-Now we can finally answer the question, is Menta object-oriented? Not fully, since it doesn't go all the way with the messaging concepts. (With such a strict definition, no version of Smalltalk qualifies as object-oriented either.) But DCI makes it much more message-oriented than systems confined to compile-time methods defined in classes as the only means of specifying communication between objects. And even class-oriented programming in more limited languages provides some ability to create "service abstractions" which are highly valuable even if they fall short of Kay's definition, as explained well in [this paper](https://www.cs.cmu.edu/~aldrich/papers/objects-essay.pdf).
+Now let's look at a technical definition, quoting from Kay in 2003 (from the same message as the first quote above):
+
+> OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things. It  can be done in Smalltalk and in LISP. There are possibly other systems in which this is possible, but I'm not aware of them.[^1]
+
+"Local retention and protection and hiding of state-process" is enabled by encapsulation, which Menta certainly supports if you use it correctly. This is why object members are private by default in Menta, to encourage intentional thinking about what the public interface of your object should really be. Ultimately, Kay wanted to "get rid of data"[^1] (at least when consuming objects, using them from the outside), which is not how today's so-called OOP languages are typically used, but it *can* be done in many existing languages by following very deliberate design rules.
+
+The "extreme late-binding" part of the definition is another concept inspired by biology:
+
+> Now we have to construct this stuff, and soon we'll be required to grow it. So it's very easy, for instance, to grow a baby 6 inches—they do it about 10 times in their life, and you never have to take it down for maintenance—but if you try to grow a 747, you are faced with an unbelievable problem, because it's in this simple-minded mechanical world in which the only object has been to make the artifact in the first place; not to fix it, not to change it, not to let it live for 100 years.[^7]
+
+And it's another area where the Internet shines: as Kay points out, it has never needed to be stopped or restarted since the the original ARPANET (the precursor to the Internet) started running. Note that he meant the Internet itself, primarily TCP/IP, as opposed to the web as experienced in today's browsers.[^8]
+
+In terms of programming, if you want a system that can evolve as it continues running, it requires a much more dynamic programming environment than most programmers use today. Menta is still a statically compiled language, and creating a dynamic system like this is beyond its scope, although it could be used to build such a system. Here's one more quote from Kay's 1997 OOPSLA presentation:
+
+> How many people here still use a language that essentially forces you—and the development system forces you—to develop outside of the language; compile and reload, and go? Even if it's fast.[^7]
+
+This explains his fondness of dynamic languages over static ones, but it's also a concept that goes beyond just a single programmer writing application code that runs on their machine and sharing it via source control. So perhaps it's useful to think of Menta as a lower-level building block that might or might not be used in the context of a more dynamic system, in which engineers and stakeholders are primarily specifying and evolving the system at a higher level.
+
+Now we can finally answer the question, is Menta object-oriented? Not fully, since it doesn't go all the way with the messaging or late-binding concepts. (With such a strict definition of messaging, no version of Smalltalk qualifies as object-oriented either.) But DCI as well as Menta's [`define dynamic`](TODO-link-to-dynamic-defs) construct makes it much more message-oriented than class-based systems, in which compile-time methods defined in classes are the only means of specifying communication between objects. And even class-oriented programming in more limited languages enables us to create "service abstractions", which are highly valuable even if they fall short of Kay's definition, as explained well in [this paper](https://www.cs.cmu.edu/~aldrich/papers/objects-essay.pdf).
 
 Regardless, DCI-supporting languages like Menta are a big step forward in day-to-day programming with objects, and it's very much inspired by the ideas of Alan Kay, Trygve Reenskaug, and other pioneers of object orientation.
 
-[^1]: https://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en
+[^1]: https://www.purl.org/stefan_ram/pub/doc_kay_oop_en
 
 [^2]: https://lists.squeakfoundation.org/pipermail/squeak-dev/1998-October/017019.html
 
@@ -156,6 +175,10 @@ Regardless, DCI-supporting languages like Menta are a big step forward in day-to
 [^5]: https://news.ycombinator.com/item?id=15291893
 
 [^6]: https://tinlizzie.org/VPRIPapers/tr2003001_croq_collab.pdf
+
+[^7]: https://www.youtube.com/watch?v=oKg1hTOQXoY
+
+[^8]: https://complexevents.com/2012/07/16/interview-with-alan-kay/
 
 </details>
 
