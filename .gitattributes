@@ -1,3 +1,6 @@
+# Use Kotlin syntax highlighter for Menta files, for now
+*.mnt linguist-language=Kotlin
+
 **/testData/** linguist-vendored
 *Generated.java linguist-generated=true
 *.kt.txt linguist-language=Kotlin
