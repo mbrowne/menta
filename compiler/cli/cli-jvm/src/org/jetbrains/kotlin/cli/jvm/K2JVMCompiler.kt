@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -112,7 +113,7 @@ class K2JVMCompiler : CLICompiler<K2JVMCompilerArguments>() {
                 if (!arguments.repl) {
                     messageCollector.report(
                         ERROR,
-                        "Kotlin REPL is deprecated and should be enabled explicitly for now; please use the '-Xrepl' option"
+                        "Menta REPL is deprecated and should be enabled explicitly for now; please use the '-Xrepl' option"
                     )
                     return COMPILATION_ERROR
                 }
