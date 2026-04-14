@@ -51,7 +51,7 @@ public interface KaRendererModalityModifierProvider {
                 KaSymbolModality.FINAL -> KtTokens.FINAL_KEYWORD
                 KaSymbolModality.SEALED -> KtTokens.SEALED_KEYWORD
                 KaSymbolModality.OPEN -> KtTokens.OPEN_KEYWORD
-                KaSymbolModality.ABSTRACT -> KtTokens.ABSTRACT_KEYWORD
+                KaSymbolModality.ABSTRACT -> null
             }
         }
     }
