@@ -1,20 +1,20 @@
-class A {
-  class B
+define A {
+  define B
   object G
 
   companion object {
-    class C
+    define C
     object H
 
     fun foo() {
-      class DLocal
+      define DLocal
       object KLocal
     }
   }
 
   fun foo2() {
-    class ELocal {
-      class FLocal
+    define ELocal {
+      define FLocal
     }
     object LLocal
   }

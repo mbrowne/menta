@@ -15,7 +15,7 @@ interface FooDerived: Foo<String>
 // MODULE: main(lib)
 // JVM_DEFAULT_MODE: enable
 // FILE: main.kt
-open class UnspecializedFromDerived : FooDerived
+open define UnspecializedFromDerived : FooDerived
 
 fun box(): String {
     val foo = UnspecializedFromDerived()

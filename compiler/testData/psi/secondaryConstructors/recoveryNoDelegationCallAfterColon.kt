@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     constructor():
     val x = 1
 
@@ -12,4 +12,4 @@ class A {
     constructor():
 }
 
-class B
+define B

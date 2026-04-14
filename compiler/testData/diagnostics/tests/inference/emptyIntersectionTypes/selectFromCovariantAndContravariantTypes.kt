@@ -4,11 +4,11 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class In<in T>
-class Out<out T>
+define In<in T>
+define Out<out T>
 
-class A
-class B
+define A
+define B
 
 fun <K> select(x: K, y: K): K = x
 fun <V> genericIn(x: In<V>) {}

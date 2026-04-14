@@ -19,7 +19,7 @@ import org.jetbrains.kotlin.light.classes.symbol.fields.SymbolLightField
 import org.jetbrains.kotlin.light.classes.symbol.modifierLists.GranularModifiersBox
 import org.jetbrains.kotlin.light.classes.symbol.modifierLists.SymbolLightClassModifierList
 import org.jetbrains.kotlin.light.classes.symbol.modifierLists.with
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 
 internal abstract class SymbolLightClassForInterfaceOrAnnotationClass : SymbolLightClassForNamedClassLike {
@@ -46,7 +46,7 @@ internal abstract class SymbolLightClassForInterfaceOrAnnotationClass : SymbolLi
         ktModule = ktModule,
         manager = classOrObject.manager,
     ) {
-        require(classOrObject is KtClass && (classOrObject.isInterface() || classOrObject.isAnnotation()))
+        require(classOrObject is KtDefine && (classOrObject.isInterface() || classOrObject.isAnnotation()))
     }
 
     protected constructor(

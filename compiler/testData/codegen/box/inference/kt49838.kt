@@ -5,8 +5,8 @@ inline fun <
         reified TEvent : Event<TService>> event(
     noinline handler: suspend (TEvent) -> Unit
 ) {
-    val serviceKlass = TService::class
-    val eventKlass = TEvent::class
+    val serviceKlass = TService::define
+    val eventKlass = TEvent::define
 }
 
 interface Service<
@@ -17,8 +17,8 @@ interface Service<
 interface Event<out T : Service<out T, *>>
 
 // FILE: main.kt
-class SomeService : Service<SomeService, SomeService.SomeEvent> {
-    class SomeEvent : Event<SomeService>
+define SomeService : Service<SomeService, SomeService.SomeEvent> {
+    define SomeEvent : Event<SomeService>
 }
 
 fun box(): String {

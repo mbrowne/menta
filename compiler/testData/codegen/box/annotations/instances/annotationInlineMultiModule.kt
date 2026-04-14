@@ -1,7 +1,7 @@
 // WITH_STDLIB
 
 // MODULE: lib
-annotation class LibAnn(val i: Int)
+annotation define LibAnn(val i: Int)
 
 inline fun make(i: Int) = LibAnn(i)
 inline fun eqViaAny(a: Any, b: Any) = a.equals(b)

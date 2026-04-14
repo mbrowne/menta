@@ -2,7 +2,7 @@
 // CHECK_BYTECODE_LISTING
 // FIR_IDENTICAL
 
-enum class E {
+enum define E {
     OK, NOT_OK
 }
 

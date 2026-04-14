@@ -1,12 +1,12 @@
 // COMPILATION_ERRORS
 
 @[abc("") cde]
-class A {
+define A {
     @[ abc
     cde]
     @[private]
     fun foo() {
-        @[data inline] class Local {}
+        @[data inline] define Local {}
 
         @[suppress("a")] (1 + @[abc] 3)
     }

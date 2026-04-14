@@ -7,7 +7,7 @@ inline fun inlineFun(): String = "K"
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val a: String) {
+value define Foo(val a: String) {
     fun test(): String {
         return a + inlineFun()
     }

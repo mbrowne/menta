@@ -10,7 +10,7 @@ KtNameReferenceExpression(66,70): 'test'
 KtImportList(70,70): ''
   null
 
-KtClass(72,119): 'enum class Sample {'
+KtDefine(72,119): 'enum class Sample {'
   null
 
 KtDeclarationModifierList(72,76): 'enum'
@@ -564,7 +564,7 @@ KtWhenEntry(375,384): 'else -> 0'
 KtConstantExpression(383,384): '0'
   null
 
-KtClass(394,669): 'class Container {'
+KtDefine(394,669): 'class Container {'
   null
 
 KtClassBody(410,669): '{'

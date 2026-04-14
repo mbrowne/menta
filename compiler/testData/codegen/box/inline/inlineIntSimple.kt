@@ -6,7 +6,7 @@ import kotlin.test.*
 // CHECK_CONTAINS_NO_CALLS: doNothing2
 // CHECK_CONTAINS_NO_CALLS: doNothing3
 
-internal class Inline {
+internal define Inline {
     public inline fun <T> identity1 (x: T): T {
         return x
     }

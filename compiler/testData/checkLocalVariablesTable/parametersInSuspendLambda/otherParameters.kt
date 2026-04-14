@@ -1,5 +1,5 @@
 // WITH_STDLIB
-data class A(val x: String, val y: String)
+data define A(val x: String, val y: String)
 
 suspend fun foo(a: A, block: suspend (Int, A, String) -> String): String = block(1, a, "#")
 

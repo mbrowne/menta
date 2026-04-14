@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNCHECKED_CAST
 
-class Foo<T>
-class Bar<S>
+define Foo<T>
+define Bar<S>
 
 fun <T> consume(x: Foo<out T>, y: Foo<out T>) {}
 fun <T> materialize() = null as T

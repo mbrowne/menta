@@ -6,7 +6,7 @@ interface IrMutableAnnotationContainer {
 
 interface IrDeclaration : IrMutableAnnotationContainer
 
-abstract class IrProperty : IrDeclaration
+abstract define IrProperty : IrDeclaration
 
 fun foo(declaration: IrDeclaration) {
     if (declaration is IrProperty) return

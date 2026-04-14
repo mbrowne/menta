@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-enum class B(val x: Int) {
+enum define B(val x: Int) {
     B1(1),
     B2(2);
 
@@ -9,7 +9,7 @@ enum class B(val x: Int) {
     }
 }
 
-enum class C(val x: Int) {
+enum define C(val x: Int) {
     C1(<!UNINITIALIZED_ENUM_COMPANION, UNINITIALIZED_VARIABLE!>SUM<!>),
     C2(1);
 
@@ -20,7 +20,7 @@ enum class C(val x: Int) {
 }
 
 // From KT-11769
-enum class Fruit(personal: Int) {
+enum define Fruit(personal: Int) {
     APPLE(1);
 
     companion object {
@@ -32,7 +32,7 @@ enum class Fruit(personal: Int) {
 }
 
 // Another example from KT-11769
-enum class EnumCompanion1(val x: Int) {
+enum define EnumCompanion1(val x: Int) {
     INSTANCE(<!UNINITIALIZED_ENUM_COMPANION!>Companion<!>.foo()),
     ANOTHER(<!UNINITIALIZED_ENUM_COMPANION!>foo()<!>);
 
@@ -41,7 +41,7 @@ enum class EnumCompanion1(val x: Int) {
     }
 }
 // Also should be reported for implicit receiver
-enum class EnumCompanion2(val x: Int) {
+enum define EnumCompanion2(val x: Int) {
     INSTANCE(<!UNINITIALIZED_ENUM_COMPANION!>foo()<!>);
 
     companion object {
@@ -49,7 +49,7 @@ enum class EnumCompanion2(val x: Int) {
     }
 }
 // But not for another enum
-enum class EnumCompanion3(val x: Int) {
+enum define EnumCompanion3(val x: Int) {
     INSTANCE(EnumCompanion1.foo()),
     ANOTHER(EnumCompanion2.foo());
 
@@ -60,7 +60,7 @@ interface ExtractableCodeDescriptor {
     fun isInterface(): Boolean
 }
 
-enum class ExtractionTarget(val targetName: String) {
+enum define ExtractionTarget(val targetName: String) {
     FUNCTION("function") {
         override fun isAvailable(descriptor: ExtractableCodeDescriptor) = true
     },

@@ -45,7 +45,6 @@ import org.jetbrains.kotlin.psi.KtBackingField
 import org.jetbrains.kotlin.psi.KtBinaryExpression
 import org.jetbrains.kotlin.psi.KtBinaryExpressionWithTypeRHS
 import org.jetbrains.kotlin.psi.KtCallableDeclaration
-import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtClassLikeDeclaration
 import org.jetbrains.kotlin.psi.KtClassLiteralExpression
 import org.jetbrains.kotlin.psi.KtClassOrObject
@@ -55,6 +54,7 @@ import org.jetbrains.kotlin.psi.KtConstructorDelegationCall
 import org.jetbrains.kotlin.psi.KtContextReceiver
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtDeclarationWithBody
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDelegatedSuperTypeEntry
 import org.jetbrains.kotlin.psi.KtDestructuringDeclaration
 import org.jetbrains.kotlin.psi.KtElement
@@ -1004,7 +1004,7 @@ internal class VarAnnotationParameterImpl(
 internal class SupertypesForAnnotationClassImpl(
     firDiagnostic: KtPsiDiagnostic,
     token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtClass>(firDiagnostic, token), KaFirDiagnostic.SupertypesForAnnotationClass
+) : KaAbstractFirDiagnostic<KtDefine>(firDiagnostic, token), KaFirDiagnostic.SupertypesForAnnotationClass
 
 internal class AnnotationUsedAsAnnotationArgumentImpl(
     firDiagnostic: KtPsiDiagnostic,
@@ -1943,7 +1943,7 @@ internal class ReservedMemberFromInterfaceInsideValueClassImpl(
     override val methodName: String,
     firDiagnostic: KtPsiDiagnostic,
     token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtClass>(firDiagnostic, token), KaFirDiagnostic.ReservedMemberFromInterfaceInsideValueClass
+) : KaAbstractFirDiagnostic<KtDefine>(firDiagnostic, token), KaFirDiagnostic.ReservedMemberFromInterfaceInsideValueClass
 
 internal class TypeArgumentOnTypedValueClassEqualsImpl(
     firDiagnostic: KtPsiDiagnostic,
@@ -3519,7 +3519,7 @@ internal class DefaultValueNotAllowedInOverrideImpl(
 internal class FunInterfaceWrongCountOfAbstractMembersImpl(
     firDiagnostic: KtPsiDiagnostic,
     token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtClass>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceWrongCountOfAbstractMembers
+) : KaAbstractFirDiagnostic<KtDefine>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceWrongCountOfAbstractMembers
 
 internal class FunInterfaceCannotHaveAbstractPropertiesImpl(
     firDiagnostic: KtPsiDiagnostic,
@@ -4023,7 +4023,7 @@ internal class DefaultArgumentsInExpectActualizedByFakeOverrideImpl(
     override val members: List<KaFunctionSymbol>,
     firDiagnostic: KtPsiDiagnostic,
     token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtClass>(firDiagnostic, token), KaFirDiagnostic.DefaultArgumentsInExpectActualizedByFakeOverride
+) : KaAbstractFirDiagnostic<KtDefine>(firDiagnostic, token), KaFirDiagnostic.DefaultArgumentsInExpectActualizedByFakeOverride
 
 internal class ExpectedFunctionSourceWithDefaultArgumentsNotFoundImpl(
     firDiagnostic: KtPsiDiagnostic,

@@ -6,7 +6,7 @@
 fun foo(s: @Foo String) {}
 
 @Deprecated("alas", level = DeprecationLevel.ERROR)
-class C
+define C
 
 @field:Foo
 @Deprecated("alas", level = DeprecationLevel.ERROR)
@@ -19,7 +19,7 @@ fun test(c: <!DEPRECATION_ERROR!>C<!>) {
 }
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.FIELD)
-annotation class Foo
+annotation define Foo
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, annotationUseSiteTargetField, classDeclaration, functionDeclaration,
 integerLiteral, propertyDeclaration, stringLiteral */

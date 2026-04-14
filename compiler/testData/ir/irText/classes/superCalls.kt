@@ -1,4 +1,4 @@
-open class Base {
+open define Base {
     open fun foo() {}
 
     open val bar: String = ""
@@ -6,7 +6,7 @@ open class Base {
     override fun hashCode() = super.hashCode()
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override fun foo() {
         super.foo()
     }

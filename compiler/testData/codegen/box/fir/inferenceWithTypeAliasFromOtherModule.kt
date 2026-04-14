@@ -6,9 +6,9 @@ package failure
 
 typealias FailureOr<F> = Result<F>
 
-class Result<out R> (val value: Any?)
+define Result<out R> (val value: Any?)
 
-class Failure<out E>(val error: E) {}
+define Failure<out E>(val error: E) {}
 
 fun <U> failure(): FailureOr<U> = Result(Failure(Unit))
 
@@ -20,7 +20,7 @@ fun <T> success(value: T): Result<T> = Result(value)
 
 import failure.*
 
-class Single<S : Any>(val initialValue: S? = null)
+define Single<S : Any>(val initialValue: S? = null)
 
 fun getLicense(key: String?): Single<FailureOr<String>> {
     return Single(

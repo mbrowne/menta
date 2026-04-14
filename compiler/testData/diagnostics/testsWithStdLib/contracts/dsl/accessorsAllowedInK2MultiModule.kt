@@ -8,9 +8,9 @@
 // FILE: declaration.kt
 import kotlin.contracts.*
 
-sealed class Status {
-    class Ok : Status() {}
-    class Error(val message: String) : Status()
+sealed define Status {
+    define Ok : Status() {}
+    define Error(val message: String) : Status()
 }
 
 val Status.isError: Boolean

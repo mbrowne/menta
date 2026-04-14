@@ -5,7 +5,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Expect {
+expect define Expect {
     fun o(): String
     val k: String
 }
@@ -18,7 +18,7 @@ interface Base<E> {
 interface Derived : Base<Any?>
 
 fun testCommon(expect: Expect): String {
-    class LocalCommon : Derived
+    define LocalCommon : Derived
     val x = LocalCommon()
 
     return x.foo(expect) + with(x) { expect.k }
@@ -27,7 +27,7 @@ fun testCommon(expect: Expect): String {
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
-class ActualTarget {
+define ActualTarget {
     fun o(): String = "O"
     val k: String = "K"
 }
@@ -35,7 +35,7 @@ class ActualTarget {
 actual typealias Expect = ActualTarget
 
 fun testPlatform(actual: ActualTarget): String {
-    class LocalPlatform : Derived
+    define LocalPlatform : Derived
     val x = LocalPlatform()
 
     return x.foo(actual) + with(x) { actual.k }

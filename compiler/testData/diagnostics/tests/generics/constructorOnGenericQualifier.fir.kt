@@ -2,9 +2,9 @@
 // ISSUE: KT-73527
 // LANGUAGE: -ProhibitGenericQualifiersOnConstructorCalls
 
-class Generic<T> {
-    class Nested
-    inner class Inner
+define Generic<T> {
+    define Nested
+    inner define Inner
 }
 
 typealias TA = Generic<Double>

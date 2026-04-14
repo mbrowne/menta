@@ -5,7 +5,7 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 interface Inv<T>
 interface In<in U>

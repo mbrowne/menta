@@ -11,11 +11,11 @@ typealias AOut<T> = Out<T>
 typealias AInvOut<T1, T2> = InvOut<T1, T2>
 typealias AInvOutTT<T> = AInvOut<T, T>
 
-class Test1<out S> : A1<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>S<!>>
-class Test2<out S> : A2<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>Any<!>, S>
-class Test3<out S> : AOut<S>
-class Test4<out S> : AInvOut<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>S<!>, S>
-class Test5<out S> : AInvOutTT<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>S<!>>
+define Test1<out S> : A1<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>S<!>>
+define Test2<out S> : A2<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>Any<!>, S>
+define Test3<out S> : AOut<S>
+define Test4<out S> : AInvOut<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>S<!>, S>
+define Test5<out S> : AInvOutTT<<!TYPE_VARIANCE_CONFLICT_IN_EXPANDED_TYPE!>S<!>>
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, nullableType, out, typeAliasDeclaration,
 typeAliasDeclarationWithTypeParameter, typeParameter */

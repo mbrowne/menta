@@ -10,7 +10,7 @@ public interface Base {
 // FILE: main.kt
 interface KotlinDerived : Base
 
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class Bottom<!>(val j: Base, val k: KotlinDerived) : Base by j, KotlinDerived by k
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define Bottom<!>(val j: Base, val k: KotlinDerived) : Base by j, KotlinDerived by k
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, interfaceDeclaration, javaType, primaryConstructor,
 propertyDeclaration */

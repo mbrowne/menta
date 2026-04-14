@@ -7,28 +7,28 @@
 import kotlin.test.assertEquals
 
 fun box(): String {
-    assertEquals("kotlin.Any", Any::class.qualifiedName)
-    assertEquals("kotlin.String", String::class.qualifiedName)
-    assertEquals("kotlin.CharSequence", CharSequence::class.qualifiedName)
-    assertEquals("kotlin.Number", Number::class.qualifiedName)
-    assertEquals("kotlin.Int", Int::class.qualifiedName)
-    assertEquals("kotlin.Long", Long::class.qualifiedName)
+    assertEquals("kotlin.Any", Any::define.qualifiedName)
+    assertEquals("kotlin.String", String::define.qualifiedName)
+    assertEquals("kotlin.CharSequence", CharSequence::define.qualifiedName)
+    assertEquals("kotlin.Number", Number::define.qualifiedName)
+    assertEquals("kotlin.Int", Int::define.qualifiedName)
+    assertEquals("kotlin.Long", Long::define.qualifiedName)
 
-    assertEquals("kotlin.IntArray", IntArray::class.qualifiedName)
-    assertEquals("kotlin.DoubleArray", DoubleArray::class.qualifiedName)
+    assertEquals("kotlin.IntArray", IntArray::define.qualifiedName)
+    assertEquals("kotlin.DoubleArray", DoubleArray::define.qualifiedName)
 
-    assertEquals("kotlin.Int.Companion", Int.Companion::class.qualifiedName)
-    assertEquals("kotlin.Double.Companion", Double.Companion::class.qualifiedName)
-    assertEquals("kotlin.Char.Companion", Char.Companion::class.qualifiedName)
+    assertEquals("kotlin.Int.Companion", Int.Companion::define.qualifiedName)
+    assertEquals("kotlin.Double.Companion", Double.Companion::define.qualifiedName)
+    assertEquals("kotlin.Char.Companion", Char.Companion::define.qualifiedName)
 
-    assertEquals("kotlin.ranges.IntRange", IntRange::class.qualifiedName)
+    assertEquals("kotlin.ranges.IntRange", IntRange::define.qualifiedName)
 
-    assertEquals("kotlin.collections.List", List::class.qualifiedName)
-    assertEquals("kotlin.collections.Map.Entry", Map.Entry::class.qualifiedName)
+    assertEquals("kotlin.collections.List", List::define.qualifiedName)
+    assertEquals("kotlin.collections.Map.Entry", Map.Entry::define.qualifiedName)
 
-    assertEquals("kotlin.Function0", Function0::class.qualifiedName)
-    assertEquals("kotlin.Function1", Function1::class.qualifiedName)
-    assertEquals("kotlin.Function5", Function5::class.qualifiedName)
+    assertEquals("kotlin.Function0", Function0::define.qualifiedName)
+    assertEquals("kotlin.Function1", Function1::define.qualifiedName)
+    assertEquals("kotlin.Function5", Function5::define.qualifiedName)
 
     return "OK"
 }

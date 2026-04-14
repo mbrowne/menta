@@ -1,4 +1,4 @@
-inline class ICString(val x: String)
+inline define ICString(val x: String)
 
 suspend fun suspendICString(): ICString = ICString("")
 suspend fun suspendAny(): Any = ICString("")

@@ -1,9 +1,9 @@
 fun call {
-    val ktClass = KtClass()
-    ktClass.<expr>foo</expr>
+    val KtDefine = KtDefine()
+    KtDefine.<expr>foo</expr>
 }
 
-class KtClass {
+class KtDefine {
     val foo: Int
         get() = 42
 }

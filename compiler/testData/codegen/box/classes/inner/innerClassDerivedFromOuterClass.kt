@@ -2,8 +2,8 @@
 // IGNORE_BACKEND_K1: JVM_IR
 // ISSUE: KT-53086
 
-open class P1<T1> {
-    inner class P2<T2>(i : String): P1<T1>() {
+open define P1<T1> {
+    inner define P2<T2>(i : String): P1<T1>() {
         var value = "Fail"
 
         init {

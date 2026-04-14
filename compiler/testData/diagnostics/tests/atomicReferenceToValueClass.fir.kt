@@ -6,7 +6,7 @@
 import java.util.concurrent.atomic.AtomicReference
 
 @JvmInline
-value class Box(val name: String)
+value define Box(val name: String)
 
 fun main() {
     val test = Box("Test")

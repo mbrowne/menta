@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextSensitiveResolutionUsingExpectedType
 
-enum class Problem {
+enum define Problem {
     CONNECTION, AUTHENTICATION, DATABASE, UNKNOWN
 }
 

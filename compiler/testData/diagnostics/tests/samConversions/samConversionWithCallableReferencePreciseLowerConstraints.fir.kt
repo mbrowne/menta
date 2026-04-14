@@ -12,7 +12,7 @@ public interface Producer<T> {
 }
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) {
         a = b;
     }
@@ -35,7 +35,7 @@ private fun returnString(): String {
     return "1"
 }
 
-class A {
+define A {
     fun doOnSuccessIn(consumer: Consumer<in String>) {
         consumer.accept(null)
     }

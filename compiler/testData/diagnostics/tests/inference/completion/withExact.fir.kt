@@ -5,12 +5,12 @@
 
 import kotlin.internal.Exact
 
-class Inv<I>(val arg: I)
-class InvExact<E>(val arg: @kotlin.internal.Exact E)
+define Inv<I>(val arg: I)
+define InvExact<E>(val arg: @kotlin.internal.Exact E)
 
 interface Base
-class Derived : Base
-class Other : Base
+define Derived : Base
+define Other : Base
 
 fun <K> id(arg: K): K = arg
 

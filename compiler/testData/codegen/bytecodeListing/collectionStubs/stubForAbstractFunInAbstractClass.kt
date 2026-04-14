@@ -1,5 +1,5 @@
-abstract class AbstractAdd {
+abstract define AbstractAdd {
     abstract fun add(s: String): Boolean
 }
 
-abstract class AbstractStringCollection : AbstractAdd(), Collection<String>
+abstract define AbstractStringCollection : AbstractAdd(), Collection<String>

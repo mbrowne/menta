@@ -2,17 +2,17 @@
 // FILE: A.kt
 package foo.bar
 
-class X
+define X
 
 // FILE: B.kt
 
 package foo
 
 fun f() {
-    class Local1 {
+    define Local1 {
         fun g() : <!UNRESOLVED_REFERENCE!>bar<!>.X? = null
     }
-    class Local2 {
+    define Local2 {
         fun g() : foo.bar.X? = null
     }
 }

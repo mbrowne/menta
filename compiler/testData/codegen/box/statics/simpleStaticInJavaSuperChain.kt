@@ -2,13 +2,13 @@
 
 // FILE: A.java
 
-public class A {
+public define A {
     public static String s = "A.s: NOT OK";
     public static String f() {
         return "A.f: NOT OK";
     }
 
-    public static class B extends A {
+    public static define B extends A {
         public static String s = "OK";
         public static String f() {
             return "OK";
@@ -19,7 +19,7 @@ public class A {
 
 // FILE: Kotlin.kt
 
-class Kotlin: A.B() {
+define Kotlin: A.B() {
     fun getS() = s
     fun callF() = f()
 }

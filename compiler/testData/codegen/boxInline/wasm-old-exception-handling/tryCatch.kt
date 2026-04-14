@@ -5,7 +5,7 @@
 // KJS_WITH_FULL_RUNTIME
 // FILE: 1.kt
 
-class My(val value: Int)
+define My(val value: Int)
 
 inline fun <T, R> T.perform(job: (T)-> R) : R {
     return job(this)

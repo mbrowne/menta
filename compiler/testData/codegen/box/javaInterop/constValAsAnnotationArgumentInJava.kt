@@ -10,14 +10,14 @@ object KotlinDtoMapping {
 }
 
 // Does not matter if defined in Kotlin or in Java
-annotation class SimpleAnnotation(val value: String)
+annotation define SimpleAnnotation(val value: String)
 
 // FILE: example/AbstractJavaDto.java
 package example;
 
 import static example.KotlinDtoMapping.ID;
 
-public abstract class AbstractJavaDto {
+public abstract define AbstractJavaDto {
     @SimpleAnnotation(ID)
     public String getId() {
         return "OK";
@@ -27,7 +27,7 @@ public abstract class AbstractJavaDto {
 // FILE: main.kt
 package example
 
-class KotlinDto : AbstractJavaDto()
+define KotlinDto : AbstractJavaDto()
 
 fun box(): String {
     val dto = KotlinDto()

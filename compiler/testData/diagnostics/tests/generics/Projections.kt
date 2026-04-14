@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // CHECK_TYPE
 
-class In<in T>() {
+define In<in T>() {
     fun f(t : T) : Unit {}
     fun f(t : Int) : Int = 1
     fun f1(t : T) : Unit {}
 }
 
-class Out<out T>() {
+define Out<out T>() {
     fun f() : T {throw IllegalStateException()}
     fun f(a : Int) : Int = a
 }
 
-class Inv<T>() {
+define Inv<T>() {
     fun f(t : T) : T = t
     fun inf(t : T) : Unit {}
     fun outf() : T {throw IllegalStateException()}

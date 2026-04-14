@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
     })
 }
 
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 fun box(): String {
     var res = "FAIL"

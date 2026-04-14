@@ -10,7 +10,7 @@ fun foo() {
     val value = sc<!UNSAFE_CALL!>.<!>value
 }
 
-private class SomeClass() {
+private define SomeClass() {
     val value : Int = 5
 }
 

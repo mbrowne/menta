@@ -13,7 +13,7 @@ interface MyInterfaceWithoutBreakpoints {
 }
 
 // Breakpoint at GETFILED/PUTFIELD
-class MyInterfaceImplWithBreakpoints : MyInterfaceWithoutBreakpoints {
+define MyInterfaceImplWithBreakpoints : MyInterfaceWithoutBreakpoints {
     //FieldWatchpoint! (propVal2)
     override val propVal2 = 1
 

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-21598
 
-class Foo {
+define Foo {
     @Deprecated(message = "For binary compatibility only", level = DeprecationLevel.HIDDEN)
     fun bar() {}
 }

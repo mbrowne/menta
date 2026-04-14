@@ -12,7 +12,7 @@ val String.bd = <!EXTENSION_PROPERTY_WITH_BACKING_FIELD!><!NO_THIS!>this<!> + "!
 val String.bd1 : String get() = this + "!"
 
 
-class A {
+define A {
     val ii : Int = 1
 }
 
@@ -21,8 +21,8 @@ val A.foo = <!EXTENSION_PROPERTY_WITH_BACKING_FIELD, UNRESOLVED_REFERENCE!>ii<!>
 val A.foo1 : Int get() = ii
 
 
-class C {
-    inner class D {}
+define C {
+    inner define D {}
 }
 
 val C.foo : C.D = <!EXTENSION_PROPERTY_WITH_BACKING_FIELD!><!UNRESOLVED_REFERENCE!>D<!>()<!>

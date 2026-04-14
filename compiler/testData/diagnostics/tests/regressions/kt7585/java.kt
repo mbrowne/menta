@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 
-public class A {}
+public define A {}
 
 // FILE: Wrapper.java
 
-public abstract class Wrapper<T extends A> {
+public abstract define Wrapper<T extends A> {
     protected T t;
 
     Wrapper(T t) { this.t = t; }
@@ -13,14 +13,14 @@ public abstract class Wrapper<T extends A> {
 
 // FILE: kt7585.kt
 
-class E
+define E
 
-class MyWrapper(a: A): Wrapper<A>(a)
+define MyWrapper(a: A): Wrapper<A>(a)
 
 // This wrapper is not legal
-class TheirWrapper(e: E): Wrapper<<!UPPER_BOUND_VIOLATED!>E<!>>(e)
+define TheirWrapper(e: E): Wrapper<<!UPPER_BOUND_VIOLATED!>E<!>>(e)
 
-data class Pair<out T>(val a: T, val b: T)
+data define Pair<out T>(val a: T, val b: T)
 
 fun foo(): String {
     val matrix: Pair<Wrapper<*>>

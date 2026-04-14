@@ -1,12 +1,12 @@
 // ISSUE: KT-77021
 
-class Generic<T>(val t: T) {
+define Generic<T>(val t: T) {
     fun foo(): T {
         val o1 = object {
-            inner class InnerLocal1 {
+            inner define InnerLocal1 {
                 fun bar(): T {
                     val o2 = object {
-                        inner class InnerLocal2{
+                        inner define InnerLocal2{
                             fun baz(): T = t
                         }
                     }

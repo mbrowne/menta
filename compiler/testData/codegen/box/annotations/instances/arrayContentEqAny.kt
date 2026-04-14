@@ -3,7 +3,7 @@
 
 // WITH_STDLIB
 
-annotation class A(val ints: IntArray)
+annotation define A(val ints: IntArray)
 
 fun box(): String {
     val x1 = A(intArrayOf(1, 2, 3))

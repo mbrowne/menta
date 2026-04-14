@@ -3,7 +3,7 @@
 package usage
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val s: String)
+annotation define Anno(val s: String)
 
 fun implicitType1() = TopLevelObject.expectedType()
 

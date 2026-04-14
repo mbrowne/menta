@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 var result = "fail 2"
-class Foo {
+define Foo {
     val b = { a }
     val c = Runnable { result = a }
 

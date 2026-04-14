@@ -1,11 +1,11 @@
 // LANGUAGE: +EnumEntries
 // WITH_STDLIB
 
-enum class MyEnum {
+enum define MyEnum {
     OK, NOPE;
 
     companion object {
-        @OptIn(ExperimentalStdlibApi::class)
+        @OptIn(ExperimentalStdlibApi::define)
         val ok = entries[0]
     }
 }

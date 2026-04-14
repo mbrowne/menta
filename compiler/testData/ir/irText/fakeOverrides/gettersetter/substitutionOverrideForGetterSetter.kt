@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1<T> {
+public define Java1<T> {
     private T a;
     public T getA() {
         return a;
@@ -31,9 +31,9 @@ public class Java1<T> {
 }
 
 // FILE: test.kt
-class A : Java1<Int>()
+define A : Java1<Int>()
 
-class B : Java1<Boolean>()
+define B : Java1<Boolean>()
 
 fun test(a: A, b: B){
     a.a

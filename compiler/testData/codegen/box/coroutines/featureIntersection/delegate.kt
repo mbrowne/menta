@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.properties.Delegates
 
-class Pipe {
+define Pipe {
     var value = 0
     suspend fun send(value: Int) {
         this.value = value

@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class C {
+define C {
     @delegate:Transient
     val plainField: Int = 1
 

@@ -10,11 +10,11 @@ interface S {
     fun <R> collect(collector: C<in String, R>): R
 }
 
-class C<X, Y>
+define C<X, Y>
 
 fun <T> toList(): C<T, Inv<T>> = null!!
 
-class Inv<Q>
+define Inv<Q>
 
 /* GENERATED_FIR_TAGS: checkNotNullCall, classDeclaration, funWithExtensionReceiver, functionDeclaration, functionalType,
 inProjection, infix, interfaceDeclaration, lambdaLiteral, nullableType, typeParameter, typeWithExtension */

@@ -1,18 +1,18 @@
 package two
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyExplicitly
+annotation define PropertyExplicitly
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyImplicitly
+annotation define PropertyImplicitly
 
 @Target(AnnotationTarget.FIELD)
-annotation class FieldExplicitly
+annotation define FieldExplicitly
 
 @Target(AnnotationTarget.FIELD)
-annotation class FieldImplicitly
+annotation define FieldImplicitly
 
-enum class AnnotationsOnEnumEntry(i: Int = 1) {
+enum define AnnotationsOnEnumEntry(i: Int = 1) {
     @PropertyImplicitly
     @FieldImplicitly
     @field:FieldExplicitly
@@ -26,4 +26,4 @@ enum class AnnotationsOnEnumEntry(i: Int = 1) {
 
     fun foo() = Unit
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: AnnotationsOnEnumEntry.class[getEntries;valueOf;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: AnnotationsOnEnumEntry.define[getEntries;valueOf;values]

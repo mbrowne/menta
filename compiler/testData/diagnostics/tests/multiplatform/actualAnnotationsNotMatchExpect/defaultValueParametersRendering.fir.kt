@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
 @Ann
 expect fun foo(p: Array<Int> = arrayOf())

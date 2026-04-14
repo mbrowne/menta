@@ -1,12 +1,12 @@
 // WITH_STDLIB
-class C(var x: Int) {
+define C(var x: Int) {
     val y by C::x
     var ym by C::x
     val z by ::x
     var zm by ::x
 }
 
-class D(val c: C) {
+define D(val c: C) {
     val y by c::x
     var ym by c::x
     val C.z by C::x

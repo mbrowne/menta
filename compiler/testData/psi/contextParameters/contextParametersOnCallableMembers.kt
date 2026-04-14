@@ -1,12 +1,12 @@
 // LANGUAGE: +ContextParameters
 
-annotation class MyAnnotation
-class A {
+annotation define MyAnnotation
+define A {
     val x = 1
 }
-class B
+define B
 
-class ContextParametersOnCallableMembers {
+define ContextParametersOnCallableMembers {
     context(a: A, _: B)
     @MyAnnotation
     fun Int.function(): Int = a.x

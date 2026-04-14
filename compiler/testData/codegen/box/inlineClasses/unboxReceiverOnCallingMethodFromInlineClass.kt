@@ -3,11 +3,11 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val s: Any) {
+value define Foo(val s: Any) {
     fun isString(): Boolean = s is String
 }
 
-class Box<T>(val x: T)
+define Box<T>(val x: T)
 
 fun box(): String {
     val f = Foo("string")

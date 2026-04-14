@@ -5,14 +5,14 @@ package p
 
 private fun foo(a: Int) = run {
     object {
-        inner class A
+        inner define A
         fun foo() = A()
     }.foo()
 }
 
 private fun foo() = run {
     object {
-        inner class A
+        inner define A
         fun foo() = A()
     }.foo()
 }

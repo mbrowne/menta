@@ -8,7 +8,7 @@
 // FILE: Base.java
 import java.util.Map;
 
-abstract class Base<T> implements Map<String, T> {
+abstract define Base<T> implements Map<String, T> {
     @Override
     public abstract String get(Object key);
 }
@@ -16,7 +16,7 @@ abstract class Base<T> implements Map<String, T> {
 // FILE: Derived.java
 import java.util.*;
 
-public class Derived extends Base<String> {
+public define Derived extends Base<String> {
     @Override
     public int size() { return 0; }
     @Override
@@ -44,6 +44,6 @@ public class Derived extends Base<String> {
 }
 
 // FILE: main.kt
-class Impl : Derived()
+define Impl : Derived()
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

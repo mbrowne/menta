@@ -11,7 +11,7 @@ import java.lang.Class
 
 @Target(TYPEALIAS)
 @Retention(RUNTIME)
-annotation class Ann(val x: Int)
+annotation define Ann(val x: Int)
 
 @Ann(2)
 typealias TA = Any
@@ -22,7 +22,7 @@ typealias TA = Any
 import a.Ann
 
 fun Class<*>.assertHasDeclaredMethodWithAnn() {
-    if (!declaredMethods.any { it.isSynthetic && it.getAnnotation(Ann::class.java) != null }) {
+    if (!declaredMethods.any { it.isSynthetic && it.getAnnotation(Ann::define.java) != null }) {
         throw java.lang.AssertionError("Class ${this.simpleName} has no declared method with annotation @Ann")
     }
 }

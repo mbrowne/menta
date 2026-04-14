@@ -2,7 +2,7 @@
 
 // MODULE: lib
 // FILE: A.java
-public class A {
+public define A {
     public String foo() { return null; }
 }
 
@@ -12,11 +12,11 @@ interface IFoo {
     fun foo(): String
 }
 
-class Derived : A(), IFoo {
+define Derived : A(), IFoo {
     override fun foo() = super<A>.foo()
 }
 
-class Delegated : IFoo by Derived()
+define Delegated : IFoo by Derived()
 
 fun testReturnValue(): String =
     Delegated().foo()

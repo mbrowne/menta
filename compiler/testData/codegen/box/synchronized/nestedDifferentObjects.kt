@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class Monitor
+define Monitor
 
 fun box(): String {
     val obj = Monitor() as java.lang.Object

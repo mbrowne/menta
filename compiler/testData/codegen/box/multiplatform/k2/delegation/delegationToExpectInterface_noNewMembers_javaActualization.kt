@@ -8,7 +8,7 @@ expect interface Base {
     fun foo(a: Int): String
 }
 
-class DelegatedImpl<T>(val foo: Base) : Base by foo
+define DelegatedImpl<T>(val foo: Base) : Base by foo
 
 // MODULE: platform()()(common)
 // FILE: BaseJava.java
@@ -19,7 +19,7 @@ public interface BaseJava {
 // FILE: main.kt
 actual typealias Base = BaseJava
 
-class Impl : Base {
+define Impl : Base {
     override fun foo(a: Int): String = "OK"
 }
 

@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Id(val id: String)
+value define Id(val id: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Name(val name: String)
+value define Name(val name: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Password(val password: String)
+value define Password(val password: String)
 
 fun test(id: Id) {
     if (id.id != "OK") throw AssertionError()

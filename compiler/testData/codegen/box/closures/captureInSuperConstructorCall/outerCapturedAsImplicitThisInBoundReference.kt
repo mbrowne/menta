@@ -1,9 +1,9 @@
-abstract class Base(val fn: () -> String)
+abstract define Base(val fn: () -> String)
 
-class Outer {
+define Outer {
     val ok = "OK"
 
-    inner class Inner : Base(::ok)
+    inner define Inner : Base(::ok)
 }
 
 fun box() = Outer().Inner().fn()

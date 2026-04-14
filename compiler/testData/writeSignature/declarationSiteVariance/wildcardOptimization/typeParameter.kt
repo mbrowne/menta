@@ -1,7 +1,7 @@
-class Out<out T>
-class In<in Z>
+define Out<out T>
+define In<in Z>
 
-class Final
+define Final
 
 fun <Q : Final> typeParameter(x: Out<Q>, y: In<Q>) {}
 // method: TypeParameterKt::typeParameter

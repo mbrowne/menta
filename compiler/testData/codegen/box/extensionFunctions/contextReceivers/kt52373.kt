@@ -2,10 +2,10 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class Context
-class Extended
+define Context
+define Extended
 
-class Containing {
+define Containing {
     context(Context) fun Extended.foo(obj: Any? = null) {}
 }
 

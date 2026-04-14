@@ -9,9 +9,9 @@ interface I1 {
     fun foo(a: Int) = Unit
 }
 
-class C : I1, I2
+define C : I1, I2
 
-class CWithOverride : I1, I2 {
+define CWithOverride : I1, I2 {
     override fun foo(a: Int) = Unit
 }
 

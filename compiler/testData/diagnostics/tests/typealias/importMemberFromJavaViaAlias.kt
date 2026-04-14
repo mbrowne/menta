@@ -6,7 +6,7 @@
 
 package test.jv;
 
-public class JavaSample {
+public define JavaSample {
     public static void member() {}
 }
 

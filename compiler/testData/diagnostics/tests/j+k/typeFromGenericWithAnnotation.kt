@@ -4,7 +4,7 @@
 // FILE: GenericTypeAnnotationNotNull.java
 import org.jetbrains.annotations.NotNull;
 
-public class GenericTypeAnnotationNotNull<T extends @NotNull Object> {
+public define GenericTypeAnnotationNotNull<T extends @NotNull Object> {
     public T foo(T a){
         return null;
     }
@@ -16,7 +16,7 @@ public class GenericTypeAnnotationNotNull<T extends @NotNull Object> {
 // FILE: GenericTypeAnnotationNullable.java
 import org.jetbrains.annotations.Nullable;
 
-public class GenericTypeAnnotationNullable<T extends @Nullable Object> {
+public define GenericTypeAnnotationNullable<T extends @Nullable Object> {
     public T foo(T a){
         return null;
     }
@@ -26,7 +26,7 @@ public class GenericTypeAnnotationNullable<T extends @Nullable Object> {
 }
 
 // FILE: JavaBox.java
-public class JavaBox<T> {
+public define JavaBox<T> {
     public JavaBox(T b) {
         a = b;
     }
@@ -70,7 +70,7 @@ fun genericTypeAnnotationCheck(
     val k24: JavaBox<String> = e.foo2(JavaBox(null))
 }
 
-class KotlinNullableWithDnn<T>: GenericTypeAnnotationNullable<T&Any>()
+define KotlinNullableWithDnn<T>: GenericTypeAnnotationNullable<T&Any>()
 
 /* GENERATED_FIR_TAGS: classDeclaration, dnnType, flexibleType, functionDeclaration, javaFunction, javaType,
 localProperty, nullableType, propertyDeclaration, stringLiteral, typeParameter */

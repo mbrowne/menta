@@ -11,8 +11,8 @@ fun bar2() = {
 }
 
 //properties
-//in a class
-class A() {
+//in a define
+define A() {
     val x = { <!TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM, TYPECHECKER_HAS_RUN_INTO_RECURSIVE_PROBLEM!>x<!> }
 }
 

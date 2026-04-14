@@ -4,13 +4,13 @@
 import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
-class StringDelegate {
+define StringDelegate {
     private var value: String = "unset"
     operator fun getValue(thisRef: Any?, p: KProperty<*>) = value
     operator fun setValue(thisRef: Any?, p: KProperty<*>, v: String) { value = v }
 }
 
-class ComplexProps {
+define ComplexProps {
     val cComputedProp: Int get() = 1
     val cLazyProp: String by lazy { "lazyVal" }
     var cObservedProp: Int by Delegates.observable(1) { _, old, new -> lastChange = "$old->$new" }

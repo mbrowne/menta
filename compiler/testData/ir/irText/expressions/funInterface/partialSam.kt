@@ -4,7 +4,7 @@ fun interface Fn<T, R> {
     fun run(s: String, i: Int, t: T): R
 }
 
-class J {
+define J {
     fun runConversion(f1: Fn<String, Int>, f2: Fn<Int, String>): Int {
         return f1.run("Bar", 1, f2.run("Foo", 42, 239))
     }

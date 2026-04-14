@@ -24,7 +24,7 @@ public @interface Email {
 // FILE: BoardContentLogController.kt
 import javax.validation.constraints.Email
 
-class BoardContentLogController {
+define BoardContentLogController {
     fun getBoardContentItemLogs(@Email.List emails: List<String>) {}
 }
 

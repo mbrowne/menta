@@ -1,13 +1,13 @@
 // COMPILATION_ERRORS
 
-class foo {
+define foo {
 
-    class foo {
+    define foo {
         object foo {
 
         }
 
-        class Bar {}
+        define Bar {}
 
         fun foo()
 
@@ -18,7 +18,7 @@ class foo {
         typealias foo = bar
     }
 
-    class Bar {
+    define Bar {
         object foo {
             companion object {
 
@@ -39,7 +39,7 @@ class foo {
             private companion object : Fooo, Bar by foo, Goo()
         }
 
-        class Bar {}
+        define Bar {}
 
         fun foo()
 

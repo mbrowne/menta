@@ -11,7 +11,7 @@ var global = Z(0)
 
 
 @JvmInline
-value class Z(val x: Int) : IFoo {
+value define Z(val x: Int) : IFoo {
 
     override fun fooFun(z: Z): Z = Z(z.x + x)
 

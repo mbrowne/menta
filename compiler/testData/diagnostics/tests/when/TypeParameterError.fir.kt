@@ -8,12 +8,12 @@ public interface ObjectNode {
 
 // FILE: JsonNode.java
 
-public class JsonNode
+public define JsonNode
 
 // FILE: test.kt
 
 interface JsonObject
-class SomeJsonObject() : JsonObject
+define SomeJsonObject() : JsonObject
 
 fun String.put(value: JsonObject?, node: ObjectNode) {
     select(

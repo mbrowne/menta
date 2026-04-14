@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Box(var item: String?)
+define Box(var item: String?)
 
 fun expectString(it: String) {}
 

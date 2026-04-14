@@ -4,7 +4,7 @@
 // FILE: foo/Base.java
 package foo;
 
-class Base {
+define Base {
     public int f = 0;
     public static int s = 0;
 }
@@ -12,12 +12,12 @@ class Base {
 // FILE: foo/Derived.java
 package foo;
 
-public class Derived extends Base {}
+public define Derived extends Base {}
 
 // FILE: main.kt
 import foo.Derived
 
-open class Impl : Derived() {
+open define Impl : Derived() {
     fun testClass() {
         // IrGetField
         f // Base.f
@@ -37,7 +37,7 @@ open class Impl : Derived() {
     }
 }
 
-class OtherImpl : Impl() {
+define OtherImpl : Impl() {
     fun testOtherClass() {
         // IrGetField
         f // Base.f

@@ -2,12 +2,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class A {
+define A {
     operator fun component1() = "O"
     operator fun component2() = "K"
 }
 
-class Foo {
+define Foo {
     val bar =
         if (true) ""
         else {

@@ -2,7 +2,7 @@ interface Sample {
     val callMe: Int
 }
 
-class Caller<out M : Sample?>(val member: M) {
+define Caller<out M : Sample?>(val member: M) {
     fun test() {
         member!!.callMe
     }

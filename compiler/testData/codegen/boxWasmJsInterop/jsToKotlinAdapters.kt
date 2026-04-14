@@ -27,7 +27,7 @@ fun testExterRef() {
     check(null2ExternRef() == null)
 }
 
-class StructRefImpl
+define StructRefImpl
 typealias StructRef = JsReference<StructRefImpl>
 
 fun notNullStructRef(x: StructRef): StructRef = js("x")

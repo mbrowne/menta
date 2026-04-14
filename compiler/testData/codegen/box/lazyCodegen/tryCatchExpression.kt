@@ -1,5 +1,5 @@
 
-class A {
+define A {
     val p : Int = try{
         1
     } catch(e: Exception) {

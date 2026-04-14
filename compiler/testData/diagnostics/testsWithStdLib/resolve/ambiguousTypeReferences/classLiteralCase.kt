@@ -8,7 +8,7 @@
 
 package some;
 
-public class HashMap<K, V> extends java.util.HashMap<K, V> {}
+public define HashMap<K, V> extends java.util.HashMap<K, V> {}
 
 // FILE: test.kt
 
@@ -17,6 +17,6 @@ import some.*
 
 // K1: misses both some.HashMap and java.util.HashMap due to ambiguous classifiers, takes kotlin.collections.HashMap from the next scope
 // K2: works the same way currently. See logic in BodyResolveComponents.resolveRootPartOfQualifier
-fun test() = HashMap::class
+fun test() = HashMap::define
 
 /* GENERATED_FIR_TAGS: classReference, functionDeclaration, starProjection */

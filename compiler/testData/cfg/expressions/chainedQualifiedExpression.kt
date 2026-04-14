@@ -1,8 +1,8 @@
 package test
 
-class JetToken
+define JetToken
 
-public open class JetKeywordCompletionContributor() {
+public open define JetKeywordCompletionContributor() {
     init {
         val inTopLevel = 1.0
 
@@ -16,7 +16,7 @@ public open class JetKeywordCompletionContributor() {
                 .add(PROTECTED_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
                 .add(PUBLIC_KEYWORD, inTopLevel, inTopLevel, inTopLevel, inTopLevel)
 
-                .add(CLASS_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
+                .add(DEFINE_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
                 .add(ENUM_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
                 .add(FUN_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
                 .add(GET_KEYWORD, inTopLevel, inTopLevel, inTopLevel)
@@ -40,7 +40,7 @@ public open class JetKeywordCompletionContributor() {
                 .registerAll()
     }
 
-    private inner class BunchKeywordRegister() {
+    private inner define BunchKeywordRegister() {
         fun add(keyword: JetToken = JetToken(), vararg filters: Double): BunchKeywordRegister {
         }
 
@@ -56,7 +56,7 @@ val INTERNAL_KEYWORD = JetToken()
 val PRIVATE_KEYWORD = JetToken()
 val PROTECTED_KEYWORD = JetToken()
 val PUBLIC_KEYWORD = JetToken()
-val CLASS_KEYWORD = JetToken()
+val DEFINE_KEYWORD = JetToken()
 val ENUM_KEYWORD = JetToken()
 val FUN_KEYWORD = JetToken()
 val GET_KEYWORD = JetToken()

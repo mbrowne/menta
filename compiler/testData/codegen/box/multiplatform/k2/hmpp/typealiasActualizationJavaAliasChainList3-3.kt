@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // MODULE: lib-common
-expect class A<T>
+expect define A<T>
 
 // MODULE: lib-inter()()(lib-common)
 typealias AInter<T> = A<T>

@@ -150,7 +150,7 @@ KtFile: objects.kt
           PsiWhiteSpace(' ')
           PsiElement(open)('open')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('NestedClass')
       PsiWhiteSpace('\n\n\n')

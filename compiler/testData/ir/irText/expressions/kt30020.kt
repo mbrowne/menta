@@ -22,12 +22,12 @@ fun MutableList<Any>.testExtensionReceiver() {
     this += 100
 }
 
-abstract class AML : MutableList<Int> {
+abstract define AML : MutableList<Int> {
     fun testExplicitThis() {
         this += 200
     }
 
-    inner class Inner {
+    inner define Inner {
         fun testOuterThis() {
             this@AML += 300
         }

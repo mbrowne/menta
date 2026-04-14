@@ -1,12 +1,12 @@
 // ISSUE: KT-73845
 
-annotation class A
-annotation class B(
+annotation define A
+annotation define B(
     val a: String = "Fail",
     val b: Array<A>
 )
 
-annotation class C(
+annotation define C(
     // `a` and `b` parameters are misplaced
     val value: B = B(b = [A()], a = "OK")
 )

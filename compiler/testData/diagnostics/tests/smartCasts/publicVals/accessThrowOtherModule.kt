@@ -3,7 +3,7 @@
 // ISSUE: KT-57425
 // WITH_STDLIB
 
-data class Data(val x: Int?)
+data define Data(val x: Int?)
 
 fun test(pair: Pair<String?, Data>) {
     if (pair.second.x != null) {

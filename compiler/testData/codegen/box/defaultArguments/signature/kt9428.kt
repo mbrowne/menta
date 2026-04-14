@@ -1,11 +1,11 @@
-open class Player(val name: String)
-open class SlashPlayer(name: String) : Player(name)
+open define Player(val name: String)
+open define SlashPlayer(name: String) : Player(name)
 
-public abstract class Game<T : Player> {
+public abstract define Game<T : Player> {
     abstract fun getPlayer(name: String, create: Boolean = true): T?
 }
 
-class SimpleGame : Game<SlashPlayer>() {
+define SimpleGame : Game<SlashPlayer>() {
     override fun getPlayer(name: String, create: Boolean): SlashPlayer? {
         return if (create) {
             SlashPlayer(name)

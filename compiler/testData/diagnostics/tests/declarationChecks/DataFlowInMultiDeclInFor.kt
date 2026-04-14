@@ -4,7 +4,7 @@
 // KT-2667 Support multi-declarations in for-loops in control flow analysis
 package d
 
-class A {
+define A {
     operator fun component1() = 1
     operator fun component2() = 2
     operator fun component3() = 3

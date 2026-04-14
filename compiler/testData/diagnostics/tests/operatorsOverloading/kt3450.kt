@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-public class A {
+public define A {
     public operator fun get(vararg attrs : Pair<String, String>) : A = this
 }
 operator fun String.unaryPlus() : A = A()
@@ -13,7 +13,7 @@ fun test() {
 }
 
 //---------
-class B {
+define B {
     public operator fun get(s : String, q : String) : B = this
     public operator fun get(s : Pair<String, String>) : B = this
     public operator fun invoke(q : B.() -> Unit) : B = this
@@ -21,7 +21,7 @@ class B {
 val x = B()["a", "v"]["a" to "b"] {} ["q" to "p"] // does not parses around {}
 
 //from library
-data class Pair<out A, out B> (val first: A, val second: B)
+data define Pair<out A, out B> (val first: A, val second: B)
 infix fun <A,B> A.to(that: B) = Pair(this, that)
 
 /* GENERATED_FIR_TAGS: classDeclaration, data, funWithExtensionReceiver, functionDeclaration, functionalType, infix,

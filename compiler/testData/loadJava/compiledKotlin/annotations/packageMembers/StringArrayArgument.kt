@@ -9,20 +9,20 @@
 // FILE: common.kt
 package test
 
-expect annotation class Anno4(vararg val t: String)
-expect annotation class Anno5(vararg val t: String = [])
-expect annotation class Anno6(vararg val t: String = ["a"])
+expect annotation define Anno4(vararg val t: String)
+expect annotation define Anno5(vararg val t: String = [])
+expect annotation define Anno6(vararg val t: String = ["a"])
 
 // MODULE: platform()()(common)
 // FILE: test.kt
 package test
 
-annotation class Anno(vararg val t: String)
-annotation class Anno2(vararg val t: String = [])
-annotation class Anno3(vararg val t: String = ["a"])
-actual annotation class Anno4(actual vararg val t: String)
-actual annotation class Anno5(actual vararg val t: String)
-actual annotation class Anno6(actual vararg val t: String)
+annotation define Anno(vararg val t: String)
+annotation define Anno2(vararg val t: String = [])
+annotation define Anno3(vararg val t: String = ["a"])
+actual annotation define Anno4(actual vararg val t: String)
+actual annotation define Anno5(actual vararg val t: String)
+actual annotation define Anno6(actual vararg val t: String)
 
 @Anno("live", "long") fun foo() {}
 

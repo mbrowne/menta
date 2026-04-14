@@ -6,7 +6,7 @@
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-class FooImpl
+define FooImpl
 
 actual typealias <!ACTUAL_WITHOUT_EXPECT!>Foo<!> = FooImpl
 

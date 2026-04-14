@@ -9,7 +9,7 @@ public interface JSam<T, R> {
 
 // FILE: Inv.java
 
-public class Inv<T> {
+public define Inv<T> {
     public final <R> Inv<R> map(JSam<? super T, ? extends R> mapper) {
         return null;
     }

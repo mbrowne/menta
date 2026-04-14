@@ -522,7 +522,7 @@ KtFile: BitArith.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('INumber')
     PsiWhiteSpace(' ')

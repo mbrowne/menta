@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FULL_JDK
 
-class Monitor
+define Monitor
 
 fun box(): String {
     var obj0 = Monitor() as java.lang.Object

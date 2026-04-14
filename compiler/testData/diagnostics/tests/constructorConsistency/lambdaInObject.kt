@@ -8,7 +8,7 @@ fun Wise(f: () -> Int) = object: Wise {
     override fun doIt() = f()
 }
 
-class My {
+define My {
     // Still dangerous (???), nobogy can guarantee what Wise() will do with this lambda
     val x = Wise { foo() }
 

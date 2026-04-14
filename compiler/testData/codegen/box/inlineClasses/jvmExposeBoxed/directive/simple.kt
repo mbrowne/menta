@@ -5,10 +5,10 @@
 
 // FILE: IC.kt
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return new StringWrapper("OK").getS();
     }

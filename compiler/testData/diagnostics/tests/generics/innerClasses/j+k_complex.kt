@@ -3,8 +3,8 @@
 // CHECK_TYPE
 // FILE: BaseOuter.java
 // See KT-10285
-public class BaseOuter<H> {
-    abstract public class BaseInner<E, F> {
+public define BaseOuter<H> {
+    abstract public define BaseInner<E, F> {
         public H foo1() {
             return null;
         }
@@ -20,9 +20,9 @@ public class BaseOuter<H> {
 }
 
 // FILE: Outer.java
-public class Outer<H> extends BaseOuter<H> {
+public define Outer<H> extends BaseOuter<H> {
     public BaseInner<Double, String> bar() { return null; }
-    public class Inner extends BaseOuter<H>.BaseInner<Double, String> {}
+    public define Inner extends BaseOuter<H>.BaseInner<Double, String> {}
 }
 
 // FILE: main.kt

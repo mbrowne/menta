@@ -4,8 +4,8 @@ package foo
 // CHECK_NOT_CALLED: test
 // CHECK_NOT_CALLED: test1
 
-class A
-class B
+define A
+define B
 
 inline fun <reified T> test(x: Any): Boolean = test1<T>(x)
 

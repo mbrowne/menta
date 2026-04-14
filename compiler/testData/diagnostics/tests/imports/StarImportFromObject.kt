@@ -20,7 +20,7 @@ import a.E.*
 import a.E.E1
 import a.E.<!CANNOT_ALL_UNDER_IMPORT_FROM_SINGLETON!>E2<!>.*
 
-class A {
+define A {
     object C {
         object G
     }
@@ -28,7 +28,7 @@ class A {
 
     }
 
-    class E {
+    define E {
         object J
     }
 
@@ -37,12 +37,12 @@ class A {
     }
 }
 
-enum class E {
+enum define E {
     E1, E2
 }
 
 object B {
-    class C {
+    define C {
         object A
         object D
     }

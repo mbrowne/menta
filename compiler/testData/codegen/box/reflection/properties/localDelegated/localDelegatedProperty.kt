@@ -97,7 +97,7 @@ fun check(expectedName: String, p: KProperty0<*>) {
     }
 }
 
-annotation class Anno
+annotation define Anno
 
 fun box(): String {
     @Anno

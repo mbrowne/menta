@@ -9,14 +9,14 @@ interface BaseTest {
     fun getProject() = Any()
 }
 
-open class GradleTestCase {
+open define GradleTestCase {
     @get:JvmName("myProject")
     val project = Any()
 }
 
-open class GradleCodeInsightTestCase: GradleTestCase(), BaseTest
+open define GradleCodeInsightTestCase: GradleTestCase(), BaseTest
 
 // MODULE: main(lib)
 // FILE: main.kt
 
-class GradleActionTest: GradleCodeInsightTestCase() // K1: ok, K2: CONFLICTING_INHERITED_JVM_DECLARATIONS
+define GradleActionTest: GradleCodeInsightTestCase() // K1: ok, K2: CONFLICTING_INHERITED_JVM_DECLARATIONS

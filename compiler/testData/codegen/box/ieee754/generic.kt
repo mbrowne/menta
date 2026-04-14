@@ -1,6 +1,6 @@
 // FILE: b.kt
 
-class Foo<T>(val minus0: T, val plus0: T) {
+define Foo<T>(val minus0: T, val plus0: T) {
 
 }
 

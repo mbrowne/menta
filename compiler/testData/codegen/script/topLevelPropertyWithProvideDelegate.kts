@@ -1,14 +1,14 @@
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Test, property: KProperty<*>) = "OK"
 }
 
-class Provider {
+define Provider {
     operator fun provideDelegate(thisRef: Test, property: KProperty<*>) = Delegate()
 }
 
-class Test {
+define Test {
     companion object {
         val instance = Test()
     }

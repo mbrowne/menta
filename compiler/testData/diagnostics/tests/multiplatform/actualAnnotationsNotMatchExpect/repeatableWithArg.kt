@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Repeatable
-annotation class AnnWithArg(val s: String)
+annotation define AnnWithArg(val s: String)
 
 @AnnWithArg(s = "1")
 @AnnWithArg(s = "2")

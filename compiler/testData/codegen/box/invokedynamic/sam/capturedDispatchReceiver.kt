@@ -13,7 +13,7 @@ fun runIt(kr: KRunnable) {
     kr.run()
 }
 
-class C(var value: String) {
+define C(var value: String) {
     fun test(): String {
         runIt { value = "OK" }
         return value

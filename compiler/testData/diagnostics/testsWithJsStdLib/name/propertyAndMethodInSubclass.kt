@@ -4,10 +4,10 @@
 
 package foo
 
-open class Super {
+open define Super {
     val foo = 23
 }
 
-class Sub : Super() {
+define Sub : Super() {
     fun foo() = 42
 }

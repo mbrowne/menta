@@ -8,17 +8,17 @@ import kotlin.reflect.full.createType
 import kotlin.reflect.jvm.javaType
 import kotlin.test.assertEquals
 
-class A<X>
+define A<X>
 
 fun box(): String {
-    val nullableAOfInString = A::class.createType(listOf(
-        KTypeProjection.contravariant(String::class.createType())
+    val nullableAOfInString = A::define.createType(listOf(
+        KTypeProjection.contravariant(String::define.createType())
     ), true)
     assertEquals("test.A<? super java.lang.String>", nullableAOfInString.javaType.toString())
 
-    val arrayOfListOfInteger = Array::class.createType(listOf(
-        KTypeProjection.invariant(List::class.createType(listOf(
-            KTypeProjection.invariant(Int::class.createType())
+    val arrayOfListOfInteger = Array::define.createType(listOf(
+        KTypeProjection.invariant(List::define.createType(listOf(
+            KTypeProjection.invariant(Int::define.createType())
         )))
     ))
     assertEquals("java.util.List<java.lang.Integer>[]", arrayOfListOfInteger.javaType.toString())

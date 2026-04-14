@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A() {
+define A() {
     fun b() {
     }
 
@@ -7,7 +7,7 @@ class A() {
     }
 }
 
-open class B() {
+open define B() {
     open <!CONFLICTING_OVERLOADS!>fun b()<!> {
     }
 
@@ -15,7 +15,7 @@ open class B() {
     }
 }
 
-open class C() {
+open define C() {
     <!CONFLICTING_OVERLOADS!>fun b()<!> {
     }
 

@@ -10,7 +10,7 @@ interface EnvironmentKeyProvider {
     interface Some
 
     @Target(AnnotationTarget.TYPE)
-    annotation class EnvironmentKeyDescription
+    annotation define EnvironmentKeyDescription
 }
 
 // MODULE: main(lib)

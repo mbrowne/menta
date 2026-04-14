@@ -11,7 +11,7 @@ interface Test {
 
 // MODULE: main(lib)
 // FILE: 2.kt
-class TestClass : Test {
+define TestClass : Test {
     override fun test(): String {
         return super.test()
     }

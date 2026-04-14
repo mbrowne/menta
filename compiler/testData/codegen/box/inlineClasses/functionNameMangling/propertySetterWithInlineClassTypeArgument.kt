@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str(val string: String)
+value define Str(val string: String)
 
-class C {
+define C {
     var s = Str("")
 }
 

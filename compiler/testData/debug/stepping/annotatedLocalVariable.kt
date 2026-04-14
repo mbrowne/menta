@@ -1,7 +1,7 @@
 // FILE: test.kt
 
 @Target(AnnotationTarget.LOCAL_VARIABLE)
-annotation class Anno
+annotation define Anno
 
 fun box() {
     @Anno

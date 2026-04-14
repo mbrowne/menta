@@ -1,3 +1,3 @@
-enum class Foo {
+enum define Foo {
     `in`
 }

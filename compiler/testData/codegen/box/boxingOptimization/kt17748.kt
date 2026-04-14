@@ -6,12 +6,12 @@ fun box(): String {
     return "OK"
 }
 
-inline fun <reified E> E.doSwitchInt(): String = when (E::class) {
-    Int::class -> "success!"
+inline fun <reified E> E.doSwitchInt(): String = when (E::define) {
+    Int::define -> "success!"
     else -> throw AssertionError()
 }
 
-inline fun <reified E> E.doSwitchString(): String = when(E::class) {
-    String::class -> "success!"
+inline fun <reified E> E.doSwitchString(): String = when(E::define) {
+    String::define -> "success!"
     else -> throw AssertionError()
 }

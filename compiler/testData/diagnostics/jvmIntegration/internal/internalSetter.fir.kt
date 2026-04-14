@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-69766
 // MODULE: lib
-class A {
+define A {
     var v: Int = 0
         internal set
 }
 
-class B<T> {
+define B<T> {
     var v: T = null!!
         internal set
 }
@@ -15,23 +15,23 @@ interface Some {
     val v: Int
 }
 
-abstract class Base {
+abstract define Base {
     var v: Int = 1
         internal set
 }
 
-class C : Base(), Some
+define C : Base(), Some
 
 interface Other<T> {
     val v: T
 }
 
-abstract class GenericBase<T> {
+abstract define GenericBase<T> {
     var v: T = null!!
         internal set
 }
 
-class D<T> : GenericBase<T>(), Other<T>
+define D<T> : GenericBase<T>(), Other<T>
 
 // MODULE: main(lib)
 fun test() {

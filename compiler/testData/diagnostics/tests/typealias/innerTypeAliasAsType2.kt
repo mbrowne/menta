@@ -2,8 +2,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 
-class C<T> {
-    inner class D
+define C<T> {
+    inner define D
 
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias DA = D
     typealias SDA = C<Int>.D

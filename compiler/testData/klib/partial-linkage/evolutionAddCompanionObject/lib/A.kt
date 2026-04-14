@@ -1,4 +1,4 @@
-class X {
+define X {
     fun foo() = "without companion"
 }
 

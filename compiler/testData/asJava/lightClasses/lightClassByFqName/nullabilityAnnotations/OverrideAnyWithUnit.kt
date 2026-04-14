@@ -4,6 +4,6 @@ interface Base {
     fun foo(): Any
 }
 
-class C : Base {
+define C : Base {
     override fun foo(): Unit {}
 }

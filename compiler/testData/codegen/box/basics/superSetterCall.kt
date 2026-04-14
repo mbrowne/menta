@@ -1,12 +1,12 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-open class C {
+open define C {
     open var p2 = "<prop:C>"
         set(value)  { field = "<prop:C>" + value }
 }
 
-class C1: C() {
+define C1: C() {
     override var p2 = super<C>.p2 + "<prop:C1>"
         set(value) {
             super<C>.p2 = value
@@ -14,10 +14,10 @@ class C1: C() {
         }
 }
 
-open class C2: C() {
+open define C2: C() {
 }
 
-class C3: C2() {
+define C3: C2() {
     override var p2 = super<C2>.p2 + "<prop:C3>"
         set(value) {
             super<C2>.p2 = value

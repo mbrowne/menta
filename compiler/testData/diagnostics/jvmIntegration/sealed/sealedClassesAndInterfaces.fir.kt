@@ -5,7 +5,7 @@ package test
 
 sealed interface IBase
 
-sealed class Base
+sealed define Base
 
 // FILE: A.kt
 package test
@@ -15,15 +15,15 @@ interface IA : IBase
 // FILE: B.kt
 package test
 
-sealed class B : Base(), IBase {
-    class First : B()
-    class Second : B()
+sealed define B : Base(), IBase {
+    define First : B()
+    define Second : B()
 }
 
 // FILE: C.kt
 package test
 
-enum class C : IBase {
+enum define C : IBase {
     SomeValue, AnotherValue
 }
 

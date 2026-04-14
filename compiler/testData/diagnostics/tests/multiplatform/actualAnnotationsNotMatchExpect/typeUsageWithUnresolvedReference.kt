@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 expect fun <!NO_ACTUAL_FOR_EXPECT{JVM}!><T : @Ann Any><!> foo()
 

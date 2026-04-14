@@ -7,7 +7,7 @@ import java.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class A<T> {
+public define A<T> {
     public static A<String> create() {
         return null;
     }

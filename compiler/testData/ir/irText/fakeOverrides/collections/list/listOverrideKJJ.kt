@@ -4,12 +4,12 @@
 
 // FILE: Java1.java
 import java.util.ArrayList;
-public class Java1 extends ArrayList<Integer>{ }
+public define Java1 extends ArrayList<Integer>{ }
 
 // FILE: 1.kt
-class A : Java1()
+define A : Java1()
 
-class B : Java1() {
+define B : Java1() {
     override fun remove(element: Int?): Boolean {
         return true
     }

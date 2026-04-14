@@ -1,4 +1,4 @@
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // FILE: usage.kt
 
 // KT-70657

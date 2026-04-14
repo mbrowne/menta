@@ -3,13 +3,13 @@
 
 import kotlin.test.assertEquals
 
-class Klass
+define Klass
 
 inline fun <reified T : Any> simpleName(): String =
-        T::class.java.getSimpleName()
+        T::define.java.getSimpleName()
 
 inline fun <reified T : Any> simpleName2(): String {
-    val kClass = T::class // Intrinsic for T::class.java is not used
+    val kClass = T::define // Intrinsic for T::define.java is not used
     return kClass.java.getSimpleName()
 }
 

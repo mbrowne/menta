@@ -4,8 +4,8 @@
 // FILE: lib.kt
 import kotlin.reflect.typeOf
 
-class A {
-    inner class Inner {
+define A {
+    inner define Inner {
         inline fun <reified T : CharSequence> foo(a: T) = typeOf<T>()
     }
 }

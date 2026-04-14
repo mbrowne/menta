@@ -8,7 +8,7 @@ public interface I {}
 // FILE: p2/I.java
 package p2;
 
-public class I {}
+public define I {}
 
 // FILE: p/X.java
 package p;
@@ -16,22 +16,22 @@ package p;
 import p1.*;
 import p2.I;
 
-public class X {
+public define X {
 
-    public class I1<I> {
+    public define I1<I> {
         public I getI() { return null; }
     }
 
-    public class N {
+    public define N {
         public I getI() { return null; }
 
-        public class I {}
+        public define I {}
 
-        private class M<I, I1> {
+        private define M<I, I1> {
             public I getI() { return null; }
             public I1 getI1() { return null; }
 
-            class I1 {
+            define I1 {
                 I1 getI1() { return null; }
             }
         }

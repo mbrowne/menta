@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class My {
+define My {
     var x: Int = 0
         // Ok
         private set

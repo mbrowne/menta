@@ -6,8 +6,8 @@
 
 package interop_class_inheritor_with_serialized_fake_overrides.test
 
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
-class Derived : interop_class_inheritor_with_serialized_fake_overrides.Base() {
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
+define Derived : interop_class_inheritor_with_serialized_fake_overrides.Base() {
     override fun overriddenFunction() = Unit
     //override fun nonOverriddenFunction() = Unit
 

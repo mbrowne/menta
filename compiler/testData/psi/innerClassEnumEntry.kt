@@ -1,5 +1,5 @@
-enum class InnerClassEnumEntry {
+enum define InnerClassEnumEntry {
     ENTRY {
-        inner class InnerClass
+        inner define InnerClass
     }
 }

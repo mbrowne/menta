@@ -10,16 +10,16 @@ val bImpl: B.Companion.Interface
 interface A {
     companion object : <!UNRESOLVED_REFERENCE!>Nested<!>(), <!UNRESOLVED_REFERENCE!>Interface<!> by aImpl, I<<!UNRESOLVED_REFERENCE!>Nested<!>, <!UNRESOLVED_REFERENCE!>Interface<!>> {
 
-        class Nested
+        define Nested
 
         interface Interface
     }
 }
 
-class B {
+define B {
     companion object : <!UNRESOLVED_REFERENCE!>Nested<!>(), <!UNRESOLVED_REFERENCE!>Interface<!> by aImpl, I<<!UNRESOLVED_REFERENCE!>Nested<!>, <!UNRESOLVED_REFERENCE!>Interface<!>> {
 
-        class Nested
+        define Nested
 
         interface Interface
     }

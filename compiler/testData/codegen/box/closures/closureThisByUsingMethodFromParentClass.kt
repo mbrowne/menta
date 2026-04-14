@@ -4,11 +4,11 @@
 // FILE: main.kt
 package foo
 
-open class A {
+open define A {
     fun foo() = "A::foo"
 }
 
-class B : A() {
+define B : A() {
     fun boo() = "B::boo"
 
     val far = { foo() }
@@ -41,4 +41,4 @@ inline fun String.replace(regexp: RegExp, replacement: String): String = asDynam
 
 fun String.replaceAll(regexp: String, replacement: String): String = replace(RegExp(regexp, "g"), replacement)
 
-external class RegExp(regexp: String, flags: String)
+external define RegExp(regexp: String, flags: String)

@@ -1,3 +1,3 @@
 package test
 
-public class InternalConstructor internal constructor()
+public define InternalConstructor internal constructor()

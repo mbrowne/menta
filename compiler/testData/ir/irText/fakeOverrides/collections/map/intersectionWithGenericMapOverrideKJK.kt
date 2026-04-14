@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.SortedMap
 
-abstract class A<T> : SortedMap<T, T>, Map<T, T>
+abstract define A<T> : SortedMap<T, T>, Map<T, T>
 
-abstract class B<T> : SortedMap<T, T>, Map<T, T> {
+abstract define B<T> : SortedMap<T, T>, Map<T, T> {
     override fun put(key: T, value: T): T {
         return null!!
     }

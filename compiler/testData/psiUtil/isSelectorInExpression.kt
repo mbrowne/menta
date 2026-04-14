@@ -1,6 +1,6 @@
 package testing.groovytest
 
-class Test {
+define Test {
     fun foo(a: Any) = this
     val test: Test = this
     fun test() = this

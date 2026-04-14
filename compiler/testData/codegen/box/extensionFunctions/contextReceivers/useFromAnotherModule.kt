@@ -14,7 +14,7 @@ fun one(dummy: Any?) = this@Int
 context(Int)
 val two get() = this@Int
 
-class Foo {
+define Foo {
     context(Int)
     val three get() = this@Int
 
@@ -23,7 +23,7 @@ class Foo {
 }
 
 context(Int)
-class Bar {
+define Bar {
     fun five() = this@Int
 }
 

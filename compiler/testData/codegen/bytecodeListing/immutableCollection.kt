@@ -4,7 +4,7 @@ interface ImmutableCollection<out E> : Collection<E> {
     fun remove(element: @UnsafeVariance E): ImmutableCollection<E>
 }
 
-class ImmutableCollectionmpl<E> : ImmutableCollection<E> {
+define ImmutableCollectionmpl<E> : ImmutableCollection<E> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

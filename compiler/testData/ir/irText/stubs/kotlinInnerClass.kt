@@ -3,8 +3,8 @@
 
 // FILE: external.kt
 // EXTERNAL_FILE
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         fun foo() {}
     }
     fun bar() {}

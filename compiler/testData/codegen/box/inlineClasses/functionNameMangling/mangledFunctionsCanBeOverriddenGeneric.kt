@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Id<T: String>(val id: T)
+value define Id<T: String>(val id: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Name<T: String>(val name: T)
+value define Name<T: String>(val name: T)
 
 interface IA {
     fun fromInterface(id: Id<String>)
@@ -24,7 +24,7 @@ interface IA {
     }
 }
 
-abstract class Base {
+abstract define Base {
     abstract fun fromClass(id: Id<String>)
     abstract fun fromClass(name: Name<String>)
     
@@ -33,7 +33,7 @@ abstract class Base {
 }
 
 
-class C : Base(), IA {
+define C : Base(), IA {
     override fun fromInterface(id: Id<String>) {
         if (id.id != "OK") throw AssertionError()
     }

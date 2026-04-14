@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-open class A
+open define A
 
-class B : A()
+define B : A()
 
 fun ff(l: MutableCollection<B>) = l is MutableList<out A>
 

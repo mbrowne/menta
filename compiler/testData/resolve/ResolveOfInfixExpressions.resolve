@@ -7,7 +7,7 @@ fun f_plus(): Int {
   return x
 }
 
-~X~class X<~T~T> {
+~X~define X<~T~T> {
   fun foo(a : `T`T) : `X`X<`T`T>{}
   ~plus~fun plus(t : `T`T) : Int {}
   ~minus~fun minus(t : String) : Int {}
@@ -40,7 +40,7 @@ fun f_plus(): Int {
   1 `contains`!in x
 }
 
-open ~Foo~class Foo {
+open ~Foo~define Foo {
   ~set1~fun set(i : Int, val1 : String) {}
   ~get1~fun get(i : Int) : Int {}
   ~get2~fun get(i : Int, j : Int) : String {}
@@ -48,7 +48,7 @@ open ~Foo~class Foo {
   ~+=~fun plusAssign(a : Any?) : Unit {}
 }
 
-~Bar~class Bar : Foo {
+~Bar~define Bar : Foo {
   ~not~fun not() : String {}
   ~inc~fun inc() : Bar
   ~dec~fun dec() : Bar
@@ -82,7 +82,7 @@ fun <T> tt(t : T) : T {
 }
 
 
-class UnitIncDec() {
+define UnitIncDec() {
   ~uinc~fun inc() : Unit
   ~udec~fun dec() : Unit
 }

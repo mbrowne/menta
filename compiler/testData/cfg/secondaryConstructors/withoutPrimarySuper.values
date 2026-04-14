@@ -1,10 +1,10 @@
 == B ==
-open class B(x: Int)
+open define B(x: Int)
 ---------------------
     <v0>: Int   NEW: magic[FAKE_INITIALIZER](x: Int) -> <v0>
 =====================
 == A ==
-class A : B {
+define A : B {
     val x: Int
     var y: Int
     val z: Int

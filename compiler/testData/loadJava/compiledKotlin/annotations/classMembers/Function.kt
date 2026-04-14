@@ -1,7 +1,7 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
-class Class {
+define Class {
     @Anno fun foo() { }
 }

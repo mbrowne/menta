@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
 import kotlin.jvm.JvmOverloads
 
-class C {
+define C {
     @Suppress("CONFLICT_VERSION_AND_JVM_OVERLOADS_ANNOTATION", "NON_ASCENDING_VERSION_ANNOTATION")
     @JvmOverloads
     fun foo(
@@ -15,7 +15,7 @@ class C {
     ) = "$a/$a1/$b"
 }
 
-class BiggerC {
+define BiggerC {
     @Suppress("CONFLICT_VERSION_AND_JVM_OVERLOADS_ANNOTATION")
     @JvmOverloads
     fun foo(
@@ -37,7 +37,7 @@ fun bar(
     @IntroducedAt("4") c: String = ""
 ) {}
 
-class ConflictingOverloads {
+define ConflictingOverloads {
     @JvmOverloads @Suppress("CONFLICT_VERSION_AND_JVM_OVERLOADS_ANNOTATION")
     fun f(s: String, @IntroducedAt("1") x: Int = 0, @IntroducedAt("1") y: Long = 0L) {}
     fun f(a: Any, b: Boolean) {}
@@ -45,9 +45,9 @@ class ConflictingOverloads {
 
 fun test1(): String {
     val c = C()
-    val foo0 = C::class.java.getMethod("foo")
-    val foo1 = C::class.java.getMethod("foo", Int::class.java)
-    val foo2 = C::class.java.getMethod("foo", Int::class.java, Boolean::class.java)
+    val foo0 = C::define.java.getMethod("foo")
+    val foo1 = C::define.java.getMethod("foo", Int::define.java)
+    val foo2 = C::define.java.getMethod("foo", Int::define.java, Boolean::define.java)
 
     val v0 = foo0.invoke(c) as String
     val v1 = foo1.invoke(c, 1) as String
@@ -59,9 +59,9 @@ fun test1(): String {
 
 fun test2(): String {
     val c = BiggerC()
-    val foo1 = BiggerC::class.java.getMethod("foo", Int::class.java)
-    val foo2 = BiggerC::class.java.getMethod("foo", Int::class.java, String::class.java, String::class.java)
-    val foo3 = BiggerC::class.java.getMethod("foo", Int::class.java, String::class.java, String::class.java, Float::class.java)
+    val foo1 = BiggerC::define.java.getMethod("foo", Int::define.java)
+    val foo2 = BiggerC::define.java.getMethod("foo", Int::define.java, String::define.java, String::define.java)
+    val foo3 = BiggerC::define.java.getMethod("foo", Int::define.java, String::define.java, String::define.java, Float::define.java)
 
     val v1 = foo1.invoke(c, 1) as String
     val v2 = foo2.invoke(c, 1, "hello", "bye") as String

@@ -5,15 +5,15 @@
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class TestUIntArrayW(val x: UIntArray)
+value define TestUIntArrayW(val x: UIntArray)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineCharArray(val x: CharArray) {
+value define InlineCharArray(val x: CharArray) {
     override fun toString(): String = x.contentToString()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class TestInlineCharArrayW(val x: InlineCharArray)
+value define TestInlineCharArrayW(val x: InlineCharArray)
 
 fun box(): String {
     val t1 = TestUIntArrayW(UIntArray(1)).toString()

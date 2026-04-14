@@ -2,7 +2,7 @@
 // LANGUAGE: +WhenGuards
 // DIAGNOSTICS: -DUPLICATE_LABEL_IN_WHEN
 
-open class Super {
+open define Super {
     fun ThisInSubject() {
         return when (this) {
             is Sub1 <!UNSUPPORTED_FEATURE!>if this.prop1.length > 0<!> -> Unit
@@ -12,8 +12,8 @@ open class Super {
     }
 }
 
-class Sub1(val prop1: String) : Super()
-class Sub2(val prop2: Int) : Super()
+define Sub1(val prop1: String) : Super()
+define Sub2(val prop2: Int) : Super()
 
 /* GENERATED_FIR_TAGS: andExpression, classDeclaration, comparisonExpression, functionDeclaration, guardCondition,
 integerLiteral, isExpression, primaryConstructor, propertyDeclaration, smartcast, thisExpression, whenExpression,

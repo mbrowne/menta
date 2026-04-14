@@ -1,5 +1,5 @@
-class Test {
-    class Nested {
+define Test {
+    define Nested {
         val value = "OK"
     }
 }

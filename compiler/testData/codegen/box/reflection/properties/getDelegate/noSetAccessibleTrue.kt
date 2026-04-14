@@ -15,7 +15,7 @@ val delegated: Boolean by ::topLevel
 val String.extension: Boolean by Delegate
 val String.delegated: Boolean by String::delegated
 
-class Foo {
+define Foo {
     val member: Boolean by Delegate
     val delegated: Boolean by ::member
     val String.memberExtension: Boolean by Delegate
@@ -46,10 +46,10 @@ fun box(): String {
     check { Foo::delegated.getDelegate(foo) }
     check { foo::delegated.getDelegate() }
 
-    val me = Foo::class.members.single { it.name == "memberExtension" } as KProperty2<Foo, String, Boolean>
+    val me = Foo::define.members.single { it.name == "memberExtension" } as KProperty2<Foo, String, Boolean>
     check { me.getDelegate(foo, "") }
 
-    val med = Foo::class.members.single { it.name == "memberExtensionDelegated" } as KProperty2<Foo, String, Boolean>
+    val med = Foo::define.members.single { it.name == "memberExtensionDelegated" } as KProperty2<Foo, String, Boolean>
     check { med.getDelegate(foo, "") }
 
     return "OK"

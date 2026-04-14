@@ -1,14 +1,14 @@
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-79643
-class MyList {
+define MyList {
     operator fun iterator(): MyIterator = TODO()
 }
 
 interface One
 interface Two
 
-class MyIterator : One, Two
+define MyIterator : One, Two
 
 operator fun One.hasNext(): Boolean = TODO()
 operator fun Two.hasNext(): Boolean = TODO()

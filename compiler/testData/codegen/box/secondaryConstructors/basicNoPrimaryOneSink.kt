@@ -1,6 +1,6 @@
 internal var sideEffects: String = ""
 
-internal class A {
+internal define A {
     var prop: String = ""
     init {
         sideEffects += prop + "first"

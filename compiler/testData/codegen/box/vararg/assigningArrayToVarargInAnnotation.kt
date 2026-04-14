@@ -29,7 +29,7 @@ fun check(b: Boolean, message: String) {
     if (!b) throw RuntimeException(message)
 }
 
-annotation class Ann(vararg val s: String)
+annotation define Ann(vararg val s: String)
 
 @Ann(s = ["value1", "value2"])
 fun test1() {}

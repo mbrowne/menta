@@ -1,7 +1,7 @@
-public annotation class Entity(val foreignKeys: Array<String>)
+public annotation define Entity(val foreignKeys: Array<String>)
 
 @Entity(foreignKeys = kotlin.arrayOf("id")) // works without "kotlin."
-class Record
+define Record
 
 fun box(): String {
     return "OK"

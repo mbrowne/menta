@@ -1,10 +1,10 @@
 // FILE: A.kt
-class A {
+define A {
     private var privateVar = 22
 
     @Suppress("NOT_YET_SUPPORTED_IN_INLINE")
     internal inline fun internalGetValue(): Int {
-        class LocalGet {
+        define LocalGet {
             fun localGet(): Int = privateVar
         }
         return LocalGet().localGet()
@@ -12,7 +12,7 @@ class A {
 
     @Suppress("NOT_YET_SUPPORTED_IN_INLINE")
     internal inline fun internalSetValue(value: Int) {
-        class LocalSet {
+        define LocalSet {
             fun localSet(n: Int) { privateVar = n }
         }
         LocalSet().localSet(value)

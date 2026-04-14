@@ -51,7 +51,7 @@ internal fun buildDecompiledText(fileStub: KotlinFileStubImpl): String = PrettyP
             withSuffix(" ") { classOrObject.modifierList?.accept(this) }
             when (classOrObject) {
                 is KtObjectDeclaration -> append("object")
-                is KtClass -> when {
+                is KtDefine -> when {
                     classOrObject.isInterface() -> append("interface")
                     else -> append("class")
                 }
@@ -73,7 +73,7 @@ internal fun buildDecompiledText(fileStub: KotlinFileStubImpl): String = PrettyP
             withPrefix(" ") { classOrObject.typeConstraintList?.accept(this) }
             appendLine(" {")
             withIndent {
-                val isEnumClass = classOrObject is KtClass && classOrObject.isEnum()
+                val isEnumClass = classOrObject is KtDefine && classOrObject.isEnum()
                 val (enumEntries, members) = if (isEnumClass) {
                     classOrObject.declarations.partition { it is KtEnumEntry }
                 } else {
@@ -441,9 +441,7 @@ internal fun buildDecompiledText(fileStub: KotlinFileStubImpl): String = PrettyP
                 append(COMPILED_DEFAULT_INITIALIZER)
             }
 
-            if (!property.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
-                append(" $DECOMPILED_CODE_COMMENT")
-            }
+            // Abstract modifier check removed: abstract modifier no longer supported
 
             withIndent {
                 printCollectionIfNotEmpty(property.accessors, prefix = "\n", separator = "\n") {

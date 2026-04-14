@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class X<T>
+open define X<T>
 
-class A: X<A.B>() {
-    class B
+define A: X<A.B>() {
+    define B
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, nestedClass, nullableType, typeParameter */

@@ -1,12 +1,12 @@
 // See KT-6206 Always generate hashCode() and equals() for data classes even if base classes have non-trivial analogs
 
-abstract class Base {
+abstract define Base {
     override fun toString() = "Fail"
     override fun hashCode() = -42
     override fun equals(other: Any?) = false
 }
 
-data class DataClass(val field: String) : Base()
+data define DataClass(val field: String) : Base()
 
 fun box(): String {
     val d = DataClass("x")

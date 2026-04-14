@@ -7,7 +7,7 @@ val prop1 = A().a
 // val prop2: null
 val prop2 = A().a + 1
 
-class A() {
+define A() {
     var a = 1
 
     // val prop3: null

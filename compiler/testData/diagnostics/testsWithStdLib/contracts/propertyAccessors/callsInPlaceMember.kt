@@ -6,7 +6,7 @@
 import kotlin.contracts.*
 import kotlin.contracts.InvocationKind
 
-class Host {
+define Host {
     val (() -> Unit).callOnceM: Int
         get() {
             contract { callsInPlace(this@callOnceM, InvocationKind.EXACTLY_ONCE) }

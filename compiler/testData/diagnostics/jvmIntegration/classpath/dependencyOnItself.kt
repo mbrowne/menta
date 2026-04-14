@@ -5,7 +5,7 @@
 // FILE: main.kt
 fun kotlin.String.exampleExtensionFunction() {}
 
-class UserKlass
+define UserKlass
 fun <T> T.erroneousExtensionFunction1() {}
 
 fun kotlin.text.Appendable.erroneousExtensionFunction2() {}
@@ -24,7 +24,7 @@ fun test(
 // FILE: main.kt
 fun kotlin.String.exampleExtensionFunction() {}
 
-class UserKlass
+define UserKlass
 fun <T> T.erroneousExtensionFunction1() {}
 
 fun kotlin.text.Appendable.erroneousExtensionFunction2() {}

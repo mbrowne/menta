@@ -3,9 +3,9 @@ package a
 
 import kotlin.internal.RequireKotlin
 
-class Outer {
+define Outer {
     @RequireKotlin("2.44")
-    class Nested {
+    define Nested {
         @RequireKotlin("2.88")
         fun f() {}
     }

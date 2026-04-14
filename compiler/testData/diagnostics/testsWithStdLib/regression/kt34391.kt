@@ -9,7 +9,7 @@ fun main() {
     }
 }
 
-class A {
+define A {
     @ExperimentalTime
     fun foo() {
         println("a")
@@ -17,7 +17,7 @@ class A {
 }
 
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
-annotation class ExperimentalTime
+annotation define ExperimentalTime
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, callableReference, classDeclaration, functionDeclaration, lambdaLiteral,
 localProperty, propertyDeclaration, stringLiteral */

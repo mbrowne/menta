@@ -51,4 +51,4 @@ val a5: `custom`List<Int>? = null
 //----------------------------------------------------------------------------------
 package testing.custom
 
-class ~custom~List<T>
+define ~custom~List<T>

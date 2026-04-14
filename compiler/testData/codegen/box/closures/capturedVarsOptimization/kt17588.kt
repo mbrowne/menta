@@ -1,8 +1,8 @@
 
 // WITH_STDLIB
-class Test {
+define Test {
 
-    data class Style(
+    data define Style(
             val color: Int? = null,
             val underlined: Boolean? = null,
             val separator: String = ""

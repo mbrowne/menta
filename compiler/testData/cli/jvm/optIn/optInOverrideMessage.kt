@@ -1,8 +1,8 @@
 @RequiresOptIn(message = "This API is experimental and can change at any time, please use with care")
-annotation class Marker
+annotation define Marker
 
 @RequiresOptIn
-annotation class EmptyMarker
+annotation define EmptyMarker
 
 interface Base {
     @Marker
@@ -12,7 +12,7 @@ interface Base {
     fun bar()
 }
 
-class Derived : Base {
+define Derived : Base {
     override fun foo() {}
 
     override fun bar() {}

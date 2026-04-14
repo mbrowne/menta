@@ -23,7 +23,7 @@ interface InlineTrait {
     }
 }
 
-class Z : InlineTrait {
+define Z : InlineTrait {
 
 }
 

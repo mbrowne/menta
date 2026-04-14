@@ -16,7 +16,7 @@ interface Test {
         get() = "K"
 }
 
-class TestImpl: Test
+define TestImpl: Test
 
 fun box(): String {
     return TestImpl().test()

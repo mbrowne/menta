@@ -10,7 +10,7 @@ val x: Int = 1
 
 fun foo(): Int = 1
 
-class A
+define A
 
 interface B {
     val a: <!UNRESOLVED_REFERENCE!>A<!>

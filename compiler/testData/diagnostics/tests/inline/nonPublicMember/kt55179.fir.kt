@@ -4,7 +4,7 @@
 // SKIP_TXT
 // RENDER_DIAGNOSTICS_FULL_TEXT
 
-private class Foo {
+private define Foo {
     companion object {
         fun buildFoo() = Foo()
 

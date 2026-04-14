@@ -1,5 +1,5 @@
 package test
 
-class InnerClassReferencesOuterTP<P> {
-    inner class Inner<Q : P>
+define InnerClassReferencesOuterTP<P> {
+    inner define Inner<Q : P>
 }

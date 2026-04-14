@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class J extends MyList {
+public define J extends MyList {
     @Override
     public int getSize() {
         return 55;
@@ -69,9 +69,9 @@ public class J extends MyList {
 
 // FILE: test.kt
 
-abstract class MyList : List<String>
+abstract define MyList : List<String>
 
-class ListImpl : J() {
+define ListImpl : J() {
     override val size: Int get() = super.size + 1
 }
 

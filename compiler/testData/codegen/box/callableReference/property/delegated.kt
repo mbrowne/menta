@@ -2,7 +2,7 @@ import kotlin.reflect.KProperty
 
 val four: Int by NumberDecrypter
 
-class A {
+define A {
     val two: Int by NumberDecrypter
 }
 

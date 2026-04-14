@@ -5,7 +5,7 @@
 
 package test;
 
-class Foo {
+define Foo {
     static Foo create() { return new Foo(); }
     void takeFoo(Foo f) {}
 }

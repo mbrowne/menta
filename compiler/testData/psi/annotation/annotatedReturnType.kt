@@ -1,9 +1,9 @@
 // FILE: TypeAnno.kt
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnno
+annotation define TypeAnno
 
 // FILE: RegularAnno.kt
-annotation class RegularAnno
+annotation define RegularAnno
 
 // FILE: MyInterface.kt
 interface MyInterface {

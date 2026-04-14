@@ -2,7 +2,7 @@ object D {
     operator fun getValue(a: Any?, b: Any?): String = "OK"
 }
 
-enum class A {
+enum define A {
     GOO;
     val a by D
     val b = a

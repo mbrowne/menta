@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     var privateVar = 12
         private set
 

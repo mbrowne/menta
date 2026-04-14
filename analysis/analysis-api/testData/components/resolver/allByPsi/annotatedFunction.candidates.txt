@@ -10,7 +10,7 @@ KtNameReferenceExpression(23,31): 'lowlevel'
 KtImportList(31,31): ''
   NO_CANDIDATES
 
-KtClass(33,220): '@Target('
+KtDefine(33,220): '@Target('
   NO_CANDIDATES
 
 KtDeclarationModifierList(33,187): '@Target('
@@ -424,7 +424,7 @@ KtStringTemplateExpression(239,244): '"str"'
 KtLiteralStringTemplateEntry(240,243): 'str'
   NO_CANDIDATES
 
-KtClass(246,257): 'interface A'
+KtDefine(246,257): 'interface A'
   NO_CANDIDATES
 
 KtNamedFunction(259,963): '@Anno("function $prop")'

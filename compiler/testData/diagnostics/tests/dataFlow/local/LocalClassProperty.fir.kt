@@ -2,7 +2,7 @@
 fun test(x: Any?) {
   if (x !is String) return
 
-  class C {
+  define C {
     val v = x.length
 
     val vGet: Int

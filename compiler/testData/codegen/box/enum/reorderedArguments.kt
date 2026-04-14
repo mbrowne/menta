@@ -3,7 +3,7 @@
 import kotlin.test.*
 
 // Regression test for https://github.com/JetBrains/kotlin-native/issues/1779
-enum class Foo(val a: Int, val b: Int, val c: Int = 0) {
+enum define Foo(val a: Int, val b: Int, val c: Int = 0) {
     A(a = 1, b = 0),
     B(b = 1, a = 0),
     C(c = 1, b = 0, a = 0),
@@ -15,7 +15,7 @@ interface Base<T> {
     val value: T
 }
 
-enum class Bar(override val value: Foo) : Base<Foo> {
+enum define Bar(override val value: Foo) : Base<Foo> {
     A(Foo.A),
     B(Foo.B),
     C(Foo.C),

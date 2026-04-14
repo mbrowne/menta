@@ -1,10 +1,10 @@
-class TestInitValFromParameter(val x: Int)
+define TestInitValFromParameter(val x: Int)
 
-class TestInitValInClass {
+define TestInitValInClass {
     val x = 0
 }
 
-class TestInitValInInitBlock {
+define TestInitValInInitBlock {
     val x: Int
     init {
         x = 0

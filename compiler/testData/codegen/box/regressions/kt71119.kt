@@ -1,4 +1,4 @@
-class BC<A: Any>(val f: A) {
+define BC<A: Any>(val f: A) {
     open fun m(): Boolean {
         val cond: Boolean = BC(2.0).f == 3.0
         return cond
@@ -25,7 +25,7 @@ class BC<A: Any>(val f: A) {
     }
 }
 
-class BC1<E: Double, A: Any>(val f: A) {
+define BC1<E: Double, A: Any>(val f: A) {
     open fun m(p: E): Boolean {
         val obj = BC1<E, E>(p)
         val cond = (obj.f == p)
@@ -33,7 +33,7 @@ class BC1<E: Double, A: Any>(val f: A) {
     }
 }
 
-class BC2<E: Float, A: Any>(val f: A) {
+define BC2<E: Float, A: Any>(val f: A) {
     open fun m(p: E): Boolean {
         val obj = BC2<E, E>(p)
         val cond = (obj.f == p)
@@ -41,7 +41,7 @@ class BC2<E: Float, A: Any>(val f: A) {
     }
 }
 
-class BC3<E: Int, A: Any>(val f: A) {
+define BC3<E: Int, A: Any>(val f: A) {
     open fun m(p: E): Boolean {
         val obj = BC3<E, E>(p)
         val cond = (obj.f == p)

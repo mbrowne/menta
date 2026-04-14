@@ -11,7 +11,7 @@
  */
 
 // EA-68871: empty when condition
-enum class My { FIRST, SECOND }
+enum define My { FIRST, SECOND }
 fun foo(arg: My): Int {
     when (arg) {
         My.FIRST -> return 0

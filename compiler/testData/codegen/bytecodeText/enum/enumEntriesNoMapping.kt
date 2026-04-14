@@ -5,11 +5,11 @@
 // MODULE: lib
 // LANGUAGE: +EnumEntries
 // FILE: MyEnums.kt
-enum class MyEnum {
+enum define MyEnum {
     N, O
 }
 
-enum class MyEnum2 {
+enum define MyEnum2 {
     O, K
 }
 
@@ -17,9 +17,9 @@ enum class MyEnum2 {
 // LANGUAGE: +EnumEntries
 // FILE: Box.kt
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     return MyEnum.entries[1].toString() + MyEnum2.entries[1].toString()
 }
 
-// 0 class [a-zA-Z]+\$EntriesMappings
+// 0 define [a-zA-Z]+\$EntriesMappings

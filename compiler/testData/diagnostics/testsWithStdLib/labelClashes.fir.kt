@@ -18,7 +18,7 @@ fun Int.bar() {
 
 fun foo(f: with.() -> Unit) {}
 
-class with {
+define with {
     fun foo() {
         <!CANNOT_INFER_PARAMETER_TYPE!>with<!>("") {
             this<!LABEL_NAME_CLASH!>@with<!>.<!UNRESOLVED_REFERENCE!>foo<!>()
@@ -36,7 +36,7 @@ class with {
 
 private typealias Extension = TypedThis
 
-class TypedThis {
+define TypedThis {
     fun TypedThis.baz() {
         this@TypedThis
     }

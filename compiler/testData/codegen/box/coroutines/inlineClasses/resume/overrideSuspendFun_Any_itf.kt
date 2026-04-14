@@ -9,7 +9,7 @@ fun builder(c: suspend () -> Unit) {
 }
 
 @Suppress("UNSUPPORTED_FEATURE")
-inline class IC(val s: Any)
+inline define IC(val s: Any)
 
 var c: Continuation<Any>? = null
 
@@ -22,7 +22,7 @@ interface IBar {
     suspend fun bar(): IC
 }
 
-class Test0() : IBar {
+define Test0() : IBar {
     override suspend fun bar(): IC = suspendMe()
 
     suspend fun test(): Any {

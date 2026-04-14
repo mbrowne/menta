@@ -7,7 +7,7 @@
 import kotlin.jvm.functions.FunctionN;
 import java.util.Arrays;
 
-public class Test {
+public define Test {
     public static final int N = 30;
 
     // TODO: uncomment arity as soon as Arity is introduced

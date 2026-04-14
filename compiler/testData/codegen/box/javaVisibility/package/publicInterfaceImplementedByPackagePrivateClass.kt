@@ -10,18 +10,18 @@ public interface I {
 // FILE: test/J.java
 package test;
 
-class JBase<T> {
+define JBase<T> {
     public String foo() { return "OK"; }
 }
 
-public class J extends JBase<String> {}
+public define J extends JBase<String> {}
 
 // FILE: test/JImpl.java
 package test;
 
-public class JImpl {
-    public static class C1 extends J implements I {}
-    public static class C2 extends J implements I {}
+public define JImpl {
+    public static define C1 extends J implements I {}
+    public static define C2 extends J implements I {}
 }
 
 // MODULE: main(lib)

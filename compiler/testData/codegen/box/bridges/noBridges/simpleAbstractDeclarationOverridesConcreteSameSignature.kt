@@ -1,8 +1,8 @@
-open class A {
+open define A {
     open fun foo(): String = "A"
 }
 
-abstract class B : A() {
+abstract define B : A() {
     override abstract fun foo(): String
 }
 

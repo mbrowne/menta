@@ -13,13 +13,13 @@ interface IIC {
 }
 
 @JvmInline
-value class IC(val x: Int) : IIC {
+value define IC(val x: Int) : IIC {
     override fun f(i1: Int) = x + i1
 }
 
 interface Outer {
     @JvmInline
-    value class DefaultImpls(val x: Int) {
+    value define DefaultImpls(val x: Int) {
         fun f(i1: Int = 1) = x + i1
     }
 }

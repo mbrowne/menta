@@ -7,7 +7,7 @@ interface T1 {
     fun foo() {}
 }
 
-class T : T1 {
+define T : T1 {
     fun bar() {
         super<T1>.foo()
     }

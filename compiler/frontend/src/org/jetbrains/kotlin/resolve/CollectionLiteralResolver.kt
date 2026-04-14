@@ -19,7 +19,7 @@ import org.jetbrains.kotlin.diagnostics.Errors.*
 import org.jetbrains.kotlin.incremental.KotlinLookupLocation
 import org.jetbrains.kotlin.name.Name
 import org.jetbrains.kotlin.psi.KtAnnotationEntry
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtCollectionLiteralExpression
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
 import org.jetbrains.kotlin.resolve.BindingContext.COLLECTION_LITERAL_CALL
@@ -106,14 +106,14 @@ class CollectionLiteralResolver(
     }
 
     private fun computeKindOfContainer(expression: KtCollectionLiteralExpression): ContainerKind {
-        val parent = PsiTreeUtil.getParentOfType(expression, KtAnnotationEntry::class.java, KtClass::class.java, KtObjectDeclaration::class.java)
+        val parent = PsiTreeUtil.getParentOfType(expression, KtAnnotationEntry::class.java, KtDefine::class.java, KtObjectDeclaration::class.java)
         if (parent is KtObjectDeclaration) {
-            val containingAnnotation = PsiTreeUtil.getParentOfType(parent, KtClass::class.java)
+            val containingAnnotation = PsiTreeUtil.getParentOfType(parent, KtDefine::class.java)
             if (containingAnnotation != null && containingAnnotation.isAnnotation()) {
                 return CompanionOfAnnotation
             }
         }
-        return if (parent is KtAnnotationEntry || (parent is KtClass && parent.isAnnotation())) {
+        return if (parent is KtAnnotationEntry || (parent is KtDefine && parent.isAnnotation())) {
             AnnotationOrAnnotationClass
         } else {
             Other

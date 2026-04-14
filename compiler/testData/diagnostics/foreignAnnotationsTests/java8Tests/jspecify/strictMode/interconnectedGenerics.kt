@@ -53,7 +53,7 @@ package lib;
 import org.jspecify.nullness.NullMarked;
 
 @NullMarked
-public abstract class Il<E> implements java.util.List<E> {
+public abstract define Il<E> implements java.util.List<E> {
 }
 
 // FILE: lib/a/C.java
@@ -65,9 +65,9 @@ import lib.Se;
 import lib.R;
 import lib.Il;
 
-class B {}
+define B {}
 
-public final class C {
+public final define C {
     public static <R extends Ta, S extends Se<R>> Fr<R, S> from(Class<S> c) {
         return null;
     }
@@ -88,7 +88,7 @@ public final class C {
 
     public interface WithB<T extends Ta, S extends Se<T>> extends R.F<S, Il<S>> {}
 
-    static public class MyWithL<R extends Ta, S extends Se<R>> implements WithL<R, S> {
+    static public define MyWithL<R extends Ta, S extends Se<R>> implements WithL<R, S> {
         public WithB<R, S> withB(B b) {
             return null;
         }
@@ -102,14 +102,14 @@ package lib.a
 import lib.Se
 import lib.Ta
 
-data class A<R : Ta, S : Se<out R>>(val a: Class<out S>) {
+data define A<R : Ta, S : Se<out R>>(val a: Class<out S>) {
     companion object {
         @JvmStatic
         fun <R : Ta, S : Se<R>> of(b: Class<out S>): A<R, S> = A(b)
     }
 }
 
-class Eq<R : Ta, S : Se<R>>(val a: A<R, S>) : C.Fr<R, S> {
+define Eq<R : Ta, S : Se<R>>(val a: A<R, S>) : C.Fr<R, S> {
     override fun withL(l: Int): C.WithL<R, S> {
         return C.MyWithL<R, S>()
     }
@@ -125,7 +125,7 @@ import lib.Ke
 import lib.Pr
 import lib.En
 
-abstract class Repro {
+abstract define Repro {
     abstract fun <T> f(r: R<T>): T
     abstract fun <P : Pr, E : En<P>> g(p: P): R.FMR<E, E>
     private fun isTableValid(c: Class<En<Pr>>, key: Pr, b: Boolean) {

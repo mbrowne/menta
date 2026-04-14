@@ -13,7 +13,7 @@ interface Sub extends Super {
 
 // FILE: SubSub.kt
 
-class SubSub : Sub {
+define SubSub : Sub {
     override fun foo(<!PARAMETER_NAME_CHANGED_ON_OVERRIDE!>subName<!>: Int) {}
 }
 

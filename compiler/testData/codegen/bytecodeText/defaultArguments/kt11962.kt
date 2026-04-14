@@ -2,7 +2,7 @@
 
 fun foo(x: Int = 1) { }
 
-class FinalClass {
+define FinalClass {
     fun bar(x: Int = 2) { }
 }
 

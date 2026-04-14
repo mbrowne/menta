@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // JVM_TARGET: 1.8
 // FILE: box.kt
-class E : D()
+define E : D()
 
 fun box(): String =
     E().foo(0)
@@ -21,16 +21,16 @@ public interface B extends A {
 }
 
 // FILE: AImpl.java
-public abstract class AImpl implements A {}
+public abstract define AImpl implements A {}
 
 // FILE: BImpl.java
-public abstract class BImpl extends AImpl implements B {}
+public abstract define BImpl extends AImpl implements B {}
 
 // FILE: C.kt
-open class C : BImpl()
+open define C : BImpl()
 
 // FILE: D.java
-public class D extends C {
+public define D extends C {
     @Override
     public String foo(Integer value) {
         return "Fail: D";

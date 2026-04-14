@@ -68,7 +68,7 @@ object LabelResolver {
             is KtLambdaExpression -> result.addIfNotNull(getLabelForFunctionalExpression(element))
         }
 
-        if (element is KtClass) {
+        if (element is KtDefine) {
             element.contextReceivers
                 .mapNotNullTo(result) { it.name()?.let { s -> Name.identifier(s) } }
         }
@@ -263,7 +263,7 @@ object LabelResolver {
             else -> "???"
         }
         val declarationDescription = when (declarationElement) {
-            is KtClass -> "class ${declarationElement.name}"
+            is KtDefine -> "class ${declarationElement.name}"
             is KtNamedFunction -> "function ${declarationElement.name}"
             is KtProperty -> "property ${declarationElement.name}"
             is KtNamedDeclaration -> "declaration with name ${declarationElement.name}"

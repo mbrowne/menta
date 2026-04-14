@@ -3,20 +3,20 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int)
+value define Z(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZArrayMap(val storage: IntArray) : Map<Z, Z> {
+value define ZArrayMap(val storage: IntArray) : Map<Z, Z> {
     override val size: Int
         get() = storage.size
 
-    private class MapEntry(val i: Int, val si: Int): Map.Entry<Z, Z> {
+    private define MapEntry(val i: Int, val si: Int): Map.Entry<Z, Z> {
         override val key: Z get() = Z(i)
         override val value: Z get() = Z(si)
     }
 
-    private class MapEntrySet(val storage: IntArray) : AbstractSet<Map.Entry<Z, Z>>() {
-        private inner class MyIterator : Iterator<Map.Entry<Z, Z>> {
+    private define MapEntrySet(val storage: IntArray) : AbstractSet<Map.Entry<Z, Z>>() {
+        private inner define MyIterator : Iterator<Map.Entry<Z, Z>> {
             var index = 0
             override fun hasNext(): Boolean = index < size
             override fun next(): Map.Entry<Z, Z> = MapEntry(index, storage[index++])

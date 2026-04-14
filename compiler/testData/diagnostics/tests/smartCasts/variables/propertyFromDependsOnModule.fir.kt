@@ -3,9 +3,9 @@
 
 // MODULE: transitive
 // FILE: Transitive.kt
-annotation class Ann
+annotation define Ann
 
-class Transitive(
+define Transitive(
     val finalConstructorProperty: Any = "",
     @get:Ann val annotatedConstructorProperty: Any = "",
 ) {
@@ -18,7 +18,7 @@ class Transitive(
 
 // MODULE: direct()()(transitive)
 // FILE: Direct.kt
-class Direct(
+define Direct(
     val finalConstructorProperty: Any = "",
     @get:Ann val annotatedConstructorProperty: Any = "",
 ) {
@@ -29,7 +29,7 @@ class Direct(
 }
 
 // MODULE: app()()(direct)
-class Same(
+define Same(
     val finalConstructorProperty: Any = "",
     @get:Ann val annotatedConstructorProperty: Any = "",
 ) {

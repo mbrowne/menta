@@ -13,7 +13,7 @@ fun checkNotEqual(x: Any, y: Any) {
     if (x == y || y == x) throw AssertionError("$x and $y should NOT be equal")
 }
 
-class V {
+define V {
     fun target(x: String = "x", y: String = "y", z: String = "z"): String = x + y + z
 }
 

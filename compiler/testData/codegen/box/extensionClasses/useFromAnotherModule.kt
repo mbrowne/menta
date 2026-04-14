@@ -8,10 +8,10 @@
 
 package a
 
-class O(val o: String)
+define O(val o: String)
 
 context(O)
-class OK(val k: String) {
+define OK(val k: String) {
     val result = o + k
 }
 

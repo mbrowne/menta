@@ -2,8 +2,8 @@
 // MODULE: lib
 // FILE: Delegation.java
 
-public class Delegation {
-    public static class ReturnNull {
+public define Delegation {
+    public static define ReturnNull {
         public String foo() {
             return null;
         }
@@ -17,11 +17,11 @@ interface Tr {
     fun foo(): String
 }
 
-class DelegateTo : Delegation.ReturnNull(), Tr {
+define DelegateTo : Delegation.ReturnNull(), Tr {
     override fun foo() = super<Delegation.ReturnNull>.foo()
 }
 
-class DelegateFrom : Tr by DelegateTo()
+define DelegateFrom : Tr by DelegateTo()
 
 fun box(): String {
     try {

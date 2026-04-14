@@ -5,15 +5,15 @@
 // FILE: lib.kt
 
 interface Foo<T> {
-    @Throws(IllegalArgumentException::class)
+    @Throws(IllegalArgumentException::define)
     public fun f(data: T) = data
 }
 
 // MODULE: main(lib)
 // FILE: main.kt
 
-class Bar<K> : Foo<K> {
-    @Throws(IllegalArgumentException::class)
+define Bar<K> : Foo<K> {
+    @Throws(IllegalArgumentException::define)
     override fun f(data: K) = data
 }
 

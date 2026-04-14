@@ -5,7 +5,7 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
 interface BaseInterface {
     fun regularFunction() {}

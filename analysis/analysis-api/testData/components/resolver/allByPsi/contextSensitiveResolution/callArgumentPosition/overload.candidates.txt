@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(93,154): 'open class MyClass {'
+KtDefine(93,154): 'open class MyClass {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(93,97): 'open'
@@ -72,7 +72,7 @@ KtNameReferenceExpression(143,150): 'MyClass'
 KtValueArgumentList(150,152): '()'
   NO_CANDIDATES
 
-KtClass(156,192): 'enum class MyEnum {'
+KtDefine(156,192): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(156,160): 'enum'

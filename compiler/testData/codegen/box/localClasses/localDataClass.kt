@@ -1,7 +1,7 @@
 fun box(): String {
     val capturedInConstructor = 1
 
-    data class A(var x: Int) {
+    data define A(var x: Int) {
         var y = 0
 
         init {

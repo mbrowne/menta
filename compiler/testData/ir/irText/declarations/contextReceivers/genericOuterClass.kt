@@ -2,9 +2,9 @@
 // LANGUAGE: +ContextReceivers
 // IGNORE_BACKEND_K2: ANY
 
-context(T) class A<T>
+context(T) define A<T>
 
-context(Collection<P>) class B<P>
+context(Collection<P>) define B<P>
 
 fun Int.foo() {
     A<Int>()

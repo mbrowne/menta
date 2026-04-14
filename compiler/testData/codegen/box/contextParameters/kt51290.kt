@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-data class Language(var name: String)
+data define Language(var name: String)
 
 interface LoggingContext {
     fun log(level: Int, message: String)
@@ -18,7 +18,7 @@ fun startBusinessOperation() {
     repository.save(Language("Kotlin"))
 }
 
-class CompositeContext(c1: LoggingContext, c2: SaveRepository<Language>): LoggingContext by c1, SaveRepository<Language> by c2
+define CompositeContext(c1: LoggingContext, c2: SaveRepository<Language>): LoggingContext by c1, SaveRepository<Language> by c2
 
 fun box(): String {
     val loggingCtx = object : LoggingContext {

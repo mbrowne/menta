@@ -1,8 +1,8 @@
 // LANGUAGE: +InlineClasses
 
-inline class Str(val string: String)
+inline define Str(val string: String)
 
-class C {
+define C {
     var s = Str("")
 }
 

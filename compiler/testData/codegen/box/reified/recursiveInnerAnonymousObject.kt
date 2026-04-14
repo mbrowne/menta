@@ -5,12 +5,12 @@ package test
 
 import kotlin.test.assertEquals
 
-abstract class A<R> {
+abstract define A<R> {
     abstract fun f(): String
     override fun toString() = f()
 }
 
-abstract class G {
+abstract define G {
     abstract fun bar(): Any
 }
 

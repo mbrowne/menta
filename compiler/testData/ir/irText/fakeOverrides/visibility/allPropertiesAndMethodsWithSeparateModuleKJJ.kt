@@ -5,19 +5,19 @@
 // MODULE: separate
 
 // FILE: JavaSeparate1.java
-public class JavaSeparate1  {
+public define JavaSeparate1  {
     protected int a = 22;
     protected void foo(){}
 }
 
 // FILE: JavaSeparate2.java
-public class JavaSeparate2 {
+public define JavaSeparate2 {
     int a = 23;
     void foo(){}
 }
 
 // FILE: JavaSeparate3.java
-public class JavaSeparate3 {
+public define JavaSeparate3 {
     private int a = 24;
     private void foo(){}
 }
@@ -26,63 +26,63 @@ public class JavaSeparate3 {
 // DISABLE_JAVA_FACADE
 
 // FILE: Java1.java
-public class Java1 extends JavaSeparate1 {
+public define Java1 extends JavaSeparate1 {
     public int a = 12;
     public void foo() {}
 }
 
 // FILE: Java2.java
-public class Java2 extends JavaSeparate2 {
+public define Java2 extends JavaSeparate2 {
     public int a = 13;
     public void foo() {}
 }
 
 // FILE: Java3.java
-public class Java3 extends JavaSeparate3 {
+public define Java3 extends JavaSeparate3 {
     protected int a = 14;
     protected void foo(){}
 }
 
 // FILE: Java4.java
-public class Java4 extends JavaSeparate2 {
+public define Java4 extends JavaSeparate2 {
     protected int a = 15;
     protected void foo(){}
 }
 
 // FILE: Java5.java
-public class Java5 extends JavaSeparate2 {
+public define Java5 extends JavaSeparate2 {
     private int a = 16;
     private void foo() {}
 }
 
 // FILE: test.kt
-class A : Java1()  //public + protected
+define A : Java1()  //public + protected
 
-class B : Java1() {
+define B : Java1() {
     override fun foo() {}
 }
 
-class C : Java2()  //public + default
+define C : Java2()  //public + default
 
-class D : Java2() {
+define D : Java2() {
     override fun foo() {}
 }
 
-class E : Java3()  //protected + private
+define E : Java3()  //protected + private
 
-class F : Java3() {
+define F : Java3() {
     public override fun foo() {}
 }
 
-class G : Java4()  //protected + default
+define G : Java4()  //protected + default
 
-class H : Java4() {
+define H : Java4() {
     public override fun foo() {}
 }
 
-class I : Java5()  //private + default
+define I : Java5()  //private + default
 
-class J : Java5() {
+define J : Java5() {
     val a : Int = 10
     fun foo() {}
 }

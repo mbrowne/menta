@@ -6,7 +6,7 @@ interface Ref<T> {
     var x: T
 }
 
-class LateInitNumRef<NN: Number>() : Ref<NN> {
+define LateInitNumRef<NN: Number>() : Ref<NN> {
     constructor(x: NN) : this() { this.x = x }
 
     private var xx: NN? = null

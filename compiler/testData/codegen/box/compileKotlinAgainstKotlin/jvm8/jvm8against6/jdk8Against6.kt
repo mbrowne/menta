@@ -4,7 +4,7 @@
 // MODULE: lib
 // FILE: A.kt
 import java.util.*
-class Jdk6List<F> : AbstractList<F>() {
+define Jdk6List<F> : AbstractList<F>() {
     override fun get(index: Int): F {
         return "OK" as F
     }

@@ -1,6 +1,6 @@
 package test
 
-class UnderscoreParameterName {
+define UnderscoreParameterName {
     var foo: String?
         get() = null
         set(_) {}

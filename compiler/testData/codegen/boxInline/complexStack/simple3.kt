@@ -4,7 +4,7 @@ package test
 
 inline fun foo(x: String, y: String) = x + y
 
-class A {
+define A {
     fun test(s: String) = s
 }
 

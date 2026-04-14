@@ -29,7 +29,7 @@ inline fun <reified T> returnTypeOf(block: () -> T) =
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class J {
+public define J {
     public static int primitive() { return 0; }
     public static Integer wrapper() { return 0; }
 

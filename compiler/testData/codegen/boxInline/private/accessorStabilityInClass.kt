@@ -2,7 +2,7 @@
 
 package test
 
-class A {
+define A {
     fun call() = inlineFun2 { stub() }
 
     internal inline fun inlineFun2(p: () -> Unit): String {

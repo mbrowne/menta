@@ -3,7 +3,7 @@
 // FILE: 1.kt
 package test
 
-annotation class FieldAnnotation
+annotation define FieldAnnotation
 
 inline fun reproduceIssue(crossinline s: () -> String): String {
     val obj = object {
@@ -12,7 +12,7 @@ inline fun reproduceIssue(crossinline s: () -> String): String {
             return annotatedField + s()
         }
     }
-    val annotatedMethod = obj::class.java.declaredFields.first { it.name == "annotatedField" }
+    val annotatedMethod = obj::define.java.declaredFields.first { it.name == "annotatedField" }
     if (annotatedMethod.annotations.isEmpty()) return "fail: can't find annotated field"
     return obj.method()
 }

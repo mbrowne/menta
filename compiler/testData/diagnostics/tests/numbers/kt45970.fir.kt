@@ -39,7 +39,7 @@ fun local() {
     var h_2: Long = 1 + 2
 }
 
-class Member {
+define Member {
     val a_1: Byte = 1
     var a_2: Byte = 1
     val b_1: Short = 1

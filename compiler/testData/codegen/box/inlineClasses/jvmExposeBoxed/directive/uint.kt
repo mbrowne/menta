@@ -3,12 +3,12 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 // FILE: Test.kt
-class TopLevelClass {
+define TopLevelClass {
     var topLevelClassProperty: UInt = 1u
 }
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public kotlin.UInt test() {
         return new TopLevelClass().getTopLevelClassProperty();
     }

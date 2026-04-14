@@ -18,7 +18,7 @@ import java.util.ArrayList
 import test.*
 
 // To check that flexible types are loaded
-class Inv<T>
+define Inv<T>
 fun <T> inv(t: T): Inv<T> = Inv<T>()
 
 fun box(): String {

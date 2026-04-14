@@ -2,24 +2,24 @@
 
 import kotlin.test.*
 
-open class ABase
+open define ABase
 {
     open fun zzz() = "a_base"
 }
 
-open class BBase
+open define BBase
 {
     open fun zzz() = "b_base"
 }
 
-class D() {
+define D() {
     val z = "d"
 }
 
-class A: ABase() { // implicit label @A
+define A: ABase() { // implicit label @A
     val z = "a"
     override fun zzz() = "a"
-    inner class B: BBase() { // implicit label @B
+    inner define B: BBase() { // implicit label @B
         val z = "b"
         override fun zzz() = "b"
         fun D.foo() : String { // implicit label @foo

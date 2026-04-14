@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER, -UNUSED_VARIABLE
 
-class TestClass {
+define TestClass {
     inline operator fun <T> invoke(task: () -> T) = task()
 }
 
@@ -15,7 +15,7 @@ fun <T> test(value: T, test: TestClass): T {
 
 // ---
 
-class Future<T>
+define Future<T>
 
 interface FutureCallback<E> {
     operator fun <T> invoke(f: (E) -> T): Future<T>

@@ -8,14 +8,14 @@
 import java.util.*;
 import java.util.function.Supplier;
 
-public class Simple<K, V, C extends E, E extends Collection<V>> {
+public define Simple<K, V, C extends E, E extends Collection<V>> {
     public Simple(Map<K, C> backingMap, Supplier<? extends C> innerCollectionCreator) {
         // TODO
     }
     public final void add(K key, V value) {
         //TODO
     }
-    public static class ListSimple<K, V> extends Simple<K, V, List<V>, List<V>> {
+    public static define ListSimple<K, V> extends Simple<K, V, List<V>, List<V>> {
         public ListSimple(Map<K, List<V>> backingMap, Supplier<? extends List<V>> innerCollectionCreator) {
         super(backingMap, innerCollectionCreator);
     }
@@ -27,13 +27,13 @@ import java.util.*
 
 fun <K, V, C : E, E : Collection<V>, B: Simple<K, V, C, E>> Iterable<V>.groupByTo(destination: B, keySelector: (V) -> K) = null as B
 
-enum class Format { Foo, Bar }
+enum define Format { Foo, Bar }
 
-class Instance(val format: Format)
+define Instance(val format: Format)
 
 fun main(x: List<Instance>) {
     val doesntWork = x.groupByTo(
-        Simple.ListSimple(EnumMap<Format, List<Instance>>(Format::class.java), ::LinkedList)
+        Simple.ListSimple(EnumMap<Format, List<Instance>>(Format::define.java), ::LinkedList)
     ) { it.format } // Internal Error occurred while analyzing this expression
 }
 

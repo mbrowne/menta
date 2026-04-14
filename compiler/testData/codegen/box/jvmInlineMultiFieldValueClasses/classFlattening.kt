@@ -6,13 +6,13 @@
 // FIR_IDENTICAL
 
 @JvmInline
-value class IC(val x: UInt)
+value define IC(val x: UInt)
 
 fun ic(x: IC) = x.x
 fun ic(x: UInt) = ic(IC(x))
 
 @JvmInline
-value class SimpleMfvc(val x: UInt, val y: IC, val z: String) {
+value define SimpleMfvc(val x: UInt, val y: IC, val z: String) {
     companion object {
         val SimpleMfvc.a1: SimpleMfvc
             get() = this
@@ -71,15 +71,15 @@ value class SimpleMfvc(val x: UInt, val y: IC, val z: String) {
 fun smfvc(ic: IC, x: SimpleMfvc, ic1: UInt) = ic(ic) + x.x + ic(x.y) + ic1
 
 @JvmInline
-value class Wrapper(val simpleMfvc: SimpleMfvc)
+value define Wrapper(val simpleMfvc: SimpleMfvc)
 fun smfvc(ic: IC, x: Wrapper, ic1: UInt) = smfvc(ic, x.simpleMfvc, ic1)
 
 @JvmInline
-value class GreaterMfvc(val x: SimpleMfvc, val y: IC, val z: SimpleMfvc)
+value define GreaterMfvc(val x: SimpleMfvc, val y: IC, val z: SimpleMfvc)
 
 fun gmfvc(ic: IC, x: GreaterMfvc, ic1: UInt) = smfvc(ic, x.x, 0U) + ic(x.y) + smfvc(IC(0U), x.z, ic1)
 
-class Extensions {
+define Extensions {
     val SimpleMfvc.x1: SimpleMfvc
         get() = this
     private val SimpleMfvc.private_: SimpleMfvc
@@ -102,7 +102,7 @@ class Extensions {
     }
 }
 
-class Contexts {
+define Contexts {
     context(b@SimpleMfvc)
     val x1: SimpleMfvc
         get() = this@b

@@ -1,5 +1,5 @@
 // FILE: A.kt
-open class A {
+open define A {
     private fun onlyInternal() = "onlyInternal"
     private fun internalAndPublic() = "internalAndPublic"
     private fun internalAndProtected() = "internalAndProtected"

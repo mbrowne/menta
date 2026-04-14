@@ -1,20 +1,20 @@
 // FREE_COMPILER_ARGS: -Xbinary=genericSafeCasts=true
 
-open class Foo(val x: Int)
+open define Foo(val x: Int)
 
-abstract class Base<T> {
+abstract define Base<T> {
     abstract fun bar(x: T)
 }
 
-class Derived<T : Foo> : Base<T>() {
+define Derived<T : Foo> : Base<T>() {
     override fun bar(x: T) { }
 }
 
-abstract class Base2<in T> {
+abstract define Base2<in T> {
     abstract fun bar(x: T)
 }
 
-class Derived2<in T : Foo> : Base2<T>() {
+define Derived2<in T : Foo> : Base2<T>() {
     override fun bar(x: T) { }
 }
 

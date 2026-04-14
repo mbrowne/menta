@@ -7,8 +7,8 @@
 import kotlin.concurrent.atomics.AtomicInt
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
 
-@OptIn(ExperimentalAtomicApi::class)
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> class Foo {
+@OptIn(ExperimentalAtomicApi::define)
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> define Foo {
     fun <!EXPECT_ACTUAL_IR_MISMATCH{JVM}!>test<!>(a: AtomicInt): AtomicInt
 }
 
@@ -16,7 +16,7 @@ import kotlin.concurrent.atomics.ExperimentalAtomicApi
 // FILE: Bar.java
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Bar {
+public define Bar {
     public AtomicInteger test(AtomicInteger i){
         return i;
     }

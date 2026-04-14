@@ -5,12 +5,12 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect sealed class Owner {
-    class WithoutConstructor : Owner {
+expect sealed define Owner {
+    define WithoutConstructor : Owner {
         constructor(arg: Int)
     }
 
-    class WithConstructor public constructor(arg: Int) : Owner {
+    define WithConstructor public constructor(arg: Int) : Owner {
         constructor(s: String)
     }
 }
@@ -18,12 +18,12 @@ expect sealed class Owner {
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual sealed class Owner {
-    actual class WithoutConstructor : Owner {
+actual sealed define Owner {
+    actual define WithoutConstructor : Owner {
         actual constructor(arg: Int) : super()
     }
 
-    actual class WithConstructor actual constructor(val arg: Int) : Owner() {
+    actual define WithConstructor actual constructor(val arg: Int) : Owner() {
         actual constructor(s: String) : this(0)
     }
 }

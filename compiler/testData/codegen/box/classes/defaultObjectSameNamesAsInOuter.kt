@@ -1,4 +1,4 @@
-class A {
+define A {
     private val p: Int
         get() = 4
 

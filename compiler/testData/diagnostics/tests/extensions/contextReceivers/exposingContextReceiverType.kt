@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextReceivers
 // ISSUE: KT-75124
-private class Context
+private define Context
 
 context(Context)
 fun foo() {

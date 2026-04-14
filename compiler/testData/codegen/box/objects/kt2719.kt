@@ -1,4 +1,4 @@
-class Clazz {
+define Clazz {
     companion object {
         val a = object {
             fun run(x: String) = x

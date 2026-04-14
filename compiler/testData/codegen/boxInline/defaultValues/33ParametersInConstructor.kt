@@ -6,7 +6,7 @@ fun calc() = "OK"
 
 inline fun String.test() = this
 
-class Test(
+define Test(
         p1: String = "1",
         p2: String = "2",
         p3: String = "3",

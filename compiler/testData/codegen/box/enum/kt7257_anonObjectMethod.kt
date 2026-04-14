@@ -1,5 +1,5 @@
 
-enum class X {
+enum define X {
     B {
         val value2 = "K"
 

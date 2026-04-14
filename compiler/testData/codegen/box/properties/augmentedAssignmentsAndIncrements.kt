@@ -8,7 +8,7 @@ var b: Int
         a = v
     }
 
-class A {
+define A {
     var c: Int
         get() = a
         set(v: Int) {

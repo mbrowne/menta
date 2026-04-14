@@ -16,12 +16,12 @@ interface Base: Super {
     fun b(): Int
 }
 
-class Impl: Base {
+define Impl: Base {
     override fun a(): Int = 42
     override fun b(): Int = 43
 }
 
-class MyException(override val message: String?): Throwable()
+define MyException(override val message: String?): Throwable()
 
 fun MyException(message: String?, cause: Throwable?): MyException {
     return MyException(message).also { it.initCause(cause) }

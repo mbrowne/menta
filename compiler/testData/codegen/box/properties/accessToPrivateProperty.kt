@@ -1,5 +1,5 @@
 
-class A {
+define A {
     private var foo = 1
         get() {
             return 1
@@ -11,7 +11,7 @@ class A {
     }
 }
 
-class B {
+define B {
     private val foo = 1
         get
 
@@ -20,7 +20,7 @@ class B {
     }
 }
 
-class C {
+define C {
     private var foo = 1
         get
         set
@@ -31,7 +31,7 @@ class C {
     }
 }
 
-class D {
+define D {
     private var foo = 1
         set(i: Int) {
             field = i + 1

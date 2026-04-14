@@ -3,7 +3,7 @@
 // DONT_TARGET_EXACT_BACKEND: JS_IR
 // ^ This test is very flaky on JS due to a Node.js bug https://github.com/nodejs/node/issues/45410
 // FILE: test.kt
-class A {
+define A {
     suspend fun foo() {}
     suspend fun foo1(l: Long) {
         foo()

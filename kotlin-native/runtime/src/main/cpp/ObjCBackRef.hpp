@@ -51,7 +51,7 @@ public:
     // The result is only safe to use, when reference count is >0, or there is a guarantee
     // that the object is in roots in some other way (e.g. on stack)
     KRef ref() const noexcept {
-        // In objc import if KtClass inherits from ObjCClass
+        // In objc import if KtDefine inherits from ObjCClass
         // calling [self retain] inside [ObjCClass dealloc] and then passing the retained
         // reference back to Kotlin will lead to
         // this->ref() being called after this->~ObjCBackRef()
@@ -65,7 +65,7 @@ public:
 
     // Increment refcount.
     void retain() noexcept {
-        // In objc import if KtClass inherits from ObjCClass
+        // In objc import if KtDefine inherits from ObjCClass
         // calling [self retain] inside [ObjCClass dealloc] will lead to
         // this->retain() being called after this->~ObjCBackRef()
         if (auto ref = raw_) {
@@ -76,7 +76,7 @@ public:
 
     // Decrement refcount.
     void release() noexcept {
-        // In objc import if KtClass inherits from ObjCClass
+        // In objc import if KtDefine inherits from ObjCClass
         // calling [self release] inside [ObjCClass dealloc] will lead to
         // this->release() being called after this->~ObjCBackRef()
         if (auto ref = raw_) {
@@ -95,8 +95,8 @@ public:
             return false;
         }
         CalledFromNativeGuard threadStateGuard;
-        // In objc export if ObjCClass is objc_setAssociatedObject with KtClass
-        // calling [KtClass _tryRetain] inside [ObjCClass dealloc] will lead to
+        // In objc export if ObjCClass is objc_setAssociatedObject with KtDefine
+        // calling [KtDefine _tryRetain] inside [ObjCClass dealloc] will lead to
         // this->tryRetain() being called after this->~ObjCBackRef()
         if (auto ref = raw_) {
             ObjHolder holder;

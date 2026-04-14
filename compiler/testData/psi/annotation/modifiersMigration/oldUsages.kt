@@ -1,11 +1,11 @@
 // COMPILATION_ERRORS
 
-@inline @tailrec class A {
+@inline @tailrec define A {
     @inline(1) fun foo() {
 
     }
 
     kotlin.inline fun bar() {
-        @kotlin.data() class Local
+        @kotlin.data() define Local
     }
 }

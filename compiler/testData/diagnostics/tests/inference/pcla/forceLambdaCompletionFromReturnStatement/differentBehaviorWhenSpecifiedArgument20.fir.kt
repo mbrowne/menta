@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -PCLAEnhancementsIn21
 
-class Container<T> {
+define Container<T> {
     fun produce(): T = null!!
 }
 
-class TypePair<L, R> // no variance
+define TypePair<L, R> // no variance
 
 fun <A, B: A> func(lambda: (Container<A>) -> (Container<B>) -> Unit): TypePair<A, B> = null!!
 
 fun <T> consume(arg: T) {}
 
-open class Parent
-open class Child: Parent()
+open define Parent
+open define Child: Parent()
 
 fun main() {
     func /* Bv <: Av */ { containerA/*: Container<Av> */ ->

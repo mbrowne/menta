@@ -14,13 +14,13 @@ import java.lang.annotation.RetentionPolicy;
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class O
-class K
+define O
+define K
 
-@JavaAnn(O::class, K::class) class MyClass
+@JavaAnn(O::define, K::define) define MyClass
 
 fun box(): String {
-    val args = MyClass::class.java.getAnnotation(JavaAnn::class.java).value
+    val args = MyClass::define.java.getAnnotation(JavaAnn::define.java).value
     val argName1 = args[0].java.simpleName ?: "fail 1"
     val argName2 = args[1].java.simpleName ?: "fail 2"
     return argName1 + argName2

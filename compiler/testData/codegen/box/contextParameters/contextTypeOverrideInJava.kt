@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import org.KotlinInterfaceWithContextType;
 
-public class JavaClass implements KotlinInterfaceWithContextType {
+public define JavaClass implements KotlinInterfaceWithContextType {
     @Override
     public String foo(Function2<? super String, ? super String, String> a) {
         return a.invoke("O", "K");

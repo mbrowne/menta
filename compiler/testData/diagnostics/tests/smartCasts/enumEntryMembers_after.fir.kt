@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // SKIP_TXT
 
-enum class Message(val text: String?) {
+enum define Message(val text: String?) {
     HELLO("hello"),
     WORLD("world"),
     NOTHING(null)

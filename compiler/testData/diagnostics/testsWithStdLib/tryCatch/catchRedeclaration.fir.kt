@@ -2,7 +2,7 @@
 // WITH_NEW_INFERENCE
 // SKIP_TXT
 
-class MyException : Exception() {
+define MyException : Exception() {
     val myField = "field"
 
     fun myFun() {}

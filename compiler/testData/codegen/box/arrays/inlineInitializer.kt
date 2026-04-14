@@ -1,4 +1,4 @@
-class Foo(
+define Foo(
     val width: Int,
     val height: Int,
     // This function tells the constructor which cells are alive

@@ -4,7 +4,7 @@ fun interface Foo<A, B> {
 
 typealias TA<K> = Foo<Int, K>
 
-class Bar<X, Y>(val y: Y) {
+define Bar<X, Y>(val y: Y) {
     fun foo(x: X): Y = y
 }
 

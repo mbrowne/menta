@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class FieldValue<T: String>(val value: T)
+value define FieldValue<T: String>(val value: T)
 
-enum class RequestFields {
+enum define RequestFields {
     ENUM_ONE
 }
 
-class RequestInputParameters(
+define RequestInputParameters(
     private val backingMap: Map<RequestFields, FieldValue<String>>
 ) : Map<RequestFields, FieldValue<String>> by backingMap
 

@@ -7,7 +7,7 @@ package test;
 
 import java.lang.annotation.*;
 
-public class AnnotationTargets {
+public define AnnotationTargets {
 
     @kotlin.annotation.Target(allowedTargets = kotlin.annotation.AnnotationTarget.TYPE)
     public @interface baseButKotlinType {
@@ -80,10 +80,10 @@ package test
 import test.AnnotationTargets.*
 
 @baseButKotlinType @metaButKotlinFun @typeButKotlinParameter @konstructorButKotlinGetter @fieldannButKotlinMeta
-annotation class KmetaButKotlinFun
+annotation define KmetaButKotlinFun
 
 @noneButKotlinClass @baseButKotlinType @metaButKotlinFun @typeButKotlinParameter @methodButKotlinMultiple @multipleButKotlinProperty <!WRONG_ANNOTATION_TARGET!>@localButKotlinNone<!>
-class KClass(
+define KClass(
     @baseButKotlinType @fieldannButKotlinMeta @parameterButKotlinFile @multipleButKotlinProperty val y: <!WRONG_ANNOTATION_TARGET!>@baseButKotlinType<!> <!WRONG_ANNOTATION_TARGET!>@typeButKotlinParameter<!> Int
 ) {
     @baseButKotlinType @multipleButKotlinProperty @fieldannButKotlinMeta <!WRONG_ANNOTATION_TARGET!>@localButKotlinNone<!>

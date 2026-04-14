@@ -13,9 +13,9 @@ import kotlin.test.*
 interface A
 interface B
 
-open class C : A, B
+open define C : A, B
 
-class D : C()
+define D : C()
 
 fun box(): String {
     assertEquals(false, isInstance<A>(0))

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FIR_DUMP
 
-enum class E {
+enum define E {
     <!DECLARATION_OF_ENUM_ENTRY_ENTRIES_WARNING!>entries<!>, Entries;
 
     fun foo() {

@@ -3,11 +3,11 @@
 
 const val z = "OK"
 
-annotation class A(val value: String = z)
+annotation define A(val value: String = z)
 
 @A
-class Test
+define Test
 
 fun box(): String {
-    return Test::class.java.getAnnotation(A::class.java).value
+    return Test::define.java.getAnnotation(A::define.java).value
 }

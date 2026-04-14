@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: box.kt
 
-class C {
+define C {
     val x: Int? by J().s::length
 }
 
@@ -11,6 +11,6 @@ fun box(): String =
 
 // FILE: J.java
 
-public class J {
+public define J {
     public final String s = "";
 }

@@ -1,7 +1,7 @@
-open class C<T> {
-    inner class A<U>(val x: T?, val y: U)
+open define C<T> {
+    inner define A<U>(val x: T?, val y: U)
 
-    class D : C<Nothing>() {
+    define D : C<Nothing>() {
         fun f() = A<String>(null, "OK")
     }
 }

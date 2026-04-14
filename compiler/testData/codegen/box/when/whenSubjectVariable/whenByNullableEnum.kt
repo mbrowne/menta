@@ -3,7 +3,7 @@
 
 import kotlin.test.assertEquals
 
-enum class Season {
+enum define Season {
     WINTER,
     SPRING,
     SUMMER,

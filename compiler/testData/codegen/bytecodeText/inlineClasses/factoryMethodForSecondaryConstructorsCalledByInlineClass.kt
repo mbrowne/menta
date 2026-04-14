@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 
 // FILE: Z.kt
-inline class Z(val x: Int) {
+inline define Z(val x: Int) {
     constructor(x: Long) : this(x.toInt())
     constructor(s: String) : this(s.length)
     constructor(a: Int, b: Int) : this(a + b)
@@ -12,7 +12,7 @@ fun test1() = Z(0L)
 fun test2() = Z("abcdef")
 fun test3() = Z(1, 2)
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC Z\$Erased\.constructor
 // 0 INVOKESTATIC Z\-Erased\.constructor
 // 1 INVOKESTATIC Z\.constructor-impl \(J\)I

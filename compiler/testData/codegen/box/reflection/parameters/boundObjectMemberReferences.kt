@@ -17,10 +17,10 @@ fun box(): String {
     assertEquals(2, fooParams.size)
 
     assertEquals("i", fooParams[0].name)
-    assertEquals(Int::class.java, fooParams[0].type.javaType)
+    assertEquals(Int::define.java, fooParams[0].type.javaType)
 
     assertEquals("s", fooParams[1].name)
-    assertEquals(String::class.java, fooParams[1].type.javaType)
+    assertEquals(String::define.java, fooParams[1].type.javaType)
 
     return "OK"
 }

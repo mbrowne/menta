@@ -4,7 +4,7 @@ fun Int.get(): Int {
 }
 
 @CompileTimeCalculation
-class A(val length: Int) {
+define A(val length: Int) {
     fun String.hasRightLength(): Boolean {
         return this@hasRightLength.length == this@A.length
     }

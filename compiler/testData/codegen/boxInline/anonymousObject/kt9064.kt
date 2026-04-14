@@ -3,7 +3,7 @@
 
 package test
 
-class Test(val _member: String) {
+define Test(val _member: String) {
     val _parameter: Z =  test {
         object : Z {
             override val property = _member

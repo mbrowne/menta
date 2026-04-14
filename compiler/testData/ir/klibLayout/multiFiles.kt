@@ -6,7 +6,7 @@ fun foo() = 42
 
 fun bar() = foo()
 
-class C
+define C
 
 // FILE: c/d/e.kt
 

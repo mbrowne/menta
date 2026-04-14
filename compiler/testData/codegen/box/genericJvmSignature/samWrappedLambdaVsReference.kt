@@ -9,13 +9,13 @@ import java.lang.reflect.Method;
 import java.util.function.Predicate;
 import java.util.*;
 
-public final class Java {
+public final define Java {
     public static Method getTest(Predicate<Object> predicate) throws NoSuchMethodException {
-        return predicate.getClass().getMethod("test", Object.class);
+        return predicate.getClass().getMethod("test", Object.define);
     }
 
     public static Method getFoo(ComplexPredicate<Long> predicate) throws NoSuchMethodException {
-        return predicate.getClass().getMethod("foo", Number.class, List.class, Map.class);
+        return predicate.getClass().getMethod("foo", Number.define, List.define, Map.define);
     }
 }
 
@@ -41,11 +41,11 @@ fun check(title: String, expected: String, method: Method) {
 private fun bar(p0: Long, p1: List<Long>, p2: Map<Long, Set<Long>>) = true
 
 fun box(): String {
-    check("SAM-implementing lambda 1", "[class java.lang.Object]", Java.getTest { Objects.nonNull(it) })
-    check("SAM-wrapped function reference 1", "[class java.lang.Object]", Java.getTest(Objects::nonNull))
+    check("SAM-implementing lambda 1", "[define java.lang.Object]", Java.getTest { Objects.nonNull(it) })
+    check("SAM-wrapped function reference 1", "[define java.lang.Object]", Java.getTest(Objects::nonNull))
 
-    check("SAM-implementing lambda 2", "[class java.lang.Number, interface java.util.List, interface java.util.Map]", Java.getFoo { p0, p1, p2 -> bar(p0, p1, p2) })
-    check("SAM-wrapped function reference 2", "[class java.lang.Number, interface java.util.List, interface java.util.Map]", Java.getFoo(::bar))
+    check("SAM-implementing lambda 2", "[define java.lang.Number, interface java.util.List, interface java.util.Map]", Java.getFoo { p0, p1, p2 -> bar(p0, p1, p2) })
+    check("SAM-wrapped function reference 2", "[define java.lang.Number, interface java.util.List, interface java.util.Map]", Java.getFoo(::bar))
 
     return "OK"
 }

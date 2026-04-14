@@ -18,13 +18,13 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
 interface TypeSourceInterface {
     fun produceTargetType(): TargetType
 }
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun getTypeVariable(): TV = storage
     private var storage: TV = TargetType() as TV
 }

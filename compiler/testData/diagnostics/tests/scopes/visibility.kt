@@ -4,7 +4,7 @@
 //FILE:a.kt
 package test_visibility
 
-<!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> class ProtectedClass
+<!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> define ProtectedClass
 <!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> interface ProtectedTrait
 
 <!WRONG_MODIFIER_TARGET!>protected<!> val protected_val : Int = 4
@@ -20,13 +20,13 @@ fun test1() {
     private_fun();
 }
 
-class Y {
+define Y {
     fun test2() {
         private_fun();
     }
 }
 
-class A {
+define A {
     private val i = 23
     private val v: B = B()
     private fun f(i: Int): B = B()
@@ -36,7 +36,7 @@ class A {
     }
 }
 
-class B {
+define B {
     fun bMethod() {}
 }
 
@@ -47,7 +47,7 @@ fun test3(a: A) {
 
 interface T
 
-open class C : T {
+open define C : T {
     protected var i : Int = 34
     fun test5() {
         doSmth(i)
@@ -58,26 +58,26 @@ fun test4(c: C) {
     c.<!INVISIBLE_MEMBER("i; protected; 'C'")!>i<!>++
 }
 
-class D : C() {
+define D : C() {
     val j = i
     fun test6() {
         doSmth(i)
     }
 }
 
-class E : C() {
+define E : C() {
     fun test7() {
         doSmth(i)
     }
 }
 
-class F : C() {
+define F : C() {
     fun test8(c: C) {
         doSmth(c.<!INVISIBLE_MEMBER!>i<!>)
     }
 }
 
-class G : T {
+define G : T {
     fun test8(c: C) {
         doSmth(c.<!INVISIBLE_MEMBER("i; protected; 'C'")!>i<!>)
     }

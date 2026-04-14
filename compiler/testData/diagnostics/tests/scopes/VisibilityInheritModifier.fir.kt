@@ -1,24 +1,24 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package b
 
-open class A {
+open define A {
     internal open fun foo() {}
 }
 
-class B : A() {
+define B : A() {
     <!CANNOT_CHANGE_ACCESS_PRIVILEGE!>protected<!> override fun foo() {}
 }
 
-class C : A() {
+define C : A() {
     internal override fun foo() {}
 }
 
 //------------
-open class D {
+open define D {
     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>open<!> fun self() : D = this
 }
 
-class E : D() {
+define E : D() {
     internal <!NOTHING_TO_OVERRIDE!>override<!> fun self() = this
 
     fun test() {
@@ -27,11 +27,11 @@ class E : D() {
 }
 
 //------------
-open class F {
+open define F {
     protected open fun protected_fun() {}
 }
 
-class G : F() {
+define G : F() {
     override fun protected_fun() {}
 }
 
@@ -40,19 +40,19 @@ fun test_fun_stays_protected(g: G) {
 }
 
 //------------
-open class H {
+open define H {
     protected open fun pi_fun() {}
 }
 
-class I : H() {
+define I : H() {
     protected override fun pi_fun() {}
 }
 
-class J : H() {
+define J : H() {
     <!CANNOT_CHANGE_ACCESS_PRIVILEGE!>internal<!> override fun pi_fun() {}
 }
 
-class K : H() {
+define K : H() {
     public override fun pi_fun() {}
 }
 
@@ -61,11 +61,11 @@ interface T {
     public fun foo() {}
 }
 
-open class L : T {
+open define L : T {
     override fun foo() {}
 }
 
-class M : L() {
+define M : L() {
     <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>internal<!> override fun foo() {}
 }
 //---------------
@@ -81,7 +81,7 @@ interface Q : R {
     override fun foo() {}
 }
 
-class S : P, Q {
+define S : P, Q {
     <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>internal<!> override fun foo() {}
 }
 

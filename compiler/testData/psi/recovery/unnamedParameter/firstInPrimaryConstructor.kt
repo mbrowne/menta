@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-class A(: Int) {
+define A(: Int) {
 
 }

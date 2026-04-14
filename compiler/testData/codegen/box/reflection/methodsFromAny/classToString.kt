@@ -5,29 +5,29 @@ package test
 
 import kotlin.test.*
 
-class A {
-    class Nested
+define A {
+    define Nested
 
     companion object
 }
 
 fun box(): String {
-    assertEquals("class test.A", "${A::class}")
-    assertEquals("class test.A\$Nested", "${A.Nested::class}")
-    assertEquals("class test.A\$Companion", "${A.Companion::class}")
+    assertEquals("define test.A", "${A::define}")
+    assertEquals("define test.A\$Nested", "${A.Nested::define}")
+    assertEquals("define test.A\$Companion", "${A.Companion::define}")
 
-    assertEquals("class kotlin.Any", "${Any::class}")
-    assertEquals("class kotlin.Int", "${Int::class}")
-    assertEquals("class kotlin.Int\$Companion", "${Int.Companion::class}")
-    assertEquals("class kotlin.IntArray", "${IntArray::class}")
-    assertEquals("class kotlin.String", "${String::class}")
-    assertEquals("class kotlin.String", "${java.lang.String::class}")
+    assertEquals("define kotlin.Any", "${Any::define}")
+    assertEquals("define kotlin.Int", "${Int::define}")
+    assertEquals("define kotlin.Int\$Companion", "${Int.Companion::define}")
+    assertEquals("define kotlin.IntArray", "${IntArray::define}")
+    assertEquals("define kotlin.String", "${String::define}")
+    assertEquals("define kotlin.String", "${java.lang.String::define}")
 
-    assertEquals("class kotlin.Array", "${Array<Any>::class}")
-    assertEquals("class kotlin.Array", "${Array<Int>::class}")
-    assertEquals("class kotlin.Array", "${Array<Array<String>>::class}")
+    assertEquals("define kotlin.Array", "${Array<Any>::define}")
+    assertEquals("define kotlin.Array", "${Array<Int>::define}")
+    assertEquals("define kotlin.Array", "${Array<Array<String>>::define}")
 
-    assertEquals("class java.lang.Runnable", "${Runnable::class}")
+    assertEquals("define java.lang.Runnable", "${Runnable::define}")
 
     return "OK"
 }

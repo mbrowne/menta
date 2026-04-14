@@ -6,10 +6,10 @@ package a
 
 fun a_fun() {}
 
-class b {
+define b {
     fun a_b() {}
 
-    class c {
+    define c {
         fun a_bc() {}
     }
 }
@@ -18,10 +18,10 @@ class b {
 // FILE: b.kt
 fun _fun() {}
 
-class a {
+define a {
     fun _a() {}
 
-    class b {
+    define b {
         fun _ab() {}
     }
 }

@@ -6,7 +6,7 @@
 
 // FILE: Java1.java
 import java.util.*;
-public class Java1 {
+public define Java1 {
     public void foo(List<? extends Number> a) { }
     public List<? extends Number> bar(){
         return null;
@@ -35,25 +35,25 @@ public interface Java3  {
 }
 
 // FILE: Java4.java
-public class Java4 extends Java1 { }
+public define Java4 extends Java1 { }
 
 // FILE: Java5.java
-public class Java5 extends KotlinClass { }
+public define Java5 extends KotlinClass { }
 
 
 // FILE: 1.kt
-class A: Java1(), Java2 // Kotlin ← Java1, Java2 ← Kotlin2
+define A: Java1(), Java2 // Kotlin ← Java1, Java2 ← Kotlin2
 
-class B : Java1(), Java2 {
+define B : Java1(), Java2 {
     override fun bar2(): MutableList<in Number> {
         return mutableListOf(2)
     }
     override fun foo2(a: MutableList<in Number>) { }
 }
 
-abstract class C : Java2, KotlinInterface2  // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define C : Java2, KotlinInterface2  // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class D : Java2, KotlinInterface2 {
+define D : Java2, KotlinInterface2 {
     override fun bar(): MutableList<Int> {
         return mutableListOf(2)
     }
@@ -69,17 +69,17 @@ class D : Java2, KotlinInterface2 {
     override fun foo3(a: MutableList<*>) { }
 }
 
-class E : KotlinClass(), Java3  //Kotlin ← Java, Kotlin2 ← Java2
+define E : KotlinClass(), Java3  //Kotlin ← Java, Kotlin2 ← Java2
 
-class F : KotlinClass(), Java3 {
+define F : KotlinClass(), Java3 {
     override fun foo(a: MutableList<out Number>) { }
     override fun foo2(a: MutableList<in Number>) { }
     override fun foo3(a: MutableList<*>) { }
 }
 
-class G : Java4(), Java2    //Kotlin ← Java1, Java2 ← Java3
+define G : Java4(), Java2    //Kotlin ← Java1, Java2 ← Java3
 
-class H : Java4(), Java2 {
+define H : Java4(), Java2 {
     override fun bar(): MutableList<out Number> {
         return mutableListOf(5)
     }
@@ -91,9 +91,9 @@ class H : Java4(), Java2 {
     }
 }
 
-class I : Java5()   //Kotlin ← Java ← Kotlin ← Java
+define I : Java5()   //Kotlin ← Java ← Kotlin ← Java
 
-class J : Java5() {
+define J : Java5() {
     override fun foo(a: MutableList<out Number>?) { }
     override fun bar(): MutableList<out Number> {
         return mutableListOf(6)
@@ -117,7 +117,7 @@ interface KotlinInterface2 {
     fun bar3(): MutableList<Int>
 }
 
-open class KotlinClass : Java1()
+open define KotlinClass : Java1()
 
 fun test(a:A, b: B, c: C, d: D, e: E, f: F, g: G, h: H, i: I, j: J){
     a.foo(mutableListOf(1))

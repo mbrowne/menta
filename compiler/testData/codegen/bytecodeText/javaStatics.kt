@@ -1,6 +1,6 @@
 // FILE: Child.java
 
-class Child extends Parent {
+define Child extends Parent {
     public static int b = 3;
     public static int c = 4;
     public static void bar() {}
@@ -9,7 +9,7 @@ class Child extends Parent {
 
 // FILE: Parent.java
 
-class Parent {
+define Parent {
     public static int a = 1;
     public static int b = 2;
     public static void foo() {}

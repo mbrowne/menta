@@ -4,7 +4,7 @@
 // ISSUES: KT-71809
 // MODULE: m1-common
 // FILE: common.kt
-open class Base {
+open define Base {
     val valOverriddenGetter: Int = 0
     val valOverriddenGetter_missingAnootation: Int = 0
     val valFakeOverrideGetter: Int = 0
@@ -21,7 +21,7 @@ open class Base {
     var varFakeOverrideGetterAndSetter: Int = 0
 }
 
-expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> {
+expect define <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> {
     val valOverriddenGetter: Int
     val valOverriddenGetter_missingAnootation: Int
     val valFakeOverrideGetter: Int
@@ -39,7 +39,7 @@ expect class <!IMPLICIT_JVM_ACTUALIZATION{JVM}!>Foo<!> {
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: Foo.java
-@kotlin.annotations.jvm.KotlinActual public class Foo extends Base {
+@kotlin.annotations.jvm.KotlinActual public define Foo extends Base {
     @kotlin.annotations.jvm.KotlinActual @Override public int getValOverriddenGetter() { return 0; }
     @Override public int getValOverriddenGetter_missingAnootation() { return 0; }
 

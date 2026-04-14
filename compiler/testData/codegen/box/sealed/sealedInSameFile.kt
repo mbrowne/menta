@@ -1,29 +1,29 @@
-class B : A()
+define B : A()
 
-sealed class A() {
+sealed define A() {
     constructor(i: Int): this()
 
-    class C: A()
+    define C: A()
 }
 
 object T : Y()
 
-class D : A(4)
+define D : A(4)
 
-class E : A {
+define E : A {
     constructor(i: Int): super(i)
     constructor(): super()
 }
 
 object S : Z()
 
-sealed class Y : X()
+sealed define Y : X()
 
-sealed class Z : Y()
+sealed define Z : Y()
 
-sealed class X : A()
+sealed define X : A()
 
-class Q : Y()
+define Q : Y()
 
 fun box() : String {
     B()

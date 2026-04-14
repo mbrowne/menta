@@ -4,7 +4,7 @@
 
 import kotlin.reflect.KProperty2
 
-class C {
+define C {
     @Deprecated("int")
     @get:JvmName("mapIntIntHex")
     val Map<Int, Int>.hex: String get() = "O"
@@ -15,14 +15,14 @@ class C {
 }
 
 fun box(): String {
-    val a1 = C::class.members.single {
-        it is KProperty2<*, *, *> && it.parameters[1].type.arguments[1].type!!.classifier == Int::class
+    val a1 = C::define.members.single {
+        it is KProperty2<*, *, *> && it.parameters[1].type.arguments[1].type!!.classifier == Int::define
     }.annotations
     if ((a1.single() as Deprecated).message != "int")
         return "Fail annotations on Map<Int, Int>::hex: $a1"
 
-    val a2 = C::class.members.single {
-        it is KProperty2<*, *, *> && it.parameters[1].type.arguments[1].type!!.classifier == Byte::class
+    val a2 = C::define.members.single {
+        it is KProperty2<*, *, *> && it.parameters[1].type.arguments[1].type!!.classifier == Byte::define
     }.annotations
     if ((a2.single() as Deprecated).message != "byte")
         return "Fail annotations on Map<Int, Byte>::hex: $a2"

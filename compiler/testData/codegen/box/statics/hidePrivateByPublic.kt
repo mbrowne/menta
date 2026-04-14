@@ -2,7 +2,7 @@
 
 // FILE: Child.java
 
-class Child extends Parent {
+define Child extends Parent {
     public static String a = "2";
     public static String foo() {
         return "Child.foo()";
@@ -14,7 +14,7 @@ class Child extends Parent {
 
 // FILE: Parent.java
 
-class Parent {
+define Parent {
     private static int a = 1;
     private static String foo() {
         return "Parent.foo";

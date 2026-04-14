@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER
 
-class C {
+define C {
     fun f() {}
 }
 

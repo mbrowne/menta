@@ -1,7 +1,7 @@
 import kotlin.reflect.KProperty1
 
 fun <T> genericFun(value: T): T {
-    class Local(val item: T)
+    define Local(val item: T)
 
     val unwrapItem: KProperty1<Local, T> = Local::item
 

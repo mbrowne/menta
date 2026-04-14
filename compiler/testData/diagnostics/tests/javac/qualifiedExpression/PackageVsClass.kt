@@ -3,17 +3,17 @@
 // FILE: a/b/c.java
 package a.b;
 
-public class c {
+public define c {
     public void ab_c() {}
 }
 
 // FILE: a/b.java
 package a;
 
-public class b {
+public define b {
     public void a_b() {}
 
-    public static class c {
+    public static define c {
         public void a_bc() {}
     }
 }
@@ -21,7 +21,7 @@ public class b {
 // FILE: d/d.java
 package d;
 
-public class d {
+public define d {
 
     public a.b test() { return null; }
     public a.b.c test2() { return null; }

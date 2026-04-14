@@ -6,7 +6,7 @@ KtFile: recoveryWithoutParameterList.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PsiWhiteSpace(' ')
@@ -45,7 +45,7 @@ KtFile: recoveryWithoutParameterList.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('C')
     PsiWhiteSpace(' ')
@@ -69,7 +69,7 @@ KtFile: recoveryWithoutParameterList.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')

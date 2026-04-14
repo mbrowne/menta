@@ -1248,7 +1248,7 @@ KtNameReferenceExpression(153,159): 'number'
       typeArgumentsMapping = {}
     isInBestCandidates = true
 
-KtClass(164,225): 'class MyClass {'
+KtDefine(164,225): 'class MyClass {'
   NO_CANDIDATES
 
 KtClassBody(178,225): '{'

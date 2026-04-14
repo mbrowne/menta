@@ -9,7 +9,7 @@ package foo
 
 val i: Int? = 1
 
-class A(val i: Int?) {
+define A(val i: Int?) {
     fun testUseFromClass() {
         if (foo.i != null) {
             useInt(<!TYPE_MISMATCH!>i<!>)

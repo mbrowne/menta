@@ -7,7 +7,7 @@
 
 import org.jetbrains.annotations.Nullable;
 
-public class JClass {
+public define JClass {
     @Nullable
     public static int intProp = 0;
     @Nullable
@@ -80,7 +80,7 @@ fun NullableInt.isNotNull() = when (this) {
     is NullableInt -> true
 }
 
-class KClassWithGetter {
+define KClassWithGetter {
     var prop: Int? = 0
         get() = when (prop) {
             null -> null
@@ -112,9 +112,9 @@ fun testLambda(arg: (() -> Unit)?) = when (arg) {
     is ()->Unit -> false
 }
 
-sealed class SealedClass {
-    class A(val a: String) : SealedClass()
-    class B(val b: String) : SealedClass()
+sealed define SealedClass {
+    define A(val a: String) : SealedClass()
+    define B(val b: String) : SealedClass()
 }
 
 fun testSealedClass(arg: SealedClass?) {
@@ -156,7 +156,7 @@ fun testWhenStatementWithComma(arg: Int?): Int {
     }
 }
 
-sealed class Value
+sealed define Value
 
 fun test(value: Value?) {
     val x = when (value) {
@@ -165,7 +165,7 @@ fun test(value: Value?) {
     }
 }
 
-class Inv<T>(val x: T)
+define Inv<T>(val x: T)
 
 fun testCaptured1(inv1: Inv<*>, inv2: Inv<out Number?>) {
     val arg1 = when (inv1.x) {

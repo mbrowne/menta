@@ -20,7 +20,7 @@ import org.jetbrains.kotlin.fir.symbols.impl.FirRegularClassSymbol
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.Name
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtEnumEntry
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
@@ -148,7 +148,7 @@ internal class KaFirNamedClassSymbol private constructor(
             when (backingPsi) {
                 null -> firSymbol.classKind.toKtClassKind(isCompanionObject = firSymbol.isCompanion)
                 is KtObjectDeclaration -> if (backingPsi.isCompanion()) KaClassKind.COMPANION_OBJECT else KaClassKind.OBJECT
-                is KtClass -> when {
+                is KtDefine -> when {
                     backingPsi.isInterface() -> KaClassKind.INTERFACE
                     backingPsi.isEnum() -> KaClassKind.ENUM_CLASS
                     backingPsi.isAnnotation() -> KaClassKind.ANNOTATION_CLASS

@@ -3,7 +3,7 @@ fun box(): String {
     return "OK"
 }
 
-class Klass {
+define Klass {
     constructor(func: (() -> Unit)?) {
         if (func != null) {
             func()

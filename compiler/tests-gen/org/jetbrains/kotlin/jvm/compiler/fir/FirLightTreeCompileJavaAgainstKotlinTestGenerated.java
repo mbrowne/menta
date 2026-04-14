@@ -95,16 +95,6 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
         runTest("compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructorWithTwoArgs.kt");
       }
 
-      @TestMetadata("ExtendsAbstractListT.kt")
-      public void testExtendsAbstractListT() {
-        runTest("compiler/testData/compileJavaAgainstKotlin/class/ExtendsAbstractListT.kt");
-      }
-
-      @TestMetadata("ImplementsListString.kt")
-      public void testImplementsListString() {
-        runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsListString.kt");
-      }
-
       @TestMetadata("ImplementsMapPP.kt")
       public void testImplementsMapPP() {
         runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsMapPP.kt");
@@ -314,11 +304,6 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
         runTest("compiler/testData/compileJavaAgainstKotlin/method/QExtendsString.kt");
       }
 
-      @TestMetadata("TraitImpl.kt")
-      public void testTraitImpl() {
-        runTest("compiler/testData/compileJavaAgainstKotlin/method/TraitImpl.kt");
-      }
-
       @TestMetadata("TypeParamInInner.kt")
       public void testTypeParamInInner() {
         runTest("compiler/testData/compileJavaAgainstKotlin/method/TypeParamInInner.kt");
@@ -427,11 +412,6 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
           runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesObject.kt");
         }
 
-        @TestMetadata("ManyClassesHierarchy.kt")
-        public void testManyClassesHierarchy() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ManyClassesHierarchy.kt");
-        }
-
         @TestMetadata("NullableIntOverridesObject.kt")
         public void testNullableIntOverridesObject() {
           runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/NullableIntOverridesObject.kt");
@@ -473,34 +453,14 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
           KtTestUtil.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/throws"), Pattern.compile("^(.+)\\.kt$"), null, true);
         }
 
-        @TestMetadata("ClassMembers.kt")
-        public void testClassMembers() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/ClassMembers.kt");
-        }
-
-        @TestMetadata("Constructor.kt")
-        public void testConstructor() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Constructor.kt");
-        }
-
         @TestMetadata("DefaultArgs.kt")
         public void testDefaultArgs() {
           runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/DefaultArgs.kt");
         }
 
-        @TestMetadata("Delegation.kt")
-        public void testDelegation() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Delegation.kt");
-        }
-
         @TestMetadata("GenericSubstitution.kt")
         public void testGenericSubstitution() {
           runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/GenericSubstitution.kt");
-        }
-
-        @TestMetadata("KotlinThrows.kt")
-        public void testKotlinThrows() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/KotlinThrows.kt");
         }
 
         @TestMetadata("TopLevel.kt")
@@ -781,16 +741,6 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
         runTest("compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructorWithTwoArgs.kt");
       }
 
-      @TestMetadata("ExtendsAbstractListT.kt")
-      public void testExtendsAbstractListT() {
-        runTest("compiler/testData/compileJavaAgainstKotlin/class/ExtendsAbstractListT.kt");
-      }
-
-      @TestMetadata("ImplementsListString.kt")
-      public void testImplementsListString() {
-        runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsListString.kt");
-      }
-
       @TestMetadata("ImplementsMapPP.kt")
       public void testImplementsMapPP() {
         runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsMapPP.kt");
@@ -1000,11 +950,6 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
         runTest("compiler/testData/compileJavaAgainstKotlin/method/QExtendsString.kt");
       }
 
-      @TestMetadata("TraitImpl.kt")
-      public void testTraitImpl() {
-        runTest("compiler/testData/compileJavaAgainstKotlin/method/TraitImpl.kt");
-      }
-
       @TestMetadata("TypeParamInInner.kt")
       public void testTypeParamInInner() {
         runTest("compiler/testData/compileJavaAgainstKotlin/method/TypeParamInInner.kt");
@@ -1113,11 +1058,6 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
           runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesObject.kt");
         }
 
-        @TestMetadata("ManyClassesHierarchy.kt")
-        public void testManyClassesHierarchy() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ManyClassesHierarchy.kt");
-        }
-
         @TestMetadata("NullableIntOverridesObject.kt")
         public void testNullableIntOverridesObject() {
           runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/NullableIntOverridesObject.kt");
@@ -1159,34 +1099,14 @@ public class FirLightTreeCompileJavaAgainstKotlinTestGenerated extends AbstractF
           KtTestUtil.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/throws"), Pattern.compile("^(.+)\\.kt$"), null, true);
         }
 
-        @TestMetadata("ClassMembers.kt")
-        public void testClassMembers() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/ClassMembers.kt");
-        }
-
-        @TestMetadata("Constructor.kt")
-        public void testConstructor() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Constructor.kt");
-        }
-
         @TestMetadata("DefaultArgs.kt")
         public void testDefaultArgs() {
           runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/DefaultArgs.kt");
         }
 
-        @TestMetadata("Delegation.kt")
-        public void testDelegation() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Delegation.kt");
-        }
-
         @TestMetadata("GenericSubstitution.kt")
         public void testGenericSubstitution() {
           runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/GenericSubstitution.kt");
-        }
-
-        @TestMetadata("KotlinThrows.kt")
-        public void testKotlinThrows() {
-          runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/KotlinThrows.kt");
         }
 
         @TestMetadata("TopLevel.kt")

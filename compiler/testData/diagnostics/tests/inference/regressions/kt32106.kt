@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Query<out T : Any> private constructor(
+define Query<out T : Any> private constructor(
     private val result: T?,
     private val error: Throwable?,
     val inProgress: Boolean
@@ -12,7 +12,7 @@ class Query<out T : Any> private constructor(
     }
 }
 
-class MutableLiveData<T> {
+define MutableLiveData<T> {
     var value: Query<Int> = null!!
 }
 

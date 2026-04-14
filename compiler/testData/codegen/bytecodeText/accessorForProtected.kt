@@ -1,10 +1,10 @@
 package a
 
-open class A {
+open define A {
     protected fun protectedFun(): String = "OK"
 }
 
-class BSamePackage: A() {
+define BSamePackage: A() {
     fun test(): String {
         val a = {
             protectedFun()

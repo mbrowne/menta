@@ -1,9 +1,9 @@
-class Outer {
+define Outer {
     companion object {
         private fun privateMethod() = "OK"
     }
 
-    inner class Inner {
+    inner define Inner {
         internal inline fun internalMethod() = privateMethod()
     }
 }

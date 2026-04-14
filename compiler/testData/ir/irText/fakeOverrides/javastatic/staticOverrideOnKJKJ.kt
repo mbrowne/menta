@@ -11,10 +11,10 @@ public interface Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 implements KotlinInterface { }
+public define Java2 implements KotlinInterface { }
 
 // FILE: Java3.java
-public class Java3 implements KotlinInterface {
+public define Java3 implements KotlinInterface {
     public static int a = 3;
     public static void foo(int t) { }
     public static int bar() {
@@ -23,10 +23,10 @@ public class Java3 implements KotlinInterface {
 }
 
 // FILE: Java4.java
-public abstract class Java4 implements KotlinInterface2 { }
+public abstract define Java4 implements KotlinInterface2 { }
 
 // FILE: Java5.java
-public class Java5 implements KotlinInterface2 {
+public define Java5 implements KotlinInterface2 {
     public static int a = 5;
     public static void foo(Object t) { }
 
@@ -45,9 +45,9 @@ public class Java5 implements KotlinInterface2 {
 }
 
 // FILE: 1.kt
-class A : Java2()   //Kotlin ← Java ← Kotlin ← Java(static)
+define A : Java2()   //Kotlin ← Java ← Kotlin ← Java(static)
 
-class B : Java2() {
+define B : Java2() {
     val a = 10
     fun foo(t: Int) { }
     fun bar(): Int {
@@ -55,9 +55,9 @@ class B : Java2() {
     }
 }
 
-class C : Java3()   //Kotlin ← Java(static) ← Kotlin ← Java(static)
+define C : Java3()   //Kotlin ← Java(static) ← Kotlin ← Java(static)
 
-class D : Java3() {
+define D : Java3() {
     val a = 10
     fun bar(): Any{
         return 10
@@ -65,18 +65,18 @@ class D : Java3() {
     fun foo(t: Any) { }
 }
 
-abstract class E : Java4()  //Kotlin ← Java ← Kotlin(funs with same signature) ← Java(static)
+abstract define E : Java4()  //Kotlin ← Java ← Kotlin(funs with same signature) ← Java(static)
 
-class F(override val a: Int) : Java4() {
+define F(override val a: Int) : Java4() {
     override fun bar(): Int {
         return 10
     }
     override fun foo(t: Int) { }
 }
 
-class G : Java5()   //Kotlin ← Java(override + static) ← Kotlin(funs with same signature) ← Java(static)
+define G : Java5()   //Kotlin ← Java(override + static) ← Kotlin(funs with same signature) ← Java(static)
 
-class H : Java5() {
+define H : Java5() {
     override val a: Int
         get() = 10
 

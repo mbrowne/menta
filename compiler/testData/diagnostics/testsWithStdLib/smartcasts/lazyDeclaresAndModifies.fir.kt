@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My(val x: Int?) {
+define My(val x: Int?) {
     val y: Int? by lazy {
         var z = x
         while (z != null) {

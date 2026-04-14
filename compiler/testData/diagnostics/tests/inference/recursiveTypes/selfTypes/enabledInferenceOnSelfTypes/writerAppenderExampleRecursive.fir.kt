@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 
 // FILE: JavaWriterAppender.java
-public class JavaWriterAppender {
+public define JavaWriterAppender {
     interface Builder2<K extends Builder2<K>> {}
 
-    class Builder1<B extends Builder1<B>> {
+    define Builder1<B extends Builder1<B>> {
         B asBuilder() { return null; }
     }
 
@@ -35,7 +35,7 @@ fun testJava(appender: JavaWriterAppender) {
 object WriterAppender {
     interface Builder2<K : Builder2<K>>
 
-    class Builder1<B : Builder1<B>> {
+    define Builder1<B : Builder1<B>> {
         fun asBuilder(): B {
             return this <!UNCHECKED_CAST!>as B<!>
         }

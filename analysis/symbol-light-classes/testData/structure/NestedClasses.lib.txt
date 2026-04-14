@@ -1,5 +1,5 @@
 A.class:
-  KtClass:
+  KtDefine:
     line: 4
     name: A
     qualifier: A
@@ -15,7 +15,7 @@ A.class:
         ClsClassImpl: Object (java.lang.Object)
       ]
 
-  KtClass:
+  KtDefine:
     line: 5
     name: NestedInA
     qualifier: A.NestedInA
@@ -31,7 +31,7 @@ A.class:
         ClsClassImpl: Object (java.lang.Object)
       ]
 
-  KtClass:
+  KtDefine:
     line: 6
     name: NestedInNestedInA
     qualifier: A.NestedInA.NestedInNestedInA
@@ -47,7 +47,7 @@ A.class:
         ClsClassImpl: Object (java.lang.Object)
       ]
 
-  KtClass:
+  KtDefine:
     line: 9
     name: InnerInNestedInA
     qualifier: A.NestedInA.InnerInNestedInA
@@ -63,7 +63,7 @@ A.class:
         ClsClassImpl: Object (java.lang.Object)
       ]
 
-  KtClass:
+  KtDefine:
     line: 13
     name: InnerInA
     qualifier: A.InnerInA
@@ -79,7 +79,7 @@ A.class:
         ClsClassImpl: Object (java.lang.Object)
       ]
 
-  KtClass:
+  KtDefine:
     line: 14
     name: InnerInInnerInA
     qualifier: A.InnerInA.InnerInInnerInA
@@ -96,7 +96,7 @@ A.class:
       ]
 
 B.class:
-  KtClass:
+  KtDefine:
     line: 4
     name: B
     qualifier: B
@@ -112,7 +112,7 @@ B.class:
         KtLightClassForDecompiledDeclaration: A (A)
       ]
 
-  KtClass:
+  KtDefine:
     line: 5
     name: NestedInB
     qualifier: B.NestedInB
@@ -128,7 +128,7 @@ B.class:
         KtLightClassForDecompiledDeclaration: NestedInNestedInA (A.NestedInA.NestedInNestedInA)
       ]
 
-  KtClass:
+  KtDefine:
     line: 8
     name: InnerInB
     qualifier: B.InnerInB

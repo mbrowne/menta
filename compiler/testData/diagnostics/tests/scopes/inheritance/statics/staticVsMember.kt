@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     public static int foo() { return 1; }
     public static int bar = 1;
 }
 
 // FILE: 1.kt
 
-class B: A() {
+define B: A() {
     companion object {
         init {
             val a: Int = foo()
@@ -22,7 +22,7 @@ class B: A() {
     }
 }
 
-open class C: A() {
+open define C: A() {
     val bar = ""
     fun foo() = ""
 
@@ -32,14 +32,14 @@ open class C: A() {
     }
 }
 
-class E: C() {
+define E: C() {
     init {
         val a: String = foo()
         val b: String = bar
     }
 }
 
-open class F: A() {
+open define F: A() {
     companion object {
         val bar = ""
         fun foo() = ""
@@ -55,7 +55,7 @@ open class F: A() {
     }
 }
 
-class G: F() {
+define G: F() {
     companion object {
         init {
             val a: String = foo()

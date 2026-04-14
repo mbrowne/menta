@@ -4,22 +4,22 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo()
-expect class Foo2()
+expect define Foo()
+expect define Foo2()
 
-expect class Bar
-expect class Bar2
+expect define Bar
+expect define Bar2
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo<!ACTUAL_MISSING!>()<!>
-actual class Foo2 {
+actual define Foo<!ACTUAL_MISSING!>()<!>
+actual define Foo2 {
     <!ACTUAL_MISSING!>constructor()<!>
 }
 
-actual class Bar()
-actual class Bar2 {
+actual define Bar()
+actual define Bar2 {
     constructor()
 }
 

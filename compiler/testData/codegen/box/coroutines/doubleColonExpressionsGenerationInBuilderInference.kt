@@ -2,19 +2,19 @@
 
 package a.b
 
-class BatchInfo1(val batchSize: Int)
-class BatchInfo2<T>(val data: T)
+define BatchInfo1(val batchSize: Int)
+define BatchInfo2<T>(val data: T)
 
 object Obj
 
 fun test() {
     val a: Sequence<String> = sequence {
-        val x = BatchInfo1::class
-        val y = a.b.BatchInfo1::class
-        val z = Obj::class
+        val x = BatchInfo1::define
+        val y = a.b.BatchInfo1::define
+        val z = Obj::define
 
         val x1 = BatchInfo1::batchSize
-        val y1 = a.b.BatchInfo1::class
+        val y1 = a.b.BatchInfo1::define
 
         yieldAll(listOf(x, y, z, x1, y1).map { it.toString() })
     }

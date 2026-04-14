@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A {
+define A {
     companion object{
         private var privateVar = 12
     }

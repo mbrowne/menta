@@ -8,7 +8,7 @@
 // FILE: Java2.java
 import java.util.*;
 
-public class Java2<T> {
+public define Java2<T> {
     public List<T> a = new ArrayList();
     public Queue<T> b = new ArrayDeque();
     public Set<T> c = new HashSet();
@@ -28,7 +28,7 @@ public class Java2<T> {
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1<T> {
+public define Java1<T> {
     public List<T> a = new ArrayList();
     public Queue<T> b = new ArrayDeque();
     public Set<T> c = new HashSet();
@@ -47,27 +47,27 @@ public class Java1<T> {
 
 import java.util.*
 
-class A : Java1<Int>()
+define A : Java1<Int>()
 
-class B : Java1<String?>()
+define B : Java1<String?>()
 
-class C : Java2<Any>()
+define C : Java2<Any>()
 
-class D : Java1<Int>() {
+define D : Java1<Int>() {
     override fun bar(): MutableList<Int> {
         return null!!
     }
     override fun foo(a: MutableList<Int>) { }
 }
 
-class E : Java1<String?>() {
+define E : Java1<String?>() {
     override fun foo3(c: MutableSet<String?>) { }
     override fun bar3(): MutableSet<String> {
         return null!!
     }
 }
 
-class F : Java1<Any>() {
+define F : Java1<Any>() {
     override fun bar2(): Queue<Any> {
         return null!!
     }

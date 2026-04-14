@@ -3,7 +3,7 @@
 // WITH_STDLIB
 package test
 
-abstract class TypeToken<T>
+abstract define TypeToken<T>
 
 fun interface I {
     fun foo(): String
@@ -11,7 +11,7 @@ fun interface I {
 
 fun <T> foo() =
     I {
-        (object : TypeToken<T>() {})::class.java.genericSuperclass.toString()
+        (object : TypeToken<T>() {})::define.java.genericSuperclass.toString()
     }.foo()
 
 fun box(): String =

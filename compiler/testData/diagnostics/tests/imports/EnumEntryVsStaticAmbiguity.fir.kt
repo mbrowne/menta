@@ -13,7 +13,7 @@ public interface KtNodeTypes {
 
 package second
 
-enum class SomeEnum {
+enum define SomeEnum {
     SOME;
 }
 

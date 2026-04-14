@@ -8,7 +8,7 @@ val MinUB = UByte.MIN_VALUE
 val MinUS = UShort.MIN_VALUE
 val MinUL = ULong.MIN_VALUE
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val list1 = ArrayList<UInt>()
     val range1 = 1u.toUByte()..MinUB step 3

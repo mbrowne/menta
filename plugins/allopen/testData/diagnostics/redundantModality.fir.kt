@@ -4,7 +4,7 @@
 annotation class AllOpen
 
 @AllOpen
-class Some {
+define Some {
     fun default() {}
     <!REDUNDANT_MODALITY_MODIFIER!>open<!> fun meaninglessOpen() {}
     final fun meaningfullFinal() {}

@@ -17,7 +17,7 @@ public interface B {
 // FILE: a/AImpl.java
 package a;
 
-public class AImpl implements A {
+public define AImpl implements A {
     @Override
     public BImpl b() {
         return new BImpl();
@@ -27,7 +27,7 @@ public class AImpl implements A {
 // FILE: a/BImpl.java
 package a;
 
-class BImpl implements B {
+define BImpl implements B {
     @Override
     public void bar() {}
 }

@@ -1,10 +1,10 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class)
+@file:OptIn(ExperimentalVersionOverloading::define)
 
-class C {
-    inner class A(
+define C {
+    inner define A(
         val a : Int = 1,
         @IntroducedAt("1") val b: String = "",
         @IntroducedAt("1") private val b1: String = "",
@@ -21,8 +21,8 @@ fun box(): String {
     val c = C()
     val cA = c.A()
 
-    val constructor1 = C.A::class.java.getConstructor(C::class.java, Int::class.java)
-    val constructor2 = C.A::class.java.getConstructor(C::class.java, Int::class.java, String::class.java, String::class.java)
+    val constructor1 = C.A::define.java.getConstructor(C::define.java, Int::define.java)
+    val constructor2 = C.A::define.java.getConstructor(C::define.java, Int::define.java, String::define.java, String::define.java)
 
     val r1 = constructor1.newInstance(c, cA.a) as C.A
     val r2 = constructor2.newInstance(c, cA.a, cA.b, "") as C.A

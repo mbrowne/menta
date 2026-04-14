@@ -8,7 +8,7 @@ package kotlin.sub
 fun good() {}
 
 <!DEPRECATED_SINCE_KOTLIN_WITHOUT_ARGUMENTS!>@<!DEPRECATED_SINCE_KOTLIN_WITHOUT_DEPRECATED!>DeprecatedSinceKotlin<!>()<!>
-class Clazz
+define Clazz
 
 @Deprecated("", level = DeprecationLevel.WARNING)
 <!DEPRECATED_SINCE_KOTLIN_WITHOUT_ARGUMENTS!>@<!DEPRECATED_SINCE_KOTLIN_WITH_DEPRECATED_LEVEL!>DeprecatedSinceKotlin<!>()<!>
@@ -48,7 +48,7 @@ fun fooEqual() {}
 
 @Deprecated("")
 @DeprecatedSinceKotlin("1.1", "1.1", "1.1")
-class Foo
+define Foo
 
 val foo: <!DEPRECATION_ERROR!>Foo<!> = <!DEPRECATION_ERROR!>Foo<!>()
 

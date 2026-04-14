@@ -1,16 +1,16 @@
 // FREE_COMPILER_ARGS: -Xbinary=genericSafeCasts=true
 
-open class Base<T> {
+open define Base<T> {
     open fun foo(x: T): String = "zzz"
 }
 
-open class Derived : Base<String>() {
+open define Derived : Base<String>() {
     override fun foo(x: String) = x
 
     // override fun Base<Any?>.foo(x: Any?) = foo(x as String)
 }
 
-class Data(val x: Int)
+define Data(val x: Int)
 
 fun box(): String {
     val d = Derived()

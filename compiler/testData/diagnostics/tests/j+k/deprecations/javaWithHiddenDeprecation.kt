@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: JavaClass.java
-@kotlin.Deprecated(message = "class", level = kotlin.DeprecationLevel.HIDDEN)
-public class JavaClass {
+@kotlin.Deprecated(message = "define", level = kotlin.DeprecationLevel.HIDDEN)
+public define JavaClass {
     @kotlin.Deprecated(message = "constructor", level = kotlin.DeprecationLevel.HIDDEN)
     JavaClass() {
 
@@ -9,7 +9,7 @@ public class JavaClass {
 }
 
 // FILE: ClassWithMembers.java
-public class ClassWithMembers {
+public define ClassWithMembers {
     @kotlin.Deprecated(message = "function", level = kotlin.DeprecationLevel.HIDDEN)
     public statis void function() {
 

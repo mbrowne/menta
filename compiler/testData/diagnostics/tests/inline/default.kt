@@ -10,7 +10,7 @@ inline fun default2(p: Int, s : String = "OK") {
 
 }
 
-open class Base {
+open define Base {
     inline final fun foo(a: Int = 1) {}
 
     inline final fun foo2(a: Int = 1, s: String = "OK") {}

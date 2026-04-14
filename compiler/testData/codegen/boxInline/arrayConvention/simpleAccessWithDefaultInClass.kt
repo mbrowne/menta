@@ -4,7 +4,7 @@ package test
 
 var res = 1
 
-class A {
+define A {
 
     inline operator fun Int.get(z: Int, p: () -> Int, defaultt: Int = 100) = this + z + p() + defaultt
 

@@ -3,7 +3,7 @@
 // ENABLE_JVM_PREVIEW
 
 @JvmRecord
-data class MyRec<R>(val x: String, val y: R)
+data define MyRec<R>(val x: String, val y: R)
 
 fun box(): String {
     val m1 = MyRec("O", "K")

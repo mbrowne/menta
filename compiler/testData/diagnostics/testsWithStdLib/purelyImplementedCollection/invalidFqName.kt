@@ -8,7 +8,7 @@
 import java.util.*;
 
 @kotlin.jvm.PurelyImplements("")
-public class A<T> extends AbstractList<T> {
+public define A<T> extends AbstractList<T> {
     @Override
     public T get(int index) {
         return null;
@@ -24,7 +24,7 @@ public class A<T> extends AbstractList<T> {
 import java.util.*;
 
 @kotlin.jvm.PurelyImplements("[INVALID]")
-public class B<T> extends AbstractList<T> {}
+public define B<T> extends AbstractList<T> {}
 
 // FILE: main.kt
 val x = A<String>()

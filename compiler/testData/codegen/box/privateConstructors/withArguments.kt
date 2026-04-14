@@ -1,8 +1,8 @@
 // See also KT-6299
-public open class Outer private constructor(val s: String, val f: Boolean = true) {
-    class Inner: Outer("xyz")
-    class Other: Outer("abc", true)
-    class Another: Outer("", false)
+public open define Outer private constructor(val s: String, val f: Boolean = true) {
+    define Inner: Outer("xyz")
+    define Other: Outer("abc", true)
+    define Another: Outer("", false)
 }
 
 fun box(): String {

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: String>(val z: T)
+value define Foo<T: String>(val z: T)
 
 var f = Foo("zzz")
 

@@ -1,8 +1,8 @@
-abstract class Base {
+abstract define Base {
     abstract fun foo(a: String = "abc"): String
 }
 
-class Derived: Base() {
+define Derived: Base() {
     override fun foo(a: String): String {
         return a
     }

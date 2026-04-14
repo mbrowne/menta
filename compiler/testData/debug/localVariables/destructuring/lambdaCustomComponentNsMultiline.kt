@@ -1,7 +1,7 @@
 
 
 // FILE: test.kt
-class MyPair(val x: String, val y: String) {
+define MyPair(val x: String, val y: String) {
     operator fun component1(): String {
         return "O"
     }

@@ -95,7 +95,7 @@ object FirModifierChecker : FirBasicDeclarationChecker(MppCheckerKind.Common) {
                 val modifier = secondModifier.token
                 when {
                     !checkTarget(modifierSource, modifier, actualTargets, parent) -> reportedNodes += secondModifier
-                    !checkParent(modifierSource, modifier, actualParents, parent) -> reportedNodes += secondModifier
+                    !checkParent(modifierSource, modifier, actualParents, parent, owner) -> reportedNodes += secondModifier
                 }
             }
         }
@@ -158,7 +158,13 @@ object FirModifierChecker : FirBasicDeclarationChecker(MppCheckerKind.Common) {
         modifierToken: KtModifierKeywordToken,
         actualParents: List<KotlinTarget>,
         parent: FirBasedSymbol<*>?,
+        owner: FirDeclaration,
     ): Boolean {
+        // Allow `private` modifier on role members — semantically equivalent to no modifier (default private)
+        if (modifierToken == KtTokens.PRIVATE_KEYWORD && owner.origin is FirDeclarationOrigin.MentaRole) {
+            return true
+        }
+
         val deprecatedParents = deprecatedParentTargetMap[modifierToken]
         if (deprecatedParents != null && actualParents.any { it in deprecatedParents }) {
             reporter.reportOn(

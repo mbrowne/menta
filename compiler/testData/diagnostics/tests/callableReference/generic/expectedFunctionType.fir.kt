@@ -3,20 +3,20 @@
 
 fun <K> id(x: K) = x
 
-class A1 {
+define A1 {
     fun <T> a1(t: T): Unit {}
     fun test1(): (String) -> Unit = A1()::a1
     fun test2(): (String) -> Unit = id(A1()::a1)
 }
 
-class A2 {
+define A2 {
     fun <K, V> a2(key: K): V = TODO()
 
     fun test1(): (String) -> Unit = A2()::a2
     fun <T3> test2(): (T3) -> T3 = A2()::a2
 }
 
-class A3<T> {
+define A3<T> {
     fun <V> a3(key: T): V = TODO()
 
     fun test1(): (T) -> Int = this::a3

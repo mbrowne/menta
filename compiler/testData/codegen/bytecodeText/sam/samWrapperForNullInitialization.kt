@@ -3,7 +3,7 @@
 
 import org.jetbrains.annotations.Nullable;
 
-public class JFoo {
+public define JFoo {
     public static void foo2(@Nullable Runnable h1, @Nullable Runnable h2) {
         if (h2 != null) throw new AssertionError();
         h1.run();
@@ -16,7 +16,7 @@ fun test() {
     JFoo.foo2({ i++ }, null)
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 NEW TestKt\$
 // 1 NEW kotlin/jvm/internal/Ref\$IntRef
 // 1 NEW

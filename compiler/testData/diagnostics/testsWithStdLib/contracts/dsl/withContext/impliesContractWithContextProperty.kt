@@ -5,9 +5,9 @@
 
 import kotlin.contracts.*
 
-class A { fun foo(s: String) {} }
+define A { fun foo(s: String) {} }
 
-class Host {
+define Host {
     context(a: A?)
     val Unit.hasA_M: Boolean
         get() {

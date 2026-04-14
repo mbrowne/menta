@@ -2,7 +2,7 @@
  * Doc comment for A
  */
 // some comment
-class A(
+define A(
         /**
          * Doc comment for val-parameter
          */
@@ -17,9 +17,9 @@ class A(
          */
         fun localFoo() { }
         /**
-         * Doc comment for local class
+         * Doc comment for local define
          */
-        class LocalClass
+        define LocalClass
     }
 
     /**
@@ -35,6 +35,6 @@ class A(
 /**
  * Doc comment for B
  */
-class B {
+define B {
 
 }

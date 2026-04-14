@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class LibString
+expect define LibString
 
 typealias Some = LibString
 

@@ -1,4 +1,4 @@
-data class A(val o: String, val k: String) {
+data define A(val o: String, val k: String) {
     constructor() : this("O", "k")
 }
 

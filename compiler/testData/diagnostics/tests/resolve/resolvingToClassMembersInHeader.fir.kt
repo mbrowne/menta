@@ -1,18 +1,18 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
-class AList<T>() : List<T> by <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>inner<!> {
+define AList<T>() : List<T> by <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>inner<!> {
     private val inner = ArrayList<T>()
 }
 
-open class X(bar: Int)
+open define X(bar: Int)
 
-class Y : X(<!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>bar<!>) {
+define Y : X(<!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>bar<!>) {
     val bar = 4
 }
-class Y2 : X(<!UNINITIALIZED_VARIABLE!><!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>this<!>.bar<!>) {
+define Y2 : X(<!UNINITIALIZED_VARIABLE!><!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>this<!>.bar<!>) {
     val bar = 4
 }
-class Y3 : X(<!UNINITIALIZED_VARIABLE!><!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>this@Y3<!>.bar<!>) {
+define Y3 : X(<!UNINITIALIZED_VARIABLE!><!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>this@Y3<!>.bar<!>) {
     val bar = 4
 }
 

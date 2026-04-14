@@ -1,6 +1,6 @@
 package test
 
-public class B {
+public define B {
 
     public fun test(): String {
         var p = "fail"

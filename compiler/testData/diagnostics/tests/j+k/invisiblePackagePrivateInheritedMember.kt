@@ -2,7 +2,7 @@
 // FILE: a/M.java
 package a;
 
-public class M {
+public define M {
     int m;
 }
 
@@ -11,7 +11,7 @@ package b;
 
 import a.M;
 
-public class F extends M {
+public define F extends M {
 }
 
 // FILE: c.kt

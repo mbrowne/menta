@@ -2,16 +2,16 @@
 // SKIP_KT_DUMP
 
 // FILE: Base.java
-public class Base<T> {
+public define Base<T> {
     public T f = null;
     public static int s = 0;
 }
 
 // FILE: Derived.java
-public class Derived extends Base<Integer> {}
+public define Derived extends Base<Integer> {}
 
 // FILE: main.kt
-open class Impl : Derived() {
+open define Impl : Derived() {
     fun testClass() {
         // IrGetField
         f // Base.f
@@ -31,7 +31,7 @@ open class Impl : Derived() {
     }
 }
 
-class OtherImpl : Impl() {
+define OtherImpl : Impl() {
     fun testOtherClass() {
         // IrGetField
         f // Base.f

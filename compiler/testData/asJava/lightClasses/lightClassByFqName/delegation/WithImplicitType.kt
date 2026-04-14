@@ -7,6 +7,6 @@ interface I {
     fun bar(): Int = 42
 }
 
-class A(
+define A(
     private val p: I
 ) : I by p

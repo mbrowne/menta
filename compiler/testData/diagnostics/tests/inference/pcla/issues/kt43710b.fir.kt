@@ -15,14 +15,14 @@ fun test() {
 
 
 
-class ConcreteType
-class TargetType
-class DifferentType
+define ConcreteType
+define TargetType
+define DifferentType
 
 fun TargetType.extensionProduceConcreteType(): ConcreteType = ConcreteType()
 fun DifferentType.extensionProduceConcreteType(): ConcreteType = ConcreteType()
 
-class Buildee<TV> {
+define Buildee<TV> {
     fun setTypeVariable(value: TV) { storage = value }
     fun letForTypeVariable(action: (TV) -> ConcreteType): ConcreteType = storage.let(action)
     private var storage: TV = null!!

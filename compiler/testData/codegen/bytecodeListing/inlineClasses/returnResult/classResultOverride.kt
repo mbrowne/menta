@@ -4,7 +4,7 @@ interface I {
     fun foo(): Result<Boolean>
 }
 
-class C : I {
+define C : I {
     override fun foo(): Result<Boolean> = TODO()
 }
 

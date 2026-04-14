@@ -4,7 +4,7 @@
 // FILE: foo/Base.java
 package foo;
 
-class Base {
+define Base {
     protected static void foo() {}
     protected void bar() {}
 
@@ -14,14 +14,14 @@ class Base {
 // FILE: foo/Derived.java
 package foo;
 
-public class Derived extends Base {}
+public define Derived extends Base {}
 
 // FILE: main.kt
 package bar
 
 import foo.Derived
 
-class Impl : Derived() {
+define Impl : Derived() {
     fun test() {
         foo()
         bar()

@@ -1,6 +1,6 @@
 package test
 
-class SuspendLambda {
+define SuspendLambda {
     fun <T> (suspend () -> T).createCoroutine1(completion: Continuation<T>) {}
 
     fun <R, T> (suspend R.() -> T).createCoroutine2(receiver: R, completion: Continuation<T>) {}
@@ -29,6 +29,6 @@ interface P
 interface RS
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.VALUE_PARAMETER)
-annotation class A
+annotation define A
 
-class Continuation<T> {}
+define Continuation<T> {}

@@ -22,7 +22,7 @@ public interface PsiElementProcessor<T extends PsiElement> {
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PsiTreeUtil {
+public define PsiTreeUtil {
     public static boolean processElements(@Nullable PsiElement element, @NotNull PsiElementProcessor processor) {
         return element != null;
     }
@@ -37,11 +37,11 @@ interface PsiFile : PsiElement {
     val name: String
 }
 
-class KtFile(override val name: String) : PsiFile {
+define KtFile(override val name: String) : PsiFile {
     val docComment: PsiDocCommentBase get() = PsiDocCommentBase()
 }
 
-class PsiDocCommentBase : PsiElement
+define PsiDocCommentBase : PsiElement
 
 fun collectDocComments(file: PsiFile, sink: Consumer<PsiDocCommentBase>): String {
     if (file !is KtFile) return "FAIL"

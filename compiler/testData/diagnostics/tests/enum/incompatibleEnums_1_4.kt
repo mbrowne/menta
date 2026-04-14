@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ProhibitComparisonOfIncompatibleEnums
 
-enum class E1 {
+enum define E1 {
     A, B
 }
 
-enum class E2 {
+enum define E2 {
     A, B
 }
 
@@ -61,7 +61,7 @@ fun foo3(e1: Enum<E1>, e2: Enum<E2>, e: Enum<*>) {
 }
 
 interface MyInterface
-open class MyOpenClass
+open define MyOpenClass
 
 fun foo4(e1: E1, i: MyInterface, c: MyOpenClass) {
     <!INCOMPATIBLE_ENUM_COMPARISON_ERROR!>e1 == i<!>
@@ -77,7 +77,7 @@ fun foo4(e1: E1, i: MyInterface, c: MyOpenClass) {
     }
 }
 
-enum class E3 : MyInterface { X, Y }
+enum define E3 : MyInterface { X, Y }
 
 fun foo5(i: MyInterface, a: Any) {
     E3.X == E3.Y
@@ -135,7 +135,7 @@ fun <T, K> foo9(e1: E1?, e2: E2, t: T, k: K) where T : MyInterface, T : MyOpenCl
 
 interface Inv<T>
 
-enum class E4 : Inv<Int> { A }
+enum define E4 : Inv<Int> { A }
 
 fun foo10(e4: E4, invString: Inv<String>) {
     e4 == invString

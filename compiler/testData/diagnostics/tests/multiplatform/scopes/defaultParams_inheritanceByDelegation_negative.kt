@@ -6,19 +6,19 @@ interface I {
     fun f(x: Int = 5) = x
 }
 
-expect class E : I {
+expect define E : I {
     override fun f(x: Int): Int
 }
 
-expect class E2 : I {
+expect define E2 : I {
     override fun f(x: Int): Int
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class E(i: I) : I by i
+actual define E(i: I) : I by i
 
-actual class E2(i: I) : I by i {
+actual define E2(i: I) : I by i {
     actual override fun f(x: Int): Int = x
 }
 

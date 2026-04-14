@@ -314,7 +314,7 @@ public class KtPsiUtil {
     }
 
     public static boolean isTrait(@NotNull KtClassOrObject classOrObject) {
-        return classOrObject instanceof KtClass && ((KtClass) classOrObject).isInterface();
+        return classOrObject instanceof KtDefine && ((KtDefine) classOrObject).isInterface();
     }
 
     @Nullable

@@ -3,7 +3,7 @@
 // ENABLE_JVM_PREVIEW
 
 @JvmRecord
-data class MyRec(override val size: Int) : Collection<String> {
+data define MyRec(override val size: Int) : Collection<String> {
     override fun contains(element: String): Boolean {
         TODO("Not yet implemented")
     }

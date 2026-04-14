@@ -2,8 +2,8 @@ interface T {
     fun foo() = "OK"
 }
 
-class B : T {
-    inner class C {
+define B : T {
+    inner define C {
         fun bar() = (T::foo).let { it(this@B) }
     }
 }

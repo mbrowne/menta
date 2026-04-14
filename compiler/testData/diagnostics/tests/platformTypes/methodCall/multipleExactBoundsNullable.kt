@@ -6,7 +6,7 @@
 import java.util.AbstractMap;
 import java.util.Set;
 
-class MyMap<K, V> extends AbstractMap<K, V> {
+define MyMap<K, V> extends AbstractMap<K, V> {
     @Override
     public Set<Entry<K, V>> entrySet() {
         return null;
@@ -19,7 +19,7 @@ interface ResolverForProject<M1> {
     val exposeM: M1 get() = null!!
 }
 
-class ResolverForProjectImpl<M>(
+define ResolverForProjectImpl<M>(
         descriptorByModule: Map<M, String>,
         delegateResolver: ResolverForProject<M>
 ) : ResolverForProject<M>

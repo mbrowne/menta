@@ -6,8 +6,8 @@
 // KT-19423 variation
 val used = "abc"
 
-class Outer {
-    class User {
+define Outer {
+    define User {
         val property = used
     }
 }

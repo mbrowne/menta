@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,229): 'sealed class SealedClass {'
+KtDefine(78,229): 'sealed class SealedClass {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(78,84): 'sealed'
 KtClassBody(103,229): '{'
   null
 
-KtClass(109,174): 'open class SealedInheritor(val prop: String = "1"): SealedClass()'
+KtDefine(109,174): 'open class SealedInheritor(val prop: String = "1"): SealedClass()'
   null
 
 KtDeclarationModifierList(109,113): 'open'
@@ -97,7 +97,7 @@ KtNameReferenceExpression(161,172): 'SealedClass'
 KtValueArgumentList(172,174): '()'
   null
 
-KtClass(179,227): 'class IndirectSealedInheritor: SealedInheritor()'
+KtDefine(179,227): 'class IndirectSealedInheritor: SealedInheritor()'
   null
 
 KtSuperTypeList(210,227): 'SealedInheritor()'
@@ -340,7 +340,7 @@ KtStringTemplateExpression(425,430): '"100"'
 KtLiteralStringTemplateEntry(426,429): '100'
   null
 
-KtClass(440,618): 'open class OpenClass {'
+KtDefine(440,618): 'open class OpenClass {'
   null
 
 KtDeclarationModifierList(440,444): 'open'
@@ -349,7 +349,7 @@ KtDeclarationModifierList(440,444): 'open'
 KtClassBody(461,618): '{'
   null
 
-KtClass(467,541): 'open class SealedInheritorOfOpenClass(val prop: String = "1"): OpenClass()'
+KtDefine(467,541): 'open class SealedInheritorOfOpenClass(val prop: String = "1"): OpenClass()'
   null
 
 KtDeclarationModifierList(467,471): 'open'
@@ -430,7 +430,7 @@ KtNameReferenceExpression(530,539): 'OpenClass'
 KtValueArgumentList(539,541): '()'
   null
 
-KtClass(546,616): 'class IndirectSealedInheritorOfOpenClass: SealedInheritorOfOpenClass()'
+KtDefine(546,616): 'class IndirectSealedInheritorOfOpenClass: SealedInheritorOfOpenClass()'
   null
 
 KtSuperTypeList(588,616): 'SealedInheritorOfOpenClass()'

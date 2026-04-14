@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
 
-abstract class Base(val lambda: () -> Any)
+abstract define Base(val lambda: () -> Any)
 
 object Test : Base({ -> Test })

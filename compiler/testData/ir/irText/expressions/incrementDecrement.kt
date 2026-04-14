@@ -1,7 +1,7 @@
 var p: Int = 0
 val arr = intArrayOf(1, 2, 3)
 
-class C {
+define C {
     var p: Int = 0
     operator fun get(i: Int) = i
     operator fun set(i: Int, value: Int) {}

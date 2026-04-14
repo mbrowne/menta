@@ -8,7 +8,7 @@ fun box(): String {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public void foo(Runnable... rs) {
         for (Runnable r : rs) {
             r.run();

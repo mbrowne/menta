@@ -5,7 +5,7 @@
 
 // FILE: B.java
 
-public class B<T> {
+public define B<T> {
     public String gav() {
         return "";
     }
@@ -17,7 +17,7 @@ public class B<T> {
 
 // FILE: A.kt
 
-class A<T> {
+define A<T> {
     fun gav() = ""
 }
 fun <R> foo(x: R) = x

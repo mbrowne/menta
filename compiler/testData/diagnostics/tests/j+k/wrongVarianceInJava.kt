@@ -4,18 +4,18 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: A.java
 
-public class A {
+public define A {
     public static Out<? super CharSequence> foo() { return null; }
     public static In<? extends CharSequence> bar() { return null; }
 }
 
 // FILE: main.kt
 
-class Out<out E> {
+define Out<out E> {
     fun x(): E = null!!
 }
 
-class In<in F> {
+define In<in F> {
     fun y(f: F) {}
 }
 

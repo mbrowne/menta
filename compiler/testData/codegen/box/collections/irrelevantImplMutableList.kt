@@ -5,8 +5,8 @@
 // FILE: J.java
 
 import java.util.*;
-public class J {
-    abstract static public class AImpl {
+public define J {
+    abstract static public define AImpl {
         public final int size() {
             return 56;
         }
@@ -100,13 +100,13 @@ public class J {
         }
     }
 
-    public static class A extends AImpl implements List<String> {
+    public static define A extends AImpl implements List<String> {
     }
 }
 
 // FILE: test.kt
 
-class X : J.A()
+define X : J.A()
 
 fun box(): String {
     val x = X()

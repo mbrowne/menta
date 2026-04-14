@@ -2,7 +2,7 @@
 
 inline fun inlineMe(crossinline c : () -> Unit) = { c() }
 
-class A {
+define A {
     fun inlineSite() {
         inlineMe {
             assert(true)

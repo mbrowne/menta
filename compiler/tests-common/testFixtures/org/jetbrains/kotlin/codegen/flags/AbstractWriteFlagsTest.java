@@ -159,6 +159,7 @@ public abstract class AbstractWriteFlagsTest extends CodegenTestCase {
 
     private static TestClassVisitor getClassVisitor(@NotNull TestedObject object, boolean allowSynthetic) {
         switch (object.kind) {
+            case "define":
             case "class":
                 return new ClassFlagsVisitor();
             case "function":

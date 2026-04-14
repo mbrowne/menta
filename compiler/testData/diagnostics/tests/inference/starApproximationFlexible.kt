@@ -4,7 +4,7 @@
 // SKIP_TXT
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static <T extends Self<?>> Self<T> id1Inv(T t) { return null; }
     public static <T extends Self<?>> T id2Inv(T t) { return null; }
     public static <T extends OutSelf<?>> OutSelf<T> id1Out(T t) { return null; }

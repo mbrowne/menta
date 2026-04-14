@@ -12,21 +12,21 @@ interface IVarDefault {
         get() = ""
         set(value) {}
 }
-open class CVal {
+open define CVal {
     val a: String = "default"
 }
-open class CVar {
+open define CVar {
     var a: String = "default"
 }
 
-<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>class C1<!> : IVar, IVarDefault
-<!VAR_IMPLEMENTED_BY_INHERITED_VAL_WARNING!>class C2<!> : CVal(), IVar
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class C3<!> : CVal(), IVarDefault
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class C4<!> : CVal(), IVar, IVarDefault
-class C5 : CVar(), IVar
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class C6<!> : CVar(), IVarDefault
-<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class C7<!> : CVar(), IVar, IVarDefault
-<!VAR_OVERRIDDEN_BY_VAL_BY_DELEGATION!>class C8<!>(ival: IVal) : IVar, IVal by ival
+<!MANY_INTERFACES_MEMBER_NOT_IMPLEMENTED!>define C1<!> : IVar, IVarDefault
+<!VAR_IMPLEMENTED_BY_INHERITED_VAL_WARNING!>define C2<!> : CVal(), IVar
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define C3<!> : CVal(), IVarDefault
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define C4<!> : CVal(), IVar, IVarDefault
+define C5 : CVar(), IVar
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define C6<!> : CVar(), IVarDefault
+<!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>define C7<!> : CVar(), IVar, IVarDefault
+<!VAR_OVERRIDDEN_BY_VAL_BY_DELEGATION!>define C8<!>(ival: IVal) : IVar, IVal by ival
 
 /* GENERATED_FIR_TAGS: classDeclaration, getter, inheritanceDelegation, interfaceDeclaration, primaryConstructor,
 propertyDeclaration, setter, stringLiteral */

@@ -2,7 +2,7 @@
 
 import kotlin.collections.AbstractIterator
 
-class MyIterator : AbstractIterator<String>() {
+define MyIterator : AbstractIterator<String>() {
     var i = 0
     public override fun computeNext() {
         if(i < 5)

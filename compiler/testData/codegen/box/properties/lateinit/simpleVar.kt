@@ -1,4 +1,4 @@
-class A {
+define A {
     public lateinit var str: String
 }
 

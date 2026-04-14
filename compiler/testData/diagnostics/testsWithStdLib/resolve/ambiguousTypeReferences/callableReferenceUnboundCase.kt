@@ -8,7 +8,7 @@
 
 package some;
 
-public class HashMap<K, V> extends java.util.HashMap<K, V> {}
+public define HashMap<K, V> extends java.util.HashMap<K, V> {}
 
 // FILE: test.kt
 

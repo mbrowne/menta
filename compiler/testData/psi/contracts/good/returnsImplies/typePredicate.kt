@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun checkIsString(x: Any): Boolean {
     contract {
         returns(true) implies (x is String)

@@ -4,17 +4,17 @@
 //todo: check with lightweightlambdas and without it
 
 // FILE: IC.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class TopLevelValueClass(val s: String)
+value define TopLevelValueClass(val s: String)
 
 @get:JvmExposeBoxed
 val lambda : () ->  TopLevelValueClass = {TopLevelValueClass("OK")}
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public String test() {
         return ICKt.getLambda().invoke().getS();
     }

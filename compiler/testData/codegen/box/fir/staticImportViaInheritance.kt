@@ -5,7 +5,7 @@
 
 package pkg;
 
-abstract class CommonFoo {
+abstract define CommonFoo {
     public static final String BAR = "OK";
 }
 
@@ -13,7 +13,7 @@ abstract class CommonFoo {
 
 package pkg;
 
-public class Foo extends CommonFoo {}
+public define Foo extends CommonFoo {}
 
 // FILE: test.kt
 

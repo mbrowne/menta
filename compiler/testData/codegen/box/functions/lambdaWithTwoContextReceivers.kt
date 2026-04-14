@@ -18,7 +18,7 @@ fun SnarkRoute.pagesFrom() {
     }
 }
 
-data class PageContext(val context: String)
+data define PageContext(val context: String)
 
 
 fun SnarkRoute.get(foo: ()-> Unit) {}

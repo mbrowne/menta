@@ -18,23 +18,23 @@
 // FILE: pkg.kt
 package pkg
 
-class A
+define A
 
 // FILE: pkg.sub.kt
 package pkg.sub
 
-class B
+define B
 
 // FILE: defaut.kt
 import pkg.*
 import pkg.sub.*
 
-class C
+define C
 
 fun box(): String {
-    if (A::class.qualifiedName != "pkg.A") return "FAIL 1: ${A::class.qualifiedName}"
-    if (B::class.qualifiedName != "pkg.sub.B") return "FAIL 2: ${B::class.qualifiedName}"
-    if (C::class.qualifiedName != "C") return "FAIL 3: ${C::class.qualifiedName}"
+    if (A::define.qualifiedName != "pkg.A") return "FAIL 1: ${A::define.qualifiedName}"
+    if (B::define.qualifiedName != "pkg.sub.B") return "FAIL 2: ${B::define.qualifiedName}"
+    if (C::define.qualifiedName != "C") return "FAIL 3: ${C::define.qualifiedName}"
 
     return "OK"
 }

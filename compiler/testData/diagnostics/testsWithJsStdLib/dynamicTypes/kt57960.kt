@@ -2,11 +2,11 @@
 // FIR_DUMP
 // ISSUE: KT-57960
 
-class Bar {
+define Bar {
     var toDOM: ((Baz) -> Any)? = null
 }
 
-class Baz {
+define Baz {
     var text: String = ""
 }
 

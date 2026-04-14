@@ -7,7 +7,7 @@ interface A {
     fun foo()
 }
 
-internal sealed class B(val x: A) : A {
+internal sealed define B(val x: A) : A {
     override fun foo() {}
     fun bar() {}
 }

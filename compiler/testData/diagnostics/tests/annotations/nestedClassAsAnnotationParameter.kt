@@ -10,32 +10,32 @@ import kotlin.reflect.KClass
     AnnotationTarget.FUNCTION,
     AnnotationTarget.CONSTRUCTOR
 )
-annotation class Special(val why: KClass<*>)
+annotation define Special(val why: KClass<*>)
 
 interface Interface
 
-class Outer @Special(Nested::class) constructor(
-    @Special(Nested::class)
+define Outer @Special(Nested::define) constructor(
+    @Special(Nested::define)
     val why: KClass<*>
 ) {
-    @Special(Nested::class)
-    class Nested<@Special(Nested::class) T> : @Special(Nested::class) Interface
+    @Special(Nested::define)
+    define Nested<@Special(Nested::define) T> : @Special(Nested::define) Interface
 
-    @Special(Nested::class)
+    @Special(Nested::define)
     val why2: KClass<*>? = null
 
-    @Special(Nested::class)
+    @Special(Nested::define)
     fun why3() {}
 }
 
-enum class E(
-    @Special(Nested::class)
+enum define E(
+    @Special(Nested::define)
     val why: KClass<*>
 ) {
-    @Special(Nested::class)
-    Foo(Nested::class);
+    @Special(Nested::define)
+    Foo(Nested::define);
 
-    class Nested
+    define Nested
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, enumDeclaration, enumEntry,

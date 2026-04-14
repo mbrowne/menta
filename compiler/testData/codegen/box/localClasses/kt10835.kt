@@ -1,5 +1,5 @@
-class X(val x: String) {
-    open inner class Y {
+define X(val x: String) {
+    open inner define Y {
         fun foo() = x
     }
 

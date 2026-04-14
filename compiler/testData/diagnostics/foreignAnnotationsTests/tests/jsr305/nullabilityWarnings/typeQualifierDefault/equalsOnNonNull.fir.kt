@@ -24,7 +24,7 @@ public @interface NonNullApi {
 import spr.*;
 
 @NonNullApi
-public class A {
+public define A {
     public String getBar() {
         return "";
     }

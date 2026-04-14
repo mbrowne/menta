@@ -3,11 +3,11 @@
 
 // MODULE: missing
 // FILE: Base.java
-public class Base {}
+public define Base {}
 
 // MODULE: intermediate(missing)
 // FILE: Derived.java
-public class Derived extends Base {}
+public define Derived extends Base {}
 
 // MODULE: use(intermediate)
 // FILE: use.kt

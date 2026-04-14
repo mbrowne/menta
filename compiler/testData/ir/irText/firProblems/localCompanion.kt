@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 
 fun runMe() {
-    class Foo {
+    define Foo {
         @Suppress("WRONG_MODIFIER_CONTAINING_DECLARATION")
         companion object {
             fun bar() {}

@@ -3,10 +3,10 @@
 // LIBRARY_PLATFORMS: JVM
 package pack
 
-class OriginalClass
+define OriginalClass
 
 @JvmInline
-value class ValueClass(val original: OriginalClass) {
+value define ValueClass(val original: OriginalClass) {
     fun funWithoutParameters() {}
     fun funWithSelfParameter(v: ValueClass) {}
     val property: Int get() = 4

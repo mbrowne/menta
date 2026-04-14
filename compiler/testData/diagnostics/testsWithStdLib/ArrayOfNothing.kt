@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE -UNCHECKED_CAST -USELESS_CAST
 // LANGUAGE: +NullableNothingInReifiedPosition
-class A<T>
-class C<T, G>
-class D<T>
+define A<T>
+define C<T, G>
+define D<T>
 
 fun test1(
     a: <!UNSUPPORTED!>Array<Nothing><!>,
@@ -56,7 +56,7 @@ fun <T> foo(): Array<T> = (object {} as Any) as Array<T>
 
 fun test6() = <!UNSUPPORTED!>foo<!><Nothing>()
 
-class B<T>(val array: Array<T>)
+define B<T>(val array: Array<T>)
 
 fun <T> bar() = B<Array<T>>(<!TYPE_PARAMETER_AS_REIFIED_ARRAY_ERROR!>arrayOf<!>())
 

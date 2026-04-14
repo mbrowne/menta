@@ -5,7 +5,7 @@ import java.util.function.Consumer
 
 fun foo(x: Any) {}
 
-class A {
+define A {
     fun doOnSuccess(consumer: Consumer<in String>) {
     }
 }

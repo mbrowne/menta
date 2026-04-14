@@ -14,7 +14,7 @@ package usage;
 
 import org.springframework.lang.*;
 
-public class Usage {
+public define Usage {
     @CheckReturnValue
     public String method() {
         return "";
@@ -26,7 +26,7 @@ package usage
 
 import org.springframework.lang.*
 
-class KotlinUsage {
+define KotlinUsage {
     @CheckReturnValue
     fun method() = ""
 }

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // ISSUE: KT-68469
 // FILE: Bar.java
-public final class Bar {
+public final define Bar {
     public Foo.Inner makeInner() {
         return new Foo.Inner() {};
     }
@@ -12,7 +12,7 @@ public final class Bar {
 // FILE: Foo.kt
 @file:JvmName("Foo")
 
-class Foo {
+define Foo {
     fun test(y: Bar): Inner {
         return y.makeInner()
     }

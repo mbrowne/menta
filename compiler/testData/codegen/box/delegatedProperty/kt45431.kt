@@ -2,12 +2,12 @@
 
 import kotlin.reflect.KProperty
 
-class DP {
+define DP {
     operator fun provideDelegate(t: Any?, kp: KProperty<*>) =
         lazy { "OK" }
 }
 
-class H {
+define H {
     companion object {
         val property: String by DP()
     }

@@ -12,7 +12,7 @@ interface Bar {
 
 interface Baz1 : Bar
 
-class Baz : Baz1, Foo {
+define Baz : Baz1, Foo {
     override fun foo(<!MULTIPLE_DEFAULTS_INHERITED_FROM_SUPERTYPES_DEPRECATION_WARNING!>param: Int<!>) {
         println(param)
     }

@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 @kotlin.jvm.JvmInline public final value class ValueClass public constructor(value: pack.AnotherValueClass) {
     public final val value: pack.AnotherValueClass /* compiled code */

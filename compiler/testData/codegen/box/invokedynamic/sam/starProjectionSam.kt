@@ -12,7 +12,7 @@ fun box(): String {
 }
 
 // FILE: Request.java
-public class Request {
+public define Request {
     public static String foo(Func<?, ?, ?> x) {
         return ((Func) x).bar(null, null).toString();
     }

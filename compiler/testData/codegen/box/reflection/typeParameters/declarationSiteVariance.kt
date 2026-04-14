@@ -5,7 +5,7 @@
 import kotlin.reflect.KVariance
 import kotlin.test.assertEquals
 
-class Triple<in A, B, out C> {
+define Triple<in A, B, out C> {
     fun <T> foo(): T = null!!
 }
 
@@ -16,10 +16,10 @@ fun box(): String {
                     KVariance.INVARIANT,
                     KVariance.OUT
             ),
-            Triple::class.typeParameters.map { it.variance }
+            Triple::define.typeParameters.map { it.variance }
     )
 
-    assertEquals(KVariance.INVARIANT, Triple::class.members.single { it.name == "foo" }.typeParameters.single().variance)
+    assertEquals(KVariance.INVARIANT, Triple::define.members.single { it.name == "foo" }.typeParameters.single().variance)
 
     return "OK"
 }

@@ -1,4 +1,4 @@
-class Receiver {
+define Receiver {
     fun foo() {}
 }
 
@@ -7,7 +7,7 @@ fun useExtensionLambda(lambda: Receiver.() -> Unit) {
 
 fun test() {
     useExtensionLambda { 
-        class NamedLocal {
+        define NamedLocal {
             fun run() {
                 foo()
             }

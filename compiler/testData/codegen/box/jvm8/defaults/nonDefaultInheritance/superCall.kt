@@ -16,7 +16,7 @@ interface Foo<T> {
 // FILE: main.kt
 interface DerivedInterface<T> : Foo<T>
 
-class DerivedClass : DerivedInterface<String> {
+define DerivedClass : DerivedInterface<String> {
     override fun foo(p: String) = super.foo(p)
 }
 

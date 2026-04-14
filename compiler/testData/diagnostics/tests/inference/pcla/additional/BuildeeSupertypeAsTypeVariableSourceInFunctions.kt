@@ -44,14 +44,14 @@ fun test() {
     }
 }
 
-open class BaseBuildee<BBTV>
-class DerivedBuildee<DBTV>: BaseBuildee<DBTV>()
+open define BaseBuildee<BBTV>
+define DerivedBuildee<DBTV>: BaseBuildee<DBTV>()
 
 fun <FTV> build(instructions: DerivedBuildee<FTV>.() -> Unit): DerivedBuildee<FTV> {
     return DerivedBuildee<FTV>().apply(instructions)
 }
 
-class TargetType
+define TargetType
 
 fun consumeA(base: BaseBuildee<TargetType>) {}
 

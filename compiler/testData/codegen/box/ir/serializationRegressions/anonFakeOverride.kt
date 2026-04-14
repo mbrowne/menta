@@ -8,14 +8,14 @@
 
 package com.soywiz.korag.shader
 
-open class Operand
+open define Operand
 
-open class Variable : Operand()
+open define Variable : Operand()
 
-class Program {
-    class Stm(val o: Operand)
+define Program {
+    define Stm(val o: Operand)
 
-    open class Visitor<E>(val default: E) {
+    open define Visitor<E>(val default: E) {
         open fun visit(stm: Stm?) {
             if (stm?.o is Operand) visit(stm.o)
         }
@@ -27,9 +27,9 @@ class Program {
     }
 }
 
-open class Uniform(val result: String): Variable()
+open define Uniform(val result: String): Variable()
 
-open class Shader(val stm: Program.Stm?) {
+open define Shader(val stm: Program.Stm?) {
 
     // Here for object.visit(Program.Stm?) FO were 2 different mangles
     // 1.5.31: <anonymous>#static(kotlin.collections.LinkedHashSet<com.soywiz.korag.shader.Uniform>){}visit(com.soywiz.korag.shader.Program.Stm?){}
@@ -50,7 +50,7 @@ open class Shader(val stm: Program.Stm?) {
 
 import com.soywiz.korag.shader.*
 
-class D : Shader(Program.Stm((Uniform("OK"))))
+define D : Shader(Program.Stm((Uniform("OK"))))
 
 fun foo(): Shader = D()
 

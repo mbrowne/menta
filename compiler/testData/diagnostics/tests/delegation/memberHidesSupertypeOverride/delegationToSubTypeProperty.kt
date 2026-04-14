@@ -7,7 +7,7 @@ public interface Base {
 
 public interface Base2 : Base 
 
-class Delegate : Base2
+define Delegate : Base2
 
 fun box(): String {
     object : Base, Base2 by Delegate() {

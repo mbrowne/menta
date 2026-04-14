@@ -33,9 +33,9 @@ interface C {
 actual typealias A = C
 actual typealias B = C
 
-class CImpl(override val t: String) : C
+define CImpl(override val t: String) : C
 
-class CI(private val v: C) : I<C> {
+define CI(private val v: C) : I<C> {
     override fun get(): C = v
 }
 

@@ -3,7 +3,7 @@
 // CHECK_TYPE
 // COMPARE_WITH_LIGHT_TREE
 
-class Inv<I>
+define Inv<I>
 fun <T> materialize(): Inv<T> = TODO()
 fun <K> id(arg: K) = arg
 fun <S> select(vararg args: S): S = TODO()

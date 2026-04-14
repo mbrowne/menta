@@ -3,14 +3,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     fun foo()
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo {
+actual open define Foo {
     // final -> open is a legal modality change
     actual open fun foo() {
     }

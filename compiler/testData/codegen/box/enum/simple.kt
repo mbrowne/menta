@@ -1,4 +1,4 @@
-enum class Season {
+enum define Season {
     WINTER,
     SPRING,
     SUMMER,

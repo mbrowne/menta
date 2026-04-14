@@ -6,7 +6,7 @@ package a
 
 import checkSubtype
 
-class A<T>(x: T) {
+define A<T>(x: T) {
     val p = x
 }
 

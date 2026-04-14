@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-enum class ProtocolState {
+enum define ProtocolState {
   WAITING {
     override fun signal() = ProtocolState.TALKING
   },

@@ -1,3 +1,3 @@
-expect class Foo {
+expect define Foo {
     constructor(s: String)
 }

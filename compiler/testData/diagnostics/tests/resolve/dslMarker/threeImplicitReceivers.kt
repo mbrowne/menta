@@ -2,31 +2,31 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann1
+annotation define Ann1
 
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann2
+annotation define Ann2
 
 @DslMarker
 @Target(AnnotationTarget.TYPE)
-annotation class Ann3
+annotation define Ann3
 
-class A {
+define A {
     operator fun B.invoke() {}
 
     val B.y: D get() = D()
 }
 
-class B
+define B
 
-class C {
+define C {
     operator fun D.invoke() {}
 
     val D.x: B get() = B()
 }
 
-class D
+define D
 
 fun foo(x: (@Ann1 A).() -> Unit) {}
 fun bar(x: (@Ann2 B).() -> Unit) {}

@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-inline class C(val x: String)
+inline define C(val x: String)
 
 fun foo(c: C) = c.x
 

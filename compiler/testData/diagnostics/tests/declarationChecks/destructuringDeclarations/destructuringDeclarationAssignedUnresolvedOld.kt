@@ -10,7 +10,7 @@ fun checkersShouldRun() {
     val (@A a, _) = <!UNRESOLVED_REFERENCE!>unresolved<!>
 }
 
-annotation class A
+annotation define A
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, destructuringDeclaration, functionDeclaration, localProperty,
 propertyDeclaration, unnamedLocalVariable */

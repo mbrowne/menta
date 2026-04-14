@@ -6,7 +6,7 @@
 import kotlin.contracts.*
 import kotlin.properties.ReadOnlyProperty
 
-enum class Some(val s: String, val s2: String) {
+enum define Some(val s: String, val s2: String) {
     A(A.someString, <!UNINITIALIZED_ENUM_ENTRY!>B<!>.someString) {
         val a_inner = B.s // NPE
         val b_inner = capture { B.s } // potential NPE
@@ -48,7 +48,7 @@ fun capture(block: () -> Unit): String {
     return "Capture"
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 inline fun inPlace(block: () -> Unit): String {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     block()
@@ -60,7 +60,7 @@ fun captureDelegate(block: () -> Unit): ReadOnlyProperty<Any?, String> {
     return ReadOnlyProperty { _, _ -> "captureDelegate" }
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun inPlaceDelegate(block: () -> Unit): ReadOnlyProperty<Any?, String> {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     block()

@@ -2,7 +2,7 @@ package foo
 
 var log = ""
 
-class A(val value: Int) {
+define A(val value: Int) {
     operator fun plus(other: A): A {
         log += "A.plus(${other.value});"
         return A(value + other.value)
@@ -21,7 +21,7 @@ fun getArrayIndex(): Int {
     return 0
 }
 
-class B(value: Int) {
+define B(value: Int) {
     var a = A(value)
 }
 

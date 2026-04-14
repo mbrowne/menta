@@ -1,6 +1,6 @@
 val c: suspend () -> Unit = {}
 
-class WithTypeParameter<T: suspend() -> Unit> {}
+define WithTypeParameter<T: suspend() -> Unit> {}
 
 fun returnsSuspend() : suspend() -> Unit = {}
 

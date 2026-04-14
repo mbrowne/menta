@@ -3,11 +3,11 @@
 
 import kotlin.reflect.KProperty
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
-class Kaboom() {
+define Kaboom() {
     // Here and below we should have errors for simple AND delegated
     init {
         <!UNINITIALIZED_VARIABLE!>delegated<!>.hashCode()

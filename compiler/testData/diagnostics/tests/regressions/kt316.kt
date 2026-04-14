@@ -7,7 +7,7 @@ interface B {
     fun foo() {}
 }
 
-open class A() : B{
+open define A() : B{
     override fun foo() {}
 }
 

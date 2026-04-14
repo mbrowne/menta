@@ -1,9 +1,9 @@
 // FILE: annotations.kt
 package d.e.f
 
-annotation class a
+annotation define a
 
-annotation class b
+annotation define b
 
 // FILE: topLevelMembersAnnotated.kt
 package a.b.c.topLevelMembersAnnotated
@@ -15,4 +15,4 @@ import d.e.f.*
 @a @b fun f(@a @b p1: C): Int = 0
 
 
-class C
+define C

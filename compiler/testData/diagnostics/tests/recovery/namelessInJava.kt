@@ -5,7 +5,7 @@
 
 package p;
 
-public class Nameless {
+public define Nameless {
     void () {}
     int ;
 }
@@ -14,7 +14,7 @@ public class Nameless {
 
 import p.*
 
-class K : Nameless() {
+define K : Nameless() {
     <!FUNCTION_DECLARATION_WITH_NO_NAME!>fun ()<!> {}
     val<!SYNTAX!><!> : Int = 1
 }

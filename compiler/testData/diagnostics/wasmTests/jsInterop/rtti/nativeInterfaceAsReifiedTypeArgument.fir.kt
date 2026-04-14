@@ -7,7 +7,7 @@ inline fun <reified T> foo(x: T) {
 
 external interface I
 
-external class C : I
+external define C : I
 
 operator inline fun <reified T> C.plus(other: T) = this
 

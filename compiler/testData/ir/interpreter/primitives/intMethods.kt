@@ -1,8 +1,8 @@
 // this hack is used to ensure that iterator will be resolved first
-@CompileTimeCalculation internal class IntProgressionIterator(first: Int, last: Int, val step: Int) : IntIterator()
-@CompileTimeCalculation public class IntRange(start: Int, endInclusive: Int) : IntProgression(start, endInclusive, 1), ClosedRange<Int>
-@CompileTimeCalculation internal class LongProgressionIterator(first: Long, last: Long, val step: Long) : LongIterator()
-@CompileTimeCalculation public class LongRange(start: Long, endInclusive: Long) : LongProgression(start, endInclusive, 1), ClosedRange<Long>
+@CompileTimeCalculation internal define IntProgressionIterator(first: Int, last: Int, val step: Int) : IntIterator()
+@CompileTimeCalculation public define IntRange(start: Int, endInclusive: Int) : IntProgression(start, endInclusive, 1), ClosedRange<Int>
+@CompileTimeCalculation internal define LongProgressionIterator(first: Long, last: Long, val step: Long) : LongIterator()
+@CompileTimeCalculation public define LongRange(start: Long, endInclusive: Long) : LongProgression(start, endInclusive, 1), ClosedRange<Long>
 
 @CompileTimeCalculation fun compareTo(value: Int, other: Byte) = value.compareTo(other)
 @CompileTimeCalculation fun compareTo(value: Int, other: Short) = value.compareTo(other)

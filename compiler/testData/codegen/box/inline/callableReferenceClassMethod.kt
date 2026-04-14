@@ -3,7 +3,7 @@
 // FILE: lib.kt
 typealias Callback = () -> Unit
 
-class CallbackComposer {
+define CallbackComposer {
     inline fun addTo(noinline block: Callback) {
         asDynamic().push(block)
     }

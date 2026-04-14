@@ -3,11 +3,11 @@ interface A {
     val bar: String
 }
 
-class B : A {
+define B : A {
     override fun foo(): String = "O"
     override val bar: String get() = "K"
 }
 
-data class C(val a: A): A by a
+data define C(val a: A): A by a
 
 fun box() = C(B()).let { it.foo() + it.bar }

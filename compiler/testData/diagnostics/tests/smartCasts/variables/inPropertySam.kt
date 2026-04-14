@@ -7,7 +7,7 @@ public interface My {
 
 // FILE: test.kt
 
-class Your {
+define Your {
     val x = My() {
         arg: String? ->
         var y = arg

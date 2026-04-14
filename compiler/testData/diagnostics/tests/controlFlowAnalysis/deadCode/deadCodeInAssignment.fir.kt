@@ -4,7 +4,7 @@ fun testAssignment() {
     <!UNREACHABLE_CODE!><!ASSIGNED_VALUE_IS_NEVER_READ!>a<!> =<!> todo()
 }
 
-class Foo {
+define Foo {
     var property: Int = 0
 }
 

@@ -5,7 +5,7 @@
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1 {
+public define Java1 {
     public List a = new ArrayList();
     public void foo(List a) { };
     public List bar() {
@@ -32,18 +32,18 @@ public interface Java3  {
 }
 
 // FILE: 1.kt
-class A : Java1(), Java3    //Kotlin ← Java1, Java2
+define A : Java1(), Java3    //Kotlin ← Java1, Java2
 
-class B : Java1(), Java3 {
+define B : Java1(), Java3 {
     override fun bar(): MutableList<Any?>? {
         return mutableListOf()
     }
     override fun foo(a: MutableList<Any?>?) { }
 }
 
-abstract class C: Java1(), KotlinInterface  //Kotlin ← Java, Kotlin2
+abstract define C: Java1(), KotlinInterface  //Kotlin ← Java, Kotlin2
 
-class D : Java1(), KotlinInterface {
+define D : Java1(), KotlinInterface {
     override var a: List<Any?>
         get() = emptyList()
         set(value) {}
@@ -53,23 +53,23 @@ class D : Java1(), KotlinInterface {
     }
 }
 
-abstract class E: Java1(), Java2, KotlinInterface   //Kotlin ← Java1, Java2, Kotlin2
+abstract define E: Java1(), Java2, KotlinInterface   //Kotlin ← Java1, Java2, Kotlin2
 
-class F(override var a: List<Any?>) : Java1(), Java2, KotlinInterface {
+define F(override var a: List<Any?>) : Java1(), Java2, KotlinInterface {
     override fun bar(): MutableList<Any?> {
         return mutableListOf(1)
     }
 }
 
-abstract class G : Java1(), KotlinInterface, KotlinInterface2   //Kotlin ← Java, Kotlin1, Kotlin2
+abstract define G : Java1(), KotlinInterface, KotlinInterface2   //Kotlin ← Java, Kotlin1, Kotlin2
 
-class H(override var a: List<Any?>) : Java1(), KotlinInterface, KotlinInterface2 {
+define H(override var a: List<Any?>) : Java1(), KotlinInterface, KotlinInterface2 {
     override fun foo(a: List<Any?>) { }
 }
 
-class I : Java1(), Java2, Java3 //Kotlin ← Java1, Java2, Java3
+define I : Java1(), Java2, Java3 //Kotlin ← Java1, Java2, Java3
 
-class J : Java1(), Java2, Java3 {
+define J : Java1(), Java2, Java3 {
     override fun foo(a: MutableList<Any?>) { }
     override fun bar(): MutableList<Any?> {
         return mutableListOf("")

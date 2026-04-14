@@ -7,10 +7,10 @@
 // FILE: main.kt
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R> build(block: TestInterface<R>.() -> Unit): R = TODO()
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <R> build2(block: TestInterface<R>.() -> Unit): R = TODO()
 
 interface TestInterface<R> {
@@ -21,7 +21,7 @@ interface TestInterface<R> {
     fun getIn(): Inv<in R>
 }
 
-class Inv<T>
+define Inv<T>
 
 fun <K> captureOut(x: Inv<out K>): K = null as K
 fun <K> captureIn(x: Inv<out K>): K = null as K

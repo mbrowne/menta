@@ -1,7 +1,7 @@
 fun f(): String = "O"
 fun g(): String = "K"
 
-enum class E(val x: String, val y: String) {
+enum define E(val x: String, val y: String) {
     A(y = g(), x = f())
 }
 

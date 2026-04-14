@@ -3,9 +3,9 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class StringWrapper constructor(val s: String?)
+value define StringWrapper constructor(val s: String?)
 
-class Test(val s: StringWrapper?) {
+define Test(val s: StringWrapper?) {
     fun ok(): String = s!!.s!!
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Test.class[getS-DSQDras]
+// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl], Test.define[getS-DSQDras]

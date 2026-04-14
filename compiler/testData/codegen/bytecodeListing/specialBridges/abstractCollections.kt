@@ -1,14 +1,14 @@
-abstract class ACA : Collection<Any>
+abstract define ACA : Collection<Any>
 
-abstract class ACAN : Collection<Any?>
+abstract define ACAN : Collection<Any?>
 
-abstract class ACI : Collection<Int>
+abstract define ACI : Collection<Int>
 
-abstract class ACIN : Collection<Int?>
+abstract define ACIN : Collection<Int?>
 
-abstract class ACS : Collection<String>
+abstract define ACS : Collection<String>
 
-abstract class ACSN : Collection<String?>
+abstract define ACSN : Collection<String?>
 
-abstract class ACT<T> : Collection<T>
+abstract define ACT<T> : Collection<T>
 

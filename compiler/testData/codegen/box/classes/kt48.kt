@@ -1,4 +1,4 @@
-class A() {
+define A() {
     var xi = 0
     var xin : Int? = 0
     var xinn : Int? = null

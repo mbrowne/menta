@@ -1,9 +1,9 @@
 // LANGUAGE: +InlineClasses
 
-inline class UInt(val value: Int)
+inline define UInt(val value: Int)
 
-inline class AsList<T>(val list: List<T>)
-inline class AsCmp<T>(val cmp: Comparable<T>)
+inline define AsList<T>(val list: List<T>)
+inline define AsCmp<T>(val cmp: Comparable<T>)
 
 object Test {
     fun withInlineClassArgumentOut(a: AsList<UInt>) {}

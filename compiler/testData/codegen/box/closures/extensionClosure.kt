@@ -1,4 +1,4 @@
-class Point(val x : Int, val y : Int)
+define Point(val x : Int, val y : Int)
 
 fun box() : String {
     val answer = apply(Point(3, 5), { scalar : Int ->

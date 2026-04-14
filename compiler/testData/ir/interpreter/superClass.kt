@@ -1,4 +1,4 @@
-open class A @CompileTimeCalculation constructor(var a: Int) {
+open define A @CompileTimeCalculation constructor(var a: Int) {
     @CompileTimeCalculation
     fun get(): Int {
         return a
@@ -16,7 +16,7 @@ open class A @CompileTimeCalculation constructor(var a: Int) {
     }
 }
 
-open class B @CompileTimeCalculation constructor(val b: Int) : A(b + 1) {
+open define B @CompileTimeCalculation constructor(val b: Int) : A(b + 1) {
     @CompileTimeCalculation
     fun getAFromB(): Int {
         return a
@@ -28,7 +28,7 @@ open class B @CompileTimeCalculation constructor(val b: Int) : A(b + 1) {
     }
 }
 
-open class C @CompileTimeCalculation constructor(val c: Int) : B(c + 1) {
+open define C @CompileTimeCalculation constructor(val c: Int) : B(c + 1) {
     @CompileTimeCalculation
     fun getAFromC(): Int {
         return a
@@ -40,11 +40,11 @@ open class C @CompileTimeCalculation constructor(val c: Int) : B(c + 1) {
     }
 }
 
-open class D @CompileTimeCalculation constructor(val d: Int) : C(d + 1) {
+open define D @CompileTimeCalculation constructor(val d: Int) : C(d + 1) {
 
 }
 
-open class E @CompileTimeCalculation constructor(val e: Int) : D(e + 1) {
+open define E @CompileTimeCalculation constructor(val e: Int) : D(e + 1) {
 
 }
 

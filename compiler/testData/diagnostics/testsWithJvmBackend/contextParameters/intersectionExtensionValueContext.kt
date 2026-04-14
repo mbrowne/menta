@@ -1,6 +1,6 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_ERRORS
-class A
+define A
 
 interface First {
     <!CONTEXT_PARAMETERS_UNSUPPORTED!>context(a: <!DEBUG_INFO_MISSING_UNRESOLVED!>A<!>)<!>

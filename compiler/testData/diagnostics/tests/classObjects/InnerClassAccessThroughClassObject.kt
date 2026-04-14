@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package a
 
-class A {
-    class Nested
-    inner class Inner
+define A {
+    define Nested
+    inner define Inner
 
 
     companion object {
 
-        class Nested2
+        define Nested2
 
         val c: Int = 1
 
@@ -21,7 +21,7 @@ class A {
 }
 
 object O {
-    class A
+    define A
 
     object O
 }

@@ -1,7 +1,7 @@
-@Ann class MyClass
+@Ann define MyClass
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann
+annotation define Ann
 
 // 1 @LAnn;()
 // 0 invisible

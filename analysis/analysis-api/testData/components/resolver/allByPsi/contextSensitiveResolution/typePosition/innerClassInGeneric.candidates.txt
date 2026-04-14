@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,265): 'sealed class A<T> {'
+KtDefine(78,265): 'sealed class A<T> {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -22,7 +22,7 @@ KtTypeParameter(93,94): 'T'
 KtClassBody(96,265): '{'
   NO_CANDIDATES
 
-KtClass(102,168): 'inner class B1 : A<String>() {'
+KtDefine(102,168): 'inner class B1 : A<String>() {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(102,107): 'inner'
@@ -209,7 +209,7 @@ KtNameReferenceExpression(156,160): 'TODO'
 KtValueArgumentList(160,162): '()'
   NO_CANDIDATES
 
-KtClass(174,240): 'inner class B2 : A<String>() {'
+KtDefine(174,240): 'inner class B2 : A<String>() {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(174,179): 'inner'
@@ -396,7 +396,7 @@ KtNameReferenceExpression(228,232): 'TODO'
 KtValueArgumentList(232,234): '()'
   NO_CANDIDATES
 
-KtClass(245,263): 'class C : A<Int>()'
+KtDefine(245,263): 'class C : A<Int>()'
   NO_CANDIDATES
 
 KtSuperTypeList(255,263): 'A<Int>()'

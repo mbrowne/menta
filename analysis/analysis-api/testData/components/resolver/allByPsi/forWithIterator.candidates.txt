@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,9): 'f'
 KtImportList(9,9): ''
   NO_CANDIDATES
 
-KtClass(11,61): 'class IntProgression(val start: Int, val end: Int)'
+KtDefine(11,61): 'class IntProgression(val start: Int, val end: Int)'
   NO_CANDIDATES
 
 KtPrimaryConstructor(31,61): '(val start: Int, val end: Int)'

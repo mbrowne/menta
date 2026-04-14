@@ -5,7 +5,7 @@
 // SCOPE_DUMP: D:foo
 // FILE: A.java
 
-public class A<T> {
+public define A<T> {
     public String foo(T x) {
         return "A";
     }
@@ -13,7 +13,7 @@ public class A<T> {
 
 // FILE: C.java
 
-public class C extends A<Integer> {}
+public define C extends A<Integer> {}
 
 // FILE: main.kt
 
@@ -21,7 +21,7 @@ interface B {
     fun foo(x: Int) = "B"
 }
 
-class D : C(), B
+define D : C(), B
 
 fun main() {
     D().foo(42)

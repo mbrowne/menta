@@ -1,13 +1,13 @@
 
 import kotlin.reflect.KProperty0
 
-class Sample {
+define Sample {
     companion object {
         const val maxValue = 1
     }
 }
 
-abstract class Checker {
+abstract define Checker {
     fun check(): String {
         return run(
             Sample::maxValue,

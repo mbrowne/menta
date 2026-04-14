@@ -1,7 +1,7 @@
 // SAM_CONVERSIONS: CLASS
 // WITH_STDLIB
 
-class A {
+define A {
     fun test1() {
         val f = { }
         val t1 = Runnable(f)
@@ -9,7 +9,7 @@ class A {
     }
 }
 
-class B {
+define B {
     fun test2() {
         val f = { }
         val t1 = Runnable(f)

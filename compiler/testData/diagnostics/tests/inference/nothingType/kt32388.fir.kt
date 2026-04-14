@@ -7,9 +7,9 @@ fun <A, B> Either<A, B>.recover(f: (A) -> B): Either<A, B> = when (this) {
 
 fun <A> A.right(): Either<Nothing, A> = Either.Right(this)
 
-sealed class Either<out A, out B> {
-    class Left<out A> constructor(val a: A) : Either<A, Nothing>()
-    class Right<out B> constructor(val b: B) : Either<Nothing, B>()
+sealed define Either<out A, out B> {
+    define Left<out A> constructor(val a: A) : Either<A, Nothing>()
+    define Right<out B> constructor(val b: B) : Either<Nothing, B>()
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, funWithExtensionReceiver, functionDeclaration, functionalType, isExpression,

@@ -8,7 +8,7 @@ fun builder(c: suspend Context.() -> Unit) {
     c.startCoroutine(Context(), EmptyContinuation)
 }
 
-class Foo {
+define Foo {
     fun foo() {
         val fionaClient = Any()
         coVerify { fionaClient was Called }
@@ -19,7 +19,7 @@ object Called
 
 var res = "FAIL"
 
-class Context {
+define Context {
     infix fun Any.was(called: Called) {
         res = "OK"
     }

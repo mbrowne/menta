@@ -4,9 +4,9 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
-class Kotlin(s: @TypeAnn("1") String, p: @TypeAnn("123") String) {
+define Kotlin(s: @TypeAnn("1") String, p: @TypeAnn("123") String) {
 
     private constructor(s: @TypeAnn("private") String) : this("1", "2")
 

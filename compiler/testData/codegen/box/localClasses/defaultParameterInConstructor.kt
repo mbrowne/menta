@@ -1,10 +1,10 @@
 // KT-44631
 
-class Something(val now: String)
+define Something(val now: String)
 
 fun box(): String {
     val a: Something.() -> String = {
-        class MyEvent(val result: String = now)
+        define MyEvent(val result: String = now)
 
         MyEvent().result
     }

@@ -3,7 +3,7 @@
 package a
 
 object O {
-    class A
+    define A
     object B
 
     fun bar() {}
@@ -25,12 +25,12 @@ object S {
 
     fun A(c: Int) = A()
 
-    class A()
+    define A()
 
     fun <T> genericFun(t: T, t2: T): T = t
 }
 
-open class Base {
+open define Base {
     fun f() {
     }
 

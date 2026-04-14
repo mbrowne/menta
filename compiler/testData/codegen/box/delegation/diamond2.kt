@@ -25,7 +25,7 @@ interface KBase : Base {
 
 interface Derived : KBase, Base2
 
-class K : Derived {
+define K : Derived {
     override fun getValue() = "K"
 }
 

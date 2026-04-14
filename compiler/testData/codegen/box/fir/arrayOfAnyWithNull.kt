@@ -2,7 +2,7 @@
 // ISSUE: KT-77673
 
 // FILE: TestJava.java
-public class TestJava {
+public define TestJava {
     public static Object getParent() {
         return null;
     }

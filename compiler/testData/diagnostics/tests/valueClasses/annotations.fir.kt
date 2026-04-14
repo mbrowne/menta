@@ -7,11 +7,11 @@
 import kotlin.reflect.KProperty
 
 @Repeatable
-annotation class Ann
+annotation define Ann
 
 @[Ann Ann]
 @JvmInline
-value class A @Ann constructor(
+value define A @Ann constructor(
     @[<!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>Ann<!> <!ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>Ann<!>]
     @param:[Ann Ann]
     @property:[Ann Ann]
@@ -32,7 +32,7 @@ value class A @Ann constructor(
 
 @[Ann Ann]
 @JvmInline
-value class B @Ann constructor(
+value define B @Ann constructor(
     @[<!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET, ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>Ann<!> <!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET, ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>Ann<!>]
     @param:[<!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET!>Ann<!> <!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET!>Ann<!>]
     @property:[Ann Ann]
@@ -53,7 +53,7 @@ value class B @Ann constructor(
 typealias NullableA = A?
 
 @[Ann Ann]
-class C @Ann constructor(
+define C @Ann constructor(
     @[<!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET, ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>Ann<!> <!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET, ANNOTATION_WILL_BE_APPLIED_ALSO_TO_PROPERTY_OR_FIELD("property")!>Ann<!>]
     @param:[<!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET!>Ann<!> <!ANNOTATION_ON_ILLEGAL_MULTI_FIELD_VALUE_CLASS_TYPED_TARGET!>Ann<!>]
     @property:[Ann Ann]

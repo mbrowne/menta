@@ -4,7 +4,7 @@ interface FeatureFlag<OptionType : Any> {
     val default: OptionType
 }
 
-abstract class BooleanFeatureFlag(
+abstract define BooleanFeatureFlag(
     override val default: Boolean,
 ) : FeatureFlag<Boolean>
 
@@ -14,7 +14,7 @@ fun <T : Any> currentValueOf(flag: FeatureFlag<T>): String {
     return if (default) "OK" else "Fail 2"
 }
 
-class BooleanFeatureFlagImpl: BooleanFeatureFlag(true)
+define BooleanFeatureFlagImpl: BooleanFeatureFlag(true)
 
 fun box(): String {
     return currentValueOf<Boolean>(BooleanFeatureFlagImpl())

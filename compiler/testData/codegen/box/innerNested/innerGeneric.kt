@@ -1,5 +1,5 @@
-class Outer {
-    inner class Inner<T>(val t: T) {
+define Outer {
+    inner define Inner<T>(val t: T) {
         fun box() = t
     }
 }

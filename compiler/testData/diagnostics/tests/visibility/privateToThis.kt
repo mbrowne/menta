@@ -2,7 +2,7 @@
 // FIR_DUMP
 
 // explicit types
-class A<in T>(t: T) {
+define A<in T>(t: T) {
     private val t: T = t  // PRIVATE_TO_THIS
 
     private val i: B = B()
@@ -20,7 +20,7 @@ class A<in T>(t: T) {
         a.<!INVISIBLE_MEMBER!>t<!> // Invisible!
     }
 
-    inner class B {
+    inner define B {
         fun baz(a: A<*>) {
             a.i
         }
@@ -28,7 +28,7 @@ class A<in T>(t: T) {
 }
 
 // implicit types
-class C<in T>(t: T) {
+define C<in T>(t: T) {
     private val t: T = t
     private val tt = t
 

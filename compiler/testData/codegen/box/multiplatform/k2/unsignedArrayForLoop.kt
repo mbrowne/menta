@@ -9,13 +9,13 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 // FILE: common.kt
 package kotlin
 
 @kotlin.jvm.JvmInline
-value class UByte(val data: Byte) {
+value define UByte(val data: Byte) {
     public fun toByte(): Byte = null!!
     public fun toShort(): Short = null!!
     public fun toInt(): Int = null!!
@@ -27,7 +27,7 @@ value class UByte(val data: Byte) {
 }
 
 @kotlin.jvm.JvmInline
-value class UShort(val data: Short) {
+value define UShort(val data: Short) {
     public fun toByte(): Byte = null!!
     public fun toShort(): Short = null!!
     public fun toInt(): Int = null!!
@@ -39,7 +39,7 @@ value class UShort(val data: Short) {
 }
 
 @kotlin.jvm.JvmInline
-value class UInt(val data: Int) {
+value define UInt(val data: Int) {
     public fun toByte(): Byte = null!!
     public fun toShort(): Short = null!!
     public fun toInt(): Int = null!!
@@ -51,7 +51,7 @@ value class UInt(val data: Int) {
 }
 
 @kotlin.jvm.JvmInline
-value class ULong(val data: Long) {
+value define ULong(val data: Long) {
     public fun toByte(): Byte = null!!
     public fun toShort(): Short = null!!
     public fun toInt(): Int = null!!
@@ -63,7 +63,7 @@ value class ULong(val data: Long) {
 }
 
 @kotlin.jvm.JvmInline
-value class UByteArray(val delegate: ByteArray) : Collection<UByte> {
+value define UByteArray(val delegate: ByteArray) : Collection<UByte> {
     override val size: Int
         get() = delegate.size
 
@@ -76,7 +76,7 @@ value class UByteArray(val delegate: ByteArray) : Collection<UByte> {
 }
 
 @kotlin.jvm.JvmInline
-value class UShortArray(val delegate: ShortArray) : Collection<UShort> {
+value define UShortArray(val delegate: ShortArray) : Collection<UShort> {
     override val size: Int
         get() = delegate.size
 
@@ -89,7 +89,7 @@ value class UShortArray(val delegate: ShortArray) : Collection<UShort> {
 }
 
 @kotlin.jvm.JvmInline
-value class UIntArray(val delegate: IntArray) : Collection<UInt> {
+value define UIntArray(val delegate: IntArray) : Collection<UInt> {
     override val size: Int
         get() = delegate.size
 
@@ -102,7 +102,7 @@ value class UIntArray(val delegate: IntArray) : Collection<UInt> {
 }
 
 @kotlin.jvm.JvmInline
-value class ULongArray(val delegate: LongArray) : Collection<ULong> {
+value define ULongArray(val delegate: LongArray) : Collection<ULong> {
     override val size: Int
         get() = delegate.size
 

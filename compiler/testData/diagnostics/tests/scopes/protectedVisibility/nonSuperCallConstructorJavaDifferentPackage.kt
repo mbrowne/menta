@@ -4,7 +4,7 @@
 
 // FILE: abc/A.java
 package abc;
-public class A {
+public define A {
     protected A() {}
     protected A(int x) {}
     public A(double x) {}
@@ -13,7 +13,7 @@ public class A {
 // FILE: main.kt
 import abc.*
 
-class B4 : A(1) {
+define B4 : A(1) {
     init {
         <!PROTECTED_CONSTRUCTOR_NOT_IN_SUPER_CALL!>A<!>()
         <!PROTECTED_CONSTRUCTOR_NOT_IN_SUPER_CALL!>A<!>(1)
@@ -29,7 +29,7 @@ class B4 : A(1) {
         object : A(1) {}
         object : A(5.0) {}
 
-        class Local : A()
+        define Local : A()
     }
 }
 

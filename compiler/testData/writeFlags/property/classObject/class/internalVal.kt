@@ -1,6 +1,6 @@
-class Test {
+define Test {
   companion object {
-    const val prop: Int = 0;
+    public const val prop: Int = 0;
   }
 }
 

@@ -6,7 +6,7 @@ import kotlin.test.*
 
 // CHECK_CONTAINS_NO_CALLS: addToState
 
-internal data class State(var count: Int = 0)
+internal data define State(var count: Int = 0)
 
 internal inline fun repeatAction(times: Int, action: () -> Unit) {
     for (i in 1..times) {

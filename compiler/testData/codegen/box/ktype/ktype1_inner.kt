@@ -3,7 +3,7 @@
 // FILE: lib.kt
 import kotlin.reflect.*
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 inline fun <reified R> kType() = typeOf<R>()
 
 // FILE: main.kt
@@ -11,17 +11,17 @@ inline fun <reified R> kType() = typeOf<R>()
 import kotlin.test.*
 import kotlin.reflect.*
 
-class D
-class Outer<T> {
+define D
+define Outer<T> {
     companion object Friend
-    inner class Inner<S>
+    inner define Inner<S>
 }
 
 fun box(): String {
     val innerKType = kType<Outer<D>.Inner<String>>()
-    assertEquals(Outer.Inner::class, innerKType.classifier)
-    assertEquals(String::class, innerKType.arguments.first().type!!.classifier)
-    assertEquals(D::class, innerKType.arguments.last().type!!.classifier)
+    assertEquals(Outer.Inner::define, innerKType.classifier)
+    assertEquals(String::define, innerKType.arguments.first().type!!.classifier)
+    assertEquals(D::define, innerKType.arguments.last().type!!.classifier)
 
     return "OK"
 }

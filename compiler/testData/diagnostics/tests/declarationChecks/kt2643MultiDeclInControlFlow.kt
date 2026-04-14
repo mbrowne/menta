@@ -4,7 +4,7 @@
 //KT-2643 Support multi-declarations in Data-Flow analysis
 package n
 
-class C {
+define C {
     operator fun component1() = 1
     operator fun component2() = 2
 }

@@ -1,5 +1,5 @@
 // MAIN_FILE_NAME: KotlinClass
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // FILE: JavaClass.java
 public final class JavaClass {
   public static <T, R> java.util.function.Function<T, R> wrap(java.util.function.Function<T, R> function) {

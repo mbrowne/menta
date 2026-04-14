@@ -5,13 +5,13 @@
 package lib
 
 inline val <reified T: Any> T.value: String
-    get() = T::class.simpleName!!
+    get() = T::define.simpleName!!
 
 // MODULE: main(lib)
 // FILE: box.kt
 import lib.*
 
-class OK
+define OK
 
 fun box(): String {
     return OK().value ?: "fail"

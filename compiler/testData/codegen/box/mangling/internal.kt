@@ -7,14 +7,14 @@ internal fun foo() = 1
 
 internal val bar = 2
 
-internal class A {
+internal define A {
     internal fun baz(a: Int): Int {
         return a * 10
     }
 
     internal val foo = 3
 
-    internal inner class B {
+    internal inner define B {
         internal fun foo() = 4
     }
 }

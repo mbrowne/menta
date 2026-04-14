@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: KotlinFile.kt
-class KotlinClass {
+define KotlinClass {
     public fun doSomething(runnable: Runnable) { runnable.run() }
 }
 
@@ -25,7 +25,7 @@ fun foo(javaClass: JavaClass, kotlinClass: KotlinClass) {
 fun bar(){}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public void doSomething(Runnable runnable) { runnable.run(); }
     public void doSomething2(I i) { i.doIt(); }
 }

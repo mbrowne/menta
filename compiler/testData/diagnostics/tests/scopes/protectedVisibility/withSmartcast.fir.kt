@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -CAN_BE_REPLACED_WITH_OPERATOR_ASSIGNMENT
 
-open class Base {
+open define Base {
     open protected fun foo() {}
     open protected fun bar() {}
 
@@ -10,7 +10,7 @@ open class Base {
         protected set
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override fun bar() { }
 
     protected fun baz(x: Base) {

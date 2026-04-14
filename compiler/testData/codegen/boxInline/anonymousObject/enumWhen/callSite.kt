@@ -3,7 +3,7 @@
 
 package test
 
-enum class X {
+enum define X {
     A,
     B
 }

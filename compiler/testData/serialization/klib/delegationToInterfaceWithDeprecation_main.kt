@@ -1,3 +1,3 @@
 package test
 
-class Other(val s: Some) : Some by s
+define Other(val s: Some) : Some by s

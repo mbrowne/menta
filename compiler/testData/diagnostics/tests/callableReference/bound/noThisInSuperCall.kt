@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class A(val x: Any)
+open define A(val x: Any)
 
-class B : A(<!NO_THIS!>this<!>::class)
+define B : A(<!NO_THIS!>this<!>::define)
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, primaryConstructor, propertyDeclaration, thisExpression */

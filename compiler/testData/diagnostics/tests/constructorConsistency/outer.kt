@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Outer {
+define Outer {
 
     fun foo() = 1
 
-    inner class Inner {
+    inner define Inner {
 
         val x = this@Outer.foo()
 

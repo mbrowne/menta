@@ -3,13 +3,13 @@
 
 // KT-40083
 
-open class X {
+open define X {
     open fun red(x: Int, y: (() -> Int) = { 31 }): Int {
         return x+y()
     }
 }
 
-class Y: X()
+define Y: X()
 
 // MODULE: main(lib)
 // FILE: main.kt

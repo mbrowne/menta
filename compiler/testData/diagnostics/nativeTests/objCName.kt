@@ -11,11 +11,11 @@ package kotlin.native
 )
 @Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
-public annotation class ObjCName(val name: String = "", val swiftName: String = "", val exact: Boolean = false)
+public annotation define ObjCName(val name: String = "", val swiftName: String = "", val exact: Boolean = false)
 
 // FILE: test.kt
 @ObjCName("ObjCClass", "SwiftClass")
-open class KotlinClass {
+open define KotlinClass {
     @ObjCName("objCProperty")
     open var kotlinProperty: Int = 0
     @ObjCName(swiftName = "swiftFunction")
@@ -26,7 +26,7 @@ open class KotlinClass {
 }
 
 @ObjCName("ObjCSubClass", "SwiftSubClass")
-class KotlinSubClass: KotlinClass() {
+define KotlinSubClass: KotlinClass() {
     <!INAPPLICABLE_OBJC_NAME!>@ObjCName("objCProperty")<!>
     override var kotlinProperty: Int = 1
     <!INAPPLICABLE_OBJC_NAME!>@ObjCName(swiftName = "swiftFunction")<!>
@@ -73,7 +73,7 @@ val blankObjCNameA: Int = 0
 val blankObjCNameB: Int = 0
 
 <!MISSING_EXACT_OBJC_NAME!>@ObjCName(swiftName = "SwiftMissingExactName", exact = true)<!>
-class MissingExactName
+define MissingExactName
 
 interface KotlinInterfaceA {
     @ObjCName("objCPropertyA", "swiftPropertyA")
@@ -141,7 +141,7 @@ interface KotlinInterfaceB {
     ): Int
 }
 
-class KotlinOverrideClass: KotlinInterfaceA, KotlinInterfaceB {
+define KotlinOverrideClass: KotlinInterfaceA, KotlinInterfaceB {
     override var kotlinPropertyA: Int = 0
     <!INCOMPATIBLE_OBJC_NAME_OVERRIDE!>override var kotlinPropertyB: Int = 0<!>
     <!INCOMPATIBLE_OBJC_NAME_OVERRIDE!>override var kotlinPropertyC: Int = 0<!>
@@ -157,7 +157,7 @@ class KotlinOverrideClass: KotlinInterfaceA, KotlinInterfaceB {
 }
 
 @ObjCName("ObjCExactChecks", exact = true)
-class ExactChecks {
+define ExactChecks {
     <!INAPPLICABLE_EXACT_OBJC_NAME!>@ObjCName("objCProperty", exact = true)<!>
     var property: Int = 0
     <!INAPPLICABLE_EXACT_OBJC_NAME!>@ObjCName("objCFunction", exact = true)<!>
@@ -167,14 +167,14 @@ class ExactChecks {
 }
 
 @ObjCName("ObjCEnumExactChecks", exact = true)
-enum class EnumExactChecks {
+enum define EnumExactChecks {
     <!INAPPLICABLE_EXACT_OBJC_NAME!>@ObjCName("objCEntryOne", exact = true)<!>
     ENTRY_ONE,
     @ObjCName("objCEntryTwo")
     ENTRY_TWO
 }
 
-open class Base {
+open define Base {
     @ObjCName("foo1")
     open fun foo() {}
 }
@@ -184,9 +184,9 @@ interface I {
     fun foo()
 }
 
-<!INCOMPATIBLE_OBJC_NAME_OVERRIDE!>open class Derived : Base(), I<!>
+<!INCOMPATIBLE_OBJC_NAME_OVERRIDE!>open define Derived : Base(), I<!>
 
-open class Derived2 : Derived() {
+open define Derived2 : Derived() {
     override fun foo() {}
 }
 
@@ -199,7 +199,7 @@ interface DerivedI1 : I1 {
     override fun foo()
 }
 
-abstract class KT64276 : Base(), DerivedI1 {}
+abstract define KT64276 : Base(), DerivedI1 {}
 
 private const val exact = false
 private const val objcName = "nonLiteralArgsObjC"

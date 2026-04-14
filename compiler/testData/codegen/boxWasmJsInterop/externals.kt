@@ -17,7 +17,7 @@ function getX(obj) {
 const readOnlyProp = 123;
 var mutableProp = "20";
 
-class C1 {
+define C1 {
     constructor(a, b) {
         this.a = a;
         this.b = b;
@@ -29,9 +29,9 @@ class C1 {
     getB() { return this.b; }
 }
 
-C1.Nested1 = class {}
-C1.Nested1.Nested2 = class {}
-C1.Nested1.Nested2.Nested3 = class {
+C1.Nested1 = define {}
+C1.Nested1.Nested2 = define {}
+C1.Nested1.Nested2.Nested3 = define {
     constructor(x) {
         this.x = x;
     }
@@ -39,7 +39,7 @@ C1.Nested1.Nested2.Nested3 = class {
     foo() { return this.x + " from Nested 3"; }
 }
 
-class C2 extends C1 {
+define C2 extends C1 {
     constructor(a, b) {
         super(a, b);
         this.c = "C";
@@ -52,7 +52,7 @@ C2.Object1 = { Object2: { Object3: { x: "C2.Object1.Object2.Object3.x" } } }
 const externalObj = {
     x: "externalObj.x",
     y: {  x: "externalObj.y.x" },
-    c: class { x = "(new externalObj.c()).x" }
+    c: define { x = "(new externalObj.c()).x" }
 }
 
 function jsRenamed() {
@@ -72,7 +72,7 @@ external fun getX(obj: Obj): Int
 external val readOnlyProp: Int
 external var mutableProp: String
 
-open external class C1 {
+open external define C1 {
     constructor(a: String, b: String)
     var a: String
     val b: String
@@ -81,9 +81,9 @@ open external class C1 {
     fun setA(x: String)
     fun getB(): String
 
-    class Nested1 {
-        class Nested2 {
-            class Nested3 {
+    define Nested1 {
+        define Nested2 {
+            define Nested3 {
                 constructor(x: String)
                 fun foo(): String
             }
@@ -91,7 +91,7 @@ open external class C1 {
     }
 }
 
-external class C2 : C1 {
+external define C2 : C1 {
     constructor(a: String, b: String)
 
     val c: String
@@ -110,7 +110,7 @@ external object externalObj {
     object y {
         val x: String
     }
-    class c {
+    define c {
         val x: String
     }
 }

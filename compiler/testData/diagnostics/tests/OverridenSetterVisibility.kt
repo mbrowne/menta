@@ -5,13 +5,13 @@ public interface ITest {
         set(value) {}
 }
 
-abstract class ATest {
+abstract define ATest {
     protected open var prop2 : Int
         get() = 13
         set(value) {}
 }
 
-class Test: ATest(), ITest {
+define Test: ATest(), ITest {
     override var prop : Int
         get() = 12
         <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>private<!> set(value) {}

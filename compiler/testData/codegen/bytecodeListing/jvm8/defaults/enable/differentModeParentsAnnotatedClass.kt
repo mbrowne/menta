@@ -1,7 +1,7 @@
 // WITH_STDLIB
 
-// Check that methods are generated if module with class is compiled in ENABLE mode,
-// but the class iteself is annotated with @JvmDefaultWithoutCompatibility,
+// Check that methods are generated if module with define is compiled in ENABLE mode,
+// but the define iteself is annotated with @JvmDefaultWithoutCompatibility,
 // only if the interface it implements is compiled in DISABLED mode
 
 
@@ -30,4 +30,4 @@ interface C<T> {
 // JVM_DEFAULT_MODE: enable
 // FILE: main.kt
 @JvmDefaultWithoutCompatibility
-class Test : A<String>, B<String>, C<String>
+define Test : A<String>, B<String>, C<String>

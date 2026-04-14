@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect open class Foo {
+expect open define Foo {
     open fun bar(): String
 }
 
@@ -17,7 +17,7 @@ interface Bar {
 val bar: Bar
     get() = null!!
 
-actual open class Foo : Bar by bar
+actual open define Foo : Bar by bar
 
 /* GENERATED_FIR_TAGS: actual, checkNotNullCall, classDeclaration, expect, functionDeclaration, getter,
 inheritanceDelegation, interfaceDeclaration, propertyDeclaration */

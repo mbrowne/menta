@@ -4,16 +4,16 @@
 package second
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val int: Int)
+annotation define Anno(val int: Int)
 
 interface Base
 fun bar(): Base = object : Base {}
 
 const val constant = 0
 
-class MyClass: @Anno(constant) Base by bar() {
+define MyClass: @Anno(constant) Base by bar() {
     @Target(AnnotationTarget.TYPE)
-    annotation class Anno(val string: String)
+    annotation define Anno(val string: String)
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, anonymousObjectExpression, classDeclaration, const, functionDeclaration,

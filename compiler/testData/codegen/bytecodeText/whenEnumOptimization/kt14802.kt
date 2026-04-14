@@ -1,6 +1,6 @@
-class EncapsulatedEnum<T : Enum<T>>(val value: T)
+define EncapsulatedEnum<T : Enum<T>>(val value: T)
 
-enum class MyEnum(val value: String) {
+enum define MyEnum(val value: String) {
     VALUE_A("OK"),
     VALUE_B("fail"),
 }

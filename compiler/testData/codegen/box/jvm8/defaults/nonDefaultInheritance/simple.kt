@@ -23,7 +23,7 @@ interface Derived : Foo {
     }
 }
 
-class DerivedClass : Derived 
+define DerivedClass : Derived 
 
 fun box(): String {
     val value = DerivedClass()

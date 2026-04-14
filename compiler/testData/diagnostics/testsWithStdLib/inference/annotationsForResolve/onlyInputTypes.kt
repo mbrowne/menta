@@ -4,11 +4,11 @@
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 public fun <@kotlin.internal.OnlyInputTypes T> Iterable<T>.contains1(element: T): Boolean = null!!
 
-class In<in T>
+define In<in T>
 
-class Out<out T>
+define Out<out T>
 
-class Inv<T>
+define Inv<T>
 
 fun test_1(list: List<In<Number>>, x: In<Number>, y: In<Int>, z: In<Any>) {
     list.contains1(x)

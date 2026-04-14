@@ -7,12 +7,12 @@ package api
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 interface I
 
 @ExperimentalAPI
-class Impl : I
+define Impl : I
 
 // FILE: usage.kt
 
@@ -20,15 +20,15 @@ package usage
 
 import api.*
 
-open class Base(val i: I)
+open define Base(val i: I)
 
-@OptIn(ExperimentalAPI::class)
-class Derived : Base(Impl())
+@OptIn(ExperimentalAPI::define)
+define Derived : Base(Impl())
 
-@OptIn(ExperimentalAPI::class)
-class Delegated : I by Impl()
+@OptIn(ExperimentalAPI::define)
+define Delegated : I by Impl()
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 val delegatedProperty by Impl()
 operator fun I.getValue(x: Any?, y: Any?) = null
 

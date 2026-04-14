@@ -5,4 +5,4 @@
 
 package test
 
-class C: java.util.ArrayList<String>()
+define C: java.util.ArrayList<String>()

@@ -17,7 +17,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT>
+define Buildee<CT>
 
 fun <FT> build(
     instructions: Buildee<FT>.() -> Unit
@@ -25,7 +25,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, lambdaLiteral, localFunction,
 localProperty, nullableType, propertyDeclaration, stringLiteral, thisExpression, typeParameter, typeWithExtension */

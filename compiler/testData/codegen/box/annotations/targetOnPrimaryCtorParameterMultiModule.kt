@@ -7,21 +7,21 @@
 
 package a
 
-annotation class NoTarget
+annotation define NoTarget
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)
-annotation class PropValueField
+annotation define PropValueField
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyOnly
+annotation define PropertyOnly
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class ParameterOnly
+annotation define ParameterOnly
 
 @Target(AnnotationTarget.FIELD)
-annotation class FieldOnly
+annotation define FieldOnly
 
-class Foo(
+define Foo(
     @NoTarget
     @PropValueField
     @PropertyOnly
@@ -39,11 +39,11 @@ import a.Foo
 import kotlin.reflect.full.declaredMemberProperties
 
 fun box(): String {
-    val clazz = Foo::class
+    val clazz = Foo::define
 
     val parameterAnnotations = clazz.constructors.single().parameters.single().annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
     val propertyAnnotations = clazz.declaredMemberProperties.single().annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
-    val fieldAnnotations = Foo::class.java.getDeclaredField("param").annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
+    val fieldAnnotations = Foo::define.java.getDeclaredField("param").annotations.map { it.annotationClass.simpleName ?: "" }.toSet()
 
     if (parameterAnnotations != setOf("NoTarget", "PropValueField", "ParameterOnly")) return "Parameters:" + parameterAnnotations
     if (propertyAnnotations != setOf("PropertyOnly")) return "Property:" + propertyAnnotations

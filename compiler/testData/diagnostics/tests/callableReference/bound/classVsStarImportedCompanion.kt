@@ -7,15 +7,15 @@ package a
 import b.B.*
 import kotlin.reflect.KClass
 
-class Companion
+define Companion
 
-val f: KClass<a.Companion> = Companion::class
+val f: KClass<a.Companion> = Companion::define
 
 // FILE: 2.kt
 
 package b
 
-class B {
+define B {
     companion object Companion
 }
 

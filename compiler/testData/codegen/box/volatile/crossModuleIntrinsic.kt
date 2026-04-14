@@ -7,12 +7,12 @@
 
 // MODULE: lib
 // FILE: lib.kt
-@file:OptIn(kotlin.ExperimentalStdlibApi::class)
+@file:OptIn(kotlin.ExperimentalStdlibApi::define)
 
 import kotlin.native.concurrent.*
 import kotlin.concurrent.*
 
-class Box(@Volatile var value: String)
+define Box(@Volatile var value: String)
 
 // MODULE: main(lib)
 // FILE: main.kt

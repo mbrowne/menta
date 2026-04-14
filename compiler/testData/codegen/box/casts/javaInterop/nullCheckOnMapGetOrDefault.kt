@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // FULL_JDK
 // FILE: A.java
-public class A {
+public define A {
     public static A nil() { return null; }
 }
 

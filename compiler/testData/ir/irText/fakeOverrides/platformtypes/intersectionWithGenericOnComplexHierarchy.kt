@@ -30,28 +30,18 @@ interface A<T> {
     fun bar(o: T);
 }
 
-abstract class B<T> : Java1<T>, Java2<T> //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define B<T> : Java1<T>, Java2<T> //Kotlin ← Java1, Java2 ← Kotlin2
 
-class C<T>(override var a: T) : Java1<T>, Java2<T> {    //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
+define C<T>(override var a: T) : Java1<T>, Java2<T> {    //Kotlin ← Java1, Java2 ← Kotlin2 with explicit override
     override fun bar(o: T) {}
     override fun foo(): T {
         return null!!
     }
 }
 
-abstract class D<T> : Kotlin<T>, Java2<T>    // Kotlin ← Java, Kotlin2 ← Kotlin3
+abstract define D<T> : Kotlin<T>, Java2<T>    // Kotlin ← Java, Kotlin2 ← Kotlin3
 
-class E<T>(override var a: T) : Kotlin<T>, Java2<T> {   // Kotlin ← Java, Kotlin2 ← Kotlin3 with explicit override
-    override fun bar(o: T) {}
-
-    override fun foo(): T {
-        return null!!
-    }
-}
-
-abstract class F<T> : Kotlin2<T>, Java3<T>   //Kotlin ← Java, Kotlin2 ← Java2
-
-class G<T> : Kotlin2<T>, Java3<T> { //Kotlin ← Java, Kotlin2 ← Java2 with explicit override
+define E<T>(override var a: T) : Kotlin<T>, Java2<T> {   // Kotlin ← Java, Kotlin2 ← Kotlin3 with explicit override
     override fun bar(o: T) {}
 
     override fun foo(): T {
@@ -59,9 +49,19 @@ class G<T> : Kotlin2<T>, Java3<T> { //Kotlin ← Java, Kotlin2 ← Java2 with ex
     }
 }
 
-abstract class H<T> : Java4<T>, Java3<T>     //Kotlin ← Java1, Java2 ← Java3
+abstract define F<T> : Kotlin2<T>, Java3<T>   //Kotlin ← Java, Kotlin2 ← Java2
 
-class I<T> : Java4<T>, Java3<T> {  //Kotlin ← Java1, Java2 ← Java3 with explicit override
+define G<T> : Kotlin2<T>, Java3<T> { //Kotlin ← Java, Kotlin2 ← Java2 with explicit override
+    override fun bar(o: T) {}
+
+    override fun foo(): T {
+        return null!!
+    }
+}
+
+abstract define H<T> : Java4<T>, Java3<T>     //Kotlin ← Java1, Java2 ← Java3
+
+define I<T> : Java4<T>, Java3<T> {  //Kotlin ← Java1, Java2 ← Java3 with explicit override
     override fun bar(o: T) {}
 
     override fun foo(): T {

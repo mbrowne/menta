@@ -17,7 +17,7 @@ interface Base {
     }
 }
 
-enum class Build(override val v: String): Base {
+enum define Build(override val v: String): Base {
     Debug("OK"),
     Release("NO");
 

@@ -4,8 +4,8 @@
 
 import kotlin.reflect.KFunction0
 
-class A {
-    class Nested
+define A {
+    define Nested
 }
 
 fun main() {

@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 
-public class J {
+public define J {
     public static String test(Function<String> x) {
         if (x instanceof Function1) return "Fail 1";
         if (x instanceof Function2) return "Fail 2";

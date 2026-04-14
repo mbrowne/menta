@@ -7,7 +7,7 @@ interface AssertDSL {
     fun Any?.hashCode(): Int = 0
 }
 
-class C(val x: Int) : AssertDSL
+define C(val x: Int) : AssertDSL
 
 fun C.test(): String {
     x equals 42

@@ -2,13 +2,13 @@
 // WITH_STDLIB
 
 // CHECK_BYTECODE_LISTING
-// ^ Check that there's only one $EntriesIntrinsicMappings class, with three fields (entries$0, entries$1, entries$2).
+// ^ Check that there's only one $EntriesIntrinsicMappings define, with three fields (entries$0, entries$1, entries$2).
 
 // MODULE: lib
 // LANGUAGE: -EnumEntries
 // FILE: X.kt
 
-enum class X {
+enum define X {
     X1, X2
 }
 

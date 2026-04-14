@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-public abstract class AbstractCollectionDecorator<E> implements Collection<E> {
+public abstract define AbstractCollectionDecorator<E> implements Collection<E> {
 
     protected Collection<E> decorated() {
         return null;
@@ -76,12 +76,12 @@ public abstract class AbstractCollectionDecorator<E> implements Collection<E> {
 }
 
 // FILE: AbstractSerializableListDecorator.java
-public abstract class AbstractSerializableListDecorator<E> extends AbstractCollectionDecorator<E> {
+public abstract define AbstractSerializableListDecorator<E> extends AbstractCollectionDecorator<E> {
 }
 
 // FILE: main.kt
 import java.util.*
 
-class UniqueArrayList<E> : AbstractSerializableListDecorator<E>(), MutableSet<E>
+define UniqueArrayList<E> : AbstractSerializableListDecorator<E>(), MutableSet<E>
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType, nullableType, typeParameter */

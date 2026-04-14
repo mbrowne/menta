@@ -2,7 +2,7 @@
 //KT-1822 Error 'cannot infer visibility' required
 package kt1822
 
-open class C {
+open define C {
     internal open fun foo() {}
 }
 
@@ -10,11 +10,11 @@ interface T {
     <!WRONG_MODIFIER_CONTAINING_DECLARATION!>protected<!> fun foo() {}
 }
 
-class G : C(), T {
+define G : C(), T {
     override fun <!CANNOT_CHANGE_ACCESS_PRIVILEGE!>foo<!>() {} //should be an error "cannot infer visibility"; for now 'public' is inferred in such cases
 }
 
-open class A {
+open define A {
     internal open fun foo() {}
 }
 
@@ -26,7 +26,7 @@ interface D {
     public fun foo() {}
 }
 
-class E : A(), B, D {
+define E : A(), B, D {
     override fun foo() {}
 }
 

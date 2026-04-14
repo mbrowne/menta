@@ -8,7 +8,7 @@
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
-public class JavaClass {
+public define JavaClass {
     static JavaClass ofJspecify(@NonNull String... args) {
         return new JavaClass();
     }

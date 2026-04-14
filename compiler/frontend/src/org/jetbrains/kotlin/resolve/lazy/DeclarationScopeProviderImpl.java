@@ -73,7 +73,7 @@ public class DeclarationScopeProviderImpl implements DeclarationScopeProvider {
             }
 
             if (ktDeclaration instanceof KtObjectDeclaration ||
-                ktDeclaration instanceof KtClass && !((KtClass) ktDeclaration).isInner()) {
+                ktDeclaration instanceof KtDefine && !((KtDefine) ktDeclaration).isInner()) {
                 return parentClassDescriptor.getScopeForStaticMemberDeclarationResolution();
             }
 

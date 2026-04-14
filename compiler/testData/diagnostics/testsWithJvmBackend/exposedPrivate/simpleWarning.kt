@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // LANGUAGE: -ForbidExposingLessVisibleTypesInInline
 
-private class C
+private define C
 
 private inline fun privateFun() { C() }
 

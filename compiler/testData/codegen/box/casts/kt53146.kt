@@ -3,7 +3,7 @@
 // FULL_JDK
 // CHECK_BYTECODE_TEXT
 
-class A
+define A
 
 fun box(): String {
     val a = try {

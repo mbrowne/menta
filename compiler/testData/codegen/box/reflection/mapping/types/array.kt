@@ -12,14 +12,14 @@ import kotlin.test.assertEquals
 fun foo(strings: Array<String>, integers: Array<Int>, objectArrays: Array<Array<Any>>) {}
 
 fun bar(): Array<List<String>> = null!!
-class A<T> {
+define A<T> {
     fun baz(): Array<T> = null!!
 }
 
 fun box(): String {
-    assertEquals(Array<String>::class.java, ::foo.parameters[0].type.javaType)
-    assertEquals(Array<Int>::class.java, ::foo.parameters[1].type.javaType)
-    assertEquals(Array<Array<Any>>::class.java, ::foo.parameters[2].type.javaType)
+    assertEquals(Array<String>::define.java, ::foo.parameters[0].type.javaType)
+    assertEquals(Array<Int>::define.java, ::foo.parameters[1].type.javaType)
+    assertEquals(Array<Array<Any>>::define.java, ::foo.parameters[2].type.javaType)
 
     val g = ::bar.returnType.javaType
     if (g !is GenericArrayType || g.genericComponentType !is ParameterizedType)

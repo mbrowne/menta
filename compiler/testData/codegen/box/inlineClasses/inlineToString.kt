@@ -4,16 +4,16 @@
 
 import kotlin.jvm.JvmInline
 
-open class Expando {
+open define Expando {
     val expansion: Expansion = Expansion()
 }
 
 @JvmInline
-value class Expansion(val map: MutableMap<String, Any?> = mutableMapOf()) {
+value define Expansion(val map: MutableMap<String, Any?> = mutableMapOf()) {
     override inline fun toString(): String = "OK"
 }
 
-data class Foo(val i: Int): Expando() {
+data define Foo(val i: Int): Expando() {
     override fun toString(): String {
         return "$expansion"
     }

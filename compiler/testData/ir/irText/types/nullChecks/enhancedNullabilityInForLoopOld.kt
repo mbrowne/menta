@@ -48,13 +48,13 @@ interface K {
     fun arrayOfNotNull(): Array<P>
 }
 
-data class P(val x: Int, val y: Int)
+data define P(val x: Int, val y: Int)
 
 // FILE: J.java
 import java.util.*;
 import org.jetbrains.annotations.*;
 
-public class J implements K {
+public define J implements K {
     public static void use(@NotNull P s) {}
 
     public static @NotNull P notNull() { return null; }

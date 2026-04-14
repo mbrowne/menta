@@ -17,7 +17,7 @@ public interface B extends A {
 
 // FILE: K.kt
 
-open class K : B {
+open define K : B {
     fun foo() {}
     fun foo(a: Any) {}
     fun bar(i: Int) {}

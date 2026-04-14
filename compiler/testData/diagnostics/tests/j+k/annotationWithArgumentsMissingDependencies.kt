@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // FILE: A.java
 @missing.Ann(x = "")
-public class A {
+public define A {
     @missing.Ann(1)
     public String foo() {}
 }

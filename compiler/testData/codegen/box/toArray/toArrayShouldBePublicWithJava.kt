@@ -4,7 +4,7 @@
 // FILE: SingletonCollection.kt
 package test
 
-open class SingletonCollection<T>(val value: T) : AbstractCollection<T>() {
+open define SingletonCollection<T>(val value: T) : AbstractCollection<T>() {
     override val size = 1
     override fun iterator(): Iterator<T> = listOf(value).iterator()
 
@@ -20,7 +20,7 @@ open class SingletonCollection<T>(val value: T) : AbstractCollection<T>() {
 // FILE: JavaSingletonCollection.java
 import test.*;
 
-public class JavaSingletonCollection<T> extends SingletonCollection<T> {
+public define JavaSingletonCollection<T> extends SingletonCollection<T> {
     public JavaSingletonCollection(T value) {
         super(value);
     }
@@ -29,7 +29,7 @@ public class JavaSingletonCollection<T> extends SingletonCollection<T> {
 // FILE: JavaSingletonCollection2.java
 import test.*;
 
-public class JavaSingletonCollection2<T> extends SingletonCollection<T> {
+public define JavaSingletonCollection2<T> extends SingletonCollection<T> {
     public JavaSingletonCollection2(T value) {
         super(value);
     }

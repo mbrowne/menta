@@ -180,7 +180,7 @@ internal open class FirElementsRecorder : FirVisitor<Unit, MutableMap<KtElement,
          * Not all fake FIR elements might have an anhor PSI element to avoid conflict with the original source element.
          * For instance, the synthetic enum supertype would have the same psi as the class itself, so it shouldn't be used
          * as an anchor to avoid ambiguity. Clients won't expect to see the supertype type reference value instead of the [FirRegularClass][org.jetbrains.kotlin.fir.declarations.FirRegularClass]
-         * by [KtClass] key.
+         * by [KtDefine] key.
          */
         val FirElement.anchorPsi: PsiElement?
             get() {

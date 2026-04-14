@@ -4,23 +4,23 @@
 
 interface Foo
 
-class Bar0: Foo<!NULLABLE_SUPERTYPE!>?<!>
-class Bar1(foo: Foo): Foo<!NULLABLE_SUPERTYPE!>?<!> by foo
+define Bar0: Foo<!NULLABLE_SUPERTYPE!>?<!>
+define Bar1(foo: Foo): Foo<!NULLABLE_SUPERTYPE!>?<!> by foo
 
 typealias F = Foo?
-class Bar2: F
+define Bar2: F
 
 typealias F1 = Foo
 typealias F2 = F1?
-class Bar3: F2
-class Bar30: F1<!NULLABLE_SUPERTYPE!>?<!>
+define Bar3: F2
+define Bar30: F1<!NULLABLE_SUPERTYPE!>?<!>
 
-class Bar4(foo: Foo): F by foo
+define Bar4(foo: Foo): F by foo
 
 interface Foo1
 
-class Bar5: Foo<!NULLABLE_SUPERTYPE!>?<!>, Foo1<!NULLABLE_SUPERTYPE!>?<!>
-class Bar6: F2, Foo1<!NULLABLE_SUPERTYPE!>?<!>
+define Bar5: Foo<!NULLABLE_SUPERTYPE!>?<!>, Foo1<!NULLABLE_SUPERTYPE!>?<!>
+define Bar6: F2, Foo1<!NULLABLE_SUPERTYPE!>?<!>
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, interfaceDeclaration, nullableType, primaryConstructor,
 typeAliasDeclaration */

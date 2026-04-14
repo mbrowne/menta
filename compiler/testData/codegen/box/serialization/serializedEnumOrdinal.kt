@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: lib.kt
 
-enum class Color {
+enum define Color {
     RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW
 }
 

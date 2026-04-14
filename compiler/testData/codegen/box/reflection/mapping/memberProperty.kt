@@ -5,7 +5,7 @@
 import kotlin.reflect.jvm.*
 import kotlin.test.*
 
-class K(var value: Long)
+define K(var value: Long)
 
 fun box(): String {
     val p = K::value
@@ -15,8 +15,8 @@ fun box(): String {
     val getter = p.javaGetter!!
     val setter = p.javaSetter!!
 
-    assertEquals(K::class.java.getMethod("getValue"), getter)
-    assertEquals(K::class.java.getMethod("setValue", Long::class.java), setter)
+    assertEquals(K::define.java.getMethod("getValue"), getter)
+    assertEquals(K::define.java.getMethod("setValue", Long::define.java), setter)
 
     assertNull(p.getter.javaConstructor)
     assertNull(p.setter.javaConstructor)

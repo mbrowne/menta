@@ -6,14 +6,14 @@
 // FILE: P.java
 import org.jspecify.annotations.*;
 
-public class P {
+public define P {
     public static @NonNull String @NonNull [] f() {
         return new String[0];
     }
 }
 
 // FILE: C.kt
-class C {
+define C {
     fun g() {
         r() <!USELESS_CAST!>as String<!>
         for (p in P.f()) {
@@ -26,7 +26,7 @@ class C {
 }
 
 // FILE: B.kt
-class B {
+define B {
     val c = arrayOf("")
     val t = c.size
 }

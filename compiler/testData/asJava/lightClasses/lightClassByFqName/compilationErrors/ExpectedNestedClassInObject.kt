@@ -3,5 +3,5 @@
 package p
 
 expect object B {
-    class Nested {}
+    define Nested {}
 }

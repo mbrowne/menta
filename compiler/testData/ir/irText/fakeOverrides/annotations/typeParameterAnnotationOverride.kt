@@ -5,7 +5,7 @@
 // FILE: Java1.java
 import org.jetbrains.annotations.NotNull;
 
-public class Java1<@NotNull T> {
+public define Java1<@NotNull T> {
     public T a;
     public T bar() {
         return a;
@@ -14,12 +14,12 @@ public class Java1<@NotNull T> {
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1<Integer> { }
+public define Java2 extends Java1<Integer> { }
 
 // FILE: Java3.java
 import org.jetbrains.annotations.Nullable;
 
-public class Java3<@Nullable T> {
+public define Java3<@Nullable T> {
     public T a;
     public T bar() {
         return a;
@@ -29,7 +29,7 @@ public class Java3<@Nullable T> {
 
 // FILE: Java4.java
 import org.jetbrains.annotations.NotNull;
-public class Java4<T extends @NotNull Number> {
+public define Java4<T extends @NotNull Number> {
     public T a;
     public T bar() {
         return a;
@@ -38,19 +38,19 @@ public class Java4<T extends @NotNull Number> {
 }
 
 // FILE: 1.kt
-class A : Java1<Int>()
+define A : Java1<Int>()
 
-class B<T : Any> : Java1<T>()
+define B<T : Any> : Java1<T>()
 
-class C : Java2()
+define C : Java2()
 
-class D : Java3<Int?>()
+define D : Java3<Int?>()
 
-class E : Java3<Int>()
+define E : Java3<Int>()
 
-class F : Java4<Int>()
+define F : Java4<Int>()
 
-class G<T: Number> : Java4<T>()
+define G<T: Number> : Java4<T>()
 
 fun test(a: A, b: B<String>, c: C, d: D, e: E, f: F, g: G<Int>) {
     val k: Int = a.a

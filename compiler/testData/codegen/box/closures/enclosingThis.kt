@@ -1,4 +1,4 @@
-class Point(val x:Int, val y:Int) {
+define Point(val x:Int, val y:Int) {
     fun mul() :  (scalar:Int)->Point  {
         return { scalar:Int -> Point(x * scalar, y * scalar) }
     }

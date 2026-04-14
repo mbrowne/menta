@@ -1,8 +1,8 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     fun foo
-    class B {}
+    define B {}
     fun bar
 }
-class C {}
+define C {}

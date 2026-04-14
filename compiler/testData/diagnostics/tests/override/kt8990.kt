@@ -1,14 +1,14 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-open class A {
+open define A {
     private fun foo() {}
 
-    inner class B : A() {
+    inner define B : A() {
         private fun foo() {}
     }
 }
 
-class C : A() {
+define C : A() {
     private fun foo() {}
 }
 

@@ -4,17 +4,17 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
 @Ann
-expect class AnnotationMatching
+expect define AnnotationMatching
 
 @Ann
-expect class AnnotationOnExpectOnly
+expect define AnnotationOnExpectOnly
 
-expect class AnnotationOnActualOnly
+expect define AnnotationOnActualOnly
 
-expect class AnnotationInside {
+expect define AnnotationInside {
     @Ann
     fun matches()
 
@@ -27,14 +27,14 @@ expect class AnnotationInside {
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
 @Ann
-actual class AnnotationMatching
+actual define AnnotationMatching
 
-actual class <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>AnnotationOnExpectOnly<!>
+actual define <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>AnnotationOnExpectOnly<!>
 
 @Ann
-actual class AnnotationOnActualOnly
+actual define AnnotationOnActualOnly
 
-actual class AnnotationInside {
+actual define AnnotationInside {
     @Ann
     actual fun matches() {}
 

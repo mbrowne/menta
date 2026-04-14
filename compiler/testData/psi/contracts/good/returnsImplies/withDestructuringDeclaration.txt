@@ -17,7 +17,7 @@ KtFile: withDestructuringDeclaration.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('ExperimentalContracts')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(COMMA)(',')
         PsiWhiteSpace(' ')
         VALUE_ARGUMENT
@@ -25,7 +25,7 @@ KtFile: withDestructuringDeclaration.kt
             REFERENCE_EXPRESSION
               PsiElement(IDENTIFIER)('ExperimentalExtendedContracts')
             PsiElement(COLONCOLON)('::')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
         PsiElement(RPAR)(')')
   PACKAGE_DIRECTIVE
     <empty list>
@@ -48,7 +48,7 @@ KtFile: withDestructuringDeclaration.kt
       PsiElement(MUL)('*')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('PairList')
     TYPE_PARAMETER_LIST

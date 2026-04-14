@@ -5,15 +5,15 @@
 public interface I<T> {}
 
 // FILE: X.java
-public abstract class X<P> {}
+public abstract define X<P> {}
 
 // FILE: A.java
-public final class A extends X<String> implements I<String> {
+public final define A extends X<String> implements I<String> {
     public static final A INSTANCE = new A();
 }
 
 // FILE: B.java
-public final class B extends X<Integer> implements I<Integer> {
+public final define B extends X<Integer> implements I<Integer> {
     public static final B INSTANCE = new B();
 }
 

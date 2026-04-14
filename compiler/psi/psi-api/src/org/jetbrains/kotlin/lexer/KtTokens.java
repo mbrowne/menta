@@ -35,7 +35,7 @@ public interface KtTokens {
     int PACKAGE_KEYWORD_Id = 17;
     int AS_KEYWORD_Id = 18;
     int TYPE_ALIAS_KEYWORD_Id = 19;
-    int CLASS_KEYWORD_Id = 20;
+    int DEFINE_KEYWORD_Id = 20;
     int THIS_KEYWORD_Id = 21;
     int SUPER_KEYWORD_Id = 22;
     int VAL_KEYWORD_Id = 23;
@@ -164,6 +164,10 @@ public interface KtTokens {
     int ACTUAL_KEYWORD_Id = 146;
     int INTERPOLATION_PREFIX_Id = 147;
     int ALL_KEYWORD_Id = 148;
+    int CLASS_RESERVED_KEYWORD_Id = 149;
+    int ROLE_KEYWORD_Id = 150;
+    int REQUIRES_KEYWORD_Id = 151;
+    int FROM_KEYWORD_Id = 152;
 
     KtToken EOF   = new KtToken("EOF", EOF_Id);
 
@@ -194,7 +198,10 @@ public interface KtTokens {
     KtKeywordToken PACKAGE_KEYWORD          = KtKeywordToken.keyword("package", PACKAGE_KEYWORD_Id);
     KtKeywordToken AS_KEYWORD               = KtKeywordToken.keyword("as", AS_KEYWORD_Id);
     KtKeywordToken TYPE_ALIAS_KEYWORD       = KtKeywordToken.keyword("typealias", TYPE_ALIAS_KEYWORD_Id);
-    KtKeywordToken CLASS_KEYWORD            = KtKeywordToken.keyword("class", CLASS_KEYWORD_Id);
+    KtKeywordToken DEFINE_KEYWORD           = KtKeywordToken.keyword("define", DEFINE_KEYWORD_Id);
+    /** Reserved word: "class" is not used as a keyword (use "define" instead) but cannot be used as an identifier. */
+    KtKeywordToken CLASS_RESERVED_KEYWORD = KtKeywordToken.keyword("class", CLASS_RESERVED_KEYWORD_Id);
+    KtKeywordToken ROLE_KEYWORD             = KtKeywordToken.keyword("role", ROLE_KEYWORD_Id);
     KtKeywordToken THIS_KEYWORD             = KtKeywordToken.keyword("this", THIS_KEYWORD_Id);
     KtKeywordToken SUPER_KEYWORD            = KtKeywordToken.keyword("super", SUPER_KEYWORD_Id);
     KtKeywordToken VAL_KEYWORD              = KtKeywordToken.keyword("val", VAL_KEYWORD_Id);
@@ -295,8 +302,10 @@ public interface KtTokens {
     KtKeywordToken CONSTRUCTOR_KEYWORD = KtKeywordToken.softKeyword("constructor", CONSTRUCTOR_KEYWORD_Id);
     KtKeywordToken INIT_KEYWORD        = KtKeywordToken.softKeyword("init", INIT_KEYWORD_Id);
     KtKeywordToken CONTEXT_KEYWORD     = KtKeywordToken.softKeyword("context", CONTEXT_KEYWORD_Id);
+    KtKeywordToken REQUIRES_KEYWORD    = KtKeywordToken.softKeyword("requires", REQUIRES_KEYWORD_Id);
+    KtKeywordToken FROM_KEYWORD        = KtKeywordToken.softKeyword("from", FROM_KEYWORD_Id);
 
-    KtModifierKeywordToken ABSTRACT_KEYWORD  = KtModifierKeywordToken.softKeywordModifier("abstract", ABSTRACT_KEYWORD_Id);
+        // KtModifierKeywordToken ABSTRACT_KEYWORD  = KtModifierKeywordToken.softKeywordModifier("abstract", ABSTRACT_KEYWORD_Id);
     KtModifierKeywordToken ENUM_KEYWORD      = KtModifierKeywordToken.softKeywordModifier("enum", ENUM_KEYWORD_Id);
     KtModifierKeywordToken CONTRACT_KEYWORD  = KtModifierKeywordToken.softKeywordModifier("contract", CONTRACT_KEYWORD_Id);
     KtModifierKeywordToken OPEN_KEYWORD      = KtModifierKeywordToken.softKeywordModifier("open", OPEN_KEYWORD_Id);
@@ -340,29 +349,31 @@ public interface KtTokens {
     KtModifierKeywordToken ACTUAL_KEYWORD = KtModifierKeywordToken.softKeywordModifier("actual", ACTUAL_KEYWORD_Id);
 
 
-    TokenSet KEYWORDS = TokenSet.create(PACKAGE_KEYWORD, AS_KEYWORD, TYPE_ALIAS_KEYWORD, CLASS_KEYWORD, INTERFACE_KEYWORD,
+    TokenSet KEYWORDS = TokenSet.create(PACKAGE_KEYWORD, AS_KEYWORD, TYPE_ALIAS_KEYWORD, DEFINE_KEYWORD, CLASS_RESERVED_KEYWORD, INTERFACE_KEYWORD,
                                         THIS_KEYWORD, SUPER_KEYWORD, VAL_KEYWORD, VAR_KEYWORD, FUN_KEYWORD, FOR_KEYWORD,
                                         NULL_KEYWORD,
                                         TRUE_KEYWORD, FALSE_KEYWORD, IS_KEYWORD,
                                         IN_KEYWORD, THROW_KEYWORD, RETURN_KEYWORD, BREAK_KEYWORD, CONTINUE_KEYWORD, OBJECT_KEYWORD, IF_KEYWORD,
                                         ELSE_KEYWORD, WHILE_KEYWORD, DO_KEYWORD, TRY_KEYWORD, WHEN_KEYWORD,
                                         NOT_IN, NOT_IS, AS_SAFE,
-                                        TYPEOF_KEYWORD
+                                        TYPEOF_KEYWORD, ROLE_KEYWORD
     );
 
-    TokenSet SOFT_KEYWORDS = TokenSet.create(FILE_KEYWORD, IMPORT_KEYWORD, WHERE_KEYWORD, BY_KEYWORD, GET_KEYWORD,
-                                             SET_KEYWORD, ABSTRACT_KEYWORD, ENUM_KEYWORD, CONTRACT_KEYWORD, OPEN_KEYWORD, INNER_KEYWORD,
-                                             OVERRIDE_KEYWORD, PRIVATE_KEYWORD, PUBLIC_KEYWORD, INTERNAL_KEYWORD, PROTECTED_KEYWORD,
-                                             CATCH_KEYWORD, FINALLY_KEYWORD, OUT_KEYWORD, FINAL_KEYWORD, VARARG_KEYWORD, REIFIED_KEYWORD,
-                                             DYNAMIC_KEYWORD, COMPANION_KEYWORD, CONSTRUCTOR_KEYWORD, INIT_KEYWORD, SEALED_KEYWORD,
-                                             FIELD_KEYWORD, PROPERTY_KEYWORD, RECEIVER_KEYWORD, PARAM_KEYWORD, SETPARAM_KEYWORD,
-                                             DELEGATE_KEYWORD, ALL_KEYWORD,
-                                             LATEINIT_KEYWORD,
-                                             DATA_KEYWORD, INLINE_KEYWORD, NOINLINE_KEYWORD, TAILREC_KEYWORD, EXTERNAL_KEYWORD,
-                                             ANNOTATION_KEYWORD, CROSSINLINE_KEYWORD, CONST_KEYWORD, OPERATOR_KEYWORD, INFIX_KEYWORD,
-                                             SUSPEND_KEYWORD, EXPECT_KEYWORD, ACTUAL_KEYWORD,
-                                             VALUE_KEYWORD, CONTEXT_KEYWORD
-    );
+        TokenSet SOFT_KEYWORDS = TokenSet.create(FILE_KEYWORD, IMPORT_KEYWORD, WHERE_KEYWORD, BY_KEYWORD, GET_KEYWORD,
+                                                                                         SET_KEYWORD, ENUM_KEYWORD, CONTRACT_KEYWORD, OPEN_KEYWORD, INNER_KEYWORD,
+                                                                                         OVERRIDE_KEYWORD, PRIVATE_KEYWORD, PUBLIC_KEYWORD, INTERNAL_KEYWORD, PROTECTED_KEYWORD,
+                                                                                         CATCH_KEYWORD, FINALLY_KEYWORD, OUT_KEYWORD, FINAL_KEYWORD, VARARG_KEYWORD, REIFIED_KEYWORD,
+                                                                                         DYNAMIC_KEYWORD, COMPANION_KEYWORD, CONSTRUCTOR_KEYWORD, INIT_KEYWORD, SEALED_KEYWORD,
+                                                                                         FIELD_KEYWORD, PROPERTY_KEYWORD, RECEIVER_KEYWORD, PARAM_KEYWORD, SETPARAM_KEYWORD,
+                                                                                         DELEGATE_KEYWORD, ALL_KEYWORD,
+                                                                                         LATEINIT_KEYWORD,
+                                                                                         DATA_KEYWORD, INLINE_KEYWORD, NOINLINE_KEYWORD, TAILREC_KEYWORD, EXTERNAL_KEYWORD,
+                                                                                         ANNOTATION_KEYWORD, CROSSINLINE_KEYWORD, CONST_KEYWORD, OPERATOR_KEYWORD, INFIX_KEYWORD,
+                                                                                         SUSPEND_KEYWORD, EXPECT_KEYWORD, ACTUAL_KEYWORD,
+                                                                                         VALUE_KEYWORD, CONTEXT_KEYWORD,
+                                                                                         FROM_KEYWORD,
+                                                                                         REQUIRES_KEYWORD
+        );
 
     /**
      * Canonically ordered array of all modifier keywords.
@@ -379,7 +390,7 @@ public interface KtTokens {
             new KtModifierKeywordToken[] {
                     PUBLIC_KEYWORD, PROTECTED_KEYWORD, PRIVATE_KEYWORD, INTERNAL_KEYWORD,
                     EXPECT_KEYWORD, ACTUAL_KEYWORD,
-                    FINAL_KEYWORD, OPEN_KEYWORD, ABSTRACT_KEYWORD, SEALED_KEYWORD,
+                    FINAL_KEYWORD, OPEN_KEYWORD, SEALED_KEYWORD,
                     CONST_KEYWORD,
                     EXTERNAL_KEYWORD,
                     OVERRIDE_KEYWORD,
@@ -409,7 +420,7 @@ public interface KtTokens {
     TokenSet RESERVED_VALUE_PARAMETER_MODIFIER_KEYWORDS = TokenSet.create(OUT_KEYWORD, VARARG_KEYWORD);
 
     TokenSet VISIBILITY_MODIFIERS = TokenSet.create(PRIVATE_KEYWORD, PUBLIC_KEYWORD, INTERNAL_KEYWORD, PROTECTED_KEYWORD);
-    TokenSet MODALITY_MODIFIERS = TokenSet.create(ABSTRACT_KEYWORD, FINAL_KEYWORD, SEALED_KEYWORD, OPEN_KEYWORD);
+        TokenSet MODALITY_MODIFIERS = TokenSet.create(FINAL_KEYWORD, SEALED_KEYWORD, OPEN_KEYWORD);
 
     TokenSet WHITESPACES = TokenSet.create(TokenType.WHITE_SPACE);
 

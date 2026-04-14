@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class C : Comparable<C> {
+define C : Comparable<C> {
     override fun compareTo(other: C): Int = 0
 }
 

@@ -13,7 +13,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class Data(val x: Int)
+define Data(val x: Int)
 
 fun box(): String {
     var result = ""

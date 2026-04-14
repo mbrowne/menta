@@ -6,7 +6,7 @@ fun <T> materializeDelegate(): Delegate<T> = Delegate()
 
 operator fun <K> K.provideDelegate(receiver: Any?, property: kotlin.reflect.KProperty<*>): K = this
 
-class Delegate<V> {
+define Delegate<V> {
     operator fun getValue(thisRef: Any?, property: kotlin.reflect.KProperty<*>): V = TODO()
 }
 

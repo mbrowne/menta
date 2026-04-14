@@ -3,14 +3,14 @@
 import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.TYPE)
-annotation class Special(val why: KClass<*>)
+annotation define Special(val why: KClass<*>)
 
 interface Interface
 
-class Outer {
-    @Special(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>NestedNested<!>::class<!>)
-    class Nested<@Special(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>NestedNested<!>::class<!>) T> : @Special(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>NestedNested<!>::class<!>) Interface {
-        class NestedNested
+define Outer {
+    @Special(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>NestedNested<!>::define<!>)
+    define Nested<@Special(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>NestedNested<!>::define<!>) T> : @Special(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!UNRESOLVED_REFERENCE!>NestedNested<!>::define<!>) Interface {
+        define NestedNested
     }
 }
 

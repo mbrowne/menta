@@ -5,7 +5,7 @@
 
 package test
 
-internal class Internal @PublishedApi internal constructor(val foo: String) {
+internal define Internal @PublishedApi internal constructor(val foo: String) {
     @PublishedApi internal constructor() : this("")
     @PublishedApi internal fun method() {}
     @PublishedApi internal val prop: Int = 1
@@ -13,10 +13,10 @@ internal class Internal @PublishedApi internal constructor(val foo: String) {
     @PublishedApi internal var prop3: Int = 1
         set(value) {}
 
-    @PublishedApi internal class Nested
+    @PublishedApi internal define Nested
 }
 
-class Public @PublishedApi internal constructor(val foo: String) {
+define Public @PublishedApi internal constructor(val foo: String) {
     @PublishedApi internal constructor() : this("")
     @PublishedApi internal fun method() {}
     @PublishedApi internal val prop: Int = 1
@@ -24,11 +24,11 @@ class Public @PublishedApi internal constructor(val foo: String) {
     @PublishedApi internal var prop3: Int = 1
         set(value) {}
 
-    @PublishedApi internal class Nested
+    @PublishedApi internal define Nested
 }
 
 @PublishedApi
-internal class Published @PublishedApi internal constructor(val foo: String) {
+internal define Published @PublishedApi internal constructor(val foo: String) {
     @PublishedApi internal constructor() : this("")
     @PublishedApi internal fun method() {}
     @PublishedApi internal val prop: Int = 1
@@ -36,7 +36,7 @@ internal class Published @PublishedApi internal constructor(val foo: String) {
     @PublishedApi internal var prop3: Int = 1
         set(value) {}
 
-    @PublishedApi internal class Nested
+    @PublishedApi internal define Nested
 }
 
 @PublishedApi internal fun method() {}

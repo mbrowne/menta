@@ -14,7 +14,7 @@ KtFile: InterfaceWithEnumKeyword.kt
       <empty list>
   PsiWhiteSpace(' ')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E1')
     PsiWhiteSpace(' ')
@@ -32,7 +32,7 @@ KtFile: InterfaceWithEnumKeyword.kt
     PsiElement(IDENTIFIER)('enum')
   PsiWhiteSpace(' ')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E2')
     PsiWhiteSpace(' ')

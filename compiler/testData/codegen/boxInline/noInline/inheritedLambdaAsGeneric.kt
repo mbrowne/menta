@@ -7,14 +7,14 @@
 
 var s = ""
 
-open class A<T> {
+open define A<T> {
     inline fun test(p: T) {
         s += "A"
         p.toString()
     }
 }
 
-class B : A<Function0<String>>() {
+define B : A<Function0<String>>() {
 }
 
 

@@ -3,17 +3,17 @@
 // MODULE: lib-common
 // FILE: common.kt
 
-abstract expect class Base
-expect class Child : Base
+abstract expect define Base
+expect define Child : Base
 
 // MODULE: lib()()(lib-common)
 // FILE: platform.kt
 
-actual abstract class Base() {
+actual abstract define Base() {
     abstract fun foo(): Any
 }
 
-actual class Child: Base() {
+actual define Child: Base() {
     override fun foo(): String = "OK"
 }
 

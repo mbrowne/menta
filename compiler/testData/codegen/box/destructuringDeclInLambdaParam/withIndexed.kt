@@ -1,5 +1,5 @@
 // WITH_STDLIB
-data class Station(
+data define Station(
         val id: String?,
         val name: String,
         val distance: Int)

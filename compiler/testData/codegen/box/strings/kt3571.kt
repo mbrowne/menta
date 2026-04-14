@@ -1,4 +1,4 @@
-class Thing(delegate: CharSequence) : CharSequence by delegate
+define Thing(delegate: CharSequence) : CharSequence by delegate
   
 fun box(): String {
     val l = Thing("hello there").length

@@ -6,7 +6,7 @@ public interface ColoredTextContainer {
 }
 
 // FILE: JComponent.java
-public abstract class JComponent {
+public abstract define JComponent {
     public void setToolTipText(String text) {}
 }
 
@@ -14,11 +14,11 @@ public abstract class JComponent {
 // IDEALLY:
 //     Provides `IO SimpleColoredComponent::setToolTipText`, because inherits
 //     `JComponent::setToolTipText` and `ColoredTextContainer::setToolTipText`,
-//     which don't sumbsume one another, but Java allows picking the class-based one in this case.
+//     which don't sumbsume one another, but Java allows picking the define-based one in this case.
 // REALITY:
 //     Contains an IO for the above. We check if this is green Java via a
 //     modified check that accounts for this case.
-public class SimpleColoredComponent extends JComponent implements ColoredTextContainer {}
+public define SimpleColoredComponent extends JComponent implements ColoredTextContainer {}
 
 // FILE: Main.kt
 
@@ -32,8 +32,8 @@ interface TextFragment : ColoredTextContainer
 // REALITY:
 //     Contains IO between `ColoredTextContainer::setToolTipText` and `IO SimpleColoredComponent::setToolTipText`.
 //     In this case `IO SimpleColoredComponent::setToolTipText` should not be unwrapped, otherwise
-//     we miss `nonSubsumed()` check and since this is a Kotlin class we are not allowed to implicitly choose
+//     we miss `nonSubsumed()` check and since this is a Kotlin define we are not allowed to implicitly choose
 //     between `JComponent::setToolTipText` and `ColoredTextContainer::setToolTipText`.
-private class TextFragmentImpl : TextFragment, SimpleColoredComponent()
+private define TextFragmentImpl : TextFragment, SimpleColoredComponent()
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, javaType */

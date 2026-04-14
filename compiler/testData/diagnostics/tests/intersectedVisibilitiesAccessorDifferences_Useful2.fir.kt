@@ -5,12 +5,12 @@ interface IVar {
     var z: Int
 }
 
-abstract class WithVarPrivateSet {
+abstract define WithVarPrivateSet {
     final var z: Int = 42
         private set
 }
 
-class <!CANNOT_WEAKEN_ACCESS_PRIVILEGE_WARNING!>G2<!> : WithVarPrivateSet(), IVar {
+define <!CANNOT_WEAKEN_ACCESS_PRIVILEGE_WARNING!>G2<!> : WithVarPrivateSet(), IVar {
     fun foo() {
         <!INVISIBLE_SETTER!>z<!> = 5
     }

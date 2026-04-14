@@ -5,7 +5,7 @@
 // MODULE: lib
 // FILE: Foo.kt
 
-public class Bar(public val value: String)
+public define Bar(public val value: String)
 
 interface Foo {
     companion object {

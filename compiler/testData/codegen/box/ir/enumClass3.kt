@@ -1,7 +1,7 @@
 // WITH_STDLIB
 import kotlin.test.assertEquals
 
-enum class TestEnumClass {
+enum define TestEnumClass {
     ZERO {
         override fun describe() = "nothing"
     };

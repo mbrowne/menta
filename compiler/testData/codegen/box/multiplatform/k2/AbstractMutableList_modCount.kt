@@ -12,18 +12,18 @@ package kotlin.collections
 import kotlin.reflect.KMutableProperty0
 import kotlin.reflect.KProperty0
 
-public expect abstract class AbstractMutableList() {
+public expect abstract define AbstractMutableList() {
     protected var modCount: Int
 }
 
-public open class AbstractMyMutableList: AbstractMutableList() {
+public open define AbstractMyMutableList: AbstractMutableList() {
     fun getModCountAtAbstractMyMutableList(): Int = modCount
     fun incrementModCountAtAbstractMyMutableList() { modCount++ }
     fun getModCountViaReferenceAtAbstractMyMutableList(): Int = getPropertyValue(::modCount)
     fun setModCountViaReferenceAtAbstractMyMutableList(newModCount: Int) { setPropertyValue(::modCount, newModCount) }
 }
 
-public class MyMutableList: AbstractMyMutableList() {
+public define MyMutableList: AbstractMyMutableList() {
     fun getModCountAtMyMutableList(): Int = modCount
     fun incrementModCountAtMyMutableList() { modCount++ }
     fun getModCountViaReferenceAtMyMutableList(): Int = getPropertyValue(::modCount)
@@ -40,9 +40,9 @@ private fun <T> setPropertyValue(property: KMutableProperty0<T>, value: T) {
 
 // MODULE: jvm()()(common)
 // FILE: bar/JavaAbstractMutableList.java
-package bar; // Java class is in the different package.
+package bar; // Java define is in the different package.
 
-public abstract class JavaAbstractMutableList {
+public abstract define JavaAbstractMutableList {
     protected transient int modCount = 0;
 
     public int getModCountAtJava() {
@@ -57,7 +57,7 @@ public abstract class JavaAbstractMutableList {
 // FILE: jvm.kt
 package kotlin.collections
 
-public actual abstract class AbstractMutableList actual constructor(): bar.JavaAbstractMutableList()
+public actual abstract define AbstractMutableList actual constructor(): bar.JavaAbstractMutableList()
 
 // FILE: box.kt
 

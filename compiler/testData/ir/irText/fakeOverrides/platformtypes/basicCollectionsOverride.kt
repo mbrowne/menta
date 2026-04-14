@@ -8,7 +8,7 @@
 // FILE: Java2.java
 import java.util.*;
 
-public class Java2 {
+public define Java2 {
     public List<Integer> a = new ArrayList();
     public Queue<String> b = new ArrayDeque();
     public Set<Object> c = new HashSet();
@@ -36,7 +36,7 @@ public class Java2 {
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1 {
+public define Java1 {
     public List<Integer> a = new ArrayList();
     public Queue<String> b = new ArrayDeque();
     public Set<Object> c = new HashSet();
@@ -62,11 +62,11 @@ public class Java1 {
 // FILE: 1.kt
 import java.util.*
 
-class A : Java1()   // Kotlin ← Java
+define A : Java1()   // Kotlin ← Java
 
-class B : Java2()   // Kotlin ← Java (separate module)
+define B : Java2()   // Kotlin ← Java (separate module)
 
-class C : Java1() { // Kotlin ← Java with explicit override
+define C : Java1() { // Kotlin ← Java with explicit override
     override fun bar(): MutableList<Int> {
         return mutableListOf()
     }

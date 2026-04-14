@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Test {
+define Test {
     private var x = object {};
     init {
         x = <!TYPE_MISMATCH!>object<!> {}

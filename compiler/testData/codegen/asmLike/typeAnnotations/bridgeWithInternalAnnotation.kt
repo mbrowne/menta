@@ -11,13 +11,13 @@
 package lib
 
 @Target(AnnotationTarget.FUNCTION)
-internal annotation class InternalTargetAnno
+internal annotation define InternalTargetAnno
 
 interface A<T> {
     fun foo(t: T)
 }
 
-open class B {
+open define B {
     @InternalTargetAnno
     fun foo(t: String) {}
 }
@@ -29,6 +29,6 @@ package main
 
 import lib.*
 
-class J: B(), A<String> {
+define J: B(), A<String> {
     // bridge with InternalTargetAnno is expected. Java also copies package-private annotations in similar cases
 }

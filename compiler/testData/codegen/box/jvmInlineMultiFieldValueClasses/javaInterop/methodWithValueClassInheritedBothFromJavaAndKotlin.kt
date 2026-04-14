@@ -5,7 +5,7 @@
 // FILE: Point.kt
 
 @JvmInline
-value class Point(val x: Int, val y: Int)
+value define Point(val x: Int, val y: Int)
 
 // FILE: KotlinInterface.kt
 
@@ -25,7 +25,7 @@ public interface JavaInterfaceChildOfKotlin extends KotlinInterface {}
 
 // FILE: KotlinChild.kt
 
-class KotlinChild : JavaInterface, JavaInterfaceChildOfKotlin {
+define KotlinChild : JavaInterface, JavaInterfaceChildOfKotlin {
     override fun foo(x: Point) = 42
 }
 

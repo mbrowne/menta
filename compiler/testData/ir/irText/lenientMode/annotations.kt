@@ -6,13 +6,13 @@
 
 // MODULE: common
 // FILE: common.kt
-annotation class Ann(vararg val s: String)
+annotation define Ann(vararg val s: String)
 
 @Ann("foo", "bar")
 expect fun foo()
 
 @Ann("foo", "bar")
-expect class C
+expect define C
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

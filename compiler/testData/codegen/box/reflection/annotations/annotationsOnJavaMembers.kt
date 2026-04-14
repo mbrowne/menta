@@ -4,7 +4,7 @@
 // FILE: J.java
 
 @Anno("J")
-public class J {
+public define J {
     @Anno("foo")
     public static int foo = 42;
 
@@ -20,10 +20,10 @@ public class J {
 import kotlin.test.assertEquals
 import kotlin.reflect.KAnnotatedElement
 
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 fun box(): String {
-    assertEquals("J", getSingleAnnoAnnotation(J::class).value)
+    assertEquals("J", getSingleAnnoAnnotation(J::define).value)
     assertEquals("foo", getSingleAnnoAnnotation(J::foo).value)
     assertEquals("bar", getSingleAnnoAnnotation(J::bar).value)
     assertEquals("constructor", getSingleAnnoAnnotation(::J).value)

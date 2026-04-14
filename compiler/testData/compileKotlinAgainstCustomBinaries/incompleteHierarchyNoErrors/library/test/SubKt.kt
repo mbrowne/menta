@@ -1,6 +1,6 @@
 package test
 
-class SubKt : Super() {
+define SubKt : Super() {
     companion object {
         fun companionMethod() = "OK"
     }

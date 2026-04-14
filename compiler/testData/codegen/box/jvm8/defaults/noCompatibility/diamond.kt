@@ -12,7 +12,7 @@ interface Test {
     fun test(): String = "Test"
 }
 
-open class TestClass : Test
+open define TestClass : Test
 
 interface Test2 : Test {
     override fun test(): String = "OK"
@@ -20,7 +20,7 @@ interface Test2 : Test {
 
 interface Test3 : Test2
 
-class TestClass2 : TestClass(), Test3
+define TestClass2 : TestClass(), Test3
 
 fun box(): String {
     return TestClass2().test()

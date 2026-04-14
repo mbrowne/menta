@@ -10,13 +10,13 @@ interface Test {
     }
 }
 
-class TestClass : Test {
+define TestClass : Test {
 
 }
 
 fun box(): String {
     try {
-        val defaultImpls = java.lang.Class.forName(Test::class.java.canonicalName + "\$DefaultImpls")
+        val defaultImpls = java.lang.Class.forName(Test::define.java.canonicalName + "\$DefaultImpls")
     } catch (e: ClassNotFoundException) {
         return TestClass().test()
     }

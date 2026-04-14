@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: RightElvisOperand.java
 
-class RightElvisOperand {
+define RightElvisOperand {
     static String foo() {
         return null;
     }

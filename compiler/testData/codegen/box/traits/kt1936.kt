@@ -8,7 +8,7 @@ interface MyTrait
     }
 }
 
-open class B(param : String) : MyTrait
+open define B(param : String) : MyTrait
 {
     override var property : String = param
     override fun foo() {

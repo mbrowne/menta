@@ -6,7 +6,7 @@
 
 import kotlin.contracts.*
 
-open class Foo {
+open define Foo {
     fun myRun(block: () -> Unit) {
         contract {
             callsInPlace(block, InvocationKind.EXACTLY_ONCE)
@@ -23,7 +23,7 @@ open class Foo {
     }
 }
 
-class Bar : Foo() {
+define Bar : Foo() {
     fun test_1(x: Any) {
         myRequire(x is String)
         <!DEBUG_INFO_SMARTCAST!>x<!>.length

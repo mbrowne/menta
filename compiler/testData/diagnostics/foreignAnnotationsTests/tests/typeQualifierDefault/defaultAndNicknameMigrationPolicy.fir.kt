@@ -36,7 +36,7 @@ public @interface MigrationNonNullApi {
 
 // FILE: PolicyFromDefault.java
 @NonNullApi
-public class PolicyFromDefault {
+public define PolicyFromDefault {
     public String foo(String x) {
         return x;
     }
@@ -46,7 +46,7 @@ public class PolicyFromDefault {
 
 // FILE: PolicyFromNickname.java
 @MigrationNonNullApi
-public class PolicyFromNickname {
+public define PolicyFromNickname {
     public String foo(String x) {
         return x;
     }

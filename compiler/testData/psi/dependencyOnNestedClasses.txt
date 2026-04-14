@@ -20,7 +20,7 @@ KtFile: dependencyOnNestedClasses.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('DependencyOnNestedClasses')
     PsiWhiteSpace(' ')
@@ -158,7 +158,7 @@ KtFile: dependencyOnNestedClasses.kt
     PsiElement(IDENTIFIER)('dependency')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('D')
     PsiWhiteSpace(' ')
@@ -169,7 +169,7 @@ KtFile: dependencyOnNestedClasses.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
         PsiWhiteSpace(' ')
@@ -180,7 +180,7 @@ KtFile: dependencyOnNestedClasses.kt
             MODIFIER_LIST
               PsiElement(inner)('inner')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('Inner')
           PsiWhiteSpace('\n    ')
@@ -190,7 +190,7 @@ KtFile: dependencyOnNestedClasses.kt
         MODIFIER_LIST
           PsiElement(open)('open')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Nested')
         PsiWhiteSpace(' ')
@@ -198,7 +198,7 @@ KtFile: dependencyOnNestedClasses.kt
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('Nested')
           PsiWhiteSpace('\n    ')
@@ -214,7 +214,7 @@ KtFile: dependencyOnNestedClasses.kt
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('NestedInClassObject')
           PsiWhiteSpace('\n    ')

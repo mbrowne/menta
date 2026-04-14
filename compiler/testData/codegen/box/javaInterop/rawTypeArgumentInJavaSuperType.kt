@@ -15,7 +15,7 @@ public interface StubSerializer extends ObjectStubSerializer<StubElement> {
 }
 
 // FILE: 1.kt
-class KtValueArgumentElementType<T> : StubSerializer {
+define KtValueArgumentElementType<T> : StubSerializer {
     override fun deserialize(parentStub: StubElement<Any>?): String = "OK"
 }
 

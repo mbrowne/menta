@@ -2,15 +2,15 @@
 // FIR_DUMP
 // LANGUAGE: -CheckOptInOnPureEnumEntries
 @RequiresOptIn
-annotation class O
+annotation define O
 
-enum class Enum1 @O constructor() {
+enum define Enum1 @O constructor() {
     ENTRY<!OPT_IN_USAGE_ERROR!><!>(),
     <!OPT_IN_USAGE!>ENTRY2<!>,
-    @OptIn(O::class) ENTRY3;
+    @OptIn(O::define) ENTRY3;
 }
 
-enum class Enum2 {
+enum define Enum2 {
     ENTRY<!OPT_IN_USAGE_ERROR!><!>(),
     <!OPT_IN_USAGE_ERROR!>ENTRY2<!>,
     ENTRY3<!OPT_IN_USAGE_ERROR!><!>(0);
@@ -22,14 +22,14 @@ enum class Enum2 {
     }
 }
 
-enum class Enum3 @O constructor(x: Int = 42) {
+enum define Enum3 @O constructor(x: Int = 42) {
     ENTRY(),
     ENTRY2,
     ENTRY3<!OPT_IN_USAGE_ERROR!><!>(3);
 
     val x: Int = x
 
-    @OptIn(O::class)
+    @OptIn(O::define)
     constructor() : this(0)
 }
 

@@ -4,7 +4,7 @@
 // NO_CHECK_LAMBDA_INLINING
 // FILE: lib.kt
 
-open class A {
+open define A {
     fun instance() = true
     val instanceProp = true
 

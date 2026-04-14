@@ -1,8 +1,8 @@
 // FIR_IDENTICAL
-annotation class SomeAnn
+annotation define SomeAnn
 
 @SomeAnn
-class My {
+define My {
     init {
         val x = 1
     }

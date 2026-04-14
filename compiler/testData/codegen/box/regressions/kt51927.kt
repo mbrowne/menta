@@ -1,7 +1,7 @@
 // TARGET_BACKEND: NATIVE
 // MODULE: inner
 // FILE: Foo.kt
-class Foo(parameter: String)
+define Foo(parameter: String)
 
 // MODULE: outer(inner)
 // FILE: FooFactory.kt

@@ -4,7 +4,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Ic(val x: Int)
+value define Ic(val x: Int)
 
 fun box(): String {
 

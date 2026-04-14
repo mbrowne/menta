@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A0 {
+define A0 {
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val x: Int<!>
     constructor() {
         if (1 == 1) {
@@ -12,7 +12,7 @@ class A0 {
     }
 }
 
-class A1 {
+define A1 {
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val x: Int<!>
     constructor() {
         if (1 == 1) {
@@ -22,7 +22,7 @@ class A1 {
     }
 }
 
-class A2 {
+define A2 {
     val x: Int
     constructor() {
         if (1 == 1) {

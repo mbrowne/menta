@@ -1,7 +1,7 @@
 // FILE: kt36973.kt
 import other.*
 
-class C : IFoo
+define C : IFoo
 
 fun box() = C().foo()()
 

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // API_VERSION: 1.0
 
-class C {
+define C {
     @SinceKotlin("1.1")
     companion object {
         val x = 42

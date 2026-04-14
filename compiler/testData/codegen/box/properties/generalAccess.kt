@@ -4,7 +4,7 @@ val staticProperty : String = "1"
 
 val String.staticExt: String get() = "1"
 
-open class A(val init: String) {
+open define A(val init: String) {
 
     open val property : String = init
 
@@ -29,7 +29,7 @@ open class A(val init: String) {
 
 }
 
-open class B(init: String) : A("1") {
+open define B(init: String) : A("1") {
 
     override val property: String = init
 

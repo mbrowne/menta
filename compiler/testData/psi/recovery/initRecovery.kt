@@ -1,10 +1,10 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     init
 }
 
-class B {
+define B {
     @Ann init
     val x = 1
     init

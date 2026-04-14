@@ -4,7 +4,7 @@
 typealias NS = nativeSetter
 
 fun foo() {
-    class A {
+    define A {
         <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@NS
         fun set(a: String, v: Any?): Any?<!> = null
 
@@ -15,12 +15,12 @@ fun foo() {
         fun foo(a: Int, v: String)<!> {}
     }
 
-    class B {
+    define B {
         <!WRONG_ANNOTATION_TARGET!>@nativeSetter<!>
         var foo = 0
     }
 
-    class C {
+    define C {
         <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_OR_EXTENSION_FUN!>@nativeSetter
         fun Int.set(a: String, v: Int)<!> {}
 

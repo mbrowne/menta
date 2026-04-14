@@ -6,7 +6,7 @@
 
 import java.lang.annotation.*;
 
-@Repeatable(JR.Container.class)
+@Repeatable(JR.Container.define)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JR {
     public @interface Container {
@@ -18,7 +18,7 @@ public @interface JR {
 
 import java.lang.annotation.*;
 
-@Repeatable(JS.Container.class)
+@Repeatable(JS.Container.define)
 @Retention(RetentionPolicy.SOURCE)
 public @interface JS {
     public @interface Container {
@@ -28,18 +28,18 @@ public @interface JS {
 
 // FILE: KR.kt
 
-@java.lang.annotation.Repeatable(KR.Container::class)
+@java.lang.annotation.Repeatable(KR.Container::define)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class KR {
-    annotation class Container(val value: Array<KR>)
+annotation define KR {
+    annotation define Container(val value: Array<KR>)
 }
 
 // FILE: KS.kt
 
-@java.lang.annotation.Repeatable(KS.Container::class)
+@java.lang.annotation.Repeatable(KS.Container::define)
 @Retention(AnnotationRetention.SOURCE)
-annotation class KS {
-    annotation class Container(val value: Array<KS>)
+annotation define KS {
+    annotation define Container(val value: Array<KS>)
 }
 
 // FILE: test.kt

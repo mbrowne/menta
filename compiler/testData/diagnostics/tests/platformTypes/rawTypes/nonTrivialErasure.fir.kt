@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-class A<T extends A<T, E>, E extends T, F extends List<? extends Double>> {
+define A<T extends A<T, E>, E extends T, F extends List<? extends Double>> {
     T first;
     E second;
     F listOfDoubles;
@@ -12,8 +12,8 @@ class A<T extends A<T, E>, E extends T, F extends List<? extends Double>> {
 
 // FILE: Test.java
 
-class Test {
-    static class DerivedRawA extends A {}
+define Test {
+    static define DerivedRawA extends A {}
     static A rawAField = null;
 }
 

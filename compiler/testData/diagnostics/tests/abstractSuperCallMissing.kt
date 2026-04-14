@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-73585
 
-class Foo
+define Foo
 
 interface Bar {
     fun buzz()

@@ -2,45 +2,45 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +CustomEqualsInValueClasses
 // TARGET_BACKEND: JVM_IR
 
-class A(x: Int)
+define A(x: Int)
 
 @JvmInline
-value class B(val a: A) {
+value define B(val a: A) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class C<T>(val t: T) {
+value define C<T>(val t: T) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class D<T : Int>(val t: T) {
+value define D<T : Int>(val t: T) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class E(val d: Double) {
+value define E(val d: Double) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class F(val e: E) {
+value define F(val e: E) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class G(val e: Int?) {
+value define G(val e: Int?) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class H(val e: Any?) {
+value define H(val e: Any?) {
     override fun equals(other: Any?) = true
 }
 
 @JvmInline
-value class I(val e: E?) {
+value define I(val e: E?) {
     override fun equals(other: Any?) = true
 }
 

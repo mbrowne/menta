@@ -10,7 +10,7 @@ public interface Function<Param, Result> {
 
 // FILE: AdapterProcessor.java
 
-public class AdapterProcessor<T, S> {
+public define AdapterProcessor<T, S> {
     public AdapterProcessor(Function<? super T, ? extends S> conversion) {}
 }
 

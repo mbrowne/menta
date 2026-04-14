@@ -1,5 +1,5 @@
 // MAIN_FILE_NAME: KotlinInterface
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 // FILE: JavaInterface.java
 import org.jetbrains.annotations.NotNull;
 

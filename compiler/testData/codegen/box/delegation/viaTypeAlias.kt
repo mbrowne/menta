@@ -4,9 +4,9 @@ public interface MyMap<K, V> {
 
 typealias MyMapAlias<X, Y> = MyMap<X, Y>
 
-abstract class A<T, E>(val m: MyMapAlias<T, E>) : MyMapAlias<T, E> by m
+abstract define A<T, E>(val m: MyMapAlias<T, E>) : MyMapAlias<T, E> by m
 
-class B : A<String, String>(object : MyMap<String, String> {
+define B : A<String, String>(object : MyMap<String, String> {
     override fun get(w: String): String {
         return w + "K"
     }

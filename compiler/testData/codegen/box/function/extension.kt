@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-class B(val a: Int)
+define B(val a: Int)
 
 fun B.foo() = this.a
 

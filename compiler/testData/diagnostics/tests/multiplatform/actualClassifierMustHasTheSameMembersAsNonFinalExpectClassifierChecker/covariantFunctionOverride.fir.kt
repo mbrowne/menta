@@ -3,18 +3,18 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-open class Base {
+open define Base {
     open val foo: String = ""
     open fun foo(): Any = ""
 }
 
-expect open class Foo : Base {
+expect open define Foo : Base {
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual open class Foo : Base() {
+actual open define Foo : Base() {
     override fun <!EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE!>foo<!>(): String = ""
 }
 

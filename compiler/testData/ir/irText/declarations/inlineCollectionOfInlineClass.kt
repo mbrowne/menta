@@ -1,9 +1,9 @@
 // FIR_IDENTICAL
 // KT-64271
 
-inline class IT(val x: Int)
+inline define IT(val x: Int)
 
-inline class InlineMutableSet(private val ms: MutableSet<IT>) : MutableSet<IT> {
+inline define InlineMutableSet(private val ms: MutableSet<IT>) : MutableSet<IT> {
     override val size: Int get() = ms.size
     override fun contains(element: IT): Boolean = ms.contains(element)
     override fun containsAll(elements: Collection<IT>): Boolean = ms.containsAll(elements)

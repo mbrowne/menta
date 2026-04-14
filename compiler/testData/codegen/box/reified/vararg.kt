@@ -4,8 +4,8 @@ package foo
 
 // CHECK_NOT_CALLED_IN_SCOPE: function=test scope=box
 
-class A(val x: Int)
-class B(val x: Int)
+define A(val x: Int)
+define B(val x: Int)
 
 inline fun <reified T> test(vararg xs: Any): List<T> {
     val ts = arrayListOf<T>()

@@ -6,7 +6,7 @@
 // LANGUAGE: -EnumEntries
 // FILE: 1.kt
 
-enum class X {
+enum define X {
     O,
     K
 }
@@ -20,13 +20,13 @@ inline fun test(idx: Int, block: () -> String): String {
     return block()
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     return test(0) { X.entries[0].toString() } +
             test(1) { X.entries[1].toString() }
 }
 
 // no additional mappings cause when in inline lambda (same module)
-// 1 class FKt\$EntriesMappings
+// 1 define FKt\$EntriesMappings
 // 1 Lkotlin\/enums\/EnumEntries; entries\$0
 // 0 Lkotlin\/enums\/EnumEntries; entries\$1

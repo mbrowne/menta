@@ -1,7 +1,7 @@
-class Foo<out T>(val key: T)
-class Bar()
+define Foo<out T>(val key: T)
+define Bar()
 
-class KFlowable<T> {
+define KFlowable<T> {
     fun <R> scan(initial: R, accumulator: (R, T) -> R) {}
 }
 

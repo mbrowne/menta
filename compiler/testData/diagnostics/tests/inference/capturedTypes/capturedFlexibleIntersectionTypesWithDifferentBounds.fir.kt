@@ -3,11 +3,11 @@
 // SKIP_TXT
 // FILE: Bar.java
 
-public class Bar<K, N> { }
+public define Bar<K, N> { }
 
 // FILE: Foo.java
 
-public class Foo<P> extends Bar<Integer, Integer> {
+public define Foo<P> extends Bar<Integer, Integer> {
     public static final Bar bar = null;
 }
 

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-sealed class Sealed {
+sealed define Sealed {
     object First: Sealed()
-    sealed class NonFirst {
+    sealed define NonFirst {
         object Second: NonFirst()
         object Third: NonFirst()
         object Fourth: Sealed()

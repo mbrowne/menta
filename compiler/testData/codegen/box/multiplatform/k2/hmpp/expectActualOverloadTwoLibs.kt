@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // MODULE: lib1-common
-expect open class Lib1A()
+expect open define Lib1A()
 
 fun foo(a: Lib1A): String = "lib1Common"
 
@@ -10,12 +10,12 @@ fun foo(a: Lib1A): String = "lib1Common"
 fun foo(a: Lib1A, b: Int): String = "lib1Inter$b"
 
 // MODULE: lib1-platform()()(lib1-inter)
-actual open class Lib1A actual constructor()
+actual open define Lib1A actual constructor()
 
 fun foo(a: Lib1A, t: String): String = "lib1Platform$t"
 
 // MODULE: lib2-common
-expect open class Lib2B()
+expect open define Lib2B()
 
 fun bar(b: Lib2B): String = "lib2Common"
 
@@ -23,13 +23,13 @@ fun bar(b: Lib2B): String = "lib2Common"
 fun bar(b: Lib2B, f: Int): String = "lib2Inter$f"
 
 // MODULE: lib2-platform()()(lib2-inter)
-actual open class Lib2B actual constructor()
+actual open define Lib2B actual constructor()
 
 fun bar(b: Lib2B, t: String): String = "lib2Platform$t"
 
 // MODULE: app-common(lib1-common, lib2-common)
-open class AppA1 : Lib1A()
-open class AppB1 : Lib2B()
+open define AppA1 : Lib1A()
+open define AppB1 : Lib2B()
 
 fun foo(a: AppA1, d: Double): String = "appFoo$d"
 fun bar(b: AppB1, d: Double): String = "appBar$d"

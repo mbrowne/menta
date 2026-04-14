@@ -4,7 +4,7 @@
 // LANGUAGE: +AllowDnnTypeOverridingFlexibleType
 
 // FILE: KotlinBox.kt
-class KotlinBox<T>
+define KotlinBox<T>
 
 // FILE: KotlinBase.kt
 interface KotlinBase<T> {
@@ -16,7 +16,7 @@ interface KotlinBase<T> {
 public interface Foo<T> extends KotlinBase<T> {}
 
 // FILE: main.kt
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FooImpl1<!><E1> : Foo<E1> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FooImpl1<!><E1> : Foo<E1> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun test1(a: KotlinBox<out E1 & Any>) {}
 
     <!NOTHING_TO_OVERRIDE!>override<!> fun test2(a: KotlinBox<in E1 & Any>) {}

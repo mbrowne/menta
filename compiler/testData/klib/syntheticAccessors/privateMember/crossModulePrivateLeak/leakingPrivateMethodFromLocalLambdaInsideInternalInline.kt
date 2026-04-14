@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     private fun privateMethod() = "OK"
 
     internal inline val internalInlineVal: () -> String

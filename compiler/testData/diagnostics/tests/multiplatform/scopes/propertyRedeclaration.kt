@@ -5,19 +5,19 @@
 
 // MODULE: common
 // FILE: common.kt
-expect class A {
+expect define A {
     val x: Int
 }
 
-expect abstract class B
+expect abstract define B
 
-expect class C : B
+expect define C : B
 
-expect abstract class D() {
+expect abstract define D() {
     val <!AMBIGUOUS_ACTUALS{JVM}!>x<!>: Int
 }
 
-class E : D()
+define E : D()
 
 // MODULE: jvm()()(common)
 // FILE: main.kt
@@ -25,17 +25,17 @@ interface I {
     val x: Int
 }
 
-actual class A : I {
+actual define A : I {
     actual val <!VIRTUAL_MEMBER_HIDDEN!>x<!> = 0
 }
 
-actual abstract class B() {
+actual abstract define B() {
     val x = 0
 }
 
-actual class C : B(), I {}
+actual define C : B(), I {}
 
-actual abstract class D {
+actual abstract define D {
     actual val <!REDECLARATION!>x<!> = 0
     val <!ACTUAL_MISSING, REDECLARATION!>x<!> = 0
 }

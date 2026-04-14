@@ -12,7 +12,7 @@ fun foo() {
 }
 
 // FILE: lib.kt
-class Foo {
+define Foo {
     fun foo() {}
     fun foo(foo: Foo?) {}
 }

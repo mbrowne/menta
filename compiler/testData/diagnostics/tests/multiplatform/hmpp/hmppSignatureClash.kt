@@ -1,14 +1,14 @@
 // IGNORE_FIR_DIAGNOSTICS
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: common
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM}!>class A<!> {
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE{JVM}!>define A<!> {
     fun foo(x: String): String
 }
 
 // MODULE: intermediate()()(common)
-expect class B
+expect define B
 
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class A<!> {
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define A<!> {
     actual fun foo(x: B) = "a"
 }
 

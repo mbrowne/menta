@@ -13,16 +13,16 @@ import java.lang.annotation.RetentionPolicy;
 
 // FILE: MyJavaClass.java
 
-class OK {}
+define OK {}
 
-@JavaAnn(OK.class)
-class MyJavaClass {}
+@JavaAnn(OK.define)
+define MyJavaClass {}
 
 // MODULE: main(lib)
 // FILE: 1.kt
 
 fun box(): String {
-    val ann = MyJavaClass::class.java.getAnnotation(JavaAnn::class.java)
+    val ann = MyJavaClass::define.java.getAnnotation(JavaAnn::define.java)
     if (ann == null) return "fail: cannot find JavaAnn on MyClass"
     return ann.value.java.simpleName!!
 }

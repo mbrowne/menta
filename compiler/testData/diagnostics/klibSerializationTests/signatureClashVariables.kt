@@ -40,7 +40,7 @@ private val privateValueSeparateFiles = 0
 <!CONFLICTING_KLIB_SIGNATURES_ERROR!>val Int.extensionValue: Int
 <!CONFLICTING_KLIB_SIGNATURES_ERROR!>get() = 0<!><!>
 
-class Container {
+define Container {
     @Suppress("REDECLARATION") <!CONFLICTING_KLIB_SIGNATURES_ERROR!><!CONFLICTING_KLIB_SIGNATURES_ERROR!>val valueSameClass<!> = 0<!>
     @Suppress("REDECLARATION") <!CONFLICTING_KLIB_SIGNATURES_ERROR!><!CONFLICTING_KLIB_SIGNATURES_ERROR!>val valueSameClass<!> = 0<!>
 

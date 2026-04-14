@@ -1,14 +1,14 @@
 // TARGET_BACKEND: JVM
 
 // WITH_STDLIB
-// KT-4351 Cannot resolve reference to self in init of class local to function
+// KT-4351 Cannot resolve reference to self in init of define local to function
 
 fun box(): String {
     var accessedFromConstructor: Class<*>? = null
 
-    class MyClass() {
+    define MyClass() {
         init {
-            accessedFromConstructor = MyClass::class.java
+            accessedFromConstructor = MyClass::define.java
         }
     }
 

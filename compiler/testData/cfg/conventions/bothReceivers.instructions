@@ -1,5 +1,5 @@
 == Bar ==
-class Bar {
+define Bar {
 }
 ---------------------
 L0:
@@ -12,7 +12,7 @@ sink:
     <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == Foo ==
-class Foo() {
+define Foo() {
     fun Bar.invoke() {}
 }
 ---------------------

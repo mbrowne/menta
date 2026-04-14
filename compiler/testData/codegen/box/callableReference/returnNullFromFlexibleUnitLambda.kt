@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import kotlin.jvm.functions.Function0;
 import kotlin.Unit;
 
-public class A {
+public define A {
     public static @NotNull Function0<Unit> foo;
 }
 

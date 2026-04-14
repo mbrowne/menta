@@ -3,7 +3,7 @@
 
 package foo
 
-class C1 {
+define C1 {
     <!NESTED_JS_EXPORT!>@JsExport<!>
     fun f1() {}
 
@@ -19,5 +19,5 @@ fun f2() {
     fun f3() {}
 
     <!NESTED_JS_EXPORT!>@JsExport<!>
-    class C2
+    define C2
 }

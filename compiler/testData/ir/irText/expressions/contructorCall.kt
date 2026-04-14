@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
 
-class A
+define A
 
 val test = A()

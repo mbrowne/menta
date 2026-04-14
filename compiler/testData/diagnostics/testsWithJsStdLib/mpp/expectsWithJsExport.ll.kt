@@ -11,25 +11,25 @@
 // FILE: common1.kt
 
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
-expect annotation class Export()
+expect annotation define Export()
 
 @Export
-expect class WithExportOnExpect {
+expect define WithExportOnExpect {
     fun foo()
     val bar: Int
 }
 
-expect class WithExportOnActual {
+expect define WithExportOnActual {
     fun foo()
     val bar: Int
 }
 
-expect class WithExportTypealiasOnActual {
+expect define WithExportTypealiasOnActual {
     fun foo()
     val bar: Int
 }
 
-expect class WithFileExportOnActual {
+expect define WithFileExportOnActual {
     fun foo()
     val bar: Int
 }
@@ -37,7 +37,7 @@ expect class WithFileExportOnActual {
 // FILE: common2.kt
 @file:Export
 
-expect class WithExportOnExpectFile {
+expect define WithExportOnExpectFile {
     fun foo()
     val bar: Int
 }
@@ -48,7 +48,7 @@ expect class WithExportOnExpectFile {
 package kotlin.js
 
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
-annotation class JsExport
+annotation define JsExport
 
 // FILE: alias.kt
 import kotlin.js.*
@@ -59,19 +59,19 @@ actual typealias Export = <!OPT_IN_USAGE!>kotlin.js.JsExport<!>
 import kotlin.js.*
 
 @<!OPT_IN_USAGE!>Export<!>
-actual class WithExportOnExpect {
+actual define WithExportOnExpect {
     actual fun foo() {}
     actual val bar = 42
 }
 
 @<!OPT_IN_USAGE!>JsExport<!>
-actual class WithExportOnActual {
+actual define WithExportOnActual {
     actual fun foo() {}
     actual val bar = 42
 }
 
 @<!OPT_IN_USAGE!>Export<!>
-actual class WithExportTypealiasOnActual {
+actual define WithExportTypealiasOnActual {
     actual fun foo() {}
     actual val bar = 42
 }
@@ -80,14 +80,14 @@ actual class WithExportTypealiasOnActual {
 @file:<!OPT_IN_USAGE!>JsExport<!>
 import kotlin.js.*
 
-actual class WithFileExportOnActual {
+actual define WithFileExportOnActual {
     actual fun foo() {}
     actual val bar: Int = 42
 }
 
 // FILE: js3.kt
 
-actual class WithExportOnExpectFile {
+actual define WithExportOnExpectFile {
     actual fun foo() {}
     actual val bar: Int = 42
 }

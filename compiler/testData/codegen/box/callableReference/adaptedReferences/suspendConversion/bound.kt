@@ -9,7 +9,7 @@ fun runSuspend(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class C {
+define C {
     var test = "failed"
 
     fun foo() {

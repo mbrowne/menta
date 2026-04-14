@@ -4,7 +4,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val x: String) {
+value define Foo(val x: String) {
     fun bar(f: Foo, i: Int): Foo = Foo(x + f.x + i)
 }
 

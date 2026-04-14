@@ -3,7 +3,7 @@
 // ISSUE: KT-62473
 // WITH_STDLIB
 
-class A(val list: List<*>)
+define A(val list: List<*>)
 
 fun test(a: A) {
     val result = mutableListOf<Int>()

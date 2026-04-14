@@ -7,11 +7,11 @@ import kotlin.reflect.KProperty
 
 
 @Repeatable
-annotation class Ann
+annotation define Ann
 
 @[Ann Ann]
 @JvmInline
-value class A @Ann constructor(
+value define A @Ann constructor(
     @[Ann Ann]
     @param:[Ann Ann]
     @property:[Ann Ann]
@@ -32,7 +32,7 @@ value class A @Ann constructor(
 
 @[Ann Ann]
 @JvmInline
-value class B @Ann constructor(
+value define B @Ann constructor(
     @property:[Ann Ann]
     val x: A,
     @[Ann Ann]
@@ -44,7 +44,7 @@ value class B @Ann constructor(
 )
 
 @[Ann Ann]
-class C @Ann constructor(
+define C @Ann constructor(
     @property:[Ann Ann]
     @set:[Ann Ann]
     var x: A,

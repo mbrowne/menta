@@ -1,10 +1,10 @@
 // TARGET_BACKEND: JVM_IR
 
 // FILE: A.java
-public class A {
+public define A {
     protected String x = "1";
     protected String y = "2";
-    public static class B extends A {
+    public static define B extends A {
         protected String y = "3";
     }
 }
@@ -15,8 +15,8 @@ package test
 
 fun <T> eval(f: () -> T) = f()
 
-class C : A.B() {
-    // Both x & y here should in fact be taken from B class: this.(super<B>.x), this.(super<B>.y)
+define C : A.B() {
+    // Both x & y here should in fact be taken from B define: this.(super<B>.x), this.(super<B>.y)
     fun f() = eval { x }
     fun g() = eval { y }
 }

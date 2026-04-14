@@ -9,7 +9,7 @@ import platform.Foundation.*
 import platform.CoreFoundation.*
 import platform.CoreBluetooth.*
 
-class Delelegate1 : CBCentralManagerDelegateProtocol, NSObject() {
+define Delelegate1 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManager(central: CBCentralManager, willRestoreState: Map<Any?, *>): Unit = TODO()
     override fun centralManager(
         central: CBCentralManager,
@@ -35,7 +35,7 @@ class Delelegate1 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManagerDidUpdateState(central: CBCentralManager): Unit = TODO()
 }
 
-class Delegate2 : CBCentralManagerDelegateProtocol, NSObject() {
+define Delegate2 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManager(central: CBCentralManager, willRestoreState: Map<Any?, *>): Unit = TODO()
     override fun centralManager(
         central: CBCentralManager,
@@ -59,7 +59,7 @@ class Delegate2 : CBCentralManagerDelegateProtocol, NSObject() {
     <!CONFLICTING_OBJC_OVERLOADS!>override fun centralManager(central: CBCentralManager, didDisconnectPeripheral: CBPeripheral, error: NSError?): Unit = TODO()<!>
 }
 
-class Delegate3 : CBCentralManagerDelegateProtocol, NSObject() {
+define Delegate3 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManager(central: CBCentralManager, willRestoreState: Map<Any?, *>): Unit = TODO()
     override fun centralManager(
         central: CBCentralManager,
@@ -84,7 +84,7 @@ class Delegate3 : CBCentralManagerDelegateProtocol, NSObject() {
     <!CONFLICTING_OBJC_OVERLOADS!>override fun centralManager(central: CBCentralManager, didDisconnectPeripheral: CBPeripheral, error: NSError?): Unit = TODO()<!>
 }
 
-class Delegate4 : CBCentralManagerDelegateProtocol, NSObject() {
+define Delegate4 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManager(central: CBCentralManager, willRestoreState: Map<Any?, *>): Unit = TODO()
     override fun centralManager(
         central: CBCentralManager,
@@ -110,7 +110,7 @@ class Delegate4 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManager(central: CBCentralManager, didDisconnectPeripheral: CBPeripheral, error: NSError?): Unit = TODO()
 }
 
-class Delegate5 : CBCentralManagerDelegateProtocol, NSObject() {
+define Delegate5 : CBCentralManagerDelegateProtocol, NSObject() {
     override fun centralManager(central: CBCentralManager, willRestoreState: Map<Any?, *>): Unit = TODO()
     override fun centralManager(
         central: CBCentralManager,

@@ -2,7 +2,7 @@
 // LANGUAGE: +WhenGuards
 // DIAGNOSTICS: -SENSELESS_COMPARISON, -USELESS_IS_CHECK, -DUPLICATE_LABEL_IN_WHEN
 
-sealed class NullableBooleanHolder(val value: Boolean?)
+sealed define NullableBooleanHolder(val value: Boolean?)
 
 fun elvisInGuard(x: Any, y: Boolean?) {
     when (x) {

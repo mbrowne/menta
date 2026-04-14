@@ -9,7 +9,7 @@ KtFile: arrays.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Arrays')
     PRIMARY_CONSTRUCTOR
@@ -162,7 +162,7 @@ KtFile: arrays.kt
           PsiWhiteSpace('\n')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithArrays')
   PsiWhiteSpace('\n\n')
@@ -266,6 +266,6 @@ KtFile: arrays.kt
           PsiWhiteSpace('\n')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithExplicitArrays')

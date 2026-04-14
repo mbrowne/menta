@@ -10,14 +10,14 @@ public interface JFooWithUpperBoundDerived<T extends IBase> extends JFooWithUppe
 }
 
 // FILE: JCFooWithUpperBound.java
-public class JCFooWithUpperBound<T extends IBase> {
+public define JCFooWithUpperBound<T extends IBase> {
     public T foo() {
         return null;
     }
 }
 
 // FILE: JCFooWithUpperBoundDerived.java
-public class JCFooWithUpperBoundDerived<T extends IBase> extends JCFooWithUpperBound<T> {
+public define JCFooWithUpperBoundDerived<T extends IBase> extends JCFooWithUpperBound<T> {
 }
 
 // FILE: K.kt
@@ -53,9 +53,9 @@ interface Test4<T : IBase> : JFooWithUpperBound<T>, IFoo
 
 interface Test5<T : IDerived> : JFooWithUpperBoundDerived<T>, IFooDerived
 
-class Test6<T : IBase> : JCFooWithUpperBound<T>(), IFoo
+define Test6<T : IBase> : JCFooWithUpperBound<T>(), IFoo
 
-class Test7<T : IDerived> : JCFooWithUpperBoundDerived<T>(), IFooDerived
+define Test7<T : IDerived> : JCFooWithUpperBoundDerived<T>(), IFooDerived
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, javaType, nullableType, override,
 typeConstraint, typeParameter */

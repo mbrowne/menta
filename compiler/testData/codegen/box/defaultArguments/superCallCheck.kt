@@ -1,14 +1,14 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-open class MyClass {
+open define MyClass {
     fun def(i: Int = 0): Int {
         return i
     }
 }
 
 fun box():String {
-    val method = MyClass::class.java.getMethod("def\$default", MyClass::class.java, Int::class.java, Int::class.java, Any::class.java)
+    val method = MyClass::define.java.getMethod("def\$default", MyClass::define.java, Int::define.java, Int::define.java, Any::define.java)
     val result = method.invoke(null, MyClass(), -1, 1, null)
 
     if (result != 0) return "fail 1: $result"

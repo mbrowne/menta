@@ -4,7 +4,7 @@ interface I {
     fun foo(): Int?
 }
 
-class C: I {
+define C: I {
     override val value: Int
         get() = 0
 

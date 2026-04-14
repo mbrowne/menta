@@ -2,7 +2,7 @@ inline fun call(s: () -> Unit) {
     s()
 }
 
-class A {
+define A {
 
     private fun method() {}
 

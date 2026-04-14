@@ -3,7 +3,7 @@
 // FILE: a.kt
 package a
 
-class A(val b: String) {
+define A(val b: String) {
     companion object {
         val c: String = ""
     }

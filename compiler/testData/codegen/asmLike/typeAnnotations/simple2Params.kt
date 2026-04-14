@@ -4,9 +4,9 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
-class Kotlin {
+define Kotlin {
 
     fun foo(s: @TypeAnn("1") String, x: @TypeAnn("2") Int) {
     }

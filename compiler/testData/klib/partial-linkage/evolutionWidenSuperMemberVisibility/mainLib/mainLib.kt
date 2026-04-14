@@ -1,4 +1,4 @@
-class Y: X() {
+define Y: X() {
     private fun foo1() = "private in derived"
     fun testY1() = foo1()
     private fun foo2() = "private in derived"

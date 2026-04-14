@@ -1,10 +1,10 @@
-open class Foo(val x: () -> String)
-open class Foo2(val foo: Foo)
+open define Foo(val x: () -> String)
+open define Foo2(val foo: Foo)
 
-class Outer {
+define Outer {
     val s = "OK"
 
-    inner class Inner : Foo2(Foo({ s }))
+    inner define Inner : Foo2(Foo({ s }))
 }
 
 fun box() = Outer().Inner().foo.x()

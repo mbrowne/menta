@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-class A
+define A
 
 val A.property: String
     get() {
@@ -25,7 +25,7 @@ val property: String
         return ""
     }
 
-class B {
+define B {
     val property: String
         get() {
             contract {

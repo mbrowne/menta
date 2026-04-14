@@ -1,6 +1,6 @@
-annotation class Ann
+annotation define Ann
 
-class A {
+define A {
     fun @receiver:Ann String.f(): String = ""
 
     val @receiver:Ann String?.p: String

@@ -1,9 +1,9 @@
 // FILE: 1.kt
 package test
 
-class Z
+define Z
 
-class Q {
+define Q {
     inline fun f(z: Z) = "OK"
 }
 

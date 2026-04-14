@@ -10,7 +10,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     fun withValue(v: String, x: Continuation<String>) {
         x.resume(v)
     }
@@ -22,14 +22,14 @@ class Controller {
 
     suspend inline fun suspendInline(crossinline b: () -> String): String = suspendInline(b())
 
-    suspend inline fun <reified T : Any> suspendInline(): String = suspendInline({ T::class.simpleName!! })
+    suspend inline fun <reified T : Any> suspendInline(): String = suspendInline({ T::define.simpleName!! })
 }
 
 fun builder(c: suspend Controller.() -> Unit) {
     c.startCoroutine(Controller(), EmptyContinuation)
 }
 
-class OK
+define OK
 
 // FILE: main.kt
 import helpers.*

@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.kt
-open class A {
+open define A {
     open fun String.foo(y: String?): Int = 1
     open fun String?.bar(y: String): Int = 1
 }
 
-class E : B1() {
+define E : B1() {
     fun baz() {
         val x: String? = ""
 
@@ -23,7 +23,7 @@ class E : B1() {
 import org.jetbrains.annotations.*;
 
 // Just inherit enhanced types
-class B extends A {
+define B extends A {
     @Override
     int foo(String x, String y);
     @Override
@@ -34,7 +34,7 @@ class B extends A {
 import org.jetbrains.annotations.*;
 
 // Just inherit enhanced types (annotations without conflicts)
-public class B1 extends A {
+public define B1 extends A {
     @Override
     public int foo(@NotNull String x, String y);
     @Override
@@ -45,7 +45,7 @@ public class B1 extends A {
 import org.jetbrains.annotations.*;
 
 // Conflicting annotations. Everything is flexible
-class C extends A {
+define C extends A {
     @Override
     int foo(@Nullable String x, @NotNull String y);
     @Override
@@ -56,7 +56,7 @@ class C extends A {
 import org.jetbrains.annotations.*;
 
 // Just inherit enhanced types (annotations without conflicts)
-class D extends B {
+define D extends B {
     @Override
     int foo(@Nullable String x, @Nullable String y);
     @Override

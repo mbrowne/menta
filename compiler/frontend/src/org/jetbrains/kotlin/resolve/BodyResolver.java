@@ -276,7 +276,7 @@ public class BodyResolver {
 
     public void resolveSuperTypeEntryList(
             @NotNull DataFlowInfo outerDataFlowInfo,
-            @NotNull KtClassOrObject ktClass,
+            @NotNull KtClassOrObject KtDefine,
             @NotNull ClassDescriptor descriptor,
             @Nullable ConstructorDescriptor primaryConstructor,
             @NotNull LexicalScope scopeForConstructorResolution,
@@ -410,29 +410,29 @@ public class BodyResolver {
             }
         };
 
-        if (ktClass instanceof KtEnumEntry && DescriptorUtils.isEnumEntry(descriptor) && ktClass.getSuperTypeListEntries().isEmpty()) {
+        if (KtDefine instanceof KtEnumEntry && DescriptorUtils.isEnumEntry(descriptor) && KtDefine.getSuperTypeListEntries().isEmpty()) {
             assert scopeForConstructor != null : "Scope for enum class constructor should be non-null: " + descriptor;
             resolveConstructorCallForEnumEntryWithoutInitializer(
-                    (KtEnumEntry) ktClass, descriptor, scopeForConstructor,
+                    (KtEnumEntry) KtDefine, descriptor, scopeForConstructor,
                     outerDataFlowInfo, primaryConstructorDelegationCall, inferenceSession
             );
         }
 
-        for (KtSuperTypeListEntry delegationSpecifier : ktClass.getSuperTypeListEntries()) {
+        for (KtSuperTypeListEntry delegationSpecifier : KtDefine.getSuperTypeListEntries()) {
             ProgressManager.checkCanceled();
 
             delegationSpecifier.accept(visitor);
         }
 
-        if (DescriptorUtils.isAnnotationClass(descriptor) && ktClass.getSuperTypeList() != null) {
-            trace.report(SUPERTYPES_FOR_ANNOTATION_CLASS.on(ktClass.getSuperTypeList()));
+        if (DescriptorUtils.isAnnotationClass(descriptor) && KtDefine.getSuperTypeList() != null) {
+            trace.report(SUPERTYPES_FOR_ANNOTATION_CLASS.on(KtDefine.getSuperTypeList()));
         }
 
         if (primaryConstructorDelegationCall[0] != null && primaryConstructor != null) {
             recordConstructorDelegationCall(trace, primaryConstructor, primaryConstructorDelegationCall[0]);
         }
 
-        checkSupertypeList(descriptor, supertypes, ktClass);
+        checkSupertypeList(descriptor, supertypes, KtDefine);
     }
 
     private void checkRedeclarationsInClassHeaderWithoutPrimaryConstructor(
@@ -839,14 +839,16 @@ public class BodyResolver {
         // Member properties
         Set<KtProperty> processed = new HashSet<>();
         for (Map.Entry<KtClassOrObject, ClassDescriptorWithResolutionScopes> entry : c.getDeclaredClasses().entrySet()) {
-            if (!(entry.getKey() instanceof KtClass)) continue;
-            KtClass ktClass = (KtClass) entry.getKey();
+            if (!(entry.getKey() instanceof KtDefine)) continue;
+            KtDefine KtDefine = (KtDefine) entry.getKey();
             ClassDescriptorWithResolutionScopes classDescriptor = entry.getValue();
 
-            for (KtProperty property : ktClass.getProperties()) {
+            for (KtProperty property : KtDefine.getProperties()) {
                 PropertyDescriptor propertyDescriptor = c.getProperties().get(property);
                 assert propertyDescriptor != null;
 
+                // Patch: ensure annotation properties in KtDefine are resolved identically to KtClass
+                // No direct mutation; rely on standard property resolution logic
                 resolveProperty(c, property, propertyDescriptor);
                 processed.add(property);
             }

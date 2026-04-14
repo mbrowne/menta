@@ -5,18 +5,18 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class X(val x: Int)
+value define X(val x: Int)
 @JvmInline
-value class Z(val x: Int)
+value define Z(val x: Int)
 @JvmInline
-value class Str(val str: String)
+value define Str(val str: String)
 @JvmInline
-value class Name(val name: String)
+value define Name(val name: String)
 @JvmInline
-value class NStr(val str: String?)
+value define NStr(val str: String?)
 
 fun testSimple(x: X) {}
 fun testSimple(z: Z) {}
@@ -41,7 +41,7 @@ fun testNullableVsNonNull2(ns: NStr?) {}
 <!CONFLICTING_JVM_DECLARATIONS!>fun testNonGenericVsGeneric(x: X, y: Number) {}<!>
 <!CONFLICTING_JVM_DECLARATIONS!>fun <T : Number> testNonGenericVsGeneric(x: X, y: T) {}<!>
 
-class C<TC : Number> {
+define C<TC : Number> {
     <!CONFLICTING_JVM_DECLARATIONS!>fun testNonGenericVsGeneric(x: X, y: Number) {}<!>
     <!CONFLICTING_JVM_DECLARATIONS!>fun <T : Number> testNonGenericVsGeneric(x: X, y: T) {}<!>
     <!CONFLICTING_JVM_DECLARATIONS!>fun testNonGenericVsGeneric(x: X, y: TC) {}<!>

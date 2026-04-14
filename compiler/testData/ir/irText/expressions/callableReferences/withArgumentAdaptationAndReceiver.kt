@@ -1,6 +1,6 @@
 fun use(fn: (Int) -> Unit) { fn(1) }
 
-class Host {
+define Host {
     fun withVararg(vararg xs: Int) = ""
 
     fun testImplicitThis() {

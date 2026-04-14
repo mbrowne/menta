@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER, -INLINE_CLASS_DEPRECATED
 // LANGUAGE: +InlineClasses
 
-inline class Z(val x: Int)
+inline define Z(val x: Int)
 
 @JvmOverloads
 fun testTopLevelFunction1(z: Z, x: Int = 0) {}
@@ -13,7 +13,7 @@ fun testTopLevelFunction2(x: Int, z: Z = Z(0)) {}
 @JvmOverloads
 fun testTopLevelFunction3(x: Int = 0): Z = Z(x)
 
-class C {
+define C {
     @JvmOverloads
     constructor(i: Int, z: Z = Z(0))
 

@@ -6,7 +6,7 @@
 import kotlin.reflect.jvm.reflect
 
 @JvmInline
-value class C(val x: Int)
+value define C(val x: Int)
 
 fun C.f(x: (String) -> Unit = { OK: String -> }) = x.reflect()?.parameters?.singleOrNull()?.name
 

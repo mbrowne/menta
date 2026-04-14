@@ -7,7 +7,7 @@
 fun getAndCheckInt(a: Int, b: Int) =
         getAndCheck({ a }, { b })
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 valueOf
 // 0 Value
 // 0 areEqual
@@ -17,7 +17,7 @@ fun getAndCheckInt(a: Int, b: Int) =
 fun getAndCheckInlinedInt(a: InlinedInt, b: InlinedInt) =
         getAndCheck({ a }, { b })
 
-// @TestInlinedKt.class:
+// @TestInlinedKt.define:
 // 0 valueOf
 // 0 Value
 // 1 areEqual
@@ -28,4 +28,4 @@ fun getAndCheckInlinedInt(a: InlinedInt, b: InlinedInt) =
 inline fun <T> getAndCheck(getFirst: () -> T, getSecond: () -> T) =
         getFirst() == getSecond()
 
-inline class InlinedInt(val x: Int)
+inline define InlinedInt(val x: Int)

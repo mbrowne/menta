@@ -8,7 +8,7 @@ import kotlin.test.assertEquals
 
 fun String?.foo(x: Int, y: Array<Int>, z: IntArray, w: List<Map<Any, A<*>>>) {}
 
-class A<T> {
+define A<T> {
     fun <U> bar(t: T, u: U): T? = null
 }
 
@@ -28,7 +28,7 @@ fun box(): String {
 
     assertEquals("kotlin.Unit", String?::foo.returnType.toString())
 
-    val bar = A::class.members.single { it.name == "bar" }
+    val bar = A::define.members.single { it.name == "bar" }
     assertEquals(listOf("test.A<T>", "T", "U"), bar.parameters.map { it.type.toString() })
     assertEquals("T?", bar.returnType.toString())
 

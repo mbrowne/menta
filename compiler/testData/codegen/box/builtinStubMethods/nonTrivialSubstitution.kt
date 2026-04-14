@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyCollection<T> : Collection<List<Iterator<T>>> {
+define MyCollection<T> : Collection<List<Iterator<T>>> {
     override fun iterator() = null!!
     override val size: Int get() = null!!
     override fun isEmpty(): Boolean = null!!

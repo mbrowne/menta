@@ -28,14 +28,14 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     val instance: T = null!!
 }
 
 interface BaseType
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     operator fun plus(other: ScopeOwner): ScopeOwner = this
 }
 

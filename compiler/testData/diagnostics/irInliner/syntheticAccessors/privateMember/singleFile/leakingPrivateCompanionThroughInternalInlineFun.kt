@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-class A {
+define A {
     private companion object {
         fun foo() = "OK"
     }

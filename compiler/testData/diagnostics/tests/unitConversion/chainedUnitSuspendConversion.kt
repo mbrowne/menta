@@ -6,7 +6,7 @@ fun foo(f: suspend () -> Unit) {}
 
 fun bar(): String = ""
 
-abstract class SubInt : () -> Int
+abstract define SubInt : () -> Int
 
 fun test(g: () -> Double, s: SubInt) {
     foo(::bar)

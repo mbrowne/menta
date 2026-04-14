@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: BACKEND
-sealed class SourceLocation {
+sealed define SourceLocation {
     object NoLocation : SourceLocation()
     companion object {
         fun NoLocation(description: String): SourceLocation = NoLocation

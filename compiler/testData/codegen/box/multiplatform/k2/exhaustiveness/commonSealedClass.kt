@@ -3,9 +3,9 @@
 
 // MODULE: common
 // FILE: common.kt
-sealed class Base()
+sealed define Base()
 
-class A : Base()
+define A : Base()
 object B : Base()
 
 fun testCommon(base: Base) {

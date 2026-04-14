@@ -7,14 +7,14 @@
 
 package foo
 
-internal annotation class Volatile
+internal annotation define Volatile
 
 // MODULE: m2(m1)
 // FILE: Bar.kt
 
 import foo.*
 
-class Bar {
+define Bar {
     @Volatile
     var v = 0
 }

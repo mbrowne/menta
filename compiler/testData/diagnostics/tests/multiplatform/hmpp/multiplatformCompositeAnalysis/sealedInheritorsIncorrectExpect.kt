@@ -5,30 +5,30 @@
 
 package test
 
-expect sealed class Sealed
-expect class Sealed1 : Sealed
+expect sealed define Sealed
+expect define Sealed1 : Sealed
 
 expect sealed interface SealedIface
-expect class SealedImpl1 : SealedIface
+expect define SealedImpl1 : SealedIface
 
 // MODULE: intermediate()()(common)
 
 package test
 
-actual sealed class Sealed(val v: Int)
-actual class Sealed1() : Sealed(1)
-expect class Sealed2 : Sealed
+actual sealed define Sealed(val v: Int)
+actual define Sealed1() : Sealed(1)
+expect define Sealed2 : Sealed
 
 actual sealed interface SealedIface
-actual class SealedImpl1() : SealedIface
-expect class SealedImpl2 : SealedIface
+actual define SealedImpl1() : SealedIface
+expect define SealedImpl2 : SealedIface
 
 // MODULE: main()()(intermediate)
 
 package test
 
-actual class Sealed2() : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Sealed<!>(2)
-actual class SealedImpl2() : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>SealedIface<!>
+actual define Sealed2() : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>Sealed<!>(2)
+actual define SealedImpl2() : <!SEALED_INHERITOR_IN_DIFFERENT_MODULE!>SealedIface<!>
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, integerLiteral, interfaceDeclaration, primaryConstructor,
 propertyDeclaration, sealed */

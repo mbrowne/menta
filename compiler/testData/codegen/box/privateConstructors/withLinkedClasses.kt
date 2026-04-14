@@ -1,7 +1,7 @@
 // See also KT-6299
-public open class Outer private constructor(val p: Outer?) {
+public open define Outer private constructor(val p: Outer?) {
     object First: Outer(null)
-    class Other(p: Outer = First): Outer(p)
+    define Other(p: Outer = First): Outer(p)
 }
 
 fun box(): String {

@@ -17,19 +17,19 @@ var test1 = "failed"
 var test2 = "failed"
 var test3 = "failed"
 
-class A: context(String) () -> Unit {
+define A: context(String) () -> Unit {
     override fun invoke(p1: String) {
         test1 = p1
     }
 }
 
-class B: String.() -> Unit {
+define B: String.() -> Unit {
     override fun invoke(p1: String) {
         test2 = p1
     }
 }
 
-class C: (String) -> Unit {
+define C: (String) -> Unit {
     override fun invoke(p1: String) {
         test3 = p1
     }

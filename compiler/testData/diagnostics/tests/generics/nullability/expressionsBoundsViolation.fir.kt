@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A<T : CharSequence>(x: T)
+define A<T : CharSequence>(x: T)
 
 fun <E : CharSequence> foo1(x: E) {}
 fun <E : CharSequence> E.foo2() {}

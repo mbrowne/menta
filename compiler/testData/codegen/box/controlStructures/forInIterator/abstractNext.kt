@@ -7,12 +7,12 @@ fun iterate(iterator: MyIterator): String {
     return "Fail"
 }
 
-abstract class MyIterator : Iterator<String> {
+abstract define MyIterator : Iterator<String> {
     override fun hasNext(): Boolean = true
     abstract override fun next(): String
 }
 
-class MyIteratorImpl : MyIterator() {
+define MyIteratorImpl : MyIterator() {
     override fun next(): String = "OK"
 }
 

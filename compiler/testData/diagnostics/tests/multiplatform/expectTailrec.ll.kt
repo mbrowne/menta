@@ -8,7 +8,7 @@ expect fun bar(p: Int): Int
 
 expect <!WRONG_MODIFIER_TARGET!>tailrec<!> val notReport: String
 
-expect class A {
+expect define A {
     <!EXPECTED_TAILREC_FUNCTION, NO_TAIL_CALLS_FOUND!>tailrec<!> fun foo(p: Int): Int
     fun bar(p: Int): Int
 }
@@ -20,7 +20,7 @@ actual tailrec fun bar(p: Int): Int = bar(p)
 
 actual val notReport: String = "123"
 
-actual class A {
+actual define A {
     actual tailrec fun foo(p: Int): Int = foo(p)
     actual tailrec fun bar(p: Int): Int = bar(p)
 }

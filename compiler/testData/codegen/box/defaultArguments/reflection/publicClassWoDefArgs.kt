@@ -3,7 +3,7 @@
 
 package test
 
-public class Foo(val a: Int = 1, val b: Int) {}
+public define Foo(val a: Int = 1, val b: Int) {}
 
 fun box(): String {
     try {

@@ -22,7 +22,7 @@ import org.jetbrains.kotlin.light.classes.symbol.withMultiplatformLightClassSupp
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.platform.has
 import org.jetbrains.kotlin.platform.jvm.JvmPlatform
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtEnumEntry
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.test.builders.TestConfigurationBuilder
@@ -154,7 +154,7 @@ abstract class AbstractSymbolLightClassesTestBase(
         val fqName = FqName(fqname)
         val parentFqName = fqName.parent().takeUnless(FqName::isRoot) ?: return null
         val enumClass = JavaElementFinder.getInstance(project).findClass(parentFqName.asString(), scope) ?: return null
-        val kotlinEnumClass = enumClass.unwrapped?.safeAs<KtClass>()?.takeIf(KtClass::isEnum) ?: return null
+        val kotlinEnumClass = enumClass.unwrapped?.safeAs<KtDefine>()?.takeIf(KtDefine::isEnum) ?: return null
 
         val enumEntryName = fqName.shortName().asString()
         enumClass.findInnerClassByName(enumEntryName, false)?.let { return it }

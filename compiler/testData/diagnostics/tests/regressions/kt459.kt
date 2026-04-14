@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-// KT-459 Type argument inference fails when class names are fully qualified
+// KT-459 Type argument inference fails when define names are fully qualified
 
 fun test() {
   val attributes : java.util.HashMap<String, String> = java.util.HashMap() // failure!

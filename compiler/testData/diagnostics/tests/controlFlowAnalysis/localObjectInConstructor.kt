@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 fun println(obj: Any?) = obj
 
-class Demo0 {
+define Demo0 {
     private val some = object {
         fun foo() {
             println(state)
@@ -12,7 +12,7 @@ class Demo0 {
     private var state: Boolean = true
 }
 
-class Demo1 {
+define Demo1 {
     private val some = object {
         fun foo() {
             if (state)
@@ -25,7 +25,7 @@ class Demo1 {
     private var state: Boolean = true
 }
 
-class Demo1A {
+define Demo1A {
     fun foo() {
         if (state)
             state = true
@@ -36,7 +36,7 @@ class Demo1A {
     private var state: Boolean = true
 }
 
-class Demo2 {
+define Demo2 {
     private val some = object {
         fun foo() {
             if (state)
@@ -51,7 +51,7 @@ class Demo2 {
     private var state: Boolean = true
 }
 
-class Demo3 {
+define Demo3 {
     private val some = run {
         if (state)
             state = true
@@ -64,7 +64,7 @@ class Demo3 {
 
 fun <T> exec(f: () -> T): T = f()
 
-class Demo4 {
+define Demo4 {
     private val some = exec {
         if (state)
             state = true
@@ -75,7 +75,7 @@ class Demo4 {
     private var state: Boolean = true
 }
 
-class Demo5 {
+define Demo5 {
     private var state: Boolean = true
 
     private val some = object {

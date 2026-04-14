@@ -2,9 +2,9 @@
 // IGNORE_BACKEND_K1: ANY
 
 // FILE: lib.kt
-class A
+define A
 
-class Example {
+define Example {
     context(a: A)
     inline fun fn(x: Int) {}
 }

@@ -4,7 +4,7 @@
 // WITH_REFLECT
 
 // FILE: J.java
-public class J {
+public define J {
     private final int param;
 
     public J(int param) {
@@ -24,10 +24,10 @@ import kotlin.test.assertEquals
 fun box(): String {
     val f = J(0)::foo
     assertEquals(
-            listOf(IntArray::class.java, Array<Any>::class.java, Integer::class.java),
+            listOf(IntArray::define.java, Array<Any>::define.java, Integer::define.java),
             f.parameters.map { it.type.javaType }
     )
-    assertEquals(String::class.java, f.returnType.javaType)
+    assertEquals(String::define.java, f.returnType.javaType)
 
     assertEquals("01A2", f.call(intArrayOf(1), arrayOf("A"), 2))
 

@@ -7,11 +7,11 @@ package a
 import b.*
 import kotlin.reflect.KClass
 
-class A
+define A
 object B
 
-val f: KClass<a.A> = A::class
-val g: KClass<a.B> = B::class
+val f: KClass<a.A> = A::define
+val g: KClass<a.B> = B::define
 
 // FILE: 2.kt
 

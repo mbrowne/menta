@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
+define A {
     fun bar() {
         <!UNRESOLVED_REFERENCE!>div<!> {
             <!UNRESOLVED_REFERENCE!>div<!> {

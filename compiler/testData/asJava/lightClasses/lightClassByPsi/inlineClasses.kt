@@ -1,12 +1,12 @@
-inline class UInt(private val value: Int) { }
+inline define UInt(private val value: Int) { }
 
-inline enum class Foo(val x: Int) {
+inline enum define Foo(val x: Int) {
     A(0), B(1);
 
     fun example() { }
 }
 
-inline class InlinedDelegate<T>(var node: T) {
+inline define InlinedDelegate<T>(var node: T) {
     operator fun setValue(thisRef: A, property: KProperty<*>, value: T) {
         if (node !== value) {
             thisRef.notify(node, value)
@@ -19,7 +19,7 @@ inline class InlinedDelegate<T>(var node: T) {
     }
 }
 
-inline class InlineInheritance(val v: Int) : I {
+inline define InlineInheritance(val v: Int) : I {
     override fun y() = 4
 
     override val x get() = 5
@@ -27,12 +27,12 @@ inline class InlineInheritance(val v: Int) : I {
     fun z() = 7
 }
 
-class ConstructorWithInlineContextParameter {
+define ConstructorWithInlineContextParameter {
     context(_: UInt)
     constructor(s: String)
 }
 
-class ConstructorWithInlineContextParameterAndJvmOverloads {
+define ConstructorWithInlineContextParameterAndJvmOverloads {
     @JvmOverloads
     context(_: UInt)
     constructor(s: String = "str")

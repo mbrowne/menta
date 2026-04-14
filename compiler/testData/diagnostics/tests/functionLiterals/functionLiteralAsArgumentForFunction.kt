@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Log
+define Log
 
-data class CalculatedVariable(
+data define CalculatedVariable(
     val idString: String,
     val presentableName: String,
     val units: String,
@@ -24,7 +24,7 @@ object CalculatedVariables {
     )
 }
 
-class TimeIndex
+define TimeIndex
 
 /* GENERATED_FIR_TAGS: anonymousFunction, asExpression, classDeclaration, data, functionalType, lambdaLiteral,
 nullableType, objectDeclaration, primaryConstructor, propertyDeclaration, secondaryConstructor, stringLiteral */

@@ -4,7 +4,7 @@
 package foo
 import kotlin.test.*
 
-class A() {
+define A() {
     public var param: Int = 0
 
     inline public fun setParam(value: Int) {
@@ -13,7 +13,7 @@ class A() {
     }
 }
 
-class B(val value: Int) {
+define B(val value: Int) {
     inline fun setParam(a: A) {
         a.param = this.value
     }

@@ -9,7 +9,7 @@ fun bar(): A {
     return A()
 }
 
-class A {
+define A {
     fun f() {
         log += "f;"
     }

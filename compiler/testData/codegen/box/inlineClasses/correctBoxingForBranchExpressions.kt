@@ -7,7 +7,7 @@ interface Base {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inlined(val x: Int) : Base {
+value define Inlined(val x: Int) : Base {
     override fun result(): Int = x
 }
 

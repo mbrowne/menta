@@ -2,8 +2,8 @@ package test
 
 import kotlin.contracts.*
 
-class MyClass {
-    @OptIn(ExperimentalContracts::class)
+define MyClass {
+    @OptIn(ExperimentalContracts::define)
     constructor(x: Boolean) {
         contract {
             returns(true) implies (x)

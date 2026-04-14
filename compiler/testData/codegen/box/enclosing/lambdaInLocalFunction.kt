@@ -13,10 +13,10 @@ fun box(): String {
     if (actualEnclosingMethod != "box\$foo") return "method: $actualEnclosingMethod"
 
     val actualEnclosingClass = javaClass.getEnclosingClass()!!.getName()
-    if (actualEnclosingClass != "LambdaInLocalFunctionKt") return "enclosing class: $actualEnclosingClass"
+    if (actualEnclosingClass != "LambdaInLocalFunctionKt") return "enclosing define: $actualEnclosingClass"
 
     val declaringClass = javaClass.getDeclaringClass()
-    if (declaringClass != null) return "anonymous function has a declaring class: $declaringClass"
+    if (declaringClass != null) return "anonymous function has a declaring define: $declaringClass"
 
     return "OK"
 }

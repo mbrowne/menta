@@ -13,7 +13,7 @@ KtFile: EnumWithAnnotationKeyword.kt
       PsiWhiteSpace(' ')
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E')
     PsiWhiteSpace(' ')

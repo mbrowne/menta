@@ -23,7 +23,7 @@
     }
 }
 
-class A @CompileTimeCalculation constructor(@CompileTimeCalculation var a: Int)
+define A @CompileTimeCalculation constructor(@CompileTimeCalculation var a: Int)
 
 @CompileTimeCalculation fun whenWithoutReturn(aObj: A): Int {
     when (aObj.a) {

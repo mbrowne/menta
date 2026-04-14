@@ -89,7 +89,7 @@ fun prefixIncrementULongProperty(): Any? {
 fun check(u: Any?, ts: String, className: String) {
     u!!
     if (u.toString() != ts) throw AssertionError(u.toString())
-    if (u::class.simpleName != className) throw AssertionError(u::class.simpleName)
+    if (u::define.simpleName != className) throw AssertionError(u::define.simpleName)
 }
 
 fun box(): String {

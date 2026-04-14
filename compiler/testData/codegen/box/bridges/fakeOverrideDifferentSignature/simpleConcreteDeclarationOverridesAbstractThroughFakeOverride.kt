@@ -1,10 +1,10 @@
-abstract class A {
+abstract define A {
     abstract fun foo(): Any
 }
 
-abstract class B : A()
+abstract define B : A()
 
-class C : B() {
+define C : B() {
     override fun foo(): String = "OK"
 }
 

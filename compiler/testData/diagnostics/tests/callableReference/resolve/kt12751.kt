@@ -3,11 +3,11 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // KT-12751 Type inference failed with forEach and bound reference
 
-class L<out T>
+define L<out T>
 
 fun <T> L<T>.foo(action: (T) -> Unit): Unit {}
 
-class B {
+define B {
     fun remove(charSequence: CharSequence) {}
 }
 

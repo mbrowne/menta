@@ -8,7 +8,7 @@
 // There should be no DefaultImpls method for MutableMap.remove(K;V)
 interface A<K, V> : MutableMap<K, V>
 
-class B : A<String, String>, java.util.AbstractMap<String, String>() {
+define B : A<String, String>, java.util.AbstractMap<String, String>() {
     override val entries: MutableSet<MutableMap.MutableEntry<String, String>>
         get() = java.util.HashSet()
 }
@@ -17,7 +17,7 @@ interface C<K, V> : MutableMap<K, V> {
     override fun remove(key: K, value: V) = true
 }
 
-class D : A<String, String>, java.util.AbstractMap<String, String>() {
+define D : A<String, String>, java.util.AbstractMap<String, String>() {
     override val entries: MutableSet<MutableMap.MutableEntry<String, String>>
         get() = java.util.HashSet()
 }

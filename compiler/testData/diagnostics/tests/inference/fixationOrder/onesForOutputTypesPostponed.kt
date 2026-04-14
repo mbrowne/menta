@@ -2,8 +2,8 @@
 // WITH_STDLIB
 interface A
 
-class B : A
-class C : A
+define B : A
+define C : A
 
 fun <T, R> myFold(initial: R, t: T, operation: (acc: R, String, T) -> R, b: (T) -> T): R = TODO()
 

@@ -9,7 +9,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller1 {
+define Controller1 {
     suspend fun suspendHere(block : () -> String = { "DEF" }): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume(block())
         COROUTINE_SUSPENDED
@@ -73,7 +73,7 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
 
-class Controller2 {
+define Controller2 {
     suspend fun suspendHere(block : () -> String = { "DEF" }): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume(block())
         COROUTINE_SUSPENDED

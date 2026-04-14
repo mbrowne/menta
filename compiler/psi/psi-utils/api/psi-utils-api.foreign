@@ -5,7 +5,7 @@ org/jetbrains/kotlin/psi/KtAnnotationEntry
 org/jetbrains/kotlin/psi/KtBinaryExpression
 org/jetbrains/kotlin/psi/KtBinaryExpressionWithTypeRHS
 org/jetbrains/kotlin/psi/KtCallExpression
-org/jetbrains/kotlin/psi/KtClass
+org/jetbrains/kotlin/psi/KtDefine
 org/jetbrains/kotlin/psi/KtClassInitializer
 org/jetbrains/kotlin/psi/KtClassOrObject
 org/jetbrains/kotlin/psi/KtDeclaration

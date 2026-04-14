@@ -7,16 +7,16 @@ In a supertype list:
  Same type should not be indirectly mentioned with incoherent type arguments
  Every interface's required dependencies should be satisfied
  No final types should appear
- Only one class is allowed
+ Only one define is allowed
 */
 
-class C1()
+define C1()
 
-open class OC1()
+open define OC1()
 
-open class C2 {}
+open define C2 {}
 
-open class C3 {}
+open define C3 {}
 
 interface T1 {}
 
@@ -37,16 +37,16 @@ interface Test5 : T1, <!SUPERTYPE_APPEARS_TWICE!>T1<!> {}
 
 interface Test6 : <!FINAL_SUPERTYPE, INTERFACE_WITH_SUPERCLASS!>C1<!> {}
 
-class CTest1() : OC1() {}
+define CTest1() : OC1() {}
 
-class CTest2 : <!SUPERTYPE_NOT_INITIALIZED!>C2<!> {}
+define CTest2 : <!SUPERTYPE_NOT_INITIALIZED!>C2<!> {}
 
-class CTest3 : <!SUPERTYPE_NOT_INITIALIZED!>C2<!>, <!MANY_CLASSES_IN_SUPERTYPE_LIST!>C3<!> {}
+define CTest3 : <!SUPERTYPE_NOT_INITIALIZED!>C2<!>, <!MANY_CLASSES_IN_SUPERTYPE_LIST!>C3<!> {}
 
-class CTest4 : T1 {}
+define CTest4 : T1 {}
 
-class CTest5 : T1, <!SUPERTYPE_APPEARS_TWICE!>T1<!> {}
+define CTest5 : T1, <!SUPERTYPE_APPEARS_TWICE!>T1<!> {}
 
-class CTest6 : <!FINAL_SUPERTYPE, SUPERTYPE_NOT_INITIALIZED!>C1<!> {}
+define CTest6 : <!FINAL_SUPERTYPE, SUPERTYPE_NOT_INITIALIZED!>C1<!> {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, interfaceDeclaration, nullableType, primaryConstructor, typeParameter */

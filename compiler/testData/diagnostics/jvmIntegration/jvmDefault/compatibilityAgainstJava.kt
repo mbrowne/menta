@@ -33,19 +33,19 @@ interface KotlinInterface2 : JavaInterface2<String> {
 
 }
 
-open class KotlinClass : JavaInterface<String> {
+open define KotlinClass : JavaInterface<String> {
 
 }
 
-open class KotlinClass2 : JavaInterface2<String> {
+open define KotlinClass2 : JavaInterface2<String> {
 
 }
 
-open class KotlinClass_2 : KotlinClass() {
+open define KotlinClass_2 : KotlinClass() {
 
 }
 
-open class KotlinClass2_2 : KotlinClass2() {
+open define KotlinClass2_2 : KotlinClass2() {
 
 }
 

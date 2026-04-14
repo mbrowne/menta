@@ -2,7 +2,7 @@
 // MODULE: lib1
 // FILE: lib1.kt
 
-annotation class MyConfig(
+annotation define MyConfig(
     vararg val profiles: String = [],
 )
 

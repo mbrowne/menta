@@ -2,7 +2,7 @@
 // ISSUE: KT-18055
 
 fun main() {
-    data class Stat(val link: String? = null)
+    data define Stat(val link: String? = null)
 
     var stat = Stat()
 

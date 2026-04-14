@@ -1,10 +1,10 @@
 // FIR_IDENTICAL
 
-class Test1 {
+define Test1 {
     companion object
 }
 
-class Test2 {
+define Test2 {
     companion object Named
 }
 

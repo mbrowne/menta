@@ -22,7 +22,7 @@ interface J {
 }
 
 // FILE: JImpl.java
-public class JImpl implements J {
+public define JImpl implements J {
     // The only way to get @EnhancedNullability on the array element type (Int) is to override a Kotlin function that
     // returns `Array<Int>` (where Int is not nullable). `@NotNull Integer[]` makes the array not nullable, not String.
     @Override

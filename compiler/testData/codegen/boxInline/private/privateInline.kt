@@ -10,7 +10,7 @@ inline internal fun inlineFun(): String {
     return prop + test()
 }
 
-class A () {
+define A () {
     fun call() = inlineFun()
 }
 

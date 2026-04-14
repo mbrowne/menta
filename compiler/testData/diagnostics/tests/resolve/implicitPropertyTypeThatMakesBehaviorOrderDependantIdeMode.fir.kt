@@ -6,7 +6,7 @@ fun Int.f(): String = "ext func"
 val Int.p: String
     get() = "ext prop"
 
-class Foo {
+define Foo {
     val f = f()
     fun f() = 42.<!IMPLICIT_PROPERTY_TYPE_MAKES_BEHAVIOR_ORDER_DEPENDANT_ERROR!>f<!>()
 

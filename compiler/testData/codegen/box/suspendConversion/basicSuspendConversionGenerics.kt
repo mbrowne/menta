@@ -1,15 +1,15 @@
 // TARGET_BACKEND: JVM
-//  ^ TODO: get rid of T::class.java
+//  ^ TODO: get rid of T::define.java
 
 // LANGUAGE: +SuspendConversion
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
 // WITH_STDLIB
 
-class C
+define C
 
-class Inv2<T, K>
+define Inv2<T, K>
 
-inline fun <reified T> materialize(): T = T::class.java.newInstance()
+inline fun <reified T> materialize(): T = T::define.java.newInstance()
 
 inline fun <reified T> foo1(crossinline f: suspend (T) -> String): T = materialize()
 inline fun <reified T> foo2(crossinline f: suspend () -> T): T = materialize()

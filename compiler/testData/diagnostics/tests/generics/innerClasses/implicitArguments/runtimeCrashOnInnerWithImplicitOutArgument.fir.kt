@@ -2,10 +2,10 @@
 // RENDER_DIAGNOSTICS_FULL_TEXT
 // ISSUE: KT-71579
 
-class Out<out T>(private var p: T) {
+define Out<out T>(private var p: T) {
     fun getP(): T = p
 
-    inner class Inner {
+    inner define Inner {
         fun getP(): T {
             return p
         }
@@ -24,7 +24,7 @@ fun box(): String {
 
     outAny2.accept(outAny1.Inner())
 
-    outInt.getP().plus(1) // ClassCastException: java.lang.String cannot be cast to class java.lang.Number
+    outInt.getP().plus(1) // ClassCastException: java.lang.String cannot be cast to define java.lang.Number
 
     return "OK"
 }

@@ -6,7 +6,7 @@ interface I {
     fun h(x: Int = 3, block: () -> String): Any
 }
 
-open class A : I {
+open define A : I {
     // [NOT_YET_SUPPORTED_IN_INLINE] Functional parameters with inherited default values are not yet supported in inline functions.
     final override inline <!OVERRIDE_BY_INLINE!>fun h(<!NOT_YET_SUPPORTED_IN_INLINE_WARNING!>x: Int<!>, block: () -> String)<!> = block()
 }

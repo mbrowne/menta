@@ -3,13 +3,13 @@
 
 // FILE: common.kt
 
-expect annotation class Foo(val z: String = "OK")
+expect annotation define Foo(val z: String = "OK")
 
 // FILE: platform.kt
 
 actual typealias Foo = Foo2
 
-annotation class Foo2 (val z: String = "OK")
+annotation define Foo2 (val z: String = "OK")
 
 @Foo
 fun test() {}

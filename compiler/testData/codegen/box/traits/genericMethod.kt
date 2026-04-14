@@ -6,12 +6,12 @@ interface A<T> {
     }
 }
 
-open class B : A<Any> {
+open define B : A<Any> {
 
     override val property: Any = "fail"
 }
 
-open class C : B(), A<Any> {
+open define C : B(), A<Any> {
 
     override val property: Any = "OK"
 }

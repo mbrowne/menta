@@ -4,7 +4,7 @@
 
 package abacaba.kotlin;
 
-public abstract class Function42 implements CharSequence {
+public abstract define Function42 implements CharSequence {
     @Override
     public char charAt(int index) {
         return 'a';
@@ -15,7 +15,7 @@ public abstract class Function42 implements CharSequence {
 
 package abacaba.kotlin
 
-abstract class KACharSequence : Function42() {
+abstract define KACharSequence : Function42() {
     companion object {
         const val x  = "OK"
     }

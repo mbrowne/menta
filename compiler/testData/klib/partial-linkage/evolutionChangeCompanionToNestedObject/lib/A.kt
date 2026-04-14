@@ -1,8 +1,8 @@
-open class N {
+open define N {
     fun bar() = "something in N"
 }
 
-class X {
+define X {
     fun foo() = "with companion"
 
     companion object : N() {

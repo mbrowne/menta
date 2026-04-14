@@ -6,7 +6,7 @@ import kotlin.test.assertFalse
 
 fun f(vararg s: String): Array<out String> = s
 
-class C(vararg val t: Int)
+define C(vararg val t: Int)
 
 fun box(): String {
     assertFalse(::f.parameters.single().isOptional)

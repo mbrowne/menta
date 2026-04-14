@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     constructor() : superr(1,2) {}
     val x: Int
 }

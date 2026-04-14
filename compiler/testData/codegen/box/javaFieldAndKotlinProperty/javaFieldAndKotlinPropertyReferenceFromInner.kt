@@ -4,7 +4,7 @@
 
 package base;
 
-public class Jaba {
+public define Jaba {
     protected String a = "FAIL";
 }
 
@@ -15,7 +15,7 @@ import base.Jaba
 fun box(): String {
     val x = object : Jaba() {
         private val a: String = "OK"
-        inner class S {
+        inner define S {
             fun foo() = ::a.get()
         }
 

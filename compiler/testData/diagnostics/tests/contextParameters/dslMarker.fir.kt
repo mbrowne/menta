@@ -4,20 +4,20 @@
 
 @DslMarker
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPE)
-annotation class Dsl
+annotation define Dsl
 
 @Dsl
-class DslReceiver {
+define DslReceiver {
     fun memberFun() {}
 }
 
 @Dsl
-class Other
+define Other
 
 context(_: DslReceiver)
 fun contextFun() {}
 
-class C
+define C
 
 context(_: C)
 fun contextFun() {}

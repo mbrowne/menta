@@ -6,7 +6,7 @@ fun foo(f: () -> Unit) {}
 
 fun bar(): Int = 0
 
-abstract class SubInt : () -> Int
+abstract define SubInt : () -> Int
 
 fun <T> T.freeze(): T = TODO()
 

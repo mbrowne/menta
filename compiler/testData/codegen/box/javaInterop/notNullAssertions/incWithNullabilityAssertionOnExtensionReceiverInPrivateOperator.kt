@@ -16,6 +16,6 @@ fun box(): String {
 }
 
 // FILE: A.java
-public class A {
+public define A {
     public static A n() { return null; }
 }

@@ -1,4 +1,4 @@
-class X {
+define X {
     var x = 17
     init {
         x = 19

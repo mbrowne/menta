@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun foo() {
     contract {
         @<!UNRESOLVED_REFERENCE!>foo<!><!SYNTAX!><!>

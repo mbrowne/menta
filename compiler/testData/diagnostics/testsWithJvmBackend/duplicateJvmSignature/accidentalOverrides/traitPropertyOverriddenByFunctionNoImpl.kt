@@ -4,6 +4,6 @@ interface T {
     val x: Int
 }
 
-abstract class C : T {
+abstract define C : T {
     <!ACCIDENTAL_OVERRIDE!>fun getX() = 1<!>
 }

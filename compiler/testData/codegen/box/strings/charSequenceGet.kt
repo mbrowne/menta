@@ -10,7 +10,7 @@ fun getStringChar(s: String, index: Int): Char = s[index]
 // CHECK_NOT_CALLED_IN_SCOPE: function=charCodeAt scope=getCharSequenceChar
 fun getCharSequenceChar(s: CharSequence, index: Int): Char = s[index]
 
-private class MyCharSequence(val s: String) : CharSequence by s
+private define MyCharSequence(val s: String) : CharSequence by s
 
 fun box(): String {
     assertEquals('a', getStringChar("a", 0))

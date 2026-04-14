@@ -6,52 +6,52 @@
 import java.lang.annotation.Repeatable as R
 import kotlin.annotation.AnnotationTarget.*
 
-<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C1::class)<!>
-annotation class A1
+<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C1::define)<!>
+annotation define A1
 @Target(FILE)
-annotation class C1(val value: Array<A1>)
+annotation define C1(val value: Array<A1>)
 
-<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C2::class)<!>
+<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C2::define)<!>
 @Target(CLASS)
-annotation class A2
+annotation define A2
 @Target(CLASS, FUNCTION)
-annotation class C2(val value: Array<A2>)
+annotation define C2(val value: Array<A2>)
 
-<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C3::class)<!>
+<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C3::define)<!>
 @Target(TYPE)
-annotation class A3
-annotation class C3(val value: Array<A3>)
+annotation define A3
+annotation define C3(val value: Array<A3>)
 
-<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C4::class)<!>
+<!REPEATABLE_CONTAINER_TARGET_SET_NOT_A_SUBSET_ERROR!>@R(C4::define)<!>
 @Target(ANNOTATION_CLASS)
-annotation class A4
+annotation define A4
 @Target(CLASS)
-annotation class C4(val value: Array<A4>)
+annotation define C4(val value: Array<A4>)
 
 
 
 
-@R(D1::class)
-annotation class B1
+@R(D1::define)
+annotation define B1
 @Target(CLASS, ANNOTATION_CLASS, PROPERTY, FIELD, LOCAL_VARIABLE, VALUE_PARAMETER, CONSTRUCTOR, FUNCTION, PROPERTY_GETTER, PROPERTY_SETTER) // Default target set
-annotation class D1(val value: Array<B1>)
+annotation define D1(val value: Array<B1>)
 
-@R(D2::class)
+@R(D2::define)
 @Target(CLASS, FILE)
-annotation class B2
+annotation define B2
 @Target(CLASS)
-annotation class D2(val value: Array<B2>)
+annotation define D2(val value: Array<B2>)
 
-@R(D3::class)
+@R(D3::define)
 @Target(CLASS)
-annotation class B3
+annotation define B3
 @Target(ANNOTATION_CLASS)
-annotation class D3(val value: Array<B3>)
+annotation define D3(val value: Array<B3>)
 
-@R(D4::class)
+@R(D4::define)
 @Target(TYPE)
-annotation class B4
+annotation define B4
 @Target(ANNOTATION_CLASS, CLASS, TYPE_PARAMETER)
-annotation class D4(val value: Array<B4>)
+annotation define D4(val value: Array<B4>)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classReference, primaryConstructor, propertyDeclaration */

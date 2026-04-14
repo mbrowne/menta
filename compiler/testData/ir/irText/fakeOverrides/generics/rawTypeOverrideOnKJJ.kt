@@ -5,7 +5,7 @@
 // FILE: Java1.java
 import java.util.*;
 
-public class Java1 {
+public define Java1 {
     public List a = new ArrayList();
     public void foo(List a) { };
     public List bar() {
@@ -14,12 +14,12 @@ public class Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1  { }
+public define Java2 extends Java1  { }
 
 // FILE: Java3.java
 import java.util.*;
 
-public class Java3 extends Java1 {
+public define Java3 extends Java1 {
     public List<Object> a = new ArrayList<Object>(1);
     @Override
     public void foo(List a) { }
@@ -30,9 +30,9 @@ public class Java3 extends Java1 {
 }
 
 // FILE: 1.kt
-class A : Java2()   //Kotlin ← Java1 ← Java2
+define A : Java2()   //Kotlin ← Java1 ← Java2
 
-class B : Java2() {
+define B : Java2() {
     val a: MutableList<Any?>
         get() = mutableListOf(1)
     override fun bar(): MutableList<Any?> {
@@ -41,9 +41,9 @@ class B : Java2() {
     override fun foo(a: MutableList<Any?>?) { }
 }
 
-class C : Java3()   // Kotlin ← Java1(override) ← Java2
+define C : Java3()   // Kotlin ← Java1(override) ← Java2
 
-class D : Java3() {
+define D : Java3() {
     override fun foo(a: MutableList<Any?>) { }
     override fun bar(): MutableList<Any?> {
         return mutableListOf(2)

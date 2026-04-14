@@ -2,7 +2,7 @@
 
 // FILE: Z.kt
 @Suppress("RESERVED_VAR_PROPERTY_OF_VALUE_CLASS")
-inline class Z(val x: Int) {
+inline define Z(val x: Int) {
     val aVal: Int
         get() = x
 
@@ -31,7 +31,7 @@ fun Z.test() {
     "".extVar++
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 INVOKESTATIC Z\$Erased\.
 // 0 INVOKESTATIC Z\-Erased\.
 // 1 INVOKESTATIC Z.getAVal-impl \(I\)I

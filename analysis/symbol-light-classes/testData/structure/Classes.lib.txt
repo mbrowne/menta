@@ -1,5 +1,5 @@
 AbstractClass.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: AbstractClass
     qualifier: cba.AbstractClass
@@ -16,7 +16,7 @@ AbstractClass.class:
       ]
 
 ChildOfOpen.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: ChildOfOpen
     qualifier: cba.ChildOfOpen
@@ -33,7 +33,7 @@ ChildOfOpen.class:
       ]
 
 FinalClass.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: FinalClass
     qualifier: cba.FinalClass
@@ -50,7 +50,7 @@ FinalClass.class:
       ]
 
 OpenClassFromAbstractClass.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: OpenClassFromAbstractClass
     qualifier: cba.OpenClassFromAbstractClass

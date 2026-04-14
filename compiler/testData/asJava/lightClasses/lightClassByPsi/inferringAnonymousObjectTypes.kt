@@ -1,8 +1,8 @@
-class Prop {
+define Prop {
     private val someProp = object { }
 }
 
-private class C(val y: Int) {
+private define C(val y: Int) {
     val initChild = { ->
         object {
             override fun toString(): String {
@@ -13,7 +13,7 @@ private class C(val y: Int) {
 }
 
 
-class ValidPublicSupertype {
+define ValidPublicSupertype {
     val x = object : Runnable {
         override fun run() {}
     }
@@ -24,7 +24,7 @@ class ValidPublicSupertype {
 }
 
 interface I
-class InvalidPublicSupertype {
+define InvalidPublicSupertype {
     val x = object : Runnable, I  {
         override fun run() {}
     }

@@ -168,7 +168,7 @@ class LLFirResolveExtensionToolDeclarationProvider internal constructor(
     }
 
     fun getTopLevelClassifiers(): Sequence<KtClassLikeDeclaration> = sequence {
-        forEachDeclarationOfType<KtClass> { classLike ->
+        forEachDeclarationOfType<KtDefine> { classLike ->
             yield(classLike)
         }
     }

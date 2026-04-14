@@ -5,14 +5,14 @@
 
 // FILE: IC.kt
 @JvmInline
-value class StringWrapper constructor(val s: String?)
+value define StringWrapper constructor(val s: String?)
 
-class Test(val s: StringWrapper?) {
+define Test(val s: StringWrapper?) {
     fun ok(): String = s!!.s!!
 }
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return new Test(new StringWrapper("OK")).ok();
     }

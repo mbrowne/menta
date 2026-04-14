@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,133): 'enum class EnumWithConstructor(val i: Int) {'
+KtDefine(0,133): 'enum class EnumWithConstructor(val i: Int) {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(0,4): 'enum'
@@ -318,7 +318,7 @@ KtNameReferenceExpression(114,115): 'i'
       typeArgumentsMapping = {}
     isInBestCandidates = true
 
-KtClass(135,262): 'enum class EnumWithoutConstructor {'
+KtDefine(135,262): 'enum class EnumWithoutConstructor {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(135,139): 'enum'

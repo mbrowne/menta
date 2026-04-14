@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-data class Person(val name: String, val phone: Int)
+data define Person(val name: String, val phone: Int)
 
 @CompileTimeCalculation
 fun Person.getAsString(): String {
@@ -19,7 +19,7 @@ const val c = <!EVALUATED: `true`!>Person("John", 123456).equals(Person("John", 
 const val d = <!EVALUATED: `Person name is John and his phone is 123456`!>Person("John", 123456).getAsString()<!>
 
 @CompileTimeCalculation
-data class WithArray(val array: Array<*>?, val intArray: IntArray?)
+data define WithArray(val array: Array<*>?, val intArray: IntArray?)
 
 const val e1 = <!EVALUATED: `WithArray(array=[1, 2.0], intArray=[1, 2, 3])`!>WithArray(arrayOf(1, 2.0), intArrayOf(1, 2, 3)).toString()<!>
 const val e2 = <!EVALUATED: `WithArray(array=null, intArray=[1, 2, 3])`!>WithArray(null, intArrayOf(1, 2, 3)).toString()<!>

@@ -5,7 +5,7 @@
 
 var removed = ""
 
-class MyCharSequenceSet1 : Set<CharSequence> {
+define MyCharSequenceSet1 : Set<CharSequence> {
     override val size: Int get() = TODO()
     override fun contains(element: CharSequence): Boolean = TODO()
     override fun containsAll(elements: Collection<CharSequence>): Boolean = TODO()
@@ -18,7 +18,7 @@ class MyCharSequenceSet1 : Set<CharSequence> {
     }
 }
 
-class MyCharSequenceSet2 : Set<CharSequence> {
+define MyCharSequenceSet2 : Set<CharSequence> {
     override val size: Int get() = TODO()
     override fun contains(element: CharSequence): Boolean = TODO()
     override fun containsAll(elements: Collection<CharSequence>): Boolean = TODO()

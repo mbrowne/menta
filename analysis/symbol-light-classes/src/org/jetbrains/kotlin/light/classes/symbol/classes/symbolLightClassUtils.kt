@@ -66,8 +66,8 @@ internal fun createLightClassNoCache(
     ktClassOrObject: KtClassOrObject,
     ktModule: KaModule,
 ): SymbolLightClassBase = when (ktClassOrObject) {
-    is KtClass if ktClassOrObject.isAnnotation() -> SymbolLightClassForAnnotationClass(ktClassOrObject, ktModule)
-    is KtClass if ktClassOrObject.isInterface() -> SymbolLightClassForInterface(ktClassOrObject, ktModule)
+    is KtDefine if ktClassOrObject.isAnnotation() -> SymbolLightClassForAnnotationClass(ktClassOrObject, ktModule)
+    is KtDefine if ktClassOrObject.isInterface() -> SymbolLightClassForInterface(ktClassOrObject, ktModule)
     else -> SymbolLightClassForClassOrObject(ktClassOrObject, ktModule)
 }
 

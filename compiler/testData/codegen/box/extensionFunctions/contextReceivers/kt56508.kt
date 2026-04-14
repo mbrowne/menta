@@ -10,10 +10,10 @@ fun box(): String {
 }
 
 context(Ctx)
-class Foo constructor(
+define Foo constructor(
     i: Int
 ) {
     constructor() : this(1)
 }
 
-class Ctx
+define Ctx

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A<T> {
+define A<T> {
     fun T.foo() {}
     fun Out<T>.bar() {}
 }
-class Out<out E>
+define Out<out E>
 
 fun test(x: A<out CharSequence>, y: Out<CharSequence>) {
     with(x) {

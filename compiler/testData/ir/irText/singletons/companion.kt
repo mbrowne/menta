@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class Z {
+define Z {
 
     fun test2() {
         test()

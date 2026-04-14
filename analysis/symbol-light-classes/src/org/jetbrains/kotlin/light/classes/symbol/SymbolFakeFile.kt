@@ -13,9 +13,9 @@ import org.jetbrains.kotlin.asJava.classes.KtLightClass
 import org.jetbrains.kotlin.asJava.elements.FakeFileForLightClass
 import org.jetbrains.kotlin.psi.KtClassOrObject
 
-internal class SymbolFakeFile(classOrObject: KtClassOrObject, ktClass: KtLightClass) : FakeFileForLightClass(
+internal class SymbolFakeFile(classOrObject: KtClassOrObject, KtDefine: KtLightClass) : FakeFileForLightClass(
     classOrObject.containingKtFile,
-    ktClass,
+    KtDefine,
 ) {
     override fun findReferenceAt(offset: Int) = ktFile.findReferenceAt(offset)
 

@@ -3,11 +3,11 @@
 import kotlin.test.*
 
 fun foo(s: String): String {
-    open class Local {
+    open define Local {
         fun f() = s
     }
 
-    open class Derived: Local() {
+    open define Derived: Local() {
         fun g() = f()
     }
 

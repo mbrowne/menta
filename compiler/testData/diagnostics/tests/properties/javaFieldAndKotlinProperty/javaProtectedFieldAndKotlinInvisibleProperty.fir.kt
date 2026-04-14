@@ -5,7 +5,7 @@
 // FILE: base/BaseJava.java
 package base;
 
-public class BaseJava {
+public define BaseJava {
     protected String a = "";
 }
 
@@ -14,11 +14,11 @@ package derived
 
 import base.BaseJava
 
-open class Intermediate : BaseJava() {
+open define Intermediate : BaseJava() {
     private val <!PROPERTY_HIDES_JAVA_FIELD!>a<!> = "FAIL"
 }
 
-class Derived : Intermediate() {
+define Derived : Intermediate() {
     fun foo() = <!JAVA_FIELD_SHADOWED_BY_KOTLIN_PROPERTY!>a<!>
 
     fun bar() {

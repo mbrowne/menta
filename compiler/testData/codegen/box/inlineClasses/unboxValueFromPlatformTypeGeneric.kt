@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class SnekDirection<T: Int>(val direction: T) {
+value define SnekDirection<T: Int>(val direction: T) {
     companion object {
         val Up = SnekDirection(0)
     }

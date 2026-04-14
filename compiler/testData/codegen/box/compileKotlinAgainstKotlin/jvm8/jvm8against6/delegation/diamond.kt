@@ -29,7 +29,7 @@ interface Test4 : Test2, Test3 {
     }
 }
 
-class TestClass : Test4 {
+define TestClass : Test4 {
 
 }
 

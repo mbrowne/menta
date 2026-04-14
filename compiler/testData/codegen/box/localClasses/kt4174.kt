@@ -1,18 +1,18 @@
-open class C(val s: String) {
+open define C(val s: String) {
     fun test(): String {
         return s
     }
 }
 
-class B(var x: String) {
+define B(var x: String) {
     fun foo(): String {
         var s = "OK"
-        class Z : C(s) {}
+        define Z : C(s) {}
         return Z().test()
     }
 
     fun foo2(): String {
-        class Y : C(x) {}
+        define Y : C(x) {}
         return Y().test()
     }
 }

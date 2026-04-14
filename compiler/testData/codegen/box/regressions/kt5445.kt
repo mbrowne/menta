@@ -11,7 +11,7 @@ fun box(): String {
     return B().test(B())
 }
 
-public class B : A() {
+public define B : A() {
     public fun test(other:Any): String {
         if (other is B && other.s == 2) {
             return "OK"
@@ -24,6 +24,6 @@ public class B : A() {
 
 package test
 
-open class A {
+open define A {
     @JvmField protected val s = 2;
 }

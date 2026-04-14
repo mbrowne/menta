@@ -1,4 +1,4 @@
-class Y: X, Z {
+define Y: X, Z {
     override fun foo(): String = "overridden method"
     override val bar: String get() = "overridden property"
     override fun qux(): String = "overridden multiple versions"

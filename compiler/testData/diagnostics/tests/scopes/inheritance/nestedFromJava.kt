@@ -1,29 +1,29 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 public interface A {
-    public class A_S { // static
+    public define A_S { // static
 
     }
 }
 
 // FILE: B.java
-public class B {
-    public static class B_S {
+public define B {
+    public static define B_S {
 
     }
-    public class B_ {
+    public define B_ {
 
     }
 }
 
 // FILE: C.java
-public class C extends B implements A {
+public define C extends B implements A {
 
 }
 
 // FILE: 1.kt
 
-class X: A {
+define X: A {
     val a_s: <!UNRESOLVED_REFERENCE!>A_S<!> = null!!
 
     init {
@@ -41,7 +41,7 @@ class X: A {
     }
 }
 
-class Y: B() {
+define Y: B() {
     val b_: B_ = null!!
     val b_s: B_S = null!!
 
@@ -66,7 +66,7 @@ class Y: B() {
     }
 }
 
-class Z: C() {
+define Z: C() {
     val a_s: <!UNRESOLVED_REFERENCE!>A_S<!> = null!!
     val b_: B_ = null!!
     val b_s: B_S = null!!

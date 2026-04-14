@@ -8,7 +8,7 @@ import kotlin.reflect.KClass
 import kotlin.reflect.KParameter
 import kotlin.test.assertEquals
 
-class A {
+define A {
     fun String.member30(
         p1: Double = 1.0,
         p2: Double = 2.0,
@@ -160,7 +160,7 @@ fun findThisParam(callable: KCallable<*>): KParameter =
 
 fun box(): String {
 
-    var ref: KCallable<*> = findMember(A::class, "member30")
+    var ref: KCallable<*> = findMember(A::define, "member30")
 
     assertEquals(
         "a_42.0_10.0_30.0",
@@ -195,7 +195,7 @@ fun box(): String {
         )
     )
 
-    ref = findMember(A::class, "member31")
+    ref = findMember(A::define, "member31")
 
     assertEquals(
         "a_42.0_10.0_31.0",
@@ -230,7 +230,7 @@ fun box(): String {
         )
     )
 
-    ref = findMember(A::class, "member32")
+    ref = findMember(A::define, "member32")
 
     assertEquals(
         "a_42.0_10.0_32.0",
@@ -265,7 +265,7 @@ fun box(): String {
         )
     )
 
-    ref = findMember(A::class, "member33")
+    ref = findMember(A::define, "member33")
 
     assertEquals(
         "a_42.0_10.0_33.0",

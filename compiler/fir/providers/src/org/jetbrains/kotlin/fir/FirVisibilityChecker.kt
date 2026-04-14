@@ -56,7 +56,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
             dispatchReceiver: FirExpression?,
             session: FirSession,
             isCallToPropertySetter: Boolean,
-            supertypeSupplier: SupertypeSupplier
+            supertypeSupplier: SupertypeSupplier,
         ): Boolean {
             return true
         }
@@ -76,7 +76,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
     }
 
     class Composed(
-        override val components: List<FirVisibilityChecker>
+        override val components: List<FirVisibilityChecker>,
     ) : FirVisibilityChecker(), FirComposableSessionComponent.Composed<FirVisibilityChecker> {
         override fun platformVisibilityCheck(
             declarationVisibility: Visibility,
@@ -149,7 +149,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         // Such flag is not necessary in FE1.0, since there are full structure of fake overrides and containing declaration for overridden
         // is always visible since it's a supertype of a derived class.
         skipCheckForContainingClassVisibility: Boolean = false,
-        supertypeSupplier: SupertypeSupplier = SupertypeSupplier.Default
+        supertypeSupplier: SupertypeSupplier = SupertypeSupplier.Default,
     ): Boolean {
         if (!isSpecificDeclarationVisible(
                 if (declaration is FirCallableDeclaration) declaration.originalOrSelf() else declaration,
@@ -243,7 +243,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         containingDeclarations: List<FirDeclaration>,
         dispatchReceiver: FirExpression?,
         isCallToPropertySetter: Boolean = false,
-        supertypeSupplier: SupertypeSupplier
+        supertypeSupplier: SupertypeSupplier,
     ): Boolean {
         val symbol = declaration.symbol
 
@@ -254,6 +254,16 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
             Visibilities.Private, Visibilities.PrivateToThis -> {
                 val ownerLookupTag = symbol.getOwnerLookupTag()
                 if (canSeePrivateDeclarationsOfModule(session, declaration.moduleData)) {
+                    // Role members with Private visibility are visible to other members of the same role
+                    val targetOrigin = declaration.origin
+                    if (targetOrigin is FirDeclarationOrigin.MentaRole) {
+                        val sameRole = containingDeclarations.any { containingDecl ->
+                            val containingOrigin = containingDecl.origin
+                            containingOrigin is FirDeclarationOrigin.MentaRole
+                                    && containingOrigin.roleName == targetOrigin.roleName
+                        }
+                        if (sameRole) return true
+                    }
                     when {
                         ownerLookupTag == null -> {
                             // Top-level: visible in file
@@ -307,7 +317,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         dispatchReceiver: FirExpression?,
         session: FirSession,
         isCallToPropertySetter: Boolean,
-        supertypeSupplier: SupertypeSupplier
+        supertypeSupplier: SupertypeSupplier,
     ): Boolean
 
     protected abstract fun platformOverrideVisibilityCheck(
@@ -322,7 +332,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         ownerLookupTag: ConeClassLikeLookupTag,
         dispatchReceiver: FirExpression?,
         isVariableOrNamedFunction: Boolean,
-        session: FirSession
+        session: FirSession,
     ): Boolean {
         ownerLookupTag.ownerIfCompanion(session)?.let { companionOwnerLookupTag ->
             return canSeePrivateMemberOf(
@@ -398,7 +408,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         session: FirSession,
         isVariableOrNamedFunction: Boolean,
         isSyntheticProperty: Boolean,
-        supertypeSupplier: SupertypeSupplier
+        supertypeSupplier: SupertypeSupplier,
     ): Boolean {
         dispatchReceiver?.ownerIfCompanion(session)?.let { companionOwnerLookupTag ->
             if (containingUseSiteClass.isSubclassOf(companionOwnerLookupTag, session, isStrict = false, supertypeSupplier)) return true
@@ -422,7 +432,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         containingUseSiteClass: FirClass,
         ownerLookupTag: ConeClassLikeLookupTag,
         isSyntheticProperty: Boolean,
-        session: FirSession
+        session: FirSession,
     ): Boolean {
         if (dispatchReceiver == null) return true
         var dispatchReceiverType = dispatchReceiver.resolvedType
@@ -472,7 +482,7 @@ abstract class FirVisibilityChecker : FirComposableSessionComponent<FirVisibilit
         session: FirSession,
         isVariableOrNamedFunction: Boolean,
         isSyntheticProperty: Boolean,
-        supertypeSupplier: SupertypeSupplier
+        supertypeSupplier: SupertypeSupplier,
     ): Boolean {
         if (canSeePrivateMemberOf(
                 usedSymbol,
@@ -568,7 +578,7 @@ private fun FirMemberDeclaration.containingNonLocalClass(
     session: FirSession,
     dispatchReceiver: FirExpression?,
     containingUseSiteDeclarations: List<FirDeclaration>,
-    supertypeSupplier: SupertypeSupplier
+    supertypeSupplier: SupertypeSupplier,
 ): FirClassLikeDeclaration? {
     return when (this) {
         is FirCallableDeclaration -> {

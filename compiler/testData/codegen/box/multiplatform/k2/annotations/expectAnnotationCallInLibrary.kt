@@ -19,10 +19,10 @@
     AnnotationTarget.TYPEALIAS,
     AnnotationTarget.LOCAL_VARIABLE
 )
-expect annotation class Ann constructor()
+expect annotation define Ann constructor()
 
 @Ann
-class C<@Ann T> {
+define C<@Ann T> {
     fun ok() = "OK"
 }
 
@@ -41,7 +41,7 @@ var ok = "OK"
 @Ann
 val variable = "OK"
 
-enum class E {
+enum define E {
     @Ann
     OK
 }
@@ -65,7 +65,7 @@ typealias TA = String
     AnnotationTarget.TYPEALIAS,
     AnnotationTarget.LOCAL_VARIABLE
 )
-actual annotation class Ann
+actual annotation define Ann
 
 // MODULE: main(lib)
 // FILE: main.kt

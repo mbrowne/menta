@@ -1,21 +1,21 @@
 // FILE: AnnoWithDefaultName.kt
-annotation class AnnoWithDefaultName(val value: Int)
+annotation define AnnoWithDefaultName(val value: Int)
 
 // FILE: AnnoWithCustomName.kt
-annotation class AnnoWithCustomName(val string: String)
+annotation define AnnoWithCustomName(val string: String)
 
 // FILE: AnnoWithCustomNameAndDefaultValue.kt
-annotation class AnnoWithCustomNameAndDefaultValue(val string: String = "str")
+annotation define AnnoWithCustomNameAndDefaultValue(val string: String = "str")
 
 // FILE: AnnoWithDefaultNameAndDefaultValue.kt
-annotation class AnnoWithDefaultNameAndDefaultValue(val value: Int = 1)
+annotation define AnnoWithDefaultNameAndDefaultValue(val value: Int = 1)
 
 // FILE: AnnoWithVararg.kt
-public annotation class AnnoWithVararg(
+public annotation define AnnoWithVararg(
     vararg val value: Int
 )
 
 // FILE: AnnoWithVarargAndDefaultVakue.kt
-public annotation class AnnoWithVarargAndDefaultVakue(
+public annotation define AnnoWithVarargAndDefaultVakue(
     vararg val value: Int = [0]
 )

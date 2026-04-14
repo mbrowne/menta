@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // MODULE: top_m1
 // FILE: top_a.kt
-class B {
+define B {
     fun m1() {}
 }
 
 // MODULE: top_m2
 // FILE: top_b.kt
-class B {
+define B {
     fun m2() {}
 }
 

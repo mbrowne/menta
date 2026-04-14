@@ -1,4 +1,4 @@
 package kotlin.mylibrary
 
-class MyLibraryManager {
+define MyLibraryManager {
 }

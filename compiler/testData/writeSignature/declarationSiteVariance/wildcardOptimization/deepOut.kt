@@ -1,7 +1,7 @@
-class Out<out T>
+define Out<out T>
 
-class Final
-open class Open
+define Final
+open define Open
 
 fun deepOpen(x: Out<Out<Out<Open>>>) {}
 // method: DeepOutKt::deepOpen

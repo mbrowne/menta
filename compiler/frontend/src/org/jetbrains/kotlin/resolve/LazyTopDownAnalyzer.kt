@@ -146,12 +146,12 @@ class LazyTopDownAnalyzer(
                     }
                 }
 
-                override fun visitClass(klass: KtClass) {
+                override fun visitDefine(klass: KtDefine) {
                     visitClassOrObject(klass)
                     registerPrimaryConstructorParameters(klass)
                 }
 
-                private fun registerPrimaryConstructorParameters(klass: KtClass) {
+                private fun registerPrimaryConstructorParameters(klass: KtDefine) {
                     for (ktParameter in klass.primaryConstructorParameters) {
                         if (ktParameter.hasValOrVar()) {
                             c.primaryConstructorParameterProperties.put(

@@ -3,7 +3,7 @@
 
 fun nonTerminating(): Nothing = throw RuntimeException()
 
-class C {
+define C {
     val x: String = nonTerminating()
 
     val o = <!UNREACHABLE_CODE!>object {

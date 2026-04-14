@@ -3,7 +3,7 @@
 // MODULE: lib
 // FILE: Custom.java
 
-class Custom {
+define Custom {
     public interface Runnable {
         void run2();
     }
@@ -17,5 +17,5 @@ fun box(): String {
     val class1 = Runnable(f).javaClass
     val class2 = Custom.Runnable(f).javaClass
 
-    return if (class1 != class2) "OK" else "Same class: $class1"
+    return if (class1 != class2) "OK" else "Same define: $class1"
 }

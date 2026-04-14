@@ -4,8 +4,8 @@
 // FIR_IDENTICAL
 //  ^ K1 is ignored
 
-class Outer {
-    enum class E {
+define Outer {
+    enum define E {
         ENTRY;
 
         @Deprecated("", level = DeprecationLevel.HIDDEN)

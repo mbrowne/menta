@@ -1,7 +1,7 @@
-class A(val x: String) {
+define A(val x: String) {
     fun value(): String {
         return object {
-            inner class Y {
+            inner define Y {
                 val y = x
             }
 

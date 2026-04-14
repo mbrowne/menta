@@ -3,19 +3,19 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNotNullPrimitive<T: Int>(val x: T)
+value define InlineNotNullPrimitive<T: Int>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNullablePrimitive<T: Int?>(val x: T)
+value define InlineNullablePrimitive<T: Int?>(val x: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNotNullReference<T: Any>(val a: T)
+value define InlineNotNullReference<T: Any>(val a: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNullableReference<T>(val a: T)
+value define InlineNullableReference<T>(val a: T)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineNullableReference2<T: Any>(val a: T?)
+value define InlineNullableReference2<T: Any>(val a: T?)
 
 fun <T: Int> test1(a: InlineNotNullPrimitive<T>) {
     val a0 = a

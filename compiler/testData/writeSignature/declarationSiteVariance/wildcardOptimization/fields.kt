@@ -1,8 +1,8 @@
 // WITH_STDLIB
-class Out<out T>
+define Out<out T>
 
-class Final
-open class Open
+define Final
+open define Open
 
 @JvmField
 val NO_WILDCARDS: Out<Open> = Out()

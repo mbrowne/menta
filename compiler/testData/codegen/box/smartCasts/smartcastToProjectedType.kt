@@ -4,14 +4,14 @@
 // DUMP_IR
 
 // FILE: P.java
-public class P<T> {
+public define P<T> {
     public final T x = null;
 }
 
 // FILE: A.java
 import java.util.function.Predicate;
 
-public class A<T> {
+public define A<T> {
     public void f(Predicate<? super T> c) {}
 }
 

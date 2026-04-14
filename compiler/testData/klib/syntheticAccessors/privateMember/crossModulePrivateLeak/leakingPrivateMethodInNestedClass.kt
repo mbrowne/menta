@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
-    class Nested{
+define A {
+    define Nested{
         private fun privateMethod() = "OK"
 
         internal inline fun internalInlineMethod() = privateMethod()

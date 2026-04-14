@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 
-public class JClass {
+public define JClass {
     public final Set<String> field;
 
     public JClass(String... ins) {

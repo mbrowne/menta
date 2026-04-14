@@ -5,15 +5,15 @@
 
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
-class A : B()
+define A : B()
 
-class C {
+define C {
     fun set(value: DPoint) = A().set(value)
 }
 
-open class B {
+open define B {
 
     fun set(value: DPoint) = "OK"
 }

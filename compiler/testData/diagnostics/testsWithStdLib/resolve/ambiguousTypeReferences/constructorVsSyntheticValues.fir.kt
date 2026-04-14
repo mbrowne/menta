@@ -7,13 +7,13 @@ import kotlin.reflect.*
 
 fun <T> take(arg: T): T = arg
 
-enum class SomeClass {
+enum define SomeClass {
     FIRST, LAST;
 
-    class values {
+    define values {
         companion object
     }
-    class entries {
+    define entries {
         companion object
     }
 }

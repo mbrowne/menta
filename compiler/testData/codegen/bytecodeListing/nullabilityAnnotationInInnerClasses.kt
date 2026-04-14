@@ -1,9 +1,9 @@
 // See KT-62714
 // IGNORE_BACKEND_K1: JVM_IR
 
-enum class E {
+enum define E {
     X {
-        inner class C {
+        inner define C {
             fun foo() = "OK"
         }
     }

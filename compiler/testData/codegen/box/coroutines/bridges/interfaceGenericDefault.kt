@@ -8,7 +8,7 @@ interface I<T> {
     suspend fun f(x: T): String = "OK"
 }
 
-class C : I<String>
+define C : I<String>
 
 fun box(): String {
     var result = "Fail"

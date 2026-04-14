@@ -8,7 +8,7 @@ package org.jetbrains.kotlin.analysis.api.test
 import com.intellij.psi.PsiFile
 import org.jetbrains.kotlin.analysis.api.KaSpi
 import org.jetbrains.kotlin.lexer.KtTokens
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
@@ -56,7 +56,7 @@ class AnalysisApiExtensibilityTest : AbstractAnalysisApiSurfaceCodebaseValidatio
             // Already requires opt-in on subclassing
             hasAnnotation(SUBCLASS_OPT_IN) -> true
 
-            this is KtClass -> when {
+            this is KtDefine -> when {
                 hasModifier(KtTokens.SEALED_KEYWORD) -> true
                 hasModifier(KtTokens.OPEN_KEYWORD) -> false
                 hasModifier(KtTokens.ABSTRACT_KEYWORD) -> false

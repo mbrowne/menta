@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
 
-class A(var x: String) {
+define A(var x: String) {
     fun foo(): String { return x }
 }
 

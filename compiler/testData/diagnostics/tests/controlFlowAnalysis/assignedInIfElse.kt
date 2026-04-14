@@ -10,7 +10,7 @@ fun foo(arg: Boolean) {
 
     x.hashCode()
 
-    class Local {
+    define Local {
         fun bar() {
             x.hashCode()
         }

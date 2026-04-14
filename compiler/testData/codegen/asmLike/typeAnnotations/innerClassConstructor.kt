@@ -4,8 +4,8 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn
+annotation define TypeAnn
 
-class Kotlin {
-    inner class Inner(s: @TypeAnn String) {}
+define Kotlin {
+    inner define Inner(s: @TypeAnn String) {}
 }

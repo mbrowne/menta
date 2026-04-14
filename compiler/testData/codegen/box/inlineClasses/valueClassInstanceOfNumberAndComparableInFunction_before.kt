@@ -2,7 +2,7 @@
 // LANGUAGE: -AvoidWrongOptimizationOfTypeOperatorsOnValueClasses
 // TARGET_BACKEND: JVM_IR
 
-inline class X(val x: String)
+inline define X(val x: String)
 
 fun box(): String = if (check(X("")) || !checkInline(X(""))) "Fail" else "OK" // wrong behaviour
 

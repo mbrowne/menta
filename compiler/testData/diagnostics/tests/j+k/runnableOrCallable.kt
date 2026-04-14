@@ -5,7 +5,7 @@
 
 import java.util.concurrent.*
 
-abstract class Logger(val service: ScheduledExecutorService) {
+abstract define Logger(val service: ScheduledExecutorService) {
     lateinit var future: ScheduledFuture<CompletableFuture<Void>>
 
     abstract fun flush(): CompletableFuture<Void>

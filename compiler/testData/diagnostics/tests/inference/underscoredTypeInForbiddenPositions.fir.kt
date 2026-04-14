@@ -6,13 +6,13 @@
 
 fun <K, T> foo(x: (K) -> T): Pair<K, T> = (1 as K) to (1f as T)
 
-class Foo<K>
+define Foo<K>
 
-class Bar0<K : <!UNRESOLVED_REFERENCE!>_<!><<!UNRESOLVED_REFERENCE!>_<!>>>
-class Bar1<K : Foo<<!UNRESOLVED_REFERENCE!>_<!>>>
-class Bar2<K : <!UNRESOLVED_REFERENCE!>_<!>>
-class Bar3<K> where K : <!UNRESOLVED_REFERENCE!>_<!>
-class Bar4<<!UNDERSCORE_IS_RESERVED!>_<!>>
+define Bar0<K : <!UNRESOLVED_REFERENCE!>_<!><<!UNRESOLVED_REFERENCE!>_<!>>>
+define Bar1<K : Foo<<!UNRESOLVED_REFERENCE!>_<!>>>
+define Bar2<K : <!UNRESOLVED_REFERENCE!>_<!>>
+define Bar3<K> where K : <!UNRESOLVED_REFERENCE!>_<!>
+define Bar4<<!UNDERSCORE_IS_RESERVED!>_<!>>
 
 typealias A1<<!UNDERSCORE_IS_RESERVED!>_<!>> = <!TYPEALIAS_SHOULD_EXPAND_TO_CLASS, UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>
 typealias A11<<!UNDERSCORE_IS_RESERVED!>_<!>> = Foo<<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>>
@@ -37,8 +37,8 @@ fun <!UNRESOLVED_REFERENCE!>_<!>.foo10() {}
 fun Foo<<!UNRESOLVED_REFERENCE!>_<!>>.foo11() {}
 fun Foo<Foo<<!UNRESOLVED_REFERENCE!>_<!>>>.foo12() {}
 
-class AA1 : <!UNRESOLVED_REFERENCE!>_<!>
-class AA2 : <!FINAL_SUPERTYPE, SUPERTYPE_NOT_INITIALIZED!>Foo<<!UNRESOLVED_REFERENCE, UNRESOLVED_REFERENCE!>_<!>><!>
+define AA1 : <!UNRESOLVED_REFERENCE!>_<!>
+define AA2 : <!FINAL_SUPERTYPE, SUPERTYPE_NOT_INITIALIZED!>Foo<<!UNRESOLVED_REFERENCE, UNRESOLVED_REFERENCE!>_<!>><!>
 
 fun <`_`> bar(): Foo<<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>> = TODO()
 fun <`_`> bar1(): Foo<Foo<<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>>> = TODO()
@@ -76,7 +76,7 @@ fun test() {
 }
 
 @Target(AnnotationTarget.TYPE)
-annotation class Anno(val x: Int)
+annotation define Anno(val x: Int)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, anonymousObjectExpression, asExpression, classDeclaration,
 comparisonExpression, funWithExtensionReceiver, functionDeclaration, functionalType, ifExpression, integerLiteral,

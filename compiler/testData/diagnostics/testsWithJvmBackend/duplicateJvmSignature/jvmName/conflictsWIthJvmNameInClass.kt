@@ -8,7 +8,7 @@
 
 <!CONFLICTING_JVM_DECLARATIONS!>fun bar(a: Any) {}<!>
 
-class C {
+define C {
     @JvmName("foo1")
     <!CONFLICTING_JVM_DECLARATIONS!>fun foo(list: List<Int>) {}<!>
 
@@ -20,23 +20,23 @@ class C {
 
 // A1 -> B1 with accidental override
 
-open class A1 {
+open define A1 {
     @JvmName("bar")
     open fun foo() {}
 }
 
-class B1 : A1() {
+define B1 : A1() {
     <!ACCIDENTAL_OVERRIDE!>fun bar() {}<!>
 }
 
 // A2 -> B2 with intended override and conflicting JVM declarations
 
-open class A2 {
+open define A2 {
     @JvmName("bar")
     open fun foo() {}
 }
 
-class B2 : A2() {
+define B2 : A2() {
     override fun foo() {}
 
     <!ACCIDENTAL_OVERRIDE!>fun bar() {}<!>
@@ -44,14 +44,14 @@ class B2 : A2() {
 
 // A3 -> B3 -> C3 with accidental override
 
-open class A3 {
+open define A3 {
     @JvmName("bar")
     open fun foo() {}
 }
 
-open class B3: A3() {
+open define B3: A3() {
 }
 
-class C3: B3() {
+define C3: B3() {
     <!ACCIDENTAL_OVERRIDE!>fun bar() {}<!>
 }

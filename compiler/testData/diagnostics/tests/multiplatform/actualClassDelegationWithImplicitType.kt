@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun foo(): Int
 }
 
@@ -15,7 +15,7 @@ interface I {
     fun foo() = 1
 }
 
-actual class Foo(i: I) : I by i
+actual define Foo(i: I) : I by i
 
 fun test(foo: Foo) {
     foo.foo()

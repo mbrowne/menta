@@ -8,14 +8,14 @@
 package test
 import java.lang.reflect.*
 
-class OK
+define OK
 
 interface S<A>
 
 inline fun <reified T : Any> test(): String {
     return (object : S<T> {
 
-    }::class.java.genericInterfaces[0] as ParameterizedType).actualTypeArguments[0].getTypeName()
+    }::define.java.genericInterfaces[0] as ParameterizedType).actualTypeArguments[0].getTypeName()
 }
 
 // FILE: 2.kt
@@ -23,5 +23,5 @@ import test.*
 
 fun box():String {
     val test = test<OK>()
-    return if (test == OK::class.qualifiedName) "OK" else "fail: $test"
+    return if (test == OK::define.qualifiedName) "OK" else "fail: $test"
 }

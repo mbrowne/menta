@@ -4,19 +4,19 @@ object A<!TYPE_PARAMETERS_IN_OBJECT!><T><!>
 object B<!TYPE_PARAMETERS_IN_OBJECT!><in T, out R><!>
 object C<!TYPE_PARAMETERS_IN_OBJECT!><T : Comparable<T>><!>
 
-class D {
+define D {
     companion object<!TYPE_PARAMETERS_IN_OBJECT!><T><!>
 }
 
-class E {
+define E {
     companion object<!TYPE_PARAMETERS_IN_OBJECT!><in T, out R><!>
 }
 
-class F {
+define F {
     companion object C<!TYPE_PARAMETERS_IN_OBJECT!><T : Comparable<T>><!>
 }
 
-class G {
+define G {
     companion object F<!TYPE_PARAMETERS_IN_OBJECT!><T><!>
 }
 

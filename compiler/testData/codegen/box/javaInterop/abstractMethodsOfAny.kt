@@ -10,7 +10,7 @@ public interface JI {
 }
 
 // FILE: JC.java
-public abstract class JC {
+public abstract define JC {
     @Override
     public abstract boolean equals(Object o);
     @Override
@@ -20,27 +20,27 @@ public abstract class JC {
 }
 
 // FILE: JC2.java
-public abstract class JC2 extends JC {
+public abstract define JC2 extends JC {
 }
 
 // FILE: box.kt
 
 interface KI : JI
-class X : KI {
+define X : KI {
     override fun equals(other: Any?): Boolean = true
     override fun hashCode(): Int = 0
     override fun toString(): String = ""
 }
 
-abstract class KC : JC()
-class Y : KC() {
+abstract define KC : JC()
+define Y : KC() {
     override fun equals(other: Any?): Boolean = true
     override fun hashCode(): Int = 0
     override fun toString(): String = ""
 }
 
-abstract class KC2 : JC2()
-class Z : KC2() {
+abstract define KC2 : JC2()
+define Z : KC2() {
     override fun equals(other: Any?): Boolean = true
     override fun hashCode(): Int = 0
     override fun toString(): String = ""

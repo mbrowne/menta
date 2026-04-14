@@ -5,7 +5,7 @@ interface Interface {
 }
 
 fun withLocalClasses(param: Int): Interface {
-    open class LocalBase {
+    open define LocalBase {
         open val param: Int
             get() = 100
     }

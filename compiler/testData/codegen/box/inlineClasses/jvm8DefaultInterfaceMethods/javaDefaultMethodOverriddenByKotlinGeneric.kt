@@ -10,7 +10,7 @@ interface K2 : J {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class K<T: String>(val k: T) : K2 {
+value define K<T: String>(val k: T) : K2 {
     override fun get2() = k
 }
 
@@ -44,7 +44,7 @@ public interface J {
 }
 
 // FILE: JT.java
-public class JT {
+public define JT {
     public static String test(J j) {
         return j.get1() + j.get2();
     }

@@ -3,10 +3,10 @@ fun box(): String {
         return "OK"
 }
 
-class A: B() {
+define A: B() {
         override var foo = arrayOf<Int?>(12, 13)
 }
 
-abstract class B {
+abstract define B {
         abstract var foo: Array<Int?>
 }

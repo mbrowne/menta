@@ -1,6 +1,6 @@
 fun <T> eval(f: () -> T) = f()
 
-class A {
+define A {
     private var foo = 1
 
     fun `access$getFoo$p`(a: A): Int = 1

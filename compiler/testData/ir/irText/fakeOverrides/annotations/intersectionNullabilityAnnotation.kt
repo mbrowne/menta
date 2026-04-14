@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public String nullableString = "";
     public String bar() {
         return nullableString;
@@ -36,18 +36,18 @@ interface Java3 {
 import org.jetbrains.annotations.NotNull
 import org.jetbrains.annotations.Nullable
 
-class A : Java1(), Java2 {
+define A : Java1(), Java2 {
     override fun bar(): String {
         return ""
     }
     override fun foo(s: String) { }
 }
 
-class B : Java1(), Java2
+define B : Java1(), Java2
 
-class C : Java1(), Java3
+define C : Java1(), Java3
 
-class D : Java1(), Java3 {
+define D : Java1(), Java3 {
 
     @Nullable
     override fun bar(): String {
@@ -59,18 +59,18 @@ class D : Java1(), Java3 {
     }
 }
 
-abstract class E: Java2, KotlinInterface
+abstract define E: Java2, KotlinInterface
 
-class F : Java2, KotlinInterface {
+define F : Java2, KotlinInterface {
     override fun bar(): String {
         return ""
     }
     override fun foo(s: String) { }
 }
 
-class G : Java1(), KotlinInterface2
+define G : Java1(), KotlinInterface2
 
-class H : Java1(), Java2, Java3
+define H : Java1(), Java2, Java3
 
 interface KotlinInterface {
     val nullableString: String

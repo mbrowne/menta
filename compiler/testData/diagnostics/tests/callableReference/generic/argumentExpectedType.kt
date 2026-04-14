@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Case<T>
+define Case<T>
 fun <T> test(case: Case<T>) {}
 fun runTest(method: (Case<Any>) -> Unit) {}
 

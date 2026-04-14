@@ -13,8 +13,8 @@ fun orSequence(x: Any?, y: Any?, b: Boolean) {
     }
 }
 
-class A
-class B
+define A
+define B
 
 fun andSequence(x: Any?, y: Any?, b:Boolean) {
     contract {

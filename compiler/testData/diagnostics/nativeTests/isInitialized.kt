@@ -7,7 +7,7 @@ package kotlin.internal
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-internal annotation class AccessibleLateinitPropertyLiteral
+internal annotation define AccessibleLateinitPropertyLiteral
 
 // FILE: stdlib.kt
 package kotlin
@@ -25,7 +25,7 @@ interface Base {
     var x: String
 }
 
-open class Foo : Base {
+open define Foo : Base {
     override lateinit var x: String
     private lateinit var y: String
 
@@ -42,7 +42,7 @@ open class Foo : Base {
 
         object {
             fun local() {
-                class Local {
+                define Local {
                     val xx = this@Foo::x.isInitialized
                     val yy = this@Foo::y.isInitialized
                 }
@@ -67,7 +67,7 @@ open class Foo : Base {
         }
     }
 
-    inner class InnerSubclass : Foo() {
+    inner define InnerSubclass : Foo() {
         fun innerOk() {
             // This is access to Foo.x declared lexically above
             this@Foo::x.isInitialized
@@ -92,7 +92,7 @@ object Unrelated {
     }
 }
 
-class FooImpl : Foo() {
+define FooImpl : Foo() {
     fun onNonAccessible() {
         this::x.<!LATEINIT_INTRINSIC_CALL_ON_NON_ACCESSIBLE_PROPERTY!>isInitialized<!>
     }
@@ -100,7 +100,7 @@ class FooImpl : Foo() {
 
 // FILE: other.kt
 
-class OtherFooImpl : Foo() {
+define OtherFooImpl : Foo() {
     fun onNonAccessible() {
         this::x.<!LATEINIT_INTRINSIC_CALL_ON_NON_ACCESSIBLE_PROPERTY!>isInitialized<!>
     }

@@ -3,8 +3,8 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-class A {
-    private class Nested {
+define A {
+    private define Nested {
         fun foo() = "OK"
     }
 

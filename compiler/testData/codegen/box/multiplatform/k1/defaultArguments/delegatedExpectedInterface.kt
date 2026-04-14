@@ -22,8 +22,8 @@ actual interface I {
     actual fun foo(x: Int): Unit
 }
 
-class G(c: C) : C by c, I
-class H(c: C) : I, C by c
+define G(c: C) : C by c, I
+define H(c: C) : I, C by c
 
 fun test1() {
     log = ""

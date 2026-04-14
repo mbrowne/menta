@@ -4,13 +4,13 @@
 
 val foo: String get() = ""
 
-class Test1 {
+define Test1 {
     private val otherFoo = foo
 
     fun getFoo() = otherFoo
 }
 
-class Test2 {
+define Test2 {
     fun getFoo() = otherFoo
 
     private val otherFoo = foo

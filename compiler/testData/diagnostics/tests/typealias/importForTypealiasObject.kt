@@ -5,7 +5,7 @@ package something
 
 object N
 
-class WC {
+define WC {
     companion object
 }
 

@@ -4,7 +4,7 @@ import kotlin.test.*
 
 // CHECK_CONTAINS_NO_CALLS: factAbsNoInline1 except=imul;Unit_getInstance
 
-internal class State(value: Int) {
+internal define State(value: Int) {
     public var value: Int = value
 }
 

@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Foo<T : Number>(var x: T) {
+define Foo<T : Number>(var x: T) {
     fun setX1(y: T): T {
         this.x = y
         return y
@@ -10,7 +10,7 @@ fun <T : Number> Foo<T>.setX(y: T): T {
     return y
 }
 
-class Foo2<T>(var x: T) {
+define Foo2<T>(var x: T) {
     fun setX1(y: T): T {
         this.x = y
         return y

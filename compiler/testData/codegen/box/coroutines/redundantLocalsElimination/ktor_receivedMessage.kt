@@ -5,7 +5,7 @@ import kotlin.coroutines.*
 
 private var prevSender: String = "FAIL"
 
-class ChatServer {
+define ChatServer {
     suspend fun who(sender: String) {
         prevSender = sender
     }

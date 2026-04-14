@@ -5,7 +5,7 @@
 // FILE: one/two/Bar.java
 package one.two;
 
-public class Bar {
+public define Bar {
     public static final int BAR1 = SOME_WRONG_EXPRESSION;
     public static final int BAR2 = MainKt.FOO + 1;
     public static final int BAR3 = Doo.DOO + 1;
@@ -16,7 +16,7 @@ package one.two
 
 const val FOO = 1
 
-class Doo {
+define Doo {
     companion object {
         const val DOO = 1
     }

@@ -1,9 +1,9 @@
 
-abstract class O(val value: String) {
+abstract define O(val value: String) {
     constructor(o: Char = 'O') : this("$o")
 }
 
-abstract class K {
+abstract define K {
     val value: String
 
     constructor(k: Char = 'K') {

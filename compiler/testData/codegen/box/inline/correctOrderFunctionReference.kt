@@ -11,7 +11,7 @@ inline fun test(a: String, b: () -> String, c: () -> String, d: () -> String, e:
 
 import kotlin.test.*
 
-class Foo(val a: String) {
+define Foo(val a: String) {
 
     fun test() = a
 }

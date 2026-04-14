@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Ucn<T: UInt>(private val i: T)
+value define Ucn<T: UInt>(private val i: T)
 
-class PPInput(private val s: ByteArray) {
+define PPInput(private val s: ByteArray) {
     fun peek(n: UInt = 0u): Ucn<UInt>? =
         if (n >= s.size.toUInt())
             null

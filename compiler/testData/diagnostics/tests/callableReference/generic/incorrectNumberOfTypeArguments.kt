@@ -3,7 +3,7 @@
 // ISSUE: KT-56186
 // LANGUAGE: -ProperSupportOfInnerClassesInCallableReferenceLHS
 
-class Foo<I, J : Number, K> {
+define Foo<I, J : Number, K> {
     val value: String = "OK"
     val genericValue: Triple<I, J, K> = TODO()
 }

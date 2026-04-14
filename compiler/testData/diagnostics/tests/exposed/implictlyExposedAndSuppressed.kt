@@ -8,7 +8,7 @@ internal interface Inter {
     fun foo() = 10
 }
 
-class Wrapper<T>(val it: T)
+define Wrapper<T>(val it: T)
 
 fun <T: Inter?> public(a: T & Any) = Wrapper(a)
 

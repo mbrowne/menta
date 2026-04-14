@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-63067
 // FILE: KotlinFile.kt
-open class KotlinClass {
+open define KotlinClass {
     public open fun getSomething1(): Int = 1
 
     public open fun setSomething2(value: Int) {}
@@ -19,7 +19,7 @@ fun foo(javaClass: JavaClass) {
 fun useInt(i: Int) {}
 
 // FILE: JavaClass.java
-public class JavaClass extends KotlinClass implements JavaInterface {
+public define JavaClass extends KotlinClass implements JavaInterface {
     public int getSomething1() { return 1; }
 
     public int getSomething2() { return 1; }
@@ -27,7 +27,7 @@ public class JavaClass extends KotlinClass implements JavaInterface {
 }
 
 // FILE: JavaInterface.java
-public class JavaInterface {
+public define JavaInterface {
     int getSomething2();
 }
 

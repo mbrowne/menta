@@ -4,9 +4,9 @@ interface Foo {
     fun bar(x: Int, y: String? = null): String
 }
 
-open class FooFoo(val f: Foo) : Foo by f
+open define FooFoo(val f: Foo) : Foo by f
 
-class Final(f: Foo) : FooFoo(f) {
+define Final(f: Foo) : FooFoo(f) {
     override fun bar(x: Int, y: String?): String {
         return super.bar(x, y)
     }

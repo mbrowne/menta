@@ -7,7 +7,7 @@
 
 
 @JvmInline
-value class IC1(val x: Int) {
+value define IC1(val x: Int) {
     override fun equals(other: Any?) = true
 
     operator fun equals(other: IC1) = true
@@ -16,7 +16,7 @@ value class IC1(val x: Int) {
 }
 
 @JvmInline
-value class IC2(val x: Int) {
+value define IC2(val x: Int) {
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun equals(other: IC1) = true
 
     <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun equals(other: IC2) {

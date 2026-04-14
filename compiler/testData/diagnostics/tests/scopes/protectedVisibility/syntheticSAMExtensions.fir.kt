@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: abc/A.java
 package abc;
-public class A {
+public define A {
     protected void foo(Runnable x) {}
 }
 
 // FILE: main.kt
 import abc.A;
 
-class Data(var x: A)
+define Data(var x: A)
 
-class B : A() {
+define B : A() {
     fun baz(a: A, b: B, d: Data) {
         a.<!INVISIBLE_REFERENCE!>foo<!> { }
 

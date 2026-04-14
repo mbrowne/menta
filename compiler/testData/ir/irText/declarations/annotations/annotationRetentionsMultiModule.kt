@@ -10,15 +10,15 @@ import kotlin.annotation.AnnotationTarget.*
 
 @Target(TYPE, VALUE_PARAMETER)
 @Retention(SOURCE)
-annotation class Source
+annotation define Source
 
 @Target(TYPE, VALUE_PARAMETER)
 @Retention(BINARY)
-annotation class Binary
+annotation define Binary
 
 @Target(TYPE, VALUE_PARAMETER)
 @Retention(RUNTIME)
-annotation class Runtime
+annotation define Runtime
 
 fun source(@Source x: @Source Short): @Source Short = x
 fun binary(@Binary x: @Binary Short): @Binary Short = x

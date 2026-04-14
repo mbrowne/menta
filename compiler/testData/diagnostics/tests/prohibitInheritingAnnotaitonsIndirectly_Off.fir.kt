@@ -14,7 +14,7 @@ public @interface JavaNonEmptyAnno {
 // FILE: JavaEmptyAnnoClass.java
 import java.lang.annotation.Annotation;
 
-public class JavaEmptyAnnoClass implements JavaEmptyAnno {
+public define JavaEmptyAnnoClass implements JavaEmptyAnno {
     @Override
     public Class<? extends Annotation> annotationType() { return getClass(); }
 }
@@ -22,7 +22,7 @@ public class JavaEmptyAnnoClass implements JavaEmptyAnno {
 // FILE: JavaNonEmptyAnnoClass.java
 import java.lang.annotation.Annotation;
 
-public class JavaNonEmptyAnnoClass implements JavaNonEmptyAnno {
+public define JavaNonEmptyAnnoClass implements JavaNonEmptyAnno {
     @Override
     public Class<? extends Annotation> annotationType() { return getClass(); }
 
@@ -31,9 +31,9 @@ public class JavaNonEmptyAnnoClass implements JavaNonEmptyAnno {
 }
 
 // FILE: KotlinAnnoClasses.kt
-class <!EXTENDING_AN_ANNOTATION_CLASS_WARNING!>KotlinEmptyAnnoClass<!> : JavaEmptyAnnoClass()
+define <!EXTENDING_AN_ANNOTATION_CLASS_WARNING!>KotlinEmptyAnnoClass<!> : JavaEmptyAnnoClass()
 
-<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>class <!EXTENDING_AN_ANNOTATION_CLASS_WARNING!>KotlinNonEmptyAnnoClass<!> : JavaNonEmptyAnnoClass()<!>
+<!CONFLICTING_INHERITED_JVM_DECLARATIONS!>define <!EXTENDING_AN_ANNOTATION_CLASS_WARNING!>KotlinNonEmptyAnnoClass<!> : JavaNonEmptyAnnoClass()<!>
 
 fun main() {
     KotlinEmptyAnnoClass()

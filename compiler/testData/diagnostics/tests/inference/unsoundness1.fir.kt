@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_TXT
 
-class A<T, F : T>
+define A<T, F : T>
 fun foo(a: A<*, in CharSequence>) {}
 fun <T, U> coerce(t: T): U {
     val constrain: Constrain<U, *, in T>? = null
@@ -9,9 +9,9 @@ fun <T, U> coerce(t: T): U {
     return bind.upcast(t)
 }
 
-class Constrain<A, B : A, C : B>
+define Constrain<A, B : A, C : B>
 
-class Bind<A, B : A, C : B>(val constrain: Constrain<A, B, C>?) {
+define Bind<A, B : A, C : B>(val constrain: Constrain<A, B, C>?) {
     fun upcast(c: C): A = c
 }
 

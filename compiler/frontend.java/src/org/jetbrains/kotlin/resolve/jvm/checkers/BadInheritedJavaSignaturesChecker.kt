@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.descriptors.ClassDescriptor
 import org.jetbrains.kotlin.descriptors.DeclarationDescriptor
 import org.jetbrains.kotlin.diagnostics.Errors
 import org.jetbrains.kotlin.load.java.DeprecationCausedByFunctionNInfo
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
 import org.jetbrains.kotlin.renderer.DescriptorRenderer
@@ -29,7 +29,7 @@ object BadInheritedJavaSignaturesChecker : DeclarationChecker {
         if (badSignatureOverriddenDescriptor != null) {
             val reportOn =
                 when (declaration) {
-                    is KtClass -> declaration.nameIdentifier ?: declaration.getClassOrInterfaceKeyword()
+                    is KtDefine -> declaration.nameIdentifier ?: declaration.getClassOrInterfaceKeyword()
                     is KtObjectDeclaration -> declaration.getObjectKeyword()
                     else -> null
                 } ?: declaration

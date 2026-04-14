@@ -1,8 +1,8 @@
-open class A {
+open define A {
     protected fun foo() = "OK"
 }
 
-class B {
+define B {
     companion object : A()
 
     fun bar() = foo()

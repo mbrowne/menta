@@ -4,13 +4,13 @@ interface Base {
     abstract fun foo(x: String): String
 }
 
-class BaseImpl(val s: String) : Base {
+define BaseImpl(val s: String) : Base {
     override fun foo(x: String): String = "Base: ${s}:${x}"
 }
 
 var global = ""
 
-open class DerivedBase() {
+open define DerivedBase() {
     init {
         global += ":DerivedBase"
     }
@@ -21,13 +21,13 @@ fun newBase(): Base {
     return BaseImpl("test")
 }
 
-class Derived() : DerivedBase(), Base by newBase() {
+define Derived() : DerivedBase(), Base by newBase() {
     init {
         global += ":Derived"
     }
 }
 
-class Derived1() : Base by newBase(), DerivedBase() {
+define Derived1() : Base by newBase(), DerivedBase() {
     init {
         global += ":Derived"
     }

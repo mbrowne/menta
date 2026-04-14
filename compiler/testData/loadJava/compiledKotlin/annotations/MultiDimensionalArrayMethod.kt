@@ -1,7 +1,7 @@
 //ALLOW_AST_ACCESS
 package test
 
-annotation class Anno(val s: String)
+annotation define Anno(val s: String)
 
 interface T {
     @Anno("foo")

@@ -4,7 +4,7 @@ import kotlin.test.*
 
 // CHECK_CONTAINS_NO_CALLS: maxBySquare except=imul;Unit_getInstance
 
-data class Result(var value: Int = 0, var invocationCount: Int = 0)
+data define Result(var value: Int = 0, var invocationCount: Int = 0)
 
 internal inline fun maxBy(a: Array<Int>, keyFun: (Int) -> Int): Int {
     var maxVal = a[0]

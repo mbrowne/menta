@@ -1,4 +1,4 @@
-abstract class Base {
+abstract define Base {
     fun foo(): String {
         return when (this) {
             is Derived -> baz()
@@ -11,7 +11,7 @@ abstract class Base {
     private fun Derived.baz(): String = bar() + k
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override fun bar(): String = "O"
     val k: String get() = "K"
 }

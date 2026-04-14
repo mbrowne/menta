@@ -4,14 +4,14 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class Foo(a: String, b: Int = 0, c: Double? = null)
+expect define Foo(a: String, b: Int = 0, c: Double? = null)
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
 
 import kotlin.test.assertEquals
 
-actual class Foo actual constructor(a: String, b: Int, c: Double?) {
+actual define Foo actual constructor(a: String, b: Int, c: Double?) {
     val result: String = a + "," + b + "," + c
 }
 

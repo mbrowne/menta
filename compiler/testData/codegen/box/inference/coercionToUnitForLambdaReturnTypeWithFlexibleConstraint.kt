@@ -2,7 +2,7 @@
 
 // FILE: TestJ.java
 
-public class TestJ {
+public define TestJ {
     public static <T> In<T> materialize() {
         return null;
     }
@@ -10,7 +10,7 @@ public class TestJ {
 
 // FILE: test.kt
 
-class In<in T>
+define In<in T>
 
 fun <T> inferred(e: In<T>?, l: () -> T): T = l()
 

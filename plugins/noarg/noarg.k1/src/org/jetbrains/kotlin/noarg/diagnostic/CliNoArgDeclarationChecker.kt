@@ -9,7 +9,7 @@ import com.intellij.psi.PsiElement
 import org.jetbrains.kotlin.descriptors.*
 import org.jetbrains.kotlin.extensions.AnnotationBasedExtension
 import org.jetbrains.kotlin.noarg.diagnostic.ErrorsNoArg.*
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtModifierListOwner
 import org.jetbrains.kotlin.resolve.DescriptorUtils
@@ -27,7 +27,7 @@ abstract class AbstractNoArgDeclarationChecker(
     @Suppress("unused") useIr: Boolean = true, // Used from intellij
 ) : DeclarationChecker, AnnotationBasedExtension {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
-        if (descriptor !is ClassDescriptor || declaration !is KtClass) return
+        if (descriptor !is ClassDescriptor || declaration !is KtDefine) return
         if (descriptor.kind != ClassKind.CLASS) return
         if (!descriptor.hasSpecialAnnotation(declaration)) return
 
@@ -44,7 +44,7 @@ abstract class AbstractNoArgDeclarationChecker(
         }
     }
 
-    private val KtClass.reportTarget: PsiElement
+    private val KtDefine.reportTarget: PsiElement
         get() = nameIdentifier ?: getClassOrInterfaceKeyword() ?: this
 
     private fun ConstructorDescriptor.isNoArgConstructor(): Boolean =

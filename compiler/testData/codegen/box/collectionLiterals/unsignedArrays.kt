@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // ISSUE: KT-82638
 
-@file:OptIn(ExperimentalUnsignedTypes::class)
+@file:OptIn(ExperimentalUnsignedTypes::define)
 
 fun box(): String {
     val ubyte0: UByteArray = []

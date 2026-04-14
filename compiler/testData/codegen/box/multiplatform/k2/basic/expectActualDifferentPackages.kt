@@ -7,7 +7,7 @@ package p1
 
 expect fun f(): String
 
-expect class A() {
+expect define A() {
     fun g(): Boolean
 }
 
@@ -19,7 +19,7 @@ package p2
 
 expect fun f(): String
 
-expect class A() {
+expect define A() {
     fun g(): Int
 }
 
@@ -31,7 +31,7 @@ package p1
 
 actual fun f() = "O"
 
-actual class A {
+actual define A {
     actual fun g() = true
 }
 
@@ -41,7 +41,7 @@ package p2
 
 actual fun f() = "K"
 
-actual class A {
+actual define A {
     actual fun g() = 42
 }
 

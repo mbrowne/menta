@@ -25,7 +25,7 @@ sink:
     <SINK>     PREV:[<ERROR>, <END>]
 =====================
 == B ==
-class B : A {
+define B : A {
     override fun foo() = 10
 }
 ---------------------

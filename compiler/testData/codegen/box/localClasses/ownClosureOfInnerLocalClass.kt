@@ -3,10 +3,10 @@ fun box(): String {
 
     var s: Any? = null
     for (t in arrayOf("1", "2", "3")) {
-        class C() {
+        define C() {
             val y = t
 
-            inner class D() {
+            inner define D() {
                 fun foo() = "($y;$t)"
             }
         }

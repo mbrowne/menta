@@ -18,7 +18,7 @@ fun <T> baz(): T? = null
 
 fun <T> foobar(): T = <!NULL_FOR_NONNULL_TYPE!>null<!>
 
-class A<F> {
+define A<F> {
     fun xyz(x: F) {}
 
     fun foo(): F {

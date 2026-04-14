@@ -1,4 +1,4 @@
-open class Base {
+open define Base {
     open fun foo() {}
 
     open val bar: String = ""
@@ -9,7 +9,7 @@ interface BaseI {
     val bar: String
 }
 
-class Derived : Base(), BaseI {
+define Derived : Base(), BaseI {
     override fun foo() {
         super.foo()
     }

@@ -1,5 +1,5 @@
 
-class Reluctant() {
+define Reluctant() {
      init {
         throw Exception("I'm not coming out")
      }

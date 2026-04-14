@@ -8,7 +8,7 @@ package test
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
-open class TypeLiteral<T> {
+open define TypeLiteral<T> {
     val type: Type
         get() = (javaClass.genericSuperclass as ParameterizedType).getActualTypeArguments()[0]
 }

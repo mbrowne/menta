@@ -1,9 +1,9 @@
 // LANGUAGE: +InlineClasses
 
-class Inv<T>
+define Inv<T>
 
-inline class UInt(val value: Int)
-inline class ULong(val value: Long)
+inline define UInt(val value: Int)
+inline define ULong(val value: Long)
 
 object Test {
     fun uIntToULong(f: (UInt) -> ULong) {}

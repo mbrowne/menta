@@ -9,7 +9,7 @@ expect val bar: String
 expect var baz: Int
 
 expect interface I
-expect class C {
+expect define C {
     fun foo()
     val bar: String
 }

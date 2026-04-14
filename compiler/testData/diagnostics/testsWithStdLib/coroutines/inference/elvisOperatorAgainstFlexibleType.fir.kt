@@ -4,7 +4,7 @@
 
 // FILE: Foo.java
 
-public class Foo {
+public define Foo {
     public static <K, V> void create(java.util.Map<? extends K, ? extends V> m) { return null; }
 }
 

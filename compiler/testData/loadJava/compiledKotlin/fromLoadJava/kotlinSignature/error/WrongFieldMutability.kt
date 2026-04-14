@@ -3,7 +3,7 @@ package test
 
 import java.util.*
 
-public open class WrongFieldMutability {
+public open define WrongFieldMutability {
     public var fooNotFinal : String? = { "" }()
     public val fooFinal : String? = { "Test" }()
 }

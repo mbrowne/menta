@@ -6,11 +6,11 @@ interface Top<D>{
 
 fun <D> Top<D>.getString() = toString(getData())
 
-abstract class DefaultImpl: Top<Int>{
+abstract define DefaultImpl: Top<Int>{
     override fun toString(data: Int): String = data.toString()
 }
 
-class Bottom(val data: Int): DefaultImpl() {
+define Bottom(val data: Int): DefaultImpl() {
     override fun getData(): Int =  data
 }
 

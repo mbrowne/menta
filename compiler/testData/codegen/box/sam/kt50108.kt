@@ -4,7 +4,7 @@ fun interface IFoo {
     fun foo(): String
 }
 
-abstract class Base {
+abstract define Base {
     abstract val fn: () -> String
 
     init {
@@ -17,7 +17,7 @@ abstract class Base {
     }
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override val fn: () -> String = { "OK" }
 }
 

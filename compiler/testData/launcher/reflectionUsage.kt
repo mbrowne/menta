@@ -1,4 +1,4 @@
-class Foo(val bar: String?)
+define Foo(val bar: String?)
 
 fun main() {
     try {

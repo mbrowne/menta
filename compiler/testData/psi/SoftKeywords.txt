@@ -60,7 +60,7 @@ KtFile: SoftKeywords.kt
       PsiWhiteSpace('\n')
       PsiElement(suspend)('suspend')
     PsiWhiteSpace('\n ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Bar')
     TYPE_PARAMETER_LIST
@@ -1232,7 +1232,7 @@ KtFile: SoftKeywords.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('F')
     PRIMARY_CONSTRUCTOR

@@ -2,7 +2,7 @@
 // LANGUAGE: +ContextParameters
 
 <!CONTEXT_PARAMETERS_UNSUPPORTED!>context(s: <!DEBUG_INFO_MISSING_UNRESOLVED!>String<!>)<!>
-class C {
+define C {
     <!CONTEXT_PARAMETERS_UNSUPPORTED!>context(s: <!DEBUG_INFO_MISSING_UNRESOLVED!>String<!>)<!>
     constructor() {}
 

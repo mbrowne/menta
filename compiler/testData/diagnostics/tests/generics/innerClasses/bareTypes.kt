@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Outer<E> {
-    inner class Inner<F, G> {
-        inner abstract class Inner2Base
-        inner class Inner2 : Inner2Base()
+define Outer<E> {
+    inner define Inner<F, G> {
+        inner abstract define Inner2Base
+        inner define Inner2 : Inner2Base()
 
-        inner abstract class Inner3Base<B>
-        inner class Inner3<H> : Inner3Base<H>()
+        inner abstract define Inner3Base<B>
+        inner define Inner3<H> : Inner3Base<H>()
     }
 
     fun foo(x: Outer<*>.Inner<*, *>.Inner2Base) {

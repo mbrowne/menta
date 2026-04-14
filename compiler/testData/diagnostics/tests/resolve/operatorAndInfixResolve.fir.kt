@@ -3,7 +3,7 @@
 // WITH_STDLIB
 import kotlin.reflect.KProperty
 
-class X(x: String) {
+define X(x: String) {
     companion object {
         operator fun get(x: String) {}
         operator fun get(x: X) = X
@@ -26,13 +26,13 @@ class X(x: String) {
 var Y = ""
 
 fun test() {
-    class X(y: Int)
-    class Y
+    define X(y: Int)
+    define Y
 
     X("")
     X(1)
 
-    // All the following usages of X must resolve to the local class because it's used
+    // All the following usages of X must resolve to the local define because it's used
     // as receiver.
     X.<!UNRESOLVED_REFERENCE!>get<!>("")
     X<!NO_GET_METHOD!>[""]<!>

@@ -1,5 +1,5 @@
 // SKIP_KT_DUMP
-class ObjectAssert<ACTUAL> {
+define ObjectAssert<ACTUAL> {
     fun describedAs(description: String?, vararg args: Any?): ObjectAssert<ACTUAL>? = null
 }
 

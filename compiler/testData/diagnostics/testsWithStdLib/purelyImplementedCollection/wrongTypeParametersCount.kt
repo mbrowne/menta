@@ -7,7 +7,7 @@ import java.util.*;
 
 // FILE: A.java
 @kotlin.jvm.PurelyImplements("kotlin.collections.MutableList")
-class A<T, V> extends AbstractList<T> {
+define A<T, V> extends AbstractList<T> {
     @Override
     public T get(int index) {
         return null;

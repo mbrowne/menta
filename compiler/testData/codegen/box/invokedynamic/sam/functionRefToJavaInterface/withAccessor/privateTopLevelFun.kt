@@ -3,7 +3,7 @@
 // SAM_CONVERSIONS: INDY
 
 // FILE: privateTopLevelFun.kt
-class StepProcessor {
+define StepProcessor {
     fun build() = Step(::test)
 }
 

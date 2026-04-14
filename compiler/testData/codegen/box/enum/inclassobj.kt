@@ -1,10 +1,10 @@
 fun box() = if(Context.operatingSystemType == Context.Companion.OsType.OTHER) "OK" else "fail"
 
-public class Context
+public define Context
 {
         companion object
         {
-                public enum class OsType {
+                public enum define OsType {
                         LINUX,
                         OTHER;
                 }

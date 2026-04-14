@@ -5,7 +5,7 @@
 // FILE: A.java
 import javax.annotation.*;
 
-public class A {
+public define A {
     @Nullable public String field = null;
 
     @Nullable

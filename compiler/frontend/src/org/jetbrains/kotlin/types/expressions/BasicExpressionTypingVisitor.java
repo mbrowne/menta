@@ -1503,7 +1503,7 @@ public class BasicExpressionTypingVisitor extends ExpressionTypingVisitor {
     }
 
     @Override
-    public KotlinTypeInfo visitClass(@NotNull KtClass klass, ExpressionTypingContext context) {
+    public KotlinTypeInfo visitDefine(@NotNull KtDefine klass, ExpressionTypingContext context) {
         // analyze class in illegal position and write descriptor to trace but do not write to any scope
         components.localClassifierAnalyzer.processClassOrObject(
                 null, context.replaceContextDependency(INDEPENDENT),

@@ -5,6 +5,7 @@
 
 package org.jetbrains.kotlin.fir.analysis.checkers.expression
 
+import org.jetbrains.kotlin.KtFakeSourceElementKind
 import org.jetbrains.kotlin.KtSourceElement
 import org.jetbrains.kotlin.descriptors.ClassKind
 import org.jetbrains.kotlin.diagnostics.DiagnosticReporter
@@ -45,7 +46,11 @@ object FirStandaloneQualifierChecker : FirResolvedQualifierChecker(MppCheckerKin
         when (this) {
             is FirRegularClassSymbol -> {
                 if (classKind == ClassKind.OBJECT) return
-                reporter.reportOn(source, FirErrors.NO_COMPANION_OBJECT, this)
+                if (source?.kind == KtFakeSourceElementKind.RolePlayerTypeCheck) {
+                    reporter.reportOn(source, FirErrors.ROLE_PLAYER_RESOLVES_TO_TYPE, name.asString())
+                } else {
+                    reporter.reportOn(source, FirErrors.NO_COMPANION_OBJECT, this)
+                }
             }
             is FirTypeAliasSymbol -> {
                 fullyExpandedClass()?.reportErrorOn(source)

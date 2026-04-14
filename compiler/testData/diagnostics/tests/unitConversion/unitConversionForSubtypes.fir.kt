@@ -4,8 +4,8 @@
 
 fun foo(f: (Int, String) -> Unit) {}
 
-abstract class SubInt : (Int, String) -> Int
-abstract class SubIntWrong : (String, String) -> Int
+abstract define SubInt : (Int, String) -> Int
+abstract define SubIntWrong : (String, String) -> Int
 
 fun test1(s: SubInt, sWrong: SubIntWrong) {
     foo(<!ARGUMENT_TYPE_MISMATCH!>s<!>)

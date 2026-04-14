@@ -9,9 +9,9 @@ public interface J<T> {
 
 // FILE: 1.kt
 
-class A
+define A
 
-class C : J<A> {
+define C : J<A> {
     override fun foo(a: A, list: List<Array<A>>?): String = "OK"
 }
 

@@ -2,12 +2,12 @@ interface IA {
     fun foo(): Any
 }
 
-open class B : IA {
+open define B : IA {
     override fun foo(): Any = "OK"
 }
-open class C : B(), IA
+open define C : B(), IA
 
-class D : C()
+define D : C()
 
 fun box(): String {
     val a: IA = D()

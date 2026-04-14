@@ -1,8 +1,8 @@
 // WITH_STDLIB
 
-open class Base(val bar: String)
+open define Base(val bar: String)
 
-class Foo(bar: String) : Base(bar) {
+define Foo(bar: String) : Base(bar) {
   fun something() = bar.uppercase()
 }
 

@@ -1,17 +1,17 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class A {
+define A {
     @JvmField val b = B()
 }
 
-class B {
+define B {
     @JvmField val c = C()
 
     @JvmField val result = "OK"
 }
 
-class C {
+define C {
     @JvmField var d = "Fail"
 }
 

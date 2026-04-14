@@ -1,8 +1,8 @@
 // FILE: lib.kt
-sealed class A {
-    class B : A()
+sealed define A {
+    define B : A()
 
-    class C : A()
+    define C : A()
 }
 
 inline fun foo(): A = A.B()

@@ -1,8 +1,8 @@
-class A {
+define A {
     var result1 = "Fail"
 }
 
-class B <T> {
+define B <T> {
     var result2 = "Fail"
 }
 

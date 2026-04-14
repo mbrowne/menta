@@ -2,8 +2,8 @@ interface Interface {
     var a: String
 }
 
-open class Open {
+open define Open {
     val a: String = "default"
 }
 
-class Impl : Open(), Interface
+define Impl : Open(), Interface

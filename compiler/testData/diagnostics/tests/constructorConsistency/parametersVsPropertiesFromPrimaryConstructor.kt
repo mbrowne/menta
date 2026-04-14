@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-58135
 
-class Test(
+define Test(
     val x: Int, // (1)
     y: Int // (2)
 ) {

@@ -7,7 +7,7 @@ import kotlin.reflect.KProperty
 val a: Int by Delegate()
     get
 
-class Delegate {
+define Delegate {
     operator fun getValue(t: Any?, p: KProperty<*>): Int {
         return 1
     }

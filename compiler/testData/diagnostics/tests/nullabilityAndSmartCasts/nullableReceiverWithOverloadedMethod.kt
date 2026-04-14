@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A {
+define A {
     fun f(x: Boolean): Int = 0
 
     fun f(y: String): Int = 0
 }
 
-class B {
+define B {
     private var a: A? = null
 
     fun takeInt(i: Int) {}

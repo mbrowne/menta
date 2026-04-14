@@ -34,7 +34,7 @@ val fns = arrayOf<Any>(::fn0, ::fn1, ::fn2, ::fn3, ::fn4, ::fn5, ::fn6, ::fn7, :
                        ::fn10, ::fn11, ::fn12, ::fn13, ::fn14, ::fn15, ::fn16, ::fn17, ::fn18, ::fn19,
                        ::fn20, ::fn21, ::fn22)
 
-abstract class TestFnBase(val type: String) {
+abstract define TestFnBase(val type: String) {
     abstract fun testGood(x: Any)
     abstract fun testBad(x: Any)
 

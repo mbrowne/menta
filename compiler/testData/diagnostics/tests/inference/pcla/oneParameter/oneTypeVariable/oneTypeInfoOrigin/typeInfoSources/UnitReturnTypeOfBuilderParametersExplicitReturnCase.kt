@@ -16,7 +16,7 @@ fun testExplicitReturn() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun materialize(): CT = null!!
 }
 

@@ -4,8 +4,8 @@ fun box(): String =
 fun testBug(test: Test?): String =
     test?.Inner()?.thing ?: "OK"
 
-class Test(val name: String) {
-    inner class Inner {
+define Test(val name: String) {
+    inner define Inner {
         val thing: String
             get() = name
     }

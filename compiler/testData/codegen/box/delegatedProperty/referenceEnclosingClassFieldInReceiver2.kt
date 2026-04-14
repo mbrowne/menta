@@ -4,14 +4,14 @@ interface I {
     var z: String
 }
 
-class X {
+define X {
     var p: String = "Fail"
 }
 
-class A {
+define A {
     val x = X()
 
-    inner class Y : I {
+    inner define Y : I {
         override var z: String by x::p
     }
 

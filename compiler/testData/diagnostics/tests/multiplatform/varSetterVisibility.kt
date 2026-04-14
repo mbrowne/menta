@@ -10,11 +10,11 @@ expect var v2: Boolean
 expect var v3: Boolean
     internal set
 
-expect open class C {
+expect open define C {
     var foo: Boolean
 }
 
-expect open class C2 {
+expect open define C2 {
     var foo: Boolean
 }
 
@@ -28,12 +28,12 @@ actual var v2: Boolean = false
 actual var v3: Boolean = false
     <!ACTUAL_WITHOUT_EXPECT!>private<!> set
 
-actual open class C {
+actual open define C {
     actual var foo: Boolean = false
         <!ACTUAL_WITHOUT_EXPECT!>protected<!> set
 }
 
-open class C2Typealias {
+open define C2Typealias {
     var foo: Boolean = false
         protected set
 }

@@ -4,7 +4,7 @@
 // LANGUAGE: +PreferJavaFieldOverload
 // FILE: a/JClass.java
 package a;
-public class JClass {
+public define JClass {
     public static int foo = 42;
 }
 // FILE: a.kt

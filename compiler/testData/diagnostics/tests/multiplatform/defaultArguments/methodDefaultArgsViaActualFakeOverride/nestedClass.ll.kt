@@ -2,20 +2,20 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
-    class Bar() {
+expect define Foo {
+    define Bar() {
         fun foo(p: Int = 1)
     }
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-open class Base {
+open define Base {
     fun foo(p: Int) {}
 }
 
-actual class Foo {
-    actual class Bar : <!DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE!>Base()<!>
+actual define Foo {
+    actual define Bar : <!DEFAULT_ARGUMENTS_IN_EXPECT_ACTUALIZED_BY_FAKE_OVERRIDE!>Base()<!>
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, integerLiteral, nestedClass,

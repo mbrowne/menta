@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-open class Super<T> {
-    inner open class Inner {
+open define Super<T> {
+    inner open define Inner {
     }
 }
 
-class Sub : Super<String>() {
-    inner class SubInner : Super<String>.Inner {
+define Sub : Super<String>() {
+    inner define SubInner : Super<String>.Inner {
         constructor()
         constructor(x: Int) : super() {}
     }

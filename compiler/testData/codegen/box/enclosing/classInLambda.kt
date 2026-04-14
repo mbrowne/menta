@@ -5,7 +5,7 @@
 fun box(): String {
 
     val lambda = {
-        class Z {}
+        define Z {}
         Z()
     }
 
@@ -15,10 +15,10 @@ fun box(): String {
     if (enclosingMethod?.getName() != "invoke") return "method: $enclosingMethod"
 
     val enclosingClass = classInLambda.javaClass.getEnclosingClass()!!.getName()
-    if (enclosingClass != "ClassInLambdaKt\$box\$lambda\$1") return "enclosing class: $enclosingClass"
+    if (enclosingClass != "ClassInLambdaKt\$box\$lambda\$1") return "enclosing define: $enclosingClass"
 
     val declaringClass = classInLambda.javaClass.getDeclaringClass()
-    if (declaringClass != null) return "class has a declaring class"
+    if (declaringClass != null) return "define has a declaring define"
 
     return "OK"
 }

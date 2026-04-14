@@ -1,6 +1,6 @@
 object A
 
-enum class En { X }
+enum define En { X }
 
 operator fun A.invoke(i: Int) = i
 operator fun En.invoke(i: Int) = i

@@ -13,7 +13,7 @@ public interface Super {
 
 package p
 
-class Sub : Super {
+define Sub : Super {
     val onlyInSub: Int = 1
     override fun getName(): String = ""
     override fun setName(name: String) {}

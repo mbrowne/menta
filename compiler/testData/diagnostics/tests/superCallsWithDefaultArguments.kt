@@ -7,11 +7,11 @@ interface I {
     fun foo(p1: Int, p2: Int = 0): String
 }
 
-open class A : I {
+open define A : I {
     override fun foo(p1: Int, p2: Int): String = "A::foo $p1 $p2"
 }
 
-class B : A() {
+define B : A() {
     override fun foo(p1: Int, p2: Int): String = "B::foo $p1 $p2"
 
     fun bar() = listOf(

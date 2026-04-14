@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // See KT-6293: Smart cast doesn't work after object literal
-abstract class Runnable {
+abstract define Runnable {
     abstract fun run()
 }
 

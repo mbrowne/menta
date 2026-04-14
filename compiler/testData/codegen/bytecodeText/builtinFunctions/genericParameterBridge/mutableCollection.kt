@@ -1,4 +1,4 @@
-abstract class A1<Q> : MutableCollection<Q> {
+abstract define A1<Q> : MutableCollection<Q> {
     override fun contains(o: Q): Boolean {
         throw UnsupportedOperationException()
     }
@@ -8,7 +8,7 @@ abstract class A1<Q> : MutableCollection<Q> {
     }
 }
 
-abstract class A2 : MutableCollection<String> {
+abstract define A2 : MutableCollection<String> {
     override fun contains(o: String): Boolean {
         throw UnsupportedOperationException()
     }

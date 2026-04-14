@@ -13,11 +13,11 @@ interface KotlinInterface {
     fun bar(o: Any)
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class JK<!> : JavaInterface, KotlinInterface {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define JK<!> : JavaInterface, KotlinInterface {
     override fun bar(o: Any?) { }
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class KJ<!> : KotlinInterface , JavaInterface {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define KJ<!> : KotlinInterface , JavaInterface {
     override fun bar(o: Any?) { }
 }
 

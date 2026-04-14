@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyList<T>(val v: T): List<T> {
+define MyList<T>(val v: T): List<T> {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(o: T): Boolean = false

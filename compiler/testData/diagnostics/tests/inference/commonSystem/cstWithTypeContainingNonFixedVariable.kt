@@ -3,8 +3,8 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
 
 fun <T> select(x: T, y: T): T = x
-open class Inv<K>
-class SubInv<V> : Inv<V>()
+open define Inv<K>
+define SubInv<V> : Inv<V>()
 
 fun testSimple() {
     val a0 = select(Inv<Int>(), SubInv())

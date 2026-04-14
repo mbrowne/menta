@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-66717
 
-abstract class C<T> {
+abstract define C<T> {
     protected abstract var x: T
 
     fun foo(y: T) {
@@ -14,7 +14,7 @@ interface I<T> {
         get() = TODO()
 }
 
-abstract class D : C<String>(), I<String> {
+abstract define D : C<String>(), I<String> {
 }
 
 fun main() {

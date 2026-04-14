@@ -15,7 +15,7 @@ open class CustomBytecodeTextTest : CodegenTestCase() {
         myFiles = CodegenTestFiles.create(
             "whenMappingOrder.kt",
             """
-            enum class MyEnum {
+            enum define MyEnum {
                 ENTRY1, ENTRY2, ENTRY3, ENTRY4
             }
 

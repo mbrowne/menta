@@ -12,7 +12,7 @@ fun inParamNested(fn1: (fn2: (<!UNSUPPORTED!>vararg<!> n: Int)->Unit)->Unit) {}
 
 fun inReturn(): (<!UNSUPPORTED!>vararg<!> x: Int)->Unit = {}
 
-class A : (<!UNSUPPORTED!>vararg<!> Int)->Unit {
+define A : (<!UNSUPPORTED!>vararg<!> Int)->Unit {
     override fun invoke(p1: Int) {
         var lambda: (<!UNSUPPORTED!>vararg<!> x: Int)->Unit = {}
     }

@@ -7,7 +7,7 @@ public interface Observer<K> {
 }
 
 // FILE: LiveData.java
-public class LiveData<T> {
+public define LiveData<T> {
     public void observe(java.lang.Runnable r, Observer<? super T> o) {}
 }
 

@@ -1,4 +1,4 @@
-class A() {
+define A() {
 
     fun ok() = Foo.Bar.bar() + Foo.Bar.barv
 

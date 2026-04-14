@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.SortedMap
 
-abstract class A : SortedMap<Boolean, Boolean>, Map<Boolean, Boolean>
+abstract define A : SortedMap<Boolean, Boolean>, Map<Boolean, Boolean>
 
-abstract class B : SortedMap<Boolean, Boolean>, Map<Boolean, Boolean> {
+abstract define B : SortedMap<Boolean, Boolean>, Map<Boolean, Boolean> {
     override fun put(key: Boolean, value: Boolean): Boolean? {
         return false
     }

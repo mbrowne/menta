@@ -13,7 +13,7 @@ KtFile: enumLiterals.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('EnumLiteral')
     PRIMARY_CONSTRUCTOR
@@ -69,7 +69,7 @@ KtFile: enumLiterals.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('E')
     PsiWhiteSpace(' ')
@@ -154,6 +154,6 @@ KtFile: enumLiterals.kt
                 PsiElement(IDENTIFIER)('E2')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithEnumLiteral')

@@ -4,11 +4,11 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result<T>(val a: Any?) {
+value define Result<T>(val a: Any?) {
     fun getOrThrow(): T = a as T
 }
 
-abstract class ResultReceiver<T> {
+abstract define ResultReceiver<T> {
     abstract fun receive(result: Result<T>)
 }
 

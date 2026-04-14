@@ -4,7 +4,7 @@
 
 package protectedPack;
 
-public class J {
+public define J {
     protected String foo = "OK";
 }
 

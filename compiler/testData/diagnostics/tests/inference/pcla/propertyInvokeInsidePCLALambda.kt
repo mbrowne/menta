@@ -6,7 +6,7 @@ interface Controller<E>
 
 fun <E1> generate(block: Controller<E1>.() -> Unit) {}
 
-class A
+define A
 
 fun foo(c: Controller<String>): A = TODO()
 

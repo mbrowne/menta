@@ -27,6 +27,6 @@ fun otherImpl(x0: String, y0: Int): IOther = object : IOther {
         set(value) {}
 }
 
-class Test1 : IBase by BaseImpl
+define Test1 : IBase by BaseImpl
 
-class Test2 : IBase by BaseImpl, IOther by otherImpl("", 42)
+define Test2 : IBase by BaseImpl, IOther by otherImpl("", 42)

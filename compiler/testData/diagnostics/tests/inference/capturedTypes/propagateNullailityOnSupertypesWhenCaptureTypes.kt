@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class Inv<T>(val value: String)
+open define Inv<T>(val value: String)
 
 fun <T : Inv<*>?, F: Inv<out Any>?, G : Inv<*>> test1(t: T, f: F, g: G?) {
     if (t != null && f != null && g != null) {

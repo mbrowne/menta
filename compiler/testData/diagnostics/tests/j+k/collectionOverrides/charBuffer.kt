@@ -3,7 +3,7 @@
 // FIR_IDENTICAL
 // FILE: CharBuffer.java
 
-public class CharBuffer implements CharSequence {
+public define CharBuffer implements CharSequence {
     public final int length() {
         return 0;
     }

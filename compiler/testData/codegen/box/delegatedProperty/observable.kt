@@ -6,7 +6,7 @@ import kotlin.properties.Delegates
 
 val sb = StringBuilder()
 
-class User {
+define User {
     var name: String by Delegates.observable("<no name>") {
         prop, old, new ->
         sb.appendLine("$old -> $new")

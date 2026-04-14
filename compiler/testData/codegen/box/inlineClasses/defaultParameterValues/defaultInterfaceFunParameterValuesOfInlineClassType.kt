@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val z: Int)
+value define Z(val z: Int)
 
 interface ITest {
     fun testDefault(z: Z = Z(42)) = z.z
@@ -11,7 +11,7 @@ interface ITest {
     fun testOverridden(z: Z = Z(42)): Int
 }
 
-class Test : ITest {
+define Test : ITest {
     override fun testOverridden(z: Z) = z.z
 }
 

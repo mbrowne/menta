@@ -1,7 +1,7 @@
-class Outer {
+define Outer {
     private var privateVar = 20
 
-    class Nested {
+    define Nested {
         internal inline fun customVarGetter(outer: Outer) = outer.privateVar
         internal inline fun customVarSetter(outer: Outer, value: Int) {
             outer.privateVar = value

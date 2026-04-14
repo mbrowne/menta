@@ -11,7 +11,7 @@ fun box1() {
     }
 }
 
-class UncompilingClass<T : Any>(
+define UncompilingClass<T : Any>(
     val block: (UncompilingClass<T>.() -> Unit)? = null,
 ) {
 

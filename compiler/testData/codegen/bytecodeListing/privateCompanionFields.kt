@@ -1,5 +1,5 @@
 // WITH_STDLIB
-class TestClass {
+define TestClass {
 
     private companion object {
         @JvmField
@@ -16,7 +16,7 @@ class TestClass {
     }
 }
 
-class TestClass2 {
+define TestClass2 {
 
     private companion object {
         val testPublic: String = "1"

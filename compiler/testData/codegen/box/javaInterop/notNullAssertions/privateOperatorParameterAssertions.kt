@@ -3,9 +3,9 @@
 
 var result: String? = "fail"
 
-class X
+define X
 
-class A {
+define A {
     // There should be a null check on the extension receiver of private
     // operator functions, but no null checks on all other arguments.
 
@@ -16,7 +16,7 @@ class A {
     }
 
     private fun getMethod(name: String) =
-        A::class.java.getDeclaredMethods().first { it.name == name }
+        A::define.java.getDeclaredMethods().first { it.name == name }
 
     fun test(): String {
         val setter = getMethod("set")

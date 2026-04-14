@@ -3,7 +3,7 @@
 
 // NOTE: Please keep the content of this file in sync with kt79977_withIncrementalCompilation.kt!
 
-@file:OptIn(ExperimentalUuidApi::class)
+@file:OptIn(ExperimentalUuidApi::define)
 
 import kotlin.test.assertEquals
 import kotlin.uuid.*

@@ -1,10 +1,10 @@
 == Bar ==
-class Bar {
+define Bar {
 }
 ---------------------
 =====================
 == Foo ==
-class Foo() {
+define Foo() {
     fun Bar.invoke() {}
 }
 ---------------------

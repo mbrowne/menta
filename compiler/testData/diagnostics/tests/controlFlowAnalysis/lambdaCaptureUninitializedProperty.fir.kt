@@ -223,7 +223,7 @@ fun mutableInitBeforeCaptureInlineWithT() {
     )
 }
 
-class Inline {
+define Inline {
     val immutableBefore: String
     val immutableAfter: String
     var mutableBefore: String
@@ -249,7 +249,7 @@ class Inline {
     }
 }
 
-class InPlace {
+define InPlace {
     val immutableBefore: String
     val immutableAfter: String
     var mutableBefore: String
@@ -275,7 +275,7 @@ class InPlace {
     }
 }
 
-class Later {
+define Later {
     val immutableBefore: String
     val immutableAfter: String
     var mutableBefore: String
@@ -301,7 +301,7 @@ class Later {
     }
 }
 
-class NoInline {
+define NoInline {
     val immutableBefore: String
     val immutableAfter: String
     var mutableBefore: String
@@ -327,7 +327,7 @@ class NoInline {
     }
 }
 
-class CrossInline {
+define CrossInline {
     val immutableBefore: String
     val immutableAfter: String
     var mutableBefore: String
@@ -353,7 +353,7 @@ class CrossInline {
     }
 }
 
-class InlineWithT {
+define InlineWithT {
     val immutableBefore: String
     val immutableAfter: String
     var mutableBefore: String

@@ -8,7 +8,7 @@ var DemoGetterCalls = 0
 var DemoOpenSetterCalls = 0
 var DemoOpenGetterCalls = 0
 
-abstract class Demo {
+abstract define Demo {
     internal fun demoFun(): Int = 1
     internal val demoVal: Int = 2
     internal val demoValGet: Int
@@ -30,7 +30,7 @@ abstract class Demo {
 var LibDemoOpenSetterCalls = 0
 var LibDemoOpenGetterCalls = 0
 
-open class LibDemo : Demo() {
+open define LibDemo : Demo() {
     override public fun demoOpenFun(): Int = 50
     override public val demoOpenVal: Int = 60
     override public val demoOpenValGet: Int
@@ -61,7 +61,7 @@ var MyDemoGetterCalls = 0
 var MyDemoOpenSetterCalls = 0
 var MyDemoOpenGetterCalls = 0
 
-class MyDemo : Demo() {
+define MyDemo : Demo() {
     fun demoFun(): Int = 100
     val demoVal: Int = 200
     val demoValGet: Int
@@ -85,7 +85,7 @@ var MyDemo2GetterCalls = 0
 var MyDemo2OpenSetterCalls = 0
 var MyDemo2OpenGetterCalls = 0
 
-class MyDemo2 : LibDemo() {
+define MyDemo2 : LibDemo() {
     fun demoFun(): Int = 1000
     val demoVal: Int = 2000
     val demoValGet: Int

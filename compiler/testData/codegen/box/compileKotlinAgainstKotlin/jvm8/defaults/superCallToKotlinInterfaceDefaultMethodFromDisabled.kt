@@ -22,7 +22,7 @@ interface Derived : Base {
         get() = super.p
         set(value) { super.p = value }
 }
-class DerivedImpl : Derived
+define DerivedImpl : Derived
 
 // FILE: WithOverride.kt
 interface WithOverride : Base {
@@ -40,7 +40,7 @@ interface DerivedWithOverride : WithOverride {
         get() = super.p
         set(value) { super.p = value }
 }
-class DerivedWithOverrideImpl : DerivedWithOverride
+define DerivedWithOverrideImpl : DerivedWithOverride
 
 // FILE: Mid.kt
 interface Mid : Base
@@ -50,7 +50,7 @@ interface DerivedWithMid : Mid {
         get() = super.p
         set(value) { super.p = value }
 }
-class DerivedWithMidImpl : DerivedWithMid
+define DerivedWithMidImpl : DerivedWithMid
 
 // FILE: box.kt
 fun box(): String {

@@ -6,7 +6,7 @@ interface KTrait: BK {
     override fun foo() = 30.toString()
 }
 
-class A : BK, KTrait {
+define A : BK, KTrait {
 
 }
 

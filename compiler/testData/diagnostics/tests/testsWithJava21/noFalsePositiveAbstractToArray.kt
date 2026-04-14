@@ -3,7 +3,7 @@
 // ISSUE: KT-60770
 
 // Should be no ABSTRACT_MEMBER_NOT_IMPLEMENTED
-class B<F> : List<F> {
+define B<F> : List<F> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

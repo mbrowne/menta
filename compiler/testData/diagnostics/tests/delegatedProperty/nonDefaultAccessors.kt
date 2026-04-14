@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // KT-11809 Assertion error when delegated property has getter
 
-class A {
+define A {
     val p1 by this
         get
 

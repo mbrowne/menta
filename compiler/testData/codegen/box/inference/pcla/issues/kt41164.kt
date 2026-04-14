@@ -7,7 +7,7 @@ interface MyProducerScope<in E>
 interface MyFlow<out T>
 
 fun <K> select(x: K, y: K): K = x
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> myCallbackFlow(block: MyProducerScope<T>.() -> Unit): MyFlow<T> = null!!
 fun MyProducerScope<*>.myAwaitClose(block: () -> Unit = {}) {}
 fun <E> myEmptyFlow(): MyFlow<E> = null!!

@@ -3,10 +3,10 @@
 // LANGUAGE: +ImplicitJvmExposeBoxed
 
 @JvmInline
-value class IntWrapper(val i: Int)
+value define IntWrapper(val i: Int)
 
-class Foo {
+define Foo {
     fun foo(): IntWrapper = IntWrapper(0)
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: Foo.class[foo-7j0DjTs], IntWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: Foo.define[foo-7j0DjTs], IntWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

@@ -12,7 +12,7 @@ object A {
     const val recursive1: Int = <!CONST_VAL_WITH_NON_CONST_INITIALIZER!>1 + B.recursive2<!>
 }
 
-class B {
+define B {
     companion object {
         const val boolVal = A.boolVal
         const val recursive2: Int = <!CONST_VAL_WITH_NON_CONST_INITIALIZER!>A.recursive1 + 2<!>

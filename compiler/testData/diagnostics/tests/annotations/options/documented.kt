@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @MustBeDocumented
-annotation class DocAnn
+annotation define DocAnn
 
-annotation class NotDocAnn
+annotation define NotDocAnn
 
-@DocAnn class My
+@DocAnn define My
 
-@NotDocAnn class Your
+@NotDocAnn define Your
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration */

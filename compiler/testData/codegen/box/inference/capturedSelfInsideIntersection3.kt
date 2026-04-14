@@ -19,7 +19,7 @@ fun foo(path: Path, e: Entity<*>): String {
     return "OK"
 }
 
-class EntityImpl : Entity<EntityImpl> {
+define EntityImpl : Entity<EntityImpl> {
     override fun <T : EntityImpl> isEqualTo(): T = this as T
     override fun foo(): String = "OK"
 }

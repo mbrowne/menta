@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My {
+define My {
     val x: Int
     init {
         var y: Int? = null

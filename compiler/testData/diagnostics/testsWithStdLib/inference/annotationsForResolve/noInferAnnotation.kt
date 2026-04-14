@@ -3,7 +3,7 @@
 
 // FILE: Java.java
 
-class Java {
+define Java {
     static <K> void g0(K k) { }
     static void g1(In<String> k) { }
 }
@@ -22,16 +22,16 @@ fun <T> test3(t1: @kotlin.internal.NoInfer T): T = t1
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 fun <T> test4(t1: T, t2: List<@kotlin.internal.NoInfer T>): T = t1
 
-class In<in T>
+define In<in T>
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 fun <E> id(e: E): In<@kotlin.internal.NoInfer E> = TODO()
 
 fun test5(x: In<String>) {}
 fun In<String>.test6() {}
 
-open class A
-class B : A()
-class Out<out T>
+open define A
+define B : A()
+define Out<out T>
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 fun <E> f2(e: E): Out<@kotlin.internal.NoInfer E> = TODO()
 fun <T> test7(t: T, x: Out<T>) {}

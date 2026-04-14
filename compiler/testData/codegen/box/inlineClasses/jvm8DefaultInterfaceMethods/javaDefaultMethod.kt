@@ -7,7 +7,7 @@
 // FILE: javaDefaultMethod.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class K(val k: String) : J {
+value define K(val k: String) : J {
     override fun get2() = k
 }
 
@@ -34,7 +34,7 @@ public interface J {
 }
 
 // FILE: JT.java
-public class JT {
+public define JT {
     public static String test(J j) {
         return j.get1() + j.get2();
     }

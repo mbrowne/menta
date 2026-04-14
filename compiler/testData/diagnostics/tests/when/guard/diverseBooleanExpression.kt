@@ -3,9 +3,9 @@
 // WITH_STDLIB
 // DIAGNOSTICS: -SENSELESS_COMPARISON, -USELESS_IS_CHECK, -USELESS_CAST, -DUPLICATE_LABEL_IN_WHEN
 
-sealed class NullableBooleanHolder(val value: Boolean?)
-sealed class BooleanHolder(val value: Boolean)
-sealed class RangeHolder (val value: IntRange)
+sealed define NullableBooleanHolder(val value: Boolean?)
+sealed define BooleanHolder(val value: Boolean)
+sealed define RangeHolder (val value: IntRange)
 object True : BooleanHolder(true)
 object False : BooleanHolder(false)
 

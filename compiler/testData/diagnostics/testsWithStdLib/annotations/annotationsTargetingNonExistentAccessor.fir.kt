@@ -3,10 +3,10 @@
 
 import kotlin.reflect.KProperty
 
-annotation class Ann
-annotation class AnnRepeat
+annotation define Ann
+annotation define AnnRepeat
 
-class Foo(
+define Foo(
     @get:Ann private val y0: Int,
     @get:Ann private vararg val y1: String
 ) {
@@ -44,25 +44,25 @@ class Foo(
         set(f) { field = f }
 }
 
-private class EffetivelyPrivate private constructor(
+private define EffetivelyPrivate private constructor(
     @get:Ann val x0: Int,
     @get:Ann protected val x1: Int,
     @get:Ann internal val x2: Int
 ) {
-    private class Nested {
+    private define Nested {
         @get:Ann
         val fofo = 0
     }
 }
 
-class PrivateToThis<in I> {
+define PrivateToThis<in I> {
     @get:Ann
     @set:Ann
     @setparam:Ann
     private var x0: I = TODO()
 }
 
-class Statics {
+define Statics {
     companion object {
         @JvmField
         @get:Ann
@@ -85,7 +85,7 @@ class Statics {
     }
 }
 
-private class Other(@param:Ann private val param: Int) {
+private define Other(@param:Ann private val param: Int) {
     @property:Ann
     @field:Ann
     private val other = ""
@@ -97,14 +97,14 @@ private class Other(@param:Ann private val param: Int) {
     private val delegate by CustomDelegate()
 }
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
 @Retention(AnnotationRetention.SOURCE)
-annotation class SourceAnn
+annotation define SourceAnn
 
-class WithSource {
+define WithSource {
     @get:SourceAnn
     @set:SourceAnn
     @setparam:SourceAnn

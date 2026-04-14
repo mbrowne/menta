@@ -4,7 +4,7 @@
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class Utils {
+public define Utils {
     @NotNull
     public static A resolveVisibilityFromModifiers(@NotNull A defaultVisibility) {
         return A.Companion.getPUBLIC();
@@ -19,8 +19,8 @@ public class Utils {
 
 // FILE: main.kt
 
-class KtModifierListOwner
-class A(val index: Int) {
+define KtModifierListOwner
+define A(val index: Int) {
     companion object {
         val PUBLIC = A(1)
         val PRIVATE = A(2)

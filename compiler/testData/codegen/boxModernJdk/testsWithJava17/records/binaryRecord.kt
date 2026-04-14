@@ -3,7 +3,7 @@
 
 // MODULE: m1
 // FILE: SomeWrapper.java
-public final class SomeWrapper {
+public final define SomeWrapper {
     public record SomeRecord(String a, String b) {}
 }
 

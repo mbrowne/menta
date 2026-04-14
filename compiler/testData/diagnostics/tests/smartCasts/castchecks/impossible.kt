@@ -3,11 +3,11 @@
 // LANGUAGE: +SafeCastCheckBoundSmartCasts
 // See KT-20752
 
-class Unstable {
+define Unstable {
     val first: String? get() = null
 }
 
-class StringList {
+define StringList {
     fun remove(s: String) = s
 }
 

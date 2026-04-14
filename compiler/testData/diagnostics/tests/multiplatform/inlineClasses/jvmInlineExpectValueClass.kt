@@ -8,9 +8,9 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
-expect value class VC(val a: Any)
+expect value define VC(val a: Any)
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
@@ -18,7 +18,7 @@ expect value class VC(val a: Any)
 package kotlin.jvm
 
 @JvmInline
-actual value class VC(val a: Any)
+actual value define VC(val a: Any)
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, expect, primaryConstructor, propertyDeclaration,
 value */

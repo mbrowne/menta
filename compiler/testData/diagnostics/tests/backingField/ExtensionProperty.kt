@@ -12,7 +12,7 @@ val String.bar: Int = <!PROPERTY_INITIALIZER_NO_BACKING_FIELD!>13<!>
     // Error
     get() = <!UNRESOLVED_REFERENCE!>field<!>
 
-class My {
+define My {
     val String.x: Int = <!PROPERTY_INITIALIZER_NO_BACKING_FIELD!>7<!>
         // Error
         get() = <!UNRESOLVED_REFERENCE!>field<!>

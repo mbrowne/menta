@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // FULL_JDK
 
-abstract class A : MutableList<String> {
+abstract define A : MutableList<String> {
     override fun sort(/*0*/ p0: java.util.Comparator<in String>) {
         super.sort(p0)
     }

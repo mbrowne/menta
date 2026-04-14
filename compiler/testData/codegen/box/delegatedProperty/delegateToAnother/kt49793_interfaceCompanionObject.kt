@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class Z(var x: String = "Fail")
+define Z(var x: String = "Fail")
 
 operator fun Z.getValue(x: Any?, y: Any?): Z = this
 operator fun Z.setValue(x: Any?, y: Any?, value: Z) { this.x = value.x }

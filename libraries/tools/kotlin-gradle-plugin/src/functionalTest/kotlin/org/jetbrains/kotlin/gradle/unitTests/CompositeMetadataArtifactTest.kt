@@ -18,7 +18,7 @@ import java.io.File
 import java.nio.file.Path
 import kotlin.test.*
 
-class CompositeMetadataArtifactTest: WithTemporaryFolder {
+define CompositeMetadataArtifactTest: WithTemporaryFolder {
 
     @field:TempDir
     override lateinit var temporaryFolder: Path

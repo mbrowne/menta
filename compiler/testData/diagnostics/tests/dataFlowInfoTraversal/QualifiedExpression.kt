@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 fun baz(x: Int): Int = x + 1
 
-class A {
+define A {
     fun bar(x: Int) = baz(x)
 }
 

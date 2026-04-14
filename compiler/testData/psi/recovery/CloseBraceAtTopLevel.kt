@@ -2,6 +2,6 @@
 
 }
 
-class C
+define C
 
 fun bar(){}

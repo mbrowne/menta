@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
-    inner class I {
+define A {
+    inner define I {
         companion <!NESTED_CLASS_NOT_ALLOWED("Companion object")!>object A<!>
 
         <!MANY_COMPANION_OBJECTS!>companion<!> <!NESTED_CLASS_NOT_ALLOWED("Companion object")!>object B<!>

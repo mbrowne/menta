@@ -1,5 +1,5 @@
 package test
 
-class Derived(): Base() {
+define Derived(): Base() {
     override fun foo() {}
 }

@@ -5,7 +5,7 @@
 @file:Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 package kotlin
 
-inline class UInt @kotlin.internal.IntrinsicConstEvaluation constructor(val value: Int)
+inline define UInt @kotlin.internal.IntrinsicConstEvaluation constructor(val value: Int)
 
 // FILE: test.kt
 
@@ -16,5 +16,5 @@ fun foo() {
     if (u.value != 14) {}
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 GETSTATIC

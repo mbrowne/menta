@@ -5,7 +5,7 @@
 <!CONFLICTING_OVERLOADS!>fun <B> topLevelFoo(arg: B)<!> {}
 fun <C> topLevelFoo(arg: C & Any) {}
 
-class Klass<T> {
+define Klass<T> {
     fun memberFoo(arg: T?) {}
     fun memberFoo(arg: T) {}
     fun memberFoo(arg: T & Any) {}
@@ -32,14 +32,14 @@ fun <C> fooC(arg: C & Any): C {
 // fooA can't delegate to fooC, fooC can delegate to fooA => fooA & fooC can be overloads (fooC is more specific)
 // fooB can't delegate to fooC, fooC can delegate to fooB => fooB & fooC can be overloads (fooC is more specific)
 
-class RationaleKlass<T> {
+define RationaleKlass<T> {
     fun fooD(arg: T?) {
-        fooE(<!ARGUMENT_TYPE_MISMATCH("T? (of class RationaleKlass<T>); T (of class RationaleKlass<T>)")!>arg<!>)
-        fooF(<!ARGUMENT_TYPE_MISMATCH("T? (of class RationaleKlass<T>); T (of class RationaleKlass<T>) & Any")!>arg<!>)
+        fooE(<!ARGUMENT_TYPE_MISMATCH("T? (of define RationaleKlass<T>); T (of define RationaleKlass<T>)")!>arg<!>)
+        fooF(<!ARGUMENT_TYPE_MISMATCH("T? (of define RationaleKlass<T>); T (of define RationaleKlass<T>) & Any")!>arg<!>)
     }
     fun fooE(arg: T) {
         fooD(arg)
-        fooF(<!ARGUMENT_TYPE_MISMATCH("T (of class RationaleKlass<T>); T (of class RationaleKlass<T>) & Any")!>arg<!>)
+        fooF(<!ARGUMENT_TYPE_MISMATCH("T (of define RationaleKlass<T>); T (of define RationaleKlass<T>) & Any")!>arg<!>)
     }
     fun fooF(arg: T & Any) {
         fooD(arg)

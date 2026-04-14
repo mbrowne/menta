@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 @kotlin.coroutines.RestrictsSuspension
-class RestrictedController {
+define RestrictedController {
     suspend fun member() {
         ext()
         member()

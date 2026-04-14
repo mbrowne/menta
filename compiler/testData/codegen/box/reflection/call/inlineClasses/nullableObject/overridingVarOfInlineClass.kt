@@ -11,7 +11,7 @@ interface ITest {
 }
 
 @JvmInline
-value class S(val x: String?) : ITest {
+value define S(val x: String?) : ITest {
     override var nonNullTest: S
         get() = S("${global.x}$x")
         set(value) {
@@ -26,7 +26,7 @@ value class S(val x: String?) : ITest {
 }
 
 @JvmInline
-value class Z(val x: Int) : ITest {
+value define Z(val x: Int) : ITest {
     override var nonNullTest: S
         get() = S("${global.x}$x")
         set(value) {
@@ -41,7 +41,7 @@ value class Z(val x: Int) : ITest {
 }
 
 @JvmInline
-value class A(val x: Any) : ITest {
+value define A(val x: Any) : ITest {
     override var nonNullTest: S
         get() = S("${global.x}$x")
         set(value) {

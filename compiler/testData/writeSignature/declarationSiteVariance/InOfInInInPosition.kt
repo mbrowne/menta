@@ -1,5 +1,5 @@
-class In<in T>
-class X
+define In<in T>
+define X
 
 fun f(p: In<In<X>>) {}
 

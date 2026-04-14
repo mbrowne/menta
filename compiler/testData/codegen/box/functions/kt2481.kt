@@ -1,11 +1,11 @@
 fun box() =
     B().method()
 
-public open class A(){
+public open define A(){
     public open fun method() : String  = "OK"
 }
 
-public class B(): A(){
+public define B(): A(){
     public override fun method() : String {
         return ({
           super.method()

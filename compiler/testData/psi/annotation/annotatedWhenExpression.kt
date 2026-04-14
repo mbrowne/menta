@@ -5,4 +5,4 @@ fun main() {
 
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.EXPRESSION)
-annotation class Ann
+annotation define Ann

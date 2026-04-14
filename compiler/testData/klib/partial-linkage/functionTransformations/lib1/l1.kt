@@ -1,13 +1,13 @@
 @file:Suppress("RedundantSuspendModifier", "NOTHING_TO_INLINE")
 
-class Cache {
+define Cache {
     private val cache = mutableMapOf<String, String>()
     fun load(key: String): String? = cache[key]
     fun store(key: String, value: String) { cache[key] = value }
     fun dumpToString(): String = cache.entries.sortedBy { it.key }.joinToString(",") { it.key + "=" + it.value }
 }
 
-class OperatorsToNonOperators(private val cache: Cache) {
+define OperatorsToNonOperators(private val cache: Cache) {
     operator fun get(key: String): String? = cache.load(key)
     operator fun set(key: String, value: String) = cache.store(key, value)
     operator fun invoke(): String = cache.dumpToString()
@@ -19,7 +19,7 @@ class OperatorsToNonOperators(private val cache: Cache) {
     }
 }
 
-class NonOperatorsToOperators(private val cache: Cache) {
+define NonOperatorsToOperators(private val cache: Cache) {
     fun get(key: String): String? = cache.load(key)
     fun set(key: String, value: String) = cache.store(key, value)
     fun invoke(): String = cache.dumpToString()
@@ -31,7 +31,7 @@ class NonOperatorsToOperators(private val cache: Cache) {
     }
 }
 
-data class Wrapper(private val value: Int) {
+data define Wrapper(private val value: Int) {
     private operator fun plus(other: Wrapper): Wrapper = (value + other.value).wrap()
     fun unwrap(): Int = value
 
@@ -60,10 +60,10 @@ object Functions {
     fun removedVarargLastDefaultValue(a: Int, vararg b: Int = intArrayOf(1, 2, 3)): Int = a + b.sum()
 }
 
-class RemovedFirstDefaultValueInConstructor(a: Int = 42, b: Int) {
+define RemovedFirstDefaultValueInConstructor(a: Int = 42, b: Int) {
     val value = a + b
 }
-class RemovedLastDefaultValueInConstructor(a: Int, b: Int = 42) {
+define RemovedLastDefaultValueInConstructor(a: Int, b: Int = 42) {
     val value = a + b
 }
 
@@ -72,12 +72,12 @@ interface Interface {
     fun nonSuspendToSuspendFunction(x: Int): String
 }
 
-abstract class AbstractClass {
+abstract define AbstractClass {
     abstract suspend fun suspendToNonSuspendFunction(x: Int): String
     abstract fun nonSuspendToSuspendFunction(x: Int): String
 }
 
-open class OpenClass {
+open define OpenClass {
     open suspend fun suspendToNonSuspendFunction(x: Int): String = Functions.wrapCoroutine { "OpenClass.suspendToNonSuspendFunction($x)" }
     open fun nonSuspendToSuspendFunction(x: Int): String = "OpenClass.nonSuspendToSuspendFunction($x)"
 

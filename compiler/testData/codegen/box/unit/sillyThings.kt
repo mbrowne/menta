@@ -7,7 +7,7 @@ fun zoot(): String {
     return "str"
 }
 
-class Blumbs {
+define Blumbs {
     var t: Unit = Unit
 }
 

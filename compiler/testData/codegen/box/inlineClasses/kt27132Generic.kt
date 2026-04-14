@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Ucn<T: UInt>(private val i: T)
+value define Ucn<T: UInt>(private val i: T)
 
 interface Input<T> {
     fun foo(n: Int = 0): T
@@ -11,7 +11,7 @@ interface Input<T> {
 
 fun Char.toUInt() = toInt().toUInt()
 
-class Kx(val x: UInt) : Input<Ucn<UInt>> {
+define Kx(val x: UInt) : Input<Ucn<UInt>> {
     override fun foo(n: Int): Ucn<UInt> =
         if (n < 0) Ucn(0u) else Ucn(x)
 }

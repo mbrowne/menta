@@ -2,9 +2,9 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class Box<E>(val x: E)
+define Box<E>(val x: E)
 
-class A<X, Y : Number> {
+define A<X, Y : Number> {
     context(Box<X>, Y)
     fun foo(): String = x.toString() + this@Y.toString()
 

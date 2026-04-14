@@ -221,12 +221,25 @@ private val KOTLIN_MARKER_INTERFACES: Map<FqName, String> = run {
     kotlinMarkerInterfaces
 }
 
+private const val MENTA_DYNAMIC_OBJECT_FQ_NAME_STR = "menta.dynamic.DynamicObject"
+
 internal fun IrTypeMapper.mapClassSignature(irClass: IrClass, type: Type, generateBodies: Boolean): JvmClassSignature {
     val sw = BothSignatureWriter(BothSignatureWriter.Mode.CLASS)
     writeFormalTypeParameters(irClass.typeParameters, sw)
 
     sw.writeSuperclass()
-    val superClassType = irClass.superTypes.find { it.getClass()?.isJvmInterface == false }
+    val nonInterfaceSupertypes = irClass.superTypes.filter { it.getClass()?.isJvmInterface == false }
+    // Prefer menta.dynamic.DynamicObject as superclass when present (define dynamic classes).
+    val superClassType = nonInterfaceSupertypes.firstOrNull { superType ->
+        val kls = superType.getClass()
+        if (kls != null) {
+            kls.classId?.asSingleFqName()?.asString() == MENTA_DYNAMIC_OBJECT_FQ_NAME_STR ||
+                kls.fqNameWhenAvailable?.asString() == MENTA_DYNAMIC_OBJECT_FQ_NAME_STR
+        } else {
+            // Fallback when supertype is from a dependency and owner may not be loaded
+            superType.render().contains(MENTA_DYNAMIC_OBJECT_FQ_NAME_STR)
+        }
+    } ?: nonInterfaceSupertypes.firstOrNull()
     val superClassAsmType = if (superClassType == null) {
         sw.writeClassBegin(AsmTypes.OBJECT_TYPE)
         sw.writeClassEnd()

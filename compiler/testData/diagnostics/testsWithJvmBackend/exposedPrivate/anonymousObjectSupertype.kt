@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private open class C {
+private open define C {
     val ok: String = "OK"
 }
 

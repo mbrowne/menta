@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,192): 'sealed interface Settings {'
+KtDefine(78,192): 'sealed interface Settings {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -661,7 +661,7 @@ KtStringTemplateExpression(463,473): '"Specific"'
 KtLiteralStringTemplateEntry(464,472): 'Specific'
   null
 
-KtClass(478,610): 'open class OpenSettings {'
+KtDefine(478,610): 'open class OpenSettings {'
   null
 
 KtDeclarationModifierList(478,482): 'open'

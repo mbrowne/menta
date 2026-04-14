@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -CAST_NEVER_SUCCEEDS -UNUSED_VARIABLE
 // FILE: Test.java
 
-class Test {
+define Test {
     static Number[] flexibleNumbers() {
         return null;
     }

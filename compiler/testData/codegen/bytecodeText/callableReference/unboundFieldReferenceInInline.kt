@@ -1,6 +1,6 @@
 // FILE: JClass.java
 
-public class JClass {
+public define JClass {
     public static int field;
 }
 

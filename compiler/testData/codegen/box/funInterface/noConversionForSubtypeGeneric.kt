@@ -10,7 +10,7 @@ fun interface SimpleRibCoroutineWorker<E> {
     suspend fun onStart(scope: E)
 }
 
-class FooWorker<F>(val s: String) : SimpleRibCoroutineWorker<F>, (String) -> Unit {
+define FooWorker<F>(val s: String) : SimpleRibCoroutineWorker<F>, (String) -> Unit {
     override suspend fun onStart(scope: F) {
     }
 

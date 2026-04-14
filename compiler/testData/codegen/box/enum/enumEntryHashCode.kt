@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-enum class E {
+enum define E {
     A, B
 }
 

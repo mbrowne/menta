@@ -3,12 +3,12 @@
 // ISSUE: KT-56386
 
 // FILE: Jaba.java
-public class Jaba {
+public define Jaba {
     public String a = "OK";
 }
 
 // FILE: test.kt
-class My : Jaba() {
+define My : Jaba() {
     private val <!PROPERTY_HIDES_JAVA_FIELD!>a<!>: String = "FAIL"
 
     operator fun plus(my: My) = my

@@ -2,7 +2,7 @@
 // SKIP_TXT
 // FILE: Api.java
 import org.jetbrains.annotations.NotNull;
-public abstract class Api<T> {
+public abstract define Api<T> {
     public abstract void typeOf(@NotNull T node);
 }
 

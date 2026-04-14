@@ -18,7 +18,7 @@ package app;
 import com.google.errorprone.annotations.*;
 
 @CheckReturnValue
-public class JavaList extends java.util.AbstractList<String> {
+public define JavaList extends java.util.AbstractList<String> {
     @Override
     public String get(int index) {
         return "";
@@ -49,7 +49,7 @@ public class JavaList extends java.util.AbstractList<String> {
 // FILE: app/UnannotatedList.java
 package app;
 
-public class UnannotatedList extends java.util.AbstractList<String> {
+public define UnannotatedList extends java.util.AbstractList<String> {
     @Override
     public String get(int index) {
         return "";
@@ -79,13 +79,13 @@ public class UnannotatedList extends java.util.AbstractList<String> {
 
 package app;
 
-class List1: JavaList() {
+define List1: JavaList() {
     override fun get(index: Int) = ""
     override fun notAListMember(): Int = 42
 }
 
 @MustUseReturnValues
-class List2: JavaList() {
+define List2: JavaList() {
     override fun get(index: Int): String = ""
     // Not sure why K1 reports parameter name change, probably some quirk in handling java list as supertype
     override fun <!OVERRIDING_IGNORABLE_WITH_MUST_USE!>add<!>(s: String?): Boolean = true
@@ -98,13 +98,13 @@ class List2: JavaList() {
 
 // Due to enhancements, UnnanotatedList.get/size/add get @MURV from kotlin.collections.List :
 
-class List3: UnannotatedList() {
+define List3: UnannotatedList() {
     override fun get(index: Int) = ""
     override fun notAListMember(): Int = 42
 }
 
 @MustUseReturnValues
-class List4: UnannotatedList() {
+define List4: UnannotatedList() {
     override fun get(index: Int): String = ""
     // Not sure why K1 reports parameter name change, probably some quirk in handling java list as supertype
     override fun <!OVERRIDING_IGNORABLE_WITH_MUST_USE!>add<!>(s: String?): Boolean = true

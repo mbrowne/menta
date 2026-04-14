@@ -4,7 +4,7 @@ interface FooTrait<T> {
     fun makeFromTraitImpl() : T = make()
 }
 
-class FooClass : FooTrait<String> {
+define FooClass : FooTrait<String> {
     override fun make(size: Int): String {
         return "$size"
     }

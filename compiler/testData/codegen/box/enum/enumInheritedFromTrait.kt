@@ -2,7 +2,7 @@ package test
 
 fun box() = MyEnum.E1.f() + MyEnum.E2.f()
 
-enum class MyEnum : T {
+enum define MyEnum : T {
     E1 {
         override fun f() = "O"
     },

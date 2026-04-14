@@ -6,7 +6,7 @@
 // FILE: Base.java
 import java.util.Set;
 
-public class Base {
+public define Base {
     public Set<Object> getDependsOn() {
         return null;
     }
@@ -15,7 +15,7 @@ public class Base {
 }
 
 // FILE: main.kt
-class Derived : Base() {
+define Derived : Base() {
     fun test(s: String) {
         this.dependsOn += s
     }

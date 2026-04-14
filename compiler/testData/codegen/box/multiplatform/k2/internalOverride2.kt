@@ -4,18 +4,18 @@
 // MODULE: common
 // FILE: common.kt
 
-open class A {
+open define A {
     internal open fun foo1() = "A::foo1"
     internal open fun foo2() = "A::foo2"
     internal open fun foo3() = "A::foo3"
 }
 
-expect open class B() : A {
+expect open define B() : A {
     internal override fun foo1(): String
     internal override fun foo2(): String
 }
 
-open class C : B() {
+open define C : B() {
     internal override fun foo1() = "C::foo1"
 }
 
@@ -23,7 +23,7 @@ open class C : B() {
 // MODULE: main()()(common)
 // FILE: main.kt
 
-actual open class B actual constructor() : A() {
+actual open define B actual constructor() : A() {
     internal actual override fun foo1() = "B::foo1"
     internal actual override fun foo2() = "B::foo2"
 }

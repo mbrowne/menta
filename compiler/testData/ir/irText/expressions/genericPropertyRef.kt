@@ -1,10 +1,10 @@
-class Value<T>(var value: T = null as T, var text: String? = null)
+define Value<T>(var value: T = null as T, var text: String? = null)
 
 val <T> Value<T>.additionalText by DVal(Value<T>::text)
 
 val <T> Value<T>.additionalValue by DVal(Value<T>::value)
 
-class DVal(val kmember: Any) {
+define DVal(val kmember: Any) {
     operator fun getValue(t: Any?, p: Any) = 42
 }
 

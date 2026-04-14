@@ -6,8 +6,8 @@ private interface Private
 
 inline fun public(arg: Any): Boolean = arg is <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_WARNING!>Private<!> // should be an error
 
-open class C {
-    protected class Protected
+open define C {
+    protected define Protected
 
     inline fun public(arg: Any): Boolean = arg is <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_WARNING!>Protected<!> // should be an error
     inline fun public2(): Any = <!PROTECTED_CONSTRUCTOR_CALL_FROM_PUBLIC_INLINE!>Protected<!>() // should be an error
@@ -17,10 +17,10 @@ fun <T> ignore() {}
 
 inline fun public() {
     ignore<<!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_WARNING!>Private<!>>() // should be an error
-    <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_WARNING!>Private<!>::class
+    <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_WARNING!>Private<!>::define
 }
 
-private class Private2 {
+private define Private2 {
     object Obj
 }
 
@@ -48,8 +48,8 @@ inline fun public3() {
     <!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE, NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>varProp<!> = null
 }
 
-private class A {
-    class B {
+private define A {
+    define B {
         companion object {
             fun foo() {}
         }
@@ -60,7 +60,7 @@ inline fun public4() {
     A.<!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>B<!>.<!NON_PUBLIC_CALL_FROM_PUBLIC_INLINE!>foo<!>()// should be an error
 }
 
-class C2 {
+define C2 {
     private val value = 4
     companion object {
         private fun foo() {}
@@ -74,7 +74,7 @@ class C2 {
 
 typealias C3TA = C3
 
-class C3 {
+define C3 {
     private companion object {
         fun foo() {}
     }
@@ -88,7 +88,7 @@ class C3 {
 }
 
 private object O {
-    class C
+    define C
 }
 
 inline fun public5() {

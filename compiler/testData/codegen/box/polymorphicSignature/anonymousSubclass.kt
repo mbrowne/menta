@@ -12,14 +12,14 @@ interface I {
     fun get(): String
 }
 
-class C {
+define C {
     fun run(i: I): String = i.get()
 }
 
 fun box(): String {
     val mh = MethodHandles.lookup().findVirtual(
-        C::class.java, "run",
-        MethodType.methodType(String::class.java, I::class.java)
+        C::define.java, "run",
+        MethodType.methodType(String::define.java, I::define.java)
     )
 
     try {

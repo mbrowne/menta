@@ -9,12 +9,12 @@
 package a
 
 @OptionalExpectation
-expect annotation class A(val x: Int)
+expect annotation define A(val x: Int)
 
 @OptionalExpectation
-expect annotation class B(val s: String) {
+expect annotation define B(val s: String) {
     @OptionalExpectation
-    annotation class C(val a: Boolean)
+    annotation define C(val a: Boolean)
 }
 
 // MODULE: library()()(common)
@@ -22,7 +22,7 @@ expect annotation class B(val s: String) {
 
 package a
 
-actual annotation class A(actual val x: Int)
+actual annotation define A(actual val x: Int)
 
 // MODULE: common2(common)
 // FILE: common2.kt
@@ -37,11 +37,11 @@ const val s = "OK"
 @B.C(true)
 fun ok() = "OK"
 
-expect annotation class C()
+expect annotation define C()
 
 @OptionalExpectation
-expect annotation class AnnWithOptionalExpectation(val c: C) {
-    annotation class NestedAnnWithOptionalExpectation(val c2: C)
+expect annotation define AnnWithOptionalExpectation(val c: C) {
+    annotation define NestedAnnWithOptionalExpectation(val c2: C)
 }
 
 // MODULE: main(library)()(common2)
@@ -51,7 +51,7 @@ package usage
 
 import a.A
 
-actual annotation class C()
+actual annotation define C()
 
 @A(42)
 fun box(): String = ok()

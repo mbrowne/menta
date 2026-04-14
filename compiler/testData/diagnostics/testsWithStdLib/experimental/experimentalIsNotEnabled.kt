@@ -4,7 +4,7 @@
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class Marker
+annotation define Marker
 
 @Marker
 fun f() {}
@@ -20,7 +20,7 @@ fun use2() {
     f()
 }
 
-@OptIn(Marker::class)
+@OptIn(Marker::define)
 fun use3() {
     f()
 }

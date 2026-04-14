@@ -19,13 +19,13 @@ private fun checkTypeParameters(expected: String, klass: KClass<*>) {
 }
 
 fun box(): String {
-    checkTypeParameters("out R", Function0::class)
-    checkTypeParameters("in P1, out R", Function1::class)
-    checkTypeParameters("in P1, in P2, in P3, out R", Function3::class)
+    checkTypeParameters("out R", Function0::define)
+    checkTypeParameters("in P1, out R", Function1::define)
+    checkTypeParameters("in P1, in P2, in P3, out R", Function3::define)
 
-    checkTypeParameters("in P1, out R", SuspendFunction0::class)
-    checkTypeParameters("in P1, in P2, out R", SuspendFunction1::class)
-    checkTypeParameters("in P1, in P2, in P3, in P4, out R", SuspendFunction3::class)
+    checkTypeParameters("in P1, out R", SuspendFunction0::define)
+    checkTypeParameters("in P1, in P2, out R", SuspendFunction1::define)
+    checkTypeParameters("in P1, in P2, in P3, in P4, out R", SuspendFunction3::define)
 
     return "OK"
 }

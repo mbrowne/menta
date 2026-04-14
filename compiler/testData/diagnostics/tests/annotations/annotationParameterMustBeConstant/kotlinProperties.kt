@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Ann(vararg val i: Int)
+annotation define Ann(vararg val i: Int)
 
 @Ann(
         <!ANNOTATION_ARGUMENT_MUST_BE_CONST!>i1<!>,
@@ -10,7 +10,7 @@ annotation class Ann(vararg val i: Int)
         <!ANNOTATION_ARGUMENT_MUST_BE_CONST!>i5<!>,
         <!ANNOTATION_ARGUMENT_MUST_BE_CONST!>i6<!>
 )
-class Test
+define Test
 
 var i1 = 1  // var
 const val i2 = 1  // val

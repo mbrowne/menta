@@ -4,6 +4,6 @@
 
 @RequiresOptIn
 @Retention(AnnotationRetention.BINARY)
-annotation class Marker
+annotation define Marker
 
 /* GENERATED_FIR_TAGS: annotationDeclaration */

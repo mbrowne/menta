@@ -1,8 +1,8 @@
-open class A<T : Number> {
+open define A<T : Number> {
     open fun foo(t: T) = "A"
 }
 
-class Z : A<Int>() {
+define Z : A<Int>() {
     override fun foo(t: Int) = "Z"
 }
 

@@ -9,8 +9,8 @@ interface Right<out B>: Either<Nothing, B> {
     val value: B
 }
 
-class C1(val v1: Int)
-class C2(val v2: Int)
+define C1(val v1: Int)
+define C2(val v2: Int)
 
 fun _is_l(e: Either<C1, C2>): Any {
     if (e !is Left) {

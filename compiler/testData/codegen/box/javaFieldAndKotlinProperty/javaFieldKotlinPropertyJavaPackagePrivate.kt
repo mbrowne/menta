@@ -9,26 +9,26 @@
 // FILE: Y.java
 package base;
 
-class Y {
+define Y {
     public String f = "OK";
 }
 
 // FILE: A.java
 package base;
 
-public class A extends Y {}
+public define A extends Y {}
 
 // FILE: B.kt
 package base
 
-open class B : A() {
+open define B : A() {
     private val f = "FAIL"
 }
 
 // FILE: C.java
 import base.B;
 
-public class C extends B {}
+public define C extends B {}
 
 // FILE: test.kt
 fun box(): String {

@@ -1,10 +1,10 @@
 // COMPILATION_ERRORS
 
 @`return` fun `package`() {
-  `class`()
+  `define`()
 }
 
-class `$`
-class `$$`
-class ` `
-class `1`
+define `$`
+define `$$`
+define ` `
+define `1`

@@ -2,7 +2,7 @@
 
 package example
 
-abstract class O<T> {
+abstract define O<T> {
     open fun <E : T> min(a: E, b: E, c: E, vararg rest: E): E {
         null!!
     }
@@ -14,7 +14,7 @@ package example
 
 import kotlin.Comparable
 
-class RNO : O<Comparable<*>> {
+define RNO : O<Comparable<*>> {
     private constructor()
 
     override fun <E : Comparable<*>> min(a: E, b: E, c: E, vararg rest: E): E {

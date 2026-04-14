@@ -30,7 +30,7 @@ KtFile: flow.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')
@@ -147,7 +147,7 @@ KtFile: flow.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('ExperimentalContracts')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
     PsiElement(fun)('fun')

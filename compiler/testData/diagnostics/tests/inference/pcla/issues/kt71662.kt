@@ -9,14 +9,14 @@ fun reproduce() {
     <!DEBUG_INFO_EXPRESSION_TYPE("GenericKlass<TypeArgument>")!>x<!>
 }
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
 
 fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
-class GenericKlass<GKT>(arg: GKT)
+define GenericKlass<GKT>(arg: GKT)
 object TypeArgument
 
 fun <PH> PH.fix() {}

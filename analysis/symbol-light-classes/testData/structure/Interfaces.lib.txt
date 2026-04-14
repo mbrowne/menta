@@ -1,5 +1,5 @@
 BaseInterface1.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: BaseInterface1
     qualifier: abc.BaseInterface1
@@ -16,7 +16,7 @@ BaseInterface1.class:
       ]
 
 BaseInterface2.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: BaseInterface2
     qualifier: abc.BaseInterface2
@@ -33,7 +33,7 @@ BaseInterface2.class:
       ]
 
 InterfaceWithBase.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: InterfaceWithBase
     qualifier: abc.InterfaceWithBase
@@ -56,7 +56,7 @@ InterfaceWithBase.class:
       ]
 
 InterfaceWithTransitive.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: InterfaceWithTransitive
     qualifier: abc.InterfaceWithTransitive
@@ -76,7 +76,7 @@ InterfaceWithTransitive.class:
       ]
 
 SingleInterface.class:
-  KtClass:
+  KtDefine:
     line: 6
     name: SingleInterface
     qualifier: abc.SingleInterface

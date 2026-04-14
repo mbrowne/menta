@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Foo<K>
+define Foo<K>
 
 fun <K> buildFoo(builderAction: Foo<K>.() -> Unit): Foo<K> = Foo()
 
-class Bar<K>
+define Bar<K>
 
 fun <K: Bar<N>, N: Bar<K>> Foo<K>.bar(x: Int = 1) {}
 

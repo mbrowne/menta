@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class Outer {
-    class Nested {
-        class NestedNested
+define Outer {
+    define Nested {
+        define NestedNested
     }
 
-    inner class Inner {
-        inner class InnerInner
+    inner define Inner {
+        inner define InnerInner
     }
 }
 

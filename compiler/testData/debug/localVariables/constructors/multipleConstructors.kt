@@ -1,7 +1,7 @@
 // FILE: test.kt
-open class Base(i: Int)
+open define Base(i: Int)
 
-class Derived(): Base(1) {
+define Derived(): Base(1) {
     constructor(p: Int): this() {
         val a = 2
     }

@@ -2,7 +2,7 @@
 // COMPARE_WITH_LIGHT_TREE
 package foo
 
-class X {}
+define X {}
 
 val s = <!EXPRESSION_EXPECTED_PACKAGE_FOUND!>java<!>
 val ss = <!NO_COMPANION_OBJECT!>System<!>

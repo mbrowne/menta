@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // KT-44496
 
-class C {
+define C {
     val todo: String = TODO()
 
     val uninitializedVal: String
@@ -9,7 +9,7 @@ class C {
     var uninitializedVar: String
 }
 
-class Foo {
+define Foo {
     init {
         TODO()
     }
@@ -19,7 +19,7 @@ class Foo {
     var uninitializedVar: String
 }
 
-class Bar {
+define Bar {
     val initializedVal = 43
 
     init {

@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S1(val s1: String)
+value define S1(val s1: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S2(val s2: String)
+value define S2(val s2: String)
 
 object X1
 object X2

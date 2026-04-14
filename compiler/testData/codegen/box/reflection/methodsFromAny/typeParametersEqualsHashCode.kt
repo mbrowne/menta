@@ -5,27 +5,27 @@
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class A<T>
-class B<T>
+define A<T>
+define B<T>
 
-class Fun {
+define Fun {
     fun <T> foo(): T = null!!
 }
 
-class Fourple<A, B, in C, out D>
+define Fourple<A, B, in C, out D>
 
 fun box(): String {
-    assertEquals(A::class.typeParameters, A::class.typeParameters)
-    assertEquals(A::class.typeParameters.single().hashCode(), A::class.typeParameters.single().hashCode())
+    assertEquals(A::define.typeParameters, A::define.typeParameters)
+    assertEquals(A::define.typeParameters.single().hashCode(), A::define.typeParameters.single().hashCode())
 
-    fun getFoo() = Fun::class.members.single { it.name == "foo" }
+    fun getFoo() = Fun::define.members.single { it.name == "foo" }
     assertEquals(getFoo().typeParameters, getFoo().typeParameters)
     assertEquals(getFoo().typeParameters.single().hashCode(), getFoo().typeParameters.single().hashCode())
 
-    assertNotEquals(A::class.typeParameters.single(), B::class.typeParameters.single())
+    assertNotEquals(A::define.typeParameters.single(), B::define.typeParameters.single())
 
-    val fi = Fourple::class.typeParameters
-    val fj = Fourple::class.typeParameters
+    val fi = Fourple::define.typeParameters
+    val fj = Fourple::define.typeParameters
     for (i in 0..fi.size - 1) {
         for (j in 0..fj.size - 1) {
             if (i == j) {

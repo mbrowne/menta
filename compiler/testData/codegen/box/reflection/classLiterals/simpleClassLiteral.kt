@@ -1,8 +1,8 @@
 // WITH_REFLECT
 // IGNORE_BACKEND: ANDROID
-class A
+define A
 
 fun box(): String {
-    val klass = A::class
-    return if (klass.toString() == "class A") "OK" else "Fail: $klass"
+    val klass = A::define
+    return if (klass.toString() == "define A") "OK" else "Fail: $klass"
 }

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class Checker<StateT>
+abstract define Checker<StateT>
 
-class ToolchainPanel {
+define ToolchainPanel {
     fun <ItemT> addVersionChecker(item: ItemT) {
-        class MyState(val selectedItem: ItemT?)
+        define MyState(val selectedItem: ItemT?)
         object : Checker<MyState>() {}
     }
 }

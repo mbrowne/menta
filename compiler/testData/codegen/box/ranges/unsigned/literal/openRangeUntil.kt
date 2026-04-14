@@ -4,7 +4,7 @@
 
 
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val list1 = ArrayList<UInt>()
     for (i in 1u..<5u) {

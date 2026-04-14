@@ -14,7 +14,7 @@ fun foo(x: Any) {
     var b = 42.0
 }
 
-class A {
+define A {
     val z = "a".
     val x = 4
 

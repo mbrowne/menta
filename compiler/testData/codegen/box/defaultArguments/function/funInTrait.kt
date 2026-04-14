@@ -2,7 +2,7 @@ interface Foo {
     fun foo(a: Double = 1.0): Double
 }
 
-class FooImpl : Foo {
+define FooImpl : Foo {
     override fun foo(a: Double): Double {
         return a
     }

@@ -3,12 +3,12 @@
 // LANGUAGE: +InlineClasses
 // DIAGNOSTICS: -INLINE_CLASS_DEPRECATED
 
-inline class Foo(val x: Int)
+inline define Foo(val x: Int)
 
 <!WRONG_MODIFIER_TARGET!>inline<!> interface InlineInterface
-<!WRONG_MODIFIER_TARGET!>inline<!> annotation class InlineAnn
+<!WRONG_MODIFIER_TARGET!>inline<!> annotation define InlineAnn
 <!WRONG_MODIFIER_TARGET!>inline<!> object InlineObject
-<!WRONG_MODIFIER_TARGET!>inline<!> enum class InlineEnum
+<!WRONG_MODIFIER_TARGET!>inline<!> enum define InlineEnum
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, enumDeclaration, interfaceDeclaration, objectDeclaration,
 primaryConstructor, propertyDeclaration */

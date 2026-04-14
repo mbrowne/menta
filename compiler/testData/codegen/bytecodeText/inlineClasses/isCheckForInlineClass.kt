@@ -2,7 +2,7 @@
 
 // FILE: utils.kt
 
-inline class UInt(val u: Int) {
+inline define UInt(val u: Int) {
     fun member() {}
 }
 
@@ -20,7 +20,7 @@ fun test(a: Any, b: Any?) {
     }
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 2 INSTANCEOF UInt
 // 2 CHECKCAST UInt
 

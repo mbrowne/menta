@@ -10,7 +10,7 @@ interface SuspendRunnable {
     suspend fun run()
 }
 
-class R : SuspendRunnable {
+define R : SuspendRunnable {
     override suspend fun run() {
         val sr: SuspendRunnable = inlineMe2 {
             StateMachineChecker.suspendHere()

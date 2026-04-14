@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A
+define A
 
 <!WRONG_EXTERNAL_DECLARATION!>external fun A.foo(): Unit<!> = definedExternally
 

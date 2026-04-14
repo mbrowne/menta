@@ -8,9 +8,9 @@ fun launch(block: suspend () -> String): String {
     return result
 }
 
-enum class E { A }
+enum define E { A }
 
-class C(val e: E) {
+define C(val e: E) {
     val result = launch {
         when (e) {
             E.A -> "OK"

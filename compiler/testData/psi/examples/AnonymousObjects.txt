@@ -131,7 +131,7 @@ KtFile: AnonymousObjects.kt
         MODIFIER_LIST
           PsiElement(enum)('enum')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('GodMessages')
         PsiWhiteSpace(' ')

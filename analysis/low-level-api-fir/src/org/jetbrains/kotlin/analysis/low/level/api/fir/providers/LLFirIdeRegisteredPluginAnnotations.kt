@@ -13,7 +13,7 @@ import org.jetbrains.kotlin.fir.extensions.AbstractFirRegisteredPluginAnnotation
 import org.jetbrains.kotlin.fir.extensions.AnnotationFqn
 import org.jetbrains.kotlin.name.ClassId
 import org.jetbrains.kotlin.name.FqName
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 
 internal class LLFirIdeRegisteredPluginAnnotations(
     session: FirSession,
@@ -50,7 +50,7 @@ internal class LLFirIdeRegisteredPluginAnnotations(
 
         return annotatedDeclarations
             .asSequence()
-            .filterIsInstance<KtClass>()
+            .filterIsInstance<KtDefine>()
             .filter { it.isAnnotation() && it.isTopLevel() }
             .mapNotNull { it.fqName }
             .toSet()

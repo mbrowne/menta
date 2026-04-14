@@ -29,7 +29,7 @@ fun decodeStringAndNumButNotInt(encoded: Any): String? {
 }
 
 
-enum class E {
+enum define E {
     Zero, One
 }
 

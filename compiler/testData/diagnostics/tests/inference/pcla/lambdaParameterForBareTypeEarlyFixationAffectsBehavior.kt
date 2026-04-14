@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // ISSUE: KT-64840
 
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
 }
 

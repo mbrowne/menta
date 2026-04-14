@@ -5,8 +5,8 @@
 import kotlin.reflect.KClass
 import kotlin.reflect.KProperty
 
-class Issue {
-    val strings by bidir_collection(String::class) {
+define Issue {
+    val strings by bidir_collection(String::define) {
         takeIssue(it) // Issue? instead of Issue
     }
 }
@@ -15,7 +15,7 @@ fun takeIssue(issue: Issue) {}
 
 fun <Self : Any, Target : Any> Self.bidir_collection(targetType: KClass<out Target>, f: (Self) -> Unit): Delegate<Self, Collection<Target>> = null!!
 
-class Delegate<R, T> {
+define Delegate<R, T> {
     operator fun getValue(thisRef: R, property: KProperty<*>): T {
         return null!!
     }

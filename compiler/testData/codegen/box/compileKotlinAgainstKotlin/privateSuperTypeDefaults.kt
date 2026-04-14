@@ -8,7 +8,7 @@ private interface I {
     fun k(s: String = "K") = s
 }
 
-class Z : I {
+define Z : I {
     val o = "O"
 }
 

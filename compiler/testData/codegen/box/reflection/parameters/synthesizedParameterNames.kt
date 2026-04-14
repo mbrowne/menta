@@ -3,14 +3,14 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public J(String constructorParam) {}
 
     public void foo(int methodParam) {}
 
     public static void bar(J staticMethodParam) {}
 
-    class Inner {
+    define Inner {
         public Inner(double innerParam, Object innerParam2) {}
     }
 
@@ -31,7 +31,7 @@ fun box(): String {
     assertEquals(listOf("arg0"), J::bar.parameters.map { it.name })
     assertEquals(listOf(null, "arg1", "arg2"), J::Inner.parameters.map { it.name })
 
-    assertEquals(listOf("arg2"), J.E::class.constructors.single().parameters.map { it.name })
+    assertEquals(listOf("arg2"), J.E::define.constructors.single().parameters.map { it.name })
 
     return "OK"
 }

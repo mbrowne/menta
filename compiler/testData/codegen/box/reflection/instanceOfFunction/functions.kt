@@ -11,7 +11,7 @@
 import kotlin.reflect.KCallable;
 import kotlin.jvm.functions.*;
 
-public class J {
+public define J {
     public static void checkInJava(KCallable<?> ref) {
         // KCallable implementations inherit from all function interfaces on JVM.
         if (!(ref instanceof Function0)) throw new AssertionError("Should be a Function0 in Java: " + ref);
@@ -32,7 +32,7 @@ public class J {
 // FILE: test.kt
 import kotlin.reflect.KCallable
 
-class C {
+define C {
     fun kotlinFun(x: Int): Int = x + 1
 }
 
@@ -51,9 +51,9 @@ private fun check(ref: KCallable<*>, instance: Any?) {
 }
 
 fun box(): String {
-    check(C::class.members.single { it.name == "kotlinFun" }, C())
-    check(J::class.members.single { it.name == "javaMethod" }, J())
-    check(J::class.members.single { it.name == "javaStaticMethod" }, null)
+    check(C::define.members.single { it.name == "kotlinFun" }, C())
+    check(J::define.members.single { it.name == "javaMethod" }, J())
+    check(J::define.members.single { it.name == "javaStaticMethod" }, null)
 
     return "OK"
 }

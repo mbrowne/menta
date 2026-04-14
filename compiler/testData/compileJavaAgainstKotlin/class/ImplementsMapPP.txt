@@ -4,8 +4,7 @@ public/*package*/ open class ImplementsMapPP {
     public/*package*/ constructor ImplementsMapPP()
 }
 
-public abstract class Mine</*0*/ P1, /*1*/ P2> : java.util.Map<P2, P1> {
-    public constructor Mine</*0*/ P1, /*1*/ P2>()
+public interface Mine</*0*/ P1, /*1*/ P2> : java.util.Map<P2, P1> {
     public abstract /*fake_override*/ fun clear(): kotlin.Unit
     public open /*fake_override*/ fun compute(/*0*/ P2, /*1*/ java.util.function.BiFunction<in P2, in P1?, out P1?>): P1?
     public open /*fake_override*/ fun computeIfAbsent(/*0*/ P2, /*1*/ java.util.function.Function<in P2, out P1>): P1

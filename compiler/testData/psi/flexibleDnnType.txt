@@ -11,7 +11,7 @@ KtFile: flexibleDnnType.kt
     MODIFIER_LIST
       PsiElement(abstract)('abstract')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('FlexibleDnnType')
     TYPE_PARAMETER_LIST
@@ -121,7 +121,7 @@ KtFile: flexibleDnnType.kt
       PsiWhiteSpace(' ')
       PsiElement(final)('final')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('JavaClass')
     PsiWhiteSpace(' ')

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,106): 'class MyClass {'
+KtDefine(0,106): 'class MyClass {'
   null
 
 KtClassBody(14,106): '{'
@@ -82,13 +82,13 @@ KtValueArgument(92,97): 'other'
 KtNameReferenceExpression(92,97): 'other'
   null
 
-KtClass(108,126): 'open class Another'
+KtDefine(108,126): 'open class Another'
   null
 
 KtDeclarationModifierList(108,112): 'open'
   null
 
-KtClass(128,244): 'class Child : Another() {'
+KtDefine(128,244): 'class Child : Another() {'
   null
 
 KtSuperTypeList(142,151): 'Another()'

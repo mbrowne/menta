@@ -2,7 +2,7 @@
 // MODULE: lib
 
 // FILE: A.kt
-abstract class A {
+abstract define A {
     private val x = object {
         fun foo() = "OK"
     }
@@ -13,7 +13,7 @@ abstract class A {
 // MODULE: main(lib)
 // FILE: B.kt
 
-class B : A() {
+define B : A() {
     val z = y
 }
 

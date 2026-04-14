@@ -16,7 +16,7 @@ private val withTwoSupertypes by lazy {
     object : First, Second { }
 }
 
-class A<T> {
+define A<T> {
     val a: First by lazy {
         object : First { }
     }

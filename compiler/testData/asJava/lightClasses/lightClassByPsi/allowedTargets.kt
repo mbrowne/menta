@@ -1,28 +1,28 @@
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyAnnotation
+annotation define PropertyAnnotation
 
 @Target(AnnotationTarget.FIELD)
-annotation class FieldAnnotation
+annotation define FieldAnnotation
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class ParameterAnnotation
+annotation define ParameterAnnotation
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FIELD)
-annotation class PropertyOrFieldAnnotation
+annotation define PropertyOrFieldAnnotation
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.VALUE_PARAMETER)
-annotation class PropertyOrParameterAnnotation
+annotation define PropertyOrParameterAnnotation
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.VALUE_PARAMETER)
-annotation class ParameterOrFieldAnnotation
+annotation define ParameterOrFieldAnnotation
 
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FIELD, AnnotationTarget.VALUE_PARAMETER)
-annotation class UniversalAnnotation
+annotation define UniversalAnnotation
 
-annotation class AnotherUniversalAnnotation
+annotation define AnotherUniversalAnnotation
 
 
-class MyClass(
+define MyClass(
     @PropertyAnnotation @FieldAnnotation @ParameterAnnotation @UniversalAnnotation @AnotherUniversalAnnotation val x1: Int,
     @PropertyOrFieldAnnotation val x2: Int,
     @PropertyOrParameterAnnotation val x3: Int,

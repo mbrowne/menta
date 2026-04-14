@@ -1,6 +1,6 @@
 package test
 
-class WithClassObject {
+define WithClassObject {
   companion object {
   }
 }

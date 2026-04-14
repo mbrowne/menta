@@ -1,6 +1,6 @@
 // FILE: test.kt
 
-class C {
+define C {
     fun Any?.f() {
         if (this == null) return
 

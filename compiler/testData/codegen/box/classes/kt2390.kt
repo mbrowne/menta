@@ -1,8 +1,8 @@
 
-class JsonObject() {
+define JsonObject() {
 }
 
-class JsonArray() {
+define JsonArray() {
 }
 
 public interface Formatter<in IN: Any, out OUT: Any> {
@@ -13,7 +13,7 @@ public interface MultiFormatter <in IN: Any, out OUT: Any> {
     public fun format(source: Collection<IN>): OUT
 }
 
-public class Project() {
+public define Project() {
 }
 
 public interface JsonFormatter<in IN: Any>: Formatter<IN, JsonObject>, MultiFormatter<IN, JsonArray> {
@@ -22,7 +22,7 @@ public interface JsonFormatter<in IN: Any>: Formatter<IN, JsonObject>, MultiForm
     }
 }
 
-public class ProjectJsonFormatter(): JsonFormatter<Project> {
+public define ProjectJsonFormatter(): JsonFormatter<Project> {
    public override fun format(source: Project?): JsonObject {
         return JsonObject()
     }

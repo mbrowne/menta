@@ -20,7 +20,7 @@ public interface JI {
 
 import java.util.List;
 
-public class JC implements JI {
+public define JC implements JI {
     public List<String> foo() {
         return null;
     }
@@ -38,7 +38,7 @@ public class JC implements JI {
 
 import java.util.List;
 
-public class JKC implements KI {
+public define JKC implements KI {
     public List<String> foo() {
         return null;
     }
@@ -64,7 +64,7 @@ interface KI {
 
 // FILE: KC.kt
 
-class KC : KI {
+define KC : KI {
     <!CONFLICTING_OVERLOADS!><!NOTHING_TO_OVERRIDE!>override<!> fun foo(): List<String><!> = emptyList()
 
     <!CONFLICTING_OVERLOADS!><!NOTHING_TO_OVERRIDE!>override<!> fun baz(): Any<!> = 42
@@ -74,7 +74,7 @@ class KC : KI {
 
 // FILE: KJC.kt
 
-class KJC : JI {
+define KJC : JI {
     <!CONFLICTING_OVERLOADS!><!NOTHING_TO_OVERRIDE!>override<!> fun foo(): List<String><!> = emptyList()
 
     <!CONFLICTING_OVERLOADS!><!NOTHING_TO_OVERRIDE!>override<!> fun baz(): Any<!> = 42
@@ -84,15 +84,15 @@ class KJC : JI {
 
 // FILE: test.kt
 
-class C1(client: JC) : JI by client
+define C1(client: JC) : JI by client
 
-class C2(client: KC) : KI by client
+define C2(client: KC) : KI by client
 
-class C3(client: KJC) : JI by client
+define C3(client: KJC) : JI by client
 
-class C4(client: JKC) : KI by client
+define C4(client: JKC) : KI by client
 
-class C5(client: JC) : JI by client {
+define C5(client: JC) : JI by client {
     override fun <C> foo(): List<C> {
         return emptyList()
     }
@@ -106,7 +106,7 @@ class C5(client: JC) : JI by client {
     }
 }
 
-class C6(client: JKC) : KI by client{
+define C6(client: JKC) : KI by client{
     override fun <C> foo(): List<C> {
         return null!!
     }

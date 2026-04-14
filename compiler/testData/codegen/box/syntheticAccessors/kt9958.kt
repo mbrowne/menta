@@ -4,7 +4,7 @@ package a
 
 import b.*
 
-class B {
+define B {
     companion object : A() {}
 
     init {
@@ -23,7 +23,7 @@ package b
 
 var result = "fail"
 
-abstract class A {
+abstract define A {
     protected fun foo() {
         result = "OK"
     }

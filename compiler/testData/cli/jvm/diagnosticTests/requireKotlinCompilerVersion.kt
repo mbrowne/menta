@@ -7,7 +7,7 @@
 //import kotlin.internal.RequireKotlinVersionKind
 //
 //@RequireKotlin("9.9.90", versionKind = RequireKotlinVersionKind.COMPILER_VERSION)
-//class Foo
+//define Foo
 
 import test.access.Foo
 

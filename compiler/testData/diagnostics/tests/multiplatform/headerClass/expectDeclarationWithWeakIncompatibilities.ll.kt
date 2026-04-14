@@ -4,14 +4,14 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo1
-expect class Foo2
+expect define Foo1
+expect define Foo2
 
 expect fun foo2(): Int
 
 expect val s: String
 
-expect open class Foo3
+expect open define Foo3
 
 // MODULE: m2-jvm()()(m1-common)
 
@@ -24,9 +24,9 @@ actual var <!EXPECT_ACTUAL_INCOMPATIBLE_PROPERTY_KIND!>s<!>: String = "value"
 
 fun <!ACTUAL_MISSING!>foo2<!>(): Int = 0
 
-actual class <!CLASSIFIER_REDECLARATION, EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>Foo3<!>
+actual define <!CLASSIFIER_REDECLARATION, EXPECT_ACTUAL_INCOMPATIBLE_MODALITY!>Foo3<!>
 
-class <!ACTUAL_MISSING, CLASSIFIER_REDECLARATION!>Foo3<!>
+define <!ACTUAL_MISSING, CLASSIFIER_REDECLARATION!>Foo3<!>
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, integerLiteral, interfaceDeclaration,
 propertyDeclaration, stringLiteral */

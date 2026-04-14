@@ -1,4 +1,4 @@
-annotation class Foo(val s: String)
+annotation define Foo(val s: String)
 
 @Foo("...")
-class ExtraAnnotations
+define ExtraAnnotations

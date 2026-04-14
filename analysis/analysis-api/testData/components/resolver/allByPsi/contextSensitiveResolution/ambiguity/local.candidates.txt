@@ -10,7 +10,7 @@ KtNameReferenceExpression(67,70): 'foo'
 KtImportList(70,70): ''
   NO_CANDIDATES
 
-KtClass(72,402): 'sealed class Sealed {'
+KtDefine(72,402): 'sealed class Sealed {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(72,78): 'sealed'
@@ -78,7 +78,7 @@ KtNameReferenceExpression(114,120): 'Sealed'
 KtValueArgumentList(120,122): '()'
   NO_CANDIDATES
 
-KtClass(127,162): 'data class B(val x: Int) : Sealed()'
+KtDefine(127,162): 'data class B(val x: Int) : Sealed()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(127,131): 'data'
@@ -214,7 +214,7 @@ KtNameReferenceExpression(183,189): 'Sealed'
 KtValueArgumentList(189,191): '()'
   NO_CANDIDATES
 
-KtClass(196,231): 'data class D(val y: Int) : Sealed()'
+KtDefine(196,231): 'data class D(val y: Int) : Sealed()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(196,200): 'data'
@@ -291,7 +291,7 @@ KtNameReferenceExpression(223,229): 'Sealed'
 KtValueArgumentList(229,231): '()'
   NO_CANDIDATES
 
-KtClass(236,286): 'data class String(val t: kotlin.String) : Sealed()'
+KtDefine(236,286): 'data class String(val t: kotlin.String) : Sealed()'
   NO_CANDIDATES
 
 KtDeclarationModifierList(236,240): 'data'
@@ -551,7 +551,7 @@ KtNameReferenceExpression(425,428): 'Int'
 KtBlockExpression(429,619): '{'
   NO_CANDIDATES
 
-KtClass(435,442): 'class B'
+KtDefine(435,442): 'class B'
   NO_CANDIDATES
 
 KtProperty(447,470): 'val CompanionB: Int = 0'
@@ -738,7 +738,7 @@ KtNameReferenceExpression(648,651): 'Int'
 KtBlockExpression(652,877): '{'
   NO_CANDIDATES
 
-KtClass(658,665): 'class B'
+KtDefine(658,665): 'class B'
   NO_CANDIDATES
 
 KtProperty(670,693): 'val CompanionB: Int = 0'
@@ -994,7 +994,7 @@ KtWhenEntry(858,869): 'else -> 100'
 KtConstantExpression(866,869): '100'
   NO_CANDIDATES
 
-KtClass(879,1859): 'class Test {'
+KtDefine(879,1859): 'class Test {'
   NO_CANDIDATES
 
 KtClassBody(890,1859): '{'
@@ -1003,7 +1003,7 @@ KtClassBody(890,1859): '{'
 KtObjectDeclaration(896,904): 'object A'
   NO_CANDIDATES
 
-KtClass(909,916): 'class B'
+KtDefine(909,916): 'class B'
   NO_CANDIDATES
 
 KtObjectDeclaration(922,939): 'object CompanionA'

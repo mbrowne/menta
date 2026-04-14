@@ -1,6 +1,6 @@
 // FILE: test.kt
 
-annotation class Anno
+annotation define Anno
 
 @Anno
 inline fun f(s: String = "OK"): String =

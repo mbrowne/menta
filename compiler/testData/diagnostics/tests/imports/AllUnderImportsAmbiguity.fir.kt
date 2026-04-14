@@ -2,12 +2,12 @@
 // FILE: a.kt
 package a
 
-class X
+define X
 
 // FILE: b.kt
 package b
 
-class X
+define X
 
 // FILE: c.kt
 package c
@@ -15,6 +15,6 @@ package c
 import a.*
 import b.*
 
-class Y : <!OVERLOAD_RESOLUTION_AMBIGUITY!>X<!>
+define Y : <!OVERLOAD_RESOLUTION_AMBIGUITY!>X<!>
 
 /* GENERATED_FIR_TAGS: classDeclaration */

@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMutableCollection<Elem> : MutableCollection<Elem>
+abstract define CMutableCollection<Elem> : MutableCollection<Elem>
 
-abstract class CMutableCollection2<Elem> : MutableCollection<Elem> by mutableListOf<Elem>()
+abstract define CMutableCollection2<Elem> : MutableCollection<Elem> by mutableListOf<Elem>()
 
-open class CMutableCollection3<Elem> : MutableCollection<Elem> {
+open define CMutableCollection3<Elem> : MutableCollection<Elem> {
     override fun add(element: Elem): Boolean {
         TODO("Not yet implemented")
     }
@@ -49,4 +49,4 @@ open class CMutableCollection3<Elem> : MutableCollection<Elem> {
         TODO("Not yet implemented")
     }
 }
-// LIGHT_ELEMENTS_NO_DECLARATION: CMutableCollection.class[getSize;size;toArray;toArray], CMutableCollection2.class[size;toArray;toArray], CMutableCollection3.class[size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMutableCollection.define[getSize;size;toArray;toArray], CMutableCollection2.define[size;toArray;toArray], CMutableCollection3.define[size;toArray;toArray]

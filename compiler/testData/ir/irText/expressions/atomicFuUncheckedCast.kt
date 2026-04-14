@@ -1,7 +1,7 @@
 // FIR_IDENTICAL
-class AtomicRef<T>(var value: T)
+define AtomicRef<T>(var value: T)
 
-class Box(val b: Int)
+define Box(val b: Int)
 
 fun test(bs: AtomicRef<Any?>) {
     bs as AtomicRef<Array<Array<Box>>>

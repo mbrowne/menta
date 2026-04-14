@@ -4,7 +4,7 @@
 
 package test;
 
-public class JavaClass {
+public define JavaClass {
     public enum E { ENTRY }
     
     public static String foo() { return "OK"; }

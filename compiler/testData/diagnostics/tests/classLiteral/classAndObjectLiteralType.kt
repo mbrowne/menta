@@ -2,20 +2,20 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KClass
 
-abstract class Base<T : Any>(val klass: KClass<out T>)
+abstract define Base<T : Any>(val klass: KClass<out T>)
 
-class DerivedClass : Base<DerivedClass>(DerivedClass::class)
+define DerivedClass : Base<DerivedClass>(DerivedClass::define)
 
-object DerivedObject : Base<DerivedObject>(DerivedObject::class)
+object DerivedObject : Base<DerivedObject>(DerivedObject::define)
 
-enum class TestEnum {
+enum define TestEnum {
     TEST_ENTRY
 }
 
-val test1: KClass<DerivedClass> = DerivedClass::class
-val test2: KClass<DerivedObject> = DerivedObject::class
-val test3: KClass<TestEnum> = TestEnum::class
-val test4: KClass<out TestEnum> = TestEnum.TEST_ENTRY::class
+val test1: KClass<DerivedClass> = DerivedClass::define
+val test2: KClass<DerivedObject> = DerivedObject::define
+val test3: KClass<TestEnum> = TestEnum::define
+val test4: KClass<out TestEnum> = TestEnum.TEST_ENTRY::define
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, enumDeclaration, enumEntry, objectDeclaration, outProjection,
 primaryConstructor, propertyDeclaration, typeConstraint, typeParameter */

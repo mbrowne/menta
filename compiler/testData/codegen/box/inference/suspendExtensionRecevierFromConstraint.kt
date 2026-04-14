@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class ExtensionReceiver
+define ExtensionReceiver
 typealias SuspendExtensionFunction = suspend ExtensionReceiver.() -> Unit
 suspend fun ExtensionReceiver.extensionMethod() {}
 

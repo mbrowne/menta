@@ -109,7 +109,7 @@ public class ModifiersChecker {
             boolean allowSealed
     ) {
         if (modifierList == null) return defaultModality;
-        boolean hasAbstractModifier = modifierList.hasModifier(ABSTRACT_KEYWORD);
+        // hasAbstractModifier removed: abstract no longer supported
         boolean hasOverrideModifier = modifierList.hasModifier(OVERRIDE_KEYWORD);
 
         if (allowSealed && modifierList.hasModifier(SEALED_KEYWORD)) {
@@ -122,13 +122,10 @@ public class ModifiersChecker {
                     return Modality.OPEN;
                 }
             }
-            if (hasAbstractModifier || defaultModality == Modality.ABSTRACT) {
+            if (defaultModality == Modality.ABSTRACT) {
                 return Modality.ABSTRACT;
             }
             return Modality.OPEN;
-        }
-        if (hasAbstractModifier) {
-            return Modality.ABSTRACT;
         }
         boolean hasFinalModifier = modifierList.hasModifier(FINAL_KEYWORD);
         if (hasOverrideModifier && !hasFinalModifier && !(defaultModality == Modality.ABSTRACT)) {

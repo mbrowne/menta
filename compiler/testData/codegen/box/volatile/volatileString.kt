@@ -5,8 +5,8 @@
 
 import kotlin.concurrent.*
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
-class StringWrapper(@Volatile var x: String)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
+define StringWrapper(@Volatile var x: String)
 
 val global = StringWrapper("FA")
 

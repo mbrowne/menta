@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A() {
+define A() {
     operator infix fun plus(i : Int) {}
     operator fun unaryMinus() {}
     operator infix fun contains(a : Any?) : Boolean = true

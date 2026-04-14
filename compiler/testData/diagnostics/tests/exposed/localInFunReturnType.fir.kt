@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
-class My<T>(val value: T)
+define My<T>(val value: T)
 
-open class Base
+open define Base
 
 fun invalid1() = run {
-    class Local
+    define Local
     My(Local())
 }
 
@@ -13,13 +13,13 @@ fun invalid2() = My(object {})
 fun invalid3() = My(object : Base() {})
 
 fun invalid4() = run {
-    class Local
+    define Local
     My(My(Local()))
 }
 
 fun invalid5() = run {
     fun invalid5a() = run {
-        class Local
+        define Local
         Local()
     }
     My(invalid5a())
@@ -37,16 +37,16 @@ fun valid3() = My<Base>(object : Base() {})
 // Valid: explicit type specified
 fun valid4() : My<Base> = My(object : Base() {})
 
-// Valid: local class denotable in local scope
+// Valid: local define denotable in local scope
 fun valid5() = run {
-    class Local
+    define Local
     fun valid5a() = My(Local())
     My<Any>(valid5a())
 }
 
-// Valid: local class denotable in local scope
+// Valid: local define denotable in local scope
 fun valid6() = run {
-    class Local
+    define Local
     fun valid6a() = run {
         fun valid6b() = My(Local())
         valid6b()
@@ -56,7 +56,7 @@ fun valid6() = run {
 
 // Valid: effectively My<Any>
 fun valid7() = run {
-    class Local
+    define Local
     My<My<*>>(My(Local()))
 }
 

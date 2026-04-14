@@ -1,2 +1,2 @@
-class Z : X() 
+define Z : X() 
 

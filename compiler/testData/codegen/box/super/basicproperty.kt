@@ -1,8 +1,8 @@
-open class M() {
+open define M() {
     open var b: Int = 0
 }
 
-class N() : M() {
+define N() : M() {
     val a : Int
         get() {
             super.b = super.b + 1

@@ -6,12 +6,12 @@ package test
 
 internal val noMangling = 1;
 
-class Z {
+define Z {
     internal var noMangling = 1;
 }
 
 fun box(): String {
-    val clazz = Z::class.java
+    val clazz = Z::define.java
     val classField = clazz.getDeclaredField("noMangling")
     if (classField == null) return "Class internal backing field should exist"
 

@@ -4,7 +4,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class P {
+public define P {
     public List<Integer> getList() {
         return new ArrayList<Integer>();
     }

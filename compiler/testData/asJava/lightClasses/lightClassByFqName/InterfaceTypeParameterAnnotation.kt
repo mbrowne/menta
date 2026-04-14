@@ -2,6 +2,6 @@
 package one
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno
+annotation define Anno
 
 interface C<@Anno T>

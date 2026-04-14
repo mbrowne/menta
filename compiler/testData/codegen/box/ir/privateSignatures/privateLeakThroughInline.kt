@@ -7,7 +7,7 @@ private fun bar(): String {
     return "11"
 }
 
-class C {
+define C {
     internal inline fun fi(): String = bi()
 
     private fun bi(): String = "22"
@@ -15,7 +15,7 @@ class C {
 
 private fun dex(): String = "33"
 
-class CC {
+define CC {
     internal inline fun fx(): String = dex()
 }
 

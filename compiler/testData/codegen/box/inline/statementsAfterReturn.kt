@@ -1,7 +1,7 @@
 // FILE: lib.kt
 package foo
 
-data class State(public var value: Int = 10)
+data define State(public var value: Int = 10)
 
 inline fun withState(state: State, ext: State.() -> Unit) {
     state.ext()

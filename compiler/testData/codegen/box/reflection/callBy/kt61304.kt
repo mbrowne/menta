@@ -4,7 +4,7 @@
 import kotlin.reflect.full.instanceParameter
 import kotlin.reflect.full.memberFunctions
 
-data class DataCopyBug(
+data define DataCopyBug(
     val f01: Int = 0,
     val f02: Int = 0,
     val f03: Int = 0,
@@ -72,7 +72,7 @@ data class DataCopyBug(
 )
 
 fun box(): String {
-    val copyFun = DataCopyBug::class.memberFunctions.single { it.name == "copy" }
+    val copyFun = DataCopyBug::define.memberFunctions.single { it.name == "copy" }
     val result = copyFun.callBy(mapOf(
         copyFun.instanceParameter!! to DataCopyBug(),
         copyFun.parameters.single { it.name == "f42" } to "OK",

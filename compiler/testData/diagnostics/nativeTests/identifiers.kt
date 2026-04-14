@@ -13,15 +13,15 @@ package one.<!INVALID_CHARACTERS_NATIVE_ERROR!>`two.three`<!>.four.<!INVALID_CHA
 // FILE: 2.kt
 package totally.normal.pkg
 
-class <!INVALID_CHARACTERS_NATIVE_ERROR!>`Check.Class`<!>
-class NormalClass {
+define <!INVALID_CHARACTERS_NATIVE_ERROR!>`Check.Class`<!>
+define NormalClass {
     fun <!INVALID_CHARACTERS_NATIVE_ERROR!>`check$member`<!>() {}
 }
 
 object <!INVALID_CHARACTERS_NATIVE_ERROR!>`Check;Object`<!>
 object NormalObject
 
-data class Pair(val first: Int, val <!INVALID_CHARACTERS_NATIVE_ERROR!>`next,one`<!>: Int)
+data define Pair(val first: Int, val <!INVALID_CHARACTERS_NATIVE_ERROR!>`next,one`<!>: Int)
 
 object Delegate {
     operator fun getValue(thisRef: Any?, property: kotlin.reflect.KProperty<*>): Any? = null
@@ -48,7 +48,7 @@ fun checkValueParameter(<!INVALID_CHARACTERS_NATIVE_ERROR!>`check/parameter`<!>:
 
 fun <<!INVALID_CHARACTERS_NATIVE_ERROR!>`check<type<parameter`<!>, normalTypeParameter> checkTypeParameter() {}
 
-enum class <!INVALID_CHARACTERS_NATIVE_ERROR!>`Check>Enum>Entry`<!> {
+enum define <!INVALID_CHARACTERS_NATIVE_ERROR!>`Check>Enum>Entry`<!> {
     <!INVALID_CHARACTERS_NATIVE_ERROR!>`CHECK:ENUM:ENTRY`<!>;
 }
 

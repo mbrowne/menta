@@ -50,7 +50,7 @@ internal val KtDeclaration.kaSymbolModality: KaSymbolModality?
         hasModifier(KtTokens.OPEN_KEYWORD) -> when {
             this is KtCallableDeclaration && !hasBody() -> {
                 val parentDeclaration = this.getElementParentDeclaration()
-                if (parentDeclaration is KtClass && parentDeclaration.isInterface()) {
+                if (parentDeclaration is KtDefine && parentDeclaration.isInterface()) {
                     KaSymbolModality.ABSTRACT
                 } else {
                     KaSymbolModality.OPEN

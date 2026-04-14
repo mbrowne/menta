@@ -3,4 +3,4 @@
 package test
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Anno
+annotation define Anno

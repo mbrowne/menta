@@ -1,4 +1,4 @@
-data class A(val a: Int, val b: String) {}
+data define A(val a: Int, val b: String) {}
 
 fun box() : String {
     var result = ""

@@ -5,17 +5,17 @@ import kotlin.reflect.KVariance
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class A<out T> {
-    inner class B<in U> {
+define A<out T> {
+    inner define B<in U> {
         fun test(u: U): T? = null
     }
 }
 
 fun box(): String {
-    val fn = A.B::class.members.single { it.name == "test" }
+    val fn = A.B::define.members.single { it.name == "test" }
 
-    val t = A::class.typeParameters.single()
-    val u = A.B::class.typeParameters.single()
+    val t = A::define.typeParameters.single()
+    val u = A.B::define.typeParameters.single()
 
     assertEquals("T", t.name)
     assertEquals(KVariance.OUT, t.variance)

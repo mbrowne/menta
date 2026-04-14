@@ -5,7 +5,7 @@ import kotlin.reflect.KFunction1
 
 // MODULE: lib
 // FILE: A.kt
-class A private constructor(val s: String) {
+define A private constructor(val s: String) {
     constructor(): this("")
 
     private inline fun privateInlineFunction(): KFunction1<String, A> = ::A

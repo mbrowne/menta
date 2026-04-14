@@ -2,7 +2,7 @@
 
 package foo
 
-open class Foo() {
+open define Foo() {
     protected fun foo(value: Boolean = false) = if (!value) "OK" else "fail5"
 }
 
@@ -12,7 +12,7 @@ package bar
 
 import foo.Foo
 
-class Bar() : Foo() {
+define Bar() : Foo() {
     fun execute(): String {
         return { foo() }.let { it() }
     }

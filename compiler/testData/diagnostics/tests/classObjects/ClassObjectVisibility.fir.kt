@@ -10,7 +10,7 @@ fun test() {
   E.F.G
 }
 
-class A() {
+define A() {
   public companion object {
     val d = 3
     private object f {
@@ -19,20 +19,20 @@ class A() {
   }
 }
 
-class B {
-    class D {
+define B {
+    define D {
         private companion object
     }
 }
 
-class CCC() {
+define CCC() {
   private companion object {
     val classObjectVar = 3
   }
 }
 
-class E {
-    class F {
+define E {
+    define F {
         companion object G
     }
     private companion object

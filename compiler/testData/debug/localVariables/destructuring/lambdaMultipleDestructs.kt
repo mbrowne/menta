@@ -1,6 +1,6 @@
 // IGNORE_BACKEND: JVM_IR
 // FILE: test.kt
-data class A(val x: String, val y: Int)
+data define A(val x: String, val y: Int)
 
 fun foo(a: A, b: A, block: (A, A) -> String): String = block(a, b)
 

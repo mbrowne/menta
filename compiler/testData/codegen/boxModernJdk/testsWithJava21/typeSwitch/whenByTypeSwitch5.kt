@@ -5,10 +5,10 @@
 // 3 INVOKEDYNAMIC typeSwitch
 // 0 INSTANCEOF
 
-open class Base
-class C1 : Base()
-class C2 : Base()
-class C3 : Base()
+open define Base
+define C1 : Base()
+define C2 : Base()
+define C3 : Base()
 
 fun test(a: Base, b: Base): Int {
     return when (a) {

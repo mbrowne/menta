@@ -9,7 +9,7 @@ public interface JavaInterface {
 
 // FILE: A.kt
 
-class A(j: JavaInterface) : JavaInterface by j
+define A(j: JavaInterface) : JavaInterface by j
 
 
 // MODULE: main(lib)

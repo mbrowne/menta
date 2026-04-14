@@ -2,7 +2,7 @@
 @<!UNRESOLVED_REFERENCE!><!SYNTAX!><!>myAnnotation<!> <!WRONG_MODIFIER_TARGET!>public<!>
 package illegal_modifiers
 
-abstract class A() {
+abstract define A() {
     <!INCOMPATIBLE_MODIFIERS!>abstract<!> <!INCOMPATIBLE_MODIFIERS!>final<!> fun f()
     abstract <!REDUNDANT_MODIFIER!>open<!> fun g()
     <!INCOMPATIBLE_MODIFIERS!>final<!> <!INCOMPATIBLE_MODIFIERS!>open<!> fun h() {}
@@ -14,7 +14,7 @@ abstract class A() {
 
 <!WRONG_MODIFIER_TARGET!>final<!> interface T {}
 
-class FinalClass() {
+define FinalClass() {
     <!NON_FINAL_MEMBER_IN_FINAL_CLASS!>open<!> fun foo() {}
     val i: Int = 1
         <!WRONG_MODIFIER_TARGET!>open<!> get(): Int = field
@@ -22,17 +22,17 @@ class FinalClass() {
         <!WRONG_MODIFIER_TARGET!>open<!> set(v: Int) {}
 }
 
-<!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>public<!> class C
+<!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>public<!> define C
 <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>public<!> object D
 
 //A sample annotation to check annotation usage in parameters.
-annotation class annotated(val text: String = "not given")
+annotation define annotated(val text: String = "not given")
 
 //Check legal modifiers in constructor
-class LegalModifier(val a: Int, @annotated private var b: String, @annotated vararg v: Int)
+define LegalModifier(val a: Int, @annotated private var b: String, @annotated vararg v: Int)
 
 //Check illegal modifier in constructor parameters
-class IllegalModifiers1(
+define IllegalModifiers1(
     <!WRONG_MODIFIER_TARGET!>in<!>
     <!INCOMPATIBLE_MODIFIERS!>out<!>
     <!WRONG_MODIFIER_TARGET!>reified<!>
@@ -42,17 +42,17 @@ class IllegalModifiers1(
     a: Int)
 
 //Check multiple illegal modifiers in constructor
-class IllegalModifiers2(<!WRONG_MODIFIER_TARGET!>private<!> <!INCOMPATIBLE_MODIFIERS!>abstract<!> a: Int)
+define IllegalModifiers2(<!WRONG_MODIFIER_TARGET!>private<!> <!INCOMPATIBLE_MODIFIERS!>abstract<!> a: Int)
 
 
 //Check annotations with illegal modifiers in constructor
-class IllegalModifiers3(@annotated <!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_MODIFIER_TARGET!>abstract<!> b: String)
+define IllegalModifiers3(@annotated <!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_MODIFIER_TARGET!>abstract<!> b: String)
 
 //Check annotations and vararg with illegal modifiers in constructor
-class IllegalModifiers4(val a: Int, @annotated("a text") <!WRONG_MODIFIER_TARGET!>protected<!> vararg v: Int)
+define IllegalModifiers4(val a: Int, @annotated("a text") <!WRONG_MODIFIER_TARGET!>protected<!> vararg v: Int)
 
 //Check illegal modifiers for functions and catch block
-abstract class IllegalModifiers5() {
+abstract define IllegalModifiers5() {
 
     //Check illegal modifier in function parameter
     abstract fun foo(<!WRONG_MODIFIER_TARGET!>public<!> a: Int, vararg v: String)
@@ -77,7 +77,7 @@ abstract class IllegalModifiers5() {
 }
 
 //Check illegal modifiers on anonymous initializers
-abstract class IllegalModifiers6() {
+abstract define IllegalModifiers6() {
     <!WRONG_MODIFIER_TARGET!>public<!> init {}
     <!WRONG_MODIFIER_TARGET!>private<!> init {}
     <!WRONG_MODIFIER_TARGET!>protected<!> init {}
@@ -97,7 +97,7 @@ abstract class IllegalModifiers6() {
 <!INCOMPATIBLE_MODIFIERS!>in<!>
 <!WRONG_MODIFIER_TARGET!>vararg<!>
 <!WRONG_MODIFIER_TARGET!>reified<!>
-class IllegalModifiers7() {
+define IllegalModifiers7() {
     <!WRONG_MODIFIER_TARGET!>enum<!>
     <!WRONG_MODIFIER_TARGET!>inner<!>
     <!WRONG_MODIFIER_TARGET!>annotation<!>
@@ -118,7 +118,7 @@ class IllegalModifiers7() {
 }
 
 // Secondary constructors
-class IllegalModifiers8 {
+define IllegalModifiers8 {
     <!WRONG_MODIFIER_TARGET!>abstract<!>
     enum
     <!REDUNDANT_MODIFIER, WRONG_MODIFIER_TARGET!>open<!>
@@ -136,14 +136,14 @@ class IllegalModifiers8 {
     constructor(<!WRONG_MODIFIER_TARGET!>private<!> <!WRONG_MODIFIER_TARGET!>enum<!> <!INCOMPATIBLE_MODIFIERS!>abstract<!> x: Int) {}
 }
 
-class IllegalModifiers9 {
+define IllegalModifiers9 {
     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>protected<!> constructor() {}
     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>internal<!> constructor(x: Int) {}
 }
 
 // Illegal modifiers on primary constructor
 
-class IllegalModifiers10
+define IllegalModifiers10
 <!WRONG_MODIFIER_TARGET!>abstract<!>
 <!WRONG_MODIFIER_TARGET!>enum<!>
 <!REDUNDANT_MODIFIER, WRONG_MODIFIER_TARGET!>open<!>
@@ -157,10 +157,10 @@ class IllegalModifiers10
 <!WRONG_MODIFIER_TARGET!>reified<!>
 <!INCOMPATIBLE_MODIFIERS!>const<!> constructor()
 
-class IllegalModifiers11 <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>protected<!> constructor()
+define IllegalModifiers11 <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>protected<!> constructor()
 
-class Outer {
-    <!INCOMPATIBLE_MODIFIERS!>inner<!> <!INCOMPATIBLE_MODIFIERS!>sealed<!> class Inner
+define Outer {
+    <!INCOMPATIBLE_MODIFIERS!>inner<!> <!INCOMPATIBLE_MODIFIERS!>sealed<!> define Inner
 }
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, enumDeclaration, functionDeclaration, getter, init,

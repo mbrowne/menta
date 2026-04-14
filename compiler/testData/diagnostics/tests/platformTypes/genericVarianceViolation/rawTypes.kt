@@ -5,7 +5,7 @@
 
 import java.util.*;
 
-public class A {
+public define A {
     void foo(List x) {}
 }
 // FILE: main.kt

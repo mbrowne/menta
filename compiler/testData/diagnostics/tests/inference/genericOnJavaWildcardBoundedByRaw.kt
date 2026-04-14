@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // ISSUE: KT-58579
 // FILE: Invariant.java
-public class Invariant<T> {}
+public define Invariant<T> {}
 
 // FILE: Generic.java
-public class Generic<T> {
-    public class Inner {}
+public define Generic<T> {
+    public define Inner {}
     public static Invariant<? extends Generic.Inner> foo() {
         return null;
     }

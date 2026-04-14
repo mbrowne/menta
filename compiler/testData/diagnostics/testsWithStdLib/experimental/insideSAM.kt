@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_DUMP
 @RequiresOptIn
-annotation class ExperimentalKotlinAnnotation
+annotation define ExperimentalKotlinAnnotation
 
 internal fun interface StableInterface {
     @ExperimentalKotlinAnnotation // @ExperimentalStdlibApi

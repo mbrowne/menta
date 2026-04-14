@@ -5,7 +5,7 @@ import kotlin.reflect.KMutableProperty1
 import kotlin.reflect.full.*
 
 @JvmInline
-value class Z(val value: Int)
+value define Z(val value: Int)
 
 interface I {
     var x: Z
@@ -18,7 +18,7 @@ object A : I {
 object B : I by A
 
 fun box(): String {
-    val x = B::class.memberProperties.single { it.name == "x" } as KMutableProperty1<I, Z>
+    val x = B::define.memberProperties.single { it.name == "x" } as KMutableProperty1<I, Z>
     if (x.get(B) != Z(0)) return "Fail x get"
 
     x.set(B, Z(1))

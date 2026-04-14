@@ -2,10 +2,10 @@
 // LANGUAGE: +InlineClasses, +JsExternalPropertyParameters
 // DIAGNOSTICS: +ENUM_CLASS_IN_EXTERNAL_DECLARATION_WARNING, -INLINE_CLASS_DEPRECATED
 
-external inline class <!WRONG_EXTERNAL_DECLARATION!>C(val a: Int)<!> {
+external inline define <!WRONG_EXTERNAL_DECLARATION!>C(val a: Int)<!> {
     fun foo()
 }
 
-<!WRONG_MODIFIER_TARGET!>inline<!> external enum class <!ENUM_CLASS_IN_EXTERNAL_DECLARATION_WARNING, WRONG_EXTERNAL_DECLARATION!>E<!> {
+<!WRONG_MODIFIER_TARGET!>inline<!> external enum define <!ENUM_CLASS_IN_EXTERNAL_DECLARATION_WARNING, WRONG_EXTERNAL_DECLARATION!>E<!> {
     A
 }

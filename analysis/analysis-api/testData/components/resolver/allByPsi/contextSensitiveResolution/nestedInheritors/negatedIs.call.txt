@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,152): 'sealed interface Simple {'
+KtDefine(78,152): 'sealed interface Simple {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(78,84): 'sealed'
 KtClassBody(102,152): '{'
   null
 
-KtClass(108,126): 'class Left: Simple'
+KtDefine(108,126): 'class Left: Simple'
   null
 
 KtSuperTypeList(120,126): 'Simple'
@@ -34,7 +34,7 @@ KtUserType(120,126): 'Simple'
 KtNameReferenceExpression(120,126): 'Simple'
   null
 
-KtClass(131,150): 'class Right: Simple'
+KtDefine(131,150): 'class Right: Simple'
   null
 
 KtSuperTypeList(144,150): 'Simple'

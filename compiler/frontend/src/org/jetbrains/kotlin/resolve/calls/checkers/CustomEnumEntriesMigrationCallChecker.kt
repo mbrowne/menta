@@ -12,7 +12,7 @@ import org.jetbrains.kotlin.descriptors.ClassDescriptor
 import org.jetbrains.kotlin.descriptors.PropertyDescriptor
 import org.jetbrains.kotlin.diagnostics.Errors
 import org.jetbrains.kotlin.psi.KtCallableReferenceExpression
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDotQualifiedExpression
 import org.jetbrains.kotlin.psi.psiUtil.parentsWithSelf
 import org.jetbrains.kotlin.resolve.DescriptorUtils
@@ -62,7 +62,7 @@ object CustomEnumEntriesMigrationCallChecker : CallChecker {
         val parent = contextExpression.parent
         return !DescriptorUtils.isEnumClass(this.containingDeclaration) &&
                 (parent !is KtDotQualifiedExpression || parent.receiverExpression === contextExpression) &&
-                contextExpression.parentsWithSelf.any { it is KtClass && it.isEnum() }
+                contextExpression.parentsWithSelf.any { it is KtDefine && it.isEnum() }
     }
 
     private fun PropertyDescriptor.isReferenceToMemberEntriesWithoutExpectedFunctionalType(

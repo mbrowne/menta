@@ -4,7 +4,7 @@
 
 // FILE: lib.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result<out T>(val value: Any?) {
+value define Result<out T>(val value: Any?) {
     fun exceptionOrNull(): Throwable? =
         when (value) {
             is Failure -> value.exception
@@ -19,7 +19,7 @@ value class Result<out T>(val value: Any?) {
             Result(Failure(exception))
     }
 
-    class Failure(
+    define Failure(
         val exception: Throwable
     )
 }
@@ -42,7 +42,7 @@ inline fun <R, T : R> Result<T>.getOrElse(onFailure: (exception: Throwable) -> R
 
 // FILE: main.kt
 
-class A {
+define A {
     fun f() = runCatching { "OK" }.getOrElse { throw it }
 }
 

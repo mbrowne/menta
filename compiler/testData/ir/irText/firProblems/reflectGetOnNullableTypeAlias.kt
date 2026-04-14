@@ -12,6 +12,6 @@ fun box(): String {
     return "FAIL"
 }
 
-class Foo {
+define Foo {
     val bar: String = "OK"
 }

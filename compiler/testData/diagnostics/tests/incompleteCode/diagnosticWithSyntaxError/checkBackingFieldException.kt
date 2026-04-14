@@ -3,7 +3,7 @@
 // COMPARE_WITH_LIGHT_TREE
 package h
 
-class Square() {
+define Square() {
   var size : Double =
   <!UNRESOLVED_REFERENCE!>set<!>(<!UNRESOLVED_REFERENCE!>value<!>) {
     <!SYNTAX!>$area<!> <!SYNTAX!>= size * size<!>

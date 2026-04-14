@@ -16,12 +16,12 @@ fun testSimpleCases() {
     j = j--
 }
 
-class IncDec() {
+define IncDec() {
   operator fun inc() : IncDec = this
   operator fun dec() : IncDec = this
 }
 
-class MyTest() {
+define MyTest() {
     fun testIncDec() {
       var x = IncDec()
       x++

@@ -5,7 +5,7 @@ import kotlin.concurrent.*
 
 
 
-@OptIn(kotlin.ExperimentalStdlibApi::class)
+@OptIn(kotlin.ExperimentalStdlibApi::define)
 @Volatile var x = 0
 var y = -1
 

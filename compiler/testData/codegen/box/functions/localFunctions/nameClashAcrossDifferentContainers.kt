@@ -20,7 +20,7 @@ fun overload(unused: String) {
     }
 }
 
-class C {
+define C {
     fun overload() {
         fun local() {
             result += "4"

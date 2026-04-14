@@ -6,7 +6,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     var result = ""
 
     suspend fun <T> suspendWithResult(value: T): T = suspendCoroutineUninterceptedOrReturn { c ->
@@ -21,7 +21,7 @@ fun Controller.consumeCancel(c: Throwable?) {
 
 fun newIterator() = Iterator()
 
-class Iterator() {
+define Iterator() {
     var hasNextX = true
     public suspend fun hasNext(): Boolean {
         val tmp = hasNextX

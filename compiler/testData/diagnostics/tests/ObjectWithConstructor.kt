@@ -18,7 +18,7 @@ val x = object <!CONSTRUCTOR_IN_OBJECT!>(val prop: Int)<!> {
     }
 }
 
-class A3 {
+define A3 {
     companion object B<!CONSTRUCTOR_IN_OBJECT!>(val prop: Int)<!> {
         public <!CONSTRUCTOR_IN_OBJECT!>constructor()<!> : this(2)
     }

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-68556
 
-class Clazz() {
+define Clazz() {
     <!PROPERTY_WITH_NO_TYPE_NO_INITIALIZER!>var foo<!>
     <!PROPERTY_WITH_NO_TYPE_NO_INITIALIZER!>var bar<!>
         get() {

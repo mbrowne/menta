@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(98,135): 'enum class MyEnum {'
+KtDefine(98,135): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(98,102): 'enum'
@@ -19,7 +19,7 @@ KtClassBody(116,135): '{'
 KtEnumEntry(122,133): 'EnumValue1;'
   NO_CANDIDATES
 
-KtClass(137,204): 'sealed class MySealed {'
+KtDefine(137,204): 'sealed class MySealed {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(137,143): 'sealed'

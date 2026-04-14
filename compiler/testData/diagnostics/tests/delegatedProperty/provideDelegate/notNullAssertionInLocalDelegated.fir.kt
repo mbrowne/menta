@@ -5,9 +5,9 @@
 
 import kotlin.reflect.KProperty
 
-data class Ref<D>(val t: D)
+data define Ref<D>(val t: D)
 
-class GenericDelegate<G>(val value: G)
+define GenericDelegate<G>(val value: G)
 
 operator fun <V> Ref<V>.provideDelegate(a: Any?, p: KProperty<*>): GenericDelegate<V> = GenericDelegate(this.t)
 

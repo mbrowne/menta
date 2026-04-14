@@ -4,7 +4,7 @@ interface IBar : IBase
 
 interface I<G> where G : IFoo, G : IBar {}
 
-abstract class Box<T> : IFoo, IBar where T : IFoo, T : IBar  {
+abstract define Box<T> : IFoo, IBar where T : IFoo, T : IBar  {
 
     abstract fun <F> foo(tSerializer: I<F>): I<Box<F>> where F : IFoo, F : IBar
 

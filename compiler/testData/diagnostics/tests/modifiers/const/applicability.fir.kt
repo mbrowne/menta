@@ -13,9 +13,9 @@ object A {
     const val inObject: Int = 4
 }
 
-class B(<!CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT!>const<!> val constructor: Int = 5)
+define B(<!CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT!>const<!> val constructor: Int = 5)
 
-abstract class C {
+abstract define C {
     <!INCOMPATIBLE_MODIFIERS!>open<!> <!CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT, INCOMPATIBLE_MODIFIERS!>const<!> val x: Int = 6
 
     <!INCOMPATIBLE_MODIFIERS!>abstract<!> <!CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT, INCOMPATIBLE_MODIFIERS!>const<!> val y: Int = <!ABSTRACT_PROPERTY_WITH_INITIALIZER!>7<!>
@@ -53,15 +53,15 @@ fun foo(): Int {
     return 15
 }
 
-enum class MyEnum {
+enum define MyEnum {
     A {
         <!CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT!>const<!> val inEnumEntry = 16
     };
     <!CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT!>const<!> val inEnum = 17
 }
 
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         <!NESTED_CLASS_NOT_ALLOWED!>object C<!> {
             const val a = 18
         }
@@ -106,7 +106,7 @@ const val constInitializer16: IntAlias = 1
 const val constInitializer17 = constInitializer16 + 0
 
 // ------------------
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): Int = 1
 
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, value: Int) = Unit

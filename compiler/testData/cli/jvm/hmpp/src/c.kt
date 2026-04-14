@@ -1,4 +1,4 @@
-actual class B {
+actual define B {
     actual fun bar() {}
     fun actBar() {}
 }

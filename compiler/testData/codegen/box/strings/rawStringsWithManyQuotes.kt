@@ -1,4 +1,4 @@
-class P(val actual: String, val expected: String)
+define P(val actual: String, val expected: String)
 fun array(vararg s: P) = s
 
 fun box() : String {

@@ -19,7 +19,7 @@ fun builder(block: suspend Unit.() -> Unit) {
     block.startCoroutine(Unit, EmptyContinuation)
 }
 
-class Container {
+define Container {
     var y: String = "FAIL"
 
     val consumer = crossInlineBuilder { s ->

@@ -9,7 +9,7 @@ package test;
 
 import kotlin.reflect.*
 
-class Pair<A, B>(val x: A, val y: B)
+define Pair<A, B>(val x: A, val y: B)
 
 inline fun <reified T1> typeOfX(x: T1) = typeOf<T1>()
 inline fun <reified T2, T3> typeOfPair(x: T2, y: T3) = typeOfX(Pair(x, y))

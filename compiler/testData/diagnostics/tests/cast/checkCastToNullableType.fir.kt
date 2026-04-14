@@ -4,7 +4,7 @@
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-public class JavaClass {
+public define JavaClass {
     static Integer foo() {
         return 1;
     }

@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-abstract class Parent<F> {
+abstract define Parent<F> {
     protected fun foo() {}
 }
 
-class Derived<E> : Parent<E>() {
+define Derived<E> : Parent<E>() {
     fun bar(x: Derived<String>) {
         x.foo()
     }

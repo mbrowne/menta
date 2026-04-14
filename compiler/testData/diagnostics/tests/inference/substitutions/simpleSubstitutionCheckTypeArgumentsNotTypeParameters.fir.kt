@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A<T> {
+define A<T> {
     fun useT(t: T) = t
 
     fun <U> newA(): A<U> = A()

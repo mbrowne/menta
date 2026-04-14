@@ -16,13 +16,13 @@ interface B extends A {
 }
 
 // FILE: BImpl.java
-class BImpl implements B {
+define BImpl implements B {
     @Override
     public Y<? extends B> foo() { return null; }
 }
 
 // FILE: 1.kt
 
-private class D : A, BImpl()
+private define D : A, BImpl()
 
 fun box(): String = if (D().foo() == null) "OK" else "Fail"

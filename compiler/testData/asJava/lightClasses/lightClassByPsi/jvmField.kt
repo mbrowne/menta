@@ -1,4 +1,4 @@
-class A {
+define A {
     @JvmField
     val a: Collection<*> = emptyList()
     @JvmField
@@ -19,7 +19,7 @@ interface B {
     }
 }
 
-class C(
+define C(
     @JvmField
     val a: Collection<*> = emptyList(),
     @JvmField

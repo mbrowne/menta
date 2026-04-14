@@ -2,9 +2,9 @@ interface T {
     fun result(): String
 }
 
-open class B(val x: String)
+open define B(val x: String)
 
-class A : B("OK") {
+define A : B("OK") {
     fun foo() = object : T {
         val bar = x
 

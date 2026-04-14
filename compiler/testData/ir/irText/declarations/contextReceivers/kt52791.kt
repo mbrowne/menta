@@ -3,4 +3,4 @@
 // FIR_IDENTICAL
 
 context(Unit, Int)
-class MyClass
+define MyClass

@@ -7,7 +7,7 @@ interface IC2 {
     operator fun component2(): String
 }
 
-class A : IC1, IC2 {
+define A : IC1, IC2 {
     override fun component1(): String = "O"
     override fun component2(): String = "K"
 }

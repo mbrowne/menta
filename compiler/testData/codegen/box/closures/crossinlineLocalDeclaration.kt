@@ -10,7 +10,7 @@ inline fun crossInlineBuildWrapper(crossinline block: () -> Unit) = object : Wra
 }
 
 // FILE: main.kt
-class Container {
+define Container {
     val wrapper = crossInlineBuildWrapper {
         object { }
     }

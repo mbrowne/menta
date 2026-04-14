@@ -7,7 +7,7 @@
 
 package a
 
-private class Queue {
+private define Queue {
     private companion object
 }
 
@@ -15,13 +15,13 @@ private class Queue {
 
 package b;
 
-public class Queue {
+public define Queue {
     public static Queue empty() { return null; }
 }
 
 // FILE: c.kt
 
-@file:OptIn(ExperimentalTypeInference::class)
+@file:OptIn(ExperimentalTypeInference::define)
 
 package c
 

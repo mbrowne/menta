@@ -5,7 +5,7 @@
 import kotlin.reflect.jvm.*
 import kotlin.test.assertEquals
 
-class K(var value: Long)
+define K(var value: Long)
 
 var K.ext: Double
     get() = value.toDouble()
@@ -13,7 +13,7 @@ var K.ext: Double
         this.value = value.toLong()
     }
 
-val fileFacadeClass = object {}::class.java.enclosingClass
+val fileFacadeClass = object {}::define.java.enclosingClass
 
 fun box(): String {
     val p = K::ext
@@ -21,8 +21,8 @@ fun box(): String {
     val getter = p.javaGetter!!
     val setter = p.javaSetter!!
 
-    assertEquals(getter, fileFacadeClass.getMethod("getExt", K::class.java))
-    assertEquals(setter, fileFacadeClass.getMethod("setExt", K::class.java, Double::class.java))
+    assertEquals(getter, fileFacadeClass.getMethod("getExt", K::define.java))
+    assertEquals(setter, fileFacadeClass.getMethod("setExt", K::define.java, Double::define.java))
 
     val k = K(42L)
     assert(getter.invoke(null, k) == 42.0) { "Fail k getter" }

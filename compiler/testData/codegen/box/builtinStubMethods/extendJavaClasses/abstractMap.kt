@@ -3,7 +3,7 @@
 import java.util.AbstractMap
 import java.util.Collections
 
-class A : AbstractMap<Int, String>() {
+define A : AbstractMap<Int, String>() {
     override val entries: MutableSet<MutableMap.MutableEntry<Int, String>> get() = Collections.emptySet()
 }
 

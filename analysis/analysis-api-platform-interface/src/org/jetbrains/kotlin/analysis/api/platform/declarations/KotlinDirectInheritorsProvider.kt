@@ -10,16 +10,16 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.search.GlobalSearchScope
 import org.jetbrains.kotlin.analysis.api.KaPlatformInterface
 import org.jetbrains.kotlin.analysis.api.platform.KotlinPlatformComponent
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 
 @KaPlatformInterface
 public interface KotlinDirectInheritorsProvider : KotlinPlatformComponent {
     /**
-     * Returns all direct *Kotlin* inheritors of [ktClass] that can be found in the given [scope].
+     * Returns all direct *Kotlin* inheritors of [KtDefine] that can be found in the given [scope].
      *
-     * [ktClass] must not be a class from a dangling file, but rather should be a class from a physical source, like a source module.
-     * The scope should cover the [ktClass] itself. In case inheritors for a dangling class are needed, [getDirectKotlinInheritors] should
+     * [KtDefine] must not be a class from a dangling file, but rather should be a class from a physical source, like a source module.
+     * The scope should cover the [KtDefine] itself. In case inheritors for a dangling class are needed, [getDirectKotlinInheritors] should
      * be called with the same class from a non-dangling context module. This removes the burden of handling dangling files from the
      * provider, simplifying its implementation.
      *
@@ -30,7 +30,7 @@ public interface KotlinDirectInheritorsProvider : KotlinPlatformComponent {
      * @param includeLocalInheritors If `false`, only non-local inheritors will be searched and returned.
      */
     public fun getDirectKotlinInheritors(
-        ktClass: KtClass,
+        KtDefine: KtDefine,
         scope: GlobalSearchScope,
         includeLocalInheritors: Boolean = true,
     ): Iterable<KtClassOrObject>

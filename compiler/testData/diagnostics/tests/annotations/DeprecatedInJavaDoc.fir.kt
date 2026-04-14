@@ -7,9 +7,9 @@ import <!DEPRECATION!>third.JavaClass.NestedJavaClass<!>
 // FILE: KotlinAnnotation.kt
 package second
 
-class KotlinClass {
+define KotlinClass {
     fun foo(i: Int) {}
-    annotation class KotlinAnnotation
+    annotation define KotlinAnnotation
 }
 
 // FILE: third/JavaClass.java
@@ -23,12 +23,12 @@ import static second.KotlinClass.*;
  * @deprecated deprecated message
  */
 @KotlinAnnotation
-public class JavaClass {
+public define JavaClass {
     /**
      * @deprecated deprecated message
      */
     @KotlinAnnotation
-    public static class NestedJavaClass {
+    public static define NestedJavaClass {
 
     }
 }

@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: BACKEND
-@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::define)
 import kotlinx.cinterop.*
 
-class Vertex constructor(rawPtr: NativePtr) : CStructVar(rawPtr) {
+define Vertex constructor(rawPtr: NativePtr) : CStructVar(rawPtr) {
     var x: Float = 0f
     var y: Float = 0f
     var r: Float = 0f

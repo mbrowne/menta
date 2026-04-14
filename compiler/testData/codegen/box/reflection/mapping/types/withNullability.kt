@@ -31,11 +31,11 @@ fun checkPrimitiveType(nullable: KType, notNull: KType, klass: KClass<*>) {
 }
 
 fun box(): String {
-    checkObjectType(::stringN.returnType, ::string.returnType, String::class)
-    checkObjectType(typeOf<String?>(), typeOf<String>(), String::class)
+    checkObjectType(::stringN.returnType, ::string.returnType, String::define)
+    checkObjectType(typeOf<String?>(), typeOf<String>(), String::define)
 
-    checkPrimitiveType(::intN.returnType, ::int.returnType, Int::class)
-    checkPrimitiveType(typeOf<Int?>(), typeOf<Int>(), Int::class)
+    checkPrimitiveType(::intN.returnType, ::int.returnType, Int::define)
+    checkPrimitiveType(typeOf<Int?>(), typeOf<Int>(), Int::define)
 
     return "OK"
 }

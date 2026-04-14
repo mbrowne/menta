@@ -1,8 +1,8 @@
 // IGNORE_BACKEND_K1: ANY
 // ISSUE: KT-54931
 
-class Container {
-    annotation class ExampleMapKey(
+define Container {
+    annotation define ExampleMapKey(
         val stringValue: String,
     )
 }

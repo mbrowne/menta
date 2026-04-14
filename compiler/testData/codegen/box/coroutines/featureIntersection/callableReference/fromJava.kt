@@ -6,7 +6,7 @@
 import kotlin.reflect.KSuspendFunction0
 import kotlin.coroutines.SuspendFunction0
 
-class Test {
+define Test {
     suspend fun o() = "O"
     fun forCall(): KSuspendFunction0<String> {
         return ::o
@@ -21,7 +21,7 @@ class Test {
 // FILE: Checker.java
 import helpers.*;
 
-class Checker {
+define Checker {
     public static String check() {
         Test test = new Test();
         return ((String) test.forCall().call(new EmptyContinuation())) +

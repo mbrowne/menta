@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-final class JavaContainer {
+final define JavaContainer {
     public interface SFunction<R, I> extends Serializable
     {
         R apply (I i);

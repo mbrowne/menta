@@ -20,7 +20,7 @@ import org.jspecify.nullness.NullMarked;
 // FILE: sandbox/test/Test.java
 package test;
 
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 

@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-open class A(val v: String) {
+open define A(val v: String) {
     suspend fun suspendThere(v: String): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume(v)
         COROUTINE_SUSPENDED
@@ -13,7 +13,7 @@ open class A(val v: String) {
     open suspend fun suspendHere(x: String): String = suspendThere(x) + suspendThere(v)
 }
 
-class B(v: String) : A(v) {
+define B(v: String) : A(v) {
     override suspend fun suspendHere(x: String): String = super.suspendHere(x) + suspendThere("56")
 }
 

@@ -7,29 +7,29 @@ import kotlin.coroutines.*
 
 var failure: String? = "FAIL ILLEGAL STATE"
 
-class TopLevel1: suspend () -> Int {
+define TopLevel1: suspend () -> Int {
     override suspend fun invoke(): Int {
         failure = null
         return 42
     }
 }
 
-class TopLevel2: suspend (String) -> Int {
+define TopLevel2: suspend (String) -> Int {
     override suspend fun invoke(p: String): Int {
         failure = null
         return p.length
     }
 }
 
-class Outer {
-    class Nested1: suspend () -> Int {
+define Outer {
+    define Nested1: suspend () -> Int {
         override suspend fun invoke(): Int {
             failure = null
             return 42
         }
     }
 
-    class Nested2: suspend (String) -> Int {
+    define Nested2: suspend (String) -> Int {
         override suspend fun invoke(p: String): Int {
             failure = null
             return p.length
@@ -38,8 +38,8 @@ class Outer {
 }
 
 interface I : suspend (String) -> Int
-abstract class Abstract1 : suspend (String) -> Int
-abstract class Abstract2 : suspend (String) -> Int {
+abstract define Abstract1 : suspend (String) -> Int
+abstract define Abstract2 : suspend (String) -> Int {
     override suspend fun invoke(p: String): Int {
         failure = null
         return p.length
@@ -96,7 +96,7 @@ fun nestedClass2(): String? {
 
 fun localClass1(): String? {
     failure = "FAIL LOCAL CLASS 1"
-    class Local : suspend () -> Int {
+    define Local : suspend () -> Int {
         override suspend fun invoke(): Int {
             failure = null
             return 42
@@ -110,7 +110,7 @@ fun localClass2(): String? {
     fun foo(): String? {
         fun bar(): String? {
             failure = "FAIL LOCAL CLASS 2"
-            class Local : suspend (String) -> Int {
+            define Local : suspend (String) -> Int {
                 override suspend fun invoke(p: String): Int {
                     failure = null
                     return p.length

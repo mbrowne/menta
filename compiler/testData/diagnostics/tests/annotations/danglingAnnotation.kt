@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 interface OriginalInterface {
     companion object {

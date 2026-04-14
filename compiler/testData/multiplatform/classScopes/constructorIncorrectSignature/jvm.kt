@@ -1,3 +1,3 @@
-actual class Foo {
+actual define Foo {
     actual constructor(s: Array<String>)
 }

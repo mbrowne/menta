@@ -1,34 +1,34 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class NoC
-class NoC1 : <!SUPERTYPE_NOT_INITIALIZED!>NoC<!>
+open define NoC
+define NoC1 : <!SUPERTYPE_NOT_INITIALIZED!>NoC<!>
 
-class WithC0() : NoC()
-open class WithC1() : <!SUPERTYPE_NOT_INITIALIZED!>NoC<!>
-class NoC2 : <!SUPERTYPE_NOT_INITIALIZED!>WithC1<!>
-class NoC3 : WithC1()
-class WithC2() : <!SUPERTYPE_NOT_INITIALIZED!>WithC1<!>
+define WithC0() : NoC()
+open define WithC1() : <!SUPERTYPE_NOT_INITIALIZED!>NoC<!>
+define NoC2 : <!SUPERTYPE_NOT_INITIALIZED!>WithC1<!>
+define NoC3 : WithC1()
+define WithC2() : <!SUPERTYPE_NOT_INITIALIZED!>WithC1<!>
 
-class WithPC0() {
+define WithPC0() {
 }
 
-class WithPC1(a : Int) {
+define WithPC1(a : Int) {
 }
 
 
-class Foo() : <!FINAL_SUPERTYPE!>WithPC0<!>, <!SYNTAX!>this<!>() {
+define Foo() : <!FINAL_SUPERTYPE!>WithPC0<!>, <!SYNTAX!>this<!>() {
 
 }
 
-class WithCPI_Dup(x : Int) {
+define WithCPI_Dup(x : Int) {
   <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var x : Int<!>
 }
 
-class WithCPI(x : Int) {
+define WithCPI(x : Int) {
   val a = 1
   val xy : Int = x
 }
 
-class NoCPI {
+define NoCPI {
   val a = 1
   var ab = <!PROPERTY_INITIALIZER_NO_BACKING_FIELD!>1<!>
     get() = 1

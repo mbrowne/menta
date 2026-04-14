@@ -6,7 +6,7 @@ package test
 
 import kotlin.test.assertEquals
 
-open class A<T1, T2, T3>
+open define A<T1, T2, T3>
 
 inline fun <reified T, reified R> foo(): Array<A<*,*,*>> {
     val x = object {

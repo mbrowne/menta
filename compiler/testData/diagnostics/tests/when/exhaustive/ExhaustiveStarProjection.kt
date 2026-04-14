@@ -2,10 +2,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 
 sealed interface I
-class A : I
-class B : I
+define A : I
+define B : I
 
-data class Proxy<T : I>(val t: T)
+data define Proxy<T : I>(val t: T)
 
 fun StatementEmpty() {
     val x: Proxy<*> = Proxy(A())

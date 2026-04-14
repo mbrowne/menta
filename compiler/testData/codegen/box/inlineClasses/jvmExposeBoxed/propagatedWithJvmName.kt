@@ -2,13 +2,13 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // FILE: Test.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 @JvmExposeBoxed
-class Implicit {
+define Implicit {
     @JvmName("foo11")
     fun foo1(sw: StringWrapper): Int = 42
 }
@@ -17,7 +17,7 @@ class Implicit {
 fun create(s: String): StringWrapper = StringWrapper(s)
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public int test() {
         return new Implicit().foo11(TestKt.createSW("OK"));
     }

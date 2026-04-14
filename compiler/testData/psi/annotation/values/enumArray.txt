@@ -9,7 +9,7 @@ KtFile: enumArray.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Arrays')
     PRIMARY_CONSTRUCTOR
@@ -41,7 +41,7 @@ KtFile: enumArray.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyEnum')
     PsiWhiteSpace(' ')
@@ -100,6 +100,6 @@ KtFile: enumArray.kt
               PsiElement(RBRACKET)(']')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithArrays')

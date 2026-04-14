@@ -3,8 +3,8 @@
 
 @file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 
-class Inv<T>
-class Out<out T>
+define Inv<T>
+define Out<out T>
 fun <T> foo(i: Inv<in T>, o: Out<T>) {
     <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>bar<!>(i, o)
 }

@@ -6,6 +6,6 @@ public @interface A {
 }
 
 // FILE: b.kt
-@A(arg = arrayOf(String::class, Int::class)) class MyClass
+@A(arg = arrayOf(String::define, Int::define)) define MyClass
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, collectionLiteral, javaType */

@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-@Target(AnnotationTarget.PROPERTY) annotation class base
+@Target(AnnotationTarget.PROPERTY) annotation define base
 
-<!WRONG_ANNOTATION_TARGET!>@base<!> annotation class derived
+<!WRONG_ANNOTATION_TARGET!>@base<!> annotation define derived
 
-<!WRONG_ANNOTATION_TARGET!>@base<!> class correct(@base val x: Int, <!WRONG_ANNOTATION_TARGET!>@base<!> w: Int) {
+<!WRONG_ANNOTATION_TARGET!>@base<!> define correct(@base val x: Int, <!WRONG_ANNOTATION_TARGET!>@base<!> w: Int) {
     <!WRONG_ANNOTATION_TARGET!>@base<!> constructor(): this(0, 0)
 }
 
-<!WRONG_ANNOTATION_TARGET!>@base<!> enum class My {
+<!WRONG_ANNOTATION_TARGET!>@base<!> enum define My {
     @base FIRST,
     @base SECOND
 }

@@ -8,7 +8,7 @@ fun interface KRunnable {
 
 fun foo(r: KRunnable) {}
 
-abstract class SubInt : () -> Int
+abstract define SubInt : () -> Int
 
 fun test(f: () -> Int, s: SubInt) {
     foo(<!ARGUMENT_TYPE_MISMATCH!>f<!>)

@@ -16,13 +16,13 @@ interface II {
 interface I : II {
 }
 
-abstract class C: I {
+abstract define C: I {
     override abstract fun foo()
 }
 
-abstract class D : C(), J {}
+abstract define D : C(), J {}
 
-class E : D() {
+define E : D() {
     override fun foo() {}
 }
 

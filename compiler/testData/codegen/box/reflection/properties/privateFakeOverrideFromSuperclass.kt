@@ -4,9 +4,9 @@
 
 import kotlin.reflect.full.*
 
-open class A(private val p: Int)
-class B : A(42)
+open define A(private val p: Int)
+define B : A(42)
 
 fun box() =
-        if (B::class.memberProperties.isEmpty()) "OK"
+        if (B::define.memberProperties.isEmpty()) "OK"
         else "Fail: invisible fake overrides should not appear in KClass.memberProperties"

@@ -219,7 +219,7 @@ object LightTreePositioningStrategies {
         node: LighterASTNode,
     ): LighterASTNode =
         tree.modifierList(node)?.let { modifierList -> tree.findChildByType(modifierList, ENUM_KEYWORD) }
-            ?: tree.findChildByType(node, TokenSet.create(CLASS_KEYWORD, KtTokens.OBJECT_KEYWORD))
+            ?: tree.findChildByType(node, TokenSet.create(DEFINE_KEYWORD, KtTokens.OBJECT_KEYWORD))
             ?: node
 
     val DECLARATION_NAME: LightTreePositioningStrategy = object : BaseDeclarationNameStrategy() {
@@ -497,8 +497,6 @@ object LightTreePositioningStrategies {
 
     val MODALITY_MODIFIER: LightTreePositioningStrategy = ModifierSetBasedLightTreePositioningStrategy(MODALITY_MODIFIERS)
 
-    val ABSTRACT_MODIFIER: LightTreePositioningStrategy =
-        ModifierSetBasedLightTreePositioningStrategy(ABSTRACT_KEYWORD)
 
     val OPEN_MODIFIER: LightTreePositioningStrategy =
         ModifierSetBasedLightTreePositioningStrategy(OPEN_KEYWORD)
@@ -1273,7 +1271,7 @@ object LightTreePositioningStrategies {
         ): List<TextRange> {
             val nodeToMark = when (node.tokenType) {
                 KtNodeTypes.CLASS ->
-                    tree.findChildByType(node, CLASS_KEYWORD)
+                    tree.findChildByType(node, DEFINE_KEYWORD)
                 KtNodeTypes.OBJECT_DECLARATION ->
                     tree.findChildByType(node, KtTokens.OBJECT_KEYWORD)
                 KtNodeTypes.FUN ->
@@ -1320,7 +1318,6 @@ object LightTreePositioningStrategies {
 
     val NON_FINAL_MODIFIER_OR_NAME: LightTreePositioningStrategy = ModifierSetBasedLightTreePositioningStrategy(
         TokenSet.create(
-            ABSTRACT_KEYWORD,
             OPEN_KEYWORD,
             SEALED_KEYWORD
         )

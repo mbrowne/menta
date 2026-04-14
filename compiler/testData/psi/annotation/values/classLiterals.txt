@@ -22,7 +22,7 @@ KtFile: classLiterals.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ClassLiteral')
     PRIMARY_CONSTRUCTOR
@@ -84,7 +84,7 @@ KtFile: classLiterals.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('WithClassLiteral')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(COMMA)(',')
           PsiWhiteSpace('\n    ')
           VALUE_ARGUMENT
@@ -92,11 +92,11 @@ KtFile: classLiterals.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('Boolean')
               PsiElement(COLONCOLON)('::')
-              PsiElement(class)('class')
+              PsiElement(define)('define')
           PsiElement(COMMA)(',')
           PsiWhiteSpace('\n')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithClassLiteral')

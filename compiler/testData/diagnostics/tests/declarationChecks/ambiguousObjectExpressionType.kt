@@ -9,12 +9,12 @@ interface MyTrait {
     fun f1() {}
 }
 
-open class MyClass {
+open define MyClass {
     fun f2() {}
 }
 
 
-class Foo(val myTrait: MyTrait) {
+define Foo(val myTrait: MyTrait) {
 
     private val privateProperty = object : MyClass(), MyTrait {}
     val publicPropertyWithSingleSuperType = object : MyClass() {
@@ -100,7 +100,7 @@ class Foo(val myTrait: MyTrait) {
 
 
 
-    class FooInner {
+    define FooInner {
         private val privatePropertyInner = object : MyClass(), MyTrait {}
 
         init {

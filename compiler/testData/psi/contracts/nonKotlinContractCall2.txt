@@ -6,7 +6,7 @@ KtFile: nonKotlinContractCall2.kt
   CLASS
     PsiComment(EOL_COMMENT)('// FILE: Test.kt')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Test')
   PsiWhiteSpace('\n\n')

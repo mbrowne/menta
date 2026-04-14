@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FILE: A.java
 
-public class A {
+public define A {
     public <T> A(T x, java.util.List<T> y) {}
 }
 

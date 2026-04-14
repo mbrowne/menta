@@ -2,9 +2,9 @@ interface I {
     fun foo(x: Int = 23): String
 }
 
-abstract class Base : I
+abstract define Base : I
 
-class C : Base(), I {
+define C : Base(), I {
     override fun foo(x: Int) = "C:$x"
 }
 

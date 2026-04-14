@@ -17,8 +17,8 @@ fun <T4 : Any, E4 : T4> OuterController<T4>.nestedPCLA(
     l2: NestedController<E4>.() -> Unit,
 ) {}
 
-open class Base
-class ClassWithParamInMemberScope(val param: Int) : Base()
+open define Base
+define ClassWithParamInMemberScope(val param: Int) : Base()
 
 val sourceOfConstraintForNestedPCLA: ClassWithParamInMemberScope = TODO()
 

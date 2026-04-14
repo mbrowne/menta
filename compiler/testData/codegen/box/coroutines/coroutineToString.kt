@@ -8,7 +8,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class A<T : String> {
+define A<T : String> {
     suspend fun foo() {}
 
     suspend fun bar(): T {

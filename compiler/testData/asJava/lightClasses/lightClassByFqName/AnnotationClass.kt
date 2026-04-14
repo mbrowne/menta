@@ -1,6 +1,6 @@
 // Anno
 
-annotation class Anno(
+annotation define Anno(
         val i: Int,
         val j: Int = 5,
         val value: String = "a",

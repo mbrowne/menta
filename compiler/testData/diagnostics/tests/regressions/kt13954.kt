@@ -4,18 +4,18 @@
 
 package foo
 
-class A(val c: C)
+define A(val c: C)
 
 // FILE: foo/B.kt
 
 package foo
 
-class B {
+define B {
     interface D {
         fun foo(): E
     }
 
-    class E
+    define E
 }
 
 // FILE: foo/C.java
@@ -25,7 +25,7 @@ package foo;
 import static foo.B.D.*;
 
 @SuppressWarnings("RedundantTypeArguments")
-public class C {}
+public define C {}
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, javaType, nestedClass,
 primaryConstructor, propertyDeclaration */

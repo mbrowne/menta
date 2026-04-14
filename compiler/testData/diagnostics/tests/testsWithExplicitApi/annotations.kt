@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 
-<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>annotation class A<!>
+<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>annotation define A<!>
 
 @Target(
     AnnotationTarget.CLASS,
@@ -10,17 +10,17 @@
     AnnotationTarget.CONSTRUCTOR,
     AnnotationTarget.FUNCTION
 )
-public annotation class B
+public annotation define B
 
-<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>annotation class C<!>(val a: String)
+<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>annotation define C<!>(val a: String)
 
 /**
  * Foo1 KDoc
  */
 @B
-<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>class Foo1<!>() {}
+<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>define Foo1<!>() {}
 
-public class Foo2() {
+public define Foo2() {
     /**
      * KDoc for methodWithAnnotations
      */
@@ -34,7 +34,7 @@ public class Foo2() {
     <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>var simple<!>: Int = 10
 }
 
-public open class ClassWithOpen {
+public open define ClassWithOpen {
     /**
      * constructor KDoc
      */

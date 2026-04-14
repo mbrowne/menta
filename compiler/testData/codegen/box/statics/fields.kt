@@ -2,14 +2,14 @@
 
 // FILE: Child.java
 
-class Child extends Parent {
+define Child extends Parent {
     public static int b = 3;
     public static int c = 4;
 }
 
 // FILE: Parent.java
 
-class Parent {
+define Parent {
     public static int a = 1;
     public static int b = 2;
 }

@@ -5,7 +5,7 @@
 fun useList(list: List<Any?>) {  }
 fun useMap(map: Map<String, Any?>) {  }
 
-enum class Color {BLUE}
+enum define Color {BLUE}
 
 fun Color.grayValue() {}
 

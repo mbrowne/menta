@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class S {
+expect define S {
     val length: Int
 }
 

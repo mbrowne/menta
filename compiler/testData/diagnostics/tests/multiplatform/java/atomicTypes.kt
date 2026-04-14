@@ -7,8 +7,8 @@
 import kotlin.concurrent.atomics.AtomicInt
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
 
-@OptIn(ExperimentalAtomicApi::class)
-expect class Foo {
+@OptIn(ExperimentalAtomicApi::define)
+expect define Foo {
     fun test(a: AtomicInt): AtomicInt
 }
 
@@ -16,7 +16,7 @@ expect class Foo {
 // FILE: Bar.java
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Bar {
+public define Bar {
     public AtomicInteger test(AtomicInteger i){
         return i;
     }

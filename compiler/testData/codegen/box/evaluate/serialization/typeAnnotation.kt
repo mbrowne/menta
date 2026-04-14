@@ -5,11 +5,11 @@
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.BINARY)
-annotation class TypeAnnotation(val str: String)
+annotation define TypeAnnotation(val str: String)
 
-open class A
+open define A
 interface B
-class C : @TypeAnnotation("AClass" + "Anno") A(), @TypeAnnotation("BInterface" + "Anno") B
+define C : @TypeAnnotation("AClass" + "Anno") A(), @TypeAnnotation("BInterface" + "Anno") B
 
 val a: @TypeAnnotation("Int" + "Anno") Int = 1
 var b: @TypeAnnotation("List" + "Anno") List<
@@ -48,8 +48,8 @@ fun withAnonymousObject() {
     }
 }
 
-class Outer {
-    inner class Inner {
+define Outer {
+    inner define Inner {
         fun foo(): @TypeAnnotation("InsideInner" + "Anno") Int = 0
     }
 }

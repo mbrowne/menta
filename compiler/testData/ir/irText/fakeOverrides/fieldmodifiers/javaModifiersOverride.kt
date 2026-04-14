@@ -3,7 +3,7 @@
 // FULL_JDK
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public transient int a = 10;
     public volatile int b = 11;
     public final int c = 12;
@@ -11,10 +11,10 @@ public class Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 extends KotlinClass { }
+public define Java2 extends KotlinClass { }
 
 // FILE: Java3.java
-public class Java3 extends KotlinClass {
+public define Java3 extends KotlinClass {
     public int a = 1;
     public int b = 2;
     public int c = 3;
@@ -31,22 +31,22 @@ public interface Java4 {
 
 // FILE: 1.kt
 
-class A : Java1()    //Kotlin ← Java
+define A : Java1()    //Kotlin ← Java
 
-class B : Java2()   //Kotlin ← Java ← Kotlin ← Java
+define B : Java2()   //Kotlin ← Java ← Kotlin ← Java
 
-class C : Java3()   //Kotlin ← Java ← Kotlin ← Java with explicit override in java
+define C : Java3()   //Kotlin ← Java ← Kotlin ← Java with explicit override in java
 
-class D : Java1(), Java4    //Kotlin ← Java1, Java2
+define D : Java1(), Java4    //Kotlin ← Java1, Java2
 
-abstract class E : Java1(), KotlinInterface //Kotlin ← Java1, Kotlin2
+abstract define E : Java1(), KotlinInterface //Kotlin ← Java1, Kotlin2
 
-class F(override val a: Int,
+define F(override val a: Int,
         override val b: Int,
         override val c: Int,
         override val d: Int) : Java1(), KotlinInterface //Kotlin ← Java1, Kotlin2 with explicit override
 
-open class KotlinClass : Java1()
+open define KotlinClass : Java1()
 
 interface KotlinInterface {
     val a: Int

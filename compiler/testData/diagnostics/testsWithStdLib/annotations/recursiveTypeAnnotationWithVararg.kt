@@ -7,7 +7,7 @@
 
 @Target(AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class MyAnnotation(vararg val arg: @MyAnnotation String = [])
+annotation define MyAnnotation(vararg val arg: @MyAnnotation String = [])
 
 // MODULE: main(lib)
 // FILE: main.kt

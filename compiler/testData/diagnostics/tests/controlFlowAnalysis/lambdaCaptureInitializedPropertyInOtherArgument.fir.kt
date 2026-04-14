@@ -10,7 +10,7 @@ fun invokeLater(x: () -> Unit, y: Any) {
     x()
 }
 
-class A(val k: String)
+define A(val k: String)
 
 fun test1() {
     val x: String

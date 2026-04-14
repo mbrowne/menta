@@ -1,7 +1,7 @@
 // WITH_SIGNATURES
 
-abstract class GenericIterator<T> : Iterator<T>
+abstract define GenericIterator<T> : Iterator<T>
 
-abstract class DoubleIterator : Iterator<Double>
+abstract define DoubleIterator : Iterator<Double>
 
-abstract class StringIterator : Iterator<String>
+abstract define StringIterator : Iterator<String>

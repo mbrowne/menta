@@ -1,10 +1,10 @@
 // FIR_IDENTICAL
 
-open class B {
+open define B {
     val x: Int
         get() = 1
 }
 
-class C : B() {
+define C : B() {
     <!ACCIDENTAL_OVERRIDE!>fun getX() = 1<!>
 }

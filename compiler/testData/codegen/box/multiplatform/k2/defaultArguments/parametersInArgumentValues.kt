@@ -3,7 +3,7 @@
 // MODULE: common
 // FILE: common.kt
 
-class B(val value: Int)
+define B(val value: Int)
 
 expect fun test(a: Int = 2, b: Int = B(a * 2).value, c: String = "${b}$a"): String
 

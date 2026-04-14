@@ -5,7 +5,7 @@ fun interface FIn<in T> {
     fun f(x: T)
 }
 
-class Test<S> {
+define Test<S> {
     fun foo() = FIn<S & Any> { sx -> sx.toString() }
 }
 
@@ -23,10 +23,10 @@ interface I2<in T> {
     val sam: FIn<T>
 }
 
-abstract class AC<T> : I1<T>, I2<T> {
+abstract define AC<T> : I1<T>, I2<T> {
     override val sam: FIn<T> = FIn(l)
 }
 
-abstract class AD<T> : AC<T & Any>() {
+abstract define AD<T> : AC<T & Any>() {
     override val l: (T & Any).() -> Unit = { }
 }

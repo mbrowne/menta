@@ -1,5 +1,5 @@
-open class A(val array: Array<Any>)
+open define A(val array: Array<Any>)
 
-class B : A(arrayOf("OK"))
+define B : A(arrayOf("OK"))
 
 fun box() = B().array[0].toString()

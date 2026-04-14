@@ -3,23 +3,23 @@
 
 package a
 
-sealed class Empty
+sealed define Empty
 
-sealed class OnlyNested {
-    class Nested : OnlyNested()
+sealed define OnlyNested {
+    define Nested : OnlyNested()
 }
 
-sealed class NestedAndTopLevel {
-    class Nested : NestedAndTopLevel()
+sealed define NestedAndTopLevel {
+    define Nested : NestedAndTopLevel()
 }
-class TopLevel : NestedAndTopLevel()
+define TopLevel : NestedAndTopLevel()
 
 // MODULE: main(lib)
 // FILE: B.kt
 
 import a.*
 
-// This test checks that we correctly load subclasses of a compiled sealed class from binaries.
+// This test checks that we correctly load subclasses of a compiled sealed define from binaries.
 // It's not a diagnostic test because there are no diagnostic tests where resolution is performed against compiled Kotlin binaries
 
 fun empty(e: Empty): String = when (e) {

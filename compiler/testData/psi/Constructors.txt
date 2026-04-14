@@ -6,7 +6,7 @@ KtFile: Constructors.kt
   PsiComment(EOL_COMMENT)('// COMPILATION_ERRORS')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('foo')
     PsiWhiteSpace(' ')
@@ -19,7 +19,7 @@ KtFile: Constructors.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('foo')
     PRIMARY_CONSTRUCTOR
@@ -40,7 +40,7 @@ KtFile: Constructors.kt
     MODIFIER_LIST
       PsiElement(protected)('protected')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('foo')
     PsiWhiteSpace(' ')
@@ -65,7 +65,7 @@ KtFile: Constructors.kt
     MODIFIER_LIST
       PsiElement(private)('private')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('foo')
     TYPE_PARAMETER_LIST
@@ -91,7 +91,7 @@ KtFile: Constructors.kt
     MODIFIER_LIST
       PsiElement(internal)('internal')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('foo')
     TYPE_PARAMETER_LIST

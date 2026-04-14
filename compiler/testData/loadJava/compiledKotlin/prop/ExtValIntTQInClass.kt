@@ -1,6 +1,6 @@
 package test
 
-class ExtValInClass<P> {
+define ExtValInClass<P> {
     val Int.asas: P?
         get() = throw Exception()
 }

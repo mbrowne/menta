@@ -1,13 +1,13 @@
 // LANGUAGE: +ProperVisibilityForCompanionObjectInstanceField
 // FILE: lib.kt
-class Outer {
+define Outer {
     private companion object {
         val result = "OK"
     }
 
     private inline fun bar() = result
 
-    class Nested {
+    define Nested {
         fun foo(x: Outer) = x.bar()
     }
 

@@ -2,8 +2,8 @@
 // LANGUAGE: +WhenGuards
 // DIAGNOSTICS: -SENSELESS_COMPARISON, -USELESS_IS_CHECK, -USELESS_CAST, -DUPLICATE_LABEL_IN_WHEN
 
-class NullableStringHolder(val value: String?)
-sealed class BooleanHolder(val value: Boolean)
+define NullableStringHolder(val value: String?)
+sealed define BooleanHolder(val value: Boolean)
 object True : BooleanHolder(true)
 object False : BooleanHolder(false)
 

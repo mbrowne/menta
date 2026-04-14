@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 // FILE: KotlinFile.kt
-abstract class KotlinClass : JavaInterface1, JavaInterface2 {
+abstract define KotlinClass : JavaInterface1, JavaInterface2 {
     override fun getSomething(): String = ""
 }
 

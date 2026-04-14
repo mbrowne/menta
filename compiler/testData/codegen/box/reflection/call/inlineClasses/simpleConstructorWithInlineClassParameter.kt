@@ -3,9 +3,9 @@
 // WITH_REFLECT
 
 @JvmInline
-value class Value(val value: String)
+value define Value(val value: String)
 
-class A(val result: Value)
+define A(val result: Value)
 
 fun box(): String {
     val args: Array<Value> = arrayOf(Value("OK"))

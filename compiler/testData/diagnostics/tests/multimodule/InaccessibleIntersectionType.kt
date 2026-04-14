@@ -8,8 +8,8 @@ interface B
 // MODULE: b(a)
 // FILE: b.kt
 
-class C : A, B
-class D : A, B
+define C : A, B
+define D : A, B
 
 val c = C()
 val d = D()

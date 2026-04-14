@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class Runnable {
+abstract define Runnable {
     abstract fun run()
 }
 

@@ -1,30 +1,30 @@
 // TARGET_BACKEND: JVM
 // FILE: J.java
 
-public class J {
+public define J {
     public int field = 0;
 }
 
 // FILE: kt16904.kt
 
-abstract class A {
+abstract define A {
     val x = B()
     var y = 0
 }
 
-class B {
+define B {
     operator fun plusAssign(x: Int) {
     }
 }
 
-class Test1 : A {
+define Test1 : A {
     constructor() {
         x += 42
         y += 42
     }
 }
 
-class Test2 : J() {
+define Test2 : J() {
     init {
         field = 42
     }

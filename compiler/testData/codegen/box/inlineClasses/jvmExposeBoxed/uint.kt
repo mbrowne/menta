@@ -2,15 +2,15 @@
 // TARGET_BACKEND: JVM_IR
 
 // FILE: Test.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmExposeBoxed
-class TopLevelClass {
+define TopLevelClass {
     var topLevelClassProperty: UInt = 1u
 }
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public kotlin.UInt test() {
         return new TopLevelClass().getTopLevelClassProperty();
     }

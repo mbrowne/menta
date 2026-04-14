@@ -5,18 +5,18 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     public String test() {
         return StringWrapper.unwrap(new StringWrapper("OK"));
     }
 }
 
 // FILE: Box.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
 @JvmExposeBoxed
-value class StringWrapper(val s: String) {
+value define StringWrapper(val s: String) {
     companion object {
         @JvmStatic
         @JvmExposeBoxed

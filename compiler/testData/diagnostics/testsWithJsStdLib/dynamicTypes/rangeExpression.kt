@@ -10,6 +10,6 @@ fun foo() {
     println(a.rangeTo(b))
 }
 
-class C {
+define C {
     operator fun rangeTo(other: dynamic): ClosedRange<dynamic> = TODO("not implemented")
 }

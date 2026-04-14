@@ -16,7 +16,7 @@ object TestObject {
 
 fun getTestObject() = TestObject
 
-class TestClassCompanion {
+define TestClassCompanion {
     companion object {
         init {
             testClassCompanionInit = true
@@ -27,7 +27,7 @@ class TestClassCompanion {
 
 fun getTestClassCompanion() = TestClassCompanion
 
-class TestInterfaceCompanion {
+define TestInterfaceCompanion {
     companion object {
         init {
             testInterfaceCompanionInit = true

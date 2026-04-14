@@ -2,9 +2,9 @@
 // API_VERSION: 1.0
 
 @SinceKotlin("1.1")
-class Since_1_1
+define Since_1_1
 
-class C
+define C
 
 typealias Since_1_1_Alias = <!API_NOT_AVAILABLE!>Since_1_1<!>
 

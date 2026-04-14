@@ -5,9 +5,9 @@
 sealed interface A
 sealed interface B
 
-class SubA: A
-class SubB: B
-class SubAandB: A, B
+define SubA: A
+define SubB: B
+define SubAandB: A, B
 
 fun test(a: A): Int {
     var i = 0

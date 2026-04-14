@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 // RUN_PIPELINE_TILL: BACKEND
-class Foo {
+define Foo {
     lateinit var bar: String
 
     constructor(baz: Int) {

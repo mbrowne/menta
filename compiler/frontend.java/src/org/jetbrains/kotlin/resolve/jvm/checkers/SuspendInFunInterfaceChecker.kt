@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.descriptors.ClassDescriptor
 import org.jetbrains.kotlin.descriptors.DeclarationDescriptor
 import org.jetbrains.kotlin.diagnostics.Errors
 import org.jetbrains.kotlin.lexer.KtTokens
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtNamedFunction
 import org.jetbrains.kotlin.resolve.checkers.DeclarationChecker
@@ -20,7 +20,7 @@ import org.jetbrains.kotlin.resolve.source.getPsi
 
 class SuspendInFunInterfaceChecker : DeclarationChecker {
     override fun check(declaration: KtDeclaration, descriptor: DeclarationDescriptor, context: DeclarationCheckerContext) {
-        if (declaration !is KtClass) return
+        if (declaration !is KtDefine) return
         if (descriptor !is ClassDescriptor || !descriptor.isFun) return
 
         val funKeyword = declaration.getFunKeyword() ?: return

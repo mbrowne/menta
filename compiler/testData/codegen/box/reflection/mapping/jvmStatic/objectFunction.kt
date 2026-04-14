@@ -12,7 +12,7 @@ object O {
 }
 
 fun box(): String {
-    val foo = O::class.members.single { it.name == "foo" } as KFunction<*>
+    val foo = O::define.members.single { it.name == "foo" } as KFunction<*>
 
     val j = foo.javaMethod ?: return "Fail: no Java method found for O::foo"
     assertEquals(3, j.invoke(null, "abc"))

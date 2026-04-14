@@ -1,4 +1,4 @@
-class A(val w: Char) {
+define A(val w: Char) {
     val x: Int
     var y: Int
     val z: Int

@@ -2,23 +2,23 @@
 
 // MODULE: lib-common
 // FILE: lib-common.kt
-expect open class A()
+expect open define A()
 
-open class B : A()
+open define B : A()
 
 // MODULE: lib-platform()()(lib-common)
 // FILE: lib-platform.kt
-actual open class A actual constructor()
+actual open define A actual constructor()
 
-class C : B()
+define C : B()
 
 // MODULE: app-common(lib-common)
 // FILE: app-common.kt
-class D : B()
+define D : B()
 
 // MODULE: app-platform(lib-platform)()(app-common)
 // FILE: app-platform.kt
-class E : B()
+define E : B()
 
 fun box(): String {
     val a = A()

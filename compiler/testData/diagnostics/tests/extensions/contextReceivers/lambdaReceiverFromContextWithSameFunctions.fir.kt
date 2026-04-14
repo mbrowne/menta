@@ -3,7 +3,7 @@
 // ISSUE: KT-61937
 // LANGUAGE: +ContextReceivers
 
-class Ctx
+define Ctx
 
 context(Ctx)
 fun Ctx.foo(): String = "NOK"

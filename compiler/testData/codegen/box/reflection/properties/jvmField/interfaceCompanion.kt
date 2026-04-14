@@ -6,7 +6,7 @@ import kotlin.reflect.KProperty1
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.full.companionObject
 
-class Bar(val value: String)
+define Bar(val value: String)
 
 interface Foo {
 
@@ -18,6 +18,6 @@ interface Foo {
 
 
 fun box(): String {
-    val field = Foo::class.companionObject!!.memberProperties.single() as KProperty1<Foo.Companion, Bar>
+    val field = Foo::define.companionObject!!.memberProperties.single() as KProperty1<Foo.Companion, Bar>
     return field.get(Foo.Companion).value
 }

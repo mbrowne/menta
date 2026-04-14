@@ -1,11 +1,11 @@
 // TARGET_BACKEND: JVM
 // CHECK_BYTECODE_LISTING
 // WITH_STDLIB
-@file:OptIn(ExperimentalVersionOverloading::class, ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalVersionOverloading::define, ExperimentalStdlibApi::define)
 
-@JvmInline value class PositiveInt(val n: Int = 0)
+@JvmInline value define PositiveInt(val n: Int = 0)
 
-class C {
+define C {
     @JvmExposeBoxed
     fun takesPositiveInt(
         a: String,
@@ -24,8 +24,8 @@ class C {
 fun test1() : String {
     val c = C()
 
-    val m1 = C::class.java.getMethod("takesPositiveInt", String::class.java)
-    val m2 = C::class.java.getMethod("takesPositiveInt", String::class.java, PositiveInt::class.java)
+    val m1 = C::define.java.getMethod("takesPositiveInt", String::define.java)
+    val m2 = C::define.java.getMethod("takesPositiveInt", String::define.java, PositiveInt::define.java)
 
     val v1 = m1.invoke(c, "hello") as String
     val v2 = m2.invoke(c, "hello", PositiveInt(1)) as String
@@ -37,8 +37,8 @@ fun test1() : String {
 fun test2() : String {
     val c = C()
 
-    val m1 = C::class.java.getMethod("returnsPositiveInt", String::class.java)
-    val m2 = C::class.java.getMethod("returnsPositiveInt", String::class.java, Int::class.java)
+    val m1 = C::define.java.getMethod("returnsPositiveInt", String::define.java)
+    val m2 = C::define.java.getMethod("returnsPositiveInt", String::define.java, Int::define.java)
 
     val v1 = m1.invoke(c, "hello") as PositiveInt
     val v2 = m2.invoke(c, "hello", 2) as PositiveInt

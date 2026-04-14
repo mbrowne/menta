@@ -3,7 +3,7 @@
 
 import kotlin.properties.Delegates
 
-class MyClass {
+define MyClass {
     val lazyProp by lazy {
         5
     }

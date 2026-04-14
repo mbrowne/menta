@@ -2,14 +2,14 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect class RefinedLibClass {
+expect define RefinedLibClass {
     fun base(): String
 }
 
 // MODULE: lib-inter()()(lib-common)
-@OptIn(kotlin.ExperimentalMultiplatform::class)
+@OptIn(kotlin.ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect class RefinedLibClass {
+expect define RefinedLibClass {
     fun base(): String
     fun bar(): String
 }
@@ -17,7 +17,7 @@ expect class RefinedLibClass {
 fun libInterUse(r: RefinedLibClass): String = r.base() + r.bar()
 
 // MODULE: lib-platform()()(lib-inter)
-actual class RefinedLibClass {
+actual define RefinedLibClass {
     actual fun base(): String = "base"
     actual fun bar(): String = "bar"
 }

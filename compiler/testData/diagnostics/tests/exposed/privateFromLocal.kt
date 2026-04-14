@@ -2,13 +2,13 @@
 // FIR_IDENTICAL
 interface Your
 
-class My {
+define My {
     // private from local: ???
     private val x = object : Your {}
 
     // private from local: ???
     private fun foo() = {
-        class Local
+        define Local
         Local()
     }()
 }

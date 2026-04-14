@@ -1,6 +1,6 @@
 fun foo() = "global"
 
-class X {
+define X {
     fun foo() = "member"
 }
 

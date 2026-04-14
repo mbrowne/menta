@@ -1,4 +1,4 @@
-class A(val a: String)
+define A(val a: String)
 
 val A.x : A.(A.() -> String) -> String
     get() = { a: A, lambda: A.()-> String ->

@@ -1,5 +1,5 @@
 
-annotation class Anno(val x: Array<String> = emptyArray())
+annotation define Anno(val x: Array<String> = emptyArray())
 
 @Anno fun test1() = 1
 @Anno(arrayOf("K")) fun test2() = 2

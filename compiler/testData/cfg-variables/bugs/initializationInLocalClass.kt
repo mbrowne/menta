@@ -1,6 +1,6 @@
 fun foo() {
     var x: String
-    class A {
+    define A {
         init {
             x = ""
         }

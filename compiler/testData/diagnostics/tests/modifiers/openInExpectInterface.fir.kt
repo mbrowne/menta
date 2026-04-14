@@ -20,9 +20,9 @@ expect interface My {
     val f: Int
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class MyImpl1<!>: My
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define MyImpl1<!>: My
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class MyImpl2<!>: My {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define MyImpl2<!>: My {
     override fun foo() {}
     override val f = 0
     override val e = 1

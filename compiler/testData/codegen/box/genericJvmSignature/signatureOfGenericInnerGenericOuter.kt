@@ -2,15 +2,15 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-abstract class Outer<S> {
-    inner class Inner<R>
+abstract define Outer<S> {
+    inner define Inner<R>
     fun <R> foo(): Inner<R>? = null
 }
 
 fun box(): String {
     kotlin.test.assertEquals(
         "Outer<S>\$Inner<R>",
-        Outer::class.java.declaredMethods.single().genericReturnType.toString()
+        Outer::define.java.declaredMethods.single().genericReturnType.toString()
     )
 
     return "OK"

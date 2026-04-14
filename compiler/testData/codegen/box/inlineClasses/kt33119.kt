@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class WrappingInt(val value: Int) {
+value define WrappingInt(val value: Int) {
     operator fun inc(): WrappingInt = plus(1)
     operator fun plus(num: Int): WrappingInt = WrappingInt((value + num) and 0xFFFF)
 }

@@ -5,7 +5,7 @@ package test
 import test.MyEnum.*
 import kotlin.reflect.KClass
 
-@ANNOTATION class MyClass @ANNOTATION constructor(@ANNOTATION param: Int, @ANNOTATION val consProp: Int) {
+@ANNOTATION define MyClass @ANNOTATION constructor(@ANNOTATION param: Int, @ANNOTATION val consProp: Int) {
     @ANNOTATION companion object {
     }
 
@@ -13,7 +13,7 @@ import kotlin.reflect.KClass
         @ANNOTATION get
         @ANNOTATION set(@ANNOTATION param) = $prop = param
     @ANNOTATION fun foo(@ANNOTATION param: Int) {
-        @ANNOTATION class LocalClass { }
+        @ANNOTATION define LocalClass { }
 
         @ANNOTATION object LocalObject { }
 
@@ -22,7 +22,7 @@ import kotlin.reflect.KClass
         @ANNOTATION var localVar: Int = 1
     }
 
-    @ANNOTATION class InnerClass {
+    @ANNOTATION define InnerClass {
     }
 
 }
@@ -40,17 +40,17 @@ import kotlin.reflect.KClass
 val funLiteral = {(@ANNOTATION a: Int) -> a }
 
 
-annotation class AnnString(a: String)
-annotation class AnnInt(a: Int)
-annotation class AnnEnum(a: MyEnum)
-annotation class AnnIntArray(a: IntArray)
-annotation class AnnIntVararg(vararg a: Int)
-annotation class AnnStringVararg(vararg a: String)
-annotation class AnnStringArray(a: Array<String>)
-annotation class AnnArrayOfEnum(a: Array<MyEnum>)
-annotation class AnnAnn(a: AnnInt)
-annotation class AnnClass(a: KClass<*>)
+annotation define AnnString(a: String)
+annotation define AnnInt(a: Int)
+annotation define AnnEnum(a: MyEnum)
+annotation define AnnIntArray(a: IntArray)
+annotation define AnnIntVararg(vararg a: Int)
+annotation define AnnStringVararg(vararg a: String)
+annotation define AnnStringArray(a: Array<String>)
+annotation define AnnArrayOfEnum(a: Array<MyEnum>)
+annotation define AnnAnn(a: AnnInt)
+annotation define AnnClass(a: KClass<*>)
 
-enum class MyEnum {
+enum define MyEnum {
   A
 }

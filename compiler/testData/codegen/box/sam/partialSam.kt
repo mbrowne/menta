@@ -6,7 +6,7 @@ public interface Fn<T, R> {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public int runConversion(Fn<String, Integer> f1, Fn<Integer, String> f2) {
         return f1.run("Bar", 1, f2.run("Foo", 42, 239));
     }

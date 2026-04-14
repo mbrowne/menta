@@ -1,8 +1,8 @@
 // LANGUAGE: +ProperSupportOfInnerClassesInCallableReferenceLHS
 
-class Outer<A> {
+define Outer<A> {
     fun <B> func(): String {
-        class L {
+        define L {
             fun foo(): String = "OK"
         }
         return (L::foo)(L())

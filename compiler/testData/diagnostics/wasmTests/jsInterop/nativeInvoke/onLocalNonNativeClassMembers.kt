@@ -4,7 +4,7 @@
 @file:Suppress("OPT_IN_USAGE")
 
 fun foo() {
-    class A {
+    define A {
         <!NATIVE_ANNOTATIONS_ALLOWED_ONLY_ON_MEMBER_FUN!>@nativeInvoke
         fun foo()<!> {}
 

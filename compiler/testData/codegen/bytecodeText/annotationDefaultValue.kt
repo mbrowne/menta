@@ -1,6 +1,6 @@
 
-annotation class Ann(val arg: String = "abc")
+annotation define Ann(val arg: String = "abc")
 
-@Ann class MyClass
+@Ann define MyClass
 
 // 1 @LAnn;\(\)

@@ -7,14 +7,14 @@ interface Two {
   public open fun quux() : Int = 100
 }
 
-class OneImpl : One {
+define OneImpl : One {
   public override fun foo() = 1
 }
-class TwoImpl : Two {
+define TwoImpl : Two {
   public override fun foo() = 2
 }
 
-class Test2(a : One, b : Two) : Two by b, One by a {
+define Test2(a : One, b : Two) : Two by b, One by a {
   public override fun foo() = 0
 }
 

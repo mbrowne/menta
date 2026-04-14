@@ -472,12 +472,12 @@ package pkg
 <!CONFLICTING_OVERLOADS!>@Deprecated(message = "", level = DeprecationLevel.HIDDEN) internal fun testDifferencesInPrivateAndInternalVisibilitiesReverse()<!> {}
 
 
-open class Invariant<T>
+open define Invariant<T>
 
 
-class UserKlass
-class UserKlassA
-class UserKlassB
+define UserKlass
+define UserKlassA
+define UserKlassB
 typealias SameUserKlass = UserKlass
 typealias SameUserKlassA = UserKlassA
 typealias SameUserKlassB = UserKlassB

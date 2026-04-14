@@ -4,7 +4,7 @@
 // WORKS_WHEN_VALUE_CLASS
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int, val y: Int) {
+value define Z(val x: Int, val y: Int) {
     public constructor() : this(0)
     internal constructor(x: Long): this(x.toInt())
     private constructor(x: Int): this(x, -x)

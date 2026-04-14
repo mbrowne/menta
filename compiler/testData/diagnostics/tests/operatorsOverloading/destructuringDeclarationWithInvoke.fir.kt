@@ -1,15 +1,15 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-59715
 
-class FunctionComponent {
+define FunctionComponent {
     val component1: () -> String = { "hello" }
 }
 
-class I {
+define I {
     operator fun invoke(): String = "hello"
 }
 
-class InvokeComponent {
+define InvokeComponent {
     val component1: I = I()
 }
 

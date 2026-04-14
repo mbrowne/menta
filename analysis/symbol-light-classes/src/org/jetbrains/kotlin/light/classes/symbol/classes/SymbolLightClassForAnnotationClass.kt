@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.analysis.api.projectStructure.KaModule
 import org.jetbrains.kotlin.analysis.api.symbols.*
 import org.jetbrains.kotlin.analysis.api.symbols.pointers.KaSymbolPointer
 import org.jetbrains.kotlin.light.classes.symbol.cachedValue
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 
 internal open class SymbolLightClassForAnnotationClass : SymbolLightClassForInterfaceOrAnnotationClass {
@@ -27,7 +27,7 @@ internal open class SymbolLightClassForAnnotationClass : SymbolLightClassForInte
     }
 
     constructor(classOrObject: KtClassOrObject, ktModule: KaModule) : super(classOrObject, ktModule) {
-        require(classOrObject is KtClass && classOrObject.isAnnotation())
+        require(classOrObject is KtDefine && classOrObject.isAnnotation())
     }
 
     constructor(

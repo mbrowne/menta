@@ -11,7 +11,7 @@ KtFile: annotatedParameterInInnerClassConstructor.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoA')
   PsiWhiteSpace('\n')
@@ -19,12 +19,12 @@ KtFile: annotatedParameterInInnerClassConstructor.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnoB')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('AnnotatedParameterInInnerClassConstructor')
     PsiWhiteSpace(' ')
@@ -35,7 +35,7 @@ KtFile: annotatedParameterInInnerClassConstructor.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
         PRIMARY_CONSTRUCTOR
@@ -88,7 +88,7 @@ KtFile: annotatedParameterInInnerClassConstructor.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('InnerGeneric')
         TYPE_PARAMETER_LIST

@@ -4,12 +4,12 @@
 import kotlin.test.assertEquals
 
 @JvmInline
-value class A(val x: String?)
+value define A(val x: String?)
 
-data class TestCtor1_1(val x: A = A("0"))
-data class TestCtor1_2(val x: A? = A("0"))
+data define TestCtor1_1(val x: A = A("0"))
+data define TestCtor1_2(val x: A? = A("0"))
 
-data class TestCtor32_1(
+data define TestCtor32_1(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -18,7 +18,7 @@ data class TestCtor32_1(
     val arg25: Long = 0L, val arg26: Long = 0L, val arg27: Long = 0L, val arg28: Long = 0L, val arg29: Long = 0L,
     val arg30: Long = 0L, val x: A = A("0")
 )
-data class TestCtor32_2(
+data define TestCtor32_2(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -28,7 +28,7 @@ data class TestCtor32_2(
     val arg30: Long = 0L, val x: A? = A("0")
 )
 
-data class TestCtor33_1(
+data define TestCtor33_1(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -37,7 +37,7 @@ data class TestCtor33_1(
     val arg25: Long = 0L, val arg26: Long = 0L, val arg27: Long = 0L, val arg28: Long = 0L, val arg29: Long = 0L,
     val arg30: Long = 0L, val arg31: Long = 0L, val x: A = A("0")
 )
-data class TestCtor33_2(
+data define TestCtor33_2(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -47,7 +47,7 @@ data class TestCtor33_2(
     val arg30: Long = 0L, val arg31: Long = 0L, val x: A? = A("0")
 )
 
-data class TestCtor64_1(
+data define TestCtor64_1(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -62,7 +62,7 @@ data class TestCtor64_1(
     val arg55: Long = 0L, val arg56: Long = 0L, val arg57: Long = 0L, val arg58: Long = 0L, val arg59: Long = 0L,
     val arg60: Long = 0L, val arg61: Long = 0L, val arg62: Long = 0L, val x: A = A("0")
 )
-data class TestCtor64_2(
+data define TestCtor64_2(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -78,7 +78,7 @@ data class TestCtor64_2(
     val arg60: Long = 0L, val arg61: Long = 0L, val arg62: Long = 0L, val x: A? = A("0")
 )
 
-data class TestCtor65_1(
+data define TestCtor65_1(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,
@@ -93,7 +93,7 @@ data class TestCtor65_1(
     val arg55: Long = 0L, val arg56: Long = 0L, val arg57: Long = 0L, val arg58: Long = 0L, val arg59: Long = 0L,
     val arg60: Long = 0L, val arg61: Long = 0L, val arg62: Long = 0L, val arg63: Long = 0L, val x: A = A("0")
 )
-data class TestCtor65_2(
+data define TestCtor65_2(
     val arg00: Long = 0L, val arg01: Long = 0L, val arg02: Long = 0L, val arg03: Long = 0L, val arg04: Long = 0L,
     val arg05: Long = 0L, val arg06: Long = 0L, val arg07: Long = 0L, val arg08: Long = 0L, val arg09: Long = 0L,
     val arg10: Long = 0L, val arg11: Long = 0L, val arg12: Long = 0L, val arg13: Long = 0L, val arg14: Long = 0L,

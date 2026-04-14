@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Foo public constructor() {
     public final fun decode(encoded: kotlin.String?): kotlin.String? { contract { /* compiled contract */ }; /* compiled code */ }

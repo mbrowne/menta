@@ -37,7 +37,7 @@ KtFile: semicolonBetweenDeclarations.kt
       PsiElement(DOUBLE_SEMICOLON)(';;')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PRIMARY_CONSTRUCTOR
@@ -71,7 +71,7 @@ KtFile: semicolonBetweenDeclarations.kt
           PsiElement(LBRACE)('{')
           PsiWhiteSpace('\n        ')
           CLASS
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('A1')
           PsiElement(SEMICOLON)(';')
@@ -151,7 +151,7 @@ KtFile: semicolonBetweenDeclarations.kt
     PsiElement(SEMICOLON)(';')
   PsiWhiteSpace('\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('B')
     PsiWhiteSpace(' ')

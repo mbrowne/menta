@@ -6,11 +6,11 @@
 
 // MODULE: commonLib
 // FILE: commonLib.kt
-expect abstract class A
+expect abstract define A
 
 // MODULE: platformLib()()(commonLib)
 // FILE: MyA.java
-public abstract class MyA {
+public abstract define MyA {
     String o = "O";
     public String k = "K";
 }
@@ -21,11 +21,11 @@ actual typealias A = MyA
 
 // MODULE: common(commonLib)
 // FILE: common.kt
-expect open class B : A
+expect open define B : A
 
 // MODULE: jvm(platformLib)()(common)
 // FILE: MyB.java
-public class MyB extends MyA {}
+public define MyB extends MyA {}
 
 // FILE: jvm.kt
 actual typealias B = MyB

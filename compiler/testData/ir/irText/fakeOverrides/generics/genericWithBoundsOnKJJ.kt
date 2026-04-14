@@ -3,7 +3,7 @@
 // DISABLE_JAVA_FACADE
 
 // FILE: Java1.java
-public class Java1<T extends Number> {
+public define Java1<T extends Number> {
     public void foo(T t) { }
     public T bar() {
         return null;
@@ -11,18 +11,18 @@ public class Java1<T extends Number> {
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1 { }
+public define Java2 extends Java1 { }
 
 // FILE: Java3.java
-public class Java3 extends Java1<Double>  { }
+public define Java3 extends Java1<Double>  { }
 
 // FILE: Java4.java
-public class Java4<T> extends Java1<Number> {
+public define Java4<T> extends Java1<Number> {
     public void foo(T t) { }
 }
 
 // FILE: Java6.java
-public class Java6 extends KotlinClass2 {
+public define Java6 extends KotlinClass2 {
     @Override
     public void foo(Number t) {}
     @Override
@@ -32,21 +32,21 @@ public class Java6 extends KotlinClass2 {
 }
 
 // FILE: 1.kt
-class A : Java2()
+define A : Java2()
 
-class B : Java3()
+define B : Java3()
 
-class C : Java4<Any>()
+define C : Java4<Any>()
 
-class D : Java2() {
+define D : Java2() {
     override fun foo(t: Number?) { }
 }
 
-class E : Java3() {
+define E : Java3() {
     override fun foo(t: Double?) { }
 }
 
-class F : Java4<Any>() {
+define F : Java4<Any>() {
     override fun foo(t: Any?) { }
 }
 

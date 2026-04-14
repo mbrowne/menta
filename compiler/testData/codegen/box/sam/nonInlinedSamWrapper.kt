@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-public class Test {
+public define Test {
     public static void run(Runnable r) {
         r.run();
     }

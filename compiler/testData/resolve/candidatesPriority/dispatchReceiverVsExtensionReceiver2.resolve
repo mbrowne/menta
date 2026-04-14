@@ -1,6 +1,6 @@
-class A
+define A
 
-class B {
+define B {
     ~foo~fun foo() = 2
 
     fun A.bar() = `A.foo`foo()

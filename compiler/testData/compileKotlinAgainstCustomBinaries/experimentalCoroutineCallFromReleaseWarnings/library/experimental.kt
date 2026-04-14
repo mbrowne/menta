@@ -1,17 +1,17 @@
 suspend fun dummy() {}
 
-class C {
+define C {
     suspend fun dummy() = "OK"
 }
 
-class WithNested {
-    class Nested {
+define WithNested {
+    define Nested {
         suspend fun dummy() = "OK"
     }
 }
 
-class WithInner {
-    inner class Inner {
+define WithInner {
+    inner define Inner {
         suspend fun dummy() = "OK"
     }
 }

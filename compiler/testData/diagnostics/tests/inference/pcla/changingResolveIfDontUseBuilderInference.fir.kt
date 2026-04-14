@@ -5,19 +5,19 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K, V> buildMap(builderAction: MutableMap<K, V>.() -> Unit): Map<K, V> = mapOf()
 
 fun foo(): MutableMap<CharSequence, *> = mutableMapOf<CharSequence, String>()
 
 fun <E> MutableMap<E, *>.swap(x: MutableMap<E, *>) {}
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K : V, V : CharSequence> build7(builderAction: MutableMap<K, V>.() -> MutableMap<String, V>) = mutableMapOf<String, V>()
 
 fun <K> id(x: K): K = x
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun main() {
     val x: Map<in String, String> = buildMap {
         put("", "")

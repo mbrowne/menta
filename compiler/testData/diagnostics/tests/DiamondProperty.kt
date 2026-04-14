@@ -6,11 +6,11 @@ interface Base {
         set(v) {}
 }
 
-open class Left() : Base
+open define Left() : Base
 
 interface Right : Base
 
-class Diamond() : Left(), Right
+define Diamond() : Left(), Right
 
 /* GENERATED_FIR_TAGS: classDeclaration, getter, integerLiteral, interfaceDeclaration, primaryConstructor,
 propertyDeclaration, setter */

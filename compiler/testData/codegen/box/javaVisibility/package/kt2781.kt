@@ -4,7 +4,7 @@
 
 import java.lang.String;
 
-class J {
+define J {
     String value;
 
     J(String value) {

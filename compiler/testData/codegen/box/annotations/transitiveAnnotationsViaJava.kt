@@ -13,7 +13,7 @@ public @interface MyJavaAnnotation {
 // FILE: MyKotlinAnnotation.kt
 package p1
 
-annotation class MyKotlinAnnotation(val value: Array<String>)
+annotation define MyKotlinAnnotation(val value: Array<String>)
 
 // MODULE: binLib2(binLib1)
 // MODULE_KIND: LibraryBinary
@@ -23,7 +23,7 @@ package p2;
 import p1.MyJavaAnnotation;
 import p1.MyKotlinAnnotation;
 
-public class Base {
+public define Base {
     public void setContentView(@MyJavaAnnotation({"One", "Two"}) @MyKotlinAnnotation({"Three", "Four"}) int viewId) {}
 }
 
@@ -46,7 +46,7 @@ package home
 import p2.Base
 import p3.foo
 
-class Child: Base() {
+define Child: Base() {
     fun test(): String {
         val x = foo(7)
         return "OK"

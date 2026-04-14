@@ -1,6 +1,6 @@
-open class A
+open define A
 
-class B : A() {
+define B : A() {
     fun foo(i: Int) = i
 }
 

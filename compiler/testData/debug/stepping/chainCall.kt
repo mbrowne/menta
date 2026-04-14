@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-class A {
+define A {
     fun foo() = this
     inline fun bar() = this
 }

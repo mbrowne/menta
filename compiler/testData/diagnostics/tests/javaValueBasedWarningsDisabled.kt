@@ -4,7 +4,7 @@
 // SKIP_TXT
 // FIR_IDENTICAL
 // LANGUAGE: +DisableWarningsForValueBasedJavaClasses
-// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate class
+// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate define
 // JDK_KIND: FULL_JDK_21
 
 fun testSynchronized(p1: java.time.LocalDate) {

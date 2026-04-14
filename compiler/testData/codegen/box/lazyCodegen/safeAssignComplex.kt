@@ -14,7 +14,7 @@ fun getOK(): String {
 }
 
 
-class Shape(var result: String) {
+define Shape(var result: String) {
 
     var innerShape: Shape? = null
 

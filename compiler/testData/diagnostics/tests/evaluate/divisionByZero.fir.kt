@@ -22,7 +22,7 @@ val b1: Byte <!INITIALIZER_TYPE_MISMATCH!>=<!> <!DIVISION_BY_ZERO!>1 / 0<!>
 @Ann(<!NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>1 / a1<!>) val b3 = 1
 @Ann(1 / a) val b4 = 1
 
-annotation class Ann(val i : Int)
+annotation define Ann(val i : Int)
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, const, integerLiteral, multiplicativeExpression, primaryConstructor,
 propertyDeclaration */

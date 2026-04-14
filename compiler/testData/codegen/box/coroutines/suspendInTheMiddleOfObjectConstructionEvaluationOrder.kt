@@ -17,7 +17,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     suspend fun suspendHere(): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume("K")
         COROUTINE_SUSPENDED
@@ -28,7 +28,7 @@ fun builder(c: suspend Controller.() -> Unit) {
     c.startCoroutine(Controller(), EmptyContinuation)
 }
 
-class A(val first: String, val second: String) {
+define A(val first: String, val second: String) {
     init {
         logger.append("A.<init>;")
     }

@@ -9,7 +9,7 @@
 // FILE: lib.kt
 
 @JvmInline
-value class ValueClass internal constructor(val i: Int = 0) {
+value define ValueClass internal constructor(val i: Int = 0) {
     fun foo() = "OK"
 }
 

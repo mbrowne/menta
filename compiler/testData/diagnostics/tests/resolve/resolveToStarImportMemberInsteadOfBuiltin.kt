@@ -4,7 +4,7 @@
 
 import TestEnum.*
 
-enum class TestEnum {
+enum define TestEnum {
     Annotation,
     Collection,
     Set,

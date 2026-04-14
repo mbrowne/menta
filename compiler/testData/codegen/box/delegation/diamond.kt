@@ -24,7 +24,7 @@ interface KBase : Base
 
 interface Derived : KBase, Base2
 
-class Fail : Derived {
+define Fail : Derived {
     override fun getValue() = "Fail"
 }
 

@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UInt(val value: Int)
+value define UInt(val value: Int)
 
 fun <T> last(vararg e: T): T = e[e.size - 1]
 fun <T> first(vararg e: T): T = e[0]

@@ -6,12 +6,12 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class Foo(val x: Int)
+value define Foo(val x: Int)
 @JvmInline
-value class Bar(val y: String)
+value define Bar(val y: String)
 
 fun test(f1: Foo, f2: Foo, b1: Bar, fn1: Foo?, fn2: Foo?) {
     val a1 = <!FORBIDDEN_IDENTITY_EQUALS!>f1 === f2<!> || <!FORBIDDEN_IDENTITY_EQUALS!>f1 !== f2<!>

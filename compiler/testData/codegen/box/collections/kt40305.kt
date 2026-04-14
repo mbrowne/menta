@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // FILE: kt40305.kt
 
-class ListImpl<A>(private val list: List<A>): List<A> {
+define ListImpl<A>(private val list: List<A>): List<A> {
     override val size: Int get() = list.size
     override fun contains(element: A): Boolean = list.contains(element)
     override fun containsAll(elements: Collection<A>): Boolean = list.containsAll(elements)
@@ -28,7 +28,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.List;
 
-public class J {
+public define J {
     public static <T> void testAddAllNull(List<T> list) {
         list.addAll(null);
     }

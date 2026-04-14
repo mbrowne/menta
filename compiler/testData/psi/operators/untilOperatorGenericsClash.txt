@@ -47,7 +47,7 @@ KtFile: untilOperatorGenericsClash.kt
         PsiElement(IDENTIFIER)('Int')
         PsiElement(GT)('>')
         PsiElement(COLONCOLON)('::')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
       PsiWhiteSpace('\n    ')
       PROPERTY
         PsiElement(val)('val')
@@ -69,6 +69,6 @@ KtFile: untilOperatorGenericsClash.kt
                       PsiElement(IDENTIFIER)('Int')
               PsiElement(GT)('>')
           PsiElement(COLONCOLON)('::')
-          PsiElement(class)('class')
+          PsiElement(define)('define')
       PsiWhiteSpace('\n')
       PsiElement(RBRACE)('}')

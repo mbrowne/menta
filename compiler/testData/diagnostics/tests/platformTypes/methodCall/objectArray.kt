@@ -5,7 +5,7 @@
 
 package p;
 
-public class J {
+public define J {
     public void arr(Object[] s) {}
 }
 

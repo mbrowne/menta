@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-data class Test1(
+data define Test1(
         val stringArray: Array<String>,
         val charArray: CharArray,
         val booleanArray: BooleanArray,
@@ -11,10 +11,10 @@ data class Test1(
         val doubleArray: DoubleArray
 )
 
-data class Test2<T>(
+data define Test2<T>(
         val genericArray: Array<T>
 )
 
-data class Test3(
+data define Test3(
         val anyArrayN: Array<Any>?
 )

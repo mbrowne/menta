@@ -4,7 +4,7 @@
 
 package kt559
 
-abstract class A {
+abstract define A {
     abstract val i : Int
 
     abstract fun foo() : Int
@@ -12,17 +12,17 @@ abstract class A {
     fun fff() {}
 }
 
-abstract class D(): A() {
+abstract define D(): A() {
     override val i : Int = 34
 }
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class C<!>() : D() {
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define C<!>() : D() {
     fun test() {
         super.i
     }
 }
 
-<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>class B<!>() : A() {
+<!ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED!>define B<!>() : A() {
     override fun foo(): Int {
         super.<!ABSTRACT_SUPER_CALL!>i<!>
 

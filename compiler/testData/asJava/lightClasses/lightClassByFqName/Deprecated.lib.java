@@ -1,4 +1,4 @@
-@kotlin.Deprecated(message = "deprecated class", replaceWith = @kotlin.ReplaceWith(expression = "new class", imports = {}), level = kotlin.DeprecationLevel.ERROR)
+@kotlin.Deprecated(message = "deprecated define", replaceWith = @kotlin.ReplaceWith(expression = "new define", imports = {}), level = kotlin.DeprecationLevel.ERROR)
 public final class DeprecatedClass /* foo.DeprecatedClass*/ {
   @org.jetbrains.annotations.NotNull()
   private java.lang.String deprecatedAccessors;

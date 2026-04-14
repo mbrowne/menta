@@ -31,7 +31,7 @@ fun <T> fizz(x: T): T {
     return x
 }
 
-class A(var x: Int) {
+define A(var x: Int) {
     override fun toString(): String = "A($x)"
 }
 

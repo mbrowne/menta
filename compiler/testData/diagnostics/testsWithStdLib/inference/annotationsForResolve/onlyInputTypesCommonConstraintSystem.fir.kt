@@ -6,14 +6,14 @@
 import kotlin.internal.OnlyInputTypes
 
 interface Bound
-class First : Bound
-class Second : Bound
-class Inv<I >(val v: I)
-class InvB<I : Bound>(val v: I)
-class In<in C>(v: C)
-class InB<in C : Bound>(v: C)
-class Out<out O>(val v: O)
-class OutB<out O : Bound>(val v: O)
+define First : Bound
+define Second : Bound
+define Inv<I >(val v: I)
+define InvB<I : Bound>(val v: I)
+define In<in C>(v: C)
+define InB<in C : Bound>(v: C)
+define Out<out O>(val v: O)
+define OutB<out O : Bound>(val v: O)
 
 fun <@OnlyInputTypes M> strictId(arg: M): M = arg
 fun <@OnlyInputTypes S> strictSelect(arg1: S, arg2: S): S = arg1

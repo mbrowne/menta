@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-open class Base {
+open define Base {
     fun `foo$default`(i: Int, mask: Int, mh: Any) {}
 }
 

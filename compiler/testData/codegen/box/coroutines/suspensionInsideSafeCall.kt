@@ -4,7 +4,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class TestClass {
+define TestClass {
     suspend fun suspendHere(): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume("K")
         COROUTINE_SUSPENDED

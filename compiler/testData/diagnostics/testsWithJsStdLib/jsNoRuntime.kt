@@ -17,9 +17,9 @@ interface WithRuntime : I
 
 <!JS_NO_RUNTIME_USELESS_ON_EXTERNAL_INTERFACE!>@JsNoRuntime<!> external interface EI
 
-<!JS_NO_RUNTIME_WRONG_TARGET!>@JsNoRuntime<!> class C
+<!JS_NO_RUNTIME_WRONG_TARGET!>@JsNoRuntime<!> define C
 <!JS_NO_RUNTIME_WRONG_TARGET!>@JsNoRuntime<!> object O
-<!JS_NO_RUNTIME_WRONG_TARGET!>@JsNoRuntime<!> enum class E { A }
+<!JS_NO_RUNTIME_WRONG_TARGET!>@JsNoRuntime<!> enum define E { A }
 
 fun isChecks(a: Any) {
     if (<!JS_NO_RUNTIME_FORBIDDEN_IS_CHECK!>a is I<!>) {}
@@ -44,9 +44,9 @@ fun asCasts(a: Any) {
 }
 
 fun classRef() {
-    val k = <!JS_NO_RUNTIME_FORBIDDEN_CLASS_REFERENCE!>I::class<!>
-    val f = <!JS_NO_RUNTIME_FORBIDDEN_CLASS_REFERENCE!>Runner::class<!>
-    val w = WithRuntime::class
+    val k = <!JS_NO_RUNTIME_FORBIDDEN_CLASS_REFERENCE!>I::define<!>
+    val f = <!JS_NO_RUNTIME_FORBIDDEN_CLASS_REFERENCE!>Runner::define<!>
+    val w = WithRuntime::define
 }
 
 fun allowedUnsafeCast(a: Any) {

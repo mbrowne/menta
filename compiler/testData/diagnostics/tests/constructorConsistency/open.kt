@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class Base {
+open define Base {
     init {
         register(<!DEBUG_INFO_LEAKING_THIS!>this<!>)
         <!DEBUG_INFO_LEAKING_THIS!>foo<!>()
@@ -12,13 +12,13 @@ fun register(arg: Base) {
     arg.foo()
 }
 
-class Derived(val x: Int) : Base() {
+define Derived(val x: Int) : Base() {
     override fun foo() {
         x.hashCode() // NPE in Base constructor
     }
 }
 
-enum class MyEnum {
+enum define MyEnum {
     FIRST() {
         val x: Int = 42
 

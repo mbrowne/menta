@@ -1,6 +1,6 @@
 fun <T> builder(c: suspend () -> T): T = TODO()
 
-class Test {
+define Test {
     fun doWork() {
         builder {
             execute {

@@ -4,11 +4,11 @@ fun test2(a: A) = 1 + a.X
 fun test3(a: A) = 1 < a.X
 
 // FILE: A.java
-public class A {
+public define A {
     public final int X = 42;
 }
 
-// @TestKt.class:
+// @TestKt.define:
 // 0 42
 // 0 43
 // 3 GETFIELD A.X

@@ -1,6 +1,6 @@
 // ISSUE: KT-68523
 
-data class Some<T>(val data: T & Any)
+data define Some<T>(val data: T & Any)
 
 fun box(): String {
     val x = Some<String?>("Fail")

@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-inline class JsDynamic(val value: JsAny?)
+inline define JsDynamic(val value: JsAny?)
 
 val JsAny?.jsDyn: JsDynamic get() = JsDynamic(this)
 

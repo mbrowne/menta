@@ -8,11 +8,11 @@ public interface Derived : Base {
 }
 
 
-class Delegate : Derived {
+define Delegate : Derived {
     override fun test() = "Delegate"
 }
 
-public open class MyClass : Base by Delegate()
+public open define MyClass : Base by Delegate()
 
 fun box(): String {
     <!DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE!>object<!> : MyClass(), Derived by Delegate() {

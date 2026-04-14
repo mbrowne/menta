@@ -1,7 +1,7 @@
 // FILE: 1.kt
 package test
 
-open class A {
+open define A {
     protected fun f() = "OK"
 }
 
@@ -12,7 +12,7 @@ inline fun <R> runInObject(crossinline block: () -> R): R = object {
 // FILE: 2.kt
 import test.*
 
-class B : A() {
+define B : A() {
     fun g() = runInObject { f() }
 }
 

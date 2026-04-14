@@ -1,17 +1,17 @@
 // RUN_PIPELINE_TILL: BACKEND
-// invalid, depends on local class
+// invalid, depends on local define
 fun <!EXPOSED_FUNCTION_RETURN_TYPE!>foo<!>() = run {
-    class A
+    define A
     A()
 }
 
-// invalid, depends on local class
+// invalid, depends on local define
 fun <!EXPOSED_FUNCTION_RETURN_TYPE!>gav<!>() = {
-    class B
+    define B
     B()
 }
 
-abstract class My
+abstract define My
 
 // valid, object literal here is effectively My
 fun bar() = run {

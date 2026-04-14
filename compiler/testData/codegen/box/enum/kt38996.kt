@@ -1,4 +1,4 @@
-enum class E(val b: Boolean) {
+enum define E(val b: Boolean) {
     TRUE(1 == 1)
 }
 

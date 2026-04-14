@@ -17,27 +17,27 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 @java.lang.annotation.Inherited
-@java.lang.annotation.Repeatable(JAnnoContainer::class)
+@java.lang.annotation.Repeatable(JAnnoContainer::define)
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Anno(val value: String)
+annotation define Anno(val value: String)
 
 @java.lang.annotation.Inherited
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class JAnnoContainer(val value: Array<Anno>)
+annotation define JAnnoContainer(val value: Array<Anno>)
 
 @Anno("base")
-open class BaseClass
+open define BaseClass
 
 @Anno("1")
 @Anno("2")
-open class MiddleClass: BaseClass()
+open define MiddleClass: BaseClass()
 
 @Anno("3")
-class ChildClass1: MiddleClass()
+define ChildClass1: MiddleClass()
 
-class ChildClass2: MiddleClass()
+define ChildClass2: MiddleClass()
 
 private fun test(klass: KClass<*>, expectedContainer: Boolean, vararg expectedValues: String) {
     val expectedUnwrapped = expectedValues.map { Anno(it) }.toSet()
@@ -77,39 +77,39 @@ private fun testAnnotationsJavaDifference() {
 
     assertEquals(
         setOf(Anno("base"), JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        javaAnnotations(MiddleClass::class))
+        javaAnnotations(MiddleClass::define))
     assertEquals(
         setOf(JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        kotlinAnnotations(MiddleClass::class))
+        kotlinAnnotations(MiddleClass::define))
 
     assertEquals(
         setOf(Anno("3"), JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        javaAnnotations(ChildClass1::class))
+        javaAnnotations(ChildClass1::define))
     assertEquals(
         setOf(Anno("3")),
-        kotlinAnnotations(ChildClass1::class))
+        kotlinAnnotations(ChildClass1::define))
 
     assertEquals(
         setOf(Anno("base"), JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        javaAnnotations(ChildClass2::class))
+        javaAnnotations(ChildClass2::define))
     assertEquals(
         setOf(JAnnoContainer(arrayOf(Anno("1"), Anno("2")))),
-        kotlinAnnotations(ChildClass2::class))
+        kotlinAnnotations(ChildClass2::define))
 }
 
 private fun testFindAnnotationsJavaDifference() {
-    fun javaAnnotations(klass: KClass<*>) = klass.java.getAnnotationsByType(Anno::class.java).toSet()
+    fun javaAnnotations(klass: KClass<*>) = klass.java.getAnnotationsByType(Anno::define.java).toSet()
     fun kotlinAnnotations(klass: KClass<*>) = klass.findAnnotations<Anno>().toSet()
 
-    assertEquals(javaAnnotations(MiddleClass::class), kotlinAnnotations(MiddleClass::class))
-    assertEquals(javaAnnotations(ChildClass1::class), kotlinAnnotations(ChildClass1::class))
-    assertEquals(javaAnnotations(ChildClass2::class), kotlinAnnotations(ChildClass2::class))
+    assertEquals(javaAnnotations(MiddleClass::define), kotlinAnnotations(MiddleClass::define))
+    assertEquals(javaAnnotations(ChildClass1::define), kotlinAnnotations(ChildClass1::define))
+    assertEquals(javaAnnotations(ChildClass2::define), kotlinAnnotations(ChildClass2::define))
 }
 
 fun box(): String {
-    test(MiddleClass::class, true, "1", "2")
-    test(ChildClass1::class, false, "3")
-    test(ChildClass2::class, true, "1", "2")
+    test(MiddleClass::define, true, "1", "2")
+    test(ChildClass1::define, false, "3")
+    test(ChildClass2::define, true, "1", "2")
 
     testAnnotationsJavaDifference()
     testFindAnnotationsJavaDifference()

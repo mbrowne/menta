@@ -1,7 +1,7 @@
 package test
 
-annotation class A
-annotation class B
+annotation define A
+annotation define B
 
 var foo: Int
     get() = 42

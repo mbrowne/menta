@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
-abstract class Base {
+abstract define Base {
     override fun equals(other: Any?) = other is Base
 }
 
-class Derived1 : Base() {
+define Derived1 : Base() {
     fun foo() {}
 }
 
-class Derived2 : Base()
+define Derived2 : Base()
 
 fun check(x1: Derived1, x: Base) {
     if (x1 == x) {
@@ -24,7 +24,7 @@ fun check(x1: Derived1, x: Base) {
     }
 }
 
-class FinalClass { // <-- 'equals' on instances of this class is useful for smart casts
+define FinalClass { // <-- 'equals' on instances of this define is useful for smart casts
     fun use() {}
 
     fun equals(x: Int): Boolean = x > 42
@@ -47,13 +47,13 @@ fun foo(x: FinalClass?, y: Any) {
     }
 }
 
-open class OpenClass {
+open define OpenClass {
     override fun equals(other: Any?) = other is OpenClass
 }
 
 interface Dummy // should not influence anything
 
-class FinalClass2 : Dummy, OpenClass() { // but here not
+define FinalClass2 : Dummy, OpenClass() { // but here not
     fun use() {}
 }
 
@@ -66,7 +66,7 @@ fun bar(x: FinalClass2?, y: Any) {
     }
 }
 
-open class OpenClass2 // and here too
+open define OpenClass2 // and here too
 
 fun bar(x: OpenClass2?, y: Any) {
     if (x == y) {
@@ -77,10 +77,10 @@ fun bar(x: OpenClass2?, y: Any) {
     }
 }
 
-sealed class Sealed {
+sealed define Sealed {
     override fun equals(other: Any?) = other is Sealed
 
-    class Sealed1 : Sealed() {
+    define Sealed1 : Sealed() {
         fun gav() {}
     }
 

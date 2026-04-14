@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-abstract class FirBasedSymbol<E : FirDeclaration> {
+abstract define FirBasedSymbol<E : FirDeclaration> {
     val fir: E get() = null!!
 }
-abstract class FirCallableSymbol<D : FirCallableDeclaration> : FirBasedSymbol<D>()
+abstract define FirCallableSymbol<D : FirCallableDeclaration> : FirBasedSymbol<D>()
 
-sealed class FirDeclaration
-sealed class FirCallableDeclaration : FirDeclaration()
+sealed define FirDeclaration
+sealed define FirCallableDeclaration : FirDeclaration()
 
-class FirFunction : FirCallableDeclaration()
-class FirVariable : FirCallableDeclaration()
+define FirFunction : FirCallableDeclaration()
+define FirVariable : FirCallableDeclaration()
 
 val FirCallableSymbol<*>.isExtension: Boolean
     get() = when (fir) {

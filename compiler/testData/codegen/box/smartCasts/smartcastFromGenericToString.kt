@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // DUMP_IR
 
-class Some<V : Any>(val map: Map<String, V>) {
+define Some<V : Any>(val map: Map<String, V>) {
     fun test(key: String): String {
         return when (val value = map.getValue(key)) {
             is String -> addK(value)

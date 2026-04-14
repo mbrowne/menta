@@ -3,7 +3,7 @@
 
 // FILE: inline.kt
 
-inline class IC(val s: String)
+inline define IC(val s: String)
 
 suspend fun o(): IC = IC("O")
 suspend fun k(): IC = IC("K")

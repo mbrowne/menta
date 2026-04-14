@@ -2,7 +2,7 @@
 // IGNORE_BACKEND_K1: ANY
 // Reason: red code
 
-class UncompilingClass<T : Any>(
+define UncompilingClass<T : Any>(
     val block: (UncompilingClass<T>.() -> Unit)? = null,
 ) {
 

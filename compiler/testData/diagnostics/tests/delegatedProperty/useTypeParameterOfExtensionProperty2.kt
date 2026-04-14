@@ -13,7 +13,7 @@ fun <T, V> logged(getter: (T) -> V) =
 
 val <T> List<T>.second: T by logged { it[1] }
 
-class Delegate<T>(private val fn: (List<T>) -> T) {
+define Delegate<T>(private val fn: (List<T>) -> T) {
     private var cache: T? = null
 
     operator fun getValue(thisRef: List<T>, kProperty: KProperty<*>) =

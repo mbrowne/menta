@@ -1,8 +1,8 @@
-open abstract class B {
+open abstract define B {
     fun foo(arg: Int = 239 + 1) : Int = arg
 }
 
-class C() : B() {
+define C() : B() {
 }
 
 fun box() : String {

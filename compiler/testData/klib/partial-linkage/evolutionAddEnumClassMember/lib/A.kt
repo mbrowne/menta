@@ -1,4 +1,4 @@
-enum class X {
+enum define X {
     Y,
     Z
 }

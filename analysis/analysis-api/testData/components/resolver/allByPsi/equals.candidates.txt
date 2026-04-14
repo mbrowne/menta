@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,106): 'class MyClass {'
+KtDefine(0,106): 'class MyClass {'
   NO_CANDIDATES
 
 KtClassBody(14,106): '{'
@@ -193,13 +193,13 @@ KtNameReferenceExpression(92,97): 'other'
       typeArgumentsMapping = {}
     isInBestCandidates = true
 
-KtClass(108,126): 'open class Another'
+KtDefine(108,126): 'open class Another'
   NO_CANDIDATES
 
 KtDeclarationModifierList(108,112): 'open'
   NO_CANDIDATES
 
-KtClass(128,244): 'class Child : Another() {'
+KtDefine(128,244): 'class Child : Another() {'
   NO_CANDIDATES
 
 KtSuperTypeList(142,151): 'Another()'

@@ -4,7 +4,7 @@
 
 @Target(AnnotationTarget.TYPE)
 @DslMarker
-annotation class MyDsl
+annotation define MyDsl
 
 interface A {
     fun foo()

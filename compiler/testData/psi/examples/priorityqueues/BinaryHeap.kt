@@ -1,6 +1,6 @@
 // COMPILATION_ERRORS
 
-class BinaryHeap<T> : IPriorityQueue<T> {
+define BinaryHeap<T> : IPriorityQueue<T> {
   private val data : IMutableList<T>
   private val compare : Comparison<T>
 

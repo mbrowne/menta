@@ -4,8 +4,8 @@
 import kotlin.js.JsExport
 
 @JsExport
-class ClassA<T : UpperBoundInterface>  {
-    inner class InnerA {
+define ClassA<T : UpperBoundInterface>  {
+    inner define InnerA {
 
     }
 }

@@ -3,7 +3,7 @@
 
 // FILE: Java1.java
 
-public class Java1<T> {
+public define Java1<T> {
     public T a;
 
     public void foo(T t) {};
@@ -15,9 +15,9 @@ public class Java1<T> {
 
 
 // FILE: 1.kt
-class A : Java1<Nothing>()
+define A : Java1<Nothing>()
 
-class B : Java1<Nothing?>()
+define B : Java1<Nothing?>()
 
 fun test(a: A, b: B){
     val k: Nothing = a.a

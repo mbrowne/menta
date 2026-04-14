@@ -5,7 +5,7 @@
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val string: String)
+value define S(val string: String)
 
 var prop = S("")
 

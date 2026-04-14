@@ -6,7 +6,7 @@ fun test1(us: UIntArray) {
     uint(1u, *us, 2u, *us)
 }
 
-// @NoBoxingKt.class:
+// @NoBoxingKt.define:
 // 0 INVOKESTATIC kotlin.UInt\$Erased.box
 // 0 INVOKESTATIC kotlin.UInt\.box
 // 0 INVOKEVIRTUAL kotlin.UInt.unbox
@@ -19,6 +19,6 @@ fun test2(nullable: UInt?, ns: Array<UInt>) {
     nullableUInt(1u, nullable, 3u, *ns)
 }
 
-// @BoxingKt.class:
+// @BoxingKt.define:
 // 2 INVOKESTATIC kotlin.UInt\.box
 // 0 INVOKEVIRTUAL kotlin.UInt.unbox

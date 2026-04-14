@@ -11,9 +11,9 @@ import kotlin.reflect.KTypeParameter
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class Container<T>
+define Container<T>
 
-class C<X, Y> {
+define C<X, Y> {
     val x1 = createX()
     val x2 = createXFromOtherFunction()
     val xFun = createIrrelevantX<Any>()

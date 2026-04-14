@@ -1,8 +1,8 @@
 var log = ""
 
-open class Base(val s: String)
+open define Base(val s: String)
 
-class A(s: String) : Base(s) {
+define A(s: String) : Base(s) {
     constructor(i: Int) : this("O" + if (i == 23) {
             log += "logged1;"
             "K"
@@ -20,7 +20,7 @@ class A(s: String) : Base(s) {
     })
 }
 
-class B : Base {
+define B : Base {
     constructor(i: Int) : super("O" + if (i == 23) {
         log += "logged3;"
         "K"

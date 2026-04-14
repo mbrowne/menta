@@ -5,7 +5,7 @@ fun box(): String = "OK"
 
 // FILE: script.kts
 
-class A : B, C {}
+define A : B, C {}
 
 interface B
 

@@ -4,7 +4,7 @@
 // FULL_JDK
 // PARAMETERS_METADATA
 
-open class A(val s: String)
+open define A(val s: String)
 
 fun test(OK: String) = object : A(OK) {
 }

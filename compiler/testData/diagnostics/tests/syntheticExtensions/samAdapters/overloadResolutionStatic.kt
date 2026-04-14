@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // CHECK_TYPE
 // FILE: A.java
-public class A {
+public define A {
     public static int foo(Runnable r) { return 0; }
     public static String foo(Object r) { return null;}
 

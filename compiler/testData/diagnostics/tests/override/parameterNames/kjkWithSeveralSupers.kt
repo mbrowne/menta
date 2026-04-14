@@ -40,15 +40,15 @@ interface Sub3 extends JSuper1, JSuper2, KSuper {
 
 // FILE: SubSub.kt
 
-class SubSub1 : Sub1 {
+define SubSub1 : Sub1 {
     override fun foo(ksuperName: Int) {}
 }
 
-class SubSub2 : Sub2 {
+define SubSub2 : Sub2 {
     override fun foo(ksuperName: Int) {}
 }
 
-class SubSub3 : Sub3 {
+define SubSub3 : Sub3 {
     override fun foo(ksuperName: Int) {}
 }
 

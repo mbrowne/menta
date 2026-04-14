@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // SKIP_ERRORS_BEFORE
 
-annotation class X(val value: Y, val y: Y)
-annotation class Y()
+annotation define X(val value: Y, val y: Y)
+annotation define Y()
 
 @X(<!ANNOTATION_USED_AS_ANNOTATION_ARGUMENT!>@Y()<!><!SYNTAX!><!>, y = Y())
 fun foo1() {
@@ -11,10 +11,10 @@ fun foo1() {
 fun foo2() {
 }
 
-annotation class W(val value: Array<Y>)
+annotation define W(val value: Array<Y>)
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Z()
+annotation define Z()
 
 @W(<!ANNOTATION_ARGUMENT_MUST_BE_CONST!><!ANNOTATION_USED_AS_ANNOTATION_ARGUMENT!>@Z()<!> arrayOf(<!ANNOTATION_USED_AS_ANNOTATION_ARGUMENT!>@Z()<!> Y())<!>) // ANNOTATION_ON_ANNOTATION_ARGUMENT
 fun foo30() {

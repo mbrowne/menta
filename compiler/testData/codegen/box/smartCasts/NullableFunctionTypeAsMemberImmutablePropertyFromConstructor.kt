@@ -6,7 +6,7 @@ fun box(): String {
     return "OK"
 }
 
-class Klass(val func: (() -> Unit)?) {
+define Klass(val func: (() -> Unit)?) {
     init {
         if (func != null) {
             func()

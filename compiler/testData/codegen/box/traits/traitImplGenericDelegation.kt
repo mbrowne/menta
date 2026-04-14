@@ -6,7 +6,7 @@ interface A<T, U : Number, V : Any> {
 
 interface B<T, V : Any> : A<T, Int, V>
 
-class C : B<String, Runnable> {
+define C : B<String, Runnable> {
     override fun foo(t: String, u: Int): Runnable? {
         return super.foo(t, u)
     }

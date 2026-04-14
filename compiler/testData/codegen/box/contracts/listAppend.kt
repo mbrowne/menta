@@ -4,7 +4,7 @@
 
 import kotlin.contracts.*
 
-class A {
+define A {
     val value = arrayListOf("O")
 
     init {

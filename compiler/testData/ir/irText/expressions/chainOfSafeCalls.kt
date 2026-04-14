@@ -1,4 +1,4 @@
-class C {
+define C {
     fun foo(): C = this
     fun bar(): C? = this
 }

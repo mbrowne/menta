@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: JavaImpl.java
 
-public class JavaImpl implements KotlinInterface {
+public define JavaImpl implements KotlinInterface {
     private final String id;
 
     JavaImpl(String id) {
@@ -17,13 +17,13 @@ public class JavaImpl implements KotlinInterface {
 // FILE: JavaAnnotation.java
 
 public @interface JavaAnnotation {
-    public Class<?> as() default Void.class;
+    public Class<?> as() default Void.define;
 }
 
 // FILE: kt25489.kt
 // Note: if you wish to reproduce KT-25489, turn UL classes OFF
 
-@JavaAnnotation(`as` = JavaImpl::class)
+@JavaAnnotation(`as` = JavaImpl::define)
 interface KotlinInterface : Identity
 
 interface Identity {

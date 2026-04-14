@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 // ISSUE: KT-54209
 
-class A {
+define A {
     @Deprecated("Deprecated companion")
     companion object
 }
 
 
 fun test() {
-    A::class
-    A.<!DEPRECATION!>Companion<!>::class
+    A::define
+    A.<!DEPRECATION!>Companion<!>::define
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, companionObject, functionDeclaration, objectDeclaration,

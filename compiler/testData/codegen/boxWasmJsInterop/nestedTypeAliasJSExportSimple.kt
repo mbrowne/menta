@@ -4,7 +4,7 @@
 // !OPT_IN: kotlin.wasm.js.ExperimentalJsExport
 
 // FILE: jsExport.kt
-class AliasHolder {
+define AliasHolder {
     typealias TA = UInt
 }
 

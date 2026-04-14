@@ -16,9 +16,9 @@ public interface Java3 {
 }
 
 // FILE: 1.kt
-enum class A : Java1    //Kotlin ← Java
+enum define A : Java1    //Kotlin ← Java
 
-enum class B : Java1 {  //Kotlin ← Java with explicit override
+enum define B : Java1 {  //Kotlin ← Java with explicit override
     FIRST {
         override fun foo(i: Int) { }
     },
@@ -26,18 +26,18 @@ enum class B : Java1 {  //Kotlin ← Java with explicit override
     override fun foo(i: Int) { }
 }
 
-enum class C: Java2 //Kotlin ← Java ← Kotlin
+enum define C: Java2 //Kotlin ← Java ← Kotlin
 
-enum class D : Java2 {  //Kotlin ← Java ← Kotlin with explicit override
+enum define D : Java2 {  //Kotlin ← Java ← Kotlin with explicit override
     FIRST {
         override fun foo(i: Int) {}
     };
     override fun foo(i: Int) { }
 }
 
-enum class E : Java1, Java3 //Kotlin ← Java1, Java2
+enum define E : Java1, Java3 //Kotlin ← Java1, Java2
 
-enum class F: Java1, Java3 {    //Kotlin ← Java1, Java2 with explicit override
+enum define F: Java1, Java3 {    //Kotlin ← Java1, Java2 with explicit override
     FIRST {
         override fun foo(i: Int?) { }
     };

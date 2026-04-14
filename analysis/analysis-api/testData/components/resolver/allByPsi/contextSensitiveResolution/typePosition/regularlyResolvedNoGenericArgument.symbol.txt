@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(78,188): 'sealed interface MySealed {'
+KtDefine(78,188): 'sealed interface MySealed {'
   null
 
 KtDeclarationModifierList(78,84): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(78,84): 'sealed'
 KtClassBody(104,188): '{'
   null
 
-KtClass(110,145): 'class Left(val x: String): MySealed'
+KtDefine(110,145): 'class Left(val x: String): MySealed'
   null
 
 KtPrimaryConstructor(120,135): '(val x: String)'
@@ -52,7 +52,7 @@ KtUserType(137,145): 'MySealed'
 KtNameReferenceExpression(137,145): 'MySealed'
   null
 
-KtClass(150,186): 'class Right(val y: String): MySealed'
+KtDefine(150,186): 'class Right(val y: String): MySealed'
   null
 
 KtPrimaryConstructor(161,176): '(val y: String)'
@@ -88,7 +88,7 @@ KtUserType(178,186): 'MySealed'
 KtNameReferenceExpression(178,186): 'MySealed'
   null
 
-KtClass(190,229): 'interface Left<T> {'
+KtDefine(190,229): 'interface Left<T> {'
   null
 
 KtTypeParameterList(204,207): '<T>'

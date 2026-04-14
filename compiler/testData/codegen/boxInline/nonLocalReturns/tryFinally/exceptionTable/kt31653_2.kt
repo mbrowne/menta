@@ -6,7 +6,7 @@ package test
 
 var result = ""
 
-class A {
+define A {
     var field = 0
     inline fun a(f: () -> Any): Any {
         try {

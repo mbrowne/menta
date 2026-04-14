@@ -1,2 +1,2 @@
-KtClass(71,112): '/**'
+KtDefine(71,112): '/**'
   null

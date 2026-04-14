@@ -2,8 +2,8 @@
 // WITH_NEW_INFERENCE
 // SKIP_TXT
 
-class ExcA : Exception()
-class ExcB : Exception()
+define ExcA : Exception()
+define ExcB : Exception()
 
 fun test0(x: Int?) {
     val y = try {

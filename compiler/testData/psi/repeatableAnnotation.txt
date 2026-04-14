@@ -4,7 +4,7 @@ KtFile: repeatableAnnotation.kt
   IMPORT_LIST
     <empty list>
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('RepeatableAnnotation')
     PsiWhiteSpace(' ')
@@ -27,7 +27,7 @@ KtFile: repeatableAnnotation.kt
                   PsiElement(INTEGER_LITERAL)('1')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('ClassWithOneRepeatableAnnotation')
       PsiWhiteSpace('\n\n    ')
@@ -61,7 +61,7 @@ KtFile: repeatableAnnotation.kt
                   PsiElement(INTEGER_LITERAL)('2')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('ClassWithTwoRepeatableAnnotations')
       PsiWhiteSpace('\n\n    ')
@@ -109,7 +109,7 @@ KtFile: repeatableAnnotation.kt
                   PsiElement(INTEGER_LITERAL)('3')
               PsiElement(RPAR)(')')
         PsiWhiteSpace('\n    ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('ClassWithThreeRepeatableAnnotations')
       PsiWhiteSpace('\n')
@@ -127,7 +127,7 @@ KtFile: repeatableAnnotation.kt
       PsiWhiteSpace('\n')
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyRepeatableAnnotation')
     PRIMARY_CONSTRUCTOR

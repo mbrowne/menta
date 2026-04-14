@@ -28,7 +28,7 @@ public interface NullableConsumer<T> extends MyConsumer<T>, java.util.function.C
 }
 
 // FILE: Foo.java
-public class Foo {
+public define Foo {
     public static String flexibleString() { return null; }
 }
 

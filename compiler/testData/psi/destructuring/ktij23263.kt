@@ -1,9 +1,9 @@
 // COMPILATION_ERRORS
 
-class InitOrderDemo(name: String) {
+define InitOrderDemo(name: String) {
     val (firstProperty = "First property"
 }
 
-class InitOrderDemo2 {
+define InitOrderDemo2 {
     val (firstProperty = object : Int {}
 }

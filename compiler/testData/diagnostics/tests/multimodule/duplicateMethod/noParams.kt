@@ -14,7 +14,7 @@ public interface B {
 // FILE: b.kt
 package p
 
-public class C : B {
+public define C : B {
     override fun getParent(): B? = null
 
 }

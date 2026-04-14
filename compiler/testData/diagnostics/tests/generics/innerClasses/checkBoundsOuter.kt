@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Outer<E : Any> {
-    inner class Inner<F, G>
+define Outer<E : Any> {
+    inner define Inner<F, G>
 }
 
 val x: Outer<<!UPPER_BOUND_VIOLATED!>String?<!>>.Inner<String, Int> = null!!

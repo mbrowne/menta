@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 fun testLambdaLabel() = l@ { 42 }
 

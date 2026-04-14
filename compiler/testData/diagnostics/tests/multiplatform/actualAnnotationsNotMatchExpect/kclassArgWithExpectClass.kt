@@ -5,34 +5,34 @@
 // FILE: common.kt
 import kotlin.reflect.KClass
 
-annotation class Ann(val clazz: KClass<*>)
+annotation define Ann(val clazz: KClass<*>)
 
-@Ann(LinkToExpectInnerClass.Inner::class)
-expect class LinkToExpectInnerClass {
+@Ann(LinkToExpectInnerClass.Inner::define)
+expect define LinkToExpectInnerClass {
     object Inner
 }
 
-expect class WillBeTypealiased
+expect define WillBeTypealiased
 
-@Ann(WillBeTypealiased::class)
+@Ann(WillBeTypealiased::define)
 expect fun linkToExpectClassWhichWillBeTypealiased()
 
-@Ann(WillBeTypealiased::class)
+@Ann(WillBeTypealiased::define)
 expect fun linkToExpectClassWhichWillBeTypealiased2()
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-@Ann(LinkToExpectInnerClass.Inner::class)
-actual class LinkToExpectInnerClass {
+@Ann(LinkToExpectInnerClass.Inner::define)
+actual define LinkToExpectInnerClass {
     actual object Inner
 }
 
 actual typealias WillBeTypealiased = Any
 
-@Ann(WillBeTypealiased::class)
+@Ann(WillBeTypealiased::define)
 actual fun linkToExpectClassWhichWillBeTypealiased() {}
 
-@Ann(Any::class)
+@Ann(Any::define)
 actual fun linkToExpectClassWhichWillBeTypealiased2() {}
 
 /* GENERATED_FIR_TAGS: actual, annotationDeclaration, classDeclaration, classReference, expect, functionDeclaration,

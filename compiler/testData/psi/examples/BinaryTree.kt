@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
-class BinaryTree<T> : IMutableSet<T> {
-  private class TreeNode(
+define BinaryTree<T> : IMutableSet<T> {
+  private define TreeNode(
     var value : T, var parent : TreeNode
   ) {
     var left : TreeNode

@@ -4,7 +4,7 @@
 // 0 ATHROW
 // -- invoking throwUninitializedPropertyAccessException is enough
 
-class Test {
+define Test {
     private lateinit var z: String
 
     fun test(): String {

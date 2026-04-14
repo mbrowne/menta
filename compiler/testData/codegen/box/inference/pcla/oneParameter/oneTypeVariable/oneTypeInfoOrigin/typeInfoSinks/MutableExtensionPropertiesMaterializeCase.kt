@@ -15,7 +15,7 @@ fun testMaterialize() {
 
 /* REQUIRED DECLARATIONS */
 
-class Buildee<CT>
+define Buildee<CT>
 
 var <EFT> Buildee<EFT>.variable: EFT
     get() = UserKlass() as EFT
@@ -27,4 +27,4 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-class UserKlass
+define UserKlass

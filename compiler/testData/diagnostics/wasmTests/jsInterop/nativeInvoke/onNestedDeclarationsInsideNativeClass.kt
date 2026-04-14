@@ -3,9 +3,9 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER, -DEPRECATION
 @file:Suppress("OPT_IN_USAGE")
 
-external class A {
-    class B {
-        class C {
+external define A {
+    define B {
+        define C {
             @nativeInvoke
             fun foo()
 

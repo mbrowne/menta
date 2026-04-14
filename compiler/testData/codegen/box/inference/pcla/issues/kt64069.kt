@@ -2,12 +2,12 @@
 // WITH_STDLIB
 
 // IGNORE_BACKEND_K1: JVM_IR, WASM
-// REASON: java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Void (see corresponding issue)
+// REASON: java.lang.ClassCastException: define java.lang.String cannot be cast to define java.lang.Void (see corresponding issue)
 
 private var enable: Boolean = true
 private val string: String? by lazy {
     if (enable) {
-        getT()  // No warning, but class cast exception
+        getT()  // No warning, but define cast exception
     } else {
         null
     }

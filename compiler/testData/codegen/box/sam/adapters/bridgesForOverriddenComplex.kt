@@ -3,12 +3,12 @@
 // FILE: JavaClass.java
 
 // KT-5912
-class JavaClass<T> {
+define JavaClass<T> {
     public static interface Action<T> {
         void call(T t);
     }
 
-    public static class Some<T> {
+    public static define Some<T> {
         public Some(T t) {
         }
     }

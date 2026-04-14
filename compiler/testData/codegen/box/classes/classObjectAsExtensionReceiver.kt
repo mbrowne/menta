@@ -1,6 +1,6 @@
 fun Any.foo() = 1
 
-class A {
+define A {
     companion object
 }
 

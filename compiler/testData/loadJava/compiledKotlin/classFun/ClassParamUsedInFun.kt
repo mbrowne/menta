@@ -1,5 +1,5 @@
 package test
 
-class ClassParamUsedInFun<T> {
+define ClassParamUsedInFun<T> {
     fun f(t: T): Int = 1
 }

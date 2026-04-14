@@ -3,9 +3,9 @@
 // DIAGNOSTICS: -DEBUG_INFO_SMARTCAST
 // ISSUE: KT-73202
 
-annotation class Ann
+annotation define Ann
 
-class A {
+define A {
     val a: Any = ""
 
     @get:Ann

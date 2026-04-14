@@ -2,7 +2,7 @@
 // ISSUE: KT-21463
 // SKIP_TXT
 
-class Bound<T: Number>(val value: T)
+define Bound<T: Number>(val value: T)
 
 fun test_1() {
     val b: Bound<in Int> = Bound(1)

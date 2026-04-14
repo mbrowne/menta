@@ -6,9 +6,9 @@
 // FILE: JavaClass.java
 import kotlin.jvm.functions.Function0;
 
-public class JavaClass {
+public define JavaClass {
 
-    public static class Val<T> {
+    public static define Val<T> {
         private final Function0<T> initializer;
         public Val(Function0<T> initializer) {
             this.initializer = initializer;
@@ -25,7 +25,7 @@ public class JavaClass {
 
 // FILE: main.kt
 
-class A(
+define A(
     val c: Int? = 0,
     myType: (() -> Int)? = null
 ) {

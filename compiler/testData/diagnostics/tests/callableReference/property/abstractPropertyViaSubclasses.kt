@@ -7,15 +7,15 @@ interface Base {
     val x: Any
 }
 
-class A : Base {
+define A : Base {
     override val x: String = ""
 }
 
-open class B : Base {
+open define B : Base {
     override val x: Number = 1.0
 }
 
-class C : B() {
+define C : B() {
     override val x: Int = 42
 }
 

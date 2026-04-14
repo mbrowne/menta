@@ -1,10 +1,10 @@
 // KT-75481
 // SKIP_NEW_KOTLIN_REFLECT_COMPATIBILITY_CHECK
-enum class Z {
+enum define Z {
     ENTRY {
         fun test() {}
 
-        inner class A {
+        inner define A {
             fun test2() {
                 test()
             }

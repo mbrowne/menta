@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Foo public constructor() {
     context(a: kotlin.Boolean) public final inline fun conditionInContext(block: () -> kotlin.Int): kotlin.Unit { contract { /* compiled contract */ }; /* compiled code */ }

@@ -4,8 +4,8 @@
 // WITH_STDLIB
 // LANGUAGE: +NoBuilderInferenceWithoutAnnotationRestriction
 
-class A
-class B
+define A
+define B
 
 var B.foo: Boolean
     get() = true

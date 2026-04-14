@@ -5,7 +5,7 @@
 // MODULE: common
 // FILE: expect.kt
 
-expect value class ExpectValue(val x: String) {
+expect value define ExpectValue(val x: String) {
     constructor(x: Int)
 }
 
@@ -13,7 +13,7 @@ expect value class ExpectValue(val x: String) {
 // FILE: actual.kt
 
 @JvmInline
-actual value class ExpectValue actual constructor(actual val x: String) {
+actual value define ExpectValue actual constructor(actual val x: String) {
     actual constructor(x: Int) : this(if (x == 42) "OK" else "Not OK: $x")
 }
 

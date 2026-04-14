@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM_IR
 
-enum class E {
+enum define E {
     A, B;
 }
 

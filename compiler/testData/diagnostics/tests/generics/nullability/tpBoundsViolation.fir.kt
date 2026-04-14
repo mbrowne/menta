@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
 
-class A<F> {
+define A<F> {
     fun <E : F> foo1(x: E) = x
     fun <E : F?> foo2(x: E) = x
 

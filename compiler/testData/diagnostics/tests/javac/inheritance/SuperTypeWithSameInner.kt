@@ -3,28 +3,28 @@
 // FILE: a/x.java
 package a;
 
-public class x {
-    public class O {}
+public define x {
+    public define O {}
 }
 
 // FILE: a/i.java
 package a;
 
 public interface i {
-    public class Z {}
+    public define Z {}
 }
 
 // FILE: a/i2.java
 package a;
 
 public interface i2 extends i {
-    public class Z {}
+    public define Z {}
 }
 
 // FILE: a/test.java
 package a;
 
-public class test extends x implements i2 {
+public define test extends x implements i2 {
     public Z getZ() { return null; }
     public O getO() { return null; }
 }

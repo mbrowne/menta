@@ -46,7 +46,7 @@ KtFile: declarationsJustAtTyped.kt
               PsiElement(CLOSING_QUOTE)('"')
           PsiElement(RPAR)(')')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('A')
     PRIMARY_CONSTRUCTOR
@@ -129,7 +129,7 @@ KtFile: declarationsJustAtTyped.kt
               PsiErrorElement:Expected annotation identifier after '@'
                 PsiElement(AT)('@')
             PsiWhiteSpace(' ')
-            PsiElement(class)('class')
+            PsiElement(define)('define')
             PsiWhiteSpace(' ')
             PsiElement(IDENTIFIER)('LocalClass')
           PsiWhiteSpace('\n\n        ')

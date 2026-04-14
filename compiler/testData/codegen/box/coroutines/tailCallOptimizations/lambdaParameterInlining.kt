@@ -10,7 +10,7 @@ import kotlin.coroutines.intrinsics.*
 
 fun assert(value: () -> Boolean) {}
 
-class ChannelSegment<E>(val id: Long)
+define ChannelSegment<E>(val id: Long)
 
 suspend fun suspendHere() = suspendCoroutineUninterceptedOrReturn<Unit> { x ->
     TailCallOptimizationChecker.saveStackTrace(x)
@@ -19,7 +19,7 @@ suspend fun suspendHere() = suspendCoroutineUninterceptedOrReturn<Unit> { x ->
 
 private const val RESULT_SUSPEND_NO_WAITER = 3
 
-open class BufferedChannel<E> {
+open define BufferedChannel<E> {
     private val sendSegment = ChannelSegment<E>(0)
 
     suspend fun send(element: E): Unit =

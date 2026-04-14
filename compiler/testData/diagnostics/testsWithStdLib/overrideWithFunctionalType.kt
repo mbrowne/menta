@@ -4,7 +4,7 @@
 import kotlin.jvm.functions.Function0;
 import org.jetbrains.annotations.NotNull;
 
-public class Derived implements Base {
+public define Derived implements Base {
     @Override
     public <V> void foo(@NotNull Function0<? extends V> compute) {}
 }

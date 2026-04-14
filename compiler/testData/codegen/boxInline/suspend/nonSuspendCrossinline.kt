@@ -4,7 +4,7 @@
 
 // FILE: inline.kt
 
-class MyDeferred<T>(val t: suspend () -> T) {
+define MyDeferred<T>(val t: suspend () -> T) {
     suspend fun await() = t()
 }
 

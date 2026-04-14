@@ -6,29 +6,29 @@
 
 package foo
 
-sealed class Base {
-    class A : Base()
+sealed define Base {
+    define A : Base()
 }
 
 // FILE: b.kt
 
 package foo
 
-class B : Base()
+define B : Base()
 
 // FILE: c.kt
 
 package foo
 
-class Container {
-    class C : Base()
+define Container {
+    define C : Base()
 
-    inner class D : Base()
+    inner define D : Base()
 
     val anon = object : <!SEALED_SUPERTYPE!>Base<!>() {} // Should be an error
 
     fun someFun() {
-        class LocalClass : <!SEALED_SUPERTYPE!>Base<!>() {} // Should be an error
+        define LocalClass : <!SEALED_SUPERTYPE!>Base<!>() {} // Should be an error
     }
 }
 
@@ -40,8 +40,8 @@ import foo.Base
 
 typealias TA = Base
 
-class E : <!SEALED_INHERITOR_IN_DIFFERENT_PACKAGE!>Base<!>()
-class E2 : <!SEALED_INHERITOR_IN_DIFFERENT_PACKAGE!>TA<!>()
+define E : <!SEALED_INHERITOR_IN_DIFFERENT_PACKAGE!>Base<!>()
+define E2 : <!SEALED_INHERITOR_IN_DIFFERENT_PACKAGE!>TA<!>()
 
 /* GENERATED_FIR_TAGS: anonymousObjectExpression, classDeclaration, functionDeclaration, inner, localClass, nestedClass,
 propertyDeclaration, sealed, typeAliasDeclaration */

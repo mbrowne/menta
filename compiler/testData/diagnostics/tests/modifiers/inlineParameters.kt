@@ -12,7 +12,7 @@ inline fun correct(noinline x: (Int) -> Unit, crossinline y: (String) -> Int) {}
 
 <!NOTHING_TO_INLINE!>inline<!> fun incompatible(<!INCOMPATIBLE_MODIFIERS!>noinline<!> <!INCOMPATIBLE_MODIFIERS!>crossinline<!> x: () -> String) {}
 
-class FunctionSubtype : () -> Unit {
+define FunctionSubtype : () -> Unit {
     override fun invoke() {}
 }
 

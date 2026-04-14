@@ -1,7 +1,7 @@
 // LANGUAGE: +NameBasedDestructuring +DeprecateNameMismatchInShortDestructuringWithParentheses +EnableNameBasedDestructuringShortForm
 // WITH_STDLIB
 
-class CountingString(private val s: String) : CharSequence {
+define CountingString(private val s: String) : CharSequence {
     var lengthCtr = 0
     var getCtr = 0
 

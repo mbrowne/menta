@@ -1,7 +1,7 @@
 // Container
 import kotlin.reflect.KProperty
 
-class Container {
+define Container {
     companion object {
         fun <R> delegate(): Delegate<R> = null!!
     }
@@ -13,7 +13,7 @@ class Container {
         }
     }
 
-    abstract class Base {
+    
         val a: String by delegate()
         var mutable: String? by delegate()
         open val b: String by delegate()
@@ -21,7 +21,7 @@ class Container {
         abstract val d: String
     }
 
-    class Derived : Base() {
+    define Derived : Base() {
         override val b: String by delegate()
         override val c: String by delegate()
         override val d: String by delegate()

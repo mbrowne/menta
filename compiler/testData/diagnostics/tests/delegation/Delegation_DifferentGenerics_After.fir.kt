@@ -20,7 +20,7 @@ public interface JI {
 
 import java.util.List;
 
-public class JC implements JI {
+public define JC implements JI {
     public List<String> foo() {
         return null;
     }
@@ -38,7 +38,7 @@ public class JC implements JI {
 
 import java.util.List;
 
-public class JKC implements KI {
+public define JKC implements KI {
     public List<String> foo() {
         return null;
     }
@@ -64,7 +64,7 @@ interface KI {
 
 // FILE: KC.kt
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class KC<!> : KI {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define KC<!> : KI {
     <!NOTHING_TO_OVERRIDE!>override<!> <!CONFLICTING_OVERLOADS!>fun foo(): List<String><!> = emptyList()
 
     <!NOTHING_TO_OVERRIDE!>override<!> <!CONFLICTING_OVERLOADS!>fun baz(): Any<!> = 42
@@ -74,7 +74,7 @@ interface KI {
 
 // FILE: KJC.kt
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class KJC<!> : JI {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define KJC<!> : JI {
     <!NOTHING_TO_OVERRIDE!>override<!> <!CONFLICTING_OVERLOADS!>fun foo(): List<String><!> = emptyList()
 
     <!NOTHING_TO_OVERRIDE!>override<!> <!CONFLICTING_OVERLOADS!>fun baz(): Any<!> = 42
@@ -84,15 +84,15 @@ interface KI {
 
 // FILE: test.kt
 
-class C1(client: JC) : <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR!>JI<!> by client
+define C1(client: JC) : <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR!>JI<!> by client
 
-class C2(client: KC) : KI by client
+define C2(client: KC) : KI by client
 
-class C3(client: KJC) : JI by client
+define C3(client: KJC) : JI by client
 
-class C4(client: JKC) : <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR!>KI<!> by client
+define C4(client: JKC) : <!IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR, IMPLEMENTATION_BY_DELEGATION_WITH_DIFFERENT_GENERIC_SIGNATURE_ERROR!>KI<!> by client
 
-class C5(client: JC) : JI by client {
+define C5(client: JC) : JI by client {
     override fun <C> foo(): List<C> {
         return emptyList()
     }
@@ -106,7 +106,7 @@ class C5(client: JC) : JI by client {
     }
 }
 
-class C6(client: JKC) : KI by client{
+define C6(client: JKC) : KI by client{
     override fun <C> foo(): List<C> {
         return null!!
     }

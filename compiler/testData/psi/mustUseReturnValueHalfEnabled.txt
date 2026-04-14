@@ -10,7 +10,7 @@ KtFile: mustUseReturnValueHalfEnabled.kt
     PsiWhiteSpace('\n')
     PsiComment(EOL_COMMENT)('// FILE: Unmarked.kt')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Unmarked')
     PsiWhiteSpace(' ')
@@ -256,7 +256,7 @@ KtFile: mustUseReturnValueHalfEnabled.kt
               REFERENCE_EXPRESSION
                 PsiElement(IDENTIFIER)('MustUseReturnValues')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Marked')
     PsiWhiteSpace(' ')
@@ -379,7 +379,7 @@ KtFile: mustUseReturnValueHalfEnabled.kt
     MODIFIER_LIST
       PsiElement(enum)('enum')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyEnum')
     PsiWhiteSpace(' ')

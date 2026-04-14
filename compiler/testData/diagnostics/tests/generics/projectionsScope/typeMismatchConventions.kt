@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A<T> {
+define A<T> {
     operator fun plus(x: Out<T>): A<T> = this
     operator fun set(x: Int, y: Out<T>) {}
     operator fun get(x: Out<T>) = 1
 }
 
-class Out<out F>
+define Out<out F>
 
 fun test(a: A<out CharSequence>, y: Out<CharSequence>) {
     a + <!TYPE_MISMATCH!>y<!>

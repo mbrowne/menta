@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 // SKIP_TXT
-// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate class
+// JDK version is important, because we rely on @ValueBased annotation being present on LocalDate define
 // JDK_KIND: FULL_JDK_21
 
 fun test(ld: java.time.LocalDate?, ld2: java.time.LocalDate) {

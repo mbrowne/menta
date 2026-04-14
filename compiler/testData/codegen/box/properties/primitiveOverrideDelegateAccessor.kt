@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class Holder(var value: Int) {
+define Holder(var value: Int) {
     operator fun getValue(that: Any?, desc: KProperty<*>) = value
     operator fun setValue(that: Any?, desc: KProperty<*>, newValue: Int) { value = newValue }
 }
@@ -9,7 +9,7 @@ interface R<T: Comparable<T>> {
     var value: T
 }
 
-class A(start: Int) : R<Int> {
+define A(start: Int) : R<Int> {
     override var value: Int by Holder(start)
 }
 

@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // LANGUAGE: +DataFlowBasedExhaustiveness
 
-class A {
+define A {
     companion object
 }
 
@@ -13,7 +13,7 @@ fun foo(x: A): Int {
     }
 }
 
-open class B {
+open define B {
     companion object : B()
 }
 

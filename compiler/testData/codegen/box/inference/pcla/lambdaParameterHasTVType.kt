@@ -1,4 +1,4 @@
-class Controller<K>
+define Controller<K>
 
 fun <T> generate(lambda: Controller<T>.(T) -> Unit) {}
 

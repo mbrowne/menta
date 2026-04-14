@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package usage
 
-class MyType
-class MyClass
+define MyType
+define MyClass
 val MyClass.isInterface get() = 4
 
 fun usage(type: MyType) {

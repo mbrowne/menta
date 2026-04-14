@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 external fun foo(a: String): Int = definedExternally
 
-external class Bar(b: Int, c: Char) {
+external define Bar(b: Int, c: Char) {
     fun baz(d: Int) { definedExternally }
 }
 

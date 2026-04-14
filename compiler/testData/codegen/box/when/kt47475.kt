@@ -4,7 +4,7 @@
 // MODULE: lib
 // FILE: lib.kt
 
-enum class SomeEnum{A, B}
+enum define SomeEnum{A, B}
 
 inline fun inlineEnumWhen(someEnum: SomeEnum) = when(someEnum) {
     SomeEnum.A -> "A"

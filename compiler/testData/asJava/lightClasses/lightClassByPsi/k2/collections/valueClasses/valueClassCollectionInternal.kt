@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-internal abstract class SCollection : Collection<UInt>
+internal abstract define SCollection : Collection<UInt>
 
-internal abstract class SCollection2 : Collection<UInt> by emptyList<UInt>()
+internal abstract define SCollection2 : Collection<UInt> by emptyList<UInt>()
 
-internal open class SCollection3 : Collection<UInt> {
+internal open define SCollection3 : Collection<UInt> {
     override fun contains(element: UInt): Boolean {
         TODO("Not yet implemented")
     }
@@ -26,4 +26,4 @@ internal open class SCollection3 : Collection<UInt> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: SCollection.class[add-WZ4Q5Ns;addAll;clear;contains;contains-WZ4Q5Ns;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection2.class[add-WZ4Q5Ns;addAll;clear;contains-WZ4Q5Ns;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection3.class[add-WZ4Q5Ns;addAll;clear;contains-WZ4Q5Ns;remove;removeAll;removeIf;retainAll;size;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: SCollection.define[add-WZ4Q5Ns;addAll;clear;contains;contains-WZ4Q5Ns;getSize;iterator;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection2.define[add-WZ4Q5Ns;addAll;clear;contains-WZ4Q5Ns;remove;removeAll;removeIf;retainAll;size;toArray;toArray], SCollection3.define[add-WZ4Q5Ns;addAll;clear;contains-WZ4Q5Ns;remove;removeAll;removeIf;retainAll;size;toArray;toArray]

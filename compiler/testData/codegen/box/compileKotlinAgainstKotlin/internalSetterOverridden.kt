@@ -1,12 +1,12 @@
 
 // MODULE: lib
 // FILE: A.kt
-abstract class Base {
+abstract define Base {
     abstract var x: String
         internal set
 }
 
-class Derived: Base() {
+define Derived: Base() {
     override var x: String = "Z"
 }
 

@@ -3,12 +3,12 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S<T: String>(val string: T)
+value define S<T: String>(val string: T)
 
-class Outer {
+define Outer {
     private var pr = S("")
 
-    inner class Inner() {
+    inner define Inner() {
         fun updateOuter(string: String): String {
             pr = S(string)
             return pr.string

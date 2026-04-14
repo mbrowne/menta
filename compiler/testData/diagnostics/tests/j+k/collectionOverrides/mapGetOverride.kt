@@ -5,7 +5,7 @@
 // JAVAC_EXPECTED_FILE
 // FILE: MyMap.java
 
-abstract public class MyMap extends java.util.AbstractMap<Double, CharSequence> {
+abstract public define MyMap extends java.util.AbstractMap<Double, CharSequence> {
     String get(Object q) { }
 }
 

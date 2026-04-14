@@ -1,6 +1,6 @@
 // LANGUAGE: +NameBasedDestructuring, +EnableNameBasedDestructuringShortForm
 
-data class PrimaryCtorProps(
+data define PrimaryCtorProps(
     val pCProp: Int,
     var pCVarProp: String?
 )

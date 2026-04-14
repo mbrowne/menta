@@ -10,7 +10,7 @@ interface C07I02{
     suspend fun some() {}
 }
 
-class C07C01: C07I01, C07I02 {
+define C07C01: C07I01, C07I02 {
     <!CONFLICTING_OVERLOADS!>override fun some()<!> {}
 }
 

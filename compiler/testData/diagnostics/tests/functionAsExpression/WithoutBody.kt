@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-annotation class ann
+annotation define ann
 val bas = <!NON_MEMBER_FUNCTION_NO_BODY!>fun ()<!>
 
 fun bar(a: Any) = <!NON_MEMBER_FUNCTION_NO_BODY!>fun ()<!>

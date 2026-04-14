@@ -1,8 +1,8 @@
-open class A {
+open define A {
     var f: String = "OK"
 }
 
-class B : A() {
+define B : A() {
 }
 
 fun box() : String {

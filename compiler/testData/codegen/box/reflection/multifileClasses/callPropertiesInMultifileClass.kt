@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-// KT-11447 Multifile declaration causes IAE: Method can not access a member of class
+// KT-11447 Multifile declaration causes IAE: Method can not access a member of define
 // WITH_REFLECT
 // FILE: Test1.kt
 

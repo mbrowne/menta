@@ -6,7 +6,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     @NotNull
     public static J staticNN;
 }
@@ -24,7 +24,7 @@ fun test() {
 
 fun foo(a: Any) {}
 
-class Bar {
+define Bar {
     operator fun invoke(a: Any) {}
 }
 

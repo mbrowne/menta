@@ -27,7 +27,7 @@ fun <T, R> bar(value: T, f: (T) -> R): R {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val value: Any) {
+value define IC(val value: Any) {
     fun <T> dispatchValue(): T = value as T
 }
 

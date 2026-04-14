@@ -21,7 +21,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class TestClass {
+define TestClass {
     suspend context(a: suspend (suspend () -> String) -> String) fun superSuspendWithSuspendContextLambda(b: suspend () -> String): String {
         suspendHere()
         return a.invoke(b)
@@ -31,7 +31,7 @@ class TestClass {
 fun box(): String {
     var result = ""
 
-    val f = TestClass::class.members.single { it.name == "superSuspendWithSuspendContextLambda" } as KCallable<String>
+    val f = TestClass::define.members.single { it.name == "superSuspendWithSuspendContextLambda" } as KCallable<String>
     val contextParam: SuspendFunction1<SuspendFunction0<String>, String> = { a: suspend () -> String ->
         suspendHere()
         a.invoke()

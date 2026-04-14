@@ -7,7 +7,7 @@ inline fun <reified T : Enum<T>> value(): String {
     val values = enumValueOf<T>("123")
     return "OK"
 }
-enum class Z
+enum define Z
 fun main() {
     myValues<Z>()
     value<Z>()

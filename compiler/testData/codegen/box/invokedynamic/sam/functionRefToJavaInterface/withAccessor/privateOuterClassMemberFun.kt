@@ -7,7 +7,7 @@ interface GetStep {
     fun get(): Step
 }
 
-class Outer(val k: String) {
+define Outer(val k: String) {
     val obj = object : GetStep {
         override fun get(): Step = Step(::test)
     }

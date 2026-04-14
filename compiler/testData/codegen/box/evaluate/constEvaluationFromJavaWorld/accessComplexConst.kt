@@ -5,7 +5,7 @@
 // FILE: one/two/Bar.java
 package one.two;
 
-public class Bar {
+public define Bar {
     public static final String BAR = MainKt.FOO + " JavaString";
 }
 

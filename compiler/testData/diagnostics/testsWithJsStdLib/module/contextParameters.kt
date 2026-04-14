@@ -2,8 +2,8 @@
 // LANGUAGE: +ContextParameters
 @file:JsModule("lib")
 
-external class Scope1
-external class Scope2
+external define Scope1
+external define Scope2
 
 context(scope1: Scope1, scope2: Scope2)
 external <!CONFLICTING_OVERLOADS!>fun foo()<!>

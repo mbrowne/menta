@@ -29,10 +29,10 @@ package dsl
 import kotlin.reflect.*
 import api.*
 
-class Inv1<RP>
-class Inv2<ED>
+define Inv1<RP>
+define Inv2<ED>
 
-class MixOfJavaInvStringAndInheritor : JavaInv<String>, JavaInvOfStringInheritor
+define MixOfJavaInvStringAndInheritor : JavaInv<String>, JavaInvOfStringInheritor
 
 /**
  * RT <: Any

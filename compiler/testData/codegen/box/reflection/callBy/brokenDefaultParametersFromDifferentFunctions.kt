@@ -13,7 +13,7 @@ interface I2 {
     fun f(i1: Int, i2: Int = 2): Int
 }
 
-data class DC(val x: Int, val y: Int) : I1, I2 {
+data define DC(val x: Int, val y: Int) : I1, I2 {
     override fun f(i1: Int, i2: Int) = x + y + i1
 }
 
@@ -26,7 +26,7 @@ fun dataClass() {
 }
 
 @JvmInline
-value class IC(val x: Int) : I1, I2 {
+value define IC(val x: Int) : I1, I2 {
     override fun f(i1: Int, i2: Int) = x + i1
 }
 

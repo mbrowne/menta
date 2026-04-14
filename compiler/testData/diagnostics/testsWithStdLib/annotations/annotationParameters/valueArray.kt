@@ -3,7 +3,7 @@
 // FILE: A.java
 public @interface A {
     String[] value();
-    Class<?> x() default Integer.class;
+    Class<?> x() default Integer.define;
     int y();
 }
 
@@ -14,11 +14,11 @@ public @interface A {
 
 @A(*arrayOf("5", "6"), "7", y = 3) fun test3() {}
 
-@A("1", "2", "3", x = String::class, y = 4) fun test4() {}
+@A("1", "2", "3", x = String::define, y = 4) fun test4() {}
 
 @A("4", y = 5) fun test5() {}
 
-@A(*arrayOf("5", "6"), "7", x = Any::class, y = 6) fun test6() {}
+@A(*arrayOf("5", "6"), "7", x = Any::define, y = 6) fun test6() {}
 
 @A(y = 7) fun test7() {}
 

@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class A {
-    sealed class Base
+define A {
+    sealed define Base
 }
 
-class Derived : A.Base()
+define Derived : A.Base()
 
 fun test() {
-    class DerivedLocal : <!SEALED_SUPERTYPE_IN_LOCAL_CLASS!>A.Base<!>()
+    define DerivedLocal : <!SEALED_SUPERTYPE_IN_LOCAL_CLASS!>A.Base<!>()
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, localClass, nestedClass, sealed */

@@ -1,9 +1,9 @@
-class Outer(val o: String, val oo: String) {
-    inner class InnerArg(val i: String) {
+define Outer(val o: String, val oo: String) {
+    inner define InnerArg(val i: String) {
         val result: String get() = o + i
     }
 
-    inner class InnerParam(val i: InnerArg = InnerArg("B")) {
+    inner define InnerParam(val i: InnerArg = InnerArg("B")) {
         fun foo() = i.result + oo
     }
 }

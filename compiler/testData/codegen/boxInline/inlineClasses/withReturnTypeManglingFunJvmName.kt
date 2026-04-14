@@ -6,7 +6,7 @@
 
 package test
 
-inline class S(val string: String)
+inline define S(val string: String)
 
 @Suppress("INAPPLICABLE_JVM_NAME")
 @JvmName("foo")

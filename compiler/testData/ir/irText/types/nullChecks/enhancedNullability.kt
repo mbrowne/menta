@@ -35,7 +35,7 @@ fun testLocalVarUse() {
 // FILE: J.java
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     public static void use(@NotNull String s) {}
     public static void use(@NotNull Integer x) {}
     public static String nullString() { return null; }

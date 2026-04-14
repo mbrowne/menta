@@ -1,14 +1,14 @@
 package test
 
 fun A.a(): String {
-  class B {
+  define B {
       val b : String
           get() = this@a.s
   }
   return B().b
 }
 
-class A {
+define A {
     val s : String = "OK"
 }
 

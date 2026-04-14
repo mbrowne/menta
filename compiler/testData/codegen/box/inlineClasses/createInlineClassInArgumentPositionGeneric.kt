@@ -3,14 +3,14 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsInt<T: Int>(val value: T) {
+value define AsInt<T: Int>(val value: T) {
     override fun toString(): String {
         return "asInt: ${value.toString()}"
     }
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class AsAny<T: Any>(val value: T) {
+value define AsAny<T: Any>(val value: T) {
     override fun toString(): String {
         return "asAny: ${value.toString()}"
     }

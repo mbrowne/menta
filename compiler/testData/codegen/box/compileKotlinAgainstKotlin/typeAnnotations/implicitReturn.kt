@@ -12,7 +12,7 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.test.fail
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn
+annotation define TypeAnn
 
 fun bar(): @TypeAnn String = "OK"
 
@@ -24,7 +24,7 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.reflect.jvm.javaField
 import kotlin.test.fail
 
-class Kotlin {
+define Kotlin {
 
     fun foo() = bar()
 
@@ -36,14 +36,14 @@ fun box(): String {
 
     checkTypeAnnotation(
         Kotlin::foo.javaMethod!!.annotatedReturnType,
-        "class java.lang.String",
+        "define java.lang.String",
         "@TypeAnn()",
         "foo"
     )
 
     checkTypeAnnotation(
         Kotlin::field.javaField!!.annotatedType,
-        "class java.lang.String",
+        "define java.lang.String",
         "@TypeAnn()",
         "foo"
     )

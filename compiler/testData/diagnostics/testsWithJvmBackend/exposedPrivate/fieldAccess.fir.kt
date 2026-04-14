@@ -1,9 +1,9 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // WITH_STDLIB
 
-private class C
+private define C
 
-class Test {
+define Test {
     private companion object {
         @JvmField
         var privateField: C? = C()

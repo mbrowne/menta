@@ -9,7 +9,7 @@ KtFile: IMutableSet.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IMutableSet')
     TYPE_PARAMETER_LIST

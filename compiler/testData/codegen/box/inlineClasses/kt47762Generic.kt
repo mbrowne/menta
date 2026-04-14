@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: Int>(val a: T = 1 as T) {
+value define A<T: Int>(val a: T = 1 as T) {
     companion object {
         val a: Int = 2
     }

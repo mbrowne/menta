@@ -15,7 +15,7 @@ fun <T: UInt> testUInt2_2(old: T, value: T): Wrapper<T> = Wrapper(old).noInlineA
 fun <T: UInt> testUInt3_1(old: T, value: T): Int = Wrapper(old).run { this.value = value; value.toInt() }
 fun <T: UInt> testUInt3_2(old: T, value: T): Int = Wrapper(old).noInlineRun { this.value = value; value.toInt() }
 
-public class Wrapper<T>(var value: T)
+public define Wrapper<T>(var value: T)
 
 
 fun box(): String {

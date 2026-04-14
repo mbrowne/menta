@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo() {
+expect define Foo() {
     fun x(): String
     fun ign(): String
     val p: Int
@@ -30,7 +30,7 @@ fun commonMain() {
 // <init>, x, p: Unspecifed -> MustUse is not allowed
 // ign: Unspecified -> ExplicitlyIgnorable is allowed
 @MustUseReturnValues
-actual class Foo actual constructor() {
+actual define Foo actual constructor() {
     actual fun x(): String = ""
     @IgnorableReturnValue actual fun ign(): String = ""
     actual val p: Int = 42

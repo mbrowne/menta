@@ -1,0 +1,7 @@
+FILE[kind=File[packageFqName=<root>]]
+  PACKAGE_DIRECTIVE
+  IMPORT_LIST
+  CLASS[classId=/Foo, fqName=Foo, isClsStubCompiledToJvmDefaultImplementation=false, isInterface=false, isLocal=false, isTopLevel=true, name=Foo, superNames=[]]
+    CLASS_BODY
+  FUN[callableName=bar, classId=null, fqName=bar, hasBlockBody=true, hasBody=true, isExtension=false, isTopLevel=true, mayHaveContract=false, name=bar, receiver=null]
+    VALUE_PARAMETER_LIST

@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM_IR
 // IGNORE_BACKEND_K2: JVM_IR
 
-enum class TestEnum(val testNaming: String) {
+enum define TestEnum(val testNaming: String) {
     OK(OK.name),
 }
 

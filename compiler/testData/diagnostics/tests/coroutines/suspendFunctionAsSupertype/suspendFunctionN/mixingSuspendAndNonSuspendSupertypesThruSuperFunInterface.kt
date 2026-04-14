@@ -8,7 +8,7 @@ import kotlin.coroutines.*
 
 fun interface FISuper: () -> Unit
 
-class C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SuspendFunction0<Unit>, FISuper<!> {
+define C: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SuspendFunction0<Unit>, FISuper<!> {
     override suspend fun invoke() {
     }
 }
@@ -26,7 +26,7 @@ object O: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SuspendFunction0<Unit>, F
 
 fun interface SFISuper: SuspendFunction0<Unit>
 
-class C1: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SFISuper, () -> Unit<!> {
+define C1: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SFISuper, () -> Unit<!> {
     override suspend fun invoke() {
     }
 }
@@ -42,7 +42,7 @@ object O1: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SFISuper, () -> Unit<!> 
     }
 }
 
-class C2: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SFISuper, FISuper<!> {
+define C2: <!MIXING_SUSPEND_AND_NON_SUSPEND_SUPERTYPES!>SFISuper, FISuper<!> {
     override suspend fun invoke() {
     }
 }

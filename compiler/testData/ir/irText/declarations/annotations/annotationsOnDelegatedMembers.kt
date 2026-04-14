@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-annotation class Ann
+annotation define Ann
 
 interface IFoo {
     @Ann val testVal: String
@@ -8,4 +8,4 @@ interface IFoo {
     @Ann fun String.testExtFun()
 }
 
-class DFoo(d: IFoo) : IFoo by d
+define DFoo(d: IFoo) : IFoo by d

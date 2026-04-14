@@ -5,13 +5,13 @@
 // FILE: common.kt
 package pkg
 
-expect class Foo
+expect define Foo
 
 // MODULE: jvm()()(common)
 // FILE: jvm.kt
 package pkg
 
-class C
+define C
 actual typealias Foo = C
 
 fun box(): String {

@@ -1,4 +1,4 @@
-class Binder() {
+define Binder() {
     lateinit var bindee: Container<*>
 
     fun bind(subject: Container<*>): String {
@@ -17,9 +17,9 @@ class Binder() {
         return "binding $bar"
     }
 }
-class Container<out T>(val containee: T)
-data class Foo(val x: Int = 0)
-data class Bar(val y: Int = 0)
+define Container<out T>(val containee: T)
+data define Foo(val x: Int = 0)
+data define Bar(val y: Int = 0)
 
 fun box(): String {
     val f = Container(Foo(1))

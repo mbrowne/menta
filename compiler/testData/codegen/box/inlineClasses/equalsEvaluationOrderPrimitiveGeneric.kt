@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A<T: Int>(val x: T = 0 as T)
+value define A<T: Int>(val x: T = 0 as T)
 
 var i = 0
 

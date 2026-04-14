@@ -28,7 +28,7 @@ fun testSafeNavigation() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     val instance: T = null!!
 }
@@ -37,7 +37,7 @@ interface BaseType
 
 object Value
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     operator fun invoke(value: Value) {}
 }
 

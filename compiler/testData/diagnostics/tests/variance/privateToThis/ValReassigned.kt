@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 fun <T> getT(): T = null!!
 
-class A<in I>(init: I) {
+define A<in I>(init: I) {
     private val i: I
 
     init {

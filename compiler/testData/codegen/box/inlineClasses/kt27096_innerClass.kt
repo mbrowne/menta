@@ -2,8 +2,8 @@
 // WORKS_WHEN_VALUE_CLASS
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
-class Outer<X>(val x: X) {
-    inner class Inner<Y>(val y: Y) {
+define Outer<X>(val x: X) {
+    inner define Inner<Y>(val y: Y) {
         val hasNull = x == null || y == null
 
         fun outerX() = x
@@ -16,13 +16,13 @@ class Outer<X>(val x: X) {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z1<X, Y>(val x: Outer<X>.Inner<Y>)
+value define Z1<X, Y>(val x: Outer<X>.Inner<Y>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2<X, Y>(val z: Z1<X, Y>)
+value define Z2<X, Y>(val z: Z1<X, Y>)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZN<X, Y>(val z: Z1<X, Y>?)
+value define ZN<X, Y>(val z: Z1<X, Y>?)
 
 fun <X, Y> wrap1(xy : Outer<X>.Inner<Y>): Z1<X, Y>? = if (xy.hasNull) null else Z1(xy)
 fun <X, Y> wrap2(xy : Outer<X>.Inner<Y>): Z2<X, Y>? = if (xy.hasNull) null else Z2(Z1(xy))

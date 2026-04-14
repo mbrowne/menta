@@ -5,12 +5,12 @@
 
 // FILE: Java1.java
 import java.util.ArrayList;
-public class Java1<T> extends ArrayList<T>{ }
+public define Java1<T> extends ArrayList<T>{ }
 
 // FILE: 1.kt
-class A<T> : Java1<T>()
+define A<T> : Java1<T>()
 
-class B<T> : Java1<T>() {
+define B<T> : Java1<T>() {
     override fun remove(element: T): Boolean {
         return true
     }

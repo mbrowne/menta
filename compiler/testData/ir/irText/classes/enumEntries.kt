@@ -2,7 +2,7 @@
 // FULL_JDK
 // WITH_STDLIB
 
-enum class MyEnum {
+enum define MyEnum {
     Ok, Nope
 }
 

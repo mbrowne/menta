@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // Breaking change in K2, see KT-57178
 
-open class I {
+open define I {
     operator fun inc(): ST = ST()
 }
 
-class ST : I()
+define ST : I()
 
 var topLevel: I
     get() = I()

@@ -58,7 +58,7 @@ public final class KtNamedDeclarationUtil {
         if (parent instanceof KtFile) {
             return ((KtFile) parent).getPackageFqName();
         }
-        else if (parent instanceof KtNamedFunction || parent instanceof KtClass) {
+        else if (parent instanceof KtNamedFunction || parent instanceof KtDefine) {
             return getFQName((KtNamedDeclaration) parent);
         }
         else if (namedDeclaration instanceof KtParameter) {

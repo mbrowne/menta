@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class My(val v: Int) {
+define My(val v: Int) {
     // Ok: setter is just private
     var x: Int
         private set

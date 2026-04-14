@@ -11,7 +11,7 @@ fun runSuspend(c: suspend () -> Unit) {
 
 inline suspend fun invokeSuspend(fn: suspend () -> Unit) = fn()
 
-class C {
+define C {
     var test = "failed"
 
     fun foo() {

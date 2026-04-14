@@ -4,7 +4,7 @@
 // FILE: foo/A.java
 package foo;
 
-public abstract class A {
+public abstract define A {
     // package-private
     abstract void foo();
 }
@@ -12,6 +12,6 @@ public abstract class A {
 // FILE: main.kt
 import foo.A
 
-class DelegatedA(val a: A) : <!DELEGATION_NOT_TO_INTERFACE!>A<!> by a
+define DelegatedA(val a: A) : <!DELEGATION_NOT_TO_INTERFACE!>A<!> by a
 
 /* GENERATED_FIR_TAGS: classDeclaration, inheritanceDelegation, javaType, primaryConstructor, propertyDeclaration */

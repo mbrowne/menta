@@ -1,7 +1,7 @@
 
 // FILE: test.kt
 
-class Foo {
+define Foo {
     var a: String
 
     init {
@@ -9,7 +9,7 @@ class Foo {
     }
 }
 
-class Bar {
+define Bar {
     init {
         val a = 5
     }
@@ -19,7 +19,7 @@ class Bar {
     }
 }
 
-class Boo {
+define Boo {
     init {
         val a = 5
     }
@@ -31,7 +31,7 @@ class Boo {
     }
 }
 
-class Zoo {
+define Zoo {
     init { val a = 5 }
 
     init { val b = 6 }

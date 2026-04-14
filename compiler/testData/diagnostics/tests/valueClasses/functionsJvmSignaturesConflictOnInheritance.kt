@@ -7,12 +7,12 @@
 
 package kotlin.jvm
 
-annotation class JvmInline
+annotation define JvmInline
 
 @JvmInline
-value class Name(val name: String)
+value define Name(val name: String)
 @JvmInline
-value class Password(val password: String)
+value define Password(val password: String)
 
 interface NameVerifier {
     fun verify(name: Name)

@@ -5,9 +5,9 @@
         AnnotationTarget.EXPRESSION, AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class Ann(val x: Int = 6)
+annotation define Ann(val x: Int = 6)
 
-@Ann(1) @Ann(2) @Ann(3) private class A @Ann constructor() {
+@Ann(1) @Ann(2) @Ann(3) private define A @Ann constructor() {
     @Ann(x = 5) fun foo() {
         1 + @Ann(1) 1 * @Ann(<!ARGUMENT_TYPE_MISMATCH!>""<!>) 6
 

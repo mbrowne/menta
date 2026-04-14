@@ -2,12 +2,12 @@
 // FILE: a.kt
 package a.x
 
-class X
+define X
 
 // FILE: b.kt
 package b.x
 
-class X
+define X
 
 // FILE: c.kt
 package c
@@ -15,6 +15,6 @@ package c
 import a.<!PACKAGE_CANNOT_BE_IMPORTED!>x<!>
 import b.<!PACKAGE_CANNOT_BE_IMPORTED!>x<!>
 
-class Y : <!UNRESOLVED_REFERENCE!>x<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>X<!>
+define Y : <!UNRESOLVED_REFERENCE!>x<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>X<!>
 
 /* GENERATED_FIR_TAGS: classDeclaration */

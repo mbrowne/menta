@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
-sealed class Stmt
+sealed define Stmt
 
-class ForStmt : Stmt()
+define ForStmt : Stmt()
 
-sealed class Expr : Stmt() {
+sealed define Expr : Stmt() {
     object BinExpr : Expr()
 }
 

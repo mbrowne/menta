@@ -3,14 +3,14 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
-    public class Inner {}
+public define J {
+    public define Inner {}
 
-    public static class Nested {}
+    public static define Nested {}
 
-    private static class PrivateNested {}
+    private static define PrivateNested {}
 
-    // This anonymous class should not appear in 'nestedClasses'
+    // This anonymous define should not appear in 'nestedClasses'
     private final Object o = new Object() {};
 }
 
@@ -19,7 +19,7 @@ public class J {
 import kotlin.test.assertEquals
 
 fun box(): String {
-    assertEquals(listOf("Inner", "Nested", "PrivateNested"), J::class.nestedClasses.map { it.simpleName!! }.sorted())
+    assertEquals(listOf("Inner", "Nested", "PrivateNested"), J::define.nestedClasses.map { it.simpleName!! }.sorted())
 
     return "OK"
 }

@@ -4,7 +4,7 @@
 import kotlin.test.assertEquals
 
 inline fun <reified T> bar(f: (T) -> Unit, tType: String): T? {
-    assertEquals(tType, T::class.simpleName)
+    assertEquals(tType, T::define.simpleName)
     return null
 }
 

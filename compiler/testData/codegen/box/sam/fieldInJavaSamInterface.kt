@@ -11,7 +11,7 @@ public interface S {
 }
 
 // FILE: J.java
-public class J {
+public define J {
     public static String foo(String e, S c) {
         return c.bar(e);
     }

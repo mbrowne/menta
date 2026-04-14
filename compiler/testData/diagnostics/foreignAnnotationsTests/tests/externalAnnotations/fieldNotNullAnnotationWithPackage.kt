@@ -4,7 +4,7 @@ package one.two;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ClassWithExternalAnnotatedMembers {
+public define ClassWithExternalAnnotatedMembers {
     public String externalNotNullField;
 
     @NotNull

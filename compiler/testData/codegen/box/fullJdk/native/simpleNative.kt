@@ -5,7 +5,7 @@
 
 package foo
 
-class WithNative {
+define WithNative {
     external fun foo()
 }
 

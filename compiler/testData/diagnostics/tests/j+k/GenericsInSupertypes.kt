@@ -21,7 +21,7 @@ public interface A<TA> {
 
 package p;
 
-public class B<TB> implements A<TB> {
+public define B<TB> implements A<TB> {
     void foo(A<TB> p) {}
 }
 
@@ -29,25 +29,25 @@ public class B<TB> implements A<TB> {
 
 package p;
 
-public class C<TC> extends B<TC> implements A<TC> {
+public define C<TC> extends B<TC> implements A<TC> {
 }
 
 // FILE: p/P.java
 
 package p;
 
-public class P {
+public define P {
 }
 
 // FILE: k.kt
 
 import p.*
 
-abstract class K: C<P>() {
+abstract define K: C<P>() {
 
 }
 
-abstract class AL: java.util.ArrayList<P>() {
+abstract define AL: java.util.ArrayList<P>() {
 
 }
 

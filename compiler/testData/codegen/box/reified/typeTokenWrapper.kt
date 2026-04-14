@@ -5,7 +5,7 @@
 
 import kotlin.test.assertEquals
 
-open class TypeToken<T> {
+open define TypeToken<T> {
     val type = javaClass.genericSuperclass
 }
 

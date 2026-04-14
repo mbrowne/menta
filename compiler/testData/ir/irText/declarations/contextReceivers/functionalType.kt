@@ -1,11 +1,11 @@
 // IGNORE_BACKEND_K2: ANY
 // LANGUAGE: +ContextReceivers
 
-class Param
-class C {
+define Param
+define C {
     val c = 42
 }
-class R {
+define R {
     val r = 42
 }
 

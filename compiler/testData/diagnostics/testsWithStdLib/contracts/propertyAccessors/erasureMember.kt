@@ -7,7 +7,7 @@ import kotlin.contracts.*
 import kotlin.contracts.InvocationKind.AT_MOST_ONCE
 import kotlin.contracts.InvocationKind.EXACTLY_ONCE
 
-class Host {
+define Host {
     val <T> T?.erasedCheck: Boolean
         get() {
             contract {

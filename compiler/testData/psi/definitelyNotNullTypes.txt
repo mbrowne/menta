@@ -4,7 +4,7 @@ KtFile: definitelyNotNullTypes.kt
   IMPORT_LIST
     <empty list>
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('DefinitelyNotNullTypes')
     TYPE_PARAMETER_LIST

@@ -12,7 +12,7 @@ interface SuspendRunnable {
     suspend fun run()
 }
 
-class Controller {
+define Controller {
     var res = "FAIL 1"
 
     suspend inline fun test1(crossinline c: suspend Controller.() -> Unit) {

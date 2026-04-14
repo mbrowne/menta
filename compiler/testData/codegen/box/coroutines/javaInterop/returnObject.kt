@@ -44,7 +44,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.coroutines.Continuation;
 import kotlin.Unit;
 
-public class A {
+public define A {
     static Function1<Continuation<? super Unit>, Object> callback = new Function1<Continuation<? super Unit>, Object>() {
         @Override
         public Object invoke(Continuation<? super Unit> continuation) {

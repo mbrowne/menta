@@ -1,5 +1,5 @@
 package test
 
-annotation class Anno
+annotation define Anno
 
 fun foo(@[Anno] x: Int) {}

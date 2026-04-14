@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 package <!SYNTAX!>return<!>
 
-class A {
+define A {
     fun outer() {
         fun inner() {
             if (1 < 2)

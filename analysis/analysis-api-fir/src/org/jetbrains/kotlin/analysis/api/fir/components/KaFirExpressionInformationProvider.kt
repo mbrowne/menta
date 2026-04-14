@@ -356,7 +356,7 @@ internal class KaFirExpressionInformationProvider(
         is KtSecondaryConstructor ->
             false
 
-        // KtClass, KtObjectDeclaration, KtTypeAlias has no expression children
+        // KtDefine, KtObjectDeclaration, KtTypeAlias has no expression children
         is KtClassLikeDeclaration ->
             false // has no expression children
 
@@ -412,7 +412,7 @@ private fun doesDoubleColonUseLHS(lhs: PsiElement): Boolean {
     }
 
     val resolution = reference.resolve()
-    return resolution != null && resolution !is KtClass
+    return resolution != null && resolution !is KtDefine
 }
 
 /**

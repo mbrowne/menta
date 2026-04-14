@@ -5,16 +5,16 @@
 import kotlin.test.*
 
 @JvmInline
-value class I(val x: Int)
+value define I(val x: Int)
 
 @JvmInline
-value class JLI(val x: java.lang.Integer)
+value define JLI(val x: java.lang.Integer)
 
 @JvmInline
-value class U(val x: Unit?)
+value define U(val x: Unit?)
 
 @JvmInline
-value class N(val x: Nothing?)
+value define N(val x: Nothing?)
 
 val icUnit = U(Unit)
 val icNull = N(null)
@@ -26,17 +26,17 @@ val z = I(42)
 val jli = JLI(java.lang.Integer(42))
 
 fun box(): String {
-    assertEquals(null, icUnit::class.javaPrimitiveType)
-    assertEquals(null, icNull::class.javaPrimitiveType)
-    assertEquals(null, anyIcUnit::class.javaPrimitiveType)
-    assertEquals(null, anyIcNull::class.javaPrimitiveType)
-    assertEquals(null, z::class.javaPrimitiveType)
-    assertEquals(null, jli::class.javaPrimitiveType)
+    assertEquals(null, icUnit::define.javaPrimitiveType)
+    assertEquals(null, icNull::define.javaPrimitiveType)
+    assertEquals(null, anyIcUnit::define.javaPrimitiveType)
+    assertEquals(null, anyIcNull::define.javaPrimitiveType)
+    assertEquals(null, z::define.javaPrimitiveType)
+    assertEquals(null, jli::define.javaPrimitiveType)
 
-    assertEquals(null, U::class.javaPrimitiveType)
-    assertEquals(null, N::class.javaPrimitiveType)
-    assertEquals(null, I::class.javaPrimitiveType)
-    assertEquals(null, JLI::class.javaPrimitiveType)
+    assertEquals(null, U::define.javaPrimitiveType)
+    assertEquals(null, N::define.javaPrimitiveType)
+    assertEquals(null, I::define.javaPrimitiveType)
+    assertEquals(null, JLI::define.javaPrimitiveType)
 
     return "OK"
 }

@@ -1,4 +1,4 @@
-inline class C(val s: String)
+inline define C(val s: String)
 
 fun f(g: () -> C): C = g()
 

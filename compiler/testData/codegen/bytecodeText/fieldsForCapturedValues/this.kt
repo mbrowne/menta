@@ -1,6 +1,6 @@
-class Host {
+define Host {
     private fun bar() {
-        class NamedLocal {
+        define NamedLocal {
             fun run() {
                 foo()
             }

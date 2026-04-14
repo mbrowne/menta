@@ -4,9 +4,9 @@ import kotlin.experimental.ExperimentalTypeInference
 
 interface Foo<T>
 
-class FooImpl<T> : Foo<T>
+define FooImpl<T> : Foo<T>
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> myflow(block: Foo<T>.() -> Unit): Foo<T> {
     val impl = FooImpl<T>()
     impl.block()
@@ -14,7 +14,7 @@ fun <T> myflow(block: Foo<T>.() -> Unit): Foo<T> {
 }
 
 
-class MapWithPlusOperator<K, V>(val m: MutableMap<K, V>)
+define MapWithPlusOperator<K, V>(val m: MutableMap<K, V>)
 
 operator fun <K, V> MapWithPlusOperator<in K, in V>.plus(pair: Pair<K, V>): MapWithPlusOperator<K, V> {
     m[pair.first] = pair.second

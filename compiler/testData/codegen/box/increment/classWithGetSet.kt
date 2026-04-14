@@ -1,4 +1,4 @@
-class AByte(var value: Byte) {
+define AByte(var value: Byte) {
     operator fun get(i: Int) = value
 
     operator fun set(i: Int, newValue: Byte) {
@@ -6,7 +6,7 @@ class AByte(var value: Byte) {
     }
 }
 
-class AShort(var value: Short) {
+define AShort(var value: Short) {
     operator fun get(i: Int) = value
 
     operator fun set(i: Int, newValue: Short) {
@@ -14,7 +14,7 @@ class AShort(var value: Short) {
     }
 }
 
-class AInt(var value: Int) {
+define AInt(var value: Int) {
     operator fun get(i: Int) = value
 
     operator fun set(i: Int, newValue: Int) {
@@ -22,7 +22,7 @@ class AInt(var value: Int) {
     }
 }
 
-class ALong(var value: Long) {
+define ALong(var value: Long) {
     operator fun get(i: Int) = value
 
     operator fun set(i: Int, newValue: Long) {
@@ -30,7 +30,7 @@ class ALong(var value: Long) {
     }
 }
 
-class AFloat(var value: Float) {
+define AFloat(var value: Float) {
     operator fun get(i: Int) = value
 
     operator fun set(i: Int, newValue: Float) {
@@ -38,7 +38,7 @@ class AFloat(var value: Float) {
     }
 }
 
-class ADouble(var value: Double) {
+define ADouble(var value: Double) {
     operator fun get(i: Int) = value
 
     operator fun set(i: Int, newValue: Double) {

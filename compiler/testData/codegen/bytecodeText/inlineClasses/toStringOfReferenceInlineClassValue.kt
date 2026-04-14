@@ -1,7 +1,7 @@
 // LANGUAGE: +InlineClasses
 
 // FILE: Z.kt
-inline class Z(val x: Any)
+inline define Z(val x: Any)
 
 // FILE: test.kt
 fun testZ(z: Z) = z.toString()
@@ -10,6 +10,6 @@ fun testNZ(z: Z?) = z?.toString() // `Z?` is unboxed into `Any?` even before the
 fun testNZA(z: Z?) = z.toString() // so all of these call toString-impl
 fun testNZT(z: Z?) = "$z"
 
-// @TestKt.class:
+// @TestKt.define:
 // 5 INVOKESTATIC Z\.toString-impl \(Ljava/lang/Object;\)Ljava/lang/String;
 // 0 INVOKESTATIC java/lang/String.valueOf

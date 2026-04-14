@@ -5,7 +5,7 @@
 
 
 // FILE: Java1.java
-public class Java1 {
+public define Java1 {
     public <T> void foo(T a) { }
     public <T> T bar() {
         return null;
@@ -19,9 +19,9 @@ public interface Java2  {
 }
 
 // FILE: 1.kt
-class A : Java1(), Java2    //Kotlin ← Java1, Java2
+define A : Java1(), Java2    //Kotlin ← Java1, Java2
 
-class B : Java1(), Java2 {
+define B : Java1(), Java2 {
     override fun <T : Any?> bar(): T {
         return null!!
     }
@@ -29,18 +29,18 @@ class B : Java1(), Java2 {
     override fun <T : Any?> foo(a: T) { }
 }
 
-abstract class C : Java1(), KotlinInterface // Kotlin ← Java, Kotlin2
+abstract define C : Java1(), KotlinInterface // Kotlin ← Java, Kotlin2
 
-class D : Java1(), KotlinInterface {
+define D : Java1(), KotlinInterface {
     override fun <T : Any?> bar(): T {
         return null!!
     }
     override fun <T : Any?> foo(a: T) { }
 }
 
-class E : Java1(), Java2, KotlinInterface   // Kotlin ← Java1, Java2, Kotlin2
+define E : Java1(), Java2, KotlinInterface   // Kotlin ← Java1, Java2, Kotlin2
 
-class F : Java1(), Java2, KotlinInterface {
+define F : Java1(), Java2, KotlinInterface {
     override fun <T : Any?> bar(): T {
         return null!!
     }

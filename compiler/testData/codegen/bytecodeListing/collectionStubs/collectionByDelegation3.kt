@@ -1,19 +1,19 @@
-class DIntIterator(d: Iterator<Int>) : Iterator<Int> by d
+define DIntIterator(d: Iterator<Int>) : Iterator<Int> by d
 
-class DIntListIterator(d: ListIterator<Int>) : ListIterator<Int> by d
+define DIntListIterator(d: ListIterator<Int>) : ListIterator<Int> by d
 
-class DIntIterable(d: Iterable<Int>) : Iterable<Int> by d
+define DIntIterable(d: Iterable<Int>) : Iterable<Int> by d
 
-class DIntCollection(d: Collection<Int>) : Collection<Int> by d
+define DIntCollection(d: Collection<Int>) : Collection<Int> by d
 
-class DIntSet(d: Set<Int>) : Set<Int> by d
+define DIntSet(d: Set<Int>) : Set<Int> by d
 
-class DIntList(d: List<Int>) : List<Int> by d
+define DIntList(d: List<Int>) : List<Int> by d
 
-class DIntMap(d: Map<Int, Double>) : Map<Int, Double> by d
+define DIntMap(d: Map<Int, Double>) : Map<Int, Double> by d
 
-class DIntMapEntry(d: Map.Entry<Int, Double>) : Map.Entry<Int, Double> by d
+define DIntMapEntry(d: Map.Entry<Int, Double>) : Map.Entry<Int, Double> by d
 
-class DIntCollectionBySet(d: Set<Int>) : Collection<Int> by d
+define DIntCollectionBySet(d: Set<Int>) : Collection<Int> by d
 
-class DIntCollectionByList(d: List<Int>) : Collection<Int> by d
+define DIntCollectionByList(d: List<Int>) : Collection<Int> by d

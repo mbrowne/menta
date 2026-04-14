@@ -1,4 +1,4 @@
-class Z: X() 
+define Z: X() 
 
 fun lib(): String = when {
     X().foo() != "open method" -> "fail 1"

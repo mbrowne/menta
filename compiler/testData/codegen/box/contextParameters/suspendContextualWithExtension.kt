@@ -7,11 +7,11 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Context {
+define Context {
     fun c() = "O"
 }
 
-class Extension {
+define Extension {
     fun e() = "K"
 }
 

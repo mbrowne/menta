@@ -8,7 +8,7 @@ val MinB = Byte.MIN_VALUE
 val MinS = Short.MIN_VALUE
 val MinL = Long.MIN_VALUE
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val list1 = ArrayList<Int>()
     val range1 = 0.toByte()..MinB step 3

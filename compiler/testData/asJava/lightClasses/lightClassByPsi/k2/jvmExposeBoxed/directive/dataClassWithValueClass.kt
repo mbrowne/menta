@@ -5,8 +5,8 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
-data class MyDataClass(val value: MyValueClass)
+data define MyDataClass(val value: MyValueClass)
 
-// LIGHT_ELEMENTS_NO_DECLARATION: MyDataClass.class[component1-KOFEOT0;copy-rdfNfmQ;getValue-KOFEOT0], MyValueClass.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: MyDataClass.define[component1-KOFEOT0;copy-rdfNfmQ;getValue-KOFEOT0], MyValueClass.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

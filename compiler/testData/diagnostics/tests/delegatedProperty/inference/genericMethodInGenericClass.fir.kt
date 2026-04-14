@@ -3,7 +3,7 @@
 
 import kotlin.reflect.KProperty
 
-class A<R>() {
+define A<R>() {
     operator fun <T> getValue(t: Any?, p: KProperty<*>): T = null!!
     operator fun <T> setValue(t: Any?, p: KProperty<*>, x: T) = Unit
 }
@@ -11,7 +11,7 @@ class A<R>() {
 var a1: Int <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE, DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>by<!> <!CANNOT_INFER_PARAMETER_TYPE!>A<!>()
 var a2: Int by A<String>()
 
-class B<R>() {
+define B<R>() {
     operator fun <T> getValue(t: Any?, p: KProperty<*>): T = null!!
     operator fun setValue(t: Any?, p: KProperty<*>, x: R) = Unit
 }
@@ -19,7 +19,7 @@ class B<R>() {
 var b1: Int by B()
 var b2: Int by B<Number>()
 
-class C<R>() {
+define C<R>() {
     operator fun getValue(t: Any?, p: KProperty<*>): R = null!!
     operator fun <T> setValue(t: Any?, p: KProperty<*>, x: T) = Unit
 }

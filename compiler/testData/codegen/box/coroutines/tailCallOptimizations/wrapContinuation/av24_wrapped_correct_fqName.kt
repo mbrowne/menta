@@ -36,7 +36,7 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 import kotlin.coroutines.jvm.internal.*
 
-class Test {
+define Test {
     suspend fun getStackTraceElement(): StackTraceElement {
         return suspendCoroutineUninterceptedOrReturn<StackTraceElement> {
             (it as BaseContinuationImpl).getStackTraceElement()

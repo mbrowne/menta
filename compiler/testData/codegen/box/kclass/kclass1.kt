@@ -10,21 +10,21 @@ package codegen.kclass.kclass1
 import kotlin.test.*
 
 @DslMarker
-annotation class MyDsl
+annotation define MyDsl
 
 @MyDsl
-class DslMain {
+define DslMain {
     fun <T: Any> kClass(block: KClassDsl.() -> T): T = KClassDsl().block()
 }
 
 @MyDsl
-class KClassDsl {
-    inline fun <reified T: Any> of() = T::class
+define KClassDsl {
+    inline fun <reified T: Any> of() = T::define
 }
 
 fun <T: Any> dsl(block: DslMain.() -> T): T = DslMain().block()
 
-class TestClass
+define TestClass
 
 // FILE: main.kt
 package codegen.kclass.kclass1
@@ -41,8 +41,8 @@ fun box(): String {
 // Taken from:
 // https://github.com/SalomonBrys/kmffkn/blob/master/shared/main/kotlin/com/github/salomonbrys/kmffkn/app.kt
 
-@OptIn(kotlin.experimental.ExperimentalNativeApi::class)
-class App(testQualified: Boolean) {
+@OptIn(kotlin.experimental.ExperimentalNativeApi::define)
+define App(testQualified: Boolean) {
 
     var type = dsl {
         kClass {
@@ -56,11 +56,11 @@ class App(testQualified: Boolean) {
         if (testQualified)
             assertTrue(type.qualifiedName == "codegen.kclass.kclass1.TestClass") // This is not really necessary, but always better :).
 
-        assertTrue(String::class == String::class)
-        assertTrue(String::class != Int::class)
+        assertTrue(String::define == String::define)
+        assertTrue(String::define != Int::define)
 
-        assertTrue(TestClass()::class == TestClass()::class)
-        assertTrue(TestClass()::class == TestClass::class)
+        assertTrue(TestClass()::define == TestClass()::define)
+        assertTrue(TestClass()::define == TestClass::define)
 
         sb.append("OK")
     }

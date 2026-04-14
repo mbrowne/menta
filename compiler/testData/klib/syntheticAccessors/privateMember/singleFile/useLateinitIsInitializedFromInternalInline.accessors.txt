@@ -2,7 +2,7 @@
 
 /* FILE package=<root> fileName=useLateinitIsInitializedFromInternalInline.kt */
 
-public class OK
+public define OK
     private lateinit var o: String?
         /* TARGET declaration */ private field o: String?
         /* TARGET declaration */ private fun <get-o>(): String

@@ -4,11 +4,11 @@
 
 val <C> C.foo get() = Foo<C>()
 
-class Foo<K> {
+define Foo<K> {
     operator fun <T> invoke(body: () -> Unit) {}
 }
 
-class Bar {
+define Bar {
     val bar = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!> {}
     val baz = <!TYPE_ARGUMENTS_NOT_ALLOWED!>foo<!><Int> {}
 }

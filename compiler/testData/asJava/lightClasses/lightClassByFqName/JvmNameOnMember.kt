@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-class C {
+define C {
     @JvmName("myFun")
     fun g(c: C) {
 

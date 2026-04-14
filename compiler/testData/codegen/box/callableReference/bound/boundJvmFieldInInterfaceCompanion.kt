@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class Bar(val value: String)
+define Bar(val value: String)
 
 interface  Foo {
 

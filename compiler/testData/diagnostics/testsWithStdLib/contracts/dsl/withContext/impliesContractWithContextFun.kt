@@ -4,7 +4,7 @@
 // OPT_IN: kotlin.contracts.ExperimentalContracts, kotlin.contracts.ExperimentalExtendedContracts
 import kotlin.contracts.*
 
-class MyEvent {
+define MyEvent {
     fun foo() {}
 }
 

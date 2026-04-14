@@ -1,4 +1,4 @@
-KtDeclaration: KtClass Test
+KtDeclaration: KtDefine Test
 annotations: [
   Anno(value = kotlin.Array<kotlin.String>::class)
     psi: KtAnnotationEntry

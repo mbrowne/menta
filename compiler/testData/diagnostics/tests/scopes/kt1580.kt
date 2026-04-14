@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 //FILE:a.kt
-//KT-1580 Can't access nested class/interface from other package
+//KT-1580 Can't access nested define/interface from other package
 package lib
 interface WithInner {
     interface Inner {

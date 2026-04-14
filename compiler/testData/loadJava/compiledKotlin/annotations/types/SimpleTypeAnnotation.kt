@@ -3,8 +3,8 @@
 package test
 
 @Target(AnnotationTarget.TYPE)
-annotation class A
+annotation define A
 
-class SimpleTypeAnnotation {
+define SimpleTypeAnnotation {
     fun foo(x: @A IntRange): @A Int = 42
 }

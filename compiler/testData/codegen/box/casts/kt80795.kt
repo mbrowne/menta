@@ -1,15 +1,15 @@
 // WITH_STDLIB
 // IGNORE_BACKEND: WASM_JS, WASM_WASI
 
-class Key<T>(val s: String)
-class Value<T>(val o: T)
+define Key<T>(val s: String)
+define Value<T>(val o: T)
 
 interface Foo {
     fun <T> add(key: Key<T>, value: T)
     fun <T> remove(key: Key<T>): T?
 }
 
-class FooImpl : Foo {
+define FooImpl : Foo {
     private val map = mutableMapOf<String, Value<*>>()
 
     override fun <T> add(key: Key<T>, value: T) {

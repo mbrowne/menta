@@ -12,9 +12,9 @@ fun equalityNotApplicableSmartCast(a: Any?, b: Any?) {
 }
 
 @JvmInline
-value class C(val int: Int)
+value define C(val int: Int)
 @JvmInline
-value class D(val bool: Boolean)
+value define D(val bool: Boolean)
 
 fun forbiddenIdentityEquals(c: C, d: D) {
     <!EQUALITY_NOT_APPLICABLE, FORBIDDEN_IDENTITY_EQUALS!>c === d<!>
@@ -60,7 +60,7 @@ fun incompatibleTypesSmartCast(a: Any?) {
     }
 }
 
-enum class E {
+enum define E {
     A, B
 }
 
@@ -103,14 +103,14 @@ fun incompatibleIdentityRegardlessNullabilityWithValueClassesSmartCast(c: Any?, 
     }
 }
 
-enum class F
+enum define F
 
 fun <T: E, K: F> incompatibleEnumComparisonWithTypeParameters(e: T, f: K) {
     e == f
 }
 
 interface A
-enum class G : B
+enum define G : B
 
 fun <I : A> incompatibleEnumAndUnrelatedInterfaceThroughTypeParameter(x: G?, i: I?) {
     x == i

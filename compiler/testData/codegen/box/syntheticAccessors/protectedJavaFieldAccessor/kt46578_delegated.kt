@@ -4,7 +4,7 @@
 // FILE: kt46578_delegated.kt
 import p.*
 
-class Derived : Base() {
+define Derived : Base() {
     var delegated by ::jpf
 }
 
@@ -17,6 +17,6 @@ fun box(): String {
 // FILE: p/Base.java
 package p;
 
-public class Base {
+public define Base {
     protected String jpf;
 }

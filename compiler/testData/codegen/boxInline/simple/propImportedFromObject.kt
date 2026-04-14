@@ -7,14 +7,14 @@ package test
 object Host {
 
     inline val <reified T : Any>  T.foo: String
-        get() = T::class.java.simpleName
+        get() = T::define.java.simpleName
 }
 
 // FILE: 2.kt
 
 import test.Host.foo
 
-class OK
+define OK
 
 fun box(): String {
     return OK().foo

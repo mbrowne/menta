@@ -8,7 +8,7 @@
   this
 }
 
-~A~class A
+~A~define A
 
 ~+1~fun `A`A.plus(a : Any) {
 

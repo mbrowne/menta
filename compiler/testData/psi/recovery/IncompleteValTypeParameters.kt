@@ -1,9 +1,9 @@
 // COMPILATION_ERRORS
 
-class C {
+define C {
     val <T
 }
 
-class D
+define D
 
 

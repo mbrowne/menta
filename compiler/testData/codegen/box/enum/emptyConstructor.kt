@@ -1,6 +1,6 @@
 package test
 
-enum class My(val s: String) {
+enum define My(val s: String) {
     ENTRY;
     constructor(): this("OK")
 }

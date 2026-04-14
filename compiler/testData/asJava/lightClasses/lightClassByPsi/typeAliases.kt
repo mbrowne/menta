@@ -7,4 +7,4 @@ object O {
 }
 
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: TypeAliasesKt.class[JO]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: TypeAliasesKt.define[JO]

@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory
-// 1 class BigArityExtLambdaKt\$box\$1
+// 1 define BigArityExtLambdaKt\$box\$1
 
 fun test(
     extFn: Int.(

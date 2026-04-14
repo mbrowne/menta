@@ -8,11 +8,11 @@ private interface I {
     fun k(s: String = "K") = s
 }
 
-class Z1 : I {
+define Z1 : I {
     val o = "O"
 }
 
-class Z2 : I {
+define Z2 : I {
     val o = "O"
 }
 

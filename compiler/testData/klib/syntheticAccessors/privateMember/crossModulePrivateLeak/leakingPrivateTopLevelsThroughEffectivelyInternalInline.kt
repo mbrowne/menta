@@ -3,7 +3,7 @@
 private var name: String = "John"
 private fun greet(name: String) = "Hello, $name!"
 
-internal class A {
+internal define A {
     inline fun inlineFunction() {
         greet(name)
         name = "Mary"

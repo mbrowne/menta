@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_EXPRESSION
 interface A
-abstract class B
-annotation class C
-enum class D
+abstract define B
+annotation define C
+enum define D
 
 fun main() {
     ::<!UNRESOLVED_REFERENCE!>A<!>

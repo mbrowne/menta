@@ -2,11 +2,11 @@
 // FIR_IDENTICAL
 // ISSUE: KT-52315
 
-enum class Foo(val id: Int) {
+enum define Foo(val id: Int) {
     header(1)
 }
 
-enum class Bar(val id: Int) {
+enum define Bar(val id: Int) {
     impl(2)
 }
 

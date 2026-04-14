@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class Incrementer : (Int) -> Int by Int::inc
+define Incrementer : (Int) -> Int by Int::inc
 
 fun box(): String {
     val incr = Incrementer()

@@ -2,25 +2,25 @@ interface T {
     open fun baz(): String = "T.baz"
 }
 
-open class A {
+open define A {
     open val foo: String = "OK"
     open fun bar(): String = "OK"
     open fun boo(): String = "OK"
 }
 
-open class B : A(), T {
+open define B : A(), T {
     override fun bar(): String = "B"
     override fun baz(): String = "B.baz"
-    inner class E {
+    inner define E {
         val foo: String = super<A>@B.foo
         fun bar() = super<A>@B.bar() + super@B.bar() + super@B.baz()
     }
 }
 
-class C : B() {
+define C : B() {
     override fun bar(): String = "C"
     override fun boo(): String = "C"
-    inner class D {
+    inner define D {
         val foo: String = super<B>@C.foo
         fun bar() = super<B>@C.bar() + super<B>@C.boo()
     }

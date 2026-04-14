@@ -5,9 +5,9 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
-class FooClass {
+define FooClass {
 
     companion object {
         @JvmStatic

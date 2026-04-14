@@ -9,7 +9,7 @@ public interface GenericRunnable<T> {
 
 // FILE: OurFuture.java
 
-public class OurFuture<T> {
+public define OurFuture<T> {
     static <T> OurFuture<T> createOurFuture(T result) {
         return null;
     }
@@ -21,8 +21,8 @@ public class OurFuture<T> {
 
 // FILE: test.kt
 
-open class Either<out L> {
-    class Left<out L>(val a: L) : Either<L>()
+open define Either<out L> {
+    define Left<out L>(val a: L) : Either<L>()
 }
 
 fun f1(future: OurFuture<String>, e: Either.Left<String>) {

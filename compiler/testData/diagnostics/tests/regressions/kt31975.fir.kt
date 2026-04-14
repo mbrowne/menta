@@ -9,7 +9,7 @@ interface A
 
 interface TypeConstructor
 
-class Refiner {
+define Refiner {
     val memoizedFunctionLambda = <!CANNOT_INFER_PARAMETER_TYPE, CANNOT_INFER_PARAMETER_TYPE!>createMemoizedFunction<!> <!CANNOT_INFER_PARAMETER_TYPE!>{ it.foo() }<!> // error type infered, no diagnostic, BAD, backend fails
     val memoizedFunctionReference = createMemoizedFunction(TypeConstructor::<!EXTENSION_IN_CLASS_REFERENCE_NOT_ALLOWED!>foo<!>) // EXTENSION_IN_CLASS_REFERENCE_IS_NOT_ALLOWED, fine
     val memoizedFunctionTypes = createMemoizedFunction<TypeConstructor, Boolean> { it.foo() } // works fine

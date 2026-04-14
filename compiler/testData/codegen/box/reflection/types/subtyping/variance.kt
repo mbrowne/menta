@@ -7,9 +7,9 @@ import kotlin.reflect.full.isSupertypeOf
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class Inv<TInv>
-class In<in TIn>
-class Out<out TOut>
+define Inv<TInv>
+define In<in TIn>
+define Out<out TOut>
 
 interface A<S, T, U : S> {
     fun inv_s(): Inv<S>

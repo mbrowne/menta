@@ -1,7 +1,7 @@
 import kotlin.*
 
 @CompileTimeCalculation
-class Temp<T : Number>(val a: T) {
+define Temp<T : Number>(val a: T) {
     fun <E : Number> plus(temp: Temp<E>): Double {
         return with(temp) {
             return@with this.a.toDouble() + this@Temp.a.toDouble()

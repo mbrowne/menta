@@ -34,7 +34,7 @@ KtNameReferenceExpression(71,76): 'first'
 KtNameReferenceExpression(77,82): 'THREE'
   NO_CANDIDATES
 
-KtClass(84,122): 'enum class Second {'
+KtDefine(84,122): 'enum class Second {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(84,88): 'enum'

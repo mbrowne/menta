@@ -5,13 +5,13 @@
 
 import kotlin.reflect.KProperty
 
-class A {
+define A {
   val a: Int <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>by<!> Delegate()
 }
 
 val aTopLevel: Int <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>by<!> Delegate()
 
-class Delegate {
+define Delegate {
   <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun getValue(t: Any?, p: KProperty<*>, a: Int): Int {
     return a
   }

@@ -5,7 +5,7 @@
 
 // FILE: Java1.java
 import java.util.SequencedCollection;
-public abstract class Java1 implements SequencedCollection<Integer> { }
+public abstract define Java1 implements SequencedCollection<Integer> { }
 
 // FILE: Java2.java
 public interface Java2 {
@@ -13,14 +13,14 @@ public interface Java2 {
 }
 
 // FILE: Java3.java
-public abstract class Java3 implements KotlinInterface { }
+public abstract define Java3 implements KotlinInterface { }
 
 // FILE: 1.kt
 import java.util.*
 
-abstract class A : SequencedCollection<Int>
+abstract define A : SequencedCollection<Int>
 
-abstract class B(override val size: Int) :  SequencedCollection<Int> {
+abstract define B(override val size: Int) :  SequencedCollection<Int> {
     override fun removeFirst(): Int {
         return 1
     }
@@ -30,9 +30,9 @@ abstract class B(override val size: Int) :  SequencedCollection<Int> {
     }
 }
 
-abstract class C : Java1()  // Kotlin ← Java1 ←Java2
+abstract define C : Java1()  // Kotlin ← Java1 ←Java2
 
-abstract class D : Java1() {
+abstract define D : Java1() {
     override val size: Int
         get() = 5
 
@@ -49,19 +49,19 @@ abstract class D : Java1() {
     }
 }
 
-abstract class E(override val size: Int) : Java1(), Java2 { //Kotlin ← Java1, Java2  ← Java3
+abstract define E(override val size: Int) : Java1(), Java2 { //Kotlin ← Java1, Java2  ← Java3
     override fun getFirst(): Int {
         return 2
     }
 }
 
-abstract class F : KotlinInterface, Java2 { //Kotlin ← Java, Kotlin2 ← Java2
+abstract define F : KotlinInterface, Java2 { //Kotlin ← Java, Kotlin2 ← Java2
     override fun getFirst(): Int {
         return 2
     }
 }
 
-abstract class G : Java3()  //Kotlin ← Java ← Kotlin ← Java
+abstract define G : Java3()  //Kotlin ← Java ← Kotlin ← Java
 
 interface KotlinInterface : SequencedCollection<Int>
 

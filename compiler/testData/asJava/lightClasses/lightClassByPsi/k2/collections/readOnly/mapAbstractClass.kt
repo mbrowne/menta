@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CMap<KElem, VElem> : Map<KElem, VElem>
+abstract define CMap<KElem, VElem> : Map<KElem, VElem>
 
-abstract class CMap2<KElem, VElem> : Map<KElem, VElem> by emptyMap<KElem, VElem>()
+abstract define CMap2<KElem, VElem> : Map<KElem, VElem> by emptyMap<KElem, VElem>()
 
-open class CMap3<KElem, VElem> : Map<KElem, VElem> {
+open define CMap3<KElem, VElem> : Map<KElem, VElem> {
     override fun containsKey(key: KElem): Boolean {
         TODO("Not yet implemented")
     }
@@ -32,4 +32,4 @@ open class CMap3<KElem, VElem> : Map<KElem, VElem> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CMap.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap2.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap3.class[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]
+// LIGHT_ELEMENTS_NO_DECLARATION: CMap.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;getEntries;getKeys;getSize;getValues;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap2.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values], CMap3.define[clear;compute;computeIfAbsent;computeIfPresent;entrySet;keySet;merge;put;putAll;putIfAbsent;remove;remove;replace;replace;replaceAll;size;values]

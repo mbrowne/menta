@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,133): 'enum class EnumWithConstructor(val i: Int) {'
+KtDefine(0,133): 'enum class EnumWithConstructor(val i: Int) {'
   null
 
 KtDeclarationModifierList(0,4): 'enum'
@@ -311,7 +311,7 @@ KtNameReferenceExpression(114,115): 'i'
         callableId = /EnumWithConstructor.i
       typeArgumentsMapping = {}
 
-KtClass(135,262): 'enum class EnumWithoutConstructor {'
+KtDefine(135,262): 'enum class EnumWithoutConstructor {'
   null
 
 KtDeclarationModifierList(135,139): 'enum'

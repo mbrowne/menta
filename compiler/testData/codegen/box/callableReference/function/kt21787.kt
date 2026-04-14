@@ -1,9 +1,9 @@
 // WITH_STDLIB
-class Container {
+define Container {
     var id: Int? = null
 }
 
-class TestClass {
+define TestClass {
 
     private fun createContainer(id: Int): Container { val q = Container(); q.id = id; return q }
     fun createContainers1(from: Int = 0, to: Int = 100) = (from .. to).map(::createContainer)

@@ -3,7 +3,7 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
 
     public static final int I = 42;
     public static final int I1 = 42;
@@ -16,7 +16,7 @@ package b;
 
 import static a.x.I;
 
-public class y {
+public define y {
     public static final int O = I;
 }
 
@@ -25,6 +25,6 @@ package b;
 
 import static a.x.*;
 
-public class z {
+public define z {
     public static final int CONST = I + I1 + I2;
 }

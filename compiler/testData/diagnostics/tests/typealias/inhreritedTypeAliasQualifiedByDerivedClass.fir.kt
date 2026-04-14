@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 
-open class Base {
+open define Base {
     typealias Nested = String
 }
 
-class Derived : Base()
+define Derived : Base()
 
 fun test(x: Derived.<!UNRESOLVED_REFERENCE!>Nested<!>) = x
 

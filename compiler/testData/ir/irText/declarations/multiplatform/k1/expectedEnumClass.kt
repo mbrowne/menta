@@ -3,12 +3,12 @@
 
 // LANGUAGE: +MultiPlatformProjects
 
-expect enum class MyEnum {
+expect enum define MyEnum {
     FOO,
     BAR
 }
 
-actual enum class MyEnum {
+actual enum define MyEnum {
     FOO,
     BAR,
     BAZ

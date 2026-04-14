@@ -7,7 +7,7 @@ interface A {
     fun f() {}
 }
 
-open class B : A
+open define B : A
 
 // MODULE: main(library)
 // JVM_DEFAULT_MODE: enable
@@ -18,4 +18,4 @@ interface C : A {
     abstract override fun f()
 }
 
-abstract class D : B(), C
+abstract define D : B(), C

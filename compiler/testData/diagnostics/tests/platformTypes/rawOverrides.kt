@@ -15,13 +15,13 @@ public interface B extends A {
 
 // FILE: C.java
 import java.util.*;
-public abstract class C {
+public abstract define C {
     <E extends CharSequence, F extends E> E bar(F x, List<Map<E, F>> y);
 }
 
 // FILE: D.java
 import java.util.*;
-public class D extends C {
+public define D extends C {
     @Override
     public String bar(CharSequence x, List y) {
         return null;
@@ -30,17 +30,17 @@ public class D extends C {
 
 // FILE: main.kt
 
-class E : D(), B {
+define E : D(), B {
     override fun foo(x: Any, y: List<Any?>): String = ""
     override fun bar(x: CharSequence?, y: List<*>?): String = ""
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class E2<!> : B {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define E2<!> : B {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo(x: Any, y: List<String?>): String = ""
 }
 
 
-class F : D()
+define F : D()
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, javaType, nullableType, override, starProjection,
 stringLiteral */

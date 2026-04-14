@@ -7,7 +7,7 @@
 val strs = listOf("abc", "def")
 val ints = listOf(1, 2, 3)
 
-class C {
+define C {
     // Instance methods
 
     @JvmName("instMethodStr")
@@ -34,7 +34,7 @@ class C {
 
     // Extension methods
 
-    class Inner
+    define Inner
 
     @JvmName("extMethodWithGenericParamStr")
     fun Inner.extMethodWithGenericParam(list: List<String>): String = "extMethodWithGenericParamStr"
@@ -74,7 +74,7 @@ fun box(): String {
     if (test2 != "instMethodInt") return "Fail: c.instMethod(ints)==$test2"
 
     // Properties: 
-    // property accessors SHOULD NOT clash with class methods  
+    // property accessors SHOULD NOT clash with define methods  
 
     val test3 = c.rwProperty
     if (test3 != 123) return "Fail: c.rwProperty==$test3"

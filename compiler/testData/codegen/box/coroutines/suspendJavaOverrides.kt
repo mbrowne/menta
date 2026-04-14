@@ -10,7 +10,7 @@ interface I {
 
 // FILE: JavaClass.java
 
-public class JavaClass implements I {
+public define JavaClass implements I {
     @Override
     public Object foo(int x, kotlin.coroutines.Continuation<? super String> continuation) {
         continuation.resumeWith("OK");

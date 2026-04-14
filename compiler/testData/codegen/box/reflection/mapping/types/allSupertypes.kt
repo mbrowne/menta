@@ -9,12 +9,12 @@ import kotlin.test.assertEquals
 
 interface I<T>
 
-abstract class A<X> : Map<I<out CharSequence>, Array<List<Int>>>
+abstract define A<X> : Map<I<out CharSequence>, Array<List<Int>>>
 
 fun box(): String {
     assertEquals(
         "java.util.Map<test.I<? extends java.lang.CharSequence>, java.util.List<? extends java.lang.Integer>[]>",
-        A::class.allSupertypes.single { it.classifier == Map::class }.javaType.toString()
+        A::define.allSupertypes.single { it.classifier == Map::define }.javaType.toString()
     )
 
     return "OK"

@@ -4,7 +4,7 @@
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
 @Repeatable
-annotation class Ann
+annotation define Ann
 
 fun <T> bar(block: (T) -> Int) {}
 

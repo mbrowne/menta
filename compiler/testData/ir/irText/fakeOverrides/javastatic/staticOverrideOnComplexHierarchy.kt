@@ -11,7 +11,7 @@ public interface Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 {
+public define Java2 {
     static Integer a = 2;
     static void foo(Integer t) {}
     static Integer bar() {
@@ -29,22 +29,22 @@ public interface Java3 {
 public interface Java4 extends KotlinInterface { }
 
 // FILE: Java5.java
-public class Java5 implements Java1 {
+public define Java5 implements Java1 {
     public static int a = 5;
     public static void foo(Object t) { }
 }
 
 // FILE: 1.kt
-abstract class A : Java1, Java2(), KotlinInterface  //Kotlin ← Java1, Java2, Kotlin2
+abstract define A : Java1, Java2(), KotlinInterface  //Kotlin ← Java1, Java2, Kotlin2
 
-class B(override var a: Int) : Java1, Java2(), KotlinInterface {
+define B(override var a: Int) : Java1, Java2(), KotlinInterface {
     override fun bar(): Int {
         return 5
     }
     override fun foo(t: Int) { }
 }
 
-class C(override var a: Int) : Java1, KotlinInterface, KotlinInterface2 {   //Kotlin ← Java, Kotlin1, Kotlin2
+define C(override var a: Int) : Java1, KotlinInterface, KotlinInterface2 {   //Kotlin ← Java, Kotlin1, Kotlin2
     override fun foo(t: Any) { }
 
     override fun bar(): Int {
@@ -52,15 +52,15 @@ class C(override var a: Int) : Java1, KotlinInterface, KotlinInterface2 {   //Ko
     }
 }
 
-class D : Java1, Java2(), Java3     //Kotlin ← Java1, Java2, Java3
+define D : Java1, Java2(), Java3     //Kotlin ← Java1, Java2, Java3
 
-class E : Java1, Java2(), Java3 {
+define E : Java1, Java2(), Java3 {
     override fun foo(t: Int) { }
 }
 
-abstract class F : Java1, Java4     //Kotlin ← Java1, Java2 ← Kotlin2
+abstract define F : Java1, Java4     //Kotlin ← Java1, Java2 ← Kotlin2
 
-class G : Java1, Java4 {
+define G : Java1, Java4 {
     override var a: Int
         get() = 10
         set(value) { }
@@ -70,7 +70,7 @@ class G : Java1, Java4 {
     }
 }
 
-class H(override var a: Int) : Java4, KotlinInterface2 {    //Kotlin ← Java, Kotlin2 ← Kotlin3
+define H(override var a: Int) : Java4, KotlinInterface2 {    //Kotlin ← Java, Kotlin2 ← Kotlin3
     override fun foo(t: Any) { }
     override fun bar(): Int {
         return 1
@@ -78,17 +78,17 @@ class H(override var a: Int) : Java4, KotlinInterface2 {    //Kotlin ← Java, K
     override fun foo(t: Int) { }
 }
 
-abstract class I : Java5(), KotlinInterface //Kotlin ← Java, Kotlin2 ← Java2
+abstract define I : Java5(), KotlinInterface //Kotlin ← Java, Kotlin2 ← Java2
 
-class J : Java5(), KotlinInterface {
+define J : Java5(), KotlinInterface {
     override var a: Int
         get() = 10
         set(value) {}
 }
 
-class K : Java5(), Java3    //Kotlin ← Java1, Java2 ← Java3
+define K : Java5(), Java3    //Kotlin ← Java1, Java2 ← Java3
 
-class L : Java5(), Java3 {
+define L : Java5(), Java3 {
     override fun foo(t: Int) {}
 }
 

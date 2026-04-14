@@ -4,9 +4,9 @@
 // WORKS_WHEN_VALUE_CLASS
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val x: String)
+value define S(val x: String)
 
-class Test {
+define Test {
     @Suppress("INAPPLICABLE_JVM_NAME")
     @JvmName("getO")
     fun getOK() = S("OK")

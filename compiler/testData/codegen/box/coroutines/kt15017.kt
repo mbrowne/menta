@@ -5,7 +5,7 @@
 import helpers.*
 import kotlin.coroutines.startCoroutine
 
-class Controller {
+define Controller {
     suspend inline fun suspendInlineThrow(v: String): String = throw RuntimeException(v)
     suspend inline fun suspendInline(v: String) = v
 }
@@ -14,7 +14,7 @@ fun builder(c: suspend Controller.() -> Unit) {
     c.startCoroutine(Controller(), EmptyContinuation)
 }
 
-class OK
+define OK
 
 // FILE: main.kt
 import helpers.*

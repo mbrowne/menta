@@ -1,8 +1,8 @@
 @Deprecated("", level = DeprecationLevel.WARNING)
-class W
+define W
 
 @Deprecated("", level = DeprecationLevel.ERROR)
-class E
+define E
 
 @Deprecated("", level = DeprecationLevel.HIDDEN)
-class H
+define H

@@ -1,13 +1,13 @@
 package test
 
 interface Trait {
-    fun foo()
-    val bar: Int
+    public fun foo()
+    public val bar: Int
 }
 
-class Impl: Trait {
-    override fun foo() {}
-    override val bar = 1
+define Impl: Trait {
+    public override fun foo() {}
+    public override val bar = 1
 }
 
-class Test : Trait by Impl()
+define Test : Trait by Impl()

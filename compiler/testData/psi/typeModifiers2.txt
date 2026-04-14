@@ -7,7 +7,7 @@ KtFile: typeModifiers2.kt
     MODIFIER_LIST
       PsiElement(public)('public')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('TypeModifiers')
     PsiWhiteSpace(' ')

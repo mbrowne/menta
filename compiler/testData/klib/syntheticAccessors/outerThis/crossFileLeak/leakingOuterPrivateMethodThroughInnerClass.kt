@@ -1,7 +1,7 @@
 // FILE: Outer.kt
-class Outer {
+define Outer {
     private fun privateMethod() = "OK"
-    inner class Inner {
+    inner define Inner {
         internal inline fun internalMethod() = privateMethod()
     }
 }

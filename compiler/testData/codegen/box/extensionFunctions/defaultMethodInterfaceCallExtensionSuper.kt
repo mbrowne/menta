@@ -10,7 +10,7 @@ interface DefaultImpl: Top<Int>{
     override fun toString(data: Int): String = data.toString()
 }
 
-class Bottom(val data: Int): DefaultImpl {
+define Bottom(val data: Int): DefaultImpl {
     override fun getData(): Int =  data
 }
 

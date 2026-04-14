@@ -1,9 +1,9 @@
 // TARGET_BACKEND: JVM
 
-fun test(a: Any) = when (a::class) {
-    String::class -> "String"
-    Int::class -> "Int"
-    Boolean::class -> "Boolean"
+fun test(a: Any) = when (a::define) {
+    String::define -> "String"
+    Int::define -> "Int"
+    Boolean::define -> "Boolean"
     else -> "Else"
 }
 

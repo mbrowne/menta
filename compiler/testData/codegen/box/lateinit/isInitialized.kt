@@ -4,7 +4,7 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-class A {
+define A {
     lateinit var s: String
 
     fun foo() {

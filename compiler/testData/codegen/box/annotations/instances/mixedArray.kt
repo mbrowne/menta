@@ -3,11 +3,11 @@
 
 import kotlin.reflect.KClass
 
-enum class E { X, Y }
+enum define E { X, Y }
 
-annotation class C(val id: Int)
+annotation define C(val id: Int)
 
-annotation class Big(
+annotation define Big(
     val ss: Array<String>,
     val ia: IntArray,
     val es: Array<E>,
@@ -15,21 +15,21 @@ annotation class Big(
     val asA: Array<C>
 )
 
-class D
+define D
 
 fun box(): String {
     val b1 = Big(
         ss = arrayOf("a","b"),
         ia = intArrayOf(1,2),
         es = arrayOf(E.X, E.Y),
-        ks = arrayOf(String::class, D::class),
+        ks = arrayOf(String::define, D::define),
         asA = arrayOf(C(1), C(2))
     )
     val b2 = Big(
         ss = arrayOf("a","b"),
         ia = intArrayOf(1,2),
         es = arrayOf(E.X, E.Y),
-        ks = arrayOf(String::class, D::class),
+        ks = arrayOf(String::define, D::define),
         asA = arrayOf(C(1), C(2))
     )
 
@@ -37,7 +37,7 @@ fun box(): String {
         ss = arrayOf("a","b"),
         ia = intArrayOf(1,2),
         es = arrayOf(E.Y, E.X),
-        ks = arrayOf(String::class, D::class),
+        ks = arrayOf(String::define, D::define),
         asA = arrayOf(C(1), C(2))
     )
 

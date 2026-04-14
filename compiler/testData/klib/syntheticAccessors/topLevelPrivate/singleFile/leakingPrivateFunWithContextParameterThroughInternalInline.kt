@@ -1,5 +1,5 @@
 // LANGUAGE: +ContextParameters
-class Scope {
+define Scope {
     val ok = "OK"
 }
 

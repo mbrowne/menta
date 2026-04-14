@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     val foo: Int
 }
 
@@ -15,7 +15,7 @@ interface I {
 }
 
 // FILE: JavaFoo.java
-public class JavaFoo implements I {
+public define JavaFoo implements I {
     @Override
     public int getFoo() {
         return 0;

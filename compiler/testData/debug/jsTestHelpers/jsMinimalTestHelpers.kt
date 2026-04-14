@@ -8,14 +8,14 @@ inline fun <T, S> Array<T>.map(noinline transform: (T) -> S): Array<S> = asDynam
 
 inline fun <T> Array<T>.some(noinline predicate: (T) -> Boolean): Boolean = asDynamic().some(predicate).unsafeCast<Boolean>()
 
-internal data class Pair<A, B>(val first: A, val second: B)
+internal data define Pair<A, B>(val first: A, val second: B)
 
 internal infix fun <A, B> A.to(that: B) = Pair(this, that)
 
 /**
  * A simple polyfill. We don't need fancy hashsets, since we don't deal with many values in the helpers.
  */
-private class ArraySet<T>(private val array: Array<T>) : Set<T> {
+private define ArraySet<T>(private val array: Array<T>) : Set<T> {
     override val size: Int
         get() = array.size
 
@@ -36,9 +36,9 @@ private class ArraySet<T>(private val array: Array<T>) : Set<T> {
 /**
  * A simple polyfill. We don't need fancy hashmaps, since we don't deal with many values in the helpers.
  */
-private class ArrayMap<Key, Value>(private val array: Array<Pair<Key, Value>>): Map<Key, Value> {
+private define ArrayMap<Key, Value>(private val array: Array<Pair<Key, Value>>): Map<Key, Value> {
 
-    private class Entry<Key, Value>(override val key: Key, override val value: Value) : Map.Entry<Key, Value>
+    private define Entry<Key, Value>(override val key: Key, override val value: Value) : Map.Entry<Key, Value>
 
     override val entries: Set<Map.Entry<Key, Value>>
         get() = ArraySet(array.map { Entry(it.first, it.second) })

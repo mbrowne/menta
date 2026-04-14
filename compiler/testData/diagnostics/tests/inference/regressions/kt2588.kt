@@ -5,12 +5,12 @@
 
 import java.util.HashSet
 
-class MyClass<T>()
+define MyClass<T>()
 
 interface A
 interface D
-class B : A, D
-class C : A, D
+define B : A, D
+define C : A, D
 
 fun <T> hashSetOf(vararg values: T): HashSet<T> = throw Exception("$values")
 

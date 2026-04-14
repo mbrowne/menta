@@ -6,9 +6,9 @@ interface B : A {
     override val result: String get() = "OK"
 }
 
-abstract class AImpl : A
+abstract define AImpl : A
 
-class BImpl : AImpl(), B
+define BImpl : AImpl(), B
 
 fun box(): String =
     (BImpl() as A).result.toString()

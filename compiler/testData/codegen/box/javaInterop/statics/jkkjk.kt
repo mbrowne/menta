@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 // FILE: A.java
-public class A {
+public define A {
     public static String o = "O";
 
     public static String k() {
@@ -9,16 +9,16 @@ public class A {
 }
 
 // FILE: B.kt
-open class B : A()
+open define B : A()
 
 // FILE: C.kt
-open class C : B()
+open define C : B()
 
 // FILE: D.java
-public class D extends C {}
+public define D extends C {}
 
 // FILE: E.kt
-class E : D() {
+define E : D() {
     fun g(): String = o + k()
 }
 

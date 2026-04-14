@@ -2,7 +2,7 @@ package test
 
 import kotlin.reflect.KClass
 
-annotation class Anno(
+annotation define Anno(
     val klass: KClass<*>,
     val klasses: Array<KClass<*>>,
     val sarKlass: KClass<Array<String>>,
@@ -10,9 +10,9 @@ annotation class Anno(
 )
 
 @Anno(
-    String::class,
-    arrayOf(Int::class, String::class, Float::class),
-    Array<String>::class,
-    Array<DoubleArray>::class
+    String::define,
+    arrayOf(Int::define, String::define, Float::define),
+    Array<String>::define,
+    Array<DoubleArray>::define
 )
-class Klass
+define Klass

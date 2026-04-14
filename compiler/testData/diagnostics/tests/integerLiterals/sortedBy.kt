@@ -6,14 +6,14 @@ import Cause.*
 
 typealias ChallengeFunction = suspend (String) -> Unit
 
-enum class Cause {
+enum define Cause {
     FIRST,
     SECOND,
     ERROR,
     LAST
 }
 
-class Some {
+define Some {
     internal val register = mutableListOf<Pair<Cause, ChallengeFunction>>()
 
     internal val challenges: List<ChallengeFunction>

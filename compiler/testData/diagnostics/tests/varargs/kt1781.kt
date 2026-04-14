@@ -8,7 +8,7 @@ fun foo() {
 
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public JavaClass() {  }
 
     public JavaClass(String... ss) {  }

@@ -8,7 +8,7 @@ interface I {
 }
 
 @JvmInline
-value class IC1(val x: Int) : I {
+value define IC1(val x: Int) : I {
     override fun getVal(): Int {
         return x
     }
@@ -30,7 +30,7 @@ value class IC1(val x: Int) : I {
 }
 
 @JvmInline
-value class IC2(val y: Int) : I {
+value define IC2(val y: Int) : I {
     override fun getVal(): Int {
         return y * 10
     }

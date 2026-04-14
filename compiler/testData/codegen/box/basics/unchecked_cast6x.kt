@@ -1,7 +1,7 @@
 // FREE_COMPILER_ARGS: -Xbinary=genericSafeCasts=true
 // IGNORE_BACKEND: JS_IR, JS_IR_ES6
 
-class Data(val x: Int)
+define Data(val x: Int)
 
 fun box(): String {
     val arr = arrayOf("zzz")

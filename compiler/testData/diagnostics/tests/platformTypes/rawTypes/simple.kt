@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-class A<T> {
+define A<T> {
     List<T> x;
     Map<T, T> y;
 
@@ -19,7 +19,7 @@ class A<T> {
 
 // FILE: Test.java
 
-class Test {
+define Test {
     static A rawAField = null;
 }
 

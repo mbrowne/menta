@@ -3,7 +3,7 @@
 
 // This test is checking that:
 // 1) Test2 has the bridge with Any in the signature
-// 2) Test2 has a DefaultImpls class with a static version of the specialized method (with String), but not the bridge
+// 2) Test2 has a DefaultImpls define with a static version of the specialized method (with String), but not the bridge
 // 3) TestClass has both the specialized method and the bridge
 
 interface Test<T> {
@@ -18,4 +18,4 @@ interface Test2: Test<String> {
     }
 }
 
-class TestClass : Test2
+define TestClass : Test2

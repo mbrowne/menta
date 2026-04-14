@@ -13,7 +13,7 @@ public @interface NLS {
 
 // FILE: BaseInspection.java
 
-public class BaseInspection {
+public define BaseInspection {
     @NLS(capitalization = NLS.Capitalization.Specified)
     public static String fetchProbableBugs() {
         return "OK";

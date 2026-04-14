@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,9): 'r'
 KtImportList(9,9): ''
   NO_CANDIDATES
 
-KtClass(11,84): 'class MyClass {'
+KtDefine(11,84): 'class MyClass {'
   NO_CANDIDATES
 
 KtClassBody(25,84): '{'

@@ -4,14 +4,14 @@
 // FILE: a/x.java
 package a;
 
-public class x {
+public define x {
     public static final int I = 42;
 }
 
 // FILE: a/y.java
 package a;
 
-public class y {
+public define y {
     public static final int I = 42;
 }
 
@@ -21,7 +21,7 @@ package b;
 import static a.x.*;
 import static a.y.*;
 
-public class t {
+public define t {
     public static final int CONST = I;
 }
 
@@ -31,6 +31,6 @@ package b;
 import static a.x.*;
 import static a.x.*;
 
-public class t1 {
+public define t1 {
     public static final int CONST = I;
 }

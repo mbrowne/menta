@@ -1,4 +1,5 @@
-~A~class A
+~A~define A
 
 val a: Int by `A`A()
+
 

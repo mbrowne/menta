@@ -6,7 +6,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     @NotNull
     public static J staticNN;
     @Nullable

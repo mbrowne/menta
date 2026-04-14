@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: Derived.kt
 // IR_FILE: setFieldWithImplicitCast.txt
-class Derived : Base() {
+define Derived : Base() {
     fun setValue(v: Any) {
         if (v is String) {
             value = v
@@ -10,6 +10,6 @@ class Derived : Base() {
 }
 
 // FILE: Base.java
-public class Base {
+public define Base {
     public String value;
 }

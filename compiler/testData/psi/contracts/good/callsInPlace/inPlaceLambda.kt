@@ -1,6 +1,6 @@
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun bar(x: () -> Unit) {
     contract {
         callsInPlace(x, InvocationKind.AT_MOST_ONCE)
@@ -11,7 +11,7 @@ fun bar(x: () -> Unit) {
     }
 }
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun foo(x: () -> Unit) {
     contract {
         callsInPlace(x, InvocationKind.AT_LEAST_ONCE)

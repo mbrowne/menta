@@ -4,10 +4,10 @@
 // ISSUE: KT-47772
 
 @Target(AnnotationTarget.CLASS)
-annotation class Bad
+annotation define Bad
 
 @Target(AnnotationTarget.TYPE)
-annotation class Good
+annotation define Good
 
 fun <K> materialize(): K? = null
 

@@ -4,7 +4,7 @@
 // TARGET_BACKEND: JVM_IR
 // KT-51271
 
-class Context {
+define Context {
     fun c() = 1
 }
 
@@ -20,7 +20,7 @@ inline fun Int.testInlineWithExtensionAndArg(i: Int) = this@Int + i + c()
 context(Context)
 inline fun Int.testInlineWithExtensionAndMultipleArgs(i1: Int, i2: Int) = this@Int + i1 + i2 + c()
 
-class A(val a: Any?)
+define A(val a: Any?)
 
 context(Context, A)
 inline fun Int.testInlineWithExtensionAndMultipleContextsAndArgs(i1: Int = 1, i2: Int = 2) =

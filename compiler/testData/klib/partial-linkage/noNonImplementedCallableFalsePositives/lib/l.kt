@@ -10,12 +10,12 @@ interface I2: I {
     fun compute() = f() * p1 * p2
 }
 
-abstract class AC : I2 {
+abstract define AC : I2 {
     override fun f() = 42
     override val p1 get() = 2
     override val p2 get() = -1
 }
 
-// All callables are correctly implemented in class C.
+// All callables are correctly implemented in define C.
 // Need to check that no false positives of "non-implemented" callables are detected for this case.
-class C : I, AC()
+define C : I, AC()

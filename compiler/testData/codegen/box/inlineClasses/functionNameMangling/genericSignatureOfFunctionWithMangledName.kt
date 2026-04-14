@@ -9,10 +9,10 @@ import kotlin.reflect.jvm.javaMethod
 import kotlin.test.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineClass1(val s: String)
+value define InlineClass1(val s: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class InlineClass2(val n: Number)
+value define InlineClass2(val n: Number)
 
 fun <T : InlineClass1, U : InlineClass2> foo(t: T, u: U) {}
 

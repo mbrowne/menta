@@ -13,7 +13,7 @@ interface MutableListEx<E> : MutableList<E> {
     fun removeToSize(size: Int) {}
 }
 
-expect class FastArrayList<E> : MutableListEx<E>, <!UNRESOLVED_REFERENCE!>RandomAccess<!> {
+expect define FastArrayList<E> : MutableListEx<E>, <!UNRESOLVED_REFERENCE!>RandomAccess<!> {
     constructor()
     constructor(initialCapacity: Int)
     constructor(elements: Collection<E>)
@@ -47,7 +47,7 @@ expect class FastArrayList<E> : MutableListEx<E>, <!UNRESOLVED_REFERENCE!>Random
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-public actual open class FastArrayList<E> internal constructor(
+public actual open define FastArrayList<E> internal constructor(
     var array: Array<Any?>,
     var _size: Int = array.size,
     var arrayCapacity: Int = array.size,

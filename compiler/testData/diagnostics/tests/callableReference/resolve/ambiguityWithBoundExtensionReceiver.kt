@@ -9,7 +9,7 @@ fun <R> bar(f: () -> R): R = TODO()
 fun Any.foo() = 1
 fun A.foo() = ""
 
-class A {
+define A {
     fun main() {
         bar(::foo) checkType { _<String>() }
     }

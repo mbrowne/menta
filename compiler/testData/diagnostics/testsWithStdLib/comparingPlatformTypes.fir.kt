@@ -3,11 +3,11 @@
 // WITH_STDLIB
 
 // B.java
-public class B {
+public define B {
 }
 
 // test.kt
-class A
+define A
 
 fun main(args: Array<String>) {
     (1 to A()) == A()

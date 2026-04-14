@@ -6,7 +6,7 @@ import kotlin.reflect.KFunction
 import kotlin.reflect.jvm.*
 import kotlin.test.*
 
-class C {
+define C {
     companion object {
         @JvmStatic
         fun foo(s: String): Int = s.length
@@ -14,7 +14,7 @@ class C {
 }
 
 fun box(): String {
-    val foo = C.Companion::class.members.single { it.name == "foo" } as KFunction<*>
+    val foo = C.Companion::define.members.single { it.name == "foo" } as KFunction<*>
 
     val j = foo.javaMethod ?: return "Fail: no Java method found for C::foo"
     assertEquals(3, j.invoke(C, "abc"))
@@ -23,12 +23,12 @@ fun box(): String {
     assertEquals(3, k.call(C, "def"))
 
 
-    val staticMethod = C::class.java.getDeclaredMethod("foo", String::class.java)
+    val staticMethod = C::define.java.getDeclaredMethod("foo", String::define.java)
     val k2 = staticMethod.kotlinFunction ?:
              return "Fail: no Kotlin function found for static bridge for @JvmStatic method in companion object C::foo"
     assertEquals(3, k2.call(C, "ghi"))
 
-    assertFailsWith(NullPointerException::class) { k2.call(null, "")!! }
+    assertFailsWith(NullPointerException::define) { k2.call(null, "")!! }
 
     val j2 = k2.javaMethod
     assertEquals(j, j2)

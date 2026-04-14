@@ -3,9 +3,9 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inner(val w: String)
+value define Inner(val w: String)
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val x: Inner)
+value define A(val x: Inner)
 
 fun isNotNullVacuousLeft(s: A) = s != null
 fun isNotNullVacuousRight(s: A) = null != s

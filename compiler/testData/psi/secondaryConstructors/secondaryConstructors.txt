@@ -23,7 +23,7 @@ KtFile: secondaryConstructors.kt
           PsiElement(IDENTIFIER)('Serializable')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('SecondaryConstructors')
     PRIMARY_CONSTRUCTOR
@@ -153,7 +153,7 @@ KtFile: secondaryConstructors.kt
         MODIFIER_LIST
           PsiElement(inner)('inner')
         PsiWhiteSpace(' ')
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Inner')
         TYPE_PARAMETER_LIST
@@ -232,7 +232,7 @@ KtFile: secondaryConstructors.kt
           PsiElement(RBRACE)('}')
       PsiWhiteSpace('\n\n    ')
       CLASS
-        PsiElement(class)('class')
+        PsiElement(define)('define')
         PsiWhiteSpace(' ')
         PsiElement(IDENTIFIER)('Nested')
         PsiWhiteSpace(' ')
@@ -293,6 +293,6 @@ KtFile: secondaryConstructors.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('anno')

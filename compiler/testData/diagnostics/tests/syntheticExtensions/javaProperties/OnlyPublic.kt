@@ -13,7 +13,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public int getSomethingPublic() { return 1; }
     protected int getSomethingProtected() { return 1; }
     private int getSomethingPrivate() { return 1; }

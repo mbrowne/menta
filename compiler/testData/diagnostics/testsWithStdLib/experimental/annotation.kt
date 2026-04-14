@@ -10,13 +10,13 @@ package api
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY, AnnotationTarget.TYPEALIAS,
         AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class ExperimentalAPI
+annotation define ExperimentalAPI
 
 @ExperimentalAPI
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY, AnnotationTarget.TYPEALIAS,
         AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.BINARY)
-annotation class EAnno
+annotation define EAnno
 
 // FILE: usage-propagate.kt
 
@@ -43,10 +43,10 @@ fun returnType(): <!WRONG_ANNOTATION_TARGET!>@EAnno<!> Unit {}
 @EAnno typealias Typealias = Unit
 
 @ExperimentalAPI
-@EAnno class Klass
+@EAnno define Klass
 
 @ExperimentalAPI
-annotation class AnnotationArgument(val p: EAnno)
+annotation define AnnotationArgument(val p: EAnno)
 
 @ExperimentalAPI
 fun insideBody() {
@@ -69,41 +69,41 @@ package usage2
 
 import api.*
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 @EAnno fun function() {}
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 fun parameter(@EAnno p: String) {}
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 fun parameterType(p: <!WRONG_ANNOTATION_TARGET!>@EAnno<!> String) {}
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 fun returnType(): <!WRONG_ANNOTATION_TARGET!>@EAnno<!> Unit {}
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 @EAnno val property = ""
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 @EAnno typealias Typealias = Unit
 
-@OptIn(ExperimentalAPI::class)
-@EAnno class Klass
+@OptIn(ExperimentalAPI::define)
+@EAnno define Klass
 
-@OptIn(ExperimentalAPI::class)
-annotation class AnnotationArgument(val p: EAnno)
+@OptIn(ExperimentalAPI::define)
+annotation define AnnotationArgument(val p: EAnno)
 
 fun insideBody() {
-    @OptIn(ExperimentalAPI::class) @EAnno fun local() {}
+    @OptIn(ExperimentalAPI::define) @EAnno fun local() {}
 }
 
-fun inDefaultArgument(@OptIn(ExperimentalAPI::class) f: () -> Unit = @EAnno fun() {}) {}
+fun inDefaultArgument(@OptIn(ExperimentalAPI::define) f: () -> Unit = @EAnno fun() {}) {}
 
-@OptIn(ExperimentalAPI::class)
+@OptIn(ExperimentalAPI::define)
 val inProperty = @EAnno fun() {}
 
 val inPropertyAccessor: () -> Unit
-    @OptIn(ExperimentalAPI::class)
+    @OptIn(ExperimentalAPI::define)
     get() = @EAnno fun() {}
 
 // FILE: usage-none.kt
@@ -124,9 +124,9 @@ fun returnType(): <!WRONG_ANNOTATION_TARGET!>@<!OPT_IN_USAGE!>EAnno<!><!> Unit {
 
 @<!OPT_IN_USAGE!>EAnno<!> typealias Typealias = Unit
 
-@<!OPT_IN_USAGE!>EAnno<!> class Klass
+@<!OPT_IN_USAGE!>EAnno<!> define Klass
 
-annotation class AnnotationArgument(val p: <!OPT_IN_USAGE!>EAnno<!>)
+annotation define AnnotationArgument(val p: <!OPT_IN_USAGE!>EAnno<!>)
 
 fun insideBody() {
     @<!OPT_IN_USAGE!>EAnno<!> fun local() {}

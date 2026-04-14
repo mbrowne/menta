@@ -1,6 +1,6 @@
 package n
 
-class C {
+define C {
     operator fun component1() = 1
     operator fun component2() = 2
 }

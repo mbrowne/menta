@@ -5,13 +5,13 @@
 
 // FILE: IC.kt
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 // foo is unmangled and returns string
 fun foo(): StringWrapper = StringWrapper("OK")
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test() {
         return ICKt.foo();
     }

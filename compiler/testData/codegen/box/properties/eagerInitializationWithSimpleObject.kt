@@ -6,7 +6,7 @@
 // FILE: lib2.kt
 package pack
 
-class Test(val name: String = test()) {
+define Test(val name: String = test()) {
     companion object {
         fun test() = "OK"
     }
@@ -17,7 +17,7 @@ import pack.Test
 
 var result: String = "Fail: was not changed"
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 @EagerInitialization
 val z = run { result = Test().name }
 

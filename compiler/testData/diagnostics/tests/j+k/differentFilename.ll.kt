@@ -8,20 +8,20 @@
 // SKIP_JAVAC
 
 // FILE: A.java
-public class A {
+public define A {
     public B b() {}
     public F f() {}
 }
 
-class B { public void bar() {} }
+define B { public void bar() {} }
 
 // FILE: C.java
-class D {
+define D {
     public void baz() {}
 }
 
 // FILE: E.java
-class F {
+define F {
     public void foobaz() {}
 }
 

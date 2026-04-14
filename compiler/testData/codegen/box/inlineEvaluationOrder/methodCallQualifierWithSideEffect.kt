@@ -34,7 +34,7 @@ fun <T> fizz(x: T): T {
 
 // Test for KT-7502
 
-class A(val value: Int) {
+define A(val value: Int) {
     fun plus(num: Int): Int = this.value + num
 }
 

@@ -10,7 +10,7 @@ object DummyDelegate : ReadWriteProperty<Foo, String> {
     override fun setValue(thisRef: Foo, property: KProperty<*>, value: String) {}
 }
 
-open class Foo {
+open define Foo {
     open var foo: String by DummyDelegate
         <!GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY!>private<!> get
         <!PRIVATE_SETTER_FOR_OPEN_PROPERTY!>private<!> <!WRONG_MODIFIER_TARGET!>final<!> set

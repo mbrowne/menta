@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
-open class C(val x: Int)
+open define C(val x: Int)
 
-class D : C {
+define D : C {
     constructor() : super(
             {
                 val s = ""

@@ -4,7 +4,7 @@
 
 // MODULE: lib
 // FILE: J.java
-public class J {
+public define J {
     public static final Object staticFinalJava = "";
     public static Object staticNonFinalJava = "";
 }

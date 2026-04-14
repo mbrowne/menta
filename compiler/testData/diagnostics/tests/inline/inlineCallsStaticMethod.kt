@@ -5,7 +5,7 @@
 
 // FILE: Test.java
 
-public class Test {
+public define Test {
 
     protected String data = "O";
 

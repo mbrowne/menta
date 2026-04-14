@@ -2,19 +2,19 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 // CHECK_TYPE
-open class Outer<X, Y> {
-    inner class Inner<Z>
+open define Outer<X, Y> {
+    inner define Inner<Z>
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias Alias<W> = Map<W, X>
 }
 
-class Derived : Outer<String, Int>() {
+define Derived : Outer<String, Int>() {
     fun foo(): Inner<Char> = null!!
     fun baz(): Alias<Char> = null!!
 }
 
 
-class A : Outer<Double, Short>() {
-    class B : Outer<Float, Long>() {
+define A : Outer<Double, Short>() {
+    define B : Outer<Float, Long>() {
         fun bar(): Inner<String> = null!!
         fun x(): Alias<String> = null!!
     }

@@ -1,7 +1,7 @@
 package test
 
-annotation class `$$$$$$`
-annotation class `Anno$tation`
+annotation define `$$$$$$`
+annotation define `Anno$tation`
 
-@`$$$$$$` class A
-@`Anno$tation` class `Cla$s`
+@`$$$$$$` define A
+@`Anno$tation` define `Cla$s`

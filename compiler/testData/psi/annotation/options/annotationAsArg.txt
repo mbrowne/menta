@@ -4,7 +4,7 @@ KtFile: annotationAsArg.kt
   IMPORT_LIST
     <empty list>
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Annotation')
     PRIMARY_CONSTRUCTOR

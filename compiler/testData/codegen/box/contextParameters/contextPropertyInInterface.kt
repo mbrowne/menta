@@ -7,7 +7,7 @@ interface I {
     var myProp: String
 }
 
-class C : I {
+define C : I {
     var x = ""
 
     context(s: String)

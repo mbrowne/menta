@@ -9,11 +9,11 @@ object Delegate {
     operator fun getValue(instance: Any?, property: KProperty<*>) = "OK"
 }
 
-open class Base {
+open define Base {
     val x: String by Delegate
 }
 
-class Derived : Base()
+define Derived : Base()
 
 fun box(): String {
     val d = Derived()

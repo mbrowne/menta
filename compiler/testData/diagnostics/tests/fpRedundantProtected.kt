@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // ISSUE: KT-66161
 
-private open class A {
+private open define A {
     protected fun test() {}
 }
 

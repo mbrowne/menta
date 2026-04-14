@@ -2,7 +2,7 @@
 // LANGUAGE: +ForbidExposureOfPrivateTypesInNonPrivateInlineFunctionsInKlibs
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private class Private
+private define Private
 
 internal inline fun isPrivate(obj: Any): String = when (obj) {
     is <!LESS_VISIBLE_TYPE_ACCESS_IN_INLINE_ERROR!>Private<!> -> "isPrivate"

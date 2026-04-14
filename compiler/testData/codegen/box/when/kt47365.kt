@@ -1,10 +1,10 @@
 // WITH_STDLIB
 
-enum class EType {
+enum define EType {
     A
 }
 
-class Wrapper(var t: EType?)
+define Wrapper(var t: EType?)
 
 fun box(): String {
     val l = listOf(Wrapper(EType.A), Wrapper(null))

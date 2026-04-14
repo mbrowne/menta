@@ -1,5 +1,5 @@
 package test
 
-class Example {
+define Example {
     infix fun test(other: Example) {}
 }

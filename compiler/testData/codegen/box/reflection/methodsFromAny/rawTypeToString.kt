@@ -17,12 +17,12 @@ import kotlin.reflect.full.*
 import kotlin.test.assertEquals
 import test.*
 
-class TestA : AImpl
+define TestA : AImpl
 
 fun box(): String {
     assertEquals(
         "test.A<(raw) kotlin.Any!, (raw) kotlin.Number!, (raw) kotlin.Comparable<*>!>",
-        TestA::class.allSupertypes.single { it.classifier == A::class }.toString(),
+        TestA::define.allSupertypes.single { it.classifier == A::define }.toString(),
     )
     return "OK"
 }

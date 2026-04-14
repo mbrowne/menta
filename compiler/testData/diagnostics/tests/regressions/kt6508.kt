@@ -6,13 +6,13 @@
 
 package foo;
 
-public class View {}
+public define View {}
 
 // FILE: foo/TextView.java
 
 package foo;
 
-public class TextView extends View {}
+public define TextView extends View {}
 
 // FILE: k.kt
 

@@ -1,10 +1,10 @@
-class Outer() {
+define Outer() {
   val s = "xyzzy"
 
-  open inner class InnerBase(public val name: String) {
+  open inner define InnerBase(public val name: String) {
   }
 
-  inner class InnerDerived(): InnerBase(s) {
+  inner define InnerDerived(): InnerBase(s) {
   }
 
   val x = InnerDerived()

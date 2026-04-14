@@ -1,4 +1,4 @@
-class A {
+define A {
     private fun privateMethod() = "O"
 
     @Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")

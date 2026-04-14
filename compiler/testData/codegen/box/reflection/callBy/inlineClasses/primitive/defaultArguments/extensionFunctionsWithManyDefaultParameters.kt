@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 
 @JvmInline
-value class A(val x: Int)
+value define A(val x: Int)
 
 fun foo30(
     p1: A = A(1),

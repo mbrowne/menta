@@ -2,7 +2,7 @@
 // DIAGNOSTICS:-UNUSED_VARIABLE
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     public final int publicFinal;
     public long publicMutable;
 

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(93,146): 'open class MySuper {'
+KtDefine(93,146): 'open class MySuper {'
   null
 
 KtDeclarationModifierList(93,97): 'open'
@@ -31,7 +31,7 @@ KtNameReferenceExpression(133,139): 'String'
 KtStringTemplateExpression(142,144): '""'
   null
 
-KtClass(148,263): 'enum class MyEnum {'
+KtDefine(148,263): 'enum class MyEnum {'
   null
 
 KtDeclarationModifierList(148,152): 'enum'
@@ -61,7 +61,7 @@ KtProperty(228,255): 'val EnumValue3 = EnumValue1'
 KtNameReferenceExpression(245,255): 'EnumValue1'
   null
 
-KtClass(265,785): 'open class MyClass {'
+KtDefine(265,785): 'open class MyClass {'
   null
 
 KtDeclarationModifierList(265,269): 'open'
@@ -142,7 +142,7 @@ KtValueArgumentList(321,323): '()'
 KtClassBody(324,326): '{}'
   null
 
-KtClass(332,366): 'class InheritorClass: MyClass() {}'
+KtDefine(332,366): 'class InheritorClass: MyClass() {}'
   null
 
 KtSuperTypeList(354,363): 'MyClass()'

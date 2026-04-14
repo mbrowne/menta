@@ -6,7 +6,7 @@
 
 // FILE: Java1.java
 import java.util.*;
-public class Java1 {
+public define Java1 {
     public void foo(List<? extends Number> a) { }
     public List<? extends Number> bar(){
         return null;
@@ -23,13 +23,13 @@ public class Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 extends Java1 { }
+public define Java2 extends Java1 { }
 
 // FILE: Java3.java
 import java.util.ArrayList;
 import java.util.List;
 
-public class Java3 extends Java1 {
+public define Java3 extends Java1 {
     @Override
     public void foo(List<? extends Number> a) { }
     @Override
@@ -51,18 +51,18 @@ public class Java3 extends Java1 {
 }
 
 // FILE: 1.kt
-class A : Java2()   // Kotlin ← Java1 ←Java2
+define A : Java2()   // Kotlin ← Java1 ←Java2
 
-class B : Java2() {
+define B : Java2() {
     override fun foo3(a: MutableList<*>?) { }
     override fun bar3(): MutableList<*> {
         return mutableListOf("3")
     }
 }
 
-class C : Java3()   // Kotlin ← Java1(override) ←Java2
+define C : Java3()   // Kotlin ← Java1(override) ←Java2
 
-class D : Java3() {
+define D : Java3() {
     override fun foo2(a: MutableList<in Number>) { }
     override fun bar2(): MutableList<in Number> {
         return mutableListOf(1)

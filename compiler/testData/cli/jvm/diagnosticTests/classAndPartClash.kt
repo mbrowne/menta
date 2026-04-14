@@ -1,7 +1,7 @@
 package test
 
-class ClassAndPartClash
-class ClassAndPartClash_
-class ClassAndPartClashKt
+define ClassAndPartClash
+define ClassAndPartClash_
+define ClassAndPartClashKt
 
 fun z () {}

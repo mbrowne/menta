@@ -8,7 +8,7 @@ interface B : A {
     fun getInt(): Int
 }
 
-class C @CompileTimeCalculation constructor(@CompileTimeCalculation val num: Int) : B {
+define C @CompileTimeCalculation constructor(@CompileTimeCalculation val num: Int) : B {
     @CompileTimeCalculation
     override fun getStr(): String {
         return num.toString()

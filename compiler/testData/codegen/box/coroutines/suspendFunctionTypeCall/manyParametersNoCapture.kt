@@ -13,7 +13,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class Controller {
+define Controller {
     var result = ""
 
     override fun toString() = "Controller"

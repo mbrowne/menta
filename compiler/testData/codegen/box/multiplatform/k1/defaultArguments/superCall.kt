@@ -7,18 +7,18 @@
 
 package foo
 
-expect open class A {
+expect open define A {
     open fun foo(x: Int = 20, y: Int = 3): Int
 }
 
 // FILE: main.kt
 package foo
 
-actual open class A {
+actual open define A {
     actual open fun foo(x: Int, y: Int) = x + y
 }
 
-open class B : A() {
+open define B : A() {
     override fun foo(x: Int, y: Int) = 0
 
     fun bar1() = super.foo()

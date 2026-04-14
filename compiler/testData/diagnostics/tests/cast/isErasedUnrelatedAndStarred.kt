@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: FRONTEND
-class G<T>
+define G<T>
 interface Tr
 
 fun f(q: Tr) = q is G<*>

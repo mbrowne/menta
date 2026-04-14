@@ -2,7 +2,7 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER, -UNUSED_VARIABLE
 
-class TestClass {
+define TestClass {
     companion object {
         inline operator fun <T> invoke(task: () -> T) = task()
     }

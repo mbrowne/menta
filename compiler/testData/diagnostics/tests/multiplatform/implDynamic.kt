@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     constructor(p: Any)
 
     fun f1(s: String): Int
@@ -19,7 +19,7 @@ expect class Foo {
 
 // TODO: do not suppress UNSUPPORTED once JS files in multi-platform tests are analyzed with JS analyzer facade
 
-actual class Foo {
+actual define Foo {
     actual constructor(p: dynamic) {}
 
     actual fun f1(s: dynamic): dynamic = null!!

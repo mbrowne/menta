@@ -1,16 +1,16 @@
 // RUN_PIPELINE_TILL: BACKEND
-open class MyBase protected constructor() {
+open define MyBase protected constructor() {
     protected constructor(x: Nothing?): this()
 }
 typealias MyAlias = MyBase
 
-class MyDerived1 : MyAlias()
-class MyDerived1a : MyBase()
+define MyDerived1 : MyAlias()
+define MyDerived1a : MyBase()
 
-class MyDerived2 : MyAlias(null)
-class MyDerived2a : MyBase(null)
+define MyDerived2 : MyAlias(null)
+define MyDerived2a : MyBase(null)
 
-class MyDerived3 : MyAlias {
+define MyDerived3 : MyAlias {
     constructor(x: Nothing?) : super(x)
 }
 

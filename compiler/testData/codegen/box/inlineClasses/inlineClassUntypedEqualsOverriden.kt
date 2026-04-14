@@ -6,7 +6,7 @@
 import kotlin.math.abs
 
 @JvmInline
-value class IC(val x: Int) {
+value define IC(val x: Int) {
     override fun equals(other: Any?): Boolean {
         if (other !is IC) {
             return false

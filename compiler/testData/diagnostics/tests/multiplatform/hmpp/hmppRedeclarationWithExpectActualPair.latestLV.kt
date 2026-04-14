@@ -4,26 +4,26 @@
 
 // MODULE: common
 
-expect class A
+expect define A
 
-expect class B
+expect define B
 
-class <!CLASSIFIER_REDECLARATION!>C<!>
+define <!CLASSIFIER_REDECLARATION!>C<!>
 
 // MODULE: intermediate()()(common)
 
-actual class <!CLASSIFIER_REDECLARATION!>A<!>
+actual define <!CLASSIFIER_REDECLARATION!>A<!>
 
-class <!ACTUAL_MISSING, ACTUAL_MISSING{METADATA}, CLASSIFIER_REDECLARATION!>B<!>
+define <!ACTUAL_MISSING, ACTUAL_MISSING{METADATA}, CLASSIFIER_REDECLARATION!>B<!>
 
-expect class C
+expect define C
 
 // MODULE: main()()(common, intermediate)
 
-class <!ACTUAL_MISSING!>A<!>
+define <!ACTUAL_MISSING!>A<!>
 
-actual class B
+actual define B
 
-actual class C
+actual define C
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect */

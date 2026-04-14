@@ -3,14 +3,14 @@
 // FILE: common.kt
 package common.pack
 
-expect annotation class ExpectAnnotation
+expect annotation define ExpectAnnotation
 
 // MODULE: main-jvm()()(m1-common)
 // FILE: annotations.kt
 package jvm.pack
 
-annotation class ActualAnnotation
-annotation class RegularAnnotation
+annotation define ActualAnnotation
+annotation define RegularAnnotation
 // FILE: jvm.kt
 package common.pack
 
@@ -23,4 +23,4 @@ typealias RegularTypeAlias = RegularAnnotation
 
 @ExpectAnnotation
 @RegularTypeAlias
-class ClassToCheck
+define ClassToCheck

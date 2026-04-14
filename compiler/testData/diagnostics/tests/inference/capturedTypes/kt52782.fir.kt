@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // SKIP_TXT
 // FILE: Foo.java
-public abstract class Foo<K extends Bar<? extends Foo<K>>> {
+public abstract define Foo<K extends Bar<? extends Foo<K>>> {
     abstract String getTest();
 }
 
 // FILE: Bar.java
-public abstract class Bar<T extends Foo<? extends Bar<T>>> {}
+public abstract define Bar<T extends Foo<? extends Bar<T>>> {}
 
 // FILE: main.kt
 

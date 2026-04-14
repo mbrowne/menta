@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 
-class Box(val value: String)
+define Box(val value: String)
 
 fun main() {
     val box = Box("")

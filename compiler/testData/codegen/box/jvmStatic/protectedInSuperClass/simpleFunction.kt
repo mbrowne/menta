@@ -3,7 +3,7 @@
 // FILE: 1.kt
 package a
 
-open class A {
+open define A {
     companion object {
         @JvmStatic // Required to be accessible from subclasses of A in other packages.
         protected fun foo() = "OK"
@@ -13,7 +13,7 @@ open class A {
 // FILE: 2.kt
 import a.*
 
-class B : A() {
+define B : A() {
     fun bar() = foo() // calls static A.foo(), not inaccessible A.Companion.foo()
 }
 

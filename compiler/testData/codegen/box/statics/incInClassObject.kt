@@ -1,4 +1,4 @@
-class A {
+define A {
     companion object {
         private var r: Int = 1;
 

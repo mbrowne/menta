@@ -3,8 +3,8 @@ interface A {
     val bar: String
 }
 
-class X(val a: String, var b: String) {
-    fun foo(): String = "original class' method"
-    val bar: String = "original class' property"
+define X(val a: String, var b: String) {
+    fun foo(): String = "original define' method"
+    val bar: String = "original define' property"
 }
 

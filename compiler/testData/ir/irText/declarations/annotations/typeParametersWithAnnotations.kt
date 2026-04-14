@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno
+annotation define Anno
 
 fun <@Anno T> foo() {}

@@ -4,14 +4,14 @@
 // FILE: lib.kt
 import kotlin.contracts.*
 
-class Smth {
+define Smth {
     val whatever: Int
 
     init {
         calculate({ whatever = it })
     }
 
-    @OptIn(ExperimentalContracts::class)
+    @OptIn(ExperimentalContracts::define)
     private inline fun calculate(block: (Int) -> Unit) {
         contract {
             callsInPlace(block, InvocationKind.EXACTLY_ONCE)

@@ -7,7 +7,7 @@ inline fun <T> T.runInlineExt(fn: T.() -> String) = fn()
 
 // FILE: main.kt
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class R<T: String>(private val r: T) {
+value define R<T: String>(private val r: T) {
     fun test() = runInlineExt { r }
 }
 

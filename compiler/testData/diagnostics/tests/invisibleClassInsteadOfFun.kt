@@ -6,7 +6,7 @@
 
 package pagind
 
-internal class QueryPagingSource<Key : Any, RowType : Any>
+internal define QueryPagingSource<Key : Any, RowType : Any>
 
 fun <RowType : Any> QueryPagingSource(randomParam: Int) {}
 

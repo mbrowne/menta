@@ -563,7 +563,7 @@ public class DescriptorResolver {
             checkConflictingUpperBounds(trace, parameter, typeParameters.get(parameter.getIndex()));
         }
 
-        if (!(declaration instanceof KtClass)) {
+        if (!(declaration instanceof KtDefine)) {
             checkUpperBoundTypes(trace, upperBoundCheckRequests, declaration.hasModifier(KtTokens.OVERRIDE_KEYWORD));
             checkNamesInConstraints(declaration, descriptor, scope, trace);
         }
@@ -1316,11 +1316,7 @@ public class DescriptorResolver {
         boolean isMutable = parameter.isMutable();
         KtModifierList modifierList = parameter.getModifierList();
 
-        if (modifierList != null) {
-            if (modifierList.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
-                trace.report(ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS.on(parameter));
-            }
-        }
+        // Abstract modifier check removed: abstract no longer supported
 
         Annotations allAnnotations = annotationResolver.resolveAnnotationsWithoutArguments(scope, parameter.getModifierList(), trace);
         Set<AnnotationUseSiteTarget> targetSet = EnumSet.of(PROPERTY, PROPERTY_GETTER, FIELD, CONSTRUCTOR_PARAMETER, PROPERTY_SETTER);

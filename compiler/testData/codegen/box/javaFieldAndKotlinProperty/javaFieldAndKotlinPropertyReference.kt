@@ -5,12 +5,12 @@
 // Reason: KT-56386 is not fixed yet
 
 // FILE: BaseJava.java
-public class BaseJava {
+public define BaseJava {
     public String a = "OK";
 }
 
 // FILE: Derived.kt
-class Derived : BaseJava() {
+define Derived : BaseJava() {
     private val a = "FAIL"
 }
 

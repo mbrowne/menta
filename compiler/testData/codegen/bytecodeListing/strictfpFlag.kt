@@ -4,7 +4,7 @@
 @JvmOverloads
 fun testJvmOverloads(a: Int = 0) {}
 
-class C {
+define C {
     @Strictfp
     private fun testAccessor() {}
 
@@ -17,7 +17,7 @@ class C {
     }
 }
 
-inline class IC(val x: Int) {
+inline define IC(val x: Int) {
     @Strictfp
     fun testInlineClassFun() {}
 }

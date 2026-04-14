@@ -4,8 +4,8 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class E01
-expect class E02
+expect define E01
+expect define E02
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt

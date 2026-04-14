@@ -10,9 +10,9 @@ import kotlin.reflect.KProperty
 var foo by MyDelegate()
 
 @Repeatable
-annotation class Anno(val i: Int)
+annotation define Anno(val i: Int)
 
-class MyDelegate {
+define MyDelegate {
     operator fun getValue(thisRef: Any?, property: KProperty<*>) = 42
     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {}
 }

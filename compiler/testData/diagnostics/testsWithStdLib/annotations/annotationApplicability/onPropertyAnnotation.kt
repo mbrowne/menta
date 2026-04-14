@@ -2,15 +2,15 @@
 // ISSUE: KT-70233
 
 @Target(AnnotationTarget.FIELD)
-annotation class FieldAnnotation
+annotation define FieldAnnotation
 
 @Target(AnnotationTarget.PROPERTY)
-annotation class PropertyAnnotation
+annotation define PropertyAnnotation
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class ParameterAnnotation
+annotation define ParameterAnnotation
 
-annotation class A(
+annotation define A(
     @FieldAnnotation
     @PropertyAnnotation
     @ParameterAnnotation

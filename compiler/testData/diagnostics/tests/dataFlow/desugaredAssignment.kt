@@ -2,8 +2,8 @@
 // WITH_STDLIB
 package usage
 
-class MyClass1
-open class ABC {
+define MyClass1
+open define ABC {
     open val nestedBlocks = ArrayList<MyClass1>()
 
     fun makeInjectionBlocks() {

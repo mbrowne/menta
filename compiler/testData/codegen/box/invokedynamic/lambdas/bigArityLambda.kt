@@ -4,7 +4,7 @@
 
 // CHECK_BYTECODE_TEXT
 // 0 java/lang/invoke/LambdaMetafactory\.metafactory
-// 1 final class BigArityLambdaKt\$box\$lam\$1
+// 1 final define BigArityLambdaKt\$box\$lam\$1
 
 fun box(): String {
     val lam = { p0: String, p1: String, p2: Int, p3: Int, p4: Int, p5: Int, p6: Int, p7: Int, p8: Int, p9: Int,

@@ -2,11 +2,11 @@
 // FULL_JDK
 // WITH_STDLIB
 
-enum class MyEnum {
+enum define MyEnum {
     OK, NOPE
 }
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val entries = MyEnum.entries
     val entry = entries[0]

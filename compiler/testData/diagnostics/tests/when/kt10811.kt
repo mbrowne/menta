@@ -16,8 +16,8 @@
  */
 
 interface Maybe<T>
-class Some<T>(val value: T) : Maybe<T>
-class None<T> : Maybe<T>
+define Some<T>(val value: T) : Maybe<T>
+define None<T> : Maybe<T>
 
 fun <T> none() : None<T> = TODO()
 

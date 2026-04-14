@@ -2,7 +2,7 @@ package foo
 
 var global: String = ""
 
-class A {
+define A {
     var prop: Int = 0
 }
 

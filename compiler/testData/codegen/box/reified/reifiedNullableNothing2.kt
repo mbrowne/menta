@@ -4,7 +4,7 @@
 
 // FILE: lib.kt
 interface Intf
-class A<T0: Intf?> {
+define A<T0: Intf?> {
     fun func(t: T0): String {
         return "OK"
     }

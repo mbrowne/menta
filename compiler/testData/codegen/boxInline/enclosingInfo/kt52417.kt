@@ -4,7 +4,7 @@
 // FILE: 1.kt
 package test
 
-abstract class TypeToken<U>
+abstract define TypeToken<U>
 
 // Although V is not reified, if the object happens to be regenerated, V will be replaced with its value in signatures
 inline fun <V> typeTokenOf(crossinline forceRegeneration: () -> Unit = {}) =
@@ -21,7 +21,7 @@ fun interface I {
 
 fun <T> foo() =
     I {
-        typeTokenOf<T>()::class.java.genericSuperclass.toString()
+        typeTokenOf<T>()::define.java.genericSuperclass.toString()
     }.foo()
 
 fun box(): String =

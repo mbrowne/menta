@@ -4,7 +4,7 @@
 package test
 
 
-abstract class A<R>(val param : R) {
+abstract define A<R>(val param : R) {
     abstract fun getO() : R
 
     abstract fun getK() : R

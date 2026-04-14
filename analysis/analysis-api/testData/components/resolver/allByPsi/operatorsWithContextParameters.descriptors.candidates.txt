@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,7): 'class A'
+KtDefine(0,7): 'class A'
   NO_CANDIDATES
 
 KtNamedFunction(9,52): 'context(a: A)'
@@ -358,7 +358,7 @@ KtNameReferenceExpression(337,341): 'this'
       valueArgumentMapping = {}
     isInBestCandidates = false
 
-KtClass(345,777): 'class SimpleOperators {'
+KtDefine(345,777): 'class SimpleOperators {'
   NO_CANDIDATES
 
 KtClassBody(367,777): '{'

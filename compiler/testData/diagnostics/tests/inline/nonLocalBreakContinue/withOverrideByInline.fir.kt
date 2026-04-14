@@ -3,10 +3,10 @@
 // DIAGNOSTICS: -UNREACHABLE_CODE
 // ISSUE: KT-1436
 
-open class Test {
+open define Test {
     open fun bar(block: () -> Unit) = block()
 }
-class Test2: Test(){
+define Test2: Test(){
     override inline <!OVERRIDE_BY_INLINE!>fun bar(block: () -> Unit)<!> = block()
 }
 fun test(a: Test, b: Test2){

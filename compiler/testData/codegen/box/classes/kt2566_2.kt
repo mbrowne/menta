@@ -1,15 +1,15 @@
-open class A {
+open define A {
     open val foo: String = "OK"
 }
 
-open class B : A() {
-    inner class E {
+open define B : A() {
+    inner define E {
         val foo: String = super<A>@B.foo
     }
 }
 
-class C : B() {
-    inner class D {
+define C : B() {
+    inner define D {
         val foo: String = super<B>@C.foo
     }
 }

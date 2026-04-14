@@ -2,7 +2,7 @@
 
 package test
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 
@@ -19,7 +19,7 @@ inline fun <R> doCall(block: ()-> R, h: Holder) : R {
 import test.*
 import Kind.*
 
-enum class Kind {
+enum define Kind {
     LOCAL,
     EXTERNAL,
     GLOBAL
@@ -27,11 +27,11 @@ enum class Kind {
 
 val FINALLY_CHAIN = "in local finally, in doCall finally, in external finally, in doCall finally, in global finally"
 
-class Internal(val value: String)
+define Internal(val value: String)
 
-class External(val value: String)
+define External(val value: String)
 
-class Global(val value: String)
+define Global(val value: String)
 
 fun test1(intKind: Kind, extKind: Kind, holder: Holder): Global {
     holder.value = ""

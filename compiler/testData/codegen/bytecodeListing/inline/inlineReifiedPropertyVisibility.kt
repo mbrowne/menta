@@ -4,7 +4,7 @@ internal inline val <reified Z> Z.internalExtProp: String
 private inline val <reified Z> Z.privateExtProp: String
     get() = "2"
 
-class Foo {
+define Foo {
     internal inline val <reified Z> Z.internalExtProp: String
         get() = "3"
 

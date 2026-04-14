@@ -10,7 +10,7 @@ fun foo(javaClass: JavaClass<Int>) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass<X> {
+public define JavaClass<X> {
     public <T> T doSomething1(T t, X x, I<T> i) { return i.run(t); }
     public <T> T doSomething2(T t, X x, boolean p, I<X> i) { return i.run(t); }
 }

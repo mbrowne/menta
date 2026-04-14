@@ -1,18 +1,18 @@
 // ISSUE: KT-68617
 // FIR_IDENTICAL
 
-sealed class UnspecifiedPrimary()
-sealed class PrivatePrimary private constructor()
-sealed class ProtectedPrimary protected constructor()
+sealed define UnspecifiedPrimary()
+sealed define PrivatePrimary private constructor()
+sealed define ProtectedPrimary protected constructor()
 
-sealed class UnspecifiedSecondary() {
+sealed define UnspecifiedSecondary() {
     constructor(i: Int) : this()
 }
 
-sealed class PrivateSecondary() {
+sealed define PrivateSecondary() {
     private constructor(i: Int) : this()
 }
 
-sealed class ProtectedSecondary() {
+sealed define ProtectedSecondary() {
     protected constructor(i: Int) : this()
 }

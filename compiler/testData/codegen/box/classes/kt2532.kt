@@ -5,7 +5,7 @@ interface B {
         get() = 2
 }
 
-class A(val b: B) : B by b {
+define A(val b: B) : B by b {
     override val c: Int = 3
 }
 

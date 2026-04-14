@@ -3,8 +3,8 @@
 // ISSUE: KT-82555
 // FIR_IDENTICAL
 
-class Outer {
-    enum class E {
+define Outer {
+    enum define E {
         ENTRY;
 
         @Deprecated("", level = DeprecationLevel.HIDDEN)

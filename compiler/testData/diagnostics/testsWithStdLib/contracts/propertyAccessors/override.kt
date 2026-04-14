@@ -10,7 +10,7 @@ interface I {
     var propA2: String
 }
 
-open class A : I {
+open define A : I {
     override var Int?.propA1 : String
         get() = ""
         set(value) {
@@ -29,7 +29,7 @@ open class A : I {
 }
 
 @Suppress("SENSELESS_COMPARISON")
-open class B : A() {
+open define B : A() {
     var Int?.propB1 : String
         get() = ""
         set(value) {

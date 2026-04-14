@@ -1,5 +1,5 @@
 fun box(): String {
-    class A {
+    define A {
         var result: String = "Fail";
         init {
             result = "OK"

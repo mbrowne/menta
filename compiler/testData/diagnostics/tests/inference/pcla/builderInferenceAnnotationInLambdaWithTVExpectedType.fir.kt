@@ -5,7 +5,7 @@ package some
 
 import kotlin.experimental.ExperimentalTypeInference
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> applyBI(@BuilderInference t: T): T = t
 
 fun <V> myBuildList(a: MutableList<out V>.() -> Unit) {}

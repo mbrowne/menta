@@ -2,7 +2,7 @@
 
 // WITH_STDLIB
 
-class C {
+define C {
     companion object {
         @JvmStatic @kotlin.jvm.JvmOverloads public fun foo(o: String, k: String = "K"): String {
             return o + k
@@ -11,6 +11,6 @@ class C {
 }
 
 fun box(): String {
-    val m = C::class.java.getMethod("foo", String::class.java)
+    val m = C::define.java.getMethod("foo", String::define.java)
     return m.invoke(null, "O") as String
 }

@@ -5,8 +5,8 @@
 
 <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> typealias Foo = String
 
-class <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>Outer<!> <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> constructor() {
-    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> class Nested
+define <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>Outer<!> <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> constructor() {
+    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> define Nested
 
     <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> init {}
 
@@ -17,14 +17,14 @@ class <!PACKAGE_OR_CLASSIFIER_REDECLARATION{JVM}!>Outer<!> <!WRONG_MODIFIER_TARG
 <!CONFLICTING_OVERLOADS{JVM}!>fun foo()<!> {
     <!NON_MEMBER_FUNCTION_NO_BODY, NON_MEMBER_FUNCTION_NO_BODY{JVM}!><!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> fun localFun()<!>
     <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> var x = 42
-    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> class Bar
+    <!WRONG_MODIFIER_TARGET, WRONG_MODIFIER_TARGET{JVM}!>expect<!> define Bar
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-class <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>Outer<!> <!ACTUAL_WITHOUT_EXPECT!>actual constructor()<!> {
-    actual class Nested
+define <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>Outer<!> <!ACTUAL_WITHOUT_EXPECT!>actual constructor()<!> {
+    actual define Nested
 
     <!WRONG_MODIFIER_TARGET!>actual<!> init {}
 }
@@ -32,7 +32,7 @@ class <!PACKAGE_OR_CLASSIFIER_REDECLARATION!>Outer<!> <!ACTUAL_WITHOUT_EXPECT!>a
 <!CONFLICTING_OVERLOADS!>fun foo()<!> {
     <!WRONG_MODIFIER_TARGET!>actual<!> fun localFun() {}
     <!WRONG_MODIFIER_TARGET!>actual<!> var x = 42
-    <!WRONG_MODIFIER_TARGET!>actual<!> class <!ACTUAL_WITHOUT_EXPECT!>Bar<!>
+    <!WRONG_MODIFIER_TARGET!>actual<!> define <!ACTUAL_WITHOUT_EXPECT!>Bar<!>
 }
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, init, integerLiteral, localClass,

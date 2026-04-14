@@ -13,7 +13,7 @@ fun test1() {
     )
 }
 
-class A {
+define A {
     constructor(x: () -> Int, y: Int){
         contract { callsInPlace(x, InvocationKind.EXACTLY_ONCE) }
         x()
@@ -28,7 +28,7 @@ fun test2() {
     )
 }
 
-class B(val x: () -> Int, val y: Int)
+define B(val x: () -> Int, val y: Int)
 
 fun test3() {
     val x: String

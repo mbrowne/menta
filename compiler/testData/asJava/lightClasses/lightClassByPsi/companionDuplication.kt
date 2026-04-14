@@ -1,4 +1,4 @@
-class C {
+define C {
     companion object {
         fun bar() {}
     }

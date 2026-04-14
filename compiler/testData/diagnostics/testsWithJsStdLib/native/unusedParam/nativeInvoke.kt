@@ -3,7 +3,7 @@
 @nativeInvoke
 fun Int.foo(a: String): Int = definedExternally
 
-external class Bar(b: Int, c: Char) {
+external define Bar(b: Int, c: Char) {
     @nativeInvoke
     fun baz(d: Int) { definedExternally }
 }

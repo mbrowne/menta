@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class Controller<T> {
+define Controller<T> {
     fun yield(t: T): Boolean = true
 }
 

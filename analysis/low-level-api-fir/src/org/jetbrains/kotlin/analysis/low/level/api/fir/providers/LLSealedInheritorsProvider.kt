@@ -23,7 +23,7 @@ import org.jetbrains.kotlin.fir.declarations.utils.isExpect
 import org.jetbrains.kotlin.fir.psi
 import org.jetbrains.kotlin.fir.resolve.providers.symbolProvider
 import org.jetbrains.kotlin.name.ClassId
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.collections.filter
 import kotlin.collections.map
@@ -85,7 +85,7 @@ internal class LLSealedInheritorsProvider(private val project: Project) : Sealed
             }
             else -> classModule to firClass
         }
-        val targetKtClass = targetFirClass.psi as? KtClass ?: return emptyList()
+        val targetKtClass = targetFirClass.psi as? KtDefine ?: return emptyList()
 
         // `FirClass.isExpect` does not depend on the `STATUS` phase because it's already set during FIR building.
         val scope = if (targetFirClass.isExpect) {
@@ -98,9 +98,9 @@ internal class LLSealedInheritorsProvider(private val project: Project) : Sealed
         return searchInScope(targetKtClass, targetFirClass.classId, scope)
     }
 
-    private fun searchInScope(ktClass: KtClass, classId: ClassId, scope: GlobalSearchScope): List<ClassId> =
+    private fun searchInScope(KtDefine: KtDefine, classId: ClassId, scope: GlobalSearchScope): List<ClassId> =
         KotlinDirectInheritorsProvider.getInstance(project)
-            .getDirectKotlinInheritors(ktClass, scope, includeLocalInheritors = false)
+            .getDirectKotlinInheritors(KtDefine, scope, includeLocalInheritors = false)
             .mapNotNull { it.getClassId() }
             .filter { it.packageFqName == classId.packageFqName }
             // Enforce a deterministic order on the result, e.g. for stable test output.

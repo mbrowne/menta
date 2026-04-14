@@ -10,6 +10,7 @@ import org.jetbrains.kotlin.diagnostics.reportOn
 import org.jetbrains.kotlin.fir.analysis.checkers.MppCheckerKind
 import org.jetbrains.kotlin.fir.analysis.checkers.context.CheckerContext
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors
+import org.jetbrains.kotlin.fir.declarations.FirDeclarationOrigin
 import org.jetbrains.kotlin.fir.declarations.FirProperty
 import org.jetbrains.kotlin.fir.declarations.utils.isExtension
 import org.jetbrains.kotlin.fir.declarations.utils.isReplSnippetDeclaration
@@ -20,7 +21,9 @@ object FirLocalExtensionPropertyChecker : FirPropertyChecker(MppCheckerKind.Comm
     override fun check(declaration: FirProperty) {
         if (declaration.symbol is FirLocalPropertySymbol && declaration.isExtension &&
             // Explicitly allow local delegated extension properties in repl snippets
-            !(declaration.isReplSnippetDeclaration == true && declaration.delegate != null)
+            !(declaration.isReplSnippetDeclaration == true && declaration.delegate != null) &&
+            // Allow role extension properties
+            declaration.origin !is FirDeclarationOrigin.MentaRole
         ) {
             reporter.reportOn(declaration.receiverParameter?.source, FirErrors.LOCAL_EXTENSION_PROPERTY)
         }

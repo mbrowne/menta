@@ -5,7 +5,7 @@
 
 package test
 
-inline class A(val x: Int) {
+inline define A(val x: Int) {
     inline fun inc(): A = A(this.x + 1)
 
     inline fun result(other: A): String = if (other.x == x) "OK" else "fail"

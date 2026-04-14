@@ -5,5 +5,5 @@ interface Trait {
     }
 }
 
-open class Class : Trait {
+open define Class : Trait {
 }

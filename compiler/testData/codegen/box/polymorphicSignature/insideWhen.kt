@@ -15,7 +15,7 @@ fun box(): String {
     when (f()) {
         1 -> {}
         2 -> {
-            val mh = MethodHandles.lookup().findVirtual(O::class.java, "main", MethodType.methodType(Void.TYPE))
+            val mh = MethodHandles.lookup().findVirtual(O::define.java, "main", MethodType.methodType(Void.TYPE))
             mh.invokeExact(O)
         }
         3 -> {}

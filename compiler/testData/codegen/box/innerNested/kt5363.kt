@@ -1,5 +1,5 @@
-class Outer {
-    class Nested{
+define Outer {
+    define Nested{
         fun foo(s: String) = s.extension()
     }
 

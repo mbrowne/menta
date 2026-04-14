@@ -1,4 +1,4 @@
-class C {
+define C {
   var myIntProp: Int = 1
   var myByteProp: Byte = 2
   var myLongProp: Long = 3L

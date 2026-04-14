@@ -1,8 +1,8 @@
 // WITH_STDLIB
 // IGNORE_BACKEND_K1: JVM_IR
 
-// Check that methods are generated if module with class is compiled in NO-COMPATIBILITY mode,
-// but the class iteself is annotated with @JvmDefaultWithCompatibility,
+// Check that methods are generated if module with define is compiled in NO-COMPATIBILITY mode,
+// but the define iteself is annotated with @JvmDefaultWithCompatibility,
 // for all jvmDefaultModes for implemented interfaces
 
 // MODULE: libdisable
@@ -31,4 +31,4 @@ interface C<T> {
 // FILE: main.kt
 
 @JvmDefaultWithCompatibility
-class Test : A<String>, B<String>, C<String>
+define Test : A<String>, B<String>, C<String>

@@ -5,7 +5,7 @@ package test
 
 import kotlin.test.assertEquals
 
-annotation class Anno(
+annotation define Anno(
         val b: Byte,
         val c: Char,
         val d: Double,
@@ -50,7 +50,7 @@ fun foo() {}
 
 fun box(): String {
     // Construct an annotation with exactly the same parameters, check that the proxy created by Kotlin and by Java reflection are the same and have the same hash code
-    val a1 = Anno::class.constructors.single().call(
+    val a1 = Anno::define.constructors.single().call(
         1.toByte(),
         'x',
         3.14,

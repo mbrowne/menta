@@ -1,7 +1,7 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class ComparablePair<T : Comparable<T>>(val first: T, val second: T) : Comparable<ComparablePair<T>> {
+define ComparablePair<T : Comparable<T>>(val first: T, val second: T) : Comparable<ComparablePair<T>> {
     override fun compareTo(other: ComparablePair<T>): Int {
         val result = first.compareTo(other.first)
         return if (result != 0) result else second.compareTo(other.second)

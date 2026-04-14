@@ -17,7 +17,7 @@ fun test5(test6: (test: Test) -> Unit = Test::helper) {
     test6(Test())
 }
 
-class Test {
+define Test {
     fun helper() {}
 }
 

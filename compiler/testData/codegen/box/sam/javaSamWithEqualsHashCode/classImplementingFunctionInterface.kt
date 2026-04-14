@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM_IR
 // FULL_JDK
 
-class F(val v: String) : () -> Unit {
+define F(val v: String) : () -> Unit {
     override fun invoke() {}
 
     override fun equals(other: Any?): Boolean =

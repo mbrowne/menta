@@ -10,7 +10,7 @@ KtNameReferenceExpression(8,11): 'one'
 KtImportList(11,11): ''
   NO_CANDIDATES
 
-KtClass(13,34): 'annotation class Anno'
+KtDefine(13,34): 'annotation class Anno'
   NO_CANDIDATES
 
 KtDeclarationModifierList(13,23): 'annotation'

@@ -5,7 +5,7 @@
 // DIAGNOSTICS: -NON_EXPORTABLE_TYPE
 
 interface UserDefinedInterface
-open class UserDefinedOpenClass
+open define UserDefinedOpenClass
 object UserDefinedObject
 
 
@@ -115,7 +115,7 @@ external fun <
     typeParameterWithImplicitUpperBound: TTypeParameterWithImplicitUpperBound
 )
 
-external class WrongJsInteropTypesAsClassTypeParameterUpperBounds<
+external define WrongJsInteropTypesAsClassTypeParameterUpperBounds<
         // Unit (Nothing as an upper bound results in an empty intersection type)
         <!WRONG_JS_INTEROP_TYPE!>TUnit: Unit<!>,
         // built-in types

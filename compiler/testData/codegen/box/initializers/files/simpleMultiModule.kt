@@ -2,13 +2,13 @@
 
 // MODULE: lib
 // FILE: lib.kt
-class X(val s: String)
+define X(val s: String)
 
 val x = X("zzz")
 
 // MODULE: lib2(lib)
 // FILE: lib2.kt
-class Z(val x: Int)
+define Z(val x: Int)
 
 val z2 = Z(x.s.length)
 

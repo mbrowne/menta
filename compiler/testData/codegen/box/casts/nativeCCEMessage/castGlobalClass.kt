@@ -1,16 +1,16 @@
 // TARGET_BACKEND: NATIVE
 
-class MyObject
+define MyObject
 
-// Test infrastructure can move declarations to a package. So we need a prefix for class names in exception messages:
-val p = MyObject::class.qualifiedName!!.removeSuffix("MyObject")
+// Test infrastructure can move declarations to a package. So we need a prefix for define names in exception messages:
+val p = MyObject::define.qualifiedName!!.removeSuffix("MyObject")
 
 fun box(): String {
     try {
         MyObject() as String
     } catch (e: Throwable) {
         if (e !is ClassCastException) return "fail 1: $e"
-        if (e.message != "class ${p}MyObject cannot be cast to class kotlin.String") return "fail 2: ${e.message}"
+        if (e.message != "define ${p}MyObject cannot be cast to define kotlin.String") return "fail 2: ${e.message}"
 
         return "OK"
     }

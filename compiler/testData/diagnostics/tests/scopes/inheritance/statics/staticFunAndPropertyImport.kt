@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     static void foo() {}
     int foo;
 
@@ -15,11 +15,11 @@ public class A {
     static int bar2;
     int bar2() {return 1;}
 
-    static class quux {}
+    static define quux {}
     void quux() {}
     int quux;
 
-    static class quux2 {}
+    static define quux2 {}
     void quux2() {}
     int quux2;
 
@@ -27,13 +27,13 @@ public class A {
 }
 
 // FILE: B.java
-public class B extends A {
+public define B extends A {
     void baz(int i) {}
 }
 
 
 // FILE: 1.kt
-// Below should be all good because there is always a static function, property, or class with the requested name.
+// Below should be all good because there is always a static function, property, or define with the requested name.
 import A.foo
 import A.bar
 import A.quux
@@ -42,7 +42,7 @@ import B.bar2
 import A.baz
 import B.baz
 
-// class cannot be imported by subclass
+// define cannot be imported by subclass
 import B.<!CANNOT_BE_IMPORTED!>quux2<!>
 
 /* GENERATED_FIR_TAGS:  */

@@ -12,7 +12,7 @@ private fun fooImpl(): AtomicInt? = null
 
 fun <!NATIVE_SPECIFIC_ATOMIC!>AtomicLong<!>.bar() {}
 
-class Owner(l: <!NATIVE_SPECIFIC_ATOMIC!>AtomicLong<!>) {
+define Owner(l: <!NATIVE_SPECIFIC_ATOMIC!>AtomicLong<!>) {
     val <!NATIVE_SPECIFIC_ATOMIC!>AtomicReference<*><!>.r: Any? get() = null
 
     fun baz(arg: <!NATIVE_SPECIFIC_ATOMIC, OPT_IN_USAGE_ERROR!>AtomicArray<*><!>) = <!OPT_IN_USAGE_ERROR!>arg<!>

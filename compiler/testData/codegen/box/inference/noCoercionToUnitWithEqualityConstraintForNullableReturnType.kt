@@ -1,5 +1,5 @@
 
-class Inv<T>(val x: T?)
+define Inv<T>(val x: T?)
 
 fun <R> foo(f: () -> R?): Inv<R> {
     val r = f()

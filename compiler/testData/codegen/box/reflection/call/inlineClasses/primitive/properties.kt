@@ -5,11 +5,11 @@ import kotlin.reflect.KMutableProperty2
 import kotlin.test.assertEquals
 
 @JvmInline
-value class Z(val value: Int) {
+value define Z(val value: Int) {
     operator fun plus(other: Z): Z = Z(this.value + other.value)
 }
 
-class C {
+define C {
     var nonNullMember: Z = Z(0)
     var nullableMember: Z? = Z(0)
 
@@ -73,22 +73,22 @@ fun box(): String {
     assertEquals(two, c::nullableMember.call())
     assertEquals(two, c::nullableMember.getter.call())
 
-    val nonNull_nonNullMemExt = C::class.members.single { it.name == "nonNull_nonNullMemExt" } as KMutableProperty2<C, Z, Z>
+    val nonNull_nonNullMemExt = C::define.members.single { it.name == "nonNull_nonNullMemExt" } as KMutableProperty2<C, Z, Z>
     assertEquals(Unit, nonNull_nonNullMemExt.setter.call(c, Z(0), two))
     assertEquals(three, nonNull_nonNullMemExt.call(c, one))
     assertEquals(three, nonNull_nonNullMemExt.getter.call(c, one))
 
-    val nonNull_nullableMemExt = C::class.members.single { it.name == "nonNull_nullableMemExt" } as KMutableProperty2<C, Z, Z?>
+    val nonNull_nullableMemExt = C::define.members.single { it.name == "nonNull_nullableMemExt" } as KMutableProperty2<C, Z, Z?>
     assertEquals(Unit, nonNull_nullableMemExt.setter.call(c, Z(0), two))
     assertEquals(three, nonNull_nullableMemExt.call(c, one))
     assertEquals(three, nonNull_nullableMemExt.getter.call(c, one))
 
-    val nullable_nonNullMemExt = C::class.members.single { it.name == "nullable_nonNullMemExt" } as KMutableProperty2<C, Z?, Z>
+    val nullable_nonNullMemExt = C::define.members.single { it.name == "nullable_nonNullMemExt" } as KMutableProperty2<C, Z?, Z>
     assertEquals(Unit, nullable_nonNullMemExt.setter.call(c, Z(0), two))
     assertEquals(three, nullable_nonNullMemExt.call(c, one))
     assertEquals(three, nullable_nonNullMemExt.getter.call(c, one))
 
-    val nullable_nullableMemExt = C::class.members.single { it.name == "nullable_nullableMemExt" } as KMutableProperty2<C, Z?, Z?>
+    val nullable_nullableMemExt = C::define.members.single { it.name == "nullable_nullableMemExt" } as KMutableProperty2<C, Z?, Z?>
     assertEquals(Unit, nullable_nullableMemExt.setter.call(c, Z(0), two))
     assertEquals(three, nullable_nullableMemExt.call(c, one))
     assertEquals(three, nullable_nullableMemExt.getter.call(c, one))

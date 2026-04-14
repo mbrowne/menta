@@ -13,7 +13,7 @@ fun foo(a: A) {
     <!VAL_REASSIGNMENT!>o.y<!> = 11   //Should be an error here
 }
 
-class A() {
+define A() {
     val z : Int
     get() = 3
 }

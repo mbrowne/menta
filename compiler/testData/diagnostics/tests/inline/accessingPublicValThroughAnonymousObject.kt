@@ -17,7 +17,7 @@ private fun xFun() = run {
 }
 
 private fun xFun2() = run {
-    class Local {
+    define Local {
         val bar = "2"
 
         fun self() = this
@@ -25,7 +25,7 @@ private fun xFun2() = run {
     Local()
 }
 
-open class Super {
+open define Super {
     val y: String = ""
 }
 

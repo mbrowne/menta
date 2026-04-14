@@ -3,9 +3,9 @@
 
 package test
 
-class A
+define A
 
-data class D(val s: String)
+data define D(val s: String)
 
 fun box(): String {
     val a = A()

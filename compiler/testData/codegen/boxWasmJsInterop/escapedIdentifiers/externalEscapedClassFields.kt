@@ -2,7 +2,7 @@
 
 package foo
 
-external class A {
+external define A {
     val `@invalid @ val@`: Int = definedExternally
     var `--invalid-var`: String = definedExternally
 

@@ -2,9 +2,9 @@
 // FILE: a.kt
 package a
 
-class C1 {
+define C1 {
     companion object O {
-        class A
+        define A
         object B
 
         fun bar() {}
@@ -12,7 +12,7 @@ class C1 {
 }
 
 
-class C2 {
+define C2 {
     companion object S {
 
         val prop: String = ""
@@ -28,13 +28,13 @@ class C2 {
 
         fun A(c: Int) = A()
 
-        class A()
+        define A()
 
         fun <T> genericFun(t: T, t2: T): T = t
     }
 }
 
-open class Base {
+open define Base {
     fun f() {
     }
 
@@ -52,7 +52,7 @@ interface BaseI<T> {
     fun genericFromI(t: T) = t
 }
 
-class C3 {
+define C3 {
     companion object K: Base(), BaseI<Int> {
         val own: String = ""
     }

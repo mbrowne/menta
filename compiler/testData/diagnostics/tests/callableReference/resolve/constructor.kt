@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Klass {
+define Klass {
     constructor(a: Int) {}
     constructor(a: String) {}
 }

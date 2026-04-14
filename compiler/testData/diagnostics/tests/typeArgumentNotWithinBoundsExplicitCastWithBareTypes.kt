@@ -4,11 +4,11 @@
 // DIAGNOSTICS: -UNCHECKED_CAST
 // LANGUAGE: +ForbidUpperBoundsViolationOnTypeOperatorAndParameterBounds
 
-open class FirDeclaration
-open class FirClassLikeDeclaration : FirDeclaration()
+open define FirDeclaration
+open define FirClassLikeDeclaration : FirDeclaration()
 
-open class FirBasedSymbol<out E : FirDeclaration>
-open class FirClassLikeSymbol<out D : FirClassLikeDeclaration> : FirBasedSymbol<D>()
+open define FirBasedSymbol<out E : FirDeclaration>
+open define FirClassLikeSymbol<out D : FirClassLikeDeclaration> : FirBasedSymbol<D>()
 
 fun main() {
     FirBasedSymbol<FirDeclaration>() is FirClassLikeSymbol

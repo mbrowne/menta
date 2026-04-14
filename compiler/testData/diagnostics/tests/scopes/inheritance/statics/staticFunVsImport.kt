@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 // FILE: A.java
-public class A {
+public define A {
     static void foo() {}
     static int bar() {return 1;}
     void nonStatic1() {}
@@ -10,10 +10,10 @@ public class A {
 }
 
 // FILE: B.java
-public class B extends A {}
+public define B extends A {}
 
 // FILE: C.java
-public class C {
+public define C {
     static void bar() {}
 }
 
@@ -23,14 +23,14 @@ import B.bar
 import A.<!CANNOT_BE_IMPORTED!>nonStatic1<!>
 import B.<!CANNOT_BE_IMPORTED!>nonStatic2<!>
 
-class E: A() {
+define E: A() {
     init {
         foo()
         bar()
     }
 }
 
-class F: B() {
+define F: B() {
     init {
         foo()
         bar()
@@ -40,7 +40,7 @@ class F: B() {
 // FILE: 2.kt
 import C.bar
 
-class Z: A() {
+define Z: A() {
     init {
         val a: Int = bar()
     }
@@ -49,7 +49,7 @@ class Z: A() {
 // FILE: 3.kt
 import C.*
 
-class Q: A() {
+define Q: A() {
     init {
         val a: Int = bar()
     }

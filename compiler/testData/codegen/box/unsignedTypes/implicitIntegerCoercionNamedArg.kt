@@ -15,7 +15,7 @@
 
 package kotlin.internal
 
-annotation class ImplicitIntegerCoercion
+annotation define ImplicitIntegerCoercion
 
 // FILE: test.kt
 

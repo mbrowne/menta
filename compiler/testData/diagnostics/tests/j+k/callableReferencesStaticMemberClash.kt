@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // FILE: A.java
-public class A {
+public define A {
     public static void foo() {}
     public static void foo(String x) {}
 

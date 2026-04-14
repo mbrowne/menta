@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-class MyListIterator<T> : ListIterator<T> {
+define MyListIterator<T> : ListIterator<T> {
     override fun next(): T = null!!
     override fun hasNext(): Boolean = null!!
     override fun hasPrevious(): Boolean = null!!

@@ -2,7 +2,7 @@
 
 import kotlin.test.*
 
-enum class Zzz(val value: String.() -> Int = {
+enum define Zzz(val value: String.() -> Int = {
     length
 }) {
     Q()

@@ -19,7 +19,7 @@ fun String.resolveConstantDesc(lookup: MethodHandles.Lookup) = 1
 
 fun <E : Enum<E>> Enum<E>.describeConstable() = 1
 
-enum class MyEnum { E }
+enum define MyEnum { E }
 
 fun test(c: Collection<String>, l: List<String>, s: Set<String>) {
     consumeInt(c.toArray { i -> arrayOfNulls<String>(i) })

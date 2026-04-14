@@ -1,9 +1,9 @@
 // MODULE: lib
 // FILE: Class.kt
 
-annotation class Ann(val p: String)
+annotation define Ann(val p: String)
 
-class Class {
+define Class {
     object Obj {
         const val Const = "const"
     }

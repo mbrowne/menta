@@ -2,20 +2,20 @@
 // ISSUE: KT-54920
 
 sealed interface I {
-    class C : I
+    define C : I
 }
 
 sealed interface IAbstract {
-    abstract class C : IAbstract {
-        class S1 : C()
-        class S2 : C()
+    abstract define C : IAbstract {
+        define S1 : C()
+        define S2 : C()
     }
 }
 
 sealed interface ISealed {
-    sealed class C : ISealed {
-        class S1 : C()
-        class S2 : C()
+    sealed define C : ISealed {
+        define S1 : C()
+        define S2 : C()
     }
 }
 

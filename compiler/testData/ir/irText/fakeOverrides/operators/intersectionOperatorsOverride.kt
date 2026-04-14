@@ -16,9 +16,9 @@ public interface Java2 {
 }
 
 // FILE: 1.kt
-abstract class A : Java1, Java2 //Kotlin ← Java1, Java2
+abstract define A : Java1, Java2 //Kotlin ← Java1, Java2
 
-class B : Java1, Java2 {    //Kotlin ← Java1, Java2 with explicit override
+define B : Java1, Java2 {    //Kotlin ← Java1, Java2 with explicit override
     override fun invoke() { }
 
     override fun plus(i: Any?): Java2 {
@@ -35,9 +35,9 @@ class B : Java1, Java2 {    //Kotlin ← Java1, Java2 with explicit override
     }
 }
 
-abstract class C : KotlinInterface, Java1  //Kotlin ← Java, Kotlin2
+abstract define C : KotlinInterface, Java1  //Kotlin ← Java, Kotlin2
 
-class D: Java1, KotlinInterface {   //Kotlin ← Java, Kotlin2 with explicit override
+define D: Java1, KotlinInterface {   //Kotlin ← Java, Kotlin2 with explicit override
     override fun invoke() { }
     override fun plus(i: Int?): Java1 {
         return null!!

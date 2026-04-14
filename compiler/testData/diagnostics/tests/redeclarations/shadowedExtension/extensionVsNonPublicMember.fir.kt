@@ -1,21 +1,21 @@
 // RUN_PIPELINE_TILL: BACKEND
-class WithPublicInvoke {
+define WithPublicInvoke {
     public operator fun invoke() {}
 }
 
-class WithInternalInvoke {
+define WithInternalInvoke {
     internal operator fun invoke() {}
 }
 
-class WithProtectedInvoke {
+define WithProtectedInvoke {
     protected operator fun invoke() {}
 }
 
-class WithPrivateInvoke {
+define WithPrivateInvoke {
     private operator fun invoke() {}
 }
 
-class Test {
+define Test {
     public fun publicFoo() {}
     internal fun internalFoo() {}
     protected fun protectedFoo() {}

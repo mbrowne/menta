@@ -4,7 +4,7 @@
 import org.jetbrains.annotations.*;
 import java.util.List;
 
-class J {
+define J {
     static String foo() { return "abc"; }
 
     @NotNull

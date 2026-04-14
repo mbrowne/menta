@@ -11,5 +11,5 @@ interface Derived: Base {
 
 interface Mixed: Base, Derived
 
-open class A: Base, Derived
-open class B: Mixed
+open define A: Base, Derived
+open define B: Mixed

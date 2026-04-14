@@ -2,7 +2,7 @@
 // LANGUAGE: +ReferencesToSyntheticJavaProperties
 
 // FILE: Generic.java
-public class Generic<T> {
+public define Generic<T> {
     public String getStringVal() { return null; }
     public void setStringVal(String value) {}
 

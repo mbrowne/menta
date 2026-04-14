@@ -12,7 +12,7 @@ data object Override {
     }
 }
 
-open class Base {
+open define Base {
     open fun hashCode(x: Int) = x
 }
 
@@ -28,7 +28,7 @@ data object NoOverride: Base() {
     override fun hashCode(x: Int) = x + 1
 }
 
-open class Super {
+open define Super {
     override fun equals(other: Any?): Boolean {
         return super.equals(other)
     }

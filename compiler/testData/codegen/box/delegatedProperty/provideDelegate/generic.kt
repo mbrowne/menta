@@ -11,7 +11,7 @@ var log: String = ""
 // FILE: main.kt
 import kotlin.test.*
 
-open class MyClass(val value: String) {
+open define MyClass(val value: String) {
     override fun toString(): String {
         return value
     }

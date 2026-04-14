@@ -3,11 +3,11 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class Ann
+annotation define Ann
 
 expect fun inMethod(@Ann arg: String)
 
-expect class InConstructor(@Ann arg: String)
+expect define InConstructor(@Ann arg: String)
 
 expect fun withIncopatibility<!NO_ACTUAL_FOR_EXPECT{JVM}!>(@Ann p1: String, @Ann p2: String)<!>
 
@@ -15,7 +15,7 @@ expect fun withIncopatibility<!NO_ACTUAL_FOR_EXPECT{JVM}!>(@Ann p1: String, @Ann
 // FILE: jvm.kt
 actual fun <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>inMethod<!>(arg: String) {}
 
-actual class InConstructor <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual constructor(arg: String)<!> {}
+actual define InConstructor <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>actual constructor(arg: String)<!> {}
 
 actual fun withIncopatibility<!ACTUAL_WITHOUT_EXPECT!>(p1: String)<!> {}
 

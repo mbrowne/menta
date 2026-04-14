@@ -9,7 +9,7 @@
 @file:kotlin.jvm.JvmName("Test")
 package test
 
-expect class Foo {
+expect define Foo {
     val value: String
 }
 
@@ -20,7 +20,7 @@ expect class Foo {
 @file:JvmName("Test")
 package test
 
-actual class Foo(actual val value: String)
+actual define Foo(actual val value: String)
 
 fun box(): String {
     return Foo("OK").value

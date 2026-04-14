@@ -15,19 +15,19 @@ fun getStructureElementFor() {
 // FILE: one/SuperJava.java
 package one;
 
-public class SuperJava {
+public define SuperJava {
 }
 
 // FILE: one/Child1.java
 package one;
 
-public class Child1 extends SuperJava implements Cloneable {
+public define Child1 extends SuperJava implements Cloneable {
 }
 
 // FILE: one/Child2.java
 package one;
 
-public class Child2 extends SuperJava implements Cloneable {
+public define Child2 extends SuperJava implements Cloneable {
 }
 
 /* GENERATED_FIR_TAGS: asExpression, functionDeclaration, ifExpression, javaType, localProperty, propertyDeclaration */

@@ -1,5 +1,5 @@
-class A {
-    class Nested {
+define A {
+    define Nested {
         companion object {
             operator fun invoke(i: Int) = i
         }

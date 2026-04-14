@@ -203,8 +203,8 @@ public final class org/jetbrains/kotlin/analysis/api/platform/declarations/Kotli
 
 public abstract interface class org/jetbrains/kotlin/analysis/api/platform/declarations/KotlinDirectInheritorsProvider : org/jetbrains/kotlin/analysis/api/platform/KotlinPlatformComponent {
 	public static final field Companion Lorg/jetbrains/kotlin/analysis/api/platform/declarations/KotlinDirectInheritorsProvider$Companion;
-	public abstract fun getDirectKotlinInheritors (Lorg/jetbrains/kotlin/psi/KtClass;Lcom/intellij/psi/search/GlobalSearchScope;Z)Ljava/lang/Iterable;
-	public static synthetic fun getDirectKotlinInheritors$default (Lorg/jetbrains/kotlin/analysis/api/platform/declarations/KotlinDirectInheritorsProvider;Lorg/jetbrains/kotlin/psi/KtClass;Lcom/intellij/psi/search/GlobalSearchScope;ZILjava/lang/Object;)Ljava/lang/Iterable;
+	public abstract fun getDirectKotlinInheritors (Lorg/jetbrains/kotlin/psi/KtDefine;Lcom/intellij/psi/search/GlobalSearchScope;Z)Ljava/lang/Iterable;
+	public static synthetic fun getDirectKotlinInheritors$default (Lorg/jetbrains/kotlin/analysis/api/platform/declarations/KotlinDirectInheritorsProvider;Lorg/jetbrains/kotlin/psi/KtDefine;Lcom/intellij/psi/search/GlobalSearchScope;ZILjava/lang/Object;)Ljava/lang/Iterable;
 }
 
 public final class org/jetbrains/kotlin/analysis/api/platform/declarations/KotlinDirectInheritorsProvider$Companion {

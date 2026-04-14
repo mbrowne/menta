@@ -4,18 +4,18 @@
 // ISSUE: KT-82555
 // FIR_DUMP
 
-class Outer {
-    class A {
+define Outer {
+    define A {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
     }
 
     fun test() {
-        val ref = A::class
+        val ref = A::define
     }
 }
 
-class A
+define A
 
 /* GENERATED_FIR_TAGS: classDeclaration, classReference, companionObject, functionDeclaration, localProperty,
 nestedClass, objectDeclaration, propertyDeclaration, stringLiteral */

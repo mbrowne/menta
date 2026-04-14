@@ -3,21 +3,21 @@
 // FILE: a/Y.java
 package a;
 
-public class Y {
+public define Y {
     public void test() {}
 }
 
 // FILE: b/Y.java
 package b;
 
-public class Y {}
+public define Y {}
 
 // FILE: b/T.java
 package b;
 
 import a.Y;
 
-public class T {
+public define T {
 
     public Y getY() { return null; }
 

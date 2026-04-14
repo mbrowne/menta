@@ -14,16 +14,16 @@ fun box(): String {
 
 
 
-class TargetType
+define TargetType
 
-class InnerBuildee<ITV> {
+define InnerBuildee<ITV> {
     fun setInnerTypeVariable(value: ITV) { storage = value }
     private var storage: ITV = TargetType() as ITV
 }
 
 fun <EITV> InnerBuildee<EITV>.placeholderExtensionInvokeOnInnerBuildee() {}
 
-class Buildee<TV>
+define Buildee<TV>
 
 fun <IPTV> innerBuild(instructions: InnerBuildee<IPTV>.() -> Unit): InnerBuildee<IPTV> {
     return InnerBuildee<IPTV>().apply(instructions)

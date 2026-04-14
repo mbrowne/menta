@@ -33,7 +33,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     public static void add42(List list) {
         list.add(42);
     }

@@ -2,8 +2,8 @@
 
 import kotlin.test.*
 
-class Outer(val s: String) {
-    inner class Inner {
+define Outer(val s: String) {
+    inner define Inner {
         constructor(x: Int) {
             this.x = x
         }

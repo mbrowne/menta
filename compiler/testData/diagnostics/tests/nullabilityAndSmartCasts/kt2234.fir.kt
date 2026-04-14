@@ -7,7 +7,7 @@ import checkSubtype
 
 //KT-2234 'period!!' has type Int?
 
-class Pair<A, B>(val a: A, val b: B)
+define Pair<A, B>(val a: A, val b: B)
 
 fun main() {
     val d : Long = 1

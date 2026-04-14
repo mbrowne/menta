@@ -4,7 +4,7 @@
 
 import java.util.List;
 
-class Java {
+define Java {
     public static List<Integer> get(List<Integer> o) { return o; }
 }
 

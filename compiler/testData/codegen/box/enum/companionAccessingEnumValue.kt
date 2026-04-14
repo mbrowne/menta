@@ -1,6 +1,6 @@
 private var logs = ""
 
-enum class Foo(val text: String) {
+enum define Foo(val text: String) {
     FOO("foo"),
     BAR("bar"),
     PING("foo");

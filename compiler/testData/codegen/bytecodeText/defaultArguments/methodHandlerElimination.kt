@@ -1,5 +1,5 @@
 //open modality to method handle check generation
-open class A {
+open define A {
     inline fun test(p: String = "OK"): String {
         return p
     }

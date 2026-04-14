@@ -7,13 +7,13 @@ interface A {
     fun foo(x: Int = 1): String
 }
 
-class B : A  {
+define B : A  {
     override fun foo(x: Int): String {
         return if (x == 1) "OK" else "Fail: $x"
     }
 }
 
-class X(val delegate: A = B()) : A by delegate
+define X(val delegate: A = B()) : A by delegate
 
 // MODULE: platform()()(common)
 // FILE: platform.kt

@@ -4,12 +4,12 @@
 
 package test
 
-enum class Base(val value: String) {
+enum define Base(val value: String) {
     OK("OK"),
     B("FAIL");
 }
 
-enum class Base2(val value: String) {
+enum define Base2(val value: String) {
     A("OK2"),
     B("FAIL2");
 }

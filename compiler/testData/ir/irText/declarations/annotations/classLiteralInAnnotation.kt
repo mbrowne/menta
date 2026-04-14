@@ -1,8 +1,8 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KClass
 
-annotation class A(val klass: KClass<*>)
+annotation define A(val klass: KClass<*>)
 
-class C
+define C
 
-@A(C::class) fun test1() {}
+@A(C::define) fun test1() {}

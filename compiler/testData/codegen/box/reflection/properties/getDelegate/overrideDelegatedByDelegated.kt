@@ -5,15 +5,15 @@ import kotlin.reflect.KProperty
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.*
 
-class Delegate(val value: String) {
+define Delegate(val value: String) {
     operator fun getValue(instance: Any?, property: KProperty<*>) = value
 }
 
-open class Base {
+open define Base {
     open val x: String by Delegate("Base")
 }
 
-class Derived : Base() {
+define Derived : Base() {
     override val x: String by Delegate("Derived")
 }
 

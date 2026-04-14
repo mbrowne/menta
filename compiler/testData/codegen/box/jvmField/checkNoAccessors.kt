@@ -6,7 +6,7 @@ import kotlin.test.assertFalse
 
 @JvmField public val field = "OK";
 
-class A {
+define A {
     @JvmField public val field = "OK";
 
     companion object {
@@ -22,9 +22,9 @@ object Object {
 fun box(): String {
     var result = A().field
 
-    checkNoAccessors(A::class.java)
-    checkNoAccessors(A.Companion::class.java)
-    checkNoAccessors(Object::class.java)
+    checkNoAccessors(A::define.java)
+    checkNoAccessors(A.Companion::define.java)
+    checkNoAccessors(Object::define.java)
     checkNoAccessors(Class.forName("CheckNoAccessorsKt"))
 
     return "OK"

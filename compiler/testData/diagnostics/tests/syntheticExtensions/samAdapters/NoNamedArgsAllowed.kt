@@ -10,7 +10,7 @@ fun foo(javaClass: JavaClass) {
 fun bar(){}
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public void doSomething(int p, Runnable runnable) { runnable.run(); }
 }
 

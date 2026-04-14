@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: lib.kt
-class A<T>(val a: T) where T : CharSequence, T : Comparable<T> {
+define A<T>(val a: T) where T : CharSequence, T : Comparable<T> {
     inline fun foo(b: T) = a.length + b.length
 
     fun bar(b: T) = a.length + b.length

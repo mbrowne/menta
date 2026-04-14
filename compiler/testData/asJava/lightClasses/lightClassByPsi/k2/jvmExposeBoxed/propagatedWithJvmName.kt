@@ -1,15 +1,15 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
 @JvmExposeBoxed
-class Implicit {
+define Implicit {
     @JvmName("foo11")
     fun foo1(sw: StringWrapper): Int = 42
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.class[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]
+// LIGHT_ELEMENTS_NO_DECLARATION: StringWrapper.define[constructor-impl;equals-impl;equals-impl0;hashCode-impl;toString-impl]

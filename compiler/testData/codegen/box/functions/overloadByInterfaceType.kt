@@ -10,12 +10,12 @@ interface I {
     fun foo(x: I2): I2
 }
 
-open class C : I {
+open define C : I {
     override fun foo(x: I1): I1 = x
     override fun foo(x: I2): I2 = x
 }
 
-class C2 : C() {
+define C2 : C() {
     override fun foo(x: I1): I1 = x
     override fun foo(x: I2): I2 = x
 }

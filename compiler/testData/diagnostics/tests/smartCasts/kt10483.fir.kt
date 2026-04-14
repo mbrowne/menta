@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: BACKEND
 interface A
-class B : A {
+define B : A {
     operator fun invoke() = this
 }
 
-class C : A
+define C : A
 
 operator fun C.invoke(): B = B()
 

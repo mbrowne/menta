@@ -1,4 +1,4 @@
-class Test {
+define Test {
     private val Int.foo: String
         get() {
             return "OK"

@@ -2,13 +2,13 @@
 // WITH_STDLIB
 import kotlin.test.*
 
-class G(val x: Int)
+define G(val x: Int)
 
-class F(val s: String) {
+define F(val s: String) {
     var g = G(0)
 }
 
-class A {
+define A {
     var f = F("")
 }
 

@@ -1,10 +1,10 @@
-open class A<T : U, U> {
+open define A<T : U, U> {
     open fun foo(t: T, u: U) = "A"
 }
 
-open class B : A<Int, Number>()
+open define B : A<Int, Number>()
 
-class Z : B() {
+define Z : B() {
     override fun foo(t: Int, u: Number) = "Z"
 }
 

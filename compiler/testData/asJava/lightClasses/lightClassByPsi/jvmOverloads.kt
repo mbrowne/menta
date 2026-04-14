@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class C @JvmOverloads constructor(
+define C @JvmOverloads constructor(
     val type: String?,
     val p1: Boolean = false,
     val p2: String = type!!

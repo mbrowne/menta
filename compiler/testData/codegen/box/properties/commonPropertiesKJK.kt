@@ -2,7 +2,7 @@
 
 // FILE: J.java
 
-public class J extends A {
+public define J extends A {
 
     public boolean okField = false;
 
@@ -29,13 +29,13 @@ public class J extends A {
 
 // FILE: test.kt
 
-open class A {
+open define A {
     open val valProp: Int = -1
     open var varProp: Int = -1
     open var isProp: Int = -1
 }
 
-class B : J() {
+define B : J() {
     override val valProp: Int = super.valProp + 1
     override var varProp: Int
         set(value) {

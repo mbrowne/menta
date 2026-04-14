@@ -2,9 +2,9 @@
 package one
 
 @Target(AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno
+annotation define Anno
 
-class C {
+define C {
     fun <@Anno T> foo(t: T) {
 
     }

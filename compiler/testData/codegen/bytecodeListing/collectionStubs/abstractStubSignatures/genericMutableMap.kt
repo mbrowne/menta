@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class GenericMutableMap<K, V> : MutableMap<K, V>
+abstract define GenericMutableMap<K, V> : MutableMap<K, V>

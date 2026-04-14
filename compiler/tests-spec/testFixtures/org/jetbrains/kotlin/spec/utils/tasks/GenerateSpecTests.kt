@@ -36,7 +36,7 @@ fun generateTests() {
             testClass<AbstractBlackBoxCodegenTestSpec> {
                 model(
                     relativeRootPath = "codegen/box",
-                    excludeDirs = listOf("helpers", "templates") + detectDirsWithTestsMapFileOnly("codegen/box"),
+                    excludeDirs = listOf("helpers", "templates", "mentaExcludedInheritance") + detectDirsWithTestsMapFileOnly("codegen/box"),
                 )
             }
         }

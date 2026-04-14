@@ -8,7 +8,7 @@ package api
 
 @RequiresOptIn(level = RequiresOptIn.Level.WARNING)
 @Retention(AnnotationRetention.BINARY)
-annotation class API
+annotation define API
 
 @API
 fun f() {}
@@ -79,7 +79,7 @@ private inline var privateInline3: Unit
         <!OPT_IN_USAGE!>f<!>()
     }
 
-internal class InternalClass {
+internal define InternalClass {
     inline fun privateInline4() {
         <!OPT_IN_USAGE!>f<!>()
     }

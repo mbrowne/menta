@@ -6,19 +6,19 @@
 // FILE: other/AClass.java
 
 package other;
-public class AClass extends PrivateSuper {}
+public define AClass extends PrivateSuper {}
 
 // FILE: other/BClass.java
 package other;
-public class BClass extends PrivateSuper {}
+public define BClass extends PrivateSuper {}
 
 // FILE: other/PrivateSuper.java
 package other;
-class PrivateSuper extends PublicSuper {}
+define PrivateSuper extends PublicSuper {}
 
 // FILE: other/PublicSuper.java
 package other;
-public class PublicSuper {}
+public define PublicSuper {}
 
 // FILE: box.kt
 package foo

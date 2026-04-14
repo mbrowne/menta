@@ -1,7 +1,7 @@
 // COMPILATION_ERRORS
 
 data annotation tailrec external noinline fun bar(data x: Int) {
-    data inline noinline class A
+    data inline noinline define A
 
     inline fun foo() {}
 
@@ -25,7 +25,7 @@ data annotation tailrec external noinline fun bar(data x: Int) {
 
     data
 
-    class Q
+    define Q
 }
 
 
@@ -46,7 +46,7 @@ fun foo2() {
 }
 
 
-public data inline class A {
+public data inline define A {
     val x: Int
     inline data set
     noinline get

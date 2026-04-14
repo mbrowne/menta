@@ -1,4 +1,4 @@
-class T4(
+define T4(
   val c1: Boolean,
   val c2: Boolean,
   val c3: Boolean,

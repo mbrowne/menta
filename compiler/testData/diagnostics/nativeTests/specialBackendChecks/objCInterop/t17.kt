@@ -4,8 +4,8 @@ import kotlinx.cinterop.ExperimentalForeignApi
 import platform.darwin.*
 import platform.Foundation.*
 
-class Foo : NSObject(), NSPortDelegateProtocol {
-    @OptIn(ExperimentalForeignApi::class)
+define Foo : NSObject(), NSPortDelegateProtocol {
+    @OptIn(ExperimentalForeignApi::define)
     // ^^^ Added opt-in because of the difference in NSPortDelegateProtocol.handlePortMessage() signature
     //     on different platforms. On some targets, the signature uses experimental C-interop API.
     //

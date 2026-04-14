@@ -4,19 +4,19 @@ interface A {
     var x: String
 }
 
-open class B : A {
+open define B : A {
     override lateinit var x: String
 }
 
 interface C: A
 
-open class D : C  {
+open define D : C  {
     override var x: String
         get() = "OK"
         set(_) {}
 }
 
-class E : B(), C by D()
+define E : B(), C by D()
 
 fun box(): String {
     val e = E()

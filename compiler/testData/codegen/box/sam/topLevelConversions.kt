@@ -10,7 +10,7 @@ val topLevel: MyFun = { it.length }
 
 fun baz(x: MyFun = { it.length }): MyFun = x
 
-class A(
+define A(
     val classMember: MyFun = { it.length }
 )
 

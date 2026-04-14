@@ -10,17 +10,17 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class BoxAny(val value: Any?) {
+value define BoxAny(val value: Any?) {
     val intValue: Int get() = value as Int
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class BoxInt(val value: Int)
+value define BoxInt(val value: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class BoxLong(val value: Long)
+value define BoxLong(val value: Long)
 
-class EmptyContinuation<T> : Continuation<T> {
+define EmptyContinuation<T> : Continuation<T> {
     override val context: CoroutineContext
         get() = EmptyCoroutineContext
 

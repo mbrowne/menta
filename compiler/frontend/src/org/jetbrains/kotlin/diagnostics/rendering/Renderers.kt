@@ -33,7 +33,7 @@ import org.jetbrains.kotlin.diagnostics.rendering.TabledDescriptorRenderer.newTe
 import org.jetbrains.kotlin.name.FqNameUnsafe
 import org.jetbrains.kotlin.name.Name
 import org.jetbrains.kotlin.platform.isCommon
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtClassOrObject
 import org.jetbrains.kotlin.psi.KtNamedDeclaration
 import org.jetbrains.kotlin.renderer.DescriptorRenderer
@@ -154,7 +154,7 @@ object Renderers {
     val RENDER_CLASS_OR_OBJECT = Renderer { classOrObject: KtClassOrObject ->
         val name = classOrObject.name?.let { " ${it.wrapIntoQuotes()}" } ?: ""
         when {
-            classOrObject !is KtClass -> "Object$name"
+            classOrObject !is KtDefine -> "Object$name"
             classOrObject.isInterface() -> "Interface$name"
             else -> "Class$name"
         }

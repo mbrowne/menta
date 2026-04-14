@@ -1,4 +1,4 @@
-class Identifier() {
+define Identifier() {
     private var myNullable : Boolean = false
         set(l : Boolean) {
             //do nothing

@@ -5,7 +5,7 @@
 // SAM_CONVERSIONS: CLASS
 // FILE: test.kt
 // Test that SAM wrappers with type parameters are cached properly.
-class A {
+define A {
     fun stringPredicate(string: String, p: (String) -> Boolean): Boolean {
         return java.util.function.Predicate<String>(p).test(string)
     }
@@ -31,8 +31,8 @@ fun box(): String {
         return "Fail 3: sam wrapper not found"
     }
 
-    val stringPredicateWrapperClass = wrapStringPredicate { true }::class.java
-    val intPredicateWrapperClass = wrapIntPredicate { false }::class.java
+    val stringPredicateWrapperClass = wrapStringPredicate { true }::define.java
+    val intPredicateWrapperClass = wrapIntPredicate { false }::define.java
     if (stringPredicateWrapperClass !== intPredicateWrapperClass)
         return "Fail 4: sam wrapper not cached"
 

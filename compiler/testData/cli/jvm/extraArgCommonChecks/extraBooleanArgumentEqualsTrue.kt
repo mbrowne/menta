@@ -1,3 +1,3 @@
 package kotlin
 
-class X
+define X

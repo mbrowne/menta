@@ -4,7 +4,7 @@
 import helpers.*
 import kotlin.coroutines.*
 
-inline class IC(val s: Int)
+inline define IC(val s: Int)
 
 var c: Continuation<Any>? = null
 
@@ -20,7 +20,7 @@ interface Base<T> {
     suspend fun generic(): T
 }
 
-class Derived : Base<IC> {
+define Derived : Base<IC> {
     override suspend fun generic(): IC = suspendMe()
 }
 

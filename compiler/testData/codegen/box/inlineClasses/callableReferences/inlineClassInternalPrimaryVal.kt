@@ -5,13 +5,13 @@
 import kotlin.test.assertEquals
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(internal val x: Int)
+value define Z(internal val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class L(internal val x: Long)
+value define L(internal val x: Long)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(internal val x: String)
+value define S(internal val x: String)
 
 fun box(): String {
     assertEquals(42, Z::x.get(Z(42)))

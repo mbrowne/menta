@@ -11,32 +11,32 @@ interface I {
     fun String.corge()
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class Simple<!> : I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define Simple<!> : I {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo() {}
 }
 
-class SameClass {
+define SameClass {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo() {}
     fun foo(s: String) {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class OverloadedMethods<!> : I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define OverloadedMethods<!> : I {
     <!NOTHING_TO_OVERRIDE!>override<!> fun bar(a: Int) {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class DefaultParameters<!> : I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define DefaultParameters<!> : I {
     <!NOTHING_TO_OVERRIDE!>override<!> fun baz(a: String) {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class VarargParameters<!> : I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define VarargParameters<!> : I {
     <!NOTHING_TO_OVERRIDE!>override<!> fun qux(a: String){}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FunctionalType<!> : I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FunctionalType<!> : I {
     <!NOTHING_TO_OVERRIDE!>override<!> fun quux(a: ()->Any){}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class ExtensionFunction<!>: I {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define ExtensionFunction<!>: I {
     <!NOTHING_TO_OVERRIDE!>override<!> fun Any.corge(){}
 }
 
@@ -44,19 +44,19 @@ interface Generic<T> {
     fun foo(t: T)
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class GenericOverride<!><R> : Generic<R> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define GenericOverride<!><R> : Generic<R> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo() {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class NonGenericOverride<!> : Generic<String> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define NonGenericOverride<!> : Generic<String> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo() {}
 }
 
-open class HasFinal {
+open define HasFinal {
     fun foo(s: String) {}
 }
 
-class ExtendsHasFinal {
+define ExtendsHasFinal {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo() {}
 }
 

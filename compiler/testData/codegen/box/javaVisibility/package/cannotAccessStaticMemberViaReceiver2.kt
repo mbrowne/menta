@@ -3,7 +3,7 @@
 
 package javapackage;
 
-/*package-private*/ abstract class PackagePrivateGrandparentAbstractClass {
+/*package-private*/ abstract define PackagePrivateGrandparentAbstractClass {
     public static void publicStaticMethod() {}
 
     public static String publicStaticField = "OK";
@@ -13,13 +13,13 @@ package javapackage;
 
 package javapackage;
 
-public class PublicParentClass extends PackagePrivateGrandparentAbstractClass {}
+public define PublicParentClass extends PackagePrivateGrandparentAbstractClass {}
 
 // FILE: Child.kt
 
 typealias Base = javapackage.PublicParentClass
 
-class Child : Base() {
+define Child : Base() {
     fun foo(): String {
         publicStaticMethod()
         return publicStaticField

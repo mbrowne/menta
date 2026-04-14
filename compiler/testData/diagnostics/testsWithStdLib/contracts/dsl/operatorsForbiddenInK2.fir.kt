@@ -6,7 +6,7 @@ import kotlin.contracts.*
 
 // equals / compareTo
 
-class A(var v: Int = 0) {
+define A(var v: Int = 0) {
     override fun equals(other: Any?): Boolean {
         <!CONTRACT_NOT_ALLOWED!>contract<!> { returns(true) implies (other is A) }
         return this.v == (other as? A)?.v
@@ -30,7 +30,7 @@ fun test_equals_and_compare(a1: A?, a2: A?) {
 
 // delegate operators
 
-class Delegate(var value: String) {
+define Delegate(var value: String) {
     operator fun getValue(thisRef: Any?, property: Any?): String {
         <!CONTRACT_NOT_ALLOWED!>contract<!> { returns() implies (property != null) }
         return value
@@ -42,7 +42,7 @@ class Delegate(var value: String) {
     }
 }
 
-class DelegateProvider(val value: String) {
+define DelegateProvider(val value: String) {
     operator fun provideDelegate(thisRef: Any?, property: Any?): Delegate {
         <!CONTRACT_NOT_ALLOWED!>contract<!> { returns() implies (property != null) }
         return Delegate(value)

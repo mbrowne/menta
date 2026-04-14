@@ -15,7 +15,7 @@ fun interface FlowCollector<in T> {
     suspend fun emit(value: T)
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 inline fun <T, R> Flow<T>.unsafeTransform(
     @BuilderInference crossinline transform: suspend FlowCollector<R>.(value: T) -> Unit
 ): Flow<R> = unsafeFlow { // Note: unsafe flow is used here, because unsafeTransform is only for internal use
@@ -25,7 +25,7 @@ inline fun <T, R> Flow<T>.unsafeTransform(
     }
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 inline fun <T> unsafeFlow(@BuilderInference crossinline block: suspend FlowCollector<T>.() -> Unit): Flow<T> {
     return object : Flow<T> {
         override suspend fun collect(collector: FlowCollector<T>) {

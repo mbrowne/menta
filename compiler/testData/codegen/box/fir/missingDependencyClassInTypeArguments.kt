@@ -4,11 +4,11 @@
 
 // MODULE: lib1
 // FILE: Some.kt
-class Some<T>
+define Some<T>
 
 // MODULE: lib2(lib1)
 // FILE: lib.kt
-class Inv<T>
+define Inv<T>
 
 interface Base {
     val x: Inv<Some<*>>

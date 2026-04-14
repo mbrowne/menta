@@ -1,6 +1,6 @@
 package test
 
-annotation class A
-annotation class B
+annotation define A
+annotation define B
 
-enum class E(@[A] val x: String, @[B] val y: Int)
+enum define E(@[A] val x: String, @[B] val y: Int)

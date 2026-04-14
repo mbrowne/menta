@@ -6,7 +6,7 @@ interface B<T> {
     fun foo(t: T) = "B"
 }
 
-class Z : A<Int>, B<Int> {
+define Z : A<Int>, B<Int> {
     override fun foo(t: Int) = "Z"
 }
 

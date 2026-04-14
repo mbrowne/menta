@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 package test
 
-class ClassValParams(
+define ClassValParams(
   val pr1: String,
   internal val pr2 : Int,
   private val pr3: Long,

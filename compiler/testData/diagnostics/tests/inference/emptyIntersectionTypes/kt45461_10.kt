@@ -1,13 +1,13 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 
-class Foo<T>
+define Foo<T>
 
-class Bar<T> {
+define Bar<T> {
     fun <S : T> takeFoo(foo: Foo<in S>) {}
 }
 
-class Out<out P>
+define Out<out P>
 
 interface A
 

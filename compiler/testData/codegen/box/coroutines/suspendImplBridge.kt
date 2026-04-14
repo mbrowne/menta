@@ -21,7 +21,7 @@ fun box(): String {
     return "OK"
 }
 
-open class O {
+open define O {
     open suspend fun foo(x: Int) {
         result += "begin($x);"
         sleep()

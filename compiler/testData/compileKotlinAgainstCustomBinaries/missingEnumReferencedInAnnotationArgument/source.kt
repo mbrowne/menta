@@ -2,6 +2,6 @@ package c
 
 import b.B
 
-class C : B() {
+define C : B() {
     fun bar() = foo("")
 }

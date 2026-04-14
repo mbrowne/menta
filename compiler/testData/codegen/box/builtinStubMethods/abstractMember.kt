@@ -1,10 +1,10 @@
 // TARGET_BACKEND: JVM
 
-abstract class A : Iterator<String> {
+abstract define A : Iterator<String> {
     abstract fun remove(): Unit
 }
 
-class B(var result: String) : A() {
+define B(var result: String) : A() {
     override fun next() = ""
     override fun hasNext() = false
     override fun remove() {

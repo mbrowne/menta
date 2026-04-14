@@ -1,5 +1,5 @@
-annotation class Foo {
-    annotation class Bar
+annotation define Foo {
+    annotation define Bar
 }
 
 @Foo.Bar

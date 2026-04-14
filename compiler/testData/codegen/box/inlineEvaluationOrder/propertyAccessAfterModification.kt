@@ -1,7 +1,7 @@
 // FILE: lib.kt
 package foo
 
-class A {
+define A {
     var x = 23
 }
 

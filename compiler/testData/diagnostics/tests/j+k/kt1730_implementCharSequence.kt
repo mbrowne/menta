@@ -3,7 +3,7 @@
 // KT-1730 Method which has been implemented by Java is recognized to be abstract.
 
 // FILE: C.java
-public class C implements java.lang.CharSequence {
+public define C implements java.lang.CharSequence {
     @Override
     public int length() {
         return 3;
@@ -23,6 +23,6 @@ public class C implements java.lang.CharSequence {
 }
 
 // FILE: T.kt
-class T : C()
+define T : C()
 
 /* GENERATED_FIR_TAGS: classDeclaration, javaType */

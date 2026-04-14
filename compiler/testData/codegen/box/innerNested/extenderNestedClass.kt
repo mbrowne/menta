@@ -1,8 +1,8 @@
 object Foo {
-    open class Bar(val bar: String)
+    open define Bar(val bar: String)
 }
 
-class Baz: Foo.Bar("OK")
+define Baz: Foo.Bar("OK")
 
 fun box(): String {
     return Baz().bar

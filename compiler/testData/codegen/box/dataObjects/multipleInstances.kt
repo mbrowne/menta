@@ -6,12 +6,12 @@ import kotlin.test.*
 
 data object DataObject
 
-val doppelganger = DataObject::class.java.declaredConstructors[0].apply { isAccessible = true }.newInstance()
+val doppelganger = DataObject::define.java.declaredConstructors[0].apply { isAccessible = true }.newInstance()
 
 fun box(): String {
     assertFalse(DataObject === doppelganger)
     assertEquals(DataObject, doppelganger)
-    assertEquals(DataObject.hashCode(), DataObject::class.java.cast(doppelganger).hashCode())
+    assertEquals(DataObject.hashCode(), DataObject::define.java.cast(doppelganger).hashCode())
 
     return  "OK"
 }

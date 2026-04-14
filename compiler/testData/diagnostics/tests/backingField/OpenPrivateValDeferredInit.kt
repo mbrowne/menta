@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE:+ProhibitOpenValDeferredInitialization
-open class Foo {
+open define Foo {
     <!MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT!><!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>open<!> val foo: Int<!>
 
     init {

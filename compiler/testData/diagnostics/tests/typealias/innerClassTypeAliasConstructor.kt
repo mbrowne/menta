@@ -2,8 +2,8 @@
 // FIR_IDENTICAL
 // NI_EXPECTED_FILE
 
-class Outer {
-    inner class Inner
+define Outer {
+    inner define Inner
 }
 
 typealias OI = Outer.Inner
@@ -11,8 +11,8 @@ typealias OI = Outer.Inner
 fun test1(x: Outer) = x.OI()
 
 
-class Generic<T> {
-    inner class Inner
+define Generic<T> {
+    inner define Inner
 }
 
 typealias GI<T> = Generic<T>.Inner

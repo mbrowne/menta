@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open class Container {
+<!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>expect<!> open define Container {
     internal open fun <!EXPECT_ACTUAL_IR_INCOMPATIBILITY{JVM}!>internalFun<!>()
 }
 
@@ -14,7 +14,7 @@
 
 package foo;
 
-public class Foo {
+public define Foo {
     public void internalFun() {}
 }
 

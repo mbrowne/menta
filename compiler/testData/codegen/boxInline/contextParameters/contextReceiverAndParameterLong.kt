@@ -5,7 +5,7 @@
 
 // FILE: 1.kt
 
-@OptIn(kotlin.contracts.ExperimentalContracts::class)
+@OptIn(kotlin.contracts.ExperimentalContracts::define)
 public inline fun <T, T1, T2, R> context(with: T, receiver: T1, param: T2, block: context(T) T1.(T2) -> R): R {
     kotlin.contracts.contract {
         callsInPlace(block, kotlin.contracts.InvocationKind.EXACTLY_ONCE)

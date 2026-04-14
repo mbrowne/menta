@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter, +ValueClassesSecondaryConstructorWithBody
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: Int> private constructor(val i: T) {
+value define IC<T: Int> private constructor(val i: T) {
     constructor() : this(0 as T) {
         counter += 1
     }

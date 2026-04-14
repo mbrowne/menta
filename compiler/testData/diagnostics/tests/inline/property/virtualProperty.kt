@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-final class FinalProperty {
+final define FinalProperty {
     inline val valProp: Int
         get() = 1
 
@@ -17,7 +17,7 @@ final class FinalProperty {
 }
 
 
-open class OpenProperty {
+open define OpenProperty {
     <!DECLARATION_CANT_BE_INLINED!>inline<!> open val valProp: Int
         get() = 1
 

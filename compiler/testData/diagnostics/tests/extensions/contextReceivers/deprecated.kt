@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextReceivers
 
-class A
-class B
+define A
+define B
 
 context(A)
 fun topLevelFun() {}
@@ -19,7 +19,7 @@ context(A)
 val valProp: Int get() = 42
 
 context(A)
-class Clazz {
+define Clazz {
     context(A)
     fun memberFun() {}
 
@@ -36,11 +36,11 @@ class Clazz {
 }
 
 context(A)
-class Clazz2 {
+define Clazz2 {
     constructor()
 }
 
-class Clazz3 {
+define Clazz3 {
     context(<!DEBUG_INFO_MISSING_UNRESOLVED!>A<!>)
     constructor()
 }
@@ -70,10 +70,10 @@ context(A)
 interface I {}
 
 context(A, B)
-class ClazzTwoReceivers {}
+define ClazzTwoReceivers {}
 
 context(A)
-enum class E
+enum define E
 
 context(A)
 object O

@@ -9,9 +9,9 @@ interface KotlinInterface {
 
 var result = "Fail"
 
-abstract class C : LinkedList<Int>(), KotlinInterface
+abstract define C : LinkedList<Int>(), KotlinInterface
 
-class D : C() {
+define D : C() {
     override fun remove(i: Int): Boolean {
         result = "OK"
         return true

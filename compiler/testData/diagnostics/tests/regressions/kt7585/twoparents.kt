@@ -6,11 +6,11 @@ interface X {
 
 interface Y
 
-class A: X, Y
+define A: X, Y
 
-class B: X, Y
+define B: X, Y
 
-class Out<out T: X>(val x: T)
+define Out<out T: X>(val x: T)
 
 fun bar(a: Out<A>, b: Out<B>, f: Boolean): Int {
     val x = if (f) a else b

@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE
 fun foo() {
-    open class Local {
+    open define Local {
         val my: Int = 2
             get() = field
     }

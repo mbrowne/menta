@@ -3,7 +3,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
 interface Base
-class Foo : Base
+define Foo : Base
 
 fun <T : Base> myRun(action: () -> T): T = action()
 

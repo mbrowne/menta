@@ -5,11 +5,11 @@
 
 package test
 
-expect open class A() {
+expect open define A() {
     val a: String.() -> String
 }
 
-class B : A() {
+define B : A() {
     val b: (String) -> String by this::a
 }
 
@@ -18,7 +18,7 @@ class B : A() {
 
 package test
 
-actual open class A {
+actual open define A {
     actual val a: String.() -> String = { this }
 }
 

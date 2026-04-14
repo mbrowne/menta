@@ -6,7 +6,7 @@ fun foo2(p: Int?): Boolean {
     return 1 == M<Int>(p)?.nulled()
 }
 
-class M<T: Any>(val z: T?) {
+define M<T: Any>(val z: T?) {
     fun nulled(): T? = z
 }
 

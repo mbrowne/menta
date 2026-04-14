@@ -7,13 +7,13 @@
 package test
 
 @Repeatable
-annotation class A(val value: String)
+annotation define A(val value: String)
 @Repeatable
-annotation class B(val value: String)
+annotation define B(val value: String)
 @Repeatable
-annotation class C(val value: String)
+annotation define C(val value: String)
 
-annotation class Z(val value: String)
+annotation define Z(val value: String)
 
 // Expected annotation order (as in Java): all @A, then all @B, then @Z, then all @C.
 @A("a1")
@@ -23,4 +23,4 @@ annotation class Z(val value: String)
 @C("c1")
 @C("c2")
 @B("b2")
-class Test
+define Test

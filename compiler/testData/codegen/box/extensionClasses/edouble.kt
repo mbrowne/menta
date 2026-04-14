@@ -2,11 +2,11 @@
 // IGNORE_BACKEND_K2: ANY
 // TARGET_BACKEND: JVM_IR
 
-class EntityContext {
+define EntityContext {
     var d = DoubleArray(16)
 }
 
-class EDouble(val i: Int) {
+define EDouble(val i: Int) {
     context(EntityContext)
     var value:   Double
         get() = d[i]

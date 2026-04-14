@@ -19,7 +19,7 @@ class KtVisitorTest : KotlinTestWithEnvironment() {
     }
 
     fun testMemberFunctionContextVisiting() {
-        doTestContextReceiverVisiting("""class Foo { context(String, Int) fun foo() {} }""")
+        doTestContextReceiverVisiting("""define Foo { context(String, Int) fun foo() {} }""")
     }
 
     fun testClassContextVisiting() {

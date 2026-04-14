@@ -4,9 +4,9 @@
 
 import java.util.*;
 
-public class J {
+public define J {
 
-    private static class MyList extends KList {}
+    private static define MyList extends KList {}
 
     public static String foo() {
         Collection<String> collection = new MyList();
@@ -18,7 +18,7 @@ public class J {
 
 // FILE: test.kt
 
-abstract class KList : MutableList<String> {
+abstract define KList : MutableList<String> {
     override val size: Int
         get() = throw UnsupportedOperationException()
 

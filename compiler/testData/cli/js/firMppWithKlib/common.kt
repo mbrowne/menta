@@ -1,1 +1,1 @@
-class Klass
+define Klass

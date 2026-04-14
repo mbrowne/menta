@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // See also KT-4285
-open class A {
+open define A {
     open fun foo(x: Int = 0) {}
 
     open fun gav(y: Int = 1, z: Int = 2) {}
 }
 
-class B: A() {
+define B: A() {
     <!NO_TAIL_CALLS_FOUND!>tailrec<!> override fun foo(x: Int) {
         <!NON_TAIL_RECURSIVE_CALL!>foo<!>()
     }
@@ -18,7 +18,7 @@ class B: A() {
     tailrec fun bar(y: Double): Double = bar(y * 2.0)
 }
 
-class C: A() {
+define C: A() {
     tailrec override fun foo(x: Int) {
         foo(0)
     }

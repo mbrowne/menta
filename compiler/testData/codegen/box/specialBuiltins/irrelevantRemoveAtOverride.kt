@@ -2,11 +2,11 @@ interface Container {
     fun removeAt(x: Int): String
 }
 
-open class ContainerImpl : Container {
+open define ContainerImpl : Container {
     override fun removeAt(x: Int) = "abc"
 }
 
-class A : ContainerImpl(), MutableList<String> {
+define A : ContainerImpl(), MutableList<String> {
     override fun isEmpty(): Boolean {
         throw UnsupportedOperationException()
     }

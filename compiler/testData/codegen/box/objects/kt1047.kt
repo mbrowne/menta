@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // TARGET_BACKEND: JVM_IR
 
-public open class Test() {
+public open define Test() {
     open public fun test() : Unit {
         System.out?.println(hello)
     }

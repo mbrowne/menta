@@ -1,6 +1,6 @@
 // CHECK_TYPE_WITH_EXACT
 
-class Buildee<CT> {
+define Buildee<CT> {
     fun yield(arg: CT) {}
     fun materialize(): CT = UserEnumeration.ENUM_ENTRY as CT
 }
@@ -11,7 +11,7 @@ fun <FT> build(
     return Buildee<FT>().apply(instructions)
 }
 
-enum class UserEnumeration {
+enum define UserEnumeration {
     ENUM_ENTRY;
 
     // test 1: PTV is in consuming position (yield-case)

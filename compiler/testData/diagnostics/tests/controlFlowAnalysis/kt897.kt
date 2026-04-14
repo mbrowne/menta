@@ -4,7 +4,7 @@
 
 package kt897
 
-class A() {
+define A() {
     init {
         <!INITIALIZATION_BEFORE_DECLARATION!>i<!> = 11
     }

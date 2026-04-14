@@ -5,15 +5,15 @@
 import kotlin.reflect.KClass
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val args: Array<KClass<*>>)
+annotation define Ann(val args: Array<KClass<*>>)
 
-class O
-class K
+define O
+define K
 
-@Ann(arrayOf(O::class, K::class)) class MyClass
+@Ann(arrayOf(O::define, K::define)) define MyClass
 
 fun box(): String {
-    val args = MyClass::class.java.getAnnotation(Ann::class.java).args
+    val args = MyClass::define.java.getAnnotation(Ann::define.java).args
     val argName1 = args[0].simpleName ?: "fail 1"
     val argName2 = args[1].simpleName ?: "fail 2"
     return argName1 + argName2

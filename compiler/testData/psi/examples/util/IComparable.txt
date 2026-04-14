@@ -9,7 +9,7 @@ KtFile: IComparable.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IComparable')
     TYPE_PARAMETER_LIST

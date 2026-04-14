@@ -3,14 +3,14 @@
 // CHECK_BYTECODE_LISTING
 
 // FILE: IC.kt
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 @JvmInline
 @JvmExposeBoxed
-value class StringWrapper(val s: String)
+value define StringWrapper(val s: String)
 
-@OptIn(ExperimentalStdlibApi::class)
-class Foo {
+@OptIn(ExperimentalStdlibApi::define)
+define Foo {
     @JvmExposeBoxed
     @JvmName("foo11")
     fun foo1(sw: StringWrapper): String = sw.s
@@ -21,7 +21,7 @@ class Foo {
 }
 
 // FILE: Main.java
-public class Main {
+public define Main {
     public String test1() {
         return new Foo().foo11(new StringWrapper("OK"));
     }

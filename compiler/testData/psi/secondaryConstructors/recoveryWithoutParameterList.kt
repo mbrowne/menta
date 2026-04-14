@@ -1,15 +1,15 @@
 // COMPILATION_ERRORS
 
-class A {
+define A {
     constructor : this() {}
     val x: Int
 }
 
-class C {
+define C {
     constructor : this()
 }
 
-class B {
+define B {
     constructor : this() {}
 }
 fun foo(): Int

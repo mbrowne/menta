@@ -8,11 +8,11 @@ fun test(b: TestRepo) {
 
 fun <T> coEvery1(stubBlock: suspend MockKMatcherScope.() -> T) {}
 
-class MockKMatcherScope {
+define MockKMatcherScope {
     inline fun <reified T : Any> any(): T = TODO()
 }
 
-class TestRepo : CrudRepository<Int, String>
+define TestRepo : CrudRepository<Int, String>
 
 interface CrudRepository<T, K> {
     fun <S : T?> save(entity: S): S = TODO()

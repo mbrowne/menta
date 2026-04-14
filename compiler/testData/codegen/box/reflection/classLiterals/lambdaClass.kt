@@ -1,14 +1,14 @@
 // KT-33992
 // NO_CHECK_LAMBDA_INLINING
 // FILE: lib.kt
-class P<T>(val a: T, val b: T)
+define P<T>(val a: T, val b: T)
 
 inline fun foo(x: () -> Any) = P(x(), x())
 
 // FILE: main.kt
 fun box(): String {
     val p1 = foo {
-        class C
+        define C
         C()
     }
     val p2 = foo {
@@ -21,8 +21,8 @@ fun box(): String {
     val a = p2.a
     val b = p2.b
 
-    if (x::class != y::class) return "FAIL 1"
-    if (a::class != b::class) return "FAIL 2"
+    if (x::define != y::define) return "FAIL 1"
+    if (a::define != b::define) return "FAIL 2"
 
     return "OK"
 }

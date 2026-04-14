@@ -5,7 +5,7 @@ import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED
 import kotlin.coroutines.intrinsics.suspendCoroutineUninterceptedOrReturn
 
-class MyTest {
+define MyTest {
     suspend fun act(value: String): String = suspendCoroutineUninterceptedOrReturn {
         it.resume(value)
         COROUTINE_SUSPENDED

@@ -61,21 +61,14 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABBREVIATED_NOTHI
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABBREVIATED_NOTHING_RETURN_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSENCE_OF_PRIMARY_CONSTRUCTOR_FOR_VALUE_CLASS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_DELEGATED_PROPERTY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_FUNCTION_IN_NON_ABSTRACT_CLASS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_FUNCTION_WITH_BODY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_MEMBER_INCORRECTLY_DELEGATED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_MEMBER_NOT_IMPLEMENTED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_MEMBER_NOT_IMPLEMENTED_BY_ENUM_ENTRY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_PROPERTY_WITHOUT_TYPE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_PROPERTY_WITH_GETTER
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_PROPERTY_WITH_INITIALIZER
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_PROPERTY_WITH_SETTER
+// import removed: abstract modifier no longer supported
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_SUPER_CALL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ABSTRACT_SUPER_CALL_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ACCESSOR_FOR_DELEGATED_PROPERTY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT
@@ -132,8 +125,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ASSIGNMENT_TYPE_M
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ASSIGN_OPERATOR_AMBIGUITY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ATOMIC_REF_CALL_ARGUMENT_WITHOUT_CONSISTENT_IDENTITY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ATOMIC_REF_WITHOUT_CONSISTENT_IDENTITY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.BACKING_FIELD_FOR_DELEGATED_PROPERTY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.BACKING_FIELD_IN_INTERFACE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.BOUND_ON_TYPE_ALIAS_PARAMETER_NOT_ALLOWED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.BREAK_OR_CONTINUE_JUMPS_ACROSS_FUNCTION_BOUNDARY
@@ -189,11 +180,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONFUSING_BRANCH_
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONSTRUCTOR_IN_INTERFACE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONSTRUCTOR_IN_OBJECT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONSTRUCTOR_OR_SUPERTYPE_ON_TYPEALIAS_WITH_TYPE_PROJECTION
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONST_VAL_WITHOUT_INITIALIZER
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONST_VAL_WITH_DELEGATE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONST_VAL_WITH_GETTER
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONST_VAL_WITH_NON_CONST_INITIALIZER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONTEXTUAL_OVERLOAD_SHADOWED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONTEXT_CLASS_OR_CONSTRUCTOR
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.CONTEXT_PARAMETERS_WITH_BACKING_FIELD
@@ -227,12 +213,12 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DEFAULT_VALUE_NOT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DEFINITELY_NON_NULLABLE_AS_REIFIED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATED_PROPERTY_INSIDE_VALUE_CLASS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATED_PROPERTY_IN_INTERFACE
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATED_PROPERTY_IN_INTERFACE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATE_SPECIAL_FUNCTION_AMBIGUITY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATE_SPECIAL_FUNCTION_MISSING
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATE_SPECIAL_FUNCTION_RETURN_TYPE_MISMATCH
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATION_IN_INTERFACE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATION_NOT_TO_INTERFACE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DELEGATION_SUPER_CALL_IN_ENUM_CONSTRUCTOR
@@ -274,6 +260,8 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.DYNAMIC_UPPER_BOU
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ELSE_MISPLACED_IN_WHEN
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_CHARACTER_LITERAL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_RANGE
+import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS
+import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ROLE_PLAYER_RESOLVES_TO_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ENUM_CLASS_CONSTRUCTOR_CALL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ENUM_ENTRY_AS_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EQUALITY_NOT_APPLICABLE
@@ -328,15 +316,14 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_ACTUAL_INC
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_ACTUAL_OPT_IN_ANNOTATION
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_CLASS_AS_FUNCTION
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_PROPERTY_WITH_EXPLICIT_BACKING_FIELD
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_PROPERTY_WITH_EXPLICIT_BACKING_FIELD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_REFINEMENT_ANNOTATION_MISSING
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPECT_REFINEMENT_ANNOTATION_WRONG_TARGET
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_BACKING_FIELD_IN_ABSTRACT_PROPERTY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_BACKING_FIELD_IN_EXTENSION
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_BACKING_FIELD_IN_INTERFACE
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_BACKING_FIELD_IN_EXTENSION
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_BACKING_FIELD_IN_INTERFACE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_DELEGATION_CALL_REQUIRED
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_FIELD_MUST_BE_INITIALIZED
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_FIELD_VISIBILITY_MUST_BE_LESS_PERMISSIVE
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_FIELD_MUST_BE_INITIALIZED
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_FIELD_VISIBILITY_MUST_BE_LESS_PERMISSIVE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPOSED_FUNCTION_RETURN_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPOSED_PACKAGE_PRIVATE_TYPE_FROM_INTERNAL_WARNING
@@ -356,8 +343,7 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXPRESSION_OF_NUL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENDING_AN_ANNOTATION_CLASS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENSION_FUNCTION_SHADOWED_BY_MEMBER_PROPERTY_WITH_INVOKE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENSION_IN_CLASS_REFERENCE_NOT_ALLOWED
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENSION_PROPERTY_WITH_BACKING_FIELD
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENSION_PROPERTY_WITH_BACKING_FIELD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EXTENSION_SHADOWED_BY_MEMBER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FIELD_INITIALIZER_TYPE_MISMATCH
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FINAL_SUPERTYPE
@@ -372,14 +358,10 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUNCTION_CALL_EXP
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUNCTION_DECLARATION_WITH_NO_NAME
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUNCTION_EXPECTED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUNCTION_TYPE_OF_TOO_LARGE_ARITY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_WITH_SUSPEND_FUNCTION
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.GENERIC_QUALIFIER_ON_CONSTRUCTOR_CALL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.GENERIC_THROWABLE_SUBCLASS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.HAS_NEXT_FUNCTION_AMBIGUITY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.HAS_NEXT_FUNCTION_NONE_APPLICABLE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.HAS_NEXT_FUNCTION_TYPE_MISMATCH
@@ -425,7 +407,7 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCOMPATIBLE_ENUM
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCOMPATIBLE_MODIFIERS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCOMPATIBLE_TYPES
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCOMPATIBLE_TYPES_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCONSISTENT_BACKING_FIELD_TYPE
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCONSISTENT_BACKING_FIELD_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCONSISTENT_PARAMETER_TYPES_IN_OF_OVERLOADS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCONSISTENT_RETURN_TYPES_IN_OF_OVERLOADS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.INCONSISTENT_SUSPEND_IN_OF_OVERLOADS
@@ -496,8 +478,7 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_INTRINSI
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_INTRINSIC_CALL_ON_NON_ACCESSIBLE_PROPERTY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_INTRINSIC_CALL_ON_NON_LATEINIT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_INTRINSIC_CALL_ON_NON_LITERAL
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_NULLABLE_BACKING_FIELD
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_PROPERTY_WITHOUT_TYPE
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LATEINIT_NULLABLE_BACKING_FIELD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LEAKED_IN_PLACE_LAMBDA
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LESS_VISIBLE_TYPE_ACCESS_IN_INLINE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.LESS_VISIBLE_TYPE_IN_INLINE_ACCESSED_SIGNATURE
@@ -542,14 +523,10 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MULTIPLE_LABELS_A
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MULTIPLE_VARARG_OVERLOADS_OF_OPERATOR_OF
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MULTIPLE_VARARG_PARAMETERS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MULTI_FIELD_VALUE_CLASS_PRIMARY_CONSTRUCTOR_DEFAULT_PARAMETER
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_WARNING
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUST_BE_INITIALIZED_WARNING
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.MUTABLE_PROPERTY_WITH_CAPTURED_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NAMED_ARGUMENTS_NOT_ALLOWED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NAMED_CONTEXT_PARAMETER_IN_FUNCTION_TYPE
@@ -571,7 +548,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_ASCENDING_VER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_FINAL_MEMBER_IN_FINAL_CLASS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_FINAL_MEMBER_IN_OBJECT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_FINAL_PROPERTY_WITH_EXPLICIT_BACKING_FIELD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_INTERNAL_PUBLISHED_API
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_LOCAL_RETURN_NOT_ALLOWED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.NON_LOCAL_SUSPENSION_POINT
@@ -671,22 +647,14 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRE_RELEASE_CLASS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIMARY_CONSTRUCTOR_DELEGATION_CALL_EXPECTED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIVATE_CLASS_MEMBER_FROM_INLINE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIVATE_FUNCTION_WITH_NO_BODY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIVATE_PROPERTY_IN_INTERFACE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIVATE_SETTER_FOR_OPEN_PROPERTY
+// import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PRIVATE_SETTER_FOR_OPEN_PROPERTY // Removed (Menta has no open/abstract)
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROJECTION_IN_IMMEDIATE_ARGUMENT_TO_SUPERTYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROJECTION_IN_TYPE_OF_ANNOTATION_MEMBER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROJECTION_ON_NON_CLASS_TYPE_ARGUMENT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_FIELD_DECLARATION_MISSING_INITIALIZER
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_INITIALIZER_IN_INTERFACE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_INITIALIZER_NO_BACKING_FIELD
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_INITIALIZER_WITH_EXPLICIT_FIELD_DECLARATION
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_TYPE_MISMATCH_BY_DELEGATION
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_TYPE_MISMATCH_ON_INHERITANCE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_TYPE_MISMATCH_ON_OVERRIDE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_WITH_BACKING_FIELD_INSIDE_VALUE_CLASS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_WITH_EXPLICIT_FIELD_AND_ACCESSORS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROPERTY_WITH_NO_TYPE_NO_INITIALIZER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROTECTED_CALL_FROM_PUBLIC_INLINE_ERROR
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROTECTED_CONSTRUCTOR_CALL_FROM_PUBLIC_INLINE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PROTECTED_CONSTRUCTOR_NOT_IN_SUPER_CALL
@@ -699,7 +667,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_ANNOTAT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_ANNOTATION_TARGET
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_CALL_OF_CONVERSION_METHOD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_ELSE_IN_WHEN
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_EXPLICIT_BACKING_FIELD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_INTERPOLATION_PREFIX
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_LABEL_WARNING
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.REDUNDANT_MODALITY_MODIFIER
@@ -753,7 +720,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SELF_CALL_IN_NEST
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SENSELESS_COMPARISON
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SENSELESS_NULL_IN_WHEN
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SETTER_PROJECTED_OUT
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SINGLETON_IN_SUPERTYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SINGLE_ANONYMOUS_FUNCTION_WITH_NAME
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.SMARTCAST_IMPOSSIBLE
@@ -795,7 +761,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_ARGUMENTS_NO
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_ARGUMENTS_NOT_ALLOWED_WARNING
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_ARGUMENTS_REDUNDANT_IN_SUPER_QUALIFIER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_ARGUMENT_ON_TYPED_VALUE_CLASS_EQUALS
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_CANT_BE_USED_FOR_CONST_VAL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_INTERSECTION_AS_REIFIED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.TYPE_MISMATCH
@@ -821,7 +786,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNINITIALIZED_PAR
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNINITIALIZED_VARIABLE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNNAMED_DELEGATED_PROPERTY
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNNAMED_VAR_PROPERTY
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNNECESSARY_LATEINIT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNNECESSARY_NOT_NULL_ASSERTION
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNNECESSARY_SAFE_CALL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.UNREACHABLE_CODE
@@ -878,7 +842,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAL_OR_VAR_ON_LOO
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAL_OR_VAR_ON_SECONDARY_CONSTRUCTOR_PARAMETER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAL_REASSIGNMENT
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAL_REASSIGNMENT_VIA_BACKING_FIELD_ERROR
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAL_WITH_SETTER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VARARG_OUTSIDE_PARENTHESES
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VARIABLE_EXPECTED
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VARIABLE_INITIALIZER_IS_REDUNDANT
@@ -889,7 +852,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_ANNOTATION_PA
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_IMPLEMENTED_BY_INHERITED_VAL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_OVERRIDDEN_BY_VAL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_OVERRIDDEN_BY_VAL_BY_DELEGATION
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_PROPERTY_WITH_EXPLICIT_BACKING_FIELD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_TYPE_MISMATCH_ON_INHERITANCE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VAR_TYPE_MISMATCH_ON_OVERRIDE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.VERSION_OVERLOADS_TOO_COMPLEX_EXPRESSION
@@ -906,7 +868,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_ANNOTATION_
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_CONDITION_SUGGEST_GUARD
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_EXTENSION_FUNCTION_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_EXTENSION_FUNCTION_TYPE_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_GETTER_RETURN_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_INVOCATION_KIND
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_LONG_SUFFIX
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_MODIFIER_CONTAINING_DECLARATION
@@ -914,8 +875,6 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_MODIFIER_TA
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_NUMBER_OF_TYPE_ARGUMENTS
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_NUMBER_OF_TYPE_ARGUMENTS_IN_LOCAL_CLASS_IN_LHS_WARNING
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_NUMBER_OF_TYPE_ARGUMENTS_WARNING
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_SETTER_PARAMETER_TYPE
-import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.WRONG_SETTER_RETURN_TYPE
 import org.jetbrains.kotlin.fir.symbols.impl.FirCallableSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirValueParameterSymbol
 import org.jetbrains.kotlin.fir.types.renderReadable
@@ -1125,17 +1084,12 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
         // Super
         map.put(SUPER_IS_NOT_AN_EXPRESSION, "'super' cannot be a callee.")
         map.put(SUPER_NOT_AVAILABLE, "No supertypes are accessible in this context.")
-        map.put(ABSTRACT_SUPER_CALL, "Abstract member cannot be accessed directly.")
-        map.put(
-            ABSTRACT_SUPER_CALL_WARNING,
-            "Access to abstract fake override member is deprecated. See https://youtrack.jetbrains.com/issue/KT-49017."
-        )
         map.put(
             INSTANCE_ACCESS_BEFORE_SUPER_CALL,
             "Cannot access ''{0}'' before the instance has been initialized.",
             TO_STRING
         )
-        map.put(CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS, "Cannot create an instance of an abstract class.")
+        
         map.put(NO_CONSTRUCTOR, "This type does not have a constructor.")
         map.put(FUNCTION_CALL_EXPECTED, "Function invocation ''{0}({1})'' expected.", TO_STRING, FUNCTION_PARAMETERS)
         map.put(
@@ -2322,7 +2276,7 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             VALUE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER,
             "Value class primary constructor must only have final read-only ('val') property parameters."
         )
-        map.put(PROPERTY_WITH_BACKING_FIELD_INSIDE_VALUE_CLASS, "Value class cannot have properties with backing fields.")
+        
         map.put(DELEGATED_PROPERTY_INSIDE_VALUE_CLASS, "Value class cannot have delegated properties.")
         map.put(VALUE_CLASS_HAS_INAPPLICABLE_PARAMETER_TYPE, "Value class cannot have value parameter of type ''{0}''.", TO_STRING)
         map.put(VALUE_CLASS_CANNOT_IMPLEMENT_INTERFACE_BY_DELEGATION, "Value class cannot implement an interface by delegation.")
@@ -2471,36 +2425,7 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             DECLARATION_NAME,
         )
 
-        map.put(
-            ABSTRACT_MEMBER_NOT_IMPLEMENTED,
-            "{0} is not abstract and does not implement abstract {1}",
-            RENDER_CLASS_OR_OBJECT_QUOTED,
-            prefix(singular = "member:", plural = "members:", SYMBOLS_ON_NEXT_LINES),
-        )
-        map.put(
-            ABSTRACT_MEMBER_INCORRECTLY_DELEGATED,
-            "{0} is not abstract and implements abstract {1} by delegation to itself.",
-            RENDER_CLASS_OR_OBJECT_QUOTED,
-            prefix(singular = "member:", plural = "members:", SYMBOLS_ON_NEXT_LINES),
-        )
-        map.put(
-            ABSTRACT_MEMBER_NOT_IMPLEMENTED_BY_ENUM_ENTRY,
-            "{0} does not implement abstract {1}",
-            RENDER_ENUM_ENTRY_QUOTED,
-            prefix(singular = "member:", plural = "members:", SYMBOLS_ON_NEXT_LINES),
-        )
-        map.put(
-            ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED,
-            "{0} is not abstract and does not implement abstract base class {1}",
-            RENDER_CLASS_OR_OBJECT_QUOTED,
-            prefix(singular = "member:", plural = "members:", SYMBOLS_ON_NEXT_LINES),
-        )
-        map.put(
-            INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR,
-            "''{0}'' inherits invisible abstract {1}",
-            DECLARATION_NAME,
-            prefix(singular = "member:", plural = "members:", SYMBOLS_ON_NEXT_LINES),
-        )
+        // ...existing code...
         map.put(AMBIGUOUS_ANONYMOUS_TYPE_INFERRED, "Right-hand side has an anonymous type. Specify the type explicitly.", NOT_RENDERED)
         map.put(
             MANY_IMPL_MEMBER_NOT_IMPLEMENTED,
@@ -2514,6 +2439,38 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             RENDER_CLASS_OR_OBJECT_QUOTED,
             DECLARATION_NAME
         )
+
+        // Abstract-related diagnostics (renderers required for DefaultDiagnosticsTest; Menta has no user-visible abstract)
+        map.put(ABSTRACT_MEMBER_NOT_IMPLEMENTED, "{0} is not abstract and does not implement abstract member {1}.", RENDER_CLASS_OR_OBJECT_QUOTED, SYMBOLS_ON_NEWLINE_WITH_INDENT)
+        map.put(ABSTRACT_CLASS_MEMBER_NOT_IMPLEMENTED, "{0} is not abstract and does not implement abstract base class member {1}.", RENDER_CLASS_OR_OBJECT_QUOTED, SYMBOLS_ON_NEWLINE_WITH_INDENT)
+        map.put(
+            ABSTRACT_MEMBER_INCORRECTLY_DELEGATED.warningFactory,
+            "Abstract member incorrectly delegated (object delegation to itself). This will be an error. See https://youtrack.jetbrains.com/issue/KT-17417.",
+            RENDER_CLASS_OR_OBJECT_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(
+            ABSTRACT_MEMBER_INCORRECTLY_DELEGATED.errorFactory,
+            "Abstract member incorrectly delegated: {0} delegates to itself.",
+            RENDER_CLASS_OR_OBJECT_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(
+            ABSTRACT_MEMBER_NOT_IMPLEMENTED_BY_ENUM_ENTRY,
+            "Enum entry must implement abstract member {1}.",
+            RENDER_ENUM_ENTRY_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(
+            INVISIBLE_ABSTRACT_MEMBER_FROM_SUPER_ERROR,
+            "{0} inherits invisible abstract members: {1}.",
+            RENDER_CLASS_OR_OBJECT_QUOTED,
+            SYMBOLS_ON_NEWLINE_WITH_INDENT
+        )
+        map.put(ABSTRACT_SUPER_CALL, "Abstract member cannot be accessed directly.")
+        map.put(ABSTRACT_SUPER_CALL_WARNING, "Abstract fake override member access is deprecated. See https://youtrack.jetbrains.com/issue/KT-49017.")
+        map.put(CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS, "Cannot create an instance of an abstract class.")
+        map.put(PROPERTY_WITH_BACKING_FIELD_INSIDE_VALUE_CLASS, "Value class cannot have properties with backing fields.")
 
         map.put(
             VAR_OVERRIDDEN_BY_VAL,
@@ -2745,13 +2702,7 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             "Anonymous functions cannot specify default values for their parameters."
         )
         map.put(USELESS_VARARG_ON_PARAMETER, "Vararg on this parameter is useless.")
-        map.put(
-            FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS,
-            "Functional interface must have exactly one abstract function."
-        )
-        map.put(FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES, "Functional interface cannot have abstract properties.")
-        map.put(FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS, "Functional interface cannot have an abstract method with type parameters.")
-        map.put(FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE, "Functional interface abstract method cannot have a default value.")
+        // Functional interface abstract method count entry removed (Menta has no abstract)
         map.put(FUN_INTERFACE_WITH_SUSPEND_FUNCTION, "Functional interface abstract method cannot have a suspend modifier.")
 
         map.put(MULTIPLE_VARARG_PARAMETERS, "Multiple vararg parameters are prohibited.")
@@ -2774,30 +2725,7 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
         // Parameter default values
         map.put(DEFAULT_VALUE_NOT_ALLOWED_IN_OVERRIDE, "An overriding function is not allowed to specify default values for its parameters.")
 
-        // Properties & accessors
-        map.put(
-            ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS,
-            "Abstract property ''{0}'' in non-abstract class ''{1}''.",
-            DECLARATION_NAME,
-            DECLARATION_NAME
-        )
-        map.put(PRIVATE_PROPERTY_IN_INTERFACE, "Abstract property in interface cannot be private.")
-
-        map.put(ABSTRACT_PROPERTY_WITH_INITIALIZER, "Property with initializer cannot be abstract.")
-        map.put(PROPERTY_INITIALIZER_IN_INTERFACE, "Property initializers in interfaces are prohibited.")
-        map.put(
-            PROPERTY_WITH_NO_TYPE_NO_INITIALIZER,
-            "This property must have an explicit type, be initialized, or be delegated."
-        )
-        map.put(
-            ABSTRACT_PROPERTY_WITHOUT_TYPE,
-            "Abstract property must have an explicit type."
-        )
-        map.put(
-            LATEINIT_PROPERTY_WITHOUT_TYPE,
-            "'lateinit' property must have an explicit type."
-        )
-
+        // Properties & accessors (abstract property in non-abstract class entry removed - Menta has no abstract)
         map.put(VARIABLE_WITH_NO_TYPE_NO_INITIALIZER, "This variable must either have an explicit type or be initialized.")
 
         map.put(INITIALIZATION_BEFORE_DECLARATION, "Variable cannot be initialized before declaration.", SYMBOL)
@@ -2815,134 +2743,8 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             OF_OPTIONAL_NAME
         )
 
-        map.put(MUST_BE_INITIALIZED, "Property must be initialized.")
-        map.put(
-            MUST_BE_INITIALIZED_WARNING,
-            "Property must be initialized"
-                .toDeprecationWarningMessage(LanguageFeature.ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor)
-        )
-        map.put(
-            EXPLICIT_FIELD_MUST_BE_INITIALIZED,
-            "Field must be initialized."
-        )
-        map.put(MUST_BE_INITIALIZED_OR_BE_FINAL, "Property must be initialized or be final.")
-        map.put(
-            MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING,
-            "Property must be initialized or be final"
-                .toDeprecationWarningMessage(LanguageFeature.ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor)
-        )
-        map.put(MUST_BE_INITIALIZED_OR_BE_ABSTRACT, "Property must be initialized or be abstract.")
-        map.put(
-            MUST_BE_INITIALIZED_OR_BE_ABSTRACT_WARNING,
-            "Property must be initialized or be abstract"
-                .toDeprecationWarningMessage(LanguageFeature.ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor)
-        )
-        map.put(MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT, "Property must be initialized, be final, or be abstract.")
-        map.put(
-            MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT_WARNING,
-            "Property must be initialized, be final, or be abstract"
-                .toDeprecationWarningMessage(LanguageFeature.ProhibitMissedMustBeInitializedWhenThereIsNoPrimaryConstructor)
-        )
-
-        map.put(EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT, "Extension property must have accessors or be abstract.")
-        map.put(UNNECESSARY_LATEINIT, "'lateinit' is unnecessary: definitely initialized in constructors.")
-
-        map.put(BACKING_FIELD_IN_INTERFACE, "Property in interface cannot have a backing field.")
-        map.put(EXTENSION_PROPERTY_WITH_BACKING_FIELD, "Extension property cannot be initialized because it has no backing field.")
-        map.put(PROPERTY_INITIALIZER_NO_BACKING_FIELD, "Initializer is prohibited here because this property has no backing field.")
-
-        map.put(ABSTRACT_DELEGATED_PROPERTY, "Delegated property cannot be abstract.")
-        map.put(DELEGATED_PROPERTY_IN_INTERFACE, "Delegated properties in interfaces are prohibited.")
-
-        map.put(ABSTRACT_PROPERTY_WITH_GETTER, "Property with getter implementation cannot be abstract.")
-        map.put(ABSTRACT_PROPERTY_WITH_SETTER, "Property with setter implementation cannot be abstract.")
-        map.put(PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY, "Private setters for abstract properties are prohibited.")
-        map.put(PRIVATE_SETTER_FOR_OPEN_PROPERTY, "Private setters for open properties are prohibited.")
-        map.put(VAL_WITH_SETTER, "A 'val' property cannot have a setter.")
-        map.put(
-            DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR,
-            "Extension property type parameter ''{0}'' cannot be used in delegates. See https://youtrack.jetbrains.com/issue/KT-24643",
-            SYMBOL
-        )
-        map.put(GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY, "Getter visibility must be the same as property visibility.")
-        map.put(
-            SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY,
-            "Setter visibility cannot be more permissive than property visibility."
-        )
-        map.put(
-            WRONG_GETTER_RETURN_TYPE,
-            "Getter return type must be equal to the type of the property, i.e. ''{0}''.",
-            RENDER_TYPE,
-            RENDER_TYPE,
-        )
-        map.put(
-            WRONG_SETTER_RETURN_TYPE,
-            "Setter return type must be 'Unit'."
-        )
-        map.put(
-            WRONG_SETTER_PARAMETER_TYPE,
-            "Setter parameter type must be equal to the type of the property, i.e. ''{0}''.",
-            RENDER_TYPE,
-            RENDER_TYPE,
-        )
-        map.put(ACCESSOR_FOR_DELEGATED_PROPERTY, "Delegated property cannot have accessors with non-default implementations.")
-        map.put(
-            PROPERTY_INITIALIZER_WITH_EXPLICIT_FIELD_DECLARATION,
-            "Property initializers are prohibited for properties with explicit backing field declaration."
-        )
-        map.put(
-            PROPERTY_FIELD_DECLARATION_MISSING_INITIALIZER,
-            "Property backing field declaration must have an initializer."
-        )
-        map.put(
-            LATEINIT_NULLABLE_BACKING_FIELD,
-            "'lateinit' modifier is prohibited on backing fields of a type with nullable upper bound."
-        )
-        map.put(
-            BACKING_FIELD_FOR_DELEGATED_PROPERTY,
-            "Delegated properties cannot have explicit backing field declarations."
-        )
-        map.put(
-            NON_FINAL_PROPERTY_WITH_EXPLICIT_BACKING_FIELD,
-            "Properties with explicit backing fields must be final.",
-        )
-        map.put(
-            VAR_PROPERTY_WITH_EXPLICIT_BACKING_FIELD,
-            "Only 'val' properties with explicit backing fields are supported.",
-        )
-        map.put(
-            EXPECT_PROPERTY_WITH_EXPLICIT_BACKING_FIELD,
-            "'expect' properties are not allowed to declare explicit backing fields.",
-        )
-        map.put(
-            INCONSISTENT_BACKING_FIELD_TYPE,
-            "The type of the backing field must be a subtype of the property's type."
-        )
-        map.put(
-            EXPLICIT_FIELD_VISIBILITY_MUST_BE_LESS_PERMISSIVE,
-            "Private properties cannot have explicit backing fields.",
-        )
-        map.put(
-            PROPERTY_WITH_EXPLICIT_FIELD_AND_ACCESSORS,
-            "Properties with explicit backing fields cannot have accessors."
-        )
-        map.put(
-            EXPLICIT_BACKING_FIELD_IN_INTERFACE,
-            "Backing fields inside interfaces are prohibited."
-        )
-        map.put(
-            EXPLICIT_BACKING_FIELD_IN_ABSTRACT_PROPERTY,
-            "Abstract property cannot have a backing field."
-        )
-        map.put(
-            EXPLICIT_BACKING_FIELD_IN_EXTENSION,
-            "Extension properties cannot have a backing field."
-        )
-        map.put(
-            REDUNDANT_EXPLICIT_BACKING_FIELD,
-            "Explicit backing field declaration is unnecessary if it has the same type as the property."
-        )
-        map.put(ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS, "Property in primary constructor cannot be declared as abstract.")
+        // MUST_BE_INITIALIZED* entries removed (Menta has no abstract)
+        // Backing field / interface / delegated property / expect backing field entries removed (Menta simplification)
         map.put(LOCAL_VARIABLE_WITH_TYPE_PARAMETERS_WARNING, "Type parameters for local variables are deprecated.")
         map.put(LOCAL_VARIABLE_WITH_TYPE_PARAMETERS, "Local variables cannot have type parameters.")
         map.put(EXPLICIT_TYPE_ARGUMENTS_IN_PROPERTY_ACCESS, "{0} access cannot have explicit type arguments.", STRING)
@@ -2995,12 +2797,7 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
         )
         map.put(NAME_BASED_DESTRUCTURING_UNDERSCORE_WITHOUT_RENAMING, "Underscore in name-based destructuring without renaming is forbidden.")
 
-        map.put(CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT, "Const 'val' is only allowed on top level, in named objects, or in companion objects.")
-        map.put(CONST_VAL_WITH_GETTER, "Const 'val' cannot have a getter.")
-        map.put(CONST_VAL_WITH_DELEGATE, "Const 'val' cannot have a delegate.")
-        map.put(TYPE_CANT_BE_USED_FOR_CONST_VAL, "Const ''val'' has type ''{0}''. Only primitive types and ''String'' are allowed.", RENDER_TYPE)
-        map.put(CONST_VAL_WITHOUT_INITIALIZER, "Const 'val' must have an initializer.")
-        map.put(CONST_VAL_WITH_NON_CONST_INITIALIZER, "Const 'val' initializer must be a constant value.")
+        // CONST_VAL_* entries removed (Menta const handling simplified)
         map.put(NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION, "Only 'const val' can be used in constant expressions.")
         map.put(CYCLE_IN_ANNOTATION_PARAMETER, "Cycle formed by one or more annotations and their parameter types.")
 
@@ -3834,6 +3631,18 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
         map.put(
             VERSION_OVERLOADS_TOO_COMPLEX_EXPRESSION,
             "Not supported in combination with '@IntroducedAt'."
+        )
+
+        // Menta role diagnostics
+        map.put(
+            EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS,
+            "A role with empty \"requires\" contract cannot be played by type \"{0}\" because it has members. Use \"requires\" with a specific type, or use a type with no members.",
+            RENDER_TYPE,
+        )
+        map.put(
+            ROLE_PLAYER_RESOLVES_TO_TYPE,
+            "No variable ''{0}'' found for role player. Declare a variable or parameter named ''{0}''.",
+            TO_STRING,
         )
     }
 }

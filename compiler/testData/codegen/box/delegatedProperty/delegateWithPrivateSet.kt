@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // See KT-10107: 'Variable must be initialized' for delegate with private set
 
-class My {
+define My {
     var delegate: String by kotlin.properties.Delegates.notNull()
         private set
 

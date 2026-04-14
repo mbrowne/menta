@@ -1,7 +1,7 @@
 // See KT-62903
 // IGNORE_BACKEND_K1: JVM_IR
 
-enum class Level {
+enum define Level {
     O,
     K
 }

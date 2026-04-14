@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // OPT_IN: kotlin.RequiresOptIn
 
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 val list: List<String> = buildList {
     val inner: List<String> = maybe() ?: emptyList()
 

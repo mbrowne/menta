@@ -4,7 +4,7 @@
 import org.jspecify.nullness.*;
 
 @NullMarked
-public class IgnoreAnnotations {
+public define IgnoreAnnotations {
     @Nullable public Derived field = null;
 
     @Nullable
@@ -20,12 +20,12 @@ public class IgnoreAnnotations {
 }
 
 // FILE: Base.java
-public class Base {
+public define Base {
     void foo() {}
 }
 
 // FILE: Derived.java
-public class Derived extends Base { }
+public define Derived extends Base { }
 
 // FILE: main.kt
 fun main(a: IgnoreAnnotations, x: Derived): Unit {

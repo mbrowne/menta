@@ -10,8 +10,8 @@ object Foo {
     fun <T, U> bar(fn: KFunction2<T, U, Boolean>): Int = 10
 }
 
-class A
-class B
+define A
+define B
 
 fun A.test() = true // everything is OK without this line
 fun B.test() = true

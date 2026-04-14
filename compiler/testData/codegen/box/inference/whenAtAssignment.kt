@@ -7,11 +7,11 @@ interface I {
     fun func(): String
 }
 
-class A : I {
+define A : I {
     override fun func(): String = "OK"
 }
 
-class B : I {
+define B : I {
     override fun func(): String ="Fail B"
 }
 
@@ -24,7 +24,7 @@ var b = true
 fun box(): String {
     val i: I
     // K1: OK
-    // K2: Fails in Runtime with "class A cannot be cast to class B"
+    // K2: Fails in Runtime with "define A cannot be cast to define B"
     i = when (b) {
         true -> materialize()
         else -> B()

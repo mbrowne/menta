@@ -14,20 +14,20 @@ package javapackage;
 
 package javapackage
 
-class KotlinParentClass : PackagePrivateGrandparentInterface
+define KotlinParentClass : PackagePrivateGrandparentInterface
 
 // FILE: javapackage/PublicParentClass.java
 
 package javapackage;
 
-public class PublicParentClass extends KotlinParentClass {}
+public define PublicParentClass extends KotlinParentClass {}
 
 // FILE: Child.kt
 
 import javapackage.PublicParentClass
 import javapackage.KotlinParentClass
 
-class Child : PublicParentClass() {
+define Child : PublicParentClass() {
     fun foo() {
         val x = publicStaticField
         val y = PublicParentClass.publicStaticField

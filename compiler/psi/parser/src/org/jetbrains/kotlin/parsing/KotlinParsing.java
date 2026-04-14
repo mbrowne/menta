@@ -30,7 +30,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
     private static final Logger LOG = Logger.getInstance(KotlinParsing.class);
 
     private static final TokenSet TOP_LEVEL_DECLARATION_FIRST = TokenSet.create(
-            TYPE_ALIAS_KEYWORD, INTERFACE_KEYWORD, CLASS_KEYWORD, OBJECT_KEYWORD,
+            TYPE_ALIAS_KEYWORD, INTERFACE_KEYWORD, DEFINE_KEYWORD, OBJECT_KEYWORD,
             FUN_KEYWORD, VAL_KEYWORD, VAR_KEYWORD, PACKAGE_KEYWORD);
     private static final TokenSet TOP_LEVEL_DECLARATION_FIRST_SEMICOLON_SET =
             TokenSet.orSet(TOP_LEVEL_DECLARATION_FIRST, TokenSet.create(SEMICOLON));
@@ -73,7 +73,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
     private static final TokenSet COMMA_SEMICOLON_RBRACE_SET = TokenSet.create(COMMA, SEMICOLON, RBRACE);
     private static final TokenSet VALUE_ARGS_RECOVERY_SET = TokenSet.create(LBRACE, SEMICOLON, RPAR, EOL_OR_SEMICOLON, RBRACE);
     private static final TokenSet PROPERTY_NAME_FOLLOW_SET =
-      TokenSet.create(COLON, EQ, LBRACE, RBRACE, SEMICOLON, VAL_KEYWORD, VAR_KEYWORD, FUN_KEYWORD, CLASS_KEYWORD);
+      TokenSet.create(COLON, EQ, LBRACE, RBRACE, SEMICOLON, VAL_KEYWORD, VAR_KEYWORD, FUN_KEYWORD, DEFINE_KEYWORD);
     private static final TokenSet DESTRUCTURING_PROPERTY_NAME_FOLLOW_SET = TokenSet.andNot(PROPERTY_NAME_FOLLOW_SET, VAL_VAR);
     private static final TokenSet PROPERTY_NAME_FOLLOW_MULTI_DECLARATION_RECOVERY_SET = TokenSet.orSet(PROPERTY_NAME_FOLLOW_SET, PARAMETER_NAME_RECOVERY_SET);
     private static final TokenSet PROPERTY_NAME_FOLLOW_FUNCTION_OR_PROPERTY_RECOVERY_SET = TokenSet.orSet(PROPERTY_NAME_FOLLOW_SET, LBRACE_RBRACE_SET, TOP_LEVEL_DECLARATION_FIRST);
@@ -88,7 +88,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
     private static final TokenSet FUNCTION_NAME_FOLLOW_SET = TokenSet.create(LT, LPAR, RPAR, COLON, EQ);
     private static final TokenSet FUNCTION_NAME_RECOVERY_SET = TokenSet.orSet(TokenSet.create(LT, LPAR, RPAR, COLON, EQ), LBRACE_RBRACE_SET, TOP_LEVEL_DECLARATION_FIRST);
     private static final TokenSet VALUE_PARAMETERS_FOLLOW_SET = TokenSet.create(EQ, LBRACE, RBRACE, SEMICOLON, RPAR);
-    private static final TokenSet CONTEXT_PARAMETERS_FOLLOW_SET = TokenSet.create(CLASS_KEYWORD, OBJECT_KEYWORD, FUN_KEYWORD, VAL_KEYWORD, VAR_KEYWORD);
+    private static final TokenSet CONTEXT_PARAMETERS_FOLLOW_SET = TokenSet.create(DEFINE_KEYWORD, OBJECT_KEYWORD, FUN_KEYWORD, VAL_KEYWORD, VAR_KEYWORD);
     private static final TokenSet LPAR_VALUE_PARAMETERS_FOLLOW_SET = TokenSet.orSet(TokenSet.create(LPAR), VALUE_PARAMETERS_FOLLOW_SET);
     private static final TokenSet
             LPAR_LBRACE_COLON_CONSTRUCTOR_KEYWORD_SET = TokenSet.create(LPAR, LBRACE, COLON, CONSTRUCTOR_KEYWORD);
@@ -97,7 +97,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
             TOP_LEVEL_DECLARATION_FIRST
     );
     private final static TokenSet EOL_OR_SEMICOLON_RBRACE_SET = TokenSet.create(EOL_OR_SEMICOLON, RBRACE);
-    private final static TokenSet CLASS_INTERFACE_SET = TokenSet.create(CLASS_KEYWORD, INTERFACE_KEYWORD);
+    private final static TokenSet CLASS_INTERFACE_SET = TokenSet.create(DEFINE_KEYWORD, INTERFACE_KEYWORD);
 
     static KotlinParsing createForTopLevel(SemanticWhitespaceAwarePsiBuilder builder) {
         return new KotlinParsing(builder, true, true);
@@ -516,8 +516,23 @@ public class KotlinParsing extends AbstractKotlinParsing {
             @NotNull NameParsingMode nameParsingModeForObject,
             @NotNull DeclarationParsingMode declarationParsingMode
     ) {
+        // Accept 'annotation' [whitespace] 'define' as a valid top-level declaration (modifier list may leave us at 'annotation' with whitespace before 'define').
+        // Handle both ANNOTATION_KEYWORD (soft keyword remapped) and raw IDENTIFIER "annotation".
+        String tokenText = myBuilder.getTokenText();
+        boolean atAnnotation = at(ANNOTATION_KEYWORD) || (tt() == IDENTIFIER && tokenText != null && tokenText.equals("annotation"));
+        if (atAnnotation) {
+            IElementType next = lookahead(1);
+            for (int k = 1; next != null && (WHITESPACES.contains(next) || next == EOL_OR_SEMICOLON); next = lookahead(++k)) { }
+            if (next == DEFINE_KEYWORD) {
+                advance(); // consume 'annotation'
+                while (!eof() && (WHITESPACES.contains(tt()) || tt() == EOL_OR_SEMICOLON)) advance();
+                if (getTokenId() == DEFINE_KEYWORD_Id) {
+                    return parseClass(detector.isEnumDetected(), true);
+                }
+            }
+        }
         switch (getTokenId()) {
-            case CLASS_KEYWORD_Id:
+            case DEFINE_KEYWORD_Id:
             case INTERFACE_KEYWORD_Id:
                 return parseClass(detector.isEnumDetected(), true);
             case FUN_KEYWORD_Id:
@@ -564,7 +579,32 @@ public class KotlinParsing extends AbstractKotlinParsing {
      * @param localDeclaration is <tt>true</tt> if we are trying to parse a local declaration
      */
     boolean parseModifierList(@Nullable Consumer<IElementType> tokenConsumer, @NotNull TokenSet noModifiersBefore, boolean localDeclaration) {
-        return doParseModifierList(tokenConsumer, MODIFIER_KEYWORDS, AnnotationParsingMode.DEFAULT, noModifiersBefore, localDeclaration);
+        // Remove 'abstract' from modifier keywords
+        TokenSet modifierKeywordsNoAbstract = TokenSet.create(
+            KtTokens.PUBLIC_KEYWORD, KtTokens.PROTECTED_KEYWORD, KtTokens.PRIVATE_KEYWORD, KtTokens.INTERNAL_KEYWORD,
+            KtTokens.EXPECT_KEYWORD, KtTokens.ACTUAL_KEYWORD,
+            KtTokens.FINAL_KEYWORD, KtTokens.OPEN_KEYWORD, KtTokens.SEALED_KEYWORD,
+            KtTokens.CONST_KEYWORD,
+            KtTokens.EXTERNAL_KEYWORD,
+            KtTokens.OVERRIDE_KEYWORD,
+            KtTokens.LATEINIT_KEYWORD,
+            KtTokens.TAILREC_KEYWORD,
+            KtTokens.VARARG_KEYWORD,
+            KtTokens.SUSPEND_KEYWORD,
+            KtTokens.INNER_KEYWORD,
+            KtTokens.ENUM_KEYWORD, KtTokens.ANNOTATION_KEYWORD, KtTokens.FUN_KEYWORD,
+            KtTokens.COMPANION_KEYWORD,
+            KtTokens.INLINE_KEYWORD,
+            KtTokens.VALUE_KEYWORD,
+            KtTokens.INFIX_KEYWORD,
+            KtTokens.OPERATOR_KEYWORD,
+            KtTokens.DATA_KEYWORD,
+            KtTokens.OUT_KEYWORD, KtTokens.IN_KEYWORD,
+            KtTokens.REIFIED_KEYWORD,
+            KtTokens.NOINLINE_KEYWORD,
+            KtTokens.CROSSINLINE_KEYWORD
+        );
+        return doParseModifierList(tokenConsumer, modifierKeywordsNoAbstract, AnnotationParsingMode.DEFAULT, noModifiersBefore, localDeclaration);
     }
 
     private void parseFunctionTypeValueParameterModifierList() {
@@ -1002,12 +1042,13 @@ public class KotlinParsing extends AbstractKotlinParsing {
 
     /*
      * class
-     *   : modifiers ("class" | "interface") SimpleName
+     *   : modifiers ("define" | "interface") SimpleName
      *       typeParameters?
      *       primaryConstructor?
      *       (":" annotations delegationSpecifier{","})?
      *       typeConstraints
      *       (classBody? | enumClassBody)
+     *   | modifiers "interface" SimpleName "from" type
      *   ;
      *
      * primaryConstructor
@@ -1025,18 +1066,25 @@ public class KotlinParsing extends AbstractKotlinParsing {
             boolean enumClass,
             boolean expectKindKeyword
     ) {
+        boolean isInterface = false;
         if (expectKindKeyword) {
             if (object) {
                 assert _at(OBJECT_KEYWORD);
             }
             else {
                 assert _atSet(CLASS_INTERFACE_SET);
+                isInterface = at(INTERFACE_KEYWORD);
             }
-            advance(); // CLASS_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
+            advance(); // DEFINE_KEYWORD, INTERFACE_KEYWORD or OBJECT_KEYWORD
+
+            if (!object && !isInterface && at(DYNAMIC_KEYWORD)) {
+                advance(); // DYNAMIC_KEYWORD
+            }
+
         }
         else {
             assert enumClass : "Currently classifiers without class/interface/object are only allowed for enums";
-            error("'class' keyword is expected after 'enum'");
+            error("'define' keyword is expected after 'enum'");
         }
 
         if (nameParsingMode == NameParsingMode.REQUIRED) {
@@ -1056,6 +1104,12 @@ public class KotlinParsing extends AbstractKotlinParsing {
         }
 
         boolean typeParametersDeclared = parseTypeParameterList(TYPE_PARAMETER_GT_RECOVERY_SET);
+
+        if (isInterface && at(FROM_KEYWORD)) {
+            advance(); // FROM_KEYWORD
+            parseTypeRef();
+            return CLASS;
+        }
 
         PsiBuilder.Marker beforeConstructorModifiers = mark();
         PsiBuilder.Marker primaryConstructorMarker = mark();
@@ -1317,6 +1371,10 @@ public class KotlinParsing extends AbstractKotlinParsing {
     }
 
     private IElementType parseMemberDeclarationRest(@NotNull ModifierDetector modifierDetector) {
+        if (at(ROLE_KEYWORD)) {
+            return parseRole();
+        }
+
         IElementType declType = parseCommonDeclaration(
                 modifierDetector,
                 modifierDetector.isCompanionDetected() ? NameParsingMode.ALLOWED : NameParsingMode.REQUIRED,
@@ -1345,6 +1403,50 @@ public class KotlinParsing extends AbstractKotlinParsing {
             declType = FUN;
         }
         return declType;
+    }
+
+    /*
+     * role
+     *   : "role" SimpleName ("{" "}")? "requires" typeRef
+     *   ;
+     */
+    IElementType parseRole() {
+        assert _at(ROLE_KEYWORD);
+
+        advance(); // ROLE_KEYWORD
+
+        expect(IDENTIFIER, "Role name expected", LBRACE_RBRACE_SET);
+
+        if (at(LBRACE)) {
+            parseClassBody();
+        }
+
+        if (at(REQUIRES_KEYWORD)) {
+            advance(); // REQUIRES_KEYWORD
+            if (at(LBRACE)) {
+                if (lookahead(1) == RBRACE) {
+                    advance(); // LBRACE
+                    advance(); // RBRACE
+                } else {
+                    error("Role-object contracts do not currently support inline types");
+                    // Recover by skipping to matching RBRACE
+                    advance(); // LBRACE
+                    int depth = 1;
+                    while (!eof() && depth > 0) {
+                        if (at(LBRACE)) depth++;
+                        if (at(RBRACE)) depth--;
+                        advance();
+                    }
+                }
+            } else {
+                parseTypeRef();
+            }
+        }
+        else {
+            error("Role declaration must have a 'requires' clause specifying the role player type");
+        }
+
+        return ROLE;
     }
 
     /*

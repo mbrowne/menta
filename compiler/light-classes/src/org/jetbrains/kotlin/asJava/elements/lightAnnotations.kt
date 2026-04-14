@@ -236,7 +236,7 @@ open class KtLightNullabilityAnnotation<D : KtLightElement<*, PsiModifierListOwn
         if (!fastCheckIsNullabilityApplied(member)) return@lazyPub null
 
         // all data-class generated members are not-null
-        if (annotatedElement is KtClass && annotatedElement.isData()) return@lazyPub NotNull::class.java.name
+        if (annotatedElement is KtDefine && annotatedElement.isData()) return@lazyPub NotNull::class.java.name
 
         // objects and companion objects have NotNull annotation (if annotated element is implicit ctor then skip annotation)
         if (annotatedElement is KtObjectDeclaration) {
@@ -387,8 +387,8 @@ private fun getAnnotationName(callee: KtExpression): String? {
     @Suppress("NAME_SHADOWING") val callee = unwrapCall(callee)
     val resultingDescriptor = callee.getResolvedCall()?.resultingDescriptor
     if (resultingDescriptor is ClassConstructorDescriptor) {
-        val ktClass = resultingDescriptor.constructedClass.source.getPsi() as? KtClass
-        if (ktClass?.isAnnotation() == true) return ktClass.fqName?.toString()
+        val KtDefine = resultingDescriptor.constructedClass.source.getPsi() as? KtDefine
+        if (KtDefine?.isAnnotation() == true) return KtDefine.fqName?.toString()
     }
     if (resultingDescriptor is JavaClassConstructorDescriptor) {
         val psiClass = resultingDescriptor.constructedClass.source.getPsi() as? PsiClass

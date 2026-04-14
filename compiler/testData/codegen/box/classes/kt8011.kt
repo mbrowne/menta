@@ -3,7 +3,7 @@
 fun testFun1(str: String): String {
     val local = str
 
-    class Local {
+    define Local {
         fun foo() = str
     }
 

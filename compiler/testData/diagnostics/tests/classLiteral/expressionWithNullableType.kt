@@ -8,14 +8,14 @@ public interface J {
 
 // FILE: test.kt
 
-fun f1(x: Int?): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>x<!>::class
-fun <T> f2(t: T): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>t<!>::class
-fun <T> f21(t: T): Any where T : Any?, T : Comparable<T> = t::class
-fun <S : String?> f3(s: S): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>s<!>::class
-fun <U : Any> f4(u: U?): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>u<!>::class
-fun f5(c: List<*>): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>c[0]<!>::class
+fun f1(x: Int?): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>x<!>::define
+fun <T> f2(t: T): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>t<!>::define
+fun <T> f21(t: T): Any where T : Any?, T : Comparable<T> = t::define
+fun <S : String?> f3(s: S): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>s<!>::define
+fun <U : Any> f4(u: U?): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>u<!>::define
+fun f5(c: List<*>): Any = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>c[0]<!>::define
 
-fun f6(j: J): Any = j.platformString()::class
+fun f6(j: J): Any = j.platformString()::define
 
 /* GENERATED_FIR_TAGS: classReference, flexibleType, functionDeclaration, integerLiteral, javaFunction, javaType,
 nullableType, starProjection, typeConstraint, typeParameter */

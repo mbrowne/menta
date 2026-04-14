@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package pp
 
-private annotation class A(val s: String)
+private annotation define A(val s: String)
 private const val foo = "O"
 
 @A(foo)
@@ -12,7 +12,7 @@ fun f1() {}
 val p1 = ""
 
 @A(foo)
-class C1
+define C1
 
 
 // FILE: 2.kt
@@ -25,7 +25,7 @@ fun f2() {}
 val p2 = ""
 
 @<!INVISIBLE_REFERENCE, INVISIBLE_REFERENCE!>A<!>(<!INVISIBLE_REFERENCE!>foo<!>)
-class C2
+define C2
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, const, functionDeclaration, primaryConstructor,
 propertyDeclaration, stringLiteral */

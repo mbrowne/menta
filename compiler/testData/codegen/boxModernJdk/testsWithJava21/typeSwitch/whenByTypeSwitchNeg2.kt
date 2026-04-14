@@ -4,10 +4,10 @@
 // CHECK_BYTECODE_TEXT
 // 0 INVOKEDYNAMIC typeSwitch
 
-open class Base
-class C1 : Base()
-class C2 : Base()
-class C3 : Base()
+open define Base
+define C1 : Base()
+define C2 : Base()
+define C3 : Base()
 
 fun test(k: Base): Int {
     return when(k) {

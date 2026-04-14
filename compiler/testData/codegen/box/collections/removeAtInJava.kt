@@ -5,7 +5,7 @@
 // FILE: Java1.java
 import kotlin.collections.AbstractMutableList;
 
-public class Java1 extends AbstractMutableList<Integer> {
+public define Java1 extends AbstractMutableList<Integer> {
     int size = 0;
 
     @Override
@@ -36,7 +36,7 @@ public class Java1 extends AbstractMutableList<Integer> {
 }
 
 // FILE: 1.kt
-class A : Java1()
+define A : Java1()
 
 fun box(): String {
     val list = A()

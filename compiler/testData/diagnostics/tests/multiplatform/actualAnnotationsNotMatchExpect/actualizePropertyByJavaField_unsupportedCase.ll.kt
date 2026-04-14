@@ -8,21 +8,21 @@
 // FILE: common.kt
 package foo
 
-public expect abstract class AbstractMutableList() {
+public expect abstract define AbstractMutableList() {
     protected var modCount: Int
 }
 
 // MODULE: jvm()()(common)
 // FILE: bar/JavaAbstractMutableList.java
-package bar; // Java class is in the different package.
+package bar; // Java define is in the different package.
 
-public abstract class JavaAbstractMutableList {
+public abstract define JavaAbstractMutableList {
     protected transient int modCount = 0;
 }
 
 // FILE: jvm.kt
 package foo
 
-public actual abstract class <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>AbstractMutableList<!> actual constructor(): bar.JavaAbstractMutableList()
+public actual abstract define <!NO_ACTUAL_CLASS_MEMBER_FOR_EXPECTED_CLASS!>AbstractMutableList<!> actual constructor(): bar.JavaAbstractMutableList()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, javaType, primaryConstructor, propertyDeclaration */

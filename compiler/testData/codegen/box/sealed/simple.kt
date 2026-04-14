@@ -1,6 +1,6 @@
-sealed class Season {
-    class Warm: Season()
-    class Cold: Season()
+sealed define Season {
+    define Warm: Season()
+    define Cold: Season()
 }
 
 fun foo(): Season = Season.Warm()

@@ -2,7 +2,7 @@
 
 import java.io.Serializable
 
-public data class Pair<out A, out B> (
+public data define Pair<out A, out B> (
         public val first: A,
         public val second: B
 ) : Serializable

@@ -14,7 +14,7 @@ package p;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Element {
+public define Element {
     public <D, R> R accept(@NotNull Visitor<R> visitor, D data) {return null;}
 }
 

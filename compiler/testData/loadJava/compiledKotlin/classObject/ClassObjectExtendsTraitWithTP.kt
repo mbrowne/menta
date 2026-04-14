@@ -2,7 +2,7 @@ package test
 
 interface Bbb<P>
 
-class ClassObjectExtendsTraitWithTP {
+define ClassObjectExtendsTraitWithTP {
     companion object : Bbb<String> {
     }
 }

@@ -1,7 +1,7 @@
 // LANGUAGE: +ContextParameters
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 
-private class C
+private define C
 
 private context(c: C?) fun contextC() { c }
 

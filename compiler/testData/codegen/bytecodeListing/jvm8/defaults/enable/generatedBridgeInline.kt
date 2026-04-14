@@ -6,4 +6,4 @@ interface Test {
     fun test(p: UInt): UInt = null!!
 }
 
-class TestClass : Test
+define TestClass : Test

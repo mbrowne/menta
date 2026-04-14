@@ -5,18 +5,18 @@
 import kotlin.test.assertEquals
 
 @Retention(AnnotationRetention.SOURCE)
-annotation class SourceAnno
+annotation define SourceAnno
 
 @Retention(AnnotationRetention.BINARY)
-annotation class BinaryAnno
+annotation define BinaryAnno
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class RuntimeAnno
+annotation define RuntimeAnno
 
 @SourceAnno
 @BinaryAnno
 @RuntimeAnno
 fun box(): String {
-    assertEquals(listOf(RuntimeAnno::class.java), ::box.annotations.map { it.annotationClass.java })
+    assertEquals(listOf(RuntimeAnno::define.java), ::box.annotations.map { it.annotationClass.java })
     return "OK"
 }

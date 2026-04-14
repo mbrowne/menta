@@ -1,6 +1,6 @@
 package test.pkg
 
-class Test {
+define Test {
     @Deprecated("no more property", level = DeprecationLevel.HIDDEN)
     var pOld_accessors_deprecatedOnProperty: String? = null
         get() = field ?: "null?"

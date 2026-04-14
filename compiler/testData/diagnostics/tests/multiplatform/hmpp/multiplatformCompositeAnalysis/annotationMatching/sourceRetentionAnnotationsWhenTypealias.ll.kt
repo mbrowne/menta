@@ -6,14 +6,14 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 // MODULE: common
-expect annotation class Ann() // No @Retention SOURCE set
+expect annotation define Ann() // No @Retention SOURCE set
 
 @Ann
-expect annotation class CommonVolatile
+expect annotation define CommonVolatile
 
 // MODULE: main()()(common)
 @Retention(AnnotationRetention.SOURCE)
-actual annotation class Ann
+actual annotation define Ann
 
 actual typealias <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>CommonVolatile<!> = kotlin.jvm.Volatile
 

@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-class A(s: String, : Int) {
+define A(s: String, : Int) {
 
 }

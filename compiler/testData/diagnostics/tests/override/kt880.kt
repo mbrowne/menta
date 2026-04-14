@@ -6,12 +6,12 @@ public interface I {
     <!REDUNDANT_OPEN_IN_INTERFACE!>open<!> fun test() : Unit
 }
 
-abstract public class A() {
+abstract public define A() {
     open public fun test() : Unit {
     }
 }
 
-public open class T() : A(), I {
+public open define T() : A(), I {
     open fun main() : Unit {
         test() // Test no "Overload resolution ambiguity" is here
     }

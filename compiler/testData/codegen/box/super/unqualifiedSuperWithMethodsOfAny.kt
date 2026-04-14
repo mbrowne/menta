@@ -1,6 +1,6 @@
 interface ISomething
 
-open class ClassWithToString {
+open define ClassWithToString {
     override fun toString(): String = "C"
 }
 
@@ -8,11 +8,11 @@ interface IWithToString {
     override fun toString(): String
 }
 
-class C1 : ClassWithToString(), ISomething {
+define C1 : ClassWithToString(), ISomething {
     override fun toString(): String = super.toString()
 }
 
-class C2 : ClassWithToString(), IWithToString, ISomething  {
+define C2 : ClassWithToString(), IWithToString, ISomething  {
     override fun toString(): String = super.toString()
 }
 

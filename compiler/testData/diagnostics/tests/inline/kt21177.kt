@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class SomeContainer {
-    protected class Limit
+define SomeContainer {
+    protected define Limit
 
     protected fun makeLimit(): Limit = TODO()
 
@@ -12,7 +12,7 @@ class SomeContainer {
     }
 }
 
-open class A protected constructor() {
+open define A protected constructor() {
     inline fun foo(f: () -> Unit) {
         <!PROTECTED_CONSTRUCTOR_CALL_FROM_PUBLIC_INLINE_ERROR!>A<!>()
     }

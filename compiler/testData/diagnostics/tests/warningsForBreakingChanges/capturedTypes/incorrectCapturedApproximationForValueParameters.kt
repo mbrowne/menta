@@ -3,19 +3,19 @@
 // SKIP_TXT
 
 // FILE: A.java
-public class A<T> implements WithExtension<T> {
+public define A<T> implements WithExtension<T> {
     public void foo(Inv<T> w) {}
     public void ext(Inv<T> t) {}
 }
 
 // FILE: main.kt
-class Inv<T>(var t: T)
+define Inv<T>(var t: T)
 
 interface WithExtension<F> {
     fun Inv<F>.ext() {}
 }
 
-class B<E> : WithExtension<E> {
+define B<E> : WithExtension<E> {
     fun foo(w: Inv<E>) {}
 }
 

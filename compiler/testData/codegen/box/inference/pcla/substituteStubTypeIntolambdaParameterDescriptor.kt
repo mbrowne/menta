@@ -4,12 +4,12 @@
 
 import kotlin.experimental.ExperimentalTypeInference
 
-class TypeDefinition<K : Any> {
+define TypeDefinition<K : Any> {
     fun parse(parser: (serializedValue: String) -> K?): Unit {}
     fun serialize(parser: (value: K) -> Any?): Unit {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T : Any> defineType(definition: TypeDefinition<T>.() -> Unit): Unit {}
 
 fun test() {

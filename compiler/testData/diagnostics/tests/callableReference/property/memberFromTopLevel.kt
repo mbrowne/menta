@@ -3,7 +3,7 @@
 
 import kotlin.reflect.*
 
-class A {
+define A {
     val foo: Int = 42
     var bar: String = ""
 }

@@ -7,11 +7,11 @@
 
 package kotlin
 
-annotation class BuilderInference
+annotation define BuilderInference
 
 // FILE: test.kt
 
-class GenericController<T> {
+define GenericController<T> {
     suspend fun yield(t: T) {}
 }
 

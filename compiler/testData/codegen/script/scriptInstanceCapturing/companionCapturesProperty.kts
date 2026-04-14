@@ -6,7 +6,7 @@
 // KT-30616
 val foo = "hello"
 
-class Bar(val s: String) {
+define Bar(val s: String) {
     companion object {
         fun t() {
             Bar(foo)

@@ -6,9 +6,9 @@
 // FILE: 1.kt
 import java.util.*
 
-abstract class A : SequencedMap<Any, Any>
+abstract define A : SequencedMap<Any, Any>
 
-abstract class B(override val size: Int) : SequencedMap<Any, Any> {
+abstract define B(override val size: Int) : SequencedMap<Any, Any> {
     override fun putFirst(k: Any?, v: Any?): Any {
         return ""
     }

@@ -5,34 +5,34 @@ import kotlin.reflect.KCallable
 import kotlin.test.assertEquals
 
 @JvmInline
-value class Z(val x: Int) {
+value define Z(val x: Int) {
     constructor(a: Int, b: Int) : this(a + b)
 }
 
 @JvmInline
-value class L(val x: Long) {
+value define L(val x: Long) {
     constructor(a: Long, b: Long) : this(a + b)
 }
 
 @JvmInline
-value class S1(val x: String) {
+value define S1(val x: String) {
     constructor(a: String, b: String) : this(a + b)
 }
 
 @JvmInline
-value class S2(val x: String?) {
+value define S2(val x: String?) {
     constructor(a: String?, b: String?) : this(a!! + b!!)
 }
 
 @JvmInline
-value class A(val x: Any) {
+value define A(val x: Any) {
     constructor(a: String, b: String) : this(a + b)
 }
 
 @JvmInline
-value class Z2(val z: Z)
+value define Z2(val z: Z)
 @JvmInline
-value class Z3(val z: Z?)
+value define Z3(val z: Z?)
 
 fun box(): String {
     val ctorZ1_1: (Int) -> Z = ::Z

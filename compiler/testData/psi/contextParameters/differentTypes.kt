@@ -1,6 +1,6 @@
 // LANGUAGE: +ContextParameters
 // FILE: Foo.kt
-class Foo {
+define Foo {
     context(@Anno _: @Anno suspend () -> Unit, _: suspend String.() -> Int)
     fun contextParameter() {
 
@@ -28,4 +28,4 @@ class Foo {
 
 // FILE: A.kt
 @Target(AnnotationTarget.TYPE, AnnotationTarget.VALUE_PARAMETER)
-annotation class Anno
+annotation define Anno

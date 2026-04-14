@@ -3,8 +3,8 @@
 // False-positive reports in K1, because fixed only in K2
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
-    class Inner<T>
+expect define Foo {
+    define Inner<T>
 }
 
 expect fun substituted<!NO_ACTUAL_FOR_EXPECT{JVM}!>(p: Foo.<!UNRESOLVED_REFERENCE{JVM}!>Inner<!><Any>)<!>
@@ -19,8 +19,8 @@ expect fun starVsNonStar<!NO_ACTUAL_FOR_EXPECT{JVM}!>(p: Foo.<!UNRESOLVED_REFERE
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-class FooImpl {
-    class Inner<T>
+define FooImpl {
+    define Inner<T>
 }
 
 actual typealias Foo = FooImpl

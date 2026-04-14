@@ -4,7 +4,7 @@ fun interface Foo {
     fun invoke(): String
 }
 
-class A : Foo {
+define A : Foo {
     override fun invoke(): String {
         return "OK"
     }

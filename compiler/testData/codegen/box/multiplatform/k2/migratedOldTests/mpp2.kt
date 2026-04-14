@@ -3,11 +3,11 @@
 // MODULE: common
 // FILE: common.kt
 
-expect class C {
+expect define C {
     constructor(arg: Any?)
 }
 
-expect class T
+expect define T
 
 expect fun f(arg: Int): Int
 
@@ -15,7 +15,7 @@ expect var p: String
 
 // MODULE: actual()()(common)
 // FILE: actual.kt
-actual data class C actual constructor(val arg: Any?) {}
+actual data define C actual constructor(val arg: Any?) {}
 
 actual typealias T = C
 

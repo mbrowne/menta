@@ -5,7 +5,7 @@
 package one
 
 @JvmInline
-value class MyValueClass(val str: String)
+value define MyValueClass(val str: String)
 
 interface BaseInterface {
     fun regularFunction()
@@ -13,4 +13,4 @@ interface BaseInterface {
     val propertyWithValueClassParameter: MyValueClass?
 }
 
-class MyClass(b: BaseInterface) : BaseInterface by b
+define MyClass(b: BaseInterface) : BaseInterface by b

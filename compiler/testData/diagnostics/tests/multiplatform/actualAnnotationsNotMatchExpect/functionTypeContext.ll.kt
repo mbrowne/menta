@@ -3,7 +3,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 @Target(AnnotationTarget.TYPE)
-annotation class A
+annotation define A
 
 expect fun foo(f: context(@A String) () -> Unit)
 

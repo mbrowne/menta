@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: +ContextReceivers
-class Foo
+define Foo
 
 context(Foo, label@Int)
 fun foo() {

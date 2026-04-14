@@ -8,7 +8,7 @@ fun foo(javaClass: JavaClass): String {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public <T> T doSomething(T t, I<T> i) { return i.run(t); }
 }
 

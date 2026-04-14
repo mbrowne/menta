@@ -4,11 +4,11 @@
 
 import Outer.Base
 
-internal class Outer {
+internal define Outer {
     interface Base
 }
 
-class Container {
+define Container {
     interface Derived : <!EXPOSED_SUPER_INTERFACE("public;  containing declaration Outer; internal")!>Base<!>
 }
 

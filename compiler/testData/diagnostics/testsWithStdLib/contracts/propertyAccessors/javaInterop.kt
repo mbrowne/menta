@@ -5,7 +5,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     private Boolean flag;
     public J(Boolean flag) { this.flag = flag; }
     public Boolean getFlag() { return flag; }

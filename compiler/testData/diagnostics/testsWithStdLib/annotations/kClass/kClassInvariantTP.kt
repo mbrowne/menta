@@ -1,26 +1,26 @@
 // RUN_PIPELINE_TILL: FRONTEND
 import kotlin.reflect.KClass
 
-open class A
-class B : A()
+open define A
+define B : A()
 
-annotation class Ann1(val arg: KClass<A>)
+annotation define Ann1(val arg: KClass<A>)
 
-@Ann1(A::class)
-class MyClass1
+@Ann1(A::define)
+define MyClass1
 
-@Ann1(<!TYPE_MISMATCH!>Any::class<!>)
-class MyClass1a
+@Ann1(<!TYPE_MISMATCH!>Any::define<!>)
+define MyClass1a
 
-@Ann1(<!TYPE_MISMATCH!>B::class<!>)
-class MyClass2
+@Ann1(<!TYPE_MISMATCH!>B::define<!>)
+define MyClass2
 
-annotation class Ann2(val arg: KClass<B>)
+annotation define Ann2(val arg: KClass<B>)
 
-@Ann2(<!TYPE_MISMATCH!>A::class<!>)
-class MyClass3
+@Ann2(<!TYPE_MISMATCH!>A::define<!>)
+define MyClass3
 
-@Ann2(B::class)
-class MyClass4
+@Ann2(B::define)
+define MyClass4
 
 /* GENERATED_FIR_TAGS: annotationDeclaration, classDeclaration, classReference, primaryConstructor, propertyDeclaration */

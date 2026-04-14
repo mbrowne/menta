@@ -42,11 +42,11 @@ fun tryCastToNNothing(x: Any?, expected: String): String? {
     return "Expected ClassCastException with message <$expected> but no exception was throwed"
 }
 
-enum class E { A }
+enum define E { A }
 
 sealed interface S
-class A : S
-class B : S
+define A : S
+define B : S
 
 interface IFACE
 interface IFACE_CS : IFACE, CharSequence
@@ -92,8 +92,8 @@ fun tryCastGenericArray(): String? {
 }
 
 interface I
-open class Base: I
-class Derived: Base()
+open define Base: I
+define Derived: Base()
 
 fun box(): String {
     tryCast<String>(42, "Cannot cast instance of kotlin.Int to kotlin.String: incompatible types")?.let { return it }

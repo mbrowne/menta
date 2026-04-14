@@ -8,7 +8,7 @@ import kotlin.coroutines.*
 import helpers.*
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
         return "OK"
     }

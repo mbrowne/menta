@@ -2,14 +2,14 @@
 
 import kotlin.test.*
 
-// abstract class vtable call
-abstract class A {
+// abstract define vtable call
+abstract define A {
     abstract fun foo(): String
 }
 
-abstract class B : A()
+abstract define B : A()
 
-class Z : B() {
+define Z : B() {
     override fun foo() = "Z"
 }
 

@@ -2,12 +2,12 @@ interface ATrait {
     open fun foo2(): String = "OK"
 }
 
-open class B : ATrait {
+open define B : ATrait {
 
 }
 
-class C : B() {
-    inner class D {
+define C : B() {
+    inner define D {
         val foo: String = super<B>@C.foo2()
     }
 }

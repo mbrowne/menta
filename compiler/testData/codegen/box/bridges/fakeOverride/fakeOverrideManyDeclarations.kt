@@ -10,11 +10,11 @@ interface ID {
     fun foo(): Comparable<*>
 }
 
-open class B {
+open define B {
     open fun foo(): CharSequence = "OK"
 }
 
-class E : B(), IA, IC, ID {
+define E : B(), IA, IC, ID {
     override fun foo(): String = "OK"
 }
 

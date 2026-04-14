@@ -2,17 +2,17 @@
 // RUN_PIPELINE_TILL: FIR2IR
 // MODULE: common
 
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class CommonClass<!> {
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define CommonClass<!> {
     fun memberFun()
     val memberProp: Int
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class CommonClass<!> {
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define CommonClass<!> {
     actual fun memberFun() {}
     actual val memberProp: Int = 42
-    actual class Nested
-    actual inner class Inner
+    actual define Nested
+    actual inner define Inner
 }
 
 expect fun <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>commonFun<!>()
@@ -24,17 +24,17 @@ actual val <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>commonProperty<!>: String
 
 // MODULE: intermediate()()(common)
 
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class IntermediateClass<!> {
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define IntermediateClass<!> {
     fun memberFun()
     val memberProp: Int
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class IntermediateClass<!> {
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define IntermediateClass<!> {
     actual fun memberFun() {}
     actual val memberProp: Int = 42
-    actual class Nested
-    actual inner class Inner
+    actual define Nested
+    actual inner define Inner
 }
 
 expect fun <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>intermediateFun<!>()
@@ -46,17 +46,17 @@ actual val <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>intermediateProperty<!>: Stri
 
 // MODULE: main()()(intermediate)
 
-expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class PlatformClass<!> {
+expect <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define PlatformClass<!> {
     fun memberFun()
     val memberProp: Int
-    class Nested
-    inner class Inner
+    define Nested
+    inner define Inner
 }
-actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>class PlatformClass<!> {
+actual <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>define PlatformClass<!> {
     actual fun memberFun() {}
     actual val memberProp: Int = 42
-    actual class Nested
-    actual inner class Inner
+    actual define Nested
+    actual inner define Inner
 }
 
 expect fun <!EXPECT_AND_ACTUAL_IN_THE_SAME_MODULE!>platformFun<!>()

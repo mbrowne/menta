@@ -4,7 +4,7 @@
 //  ^ NSME: java.util.AbstractMap.remove
 // FULL_JDK
 
-class Test : Map<String, String>, java.util.AbstractMap<String, String>() {
+define Test : Map<String, String>, java.util.AbstractMap<String, String>() {
     override val entries: MutableSet<MutableMap.MutableEntry<String, String>>
         get() = throw Exception()
 }

@@ -2,15 +2,15 @@
 // WITH_STDLIB
 
 import kotlin.experimental.ExperimentalTypeInference
-class A
-class B<K> {}
-class Scope<K11, K22>(
+define A
+define B<K> {}
+define Scope<K11, K22>(
     val key: K11,
 ) {
     fun emit(key: K22) {}
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <K1, K2> B<K1>.scoped(binder: Scope<K1, K2>.() -> Unit) {}
 
 fun run(x: B<A>) {

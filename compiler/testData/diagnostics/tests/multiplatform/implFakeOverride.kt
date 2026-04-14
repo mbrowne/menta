@@ -3,17 +3,17 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-expect class Foo {
+expect define Foo {
     fun bar(): String
 }
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-open class Bar {
+open define Bar {
     fun bar() = "bar"
 }
 
-actual class Foo : Bar()
+actual define Foo : Bar()
 
 /* GENERATED_FIR_TAGS: actual, classDeclaration, expect, functionDeclaration, stringLiteral */

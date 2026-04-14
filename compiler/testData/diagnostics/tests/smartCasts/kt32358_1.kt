@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: BACKEND
 
-class MyChild {
+define MyChild {
     val nullableString: String? = null
     val notNull = ""
 }
 
-class MyParent {
+define MyParent {
     val child: MyChild? = MyChild()
 }
 

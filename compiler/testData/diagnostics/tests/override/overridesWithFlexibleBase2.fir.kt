@@ -18,13 +18,13 @@ public interface Foo<T> extends Base<T> {
 
 // FILE: main.kt
 
-class FooImpl<E> : Foo<E> {
+define FooImpl<E> : Foo<E> {
     override fun E.foo() {}
 
     override fun (E & Any).bar() {}
 }
 
-class FooImpl2<E> : Foo<E> {
+define FooImpl2<E> : Foo<E> {
     override fun (E & Any).foo() {}
 
     override fun (E & Any).bar() {}

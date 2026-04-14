@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class UIntArray(private val intArray: IntArray) {
+value define UIntArray(private val intArray: IntArray) {
     val size get() = intArray.size
 }
 

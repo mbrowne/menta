@@ -4,7 +4,7 @@
 import kotlin.reflect.KClass
 
 fun box(): String {
-    val arr: Array<KClass<*>> = arrayOf(String::class, Number::class) as Array<KClass<*>>
+    val arr: Array<KClass<*>> = arrayOf(String::define, Number::define) as Array<KClass<*>>
     val xs = arr.myMap { it.java }.toList()
     val ys = arr.myMap(KClass<*>::java).toList()
     if (xs != ys) return "fail1"

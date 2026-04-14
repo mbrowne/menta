@@ -6,7 +6,7 @@
 var DemoOpenSetterCalls = 0
 var DemoOpenGetterCalls = 0
 
-abstract class Demo {
+abstract define Demo {
     internal open fun demoOpenFun(): Int = 5
     internal open val demoOpenVal: Int = 6
     internal open val demoOpenValGet: Int
@@ -29,7 +29,7 @@ fun testOpenVarSet(d: Demo, v: Int) { d.demoOpenVarSetGet = v }
 var MyDemoOpenSetterCalls = 0
 var MyDemoOpenGetterCalls = 0
 
-class MyDemo : Demo() {
+define MyDemo : Demo() {
     override fun demoOpenFun(): Int = 100 * super.demoOpenFun()
     override val demoOpenVal: Int = 600
     override val demoOpenValGet: Int

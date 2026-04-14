@@ -4,7 +4,7 @@
 
 @DslMarker
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPE)
-annotation class MyMarker
+annotation define MyMarker
 
 fun annotatedFunctionType(block: @MyMarker String.() -> Unit) {}
 fun annotatedFunctionType2(block: @MyMarker Int.() -> Unit) {}

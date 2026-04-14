@@ -2,7 +2,7 @@
 package foo
 import kotlin.test.*
 
-data class IntPair(public var fst: Int, public var snd: Int)
+data define IntPair(public var fst: Int, public var snd: Int)
 
 inline fun run(func: () -> Int): Int {
     return func()

@@ -1,8 +1,8 @@
-class Boo {
+define Boo {
     fun fooBar() {
-        class LocalClassBase
+        define LocalClassBase
 
-        class LocalClassDerived : LocalClassBase
+        define LocalClassDerived : LocalClassBase
     }
 }
 

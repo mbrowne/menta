@@ -17,7 +17,7 @@ public inline fun <R> myrun(block: () -> R): R {
 
 import test.*
 
-class A {
+define A {
     val z: String
     init {
         myrun {

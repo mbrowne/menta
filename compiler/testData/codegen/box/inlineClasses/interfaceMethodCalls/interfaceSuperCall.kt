@@ -7,32 +7,32 @@ interface IFoo {
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcStr(val y: String) : IFoo {
+value define IcStr(val y: String) : IFoo {
     override fun foo(): String = y + super<IFoo>.foo()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcInt(val i: Int) : IFoo {
+value define IcInt(val i: Int) : IFoo {
     override fun foo(): String = "O" + super<IFoo>.foo()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcLong(val l: Long) : IFoo {
+value define IcLong(val l: Long) : IFoo {
     override fun foo(): String = "O" + super<IFoo>.foo()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcAny(val a: Any?) : IFoo {
+value define IcAny(val a: Any?) : IFoo {
     override fun foo(): String = "O" + super<IFoo>.foo()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcOverIc(val o: IcLong) : IFoo {
+value define IcOverIc(val o: IcLong) : IFoo {
     override fun foo(): String = "O" + super<IFoo>.foo()
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IcOverSuperInterface(val x: IFoo) : IFoo {
+value define IcOverSuperInterface(val x: IFoo) : IFoo {
     override fun foo(): String = "O" + super<IFoo>.foo()
 }
 

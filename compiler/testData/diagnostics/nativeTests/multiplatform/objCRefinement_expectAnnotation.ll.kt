@@ -7,71 +7,71 @@
 
 // MODULE: common
 // FILE: common.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::define)
 
 @Target(AnnotationTarget.ANNOTATION_CLASS)
 @Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
 @kotlin.experimental.ExperimentalObjCRefinement
-expect annotation class MyHidesFromObjC()
+expect annotation define MyHidesFromObjC()
 
 @MyHidesFromObjC
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
 @kotlin.experimental.ExperimentalObjCRefinement
-expect annotation class MyHiddenFromObjC()
+expect annotation define MyHiddenFromObjC()
 
 @Target(AnnotationTarget.ANNOTATION_CLASS)
 @Retention(AnnotationRetention.BINARY)
 @kotlin.experimental.ExperimentalObjCRefinement
-expect annotation class MyRefinesInSwift()
+expect annotation define MyRefinesInSwift()
 
 @MyRefinesInSwift
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
 @kotlin.experimental.ExperimentalObjCRefinement
-expect annotation class MyShouldRefineInSwift()
+expect annotation define MyShouldRefineInSwift()
 
 <!INVALID_REFINES_IN_SWIFT_TARGETS!>@MyRefinesInSwift<!>
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-expect annotation class MyWrongShouldRefineInSwift()
+expect annotation define MyWrongShouldRefineInSwift()
 
 // FILE: plugin.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::define)
 
 @MyHidesFromObjC
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-annotation class PluginMyHiddenFromObjC
+annotation define PluginMyHiddenFromObjC
 
 @MyRefinesInSwift
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class PluginMyShouldRefineInSwift
+annotation define PluginMyShouldRefineInSwift
 
 // FILE: main.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::define)
 
 @MyHidesFromObjC
 <!REDUNDANT_SWIFT_REFINEMENT!>@MyRefinesInSwift<!>
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationA
+annotation define MyRefinedAnnotationA
 
 <!INVALID_OBJC_HIDES_TARGETS!>@MyHidesFromObjC<!>
 @Target(AnnotationTarget.PROPERTY, AnnotationTarget.FILE)
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationB
+annotation define MyRefinedAnnotationB
 
 <!INVALID_REFINES_IN_SWIFT_TARGETS!>@MyRefinesInSwift<!>
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationC
+annotation define MyRefinedAnnotationC
 
 @MyRefinesInSwift
 @Target(AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.BINARY)
-annotation class MyRefinedAnnotationD
+annotation define MyRefinedAnnotationD
 
 typealias HFOC = MyHiddenFromObjC
 
@@ -115,7 +115,7 @@ interface InterfaceB {
     fun fooB()
 }
 
-open class ClassA: InterfaceA, InterfaceB {
+open define ClassA: InterfaceA, InterfaceB {
     <!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>@MyHiddenFromObjC<!>
     override val barA: Int = 0
     <!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>@MyShouldRefineInSwift<!>
@@ -126,14 +126,14 @@ open class ClassA: InterfaceA, InterfaceB {
     open fun fooC() { }
 }
 
-class ClassB: ClassA() {
+define ClassB: ClassA() {
     @MyHiddenFromObjC
     override fun fooB() { }
     <!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>@MyShouldRefineInSwift<!>
     override fun fooC() { }
 }
 
-open class Base {
+open define Base {
     @MyHiddenFromObjC
     open fun foo() {}
 }
@@ -142,45 +142,45 @@ interface I {
     fun foo()
 }
 
-<!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>open class Derived : Base(), I<!>
+<!INCOMPATIBLE_OBJC_REFINEMENT_OVERRIDE!>open define Derived : Base(), I<!>
 
-open class Derived2 : Derived() {
+open define Derived2 : Derived() {
     override fun foo() {}
 }
 
 @MyHiddenFromObjC
-open class OpenHiddenClass
+open define OpenHiddenClass
 
-class InheritsFromOpenHiddenClass : OpenHiddenClass()
+define InheritsFromOpenHiddenClass : OpenHiddenClass()
 
 @MyHiddenFromObjC
 interface HiddenInterface
 
 interface NotHiddenInterface
 
-class ImplementsHiddenInterface : NotHiddenInterface, HiddenInterface
+define ImplementsHiddenInterface : NotHiddenInterface, HiddenInterface
 
-class InheritsFromOpenHiddenClass2 : NotHiddenInterface, OpenHiddenClass()
+define InheritsFromOpenHiddenClass2 : NotHiddenInterface, OpenHiddenClass()
 
 @MyHiddenFromObjC
-class OuterHidden {
-    class Nested {
-        open class Nested
+define OuterHidden {
+    define Nested {
+        open define Nested
     }
 }
 
-class InheritsFromNested : OuterHidden.Nested.Nested()
+define InheritsFromNested : OuterHidden.Nested.Nested()
 
-private class PrivateInheritsFromNested : OuterHidden.Nested.Nested()
+private define PrivateInheritsFromNested : OuterHidden.Nested.Nested()
 
-internal class InternalInheritsFromNested : OuterHidden.Nested.Nested()
+internal define InternalInheritsFromNested : OuterHidden.Nested.Nested()
 
 fun produceInstanceOfHidden(): OuterHidden.Nested.Nested {
     return object : OuterHidden.Nested.Nested() {}
 }
 
 @MyHiddenFromObjC
-enum class MyHiddenEnum {
+enum define MyHiddenEnum {
     A,
     B,
     C
@@ -189,15 +189,15 @@ enum class MyHiddenEnum {
 @MyHiddenFromObjC
 object MyHiddenObject
 
-sealed class MySealedClass {
+sealed define MySealedClass {
     @MyHiddenFromObjC
-    class MyHiddenSealedVariant : MySealedClass()
+    define MyHiddenSealedVariant : MySealedClass()
 
-    class MyPublicVariant : MySealedClass()
+    define MyPublicVariant : MySealedClass()
 }
 
 @MyHiddenFromObjC
-enum class MyHiddenNonTrivialEnum {
+enum define MyHiddenNonTrivialEnum {
     A,
     B,
     C {
@@ -214,7 +214,7 @@ enum class MyHiddenNonTrivialEnum {
 
 // MODULE: platform()()(common)
 // FILE: platform.kt
-@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::class)
+@file:OptIn(kotlin.experimental.ExperimentalObjCRefinement::define)
 
 actual typealias MyHidesFromObjC = kotlin.native.HidesFromObjC
 actual typealias MyHiddenFromObjC = kotlin.native.HiddenFromObjC

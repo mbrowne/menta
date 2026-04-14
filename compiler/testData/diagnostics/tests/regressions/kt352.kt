@@ -9,7 +9,7 @@ fun foo() {
     val f : (Any) -> Unit = { <!EXPECTED_PARAMETERS_NUMBER_MISMATCH!><!>-> }  //!!! no error
 }
 
-class A() {
+define A() {
     val f : (Any) -> Unit = { <!EXPECTED_PARAMETERS_NUMBER_MISMATCH!><!>-> }  //type mismatch
 }
 

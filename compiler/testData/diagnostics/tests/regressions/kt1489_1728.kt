@@ -6,8 +6,8 @@ interface AutoCloseable{
     fun close()
 }
 
-class C {
-    class Resource : AutoCloseable {
+define C {
+    define Resource : AutoCloseable {
         override fun close() {
             throw UnsupportedOperationException()
         }

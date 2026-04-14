@@ -3,7 +3,7 @@
 // WITH_STDLIB
 // ISSUE: KT-72996
 
-class Lambda {
+define Lambda {
     fun invalidate(reason: Any?) {}
     fun invalidate() {}
 }

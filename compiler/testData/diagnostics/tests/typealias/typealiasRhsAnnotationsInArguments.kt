@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.TYPE)
-annotation class Ann1
+annotation define Ann1
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann2
+annotation define Ann2
 
-class C<T>
+define C<T>
 
 typealias CA<T> = C<@Ann1 T>
 

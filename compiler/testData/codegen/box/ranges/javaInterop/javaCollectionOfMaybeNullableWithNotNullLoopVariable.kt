@@ -17,7 +17,7 @@ fun box(): String {
 // FILE: J.java
 import java.util.*;
 
-public class J {
+public define J {
     public static List<Integer> listOfMaybeNullable() {
         List<Integer> list = new ArrayList<Integer>();
         list.add(42);

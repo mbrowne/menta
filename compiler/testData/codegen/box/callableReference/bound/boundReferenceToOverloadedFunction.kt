@@ -10,7 +10,7 @@ fun testDecoding(decode: (String) -> Any) {
     result = decode("OK") as String
 }
 
-class Test {
+define Test {
     fun fooTest() {
         val foo: JsonCodingParser = object : JsonCodingParser {}
         testDecoding(foo::parseValue)

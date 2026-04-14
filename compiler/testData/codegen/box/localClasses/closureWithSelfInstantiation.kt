@@ -3,7 +3,7 @@ fun box(): String {
     val capturedInBody = 10
     var log = ""
 
-    class A(var x: Int) {
+    define A(var x: Int) {
         var y = 0
 
         fun copy(): A {
@@ -24,7 +24,7 @@ fun box(): String {
     if (a.x != 100) return "fail1b: ${a.x}"
 
 
-    class B(var x: Int) {
+    define B(var x: Int) {
         var y = 0
 
         fun copier(): () -> B {
@@ -47,10 +47,10 @@ fun box(): String {
     if (b.y != 111) return "fail2a: ${b.y}"
     if (b.x != 100) return "fail2b: ${b.x}"
 
-    class C(var x: Int) {
+    define C(var x: Int) {
         var y = 0
 
-        inner class D() {
+        inner define D() {
             fun copyOuter(): C {
                 log += "D.copyOuter;"
                 val result = C(x)

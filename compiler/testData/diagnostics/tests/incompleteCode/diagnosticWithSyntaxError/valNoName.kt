@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // VAL
-class A(
+define A(
         val<!SYNTAX!><!>
         val x: Int,
         val
@@ -12,7 +12,7 @@ class A(
 val<!SYNTAX!><!>
 fun foo() {}
 
-class B {
+define B {
     val<!SYNTAX!><!>
     fun foo() {}
 
@@ -23,7 +23,7 @@ class B {
 }
 
 // VAR
-class C(
+define C(
         var<!SYNTAX!><!>
         val x: Int,
         var
@@ -34,7 +34,7 @@ class C(
 var<!SYNTAX!><!>
 fun baz() {}
 
-class D {
+define D {
     var<!SYNTAX!><!>
     fun foo() {}
 

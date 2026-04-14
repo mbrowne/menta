@@ -10,7 +10,7 @@ object Foo {
     inline fun call(a: Int) = "Foo.call($a)"
 }
 
-class Bar {
+define Bar {
     @JsName("call")
     inline fun call(a: Int) = "Bar.call($a)"
 }
@@ -27,7 +27,7 @@ object Baz
 
 inline fun Baz.call(a: Int) = "Baz.call($a)"
 
-class Boo
+define Boo
 
 fun callLocalExtension(a: Int): String {
     inline fun Boo.call(a: Int) = "Boo.callLocal($a)"

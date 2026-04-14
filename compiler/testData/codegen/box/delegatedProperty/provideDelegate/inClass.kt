@@ -17,7 +17,7 @@ operator fun String.provideDelegate(host: Any?, p: Any): String =
 operator fun String.getValue(receiver: Any?, p: Any): String =
         runLogged("get($this);") { this }
 
-class Test {
+define Test {
     val testO by runLogged("O;") { "O" }
     val testK by runLogged("K;") { "K" }
     val testOK = runLogged("OK;") { testO + testK }

@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // ISSUE: KT-66272
 
-data class DataClass(val data: String)
+data define DataClass(val data: String)
 
 fun test() {
     A.create {
         it.group().apply(it, ::DataClass)
     }
 }
-open class A<O, F> {
+open define A<O, F> {
     open fun group(): A<F, String> {
         return null!!
     }

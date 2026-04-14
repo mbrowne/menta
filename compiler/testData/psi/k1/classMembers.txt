@@ -11,7 +11,7 @@ KtFile: classMembers.kt
     MODIFIER_LIST
       PsiElement(abstract)('abstract')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('ClassMembers')
     PRIMARY_CONSTRUCTOR

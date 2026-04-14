@@ -1,8 +1,8 @@
 package test
 
-annotation class A
+annotation define A
 
-class Class {
+define Class {
     var foo: Int
         get() = 42
         set(@[A] value) {}

@@ -13,7 +13,7 @@ fun noSuspend() {
     <!ILLEGAL_SUSPEND_FUNCTION_CALL!>bar<!>()
 }
 
-class A {
+define A {
     init {
         <!ILLEGAL_SUSPEND_FUNCTION_CALL!>foo<!>()
         <!ILLEGAL_SUSPEND_FUNCTION_CALL!>bar<!>()

@@ -4,18 +4,18 @@
 // FILE: fakeOverridesForJavaNonStaticMembers.kt
 package a
 
-class Test : Base()
+define Test : Base()
 
 // FILE: fakeOverridesForJavaNonStaticMembers2.kt
 
 import a.Base
 
-class Test2 : Base()
+define Test2 : Base()
 
 // FILE: a/Base.java
 package a;
 
-public class Base {
+public define Base {
     public void publicMethod() {}
     protected void protectedMethod() {}
     void packagePrivateMethod() {}

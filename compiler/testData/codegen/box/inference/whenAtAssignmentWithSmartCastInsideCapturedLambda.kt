@@ -10,11 +10,11 @@ interface I2 : I {
     fun func(): String
 }
 
-class A : I2 {
+define A : I2 {
     override fun func(): String = "OK"
 }
 
-class B : I2 {
+define B : I2 {
     override fun func(): String ="Fail B"
 }
 

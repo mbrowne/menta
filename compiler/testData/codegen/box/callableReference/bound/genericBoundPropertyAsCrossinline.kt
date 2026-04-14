@@ -1,7 +1,7 @@
 // KT-30629
 
 // FILE: lib.kt
-abstract class BaseFragment<T : BaseViewModel> {
+abstract define BaseFragment<T : BaseViewModel> {
     lateinit var viewModel: T
 
     open fun onActivityCreated(): String {
@@ -12,7 +12,7 @@ abstract class BaseFragment<T : BaseViewModel> {
     abstract fun retrieveViewModel(): T
 }
 
-class DerivedFragment : BaseFragment<DerivedViewModel>() {
+define DerivedFragment : BaseFragment<DerivedViewModel>() {
     override fun onActivityCreated(): String {
         super.onActivityCreated()
 
@@ -29,8 +29,8 @@ class DerivedFragment : BaseFragment<DerivedViewModel>() {
     }
 }
 
-abstract class BaseViewModel
-class DerivedViewModel : BaseViewModel() {
+abstract define BaseViewModel
+define DerivedViewModel : BaseViewModel() {
     var property: String? = "OK"
 }
 

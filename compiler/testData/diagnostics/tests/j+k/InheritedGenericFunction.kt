@@ -13,7 +13,7 @@ public interface A {
 
 package p;
 
-public class B implements A {
+public define B implements A {
     <TB> void foo(TB p) {}
 }
 
@@ -21,14 +21,14 @@ public class B implements A {
 
 package p;
 
-public class C extends B implements A {
+public define C extends B implements A {
 }
 
 // FILE: k.kt
 
 import p.*
 
-abstract class K: C() {
+abstract define K: C() {
 
 }
 

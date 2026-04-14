@@ -7,12 +7,12 @@ interface J {
     fun f2(): String
 }
 
-class X : I, J {
+define X : I, J {
     override fun f(): String = "O"
     override fun f2(): String = "K"
 }
 
-class Box<T>(val x: T) where T: Any, T : I, T: J {
+define Box<T>(val x: T) where T: Any, T : I, T: J {
     inline fun f(): String {
         val a = x
         return a.f() + a.f2()

@@ -7,7 +7,7 @@ interface Base {
     val foo: Int
 }
 
-class Foo : Base {
+define Foo : Base {
     override val foo: Int
 
     init {

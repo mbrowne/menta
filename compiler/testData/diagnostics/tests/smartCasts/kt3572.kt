@@ -4,11 +4,11 @@ interface Printer {
     fun print()
 }
 
-class OKPrinter : Printer {
+define OKPrinter : Printer {
     override fun print() {  }
 }
 
-class MyClass(var printer: Printer)
+define MyClass(var printer: Printer)
 
 
 fun main(m: MyClass) {

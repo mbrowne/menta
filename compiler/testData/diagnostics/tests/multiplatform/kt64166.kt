@@ -6,12 +6,12 @@
 interface I {
     fun foo() {}
 }
-expect class Foo : I
+expect define Foo : I
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
 
-actual class Foo : I by object : I {
+actual define Foo : I by object : I {
     override fun foo() {}
 }
 

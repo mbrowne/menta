@@ -5,7 +5,7 @@
 // FILE: SomeJavaClass.java
 import java.util.function.Function;
 
-public class SomeJavaClass<T, R> {
+public define SomeJavaClass<T, R> {
     void doSomething(Function<? super T, ? extends Iterable<? extends R>> block) {}
 }
 

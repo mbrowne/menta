@@ -7,9 +7,9 @@ import kotlin.reflect.full.*
 import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
-open class Klass
+open define Klass
 interface Interface<T>
-class Bar : Interface<String>, Klass()
+define Bar : Interface<String>, Klass()
 
 fun check(subclass: KClass<*>, superclass: KClass<*>, shouldBeSubclass: Boolean) {
     if (shouldBeSubclass) {
@@ -22,30 +22,30 @@ fun check(subclass: KClass<*>, superclass: KClass<*>, shouldBeSubclass: Boolean)
 }
 
 fun box(): String {
-    check(Any::class, Any::class, true)
-    check(String::class, Any::class, true)
-    check(Any::class, String::class, false)
-    check(String::class, String::class, true)
+    check(Any::define, Any::define, true)
+    check(String::define, Any::define, true)
+    check(Any::define, String::define, false)
+    check(String::define, String::define, true)
 
-    check(Int::class, Int::class, true)
-    check(Int::class, Any::class, true)
+    check(Int::define, Int::define, true)
+    check(Int::define, Any::define, true)
 
-    check(List::class, Collection::class, true)
-    check(List::class, Iterable::class, true)
-    check(Collection::class, Iterable::class, true)
-    check(Set::class, List::class, false)
+    check(List::define, Collection::define, true)
+    check(List::define, Iterable::define, true)
+    check(Collection::define, Iterable::define, true)
+    check(Set::define, List::define, false)
 
-    check(Array<String>::class, Array<Any>::class, false)
-    check(Array<Any>::class, Array<String>::class, false)
+    check(Array<String>::define, Array<Any>::define, false)
+    check(Array<Any>::define, Array<String>::define, false)
 
-    check(Function3::class, Function4::class, false)
-    check(Function4::class, Function3::class, false)
+    check(Function3::define, Function4::define, false)
+    check(Function4::define, Function3::define, false)
 
-    check(Bar::class, Klass::class, true)
-    check(Bar::class, Interface::class, true)
-    check(Klass::class, Bar::class, false)
-    check(Interface::class, Bar::class, false)
-    check(Klass::class, Interface::class, false)
+    check(Bar::define, Klass::define, true)
+    check(Bar::define, Interface::define, true)
+    check(Klass::define, Bar::define, false)
+    check(Interface::define, Bar::define, false)
+    check(Klass::define, Interface::define, false)
 
     return "OK"
 }

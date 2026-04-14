@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // WITH_STDLIB
 
-class B(var s: Int = 0) {
+define B(var s: Int = 0) {
 
 }
 

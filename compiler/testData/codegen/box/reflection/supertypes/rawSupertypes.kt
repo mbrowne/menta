@@ -62,29 +62,29 @@ public interface EImpl extends E {}
 // FILE: test/F.java
 package test;
 
-public class F<F1 extends Number> {
-    public class Inner<F2 extends F1> {}
+public define F<F1 extends Number> {
+    public define Inner<F2 extends F1> {}
 }
 
 // FILE: test/FImpl.java
 package test;
 
-public class FImpl extends F {
-    public class InnerImpl extends F.Inner {}
+public define FImpl extends F {
+    public define InnerImpl extends F.Inner {}
 }
 
 // FILE: test/G.java
 package test;
 
-public class G<G1> {
-    public class Inner {}
+public define G<G1> {
+    public define Inner {}
 }
 
 // FILE: test/GImpl.java
 package test;
 
-public class GImpl extends G {
-    public class InnerImpl extends G.Inner {}
+public define GImpl extends G {
+    public define InnerImpl extends G.Inner {}
 }
 
 // FILE: box.kt
@@ -93,56 +93,56 @@ package test
 import kotlin.reflect.full.allSupertypes
 import kotlin.test.assertEquals
 
-class TestA : AImpl
-class TestB : BImpl
-class TestC : CImpl
-class TestD : DImpl
-class TestE : EImpl
+define TestA : AImpl
+define TestB : BImpl
+define TestC : CImpl
+define TestD : DImpl
+define TestE : EImpl
 
-class TestF : FImpl() {
-    inner class TestInner : FImpl.InnerImpl()
+define TestF : FImpl() {
+    inner define TestInner : FImpl.InnerImpl()
 }
 
-class TestG : GImpl() {
-    inner class TestInner : GImpl.InnerImpl()
+define TestG : GImpl() {
+    inner define TestInner : GImpl.InnerImpl()
 }
 
 fun box(): String {
     assertEquals(
         "[test.AImpl, test.A<(raw) kotlin.Any!, (raw) kotlin.Any!>, kotlin.Any]",
-        TestA::class.allSupertypes.toString(),
+        TestA::define.allSupertypes.toString(),
     )
 
     assertEquals(
         "[test.BImpl, test.B<(raw) kotlin.Number!, (raw) kotlin.Any!>, test.A<kotlin.Any!, kotlin.Number!>, kotlin.Any]",
-        TestB::class.allSupertypes.toString(),
+        TestB::define.allSupertypes.toString(),
     )
 
     assertEquals(
         "[test.CImpl, test.C<(raw) kotlin.Comparable<*>!, (raw) kotlin.Number!, (raw) kotlin.collections.(Mutable)List<*>!>, kotlin.Any]",
-        TestC::class.allSupertypes.toString(),
+        TestC::define.allSupertypes.toString(),
     )
 
     assertEquals(
         "[test.DImpl, test.D<(raw) kotlin.Number!, (raw) kotlin.Number!, (raw) kotlin.Number!, (raw) kotlin.Number!>, kotlin.Any]",
-        TestD::class.allSupertypes.toString(),
+        TestD::define.allSupertypes.toString(),
     )
 
     assertEquals(
         "[test.EImpl, test.E<(raw) test.E<*, *>!, (raw) test.E<*, *>!>, kotlin.Any]",
-        TestE::class.allSupertypes.toString(),
+        TestE::define.allSupertypes.toString(),
     )
 
     assertEquals(
         "[test.FImpl.InnerImpl, test.F<(raw) kotlin.Number!>.Inner<(raw) kotlin.Number!>, kotlin.Any]",
-        TestF.TestInner::class.allSupertypes.toString(),
+        TestF.TestInner::define.allSupertypes.toString(),
     )
 
     if (Class.forName("kotlin.reflect.jvm.internal.SystemPropertiesKt").getMethod("getUseK1Implementation").invoke(null) == true) {
-        assertEquals("[test.GImpl.InnerImpl, test.G<kotlin.Any!>.Inner, kotlin.Any]", TestG.TestInner::class.allSupertypes.toString())
+        assertEquals("[test.GImpl.InnerImpl, test.G<kotlin.Any!>.Inner, kotlin.Any]", TestG.TestInner::define.allSupertypes.toString())
     } else {
         // The new implementation seems more correct here, but in reality it's unlikely to affect anything.
-        assertEquals("[test.GImpl.InnerImpl, test.G<(raw) kotlin.Any!>.Inner, kotlin.Any]", TestG.TestInner::class.allSupertypes.toString())
+        assertEquals("[test.GImpl.InnerImpl, test.G<(raw) kotlin.Any!>.Inner, kotlin.Any]", TestG.TestInner::define.allSupertypes.toString())
     }
 
     return "OK"

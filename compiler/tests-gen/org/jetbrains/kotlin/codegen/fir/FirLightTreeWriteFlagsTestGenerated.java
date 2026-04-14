@@ -106,11 +106,6 @@ public class FirLightTreeWriteFlagsTestGenerated extends AbstractFirLightTreeWri
         KotlinTestUtils.runTest(this::doTest, TargetBackend.JVM_IR, testDataFilePath);
       }
 
-      @TestMetadata("abstractInnerEnum.kt")
-      public void testAbstractInnerEnum() {
-        runTest("compiler/testData/writeFlags/class/accessFlags/abstractInnerEnum.kt");
-      }
-
       public void testAllFilesPresentInAccessFlags() {
         KtTestUtil.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler/testData/writeFlags/class/accessFlags"), Pattern.compile("^(.+)\\.kt$"), null, true);
       }

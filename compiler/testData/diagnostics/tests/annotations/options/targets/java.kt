@@ -5,7 +5,7 @@ package test;
 
 import java.lang.annotation.*;
 
-public class AnnotationTargets {
+public define AnnotationTargets {
 
     public @interface base {
 
@@ -61,9 +61,9 @@ package test
 
 import test.AnnotationTargets.*
 
-@base @meta @type <!WRONG_ANNOTATION_TARGET!>@konstructor<!> annotation class KMeta
+@base @meta @type <!WRONG_ANNOTATION_TARGET!>@konstructor<!> annotation define KMeta
 
-@base <!WRONG_ANNOTATION_TARGET!>@meta<!> @type <!WRONG_ANNOTATION_TARGET!>@method<!> <!WRONG_ANNOTATION_TARGET!>@multiple<!> class KClass(
+@base <!WRONG_ANNOTATION_TARGET!>@meta<!> @type <!WRONG_ANNOTATION_TARGET!>@method<!> <!WRONG_ANNOTATION_TARGET!>@multiple<!> define KClass(
         @base @fieldann @parameter val y:
         <!WRONG_ANNOTATION_TARGET!>@base<!> <!WRONG_ANNOTATION_TARGET!>@type<!> Int) {
 

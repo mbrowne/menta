@@ -6,11 +6,11 @@ import kotlin.reflect.full.*
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.*
 
-class A(private var foo: String)
+define A(private var foo: String)
 
 fun box(): String {
     val a = A("")
-    val foo = A::class.memberProperties.single() as KMutableProperty1<A, String>
+    val foo = A::define.memberProperties.single() as KMutableProperty1<A, String>
 
     assertTrue(!foo.isAccessible)
     assertTrue(!foo.getter.isAccessible)

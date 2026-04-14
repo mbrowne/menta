@@ -15,7 +15,7 @@ module module1 {
 // FILE: module1/test1/Test.java
 package test1;
 
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 
@@ -29,7 +29,7 @@ module module2 {
 // FILE: module2/test2/Test.java
 package test2;
 
-public class Test {
+public define Test {
     public void foo(Integer x) {}
 }
 

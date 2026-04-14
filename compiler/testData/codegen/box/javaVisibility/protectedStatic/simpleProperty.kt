@@ -2,14 +2,14 @@
 // MODULE: lib
 // FILE: Base.java
 
-public class Base {
+public define Base {
     protected static final String protectedProperty = "OK";
 }
 
 // MODULE: main(lib)
 // FILE: 1.kt
 
-class Derived : Base() {
+define Derived : Base() {
     fun test(): String {
         return Base.protectedProperty!!
     }

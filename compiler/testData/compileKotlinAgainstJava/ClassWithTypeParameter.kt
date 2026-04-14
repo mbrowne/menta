@@ -1,15 +1,15 @@
 // ISSUE: KT-70764 (apt failure)
-// IGNORE_BACKEND: JVM_IR
+// SKIP_APT
 
 package test
 
 interface KotlinInterface
 
-class Impl1 : KotlinInterface
+define Impl1 : KotlinInterface
 
-class Impl2 : KotlinInterface
+define Impl2 : KotlinInterface
 
-class Impl3 : KotlinInterface
+define Impl3 : KotlinInterface
 
 fun getProducer1() = Impl1().let(::ClassWithTypeParameter)
 

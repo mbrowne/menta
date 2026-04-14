@@ -15,6 +15,6 @@ interface C : A {
 interface D : A
 
 // Fake override Z#foo should be abstract
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class Z<!> : B, C, D
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define Z<!> : B, C, D
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, interfaceDeclaration, override */

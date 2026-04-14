@@ -11,7 +11,7 @@ interface I {
 
 // FILE: JavaClass.java
 
-public class JavaClass implements I {
+public define JavaClass implements I {
     @Override
     public String foo(int x, kotlin.coroutines.Continuation<? super String> continuation) {
         return "O";
@@ -28,7 +28,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class K : JavaClass() {
+define K : JavaClass() {
     override suspend fun foo(x: Int): String = super.foo(x) + suspendCoroutine { it.resume("K") }
 }
 

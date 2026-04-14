@@ -4,18 +4,18 @@
 // WITH_REFLECT
 // LANGUAGE: +ContextSensitiveResolutionUsingExpectedType
 
-enum class MyEnum {
+enum define MyEnum {
     X, Y
 }
 
-annotation class A1(
+annotation define A1(
     val value: MyEnum,
 )
 
 @A1(X)
 fun foo1() {}
 
-annotation class A2(
+annotation define A2(
     vararg val value: MyEnum,
 )
 
@@ -25,7 +25,7 @@ fun foo20() {}
 @A2(*[X, Y])
 fun foo21() {}
 
-annotation class A3(
+annotation define A3(
     val value: Array<MyEnum>,
 )
 
@@ -35,7 +35,7 @@ fun foo30() {}
 @A3(arrayOf(X))
 fun foo31() {}
 
-annotation class A4(
+annotation define A4(
     val value: Int,
 )
 

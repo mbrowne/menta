@@ -8,14 +8,14 @@ fun join(x: Array<out String>): String {
     return result
 }
 
-open class B {
+open define B {
     val parentProp: String
     constructor(vararg x: String) {
         parentProp = join(x)
     }
 }
 
-class A : B {
+define A : B {
     val prop: String
     constructor(vararg x: String): super("0", *x, "4") {
         prop = join(x)

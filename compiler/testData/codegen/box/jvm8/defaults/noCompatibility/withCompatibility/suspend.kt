@@ -19,7 +19,7 @@ interface Test {
 
 }
 
-class TestClass : Test
+define TestClass : Test
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)

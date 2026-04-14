@@ -4,17 +4,17 @@
 
 // FILE: J.java
 
-public class J<T extends Integer>  {}
+public define J<T extends Integer>  {}
 
 // FILE: main.kt
 
 import java.util.ArrayList
 
-class Foo(val attributes: Map<String, String>)
+define Foo(val attributes: Map<String, String>)
 
-class A<R>
+define A<R>
 
-class Bar<T, K: Any> {
+define Bar<T, K: Any> {
     val foos1 = <!DEBUG_INFO_EXPRESSION_TYPE("java.util.ArrayList<Foo>")!>ArrayList<Foo>()<!>
     val foos2 = <!DEBUG_INFO_EXPRESSION_TYPE("java.util.ArrayList<Foo?>")!>ArrayList<Foo?>()<!>
     val foos3 = <!DEBUG_INFO_EXPRESSION_TYPE("java.util.ArrayList<A<Foo>>")!>ArrayList<A<Foo>>()<!>

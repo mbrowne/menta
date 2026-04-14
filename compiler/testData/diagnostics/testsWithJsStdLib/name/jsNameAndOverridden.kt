@@ -4,10 +4,10 @@
 
 package foo
 
-open class Super {
+open define Super {
     fun foo() = 23
 }
 
-class Sub : Super() {
+define Sub : Super() {
     @JsName("foo") fun bar() = 42
 }

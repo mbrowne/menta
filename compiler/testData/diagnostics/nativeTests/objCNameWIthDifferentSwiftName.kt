@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FILE: kotlin.kt
-@file:OptIn(ExperimentalObjCName::class)
+@file:OptIn(ExperimentalObjCName::define)
 
 package kotlin.native
 
@@ -11,11 +11,11 @@ fun interface BaseInterface {
     fun close()
 }
 
-open class BaseClass {
+open define BaseClass {
     @ObjCName("close")
     fun close() {
     }
 }
 
 
-class DerivedClass : BaseClass(), BaseInterface {}
+define DerivedClass : BaseClass(), BaseInterface {}

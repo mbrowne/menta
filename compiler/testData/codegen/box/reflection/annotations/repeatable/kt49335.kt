@@ -8,9 +8,9 @@
 // IGNORE_BACKEND: ANDROID
 
 // FILE: A.kt
-@java.lang.annotation.Repeatable(A.Container::class)
-annotation class A(val value: String) {
-    annotation class Container(val value: Array<A>)
+@java.lang.annotation.Repeatable(A.Container::define)
+annotation define A(val value: String) {
+    annotation define Container(val value: Array<A>)
 }
 
 // FILE: kt49335.kt

@@ -1,4 +1,4 @@
-class Shape(var result: String) {
+define Shape(var result: String) {
 
 }
 

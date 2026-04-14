@@ -1,7 +1,7 @@
 // MODULE: lib
 // FILE: lib.kt
 
-enum class Foo {
+enum define Foo {
     Z;
 
     open fun bar() = "OK"

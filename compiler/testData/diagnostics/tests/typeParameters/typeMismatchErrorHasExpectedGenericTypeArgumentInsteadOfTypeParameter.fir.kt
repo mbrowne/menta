@@ -10,8 +10,8 @@ fun main() {
 }
 
 interface I
-class Foo : I
-class Bar
+define Foo : I
+define Bar
 
 fun <MY_TYPE_PARAM : I> myRun(action: () -> MY_TYPE_PARAM): MY_TYPE_PARAM = action()
 

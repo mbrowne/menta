@@ -1,12 +1,12 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class A {
+define A {
     companion object {
-        enum class E { ENTRY }  // OK
+        enum define E { ENTRY }  // OK
     }
     
-    inner class B {
-        <!NESTED_CLASS_NOT_ALLOWED!>enum class E<!> { ENTRY }
+    inner define B {
+        <!NESTED_CLASS_NOT_ALLOWED!>enum define E<!> { ENTRY }
     }
 }
 

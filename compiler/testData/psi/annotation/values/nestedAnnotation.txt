@@ -9,7 +9,7 @@ KtFile: nestedAnnotation.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Outer')
     PRIMARY_CONSTRUCTOR
@@ -58,7 +58,7 @@ KtFile: nestedAnnotation.kt
     MODIFIER_LIST
       PsiElement(annotation)('annotation')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('Nested')
     PRIMARY_CONSTRUCTOR
@@ -151,7 +151,7 @@ KtFile: nestedAnnotation.kt
                 PsiElement(RPAR)(')')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithNested')
   PsiWhiteSpace('\n\n')
@@ -200,6 +200,6 @@ KtFile: nestedAnnotation.kt
                   PsiElement(RPAR)(')')
           PsiElement(RPAR)(')')
     PsiWhiteSpace('\n')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('WithQualifiedNested')

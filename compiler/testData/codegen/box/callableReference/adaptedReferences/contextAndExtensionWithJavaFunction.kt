@@ -4,7 +4,7 @@
 // FILE: JavaClass.java
 import org.C;
 
-public class JavaClass {
+public define JavaClass {
     public static String foo(C a, C b, C c) { return a.foo() + b.foo() + c.foo(); }
 }
 
@@ -12,7 +12,7 @@ public class JavaClass {
 package org
 import JavaClass
 
-class C(var a: String) {
+define C(var a: String) {
     fun foo(): String { return a }
 }
 

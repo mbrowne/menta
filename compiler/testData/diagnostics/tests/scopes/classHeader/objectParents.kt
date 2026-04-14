@@ -6,7 +6,7 @@ val aImpl: A.Interface
 
 object A : <!UNRESOLVED_REFERENCE!>Nested<!>(), <!DELEGATION_NOT_TO_INTERFACE, UNRESOLVED_REFERENCE!>Interface<!> by aImpl, I<<!UNRESOLVED_REFERENCE!>Nested<!>, <!UNRESOLVED_REFERENCE!>Interface<!>> {
 
-    class Nested
+    define Nested
 
     interface Interface
 }

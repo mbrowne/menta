@@ -5,7 +5,7 @@
 // FILE: inline.kt
 package test
 
-class A {
+define A {
     inline fun doAssert() {
         assert(false)
     }
@@ -14,7 +14,7 @@ class A {
 // FILE: inlineSite.kt
 import test.*
 
-class B {
+define B {
     companion object {
         @JvmField
         val triggered: Boolean = try {
@@ -26,10 +26,10 @@ class B {
     }
 }
 
-class Dummy
+define Dummy
 
 fun box(): String {
-    val loader = Dummy::class.java.classLoader
+    val loader = Dummy::define.java.classLoader
     loader.setDefaultAssertionStatus(false)
     return if (loader.loadClass("B").getField("triggered").get(null) == true)
         "FAIL: assertion triggered"

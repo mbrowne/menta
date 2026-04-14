@@ -1,14 +1,14 @@
 // WITH_STDLIB
-open class A {
+open define A {
     val a: String.() -> String = { this }
     val b: (String) -> String by this::a
 }
 
-class B {
+define B {
     val b: (String) -> String by A()::a
 }
 
-class C: A() {
+define C: A() {
     val c: (String) -> String by ::a
 }
 

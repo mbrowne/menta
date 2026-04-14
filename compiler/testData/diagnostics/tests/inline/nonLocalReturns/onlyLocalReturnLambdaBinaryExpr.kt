@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -NOTHING_TO_INLINE
 
-class Z {
+define Z {
     inline infix fun <R> inlineFun(crossinline p: () -> R) {
         p()
     }

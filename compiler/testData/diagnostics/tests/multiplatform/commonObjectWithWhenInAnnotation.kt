@@ -4,7 +4,7 @@
 // MODULE: m1-common
 // FILE: common.kt
 
-annotation class C(val f: String)
+annotation define C(val f: String)
 
 const val flag = true
 

@@ -23,17 +23,17 @@ fun foo(x: Int, y: String = <!CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLA
     <!CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION!>definedExternally<!>
 }
 
-open class A(val x: Int)
+open define A(val x: Int)
 
-open class B() : A(<!CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION!>definedExternally<!>) {
+open define B() : A(<!CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION!>definedExternally<!>) {
     constructor(y: String) : this()
 
     constructor(y: String, z: String) : this(y + z + <!CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION!>definedExternally<!>)
 }
 
 private fun exposeClassS() = run {
-    class S {
-        inner class W {
+    define S {
+        inner define W {
             val v: String = <!CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION!>definedExternally<!>
         }
     }

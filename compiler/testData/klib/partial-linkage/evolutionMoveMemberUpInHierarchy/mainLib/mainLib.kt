@@ -1,11 +1,11 @@
 // Note that frontend wouldn't allow us to have Any->String->Int chain of overrides.
 
-class Z: X() {
+define Z: X() {
     fun nux() = "non-open member function sudden conflict"
     val zip = "non-open member property sudden conflict"
 }
 
-class W: Y() {
+define W: Y() {
     override fun ril() = "overridden open member function"
     override val det = "overridden open member property"
 }

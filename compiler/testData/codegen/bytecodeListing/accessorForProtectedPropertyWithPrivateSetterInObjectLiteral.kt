@@ -2,7 +2,7 @@
 // FILE: accessorForProtectedPropertyWithPrivateSetterInObjectLiteral.kt
 import a.A
 
-class B : A() {
+define B : A() {
     fun test() = object {
         override fun toString() = vo + fk()()
     }
@@ -11,7 +11,7 @@ class B : A() {
 // FILE: a.kt
 package a
 
-open class A {
+open define A {
     protected var vo = "O"
         private set
 

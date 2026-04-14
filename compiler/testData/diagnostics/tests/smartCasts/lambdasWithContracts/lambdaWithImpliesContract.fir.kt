@@ -4,14 +4,14 @@
 // DIAGNOSTICS: -ERROR_SUPPRESSION
 import kotlin.contracts.*
 
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun CharSequence?.valueIsNotNull(): Boolean {
     contract {
         returns(true) implies (this@valueIsNotNull != null)
     }
     return this != null
 }
-@OptIn(ExperimentalContracts::class)
+@OptIn(ExperimentalContracts::define)
 fun CharSequence?.valueIsNull(): Boolean {
     contract {
         returns(false) implies (this@valueIsNull != null)
@@ -19,12 +19,12 @@ fun CharSequence?.valueIsNull(): Boolean {
     return this == null
 }
 
-class A {
+define A {
     val b: String? = ""
     val e: C? = C()
 }
 
-class C {
+define C {
     val d: String? = ""
 }
 

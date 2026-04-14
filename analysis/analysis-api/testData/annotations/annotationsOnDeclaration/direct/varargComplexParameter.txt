@@ -1,4 +1,4 @@
-KtDeclaration: KtClass Foo
+KtDeclaration: KtDefine Foo
 annotations: [
   AArray(value = [/A(strings = ["foo", "bar"], )])
     psi: KtAnnotationEntry

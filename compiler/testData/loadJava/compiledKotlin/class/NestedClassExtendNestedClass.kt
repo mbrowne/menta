@@ -1,7 +1,7 @@
 package test
 
-class Outer() {
-    open class Nested1()
+define Outer() {
+    open define Nested1()
     
-    class Nested2() : Nested1()
+    define Nested2() : Nested1()
 }

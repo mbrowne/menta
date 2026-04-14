@@ -8,7 +8,7 @@ interface GenericSuspendInterface<T> {
 
 interface SuspendInterface : GenericSuspendInterface<Result<String>>
 
-class SuspendImpl : SuspendInterface {
+define SuspendImpl : SuspendInterface {
     override suspend fun execute(): Result<String> = Result.success("OK")
 }
 

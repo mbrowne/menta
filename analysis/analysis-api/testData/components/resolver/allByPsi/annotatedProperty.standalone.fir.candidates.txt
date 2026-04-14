@@ -10,7 +10,7 @@ KtNameReferenceExpression(23,29): 'myPack'
 KtImportList(29,29): ''
   NO_CANDIDATES
 
-KtClass(31,325): '@Target('
+KtDefine(31,325): '@Target('
   NO_CANDIDATES
 
 KtDeclarationModifierList(31,292): '@Target('

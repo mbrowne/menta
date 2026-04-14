@@ -2,15 +2,15 @@
 // FIR_IDENTICAL
 import kotlin.reflect.KProperty
 
-annotation class Ann
+annotation define Ann
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, value: String) {}
 }
 
 <!INAPPLICABLE_TARGET_ON_PROPERTY, WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@set:Ann<!>
-class SomeClass {
+define SomeClass {
 
     <!INAPPLICABLE_TARGET_PROPERTY_IMMUTABLE!>@set:Ann<!>
     protected val simpleProperty: String = "text"

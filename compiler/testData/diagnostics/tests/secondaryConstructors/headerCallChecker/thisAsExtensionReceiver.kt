@@ -5,7 +5,7 @@
 fun A.foobar() = 1
 val A.prop: Int get() = 2
 
-class A {
+define A {
     constructor(x: Int)
     constructor() : this(
             <!INSTANCE_ACCESS_BEFORE_SUPER_CALL!>foobar<!>() +

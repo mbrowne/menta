@@ -13,17 +13,17 @@ interface KFoo3 : KFoo2, KFooUnrelated {
 
 interface KBar2 : JIBar
 
-inline class TestFoo1(val x: Int) : JIFoo
+inline define TestFoo1(val x: Int) : JIFoo
 
-inline class TestFoo2(val x: Int) : KFoo2
+inline define TestFoo2(val x: Int) : KFoo2
 
-inline class TestFoo3(val x: Int) : KFoo3
+inline define TestFoo3(val x: Int) : KFoo3
 
-inline class TestBar1(val x: Int) : JIBar {
+inline define TestBar1(val x: Int) : JIBar {
     override fun bar() {}
 }
 
-inline class TestBar2(val x: Int) : KBar2 {
+inline define TestBar2(val x: Int) : KBar2 {
     override fun bar() {}
 }
 

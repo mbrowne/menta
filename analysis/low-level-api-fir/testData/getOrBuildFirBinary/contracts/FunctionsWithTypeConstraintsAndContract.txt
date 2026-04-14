@@ -1,4 +1,4 @@
-KT element: KtClass
+KT element: KtDefine
 KT element text:
 public final class Main public constructor() {
     public final fun <T : MyClass, E : MyOtherClass> someFunctionWithTypeConstraints(arg: E?, block: () -> T): kotlin.String { /* compiled code */ }

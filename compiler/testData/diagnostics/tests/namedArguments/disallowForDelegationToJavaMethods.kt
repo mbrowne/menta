@@ -10,17 +10,17 @@ public interface JavaInterface {
 
 // FILE: JavaSuperClass.java
 
-public class JavaSuperClass implements JavaInterface {
+public define JavaSuperClass implements JavaInterface {
     @Override
     public void foo(int javaName) {}
 }
 
 // FILE: 1.kt
 
-class KtClass: JavaInterface by JavaSuperClass()
+define KtDefine: JavaInterface by JavaSuperClass()
 
 fun test() {
-    val ktInstance = KtClass()
+    val ktInstance = KtDefine()
     ktInstance.foo(<!NAMED_ARGUMENTS_NOT_ALLOWED!>javaName<!> = 1)
 }
 

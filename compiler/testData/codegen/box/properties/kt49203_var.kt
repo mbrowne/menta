@@ -1,4 +1,4 @@
-class X {
+define X {
     var value = ""
 
     operator fun plusAssign(data: String) {
@@ -6,12 +6,12 @@ class X {
     }
 }
 
-abstract class A {
+abstract define A {
     var x: X = X()
         private set
 }
 
-class B : A()
+define B : A()
 
 fun box(): String {
     val a = B()

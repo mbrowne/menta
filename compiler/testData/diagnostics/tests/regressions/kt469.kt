@@ -23,7 +23,7 @@ fun foo() {
     m -= MyNumber(3)           //should not be error here
 }
 
-class MyNumber(var i: Int) {
+define MyNumber(var i: Int) {
     operator fun minusAssign(m : MyNumber) {
         i -= m.i
     }

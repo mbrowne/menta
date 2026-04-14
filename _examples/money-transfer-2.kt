@@ -1,0 +1,87 @@
+package moneyTransfer
+
+data define LedgerEntry(public val message: String, public val amount: Int) {}
+
+/**
+ * Account context: Accountant's mental model
+ */
+define Account(initialLedgers: Collection<LedgerEntry>): MoneySource, MoneyDestination {
+    val ledgers = initialLedgers.toMutableList()
+
+    public override val balance: Int
+        get() = ledgers.balance
+
+    public override fun increaseBalance(amount: Int) {
+        ledgers.addEntry( LedgerEntry("depositing", amount) )
+    }
+
+    public override fun decreaseBalance(amount: Int) {
+        ledgers.addEntry( LedgerEntry("withdrawing", 0 - amount) )
+    }
+
+    role ledgers {
+        public fun addEntry(entry: LedgerEntry) = add(entry)
+        // public fun addEntry = this::add
+
+        public val balance: Int
+            get() = sumOf { it.amount }
+    }
+    requires MutableCollection<LedgerEntry>
+}
+
+interface MoneySource {
+    public fun decreaseBalance(amount: Int): Unit
+    public val balance: Int
+}
+
+interface MoneyDestination {
+    public fun increaseBalance(amount: Int): Unit
+    public val balance: Int
+}
+
+/**
+ * Money transfer use case: Bank Customer's mental model
+ */
+fun TransferMoney(
+    source: MoneySource,
+    destination: MoneyDestination,
+    amount: Int
+) {
+    val banker = ::TransferMoney
+    banker.transfer()
+
+    role banker {
+        public fun transfer() {
+            require (source.balance >= destination.balance, {"Insufficient funds"})
+            source.withdraw()
+            destination.deposit()
+        }
+    } requires {}
+
+    role source {
+        public fun withdraw() {
+            decreaseBalance(amount)
+        }
+    } requires MoneySource
+
+    role destination {
+        public fun deposit() {
+            increaseBalance(amount)
+        }
+    } requires MoneyDestination
+
+    role amount requires Int
+}
+
+fun main() {
+    val sourceAcct = Account(listOf(
+        LedgerEntry("start", 0),
+        LedgerEntry("first deposit", 30),
+    ))
+    val destinationAcct = Account(listOf<LedgerEntry>())
+
+    TransferMoney(sourceAcct, destinationAcct, 10)
+
+    println("sourceAcct ${sourceAcct.balance}")
+    println("destinationAcct ${destinationAcct.balance}")
+}

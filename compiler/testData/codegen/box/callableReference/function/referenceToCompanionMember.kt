@@ -1,12 +1,12 @@
 // WITH_STDLIB
 
-class A {
+define A {
     companion object {
         fun foo(): String = "OK"
     }
 }
 
-class B {
+define B {
     companion object {
         fun foo(): String = "Fail"
     }

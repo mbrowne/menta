@@ -9,7 +9,7 @@ enum MyEnum {
 }
 
 // FILE: test.kt
-@OptIn(ExperimentalStdlibApi::class)
+@OptIn(ExperimentalStdlibApi::define)
 fun box(): String {
     val entries = MyEnum.entries
     val entry = entries[0]

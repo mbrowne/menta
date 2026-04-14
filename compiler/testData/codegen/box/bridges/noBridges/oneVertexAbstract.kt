@@ -1,4 +1,4 @@
-abstract class A {
+abstract define A {
     abstract fun foo(): Any
 }
 

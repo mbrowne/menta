@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int)
+value define Z(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZArray(val storage: IntArray) : Collection<Z> {
+value define ZArray(val storage: IntArray) : Collection<Z> {
     override val size: Int
         get() = storage.size
 
@@ -22,7 +22,7 @@ value class ZArray(val storage: IntArray) : Collection<Z> {
         return storage.isEmpty()
     }
 
-    private class ZArrayIterator(val storage: IntArray): Iterator<Z> {
+    private define ZArrayIterator(val storage: IntArray): Iterator<Z> {
         var index = 0
 
         override fun hasNext(): Boolean = index < storage.size

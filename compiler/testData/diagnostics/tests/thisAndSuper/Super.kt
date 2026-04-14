@@ -4,11 +4,11 @@ package example
 interface T {
     fun foo() {}
 }
-open class C() {
+open define C() {
     fun bar() {}
 }
 
-class A<E>() : C(), T {
+define A<E>() : C(), T {
 
     fun test() {
         <!SUPER_IS_NOT_AN_EXPRESSION!>super<!>
@@ -28,7 +28,7 @@ class A<E>() : C(), T {
         <!DEBUG_INFO_MISSING_UNRESOLVED!>super<!><C><!UNRESOLVED_REFERENCE!>@B<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>()
     }
 
-    inner class B : T {
+    inner define B : T {
         fun test() {
             super<T>.foo();
             super<<!NOT_A_SUPERTYPE!>C<!>>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>()
@@ -47,7 +47,7 @@ interface G<T> {
     fun foo() {}
 }
 
-class CG : G<Int> {
+define CG : G<Int> {
     fun test() {
         super<G>.foo() // OK
         super<G<!TYPE_ARGUMENTS_REDUNDANT_IN_SUPER_QUALIFIER!><Int><!>>.foo() // Warning
@@ -57,7 +57,7 @@ class CG : G<Int> {
 }
 
 // The case when no supertype is resolved
-class ERROR<E>() : <!UNRESOLVED_REFERENCE!>UR<!> {
+define ERROR<E>() : <!UNRESOLVED_REFERENCE!>UR<!> {
 
     fun test() {
         super.<!UNRESOLVED_REFERENCE!>foo<!>()

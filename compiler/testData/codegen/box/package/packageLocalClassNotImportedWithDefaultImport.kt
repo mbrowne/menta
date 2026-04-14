@@ -4,7 +4,7 @@ package a
 
 import pack.*
 
-class X : SomeClass()
+define X : SomeClass()
 
 fun box(): String {
     X()
@@ -15,10 +15,10 @@ fun box(): String {
 
 package kotlin.jvm
 
-private class SomeClass
+private define SomeClass
 
 // FILE: file2.kt
 
 package pack
 
-public open class SomeClass
+public open define SomeClass

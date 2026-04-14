@@ -4,7 +4,7 @@
 
 // FILE: J.java
 
-public class J {
+public define J {
     private String stringProperty;
     private boolean myBooleanProperty;
     public int numGetCalls;

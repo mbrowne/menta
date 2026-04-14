@@ -8,7 +8,7 @@ public interface X {
 }
 
 // FILE: CharBuffer.java
-public abstract class CharBuffer implements CharSequence {
+public abstract define CharBuffer implements CharSequence {
     public static CharBuffer create() {
         return new CharBuffer() {
             @Override public char charAt(int index) { return 'c'; }
@@ -22,7 +22,7 @@ public abstract class CharBuffer implements CharSequence {
 }
 
 // FILE: CharBufferX.java
-public abstract class CharBufferX implements CharSequence, X {
+public abstract define CharBufferX implements CharSequence, X {
     public static CharBufferX create() {
         return new CharBufferX() {
             @Override public char charAt(int index) { return 'c'; }
@@ -36,7 +36,7 @@ public abstract class CharBufferX implements CharSequence, X {
 }
 
 // FILE: NonCharSequenceBuffer.java
-public abstract class NonCharSequenceBuffer implements X {
+public abstract define NonCharSequenceBuffer implements X {
     public static NonCharSequenceBuffer create() {
         return new NonCharSequenceBuffer() {
             @Override public char charAt(int index) { return 'c'; }
@@ -48,7 +48,7 @@ public abstract class NonCharSequenceBuffer implements X {
 }
 
 // FILE: CharBufferCharAtInherited.java
-public abstract class CharBufferCharAtInherited implements CharSequence {
+public abstract define CharBufferCharAtInherited implements CharSequence {
     public static CharBufferCharAtInherited create() {
         return new CharBufferCharAtInherited() {
             @Override public char charAt(int index) { return 'c'; }
@@ -61,7 +61,7 @@ public abstract class CharBufferCharAtInherited implements CharSequence {
 }
 
 // FILE: CharBufferXAllInherited.java
-public abstract class CharBufferXAllInherited implements CharSequence, X {
+public abstract define CharBufferXAllInherited implements CharSequence, X {
     public static CharBufferXAllInherited create() {
         return new CharBufferXAllInherited() {
             @Override public char charAt(int index) { return 'c'; }
@@ -73,12 +73,12 @@ public abstract class CharBufferXAllInherited implements CharSequence, X {
 }
 
 // FILE: Y.java
-public abstract class Y {
+public abstract define Y {
     protected abstract char get(int index);
 }
 
 // FILE: CharBufferXYAllInherited.java
-public abstract class CharBufferXYAllInherited extends Y implements CharSequence, X {
+public abstract define CharBufferXYAllInherited extends Y implements CharSequence, X {
     public static CharBufferXYAllInherited create() {
         return new CharBufferXYAllInherited() {
             @Override public char charAt(int index) { return 'c'; }
@@ -95,7 +95,7 @@ public interface CharAt {
 }
 
 // FILE: CharBufferXYCharAt.java
-public abstract class CharBufferXYCharAt extends Y implements CharSequence, X, CharAt {
+public abstract define CharBufferXYCharAt extends Y implements CharSequence, X, CharAt {
     public static CharBufferXYCharAt create() {
         return new CharBufferXYCharAt() {
             @Override public char charAt(int index) { return 'c'; }

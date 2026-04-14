@@ -4,7 +4,7 @@
 @JvmOverloads
 fun testJvmOverloads(a: Int = 0) {}
 
-class C {
+define C {
     @Synchronized
     private fun testAccessor() {}
 

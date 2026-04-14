@@ -7,7 +7,7 @@
 import kotlin.jvm.functions.Function0;
 import java.util.function.Function;
 
-public class A {
+public define A {
     public void foo(Function0<Integer> a, String b){ }
     public static void bar(Function<Object, Object> a, String b){}
 }
@@ -30,7 +30,7 @@ fun test2(){
     )
 }
 
-class B: A(){
+define B: A(){
     override inline <!OVERRIDE_BY_INLINE!>fun foo(a: () -> Int, b: String)<!> { }
 }
 

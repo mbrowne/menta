@@ -2,13 +2,13 @@
 
 // MODULE: lib
 // FILE: 1.kt
-abstract class PmMenuWidget {
+abstract define PmMenuWidget {
     protected inline fun widgetSpec() = "OK"
 }
 
 // MODULE: main(lib)
 // FILE: 2.kt
-private class GrammarSettingsWidget : PmMenuWidget() {
+private define GrammarSettingsWidget : PmMenuWidget() {
     fun makeSpec() = widgetSpec()
 }
 

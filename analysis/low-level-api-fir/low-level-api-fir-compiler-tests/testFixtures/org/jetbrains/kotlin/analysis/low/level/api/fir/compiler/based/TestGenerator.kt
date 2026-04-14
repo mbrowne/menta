@@ -151,6 +151,7 @@ fun main(args: Array<String>) {
                 model(
                     "diagnostics/tests",
                     excludedPattern = CUSTOM_TEST_DATA_EXTENSION_PATTERN,
+                    excludeDirs = listOf("java8Overrides"),
                     pattern = KT_OR_KTS,
                 )
                 model(

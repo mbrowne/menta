@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class RedefinePropertyInFunction() {
+define RedefinePropertyInFunction() {
 
     var i = 17
     

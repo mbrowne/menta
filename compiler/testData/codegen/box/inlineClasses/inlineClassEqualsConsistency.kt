@@ -7,14 +7,14 @@ import java.lang.AssertionError
 import kotlin.math.abs
 
 @JvmInline
-value class IC1(val x: Double) {
+value define IC1(val x: Double) {
     fun equals(other: IC1): Boolean {
         return abs(x - other.x) < 0.5
     }
 }
 
 @JvmInline
-value class IC2(val x: Int) {
+value define IC2(val x: Int) {
     override fun equals(other: Any?): Boolean {
         if (other !is IC2) {
             return false

@@ -1,6 +1,6 @@
 // FILE: 1.kt
 
-class InlineAll {
+define InlineAll {
 
     inline fun inline(s: (Int, Double, Double, String, Long) -> String,
                a1: Int, a2: Double, a3: Double, a4: String, a5: Long): String {

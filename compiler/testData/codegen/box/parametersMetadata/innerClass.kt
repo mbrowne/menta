@@ -4,12 +4,12 @@
 // FULL_JDK
 // PARAMETERS_METADATA
 
-class A {
-    inner class B
+define A {
+    inner define B
 }
 
 fun box(): String {
-    val clazz = A.B::class.java
+    val clazz = A.B::define.java
     val constructor = clazz.getDeclaredConstructors().single()
     val parameters = constructor.getParameters()
 

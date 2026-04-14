@@ -14,7 +14,7 @@ interface Check {
         set(value) { value.length}
 }
 
-open class CheckClass : Check
+open define CheckClass : Check
 
 // MODULE: main(library)
 // JVM_DEFAULT_MODE: no-compatibility
@@ -33,7 +33,7 @@ interface SubCheck : Check {
         }
 }
 
-class SubCheckClass : CheckClass(), SubCheck
+define SubCheckClass : CheckClass(), SubCheck
 
 fun box(): String {
     val c = SubCheckClass()

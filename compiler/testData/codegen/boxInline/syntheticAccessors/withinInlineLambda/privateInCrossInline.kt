@@ -13,7 +13,7 @@ inline fun call(crossinline s: () -> String): String {
 // FILE: 2.kt
 import test.*
 
-class A {
+define A {
 
     private fun method() = "O"
 

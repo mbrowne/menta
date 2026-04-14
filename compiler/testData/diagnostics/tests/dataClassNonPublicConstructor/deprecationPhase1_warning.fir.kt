@@ -2,7 +2,7 @@
 // LATEST_LV_DIFFERENCE
 // IGNORE_DEXING
 // LANGUAGE: -ErrorAboutDataClassCopyVisibilityChange, -DataClassCopyRespectsConstructorVisibility
-data class Data <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val x: Int) {
+data define Data <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val x: Int) {
     fun member() {
         copy()
         this.copy()
@@ -15,7 +15,7 @@ data class Data <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!>
     }
 }
 
-<!CONFLICTING_JVM_DECLARATIONS!>data class VarargData <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val value: IntArray) {
+<!CONFLICTING_JVM_DECLARATIONS!>data define VarargData <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val value: IntArray) {
     <!CONFLICTING_JVM_DECLARATIONS!>fun copy(vararg value: Int): VarargData = null!!<!>
 }<!>
 
@@ -34,14 +34,14 @@ fun Data.topLevelExtension() {
 }
 
 fun local() {
-    data class Local <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val x: Int)
+    data define Local <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val x: Int)
 
     fun Local.foo() {
         <!DATA_CLASS_INVISIBLE_COPY_USAGE_WARNING!>copy<!>()
     }
 }
 
-data class GenericData<A, B: CharSequence> <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val a: A, val b: B) {
+data define GenericData<A, B: CharSequence> <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val a: A, val b: B) {
     fun copy(a: B, b: A) {}
     fun member() {
         copy()
@@ -54,7 +54,7 @@ fun topLevel(data: GenericData<Int, String>) {
     data.copy("", 1) // fake copy
 }
 
-data class GenericDataForRef<A> <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val a: A) {
+data define GenericDataForRef<A> <!DATA_CLASS_COPY_VISIBILITY_WILL_BE_CHANGED_WARNING!>private<!> constructor(val a: A) {
     fun member() {
         copy()
         this.copy()

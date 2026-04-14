@@ -44,7 +44,7 @@ val Any?.onNullableAnyVal: Int get() = 1
 val String.onStringVal: Int get() = 1
 val <!DYNAMIC_RECEIVER_NOT_ALLOWED!>dynamic<!>.onDynamicVal: Int get() = 1
 
-class C {
+define C {
     fun test(d: dynamic) {
         d.<!DEBUG_INFO_DYNAMIC!>memberVal<!>
         d.<!DEBUG_INFO_DYNAMIC!>memberVal<!> = 1

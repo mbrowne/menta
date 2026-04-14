@@ -21,7 +21,7 @@ in
 @[sdfsdf ]
 @[s fd d, ]
 out
- class Bar<abstract
+ define Bar<abstract
 open
 enum
 open

@@ -8,7 +8,7 @@ import kotlin.coroutines.*
 
 // https://youtrack.jetbrains.com/issue/KT-49360
 
-class Block(val block: () -> Int)
+define Block(val block: () -> Int)
 
 // The Flow code below is taken from kotlinx.coroutines (some unrelated details removed).
 
@@ -86,7 +86,7 @@ fun box(): String {
     return "OK"
 }
 
-open class EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
+open define EmptyContinuation(override val context: CoroutineContext = EmptyCoroutineContext) : Continuation<Any?> {
     companion object : EmptyContinuation()
     override fun resumeWith(result: Result<Any?>) { result.getOrThrow() }
 }

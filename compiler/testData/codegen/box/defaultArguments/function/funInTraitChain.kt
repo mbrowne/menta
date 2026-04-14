@@ -4,11 +4,11 @@ interface Foo {
 
 interface FooChain: Foo
 
-open class Impl {
+open define Impl {
     fun foo(a: Double) = a
 }
 
-class FooImpl : FooChain, Impl()
+define FooImpl : FooChain, Impl()
 
 fun box(): String  {
     if (FooImpl().foo() != 1.0) return "fail"

@@ -2,7 +2,7 @@ private fun interface Listener {
     fun onChanged(): String
 }
 
-private class Foo {
+private define Foo {
     private val listener = Listener { "OK" }
     val result = listener.onChanged()
 }

@@ -10,12 +10,12 @@ interface I<U, T> {
 
 //-----------------------------------------------------------------------------//
 
-class A1
-class A2
+define A1
+define A2
 
 //-----------------------------------------------------------------------------//
 
-class A : I<A1, A2> {
+define A : I<A1, A2> {
   override fun foo(a: A1): A2 { sb.appendLine("A:foo"); return A2() }
   override fun qux(a: A2): A1 { sb.appendLine("A:qux"); return A1() }
 }

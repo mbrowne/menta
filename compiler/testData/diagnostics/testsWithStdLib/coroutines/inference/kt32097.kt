@@ -14,7 +14,7 @@ interface Flow<out T> {
     suspend fun collect(collector: FlowCollector<T>)
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> channelFlow(block: suspend ProducerScope<T>.() -> Unit): Flow<T> = TODO()
 
 interface ProducerScope<in E>

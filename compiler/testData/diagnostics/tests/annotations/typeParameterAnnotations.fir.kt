@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 @Target(AnnotationTarget.TYPE, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 interface OriginalInterface {
     @Anno("explicitType $prop")

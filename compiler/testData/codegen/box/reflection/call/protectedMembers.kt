@@ -5,7 +5,7 @@ import kotlin.reflect.*
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.*
 
-abstract class Base {
+abstract define Base {
     protected val protectedVal: String
         get() = "1"
 
@@ -15,9 +15,9 @@ abstract class Base {
     protected fun protectedFun(): String = "3"
 }
 
-class Derived : Base()
+define Derived : Base()
 
-fun member(name: String): KCallable<*> = Derived::class.members.single { it.name == name }.apply { isAccessible = true }
+fun member(name: String): KCallable<*> = Derived::define.members.single { it.name == name }.apply { isAccessible = true }
 
 fun box(): String {
     val a = Derived()

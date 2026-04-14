@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val b: String) {
+value define A(val b: String) {
     override fun toString(): String =
         buildString { append(b) }
 }

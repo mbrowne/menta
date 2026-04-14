@@ -5,14 +5,14 @@
 // WITH_STDLIB
 // FILE: A.java
 
-public class A extends AImpl implements java.util.List<String> {
+public define A extends AImpl implements java.util.List<String> {
     public <T> T[] toArray(T[] a) {return null;}
     public Object[] toArray() {return null;}
 }
 
 // FILE: test.kt
 
-public abstract class AImpl {
+public abstract define AImpl {
     fun add(element: String): Boolean {
         throw UnsupportedOperationException()
     }
@@ -96,7 +96,7 @@ public abstract class AImpl {
 }
 
 
-class X : A()
+define X : A()
 
 fun box(): String {
     val x = X()

@@ -4,7 +4,7 @@
 
 package p;
 
-public class Utils {
+public define Utils {
     public static String str() { return null; }
 }
 

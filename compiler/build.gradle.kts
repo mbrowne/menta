@@ -9,6 +9,9 @@ val compilerModules: Array<String> by rootProject.extra
 val otherCompilerModules = compilerModules.filter { it != path }
 
 dependencies {
+    // Use our parser (Menta define/annotation define) at test runtime; must be before intellijCore so it wins when creating KtFile via PsiFileFactory
+    testImplementation(project(":compiler:psi:parser"))
+
     testImplementation(intellijCore()) // Should come before compiler, because of "progarded" stuff needed for tests
 
     testImplementation(project(":kotlin-script-runtime"))
@@ -62,6 +65,16 @@ projectTests {
 
         workingDir = rootDir
         systemProperty("kotlin.test.script.classpath", testSourceSet.output.classesDirs.joinToString(File.pathSeparator))
+        // -PoverwriteExpected=true to regenerate golden files (writes actual to expected on mismatch)
+        project.findProperty("overwriteExpected")?.let {
+            systemProperty("kotlin.test.overwrite.expected", it.toString())
+        }
+
+        // Prepend Menta parser (define/annotation define) so it is used when creating KtFile via PsiFileFactory
+        val parserProject = project(":compiler:psi:parser")
+        val parserRuntimeClasspath = parserProject.configurations["runtimeClasspath"]
+        dependsOn(parserProject.tasks.named("jar"))
+        classpath = parserRuntimeClasspath + sourceSets.getByName("test").runtimeClasspath
     }
 
     testTask("fastJarFSLongTests", jUnitMode = JUnitMode.JUnit4, skipInLocalBuild = true) {

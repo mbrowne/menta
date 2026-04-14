@@ -6,9 +6,9 @@
 
 interface RecordId<Y, Self : RecordId<Y, Self>>
 
-class MyRecordId : RecordId<String, MyRecordId>
+define MyRecordId : RecordId<String, MyRecordId>
 
-class Foo1<T, Id : RecordId<T, Id>>(underlyingColumn: T, factory: (T) -> Id)
+define Foo1<T, Id : RecordId<T, Id>>(underlyingColumn: T, factory: (T) -> Id)
 
 val x = Foo1("") { MyRecordId() }
 

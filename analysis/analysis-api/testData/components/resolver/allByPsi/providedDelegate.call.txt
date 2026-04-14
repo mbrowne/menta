@@ -46,7 +46,7 @@ KtNameReferenceExpression(79,89): 'properties'
 KtNameReferenceExpression(90,106): 'ReadOnlyProperty'
   null
 
-KtClass(108,266): 'class ResourceID<T> {'
+KtDefine(108,266): 'class ResourceID<T> {'
   null
 
 KtTypeParameterList(124,127): '<T>'
@@ -186,7 +186,7 @@ KtNameReferenceExpression(246,256): 'MyDelegate'
 KtValueArgumentList(256,258): '()'
   null
 
-KtClass(268,420): 'class MyDelegate<T> : ReadOnlyProperty<Any?, T> {'
+KtDefine(268,420): 'class MyDelegate<T> : ReadOnlyProperty<Any?, T> {'
   null
 
 KtTypeParameterList(284,287): '<T>'

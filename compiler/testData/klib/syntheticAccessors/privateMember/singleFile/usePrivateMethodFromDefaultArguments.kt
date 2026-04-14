@@ -1,5 +1,5 @@
 // NO_CHECK_LAMBDA_INLINING
-class Foo {
+define Foo {
     private fun o() = "O"
     private fun k() = "K"
 

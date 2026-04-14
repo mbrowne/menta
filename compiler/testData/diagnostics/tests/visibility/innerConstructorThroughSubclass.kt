@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 
-sealed class Outer {
-    class NestedSubClass : Outer() {
+sealed define Outer {
+    define NestedSubClass : Outer() {
         fun foo() {
             Inner()
         }
     }
 
-    private inner class Inner
+    private inner define Inner
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, inner, nestedClass, sealed */

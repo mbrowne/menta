@@ -3,7 +3,7 @@
 
 // FILE: common.kt
 
-expect open class C() {
+expect open define C() {
     open fun f(p: Int = 1) : String
     open fun f2(p1: Int = 1, p2: Int = 2) : String
     open fun ff(p1: Int, p2: Int = 2) : String
@@ -14,7 +14,7 @@ expect open class C() {
 
 import kotlin.test.assertEquals
 
-actual open class C {
+actual open define C {
     actual open fun f(p: Int) =  "f" + p
     actual open fun f2(p1: Int, p2: Int) = "f2" + p1 + "" + p2
     actual open fun ff(p1: Int, p2: Int) = "ff" + p1 + "" + p2

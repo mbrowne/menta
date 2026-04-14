@@ -2,7 +2,7 @@
 
 // FILE: First.java
 
-public abstract class First {
+public abstract define First {
     protected static String TEST = "OK";
 
     protected static String test() {
@@ -16,7 +16,7 @@ package anotherPackage
 
 import First
 
-class Second : First() {
+define Second : First() {
     val some = { First.TEST }
     fun foo() = { First.test() }
 

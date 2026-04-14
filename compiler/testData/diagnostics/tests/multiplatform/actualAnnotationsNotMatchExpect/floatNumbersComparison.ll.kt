@@ -4,7 +4,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann(val p: Double)
+annotation define Ann(val p: Double)
 
 @Ann(0.3)
 expect fun floatNumbersComparison()

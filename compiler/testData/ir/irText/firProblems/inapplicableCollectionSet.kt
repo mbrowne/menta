@@ -1,7 +1,7 @@
 // WITH_STDLIB
 // FULL_JDK
 
-class Flaf(val javaName: String) {
+define Flaf(val javaName: String) {
 
     private val INSTANCES = mutableMapOf<String, Flaf>()
 

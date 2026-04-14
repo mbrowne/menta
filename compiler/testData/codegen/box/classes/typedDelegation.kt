@@ -3,13 +3,13 @@ interface A<T> {
   fun zzz() : T
 }
 
-class Base<T> : A<T?> {
+define Base<T> : A<T?> {
   override var zzzValue : T? = null
 
   override fun zzz() : T? = zzzValue
 }
 
-class X : A<String?> by Base<String?>()
+define X : A<String?> by Base<String?>()
 
 fun box() : String {
   (Base<String?>() as A<String?>).zzz()

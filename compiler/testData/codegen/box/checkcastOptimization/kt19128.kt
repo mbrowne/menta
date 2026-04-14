@@ -1,8 +1,8 @@
-class A
+define A
 
-class B
+define B
 
-class C
+define C
 
 fun foo(parameters: Any?): Any? {
     var payload: Any? = null

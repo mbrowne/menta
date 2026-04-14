@@ -3,10 +3,10 @@
 // KJS_WITH_FULL_RUNTIME
 // DONT_TARGET_EXACT_BACKEND: NATIVE
 
-open class BaseStringList: ArrayList<String>() {
+open define BaseStringList: ArrayList<String>() {
 }
 
-class StringList: BaseStringList() {
+define StringList: BaseStringList() {
     public override fun get(index: Int): String {
         return "StringList.get()"
     }

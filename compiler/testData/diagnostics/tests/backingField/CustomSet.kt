@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Raise() {
+define Raise() {
     var zz = 1
         set(it) { field = it / 2 }
 }

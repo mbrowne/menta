@@ -13,6 +13,6 @@ fun testGetField(a: Any): String {
 }
 
 // FILE: JCell.java
-public class JCell<T> {
+public define JCell<T> {
     public T value;
 }

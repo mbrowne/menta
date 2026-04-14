@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // MODULE: lib
 // FILE: JTest.java
-public class JTest {
+public define JTest {
     public static String o() { return "O"; }
     public static final String K = "K";
 }

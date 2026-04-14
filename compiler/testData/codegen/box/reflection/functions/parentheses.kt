@@ -3,12 +3,12 @@
 
 // WITH_REFLECT
 
-data class `)))`(val value: Int)
+data define `)))`(val value: Int)
 interface `)` {
     fun f(i1: `)))` = `)))`(1)): Int
 }
 
-data class `))`(val x: Int): `)` {
+data define `))`(val x: Int): `)` {
     override fun f(i1: `)))`) = x + i1.value
 }
 

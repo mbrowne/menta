@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   null
 
-KtClass(0,89): '// WITH_STDLIB'
+KtDefine(0,89): '// WITH_STDLIB'
   null
 
 KtDeclarationModifierList(15,56): '@Target(AnnotationTarget.TYPE)'
@@ -167,7 +167,7 @@ KtStringTemplateExpression(108,113): '"str"'
 KtLiteralStringTemplateEntry(109,112): 'str'
   null
 
-KtClass(115,429): 'class A {'
+KtDefine(115,429): 'class A {'
   null
 
 KtClassBody(123,429): '{'
@@ -947,7 +947,7 @@ KtConstructorDelegationReferenceExpression(427,427): ''
       typeArgumentsMapping = {}
       valueArgumentMapping = {}
 
-KtClass(431,462): 'abstract class AbstractClass<T>'
+KtDefine(431,462): 'abstract class AbstractClass<T>'
   null
 
 KtDeclarationModifierList(431,439): 'abstract'
@@ -959,7 +959,7 @@ KtTypeParameterList(459,462): '<T>'
 KtTypeParameter(460,461): 'T'
   null
 
-KtClass(464,618): 'class MyClass : @Anno("super type call $prop") AbstractClass<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") Int>>()'
+KtDefine(464,618): 'class MyClass : @Anno("super type call $prop") AbstractClass<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") Int>>()'
   null
 
 KtSuperTypeList(480,618): '@Anno("super type call $prop") AbstractClass<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") Int>>()'
@@ -1377,7 +1377,7 @@ KtNameReferenceExpression(611,614): 'Int'
 KtValueArgumentList(616,618): '()'
   null
 
-KtClass(620,791): 'class MyClassWithConstructor() : @Anno("super type call $prop") AbstractClass<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") Int>>()'
+KtDefine(620,791): 'class MyClassWithConstructor() : @Anno("super type call $prop") AbstractClass<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") Int>>()'
   null
 
 KtPrimaryConstructor(648,650): '()'
@@ -1801,10 +1801,10 @@ KtNameReferenceExpression(784,787): 'Int'
 KtValueArgumentList(789,791): '()'
   null
 
-KtClass(793,804): 'interface I'
+KtDefine(793,804): 'interface I'
   null
 
-KtClass(806,964): 'class MyClassWithSuperInterface : @Anno("super type ref $prop") List<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") I>>'
+KtDefine(806,964): 'class MyClassWithSuperInterface : @Anno("super type ref $prop") List<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") I>>'
   null
 
 KtSuperTypeList(840,964): '@Anno("super type ref $prop") List<@Anno("nested super type ref $prop") List<@Anno("nested nested super type ref $prop") I>>'

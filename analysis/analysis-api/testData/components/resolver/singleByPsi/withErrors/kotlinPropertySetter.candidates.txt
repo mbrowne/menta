@@ -3,9 +3,9 @@ KtNameReferenceExpression(51,54): 'foo'
     candidate = KaSimpleVariableAccessCall:
       contextArguments = []
       dispatchReceiver = KaExplicitReceiverValue:
-        expression = ktClass
+        expression = KtDefine
         isSafeNavigation = false
-        type = KtClass
+        type = KtDefine
       extensionReceiver = null
       isContextSensitive = false
       kind = Write:
@@ -16,6 +16,6 @@ KtNameReferenceExpression(51,54): 'foo'
         returnType = kotlin.Int
         symbol = var foo: kotlin.Int
         contextParameters = []
-        callableId = /KtClass.foo
+        callableId = /KtDefine.foo
       typeArgumentsMapping = {}
     isInBestCandidates = true

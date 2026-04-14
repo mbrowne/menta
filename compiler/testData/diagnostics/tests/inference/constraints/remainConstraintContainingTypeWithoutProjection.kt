@@ -6,14 +6,14 @@
 // FILE: Test.java
 import java.util.Collection;
 
-public class Test {
+public define Test {
     static <T> Inv<Collection<? extends T>> bar() {
         return null;
     }
 }
 
 // FILE: main.kt
-class Inv<E>
+define Inv<E>
 
 fun <R> foo(x: R, y: Inv<R>) {}
 

@@ -1,3 +1,3 @@
 // WITH_SIGNATURES
 
-abstract class GenericMutableCollection<T> : MutableCollection<T>
+abstract define GenericMutableCollection<T> : MutableCollection<T>

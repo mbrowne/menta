@@ -3,7 +3,7 @@
 // FIR_DUMP
 // ISSUE: KT-57873
 
-class ThemeKey<T>
+define ThemeKey<T>
 
 fun <S> getWithFallback(fallback: (ThemeKey<S>) -> S) {}
 

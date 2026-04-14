@@ -13,7 +13,7 @@ fun foo(javaClass: JavaClass) {
 }
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public String getURL() { return true; }
     public void setURL(String value) { }
 

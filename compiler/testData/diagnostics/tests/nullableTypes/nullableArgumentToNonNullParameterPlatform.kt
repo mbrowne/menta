@@ -3,7 +3,7 @@
 
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     void foo(String x) {}
     void foo(@NotNull Double x) {}
     void foo(@Nullable Byte x) {}

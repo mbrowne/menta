@@ -8,7 +8,7 @@ package org.jetbrains.kotlin.util
 import org.jetbrains.kotlin.descriptors.*
 import org.jetbrains.kotlin.cfg.containingDeclarationForPseudocode
 import org.jetbrains.kotlin.lexer.KtTokens
-import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtDefine
 import org.jetbrains.kotlin.psi.KtDeclaration
 import org.jetbrains.kotlin.psi.KtElement
 import org.jetbrains.kotlin.psi.KtPsiUtil
@@ -27,11 +27,13 @@ fun KtElement.containingNonLocalDeclaration(): KtDeclaration? {
 }
 
 val KtDeclaration.isOrdinaryClass
-    get() = this is KtClass &&
+    get() = this is KtDefine &&
             !this.hasModifier(KtTokens.INLINE_KEYWORD) &&
             !this.isAnnotation() &&
             !this.isInterface()
 
+val KtDeclaration.isAnnotationDefineClass: Boolean
+    get() = this is KtDefine && this.hasModifier(KtTokens.ANNOTATION_KEYWORD)
 val KtDeclaration.isAnnotated get() = this.annotationEntries.isNotEmpty()
 
 /**

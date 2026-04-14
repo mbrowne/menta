@@ -1,4 +1,4 @@
-public class CalculatorConstants(
+public define CalculatorConstants(
         val id: Long = 0,
         val detour: Double = 0.0,
         val taxi: Double = 0.0,

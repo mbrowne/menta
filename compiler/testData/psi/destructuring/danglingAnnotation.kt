@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
-annotation class Ann
+annotation define Ann
 
 @Ann(
     val x: Int = 42

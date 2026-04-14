@@ -5,11 +5,11 @@ package test
 
 interface OuterParam
 
-class A: OuterParam
+define A: OuterParam
 
-class Outer<OuterParam> {
+define Outer<OuterParam> {
 
-    class Nested: OuterParam {
+    define Nested: OuterParam {
         fun foo(): OuterParam = A()
     }
 }

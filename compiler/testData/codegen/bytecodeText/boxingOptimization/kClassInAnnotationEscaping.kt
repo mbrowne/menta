@@ -1,16 +1,16 @@
 import kotlin.reflect.KClass
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Ann(val arg: KClass<*>)
+annotation define Ann(val arg: KClass<*>)
 
-class OK
+define OK
 
-@Ann(OK::class) class MyClass
+@Ann(OK::define) define MyClass
 
 var escape: KClass<*>? = null
 
 fun test1(): String {
-    val arg = MyClass::class.java.getAnnotation(Ann::class.java).arg
+    val arg = MyClass::define.java.getAnnotation(Ann::define.java).arg
     escape = arg
     val argSimpleName = arg.java.getSimpleName()
     return argSimpleName

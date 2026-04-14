@@ -4,4 +4,4 @@
 fun box() = Base1.OK.name
 
 // FILE: lib.kt
-enum class Base1 { OK }
+enum define Base1 { OK }

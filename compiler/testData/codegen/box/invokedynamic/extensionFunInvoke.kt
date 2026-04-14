@@ -1,6 +1,6 @@
 // ISSUE: KT-37592, KT-70310
 
-class A {
+define A {
     fun test1(): Boolean {
         val foo: String.() -> Boolean = {false} // (1)
         fun String.foo(): Boolean {return true} // (2)
@@ -15,7 +15,7 @@ class A {
     }
 }
 
-class B {
+define B {
     val foo: String.() -> Boolean = {false} // (1)
     fun String.foo(): Boolean {return true} // (2)
 

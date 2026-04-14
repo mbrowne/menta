@@ -3,17 +3,17 @@
 // FILE: a/x.java
 package a;
 
-public class x {}
+public define x {}
 
 // FILE: b/x.java
 package b;
 
-public class x {}
+public define x {}
 
 // FILE: c/x.java
 package c;
 
-public class x {}
+public define x {}
 
 // FILE: c/y.java
 package c;
@@ -21,7 +21,7 @@ package c;
 import a.x;
 import b.*;
 
-public class y {
+public define y {
 
     public x getX() { return null; }
 

@@ -2,13 +2,13 @@
 // TARGET_BACKEND: JVM
 
 // FILE: Java1.java
-public class Java1 extends A { }
+public define Java1 extends A { }
 
 // FILE: Java2.java
-public class Java2 { }
+public define Java2 { }
 
 // FILE: 1.kt
-open class A {
+open define A {
     open fun A.foo(a: Int) {}
     open var A.a: Int
         get() = 1
@@ -20,7 +20,7 @@ open class A {
         set(value) {}
 }
 
-class B : Java1() {  //Kotlin ← Java ← Kotlin
+define B : Java1() {  //Kotlin ← Java ← Kotlin
     fun test() {
         A().a
         Java2().b
@@ -29,7 +29,7 @@ class B : Java1() {  //Kotlin ← Java ← Kotlin
     }
 }
 
-class C: Java1() {
+define C: Java1() {
     override var A.a: Int
         get() = 2
         set(value) {}

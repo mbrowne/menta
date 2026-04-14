@@ -22,7 +22,7 @@ fun box(): String {
 import java.util.*;
 import org.jetbrains.annotations.*;
 
-public class J {
+public define J {
     public static List<@NotNull Integer> listOfNotNull() {
         List<Integer> list = new ArrayList<>();
         list.add(42);

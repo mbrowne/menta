@@ -6,7 +6,7 @@ KtFile: delegatedWithInitializer.kt
   PsiComment(EOL_COMMENT)('// WITH_STDLIB')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('MyClass')
     PsiWhiteSpace(' ')

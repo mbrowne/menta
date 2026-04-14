@@ -62,8 +62,8 @@ abstract class AbstractFileBasedKotlinDeclarationProviderTest : AbstractAnalysis
 
     private fun checkByVisitor(ktFile: KtFile, provider: KotlinFileBasedDeclarationProvider) {
         ktFile.accept(object : KtTreeVisitorVoid() {
-            override fun visitClass(klass: KtClass) {
-                super.visitClass(klass)
+            override fun visitDefine(klass: KtDefine) {
+                super.visitDefine(klass)
                 processClassLikeDeclaration(klass)
             }
 

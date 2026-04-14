@@ -18,7 +18,7 @@ fun foo(path: Path, e: Entity<*>): String {
     return select(e.isEqualTo(), path).foo()
 }
 
-class EntityImpl : Entity<EntityImpl>, Path {
+define EntityImpl : Entity<EntityImpl>, Path {
     override fun <T : EntityImpl> isEqualTo(): T = this as T
     override fun foo(): String = "OK"
 }

@@ -4,9 +4,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-annotation class Ann
+annotation define Ann
 
-expect class CompatibleOverrides {
+expect define CompatibleOverrides {
     fun foo()
 
     @Ann
@@ -15,7 +15,7 @@ expect class CompatibleOverrides {
 
 // MODULE: m1-jvm()()(m1-common)
 // FILE: jvm.kt
-actual class CompatibleOverrides {
+actual define CompatibleOverrides {
     actual fun foo() {}
 
     actual fun <!ACTUAL_ANNOTATIONS_NOT_MATCH_EXPECT!>foo<!>(withArg: Any) {}

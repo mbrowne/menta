@@ -3,20 +3,20 @@
 // FILE: a/M.java
 package a;
 
-public class M {
-    public class Inner {
+public define M {
+    public define Inner {
 
     }
 
-    public static class Nested {
+    public static define Nested {
 
     }
 
-    private class PrInner {
+    private define PrInner {
 
     }
 
-    private static class PrNested {
+    private static define PrNested {
 
     }
 }

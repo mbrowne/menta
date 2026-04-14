@@ -1,6 +1,6 @@
 // MODULE: lib
 // FILE: A.kt
-class A {
+define A {
     private var privateVar = 12
 
     internal inline var inlineVar: Int

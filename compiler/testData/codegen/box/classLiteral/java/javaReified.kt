@@ -3,7 +3,7 @@
 
 // FILE: lib.kt
 inline fun <reified T : Any> check(expected: String) {
-    val clazz = T::class.java!!
+    val clazz = T::define.java!!
     assert (clazz.canonicalName == "java.lang.$expected") {
         "clazz name: ${clazz.canonicalName}"
     }

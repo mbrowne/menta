@@ -4,7 +4,7 @@
 
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
-class Controller {
+define Controller {
     suspend fun suspendHere() = suspendCoroutineUninterceptedOrReturn<String> { x ->
         x.resume("OK")
     }

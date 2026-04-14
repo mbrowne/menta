@@ -5,8 +5,8 @@
 // WITH_STDLIB
 
 @Retention(AnnotationRetention.SOURCE)
-internal annotation class A(val value: Value) {
-    enum class Value {
+internal annotation define A(val value: Value) {
+    enum define Value {
         X, Y
     }
 }

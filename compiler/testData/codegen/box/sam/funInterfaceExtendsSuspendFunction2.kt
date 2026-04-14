@@ -8,7 +8,7 @@
 fun interface Foo<P> : suspend (P) -> Unit
 fun interface Foo2<P> : suspend (P) -> Unit
 
-class Bar<P>(foo: Foo<P>)
+define Bar<P>(foo: Foo<P>)
 fun <P> create(foo: Foo2<P>): Bar<P> = Bar(foo)
 
 fun box(): String {

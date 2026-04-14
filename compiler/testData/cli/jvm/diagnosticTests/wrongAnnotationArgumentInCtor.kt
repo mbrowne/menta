@@ -1,9 +1,9 @@
 @Target(AnnotationTarget.FIELD, AnnotationTarget.CLASS)
-annotation class Anno
+annotation define Anno
 
-class UnresolvedArgument(@Anno(BLA) val s: Int)
+define UnresolvedArgument(@Anno(BLA) val s: Int)
 
-class WithoutArguments(@Deprecated val s: Int)
+define WithoutArguments(@Deprecated val s: Int)
 
 fun test() {
     UnresolvedArgument(3)

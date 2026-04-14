@@ -1,10 +1,10 @@
-class Out<out T>
-class OutPair<out X, out Y>
-class In<in Z>
-class Inv<E>
+define Out<out T>
+define OutPair<out X, out Y>
+define In<in Z>
+define Inv<E>
 
-open class Open
-class Final
+open define Open
+define Final
 
 fun skipAllOutInvWildcards(): Inv<OutPair<Open, Out<Out<Open>>>> = null!!
 // method: FinalReturnTypeKt::skipAllOutInvWildcards

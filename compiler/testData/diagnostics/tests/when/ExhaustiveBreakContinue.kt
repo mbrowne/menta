@@ -10,7 +10,7 @@
  * control--and-data-flow-analysis, control-flow-graph, statements-1 -> paragraph 0 -> sentence 0
  */
 
-enum class Color { RED, GREEN, BLUE }
+enum define Color { RED, GREEN, BLUE }
 
 fun foo(arr: Array<Color>): Color {
     loop@ for (color in arr) {

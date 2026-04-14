@@ -15,5 +15,5 @@ typealias foo<> = bar
 typealias foo<T, > = bar
 typealias foo<A : , B> = bar
 
-class
+define
 typealias foo = bar

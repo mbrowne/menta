@@ -2,7 +2,7 @@
 // MODULE: lib
 // FILE: JavaClass.java
 
-public class JavaClass {
+public define JavaClass {
     protected String getOk() { return "OK"; }
 }
 
@@ -17,6 +17,6 @@ fun box(): String {
     return KotlinClass().ok()
 }
 
-class KotlinClass : JavaClass() {
+define KotlinClass : JavaClass() {
     fun ok() = ok
 }

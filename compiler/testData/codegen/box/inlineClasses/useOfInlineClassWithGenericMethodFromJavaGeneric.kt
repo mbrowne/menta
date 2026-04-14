@@ -6,13 +6,13 @@
 // FILE: a.kt
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC<T: Int>(val v: T) {
+value define IC<T: Int>(val v: T) {
     fun <T> getT(): T? = null
 }
 
 // FILE: UseIC.java
 
-public class UseIC {
+public define UseIC {
     private IC ic = null;
 
     public static String result() {

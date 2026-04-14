@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +CollectionLiterals
 
-class MyList(val data: Array<out String>) {
+define MyList(val data: Array<out String>) {
     companion object {
         operator fun of(vararg strs: String) = MyList(strs)
     }

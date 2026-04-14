@@ -5,7 +5,7 @@
 // CHECK_BYTECODE_TEXT
 // 1 java/lang/invoke/LambdaMetafactory
 
-class C(val x: String) {
+define C(val x: String) {
     fun test() = { x }
 }
 

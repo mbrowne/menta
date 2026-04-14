@@ -1,5 +1,5 @@
 @CompileTimeCalculation
-open class A {
+open define A {
     open fun get(): Int { return 1 }
 }
 
@@ -14,7 +14,7 @@ interface C {
 }
 
 @CompileTimeCalculation
-class D : A(), B, C {
+define D : A(), B, C {
     override fun get(): Int {
         return super<C>.get() + super<B>.get() + super<A>.get()
     }

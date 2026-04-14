@@ -9,11 +9,11 @@ import kotlin.test.assertTrue
 import kotlin.test.assertFalse
 
 fun box(): String {
-    assertFalse(Record::class.isData)
-    assertFalse(Record::class.isInner)
-    assertFalse(Record::class.isCompanion)
-    assertFalse(Record::class.isFun)
-    assertFalse(Record::class.isValue)
+    assertFalse(Record::define.isData)
+    assertFalse(Record::define.isInner)
+    assertFalse(Record::define.isCompanion)
+    assertFalse(Record::define.isFun)
+    assertFalse(Record::define.isValue)
 
     return "OK"
 }

@@ -6,11 +6,11 @@ interface I2
 
 // FILE: Anno1.kt
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno1
+annotation define Anno1
 
 // FILE: Anno2.kt
 @Target(AnnotationTarget.TYPE, AnnotationTarget.TYPE_PARAMETER)
-annotation class Anno2
+annotation define Anno2
 
 // FILE: foo.kt
 @Suppress("ANNOTATION_IN_WHERE_CLAUSE_ERROR")

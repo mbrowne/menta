@@ -1,4 +1,4 @@
-enum class A { V1, V2, V3 }
+enum define A { V1, V2, V3 }
 
 fun box(a: A): String {
     when (a) {

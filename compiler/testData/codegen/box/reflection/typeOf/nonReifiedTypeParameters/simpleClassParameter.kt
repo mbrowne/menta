@@ -5,9 +5,9 @@ package test
 import kotlin.reflect.typeOf
 import kotlin.test.assertEquals
 
-class Container<T>
+define Container<T>
 
-class C<X> {
+define C<X> {
     fun notNull() = typeOf<Container<X>>()
     fun nullable() = typeOf<Container<X?>>()
 }

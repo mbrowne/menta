@@ -7,7 +7,7 @@ package a
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Controller {
+define Controller {
     var callback: () -> Unit = {}
     suspend fun suspendHere() = suspendCoroutine<String> { x ->
         callback = {

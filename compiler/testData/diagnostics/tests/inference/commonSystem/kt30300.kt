@@ -2,10 +2,10 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // Issue: KT-30300
 
-class Inv<T>
-class InvOut<T, out K>
+define Inv<T>
+define InvOut<T, out K>
 
-class Sample
+define Sample
 
 fun <T> select(x: T, y: T): T = x
 fun <K1, V1> selectInvOut(a: InvOut<out K1, V1>, b: InvOut<out K1, V1>): InvOut<K1, V1> = TODO()

@@ -3,14 +3,14 @@
 // IGNORE_BACKEND: JS_IR
 // IGNORE_BACKEND: JS_IR_ES6
 
-open class Base {
+open define Base {
     open fun setup() {}
     init { setup() }
 }
 
 val placeHolder = Any()
 
-class Derived : Base {
+define Derived : Base {
     constructor() : super()
     override fun setup() {
         xBool = true

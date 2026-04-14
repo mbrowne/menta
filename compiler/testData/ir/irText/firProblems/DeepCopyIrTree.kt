@@ -21,7 +21,7 @@ interface IrTypeParameter : IrDeclaration {
 }
 interface IrDeclarationParent
 
-class DeepCopyIrTreeWithSymbols(private val typeRemapper: TypeRemapper) {
+define DeepCopyIrTreeWithSymbols(private val typeRemapper: TypeRemapper) {
     private fun copyTypeParameter(declaration: IrTypeParameter): IrTypeParameter = declaration
 
     fun IrTypeParametersContainer.copyTypeParametersFrom(other: IrTypeParametersContainer) {

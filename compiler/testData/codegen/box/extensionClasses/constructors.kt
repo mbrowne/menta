@@ -3,10 +3,10 @@
 // IGNORE_BACKEND_K2: ANY
 // WITH_STDLIB
 
-class A(val ok: String)
+define A(val ok: String)
 
 context(A)
-class B(oValue: Boolean = true, kValue: Boolean = true) {
+define B(oValue: Boolean = true, kValue: Boolean = true) {
     var o: Boolean
     var k: Boolean
 

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(1,13): 'class Foo<T>'
+KtDefine(1,13): 'class Foo<T>'
   NO_CANDIDATES
 
 KtTypeParameterList(10,13): '<T>'
@@ -16,7 +16,7 @@ KtTypeParameterList(10,13): '<T>'
 KtTypeParameter(11,12): 'T'
   NO_CANDIDATES
 
-KtClass(15,48): 'class C {'
+KtDefine(15,48): 'class C {'
   NO_CANDIDATES
 
 KtClassBody(23,48): '{'

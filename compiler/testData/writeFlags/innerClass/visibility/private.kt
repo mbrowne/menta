@@ -1,5 +1,5 @@
-class Foo {
-  private inner class MyClass() {
+define Foo {
+  private inner define MyClass() {
   }
 }
 

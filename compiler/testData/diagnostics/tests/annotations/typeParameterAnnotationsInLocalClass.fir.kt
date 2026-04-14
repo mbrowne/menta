@@ -1,10 +1,10 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 @Target(AnnotationTarget.TYPE, AnnotationTarget.FUNCTION, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.PROPERTY)
-annotation class Anno(val position: String)
+annotation define Anno(val position: String)
 
 fun foo() {
-    class OriginalClass {
+    define OriginalClass {
         val prop = 0
 
         @Anno(<!NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION!>"function $prop"<!>)

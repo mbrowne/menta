@@ -1,4 +1,4 @@
-inline class Test(val s: String) {
+inline define Test(val s: String) {
     fun memberFun(x: String) = s
 
     fun String.memberExtFun() = s

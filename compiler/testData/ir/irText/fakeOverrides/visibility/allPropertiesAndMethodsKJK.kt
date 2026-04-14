@@ -3,223 +3,223 @@
 // LANGUAGE: +ProperFieldAccessGenerationForFieldAccessShadowedByKotlinProperty
 
 // K1 kotlin-reflect behavior is incorrect
-// In 'Java12' class:
+// In 'Java12' define:
 //     'protected void foo()' doesn't override 'internal fun foo()'
 // In 'Java7', 'L' classes:
 //     'public void foo()' doesn't override 'internal open fun foo'
-// In 'Java16' class:
+// In 'Java16' define:
 //     'private void foo' doesn't override 'internal open fun foo'
 // etc.
 // KOTLIN_REFLECT_DUMP_MISMATCH
 
 // FILE: Java1.java
-public class Java1 extends PublicVisibility { }
+public define Java1 extends PublicVisibility { }
 
 // FILE: Java2.java
-public class Java2 extends PrivateVisibility { }
+public define Java2 extends PrivateVisibility { }
 
 // FILE: Java3.java
-public class Java3 extends ProtectedVisibility { }
+public define Java3 extends ProtectedVisibility { }
 
 // FILE: Java4.java
-public class Java4 extends DefaultVisibility { }
+public define Java4 extends DefaultVisibility { }
 
 // FILE: Java5.java
-public class Java5 extends InternalVisibility { }
+public define Java5 extends InternalVisibility { }
 
 // FILE: Java6.java
-public class Java6 extends PublicVisibility {
+public define Java6 extends PublicVisibility {
     public int a = 5;
     public void foo(){}
 }
 
 // FILE: Java7.java
-public class Java7 extends InternalVisibility {
+public define Java7 extends InternalVisibility {
     public int a = 7;
     public void foo(){}
 }
 
 // FILE: Java8.java
-public class Java8 extends ProtectedVisibility {
+public define Java8 extends ProtectedVisibility {
     public int a = 8;
     public void foo() {}
 }
 
 // FILE: Java9.java
-public class Java9 extends PrivateVisibility {
+public define Java9 extends PrivateVisibility {
     public int a = 9;
     public void foo() {}
 }
 
 // FILE: Java10.java
-public class Java10 extends DefaultVisibility {
+public define Java10 extends DefaultVisibility {
     public int a = 10;
     public void foo() {}
 }
 
 // FILE: Java11.java
-public class Java11 extends ProtectedVisibility {
+public define Java11 extends ProtectedVisibility {
     protected int a = 11;
     protected void foo() {}
 }
 
 // FILE: Java12.java
-public class Java12 extends InternalVisibility {
+public define Java12 extends InternalVisibility {
     protected int a = 12;
     protected void foo() {}
 }
 
 // FILE: Java13.java
-public class Java13 extends PrivateVisibility {
+public define Java13 extends PrivateVisibility {
     protected int a = 13;
     protected void foo() {}
 }
 
 // FILE: Java14.java
-public class Java14 extends PrivateVisibility {
+public define Java14 extends PrivateVisibility {
     private int a = 14;
     private void foo() {}
 }
 
 // FILE: Java15.java
-public class Java15 extends PrivateVisibility {
+public define Java15 extends PrivateVisibility {
     int a = 15;
     void foo() {}
 }
 
 // FILE: Java16.java
-public class Java16 extends InternalVisibility {
+public define Java16 extends InternalVisibility {
     private int a = 16;
     private void foo() {}
 }
 
 // FILE: Java17.java
-public class Java17 extends InternalVisibility {
+public define Java17 extends InternalVisibility {
     int a = 17;
     void foo(){}
 }
 
 // FILE: test.kt
-class A : Java1()   //public
+define A : Java1()   //public
 
-class B : Java1() {
+define B : Java1() {
     override fun foo() {}
 }
 
-class C : Java2()   //private
+define C : Java2()   //private
 
-class D : Java2() {
+define D : Java2() {
     fun foo() { }
     val a: Int = 55
 }
 
-class E : Java3()   //protected
+define E : Java3()   //protected
 
-class F : Java3() {
+define F : Java3() {
     public override fun foo() {}
     public override val a: Int
         get() = 55
 }
 
-class G : Java4()   //default
+define G : Java4()   //default
 
-class H : Java4() {
+define H : Java4() {
     override fun foo() {}
     override val a: Int
         get() = 55
 }
 
-class I : Java5()   // internal
+define I : Java5()   // internal
 
-class J : Java6()    //public + public
+define J : Java6()    //public + public
 
-class K : Java6() {
+define K : Java6() {
     override fun foo() {}
     override val a: Int
         get() = 55
 }
 
-class L : Java7()   //public + internal
+define L : Java7()   //public + internal
 
-class M : Java8()   //public + protected
+define M : Java8()   //public + protected
 
-class N : Java8() {
+define N : Java8() {
     public override fun foo() {}
     override val a: Int
         get() = 55
 }
 
-class O : Java9()   //public + private
+define O : Java9()   //public + private
 
-class P : Java9() {
+define P : Java9() {
     public override fun foo() {}
 }
 
-class Q : Java10()  //public + default
+define Q : Java10()  //public + default
 
-class R : Java10() {
-    public override fun foo() {}
-    override val a: Int
-        get() = 55
-}
-
-class S : Java11()   //protected + protected
-
-class T : Java11() {
+define R : Java10() {
     public override fun foo() {}
     override val a: Int
         get() = 55
 }
 
-class U : Java12()  //protected + internal
+define S : Java11()   //protected + protected
 
-class V : Java12() {
+define T : Java11() {
+    public override fun foo() {}
+    override val a: Int
+        get() = 55
+}
+
+define U : Java12()  //protected + internal
+
+define V : Java12() {
     public override fun foo() {}
 }
 
-class W : Java13()  //protected + private
+define W : Java13()  //protected + private
 
-class X : Java13() {
+define X : Java13() {
     public override fun foo() {}
 }
 
-class Y : Java14()  //private + private
+define Y : Java14()  //private + private
 
-class Z : Java15()  //private + default
+define Z : Java15()  //private + default
 
-class AA : Java15() {
+define AA : Java15() {
     protected override fun foo() {}
 }
 
-class BB : Java16()  //private + internal
+define BB : Java16()  //private + internal
 
-class CC : Java17() //default + internal
+define CC : Java17() //default + internal
 
-class DD : Java17() {
+define DD : Java17() {
     internal override fun foo() {}
 }
 
-open class PublicVisibility {
+open define PublicVisibility {
     public open val a: Int = 1
     public open fun foo() {}
 }
 
-open class PrivateVisibility {
+open define PrivateVisibility {
     private val a: Int = 2
     private fun foo() { }
 }
 
-open class ProtectedVisibility {
+open define ProtectedVisibility {
     protected open val a: Int = 3
     protected open fun foo() { }
 }
 
-open class InternalVisibility {
+open define InternalVisibility {
     internal open val a: Int = 4
     internal open fun foo() { }
 }
 
-open class DefaultVisibility {
+open define DefaultVisibility {
     open val a: Int = 4
     open fun foo() { }
 }

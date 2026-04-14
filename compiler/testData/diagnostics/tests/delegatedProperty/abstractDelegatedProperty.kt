@@ -3,11 +3,11 @@
 
 import kotlin.reflect.KProperty
 
-abstract class A {
+abstract define A {
     abstract val a: Int <!ABSTRACT_DELEGATED_PROPERTY!>by Delegate()<!>
 }
 
-class Delegate {
+define Delegate {
   operator fun getValue(t: Any?, p: KProperty<*>): Int {
     return 1
   }

@@ -9,7 +9,7 @@ var a = 1
 // val prop2: null
 <!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop2 = a + 1<!>
 
-class A {
+define A {
     // val prop3: null
     <!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop3 = a<!>
 

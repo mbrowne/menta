@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(8,135): '// FILE: main.kt'
+KtDefine(8,135): '// FILE: main.kt'
   NO_CANDIDATES
 
 KtDeclarationModifierList(25,31): 'sealed'
@@ -16,7 +16,7 @@ KtDeclarationModifierList(25,31): 'sealed'
 KtClassBody(51,135): '{'
   NO_CANDIDATES
 
-KtClass(57,92): 'class Left(val x: String): MySealed'
+KtDefine(57,92): 'class Left(val x: String): MySealed'
   NO_CANDIDATES
 
 KtPrimaryConstructor(67,82): '(val x: String)'
@@ -52,7 +52,7 @@ KtUserType(84,92): 'MySealed'
 KtNameReferenceExpression(84,92): 'MySealed'
   NO_CANDIDATES
 
-KtClass(97,133): 'class Right(val y: String): MySealed'
+KtDefine(97,133): 'class Right(val y: String): MySealed'
   NO_CANDIDATES
 
 KtPrimaryConstructor(108,123): '(val y: String)'
@@ -88,7 +88,7 @@ KtUserType(125,133): 'MySealed'
 KtNameReferenceExpression(125,133): 'MySealed'
   NO_CANDIDATES
 
-KtClass(137,163): 'interface MyGeneric<E1> {}'
+KtDefine(137,163): 'interface MyGeneric<E1> {}'
   NO_CANDIDATES
 
 KtTypeParameterList(156,160): '<E1>'
@@ -100,7 +100,7 @@ KtTypeParameter(157,159): 'E1'
 KtClassBody(161,163): '{}'
   NO_CANDIDATES
 
-KtClass(165,332): 'sealed interface MyGenericSealed<E2> : MyGeneric<E2> {'
+KtDefine(165,332): 'sealed interface MyGenericSealed<E2> : MyGeneric<E2> {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(165,171): 'sealed'
@@ -145,7 +145,7 @@ KtNameReferenceExpression(214,216): 'E2'
 KtClassBody(218,332): '{'
   NO_CANDIDATES
 
-KtClass(224,274): 'class Left(val x: String): MyGenericSealed<String>'
+KtDefine(224,274): 'class Left(val x: String): MyGenericSealed<String>'
   NO_CANDIDATES
 
 KtPrimaryConstructor(234,249): '(val x: String)'
@@ -196,7 +196,7 @@ KtUserType(267,273): 'String'
 KtNameReferenceExpression(267,273): 'String'
   NO_CANDIDATES
 
-KtClass(279,330): 'class Right(val y: String): MyGenericSealed<String>'
+KtDefine(279,330): 'class Right(val y: String): MyGenericSealed<String>'
   NO_CANDIDATES
 
 KtPrimaryConstructor(290,305): '(val y: String)'

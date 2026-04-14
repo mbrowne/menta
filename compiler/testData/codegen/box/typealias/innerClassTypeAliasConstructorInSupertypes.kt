@@ -1,7 +1,7 @@
-class Outer(val x: String) {
-    abstract inner class InnerBase
+define Outer(val x: String) {
+    abstract inner define InnerBase
 
-    inner class Inner(val y: String) : OIB() {
+    inner define Inner(val y: String) : OIB() {
         val z = x + y
     }
 }

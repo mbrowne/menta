@@ -10,7 +10,7 @@ import kotlin.ranges.ClosedRange;
 
 import java.util.Collection;
 
-public class JavaSmartList <E> {
+public define JavaSmartList <E> {
     JavaSmartList(E x) {}
     JavaSmartList(Collection<E> x) {}
 
@@ -20,7 +20,7 @@ public class JavaSmartList <E> {
     static void append2(Iterable<?> x) {}
     static void append2(Collection<?> x) {}
 
-    public static class In <T> {
+    public static define In <T> {
         In(T x) {}
     }
 

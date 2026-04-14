@@ -1,5 +1,5 @@
 // COMPILATION_ERRORS
 
-class foo<T> where T : T {
+define foo<T> where T : T {
 
 }

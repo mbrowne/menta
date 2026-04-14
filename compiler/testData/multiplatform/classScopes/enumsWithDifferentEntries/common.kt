@@ -1,3 +1,3 @@
-expect enum class AB { A, B }
+expect enum define AB { A, B }
 
-expect enum class CD { C, D }
+expect enum define CD { C, D }

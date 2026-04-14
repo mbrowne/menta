@@ -7,10 +7,10 @@ interface IBar {
     fun bar(): String
 }
 
-enum class Test : IFoo, IBar {
+enum define Test : IFoo, IBar {
     FOO {
-        // FOO referenced from inner class constructor with initialized 'this'
-        inner class Inner {
+        // FOO referenced from inner define constructor with initialized 'this'
+        inner define Inner {
             val fooFoo = FOO.foo()
         }
 

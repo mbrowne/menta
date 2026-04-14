@@ -1,8 +1,8 @@
 // IGNORE_ANNOTATIONS
 
-inline class IT(val x: Int)
+inline define IT(val x: Int)
 
-inline class InlineList(private val list: List<IT>) : List<IT> {
+inline define InlineList(private val list: List<IT>) : List<IT> {
     override val size: Int get() = list.size
     override fun contains(element: IT): Boolean = list.contains(element)
     override fun containsAll(elements: Collection<IT>): Boolean = list.containsAll(elements)

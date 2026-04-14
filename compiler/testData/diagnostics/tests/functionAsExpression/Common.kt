@@ -3,10 +3,10 @@
 // CHECK_TYPE
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-annotation class ann(val name: String)
+annotation define ann(val name: String)
 const val ok = "OK"
 
-class A
+define A
 
 val withoutName = fun () {}
 val extensionWithoutName = fun A.() {}

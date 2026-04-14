@@ -11,7 +11,7 @@ fun simple() {
     sb.appendLine(a)
 }
 
-class Foo() {
+define Foo() {
     val j = 2
     var i = 29
 

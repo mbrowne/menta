@@ -6,37 +6,37 @@ import kotlin.reflect.full.memberProperties
 
 val KType.str get() = classifier.toString()
 
-class A {
+define A {
     fun foo(): String {
-        class Nested {
-            inner class Inner {
+        define Nested {
+            inner define Inner {
                 val prop = this
             }
         }
-        return Nested().Inner()::class.memberProperties.iterator().next().returnType.str
+        return Nested().Inner()::define.memberProperties.iterator().next().returnType.str
     }
 }
 
 fun foo3(): String {
-    class X {
-        inner class Y {
+    define X {
+        inner define Y {
             val prop = object {}
         }
     }
-    return X.Y::class.memberProperties.iterator().next().returnType.str
+    return X.Y::define.memberProperties.iterator().next().returnType.str
 }
 
 fun foo4(): String {
     var res = ""
 
-    class A {
-        inner class B {
-            inner class C {
+    define A {
+        inner define B {
+            inner define C {
                 fun bar() {
-                    class D {
+                    define D {
                         val prop = this
                     }
-                    res = D::class.memberProperties.iterator().next().returnType.str
+                    res = D::define.memberProperties.iterator().next().returnType.str
                 }
 
                 init {
@@ -55,11 +55,11 @@ fun foo5(): String {
         fun bar() {
             return object {
                 fun foo() {
-                    class A {
-                        inner class B {
+                    define A {
+                        inner define B {
                             val prop = this
                             init {
-                                res = prop::class.memberProperties.iterator().next().returnType.str
+                                res = prop::define.memberProperties.iterator().next().returnType.str
                             }
                         }
                     }
@@ -75,13 +75,13 @@ fun foo6(): String {
     var res = ""
     object {
         fun bar() {
-            class A {
-                inner class B {
-                    inner class C {
+            define A {
+                inner define B {
+                    inner define C {
                         val prop = this
 
                         init {
-                            res = prop::class.memberProperties.iterator().next().returnType.str
+                            res = prop::define.memberProperties.iterator().next().returnType.str
                         }
                     }
                 }
@@ -99,7 +99,7 @@ fun foo7(): String {
             val z = object {
                 val y = this
                 init {
-                    res = this::class.memberProperties.iterator().next().returnType.str
+                    res = this::define.memberProperties.iterator().next().returnType.str
                 }
             }
         }
@@ -108,12 +108,12 @@ fun foo7(): String {
 }
 
 fun box(): String {
-    if (A().foo() != "class A\$foo\$Nested\$Inner") return "Fail 1"
-    if (foo3() != "class LocalNestedClassesKt\$foo3\$X\$Y\$prop\$1") return "Fail 4"
-    if (foo4() != "class LocalNestedClassesKt\$foo4\$A\$B\$C\$bar\$D") return "Fail 5"
-    if (foo5() != "class LocalNestedClassesKt\$foo5\$1\$bar\$1\$foo\$A\$B") return "Fail 6"
-    if (foo6() != "class LocalNestedClassesKt\$foo6\$1\$bar\$A\$B\$C") return "Fail 7"
-    if (foo7() != "class LocalNestedClassesKt\$foo7\$x\$1\$y\$1\$z\$1") return "Fail 8"
+    if (A().foo() != "define A\$foo\$Nested\$Inner") return "Fail 1"
+    if (foo3() != "define LocalNestedClassesKt\$foo3\$X\$Y\$prop\$1") return "Fail 4"
+    if (foo4() != "define LocalNestedClassesKt\$foo4\$A\$B\$C\$bar\$D") return "Fail 5"
+    if (foo5() != "define LocalNestedClassesKt\$foo5\$1\$bar\$1\$foo\$A\$B") return "Fail 6"
+    if (foo6() != "define LocalNestedClassesKt\$foo6\$1\$bar\$A\$B\$C") return "Fail 7"
+    if (foo7() != "define LocalNestedClassesKt\$foo7\$x\$1\$y\$1\$z\$1") return "Fail 8"
 
     return "OK"
 }

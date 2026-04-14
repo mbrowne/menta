@@ -17,7 +17,7 @@ fun test() {
     val resultB = pcla { otvOwner ->
         otvOwner.constrain(ScopeOwner())
 
-        class Local {
+        define Local {
             init {
                 // should fix OTv := ScopeOwner for scope navigation
                 otvOwner.provide().function()
@@ -32,7 +32,7 @@ fun test() {
 }
 
 
-class TypeVariableOwner<T> {
+define TypeVariableOwner<T> {
     fun constrain(subtypeValue: T) {}
     fun provide(): T = null!!
 }
@@ -41,7 +41,7 @@ fun <OT> pcla(lambda: (TypeVariableOwner<OT>) -> Unit): OT = null!!
 
 interface BaseType
 
-class ScopeOwner: BaseType {
+define ScopeOwner: BaseType {
     fun function() {}
 }
 

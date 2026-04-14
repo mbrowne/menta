@@ -5,7 +5,7 @@
 
 import kotlin.contracts.*
 
-open class Test {
+open define Test {
     open val property: Int?
         get() {
             <!CONTRACT_NOT_ALLOWED!>contract<!> { returns() implies (property != null) }
@@ -13,7 +13,7 @@ open class Test {
         }
 }
 
-class Child: Test() {
+define Child: Test() {
     override val property: Int?
         get() {
             <!CONTRACT_NOT_ALLOWED!>contract<!> { returns() implies (property != null) }
@@ -21,7 +21,7 @@ class Child: Test() {
         }
 }
 
-class A
+define A
 
 val A.property: Boolean
     get() {

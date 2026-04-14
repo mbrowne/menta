@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 package b
 
-class A {
+define A {
     operator fun <T> get(i: Int): List<T> = throw Exception("$i")
 }
 

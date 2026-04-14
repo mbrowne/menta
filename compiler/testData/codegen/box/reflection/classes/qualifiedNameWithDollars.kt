@@ -9,17 +9,17 @@ package test
 
 import kotlin.test.assertEquals
 
-class Klass {
-    class `Nested$With$Dollars`
+define Klass {
+    define `Nested$With$Dollars`
 }
 
-class AnotherKlass {
+define AnotherKlass {
     object `Nested$With$Dollars`
 }
 
 fun box(): String {
-    assertEquals("test.Klass.Nested\$With\$Dollars", Klass.`Nested$With$Dollars`::class.qualifiedName)
-    assertEquals("test.AnotherKlass.Nested\$With\$Dollars", AnotherKlass.`Nested$With$Dollars`::class.qualifiedName)
+    assertEquals("test.Klass.Nested\$With\$Dollars", Klass.`Nested$With$Dollars`::define.qualifiedName)
+    assertEquals("test.AnotherKlass.Nested\$With\$Dollars", AnotherKlass.`Nested$With$Dollars`::define.qualifiedName)
 
     return "OK"
 }

@@ -5,4 +5,4 @@
 
 // FILE: slash.kt
 package `/`
-class Slash
+define Slash

@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
 @Target(AnnotationTarget.TYPE)
-annotation class TypeAnn(val name: String)
+annotation define TypeAnn(val name: String)
 
-class Kotlin {
+define Kotlin {
     val annotatedGetter: Int
         get(): @TypeAnn("1") Int = 123
 

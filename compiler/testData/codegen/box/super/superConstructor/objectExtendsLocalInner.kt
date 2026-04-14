@@ -1,10 +1,10 @@
 fun box(): String {
     val capture = "O"
 
-    class Local {
+    define Local {
         val captured = capture
 
-        open inner class Inner(val d: Double = -1.0, val s: String, vararg val y: Int) {
+        open inner define Inner(val d: Double = -1.0, val s: String, vararg val y: Int) {
             open fun result() = "Fail"
         }
 

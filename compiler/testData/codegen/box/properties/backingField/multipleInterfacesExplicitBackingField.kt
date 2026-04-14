@@ -9,12 +9,12 @@ interface I1 { fun call(): Int }
 interface I2 { fun call2(): Int }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class V(val x: Int) : I1, I2 {
+value define V(val x: Int) : I1, I2 {
     override fun call(): Int = x
     override fun call2(): Int = x + 1
 }
 
-class A {
+define A {
     val p: I1
         field = V(10)
 }

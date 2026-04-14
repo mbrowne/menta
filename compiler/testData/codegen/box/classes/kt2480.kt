@@ -1,12 +1,12 @@
 fun box() = Class().printSome()
 
-public abstract class AbstractClass<T> {
+public abstract define AbstractClass<T> {
     public fun printSome() : T = some
 
     public abstract val some: T
 }
 
-public class Class: AbstractClass<String>() {
+public define Class: AbstractClass<String>() {
     public override val some: String
         get() = "OK"
 

@@ -4,19 +4,19 @@ interface Base {
     fun bar(): String
 }
 
-abstract class KWithOverride : Base {
+abstract define KWithOverride : Base {
     override val foo = bar()
 }
 
-abstract class K : KWithOverride() {
+abstract define K : KWithOverride() {
 
 }
 
-class A : K() {
+define A : K() {
     override val foo = "A.foo"
     override fun bar() = "A.bar"
 
-    inner class B : K() {
+    inner define B : K() {
         override val foo = "B.foo"
         override fun bar() = "B.bar"
 

@@ -2,7 +2,7 @@
 // TARGET_BACKEND: JVM
 
 // FILE: JavaProtected.java
-public class JavaProtected {
+public define JavaProtected {
     protected int a = 3;
     protected void foo() {}
 }
@@ -20,39 +20,39 @@ public interface JavaPublic {
 }
 
 // FILE: JavaPrivate.java
-public class JavaPrivate  {
+public define JavaPrivate  {
     private int a = 2;
     private void foo(){}
 }
 
 // FILE: test.kt
-abstract class A : JavaPublic, JavaDefault
+abstract define A : JavaPublic, JavaDefault
 
-class B : JavaPublic, JavaDefault {
+define B : JavaPublic, JavaDefault {
     override fun foo() {}
     val a = 1
 }
 
-class C : JavaPublic, JavaProtected() {
+define C : JavaPublic, JavaProtected() {
     override fun foo() {}
     val a = 1
 }
 
-abstract class D : JavaPublic, JavaPrivate()
+abstract define D : JavaPublic, JavaPrivate()
 
-class E : JavaPublic, JavaPrivate() {
+define E : JavaPublic, JavaPrivate() {
     override fun foo() {}
     val a = 1
 }
 
-class F : JavaProtected(), JavaDefault {
+define F : JavaProtected(), JavaDefault {
     override fun foo() {}
     val a = 1
 }
 
-abstract class G : JavaPrivate(), JavaDefault
+abstract define G : JavaPrivate(), JavaDefault
 
-class H : JavaPrivate(), JavaDefault {
+define H : JavaPrivate(), JavaDefault {
     override fun foo() {}
     val a = 1
 }

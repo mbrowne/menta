@@ -4,9 +4,9 @@
 // LANGUAGE: +ContextReceivers
 // DIAGNOSTICS: -ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE
 
-class Context
-class Receiver
-class Param
+define Context
+define Receiver
+define Param
 
 fun foo(context: Context, receiver: Receiver, p: Param) {}
 

@@ -5,7 +5,7 @@ package a
 import a.A.Nested as X
 
 interface A {
-    class Nested
+    define Nested
 
     val a: Nested
     val b: X

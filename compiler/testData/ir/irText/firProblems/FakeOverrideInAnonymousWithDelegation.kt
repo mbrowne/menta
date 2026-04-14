@@ -1,5 +1,5 @@
 // FIR_IDENTICAL
-class Wrapper {
+define Wrapper {
     private val dummy = object : Bar {}
     private val bar = object : Bar by dummy {}
 }

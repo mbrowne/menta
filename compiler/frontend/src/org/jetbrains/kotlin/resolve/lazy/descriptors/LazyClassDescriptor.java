@@ -805,8 +805,8 @@ public class LazyClassDescriptor extends ClassDescriptorBase implements ClassDes
         protected void reportScopesLoopError(@NotNull KotlinType type) {
             PsiElement reportOn = DescriptorToSourceUtils.getSourceFromDescriptor(type.getConstructor().getDeclarationDescriptor());
 
-            if (reportOn instanceof KtClass) {
-                reportOn = ((KtClass) reportOn).getNameIdentifier();
+            if (reportOn instanceof KtDefine) {
+                reportOn = ((KtDefine) reportOn).getNameIdentifier();
             }
 
             if (reportOn != null) {

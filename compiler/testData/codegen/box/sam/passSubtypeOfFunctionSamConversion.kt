@@ -16,7 +16,7 @@ public interface Sam<T, R> {
 
 // FILE: Foo.java
 
-public class Foo {
+public define Foo {
     public static String bar1(IntMapper mapper) {
         return mapper.invoke(0);
     }

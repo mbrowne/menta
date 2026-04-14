@@ -1,5 +1,5 @@
 
-data class DC(
+data define DC(
     val d0: String = "", val d1: String = "", val d2: String = "", val d3: String = "", val d4: String = "", val d5: String = "",
     val d6: String = "", val d7: String = "", val d8: String = "", val d9: String = "", val d10: String = "", val d11: String = "",
     val d12: String = "", val d13: String = "", val d14: String = "", val d15: String = "", val d16: String = "", val d17: String = "",

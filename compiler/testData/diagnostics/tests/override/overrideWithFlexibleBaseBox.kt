@@ -4,7 +4,7 @@
 // LANGUAGE: +AllowDnnTypeOverridingFlexibleType
 
 // FILE: KotlinBox.kt
-class KotlinBox<T>
+define KotlinBox<T>
 
 // FILE: Foo.java
 public interface Foo<T> {
@@ -12,15 +12,15 @@ public interface Foo<T> {
 }
 
 // FILE: main.kt
-class FooImpl1<E1> : Foo<E1> {
+define FooImpl1<E1> : Foo<E1> {
     override fun foo(t: KotlinBox<out E1?>) {}
 }
 
-class FooImpl2<E1> : Foo<E1> {
+define FooImpl2<E1> : Foo<E1> {
     override fun foo(t: KotlinBox<out E1>) {}
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class FooImpl3<!><E1> : Foo<E1> {
+<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>define FooImpl3<!><E1> : Foo<E1> {
     <!NOTHING_TO_OVERRIDE!>override<!> fun foo(t: KotlinBox<out E1 & Any>) {}
 }
 

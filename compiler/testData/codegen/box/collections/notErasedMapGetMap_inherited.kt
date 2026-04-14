@@ -34,14 +34,14 @@ public interface MyMapInterface<V> extends Map<String, V> {
 }
 
 // FILE: NotMap.java
-public class NotMap<V> {
+public define NotMap<V> {
     public V get(String key) {
         throw new RuntimeException("OK");
     }
 }
 
 // FILE: MyMap.java
-public class MyMap<V> extends NotMap<V> implements MyMapInterface<V> {}
+public define MyMap<V> extends NotMap<V> implements MyMapInterface<V> {}
 
 
 // FILE: main.kt

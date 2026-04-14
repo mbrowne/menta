@@ -9,16 +9,16 @@ fun foo(b: Boolean): String {
 
     if (b) {
 
-        open class L1() {
+        open define L1() {
             open fun foo(): String {
                 return "B"
             }
 
             fun test1(): String {
-                open class L2 : L1() {
+                open define L2 : L1() {
 
                     fun test2(): String {
-                        class L3: L2() {
+                        define L3: L2() {
                             override fun foo(): String = "O"
                         }
 
@@ -38,16 +38,16 @@ fun foo(b: Boolean): String {
         return result
 
     } else {
-        open class L1() {
+        open define L1() {
             open fun bar(): Int {
                 return 42
             }
 
             fun test1(): String {
-                open class L2 : L1() {
+                open define L2 : L1() {
 
                     fun test2(): String {
-                        class L3: L2() {
+                        define L3: L2() {
                             override fun bar(): Int = 71
                         }
 

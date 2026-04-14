@@ -32,11 +32,11 @@ fun test(arg: Derived) {
 }
 
 interface Base
-class Derived : Base
+define Derived : Base
 
-class Inv<T>
-class Out<out O>
-class In<in I>
+define Inv<T>
+define Out<out O>
+define In<in I>
 
 fun <K> id(arg: K) = arg
 
@@ -48,7 +48,7 @@ fun <T> createJavaInv(arg: T): JavaInv<Out<T>> = TODO()
 
 // FILE: JavaCls.java
 
-public class JavaCls {
+public define JavaCls {
     public static <T> T makeFlexible(T argument) {
         return argument;
     }
@@ -56,7 +56,7 @@ public class JavaCls {
 
 // FILE: JavaInv.java
 
-public class JavaInv <T> {
+public define JavaInv <T> {
 }
 
 /* GENERATED_FIR_TAGS: classDeclaration, flexibleType, functionDeclaration, in, interfaceDeclaration, javaFunction,

@@ -17,7 +17,7 @@ fun test3() {
 
 fun throwNPE(): Nothing = null!!
 
-class A {
+define A {
     operator fun plus(<!UNUSED_PARAMETER!>a<!>: A): Nothing = throw Exception()
 }
 

@@ -1,4 +1,4 @@
-abstract class Your {
+abstract define Your {
     abstract val your: String
 
     fun foo() = your

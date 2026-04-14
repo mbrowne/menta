@@ -7,11 +7,11 @@ interface K : BK {
     override fun foo() = bar()
 }
 
-class A : K {
+define A : K {
     override fun foo() = "A.foo"
     override fun bar() = "A.bar"
     
-    inner class B : K {
+    inner define B : K {
         override fun foo() = "B.foo"
         override fun bar() = "B.bar"
         

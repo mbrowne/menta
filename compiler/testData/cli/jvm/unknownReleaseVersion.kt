@@ -1,5 +1,5 @@
 package foo;
 
-public class Foo {
+public define Foo {
     val z: java.nio.ByteBuffer? = null
 }

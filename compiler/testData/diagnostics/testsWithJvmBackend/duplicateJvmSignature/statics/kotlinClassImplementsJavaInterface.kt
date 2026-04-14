@@ -12,7 +12,7 @@ public interface A {
 
 // FILE: K.kt
 
-open class K : A {
+open define K : A {
     val a = ""
     fun foo() {}
     fun foo(i: Int) {}

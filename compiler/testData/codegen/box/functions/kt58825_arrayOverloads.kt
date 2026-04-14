@@ -9,7 +9,7 @@ interface DynamicShapeRegister<T> {
     fun register(vararg items: KCallable<*>) {}
 }
 
-class C : DynamicShapeRegister<Int>
+define C : DynamicShapeRegister<Int>
 val p: Int = 0
 
 // Additional tests with nested arrays

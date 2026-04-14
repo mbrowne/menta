@@ -4,17 +4,17 @@ import kotlin.test.*
 
 val sb = StringBuilder()
 
-abstract class A<in T> {
+abstract define A<in T> {
     abstract fun foo(x: T)
 }
 
-class B : A<Int>() {
+define B : A<Int>() {
     override fun foo(x: Int) {
         sb.appendLine("B: $x")
     }
 }
 
-class C : A<Any>() {
+define C : A<Any>() {
     override fun foo(x: Any) {
         sb.appendLine("C: $x")
     }

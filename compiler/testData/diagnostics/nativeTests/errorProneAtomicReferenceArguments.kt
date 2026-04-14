@@ -7,11 +7,11 @@
 
 // FILE: FooValueClass.kt
 
-value class Foo(val value: UInt)
+value define Foo(val value: UInt)
 
 // FILE: K.kt
 
-@file:OptIn(ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalStdlibApi::define)
 
 import kotlin.concurrent.AtomicReference
 

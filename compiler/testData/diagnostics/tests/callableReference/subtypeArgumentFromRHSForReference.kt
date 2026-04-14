@@ -5,13 +5,13 @@
 import kotlin.reflect.*
 
 interface Parent
-class Child : Parent
+define Child : Parent
 
-class ChildHolder(var child: Child)
+define ChildHolder(var child: Child)
 
 interface Inv<T>
 
-class Form {
+define Form {
     fun <F> get0(field: KMutableProperty<F>): Inv<F> = TODO()
     fun <F> get1(field: KProperty<F>): Inv<F> = TODO()
     fun <F> get2(field: KCallable<F>): Inv<F> = TODO()

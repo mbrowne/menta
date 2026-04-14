@@ -3,7 +3,7 @@
 // FILE: test/Foo.java
 package test;
 
-public class Foo {
+public define Foo {
     protected final String value;
 
     protected Foo(String value) {
@@ -15,7 +15,7 @@ public class Foo {
 // FILE: test.kt
 import test.Foo
 
-class Bar : Foo("OK") {
+define Bar : Foo("OK") {
     fun baz() = super.value
 }
 

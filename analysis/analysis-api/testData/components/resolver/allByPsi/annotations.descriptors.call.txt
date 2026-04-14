@@ -28,7 +28,7 @@ KtNameReferenceExpression(43,50): 'reflect'
 KtNameReferenceExpression(51,57): 'KClass'
   null
 
-KtClass(59,120): '@Repeatable'
+KtDefine(59,120): '@Repeatable'
   null
 
 KtDeclarationModifierList(59,81): '@Repeatable'
@@ -109,7 +109,7 @@ KtUserType(111,119): 'IntArray'
 KtNameReferenceExpression(111,119): 'IntArray'
   null
 
-KtClass(122,183): '@Repeatable'
+KtDefine(122,183): '@Repeatable'
   null
 
 KtDeclarationModifierList(122,144): '@Repeatable'
@@ -196,7 +196,7 @@ KtTypeArgumentList(179,182): '<*>'
 KtTypeProjection(180,181): '*'
   null
 
-KtClass(185,260): '@Repeatable'
+KtDefine(185,260): '@Repeatable'
   null
 
 KtDeclarationModifierList(185,207): '@Repeatable'
@@ -298,7 +298,7 @@ KtTypeArgumentList(255,258): '<*>'
 KtTypeProjection(256,257): '*'
   null
 
-KtClass(262,339): 'annotation class AnnoWithAnotherAnnotation(val another: Array<AnnoWithArray>)'
+KtDefine(262,339): 'annotation class AnnoWithAnotherAnnotation(val another: Array<AnnoWithArray>)'
   null
 
 KtDeclarationModifierList(262,272): 'annotation'
@@ -337,7 +337,7 @@ KtUserType(324,337): 'AnnoWithArray'
 KtNameReferenceExpression(324,337): 'AnnoWithArray'
   null
 
-KtClass(341,389): 'annotation class AnnoWithString(val str: String)'
+KtDefine(341,389): 'annotation class AnnoWithString(val str: String)'
   null
 
 KtDeclarationModifierList(341,351): 'annotation'
@@ -373,7 +373,7 @@ KtStringTemplateExpression(418,421): '"s"'
 KtLiteralStringTemplateEntry(419,420): 's'
   null
 
-KtClass(423,834): '@AnnoWithArray([1, 2, 3])'
+KtDefine(423,834): '@AnnoWithArray([1, 2, 3])'
   null
 
 KtDeclarationModifierList(423,826): '@AnnoWithArray([1, 2, 3])'

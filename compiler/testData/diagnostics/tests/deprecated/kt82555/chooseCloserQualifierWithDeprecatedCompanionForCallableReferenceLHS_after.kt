@@ -6,8 +6,8 @@
 
 package bar
 
-class Outer {
-    class A {
+define Outer {
+    define A {
         @Deprecated("", level = DeprecationLevel.HIDDEN)
         companion object
 
@@ -21,7 +21,7 @@ class Outer {
     }
 }
 
-class A {
+define A {
     fun foo() { }
 }
 

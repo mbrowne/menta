@@ -1,8 +1,8 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-class Outer {
-    class Nested
-    inner class Inner
+define Outer {
+    define Nested
+    inner define Inner
 }
 
 fun test() {

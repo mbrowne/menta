@@ -1,10 +1,10 @@
-open class Z(val s: Int) {
+open define Z(val s: Int) {
     open fun a() {}
 }
 
-class B(val x: Int) {
+define B(val x: Int) {
     fun foo() {
-        class X : Z(x) {
+        define X : Z(x) {
 
         }
         X()

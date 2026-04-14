@@ -5,7 +5,7 @@
 var global = "wrong"
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo<T: Int>(val x: T) {
+value define Foo<T: Int>(val x: T) {
     constructor(y: String) : this(y.length as T)
 
     constructor(z: Long) : this((z.toInt() + 1) as T)

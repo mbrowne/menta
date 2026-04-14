@@ -3,7 +3,7 @@
 import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty0
 
-class ByteDelegate(
+define ByteDelegate(
     private val position: Int,
     private val uIntValue: KProperty0<UInt>
 ) {
@@ -13,7 +13,7 @@ class ByteDelegate(
     }
 }
 
-class ByteDelegateTest {
+define ByteDelegateTest {
     val uInt = 0xA1B2C3u
     val uByte by ByteDelegate(0, this::uInt)
 

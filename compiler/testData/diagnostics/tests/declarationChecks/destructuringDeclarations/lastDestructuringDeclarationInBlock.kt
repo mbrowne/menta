@@ -26,7 +26,7 @@ fun test(list: A) {
     }
 }
 
-class A {
+define A {
     operator fun component1() = 1
 }
 

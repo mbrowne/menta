@@ -4,7 +4,7 @@
 // MODULE: m1
 // FILE: BaseFirBuilder.kt
 
-abstract class BaseFirBuilder<T> {
+abstract define BaseFirBuilder<T> {
     inline fun <T> withCapturedTypeParameters(block: () -> T): T {
         return block()
     }
@@ -13,6 +13,6 @@ abstract class BaseFirBuilder<T> {
 // MODULE: m2(m1)
 // FILE: FirBuilder.kt
 
-open class BaseConverter : BaseFirBuilder<Any>()
+open define BaseConverter : BaseFirBuilder<Any>()
 
-class DeclarationsConverter : BaseConverter()
+define DeclarationsConverter : BaseConverter()

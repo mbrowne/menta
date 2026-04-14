@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -DEBUG_INFO_LEAKING_THIS
-class Foo : I {
+define Foo : I {
     // no getter
     val final_notInitializedInPlace_deferredInit0: Int
     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val final_notInitializedInPlace0: Int<!>

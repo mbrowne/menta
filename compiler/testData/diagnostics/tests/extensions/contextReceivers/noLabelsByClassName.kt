@@ -13,7 +13,7 @@ var Int.p: Int
         this<!UNRESOLVED_REFERENCE!>@Int<!>
     }
 
-class X {
+define X {
     var Int.p: Int
         get() {
             this<!UNRESOLVED_REFERENCE!>@Int<!>

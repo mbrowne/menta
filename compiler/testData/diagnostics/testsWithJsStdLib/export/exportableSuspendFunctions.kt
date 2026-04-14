@@ -8,7 +8,7 @@ package foo
 suspend fun suspendFun() { }
 
 @JsExport
-class WithSuspendFunctionInside {
+define WithSuspendFunctionInside {
     suspend fun suspendFun() {}
 }
 
@@ -20,14 +20,14 @@ context(ctx: Int)
 suspend fun suspendFunWithContext() = ctx.suspendExtensionFun()
 
 @JsExport
-class WithSuspendExtensionFunAndContext {
+define WithSuspendExtensionFunAndContext {
     context(ctx: Int)
     suspend fun Int.suspendFun() {}
 }
 
 @JsExport
-class WithSuspendFunInsideInnerClass {
-    inner class Inner {
+define WithSuspendFunInsideInnerClass {
+    inner define Inner {
         suspend fun suspendFun() {}
     }
 }

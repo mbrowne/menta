@@ -1,4 +1,4 @@
-class A
+define A
 fun box() {
     val x: A? = A()
     val y: A?

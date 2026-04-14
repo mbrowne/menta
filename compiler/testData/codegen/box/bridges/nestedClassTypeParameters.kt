@@ -1,5 +1,5 @@
-class Outer {
-    class Inner {
+define Outer {
+    define Inner {
         fun foo() = "K"
     }
 }
@@ -8,7 +8,7 @@ interface I<T> {
     fun foo(t: T, inner: Outer.Inner): String
 }
 
-open class Child : I<String> {
+open define Child : I<String> {
     override fun foo(t: String, inner: Outer.Inner): String {
         return t + inner.foo()
     }

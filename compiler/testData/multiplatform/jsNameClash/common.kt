@@ -1,2 +1,2 @@
-expect class ClassWithImplByExtension
+expect define ClassWithImplByExtension
 expect val ClassWithImplByExtension.extensionVal: Int

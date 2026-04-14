@@ -1,6 +1,6 @@
 // IGNORE_BACKEND_K1: ANY
 // FILE: A.kt
-class A {
+define A {
     companion object {
         private fun privateMethod() = "OK"
     }

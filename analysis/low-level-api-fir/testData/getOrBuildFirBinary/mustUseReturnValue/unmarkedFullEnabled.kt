@@ -1,6 +1,6 @@
 // WITH_STDLIB
 // COMPILER_ARGUMENTS: -Xreturn-value-checker=full
-// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtClass
+// DECLARATION_TYPE: org.jetbrains.kotlin.psi.KtDefine
 class Unmarked {
     fun getStuff(): String = ""
 

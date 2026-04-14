@@ -1,6 +1,6 @@
 package foo
 
-enum class X {
+enum define X {
     B {
         override val value2 = "K"
         override val value = "O" + this.value2.get(this.ordinal).toString()

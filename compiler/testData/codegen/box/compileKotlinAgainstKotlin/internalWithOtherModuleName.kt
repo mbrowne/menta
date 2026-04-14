@@ -3,7 +3,7 @@
 
 package a
 
-class Box(val value: String) {
+define Box(val value: String) {
     internal fun result(): String = value
 }
 

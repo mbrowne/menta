@@ -12,7 +12,7 @@ fun test() {
     }
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <T> flow(block: suspend FlowCollector<T>.() -> Unit): Flow<T> = TODO()
 
 interface Flow<out T>

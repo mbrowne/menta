@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class A {
+define A {
     @JvmSynthetic
     fun foo() {}
 
@@ -21,4 +21,4 @@ class A {
 
 
 
-// DECLARATIONS_NO_LIGHT_ELEMENTS: A.class[foo;y]
+// DECLARATIONS_NO_LIGHT_ELEMENTS: A.define[foo;y]

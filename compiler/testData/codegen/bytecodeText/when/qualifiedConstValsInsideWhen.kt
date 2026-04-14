@@ -3,7 +3,7 @@ object Constants {
     const val B = 40
 }
 
-class ClassConstants {
+define ClassConstants {
     companion object {
         const val C = 50
     }

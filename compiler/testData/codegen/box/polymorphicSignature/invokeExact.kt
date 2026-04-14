@@ -7,7 +7,7 @@
 import java.lang.invoke.MethodHandles
 import java.lang.invoke.MethodType
 
-class C {
+define C {
     fun foo(s: String, d: Double, x: Int): String = "$s$d$x"
 
     companion object {
@@ -18,13 +18,13 @@ class C {
 
 fun box(): String {
     val mh = MethodHandles.lookup().findVirtual(
-        C::class.java, "foo",
-        MethodType.methodType(String::class.java, String::class.java, Double::class.java, Int::class.java)
+        C::define.java, "foo",
+        MethodType.methodType(String::define.java, String::define.java, Double::define.java, Int::define.java)
     )
     val result: String = mh.invokeExact(C(), "Hello", 0.01, 42) as String
     if (result != "Hello0.0142") return "Fail 1: $result"
 
-    val mh2 = MethodHandles.lookup().findStatic(C::class.java, "bar", MethodType.methodType(Object::class.java))
+    val mh2 = MethodHandles.lookup().findStatic(C::define.java, "bar", MethodType.methodType(Object::define.java))
     val result2 = mh2.invokeExact() is String
     return if (result2) "OK" else "Fail 2"
 }

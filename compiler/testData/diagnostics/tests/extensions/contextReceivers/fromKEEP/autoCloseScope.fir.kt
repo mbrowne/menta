@@ -2,14 +2,14 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class File(name: String)
+define File(name: String)
 interface InputStream
 
 interface AutoCloseScope {
     fun defer(closeBlock: () -> Unit)
     fun close()
 }
-class AutoCloseScopeImpl : AutoCloseScope {
+define AutoCloseScopeImpl : AutoCloseScope {
     override fun defer(closeBlock: () -> Unit) = TODO()
     override fun close() = TODO()
 }

@@ -1,4 +1,4 @@
-open class Foo<T>(val x: T)
+open define Foo<T>(val x: T)
 
 typealias FooStr = Foo<String>
 

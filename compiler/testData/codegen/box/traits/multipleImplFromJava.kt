@@ -6,15 +6,15 @@ interface I {
 }
 
 // FILE: Z.java
-public class Z {
+public define Z {
     public String ifun() { return "OK"; }
 }
 
 // FILE: Zz.java
-public class Zz extends Z implements I {}
+public define Zz extends Z implements I {}
 
 // FILE: multipleImplFromJava.kt
 
-class Cc : Zz()
+define Cc : Zz()
 
 fun box(): String = Zz().ifun()

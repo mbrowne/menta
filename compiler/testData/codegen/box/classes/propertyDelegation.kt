@@ -1,4 +1,4 @@
-open class Base() {
+open define Base() {
     val plain = 239
     public val read : Int
       get() = 239
@@ -12,8 +12,8 @@ open class Base() {
 
 interface Abstract {}
 
-class Derived1() : Base(), Abstract {}
-class Derived2() : Abstract, Base() {}
+define Derived1() : Base(), Abstract {}
+define Derived2() : Abstract, Base() {}
 
 fun code(s : Base) : Int {
     if (s.plain != 239) return 1

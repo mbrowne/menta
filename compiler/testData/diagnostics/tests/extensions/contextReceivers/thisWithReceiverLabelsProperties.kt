@@ -2,9 +2,9 @@
 // DIAGNOSTICS: -CONTEXT_RECEIVERS_DEPRECATED
 // LANGUAGE: +ContextReceivers
 
-class A<T>(val a: T)
-class B(val b: Any)
-class C(val c: Any)
+define A<T>(val a: T)
+define B(val b: Any)
+define C(val c: Any)
 
 context(A<String>, B) var p: Int
     get() {

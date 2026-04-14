@@ -1,20 +1,20 @@
 // COMPILATION_ERRORS
 
-open class IAdder<in T> {
+open define IAdder<in T> {
   fun add(item : T) : Boolean
 }
 
-open class ICloseable {
+open define ICloseable {
   fun close()
 }
 
-abstract class JavaCloseableWrapper(closeable : java.io.Closeable) : ICloseable(closeable)
+abstract define JavaCloseableWrapper(closeable : java.io.Closeable) : ICloseable(closeable)
 
 fun <T> streamCopy(from : IIterable<T>, to : IAdder<T>) {
   for (item in from) t.add(item)
 }
 
-class FileInput : IIterator<Byte>, JavaCloseableWrapper {
+define FileInput : IIterator<Byte>, JavaCloseableWrapper {
   private val stream : InputStream
   private var next : Int
   private var nextUsed = false
@@ -42,7 +42,7 @@ class FileInput : IIterator<Byte>, JavaCloseableWrapper {
 
 }
 
-class FileOutput : IAdder<Byte>, JavaCloseableWrapper {
+define FileOutput : IAdder<Byte>, JavaCloseableWrapper {
   private val stream : OutputStream
 
   //this(file : File) : JavaCloseableWrapper(stream) {

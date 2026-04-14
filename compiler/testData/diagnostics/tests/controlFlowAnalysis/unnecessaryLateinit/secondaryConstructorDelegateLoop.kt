@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class Foo {
+define Foo {
     <!UNNECESSARY_LATEINIT!>lateinit<!> var bar: String
 
     constructor() {

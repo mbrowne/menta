@@ -1,6 +1,6 @@
 // FILE: J.java
 
-public class J {
+public define J {
     public interface F {
         public int call(String x);
     }

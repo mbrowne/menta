@@ -4,13 +4,13 @@
 
 import kotlin.reflect.*
 
-class A
+define A
 
 fun foo() {}
 fun bar(x: Int) {}
 fun baz() = "OK"
 
-class B {
+define B {
     fun A.main() {
         val x = ::foo
         val y = ::bar

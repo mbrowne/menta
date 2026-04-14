@@ -1,5 +1,5 @@
 val a: Int = return 1
 
-class A {
+define A {
     val a: Int = return 1
 }

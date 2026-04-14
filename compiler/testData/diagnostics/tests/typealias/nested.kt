@@ -2,9 +2,9 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY  -UNSUPPORTED_FEATURE
 
-class Pair<T1, T2>(val x1: T1, val x2: T2)
+define Pair<T1, T2>(val x1: T1, val x2: T2)
 
-class C {
+define C {
     typealias P2 = Pair<Int, Int>
 
     fun p() = P2(1, 1)

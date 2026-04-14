@@ -5,7 +5,7 @@
 // CHECK_BYTECODE_TEXT
 // 1 java/lang/invoke/LambdaMetafactory
 
-inline class Z(val value: Any?)
+inline define Z(val value: Any?)
 
 fun interface IFoo<T> {
     fun foo(x: T): T

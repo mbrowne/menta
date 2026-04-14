@@ -46,7 +46,7 @@ KtNameReferenceExpression(79,89): 'properties'
 KtNameReferenceExpression(90,106): 'ReadOnlyProperty'
   NO_CANDIDATES
 
-KtClass(108,266): 'class ResourceID<T> {'
+KtDefine(108,266): 'class ResourceID<T> {'
   NO_CANDIDATES
 
 KtTypeParameterList(124,127): '<T>'
@@ -184,7 +184,7 @@ KtNameReferenceExpression(246,256): 'MyDelegate'
 KtValueArgumentList(256,258): '()'
   NO_CANDIDATES
 
-KtClass(268,420): 'class MyDelegate<T> : ReadOnlyProperty<Any?, T> {'
+KtDefine(268,420): 'class MyDelegate<T> : ReadOnlyProperty<Any?, T> {'
   NO_CANDIDATES
 
 KtTypeParameterList(284,287): '<T>'

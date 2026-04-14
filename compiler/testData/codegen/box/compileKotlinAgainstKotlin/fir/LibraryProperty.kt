@@ -5,7 +5,7 @@
 
 package first.second
 
-class FqName(val s: String)
+define FqName(val s: String)
 
 @JvmField
 val VOLATILE_ANNOTATION_FQ_NAME = FqName("volatile")

@@ -1,6 +1,6 @@
 interface Foo<T>
 
-class AnonymousReturnWithGenericType<T> {
+define AnonymousReturnWithGenericType<T> {
     val v1 = object : Foo<T> {}
     fun f1() = object : Foo<T> {}
 

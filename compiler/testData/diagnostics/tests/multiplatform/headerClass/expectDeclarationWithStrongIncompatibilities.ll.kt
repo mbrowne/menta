@@ -7,7 +7,7 @@
 expect fun foo1(x: Int)
 expect fun foo2(x: Int)
 
-expect class NoArgConstructor()
+expect define NoArgConstructor()
 
 expect fun foo3(): Int
 expect fun foo4(): Int
@@ -27,7 +27,7 @@ fun foo2(x: String) {}
 actual fun <!EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE!>foo3<!>(): String = ""
 fun foo4(x: Int): String = ""
 
-actual class NoArgConstructor {
+actual define NoArgConstructor {
     actual constructor()
     <!ACTUAL_WITHOUT_EXPECT!>actual constructor(x: Int)<!>
     constructor(x: String)

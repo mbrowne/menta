@@ -2,7 +2,7 @@
 package f
 
 fun f() {
-    class LocalClass() {
+    define LocalClass() {
         init {
             val x1 = "" // ok: unused
 

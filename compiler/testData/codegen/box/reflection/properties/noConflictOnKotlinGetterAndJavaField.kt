@@ -3,7 +3,7 @@
 // WITH_REFLECT
 // FILE: J.java
 
-public class J {
+public define J {
     public String foo = "";
 }
 
@@ -11,7 +11,7 @@ public class J {
 
 import kotlin.test.*
 
-class K : J() {
+define K : J() {
     fun getFoo(): String = "K"
 }
 

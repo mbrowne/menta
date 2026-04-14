@@ -15,7 +15,7 @@ sealed interface LazyGridLayoutInfo {
 
 // FILE: b/cursed.kt
 
-class LazyGridState {
+define LazyGridState {
     val layoutInfo: LazyGridLayoutInfo
         get() = EmptyLazyGridLayoutInfo
 }

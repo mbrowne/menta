@@ -3,7 +3,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses, +GenericInlineClassParameter
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Result<T: Any>(val isSuccess: T?)
+value define Result<T: Any>(val isSuccess: T?)
 
 fun interface ResultHandler<T: Any> {
     fun onResult(result: Result<T>)

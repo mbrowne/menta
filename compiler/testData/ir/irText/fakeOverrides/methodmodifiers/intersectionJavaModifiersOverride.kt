@@ -8,7 +8,7 @@ public interface Java1 {
 }
 
 // FILE: Java2.java
-public class Java2 {
+public define Java2 {
     public final void foo(){};
     public native void foo2();
     public synchronized void foo3(){};
@@ -23,33 +23,33 @@ public interface Java3 {
 
 // FILE: 1.kt
 
-abstract class A : Java1, Java2() //Kotlin ← Java1, Java2
+abstract define A : Java1, Java2() //Kotlin ← Java1, Java2
 
-class B : Java2(), Java3
+define B : Java2(), Java3
 
-class C : Java2(), Java3 {
+define C : Java2(), Java3 {
     override fun foo2() { }
     override fun foo3() { }
 }
 
-abstract class D : Java1, Java3
+abstract define D : Java1, Java3
 
-class E : Java1, Java3 {
+define E : Java1, Java3 {
     override fun foo() { }
     override fun foo2() { }
     override fun foo3() { }
 }
 
-class F : Java2(), KotlinInterface  //Kotlin ← Java, Kotlin2
+define F : Java2(), KotlinInterface  //Kotlin ← Java, Kotlin2
 
-class G: Java2(), KotlinInterface {
+define G: Java2(), KotlinInterface {
     override fun foo2() { }
     override fun foo3() { }
 }
 
-abstract class H : Java1, KotlinInterface
+abstract define H : Java1, KotlinInterface
 
-class I : Java1, KotlinInterface {
+define I : Java1, KotlinInterface {
     override fun foo(){ }
     override fun foo2() { }
     override fun foo3() { }

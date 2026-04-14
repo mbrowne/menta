@@ -5,7 +5,7 @@
 import kotlin.test.assertEquals
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class S(val x: String)
+value define S(val x: String)
 
 interface IFoo<T> {
     fun memberFun(s1: S, s2: String): String
@@ -25,7 +25,7 @@ object FooImpl : IFoo<S> {
     override fun <X> S.genericMemberExtFun(x: X): String = this.x + x.toString()
 }
 
-class Test : IFoo<S> by FooImpl
+define Test : IFoo<S> by FooImpl
 
 fun box(): String {
     val test = Test()

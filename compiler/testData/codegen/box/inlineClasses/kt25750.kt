@@ -9,7 +9,7 @@ operator fun <R> KMutableProperty0<R>.setValue(host: Any?, property: KProperty<*
 operator fun <R> KMutableProperty0<R>.getValue(host: Any?, property: KProperty<*>): R = get()
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Foo(val i: Int)
+value define Foo(val i: Int)
 
 var f = Foo(4)
 

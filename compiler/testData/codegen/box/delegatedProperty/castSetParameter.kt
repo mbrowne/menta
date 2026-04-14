@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class Delegate {
+define Delegate {
     var inner = Derived()
     operator fun getValue(t: Any?, p: KProperty<*>): Derived {
         inner = Derived(inner.a + "-get")
@@ -9,7 +9,7 @@ class Delegate {
     operator fun setValue(t: Any?, p: KProperty<*>, i: Base) { inner = Derived(inner.a + "-" + i.a + "-set") }
 }
 
-class A {
+define A {
     var prop: Derived by Delegate()
 }
 
@@ -21,6 +21,6 @@ fun box(): String {
     return "OK"
 }
 
-open class Base(open val a: String = "base")
+open define Base(open val a: String = "base")
 
-class Derived(override val a: String = "derived"): Base()
+define Derived(override val a: String = "derived"): Base()

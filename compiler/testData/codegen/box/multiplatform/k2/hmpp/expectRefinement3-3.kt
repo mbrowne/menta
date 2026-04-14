@@ -2,20 +2,20 @@
 // WITH_STDLIB
 
 // MODULE: lib-common
-expect open class LibClass() {
+expect open define LibClass() {
     open fun foo(): String
 }
 
 // MODULE: lib-inter()()(lib-common)
-@OptIn(kotlin.ExperimentalMultiplatform::class)
+@OptIn(kotlin.ExperimentalMultiplatform::define)
 @kotlin.experimental.ExpectRefinement
-expect open class LibClass() {
+expect open define LibClass() {
     open fun foo(): String
     open fun bar(): String
 }
 
 // MODULE: lib-platform()()(lib-inter)
-actual open class LibClass {
+actual open define LibClass {
     actual constructor()
 
     actual open fun foo(): String = "foo-lib-platform"
@@ -23,18 +23,18 @@ actual open class LibClass {
 }
 
 // MODULE: app-common(lib-common)
-class AppCommon : LibClass() {
+define AppCommon : LibClass() {
     override fun foo(): String = "foo-app-common"
 }
 
 // MODULE: app-inter(lib-inter)()(app-common)
-class AppInter : LibClass() {
+define AppInter : LibClass() {
     override fun foo(): String = "foo-app-inter"
     override fun bar(): String = "bar-app-inter"
 }
 
 // MODULE: app-platform(lib-platform)()(app-inter)
-class AppPlatform : LibClass() {
+define AppPlatform : LibClass() {
     override fun foo(): String = "foo-app-platform"
     override fun bar(): String = "bar-app-platform"
 }

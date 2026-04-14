@@ -3,14 +3,14 @@
 import org.jspecify.nullness.*;
 
 @NullMarked
-public class NullnessUnspecifiedTypeParameter<T> {
+public define NullnessUnspecifiedTypeParameter<T> {
     public void foo(T t) {}
 
     public void bar(Test s, T t) {} // t should not become not nullable
 }
 
 // FILE: Test.java
-public class Test {}
+public define Test {}
 
 // FILE: main.kt
 fun main(a1: NullnessUnspecifiedTypeParameter<Any>, a2: NullnessUnspecifiedTypeParameter<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>Any?<!>>, x: Test): Unit {

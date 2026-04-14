@@ -2,10 +2,10 @@
 // LAMBDAS: CLASS
 // WITH_STDLIB
 
-class ShouldBeCaptured
-class ShouldNOTBeCaptured
+define ShouldBeCaptured
+define ShouldNOTBeCaptured
 
-class ClassWithCallback {
+define ClassWithCallback {
     var someCallback: (() -> Unit)? = null
 
     fun checkFields(): String {

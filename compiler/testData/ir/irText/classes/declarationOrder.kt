@@ -3,7 +3,7 @@
 // Ignore reason: there is a js name clash between function `a()` and property `a`
 package test
 
-class A() {
+define A() {
     constructor(x: Int) : this()
     fun b() {}
     fun a() {}

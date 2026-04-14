@@ -17,7 +17,7 @@ fun Inv<Int>.foo2() {}
 fun String.bar() {}
 fun Int.bar() {}
 
-class Inv<K>(x: K)
+define Inv<K>(x: K)
 
 fun foo0(x: String, y: Float, z: String = "") {}
 fun foo0(x: String, y: Float, z: Int = 1) {}
@@ -204,7 +204,7 @@ interface Foo2<K, V> {
     fun entries(): MutableSet<MutableMap.MutableEntry<K, V>>
 }
 
-@OptIn(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::define)
 fun <L, K, V> twoBuilderLambdas(@BuilderInference block: Foo<L>.() -> Unit, @BuilderInference block2: Foo2<K, V>.() -> Unit) {}
 
 fun test() {

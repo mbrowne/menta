@@ -1,6 +1,6 @@
 import kotlin.reflect.KProperty
 
-class TestDelegate() {
+define TestDelegate() {
     operator fun getValue(thisRef: Any?, desc: KProperty<*>): Int {
         return 10
     }
@@ -11,7 +11,7 @@ class TestDelegate() {
 }
 
 
-class Test {
+define Test {
   companion object {
     protected var prop: Int by TestDelegate()
   }

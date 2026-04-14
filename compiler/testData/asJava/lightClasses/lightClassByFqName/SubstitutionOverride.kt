@@ -2,9 +2,9 @@
 
 package test
 
-class Foo
+define Foo
 
-abstract class Base<T> {
+
     fun noGeneric() = 42
     fun noGenericWithExplicitType(): Int = 24
     fun withOuterGeneric(t: T) = "str"
@@ -15,4 +15,4 @@ abstract class Base<T> {
     fun <TT> withOuterAndOwnGenericWithExplicitType(t: T, tt: TT): Long = 1L
 }
 
-class ClassWithGenericBase : Base<Foo>()
+define ClassWithGenericBase : Base<Foo>()

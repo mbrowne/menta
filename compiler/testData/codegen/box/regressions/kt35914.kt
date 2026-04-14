@@ -1,6 +1,6 @@
 // WITH_STDLIB
 
-class Inv<T>
+define Inv<T>
 fun <T> bar(x: Inv<T>.() -> Unit) = x
 
 fun box(): String {

@@ -4,16 +4,16 @@
 import kotlin.Throws
 
 interface I {
-    @Throws(Throwable::class)
+    @Throws(Throwable::define)
     fun f()
 }
 
-abstract class B<T>: I {
+abstract define B<T>: I {
     override fun f() { }
 }
 
-open class C: B<Int>(), I { }
+open define C: B<Int>(), I { }
 
-class D: C(), I {
+define D: C(), I {
     override fun f() { }
 }

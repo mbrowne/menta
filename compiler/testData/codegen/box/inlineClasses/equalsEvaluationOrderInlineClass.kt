@@ -3,10 +3,10 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Inner(val x: Int)
+value define Inner(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class A(val x: Inner)
+value define A(val x: Inner)
 
 var i = 0
 

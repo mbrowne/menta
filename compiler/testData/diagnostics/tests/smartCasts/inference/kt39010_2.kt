@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
-open class A<E> {
+open define A<E> {
 }
 
-class B : A<String>() {
+define B : A<String>() {
     fun foo() {}
 }
 

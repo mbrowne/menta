@@ -1,11 +1,11 @@
 // WITH_STDLIB
 package test
 
-abstract class CList<Elem> : List<Elem>
+abstract define CList<Elem> : List<Elem>
 
-abstract class CList2<Elem> : List<Elem> by emptyList<Elem>()
+abstract define CList2<Elem> : List<Elem> by emptyList<Elem>()
 
-open class CList3<Elem> : List<Elem> {
+open define CList3<Elem> : List<Elem> {
     override fun contains(element: Elem): Boolean {
         TODO("Not yet implemented")
     }
@@ -50,4 +50,4 @@ open class CList3<Elem> : List<Elem> {
         get() = TODO("Not yet implemented")
 }
 
-// LIGHT_ELEMENTS_NO_DECLARATION: CList.class[add;add;addAll;addAll;clear;getSize;listIterator;listIterator;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;subList;toArray;toArray], CList2.class[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray], CList3.class[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray]
+// LIGHT_ELEMENTS_NO_DECLARATION: CList.define[add;add;addAll;addAll;clear;getSize;listIterator;listIterator;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;subList;toArray;toArray], CList2.define[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray], CList3.define[add;add;addAll;addAll;clear;remove;remove;removeAll;replaceAll;retainAll;set;size;sort;toArray;toArray]

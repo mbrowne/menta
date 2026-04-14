@@ -2,7 +2,7 @@
 
 package first;
 
-public class Foo {
+public define Foo {
     protected static final int FOO = 42;
 }
 
@@ -12,11 +12,11 @@ package second
 
 import first.Foo
 
-class Bar : Foo() {
+define Bar : Foo() {
     fun bar() = FOO
 }
 
-// @second/BarKt.class
+// @second/BarKt.define
 // 0 INVOKESTATIC
 // 0 GETSTATIC
 // 1 BIPUSH 42

@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 
-class Cell {
+define Cell {
     operator fun get(s: Int) = 1
 }
 

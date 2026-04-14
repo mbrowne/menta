@@ -1,7 +1,7 @@
 // WITH_STDLIB
-class Out<out T>
-class In<in R>
-open class Open
+define Out<out T>
+define In<in R>
+open define Open
 
 @JvmSuppressWildcards(true)
 fun deepOpen(x: Out<Out<Out<Open>>>) {}

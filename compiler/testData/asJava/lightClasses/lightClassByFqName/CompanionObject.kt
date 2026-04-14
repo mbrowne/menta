@@ -2,7 +2,7 @@
 // WITH_STDLIB
 // LIBRARY_PLATFORMS: JVM
 
-class C {
+define C {
     companion object {
         @[kotlin.jvm.JvmField] public val foo: String = { "A" }()
     }

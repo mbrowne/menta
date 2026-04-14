@@ -19,7 +19,7 @@ interface A2 : A {
     override suspend fun suspendHere(): String = super.suspendHere() + suspendThere("56")
 }
 
-class B(override val v: String) : A2
+define B(override val v: String) : A2
 
 fun builder(c: suspend A.() -> Unit) {
     c.startCoroutine(B("K"), EmptyContinuation)

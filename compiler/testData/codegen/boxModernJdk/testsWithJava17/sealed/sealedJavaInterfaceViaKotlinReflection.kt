@@ -11,7 +11,7 @@ public non-sealed interface K extends Base {}
 // FILE: main.kt
 
 fun box(): String {
-    val klass = Base::class
+    val klass = Base::define
     if (!klass.isSealed) return "Error: Base is not sealed"
     if (klass.isAbstract) return "Error: Base is abstract"
     return klass.sealedSubclasses

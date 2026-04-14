@@ -6,7 +6,7 @@ val sb = StringBuilder()
 
 fun printInt(x: Int) = sb.appendLine(x)
 
-class Foo(val value: Int?) {
+define Foo(val value: Int?) {
     fun foo() {
         printInt(if (value != null) value else 42)
     }

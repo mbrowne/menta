@@ -8,7 +8,7 @@ fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)
 }
 
-class A {
+define A {
     suspend private fun a(): String = suspendCoroutineUninterceptedOrReturn { x ->
         x.resume("OK")
         COROUTINE_SUSPENDED

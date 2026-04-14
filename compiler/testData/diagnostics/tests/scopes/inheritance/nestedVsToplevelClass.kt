@@ -1,20 +1,20 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // LANGUAGE: -ProhibitVisibilityOfNestedClassifiersFromSupertypesOfCompanion
 
-class X {
+define X {
     fun T_X() {}
 }
 
-class Y {
+define Y {
     fun T_Y() {}
 }
 
-open class A {
-    class X {
+open define A {
+    define X {
         fun A_X() {}
     }
     companion object {
-        class Y {
+        define Y {
             fun A_C_Y() {}
         }
     }
@@ -28,7 +28,7 @@ open class A {
     }
 }
 
-class B: A() {
+define B: A() {
     init {
         X().A_X()
         X().<!UNRESOLVED_REFERENCE!>T_X<!>()

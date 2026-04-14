@@ -2,7 +2,7 @@
 // WITH_STDLIB
 
 // FILE: JavaClass.java
-public class JavaClass {
+public define JavaClass {
     public static void run(Runnable l) {
         l.run();
     }
@@ -18,7 +18,7 @@ var state = ""
 
 fun unit() {}
 
-class B {
+define B {
     val s = mutableListOf<Unit>()
 
     init {

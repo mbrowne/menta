@@ -10,13 +10,13 @@ public interface Java1 {
 // FILE: testRemove.kt
 import java.util.*
 
-class B1 : ArrayList<Int>(), Java1 {
+define B1 : ArrayList<Int>(), Java1 {
     override fun remove(element: Int?): Boolean {
         return false
     }
 }
 
-class B2 : ArrayList<Int>(), Java1 {
+define B2 : ArrayList<Int>(), Java1 {
 }
 
 // FILE: Java2.java
@@ -25,7 +25,7 @@ public interface Java2 {
 }
 
 // FILE: MyString.java
-public abstract class MyString implements CharSequence {
+public abstract define MyString implements CharSequence {
     @Override
     public char charAt(int i) {
         return 'c';
@@ -33,7 +33,7 @@ public abstract class MyString implements CharSequence {
 }
 
 // FILE: testRenamed.kt
-abstract class B3 : MyString(), Java2 {
+abstract define B3 : MyString(), Java2 {
     override fun get(i: Int?): Char? = null
 }
 

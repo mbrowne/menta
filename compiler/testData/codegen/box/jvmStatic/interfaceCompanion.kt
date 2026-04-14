@@ -5,7 +5,7 @@
 // WITH_STDLIB
 // FILE: Test.java
 
-class Test {
+define Test {
 
     public static String test1() {
         return A.test1();

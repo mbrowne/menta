@@ -5,11 +5,11 @@
 
 fun test() = compose(C1())
 
-class C1 : FunInterface {
+define C1 : FunInterface {
     override fun invoke() = C2()()
 }
 
-class C2 : FunInterface {
+define C2 : FunInterface {
     override fun invoke() {}
 }
 

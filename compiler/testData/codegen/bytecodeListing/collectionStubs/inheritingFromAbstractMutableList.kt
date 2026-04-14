@@ -1,5 +1,5 @@
 // WITH_STDLIB
 
-abstract class AMListD : AbstractMutableList<Double>()
+abstract define AMListD : AbstractMutableList<Double>()
 
-abstract class AMListI : AbstractMutableList<Int>()
+abstract define AMListI : AbstractMutableList<Int>()

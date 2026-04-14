@@ -18,7 +18,7 @@ actual interface I {
     actual suspend fun f(p: Int): String
 }
 
-class II : I {
+define II : I {
     override suspend fun f(p: Int): String =
         if (p == 1) "OK" else "Fail: $p"
 }

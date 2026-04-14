@@ -4,7 +4,7 @@
 import helpers.*
 import kotlin.coroutines.*
 
-inline class R(val x: Any)
+inline define R(val x: Any)
 
 fun builder(c: suspend () -> Unit) {
     c.startCoroutine(EmptyContinuation)

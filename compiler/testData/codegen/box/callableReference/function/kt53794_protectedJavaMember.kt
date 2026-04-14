@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: B.kt
 
-class B : C() {
+define B : C() {
     fun test(): String = bar(this::foo)
 }
 
@@ -11,7 +11,7 @@ fun box(): String = B().test()
 
 // FILE: C.java
 
-public class C {
+public define C {
     protected final String foo() {
         return "OK";
     }

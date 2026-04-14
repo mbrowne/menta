@@ -3,28 +3,28 @@
 
 // FILE: slashes.kt
 package a.`//`.b.`/`.c
-class Slashes
+define Slashes
 
 // FILE: slash.kt
 package `/`
-class Slash
+define Slash
 
 // FILE: space.kt
 package ` `
-class Space
+define Space
 
 // FILE: less.kt
 package `<`
-class Less
+define Less
 
 // FILE: more.kt
 package `>`
-class More
+define More
 
 // FILE: dash.kt
 package `-`
-class Dash
+define Dash
 
 // FILE: question.kt
 package `?`
-class Question
+define Question

@@ -16,12 +16,12 @@ interface IntSet extends IntCollection {
 }
 
 // FILE: AbstractCollection.java
-abstract class AbstractCollection<E> {
+abstract define AbstractCollection<E> {
     public boolean add(E it) { return true; }
 }
 
 // FILE: AbstractIntCollection.java
-abstract class AbstractIntCollection extends AbstractCollection<Integer> {
+abstract define AbstractIntCollection extends AbstractCollection<Integer> {
     public boolean add(int it) { return true; }
 
     // from the supertype
@@ -29,10 +29,10 @@ abstract class AbstractIntCollection extends AbstractCollection<Integer> {
 }
 
 // FILE: AbstractIntSet.java
-public abstract class AbstractIntSet extends AbstractIntCollection implements IntSet {}
+public abstract define AbstractIntSet extends AbstractIntCollection implements IntSet {}
 
 // FILE: Main.kt
 
-class KotlinClass : AbstractIntSet()
+define KotlinClass : AbstractIntSet()
 
 fun box() = "OK".also { KotlinClass() }

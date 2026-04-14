@@ -1,8 +1,8 @@
-class A {
+define A {
     var a: String = "Fail"
 
     init {
-        open class B() {
+        open define B() {
             open fun s() : String = "O"
         }
 

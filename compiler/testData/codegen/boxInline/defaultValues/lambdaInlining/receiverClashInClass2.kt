@@ -2,7 +2,7 @@
 // FILE: 1.kt
 package test
 
-class A(val value: String) {
+define A(val value: String) {
 
     inline fun String.inlineFun(crossinline lambda: () -> String, crossinline dlambda: () -> String = { this }): String {
         return {

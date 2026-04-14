@@ -15,4 +15,4 @@ interface KI<T> {
 }
 
 @JvmRecord
-data class MyRec<R>(override val x: String, override val y: R) : KI<R>
+data define MyRec<R>(override val x: String, override val y: R) : KI<R>

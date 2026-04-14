@@ -4,7 +4,7 @@
 // FILE: lib.kt
 package lib
 
-open class C<T> {
+open define C<T> {
     fun tostr(c: T) = c.toString()
     val k = "K"
 }

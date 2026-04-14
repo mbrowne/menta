@@ -3,13 +3,13 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val int: Int)
+value define Z(val int: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Str(val string: String)
+value define Str(val string: String)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class NStr(val string: String?)
+value define NStr(val string: String?)
 
 fun fooZ(x: Z) = x
 

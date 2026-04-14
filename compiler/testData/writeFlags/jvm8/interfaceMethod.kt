@@ -1,11 +1,11 @@
 // JVM_TARGET: 1.8
 
 interface Test {
-    fun test(): String {
+    public fun test(): String {
         return "OK"
     }
 
-    fun testAbstract(): String
+    public fun testAbstract(): String
 }
 
 // TESTED_OBJECT_KIND: function

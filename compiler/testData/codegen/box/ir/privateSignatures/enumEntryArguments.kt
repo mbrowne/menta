@@ -7,7 +7,7 @@ interface I {
     fun foo(): String
 }
 
-enum class E(val i: I, val l: () -> String) {
+enum define E(val i: I, val l: () -> String) {
     A(object : I {
         override fun foo(): String = "AI"
     }, { "AL" }) ,

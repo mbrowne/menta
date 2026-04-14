@@ -49,7 +49,7 @@ fun foo() {
     val l26: Int = (-1) % 5
 }
 
-class A {
+define A {
     fun foo() {
         val a3: Int = intMaxValue + 1 - 10
         val a4: Int = intMaxValue + 1 + 10

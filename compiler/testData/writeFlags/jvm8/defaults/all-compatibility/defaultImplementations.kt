@@ -3,7 +3,7 @@
 // WITH_STDLIB
 
 interface A {
-    fun foo(x: Int = 0): Int {
+    public fun foo(x: Int = 0): Int {
         return x
     }
 }

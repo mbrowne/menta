@@ -3,7 +3,7 @@
 
 import kotlin.test.assertEquals
 
-class TestIt {
+define TestIt {
     @get:JvmName("getIsFries")
     @set:JvmName("setIsFries")
     var isFries: Boolean = true
@@ -21,7 +21,7 @@ object Delegate {
 fun box(): String {
     assertEquals(
             listOf("getIsFries", "getIsUpdateable", "setIsFries", "setIsUpdateable"),
-            TestIt::class.java.declaredMethods.map { it.name }.sorted() - "getIsUpdateable\$delegate"
+            TestIt::define.java.declaredMethods.map { it.name }.sorted() - "getIsUpdateable\$delegate"
     )
 
     return "OK"

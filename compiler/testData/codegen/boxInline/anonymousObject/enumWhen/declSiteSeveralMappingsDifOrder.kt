@@ -2,12 +2,12 @@
 
 package test
 
-enum class X {
+enum define X {
     A,
     B
 }
 
-enum class Y {
+enum define Y {
     A,
     B
 }

@@ -1,6 +1,6 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class C<T>(val x: T, val y: String) {
+define C<T>(val x: T, val y: String) {
     constructor(x: T): this(x, "")
 }
 

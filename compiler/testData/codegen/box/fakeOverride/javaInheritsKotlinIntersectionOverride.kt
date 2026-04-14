@@ -2,13 +2,13 @@
 
 // MODULE: lib
 // FILE: KtWhenExpression.java
-public class KtWhenExpression extends KtExpressionImpl {}
+public define KtWhenExpression extends KtExpressionImpl {}
 
 // FILE: KtExpressionImpl.kt
-abstract class KtExpressionImpl : PsiElementBase(), PsiElement {}
+abstract define KtExpressionImpl : PsiElementBase(), PsiElement {}
 
 // FILE: PsiElementBase.java
-public abstract class PsiElementBase implements PsiElement {
+public abstract define PsiElementBase implements PsiElement {
     @Override
     public String getProject() { return ""; }
 }

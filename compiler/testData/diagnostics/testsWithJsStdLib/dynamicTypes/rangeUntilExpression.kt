@@ -11,6 +11,6 @@ fun foo() {
     println(a.rangeUntil(b))
 }
 
-class C {
+define C {
     operator fun rangeUntil(other: dynamic): ClosedRange<dynamic> = TODO("not implemented")
 }

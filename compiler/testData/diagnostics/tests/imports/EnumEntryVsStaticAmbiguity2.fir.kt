@@ -12,7 +12,7 @@ public interface KtNodeTypes {
 
 package second
 
-enum class SomeEnum {
+enum define SomeEnum {
     SOME;
 }
 
@@ -20,7 +20,7 @@ enum class SomeEnum {
 
 package third
 
-enum class SomeEnum {
+enum define SomeEnum {
     SOME;
 }
 

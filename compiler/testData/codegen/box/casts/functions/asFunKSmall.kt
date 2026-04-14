@@ -30,7 +30,7 @@ inline fun asSucceeds(operation: String, block: () -> Unit) {
 }
 
 // FILE: main.kt
-class MyFun: Function<Any>
+define MyFun: Function<Any>
 
 fun box(): String {
     val f0 = ::fn0 as Any

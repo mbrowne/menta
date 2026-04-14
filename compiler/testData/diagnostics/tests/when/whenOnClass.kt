@@ -10,25 +10,25 @@ interface C
 
 fun test1(a: A) {
     when (a.javaClass) {
-        A::class.java -> {}
-        B::class.java -> {}
-        C::class.java -> {}
-        Any::class.java -> {}
+        A::define.java -> {}
+        B::define.java -> {}
+        C::define.java -> {}
+        Any::define.java -> {}
         else -> {}
     }
 }
 
-class Foo : B
-class Bar
+define Foo : B
+define Bar
 
 fun test2(f: Foo) {
     when (f.javaClass) {
-        Foo::class.java -> {}
-        Bar::class.java -> {}
-        A::class.java -> {}
-        B::class.java -> {}
-        C::class.java -> {}
-        Any::class.java -> {}
+        Foo::define.java -> {}
+        Bar::define.java -> {}
+        A::define.java -> {}
+        B::define.java -> {}
+        C::define.java -> {}
+        Any::define.java -> {}
     }
 }
 

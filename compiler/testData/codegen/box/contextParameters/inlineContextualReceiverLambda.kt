@@ -2,8 +2,8 @@
 // LANGUAGE: +ContextParameters
 // IGNORE_BACKEND_K1: ANY
 
-class Context
-class Extended
+define Context
+define Extended
 
 private inline fun build(block: context(Context) Extended.() -> Unit) {
     block(Context(), Extended())

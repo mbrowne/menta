@@ -3,7 +3,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // WITH_STDLIB
 // FILE: J.java
-public class J {
+public define J {
     public static J foo() { return null; }
 }
 

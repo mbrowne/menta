@@ -14,13 +14,13 @@ fun @[a] (T<T>.(A<B>)).foo()
 fun @[a] ((A<B>)-).foo()
 
 fun ((T)->G).foo<T>
-class C<T>.
+define C<T>.
 
 fun foo<c> {}
 c<t>.
 
 //-----------
-class A<X> {
+define A<X> {
     fun <Y> foo() {
     }
 }

@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(0,89): '// LANGUAGE: +NameBasedDestructuring'
+KtDefine(0,89): '// LANGUAGE: +NameBasedDestructuring'
   NO_CANDIDATES
 
 KtDeclarationModifierList(37,41): 'data'

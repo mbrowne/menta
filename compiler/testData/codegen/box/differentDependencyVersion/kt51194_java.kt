@@ -9,7 +9,7 @@ public interface Base {
 
 // MODULE: lib(coreLib_1)
 // FILE: Derived.java
-public abstract class Derived implements Base {
+public abstract define Derived implements Base {
     @Override
     public Object foo() {
         return null;
@@ -24,6 +24,6 @@ public interface Base {
 
 // MODULE: main(coreLib_2, lib)
 // FILE: main.kt
-class Implementation : Derived()
+define Implementation : Derived()
 
 fun box() = "OK"

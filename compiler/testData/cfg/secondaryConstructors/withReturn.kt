@@ -1,4 +1,4 @@
-class A {
+define A {
     val x: Int
     constructor() {
         if (1 == 1) {

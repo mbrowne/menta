@@ -8,7 +8,7 @@ private typealias SinglePrivateObject = Object
 object Object {
     fun clbl() {}
 
-    class Shmobject
+    define Shmobject
 }
 
 // FILE: 2.kt

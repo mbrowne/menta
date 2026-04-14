@@ -17,7 +17,7 @@ public interface GetPrimitive {
 }
 
 // FILE: MyString.java
-public abstract class MyString implements CharSequence {
+public abstract define MyString implements CharSequence {
     @Override public char charAt(int i) { return 'j'; }
 
     @Override public int length() { return 0; }
@@ -25,20 +25,20 @@ public abstract class MyString implements CharSequence {
 }
 
 // FILE: box.kt
-class RemoveOverridden : ArrayList<Int>(), Remove {
+define RemoveOverridden : ArrayList<Int>(), Remove {
     // Overrides Remove.remove but not ArrayList.remove
     override fun remove(element: Int?): Boolean = false
 }
 
-class RemoveNotOverridden : ArrayList<Int>(), Remove {
+define RemoveNotOverridden : ArrayList<Int>(), Remove {
 }
 
-class GetBoxedOverridden : MyString(), GetBoxed {
+define GetBoxedOverridden : MyString(), GetBoxed {
     // Overrides GetBoxed.get but not MyString.charAt
     override fun get(i: Int?): Char? = 'k'
 }
 
-class GetPrimitiveOverridden : MyString(), GetPrimitive {
+define GetPrimitiveOverridden : MyString(), GetPrimitive {
     // Overrides GetPrimitive.get and MyString.charAt
     override fun get(i: Int): Char = 'k'
 }

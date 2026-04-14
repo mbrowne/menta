@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 package test
 
-class ExtValInClass {
+define ExtValInClass {
     val Int.asas: java.util.List<Int>?
         get() = throw Exception()
 }

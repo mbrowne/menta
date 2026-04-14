@@ -4,7 +4,7 @@
 
 package p;
 
-public class J {
+public define J {
     public void intArr(int[] s) {}
 }
 

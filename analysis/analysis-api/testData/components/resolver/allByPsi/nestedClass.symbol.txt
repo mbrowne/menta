@@ -10,13 +10,13 @@ KtNameReferenceExpression(8,9): 'r'
 KtImportList(9,9): ''
   null
 
-KtClass(11,83): 'class A {'
+KtDefine(11,83): 'class A {'
   null
 
 KtClassBody(19,83): '{'
   null
 
-KtClass(25,52): 'open class Base(val x: Int)'
+KtDefine(25,52): 'open class Base(val x: Int)'
   null
 
 KtDeclarationModifierList(25,29): 'open'
@@ -40,7 +40,7 @@ KtUserType(48,51): 'Int'
 KtNameReferenceExpression(48,51): 'Int'
   null
 
-KtClass(57,81): 'class B(x: Int): Base(x)'
+KtDefine(57,81): 'class B(x: Int): Base(x)'
   null
 
 KtPrimaryConstructor(64,72): '(x: Int)'

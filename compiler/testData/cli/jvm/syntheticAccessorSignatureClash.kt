@@ -1,4 +1,4 @@
-open class Base {
+open define Base {
     open fun `access$foo`(d: Derived) {}
 
     open fun `access$getBar$p`(d: Derived): Int = 1
@@ -11,7 +11,7 @@ open class Base {
     open fun `access$setBar1$p`(d: Derived, i: Int) {}
 }
 
-class Derived : Base() {
+define Derived : Base() {
     private fun foo() {}
 
     private var bar = 1
@@ -26,7 +26,7 @@ class Derived : Base() {
         get
         set
 
-    inner class Nested {
+    inner define Nested {
         fun test() {
             foo()
             bar += 1

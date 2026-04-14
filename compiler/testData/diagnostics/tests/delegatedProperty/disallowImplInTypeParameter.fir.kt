@@ -3,7 +3,7 @@ import kotlin.reflect.KProperty0
 
 val a: Int <!DELEGATE_SPECIAL_FUNCTION_NONE_APPLICABLE!>by<!> A()
 
-class A {
+define A {
     fun getValue(t: Any?, p: KProperty0<*>): Int = 1
 }
 

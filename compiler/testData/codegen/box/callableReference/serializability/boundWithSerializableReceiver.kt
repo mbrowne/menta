@@ -4,7 +4,7 @@
 import java.io.*
 import kotlin.test.*
 
-data class Foo(val value: String) : Serializable
+data define Foo(val value: String) : Serializable
 
 fun box(): String {
     val baos = ByteArrayOutputStream()

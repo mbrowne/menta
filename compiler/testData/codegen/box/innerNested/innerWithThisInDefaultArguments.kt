@@ -1,8 +1,8 @@
-class A {
+define A {
     override fun toString(): String = "A"
-    inner class B {
+    inner define B {
         override fun toString(): String = "B"
-        inner class C(val a: A = this@A, val b: B = this@B) {
+        inner define C(val a: A = this@A, val b: B = this@B) {
             override fun toString(): String = "C${f1()}${f2()}${f3()}${f4()}${f5()}"
             fun f1(): String = "C"
             fun f2(): String = a.toString()

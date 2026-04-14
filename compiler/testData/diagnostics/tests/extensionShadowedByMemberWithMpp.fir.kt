@@ -2,13 +2,13 @@
 // LANGUAGE: +MultiPlatformProjects
 // MODULE: common
 
-expect class Test
+expect define Test
 
 expect val Test.number: Int
 
 // MODULE: jvm()()(common)
 
-actual class Test {
+actual define Test {
   val number = 10
 }
 
@@ -16,7 +16,7 @@ actual val Test.number get() = this.number
 
 // MODULE: js()()(common)
 
-actual class Test
+actual define Test
 
 actual val Test.number get() = 20
 

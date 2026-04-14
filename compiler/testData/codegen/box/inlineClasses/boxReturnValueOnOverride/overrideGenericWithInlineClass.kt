@@ -3,16 +3,16 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Marker(val i: Int)
+value define Marker(val i: Int)
 
 interface I<T> {
     fun foo(i: Marker) : T
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val a: Any)
+value define IC(val a: Any)
 
-class C : I<IC> {
+define C : I<IC> {
     override fun foo(i: Marker): IC = IC("OK")
 }
 

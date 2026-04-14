@@ -2,7 +2,7 @@ interface Tr {
     fun extra(): String = "e"
 }
 
-class N : Tr {
+define N : Tr {
     override fun extra(): String = super.extra()
 }
 

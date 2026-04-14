@@ -38,12 +38,12 @@ class KtEnumEntrySuperclassReferenceExpression : KtExpressionImplStub<KotlinEnum
             super(stub, KtStubBasedElementTypes.ENUM_ENTRY_SUPERCLASS_REFERENCE_EXPRESSION)
 
     // It is the owner enum class (not an enum entry but the whole enum)
-    private val referencedElement: KtClass?
+    private val referencedElement: KtDefine?
         get() = calcReferencedElement()
 
-    private fun calcReferencedElement(): KtClass? {
+    private fun calcReferencedElement(): KtDefine? {
         val owner = this.getStrictParentOfType<KtEnumEntry>()
-        return owner?.parent?.parent as? KtClass
+        return owner?.parent?.parent as? KtDefine
     }
 
     override fun getReferencedName(): String {

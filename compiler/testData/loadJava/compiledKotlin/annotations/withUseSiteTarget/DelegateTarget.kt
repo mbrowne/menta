@@ -4,12 +4,12 @@ package test
 
 import kotlin.reflect.KProperty
 
-annotation class Anno
+annotation define Anno
 
-class CustomDelegate {
+define CustomDelegate {
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
 }
 
-class Class {
+define Class {
     @delegate:Anno val property by CustomDelegate()
 }

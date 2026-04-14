@@ -7,7 +7,7 @@ interface Z {
 }
 
 
-class Test : Z
+define Test : Z
 
 fun box() : String {
     return Test().z

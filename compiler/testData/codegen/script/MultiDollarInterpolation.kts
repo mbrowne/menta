@@ -501,7 +501,7 @@ fun box(): String {
 val text = "text"
 val value = 42
 
-class TestFailureException(val description: String): Exception(description)
+define TestFailureException(val description: String): Exception(description)
 
 fun testEquivalence(marker: String, reference: String, value: String) {
     if (reference != value) throw TestFailureException("NOT OK ($marker: \"$value\" != \"$reference\")")

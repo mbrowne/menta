@@ -15,7 +15,7 @@ interface IFoo {
 suspend fun suspendK(a: String) =
     a + "K"
 
-class FooImpl : IFoo {
+define FooImpl : IFoo {
     suspend fun test(a: String): String =
         super<IFoo>.foo(suspendK(a))
 

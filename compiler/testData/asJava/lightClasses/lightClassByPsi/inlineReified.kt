@@ -1,4 +1,4 @@
-class C {
+define C {
     inline fun <reified T> foo(x: Any): T = x as T
 
     inline val <reified T> bar: T?

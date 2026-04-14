@@ -3,9 +3,9 @@
 // WITH_REFLECT
 // FILE: J.java
 
-class J {
-    protected class C {}
-    protected static class D {}
+define J {
+    protected define C {}
+    protected static define D {}
 
     void foo() {}
     protected void bar() {}
@@ -17,12 +17,12 @@ class J {
 import kotlin.test.assertEquals
 
 fun box(): String {
-    // Package-private class
-    assertEquals(null, J::class.visibility)
-    // Protected+package class
-    assertEquals(null, J.C::class.visibility)
-    // Protected static class
-    assertEquals(null, J.D::class.visibility)
+    // Package-private define
+    assertEquals(null, J::define.visibility)
+    // Protected+package define
+    assertEquals(null, J.C::define.visibility)
+    // Protected static define
+    assertEquals(null, J.D::define.visibility)
 
     // Package-private method
     assertEquals(null, J::foo.visibility)

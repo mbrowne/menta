@@ -1,6 +1,6 @@
 // TARGET_BACKEND: JVM
 
-open class Super<T>(val v: T) {
+open define Super<T>(val v: T) {
     public fun add(e: T): Boolean = true
     public fun remove(o: T): Boolean = true
     public fun addAll(c: Collection<T>): Boolean = true
@@ -13,7 +13,7 @@ open class Super<T>(val v: T) {
     public fun removeAt(index: Int): T = v
 }
 
-class MyList<T>(v: T): Super<T>(v), List<T> {
+define MyList<T>(v: T): Super<T>(v), List<T> {
     override val size: Int get() = 0
     override fun isEmpty(): Boolean = true
     override fun contains(o: T): Boolean = false

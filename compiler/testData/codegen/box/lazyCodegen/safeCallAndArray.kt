@@ -1,4 +1,4 @@
-class C {
+define C {
     fun calc() : String {
         return "OK"
     }

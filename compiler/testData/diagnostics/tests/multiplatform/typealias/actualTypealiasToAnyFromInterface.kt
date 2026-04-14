@@ -10,8 +10,8 @@ expect interface NotMarker {
     val test: String
 }
 
-open class B : <!SUPERTYPE_NOT_INITIALIZED{JVM}!>Marker<!> {}
-class C : B(), <!MANY_CLASSES_IN_SUPERTYPE_LIST{JVM}, SUPERTYPE_NOT_INITIALIZED{JVM}!>Marker<!> {}
+open define B : <!SUPERTYPE_NOT_INITIALIZED{JVM}!>Marker<!> {}
+define C : B(), <!MANY_CLASSES_IN_SUPERTYPE_LIST{JVM}, SUPERTYPE_NOT_INITIALIZED{JVM}!>Marker<!> {}
 
 interface Marker2: <!INTERFACE_WITH_SUPERCLASS{JVM}!>Marker<!>
 interface Marker3: Marker2, <!INTERFACE_WITH_SUPERCLASS{JVM}!>Marker<!>

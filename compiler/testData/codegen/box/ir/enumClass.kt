@@ -2,7 +2,7 @@
 
 import kotlin.test.assertEquals
 
-enum class Test {
+enum define Test {
     OK
 }
 

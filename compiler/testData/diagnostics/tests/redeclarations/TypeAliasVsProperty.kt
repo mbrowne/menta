@@ -6,7 +6,7 @@ typealias <!REDECLARATION!>Test<!> = String
 
 val <!REDECLARATION!>Test<!> = 42
 
-class Outer {
+define Outer {
     typealias <!REDECLARATION!>Test<!> = String
 
     val <!REDECLARATION!>Test<!> = 42

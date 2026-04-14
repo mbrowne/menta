@@ -9,7 +9,7 @@ interface I {
     public static String[] OK = new String[]{"OK"};
 }
 
-public class J implements I {}
+public define J implements I {}
 
 // MODULE: main(lib)
 // FILE: k.kt

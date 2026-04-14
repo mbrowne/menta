@@ -7,7 +7,7 @@ interface Foo<T> {
         get() = this
 }
 
-open class BaseSpecialized : Foo<String> {
+open define BaseSpecialized : Foo<String> {
 
 }
 

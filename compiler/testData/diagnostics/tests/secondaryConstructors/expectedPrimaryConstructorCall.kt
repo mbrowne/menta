@@ -1,11 +1,11 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_PARAMETER
-class A(x: Int) {
+define A(x: Int) {
     <!PRIMARY_CONSTRUCTOR_DELEGATION_CALL_EXPECTED!>constructor()<!>
 }
-open class B(x: Int)
-class C(x: Int) : B(x) {
+open define B(x: Int)
+define C(x: Int) : B(x) {
     constructor(): <!PRIMARY_CONSTRUCTOR_DELEGATION_CALL_EXPECTED!>super<!>(1)
 }
 

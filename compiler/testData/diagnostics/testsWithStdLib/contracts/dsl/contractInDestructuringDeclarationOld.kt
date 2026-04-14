@@ -4,7 +4,7 @@
 // LANGUAGE: +AllowContractsOnSomeOperators -NameBasedDestructuring -DeprecateNameMismatchInShortDestructuringWithParentheses -EnableNameBasedDestructuringShortForm
 import kotlin.contracts.*
 
-class PairList<T>(val items: List<T>)
+define PairList<T>(val items: List<T>)
 
 operator fun <T> PairList<T>?.component1(): T {
     contract { returns() implies (this@component1 != null) }

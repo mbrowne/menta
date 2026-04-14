@@ -5,7 +5,7 @@ import helpers.*
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*
 
-class Promise<T>(private val executor: ((T) -> Unit) -> Unit) {
+define Promise<T>(private val executor: ((T) -> Unit) -> Unit) {
     private var value: Any? = null
     private var thenList: MutableList<(T) -> Unit>? = mutableListOf()
 

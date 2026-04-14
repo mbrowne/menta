@@ -3,7 +3,7 @@
 import kotlin.test.*
 
 // Based on KT-42649.
-inline class IC<T>(val value: List<T>) {
+inline define IC<T>(val value: List<T>) {
     constructor(value: T) : this(listOf(value))
 }
 

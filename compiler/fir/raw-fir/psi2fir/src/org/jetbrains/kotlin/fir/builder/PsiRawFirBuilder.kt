@@ -40,6 +40,7 @@ import org.jetbrains.kotlin.fir.symbols.impl.*
 import org.jetbrains.kotlin.fir.types.*
 import org.jetbrains.kotlin.fir.types.builder.*
 import org.jetbrains.kotlin.fir.types.impl.ConeClassLikeTypeImpl
+import org.jetbrains.kotlin.fir.types.impl.FirImplicitAnyTypeRef
 import org.jetbrains.kotlin.fir.types.impl.FirImplicitTypeRefImplWithoutSource
 import org.jetbrains.kotlin.fir.types.impl.FirQualifierPartImpl
 import org.jetbrains.kotlin.fir.types.impl.FirTypeArgumentListImpl
@@ -178,7 +179,6 @@ open class PsiRawFirBuilder(
                 this == null -> null
                 hasModifier(FINAL_KEYWORD) -> Modality.FINAL
                 hasModifier(SEALED_KEYWORD) -> if (this@modality is KtClassOrObject) Modality.SEALED else null
-                hasModifier(ABSTRACT_KEYWORD) -> Modality.ABSTRACT
                 else -> if (hasModifier(OPEN_KEYWORD)) Modality.OPEN else null
             }
         }
@@ -1089,7 +1089,7 @@ open class PsiRawFirBuilder(
             }
 
             when (this) {
-                is KtClass if classKind == ClassKind.ENUM_CLASS && superTypeCallEntry == null -> {
+                is KtDefine if classKind == ClassKind.ENUM_CLASS && superTypeCallEntry == null -> {
                     /*
                      * kotlin.Enum constructor has (name: String, ordinal: Int) signature,
                      *   so we should generate non-trivial constructors for enum and it's entry
@@ -1106,7 +1106,7 @@ open class PsiRawFirBuilder(
                     }
                     container.superTypeRefs += delegatedSuperTypeRef
                 }
-                is KtClass if classKind == ClassKind.ANNOTATION_CLASS -> {
+                is KtDefine if classKind == ClassKind.ANNOTATION_CLASS -> {
                     container.superTypeRefs += implicitAnnotationType
                     delegatedSuperTypeRef = implicitAnyType
                 }
@@ -1116,7 +1116,7 @@ open class PsiRawFirBuilder(
             val isKotlinAny = constructedClassId == StandardClassIds.Any
             val defaultDelegatedSuperTypeRef =
                 when {
-                    classKind == ClassKind.ENUM_ENTRY && this is KtClass -> delegatedEnumSuperTypeRef ?: implicitAnyType
+                    classKind == ClassKind.ENUM_ENTRY && this is KtDefine -> delegatedEnumSuperTypeRef ?: implicitAnyType
                     container.superTypeRefs.isEmpty() && !isKotlinAny -> implicitAnyType
                     else -> FirImplicitTypeRefImplWithoutSource
                 }
@@ -1125,9 +1125,17 @@ open class PsiRawFirBuilder(
                 val classIsKotlinNothing = constructedClassId == StandardClassIds.Nothing
                 // kotlin.Nothing doesn't have `Any` supertype, but does have delegating constructor call to Any
                 if (!classIsKotlinNothing) {
-                    container.superTypeRefs += implicitAnyType
+                    if (this is KtDefine && this.isDynamic()) {
+                        addDynamicObjectSupertype(this, container)
+                        delegatedSuperTypeRef = container.superTypeRefs.first()
+                        container.superTypeRefs += implicitAnyType
+                    } else {
+                        container.superTypeRefs += implicitAnyType
+                        delegatedSuperTypeRef = implicitAnyType
+                    }
+                } else {
+                    delegatedSuperTypeRef = implicitAnyType
                 }
-                delegatedSuperTypeRef = implicitAnyType
             }
 
             // TODO: in case we have no primary constructor,
@@ -1138,7 +1146,7 @@ open class PsiRawFirBuilder(
             val shouldGenerateImplicitPrimaryConstructor =
                 !hasSecondaryConstructors() &&
                         !containingClassIsExpectClass &&
-                        (this !is KtClass || !this.isInterface())
+                        (this !is KtDefine || !this.isInterface())
 
             val hasPrimaryConstructor = primaryConstructor != null || shouldGenerateImplicitPrimaryConstructor
             if (hasPrimaryConstructor || superTypeCallEntry != null) {
@@ -1923,10 +1931,10 @@ open class PsiRawFirBuilder(
                     val isLocal = context.inLocalContext
                     val classKind = when (classOrObject) {
                         is KtObjectDeclaration -> ClassKind.OBJECT
-                        is KtClass -> when {
+                        is KtDefine -> when {
+                            classOrObject.hasModifier(org.jetbrains.kotlin.lexer.KtTokens.ANNOTATION_KEYWORD) -> ClassKind.ANNOTATION_CLASS
                             classOrObject.isInterface() -> ClassKind.INTERFACE
                             classOrObject.isEnum() -> ClassKind.ENUM_CLASS
-                            classOrObject.isAnnotation() -> ClassKind.ANNOTATION_CLASS
                             else -> ClassKind.CLASS
                         }
                         else -> throw AssertionError("Unexpected class or object: ${classOrObject.text}")
@@ -1980,6 +1988,9 @@ open class PsiRawFirBuilder(
                             )
                             delegatedFieldsMap = extractedDelegatedFieldsMap
 
+                            val hasInterfaceFromSupertypes = classOrObject is KtDefine && !classOrObject.isInterface() &&
+                                addInterfaceFromSupertypes(classOrObject, this)
+
                             val primaryConstructor = classOrObject.primaryConstructor
                             val firPrimaryConstructor = declarations.firstOrNull { it is FirConstructor } as? FirConstructor
                             if (primaryConstructor != null && firPrimaryConstructor != null) {
@@ -1992,17 +2003,59 @@ open class PsiRawFirBuilder(
                                 }
                             }
 
+                            // Collect roles for deferred processing as member extension functions
+                            val roles = mutableListOf<KtRole>()
                             for (declaration in classOrObject.declarations) {
-                                addDeclaration(
-                                    declaration.toFirDeclaration(
-                                        delegatedSuperType,
-                                        delegatedSelfType,
-                                        classOrObject,
-                                        this,
-                                        typeParameters
+                                if (declaration is KtRole) {
+                                    roles.add(declaration)
+                                } else {
+                                    addDeclaration(
+                                        declaration.toFirDeclaration(
+                                            delegatedSuperType,
+                                            delegatedSelfType,
+                                            classOrObject,
+                                            this,
+                                            typeParameters
+                                        )
                                     )
-                                )
+                                }
                             }
+
+                            // Convert roles in class body to member extension functions/properties
+                            if (roles.isNotEmpty()) {
+                                val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                                val allRoleProperties = mutableListOf<RolePropertyInfo>()
+                                val rolePlayerNames = mutableSetOf<String>()
+                                val allRoleMethodNames = mutableSetOf<String>()
+                                for (role in roles) {
+                                    val roleName = role.getNameIdentifier()?.text ?: continue
+                                    if (!role.hasRequiresClause) continue
+                                    val requiresTypeRef = role.requiresTypeReference  // null for requires {}
+                                    rolePlayerNames.add(roleName)
+                                    for (roleFunc in role.getFunctionDeclarations()) {
+                                        allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
+                                        allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
+                                    }
+                                    for (roleProp in role.getPropertyDeclarations()) {
+                                        allRoleProperties.add(RolePropertyInfo(roleProp, requiresTypeRef, roleName))
+                                    }
+                                }
+                                for (info in sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)) {
+                                    addDeclaration(convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName, isMember = true))
+                                }
+                                for (info in allRoleProperties) {
+                                    addDeclaration(convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName, isMember = true))
+                                }
+                            }
+
+                            if (hasInterfaceFromSupertypes) {
+                                markOverridesForInterfaceFrom(this)
+                            }
+
+                            if (classOrObject is KtDefine && classOrObject.isInterfaceFrom()) {
+                                generateInterfaceFromMembers(classOrObject, this, classSymbol)
+                            }
+
                             for (danglingModifier in classOrObject.body?.danglingModifierLists ?: emptyList()) {
                                 addDeclaration(
                                     buildErrorNonLocalDeclarationForDanglingModifierList(danglingModifier).apply {
@@ -2065,6 +2118,249 @@ open class PsiRawFirBuilder(
                 }
                 it.initContainingScriptOrReplAttr()
             }
+        }
+
+        private fun addDynamicObjectSupertype(
+            classDefine: KtDefine,
+            classBuilder: FirClassBuilder,
+        ) {
+            classBuilder.superTypeRefs += buildUserTypeRef {
+                source = classDefine.toFirSourceElement()
+                isMarkedNullable = false
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("menta"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("dynamic"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+                qualifier += FirQualifierPartImpl(
+                    source = null,
+                    name = Name.identifier("DynamicObject"),
+                    typeArgumentList = FirTypeArgumentListImpl(source = null),
+                )
+            }
+        }
+
+        private fun addInterfaceFromSupertypes(
+            classDefine: KtDefine,
+            classBuilder: FirRegularClassBuilder,
+        ): Boolean {
+            val className = classDefine.name ?: return false
+            var added = false
+            for (decl in classDefine.containingKtFile.declarations) {
+                if (decl is KtDefine && decl.isInterfaceFrom()) {
+                    val fromRef = decl.getFromTypeReference()
+                    val fromName = (fromRef?.typeElement as? KtUserType)?.referencedName ?: fromRef?.text
+                    if (fromName == className) {
+                        val interfaceName = decl.nameAsSafeName
+                        val typeArgList = FirTypeArgumentListImpl(source = null)
+                        for (typeParam in classDefine.typeParameters) {
+                            typeArgList.typeArguments += buildTypeProjectionWithVariance {
+                                source = classDefine.toFirSourceElement()
+                                variance = Variance.INVARIANT
+                                typeRef = buildUserTypeRef {
+                                    source = classDefine.toFirSourceElement()
+                                    isMarkedNullable = false
+                                    qualifier += FirQualifierPartImpl(
+                                        source = null,
+                                        name = typeParam.nameAsSafeName,
+                                        typeArgumentList = FirTypeArgumentListImpl(source = null),
+                                    )
+                                }
+                            }
+                        }
+                        classBuilder.superTypeRefs += buildUserTypeRef {
+                            source = classDefine.toFirSourceElement()
+                            isMarkedNullable = false
+                            qualifier += FirQualifierPartImpl(
+                                source = classDefine.toFirSourceElement(),
+                                name = interfaceName,
+                                typeArgumentList = typeArgList,
+                            )
+                        }
+                        added = true
+                    }
+                }
+            }
+            return added
+        }
+
+        private fun isEffectivelyPublic(visibility: Visibility): Boolean =
+            visibility == Visibilities.Public || visibility == Visibilities.Unknown
+
+        private fun markOverridesForInterfaceFrom(classBuilder: FirRegularClassBuilder) {
+            for (decl in classBuilder.declarations) {
+                when (decl) {
+                    is FirProperty -> {
+                        if (decl.name.asString() !in ANY_MEMBER_NAMES) {
+                            val status = decl.status as? FirDeclarationStatusImpl ?: continue
+                            if (isEffectivelyPublic(status.visibility)) {
+                                status.isOverride = true
+                            }
+                        }
+                    }
+                    is FirNamedFunction -> {
+                        if (decl.name.asString() !in ANY_MEMBER_NAMES) {
+                            val status = decl.status as? FirDeclarationStatusImpl ?: continue
+                            if (isEffectivelyPublic(status.visibility)) {
+                                status.isOverride = true
+                            }
+                        }
+                    }
+                    else -> {}
+                }
+            }
+        }
+
+        private val ANY_MEMBER_NAMES = setOf("equals", "hashCode", "toString")
+
+        private fun generateInterfaceFromMembers(
+            interfaceDefine: KtDefine,
+            classBuilder: FirRegularClassBuilder,
+            classSymbol: FirRegularClassSymbol,
+        ) {
+            val fromRef = interfaceDefine.getFromTypeReference() ?: return
+            val sourceName = (fromRef.typeElement as? KtUserType)?.referencedName ?: fromRef.text ?: return
+            val sourceClass = interfaceDefine.containingKtFile.declarations
+                .filterIsInstance<KtDefine>()
+                .find { it.name == sourceName } ?: return
+
+            if (classBuilder.typeParameters.isEmpty() && sourceClass.typeParameters.isNotEmpty()) {
+                for (typeParam in sourceClass.typeParameters) {
+                    classBuilder.typeParameters += extractTypeParameter(typeParam, classSymbol)
+                }
+            }
+
+            val interfaceSource = interfaceDefine.toFirSourceElement()
+                .fakeElement(KtFakeSourceElementKind.InterfaceFromGeneratedMember)
+
+            for (param in sourceClass.primaryConstructorParameters) {
+                if (!param.hasValOrVar()) continue
+                if (!param.isPublic()) continue
+
+                val propertyName = param.nameAsSafeName
+                val propertySymbol = FirRegularPropertySymbol(callableIdForName(propertyName))
+                withContainerSymbol(propertySymbol) {
+                    classBuilder.addDeclaration(buildProperty {
+                        source = interfaceSource
+                        moduleData = baseModuleData
+                        origin = FirDeclarationOrigin.Source
+                        returnTypeRef = param.typeReference.toFirOrErrorType()
+                        name = propertyName
+                        isVar = param.isMutable
+                        symbol = propertySymbol
+                        dispatchReceiverType = currentDispatchReceiverType()
+                        status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                        isLocal = false
+                        val defaultAccessorSource = interfaceSource.fakeElement(KtFakeSourceElementKind.DefaultAccessor)
+                        getter = FirDefaultPropertyGetter(
+                            source = defaultAccessorSource,
+                            moduleData = baseModuleData,
+                            origin = FirDeclarationOrigin.Source,
+                            propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                            visibility = Visibilities.Public,
+                            propertySymbol = symbol,
+                            modality = Modality.ABSTRACT,
+                        )
+                        if (isVar) {
+                            setter = FirDefaultPropertySetter(
+                                source = defaultAccessorSource,
+                                moduleData = baseModuleData,
+                                origin = FirDeclarationOrigin.Source,
+                                propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                                visibility = Visibilities.Public,
+                                propertySymbol = symbol,
+                                modality = Modality.ABSTRACT,
+                            )
+                        }
+                    })
+                }
+            }
+
+            for (declaration in sourceClass.declarations) {
+                when (declaration) {
+                    is KtNamedFunction -> {
+                        if (!declaration.isPublic()) continue
+                        val funcName = declaration.nameAsSafeName
+                        if (funcName.asString() in ANY_MEMBER_NAMES) continue
+
+                        val funcSymbol = FirNamedFunctionSymbol(callableIdForName(funcName))
+                        withContainerSymbol(funcSymbol) {
+                            classBuilder.addDeclaration(buildNamedFunction {
+                                source = interfaceSource
+                                moduleData = baseModuleData
+                                origin = FirDeclarationOrigin.Source
+                                returnTypeRef = declaration.typeReference.toFirOrUnitType()
+                                name = funcName
+                                symbol = funcSymbol
+                                dispatchReceiverType = currentDispatchReceiverType()
+                                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                                isLocal = false
+                                for (param in declaration.valueParameters) {
+                                    valueParameters += param.toFirValueParameter(
+                                        null,
+                                        funcSymbol,
+                                        ValueParameterDeclaration.FUNCTION,
+                                    )
+                                }
+                            })
+                        }
+                    }
+                    is KtProperty -> {
+                        if (!declaration.isPublic()) continue
+                        val propName = declaration.nameAsSafeName
+                        if (propName.asString() in ANY_MEMBER_NAMES) continue
+
+                        val propSymbol = FirRegularPropertySymbol(callableIdForName(propName))
+                        withContainerSymbol(propSymbol) {
+                            classBuilder.addDeclaration(buildProperty {
+                                source = interfaceSource
+                                moduleData = baseModuleData
+                                origin = FirDeclarationOrigin.Source
+                                returnTypeRef = declaration.typeReference.toFirOrImplicitType()
+                                name = propName
+                                isVar = declaration.isVar
+                                symbol = propSymbol
+                                dispatchReceiverType = currentDispatchReceiverType()
+                                status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
+                                isLocal = false
+                                val defaultAccessorSource = interfaceSource.fakeElement(KtFakeSourceElementKind.DefaultAccessor)
+                                getter = FirDefaultPropertyGetter(
+                                    source = defaultAccessorSource,
+                                    moduleData = baseModuleData,
+                                    origin = FirDeclarationOrigin.Source,
+                                    propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                                    visibility = Visibilities.Public,
+                                    propertySymbol = symbol,
+                                    modality = Modality.ABSTRACT,
+                                )
+                                if (declaration.isVar) {
+                                    setter = FirDefaultPropertySetter(
+                                        source = defaultAccessorSource,
+                                        moduleData = baseModuleData,
+                                        origin = FirDeclarationOrigin.Source,
+                                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                                        visibility = Visibilities.Public,
+                                        propertySymbol = symbol,
+                                        modality = Modality.ABSTRACT,
+                                    )
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+        }
+
+        private fun KtModifierListOwner.isPublic(): Boolean {
+            val modifierList = modifierList ?: return true
+            return !modifierList.hasModifier(PRIVATE_KEYWORD) &&
+                    !modifierList.hasModifier(PROTECTED_KEYWORD) &&
+                    !modifierList.hasModifier(INTERNAL_KEYWORD)
         }
 
         override fun visitObjectLiteralExpression(expression: KtObjectLiteralExpression, data: FirElement?): FirElement {
@@ -2943,17 +3239,300 @@ open class PsiRawFirBuilder(
         private fun configureBlockWithoutBuilding(expression: KtBlockExpression, kind: KtFakeSourceElementKind? = null): FirBlockBuilder {
             return FirBlockBuilder().apply {
                 source = expression.toFirSourceElement(kind)
+
+                // Collect all role methods/properties across all roles
+                val allRoleMethods = mutableListOf<RoleMethodInfo>()
+                val rolePlayerNames = mutableSetOf<String>()
+                val allRoleMethodNames = mutableSetOf<String>()
+                val allRoleProperties = mutableListOf<RolePropertyInfo>()
+
+                for (role in expression.statements.filterIsInstance<KtRole>()) {
+                    val roleName = role.getNameIdentifier()?.text ?: continue
+                    if (!role.hasRequiresClause) continue
+                    val requiresTypeRef = role.requiresTypeReference  // null for requires {}
+                    rolePlayerNames.add(roleName)
+                    for (roleFunc in role.getFunctionDeclarations()) {
+                        allRoleMethods.add(RoleMethodInfo(roleFunc, requiresTypeRef, roleName))
+                        allRoleMethodNames.add(roleFunc.nameAsSafeName.identifier)
+                    }
+                    for (roleProp in role.getPropertyDeclarations()) {
+                        allRoleProperties.add(RolePropertyInfo(roleProp, requiresTypeRef, roleName))
+                    }
+                }
+
+                // Sort by dependency and convert (callees before callers)
+                val convertedRoleFunctions = sortRoleMethodsByDependency(allRoleMethods, rolePlayerNames, allRoleMethodNames)
+                    .map { info -> convertRoleFunctionToExtension(info.func, info.typeRef, info.roleName) }
+                val convertedRoleProperties = allRoleProperties
+                    .map { info -> convertRolePropertyToExtension(info.prop, info.typeRef, info.roleName) }
+
+                // Generate synthetic type-check statements for role player type compatibility
+                val roleTypeChecks = expression.statements.filterIsInstance<KtRole>().mapNotNull { role ->
+                    val roleName = role.getNameIdentifier()?.text ?: return@mapNotNull null
+                    if (!role.hasRequiresClause) return@mapNotNull null
+                    val requiresTypeRef = role.requiresTypeReference
+                    val isEmptyRequires = requiresTypeRef == null
+                    val fakeSource = role.toFirSourceElement()
+                        .fakeElement(KtFakeSourceElementKind.RolePlayerTypeCheck)
+                    generateTemporaryVariable(
+                        baseModuleData,
+                        fakeSource,
+                        Name.special(if (isEmptyRequires) "<role\$$roleName\$emptyRequiresCheck>" else "<role\$$roleName\$typeCheck>"),
+                        initializer = buildPropertyAccessExpression {
+                            source = fakeSource
+                            calleeReference = buildSimpleNamedReference {
+                                source = fakeSource
+                                name = Name.identifier(roleName)
+                            }
+                        },
+                        typeRef = requiresTypeRef?.toFirType() ?: FirImplicitAnyTypeRef(fakeSource),
+                        extractAnnotationsTo = {},
+                    )
+                }
+
+                // Emit all declarations first, then role extensions, then all expression statements.
+                // This ensures local variable declarations are in scope for role method bodies,
+                // and role methods are in scope for subsequent expression statements (DCI pattern).
+                val declarationStatements = mutableListOf<FirStatement>()
+                val expressionStatements = mutableListOf<FirStatement>()
                 for (statement in expression.statements) {
+                    if (statement is KtRole) continue
                     val firStatement = statement.toFirStatement { "Statement expected: ${statement.text}" }
                     val isForLoopBlock =
                         firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
-                    if (firStatement !is FirBlock || isForLoopBlock || firStatement.annotations.isNotEmpty()) {
-                        statements += firStatement
+                    val flattened = if (firStatement is FirBlock && !isForLoopBlock && firStatement.annotations.isEmpty()) {
+                        firStatement.statements
                     } else {
-                        statements += firStatement.statements
+                        listOf(firStatement)
+                    }
+                    for (stmt in flattened) {
+                        if (stmt is FirDeclaration) {
+                            declarationStatements += stmt
+                        } else {
+                            expressionStatements += stmt
+                        }
+                    }
+                }
+                statements += declarationStatements
+                statements += convertedRoleProperties
+                statements += convertedRoleFunctions
+                statements += expressionStatements
+                // Emit role player type checks at the end so all variables are in scope
+                statements += roleTypeChecks
+            }
+        }
+
+        private fun convertRoleFunctionToExtension(
+            roleFunc: KtNamedFunction,
+            receiverTypeReference: KtTypeReference?,
+            roleName: String,
+            isMember: Boolean = false,
+        ): FirNamedFunction {
+            val functionSymbol = FirNamedFunctionSymbol(callableIdForName(roleFunc.nameAsSafeName))
+            return withContainerSymbol(functionSymbol, !isMember) {
+                val labelName = roleFunc.nameAsSafeName.identifier
+                val target = FirFunctionTarget(labelName, isLambda = false)
+                val functionSource = roleFunc.toFirSourceElement()
+
+                // Public role methods are callable on the role player; private (default) are not
+                val isPublic = roleFunc.hasModifier(PUBLIC_KEYWORD)
+                val roleVisibility = if (isMember) {
+                    Visibilities.Private
+                } else {
+                    if (isPublic) Visibilities.Local else Visibilities.Private
+                }
+
+                FirNamedFunctionBuilder().apply {
+                    source = functionSource
+                    moduleData = baseModuleData
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    name = roleFunc.nameAsSafeName
+                    symbol = functionSymbol
+                    dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                    isLocal = !isMember
+                    status = FirDeclarationStatusImpl(roleVisibility, roleFunc.modality)
+
+                    returnTypeRef = if (roleFunc.hasBlockBody()) {
+                        roleFunc.typeReference.toFirOrUnitType()
+                    } else {
+                        roleFunc.typeReference.toFirOrImplicitType()
+                    }
+
+                    receiverParameter = createReceiverParameter(
+                        { receiverTypeReference?.toFirType() ?: FirImplicitAnyTypeRef(functionSource) },
+                        baseModuleData,
+                        functionSymbol,
+                    )
+
+                    context.firFunctionTargets += target
+                    roleFunc.extractAnnotationsTo(this)
+                    roleFunc.extractTypeParametersTo(this, functionSymbol)
+
+                    for (valueParameter in roleFunc.valueParameters) {
+                        valueParameters += valueParameter.toFirValueParameter(
+                            null, functionSymbol, ValueParameterDeclaration.FUNCTION,
+                        )
+                    }
+
+                    withCapturedTypeParameters(true, functionSource, typeParameters) {
+                        val (body, _) = withForcedLocalContext {
+                            roleFunc.buildFirBody()
+                        }
+                        this.body = body
+                    }
+                    context.firFunctionTargets.removeLast()
+                }.build().also {
+                    bindFunctionTarget(target, it)
+                }
+            }
+        }
+
+        private fun convertRolePropertyToExtension(
+            roleProp: KtProperty,
+            receiverTypeReference: KtTypeReference?,
+            roleName: String,
+            isMember: Boolean = false,
+        ): FirProperty {
+            val propertyName = roleProp.nameAsSafeName
+            val propertySymbol = if (isMember) {
+                FirRegularPropertySymbol(callableIdForName(propertyName))
+            } else {
+                FirLocalPropertySymbol()
+            }
+
+            return withContainerSymbol(propertySymbol, !isMember) {
+                val propertySource = roleProp.toFirSourceElement()
+
+                val isPublic = roleProp.hasModifier(PUBLIC_KEYWORD)
+                val roleVisibility = if (isMember) {
+                    Visibilities.Private
+                } else {
+                    if (isPublic) Visibilities.Local else Visibilities.Private
+                }
+
+                buildProperty {
+                    source = propertySource
+                    moduleData = baseModuleData
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    name = propertyName
+                    symbol = propertySymbol
+                    isVar = roleProp.isVar
+                    isLocal = !isMember
+                    dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
+                    status = FirDeclarationStatusImpl(roleVisibility, roleProp.modality)
+
+                    returnTypeRef = roleProp.typeReference.toFirOrImplicitType()
+
+                    receiverParameter = createReceiverParameter(
+                        { receiverTypeReference?.toFirType() ?: FirImplicitAnyTypeRef(propertySource) },
+                        baseModuleData,
+                        propertySymbol,
+                    )
+
+                    roleProp.extractAnnotationsTo(this)
+                    roleProp.extractTypeParametersTo(this, propertySymbol)
+
+                    withCapturedTypeParameters(true, propertySource, typeParameters) {
+                    getter = roleProp.getter.toFirPropertyAccessor(
+                        roleProp,
+                        returnTypeRef,
+                        propertySymbol = propertySymbol,
+                        isGetter = true,
+                        accessorAnnotationsFromProperty = emptyList(),
+                        parameterAnnotationsFromProperty = emptyList(),
+                    ) ?: FirDefaultPropertyGetter(
+                        source = propertySource.fakeElement(KtFakeSourceElementKind.DefaultAccessor),
+                        moduleData = baseModuleData,
+                        origin = FirDeclarationOrigin.Source,
+                        propertyTypeRef = returnTypeRef.copyWithNewSourceKind(KtFakeSourceElementKind.DefaultAccessor),
+                        visibility = roleVisibility,
+                        propertySymbol = propertySymbol,
+                        modality = roleProp.modality,
+                    )
+
+                    setter = roleProp.setter.toFirPropertyAccessor(
+                        roleProp,
+                        returnTypeRef,
+                        propertySymbol = propertySymbol,
+                        isGetter = false,
+                        accessorAnnotationsFromProperty = emptyList(),
+                        parameterAnnotationsFromProperty = emptyList(),
+                    )
+                    } // withCapturedTypeParameters
+                }
+            }
+        }
+
+        private fun sortRoleMethodsByDependency(
+            methods: List<RoleMethodInfo>,
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): List<RoleMethodInfo> {
+            if (methods.size <= 1) return methods
+
+            val methodByKey = methods.associateBy { "${it.roleName}.${it.func.nameAsSafeName.identifier}" }
+            val roleByMethod = methods.associate { it.func.nameAsSafeName.identifier to it.roleName }
+
+            val deps: Map<String, Set<String>> = methods.associate { info ->
+                val key = "${info.roleName}.${info.func.nameAsSafeName.identifier}"
+                val calledNames = findRoleMethodDependencies(info.func, rolePlayerNames, allRoleMethodNames)
+                val calledKeys = calledNames.mapNotNull { name ->
+                    roleByMethod[name]?.let { role -> "$role.$name" }
+                }.toSet()
+                key to calledKeys
+            }
+
+            val inDegree = methodByKey.keys.associateWith { 0 }.toMutableMap()
+            val dependents = methodByKey.keys.associateWith { mutableListOf<String>() }.toMutableMap()
+            for ((key, keyDeps) in deps) {
+                for (dep in keyDeps) {
+                    if (dep in inDegree) {
+                        inDegree[key] = inDegree[key]!! + 1
+                        dependents[dep]?.add(key)
                     }
                 }
             }
+
+            val queue = ArrayDeque(inDegree.filter { it.value == 0 }.keys)
+            val sorted = mutableListOf<RoleMethodInfo>()
+            while (queue.isNotEmpty()) {
+                val key = queue.removeFirst()
+                methodByKey[key]?.let { sorted.add(it) }
+                for (dep in dependents[key] ?: emptyList()) {
+                    inDegree[dep] = inDegree[dep]!! - 1
+                    if (inDegree[dep] == 0) queue.add(dep)
+                }
+            }
+
+            // Cycle fallback: append remaining in source order
+            if (sorted.size < methods.size) {
+                val sortedKeys = sorted.map { "${it.roleName}.${it.func.nameAsSafeName.identifier}" }.toSet()
+                sorted.addAll(methods.filter { "${it.roleName}.${it.func.nameAsSafeName.identifier}" !in sortedKeys })
+            }
+            return sorted
+        }
+
+        private fun findRoleMethodDependencies(
+            func: KtNamedFunction,
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): Set<String> {
+            val deps = mutableSetOf<String>()
+            func.bodyExpression?.accept(object : KtVisitorVoid() {
+                override fun visitDotQualifiedExpression(expr: KtDotQualifiedExpression) {
+                    val receiver = expr.receiverExpression
+                    val selector = expr.selectorExpression
+                    if (receiver is KtSimpleNameExpression &&
+                        receiver.getReferencedName() in rolePlayerNames &&
+                        selector is KtCallExpression
+                    ) {
+                        val callee = (selector.calleeExpression as? KtSimpleNameExpression)?.getReferencedName()
+                        if (callee != null && callee in allRoleMethodNames) deps.add(callee)
+                    }
+                    super.visitDotQualifiedExpression(expr)
+                }
+            }, null)
+            return deps
         }
 
         override fun visitSimpleNameExpression(expression: KtSimpleNameExpression, data: FirElement?): FirElement {
@@ -3830,6 +4409,18 @@ open class PsiRawFirBuilder(
             }
         }
     }
+
+    private data class RoleMethodInfo(
+        val func: KtNamedFunction,
+        val typeRef: KtTypeReference?,
+        val roleName: String,
+    )
+
+    private data class RolePropertyInfo(
+        val prop: KtProperty,
+        val typeRef: KtTypeReference?,
+        val roleName: String,
+    )
 }
 
 enum class BodyBuildingMode {

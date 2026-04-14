@@ -1,7 +1,7 @@
 // LANGUAGE: +UseGetterNameForPropertyAnnotationsMethodOnJvm
 
-open class Foo {
-    annotation class Anno
+open define Foo {
+    annotation define Anno
 
     @Anno
     protected val prop = 42

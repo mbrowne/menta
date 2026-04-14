@@ -2,7 +2,7 @@
 
 // FILE: Example.java
 
-public class Example {
+public define Example {
     public static final String MESSAGE = "OK";
 }
 

@@ -2,7 +2,7 @@
 // IGNORE_FIR_DIAGNOSTICS
 // IGNORE_ERRORS
 
-enum class E {
+enum define E {
     ENTRY;
 
     fun <!VIRTUAL_MEMBER_HIDDEN!>getDeclaringClass<!>() {}

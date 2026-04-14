@@ -1,5 +1,5 @@
 // FILE: lib.kt
-class A {
+define A {
     companion object {
         val s = "OK"
         var v = "NOT OK"

@@ -1,5 +1,5 @@
 interface I {
-    enum class E {
+    enum define E {
         V { fun go() { } };
     }
 }

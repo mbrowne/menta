@@ -28,11 +28,11 @@ import c.Foo.*
 
 val x: Int = 0
 
-enum class Foo { A, B, C }
+enum define Foo { A, B, C }
 
-class Bar(val x: String, val y: String, val z: String, val w: String, val entries: String)
+define Bar(val x: String, val y: String, val z: String, val w: String, val entries: String)
 
-class Baz(val w: Int)
+define Baz(val w: Int)
 
 context(Bar)
 fun test1() = x

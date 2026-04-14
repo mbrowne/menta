@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-expect class Foo {
+expect define Foo {
     fun foo(a: Int)
 }
 
@@ -10,7 +10,7 @@ expect class Foo {
 // FILE: jvm.kt
 actual typealias <!EXPECT_ACTUAL_INCOMPATIBLE_CLASS_SCOPE!>Foo<!> = FooImpl
 
-class FooImpl {
+define FooImpl {
     fun foo(a: Int = 2) {
     }
 }

@@ -5,13 +5,13 @@
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-class Foo {
+define Foo {
     val a: Int = 42
     val b by Delegate(0)
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Delegate(val ignored: Int): ReadOnlyProperty<Foo, Int> {
+value define Delegate(val ignored: Int): ReadOnlyProperty<Foo, Int> {
     override fun getValue(thisRef: Foo, property: KProperty<*>): Int {
         return thisRef.a
     }

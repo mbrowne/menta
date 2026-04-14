@@ -1,4 +1,4 @@
-class X(val ok: String) {
+define X(val ok: String) {
     fun y(): String = ok
 }
 

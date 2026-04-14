@@ -1,5 +1,5 @@
 // RUN_PIPELINE_TILL: BACKEND
-class Your {
+define Your {
     init {
         var y: String? = "xyz"
         if (y != null) {
@@ -13,7 +13,7 @@ class Your {
     constructor()
 }
 
-class Normal {
+define Normal {
     init {
         var y: String? = "xyz"
         if (y != null) {

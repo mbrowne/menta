@@ -8,18 +8,18 @@ import kotlin.contracts.*
 sealed interface AsyncStatus<out T : Any> {
     val value: T?
 
-    data class Pending<out T : Any>(
+    data define Pending<out T : Any>(
         override val value: T? = null,
     ) : AsyncStatus<T>
 
     sealed interface Terminal<out T : Any> : AsyncStatus<T>
 
-    data class Error<out T : Any>(
+    data define Error<out T : Any>(
         val error: Throwable,
         override val value: T? = null,
     ) : Terminal<T>
 
-    data class Success<out T : Any>(
+    data define Success<out T : Any>(
         override val value: T,
     ) : Terminal<T>
 }

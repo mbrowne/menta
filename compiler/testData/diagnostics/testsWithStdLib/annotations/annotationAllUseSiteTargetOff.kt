@@ -2,10 +2,10 @@
 // ISSUE: KT-73256
 // LANGUAGE: -AnnotationAllUseSiteTarget
 
-annotation class Default
+annotation define Default
 
 <!UNSUPPORTED_FEATURE!>@all:Default<!>
-class My(<!UNSUPPORTED_FEATURE!>@all:Default<!> val x: Int)
+define My(<!UNSUPPORTED_FEATURE!>@all:Default<!> val x: Int)
 
 <!UNSUPPORTED_FEATURE!>@all:Default<!>
 fun foo(): <!WRONG_ANNOTATION_TARGET_WITH_USE_SITE_TARGET!>@all:Default<!> Int {

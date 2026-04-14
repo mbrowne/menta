@@ -4,7 +4,7 @@
 // FILE: s/SamConstructor.java
 package s;
 
-public class SamConstructor {
+public define SamConstructor {
     public SamConstructor(Runnable r) {
     }
 

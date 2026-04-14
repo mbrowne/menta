@@ -5,9 +5,9 @@ package test
 
 @Target(AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.TYPEALIAS, AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.SOURCE)
-annotation class A
+annotation define A
 
-class TypeParameterAnnotation {
+define TypeParameterAnnotation {
     fun <@A T> foo(x: T) {}
 }
 

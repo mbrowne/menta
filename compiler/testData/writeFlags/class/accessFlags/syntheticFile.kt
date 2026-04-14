@@ -4,6 +4,6 @@
 
 private val keepme = 1
 
-// TESTED_OBJECT_KIND: class
+// TESTED_OBJECT_KIND: define
 // TESTED_OBJECTS: TestKt
 // FLAGS: ACC_FINAL, ACC_PUBLIC, ACC_SUPER, ACC_SYNTHETIC

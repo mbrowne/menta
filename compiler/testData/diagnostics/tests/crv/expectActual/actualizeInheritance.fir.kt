@@ -6,7 +6,7 @@
 
 @file:MustUseReturnValues
 
-expect class Foo() {
+expect define Foo() {
     fun x(): String
     @IgnorableReturnValue fun ign(): String
 }
@@ -22,14 +22,14 @@ fun commonMain() {
 // FILE: BaseFoo.kt
 
 @MustUseReturnValues
-open class BaseFoo {
+open define BaseFoo {
     @IgnorableReturnValue fun x(): String = ""
     fun ign(): String = ""
 }
 
 // FILE: jvm.kt
 
-actual class <!ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect fun x(): String' defined in 'Foo'; must-use; 'fun x(): String' defined in 'BaseFoo'; ignorable"), ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect fun ign(): String' defined in 'Foo'; ignorable; 'fun ign(): String' defined in 'BaseFoo'; must-use"), ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect constructor(): Foo' defined in 'Foo'; must-use; 'constructor(): Foo' defined in 'Foo'; unspecified (implicitly ignorable)")!>Foo<!> : BaseFoo() {
+actual define <!ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect fun x(): String' defined in 'Foo'; must-use; 'fun x(): String' defined in 'BaseFoo'; ignorable"), ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect fun ign(): String' defined in 'Foo'; ignorable; 'fun ign(): String' defined in 'BaseFoo'; must-use"), ACTUAL_IGNORABILITY_NOT_MATCH_EXPECT("'expect constructor(): Foo' defined in 'Foo'; must-use; 'constructor(): Foo' defined in 'Foo'; unspecified (implicitly ignorable)")!>Foo<!> : BaseFoo() {
 }
 
 fun main() {

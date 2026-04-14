@@ -19,7 +19,7 @@ public inline fun doCall(block: ()-> Unit, finallyBlock1: ()-> Unit, finallyBloc
 
 import test.*
 
-class Holder {
+define Holder {
     var value: String = ""
 }
 

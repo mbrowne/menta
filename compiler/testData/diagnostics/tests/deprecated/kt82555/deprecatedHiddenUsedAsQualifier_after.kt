@@ -4,7 +4,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-82555
 
-class C {
+define C {
     @Deprecated("", level = DeprecationLevel.HIDDEN)
     object Obj
 

@@ -22,7 +22,7 @@ public interface A {
 
 import java.util.concurrent.CompletableFuture
 
-abstract class B<S> {
+abstract define B<S> {
     abstract fun toFuture(): CompletableFuture<S>
 }
 
@@ -30,7 +30,7 @@ abstract class B<S> {
 
 import java.util.concurrent.Future;
 
-public class C {
+public define C {
     public static <F> F wait(Future<F> future) {
         return null;
     }

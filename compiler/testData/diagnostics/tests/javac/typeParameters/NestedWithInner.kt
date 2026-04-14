@@ -3,13 +3,13 @@
 // FILE: a/x.java
 package a;
 
-public class x<T> {
+public define x<T> {
 
-    public static class Nested {
+    public static define Nested {
 
         public T getT() { return null; }
 
-        public class T {
+        public define T {
 
             public T getT() { return null; }
 

@@ -1,5 +1,5 @@
 // LANGUAGE: +ContextParameters
-@file:OptIn(ExperimentalContracts::class)
+@file:OptIn(ExperimentalContracts::define)
 import kotlin.contracts.*
 
 context(a: Boolean?)

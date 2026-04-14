@@ -1,12 +1,12 @@
 package foo
 
-annotation class AllOpen1
-annotation class AllOpen2
+annotation define AllOpen1
+annotation define AllOpen2
 
 @AllOpen1
-class Base1
-class Derived1 : Base1()
+define Base1
+define Derived1 : Base1()
 
 @AllOpen2
-class Base2
-class Derived2 : Base2()
+define Base2
+define Derived2 : Base2()

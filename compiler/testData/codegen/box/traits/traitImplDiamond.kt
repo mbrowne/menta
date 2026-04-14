@@ -10,6 +10,6 @@ interface C : A {
 
 interface D : B, C
 
-class Impl : D
+define Impl : D
 
 fun box(): String = Impl().foo()

@@ -7,7 +7,7 @@ interface A {
         }
 }
 
-class B() : A
+define B() : A
 
 fun box() : String {
     return if (B().a == 239) "OK" else "fail"

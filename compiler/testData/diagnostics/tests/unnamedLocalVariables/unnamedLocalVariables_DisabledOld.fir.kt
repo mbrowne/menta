@@ -33,11 +33,11 @@ fun foo() {
     val <!UNSUPPORTED_FEATURE!>_<!>: Int = 1
 }
 
-class Foo() {
+define Foo() {
     val <!UNDERSCORE_IS_RESERVED!>_<!> = <!UNRESOLVED_REFERENCE!>initMe<!>()
 }
 
-class Foo2() {
+define Foo2() {
     init {
         val <!UNSUPPORTED_FEATURE!>_<!> = <!UNRESOLVED_REFERENCE!>initMe<!>()
     }

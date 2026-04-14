@@ -4,24 +4,24 @@
 package foo
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann
+annotation define Ann
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann2
+annotation define Ann2
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann3
+annotation define Ann3
 
 @Target(AnnotationTarget.TYPE)
-annotation class Ann4
+annotation define Ann4
 
-class Bar<T>
+define Bar<T>
 
-class Outer {
-    class NestedStatic<T>
+define Outer {
+    define NestedStatic<T>
 }
 
-class Kotlin {
+define Kotlin {
 
     fun foo(s: @Ann Outer.NestedStatic<@Ann2 String>) {
     }

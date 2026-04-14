@@ -3,8 +3,8 @@
 // LANGUAGE: +ContextReceivers
 // DIAGNOSTICS: -UNUSED_PARAMETER
 
-class A
-class B<X>(val x: X)
+define A
+define B<X>(val x: X)
 
 context(T)
 fun <T> T.f(t: B<T>) {}

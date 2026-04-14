@@ -9,13 +9,13 @@ interface AbstractPoint<T> {
 }
 
 @JvmInline
-value class MyDouble(val value: Double)
+value define MyDouble(val value: Double)
 
 val Double.my
     get() = MyDouble(this)
 
 @JvmInline
-value class DPoint(override val x: MyDouble, override val y: MyDouble): AbstractPoint<MyDouble>
+value define DPoint(override val x: MyDouble, override val y: MyDouble): AbstractPoint<MyDouble>
 
 interface GenericMFVCHolder<T> {
     var p: T
@@ -32,7 +32,7 @@ interface ReifiedMFVCHolder {
     var p1: DPoint
 }
 
-data class DataClassException(val value: Any?): Exception()
+data define DataClassException(val value: Any?): Exception()
 
 interface GenericMFVCHolderWithImpls<T> {
     var p: T
@@ -64,23 +64,23 @@ interface ReifiedMFVCHolderWithImpls {
         set(value) = throw DataClassException(12 to value)
 }
 
-class RealOverride(override var p: DPoint) : GenericMFVCHolder<DPoint>, ReifiedMFVCHolder, GenericMFVCHolderWithMFVCUpperBound<DPoint> {
+define RealOverride(override var p: DPoint) : GenericMFVCHolder<DPoint>, ReifiedMFVCHolder, GenericMFVCHolderWithMFVCUpperBound<DPoint> {
     override var p1: DPoint
         get() = throw DataClassException(13)
         set(value) = throw DataClassException(14 to value)
 }
 
-class GenericFakeOverride : GenericMFVCHolderWithImpls<DPoint>
-class ReifiedFakeOverride : ReifiedMFVCHolderWithImpls
-class GenericFakeOverrideWithMFVCUpperBound : GenericMFVCHolderWithMFVCUpperBoundWithImpls<DPoint>
+define GenericFakeOverride : GenericMFVCHolderWithImpls<DPoint>
+define ReifiedFakeOverride : ReifiedMFVCHolderWithImpls
+define GenericFakeOverrideWithMFVCUpperBound : GenericMFVCHolderWithMFVCUpperBoundWithImpls<DPoint>
 
 
 @JvmInline
-value class GenericFakeOverrideMFVC(val field1: MyDouble, val field2: MyDouble) : GenericMFVCHolderWithImpls<DPoint>
+value define GenericFakeOverrideMFVC(val field1: MyDouble, val field2: MyDouble) : GenericMFVCHolderWithImpls<DPoint>
 @JvmInline
-value class ReifiedFakeOverrideMFVC(val field1: MyDouble, val field2: MyDouble) : ReifiedMFVCHolderWithImpls
+value define ReifiedFakeOverrideMFVC(val field1: MyDouble, val field2: MyDouble) : ReifiedMFVCHolderWithImpls
 @JvmInline
-value class GenericFakeOverrideMFVCWithMFVCUpperBound(val field1: MyDouble, val field2: MyDouble) : GenericMFVCHolderWithMFVCUpperBoundWithImpls<DPoint>
+value define GenericFakeOverrideMFVCWithMFVCUpperBound(val field1: MyDouble, val field2: MyDouble) : GenericMFVCHolderWithMFVCUpperBoundWithImpls<DPoint>
 
 
 interface SomePointInterface<T> {
@@ -100,7 +100,7 @@ interface SomePointInterfaceWithMFVCBound<T : DPoint> {
 }
 
 @JvmInline
-value class DPointWithInterface(val x: MyDouble, val y: MyDouble) : SomePointInterface<DPoint>, SomePointInterfaceWithMFVCBound<DPoint> {
+value define DPointWithInterface(val x: MyDouble, val y: MyDouble) : SomePointInterface<DPoint>, SomePointInterfaceWithMFVCBound<DPoint> {
     override var somethingGeneric: DPoint
         get() = throw DataClassException(15)
         set(value) = throw DataClassException(16 to value)
@@ -121,7 +121,7 @@ interface AbstractSegment<T> {
 }
 
 @JvmInline
-value class DSegment(override val p1: DPoint, override val p2: DPoint): AbstractSegment<DPoint>
+value define DSegment(override val p1: DPoint, override val p2: DPoint): AbstractSegment<DPoint>
 
 fun <T> equal(expected: () -> T, actual: () -> T) {
     val expectedResult = runCatching { expected() }

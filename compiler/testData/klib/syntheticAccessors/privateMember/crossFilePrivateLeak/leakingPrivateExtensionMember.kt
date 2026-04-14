@@ -1,5 +1,5 @@
 // FILE: A.kt
-class A {
+define A {
     internal inline fun internalInlineMethodA() = 21.privateExtensionMethod()
     internal inline fun internalInlineMethodB() = 21.privateExtensionVar
 

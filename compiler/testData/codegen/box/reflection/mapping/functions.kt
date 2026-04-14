@@ -5,7 +5,7 @@
 import kotlin.reflect.*
 import kotlin.reflect.jvm.*
 
-class K {
+define K {
     fun foo(s: String): Int = s.length
 }
 fun bar(s: String): Int = s.length

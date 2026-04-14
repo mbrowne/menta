@@ -2,7 +2,7 @@ package kt606
 
 //KT-606 wrong resolved call
 
-class StandardPipelineFactory(val config : ChannelPipeline.() -> Unit) : ChannelPipelineFactory {
+define StandardPipelineFactory(val config : ChannelPipeline.() -> Unit) : ChannelPipelineFactory {
     override fun getPipeline() : ChannelPipeline {
         val pipeline : ChannelPipeline = DefaultChannelPipeline()
         pipeline.config()
@@ -16,7 +16,7 @@ interface ChannelPipeline  {
 
 var result = "FAIL"
 
-class DefaultChannelPipeline : ChannelPipeline {
+define DefaultChannelPipeline : ChannelPipeline {
   override fun print(any: Any) {
       result = any as String
   }

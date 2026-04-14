@@ -5,7 +5,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 @JvmInline
-value class DPoint(val x: Double, val y: Double)
+value define DPoint(val x: Double, val y: Double)
 
 fun `1`() = 1.0
 fun `2`() = 2.0

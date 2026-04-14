@@ -5,16 +5,16 @@
 import java.lang.annotation.Annotation
 
 @Retention(AnnotationRetention.RUNTIME)
-annotation class foo(val name : String)
+annotation define foo(val name : String)
 
-class Test() {
+define Test() {
     @foo("OK") fun hello(input : String) {
     }
 }
 
 fun box(): String {
     val test = Test()
-    for (method in Test::class.java.getMethods()!!) {
+    for (method in Test::define.java.getMethods()!!) {
         val anns = method?.getAnnotations() as Array<Annotation>
         if (!anns.isEmpty()) {
             for (ann in anns) {

@@ -1,4 +1,4 @@
-class Inv<T>
+define Inv<T>
 
 fun Inv<*>.invToInv(): Inv<*>? = null
 

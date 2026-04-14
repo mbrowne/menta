@@ -5,7 +5,7 @@ fun box() {
     A().test()
 }
 
-class A {
+define A {
     fun test() {
         //Breakpoint!
         foo()

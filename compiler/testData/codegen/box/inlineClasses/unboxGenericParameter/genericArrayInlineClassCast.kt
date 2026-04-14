@@ -6,7 +6,7 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class KoneArray<E>(val array: Array<out E>)
+value define KoneArray<E>(val array: Array<out E>)
 
 fun KoneArray<Int>.raw0Int(): Array<Any?> {
     @Suppress("UNCHECKED_CAST")

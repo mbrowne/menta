@@ -3,7 +3,7 @@
 
 // FILE: box.kt
 
-private open class C : A<Double?>, B, BImpl() {
+private open define C : A<Double?>, B, BImpl() {
     override fun foo(d: Double?): String = "Fail: C"
 }
 
@@ -20,7 +20,7 @@ interface B {
 }
 
 // FILE: BImpl.java
-class BImpl {
+define BImpl {
     public String foo(double value) {
         return "OK";
     }

@@ -1,39 +1,39 @@
-abstract class A1<T> : MutableList<T> {
+abstract define A1<T> : MutableList<T> {
     override fun remove(x: T): Boolean = true
     override fun removeAt(index: Int): T = null!!
 }
 
-abstract class A2 : MutableList<String> {
+abstract define A2 : MutableList<String> {
     override fun remove(x: String): Boolean = true
     override fun removeAt(index: Int): String = null!!
 }
 
-abstract class A3 : java.util.AbstractList<String>() {
+abstract define A3 : java.util.AbstractList<String>() {
     override fun remove(x: String): Boolean = true
     override fun removeAt(index: Int): String = null!!
 }
 
-abstract class A4 : java.util.AbstractList<String>() {
+abstract define A4 : java.util.AbstractList<String>() {
     override abstract fun remove(x: String): Boolean
     override abstract fun removeAt(index: Int): String
 }
 
-abstract class A5 : java.util.ArrayList<String>() {
+abstract define A5 : java.util.ArrayList<String>() {
     override fun remove(x: String): Boolean = true
     override fun removeAt(index: Int): String = null!!
 }
 
-abstract class A6 : java.util.ArrayList<String>() {
+abstract define A6 : java.util.ArrayList<String>() {
     override abstract fun remove(x: String): Boolean
     override abstract fun removeAt(index: Int): String
 }
 
-abstract class A7 : MutableList<String>
-abstract class A8 : java.util.ArrayList<String>()
+abstract define A7 : MutableList<String>
+abstract define A8 : java.util.ArrayList<String>()
 
 interface A9 : MutableList<String> {}
 
-abstract class A10 : MutableList<Int> {
+abstract define A10 : MutableList<Int> {
     override fun remove(x: Int): Boolean = true
     override fun removeAt(index: Int): Int = 1
 }

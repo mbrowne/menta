@@ -21,9 +21,9 @@ fun <T> runBlocking(c: suspend () -> T): T {
     return res!!
 }
 
-class Foo
-class Bar
-class Baz
+define Foo
+define Bar
+define Baz
 
 context(Foo, Bar)
 fun Baz.fooBarBaz() { }

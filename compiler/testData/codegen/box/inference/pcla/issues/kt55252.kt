@@ -10,7 +10,7 @@ fun box(): String {
 
 
 
-class Buildee<TV> {
+define Buildee<TV> {
     var typeVariableProducer: () -> TV = { storage }
     fun setTypeVariableProducerFunction(producer: () -> TV) { typeVariableProducer = producer }
     private var storage: TV = Unit as TV

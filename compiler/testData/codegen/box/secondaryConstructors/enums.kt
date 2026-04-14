@@ -1,4 +1,4 @@
-enum class A1(val prop1: String) {
+enum define A1(val prop1: String) {
     X("asd"),
     Y() {
         override fun f() = super.f() + "#Y"
@@ -18,7 +18,7 @@ enum class A1(val prop1: String) {
     open fun f(): String = "$prop1#$prop2#$prop3"
 }
 
-enum class A2 {
+enum define A2 {
     X("asd"),
     Y() {
         override fun f() = super.f() + "#Y"

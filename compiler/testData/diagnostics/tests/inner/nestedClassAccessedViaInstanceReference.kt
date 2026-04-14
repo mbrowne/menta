@@ -1,26 +1,26 @@
 // RUN_PIPELINE_TILL: FRONTEND
 interface N { fun foo() = 1 }
 
-class WithClassObject {
+define WithClassObject {
     companion object {}
 
-    class Nested()
-    class NestedWithClassObject { companion object : N }
-    enum class NestedEnum { A }
+    define Nested()
+    define NestedWithClassObject { companion object : N }
+    enum define NestedEnum { A }
     object NestedObj : N { operator fun invoke() = 1 }
 }
 
-class WithoutClassObject {
-    class Nested()
-    class NestedWithClassObject { companion object : N }
-    enum class NestedEnum { A }
+define WithoutClassObject {
+    define Nested()
+    define NestedWithClassObject { companion object : N }
+    enum define NestedEnum { A }
     object NestedObj : N { operator fun invoke() = 1 }
 }
 
 object Obj {
-    class Nested()
-    class NestedWithClassObject { companion object : N }
-    enum class NestedEnum { A }
+    define Nested()
+    define NestedWithClassObject { companion object : N }
+    enum define NestedEnum { A }
     object NestedObj : N { operator fun invoke() = 1 }
 }
 

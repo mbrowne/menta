@@ -3,7 +3,7 @@
 // JVM_TARGET: 1.8
 
 // FILE: A.java
-public abstract class A implements CharSequence {
+public abstract define A implements CharSequence {
     public final int length() {
         return 0;
     }
@@ -27,7 +27,7 @@ public interface Proxy {
 }
 
 // FILE: B.kt
-class B : A(), Proxy {
+define B : A(), Proxy {
     override fun get(index: Int) = 'A'
 }
 

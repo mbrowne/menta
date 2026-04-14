@@ -5,9 +5,9 @@ fun box() {
     test(B(A()))
 }
 
-class A
+define A
 
-class B(val a: A) {
+define B(val a: A) {
     operator fun A.invoke() {}
 }
 

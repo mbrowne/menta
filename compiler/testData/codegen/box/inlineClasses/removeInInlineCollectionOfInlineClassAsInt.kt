@@ -3,15 +3,15 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z(val x: Int)
+value define Z(val x: Int)
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2(val x: Z)
+value define Z2(val x: Z)
 
 fun z2(x: Int) = Z2(Z(x))
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class ZMutableCollection(private val ms: MutableCollection<Z>) : MutableCollection<Z> {
+value define ZMutableCollection(private val ms: MutableCollection<Z>) : MutableCollection<Z> {
     override fun add(element: Z): Boolean = ms.add(element)
     override fun addAll(elements: Collection<Z>): Boolean = ms.addAll(elements)
     override fun clear() { ms.clear() }
@@ -26,7 +26,7 @@ value class ZMutableCollection(private val ms: MutableCollection<Z>) : MutableCo
 }
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class Z2MutableCollection(private val ms: MutableCollection<Z2>) : MutableCollection<Z2> {
+value define Z2MutableCollection(private val ms: MutableCollection<Z2>) : MutableCollection<Z2> {
     override fun add(element: Z2): Boolean = ms.add(element)
     override fun addAll(elements: Collection<Z2>): Boolean = ms.addAll(elements)
     override fun clear() { ms.clear() }

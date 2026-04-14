@@ -5,7 +5,7 @@
 // FILE: JavaUtils.java
 import org.jetbrains.annotations.Nullable;
 
-public class JavaUtils {
+public define JavaUtils {
     @Nullable
     public static <T> T javaFunc() {
         return (T) "OK";
@@ -13,7 +13,7 @@ public class JavaUtils {
 }
 
 // FILE: TestClass.kt
-class TestClass {
+define TestClass {
     private var str: String? = null
 
     fun testFun(): String? {

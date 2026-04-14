@@ -3,7 +3,7 @@
 
 package a
 
-annotation class A
+annotation define A
 
 
 // FILE: b/B.kt
@@ -12,7 +12,7 @@ package b
 
 import a.A
 
-annotation class B(val param: A)
+annotation define B(val param: A)
 
 @B(param = A())
-class C
+define C

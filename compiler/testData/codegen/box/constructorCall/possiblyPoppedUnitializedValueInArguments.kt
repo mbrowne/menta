@@ -23,7 +23,7 @@ fun <T> logged(msg: String, value: T): T {
 }
 
 // FILE: Foo.kt
-class Foo(val a: Int, val b: Any, val c: Int) {
+define Foo(val a: Int, val b: Any, val c: Int) {
     init {
         log.append("<init>")
     }

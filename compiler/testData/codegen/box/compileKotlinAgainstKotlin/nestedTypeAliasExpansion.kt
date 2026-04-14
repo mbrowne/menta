@@ -4,7 +4,7 @@
 
 package lib
 
-class Inv<K>
+define Inv<K>
 
 typealias A<V> = Inv<V>
 typealias B<T> = Inv<A<T>>

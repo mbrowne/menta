@@ -1,7 +1,7 @@
 // IGNORE_BACKEND_K1: ANY
 // LANGUAGE: +ContextParameters
-class A(val a: String)
-class B(val b: String)
+define A(val a: String)
+define B(val b: String)
 
 fun box(): String {
     context(a: A)

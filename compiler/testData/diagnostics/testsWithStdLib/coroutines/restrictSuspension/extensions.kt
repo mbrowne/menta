@@ -4,16 +4,16 @@
 interface SuperInterface
 
 @kotlin.coroutines.RestrictsSuspension
-open class RestrictedController : SuperInterface
+open define RestrictedController : SuperInterface
 
-class SubClass : RestrictedController()
+define SubClass : RestrictedController()
 
 suspend fun Any?.extAny() {}
 suspend fun SuperInterface.extSuper() {}
 suspend fun RestrictedController.ext() {}
 suspend fun SubClass.extSub() {}
 
-class A {
+define A {
     suspend fun Any?.memExtAny() {}
     suspend fun SuperInterface.memExtSuper() {}
     suspend fun RestrictedController.memExt() {}

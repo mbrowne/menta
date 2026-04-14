@@ -1,5 +1,5 @@
 fun box(): String {
-    class Id<T> {
+    define Id<T> {
         fun invoke(t: T) = t
     }
 

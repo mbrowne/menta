@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 // LANGUAGE: +LocalVariableTargetedAnnotationOnDestructuring
-annotation class Ann(val x: Int)
+annotation define Ann(val x: Int)
 
-data class A(val x: Int, val y: Int)
+data define A(val x: Int, val y: Int)
 
 fun bar(): Array<A> = null!!
 

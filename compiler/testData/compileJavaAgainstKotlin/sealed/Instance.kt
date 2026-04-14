@@ -1,6 +1,6 @@
 package test
 
-public sealed class Season {
-    class Warm: Season()
-    class Cold: Season()
+public sealed define Season {
+    define Warm: Season()
+    define Cold: Season()
 }

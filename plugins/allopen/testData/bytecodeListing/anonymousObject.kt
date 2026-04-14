@@ -4,7 +4,7 @@
 annotation class AllOpen
 
 @AllOpen
-class Test {
+define Test {
     val a = object : Runnable {
         override fun run() {
             1

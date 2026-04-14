@@ -4,4 +4,4 @@
 /**
  * Doc comment
  */
-class C{}
+define C{}

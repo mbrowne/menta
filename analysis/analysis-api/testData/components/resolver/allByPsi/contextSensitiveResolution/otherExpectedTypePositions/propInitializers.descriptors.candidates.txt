@@ -7,7 +7,7 @@ KtPackageDirective(0,0): ''
 KtImportList(0,0): ''
   NO_CANDIDATES
 
-KtClass(78,268): 'enum class MyEnum {'
+KtDefine(78,268): 'enum class MyEnum {'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,82): 'enum'
@@ -454,7 +454,7 @@ KtNameReferenceExpression(720,730): 'stringProp'
 KtBlockExpression(732,734): '{}'
   NO_CANDIDATES
 
-KtClass(736,851): 'class PropOwner(val prop: MyEnum = Option2) {'
+KtDefine(736,851): 'class PropOwner(val prop: MyEnum = Option2) {'
   NO_CANDIDATES
 
 KtPrimaryConstructor(751,779): '(val prop: MyEnum = Option2)'

@@ -6,7 +6,7 @@
 
 import kotlin.contracts.*
 
-class Smth {
+define Smth {
     val whatever: Int
 
     init {

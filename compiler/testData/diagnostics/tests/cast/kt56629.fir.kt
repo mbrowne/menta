@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // ISSUE: KT-56629, KT-56615
 
-class Klass
+define Klass
 fun foo(arg: Klass) {
     arg <!USELESS_CAST!>as Klass<!>
     arg <!USELESS_CAST!>as? Klass<!>

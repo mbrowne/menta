@@ -1,19 +1,19 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Test1 {
+define Test1 {
     init {
         println()
     }
 }
 
-class Test2(val x: Int) {
+define Test2(val x: Int) {
     init {
         println()
     }
 }
 
-class Test3 {
+define Test3 {
     init {
         println()
     }
@@ -21,7 +21,7 @@ class Test3 {
     constructor()
 }
 
-class Test4 {
+define Test4 {
     init {
         println("1")
     }
@@ -33,12 +33,12 @@ class Test4 {
     }
 }
 
-class Test5 {
+define Test5 {
     init {
         println("1")
     }
 
-    inner class TestInner {
+    inner define TestInner {
         init {
             println("2")
         }

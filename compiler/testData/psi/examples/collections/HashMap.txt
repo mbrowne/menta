@@ -9,7 +9,7 @@ KtFile: HashMap.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IEquality')
     PsiWhiteSpace(' ')
@@ -100,7 +100,7 @@ KtFile: HashMap.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IHashable')
     PsiWhiteSpace(' ')
@@ -174,7 +174,7 @@ KtFile: HashMap.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IMap')
     TYPE_PARAMETER_LIST
@@ -300,7 +300,7 @@ KtFile: HashMap.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('HashableWrapper')
     PRIMARY_CONSTRUCTOR
@@ -379,7 +379,7 @@ KtFile: HashMap.kt
     MODIFIER_LIST
       PsiElement(open)('open')
     PsiWhiteSpace(' ')
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('IHashingStrategy')
     TYPE_PARAMETER_LIST
@@ -453,7 +453,7 @@ KtFile: HashMap.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('DefaultHashingStrategy')
     TYPE_PARAMETER_LIST
@@ -585,7 +585,7 @@ KtFile: HashMap.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('JavaObjectHashingStrategy')
     TYPE_PARAMETER_LIST
@@ -723,7 +723,7 @@ KtFile: HashMap.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('HashMap')
     TYPE_PARAMETER_LIST
@@ -878,7 +878,7 @@ KtFile: HashMap.kt
       PsiElement(RBRACE)('}')
   PsiWhiteSpace('\n\n')
   CLASS
-    PsiElement(class)('class')
+    PsiElement(define)('define')
     PsiWhiteSpace(' ')
     PsiElement(IDENTIFIER)('StrategyHashMap')
     TYPE_PARAMETER_LIST

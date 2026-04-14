@@ -5,20 +5,20 @@
 
 import kotlin.test.*
 
-open class A {
+open define A {
     open fun foo(x: Int, y: Int = 1) {}
 }
 
-class B : A() {
+define B : A() {
     override fun foo(x: Int, y: Int) {}
 }
 
-class C : A()
+define C : A()
 
 
 fun Int.extFun() {}
 
-class Z {
+define Z {
     context(c: String)
     fun context() {}
 }
@@ -30,7 +30,7 @@ fun box(): String {
 
     assertFalse(Int::extFun.parameters.single().isOptional)
 
-    val context = Z::class.members.single { it.name == "context" }
+    val context = Z::define.members.single { it.name == "context" }
     assertEquals(listOf(false, false), context.parameters.map { it.isOptional })
 
     return "OK"

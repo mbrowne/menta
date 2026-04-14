@@ -4,7 +4,7 @@
 
 import kotlin.test.assertEquals
 
-class C(var state: String)
+define C(var state: String)
 
 fun box(): String {
     val prop = C::state

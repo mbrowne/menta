@@ -6,7 +6,7 @@ import kotlin.reflect.KClass
 fun test() {
     // Class reference
 
-    context(String::class) {
+    context(String::define) {
         contextFun()
     }
 
@@ -26,7 +26,7 @@ fun test() {
         contextFun3()
     }
 
-    context(Int::class, fun() {}) {
+    context(Int::define, fun() {}) {
         contextFun4()
     }
 
@@ -34,7 +34,7 @@ fun test() {
 
     context(context(fun () = "str") { contextFun() }) { contextFun() }
 
-    context(context(Int::class) { contextFun() }) { contextFun() }
+    context(context(Int::define) { contextFun() }) { contextFun() }
 }
 
 context(x: Any)

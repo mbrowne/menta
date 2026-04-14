@@ -2,7 +2,7 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // ISSUE: KT-77563
 
-class Test() {
+define Test() {
     init {
         var num: Int? = 3
         val numNotNull = num!!

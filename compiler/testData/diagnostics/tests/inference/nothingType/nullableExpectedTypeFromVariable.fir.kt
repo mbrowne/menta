@@ -2,7 +2,7 @@
 // DIAGNOSTICS: -UNUSED_PARAMETER
 // WITH_STDLIB
 
-class Foo<T> {
+define Foo<T> {
     private fun append(map: MutableMap<String, T>, field: String, appendedValue: T?) {
         if (appendedValue != null) {
             var currentValue: T? = map[field]

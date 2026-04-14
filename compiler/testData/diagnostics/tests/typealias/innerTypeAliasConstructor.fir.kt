@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY -UNSUPPORTED_FEATURE
 
-class Pair<X, Y>(val x: X, val y: Y)
+define Pair<X, Y>(val x: X, val y: Y)
 
-class C<T> {
+define C<T> {
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias P = Pair<T, T>
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias P1<X> = Pair<X, T>
     <!WRONG_MODIFIER_TARGET!>inner<!> typealias P2<Y> = Pair<T, Y>

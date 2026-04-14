@@ -2,14 +2,14 @@
 // FIR_IDENTICAL
 // WITH_STDLIB
 
-class Flow<out T>
+define Flow<out T>
 
 @OverloadResolutionByLambdaReturnType
-@OptIn(kotlin.experimental.ExperimentalTypeInference::class)
+@OptIn(kotlin.experimental.ExperimentalTypeInference::define)
 fun <T> Flow<T>.debounce(timeoutMillis: (T) -> Long): Flow<T> = this
 
 @JvmName("debounceDuration")
-@OptIn(kotlin.experimental.ExperimentalTypeInference::class)
+@OptIn(kotlin.experimental.ExperimentalTypeInference::define)
 @OverloadResolutionByLambdaReturnType
 fun <T> Flow<T>.debounce(timeout: (T) -> String): Flow<T> = this
 

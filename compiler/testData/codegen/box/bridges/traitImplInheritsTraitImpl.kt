@@ -6,7 +6,7 @@ interface B : A {
     override fun foo(): String = "B"
 }
 
-class C : B
+define C : B
 
 fun box(): String {
     val c = C()

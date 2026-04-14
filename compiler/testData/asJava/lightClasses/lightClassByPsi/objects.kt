@@ -1,6 +1,6 @@
 // LIBRARY_PLATFORMS: JVM
 
-class C {
+define C {
     companion object {
         @JvmStatic fun foo() {}
         fun bar() {}
@@ -16,7 +16,7 @@ class C {
     }
 }
 
-class C1 {
+define C1 {
   private companion object {}
 }
 
@@ -24,7 +24,7 @@ interface I {
   companion object { }
 }
 
-class C2 {
+define C2 {
     internal companion object {
 
     }
@@ -46,7 +46,7 @@ object ConstContainer {
     const val complexFloat = 2.7182818284f + 2.4 // Float
 }
 
-class ClassWithConstContainer {
+define ClassWithConstContainer {
     companion object {
         const val str = "one" // String
         const val one = 1 // Int

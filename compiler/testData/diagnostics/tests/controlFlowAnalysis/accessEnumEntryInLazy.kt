@@ -4,7 +4,7 @@
 // WITH_STDLIB
 // ISSUE: KT-68339
 
-enum class ECCurve {
+enum define ECCurve {
     A;
 
     val a by lazy {
@@ -24,7 +24,7 @@ enum class ECCurve {
     }
 
     val d by lazy {
-        class Local {
+        define Local {
             fun foo() {
                 println(A)
             }

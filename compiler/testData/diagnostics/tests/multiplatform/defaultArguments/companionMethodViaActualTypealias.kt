@@ -3,7 +3,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // MODULE: m1-common
 // FILE: common.kt
-expect class DefaultArgsInCompanion {
+expect define DefaultArgsInCompanion {
     companion object {
         fun foo(p: String = "")
     }
@@ -11,7 +11,7 @@ expect class DefaultArgsInCompanion {
 
 // MODULE: m2-jvm()()(m1-common)
 // FILE: jvm.kt
-class DefaultArgsInCompanionImpl {
+define DefaultArgsInCompanionImpl {
     companion object {
         fun foo(p: String) {}
     }

@@ -40,8 +40,7 @@ object FirMemberFunctionsChecker : FirSimpleFunctionChecker(MppCheckerKind.Commo
         // If multiple (potentially conflicting) modality modifiers are specified, not all modifiers are recorded at `status`.
         // So, our source of truth should be the full modifier list retrieved from the source.
         val modifierList = source.getModifierList()
-        val hasAbstractModifier = KtTokens.ABSTRACT_KEYWORD in modifierList
-        val isAbstract = function.isAbstract || hasAbstractModifier
+        val isAbstract = function.isAbstract
         if (isAbstract) {
             if (containingDeclaration is FirRegularClassSymbol && !containingDeclaration.canHaveAbstractDeclaration) {
                 reporter.reportOn(
@@ -63,10 +62,10 @@ object FirMemberFunctionsChecker : FirSimpleFunctionChecker(MppCheckerKind.Commo
                 if (Visibilities.isPrivate(function.visibility)) {
                     reporter.reportOn(source, FirErrors.PRIVATE_FUNCTION_WITH_NO_BODY, functionSymbol)
                 }
-                if (!isInsideExpectClass && !hasAbstractModifier && hasOpenModifier) {
+                if (!isInsideExpectClass && hasOpenModifier) {
                     reporter.reportOn(source, FirErrors.REDUNDANT_OPEN_IN_INTERFACE)
                 }
-            } else if (!isInsideExpectClass && !hasAbstractModifier && !function.isExternal && !isInsideExternal) {
+            } else if (!isInsideExpectClass && !hasOpenModifier && !function.isExternal && !isInsideExternal) {
                 reporter.reportOn(source, FirErrors.NON_ABSTRACT_FUNCTION_WITH_NO_BODY, functionSymbol)
             }
         }

@@ -4,7 +4,7 @@
 // FILE: Foo.kt
 package foo
 
-class A2 {
+define A2 {
     fun doWork(job: () -> Unit) {
         Runnable(job)
     }
@@ -15,7 +15,7 @@ import foo.A2
 
 typealias Z = String
 
-class A {
+define A {
     fun doWork(job: () -> Unit) {
         java.lang.Runnable(job).run()
     }

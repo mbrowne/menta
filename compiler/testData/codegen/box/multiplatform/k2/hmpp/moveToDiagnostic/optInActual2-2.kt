@@ -2,7 +2,7 @@
 
 // MODULE: lib-common
 @RequiresOptIn(level = RequiresOptIn.Level.ERROR)
-annotation class Ann
+annotation define Ann
 
 expect fun foo(): String
 
@@ -13,7 +13,7 @@ actual fun foo(): String = "OK"
 
 // MODULE: app-common(lib-common)
 
-@OptIn(Ann::class)
+@OptIn(Ann::define)
 fun withOptIn(): String {
     return foo()
 }

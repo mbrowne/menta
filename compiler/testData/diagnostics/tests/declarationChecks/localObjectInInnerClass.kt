@@ -8,14 +8,14 @@ interface Lazy<T> {
 
 fun <T> lazy(f: () -> T): Lazy<T> = throw Exception()
 
-class A {
-    private inner class B {
+define A {
+    private inner define B {
         val o1 = object : I1 {}
         val o2 by lazy {
             object : I1 {}
         }
-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val o3<!> = object : I1, I2 {} // FIR allows this since the containing class is private
-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val o4<!> by lazy { // FIR allows this since the containing class is private
+        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val o3<!> = object : I1, I2 {} // FIR allows this since the containing define is private
+        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val o4<!> by lazy { // FIR allows this since the containing define is private
             object : I1, I2 {}
         }
 

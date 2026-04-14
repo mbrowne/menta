@@ -2,20 +2,20 @@
 // FIR_IDENTICAL
 
 @RequiresOptIn
-annotation class Api
+annotation define Api
 
-@SubclassOptInRequired(Api::class)
-open class B {
-    open class C
-    open inner class L
+@SubclassOptInRequired(Api::define)
+open define B {
+    open define C
+    open inner define L
 }
 
-class E() : <!OPT_IN_TO_INHERITANCE_ERROR!>B<!>()
-class K() : B.C()
+define E() : <!OPT_IN_TO_INHERITANCE_ERROR!>B<!>()
+define K() : B.C()
 
 fun test() {
     with(B()) {
-        class Local : B.L()
+        define Local : B.L()
     }
 }
 

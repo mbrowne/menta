@@ -1,7 +1,7 @@
 // TARGET_BACKEND: JVM
 // FILE: AT.java
 
-public class AT<G> {
+public define AT<G> {
     public String result = "fail";
     public void foo(G ...y) {
         result = "OK";

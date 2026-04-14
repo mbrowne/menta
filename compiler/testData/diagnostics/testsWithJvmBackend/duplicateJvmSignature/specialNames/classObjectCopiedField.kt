@@ -1,6 +1,6 @@
 // FIR_IDENTICAL
 
-class C {
+define C {
     companion object {
         val X = 1
         <!CONFLICTING_JVM_DECLARATIONS!>val `X$1` = 1<!>

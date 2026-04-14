@@ -5,7 +5,7 @@
 @file:NonCompilerAnnotation
 
 @Target(AnnotationTarget.FILE, AnnotationTarget.FUNCTION)
-annotation class NonCompilerAnnotation
+annotation define NonCompilerAnnotation
 
 @NonCompilerAnnotation
 fun foo(): String = ""

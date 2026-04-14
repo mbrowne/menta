@@ -2,7 +2,7 @@
 // FIR_IDENTICAL
 // DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
 
-class OverloadTest {
+define OverloadTest {
     fun foo(bar: Boolean) {}
     fun foo(bar: Any?) {}
 }

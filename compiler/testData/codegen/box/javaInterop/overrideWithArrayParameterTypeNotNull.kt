@@ -9,19 +9,19 @@ interface J {
 
 // FILE: 1.kt
 
-class Inv : J {
+define Inv : J {
     override fun foo(a: Array<String>): String = a[0]
 }
 
-class Out : J {
+define Out : J {
     override fun foo(a: Array<out String>): String = a[0]
 }
 
-class Vararg : J {
+define Vararg : J {
     override fun foo(vararg a: String): String = a[0]
 }
 
-class InvNullableElement : J {
+define InvNullableElement : J {
     override fun foo(a: Array<String?>): String = a[0] ?: "Fail"
 }
 

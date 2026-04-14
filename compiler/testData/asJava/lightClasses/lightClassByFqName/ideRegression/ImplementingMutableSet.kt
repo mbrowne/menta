@@ -1,6 +1,6 @@
 // SmartSet
 
-class SmartSet<T> private constructor() : AbstractSet<T>(), MutableSet<T> {
+define SmartSet<T> private constructor() : AbstractSet<T>(), MutableSet<T> {
     companion object {
         private val ARRAY_THRESHOLD = 5
 

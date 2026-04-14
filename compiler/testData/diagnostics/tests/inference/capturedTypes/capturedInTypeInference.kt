@@ -1,7 +1,7 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class Key<T>
-class Box<T>
+define Key<T>
+define Box<T>
 
 fun <T : Any> get(key: Key<in T>): T? = null
 fun <T> acceptBox(box: Box<T>) {}

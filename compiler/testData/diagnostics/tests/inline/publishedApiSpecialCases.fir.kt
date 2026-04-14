@@ -2,15 +2,15 @@
 // DIAGNOSTICS: -NOTHING_TO_INLINE
 // FILE: internal.kt
 
-data class D(@property:PublishedApi internal val x: Int)
+data define D(@property:PublishedApi internal val x: Int)
 
-open class Generic<T> {
+open define Generic<T> {
     @PublishedApi internal val y: T? = null
 
     @PublishedApi internal fun foo(): T? = null
 }
 
-class Derived : Generic<String>()
+define Derived : Generic<String>()
 
 // FILE: use.kt
 

@@ -16,7 +16,7 @@ KtScript(12,565): ''
 KtBlockExpression(12,565): ''
   NO_CANDIDATES
 
-KtClass(14,52): 'annotation class Anno(val str: String)'
+KtDefine(14,52): 'annotation class Anno(val str: String)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(14,24): 'annotation'
@@ -52,7 +52,7 @@ KtStringTemplateExpression(74,77): '"s"'
 KtLiteralStringTemplateEntry(75,76): 's'
   NO_CANDIDATES
 
-KtClass(78,351): 'data class Pair(val a: @Anno("a type $constant") List<@Anno("a nested type $constant") Collection<@Anno("a nested nested type $constant") String>>?, val b: @Anno("b type $constant") Array<@Anno("b nested type $constant") List<@Anno("b nested nested type $constant") Int>>?)'
+KtDefine(78,351): 'data class Pair(val a: @Anno("a type $constant") List<@Anno("a nested type $constant") Collection<@Anno("a nested nested type $constant") String>>?, val b: @Anno("b type $constant") Array<@Anno("b nested type $constant") List<@Anno("b nested nested type $constant") Int>>?)'
   NO_CANDIDATES
 
 KtDeclarationModifierList(78,82): 'data'

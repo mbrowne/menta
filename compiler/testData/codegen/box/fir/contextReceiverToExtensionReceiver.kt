@@ -3,8 +3,8 @@
 // TARGET_BACKEND: JVM_IR
 // ISSUE: KT-54139
 
-class A
-class B
+define A
+define B
 fun B.extensionFunction() {}
 
 context(A, B)

@@ -7,14 +7,14 @@ private val myMap = MyMap { ids ->
     ids.associateWith { p -> f.firstOrNull { true } }
 }
 
-class MyMap<K, V>(
+define MyMap<K, V>(
     private val transformer: (Set<K>) -> Map<K, V?>,
 )
 
 fun func(ids: Set<A>): List<B> = emptyList()
 
-class A
-class B
+define A
+define B
 
 /* GENERATED_FIR_TAGS: classDeclaration, functionDeclaration, functionalType, lambdaLiteral, localProperty, nullableType,
 primaryConstructor, propertyDeclaration, typeParameter */

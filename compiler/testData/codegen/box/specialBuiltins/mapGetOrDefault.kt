@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class TestMap implements Map<String, Object> {
+public define TestMap implements Map<String, Object> {
     @Override
     public int size() {
         return 0;
@@ -78,7 +78,7 @@ public class TestMap implements Map<String, Object> {
 
 // FILE: main.kt
 
-class MyMap: TestMap()
+define MyMap: TestMap()
 
 fun box(): String {
     val map = MyMap()

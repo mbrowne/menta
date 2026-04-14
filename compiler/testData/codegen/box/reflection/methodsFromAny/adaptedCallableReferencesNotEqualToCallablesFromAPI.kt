@@ -4,7 +4,7 @@
 import kotlin.reflect.*
 import kotlin.test.assertNotEquals
 
-class A {
+define A {
     fun foo(s: String = "", vararg xs: Long): String = "foo"
 }
 
@@ -19,7 +19,7 @@ fun defaultAndVararg(f: (A) -> String): Any = f
 fun allOfTheAbove(f: (A) -> Unit): Any = f
 
 fun box(): String {
-    val foo = A::class.members.single { it.name == "foo" }
+    val foo = A::define.members.single { it.name == "foo" }
 
     checkNotEqual(coercionToUnit(A::foo), foo)
     checkNotEqual(varargToElement(A::foo), foo)

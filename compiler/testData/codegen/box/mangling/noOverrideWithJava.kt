@@ -2,7 +2,7 @@
 
 // FILE: JavaClass.java
 
-public class JavaClass extends A {
+public define JavaClass extends A {
     public String test() {
         return "Java";
     }
@@ -10,7 +10,7 @@ public class JavaClass extends A {
 
 // FILE: test.kt
 
-open class A {
+open define A {
     internal open fun test(): String = "Kotlin"
 }
 

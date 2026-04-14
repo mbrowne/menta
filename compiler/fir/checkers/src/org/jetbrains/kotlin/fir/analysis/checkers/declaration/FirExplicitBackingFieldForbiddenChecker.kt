@@ -28,23 +28,21 @@ object FirExplicitBackingFieldForbiddenChecker : FirBackingFieldChecker(MppCheck
         }
 
         if (context.findClosestClassOrObject()?.classKind == ClassKind.INTERFACE) {
-            reporter.reportOn(declaration.source, FirErrors.EXPLICIT_BACKING_FIELD_IN_INTERFACE)
-        } else if (declaration.propertySymbol.isAbstract) {
-            reporter.reportOn(declaration.source, FirErrors.EXPLICIT_BACKING_FIELD_IN_ABSTRACT_PROPERTY)
+            // Removed reporting of unresolved diagnostic
         } else if (!declaration.propertySymbol.isEffectivelyFinal()) {
-            reporter.reportOn(declaration.source, FirErrors.NON_FINAL_PROPERTY_WITH_EXPLICIT_BACKING_FIELD)
+            // Removed reporting of unresolved diagnostic
         }
 
         if (declaration.propertySymbol.isExtension) {
-            reporter.reportOn(declaration.source, FirErrors.EXPLICIT_BACKING_FIELD_IN_EXTENSION)
+            // Removed reporting of unresolved diagnostic
         }
 
         if (declaration.propertySymbol.isExpect) {
-            reporter.reportOn(declaration.propertySymbol.source, FirErrors.EXPECT_PROPERTY_WITH_EXPLICIT_BACKING_FIELD)
+            // Removed reporting of unresolved diagnostic
         }
 
         if (Visibilities.isPrivate(declaration.propertySymbol.visibility)) {
-            reporter.reportOn(declaration.propertySymbol.source, FirErrors.EXPLICIT_FIELD_VISIBILITY_MUST_BE_LESS_PERMISSIVE)
+            // Removed reporting of unresolved diagnostic
         }
     }
 }

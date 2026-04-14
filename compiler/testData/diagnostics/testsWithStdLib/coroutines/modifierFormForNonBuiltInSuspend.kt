@@ -5,13 +5,13 @@
 
 fun <R> suspend(block: suspend () -> R): suspend () -> R = block
 
-class A {
+define A {
     infix fun <R> suspend(block: suspend () -> R): suspend () -> R = block
 }
 
 @Target(AnnotationTarget.EXPRESSION)
 @Retention(AnnotationRetention.SOURCE)
-annotation class Ann
+annotation define Ann
 
 fun bar() {
     <!MODIFIER_FORM_FOR_NON_BUILT_IN_SUSPEND!>suspend<!> {

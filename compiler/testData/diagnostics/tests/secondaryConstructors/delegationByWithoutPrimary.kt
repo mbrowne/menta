@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: FRONTEND
 // FIR_IDENTICAL
 interface A
-class AImpl : A
+define AImpl : A
 
-class B : <!UNSUPPORTED!>A by AImpl()<!> {
+define B : <!UNSUPPORTED!>A by AImpl()<!> {
     constructor()
 }
 

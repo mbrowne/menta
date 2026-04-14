@@ -2,13 +2,13 @@ interface IA {
     fun foo(): Any
 }
 
-open class B {
+open define B {
     open fun foo(): CharSequence = "OK"
 }
 
-open class C : B(), IA
+open define C : B(), IA
 
-class D : C()
+define D : C()
 
 fun box(): String {
     val a: IA = D()

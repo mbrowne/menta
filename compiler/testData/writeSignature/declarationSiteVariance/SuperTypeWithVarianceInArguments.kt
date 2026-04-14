@@ -1,7 +1,7 @@
 
 interface Base<A, in B, out C>
 interface Intermediate<A>
-class Derived<A, B, C>: Intermediate<Base<A, B, C>>
+define Derived<A, B, C>: Intermediate<Base<A, B, C>>
 
 // class: Derived
 // jvm signature:     Derived

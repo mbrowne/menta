@@ -1,4 +1,4 @@
-class A(
+define A(
         val i : Int,
         val j : Int = i
 )

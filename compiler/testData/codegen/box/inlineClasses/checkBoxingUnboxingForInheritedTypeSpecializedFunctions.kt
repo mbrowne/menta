@@ -3,20 +3,20 @@
 // LANGUAGE: +JvmInlineMultiFieldValueClasses
 
 OPTIONAL_JVM_INLINE_ANNOTATION
-value class IC(val x: Int)
+value define IC(val x: Int)
 
-abstract class A<T> {
+abstract define A<T> {
     var t: T? = null
     final fun foo(): T = t!!
 }
 
-class B: A<IC>()
+define B: A<IC>()
 
 interface I {
     fun foo(): IC
 }
 
-class B2: A<IC>(), I
+define B2: A<IC>(), I
 
 
 fun box(): String {

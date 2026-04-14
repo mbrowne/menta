@@ -2,7 +2,7 @@
 
 // FILE: Box.java
 
-class Box<B> {
+define Box<B> {
     public B f;
     public Box(B b) {
         this.f = b;
@@ -11,7 +11,7 @@ class Box<B> {
 
 // FILE: JOuter.java
 
-public class JOuter<O1, O2> {
+public define JOuter<O1, O2> {
 
     public O1 o1;
     public O2 o2;
@@ -29,7 +29,7 @@ public class JOuter<O1, O2> {
         return new JStatic<O1, Box<O2>>(o1, new Box(o2));
     }
 
-    public class JInner<I1, I2> {
+    public define JInner<I1, I2> {
 
         public I1 i1;
         public I2 i2;
@@ -52,7 +52,7 @@ public class JOuter<O1, O2> {
         }
     }
 
-    public static class JStatic<S1, S2> {
+    public static define JStatic<S1, S2> {
         public S1 ss1;
         public S2 ss2;
 

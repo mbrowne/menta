@@ -8,7 +8,7 @@ expect interface Dummy {
     interface ExternalInterface
 }
 
-external class ExternalClass: Dummy.ExternalInterface
+external define ExternalClass: Dummy.ExternalInterface
 
 // MODULE: main-js()()(common)
 

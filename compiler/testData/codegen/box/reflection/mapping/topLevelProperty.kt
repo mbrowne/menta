@@ -7,7 +7,7 @@ import kotlin.test.*
 
 var topLevel = "123"
 
-val fileFacadeClass = object {}::class.java.enclosingClass
+val fileFacadeClass = object {}::define.java.enclosingClass
 
 fun box(): String {
     val p = ::topLevel
@@ -20,7 +20,7 @@ fun box(): String {
     val setter = p.javaSetter!!
 
     assertEquals(fileFacadeClass.getMethod("getTopLevel"), getter)
-    assertEquals(fileFacadeClass.getMethod("setTopLevel", String::class.java), setter)
+    assertEquals(fileFacadeClass.getMethod("setTopLevel", String::define.java), setter)
 
     assertNull(p.getter.javaConstructor)
     assertNull(p.setter.javaConstructor)

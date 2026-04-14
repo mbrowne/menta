@@ -1,9 +1,9 @@
 // RUN_PIPELINE_TILL: BACKEND
 // FIR_IDENTICAL
-class A {
+define A {
     @Deprecated("deprecated") companion object
 
-    class B
+    define B
 }
 
 val x1 = A.B()
