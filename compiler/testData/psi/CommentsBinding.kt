@@ -1,6 +1,7 @@
 // COMPILATION_ERRORS
 
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright JetBrains s.r.o.
  */
 package foo.bar // package directive
