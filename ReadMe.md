@@ -2,6 +2,8 @@
 
 # Menta Programming Language
 
+> Note: Menta is currently experimental, and is not yet recommended for use in production.
+
 ## What is Menta?
 
 Menta is a multi-platform language originally forked from [Kotlin](https://github.com/JetBrains/kotlin).
