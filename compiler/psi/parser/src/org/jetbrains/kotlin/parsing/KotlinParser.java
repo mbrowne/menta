@@ -44,7 +44,7 @@ public class KotlinParser implements PsiParser {
     public static ASTNode parse(PsiBuilder psiBuilder, PsiFile psiFile) {
         KotlinParsing ktParsing = KotlinParsing.createForTopLevel(new SemanticWhitespaceAwarePsiBuilderImpl(psiBuilder));
         String extension = FileUtilRt.getExtension(psiFile.getName());
-        if (extension.isEmpty() || extension.equals(KotlinFileType.EXTENSION) || isCompiledFile(psiFile)) {
+        if (extension.isEmpty() || extension.equals(KotlinFileType.EXTENSION) || extension.equals("kt") || isCompiledFile(psiFile)) {
             ktParsing.parseFile();
         }
         else {

@@ -675,6 +675,14 @@ class KotlinCoreEnvironment private constructor(
             registerApplicationServicesForCLI(applicationEnvironment)
             registerApplicationServices(applicationEnvironment)
 
+            // Register legacy .kt/.kts extensions for test compatibility with Kotlin test data files
+            if (environmentMode == KotlinCoreApplicationEnvironmentMode.UnitTest) {
+                with(applicationEnvironment) {
+                    registerFileType(KotlinFileType.INSTANCE, "kt")
+                    registerFileType(KotlinFileType.INSTANCE, "kts")
+                }
+            }
+
             return applicationEnvironment
         }
 
