@@ -50,7 +50,7 @@ sealed class FirDeclarationOrigin(
 
     object DynamicScope : FirDeclarationOrigin()
     object MentaDynamicScope : FirDeclarationOrigin()
-    class MentaRole(val roleName: String, val isEmptyRequires: Boolean = false) : FirDeclarationOrigin(fromSource = true) {
+    class MentaRole(val roleName: String, val isEmptyRequires: Boolean = false, val isForwardingStub: Boolean = false) : FirDeclarationOrigin(fromSource = true) {
         override fun equals(other: Any?): Boolean = other is MentaRole && roleName == other.roleName
         override fun hashCode(): Int = roleName.hashCode()
     }

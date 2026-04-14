@@ -2007,7 +2007,7 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
 
         if (at(KtTokens.LPAR)) {
             parseValueParameterList(isFunctionTypeContents = false, typeRequired = false, recoverySet = VALUE_PARAMETERS_FOLLOW_SET)
-        } else {
+        } else if (!at(KtTokens.EQ)) {
             error("Expecting '('")
         }
 

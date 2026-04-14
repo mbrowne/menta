@@ -1962,7 +1962,7 @@ public class KotlinParsing extends AbstractKotlinParsing {
         if (at(LPAR)) {
             parseValueParameterList(false, /* typeRequired  = */ false, VALUE_PARAMETERS_FOLLOW_SET);
         }
-        else {
+        else if (!at(EQ)) {
             error("Expecting '('");
         }
 

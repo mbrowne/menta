@@ -26,13 +26,18 @@ import org.jetbrains.kotlin.fir.declarations.utils.*
 import org.jetbrains.kotlin.fir.diagnostics.ConeSimpleDiagnostic
 import org.jetbrains.kotlin.fir.diagnostics.DiagnosticKind
 import org.jetbrains.kotlin.fir.expressions.*
+import org.jetbrains.kotlin.fir.expressions.builder.buildArgumentList
 import org.jetbrains.kotlin.fir.expressions.builder.buildEmptyExpressionBlock
+import org.jetbrains.kotlin.fir.expressions.builder.buildFunctionCall
+import org.jetbrains.kotlin.fir.expressions.builder.buildReturnExpression
+import org.jetbrains.kotlin.fir.expressions.builder.buildPropertyAccessExpression
 import org.jetbrains.kotlin.fir.expressions.impl.FirSingleExpressionBlock
 import org.jetbrains.kotlin.fir.extensions.extensionService
 import org.jetbrains.kotlin.fir.extensions.replSnippetResolveExtensions
 import org.jetbrains.kotlin.fir.extensions.scriptResolutionHacksComponent
 import org.jetbrains.kotlin.fir.references.FirResolvedErrorReference
 import org.jetbrains.kotlin.fir.references.FirResolvedNamedReference
+import org.jetbrains.kotlin.fir.references.builder.buildSimpleNamedReference
 import org.jetbrains.kotlin.fir.resolve.*
 import org.jetbrains.kotlin.fir.resolve.ResolutionMode.ArrayLiteralPosition
 import org.jetbrains.kotlin.fir.resolve.calls.ConeResolvedLambdaAtom
@@ -47,9 +52,11 @@ import org.jetbrains.kotlin.fir.resolve.substitution.asCone
 import org.jetbrains.kotlin.fir.resolve.transformers.FirStatusResolver
 import org.jetbrains.kotlin.fir.resolve.transformers.contracts.runContractResolveForFunction
 import org.jetbrains.kotlin.fir.resolve.transformers.transformVarargTypeToArrayType
+import org.jetbrains.kotlin.fir.scopes.CallableCopyTypeCalculator
 import org.jetbrains.kotlin.fir.symbols.impl.FirAnonymousObjectSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirConstructorSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirLocalPropertySymbol
+import org.jetbrains.kotlin.fir.symbols.impl.FirNamedFunctionSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirValueParameterSymbol
 import org.jetbrains.kotlin.fir.types.*
 import org.jetbrains.kotlin.fir.types.builder.buildErrorTypeRef
@@ -1037,6 +1044,10 @@ open class FirDeclarationsResolveTransformer(
                 }
             }
 
+            // Expand role method forwarding stubs after receiver type is resolved
+            // (works for both local functions and class members)
+            expandRoleForwardingStubIfNeeded(namedFunction)
+
             context.forFunctionBody(namedFunction, components) {
                 withFullBodyResolve {
                     transformFunctionWithGivenSignature(namedFunction, shouldResolveEverything = shouldResolveEverything)
@@ -1096,6 +1107,102 @@ open class FirDeclarationsResolveTransformer(
         }
 
         return result
+    }
+
+    /**
+     * Expands a role method forwarding stub (e.g. `fun addEntry = this::add`) into a full
+     * forwarding function with value parameters matching the target method.
+     *
+     * At raw FIR time, we don't know the target method's signature because types aren't resolved yet.
+     * By the time body resolve runs, the receiver type is resolved so we can look up the target.
+     */
+    private fun expandRoleForwardingStubIfNeeded(namedFunction: FirNamedFunction) {
+        val mentaOrigin = namedFunction.origin as? FirDeclarationOrigin.MentaRole ?: return
+        if (!mentaOrigin.isForwardingStub) return
+
+        // Get the callable reference from the body
+        val body = namedFunction.body ?: return
+        val callableRef: FirCallableReferenceAccess
+        when (body) {
+            is FirSingleExpressionBlock -> {
+                val stmt = body.statements.singleOrNull()
+                // In expression-body functions, the statement is a FirReturnExpression wrapping the actual expression
+                val expr = (stmt as? FirReturnExpression)?.result ?: stmt
+                callableRef = expr as? FirCallableReferenceAccess ?: return
+            }
+            else -> return
+        }
+
+        val targetName = callableRef.calleeReference.name
+
+        // Resolve the receiver type and look up the target method
+        val receiverType = namedFunction.receiverParameter?.typeRef?.coneType ?: return
+        val typeScope = receiverType.scope(session, scopeSession, CallableCopyTypeCalculator.DoNothing, FirResolvePhase.STATUS)
+            ?: return
+
+        val targetFunctions = mutableListOf<FirNamedFunctionSymbol>()
+        typeScope.processFunctionsByName(targetName) { targetFunctions.add(it) }
+
+        // Use the first match (TODO: handle overloads if needed in the future)
+        val targetSymbol = targetFunctions.firstOrNull() ?: return
+        val targetFunction = targetSymbol.fir
+
+        // Create value parameters matching the target function's parameters
+        val newValueParams = targetFunction.valueParameters.map { targetParam ->
+            buildValueParameter {
+                moduleData = session.moduleData
+                origin = FirDeclarationOrigin.MentaRole(mentaOrigin.roleName, mentaOrigin.isEmptyRequires)
+                name = targetParam.name
+                returnTypeRef = buildResolvedTypeRef {
+                    coneType = targetParam.returnTypeRef.coneType
+                }
+                symbol = FirValueParameterSymbol()
+                containingDeclarationSymbol = namedFunction.symbol
+                isCrossinline = false
+                isNoinline = false
+                isVararg = targetParam.isVararg
+            }
+        }
+        namedFunction.replaceValueParameters(newValueParams)
+
+        // Build the forwarding call body: targetName(param0, param1, ...)
+        val forwardingCall = buildFunctionCall {
+            source = namedFunction.source
+            calleeReference = buildSimpleNamedReference {
+                source = namedFunction.source
+                name = targetName
+            }
+            argumentList = buildArgumentList {
+                for (param in newValueParams) {
+                    arguments += buildPropertyAccessExpression {
+                        source = namedFunction.source
+                        calleeReference = buildSimpleNamedReference {
+                            source = namedFunction.source
+                            name = param.name
+                        }
+                    }
+                }
+            }
+            origin = FirFunctionCallOrigin.Regular
+        }
+
+        // Set the return type to match the target function
+        val targetReturnType = targetFunction.returnTypeRef.coneType
+        namedFunction.replaceReturnTypeRef(buildResolvedTypeRef {
+            coneType = targetReturnType
+        })
+
+        // Wrap the forwarding call in a return expression targeting this function
+        val functionTarget = FirFunctionTarget(namedFunction.name.identifier, isLambda = false)
+        functionTarget.bind(namedFunction)
+        val forwardingReturn = buildReturnExpression {
+            source = namedFunction.source?.fakeElement(KtFakeSourceElementKind.ImplicitReturn.FromExpressionBody)
+            target = functionTarget
+            result = forwardingCall
+        }
+
+        // Replace the body with the forwarding return as an expression body
+        namedFunction.replaceBody(FirSingleExpressionBlock(forwardingReturn))
     }
 
     override fun transformFunction(

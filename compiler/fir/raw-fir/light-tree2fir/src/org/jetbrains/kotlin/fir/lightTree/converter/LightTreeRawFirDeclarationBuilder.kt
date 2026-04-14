@@ -461,6 +461,10 @@ class LightTreeRawFirDeclarationBuilder(
                 }
             }
 
+            // Detect forwarding stub: no value parameter list and body is a callable reference
+            val isForwardingStub = valueParametersList == null && hasEqToken
+                    && expression?.tokenType == CALLABLE_REFERENCE_EXPRESSION
+
             val resolvedReturnType = returnType
                 ?: if (block != null || !hasEqToken) implicitUnitType else implicitType
 
@@ -493,7 +497,7 @@ class LightTreeRawFirDeclarationBuilder(
                 dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
 
                 moduleData = baseModuleData
-                origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeNode == null)
+                origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeNode == null, isForwardingStub = isForwardingStub)
                 returnTypeRef = resolvedReturnType
 
                 context.firFunctionTargets += target
