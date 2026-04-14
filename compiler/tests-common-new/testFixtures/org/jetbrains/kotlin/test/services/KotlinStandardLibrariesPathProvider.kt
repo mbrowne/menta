@@ -265,7 +265,7 @@ object StandardLibrariesPathProviderForKotlinProject : KotlinStandardLibrariesPa
     }
 
     private fun String.dist(): String {
-        return "dist/kotlinc/lib/$this"
+        return "dist/mentac/lib/$this"
     }
 
     private fun String.distCommon(): String {

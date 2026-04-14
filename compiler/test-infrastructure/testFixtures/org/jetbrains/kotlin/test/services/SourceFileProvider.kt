@@ -117,10 +117,10 @@ fun SourceFileProvider.getKtSourceFilesForSourceFiles(
 }
 
 val TestFile.isKtFile: Boolean
-    get() = name.endsWith(".kt") || name.endsWith(".kts")
+    get() = name.endsWith(".kt") || name.endsWith(".kts") || name.endsWith(".mnt") || name.endsWith(".mnts")
 
 val TestFile.isKtsFile: Boolean
-    get() = name.endsWith(".kts")
+    get() = name.endsWith(".kts") || name.endsWith(".mnts")
 
 val TestFile.isJavaFile: Boolean
     get() = name.endsWith(".java")

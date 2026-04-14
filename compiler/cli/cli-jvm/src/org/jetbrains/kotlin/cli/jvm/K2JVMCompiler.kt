@@ -220,7 +220,7 @@ class K2JVMCompiler : CLICompiler<K2JVMCompilerArguments>() {
         }
     }
 
-    override fun executableScriptFileName(): String = "kotlinc-jvm"
+    override fun executableScriptFileName(): String = "mentac-jvm"
 
     override fun createMetadataVersion(versionArray: IntArray): BinaryVersion = MetadataVersion(*versionArray)
 

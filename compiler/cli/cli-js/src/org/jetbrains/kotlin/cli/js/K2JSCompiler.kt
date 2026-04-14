@@ -58,7 +58,7 @@ class K2JSCompiler : CLICompiler<K2JSCompilerArguments>() {
         CommonWebConfigurationUpdater.setupPlatformSpecificArgumentsAndServices(configuration, arguments, services)
     }
 
-    override fun executableScriptFileName(): String = "kotlinc-js"
+    override fun executableScriptFileName(): String = "mentac-js"
 
     override fun createMetadataVersion(versionArray: IntArray): BinaryVersion {
         return MetadataVersion(*versionArray)

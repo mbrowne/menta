@@ -142,7 +142,7 @@ object Main {
                     restAsArguments()
                     break
                 }
-                howtorun == HowToRun.SCRIPT || howtorun == HowToRun.GUESS && arg.endsWith(".kts") -> {
+                howtorun == HowToRun.SCRIPT || howtorun == HowToRun.GUESS && arg.endsWith(".mnts") -> {
                     setRunner(ScriptRunner(arg))
                     restAsArguments()
                     break

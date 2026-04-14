@@ -782,7 +782,7 @@ class KotlinCoreEnvironment private constructor(
         @K1Deprecation
         fun registerApplicationServices(applicationEnvironment: KotlinCoreApplicationEnvironment) {
             with(applicationEnvironment) {
-                registerFileType(KotlinFileType.INSTANCE, "kt")
+                registerFileType(KotlinFileType.INSTANCE, KotlinFileType.EXTENSION)
                 registerFileType(KotlinFileType.INSTANCE, KotlinParserDefinition.STD_SCRIPT_SUFFIX)
                 registerParserDefinition(KotlinParserDefinition())
                 application.registerService(KotlinBinaryClassCache::class.java, KotlinBinaryClassCache())

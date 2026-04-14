@@ -102,7 +102,7 @@ abstract class ClasspathSnapshotTestCommon {
          * Set to `true` to (re)generate Kotlin .class files locally which can then be checked in (remember to set this value back to
          * `false` afterwards, DO NOT check in this code when this value = `true`).
          *
-         * Reason for this flag: If <kotlin-repo>/dist/kotlinc/lib/kotlin-compiler.jar is available (e.g., by running ./gradlew dist), we
+         * Reason for this flag: If <kotlin-repo>/dist/mentac/lib/kotlin-compiler.jar is available (e.g., by running ./gradlew dist), we
          * will be able to call the Kotlin compiler to generate classes. However, kotlin-compiler.jar is currently not available in CI
          * builds, so we need to pre-compile the classes locally and put them in the test data to check in.
          */
@@ -134,7 +134,7 @@ abstract class ClasspathSnapshotTestCommon {
             //     org.jetbrains.kotlin.test.MockLibraryUtil.compileKotlin(
             //         srcDir.path, classesDir, extraClasspath = classpath.map { it.path }.toTypedArray())
             // However, it currently fails with UnsupportedClassVersionError, so we have to launch a new kotlinc process instead.
-            val kotlincBinary = if (isWindows) "dist/kotlinc/bin/kotlinc.bat" else "dist/kotlinc/bin/kotlinc"
+            val kotlincBinary = if (isWindows) "dist/mentac/bin/mentac.bat" else "dist/mentac/bin/mentac"
             check(File(kotlincBinary).exists()) { "'${File(kotlincBinary).absolutePath}' not found. Run ./gradlew dist first." }
             val commandAndArgs = listOf(
                 kotlincBinary,

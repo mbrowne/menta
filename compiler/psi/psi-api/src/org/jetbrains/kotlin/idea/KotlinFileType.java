@@ -13,10 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class KotlinFileType extends LanguageFileType {
-    public static final String EXTENSION = "kt";
+    public static final String EXTENSION = "mnt";
     public static final String DOT_DEFAULT_EXTENSION = "." + EXTENSION;
 
-    public static final String SCRIPT_EXTENSION = "kts";
+    public static final String SCRIPT_EXTENSION = "mnts";
     public static final String DOT_SCRIPT_EXTENSION = "." + SCRIPT_EXTENSION;
 
     public static final KotlinFileType INSTANCE = new KotlinFileType();

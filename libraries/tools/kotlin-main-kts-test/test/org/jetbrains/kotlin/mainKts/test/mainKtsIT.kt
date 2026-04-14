@@ -35,7 +35,7 @@ class MainKtsIT {
 
     @Test
     fun testImport() {
-        val mainKtsJar = File("dist/kotlinc/lib/kotlin-main-kts.jar")
+        val mainKtsJar = File("dist/mentac/lib/kotlin-main-kts.jar")
         Assert.assertTrue("kotlin-main-kts.jar not found, run dist task: ${mainKtsJar.absolutePath}", mainKtsJar.exists())
 
         runWithK2JVMCompiler(
@@ -47,7 +47,7 @@ class MainKtsIT {
 
     @Test
     fun testCompileWithImport() {
-        val mainKtsJar = File("dist/kotlinc/lib/kotlin-main-kts.jar")
+        val mainKtsJar = File("dist/mentac/lib/kotlin-main-kts.jar")
         Assert.assertTrue("kotlin-main-kts.jar not found, run dist task: ${mainKtsJar.absolutePath}", mainKtsJar.exists())
 
         runWithK2JVMCompiler(
@@ -223,7 +223,7 @@ fun runWithK2JVMCompilerAndMainKts(
         runWithK2JVMCompiler(
             scriptPath, expectedOutPatterns, expectedExitCode,
             classpath = listOf(
-                File("dist/kotlinc/lib/kotlin-main-kts.jar").also {
+                File("dist/mentac/lib/kotlin-main-kts.jar").also {
                     Assert.assertTrue("kotlin-main-kts.jar not found, run dist task: ${it.absolutePath}", it.exists())
                 }
             ),
