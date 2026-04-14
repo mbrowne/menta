@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -681,6 +682,7 @@ val FIR_NON_SUPPRESSIBLE_ERROR_NAMES: Set<String> = setOf(
     "NON_ASCENDING_VERSION_ANNOTATION",
     "VERSION_OVERLOADS_TOO_COMPLEX_EXPRESSION",
     "EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS",
+    "ROLE_PLAYER_RESOLVES_TO_TYPE",
     "OVERRIDE_CANNOT_BE_STATIC",
     "JVM_STATIC_NOT_IN_OBJECT_OR_CLASS_COMPANION",
     "JVM_STATIC_NOT_IN_OBJECT_OR_COMPANION",

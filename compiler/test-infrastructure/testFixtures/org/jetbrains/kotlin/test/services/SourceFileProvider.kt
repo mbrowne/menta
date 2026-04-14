@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2023 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -116,10 +117,10 @@ fun SourceFileProvider.getKtSourceFilesForSourceFiles(
 }
 
 val TestFile.isKtFile: Boolean
-    get() = name.endsWith(".kt") || name.endsWith(".kts")
+    get() = name.endsWith(".kt") || name.endsWith(".kts") || name.endsWith(".mnt") || name.endsWith(".mnts")
 
 val TestFile.isKtsFile: Boolean
-    get() = name.endsWith(".kts")
+    get() = name.endsWith(".kts") || name.endsWith(".mnts")
 
 val TestFile.isJavaFile: Boolean
     get() = name.endsWith(".java")

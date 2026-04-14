@@ -63,7 +63,7 @@ private class KotlinExplainHostConfiguration : ScriptingHostConfiguration(
     })
 
 private val additionalClasspath = System.getProperty("kotlin.test.script.classpath")
-private val powerAssertJar = File("dist/kotlinc/lib/power-assert-compiler-plugin.jar").absolutePath
+private val powerAssertJar = File("dist/mentac/lib/power-assert-compiler-plugin.jar").absolutePath
 
 class ScriptingWithExplanationCompilerTest {
     companion object {

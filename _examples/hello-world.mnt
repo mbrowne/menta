@@ -6,16 +6,16 @@ define User(override public val name: String): NamedUser {}
 
 fun SayHello(user: NamedUser) {
     // might want to change this to an example that doesn't use the context as a role player
-    greeter = SayHello
+    val greeter = ::SayHello
     greeter.greet()
 
     role greeter {
         public fun greet() {
             println("Hello and welcome, ${user.name}!")
         }
-    } requires SayHello
+    } requires {}
 
-    role User requires NamedUser
+    role user requires NamedUser
 }
 
 fun main() {

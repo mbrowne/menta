@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -124,7 +125,7 @@ class KotlinMetadataCompiler : CLICompiler<K2MetadataCompilerArguments>() {
     }
 
     // TODO: update this once a launcher script for K2MetadataCompiler is available
-    override fun executableScriptFileName(): String = "kotlinc"
+    override fun executableScriptFileName(): String = "mentac"
 
     public override fun createMetadataVersion(versionArray: IntArray): BinaryVersion = BuiltInsBinaryVersion(*versionArray)
 

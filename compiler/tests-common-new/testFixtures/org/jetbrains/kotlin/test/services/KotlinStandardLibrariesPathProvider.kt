@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2022 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -264,7 +265,7 @@ object StandardLibrariesPathProviderForKotlinProject : KotlinStandardLibrariesPa
     }
 
     private fun String.dist(): String {
-        return "dist/kotlinc/lib/$this"
+        return "dist/mentac/lib/$this"
     }
 
     private fun String.distCommon(): String {

@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -48,8 +49,11 @@ open class LocalDeclarationPopupLowering(
                 declaration.setter?.transformStatement(this)
 
                 val delegate = declaration.delegate
-                requireNotNull(delegate) { "Local delegated property ${declaration.render()} has no delegate" }
-                return delegate.transformStatement(this)
+                if (delegate != null) {
+                    return delegate.transformStatement(this)
+                }
+                // Properties without a delegate (e.g. role extension properties) — replace with empty composite
+                return IrCompositeImpl(declaration.startOffset, declaration.endOffset, context.irBuiltIns.unitType)
             }
 
             override fun visitRichFunctionReference(expression: IrRichFunctionReference): IrExpression {

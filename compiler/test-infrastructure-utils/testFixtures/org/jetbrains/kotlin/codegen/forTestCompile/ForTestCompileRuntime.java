@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2018 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -25,7 +26,7 @@ public class ForTestCompileRuntime {
 
     @NotNull
     public static File runtimeJarForTests() {
-        return propertyOrDist(KOTLIN_FULL_STDLIB_PATH, "dist/kotlinc/lib/kotlin-stdlib.jar");
+        return propertyOrDist(KOTLIN_FULL_STDLIB_PATH, "dist/mentac/lib/kotlin-stdlib.jar");
     }
 
     /**
@@ -35,12 +36,12 @@ public class ForTestCompileRuntime {
     @NotNull
     @Deprecated
     public static File runtimeJarFromDistForTests() {
-        return new File("dist/kotlinc/lib/kotlin-stdlib.jar");
+        return new File("dist/mentac/lib/kotlin-stdlib.jar");
     }
 
     @NotNull
     public static File runtimeJarForTestsWithJdk8() {
-        return propertyOrDist(KOTLIN_FULL_STDLIB_PATH, "dist/kotlinc/lib/kotlin-stdlib-jdk8.jar");
+        return propertyOrDist(KOTLIN_FULL_STDLIB_PATH, "dist/mentac/lib/kotlin-stdlib-jdk8.jar");
     }
 
     @NotNull
@@ -50,12 +51,12 @@ public class ForTestCompileRuntime {
 
     @NotNull
     public static File kotlinTestJarForTests() {
-        return propertyOrDist(KOTLIN_TEST_JAR_PATH, "dist/kotlinc/lib/kotlin-test.jar");
+        return propertyOrDist(KOTLIN_TEST_JAR_PATH, "dist/mentac/lib/kotlin-test.jar");
     }
 
     @NotNull
     public static File reflectJarForTests() {
-        return propertyOrDist(KOTLIN_REFLECT_JAR_PATH, "dist/kotlinc/lib/kotlin-reflect.jar");
+        return propertyOrDist(KOTLIN_REFLECT_JAR_PATH, "dist/mentac/lib/kotlin-reflect.jar");
     }
 
     /**
@@ -65,17 +66,17 @@ public class ForTestCompileRuntime {
     @NotNull
     @Deprecated
     public static File reflectJarFromDistForTests() {
-        return new File("dist/kotlinc/lib/kotlin-reflect.jar");
+        return new File("dist/mentac/lib/kotlin-reflect.jar");
     }
 
     @NotNull
     public static File scriptRuntimeJarForTests() {
-        return propertyOrDist(KOTLIN_SCRIPT_RUNTIME_PATH, "dist/kotlinc/lib/kotlin-script-runtime.jar");
+        return propertyOrDist(KOTLIN_SCRIPT_RUNTIME_PATH, "dist/mentac/lib/kotlin-script-runtime.jar");
     }
 
     @NotNull
     public static File distKotlincForTests() {
-        return new File(propertyOrDist(KOTLIN_DIST_PATH, "dist"), "kotlinc");
+        return new File(propertyOrDist(KOTLIN_DIST_PATH, "dist"), "mentac");
     }
 
     @NotNull
@@ -115,7 +116,7 @@ public class ForTestCompileRuntime {
 
     @NotNull
     public static File runtimeSourcesJarForTests() {
-        return propertyOrDist(KOTLIN_FULL_STDLIB_SOURCES_PATH, "dist/kotlinc/lib/kotlin-stdlib-sources.jar");
+        return propertyOrDist(KOTLIN_FULL_STDLIB_SOURCES_PATH, "dist/mentac/lib/kotlin-stdlib-sources.jar");
     }
 
     @NotNull
@@ -153,12 +154,12 @@ public class ForTestCompileRuntime {
 
     @NotNull
     public static File jvmAnnotationsForTests() {
-        return propertyOrDist(KOTLIN_ANNOTATIONS_PATH, "dist/kotlinc/lib/kotlin-annotations-jvm.jar");
+        return propertyOrDist(KOTLIN_ANNOTATIONS_PATH, "dist/mentac/lib/kotlin-annotations-jvm.jar");
     }
 
     @NotNull
     public static File stdlibJsForTests() {
-        return propertyOrDist(KOTLIN_JS_STDLIB_KLIB_PATH, "dist/kotlinc/lib/kotlin-stdlib-js.klib");
+        return propertyOrDist(KOTLIN_JS_STDLIB_KLIB_PATH, "dist/mentac/lib/kotlin-stdlib-js.klib");
     }
 
     @NotNull

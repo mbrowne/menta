@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -674,7 +675,7 @@ abstract class CompileServiceImplBase(
     ): ExitCode {
         reporter.startMeasureGc()
         @Suppress("DEPRECATION") // TODO: get rid of that parsing KT-62759
-        val allKotlinFiles = extractKotlinSourcesFromFreeCompilerArguments(args, setOf("kt"), includeJavaSources = false)
+        val allKotlinFiles = extractKotlinSourcesFromFreeCompilerArguments(args, setOf("mnt"), includeJavaSources = false)
 
         val workingDir = incrementalCompilationOptions.workingDir
         val modulesApiHistory = incrementalCompilationOptions.multiModuleICSettings?.run {

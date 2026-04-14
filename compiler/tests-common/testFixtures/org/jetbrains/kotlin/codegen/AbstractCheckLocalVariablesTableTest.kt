@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -67,8 +68,14 @@ abstract class AbstractCheckLocalVariablesTableTest : CodegenTestCase() {
             it.toString().replaceFirst("<name for destructuring parameter [0-9]+>".toRegex(), "<destruct>") // use FIR name for it
         }.sorted().joinToString("\n")
 
-    private fun getExpectedVariablesAsString(testFileLines: List<String>): String =
-        testFileLines.asSequence().filter { line -> line.startsWith("// VARIABLE ") }.joinToString("\n")
+    private fun getExpectedVariablesAsString(testFileLines: List<String>): String {
+        // If running with FIR and the test file has K2-specific variable expectations, use those
+        val k2Lines = testFileLines.asSequence().filter { line -> line.startsWith("// VARIABLE_K2 ") }.toList()
+        if (useFir && k2Lines.isNotEmpty()) {
+            return k2Lines.joinToString("\n") { it.replace("// VARIABLE_K2 ", "// VARIABLE ") }
+        }
+        return testFileLines.asSequence().filter { line -> line.startsWith("// VARIABLE ") }.joinToString("\n")
+    }
 
     private class LocalVariable(
         val name: String,

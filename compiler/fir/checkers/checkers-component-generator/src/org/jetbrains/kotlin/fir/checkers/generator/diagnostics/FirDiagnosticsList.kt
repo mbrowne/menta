@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2023 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -2280,6 +2281,9 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
     val MENTA_ROLES by object : DiagnosticGroup("Menta roles") {
         val EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS by error<PsiElement> {
             parameter<ConeKotlinType>("type")
+        }
+        val ROLE_PLAYER_RESOLVES_TO_TYPE by error<PsiElement> {
+            parameter<String>("roleName")
         }
     }
 }

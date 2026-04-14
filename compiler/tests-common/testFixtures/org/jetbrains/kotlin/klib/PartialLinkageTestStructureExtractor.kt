@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -110,6 +111,6 @@ abstract class PartialLinkageTestStructureExtractor : KlibCompilerInvocationTest
 
         private const val PL_UTILS_DIR = "__utils__"
         private const val TEST_MODE_PLACEHOLDER = "__UNKNOWN_TEST_MODE__"
-        private val knownSourceExtensions = setOf("kt", "js", "def", "h", "c", "cpp")
+        private val knownSourceExtensions = setOf("kt", "mnt", "js", "def", "h", "c", "cpp")
     }
 }

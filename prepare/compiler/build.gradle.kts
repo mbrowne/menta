@@ -379,7 +379,7 @@ sourcesJar {
 javadocJar()
 
 val distKotlinc = distTask<Sync>("distKotlinc") {
-    destinationDir = File("$distDir/kotlinc")
+    destinationDir = File("$distDir/mentac")
 
     from(buildNumber)
 

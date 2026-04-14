@@ -58,7 +58,7 @@ fun runWithKotlinLauncherScript(
 ) {
     val executableFileName =
         if (System.getProperty("os.name").contains("windows", ignoreCase = true)) "$launcherScriptName.bat" else launcherScriptName
-    val launcherFile = File("dist/kotlinc/bin/$executableFileName")
+    val launcherFile = File("dist/mentac/bin/$executableFileName")
     assertTrue(launcherFile.exists(), "Launcher script not found, run dist task: ${launcherFile.absolutePath}")
 
     val args = arrayListOf(launcherFile.absolutePath).apply {
@@ -86,7 +86,7 @@ fun runWithKotlinc(
     additionalEnvVars: Iterable<Pair<String, String>>? = null
 ) {
     runWithKotlinLauncherScript(
-        "kotlinc", compilerArgs.asIterable(), expectedOutPatterns, expectedErrPatterns,
+        "mentac", compilerArgs.asIterable(), expectedOutPatterns, expectedErrPatterns,
         expectedExitCode, workDirectory, classpath, additionalEnvVars
     )
 }
@@ -174,7 +174,7 @@ fun runWithK2JVMCompiler(
     skipScriptArgument: Boolean = false,
     disableScriptCompilationCache: Boolean = true,
 ) {
-    val args = arrayListOf(K2JVMCompilerArguments::kotlinHome.cliArgument, "dist/kotlinc").apply {
+    val args = arrayListOf(K2JVMCompilerArguments::kotlinHome.cliArgument, "dist/mentac").apply {
         if (classpath.isNotEmpty()) {
             add(K2JVMCompilerArguments::classpath.cliArgument)
             add(classpath.joinToString(File.pathSeparator))

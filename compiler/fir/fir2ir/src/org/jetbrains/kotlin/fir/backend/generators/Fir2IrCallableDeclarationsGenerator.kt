@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -823,6 +824,46 @@ class Fir2IrCallableDeclarationsGenerator(private val c: Fir2IrComponents) : Fir
                     )
                 }
                 annotationGenerator.generate(this, property)
+            }
+        }
+        return irProperty
+    }
+
+    // ------------------------------------ role properties ------------------------------------
+
+    fun createIrLocalRoleProperty(
+        property: FirProperty,
+        irParent: IrDeclarationParent,
+        symbols: LocalDelegatedPropertySymbols
+    ): IrLocalDelegatedProperty = convertCatching(property) {
+        val type = property.returnTypeRef.toIrType()
+        val origin = IrDeclarationOrigin.DEFINED
+        val irProperty = property.convertWithOffsets { startOffset, endOffset ->
+            IrFactoryImpl.createLocalDelegatedProperty(
+                startOffset = startOffset,
+                endOffset = endOffset,
+                origin = origin,
+                name = property.name,
+                symbol = symbols.propertySymbol,
+                type = type,
+                isVar = property.isVar
+            )
+        }.apply {
+            parent = irParent
+            metadata = FirMetadataSource.Property(property)
+            declarationStorage.withScope(symbol) {
+                delegate = null
+                getter = createIrPropertyAccessor(
+                    property.getter, property, this@apply, symbols.getterSymbol, type, irParent, false,
+                    IrDeclarationOrigin.DEFINED, startOffset, endOffset
+                )
+                if (property.isVar) {
+                    setter = createIrPropertyAccessor(
+                        property.setter, property, this@apply, symbols.setterSymbol!!, type, irParent, true,
+                        IrDeclarationOrigin.DEFINED, startOffset, endOffset
+                    )
+                }
+                annotationGenerator.generate(this@apply, property)
             }
         }
         return irProperty

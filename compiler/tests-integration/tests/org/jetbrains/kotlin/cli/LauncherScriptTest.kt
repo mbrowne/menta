@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -104,7 +105,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testKotlincSimple() {
         runProcess(
-            "kotlinc",
+            "mentac",
             "$testDataDirectory/helloWorld.kt",
             K2JVMCompilerArguments::destination.cliArgument, tmpdir.path
         )
@@ -112,7 +113,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testKotlincJvmSimple() {
         runProcess(
-            "kotlinc-jvm",
+            "mentac-jvm",
             "$testDataDirectory/helloWorld.kt",
             K2JVMCompilerArguments::destination.cliArgument, tmpdir.path
         )
@@ -120,7 +121,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testKotlincJvmScriptWithClassPathFromSysProp() {
         runProcess(
-            "kotlinc-jvm",
+            "mentac-jvm",
             "-script",
             "$testDataDirectory/classPathPropTest.kts",
             expectedStdout = "kotlin-compiler.jar\n"
@@ -146,7 +147,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testKotlincJsSimple() {
         runProcess(
-            "kotlinc-js",
+            "mentac-js",
             "$testDataDirectory/emptyMain.kt",
             K2JSCompilerArguments::suppressWarnings.cliArgument,
             K2JSCompilerArguments::libraries.cliArgument,
@@ -364,7 +365,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
     fun testKotlincJdk17() {
         val jdk17 = mapOf("JAVA_HOME" to KtTestUtil.getJdk17Home().absolutePath)
         runProcess(
-            "kotlinc", "$testDataDirectory/helloWorld.kt", K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
+            "mentac", "$testDataDirectory/helloWorld.kt", K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
             environment = jdk17,
         )
 
@@ -376,7 +377,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testEmptyJArgument() {
         runProcess(
-            "kotlinc",
+            "mentac",
             "$testDataDirectory/helloWorld.kt",
             K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
             "-J", expectedStdout = "error: empty -J argument\n",
@@ -487,7 +488,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
     fun testKotlinUseJdkModuleFromMainClass() {
         val jdk11 = mapOf("JAVA_HOME" to KtTestUtil.getJdk11Home().absolutePath)
         runProcess(
-            "kotlinc", "$testDataDirectory/jdkModuleUsage.kt", K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
+            "mentac", "$testDataDirectory/jdkModuleUsage.kt", K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
             environment = jdk11,
         )
         runProcess(
@@ -501,7 +502,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
         val jdk11 = mapOf("JAVA_HOME" to KtTestUtil.getJdk11Home().absolutePath)
         val output = tmpdir.resolve("out.jar")
         runProcess(
-            "kotlinc", "$testDataDirectory/jdkModuleUsage.kt", K2JVMCompilerArguments::destination.cliArgument, output.path,
+            "mentac", "$testDataDirectory/jdkModuleUsage.kt", K2JVMCompilerArguments::destination.cliArgument, output.path,
             environment = jdk11,
         )
         runProcess(
@@ -513,7 +514,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testInterpreterClassLoader() {
         runProcess(
-            "kotlinc", "$testDataDirectory/interpreterClassLoader.kt", K2JVMCompilerArguments::destination.cliArgument, tmpdir.path
+            "mentac", "$testDataDirectory/interpreterClassLoader.kt", K2JVMCompilerArguments::destination.cliArgument, tmpdir.path
         )
     }
 
@@ -533,7 +534,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
         }
         val jdk11 = mapOf("JAVA_HOME" to KtTestUtil.getJdk11Home().absolutePath)
         runProcess(
-            "kotlinc", moduleInfo.absolutePath, testKt.absolutePath, K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
+            "mentac", moduleInfo.absolutePath, testKt.absolutePath, K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
             environment = jdk11,
             expectedExitCode = 0,
             expectedStdout = "",
@@ -559,7 +560,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
             writeText("val c = C()")
         }
         runProcess(
-            "kotlinc",
+            "mentac",
             K2JVMCompilerArguments::classpath.cliArgument,
             ".",
             K2JVMCompilerArguments::destination.cliArgument,
@@ -573,7 +574,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
     }
 
     fun testKotlinSimple() {
-        runProcess("kotlinc", "$testDataDirectory/helloWorld.kt", "-d", tmpdir.path)
+        runProcess("mentac", "$testDataDirectory/helloWorld.kt", "-d", tmpdir.path)
         runProcess(
             "kotlin",
             "-cp", tmpdir.path,
@@ -584,7 +585,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
 
     fun testKotlinFromJar() {
         val jarFile = File(tmpdir, "out.jar").path
-        runProcess("kotlinc", "$testDataDirectory/helloWorld.kt", "-d", jarFile)
+        runProcess("mentac", "$testDataDirectory/helloWorld.kt", "-d", jarFile)
         runProcess(
             "kotlin",
             "-cp", jarFile,
@@ -594,7 +595,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
     }
 
     fun testPassSystemProperties() {
-        runProcess("kotlinc", "$testDataDirectory/systemProperties.kt", "-d", tmpdir.path)
+        runProcess("mentac", "$testDataDirectory/systemProperties.kt", "-d", tmpdir.path)
         runProcess(
             "kotlin",
             "-cp", tmpdir.path,
@@ -606,7 +607,7 @@ class LauncherScriptTest : TestCaseWithTmpdir() {
     }
 
     fun testSanitizedStackTrace() {
-        runProcess("kotlinc", "$testDataDirectory/throwException.kt", "-d", tmpdir.path)
+        runProcess("mentac", "$testDataDirectory/throwException.kt", "-d", tmpdir.path)
         runProcess(
             "kotlin",
             "-cp", tmpdir.path,
@@ -639,7 +640,7 @@ Caused by: java.lang.AssertionError: assert
             writeText("val result: String = 42")
         }
         runProcess(
-            "kotlinc", "-Dkotlin.colors.enabled=always", testKt.absolutePath, K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
+            "mentac", "-Dkotlin.colors.enabled=always", testKt.absolutePath, K2JVMCompilerArguments::destination.cliArgument, tmpdir.path,
             expectedExitCode = 1,
             expectedStdout = "",
             expectedStderr = $$"""

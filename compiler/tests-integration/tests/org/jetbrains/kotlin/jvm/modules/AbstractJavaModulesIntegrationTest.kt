@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2018 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -254,7 +255,7 @@ abstract class AbstractJavaModulesIntegrationTest(
     }
 
     fun testDependencyOnStdlibJdk78() {
-        module("usage", listOf(File("dist/kotlinc/lib/kotlin-stdlib-jdk7.jar"), File("dist/kotlinc/lib/kotlin-stdlib-jdk8.jar")))
+        module("usage", listOf(File("dist/mentac/lib/kotlin-stdlib-jdk7.jar"), File("dist/mentac/lib/kotlin-stdlib-jdk8.jar")))
     }
 
     @Suppress("DEPRECATION")

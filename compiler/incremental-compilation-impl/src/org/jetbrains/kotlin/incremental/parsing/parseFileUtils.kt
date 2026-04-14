@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2018 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -27,7 +28,7 @@ import java.io.File
 import java.util.*
 
 fun classesFqNames(files: Set<File>): Set<String> {
-    val existingKotlinFiles = files.filter { it.name.endsWith(".kt", ignoreCase = true) && it.isFile }
+    val existingKotlinFiles = files.filter { it.name.endsWith(".mnt", ignoreCase = true) && it.isFile }
     if (existingKotlinFiles.isEmpty()) return emptySet()
 
     val disposable = Disposer.newDisposable("Disposable for org.jetbrains.kotlin.incremental.parsing.classesFqNames")

@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -6,6 +7,7 @@
 package org.jetbrains.kotlin.cli.pipeline
 
 import org.jetbrains.kotlin.fir.FirSession
+import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.kotlin.fir.backend.utils.createSyntheticFirFileForFir2Ir
 import org.jetbrains.kotlin.fir.declarations.FirDeclarationOrigin
 import org.jetbrains.kotlin.fir.declarations.FirFile
@@ -75,8 +77,9 @@ class FrontendFilesForPluginsGenerationPipelinePhase<A : FrontendPipelineArtifac
                 val generatedCallablesPerPackage = generatedCallables.groupBy { it.callableId.packageName }
                 for ((packageName, packageGeneratedCallables) in generatedCallablesPerPackage) {
                     val callablesPerFileName = packageGeneratedCallables.groupBy {
-                        val name = it.fir.fileNameForPluginGeneratedCallable ?: "__GENERATED__CALLABLES__.kt"
-                        if (name.endsWith(".kt")) name else "$name.kt"
+                        val ext = KotlinFileType.DOT_DEFAULT_EXTENSION
+                        val name = it.fir.fileNameForPluginGeneratedCallable ?: "__GENERATED__CALLABLES__$ext"
+                        if (name.endsWith(ext)) name else "$name$ext"
                     }
                     for ((fileName, callables) in callablesPerFileName) {
                         this += createSyntheticFirFileForFir2Ir(

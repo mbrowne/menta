@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2023 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -1039,6 +1040,19 @@ class Fir2IrDeclarationStorage(
         val irDelegate = irProperty.delegate
         requireNotNull(irDelegate) { "Local delegated property ${irProperty.render()} has no delegate" }
         delegateVariableForPropertyCache[symbol] = irDelegate.symbol
+        getterForPropertyCache[symbol] = irProperty.getter.symbol
+        irProperty.setter?.let { setterForPropertyCache[symbol] = it.symbol }
+        localStorage.putDelegatedProperty(property, symbol)
+        return irProperty
+    }
+
+    fun createAndCacheIrLocalRoleProperty(
+        property: FirProperty,
+        irParent: IrDeclarationParent
+    ): IrLocalDelegatedProperty {
+        val symbols = createLocalDelegatedPropertySymbols(property)
+        val irProperty = callablesGenerator.createIrLocalRoleProperty(property, irParent, symbols)
+        val symbol = irProperty.symbol
         getterForPropertyCache[symbol] = irProperty.getter.symbol
         irProperty.setter?.let { setterForPropertyCache[symbol] = it.symbol }
         localStorage.putDelegatedProperty(property, symbol)

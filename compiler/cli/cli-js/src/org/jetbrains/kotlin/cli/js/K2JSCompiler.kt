@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -57,7 +58,7 @@ class K2JSCompiler : CLICompiler<K2JSCompilerArguments>() {
         CommonWebConfigurationUpdater.setupPlatformSpecificArgumentsAndServices(configuration, arguments, services)
     }
 
-    override fun executableScriptFileName(): String = "kotlinc-js"
+    override fun executableScriptFileName(): String = "mentac-js"
 
     override fun createMetadataVersion(versionArray: IntArray): BinaryVersion {
         return MetadataVersion(*versionArray)

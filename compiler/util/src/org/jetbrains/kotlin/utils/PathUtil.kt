@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -104,7 +105,7 @@ object PathUtil {
     val KOTLIN_STDLIB_COMMON_JAR_PATTERN: Pattern = Pattern.compile("kotlin-stdlib-common.*\\.jar")
     val KOTLIN_JS_LIBRARY_JAR_PATTERN: Pattern = Pattern.compile("kotlin-js-library.*\\.jar")
 
-    const val HOME_FOLDER_NAME = "kotlinc"
+    const val HOME_FOLDER_NAME = "mentac"
     private val NO_PATH = File("<no_path>")
 
     @JvmStatic

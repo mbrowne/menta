@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -116,7 +117,7 @@ open class KotlinParserDefinition : KotlinCommonParserDefinition() {
     companion object {
 
         @JvmField
-        val STD_SCRIPT_SUFFIX = "kts"
+        val STD_SCRIPT_SUFFIX = "mnts"
 
         @JvmField
         val STD_SCRIPT_EXT = "." + STD_SCRIPT_SUFFIX

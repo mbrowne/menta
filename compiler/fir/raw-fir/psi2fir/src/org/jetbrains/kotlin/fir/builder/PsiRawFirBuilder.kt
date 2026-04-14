@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -3314,8 +3315,8 @@ open class PsiRawFirBuilder(
                     }
                 }
                 statements += declarationStatements
-                statements += convertedRoleFunctions
                 statements += convertedRoleProperties
+                statements += convertedRoleFunctions
                 statements += expressionStatements
                 // Emit role player type checks at the end so all variables are in scope
                 statements += roleTypeChecks

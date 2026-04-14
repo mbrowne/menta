@@ -39,8 +39,7 @@ interface MoneyDestination {
 }
 
 /**
- * Money transfer use cse:
- * Bank Customer's mental model
+ * Money transfer use case: Bank Customer's mental model
  */
 fun TransferMoney(
     source: MoneySource,

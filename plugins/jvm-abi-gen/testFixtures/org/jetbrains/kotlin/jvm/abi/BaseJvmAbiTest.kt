@@ -31,7 +31,7 @@ abstract class BaseJvmAbiTest : TestCase() {
         super.tearDown()
     }
 
-    private val abiPluginJar = File("dist/kotlinc/lib/jvm-abi-gen.jar")
+    private val abiPluginJar = File("dist/mentac/lib/jvm-abi-gen.jar")
     private fun abiOption(option: String, value: String): String =
         "plugin:${JvmAbiCommandLineProcessor.COMPILER_PLUGIN_ID}:$option=$value"
 
@@ -128,7 +128,7 @@ abstract class BaseJvmAbiTest : TestCase() {
         }
     }
 
-    protected val kotlinJvmStdlib = File("dist/kotlinc/lib/kotlin-stdlib.jar").also {
+    protected val kotlinJvmStdlib = File("dist/mentac/lib/kotlin-stdlib.jar").also {
         check(it.exists()) { "Stdlib file '$it' does not exist" }
     }
 }

@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -692,6 +693,8 @@ fun getActualTargetList(container: FirAnnotationContainer, session: FirSession):
         )
         is FirProperty -> {
             when {
+                annotated.origin is FirDeclarationOrigin.MentaRole ->
+                    TargetLists.T_MEMBER_PROPERTY(annotated.hasBackingField, annotated.delegate != null)
                 annotated.symbol is FirLocalPropertySymbol ->
                     when {
                         annotated.name == SpecialNames.DESTRUCT -> if (session.languageVersionSettings.supportsFeature(LanguageFeature.LocalVariableTargetedAnnotationOnDestructuring)) {

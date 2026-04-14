@@ -13,3 +13,6 @@ suspend fun test() {
 // VARIABLE : NAME=$continuation TYPE=Lkotlin/coroutines/Continuation;
 // VARIABLE : NAME=$result TYPE=Ljava/lang/Object;
 // VARIABLE : NAME=a TYPE=I
+// K2 does not generate $continuation and $result local variables for this case
+// VARIABLE_K2 : NAME=$completion TYPE=Lkotlin/coroutines/Continuation;
+// VARIABLE_K2 : NAME=a TYPE=I

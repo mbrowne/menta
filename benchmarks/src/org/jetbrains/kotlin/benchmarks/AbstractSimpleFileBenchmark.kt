@@ -58,7 +58,7 @@ private fun createFile(shortName: String, text: String, project: Project): KtFil
 }
 
 private val JDK_PATH = File("${System.getProperty("java.home")!!}/lib/rt.jar")
-private val RUNTIME_JAR = File(System.getProperty("kotlin.runtime.path") ?: "dist/kotlinc/lib/kotlin-runtime.jar")
+private val RUNTIME_JAR = File(System.getProperty("kotlin.runtime.path") ?: "dist/mentac/lib/kotlin-runtime.jar")
 
 private val LANGUAGE_FEATURE_SETTINGS =
     LanguageVersionSettingsImpl(

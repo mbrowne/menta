@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -39,7 +40,7 @@ class ModuleStructureExtractorImpl(
     private val environmentConfigurators: List<AbstractEnvironmentConfigurator>
 ) : ModuleStructureExtractor(testServices, additionalSourceProviders, moduleStructureTransformers) {
     companion object {
-        private val allowedExtensionsForFiles = listOf(".kt", ".kts", ".java", ".js", ".mjs", ".config", ".xml",
+        private val allowedExtensionsForFiles = listOf(".kt", ".kts", ".mnt", ".mnts", ".java", ".js", ".mjs", ".config", ".xml",
             ".def", ".h", ".modulemap"  // native cinterop file extensions
         ) + CINTEROP_SOURCE_EXTENSIONS
 
