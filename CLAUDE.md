@@ -1,11 +1,11 @@
 ---
-project: Kotlin
-languages: [Kotlin, Java]
+project: Menta
+languages: [Menta, Kotlin, Java]
 build-system: Gradle
 repository: monorepo
 ---
 
-# CLAUDE.md - Guidelines for Kotlin Development
+# CLAUDE.md - Guidelines for Menta Development
 
 ## Project Guidelines
 
