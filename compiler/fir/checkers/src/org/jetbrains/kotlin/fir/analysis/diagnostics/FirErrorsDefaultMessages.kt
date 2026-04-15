@@ -262,6 +262,7 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ELSE_MISPLACED_IN
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_CHARACTER_LITERAL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_RANGE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS
+import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.PUBLIC_VAR_WITHOUT_CUSTOM_SETTER
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ROLE_PLAYER_RESOLVES_TO_TYPE
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ENUM_CLASS_CONSTRUCTOR_CALL
 import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors.ENUM_ENTRY_AS_TYPE
@@ -3644,6 +3645,12 @@ object FirErrorsDefaultMessages : BaseDiagnosticRendererFactory() {
             ROLE_PLAYER_RESOLVES_TO_TYPE,
             "No variable ''{0}'' found for role player. Declare a variable or parameter named ''{0}''.",
             TO_STRING,
+        )
+
+        // Menta property diagnostics
+        map.put(
+            PUBLIC_VAR_WITHOUT_CUSTOM_SETTER,
+            "Public mutable properties are not allowed without a custom setter. Use 'val', make it private, add a custom setter, or add a separate method for changing state.",
         )
     }
 }

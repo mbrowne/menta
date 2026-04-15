@@ -2286,6 +2286,10 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
             parameter<String>("roleName")
         }
     }
+
+    val MENTA_PROPERTIES by object : DiagnosticGroup("Menta properties") {
+        val PUBLIC_VAR_WITHOUT_CUSTOM_SETTER by error<KtProperty>(PositioningStrategy.VAL_OR_VAR_NODE)
+    }
 }
 
 private val exposedVisibilityDiagnosticInit: DiagnosticBuilder.() -> Unit = {
