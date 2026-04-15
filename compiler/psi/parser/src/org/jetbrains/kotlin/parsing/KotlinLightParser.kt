@@ -26,7 +26,10 @@ object KotlinLightParser {
         val builder = PsiBuilderFactory.getInstance().createBuilder(KotlinParserDefinition(), KotlinLexer(), code)
         return parse(
             builder,
-            isScript = sourceFile?.let { FileUtilRt.getExtension(it.name) != KotlinFileType.EXTENSION } ?: false
+            isScript = sourceFile?.let {
+                val ext = FileUtilRt.getExtension(it.name)
+                ext != KotlinFileType.EXTENSION && ext != "kt"
+            } ?: false
         ).also {
             if (errorListener != null) reportErrors(it.root, it, errorListener)
         }

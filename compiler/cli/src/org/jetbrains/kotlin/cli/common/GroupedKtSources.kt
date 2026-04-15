@@ -84,7 +84,7 @@ fun collectSources(
             filter = { virtualFile, isExplicit ->
                 when (virtualFile.extension) {
                     JavaFileType.DEFAULT_EXTENSION -> false
-                    KotlinFileType.EXTENSION -> true
+                    KotlinFileType.EXTENSION, "kt" -> true
                     else -> {
                         if (virtualFile.isFile) {
                             ensurePluginsConfigured()
@@ -101,7 +101,7 @@ fun collectSources(
             },
             convertToSourceFiles = {
                 val sources = listOf(KtVirtualFileSourceFile(virtualFileCreator.create(it)))
-                if (it.extension == KotlinFileType.EXTENSION) sources
+                if (it.extension == KotlinFileType.EXTENSION || it.extension == "kt") sources
                 else {
                     // currently applying the extension only to non-kt files, e.g. scripts
                     applyFirProcessSourcesExtension(projectEnvironment, compilerConfiguration, ::findVirtualFile, sources) ?: sources

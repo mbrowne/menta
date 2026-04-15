@@ -157,7 +157,7 @@ abstract class KotlinMultiFileTestWithJava<M : KotlinBaseTest.TestModule, F : Ko
 
     companion object {
         private fun isScriptingNeeded(file: File): Boolean {
-            return file.name.endsWith(KotlinParserDefinition.STD_SCRIPT_EXT)
+            return file.name.endsWith(KotlinParserDefinition.STD_SCRIPT_EXT) || file.name.endsWith(".kts")
         }
     }
 }
