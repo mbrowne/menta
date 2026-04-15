@@ -9,6 +9,7 @@ package foo
 
 define State() {
     public var value: Int = 0
+        set(v) { field = v }
 }
 
 // FILE: main.kt

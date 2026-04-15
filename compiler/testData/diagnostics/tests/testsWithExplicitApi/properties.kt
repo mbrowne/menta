@@ -2,12 +2,13 @@
 // FIR_IDENTICAL
 // SKIP_TXT
 
-public define Foo(<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>val bar<!>: Int, private var bar2: String, internal var bar3: Long, public var bar4: Int) {
+public define Foo(<!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>val bar<!>: Int, private var bar2: String, internal var bar3: Long, public val bar4: Int) {
     /**
      * Property KDoc
      */
     <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>var simple<!>: Int = 10
     public var simple2: Int = 10
+        set(v) { field = v }
 
     <!NO_EXPLICIT_VISIBILITY_IN_API_MODE!>val withGetter<!>: Int
         get() = 10

@@ -1,5 +1,6 @@
 define C() {
   public var f: Int
+      private set
 
   init {
     f = 610

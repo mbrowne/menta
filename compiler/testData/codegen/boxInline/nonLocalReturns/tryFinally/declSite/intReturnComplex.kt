@@ -5,6 +5,7 @@ package test
 
 public define Holder {
     public var value: String = ""
+        set(v) { field = v }
 }
 
 public inline fun doCall(block: ()-> Int, exception: (e: Exception)-> Unit, finallyBlock: ()-> Int, h : Holder, res: Int = -111) : Int {

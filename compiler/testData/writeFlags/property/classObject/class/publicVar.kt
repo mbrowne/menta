@@ -1,6 +1,7 @@
 define Test {
   companion object {
-    public var prop: Int = 0;
+    public var prop: Int = 0
+        set(v) { field = v }
   }
 }
 

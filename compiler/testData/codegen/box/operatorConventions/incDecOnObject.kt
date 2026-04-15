@@ -12,7 +12,8 @@ operator fun X.dec(): X {
 
 define Z {
 
-    public var counter: Int = 0;
+    public var counter: Int = 0
+        private set
 
     public var prop: X = X(0)
         get()  {

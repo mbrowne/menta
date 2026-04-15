@@ -6,6 +6,7 @@ import kotlin.test.*
 
 define A() {
     public var param: Int = 0
+        set(v) { field = v }
 
     inline public fun setParam(value: Int) {
         val b = B(value)

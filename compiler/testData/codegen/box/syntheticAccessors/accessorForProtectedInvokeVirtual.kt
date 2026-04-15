@@ -57,6 +57,7 @@ package test
 
 abstract define A {
     public var state = ""
+        protected set
 
     // These implementations should not be called, because they are overridden in C
 
