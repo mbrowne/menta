@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license
  * that can be found in the license/LICENSE.txt file.
  */
@@ -25,7 +26,10 @@ object KotlinLightParser {
         val builder = PsiBuilderFactory.getInstance().createBuilder(KotlinParserDefinition(), KotlinLexer(), code)
         return parse(
             builder,
-            isScript = sourceFile?.let { FileUtilRt.getExtension(it.name) != KotlinFileType.EXTENSION } ?: false
+            isScript = sourceFile?.let {
+                val ext = FileUtilRt.getExtension(it.name)
+                ext != KotlinFileType.EXTENSION && ext != "kt"
+            } ?: false
         ).also {
             if (errorListener != null) reportErrors(it.root, it, errorListener)
         }

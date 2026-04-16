@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -3328,6 +3329,10 @@ open class PsiRawFirBuilder(
             roleName: String,
             isMember: Boolean = false,
         ): FirNamedFunction {
+            // Detect forwarding stub: no value parameter list and body is a callable reference
+            val isForwardingStub = roleFunc.valueParameterList == null
+                    && roleFunc.bodyExpression is KtCallableReferenceExpression
+
             val functionSymbol = FirNamedFunctionSymbol(callableIdForName(roleFunc.nameAsSafeName))
             return withContainerSymbol(functionSymbol, !isMember) {
                 val labelName = roleFunc.nameAsSafeName.identifier
@@ -3345,7 +3350,7 @@ open class PsiRawFirBuilder(
                 FirNamedFunctionBuilder().apply {
                     source = functionSource
                     moduleData = baseModuleData
-                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null)
+                    origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeReference == null, isForwardingStub = isForwardingStub)
                     name = roleFunc.nameAsSafeName
                     symbol = functionSymbol
                     dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null

@@ -18,6 +18,7 @@ public open define TestDelegate<T: Any>(private val initializer: () -> T) {
 define Test {
 
   public var prop: String = ""
+        set(v) { field = v }
 
   companion object {
     public var prop: Int by TestDelegate({10})

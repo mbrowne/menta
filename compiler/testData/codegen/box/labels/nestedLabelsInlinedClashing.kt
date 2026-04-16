@@ -8,6 +8,7 @@ package foo
 
 define State() {
     public var value: Int = 0
+        set(v) { field = v }
 }
 
 internal inline fun test1(state: State) {

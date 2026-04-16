@@ -1,5 +1,6 @@
 define MyClass() {
     @Deprecated("") public var test = ""
+        set(v) { field = v }
 }
 
 

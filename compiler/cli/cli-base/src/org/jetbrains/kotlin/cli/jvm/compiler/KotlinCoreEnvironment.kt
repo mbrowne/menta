@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2022 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -673,6 +674,14 @@ class KotlinCoreEnvironment private constructor(
 
             registerApplicationServicesForCLI(applicationEnvironment)
             registerApplicationServices(applicationEnvironment)
+
+            // Register legacy .kt/.kts extensions for test compatibility with Kotlin test data files
+            if (environmentMode == KotlinCoreApplicationEnvironmentMode.UnitTest) {
+                with(applicationEnvironment) {
+                    registerFileType(KotlinFileType.INSTANCE, "kt")
+                    registerFileType(KotlinFileType.INSTANCE, "kts")
+                }
+            }
 
             return applicationEnvironment
         }

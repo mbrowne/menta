@@ -6,6 +6,7 @@
 fun f1() {
     define LocalClass {
         public var foo = 0
+            set(v) { field = v }
     }
     LocalClass().foo = 1
 }

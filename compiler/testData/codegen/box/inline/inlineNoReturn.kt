@@ -6,6 +6,7 @@ import kotlin.test.*
 
 internal define State(value: Int) {
     public var value: Int = value
+        set(v) { field = v }
 }
 
 internal inline fun multiply(state: State, factor: Int) {

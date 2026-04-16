@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,7 +44,7 @@ public class KotlinParser implements PsiParser {
     public static ASTNode parse(PsiBuilder psiBuilder, PsiFile psiFile) {
         KotlinParsing ktParsing = KotlinParsing.createForTopLevel(new SemanticWhitespaceAwarePsiBuilderImpl(psiBuilder));
         String extension = FileUtilRt.getExtension(psiFile.getName());
-        if (extension.isEmpty() || extension.equals(KotlinFileType.EXTENSION) || isCompiledFile(psiFile)) {
+        if (extension.isEmpty() || extension.equals(KotlinFileType.EXTENSION) || extension.equals("kt") || isCompiledFile(psiFile)) {
             ktParsing.parseFile();
         }
         else {

@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -60,9 +61,9 @@ fun List<KotlinSourceRoot>.forAllFiles(
         reportLocation,
         findVirtualFile = { localFileSystem.findFileByPath(it.normalize().path) },
         filter = { virtualFile, isExplicit ->
-            if (virtualFile.extension != KotlinFileType.EXTENSION)
+            if (virtualFile.extension != KotlinFileType.EXTENSION && virtualFile.extension != "kt")
                 ensurePluginsConfigured()
-            val isKotlin = virtualFile.extension == KotlinFileType.EXTENSION || virtualFile.fileType == KotlinFileType.INSTANCE
+            val isKotlin = virtualFile.extension == KotlinFileType.EXTENSION || virtualFile.extension == "kt" || virtualFile.fileType == KotlinFileType.INSTANCE
             if (isExplicit && !isKotlin)
                 configuration.report(CompilerMessageSeverity.ERROR, "Source entry is not a Kotlin file: ${virtualFile.path}", reportLocation)
             isKotlin

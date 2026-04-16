@@ -20,8 +20,7 @@ define Account(initialLedgers: Collection<LedgerEntry>): MoneySource, MoneyDesti
     }
 
     role ledgers {
-        public fun addEntry(entry: LedgerEntry) = add(entry)
-        // public fun addEntry = this::add
+        public fun addEntry = ::add
 
         public val balance: Int
             get() = sumOf { it.amount }

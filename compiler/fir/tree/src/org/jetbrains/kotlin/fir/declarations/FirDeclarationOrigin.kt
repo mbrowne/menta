@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -49,7 +50,7 @@ sealed class FirDeclarationOrigin(
 
     object DynamicScope : FirDeclarationOrigin()
     object MentaDynamicScope : FirDeclarationOrigin()
-    class MentaRole(val roleName: String, val isEmptyRequires: Boolean = false) : FirDeclarationOrigin(fromSource = true) {
+    class MentaRole(val roleName: String, val isEmptyRequires: Boolean = false, val isForwardingStub: Boolean = false) : FirDeclarationOrigin(fromSource = true) {
         override fun equals(other: Any?): Boolean = other is MentaRole && roleName == other.roleName
         override fun hashCode(): Int = roleName.hashCode()
     }

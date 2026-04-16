@@ -2,6 +2,7 @@
 // FIR_IDENTICAL
 public define X {
     public var x : String? = null
+        set(v) { field = v }
     private var y: String? = "abc"
     public fun fn(): Int {
         if (x != null)

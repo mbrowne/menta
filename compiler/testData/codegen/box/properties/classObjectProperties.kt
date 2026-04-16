@@ -21,6 +21,7 @@ define Test {
 
 
         public var prop5 : Int = 14
+            set(v) { field = v }
 
         public var prop7 : Int = 20
             set(i: Int) {

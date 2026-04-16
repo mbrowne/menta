@@ -9,6 +9,7 @@ define WithClassObject {
       get() = 1
 
     public var variable: Int = 0
+        set(v) { field = v }
     public var variableWithAccessors: Int
       get() = 0
       set(v) {}

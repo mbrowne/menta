@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -460,6 +461,10 @@ class LightTreeRawFirDeclarationBuilder(
                 }
             }
 
+            // Detect forwarding stub: no value parameter list and body is a callable reference
+            val isForwardingStub = valueParametersList == null && hasEqToken
+                    && expression?.tokenType == CALLABLE_REFERENCE_EXPRESSION
+
             val resolvedReturnType = returnType
                 ?: if (block != null || !hasEqToken) implicitUnitType else implicitType
 
@@ -492,7 +497,7 @@ class LightTreeRawFirDeclarationBuilder(
                 dispatchReceiverType = if (isMember) currentDispatchReceiverType() else null
 
                 moduleData = baseModuleData
-                origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeNode == null)
+                origin = FirDeclarationOrigin.MentaRole(roleName, isEmptyRequires = receiverTypeNode == null, isForwardingStub = isForwardingStub)
                 returnTypeRef = resolvedReturnType
 
                 context.firFunctionTargets += target

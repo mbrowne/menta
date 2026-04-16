@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -1045,6 +1046,9 @@ object FirErrors : KtDiagnosticsContainer() {
     // Menta roles
     val EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS: KtDiagnosticFactory1<ConeKotlinType> = KtDiagnosticFactory1("EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
     val ROLE_PLAYER_RESOLVES_TO_TYPE: KtDiagnosticFactory1<String> = KtDiagnosticFactory1("ROLE_PLAYER_RESOLVES_TO_TYPE", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
+
+    // Menta properties
+    val PUBLIC_VAR_WITHOUT_CUSTOM_SETTER: KtDiagnosticFactory0 = KtDiagnosticFactory0("PUBLIC_VAR_WITHOUT_CUSTOM_SETTER", ERROR, SourceElementPositioningStrategies.VAL_OR_VAR_NODE, KtProperty::class, getRendererFactory())
 
     override fun getRendererFactory(): BaseDiagnosticRendererFactory = FirErrorsDefaultMessages
 }

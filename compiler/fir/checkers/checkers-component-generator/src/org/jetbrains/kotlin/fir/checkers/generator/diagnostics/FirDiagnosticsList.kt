@@ -1,4 +1,5 @@
 /*
+ * Note: This file may have been modified from its original version from Kotlin.
  * Copyright 2010-2023 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -2284,6 +2285,10 @@ object DIAGNOSTICS_LIST : DiagnosticList("FirErrors") {
         val ROLE_PLAYER_RESOLVES_TO_TYPE by error<PsiElement> {
             parameter<String>("roleName")
         }
+    }
+
+    val MENTA_PROPERTIES by object : DiagnosticGroup("Menta properties") {
+        val PUBLIC_VAR_WITHOUT_CUSTOM_SETTER by error<KtProperty>(PositioningStrategy.VAL_OR_VAR_NODE)
     }
 }
 
