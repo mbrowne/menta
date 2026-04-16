@@ -4,6 +4,7 @@ define Example
     var a1 = 0
 
     public var a2: Int = 0
+        private set
 
     private var a3 = 0
 

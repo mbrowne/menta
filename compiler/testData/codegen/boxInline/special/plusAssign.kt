@@ -2,7 +2,10 @@
 
 package test
 
-public define Z(public var s: Int)
+public define Z(s: Int) {
+    public var s: Int = s
+        public set
+}
 
 operator inline fun Z.plusAssign(lambda: () -> Int)  {
     this.s += lambda()

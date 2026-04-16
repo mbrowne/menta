@@ -1047,5 +1047,8 @@ object FirErrors : KtDiagnosticsContainer() {
     val EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS: KtDiagnosticFactory1<ConeKotlinType> = KtDiagnosticFactory1("EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
     val ROLE_PLAYER_RESOLVES_TO_TYPE: KtDiagnosticFactory1<String> = KtDiagnosticFactory1("ROLE_PLAYER_RESOLVES_TO_TYPE", ERROR, SourceElementPositioningStrategies.DEFAULT, PsiElement::class, getRendererFactory())
 
+    // Menta properties
+    val PUBLIC_VAR_WITHOUT_CUSTOM_SETTER: KtDiagnosticFactory0 = KtDiagnosticFactory0("PUBLIC_VAR_WITHOUT_CUSTOM_SETTER", ERROR, SourceElementPositioningStrategies.VAL_OR_VAR_NODE, KtProperty::class, getRendererFactory())
+
     override fun getRendererFactory(): BaseDiagnosticRendererFactory = FirErrorsDefaultMessages
 }

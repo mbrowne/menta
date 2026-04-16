@@ -97,6 +97,7 @@ object CommonDeclarationCheckers : DeclarationCheckers() {
         FirUnnamedPropertyChecker,
         FirContextualPropertyWithBackingFieldChecker,
         FirRolePlayerTypeChecker,
+        FirPublicVarWithoutCustomSetterChecker,
     )
 
     override val backingFieldCheckers: Set<FirBackingFieldChecker> = setOf(

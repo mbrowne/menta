@@ -1,6 +1,7 @@
 define Test {
 
-  public var prop: Int = 0;
+  public var prop: Int = 0
+        set(v) { field = v }
 
   companion object {
     public const val prop: Int = 0;

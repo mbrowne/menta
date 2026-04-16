@@ -9,6 +9,7 @@ public define J extends B {}
 // FILE: test.kt
 abstract define A {
     open public var a1 = 0
+        set(v) { field = v }
     open protected var a2 = 0
     open internal var a3 = 0
 }
