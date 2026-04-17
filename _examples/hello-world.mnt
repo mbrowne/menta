@@ -1,23 +1,26 @@
-interface NamedUser {
+interface ConversationParticipant {
     public val name: String
 }
 
-define User(override public val name: String): NamedUser {}
+define User(override public val name: String): ConversationParticipant {}
 
-fun SayHello(user: NamedUser) {
-    // might want to change this to an example that doesn't use the context as a role player
-    val greeter = ::SayHello
+fun SayHello(user: ConversationParticipant, greeter: ConversationParticipant) {
     greeter.greet()
 
     role greeter {
         public fun greet() {
-            println("Hello and welcome, ${user.name}!")
+            println("Hello ${user.name}, ${name} welcomes you!")
         }
-    } requires {}
+    } requires ConversationParticipant
 
-    role user requires NamedUser
+    role user requires ConversationParticipant
 }
 
 fun main() {
-    SayHello( User("new Menta user") )
+    val user = User("new Menta user")
+    val community = object: ConversationParticipant {
+        override public val name = "the Menta community"
+    }
+
+    SayHello(user, community)
 }
