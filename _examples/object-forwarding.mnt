@@ -1,10 +1,13 @@
-data define Person (public val name: String) {}
+define Person (public val name: String) {}
 
 interface IVehicle from Vehicle
 
-define Vehicle(public var owner: Person) {
+define Vehicle(initialOwner: Person) {
+    private var _owner: Person = initialOwner
+    public val owner: Person get() = _owner
+
     public fun transferOwnership(newOwner: Person) {
-        owner = newOwner
+        _owner = newOwner
     }
 }
 

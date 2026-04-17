@@ -79,7 +79,7 @@ define RunningShoe(
 
 In Menta, the reason there is no traditional class inheritance is not because inheritance is universally bad (it isn't), but because it's simply an unnecessary complication given all of Menta's other features. Imagine that you are new to programming, and Menta is the first language you are learning. You already have the ability to extend base object templates using extension functions and role methods, and the ability to implement interfaces, including interfaces with default method implementations. Especially given all the ways that inheritance can be easily misused, Menta takes the position that it's simply not worth introducing yet another concept when there is already convenient syntax to implement the same mental models using composition.
 
-Composition and method forwarding are also suitable for extending behavior of DCI contexts—whereas inheritance would not be—meaning that the language has a unified extension mechanism for all `define` declarations, whether they're DCI contexts or not.
+Composition and forwarding are also suitable for extending behavior of DCI contexts—whereas inheritance would not be—meaning that the language has a unified extension mechanism for all `define` declarations, whether they're DCI contexts or not.
 
 The absence of inheritance in Menta was partly inspired by Go, which successfully handles "is-a" relationships without inheritance thanks to its object [embedding feature](https://go.dev/doc/effective_go#embedding).
 </details>
@@ -188,8 +188,18 @@ Regardless, DCI-supporting languages like Menta are a big step forward in day-to
 
 <details>
 <summary><a id="roles-vs-extensions">4. How are DCI roles different from using extension methods in native Kotlin?</a></summary>
+
+The key difference is that roles belong to a *Context* (the "C" in DCI, not to be confused with Kotlin's `context` function or coroutine contexts), which is an interaction context for objects and/or primitive values as they play roles to interact with each other. Objects in the Context obtain their role behavior when the role is *bound* to an object (which often happens during initialization, or at the moment a function is called in the case of function Contexts).
+
+Because roles belong to their enclosing Context (and only to that Context), this means that when the execution flow leaves the Context (even if it's just calling an external function—this includes instance methods—which will return the flow back to the Context again), those role methods are no longer available on any of the objects in the Context. And role methods are only available when referring to the object by the name of the role it's currently playing, so if the same object `o` is playing roles `foo` and `bar`, a role defined as `role foo { public fun x() {} }` can only have its `x` method called via `foo.x()`, not `o.x()` or `bar.x()`.
+
+Standard Kotlin extension methods are still available. They are appropriate to use when you are extending a third-party library (including the standard library) and you want to add a new method that can be accessed anywhere in a given package (rather than just one DCI Context), or if it's a top-level extension that needs to be imported and reused by another package. Avoid using this to re-use role behavior; roles are deliberately contextual and specific to their Context. If you find yourself tempted to do this, you probably want a nested Context instead.
+
+It's possible to implement DCI Contexts and roles using native Kotlin extension functions (here's an [example](https://github.com/mbrowne/dci-examples/tree/13bf084027294071551005621a6e1052051d4bec/kotlin/src)), but Menta provides type safety, much nicer syntax, and usability improvements.
 </details>
 
 <details>
 <summary><a id="do-classes-still-exist">5. Do classes still exist in Menta?</a></summary>
+
+Technically yes as of now, but only behind the scenes. The absences of inheritance (aside from default method implementations in interfaces) makes Menta object templates fundamentally different from how the word "class" is commonly understood. The Kotlin intermediate representation (IR) has classes, and Menta has not changed the IR, meaning that it's compatible with IR produced by the Kotlin compiler. It's possible that the behind-the-scenes implementation of Menta could change to something different and more object-centric in the future, but one thing that will not change is having the JVM as one of the available backend targets. The JVM bytecode has classes, so at least when targeting the JVM, classes will technically still exist in Menta.
 </details>
