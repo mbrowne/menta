@@ -1,7 +1,4 @@
-/*
- * Note: This file may have been modified from its original version from Kotlin.
- * Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
- */
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 package com.intellij.openapi.util.objectTree;
 
 import com.intellij.openapi.diagnostic.UntraceableException;
