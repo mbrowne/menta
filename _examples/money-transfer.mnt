@@ -1,16 +1,31 @@
 package moneyTransfer
 
-define Account(private var _balance: Int): MoneySource, MoneyDestination  {
+data define LedgerEntry(public val message: String, public val amount: Int) {}
+
+/**
+ * Account context: Accountant's mental model, with a user-friendly public interface
+ */
+define Account(initialLedgers: Collection<LedgerEntry>): MoneySource, MoneyDestination {
+    val ledgers = initialLedgers.toMutableList()
+
     public override val balance: Int
-        get() = _balance
+        get() = ledgers.balance
 
     public override fun increaseBalance(amount: Int) {
-        _balance += amount
+        ledgers.addEntry( LedgerEntry("depositing", amount) )
     }
 
     public override fun decreaseBalance(amount: Int) {
-        _balance -= amount
+        ledgers.addEntry( LedgerEntry("withdrawing", 0 - amount) )
     }
+
+    role ledgers {
+        public fun addEntry = this::add
+
+        public val balance: Int
+            get() = sumOf { it.amount }
+    }
+    requires MutableCollection<LedgerEntry>
 }
 
 interface MoneySource {
@@ -23,6 +38,9 @@ interface MoneyDestination {
     public val balance: Int
 }
 
+/**
+ * Money transfer use case: Bank Customer's mental model
+ */
 fun TransferMoney(
     source: MoneySource,
     destination: MoneyDestination,
@@ -55,8 +73,11 @@ fun TransferMoney(
 }
 
 fun main() {
-    val sourceAcct = Account(30)
-    val destinationAcct = Account(0)
+    val sourceAcct = Account(listOf(
+        LedgerEntry("start", 0),
+        LedgerEntry("first deposit", 30),
+    ))
+    val destinationAcct = Account(listOf<LedgerEntry>())
 
     TransferMoney(sourceAcct, destinationAcct, 10)
 
