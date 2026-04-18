@@ -18,9 +18,9 @@ import org.jetbrains.kotlin.fir.analysis.diagnostics.FirErrors
 import org.jetbrains.kotlin.fir.declarations.FirProperty
 import org.jetbrains.kotlin.fir.declarations.getAnnotationByClassId
 import org.jetbrains.kotlin.fir.declarations.impl.FirDefaultPropertySetter
+import org.jetbrains.kotlin.fir.declarations.FirDeclarationOrigin
 import org.jetbrains.kotlin.fir.declarations.utils.isData
 import org.jetbrains.kotlin.fir.declarations.utils.isLateInit
-import org.jetbrains.kotlin.fir.declarations.utils.isOverride
 import org.jetbrains.kotlin.fir.declarations.utils.visibility
 import org.jetbrains.kotlin.fir.symbols.impl.FirRegularClassSymbol
 import org.jetbrains.kotlin.name.ClassId
@@ -31,7 +31,6 @@ import org.jetbrains.kotlin.name.ClassId
  * Allowed:
  * - `public var` in `data define` classes
  * - `public var` with any explicit setter (including `private set` or a setter body)
- * - `public var` that overrides a supertype member
  * - `public lateinit var` (cannot attach a custom setter syntactically)
  * - `@JvmField public var` (exposes the backing field directly — no setter is possible)
  * - `public val` (immutable) anywhere
@@ -64,8 +63,9 @@ object FirPublicVarWithoutCustomSetterChecker : FirPropertyChecker(MppCheckerKin
         // Exempt data classes
         if (containingClass is FirRegularClassSymbol && containingClass.isData) return
 
-        // Exempt overrides (the supertype contract is what matters)
-        if (declaration.isOverride) return
+        // Skip compiler-generated properties (delegation, substitution overrides, intersection overrides).
+        // User-written `override var` has origin = Source and must still be checked.
+        if (declaration.origin != FirDeclarationOrigin.Source) return
 
         // Exempt lateinit properties — Kotlin/Menta syntax doesn't allow a custom setter on a lateinit var
         if (declaration.isLateInit) return
