@@ -1,5 +1,9 @@
 package moneyTransfer
 
+/**
+ * This version of Account is unrealistic compared to the full money transfer example, but
+ * it's good for just showing the most basic usage of DCI
+ */
 define Account(private var _balance: Int): MoneySource, MoneyDestination  {
     public override val balance: Int
         get() = _balance

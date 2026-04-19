@@ -29,6 +29,8 @@ There are many benefits of going back to the historical roots of modeling, writi
 ---
 [1] Kay's conception of mental models was also informed by the work of Jean Piaget and other psychologists who studied child psychology, as explained in Kay's 1987 presentation [Doing With Images Makes Symbols](https://www.youtube.com/watch?v=p2LZLYcu_JY).
 
+See also the article [Relearning OOP](https://medium.com/@egonelbre/relearning-oop-89f10e0e2f68) by Egon Elbre for a good introduction.
+
 ## Build environment requirements
 
 This repository is using [Gradle toolchains](https://docs.gradle.org/current/userguide/toolchains.html) feature
