@@ -2316,6 +2316,8 @@ open class PsiRawFirBuilder(
                         val propName = declaration.nameAsSafeName
                         if (propName.asString() in ANY_MEMBER_NAMES) continue
 
+                        // A var with a non-public setter should appear as val in the generated interface
+                        val effectivelyVar = declaration.isVar && declaration.setter?.isPublic() != false
                         val propSymbol = FirRegularPropertySymbol(callableIdForName(propName))
                         withContainerSymbol(propSymbol) {
                             classBuilder.addDeclaration(buildProperty {
@@ -2324,7 +2326,7 @@ open class PsiRawFirBuilder(
                                 origin = FirDeclarationOrigin.Source
                                 returnTypeRef = declaration.typeReference.toFirOrImplicitType()
                                 name = propName
-                                isVar = declaration.isVar
+                                isVar = effectivelyVar
                                 symbol = propSymbol
                                 dispatchReceiverType = currentDispatchReceiverType()
                                 status = FirDeclarationStatusImpl(Visibilities.Public, Modality.ABSTRACT)
@@ -2339,7 +2341,7 @@ open class PsiRawFirBuilder(
                                     propertySymbol = symbol,
                                     modality = Modality.ABSTRACT,
                                 )
-                                if (declaration.isVar) {
+                                if (effectivelyVar) {
                                     setter = FirDefaultPropertySetter(
                                         source = defaultAccessorSource,
                                         moduleData = baseModuleData,
