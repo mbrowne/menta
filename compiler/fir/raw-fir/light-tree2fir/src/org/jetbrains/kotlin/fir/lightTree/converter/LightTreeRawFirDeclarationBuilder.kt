@@ -1538,13 +1538,26 @@ class LightTreeRawFirDeclarationBuilder(
         var isVar = false
         var typeRefNode: LighterASTNode? = null
 
+        var hasNonPublicSetter = false
         propNode.forEachChildren { child ->
             when (child.tokenType) {
                 IDENTIFIER -> if (propName == null) propName = child.asText
                 VAR_KEYWORD -> isVar = true
                 TYPE_REFERENCE -> typeRefNode = child
+                PROPERTY_ACCESSOR -> {
+                    // Check if this is a setter with restricted visibility
+                    var isSetter = false
+                    child.forEachChildren { accessorChild ->
+                        if (accessorChild.tokenType == SET_KEYWORD) isSetter = true
+                    }
+                    if (isSetter && !isNodePublic(child)) {
+                        hasNonPublicSetter = true
+                    }
+                }
             }
         }
+        // A var with a non-public setter should appear as val in the generated interface
+        if (hasNonPublicSetter) isVar = false
 
         val name = propName?.let { Name.identifier(it) } ?: return
         if (name.asString() in ANY_MEMBER_NAMES) return
