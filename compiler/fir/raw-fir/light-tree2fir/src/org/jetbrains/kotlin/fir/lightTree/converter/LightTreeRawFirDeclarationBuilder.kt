@@ -226,9 +226,41 @@ class LightTreeRawFirDeclarationBuilder(
                 statements += declarationStatements
                 statements += convertedRoleProperties
                 statements += convertedRoleExtensions
-                statements += expressionStatements
-                // Emit role player type checks at the end so all variables are in scope
-                statements += roleTypeChecks
+
+                // The role player type checks (synthetic `val <role$X$typeCheck>: T = X`) must
+                // come after any role-bound locals are in scope, so they are placed near the end.
+                // But they must NOT occupy the block's tail position: otherwise, for a block used
+                // in expression position (e.g. a lambda body), the block's implicit-return value
+                // becomes the type-check property declaration (of type Unit) rather than the
+                // user's last expression, producing a misleading RETURN_TYPE_MISMATCH anchored at
+                // the `role` declaration. To preserve the user's last expression as the block's
+                // value, save it into a temporary `val` and emit a trailing read of that temp
+                // after the type checks.
+                val lastExpr = expressionStatements.lastOrNull()
+                if (roleTypeChecks.isNotEmpty() && lastExpr is FirExpression) {
+                    statements += expressionStatements.dropLast(1)
+                    val blockResultName = Name.special("<blockResult>")
+                    val blockResultFakeSource =
+                        lastExpr.source?.fakeElement(KtFakeSourceElementKind.RoleBlockLastExpression)
+                    val blockResultVar = generateTemporaryVariable(
+                        baseModuleData,
+                        blockResultFakeSource,
+                        blockResultName,
+                        initializer = lastExpr,
+                    )
+                    statements += blockResultVar
+                    statements += roleTypeChecks
+                    statements += buildPropertyAccessExpression {
+                        source = blockResultFakeSource
+                        calleeReference = buildSimpleNamedReference {
+                            source = blockResultFakeSource
+                            name = blockResultName
+                        }
+                    }
+                } else {
+                    statements += expressionStatements
+                    statements += roleTypeChecks
+                }
             }
         }
     }

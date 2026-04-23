@@ -615,6 +615,14 @@ sealed class KtFakeSourceElementKind(final override val shouldSkipErrorTypeRepor
      * against the requires clause
      */
     object RolePlayerTypeCheck : KtFakeSourceElementKind()
+
+    /**
+     * for the synthetic local `val` that preserves the last user-written expression
+     * of a role-containing block, so that role-player type checks can be emitted
+     * after it without displacing the block's implicit-return value.
+     * Fake source refers to the original last expression.
+     */
+    object RoleBlockLastExpression : KtFakeSourceElementKind()
 }
 
 sealed class AbstractKtSourceElement {
