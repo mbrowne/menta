@@ -1,4 +1,4 @@
-import java.time.LocalDateTime
+import java.time.*
 
 interface PlannableProject {
     public val startTime: LocalDateTime
@@ -7,60 +7,24 @@ interface PlannableProject {
 
 interface PlannableActivity {
     public val name: String
-    public val duration: Int
+    public val duration: Duration
     public val dependencies: List<PlannableActivity>
 }
 
-interface ActivityFinishTimingTrait {
-    public val activity: PlannableActivity
-    public val startTime?: LocalDateTime
-    public val finishTime get = { if (startTime) { startTime + duration } else null }
-}
-
-define MaybeActivityTiming(
-    public val activity: PlannableActivity, public val startTime?: LocalDateTime
-): ActivityFinishTimingTrait {
-    // public val finishTime get = { startTime + duration }
-    public val isPlanned get = { startTime != null }
-}
-
 define ActivityTiming(
-    public val activity: PlannableActivity, public val startTime: LocalDateTime
-): ActivityFinishTimingTrait {}
-
-/*
-private fun updateActivityTiming(startTime: LocalDateTime) {
-    return { activity: PlannableActivity ->
-        ActivityTiming(activity, startTime)
-    }
+    public val activity: PlannableActivity,
+    public val startTime: LocalDateTime,
+) {
+    public val finishTime get() = startTime + activity.duration
 }
-
-private fun updateActivityTiming(activity: PlannableActivity) {
-    return { startTime: LocalDateTime ->
-        ActivityTiming(activity, startTime)
-    }
-}
-*/
-
-private fun updatePlannedStatus(activity: PlannableActivity) =
-    { isPlanned: Boolean ->
-        Pair(isPlanned, activity)
-    }
 
 typealias Plan = List<ActivityTiming>
-
-// ???
-/*
-private define TentativeActivityTiming(
-    public val activity: PlannableActivity,
-    public val earliestStartTime: LocalDateTime) {}
-*/
 
 /*
  * Activity Planning: Frontload Activities
  *
  * This example shows an algorithm that's part of a larger example.
- * Use case: http://mbrowne.github.io/prokon-dci/#/use-cases/frontload-activities
+ * Use case: https://fulloo.info/Examples/SqueakExamples/BB4Plan/index.html
  */
 fun FrontloadActivities(project: Project): Plan {
     val activities = project.activities
@@ -71,50 +35,29 @@ fun FrontloadActivities(project: Project): Plan {
     
     role activities {
         public fun plan(): Plan {
-            // val alreadyPlanned = setOf<PlannableActivity>()
-
             return activities
-                .map {
-                    object {
-                        public val activity = it
-
-                        // Return a partially applied function with the start time that will
-                        // return an ActivityTiming object when called again
-                        public fun updateActivityTiming() {
-                            return { startTime: LocalDateTime -> ActivityTiming(it, startTime) }
-                        }
-                    }
-                }
-                .fold(listOf<ActivityTiming>(), planActivity)
+                .fold(emptyMap<PlannableActivity, ActivityTiming>(), ::planActivity)
+                .values
+                .sortedBy { it.startTime }
+                .toList()
         }  
     } requires List<PlannableActivity>
 
+    // Nested DCI context for planning an individual activity
     fun planActivity(
-        plannedActivities: List<ActivityTiming>,
-        currentActivityPlanningState: Any // TODO
-    ) {
-        val (activity, updateActivityTiming) = currentActivityPlanningState
-        // updateActivityTiming()
-
-        /*
-        var startTime = activityTiming.startTime
-        val dependencies = activity.map {
-            val currentDepStartTime = startTime + it.duration
-            startTime = currentDepStartTime
-            ActivityTiming(it, startTime)
-        }
-        */
-
-        if (!alreadyPlanned.contains(activity)) {
-            return plannedActivities
+        planSoFar: Map<PlannableActivity, ActivityTiming>,
+        activity: PlannableActivity
+    ): Map<PlannableActivity, ActivityTiming> {
+        if (planSoFar.contains(activity)) {
+            return planSoFar
         }
 
-        val planned = activity.plan()
-        alreadyPlanned.add(activity)
-        return plannedActivities + planned
+        val dependencies = activity.dependencies.flatMap { planActivity(planSoFar, it).values }
+
+        return planSoFar + (activity to activity.plan())
 
 
-        role plannedActivities requires List<ActivityTiming>
+        role project requires PlannableProject
 
         role activity {
             public fun plan(): ActivityTiming {

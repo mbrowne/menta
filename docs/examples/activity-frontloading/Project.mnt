@@ -1,0 +1,17 @@
+import java.time.*
+
+define Project(
+    override public val startTime: LocalDateTime,
+    activities: List<Activity> = emptyList()
+): PlannableProject {
+    val _activities: MutableList<Activity> = activities.toMutableList()
+    override public val activities: List<Activity> get() = _activities
+
+    public fun addActivity(a: Activity) {
+        _activities.add(a)
+    }
+
+    public fun removeActivity(a: Activity) {
+        _activities.remove(a)
+    }
+}
