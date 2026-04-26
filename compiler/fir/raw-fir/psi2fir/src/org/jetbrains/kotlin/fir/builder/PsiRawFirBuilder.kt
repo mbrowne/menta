@@ -3293,10 +3293,12 @@ open class PsiRawFirBuilder(
                     )
                 }
 
-                // Emit all declarations first, then role extensions, then all expression statements.
-                // This ensures local variable declarations are in scope for role method bodies,
-                // and role methods are in scope for subsequent expression statements (DCI pattern).
-                val declarationStatements = mutableListOf<FirStatement>()
+                // Reorder so role extensions land between two declaration groups: pre-role decls
+                // (no role-method call in initializer) come first so role-method bodies see them;
+                // post-role decls (e.g. `val planned = activity.plan()`) come after role extensions
+                // so the role-method calls resolve. Plain expression statements come after both.
+                val preRoleDeclarations = mutableListOf<FirStatement>()
+                val postRoleDeclarations = mutableListOf<FirStatement>()
                 val expressionStatements = mutableListOf<FirStatement>()
                 for (statement in expression.statements) {
                     if (statement is KtRole) continue
@@ -3308,17 +3310,19 @@ open class PsiRawFirBuilder(
                     } else {
                         listOf(firStatement)
                     }
+                    val callsRoleMethod = (statement as? KtElement)
+                        ?.referencesRoleMethod(rolePlayerNames, allRoleMethodNames) == true
                     for (stmt in flattened) {
-                        if (stmt is FirDeclaration) {
-                            declarationStatements += stmt
-                        } else {
-                            expressionStatements += stmt
+                        when (stmt) {
+                            is FirDeclaration -> if (callsRoleMethod) postRoleDeclarations += stmt else preRoleDeclarations += stmt
+                            else -> expressionStatements += stmt
                         }
                     }
                 }
-                statements += declarationStatements
+                statements += preRoleDeclarations
                 statements += convertedRoleProperties
                 statements += convertedRoleFunctions
+                statements += postRoleDeclarations
 
                 // The role player type checks (synthetic `val <role$X$typeCheck>: T = X`) must
                 // come after any role-bound locals are in scope, so they are placed near the end.
@@ -3570,6 +3574,38 @@ open class PsiRawFirBuilder(
                 }
             }, null)
             return deps
+        }
+
+        private fun KtElement.referencesRoleMethod(
+            rolePlayerNames: Set<String>,
+            allRoleMethodNames: Set<String>,
+        ): Boolean {
+            if (rolePlayerNames.isEmpty() || allRoleMethodNames.isEmpty()) return false
+            var found = false
+            accept(object : KtVisitorVoid() {
+                override fun visitElement(element: PsiElement) {
+                    if (found) return
+                    element.acceptChildren(this)
+                }
+
+                override fun visitDotQualifiedExpression(expr: KtDotQualifiedExpression) {
+                    if (found) return
+                    val receiver = expr.receiverExpression
+                    val selector = expr.selectorExpression
+                    if (receiver is KtSimpleNameExpression &&
+                        receiver.getReferencedName() in rolePlayerNames &&
+                        selector is KtCallExpression
+                    ) {
+                        val callee = (selector.calleeExpression as? KtSimpleNameExpression)?.getReferencedName()
+                        if (callee != null && callee in allRoleMethodNames) {
+                            found = true
+                            return
+                        }
+                    }
+                    super.visitDotQualifiedExpression(expr)
+                }
+            }, null)
+            return found
         }
 
         override fun visitSimpleNameExpression(expression: KtSimpleNameExpression, data: FirElement?): FirElement {
