@@ -154,20 +154,18 @@ class LightTreeRawFirDeclarationBuilder(
         kind: KtFakeSourceElementKind? = null,
         convertOnlyFirstStatement: Boolean = false
     ): FirBlockBuilder {
-        // Collect role nodes for deferred dependency-sorted conversion
+        // First pass: separate role nodes from convertible non-role source nodes. Conversion is
+        // deferred to pass 2 so we can classify each non-role statement against the role metadata.
         val roleNodes = mutableListOf<LighterASTNode>()
-        val firStatements = block.forEachChildrenReturnList { node, container ->
-            if (!convertOnlyFirstStatement || container.isEmpty()) {
+        val nonRoleSourceNodes = mutableListOf<LighterASTNode>()
+        block.forEachChildren { node ->
+            if (!convertOnlyFirstStatement || nonRoleSourceNodes.isEmpty()) {
                 when (node.tokenType) {
-                    CLASS, OBJECT_DECLARATION -> container += convertClass(node) as FirStatement
-                    FUN -> container += convertFunctionDeclaration(node)
-                    KtNodeTypes.PROPERTY -> container += convertPropertyDeclaration(node) as FirStatement
-                    DESTRUCTURING_DECLARATION -> container +=
-                        convertDestructingDeclaration(node).toFirDestructingDeclaration(this, baseModuleData)
-                    TYPEALIAS -> container += convertTypeAlias(node) as FirStatement
+                    CLASS, OBJECT_DECLARATION, FUN, KtNodeTypes.PROPERTY,
+                    DESTRUCTURING_DECLARATION, TYPEALIAS -> nonRoleSourceNodes.add(node)
                     CLASS_INITIALIZER -> shouldNotBeCalled("CLASS_INITIALIZER expected to be processed during class body conversion")
                     ROLE -> roleNodes.add(node)
-                    else -> if (node.isExpression()) container += expressionConverter.getAsFirStatement(node)
+                    else -> if (node.isExpression()) nonRoleSourceNodes.add(node)
                 }
             }
         }
@@ -184,6 +182,21 @@ class LightTreeRawFirDeclarationBuilder(
             .map { info -> convertRoleFunctionDeclaration(info.funcNode, info.typeNode, info.roleName) }
         val convertedRoleProperties = allRolePropertyInfos
             .map { info -> convertRolePropertyDeclaration(info.propNode, info.typeNode, info.roleName) }
+
+        // Pass 2: convert each non-role source node to a FirStatement, paired with its source.
+        val firStatementsWithSource: List<Pair<FirStatement, LighterASTNode>> = nonRoleSourceNodes.map { node ->
+            val firStatement: FirStatement = when (node.tokenType) {
+                CLASS, OBJECT_DECLARATION -> convertClass(node) as FirStatement
+                FUN -> convertFunctionDeclaration(node)
+                KtNodeTypes.PROPERTY -> convertPropertyDeclaration(node) as FirStatement
+                DESTRUCTURING_DECLARATION ->
+                    convertDestructingDeclaration(node).toFirDestructingDeclaration(this, baseModuleData)
+                TYPEALIAS -> convertTypeAlias(node) as FirStatement
+                else -> expressionConverter.getAsFirStatement(node)
+            }
+            firStatement to node
+        }
+        val firStatements = firStatementsWithSource.map { it.first }
 
         // Generate synthetic type-check statements for role player type compatibility
         val roleTypeChecks = roleNodes.mapNotNull { roleNode ->
@@ -203,29 +216,32 @@ class LightTreeRawFirDeclarationBuilder(
                     }
                 }
             } else {
-                // Emit all declarations first, then role extensions, then all expression statements.
-                // This ensures local variable declarations are in scope for role method bodies,
-                // and role methods are in scope for subsequent expression statements (DCI pattern).
-                val declarationStatements = mutableListOf<FirStatement>()
+                // Reorder so role extensions land between two declaration groups: pre-role decls
+                // (no role-method call in initializer) come first so role-method bodies see them;
+                // post-role decls (e.g. `val planned = activity.plan()`) come after role extensions
+                // so the role-method calls resolve. Plain expression statements come after both.
+                val preRoleDeclarations = mutableListOf<FirStatement>()
+                val postRoleDeclarations = mutableListOf<FirStatement>()
                 val expressionStatements = mutableListOf<FirStatement>()
-                for (firStatement in firStatements) {
+                for ((firStatement, sourceNode) in firStatementsWithSource) {
                     val isForLoopBlock = firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
                     val flattened = if (firStatement is FirBlock && !isForLoopBlock && firStatement.annotations.isEmpty()) {
                         firStatement.statements
                     } else {
                         listOf(firStatement)
                     }
+                    val callsRoleMethod = nodeReferencesRoleMethod(sourceNode, rolePlayerNames, allRoleMethodNames)
                     for (stmt in flattened) {
-                        if (stmt is FirDeclaration) {
-                            declarationStatements += stmt
-                        } else {
-                            expressionStatements += stmt
+                        when (stmt) {
+                            is FirDeclaration -> if (callsRoleMethod) postRoleDeclarations += stmt else preRoleDeclarations += stmt
+                            else -> expressionStatements += stmt
                         }
                     }
                 }
-                statements += declarationStatements
+                statements += preRoleDeclarations
                 statements += convertedRoleProperties
                 statements += convertedRoleExtensions
+                statements += postRoleDeclarations
 
                 // The role player type checks (synthetic `val <role$X$typeCheck>: T = X`) must
                 // come after any role-bound locals are in scope, so they are placed near the end.
@@ -417,6 +433,17 @@ class LightTreeRawFirDeclarationBuilder(
         val bodyBlock = funcNode.getChildNodeByType(BLOCK) ?: return deps
         scanForRoleCallsLightTree(bodyBlock, rolePlayerNames, allRoleMethodNames, deps)
         return deps
+    }
+
+    private fun nodeReferencesRoleMethod(
+        node: LighterASTNode,
+        rolePlayerNames: Set<String>,
+        allRoleMethodNames: Set<String>,
+    ): Boolean {
+        if (rolePlayerNames.isEmpty() || allRoleMethodNames.isEmpty()) return false
+        val deps = mutableSetOf<String>()
+        scanForRoleCallsLightTree(node, rolePlayerNames, allRoleMethodNames, deps)
+        return deps.isNotEmpty()
     }
 
     private fun scanForRoleCallsLightTree(
