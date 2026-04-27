@@ -9,5 +9,7 @@ fun main() {
     val proj = Project(LocalDateTime.now(), listOf(a4, a3, a2, a1));
 
     val plan = FrontloadActivities(proj)
-    println( plan.map { "activity=${it.activity.name}, start time=${it.startTime}" } )
+    plan.forEach {
+        println("${it.startTime} ${it.activity.name}")
+    }
 }

@@ -52,7 +52,10 @@ fun FrontloadActivities(project: Project): Plan {
             return planSoFar
         }
 
-        val dependencies = activity.dependencies.flatMap { planActivity(planSoFar, it).values }
+        val dependencies = activity.dependencies
+            .fold(emptyMap<PlannableActivity, ActivityTiming>(), ::planActivity)
+            .values
+            .toList()
 
         return planSoFar + (activity to activity.plan())
 
@@ -61,12 +64,12 @@ fun FrontloadActivities(project: Project): Plan {
 
         role activity {
             public fun plan(): ActivityTiming {
-                return ActivityTiming(this, dependencies.getEarliestStartTime())
+                return ActivityTiming(this, dependencies.geLatestFinishTime())
             }
         } requires PlannableActivity
 
         role dependencies {
-            public fun getEarliestStartTime(): LocalDateTime {
+            public fun geLatestFinishTime(): LocalDateTime {
                 return maxByOrNull<ActivityTiming, LocalDateTime> {
                     it.startTime
                 }?.finishTime ?: project.startTime
