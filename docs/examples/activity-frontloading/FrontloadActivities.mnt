@@ -39,7 +39,6 @@ fun FrontloadActivities(project: Project): Plan {
                 .fold(emptyMap<PlannableActivity, ActivityTiming>(), ::planActivity)
                 .values
                 .sortedBy { it.startTime }
-                .toList()
         }  
     } requires List<PlannableActivity>
 
@@ -48,7 +47,7 @@ fun FrontloadActivities(project: Project): Plan {
         planSoFar: Map<PlannableActivity, ActivityTiming>,
         activity: PlannableActivity
     ): Map<PlannableActivity, ActivityTiming> {
-        if (planSoFar.contains(activity)) {
+        if (activity in planSoFar) {
             return planSoFar
         }
 
@@ -64,13 +63,13 @@ fun FrontloadActivities(project: Project): Plan {
 
         role activity {
             public fun plan(): ActivityTiming {
-                return ActivityTiming(this, dependencies.geLatestFinishTime())
+                return ActivityTiming(this, dependencies.getLatestFinishTime())
             }
         } requires PlannableActivity
 
         role dependencies {
-            public fun geLatestFinishTime(): LocalDateTime {
-                return maxByOrNull<ActivityTiming, LocalDateTime> {
+            public fun getLatestFinishTime(): LocalDateTime {
+                return maxByOrNull {
                     it.startTime
                 }?.finishTime ?: project.startTime
             }

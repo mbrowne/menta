@@ -3,5 +3,5 @@ import java.time.*
 data define Activity(
     override public val name: String,
     override public val duration: Duration,
-    override public val dependencies: List<Activity> = listOf<Activity>()
-): PlannableActivity {}
+    override public val dependencies: List<Activity> = emptyList()
+): PlannableActivity
