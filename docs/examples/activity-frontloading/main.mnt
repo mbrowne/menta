@@ -1,12 +1,13 @@
 import java.time.*
 
 fun main() {
-    val a1 = Activity("eat breakfast", Duration.ofMinutes(30))
-    val a2 = Activity("go to the moon", Duration.ofDays(100), dependencies = listOf(a1))
-    val a3 = Activity("do a moon walk", Duration.ofHours(1), dependencies = listOf(a2, a1))
-    val a4 = Activity("read newspaper", Duration.ofMinutes(15))
+    val a1 = Activity("prepare breakfast", Duration.ofMinutes(10))
+    val a2 = Activity("eat breakfast", Duration.ofMinutes(30), dependencies = listOf(a1))
+    val a3 = Activity("go to the moon", Duration.ofDays(100), dependencies = listOf(a2))
+    val a4 = Activity("do a moon walk", Duration.ofHours(1), dependencies = listOf(a3, a2))
+    val a5 = Activity("read newspaper", Duration.ofMinutes(15))
 
-    val proj = Project(LocalDateTime.now(), listOf(a4, a3, a2, a1))
+    val proj = Project(LocalDateTime.now(), listOf(a5, a4, a3, a2, a1))
 
     val plan = FrontloadActivities(proj)
     plan.forEach {
