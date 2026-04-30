@@ -1,18 +1,19 @@
 import menta.dynamic.*
 
 define dynamic ProductRepository() {
-    public override fun tryInvokeMember(binder: InvokeMemberBinder) {
-        return findBy(binder.name.removePrefix("findBy").replaceFirstChar { it.lowercase() })
+    public override fun tryInvokeMember(binder: InvokeMemberBinder, args: Array<out Any?>) {
+        val fieldName = binder.name.removePrefix("findBy").replaceFirstChar { it.lowercase() }
+        return findBy(fieldName, args[0])
     }
 
-    fun findBy(fieldName: String) {
-        println("called findBy with $fieldName")
+    fun findBy(fieldName: String, value: Any?) {
+        println("called findBy with '$fieldName' and '$value'")
     }
 }
 
 fun main() {
     val productRepository = ProductRepository()
-    val sku = productRepository.findBySku()
+    val sku = productRepository.findBySku("abc123")
 }
 
 /*
@@ -30,11 +31,8 @@ FIR: FirRegularClass with supertype menta.dynamic.DynamicObject
 FirMentaDynamicScope wraps class scope → synthetic members for any name
   │
   ▼ FIR-to-IR (CallAndReferenceGenerator)
-IR: IrDynamicMemberExpression / IrDynamicOperatorExpression
-  │
-  ▼ JVM Lowering (MentaDynamicCallLowering)
-IR: IrCall(tryInvokeMember) with IrConstructorCall(InvokeMemberBinder("findBySku", args))
+IR: IrCall(tryInvokeMember) with IrConstructorCall(InvokeMemberBinder("findBySku")) and IrVararg(args)
   │
   ▼ JVM Code Generator
-Bytecode: invokevirtual DynamicObject.tryInvokeMember(InvokeMemberBinder)
+Bytecode: invokevirtual DynamicObject.tryInvokeMember(InvokeMemberBinder, Object[])
 */

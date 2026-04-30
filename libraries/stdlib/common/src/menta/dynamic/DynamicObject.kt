@@ -22,12 +22,13 @@ public class SetMemberBinder(public val name: String) {
 
 /**
  * Binder for dynamic method invocation.
+ *
+ * Holds call-site metadata (currently just the member name). Per-call values
+ * are passed as a separate `args` parameter to [DynamicObject.tryInvokeMember],
+ * matching the shape of C#'s `DynamicObject.TryInvokeMember`.
  */
-public class InvokeMemberBinder(
-    public val name: String,
-    public val args: Array<out Any?> = emptyArray()
-) {
-    override fun toString(): String = "InvokeMemberBinder(name=$name, args=[${args.size} items])"
+public class InvokeMemberBinder(public val name: String) {
+    override fun toString(): String = "InvokeMemberBinder(name=$name)"
 }
 
 /**
@@ -75,11 +76,12 @@ public abstract class DynamicObject {
     /**
      * Called when a method is invoked on this dynamic object.
      *
-     * @param binder contains the method name and the arguments passed to the call
+     * @param binder call-site metadata (member name)
+     * @param args the arguments passed to the call
      * @return the return value of the method invocation
      * @throws DynamicMemberNotHandledException if not overridden
      */
-    public open fun tryInvokeMember(binder: InvokeMemberBinder): Any? {
+    public open fun tryInvokeMember(binder: InvokeMemberBinder, args: Array<out Any?>): Any? {
         throw DynamicMemberNotHandledException("invoke", binder.name)
     }
 }
