@@ -92,7 +92,6 @@ class MentaDynamicSymbols(
     val invokeMemberBinderClass: IrClassSymbol = createClass(FqName("menta.dynamic.InvokeMemberBinder")) { klass ->
         klass.addConstructor().apply {
             addValueParameter("name", irBuiltIns.stringType)
-            addValueParameter("args", irBuiltIns.arrayClass.defaultType)
         }
     }
 
@@ -110,6 +109,7 @@ class MentaDynamicSymbols(
         }
         klass.addFunction("tryInvokeMember", irBuiltIns.anyNType).apply {
             addValueParameter("binder", invokeMemberBinderClass.defaultType)
+            addValueParameter("args", irBuiltIns.arrayClass.typeWith(irBuiltIns.anyNType))
         }
     }
 
@@ -408,7 +408,6 @@ class MentaDynamicCallLowering(
                     irBuiltIns.stringType,
                     memberName,
                 )
-                arguments[1] = argsArray
             }
 
             return IrCallImpl(
@@ -419,6 +418,7 @@ class MentaDynamicCallLowering(
             ).apply {
                 dispatchReceiver = receiver
                 arguments[1] = binderCall
+                arguments[2] = argsArray
             }
         }
     }

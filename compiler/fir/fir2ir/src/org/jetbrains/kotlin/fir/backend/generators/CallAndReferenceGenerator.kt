@@ -414,8 +414,8 @@ class CallAndReferenceGenerator(
                     val name = calleeReference.resolved?.name
                         ?: error("Callee reference must have a name: ${qualifiedAccess.render()}")
 
-                    // Menta dynamic: rewrite `obj.findBySku()` →
-                    //   obj.tryInvokeMember(MentaInvokeMemberBinder("findBySku"), emptyArray())
+                    // Menta dynamic: rewrite `obj.findBySku("abc")` →
+                    //   obj.tryInvokeMember(InvokeMemberBinder("findBySku"), arrayOf("abc"))
                     if (symbol.origin == FirDeclarationOrigin.MentaDynamicScope) {
                         return@convertWithOffsets generateMentaTryInvokeMemberCall(
                             qualifiedAccess, selectedReceiver, name, startOffset, endOffset, type
@@ -466,9 +466,9 @@ class CallAndReferenceGenerator(
 
     /**
      * Rewrites a Menta dynamic member call like:
-     *   receiver.findBySku()
+     *   receiver.findBySku("abc")
      * into:
-     *   receiver.tryInvokeMember(MentaInvokeMemberBinder("findBySku"), emptyArray())
+     *   receiver.tryInvokeMember(InvokeMemberBinder("findBySku"), arrayOf("abc"))
      *
      * The `tryInvokeMember` function is the single dispatch point declared by the
      * user in their `define dynamic` class.  The compiler resolves it via normal FIR
@@ -502,18 +502,13 @@ class CallAndReferenceGenerator(
             declarationStorage.getIrFunctionSymbol(resolvedTryInvoke) as? IrSimpleFunctionSymbol
                 ?: error("tryInvokeMember could not be mapped to IR: $resolvedTryInvoke")
 
-        // 2. The binder is a simple string passed directly — no binder class needed.
-        //    We pass the member name as a String argument, matching:
-        //      fun tryInvokeMember(binder: InvokeMemberBinder): Any?
-        //    where InvokeMemberBinder is resolved from the real class scope (not synthetic).
-        //    Build the name string constant that will become binder.name inside tryInvokeMember.
+        // 2. Build the name string constant that becomes binder.name.
         val memberNameConst = IrConstImpl.string(
             startOffset, endOffset, builtins.stringType, memberName.identifier
         )
 
-        // 3. Resolve the InvokeMemberBinder constructor.
-        //    It lives on the real class scope, not the dynamic scope, so look it up by
-        //    the parameter type of tryInvokeMember's first value parameter.
+        // 3. Resolve the InvokeMemberBinder constructor from tryInvokeMember's first
+        //    value parameter type. (It lives on the real class scope, not the dynamic scope.)
         val binderFirType = resolvedTryInvoke.fir.valueParameters.firstOrNull()?.returnTypeRef?.coneType?.fullyExpandedType()
             ?: error("tryInvokeMember has no binder parameter on ${receiverClassSymbol.classId}")
         val binderClassSymbol = binderFirType.toRegularClassSymbol()
@@ -528,21 +523,42 @@ class CallAndReferenceGenerator(
         val binderIrConstructorSymbol = declarationStorage.getIrConstructorSymbol(resolvedBinderCtor)
         val binderIrType = classifierStorage.getIrClassSymbol(binderClassSymbol).defaultType
 
-        // 4. Build:  <BinderClass>(memberName)
+        // 4. Build:  InvokeMemberBinder(memberName)
         val binderCall = IrConstructorCallImpl(
             startOffset, endOffset, binderIrType, binderIrConstructorSymbol,
             typeArgumentsCount = 0,
             constructorTypeArgumentsCount = 0,
         ).also { it.arguments[0] = memberNameConst }
 
-        // 5. Build:  receiver.tryInvokeMember(<BinderClass>(memberName))
+        // 5. Build the args Array<Any?> from the call's vararg arguments.
+        //    The synthetic FIR pseudo-function declares a single vararg parameter, so the
+        //    resolved argument mapping holds a FirVarargArgumentsExpression whose `.arguments`
+        //    are the actual call args.
+        val argExprs = mutableListOf<IrExpression>()
+        val argumentMapping = (qualifiedAccess as? FirCall)?.resolvedArgumentMapping
+        if (!argumentMapping.isNullOrEmpty()) {
+            val varargExpr = argumentMapping.keys.firstOrNull() as? FirVarargArgumentsExpression
+                ?: error("Menta dynamic call must have a single vararg argument: ${qualifiedAccess.render()}")
+            for (argument in varargExpr.arguments) {
+                argExprs.add(convertArgument(argument, null, ConeSubstitutor.Empty))
+            }
+        }
+        val argsArray = IrVarargImpl(
+            startOffset, endOffset,
+            builtins.arrayClass.typeWith(builtins.anyNType),
+            builtins.anyNType,
+            argExprs,
+        )
+
+        // 6. Build:  receiver.tryInvokeMember(InvokeMemberBinder(memberName), argsArray)
         return IrCallImpl(
             startOffset, endOffset, type,
             tryInvokeMemberIrSymbol,
             typeArgumentsCount = 0,
         ).also { call ->
             call.arguments[0] = receiver      // dispatch receiver
-            call.arguments[1] = binderCall    // binder argument
+            call.arguments[1] = binderCall    // binder
+            call.arguments[2] = argsArray     // args
         }
     }
 

@@ -5,7 +5,7 @@ import menta.dynamic.*
 define dynamic MixedObj() {
     public fun realMethod(): String = "real"
 
-    override fun tryInvokeMember(binder: InvokeMemberBinder): Any? {
+    override fun tryInvokeMember(binder: InvokeMemberBinder, args: Array<out Any?>): Any? {
         return "dynamic:${binder.name}"
     }
 }
