@@ -604,6 +604,12 @@ internal open class KotlinExpressionParsing(
                     }
                 }
 
+                // Menta: `dynamic object { ... }` literal expression
+                if (atWithRemap(KtTokens.DYNAMIC_KEYWORD) && lookahead(1) === KtTokens.OBJECT_KEYWORD) {
+                    parseObjectLiteral(isDynamic = true)
+                    return true
+                }
+
                 parseSimpleNameExpression()
             }
             KtTokens.LBRACE_ID -> parseFunctionLiteral()
@@ -1850,11 +1856,14 @@ internal open class KotlinExpressionParsing(
     }
 
     /*
-     * "object" (":" delegationSpecifier{","})? classBody // Cannot make class body optional: foo(object : F, A)
+     * ("dynamic")? "object" (":" delegationSpecifier{","})? classBody // Cannot make class body optional: foo(object : F, A)
      */
-    fun parseObjectLiteral() {
+    fun parseObjectLiteral(isDynamic: Boolean = false) {
         val literal = mark()
         val declaration = mark()
+        if (isDynamic) {
+            advance() // DYNAMIC_KEYWORD (already remapped from IDENTIFIER by caller)
+        }
         kotlinParsing.parseObject(KotlinParsing.NameParsingMode.PROHIBITED, false) // Body is not optional because of foo(object : A, B)
         declaration.done(KtNodeTypes.OBJECT_DECLARATION)
         literal.done(KtNodeTypes.OBJECT_LITERAL)

@@ -54,7 +54,6 @@ import org.jetbrains.kotlin.psi.KtPackageDirective
 import org.jetbrains.kotlin.psi.KtParameter
 import org.jetbrains.kotlin.psi.KtPrimaryConstructor
 import org.jetbrains.kotlin.psi.KtProperty
-import org.jetbrains.kotlin.psi.KtPropertyAccessor
 import org.jetbrains.kotlin.psi.KtReturnExpression
 import org.jetbrains.kotlin.psi.KtSimpleNameExpression
 import org.jetbrains.kotlin.psi.KtSuperExpression
@@ -4177,376 +4176,8 @@ internal val KT_DIAGNOSTIC_CONVERTER = KaDiagnosticConverterBuilder.buildConvert
             token,
         )
     }
-    add(FirErrors.FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS) { firDiagnostic ->
-        FunInterfaceWrongCountOfAbstractMembersImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES) { firDiagnostic ->
-        FunInterfaceCannotHaveAbstractPropertiesImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS) { firDiagnostic ->
-        FunInterfaceAbstractMethodWithTypeParametersImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE) { firDiagnostic ->
-        FunInterfaceAbstractMethodWithDefaultValueImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
     add(FirErrors.FUN_INTERFACE_WITH_SUSPEND_FUNCTION) { firDiagnostic ->
         FunInterfaceWithSuspendFunctionImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_PROPERTY_IN_NON_ABSTRACT_CLASS) { firDiagnostic ->
-        AbstractPropertyInNonAbstractClassImpl(
-            firSymbolBuilder.callableBuilder.buildCallableSymbol(firDiagnostic.a),
-            firSymbolBuilder.classifierBuilder.buildClassLikeSymbol(firDiagnostic.b),
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PRIVATE_PROPERTY_IN_INTERFACE) { firDiagnostic ->
-        PrivatePropertyInInterfaceImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_PROPERTY_WITH_INITIALIZER) { firDiagnostic ->
-        AbstractPropertyWithInitializerImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PROPERTY_INITIALIZER_IN_INTERFACE) { firDiagnostic ->
-        PropertyInitializerInInterfaceImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PROPERTY_WITH_NO_TYPE_NO_INITIALIZER) { firDiagnostic ->
-        PropertyWithNoTypeNoInitializerImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_PROPERTY_WITHOUT_TYPE) { firDiagnostic ->
-        AbstractPropertyWithoutTypeImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.LATEINIT_PROPERTY_WITHOUT_TYPE) { firDiagnostic ->
-        LateinitPropertyWithoutTypeImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED) { firDiagnostic ->
-        MustBeInitializedImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_WARNING) { firDiagnostic ->
-        MustBeInitializedWarningImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL) { firDiagnostic ->
-        MustBeInitializedOrBeFinalImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_OR_BE_FINAL_WARNING) { firDiagnostic ->
-        MustBeInitializedOrBeFinalWarningImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT) { firDiagnostic ->
-        MustBeInitializedOrBeAbstractImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_OR_BE_ABSTRACT_WARNING) { firDiagnostic ->
-        MustBeInitializedOrBeAbstractWarningImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT) { firDiagnostic ->
-        MustBeInitializedOrFinalOrAbstractImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.MUST_BE_INITIALIZED_OR_FINAL_OR_ABSTRACT_WARNING) { firDiagnostic ->
-        MustBeInitializedOrFinalOrAbstractWarningImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXPLICIT_FIELD_MUST_BE_INITIALIZED) { firDiagnostic ->
-        ExplicitFieldMustBeInitializedImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXTENSION_PROPERTY_MUST_HAVE_ACCESSORS_OR_BE_ABSTRACT) { firDiagnostic ->
-        ExtensionPropertyMustHaveAccessorsOrBeAbstractImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.UNNECESSARY_LATEINIT) { firDiagnostic ->
-        UnnecessaryLateinitImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.BACKING_FIELD_IN_INTERFACE) { firDiagnostic ->
-        BackingFieldInInterfaceImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXTENSION_PROPERTY_WITH_BACKING_FIELD) { firDiagnostic ->
-        ExtensionPropertyWithBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PROPERTY_INITIALIZER_NO_BACKING_FIELD) { firDiagnostic ->
-        PropertyInitializerNoBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_DELEGATED_PROPERTY) { firDiagnostic ->
-        AbstractDelegatedPropertyImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.DELEGATED_PROPERTY_IN_INTERFACE) { firDiagnostic ->
-        DelegatedPropertyInInterfaceImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_PROPERTY_WITH_GETTER) { firDiagnostic ->
-        AbstractPropertyWithGetterImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_PROPERTY_WITH_SETTER) { firDiagnostic ->
-        AbstractPropertyWithSetterImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PRIVATE_SETTER_FOR_ABSTRACT_PROPERTY) { firDiagnostic ->
-        PrivateSetterForAbstractPropertyImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PRIVATE_SETTER_FOR_OPEN_PROPERTY) { firDiagnostic ->
-        PrivateSetterForOpenPropertyImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.VAL_WITH_SETTER) { firDiagnostic ->
-        ValWithSetterImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.CONST_VAL_NOT_TOP_LEVEL_OR_OBJECT) { firDiagnostic ->
-        ConstValNotTopLevelOrObjectImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.CONST_VAL_WITH_GETTER) { firDiagnostic ->
-        ConstValWithGetterImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.CONST_VAL_WITH_DELEGATE) { firDiagnostic ->
-        ConstValWithDelegateImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.TYPE_CANT_BE_USED_FOR_CONST_VAL) { firDiagnostic ->
-        TypeCantBeUsedForConstValImpl(
-            firSymbolBuilder.typeBuilder.buildKtType(firDiagnostic.a),
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.CONST_VAL_WITHOUT_INITIALIZER) { firDiagnostic ->
-        ConstValWithoutInitializerImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.CONST_VAL_WITH_NON_CONST_INITIALIZER) { firDiagnostic ->
-        ConstValWithNonConstInitializerImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.DELEGATE_USES_EXTENSION_PROPERTY_TYPE_PARAMETER_ERROR) { firDiagnostic ->
-        DelegateUsesExtensionPropertyTypeParameterErrorImpl(
-            firSymbolBuilder.classifierBuilder.buildTypeParameterSymbol(firDiagnostic.a),
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.GETTER_VISIBILITY_DIFFERS_FROM_PROPERTY_VISIBILITY) { firDiagnostic ->
-        GetterVisibilityDiffersFromPropertyVisibilityImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY) { firDiagnostic ->
-        SetterVisibilityInconsistentWithPropertyVisibilityImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.WRONG_GETTER_RETURN_TYPE) { firDiagnostic ->
-        WrongGetterReturnTypeImpl(
-            firSymbolBuilder.typeBuilder.buildKtType(firDiagnostic.a),
-            firSymbolBuilder.typeBuilder.buildKtType(firDiagnostic.b),
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.WRONG_SETTER_RETURN_TYPE) { firDiagnostic ->
-        WrongSetterReturnTypeImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.WRONG_SETTER_PARAMETER_TYPE) { firDiagnostic ->
-        WrongSetterParameterTypeImpl(
-            firSymbolBuilder.typeBuilder.buildKtType(firDiagnostic.a),
-            firSymbolBuilder.typeBuilder.buildKtType(firDiagnostic.b),
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ACCESSOR_FOR_DELEGATED_PROPERTY) { firDiagnostic ->
-        AccessorForDelegatedPropertyImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PROPERTY_INITIALIZER_WITH_EXPLICIT_FIELD_DECLARATION) { firDiagnostic ->
-        PropertyInitializerWithExplicitFieldDeclarationImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PROPERTY_FIELD_DECLARATION_MISSING_INITIALIZER) { firDiagnostic ->
-        PropertyFieldDeclarationMissingInitializerImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.LATEINIT_NULLABLE_BACKING_FIELD) { firDiagnostic ->
-        LateinitNullableBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.BACKING_FIELD_FOR_DELEGATED_PROPERTY) { firDiagnostic ->
-        BackingFieldForDelegatedPropertyImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.VAR_PROPERTY_WITH_EXPLICIT_BACKING_FIELD) { firDiagnostic ->
-        VarPropertyWithExplicitBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.NON_FINAL_PROPERTY_WITH_EXPLICIT_BACKING_FIELD) { firDiagnostic ->
-        NonFinalPropertyWithExplicitBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXPECT_PROPERTY_WITH_EXPLICIT_BACKING_FIELD) { firDiagnostic ->
-        ExpectPropertyWithExplicitBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.INCONSISTENT_BACKING_FIELD_TYPE) { firDiagnostic ->
-        InconsistentBackingFieldTypeImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXPLICIT_FIELD_VISIBILITY_MUST_BE_LESS_PERMISSIVE) { firDiagnostic ->
-        ExplicitFieldVisibilityMustBeLessPermissiveImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.PROPERTY_WITH_EXPLICIT_FIELD_AND_ACCESSORS) { firDiagnostic ->
-        PropertyWithExplicitFieldAndAccessorsImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXPLICIT_BACKING_FIELD_IN_INTERFACE) { firDiagnostic ->
-        ExplicitBackingFieldInInterfaceImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXPLICIT_BACKING_FIELD_IN_ABSTRACT_PROPERTY) { firDiagnostic ->
-        ExplicitBackingFieldInAbstractPropertyImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.EXPLICIT_BACKING_FIELD_IN_EXTENSION) { firDiagnostic ->
-        ExplicitBackingFieldInExtensionImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.REDUNDANT_EXPLICIT_BACKING_FIELD) { firDiagnostic ->
-        RedundantExplicitBackingFieldImpl(
-            firDiagnostic as KtPsiDiagnostic,
-            token,
-        )
-    }
-    add(FirErrors.ABSTRACT_PROPERTY_IN_PRIMARY_CONSTRUCTOR_PARAMETERS) { firDiagnostic ->
-        AbstractPropertyInPrimaryConstructorParametersImpl(
             firDiagnostic as KtPsiDiagnostic,
             token,
         )
@@ -6619,6 +6250,26 @@ internal val KT_DIAGNOSTIC_CONVERTER = KaDiagnosticConverterBuilder.buildConvert
     }
     add(FirErrors.VERSION_OVERLOADS_TOO_COMPLEX_EXPRESSION) { firDiagnostic ->
         VersionOverloadsTooComplexExpressionImpl(
+            firDiagnostic as KtPsiDiagnostic,
+            token,
+        )
+    }
+    add(FirErrors.EMPTY_REQUIRES_ROLE_PLAYER_HAS_MEMBERS) { firDiagnostic ->
+        EmptyRequiresRolePlayerHasMembersImpl(
+            firSymbolBuilder.typeBuilder.buildKtType(firDiagnostic.a),
+            firDiagnostic as KtPsiDiagnostic,
+            token,
+        )
+    }
+    add(FirErrors.ROLE_PLAYER_RESOLVES_TO_TYPE) { firDiagnostic ->
+        RolePlayerResolvesToTypeImpl(
+            firDiagnostic.a,
+            firDiagnostic as KtPsiDiagnostic,
+            token,
+        )
+    }
+    add(FirErrors.PUBLIC_VAR_WITHOUT_CUSTOM_SETTER) { firDiagnostic ->
+        PublicVarWithoutCustomSetterImpl(
             firDiagnostic as KtPsiDiagnostic,
             token,
         )

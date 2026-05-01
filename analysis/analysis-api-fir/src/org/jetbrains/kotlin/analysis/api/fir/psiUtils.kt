@@ -133,7 +133,6 @@ internal val KtClassOrObject.kaSymbolModality: KaSymbolModality?
 internal val KtDeclaration.kaSymbolModalityByModifiers: KaSymbolModality?
     get() = when {
         hasModifier(KtTokens.FINAL_KEYWORD) -> KaSymbolModality.FINAL
-        hasModifier(KtTokens.ABSTRACT_KEYWORD) -> KaSymbolModality.ABSTRACT
         hasModifier(KtTokens.OPEN_KEYWORD) -> KaSymbolModality.OPEN
         this is KtClassOrObject && hasModifier(KtTokens.SEALED_KEYWORD) -> KaSymbolModality.SEALED
         else -> null

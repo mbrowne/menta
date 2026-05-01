@@ -74,7 +74,6 @@ import org.jetbrains.kotlin.psi.KtPackageDirective
 import org.jetbrains.kotlin.psi.KtParameter
 import org.jetbrains.kotlin.psi.KtPrimaryConstructor
 import org.jetbrains.kotlin.psi.KtProperty
-import org.jetbrains.kotlin.psi.KtPropertyAccessor
 import org.jetbrains.kotlin.psi.KtReturnExpression
 import org.jetbrains.kotlin.psi.KtSimpleNameExpression
 import org.jetbrains.kotlin.psi.KtSuperExpression
@@ -2938,256 +2937,8 @@ sealed interface KaFirDiagnostic<PSI : PsiElement> : KaDiagnosticWithPsi<PSI> {
         override val diagnosticClass get() = DefaultValueNotAllowedInOverride::class
     }
 
-    interface FunInterfaceWrongCountOfAbstractMembers : KaFirDiagnostic<KtDefine> {
-        override val diagnosticClass get() = FunInterfaceWrongCountOfAbstractMembers::class
-    }
-
-    interface FunInterfaceCannotHaveAbstractProperties : KaFirDiagnostic<KtDeclaration> {
-        override val diagnosticClass get() = FunInterfaceCannotHaveAbstractProperties::class
-    }
-
-    interface FunInterfaceAbstractMethodWithTypeParameters : KaFirDiagnostic<KtDeclaration> {
-        override val diagnosticClass get() = FunInterfaceAbstractMethodWithTypeParameters::class
-    }
-
-    interface FunInterfaceAbstractMethodWithDefaultValue : KaFirDiagnostic<KtDeclaration> {
-        override val diagnosticClass get() = FunInterfaceAbstractMethodWithDefaultValue::class
-    }
-
     interface FunInterfaceWithSuspendFunction : KaFirDiagnostic<KtDeclaration> {
         override val diagnosticClass get() = FunInterfaceWithSuspendFunction::class
-    }
-
-    interface AbstractPropertyInNonAbstractClass : KaFirDiagnostic<KtModifierListOwner> {
-        override val diagnosticClass get() = AbstractPropertyInNonAbstractClass::class
-        val property: KaCallableSymbol
-        val containingClass: KaClassLikeSymbol
-    }
-
-    interface PrivatePropertyInInterface : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = PrivatePropertyInInterface::class
-    }
-
-    interface AbstractPropertyWithInitializer : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = AbstractPropertyWithInitializer::class
-    }
-
-    interface PropertyInitializerInInterface : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = PropertyInitializerInInterface::class
-    }
-
-    interface PropertyWithNoTypeNoInitializer : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = PropertyWithNoTypeNoInitializer::class
-    }
-
-    interface AbstractPropertyWithoutType : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = AbstractPropertyWithoutType::class
-    }
-
-    interface LateinitPropertyWithoutType : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = LateinitPropertyWithoutType::class
-    }
-
-    interface MustBeInitialized : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitialized::class
-    }
-
-    interface MustBeInitializedWarning : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedWarning::class
-    }
-
-    interface MustBeInitializedOrBeFinal : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedOrBeFinal::class
-    }
-
-    interface MustBeInitializedOrBeFinalWarning : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedOrBeFinalWarning::class
-    }
-
-    interface MustBeInitializedOrBeAbstract : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedOrBeAbstract::class
-    }
-
-    interface MustBeInitializedOrBeAbstractWarning : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedOrBeAbstractWarning::class
-    }
-
-    interface MustBeInitializedOrFinalOrAbstract : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedOrFinalOrAbstract::class
-    }
-
-    interface MustBeInitializedOrFinalOrAbstractWarning : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = MustBeInitializedOrFinalOrAbstractWarning::class
-    }
-
-    interface ExplicitFieldMustBeInitialized : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = ExplicitFieldMustBeInitialized::class
-    }
-
-    interface ExtensionPropertyMustHaveAccessorsOrBeAbstract : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = ExtensionPropertyMustHaveAccessorsOrBeAbstract::class
-    }
-
-    interface UnnecessaryLateinit : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = UnnecessaryLateinit::class
-    }
-
-    interface BackingFieldInInterface : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = BackingFieldInInterface::class
-    }
-
-    interface ExtensionPropertyWithBackingField : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = ExtensionPropertyWithBackingField::class
-    }
-
-    interface PropertyInitializerNoBackingField : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = PropertyInitializerNoBackingField::class
-    }
-
-    interface AbstractDelegatedProperty : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = AbstractDelegatedProperty::class
-    }
-
-    interface DelegatedPropertyInInterface : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = DelegatedPropertyInInterface::class
-    }
-
-    interface AbstractPropertyWithGetter : KaFirDiagnostic<KtPropertyAccessor> {
-        override val diagnosticClass get() = AbstractPropertyWithGetter::class
-    }
-
-    interface AbstractPropertyWithSetter : KaFirDiagnostic<KtPropertyAccessor> {
-        override val diagnosticClass get() = AbstractPropertyWithSetter::class
-    }
-
-    interface PrivateSetterForAbstractProperty : KaFirDiagnostic<KtModifierListOwner> {
-        override val diagnosticClass get() = PrivateSetterForAbstractProperty::class
-    }
-
-    interface PrivateSetterForOpenProperty : KaFirDiagnostic<KtModifierListOwner> {
-        override val diagnosticClass get() = PrivateSetterForOpenProperty::class
-    }
-
-    interface ValWithSetter : KaFirDiagnostic<KtPropertyAccessor> {
-        override val diagnosticClass get() = ValWithSetter::class
-    }
-
-    interface ConstValNotTopLevelOrObject : KaFirDiagnostic<KtElement> {
-        override val diagnosticClass get() = ConstValNotTopLevelOrObject::class
-    }
-
-    interface ConstValWithGetter : KaFirDiagnostic<KtElement> {
-        override val diagnosticClass get() = ConstValWithGetter::class
-    }
-
-    interface ConstValWithDelegate : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = ConstValWithDelegate::class
-    }
-
-    interface TypeCantBeUsedForConstVal : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = TypeCantBeUsedForConstVal::class
-        val constValType: KaType
-    }
-
-    interface ConstValWithoutInitializer : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = ConstValWithoutInitializer::class
-    }
-
-    interface ConstValWithNonConstInitializer : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = ConstValWithNonConstInitializer::class
-    }
-
-    interface DelegateUsesExtensionPropertyTypeParameterError : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = DelegateUsesExtensionPropertyTypeParameterError::class
-        val usedTypeParameter: KaTypeParameterSymbol
-    }
-
-    interface GetterVisibilityDiffersFromPropertyVisibility : KaFirDiagnostic<KtModifierListOwner> {
-        override val diagnosticClass get() = GetterVisibilityDiffersFromPropertyVisibility::class
-    }
-
-    interface SetterVisibilityInconsistentWithPropertyVisibility : KaFirDiagnostic<KtModifierListOwner> {
-        override val diagnosticClass get() = SetterVisibilityInconsistentWithPropertyVisibility::class
-    }
-
-    interface WrongGetterReturnType : KaFirDiagnostic<KtElement> {
-        override val diagnosticClass get() = WrongGetterReturnType::class
-        val expectedType: KaType
-        val actualType: KaType
-    }
-
-    interface WrongSetterReturnType : KaFirDiagnostic<KtElement> {
-        override val diagnosticClass get() = WrongSetterReturnType::class
-    }
-
-    interface WrongSetterParameterType : KaFirDiagnostic<KtElement> {
-        override val diagnosticClass get() = WrongSetterParameterType::class
-        val expectedType: KaType
-        val actualType: KaType
-    }
-
-    interface AccessorForDelegatedProperty : KaFirDiagnostic<KtPropertyAccessor> {
-        override val diagnosticClass get() = AccessorForDelegatedProperty::class
-    }
-
-    interface PropertyInitializerWithExplicitFieldDeclaration : KaFirDiagnostic<KtExpression> {
-        override val diagnosticClass get() = PropertyInitializerWithExplicitFieldDeclaration::class
-    }
-
-    interface PropertyFieldDeclarationMissingInitializer : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = PropertyFieldDeclarationMissingInitializer::class
-    }
-
-    interface LateinitNullableBackingField : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = LateinitNullableBackingField::class
-    }
-
-    interface BackingFieldForDelegatedProperty : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = BackingFieldForDelegatedProperty::class
-    }
-
-    interface VarPropertyWithExplicitBackingField : KaFirDiagnostic<PsiElement> {
-        override val diagnosticClass get() = VarPropertyWithExplicitBackingField::class
-    }
-
-    interface NonFinalPropertyWithExplicitBackingField : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = NonFinalPropertyWithExplicitBackingField::class
-    }
-
-    interface ExpectPropertyWithExplicitBackingField : KaFirDiagnostic<KtElement> {
-        override val diagnosticClass get() = ExpectPropertyWithExplicitBackingField::class
-    }
-
-    interface InconsistentBackingFieldType : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = InconsistentBackingFieldType::class
-    }
-
-    interface ExplicitFieldVisibilityMustBeLessPermissive : KaFirDiagnostic<KtProperty> {
-        override val diagnosticClass get() = ExplicitFieldVisibilityMustBeLessPermissive::class
-    }
-
-    interface PropertyWithExplicitFieldAndAccessors : KaFirDiagnostic<PsiElement> {
-        override val diagnosticClass get() = PropertyWithExplicitFieldAndAccessors::class
-    }
-
-    interface ExplicitBackingFieldInInterface : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = ExplicitBackingFieldInInterface::class
-    }
-
-    interface ExplicitBackingFieldInAbstractProperty : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = ExplicitBackingFieldInAbstractProperty::class
-    }
-
-    interface ExplicitBackingFieldInExtension : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = ExplicitBackingFieldInExtension::class
-    }
-
-    interface RedundantExplicitBackingField : KaFirDiagnostic<KtBackingField> {
-        override val diagnosticClass get() = RedundantExplicitBackingField::class
-    }
-
-    interface AbstractPropertyInPrimaryConstructorParameters : KaFirDiagnostic<KtModifierListOwner> {
-        override val diagnosticClass get() = AbstractPropertyInPrimaryConstructorParameters::class
     }
 
     interface LocalVariableWithTypeParametersWarning : KaFirDiagnostic<KtProperty> {
@@ -4640,6 +4391,20 @@ sealed interface KaFirDiagnostic<PSI : PsiElement> : KaDiagnosticWithPsi<PSI> {
 
     interface VersionOverloadsTooComplexExpression : KaFirDiagnostic<PsiElement> {
         override val diagnosticClass get() = VersionOverloadsTooComplexExpression::class
+    }
+
+    interface EmptyRequiresRolePlayerHasMembers : KaFirDiagnostic<PsiElement> {
+        override val diagnosticClass get() = EmptyRequiresRolePlayerHasMembers::class
+        val type: KaType
+    }
+
+    interface RolePlayerResolvesToType : KaFirDiagnostic<PsiElement> {
+        override val diagnosticClass get() = RolePlayerResolvesToType::class
+        val roleName: String
+    }
+
+    interface PublicVarWithoutCustomSetter : KaFirDiagnostic<KtProperty> {
+        override val diagnosticClass get() = PublicVarWithoutCustomSetter::class
     }
 
     interface OverrideCannotBeStatic : KaFirDiagnostic<PsiElement> {

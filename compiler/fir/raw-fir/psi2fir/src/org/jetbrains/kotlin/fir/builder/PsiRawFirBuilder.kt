@@ -1126,7 +1126,10 @@ open class PsiRawFirBuilder(
                 val classIsKotlinNothing = constructedClassId == StandardClassIds.Nothing
                 // kotlin.Nothing doesn't have `Any` supertype, but does have delegating constructor call to Any
                 if (!classIsKotlinNothing) {
-                    if (this is KtDefine && this.isDynamic()) {
+                    val isMentaDynamic =
+                        (this is KtDefine && this.isDynamic()) ||
+                                (this is KtObjectDeclaration && this.isDynamic())
+                    if (isMentaDynamic) {
                         addDynamicObjectSupertype(this, container)
                         delegatedSuperTypeRef = container.superTypeRefs.first()
                         container.superTypeRefs += implicitAnyType
@@ -2122,11 +2125,11 @@ open class PsiRawFirBuilder(
         }
 
         private fun addDynamicObjectSupertype(
-            classDefine: KtDefine,
+            sourceElement: KtElement,
             classBuilder: FirClassBuilder,
         ) {
             classBuilder.superTypeRefs += buildUserTypeRef {
-                source = classDefine.toFirSourceElement()
+                source = sourceElement.toFirSourceElement()
                 isMarkedNullable = false
                 qualifier += FirQualifierPartImpl(
                     source = null,
