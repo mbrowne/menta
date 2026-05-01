@@ -680,8 +680,15 @@ internal class KotlinParsing private constructor(builder: SemanticWhitespaceAwar
                 parseObject(nameParsingModeForObject, true)
                 return KtNodeTypes.OBJECT_DECLARATION
             }
-            KtTokens.IDENTIFIER_ID -> if (detector.isEnumDetected && declarationParsingMode.canBeEnumUsedAsSoftKeyword) {
-                return parseClass(enumClass = true, expectKindKeyword = false)
+            KtTokens.IDENTIFIER_ID -> {
+                if (detector.isEnumDetected && declarationParsingMode.canBeEnumUsedAsSoftKeyword) {
+                    return parseClass(enumClass = true, expectKindKeyword = false)
+                }
+                if (atWithRemap(KtTokens.DYNAMIC_KEYWORD) && lookahead(1) === KtTokens.OBJECT_KEYWORD) {
+                    advance() // DYNAMIC_KEYWORD
+                    parseObject(nameParsingModeForObject, true)
+                    return KtNodeTypes.OBJECT_DECLARATION
+                }
             }
         }
 
