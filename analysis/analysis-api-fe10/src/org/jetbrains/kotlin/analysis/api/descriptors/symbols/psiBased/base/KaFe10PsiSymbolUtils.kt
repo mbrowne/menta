@@ -45,7 +45,6 @@ internal val KtDeclaration.ktVisibility: Visibility?
 
 internal val KtDeclaration.kaSymbolModality: KaSymbolModality?
     get() = when {
-        hasModifier(KtTokens.ABSTRACT_KEYWORD) -> KaSymbolModality.ABSTRACT
         hasModifier(KtTokens.FINAL_KEYWORD) -> KaSymbolModality.FINAL
         hasModifier(KtTokens.SEALED_KEYWORD) -> KaSymbolModality.SEALED
         hasModifier(KtTokens.OPEN_KEYWORD) -> when {

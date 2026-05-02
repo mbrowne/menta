@@ -1126,9 +1126,12 @@ open class PsiRawFirBuilder(
                 val classIsKotlinNothing = constructedClassId == StandardClassIds.Nothing
                 // kotlin.Nothing doesn't have `Any` supertype, but does have delegating constructor call to Any
                 if (!classIsKotlinNothing) {
-                    if (this is KtDefine && this.isDynamic()) {
+                    val isMentaDynamic =
+                        (this is KtDefine && this.isDynamic()) ||
+                                (this is KtObjectDeclaration && this.isDynamic())
+                    if (isMentaDynamic) {
                         addDynamicObjectSupertype(this, container)
-                        delegatedSuperTypeRef = container.superTypeRefs.first()
+                        delegatedSuperTypeRef = implicitAnyType
                         container.superTypeRefs += implicitAnyType
                     } else {
                         container.superTypeRefs += implicitAnyType
@@ -2122,11 +2125,11 @@ open class PsiRawFirBuilder(
         }
 
         private fun addDynamicObjectSupertype(
-            classDefine: KtDefine,
+            sourceElement: KtElement,
             classBuilder: FirClassBuilder,
         ) {
             classBuilder.superTypeRefs += buildUserTypeRef {
-                source = classDefine.toFirSourceElement()
+                source = sourceElement.toFirSourceElement()
                 isMarkedNullable = false
                 qualifier += FirQualifierPartImpl(
                     source = null,
@@ -3297,6 +3300,23 @@ open class PsiRawFirBuilder(
                 // (no role-method call in initializer) come first so role-method bodies see them;
                 // post-role decls (e.g. `val planned = activity.plan()`) come after role extensions
                 // so the role-method calls resolve. Plain expression statements come after both.
+                // When no roles are present, preserve source statement order exactly.
+                if (rolePlayerNames.isEmpty()) {
+                    for (statement in expression.statements) {
+                        if (statement is KtRole) continue
+                        val firStatement = statement.toFirStatement { "Statement expected: ${statement.text}" }
+                        val isForLoopBlock =
+                            firStatement is FirBlock && firStatement.source?.kind == KtFakeSourceElementKind.DesugaredForLoop
+                        val flattened = if (firStatement is FirBlock && !isForLoopBlock && firStatement.annotations.isEmpty()) {
+                            firStatement.statements
+                        } else {
+                            listOf(firStatement)
+                        }
+                        statements += flattened
+                    }
+                    return@apply
+                }
+
                 val preRoleDeclarations = mutableListOf<FirStatement>()
                 val postRoleDeclarations = mutableListOf<FirStatement>()
                 val expressionStatements = mutableListOf<FirStatement>()

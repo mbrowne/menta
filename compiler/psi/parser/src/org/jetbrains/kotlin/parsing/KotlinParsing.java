@@ -554,6 +554,11 @@ public class KotlinParsing extends AbstractKotlinParsing {
                 if (detector.isEnumDetected() && declarationParsingMode.canBeEnumUsedAsSoftKeyword) {
                     return parseClass(true, false);
                 }
+                if (at(DYNAMIC_KEYWORD) && lookahead(1) == OBJECT_KEYWORD) {
+                    advance(); // DYNAMIC_KEYWORD
+                    parseObject(nameParsingModeForObject, true);
+                    return OBJECT_DECLARATION;
+                }
         }
 
         return null;

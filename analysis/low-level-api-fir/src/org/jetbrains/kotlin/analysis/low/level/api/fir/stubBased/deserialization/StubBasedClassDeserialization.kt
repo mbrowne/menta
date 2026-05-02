@@ -63,7 +63,7 @@ internal val KtModifierListOwner.visibility: Visibility
 internal val KtDeclaration.modality: Modality
     get() = when {
         hasModifier(KtTokens.SEALED_KEYWORD) -> Modality.SEALED
-        hasModifier(KtTokens.ABSTRACT_KEYWORD) || this is KtDefine && isInterface() -> Modality.ABSTRACT
+        this is KtDefine && isInterface() -> Modality.ABSTRACT
         hasModifier(KtTokens.OPEN_KEYWORD) -> Modality.OPEN
         else -> Modality.FINAL
     }

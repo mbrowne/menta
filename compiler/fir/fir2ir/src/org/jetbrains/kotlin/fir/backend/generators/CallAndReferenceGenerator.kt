@@ -484,10 +484,12 @@ class CallAndReferenceGenerator(
     ): IrExpression {
         // 1. Resolve tryInvokeMember on the receiver's declared class.
         //    We use processFunctionsByName (the correct FirTypeScope API) rather than getFunctions.
+        //    `toClassSymbol` handles both regular classes (`define dynamic`) and anonymous
+        //    objects (`dynamic object { ... }`).
         val receiverClassSymbol = qualifiedAccess.dispatchReceiver
             ?.resolvedType
             ?.fullyExpandedType()
-            ?.toRegularClassSymbol()
+            ?.toClassSymbol(session)
             ?: error("Menta dynamic call has no dispatch receiver class: ${qualifiedAccess.render()}")
 
         var tryInvokeMemberFirSymbol: FirNamedFunctionSymbol? = null

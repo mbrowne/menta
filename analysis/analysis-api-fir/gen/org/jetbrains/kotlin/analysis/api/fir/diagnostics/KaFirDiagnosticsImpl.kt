@@ -75,7 +75,6 @@ import org.jetbrains.kotlin.psi.KtPackageDirective
 import org.jetbrains.kotlin.psi.KtParameter
 import org.jetbrains.kotlin.psi.KtPrimaryConstructor
 import org.jetbrains.kotlin.psi.KtProperty
-import org.jetbrains.kotlin.psi.KtPropertyAccessor
 import org.jetbrains.kotlin.psi.KtReturnExpression
 import org.jetbrains.kotlin.psi.KtSimpleNameExpression
 import org.jetbrains.kotlin.psi.KtSuperExpression
@@ -3516,318 +3515,10 @@ internal class DefaultValueNotAllowedInOverrideImpl(
     token: KaLifetimeToken,
 ) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.DefaultValueNotAllowedInOverride
 
-internal class FunInterfaceWrongCountOfAbstractMembersImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtDefine>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceWrongCountOfAbstractMembers
-
-internal class FunInterfaceCannotHaveAbstractPropertiesImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtDeclaration>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceCannotHaveAbstractProperties
-
-internal class FunInterfaceAbstractMethodWithTypeParametersImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtDeclaration>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceAbstractMethodWithTypeParameters
-
-internal class FunInterfaceAbstractMethodWithDefaultValueImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtDeclaration>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceAbstractMethodWithDefaultValue
-
 internal class FunInterfaceWithSuspendFunctionImpl(
     firDiagnostic: KtPsiDiagnostic,
     token: KaLifetimeToken,
 ) : KaAbstractFirDiagnostic<KtDeclaration>(firDiagnostic, token), KaFirDiagnostic.FunInterfaceWithSuspendFunction
-
-internal class AbstractPropertyInNonAbstractClassImpl(
-    override val property: KaCallableSymbol,
-    override val containingClass: KaClassLikeSymbol,
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtModifierListOwner>(firDiagnostic, token), KaFirDiagnostic.AbstractPropertyInNonAbstractClass
-
-internal class PrivatePropertyInInterfaceImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.PrivatePropertyInInterface
-
-internal class AbstractPropertyWithInitializerImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.AbstractPropertyWithInitializer
-
-internal class PropertyInitializerInInterfaceImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.PropertyInitializerInInterface
-
-internal class PropertyWithNoTypeNoInitializerImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.PropertyWithNoTypeNoInitializer
-
-internal class AbstractPropertyWithoutTypeImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.AbstractPropertyWithoutType
-
-internal class LateinitPropertyWithoutTypeImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.LateinitPropertyWithoutType
-
-internal class MustBeInitializedImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitialized
-
-internal class MustBeInitializedWarningImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedWarning
-
-internal class MustBeInitializedOrBeFinalImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedOrBeFinal
-
-internal class MustBeInitializedOrBeFinalWarningImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedOrBeFinalWarning
-
-internal class MustBeInitializedOrBeAbstractImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedOrBeAbstract
-
-internal class MustBeInitializedOrBeAbstractWarningImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedOrBeAbstractWarning
-
-internal class MustBeInitializedOrFinalOrAbstractImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedOrFinalOrAbstract
-
-internal class MustBeInitializedOrFinalOrAbstractWarningImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.MustBeInitializedOrFinalOrAbstractWarning
-
-internal class ExplicitFieldMustBeInitializedImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.ExplicitFieldMustBeInitialized
-
-internal class ExtensionPropertyMustHaveAccessorsOrBeAbstractImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.ExtensionPropertyMustHaveAccessorsOrBeAbstract
-
-internal class UnnecessaryLateinitImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.UnnecessaryLateinit
-
-internal class BackingFieldInInterfaceImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.BackingFieldInInterface
-
-internal class ExtensionPropertyWithBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.ExtensionPropertyWithBackingField
-
-internal class PropertyInitializerNoBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.PropertyInitializerNoBackingField
-
-internal class AbstractDelegatedPropertyImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.AbstractDelegatedProperty
-
-internal class DelegatedPropertyInInterfaceImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.DelegatedPropertyInInterface
-
-internal class AbstractPropertyWithGetterImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtPropertyAccessor>(firDiagnostic, token), KaFirDiagnostic.AbstractPropertyWithGetter
-
-internal class AbstractPropertyWithSetterImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtPropertyAccessor>(firDiagnostic, token), KaFirDiagnostic.AbstractPropertyWithSetter
-
-internal class PrivateSetterForAbstractPropertyImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtModifierListOwner>(firDiagnostic, token), KaFirDiagnostic.PrivateSetterForAbstractProperty
-
-internal class PrivateSetterForOpenPropertyImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtModifierListOwner>(firDiagnostic, token), KaFirDiagnostic.PrivateSetterForOpenProperty
-
-internal class ValWithSetterImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtPropertyAccessor>(firDiagnostic, token), KaFirDiagnostic.ValWithSetter
-
-internal class ConstValNotTopLevelOrObjectImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.ConstValNotTopLevelOrObject
-
-internal class ConstValWithGetterImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.ConstValWithGetter
-
-internal class ConstValWithDelegateImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.ConstValWithDelegate
-
-internal class TypeCantBeUsedForConstValImpl(
-    override val constValType: KaType,
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.TypeCantBeUsedForConstVal
-
-internal class ConstValWithoutInitializerImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.ConstValWithoutInitializer
-
-internal class ConstValWithNonConstInitializerImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.ConstValWithNonConstInitializer
-
-internal class DelegateUsesExtensionPropertyTypeParameterErrorImpl(
-    override val usedTypeParameter: KaTypeParameterSymbol,
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.DelegateUsesExtensionPropertyTypeParameterError
-
-internal class GetterVisibilityDiffersFromPropertyVisibilityImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtModifierListOwner>(firDiagnostic, token), KaFirDiagnostic.GetterVisibilityDiffersFromPropertyVisibility
-
-internal class SetterVisibilityInconsistentWithPropertyVisibilityImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtModifierListOwner>(firDiagnostic, token), KaFirDiagnostic.SetterVisibilityInconsistentWithPropertyVisibility
-
-internal class WrongGetterReturnTypeImpl(
-    override val expectedType: KaType,
-    override val actualType: KaType,
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.WrongGetterReturnType
-
-internal class WrongSetterReturnTypeImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.WrongSetterReturnType
-
-internal class WrongSetterParameterTypeImpl(
-    override val expectedType: KaType,
-    override val actualType: KaType,
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.WrongSetterParameterType
-
-internal class AccessorForDelegatedPropertyImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtPropertyAccessor>(firDiagnostic, token), KaFirDiagnostic.AccessorForDelegatedProperty
-
-internal class PropertyInitializerWithExplicitFieldDeclarationImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtExpression>(firDiagnostic, token), KaFirDiagnostic.PropertyInitializerWithExplicitFieldDeclaration
-
-internal class PropertyFieldDeclarationMissingInitializerImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.PropertyFieldDeclarationMissingInitializer
-
-internal class LateinitNullableBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.LateinitNullableBackingField
-
-internal class BackingFieldForDelegatedPropertyImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.BackingFieldForDelegatedProperty
-
-internal class VarPropertyWithExplicitBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<PsiElement>(firDiagnostic, token), KaFirDiagnostic.VarPropertyWithExplicitBackingField
-
-internal class NonFinalPropertyWithExplicitBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.NonFinalPropertyWithExplicitBackingField
-
-internal class ExpectPropertyWithExplicitBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtElement>(firDiagnostic, token), KaFirDiagnostic.ExpectPropertyWithExplicitBackingField
-
-internal class InconsistentBackingFieldTypeImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.InconsistentBackingFieldType
-
-internal class ExplicitFieldVisibilityMustBeLessPermissiveImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.ExplicitFieldVisibilityMustBeLessPermissive
-
-internal class PropertyWithExplicitFieldAndAccessorsImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<PsiElement>(firDiagnostic, token), KaFirDiagnostic.PropertyWithExplicitFieldAndAccessors
-
-internal class ExplicitBackingFieldInInterfaceImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.ExplicitBackingFieldInInterface
-
-internal class ExplicitBackingFieldInAbstractPropertyImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.ExplicitBackingFieldInAbstractProperty
-
-internal class ExplicitBackingFieldInExtensionImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.ExplicitBackingFieldInExtension
-
-internal class RedundantExplicitBackingFieldImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtBackingField>(firDiagnostic, token), KaFirDiagnostic.RedundantExplicitBackingField
-
-internal class AbstractPropertyInPrimaryConstructorParametersImpl(
-    firDiagnostic: KtPsiDiagnostic,
-    token: KaLifetimeToken,
-) : KaAbstractFirDiagnostic<KtModifierListOwner>(firDiagnostic, token), KaFirDiagnostic.AbstractPropertyInPrimaryConstructorParameters
 
 internal class LocalVariableWithTypeParametersWarningImpl(
     firDiagnostic: KtPsiDiagnostic,
@@ -5572,6 +5263,23 @@ internal class VersionOverloadsTooComplexExpressionImpl(
     firDiagnostic: KtPsiDiagnostic,
     token: KaLifetimeToken,
 ) : KaAbstractFirDiagnostic<PsiElement>(firDiagnostic, token), KaFirDiagnostic.VersionOverloadsTooComplexExpression
+
+internal class EmptyRequiresRolePlayerHasMembersImpl(
+    override val type: KaType,
+    firDiagnostic: KtPsiDiagnostic,
+    token: KaLifetimeToken,
+) : KaAbstractFirDiagnostic<PsiElement>(firDiagnostic, token), KaFirDiagnostic.EmptyRequiresRolePlayerHasMembers
+
+internal class RolePlayerResolvesToTypeImpl(
+    override val roleName: String,
+    firDiagnostic: KtPsiDiagnostic,
+    token: KaLifetimeToken,
+) : KaAbstractFirDiagnostic<PsiElement>(firDiagnostic, token), KaFirDiagnostic.RolePlayerResolvesToType
+
+internal class PublicVarWithoutCustomSetterImpl(
+    firDiagnostic: KtPsiDiagnostic,
+    token: KaLifetimeToken,
+) : KaAbstractFirDiagnostic<KtProperty>(firDiagnostic, token), KaFirDiagnostic.PublicVarWithoutCustomSetter
 
 internal class OverrideCannotBeStaticImpl(
     firDiagnostic: KtPsiDiagnostic,

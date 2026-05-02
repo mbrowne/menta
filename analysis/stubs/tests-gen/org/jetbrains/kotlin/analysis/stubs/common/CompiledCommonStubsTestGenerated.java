@@ -737,12 +737,6 @@ public class CompiledCommonStubsTestGenerated extends AbstractCompiledCommonStub
   }
 
   @Test
-  @TestMetadata("inheritingClasses.kt")
-  public void testInheritingClasses() {
-    run("inheritingClasses.kt");
-  }
-
-  @Test
   @TestMetadata("Inner.kt")
   public void testInner() {
     run("Inner.kt");
