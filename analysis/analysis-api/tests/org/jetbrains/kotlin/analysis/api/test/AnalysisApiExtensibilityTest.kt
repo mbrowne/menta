@@ -60,7 +60,6 @@ class AnalysisApiExtensibilityTest : AbstractAnalysisApiSurfaceCodebaseValidatio
             this is KtDefine -> when {
                 hasModifier(KtTokens.SEALED_KEYWORD) -> true
                 hasModifier(KtTokens.OPEN_KEYWORD) -> false
-                hasModifier(KtTokens.ABSTRACT_KEYWORD) -> false
                 isInterface() -> false
                 else -> true
             }

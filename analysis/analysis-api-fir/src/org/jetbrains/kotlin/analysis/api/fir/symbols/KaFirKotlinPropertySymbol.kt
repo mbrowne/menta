@@ -380,8 +380,6 @@ private class KaFirKotlinPropertyKtPropertyBasedSymbol : KaFirKotlinPropertySymb
             if (backingPsi != null) {
                 val fastAnswer = when {
                     backingPsi.isExpectDeclaration() -> false
-                    backingPsi.hasModifier(KtTokens.ABSTRACT_KEYWORD) -> false
-
                     // Compiled properties might have both `hasBackingField = true` and `isDelegatedProperty = true` at the same time
                     backingPsi.hasDelegate() -> if (backingPsi.cameFromKotlinLibrary) null else false
                     backingPsi.fieldDeclaration != null -> true

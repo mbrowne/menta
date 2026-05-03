@@ -1692,12 +1692,14 @@ class LightTreeRawFirDeclarationBuilder(
                     var delegatedConstructorSource: KtLightSourceElement? = null
                     var delegatedSuperCalls: List<DelegatedConstructorWrapper>? = null
                     var delegateFields: List<FirField>? = null
+                    var isDynamicObject = false
 
                     objectDeclaration.forEachChildren { child ->
                         when (child.tokenType) {
                             MODIFIER_LIST -> {
                                 modifiers = convertModifierList(child)
                             }
+                            DYNAMIC_KEYWORD -> isDynamicObject = true
                             PRIMARY_CONSTRUCTOR -> primaryConstructor = child
                             SUPER_TYPE_LIST -> convertDelegationSpecifiers(child).let { specifiers ->
                                 delegatedSuperTypeRef = specifiers.superTypeCalls.lastOrNull()?.delegatedSuperTypeRef
@@ -1714,6 +1716,28 @@ class LightTreeRawFirDeclarationBuilder(
                     superTypeRefs.ifEmpty {
                         superTypeRefs += implicitAnyType
                         delegatedSuperTypeRef = implicitAnyType
+                    }
+
+                    if (isDynamicObject) {
+                        superTypeRefs += buildUserTypeRef {
+                            source = objectDeclaration.toFirSourceElement()
+                            isMarkedNullable = false
+                            qualifier += FirQualifierPartImpl(
+                                source = null,
+                                name = Name.identifier("menta"),
+                                typeArgumentList = FirTypeArgumentListImpl(source = null),
+                            )
+                            qualifier += FirQualifierPartImpl(
+                                source = null,
+                                name = Name.identifier("dynamic"),
+                                typeArgumentList = FirTypeArgumentListImpl(source = null),
+                            )
+                            qualifier += FirQualifierPartImpl(
+                                source = null,
+                                name = Name.identifier("DynamicObject"),
+                                typeArgumentList = FirTypeArgumentListImpl(source = null),
+                            )
+                        }
                     }
                     val delegatedSuperType = delegatedSuperTypeRef ?: FirImplicitTypeRefImplWithoutSource
 

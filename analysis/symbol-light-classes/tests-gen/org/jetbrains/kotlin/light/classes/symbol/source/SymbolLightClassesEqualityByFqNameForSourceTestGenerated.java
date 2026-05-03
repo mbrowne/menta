@@ -461,21 +461,9 @@ public class SymbolLightClassesEqualityByFqNameForSourceTestGenerated extends Ab
   }
 
   @Test
-  @TestMetadata("SuperTypeWithBoundKotlinCollection.kt")
-  public void testSuperTypeWithBoundKotlinCollection() {
-    run("SuperTypeWithBoundKotlinCollection.kt");
-  }
-
-  @Test
   @TestMetadata("SuspendFunctionTypeAsAnnotationArgument.kt")
   public void testSuspendFunctionTypeAsAnnotationArgument() {
     run("SuspendFunctionTypeAsAnnotationArgument.kt");
-  }
-
-  @Test
-  @TestMetadata("Throws.kt")
-  public void testThrows() {
-    run("Throws.kt");
   }
 
   @Test

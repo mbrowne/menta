@@ -1,4 +1,5 @@
 /*
+ * This file has been modified by Menta from the original version.
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
@@ -66,6 +67,13 @@ class KtObjectDeclaration : KtClassOrObject {
     }
 
     fun isObjectLiteral(): Boolean = _stub?.isObjectLiteral ?: (parent is KtObjectLiteralExpression)
+
+    /**
+     * Returns `true` if this is a Menta `dynamic object { ... }` literal expression.
+     * The `dynamic` soft keyword is placed by the parser as a direct child of the
+     * `OBJECT_DECLARATION` node (only for object-literal form, never for named objects).
+     */
+    fun isDynamic(): Boolean = findChildByType<PsiElement>(KtTokens.DYNAMIC_KEYWORD) != null
 
     fun getObjectKeyword(): PsiElement? = findChildByType(KtTokens.OBJECT_KEYWORD)
 

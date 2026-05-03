@@ -40,17 +40,17 @@ public class DynamicMemberNotHandledException(
 ) : RuntimeException("Dynamic $operation of member '$memberName' is not handled")
 
 /**
- * Base class for objects that support dynamic member resolution at runtime.
+ * Base interface for objects that support dynamic member resolution at runtime.
  *
  * Similar to C#'s `System.Dynamic.DynamicObject`, this provides methods that
  * can be overridden to intercept property access and method invocation on
  * objects whose members are not known at compile time.
  *
  * When a `define` declaration uses the `dynamic` modifier, the compiler
- * automatically extends this class and routes unresolved member accesses
+ * automatically extends this interface and routes unresolved member accesses
  * and method calls through the corresponding `try*` methods.
  */
-public abstract class DynamicObject {
+public interface DynamicObject {
     /**
      * Called when a property is read on this dynamic object.
      *

@@ -588,6 +588,12 @@ public class KotlinExpressionParsing extends AbstractKotlinParsing {
                     }
                 }
 
+                // Menta: `dynamic object { ... }` literal expression
+                if (at(DYNAMIC_KEYWORD) && lookahead(1) == OBJECT_KEYWORD) {
+                    parseObjectLiteral(true);
+                    break;
+                }
+
                 parseSimpleNameExpression();
                 break;
             case LBRACE_Id:
@@ -1863,11 +1869,18 @@ public class KotlinExpressionParsing extends AbstractKotlinParsing {
     }
 
     /*
-     * "object" (":" delegationSpecifier{","})? classBody // Cannot make class body optional: foo(object : F, A)
+     * ("dynamic")? "object" (":" delegationSpecifier{","})? classBody // Cannot make class body optional: foo(object : F, A)
      */
     public void parseObjectLiteral() {
+        parseObjectLiteral(false);
+    }
+
+    public void parseObjectLiteral(boolean isDynamic) {
         PsiBuilder.Marker literal = mark();
         PsiBuilder.Marker declaration = mark();
+        if (isDynamic) {
+            advance(); // DYNAMIC_KEYWORD
+        }
         myKotlinParsing.parseObject(NameParsingMode.PROHIBITED, false); // Body is not optional because of foo(object : A, B)
         declaration.done(OBJECT_DECLARATION);
         literal.done(OBJECT_LITERAL);

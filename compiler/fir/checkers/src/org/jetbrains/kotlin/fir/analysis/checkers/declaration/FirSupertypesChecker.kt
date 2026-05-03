@@ -105,9 +105,7 @@ object FirSupertypesChecker : FirClassChecker(MppCheckerKind.Platform) {
                     reporter.reportOn(superTypeRef.source, FirErrors.SUPERTYPE_APPEARS_TWICE)
                 }
                 if (symbol.classKind != ClassKind.INTERFACE) {
-                    val isDynamicObjectSupertype =
-                        symbol.classId == org.jetbrains.kotlin.fir.scopes.impl.DYNAMIC_OBJECT_CLASS_ID
-                    if (declaration.classKind == ClassKind.CLASS && !isDynamicObjectSupertype) {
+                    if (declaration.classKind == ClassKind.CLASS) {
                         reporter.reportOn(
                             superTypeRef.source,
                             FirErrors.UNSUPPORTED,
