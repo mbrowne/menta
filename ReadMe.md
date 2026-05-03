@@ -10,6 +10,10 @@ Menta is a multi-platform language originally forked from [Kotlin](https://githu
 
 It supports multiple paradigms, including functional programming, DCI ([Data, Context and Interaction](https://fulloo.info/)), and object-oriented programming using composition. It deliberately does *not* support traditional classes and inheritance.
 
+## Online Demo
+
+https://codesandbox.io/p/devbox/menta-demo-54hjfz
+
 ## Why Menta?
 
 Menta is short for "mental models". The concept of mental models in software traces back at least to [Doug Englebart](https://www.dougengelbart.org/), an early pioneer in the computing field who envisioned the computer as an extension of the human mind (or to use Engelbart's terminology, "augmenting human intellect"). This vision heavily influenced [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) and other researchers in the early days of developing GUIs and the precursors of modern personal computers. [1]
@@ -30,6 +34,11 @@ There are many benefits of going back to the historical roots of modeling, writi
 [1] Kay's conception of mental models was also informed by the work of Jean Piaget and other psychologists who studied child psychology, as explained in Kay's 1987 presentation [Doing With Images Makes Symbols](https://www.youtube.com/watch?v=p2LZLYcu_JY).
 
 See also the article [Relearning OOP](https://medium.com/@egonelbre/relearning-oop-89f10e0e2f68) by Egon Elbre for a good introduction.
+
+## Documentation
+
+* [Differences from Kotlin](docs/differences-from-kotlin/readme.md)
+* [Frequently Asked Questions](docs/faq.md)
 
 ## Build environment requirements
 

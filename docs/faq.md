@@ -184,6 +184,50 @@ Regardless, DCI-supporting languages like Menta are a big step forward in day-to
 
 <details>
 <summary><a id="abstract-classes">3. How do I inherit from an abstract class in the standard Kotlin library?</a></summary>
+
+Since Menta deliberately doesn't include the ability to inherit one class from another, you can't directly inherit from abstract classes. To extend an external abstract class from the standard Kotlin library or a third-party library, you will currently need to create a wrapper class for it in Kotlin or Java.
+
+A more convenient solution might be provided in a future version of Menta.
+
+Here's an example of extending an abstract class in standard Kotlin:
+
+```kotlin
+// ExampleBaseCollection.kt
+
+package mypackage
+
+import kotlin.collections.AbstractCollection
+
+class ExampleBaseCollection<TItem>(private val items: List<TItem>) : AbstractCollection<TItem>() {
+    override val size: Int
+        get() = items.size
+
+    override fun iterator(): Iterator<TItem> = items.iterator()
+}
+```
+
+Using it from Menta:
+
+```menta
+// example.mnt
+
+import mypackage.*
+
+// you could use ExampleBaseCollection directly, or extend it via forwarding like this:
+define NamesCollection(
+    names: List<String>,
+    val baseColl: Collection<String> = ExampleBaseCollection(names)
+): ExampleBaseCollection<String> by baseColl {}
+
+fun main() {
+    val coll = NamesCollection(listOf("Fred", "Sally"))
+    for (i in coll) {
+        println(i)
+    }
+}
+```
+
+When configuring your project or compiling with the CLI, make sure the standard Kotlin or Java class is on your classpath both during compilation and when running the program.
 </details>
 
 <details>
