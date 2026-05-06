@@ -1,6 +1,6 @@
 # Object templates instead of classes
 
-There is no `class` keyword in Menta (note: `class` is still a reserved word, in case it's needed in the future for some sort of Kotlin-compatibility feature). To most people, `class` implies a construct that can be inherited from/to other classes, and Menta avoids class inheritance, so it's best not to give a false expectation. But otherwise, the syntax is very similar to Kotlin classes, for example:
+There is no `class` keyword in Menta. (Note: `class` is still a reserved word, in case it's needed in the future for some sort of Kotlin-compatibility feature.) To most people, `class` implies a construct that can be inherited from/to other classes, and Menta avoids class inheritance, so it's best not to give a false expectation. But otherwise, the syntax is very similar to Kotlin classes, for example:
 
 ```menta
 define Cat(public val name: String) {

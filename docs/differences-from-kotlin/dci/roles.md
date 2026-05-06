@@ -12,7 +12,7 @@ Roles are defined using the `role` keyword:
     } requires ConversationParticipant
 ```
 
-Roles must always specify a *role-object contract*, which specifies the requirements an object must meet in order to play this role. To call a role method, always use its role name to access the role player:
+Roles must always specify a *role-object contract*, which specifies the requirements an object must meet in order to play this role. To call a role method, always use its role name to access it:
 
 ```menta
     greeter.greet()

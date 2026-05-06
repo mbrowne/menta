@@ -1,6 +1,6 @@
 # Dynamic Objects
 
-Menta has allows you to create *dynamic* object templates (similar to C#'s [DynamicObject](https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject) class), which allow you to create objects that respond dynamically to messages that don't necessarily match the names of the method(s) you want the object to call.
+Menta allows you to create *dynamic* object templates (similar to C#'s [DynamicObject](https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject) class), so you can create objects that respond dynamically to messages that don't necessarily match the names of the method(s) you want the object to call.
 
 This is very important for object-oriented programming as originally envisioned by Alan Kay (the inventor of the term), allowing every object to act like an encapsulated mini-computer or server that can handle messages internally however it likes. See the [FAQ](../faq.md#user-content-oop) for more details.
 

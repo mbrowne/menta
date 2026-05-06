@@ -29,7 +29,7 @@ interface IShoe {
 }
 
 class Shoe(override val brand: Brand, override val modelName: String): IShoe {
-    override fun compareWith(shoe: Shoe) {}
+    override fun compareWith(shoe: Shoe): ComparisonMatrix {...}
 }
 
 class RunningShoe(
@@ -42,7 +42,7 @@ class RunningShoe(
     override val brand: Brand
         get() = shoe.brand
 
-    override val modelName: Brand
+    override val modelName: String
         get() = shoe.modelName
 }
 ```
@@ -138,9 +138,9 @@ joe.turn 30
 joe.move right 10
 ```
 
-Another hint about what Kay ultimately wanted to achieve with "messaging" is his interest in distributed systems such as Croquet[^6] (the latest iteration of which is named Multisynq), where objects are no longer just local. The concept scales to objects communicating over a network, or being kept in sync over a network to facilitate collaboration (think collaborative document editing like Google Docs, or multiplayer online games).
+Another hint about what Kay ultimately wanted to achieve with "messaging" is his relatively more recent interest in distributed systems such as Croquet[^6] (the latest iteration of which is named Multisynq), where objects are no longer just local. The concept scales to objects communicating over a network, or being kept in sync over a network to facilitate collaboration (think collaborative document editing like Google Docs, or multiplayer online games).
 
-Having said all of that, if it had been named "message-oriented programming", that still could have been misleading, because it's not *only* the messages that matter. Over the years and with the benefit of hindsight, Kay has suggested some other possible terms to convey his ideas, including "process-oriented programming" and "server-oriented programming". The technical connotations of such terms is only one side of the coin. From its inception, true OOP was always just as focused on user experience, mental models, and its connection to software design; that's the bigger picture (see the main readme in this repo).
+Having said all of that, if it had been named "message-oriented programming", that still could have been misleading, because it's not *only* the messages that matter. Over the years and with the benefit of hindsight, Kay has suggested some other possible terms to convey his ideas, including "process-oriented programming" and "server-oriented programming". The technical connotations of such terms are only one side of the coin. From its inception, true OOP was always just as focused on user experience, mental models, and its connection to software design; that's the bigger picture (see the main readme in this repo).
 
 Now let's look at a technical definition, quoting from Kay in 2003 (from the same message as the first quote above):
 
@@ -160,7 +160,7 @@ In terms of programming, if you want a system that can evolve as it continues ru
 
 This explains his fondness of dynamic languages over static ones, but it's also a concept that goes beyond just a single programmer writing application code that runs on their machine and sharing it via source control. So perhaps it's useful to think of Menta as a lower-level building block that might or might not be used in the context of a more dynamic system, in which engineers and stakeholders are primarily specifying and evolving the system at a higher level.
 
-Now we can finally answer the question, is Menta object-oriented? Not fully, since it doesn't go all the way with the messaging or late-binding concepts. (With such a strict definition of messaging, no version of Smalltalk has fully realized the vision either.) But DCI as well as Menta's [`define dynamic`](differences-from-kotlin/dynamic-objects.md) construct makes it much more message-oriented than purely class-oriented systems, in which compile-time methods defined in classes are the only means of specifying communication between objects. And even class-oriented programming enables us to create "service abstractions", which are highly valuable even if they fall short of Kay's definition, as explained well in [this paper](https://www.cs.cmu.edu/~aldrich/papers/objects-essay.pdf).
+Now we can finally answer the question, is Menta object-oriented? Not fully, since it doesn't go all the way with the messaging or late-binding concepts. (With such a strict definition of messaging, no version of Smalltalk has fully realized the vision either.) But DCI as well as Menta's [`define dynamic`](differences-from-kotlin/dynamic-objects.md) construct makes it much more message-oriented than purely class-oriented systems, in which compile-time methods defined in classes are the only means of specifying communication between objects. And even class-oriented programming enables us to create "service abstractions", which are highly valuable even if they fall short of Kay's definition, as explained well in [this paper](https://www.cs.cmu.edu/~aldrich/papers/objects-essay.pdf) by Jonathan Aldrich.
 
 Regardless, DCI-supporting languages like Menta are a big step forward in day-to-day programming with objects, and it's very much inspired by the ideas of Alan Kay, Trygve Reenskaug, and other pioneers of object orientation.
 
@@ -235,7 +235,7 @@ When configuring your project or compiling with the CLI, make sure the standard 
 
 The key difference is that roles belong to a *Context* (the "C" in DCI, not to be confused with Kotlin's `context` function or coroutine contexts), which is an interaction context for objects and/or primitive values as they play roles to interact with each other. Objects in the Context obtain their role behavior when the role is *bound* to an object (which often happens during initialization, or at the moment a function is called in the case of function Contexts).
 
-Because roles belong to their enclosing Context (and only to that Context), this means that when the execution flow leaves the Context (even if it's just calling an external function—this includes instance methods—which will return the flow back to the Context again), those role methods are no longer available on any of the objects in the Context. And role methods are only available when referring to the object by the name of the role it's currently playing, so if the same object `o` is playing roles `foo` and `bar`, a role defined as `role foo { public fun x() {} }` can only have its `x` method called via `foo.x()`, not `o.x()` or `bar.x()`.
+Because roles belong to their enclosing Context (and only to that Context), this means that when the execution flow leaves the Context, those role methods are no longer available on any of the objects in the Context. (This is true even if a method in the Context is just calling an external function [including instance methods], which will return the flow back to the Context again.) And role methods are only available when referring to the object by the name of the role it's currently playing, so if the same object `o` is playing roles `foo` and `bar`, a role defined as `role foo { public fun x() {} }` can only have its `x` method called via `foo.x()`, not `o.x()` or `bar.x()`.
 
 Standard Kotlin extension methods are still available. They are appropriate to use when you are extending a third-party library (including the standard library) and you want to add a new method that can be accessed anywhere in a given package (rather than just one DCI Context), or if it's a top-level extension that needs to be imported and reused by another package. Avoid using this to re-use role behavior; roles are deliberately contextual and specific to their Context. If you find yourself tempted to do this, you probably want a nested Context instead.
 
@@ -245,5 +245,5 @@ It's possible to implement DCI Contexts and roles using native Kotlin extension 
 <details>
 <summary><a id="do-classes-still-exist">5. Do classes still exist in Menta?</a></summary>
 
-Technically yes as of now, but only behind the scenes. The absences of inheritance (aside from default method implementations in interfaces) makes Menta object templates fundamentally different from how the word "class" is commonly understood. The Kotlin intermediate representation (IR) has classes, and Menta has not changed the IR, meaning that it's compatible with IR produced by the Kotlin compiler. It's possible that the behind-the-scenes implementation of Menta could change to something different and more object-centric in the future, but one thing that will not change is having the JVM as one of the available backend targets. The JVM bytecode has classes, so at least when targeting the JVM, classes will technically still exist in Menta.
+Technically yes as of now, but only behind the scenes. The absences of inheritance (aside from default method implementations in interfaces) makes Menta object templates fundamentally different from how the word "class" is commonly understood. The Kotlin intermediate representation (IR) has classes, and Menta has not changed the IR, meaning that it's compatible with IR produced by the Kotlin compiler. It's possible that the behind-the-scenes implementation of Menta could change to something different and more object-centric in the future, but one thing that will not change is having the JVM as one of the available backend targets. The JVM bytecode heavily relies on classes, so at least when targeting the JVM, classes will technically still exist in Menta.
 </details>

@@ -10,7 +10,7 @@ DCI was invented by Trygve Reenskaug, who also invented the [Model-View-Controll
 
 ## Articles
 
-- [The DCI Architecture: A New Vision of Object-Oriented Programming](https://fulloo.info/Documents/ArtimaDCI.html) - written in 2009 and still one of the best introductions to DCI
+- [The DCI Architecture: A New Vision of Object-Oriented Programming](https://fulloo.info/Documents/ArtimaDCI.html) – written in 2009 and still one of the best introductions to DCI
 
 - [Working with objects — in computer and mind](https://fulloo.info/Documents/CommSenseCurrentDraft.pdf)
 
