@@ -1,0 +1,26 @@
+interface ConversationParticipant {
+    public val name: String
+}
+
+define User(override public val name: String): ConversationParticipant {}
+
+fun SayHello(user: ConversationParticipant, greeter: ConversationParticipant) {
+    greeter.greet()
+
+    role greeter {
+        public fun greet() {
+            println("Hello ${user.name}, ${name} welcomes you!")
+        }
+    } requires ConversationParticipant
+
+    role user requires ConversationParticipant
+}
+
+fun main() {
+    val user = User("new Menta user")
+    val community = object: ConversationParticipant {
+        override public val name = "the Menta community"
+    }
+
+    SayHello(user, community)
+}

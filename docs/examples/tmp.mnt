@@ -1,0 +1,20 @@
+/////////
+
+typealias Brand = String
+typealias TrainingUsage = String
+
+interface IShoe from Shoe
+
+define Shoe(public val brand: Brand, public val modelName: String) {}
+
+define RunningShoe(
+    brand: Brand,
+    modelName: String,
+    public val trainingUsages: List<TrainingUsage>,
+    val shoe: IShoe = Shoe(brand, modelName),
+): IShoe by shoe {}
+
+fun main() {
+    val s = RunningShoe("Nike", "Vaporfly", listOf<String>("foo"))
+    println(s.trainingUsages)
+}

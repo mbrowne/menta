@@ -91,6 +91,20 @@ fun CircularDependency() {
     } requires {}
 }
 
+object SingletonContext {
+    val foo = this
+
+    public fun doIt() {
+        foo.x()
+    }
+
+    role foo {
+        public fun x() {
+            println("foo.x() called")
+        }
+    } requires SingletonContext
+}
+
 fun main() {
     val fred = Person("Fred")
     MyFunctionContext(fred)
@@ -102,4 +116,21 @@ fun main() {
     ctxObj.addItem("milk")
 
     CircularDependency()
+
+    SingletonContext.doIt()
+
+    val anonymousObj = object {
+        val foo = object {}
+
+        public fun doIt() {
+            foo.x()
+        }
+
+        role foo {
+            public fun x() {
+                println("foo.x() called")
+            }
+        } requires {}
+    }
+    anonymousObj.doIt()
 }

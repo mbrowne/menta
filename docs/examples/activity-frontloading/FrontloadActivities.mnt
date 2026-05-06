@@ -1,0 +1,78 @@
+import java.time.*
+
+interface PlannableProject {
+    public val startTime: LocalDateTime
+    public val activities: List<Activity>
+}
+
+interface PlannableActivity {
+    public val name: String
+    public val duration: Duration
+    public val dependencies: List<PlannableActivity>
+}
+
+define ActivityTiming(
+    public val activity: PlannableActivity,
+    public val startTime: LocalDateTime,
+) {
+    public val finishTime get() = startTime + activity.duration
+}
+
+typealias Plan = List<ActivityTiming>
+
+/*
+ * Activity Planning: Frontload Activities
+ *
+ * This example shows an algorithm that's part of a larger example.
+ * Use case: https://fulloo.info/Examples/SqueakExamples/BB4Plan/index.html
+ */
+fun FrontloadActivities(project: Project): Plan {
+    val activities = project.activities
+    return activities.plan()
+
+
+    role project requires PlannableProject
+    
+    role activities {
+        public fun plan(): Plan {
+            return activities
+                .fold(emptyMap<PlannableActivity, ActivityTiming>(), ::planActivity)
+                .values
+                .sortedBy { it.startTime }
+        }  
+    } requires List<PlannableActivity>
+
+    // Nested DCI context for planning an individual activity
+    fun planActivity(
+        planSoFar: Map<PlannableActivity, ActivityTiming>,
+        activity: PlannableActivity
+    ): Map<PlannableActivity, ActivityTiming> {
+        if (activity in planSoFar) {
+            return planSoFar
+        }
+
+        val dependencies = activity.dependencies
+            .fold(emptyMap<PlannableActivity, ActivityTiming>(), ::planActivity)
+            .values
+            .toList()
+
+        return planSoFar + (activity to activity.plan())
+
+
+        role project requires PlannableProject
+
+        role activity {
+            public fun plan(): ActivityTiming {
+                return ActivityTiming(this, dependencies.getLatestFinishTime())
+            }
+        } requires PlannableActivity
+
+        role dependencies {
+            public fun getLatestFinishTime(): LocalDateTime {
+                return maxByOrNull {
+                    it.startTime
+                }?.finishTime ?: project.startTime
+            }
+        } requires List<ActivityTiming>
+    }
+}

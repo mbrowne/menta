@@ -10,6 +10,10 @@ Menta is a multi-platform language originally forked from [Kotlin](https://githu
 
 It supports multiple paradigms, including functional programming, DCI ([Data, Context and Interaction](https://fulloo.info/)), and object-oriented programming using composition. It deliberately does *not* support traditional classes and inheritance.
 
+## Online Demo
+
+https://codesandbox.io/p/devbox/menta-demo-54hjfz
+
 ## Why Menta?
 
 Menta is short for "mental models". The concept of mental models in software traces back at least to [Doug Englebart](https://www.dougengelbart.org/), an early pioneer in the computing field who envisioned the computer as an extension of the human mind (or to use Engelbart's terminology, "augmenting human intellect"). This vision heavily influenced [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) and other researchers in the early days of developing GUIs and the precursors of modern personal computers. [1]
@@ -18,16 +22,23 @@ In many software contexts today, the original focus on mental models has been la
 
 ### Data, Context, and Interaction
 
-One of the key reasons why Menta was created was to provide first-class support for the [Data, Context and Interaction](https://fulloo.info/) programming paradigm (DCI). DCI, invented by [Trygve Reenskaug](https://en.wikipedia.org/wiki/Trygve_Reenskaug) and refined with the help of collaborator [James Coplien](https://en.wikipedia.org/wiki/Jim_Coplien), helps remind us of the original vision of mental models and object orientation, and also addresses some key areas where it fell short. These shortcomings contributed to widespread frustrations with object orientation as it was applied in the industry, and many valid criticisms of it at a technical level.
+One of the key reasons why Menta was created was to provide first-class support for the [Data, Context and Interaction](https://fulloo.info/) programming paradigm (DCI). DCI, invented by [Trygve Reenskaug](https://en.wikipedia.org/wiki/Trygve_Reenskaug) and refined with the help of collaborator [James Coplien](https://en.wikipedia.org/wiki/Jim_Coplien), helps remind us of the original vision of mental models and object orientation, and also addresses some key areas where it fell short. These shortcomings contributed to widespread frustrations with so-called object orientation as it was applied in the industry, and many valid criticisms of it at a technical level.
 
 Thanks to DCI, we are no longer confined to coupling data and behavior together in a compile-time class hierarchy: we can merge the two dynamically at run-time according to the use cases. DCI also plays well with functional programming and immutable data structures.
 
 ### Programming Mental Models
 
-There are many benefits of going back to the historical roots of modeling, writing code that better reflects the mental models of the people using it, the programmers writing it, and other stakeholders—even in the age of AI coding agents. The key concept for us as software engineers is code comprehension: when the code is aligned with mental models that we understand and which serve the needs of users, the result is more user-friendly and maintainable software. And a great thing about programming with this philosophy is that it can apply to any mental model. We usually want to emphasize the end user's mental model first and foremost, but DCI can be used at multiple levels, including some levels which emphasize the programmer's mental model, or a blend between the users' and programmers' models shaped by discussions and shared understanding with the users.
+There are many benefits of going back to the historical roots of modeling, writing code that better reflects the mental models of the people using it, the programmers writing it, and other stakeholders—even in the age of AI coding agents. The key concept for us as software engineers is code comprehension: when the code is aligned with mental models that we understand and which serve the needs of users, the result is more user-friendly and maintainable software. And a great thing about programming with this philosophy is that it can apply to any mental model. We usually want to emphasize the end user's mental model first and foremost, but DCI can be used at multiple levels, including some levels which emphasize the programmer's mental model, or a blend between the users' and programmers' models shaped by discussions and shared understanding with the users and stakeholders.
 
 ---
 [1] Kay's conception of mental models was also informed by the work of Jean Piaget and other psychologists who studied child psychology, as explained in Kay's 1987 presentation [Doing With Images Makes Symbols](https://www.youtube.com/watch?v=p2LZLYcu_JY).
+
+See also the article [Relearning OOP](https://medium.com/@egonelbre/relearning-oop-89f10e0e2f68) by Egon Elbre for a good introduction.
+
+## Documentation
+
+* [Differences from Kotlin](docs/differences-from-kotlin/readme.md)
+* [Frequently Asked Questions](docs/faq.md)
 
 ## Build environment requirements
 
