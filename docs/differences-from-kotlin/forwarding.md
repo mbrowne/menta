@@ -2,7 +2,7 @@
 
 Menta is designed to make object composition easy by following in the footsteps of Kotlin's [delegation](https://kotlinlang.org/docs/delegation.html) feature, which technically speaking is really [forwarding](https://en.wikipedia.org/wiki/Forwarding_(object-oriented_programming) rather than delegation, but the core motivation is the same: we want to use one object to help another accomplish its responsibilities.
 
-In Menta, we use this not only for traditional cases of object composition, but also to achieve the same goals as inheritance for "is-a" relationships (AKA generalization/specialization), in other words relationships between a base type and one or more subtypes. For more on why we avoid inheritance, see the [FAQ](../faq.md#inheritance). Here's an example:
+In Menta, we use this not only for traditional cases of object composition, but also to achieve the same goals as inheritance for "is-a" relationships (AKA generalization/specialization), in other words relationships between a base type and one or more subtypes. For more on why we avoid inheritance, see the [FAQ](../faq.md#user-content-inheritance). Here's an example:
 
 ```menta
 define Person (public val name: String)
