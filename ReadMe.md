@@ -39,6 +39,7 @@ See also the article [Relearning OOP](https://medium.com/@egonelbre/relearning-o
 
 * [Differences from Kotlin](docs/differences-from-kotlin/readme.md)
 * [Frequently Asked Questions](docs/faq.md)
+* [Code examples](docs/examples)
 
 ## Build environment requirements
 
