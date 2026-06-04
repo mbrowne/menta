@@ -12,7 +12,7 @@ It supports multiple paradigms, including functional programming, DCI ([Data, Co
 
 ## Online Demo
 
-https://codesandbox.io/p/devbox/menta-demo-54hjfz
+https://codesandbox.io/p/devbox/menta-demo-54hjfz?file=%2FREADME.md
 
 ## Why Menta?
 
