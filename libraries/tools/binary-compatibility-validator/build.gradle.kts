@@ -34,7 +34,7 @@ val test by tasks.existing(Test::class) {
     dependsOn(testArtifacts)
     dependsOn(":kotlin-stdlib:assemble")
     if (kotlinBuildProperties.isKotlinNativeEnabled.get()) {
-        dependsOn(":kotlin-native:runtime:nativeStdlib")
+        dependsOn(":menta-native:runtime:nativeStdlib")
     }
 
     systemProperty("native.enabled", kotlinBuildProperties.isKotlinNativeEnabled.get())

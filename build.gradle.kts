@@ -903,14 +903,14 @@ tasks {
     register("nativeCompilerUnitTest") {
         dependsOn(":native:kotlin-native-utils:check")
         if (kotlinBuildProperties.isKotlinNativeEnabled.get()) {
-            dependsOn(":kotlin-native:Interop:Indexer:check")
-            dependsOn(":kotlin-native:Interop:StubGenerator:check")
-            dependsOn(":kotlin-native:backend.native:check")
-            dependsOn(":kotlin-native:tools:kdumputil:check")
-            dependsOn(":kotlin-native:common:env:check")
-            dependsOn(":kotlin-native:common:files:check")
-            dependsOn(":kotlin-native:libclangInterop:check")
-            dependsOn(":kotlin-native:llvmInterop:check")
+            dependsOn(":menta-native:Interop:Indexer:check")
+            dependsOn(":menta-native:Interop:StubGenerator:check")
+            dependsOn(":menta-native:backend.native:check")
+            dependsOn(":menta-native:tools:kdumputil:check")
+            dependsOn(":menta-native:common:env:check")
+            dependsOn(":menta-native:common:files:check")
+            dependsOn(":menta-native:libclangInterop:check")
+            dependsOn(":menta-native:llvmInterop:check")
         }
     }
 

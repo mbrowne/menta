@@ -171,7 +171,7 @@ private open class NativeArgsProvider @Inject constructor(
 
     @get:Internal
     protected val internalNativeHomeDir: Provider<File> = customNativeHome.map { File(it) }
-        .orElse(project.project(":kotlin-native").isolated.projectDirectory.dir("dist").asFile)
+        .orElse(project.project(":menta-native").isolated.projectDirectory.dir("dist").asFile)
 
     @get:Classpath
     protected val nativeHome: ConfigurableFileCollection = objects.fileCollection().apply {
@@ -180,17 +180,17 @@ private open class NativeArgsProvider @Inject constructor(
         } else {
             val nativeHomeBuiltBy: Provider<List<String>> = testTarget.map {
                 listOfNotNull(
-                    ":kotlin-native:${it}CrossDist",
-                    if (dependOnPlatformLibs.get()) ":kotlin-native:${it}PlatformLibs" else null,
+                    ":menta-native:${it}CrossDist",
+                    if (dependOnPlatformLibs.get()) ":menta-native:${it}PlatformLibs" else null,
                 )
             }.orElse(
                 listOfNotNull(
-                    ":kotlin-native:dist",
-                    if (dependOnPlatformLibs.get()) ":kotlin-native:distPlatformLibs" else null,
+                    ":menta-native:dist",
+                    if (dependOnPlatformLibs.get()) ":menta-native:distPlatformLibs" else null,
                 )
             )
 
-            val distDir = project.project(":kotlin-native").isolated.projectDirectory.dir("dist")
+            val distDir = project.project(":menta-native").isolated.projectDirectory.dir("dist")
             if (!dependOnPlatformLibs.get()) {
                 from(distDir.dir("bin/"))
                 from(distDir.dir("konan/"))
@@ -211,7 +211,7 @@ private open class NativeArgsProvider @Inject constructor(
         } else {
             from(
                 project.configurations.detachedConfiguration(
-                    project.dependencies.project(":kotlin-native:prepare:kotlin-native-compiler-embeddable"),
+                    project.dependencies.project(":menta-native:prepare:kotlin-native-compiler-embeddable"),
                 )
             )
         }
@@ -241,7 +241,7 @@ private open class NativeArgsProvider @Inject constructor(
     protected val minidumpAnalyzer: ConfigurableFileCollection = objects.fileCollection().apply {
         if (HostManager.hostIsMac && !project.hasProperty("disableBreakpad")) {
             val fileCollection = project.configurations.detachedConfiguration(
-                project.dependencies.project(":kotlin-native:tools:minidump-analyzer"),
+                project.dependencies.project(":menta-native:tools:minidump-analyzer"),
             ).also {
                 it.attributes {
                     attribute(Usage.USAGE_ATTRIBUTE, objects.named("native-executable"))

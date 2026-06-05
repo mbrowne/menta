@@ -38,7 +38,7 @@ sourceSets {
 
 projectTests {
     nativeTestTask("test") {
-        dependsOn(":dist", ":kotlin-native:distInvalidateStaleCaches")
+        dependsOn(":dist", ":menta-native:distInvalidateStaleCaches")
     }
 
     withJvmStdlibAndReflect()

@@ -34,7 +34,7 @@ sourceSets {
 
 projectTests {
     nativeTestTask("test", requirePlatformLibs = true) {
-        dependsOn(":kotlin-native:distInvalidateStaleCaches")
+        dependsOn(":menta-native:distInvalidateStaleCaches")
     }
 }
 
