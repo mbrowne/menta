@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  push:
+    # branches: [ main ]
+    # TEMP
+    branches: [ main, github-actions ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096M -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true"
+
+jobs:
+  build-jvm:
+    name: Build for JVM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Gradle setup
+        uses: ./.github/actions/gradle-setup
+
+      - name: Build compiler
+        run: ./gradlew dist
