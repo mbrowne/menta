@@ -33,7 +33,7 @@ tasks.withType<Test>().configureEach {
             project.providers.gradleProperty("kn.nativeHome")
         )
         val nativeHomeDefault: Provider<Directory> =
-            testInputsCheck.isNative.filter { it }.map { project.project(":kotlin-native").isolated.projectDirectory.dir("dist") }
+            testInputsCheck.isNative.filter { it }.map { project.project(":menta-native").isolated.projectDirectory.dir("dist") }
         val konanDataDir: String =
             project.extra.has("konan.data.dir").let { if (it) project.extra["konan.data.dir"] else null } as String?
                 ?: System.getenv("KONAN_DATA_DIR")

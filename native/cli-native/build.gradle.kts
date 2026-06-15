@@ -11,7 +11,7 @@ dependencies {
     implementation(project(":compiler:ir.backend.common"))
     implementation(project(":compiler:ir.backend.native"))
     implementation(project(":compiler:util"))
-    implementation(project(":kotlin-native:backend.native"))
+    implementation(project(":menta-native:backend.native"))
     implementation(project(":native:frontend.native"))
     implementation(project(":native:native.config"))
 }

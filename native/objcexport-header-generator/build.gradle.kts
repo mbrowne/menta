@@ -17,9 +17,9 @@ dependencies {
     api(project(":native:base"))
 
     if (kotlinBuildProperties.isKotlinNativeEnabled.get()) {
-        testImplementation(project(":kotlin-native:Interop:Indexer"))
+        testImplementation(project(":menta-native:Interop:Indexer"))
         testImplementation(project(":native:kotlin-native-utils"))
-        testImplementation(project(":kotlin-native:Interop:StubGenerator"))
+        testImplementation(project(":menta-native:Interop:StubGenerator"))
         testImplementation(testFixtures(project(":native:native.tests")))
     }
 

@@ -58,7 +58,7 @@ projectTests {
     testData(project(":kotlin-stdlib").isolated, "test")
     testData(project(":kotlin-stdlib").isolated, "common/test")
     testData(project(":kotlin-stdlib").isolated, "native-wasm/test")
-    // :kotlin-native:runtime project availability depends on kotlin.native.enabled=true
+    // :menta-native:runtime project availability depends on kotlin.native.enabled=true
     testData(rootProject.isolated, "kotlin-native/runtime/test")
 
     // Tasks that run different sorts of tests. Most frequent use case: running specific tests at TeamCity.

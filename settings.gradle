@@ -1036,39 +1036,64 @@ project(':kotlin-scripting-compiler-impl').projectDir = "$rootDir/plugins/script
 // Uncomment to use locally built protobuf-relocated
 // includeBuild("dependencies/protobuf")
 if (buildProperties.isKotlinNativeEnabled.get()) {
-    includeBuild("kotlin-native/build-tools") {
+    includeBuild("menta-native/build-tools") {
         name = "native-build-tools"
     }
-    include ':kotlin-native:dependencies'
-    include ':kotlin-native:endorsedLibraries:kotlinx.cli'
-    include ':kotlin-native:Interop:StubGenerator'
-    include ':kotlin-native:Interop:StubGeneratorConsistencyCheck'
-    include ':kotlin-native:backend.native'
-    project(':kotlin-native:backend.native').projectDir = "$rootDir/kotlin-native/backend.native/compiler/ir/backend.native" as File
-    include ':kotlin-native:Interop:Runtime'
-    include ':kotlin-native:Interop:Indexer'
-    include ':kotlin-native:utilities:cli-runner'
-    include ':kotlin-native:klib'
-    include ':kotlin-native:common'
-    include ':kotlin-native:common:env'
-    include ':kotlin-native:common:files'
-    include ':kotlin-native:runtime'
-    include ':kotlin-native:libllvmext'
-    include ':kotlin-native:llvmDebugInfoC'
-    include ':kotlin-native:utilities'
-    include ':kotlin-native:tools:kdumputil'
-    include ':kotlin-native:platformLibs'
-    include ':kotlin-native:libclangext'
-    include ':kotlin-native:llvmInterop'
-    include ':kotlin-native:libclangInterop'
-    include ':kotlin-native:backend.native:tests'
-    project(':kotlin-native:backend.native:tests').projectDir = "$rootDir/kotlin-native/backend.native/tests" as File
-    include ':kotlin-native:prepare:kotlin-native-compiler-embeddable'
-    include ':kotlin-native:tools:compiler-cache-invalidator'
+    include ':menta-native'
+    project(':menta-native').projectDir = "$rootDir/menta-native" as File
+    include ':menta-native:dependencies'
+    project(':menta-native:dependencies').projectDir = "$rootDir/menta-native/dependencies" as File
+    include ':menta-native:endorsedLibraries:kotlinx.cli'
+    project(':menta-native:endorsedLibraries:kotlinx.cli').projectDir = "$rootDir/menta-native/endorsedLibraries/kotlinx.cli" as File
+    include ':menta-native:Interop:StubGenerator'
+    project(':menta-native:Interop:StubGenerator').projectDir = "$rootDir/menta-native/Interop/StubGenerator" as File
+    include ':menta-native:Interop:StubGeneratorConsistencyCheck'
+    project(':menta-native:Interop:StubGeneratorConsistencyCheck').projectDir = "$rootDir/menta-native/Interop/StubGeneratorConsistencyCheck" as File
+    include ':menta-native:backend.native'
+    project(':menta-native:backend.native').projectDir = "$rootDir/menta-native/backend.native/compiler/ir/backend.native" as File
+    include ':menta-native:Interop:Runtime'
+    project(':menta-native:Interop:Runtime').projectDir = "$rootDir/menta-native/Interop/Runtime" as File
+    include ':menta-native:Interop:Indexer'
+    project(':menta-native:Interop:Indexer').projectDir = "$rootDir/menta-native/Interop/Indexer" as File
+    include ':menta-native:utilities:cli-runner'
+    project(':menta-native:utilities:cli-runner').projectDir = "$rootDir/menta-native/utilities/cli-runner" as File
+    include ':menta-native:klib'
+    project(':menta-native:klib').projectDir = "$rootDir/menta-native/klib" as File
+    include ':menta-native:common'
+    project(':menta-native:common').projectDir = "$rootDir/menta-native/common" as File
+    include ':menta-native:common:env'
+    project(':menta-native:common:env').projectDir = "$rootDir/menta-native/common/env" as File
+    include ':menta-native:common:files'
+    project(':menta-native:common:files').projectDir = "$rootDir/menta-native/common/files" as File
+    include ':menta-native:runtime'
+    project(':menta-native:runtime').projectDir = "$rootDir/menta-native/runtime" as File
+    include ':menta-native:libllvmext'
+    project(':menta-native:libllvmext').projectDir = "$rootDir/menta-native/libllvmext" as File
+    include ':menta-native:llvmDebugInfoC'
+    project(':menta-native:llvmDebugInfoC').projectDir = "$rootDir/menta-native/llvmDebugInfoC" as File
+    include ':menta-native:utilities'
+    project(':menta-native:utilities').projectDir = "$rootDir/menta-native/utilities" as File
+    include ':menta-native:tools:kdumputil'
+    project(':menta-native:tools:kdumputil').projectDir = "$rootDir/menta-native/tools/kdumputil" as File
+    include ':menta-native:platformLibs'
+    project(':menta-native:platformLibs').projectDir = "$rootDir/menta-native/platformLibs" as File
+    include ':menta-native:libclangext'
+    project(':menta-native:libclangext').projectDir = "$rootDir/menta-native/libclangext" as File
+    include ':menta-native:llvmInterop'
+    project(':menta-native:llvmInterop').projectDir = "$rootDir/menta-native/llvmInterop" as File
+    include ':menta-native:libclangInterop'
+    project(':menta-native:libclangInterop').projectDir = "$rootDir/menta-native/libclangInterop" as File
+    include ':menta-native:backend.native:tests'
+    project(':menta-native:backend.native:tests').projectDir = "$rootDir/menta-native/backend.native/tests" as File
+    include ':menta-native:prepare:kotlin-native-compiler-embeddable'
+    project(':menta-native:prepare:kotlin-native-compiler-embeddable').projectDir = "$rootDir/menta-native/prepare/kotlin-native-compiler-embeddable" as File
+    include ':menta-native:tools:compiler-cache-invalidator'
+    project(':menta-native:tools:compiler-cache-invalidator').projectDir = "$rootDir/menta-native/tools/compiler-cache-invalidator" as File
     include ':native:kotlin-test-native-xctest'
     include ':native:cli-native'
     include ':native:native.tests:cli-tests'
-    include ':kotlin-native:tools:minidump-analyzer'
+    include ':menta-native:tools:minidump-analyzer'
+    project(':menta-native:tools:minidump-analyzer').projectDir = "$rootDir/menta-native/tools/minidump-analyzer" as File
 }
 
 include 'compiler:test-security-manager'

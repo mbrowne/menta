@@ -13,7 +13,7 @@ projectTests {
 
         if (project.kotlinBuildProperties.isKotlinNativeEnabled.get()) {
             // Build full Kotlin Native bundle
-            dependsOn(":kotlin-native:install")
+            dependsOn(":menta-native:install")
         }
 
         systemProperty("kotlinVersion", rootProject.extra["kotlinVersion"] as String)

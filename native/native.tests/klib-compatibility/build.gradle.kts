@@ -65,7 +65,7 @@ fun Project.customCompilerTest(
         }
     }
     // Cannot use exactly `DependencyDirectories.localKonanDir`, since it's wrong to declare whole `~/.konan/` as an output of `unarchiveCustomCompiler_` task
-    // Should it be so, Gradle fails on implicit dependency: task `:kotlin-native:llvmInterop:genInteropStubs` uses files in `~/.konan/dependencies/llvm-19-aarch64*`
+    // Should it be so, Gradle fails on implicit dependency: task `:menta-native:llvmInterop:genInteropStubs` uses files in `~/.konan/dependencies/llvm-19-aarch64*`
     // So, a subfolder within `~/.konan/` is needed for output of `unarchiveCustomCompiler_` task
     val unarchiveCustomCompiler = tasks.register("unarchiveCustomCompiler_${taskName}", Copy::class) {
         from(customCompiler.map { file -> tarTree(file) }.single())

@@ -33,7 +33,7 @@ dependencies {
 
 projectTests {
     nativeTestTask("test") {
-        dependsOn(":kotlin-native:distInvalidateStaleCaches")
+        dependsOn(":menta-native:distInvalidateStaleCaches")
     }
 }
 
